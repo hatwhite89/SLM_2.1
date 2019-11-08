@@ -97,6 +97,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="negocio\Class1.vb" />
+    <Compile Include="negocio\ClsPaciente.vb" />
+    <Compile Include="presentacion\Asiento.designer.vb">
+      <DependentUpon>Asiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\Asiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\BuscarCliente.Designer.vb">
       <DependentUpon>BuscarCliente.vb</DependentUpon>
     </Compile>
@@ -145,6 +152,12 @@
     <Compile Include="presentacion\Deposito Tarjeta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\Depositos.Designer.vb">
+      <DependentUpon>Depositos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\Depositos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\Documento.Designer.vb">
       <DependentUpon>Documento.vb</DependentUpon>
     </Compile>
@@ -175,10 +188,22 @@
     <Compile Include="presentacion\Form2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\FormaPago.Designer.vb">
+      <DependentUpon>FormaPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\FormaPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\Medico.Designer.vb">
       <DependentUpon>Medico.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\Medico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\Pagos.Designer.vb">
+      <DependentUpon>Pagos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\Pagos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\Sede.Designer.vb">
@@ -222,6 +247,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Asiento.resx">
+      <DependentUpon>Asiento.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\BuscarCliente.resx">
       <DependentUpon>BuscarCliente.vb</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +271,9 @@
     <EmbeddedResource Include="presentacion\Deposito Tarjeta.resx">
       <DependentUpon>Deposito Tarjeta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Depositos.resx">
+      <DependentUpon>Depositos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\Documento.resx">
       <DependentUpon>Documento.vb</DependentUpon>
     </EmbeddedResource>
@@ -255,8 +286,14 @@
     <EmbeddedResource Include="presentacion\Factura2.resx">
       <DependentUpon>Factura2.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\FormaPago.resx">
+      <DependentUpon>FormaPago.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\Medico.resx">
       <DependentUpon>Medico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Pagos.resx">
+      <DependentUpon>Pagos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\Sede.resx">
       <DependentUpon>Sede.vb</DependentUpon>
