@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion\Class2.vb" />
+    <Compile Include="conexion\ClsConnection.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>

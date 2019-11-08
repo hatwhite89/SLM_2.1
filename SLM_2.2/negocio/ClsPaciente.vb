@@ -66,7 +66,7 @@ Public Class ClsPaciente
 
         sqlpar.Direction = ParameterDirection.Output
 
-        sqlcom.Connection = New ClsConnection().getConexion
+
         sqlcom.ExecuteNonQuery()
 
         par_sal = sqlcom.Parameters("Salida").Value
