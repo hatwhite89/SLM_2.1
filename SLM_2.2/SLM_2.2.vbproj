@@ -116,5 +116,10 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="conexion\" />
+    <Folder Include="negocio\" />
+    <Folder Include="presentacion\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
