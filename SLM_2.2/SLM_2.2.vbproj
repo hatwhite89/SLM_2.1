@@ -97,10 +97,118 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="negocio\Class1.vb" />
+    <Compile Include="presentacion\BuscarCliente.Designer.vb">
+      <DependentUpon>BuscarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\BuscarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\BuscarMedico.Designer.vb">
+      <DependentUpon>BuscarMedico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\BuscarMedico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\BuscarSede.Designer.vb">
+      <DependentUpon>BuscarSede.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\BuscarSede.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\BuscarSucursal.Designer.vb">
+      <DependentUpon>BuscarSucursal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\BuscarSucursal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\BuscarTerminoPago.Designer.vb">
+      <DependentUpon>BuscarTerminoPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\BuscarTerminoPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\CrearCliente.Designer.vb">
+      <DependentUpon>CrearCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\CrearCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\Deposito Bancario.Designer.vb">
+      <DependentUpon>Deposito Bancario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\Deposito Bancario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\Deposito Tarjeta.Designer.vb">
+      <DependentUpon>Deposito Tarjeta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\Deposito Tarjeta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\Documento.Designer.vb">
+      <DependentUpon>Documento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\Documento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\Especialidad.Designer.vb">
+      <DependentUpon>Especialidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\Especialidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\Factura.Designer.vb">
+      <DependentUpon>Factura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\Factura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\Factura2.Designer.vb">
+      <DependentUpon>Factura2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\Factura2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\Form2.Designer.vb">
       <DependentUpon>Form2.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\Medico.Designer.vb">
+      <DependentUpon>Medico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\Medico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\Sede.Designer.vb">
+      <DependentUpon>Sede.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\Sede.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\Sucursal.Designer.vb">
+      <DependentUpon>Sucursal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\Sucursal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\terminosPago.Designer.vb">
+      <DependentUpon>terminosPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\terminosPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\TipoDeposito.Designer.vb">
+      <DependentUpon>TipoDeposito.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\TipoDeposito.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\TipoObjeto.Designer.vb">
+      <DependentUpon>TipoObjeto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\TipoObjeto.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -113,6 +221,57 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\BuscarCliente.resx">
+      <DependentUpon>BuscarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\BuscarMedico.resx">
+      <DependentUpon>BuscarMedico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\BuscarSede.resx">
+      <DependentUpon>BuscarSede.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\BuscarSucursal.resx">
+      <DependentUpon>BuscarSucursal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\BuscarTerminoPago.resx">
+      <DependentUpon>BuscarTerminoPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\CrearCliente.resx">
+      <DependentUpon>CrearCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Deposito Tarjeta.resx">
+      <DependentUpon>Deposito Tarjeta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Documento.resx">
+      <DependentUpon>Documento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Especialidad.resx">
+      <DependentUpon>Especialidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Factura.resx">
+      <DependentUpon>Factura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Factura2.resx">
+      <DependentUpon>Factura2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Medico.resx">
+      <DependentUpon>Medico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Sede.resx">
+      <DependentUpon>Sede.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Sucursal.resx">
+      <DependentUpon>Sucursal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\terminosPago.resx">
+      <DependentUpon>terminosPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\TipoDeposito.resx">
+      <DependentUpon>TipoDeposito.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\TipoObjeto.resx">
+      <DependentUpon>TipoObjeto.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
