@@ -196,6 +196,12 @@
     <Compile Include="presentacion\FormaPago.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\frmPaciente.Designer.vb">
+      <DependentUpon>frmPaciente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\frmPaciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\Medico.Designer.vb">
       <DependentUpon>Medico.vb</DependentUpon>
     </Compile>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\FormaPago.resx">
       <DependentUpon>FormaPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\frmPaciente.resx">
+      <DependentUpon>frmPaciente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\Medico.resx">
       <DependentUpon>Medico.vb</DependentUpon>
