@@ -10,10 +10,6 @@ Public Class ClsConnection
 
     Public Sub New()
         str_con = "Data Source=10.172.3.10;Initial Catalog=slm_test;User Id=sa;Password=Lbm2019;"
-
-
-
-
     End Sub
 
     Public Function getConexion() As SqlConnection

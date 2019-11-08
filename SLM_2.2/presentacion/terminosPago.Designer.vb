@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class terminosPago
+Partial Class TerminosPago
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,413 +22,397 @@ Partial Class terminosPago
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(terminosPago))
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TerminosPago))
+        Me.lbldescripcion = New System.Windows.Forms.Label()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
+        Me.lblcodigo = New System.Windows.Forms.Label()
+        Me.txtdiasNeto = New System.Windows.Forms.TextBox()
+        Me.lbldiasNeto = New System.Windows.Forms.Label()
+        Me.txtcodigoListaPrecios = New System.Windows.Forms.TextBox()
+        Me.lbllistaPrecios = New System.Windows.Forms.Label()
+        Me.txtdiasDescAcordado2 = New System.Windows.Forms.TextBox()
+        Me.lbldiasDescAcordado2 = New System.Windows.Forms.Label()
+        Me.txtdescAcordado2 = New System.Windows.Forms.TextBox()
+        Me.lbldescAcordado2 = New System.Windows.Forms.Label()
+        Me.txtdiasDescAcordado = New System.Windows.Forms.TextBox()
+        Me.lbldiasDescAcordado = New System.Windows.Forms.Label()
+        Me.txtdescAcordado = New System.Windows.Forms.TextBox()
+        Me.lbldescAcordado = New System.Windows.Forms.Label()
+        Me.lblctaVentas = New System.Windows.Forms.Label()
+        Me.lbltipo = New System.Windows.Forms.Label()
+        Me.lblcuotas = New System.Windows.Forms.Label()
+        Me.lblctaContado = New System.Windows.Forms.Label()
+        Me.cbxtipo = New System.Windows.Forms.ComboBox()
+        Me.rtxtdescripcion = New System.Windows.Forms.RichTextBox()
+        Me.btnbuscarListaPrecios = New System.Windows.Forms.Button()
+        Me.btnbuscarCtaContado = New System.Windows.Forms.Button()
+        Me.txtcodigoCtaContado = New System.Windows.Forms.TextBox()
+        Me.btncuotas = New System.Windows.Forms.Button()
+        Me.txtcodigoCuotas = New System.Windows.Forms.TextBox()
+        Me.btnCtaVentas = New System.Windows.Forms.Button()
+        Me.txtcodigoCtaVentas = New System.Windows.Forms.TextBox()
+        Me.btncancelar = New System.Windows.Forms.Button()
+        Me.btncrear = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Label11
+        'lbldescripcion
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(498, 121)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(82, 17)
-        Me.Label11.TabIndex = 87
-        Me.Label11.Text = "Descripción"
+        Me.lbldescripcion.AutoSize = True
+        Me.lbldescripcion.Location = New System.Drawing.Point(423, 15)
+        Me.lbldescripcion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbldescripcion.Name = "lbldescripcion"
+        Me.lbldescripcion.Size = New System.Drawing.Size(82, 17)
+        Me.lbldescripcion.TabIndex = 87
+        Me.lbldescripcion.Text = "Descripción"
         '
-        'TextBox10
+        'txtcodigo
         '
-        Me.TextBox10.Location = New System.Drawing.Point(209, 121)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox10.TabIndex = 86
+        Me.txtcodigo.Location = New System.Drawing.Point(159, 12)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(179, 22)
+        Me.txtcodigo.TabIndex = 86
         '
-        'Label10
+        'lblcodigo
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(128, 124)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(52, 17)
-        Me.Label10.TabIndex = 85
-        Me.Label10.Text = "Código"
+        Me.lblcodigo.AutoSize = True
+        Me.lblcodigo.Location = New System.Drawing.Point(99, 15)
+        Me.lblcodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcodigo.Name = "lblcodigo"
+        Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodigo.TabIndex = 85
+        Me.lblcodigo.Text = "Código"
         '
-        'TextBox9
+        'txtdiasNeto
         '
-        Me.TextBox9.Location = New System.Drawing.Point(209, 166)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox9.TabIndex = 84
+        Me.txtdiasNeto.Location = New System.Drawing.Point(159, 40)
+        Me.txtdiasNeto.Name = "txtdiasNeto"
+        Me.txtdiasNeto.Size = New System.Drawing.Size(179, 22)
+        Me.txtdiasNeto.TabIndex = 84
         '
-        'Label9
+        'lbldiasNeto
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(109, 173)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(70, 17)
-        Me.Label9.TabIndex = 83
-        Me.Label9.Text = "Días Neto"
+        Me.lbldiasNeto.AutoSize = True
+        Me.lbldiasNeto.Location = New System.Drawing.Point(81, 43)
+        Me.lbldiasNeto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbldiasNeto.Name = "lbldiasNeto"
+        Me.lbldiasNeto.Size = New System.Drawing.Size(70, 17)
+        Me.lbldiasNeto.TabIndex = 83
+        Me.lbldiasNeto.Text = "Días Neto"
         '
-        'TextBox5
+        'txtcodigoListaPrecios
         '
-        Me.TextBox5.Location = New System.Drawing.Point(271, 291)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(117, 22)
-        Me.TextBox5.TabIndex = 76
+        Me.txtcodigoListaPrecios.Location = New System.Drawing.Point(220, 124)
+        Me.txtcodigoListaPrecios.Name = "txtcodigoListaPrecios"
+        Me.txtcodigoListaPrecios.Size = New System.Drawing.Size(117, 22)
+        Me.txtcodigoListaPrecios.TabIndex = 76
         '
-        'Label5
+        'lbllistaPrecios
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(90, 294)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(89, 17)
-        Me.Label5.TabIndex = 75
-        Me.Label5.Text = "Lista Precios"
+        Me.lbllistaPrecios.AutoSize = True
+        Me.lbllistaPrecios.Location = New System.Drawing.Point(62, 129)
+        Me.lbllistaPrecios.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbllistaPrecios.Name = "lbllistaPrecios"
+        Me.lbllistaPrecios.Size = New System.Drawing.Size(89, 17)
+        Me.lbllistaPrecios.TabIndex = 75
+        Me.lbllistaPrecios.Text = "Lista Precios"
         '
-        'TextBox4
+        'txtdiasDescAcordado2
         '
-        Me.TextBox4.Location = New System.Drawing.Point(609, 246)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox4.TabIndex = 74
+        Me.txtdiasDescAcordado2.Location = New System.Drawing.Point(512, 122)
+        Me.txtdiasDescAcordado2.Name = "txtdiasDescAcordado2"
+        Me.txtdiasDescAcordado2.Size = New System.Drawing.Size(179, 22)
+        Me.txtdiasDescAcordado2.TabIndex = 74
         '
-        'Label4
+        'lbldiasDescAcordado2
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(427, 246)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(153, 17)
-        Me.Label4.TabIndex = 73
-        Me.Label4.Text = "Días Desc. Acordado 2"
+        Me.lbldiasDescAcordado2.AutoSize = True
+        Me.lbldiasDescAcordado2.Location = New System.Drawing.Point(352, 127)
+        Me.lbldiasDescAcordado2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbldiasDescAcordado2.Name = "lbldiasDescAcordado2"
+        Me.lbldiasDescAcordado2.Size = New System.Drawing.Size(153, 17)
+        Me.lbldiasDescAcordado2.TabIndex = 73
+        Me.lbldiasDescAcordado2.Text = "Días Desc. Acordado 2"
         '
-        'TextBox3
+        'txtdescAcordado2
         '
-        Me.TextBox3.Location = New System.Drawing.Point(609, 205)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox3.TabIndex = 72
+        Me.txtdescAcordado2.Location = New System.Drawing.Point(512, 94)
+        Me.txtdescAcordado2.Name = "txtdescAcordado2"
+        Me.txtdescAcordado2.Size = New System.Drawing.Size(179, 22)
+        Me.txtdescAcordado2.TabIndex = 72
         '
-        'Label3
+        'lbldescAcordado2
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(443, 208)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(137, 17)
-        Me.Label3.TabIndex = 71
-        Me.Label3.Text = "Desc. Acordado % 2"
+        Me.lbldescAcordado2.AutoSize = True
+        Me.lbldescAcordado2.Location = New System.Drawing.Point(368, 97)
+        Me.lbldescAcordado2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbldescAcordado2.Name = "lbldescAcordado2"
+        Me.lbldescAcordado2.Size = New System.Drawing.Size(137, 17)
+        Me.lbldescAcordado2.TabIndex = 71
+        Me.lbldescAcordado2.Text = "Desc. Acordado % 2"
         '
-        'TextBox2
+        'txtdiasDescAcordado
         '
-        Me.TextBox2.Location = New System.Drawing.Point(209, 246)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox2.TabIndex = 70
+        Me.txtdiasDescAcordado.Location = New System.Drawing.Point(159, 96)
+        Me.txtdiasDescAcordado.Name = "txtdiasDescAcordado"
+        Me.txtdiasDescAcordado.Size = New System.Drawing.Size(179, 22)
+        Me.txtdiasDescAcordado.TabIndex = 70
         '
-        'Label2
+        'lbldiasDescAcordado
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(38, 249)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(141, 17)
-        Me.Label2.TabIndex = 69
-        Me.Label2.Text = "Días Desc. Acordado"
+        Me.lbldiasDescAcordado.AutoSize = True
+        Me.lbldiasDescAcordado.Location = New System.Drawing.Point(10, 99)
+        Me.lbldiasDescAcordado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbldiasDescAcordado.Name = "lbldiasDescAcordado"
+        Me.lbldiasDescAcordado.Size = New System.Drawing.Size(141, 17)
+        Me.lbldiasDescAcordado.TabIndex = 69
+        Me.lbldiasDescAcordado.Text = "Días Desc. Acordado"
         '
-        'TextBox1
+        'txtdescAcordado
         '
-        Me.TextBox1.Location = New System.Drawing.Point(209, 206)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox1.TabIndex = 68
+        Me.txtdescAcordado.Location = New System.Drawing.Point(158, 68)
+        Me.txtdescAcordado.Name = "txtdescAcordado"
+        Me.txtdescAcordado.Size = New System.Drawing.Size(179, 22)
+        Me.txtdescAcordado.TabIndex = 68
         '
-        'Label1
+        'lbldescAcordado
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(54, 211)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(125, 17)
-        Me.Label1.TabIndex = 67
-        Me.Label1.Text = "Desc. Acordado %"
+        Me.lbldescAcordado.AutoSize = True
+        Me.lbldescAcordado.Location = New System.Drawing.Point(26, 73)
+        Me.lbldescAcordado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbldescAcordado.Name = "lbldescAcordado"
+        Me.lbldescAcordado.Size = New System.Drawing.Size(125, 17)
+        Me.lbldescAcordado.TabIndex = 67
+        Me.lbldescAcordado.Text = "Desc. Acordado %"
         '
-        'Button4
+        'lblctaVentas
         '
-        Me.Button4.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button4.Location = New System.Drawing.Point(540, 39)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(138, 35)
-        Me.Button4.TabIndex = 102
-        Me.Button4.Text = "Guardar"
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.lblctaVentas.AutoSize = True
+        Me.lblctaVentas.Location = New System.Drawing.Point(424, 183)
+        Me.lblctaVentas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblctaVentas.Name = "lblctaVentas"
+        Me.lblctaVentas.Size = New System.Drawing.Size(81, 17)
+        Me.lblctaVentas.TabIndex = 103
+        Me.lblctaVentas.Text = "Cta. Ventas"
         '
-        'Button3
+        'lbltipo
         '
-        Me.Button3.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button3.Location = New System.Drawing.Point(360, 39)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(138, 35)
-        Me.Button3.TabIndex = 101
-        Me.Button3.Text = "Cancelar"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.lbltipo.AutoSize = True
+        Me.lbltipo.Location = New System.Drawing.Point(115, 183)
+        Me.lbltipo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbltipo.Name = "lbltipo"
+        Me.lbltipo.Size = New System.Drawing.Size(36, 17)
+        Me.lbltipo.TabIndex = 105
+        Me.lbltipo.Text = "Tipo"
         '
-        'Button1
+        'lblcuotas
         '
-        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button1.Location = New System.Drawing.Point(181, 39)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(138, 35)
-        Me.Button1.TabIndex = 100
-        Me.Button1.Text = "Crear"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.lblcuotas.AutoSize = True
+        Me.lblcuotas.Location = New System.Drawing.Point(453, 152)
+        Me.lblcuotas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcuotas.Name = "lblcuotas"
+        Me.lblcuotas.Size = New System.Drawing.Size(52, 17)
+        Me.lblcuotas.TabIndex = 111
+        Me.lblcuotas.Text = "Cuotas"
         '
-        'Label6
+        'lblctaContado
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(499, 339)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(81, 17)
-        Me.Label6.TabIndex = 103
-        Me.Label6.Text = "Cta. Ventas"
+        Me.lblctaContado.AutoSize = True
+        Me.lblctaContado.Location = New System.Drawing.Point(61, 152)
+        Me.lblctaContado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblctaContado.Name = "lblctaContado"
+        Me.lblctaContado.Size = New System.Drawing.Size(90, 17)
+        Me.lblctaContado.TabIndex = 109
+        Me.lblctaContado.Text = "Cta. Contado"
         '
-        'Label7
+        'cbxtipo
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(144, 383)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(36, 17)
-        Me.Label7.TabIndex = 105
-        Me.Label7.Text = "Tipo"
+        Me.cbxtipo.FormattingEnabled = True
+        Me.cbxtipo.Location = New System.Drawing.Point(160, 180)
+        Me.cbxtipo.Name = "cbxtipo"
+        Me.cbxtipo.Size = New System.Drawing.Size(178, 24)
+        Me.cbxtipo.TabIndex = 113
         '
-        'Label8
+        'rtxtdescripcion
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(528, 294)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(52, 17)
-        Me.Label8.TabIndex = 111
-        Me.Label8.Text = "Cuotas"
+        Me.rtxtdescripcion.Location = New System.Drawing.Point(512, 12)
+        Me.rtxtdescripcion.Name = "rtxtdescripcion"
+        Me.rtxtdescripcion.Size = New System.Drawing.Size(179, 76)
+        Me.rtxtdescripcion.TabIndex = 114
+        Me.rtxtdescripcion.Text = ""
         '
-        'Label12
+        'btnbuscarListaPrecios
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(90, 339)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(90, 17)
-        Me.Label12.TabIndex = 109
-        Me.Label12.Text = "Cta. Contado"
+        Me.btnbuscarListaPrecios.BackColor = System.Drawing.Color.White
+        Me.btnbuscarListaPrecios.BackgroundImage = CType(resources.GetObject("btnbuscarListaPrecios.BackgroundImage"), System.Drawing.Image)
+        Me.btnbuscarListaPrecios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnbuscarListaPrecios.FlatAppearance.BorderSize = 0
+        Me.btnbuscarListaPrecios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnbuscarListaPrecios.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnbuscarListaPrecios.Location = New System.Drawing.Point(163, 124)
+        Me.btnbuscarListaPrecios.Name = "btnbuscarListaPrecios"
+        Me.btnbuscarListaPrecios.Size = New System.Drawing.Size(49, 22)
+        Me.btnbuscarListaPrecios.TabIndex = 115
+        Me.btnbuscarListaPrecios.UseVisualStyleBackColor = False
         '
-        'ComboBox1
+        'btnbuscarCtaContado
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(210, 376)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(178, 24)
-        Me.ComboBox1.TabIndex = 113
+        Me.btnbuscarCtaContado.BackColor = System.Drawing.Color.White
+        Me.btnbuscarCtaContado.BackgroundImage = CType(resources.GetObject("btnbuscarCtaContado.BackgroundImage"), System.Drawing.Image)
+        Me.btnbuscarCtaContado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnbuscarCtaContado.FlatAppearance.BorderSize = 0
+        Me.btnbuscarCtaContado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnbuscarCtaContado.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnbuscarCtaContado.Location = New System.Drawing.Point(163, 152)
+        Me.btnbuscarCtaContado.Name = "btnbuscarCtaContado"
+        Me.btnbuscarCtaContado.Size = New System.Drawing.Size(49, 22)
+        Me.btnbuscarCtaContado.TabIndex = 117
+        Me.btnbuscarCtaContado.UseVisualStyleBackColor = False
         '
-        'RichTextBox1
+        'txtcodigoCtaContado
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(609, 121)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(179, 67)
-        Me.RichTextBox1.TabIndex = 114
-        Me.RichTextBox1.Text = ""
+        Me.txtcodigoCtaContado.Location = New System.Drawing.Point(220, 152)
+        Me.txtcodigoCtaContado.Name = "txtcodigoCtaContado"
+        Me.txtcodigoCtaContado.Size = New System.Drawing.Size(117, 22)
+        Me.txtcodigoCtaContado.TabIndex = 116
         '
-        'Button5
+        'btncuotas
         '
-        Me.Button5.BackColor = System.Drawing.Color.White
-        Me.Button5.BackgroundImage = CType(resources.GetObject("Button5.BackgroundImage"), System.Drawing.Image)
-        Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(209, 291)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(49, 22)
-        Me.Button5.TabIndex = 115
-        Me.Button5.UseVisualStyleBackColor = False
+        Me.btncuotas.BackColor = System.Drawing.Color.White
+        Me.btncuotas.BackgroundImage = CType(resources.GetObject("btncuotas.BackgroundImage"), System.Drawing.Image)
+        Me.btncuotas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btncuotas.FlatAppearance.BorderSize = 0
+        Me.btncuotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncuotas.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncuotas.Location = New System.Drawing.Point(517, 152)
+        Me.btncuotas.Name = "btncuotas"
+        Me.btncuotas.Size = New System.Drawing.Size(49, 22)
+        Me.btncuotas.TabIndex = 119
+        Me.btncuotas.UseVisualStyleBackColor = False
         '
-        'Button2
+        'txtcodigoCuotas
         '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(209, 336)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(49, 22)
-        Me.Button2.TabIndex = 117
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.txtcodigoCuotas.Location = New System.Drawing.Point(574, 152)
+        Me.txtcodigoCuotas.Name = "txtcodigoCuotas"
+        Me.txtcodigoCuotas.Size = New System.Drawing.Size(117, 22)
+        Me.txtcodigoCuotas.TabIndex = 118
         '
-        'TextBox8
+        'btnCtaVentas
         '
-        Me.TextBox8.Location = New System.Drawing.Point(271, 336)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(117, 22)
-        Me.TextBox8.TabIndex = 116
+        Me.btnCtaVentas.BackColor = System.Drawing.Color.White
+        Me.btnCtaVentas.BackgroundImage = CType(resources.GetObject("btnCtaVentas.BackgroundImage"), System.Drawing.Image)
+        Me.btnCtaVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCtaVentas.FlatAppearance.BorderSize = 0
+        Me.btnCtaVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCtaVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCtaVentas.Location = New System.Drawing.Point(517, 180)
+        Me.btnCtaVentas.Name = "btnCtaVentas"
+        Me.btnCtaVentas.Size = New System.Drawing.Size(49, 22)
+        Me.btnCtaVentas.TabIndex = 121
+        Me.btnCtaVentas.UseVisualStyleBackColor = False
         '
-        'Button6
+        'txtcodigoCtaVentas
         '
-        Me.Button6.BackColor = System.Drawing.Color.White
-        Me.Button6.BackgroundImage = CType(resources.GetObject("Button6.BackgroundImage"), System.Drawing.Image)
-        Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(609, 289)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(49, 22)
-        Me.Button6.TabIndex = 119
-        Me.Button6.UseVisualStyleBackColor = False
+        Me.txtcodigoCtaVentas.Location = New System.Drawing.Point(574, 180)
+        Me.txtcodigoCtaVentas.Name = "txtcodigoCtaVentas"
+        Me.txtcodigoCtaVentas.Size = New System.Drawing.Size(117, 22)
+        Me.txtcodigoCtaVentas.TabIndex = 120
         '
-        'TextBox6
+        'btncancelar
         '
-        Me.TextBox6.Location = New System.Drawing.Point(671, 289)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(117, 22)
-        Me.TextBox6.TabIndex = 118
+        Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncancelar.Location = New System.Drawing.Point(600, 224)
+        Me.btncancelar.Name = "btncancelar"
+        Me.btncancelar.Size = New System.Drawing.Size(90, 35)
+        Me.btncancelar.TabIndex = 126
+        Me.btncancelar.Text = "Cancelar"
+        Me.btncancelar.UseVisualStyleBackColor = False
         '
-        'Button7
+        'btncrear
         '
-        Me.Button7.BackColor = System.Drawing.Color.White
-        Me.Button7.BackgroundImage = CType(resources.GetObject("Button7.BackgroundImage"), System.Drawing.Image)
-        Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button7.FlatAppearance.BorderSize = 0
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Location = New System.Drawing.Point(609, 336)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(49, 22)
-        Me.Button7.TabIndex = 121
-        Me.Button7.UseVisualStyleBackColor = False
+        Me.btncrear.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btncrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncrear.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncrear.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncrear.Location = New System.Drawing.Point(512, 224)
+        Me.btncrear.Name = "btncrear"
+        Me.btncrear.Size = New System.Drawing.Size(78, 35)
+        Me.btncrear.TabIndex = 125
+        Me.btncrear.Text = "Crear"
+        Me.btncrear.UseVisualStyleBackColor = False
         '
-        'TextBox7
-        '
-        Me.TextBox7.Location = New System.Drawing.Point(671, 336)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(117, 22)
-        Me.TextBox7.TabIndex = 120
-        '
-        'terminosPago
+        'TerminosPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(846, 444)
-        Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.TextBox8)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.RichTextBox1)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox10)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox9)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Name = "terminosPago"
+        Me.ClientSize = New System.Drawing.Size(706, 270)
+        Me.Controls.Add(Me.btncancelar)
+        Me.Controls.Add(Me.btncrear)
+        Me.Controls.Add(Me.btnCtaVentas)
+        Me.Controls.Add(Me.txtcodigoCtaVentas)
+        Me.Controls.Add(Me.btncuotas)
+        Me.Controls.Add(Me.txtcodigoCuotas)
+        Me.Controls.Add(Me.btnbuscarCtaContado)
+        Me.Controls.Add(Me.txtcodigoCtaContado)
+        Me.Controls.Add(Me.btnbuscarListaPrecios)
+        Me.Controls.Add(Me.rtxtdescripcion)
+        Me.Controls.Add(Me.cbxtipo)
+        Me.Controls.Add(Me.lblctaVentas)
+        Me.Controls.Add(Me.lbltipo)
+        Me.Controls.Add(Me.lblcuotas)
+        Me.Controls.Add(Me.lblctaContado)
+        Me.Controls.Add(Me.txtcodigo)
+        Me.Controls.Add(Me.lbldescAcordado)
+        Me.Controls.Add(Me.lbldescripcion)
+        Me.Controls.Add(Me.txtdescAcordado)
+        Me.Controls.Add(Me.lbldiasDescAcordado)
+        Me.Controls.Add(Me.lblcodigo)
+        Me.Controls.Add(Me.txtdiasDescAcordado)
+        Me.Controls.Add(Me.txtdiasNeto)
+        Me.Controls.Add(Me.lbldescAcordado2)
+        Me.Controls.Add(Me.txtdescAcordado2)
+        Me.Controls.Add(Me.lbldiasDescAcordado2)
+        Me.Controls.Add(Me.lbldiasNeto)
+        Me.Controls.Add(Me.txtdiasDescAcordado2)
+        Me.Controls.Add(Me.lbllistaPrecios)
+        Me.Controls.Add(Me.txtcodigoListaPrecios)
+        Me.Name = "TerminosPago"
         Me.Text = "Términos de Pago"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label11 As Label
-    Friend WithEvents TextBox10 As TextBox
-    Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents RichTextBox1 As RichTextBox
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents Button6 As Button
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents Button7 As Button
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents lbldescripcion As Label
+    Friend WithEvents txtcodigo As TextBox
+    Friend WithEvents lblcodigo As Label
+    Friend WithEvents txtdiasNeto As TextBox
+    Friend WithEvents lbldiasNeto As Label
+    Friend WithEvents txtcodigoListaPrecios As TextBox
+    Friend WithEvents lbllistaPrecios As Label
+    Friend WithEvents txtdiasDescAcordado2 As TextBox
+    Friend WithEvents lbldiasDescAcordado2 As Label
+    Friend WithEvents txtdescAcordado2 As TextBox
+    Friend WithEvents lbldescAcordado2 As Label
+    Friend WithEvents txtdiasDescAcordado As TextBox
+    Friend WithEvents lbldiasDescAcordado As Label
+    Friend WithEvents lbldescAcordado As Label
+    Friend WithEvents lblctaVentas As Label
+    Friend WithEvents lbltipo As Label
+    Friend WithEvents lblcuotas As Label
+    Friend WithEvents lblctaContado As Label
+    Friend WithEvents cbxtipo As ComboBox
+    Friend WithEvents rtxtdescripcion As RichTextBox
+    Friend WithEvents btnbuscarListaPrecios As Button
+    Friend WithEvents btnbuscarCtaContado As Button
+    Friend WithEvents txtcodigoCtaContado As TextBox
+    Friend WithEvents btncuotas As Button
+    Friend WithEvents txtcodigoCuotas As TextBox
+    Friend WithEvents btnCtaVentas As Button
+    Friend WithEvents txtcodigoCtaVentas As TextBox
+    Friend WithEvents btncancelar As Button
+    Friend WithEvents btncrear As Button
+    Friend WithEvents txtdescAcordado As TextBox
 End Class
