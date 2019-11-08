@@ -22,122 +22,122 @@ Partial Class BuscarSede
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
+        Me.lblnombre = New System.Windows.Forms.Label()
+        Me.btnbuscar = New System.Windows.Forms.Button()
+        Me.btncancelar = New System.Windows.Forms.Button()
+        Me.btncrear = New System.Windows.Forms.Button()
+        Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TextBox1
+        'txtnombre
         '
-        Me.TextBox1.Location = New System.Drawing.Point(120, 104)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(262, 22)
-        Me.TextBox1.TabIndex = 32
+        Me.txtnombre.Location = New System.Drawing.Point(76, 16)
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(192, 22)
+        Me.txtnombre.TabIndex = 32
         '
-        'Label1
+        'lblnombre
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(37, 107)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(58, 17)
-        Me.Label1.TabIndex = 31
-        Me.Label1.Text = "Nombre"
+        Me.lblnombre.AutoSize = True
+        Me.lblnombre.Location = New System.Drawing.Point(12, 19)
+        Me.lblnombre.Name = "lblnombre"
+        Me.lblnombre.Size = New System.Drawing.Size(58, 17)
+        Me.lblnombre.TabIndex = 31
+        Me.lblnombre.Text = "Nombre"
         '
-        'Button2
+        'btnbuscar
         '
-        Me.Button2.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button2.Location = New System.Drawing.Point(438, 98)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(138, 35)
-        Me.Button2.TabIndex = 30
-        Me.Button2.Text = "Buscar"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btnbuscar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnbuscar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnbuscar.Location = New System.Drawing.Point(274, 10)
+        Me.btnbuscar.Name = "btnbuscar"
+        Me.btnbuscar.Size = New System.Drawing.Size(78, 35)
+        Me.btnbuscar.TabIndex = 30
+        Me.btnbuscar.Text = "Buscar"
+        Me.btnbuscar.UseVisualStyleBackColor = False
         '
-        'Button3
+        'btncancelar
         '
-        Me.Button3.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button3.Location = New System.Drawing.Point(438, 33)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(138, 35)
-        Me.Button3.TabIndex = 29
-        Me.Button3.Text = "Cancelar"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncancelar.Location = New System.Drawing.Point(358, 10)
+        Me.btncancelar.Name = "btncancelar"
+        Me.btncancelar.Size = New System.Drawing.Size(90, 35)
+        Me.btncancelar.TabIndex = 29
+        Me.btncancelar.Text = "Cancelar"
+        Me.btncancelar.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btncrear
         '
-        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button1.Location = New System.Drawing.Point(62, 33)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(138, 35)
-        Me.Button1.TabIndex = 28
-        Me.Button1.Text = "Crear"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btncrear.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btncrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncrear.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncrear.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncrear.Location = New System.Drawing.Point(454, 10)
+        Me.btncrear.Name = "btncrear"
+        Me.btncrear.Size = New System.Drawing.Size(78, 35)
+        Me.btncrear.TabIndex = 28
+        Me.btncrear.Text = "Crear"
+        Me.btncrear.UseVisualStyleBackColor = False
         '
-        'DataGridView1
+        'dgbtabla
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Nombre})
-        Me.DataGridView1.Location = New System.Drawing.Point(40, 162)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(536, 150)
-        Me.DataGridView1.TabIndex = 27
+        Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Nombre})
+        Me.dgbtabla.Location = New System.Drawing.Point(12, 51)
+        Me.dgbtabla.Name = "dgbtabla"
+        Me.dgbtabla.RowHeadersWidth = 51
+        Me.dgbtabla.RowTemplate.Height = 24
+        Me.dgbtabla.Size = New System.Drawing.Size(520, 150)
+        Me.dgbtabla.TabIndex = 27
         '
         'Codigo
         '
         Me.Codigo.HeaderText = "Código"
         Me.Codigo.MinimumWidth = 6
         Me.Codigo.Name = "Codigo"
-        Me.Codigo.Width = 125
+        Me.Codigo.Width = 122
         '
         'Nombre
         '
         Me.Nombre.HeaderText = "Nombre"
         Me.Nombre.MinimumWidth = 6
         Me.Nombre.Name = "Nombre"
-        Me.Nombre.Width = 125
+        Me.Nombre.Width = 215
         '
         'BuscarSede
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(619, 346)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.ClientSize = New System.Drawing.Size(547, 216)
+        Me.Controls.Add(Me.txtnombre)
+        Me.Controls.Add(Me.lblnombre)
+        Me.Controls.Add(Me.btnbuscar)
+        Me.Controls.Add(Me.btncancelar)
+        Me.Controls.Add(Me.btncrear)
+        Me.Controls.Add(Me.dgbtabla)
         Me.Name = "BuscarSede"
         Me.Text = "Buscar Sede"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents txtnombre As TextBox
+    Friend WithEvents lblnombre As Label
+    Friend WithEvents btnbuscar As Button
+    Friend WithEvents btncancelar As Button
+    Friend WithEvents btncrear As Button
+    Friend WithEvents dgbtabla As DataGridView
     Friend WithEvents Codigo As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
 End Class

@@ -22,157 +22,142 @@ Partial Class TipoObjeto
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtnombre = New System.Windows.Forms.TextBox()
-        Me.lblnombre = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.lbllongitud = New System.Windows.Forms.Label()
+        Me.txtjerarquia = New System.Windows.Forms.TextBox()
+        Me.lbljerarquia = New System.Windows.Forms.Label()
+        Me.lbldescripcion = New System.Windows.Forms.Label()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
+        Me.lblcodigo = New System.Windows.Forms.Label()
+        Me.txtlongitud = New System.Windows.Forms.TextBox()
+        Me.btncancelar = New System.Windows.Forms.Button()
+        Me.btncrear = New System.Windows.Forms.Button()
+        Me.rtxtdescripcion = New System.Windows.Forms.RichTextBox()
         Me.SuspendLayout()
         '
-        'Label1
+        'lbllongitud
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(370, 192)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(63, 17)
-        Me.Label1.TabIndex = 132
-        Me.Label1.Text = "Longitud"
+        Me.lbllongitud.AutoSize = True
+        Me.lbllongitud.Location = New System.Drawing.Point(30, 170)
+        Me.lbllongitud.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbllongitud.Name = "lbllongitud"
+        Me.lbllongitud.Size = New System.Drawing.Size(63, 17)
+        Me.lbllongitud.TabIndex = 132
+        Me.lbllongitud.Text = "Longitud"
         '
-        'TextBox12
+        'txtjerarquia
         '
-        Me.TextBox12.Location = New System.Drawing.Point(137, 189)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox12.TabIndex = 130
+        Me.txtjerarquia.Location = New System.Drawing.Point(100, 142)
+        Me.txtjerarquia.Name = "txtjerarquia"
+        Me.txtjerarquia.Size = New System.Drawing.Size(179, 22)
+        Me.txtjerarquia.TabIndex = 130
         '
-        'Label12
+        'lbljerarquia
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(40, 192)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(68, 17)
-        Me.Label12.TabIndex = 129
-        Me.Label12.Text = "Jerarquía"
+        Me.lbljerarquia.AutoSize = True
+        Me.lbljerarquia.Location = New System.Drawing.Point(25, 142)
+        Me.lbljerarquia.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbljerarquia.Name = "lbljerarquia"
+        Me.lbljerarquia.Size = New System.Drawing.Size(68, 17)
+        Me.lbljerarquia.TabIndex = 129
+        Me.lbljerarquia.Text = "Jerarquía"
         '
-        'txtnombre
+        'lbldescripcion
         '
-        Me.txtnombre.Location = New System.Drawing.Point(137, 143)
-        Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(499, 22)
-        Me.txtnombre.TabIndex = 128
+        Me.lbldescripcion.AutoSize = True
+        Me.lbldescripcion.Location = New System.Drawing.Point(13, 43)
+        Me.lbldescripcion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbldescripcion.Name = "lbldescripcion"
+        Me.lbldescripcion.Size = New System.Drawing.Size(82, 17)
+        Me.lbldescripcion.TabIndex = 127
+        Me.lbldescripcion.Text = "Descripción"
         '
-        'lblnombre
+        'txtcodigo
         '
-        Me.lblnombre.AutoSize = True
-        Me.lblnombre.Location = New System.Drawing.Point(26, 146)
-        Me.lblnombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblnombre.Name = "lblnombre"
-        Me.lblnombre.Size = New System.Drawing.Size(82, 17)
-        Me.lblnombre.TabIndex = 127
-        Me.lblnombre.Text = "Descripción"
+        Me.txtcodigo.Location = New System.Drawing.Point(100, 12)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(179, 22)
+        Me.txtcodigo.TabIndex = 123
         '
-        'Button4
+        'lblcodigo
         '
-        Me.Button4.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button4.Location = New System.Drawing.Point(451, 41)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(138, 35)
-        Me.Button4.TabIndex = 126
-        Me.Button4.Text = "Guardar"
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.lblcodigo.AutoSize = True
+        Me.lblcodigo.Location = New System.Drawing.Point(41, 15)
+        Me.lblcodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcodigo.Name = "lblcodigo"
+        Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodigo.TabIndex = 122
+        Me.lblcodigo.Text = "Código"
         '
-        'Button3
+        'txtlongitud
         '
-        Me.Button3.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button3.Location = New System.Drawing.Point(271, 41)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(138, 35)
-        Me.Button3.TabIndex = 125
-        Me.Button3.Text = "Cancelar"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.txtlongitud.Location = New System.Drawing.Point(100, 170)
+        Me.txtlongitud.Name = "txtlongitud"
+        Me.txtlongitud.Size = New System.Drawing.Size(179, 22)
+        Me.txtlongitud.TabIndex = 133
         '
-        'Button2
+        'btncancelar
         '
-        Me.Button2.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button2.Location = New System.Drawing.Point(92, 41)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(138, 35)
-        Me.Button2.TabIndex = 124
-        Me.Button2.Text = "Crear"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncancelar.Location = New System.Drawing.Point(152, 214)
+        Me.btncancelar.Name = "btncancelar"
+        Me.btncancelar.Size = New System.Drawing.Size(90, 35)
+        Me.btncancelar.TabIndex = 135
+        Me.btncancelar.Text = "Cancelar"
+        Me.btncancelar.UseVisualStyleBackColor = False
         '
-        'TextBox10
+        'btncrear
         '
-        Me.TextBox10.Location = New System.Drawing.Point(137, 99)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox10.TabIndex = 123
+        Me.btncrear.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btncrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncrear.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncrear.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncrear.Location = New System.Drawing.Point(64, 214)
+        Me.btncrear.Name = "btncrear"
+        Me.btncrear.Size = New System.Drawing.Size(78, 35)
+        Me.btncrear.TabIndex = 134
+        Me.btncrear.Text = "Crear"
+        Me.btncrear.UseVisualStyleBackColor = False
         '
-        'Label10
+        'rtxtdescripcion
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(56, 102)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(52, 17)
-        Me.Label10.TabIndex = 122
-        Me.Label10.Text = "Código"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(457, 189)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox1.TabIndex = 133
+        Me.rtxtdescripcion.Location = New System.Drawing.Point(100, 40)
+        Me.rtxtdescripcion.Name = "rtxtdescripcion"
+        Me.rtxtdescripcion.Size = New System.Drawing.Size(179, 96)
+        Me.rtxtdescripcion.TabIndex = 136
+        Me.rtxtdescripcion.Text = ""
         '
         'TipoObjeto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(673, 249)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox12)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.txtnombre)
-        Me.Controls.Add(Me.lblnombre)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.TextBox10)
-        Me.Controls.Add(Me.Label10)
+        Me.ClientSize = New System.Drawing.Size(305, 268)
+        Me.Controls.Add(Me.rtxtdescripcion)
+        Me.Controls.Add(Me.btncancelar)
+        Me.Controls.Add(Me.btncrear)
+        Me.Controls.Add(Me.txtlongitud)
+        Me.Controls.Add(Me.lbllongitud)
+        Me.Controls.Add(Me.txtjerarquia)
+        Me.Controls.Add(Me.lbljerarquia)
+        Me.Controls.Add(Me.lbldescripcion)
+        Me.Controls.Add(Me.txtcodigo)
+        Me.Controls.Add(Me.lblcodigo)
         Me.Name = "TipoObjeto"
         Me.Text = "TipoObjeto"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox12 As TextBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents txtnombre As TextBox
-    Friend WithEvents lblnombre As Label
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox10 As TextBox
-    Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents lbllongitud As Label
+    Friend WithEvents txtjerarquia As TextBox
+    Friend WithEvents lbljerarquia As Label
+    Friend WithEvents lbldescripcion As Label
+    Friend WithEvents txtcodigo As TextBox
+    Friend WithEvents lblcodigo As Label
+    Friend WithEvents txtlongitud As TextBox
+    Friend WithEvents btncancelar As Button
+    Friend WithEvents btncrear As Button
+    Friend WithEvents rtxtdescripcion As RichTextBox
 End Class

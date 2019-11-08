@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Documento
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class TipoClasificacion
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,40 +20,15 @@ Partial Class Documento
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.dgbtabla = New System.Windows.Forms.DataGridView()
-        Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.btncrear = New System.Windows.Forms.Button()
-        CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.txtcomentario = New System.Windows.Forms.TextBox()
+        Me.lblcomentario = New System.Windows.Forms.Label()
+        Me.lblcodigo = New System.Windows.Forms.Label()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
-        '
-        'dgbtabla
-        '
-        Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Descripcion})
-        Me.dgbtabla.Location = New System.Drawing.Point(12, 53)
-        Me.dgbtabla.Name = "dgbtabla"
-        Me.dgbtabla.RowHeadersWidth = 51
-        Me.dgbtabla.RowTemplate.Height = 24
-        Me.dgbtabla.Size = New System.Drawing.Size(451, 150)
-        Me.dgbtabla.TabIndex = 0
-        '
-        'Codigo
-        '
-        Me.Codigo.HeaderText = "Código"
-        Me.Codigo.MinimumWidth = 6
-        Me.Codigo.Name = "Codigo"
-        Me.Codigo.Width = 125
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripción"
-        Me.Descripcion.MinimumWidth = 6
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.Width = 215
         '
         'btncancelar
         '
@@ -61,10 +36,10 @@ Partial Class Documento
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(373, 12)
+        Me.btncancelar.Location = New System.Drawing.Point(296, 68)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(90, 35)
-        Me.btncancelar.TabIndex = 35
+        Me.btncancelar.TabIndex = 31
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
         '
@@ -74,31 +49,67 @@ Partial Class Documento
         Me.btncrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncrear.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncrear.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncrear.Location = New System.Drawing.Point(12, 12)
+        Me.btncrear.Location = New System.Drawing.Point(198, 68)
         Me.btncrear.Name = "btncrear"
         Me.btncrear.Size = New System.Drawing.Size(78, 35)
-        Me.btncrear.TabIndex = 34
+        Me.btncrear.TabIndex = 30
         Me.btncrear.Text = "Crear"
         Me.btncrear.UseVisualStyleBackColor = False
         '
-        'Documento
+        'txtcomentario
+        '
+        Me.txtcomentario.Location = New System.Drawing.Point(105, 40)
+        Me.txtcomentario.Name = "txtcomentario"
+        Me.txtcomentario.Size = New System.Drawing.Size(281, 22)
+        Me.txtcomentario.TabIndex = 32
+        '
+        'lblcomentario
+        '
+        Me.lblcomentario.AutoSize = True
+        Me.lblcomentario.Location = New System.Drawing.Point(12, 43)
+        Me.lblcomentario.Name = "lblcomentario"
+        Me.lblcomentario.Size = New System.Drawing.Size(80, 17)
+        Me.lblcomentario.TabIndex = 33
+        Me.lblcomentario.Text = "Comentario"
+        '
+        'lblcodigo
+        '
+        Me.lblcodigo.AutoSize = True
+        Me.lblcodigo.Location = New System.Drawing.Point(40, 15)
+        Me.lblcodigo.Name = "lblcodigo"
+        Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodigo.TabIndex = 35
+        Me.lblcodigo.Text = "Código"
+        '
+        'txtcodigo
+        '
+        Me.txtcodigo.Location = New System.Drawing.Point(105, 12)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(100, 22)
+        Me.txtcodigo.TabIndex = 34
+        '
+        'TipoClasificacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(479, 216)
+        Me.ClientSize = New System.Drawing.Size(408, 121)
+        Me.Controls.Add(Me.lblcodigo)
+        Me.Controls.Add(Me.txtcodigo)
+        Me.Controls.Add(Me.lblcomentario)
+        Me.Controls.Add(Me.txtcomentario)
         Me.Controls.Add(Me.btncancelar)
         Me.Controls.Add(Me.btncrear)
-        Me.Controls.Add(Me.dgbtabla)
-        Me.Name = "Documento"
-        Me.Text = "Documento"
-        CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Name = "TipoClasificacion"
+        Me.Text = "TipoClasificacion"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents dgbtabla As DataGridView
-    Friend WithEvents Codigo As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
     Friend WithEvents btncancelar As Button
     Friend WithEvents btncrear As Button
+    Friend WithEvents txtcomentario As TextBox
+    Friend WithEvents lblcomentario As Label
+    Friend WithEvents lblcodigo As Label
+    Friend WithEvents txtcodigo As TextBox
 End Class

@@ -136,6 +136,12 @@
     <Compile Include="presentacion\BuscarTerminoPago.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\ClasificacionContacto.Designer.vb">
+      <DependentUpon>ClasificacionContacto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\ClasificacionContacto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\CrearCliente.Designer.vb">
       <DependentUpon>CrearCliente.vb</DependentUpon>
     </Compile>
@@ -214,10 +220,16 @@
     <Compile Include="presentacion\Sucursal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\terminosPago.Designer.vb">
-      <DependentUpon>terminosPago.vb</DependentUpon>
+    <Compile Include="presentacion\TerminosPago.Designer.vb">
+      <DependentUpon>TerminosPago.vb</DependentUpon>
     </Compile>
-    <Compile Include="presentacion\terminosPago.vb">
+    <Compile Include="presentacion\TerminosPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\TipoClasificacion.Designer.vb">
+      <DependentUpon>TipoClasificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\TipoClasificacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\TipoDeposito.Designer.vb">
@@ -261,6 +273,9 @@
     <EmbeddedResource Include="presentacion\BuscarTerminoPago.resx">
       <DependentUpon>BuscarTerminoPago.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\ClasificacionContacto.resx">
+      <DependentUpon>ClasificacionContacto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\CrearCliente.resx">
       <DependentUpon>CrearCliente.vb</DependentUpon>
     </EmbeddedResource>
@@ -297,8 +312,11 @@
     <EmbeddedResource Include="presentacion\Sucursal.resx">
       <DependentUpon>Sucursal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\terminosPago.resx">
-      <DependentUpon>terminosPago.vb</DependentUpon>
+    <EmbeddedResource Include="presentacion\TerminosPago.resx">
+      <DependentUpon>TerminosPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\TipoClasificacion.resx">
+      <DependentUpon>TipoClasificacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\TipoDeposito.resx">
       <DependentUpon>TipoDeposito.vb</DependentUpon>
