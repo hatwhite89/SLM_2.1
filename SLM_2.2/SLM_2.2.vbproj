@@ -95,6 +95,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="negocio\Class1.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -118,7 +119,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="conexion\" />
-    <Folder Include="negocio\" />
     <Folder Include="presentacion\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
