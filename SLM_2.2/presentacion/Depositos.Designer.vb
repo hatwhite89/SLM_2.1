@@ -104,19 +104,19 @@ Partial Class frmDeposito
         'ListarDepositosToolStripMenuItem
         '
         Me.ListarDepositosToolStripMenuItem.Name = "ListarDepositosToolStripMenuItem"
-        Me.ListarDepositosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ListarDepositosToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.ListarDepositosToolStripMenuItem.Text = "Crear Asiento"
         '
         'CerrarToolStripMenuItem
         '
         Me.CerrarToolStripMenuItem.Name = "CerrarToolStripMenuItem"
-        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.CerrarToolStripMenuItem.Text = "Listar Depositos"
         '
         'CerrarToolStripMenuItem1
         '
         Me.CerrarToolStripMenuItem1.Name = "CerrarToolStripMenuItem1"
-        Me.CerrarToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarToolStripMenuItem1.Size = New System.Drawing.Size(157, 22)
         Me.CerrarToolStripMenuItem1.Text = "Cerrar"
         '
         'txtNro
@@ -156,7 +156,7 @@ Partial Class frmDeposito
         '
         Me.txtFormaPago.Location = New System.Drawing.Point(91, 83)
         Me.txtFormaPago.Name = "txtFormaPago"
-        Me.txtFormaPago.Size = New System.Drawing.Size(45, 20)
+        Me.txtFormaPago.Size = New System.Drawing.Size(70, 20)
         Me.txtFormaPago.TabIndex = 34
         '
         'lblContado

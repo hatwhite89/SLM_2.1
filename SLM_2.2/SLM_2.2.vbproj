@@ -142,18 +142,6 @@
     <Compile Include="presentacion\CrearCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\Deposito Bancario.Designer.vb">
-      <DependentUpon>Deposito Bancario.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\Deposito Bancario.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="presentacion\Deposito Tarjeta.Designer.vb">
-      <DependentUpon>Deposito Tarjeta.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\Deposito Tarjeta.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="presentacion\Depositos.Designer.vb">
       <DependentUpon>Depositos.vb</DependentUpon>
     </Compile>
@@ -200,6 +188,12 @@
       <DependentUpon>Medico.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\Medico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\MenuConta.Designer.vb">
+      <DependentUpon>MenuConta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\MenuConta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\Pagos.Designer.vb">
@@ -270,9 +264,6 @@
     <EmbeddedResource Include="presentacion\CrearCliente.resx">
       <DependentUpon>CrearCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\Deposito Tarjeta.resx">
-      <DependentUpon>Deposito Tarjeta.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\Depositos.resx">
       <DependentUpon>Depositos.vb</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\Medico.resx">
       <DependentUpon>Medico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\MenuConta.resx">
+      <DependentUpon>MenuConta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\Pagos.resx">
       <DependentUpon>Pagos.vb</DependentUpon>

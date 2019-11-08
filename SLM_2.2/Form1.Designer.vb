@@ -22,29 +22,50 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Me.btnContabilidad = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Button1
+        'btnContabilidad
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Prueba"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnContabilidad.BackColor = System.Drawing.Color.Transparent
+        Me.btnContabilidad.BackgroundImage = CType(resources.GetObject("btnContabilidad.BackgroundImage"), System.Drawing.Image)
+        Me.btnContabilidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnContabilidad.FlatAppearance.BorderSize = 0
+        Me.btnContabilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnContabilidad.Location = New System.Drawing.Point(12, 12)
+        Me.btnContabilidad.Name = "btnContabilidad"
+        Me.btnContabilidad.Size = New System.Drawing.Size(60, 57)
+        Me.btnContabilidad.TabIndex = 0
+        Me.btnContabilidad.UseVisualStyleBackColor = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(12, 69)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(65, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Contabilidad"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(414, 309)
-        Me.Controls.Add(Me.Button1)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(473, 382)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnContabilidad)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Medical Laboratory System"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnContabilidad As Button
+    Friend WithEvents Label1 As Label
 End Class

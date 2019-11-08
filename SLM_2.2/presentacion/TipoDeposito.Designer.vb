@@ -26,6 +26,7 @@ Partial Class frmTipoDeposito
         Me.btnTarjeta = New System.Windows.Forms.Button()
         Me.btnDeposito = New System.Windows.Forms.Button()
         Me.btnRegresar = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnTarjeta
@@ -35,7 +36,7 @@ Partial Class frmTipoDeposito
         Me.btnTarjeta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnTarjeta.FlatAppearance.BorderSize = 0
         Me.btnTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTarjeta.Location = New System.Drawing.Point(12, 31)
+        Me.btnTarjeta.Location = New System.Drawing.Point(12, 49)
         Me.btnTarjeta.Name = "btnTarjeta"
         Me.btnTarjeta.Size = New System.Drawing.Size(115, 118)
         Me.btnTarjeta.TabIndex = 0
@@ -48,7 +49,7 @@ Partial Class frmTipoDeposito
         Me.btnDeposito.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnDeposito.FlatAppearance.BorderSize = 0
         Me.btnDeposito.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDeposito.Location = New System.Drawing.Point(133, 29)
+        Me.btnDeposito.Location = New System.Drawing.Point(133, 49)
         Me.btnDeposito.Name = "btnDeposito"
         Me.btnDeposito.Size = New System.Drawing.Size(115, 118)
         Me.btnDeposito.TabIndex = 1
@@ -67,13 +68,23 @@ Partial Class frmTipoDeposito
         Me.btnRegresar.Text = "X"
         Me.btnRegresar.UseVisualStyleBackColor = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(51, 31)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(152, 13)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Seleccione el tipo de depósito:"
+        '
         'frmTipoDeposito
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(260, 158)
+        Me.ClientSize = New System.Drawing.Size(260, 179)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnRegresar)
         Me.Controls.Add(Me.btnDeposito)
         Me.Controls.Add(Me.btnTarjeta)
@@ -81,10 +92,12 @@ Partial Class frmTipoDeposito
         Me.Name = "frmTipoDeposito"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents btnTarjeta As Button
     Friend WithEvents btnDeposito As Button
     Friend WithEvents btnRegresar As Button
+    Friend WithEvents Label1 As Label
 End Class
