@@ -23,71 +23,70 @@ Partial Class Medico
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Medico))
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
+        Me.lblcodigo = New System.Windows.Forms.Label()
+        Me.txtcelular = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.txttelefono = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtcorreo = New System.Windows.Forms.TextBox()
         Me.lblcorreo = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtnombre = New System.Windows.Forms.TextBox()
+        Me.txtcorreo2 = New System.Windows.Forms.TextBox()
+        Me.lblcorreo2 = New System.Windows.Forms.Label()
+        Me.btnbuscarEspecialidad = New System.Windows.Forms.Button()
+        Me.txtcodigoEspecialidad = New System.Windows.Forms.TextBox()
+        Me.lblespecialidad = New System.Windows.Forms.Label()
+        Me.txtnombreCompleto = New System.Windows.Forms.TextBox()
         Me.lblnombre = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btncancelar = New System.Windows.Forms.Button()
+        Me.btncrear = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'TextBox10
+        'txtcodigo
         '
-        Me.TextBox10.Location = New System.Drawing.Point(185, 85)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox10.TabIndex = 88
+        Me.txtcodigo.Location = New System.Drawing.Point(133, 22)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(179, 22)
+        Me.txtcodigo.TabIndex = 88
         '
-        'Label10
+        'lblcodigo
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(104, 88)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(52, 17)
-        Me.Label10.TabIndex = 87
-        Me.Label10.Text = "Código"
+        Me.lblcodigo.AutoSize = True
+        Me.lblcodigo.Location = New System.Drawing.Point(74, 22)
+        Me.lblcodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcodigo.Name = "lblcodigo"
+        Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodigo.TabIndex = 87
+        Me.lblcodigo.Text = "Código"
         '
-        'TextBox7
+        'txtcelular
         '
-        Me.TextBox7.Location = New System.Drawing.Point(515, 212)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox7.TabIndex = 92
+        Me.txtcelular.Location = New System.Drawing.Point(390, 108)
+        Me.txtcelular.Name = "txtcelular"
+        Me.txtcelular.Size = New System.Drawing.Size(179, 22)
+        Me.txtcelular.TabIndex = 92
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(429, 215)
+        Me.Label7.Location = New System.Drawing.Point(331, 111)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(52, 17)
         Me.Label7.TabIndex = 91
         Me.Label7.Text = "Celular"
         '
-        'TextBox6
+        'txttelefono
         '
-        Me.TextBox6.Location = New System.Drawing.Point(515, 168)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox6.TabIndex = 90
+        Me.txttelefono.Location = New System.Drawing.Point(390, 80)
+        Me.txttelefono.Name = "txttelefono"
+        Me.txttelefono.Size = New System.Drawing.Size(179, 22)
+        Me.txttelefono.TabIndex = 90
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(417, 171)
+        Me.Label6.Location = New System.Drawing.Point(319, 83)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(64, 17)
@@ -96,7 +95,7 @@ Partial Class Medico
         '
         'txtcorreo
         '
-        Me.txtcorreo.Location = New System.Drawing.Point(185, 168)
+        Me.txtcorreo.Location = New System.Drawing.Point(132, 78)
         Me.txtcorreo.Name = "txtcorreo"
         Me.txtcorreo.Size = New System.Drawing.Size(179, 22)
         Me.txtcorreo.TabIndex = 94
@@ -104,141 +103,127 @@ Partial Class Medico
         'lblcorreo
         '
         Me.lblcorreo.AutoSize = True
-        Me.lblcorreo.Location = New System.Drawing.Point(101, 171)
+        Me.lblcorreo.Location = New System.Drawing.Point(74, 78)
         Me.lblcorreo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcorreo.Name = "lblcorreo"
         Me.lblcorreo.Size = New System.Drawing.Size(51, 17)
         Me.lblcorreo.TabIndex = 93
         Me.lblcorreo.Text = "Correo"
         '
-        'TextBox8
+        'txtcorreo2
         '
-        Me.TextBox8.Location = New System.Drawing.Point(185, 212)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox8.TabIndex = 96
+        Me.txtcorreo2.Location = New System.Drawing.Point(133, 106)
+        Me.txtcorreo2.Name = "txtcorreo2"
+        Me.txtcorreo2.Size = New System.Drawing.Size(179, 22)
+        Me.txtcorreo2.TabIndex = 96
         '
-        'Label8
+        'lblcorreo2
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(93, 215)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(63, 17)
-        Me.Label8.TabIndex = 95
-        Me.Label8.Text = "Correo 2"
+        Me.lblcorreo2.AutoSize = True
+        Me.lblcorreo2.Location = New System.Drawing.Point(62, 109)
+        Me.lblcorreo2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcorreo2.Name = "lblcorreo2"
+        Me.lblcorreo2.Size = New System.Drawing.Size(63, 17)
+        Me.lblcorreo2.TabIndex = 95
+        Me.lblcorreo2.Text = "Correo 2"
         '
-        'Button1
+        'btnbuscarEspecialidad
         '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(184, 256)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(49, 22)
-        Me.Button1.TabIndex = 105
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnbuscarEspecialidad.BackColor = System.Drawing.Color.White
+        Me.btnbuscarEspecialidad.BackgroundImage = CType(resources.GetObject("btnbuscarEspecialidad.BackgroundImage"), System.Drawing.Image)
+        Me.btnbuscarEspecialidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnbuscarEspecialidad.FlatAppearance.BorderSize = 0
+        Me.btnbuscarEspecialidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnbuscarEspecialidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnbuscarEspecialidad.Location = New System.Drawing.Point(131, 134)
+        Me.btnbuscarEspecialidad.Name = "btnbuscarEspecialidad"
+        Me.btnbuscarEspecialidad.Size = New System.Drawing.Size(49, 22)
+        Me.btnbuscarEspecialidad.TabIndex = 105
+        Me.btnbuscarEspecialidad.UseVisualStyleBackColor = False
         '
-        'TextBox12
+        'txtcodigoEspecialidad
         '
-        Me.TextBox12.Location = New System.Drawing.Point(239, 256)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(125, 22)
-        Me.TextBox12.TabIndex = 104
+        Me.txtcodigoEspecialidad.Location = New System.Drawing.Point(186, 134)
+        Me.txtcodigoEspecialidad.Name = "txtcodigoEspecialidad"
+        Me.txtcodigoEspecialidad.Size = New System.Drawing.Size(125, 22)
+        Me.txtcodigoEspecialidad.TabIndex = 104
         '
-        'Label12
+        'lblespecialidad
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(68, 261)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(88, 17)
-        Me.Label12.TabIndex = 103
-        Me.Label12.Text = "Especialidad"
+        Me.lblespecialidad.AutoSize = True
+        Me.lblespecialidad.Location = New System.Drawing.Point(36, 137)
+        Me.lblespecialidad.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblespecialidad.Name = "lblespecialidad"
+        Me.lblespecialidad.Size = New System.Drawing.Size(88, 17)
+        Me.lblespecialidad.TabIndex = 103
+        Me.lblespecialidad.Text = "Especialidad"
         '
-        'txtnombre
+        'txtnombreCompleto
         '
-        Me.txtnombre.Location = New System.Drawing.Point(185, 127)
-        Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(509, 22)
-        Me.txtnombre.TabIndex = 107
+        Me.txtnombreCompleto.Location = New System.Drawing.Point(133, 50)
+        Me.txtnombreCompleto.Name = "txtnombreCompleto"
+        Me.txtnombreCompleto.Size = New System.Drawing.Size(435, 22)
+        Me.txtnombreCompleto.TabIndex = 107
         '
         'lblnombre
         '
         Me.lblnombre.AutoSize = True
-        Me.lblnombre.Location = New System.Drawing.Point(35, 130)
+        Me.lblnombre.Location = New System.Drawing.Point(5, 53)
         Me.lblnombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblnombre.Name = "lblnombre"
         Me.lblnombre.Size = New System.Drawing.Size(121, 17)
         Me.lblnombre.TabIndex = 106
         Me.lblnombre.Text = "Nombre Completo"
         '
-        'Button4
+        'btncancelar
         '
-        Me.Button4.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button4.Location = New System.Drawing.Point(484, 26)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(138, 35)
-        Me.Button4.TabIndex = 110
-        Me.Button4.Text = "Guardar"
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncancelar.Location = New System.Drawing.Point(478, 161)
+        Me.btncancelar.Name = "btncancelar"
+        Me.btncancelar.Size = New System.Drawing.Size(90, 35)
+        Me.btncancelar.TabIndex = 109
+        Me.btncancelar.Text = "Cancelar"
+        Me.btncancelar.UseVisualStyleBackColor = False
         '
-        'Button3
+        'btncrear
         '
-        Me.Button3.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button3.Location = New System.Drawing.Point(304, 26)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(138, 35)
-        Me.Button3.TabIndex = 109
-        Me.Button3.Text = "Cancelar"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button2.Location = New System.Drawing.Point(125, 26)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(138, 35)
-        Me.Button2.TabIndex = 108
-        Me.Button2.Text = "Crear"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btncrear.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btncrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncrear.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncrear.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncrear.Location = New System.Drawing.Point(390, 161)
+        Me.btncrear.Name = "btncrear"
+        Me.btncrear.Size = New System.Drawing.Size(78, 35)
+        Me.btncrear.TabIndex = 108
+        Me.btncrear.Text = "Crear"
+        Me.btncrear.UseVisualStyleBackColor = False
         '
         'Medico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(740, 311)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.txtnombre)
+        Me.ClientSize = New System.Drawing.Size(586, 212)
+        Me.Controls.Add(Me.btncancelar)
+        Me.Controls.Add(Me.btncrear)
+        Me.Controls.Add(Me.txtnombreCompleto)
         Me.Controls.Add(Me.lblnombre)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox12)
-        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.btnbuscarEspecialidad)
+        Me.Controls.Add(Me.txtcodigoEspecialidad)
+        Me.Controls.Add(Me.lblespecialidad)
         Me.Controls.Add(Me.txtcorreo)
         Me.Controls.Add(Me.lblcorreo)
-        Me.Controls.Add(Me.TextBox8)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TextBox7)
+        Me.Controls.Add(Me.txtcorreo2)
+        Me.Controls.Add(Me.lblcorreo2)
+        Me.Controls.Add(Me.txtcelular)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.TextBox6)
+        Me.Controls.Add(Me.txttelefono)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TextBox10)
-        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.txtcodigo)
+        Me.Controls.Add(Me.lblcodigo)
         Me.Name = "Medico"
         Me.Text = "Medico"
         Me.ResumeLayout(False)
@@ -246,22 +231,21 @@ Partial Class Medico
 
     End Sub
 
-    Friend WithEvents TextBox10 As TextBox
-    Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents txtcodigo As TextBox
+    Friend WithEvents lblcodigo As Label
+    Friend WithEvents txtcelular As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents txttelefono As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtcorreo As TextBox
     Friend WithEvents lblcorreo As Label
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox12 As TextBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents txtnombre As TextBox
+    Friend WithEvents txtcorreo2 As TextBox
+    Friend WithEvents lblcorreo2 As Label
+    Friend WithEvents btnbuscarEspecialidad As Button
+    Friend WithEvents txtcodigoEspecialidad As TextBox
+    Friend WithEvents lblespecialidad As Label
+    Friend WithEvents txtnombreCompleto As TextBox
     Friend WithEvents lblnombre As Label
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btncancelar As Button
+    Friend WithEvents btncrear As Button
 End Class

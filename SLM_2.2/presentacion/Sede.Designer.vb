@@ -22,278 +22,262 @@ Partial Class Sede
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBox4 = New System.Windows.Forms.RichTextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
+        Me.lbldireccion1 = New System.Windows.Forms.Label()
+        Me.txtcontacto = New System.Windows.Forms.TextBox()
+        Me.lbldireccion2 = New System.Windows.Forms.Label()
+        Me.lblcodigo = New System.Windows.Forms.Label()
+        Me.txtcorreo = New System.Windows.Forms.TextBox()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
+        Me.lblnombre = New System.Windows.Forms.Label()
+        Me.rtxtdireccion1 = New System.Windows.Forms.RichTextBox()
+        Me.rtxtdireccion2 = New System.Windows.Forms.RichTextBox()
+        Me.rtxtdireccion4 = New System.Windows.Forms.RichTextBox()
+        Me.rtxtdireccion3 = New System.Windows.Forms.RichTextBox()
+        Me.lbldireccion3 = New System.Windows.Forms.Label()
+        Me.lbldireccion4 = New System.Windows.Forms.Label()
+        Me.lblcontacto = New System.Windows.Forms.Label()
+        Me.lblcorreo = New System.Windows.Forms.Label()
+        Me.lbltelefono = New System.Windows.Forms.Label()
+        Me.txttelefono = New System.Windows.Forms.TextBox()
+        Me.btncancelar = New System.Windows.Forms.Button()
+        Me.btncrear = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'TextBox10
+        'txtcodigo
         '
-        Me.TextBox10.Location = New System.Drawing.Point(143, 84)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox10.TabIndex = 94
+        Me.txtcodigo.Location = New System.Drawing.Point(95, 10)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(179, 22)
+        Me.txtcodigo.TabIndex = 94
         '
-        'Label1
+        'lbldireccion1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(22, 132)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 17)
-        Me.Label1.TabIndex = 87
-        Me.Label1.Text = "Dirección 1"
+        Me.lbldireccion1.AutoSize = True
+        Me.lbldireccion1.Location = New System.Drawing.Point(9, 41)
+        Me.lbldireccion1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbldireccion1.Name = "lbldireccion1"
+        Me.lbldireccion1.Size = New System.Drawing.Size(79, 17)
+        Me.lbldireccion1.TabIndex = 87
+        Me.lbldireccion1.Text = "Dirección 1"
         '
-        'TextBox1
+        'txtcontacto
         '
-        Me.TextBox1.Location = New System.Drawing.Point(143, 363)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox1.TabIndex = 88
+        Me.txtcontacto.Location = New System.Drawing.Point(95, 242)
+        Me.txtcontacto.Name = "txtcontacto"
+        Me.txtcontacto.Size = New System.Drawing.Size(179, 22)
+        Me.txtcontacto.TabIndex = 88
         '
-        'Label2
+        'lbldireccion2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(361, 129)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(79, 17)
-        Me.Label2.TabIndex = 89
-        Me.Label2.Text = "Dirección 2"
+        Me.lbldireccion2.AutoSize = True
+        Me.lbldireccion2.Location = New System.Drawing.Point(291, 41)
+        Me.lbldireccion2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbldireccion2.Name = "lbldireccion2"
+        Me.lbldireccion2.Size = New System.Drawing.Size(79, 17)
+        Me.lbldireccion2.TabIndex = 89
+        Me.lbldireccion2.Text = "Dirección 2"
         '
-        'Label10
+        'lblcodigo
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(49, 87)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(52, 17)
-        Me.Label10.TabIndex = 93
-        Me.Label10.Text = "Código"
+        Me.lblcodigo.AutoSize = True
+        Me.lblcodigo.Location = New System.Drawing.Point(36, 13)
+        Me.lblcodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcodigo.Name = "lblcodigo"
+        Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodigo.TabIndex = 93
+        Me.lblcodigo.Text = "Código"
         '
-        'TextBox2
+        'txtcorreo
         '
-        Me.TextBox2.Location = New System.Drawing.Point(472, 363)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox2.TabIndex = 90
+        Me.txtcorreo.Location = New System.Drawing.Point(377, 242)
+        Me.txtcorreo.Name = "txtcorreo"
+        Me.txtcorreo.Size = New System.Drawing.Size(179, 22)
+        Me.txtcorreo.TabIndex = 90
         '
-        'TextBox9
+        'txtnombre
         '
-        Me.TextBox9.Location = New System.Drawing.Point(472, 84)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox9.TabIndex = 92
+        Me.txtnombre.Location = New System.Drawing.Point(377, 10)
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(179, 22)
+        Me.txtnombre.TabIndex = 92
         '
-        'Label9
+        'lblnombre
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(382, 87)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(58, 17)
-        Me.Label9.TabIndex = 91
-        Me.Label9.Text = "Nombre"
+        Me.lblnombre.AutoSize = True
+        Me.lblnombre.Location = New System.Drawing.Point(312, 13)
+        Me.lblnombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblnombre.Name = "lblnombre"
+        Me.lblnombre.Size = New System.Drawing.Size(58, 17)
+        Me.lblnombre.TabIndex = 91
+        Me.lblnombre.Text = "Nombre"
         '
-        'RichTextBox1
+        'rtxtdireccion1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(143, 129)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(179, 96)
-        Me.RichTextBox1.TabIndex = 95
-        Me.RichTextBox1.Text = ""
+        Me.rtxtdireccion1.Location = New System.Drawing.Point(95, 38)
+        Me.rtxtdireccion1.Name = "rtxtdireccion1"
+        Me.rtxtdireccion1.Size = New System.Drawing.Size(179, 96)
+        Me.rtxtdireccion1.TabIndex = 95
+        Me.rtxtdireccion1.Text = ""
         '
-        'RichTextBox2
+        'rtxtdireccion2
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(472, 132)
-        Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(179, 96)
-        Me.RichTextBox2.TabIndex = 96
-        Me.RichTextBox2.Text = ""
+        Me.rtxtdireccion2.Location = New System.Drawing.Point(377, 38)
+        Me.rtxtdireccion2.Name = "rtxtdireccion2"
+        Me.rtxtdireccion2.Size = New System.Drawing.Size(179, 96)
+        Me.rtxtdireccion2.TabIndex = 96
+        Me.rtxtdireccion2.Text = ""
         '
-        'RichTextBox3
+        'rtxtdireccion4
         '
-        Me.RichTextBox3.Location = New System.Drawing.Point(472, 250)
-        Me.RichTextBox3.Name = "RichTextBox3"
-        Me.RichTextBox3.Size = New System.Drawing.Size(179, 96)
-        Me.RichTextBox3.TabIndex = 100
-        Me.RichTextBox3.Text = ""
+        Me.rtxtdireccion4.Location = New System.Drawing.Point(377, 140)
+        Me.rtxtdireccion4.Name = "rtxtdireccion4"
+        Me.rtxtdireccion4.Size = New System.Drawing.Size(179, 96)
+        Me.rtxtdireccion4.TabIndex = 100
+        Me.rtxtdireccion4.Text = ""
         '
-        'RichTextBox4
+        'rtxtdireccion3
         '
-        Me.RichTextBox4.Location = New System.Drawing.Point(143, 247)
-        Me.RichTextBox4.Name = "RichTextBox4"
-        Me.RichTextBox4.Size = New System.Drawing.Size(179, 96)
-        Me.RichTextBox4.TabIndex = 99
-        Me.RichTextBox4.Text = ""
+        Me.rtxtdireccion3.Location = New System.Drawing.Point(95, 140)
+        Me.rtxtdireccion3.Name = "rtxtdireccion3"
+        Me.rtxtdireccion3.Size = New System.Drawing.Size(179, 96)
+        Me.rtxtdireccion3.TabIndex = 99
+        Me.rtxtdireccion3.Text = ""
         '
-        'Label3
+        'lbldireccion3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(22, 250)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(79, 17)
-        Me.Label3.TabIndex = 97
-        Me.Label3.Text = "Dirección 3"
+        Me.lbldireccion3.AutoSize = True
+        Me.lbldireccion3.Location = New System.Drawing.Point(9, 143)
+        Me.lbldireccion3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbldireccion3.Name = "lbldireccion3"
+        Me.lbldireccion3.Size = New System.Drawing.Size(79, 17)
+        Me.lbldireccion3.TabIndex = 97
+        Me.lbldireccion3.Text = "Dirección 3"
         '
-        'Label4
+        'lbldireccion4
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(361, 247)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(79, 17)
-        Me.Label4.TabIndex = 98
-        Me.Label4.Text = "Dirección 4"
+        Me.lbldireccion4.AutoSize = True
+        Me.lbldireccion4.Location = New System.Drawing.Point(291, 143)
+        Me.lbldireccion4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbldireccion4.Name = "lbldireccion4"
+        Me.lbldireccion4.Size = New System.Drawing.Size(79, 17)
+        Me.lbldireccion4.TabIndex = 98
+        Me.lbldireccion4.Text = "Dirección 4"
         '
-        'Label5
+        'lblcontacto
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(37, 366)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(64, 17)
-        Me.Label5.TabIndex = 101
-        Me.Label5.Text = "Contacto"
+        Me.lblcontacto.AutoSize = True
+        Me.lblcontacto.Location = New System.Drawing.Point(24, 245)
+        Me.lblcontacto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcontacto.Name = "lblcontacto"
+        Me.lblcontacto.Size = New System.Drawing.Size(64, 17)
+        Me.lblcontacto.TabIndex = 101
+        Me.lblcontacto.Text = "Contacto"
         '
-        'Label6
+        'lblcorreo
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(389, 366)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(51, 17)
-        Me.Label6.TabIndex = 102
-        Me.Label6.Text = "Correo"
+        Me.lblcorreo.AutoSize = True
+        Me.lblcorreo.Location = New System.Drawing.Point(319, 245)
+        Me.lblcorreo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcorreo.Name = "lblcorreo"
+        Me.lblcorreo.Size = New System.Drawing.Size(51, 17)
+        Me.lblcorreo.TabIndex = 102
+        Me.lblcorreo.Text = "Correo"
         '
-        'Label7
+        'lbltelefono
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(37, 409)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(64, 17)
-        Me.Label7.TabIndex = 103
-        Me.Label7.Text = "Teléfono"
+        Me.lbltelefono.AutoSize = True
+        Me.lbltelefono.Location = New System.Drawing.Point(24, 273)
+        Me.lbltelefono.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbltelefono.Name = "lbltelefono"
+        Me.lbltelefono.Size = New System.Drawing.Size(64, 17)
+        Me.lbltelefono.TabIndex = 103
+        Me.lbltelefono.Text = "Teléfono"
         '
-        'TextBox3
+        'txttelefono
         '
-        Me.TextBox3.Location = New System.Drawing.Point(143, 406)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox3.TabIndex = 104
+        Me.txttelefono.Location = New System.Drawing.Point(95, 270)
+        Me.txttelefono.Name = "txttelefono"
+        Me.txttelefono.Size = New System.Drawing.Size(179, 22)
+        Me.txttelefono.TabIndex = 104
         '
-        'Button4
+        'btncancelar
         '
-        Me.Button4.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button4.Location = New System.Drawing.Point(460, 25)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(138, 35)
-        Me.Button4.TabIndex = 107
-        Me.Button4.Text = "Guardar"
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncancelar.Location = New System.Drawing.Point(465, 296)
+        Me.btncancelar.Name = "btncancelar"
+        Me.btncancelar.Size = New System.Drawing.Size(90, 35)
+        Me.btncancelar.TabIndex = 111
+        Me.btncancelar.Text = "Cancelar"
+        Me.btncancelar.UseVisualStyleBackColor = False
         '
-        'Button3
+        'btncrear
         '
-        Me.Button3.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button3.Location = New System.Drawing.Point(280, 25)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(138, 35)
-        Me.Button3.TabIndex = 106
-        Me.Button3.Text = "Cancelar"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button1.Location = New System.Drawing.Point(101, 25)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(138, 35)
-        Me.Button1.TabIndex = 105
-        Me.Button1.Text = "Crear"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btncrear.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btncrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncrear.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncrear.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncrear.Location = New System.Drawing.Point(377, 296)
+        Me.btncrear.Name = "btncrear"
+        Me.btncrear.Size = New System.Drawing.Size(78, 35)
+        Me.btncrear.TabIndex = 110
+        Me.btncrear.Text = "Crear"
+        Me.btncrear.UseVisualStyleBackColor = False
         '
         'Sede
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(686, 450)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.RichTextBox3)
-        Me.Controls.Add(Me.RichTextBox4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.RichTextBox2)
-        Me.Controls.Add(Me.RichTextBox1)
-        Me.Controls.Add(Me.TextBox10)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox9)
-        Me.Controls.Add(Me.Label9)
+        Me.ClientSize = New System.Drawing.Size(566, 346)
+        Me.Controls.Add(Me.btncancelar)
+        Me.Controls.Add(Me.btncrear)
+        Me.Controls.Add(Me.txttelefono)
+        Me.Controls.Add(Me.lbltelefono)
+        Me.Controls.Add(Me.lblcorreo)
+        Me.Controls.Add(Me.lblcontacto)
+        Me.Controls.Add(Me.rtxtdireccion4)
+        Me.Controls.Add(Me.rtxtdireccion3)
+        Me.Controls.Add(Me.lbldireccion3)
+        Me.Controls.Add(Me.lbldireccion4)
+        Me.Controls.Add(Me.rtxtdireccion2)
+        Me.Controls.Add(Me.rtxtdireccion1)
+        Me.Controls.Add(Me.txtcodigo)
+        Me.Controls.Add(Me.lbldireccion1)
+        Me.Controls.Add(Me.txtcontacto)
+        Me.Controls.Add(Me.lbldireccion2)
+        Me.Controls.Add(Me.lblcodigo)
+        Me.Controls.Add(Me.txtcorreo)
+        Me.Controls.Add(Me.txtnombre)
+        Me.Controls.Add(Me.lblnombre)
         Me.Name = "Sede"
-        Me.Text = "Sede"
+        Me.Text = " "
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents TextBox10 As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents RichTextBox1 As RichTextBox
-    Friend WithEvents RichTextBox2 As RichTextBox
-    Friend WithEvents RichTextBox3 As RichTextBox
-    Friend WithEvents RichTextBox4 As RichTextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents txtcodigo As TextBox
+    Friend WithEvents lbldireccion1 As Label
+    Friend WithEvents txtcontacto As TextBox
+    Friend WithEvents lbldireccion2 As Label
+    Friend WithEvents lblcodigo As Label
+    Friend WithEvents txtcorreo As TextBox
+    Friend WithEvents txtnombre As TextBox
+    Friend WithEvents lblnombre As Label
+    Friend WithEvents rtxtdireccion1 As RichTextBox
+    Friend WithEvents rtxtdireccion2 As RichTextBox
+    Friend WithEvents rtxtdireccion4 As RichTextBox
+    Friend WithEvents rtxtdireccion3 As RichTextBox
+    Friend WithEvents lbldireccion3 As Label
+    Friend WithEvents lbldireccion4 As Label
+    Friend WithEvents lblcontacto As Label
+    Friend WithEvents lblcorreo As Label
+    Friend WithEvents lbltelefono As Label
+    Friend WithEvents txttelefono As TextBox
+    Friend WithEvents btncancelar As Button
+    Friend WithEvents btncrear As Button
 End Class
