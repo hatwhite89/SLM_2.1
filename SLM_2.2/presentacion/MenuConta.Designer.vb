@@ -24,8 +24,8 @@ Partial Class frmMenuConta
     Private Sub InitializeComponent()
         Me.tcMenu = New System.Windows.Forms.TabControl()
         Me.tpCheque = New System.Windows.Forms.TabPage()
-        Me.tpPagos = New System.Windows.Forms.TabPage()
         Me.btnDepoBanc = New System.Windows.Forms.Button()
+        Me.tpPagos = New System.Windows.Forms.TabPage()
         Me.btnPagos = New System.Windows.Forms.Button()
         Me.tcMenu.SuspendLayout()
         Me.tpCheque.SuspendLayout()
@@ -53,6 +53,18 @@ Partial Class frmMenuConta
         Me.tpCheque.Text = "Cheque"
         Me.tpCheque.UseVisualStyleBackColor = True
         '
+        'btnDepoBanc
+        '
+        Me.btnDepoBanc.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnDepoBanc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDepoBanc.ForeColor = System.Drawing.Color.White
+        Me.btnDepoBanc.Location = New System.Drawing.Point(20, 28)
+        Me.btnDepoBanc.Name = "btnDepoBanc"
+        Me.btnDepoBanc.Size = New System.Drawing.Size(110, 23)
+        Me.btnDepoBanc.TabIndex = 0
+        Me.btnDepoBanc.Text = "Deposito Bancario"
+        Me.btnDepoBanc.UseVisualStyleBackColor = False
+        '
         'tpPagos
         '
         Me.tpPagos.Controls.Add(Me.btnPagos)
@@ -64,29 +76,23 @@ Partial Class frmMenuConta
         Me.tpPagos.Text = "Pagos"
         Me.tpPagos.UseVisualStyleBackColor = True
         '
-        'btnDepoBanc
-        '
-        Me.btnDepoBanc.Location = New System.Drawing.Point(6, 6)
-        Me.btnDepoBanc.Name = "btnDepoBanc"
-        Me.btnDepoBanc.Size = New System.Drawing.Size(114, 23)
-        Me.btnDepoBanc.TabIndex = 0
-        Me.btnDepoBanc.Text = "Deposito Bancario"
-        Me.btnDepoBanc.UseVisualStyleBackColor = True
-        '
         'btnPagos
         '
-        Me.btnPagos.Location = New System.Drawing.Point(6, 6)
+        Me.btnPagos.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPagos.ForeColor = System.Drawing.Color.White
+        Me.btnPagos.Location = New System.Drawing.Point(20, 28)
         Me.btnPagos.Name = "btnPagos"
-        Me.btnPagos.Size = New System.Drawing.Size(75, 23)
+        Me.btnPagos.Size = New System.Drawing.Size(110, 23)
         Me.btnPagos.TabIndex = 0
         Me.btnPagos.Text = "Pagos"
-        Me.btnPagos.UseVisualStyleBackColor = True
+        Me.btnPagos.UseVisualStyleBackColor = False
         '
         'frmMenuConta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(315, 366)
+        Me.ClientSize = New System.Drawing.Size(628, 366)
         Me.Controls.Add(Me.tcMenu)
         Me.Name = "frmMenuConta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

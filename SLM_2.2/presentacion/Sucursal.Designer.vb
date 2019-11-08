@@ -40,35 +40,35 @@ Partial Class Sucursal
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(95, 12)
+        Me.txtcodigo.Location = New System.Drawing.Point(71, 10)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(179, 22)
+        Me.txtcodigo.Size = New System.Drawing.Size(135, 20)
         Me.txtcodigo.TabIndex = 90
         '
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(36, 15)
-        Me.lblcodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcodigo.Location = New System.Drawing.Point(27, 12)
         Me.lblcodigo.Name = "lblcodigo"
-        Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodigo.Size = New System.Drawing.Size(40, 13)
         Me.lblcodigo.TabIndex = 89
         Me.lblcodigo.Text = "Código"
         '
         'txtnombre
         '
-        Me.txtnombre.Location = New System.Drawing.Point(95, 40)
+        Me.txtnombre.Location = New System.Drawing.Point(71, 32)
+        Me.txtnombre.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(452, 22)
+        Me.txtnombre.Size = New System.Drawing.Size(340, 20)
         Me.txtnombre.TabIndex = 115
         '
         'lblnombre
         '
         Me.lblnombre.AutoSize = True
-        Me.lblnombre.Location = New System.Drawing.Point(30, 43)
-        Me.lblnombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblnombre.Location = New System.Drawing.Point(22, 35)
         Me.lblnombre.Name = "lblnombre"
-        Me.lblnombre.Size = New System.Drawing.Size(58, 17)
+        Me.lblnombre.Size = New System.Drawing.Size(44, 13)
         Me.lblnombre.TabIndex = 114
         Me.lblnombre.Text = "Nombre"
         '
@@ -80,26 +80,27 @@ Partial Class Sucursal
         Me.btnbuscarTipoObjeto.FlatAppearance.BorderSize = 0
         Me.btnbuscarTipoObjeto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarTipoObjeto.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscarTipoObjeto.Location = New System.Drawing.Point(94, 68)
+        Me.btnbuscarTipoObjeto.Location = New System.Drawing.Point(70, 55)
+        Me.btnbuscarTipoObjeto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnbuscarTipoObjeto.Name = "btnbuscarTipoObjeto"
-        Me.btnbuscarTipoObjeto.Size = New System.Drawing.Size(49, 22)
+        Me.btnbuscarTipoObjeto.Size = New System.Drawing.Size(25, 20)
         Me.btnbuscarTipoObjeto.TabIndex = 118
         Me.btnbuscarTipoObjeto.UseVisualStyleBackColor = False
         '
         'txtcodigoTipoObjeto
         '
-        Me.txtcodigoTipoObjeto.Location = New System.Drawing.Point(149, 68)
+        Me.txtcodigoTipoObjeto.Location = New System.Drawing.Point(99, 55)
+        Me.txtcodigoTipoObjeto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcodigoTipoObjeto.Name = "txtcodigoTipoObjeto"
-        Me.txtcodigoTipoObjeto.Size = New System.Drawing.Size(125, 22)
+        Me.txtcodigoTipoObjeto.Size = New System.Drawing.Size(95, 20)
         Me.txtcodigoTipoObjeto.TabIndex = 117
         '
         'lbltipoObjeto
         '
         Me.lbltipoObjeto.AutoSize = True
-        Me.lbltipoObjeto.Location = New System.Drawing.Point(5, 71)
-        Me.lbltipoObjeto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbltipoObjeto.Location = New System.Drawing.Point(4, 58)
         Me.lbltipoObjeto.Name = "lbltipoObjeto"
-        Me.lbltipoObjeto.Size = New System.Drawing.Size(82, 17)
+        Me.lbltipoObjeto.Size = New System.Drawing.Size(62, 13)
         Me.lbltipoObjeto.TabIndex = 116
         Me.lbltipoObjeto.Text = "Tipo Objeto"
         '
@@ -111,26 +112,27 @@ Partial Class Sucursal
         Me.btnbuscarJerarquia.FlatAppearance.BorderSize = 0
         Me.btnbuscarJerarquia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarJerarquia.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscarJerarquia.Location = New System.Drawing.Point(367, 68)
+        Me.btnbuscarJerarquia.Location = New System.Drawing.Point(275, 55)
+        Me.btnbuscarJerarquia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnbuscarJerarquia.Name = "btnbuscarJerarquia"
-        Me.btnbuscarJerarquia.Size = New System.Drawing.Size(49, 22)
+        Me.btnbuscarJerarquia.Size = New System.Drawing.Size(25, 20)
         Me.btnbuscarJerarquia.TabIndex = 121
         Me.btnbuscarJerarquia.UseVisualStyleBackColor = False
         '
         'txtcodigoJerarquia
         '
-        Me.txtcodigoJerarquia.Location = New System.Drawing.Point(422, 68)
+        Me.txtcodigoJerarquia.Location = New System.Drawing.Point(304, 55)
+        Me.txtcodigoJerarquia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcodigoJerarquia.Name = "txtcodigoJerarquia"
-        Me.txtcodigoJerarquia.Size = New System.Drawing.Size(125, 22)
+        Me.txtcodigoJerarquia.Size = New System.Drawing.Size(107, 20)
         Me.txtcodigoJerarquia.TabIndex = 120
         '
         'lbljerarquia
         '
         Me.lbljerarquia.AutoSize = True
-        Me.lbljerarquia.Location = New System.Drawing.Point(281, 71)
-        Me.lbljerarquia.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbljerarquia.Location = New System.Drawing.Point(211, 58)
         Me.lbljerarquia.Name = "lbljerarquia"
-        Me.lbljerarquia.Size = New System.Drawing.Size(68, 17)
+        Me.lbljerarquia.Size = New System.Drawing.Size(52, 13)
         Me.lbljerarquia.TabIndex = 119
         Me.lbljerarquia.Text = "Jerarquía"
         '
@@ -138,9 +140,10 @@ Partial Class Sucursal
         '
         Me.cbxcerrado.AutoSize = True
         Me.cbxcerrado.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxcerrado.Location = New System.Drawing.Point(95, 109)
+        Me.cbxcerrado.Location = New System.Drawing.Point(71, 89)
+        Me.cbxcerrado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cbxcerrado.Name = "cbxcerrado"
-        Me.cbxcerrado.Size = New System.Drawing.Size(81, 21)
+        Me.cbxcerrado.Size = New System.Drawing.Size(63, 17)
         Me.cbxcerrado.TabIndex = 122
         Me.cbxcerrado.Text = "Cerrado"
         Me.cbxcerrado.UseVisualStyleBackColor = True
@@ -151,9 +154,10 @@ Partial Class Sucursal
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(455, 101)
+        Me.btncancelar.Location = New System.Drawing.Point(341, 82)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btncancelar.Name = "btncancelar"
-        Me.btncancelar.Size = New System.Drawing.Size(90, 35)
+        Me.btncancelar.Size = New System.Drawing.Size(68, 28)
         Me.btncancelar.TabIndex = 124
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
@@ -164,19 +168,20 @@ Partial Class Sucursal
         Me.btncrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncrear.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncrear.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncrear.Location = New System.Drawing.Point(367, 101)
+        Me.btncrear.Location = New System.Drawing.Point(275, 82)
+        Me.btncrear.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btncrear.Name = "btncrear"
-        Me.btncrear.Size = New System.Drawing.Size(78, 35)
+        Me.btncrear.Size = New System.Drawing.Size(58, 28)
         Me.btncrear.TabIndex = 123
         Me.btncrear.Text = "Crear"
         Me.btncrear.UseVisualStyleBackColor = False
         '
         'Sucursal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(559, 153)
+        Me.ClientSize = New System.Drawing.Size(419, 124)
         Me.Controls.Add(Me.btncancelar)
         Me.Controls.Add(Me.btncrear)
         Me.Controls.Add(Me.cbxcerrado)
@@ -190,6 +195,7 @@ Partial Class Sucursal
         Me.Controls.Add(Me.lblnombre)
         Me.Controls.Add(Me.txtcodigo)
         Me.Controls.Add(Me.lblcodigo)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Sucursal"
         Me.Text = "Sucursal"
         Me.ResumeLayout(False)

@@ -49,13 +49,14 @@ Public Class ClsPaciente
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
+        'Seleccion de procedimiento a ejecutar
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
         sqlcom.CommandText = "NuevoPaciente"
 
-
+        'nombre campo en el procedimiento almacenado 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "primer_nombre" 'nombre campo en el procedimiento almacenado @
+        sqlpar.ParameterName = "primer_nombre"
         sqlpar.Value = Primer_nombre1
         sqlcom.Parameters.Add(sqlpar)
 
@@ -65,7 +66,6 @@ Public Class ClsPaciente
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar.Direction = ParameterDirection.Output
-
 
         sqlcom.ExecuteNonQuery()
 

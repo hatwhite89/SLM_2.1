@@ -31,4 +31,8 @@
 
 
     End Sub
+
+    Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
+        ListarDepositos.Show()
+    End Sub
 End Class
