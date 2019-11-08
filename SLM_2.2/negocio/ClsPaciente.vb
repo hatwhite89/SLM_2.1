@@ -55,7 +55,7 @@ Public Class ClsPaciente
 
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "primer_nombre"
+        sqlpar.ParameterName = "primer_nombre" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = Primer_nombre1
         sqlcom.Parameters.Add(sqlpar)
 

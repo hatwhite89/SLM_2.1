@@ -44,7 +44,9 @@ Partial Class frmPagos
         Me.txtIdioma = New System.Windows.Forms.TextBox()
         Me.lblComentario = New System.Windows.Forms.Label()
         Me.txtComentario = New System.Windows.Forms.TextBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -52,7 +54,7 @@ Partial Class frmPagos
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(558, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -66,7 +68,7 @@ Partial Class frmPagos
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'lblNro
@@ -225,13 +227,22 @@ Partial Class frmPagos
         Me.txtComentario.Size = New System.Drawing.Size(172, 20)
         Me.txtComentario.TabIndex = 19
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(15, 138)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(530, 181)
+        Me.DataGridView1.TabIndex = 20
+        '
         'frmPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(558, 333)
         Me.ControlBox = False
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.txtComentario)
         Me.Controls.Add(Me.lblComentario)
         Me.Controls.Add(Me.txtIdioma)
@@ -258,6 +269,7 @@ Partial Class frmPagos
         Me.Text = "Pagos"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -285,4 +297,5 @@ Partial Class frmPagos
     Friend WithEvents txtIdioma As TextBox
     Friend WithEvents lblComentario As Label
     Friend WithEvents txtComentario As TextBox
+    Friend WithEvents DataGridView1 As DataGridView
 End Class
