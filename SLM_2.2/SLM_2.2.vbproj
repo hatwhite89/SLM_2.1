@@ -113,6 +113,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="negocio\ClsDeposito.vb" />
+    <Compile Include="negocio\ClsFormaPago.vb" />
     <Compile Include="negocio\ClsPaciente.vb" />
     <Compile Include="presentacion\Asiento.designer.vb">
       <DependentUpon>Asiento.vb</DependentUpon>
