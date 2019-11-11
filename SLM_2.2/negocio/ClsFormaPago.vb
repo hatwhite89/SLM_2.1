@@ -114,7 +114,7 @@ Public Class ClsFormaPago
         'Seleccion de procedimiento a ejecutar
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "Nombre de Procedimiento"
+        sqlcom.CommandText = "slmInsertarFormaPago"
 
         'nombre campo en el procedimiento almacenado 
         sqlpar = New SqlParameter
