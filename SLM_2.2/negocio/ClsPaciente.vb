@@ -89,5 +89,14 @@ Public Class ClsPaciente
 
         Return par_sal
 
+
     End Function
+    Public Function RecuperaPacientes() As SqlDataReader
+        Dim sqlcom As SqlCommand
+        sqlcom = New SqlCommand
+        sqlcom.CommandText = "select * from slmConsularPacientes()"
+        sqlcom.Connection = New ClsConnection().getConexion
+        Return sqlcom.ExecuteReader
+    End Function
+
 End Class
