@@ -1,7 +1,7 @@
 ﻿Public Class BuscarCliente
     Private Sub btnbuscarCliente_Click(sender As Object, e As EventArgs) Handles btnbuscarCliente.Click
         If (mtxtidentidadClienteB.MaskCompleted = True) Then
-            'gbxinformacion.Visible = True
+            gbxinfoCliente.Visible = True
         Else
             MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
         End If
@@ -17,5 +17,11 @@
         End If
     End Sub
 
+    Private Sub btnclasificacion_Click(sender As Object, e As EventArgs) Handles btnclasificacion.Click
+        BuscarClasificacion.ShowDialog()
+    End Sub
 
+    Private Sub btnactualizarCliente_Click(sender As Object, e As EventArgs) Handles btnactualizarCliente.Click
+
+    End Sub
 End Class

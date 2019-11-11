@@ -23,9 +23,9 @@ Partial Class Factura2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Factura2))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.btnbuscarCliente = New System.Windows.Forms.Button()
         Me.btnnueva = New System.Windows.Forms.Button()
@@ -101,6 +101,7 @@ Partial Class Factura2
         Me.btnaplicarDescuento = New System.Windows.Forms.Button()
         Me.btntarjeta = New System.Windows.Forms.Button()
         Me.btncontado = New System.Windows.Forms.Button()
+        Me.btnbuscarSucursal = New System.Windows.Forms.Button()
         Me.gbxlistadoExamenes.SuspendLayout()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -323,34 +324,34 @@ Partial Class Factura2
         '
         'dgblistadoExamenes
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgblistadoExamenes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgblistadoExamenes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgblistadoExamenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgblistadoExamenes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.Descripcion, Me.Cantidad, Me.PrecioUnitario, Me.FechaEntrega, Me.Descuento, Me.Subtotal})
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgblistadoExamenes.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgblistadoExamenes.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgblistadoExamenes.Location = New System.Drawing.Point(21, 32)
         Me.dgblistadoExamenes.Name = "dgblistadoExamenes"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgblistadoExamenes.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgblistadoExamenes.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgblistadoExamenes.RowHeadersWidth = 51
         Me.dgblistadoExamenes.RowTemplate.Height = 24
         Me.dgblistadoExamenes.Size = New System.Drawing.Size(1061, 150)
@@ -550,9 +551,9 @@ Partial Class Factura2
         'txtsucursal
         '
         Me.txtsucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtsucursal.Location = New System.Drawing.Point(494, 198)
+        Me.txtsucursal.Location = New System.Drawing.Point(585, 198)
         Me.txtsucursal.Name = "txtsucursal"
-        Me.txtsucursal.Size = New System.Drawing.Size(224, 22)
+        Me.txtsucursal.Size = New System.Drawing.Size(133, 22)
         Me.txtsucursal.TabIndex = 53
         '
         'TextBox5
@@ -570,6 +571,7 @@ Partial Class Factura2
         Me.txtcodigoTerminosPago.Name = "txtcodigoTerminosPago"
         Me.txtcodigoTerminosPago.Size = New System.Drawing.Size(185, 22)
         Me.txtcodigoTerminosPago.TabIndex = 58
+        Me.txtcodigoTerminosPago.Text = "X"
         '
         'txtcodigoSede
         '
@@ -857,12 +859,27 @@ Partial Class Factura2
         Me.btncontado.Text = "Contado"
         Me.btncontado.UseVisualStyleBackColor = False
         '
+        'btnbuscarSucursal
+        '
+        Me.btnbuscarSucursal.BackColor = System.Drawing.Color.White
+        Me.btnbuscarSucursal.BackgroundImage = CType(resources.GetObject("btnbuscarSucursal.BackgroundImage"), System.Drawing.Image)
+        Me.btnbuscarSucursal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnbuscarSucursal.FlatAppearance.BorderSize = 0
+        Me.btnbuscarSucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnbuscarSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnbuscarSucursal.Location = New System.Drawing.Point(509, 198)
+        Me.btnbuscarSucursal.Name = "btnbuscarSucursal"
+        Me.btnbuscarSucursal.Size = New System.Drawing.Size(49, 22)
+        Me.btnbuscarSucursal.TabIndex = 92
+        Me.btnbuscarSucursal.UseVisualStyleBackColor = False
+        '
         'Factura2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1143, 651)
+        Me.Controls.Add(Me.btnbuscarSucursal)
         Me.Controls.Add(Me.btncontado)
         Me.Controls.Add(Me.btntarjeta)
         Me.Controls.Add(Me.btnaplicarDescuento)
@@ -1012,4 +1029,5 @@ Partial Class Factura2
     Friend WithEvents btnaplicarDescuento As Button
     Friend WithEvents btntarjeta As Button
     Friend WithEvents btncontado As Button
+    Friend WithEvents btnbuscarSucursal As Button
 End Class

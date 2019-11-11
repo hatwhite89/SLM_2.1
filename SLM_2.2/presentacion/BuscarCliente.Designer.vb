@@ -189,7 +189,7 @@ Partial Class BuscarCliente
         Me.gbxinfoCliente.Controls.Add(Me.lblnombre1)
         Me.gbxinfoCliente.Location = New System.Drawing.Point(12, 70)
         Me.gbxinfoCliente.Name = "gbxinfoCliente"
-        Me.gbxinfoCliente.Size = New System.Drawing.Size(938, 364)
+        Me.gbxinfoCliente.Size = New System.Drawing.Size(938, 382)
         Me.gbxinfoCliente.TabIndex = 54
         Me.gbxinfoCliente.TabStop = False
         Me.gbxinfoCliente.Text = "Información de Cliente/Paciente"
@@ -235,6 +235,7 @@ Partial Class BuscarCliente
         Me.txtterminosPago.Name = "txtterminosPago"
         Me.txtterminosPago.Size = New System.Drawing.Size(125, 22)
         Me.txtterminosPago.TabIndex = 105
+        Me.txtterminosPago.Text = "x"
         '
         'btnconvenio
         '
@@ -256,6 +257,7 @@ Partial Class BuscarCliente
         Me.txtconvenio.Name = "txtconvenio"
         Me.txtconvenio.Size = New System.Drawing.Size(125, 22)
         Me.txtconvenio.TabIndex = 103
+        Me.txtconvenio.Text = "x"
         '
         'btnaseguradora
         '
@@ -277,6 +279,7 @@ Partial Class BuscarCliente
         Me.txtaseguradora.Name = "txtaseguradora"
         Me.txtaseguradora.Size = New System.Drawing.Size(125, 22)
         Me.txtaseguradora.TabIndex = 101
+        Me.txtaseguradora.Text = "x"
         '
         'btncategoria
         '
@@ -389,6 +392,7 @@ Partial Class BuscarCliente
         Me.txtcategoria.Name = "txtcategoria"
         Me.txtcategoria.Size = New System.Drawing.Size(125, 22)
         Me.txtcategoria.TabIndex = 88
+        Me.txtcategoria.Text = "x"
         '
         'lblcategoria
         '
@@ -405,9 +409,9 @@ Partial Class BuscarCliente
         Me.btnactualizarCliente.BackColor = System.Drawing.Color.SkyBlue
         Me.btnactualizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnactualizarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnactualizarCliente.Location = New System.Drawing.Point(388, 327)
+        Me.btnactualizarCliente.Location = New System.Drawing.Point(362, 338)
         Me.btnactualizarCliente.Name = "btnactualizarCliente"
-        Me.btnactualizarCliente.Size = New System.Drawing.Size(180, 27)
+        Me.btnactualizarCliente.Size = New System.Drawing.Size(220, 38)
         Me.btnactualizarCliente.TabIndex = 66
         Me.btnactualizarCliente.Text = "Actualizar y Seleccionar"
         Me.btnactualizarCliente.UseVisualStyleBackColor = False
@@ -677,7 +681,7 @@ Partial Class BuscarCliente
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(961, 439)
+        Me.ClientSize = New System.Drawing.Size(961, 464)
         Me.Controls.Add(Me.gbxinfoCliente)
         Me.Controls.Add(Me.mtxtidentidadClienteB)
         Me.Controls.Add(Me.btnbuscarCliente)
