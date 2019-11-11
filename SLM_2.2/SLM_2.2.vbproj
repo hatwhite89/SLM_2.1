@@ -113,8 +113,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="negocio\ClsDeposito.vb" />
+    <Compile Include="negocio\ClsEspecialidad.vb" />
     <Compile Include="negocio\ClsFormaPago.vb" />
+    <Compile Include="negocio\ClsMedico.vb" />
     <Compile Include="negocio\ClsPaciente.vb" />
+    <Compile Include="negocio\ClsTipoClasificacion.vb" />
     <Compile Include="presentacion\Asiento.designer.vb">
       <DependentUpon>Asiento.vb</DependentUpon>
     </Compile>
@@ -149,6 +152,168 @@
       <DependentUpon>MenuConta.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\MenuConta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarClasificacion.Designer.vb">
+      <DependentUpon>M_BuscarClasificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarClasificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarCliente.Designer.vb">
+      <DependentUpon>M_BuscarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarEspecialidad.Designer.vb">
+      <DependentUpon>M_BuscarEspecialidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarEspecialidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarMedico.Designer.vb">
+      <DependentUpon>M_BuscarMedico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarMedico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarSede.Designer.vb">
+      <DependentUpon>M_BuscarSede.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarSede.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarSucursal.Designer.vb">
+      <DependentUpon>M_BuscarSucursal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarSucursal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarTerminoPago.Designer.vb">
+      <DependentUpon>M_BuscarTerminoPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarTerminoPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarTipoClasificacion.Designer.vb">
+      <DependentUpon>M_BuscarTipoClasificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarTipoClasificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_ClasificacionContacto.Designer.vb">
+      <DependentUpon>M_ClasificacionContacto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ClasificacionContacto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_CrearCliente.Designer.vb">
+      <DependentUpon>M_CrearCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_CrearCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_CrearEspecialidad.Designer.vb">
+      <DependentUpon>M_CrearEspecialidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_CrearEspecialidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_CrearMedico.Designer.vb">
+      <DependentUpon>M_CrearMedico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_CrearMedico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_CrearSede.Designer.vb">
+      <DependentUpon>M_CrearSede.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_CrearSede.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_CrearSucursal.Designer.vb">
+      <DependentUpon>M_CrearSucursal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_CrearSucursal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_CrearTerminosPago.Designer.vb">
+      <DependentUpon>M_CrearTerminosPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_CrearTerminosPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_CrearTipoClasificacion.Designer.vb">
+      <DependentUpon>M_CrearTipoClasificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_CrearTipoClasificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_CrearTipoObjeto.Designer.vb">
+      <DependentUpon>M_CrearTipoObjeto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_CrearTipoObjeto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_Documento.Designer.vb">
+      <DependentUpon>M_Documento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Documento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_Especialidad.Designer.vb">
+      <DependentUpon>M_Especialidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Especialidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_Factura.Designer.vb">
+      <DependentUpon>M_Factura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Factura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_Factura2.Designer.vb">
+      <DependentUpon>M_Factura2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Factura2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_Medico.Designer.vb">
+      <DependentUpon>M_Medico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Medico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_Sede.Designer.vb">
+      <DependentUpon>M_Sede.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Sede.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_Sucursal.Designer.vb">
+      <DependentUpon>M_Sucursal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Sucursal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_TerminosPago.Designer.vb">
+      <DependentUpon>M_TerminosPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_TerminosPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_TipoClasificacion.Designer.vb">
+      <DependentUpon>M_TipoClasificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_TipoClasificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_TipoObjeto.Designer.vb">
+      <DependentUpon>M_TipoObjeto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_TipoObjeto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\Pagos.Designer.vb">
@@ -188,6 +353,87 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\MenuConta.resx">
       <DependentUpon>MenuConta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_BuscarClasificacion.resx">
+      <DependentUpon>M_BuscarClasificacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_BuscarCliente.resx">
+      <DependentUpon>M_BuscarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_BuscarEspecialidad.resx">
+      <DependentUpon>M_BuscarEspecialidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_BuscarMedico.resx">
+      <DependentUpon>M_BuscarMedico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_BuscarSede.resx">
+      <DependentUpon>M_BuscarSede.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_BuscarSucursal.resx">
+      <DependentUpon>M_BuscarSucursal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_BuscarTerminoPago.resx">
+      <DependentUpon>M_BuscarTerminoPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_BuscarTipoClasificacion.resx">
+      <DependentUpon>M_BuscarTipoClasificacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ClasificacionContacto.resx">
+      <DependentUpon>M_ClasificacionContacto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_CrearCliente.resx">
+      <DependentUpon>M_CrearCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_CrearEspecialidad.resx">
+      <DependentUpon>M_CrearEspecialidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_CrearMedico.resx">
+      <DependentUpon>M_CrearMedico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_CrearSede.resx">
+      <DependentUpon>M_CrearSede.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_CrearSucursal.resx">
+      <DependentUpon>M_CrearSucursal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_CrearTerminosPago.resx">
+      <DependentUpon>M_CrearTerminosPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_CrearTipoClasificacion.resx">
+      <DependentUpon>M_CrearTipoClasificacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_CrearTipoObjeto.resx">
+      <DependentUpon>M_CrearTipoObjeto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Documento.resx">
+      <DependentUpon>M_Documento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Especialidad.resx">
+      <DependentUpon>M_Especialidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Factura.resx">
+      <DependentUpon>M_Factura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Factura2.resx">
+      <DependentUpon>M_Factura2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Medico.resx">
+      <DependentUpon>M_Medico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Sede.resx">
+      <DependentUpon>M_Sede.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Sucursal.resx">
+      <DependentUpon>M_Sucursal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_TerminosPago.resx">
+      <DependentUpon>M_TerminosPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_TipoClasificacion.resx">
+      <DependentUpon>M_TipoClasificacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_TipoObjeto.resx">
+      <DependentUpon>M_TipoObjeto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\Pagos.resx">
       <DependentUpon>Pagos.vb</DependentUpon>
