@@ -136,6 +136,18 @@
     <Compile Include="presentacion\Depositos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\eg_frmMenuLaboratorio.Designer.vb">
+      <DependentUpon>eg_frmMenuLaboratorio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\eg_frmMenuLaboratorio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\eg_frmPaciente.Designer.vb">
+      <DependentUpon>eg_frmPaciente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\eg_frmPaciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\Form2.Designer.vb">
       <DependentUpon>Form2.vb</DependentUpon>
     </Compile>
@@ -353,6 +365,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\Depositos.resx">
       <DependentUpon>Depositos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\eg_frmMenuLaboratorio.resx">
+      <DependentUpon>eg_frmMenuLaboratorio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\eg_frmPaciente.resx">
+      <DependentUpon>eg_frmPaciente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\FormaPago.resx">
       <DependentUpon>FormaPago.vb</DependentUpon>
