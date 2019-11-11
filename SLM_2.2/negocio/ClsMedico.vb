@@ -125,7 +125,7 @@ Public Class ClsMedico
 
         sqlcom.ExecuteNonQuery()
 
-        par_sal = sqlcom.Parameters("Salida").Value
+        par_sal = sqlcom.Parameters("salida").Value
 
         Return par_sal
 
