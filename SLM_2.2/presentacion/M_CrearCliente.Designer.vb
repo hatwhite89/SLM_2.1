@@ -23,9 +23,6 @@ Partial Class M_CrearCliente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxinformacion = New System.Windows.Forms.GroupBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.btncrearCliente = New System.Windows.Forms.Button()
         Me.txtcorreo = New System.Windows.Forms.TextBox()
         Me.txttelefono = New System.Windows.Forms.TextBox()
@@ -44,6 +41,9 @@ Partial Class M_CrearCliente
         Me.lblcorreo = New System.Windows.Forms.Label()
         Me.lblidentidadCliente = New System.Windows.Forms.Label()
         Me.lblnombre = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.gbxinformacion.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -79,32 +79,6 @@ Partial Class M_CrearCliente
         Me.gbxinformacion.TabIndex = 12
         Me.gbxinformacion.TabStop = False
         Me.gbxinformacion.Text = "Información de Cliente/Paciente"
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(142, 267)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox4.TabIndex = 24
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(142, 306)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(179, 22)
-        Me.TextBox3.TabIndex = 23
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.SkyBlue
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(481, 390)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(204, 57)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "Cancelar"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'btncrearCliente
         '
@@ -275,14 +249,40 @@ Partial Class M_CrearCliente
         Me.lblnombre.TabIndex = 0
         Me.lblnombre.Text = "Nombre:"
         '
-        'M_CrearCliente
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.SkyBlue
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(481, 390)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(204, 57)
+        Me.Button1.TabIndex = 20
+        Me.Button1.Text = "Cancelar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(142, 306)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(179, 22)
+        Me.TextBox3.TabIndex = 23
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(142, 267)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(179, 22)
+        Me.TextBox4.TabIndex = 24
+        '
+        'CrearCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(966, 546)
         Me.Controls.Add(Me.gbxinformacion)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Name = "M_CrearCliente"
+        Me.Name = "CrearCliente"
         Me.Text = "CrearCliente"
         Me.gbxinformacion.ResumeLayout(False)
         Me.gbxinformacion.PerformLayout()

@@ -137,7 +137,7 @@ Partial Class M_CrearMedico
         Me.btnbuscarEspecialidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnbuscarEspecialidad.Location = New System.Drawing.Point(131, 134)
         Me.btnbuscarEspecialidad.Name = "btnbuscarEspecialidad"
-        Me.btnbuscarEspecialidad.Size = New System.Drawing.Size(29, 22)
+        Me.btnbuscarEspecialidad.Size = New System.Drawing.Size(49, 22)
         Me.btnbuscarEspecialidad.TabIndex = 105
         Me.btnbuscarEspecialidad.UseVisualStyleBackColor = False
         '
@@ -181,7 +181,7 @@ Partial Class M_CrearMedico
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(322, 232)
+        Me.btncancelar.Location = New System.Drawing.Point(478, 161)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(90, 35)
         Me.btncancelar.TabIndex = 109
@@ -194,19 +194,19 @@ Partial Class M_CrearMedico
         Me.btncrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncrear.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncrear.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncrear.Location = New System.Drawing.Point(155, 232)
+        Me.btncrear.Location = New System.Drawing.Point(390, 161)
         Me.btncrear.Name = "btncrear"
         Me.btncrear.Size = New System.Drawing.Size(78, 35)
         Me.btncrear.TabIndex = 108
         Me.btncrear.Text = "Crear"
         Me.btncrear.UseVisualStyleBackColor = False
         '
-        'M_CrearMedico
+        'CrearMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1010, 518)
+        Me.ClientSize = New System.Drawing.Size(586, 212)
         Me.Controls.Add(Me.btncancelar)
         Me.Controls.Add(Me.btncrear)
         Me.Controls.Add(Me.txtnombreCompleto)
@@ -224,7 +224,7 @@ Partial Class M_CrearMedico
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtcodigo)
         Me.Controls.Add(Me.lblcodigo)
-        Me.Name = "M_CrearMedico"
+        Me.Name = "CrearMedico"
         Me.Text = "Médico: Crear"
         Me.ResumeLayout(False)
         Me.PerformLayout()

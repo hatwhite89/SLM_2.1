@@ -30,8 +30,6 @@
             objMedico.Telefono1 = txttelefono.Text
             objMedico.Celular1 = txtcelular.Text
             objMedico.Codigo_especialidad1 = txtcodigoEspecialidad.Text
-
-
             Dim respuesta As String = ""
             respuesta = objMedico.RegistrarNuevoMedico()
             txtcorreo.Text() = ""
@@ -44,9 +42,5 @@
         Else
             MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
         End If
-    End Sub
-
-    Private Sub M_CrearMedico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 End Class
