@@ -117,25 +117,25 @@ Public Class ClsFormaPago
         sqlcom.CommandText = "Nombre de Procedimiento"
 
         'nombre campo en el procedimiento almacenado 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "primer_nombre"
-        sqlpar.Value = Primer_nombre1
-        sqlcom.Parameters.Add(sqlpar)
-        sqlpar = New SqlParameter
+        'sqlpar = New SqlParameter
+        'sqlpar.ParameterName = "primer_nombre"
+        'sqlpar.Value = Primer_nombre1
+        'sqlcom.Parameters.Add(sqlpar)
+        'sqlpar = New SqlParameter
 
-        sqlpar.ParameterName = "segundo_nombre"
-        sqlpar.Value = Segundo_apellido1
-        sqlcom.Parameters.Add(sqlpar)
+        'sqlpar.ParameterName = "segundo_nombre"
+        'sqlpar.Value = Segundo_apellido1
+        'sqlcom.Parameters.Add(sqlpar)
 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "primer_apellido"
-        sqlpar.Value = Primer_apellido1
-        sqlcom.Parameters.Add(sqlpar)
+        'sqlpar = New SqlParameter
+        'sqlpar.ParameterName = "primer_apellido"
+        'sqlpar.Value = Primer_apellido1
+        'sqlcom.Parameters.Add(sqlpar)
 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "segundo_apellido"
-        sqlpar.Value = Segundo_apellido1
-        sqlcom.Parameters.Add(sqlpar)
+        'sqlpar = New SqlParameter
+        'sqlpar.ParameterName = "segundo_apellido"
+        'sqlpar.Value = Segundo_apellido1
+        'sqlcom.Parameters.Add(sqlpar)
 
 
         sqlpar = New SqlParameter
