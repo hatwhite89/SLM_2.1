@@ -8,4 +8,8 @@
             MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
         End If
     End Sub
+
+    Private Sub M_CrearCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
