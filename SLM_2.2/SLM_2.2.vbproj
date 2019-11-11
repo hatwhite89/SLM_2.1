@@ -117,6 +117,7 @@
     <Compile Include="negocio\ClsEspecialidad.vb" />
     <Compile Include="negocio\ClsMedico.vb" />
     <Compile Include="negocio\ClsPaciente.vb" />
+    <Compile Include="negocio\ClsTipoClasificacion.vb" />
     <Compile Include="presentacion\Asiento.designer.vb">
       <DependentUpon>Asiento.vb</DependentUpon>
     </Compile>
