@@ -27,15 +27,19 @@ Partial Class frmMenuConta
         Me.btnDepoBanc = New System.Windows.Forms.Button()
         Me.tpPagos = New System.Windows.Forms.TabPage()
         Me.btnPagos = New System.Windows.Forms.Button()
+        Me.TpMantenimiento = New System.Windows.Forms.TabPage()
+        Me.btnFormaPago = New System.Windows.Forms.Button()
         Me.tcMenu.SuspendLayout()
         Me.tpCheque.SuspendLayout()
         Me.tpPagos.SuspendLayout()
+        Me.TpMantenimiento.SuspendLayout()
         Me.SuspendLayout()
         '
         'tcMenu
         '
         Me.tcMenu.Controls.Add(Me.tpCheque)
         Me.tcMenu.Controls.Add(Me.tpPagos)
+        Me.tcMenu.Controls.Add(Me.TpMantenimiento)
         Me.tcMenu.Location = New System.Drawing.Point(12, 12)
         Me.tcMenu.Name = "tcMenu"
         Me.tcMenu.SelectedIndex = 0
@@ -88,11 +92,31 @@ Partial Class frmMenuConta
         Me.btnPagos.Text = "Pagos"
         Me.btnPagos.UseVisualStyleBackColor = False
         '
+        'TpMantenimiento
+        '
+        Me.TpMantenimiento.Controls.Add(Me.btnFormaPago)
+        Me.TpMantenimiento.Location = New System.Drawing.Point(4, 22)
+        Me.TpMantenimiento.Name = "TpMantenimiento"
+        Me.TpMantenimiento.Padding = New System.Windows.Forms.Padding(3)
+        Me.TpMantenimiento.Size = New System.Drawing.Size(282, 317)
+        Me.TpMantenimiento.TabIndex = 2
+        Me.TpMantenimiento.Text = "Mantenimiento"
+        Me.TpMantenimiento.UseVisualStyleBackColor = True
+        '
+        'btnFormaPago
+        '
+        Me.btnFormaPago.Location = New System.Drawing.Point(6, 6)
+        Me.btnFormaPago.Name = "btnFormaPago"
+        Me.btnFormaPago.Size = New System.Drawing.Size(94, 23)
+        Me.btnFormaPago.TabIndex = 0
+        Me.btnFormaPago.Text = "Forma de Pago"
+        Me.btnFormaPago.UseVisualStyleBackColor = True
+        '
         'frmMenuConta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(628, 366)
+        Me.ClientSize = New System.Drawing.Size(312, 366)
         Me.Controls.Add(Me.tcMenu)
         Me.Name = "frmMenuConta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -100,6 +124,7 @@ Partial Class frmMenuConta
         Me.tcMenu.ResumeLayout(False)
         Me.tpCheque.ResumeLayout(False)
         Me.tpPagos.ResumeLayout(False)
+        Me.TpMantenimiento.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -109,4 +134,6 @@ Partial Class frmMenuConta
     Friend WithEvents btnDepoBanc As Button
     Friend WithEvents tpPagos As TabPage
     Friend WithEvents btnPagos As Button
+    Friend WithEvents TpMantenimiento As TabPage
+    Friend WithEvents btnFormaPago As Button
 End Class

@@ -47,7 +47,7 @@ Partial Class frmAsientos
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(453, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(447, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -172,7 +172,7 @@ Partial Class frmAsientos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(453, 302)
+        Me.ClientSize = New System.Drawing.Size(447, 292)
         Me.ControlBox = False
         Me.Controls.Add(Me.txtTotalB2)
         Me.Controls.Add(Me.txtTotalB)

@@ -32,15 +32,13 @@ Partial Class frmFormaPago
         Me.lblCuenta = New System.Windows.Forms.Label()
         Me.lblCuentaBanco = New System.Windows.Forms.Label()
         Me.lblDescrip = New System.Windows.Forms.Label()
-        Me.lblOrden = New System.Windows.Forms.Label()
         Me.lblNombreBanco = New System.Windows.Forms.Label()
         Me.lblFormulario = New System.Windows.Forms.Label()
         Me.lblTipo = New System.Windows.Forms.Label()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.txtCuenta = New System.Windows.Forms.TextBox()
-        Me.txtDescrip = New System.Windows.Forms.TextBox()
+        Me.txtComentario = New System.Windows.Forms.TextBox()
         Me.txtCtaBanco = New System.Windows.Forms.TextBox()
-        Me.txtOrden = New System.Windows.Forms.TextBox()
         Me.txtNombreBanco = New System.Windows.Forms.TextBox()
         Me.txtFormulario = New System.Windows.Forms.TextBox()
         Me.txtTipo = New System.Windows.Forms.TextBox()
@@ -62,7 +60,7 @@ Partial Class frmFormaPago
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(469, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(464, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -129,18 +127,9 @@ Partial Class frmFormaPago
         Me.lblDescrip.AutoSize = True
         Me.lblDescrip.Location = New System.Drawing.Point(224, 81)
         Me.lblDescrip.Name = "lblDescrip"
-        Me.lblDescrip.Size = New System.Drawing.Size(63, 13)
+        Me.lblDescrip.Size = New System.Drawing.Size(60, 13)
         Me.lblDescrip.TabIndex = 4
-        Me.lblDescrip.Text = "Descripción"
-        '
-        'lblOrden
-        '
-        Me.lblOrden.AutoSize = True
-        Me.lblOrden.Location = New System.Drawing.Point(225, 104)
-        Me.lblOrden.Name = "lblOrden"
-        Me.lblOrden.Size = New System.Drawing.Size(61, 13)
-        Me.lblOrden.TabIndex = 5
-        Me.lblOrden.Text = "Cod. Orden"
+        Me.lblDescrip.Text = "Comentario"
         '
         'lblNombreBanco
         '
@@ -183,12 +172,12 @@ Partial Class frmFormaPago
         Me.txtCuenta.Size = New System.Drawing.Size(100, 20)
         Me.txtCuenta.TabIndex = 11
         '
-        'txtDescrip
+        'txtComentario
         '
-        Me.txtDescrip.Location = New System.Drawing.Point(324, 74)
-        Me.txtDescrip.Name = "txtDescrip"
-        Me.txtDescrip.Size = New System.Drawing.Size(100, 20)
-        Me.txtDescrip.TabIndex = 12
+        Me.txtComentario.Location = New System.Drawing.Point(324, 74)
+        Me.txtComentario.Name = "txtComentario"
+        Me.txtComentario.Size = New System.Drawing.Size(100, 20)
+        Me.txtComentario.TabIndex = 12
         '
         'txtCtaBanco
         '
@@ -196,13 +185,6 @@ Partial Class frmFormaPago
         Me.txtCtaBanco.Name = "txtCtaBanco"
         Me.txtCtaBanco.Size = New System.Drawing.Size(100, 20)
         Me.txtCtaBanco.TabIndex = 13
-        '
-        'txtOrden
-        '
-        Me.txtOrden.Location = New System.Drawing.Point(324, 100)
-        Me.txtOrden.Name = "txtOrden"
-        Me.txtOrden.Size = New System.Drawing.Size(100, 20)
-        Me.txtOrden.TabIndex = 14
         '
         'txtNombreBanco
         '
@@ -305,10 +287,8 @@ Partial Class frmFormaPago
         Me.gbxInfoFormaPago.Controls.Add(Me.txtFormulario)
         Me.gbxInfoFormaPago.Controls.Add(Me.lblFormulario)
         Me.gbxInfoFormaPago.Controls.Add(Me.txtTipo)
-        Me.gbxInfoFormaPago.Controls.Add(Me.txtOrden)
         Me.gbxInfoFormaPago.Controls.Add(Me.txtBanco)
-        Me.gbxInfoFormaPago.Controls.Add(Me.lblOrden)
-        Me.gbxInfoFormaPago.Controls.Add(Me.txtDescrip)
+        Me.gbxInfoFormaPago.Controls.Add(Me.txtComentario)
         Me.gbxInfoFormaPago.Controls.Add(Me.lblBanco)
         Me.gbxInfoFormaPago.Controls.Add(Me.lblCuentaBanco)
         Me.gbxInfoFormaPago.Controls.Add(Me.lblDescrip)
@@ -324,7 +304,7 @@ Partial Class frmFormaPago
         '
         'txtComision
         '
-        Me.txtComision.Location = New System.Drawing.Point(324, 126)
+        Me.txtComision.Location = New System.Drawing.Point(324, 100)
         Me.txtComision.Name = "txtComision"
         Me.txtComision.Size = New System.Drawing.Size(100, 20)
         Me.txtComision.TabIndex = 52
@@ -332,7 +312,7 @@ Partial Class frmFormaPago
         'lblComision
         '
         Me.lblComision.AutoSize = True
-        Me.lblComision.Location = New System.Drawing.Point(225, 130)
+        Me.lblComision.Location = New System.Drawing.Point(225, 104)
         Me.lblComision.Name = "lblComision"
         Me.lblComision.Size = New System.Drawing.Size(49, 13)
         Me.lblComision.TabIndex = 51
@@ -343,7 +323,7 @@ Partial Class frmFormaPago
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(469, 256)
+        Me.ClientSize = New System.Drawing.Size(464, 250)
         Me.ControlBox = False
         Me.Controls.Add(Me.gbxInfoFormaPago)
         Me.Controls.Add(Me.MenuStrip1)
@@ -371,15 +351,13 @@ Partial Class frmFormaPago
     Friend WithEvents lblCuenta As Label
     Friend WithEvents lblCuentaBanco As Label
     Friend WithEvents lblDescrip As Label
-    Friend WithEvents lblOrden As Label
     Friend WithEvents lblNombreBanco As Label
     Friend WithEvents lblFormulario As Label
     Friend WithEvents lblTipo As Label
     Friend WithEvents txtCodigo As TextBox
     Friend WithEvents txtCuenta As TextBox
-    Friend WithEvents txtDescrip As TextBox
+    Friend WithEvents txtComentario As TextBox
     Friend WithEvents txtCtaBanco As TextBox
-    Friend WithEvents txtOrden As TextBox
     Friend WithEvents txtNombreBanco As TextBox
     Friend WithEvents txtFormulario As TextBox
     Friend WithEvents txtTipo As TextBox

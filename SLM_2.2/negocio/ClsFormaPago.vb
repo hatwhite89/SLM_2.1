@@ -5,7 +5,7 @@ Public Class ClsFormaPago
     'VARIABLES DE FORMA DE PAGO
     Dim codigo, comentario, nombreBanco, formulario, tipo, banco As String
     Dim cuenta, nroCtaBanco As Integer
-    Dim comision As Decimal
+    Dim comision As Double
     'Constructor
     Public Sub New()
 
@@ -94,49 +94,72 @@ Public Class ClsFormaPago
     End Property
 
     'Comision
-    Public Property Comi_sion As Decimal
+    Public Property Comi_sion As Double
         Get
             Return comision
         End Get
-        Set(value As Decimal)
+        Set(value As Double)
             comision = value
         End Set
     End Property
 
-
-
-
     Public Function RegistrarNuevoPaciente() As String
+
+
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
-        'Seleccion de procedimiento a ejecutar
+        'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
         sqlcom.CommandText = "slmInsertarFormaPago"
 
-        'nombre campo en el procedimiento almacenado 
-        'sqlpar = New SqlParameter
-        'sqlpar.ParameterName = "primer_nombre"
-        'sqlpar.Value = Primer_nombre1
-        'sqlcom.Parameters.Add(sqlpar)
-        'sqlpar = New SqlParameter
+        'VARIABLES 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigo"
+        sqlpar.Value = Cod
+        sqlcom.Parameters.Add(sqlpar)
 
-        'sqlpar.ParameterName = "segundo_nombre"
-        'sqlpar.Value = Segundo_apellido1
-        'sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cuenta"
+        sqlpar.Value = Cuen_ta
+        sqlcom.Parameters.Add(sqlpar)
 
-        'sqlpar = New SqlParameter
-        'sqlpar.ParameterName = "primer_apellido"
-        'sqlpar.Value = Primer_apellido1
-        'sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "comentario"
+        sqlpar.Value = Comenta_rio
+        sqlcom.Parameters.Add(sqlpar)
 
-        'sqlpar = New SqlParameter
-        'sqlpar.ParameterName = "segundo_apellido"
-        'sqlpar.Value = Segundo_apellido1
-        'sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nroCtaBanco"
+        sqlpar.Value = Cuenta_Banco
+        sqlcom.Parameters.Add(sqlpar)
 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nombreBanco"
+        sqlpar.Value = Nombre_Banco
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "formulario"
+        sqlpar.Value = Formu_lario
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "tipo"
+        sqlpar.Value = Ti_po
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "banco"
+        sqlpar.Value = Ban_co
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "comision"
+        sqlpar.Value = 1.5
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -145,9 +168,12 @@ Public Class ClsFormaPago
 
         sqlpar.Direction = ParameterDirection.Output
 
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
         sqlcom.ExecuteNonQuery()
 
-        par_sal = sqlcom.Parameters("Salida").Value
+        par_sal = sqlcom.Parameters("salida").Value
 
         Return par_sal
 
