@@ -124,6 +124,12 @@
     <Compile Include="presentacion\Asiento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_BuscarFormaPago.Designer.vb">
+      <DependentUpon>A_BuscarFormaPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_BuscarFormaPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\Depositos.Designer.vb">
       <DependentUpon>Depositos.vb</DependentUpon>
     </Compile>
@@ -341,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\Asiento.resx">
       <DependentUpon>Asiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_BuscarFormaPago.resx">
+      <DependentUpon>A_BuscarFormaPago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\Depositos.resx">
       <DependentUpon>Depositos.vb</DependentUpon>

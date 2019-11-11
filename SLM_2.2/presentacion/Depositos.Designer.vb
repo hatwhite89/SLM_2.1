@@ -22,6 +22,7 @@ Partial Class frmDeposito
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDeposito))
         Me.lblNro = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -60,6 +61,7 @@ Partial Class frmDeposito
         Me.lblComentario = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.gbxInfoDepo = New System.Windows.Forms.GroupBox()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxInfoDepo.SuspendLayout()
         Me.SuspendLayout()
@@ -142,9 +144,9 @@ Partial Class frmDeposito
         '
         'txtFormaPago
         '
-        Me.txtFormaPago.Location = New System.Drawing.Point(95, 77)
+        Me.txtFormaPago.Location = New System.Drawing.Point(93, 78)
         Me.txtFormaPago.Name = "txtFormaPago"
-        Me.txtFormaPago.Size = New System.Drawing.Size(70, 20)
+        Me.txtFormaPago.Size = New System.Drawing.Size(48, 20)
         Me.txtFormaPago.TabIndex = 34
         '
         'lblContado
@@ -370,6 +372,7 @@ Partial Class frmDeposito
         '
         'gbxInfoDepo
         '
+        Me.gbxInfoDepo.Controls.Add(Me.btnBuscar)
         Me.gbxInfoDepo.Controls.Add(Me.TextBox3)
         Me.gbxInfoDepo.Controls.Add(Me.btnListar)
         Me.gbxInfoDepo.Controls.Add(Me.Button1)
@@ -407,6 +410,18 @@ Partial Class frmDeposito
         Me.gbxInfoDepo.TabIndex = 74
         Me.gbxInfoDepo.TabStop = False
         Me.gbxInfoDepo.Text = "Información de Deposito"
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackgroundImage = CType(resources.GetObject("btnBuscar.BackgroundImage"), System.Drawing.Image)
+        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBuscar.FlatAppearance.BorderSize = 0
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Location = New System.Drawing.Point(144, 79)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(21, 17)
+        Me.btnBuscar.TabIndex = 74
+        Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'frmDeposito
         '
@@ -468,4 +483,5 @@ Partial Class frmDeposito
     Friend WithEvents lblComentario As Label
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents gbxInfoDepo As GroupBox
+    Friend WithEvents btnBuscar As Button
 End Class

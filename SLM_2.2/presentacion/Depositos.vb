@@ -10,20 +10,7 @@
 
     Private Sub txtComision_TextChanged(sender As Object, e As EventArgs) Handles txtComision.TextChanged
 
-        'Calculo de comisiones
-        If txtFormaPago.Text = "" Then
 
-            txtComision.Text = txtContado.Text * 2.95 'Comision Banpais
-
-        ElseIf txtFormaPago.Text = "" Then
-
-            txtComision.Text = txtContado.Text * 2.6 'Comision Ficohsa
-
-        ElseIf txtFormaPago.Text = "" Then
-
-            txtComision.Text = txtContado.Text * 3.15 'Comision BAC
-
-        End If 'Final if comisiones
     End Sub
 
     Private Sub frmDeposito_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -34,5 +21,9 @@
 
     Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
         ListarDepositos.Show()
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+
     End Sub
 End Class
