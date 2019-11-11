@@ -32,10 +32,6 @@ Partial Class frmAsientos
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtReferencia = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtDifBase1 = New System.Windows.Forms.TextBox()
-        Me.txtDifBase2 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.txtTotal2 = New System.Windows.Forms.TextBox()
@@ -51,7 +47,7 @@ Partial Class frmAsientos
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(453, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -122,45 +118,13 @@ Partial Class frmAsientos
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(12, 64)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(776, 171)
+        Me.DataGridView1.Size = New System.Drawing.Size(427, 171)
         Me.DataGridView1.TabIndex = 7
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 250)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 13)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Dif. Base 1"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 273)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(59, 13)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Dif. Base 2"
-        '
-        'txtDifBase1
-        '
-        Me.txtDifBase1.Location = New System.Drawing.Point(77, 247)
-        Me.txtDifBase1.Name = "txtDifBase1"
-        Me.txtDifBase1.Size = New System.Drawing.Size(64, 20)
-        Me.txtDifBase1.TabIndex = 10
-        '
-        'txtDifBase2
-        '
-        Me.txtDifBase2.Location = New System.Drawing.Point(77, 270)
-        Me.txtDifBase2.Name = "txtDifBase2"
-        Me.txtDifBase2.Size = New System.Drawing.Size(64, 20)
-        Me.txtDifBase2.TabIndex = 11
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(586, 250)
+        Me.Label5.Location = New System.Drawing.Point(268, 244)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(31, 13)
         Me.Label5.TabIndex = 12
@@ -168,14 +132,14 @@ Partial Class frmAsientos
         '
         'txtTotal
         '
-        Me.txtTotal.Location = New System.Drawing.Point(623, 247)
+        Me.txtTotal.Location = New System.Drawing.Point(305, 241)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.Size = New System.Drawing.Size(64, 20)
         Me.txtTotal.TabIndex = 13
         '
         'txtTotal2
         '
-        Me.txtTotal2.Location = New System.Drawing.Point(693, 247)
+        Me.txtTotal2.Location = New System.Drawing.Point(375, 241)
         Me.txtTotal2.Name = "txtTotal2"
         Me.txtTotal2.Size = New System.Drawing.Size(64, 20)
         Me.txtTotal2.TabIndex = 14
@@ -183,7 +147,7 @@ Partial Class frmAsientos
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(586, 273)
+        Me.Label6.Location = New System.Drawing.Point(268, 267)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(31, 13)
         Me.Label6.TabIndex = 15
@@ -191,14 +155,14 @@ Partial Class frmAsientos
         '
         'txtTotalB
         '
-        Me.txtTotalB.Location = New System.Drawing.Point(623, 270)
+        Me.txtTotalB.Location = New System.Drawing.Point(305, 264)
         Me.txtTotalB.Name = "txtTotalB"
         Me.txtTotalB.Size = New System.Drawing.Size(64, 20)
         Me.txtTotalB.TabIndex = 16
         '
         'txtTotalB2
         '
-        Me.txtTotalB2.Location = New System.Drawing.Point(693, 270)
+        Me.txtTotalB2.Location = New System.Drawing.Point(375, 264)
         Me.txtTotalB2.Name = "txtTotalB2"
         Me.txtTotalB2.Size = New System.Drawing.Size(64, 20)
         Me.txtTotalB2.TabIndex = 17
@@ -208,7 +172,7 @@ Partial Class frmAsientos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(800, 304)
+        Me.ClientSize = New System.Drawing.Size(453, 302)
         Me.ControlBox = False
         Me.Controls.Add(Me.txtTotalB2)
         Me.Controls.Add(Me.txtTotalB)
@@ -216,10 +180,6 @@ Partial Class frmAsientos
         Me.Controls.Add(Me.txtTotal2)
         Me.Controls.Add(Me.txtTotal)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.txtDifBase2)
-        Me.Controls.Add(Me.txtDifBase1)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.txtReferencia)
         Me.Controls.Add(Me.Label2)
@@ -250,10 +210,6 @@ Partial Class frmAsientos
     Friend WithEvents Label2 As Label
     Friend WithEvents txtReferencia As TextBox
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents txtDifBase1 As TextBox
-    Friend WithEvents txtDifBase2 As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents txtTotal As TextBox
     Friend WithEvents txtTotal2 As TextBox
