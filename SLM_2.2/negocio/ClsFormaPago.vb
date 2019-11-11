@@ -1,7 +1,7 @@
 ﻿
 Imports System.Data.SqlClient
 Public Class ClsFormaPago
-
+    'GUARDAR CAMBIOS
     'VARIABLES DE FORMA DE PAGO
     Dim codigo, comentario, nombreBanco, formulario, tipo, banco As String
     Dim cuenta, nroCtaBanco As Integer
