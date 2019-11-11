@@ -122,6 +122,8 @@ Public Class ClsMedico
 
         sqlpar.Direction = ParameterDirection.Output
 
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
 
         sqlcom.ExecuteNonQuery()
 

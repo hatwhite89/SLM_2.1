@@ -27,7 +27,7 @@ Public Class ClsEspecialidad
         End Set
     End Property
 
-    Public Function RegistrarNuevoMedico() As String
+    Public Function RegistrarNuevaEspecialidad() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
@@ -49,14 +49,90 @@ Public Class ClsEspecialidad
 
         sqlpar.Direction = ParameterDirection.Output
 
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
 
         sqlcom.ExecuteNonQuery()
 
-        par_sal = sqlcom.Parameters("Salida").Value
+        par_sal = sqlcom.Parameters("salida").Value
 
         Return par_sal
 
     End Function
 
+    Public Function ModificarEspecialidad() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "slmModificarEspecialidad"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Codigo1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nombre" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Nombre1
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
+
+    Public Function BuscarEspecialidad() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "slmBuscarEspecialidad"
+            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Nombre1
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+
+    Public Function SeleccionarEspecialidad() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("slmSeleccionarEspecialidad", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 
 End Class
