@@ -158,7 +158,7 @@ Public Class ClsFormaPago
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "comision"
-        sqlpar.Value = 1.5
+        sqlpar.Value = comision
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

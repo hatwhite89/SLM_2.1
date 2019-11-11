@@ -25,8 +25,6 @@ Partial Class frmFormaPago
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GuardarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblCod = New System.Windows.Forms.Label()
         Me.lblCuenta = New System.Windows.Forms.Label()
@@ -66,7 +64,7 @@ Partial Class frmFormaPago
         '
         'ArchivoToolStripMenuItem
         '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GuardarToolStripMenuItem, Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GuardarToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
         Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
@@ -77,22 +75,10 @@ Partial Class frmFormaPago
         Me.GuardarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.GuardarToolStripMenuItem.Text = "Guardar"
         '
-        'EditarToolStripMenuItem
-        '
-        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.EditarToolStripMenuItem.Text = "Editar"
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
-        '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'lblCod
@@ -344,8 +330,6 @@ Partial Class frmFormaPago
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GuardarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lblCod As Label
     Friend WithEvents lblCuenta As Label
