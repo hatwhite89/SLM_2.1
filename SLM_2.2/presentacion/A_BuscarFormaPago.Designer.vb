@@ -32,7 +32,7 @@ Partial Class A_BuscarFormaPago
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(87, 20)
+        Me.TextBox1.Location = New System.Drawing.Point(85, 20)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
         Me.TextBox1.TabIndex = 0

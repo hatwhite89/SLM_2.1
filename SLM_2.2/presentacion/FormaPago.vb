@@ -24,9 +24,10 @@ Public Class frmFormaPago
             FormaPago.Formu_lario = txtFormulario.Text
             FormaPago.Ti_po = txtTipo.Text
             FormaPago.Ban_co = txtBanco.Text
-            'FormaPago.Comi_sion = Convert.ToDouble(txtComision.Text)
+            FormaPago.Comi_sion = Convert.ToDouble(txtComision.Text)
 
             FormaPago.RegistrarNuevoPaciente()
+            MessageBox.Show("El registro ha sido guardado exitosamente.")
 
         Catch ex As Exception
 
@@ -45,5 +46,7 @@ Public Class frmFormaPago
 
     End Sub
 
-
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        Me.Close()
+    End Sub
 End Class
