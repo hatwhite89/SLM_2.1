@@ -133,5 +133,103 @@ Public Class ClsMedico
 
     End Function
 
+    Public Function ModificarMedico() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "slmModificarMedico"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Codigo1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigo_especialidad" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Codigo_especialidad1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nombre_completo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Nombre_completo1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "correo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Correo1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "correo2" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Correo21
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "telefono" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Telefono1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "celular" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Celular1
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
+
+    Public Function BuscarMedico() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "slmBuscarMedico"
+            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Nombre_completo1
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+    Public Function SeleccionarMedico() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("slmSeleccionarMedico", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 
 End Class

@@ -1,6 +1,7 @@
 ﻿Public Class M_BuscarCliente
     Private Sub btnbuscarCliente_Click(sender As Object, e As EventArgs) Handles btnbuscarCliente.Click
         If (mtxtidentidadClienteB.MaskCompleted = True) Then
+
             gbxinfoCliente.Visible = True
         Else
             MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")

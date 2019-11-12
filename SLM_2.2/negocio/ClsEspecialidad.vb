@@ -135,4 +135,14 @@ Public Class ClsEspecialidad
         End Using
     End Function
 
+
+    Public Function BuscarEspecialidadCode() As SqlDataReader
+        Dim sqlcom As SqlCommand
+        sqlcom = New SqlCommand
+        sqlcom.Parameters.Add("", SqlDbType.Int).Value = Codigo1
+        sqlcom.CommandText = "select * from slmBuscarEspecialidadCode()"
+        sqlcom.Connection = New ClsConnection().getConexion
+        Return sqlcom.ExecuteReader
+    End Function
+
 End Class

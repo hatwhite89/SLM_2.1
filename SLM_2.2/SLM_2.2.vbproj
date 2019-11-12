@@ -298,12 +298,6 @@
     <Compile Include="presentacion\M_Factura2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\M_Medico.Designer.vb">
-      <DependentUpon>M_Medico.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_Medico.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="presentacion\M_Sede.Designer.vb">
       <DependentUpon>M_Sede.vb</DependentUpon>
     </Compile>
@@ -443,9 +437,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Factura2.resx">
       <DependentUpon>M_Factura2.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_Medico.resx">
-      <DependentUpon>M_Medico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Sede.resx">
       <DependentUpon>M_Sede.vb</DependentUpon>

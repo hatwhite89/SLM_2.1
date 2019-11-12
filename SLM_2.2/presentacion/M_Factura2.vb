@@ -4,6 +4,10 @@
     End Sub
 
     Private Sub btnbuscarMedico_Click(sender As Object, e As EventArgs) Handles btnbuscarMedico.Click
-        M_BuscarMedico.ShowDialog()
+        M_CrearMedico.ShowDialog()
+    End Sub
+
+    Private Sub btnbuscarCliente_Click(sender As Object, e As EventArgs) Handles btnbuscarCliente.Click
+        M_CrearCliente.ShowDialog()
     End Sub
 End Class

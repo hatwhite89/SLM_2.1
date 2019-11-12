@@ -60,7 +60,7 @@ Partial Class M_Factura2
         Me.txtcodigoFactura = New System.Windows.Forms.TextBox()
         Me.txtcodigoOficial = New System.Windows.Forms.TextBox()
         Me.txtcodigoCliente = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtnombreCliente = New System.Windows.Forms.TextBox()
         Me.txtcodigoMedico = New System.Windows.Forms.TextBox()
         Me.txtpoliza = New System.Windows.Forms.TextBox()
         Me.dtpfechaFactura = New System.Windows.Forms.DateTimePicker()
@@ -71,7 +71,7 @@ Partial Class M_Factura2
         Me.txtrecepecionista = New System.Windows.Forms.TextBox()
         Me.txtcajero = New System.Windows.Forms.TextBox()
         Me.txtsucursal = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txtnombreMedico = New System.Windows.Forms.TextBox()
         Me.txtcodigoTerminosPago = New System.Windows.Forms.TextBox()
         Me.txtcodigoSede = New System.Windows.Forms.TextBox()
         Me.txtcodigoDocumento = New System.Windows.Forms.TextBox()
@@ -465,13 +465,13 @@ Partial Class M_Factura2
         Me.txtcodigoCliente.Size = New System.Drawing.Size(185, 22)
         Me.txtcodigoCliente.TabIndex = 41
         '
-        'TextBox3
+        'txtnombreCliente
         '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(405, 114)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(313, 22)
-        Me.TextBox3.TabIndex = 42
+        Me.txtnombreCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnombreCliente.Location = New System.Drawing.Point(405, 114)
+        Me.txtnombreCliente.Name = "txtnombreCliente"
+        Me.txtnombreCliente.Size = New System.Drawing.Size(313, 22)
+        Me.txtnombreCliente.TabIndex = 42
         '
         'txtcodigoMedico
         '
@@ -556,13 +556,13 @@ Partial Class M_Factura2
         Me.txtsucursal.Size = New System.Drawing.Size(133, 22)
         Me.txtsucursal.TabIndex = 53
         '
-        'TextBox5
+        'txtnombreMedico
         '
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(405, 142)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(312, 22)
-        Me.TextBox5.TabIndex = 54
+        Me.txtnombreMedico.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnombreMedico.Location = New System.Drawing.Point(405, 142)
+        Me.txtnombreMedico.Name = "txtnombreMedico"
+        Me.txtnombreMedico.Size = New System.Drawing.Size(312, 22)
+        Me.txtnombreMedico.TabIndex = 54
         '
         'txtcodigoTerminosPago
         '
@@ -873,7 +873,7 @@ Partial Class M_Factura2
         Me.btnbuscarSucursal.TabIndex = 92
         Me.btnbuscarSucursal.UseVisualStyleBackColor = False
         '
-        'Factura2
+        'M_Factura2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -901,7 +901,7 @@ Partial Class M_Factura2
         Me.Controls.Add(Me.txtcodigoDocumento)
         Me.Controls.Add(Me.txtcodigoSede)
         Me.Controls.Add(Me.txtcodigoTerminosPago)
-        Me.Controls.Add(Me.TextBox5)
+        Me.Controls.Add(Me.txtnombreMedico)
         Me.Controls.Add(Me.txtsucursal)
         Me.Controls.Add(Me.txtcajero)
         Me.Controls.Add(Me.txtrecepecionista)
@@ -911,7 +911,7 @@ Partial Class M_Factura2
         Me.Controls.Add(Me.dtpfechaFactura)
         Me.Controls.Add(Me.txtpoliza)
         Me.Controls.Add(Me.txtcodigoMedico)
-        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.txtnombreCliente)
         Me.Controls.Add(Me.txtcodigoCliente)
         Me.Controls.Add(Me.txtcodigoOficial)
         Me.Controls.Add(Me.txtcodigoFactura)
@@ -940,7 +940,7 @@ Partial Class M_Factura2
         Me.Controls.Add(Me.lblcodigo)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "Factura2"
+        Me.Name = "M_Factura2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Factura Laboratorios Médicos"
         Me.gbxlistadoExamenes.ResumeLayout(False)
@@ -981,7 +981,7 @@ Partial Class M_Factura2
     Friend WithEvents txtcodigoFactura As TextBox
     Friend WithEvents txtcodigoOficial As TextBox
     Friend WithEvents txtcodigoCliente As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtnombreCliente As TextBox
     Friend WithEvents txtcodigoMedico As TextBox
     Friend WithEvents txtpoliza As TextBox
     Friend WithEvents dtpfechaFactura As DateTimePicker
@@ -992,7 +992,7 @@ Partial Class M_Factura2
     Friend WithEvents txtrecepecionista As TextBox
     Friend WithEvents txtcajero As TextBox
     Friend WithEvents txtsucursal As TextBox
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents txtnombreMedico As TextBox
     Friend WithEvents txtcodigoTerminosPago As TextBox
     Friend WithEvents txtcodigoSede As TextBox
     Friend WithEvents txtcodigoDocumento As TextBox
