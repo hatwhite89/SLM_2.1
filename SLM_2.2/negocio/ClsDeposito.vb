@@ -2,9 +2,9 @@
 Public Class ClsDeposito
     'VARIABLES
     Dim TipoContado, moneda, comentario, tipoDeposito, codCajero, banco As String
-    Dim contado, totalDepositado, monBase, codFormapago As Integer
+    Dim codDeposito, codFormapago As Integer
     Dim fecha As Date
-    Dim comision As Decimal
+    Dim comision, contado, totalDepositado, monBase As Double
 
     'Constructor
     Public Sub New()
@@ -12,6 +12,17 @@ Public Class ClsDeposito
 
 
     End Sub
+
+    'Codigo de Deposito
+    Public Property Cod As Integer
+        Get
+            Return codDeposito
+        End Get
+        Set(value As Integer)
+            codDeposito = value
+        End Set
+    End Property
+
     'banco
     Public Property Banc_o As String
         Get
@@ -82,29 +93,29 @@ Public Class ClsDeposito
         End Set
     End Property
     'MonBase
-    Public Property mon_base As Integer
+    Public Property mon_base As Double
         Get
             Return monBase
         End Get
-        Set(value As Integer)
+        Set(value As Double)
             monBase = value
         End Set
     End Property
     'totalDepositado
-    Public Property total_Depositado As Integer
+    Public Property total_Depositado As Double
         Get
             Return totalDepositado
         End Get
-        Set(value As Integer)
+        Set(value As Double)
             totalDepositado = value
         End Set
     End Property
     'contado
-    Public Property conta_do As Integer
+    Public Property conta_do As Double
         Get
             Return contado
         End Get
-        Set(value As Integer)
+        Set(value As Double)
             contado = value
         End Set
     End Property
@@ -118,11 +129,11 @@ Public Class ClsDeposito
         End Set
     End Property
     'Comision
-    Public Property comisi_on As Decimal
+    Public Property comisi_on As Double
         Get
             Return comision
         End Get
-        Set(value As Decimal)
+        Set(value As Double)
             comision = value
         End Set
     End Property
@@ -215,7 +226,86 @@ Public Class ClsDeposito
 
     End Function
 
+    Public Function listarDepositos() As DataTable
 
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("slmListarDepositos_A", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+    'Buscar deposito por codigo del deposito
+    Public Function buscarDepositoXCod() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "slmBuscarDeposito_A"
+            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Cod
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+    'Buscar deposito por tipo del deposito
+    Public Function buscarDepositoXTipoDepo() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "slmBuscarDepositoXTipoDepo_A"
+            cmd.Parameters.Add("@tipoDeposito", SqlDbType.VarChar).Value = Tipo_Deposito
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+    Public Function buscarDepositoXBanco() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "slmBuscarDepositoXBanco_A"
+            cmd.Parameters.Add("@banco", SqlDbType.VarChar).Value = Banc_o
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
 
 
 

@@ -49,19 +49,31 @@ Partial Class frmDeposito
         Me.lblTipoDeposito = New System.Windows.Forms.Label()
         Me.lblComision = New System.Windows.Forms.Label()
         Me.txtComision = New System.Windows.Forms.TextBox()
-        Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnListar = New System.Windows.Forms.Button()
-        Me.btnUltimo = New System.Windows.Forms.Button()
         Me.lblCajero = New System.Windows.Forms.Label()
         Me.txtCajero = New System.Windows.Forms.TextBox()
         Me.lblComentario = New System.Windows.Forms.Label()
         Me.txtComentario = New System.Windows.Forms.TextBox()
         Me.gbxInfoDepo = New System.Windows.Forms.GroupBox()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.linklblCalcular = New System.Windows.Forms.LinkLabel()
+        Me.btnCrearNuevo = New System.Windows.Forms.Button()
         Me.btnBuscarTipoConta = New System.Windows.Forms.Button()
         Me.lblCodFormaPago = New System.Windows.Forms.Label()
         Me.btnBuscarBanco = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.rbtnFormaP = New System.Windows.Forms.RadioButton()
+        Me.rbtnTipo = New System.Windows.Forms.RadioButton()
+        Me.rbtnID = New System.Windows.Forms.RadioButton()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtForma = New System.Windows.Forms.TextBox()
+        Me.cbxTipo = New System.Windows.Forms.ComboBox()
+        Me.dtDepositos = New System.Windows.Forms.DataGridView()
+        Me.txtID = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxInfoDepo.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.dtDepositos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblNro
@@ -78,7 +90,7 @@ Partial Class frmDeposito
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(397, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(788, 24)
         Me.MenuStrip1.TabIndex = 29
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -109,6 +121,7 @@ Partial Class frmDeposito
         '
         'txtNro
         '
+        Me.txtNro.Enabled = False
         Me.txtNro.Location = New System.Drawing.Point(96, 27)
         Me.txtNro.Name = "txtNro"
         Me.txtNro.Size = New System.Drawing.Size(70, 20)
@@ -240,7 +253,7 @@ Partial Class frmDeposito
         'lblTipoDeposito
         '
         Me.lblTipoDeposito.AutoSize = True
-        Me.lblTipoDeposito.Location = New System.Drawing.Point(286, 30)
+        Me.lblTipoDeposito.Location = New System.Drawing.Point(280, 32)
         Me.lblTipoDeposito.Name = "lblTipoDeposito"
         Me.lblTipoDeposito.Size = New System.Drawing.Size(47, 13)
         Me.lblTipoDeposito.TabIndex = 49
@@ -257,47 +270,10 @@ Partial Class frmDeposito
         '
         'txtComision
         '
-        Me.txtComision.Enabled = False
         Me.txtComision.Location = New System.Drawing.Point(93, 227)
         Me.txtComision.Name = "txtComision"
         Me.txtComision.Size = New System.Drawing.Size(72, 20)
         Me.txtComision.TabIndex = 61
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(282, 186)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
-        Me.btnGuardar.TabIndex = 67
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = False
-        '
-        'btnListar
-        '
-        Me.btnListar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnListar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnListar.ForeColor = System.Drawing.Color.White
-        Me.btnListar.Location = New System.Drawing.Point(282, 209)
-        Me.btnListar.Name = "btnListar"
-        Me.btnListar.Size = New System.Drawing.Size(75, 23)
-        Me.btnListar.TabIndex = 68
-        Me.btnListar.Text = "Listar"
-        Me.btnListar.UseVisualStyleBackColor = False
-        '
-        'btnUltimo
-        '
-        Me.btnUltimo.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnUltimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUltimo.ForeColor = System.Drawing.Color.White
-        Me.btnUltimo.Location = New System.Drawing.Point(282, 232)
-        Me.btnUltimo.Name = "btnUltimo"
-        Me.btnUltimo.Size = New System.Drawing.Size(75, 23)
-        Me.btnUltimo.TabIndex = 69
-        Me.btnUltimo.Text = "Ver último"
-        Me.btnUltimo.UseVisualStyleBackColor = False
         '
         'lblCajero
         '
@@ -310,7 +286,7 @@ Partial Class frmDeposito
         '
         'txtCajero
         '
-        Me.txtCajero.Location = New System.Drawing.Point(284, 50)
+        Me.txtCajero.Location = New System.Drawing.Point(280, 50)
         Me.txtCajero.Name = "txtCajero"
         Me.txtCajero.Size = New System.Drawing.Size(71, 20)
         Me.txtCajero.TabIndex = 71
@@ -334,12 +310,13 @@ Partial Class frmDeposito
         '
         'gbxInfoDepo
         '
+        Me.gbxInfoDepo.Controls.Add(Me.btnModificar)
+        Me.gbxInfoDepo.Controls.Add(Me.linklblCalcular)
+        Me.gbxInfoDepo.Controls.Add(Me.btnCrearNuevo)
         Me.gbxInfoDepo.Controls.Add(Me.btnBuscarTipoConta)
         Me.gbxInfoDepo.Controls.Add(Me.lblCodFormaPago)
         Me.gbxInfoDepo.Controls.Add(Me.btnBuscarBanco)
         Me.gbxInfoDepo.Controls.Add(Me.txtComentario)
-        Me.gbxInfoDepo.Controls.Add(Me.btnListar)
-        Me.gbxInfoDepo.Controls.Add(Me.btnUltimo)
         Me.gbxInfoDepo.Controls.Add(Me.btnGuardar)
         Me.gbxInfoDepo.Controls.Add(Me.lblNro)
         Me.gbxInfoDepo.Controls.Add(Me.lblComentario)
@@ -366,10 +343,48 @@ Partial Class frmDeposito
         Me.gbxInfoDepo.Controls.Add(Me.txtMonBase)
         Me.gbxInfoDepo.Location = New System.Drawing.Point(12, 36)
         Me.gbxInfoDepo.Name = "gbxInfoDepo"
-        Me.gbxInfoDepo.Size = New System.Drawing.Size(373, 265)
+        Me.gbxInfoDepo.Size = New System.Drawing.Size(382, 265)
         Me.gbxInfoDepo.TabIndex = 74
         Me.gbxInfoDepo.TabStop = False
         Me.gbxInfoDepo.Text = "Información de Deposito"
+        '
+        'btnModificar
+        '
+        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnModificar.FlatAppearance.BorderSize = 0
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.ForeColor = System.Drawing.Color.White
+        Me.btnModificar.Location = New System.Drawing.Point(301, 208)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar.TabIndex = 79
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
+        Me.btnModificar.Visible = False
+        '
+        'linklblCalcular
+        '
+        Me.linklblCalcular.AutoSize = True
+        Me.linklblCalcular.Location = New System.Drawing.Point(168, 232)
+        Me.linklblCalcular.Name = "linklblCalcular"
+        Me.linklblCalcular.Size = New System.Drawing.Size(45, 13)
+        Me.linklblCalcular.TabIndex = 78
+        Me.linklblCalcular.TabStop = True
+        Me.linklblCalcular.Text = "Calcular"
+        '
+        'btnCrearNuevo
+        '
+        Me.btnCrearNuevo.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCrearNuevo.FlatAppearance.BorderSize = 0
+        Me.btnCrearNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCrearNuevo.ForeColor = System.Drawing.Color.White
+        Me.btnCrearNuevo.Location = New System.Drawing.Point(301, 184)
+        Me.btnCrearNuevo.Name = "btnCrearNuevo"
+        Me.btnCrearNuevo.Size = New System.Drawing.Size(75, 23)
+        Me.btnCrearNuevo.TabIndex = 77
+        Me.btnCrearNuevo.Text = "Crear Nuevo"
+        Me.btnCrearNuevo.UseVisualStyleBackColor = False
+        Me.btnCrearNuevo.Visible = False
         '
         'btnBuscarTipoConta
         '
@@ -403,13 +418,124 @@ Partial Class frmDeposito
         Me.btnBuscarBanco.TabIndex = 74
         Me.btnBuscarBanco.UseVisualStyleBackColor = True
         '
+        'btnGuardar
+        '
+        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnGuardar.FlatAppearance.BorderSize = 0
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.ForeColor = System.Drawing.Color.White
+        Me.btnGuardar.Location = New System.Drawing.Point(301, 232)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.TabIndex = 67
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = False
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.rbtnFormaP)
+        Me.GroupBox1.Controls.Add(Me.rbtnTipo)
+        Me.GroupBox1.Controls.Add(Me.rbtnID)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.txtForma)
+        Me.GroupBox1.Controls.Add(Me.cbxTipo)
+        Me.GroupBox1.Controls.Add(Me.dtDepositos)
+        Me.GroupBox1.Controls.Add(Me.txtID)
+        Me.GroupBox1.Location = New System.Drawing.Point(409, 36)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(368, 265)
+        Me.GroupBox1.TabIndex = 75
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Listado de Depositos"
+        '
+        'rbtnFormaP
+        '
+        Me.rbtnFormaP.AutoSize = True
+        Me.rbtnFormaP.Location = New System.Drawing.Point(73, 60)
+        Me.rbtnFormaP.Name = "rbtnFormaP"
+        Me.rbtnFormaP.Size = New System.Drawing.Size(97, 17)
+        Me.rbtnFormaP.TabIndex = 22
+        Me.rbtnFormaP.TabStop = True
+        Me.rbtnFormaP.Text = "Forma de Pago"
+        Me.rbtnFormaP.UseVisualStyleBackColor = True
+        '
+        'rbtnTipo
+        '
+        Me.rbtnTipo.AutoSize = True
+        Me.rbtnTipo.Location = New System.Drawing.Point(73, 41)
+        Me.rbtnTipo.Name = "rbtnTipo"
+        Me.rbtnTipo.Size = New System.Drawing.Size(106, 17)
+        Me.rbtnTipo.TabIndex = 21
+        Me.rbtnTipo.TabStop = True
+        Me.rbtnTipo.Text = "Tipo de Deposito"
+        Me.rbtnTipo.UseVisualStyleBackColor = True
+        '
+        'rbtnID
+        '
+        Me.rbtnID.AutoSize = True
+        Me.rbtnID.Location = New System.Drawing.Point(73, 23)
+        Me.rbtnID.Name = "rbtnID"
+        Me.rbtnID.Size = New System.Drawing.Size(58, 17)
+        Me.rbtnID.TabIndex = 20
+        Me.rbtnID.TabStop = True
+        Me.rbtnID.Text = "Código"
+        Me.rbtnID.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(6, 23)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(61, 13)
+        Me.Label2.TabIndex = 19
+        Me.Label2.Text = "Buscar por:"
+        '
+        'txtForma
+        '
+        Me.txtForma.Location = New System.Drawing.Point(180, 61)
+        Me.txtForma.Name = "txtForma"
+        Me.txtForma.Size = New System.Drawing.Size(80, 20)
+        Me.txtForma.TabIndex = 18
+        Me.txtForma.Visible = False
+        '
+        'cbxTipo
+        '
+        Me.cbxTipo.FormattingEnabled = True
+        Me.cbxTipo.Items.AddRange(New Object() {"Tarjeta", "Dep. Bancario"})
+        Me.cbxTipo.Location = New System.Drawing.Point(180, 39)
+        Me.cbxTipo.Name = "cbxTipo"
+        Me.cbxTipo.Size = New System.Drawing.Size(80, 21)
+        Me.cbxTipo.TabIndex = 16
+        Me.cbxTipo.Visible = False
+        '
+        'dtDepositos
+        '
+        Me.dtDepositos.AllowUserToAddRows = False
+        Me.dtDepositos.AllowUserToDeleteRows = False
+        Me.dtDepositos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtDepositos.Location = New System.Drawing.Point(12, 89)
+        Me.dtDepositos.Name = "dtDepositos"
+        Me.dtDepositos.ReadOnly = True
+        Me.dtDepositos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtDepositos.Size = New System.Drawing.Size(345, 167)
+        Me.dtDepositos.TabIndex = 14
+        '
+        'txtID
+        '
+        Me.txtID.Location = New System.Drawing.Point(180, 18)
+        Me.txtID.Name = "txtID"
+        Me.txtID.Size = New System.Drawing.Size(80, 20)
+        Me.txtID.TabIndex = 13
+        Me.txtID.Visible = False
+        '
         'frmDeposito
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(397, 310)
+        Me.ClientSize = New System.Drawing.Size(788, 309)
         Me.ControlBox = False
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoDepo)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -421,6 +547,9 @@ Partial Class frmDeposito
         Me.MenuStrip1.PerformLayout()
         Me.gbxInfoDepo.ResumeLayout(False)
         Me.gbxInfoDepo.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.dtDepositos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -451,9 +580,6 @@ Partial Class frmDeposito
     Friend WithEvents lblTipoDeposito As Label
     Friend WithEvents lblComision As Label
     Friend WithEvents txtComision As TextBox
-    Friend WithEvents btnGuardar As Button
-    Friend WithEvents btnListar As Button
-    Friend WithEvents btnUltimo As Button
     Friend WithEvents lblCajero As Label
     Friend WithEvents txtCajero As TextBox
     Friend WithEvents lblComentario As Label
@@ -462,4 +588,17 @@ Partial Class frmDeposito
     Friend WithEvents lblCodFormaPago As Label
     Friend WithEvents btnBuscarTipoConta As Button
     Friend WithEvents btnBuscarBanco As Button
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents rbtnFormaP As RadioButton
+    Friend WithEvents rbtnTipo As RadioButton
+    Friend WithEvents rbtnID As RadioButton
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtForma As TextBox
+    Friend WithEvents cbxTipo As ComboBox
+    Friend WithEvents dtDepositos As DataGridView
+    Friend WithEvents txtID As TextBox
+    Friend WithEvents btnCrearNuevo As Button
+    Friend WithEvents linklblCalcular As LinkLabel
+    Friend WithEvents btnModificar As Button
 End Class
