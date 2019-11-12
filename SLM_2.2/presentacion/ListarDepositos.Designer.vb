@@ -24,91 +24,84 @@ Partial Class ListarDepositos
     Private Sub InitializeComponent()
         Me.lblBuscar = New System.Windows.Forms.Label()
         Me.txtID = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dtDepositos = New System.Windows.Forms.DataGridView()
         Me.lblTipoDep = New System.Windows.Forms.Label()
         Me.cbxTipo = New System.Windows.Forms.ComboBox()
-        Me.btnCargar = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.lblForma = New System.Windows.Forms.Label()
+        Me.txtForma = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.rbtnID = New System.Windows.Forms.RadioButton()
         Me.rbtnTipo = New System.Windows.Forms.RadioButton()
         Me.rbtnFormaP = New System.Windows.Forms.RadioButton()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtDepositos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblBuscar
         '
         Me.lblBuscar.AutoSize = True
-        Me.lblBuscar.Location = New System.Drawing.Point(185, 9)
+        Me.lblBuscar.Location = New System.Drawing.Point(263, 9)
         Me.lblBuscar.Name = "lblBuscar"
         Me.lblBuscar.Size = New System.Drawing.Size(75, 13)
         Me.lblBuscar.TabIndex = 0
         Me.lblBuscar.Text = "Buscar por ID:"
+        Me.lblBuscar.Visible = False
         '
         'txtID
         '
-        Me.txtID.Location = New System.Drawing.Point(277, 6)
+        Me.txtID.Location = New System.Drawing.Point(355, 6)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(80, 20)
         Me.txtID.TabIndex = 1
+        Me.txtID.Visible = False
         '
-        'DataGridView1
+        'dtDepositos
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(8, 75)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(430, 150)
-        Me.DataGridView1.TabIndex = 2
+        Me.dtDepositos.AllowUserToAddRows = False
+        Me.dtDepositos.AllowUserToDeleteRows = False
+        Me.dtDepositos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtDepositos.Location = New System.Drawing.Point(8, 75)
+        Me.dtDepositos.Name = "dtDepositos"
+        Me.dtDepositos.ReadOnly = True
+        Me.dtDepositos.Size = New System.Drawing.Size(430, 150)
+        Me.dtDepositos.TabIndex = 2
         '
         'lblTipoDep
         '
         Me.lblTipoDep.AutoSize = True
-        Me.lblTipoDep.Location = New System.Drawing.Point(185, 29)
+        Me.lblTipoDep.Location = New System.Drawing.Point(263, 29)
         Me.lblTipoDep.Name = "lblTipoDep"
         Me.lblTipoDep.Size = New System.Drawing.Size(91, 13)
         Me.lblTipoDep.TabIndex = 3
         Me.lblTipoDep.Text = "Tipo de Deposito:"
+        Me.lblTipoDep.Visible = False
         '
         'cbxTipo
         '
         Me.cbxTipo.FormattingEnabled = True
         Me.cbxTipo.Items.AddRange(New Object() {"Tarjeta", "Dep. Bancario"})
-        Me.cbxTipo.Location = New System.Drawing.Point(277, 27)
+        Me.cbxTipo.Location = New System.Drawing.Point(355, 27)
         Me.cbxTipo.Name = "cbxTipo"
         Me.cbxTipo.Size = New System.Drawing.Size(80, 21)
         Me.cbxTipo.TabIndex = 4
+        Me.cbxTipo.Visible = False
         '
-        'btnCargar
+        'lblForma
         '
-        Me.btnCargar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCargar.ForeColor = System.Drawing.Color.White
-        Me.btnCargar.Location = New System.Drawing.Point(363, 49)
-        Me.btnCargar.Name = "btnCargar"
-        Me.btnCargar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCargar.TabIndex = 5
-        Me.btnCargar.Text = "Cargar"
-        Me.btnCargar.UseVisualStyleBackColor = False
+        Me.lblForma.AutoSize = True
+        Me.lblForma.Location = New System.Drawing.Point(263, 52)
+        Me.lblForma.Name = "lblForma"
+        Me.lblForma.Size = New System.Drawing.Size(82, 13)
+        Me.lblForma.TabIndex = 6
+        Me.lblForma.Text = "Forma de Pago:"
+        Me.lblForma.Visible = False
         '
-        'Label1
+        'txtForma
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(185, 52)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(82, 13)
-        Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Forma de Pago:"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(277, 49)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(80, 20)
-        Me.TextBox1.TabIndex = 7
+        Me.txtForma.Location = New System.Drawing.Point(355, 49)
+        Me.txtForma.Name = "txtForma"
+        Me.txtForma.Size = New System.Drawing.Size(80, 20)
+        Me.txtForma.TabIndex = 7
+        Me.txtForma.Visible = False
         '
         'Label2
         '
@@ -157,23 +150,22 @@ Partial Class ListarDepositos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(447, 234)
+        Me.ClientSize = New System.Drawing.Size(557, 317)
         Me.Controls.Add(Me.rbtnFormaP)
         Me.Controls.Add(Me.rbtnTipo)
         Me.Controls.Add(Me.rbtnID)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnCargar)
+        Me.Controls.Add(Me.txtForma)
+        Me.Controls.Add(Me.lblForma)
         Me.Controls.Add(Me.cbxTipo)
         Me.Controls.Add(Me.lblTipoDep)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dtDepositos)
         Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.lblBuscar)
         Me.Name = "ListarDepositos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ListarDepositos"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtDepositos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -181,12 +173,11 @@ Partial Class ListarDepositos
 
     Friend WithEvents lblBuscar As Label
     Friend WithEvents txtID As TextBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dtDepositos As DataGridView
     Friend WithEvents lblTipoDep As Label
     Friend WithEvents cbxTipo As ComboBox
-    Friend WithEvents btnCargar As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents lblForma As Label
+    Friend WithEvents txtForma As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents rbtnID As RadioButton
     Friend WithEvents rbtnTipo As RadioButton
