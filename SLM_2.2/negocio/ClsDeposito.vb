@@ -225,7 +225,7 @@ Public Class ClsDeposito
         Return par_sal
 
     End Function
-
+    'Listar todos los depositos
     Public Function listarDepositos() As DataTable
 
         Dim objCon As New ClsConnection
@@ -284,7 +284,7 @@ Public Class ClsDeposito
         End Using
 
     End Function
-
+    'Buscar deposito por Codigo de banco
     Public Function buscarDepositoXBanco() As DataTable
 
         Dim objCon As New ClsConnection
@@ -307,6 +307,98 @@ Public Class ClsDeposito
 
     End Function
 
+    'Modificar datos de deposito
+    Public Function modificarDeposito() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
 
+        'PROCEDIMIENTO ALMACENADO
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "slmActualizarDeposito_A"
+
+        'VARIABLES
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codDeposito"
+        sqlpar.Value = Cod
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "fecha"
+        sqlpar.Value = Fech_a
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "banco"
+        sqlpar.Value = Banc_o
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "contado"
+        sqlpar.Value = conta_do
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "TipoContado"
+        sqlpar.Value = Tipo_Contado
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "totalDeposito"
+        sqlpar.Value = total_Depositado
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "moneda"
+        sqlpar.Value = Mone_da
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "monBase"
+        sqlpar.Value = mon_base
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "comision"
+        sqlpar.Value = comisi_on
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "comentario"
+        sqlpar.Value = Comenta_rio
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "tipoDeposito"
+        sqlpar.Value = Tipo_Deposito
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codCajero"
+        sqlpar.Value = cod_Cajero
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codFormaPago"
+        sqlpar.Value = Cod_FormaPago
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+        sqlcom.ExecuteNonQuery()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
 
 End Class
