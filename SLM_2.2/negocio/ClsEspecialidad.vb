@@ -136,6 +136,8 @@ Public Class ClsEspecialidad
     End Function
 
 
+
+
     Public Function BuscarEspecialidadCode() As SqlDataReader
         Dim sqlcom As SqlCommand
         sqlcom = New SqlCommand
