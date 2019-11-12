@@ -26,7 +26,6 @@ Partial Class M_ClasificacionContacto
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.lblcomentario = New System.Windows.Forms.Label()
-        Me.txtcomentario = New System.Windows.Forms.TextBox()
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.btnbuscarTipo = New System.Windows.Forms.Button()
         Me.txtcodigoTipo = New System.Windows.Forms.TextBox()
@@ -35,10 +34,12 @@ Partial Class M_ClasificacionContacto
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
-        Me.txtnombreB = New System.Windows.Forms.TextBox()
-        Me.lblnombreB = New System.Windows.Forms.Label()
+        Me.txtcomentarioB = New System.Windows.Forms.TextBox()
+        Me.lblcomentarioB = New System.Windows.Forms.Label()
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.gbxclasificacion = New System.Windows.Forms.GroupBox()
+        Me.txtcomentarioTipo = New System.Windows.Forms.TextBox()
+        Me.rtxtcomentario = New System.Windows.Forms.RichTextBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
@@ -50,7 +51,7 @@ Partial Class M_ClasificacionContacto
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(132, 30)
+        Me.lblcodigo.Location = New System.Drawing.Point(118, 30)
         Me.lblcodigo.Name = "lblcodigo"
         Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
         Me.lblcodigo.TabIndex = 41
@@ -58,7 +59,7 @@ Partial Class M_ClasificacionContacto
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(197, 27)
+        Me.txtcodigo.Location = New System.Drawing.Point(183, 27)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(183, 22)
         Me.txtcodigo.TabIndex = 40
@@ -66,18 +67,11 @@ Partial Class M_ClasificacionContacto
         'lblcomentario
         '
         Me.lblcomentario.AutoSize = True
-        Me.lblcomentario.Location = New System.Drawing.Point(104, 58)
+        Me.lblcomentario.Location = New System.Drawing.Point(90, 58)
         Me.lblcomentario.Name = "lblcomentario"
         Me.lblcomentario.Size = New System.Drawing.Size(80, 17)
         Me.lblcomentario.TabIndex = 39
         Me.lblcomentario.Text = "Comentario"
-        '
-        'txtcomentario
-        '
-        Me.txtcomentario.Location = New System.Drawing.Point(197, 55)
-        Me.txtcomentario.Name = "txtcomentario"
-        Me.txtcomentario.Size = New System.Drawing.Size(281, 22)
-        Me.txtcomentario.TabIndex = 38
         '
         'btncancelar
         '
@@ -85,7 +79,7 @@ Partial Class M_ClasificacionContacto
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(468, 122)
+        Me.btncancelar.Location = New System.Drawing.Point(468, 172)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(90, 35)
         Me.btncancelar.TabIndex = 37
@@ -100,7 +94,7 @@ Partial Class M_ClasificacionContacto
         Me.btnbuscarTipo.FlatAppearance.BorderSize = 0
         Me.btnbuscarTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarTipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscarTipo.Location = New System.Drawing.Point(200, 83)
+        Me.btnbuscarTipo.Location = New System.Drawing.Point(186, 126)
         Me.btnbuscarTipo.Name = "btnbuscarTipo"
         Me.btnbuscarTipo.Size = New System.Drawing.Size(49, 22)
         Me.btnbuscarTipo.TabIndex = 108
@@ -108,15 +102,15 @@ Partial Class M_ClasificacionContacto
         '
         'txtcodigoTipo
         '
-        Me.txtcodigoTipo.Location = New System.Drawing.Point(255, 83)
+        Me.txtcodigoTipo.Location = New System.Drawing.Point(241, 126)
         Me.txtcodigoTipo.Name = "txtcodigoTipo"
-        Me.txtcodigoTipo.Size = New System.Drawing.Size(125, 22)
+        Me.txtcodigoTipo.Size = New System.Drawing.Size(88, 22)
         Me.txtcodigoTipo.TabIndex = 107
         '
         'lbltipo
         '
         Me.lbltipo.AutoSize = True
-        Me.lbltipo.Location = New System.Drawing.Point(148, 86)
+        Me.lbltipo.Location = New System.Drawing.Point(134, 129)
         Me.lbltipo.Name = "lbltipo"
         Me.lbltipo.Size = New System.Drawing.Size(36, 17)
         Me.lbltipo.TabIndex = 109
@@ -127,12 +121,12 @@ Partial Class M_ClasificacionContacto
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
-        Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
-        Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
+        Me.gbxbusqueda.Controls.Add(Me.txtcomentarioB)
+        Me.gbxbusqueda.Controls.Add(Me.lblcomentarioB)
         Me.gbxbusqueda.Controls.Add(Me.btnbuscar)
-        Me.gbxbusqueda.Location = New System.Drawing.Point(25, 205)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(25, 252)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Size = New System.Drawing.Size(613, 394)
+        Me.gbxbusqueda.Size = New System.Drawing.Size(613, 347)
         Me.gbxbusqueda.TabIndex = 114
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR ESPECIALIDAD"
@@ -140,7 +134,7 @@ Partial Class M_ClasificacionContacto
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(407, 351)
+        Me.lblcantidad.Location = New System.Drawing.Point(407, 322)
         Me.lblcantidad.Name = "lblcantidad"
         Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
         Me.lblcantidad.TabIndex = 115
@@ -151,7 +145,7 @@ Partial Class M_ClasificacionContacto
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(44, 88)
+        Me.dgbtabla.Location = New System.Drawing.Point(44, 66)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
@@ -163,27 +157,27 @@ Partial Class M_ClasificacionContacto
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(118, 351)
+        Me.lbltotal.Location = New System.Drawing.Point(118, 322)
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(155, 17)
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL ESPECIALIDAD"
         '
-        'txtnombreB
+        'txtcomentarioB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(182, 34)
-        Me.txtnombreB.Name = "txtnombreB"
-        Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
-        Me.txtnombreB.TabIndex = 115
+        Me.txtcomentarioB.Location = New System.Drawing.Point(182, 26)
+        Me.txtcomentarioB.Name = "txtcomentarioB"
+        Me.txtcomentarioB.Size = New System.Drawing.Size(192, 22)
+        Me.txtcomentarioB.TabIndex = 115
         '
-        'lblnombreB
+        'lblcomentarioB
         '
-        Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(118, 37)
-        Me.lblnombreB.Name = "lblnombreB"
-        Me.lblnombreB.Size = New System.Drawing.Size(58, 17)
-        Me.lblnombreB.TabIndex = 114
-        Me.lblnombreB.Text = "Nombre"
+        Me.lblcomentarioB.AutoSize = True
+        Me.lblcomentarioB.Location = New System.Drawing.Point(96, 29)
+        Me.lblcomentarioB.Name = "lblcomentarioB"
+        Me.lblcomentarioB.Size = New System.Drawing.Size(80, 17)
+        Me.lblcomentarioB.TabIndex = 114
+        Me.lblcomentarioB.Text = "Comentario"
         '
         'btnbuscar
         '
@@ -191,7 +185,7 @@ Partial Class M_ClasificacionContacto
         Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnbuscar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnbuscar.Location = New System.Drawing.Point(380, 28)
+        Me.btnbuscar.Location = New System.Drawing.Point(380, 20)
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(78, 35)
         Me.btnbuscar.TabIndex = 113
@@ -200,6 +194,8 @@ Partial Class M_ClasificacionContacto
         '
         'gbxclasificacion
         '
+        Me.gbxclasificacion.Controls.Add(Me.txtcomentarioTipo)
+        Me.gbxclasificacion.Controls.Add(Me.rtxtcomentario)
         Me.gbxclasificacion.Controls.Add(Me.btnmodificar)
         Me.gbxclasificacion.Controls.Add(Me.btnnuevo)
         Me.gbxclasificacion.Controls.Add(Me.btnguardar)
@@ -207,16 +203,31 @@ Partial Class M_ClasificacionContacto
         Me.gbxclasificacion.Controls.Add(Me.lbltipo)
         Me.gbxclasificacion.Controls.Add(Me.btncancelar)
         Me.gbxclasificacion.Controls.Add(Me.btnbuscarTipo)
-        Me.gbxclasificacion.Controls.Add(Me.txtcomentario)
         Me.gbxclasificacion.Controls.Add(Me.txtcodigoTipo)
         Me.gbxclasificacion.Controls.Add(Me.lblcomentario)
         Me.gbxclasificacion.Controls.Add(Me.txtcodigo)
         Me.gbxclasificacion.Location = New System.Drawing.Point(25, 22)
         Me.gbxclasificacion.Name = "gbxclasificacion"
-        Me.gbxclasificacion.Size = New System.Drawing.Size(613, 177)
+        Me.gbxclasificacion.Size = New System.Drawing.Size(613, 224)
         Me.gbxclasificacion.TabIndex = 115
         Me.gbxclasificacion.TabStop = False
         Me.gbxclasificacion.Text = "REGISTRAR CLASIFICACIÓN"
+        '
+        'txtcomentarioTipo
+        '
+        Me.txtcomentarioTipo.Location = New System.Drawing.Point(335, 126)
+        Me.txtcomentarioTipo.Name = "txtcomentarioTipo"
+        Me.txtcomentarioTipo.ReadOnly = True
+        Me.txtcomentarioTipo.Size = New System.Drawing.Size(169, 22)
+        Me.txtcomentarioTipo.TabIndex = 116
+        '
+        'rtxtcomentario
+        '
+        Me.rtxtcomentario.Location = New System.Drawing.Point(183, 55)
+        Me.rtxtcomentario.Name = "rtxtcomentario"
+        Me.rtxtcomentario.Size = New System.Drawing.Size(321, 62)
+        Me.rtxtcomentario.TabIndex = 115
+        Me.rtxtcomentario.Text = ""
         '
         'btnmodificar
         '
@@ -224,7 +235,7 @@ Partial Class M_ClasificacionContacto
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnmodificar.Location = New System.Drawing.Point(326, 122)
+        Me.btnmodificar.Location = New System.Drawing.Point(326, 172)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(96, 35)
         Me.btnmodificar.TabIndex = 114
@@ -237,7 +248,7 @@ Partial Class M_ClasificacionContacto
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnnuevo.Location = New System.Drawing.Point(44, 122)
+        Me.btnnuevo.Location = New System.Drawing.Point(44, 172)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(105, 35)
         Me.btnnuevo.TabIndex = 113
@@ -250,7 +261,7 @@ Partial Class M_ClasificacionContacto
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnguardar.Location = New System.Drawing.Point(190, 122)
+        Me.btnguardar.Location = New System.Drawing.Point(190, 172)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(96, 35)
         Me.btnguardar.TabIndex = 112
@@ -279,7 +290,6 @@ Partial Class M_ClasificacionContacto
     Friend WithEvents lblcodigo As Label
     Friend WithEvents txtcodigo As TextBox
     Friend WithEvents lblcomentario As Label
-    Friend WithEvents txtcomentario As TextBox
     Friend WithEvents btncancelar As Button
     Friend WithEvents btnbuscarTipo As Button
     Friend WithEvents txtcodigoTipo As TextBox
@@ -288,11 +298,13 @@ Partial Class M_ClasificacionContacto
     Friend WithEvents lblcantidad As Label
     Friend WithEvents dgbtabla As DataGridView
     Friend WithEvents lbltotal As Label
-    Friend WithEvents txtnombreB As TextBox
-    Friend WithEvents lblnombreB As Label
+    Friend WithEvents txtcomentarioB As TextBox
+    Friend WithEvents lblcomentarioB As Label
     Friend WithEvents btnbuscar As Button
     Friend WithEvents gbxclasificacion As GroupBox
     Friend WithEvents btnmodificar As Button
     Friend WithEvents btnnuevo As Button
     Friend WithEvents btnguardar As Button
+    Friend WithEvents txtcomentarioTipo As TextBox
+    Friend WithEvents rtxtcomentario As RichTextBox
 End Class

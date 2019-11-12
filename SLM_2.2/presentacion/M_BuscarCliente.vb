@@ -69,7 +69,7 @@
     End Sub
 
     Private Sub btnclasificacion_Click(sender As Object, e As EventArgs) Handles btnclasificacion.Click
-        M_BuscarClasificacion.ShowDialog()
+        M_ClasificacionContacto.ShowDialog()
     End Sub
 
     Private Sub Habilitar()
@@ -389,5 +389,22 @@
         M_Factura2.txtnombreCliente.Text = txtnombreCompleto.Text
         limpiar()
         Me.Close()
+    End Sub
+
+    Private Sub txtcodigoClasificacion_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoClasificacion.TextChanged
+        If (txtcodigoClasificacion.Text <> "") Then
+            Try
+                Dim objClas As New ClsClasificacionContacto
+                With objClas
+                    .Codigo1 = txtcodigoClasificacion.Text
+                End With
+                Dim dt As New DataTable
+                dt = objClas.BuscarClasificacionContactoCode()
+                Dim row As DataRow = dt.Rows(0)
+                txtnombreClasificacion.Text = CStr(row("comentario"))
+            Catch ex As Exception
+                MsgBox("No existe el código de clasificación de contacto.", MsgBoxStyle.Critical, "Validación")
+            End Try
+        End If
     End Sub
 End Class
