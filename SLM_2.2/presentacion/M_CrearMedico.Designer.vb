@@ -26,9 +26,9 @@ Partial Class M_CrearMedico
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.txtcelular = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblcelular = New System.Windows.Forms.Label()
         Me.txttelefono = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lbltelefono = New System.Windows.Forms.Label()
         Me.txtcorreo = New System.Windows.Forms.TextBox()
         Me.lblcorreo = New System.Windows.Forms.Label()
         Me.txtcorreo2 = New System.Windows.Forms.TextBox()
@@ -37,23 +37,23 @@ Partial Class M_CrearMedico
         Me.txtcodigoEspecialidad = New System.Windows.Forms.TextBox()
         Me.lblespecialidad = New System.Windows.Forms.Label()
         Me.txtnombreCompleto = New System.Windows.Forms.TextBox()
-        Me.lblnombre = New System.Windows.Forms.Label()
+        Me.lblnombreCompleto = New System.Windows.Forms.Label()
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.gbxmedico = New System.Windows.Forms.GroupBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.txtnombre = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnbuscar = New System.Windows.Forms.Button()
+        Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.lblcantidad = New System.Windows.Forms.Label()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
+        Me.lbltotal = New System.Windows.Forms.Label()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
+        Me.lblnombre = New System.Windows.Forms.Label()
+        Me.btnbuscar = New System.Windows.Forms.Button()
+        Me.gbxmedico.SuspendLayout()
+        Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -81,15 +81,15 @@ Partial Class M_CrearMedico
         Me.txtcelular.Size = New System.Drawing.Size(179, 22)
         Me.txtcelular.TabIndex = 92
         '
-        'Label7
+        'lblcelular
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(343, 125)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(52, 17)
-        Me.Label7.TabIndex = 91
-        Me.Label7.Text = "Celular"
+        Me.lblcelular.AutoSize = True
+        Me.lblcelular.Location = New System.Drawing.Point(343, 125)
+        Me.lblcelular.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcelular.Name = "lblcelular"
+        Me.lblcelular.Size = New System.Drawing.Size(52, 17)
+        Me.lblcelular.TabIndex = 91
+        Me.lblcelular.Text = "Celular"
         '
         'txttelefono
         '
@@ -98,15 +98,15 @@ Partial Class M_CrearMedico
         Me.txttelefono.Size = New System.Drawing.Size(179, 22)
         Me.txttelefono.TabIndex = 90
         '
-        'Label6
+        'lbltelefono
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(331, 97)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(64, 17)
-        Me.Label6.TabIndex = 89
-        Me.Label6.Text = "Teléfono"
+        Me.lbltelefono.AutoSize = True
+        Me.lbltelefono.Location = New System.Drawing.Point(331, 97)
+        Me.lbltelefono.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbltelefono.Name = "lbltelefono"
+        Me.lbltelefono.Size = New System.Drawing.Size(64, 17)
+        Me.lbltelefono.TabIndex = 89
+        Me.lbltelefono.Text = "Teléfono"
         '
         'txtcorreo
         '
@@ -180,15 +180,15 @@ Partial Class M_CrearMedico
         Me.txtnombreCompleto.Size = New System.Drawing.Size(435, 22)
         Me.txtnombreCompleto.TabIndex = 107
         '
-        'lblnombre
+        'lblnombreCompleto
         '
-        Me.lblnombre.AutoSize = True
-        Me.lblnombre.Location = New System.Drawing.Point(17, 67)
-        Me.lblnombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblnombre.Name = "lblnombre"
-        Me.lblnombre.Size = New System.Drawing.Size(121, 17)
-        Me.lblnombre.TabIndex = 106
-        Me.lblnombre.Text = "Nombre Completo"
+        Me.lblnombreCompleto.AutoSize = True
+        Me.lblnombreCompleto.Location = New System.Drawing.Point(17, 67)
+        Me.lblnombreCompleto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblnombreCompleto.Name = "lblnombreCompleto"
+        Me.lblnombreCompleto.Size = New System.Drawing.Size(121, 17)
+        Me.lblnombreCompleto.TabIndex = 106
+        Me.lblnombreCompleto.Text = "Nombre Completo"
         '
         'btncancelar
         '
@@ -229,33 +229,33 @@ Partial Class M_CrearMedico
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.UseVisualStyleBackColor = False
         '
-        'GroupBox1
+        'gbxmedico
         '
-        Me.GroupBox1.Controls.Add(Me.btnmodificar)
-        Me.GroupBox1.Controls.Add(Me.lblcodigo)
-        Me.GroupBox1.Controls.Add(Me.btnnuevo)
-        Me.GroupBox1.Controls.Add(Me.txtcodigo)
-        Me.GroupBox1.Controls.Add(Me.btncancelar)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.btnguardar)
-        Me.GroupBox1.Controls.Add(Me.txttelefono)
-        Me.GroupBox1.Controls.Add(Me.txtnombreCompleto)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.lblnombre)
-        Me.GroupBox1.Controls.Add(Me.txtcelular)
-        Me.GroupBox1.Controls.Add(Me.btnbuscarEspecialidad)
-        Me.GroupBox1.Controls.Add(Me.lblcorreo2)
-        Me.GroupBox1.Controls.Add(Me.txtcodigoEspecialidad)
-        Me.GroupBox1.Controls.Add(Me.txtcorreo2)
-        Me.GroupBox1.Controls.Add(Me.lblespecialidad)
-        Me.GroupBox1.Controls.Add(Me.lblcorreo)
-        Me.GroupBox1.Controls.Add(Me.txtcorreo)
-        Me.GroupBox1.Location = New System.Drawing.Point(23, 22)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(613, 260)
-        Me.GroupBox1.TabIndex = 111
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "REGISTRAR MÉDICO"
+        Me.gbxmedico.Controls.Add(Me.btnmodificar)
+        Me.gbxmedico.Controls.Add(Me.lblcodigo)
+        Me.gbxmedico.Controls.Add(Me.btnnuevo)
+        Me.gbxmedico.Controls.Add(Me.txtcodigo)
+        Me.gbxmedico.Controls.Add(Me.btncancelar)
+        Me.gbxmedico.Controls.Add(Me.lbltelefono)
+        Me.gbxmedico.Controls.Add(Me.btnguardar)
+        Me.gbxmedico.Controls.Add(Me.txttelefono)
+        Me.gbxmedico.Controls.Add(Me.txtnombreCompleto)
+        Me.gbxmedico.Controls.Add(Me.lblcelular)
+        Me.gbxmedico.Controls.Add(Me.lblnombreCompleto)
+        Me.gbxmedico.Controls.Add(Me.txtcelular)
+        Me.gbxmedico.Controls.Add(Me.btnbuscarEspecialidad)
+        Me.gbxmedico.Controls.Add(Me.lblcorreo2)
+        Me.gbxmedico.Controls.Add(Me.txtcodigoEspecialidad)
+        Me.gbxmedico.Controls.Add(Me.txtcorreo2)
+        Me.gbxmedico.Controls.Add(Me.lblespecialidad)
+        Me.gbxmedico.Controls.Add(Me.lblcorreo)
+        Me.gbxmedico.Controls.Add(Me.txtcorreo)
+        Me.gbxmedico.Location = New System.Drawing.Point(23, 22)
+        Me.gbxmedico.Name = "gbxmedico"
+        Me.gbxmedico.Size = New System.Drawing.Size(613, 260)
+        Me.gbxmedico.TabIndex = 111
+        Me.gbxmedico.TabStop = False
+        Me.gbxmedico.Text = "REGISTRAR MÉDICO"
         '
         'btnmodificar
         '
@@ -270,49 +270,29 @@ Partial Class M_CrearMedico
         Me.btnmodificar.Text = "Modificar"
         Me.btnmodificar.UseVisualStyleBackColor = False
         '
-        'GroupBox2
+        'gbxbusqueda
         '
-        Me.GroupBox2.Controls.Add(Me.lblcantidad)
-        Me.GroupBox2.Controls.Add(Me.dgbtabla)
-        Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.txtnombre)
-        Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Controls.Add(Me.btnbuscar)
-        Me.GroupBox2.Location = New System.Drawing.Point(23, 288)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(613, 302)
-        Me.GroupBox2.TabIndex = 112
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "BUSCAR MÉDICO"
+        Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
+        Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
+        Me.gbxbusqueda.Controls.Add(Me.lbltotal)
+        Me.gbxbusqueda.Controls.Add(Me.txtnombre)
+        Me.gbxbusqueda.Controls.Add(Me.lblnombre)
+        Me.gbxbusqueda.Controls.Add(Me.btnbuscar)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(23, 288)
+        Me.gbxbusqueda.Name = "gbxbusqueda"
+        Me.gbxbusqueda.Size = New System.Drawing.Size(613, 302)
+        Me.gbxbusqueda.TabIndex = 112
+        Me.gbxbusqueda.TabStop = False
+        Me.gbxbusqueda.Text = "BUSCAR MÉDICO"
         '
-        'txtnombre
+        'lblcantidad
         '
-        Me.txtnombre.Location = New System.Drawing.Point(177, 36)
-        Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(192, 22)
-        Me.txtnombre.TabIndex = 115
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(113, 39)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(58, 17)
-        Me.Label1.TabIndex = 114
-        Me.Label1.Text = "Nombre"
-        '
-        'btnbuscar
-        '
-        Me.btnbuscar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnbuscar.Location = New System.Drawing.Point(375, 30)
-        Me.btnbuscar.Name = "btnbuscar"
-        Me.btnbuscar.Size = New System.Drawing.Size(78, 35)
-        Me.btnbuscar.TabIndex = 113
-        Me.btnbuscar.Text = "Buscar"
-        Me.btnbuscar.UseVisualStyleBackColor = False
+        Me.lblcantidad.AutoSize = True
+        Me.lblcantidad.Location = New System.Drawing.Point(402, 260)
+        Me.lblcantidad.Name = "lblcantidad"
+        Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
+        Me.lblcantidad.TabIndex = 115
+        Me.lblcantidad.Text = "000"
         '
         'dgbtabla
         '
@@ -339,23 +319,43 @@ Partial Class M_CrearMedico
         Me.Nombre.Name = "Nombre"
         Me.Nombre.Width = 215
         '
-        'Label2
+        'lbltotal
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(113, 260)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(147, 17)
-        Me.Label2.TabIndex = 114
-        Me.Label2.Text = "TOTAL DE CLIENTES"
+        Me.lbltotal.AutoSize = True
+        Me.lbltotal.Location = New System.Drawing.Point(113, 260)
+        Me.lbltotal.Name = "lbltotal"
+        Me.lbltotal.Size = New System.Drawing.Size(147, 17)
+        Me.lbltotal.TabIndex = 114
+        Me.lbltotal.Text = "TOTAL DE CLIENTES"
         '
-        'lblcantidad
+        'txtnombre
         '
-        Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(402, 260)
-        Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
-        Me.lblcantidad.TabIndex = 115
-        Me.lblcantidad.Text = "000"
+        Me.txtnombre.Location = New System.Drawing.Point(177, 36)
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(192, 22)
+        Me.txtnombre.TabIndex = 115
+        '
+        'lblnombre
+        '
+        Me.lblnombre.AutoSize = True
+        Me.lblnombre.Location = New System.Drawing.Point(113, 39)
+        Me.lblnombre.Name = "lblnombre"
+        Me.lblnombre.Size = New System.Drawing.Size(58, 17)
+        Me.lblnombre.TabIndex = 114
+        Me.lblnombre.Text = "Nombre"
+        '
+        'btnbuscar
+        '
+        Me.btnbuscar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnbuscar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnbuscar.Location = New System.Drawing.Point(375, 30)
+        Me.btnbuscar.Name = "btnbuscar"
+        Me.btnbuscar.Size = New System.Drawing.Size(78, 35)
+        Me.btnbuscar.TabIndex = 113
+        Me.btnbuscar.Text = "Buscar"
+        Me.btnbuscar.UseVisualStyleBackColor = False
         '
         'M_CrearMedico
         '
@@ -363,14 +363,14 @@ Partial Class M_CrearMedico
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(669, 622)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.gbxbusqueda)
+        Me.Controls.Add(Me.gbxmedico)
         Me.Name = "M_CrearMedico"
         Me.Text = "Médico: Crear"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        Me.gbxmedico.ResumeLayout(False)
+        Me.gbxmedico.PerformLayout()
+        Me.gbxbusqueda.ResumeLayout(False)
+        Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -379,9 +379,9 @@ Partial Class M_CrearMedico
     Friend WithEvents txtcodigo As TextBox
     Friend WithEvents lblcodigo As Label
     Friend WithEvents txtcelular As TextBox
-    Friend WithEvents Label7 As Label
+    Friend WithEvents lblcelular As Label
     Friend WithEvents txttelefono As TextBox
-    Friend WithEvents Label6 As Label
+    Friend WithEvents lbltelefono As Label
     Friend WithEvents txtcorreo As TextBox
     Friend WithEvents lblcorreo As Label
     Friend WithEvents txtcorreo2 As TextBox
@@ -390,16 +390,16 @@ Partial Class M_CrearMedico
     Friend WithEvents txtcodigoEspecialidad As TextBox
     Friend WithEvents lblespecialidad As Label
     Friend WithEvents txtnombreCompleto As TextBox
-    Friend WithEvents lblnombre As Label
+    Friend WithEvents lblnombreCompleto As Label
     Friend WithEvents btncancelar As Button
     Friend WithEvents btnguardar As Button
     Friend WithEvents btnnuevo As Button
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents gbxmedico As GroupBox
+    Friend WithEvents gbxbusqueda As GroupBox
     Friend WithEvents txtnombre As TextBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblnombre As Label
     Friend WithEvents btnbuscar As Button
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lbltotal As Label
     Friend WithEvents lblcantidad As Label
     Friend WithEvents btnmodificar As Button
     Friend WithEvents dgbtabla As DataGridView
