@@ -26,8 +26,8 @@ Partial Class A_BuscarFormaPago
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dtFormasPago = New System.Windows.Forms.DataGridView()
+        CType(Me.dtFormasPago, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -58,26 +58,26 @@ Partial Class A_BuscarFormaPago
         Me.btnBuscar.TabIndex = 2
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'dtFormasPago
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 46)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(222, 241)
-        Me.DataGridView1.TabIndex = 3
+        Me.dtFormasPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtFormasPago.Location = New System.Drawing.Point(12, 46)
+        Me.dtFormasPago.Name = "dtFormasPago"
+        Me.dtFormasPago.Size = New System.Drawing.Size(222, 241)
+        Me.dtFormasPago.TabIndex = 3
         '
         'A_BuscarFormaPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(246, 299)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dtFormasPago)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox1)
         Me.Name = "A_BuscarFormaPago"
         Me.Text = "A_BuscarFormaPago"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtFormasPago, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -86,5 +86,5 @@ Partial Class A_BuscarFormaPago
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnBuscar As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dtFormasPago As DataGridView
 End Class
