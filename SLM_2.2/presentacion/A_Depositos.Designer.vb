@@ -125,7 +125,7 @@ Partial Class frmDeposito
         Me.txtNro.Location = New System.Drawing.Point(96, 27)
         Me.txtNro.Name = "txtNro"
         Me.txtNro.Size = New System.Drawing.Size(70, 20)
-        Me.txtNro.TabIndex = 30
+        Me.txtNro.TabIndex = 1
         '
         'lblFecha
         '
@@ -142,7 +142,7 @@ Partial Class frmDeposito
         Me.dtpFecha.Location = New System.Drawing.Point(96, 52)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(70, 20)
-        Me.dtpFecha.TabIndex = 32
+        Me.dtpFecha.TabIndex = 2
         '
         'lblFormaPago
         '
@@ -158,7 +158,7 @@ Partial Class frmDeposito
         Me.txtBanco.Location = New System.Drawing.Point(96, 78)
         Me.txtBanco.Name = "txtBanco"
         Me.txtBanco.Size = New System.Drawing.Size(48, 20)
-        Me.txtBanco.TabIndex = 34
+        Me.txtBanco.TabIndex = 3
         '
         'lblContado
         '
@@ -183,14 +183,14 @@ Partial Class frmDeposito
         Me.txtContado.Location = New System.Drawing.Point(95, 102)
         Me.txtContado.Name = "txtContado"
         Me.txtContado.Size = New System.Drawing.Size(71, 20)
-        Me.txtContado.TabIndex = 37
+        Me.txtContado.TabIndex = 5
         '
         'txtTipoConta
         '
         Me.txtTipoConta.Location = New System.Drawing.Point(95, 127)
         Me.txtTipoConta.Name = "txtTipoConta"
         Me.txtTipoConta.Size = New System.Drawing.Size(49, 20)
-        Me.txtTipoConta.TabIndex = 38
+        Me.txtTipoConta.TabIndex = 6
         '
         'lblTotalDep
         '
@@ -206,7 +206,7 @@ Partial Class frmDeposito
         Me.txtTotalDep.Location = New System.Drawing.Point(95, 151)
         Me.txtTotalDep.Name = "txtTotalDep"
         Me.txtTotalDep.Size = New System.Drawing.Size(70, 20)
-        Me.txtTotalDep.TabIndex = 40
+        Me.txtTotalDep.TabIndex = 8
         '
         'lblMoneda
         '
@@ -222,7 +222,7 @@ Partial Class frmDeposito
         Me.txtMoneda.Location = New System.Drawing.Point(95, 176)
         Me.txtMoneda.Name = "txtMoneda"
         Me.txtMoneda.Size = New System.Drawing.Size(71, 20)
-        Me.txtMoneda.TabIndex = 42
+        Me.txtMoneda.TabIndex = 9
         Me.txtMoneda.Text = "Lps"
         '
         'lblMonBase
@@ -239,7 +239,7 @@ Partial Class frmDeposito
         Me.txtMonBase.Location = New System.Drawing.Point(95, 201)
         Me.txtMonBase.Name = "txtMonBase"
         Me.txtMonBase.Size = New System.Drawing.Size(71, 20)
-        Me.txtMonBase.TabIndex = 44
+        Me.txtMonBase.TabIndex = 10
         '
         'lblTDepo
         '
@@ -273,7 +273,7 @@ Partial Class frmDeposito
         Me.txtComision.Location = New System.Drawing.Point(93, 227)
         Me.txtComision.Name = "txtComision"
         Me.txtComision.Size = New System.Drawing.Size(72, 20)
-        Me.txtComision.TabIndex = 61
+        Me.txtComision.TabIndex = 11
         '
         'lblCajero
         '
@@ -289,7 +289,7 @@ Partial Class frmDeposito
         Me.txtCajero.Location = New System.Drawing.Point(280, 50)
         Me.txtCajero.Name = "txtCajero"
         Me.txtCajero.Size = New System.Drawing.Size(71, 20)
-        Me.txtCajero.TabIndex = 71
+        Me.txtCajero.TabIndex = 12
         '
         'lblComentario
         '
@@ -306,7 +306,7 @@ Partial Class frmDeposito
         Me.txtComentario.Multiline = True
         Me.txtComentario.Name = "txtComentario"
         Me.txtComentario.Size = New System.Drawing.Size(165, 90)
-        Me.txtComentario.TabIndex = 73
+        Me.txtComentario.TabIndex = 13
         '
         'gbxInfoDepo
         '
@@ -395,7 +395,7 @@ Partial Class frmDeposito
         Me.btnBuscarTipoConta.Location = New System.Drawing.Point(147, 129)
         Me.btnBuscarTipoConta.Name = "btnBuscarTipoConta"
         Me.btnBuscarTipoConta.Size = New System.Drawing.Size(21, 17)
-        Me.btnBuscarTipoConta.TabIndex = 76
+        Me.btnBuscarTipoConta.TabIndex = 7
         Me.btnBuscarTipoConta.UseVisualStyleBackColor = True
         '
         'lblCodFormaPago
@@ -415,7 +415,7 @@ Partial Class frmDeposito
         Me.btnBuscarBanco.Location = New System.Drawing.Point(146, 79)
         Me.btnBuscarBanco.Name = "btnBuscarBanco"
         Me.btnBuscarBanco.Size = New System.Drawing.Size(21, 17)
-        Me.btnBuscarBanco.TabIndex = 74
+        Me.btnBuscarBanco.TabIndex = 4
         Me.btnBuscarBanco.UseVisualStyleBackColor = True
         '
         'btnGuardar
