@@ -8,7 +8,7 @@
         frmAsientos.Show()
     End Sub
     Private Sub btnListar_Click(sender As Object, e As EventArgs)
-        ListarDepositos.Show()
+        A_ListarDepositos.Show()
     End Sub
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 

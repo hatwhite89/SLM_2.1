@@ -1,4 +1,4 @@
-﻿Public Class ListarDepositos
+﻿Public Class A_ListarDepositos
     Private Sub rbtnID_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnID.CheckedChanged
 
         lblBuscar.Visible = True
