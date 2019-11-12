@@ -109,6 +109,15 @@
         txtnombreCompleto.Select(txtnombreCompleto.Text.Length, 0)
     End Sub
 
+    Private Sub txtcodigoEspecialidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoEspecialidad.KeyPress
+
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
+        End If
+
+    End Sub
+
+
     Private Sub M_CrearMedico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objMed As New ClsMedico
         Dim dv As DataView = objMed.SeleccionarMedico.DefaultView
@@ -232,7 +241,21 @@
     End Sub
 
     Private Sub txtcodigoEspecialidad_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoEspecialidad.TextChanged
-
+        If (txtcodigoEspecialidad.Text <> "") Then
+            Try
+                Dim objEsp As New ClsEspecialidad
+                With objEsp
+                    .Codigo1 = txtcodigoEspecialidad.Text
+                End With
+                Dim dt As New DataTable
+                dt = objEsp.BuscarEspecialidadCode()
+                Dim row As DataRow = dt.Rows(0)
+                txtnombreEspecialidad.Text = CStr(row("nombre"))
+            Catch ex As Exception
+                MsgBox("No existe ese código de especialidad.", MsgBoxStyle.Critical, "Validación")
+            End Try
+        End If
     End Sub
+
 
 End Class

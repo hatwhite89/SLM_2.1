@@ -138,13 +138,26 @@ Public Class ClsEspecialidad
 
 
 
-    Public Function BuscarEspecialidadCode() As SqlDataReader
-        Dim sqlcom As SqlCommand
-        sqlcom = New SqlCommand
-        sqlcom.Parameters.Add("", SqlDbType.Int).Value = Codigo1
-        sqlcom.CommandText = "select * from slmBuscarEspecialidadCode()"
-        sqlcom.Connection = New ClsConnection().getConexion
-        Return sqlcom.ExecuteReader
+    Public Function BuscarEspecialidadCode() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "slmBuscarEspecialidadCodeT"
+            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Codigo1
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
     End Function
 
 End Class

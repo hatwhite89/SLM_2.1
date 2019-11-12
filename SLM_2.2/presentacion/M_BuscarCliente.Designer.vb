@@ -29,9 +29,14 @@ Partial Class M_BuscarCliente
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbxinfoCliente = New System.Windows.Forms.GroupBox()
-        Me.btnguardar = New System.Windows.Forms.Button()
+        Me.txtnombreCategoria = New System.Windows.Forms.TextBox()
+        Me.txtnombreClasificacion = New System.Windows.Forms.TextBox()
+        Me.txtnombreConvenio = New System.Windows.Forms.TextBox()
+        Me.txtnombreTerminos = New System.Windows.Forms.TextBox()
+        Me.txtnombreAseguradora = New System.Windows.Forms.TextBox()
+        Me.btnguardarCliente = New System.Windows.Forms.Button()
         Me.btnclasificacion = New System.Windows.Forms.Button()
-        Me.txtclasificacion = New System.Windows.Forms.TextBox()
+        Me.txtcodigoClasificacion = New System.Windows.Forms.TextBox()
         Me.btnterminosPago = New System.Windows.Forms.Button()
         Me.txtterminosPago = New System.Windows.Forms.TextBox()
         Me.btnconvenio = New System.Windows.Forms.Button()
@@ -81,11 +86,6 @@ Partial Class M_BuscarCliente
         Me.lblapellido1 = New System.Windows.Forms.Label()
         Me.txtnombre1 = New System.Windows.Forms.TextBox()
         Me.lblnombre1 = New System.Windows.Forms.Label()
-        Me.txtnombreAseguradora = New System.Windows.Forms.TextBox()
-        Me.txtnombreTerminos = New System.Windows.Forms.TextBox()
-        Me.txtnombreConvenio = New System.Windows.Forms.TextBox()
-        Me.txtnombreClasificacion = New System.Windows.Forms.TextBox()
-        Me.txtnombreCategoria = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxinfoCliente.SuspendLayout()
         Me.gbxgenero.SuspendLayout()
@@ -149,9 +149,9 @@ Partial Class M_BuscarCliente
         Me.gbxinfoCliente.Controls.Add(Me.txtnombreConvenio)
         Me.gbxinfoCliente.Controls.Add(Me.txtnombreTerminos)
         Me.gbxinfoCliente.Controls.Add(Me.txtnombreAseguradora)
-        Me.gbxinfoCliente.Controls.Add(Me.btnguardar)
+        Me.gbxinfoCliente.Controls.Add(Me.btnguardarCliente)
         Me.gbxinfoCliente.Controls.Add(Me.btnclasificacion)
-        Me.gbxinfoCliente.Controls.Add(Me.txtclasificacion)
+        Me.gbxinfoCliente.Controls.Add(Me.txtcodigoClasificacion)
         Me.gbxinfoCliente.Controls.Add(Me.btnterminosPago)
         Me.gbxinfoCliente.Controls.Add(Me.txtterminosPago)
         Me.gbxinfoCliente.Controls.Add(Me.btnconvenio)
@@ -207,17 +207,57 @@ Partial Class M_BuscarCliente
         Me.gbxinfoCliente.Text = "Información de Cliente/Paciente"
         Me.gbxinfoCliente.Visible = False
         '
-        'btnguardar
+        'txtnombreCategoria
         '
-        Me.btnguardar.BackColor = System.Drawing.Color.SkyBlue
-        Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardar.Location = New System.Drawing.Point(500, 405)
-        Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(220, 38)
-        Me.btnguardar.TabIndex = 109
-        Me.btnguardar.Text = "Guardar y Seleccionar"
-        Me.btnguardar.UseVisualStyleBackColor = False
+        Me.txtnombreCategoria.Location = New System.Drawing.Point(628, 30)
+        Me.txtnombreCategoria.Name = "txtnombreCategoria"
+        Me.txtnombreCategoria.ReadOnly = True
+        Me.txtnombreCategoria.Size = New System.Drawing.Size(300, 22)
+        Me.txtnombreCategoria.TabIndex = 114
+        '
+        'txtnombreClasificacion
+        '
+        Me.txtnombreClasificacion.Location = New System.Drawing.Point(348, 355)
+        Me.txtnombreClasificacion.Name = "txtnombreClasificacion"
+        Me.txtnombreClasificacion.ReadOnly = True
+        Me.txtnombreClasificacion.Size = New System.Drawing.Size(267, 22)
+        Me.txtnombreClasificacion.TabIndex = 113
+        '
+        'txtnombreConvenio
+        '
+        Me.txtnombreConvenio.Location = New System.Drawing.Point(348, 327)
+        Me.txtnombreConvenio.Name = "txtnombreConvenio"
+        Me.txtnombreConvenio.ReadOnly = True
+        Me.txtnombreConvenio.Size = New System.Drawing.Size(267, 22)
+        Me.txtnombreConvenio.TabIndex = 112
+        '
+        'txtnombreTerminos
+        '
+        Me.txtnombreTerminos.Location = New System.Drawing.Point(348, 299)
+        Me.txtnombreTerminos.Name = "txtnombreTerminos"
+        Me.txtnombreTerminos.ReadOnly = True
+        Me.txtnombreTerminos.Size = New System.Drawing.Size(268, 22)
+        Me.txtnombreTerminos.TabIndex = 111
+        '
+        'txtnombreAseguradora
+        '
+        Me.txtnombreAseguradora.Location = New System.Drawing.Point(348, 271)
+        Me.txtnombreAseguradora.Name = "txtnombreAseguradora"
+        Me.txtnombreAseguradora.ReadOnly = True
+        Me.txtnombreAseguradora.Size = New System.Drawing.Size(267, 22)
+        Me.txtnombreAseguradora.TabIndex = 110
+        '
+        'btnguardarCliente
+        '
+        Me.btnguardarCliente.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnguardarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnguardarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnguardarCliente.Location = New System.Drawing.Point(500, 405)
+        Me.btnguardarCliente.Name = "btnguardarCliente"
+        Me.btnguardarCliente.Size = New System.Drawing.Size(220, 38)
+        Me.btnguardarCliente.TabIndex = 109
+        Me.btnguardarCliente.Text = "Guardar y Seleccionar"
+        Me.btnguardarCliente.UseVisualStyleBackColor = False
         '
         'btnclasificacion
         '
@@ -233,12 +273,12 @@ Partial Class M_BuscarCliente
         Me.btnclasificacion.TabIndex = 108
         Me.btnclasificacion.UseVisualStyleBackColor = False
         '
-        'txtclasificacion
+        'txtcodigoClasificacion
         '
-        Me.txtclasificacion.Location = New System.Drawing.Point(212, 355)
-        Me.txtclasificacion.Name = "txtclasificacion"
-        Me.txtclasificacion.Size = New System.Drawing.Size(125, 22)
-        Me.txtclasificacion.TabIndex = 107
+        Me.txtcodigoClasificacion.Location = New System.Drawing.Point(212, 355)
+        Me.txtcodigoClasificacion.Name = "txtcodigoClasificacion"
+        Me.txtcodigoClasificacion.Size = New System.Drawing.Size(125, 22)
+        Me.txtcodigoClasificacion.TabIndex = 107
         '
         'btnterminosPago
         '
@@ -501,6 +541,7 @@ Partial Class M_BuscarCliente
         '
         Me.txtnombreCompleto.Location = New System.Drawing.Point(155, 142)
         Me.txtnombreCompleto.Name = "txtnombreCompleto"
+        Me.txtnombreCompleto.ReadOnly = True
         Me.txtnombreCompleto.Size = New System.Drawing.Size(461, 22)
         Me.txtnombreCompleto.TabIndex = 62
         '
@@ -701,46 +742,6 @@ Partial Class M_BuscarCliente
         Me.lblnombre1.TabIndex = 67
         Me.lblnombre1.Text = "1er Nombre"
         '
-        'txtnombreAseguradora
-        '
-        Me.txtnombreAseguradora.Location = New System.Drawing.Point(348, 271)
-        Me.txtnombreAseguradora.Name = "txtnombreAseguradora"
-        Me.txtnombreAseguradora.ReadOnly = True
-        Me.txtnombreAseguradora.Size = New System.Drawing.Size(267, 22)
-        Me.txtnombreAseguradora.TabIndex = 110
-        '
-        'txtnombreTerminos
-        '
-        Me.txtnombreTerminos.Location = New System.Drawing.Point(348, 299)
-        Me.txtnombreTerminos.Name = "txtnombreTerminos"
-        Me.txtnombreTerminos.ReadOnly = True
-        Me.txtnombreTerminos.Size = New System.Drawing.Size(268, 22)
-        Me.txtnombreTerminos.TabIndex = 111
-        '
-        'txtnombreConvenio
-        '
-        Me.txtnombreConvenio.Location = New System.Drawing.Point(348, 327)
-        Me.txtnombreConvenio.Name = "txtnombreConvenio"
-        Me.txtnombreConvenio.ReadOnly = True
-        Me.txtnombreConvenio.Size = New System.Drawing.Size(267, 22)
-        Me.txtnombreConvenio.TabIndex = 112
-        '
-        'txtnombreClasificacion
-        '
-        Me.txtnombreClasificacion.Location = New System.Drawing.Point(348, 355)
-        Me.txtnombreClasificacion.Name = "txtnombreClasificacion"
-        Me.txtnombreClasificacion.ReadOnly = True
-        Me.txtnombreClasificacion.Size = New System.Drawing.Size(267, 22)
-        Me.txtnombreClasificacion.TabIndex = 113
-        '
-        'txtnombreCategoria
-        '
-        Me.txtnombreCategoria.Location = New System.Drawing.Point(628, 30)
-        Me.txtnombreCategoria.Name = "txtnombreCategoria"
-        Me.txtnombreCategoria.ReadOnly = True
-        Me.txtnombreCategoria.Size = New System.Drawing.Size(300, 22)
-        Me.txtnombreCategoria.TabIndex = 114
-        '
         'M_BuscarCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -816,7 +817,7 @@ Partial Class M_BuscarCliente
     Friend WithEvents lblnombre1 As Label
     Friend WithEvents txtcategoria As TextBox
     Friend WithEvents btnclasificacion As Button
-    Friend WithEvents txtclasificacion As TextBox
+    Friend WithEvents txtcodigoClasificacion As TextBox
     Friend WithEvents btnterminosPago As Button
     Friend WithEvents txtterminosPago As TextBox
     Friend WithEvents btnconvenio As Button
@@ -824,7 +825,7 @@ Partial Class M_BuscarCliente
     Friend WithEvents btnaseguradora As Button
     Friend WithEvents txtaseguradora As TextBox
     Friend WithEvents btncategoria As Button
-    Friend WithEvents btnguardar As Button
+    Friend WithEvents btnguardarCliente As Button
     Friend WithEvents txtnombreCategoria As TextBox
     Friend WithEvents txtnombreClasificacion As TextBox
     Friend WithEvents txtnombreConvenio As TextBox

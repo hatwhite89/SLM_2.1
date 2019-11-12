@@ -8,6 +8,6 @@
     End Sub
 
     Private Sub btnbuscarCliente_Click(sender As Object, e As EventArgs) Handles btnbuscarCliente.Click
-        M_CrearCliente.ShowDialog()
+        M_BuscarCliente.ShowDialog()
     End Sub
 End Class

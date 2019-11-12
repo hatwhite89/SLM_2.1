@@ -112,6 +112,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="negocio\ClsCliente.vb" />
     <Compile Include="negocio\ClsDeposito.vb" />
     <Compile Include="negocio\ClsEspecialidad.vb" />
     <Compile Include="negocio\ClsFormaPago.vb" />
@@ -182,18 +183,6 @@
       <DependentUpon>M_BuscarCliente.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_BuscarCliente.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="presentacion\M_BuscarEspecialidad.Designer.vb">
-      <DependentUpon>M_BuscarEspecialidad.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_BuscarEspecialidad.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="presentacion\M_BuscarMedico.Designer.vb">
-      <DependentUpon>M_BuscarMedico.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_BuscarMedico.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_BuscarSede.Designer.vb">
@@ -380,12 +369,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_BuscarCliente.resx">
       <DependentUpon>M_BuscarCliente.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_BuscarEspecialidad.resx">
-      <DependentUpon>M_BuscarEspecialidad.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_BuscarMedico.resx">
-      <DependentUpon>M_BuscarMedico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_BuscarSede.resx">
       <DependentUpon>M_BuscarSede.vb</DependentUpon>

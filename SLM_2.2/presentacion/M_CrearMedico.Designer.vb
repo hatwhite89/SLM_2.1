@@ -42,6 +42,7 @@ Partial Class M_CrearMedico
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.gbxmedico = New System.Windows.Forms.GroupBox()
+        Me.txtnombreEspecialidad = New System.Windows.Forms.TextBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
         Me.lblcantidad = New System.Windows.Forms.Label()
@@ -50,7 +51,6 @@ Partial Class M_CrearMedico
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnombre = New System.Windows.Forms.Label()
         Me.btnbuscar = New System.Windows.Forms.Button()
-        Me.txtnombreEspecialidad = New System.Windows.Forms.TextBox()
         Me.gbxmedico.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -257,6 +257,14 @@ Partial Class M_CrearMedico
         Me.gbxmedico.TabStop = False
         Me.gbxmedico.Text = "REGISTRAR MÉDICO"
         '
+        'txtnombreEspecialidad
+        '
+        Me.txtnombreEspecialidad.Location = New System.Drawing.Point(334, 150)
+        Me.txtnombreEspecialidad.Name = "txtnombreEspecialidad"
+        Me.txtnombreEspecialidad.ReadOnly = True
+        Me.txtnombreEspecialidad.Size = New System.Drawing.Size(247, 22)
+        Me.txtnombreEspecialidad.TabIndex = 114
+        '
         'btnmodificar
         '
         Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
@@ -345,14 +353,6 @@ Partial Class M_CrearMedico
         Me.btnbuscar.TabIndex = 113
         Me.btnbuscar.Text = "Buscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
-        '
-        'txtnombreEspecialidad
-        '
-        Me.txtnombreEspecialidad.Location = New System.Drawing.Point(334, 150)
-        Me.txtnombreEspecialidad.Name = "txtnombreEspecialidad"
-        Me.txtnombreEspecialidad.ReadOnly = True
-        Me.txtnombreEspecialidad.Size = New System.Drawing.Size(247, 22)
-        Me.txtnombreEspecialidad.TabIndex = 114
         '
         'M_CrearMedico
         '
