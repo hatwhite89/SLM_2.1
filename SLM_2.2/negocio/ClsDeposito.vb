@@ -127,7 +127,7 @@ Public Class ClsDeposito
         End Set
     End Property
 
-    Public Function RegistrarNuevoPaciente() As String
+    Public Function registrarNuevoDeposito() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
@@ -205,11 +205,36 @@ Public Class ClsDeposito
 
         sqlpar.Direction = ParameterDirection.Output
 
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
         sqlcom.ExecuteNonQuery()
 
         par_sal = sqlcom.Parameters("Salida").Value
 
         Return par_sal
+
+    End Function
+
+    'Funcion buscar codigo de forma de pago.
+    Public Function buscarCodigoFormaPago() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "slmBuscarCodigoFormaPago_A"
+            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Banc_o
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
 
     End Function
 

@@ -32,9 +32,9 @@ Partial Class frmDeposito
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.txtNro = New System.Windows.Forms.TextBox()
         Me.lblFecha = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.lblFormaPago = New System.Windows.Forms.Label()
-        Me.txtFormaPago = New System.Windows.Forms.TextBox()
+        Me.txtBanco = New System.Windows.Forms.TextBox()
         Me.lblContado = New System.Windows.Forms.Label()
         Me.lbltipoCon = New System.Windows.Forms.Label()
         Me.txtContado = New System.Windows.Forms.TextBox()
@@ -59,9 +59,10 @@ Partial Class frmDeposito
         Me.lblCajero = New System.Windows.Forms.Label()
         Me.txtCajero = New System.Windows.Forms.TextBox()
         Me.lblComentario = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtComentario = New System.Windows.Forms.TextBox()
         Me.gbxInfoDepo = New System.Windows.Forms.GroupBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.lblCodFormaPago = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxInfoDepo.SuspendLayout()
         Me.SuspendLayout()
@@ -125,13 +126,13 @@ Partial Class frmDeposito
         Me.lblFecha.TabIndex = 31
         Me.lblFecha.Text = "Fecha"
         '
-        'DateTimePicker1
+        'dtpFecha
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(96, 52)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(70, 20)
-        Me.DateTimePicker1.TabIndex = 32
+        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFecha.Location = New System.Drawing.Point(96, 52)
+        Me.dtpFecha.Name = "dtpFecha"
+        Me.dtpFecha.Size = New System.Drawing.Size(70, 20)
+        Me.dtpFecha.TabIndex = 32
         '
         'lblFormaPago
         '
@@ -142,12 +143,12 @@ Partial Class frmDeposito
         Me.lblFormaPago.TabIndex = 33
         Me.lblFormaPago.Text = "Banco"
         '
-        'txtFormaPago
+        'txtBanco
         '
-        Me.txtFormaPago.Location = New System.Drawing.Point(93, 78)
-        Me.txtFormaPago.Name = "txtFormaPago"
-        Me.txtFormaPago.Size = New System.Drawing.Size(48, 20)
-        Me.txtFormaPago.TabIndex = 34
+        Me.txtBanco.Location = New System.Drawing.Point(93, 78)
+        Me.txtBanco.Name = "txtBanco"
+        Me.txtBanco.Size = New System.Drawing.Size(48, 20)
+        Me.txtBanco.TabIndex = 34
         '
         'lblContado
         '
@@ -362,18 +363,19 @@ Partial Class frmDeposito
         Me.lblComentario.TabIndex = 72
         Me.lblComentario.Text = "Comentario"
         '
-        'TextBox3
+        'txtComentario
         '
-        Me.TextBox3.Location = New System.Drawing.Point(186, 90)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(165, 90)
-        Me.TextBox3.TabIndex = 73
+        Me.txtComentario.Location = New System.Drawing.Point(186, 90)
+        Me.txtComentario.Multiline = True
+        Me.txtComentario.Name = "txtComentario"
+        Me.txtComentario.Size = New System.Drawing.Size(165, 90)
+        Me.txtComentario.TabIndex = 73
         '
         'gbxInfoDepo
         '
+        Me.gbxInfoDepo.Controls.Add(Me.lblCodFormaPago)
         Me.gbxInfoDepo.Controls.Add(Me.btnBuscar)
-        Me.gbxInfoDepo.Controls.Add(Me.TextBox3)
+        Me.gbxInfoDepo.Controls.Add(Me.txtComentario)
         Me.gbxInfoDepo.Controls.Add(Me.btnListar)
         Me.gbxInfoDepo.Controls.Add(Me.Button1)
         Me.gbxInfoDepo.Controls.Add(Me.btnGuardar)
@@ -384,9 +386,9 @@ Partial Class frmDeposito
         Me.gbxInfoDepo.Controls.Add(Me.txtCajero)
         Me.gbxInfoDepo.Controls.Add(Me.lblFecha)
         Me.gbxInfoDepo.Controls.Add(Me.lblCajero)
-        Me.gbxInfoDepo.Controls.Add(Me.DateTimePicker1)
+        Me.gbxInfoDepo.Controls.Add(Me.dtpFecha)
         Me.gbxInfoDepo.Controls.Add(Me.lblFormaPago)
-        Me.gbxInfoDepo.Controls.Add(Me.txtFormaPago)
+        Me.gbxInfoDepo.Controls.Add(Me.txtBanco)
         Me.gbxInfoDepo.Controls.Add(Me.lblContado)
         Me.gbxInfoDepo.Controls.Add(Me.lbltipoCon)
         Me.gbxInfoDepo.Controls.Add(Me.txtComision)
@@ -423,6 +425,15 @@ Partial Class frmDeposito
         Me.btnBuscar.TabIndex = 74
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
+        'lblCodFormaPago
+        '
+        Me.lblCodFormaPago.AutoSize = True
+        Me.lblCodFormaPago.Location = New System.Drawing.Point(281, 246)
+        Me.lblCodFormaPago.Name = "lblCodFormaPago"
+        Me.lblCodFormaPago.Size = New System.Drawing.Size(39, 13)
+        Me.lblCodFormaPago.TabIndex = 75
+        Me.lblCodFormaPago.Text = "Label2"
+        '
         'frmDeposito
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -454,9 +465,9 @@ Partial Class frmDeposito
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents txtNro As TextBox
     Friend WithEvents lblFecha As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents dtpFecha As DateTimePicker
     Friend WithEvents lblFormaPago As Label
-    Friend WithEvents txtFormaPago As TextBox
+    Friend WithEvents txtBanco As TextBox
     Friend WithEvents lblContado As Label
     Friend WithEvents lbltipoCon As Label
     Friend WithEvents txtContado As TextBox
@@ -481,7 +492,8 @@ Partial Class frmDeposito
     Friend WithEvents lblCajero As Label
     Friend WithEvents txtCajero As TextBox
     Friend WithEvents lblComentario As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtComentario As TextBox
     Friend WithEvents gbxInfoDepo As GroupBox
     Friend WithEvents btnBuscar As Button
+    Friend WithEvents lblCodFormaPago As Label
 End Class
