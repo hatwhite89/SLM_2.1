@@ -209,6 +209,25 @@
             MessageBox.Show("El código de banco no existe.")
         End Try
 
+        'Enviar datos para modificar depositos
+
+        With modificarDeposito
+            .Cod = Convert.ToInt32(txtNro.Text)
+            .Fech_a = dtpFecha.Value
+                .Banc_o = txtBanco.Text
+                .conta_do = Convert.ToDouble(txtContado.Text)
+                .Tipo_Contado = txtTipoConta.Text
+                .total_Depositado = Convert.ToDouble(txtTotalDep.Text)
+                .Mone_da = txtMoneda.Text
+                .mon_base = Convert.ToDouble(txtMonBase.Text)
+                .comisi_on = Convert.ToDouble(txtComision.Text)
+                .Comenta_rio = txtComentario.Text
+                .Tipo_Deposito = lblTipoDeposito.Text
+                .cod_Cajero = txtCajero.Text
+                .Cod_FormaPago = Convert.ToInt32(lblCodFormaPago.Text)
+                .modificarDeposito()
+            End With
+
 
 
 

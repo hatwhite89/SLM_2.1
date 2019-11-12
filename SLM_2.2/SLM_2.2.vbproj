@@ -161,12 +161,6 @@
     <Compile Include="presentacion\A_FormaPago.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\A_ListarDepositos.Designer.vb">
-      <DependentUpon>A_ListarDepositos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\A_ListarDepositos.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="presentacion\A_MenuConta.Designer.vb">
       <DependentUpon>A_MenuConta.vb</DependentUpon>
     </Compile>
@@ -345,9 +339,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_FormaPago.resx">
       <DependentUpon>A_FormaPago.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\A_ListarDepositos.resx">
-      <DependentUpon>A_ListarDepositos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_MenuConta.resx">
       <DependentUpon>A_MenuConta.vb</DependentUpon>
