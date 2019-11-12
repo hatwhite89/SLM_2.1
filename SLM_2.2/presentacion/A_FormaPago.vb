@@ -1,14 +1,6 @@
 ﻿
 
 Public Class frmFormaPago
-    Private Sub lblNombreBanco_Click(sender As Object, e As EventArgs) Handles lblNombreBanco.Click
-
-    End Sub
-
-    Private Sub lblFormulario_Click(sender As Object, e As EventArgs) Handles lblFormulario.Click
-
-    End Sub
-
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         'Guardar nuevo registro de forma de pago.
@@ -42,11 +34,44 @@ Public Class frmFormaPago
 
     End Sub
 
-    Private Sub frmFormaPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Me.Close()
     End Sub
+
+
+
+    Private Sub txtCuenta_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCuenta.KeyPress
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
+
+
+
+    Private Sub txtCtaBanco_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCtaBanco.KeyPress
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtNombreBanco_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombreBanco.KeyPress
+        If Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSymbol(e.KeyChar) Then
+            e.Handled = True
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        Else
+            e.Handled = False
+        End If
+
+        txtNombreBanco.Select(txtNombreBanco.Text.Length, 0)
+    End Sub
+
 End Class

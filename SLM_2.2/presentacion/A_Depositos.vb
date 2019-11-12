@@ -7,9 +7,7 @@
     Private Sub ListarDepositosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarDepositosToolStripMenuItem.Click
         frmAsientos.Show()
     End Sub
-    Private Sub btnListar_Click(sender As Object, e As EventArgs)
-        A_ListarDepositos.Show()
-    End Sub
+
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         Dim nuevoDeposito As New ClsDeposito
@@ -136,8 +134,7 @@
 
     Private Sub dtDepositos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDepositos.CellClick
 
-
-
+        'Mostrar datos seleccionados del datagrid
         Try
 
             btnCrearNuevo.Visible = True
@@ -214,23 +211,28 @@
         With modificarDeposito
             .Cod = Convert.ToInt32(txtNro.Text)
             .Fech_a = dtpFecha.Value
-                .Banc_o = txtBanco.Text
-                .conta_do = Convert.ToDouble(txtContado.Text)
-                .Tipo_Contado = txtTipoConta.Text
-                .total_Depositado = Convert.ToDouble(txtTotalDep.Text)
-                .Mone_da = txtMoneda.Text
-                .mon_base = Convert.ToDouble(txtMonBase.Text)
-                .comisi_on = Convert.ToDouble(txtComision.Text)
-                .Comenta_rio = txtComentario.Text
-                .Tipo_Deposito = lblTipoDeposito.Text
-                .cod_Cajero = txtCajero.Text
-                .Cod_FormaPago = Convert.ToInt32(lblCodFormaPago.Text)
-                .modificarDeposito()
-            End With
-
-
-
-
-
+            .Banc_o = txtBanco.Text
+            .conta_do = Convert.ToDouble(txtContado.Text)
+            .Tipo_Contado = txtTipoConta.Text
+            .total_Depositado = Convert.ToDouble(txtTotalDep.Text)
+            .Mone_da = txtMoneda.Text
+            .mon_base = Convert.ToDouble(txtMonBase.Text)
+            .comisi_on = Convert.ToDouble(txtComision.Text)
+            .Comenta_rio = txtComentario.Text
+            .Tipo_Deposito = lblTipoDeposito.Text
+            .cod_Cajero = txtCajero.Text
+            .Cod_FormaPago = Convert.ToInt32(lblCodFormaPago.Text)
+            .modificarDeposito()
+        End With
     End Sub
+
+
+    Private Sub txtContado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtContado.KeyPress
+        'Solo acepta numeros.
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
+
+
 End Class

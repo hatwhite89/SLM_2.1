@@ -31,7 +31,7 @@ Partial Class A_BuscarFormaPago
         '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(80, 20)
+        Me.txtCodigo.Location = New System.Drawing.Point(92, 11)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
         Me.txtCodigo.TabIndex = 0
@@ -39,7 +39,7 @@ Partial Class A_BuscarFormaPago
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(23, 24)
+        Me.Label1.Location = New System.Drawing.Point(35, 15)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(57, 13)
         Me.Label1.TabIndex = 1
@@ -52,7 +52,7 @@ Partial Class A_BuscarFormaPago
         Me.dtFormasPago.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.dtFormasPago.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.dtFormasPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtFormasPago.Location = New System.Drawing.Point(12, 46)
+        Me.dtFormasPago.Location = New System.Drawing.Point(12, 37)
         Me.dtFormasPago.Name = "dtFormasPago"
         Me.dtFormasPago.ReadOnly = True
         Me.dtFormasPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -72,14 +72,16 @@ Partial Class A_BuscarFormaPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(230, 299)
+        Me.ClientSize = New System.Drawing.Size(230, 288)
+        Me.ControlBox = False
         Me.Controls.Add(Me.lblJC)
         Me.Controls.Add(Me.dtFormasPago)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtCodigo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "A_BuscarFormaPago"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "A_BuscarFormaPago"
+        Me.Text = "Seleccionar forma de pago"
         CType(Me.dtFormasPago, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

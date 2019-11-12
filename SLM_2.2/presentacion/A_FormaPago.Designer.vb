@@ -72,13 +72,13 @@ Partial Class frmFormaPago
         'GuardarToolStripMenuItem
         '
         Me.GuardarToolStripMenuItem.Name = "GuardarToolStripMenuItem"
-        Me.GuardarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.GuardarToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
         Me.GuardarToolStripMenuItem.Text = "Guardar"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'lblCod
