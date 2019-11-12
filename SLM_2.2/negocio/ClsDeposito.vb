@@ -127,7 +127,7 @@ Public Class ClsDeposito
         End Set
     End Property
 
-    Public Function RegistrarNuevoPaciente() As String
+    Public Function registrarNuevoDeposito() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
@@ -205,6 +205,8 @@ Public Class ClsDeposito
 
         sqlpar.Direction = ParameterDirection.Output
 
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
         sqlcom.ExecuteNonQuery()
 
         par_sal = sqlcom.Parameters("Salida").Value
@@ -212,6 +214,8 @@ Public Class ClsDeposito
         Return par_sal
 
     End Function
+
+
 
 
 
