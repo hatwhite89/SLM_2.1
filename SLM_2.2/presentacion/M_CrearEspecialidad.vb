@@ -64,7 +64,7 @@
                     btnguardar.Enabled = False
                     btnnuevo.Enabled = True
                 Else
-                    MsgBox("Error al querer ingresar la especialidad.", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer modificar la especialidad.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -119,8 +119,14 @@
             txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
             btnmodificar.Enabled = True
             txtnombre.ReadOnly = False
+            M_CrearMedico.txtcodigoEspecialidad.Text = txtcodigo.Text
+            M_CrearMedico.txtnombreEspecialidad.Text = txtnombre.Text
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
+    End Sub
+
+    Private Sub dgbtabla_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellContentClick
+
     End Sub
 End Class

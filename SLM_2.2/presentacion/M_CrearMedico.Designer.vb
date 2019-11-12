@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class M_CrearMedico
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class M_CrearMedico
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_CrearMedico))
         Me.txtcodigo = New System.Windows.Forms.TextBox()
@@ -42,14 +42,13 @@ Partial Class M_CrearMedico
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.gbxmedico = New System.Windows.Forms.GroupBox()
+        Me.txtnombreEspecialidad = New System.Windows.Forms.TextBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
-        Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lbltotal = New System.Windows.Forms.Label()
-        Me.txtnombre = New System.Windows.Forms.TextBox()
+        Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnombre = New System.Windows.Forms.Label()
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.gbxmedico.SuspendLayout()
@@ -158,7 +157,7 @@ Partial Class M_CrearMedico
         '
         'txtcodigoEspecialidad
         '
-        Me.txtcodigoEspecialidad.Location = New System.Drawing.Point(198, 148)
+        Me.txtcodigoEspecialidad.Location = New System.Drawing.Point(199, 150)
         Me.txtcodigoEspecialidad.Name = "txtcodigoEspecialidad"
         Me.txtcodigoEspecialidad.Size = New System.Drawing.Size(125, 22)
         Me.txtcodigoEspecialidad.TabIndex = 104
@@ -231,6 +230,7 @@ Partial Class M_CrearMedico
         '
         'gbxmedico
         '
+        Me.gbxmedico.Controls.Add(Me.txtnombreEspecialidad)
         Me.gbxmedico.Controls.Add(Me.btnmodificar)
         Me.gbxmedico.Controls.Add(Me.lblcodigo)
         Me.gbxmedico.Controls.Add(Me.btnnuevo)
@@ -257,6 +257,14 @@ Partial Class M_CrearMedico
         Me.gbxmedico.TabStop = False
         Me.gbxmedico.Text = "REGISTRAR MÉDICO"
         '
+        'txtnombreEspecialidad
+        '
+        Me.txtnombreEspecialidad.Location = New System.Drawing.Point(334, 150)
+        Me.txtnombreEspecialidad.Name = "txtnombreEspecialidad"
+        Me.txtnombreEspecialidad.ReadOnly = True
+        Me.txtnombreEspecialidad.Size = New System.Drawing.Size(247, 22)
+        Me.txtnombreEspecialidad.TabIndex = 114
+        '
         'btnmodificar
         '
         Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
@@ -275,7 +283,7 @@ Partial Class M_CrearMedico
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
-        Me.gbxbusqueda.Controls.Add(Me.txtnombre)
+        Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnombre)
         Me.gbxbusqueda.Controls.Add(Me.btnbuscar)
         Me.gbxbusqueda.Location = New System.Drawing.Point(23, 288)
@@ -296,28 +304,17 @@ Partial Class M_CrearMedico
         '
         'dgbtabla
         '
+        Me.dgbtabla.AllowUserToAddRows = False
+        Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Nombre})
         Me.dgbtabla.Location = New System.Drawing.Point(39, 90)
         Me.dgbtabla.Name = "dgbtabla"
+        Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
+        Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgbtabla.Size = New System.Drawing.Size(520, 150)
         Me.dgbtabla.TabIndex = 22
-        '
-        'Codigo
-        '
-        Me.Codigo.HeaderText = "Código"
-        Me.Codigo.MinimumWidth = 6
-        Me.Codigo.Name = "Codigo"
-        Me.Codigo.Width = 122
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.MinimumWidth = 6
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.Width = 215
         '
         'lbltotal
         '
@@ -328,12 +325,12 @@ Partial Class M_CrearMedico
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL DE CLIENTES"
         '
-        'txtnombre
+        'txtnombreB
         '
-        Me.txtnombre.Location = New System.Drawing.Point(177, 36)
-        Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(192, 22)
-        Me.txtnombre.TabIndex = 115
+        Me.txtnombreB.Location = New System.Drawing.Point(177, 36)
+        Me.txtnombreB.Name = "txtnombreB"
+        Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
+        Me.txtnombreB.TabIndex = 115
         '
         'lblnombre
         '
@@ -396,13 +393,12 @@ Partial Class M_CrearMedico
     Friend WithEvents btnnuevo As Button
     Friend WithEvents gbxmedico As GroupBox
     Friend WithEvents gbxbusqueda As GroupBox
-    Friend WithEvents txtnombre As TextBox
+    Friend WithEvents txtnombreB As TextBox
     Friend WithEvents lblnombre As Label
     Friend WithEvents btnbuscar As Button
     Friend WithEvents lbltotal As Label
     Friend WithEvents lblcantidad As Label
     Friend WithEvents btnmodificar As Button
     Friend WithEvents dgbtabla As DataGridView
-    Friend WithEvents Codigo As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents txtnombreEspecialidad As TextBox
 End Class
