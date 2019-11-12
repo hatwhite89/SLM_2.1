@@ -215,12 +215,6 @@
     <Compile Include="presentacion\M_ClasificacionContacto.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\M_CrearCliente.Designer.vb">
-      <DependentUpon>M_CrearCliente.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_CrearCliente.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="presentacion\M_CrearEspecialidad.Designer.vb">
       <DependentUpon>M_CrearEspecialidad.vb</DependentUpon>
     </Compile>
@@ -273,12 +267,6 @@
       <DependentUpon>M_Especialidad.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_Especialidad.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="presentacion\M_Factura.Designer.vb">
-      <DependentUpon>M_Factura.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_Factura.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_Factura2.Designer.vb">
@@ -385,9 +373,6 @@
     <EmbeddedResource Include="presentacion\M_ClasificacionContacto.resx">
       <DependentUpon>M_ClasificacionContacto.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_CrearCliente.resx">
-      <DependentUpon>M_CrearCliente.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_CrearEspecialidad.resx">
       <DependentUpon>M_CrearEspecialidad.vb</DependentUpon>
     </EmbeddedResource>
@@ -414,9 +399,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Especialidad.resx">
       <DependentUpon>M_Especialidad.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_Factura.resx">
-      <DependentUpon>M_Factura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Factura2.resx">
       <DependentUpon>M_Factura2.vb</DependentUpon>

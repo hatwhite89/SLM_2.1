@@ -9,6 +9,8 @@ Public Class ClsCliente
 
     End Sub
 
+
+
     Public Property Codigo1 As Integer
         Get
             Return codigo
@@ -256,7 +258,7 @@ Public Class ClsCliente
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "corre2" 'nombre campo en el procedimiento almacenado @
+        sqlpar.ParameterName = "correo2" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = Correo_2
         sqlcom.Parameters.Add(sqlpar)
 
@@ -374,7 +376,7 @@ Public Class ClsCliente
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "corre2" 'nombre campo en el procedimiento almacenado @
+        sqlpar.ParameterName = "correo2" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = Correo_2
         sqlcom.Parameters.Add(sqlpar)
 

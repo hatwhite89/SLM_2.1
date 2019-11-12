@@ -257,5 +257,7 @@
         End If
     End Sub
 
+    Private Sub dgbtabla_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellContentClick
 
+    End Sub
 End Class
