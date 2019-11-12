@@ -1,3 +1,38 @@
 ﻿Public Class A_BuscarFormaPago
 
+
+    Private Sub A_BuscarFormaPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'llenar DataGrid de formas de pago
+        Dim formaPago As New ClsFormaPago
+        dtFormasPago.DataSource = formaPago.listarFormaPago
+
+    End Sub
+
+    Private Sub txtCodigo_TextChanged(sender As Object, e As EventArgs) Handles txtCodigo.TextChanged
+
+        Dim formPago As New ClsFormaPago
+        Dim Dato As New DataView
+
+        'Actualizar datos en datagrid con textbox
+        formPago.Cod = txtCodigo.Text
+        Dato = formPago.buscarCodFormaPago.DefaultView
+        dtFormasPago.DataSource = Dato
+
+    End Sub
+
+    Private Sub dtFormasPago_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtFormasPago.CellClick
+
+        'COPIAR CODIGO DE BANCO
+        If lblJC.Text = 1 Then
+            frmDeposito.txtBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
+            Me.Close()
+        Else
+            frmDeposito.txtTipoConta.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
+            Me.Close()
+        End If
+
+
+
+    End Sub
 End Class

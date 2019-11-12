@@ -7,27 +7,25 @@
     Private Sub ListarDepositosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarDepositosToolStripMenuItem.Click
         frmAsientos.Show()
     End Sub
-
-
-
     Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
         ListarDepositos.Show()
     End Sub
-
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         Dim nuevoDeposito As New ClsDeposito
+        Dim buscarCodigo As New ClsFormaPago
 
         'Capturar informacion de DataTable en Label
+        'Validación de codigo de banco.
         Try
             Dim dt As New DataTable
-            nuevoDeposito.Banc_o = txtBanco.Text
-            dt = nuevoDeposito.buscarCodigoFormaPago()
+            buscarCodigo.Cod = txtBanco.Text
+            dt = buscarCodigo.buscarCodigoFormaPago()
             Dim row As DataRow = dt.Rows(0)
             lblCodFormaPago.Text = CStr(row("codFormaPago"))
 
         Catch ex As Exception
-            MessageBox.Show("El código de banco es incorrecto o no existe.")
+            MessageBox.Show("El código de banco no existe.")
         End Try
 
         'Guardar deposito en la base de datos
@@ -47,5 +45,45 @@
             .registrarNuevoDeposito()
         End With
 
+    End Sub
+    Private Sub btnBuscarBanco_Click(sender As Object, e As EventArgs) Handles btnBuscarBanco.Click
+        'Asignar valor a label para diferenciar campo a llenar.
+        A_BuscarFormaPago.lblJC.Text = 1
+        A_BuscarFormaPago.Show()
+    End Sub
+    Private Sub btnBuscarTipoConta_Click(sender As Object, e As EventArgs) Handles btnBuscarTipoConta.Click
+        'Asignar valor a label para diferenciar campo a llenar.
+        A_BuscarFormaPago.lblJC.Text = 2
+        A_BuscarFormaPago.Show()
+    End Sub
+    Private Sub txtContado_TextChanged(sender As Object, e As EventArgs) Handles txtContado.TextChanged
+
+        Dim Comision As New ClsFormaPago
+        Dim dt As New DataTable
+        Dim comi As New Double
+
+        Comision.Cod = txtBanco.Text
+
+        'Capturando la comision del banco seleccionado
+        dt = Comision.capturarComision
+        Dim row As DataRow = dt.Rows(0)
+        comi = CStr(row("comision"))
+
+        'Calculo de comision
+        txtComision.Text = Convert.ToDouble(txtContado.Text) * comi
+        'Calculo del total de deposito menos comision
+        txtTotalDep.Text = Convert.ToDouble(txtContado.Text) - Convert.ToDouble(txtComision.Text)
+    End Sub
+
+    Private Sub frmDeposito_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'Ocultar campo comision para deposito bancario
+        If lblTipoDeposito.Text = "Tarjeta" Then
+            lblComision.Visible = True
+            txtComision.Visible = True
+        Else
+            lblComision.Visible = False
+            txtComision.Visible = False
+        End If
     End Sub
 End Class
