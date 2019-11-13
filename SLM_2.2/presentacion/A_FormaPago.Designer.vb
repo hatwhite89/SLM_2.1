@@ -49,8 +49,18 @@ Partial Class frmFormaPago
         Me.gbxInfoFormaPago = New System.Windows.Forms.GroupBox()
         Me.txtComision = New System.Windows.Forms.TextBox()
         Me.lblComision = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.dtFormasPago = New System.Windows.Forms.DataGridView()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.lblCodigoFormaPa = New System.Windows.Forms.Label()
+        Me.lblRetencion = New System.Windows.Forms.Label()
+        Me.txtRetencion = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxInfoFormaPago.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.dtFormasPago, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -84,7 +94,7 @@ Partial Class frmFormaPago
         'lblCod
         '
         Me.lblCod.AutoSize = True
-        Me.lblCod.Location = New System.Drawing.Point(10, 35)
+        Me.lblCod.Location = New System.Drawing.Point(11, 35)
         Me.lblCod.Name = "lblCod"
         Me.lblCod.Size = New System.Drawing.Size(40, 13)
         Me.lblCod.TabIndex = 1
@@ -259,6 +269,8 @@ Partial Class frmFormaPago
         '
         'gbxInfoFormaPago
         '
+        Me.gbxInfoFormaPago.Controls.Add(Me.txtRetencion)
+        Me.gbxInfoFormaPago.Controls.Add(Me.lblRetencion)
         Me.gbxInfoFormaPago.Controls.Add(Me.txtComision)
         Me.gbxInfoFormaPago.Controls.Add(Me.lblComision)
         Me.gbxInfoFormaPago.Controls.Add(Me.txtCodigo)
@@ -304,13 +316,104 @@ Partial Class frmFormaPago
         Me.lblComision.TabIndex = 51
         Me.lblComision.Text = "Comisión"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.lblCodigoFormaPa)
+        Me.GroupBox1.Controls.Add(Me.btnCerrar)
+        Me.GroupBox1.Controls.Add(Me.btnEliminar)
+        Me.GroupBox1.Controls.Add(Me.btnModificar)
+        Me.GroupBox1.Controls.Add(Me.dtFormasPago)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 255)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(440, 187)
+        Me.GroupBox1.TabIndex = 52
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Listado de Formas de Pago"
+        '
+        'dtFormasPago
+        '
+        Me.dtFormasPago.AllowUserToAddRows = False
+        Me.dtFormasPago.AllowUserToDeleteRows = False
+        Me.dtFormasPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtFormasPago.Location = New System.Drawing.Point(11, 17)
+        Me.dtFormasPago.Name = "dtFormasPago"
+        Me.dtFormasPago.ReadOnly = True
+        Me.dtFormasPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtFormasPago.Size = New System.Drawing.Size(303, 162)
+        Me.dtFormasPago.TabIndex = 0
+        '
+        'btnModificar
+        '
+        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnModificar.FlatAppearance.BorderSize = 0
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.ForeColor = System.Drawing.Color.White
+        Me.btnModificar.Location = New System.Drawing.Point(320, 17)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar.TabIndex = 1
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnEliminar.FlatAppearance.BorderSize = 0
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminar.ForeColor = System.Drawing.Color.White
+        Me.btnEliminar.Location = New System.Drawing.Point(320, 43)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar.TabIndex = 2
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = False
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCerrar.FlatAppearance.BorderSize = 0
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.ForeColor = System.Drawing.Color.White
+        Me.btnCerrar.Location = New System.Drawing.Point(320, 68)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCerrar.TabIndex = 3
+        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
+        'lblCodigoFormaPa
+        '
+        Me.lblCodigoFormaPa.AutoSize = True
+        Me.lblCodigoFormaPa.Location = New System.Drawing.Point(395, 166)
+        Me.lblCodigoFormaPa.Name = "lblCodigoFormaPa"
+        Me.lblCodigoFormaPa.Size = New System.Drawing.Size(39, 13)
+        Me.lblCodigoFormaPa.TabIndex = 4
+        Me.lblCodigoFormaPa.Text = "Label1"
+        '
+        'lblRetencion
+        '
+        Me.lblRetencion.AutoSize = True
+        Me.lblRetencion.Location = New System.Drawing.Point(224, 129)
+        Me.lblRetencion.Name = "lblRetencion"
+        Me.lblRetencion.Size = New System.Drawing.Size(56, 13)
+        Me.lblRetencion.TabIndex = 53
+        Me.lblRetencion.Text = "Retención"
+        '
+        'txtRetencion
+        '
+        Me.txtRetencion.Location = New System.Drawing.Point(324, 126)
+        Me.txtRetencion.Name = "txtRetencion"
+        Me.txtRetencion.Size = New System.Drawing.Size(100, 20)
+        Me.txtRetencion.TabIndex = 54
+        '
         'frmFormaPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(464, 250)
+        Me.ClientSize = New System.Drawing.Size(464, 248)
         Me.ControlBox = False
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoFormaPago)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -322,6 +425,9 @@ Partial Class frmFormaPago
         Me.MenuStrip1.PerformLayout()
         Me.gbxInfoFormaPago.ResumeLayout(False)
         Me.gbxInfoFormaPago.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.dtFormasPago, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -354,4 +460,12 @@ Partial Class frmFormaPago
     Friend WithEvents gbxInfoFormaPago As GroupBox
     Friend WithEvents txtComision As TextBox
     Friend WithEvents lblComision As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents btnCerrar As Button
+    Friend WithEvents btnEliminar As Button
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents dtFormasPago As DataGridView
+    Friend WithEvents lblCodigoFormaPa As Label
+    Friend WithEvents txtRetencion As TextBox
+    Friend WithEvents lblRetencion As Label
 End Class
