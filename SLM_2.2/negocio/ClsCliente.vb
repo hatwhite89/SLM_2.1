@@ -403,7 +403,6 @@ Public Class ClsCliente
 
     End Function
 
-
     Public Function BuscarCliente() As DataTable
 
         Dim objCon As New ClsConnection
