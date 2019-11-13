@@ -22,6 +22,7 @@ Partial Class frmMenuConta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenuConta))
         Me.tcMenu = New System.Windows.Forms.TabControl()
         Me.tpCheque = New System.Windows.Forms.TabPage()
         Me.btnDepoBanc = New System.Windows.Forms.Button()
@@ -29,6 +30,7 @@ Partial Class frmMenuConta
         Me.btnPagos = New System.Windows.Forms.Button()
         Me.TpMantenimiento = New System.Windows.Forms.TabPage()
         Me.btnFormaPago = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.tcMenu.SuspendLayout()
         Me.tpCheque.SuspendLayout()
         Me.tpPagos.SuspendLayout()
@@ -62,7 +64,7 @@ Partial Class frmMenuConta
         Me.btnDepoBanc.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnDepoBanc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDepoBanc.ForeColor = System.Drawing.Color.White
-        Me.btnDepoBanc.Location = New System.Drawing.Point(20, 28)
+        Me.btnDepoBanc.Location = New System.Drawing.Point(6, 6)
         Me.btnDepoBanc.Name = "btnDepoBanc"
         Me.btnDepoBanc.Size = New System.Drawing.Size(110, 23)
         Me.btnDepoBanc.TabIndex = 0
@@ -85,7 +87,7 @@ Partial Class frmMenuConta
         Me.btnPagos.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPagos.ForeColor = System.Drawing.Color.White
-        Me.btnPagos.Location = New System.Drawing.Point(20, 28)
+        Me.btnPagos.Location = New System.Drawing.Point(6, 6)
         Me.btnPagos.Name = "btnPagos"
         Me.btnPagos.Size = New System.Drawing.Size(110, 23)
         Me.btnPagos.TabIndex = 0
@@ -94,6 +96,7 @@ Partial Class frmMenuConta
         '
         'TpMantenimiento
         '
+        Me.TpMantenimiento.Controls.Add(Me.Label1)
         Me.TpMantenimiento.Controls.Add(Me.btnFormaPago)
         Me.TpMantenimiento.Location = New System.Drawing.Point(4, 22)
         Me.TpMantenimiento.Name = "TpMantenimiento"
@@ -105,12 +108,24 @@ Partial Class frmMenuConta
         '
         'btnFormaPago
         '
-        Me.btnFormaPago.Location = New System.Drawing.Point(6, 6)
+        Me.btnFormaPago.BackgroundImage = CType(resources.GetObject("btnFormaPago.BackgroundImage"), System.Drawing.Image)
+        Me.btnFormaPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnFormaPago.FlatAppearance.BorderSize = 0
+        Me.btnFormaPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFormaPago.Location = New System.Drawing.Point(26, 7)
         Me.btnFormaPago.Name = "btnFormaPago"
-        Me.btnFormaPago.Size = New System.Drawing.Size(94, 23)
+        Me.btnFormaPago.Size = New System.Drawing.Size(41, 38)
         Me.btnFormaPago.TabIndex = 0
-        Me.btnFormaPago.Text = "Forma de Pago"
         Me.btnFormaPago.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 47)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(84, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Formas de Pago"
         '
         'frmMenuConta
         '
@@ -125,6 +140,7 @@ Partial Class frmMenuConta
         Me.tpCheque.ResumeLayout(False)
         Me.tpPagos.ResumeLayout(False)
         Me.TpMantenimiento.ResumeLayout(False)
+        Me.TpMantenimiento.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -136,4 +152,5 @@ Partial Class frmMenuConta
     Friend WithEvents btnPagos As Button
     Friend WithEvents TpMantenimiento As TabPage
     Friend WithEvents btnFormaPago As Button
+    Friend WithEvents Label1 As Label
 End Class

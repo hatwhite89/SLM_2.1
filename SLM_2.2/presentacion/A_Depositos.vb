@@ -43,6 +43,8 @@
             .registrarNuevoDeposito()
         End With
 
+        dtDepositos.Refresh()
+
     End Sub
     Private Sub btnBuscarBanco_Click(sender As Object, e As EventArgs) Handles btnBuscarBanco.Click
         'Asignar valor a label para diferenciar campo a llenar.
@@ -136,7 +138,6 @@
 
         'Mostrar datos seleccionados del datagrid
         Try
-
             btnCrearNuevo.Visible = True
             btnModificar.Visible = True
             btnGuardar.Visible = False
@@ -153,7 +154,7 @@
             lblTipoDeposito.Text = dtDepositos.Rows(e.RowIndex).Cells(10).Value
             txtCajero.Text = dtDepositos.Rows(e.RowIndex).Cells(11).Value
         Catch ex As Exception
-            MessageBox.Show("Error al hacer la selección.")
+            'MessageBox.Show("Error al hacer la selección.")
         End Try
 
     End Sub
@@ -233,6 +234,5 @@
             e.Handled = True
         End If
     End Sub
-
 
 End Class

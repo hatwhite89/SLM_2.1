@@ -27,7 +27,6 @@ Partial Class frmDeposito
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarDepositosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CerrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.txtNro = New System.Windows.Forms.TextBox()
@@ -96,7 +95,7 @@ Partial Class frmDeposito
         '
         'ArchivoToolStripMenuItem
         '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListarDepositosToolStripMenuItem, Me.CerrarToolStripMenuItem, Me.CerrarToolStripMenuItem1})
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListarDepositosToolStripMenuItem, Me.CerrarToolStripMenuItem1})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
         Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
@@ -104,19 +103,13 @@ Partial Class frmDeposito
         'ListarDepositosToolStripMenuItem
         '
         Me.ListarDepositosToolStripMenuItem.Name = "ListarDepositosToolStripMenuItem"
-        Me.ListarDepositosToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.ListarDepositosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ListarDepositosToolStripMenuItem.Text = "Crear Asiento"
-        '
-        'CerrarToolStripMenuItem
-        '
-        Me.CerrarToolStripMenuItem.Name = "CerrarToolStripMenuItem"
-        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
-        Me.CerrarToolStripMenuItem.Text = "Listar Depositos"
         '
         'CerrarToolStripMenuItem1
         '
         Me.CerrarToolStripMenuItem1.Name = "CerrarToolStripMenuItem1"
-        Me.CerrarToolStripMenuItem1.Size = New System.Drawing.Size(157, 22)
+        Me.CerrarToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.CerrarToolStripMenuItem1.Text = "Cerrar"
         '
         'txtNro
@@ -558,7 +551,6 @@ Partial Class frmDeposito
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListarDepositosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CerrarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CerrarToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents txtNro As TextBox
