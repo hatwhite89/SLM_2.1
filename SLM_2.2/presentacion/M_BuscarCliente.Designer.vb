@@ -29,6 +29,7 @@ Partial Class M_BuscarCliente
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbxinfoCliente = New System.Windows.Forms.GroupBox()
+        Me.btnseleccionarCliente = New System.Windows.Forms.Button()
         Me.txtnombreCategoria = New System.Windows.Forms.TextBox()
         Me.txtnombreClasificacion = New System.Windows.Forms.TextBox()
         Me.txtnombreConvenio = New System.Windows.Forms.TextBox()
@@ -86,7 +87,6 @@ Partial Class M_BuscarCliente
         Me.lblapellido1 = New System.Windows.Forms.Label()
         Me.txtnombre1 = New System.Windows.Forms.TextBox()
         Me.lblnombre1 = New System.Windows.Forms.Label()
-        Me.btnseleccionarCliente = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxinfoCliente.SuspendLayout()
         Me.gbxgenero.SuspendLayout()
@@ -208,6 +208,18 @@ Partial Class M_BuscarCliente
         Me.gbxinfoCliente.TabStop = False
         Me.gbxinfoCliente.Text = "Información de Cliente/Paciente"
         Me.gbxinfoCliente.Visible = False
+        '
+        'btnseleccionarCliente
+        '
+        Me.btnseleccionarCliente.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnseleccionarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnseleccionarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnseleccionarCliente.Location = New System.Drawing.Point(561, 405)
+        Me.btnseleccionarCliente.Name = "btnseleccionarCliente"
+        Me.btnseleccionarCliente.Size = New System.Drawing.Size(130, 38)
+        Me.btnseleccionarCliente.TabIndex = 115
+        Me.btnseleccionarCliente.Text = "Seleccionar"
+        Me.btnseleccionarCliente.UseVisualStyleBackColor = False
         '
         'txtnombreCategoria
         '
@@ -744,18 +756,6 @@ Partial Class M_BuscarCliente
         Me.lblnombre1.Size = New System.Drawing.Size(83, 17)
         Me.lblnombre1.TabIndex = 67
         Me.lblnombre1.Text = "1er Nombre"
-        '
-        'btnseleccionarCliente
-        '
-        Me.btnseleccionarCliente.BackColor = System.Drawing.Color.SkyBlue
-        Me.btnseleccionarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnseleccionarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnseleccionarCliente.Location = New System.Drawing.Point(561, 405)
-        Me.btnseleccionarCliente.Name = "btnseleccionarCliente"
-        Me.btnseleccionarCliente.Size = New System.Drawing.Size(130, 38)
-        Me.btnseleccionarCliente.TabIndex = 115
-        Me.btnseleccionarCliente.Text = "Seleccionar"
-        Me.btnseleccionarCliente.UseVisualStyleBackColor = False
         '
         'M_BuscarCliente
         '

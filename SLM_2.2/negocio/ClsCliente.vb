@@ -11,6 +11,9 @@ Public Class ClsCliente
 
 
 
+
+
+
     Public Property Codigo1 As Integer
         Get
             Return codigo
