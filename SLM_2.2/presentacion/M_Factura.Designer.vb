@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class M_Factura2
+Partial Class M_Factura
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,10 +22,10 @@ Partial Class M_Factura2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Factura2))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Factura))
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.btnbuscarCliente = New System.Windows.Forms.Button()
         Me.btnnueva = New System.Windows.Forms.Button()
@@ -67,7 +67,7 @@ Partial Class M_Factura2
         Me.dtpfechaVto = New System.Windows.Forms.DateTimePicker()
         Me.txtconvenio = New System.Windows.Forms.TextBox()
         Me.txtterminal = New System.Windows.Forms.TextBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.cbxentregarMedico = New System.Windows.Forms.CheckBox()
         Me.txtrecepecionista = New System.Windows.Forms.TextBox()
         Me.txtcajero = New System.Windows.Forms.TextBox()
         Me.txtsucursal = New System.Windows.Forms.TextBox()
@@ -75,8 +75,8 @@ Partial Class M_Factura2
         Me.txtcodigoTerminosPago = New System.Windows.Forms.TextBox()
         Me.txtcodigoSede = New System.Windows.Forms.TextBox()
         Me.txtcodigoDocumento = New System.Windows.Forms.TextBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.cbxentregarPaciente = New System.Windows.Forms.CheckBox()
+        Me.cbxenviarCorreo = New System.Windows.Forms.CheckBox()
         Me.txtvuelto = New System.Windows.Forms.TextBox()
         Me.cbxok = New System.Windows.Forms.CheckBox()
         Me.btnimprimirComprobante = New System.Windows.Forms.Button()
@@ -86,7 +86,7 @@ Partial Class M_Factura2
         Me.RegistroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentanaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.txtsede = New System.Windows.Forms.TextBox()
+        Me.txtnombreSede = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnbuscarDocumento = New System.Windows.Forms.Button()
         Me.btnbuscarSede = New System.Windows.Forms.Button()
@@ -102,6 +102,8 @@ Partial Class M_Factura2
         Me.btntarjeta = New System.Windows.Forms.Button()
         Me.btncontado = New System.Windows.Forms.Button()
         Me.btnbuscarSucursal = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.gbxlistadoExamenes.SuspendLayout()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -324,34 +326,34 @@ Partial Class M_Factura2
         '
         'dgblistadoExamenes
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgblistadoExamenes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgblistadoExamenes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgblistadoExamenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgblistadoExamenes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.Descripcion, Me.Cantidad, Me.PrecioUnitario, Me.FechaEntrega, Me.Descuento, Me.Subtotal})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgblistadoExamenes.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgblistadoExamenes.DefaultCellStyle = DataGridViewCellStyle5
         Me.dgblistadoExamenes.Location = New System.Drawing.Point(21, 32)
         Me.dgblistadoExamenes.Name = "dgblistadoExamenes"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgblistadoExamenes.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgblistadoExamenes.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgblistadoExamenes.RowHeadersWidth = 51
         Me.dgblistadoExamenes.RowTemplate.Height = 24
         Me.dgblistadoExamenes.Size = New System.Drawing.Size(1061, 150)
@@ -470,6 +472,7 @@ Partial Class M_Factura2
         Me.txtnombreCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnombreCliente.Location = New System.Drawing.Point(405, 114)
         Me.txtnombreCliente.Name = "txtnombreCliente"
+        Me.txtnombreCliente.ReadOnly = True
         Me.txtnombreCliente.Size = New System.Drawing.Size(313, 22)
         Me.txtnombreCliente.TabIndex = 42
         '
@@ -521,16 +524,16 @@ Partial Class M_Factura2
         Me.txtterminal.Size = New System.Drawing.Size(224, 22)
         Me.txtterminal.TabIndex = 49
         '
-        'CheckBox1
+        'cbxentregarMedico
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(17, 21)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(151, 22)
-        Me.CheckBox1.TabIndex = 50
-        Me.CheckBox1.Text = "Entregar a Médico"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.cbxentregarMedico.AutoSize = True
+        Me.cbxentregarMedico.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxentregarMedico.Location = New System.Drawing.Point(23, 28)
+        Me.cbxentregarMedico.Name = "cbxentregarMedico"
+        Me.cbxentregarMedico.Size = New System.Drawing.Size(151, 22)
+        Me.cbxentregarMedico.TabIndex = 50
+        Me.cbxentregarMedico.Text = "Entregar a Médico"
+        Me.cbxentregarMedico.UseVisualStyleBackColor = True
         '
         'txtrecepecionista
         '
@@ -561,6 +564,7 @@ Partial Class M_Factura2
         Me.txtnombreMedico.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnombreMedico.Location = New System.Drawing.Point(405, 142)
         Me.txtnombreMedico.Name = "txtnombreMedico"
+        Me.txtnombreMedico.ReadOnly = True
         Me.txtnombreMedico.Size = New System.Drawing.Size(312, 22)
         Me.txtnombreMedico.TabIndex = 54
         '
@@ -589,27 +593,27 @@ Partial Class M_Factura2
         Me.txtcodigoDocumento.Size = New System.Drawing.Size(133, 22)
         Me.txtcodigoDocumento.TabIndex = 61
         '
-        'CheckBox2
+        'cbxentregarPaciente
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox2.Location = New System.Drawing.Point(17, 49)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(159, 22)
-        Me.CheckBox2.TabIndex = 62
-        Me.CheckBox2.Text = "Entregar a Paciente"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.cbxentregarPaciente.AutoSize = True
+        Me.cbxentregarPaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxentregarPaciente.Location = New System.Drawing.Point(23, 56)
+        Me.cbxentregarPaciente.Name = "cbxentregarPaciente"
+        Me.cbxentregarPaciente.Size = New System.Drawing.Size(159, 22)
+        Me.cbxentregarPaciente.TabIndex = 62
+        Me.cbxentregarPaciente.Text = "Entregar a Paciente"
+        Me.cbxentregarPaciente.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'cbxenviarCorreo
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox3.Location = New System.Drawing.Point(218, 21)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(148, 22)
-        Me.CheckBox3.TabIndex = 63
-        Me.CheckBox3.Text = "Enviar por Correo"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.cbxenviarCorreo.AutoSize = True
+        Me.cbxenviarCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxenviarCorreo.Location = New System.Drawing.Point(23, 84)
+        Me.cbxenviarCorreo.Name = "cbxenviarCorreo"
+        Me.cbxenviarCorreo.Size = New System.Drawing.Size(148, 22)
+        Me.cbxenviarCorreo.TabIndex = 63
+        Me.cbxenviarCorreo.Text = "Enviar por Correo"
+        Me.cbxenviarCorreo.UseVisualStyleBackColor = True
         '
         'txtvuelto
         '
@@ -682,23 +686,24 @@ Partial Class M_Factura2
         Me.InfoToolStripMenuItem.Size = New System.Drawing.Size(49, 24)
         Me.InfoToolStripMenuItem.Text = "Info"
         '
-        'txtsede
+        'txtnombreSede
         '
-        Me.txtsede.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtsede.Location = New System.Drawing.Point(736, 171)
-        Me.txtsede.Name = "txtsede"
-        Me.txtsede.Size = New System.Drawing.Size(384, 22)
-        Me.txtsede.TabIndex = 77
+        Me.txtnombreSede.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnombreSede.Location = New System.Drawing.Point(736, 171)
+        Me.txtnombreSede.Name = "txtnombreSede"
+        Me.txtnombreSede.ReadOnly = True
+        Me.txtnombreSede.Size = New System.Drawing.Size(182, 22)
+        Me.txtnombreSede.TabIndex = 77
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.CheckBox1)
-        Me.GroupBox1.Controls.Add(Me.CheckBox2)
-        Me.GroupBox1.Controls.Add(Me.CheckBox3)
+        Me.GroupBox1.Controls.Add(Me.cbxentregarMedico)
+        Me.GroupBox1.Controls.Add(Me.cbxentregarPaciente)
+        Me.GroupBox1.Controls.Add(Me.cbxenviarCorreo)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(736, 199)
+        Me.GroupBox1.Location = New System.Drawing.Point(924, 170)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(384, 79)
+        Me.GroupBox1.Size = New System.Drawing.Size(196, 121)
         Me.GroupBox1.TabIndex = 78
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Resultados"
@@ -873,12 +878,32 @@ Partial Class M_Factura2
         Me.btnbuscarSucursal.TabIndex = 92
         Me.btnbuscarSucursal.UseVisualStyleBackColor = False
         '
-        'M_Factura2
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(736, 228)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(182, 22)
+        Me.TextBox1.TabIndex = 93
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(736, 200)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(182, 22)
+        Me.TextBox2.TabIndex = 94
+        '
+        'M_Factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1143, 651)
+        Me.ClientSize = New System.Drawing.Size(1143, 698)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.btnbuscarSucursal)
         Me.Controls.Add(Me.btncontado)
         Me.Controls.Add(Me.btntarjeta)
@@ -894,7 +919,7 @@ Partial Class M_Factura2
         Me.Controls.Add(Me.btnbuscarSede)
         Me.Controls.Add(Me.btnbuscarDocumento)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.txtsede)
+        Me.Controls.Add(Me.txtnombreSede)
         Me.Controls.Add(Me.btnimprimirComprobante)
         Me.Controls.Add(Me.cbxok)
         Me.Controls.Add(Me.txtvuelto)
@@ -940,7 +965,7 @@ Partial Class M_Factura2
         Me.Controls.Add(Me.lblcodigo)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "M_Factura2"
+        Me.Name = "M_Factura"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Factura Laboratorios Médicos"
         Me.gbxlistadoExamenes.ResumeLayout(False)
@@ -988,7 +1013,7 @@ Partial Class M_Factura2
     Friend WithEvents dtpfechaVto As DateTimePicker
     Friend WithEvents txtconvenio As TextBox
     Friend WithEvents txtterminal As TextBox
-    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents cbxentregarMedico As CheckBox
     Friend WithEvents txtrecepecionista As TextBox
     Friend WithEvents txtcajero As TextBox
     Friend WithEvents txtsucursal As TextBox
@@ -996,8 +1021,8 @@ Partial Class M_Factura2
     Friend WithEvents txtcodigoTerminosPago As TextBox
     Friend WithEvents txtcodigoSede As TextBox
     Friend WithEvents txtcodigoDocumento As TextBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents cbxentregarPaciente As CheckBox
+    Friend WithEvents cbxenviarCorreo As CheckBox
     Friend WithEvents txtvuelto As TextBox
     Friend WithEvents cbxok As CheckBox
     Friend WithEvents btnimprimirComprobante As Button
@@ -1007,7 +1032,7 @@ Partial Class M_Factura2
     Friend WithEvents RegistroToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VentanaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InfoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents txtsede As TextBox
+    Friend WithEvents txtnombreSede As TextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents codigo As DataGridViewTextBoxColumn
     Friend WithEvents Descripcion As DataGridViewTextBoxColumn
@@ -1030,4 +1055,6 @@ Partial Class M_Factura2
     Friend WithEvents btntarjeta As Button
     Friend WithEvents btncontado As Button
     Friend WithEvents btnbuscarSucursal As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
 End Class

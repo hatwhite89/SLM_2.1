@@ -1,10 +1,11 @@
-﻿Public Class M_CrearMedico
+﻿Public Class M_Medico
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
+        limpiar()
         Me.Close()
     End Sub
 
     Private Sub btnbuscarEspecialidad_Click(sender As Object, e As EventArgs) Handles btnbuscarEspecialidad.Click
-        M_CrearEspecialidad.ShowDialog()
+        M_Especialidad.ShowDialog()
     End Sub
 
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
@@ -38,8 +39,7 @@
                 If objMedico.RegistrarNuevoMedico() = 1 Then
                     MsgBox("Registrado correctamente.")
 
-                    Dim objMed As New ClsMedico
-                    Dim dv As DataView = objMed.SeleccionarMedico.DefaultView
+                    Dim dv As DataView = objMedico.SeleccionarMedico.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -68,6 +68,10 @@
     End Sub
 
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+        limpiar()
+    End Sub
+
+    Private Sub limpiar()
         txtcorreo.Text() = ""
         txtcorreo2.Text() = ""
         txttelefono.Text() = ""
@@ -75,6 +79,7 @@
         txtcodigoEspecialidad.Text() = ""
         txtcodigo.Text() = ""
         txtnombreCompleto.Text() = ""
+        txtnombreEspecialidad.Text() = ""
 
         txtcorreo.ReadOnly = False
         txtcorreo2.ReadOnly = False
@@ -117,7 +122,11 @@
 
     End Sub
 
-
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
+    End Sub
     Private Sub M_CrearMedico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objMed As New ClsMedico
         Dim dv As DataView = objMed.SeleccionarMedico.DefaultView
@@ -160,8 +169,8 @@
             txttelefono.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()
             txtcelular.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(6).Value()
 
-            M_Factura2.txtcodigoMedico.Text = txtcodigo.Text
-            M_Factura2.txtnombreMedico.Text = txtnombreCompleto.Text
+            M_Factura.txtcodigoMedico.Text = txtcodigo.Text
+            M_Factura.txtnombreMedico.Text = txtnombreCompleto.Text
 
             btnmodificar.Enabled = True
             btnbuscarEspecialidad.Enabled = True
@@ -174,7 +183,7 @@
             txtcodigo.ReadOnly = True
             txtnombreCompleto.ReadOnly = False
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -209,8 +218,8 @@
 
                 If objMedico.ModificarMedico() = 1 Then
                     MsgBox("Modificado correctamente.")
-                    Dim objMed As New ClsMedico
-                    Dim dv As DataView = objMed.SeleccionarMedico.DefaultView
+
+                    Dim dv As DataView = objMedico.SeleccionarMedico.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -254,10 +263,11 @@
             Catch ex As Exception
                 MsgBox("No existe ese código de especialidad.", MsgBoxStyle.Critical, "Validación")
             End Try
+        Else
+            txtcodigoEspecialidad.Text = ""
+            txtnombreEspecialidad.Text = ""
         End If
     End Sub
 
-    Private Sub dgbtabla_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellContentClick
 
-    End Sub
 End Class

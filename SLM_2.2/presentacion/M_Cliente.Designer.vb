@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class M_BuscarCliente
+Partial Class M_Cliente
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class M_BuscarCliente
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_BuscarCliente))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Cliente))
         Me.mtxtidentidadClienteB = New System.Windows.Forms.MaskedTextBox()
         Me.btnbuscarCliente = New System.Windows.Forms.Button()
         Me.lblidCliente = New System.Windows.Forms.Label()
@@ -87,6 +87,7 @@ Partial Class M_BuscarCliente
         Me.lblapellido1 = New System.Windows.Forms.Label()
         Me.txtnombre1 = New System.Windows.Forms.TextBox()
         Me.lblnombre1 = New System.Windows.Forms.Label()
+        Me.btnnuevo = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxinfoCliente.SuspendLayout()
         Me.gbxgenero.SuspendLayout()
@@ -145,6 +146,7 @@ Partial Class M_BuscarCliente
         '
         'gbxinfoCliente
         '
+        Me.gbxinfoCliente.Controls.Add(Me.btnnuevo)
         Me.gbxinfoCliente.Controls.Add(Me.btnseleccionarCliente)
         Me.gbxinfoCliente.Controls.Add(Me.txtnombreCategoria)
         Me.gbxinfoCliente.Controls.Add(Me.txtnombreClasificacion)
@@ -214,7 +216,7 @@ Partial Class M_BuscarCliente
         Me.btnseleccionarCliente.BackColor = System.Drawing.Color.SkyBlue
         Me.btnseleccionarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnseleccionarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnseleccionarCliente.Location = New System.Drawing.Point(561, 405)
+        Me.btnseleccionarCliente.Location = New System.Drawing.Point(645, 414)
         Me.btnseleccionarCliente.Name = "btnseleccionarCliente"
         Me.btnseleccionarCliente.Size = New System.Drawing.Size(130, 38)
         Me.btnseleccionarCliente.TabIndex = 115
@@ -266,7 +268,7 @@ Partial Class M_BuscarCliente
         Me.btnguardarCliente.BackColor = System.Drawing.Color.SkyBlue
         Me.btnguardarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnguardarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardarCliente.Location = New System.Drawing.Point(252, 405)
+        Me.btnguardarCliente.Location = New System.Drawing.Point(336, 414)
         Me.btnguardarCliente.Name = "btnguardarCliente"
         Me.btnguardarCliente.Size = New System.Drawing.Size(130, 38)
         Me.btnguardarCliente.TabIndex = 109
@@ -488,7 +490,7 @@ Partial Class M_BuscarCliente
         Me.btnactualizarCliente.BackColor = System.Drawing.Color.SkyBlue
         Me.btnactualizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnactualizarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnactualizarCliente.Location = New System.Drawing.Point(408, 405)
+        Me.btnactualizarCliente.Location = New System.Drawing.Point(492, 414)
         Me.btnactualizarCliente.Name = "btnactualizarCliente"
         Me.btnactualizarCliente.Size = New System.Drawing.Size(130, 38)
         Me.btnactualizarCliente.TabIndex = 66
@@ -757,6 +759,18 @@ Partial Class M_BuscarCliente
         Me.lblnombre1.TabIndex = 67
         Me.lblnombre1.Text = "1er Nombre"
         '
+        'btnnuevo
+        '
+        Me.btnnuevo.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnnuevo.Location = New System.Drawing.Point(182, 414)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(130, 38)
+        Me.btnnuevo.TabIndex = 116
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.UseVisualStyleBackColor = False
+        '
         'M_BuscarCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -769,6 +783,7 @@ Partial Class M_BuscarCliente
         Me.Controls.Add(Me.lblidCliente)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.KeyPreview = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "M_BuscarCliente"
         Me.Text = "Buscar Cliente"
@@ -847,4 +862,5 @@ Partial Class M_BuscarCliente
     Friend WithEvents txtnombreTerminos As TextBox
     Friend WithEvents txtnombreAseguradora As TextBox
     Friend WithEvents btnseleccionarCliente As Button
+    Friend WithEvents btnnuevo As Button
 End Class
