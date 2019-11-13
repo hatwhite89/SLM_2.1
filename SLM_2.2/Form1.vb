@@ -9,6 +9,6 @@
     End Sub
 
     Private Sub btnFacturacion_Click(sender As Object, e As EventArgs) Handles btnFacturacion.Click
-        M_Factura2.Show()
+        M_Factura.Show()
     End Sub
 End Class
