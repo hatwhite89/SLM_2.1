@@ -27,8 +27,8 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnFacturacion = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnFacturacion = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -40,7 +40,7 @@ Partial Class Form1
         Me.btnContabilidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnContabilidad.FlatAppearance.BorderSize = 0
         Me.btnContabilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnContabilidad.Location = New System.Drawing.Point(6, 19)
+        Me.btnContabilidad.Location = New System.Drawing.Point(7, 18)
         Me.btnContabilidad.Name = "btnContabilidad"
         Me.btnContabilidad.Size = New System.Drawing.Size(60, 57)
         Me.btnContabilidad.TabIndex = 0
@@ -78,18 +78,6 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Menu de Opciones"
         '
-        'btnFacturacion
-        '
-        Me.btnFacturacion.BackgroundImage = CType(resources.GetObject("btnFacturacion.BackgroundImage"), System.Drawing.Image)
-        Me.btnFacturacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnFacturacion.FlatAppearance.BorderSize = 0
-        Me.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFacturacion.Location = New System.Drawing.Point(85, 19)
-        Me.btnFacturacion.Name = "btnFacturacion"
-        Me.btnFacturacion.Size = New System.Drawing.Size(55, 55)
-        Me.btnFacturacion.TabIndex = 2
-        Me.btnFacturacion.UseVisualStyleBackColor = True
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -98,6 +86,18 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Facturación"
+        '
+        'btnFacturacion
+        '
+        Me.btnFacturacion.BackgroundImage = CType(resources.GetObject("btnFacturacion.BackgroundImage"), System.Drawing.Image)
+        Me.btnFacturacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnFacturacion.FlatAppearance.BorderSize = 0
+        Me.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFacturacion.Location = New System.Drawing.Point(82, 18)
+        Me.btnFacturacion.Name = "btnFacturacion"
+        Me.btnFacturacion.Size = New System.Drawing.Size(60, 57)
+        Me.btnFacturacion.TabIndex = 2
+        Me.btnFacturacion.UseVisualStyleBackColor = True
         '
         'Form1
         '
