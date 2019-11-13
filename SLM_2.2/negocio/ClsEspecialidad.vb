@@ -34,7 +34,7 @@ Public Class ClsEspecialidad
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarEspecialidad"
+        sqlcom.CommandText = "slmInsertarEspecialidad_M"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "nombre" 'nombre campo en el procedimiento almacenado @
@@ -67,7 +67,7 @@ Public Class ClsEspecialidad
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarEspecialidad"
+        sqlcom.CommandText = "slmModificarEspecialidad_M"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -108,7 +108,7 @@ Public Class ClsEspecialidad
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarEspecialidad"
+            cmd.CommandText = "slmBuscarEspecialidad_M"
             cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Nombre1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -128,7 +128,7 @@ Public Class ClsEspecialidad
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmSeleccionarEspecialidad", cn)
+        Using da As New SqlDataAdapter("slmSeleccionarEspecialidad_M", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -147,7 +147,7 @@ Public Class ClsEspecialidad
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarEspecialidadCodeT"
+            cmd.CommandText = "slmBuscarEspecialidadCode_M"
             cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Codigo1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd

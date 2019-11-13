@@ -9,11 +9,6 @@ Public Class ClsCliente
 
     End Sub
 
-
-
-
-
-
     Public Property Codigo1 As Integer
         Get
             Return codigo
@@ -183,7 +178,7 @@ Public Class ClsCliente
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarCliente"
+        sqlcom.CommandText = "slmInsertarCliente_M"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "scanId" 'nombre campo en el procedimiento almacenado @
@@ -296,7 +291,7 @@ Public Class ClsCliente
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarCliente"
+        sqlcom.CommandText = "slmModificarCliente_M"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -418,7 +413,7 @@ Public Class ClsCliente
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarClienteId"
+            cmd.CommandText = "slmBuscarClienteId_M"
             cmd.Parameters.Add("@identidad", SqlDbType.VarChar).Value = Identidad1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -431,5 +426,26 @@ Public Class ClsCliente
 
     End Function
 
+    Public Function BuscarClienteCode() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "slmBuscarClienteCode_M"
+            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Codigo1
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
 
 End Class

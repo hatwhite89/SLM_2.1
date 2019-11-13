@@ -129,7 +129,7 @@ Partial Class M_ClasificacionContacto
         Me.gbxbusqueda.Size = New System.Drawing.Size(613, 347)
         Me.gbxbusqueda.TabIndex = 114
         Me.gbxbusqueda.TabStop = False
-        Me.gbxbusqueda.Text = "BUSCAR ESPECIALIDAD"
+        Me.gbxbusqueda.Text = "BUSCAR CLASIFICACIÓN"
         '
         'lblcantidad
         '
@@ -159,9 +159,9 @@ Partial Class M_ClasificacionContacto
         Me.lbltotal.AutoSize = True
         Me.lbltotal.Location = New System.Drawing.Point(118, 322)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(155, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(199, 17)
         Me.lbltotal.TabIndex = 114
-        Me.lbltotal.Text = "TOTAL ESPECIALIDAD"
+        Me.lbltotal.Text = "TOTAL DE CLASIFICACIONES"
         '
         'txtcomentarioB
         '
@@ -276,6 +276,7 @@ Partial Class M_ClasificacionContacto
         Me.ClientSize = New System.Drawing.Size(669, 622)
         Me.Controls.Add(Me.gbxclasificacion)
         Me.Controls.Add(Me.gbxbusqueda)
+        Me.KeyPreview = True
         Me.Name = "M_ClasificacionContacto"
         Me.Text = "Clasificación de Contacto: Crear"
         Me.gbxbusqueda.ResumeLayout(False)

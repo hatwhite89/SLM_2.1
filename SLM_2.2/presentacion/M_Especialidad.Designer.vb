@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class M_Especialidad
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,15 +20,60 @@ Partial Class M_Especialidad
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.lblcodigo = New System.Windows.Forms.Label()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
+        Me.lblnombre = New System.Windows.Forms.Label()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.btncancelar = New System.Windows.Forms.Button()
-        Me.btncrear = New System.Windows.Forms.Button()
+        Me.gbxespecialidad = New System.Windows.Forms.GroupBox()
+        Me.btnmodificar = New System.Windows.Forms.Button()
+        Me.btnnuevo = New System.Windows.Forms.Button()
+        Me.btnguardar = New System.Windows.Forms.Button()
+        Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
-        Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lbltotal = New System.Windows.Forms.Label()
+        Me.txtnombreB = New System.Windows.Forms.TextBox()
+        Me.lblnombreB = New System.Windows.Forms.Label()
+        Me.btnbuscar = New System.Windows.Forms.Button()
+        Me.gbxespecialidad.SuspendLayout()
+        Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'lblcodigo
+        '
+        Me.lblcodigo.AutoSize = True
+        Me.lblcodigo.Location = New System.Drawing.Point(64, 37)
+        Me.lblcodigo.Name = "lblcodigo"
+        Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodigo.TabIndex = 41
+        Me.lblcodigo.Text = "Código"
+        '
+        'txtcodigo
+        '
+        Me.txtcodigo.Location = New System.Drawing.Point(129, 34)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(100, 22)
+        Me.txtcodigo.TabIndex = 40
+        '
+        'lblnombre
+        '
+        Me.lblnombre.AutoSize = True
+        Me.lblnombre.Location = New System.Drawing.Point(58, 65)
+        Me.lblnombre.Name = "lblnombre"
+        Me.lblnombre.Size = New System.Drawing.Size(58, 17)
+        Me.lblnombre.TabIndex = 39
+        Me.lblnombre.Text = "Nombre"
+        '
+        'txtnombre
+        '
+        Me.txtnombre.Location = New System.Drawing.Point(129, 62)
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(281, 22)
+        Me.txtnombre.TabIndex = 38
         '
         'btncancelar
         '
@@ -36,69 +81,179 @@ Partial Class M_Especialidad
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(373, 10)
+        Me.btncancelar.Location = New System.Drawing.Point(474, 107)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(90, 35)
-        Me.btncancelar.TabIndex = 38
+        Me.btncancelar.TabIndex = 37
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
         '
-        'btncrear
+        'gbxespecialidad
         '
-        Me.btncrear.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btncrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btncrear.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncrear.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncrear.Location = New System.Drawing.Point(12, 10)
-        Me.btncrear.Name = "btncrear"
-        Me.btncrear.Size = New System.Drawing.Size(78, 35)
-        Me.btncrear.TabIndex = 37
-        Me.btncrear.Text = "Crear"
-        Me.btncrear.UseVisualStyleBackColor = False
+        Me.gbxespecialidad.Controls.Add(Me.btnmodificar)
+        Me.gbxespecialidad.Controls.Add(Me.btncancelar)
+        Me.gbxespecialidad.Controls.Add(Me.lblcodigo)
+        Me.gbxespecialidad.Controls.Add(Me.btnnuevo)
+        Me.gbxespecialidad.Controls.Add(Me.txtcodigo)
+        Me.gbxespecialidad.Controls.Add(Me.lblnombre)
+        Me.gbxespecialidad.Controls.Add(Me.txtnombre)
+        Me.gbxespecialidad.Controls.Add(Me.btnguardar)
+        Me.gbxespecialidad.Location = New System.Drawing.Point(26, 23)
+        Me.gbxespecialidad.Name = "gbxespecialidad"
+        Me.gbxespecialidad.Size = New System.Drawing.Size(613, 168)
+        Me.gbxespecialidad.TabIndex = 112
+        Me.gbxespecialidad.TabStop = False
+        Me.gbxespecialidad.Text = "REGISTRAR ESPECIALIDAD"
+        '
+        'btnmodificar
+        '
+        Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnmodificar.Location = New System.Drawing.Point(336, 107)
+        Me.btnmodificar.Name = "btnmodificar"
+        Me.btnmodificar.Size = New System.Drawing.Size(96, 35)
+        Me.btnmodificar.TabIndex = 111
+        Me.btnmodificar.Text = "Modificar"
+        Me.btnmodificar.UseVisualStyleBackColor = False
+        '
+        'btnnuevo
+        '
+        Me.btnnuevo.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnnuevo.Location = New System.Drawing.Point(54, 107)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(105, 35)
+        Me.btnnuevo.TabIndex = 110
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.UseVisualStyleBackColor = False
+        '
+        'btnguardar
+        '
+        Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnguardar.Location = New System.Drawing.Point(200, 107)
+        Me.btnguardar.Name = "btnguardar"
+        Me.btnguardar.Size = New System.Drawing.Size(96, 35)
+        Me.btnguardar.TabIndex = 108
+        Me.btnguardar.Text = "Guardar"
+        Me.btnguardar.UseVisualStyleBackColor = False
+        '
+        'gbxbusqueda
+        '
+        Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
+        Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
+        Me.gbxbusqueda.Controls.Add(Me.lbltotal)
+        Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
+        Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
+        Me.gbxbusqueda.Controls.Add(Me.btnbuscar)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(26, 197)
+        Me.gbxbusqueda.Name = "gbxbusqueda"
+        Me.gbxbusqueda.Size = New System.Drawing.Size(613, 394)
+        Me.gbxbusqueda.TabIndex = 113
+        Me.gbxbusqueda.TabStop = False
+        Me.gbxbusqueda.Text = "BUSCAR ESPECIALIDAD"
+        '
+        'lblcantidad
+        '
+        Me.lblcantidad.AutoSize = True
+        Me.lblcantidad.Location = New System.Drawing.Point(407, 351)
+        Me.lblcantidad.Name = "lblcantidad"
+        Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
+        Me.lblcantidad.TabIndex = 115
+        Me.lblcantidad.Text = "000"
         '
         'dgbtabla
         '
+        Me.dgbtabla.AllowUserToAddRows = False
+        Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Descripcion})
-        Me.dgbtabla.Location = New System.Drawing.Point(12, 51)
+        Me.dgbtabla.Location = New System.Drawing.Point(44, 88)
         Me.dgbtabla.Name = "dgbtabla"
+        Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
-        Me.dgbtabla.Size = New System.Drawing.Size(451, 150)
-        Me.dgbtabla.TabIndex = 36
+        Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgbtabla.Size = New System.Drawing.Size(520, 245)
+        Me.dgbtabla.TabIndex = 22
         '
-        'Codigo
+        'lbltotal
         '
-        Me.Codigo.HeaderText = "Código"
-        Me.Codigo.MinimumWidth = 6
-        Me.Codigo.Name = "Codigo"
-        Me.Codigo.Width = 125
+        Me.lbltotal.AutoSize = True
+        Me.lbltotal.Location = New System.Drawing.Point(118, 351)
+        Me.lbltotal.Name = "lbltotal"
+        Me.lbltotal.Size = New System.Drawing.Size(155, 17)
+        Me.lbltotal.TabIndex = 114
+        Me.lbltotal.Text = "TOTAL ESPECIALIDAD"
         '
-        'Descripcion
+        'txtnombreB
         '
-        Me.Descripcion.HeaderText = "Descripción"
-        Me.Descripcion.MinimumWidth = 6
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.Width = 215
+        Me.txtnombreB.Location = New System.Drawing.Point(182, 34)
+        Me.txtnombreB.Name = "txtnombreB"
+        Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
+        Me.txtnombreB.TabIndex = 115
         '
-        'Especialidad
+        'lblnombreB
+        '
+        Me.lblnombreB.AutoSize = True
+        Me.lblnombreB.Location = New System.Drawing.Point(118, 37)
+        Me.lblnombreB.Name = "lblnombreB"
+        Me.lblnombreB.Size = New System.Drawing.Size(58, 17)
+        Me.lblnombreB.TabIndex = 114
+        Me.lblnombreB.Text = "Nombre"
+        '
+        'btnbuscar
+        '
+        Me.btnbuscar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnbuscar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnbuscar.Location = New System.Drawing.Point(380, 28)
+        Me.btnbuscar.Name = "btnbuscar"
+        Me.btnbuscar.Size = New System.Drawing.Size(78, 35)
+        Me.btnbuscar.TabIndex = 113
+        Me.btnbuscar.Text = "Buscar"
+        Me.btnbuscar.UseVisualStyleBackColor = False
+        '
+        'M_CrearEspecialidad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(473, 214)
-        Me.Controls.Add(Me.btncancelar)
-        Me.Controls.Add(Me.btncrear)
-        Me.Controls.Add(Me.dgbtabla)
-        Me.Name = "Especialidad"
-        Me.Text = "Especialidad"
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(669, 622)
+        Me.Controls.Add(Me.gbxbusqueda)
+        Me.Controls.Add(Me.gbxespecialidad)
+        Me.KeyPreview = True
+        Me.Name = "M_CrearEspecialidad"
+        Me.Text = "Especialidad Médica: Crear"
+        Me.gbxespecialidad.ResumeLayout(False)
+        Me.gbxespecialidad.PerformLayout()
+        Me.gbxbusqueda.ResumeLayout(False)
+        Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
+    Friend WithEvents lblcodigo As Label
+    Friend WithEvents txtcodigo As TextBox
+    Friend WithEvents lblnombre As Label
+    Friend WithEvents txtnombre As TextBox
     Friend WithEvents btncancelar As Button
-    Friend WithEvents btncrear As Button
+    Friend WithEvents gbxespecialidad As GroupBox
+    Friend WithEvents btnmodificar As Button
+    Friend WithEvents btnnuevo As Button
+    Friend WithEvents btnguardar As Button
+    Friend WithEvents gbxbusqueda As GroupBox
+    Friend WithEvents lblcantidad As Label
     Friend WithEvents dgbtabla As DataGridView
-    Friend WithEvents Codigo As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents lbltotal As Label
+    Friend WithEvents txtnombreB As TextBox
+    Friend WithEvents lblnombreB As Label
+    Friend WithEvents btnbuscar As Button
 End Class

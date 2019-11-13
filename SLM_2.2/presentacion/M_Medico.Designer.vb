@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class M_CrearMedico
+Partial Class M_Medico
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class M_CrearMedico
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_CrearMedico))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Medico))
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.txtcelular = New System.Windows.Forms.TextBox()
@@ -362,6 +362,7 @@ Partial Class M_CrearMedico
         Me.ClientSize = New System.Drawing.Size(669, 622)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.gbxmedico)
+        Me.KeyPreview = True
         Me.Name = "M_CrearMedico"
         Me.Text = "Médico: Crear"
         Me.gbxmedico.ResumeLayout(False)

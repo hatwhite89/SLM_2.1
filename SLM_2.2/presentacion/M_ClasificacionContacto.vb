@@ -4,7 +4,7 @@
     End Sub
 
     Private Sub btnbuscarTipo_Click(sender As Object, e As EventArgs) Handles btnbuscarTipo.Click
-        M_BuscarTipoClasificacion.ShowDialog()
+        M_TipoClasificacion.ShowDialog()
     End Sub
 
     Private Sub M_ClasificacionContacto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -24,11 +24,11 @@
         btnnuevo.Enabled = True
     End Sub
 
-    Private Sub dgbtabla_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellContentClick
-
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
     End Sub
-
-
 
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         txtcodigo.Text() = ""
@@ -82,8 +82,7 @@
                 If objClasif.RegistrarNuevaClasificacionContacto() = 1 Then
                     MsgBox("Registrado correctamente.")
 
-                    Dim objClas As New ClsClasificacionContacto
-                    Dim dv As DataView = objClas.SeleccionarClasificacionContacto.DefaultView
+                    Dim dv As DataView = objClasif.SeleccionarClasificacionContacto.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -135,8 +134,7 @@
                 If objClasif.ModificarClasificacionContacto() = 1 Then
                     MsgBox("Modificado correctamente.")
 
-                    Dim objClas As New ClsClasificacionContacto
-                    Dim dv As DataView = objClas.SeleccionarClasificacionContacto.DefaultView
+                    Dim dv As DataView = objClasif.SeleccionarClasificacionContacto.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -178,8 +176,8 @@
             rtxtcomentario.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
             txtcodigoTipo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
 
-            M_BuscarCliente.txtcodigoClasificacion.Text = txtcodigo.Text
-            M_BuscarCliente.txtnombreClasificacion.Text = rtxtcomentario.Text
+            M_Cliente.txtcodigoClasificacion.Text = txtcodigo.Text
+            M_Cliente.txtnombreClasificacion.Text = rtxtcomentario.Text
 
             btnmodificar.Enabled = True
             'btnbuscarEspecialidad.Enabled = True
@@ -188,24 +186,29 @@
             txtcodigoTipo.ReadOnly = False
             txtcodigo.ReadOnly = True
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
     Private Sub txtcodigoTipo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoTipo.TextChanged
         If (txtcodigoTipo.Text <> "") Then
             Try
-                Dim objClas As New ClsClasificacionContacto
-                With objClas
+                Dim objTipoClas As New ClsTipoClasificacion
+                With objTipoClas
                     .Codigo1 = txtcodigoTipo.Text
                 End With
                 Dim dt As New DataTable
-                dt = objClas.BuscarClasificacionContactoCode()
+                dt = objTipoClas.BuscarTipoClasificacionCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtcomentarioTipo.Text = CStr(row("comentario"))
             Catch ex As Exception
-                MsgBox("No existe el código de clasificación de contacto.", MsgBoxStyle.Critical, "Validación")
+                MsgBox("No existe el código del tipo de clasificación.", MsgBoxStyle.Critical, "Validación")
             End Try
+        Else
+            txtcodigoTipo.Text = ""
+            txtcomentarioTipo.Text = ""
         End If
     End Sub
+
+
 End Class

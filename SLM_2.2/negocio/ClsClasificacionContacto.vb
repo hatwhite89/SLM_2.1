@@ -44,7 +44,7 @@ Public Class ClsClasificacionContacto
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarClasificacionContacto"
+        sqlcom.CommandText = "slmInsertarClasificacionContacto_M"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "comentario" 'nombre campo en el procedimiento almacenado @
@@ -83,7 +83,7 @@ Public Class ClsClasificacionContacto
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarClasificacionContacto"
+        sqlcom.CommandText = "slmModificarClasificacionContacto_M"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -129,7 +129,7 @@ Public Class ClsClasificacionContacto
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarClasificacionContacto"
+            cmd.CommandText = "slmBuscarClasificacionContacto_M"
             cmd.Parameters.Add("@comentario", SqlDbType.VarChar).Value = Comentario1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -151,7 +151,7 @@ Public Class ClsClasificacionContacto
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarClasificacionContactoCode"
+            cmd.CommandText = "slmBuscarClasificacionContactoCode_M"
             cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Codigo1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -170,7 +170,7 @@ Public Class ClsClasificacionContacto
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmSeleccionarClasificacionContacto", cn)
+        Using da As New SqlDataAdapter("slmSeleccionarClasificacionContacto_M", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

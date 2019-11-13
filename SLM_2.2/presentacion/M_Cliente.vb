@@ -1,4 +1,4 @@
-﻿Public Class M_BuscarCliente
+﻿Public Class M_Cliente
     Private Sub btnbuscarCliente_Click(sender As Object, e As EventArgs) Handles btnbuscarCliente.Click
         If (mtxtidentidadClienteB.MaskCompleted = True) Then
             Try
@@ -269,7 +269,19 @@
                 genero = ""
             End If
 
-            If (genero <> "" And txtnombre1.Text <> "" And txtapellido1.Text <> "" And txtapellido2.Text <> "" And dtpfechaNacimiento.Text <> "" And rtxtdireccion.Text <> "" And txtcelular.Text <> "" And txtcodigoClasificacion.Text <> "") Then
+            Dim numero As Integer = 0
+            If (txttelefonoTrabajo.Text <> "") Then
+                numero += 1
+            ElseIf (txttelefonoCasa.Text <> "") Then
+                numero += 1
+            ElseIf (txtcelular.Text <> "") Then
+                numero += 1
+            Else
+                numero = 0
+            End If
+
+            If (genero <> "" And numero > 0 And txtnombre1.Text <> "" And txtapellido1.Text <> "" And txtapellido2.Text <> "" And dtpfechaNacimiento.Text <> "" And rtxtdireccion.Text <> "" And txtcodigoClasificacion.Text <> "") Then
+
                 Dim testString As String = txtnombreCompleto.Text()
                 Dim texto As String = ""
                 Dim testArray() As String = Split(testString)
@@ -327,7 +339,6 @@
                     MsgBox("Error al querer ingresar el cliente.", MsgBoxStyle.Critical)
                 End If
 
-
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
@@ -377,6 +388,8 @@
         txtnombreCompleto.Text = ""
         mtxtidentidad.Text = ""
         mtxtidentidadClienteB.Text = ""
+        txtcodigo.Text = ""
+        txtnombreClasificacion.Text = ""
 
         rbtnfemenino.Checked = False
         rbtnmasculino.Checked = False
@@ -385,8 +398,8 @@
     End Sub
 
     Private Sub btnseleccionarCliente_Click(sender As Object, e As EventArgs) Handles btnseleccionarCliente.Click
-        M_Factura2.txtcodigoCliente.Text = txtcodigo.Text
-        M_Factura2.txtnombreCliente.Text = txtnombreCompleto.Text
+        M_Factura.txtcodigoCliente.Text = txtcodigo.Text
+        M_Factura.txtnombreCliente.Text = txtnombreCompleto.Text
         limpiar()
         Me.Close()
     End Sub
@@ -405,6 +418,26 @@
             Catch ex As Exception
                 MsgBox("No existe el código de clasificación de contacto.", MsgBoxStyle.Critical, "Validación")
             End Try
+        Else
+            txtcodigoClasificacion.Text = ""
+            txtnombreClasificacion.Text = ""
+        End If
+    End Sub
+
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+        limpiar()
+        gbxinfoCliente.Visible = True
+        mtxtidentidad.ReadOnly = False
+
+        btnnuevo.Enabled = False
+        btnactualizarCliente.Enabled = False
+        btnguardarCliente.Enabled = True
+        btnseleccionarCliente.Enabled = False
+    End Sub
+
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
         End If
     End Sub
 End Class
