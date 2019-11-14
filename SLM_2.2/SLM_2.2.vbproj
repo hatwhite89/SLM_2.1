@@ -116,6 +116,7 @@
     <Compile Include="negocio\ClsCliente.vb" />
     <Compile Include="negocio\ClsDeposito.vb" />
     <Compile Include="negocio\ClsEspecialidad.vb" />
+    <Compile Include="negocio\ClsExamen.vb" />
     <Compile Include="negocio\ClsFormaPago.vb" />
     <Compile Include="negocio\ClsMedico.vb" />
     <Compile Include="negocio\ClsPaciente.vb" />

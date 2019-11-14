@@ -41,6 +41,8 @@ Partial Class eg_frmPaciente
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.btnGuardar)
         Me.GroupBox1.Controls.Add(Me.btnCancelar)
         Me.GroupBox1.Controls.Add(Me.btnNuevo)
@@ -170,6 +172,7 @@ Partial Class eg_frmPaciente
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "eg_frmPaciente"
         Me.Text = "eg_frmPaciente"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.tbPaciente, System.ComponentModel.ISupportInitialize).EndInit()

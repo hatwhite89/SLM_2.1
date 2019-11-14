@@ -56,26 +56,25 @@ Public Class frmFormaPago
         End If
 
         txtNombreBanco.Select(txtNombreBanco.Text.Length, 0)
+
     End Sub
 
     Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
 
         'Mostrar Listado de Formas de Pago
         Me.Height = 493
+        Me.StartPosition = FormStartPosition.CenterScreen
 
         'Mostrar informacion en DataGrid
         Dim FormasPago As New ClsFormaPago
 
         dtFormasPago.DataSource = FormasPago.informacionFormasPago
 
-
-
-
-
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Height = 287
+        Me.StartPosition = FormStartPosition.CenterScreen
 
     End Sub
 
