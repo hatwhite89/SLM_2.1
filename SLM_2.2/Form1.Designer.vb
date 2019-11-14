@@ -25,6 +25,12 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.btnContabilidad = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnFacturacion = New System.Windows.Forms.Button()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -34,7 +40,7 @@ Partial Class Form1
         Me.btnContabilidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnContabilidad.FlatAppearance.BorderSize = 0
         Me.btnContabilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnContabilidad.Location = New System.Drawing.Point(12, 12)
+        Me.btnContabilidad.Location = New System.Drawing.Point(7, 18)
         Me.btnContabilidad.Name = "btnContabilidad"
         Me.btnContabilidad.Size = New System.Drawing.Size(60, 57)
         Me.btnContabilidad.TabIndex = 0
@@ -43,29 +49,80 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 69)
+        Me.Label1.Location = New System.Drawing.Point(6, 76)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(65, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Contabilidad"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(126, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(131, 65)
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.btnFacturacion)
+        Me.GroupBox1.Controls.Add(Me.btnContabilidad)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 69)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(368, 273)
+        Me.GroupBox1.TabIndex = 3
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Menu de Opciones"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(81, 76)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(63, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Facturación"
+        '
+        'btnFacturacion
+        '
+        Me.btnFacturacion.BackgroundImage = CType(resources.GetObject("btnFacturacion.BackgroundImage"), System.Drawing.Image)
+        Me.btnFacturacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnFacturacion.FlatAppearance.BorderSize = 0
+        Me.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFacturacion.Location = New System.Drawing.Point(82, 18)
+        Me.btnFacturacion.Name = "btnFacturacion"
+        Me.btnFacturacion.Size = New System.Drawing.Size(60, 57)
+        Me.btnFacturacion.TabIndex = 2
+        Me.btnFacturacion.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(473, 382)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnContabilidad)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.ClientSize = New System.Drawing.Size(392, 350)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Medical Laboratory System"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents btnContabilidad As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents btnFacturacion As Button
 End Class
