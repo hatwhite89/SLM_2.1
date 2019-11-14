@@ -70,7 +70,7 @@ Partial Class M_Factura
         Me.cbxentregarMedico = New System.Windows.Forms.CheckBox()
         Me.txtrecepecionista = New System.Windows.Forms.TextBox()
         Me.txtcajero = New System.Windows.Forms.TextBox()
-        Me.txtsucursal = New System.Windows.Forms.TextBox()
+        Me.txtcodigoSucursal = New System.Windows.Forms.TextBox()
         Me.txtnombreMedico = New System.Windows.Forms.TextBox()
         Me.txtcodigoTerminosPago = New System.Windows.Forms.TextBox()
         Me.txtcodigoSede = New System.Windows.Forms.TextBox()
@@ -103,7 +103,7 @@ Partial Class M_Factura
         Me.btncontado = New System.Windows.Forms.Button()
         Me.btnbuscarSucursal = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtnombreSucursal = New System.Windows.Forms.TextBox()
         Me.gbxlistadoExamenes.SuspendLayout()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -551,13 +551,13 @@ Partial Class M_Factura
         Me.txtcajero.Size = New System.Drawing.Size(282, 22)
         Me.txtcajero.TabIndex = 52
         '
-        'txtsucursal
+        'txtcodigoSucursal
         '
-        Me.txtsucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtsucursal.Location = New System.Drawing.Point(585, 198)
-        Me.txtsucursal.Name = "txtsucursal"
-        Me.txtsucursal.Size = New System.Drawing.Size(133, 22)
-        Me.txtsucursal.TabIndex = 53
+        Me.txtcodigoSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcodigoSucursal.Location = New System.Drawing.Point(585, 198)
+        Me.txtcodigoSucursal.Name = "txtcodigoSucursal"
+        Me.txtcodigoSucursal.Size = New System.Drawing.Size(133, 22)
+        Me.txtcodigoSucursal.TabIndex = 53
         '
         'txtnombreMedico
         '
@@ -575,7 +575,6 @@ Partial Class M_Factura
         Me.txtcodigoTerminosPago.Name = "txtcodigoTerminosPago"
         Me.txtcodigoTerminosPago.Size = New System.Drawing.Size(185, 22)
         Me.txtcodigoTerminosPago.TabIndex = 58
-        Me.txtcodigoTerminosPago.Text = "X"
         '
         'txtcodigoSede
         '
@@ -887,14 +886,14 @@ Partial Class M_Factura
         Me.TextBox1.Size = New System.Drawing.Size(182, 22)
         Me.TextBox1.TabIndex = 93
         '
-        'TextBox2
+        'txtnombreSucursal
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(736, 200)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(182, 22)
-        Me.TextBox2.TabIndex = 94
+        Me.txtnombreSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnombreSucursal.Location = New System.Drawing.Point(736, 200)
+        Me.txtnombreSucursal.Name = "txtnombreSucursal"
+        Me.txtnombreSucursal.ReadOnly = True
+        Me.txtnombreSucursal.Size = New System.Drawing.Size(182, 22)
+        Me.txtnombreSucursal.TabIndex = 94
         '
         'M_Factura
         '
@@ -902,7 +901,7 @@ Partial Class M_Factura
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1143, 698)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtnombreSucursal)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.btnbuscarSucursal)
         Me.Controls.Add(Me.btncontado)
@@ -927,7 +926,7 @@ Partial Class M_Factura
         Me.Controls.Add(Me.txtcodigoSede)
         Me.Controls.Add(Me.txtcodigoTerminosPago)
         Me.Controls.Add(Me.txtnombreMedico)
-        Me.Controls.Add(Me.txtsucursal)
+        Me.Controls.Add(Me.txtcodigoSucursal)
         Me.Controls.Add(Me.txtcajero)
         Me.Controls.Add(Me.txtrecepecionista)
         Me.Controls.Add(Me.txtterminal)
@@ -1016,7 +1015,7 @@ Partial Class M_Factura
     Friend WithEvents cbxentregarMedico As CheckBox
     Friend WithEvents txtrecepecionista As TextBox
     Friend WithEvents txtcajero As TextBox
-    Friend WithEvents txtsucursal As TextBox
+    Friend WithEvents txtcodigoSucursal As TextBox
     Friend WithEvents txtnombreMedico As TextBox
     Friend WithEvents txtcodigoTerminosPago As TextBox
     Friend WithEvents txtcodigoSede As TextBox
@@ -1056,5 +1055,5 @@ Partial Class M_Factura
     Friend WithEvents btncontado As Button
     Friend WithEvents btnbuscarSucursal As Button
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtnombreSucursal As TextBox
 End Class

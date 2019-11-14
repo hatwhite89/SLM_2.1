@@ -228,13 +228,20 @@
         End Try
     End Sub
 
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
+    End Sub
+
     Private Sub M_Sede_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objSede As New ClsSede
         Dim dv As DataView = objSede.SeleccionarSede.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-
+        Me.Width = 687
+        Me.Height = 725
         deshabilitar()
     End Sub
 End Class

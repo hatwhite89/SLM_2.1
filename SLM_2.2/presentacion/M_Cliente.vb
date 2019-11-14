@@ -43,15 +43,21 @@
                 btnseleccionarCliente.Enabled = True
 
             Catch ex As Exception
-                MsgBox("No existe el código del cliente.", MsgBoxStyle.Critical, "Validación")
-                Dim id As String = mtxtidentidadClienteB.Text
-                btnactualizarCliente.Enabled = False
-                btnguardarCliente.Enabled = True
-                limpiar()
-                btnseleccionarCliente.Enabled = False
-                mtxtidentidadClienteB.Text = id
-                mtxtidentidad.Text = id
-                gbxinfoCliente.Visible = True
+                'MsgBox("No existe el código del cliente.", MsgBoxStyle.Critical, "Validación")
+                Dim n As String = MsgBox("No existe el código del cliente. ¿Desea crear un nuevo cliente?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+                    Dim id As String = mtxtidentidadClienteB.Text
+                    btnactualizarCliente.Enabled = False
+                    btnguardarCliente.Enabled = True
+                    limpiar()
+                    btnseleccionarCliente.Enabled = False
+                    mtxtidentidadClienteB.Text = id
+                    mtxtidentidad.Text = id
+                    gbxinfoCliente.Visible = True
+                Else
+                    limpiar()
+                End If
+
             End Try
         Else
             MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
@@ -186,7 +192,7 @@
         ElseIf Char.IsSymbol(e.KeyChar) Then
             e.Handled = True
         ElseIf Char.IsSeparator(e.KeyChar) Then
-            e.Handled = True
+            e.Handled = False
         ElseIf Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         Else
@@ -207,7 +213,7 @@
         ElseIf Char.IsSymbol(e.KeyChar) Then
             e.Handled = True
         ElseIf Char.IsSeparator(e.KeyChar) Then
-            e.Handled = True
+            e.Handled = False
         ElseIf Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         Else
@@ -228,7 +234,7 @@
         ElseIf Char.IsSymbol(e.KeyChar) Then
             e.Handled = True
         ElseIf Char.IsSeparator(e.KeyChar) Then
-            e.Handled = True
+            e.Handled = False
         ElseIf Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         Else
@@ -249,7 +255,7 @@
         ElseIf Char.IsSymbol(e.KeyChar) Then
             e.Handled = True
         ElseIf Char.IsSeparator(e.KeyChar) Then
-            e.Handled = True
+            e.Handled = False
         ElseIf Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
         Else
@@ -371,6 +377,8 @@
         txttelefonoCasa.ReadOnly = False
         txttelefonoTrabajo.ReadOnly = False
         txtcodigoClasificacion.ReadOnly = False
+        txtscanId.ReadOnly = False
+        txtrtn.ReadOnly = False
 
         txtcorreo.Text = ""
         txtcorreo2.Text = ""
@@ -390,10 +398,10 @@
         mtxtidentidadClienteB.Text = ""
         txtcodigo.Text = ""
         txtnombreClasificacion.Text = ""
+        txtnombreB.Text = ""
 
         rbtnfemenino.Checked = False
         rbtnmasculino.Checked = False
-
         gbxinfoCliente.Visible = False
     End Sub
 
@@ -438,6 +446,87 @@
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
+        End If
+    End Sub
+
+    Private Sub btnpaciente_Click(sender As Object, e As EventArgs) Handles btnpaciente.Click
+        Dim n As String = MsgBox("¿Desea crear un nuevo paciente?", MsgBoxStyle.YesNo, "Validación")
+        If n = vbYes Then
+            btnactualizarCliente.Enabled = False
+            btnguardarCliente.Enabled = True
+            limpiar()
+            mtxtidentidad.ReadOnly = True
+            txtrtn.ReadOnly = True
+            txtscanId.ReadOnly = True
+            btnseleccionarCliente.Enabled = False
+            gbxinfoCliente.Visible = True
+        Else
+            limpiar()
+        End If
+    End Sub
+
+    Private Sub btnbuscarPorNombre_Click(sender As Object, e As EventArgs) Handles btnbuscarPorNombre.Click
+        If (txtnombreB.Text <> "") Then
+            Try
+                Habilitar()
+                Dim genero As String = ""
+                Dim objClient As New ClsCliente
+                With objClient
+                    .NombreCompleto1 = txtnombreB.Text
+                End With
+
+                Dim dt As New DataTable
+                dt = objClient.BuscarClienteNombre()
+                Dim row As DataRow = dt.Rows(0)
+
+                txtcodigo.Text = CStr(row("codigo"))
+                txtscanId.Text = CStr(row("scanId"))
+                mtxtidentidad.Text = CStr(row("identidad"))
+                txtrtn.Text = CStr(row("rtn"))
+                txtnombre1.Text = CStr(row("nombre1"))
+                txtnombre2.Text = CStr(row("nombre2"))
+                txtapellido1.Text = CStr(row("apellido1"))
+                txtapellido2.Text = CStr(row("apellido2"))
+                txtnombreCompleto.Text = CStr(row("nombreCompleto"))
+                dtpfechaNacimiento.Text = CStr(row("fechaNacimiento"))
+                genero = CStr(row("genero"))
+                If (genero = "Masculino") Then
+                    rbtnmasculino.Checked = True
+                Else
+                    rbtnfemenino.Checked = True
+                End If
+                rtxtdireccion.Text = CStr(row("direccion"))
+                txttelefonoCasa.Text = CStr(row("telCasa"))
+                txttelefonoTrabajo.Text = CStr(row("telTrabajo"))
+                txtcelular.Text = CStr(row("celular"))
+                txtcorreo.Text = CStr(row("correo1"))
+                txtcorreo2.Text = CStr(row("correo2"))
+                txtcodigoClasificacion.Text = CStr(row("codigoClasificacion"))
+
+                gbxinfoCliente.Visible = True
+                btnactualizarCliente.Enabled = True
+                btnguardarCliente.Enabled = False
+                btnseleccionarCliente.Enabled = True
+
+            Catch ex As Exception
+                'MsgBox("No existe el código del cliente.", MsgBoxStyle.Critical, "Validación")
+                Dim n As String = MsgBox("No existe el nombre del paciente. ¿Desea crear un nuevo paciente?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+                    Dim id As String = mtxtidentidadClienteB.Text
+                    btnactualizarCliente.Enabled = False
+                    btnguardarCliente.Enabled = True
+                    limpiar()
+                    btnseleccionarCliente.Enabled = False
+                    mtxtidentidadClienteB.Text = id
+                    mtxtidentidad.Text = id
+                    gbxinfoCliente.Visible = True
+                Else
+                    limpiar()
+                End If
+
+            End Try
+        Else
+            MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
         End If
     End Sub
 End Class

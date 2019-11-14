@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class M_Sucursal
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class M_TipoTermino
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,23 +20,23 @@ Partial Class M_Sucursal
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
-        Me.txtnombreB = New System.Windows.Forms.TextBox()
-        Me.lblnombreB = New System.Windows.Forms.Label()
+        Me.txtdescripcionB = New System.Windows.Forms.TextBox()
+        Me.lbldescripcionB = New System.Windows.Forms.Label()
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.gbxsucursal = New System.Windows.Forms.GroupBox()
+        Me.lbldireccion1 = New System.Windows.Forms.Label()
+        Me.rtxtdescripcion = New System.Windows.Forms.RichTextBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
-        Me.lblnombre = New System.Windows.Forms.Label()
-        Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,15 +48,15 @@ Partial Class M_Sucursal
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
-        Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
-        Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
+        Me.gbxbusqueda.Controls.Add(Me.txtdescripcionB)
+        Me.gbxbusqueda.Controls.Add(Me.lbldescripcionB)
         Me.gbxbusqueda.Controls.Add(Me.btnbuscar)
-        Me.gbxbusqueda.Location = New System.Drawing.Point(28, 179)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(28, 186)
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Size = New System.Drawing.Size(613, 416)
-        Me.gbxbusqueda.TabIndex = 115
+        Me.gbxbusqueda.TabIndex = 117
         Me.gbxbusqueda.TabStop = False
-        Me.gbxbusqueda.Text = "BUSCAR SUCURSAL"
+        Me.gbxbusqueda.Text = "BUSCAR TIPO TÉRMINO"
         '
         'lblcantidad
         '
@@ -86,25 +86,25 @@ Partial Class M_Sucursal
         Me.lbltotal.AutoSize = True
         Me.lbltotal.Location = New System.Drawing.Point(118, 373)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(173, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(157, 17)
         Me.lbltotal.TabIndex = 114
-        Me.lbltotal.Text = "TOTAL DE SUCURSALES"
+        Me.lbltotal.Text = "TOTAL TIPO TÉRMINO"
         '
-        'txtnombreB
+        'txtdescripcionB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(182, 34)
-        Me.txtnombreB.Name = "txtnombreB"
-        Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
-        Me.txtnombreB.TabIndex = 115
+        Me.txtdescripcionB.Location = New System.Drawing.Point(205, 34)
+        Me.txtdescripcionB.Name = "txtdescripcionB"
+        Me.txtdescripcionB.Size = New System.Drawing.Size(192, 22)
+        Me.txtdescripcionB.TabIndex = 115
         '
-        'lblnombreB
+        'lbldescripcionB
         '
-        Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(118, 37)
-        Me.lblnombreB.Name = "lblnombreB"
-        Me.lblnombreB.Size = New System.Drawing.Size(58, 17)
-        Me.lblnombreB.TabIndex = 114
-        Me.lblnombreB.Text = "Nombre"
+        Me.lbldescripcionB.AutoSize = True
+        Me.lbldescripcionB.Location = New System.Drawing.Point(116, 36)
+        Me.lbldescripcionB.Name = "lbldescripcionB"
+        Me.lbldescripcionB.Size = New System.Drawing.Size(82, 17)
+        Me.lbldescripcionB.TabIndex = 114
+        Me.lbldescripcionB.Text = "Descripción"
         '
         'btnbuscar
         '
@@ -112,7 +112,7 @@ Partial Class M_Sucursal
         Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnbuscar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnbuscar.Location = New System.Drawing.Point(380, 28)
+        Me.btnbuscar.Location = New System.Drawing.Point(404, 28)
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(78, 35)
         Me.btnbuscar.TabIndex = 113
@@ -121,20 +121,38 @@ Partial Class M_Sucursal
         '
         'gbxsucursal
         '
+        Me.gbxsucursal.Controls.Add(Me.lbldireccion1)
+        Me.gbxsucursal.Controls.Add(Me.rtxtdescripcion)
         Me.gbxsucursal.Controls.Add(Me.btnmodificar)
         Me.gbxsucursal.Controls.Add(Me.btncancelar)
         Me.gbxsucursal.Controls.Add(Me.lblcodigo)
         Me.gbxsucursal.Controls.Add(Me.btnnuevo)
         Me.gbxsucursal.Controls.Add(Me.txtcodigo)
-        Me.gbxsucursal.Controls.Add(Me.lblnombre)
-        Me.gbxsucursal.Controls.Add(Me.txtnombre)
         Me.gbxsucursal.Controls.Add(Me.btnguardar)
-        Me.gbxsucursal.Location = New System.Drawing.Point(28, 27)
+        Me.gbxsucursal.Location = New System.Drawing.Point(28, 12)
         Me.gbxsucursal.Name = "gbxsucursal"
-        Me.gbxsucursal.Size = New System.Drawing.Size(613, 146)
-        Me.gbxsucursal.TabIndex = 114
+        Me.gbxsucursal.Size = New System.Drawing.Size(613, 170)
+        Me.gbxsucursal.TabIndex = 116
         Me.gbxsucursal.TabStop = False
-        Me.gbxsucursal.Text = "REGISTRAR SUCURSAL"
+        Me.gbxsucursal.Text = "REGISTRAR TIPO TÉRMINO"
+        '
+        'lbldireccion1
+        '
+        Me.lbldireccion1.AutoSize = True
+        Me.lbldireccion1.Location = New System.Drawing.Point(47, 72)
+        Me.lbldireccion1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbldireccion1.Name = "lbldireccion1"
+        Me.lbldireccion1.Size = New System.Drawing.Size(82, 17)
+        Me.lbldireccion1.TabIndex = 125
+        Me.lbldireccion1.Text = "Descripción"
+        '
+        'rtxtdescripcion
+        '
+        Me.rtxtdescripcion.Location = New System.Drawing.Point(140, 64)
+        Me.rtxtdescripcion.Name = "rtxtdescripcion"
+        Me.rtxtdescripcion.Size = New System.Drawing.Size(423, 37)
+        Me.rtxtdescripcion.TabIndex = 126
+        Me.rtxtdescripcion.Text = ""
         '
         'btnmodificar
         '
@@ -142,7 +160,7 @@ Partial Class M_Sucursal
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnmodificar.Location = New System.Drawing.Point(336, 85)
+        Me.btnmodificar.Location = New System.Drawing.Point(336, 118)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(96, 35)
         Me.btnmodificar.TabIndex = 111
@@ -155,7 +173,7 @@ Partial Class M_Sucursal
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(474, 85)
+        Me.btncancelar.Location = New System.Drawing.Point(474, 118)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(90, 35)
         Me.btncancelar.TabIndex = 37
@@ -165,7 +183,7 @@ Partial Class M_Sucursal
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(34, 37)
+        Me.lblcodigo.Location = New System.Drawing.Point(77, 36)
         Me.lblcodigo.Name = "lblcodigo"
         Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
         Me.lblcodigo.TabIndex = 41
@@ -177,7 +195,7 @@ Partial Class M_Sucursal
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnnuevo.Location = New System.Drawing.Point(54, 85)
+        Me.btnnuevo.Location = New System.Drawing.Point(54, 118)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(105, 35)
         Me.btnnuevo.TabIndex = 110
@@ -186,26 +204,10 @@ Partial Class M_Sucursal
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(99, 34)
+        Me.txtcodigo.Location = New System.Drawing.Point(142, 33)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(100, 22)
         Me.txtcodigo.TabIndex = 40
-        '
-        'lblnombre
-        '
-        Me.lblnombre.AutoSize = True
-        Me.lblnombre.Location = New System.Drawing.Point(219, 37)
-        Me.lblnombre.Name = "lblnombre"
-        Me.lblnombre.Size = New System.Drawing.Size(58, 17)
-        Me.lblnombre.TabIndex = 39
-        Me.lblnombre.Text = "Nombre"
-        '
-        'txtnombre
-        '
-        Me.txtnombre.Location = New System.Drawing.Point(290, 34)
-        Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(281, 22)
-        Me.txtnombre.TabIndex = 38
         '
         'btnguardar
         '
@@ -213,14 +215,14 @@ Partial Class M_Sucursal
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnguardar.Location = New System.Drawing.Point(200, 85)
+        Me.btnguardar.Location = New System.Drawing.Point(200, 118)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(96, 35)
         Me.btnguardar.TabIndex = 108
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
         '
-        'M_Sucursal
+        'M_TipoTermino
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -229,9 +231,8 @@ Partial Class M_Sucursal
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.gbxsucursal)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Name = "M_Sucursal"
-        Me.Text = "Sucursal"
+        Me.Name = "M_TipoTermino"
+        Me.Text = "Tipo Término"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
@@ -245,8 +246,8 @@ Partial Class M_Sucursal
     Friend WithEvents lblcantidad As Label
     Friend WithEvents dgbtabla As DataGridView
     Friend WithEvents lbltotal As Label
-    Friend WithEvents txtnombreB As TextBox
-    Friend WithEvents lblnombreB As Label
+    Friend WithEvents txtdescripcionB As TextBox
+    Friend WithEvents lbldescripcionB As Label
     Friend WithEvents btnbuscar As Button
     Friend WithEvents gbxsucursal As GroupBox
     Friend WithEvents btnmodificar As Button
@@ -254,7 +255,7 @@ Partial Class M_Sucursal
     Friend WithEvents lblcodigo As Label
     Friend WithEvents btnnuevo As Button
     Friend WithEvents txtcodigo As TextBox
-    Friend WithEvents lblnombre As Label
-    Friend WithEvents txtnombre As TextBox
     Friend WithEvents btnguardar As Button
+    Friend WithEvents lbldireccion1 As Label
+    Friend WithEvents rtxtdescripcion As RichTextBox
 End Class

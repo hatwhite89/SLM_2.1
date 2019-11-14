@@ -143,7 +143,7 @@ Partial Class M_Sede
         'lbldireccion4
         '
         Me.lbldireccion4.AutoSize = True
-        Me.lbldireccion4.Location = New System.Drawing.Point(24, 219)
+        Me.lbldireccion4.Location = New System.Drawing.Point(47, 219)
         Me.lbldireccion4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbldireccion4.Name = "lbldireccion4"
         Me.lbldireccion4.Size = New System.Drawing.Size(79, 17)
@@ -152,7 +152,7 @@ Partial Class M_Sede
         '
         'txttelefono
         '
-        Me.txttelefono.Location = New System.Drawing.Point(110, 281)
+        Me.txttelefono.Location = New System.Drawing.Point(133, 281)
         Me.txttelefono.Name = "txttelefono"
         Me.txttelefono.Size = New System.Drawing.Size(179, 22)
         Me.txttelefono.TabIndex = 134
@@ -160,7 +160,7 @@ Partial Class M_Sede
         'lbltelefono
         '
         Me.lbltelefono.AutoSize = True
-        Me.lbltelefono.Location = New System.Drawing.Point(39, 284)
+        Me.lbltelefono.Location = New System.Drawing.Point(62, 284)
         Me.lbltelefono.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbltelefono.Name = "lbltelefono"
         Me.lbltelefono.Size = New System.Drawing.Size(64, 17)
@@ -170,7 +170,7 @@ Partial Class M_Sede
         'lblcorreo
         '
         Me.lblcorreo.AutoSize = True
-        Me.lblcorreo.Location = New System.Drawing.Point(296, 256)
+        Me.lblcorreo.Location = New System.Drawing.Point(319, 256)
         Me.lblcorreo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcorreo.Name = "lblcorreo"
         Me.lblcorreo.Size = New System.Drawing.Size(51, 17)
@@ -180,7 +180,7 @@ Partial Class M_Sede
         'lblcontacto
         '
         Me.lblcontacto.AutoSize = True
-        Me.lblcontacto.Location = New System.Drawing.Point(39, 256)
+        Me.lblcontacto.Location = New System.Drawing.Point(62, 256)
         Me.lblcontacto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcontacto.Name = "lblcontacto"
         Me.lblcontacto.Size = New System.Drawing.Size(64, 17)
@@ -189,21 +189,21 @@ Partial Class M_Sede
         '
         'txtcontacto
         '
-        Me.txtcontacto.Location = New System.Drawing.Point(110, 253)
+        Me.txtcontacto.Location = New System.Drawing.Point(133, 253)
         Me.txtcontacto.Name = "txtcontacto"
         Me.txtcontacto.Size = New System.Drawing.Size(179, 22)
         Me.txtcontacto.TabIndex = 129
         '
         'txtcorreo
         '
-        Me.txtcorreo.Location = New System.Drawing.Point(354, 253)
+        Me.txtcorreo.Location = New System.Drawing.Point(377, 253)
         Me.txtcorreo.Name = "txtcorreo"
         Me.txtcorreo.Size = New System.Drawing.Size(179, 22)
         Me.txtcorreo.TabIndex = 130
         '
         'rtxtdireccion4
         '
-        Me.rtxtdireccion4.Location = New System.Drawing.Point(110, 210)
+        Me.rtxtdireccion4.Location = New System.Drawing.Point(133, 210)
         Me.rtxtdireccion4.Name = "rtxtdireccion4"
         Me.rtxtdireccion4.Size = New System.Drawing.Size(423, 37)
         Me.rtxtdireccion4.TabIndex = 128
@@ -211,7 +211,7 @@ Partial Class M_Sede
         '
         'rtxtdireccion3
         '
-        Me.rtxtdireccion3.Location = New System.Drawing.Point(110, 167)
+        Me.rtxtdireccion3.Location = New System.Drawing.Point(133, 167)
         Me.rtxtdireccion3.Name = "rtxtdireccion3"
         Me.rtxtdireccion3.Size = New System.Drawing.Size(423, 37)
         Me.rtxtdireccion3.TabIndex = 127
@@ -219,7 +219,7 @@ Partial Class M_Sede
         '
         'rtxtdireccion2
         '
-        Me.rtxtdireccion2.Location = New System.Drawing.Point(110, 124)
+        Me.rtxtdireccion2.Location = New System.Drawing.Point(133, 124)
         Me.rtxtdireccion2.Name = "rtxtdireccion2"
         Me.rtxtdireccion2.Size = New System.Drawing.Size(423, 37)
         Me.rtxtdireccion2.TabIndex = 125
@@ -228,7 +228,7 @@ Partial Class M_Sede
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(51, 28)
+        Me.lblcodigo.Location = New System.Drawing.Point(74, 28)
         Me.lblcodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcodigo.Name = "lblcodigo"
         Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
@@ -238,7 +238,7 @@ Partial Class M_Sede
         'lblnombre
         '
         Me.lblnombre.AutoSize = True
-        Me.lblnombre.Location = New System.Drawing.Point(45, 53)
+        Me.lblnombre.Location = New System.Drawing.Point(68, 53)
         Me.lblnombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblnombre.Name = "lblnombre"
         Me.lblnombre.Size = New System.Drawing.Size(58, 17)
@@ -247,14 +247,14 @@ Partial Class M_Sede
         '
         'txtnombre
         '
-        Me.txtnombre.Location = New System.Drawing.Point(110, 53)
+        Me.txtnombre.Location = New System.Drawing.Point(133, 53)
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(423, 22)
         Me.txtnombre.TabIndex = 121
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(110, 25)
+        Me.txtcodigo.Location = New System.Drawing.Point(133, 25)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.ReadOnly = True
         Me.txtcodigo.Size = New System.Drawing.Size(179, 22)
@@ -263,7 +263,7 @@ Partial Class M_Sede
         'lbldireccion1
         '
         Me.lbldireccion1.AutoSize = True
-        Me.lbldireccion1.Location = New System.Drawing.Point(24, 89)
+        Me.lbldireccion1.Location = New System.Drawing.Point(47, 89)
         Me.lbldireccion1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbldireccion1.Name = "lbldireccion1"
         Me.lbldireccion1.Size = New System.Drawing.Size(79, 17)
@@ -273,7 +273,7 @@ Partial Class M_Sede
         'lbldireccion2
         '
         Me.lbldireccion2.AutoSize = True
-        Me.lbldireccion2.Location = New System.Drawing.Point(24, 131)
+        Me.lbldireccion2.Location = New System.Drawing.Point(47, 131)
         Me.lbldireccion2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbldireccion2.Name = "lbldireccion2"
         Me.lbldireccion2.Size = New System.Drawing.Size(79, 17)
@@ -283,7 +283,7 @@ Partial Class M_Sede
         'lbldireccion3
         '
         Me.lbldireccion3.AutoSize = True
-        Me.lbldireccion3.Location = New System.Drawing.Point(24, 174)
+        Me.lbldireccion3.Location = New System.Drawing.Point(47, 174)
         Me.lbldireccion3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbldireccion3.Name = "lbldireccion3"
         Me.lbldireccion3.Size = New System.Drawing.Size(79, 17)
@@ -292,7 +292,7 @@ Partial Class M_Sede
         '
         'rtxtdireccion1
         '
-        Me.rtxtdireccion1.Location = New System.Drawing.Point(110, 81)
+        Me.rtxtdireccion1.Location = New System.Drawing.Point(133, 81)
         Me.rtxtdireccion1.Name = "rtxtdireccion1"
         Me.rtxtdireccion1.Size = New System.Drawing.Size(423, 37)
         Me.rtxtdireccion1.TabIndex = 124
@@ -382,8 +382,9 @@ Partial Class M_Sede
         Me.ClientSize = New System.Drawing.Size(669, 678)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.GroupBox1)
+        Me.KeyPreview = True
         Me.Name = "M_Sede"
-        Me.Text = " "
+        Me.Text = " Sede"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.gbxbusqueda.ResumeLayout(False)
