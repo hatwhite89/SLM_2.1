@@ -23,4 +23,10 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCuentas.Click
         A_Cuenta.Show()
     End Sub
+
+    Private Sub frmMenuConta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+
+    End Sub
 End Class

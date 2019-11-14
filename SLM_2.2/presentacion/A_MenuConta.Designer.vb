@@ -29,10 +29,10 @@ Partial Class frmMenuConta
         Me.tpPagos = New System.Windows.Forms.TabPage()
         Me.btnPagos = New System.Windows.Forms.Button()
         Me.TpMantenimiento = New System.Windows.Forms.TabPage()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnCuentas = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnFormaPago = New System.Windows.Forms.Button()
-        Me.btnCuentas = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.tcMenu.SuspendLayout()
         Me.tpCheque.SuspendLayout()
         Me.tpPagos.SuspendLayout()
@@ -110,6 +110,27 @@ Partial Class frmMenuConta
         Me.TpMantenimiento.Text = "Mantenimiento"
         Me.TpMantenimiento.UseVisualStyleBackColor = True
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(24, 115)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(46, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Cuentas"
+        '
+        'btnCuentas
+        '
+        Me.btnCuentas.BackgroundImage = CType(resources.GetObject("btnCuentas.BackgroundImage"), System.Drawing.Image)
+        Me.btnCuentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCuentas.FlatAppearance.BorderSize = 0
+        Me.btnCuentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCuentas.Location = New System.Drawing.Point(26, 75)
+        Me.btnCuentas.Name = "btnCuentas"
+        Me.btnCuentas.Size = New System.Drawing.Size(41, 38)
+        Me.btnCuentas.TabIndex = 2
+        Me.btnCuentas.UseVisualStyleBackColor = True
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -130,27 +151,6 @@ Partial Class frmMenuConta
         Me.btnFormaPago.Size = New System.Drawing.Size(41, 38)
         Me.btnFormaPago.TabIndex = 0
         Me.btnFormaPago.UseVisualStyleBackColor = True
-        '
-        'btnCuentas
-        '
-        Me.btnCuentas.BackgroundImage = CType(resources.GetObject("btnCuentas.BackgroundImage"), System.Drawing.Image)
-        Me.btnCuentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCuentas.FlatAppearance.BorderSize = 0
-        Me.btnCuentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCuentas.Location = New System.Drawing.Point(26, 75)
-        Me.btnCuentas.Name = "btnCuentas"
-        Me.btnCuentas.Size = New System.Drawing.Size(41, 38)
-        Me.btnCuentas.TabIndex = 2
-        Me.btnCuentas.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(24, 115)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(46, 13)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Cuentas"
         '
         'frmMenuConta
         '
