@@ -90,6 +90,7 @@
                 rbtGastos.Checked = True
             End If
 
+
             chkEstado.Checked = dtCuentas.Rows(e.RowIndex).Cells(6).Value
         Catch ex As Exception
 
