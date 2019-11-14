@@ -410,6 +410,7 @@
         M_Factura.txtnombreCliente.Text = txtnombreCompleto.Text
         limpiar()
         Me.Close()
+
     End Sub
 
     Private Sub txtcodigoClasificacion_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoClasificacion.TextChanged
@@ -528,5 +529,9 @@
         Else
             MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
         End If
+    End Sub
+
+    Private Sub M_Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
