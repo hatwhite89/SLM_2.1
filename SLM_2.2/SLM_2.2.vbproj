@@ -114,6 +114,7 @@
     </Compile>
     <Compile Include="negocio\ClsClasificacionContacto.vb" />
     <Compile Include="negocio\ClsCliente.vb" />
+    <Compile Include="negocio\ClsCuenta.vb" />
     <Compile Include="negocio\ClsDeposito.vb" />
     <Compile Include="negocio\ClsEspecialidad.vb" />
     <Compile Include="negocio\ClsFormaPago.vb" />
@@ -131,6 +132,12 @@
       <DependentUpon>A_BuscarFormaPago.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_BuscarFormaPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_Cuenta.Designer.vb">
+      <DependentUpon>A_Cuenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_Cuenta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_Depositos.Designer.vb">
@@ -275,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_BuscarFormaPago.resx">
       <DependentUpon>A_BuscarFormaPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_Cuenta.resx">
+      <DependentUpon>A_Cuenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Depositos.resx">
       <DependentUpon>A_Depositos.vb</DependentUpon>

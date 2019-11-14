@@ -29,8 +29,10 @@ Partial Class frmMenuConta
         Me.tpPagos = New System.Windows.Forms.TabPage()
         Me.btnPagos = New System.Windows.Forms.Button()
         Me.TpMantenimiento = New System.Windows.Forms.TabPage()
-        Me.btnFormaPago = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnFormaPago = New System.Windows.Forms.Button()
+        Me.btnCuentas = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.tcMenu.SuspendLayout()
         Me.tpCheque.SuspendLayout()
         Me.tpPagos.SuspendLayout()
@@ -96,6 +98,8 @@ Partial Class frmMenuConta
         '
         'TpMantenimiento
         '
+        Me.TpMantenimiento.Controls.Add(Me.Label2)
+        Me.TpMantenimiento.Controls.Add(Me.btnCuentas)
         Me.TpMantenimiento.Controls.Add(Me.Label1)
         Me.TpMantenimiento.Controls.Add(Me.btnFormaPago)
         Me.TpMantenimiento.Location = New System.Drawing.Point(4, 22)
@@ -105,6 +109,15 @@ Partial Class frmMenuConta
         Me.TpMantenimiento.TabIndex = 2
         Me.TpMantenimiento.Text = "Mantenimiento"
         Me.TpMantenimiento.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 47)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(84, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Formas de Pago"
         '
         'btnFormaPago
         '
@@ -118,14 +131,26 @@ Partial Class frmMenuConta
         Me.btnFormaPago.TabIndex = 0
         Me.btnFormaPago.UseVisualStyleBackColor = True
         '
-        'Label1
+        'btnCuentas
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 47)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(84, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Formas de Pago"
+        Me.btnCuentas.BackgroundImage = CType(resources.GetObject("btnCuentas.BackgroundImage"), System.Drawing.Image)
+        Me.btnCuentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCuentas.FlatAppearance.BorderSize = 0
+        Me.btnCuentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCuentas.Location = New System.Drawing.Point(26, 75)
+        Me.btnCuentas.Name = "btnCuentas"
+        Me.btnCuentas.Size = New System.Drawing.Size(41, 38)
+        Me.btnCuentas.TabIndex = 2
+        Me.btnCuentas.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(24, 115)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(46, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Cuentas"
         '
         'frmMenuConta
         '
@@ -133,6 +158,7 @@ Partial Class frmMenuConta
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(312, 366)
         Me.Controls.Add(Me.tcMenu)
+        Me.KeyPreview = True
         Me.Name = "frmMenuConta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Contabilidad"
@@ -153,4 +179,6 @@ Partial Class frmMenuConta
     Friend WithEvents TpMantenimiento As TabPage
     Friend WithEvents btnFormaPago As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents btnCuentas As Button
 End Class

@@ -79,6 +79,7 @@ Partial Class A_BuscarFormaPago
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtCodigo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.KeyPreview = True
         Me.Name = "A_BuscarFormaPago"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Seleccionar forma de pago"

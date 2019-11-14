@@ -43,20 +43,16 @@ Partial Class frmFormaPago
         Me.lblBanco = New System.Windows.Forms.Label()
         Me.txtBanco = New System.Windows.Forms.TextBox()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnListar = New System.Windows.Forms.Button()
-        Me.btnLimpiar = New System.Windows.Forms.Button()
-        Me.btnSalir = New System.Windows.Forms.Button()
         Me.gbxInfoFormaPago = New System.Windows.Forms.GroupBox()
+        Me.txtRetencion = New System.Windows.Forms.TextBox()
+        Me.lblRetencion = New System.Windows.Forms.Label()
         Me.txtComision = New System.Windows.Forms.TextBox()
         Me.lblComision = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.dtFormasPago = New System.Windows.Forms.DataGridView()
-        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.lblCodFormaPago = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.lblCodigoFormaPa = New System.Windows.Forms.Label()
-        Me.lblRetencion = New System.Windows.Forms.Label()
-        Me.txtRetencion = New System.Windows.Forms.TextBox()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.dtFormasPago = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxInfoFormaPago.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -224,48 +220,12 @@ Partial Class frmFormaPago
         Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(27, 168)
+        Me.btnGuardar.Location = New System.Drawing.Point(345, 177)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(92, 23)
         Me.btnGuardar.TabIndex = 47
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
-        '
-        'btnListar
-        '
-        Me.btnListar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnListar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnListar.ForeColor = System.Drawing.Color.White
-        Me.btnListar.Location = New System.Drawing.Point(125, 168)
-        Me.btnListar.Name = "btnListar"
-        Me.btnListar.Size = New System.Drawing.Size(92, 23)
-        Me.btnListar.TabIndex = 48
-        Me.btnListar.Text = "Listar"
-        Me.btnListar.UseVisualStyleBackColor = False
-        '
-        'btnLimpiar
-        '
-        Me.btnLimpiar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLimpiar.ForeColor = System.Drawing.Color.White
-        Me.btnLimpiar.Location = New System.Drawing.Point(223, 168)
-        Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(92, 23)
-        Me.btnLimpiar.TabIndex = 49
-        Me.btnLimpiar.Text = "Limpiar"
-        Me.btnLimpiar.UseVisualStyleBackColor = False
-        '
-        'btnSalir
-        '
-        Me.btnSalir.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.ForeColor = System.Drawing.Color.White
-        Me.btnSalir.Location = New System.Drawing.Point(321, 168)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(92, 23)
-        Me.btnSalir.TabIndex = 50
-        Me.btnSalir.Text = "Salir"
-        Me.btnSalir.UseVisualStyleBackColor = False
         '
         'gbxInfoFormaPago
         '
@@ -274,11 +234,8 @@ Partial Class frmFormaPago
         Me.gbxInfoFormaPago.Controls.Add(Me.txtComision)
         Me.gbxInfoFormaPago.Controls.Add(Me.lblComision)
         Me.gbxInfoFormaPago.Controls.Add(Me.txtCodigo)
-        Me.gbxInfoFormaPago.Controls.Add(Me.btnSalir)
         Me.gbxInfoFormaPago.Controls.Add(Me.lblCod)
-        Me.gbxInfoFormaPago.Controls.Add(Me.btnLimpiar)
         Me.gbxInfoFormaPago.Controls.Add(Me.txtCuenta)
-        Me.gbxInfoFormaPago.Controls.Add(Me.btnListar)
         Me.gbxInfoFormaPago.Controls.Add(Me.btnGuardar)
         Me.gbxInfoFormaPago.Controls.Add(Me.lblCuenta)
         Me.gbxInfoFormaPago.Controls.Add(Me.txtCtaBanco)
@@ -300,6 +257,22 @@ Partial Class frmFormaPago
         Me.gbxInfoFormaPago.TabStop = False
         Me.gbxInfoFormaPago.Text = "Información Forma de Pago"
         '
+        'txtRetencion
+        '
+        Me.txtRetencion.Location = New System.Drawing.Point(324, 126)
+        Me.txtRetencion.Name = "txtRetencion"
+        Me.txtRetencion.Size = New System.Drawing.Size(100, 20)
+        Me.txtRetencion.TabIndex = 54
+        '
+        'lblRetencion
+        '
+        Me.lblRetencion.AutoSize = True
+        Me.lblRetencion.Location = New System.Drawing.Point(224, 129)
+        Me.lblRetencion.Name = "lblRetencion"
+        Me.lblRetencion.Size = New System.Drawing.Size(56, 13)
+        Me.lblRetencion.TabIndex = 53
+        Me.lblRetencion.Text = "Retención"
+        '
         'txtComision
         '
         Me.txtComision.Location = New System.Drawing.Point(324, 100)
@@ -318,17 +291,51 @@ Partial Class frmFormaPago
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.lblCodigoFormaPa)
-        Me.GroupBox1.Controls.Add(Me.btnCerrar)
+        Me.GroupBox1.Controls.Add(Me.lblCodFormaPago)
         Me.GroupBox1.Controls.Add(Me.btnEliminar)
         Me.GroupBox1.Controls.Add(Me.btnModificar)
         Me.GroupBox1.Controls.Add(Me.dtFormasPago)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 255)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 247)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(440, 187)
         Me.GroupBox1.TabIndex = 52
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Formas de Pago"
+        '
+        'lblCodFormaPago
+        '
+        Me.lblCodFormaPago.AutoSize = True
+        Me.lblCodFormaPago.Location = New System.Drawing.Point(395, 166)
+        Me.lblCodFormaPago.Name = "lblCodFormaPago"
+        Me.lblCodFormaPago.Size = New System.Drawing.Size(39, 13)
+        Me.lblCodFormaPago.TabIndex = 4
+        Me.lblCodFormaPago.Text = "Label1"
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnEliminar.FlatAppearance.BorderSize = 0
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminar.ForeColor = System.Drawing.Color.White
+        Me.btnEliminar.Location = New System.Drawing.Point(344, 46)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(90, 23)
+        Me.btnEliminar.TabIndex = 2
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = False
+        '
+        'btnModificar
+        '
+        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnModificar.FlatAppearance.BorderSize = 0
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.ForeColor = System.Drawing.Color.White
+        Me.btnModificar.Location = New System.Drawing.Point(344, 19)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(90, 23)
+        Me.btnModificar.TabIndex = 1
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
         '
         'dtFormasPago
         '
@@ -339,84 +346,21 @@ Partial Class frmFormaPago
         Me.dtFormasPago.Name = "dtFormasPago"
         Me.dtFormasPago.ReadOnly = True
         Me.dtFormasPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtFormasPago.Size = New System.Drawing.Size(303, 162)
+        Me.dtFormasPago.Size = New System.Drawing.Size(327, 162)
         Me.dtFormasPago.TabIndex = 0
-        '
-        'btnModificar
-        '
-        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnModificar.FlatAppearance.BorderSize = 0
-        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(320, 17)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
-        Me.btnModificar.TabIndex = 1
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = False
-        '
-        'btnEliminar
-        '
-        Me.btnEliminar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnEliminar.FlatAppearance.BorderSize = 0
-        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.ForeColor = System.Drawing.Color.White
-        Me.btnEliminar.Location = New System.Drawing.Point(320, 43)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
-        Me.btnEliminar.TabIndex = 2
-        Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = False
-        '
-        'btnCerrar
-        '
-        Me.btnCerrar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnCerrar.FlatAppearance.BorderSize = 0
-        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.ForeColor = System.Drawing.Color.White
-        Me.btnCerrar.Location = New System.Drawing.Point(320, 68)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCerrar.TabIndex = 3
-        Me.btnCerrar.Text = "Cerrar"
-        Me.btnCerrar.UseVisualStyleBackColor = False
-        '
-        'lblCodigoFormaPa
-        '
-        Me.lblCodigoFormaPa.AutoSize = True
-        Me.lblCodigoFormaPa.Location = New System.Drawing.Point(395, 166)
-        Me.lblCodigoFormaPa.Name = "lblCodigoFormaPa"
-        Me.lblCodigoFormaPa.Size = New System.Drawing.Size(39, 13)
-        Me.lblCodigoFormaPa.TabIndex = 4
-        Me.lblCodigoFormaPa.Text = "Label1"
-        '
-        'lblRetencion
-        '
-        Me.lblRetencion.AutoSize = True
-        Me.lblRetencion.Location = New System.Drawing.Point(224, 129)
-        Me.lblRetencion.Name = "lblRetencion"
-        Me.lblRetencion.Size = New System.Drawing.Size(56, 13)
-        Me.lblRetencion.TabIndex = 53
-        Me.lblRetencion.Text = "Retención"
-        '
-        'txtRetencion
-        '
-        Me.txtRetencion.Location = New System.Drawing.Point(324, 126)
-        Me.txtRetencion.Name = "txtRetencion"
-        Me.txtRetencion.Size = New System.Drawing.Size(100, 20)
-        Me.txtRetencion.TabIndex = 54
         '
         'frmFormaPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(464, 248)
+        Me.ClientSize = New System.Drawing.Size(464, 449)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoFormaPago)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.KeyPreview = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmFormaPago"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -454,18 +398,14 @@ Partial Class frmFormaPago
     Friend WithEvents lblBanco As Label
     Friend WithEvents txtBanco As TextBox
     Friend WithEvents btnGuardar As Button
-    Friend WithEvents btnListar As Button
-    Friend WithEvents btnLimpiar As Button
-    Friend WithEvents btnSalir As Button
     Friend WithEvents gbxInfoFormaPago As GroupBox
     Friend WithEvents txtComision As TextBox
     Friend WithEvents lblComision As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btnCerrar As Button
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents dtFormasPago As DataGridView
-    Friend WithEvents lblCodigoFormaPa As Label
+    Friend WithEvents lblCodFormaPago As Label
     Friend WithEvents txtRetencion As TextBox
     Friend WithEvents lblRetencion As Label
 End Class

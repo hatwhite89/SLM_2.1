@@ -16,8 +16,8 @@ Public Class frmFormaPago
             FormaPago.Ti_po = txtTipo.Text
             FormaPago.Ban_co = txtBanco.Text
             FormaPago.Comi_sion = Convert.ToDouble(txtComision.Text)
-
-            FormaPago.RegistrarNuevoPaciente()
+            FormaPago.Retenci_on = Convert.ToDouble(txtRetencion.Text)
+            FormaPago.RegistrarNuevaFormaPago()
             MessageBox.Show("El registro ha sido guardado exitosamente.")
 
         Catch ex As Exception
@@ -59,22 +59,14 @@ Public Class frmFormaPago
 
     End Sub
 
-    Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
 
-        'Mostrar Listado de Formas de Pago
-        Me.Height = 493
-        Me.StartPosition = FormStartPosition.CenterScreen
 
-        'Mostrar informacion en DataGrid
-        Dim FormasPago As New ClsFormaPago
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs)
 
-        dtFormasPago.DataSource = FormasPago.informacionFormasPago
-
-    End Sub
-
-    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Height = 287
-        Me.StartPosition = FormStartPosition.CenterScreen
+        If Me.Height = 287 Then
+            Me.StartPosition = FormStartPosition.CenterScreen
+        End If
 
     End Sub
 
@@ -94,14 +86,46 @@ Public Class frmFormaPago
             FormaPago.Ti_po = txtTipo.Text
             FormaPago.Ban_co = txtBanco.Text
             FormaPago.Comi_sion = Convert.ToDouble(txtComision.Text)
+            FormaPago.Retenci_on = Convert.ToDouble(txtRetencion.Text)
 
             FormaPago.modificarFormaPago()
             MessageBox.Show("El registro se ha modificado exitosamente.")
-            dtFormasPago.Refresh()
+
         Catch ex As Exception
 
             MsgBox(ex.Message)
 
         End Try
+    End Sub
+
+    Private Sub dtFormasPago_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtFormasPago.CellClick
+        Try
+            lblCodFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
+            txtCodigo.Text = dtFormasPago.Rows(e.RowIndex).Cells(1).Value
+            txtCuenta.Text = dtFormasPago.Rows(e.RowIndex).Cells(2).Value
+            txtComentario.Text = dtFormasPago.Rows(e.RowIndex).Cells(3).Value
+            txtCtaBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(4).Value
+            txtNombreBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(5).Value
+            txtFormulario.Text = dtFormasPago.Rows(e.RowIndex).Cells(6).Value
+            txtTipo.Text = dtFormasPago.Rows(e.RowIndex).Cells(7).Value
+            txtBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(8).Value
+            txtComision.Text = dtFormasPago.Rows(e.RowIndex).Cells(9).Value
+            txtRetencion.Text = dtFormasPago.Rows(e.RowIndex).Cells(10).Value
+
+        Catch ex As Exception
+            'MessageBox.Show("Error al hacer la selección.")
+        End Try
+
+
+    End Sub
+
+    Private Sub frmFormaPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim formasPago As New ClsFormaPago
+        'Cargar listado de formas de pago
+        dtFormasPago.DataSource = formasPago.mostrarFormasPago
+
+
+
     End Sub
 End Class

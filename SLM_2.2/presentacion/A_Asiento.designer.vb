@@ -189,6 +189,7 @@ Partial Class frmAsientos
         Me.Controls.Add(Me.lblNro)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.KeyPreview = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmAsientos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -29,6 +29,7 @@ Partial Class M_Cliente
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbxinfoCliente = New System.Windows.Forms.GroupBox()
+        Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnseleccionarCliente = New System.Windows.Forms.Button()
         Me.txtnombreCategoria = New System.Windows.Forms.TextBox()
         Me.txtnombreClasificacion = New System.Windows.Forms.TextBox()
@@ -87,7 +88,6 @@ Partial Class M_Cliente
         Me.lblapellido1 = New System.Windows.Forms.Label()
         Me.txtnombre1 = New System.Windows.Forms.TextBox()
         Me.lblnombre1 = New System.Windows.Forms.Label()
-        Me.btnnuevo = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxinfoCliente.SuspendLayout()
         Me.gbxgenero.SuspendLayout()
@@ -96,10 +96,11 @@ Partial Class M_Cliente
         'mtxtidentidadClienteB
         '
         Me.mtxtidentidadClienteB.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.mtxtidentidadClienteB.Location = New System.Drawing.Point(398, 40)
+        Me.mtxtidentidadClienteB.Location = New System.Drawing.Point(298, 32)
+        Me.mtxtidentidadClienteB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.mtxtidentidadClienteB.Mask = "0000-0000-00000"
         Me.mtxtidentidadClienteB.Name = "mtxtidentidadClienteB"
-        Me.mtxtidentidadClienteB.Size = New System.Drawing.Size(206, 24)
+        Me.mtxtidentidadClienteB.Size = New System.Drawing.Size(156, 21)
         Me.mtxtidentidadClienteB.TabIndex = 20
         Me.mtxtidentidadClienteB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -110,10 +111,9 @@ Partial Class M_Cliente
         Me.btnbuscarCliente.FlatAppearance.BorderSize = 0
         Me.btnbuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscarCliente.Location = New System.Drawing.Point(613, 40)
-        Me.btnbuscarCliente.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnbuscarCliente.Location = New System.Drawing.Point(460, 32)
         Me.btnbuscarCliente.Name = "btnbuscarCliente"
-        Me.btnbuscarCliente.Size = New System.Drawing.Size(46, 32)
+        Me.btnbuscarCliente.Size = New System.Drawing.Size(34, 26)
         Me.btnbuscarCliente.TabIndex = 17
         Me.btnbuscarCliente.UseVisualStyleBackColor = True
         '
@@ -121,10 +121,9 @@ Partial Class M_Cliente
         '
         Me.lblidCliente.AutoSize = True
         Me.lblidCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblidCliente.Location = New System.Drawing.Point(320, 40)
-        Me.lblidCliente.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblidCliente.Location = New System.Drawing.Point(240, 32)
         Me.lblidCliente.Name = "lblidCliente"
-        Me.lblidCliente.Size = New System.Drawing.Size(71, 18)
+        Me.lblidCliente.Size = New System.Drawing.Size(60, 15)
         Me.lblidCliente.TabIndex = 18
         Me.lblidCliente.Text = "ID Cliente"
         '
@@ -134,14 +133,15 @@ Partial Class M_Cliente
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(961, 28)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(721, 24)
         Me.MenuStrip1.TabIndex = 53
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ArchivoToolStripMenuItem
         '
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 24)
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
         '
         'gbxinfoCliente
@@ -203,64 +203,85 @@ Partial Class M_Cliente
         Me.gbxinfoCliente.Controls.Add(Me.lblapellido1)
         Me.gbxinfoCliente.Controls.Add(Me.txtnombre1)
         Me.gbxinfoCliente.Controls.Add(Me.lblnombre1)
-        Me.gbxinfoCliente.Location = New System.Drawing.Point(12, 70)
+        Me.gbxinfoCliente.Location = New System.Drawing.Point(9, 57)
+        Me.gbxinfoCliente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gbxinfoCliente.Name = "gbxinfoCliente"
-        Me.gbxinfoCliente.Size = New System.Drawing.Size(938, 473)
+        Me.gbxinfoCliente.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxinfoCliente.Size = New System.Drawing.Size(704, 384)
         Me.gbxinfoCliente.TabIndex = 54
         Me.gbxinfoCliente.TabStop = False
         Me.gbxinfoCliente.Text = "Información de Cliente/Paciente"
         Me.gbxinfoCliente.Visible = False
+        '
+        'btnnuevo
+        '
+        Me.btnnuevo.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnnuevo.Location = New System.Drawing.Point(136, 336)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(98, 31)
+        Me.btnnuevo.TabIndex = 116
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.UseVisualStyleBackColor = False
         '
         'btnseleccionarCliente
         '
         Me.btnseleccionarCliente.BackColor = System.Drawing.Color.SkyBlue
         Me.btnseleccionarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnseleccionarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnseleccionarCliente.Location = New System.Drawing.Point(645, 414)
+        Me.btnseleccionarCliente.Location = New System.Drawing.Point(484, 336)
+        Me.btnseleccionarCliente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnseleccionarCliente.Name = "btnseleccionarCliente"
-        Me.btnseleccionarCliente.Size = New System.Drawing.Size(130, 38)
+        Me.btnseleccionarCliente.Size = New System.Drawing.Size(98, 31)
         Me.btnseleccionarCliente.TabIndex = 115
         Me.btnseleccionarCliente.Text = "Seleccionar"
         Me.btnseleccionarCliente.UseVisualStyleBackColor = False
         '
         'txtnombreCategoria
         '
-        Me.txtnombreCategoria.Location = New System.Drawing.Point(628, 30)
+        Me.txtnombreCategoria.Location = New System.Drawing.Point(471, 24)
+        Me.txtnombreCategoria.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnombreCategoria.Name = "txtnombreCategoria"
         Me.txtnombreCategoria.ReadOnly = True
-        Me.txtnombreCategoria.Size = New System.Drawing.Size(300, 22)
+        Me.txtnombreCategoria.Size = New System.Drawing.Size(226, 20)
         Me.txtnombreCategoria.TabIndex = 114
         '
         'txtnombreClasificacion
         '
-        Me.txtnombreClasificacion.Location = New System.Drawing.Point(348, 355)
+        Me.txtnombreClasificacion.Location = New System.Drawing.Point(261, 288)
+        Me.txtnombreClasificacion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnombreClasificacion.Name = "txtnombreClasificacion"
         Me.txtnombreClasificacion.ReadOnly = True
-        Me.txtnombreClasificacion.Size = New System.Drawing.Size(267, 22)
+        Me.txtnombreClasificacion.Size = New System.Drawing.Size(201, 20)
         Me.txtnombreClasificacion.TabIndex = 113
         '
         'txtnombreConvenio
         '
-        Me.txtnombreConvenio.Location = New System.Drawing.Point(348, 327)
+        Me.txtnombreConvenio.Location = New System.Drawing.Point(261, 266)
+        Me.txtnombreConvenio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnombreConvenio.Name = "txtnombreConvenio"
         Me.txtnombreConvenio.ReadOnly = True
-        Me.txtnombreConvenio.Size = New System.Drawing.Size(267, 22)
+        Me.txtnombreConvenio.Size = New System.Drawing.Size(201, 20)
         Me.txtnombreConvenio.TabIndex = 112
         '
         'txtnombreTerminos
         '
-        Me.txtnombreTerminos.Location = New System.Drawing.Point(348, 299)
+        Me.txtnombreTerminos.Location = New System.Drawing.Point(261, 243)
+        Me.txtnombreTerminos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnombreTerminos.Name = "txtnombreTerminos"
         Me.txtnombreTerminos.ReadOnly = True
-        Me.txtnombreTerminos.Size = New System.Drawing.Size(268, 22)
+        Me.txtnombreTerminos.Size = New System.Drawing.Size(202, 20)
         Me.txtnombreTerminos.TabIndex = 111
         '
         'txtnombreAseguradora
         '
-        Me.txtnombreAseguradora.Location = New System.Drawing.Point(348, 271)
+        Me.txtnombreAseguradora.Location = New System.Drawing.Point(261, 220)
+        Me.txtnombreAseguradora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnombreAseguradora.Name = "txtnombreAseguradora"
         Me.txtnombreAseguradora.ReadOnly = True
-        Me.txtnombreAseguradora.Size = New System.Drawing.Size(267, 22)
+        Me.txtnombreAseguradora.Size = New System.Drawing.Size(201, 20)
         Me.txtnombreAseguradora.TabIndex = 110
         '
         'btnguardarCliente
@@ -268,9 +289,10 @@ Partial Class M_Cliente
         Me.btnguardarCliente.BackColor = System.Drawing.Color.SkyBlue
         Me.btnguardarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnguardarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardarCliente.Location = New System.Drawing.Point(336, 414)
+        Me.btnguardarCliente.Location = New System.Drawing.Point(252, 336)
+        Me.btnguardarCliente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnguardarCliente.Name = "btnguardarCliente"
-        Me.btnguardarCliente.Size = New System.Drawing.Size(130, 38)
+        Me.btnguardarCliente.Size = New System.Drawing.Size(98, 31)
         Me.btnguardarCliente.TabIndex = 109
         Me.btnguardarCliente.Text = "Guardar"
         Me.btnguardarCliente.UseVisualStyleBackColor = False
@@ -283,17 +305,19 @@ Partial Class M_Cliente
         Me.btnclasificacion.FlatAppearance.BorderSize = 0
         Me.btnclasificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnclasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnclasificacion.Location = New System.Drawing.Point(157, 355)
+        Me.btnclasificacion.Location = New System.Drawing.Point(118, 288)
+        Me.btnclasificacion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnclasificacion.Name = "btnclasificacion"
-        Me.btnclasificacion.Size = New System.Drawing.Size(49, 22)
+        Me.btnclasificacion.Size = New System.Drawing.Size(37, 18)
         Me.btnclasificacion.TabIndex = 108
         Me.btnclasificacion.UseVisualStyleBackColor = False
         '
         'txtcodigoClasificacion
         '
-        Me.txtcodigoClasificacion.Location = New System.Drawing.Point(212, 355)
+        Me.txtcodigoClasificacion.Location = New System.Drawing.Point(159, 288)
+        Me.txtcodigoClasificacion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcodigoClasificacion.Name = "txtcodigoClasificacion"
-        Me.txtcodigoClasificacion.Size = New System.Drawing.Size(125, 22)
+        Me.txtcodigoClasificacion.Size = New System.Drawing.Size(95, 20)
         Me.txtcodigoClasificacion.TabIndex = 107
         '
         'btnterminosPago
@@ -304,17 +328,19 @@ Partial Class M_Cliente
         Me.btnterminosPago.FlatAppearance.BorderSize = 0
         Me.btnterminosPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnterminosPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnterminosPago.Location = New System.Drawing.Point(155, 299)
+        Me.btnterminosPago.Location = New System.Drawing.Point(116, 243)
+        Me.btnterminosPago.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnterminosPago.Name = "btnterminosPago"
-        Me.btnterminosPago.Size = New System.Drawing.Size(49, 22)
+        Me.btnterminosPago.Size = New System.Drawing.Size(37, 18)
         Me.btnterminosPago.TabIndex = 106
         Me.btnterminosPago.UseVisualStyleBackColor = False
         '
         'txtterminosPago
         '
-        Me.txtterminosPago.Location = New System.Drawing.Point(210, 299)
+        Me.txtterminosPago.Location = New System.Drawing.Point(158, 243)
+        Me.txtterminosPago.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtterminosPago.Name = "txtterminosPago"
-        Me.txtterminosPago.Size = New System.Drawing.Size(125, 22)
+        Me.txtterminosPago.Size = New System.Drawing.Size(95, 20)
         Me.txtterminosPago.TabIndex = 105
         Me.txtterminosPago.Text = "x"
         '
@@ -326,17 +352,19 @@ Partial Class M_Cliente
         Me.btnconvenio.FlatAppearance.BorderSize = 0
         Me.btnconvenio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnconvenio.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnconvenio.Location = New System.Drawing.Point(157, 327)
+        Me.btnconvenio.Location = New System.Drawing.Point(118, 266)
+        Me.btnconvenio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnconvenio.Name = "btnconvenio"
-        Me.btnconvenio.Size = New System.Drawing.Size(49, 22)
+        Me.btnconvenio.Size = New System.Drawing.Size(37, 18)
         Me.btnconvenio.TabIndex = 104
         Me.btnconvenio.UseVisualStyleBackColor = False
         '
         'txtconvenio
         '
-        Me.txtconvenio.Location = New System.Drawing.Point(212, 327)
+        Me.txtconvenio.Location = New System.Drawing.Point(159, 266)
+        Me.txtconvenio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtconvenio.Name = "txtconvenio"
-        Me.txtconvenio.Size = New System.Drawing.Size(125, 22)
+        Me.txtconvenio.Size = New System.Drawing.Size(95, 20)
         Me.txtconvenio.TabIndex = 103
         Me.txtconvenio.Text = "x"
         '
@@ -348,17 +376,19 @@ Partial Class M_Cliente
         Me.btnaseguradora.FlatAppearance.BorderSize = 0
         Me.btnaseguradora.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnaseguradora.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnaseguradora.Location = New System.Drawing.Point(155, 271)
+        Me.btnaseguradora.Location = New System.Drawing.Point(116, 220)
+        Me.btnaseguradora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnaseguradora.Name = "btnaseguradora"
-        Me.btnaseguradora.Size = New System.Drawing.Size(49, 22)
+        Me.btnaseguradora.Size = New System.Drawing.Size(37, 18)
         Me.btnaseguradora.TabIndex = 102
         Me.btnaseguradora.UseVisualStyleBackColor = False
         '
         'txtaseguradora
         '
-        Me.txtaseguradora.Location = New System.Drawing.Point(210, 271)
+        Me.txtaseguradora.Location = New System.Drawing.Point(158, 220)
+        Me.txtaseguradora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtaseguradora.Name = "txtaseguradora"
-        Me.txtaseguradora.Size = New System.Drawing.Size(125, 22)
+        Me.txtaseguradora.Size = New System.Drawing.Size(95, 20)
         Me.txtaseguradora.TabIndex = 101
         Me.txtaseguradora.Text = "x"
         '
@@ -370,27 +400,31 @@ Partial Class M_Cliente
         Me.btncategoria.FlatAppearance.BorderSize = 0
         Me.btncategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncategoria.Location = New System.Drawing.Point(435, 30)
+        Me.btncategoria.Location = New System.Drawing.Point(326, 24)
+        Me.btncategoria.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btncategoria.Name = "btncategoria"
-        Me.btncategoria.Size = New System.Drawing.Size(49, 22)
+        Me.btncategoria.Size = New System.Drawing.Size(37, 18)
         Me.btncategoria.TabIndex = 100
         Me.btncategoria.UseVisualStyleBackColor = False
         '
         'dtpfechaNacimiento
         '
         Me.dtpfechaNacimiento.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpfechaNacimiento.Location = New System.Drawing.Point(749, 89)
+        Me.dtpfechaNacimiento.Location = New System.Drawing.Point(562, 72)
+        Me.dtpfechaNacimiento.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dtpfechaNacimiento.Name = "dtpfechaNacimiento"
-        Me.dtpfechaNacimiento.Size = New System.Drawing.Size(179, 22)
+        Me.dtpfechaNacimiento.Size = New System.Drawing.Size(135, 19)
         Me.dtpfechaNacimiento.TabIndex = 99
         '
         'gbxgenero
         '
         Me.gbxgenero.Controls.Add(Me.rbtnmasculino)
         Me.gbxgenero.Controls.Add(Me.rbtnfemenino)
-        Me.gbxgenero.Location = New System.Drawing.Point(749, 114)
+        Me.gbxgenero.Location = New System.Drawing.Point(562, 93)
+        Me.gbxgenero.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gbxgenero.Name = "gbxgenero"
-        Me.gbxgenero.Size = New System.Drawing.Size(179, 74)
+        Me.gbxgenero.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxgenero.Size = New System.Drawing.Size(134, 60)
         Me.gbxgenero.TabIndex = 98
         Me.gbxgenero.TabStop = False
         Me.gbxgenero.Text = "Género"
@@ -398,9 +432,10 @@ Partial Class M_Cliente
         'rbtnmasculino
         '
         Me.rbtnmasculino.AutoSize = True
-        Me.rbtnmasculino.Location = New System.Drawing.Point(17, 21)
+        Me.rbtnmasculino.Location = New System.Drawing.Point(13, 17)
+        Me.rbtnmasculino.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbtnmasculino.Name = "rbtnmasculino"
-        Me.rbtnmasculino.Size = New System.Drawing.Size(92, 21)
+        Me.rbtnmasculino.Size = New System.Drawing.Size(73, 17)
         Me.rbtnmasculino.TabIndex = 8
         Me.rbtnmasculino.TabStop = True
         Me.rbtnmasculino.Text = "Masculino"
@@ -409,9 +444,10 @@ Partial Class M_Cliente
         'rbtnfemenino
         '
         Me.rbtnfemenino.AutoSize = True
-        Me.rbtnfemenino.Location = New System.Drawing.Point(17, 47)
+        Me.rbtnfemenino.Location = New System.Drawing.Point(13, 38)
+        Me.rbtnfemenino.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbtnfemenino.Name = "rbtnfemenino"
-        Me.rbtnfemenino.Size = New System.Drawing.Size(91, 21)
+        Me.rbtnfemenino.Size = New System.Drawing.Size(71, 17)
         Me.rbtnfemenino.TabIndex = 9
         Me.rbtnfemenino.TabStop = True
         Me.rbtnfemenino.Text = "Femenino"
@@ -420,68 +456,63 @@ Partial Class M_Cliente
         'lblclasificacion
         '
         Me.lblclasificacion.AutoSize = True
-        Me.lblclasificacion.Location = New System.Drawing.Point(64, 360)
-        Me.lblclasificacion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblclasificacion.Location = New System.Drawing.Point(48, 292)
         Me.lblclasificacion.Name = "lblclasificacion"
-        Me.lblclasificacion.Size = New System.Drawing.Size(86, 17)
+        Me.lblclasificacion.Size = New System.Drawing.Size(66, 13)
         Me.lblclasificacion.TabIndex = 96
         Me.lblclasificacion.Text = "Clasificación"
         '
         'lblconvenio
         '
         Me.lblconvenio.AutoSize = True
-        Me.lblconvenio.Location = New System.Drawing.Point(80, 328)
-        Me.lblconvenio.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblconvenio.Location = New System.Drawing.Point(60, 266)
         Me.lblconvenio.Name = "lblconvenio"
-        Me.lblconvenio.Size = New System.Drawing.Size(67, 17)
+        Me.lblconvenio.Size = New System.Drawing.Size(52, 13)
         Me.lblconvenio.TabIndex = 94
         Me.lblconvenio.Text = "Convenio"
         '
         'lblfechaNacimiento
         '
         Me.lblfechaNacimiento.AutoSize = True
-        Me.lblfechaNacimiento.Location = New System.Drawing.Point(621, 91)
-        Me.lblfechaNacimiento.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblfechaNacimiento.Location = New System.Drawing.Point(466, 74)
         Me.lblfechaNacimiento.Name = "lblfechaNacimiento"
-        Me.lblfechaNacimiento.Size = New System.Drawing.Size(121, 17)
+        Me.lblfechaNacimiento.Size = New System.Drawing.Size(93, 13)
         Me.lblfechaNacimiento.TabIndex = 93
         Me.lblfechaNacimiento.Text = "Fecha Nacimiento"
         '
         'lblterminosPago
         '
         Me.lblterminosPago.AutoSize = True
-        Me.lblterminosPago.Location = New System.Drawing.Point(23, 302)
-        Me.lblterminosPago.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblterminosPago.Location = New System.Drawing.Point(17, 245)
         Me.lblterminosPago.Name = "lblterminosPago"
-        Me.lblterminosPago.Size = New System.Drawing.Size(124, 17)
+        Me.lblterminosPago.Size = New System.Drawing.Size(93, 13)
         Me.lblterminosPago.TabIndex = 91
         Me.lblterminosPago.Text = "Términos de Pago"
         '
         'lblaseguradora
         '
         Me.lblaseguradora.AutoSize = True
-        Me.lblaseguradora.Location = New System.Drawing.Point(54, 274)
-        Me.lblaseguradora.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblaseguradora.Location = New System.Drawing.Point(40, 223)
         Me.lblaseguradora.Name = "lblaseguradora"
-        Me.lblaseguradora.Size = New System.Drawing.Size(90, 17)
+        Me.lblaseguradora.Size = New System.Drawing.Size(67, 13)
         Me.lblaseguradora.TabIndex = 89
         Me.lblaseguradora.Text = "Aseguradora"
         '
         'txtcategoria
         '
-        Me.txtcategoria.Location = New System.Drawing.Point(490, 30)
+        Me.txtcategoria.Location = New System.Drawing.Point(368, 24)
+        Me.txtcategoria.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcategoria.Name = "txtcategoria"
-        Me.txtcategoria.Size = New System.Drawing.Size(125, 22)
+        Me.txtcategoria.Size = New System.Drawing.Size(95, 20)
         Me.txtcategoria.TabIndex = 88
         Me.txtcategoria.Text = "x"
         '
         'lblcategoria
         '
         Me.lblcategoria.AutoSize = True
-        Me.lblcategoria.Location = New System.Drawing.Point(359, 30)
-        Me.lblcategoria.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcategoria.Location = New System.Drawing.Point(269, 24)
         Me.lblcategoria.Name = "lblcategoria"
-        Me.lblcategoria.Size = New System.Drawing.Size(69, 17)
+        Me.lblcategoria.Size = New System.Drawing.Size(54, 13)
         Me.lblcategoria.TabIndex = 87
         Me.lblcategoria.Text = "Categoría"
         '
@@ -490,293 +521,282 @@ Partial Class M_Cliente
         Me.btnactualizarCliente.BackColor = System.Drawing.Color.SkyBlue
         Me.btnactualizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnactualizarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnactualizarCliente.Location = New System.Drawing.Point(492, 414)
+        Me.btnactualizarCliente.Location = New System.Drawing.Point(369, 336)
+        Me.btnactualizarCliente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnactualizarCliente.Name = "btnactualizarCliente"
-        Me.btnactualizarCliente.Size = New System.Drawing.Size(130, 38)
+        Me.btnactualizarCliente.Size = New System.Drawing.Size(98, 31)
         Me.btnactualizarCliente.TabIndex = 66
         Me.btnactualizarCliente.Text = "Modificar"
         Me.btnactualizarCliente.UseVisualStyleBackColor = False
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(155, 30)
+        Me.txtcodigo.Location = New System.Drawing.Point(116, 24)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.ReadOnly = True
-        Me.txtcodigo.Size = New System.Drawing.Size(179, 22)
+        Me.txtcodigo.Size = New System.Drawing.Size(135, 20)
         Me.txtcodigo.TabIndex = 86
         '
         'rtxtdireccion
         '
-        Me.rtxtdireccion.Location = New System.Drawing.Point(154, 170)
+        Me.rtxtdireccion.Location = New System.Drawing.Point(116, 138)
+        Me.rtxtdireccion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rtxtdireccion.Name = "rtxtdireccion"
-        Me.rtxtdireccion.Size = New System.Drawing.Size(461, 95)
+        Me.rtxtdireccion.Size = New System.Drawing.Size(347, 78)
         Me.rtxtdireccion.TabIndex = 61
         Me.rtxtdireccion.Text = ""
         '
         'txtcorreo
         '
-        Me.txtcorreo.Location = New System.Drawing.Point(749, 278)
+        Me.txtcorreo.Location = New System.Drawing.Point(562, 226)
+        Me.txtcorreo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcorreo.Name = "txtcorreo"
-        Me.txtcorreo.Size = New System.Drawing.Size(179, 22)
+        Me.txtcorreo.Size = New System.Drawing.Size(135, 20)
         Me.txtcorreo.TabIndex = 65
         '
         'lbldireccion
         '
         Me.lbldireccion.AutoSize = True
-        Me.lbldireccion.Location = New System.Drawing.Point(3, 173)
-        Me.lbldireccion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbldireccion.Location = New System.Drawing.Point(2, 141)
         Me.lbldireccion.Name = "lbldireccion"
-        Me.lbldireccion.Size = New System.Drawing.Size(145, 17)
+        Me.lbldireccion.Size = New System.Drawing.Size(111, 13)
         Me.lbldireccion.TabIndex = 60
         Me.lbldireccion.Text = "Dirección Facturación"
         '
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(95, 30)
-        Me.lblcodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcodigo.Location = New System.Drawing.Point(71, 24)
         Me.lblcodigo.Name = "lblcodigo"
-        Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodigo.Size = New System.Drawing.Size(40, 13)
         Me.lblcodigo.TabIndex = 85
         Me.lblcodigo.Text = "Código"
         '
         'txttelefonoCasa
         '
-        Me.txttelefonoCasa.Location = New System.Drawing.Point(749, 194)
+        Me.txttelefonoCasa.Location = New System.Drawing.Point(562, 158)
+        Me.txttelefonoCasa.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txttelefonoCasa.Name = "txttelefonoCasa"
-        Me.txttelefonoCasa.Size = New System.Drawing.Size(179, 22)
+        Me.txttelefonoCasa.Size = New System.Drawing.Size(135, 20)
         Me.txttelefonoCasa.TabIndex = 64
         '
         'txtscanId
         '
-        Me.txtscanId.Location = New System.Drawing.Point(154, 58)
+        Me.txtscanId.Location = New System.Drawing.Point(116, 47)
+        Me.txtscanId.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtscanId.Name = "txtscanId"
-        Me.txtscanId.Size = New System.Drawing.Size(179, 22)
+        Me.txtscanId.Size = New System.Drawing.Size(135, 20)
         Me.txtscanId.TabIndex = 84
         '
         'txtnombreCompleto
         '
-        Me.txtnombreCompleto.Location = New System.Drawing.Point(155, 142)
+        Me.txtnombreCompleto.Location = New System.Drawing.Point(116, 115)
+        Me.txtnombreCompleto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnombreCompleto.Name = "txtnombreCompleto"
         Me.txtnombreCompleto.ReadOnly = True
-        Me.txtnombreCompleto.Size = New System.Drawing.Size(461, 22)
+        Me.txtnombreCompleto.Size = New System.Drawing.Size(347, 20)
         Me.txtnombreCompleto.TabIndex = 62
         '
         'mtxtidentidad
         '
         Me.mtxtidentidad.BackColor = System.Drawing.Color.White
-        Me.mtxtidentidad.Location = New System.Drawing.Point(437, 58)
+        Me.mtxtidentidad.Location = New System.Drawing.Point(328, 47)
+        Me.mtxtidentidad.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.mtxtidentidad.Mask = "0000-0000-00000"
         Me.mtxtidentidad.Name = "mtxtidentidad"
         Me.mtxtidentidad.ReadOnly = True
-        Me.mtxtidentidad.Size = New System.Drawing.Size(179, 22)
+        Me.mtxtidentidad.Size = New System.Drawing.Size(135, 20)
         Me.mtxtidentidad.TabIndex = 63
         Me.mtxtidentidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lbltelefonoCasa
         '
         Me.lbltelefonoCasa.AutoSize = True
-        Me.lbltelefonoCasa.Location = New System.Drawing.Point(642, 194)
-        Me.lbltelefonoCasa.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbltelefonoCasa.Location = New System.Drawing.Point(482, 158)
         Me.lbltelefonoCasa.Name = "lbltelefonoCasa"
-        Me.lbltelefonoCasa.Size = New System.Drawing.Size(100, 17)
+        Me.lbltelefonoCasa.Size = New System.Drawing.Size(76, 13)
         Me.lbltelefonoCasa.TabIndex = 59
         Me.lbltelefonoCasa.Text = "Teléfono Casa"
         '
         'lblcorreo
         '
         Me.lblcorreo.AutoSize = True
-        Me.lblcorreo.Location = New System.Drawing.Point(683, 281)
-        Me.lblcorreo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcorreo.Location = New System.Drawing.Point(512, 228)
         Me.lblcorreo.Name = "lblcorreo"
-        Me.lblcorreo.Size = New System.Drawing.Size(51, 17)
+        Me.lblcorreo.Size = New System.Drawing.Size(38, 13)
         Me.lblcorreo.TabIndex = 58
         Me.lblcorreo.Text = "Correo"
         '
         'lblscanId
         '
         Me.lblscanId.AutoSize = True
-        Me.lblscanId.Location = New System.Drawing.Point(85, 64)
-        Me.lblscanId.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblscanId.Location = New System.Drawing.Point(64, 52)
         Me.lblscanId.Name = "lblscanId"
-        Me.lblscanId.Size = New System.Drawing.Size(62, 17)
+        Me.lblscanId.Size = New System.Drawing.Size(50, 13)
         Me.lblscanId.TabIndex = 83
         Me.lblscanId.Text = "SCAN ID"
         '
         'txtcorreo2
         '
-        Me.txtcorreo2.Location = New System.Drawing.Point(749, 306)
+        Me.txtcorreo2.Location = New System.Drawing.Point(562, 249)
+        Me.txtcorreo2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcorreo2.Name = "txtcorreo2"
-        Me.txtcorreo2.Size = New System.Drawing.Size(179, 22)
+        Me.txtcorreo2.Size = New System.Drawing.Size(135, 20)
         Me.txtcorreo2.TabIndex = 82
         '
         'lblcorreo2
         '
         Me.lblcorreo2.AutoSize = True
-        Me.lblcorreo2.Location = New System.Drawing.Point(671, 309)
-        Me.lblcorreo2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcorreo2.Location = New System.Drawing.Point(503, 251)
         Me.lblcorreo2.Name = "lblcorreo2"
-        Me.lblcorreo2.Size = New System.Drawing.Size(63, 17)
+        Me.lblcorreo2.Size = New System.Drawing.Size(47, 13)
         Me.lblcorreo2.TabIndex = 81
         Me.lblcorreo2.Text = "Correo 2"
         '
         'txtcelular
         '
-        Me.txtcelular.Location = New System.Drawing.Point(749, 250)
+        Me.txtcelular.Location = New System.Drawing.Point(562, 203)
+        Me.txtcelular.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcelular.Name = "txtcelular"
-        Me.txtcelular.Size = New System.Drawing.Size(179, 22)
+        Me.txtcelular.Size = New System.Drawing.Size(135, 20)
         Me.txtcelular.TabIndex = 80
         '
         'lblnombre
         '
         Me.lblnombre.AutoSize = True
-        Me.lblnombre.Location = New System.Drawing.Point(27, 145)
-        Me.lblnombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblnombre.Location = New System.Drawing.Point(20, 118)
         Me.lblnombre.Name = "lblnombre"
-        Me.lblnombre.Size = New System.Drawing.Size(121, 17)
+        Me.lblnombre.Size = New System.Drawing.Size(91, 13)
         Me.lblnombre.TabIndex = 56
         Me.lblnombre.Text = "Nombre Completo"
         '
         'lblcelular
         '
         Me.lblcelular.AutoSize = True
-        Me.lblcelular.Location = New System.Drawing.Point(688, 250)
-        Me.lblcelular.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcelular.Location = New System.Drawing.Point(516, 203)
         Me.lblcelular.Name = "lblcelular"
-        Me.lblcelular.Size = New System.Drawing.Size(52, 17)
+        Me.lblcelular.Size = New System.Drawing.Size(39, 13)
         Me.lblcelular.TabIndex = 79
         Me.lblcelular.Text = "Celular"
         '
         'lblidentidadCliente
         '
         Me.lblidentidadCliente.AutoSize = True
-        Me.lblidentidadCliente.Location = New System.Drawing.Point(359, 61)
-        Me.lblidentidadCliente.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblidentidadCliente.Location = New System.Drawing.Point(269, 50)
         Me.lblidentidadCliente.Name = "lblidentidadCliente"
-        Me.lblidentidadCliente.Size = New System.Drawing.Size(66, 17)
+        Me.lblidentidadCliente.Size = New System.Drawing.Size(51, 13)
         Me.lblidentidadCliente.TabIndex = 57
         Me.lblidentidadCliente.Text = "Identidad"
         '
         'txttelefonoTrabajo
         '
-        Me.txttelefonoTrabajo.Location = New System.Drawing.Point(749, 222)
+        Me.txttelefonoTrabajo.Location = New System.Drawing.Point(562, 180)
+        Me.txttelefonoTrabajo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txttelefonoTrabajo.Name = "txttelefonoTrabajo"
-        Me.txttelefonoTrabajo.Size = New System.Drawing.Size(179, 22)
+        Me.txttelefonoTrabajo.Size = New System.Drawing.Size(135, 20)
         Me.txttelefonoTrabajo.TabIndex = 78
         '
         'lbltelefonoTrabajo
         '
         Me.lbltelefonoTrabajo.AutoSize = True
-        Me.lbltelefonoTrabajo.Location = New System.Drawing.Point(625, 225)
-        Me.lbltelefonoTrabajo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbltelefonoTrabajo.Location = New System.Drawing.Point(469, 183)
         Me.lbltelefonoTrabajo.Name = "lbltelefonoTrabajo"
-        Me.lbltelefonoTrabajo.Size = New System.Drawing.Size(117, 17)
+        Me.lbltelefonoTrabajo.Size = New System.Drawing.Size(88, 13)
         Me.lbltelefonoTrabajo.TabIndex = 77
         Me.lbltelefonoTrabajo.Text = "Teléfono Trabajo"
         '
         'txtrtn
         '
-        Me.txtrtn.Location = New System.Drawing.Point(749, 61)
+        Me.txtrtn.Location = New System.Drawing.Point(562, 50)
+        Me.txtrtn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtrtn.Name = "txtrtn"
-        Me.txtrtn.Size = New System.Drawing.Size(179, 22)
+        Me.txtrtn.Size = New System.Drawing.Size(135, 20)
         Me.txtrtn.TabIndex = 76
         '
         'lblrtn
         '
         Me.lblrtn.AutoSize = True
-        Me.lblrtn.Location = New System.Drawing.Point(708, 61)
-        Me.lblrtn.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblrtn.Location = New System.Drawing.Point(531, 50)
         Me.lblrtn.Name = "lblrtn"
-        Me.lblrtn.Size = New System.Drawing.Size(37, 17)
+        Me.lblrtn.Size = New System.Drawing.Size(30, 13)
         Me.lblrtn.TabIndex = 75
         Me.lblrtn.Text = "RTN"
         '
         'txtapellido2
         '
-        Me.txtapellido2.Location = New System.Drawing.Point(436, 114)
+        Me.txtapellido2.Location = New System.Drawing.Point(327, 93)
+        Me.txtapellido2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtapellido2.Name = "txtapellido2"
-        Me.txtapellido2.Size = New System.Drawing.Size(179, 22)
+        Me.txtapellido2.Size = New System.Drawing.Size(135, 20)
         Me.txtapellido2.TabIndex = 74
         '
         'lblapellido2
         '
         Me.lblapellido2.AutoSize = True
-        Me.lblapellido2.Location = New System.Drawing.Point(343, 117)
-        Me.lblapellido2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblapellido2.Location = New System.Drawing.Point(257, 95)
         Me.lblapellido2.Name = "lblapellido2"
-        Me.lblapellido2.Size = New System.Drawing.Size(86, 17)
+        Me.lblapellido2.Size = New System.Drawing.Size(65, 13)
         Me.lblapellido2.TabIndex = 73
         Me.lblapellido2.Text = "2do Apellido"
         '
         'txtnombre2
         '
-        Me.txtnombre2.Location = New System.Drawing.Point(436, 86)
+        Me.txtnombre2.Location = New System.Drawing.Point(327, 70)
+        Me.txtnombre2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnombre2.Name = "txtnombre2"
-        Me.txtnombre2.Size = New System.Drawing.Size(179, 22)
+        Me.txtnombre2.Size = New System.Drawing.Size(135, 20)
         Me.txtnombre2.TabIndex = 72
         '
         'lblnombre2
         '
         Me.lblnombre2.AutoSize = True
-        Me.lblnombre2.Location = New System.Drawing.Point(345, 89)
-        Me.lblnombre2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblnombre2.Location = New System.Drawing.Point(259, 72)
         Me.lblnombre2.Name = "lblnombre2"
-        Me.lblnombre2.Size = New System.Drawing.Size(86, 17)
+        Me.lblnombre2.Size = New System.Drawing.Size(65, 13)
         Me.lblnombre2.TabIndex = 71
         Me.lblnombre2.Text = "2do Nombre"
         '
         'txtapellido1
         '
-        Me.txtapellido1.Location = New System.Drawing.Point(155, 114)
+        Me.txtapellido1.Location = New System.Drawing.Point(116, 93)
+        Me.txtapellido1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtapellido1.Name = "txtapellido1"
-        Me.txtapellido1.Size = New System.Drawing.Size(179, 22)
+        Me.txtapellido1.Size = New System.Drawing.Size(135, 20)
         Me.txtapellido1.TabIndex = 70
         '
         'lblapellido1
         '
         Me.lblapellido1.AutoSize = True
-        Me.lblapellido1.Location = New System.Drawing.Point(61, 117)
-        Me.lblapellido1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblapellido1.Location = New System.Drawing.Point(46, 95)
         Me.lblapellido1.Name = "lblapellido1"
-        Me.lblapellido1.Size = New System.Drawing.Size(83, 17)
+        Me.lblapellido1.Size = New System.Drawing.Size(62, 13)
         Me.lblapellido1.TabIndex = 69
         Me.lblapellido1.Text = "1er Apellido"
         '
         'txtnombre1
         '
-        Me.txtnombre1.Location = New System.Drawing.Point(155, 86)
+        Me.txtnombre1.Location = New System.Drawing.Point(116, 70)
+        Me.txtnombre1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnombre1.Name = "txtnombre1"
-        Me.txtnombre1.Size = New System.Drawing.Size(179, 22)
+        Me.txtnombre1.Size = New System.Drawing.Size(135, 20)
         Me.txtnombre1.TabIndex = 68
         '
         'lblnombre1
         '
         Me.lblnombre1.AutoSize = True
-        Me.lblnombre1.Location = New System.Drawing.Point(64, 89)
-        Me.lblnombre1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblnombre1.Location = New System.Drawing.Point(48, 72)
         Me.lblnombre1.Name = "lblnombre1"
-        Me.lblnombre1.Size = New System.Drawing.Size(83, 17)
+        Me.lblnombre1.Size = New System.Drawing.Size(62, 13)
         Me.lblnombre1.TabIndex = 67
         Me.lblnombre1.Text = "1er Nombre"
         '
-        'btnnuevo
+        'M_Cliente
         '
-        Me.btnnuevo.BackColor = System.Drawing.Color.SkyBlue
-        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnuevo.Location = New System.Drawing.Point(182, 414)
-        Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(130, 38)
-        Me.btnnuevo.TabIndex = 116
-        Me.btnnuevo.Text = "Nuevo"
-        Me.btnnuevo.UseVisualStyleBackColor = False
-        '
-        'M_BuscarCliente
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(961, 561)
+        Me.ClientSize = New System.Drawing.Size(721, 456)
         Me.Controls.Add(Me.gbxinfoCliente)
         Me.Controls.Add(Me.mtxtidentidadClienteB)
         Me.Controls.Add(Me.btnbuscarCliente)
@@ -785,7 +805,8 @@ Partial Class M_Cliente
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "M_BuscarCliente"
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Name = "M_Cliente"
         Me.Text = "Buscar Cliente"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()

@@ -103,13 +103,13 @@ Partial Class frmDeposito
         'ListarDepositosToolStripMenuItem
         '
         Me.ListarDepositosToolStripMenuItem.Name = "ListarDepositosToolStripMenuItem"
-        Me.ListarDepositosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ListarDepositosToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.ListarDepositosToolStripMenuItem.Text = "Crear Asiento"
         '
         'CerrarToolStripMenuItem1
         '
         Me.CerrarToolStripMenuItem1.Name = "CerrarToolStripMenuItem1"
-        Me.CerrarToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarToolStripMenuItem1.Size = New System.Drawing.Size(145, 22)
         Me.CerrarToolStripMenuItem1.Text = "Cerrar"
         '
         'txtNro
@@ -532,6 +532,7 @@ Partial Class frmDeposito
         Me.Controls.Add(Me.gbxInfoDepo)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.KeyPreview = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmDeposito"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
