@@ -56,7 +56,7 @@ Partial Class M_TipoClasificacion
         Me.gbxbusqueda.Size = New System.Drawing.Size(613, 390)
         Me.gbxbusqueda.TabIndex = 114
         Me.gbxbusqueda.TabStop = False
-        Me.gbxbusqueda.Text = "BUSCAR ESPECIALIDAD"
+        Me.gbxbusqueda.Text = "BUSCAR TIPO CLASIFICACIÓN"
         '
         'txtcomentarioB
         '
@@ -102,9 +102,9 @@ Partial Class M_TipoClasificacion
         Me.lbltotal.AutoSize = True
         Me.lbltotal.Location = New System.Drawing.Point(118, 339)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(155, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(194, 17)
         Me.lbltotal.TabIndex = 114
-        Me.lbltotal.Text = "TOTAL ESPECIALIDAD"
+        Me.lbltotal.Text = "TOTAL TIPO CLASIFICACIÓN"
         '
         'btnbuscar
         '

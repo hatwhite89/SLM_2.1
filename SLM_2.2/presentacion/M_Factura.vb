@@ -48,7 +48,7 @@
         txtnombreCliente.Text() = ""
         txtnombreMedico.Text() = ""
         txtcodigoSede.Text() = ""
-        txtsucursal.Text() = ""
+        txtcodigoSucursal.Text() = ""
         txtcodigoDocumento.Text() = ""
         txtterminal.Text() = ""
         txtnombreSede.Text() = ""
@@ -107,5 +107,55 @@
 
     Private Sub btnbuscarSede_Click(sender As Object, e As EventArgs) Handles btnbuscarSede.Click
         M_Sede.ShowDialog()
+    End Sub
+
+    Private Sub txtcodigoSucursal_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoSucursal.TextChanged
+        If (txtcodigoSucursal.Text <> "") Then
+            Try
+                Dim objSuc As New ClsSucursal
+                With objSuc
+                    .Codigo1 = txtcodigoSucursal.Text
+                End With
+                Dim dt As New DataTable
+                dt = objSuc.BuscarSucursalCode()
+                Dim row As DataRow = dt.Rows(0)
+                txtnombreSucursal.Text = CStr(row("nombre"))
+            Catch ex As Exception
+                MsgBox("No existe el código de la sucursal.", MsgBoxStyle.Critical, "Validación")
+            End Try
+
+        Else
+            txtcodigoSucursal.Text = ""
+            txtnombreSucursal.Text = ""
+        End If
+    End Sub
+
+    Private Sub btnbuscarSucursal_Click(sender As Object, e As EventArgs) Handles btnbuscarSucursal.Click
+        M_Sucursal.ShowDialog()
+    End Sub
+
+    Private Sub txtcodigoTerminosPago_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoTerminosPago.TextChanged
+        If (txtcodigoTerminosPago.Text <> "") Then
+            Try
+                Dim objTerm As New ClsTerminoPago
+
+                With objTerm
+                    .Codigo1 = txtcodigoTerminosPago.Text
+                End With
+                Dim dt As New DataTable
+                dt = objTerm.BuscarTerminoPagoCode()
+                Dim row As DataRow = dt.Rows(0)
+                'txtdescripcionTermino.Text = CStr(row("descripcion"))
+            Catch ex As Exception
+                MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
+            End Try
+
+        Else
+            txtcodigoTerminosPago.Text = ""
+        End If
+    End Sub
+
+    Private Sub btnterminosPago_Click(sender As Object, e As EventArgs) Handles btnterminosPago.Click
+        M_TerminosPago.ShowDialog()
     End Sub
 End Class

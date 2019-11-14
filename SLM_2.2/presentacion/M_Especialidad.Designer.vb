@@ -220,7 +220,7 @@ Partial Class M_Especialidad
         Me.btnbuscar.Text = "Buscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
         '
-        'M_CrearEspecialidad
+        'M_Especialidad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -229,8 +229,8 @@ Partial Class M_Especialidad
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.gbxespecialidad)
         Me.KeyPreview = True
-        Me.Name = "M_CrearEspecialidad"
-        Me.Text = "Especialidad Médica: Crear"
+        Me.Name = "M_Especialidad"
+        Me.Text = "Especialidad Médica"
         Me.gbxespecialidad.ResumeLayout(False)
         Me.gbxespecialidad.PerformLayout()
         Me.gbxbusqueda.ResumeLayout(False)
