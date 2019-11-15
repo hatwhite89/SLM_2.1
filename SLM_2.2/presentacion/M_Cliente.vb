@@ -23,6 +23,7 @@
                 txtapellido2.Text = CStr(row("apellido2"))
                 txtnombreCompleto.Text = CStr(row("nombreCompleto"))
                 dtpfechaNacimiento.Text = CStr(row("fechaNacimiento"))
+
                 genero = CStr(row("genero"))
                 If (genero = "Masculino") Then
                     rbtnmasculino.Checked = True
