@@ -142,6 +142,7 @@ Public Class ClsDeposito
 
 
     '::::::::::::::::::::::::::::: FUNCIONES DE MANTENIMIENTO ::::::::::::::::::::::::::::::
+    'Registrar Nuevo Deposito
     Public Function registrarNuevoDeposito() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter

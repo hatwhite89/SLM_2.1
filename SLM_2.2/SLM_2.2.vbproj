@@ -112,8 +112,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="negocio\ClsCaja.vb" />
-    <Compile Include="negocio\ClsCategoria.vb" />
+    <Compile Include="negocio\ClsCategoriaProveedor.vb" />
     <Compile Include="negocio\ClsClasificacionContacto.vb" />
     <Compile Include="negocio\ClsCliente.vb" />
     <Compile Include="negocio\ClsCuenta.vb" />
@@ -123,6 +122,7 @@
     <Compile Include="negocio\ClsFormaPago.vb" />
     <Compile Include="negocio\ClsMedico.vb" />
     <Compile Include="negocio\ClsPaciente.vb" />
+    <Compile Include="negocio\ClsProveedor.vb" />
     <Compile Include="negocio\ClsSede.vb" />
     <Compile Include="negocio\ClsSucursal.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
@@ -140,6 +140,12 @@
     <Compile Include="presentacion\A_BuscarFormaPago.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_CategoriaProveedor.Designer.vb">
+      <DependentUpon>A_CategoriaProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_CategoriaProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_Cuenta.Designer.vb">
       <DependentUpon>A_Cuenta.vb</DependentUpon>
     </Compile>
@@ -150,6 +156,12 @@
       <DependentUpon>A_Depositos.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_Depositos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_Proveedor.Designer.vb">
+      <DependentUpon>A_Proveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_Proveedor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\eg_frmMenuLaboratorio.Designer.vb">
@@ -186,18 +198,6 @@
       <DependentUpon>M_BuscarCuenta.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_BuscarCuenta.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="presentacion\M_Caja.Designer.vb">
-      <DependentUpon>M_Caja.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_Caja.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="presentacion\M_Categoria.Designer.vb">
-      <DependentUpon>M_Categoria.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_Categoria.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_Cliente.Designer.vb">
@@ -301,11 +301,17 @@
     <EmbeddedResource Include="presentacion\A_BuscarFormaPago.resx">
       <DependentUpon>A_BuscarFormaPago.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_CategoriaProveedor.resx">
+      <DependentUpon>A_CategoriaProveedor.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Cuenta.resx">
       <DependentUpon>A_Cuenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Depositos.resx">
       <DependentUpon>A_Depositos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_Proveedor.resx">
+      <DependentUpon>A_Proveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\eg_frmMenuLaboratorio.resx">
       <DependentUpon>eg_frmMenuLaboratorio.vb</DependentUpon>
@@ -321,12 +327,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_BuscarCuenta.resx">
       <DependentUpon>M_BuscarCuenta.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_Caja.resx">
-      <DependentUpon>M_Caja.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_Categoria.resx">
-      <DependentUpon>M_Categoria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Cliente.resx">
       <DependentUpon>M_Cliente.vb</DependentUpon>
