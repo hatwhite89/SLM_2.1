@@ -152,6 +152,12 @@
     <Compile Include="presentacion\eg_frmPaciente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\eg_segundoform.Designer.vb">
+      <DependentUpon>eg_segundoform.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\eg_segundoform.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\Form2.Designer.vb">
       <DependentUpon>Form2.vb</DependentUpon>
     </Compile>
@@ -291,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_MenuConta.resx">
       <DependentUpon>A_MenuConta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\eg_segundoform.resx">
+      <DependentUpon>eg_segundoform.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Cliente.resx">
       <DependentUpon>M_Cliente.vb</DependentUpon>

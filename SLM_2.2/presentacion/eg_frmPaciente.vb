@@ -25,4 +25,13 @@
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tbPaciente.CellContentClick
 
     End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        eg_segundoform.Show()
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+
+        eg_segundoform.TextBox1.Text = TextBox1.Text
+    End Sub
 End Class
