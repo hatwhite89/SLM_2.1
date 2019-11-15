@@ -26,16 +26,20 @@ Partial Class A_Cuenta
         Me.txtCuenta = New System.Windows.Forms.TextBox()
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.gbxCuenta = New System.Windows.Forms.GroupBox()
+        Me.lblCodCuenta = New System.Windows.Forms.Label()
+        Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.lblTipo = New System.Windows.Forms.Label()
+        Me.cbxTipoCuenta = New System.Windows.Forms.ComboBox()
+        Me.lblEstadoColor = New System.Windows.Forms.Label()
+        Me.chkEstado = New System.Windows.Forms.CheckBox()
         Me.lblEstado = New System.Windows.Forms.Label()
         Me.gbxCuentas = New System.Windows.Forms.GroupBox()
         Me.dtCuentas = New System.Windows.Forms.DataGridView()
-        Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.chkEstado = New System.Windows.Forms.CheckBox()
-        Me.lblTipo = New System.Windows.Forms.Label()
-        Me.lblEstadoColor = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.lblTipoDetalle = New System.Windows.Forms.Label()
+        Me.gbxCuenta.SuspendLayout()
         Me.gbxCuentas.SuspendLayout()
         CType(Me.dtCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -43,7 +47,7 @@ Partial Class A_Cuenta
         'lblCuenta
         '
         Me.lblCuenta.AutoSize = True
-        Me.lblCuenta.Location = New System.Drawing.Point(11, 24)
+        Me.lblCuenta.Location = New System.Drawing.Point(7, 32)
         Me.lblCuenta.Name = "lblCuenta"
         Me.lblCuenta.Size = New System.Drawing.Size(41, 13)
         Me.lblCuenta.TabIndex = 0
@@ -51,7 +55,7 @@ Partial Class A_Cuenta
         '
         'txtCuenta
         '
-        Me.txtCuenta.Location = New System.Drawing.Point(55, 21)
+        Me.txtCuenta.Location = New System.Drawing.Point(54, 28)
         Me.txtCuenta.Name = "txtCuenta"
         Me.txtCuenta.Size = New System.Drawing.Size(100, 20)
         Me.txtCuenta.TabIndex = 1
@@ -59,7 +63,7 @@ Partial Class A_Cuenta
         'lblNombre
         '
         Me.lblNombre.AutoSize = True
-        Me.lblNombre.Location = New System.Drawing.Point(169, 24)
+        Me.lblNombre.Location = New System.Drawing.Point(7, 57)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(44, 13)
         Me.lblNombre.TabIndex = 2
@@ -67,24 +71,125 @@ Partial Class A_Cuenta
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(216, 21)
+        Me.txtNombre.Location = New System.Drawing.Point(54, 54)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(185, 20)
         Me.txtNombre.TabIndex = 3
         '
-        'GroupBox1
+        'gbxCuenta
         '
-        Me.GroupBox1.Location = New System.Drawing.Point(13, 60)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(117, 144)
-        Me.GroupBox1.TabIndex = 4
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Tipo de Cuenta"
+        Me.gbxCuenta.Controls.Add(Me.lblTipoDetalle)
+        Me.gbxCuenta.Controls.Add(Me.lblCodCuenta)
+        Me.gbxCuenta.Controls.Add(Me.btnNuevo)
+        Me.gbxCuenta.Controls.Add(Me.btnModificar)
+        Me.gbxCuenta.Controls.Add(Me.btnGuardar)
+        Me.gbxCuenta.Controls.Add(Me.lblTipo)
+        Me.gbxCuenta.Controls.Add(Me.cbxTipoCuenta)
+        Me.gbxCuenta.Controls.Add(Me.txtCuenta)
+        Me.gbxCuenta.Controls.Add(Me.lblEstadoColor)
+        Me.gbxCuenta.Controls.Add(Me.lblCuenta)
+        Me.gbxCuenta.Controls.Add(Me.txtNombre)
+        Me.gbxCuenta.Controls.Add(Me.chkEstado)
+        Me.gbxCuenta.Controls.Add(Me.lblNombre)
+        Me.gbxCuenta.Controls.Add(Me.lblEstado)
+        Me.gbxCuenta.Location = New System.Drawing.Point(13, 12)
+        Me.gbxCuenta.Name = "gbxCuenta"
+        Me.gbxCuenta.Size = New System.Drawing.Size(380, 152)
+        Me.gbxCuenta.TabIndex = 4
+        Me.gbxCuenta.TabStop = False
+        Me.gbxCuenta.Text = "Información de Cuenta"
+        '
+        'lblCodCuenta
+        '
+        Me.lblCodCuenta.AutoSize = True
+        Me.lblCodCuenta.Location = New System.Drawing.Point(160, 32)
+        Me.lblCodCuenta.Name = "lblCodCuenta"
+        Me.lblCodCuenta.Size = New System.Drawing.Size(39, 13)
+        Me.lblCodCuenta.TabIndex = 15
+        Me.lblCodCuenta.Text = "Label1"
+        '
+        'btnNuevo
+        '
+        Me.btnNuevo.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnNuevo.FlatAppearance.BorderSize = 0
+        Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNuevo.ForeColor = System.Drawing.Color.White
+        Me.btnNuevo.Location = New System.Drawing.Point(139, 121)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
+        Me.btnNuevo.TabIndex = 14
+        Me.btnNuevo.Text = "Crear Nuevo"
+        Me.btnNuevo.UseVisualStyleBackColor = False
+        Me.btnNuevo.Visible = False
+        '
+        'btnModificar
+        '
+        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnModificar.FlatAppearance.BorderSize = 0
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.ForeColor = System.Drawing.Color.White
+        Me.btnModificar.Location = New System.Drawing.Point(217, 121)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar.TabIndex = 9
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
+        Me.btnModificar.Visible = False
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnGuardar.FlatAppearance.BorderSize = 0
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.ForeColor = System.Drawing.Color.White
+        Me.btnGuardar.Location = New System.Drawing.Point(295, 121)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.TabIndex = 8
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = False
+        '
+        'lblTipo
+        '
+        Me.lblTipo.AutoSize = True
+        Me.lblTipo.Location = New System.Drawing.Point(7, 83)
+        Me.lblTipo.Name = "lblTipo"
+        Me.lblTipo.Size = New System.Drawing.Size(28, 13)
+        Me.lblTipo.TabIndex = 11
+        Me.lblTipo.Text = "Tipo"
+        '
+        'cbxTipoCuenta
+        '
+        Me.cbxTipoCuenta.FormattingEnabled = True
+        Me.cbxTipoCuenta.Items.AddRange(New Object() {"Activo", "Pasivo", "Patrimonio", "Ingresos", "Gastos"})
+        Me.cbxTipoCuenta.Location = New System.Drawing.Point(54, 80)
+        Me.cbxTipoCuenta.Name = "cbxTipoCuenta"
+        Me.cbxTipoCuenta.Size = New System.Drawing.Size(100, 21)
+        Me.cbxTipoCuenta.TabIndex = 13
+        '
+        'lblEstadoColor
+        '
+        Me.lblEstadoColor.AutoSize = True
+        Me.lblEstadoColor.Location = New System.Drawing.Point(292, 32)
+        Me.lblEstadoColor.Name = "lblEstadoColor"
+        Me.lblEstadoColor.Size = New System.Drawing.Size(16, 13)
+        Me.lblEstadoColor.TabIndex = 12
+        Me.lblEstadoColor.Text = "---"
+        '
+        'chkEstado
+        '
+        Me.chkEstado.AutoSize = True
+        Me.chkEstado.Location = New System.Drawing.Point(245, 56)
+        Me.chkEstado.Name = "chkEstado"
+        Me.chkEstado.Size = New System.Drawing.Size(118, 17)
+        Me.chkEstado.TabIndex = 10
+        Me.chkEstado.Text = "Deshabilitar Cuenta"
+        Me.chkEstado.UseVisualStyleBackColor = True
         '
         'lblEstado
         '
         Me.lblEstado.AutoSize = True
-        Me.lblEstado.Location = New System.Drawing.Point(168, 60)
+        Me.lblEstado.Location = New System.Drawing.Point(241, 32)
         Me.lblEstado.Name = "lblEstado"
         Me.lblEstado.Size = New System.Drawing.Size(40, 13)
         Me.lblEstado.TabIndex = 5
@@ -93,9 +198,9 @@ Partial Class A_Cuenta
         'gbxCuentas
         '
         Me.gbxCuentas.Controls.Add(Me.dtCuentas)
-        Me.gbxCuentas.Location = New System.Drawing.Point(14, 219)
+        Me.gbxCuentas.Location = New System.Drawing.Point(13, 170)
         Me.gbxCuentas.Name = "gbxCuentas"
-        Me.gbxCuentas.Size = New System.Drawing.Size(385, 235)
+        Me.gbxCuentas.Size = New System.Drawing.Size(380, 235)
         Me.gbxCuentas.TabIndex = 7
         Me.gbxCuentas.TabStop = False
         Me.gbxCuentas.Text = "Listado de Cuentas"
@@ -109,100 +214,36 @@ Partial Class A_Cuenta
         Me.dtCuentas.Name = "dtCuentas"
         Me.dtCuentas.ReadOnly = True
         Me.dtCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCuentas.Size = New System.Drawing.Size(373, 210)
+        Me.dtCuentas.Size = New System.Drawing.Size(368, 210)
         Me.dtCuentas.TabIndex = 0
         '
-        'btnGuardar
+        'lblTipoDetalle
         '
-        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnGuardar.FlatAppearance.BorderSize = 0
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(243, 181)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
-        Me.btnGuardar.TabIndex = 8
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = False
-        '
-        'btnModificar
-        '
-        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnModificar.FlatAppearance.BorderSize = 0
-        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(324, 181)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
-        Me.btnModificar.TabIndex = 9
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = False
-        '
-        'chkEstado
-        '
-        Me.chkEstado.AutoSize = True
-        Me.chkEstado.Location = New System.Drawing.Point(172, 84)
-        Me.chkEstado.Name = "chkEstado"
-        Me.chkEstado.Size = New System.Drawing.Size(118, 17)
-        Me.chkEstado.TabIndex = 10
-        Me.chkEstado.Text = "Deshabilitar Cuenta"
-        Me.chkEstado.UseVisualStyleBackColor = True
-        '
-        'lblTipo
-        '
-        Me.lblTipo.AutoSize = True
-        Me.lblTipo.Location = New System.Drawing.Point(136, 133)
-        Me.lblTipo.Name = "lblTipo"
-        Me.lblTipo.Size = New System.Drawing.Size(39, 13)
-        Me.lblTipo.TabIndex = 11
-        Me.lblTipo.Text = "Label1"
-        '
-        'lblEstadoColor
-        '
-        Me.lblEstadoColor.AutoSize = True
-        Me.lblEstadoColor.Location = New System.Drawing.Point(219, 60)
-        Me.lblEstadoColor.Name = "lblEstadoColor"
-        Me.lblEstadoColor.Size = New System.Drawing.Size(16, 13)
-        Me.lblEstadoColor.TabIndex = 12
-        Me.lblEstadoColor.Text = "---"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Activo", "Pasivo", "Patrimonio", "Ingresos", "Gastos"})
-        Me.ComboBox1.Location = New System.Drawing.Point(222, 125)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 13
+        Me.lblTipoDetalle.AutoSize = True
+        Me.lblTipoDetalle.Location = New System.Drawing.Point(160, 85)
+        Me.lblTipoDetalle.Name = "lblTipoDetalle"
+        Me.lblTipoDetalle.Size = New System.Drawing.Size(39, 13)
+        Me.lblTipoDetalle.TabIndex = 16
+        Me.lblTipoDetalle.Text = "Label1"
         '
         'A_Cuenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(411, 466)
+        Me.ClientSize = New System.Drawing.Size(403, 413)
         Me.ControlBox = False
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.lblEstadoColor)
-        Me.Controls.Add(Me.lblTipo)
-        Me.Controls.Add(Me.chkEstado)
-        Me.Controls.Add(Me.btnModificar)
-        Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.gbxCuentas)
-        Me.Controls.Add(Me.lblEstado)
-        Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.txtNombre)
-        Me.Controls.Add(Me.lblNombre)
-        Me.Controls.Add(Me.txtCuenta)
-        Me.Controls.Add(Me.lblCuenta)
+        Me.Controls.Add(Me.gbxCuenta)
         Me.KeyPreview = True
         Me.Name = "A_Cuenta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mantenimeinto de Cuentas"
+        Me.gbxCuenta.ResumeLayout(False)
+        Me.gbxCuenta.PerformLayout()
         Me.gbxCuentas.ResumeLayout(False)
         CType(Me.dtCuentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -210,7 +251,7 @@ Partial Class A_Cuenta
     Friend WithEvents txtCuenta As TextBox
     Friend WithEvents lblNombre As Label
     Friend WithEvents txtNombre As TextBox
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents gbxCuenta As GroupBox
     Friend WithEvents lblEstado As Label
     Friend WithEvents gbxCuentas As GroupBox
     Friend WithEvents dtCuentas As DataGridView
@@ -219,5 +260,8 @@ Partial Class A_Cuenta
     Friend WithEvents chkEstado As CheckBox
     Friend WithEvents lblTipo As Label
     Friend WithEvents lblEstadoColor As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents btnNuevo As Button
+    Friend WithEvents cbxTipoCuenta As ComboBox
+    Friend WithEvents lblCodCuenta As Label
+    Friend WithEvents lblTipoDetalle As Label
 End Class
