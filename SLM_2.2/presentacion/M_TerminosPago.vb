@@ -68,7 +68,11 @@
         Try
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
             rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
-
+            txtdiasNeto.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+            txtcodigoCtaContado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+            txtcodigoCtaVentas.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+            Dim temp As Integer = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value().ToString
+            cbxtipoPago.SelectedIndex = temp - 1
             M_Factura.txtcodigoTerminosPago.Text = txtcodigo.Text
             'M_Factura.txtdescripcionTerminosPago.Text = rtxtdescripcion.Text
 
@@ -127,18 +131,23 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (cbxtipoPago.SelectedIndex.ToString > -1 And rtxtdescripcion.Text <> "" And txtcodigo.Text <> "" And txtdiasNeto.Text <> "" And cbxtipoPago.SelectedIndex.ToString <> "") Then
+            If (cbxtipoPago.SelectedIndex.ToString > -1 And rtxtdescripcion.Text <> "" And txtcodigo.Text <> "") Then
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
                 txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
                 Dim objTerm As New ClsTerminoPago
                 With objTerm
                     .Codigo1 = txtcodigo.Text
                     .Descripcion1 = rtxtdescripcion.Text
-                    .diasNeto1 = Convert.ToInt32(txtdiasNeto.Text)
-                    .codigoCtaContado1 = Convert.ToInt32(txtcodigoCtaContado.Text)
-                    .codigoCtaVentas1 = Convert.ToInt32(txtcodigoCtaVentas.Text)
                     .codigoTipoTermino1 = Convert.ToInt32(cbxtipoPago.SelectedIndex.ToString) + 1
                 End With
+                'MsgBox("funciona")
+                'If (txtcodigoCtaContado.Text <> "") Then
+                '    objTerm.codigoCtaContado1 = Convert.ToInt32(txtcodigoCtaContado.Text)
+                'ElseIf (txtcodigoCtaVentas.Text <> "") Then
+                '    objTerm.codigoCtaVentas1 = Convert.ToInt32(txtcodigoCtaVentas.Text)
+                'ElseIf (txtdiasNeto.Text <> "") Then
+                '    objTerm.diasNeto1 = Convert.ToInt32(txtdiasNeto.Text)
+                'End If
 
                 If objTerm.RegistrarNuevaTerminoPago() = 1 Then
                     MsgBox("Registrado correctamente.")
@@ -231,7 +240,5 @@
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
     End Sub
 
-    Private Sub cbxtipoPago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxtipoPago.SelectedIndexChanged
-        MsgBox(cbxtipoPago.SelectedIndex.ToString + "      " + cbxtipoPago.SelectedItem.ToString)
-    End Sub
+
 End Class
