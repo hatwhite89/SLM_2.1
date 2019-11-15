@@ -196,6 +196,7 @@ Partial Class frmDeposito
         '
         'txtTotalDep
         '
+        Me.txtTotalDep.Enabled = False
         Me.txtTotalDep.Location = New System.Drawing.Point(95, 151)
         Me.txtTotalDep.Name = "txtTotalDep"
         Me.txtTotalDep.Size = New System.Drawing.Size(70, 20)
@@ -263,7 +264,7 @@ Partial Class frmDeposito
         '
         'txtComision
         '
-        Me.txtComision.Location = New System.Drawing.Point(93, 227)
+        Me.txtComision.Location = New System.Drawing.Point(94, 227)
         Me.txtComision.Name = "txtComision"
         Me.txtComision.Size = New System.Drawing.Size(72, 20)
         Me.txtComision.TabIndex = 11

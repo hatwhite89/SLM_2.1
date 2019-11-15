@@ -27,6 +27,7 @@ Partial Class A_Cuenta
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.gbxCuenta = New System.Windows.Forms.GroupBox()
+        Me.lblTipoDetalle = New System.Windows.Forms.Label()
         Me.lblCodCuenta = New System.Windows.Forms.Label()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -38,7 +39,6 @@ Partial Class A_Cuenta
         Me.lblEstado = New System.Windows.Forms.Label()
         Me.gbxCuentas = New System.Windows.Forms.GroupBox()
         Me.dtCuentas = New System.Windows.Forms.DataGridView()
-        Me.lblTipoDetalle = New System.Windows.Forms.Label()
         Me.gbxCuenta.SuspendLayout()
         Me.gbxCuentas.SuspendLayout()
         CType(Me.dtCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,6 +98,14 @@ Partial Class A_Cuenta
         Me.gbxCuenta.TabIndex = 4
         Me.gbxCuenta.TabStop = False
         Me.gbxCuenta.Text = "Información de Cuenta"
+        '
+        'lblTipoDetalle
+        '
+        Me.lblTipoDetalle.AutoSize = True
+        Me.lblTipoDetalle.Location = New System.Drawing.Point(160, 85)
+        Me.lblTipoDetalle.Name = "lblTipoDetalle"
+        Me.lblTipoDetalle.Size = New System.Drawing.Size(0, 13)
+        Me.lblTipoDetalle.TabIndex = 16
         '
         'lblCodCuenta
         '
@@ -216,15 +224,6 @@ Partial Class A_Cuenta
         Me.dtCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtCuentas.Size = New System.Drawing.Size(368, 210)
         Me.dtCuentas.TabIndex = 0
-        '
-        'lblTipoDetalle
-        '
-        Me.lblTipoDetalle.AutoSize = True
-        Me.lblTipoDetalle.Location = New System.Drawing.Point(160, 85)
-        Me.lblTipoDetalle.Name = "lblTipoDetalle"
-        Me.lblTipoDetalle.Size = New System.Drawing.Size(39, 13)
-        Me.lblTipoDetalle.TabIndex = 16
-        Me.lblTipoDetalle.Text = "Label1"
         '
         'A_Cuenta
         '
