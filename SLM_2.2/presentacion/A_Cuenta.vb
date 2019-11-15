@@ -29,19 +29,19 @@
         End Try
 
     End Sub
-    Private Sub rbtActivo_CheckedChanged(sender As Object, e As EventArgs) 
+    Private Sub rbtActivo_CheckedChanged(sender As Object, e As EventArgs)
         lblTipo.Text = "Activo"
     End Sub
-    Private Sub rbtPasivo_CheckedChanged(sender As Object, e As EventArgs) 
+    Private Sub rbtPasivo_CheckedChanged(sender As Object, e As EventArgs)
         lblTipo.Text = "Pasivo"
     End Sub
-    Private Sub rbtPatrimonio_CheckedChanged(sender As Object, e As EventArgs) 
+    Private Sub rbtPatrimonio_CheckedChanged(sender As Object, e As EventArgs)
         lblTipo.Text = "Patrimonio"
     End Sub
-    Private Sub rbtIngresos_CheckedChanged(sender As Object, e As EventArgs) 
+    Private Sub rbtIngresos_CheckedChanged(sender As Object, e As EventArgs)
         lblTipo.Text = "Ingresos"
     End Sub
-    Private Sub rbtGastos_CheckedChanged(sender As Object, e As EventArgs) 
+    Private Sub rbtGastos_CheckedChanged(sender As Object, e As EventArgs)
         lblTipo.Text = "Gastos"
     End Sub
 
