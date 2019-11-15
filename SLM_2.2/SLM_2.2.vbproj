@@ -180,6 +180,12 @@
     <Compile Include="presentacion\A_MenuConta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_BuscarCuenta.Designer.vb">
+      <DependentUpon>M_BuscarCuenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarCuenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_Cliente.Designer.vb">
       <DependentUpon>M_Cliente.vb</DependentUpon>
     </Compile>
@@ -298,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_MenuConta.resx">
       <DependentUpon>A_MenuConta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_BuscarCuenta.resx">
+      <DependentUpon>M_BuscarCuenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Cliente.resx">
       <DependentUpon>M_Cliente.vb</DependentUpon>

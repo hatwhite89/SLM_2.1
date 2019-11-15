@@ -160,6 +160,20 @@ Public Class ClsCuenta
         End Using
     End Function
 
+    'Selecciona la cuenta y el nombre de las cuentas creadas
+    Public Function seleccionarCuentas() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("slmSeleccionarCuentas_M", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
     'Editar una cuenta
     Public Function modificarCuenta() As String
 

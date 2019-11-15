@@ -140,38 +140,38 @@
                     .Descripcion1 = rtxtdescripcion.Text
                     .codigoTipoTermino1 = Convert.ToInt32(cbxtipoPago.SelectedIndex.ToString) + 1
                 End With
-                'MsgBox("funciona")
-                'If (txtcodigoCtaContado.Text <> "") Then
-                '    objTerm.codigoCtaContado1 = Convert.ToInt32(txtcodigoCtaContado.Text)
-                'ElseIf (txtcodigoCtaVentas.Text <> "") Then
-                '    objTerm.codigoCtaVentas1 = Convert.ToInt32(txtcodigoCtaVentas.Text)
-                'ElseIf (txtdiasNeto.Text <> "") Then
-                '    objTerm.diasNeto1 = Convert.ToInt32(txtdiasNeto.Text)
-                'End If
 
-                If objTerm.RegistrarNuevaTerminoPago() = 1 Then
-                    MsgBox("Registrado correctamente.")
-
-                    Dim dv As DataView = objTerm.SeleccionarTerminoPago.DefaultView
-                    dgbtabla.DataSource = dv
-                    lblcantidad.Text = dv.Count
-                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-
-                    rtxtdescripcion.ReadOnly = True
-                    txtdiasNeto.ReadOnly = True
-                    txtcodigoCtaContado.ReadOnly = True
-                    txtcodigoCtaVentas.ReadOnly = True
-                    txtcodigo.ReadOnly = True
-
-                    btnmodificar.Enabled = False
-                    btnguardar.Enabled = False
-                    btnnuevo.Enabled = True
-                Else
-                    MsgBox("Error al querer ingresar el término de pago.", MsgBoxStyle.Critical)
+                If (txtcodigoCtaContado.Text <> "") Then
+                    objTerm.codigoCtaContado1 = Convert.ToInt32(txtcodigoCtaContado.Text)
+                ElseIf (txtcodigoCtaVentas.Text <> "") Then
+                    objTerm.codigoCtaVentas1 = Convert.ToInt32(txtcodigoCtaVentas.Text)
+                ElseIf (txtdiasNeto.Text <> "") Then
+                    objTerm.diasNeto1 = Convert.ToInt32(txtdiasNeto.Text)
                 End If
 
-            Else
-                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+                If objTerm.RegistrarNuevaTerminoPago() = 1 Then
+                        MsgBox("Registrado correctamente.")
+
+                        Dim dv As DataView = objTerm.SeleccionarTerminoPago.DefaultView
+                        dgbtabla.DataSource = dv
+                        lblcantidad.Text = dv.Count
+                        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
+                        rtxtdescripcion.ReadOnly = True
+                        txtdiasNeto.ReadOnly = True
+                        txtcodigoCtaContado.ReadOnly = True
+                        txtcodigoCtaVentas.ReadOnly = True
+                        txtcodigo.ReadOnly = True
+
+                        btnmodificar.Enabled = False
+                        btnguardar.Enabled = False
+                        btnnuevo.Enabled = True
+                    Else
+                        MsgBox("Error al querer ingresar el término de pago.", MsgBoxStyle.Critical)
+                    End If
+
+                Else
+                    MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
 
         Catch ex As Exception
@@ -240,5 +240,15 @@
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
     End Sub
 
+    Private Sub btnctaContado_Click(sender As Object, e As EventArgs) Handles btnctaContado.Click
+        'Asignar valor a label para diferenciar campo a llenar.
+        A_BuscarFormaPago.lblJC.Text = "TerminosPagoContado"
+        A_BuscarFormaPago.ShowDialog()
+    End Sub
 
+    Private Sub btnctaVentas_Click(sender As Object, e As EventArgs) Handles btnctaVentas.Click
+        'Asignar valor a label para diferenciar campo a llenar.
+        A_BuscarFormaPago.lblJC.Text = "TerminosPagoVentas"
+        A_BuscarFormaPago.ShowDialog()
+    End Sub
 End Class
