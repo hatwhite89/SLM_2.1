@@ -113,6 +113,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="negocio\ClsCaja.vb" />
+    <Compile Include="negocio\ClsCategoria.vb" />
     <Compile Include="negocio\ClsClasificacionContacto.vb" />
     <Compile Include="negocio\ClsCliente.vb" />
     <Compile Include="negocio\ClsCuenta.vb" />
@@ -191,6 +192,12 @@
       <DependentUpon>M_Caja.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_Caja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_Categoria.Designer.vb">
+      <DependentUpon>M_Categoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Categoria.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_Cliente.Designer.vb">
@@ -317,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Caja.resx">
       <DependentUpon>M_Caja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Categoria.resx">
+      <DependentUpon>M_Categoria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Cliente.resx">
       <DependentUpon>M_Cliente.vb</DependentUpon>

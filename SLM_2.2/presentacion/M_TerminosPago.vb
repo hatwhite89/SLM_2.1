@@ -70,8 +70,13 @@
             rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
             Dim temp As Integer = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value().ToString
             cbxtipoPago.SelectedIndex = temp - 1
-            M_Factura.txtcodigoTerminosPago.Text = txtcodigo.Text
-            'M_Factura.txtdescripcionTerminosPago.Text = rtxtdescripcion.Text
+            If (lblform.Text = "factura") Then
+                M_Factura.txtcodigoTerminosPago.Text = txtcodigo.Text
+                'M_Factura.txtdescripcionTerminosPago.Text = rtxtdescripcion.Text
+            ElseIf (lblform.Text = "cliente") Then
+                M_Cliente.txtcodigoTermino.Text = txtcodigo.Text
+                M_Cliente.txtnombreTerminos.Text = rtxtdescripcion.Text
+            End If
 
             If (Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value() = 0) Then
                 txtdiasNeto.Text = ""
@@ -314,4 +319,6 @@
             txtnombreCtaVentas.Text = ""
         End If
     End Sub
+
+
 End Class

@@ -3,6 +3,7 @@ Public Class ClsCliente
 
     Dim codigo, codigoClasificacion As Integer
     Dim nombre1, nombre2, apellido1, apellido2, nombreCompleto, scanId, identidad, rtn, genero, direccion, telCasa, telTrabajo, celular, correo1, correo2 As String
+    Dim codigoCategoria, codigoTerminoPago As String
     Dim fechaNacimiento As Date
     'Constructor
     Public Sub New()
@@ -24,6 +25,24 @@ Public Class ClsCliente
         End Get
         Set(value As Integer)
             codigoClasificacion = value
+        End Set
+    End Property
+
+    Public Property codigoCategoria1 As String
+        Get
+            Return codigoCategoria
+        End Get
+        Set(value As String)
+            codigoCategoria = value
+        End Set
+    End Property
+
+    Public Property codigoTerminoPago1 As String
+        Get
+            Return codigoTerminoPago
+        End Get
+        Set(value As String)
+            codigoTerminoPago = value
         End Set
     End Property
 
@@ -265,6 +284,15 @@ Public Class ClsCliente
         sqlpar.Value = CodigoClasificacion1
         sqlcom.Parameters.Add(sqlpar)
 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoCategoria" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoCategoria1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoTerminoPago" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoTerminoPago1
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -383,6 +411,15 @@ Public Class ClsCliente
         sqlpar.Value = CodigoClasificacion1
         sqlcom.Parameters.Add(sqlpar)
 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoCategoria" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoCategoria1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoTerminoPago" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoTerminoPago1
+        sqlcom.Parameters.Add(sqlpar)
 
 
         sqlpar = New SqlParameter

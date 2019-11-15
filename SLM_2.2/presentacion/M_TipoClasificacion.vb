@@ -155,8 +155,15 @@
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
             rtxtcomentario.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
 
-            M_ClasificacionContacto.txtcodigoTipo.Text = txtcodigo.Text
-            M_ClasificacionContacto.txtcomentarioTipo.Text = rtxtcomentario.Text
+            If (lbltipo.Text = "Categoria") Then
+                M_Categoria.txtcodigoTipo.Text = txtcodigo.Text
+                M_Categoria.txtdescripcionTipo.Text = rtxtcomentario.Text
+            ElseIf (lbltipo.Text = "ClasificacionContacto") Then
+                M_ClasificacionContacto.txtcodigoTipo.Text = txtcodigo.Text
+                M_ClasificacionContacto.txtcomentarioTipo.Text = rtxtcomentario.Text
+            End If
+
+
 
             btnmodificar.Enabled = True
 
