@@ -86,7 +86,7 @@
 
 
         If lblTipo.Text = "Activo" Then
-            rbtActivo.Checked = True
+            'rbtActivo.Checked = True
 
         End If
 

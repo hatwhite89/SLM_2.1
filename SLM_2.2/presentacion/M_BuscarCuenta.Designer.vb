@@ -23,13 +23,13 @@ Partial Class M_BuscarCuenta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.lbltipoCta = New System.Windows.Forms.Label()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
-        Me.txtcodigoB = New System.Windows.Forms.TextBox()
+        Me.txtcuentaB = New System.Windows.Forms.TextBox()
         Me.lblcodigoB = New System.Windows.Forms.Label()
         Me.btnbuscar = New System.Windows.Forms.Button()
-        Me.lbltipoCta = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -40,7 +40,7 @@ Partial Class M_BuscarCuenta
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
-        Me.gbxbusqueda.Controls.Add(Me.txtcodigoB)
+        Me.gbxbusqueda.Controls.Add(Me.txtcuentaB)
         Me.gbxbusqueda.Controls.Add(Me.lblcodigoB)
         Me.gbxbusqueda.Controls.Add(Me.btnbuscar)
         Me.gbxbusqueda.Location = New System.Drawing.Point(29, 12)
@@ -49,6 +49,15 @@ Partial Class M_BuscarCuenta
         Me.gbxbusqueda.TabIndex = 114
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR CUENTA"
+        '
+        'lbltipoCta
+        '
+        Me.lbltipoCta.AutoSize = True
+        Me.lbltipoCta.Location = New System.Drawing.Point(285, 182)
+        Me.lbltipoCta.Name = "lbltipoCta"
+        Me.lbltipoCta.Size = New System.Drawing.Size(0, 17)
+        Me.lbltipoCta.TabIndex = 116
+        Me.lbltipoCta.Visible = False
         '
         'lblcantidad
         '
@@ -64,13 +73,13 @@ Partial Class M_BuscarCuenta
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(44, 88)
+        Me.dgbtabla.Location = New System.Drawing.Point(44, 86)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(520, 444)
+        Me.dgbtabla.Size = New System.Drawing.Size(520, 446)
         Me.dgbtabla.TabIndex = 22
         '
         'lbltotal
@@ -82,12 +91,12 @@ Partial Class M_BuscarCuenta
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL DE CUENTAS"
         '
-        'txtcodigoB
+        'txtcuentaB
         '
-        Me.txtcodigoB.Location = New System.Drawing.Point(182, 34)
-        Me.txtcodigoB.Name = "txtcodigoB"
-        Me.txtcodigoB.Size = New System.Drawing.Size(192, 22)
-        Me.txtcodigoB.TabIndex = 115
+        Me.txtcuentaB.Location = New System.Drawing.Point(182, 34)
+        Me.txtcuentaB.Name = "txtcuentaB"
+        Me.txtcuentaB.Size = New System.Drawing.Size(192, 22)
+        Me.txtcuentaB.TabIndex = 115
         '
         'lblcodigoB
         '
@@ -111,14 +120,6 @@ Partial Class M_BuscarCuenta
         Me.btnbuscar.Text = "Buscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
         '
-        'lbltipoCta
-        '
-        Me.lbltipoCta.AutoSize = True
-        Me.lbltipoCta.Location = New System.Drawing.Point(285, 182)
-        Me.lbltipoCta.Name = "lbltipoCta"
-        Me.lbltipoCta.Size = New System.Drawing.Size(0, 17)
-        Me.lbltipoCta.TabIndex = 116
-        '
         'M_BuscarCuenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -139,7 +140,7 @@ Partial Class M_BuscarCuenta
     Friend WithEvents lblcantidad As Label
     Friend WithEvents dgbtabla As DataGridView
     Friend WithEvents lbltotal As Label
-    Friend WithEvents txtcodigoB As TextBox
+    Friend WithEvents txtcuentaB As TextBox
     Friend WithEvents lblcodigoB As Label
     Friend WithEvents btnbuscar As Button
     Friend WithEvents lbltipoCta As Label
