@@ -22,8 +22,8 @@
     End Sub
 
     Private Sub dtFormasPago_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtFormasPago.CellClick
-
         'COPIAR CODIGO DE BANCO
+
         If lblJC.Text = 1 Then
             frmDeposito.txtBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
             Me.Close()
@@ -31,9 +31,6 @@
             frmDeposito.txtTipoConta.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
             Me.Close()
         End If
-
-
-
     End Sub
 
     Private Sub A_BuscarFormaPago_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown

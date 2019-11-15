@@ -29,19 +29,19 @@
         End Try
 
     End Sub
-    Private Sub rbtActivo_CheckedChanged(sender As Object, e As EventArgs) Handles rbtActivo.CheckedChanged
+    Private Sub rbtActivo_CheckedChanged(sender As Object, e As EventArgs) 
         lblTipo.Text = "Activo"
     End Sub
-    Private Sub rbtPasivo_CheckedChanged(sender As Object, e As EventArgs) Handles rbtPasivo.CheckedChanged
+    Private Sub rbtPasivo_CheckedChanged(sender As Object, e As EventArgs) 
         lblTipo.Text = "Pasivo"
     End Sub
-    Private Sub rbtPatrimonio_CheckedChanged(sender As Object, e As EventArgs) Handles rbtPatrimonio.CheckedChanged
+    Private Sub rbtPatrimonio_CheckedChanged(sender As Object, e As EventArgs) 
         lblTipo.Text = "Patrimonio"
     End Sub
-    Private Sub rbtIngresos_CheckedChanged(sender As Object, e As EventArgs) Handles rbtIngresos.CheckedChanged
+    Private Sub rbtIngresos_CheckedChanged(sender As Object, e As EventArgs) 
         lblTipo.Text = "Ingresos"
     End Sub
-    Private Sub rbtGastos_CheckedChanged(sender As Object, e As EventArgs) Handles rbtGastos.CheckedChanged
+    Private Sub rbtGastos_CheckedChanged(sender As Object, e As EventArgs) 
         lblTipo.Text = "Gastos"
     End Sub
 
@@ -73,33 +73,27 @@
     Private Sub dtCuentas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtCuentas.CellClick
 
 
+
         Try
             txtCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(1).Value
             txtNombre.Text = dtCuentas.Rows(e.RowIndex).Cells(2).Value
             lblTipo.Text = dtCuentas.Rows(e.RowIndex).Cells(3).Value
-
-            If lblTipo.Text = "Activo" Then
-                rbtActivo.Checked = True
-            ElseIf lblTipo.Text = "Pasivo" Then
-                rbtPasivo.Checked = True
-            ElseIf lblTipo.Text = "Patrimonio" Then
-                rbtPatrimonio.Checked = True
-            ElseIf lblTipo.Text = "Ingresos" Then
-                rbtIngresos.Checked = True
-            ElseIf lblTipo.Text = "Gastos" Then
-                rbtGastos.Checked = True
-            End If
-
-
             chkEstado.Checked = dtCuentas.Rows(e.RowIndex).Cells(6).Value
+
         Catch ex As Exception
 
         End Try
 
 
+        If lblTipo.Text = "Activo" Then
+            rbtActivo.Checked = True
+
+        End If
+
+
+
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-    End Sub
+
 End Class
