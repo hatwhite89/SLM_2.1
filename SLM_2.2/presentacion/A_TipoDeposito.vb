@@ -12,20 +12,7 @@
         frmDeposito.txtComision.Visible = True
         frmDeposito.lblComision.Visible = True
         frmDeposito.lblTipoDeposito.Text = "Tarjeta"
-
-        frmDeposito.txtNro.Text = ""
-        frmDeposito.dtpFecha.ResetText()
-        frmDeposito.txtBanco.Text = ""
-        frmDeposito.txtContado.Text = ""
-        frmDeposito.txtTipoConta.Text = ""
-        frmDeposito.txtTotalDep.Text = ""
-        frmDeposito.txtMoneda.Text = "Lps"
-        frmDeposito.txtMonBase.Text = ""
-        frmDeposito.txtComision.Text = ""
-        frmDeposito.txtCajero.Text = ""
-        frmDeposito.txtComentario.Text = ""
-
-
+        Limpiar()
     End Sub
     Private Sub btnDeposito_Click(sender As Object, e As EventArgs) Handles btnDeposito.Click
         'Cerrar ventana TipoDeposito.
@@ -37,8 +24,18 @@
         frmDeposito.lblComision.Visible = False
 
         frmDeposito.lblTipoDeposito.Text = "Deposito Bancario"
+        Limpiar()
+    End Sub
 
+    Private Sub frmTipoDeposito_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        'Presionar tecla ESC para cerrar formulario.
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
+    End Sub
 
+    Sub Limpiar()
+        'Limpia todos los campos del formulario Deposito
         frmDeposito.txtNro.Text = ""
         frmDeposito.dtpFecha.ResetText()
         frmDeposito.txtBanco.Text = ""
@@ -50,5 +47,6 @@
         frmDeposito.txtComision.Text = ""
         frmDeposito.txtCajero.Text = ""
         frmDeposito.txtComentario.Text = ""
+
     End Sub
 End Class

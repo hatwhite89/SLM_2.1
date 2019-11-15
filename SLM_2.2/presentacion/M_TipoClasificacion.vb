@@ -145,7 +145,6 @@
         rtxtcomentario.ReadOnly = True
         txtcodigo.ReadOnly = True
 
-        'btnbuscarEspecialidad.Enabled = False
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
@@ -160,7 +159,6 @@
             M_ClasificacionContacto.txtcomentarioTipo.Text = rtxtcomentario.Text
 
             btnmodificar.Enabled = True
-            'btnbuscarEspecialidad.Enabled = True
 
             rtxtcomentario.ReadOnly = False
             txtcodigo.ReadOnly = True

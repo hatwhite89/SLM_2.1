@@ -354,7 +354,7 @@ Partial Class M_Medico
         Me.btnbuscar.Text = "Buscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
         '
-        'M_CrearMedico
+        'M_Medico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -363,8 +363,8 @@ Partial Class M_Medico
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.gbxmedico)
         Me.KeyPreview = True
-        Me.Name = "M_CrearMedico"
-        Me.Text = "Médico: Crear"
+        Me.Name = "M_Medico"
+        Me.Text = "Médico"
         Me.gbxmedico.ResumeLayout(False)
         Me.gbxmedico.PerformLayout()
         Me.gbxbusqueda.ResumeLayout(False)

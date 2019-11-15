@@ -29,6 +29,7 @@ Partial Class M_Cliente
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbxinfoCliente = New System.Windows.Forms.GroupBox()
+        Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnseleccionarCliente = New System.Windows.Forms.Button()
         Me.txtnombreCategoria = New System.Windows.Forms.TextBox()
         Me.txtnombreClasificacion = New System.Windows.Forms.TextBox()
@@ -87,7 +88,10 @@ Partial Class M_Cliente
         Me.lblapellido1 = New System.Windows.Forms.Label()
         Me.txtnombre1 = New System.Windows.Forms.TextBox()
         Me.lblnombre1 = New System.Windows.Forms.Label()
-        Me.btnnuevo = New System.Windows.Forms.Button()
+        Me.btnpaciente = New System.Windows.Forms.Button()
+        Me.btnbuscarPorNombre = New System.Windows.Forms.Button()
+        Me.lblNombreB = New System.Windows.Forms.Label()
+        Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxinfoCliente.SuspendLayout()
         Me.gbxgenero.SuspendLayout()
@@ -96,7 +100,7 @@ Partial Class M_Cliente
         'mtxtidentidadClienteB
         '
         Me.mtxtidentidadClienteB.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.mtxtidentidadClienteB.Location = New System.Drawing.Point(398, 40)
+        Me.mtxtidentidadClienteB.Location = New System.Drawing.Point(143, 38)
         Me.mtxtidentidadClienteB.Mask = "0000-0000-00000"
         Me.mtxtidentidadClienteB.Name = "mtxtidentidadClienteB"
         Me.mtxtidentidadClienteB.Size = New System.Drawing.Size(206, 24)
@@ -110,7 +114,7 @@ Partial Class M_Cliente
         Me.btnbuscarCliente.FlatAppearance.BorderSize = 0
         Me.btnbuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscarCliente.Location = New System.Drawing.Point(613, 40)
+        Me.btnbuscarCliente.Location = New System.Drawing.Point(361, 38)
         Me.btnbuscarCliente.Margin = New System.Windows.Forms.Padding(4)
         Me.btnbuscarCliente.Name = "btnbuscarCliente"
         Me.btnbuscarCliente.Size = New System.Drawing.Size(46, 32)
@@ -121,7 +125,7 @@ Partial Class M_Cliente
         '
         Me.lblidCliente.AutoSize = True
         Me.lblidCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblidCliente.Location = New System.Drawing.Point(320, 40)
+        Me.lblidCliente.Location = New System.Drawing.Point(65, 40)
         Me.lblidCliente.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblidCliente.Name = "lblidCliente"
         Me.lblidCliente.Size = New System.Drawing.Size(71, 18)
@@ -134,7 +138,7 @@ Partial Class M_Cliente
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(961, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1016, 28)
         Me.MenuStrip1.TabIndex = 53
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -203,13 +207,25 @@ Partial Class M_Cliente
         Me.gbxinfoCliente.Controls.Add(Me.lblapellido1)
         Me.gbxinfoCliente.Controls.Add(Me.txtnombre1)
         Me.gbxinfoCliente.Controls.Add(Me.lblnombre1)
-        Me.gbxinfoCliente.Location = New System.Drawing.Point(12, 70)
+        Me.gbxinfoCliente.Location = New System.Drawing.Point(40, 79)
         Me.gbxinfoCliente.Name = "gbxinfoCliente"
         Me.gbxinfoCliente.Size = New System.Drawing.Size(938, 473)
         Me.gbxinfoCliente.TabIndex = 54
         Me.gbxinfoCliente.TabStop = False
         Me.gbxinfoCliente.Text = "Información de Cliente/Paciente"
         Me.gbxinfoCliente.Visible = False
+        '
+        'btnnuevo
+        '
+        Me.btnnuevo.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnnuevo.Location = New System.Drawing.Point(182, 414)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(130, 38)
+        Me.btnnuevo.TabIndex = 116
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.UseVisualStyleBackColor = False
         '
         'btnseleccionarCliente
         '
@@ -759,24 +775,60 @@ Partial Class M_Cliente
         Me.lblnombre1.TabIndex = 67
         Me.lblnombre1.Text = "1er Nombre"
         '
-        'btnnuevo
+        'btnpaciente
         '
-        Me.btnnuevo.BackColor = System.Drawing.Color.SkyBlue
-        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnuevo.Location = New System.Drawing.Point(182, 414)
-        Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(130, 38)
-        Me.btnnuevo.TabIndex = 116
-        Me.btnnuevo.Text = "Nuevo"
-        Me.btnnuevo.UseVisualStyleBackColor = False
+        Me.btnpaciente.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnpaciente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnpaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnpaciente.Location = New System.Drawing.Point(819, 34)
+        Me.btnpaciente.Name = "btnpaciente"
+        Me.btnpaciente.Size = New System.Drawing.Size(130, 32)
+        Me.btnpaciente.TabIndex = 117
+        Me.btnpaciente.Text = "Paciente"
+        Me.btnpaciente.UseVisualStyleBackColor = False
         '
-        'M_BuscarCliente
+        'btnbuscarPorNombre
+        '
+        Me.btnbuscarPorNombre.BackgroundImage = CType(resources.GetObject("btnbuscarPorNombre.BackgroundImage"), System.Drawing.Image)
+        Me.btnbuscarPorNombre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnbuscarPorNombre.FlatAppearance.BorderSize = 0
+        Me.btnbuscarPorNombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnbuscarPorNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnbuscarPorNombre.Location = New System.Drawing.Point(712, 36)
+        Me.btnbuscarPorNombre.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnbuscarPorNombre.Name = "btnbuscarPorNombre"
+        Me.btnbuscarPorNombre.Size = New System.Drawing.Size(46, 32)
+        Me.btnbuscarPorNombre.TabIndex = 118
+        Me.btnbuscarPorNombre.UseVisualStyleBackColor = True
+        '
+        'lblNombreB
+        '
+        Me.lblNombreB.AutoSize = True
+        Me.lblNombreB.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreB.Location = New System.Drawing.Point(433, 43)
+        Me.lblNombreB.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblNombreB.Name = "lblNombreB"
+        Me.lblNombreB.Size = New System.Drawing.Size(62, 18)
+        Me.lblNombreB.TabIndex = 119
+        Me.lblNombreB.Text = "Nombre"
+        '
+        'txtnombreB
+        '
+        Me.txtnombreB.Location = New System.Drawing.Point(502, 42)
+        Me.txtnombreB.Name = "txtnombreB"
+        Me.txtnombreB.Size = New System.Drawing.Size(206, 22)
+        Me.txtnombreB.TabIndex = 117
+        '
+        'M_Cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(961, 561)
+        Me.ClientSize = New System.Drawing.Size(1016, 576)
+        Me.Controls.Add(Me.txtnombreB)
+        Me.Controls.Add(Me.btnbuscarPorNombre)
+        Me.Controls.Add(Me.lblNombreB)
+        Me.Controls.Add(Me.btnpaciente)
         Me.Controls.Add(Me.gbxinfoCliente)
         Me.Controls.Add(Me.mtxtidentidadClienteB)
         Me.Controls.Add(Me.btnbuscarCliente)
@@ -785,8 +837,8 @@ Partial Class M_Cliente
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "M_BuscarCliente"
-        Me.Text = "Buscar Cliente"
+        Me.Name = "M_Cliente"
+        Me.Text = "Cliente"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.gbxinfoCliente.ResumeLayout(False)
@@ -863,4 +915,8 @@ Partial Class M_Cliente
     Friend WithEvents txtnombreAseguradora As TextBox
     Friend WithEvents btnseleccionarCliente As Button
     Friend WithEvents btnnuevo As Button
+    Friend WithEvents btnpaciente As Button
+    Friend WithEvents btnbuscarPorNombre As Button
+    Friend WithEvents lblNombreB As Label
+    Friend WithEvents txtnombreB As TextBox
 End Class

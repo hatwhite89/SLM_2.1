@@ -78,6 +78,7 @@ Partial Class frmTipoDeposito
         Me.Controls.Add(Me.btnDeposito)
         Me.Controls.Add(Me.btnTarjeta)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.KeyPreview = True
         Me.Name = "frmTipoDeposito"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout(False)

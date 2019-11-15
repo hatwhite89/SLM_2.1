@@ -13,6 +13,8 @@ Public Class ClsDeposito
 
     End Sub
 
+    '::::::::::::::::::::::::::::: METODOS SET Y GET ::::::::::::::::::::::::::::::
+
     'Codigo de Deposito
     Public Property Cod As Integer
         Get
@@ -138,6 +140,8 @@ Public Class ClsDeposito
         End Set
     End Property
 
+
+    '::::::::::::::::::::::::::::: FUNCIONES DE MANTENIMIENTO ::::::::::::::::::::::::::::::
     Public Function registrarNuevoDeposito() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter

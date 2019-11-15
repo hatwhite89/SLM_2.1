@@ -1,7 +1,19 @@
-﻿Public Class M_Sucursal
-    Private Sub btncancelar_Click(sender As Object, e As EventArgs)
-        Me.Close()
+﻿Public Class M_TipoTermino
+    Private Sub M_TipoTermino_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim objTipo As New ClsTipoTermino
+        Dim dv As DataView = objTipo.SeleccionarTipoTermino.DefaultView
+        dgbtabla.DataSource = dv
+        lblcantidad.Text = dv.Count
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
+        rtxtdescripcion.ReadOnly = True
+        txtcodigo.ReadOnly = True
+
+        btnmodificar.Enabled = False
+        btnguardar.Enabled = False
+        btnnuevo.Enabled = True
     End Sub
+
 
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -9,32 +21,17 @@
         End If
     End Sub
 
-    Private Sub M_Sucursal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim objSuc As New ClsSucursal
-        Dim dv As DataView = objSuc.SeleccionarSucursal.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-
-        txtnombre.ReadOnly = True
-        txtcodigo.ReadOnly = True
-
-        btnmodificar.Enabled = False
-        btnguardar.Enabled = False
-        btnnuevo.Enabled = True
-    End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-            txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
 
-            M_Factura.txtcodigoSucursal.Text = txtcodigo.Text
-            M_Factura.txtnombreSucursal.Text = txtnombre.Text
+            'M_Factura.txtcodigoSucursal.Text = txtcodigo.Text
+            'M_Factura.txtnombreSucursal.Text = txtnombre.Text
 
             btnmodificar.Enabled = True
 
-            txtnombre.ReadOnly = False
-            txtcodigo.ReadOnly = False
+            rtxtdescripcion.ReadOnly = False
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -42,20 +39,21 @@
 
     Private Sub limpiar()
         txtcodigo.Text() = ""
-        txtnombre.Text() = ""
-        txtnombreB.Text() = ""
+        rtxtdescripcion.Text() = ""
+        txtdescripcionB.Text() = ""
 
-        txtnombre.ReadOnly = False
-        txtcodigo.ReadOnly = False
+        rtxtdescripcion.ReadOnly = False
 
         btnbuscar.Enabled = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
         btnnuevo.Enabled = False
     End Sub
+
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
     End Sub
+
 
     Private Function sinDobleEspacio(ByVal cadena As String) As String
         Dim testString As String = cadena
@@ -72,34 +70,33 @@
         ReDim Preserve testArray(lastNonEmpty)
         Return texto
     End Function
+
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (txtcodigo.Text <> "" And txtnombre.Text <> "") Then
-                txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
-                txtnombre.Text = sinDobleEspacio(txtnombre.Text)
-                Dim objSuc As New ClsSucursal
-                With objSuc
-                    .Codigo1 = txtcodigo.Text
-                    .Nombre1 = txtnombre.Text
+            If (rtxtdescripcion.Text <> "") Then
+                rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
+                Dim objTipo As New ClsTipoTermino
+                With objTipo
+                    .Descripcion1 = rtxtdescripcion.Text
                 End With
 
-                If objSuc.RegistrarNuevaSucursal() = 1 Then
+                If objTipo.RegistrarNuevoTipoTermino() = 1 Then
                     MsgBox("Registrado correctamente.")
 
-                    Dim dv As DataView = objSuc.SeleccionarSucursal.DefaultView
+                    Dim dv As DataView = objTipo.SeleccionarTipoTermino.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
                     txtcodigo.ReadOnly = True
-                    txtnombre.ReadOnly = True
+                    rtxtdescripcion.ReadOnly = True
 
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
                     btnnuevo.Enabled = True
                 Else
-                    MsgBox("Error al querer ingresar la sucursal.", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer ingresar el tipo de término.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -114,31 +111,30 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (txtcodigo.Text <> "" And txtnombre.Text <> "") Then
-                txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
-                txtnombre.Text = sinDobleEspacio(txtnombre.Text)
-                Dim objSuc As New ClsSucursal
-                With objSuc
+            If (txtcodigo.Text <> "" And rtxtdescripcion.Text <> "") Then
+                rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
+                Dim objTipo As New ClsTipoTermino
+                With objTipo
                     .Codigo1 = txtcodigo.Text
-                    .Nombre1 = txtnombre.Text
+                    .Descripcion1 = rtxtdescripcion.Text
                 End With
 
-                If objSuc.ModificarSucursal() = 1 Then
+                If objTipo.ModificarTipoTermino() = 1 Then
                     MsgBox("Modificado correctamente.")
 
-                    Dim dv As DataView = objSuc.SeleccionarSucursal.DefaultView
+                    Dim dv As DataView = objTipo.SeleccionarTipoTermino.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
                     txtcodigo.ReadOnly = True
-                    txtnombre.ReadOnly = True
+                    rtxtdescripcion.ReadOnly = True
 
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
                     btnnuevo.Enabled = True
                 Else
-                    MsgBox("Error al querer modificar la sucursal.", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer modificar el tipo de término.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -156,13 +152,14 @@
     End Sub
 
     Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
-        Dim objSuc As New ClsSucursal
-        With objSuc
-            .Nombre1 = txtnombreB.Text
+        Dim objTipo As New ClsTipoTermino
+        With objTipo
+            .Descripcion1 = txtdescripcionB.Text
         End With
-        Dim dv As DataView = objSuc.BuscarSucursal.DefaultView
+        Dim dv As DataView = objTipo.BuscarTipoTermino.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
     End Sub
+
 End Class

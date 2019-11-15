@@ -5,13 +5,13 @@ Public Class ClsFormaPago
     'VARIABLES DE FORMA DE PAGO
     Dim codigo, comentario, nombreBanco, formulario, tipo, banco As String
     Dim cuenta, nroCtaBanco, codFormaPago As Integer
-    Dim comision As Double
+    Dim comision, retencion As Double
     'Constructor
     Public Sub New()
 
     End Sub
 
-    'METODOS SET Y GET DE VARIABLES
+    '::::::::::::::::::::::::::::: METODOS SET Y GET ::::::::::::::::::::::::::::::
 
     'codigo
     Public Property Cod As String
@@ -111,8 +111,20 @@ Public Class ClsFormaPago
             comision = value
         End Set
     End Property
+    'Retencion
+    Public Property Retenci_on As Double
+        Get
+            Return retencion
+        End Get
+        Set(value As Double)
+            retencion = value
+        End Set
+    End Property
+
+    '::::::::::::::::::::::::::::: FUNCIONES DE MANTENIMIENTO ::::::::::::::::::::::::::::::
+
     'Guardar una nueva forma de pago
-    Public Function RegistrarNuevoPaciente() As String
+    Public Function RegistrarNuevaFormaPago() As String
 
 
         Dim sqlcom As SqlCommand
@@ -122,7 +134,7 @@ Public Class ClsFormaPago
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarFormaPago"
+        sqlcom.CommandText = "slmInsertarFormaPago_A"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -168,6 +180,11 @@ Public Class ClsFormaPago
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "comision"
         sqlpar.Value = comision
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "retencion"
+        sqlpar.Value = Retenci_on
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -371,6 +388,12 @@ Public Class ClsFormaPago
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "retencion"
+        sqlpar.Value = Retenci_on
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -386,5 +409,19 @@ Public Class ClsFormaPago
 
         Return par_sal
 
+    End Function
+
+    'Mostrar data de formas de pago
+    Public Function mostrarFormasPago() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("slmMostrarFormaPago_A", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
     End Function
 End Class

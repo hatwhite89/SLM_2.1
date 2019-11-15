@@ -425,6 +425,28 @@ Public Class ClsCliente
 
     End Function
 
+    Public Function BuscarClienteNombre() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "slmBuscarClienteName_M"
+            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = NombreCompleto1
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
     Public Function BuscarClienteCode() As DataTable
 
         Dim objCon As New ClsConnection

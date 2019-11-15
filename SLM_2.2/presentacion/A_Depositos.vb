@@ -235,4 +235,14 @@
         End If
     End Sub
 
+    Private Sub frmDeposito_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
+    End Sub
+
+    Private Sub txtComentario_TextChanged(sender As Object, e As EventArgs) Handles txtComentario.TextChanged
+
+
+    End Sub
 End Class
