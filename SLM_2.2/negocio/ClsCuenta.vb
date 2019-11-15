@@ -5,7 +5,6 @@ Public Class ClsCuenta
     'VARIABLES
     Dim nombre, tipoCuenta As String
     Dim codCuenta, cuenta As Integer
-    Dim debe, haber As Double
     Dim estado As Boolean
 
     'Constructor
@@ -55,26 +54,6 @@ Public Class ClsCuenta
         End Set
     End Property
 
-    'debe
-    Public Property Deb_e As Double
-        Get
-            Return debe
-        End Get
-        Set(value As Double)
-            debe = value
-        End Set
-    End Property
-
-    'haber
-    Public Property Habe_r As Double
-        Get
-            Return haber
-        End Get
-        Set(value As Double)
-            haber = value
-        End Set
-    End Property
-
     'Estado
     Public Property Esta_do As Boolean
         Get
@@ -112,16 +91,6 @@ Public Class ClsCuenta
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "tipoCuenta"
         sqlpar.Value = Tipo_Cuenta
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "debe"
-        sqlpar.Value = Deb_e
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "haber"
-        sqlpar.Value = Habe_r
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -192,16 +161,6 @@ Public Class ClsCuenta
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "tipoCuenta"
         sqlpar.Value = Tipo_Cuenta
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "debe"
-        sqlpar.Value = Deb_e
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "haber"
-        sqlpar.Value = Habe_r
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
