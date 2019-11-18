@@ -29,6 +29,10 @@ Partial Class frmMenuConta
         Me.tpPagos = New System.Windows.Forms.TabPage()
         Me.btnPagos = New System.Windows.Forms.Button()
         Me.TpMantenimiento = New System.Windows.Forms.TabPage()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnProveedor = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnCategoriaProveedor = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnCuentas = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -98,6 +102,10 @@ Partial Class frmMenuConta
         '
         'TpMantenimiento
         '
+        Me.TpMantenimiento.Controls.Add(Me.Label4)
+        Me.TpMantenimiento.Controls.Add(Me.btnProveedor)
+        Me.TpMantenimiento.Controls.Add(Me.Label3)
+        Me.TpMantenimiento.Controls.Add(Me.btnCategoriaProveedor)
         Me.TpMantenimiento.Controls.Add(Me.Label2)
         Me.TpMantenimiento.Controls.Add(Me.btnCuentas)
         Me.TpMantenimiento.Controls.Add(Me.Label1)
@@ -109,6 +117,48 @@ Partial Class frmMenuConta
         Me.TpMantenimiento.TabIndex = 2
         Me.TpMantenimiento.Text = "Mantenimiento"
         Me.TpMantenimiento.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(158, 48)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(56, 13)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "Proveedor"
+        '
+        'btnProveedor
+        '
+        Me.btnProveedor.BackgroundImage = CType(resources.GetObject("btnProveedor.BackgroundImage"), System.Drawing.Image)
+        Me.btnProveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnProveedor.FlatAppearance.BorderSize = 0
+        Me.btnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnProveedor.Location = New System.Drawing.Point(161, 7)
+        Me.btnProveedor.Name = "btnProveedor"
+        Me.btnProveedor.Size = New System.Drawing.Size(41, 38)
+        Me.btnProveedor.TabIndex = 6
+        Me.btnProveedor.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(3, 187)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(104, 13)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Categoria Proveedor"
+        '
+        'btnCategoriaProveedor
+        '
+        Me.btnCategoriaProveedor.BackgroundImage = CType(resources.GetObject("btnCategoriaProveedor.BackgroundImage"), System.Drawing.Image)
+        Me.btnCategoriaProveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCategoriaProveedor.FlatAppearance.BorderSize = 0
+        Me.btnCategoriaProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCategoriaProveedor.Location = New System.Drawing.Point(29, 146)
+        Me.btnCategoriaProveedor.Name = "btnCategoriaProveedor"
+        Me.btnCategoriaProveedor.Size = New System.Drawing.Size(41, 38)
+        Me.btnCategoriaProveedor.TabIndex = 4
+        Me.btnCategoriaProveedor.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -156,6 +206,7 @@ Partial Class frmMenuConta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(312, 366)
         Me.Controls.Add(Me.tcMenu)
         Me.KeyPreview = True
@@ -181,4 +232,8 @@ Partial Class frmMenuConta
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents btnCuentas As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents btnCategoriaProveedor As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents btnProveedor As Button
 End Class

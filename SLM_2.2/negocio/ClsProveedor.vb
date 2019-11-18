@@ -2,7 +2,7 @@
 Public Class ClsProveedor
 
     Dim codProveedor As Integer
-    Dim codBreve, nombreProveedor, telefono, email, direccion, sitioweb As String
+    Dim codBreve, nombreProveedor, telefono, contactoPrincipal, telContacto, email, direccion, sitioweb As String
 
     'Constructor
     Public Sub New()
@@ -47,6 +47,26 @@ Public Class ClsProveedor
         End Get
         Set(value As String)
             telefono = value
+        End Set
+    End Property
+
+    'Contacto Principal
+    Public Property Contacto_Principal As String
+        Get
+            Return contactoPrincipal
+        End Get
+        Set(value As String)
+            contactoPrincipal = value
+        End Set
+    End Property
+
+    'Telefono Contacto Principal
+    Public Property Telefono_ContactoPrincipal As String
+        Get
+            Return telContacto
+        End Get
+        Set(value As String)
+            telContacto = value
         End Set
     End Property
 
@@ -110,6 +130,16 @@ Public Class ClsProveedor
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "contactoPrincipal"
+        sqlpar.Value = Contacto_Principal
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "telContacto"
+        sqlpar.Value = Telefono_ContactoPrincipal
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "email"
         sqlpar.Value = Emai_l
         sqlcom.Parameters.Add(sqlpar)
@@ -142,7 +172,7 @@ Public Class ClsProveedor
     End Function
 
     'Modificar una registro de proveedor
-    Public Function modificarNuevoProveedor() As String
+    Public Function ModificarProveedor() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
@@ -150,7 +180,7 @@ Public Class ClsProveedor
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarProveedor_A"
+        sqlcom.CommandText = "slmActualizarProveedor_A"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -171,6 +201,16 @@ Public Class ClsProveedor
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "telefono"
         sqlpar.Value = Telefo_no
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "contactoPrincipal"
+        sqlpar.Value = Contacto_Principal
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "telContacto"
+        sqlpar.Value = Telefono_ContactoPrincipal
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -199,15 +239,47 @@ Public Class ClsProveedor
         sqlcom.Connection = con.getConexion
         sqlcom.ExecuteNonQuery()
 
-        par_sal = sqlcom.Parameters("Salida").Value
+        par_sal = sqlcom.Parameters("salida").Value
 
         Return par_sal
 
     End Function
 
+    'Listar Proveedores
+    Public Function listarProveedores() As DataTable
 
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
 
+        Using da As New SqlDataAdapter("slmListarProveedor_A", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 
+    'Buscar Proveedor
+    Public Function buscarProveedor() As DataTable
 
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "slmBuscarProveedor_A"
+            cmd.Parameters.Add("@nombreProveedor", SqlDbType.VarChar).Value = Nombre_Proveedor
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
 
 End Class
