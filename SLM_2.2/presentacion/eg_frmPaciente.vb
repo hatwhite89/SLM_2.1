@@ -36,7 +36,8 @@
     End Sub
 
     Private Sub tbPaciente_Click(sender As Object, e As EventArgs) Handles tbPaciente.Click
-        Data
+
         ComboBox1.Items.Add("hola")
+
     End Sub
 End Class

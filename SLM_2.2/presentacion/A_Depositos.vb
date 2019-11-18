@@ -233,8 +233,5 @@
         End If
     End Sub
 
-    Private Sub txtComentario_TextChanged(sender As Object, e As EventArgs) Handles txtComentario.TextChanged
 
-
-    End Sub
 End Class
