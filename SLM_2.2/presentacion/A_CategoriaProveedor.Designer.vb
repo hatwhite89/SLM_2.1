@@ -91,7 +91,7 @@ Partial Class A_CategoriaProveedor
         '
         'txtAnticipos
         '
-        Me.txtAnticipos.Location = New System.Drawing.Point(110, 114)
+        Me.txtAnticipos.Location = New System.Drawing.Point(111, 114)
         Me.txtAnticipos.Name = "txtAnticipos"
         Me.txtAnticipos.Size = New System.Drawing.Size(100, 20)
         Me.txtAnticipos.TabIndex = 7
