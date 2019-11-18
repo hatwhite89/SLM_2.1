@@ -37,6 +37,8 @@
                 txtcorreo.Text = CStr(row("correo1"))
                 txtcorreo2.Text = CStr(row("correo2"))
                 txtcodigoClasificacion.Text = CStr(row("codigoClasificacion"))
+                txtcodigoCategoria.Text = CStr(row("codigoCategoria"))
+                txtcodigoTermino.Text = CStr(row("codigoTerminoPago"))
 
                 gbxinfoCliente.Visible = True
                 btnactualizarCliente.Enabled = True
@@ -287,7 +289,7 @@
                 numero = 0
             End If
 
-            If (genero <> "" And numero > 0 And txtnombre1.Text <> "" And txtapellido1.Text <> "" And txtapellido2.Text <> "" And dtpfechaNacimiento.Text <> "" And rtxtdireccion.Text <> "" And txtcodigoClasificacion.Text <> "") Then
+            If (genero <> "" And txtnombreTerminos.Text <> "" And txtnombreCategoria.Text <> "" And numero > 0 And txtnombre1.Text <> "" And txtapellido1.Text <> "" And txtapellido2.Text <> "" And dtpfechaNacimiento.Text <> "" And rtxtdireccion.Text <> "" And txtcodigoClasificacion.Text <> "") Then
 
                 Dim testString As String = txtnombreCompleto.Text()
                 Dim texto As String = ""
@@ -400,6 +402,7 @@
         txtcodigo.Text = ""
         txtnombreClasificacion.Text = ""
         txtnombreB.Text = ""
+        txtcodigoTermino.Text = "CO"
 
         rbtnfemenino.Checked = False
         rbtnmasculino.Checked = False
@@ -504,6 +507,8 @@
                 txtcorreo.Text = CStr(row("correo1"))
                 txtcorreo2.Text = CStr(row("correo2"))
                 txtcodigoClasificacion.Text = CStr(row("codigoClasificacion"))
+                txtcodigoCategoria.Text = CStr(row("codigoCategoria"))
+                txtcodigoTermino.Text = CStr(row("codigoTerminoPago"))
 
                 gbxinfoCliente.Visible = True
                 btnactualizarCliente.Enabled = True
@@ -533,6 +538,60 @@
     End Sub
 
     Private Sub M_Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub btncategoria_Click(sender As Object, e As EventArgs) Handles btncategoria.Click
+        M_Categoria.ShowDialog()
+    End Sub
+
+    Private Sub btnterminosPago_Click(sender As Object, e As EventArgs) Handles btnterminosPago.Click
+        M_TerminosPago.lblform.Text = "cliente"
+        M_TerminosPago.ShowDialog()
+    End Sub
+
+    Private Sub txtcodigoTermino_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoTermino.TextChanged
+        If (txtcodigoTermino.Text <> "") Then
+            Try
+                Dim objTerm As New ClsTerminoPago
+
+                With objTerm
+                    .Codigo1 = txtcodigoTermino.Text
+                End With
+                Dim dt As New DataTable
+                dt = objTerm.BuscarTerminoPagoCode()
+                Dim row As DataRow = dt.Rows(0)
+                txtnombreTerminos.Text = CStr(row("descripcion"))
+            Catch ex As Exception
+                MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
+            End Try
+
+        Else
+            txtcodigoTermino.Text = ""
+        End If
+    End Sub
+
+    Private Sub txtcodigoCategoria_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoCategoria.TextChanged
+        If (txtcodigoCategoria.Text <> "") Then
+            Try
+                Dim objCat As New ClsCategoria
+
+                With objCat
+                    .Codigo1 = txtcodigoCategoria.Text
+                End With
+                Dim dt As New DataTable
+                dt = objCat.BuscarCategoriaCode()
+                Dim row As DataRow = dt.Rows(0)
+                txtnombreCategoria.Text = CStr(row("descripcion"))
+            Catch ex As Exception
+                MsgBox("No existe el código de la categoría.", MsgBoxStyle.Critical, "Validación")
+            End Try
+
+        Else
+            txtcodigoTermino.Text = ""
+        End If
+
+
 
     End Sub
 End Class

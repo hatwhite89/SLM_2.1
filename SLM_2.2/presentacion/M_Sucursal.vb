@@ -1,7 +1,4 @@
 ﻿Public Class M_Sucursal
-    Private Sub btncancelar_Click(sender As Object, e As EventArgs)
-        Me.Close()
-    End Sub
 
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -34,7 +31,7 @@
             btnmodificar.Enabled = True
 
             txtnombre.ReadOnly = False
-            txtcodigo.ReadOnly = False
+            txtcodigo.ReadOnly = True
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try

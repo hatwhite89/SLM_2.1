@@ -5,7 +5,7 @@ Public Class ClsFormaPago
     'VARIABLES DE FORMA DE PAGO
     Dim codigo, comentario, nombreBanco, formulario, tipo, banco As String
     Dim cuenta, nroCtaBanco, codFormaPago As Integer
-    Dim comision, retencion As Double
+    Dim retencion As Double
     'Constructor
     Public Sub New()
 
@@ -102,15 +102,6 @@ Public Class ClsFormaPago
         End Set
     End Property
 
-    'Comision
-    Public Property Comi_sion As Double
-        Get
-            Return comision
-        End Get
-        Set(value As Double)
-            comision = value
-        End Set
-    End Property
     'Retencion
     Public Property Retenci_on As Double
         Get
@@ -175,11 +166,6 @@ Public Class ClsFormaPago
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "banco"
         sqlpar.Value = Ban_co
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "comision"
-        sqlpar.Value = comision
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -263,28 +249,7 @@ Public Class ClsFormaPago
         End Using
 
     End Function
-    'Capturar comision de forma de pago
-    Public Function capturarComision() As DataTable
 
-        Dim objCon As New ClsConnection
-        Dim cn As New SqlConnection
-        cn = objCon.getConexion
-
-        Using cmd As New SqlCommand
-            cmd.Connection = cn
-            cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmCapturarComision_A"
-            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Cod
-            Using da As New SqlDataAdapter
-                da.SelectCommand = cmd
-                Using dt As New DataTable
-                    da.Fill(dt)
-                    Return dt
-                End Using
-            End Using
-        End Using
-
-    End Function
 
     'Eliminar Forma de Pago
     Public Function eliminarFormaPago() As DataTable
@@ -380,11 +345,6 @@ Public Class ClsFormaPago
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "banco"
         sqlpar.Value = Ban_co
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "comision"
-        sqlpar.Value = comision
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

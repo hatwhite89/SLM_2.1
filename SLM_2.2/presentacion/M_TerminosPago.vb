@@ -68,13 +68,33 @@
         Try
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
             rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
-            txtdiasNeto.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
-            txtcodigoCtaContado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
-            txtcodigoCtaVentas.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
             Dim temp As Integer = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value().ToString
             cbxtipoPago.SelectedIndex = temp - 1
-            M_Factura.txtcodigoTerminosPago.Text = txtcodigo.Text
-            'M_Factura.txtdescripcionTerminosPago.Text = rtxtdescripcion.Text
+            If (lblform.Text = "factura") Then
+                M_Factura.txtcodigoTerminosPago.Text = txtcodigo.Text
+                'M_Factura.txtdescripcionTerminosPago.Text = rtxtdescripcion.Text
+            ElseIf (lblform.Text = "cliente") Then
+                M_Cliente.txtcodigoTermino.Text = txtcodigo.Text
+                M_Cliente.txtnombreTerminos.Text = rtxtdescripcion.Text
+            End If
+
+            If (Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value() = 0) Then
+                txtdiasNeto.Text = ""
+            Else
+                txtdiasNeto.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+            End If
+
+            If (Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value() = 0) Then
+                txtcodigoCtaContado.Text = ""
+            Else
+                txtcodigoCtaContado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+            End If
+
+            If (Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value() = 0) Then
+                txtcodigoCtaVentas.Text = ""
+            Else
+                txtcodigoCtaVentas.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+            End If
 
             btnmodificar.Enabled = True
 
@@ -82,6 +102,7 @@
             txtdiasNeto.ReadOnly = False
             txtcodigoCtaContado.ReadOnly = False
             txtcodigoCtaVentas.ReadOnly = False
+            txtcodigo.ReadOnly = True
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -183,16 +204,23 @@
         Try
 
             If (txtcodigo.Text <> "" And rtxtdescripcion.Text <> "") Then
+
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
+
                 Dim objTerm As New ClsTerminoPago
                 With objTerm
                     .Codigo1 = txtcodigo.Text
                     .Descripcion1 = rtxtdescripcion.Text
-                    .diasNeto1 = Convert.ToInt32(txtdiasNeto.Text)
-                    .codigoCtaContado1 = Convert.ToInt32(txtcodigoCtaContado.Text)
-                    .codigoCtaVentas1 = Convert.ToInt32(txtcodigoCtaVentas.Text)
                     .codigoTipoTermino1 = Convert.ToInt32(cbxtipoPago.SelectedIndex.ToString) + 1
                 End With
+
+                If (txtcodigoCtaContado.Text <> "") Then
+                    objTerm.codigoCtaContado1 = Convert.ToInt32(txtcodigoCtaContado.Text)
+                ElseIf (txtcodigoCtaVentas.Text <> "") Then
+                    objTerm.codigoCtaVentas1 = Convert.ToInt32(txtcodigoCtaVentas.Text)
+                ElseIf (txtdiasNeto.Text <> "") Then
+                    objTerm.diasNeto1 = Convert.ToInt32(txtdiasNeto.Text)
+                End If
 
                 If objTerm.ModificarTerminoPago() = 1 Then
                     MsgBox("Modificado correctamente.")
@@ -242,13 +270,55 @@
 
     Private Sub btnctaContado_Click(sender As Object, e As EventArgs) Handles btnctaContado.Click
         'Asignar valor a label para diferenciar campo a llenar.
-        A_BuscarFormaPago.lblJC.Text = "TerminosPagoContado"
-        A_BuscarFormaPago.ShowDialog()
+        M_BuscarCuenta.lbltipoCta.Text = "Contado"
+        M_BuscarCuenta.ShowDialog()
     End Sub
 
     Private Sub btnctaVentas_Click(sender As Object, e As EventArgs) Handles btnctaVentas.Click
         'Asignar valor a label para diferenciar campo a llenar.
-        A_BuscarFormaPago.lblJC.Text = "TerminosPagoVentas"
-        A_BuscarFormaPago.ShowDialog()
+        M_BuscarCuenta.lbltipoCta.Text = "Ventas"
+        M_BuscarCuenta.ShowDialog()
     End Sub
+
+    Private Sub txtcodigoCtaContado_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoCtaContado.TextChanged
+        If (txtcodigoCtaContado.Text <> "") Then
+            Try
+                Dim objEsp As New ClsCuenta
+                With objEsp
+                    .Cod_Cuenta = txtcodigoCtaContado.Text
+                End With
+                Dim dt As New DataTable
+                dt = objEsp.BuscarCuentaCode()
+                Dim row As DataRow = dt.Rows(0)
+                txtnombreCtaContado.Text = CStr(row("cuenta"))
+            Catch ex As Exception
+                MsgBox("No existe el código de la cuenta.", MsgBoxStyle.Critical, "Validación")
+            End Try
+        Else
+            txtcodigoCtaContado.Text = ""
+            txtnombreCtaContado.Text = ""
+        End If
+    End Sub
+
+    Private Sub txtcodigoCtaVentas_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoCtaVentas.TextChanged
+        If (txtcodigoCtaVentas.Text <> "") Then
+            Try
+                Dim objEsp As New ClsCuenta
+                With objEsp
+                    .Cod_Cuenta = txtcodigoCtaVentas.Text
+                End With
+                Dim dt As New DataTable
+                dt = objEsp.BuscarCuentaCode()
+                Dim row As DataRow = dt.Rows(0)
+                txtnombreCtaVentas.Text = CStr(row("cuenta"))
+            Catch ex As Exception
+                MsgBox("No existe el código de la cuenta.", MsgBoxStyle.Critical, "Validación")
+            End Try
+        Else
+            txtcodigoCtaVentas.Text = ""
+            txtnombreCtaVentas.Text = ""
+        End If
+    End Sub
+
+
 End Class

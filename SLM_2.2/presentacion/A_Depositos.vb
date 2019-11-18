@@ -169,16 +169,8 @@
     End Sub
 
     Private Sub linklblCalcular_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklblCalcular.LinkClicked
-        Dim Comision As New ClsFormaPago
-        Dim dt As New DataTable
-        Dim comi As New Double
 
         Try
-            Comision.Cod = txtBanco.Text
-            'Capturando la comision del banco seleccionado
-            dt = Comision.capturarComision
-            Dim row As DataRow = dt.Rows(0)
-            comi = CStr(row("comision"))
             'Calculo de comision
             txtComision.Text = Convert.ToDouble(txtContado.Text) * comi
             'Calculo del total de deposito menos comision

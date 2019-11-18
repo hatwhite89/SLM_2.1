@@ -46,8 +46,6 @@ Partial Class frmFormaPago
         Me.gbxInfoFormaPago = New System.Windows.Forms.GroupBox()
         Me.txtRetencion = New System.Windows.Forms.TextBox()
         Me.lblRetencion = New System.Windows.Forms.Label()
-        Me.txtComision = New System.Windows.Forms.TextBox()
-        Me.lblComision = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblCodFormaPago = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
@@ -231,8 +229,6 @@ Partial Class frmFormaPago
         '
         Me.gbxInfoFormaPago.Controls.Add(Me.txtRetencion)
         Me.gbxInfoFormaPago.Controls.Add(Me.lblRetencion)
-        Me.gbxInfoFormaPago.Controls.Add(Me.txtComision)
-        Me.gbxInfoFormaPago.Controls.Add(Me.lblComision)
         Me.gbxInfoFormaPago.Controls.Add(Me.txtCodigo)
         Me.gbxInfoFormaPago.Controls.Add(Me.lblCod)
         Me.gbxInfoFormaPago.Controls.Add(Me.txtCuenta)
@@ -259,7 +255,7 @@ Partial Class frmFormaPago
         '
         'txtRetencion
         '
-        Me.txtRetencion.Location = New System.Drawing.Point(324, 126)
+        Me.txtRetencion.Location = New System.Drawing.Point(324, 100)
         Me.txtRetencion.Name = "txtRetencion"
         Me.txtRetencion.Size = New System.Drawing.Size(100, 20)
         Me.txtRetencion.TabIndex = 54
@@ -267,27 +263,11 @@ Partial Class frmFormaPago
         'lblRetencion
         '
         Me.lblRetencion.AutoSize = True
-        Me.lblRetencion.Location = New System.Drawing.Point(224, 129)
+        Me.lblRetencion.Location = New System.Drawing.Point(224, 103)
         Me.lblRetencion.Name = "lblRetencion"
         Me.lblRetencion.Size = New System.Drawing.Size(56, 13)
         Me.lblRetencion.TabIndex = 53
         Me.lblRetencion.Text = "Retención"
-        '
-        'txtComision
-        '
-        Me.txtComision.Location = New System.Drawing.Point(324, 100)
-        Me.txtComision.Name = "txtComision"
-        Me.txtComision.Size = New System.Drawing.Size(100, 20)
-        Me.txtComision.TabIndex = 52
-        '
-        'lblComision
-        '
-        Me.lblComision.AutoSize = True
-        Me.lblComision.Location = New System.Drawing.Point(225, 104)
-        Me.lblComision.Name = "lblComision"
-        Me.lblComision.Size = New System.Drawing.Size(49, 13)
-        Me.lblComision.TabIndex = 51
-        Me.lblComision.Text = "Comisión"
         '
         'GroupBox1
         '
@@ -399,8 +379,6 @@ Partial Class frmFormaPago
     Friend WithEvents txtBanco As TextBox
     Friend WithEvents btnGuardar As Button
     Friend WithEvents gbxInfoFormaPago As GroupBox
-    Friend WithEvents txtComision As TextBox
-    Friend WithEvents lblComision As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnModificar As Button

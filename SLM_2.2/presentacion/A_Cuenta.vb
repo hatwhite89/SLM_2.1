@@ -1,7 +1,6 @@
 ﻿Public Class A_Cuenta
     'Objeto Cuenta
     Dim Cuenta As New ClsCuenta
-
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         Try
@@ -24,22 +23,18 @@
         End Try
 
     End Sub
-
-
     Private Sub A_Cuenta_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         'Presionar ESC para cerrar
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
         End If
     End Sub
-
     Private Sub A_Cuenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'Listar cuentas al cargar formulario
         dtCuentas.DataSource = Cuenta.listarCuentas
 
     End Sub
-
     Private Sub cbxEstado_CheckedChanged(sender As Object, e As EventArgs) Handles chkEstado.CheckedChanged
 
         'Cambio de color estado de cuenta.
@@ -51,7 +46,6 @@
             lblEstadoColor.ForeColor = Color.Green
         End If
     End Sub
-
     Private Sub dtCuentas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtCuentas.CellClick
 
         'Cargar campos de cuenta en formulario
@@ -64,11 +58,21 @@
         Catch ex As Exception
 
         End Try
+        'Eliminar espacios 
+        Dim Tipo As String
+        Tipo = lblTipoDetalle.Text
+        Tipo = Trim(Tipo)
 
-        If lblTipoDetalle.Text = "Activo" Then
-
+        If (Tipo = "Activo") Then
             cbxTipoCuenta.SelectedIndex = 0
-
+        ElseIf Tipo = "Pasivo" Then
+            cbxTipoCuenta.SelectedIndex = 1
+        ElseIf Tipo = "Patrimonio" Then
+            cbxTipoCuenta.SelectedIndex = 2
+        ElseIf Tipo = "Ingresos" Then
+            cbxTipoCuenta.SelectedIndex = 3
+        ElseIf Tipo = "Gastos" Then
+            cbxTipoCuenta.SelectedIndex = 4
         End If
 
         'Habilitar edicion
@@ -77,13 +81,13 @@
         btnGuardar.Visible = False
 
     End Sub
-
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Limpiar()
         btnGuardar.Visible = True
         btnModificar.Visible = False
         btnNuevo.Visible = False
     End Sub
+
 
 
     ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -116,11 +120,7 @@
             'Limpiar Campos
             Limpiar()
 
-
-
         End With
 
     End Sub
-
-
 End Class
