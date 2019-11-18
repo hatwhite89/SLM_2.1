@@ -9,6 +9,7 @@ Public Class ClsTerminoPago
 
     End Sub
 
+
     Public Property Codigo1 As String
         Get
             Return codigo
