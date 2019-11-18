@@ -38,6 +38,7 @@ Partial Class M_TipoClasificacion
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.lblcomentario = New System.Windows.Forms.Label()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
+        Me.lbltipo = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxclasificacion.SuspendLayout()
@@ -45,6 +46,7 @@ Partial Class M_TipoClasificacion
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.Controls.Add(Me.lbltipo)
         Me.gbxbusqueda.Controls.Add(Me.txtcomentarioB)
         Me.gbxbusqueda.Controls.Add(Me.lblcomentarioB)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
@@ -221,6 +223,15 @@ Partial Class M_TipoClasificacion
         Me.txtcodigo.Size = New System.Drawing.Size(183, 22)
         Me.txtcodigo.TabIndex = 40
         '
+        'lbltipo
+        '
+        Me.lbltipo.AutoSize = True
+        Me.lbltipo.Location = New System.Drawing.Point(521, 36)
+        Me.lbltipo.Name = "lbltipo"
+        Me.lbltipo.Size = New System.Drawing.Size(0, 17)
+        Me.lbltipo.TabIndex = 118
+        Me.lbltipo.Visible = False
+        '
         'M_TipoClasificacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -256,4 +267,5 @@ Partial Class M_TipoClasificacion
     Friend WithEvents txtcodigo As TextBox
     Friend WithEvents txtcomentarioB As TextBox
     Friend WithEvents lblcomentarioB As Label
+    Friend WithEvents lbltipo As Label
 End Class

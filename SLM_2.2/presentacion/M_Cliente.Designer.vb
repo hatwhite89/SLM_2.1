@@ -40,7 +40,7 @@ Partial Class M_Cliente
         Me.btnclasificacion = New System.Windows.Forms.Button()
         Me.txtcodigoClasificacion = New System.Windows.Forms.TextBox()
         Me.btnterminosPago = New System.Windows.Forms.Button()
-        Me.txtterminosPago = New System.Windows.Forms.TextBox()
+        Me.txtcodigoTermino = New System.Windows.Forms.TextBox()
         Me.btnconvenio = New System.Windows.Forms.Button()
         Me.txtconvenio = New System.Windows.Forms.TextBox()
         Me.btnaseguradora = New System.Windows.Forms.Button()
@@ -55,7 +55,7 @@ Partial Class M_Cliente
         Me.lblfechaNacimiento = New System.Windows.Forms.Label()
         Me.lblterminosPago = New System.Windows.Forms.Label()
         Me.lblaseguradora = New System.Windows.Forms.Label()
-        Me.txtcategoria = New System.Windows.Forms.TextBox()
+        Me.txtcodigoCategoria = New System.Windows.Forms.TextBox()
         Me.lblcategoria = New System.Windows.Forms.Label()
         Me.btnactualizarCliente = New System.Windows.Forms.Button()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
@@ -161,7 +161,7 @@ Partial Class M_Cliente
         Me.gbxinfoCliente.Controls.Add(Me.btnclasificacion)
         Me.gbxinfoCliente.Controls.Add(Me.txtcodigoClasificacion)
         Me.gbxinfoCliente.Controls.Add(Me.btnterminosPago)
-        Me.gbxinfoCliente.Controls.Add(Me.txtterminosPago)
+        Me.gbxinfoCliente.Controls.Add(Me.txtcodigoTermino)
         Me.gbxinfoCliente.Controls.Add(Me.btnconvenio)
         Me.gbxinfoCliente.Controls.Add(Me.txtconvenio)
         Me.gbxinfoCliente.Controls.Add(Me.btnaseguradora)
@@ -174,7 +174,7 @@ Partial Class M_Cliente
         Me.gbxinfoCliente.Controls.Add(Me.lblfechaNacimiento)
         Me.gbxinfoCliente.Controls.Add(Me.lblterminosPago)
         Me.gbxinfoCliente.Controls.Add(Me.lblaseguradora)
-        Me.gbxinfoCliente.Controls.Add(Me.txtcategoria)
+        Me.gbxinfoCliente.Controls.Add(Me.txtcodigoCategoria)
         Me.gbxinfoCliente.Controls.Add(Me.lblcategoria)
         Me.gbxinfoCliente.Controls.Add(Me.btnactualizarCliente)
         Me.gbxinfoCliente.Controls.Add(Me.txtcodigo)
@@ -326,13 +326,13 @@ Partial Class M_Cliente
         Me.btnterminosPago.TabIndex = 106
         Me.btnterminosPago.UseVisualStyleBackColor = False
         '
-        'txtterminosPago
+        'txtcodigoTermino
         '
-        Me.txtterminosPago.Location = New System.Drawing.Point(210, 299)
-        Me.txtterminosPago.Name = "txtterminosPago"
-        Me.txtterminosPago.Size = New System.Drawing.Size(125, 22)
-        Me.txtterminosPago.TabIndex = 105
-        Me.txtterminosPago.Text = "x"
+        Me.txtcodigoTermino.Location = New System.Drawing.Point(210, 299)
+        Me.txtcodigoTermino.Name = "txtcodigoTermino"
+        Me.txtcodigoTermino.Size = New System.Drawing.Size(125, 22)
+        Me.txtcodigoTermino.TabIndex = 105
+        Me.txtcodigoTermino.Text = "CO"
         '
         'btnconvenio
         '
@@ -483,13 +483,12 @@ Partial Class M_Cliente
         Me.lblaseguradora.TabIndex = 89
         Me.lblaseguradora.Text = "Aseguradora"
         '
-        'txtcategoria
+        'txtcodigoCategoria
         '
-        Me.txtcategoria.Location = New System.Drawing.Point(490, 30)
-        Me.txtcategoria.Name = "txtcategoria"
-        Me.txtcategoria.Size = New System.Drawing.Size(125, 22)
-        Me.txtcategoria.TabIndex = 88
-        Me.txtcategoria.Text = "x"
+        Me.txtcodigoCategoria.Location = New System.Drawing.Point(490, 30)
+        Me.txtcodigoCategoria.Name = "txtcodigoCategoria"
+        Me.txtcodigoCategoria.Size = New System.Drawing.Size(125, 22)
+        Me.txtcodigoCategoria.TabIndex = 88
         '
         'lblcategoria
         '
@@ -897,11 +896,11 @@ Partial Class M_Cliente
     Friend WithEvents lblapellido1 As Label
     Friend WithEvents txtnombre1 As TextBox
     Friend WithEvents lblnombre1 As Label
-    Friend WithEvents txtcategoria As TextBox
+    Friend WithEvents txtcodigoCategoria As TextBox
     Friend WithEvents btnclasificacion As Button
     Friend WithEvents txtcodigoClasificacion As TextBox
     Friend WithEvents btnterminosPago As Button
-    Friend WithEvents txtterminosPago As TextBox
+    Friend WithEvents txtcodigoTermino As TextBox
     Friend WithEvents btnconvenio As Button
     Friend WithEvents txtconvenio As TextBox
     Friend WithEvents btnaseguradora As Button

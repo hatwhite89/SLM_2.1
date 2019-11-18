@@ -143,6 +143,51 @@ Public Class ClsCuenta
         End Using
     End Function
 
+    'Busca la cuenta por el campo cuenta
+    Public Function BuscarCuenta() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "slmBuscarCuenta_M"
+            cmd.Parameters.Add("@cuenta", SqlDbType.Int).Value = Cuent_a
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+    'Busca la cuenta por su código
+    Public Function BuscarCuentaCode() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "slmBuscarCuentaCode_M"
+            cmd.Parameters.Add("@codCuenta", SqlDbType.Int).Value = Cod_Cuenta
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
     'Editar una cuenta
     Public Function modificarCuenta() As String
 

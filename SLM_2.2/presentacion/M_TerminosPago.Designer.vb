@@ -52,6 +52,7 @@ Partial Class M_TerminosPago
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
         Me.lblnombreB = New System.Windows.Forms.Label()
         Me.btnbuscar = New System.Windows.Forms.Button()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.gbxterminosPago.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -133,6 +134,7 @@ Partial Class M_TerminosPago
         '
         'cbxtipoPago
         '
+        Me.cbxtipoPago.DropDownWidth = 170
         Me.cbxtipoPago.FormattingEnabled = True
         Me.cbxtipoPago.Location = New System.Drawing.Point(369, 91)
         Me.cbxtipoPago.Name = "cbxtipoPago"
@@ -303,6 +305,7 @@ Partial Class M_TerminosPago
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.Controls.Add(Me.lblform)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
@@ -377,6 +380,15 @@ Partial Class M_TerminosPago
         Me.btnbuscar.Text = "Buscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
         '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(513, 22)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(0, 17)
+        Me.lblform.TabIndex = 116
+        Me.lblform.Visible = False
+        '
         'M_TerminosPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -424,4 +436,5 @@ Partial Class M_TerminosPago
     Friend WithEvents btnbuscar As Button
     Friend WithEvents txtnombreCtaVentas As TextBox
     Friend WithEvents txtnombreCtaContado As TextBox
+    Friend WithEvents lblform As Label
 End Class

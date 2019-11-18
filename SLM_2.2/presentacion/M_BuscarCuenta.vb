@@ -1,7 +1,7 @@
 ﻿Public Class M_BuscarCuenta
     Private Sub M_BuscarCuenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objCuenta As New ClsCuenta
-        Dim dv As DataView = objCuenta.listarCuentas.DefaultView
+        Dim dv As DataView = objCuenta.seleccionarCuentas.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -15,13 +15,18 @@
 
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
+            Dim objCuenta As New ClsCuenta
+            Dim dt As New DataTable
+            objCuenta.Cuent_a = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+            dt = objCuenta.BuscarCuenta()
+            Dim row As DataRow = dt.Rows(0)
             If lbltipoCta.Text = "Contado" Then
-                M_TerminosPago.txtcodigoCtaContado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-                M_TerminosPago.txtnombreCtaContado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                M_TerminosPago.txtcodigoCtaContado.Text = CStr(row("codCuenta"))
+                M_TerminosPago.txtnombreCtaContado.Text = CStr(row("cuenta"))
                 Me.Close()
             ElseIf lbltipoCta.Text = "Ventas" Then
-                M_TerminosPago.txtcodigoCtaContado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-                M_TerminosPago.txtnombreCtaContado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                M_TerminosPago.txtcodigoCtaVentas.Text = CStr(row("codCuenta"))
+                M_TerminosPago.txtnombreCtaVentas.Text = CStr(row("cuenta"))
                 Me.Close()
             End If
         Catch ex As Exception
@@ -29,4 +34,20 @@
         End Try
     End Sub
 
+    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
+        If (txtcuentaB.Text <> "") Then
+            Try
+                Dim objCuenta As New ClsCuenta
+                objCuenta.Cuent_a = txtcuentaB.Text
+                Dim dv As DataView = objCuenta.BuscarCuenta.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            Catch ex As Exception
+                MsgBox("No existe la cuenta.", MsgBoxStyle.Critical, "Validación")
+            End Try
+        Else
+            MsgBox("Debe ingresar la cuenta para generar la búsqueda.", MsgBoxStyle.Critical, "Validación")
+        End If
+    End Sub
 End Class

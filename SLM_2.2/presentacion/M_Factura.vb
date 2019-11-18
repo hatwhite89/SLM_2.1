@@ -156,6 +156,7 @@
     End Sub
 
     Private Sub btnterminosPago_Click(sender As Object, e As EventArgs) Handles btnterminosPago.Click
+        M_TerminosPago.lblform.Text = "factura"
         M_TerminosPago.ShowDialog()
     End Sub
 End Class
