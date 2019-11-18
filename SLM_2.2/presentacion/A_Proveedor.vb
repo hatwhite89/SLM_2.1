@@ -79,30 +79,12 @@
 
         End With
     End Sub
-
-
-
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
         Limpiar()
         btnCrear.Visible = False
         btnModificar.Visible = False
         btnGuardar.Visible = True
     End Sub
-
-    '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    Sub Limpiar()
-
-        txtCodBreve.Text = ""
-        txtNombreProvee.Text = ""
-        txtTelefono.Text = ""
-        txtContactoPrincipal.Text = ""
-        txtTelContacto.Text = ""
-        txtEmail.Text = ""
-        txtDireccion.Text = ""
-        txtSitioWeb.Text = ""
-
-    End Sub
-
     Private Sub A_Proveedor_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
@@ -121,9 +103,24 @@
         dtProveedores.DataSource = Dato
 
     End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         dtProveedores.DataSource = Proveedor.listarProveedores
         txtNombreBusqueda.Text = ""
     End Sub
+
+    '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    Sub Limpiar()
+
+        txtCodBreve.Text = ""
+        txtNombreProvee.Text = ""
+        txtTelefono.Text = ""
+        txtContactoPrincipal.Text = ""
+        txtTelContacto.Text = ""
+        txtEmail.Text = ""
+        txtDireccion.Text = ""
+        txtSitioWeb.Text = ""
+
+    End Sub
+
+
 End Class

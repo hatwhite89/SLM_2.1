@@ -29,14 +29,14 @@ Partial Class frmMenuConta
         Me.tpPagos = New System.Windows.Forms.TabPage()
         Me.btnPagos = New System.Windows.Forms.Button()
         Me.TpMantenimiento = New System.Windows.Forms.TabPage()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnProveedor = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnCategoriaProveedor = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnCuentas = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnFormaPago = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnProveedor = New System.Windows.Forms.Button()
         Me.tcMenu.SuspendLayout()
         Me.tpCheque.SuspendLayout()
         Me.tpPagos.SuspendLayout()
@@ -118,6 +118,27 @@ Partial Class frmMenuConta
         Me.TpMantenimiento.Text = "Mantenimiento"
         Me.TpMantenimiento.UseVisualStyleBackColor = True
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(158, 48)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(56, 13)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "Proveedor"
+        '
+        'btnProveedor
+        '
+        Me.btnProveedor.BackgroundImage = CType(resources.GetObject("btnProveedor.BackgroundImage"), System.Drawing.Image)
+        Me.btnProveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnProveedor.FlatAppearance.BorderSize = 0
+        Me.btnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnProveedor.Location = New System.Drawing.Point(161, 7)
+        Me.btnProveedor.Name = "btnProveedor"
+        Me.btnProveedor.Size = New System.Drawing.Size(41, 38)
+        Me.btnProveedor.TabIndex = 6
+        Me.btnProveedor.UseVisualStyleBackColor = True
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -181,31 +202,11 @@ Partial Class frmMenuConta
         Me.btnFormaPago.TabIndex = 0
         Me.btnFormaPago.UseVisualStyleBackColor = True
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(158, 48)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(56, 13)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Proveedor"
-        '
-        'btnProveedor
-        '
-        Me.btnProveedor.BackgroundImage = CType(resources.GetObject("btnProveedor.BackgroundImage"), System.Drawing.Image)
-        Me.btnProveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnProveedor.FlatAppearance.BorderSize = 0
-        Me.btnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnProveedor.Location = New System.Drawing.Point(161, 7)
-        Me.btnProveedor.Name = "btnProveedor"
-        Me.btnProveedor.Size = New System.Drawing.Size(41, 38)
-        Me.btnProveedor.TabIndex = 6
-        Me.btnProveedor.UseVisualStyleBackColor = True
-        '
         'frmMenuConta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(312, 366)
         Me.Controls.Add(Me.tcMenu)
         Me.KeyPreview = True

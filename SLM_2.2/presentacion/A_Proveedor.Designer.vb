@@ -152,7 +152,11 @@ Partial Class A_Proveedor
         '
         'dtProveedores
         '
+        Me.dtProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
+        Me.dtProveedores.BackgroundColor = System.Drawing.Color.White
+        Me.dtProveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dtProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtProveedores.GridColor = System.Drawing.Color.White
         Me.dtProveedores.Location = New System.Drawing.Point(6, 56)
         Me.dtProveedores.Name = "dtProveedores"
         Me.dtProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -324,6 +328,7 @@ Partial Class A_Proveedor
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True
         Me.Name = "A_Proveedor"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mantenimiento Proveedores"
         CType(Me.dtProveedores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)

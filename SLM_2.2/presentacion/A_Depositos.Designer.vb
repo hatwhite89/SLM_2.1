@@ -69,6 +69,7 @@ Partial Class frmDeposito
         Me.cbxTipo = New System.Windows.Forms.ComboBox()
         Me.dtDepositos = New System.Windows.Forms.DataGridView()
         Me.txtID = New System.Windows.Forms.TextBox()
+        Me.txtComi = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxInfoDepo.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -264,9 +265,9 @@ Partial Class frmDeposito
         '
         'txtComision
         '
-        Me.txtComision.Location = New System.Drawing.Point(94, 227)
+        Me.txtComision.Location = New System.Drawing.Point(96, 227)
         Me.txtComision.Name = "txtComision"
-        Me.txtComision.Size = New System.Drawing.Size(72, 20)
+        Me.txtComision.Size = New System.Drawing.Size(70, 20)
         Me.txtComision.TabIndex = 11
         '
         'lblCajero
@@ -304,6 +305,7 @@ Partial Class frmDeposito
         '
         'gbxInfoDepo
         '
+        Me.gbxInfoDepo.Controls.Add(Me.txtComi)
         Me.gbxInfoDepo.Controls.Add(Me.btnModificar)
         Me.gbxInfoDepo.Controls.Add(Me.linklblCalcular)
         Me.gbxInfoDepo.Controls.Add(Me.btnCrearNuevo)
@@ -359,12 +361,12 @@ Partial Class frmDeposito
         'linklblCalcular
         '
         Me.linklblCalcular.AutoSize = True
-        Me.linklblCalcular.Location = New System.Drawing.Point(168, 232)
+        Me.linklblCalcular.Location = New System.Drawing.Point(188, 208)
         Me.linklblCalcular.Name = "linklblCalcular"
-        Me.linklblCalcular.Size = New System.Drawing.Size(45, 13)
+        Me.linklblCalcular.Size = New System.Drawing.Size(90, 13)
         Me.linklblCalcular.TabIndex = 78
         Me.linklblCalcular.TabStop = True
-        Me.linklblCalcular.Text = "Calcular"
+        Me.linklblCalcular.Text = "Calcular Comisión"
         '
         'btnCrearNuevo
         '
@@ -506,7 +508,10 @@ Partial Class frmDeposito
         '
         Me.dtDepositos.AllowUserToAddRows = False
         Me.dtDepositos.AllowUserToDeleteRows = False
+        Me.dtDepositos.BackgroundColor = System.Drawing.Color.White
+        Me.dtDepositos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtDepositos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtDepositos.GridColor = System.Drawing.Color.White
         Me.dtDepositos.Location = New System.Drawing.Point(12, 89)
         Me.dtDepositos.Name = "dtDepositos"
         Me.dtDepositos.ReadOnly = True
@@ -521,6 +526,13 @@ Partial Class frmDeposito
         Me.txtID.Size = New System.Drawing.Size(80, 20)
         Me.txtID.TabIndex = 13
         Me.txtID.Visible = False
+        '
+        'txtComi
+        '
+        Me.txtComi.Location = New System.Drawing.Point(195, 223)
+        Me.txtComi.Name = "txtComi"
+        Me.txtComi.Size = New System.Drawing.Size(76, 20)
+        Me.txtComi.TabIndex = 80
         '
         'frmDeposito
         '
@@ -595,4 +607,5 @@ Partial Class frmDeposito
     Friend WithEvents btnCrearNuevo As Button
     Friend WithEvents linklblCalcular As LinkLabel
     Friend WithEvents btnModificar As Button
+    Friend WithEvents txtComi As TextBox
 End Class

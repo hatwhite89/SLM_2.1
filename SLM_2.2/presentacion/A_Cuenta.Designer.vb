@@ -217,7 +217,10 @@ Partial Class A_Cuenta
         '
         Me.dtCuentas.AllowUserToAddRows = False
         Me.dtCuentas.AllowUserToDeleteRows = False
+        Me.dtCuentas.BackgroundColor = System.Drawing.Color.White
+        Me.dtCuentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtCuentas.GridColor = System.Drawing.Color.White
         Me.dtCuentas.Location = New System.Drawing.Point(6, 19)
         Me.dtCuentas.Name = "dtCuentas"
         Me.dtCuentas.ReadOnly = True

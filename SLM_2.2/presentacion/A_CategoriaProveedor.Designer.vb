@@ -192,7 +192,10 @@ Partial Class A_CategoriaProveedor
         '
         Me.dtCategorias.AllowUserToAddRows = False
         Me.dtCategorias.AllowUserToDeleteRows = False
+        Me.dtCategorias.BackgroundColor = System.Drawing.Color.White
+        Me.dtCategorias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtCategorias.GridColor = System.Drawing.Color.White
         Me.dtCategorias.Location = New System.Drawing.Point(6, 19)
         Me.dtCategorias.Name = "dtCategorias"
         Me.dtCategorias.ReadOnly = True
