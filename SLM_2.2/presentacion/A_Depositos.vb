@@ -56,8 +56,6 @@
         A_BuscarFormaPago.lblJC.Text = 2
         A_BuscarFormaPago.Show()
     End Sub
-
-
     Private Sub frmDeposito_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim Deposito As New ClsDeposito
@@ -130,8 +128,6 @@
             MessageBox.Show("El código es incorrecto o el campo está vacio.")
         End Try
 
-
-
     End Sub
 
     Private Sub dtDepositos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDepositos.CellClick
@@ -165,9 +161,7 @@
         btnGuardar.Visible = True
         Me.Close()
 
-
     End Sub
-
     Private Sub linklblCalcular_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklblCalcular.LinkClicked
 
         Try
@@ -180,7 +174,6 @@
         End Try
 
     End Sub
-
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
 
         Dim modificarDeposito As New ClsDeposito
@@ -219,7 +212,6 @@
         End With
     End Sub
 
-
     Private Sub txtContado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtContado.KeyPress
         'Solo acepta numeros.
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
@@ -232,6 +224,5 @@
             Me.Close()
         End If
     End Sub
-
 
 End Class

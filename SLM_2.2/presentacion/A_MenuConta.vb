@@ -24,9 +24,15 @@
         A_Cuenta.Show()
     End Sub
 
-    Private Sub btnCategoria_Click(sender As Object, e As EventArgs) Handles btnCategoria.Click
+    Private Sub btnCategoria_Click(sender As Object, e As EventArgs) Handles btnCategoriaProveedor.Click
 
         A_CategoriaProveedor.Show()
 
     End Sub
+
+    Private Sub btnProveedor_Click(sender As Object, e As EventArgs) Handles btnProveedor.Click
+        A_Proveedor.Show()
+    End Sub
+
+
 End Class

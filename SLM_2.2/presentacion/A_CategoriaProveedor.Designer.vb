@@ -31,12 +31,12 @@ Partial Class A_CategoriaProveedor
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtAnticipos = New System.Windows.Forms.TextBox()
         Me.gbxInfo = New System.Windows.Forms.GroupBox()
+        Me.lblCodCat = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dtCategorias = New System.Windows.Forms.DataGridView()
-        Me.lblCodCat = New System.Windows.Forms.Label()
         Me.gbxInfo.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtCategorias, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -127,6 +127,16 @@ Partial Class A_CategoriaProveedor
         Me.gbxInfo.TabStop = False
         Me.gbxInfo.Text = "Información"
         '
+        'lblCodCat
+        '
+        Me.lblCodCat.AutoSize = True
+        Me.lblCodCat.Location = New System.Drawing.Point(154, 97)
+        Me.lblCodCat.Name = "lblCodCat"
+        Me.lblCodCat.Size = New System.Drawing.Size(39, 13)
+        Me.lblCodCat.TabIndex = 11
+        Me.lblCodCat.Text = "Label5"
+        Me.lblCodCat.Visible = False
+        '
         'btnGuardar
         '
         Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
@@ -190,16 +200,6 @@ Partial Class A_CategoriaProveedor
         Me.dtCategorias.Size = New System.Drawing.Size(442, 112)
         Me.dtCategorias.TabIndex = 0
         '
-        'lblCodCat
-        '
-        Me.lblCodCat.AutoSize = True
-        Me.lblCodCat.Location = New System.Drawing.Point(154, 97)
-        Me.lblCodCat.Name = "lblCodCat"
-        Me.lblCodCat.Size = New System.Drawing.Size(39, 13)
-        Me.lblCodCat.TabIndex = 11
-        Me.lblCodCat.Text = "Label5"
-        Me.lblCodCat.Visible = False
-        '
         'A_CategoriaProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -209,6 +209,7 @@ Partial Class A_CategoriaProveedor
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.KeyPreview = True
         Me.Name = "A_CategoriaProveedor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Categoria de Proveedor"
