@@ -1,5 +1,5 @@
 ﻿Public Class M_Factura
-    Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
+    Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
         Me.Close()
     End Sub
 
@@ -22,6 +22,8 @@
                 dt = objClient.BuscarClienteCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreCliente.Text = CStr(row("nombreCompleto"))
+                M_Cliente.txtcodigoCategoria.Text = CStr(row("codigoCategoria"))
+                M_ClienteVentana.txtnombreCategoria.Text = M_Cliente.txtnombreCategoria.Text
             Catch ex As Exception
                 MsgBox("No existe el código del cliente.", MsgBoxStyle.Critical, "Validación")
             End Try
@@ -49,7 +51,6 @@
         txtnombreMedico.Text() = ""
         txtcodigoSede.Text() = ""
         txtcodigoSucursal.Text() = ""
-        txtcodigoDocumento.Text() = ""
         txtterminal.Text() = ""
         txtnombreSede.Text() = ""
 
@@ -61,6 +62,8 @@
         txtpagoPaciente.Text() = ""
         txtvuelto.Text() = ""
         txttotal.Text() = ""
+        dgblistadoExamenes.Rows.Clear()
+        M_ClienteVentana.dgvtabla.Rows.Clear()
 
     End Sub
 
@@ -145,7 +148,8 @@
                 Dim dt As New DataTable
                 dt = objTerm.BuscarTerminoPagoCode()
                 Dim row As DataRow = dt.Rows(0)
-                'txtdescripcionTermino.Text = CStr(row("descripcion"))
+                txtdescripcionTermino.Text = CStr(row("descripcion"))
+                M_ClienteVentana.txtnombreTerminos.Text = CStr(row("descripcion"))
             Catch ex As Exception
                 MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
             End Try
@@ -158,5 +162,123 @@
     Private Sub btnterminosPago_Click(sender As Object, e As EventArgs) Handles btnterminosPago.Click
         M_TerminosPago.lblform.Text = "factura"
         M_TerminosPago.ShowDialog()
+    End Sub
+
+    Private Sub M_Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        M_ClienteVentana.Show()
+        Dim btn As New DataGridViewButtonColumn()
+        dgblistadoExamenes.Columns.Add(btn)
+        btn.HeaderText = "Eliminar"
+        btn.Text = "Eliminar"
+        btn.Name = "btn"
+        btn.UseColumnTextForButtonValue = True
+    End Sub
+
+    Private Sub txtconvenio_TextChanged(sender As Object, e As EventArgs) Handles txtconvenio.TextChanged
+        M_ClienteVentana.txtnombreConvenio.Text = txtconvenio.Text
+    End Sub
+
+    Private Sub txtpagoPaciente_TextChanged(sender As Object, e As EventArgs) Handles txtpagoPaciente.TextChanged
+        Try
+            M_ClienteVentana.txtpagoPaciente.Text = txtpagoPaciente.Text
+            txtvuelto.Text = Convert.ToInt32(txtpagoPaciente.Text) - Convert.ToInt32(txttotal.Text)
+            M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub txtnombreCliente_TextChanged(sender As Object, e As EventArgs) Handles txtnombreCliente.TextChanged
+        M_ClienteVentana.txtnombreCompleto.Text = txtnombreCliente.Text
+    End Sub
+
+    Private Sub txtvuelto_TextChanged(sender As Object, e As EventArgs) Handles txtvuelto.TextChanged
+        M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
+    End Sub
+
+    Private Sub txttotal_TextChanged(sender As Object, e As EventArgs) Handles txttotal.TextChanged
+        M_ClienteVentana.txttotal.Text = txttotal.Text
+        Try
+            M_ClienteVentana.txtpagoPaciente.Text = txtpagoPaciente.Text
+            txtvuelto.Text = Convert.ToInt32(txtpagoPaciente.Text) - Convert.ToInt32(txttotal.Text)
+            M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub dgblistadoExamenes_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellClick
+        If e.ColumnIndex = 7 Then
+            'MsgBox(("Row : " + e.RowIndex.ToString & "  Col : ") + e.ColumnIndex.ToString)
+            Try
+                Dim n As String = MsgBox("¿Desea eliminar el examen de la factura?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+                    dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+                    M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(e.RowIndex.ToString))
+                    totalFactura()
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message, MsgBoxStyle.Critical)
+            End Try
+            'DataGridView1.Rows.Remove(DataGridView1.Rows(e.RowIndex.ToString))
+        End If
+    End Sub
+
+    Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
+        If e.ColumnIndex = 0 Then
+            Try
+                Dim objExam As New ClsExamen
+                With objExam
+                    .Codigo1 = dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()
+                End With
+                Dim dt As New DataTable
+                dt = objExam.BuscarExamen()
+                Dim row As DataRow = dt.Rows(0)
+                'txtnombreCliente.Text = CStr(row("descripcion"))
+                'txtnombreCliente.Text = CStr(row("total"))
+                dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+                Dim subtotal As Double = Convert.ToDouble(CStr(row("total")))
+                dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), "", "", subtotal})
+                totalFactura()
+                M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), "", "", subtotal})
+            Catch ex As Exception
+                MsgBox("No existe el código del examen", MsgBoxStyle.Critical)
+                dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+            End Try
+        ElseIf e.ColumnIndex = 1 Then
+            Try
+                Dim code, cant As Integer
+                Dim precio, subtotal As Double
+                Dim descrip As String
+
+                code = Convert.ToInt32(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value())
+                cant = Convert.ToInt32(dgblistadoExamenes.Rows(e.RowIndex).Cells(1).Value())
+                precio = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(2).Value())
+                subtotal = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(6).Value())
+                descrip = dgblistadoExamenes.Rows(e.RowIndex).Cells(3).Value()
+                subtotal *= cant
+                dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+                dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {code, cant, precio, descrip, "", "", subtotal})
+                'M_ClienteVentana.dgvtabla.Rows.Add(e.RowIndex.ToString, New String() {code, cant, precio, descrip, "", "", subtotal})
+                M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(e.RowIndex.ToString))
+                M_ClienteVentana.dgvtabla.Rows.Add(New String() {code, cant, precio, descrip, "", "", subtotal})
+                totalFactura()
+            Catch ex As Exception
+                MsgBox("Debe ingresar la cantidad correcta de examenes.", MsgBoxStyle.Critical)
+                dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+            End Try
+        End If
+    End Sub
+
+    Public Sub totalFactura()
+        Dim total As Double
+        For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 1
+            total += Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+        Next
+        txttotal.Text = total
+    End Sub
+
+    Private Sub btnbusquedaExamen_Click(sender As Object, e As EventArgs) Handles btnbusquedaExamen.Click
+        M_BuscarExamen.ShowDialog()
     End Sub
 End Class

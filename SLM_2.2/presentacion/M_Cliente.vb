@@ -157,6 +157,8 @@
                     .Correo_1 = txtcorreo.Text
                     .Correo_2 = txtcorreo2.Text
                     .CodigoClasificacion1 = Convert.ToInt32(txtcodigoClasificacion.Text)
+                    .codigoCategoria1 = txtcodigoCategoria.Text
+                    .codigoTerminoPago1 = txtcodigoTermino.Text
                 End With
 
                 If objClient.ModificarCliente() = 1 Then
@@ -204,11 +206,11 @@
         txtnombre1.Select(txtnombre1.Text.Length, 0)
     End Sub
 
-    Private Sub txtnombre2_TextChanged(sender As Object, e As EventArgs) Handles txtnombre2.TextChanged
+    Private Sub txtnombre2_TextChanged(sender As Object, e As EventArgs)
         txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
     End Sub
 
-    Private Sub txtnombre2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombre2.KeyPress
+    Private Sub txtnombre2_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
             e.Handled = True
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -225,11 +227,11 @@
         txtnombre2.Select(txtnombre2.Text.Length, 0)
     End Sub
 
-    Private Sub txtapellido1_TextChanged(sender As Object, e As EventArgs) Handles txtapellido1.TextChanged
+    Private Sub txtapellido1_TextChanged(sender As Object, e As EventArgs)
         txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
     End Sub
 
-    Private Sub txtapellido1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtapellido1.KeyPress
+    Private Sub txtapellido1_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
             e.Handled = True
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -325,6 +327,8 @@
                     .Correo_1 = txtcorreo.Text
                     .Correo_2 = txtcorreo2.Text
                     .CodigoClasificacion1 = Convert.ToInt32(txtcodigoClasificacion.Text)
+                    .codigoCategoria1 = txtcodigoCategoria.Text
+                    .codigoTerminoPago1 = txtcodigoTermino.Text
                 End With
 
                 If objClient.RegistrarNuevoCliente() = 1 Then
@@ -403,6 +407,7 @@
         txtnombreClasificacion.Text = ""
         txtnombreB.Text = ""
         txtcodigoTermino.Text = "CO"
+        txtcodigoCategoria.Text = ""
 
         rbtnfemenino.Checked = False
         rbtnmasculino.Checked = False
@@ -412,6 +417,13 @@
     Private Sub btnseleccionarCliente_Click(sender As Object, e As EventArgs) Handles btnseleccionarCliente.Click
         M_Factura.txtcodigoCliente.Text = txtcodigo.Text
         M_Factura.txtnombreCliente.Text = txtnombreCompleto.Text
+
+
+        M_ClienteVentana.txtnombreCompleto.Text = UCase(txtnombreCompleto.Text)
+        M_ClienteVentana.txtnombreTerminos.Text = txtnombreTerminos.Text
+        M_ClienteVentana.txtnombreCategoria.Text = txtnombreCategoria.Text
+        M_ClienteVentana.txtnombreConvenio.Text = txtnombreConvenio.Text
+        M_ClienteVentana.txtnombreAseguradora.Text = txtnombreAseguradora.Text
         limpiar()
         Me.Close()
 
@@ -565,7 +577,6 @@
             Catch ex As Exception
                 MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
             End Try
-
         Else
             txtcodigoTermino.Text = ""
         End If
@@ -590,8 +601,5 @@
         Else
             txtcodigoTermino.Text = ""
         End If
-
-
-
     End Sub
 End Class

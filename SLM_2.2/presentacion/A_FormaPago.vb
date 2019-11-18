@@ -15,7 +15,7 @@ Public Class frmFormaPago
             FormaPago.Formu_lario = txtFormulario.Text
             FormaPago.Ti_po = txtTipo.Text
             FormaPago.Ban_co = txtBanco.Text
-            FormaPago.Comi_sion = Convert.ToDouble(txtComision.Text)
+            'FormaPago.Comi_sion = Convert.ToDouble(txtComision.Text)
             FormaPago.Retenci_on = Convert.ToDouble(txtRetencion.Text)
             FormaPago.RegistrarNuevaFormaPago()
             MessageBox.Show("El registro ha sido guardado exitosamente.")
@@ -85,7 +85,7 @@ Public Class frmFormaPago
             FormaPago.Formu_lario = txtFormulario.Text
             FormaPago.Ti_po = txtTipo.Text
             FormaPago.Ban_co = txtBanco.Text
-            FormaPago.Comi_sion = Convert.ToDouble(txtComision.Text)
+            'FormaPago.Comi_sion = Convert.ToDouble(txtComision.Text)
             FormaPago.Retenci_on = Convert.ToDouble(txtRetencion.Text)
 
             FormaPago.modificarFormaPago()
@@ -109,7 +109,7 @@ Public Class frmFormaPago
             txtFormulario.Text = dtFormasPago.Rows(e.RowIndex).Cells(6).Value
             txtTipo.Text = dtFormasPago.Rows(e.RowIndex).Cells(7).Value
             txtBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(8).Value
-            txtComision.Text = dtFormasPago.Rows(e.RowIndex).Cells(9).Value
+            'txtComision.Text = dtFormasPago.Rows(e.RowIndex).Cells(9).Value
             txtRetencion.Text = dtFormasPago.Rows(e.RowIndex).Cells(10).Value
 
         Catch ex As Exception
