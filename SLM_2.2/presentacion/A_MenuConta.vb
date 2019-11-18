@@ -24,9 +24,9 @@
         A_Cuenta.Show()
     End Sub
 
-    Private Sub frmMenuConta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub btnCategoria_Click(sender As Object, e As EventArgs) Handles btnCategoria.Click
 
-
+        A_CategoriaProveedor.Show()
 
     End Sub
 End Class

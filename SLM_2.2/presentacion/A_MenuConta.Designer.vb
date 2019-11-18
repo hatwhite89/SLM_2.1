@@ -33,6 +33,8 @@ Partial Class frmMenuConta
         Me.btnCuentas = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnFormaPago = New System.Windows.Forms.Button()
+        Me.btnCategoria = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.tcMenu.SuspendLayout()
         Me.tpCheque.SuspendLayout()
         Me.tpPagos.SuspendLayout()
@@ -98,6 +100,8 @@ Partial Class frmMenuConta
         '
         'TpMantenimiento
         '
+        Me.TpMantenimiento.Controls.Add(Me.Label3)
+        Me.TpMantenimiento.Controls.Add(Me.btnCategoria)
         Me.TpMantenimiento.Controls.Add(Me.Label2)
         Me.TpMantenimiento.Controls.Add(Me.btnCuentas)
         Me.TpMantenimiento.Controls.Add(Me.Label1)
@@ -152,6 +156,27 @@ Partial Class frmMenuConta
         Me.btnFormaPago.TabIndex = 0
         Me.btnFormaPago.UseVisualStyleBackColor = True
         '
+        'btnCategoria
+        '
+        Me.btnCategoria.BackgroundImage = CType(resources.GetObject("btnCategoria.BackgroundImage"), System.Drawing.Image)
+        Me.btnCategoria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCategoria.FlatAppearance.BorderSize = 0
+        Me.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCategoria.Location = New System.Drawing.Point(29, 146)
+        Me.btnCategoria.Name = "btnCategoria"
+        Me.btnCategoria.Size = New System.Drawing.Size(41, 38)
+        Me.btnCategoria.TabIndex = 4
+        Me.btnCategoria.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(3, 187)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(104, 13)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Categoria Proveedor"
+        '
         'frmMenuConta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -181,4 +206,6 @@ Partial Class frmMenuConta
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents btnCuentas As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents btnCategoria As Button
 End Class

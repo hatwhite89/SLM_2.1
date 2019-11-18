@@ -159,5 +159,19 @@ Public Class ClsCategoriaProveedor
 
     End Function
 
+    'Listar categorias
+    Public Function listarCategoriasProveedor() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("slmListarCategoriaProveedor_A", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
 
 End Class

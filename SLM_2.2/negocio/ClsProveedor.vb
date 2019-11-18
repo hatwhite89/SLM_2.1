@@ -142,7 +142,7 @@ Public Class ClsProveedor
     End Function
 
     'Modificar una registro de proveedor
-    Public Function registrarNuevoProveedor() As String
+    Public Function ModificarProveedor() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer

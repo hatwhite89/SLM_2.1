@@ -172,7 +172,7 @@
 
         Try
             'Calculo de comision
-            txtComision.Text = Convert.ToDouble(txtContado.Text) * comi
+            '  txtComision.Text = Convert.ToDouble(txtContado.Text) * comi
             'Calculo del total de deposito menos comision
             txtTotalDep.Text = Convert.ToDouble(txtContado.Text) - Convert.ToDouble(txtComision.Text)
         Catch ex As Exception
