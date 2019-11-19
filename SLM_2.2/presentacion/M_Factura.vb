@@ -62,12 +62,12 @@
         txtcodigoCajero.ReadOnly = False
 
         txtnumeroOficial.ReadOnly = False
-        txtnombreCliente.ReadOnly = True
-        txtnombreMedico.ReadOnly = True
+        txtnombreCliente.ReadOnly = False
+        txtnombreMedico.ReadOnly = False
         txtcodigoSede.ReadOnly = False
         txtcodigoSucursal.ReadOnly = False
         txtcodigoTerminal.ReadOnly = False
-        txtnombreSede.ReadOnly = True
+        txtnombreSede.ReadOnly = False
         txtcodigoTerminosPago.ReadOnly = False
 
         txtpagoPaciente.ReadOnly = False
@@ -197,6 +197,8 @@
         M_TerminosPago.ShowDialog()
     End Sub
     Private Sub M_Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Dim fecha As Date = Format(Me.dtpfechaFactura.Value.Date.AddDays(7), "dddd, d MMM yyyy")
+        'MsgBox("The formatted date is " & fecha)
         M_ClienteVentana.Show()
         Dim btn As New DataGridViewButtonColumn()
         dgblistadoExamenes.Columns.Add(btn)
@@ -281,15 +283,13 @@
                 subtotal = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(6).Value())
                 descrip = dgblistadoExamenes.Rows(e.RowIndex).Cells(3).Value()
                 subtotal *= cant
-
                 dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
                 dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
-
+                'M_ClienteVentana.dgvtabla.Rows.Add(e.RowIndex.ToString, New String() {code, cant, precio, descrip, "", "", subtotal})
                 M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(e.RowIndex.ToString))
                 M_ClienteVentana.dgvtabla.Rows.Add(New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
                 totalFactura()
-                Dim objDetalleFact As New ClsDetalleFactura
-                objDetalleFact.fechaEntrega_ = dgblistadoExamenes.Rows(0).Cells(4).Value()
+                MsgBox(dgblistadoExamenes.Rows(0).Cells(4).Value() + "    " + dtpfechaFactura.Value)
             Catch ex As Exception
                 MsgBox("Debe ingresar la cantidad correcta de examenes.", MsgBoxStyle.Critical)
                 dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
@@ -321,7 +321,7 @@
                     .codigoCajero_ = txtcodigoCajero.Text
                     .codigoTerminoPago1 = txtcodigoTerminosPago.Text
                     .codigoSede_ = txtcodigoSede.Text
-                    .fechaVto_ = dtpfechaVto.Text
+                    .fechaVto_ = dtpfechaVto.value
                     .codigoSucursal_ = txtcodigoSucursal.Text
                     .codigoConvenio_ = txtcodigoConvenio.Text
                     .numeroPoliza_ = txtnumeroPoliza.Text
@@ -336,6 +336,7 @@
                 End With
 
                 If objFact.RegistrarNuevaFactura() = 1 Then
+                    MsgBox("Registrada la factura correctamente.")
                     deshabilitar()
 
                     Dim dt As New DataTable
@@ -344,13 +345,15 @@
 
                     txtnumeroFactura.Text = CStr(row("numero"))
                     btnguardar.Enabled = False
+                    Dim fecha As DateTime
+                    Dim objDetalleFact As New ClsDetalleFactura
                     For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
-                        Dim objDetalleFact As New ClsDetalleFactura
+                        fecha = dgblistadoExamenes.Rows(index).Cells(4).Value()
                         With objDetalleFact
                             .numeroFactura_ = Convert.ToInt32(txtnumeroFactura.Text)
                             .codigoExamen_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(0).Value())
                             .cantidad_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(1).Value())
-                            .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
+                            .fechaEntrega_ = fecha
                             .descuento_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(5).Value())
                             .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
                         End With
@@ -358,7 +361,6 @@
                             MsgBox("Error al querer insertar el detalle de factura.")
                         End If
                     Next
-                    MsgBox("Registrada la factura correctamente.")
                 Else
                     MsgBox("Error al querer registrar la factura.", MsgBoxStyle.Critical)
                 End If
@@ -368,6 +370,11 @@
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
+            Dim objFact2 As New ClsFactura
+            objFact2.numero_ = Convert.ToInt32(txtnumeroFactura.Text)
+            If objFact2.EliminarFactura() = 1 Then
+                MsgBox("Eliminada la factura")
+            End If
         End Try
     End Sub
     Private Sub txtcodigoCliente_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoCliente.KeyPress
@@ -384,8 +391,5 @@
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
             e.Handled = True
         End If
-    End Sub
-    Private Sub btncotizacion_Click(sender As Object, e As EventArgs) Handles btncotizacion.Click
-
     End Sub
 End Class

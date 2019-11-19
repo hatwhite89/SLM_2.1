@@ -174,8 +174,8 @@ Public Class ClsBancos
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarBanco_M"
-            cmd.Parameters.Add("@nombreBanco", SqlDbType.Int).Value = Nombre_Banco
+            cmd.CommandText = "slmBuscarBanco_A"
+            cmd.Parameters.Add("@nombreBanco", SqlDbType.VarChar).Value = Nombre_Banco
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
