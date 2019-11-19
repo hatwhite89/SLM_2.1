@@ -321,7 +321,7 @@
                     .codigoCajero_ = txtcodigoCajero.Text
                     .codigoTerminoPago1 = txtcodigoTerminosPago.Text
                     .codigoSede_ = txtcodigoSede.Text
-                    .fechaVto_ = dtpfechaVto.Text
+                    .fechaVto_ = dtpfechaVto.value
                     .codigoSucursal_ = txtcodigoSucursal.Text
                     .codigoConvenio_ = txtcodigoConvenio.Text
                     .numeroPoliza_ = txtnumeroPoliza.Text
@@ -345,10 +345,10 @@
 
                     txtnumeroFactura.Text = CStr(row("numero"))
                     btnguardar.Enabled = False
-                    Dim fecha As Date
+                    Dim fecha As DateTime
                     Dim objDetalleFact As New ClsDetalleFactura
-                    For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 1
-                        fecha = Format(dgblistadoExamenes.Rows(index).Cells(4).Value(), "dddd, d MMM yyyy")
+                    For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
+                        fecha = dgblistadoExamenes.Rows(index).Cells(4).Value()
                         With objDetalleFact
                             .numeroFactura_ = Convert.ToInt32(txtnumeroFactura.Text)
                             .codigoExamen_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(0).Value())

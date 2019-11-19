@@ -111,4 +111,13 @@
         Catch ex As Exception
         End Try
     End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Limpiar()
+        btnCrear.Visible = False
+        btnModificar.Visible = False
+        btnGuardar.Visible = True
+        txtBusquedaBanco.Text = ""
+        dtBancos.DataSource = Banco.listarBancos
+    End Sub
 End Class
