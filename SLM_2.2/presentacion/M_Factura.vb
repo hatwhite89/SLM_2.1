@@ -2,15 +2,12 @@
     Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
         Me.Close()
     End Sub
-
     Private Sub btnbuscarMedico_Click(sender As Object, e As EventArgs) Handles btnbuscarMedico.Click
         M_Medico.ShowDialog()
     End Sub
-
     Private Sub btnbuscarCliente_Click(sender As Object, e As EventArgs) Handles btnbuscarCliente.Click
         M_Cliente.ShowDialog()
     End Sub
-
     Private Sub txtcodigoCliente_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoCliente.TextChanged
         If (txtcodigoCliente.Text <> "") Then
             Try
@@ -27,46 +24,91 @@
             Catch ex As Exception
                 MsgBox("No existe el código del cliente.", MsgBoxStyle.Critical, "Validación")
             End Try
-
         Else
             txtcodigoCliente.Text = ""
             txtnombreCliente.Text = ""
         End If
     End Sub
-
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
         limpiar()
     End Sub
-
     Private Sub limpiar()
 
-        txtcodigoFactura.Text() = ""
+        txtnumeroFactura.Text() = ""
         txtcodigoCliente.Text() = ""
         txtcodigoMedico.Text() = ""
-        txtconvenio.Text() = ""
-        txtpoliza.Text() = ""
+        txtcodigoConvenio.Text() = ""
+        txtnumeroPoliza.Text() = ""
 
-        txtcodigoOficial.Text() = ""
+        txtnumeroOficial.Text() = ""
         txtnombreCliente.Text() = ""
         txtnombreMedico.Text() = ""
         txtcodigoSede.Text() = ""
         txtcodigoSucursal.Text() = ""
-        txtterminal.Text() = ""
+        txtcodigoTerminal.Text() = ""
         txtnombreSede.Text() = ""
+        txtcodigoTerminosPago.Text() = "CO"
+
+        txtcodigoRecepecionista.Text() = ""
+        txtcodigoCajero.Text() = ""
+
+        txtnumeroFactura.ReadOnly = False
+        txtcodigoCliente.ReadOnly = False
+        txtcodigoMedico.ReadOnly = False
+        txtcodigoConvenio.ReadOnly = False
+        txtnumeroPoliza.ReadOnly = False
+
+        txtcodigoRecepecionista.ReadOnly = False
+        txtcodigoCajero.ReadOnly = False
+
+        txtnumeroOficial.ReadOnly = False
+        txtnombreCliente.ReadOnly = False
+        txtnombreMedico.ReadOnly = False
+        txtcodigoSede.ReadOnly = False
+        txtcodigoSucursal.ReadOnly = False
+        txtcodigoTerminal.ReadOnly = False
+        txtnombreSede.ReadOnly = False
+        txtcodigoTerminosPago.ReadOnly = False
+
+        txtpagoPaciente.ReadOnly = False
+        txtvuelto.ReadOnly = False
+        txttotal.ReadOnly = False
 
         cbxentregarMedico.Checked = False
         cbxentregarPaciente.Checked = False
         cbxenviarCorreo.Checked = False
         cbxok.Checked = False
 
+        btnguardar.Enabled = True
         txtpagoPaciente.Text() = ""
         txtvuelto.Text() = ""
         txttotal.Text() = ""
         dgblistadoExamenes.Rows.Clear()
         M_ClienteVentana.dgvtabla.Rows.Clear()
-
     End Sub
+    Private Sub deshabilitar()
+        txtnumeroFactura.ReadOnly = True
+        txtcodigoCliente.ReadOnly = True
+        txtcodigoMedico.ReadOnly = True
+        txtcodigoConvenio.ReadOnly = True
+        txtnumeroPoliza.ReadOnly = True
 
+        txtcodigoRecepecionista.ReadOnly = True
+        txtcodigoCajero.ReadOnly = True
+
+        txtnumeroOficial.ReadOnly = True
+        txtnombreCliente.ReadOnly = True
+        txtnombreMedico.ReadOnly = True
+        txtcodigoSede.ReadOnly = True
+        txtcodigoSucursal.ReadOnly = True
+        txtcodigoTerminal.ReadOnly = True
+        txtnombreSede.ReadOnly = True
+        txtcodigoTerminosPago.ReadOnly = True
+
+        txtpagoPaciente.ReadOnly = True
+        txtvuelto.ReadOnly = True
+        txttotal.ReadOnly = True
+    End Sub
     Private Sub txtcodigoMedico_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoMedico.TextChanged
         If (txtcodigoMedico.Text <> "") Then
             Try
@@ -81,13 +123,11 @@
             Catch ex As Exception
                 MsgBox("No existe el código del médico.", MsgBoxStyle.Critical, "Validación")
             End Try
-
         Else
             txtcodigoMedico.Text = ""
             txtnombreMedico.Text = ""
         End If
     End Sub
-
     Private Sub txtcodigoSede_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoSede.TextChanged
         If (txtcodigoSede.Text <> "") Then
             Try
@@ -107,11 +147,9 @@
             txtnombreSede.Text = ""
         End If
     End Sub
-
     Private Sub btnbuscarSede_Click(sender As Object, e As EventArgs) Handles btnbuscarSede.Click
         M_Sede.ShowDialog()
     End Sub
-
     Private Sub txtcodigoSucursal_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoSucursal.TextChanged
         If (txtcodigoSucursal.Text <> "") Then
             Try
@@ -126,17 +164,14 @@
             Catch ex As Exception
                 MsgBox("No existe el código de la sucursal.", MsgBoxStyle.Critical, "Validación")
             End Try
-
         Else
             txtcodigoSucursal.Text = ""
             txtnombreSucursal.Text = ""
         End If
     End Sub
-
     Private Sub btnbuscarSucursal_Click(sender As Object, e As EventArgs) Handles btnbuscarSucursal.Click
         M_Sucursal.ShowDialog()
     End Sub
-
     Private Sub txtcodigoTerminosPago_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoTerminosPago.TextChanged
         If (txtcodigoTerminosPago.Text <> "") Then
             Try
@@ -153,18 +188,17 @@
             Catch ex As Exception
                 MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
             End Try
-
         Else
             txtcodigoTerminosPago.Text = ""
         End If
     End Sub
-
     Private Sub btnterminosPago_Click(sender As Object, e As EventArgs) Handles btnterminosPago.Click
         M_TerminosPago.lblform.Text = "factura"
         M_TerminosPago.ShowDialog()
     End Sub
-
     Private Sub M_Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Dim fecha As Date = Format(Me.dtpfechaFactura.Value.Date.AddDays(7), "dddd, d MMM yyyy")
+        'MsgBox("The formatted date is " & fecha)
         M_ClienteVentana.Show()
         Dim btn As New DataGridViewButtonColumn()
         dgblistadoExamenes.Columns.Add(btn)
@@ -173,11 +207,9 @@
         btn.Name = "btn"
         btn.UseColumnTextForButtonValue = True
     End Sub
-
-    Private Sub txtconvenio_TextChanged(sender As Object, e As EventArgs) Handles txtconvenio.TextChanged
-        M_ClienteVentana.txtnombreConvenio.Text = txtconvenio.Text
+    Private Sub txtconvenio_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoConvenio.TextChanged
+        M_ClienteVentana.txtnombreConvenio.Text = txtcodigoConvenio.Text
     End Sub
-
     Private Sub txtpagoPaciente_TextChanged(sender As Object, e As EventArgs) Handles txtpagoPaciente.TextChanged
         Try
             M_ClienteVentana.txtpagoPaciente.Text = txtpagoPaciente.Text
@@ -187,15 +219,12 @@
 
         End Try
     End Sub
-
     Private Sub txtnombreCliente_TextChanged(sender As Object, e As EventArgs) Handles txtnombreCliente.TextChanged
         M_ClienteVentana.txtnombreCompleto.Text = txtnombreCliente.Text
     End Sub
-
     Private Sub txtvuelto_TextChanged(sender As Object, e As EventArgs) Handles txtvuelto.TextChanged
         M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
     End Sub
-
     Private Sub txttotal_TextChanged(sender As Object, e As EventArgs) Handles txttotal.TextChanged
         M_ClienteVentana.txttotal.Text = txttotal.Text
         Try
@@ -206,7 +235,6 @@
 
         End Try
     End Sub
-
     Private Sub dgblistadoExamenes_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellClick
         If e.ColumnIndex = 7 Then
             'MsgBox(("Row : " + e.RowIndex.ToString & "  Col : ") + e.ColumnIndex.ToString)
@@ -223,7 +251,6 @@
             'DataGridView1.Rows.Remove(DataGridView1.Rows(e.RowIndex.ToString))
         End If
     End Sub
-
     Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
         If e.ColumnIndex = 0 Then
             Try
@@ -238,9 +265,9 @@
                 'txtnombreCliente.Text = CStr(row("total"))
                 dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
                 Dim subtotal As Double = Convert.ToDouble(CStr(row("total")))
-                dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), "", "", subtotal})
+                dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
                 totalFactura()
-                M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), "", "", subtotal})
+                M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
             Catch ex As Exception
                 MsgBox("No existe el código del examen", MsgBoxStyle.Critical)
                 dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
@@ -250,7 +277,6 @@
                 Dim code, cant As Integer
                 Dim precio, subtotal As Double
                 Dim descrip As String
-
                 code = Convert.ToInt32(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value())
                 cant = Convert.ToInt32(dgblistadoExamenes.Rows(e.RowIndex).Cells(1).Value())
                 precio = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(2).Value())
@@ -258,18 +284,18 @@
                 descrip = dgblistadoExamenes.Rows(e.RowIndex).Cells(3).Value()
                 subtotal *= cant
                 dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
-                dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {code, cant, precio, descrip, "", "", subtotal})
+                dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
                 'M_ClienteVentana.dgvtabla.Rows.Add(e.RowIndex.ToString, New String() {code, cant, precio, descrip, "", "", subtotal})
                 M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(e.RowIndex.ToString))
-                M_ClienteVentana.dgvtabla.Rows.Add(New String() {code, cant, precio, descrip, "", "", subtotal})
+                M_ClienteVentana.dgvtabla.Rows.Add(New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
                 totalFactura()
+                MsgBox(dgblistadoExamenes.Rows(0).Cells(4).Value() + "    " + dtpfechaFactura.Value)
             Catch ex As Exception
                 MsgBox("Debe ingresar la cantidad correcta de examenes.", MsgBoxStyle.Critical)
                 dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
             End Try
         End If
     End Sub
-
     Public Sub totalFactura()
         Dim total As Double
         For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 1
@@ -277,8 +303,93 @@
         Next
         txttotal.Text = total
     End Sub
-
     Private Sub btnbusquedaExamen_Click(sender As Object, e As EventArgs) Handles btnbusquedaExamen.Click
         M_BuscarExamen.ShowDialog()
+    End Sub
+    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+        Try
+            If (txtcodigoCliente.Text <> "" And txtcodigoMedico.Text <> "" And txtcodigoTerminosPago.Text <> "" And
+                txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And txtpagoPaciente.Text <> "" And
+                txtvuelto.Text <> "" And txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
+
+                Dim objFact As New ClsFactura
+                With objFact
+                    .numeroOficial_ = txtnumeroOficial.Text
+                    .codigoCliente_ = txtcodigoCliente.Text
+                    .codigoRecepcionista_ = txtcodigoRecepecionista.Text
+                    .codigoMedico_ = txtcodigoMedico.Text
+                    .codigoCajero_ = txtcodigoCajero.Text
+                    .codigoTerminoPago1 = txtcodigoTerminosPago.Text
+                    .codigoSede_ = txtcodigoSede.Text
+                    .fechaVto_ = dtpfechaVto.Text
+                    .codigoSucursal_ = txtcodigoSucursal.Text
+                    .codigoConvenio_ = txtcodigoConvenio.Text
+                    .numeroPoliza_ = txtnumeroPoliza.Text
+                    .codigoTerminal_ = txtcodigoTerminal.Text
+                    .entregaMedico_ = cbxentregarMedico.Checked
+                    .entregaPaciente_ = cbxentregarPaciente.Checked
+                    .enviarEmail_ = cbxenviarCorreo.Checked
+                    .pagoPaciente_ = txtpagoPaciente.Text
+                    .vuelto_ = txtvuelto.Text
+                    .total_ = txttotal.Text
+                    .ok_ = cbxok.Checked
+                End With
+
+                If objFact.RegistrarNuevaFactura() = 1 Then
+                    MsgBox("Registrada la factura correctamente.")
+                    deshabilitar()
+
+                    Dim dt As New DataTable
+                    dt = objFact.BuscarFacturaCode()
+                    Dim row As DataRow = dt.Rows(0)
+
+                    txtnumeroFactura.Text = CStr(row("numero"))
+                    btnguardar.Enabled = False
+                    Dim fecha As Date
+                    Dim objDetalleFact As New ClsDetalleFactura
+                    For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 1
+                        fecha = Format(dgblistadoExamenes.Rows(index).Cells(4).Value(), "dddd, d MMM yyyy")
+                        With objDetalleFact
+                            .numeroFactura_ = Convert.ToInt32(txtnumeroFactura.Text)
+                            .codigoExamen_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(0).Value())
+                            .cantidad_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(1).Value())
+                            .fechaEntrega_ = fecha
+                            .descuento_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(5).Value())
+                            .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+                        End With
+                        If objDetalleFact.RegistrarNuevoDetalleFactura() = 0 Then
+                            MsgBox("Error al querer insertar el detalle de factura.")
+                        End If
+                    Next
+                Else
+                    MsgBox("Error al querer registrar la factura.", MsgBoxStyle.Critical)
+                End If
+            Else
+                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            Dim objFact2 As New ClsFactura
+            objFact2.numero_ = Convert.ToInt32(txtnumeroFactura.Text)
+            If objFact2.EliminarFactura() = 1 Then
+                MsgBox("Eliminada la factura")
+            End If
+        End Try
+    End Sub
+    Private Sub txtcodigoCliente_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoCliente.KeyPress
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub txtcodigoMedico_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoMedico.KeyPress
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub txtcodigoSede_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoSede.KeyPress
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
+        End If
     End Sub
 End Class
