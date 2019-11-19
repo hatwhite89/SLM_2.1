@@ -56,19 +56,19 @@ Partial Class M_Factura
         Me.lblpagoPaciente = New System.Windows.Forms.Label()
         Me.lblvuelto = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
-        Me.txtcodigoFactura = New System.Windows.Forms.TextBox()
-        Me.txtcodigoOficial = New System.Windows.Forms.TextBox()
+        Me.txtnumeroFactura = New System.Windows.Forms.TextBox()
+        Me.txtnumeroOficial = New System.Windows.Forms.TextBox()
         Me.txtcodigoCliente = New System.Windows.Forms.TextBox()
         Me.txtnombreCliente = New System.Windows.Forms.TextBox()
         Me.txtcodigoMedico = New System.Windows.Forms.TextBox()
-        Me.txtpoliza = New System.Windows.Forms.TextBox()
+        Me.txtnumeroPoliza = New System.Windows.Forms.TextBox()
         Me.dtpfechaFactura = New System.Windows.Forms.DateTimePicker()
         Me.dtpfechaVto = New System.Windows.Forms.DateTimePicker()
-        Me.txtconvenio = New System.Windows.Forms.TextBox()
-        Me.txtterminal = New System.Windows.Forms.TextBox()
+        Me.txtcodigoConvenio = New System.Windows.Forms.TextBox()
+        Me.txtcodigoTerminal = New System.Windows.Forms.TextBox()
         Me.cbxentregarMedico = New System.Windows.Forms.CheckBox()
-        Me.txtrecepecionista = New System.Windows.Forms.TextBox()
-        Me.txtcajero = New System.Windows.Forms.TextBox()
+        Me.txtcodigoRecepecionista = New System.Windows.Forms.TextBox()
+        Me.txtcodigoCajero = New System.Windows.Forms.TextBox()
         Me.txtcodigoSucursal = New System.Windows.Forms.TextBox()
         Me.txtnombreMedico = New System.Windows.Forms.TextBox()
         Me.txtcodigoTerminosPago = New System.Windows.Forms.TextBox()
@@ -430,23 +430,23 @@ Partial Class M_Factura
         Me.lbltotal.TabIndex = 38
         Me.lbltotal.Text = "Total"
         '
-        'txtcodigoFactura
+        'txtnumeroFactura
         '
-        Me.txtcodigoFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcodigoFactura.Location = New System.Drawing.Point(113, 86)
-        Me.txtcodigoFactura.Name = "txtcodigoFactura"
-        Me.txtcodigoFactura.Size = New System.Drawing.Size(276, 22)
-        Me.txtcodigoFactura.TabIndex = 39
-        Me.txtcodigoFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtnumeroFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnumeroFactura.Location = New System.Drawing.Point(113, 86)
+        Me.txtnumeroFactura.Name = "txtnumeroFactura"
+        Me.txtnumeroFactura.Size = New System.Drawing.Size(276, 22)
+        Me.txtnumeroFactura.TabIndex = 39
+        Me.txtnumeroFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txtcodigoOficial
+        'txtnumeroOficial
         '
-        Me.txtcodigoOficial.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcodigoOficial.Location = New System.Drawing.Point(500, 86)
-        Me.txtcodigoOficial.Name = "txtcodigoOficial"
-        Me.txtcodigoOficial.Size = New System.Drawing.Size(229, 22)
-        Me.txtcodigoOficial.TabIndex = 40
-        Me.txtcodigoOficial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtnumeroOficial.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnumeroOficial.Location = New System.Drawing.Point(500, 86)
+        Me.txtnumeroOficial.Name = "txtnumeroOficial"
+        Me.txtnumeroOficial.Size = New System.Drawing.Size(229, 22)
+        Me.txtnumeroOficial.TabIndex = 40
+        Me.txtnumeroOficial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcodigoCliente
         '
@@ -475,18 +475,19 @@ Partial Class M_Factura
         Me.txtcodigoMedico.TabIndex = 43
         Me.txtcodigoMedico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txtpoliza
+        'txtnumeroPoliza
         '
-        Me.txtpoliza.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpoliza.Location = New System.Drawing.Point(113, 254)
-        Me.txtpoliza.Name = "txtpoliza"
-        Me.txtpoliza.Size = New System.Drawing.Size(276, 22)
-        Me.txtpoliza.TabIndex = 45
-        Me.txtpoliza.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtnumeroPoliza.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnumeroPoliza.Location = New System.Drawing.Point(113, 254)
+        Me.txtnumeroPoliza.Name = "txtnumeroPoliza"
+        Me.txtnumeroPoliza.Size = New System.Drawing.Size(276, 22)
+        Me.txtnumeroPoliza.TabIndex = 45
+        Me.txtnumeroPoliza.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'dtpfechaFactura
         '
         Me.dtpfechaFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpfechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfechaFactura.Location = New System.Drawing.Point(850, 87)
         Me.dtpfechaFactura.Name = "dtpfechaFactura"
         Me.dtpfechaFactura.Size = New System.Drawing.Size(282, 22)
@@ -495,28 +496,29 @@ Partial Class M_Factura
         'dtpfechaVto
         '
         Me.dtpfechaVto.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpfechaVto.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfechaVto.Location = New System.Drawing.Point(113, 198)
         Me.dtpfechaVto.Name = "dtpfechaVto"
         Me.dtpfechaVto.Size = New System.Drawing.Size(276, 22)
         Me.dtpfechaVto.TabIndex = 47
         '
-        'txtconvenio
+        'txtcodigoConvenio
         '
-        Me.txtconvenio.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtconvenio.Location = New System.Drawing.Point(113, 226)
-        Me.txtconvenio.Name = "txtconvenio"
-        Me.txtconvenio.Size = New System.Drawing.Size(276, 22)
-        Me.txtconvenio.TabIndex = 48
-        Me.txtconvenio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtcodigoConvenio.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcodigoConvenio.Location = New System.Drawing.Point(113, 226)
+        Me.txtcodigoConvenio.Name = "txtcodigoConvenio"
+        Me.txtcodigoConvenio.Size = New System.Drawing.Size(276, 22)
+        Me.txtcodigoConvenio.TabIndex = 48
+        Me.txtcodigoConvenio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txtterminal
+        'txtcodigoTerminal
         '
-        Me.txtterminal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtterminal.Location = New System.Drawing.Point(506, 256)
-        Me.txtterminal.Name = "txtterminal"
-        Me.txtterminal.Size = New System.Drawing.Size(224, 22)
-        Me.txtterminal.TabIndex = 49
-        Me.txtterminal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtcodigoTerminal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcodigoTerminal.Location = New System.Drawing.Point(506, 256)
+        Me.txtcodigoTerminal.Name = "txtcodigoTerminal"
+        Me.txtcodigoTerminal.Size = New System.Drawing.Size(224, 22)
+        Me.txtcodigoTerminal.TabIndex = 49
+        Me.txtcodigoTerminal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'cbxentregarMedico
         '
@@ -529,23 +531,23 @@ Partial Class M_Factura
         Me.cbxentregarMedico.Text = "Entregar a Médico"
         Me.cbxentregarMedico.UseVisualStyleBackColor = True
         '
-        'txtrecepecionista
+        'txtcodigoRecepecionista
         '
-        Me.txtrecepecionista.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtrecepecionista.Location = New System.Drawing.Point(850, 115)
-        Me.txtrecepecionista.Name = "txtrecepecionista"
-        Me.txtrecepecionista.Size = New System.Drawing.Size(282, 22)
-        Me.txtrecepecionista.TabIndex = 51
-        Me.txtrecepecionista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtcodigoRecepecionista.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcodigoRecepecionista.Location = New System.Drawing.Point(850, 115)
+        Me.txtcodigoRecepecionista.Name = "txtcodigoRecepecionista"
+        Me.txtcodigoRecepecionista.Size = New System.Drawing.Size(282, 22)
+        Me.txtcodigoRecepecionista.TabIndex = 51
+        Me.txtcodigoRecepecionista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txtcajero
+        'txtcodigoCajero
         '
-        Me.txtcajero.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcajero.Location = New System.Drawing.Point(850, 143)
-        Me.txtcajero.Name = "txtcajero"
-        Me.txtcajero.Size = New System.Drawing.Size(282, 22)
-        Me.txtcajero.TabIndex = 52
-        Me.txtcajero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtcodigoCajero.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcodigoCajero.Location = New System.Drawing.Point(850, 143)
+        Me.txtcodigoCajero.Name = "txtcodigoCajero"
+        Me.txtcodigoCajero.Size = New System.Drawing.Size(282, 22)
+        Me.txtcodigoCajero.TabIndex = 52
+        Me.txtcodigoCajero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcodigoSucursal
         '
@@ -572,6 +574,7 @@ Partial Class M_Factura
         Me.txtcodigoTerminosPago.Name = "txtcodigoTerminosPago"
         Me.txtcodigoTerminosPago.Size = New System.Drawing.Size(185, 22)
         Me.txtcodigoTerminosPago.TabIndex = 58
+        Me.txtcodigoTerminosPago.Text = "CO"
         Me.txtcodigoTerminosPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcodigoSede
@@ -905,18 +908,18 @@ Partial Class M_Factura
         Me.Controls.Add(Me.txtcodigoTerminosPago)
         Me.Controls.Add(Me.txtnombreMedico)
         Me.Controls.Add(Me.txtcodigoSucursal)
-        Me.Controls.Add(Me.txtcajero)
-        Me.Controls.Add(Me.txtrecepecionista)
-        Me.Controls.Add(Me.txtterminal)
-        Me.Controls.Add(Me.txtconvenio)
+        Me.Controls.Add(Me.txtcodigoCajero)
+        Me.Controls.Add(Me.txtcodigoRecepecionista)
+        Me.Controls.Add(Me.txtcodigoTerminal)
+        Me.Controls.Add(Me.txtcodigoConvenio)
         Me.Controls.Add(Me.dtpfechaVto)
         Me.Controls.Add(Me.dtpfechaFactura)
-        Me.Controls.Add(Me.txtpoliza)
+        Me.Controls.Add(Me.txtnumeroPoliza)
         Me.Controls.Add(Me.txtcodigoMedico)
         Me.Controls.Add(Me.txtnombreCliente)
         Me.Controls.Add(Me.txtcodigoCliente)
-        Me.Controls.Add(Me.txtcodigoOficial)
-        Me.Controls.Add(Me.txtcodigoFactura)
+        Me.Controls.Add(Me.txtnumeroOficial)
+        Me.Controls.Add(Me.txtnumeroFactura)
         Me.Controls.Add(Me.lbltotal)
         Me.Controls.Add(Me.lblvuelto)
         Me.Controls.Add(Me.lblpagoPaciente)
@@ -978,19 +981,19 @@ Partial Class M_Factura
     Friend WithEvents lblpagoPaciente As Label
     Friend WithEvents lblvuelto As Label
     Friend WithEvents lbltotal As Label
-    Friend WithEvents txtcodigoFactura As TextBox
-    Friend WithEvents txtcodigoOficial As TextBox
+    Friend WithEvents txtnumeroFactura As TextBox
+    Friend WithEvents txtnumeroOficial As TextBox
     Friend WithEvents txtcodigoCliente As TextBox
     Friend WithEvents txtnombreCliente As TextBox
     Friend WithEvents txtcodigoMedico As TextBox
-    Friend WithEvents txtpoliza As TextBox
+    Friend WithEvents txtnumeroPoliza As TextBox
     Friend WithEvents dtpfechaFactura As DateTimePicker
     Friend WithEvents dtpfechaVto As DateTimePicker
-    Friend WithEvents txtconvenio As TextBox
-    Friend WithEvents txtterminal As TextBox
+    Friend WithEvents txtcodigoConvenio As TextBox
+    Friend WithEvents txtcodigoTerminal As TextBox
     Friend WithEvents cbxentregarMedico As CheckBox
-    Friend WithEvents txtrecepecionista As TextBox
-    Friend WithEvents txtcajero As TextBox
+    Friend WithEvents txtcodigoRecepecionista As TextBox
+    Friend WithEvents txtcodigoCajero As TextBox
     Friend WithEvents txtcodigoSucursal As TextBox
     Friend WithEvents txtnombreMedico As TextBox
     Friend WithEvents txtcodigoTerminosPago As TextBox

@@ -9,6 +9,7 @@ Public Class ClsMedico
 
     End Sub
 
+
     Public Property Codigo1 As Integer
         Get
             Return codigo
