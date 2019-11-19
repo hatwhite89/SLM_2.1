@@ -1,5 +1,5 @@
 ﻿Public Class frmTipoDeposito
-    Private Sub btnRegresar_Click(sender As Object, e As EventArgs) Handles btnRegresar.Click
+    Private Sub btnRegresar_Click(sender As Object, e As EventArgs)
         'Cerrar ventana TipoDeposito.
         Me.Close()
     End Sub
@@ -47,6 +47,10 @@
         frmDeposito.txtComision.Text = ""
         frmDeposito.txtCajero.Text = ""
         frmDeposito.txtComentario.Text = ""
+
+    End Sub
+
+    Private Sub frmTipoDeposito_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

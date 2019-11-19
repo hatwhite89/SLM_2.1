@@ -37,6 +37,8 @@ Partial Class frmMenuConta
         Me.btnCuentas = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnFormaPago = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.tcMenu.SuspendLayout()
         Me.tpCheque.SuspendLayout()
         Me.tpPagos.SuspendLayout()
@@ -102,6 +104,8 @@ Partial Class frmMenuConta
         '
         'TpMantenimiento
         '
+        Me.TpMantenimiento.Controls.Add(Me.Label5)
+        Me.TpMantenimiento.Controls.Add(Me.Button1)
         Me.TpMantenimiento.Controls.Add(Me.Label4)
         Me.TpMantenimiento.Controls.Add(Me.btnProveedor)
         Me.TpMantenimiento.Controls.Add(Me.Label3)
@@ -121,7 +125,7 @@ Partial Class frmMenuConta
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(158, 48)
+        Me.Label4.Location = New System.Drawing.Point(154, 48)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(56, 13)
         Me.Label4.TabIndex = 7
@@ -202,6 +206,27 @@ Partial Class frmMenuConta
         Me.btnFormaPago.TabIndex = 0
         Me.btnFormaPago.UseVisualStyleBackColor = True
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(159, 116)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(43, 13)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Bancos"
+        '
+        'Button1
+        '
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(161, 75)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(41, 38)
+        Me.Button1.TabIndex = 8
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmMenuConta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -236,4 +261,6 @@ Partial Class frmMenuConta
     Friend WithEvents btnCategoriaProveedor As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents btnProveedor As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Button1 As Button
 End Class

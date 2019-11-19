@@ -39,11 +39,11 @@
 
         'Cambio de color estado de cuenta.
         If chkEstado.Checked = True Then
-            lblEstadoColor.Text = "Inactiva"
-            lblEstadoColor.ForeColor = Color.Red
-        Else
             lblEstadoColor.Text = "Activa"
             lblEstadoColor.ForeColor = Color.Green
+        Else
+            lblEstadoColor.Text = "Inactiva"
+            lblEstadoColor.ForeColor = Color.Red
         End If
     End Sub
     Private Sub dtCuentas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtCuentas.CellClick
