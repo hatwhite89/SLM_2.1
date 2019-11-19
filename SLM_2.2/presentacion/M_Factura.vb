@@ -159,4 +159,6 @@
         M_TerminosPago.lblform.Text = "factura"
         M_TerminosPago.ShowDialog()
     End Sub
+
+
 End Class

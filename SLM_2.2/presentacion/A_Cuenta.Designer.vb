@@ -189,9 +189,9 @@ Partial Class A_Cuenta
         Me.chkEstado.AutoSize = True
         Me.chkEstado.Location = New System.Drawing.Point(245, 56)
         Me.chkEstado.Name = "chkEstado"
-        Me.chkEstado.Size = New System.Drawing.Size(118, 17)
+        Me.chkEstado.Size = New System.Drawing.Size(101, 17)
         Me.chkEstado.TabIndex = 10
-        Me.chkEstado.Text = "Deshabilitar Cuenta"
+        Me.chkEstado.Text = "Habilitar Cuenta"
         Me.chkEstado.UseVisualStyleBackColor = True
         '
         'lblEstado

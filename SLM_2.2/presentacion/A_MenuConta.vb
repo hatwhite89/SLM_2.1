@@ -34,5 +34,7 @@
         A_Proveedor.Show()
     End Sub
 
-
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        A_Bancos.Show()
+    End Sub
 End Class
