@@ -156,6 +156,7 @@ Partial Class M_Sede
         Me.txttelefono.Name = "txttelefono"
         Me.txttelefono.Size = New System.Drawing.Size(179, 22)
         Me.txttelefono.TabIndex = 134
+        Me.txttelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lbltelefono
         '
@@ -193,6 +194,7 @@ Partial Class M_Sede
         Me.txtcontacto.Name = "txtcontacto"
         Me.txtcontacto.Size = New System.Drawing.Size(179, 22)
         Me.txtcontacto.TabIndex = 129
+        Me.txtcontacto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcorreo
         '
@@ -200,6 +202,7 @@ Partial Class M_Sede
         Me.txtcorreo.Name = "txtcorreo"
         Me.txtcorreo.Size = New System.Drawing.Size(179, 22)
         Me.txtcorreo.TabIndex = 130
+        Me.txtcorreo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'rtxtdireccion4
         '
@@ -251,6 +254,7 @@ Partial Class M_Sede
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(423, 22)
         Me.txtnombre.TabIndex = 121
+        Me.txtnombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcodigo
         '
@@ -259,6 +263,7 @@ Partial Class M_Sede
         Me.txtcodigo.ReadOnly = True
         Me.txtcodigo.Size = New System.Drawing.Size(179, 22)
         Me.txtcodigo.TabIndex = 123
+        Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lbldireccion1
         '

@@ -216,6 +216,12 @@
     <Compile Include="presentacion\M_BuscarCuenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_BuscarExamen.Designer.vb">
+      <DependentUpon>M_BuscarExamen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarExamen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_Caja.Designer.vb">
       <DependentUpon>M_Caja.vb</DependentUpon>
     </Compile>
@@ -228,16 +234,22 @@
     <Compile Include="presentacion\M_Categoria.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_ClasificacionContacto.Designer.vb">
+      <DependentUpon>M_ClasificacionContacto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ClasificacionContacto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_Cliente.Designer.vb">
       <DependentUpon>M_Cliente.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_Cliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\M_ClasificacionContacto.Designer.vb">
-      <DependentUpon>M_ClasificacionContacto.vb</DependentUpon>
+    <Compile Include="presentacion\M_ClienteVentana.Designer.vb">
+      <DependentUpon>M_ClienteVentana.vb</DependentUpon>
     </Compile>
-    <Compile Include="presentacion\M_ClasificacionContacto.vb">
+    <Compile Include="presentacion\M_ClienteVentana.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_Especialidad.Designer.vb">
@@ -312,6 +324,12 @@
     <Compile Include="presentacion\M_TipoTermino.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\prueba.Designer.vb">
+      <DependentUpon>prueba.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\prueba.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -362,17 +380,23 @@
     <EmbeddedResource Include="presentacion\M_BuscarCuenta.resx">
       <DependentUpon>M_BuscarCuenta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_BuscarExamen.resx">
+      <DependentUpon>M_BuscarExamen.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Caja.resx">
       <DependentUpon>M_Caja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Categoria.resx">
       <DependentUpon>M_Categoria.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ClasificacionContacto.resx">
+      <DependentUpon>M_ClasificacionContacto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Cliente.resx">
       <DependentUpon>M_Cliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_ClasificacionContacto.resx">
-      <DependentUpon>M_ClasificacionContacto.vb</DependentUpon>
+    <EmbeddedResource Include="presentacion\M_ClienteVentana.resx">
+      <DependentUpon>M_ClienteVentana.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Especialidad.resx">
       <DependentUpon>M_Especialidad.vb</DependentUpon>
@@ -409,6 +433,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_TipoTermino.resx">
       <DependentUpon>M_TipoTermino.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\prueba.resx">
+      <DependentUpon>prueba.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

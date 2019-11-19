@@ -24,6 +24,12 @@ Partial Class M_Categoria
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Categoria))
         Me.gbxclasificacion = New System.Windows.Forms.GroupBox()
+        Me.txtdescripcionTipo = New System.Windows.Forms.TextBox()
+        Me.lbltipo = New System.Windows.Forms.Label()
+        Me.btnbuscarTipo = New System.Windows.Forms.Button()
+        Me.txtcodigoTipo = New System.Windows.Forms.TextBox()
+        Me.rtxtdescripcion = New System.Windows.Forms.RichTextBox()
+        Me.lbldescripcion = New System.Windows.Forms.Label()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
@@ -37,12 +43,6 @@ Partial Class M_Categoria
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
         Me.lblcomentarioB = New System.Windows.Forms.Label()
         Me.btnbuscar = New System.Windows.Forms.Button()
-        Me.rtxtdescripcion = New System.Windows.Forms.RichTextBox()
-        Me.lbldescripcion = New System.Windows.Forms.Label()
-        Me.txtdescripcionTipo = New System.Windows.Forms.TextBox()
-        Me.lbltipo = New System.Windows.Forms.Label()
-        Me.btnbuscarTipo = New System.Windows.Forms.Button()
-        Me.txtcodigoTipo = New System.Windows.Forms.TextBox()
         Me.gbxclasificacion.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,6 +68,62 @@ Partial Class M_Categoria
         Me.gbxclasificacion.TabIndex = 117
         Me.gbxclasificacion.TabStop = False
         Me.gbxclasificacion.Text = "REGISTRAR CLASIFICACIÓN"
+        '
+        'txtdescripcionTipo
+        '
+        Me.txtdescripcionTipo.Location = New System.Drawing.Point(281, 116)
+        Me.txtdescripcionTipo.Name = "txtdescripcionTipo"
+        Me.txtdescripcionTipo.ReadOnly = True
+        Me.txtdescripcionTipo.Size = New System.Drawing.Size(272, 22)
+        Me.txtdescripcionTipo.TabIndex = 131
+        '
+        'lbltipo
+        '
+        Me.lbltipo.AutoSize = True
+        Me.lbltipo.Location = New System.Drawing.Point(80, 119)
+        Me.lbltipo.Name = "lbltipo"
+        Me.lbltipo.Size = New System.Drawing.Size(36, 17)
+        Me.lbltipo.TabIndex = 130
+        Me.lbltipo.Text = "Tipo"
+        '
+        'btnbuscarTipo
+        '
+        Me.btnbuscarTipo.BackColor = System.Drawing.Color.White
+        Me.btnbuscarTipo.BackgroundImage = CType(resources.GetObject("btnbuscarTipo.BackgroundImage"), System.Drawing.Image)
+        Me.btnbuscarTipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnbuscarTipo.FlatAppearance.BorderSize = 0
+        Me.btnbuscarTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnbuscarTipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnbuscarTipo.Location = New System.Drawing.Point(132, 116)
+        Me.btnbuscarTipo.Name = "btnbuscarTipo"
+        Me.btnbuscarTipo.Size = New System.Drawing.Size(49, 22)
+        Me.btnbuscarTipo.TabIndex = 129
+        Me.btnbuscarTipo.UseVisualStyleBackColor = False
+        '
+        'txtcodigoTipo
+        '
+        Me.txtcodigoTipo.Location = New System.Drawing.Point(187, 116)
+        Me.txtcodigoTipo.Name = "txtcodigoTipo"
+        Me.txtcodigoTipo.Size = New System.Drawing.Size(88, 22)
+        Me.txtcodigoTipo.TabIndex = 128
+        '
+        'rtxtdescripcion
+        '
+        Me.rtxtdescripcion.Location = New System.Drawing.Point(130, 65)
+        Me.rtxtdescripcion.Name = "rtxtdescripcion"
+        Me.rtxtdescripcion.Size = New System.Drawing.Size(423, 37)
+        Me.rtxtdescripcion.TabIndex = 127
+        Me.rtxtdescripcion.Text = ""
+        '
+        'lbldescripcion
+        '
+        Me.lbldescripcion.AutoSize = True
+        Me.lbldescripcion.Location = New System.Drawing.Point(41, 68)
+        Me.lbldescripcion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbldescripcion.Name = "lbldescripcion"
+        Me.lbldescripcion.Size = New System.Drawing.Size(82, 17)
+        Me.lbldescripcion.TabIndex = 126
+        Me.lbldescripcion.Text = "Descripción"
         '
         'btnmodificar
         '
@@ -136,6 +192,7 @@ Partial Class M_Categoria
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(183, 22)
         Me.txtcodigo.TabIndex = 40
+        Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'gbxbusqueda
         '
@@ -213,62 +270,6 @@ Partial Class M_Categoria
         Me.btnbuscar.Text = "Buscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
         '
-        'rtxtdescripcion
-        '
-        Me.rtxtdescripcion.Location = New System.Drawing.Point(130, 65)
-        Me.rtxtdescripcion.Name = "rtxtdescripcion"
-        Me.rtxtdescripcion.Size = New System.Drawing.Size(423, 37)
-        Me.rtxtdescripcion.TabIndex = 127
-        Me.rtxtdescripcion.Text = ""
-        '
-        'lbldescripcion
-        '
-        Me.lbldescripcion.AutoSize = True
-        Me.lbldescripcion.Location = New System.Drawing.Point(41, 68)
-        Me.lbldescripcion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lbldescripcion.Name = "lbldescripcion"
-        Me.lbldescripcion.Size = New System.Drawing.Size(82, 17)
-        Me.lbldescripcion.TabIndex = 126
-        Me.lbldescripcion.Text = "Descripción"
-        '
-        'txtdescripcionTipo
-        '
-        Me.txtdescripcionTipo.Location = New System.Drawing.Point(281, 116)
-        Me.txtdescripcionTipo.Name = "txtdescripcionTipo"
-        Me.txtdescripcionTipo.ReadOnly = True
-        Me.txtdescripcionTipo.Size = New System.Drawing.Size(169, 22)
-        Me.txtdescripcionTipo.TabIndex = 131
-        '
-        'lbltipo
-        '
-        Me.lbltipo.AutoSize = True
-        Me.lbltipo.Location = New System.Drawing.Point(80, 119)
-        Me.lbltipo.Name = "lbltipo"
-        Me.lbltipo.Size = New System.Drawing.Size(36, 17)
-        Me.lbltipo.TabIndex = 130
-        Me.lbltipo.Text = "Tipo"
-        '
-        'btnbuscarTipo
-        '
-        Me.btnbuscarTipo.BackColor = System.Drawing.Color.White
-        Me.btnbuscarTipo.BackgroundImage = CType(resources.GetObject("btnbuscarTipo.BackgroundImage"), System.Drawing.Image)
-        Me.btnbuscarTipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnbuscarTipo.FlatAppearance.BorderSize = 0
-        Me.btnbuscarTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnbuscarTipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscarTipo.Location = New System.Drawing.Point(132, 116)
-        Me.btnbuscarTipo.Name = "btnbuscarTipo"
-        Me.btnbuscarTipo.Size = New System.Drawing.Size(49, 22)
-        Me.btnbuscarTipo.TabIndex = 129
-        Me.btnbuscarTipo.UseVisualStyleBackColor = False
-        '
-        'txtcodigoTipo
-        '
-        Me.txtcodigoTipo.Location = New System.Drawing.Point(187, 116)
-        Me.txtcodigoTipo.Name = "txtcodigoTipo"
-        Me.txtcodigoTipo.Size = New System.Drawing.Size(88, 22)
-        Me.txtcodigoTipo.TabIndex = 128
-        '
         'M_Categoria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -276,6 +277,7 @@ Partial Class M_Categoria
         Me.ClientSize = New System.Drawing.Size(669, 622)
         Me.Controls.Add(Me.gbxclasificacion)
         Me.Controls.Add(Me.gbxbusqueda)
+        Me.KeyPreview = True
         Me.Name = "M_Categoria"
         Me.Text = "M_Categoria"
         Me.gbxclasificacion.ResumeLayout(False)

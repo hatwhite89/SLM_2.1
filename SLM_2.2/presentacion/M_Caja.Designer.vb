@@ -151,6 +151,7 @@ Partial Class M_Caja
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(100, 22)
         Me.txtcodigo.TabIndex = 114
+        Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblnombre
         '
@@ -227,6 +228,7 @@ Partial Class M_Caja
         Me.ClientSize = New System.Drawing.Size(669, 622)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.gbxcaja)
+        Me.KeyPreview = True
         Me.Name = "M_Caja"
         Me.Text = "Cajero(a)"
         Me.gbxbusqueda.ResumeLayout(False)

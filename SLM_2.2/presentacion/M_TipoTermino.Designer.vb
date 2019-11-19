@@ -30,14 +30,14 @@ Partial Class M_TipoTermino
         Me.lbldescripcionB = New System.Windows.Forms.Label()
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.gbxsucursal = New System.Windows.Forms.GroupBox()
+        Me.lbldireccion1 = New System.Windows.Forms.Label()
+        Me.rtxtdescripcion = New System.Windows.Forms.RichTextBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btncancelar = New System.Windows.Forms.Button()
-        Me.btnnuevo = New System.Windows.Forms.Button()
-        Me.btnguardar = New System.Windows.Forms.Button()
-        Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.lblcodigo = New System.Windows.Forms.Label()
-        Me.rtxtdescripcion = New System.Windows.Forms.RichTextBox()
-        Me.lbldireccion1 = New System.Windows.Forms.Label()
+        Me.btnnuevo = New System.Windows.Forms.Button()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
+        Me.btnguardar = New System.Windows.Forms.Button()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxsucursal.SuspendLayout()
@@ -136,6 +136,24 @@ Partial Class M_TipoTermino
         Me.gbxsucursal.TabStop = False
         Me.gbxsucursal.Text = "REGISTRAR TIPO TÉRMINO"
         '
+        'lbldireccion1
+        '
+        Me.lbldireccion1.AutoSize = True
+        Me.lbldireccion1.Location = New System.Drawing.Point(47, 72)
+        Me.lbldireccion1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbldireccion1.Name = "lbldireccion1"
+        Me.lbldireccion1.Size = New System.Drawing.Size(82, 17)
+        Me.lbldireccion1.TabIndex = 125
+        Me.lbldireccion1.Text = "Descripción"
+        '
+        'rtxtdescripcion
+        '
+        Me.rtxtdescripcion.Location = New System.Drawing.Point(140, 64)
+        Me.rtxtdescripcion.Name = "rtxtdescripcion"
+        Me.rtxtdescripcion.Size = New System.Drawing.Size(423, 37)
+        Me.rtxtdescripcion.TabIndex = 126
+        Me.rtxtdescripcion.Text = ""
+        '
         'btnmodificar
         '
         Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
@@ -162,6 +180,15 @@ Partial Class M_TipoTermino
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
         '
+        'lblcodigo
+        '
+        Me.lblcodigo.AutoSize = True
+        Me.lblcodigo.Location = New System.Drawing.Point(77, 36)
+        Me.lblcodigo.Name = "lblcodigo"
+        Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodigo.TabIndex = 41
+        Me.lblcodigo.Text = "Código"
+        '
         'btnnuevo
         '
         Me.btnnuevo.BackColor = System.Drawing.Color.DodgerBlue
@@ -175,6 +202,14 @@ Partial Class M_TipoTermino
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.UseVisualStyleBackColor = False
         '
+        'txtcodigo
+        '
+        Me.txtcodigo.Location = New System.Drawing.Point(142, 33)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(133, 22)
+        Me.txtcodigo.TabIndex = 40
+        Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'btnguardar
         '
         Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
@@ -187,40 +222,6 @@ Partial Class M_TipoTermino
         Me.btnguardar.TabIndex = 108
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
-        '
-        'txtcodigo
-        '
-        Me.txtcodigo.Location = New System.Drawing.Point(142, 33)
-        Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(100, 22)
-        Me.txtcodigo.TabIndex = 40
-        '
-        'lblcodigo
-        '
-        Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(77, 36)
-        Me.lblcodigo.Name = "lblcodigo"
-        Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
-        Me.lblcodigo.TabIndex = 41
-        Me.lblcodigo.Text = "Código"
-        '
-        'rtxtdescripcion
-        '
-        Me.rtxtdescripcion.Location = New System.Drawing.Point(140, 64)
-        Me.rtxtdescripcion.Name = "rtxtdescripcion"
-        Me.rtxtdescripcion.Size = New System.Drawing.Size(423, 37)
-        Me.rtxtdescripcion.TabIndex = 126
-        Me.rtxtdescripcion.Text = ""
-        '
-        'lbldireccion1
-        '
-        Me.lbldireccion1.AutoSize = True
-        Me.lbldireccion1.Location = New System.Drawing.Point(47, 72)
-        Me.lbldireccion1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lbldireccion1.Name = "lbldireccion1"
-        Me.lbldireccion1.Size = New System.Drawing.Size(82, 17)
-        Me.lbldireccion1.TabIndex = 125
-        Me.lbldireccion1.Text = "Descripción"
         '
         'M_TipoTermino
         '
