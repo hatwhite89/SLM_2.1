@@ -23,9 +23,9 @@ Partial Class M_Factura
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Factura))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.btnbuscarCliente = New System.Windows.Forms.Button()
         Me.btnnueva = New System.Windows.Forms.Button()
@@ -101,6 +101,7 @@ Partial Class M_Factura
         Me.btnbuscarSucursal = New System.Windows.Forms.Button()
         Me.txtnombreSucursal = New System.Windows.Forms.TextBox()
         Me.txtdescripcionTermino = New System.Windows.Forms.TextBox()
+        Me.btncotizacion = New System.Windows.Forms.Button()
         Me.gbxlistadoExamenes.SuspendLayout()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -137,7 +138,7 @@ Partial Class M_Factura
         Me.btnnueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnueva.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnnueva.Location = New System.Drawing.Point(847, 41)
+        Me.btnnueva.Location = New System.Drawing.Point(847, 39)
         Me.btnnueva.Name = "btnnueva"
         Me.btnnueva.Size = New System.Drawing.Size(83, 35)
         Me.btnnueva.TabIndex = 15
@@ -150,7 +151,7 @@ Partial Class M_Factura
         Me.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnsalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnsalir.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnsalir.Location = New System.Drawing.Point(947, 41)
+        Me.btnsalir.Location = New System.Drawing.Point(947, 39)
         Me.btnsalir.Name = "btnsalir"
         Me.btnsalir.Size = New System.Drawing.Size(89, 35)
         Me.btnsalir.TabIndex = 17
@@ -163,7 +164,7 @@ Partial Class M_Factura
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnguardar.Location = New System.Drawing.Point(1050, 41)
+        Me.btnguardar.Location = New System.Drawing.Point(1050, 39)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(80, 35)
         Me.btnguardar.TabIndex = 18
@@ -313,34 +314,34 @@ Partial Class M_Factura
         '
         'dgblistadoExamenes
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgblistadoExamenes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgblistadoExamenes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgblistadoExamenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgblistadoExamenes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.Cantidad, Me.Precio, Me.Descripcion, Me.FechaEntrega, Me.Descuento, Me.Subtotal})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgblistadoExamenes.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgblistadoExamenes.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgblistadoExamenes.Location = New System.Drawing.Point(21, 32)
         Me.dgblistadoExamenes.Name = "dgblistadoExamenes"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgblistadoExamenes.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgblistadoExamenes.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgblistadoExamenes.RowHeadersWidth = 51
         Me.dgblistadoExamenes.RowTemplate.Height = 24
         Me.dgblistadoExamenes.Size = New System.Drawing.Size(1061, 150)
@@ -404,7 +405,7 @@ Partial Class M_Factura
         '
         Me.lblpagoPaciente.AutoSize = True
         Me.lblpagoPaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblpagoPaciente.Location = New System.Drawing.Point(317, 503)
+        Me.lblpagoPaciente.Location = New System.Drawing.Point(317, 506)
         Me.lblpagoPaciente.Name = "lblpagoPaciente"
         Me.lblpagoPaciente.Size = New System.Drawing.Size(158, 17)
         Me.lblpagoPaciente.TabIndex = 36
@@ -414,7 +415,7 @@ Partial Class M_Factura
         '
         Me.lblvuelto.AutoSize = True
         Me.lblvuelto.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblvuelto.Location = New System.Drawing.Point(661, 503)
+        Me.lblvuelto.Location = New System.Drawing.Point(661, 506)
         Me.lblvuelto.Name = "lblvuelto"
         Me.lblvuelto.Size = New System.Drawing.Size(48, 17)
         Me.lblvuelto.TabIndex = 37
@@ -424,7 +425,7 @@ Partial Class M_Factura
         '
         Me.lbltotal.AutoSize = True
         Me.lbltotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltotal.Location = New System.Drawing.Point(885, 503)
+        Me.lbltotal.Location = New System.Drawing.Point(885, 506)
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(40, 17)
         Me.lbltotal.TabIndex = 38
@@ -611,7 +612,7 @@ Partial Class M_Factura
         'txtvuelto
         '
         Me.txtvuelto.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtvuelto.Location = New System.Drawing.Point(715, 500)
+        Me.txtvuelto.Location = New System.Drawing.Point(715, 503)
         Me.txtvuelto.Name = "txtvuelto"
         Me.txtvuelto.Size = New System.Drawing.Size(142, 22)
         Me.txtvuelto.TabIndex = 65
@@ -633,7 +634,7 @@ Partial Class M_Factura
         Me.btnimprimirComprobante.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnimprimirComprobante.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnimprimirComprobante.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnimprimirComprobante.Location = New System.Drawing.Point(845, 543)
+        Me.btnimprimirComprobante.Location = New System.Drawing.Point(843, 543)
         Me.btnimprimirComprobante.Name = "btnimprimirComprobante"
         Me.btnimprimirComprobante.Size = New System.Drawing.Size(125, 94)
         Me.btnimprimirComprobante.TabIndex = 70
@@ -747,7 +748,7 @@ Partial Class M_Factura
         'txtpagoPaciente
         '
         Me.txtpagoPaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpagoPaciente.Location = New System.Drawing.Point(483, 500)
+        Me.txtpagoPaciente.Location = New System.Drawing.Point(483, 503)
         Me.txtpagoPaciente.Name = "txtpagoPaciente"
         Me.txtpagoPaciente.Size = New System.Drawing.Size(142, 22)
         Me.txtpagoPaciente.TabIndex = 83
@@ -756,7 +757,7 @@ Partial Class M_Factura
         'txttotal
         '
         Me.txttotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txttotal.Location = New System.Drawing.Point(931, 500)
+        Me.txttotal.Location = New System.Drawing.Point(931, 503)
         Me.txttotal.Name = "txttotal"
         Me.txttotal.Size = New System.Drawing.Size(142, 22)
         Me.txttotal.TabIndex = 84
@@ -767,7 +768,7 @@ Partial Class M_Factura
         Me.btnentregarExamen.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnentregarExamen.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnentregarExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnentregarExamen.Location = New System.Drawing.Point(976, 543)
+        Me.btnentregarExamen.Location = New System.Drawing.Point(974, 543)
         Me.btnentregarExamen.Name = "btnentregarExamen"
         Me.btnentregarExamen.Size = New System.Drawing.Size(125, 94)
         Me.btnentregarExamen.TabIndex = 85
@@ -779,7 +780,7 @@ Partial Class M_Factura
         Me.btnbusquedaExamen.BackColor = System.Drawing.Color.Yellow
         Me.btnbusquedaExamen.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnbusquedaExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbusquedaExamen.Location = New System.Drawing.Point(714, 543)
+        Me.btnbusquedaExamen.Location = New System.Drawing.Point(712, 543)
         Me.btnbusquedaExamen.Name = "btnbusquedaExamen"
         Me.btnbusquedaExamen.Size = New System.Drawing.Size(125, 94)
         Me.btnbusquedaExamen.TabIndex = 86
@@ -791,7 +792,7 @@ Partial Class M_Factura
         Me.btnmuestrasPendientes.BackColor = System.Drawing.Color.Yellow
         Me.btnmuestrasPendientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnmuestrasPendientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmuestrasPendientes.Location = New System.Drawing.Point(583, 543)
+        Me.btnmuestrasPendientes.Location = New System.Drawing.Point(581, 543)
         Me.btnmuestrasPendientes.Name = "btnmuestrasPendientes"
         Me.btnmuestrasPendientes.Size = New System.Drawing.Size(125, 94)
         Me.btnmuestrasPendientes.TabIndex = 87
@@ -803,7 +804,7 @@ Partial Class M_Factura
         Me.btnestadoFactura.BackColor = System.Drawing.Color.Yellow
         Me.btnestadoFactura.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnestadoFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnestadoFactura.Location = New System.Drawing.Point(452, 543)
+        Me.btnestadoFactura.Location = New System.Drawing.Point(450, 543)
         Me.btnestadoFactura.Name = "btnestadoFactura"
         Me.btnestadoFactura.Size = New System.Drawing.Size(125, 94)
         Me.btnestadoFactura.TabIndex = 88
@@ -815,7 +816,7 @@ Partial Class M_Factura
         Me.btnaplicarDescuento.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnaplicarDescuento.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnaplicarDescuento.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnaplicarDescuento.Location = New System.Drawing.Point(321, 543)
+        Me.btnaplicarDescuento.Location = New System.Drawing.Point(319, 543)
         Me.btnaplicarDescuento.Name = "btnaplicarDescuento"
         Me.btnaplicarDescuento.Size = New System.Drawing.Size(125, 94)
         Me.btnaplicarDescuento.TabIndex = 89
@@ -827,7 +828,7 @@ Partial Class M_Factura
         Me.btntarjeta.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btntarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btntarjeta.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btntarjeta.Location = New System.Drawing.Point(190, 543)
+        Me.btntarjeta.Location = New System.Drawing.Point(188, 543)
         Me.btntarjeta.Name = "btntarjeta"
         Me.btntarjeta.Size = New System.Drawing.Size(125, 94)
         Me.btntarjeta.TabIndex = 90
@@ -839,7 +840,7 @@ Partial Class M_Factura
         Me.btncontado.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btncontado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btncontado.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncontado.Location = New System.Drawing.Point(59, 543)
+        Me.btncontado.Location = New System.Drawing.Point(57, 543)
         Me.btncontado.Name = "btncontado"
         Me.btncontado.Size = New System.Drawing.Size(125, 94)
         Me.btncontado.TabIndex = 91
@@ -878,12 +879,26 @@ Partial Class M_Factura
         Me.txtdescripcionTermino.Size = New System.Drawing.Size(312, 22)
         Me.txtdescripcionTermino.TabIndex = 95
         '
+        'btncotizacion
+        '
+        Me.btncotizacion.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btncotizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncotizacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncotizacion.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncotizacion.Location = New System.Drawing.Point(724, 39)
+        Me.btncotizacion.Name = "btncotizacion"
+        Me.btncotizacion.Size = New System.Drawing.Size(106, 35)
+        Me.btncotizacion.TabIndex = 96
+        Me.btncotizacion.Text = "Cotización"
+        Me.btncotizacion.UseVisualStyleBackColor = False
+        '
         'M_Factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1164, 668)
+        Me.Controls.Add(Me.btncotizacion)
         Me.Controls.Add(Me.txtdescripcionTermino)
         Me.Controls.Add(Me.txtnombreSucursal)
         Me.Controls.Add(Me.btnbuscarSucursal)
@@ -1033,4 +1048,5 @@ Partial Class M_Factura
     Friend WithEvents Descuento As DataGridViewTextBoxColumn
     Friend WithEvents Subtotal As DataGridViewTextBoxColumn
     Friend WithEvents txtdescripcionTermino As TextBox
+    Friend WithEvents btncotizacion As Button
 End Class
