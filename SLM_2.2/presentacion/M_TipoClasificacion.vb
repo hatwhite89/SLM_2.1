@@ -13,7 +13,6 @@
         btnguardar.Enabled = True
         btnnuevo.Enabled = False
     End Sub
-
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
@@ -31,7 +30,7 @@
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
                 rtxtcomentario.Text() = texto
-                'MsgBox("txtNombre: " + texto + ", correo:" + txtcorreo.Text() + ", tel: " + txttelefono.Text())
+
                 Dim objTipoCla As New ClsTipoClasificacion
                 With objTipoCla
                     .Comentario1 = texto
@@ -62,7 +61,6 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
@@ -80,7 +78,6 @@
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
                 rtxtcomentario.Text() = texto
-                'MsgBox("txtNombre: " + texto + ", correo:" + txtcorreo.Text() + ", tel: " + txttelefono.Text())
 
                 Dim objTipoCla As New ClsTipoClasificacion
                 With objTipoCla
@@ -113,11 +110,9 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         Me.Close()
     End Sub
-
     Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
         Dim objTipoCla As New ClsTipoClasificacion
         With objTipoCla
@@ -128,13 +123,11 @@
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
     End Sub
-
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
         End If
     End Sub
-
     Private Sub M_TipoClasificacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objTipoCla As New ClsTipoClasificacion
         Dim dv As DataView = objTipoCla.SeleccionarTipoClasificacion.DefaultView
@@ -149,7 +142,6 @@
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
     End Sub
-
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
@@ -163,8 +155,6 @@
                 M_ClasificacionContacto.txtcomentarioTipo.Text = rtxtcomentario.Text
             End If
 
-
-
             btnmodificar.Enabled = True
 
             rtxtcomentario.ReadOnly = False
@@ -173,6 +163,4 @@
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
-
 End Class
