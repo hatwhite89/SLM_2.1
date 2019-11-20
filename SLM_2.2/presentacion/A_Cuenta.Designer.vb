@@ -73,14 +73,13 @@ Partial Class A_Cuenta
         '
         Me.txtNombre.Location = New System.Drawing.Point(54, 54)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(185, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(316, 20)
         Me.txtNombre.TabIndex = 3
         '
         'gbxCuenta
         '
-        Me.gbxCuenta.Controls.Add(Me.lblTipoDetalle)
-        Me.gbxCuenta.Controls.Add(Me.lblCodCuenta)
         Me.gbxCuenta.Controls.Add(Me.btnNuevo)
+        Me.gbxCuenta.Controls.Add(Me.lblTipoDetalle)
         Me.gbxCuenta.Controls.Add(Me.btnModificar)
         Me.gbxCuenta.Controls.Add(Me.btnGuardar)
         Me.gbxCuenta.Controls.Add(Me.lblTipo)
@@ -94,7 +93,7 @@ Partial Class A_Cuenta
         Me.gbxCuenta.Controls.Add(Me.lblEstado)
         Me.gbxCuenta.Location = New System.Drawing.Point(13, 12)
         Me.gbxCuenta.Name = "gbxCuenta"
-        Me.gbxCuenta.Size = New System.Drawing.Size(380, 152)
+        Me.gbxCuenta.Size = New System.Drawing.Size(520, 152)
         Me.gbxCuenta.TabIndex = 4
         Me.gbxCuenta.TabStop = False
         Me.gbxCuenta.Text = "Información de Cuenta"
@@ -102,19 +101,22 @@ Partial Class A_Cuenta
         'lblTipoDetalle
         '
         Me.lblTipoDetalle.AutoSize = True
-        Me.lblTipoDetalle.Location = New System.Drawing.Point(160, 85)
+        Me.lblTipoDetalle.Location = New System.Drawing.Point(160, 83)
         Me.lblTipoDetalle.Name = "lblTipoDetalle"
-        Me.lblTipoDetalle.Size = New System.Drawing.Size(0, 13)
+        Me.lblTipoDetalle.Size = New System.Drawing.Size(17, 13)
         Me.lblTipoDetalle.TabIndex = 16
+        Me.lblTipoDetalle.Text = "lbl"
+        Me.lblTipoDetalle.Visible = False
         '
         'lblCodCuenta
         '
         Me.lblCodCuenta.AutoSize = True
-        Me.lblCodCuenta.Location = New System.Drawing.Point(160, 32)
+        Me.lblCodCuenta.Location = New System.Drawing.Point(573, 47)
         Me.lblCodCuenta.Name = "lblCodCuenta"
         Me.lblCodCuenta.Size = New System.Drawing.Size(39, 13)
         Me.lblCodCuenta.TabIndex = 15
         Me.lblCodCuenta.Text = "Label1"
+        Me.lblCodCuenta.Visible = False
         '
         'btnNuevo
         '
@@ -122,7 +124,7 @@ Partial Class A_Cuenta
         Me.btnNuevo.FlatAppearance.BorderSize = 0
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNuevo.ForeColor = System.Drawing.Color.White
-        Me.btnNuevo.Location = New System.Drawing.Point(139, 121)
+        Me.btnNuevo.Location = New System.Drawing.Point(278, 118)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
         Me.btnNuevo.TabIndex = 14
@@ -136,7 +138,7 @@ Partial Class A_Cuenta
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(217, 121)
+        Me.btnModificar.Location = New System.Drawing.Point(356, 118)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 9
@@ -150,7 +152,7 @@ Partial Class A_Cuenta
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(295, 121)
+        Me.btnGuardar.Location = New System.Drawing.Point(434, 118)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 8
@@ -178,16 +180,18 @@ Partial Class A_Cuenta
         'lblEstadoColor
         '
         Me.lblEstadoColor.AutoSize = True
-        Me.lblEstadoColor.Location = New System.Drawing.Point(292, 32)
+        Me.lblEstadoColor.BackColor = System.Drawing.Color.Transparent
+        Me.lblEstadoColor.ForeColor = System.Drawing.Color.Red
+        Me.lblEstadoColor.Location = New System.Drawing.Point(418, 57)
         Me.lblEstadoColor.Name = "lblEstadoColor"
-        Me.lblEstadoColor.Size = New System.Drawing.Size(16, 13)
+        Me.lblEstadoColor.Size = New System.Drawing.Size(45, 13)
         Me.lblEstadoColor.TabIndex = 12
-        Me.lblEstadoColor.Text = "---"
+        Me.lblEstadoColor.Text = "Inactiva"
         '
         'chkEstado
         '
         Me.chkEstado.AutoSize = True
-        Me.chkEstado.Location = New System.Drawing.Point(245, 56)
+        Me.chkEstado.Location = New System.Drawing.Point(378, 28)
         Me.chkEstado.Name = "chkEstado"
         Me.chkEstado.Size = New System.Drawing.Size(101, 17)
         Me.chkEstado.TabIndex = 10
@@ -197,7 +201,7 @@ Partial Class A_Cuenta
         'lblEstado
         '
         Me.lblEstado.AutoSize = True
-        Me.lblEstado.Location = New System.Drawing.Point(241, 32)
+        Me.lblEstado.Location = New System.Drawing.Point(375, 57)
         Me.lblEstado.Name = "lblEstado"
         Me.lblEstado.Size = New System.Drawing.Size(40, 13)
         Me.lblEstado.TabIndex = 5
@@ -208,7 +212,7 @@ Partial Class A_Cuenta
         Me.gbxCuentas.Controls.Add(Me.dtCuentas)
         Me.gbxCuentas.Location = New System.Drawing.Point(13, 170)
         Me.gbxCuentas.Name = "gbxCuentas"
-        Me.gbxCuentas.Size = New System.Drawing.Size(380, 235)
+        Me.gbxCuentas.Size = New System.Drawing.Size(520, 235)
         Me.gbxCuentas.TabIndex = 7
         Me.gbxCuentas.TabStop = False
         Me.gbxCuentas.Text = "Listado de Cuentas"
@@ -217,6 +221,7 @@ Partial Class A_Cuenta
         '
         Me.dtCuentas.AllowUserToAddRows = False
         Me.dtCuentas.AllowUserToDeleteRows = False
+        Me.dtCuentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader
         Me.dtCuentas.BackgroundColor = System.Drawing.Color.White
         Me.dtCuentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -224,8 +229,9 @@ Partial Class A_Cuenta
         Me.dtCuentas.Location = New System.Drawing.Point(6, 19)
         Me.dtCuentas.Name = "dtCuentas"
         Me.dtCuentas.ReadOnly = True
+        Me.dtCuentas.RowHeadersVisible = False
         Me.dtCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCuentas.Size = New System.Drawing.Size(368, 210)
+        Me.dtCuentas.Size = New System.Drawing.Size(505, 210)
         Me.dtCuentas.TabIndex = 0
         '
         'A_Cuenta
@@ -233,19 +239,21 @@ Partial Class A_Cuenta
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(403, 413)
+        Me.ClientSize = New System.Drawing.Size(536, 413)
         Me.ControlBox = False
+        Me.Controls.Add(Me.lblCodCuenta)
         Me.Controls.Add(Me.gbxCuentas)
         Me.Controls.Add(Me.gbxCuenta)
         Me.KeyPreview = True
         Me.Name = "A_Cuenta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Mantenimeinto de Cuentas"
+        Me.Text = "Mantenimiento de Cuentas"
         Me.gbxCuenta.ResumeLayout(False)
         Me.gbxCuenta.PerformLayout()
         Me.gbxCuentas.ResumeLayout(False)
         CType(Me.dtCuentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

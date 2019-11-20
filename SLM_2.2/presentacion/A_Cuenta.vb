@@ -119,6 +119,7 @@
 
             'Limpiar Campos
             Limpiar()
+            dtCuentas.DataSource = Cuenta.listarCuentas
 
         End With
 

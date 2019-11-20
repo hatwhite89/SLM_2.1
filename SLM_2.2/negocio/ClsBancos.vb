@@ -187,4 +187,18 @@ Public Class ClsBancos
 
     End Function
 
+    'Listar codBreve y nombre de banco
+    Public Function listarBancosNombreCod() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("slmListarNombreBanco_A", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
 End Class
