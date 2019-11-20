@@ -1,11 +1,9 @@
 ﻿Public Class M_Sucursal
-
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
         End If
     End Sub
-
     Private Sub M_Sucursal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objSuc As New ClsSucursal
         Dim dv As DataView = objSuc.SeleccionarSucursal.DefaultView
@@ -36,7 +34,6 @@
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub limpiar()
         txtcodigo.Text() = ""
         txtnombre.Text() = ""
@@ -53,7 +50,6 @@
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
     End Sub
-
     Private Function sinDobleEspacio(ByVal cadena As String) As String
         Dim testString As String = cadena
         Dim texto As String = ""
@@ -107,7 +103,6 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
@@ -146,12 +141,10 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub btncancelar_Click_1(sender As Object, e As EventArgs) Handles btncancelar.Click
         limpiar()
         Me.Close()
     End Sub
-
     Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
         Dim objSuc As New ClsSucursal
         With objSuc

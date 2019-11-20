@@ -1,10 +1,8 @@
 ﻿Public Class M_ClasificacionContacto
-
     Private Sub btnbuscarTipo_Click(sender As Object, e As EventArgs) Handles btnbuscarTipo.Click
         M_TipoClasificacion.lbltipo.Text = "ClasificacionContacto"
         M_TipoClasificacion.ShowDialog()
     End Sub
-
     Private Sub M_ClasificacionContacto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objClas As New ClsClasificacionContacto
         Dim dv As DataView = objClas.SeleccionarClasificacionContacto.DefaultView
@@ -16,18 +14,15 @@
         txtcodigoTipo.ReadOnly = True
         txtcodigo.ReadOnly = True
 
-        'btnbuscarEspecialidad.Enabled = False
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
     End Sub
-
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
         End If
     End Sub
-
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         txtcodigo.Text() = ""
         txtcodigoTipo.Text() = ""
@@ -45,14 +40,11 @@
         btnguardar.Enabled = True
         btnnuevo.Enabled = False
     End Sub
-
-
     Private Sub txtcodigoTipo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoTipo.KeyPress
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
             e.Handled = True
         End If
     End Sub
-
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
@@ -70,7 +62,7 @@
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
                 rtxtcomentario.Text() = texto
-                'MsgBox("txtNombre: " + texto + ", correo:" + txtcorreo.Text() + ", tel: " + txttelefono.Text())
+
                 Dim objClasif As New ClsClasificacionContacto
                 With objClasif
                     .Comentario1 = texto
@@ -103,7 +95,6 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
@@ -121,7 +112,7 @@
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
                 rtxtcomentario.Text() = texto
-                'MsgBox("txtNombre: " + texto + ", correo:" + txtcorreo.Text() + ", tel: " + txttelefono.Text())
+
                 Dim objClasif As New ClsClasificacionContacto
                 With objClasif
                     .Comentario1 = texto
@@ -155,7 +146,6 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
         Dim objClas As New ClsClasificacionContacto
         With objClas
@@ -165,9 +155,7 @@
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-
     End Sub
-
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
@@ -178,7 +166,6 @@
             M_Cliente.txtnombreClasificacion.Text = rtxtcomentario.Text
 
             btnmodificar.Enabled = True
-            'btnbuscarEspecialidad.Enabled = True
 
             rtxtcomentario.ReadOnly = False
             txtcodigoTipo.ReadOnly = False
@@ -187,7 +174,6 @@
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub txtcodigoTipo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoTipo.TextChanged
         If (txtcodigoTipo.Text <> "") Then
             Try
@@ -207,6 +193,4 @@
             txtcomentarioTipo.Text = ""
         End If
     End Sub
-
-
 End Class

@@ -162,7 +162,7 @@
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreSucursal.Text = CStr(row("nombre"))
             Catch ex As Exception
-                MsgBox("No existe el código de la sucursal.", MsgBoxStyle.Critical, "Validación")
+                'MsgBox("No existe el código de la sucursal.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoSucursal.Text = ""
@@ -176,7 +176,6 @@
         If (txtcodigoTerminosPago.Text <> "") Then
             Try
                 Dim objTerm As New ClsTerminoPago
-
                 With objTerm
                     .Codigo1 = txtcodigoTerminosPago.Text
                 End With
@@ -197,8 +196,6 @@
         M_TerminosPago.ShowDialog()
     End Sub
     Private Sub M_Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Dim fecha As Date = Format(Me.dtpfechaFactura.Value.Date.AddDays(7), "dddd, d MMM yyyy")
-        'MsgBox("The formatted date is " & fecha)
         M_ClienteVentana.Show()
         Dim btn As New DataGridViewButtonColumn()
         dgblistadoExamenes.Columns.Add(btn)
@@ -216,7 +213,6 @@
             txtvuelto.Text = Convert.ToInt32(txtpagoPaciente.Text) - Convert.ToInt32(txttotal.Text)
             M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
         Catch ex As Exception
-
         End Try
     End Sub
     Private Sub txtnombreCliente_TextChanged(sender As Object, e As EventArgs) Handles txtnombreCliente.TextChanged
@@ -237,7 +233,6 @@
     End Sub
     Private Sub dgblistadoExamenes_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellClick
         If e.ColumnIndex = 7 Then
-            'MsgBox(("Row : " + e.RowIndex.ToString & "  Col : ") + e.ColumnIndex.ToString)
             Try
                 Dim n As String = MsgBox("¿Desea eliminar el examen de la factura?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then
@@ -248,7 +243,6 @@
             Catch ex As Exception
                 MsgBox(ex.Message, MsgBoxStyle.Critical)
             End Try
-            'DataGridView1.Rows.Remove(DataGridView1.Rows(e.RowIndex.ToString))
         End If
     End Sub
     Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
@@ -261,8 +255,6 @@
                 Dim dt As New DataTable
                 dt = objExam.BuscarExamen()
                 Dim row As DataRow = dt.Rows(0)
-                'txtnombreCliente.Text = CStr(row("descripcion"))
-                'txtnombreCliente.Text = CStr(row("total"))
                 dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
                 Dim subtotal As Double = Convert.ToDouble(CStr(row("total")))
                 dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
@@ -285,7 +277,7 @@
                 subtotal *= cant
                 dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
                 dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
-                'M_ClienteVentana.dgvtabla.Rows.Add(e.RowIndex.ToString, New String() {code, cant, precio, descrip, "", "", subtotal})
+
                 M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(e.RowIndex.ToString))
                 M_ClienteVentana.dgvtabla.Rows.Add(New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
                 totalFactura()
@@ -345,15 +337,13 @@
 
                     txtnumeroFactura.Text = CStr(row("numero"))
                     btnguardar.Enabled = False
-                    Dim fecha As DateTime
                     Dim objDetalleFact As New ClsDetalleFactura
                     For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
-                        fecha = dgblistadoExamenes.Rows(index).Cells(4).Value()
                         With objDetalleFact
                             .numeroFactura_ = Convert.ToInt32(txtnumeroFactura.Text)
                             .codigoExamen_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(0).Value())
                             .cantidad_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(1).Value())
-                            .fechaEntrega_ = fecha
+                            .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
                             .descuento_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(5).Value())
                             .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
                         End With
@@ -370,11 +360,6 @@
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
-            Dim objFact2 As New ClsFactura
-            objFact2.numero_ = Convert.ToInt32(txtnumeroFactura.Text)
-            If objFact2.EliminarFactura() = 1 Then
-                MsgBox("Eliminada la factura")
-            End If
         End Try
     End Sub
     Private Sub txtcodigoCliente_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoCliente.KeyPress
@@ -391,5 +376,8 @@
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
             e.Handled = True
         End If
+    End Sub
+    Private Sub btncotizacion_Click(sender As Object, e As EventArgs) Handles btncotizacion.Click
+
     End Sub
 End Class

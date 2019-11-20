@@ -1,9 +1,7 @@
 ﻿Public Class M_Categoria
-
     Private Sub btnbuscarTipo_Click(sender As Object, e As EventArgs)
         M_TipoClasificacion.ShowDialog()
     End Sub
-
     Private Sub M_Categoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objCategoria As New ClsCategoria
         Dim dv As DataView = objCategoria.SeleccionarCategoria.DefaultView
@@ -20,13 +18,11 @@
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
     End Sub
-
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
         End If
     End Sub
-
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         txtcodigo.Text() = ""
         txtcodigoTipo.Text() = ""
@@ -44,14 +40,11 @@
         btnguardar.Enabled = True
         btnnuevo.Enabled = False
     End Sub
-
-
     Private Sub txtcodigoTipo_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
             e.Handled = True
         End If
     End Sub
-
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
@@ -69,7 +62,7 @@
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
                 rtxtdescripcion.Text() = texto
-                'MsgBox("txtNombre: " + texto + ", correo:" + txtcorreo.Text() + ", tel: " + txttelefono.Text())
+
                 Dim objCategoriaif As New ClsCategoria
                 With objCategoriaif
                     .descripcion1 = texto
@@ -103,7 +96,6 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
@@ -121,7 +113,7 @@
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
                 rtxtdescripcion.Text() = texto
-                'MsgBox("txtNombre: " + texto + ", correo:" + txtcorreo.Text() + ", tel: " + txttelefono.Text())
+
                 Dim objCategoriaif As New ClsCategoria
                 With objCategoriaif
                     .descripcion1 = texto
@@ -155,7 +147,6 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
         Dim objCategoria As New ClsCategoria
         With objCategoria
@@ -165,9 +156,7 @@
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-
     End Sub
-
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
@@ -178,7 +167,6 @@
             M_Cliente.txtnombreCategoria.Text = rtxtdescripcion.Text
 
             btnmodificar.Enabled = True
-            'btnbuscarEspecialidad.Enabled = True
 
             rtxtdescripcion.ReadOnly = False
             txtcodigoTipo.ReadOnly = False
@@ -187,11 +175,9 @@
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         Me.Close()
     End Sub
-
     Private Sub txtcodigoTipo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoTipo.TextChanged
         If (txtcodigoTipo.Text <> "") Then
             Try
@@ -211,7 +197,6 @@
             txtdescripcionTipo.Text = ""
         End If
     End Sub
-
     Private Sub btnbuscarTipo_Click_1(sender As Object, e As EventArgs) Handles btnbuscarTipo.Click
         M_TipoClasificacion.lbltipo.Text = "Categoria"
         M_TipoClasificacion.ShowDialog()

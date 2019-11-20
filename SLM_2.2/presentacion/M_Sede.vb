@@ -2,11 +2,9 @@
     Private Sub btncancelar_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
-
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
     End Sub
-
     Private Sub limpiar()
         txtcorreo.Text() = ""
         txttelefono.Text() = ""
@@ -34,7 +32,6 @@
         btnguardar.Enabled = True
         btnnuevo.Enabled = False
     End Sub
-
     Private Sub deshabilitar()
 
         txttelefono.ReadOnly = True
@@ -52,7 +49,6 @@
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
     End Sub
-
     Private Function sinEspacios(ByVal cadena As String) As String
         Dim testString As String = cadena
         Dim texto As String = ""
@@ -87,8 +83,6 @@
                 numero = 0
             End If
             If (numero > 0 And txtnombre.Text <> "" And txtcorreo.Text <> "" And txttelefono.Text <> "" And txtcontacto.Text <> "") Then
-
-                'MsgBox("txtNombre: " + texto + ", correo:" + txtcorreo.Text() + ", tel: " + txttelefono.Text())
                 Dim objSede As New ClsSede
                 With objSede
                     .Nombre1 = txtnombre.Text
@@ -122,7 +116,6 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
             Dim numero As Integer = 0
@@ -142,8 +135,6 @@
                 numero = 0
             End If
             If (numero > 0 And txtnombre.Text <> "" And txtcorreo.Text <> "" And txttelefono.Text <> "" And txtcontacto.Text <> "" And txtcodigo.Text <> "") Then
-
-                'MsgBox("txtNombre: " + texto + ", correo:" + txtcorreo.Text() + ", tel: " + txttelefono.Text())
                 Dim objSede As New ClsSede
                 With objSede
                     .Codigo1 = txtcodigo.Text
@@ -181,11 +172,9 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub btncancelar_Click_1(sender As Object, e As EventArgs) Handles btncancelar.Click
         Me.Close()
     End Sub
-
     Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
         Dim objSede As New ClsSede
         With objSede
@@ -196,7 +185,6 @@
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
     End Sub
-
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
@@ -227,13 +215,11 @@
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
         End If
     End Sub
-
     Private Sub M_Sede_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objSede As New ClsSede
         Dim dv As DataView = objSede.SeleccionarSede.DefaultView
