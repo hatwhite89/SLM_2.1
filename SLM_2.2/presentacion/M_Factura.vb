@@ -79,6 +79,7 @@
         cbxenviarCorreo.Checked = False
         cbxok.Checked = False
 
+        btncotizacion.Enabled = True
         btnguardar.Enabled = True
         txtpagoPaciente.Text() = ""
         txtvuelto.Text() = ""
@@ -189,6 +190,7 @@
             End Try
         Else
             txtcodigoTerminosPago.Text = ""
+            txtdescripcionTermino.Text = ""
         End If
     End Sub
     Private Sub btnterminosPago_Click(sender As Object, e As EventArgs) Handles btnterminosPago.Click
@@ -328,7 +330,6 @@
                 End With
 
                 If objFact.RegistrarNuevaFactura() = 1 Then
-                    MsgBox("Registrada la factura correctamente.")
                     deshabilitar()
 
                     Dim dt As New DataTable
@@ -337,6 +338,7 @@
 
                     txtnumeroFactura.Text = CStr(row("numero"))
                     btnguardar.Enabled = False
+                    btncotizacion.Enabled = False
                     Dim objDetalleFact As New ClsDetalleFactura
                     For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
                         With objDetalleFact
@@ -351,6 +353,7 @@
                             MsgBox("Error al querer insertar el detalle de factura.")
                         End If
                     Next
+                    MsgBox("Registrada la factura correctamente.")
                 Else
                     MsgBox("Error al querer registrar la factura.", MsgBoxStyle.Critical)
                 End If

@@ -125,12 +125,14 @@
     <Compile Include="negocio\ClsFactura.vb" />
     <Compile Include="negocio\ClsFormaPago.vb" />
     <Compile Include="negocio\ClsMedico.vb" />
+    <Compile Include="negocio\ClsObjeto.vb" />
     <Compile Include="negocio\ClsPaciente.vb" />
     <Compile Include="negocio\ClsProveedor.vb" />
     <Compile Include="negocio\ClsSede.vb" />
     <Compile Include="negocio\ClsSucursal.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
     <Compile Include="negocio\ClsTipoClasificacion.vb" />
+    <Compile Include="negocio\ClsTipoObjeto.vb" />
     <Compile Include="negocio\ClsTipoTermino.vb" />
     <Compile Include="negocio\ClsDetalleFactura.vb" />
     <Compile Include="presentacion\A_Asiento.designer.vb">
@@ -266,10 +268,10 @@
     <Compile Include="presentacion\M_Medico.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\M_CrearTipoObjeto.Designer.vb">
-      <DependentUpon>M_CrearTipoObjeto.vb</DependentUpon>
+    <Compile Include="presentacion\M_Objeto.Designer.vb">
+      <DependentUpon>M_Objeto.vb</DependentUpon>
     </Compile>
-    <Compile Include="presentacion\M_CrearTipoObjeto.vb">
+    <Compile Include="presentacion\M_Objeto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_Factura.Designer.vb">
@@ -406,8 +408,8 @@
     <EmbeddedResource Include="presentacion\M_Medico.resx">
       <DependentUpon>M_Medico.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_CrearTipoObjeto.resx">
-      <DependentUpon>M_CrearTipoObjeto.vb</DependentUpon>
+    <EmbeddedResource Include="presentacion\M_Objeto.resx">
+      <DependentUpon>M_Objeto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Factura.resx">
       <DependentUpon>M_Factura.vb</DependentUpon>
