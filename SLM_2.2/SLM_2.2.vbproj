@@ -112,10 +112,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="negocio\A_ListadoBancos.Designer.vb">
+      <DependentUpon>A_ListadoBancos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="negocio\A_ListadoBancos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="negocio\ClsBancos.vb" />
     <Compile Include="negocio\ClsCaja.vb" />
     <Compile Include="negocio\ClsCategoria.vb" />
     <Compile Include="negocio\ClsCategoriaProveedor.vb" />
+    <Compile Include="negocio\ClsCheques.vb" />
     <Compile Include="negocio\ClsClasificacionContacto.vb" />
     <Compile Include="negocio\ClsCliente.vb" />
     <Compile Include="negocio\ClsCuenta.vb" />
@@ -157,6 +164,12 @@
     <Compile Include="presentacion\A_CategoriaProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_Chequera.Designer.vb">
+      <DependentUpon>A_Chequera.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_Chequera.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_Cheques.Designer.vb">
       <DependentUpon>A_Cheques.vb</DependentUpon>
     </Compile>
@@ -175,13 +188,19 @@
     <Compile Include="presentacion\A_Depositos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ListarCuentas_Chequera.Designer.vb">
+      <DependentUpon>A_ListarCuentas_Chequera.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarCuentas_Chequera.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_Proveedor.Designer.vb">
       <DependentUpon>A_Proveedor.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_Proveedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="negocio\ClsCheques.vb" />
+    <Compile Include="negocio\ClsChequera.vb" />
     <Compile Include="presentacion\eg_frmMenuLaboratorio.Designer.vb">
       <DependentUpon>eg_frmMenuLaboratorio.vb</DependentUpon>
     </Compile>
@@ -343,6 +362,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="negocio\A_ListadoBancos.resx">
+      <DependentUpon>A_ListadoBancos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Asiento.resx">
       <DependentUpon>A_Asiento.vb</DependentUpon>
     </EmbeddedResource>
@@ -355,6 +377,9 @@
     <EmbeddedResource Include="presentacion\A_CategoriaProveedor.resx">
       <DependentUpon>A_CategoriaProveedor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_Chequera.resx">
+      <DependentUpon>A_Chequera.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Cheques.resx">
       <DependentUpon>A_Cheques.vb</DependentUpon>
     </EmbeddedResource>
@@ -363,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Depositos.resx">
       <DependentUpon>A_Depositos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarCuentas_Chequera.resx">
+      <DependentUpon>A_ListarCuentas_Chequera.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Proveedor.resx">
       <DependentUpon>A_Proveedor.vb</DependentUpon>

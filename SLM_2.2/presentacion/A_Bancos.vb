@@ -22,7 +22,6 @@
                 'Registro de Banco
                 .registrarNuevoBanco()
                 dtBancos.DataSource = Banco.listarBancos()
-
             End With
 
         Catch ex As Exception
@@ -30,7 +29,6 @@
         End Try
 
     End Sub
-
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
         Limpiar()
         btnCrear.Visible = False
@@ -119,5 +117,11 @@
         btnGuardar.Visible = True
         txtBusquedaBanco.Text = ""
         dtBancos.DataSource = Banco.listarBancos
+    End Sub
+
+    Private Sub A_Bancos_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
     End Sub
 End Class
