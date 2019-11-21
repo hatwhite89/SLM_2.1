@@ -107,6 +107,7 @@ Public Class ClsChequera
 
         Dim con As New ClsConnection
         sqlcom.Connection = con.getConexion
+
         sqlcom.ExecuteNonQuery()
 
         par_sal = sqlcom.Parameters("salida").Value
@@ -173,7 +174,7 @@ Public Class ClsChequera
     End Function
 
     'Listar las chequeras Ingresadas
-    Public Function listarCuentas() As DataTable
+    Public Function listarChequeras() As DataTable
 
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
@@ -186,6 +187,19 @@ Public Class ClsChequera
         End Using
     End Function
 
+    'Listar Ultima Chequera
+    Public Function listarUltimaChequera() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("slmListarUltimaChequera_A", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 
 
 
