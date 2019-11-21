@@ -8,12 +8,14 @@
     End Sub
 
     Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
-        Dim objExam As New ClsExamen
-        objExam.descripcion_ = txtnombreB.Text
-        Dim dv As DataView = objExam.BuscarExamenDescripcion.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        If (txtnombreB.Text <> "") Then
+            Dim objExam As New ClsExamen
+            objExam.descripcion_ = txtnombreB.Text
+            Dim dv As DataView = objExam.BuscarExamenDescripcion.DefaultView
+            dgbtabla.DataSource = dv
+            lblcantidad.Text = dv.Count
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        End If
     End Sub
 
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown

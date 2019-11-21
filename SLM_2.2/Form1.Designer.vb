@@ -24,11 +24,13 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.btnContabilidad = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblcontabilidad = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnCotizacion = New System.Windows.Forms.Button()
+        Me.lblfacturacion = New System.Windows.Forms.Label()
         Me.btnFacturacion = New System.Windows.Forms.Button()
+        Me.lblcotizacion = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -41,28 +43,28 @@ Partial Class Form1
         Me.btnContabilidad.FlatAppearance.BorderSize = 0
         Me.btnContabilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnContabilidad.Location = New System.Drawing.Point(9, 22)
-        Me.btnContabilidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnContabilidad.Margin = New System.Windows.Forms.Padding(4)
         Me.btnContabilidad.Name = "btnContabilidad"
         Me.btnContabilidad.Size = New System.Drawing.Size(80, 70)
         Me.btnContabilidad.TabIndex = 0
         Me.btnContabilidad.UseVisualStyleBackColor = False
         '
-        'Label1
+        'lblcontabilidad
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(8, 94)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(86, 17)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Contabilidad"
+        Me.lblcontabilidad.AutoSize = True
+        Me.lblcontabilidad.Location = New System.Drawing.Point(8, 94)
+        Me.lblcontabilidad.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcontabilidad.Name = "lblcontabilidad"
+        Me.lblcontabilidad.Size = New System.Drawing.Size(86, 17)
+        Me.lblcontabilidad.TabIndex = 1
+        Me.lblcontabilidad.Text = "Contabilidad"
         '
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Location = New System.Drawing.Point(168, 4)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(175, 80)
         Me.PictureBox1.TabIndex = 2
@@ -70,28 +72,43 @@ Partial Class Form1
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.lblcotizacion)
+        Me.GroupBox1.Controls.Add(Me.btnCotizacion)
+        Me.GroupBox1.Controls.Add(Me.lblfacturacion)
         Me.GroupBox1.Controls.Add(Me.btnFacturacion)
         Me.GroupBox1.Controls.Add(Me.btnContabilidad)
-        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.lblcontabilidad)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 85)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(491, 336)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Menu de Opciones"
         '
-        'Label2
+        'btnCotizacion
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(108, 94)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(82, 17)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Facturación"
+        Me.btnCotizacion.BackgroundImage = CType(resources.GetObject("btnCotizacion.BackgroundImage"), System.Drawing.Image)
+        Me.btnCotizacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCotizacion.FlatAppearance.BorderSize = 0
+        Me.btnCotizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCotizacion.Location = New System.Drawing.Point(216, 22)
+        Me.btnCotizacion.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCotizacion.Name = "btnCotizacion"
+        Me.btnCotizacion.Size = New System.Drawing.Size(80, 70)
+        Me.btnCotizacion.TabIndex = 4
+        Me.btnCotizacion.UseVisualStyleBackColor = True
+        '
+        'lblfacturacion
+        '
+        Me.lblfacturacion.AutoSize = True
+        Me.lblfacturacion.Location = New System.Drawing.Point(108, 94)
+        Me.lblfacturacion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblfacturacion.Name = "lblfacturacion"
+        Me.lblfacturacion.Size = New System.Drawing.Size(82, 17)
+        Me.lblfacturacion.TabIndex = 3
+        Me.lblfacturacion.Text = "Facturación"
         '
         'btnFacturacion
         '
@@ -100,11 +117,21 @@ Partial Class Form1
         Me.btnFacturacion.FlatAppearance.BorderSize = 0
         Me.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnFacturacion.Location = New System.Drawing.Point(109, 22)
-        Me.btnFacturacion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnFacturacion.Margin = New System.Windows.Forms.Padding(4)
         Me.btnFacturacion.Name = "btnFacturacion"
         Me.btnFacturacion.Size = New System.Drawing.Size(80, 70)
         Me.btnFacturacion.TabIndex = 2
         Me.btnFacturacion.UseVisualStyleBackColor = True
+        '
+        'lblcotizacion
+        '
+        Me.lblcotizacion.AutoSize = True
+        Me.lblcotizacion.Location = New System.Drawing.Point(222, 94)
+        Me.lblcotizacion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcotizacion.Name = "lblcotizacion"
+        Me.lblcotizacion.Size = New System.Drawing.Size(73, 17)
+        Me.lblcotizacion.TabIndex = 5
+        Me.lblcotizacion.Text = "Cotización"
         '
         'Form1
         '
@@ -116,7 +143,7 @@ Partial Class Form1
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " "
@@ -128,9 +155,11 @@ Partial Class Form1
     End Sub
 
     Friend WithEvents btnContabilidad As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblcontabilidad As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblfacturacion As Label
     Friend WithEvents btnFacturacion As Button
+    Friend WithEvents btnCotizacion As Button
+    Friend WithEvents lblcotizacion As Label
 End Class

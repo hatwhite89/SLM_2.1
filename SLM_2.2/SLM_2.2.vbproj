@@ -125,6 +125,8 @@
     <Compile Include="negocio\ClsCheques.vb" />
     <Compile Include="negocio\ClsClasificacionContacto.vb" />
     <Compile Include="negocio\ClsCliente.vb" />
+    <Compile Include="negocio\ClsCotizacion.vb" />
+    <Compile Include="negocio\ClsCotizacionFactura.vb" />
     <Compile Include="negocio\ClsCuenta.vb" />
     <Compile Include="negocio\ClsDeposito.vb" />
     <Compile Include="negocio\ClsEspecialidad.vb" />
@@ -233,6 +235,12 @@
     <Compile Include="presentacion\A_MenuConta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_BuscarCotizacion.Designer.vb">
+      <DependentUpon>M_BuscarCotizacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarCotizacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_BuscarCuenta.Designer.vb">
       <DependentUpon>M_BuscarCuenta.vb</DependentUpon>
     </Compile>
@@ -243,6 +251,12 @@
       <DependentUpon>M_BuscarExamen.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_BuscarExamen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarFactura.Designer.vb">
+      <DependentUpon>M_BuscarFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarFactura.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_Caja.Designer.vb">
@@ -409,11 +423,17 @@
     <EmbeddedResource Include="presentacion\A_MenuConta.resx">
       <DependentUpon>A_MenuConta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_BuscarCotizacion.resx">
+      <DependentUpon>M_BuscarCotizacion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_BuscarCuenta.resx">
       <DependentUpon>M_BuscarCuenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_BuscarExamen.resx">
       <DependentUpon>M_BuscarExamen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_BuscarFactura.resx">
+      <DependentUpon>M_BuscarFactura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Caja.resx">
       <DependentUpon>M_Caja.vb</DependentUpon>

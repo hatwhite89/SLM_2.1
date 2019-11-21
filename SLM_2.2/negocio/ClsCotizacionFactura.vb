@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
-Public Class ClsDetalleFactura
-    Dim numero, numeroFactura, codigoExamen, cantidad, descuento As Integer
+Public Class ClsCotizacionFactura
+    Dim numero, numeroCotizacion, codigoExamen, cantidad, descuento As Integer
     Dim fechaEntrega As Date
     Dim subtotal As Double
     'Constructor
@@ -16,12 +16,12 @@ Public Class ClsDetalleFactura
             numero = value
         End Set
     End Property
-    Public Property numeroFactura_ As Integer
+    Public Property numeroCotizacion_ As Integer
         Get
-            Return numeroFactura
+            Return numeroCotizacion
         End Get
         Set(value As Integer)
-            numeroFactura = value
+            numeroCotizacion = value
         End Set
     End Property
     Public Property codigoExamen_ As Integer
@@ -64,18 +64,18 @@ Public Class ClsDetalleFactura
             subtotal = value
         End Set
     End Property
-    Public Function RegistrarNuevoDetalleFactura() As String
+    Public Function RegistrarNuevaCotizacionFactura() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarDetalleFactura_M"
+        sqlcom.CommandText = "slmInsertarCotizacionFactura_M"
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "numeroFactura" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = numeroFactura_
+        sqlpar.ParameterName = "numeroCotizacion" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = numeroCotizacion_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -120,14 +120,14 @@ Public Class ClsDetalleFactura
         Return par_sal
 
     End Function
-    Public Function ModificarDetalleFactura() As String
+    Public Function ModificarCotizacionFactura() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarDetalleFactura_M"
+        sqlcom.CommandText = "slmModificarCotizacionFactura_M"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "numero" 'nombre campo en el procedimiento almacenado @
@@ -135,8 +135,8 @@ Public Class ClsDetalleFactura
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "numeroFactura" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = numeroFactura_
+        sqlpar.ParameterName = "numeroCotizacion" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = numeroCotizacion_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -181,15 +181,15 @@ Public Class ClsDetalleFactura
         Return par_sal
 
     End Function
-    Public Function BuscarDetalleFactura() As DataTable
+    Public Function BuscarCotizacionFactura() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarDetalleFactura_M"
-            cmd.Parameters.Add("@numeroFactura", SqlDbType.Int).Value = numeroFactura_
+            cmd.CommandText = "slmBuscarCotizacionFactura_M"
+            cmd.Parameters.Add("@numeroCotizacion", SqlDbType.Int).Value = numeroCotizacion_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -199,11 +199,11 @@ Public Class ClsDetalleFactura
             End Using
         End Using
     End Function
-    Public Function SeleccionarDetalleFactura() As DataTable
+    Public Function SeleccionarCotizacionFactura() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
-        Using da As New SqlDataAdapter("slmSeleccionarDetalleFactura_M", cn)
+        Using da As New SqlDataAdapter("slmSeleccionarCotizacionFactura_M", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
