@@ -115,7 +115,7 @@ Public Class ClsCuenta
 
     End Function
 
-    'Listra todas las cuentas creadas
+    'Listar todas las cuentas creadas
     Public Function listarCuentas() As DataTable
 
         Dim objCon As New ClsConnection
@@ -243,6 +243,20 @@ Public Class ClsCuenta
 
         Return par_sal
 
+    End Function
+
+    'Listar cuentas activas
+    Public Function listarCuentasActivas() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("slmListarCuentasChequera_A", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
     End Function
 
 

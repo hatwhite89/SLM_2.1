@@ -112,10 +112,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="negocio\A_ListadoBancos.Designer.vb">
+    <Compile Include="presentacion\A_ListadoBancos.Designer.vb">
       <DependentUpon>A_ListadoBancos.vb</DependentUpon>
     </Compile>
-    <Compile Include="negocio\A_ListadoBancos.vb">
+    <Compile Include="presentacion\A_ListadoBancos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="negocio\ClsBancos.vb" />
@@ -362,7 +362,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="negocio\A_ListadoBancos.resx">
+    <EmbeddedResource Include="presentacion\A_ListadoBancos.resx">
       <DependentUpon>A_ListadoBancos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Asiento.resx">

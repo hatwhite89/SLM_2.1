@@ -4,7 +4,7 @@ Public Class ClsCheques
 
     'Variables de Cheque
     Dim codCheque, codChequera As Integer
-    Dim nroCheque, moneda, codBreveProve, nombreProveedor, codBreveBanco, nombreBanco, descripcion As String
+    Dim nroCheque, moneda, codBreveProve, nombreProveedor, codBreveBanco, nombreBanco, descripcion, estado As String
     Dim monto As Double
     Dim fechaReg, fechaVto As Date
 
@@ -32,6 +32,16 @@ Public Class ClsCheques
         End Get
         Set(value As Integer)
             codChequera = value
+        End Set
+    End Property
+
+    'Estado
+    Public Property Estad_o As String
+        Get
+            Return estado
+        End Get
+        Set(value As String)
+            estado = value
         End Set
     End Property
 
@@ -136,5 +146,59 @@ Public Class ClsCheques
         End Set
     End Property
 
+
+
+    ':::::::::::::::::::::::::::::::::::::::::::::: FUNCIONES DE MANTENIMIENTO ::::::::::::::::::::::::::::::::::::::::::::::
+
+    'Registar nuevos cheques
+    Public Function registrarNuevosCheques() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        'PROCEDIMIENTO ALMACENADO
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "slmInsertarCheques_A"
+
+        'VARIABLES 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codChequera"
+        sqlpar.Value = Cod_Chequera
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nroCheque"
+        sqlpar.Value = Numero_Cheque
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codBreveBanco"
+        sqlpar.Value = Cod_BreveBanco
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado"
+        sqlpar.Value = Estad_o
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+        sqlcom.CommandTimeout = 1000
+        sqlcom.ExecuteNonQuery()
+
+        par_sal = sqlcom.Parameters("salida").Value
+        Return par_sal
+
+    End Function
+
+    'Modificar cheque
 
 End Class
