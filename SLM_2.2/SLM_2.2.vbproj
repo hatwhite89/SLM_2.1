@@ -112,6 +112,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="negocio\ClsItemExamen.vb" />
+    <Compile Include="presentacion\A_FacturaCompras.Designer.vb">
+      <DependentUpon>A_FacturaCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_FacturaCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListadoBancos.Designer.vb">
       <DependentUpon>A_ListadoBancos.vb</DependentUpon>
     </Compile>
@@ -383,6 +390,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_FacturaCompras.resx">
+      <DependentUpon>A_FacturaCompras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoBancos.resx">
       <DependentUpon>A_ListadoBancos.vb</DependentUpon>
