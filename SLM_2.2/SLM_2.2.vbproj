@@ -113,6 +113,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="negocio\ClsGrupoExamen.vb" />
+    <Compile Include="negocio\ClsItemExamen.vb" />
     <Compile Include="presentacion\A_FacturaCompras.Designer.vb">
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
     </Compile>
@@ -203,6 +204,12 @@
       <DependentUpon>A_ListarCuentas_Chequera.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ListarCuentas_Chequera.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ListarTerminoPago.Designer.vb">
+      <DependentUpon>A_ListarTerminoPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarTerminoPago.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_Proveedor.Designer.vb">
@@ -435,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarCuentas_Chequera.resx">
       <DependentUpon>A_ListarCuentas_Chequera.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarTerminoPago.resx">
+      <DependentUpon>A_ListarTerminoPago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Proveedor.resx">
       <DependentUpon>A_Proveedor.vb</DependentUpon>
