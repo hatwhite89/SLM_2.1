@@ -20,7 +20,10 @@
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            Dim n As String = MsgBox("¿Desea ver la factura?", MsgBoxStyle.YesNo, "Validación")
+            Dim n As String = ""
+            If e.RowIndex >= 0 Then
+                n = MsgBox("¿Desea ver la factura?", MsgBoxStyle.YesNo, "Validación")
+            End If
             If n = vbYes Then
                 Dim objFact As New ClsFactura
                 objFact.numero_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
@@ -100,6 +103,7 @@
         End If
     End Sub
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
+        M_Factura.limpiar()
         M_Factura.ShowDialog()
     End Sub
 End Class

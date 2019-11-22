@@ -13,7 +13,10 @@
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            Dim n As String = MsgBox("¿Desea crear la factura de la cotización?", MsgBoxStyle.YesNo, "Validación")
+            Dim n As String = ""
+            If e.RowIndex >= 0 Then
+                n = MsgBox("¿Desea crear la factura de la cotización?", MsgBoxStyle.YesNo, "Validación")
+            End If
             If n = vbYes Then
                 M_Factura.txtcodigoCliente.Text = dgbtabla.Rows(e.RowIndex).Cells(3).Value()
 
@@ -33,7 +36,7 @@
 
             End If
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
     Private Sub txtnumeroB_TextChanged(sender As Object, e As EventArgs) Handles txtnumeroB.TextChanged

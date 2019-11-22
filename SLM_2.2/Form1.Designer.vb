@@ -27,10 +27,8 @@ Partial Class Form1
         Me.lblcontabilidad = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnCotizacion = New System.Windows.Forms.Button()
-        Me.lblfacturacion = New System.Windows.Forms.Label()
-        Me.btnFacturacion = New System.Windows.Forms.Button()
-        Me.lblcotizacion = New System.Windows.Forms.Label()
+        Me.lbllaboratorio = New System.Windows.Forms.Label()
+        Me.btnlaboratorio = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -72,10 +70,8 @@ Partial Class Form1
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.lblcotizacion)
-        Me.GroupBox1.Controls.Add(Me.btnCotizacion)
-        Me.GroupBox1.Controls.Add(Me.lblfacturacion)
-        Me.GroupBox1.Controls.Add(Me.btnFacturacion)
+        Me.GroupBox1.Controls.Add(Me.lbllaboratorio)
+        Me.GroupBox1.Controls.Add(Me.btnlaboratorio)
         Me.GroupBox1.Controls.Add(Me.btnContabilidad)
         Me.GroupBox1.Controls.Add(Me.lblcontabilidad)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 85)
@@ -87,51 +83,28 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Menu de Opciones"
         '
-        'btnCotizacion
+        'lbllaboratorio
         '
-        Me.btnCotizacion.BackgroundImage = CType(resources.GetObject("btnCotizacion.BackgroundImage"), System.Drawing.Image)
-        Me.btnCotizacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCotizacion.FlatAppearance.BorderSize = 0
-        Me.btnCotizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCotizacion.Location = New System.Drawing.Point(216, 22)
-        Me.btnCotizacion.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnCotizacion.Name = "btnCotizacion"
-        Me.btnCotizacion.Size = New System.Drawing.Size(80, 70)
-        Me.btnCotizacion.TabIndex = 4
-        Me.btnCotizacion.UseVisualStyleBackColor = True
+        Me.lbllaboratorio.AutoSize = True
+        Me.lbllaboratorio.Location = New System.Drawing.Point(104, 94)
+        Me.lbllaboratorio.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbllaboratorio.Name = "lbllaboratorio"
+        Me.lbllaboratorio.Size = New System.Drawing.Size(81, 17)
+        Me.lbllaboratorio.TabIndex = 7
+        Me.lbllaboratorio.Text = "Laboratorio"
         '
-        'lblfacturacion
+        'btnlaboratorio
         '
-        Me.lblfacturacion.AutoSize = True
-        Me.lblfacturacion.Location = New System.Drawing.Point(108, 94)
-        Me.lblfacturacion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblfacturacion.Name = "lblfacturacion"
-        Me.lblfacturacion.Size = New System.Drawing.Size(82, 17)
-        Me.lblfacturacion.TabIndex = 3
-        Me.lblfacturacion.Text = "Facturación"
-        '
-        'btnFacturacion
-        '
-        Me.btnFacturacion.BackgroundImage = CType(resources.GetObject("btnFacturacion.BackgroundImage"), System.Drawing.Image)
-        Me.btnFacturacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnFacturacion.FlatAppearance.BorderSize = 0
-        Me.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFacturacion.Location = New System.Drawing.Point(109, 22)
-        Me.btnFacturacion.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnFacturacion.Name = "btnFacturacion"
-        Me.btnFacturacion.Size = New System.Drawing.Size(80, 70)
-        Me.btnFacturacion.TabIndex = 2
-        Me.btnFacturacion.UseVisualStyleBackColor = True
-        '
-        'lblcotizacion
-        '
-        Me.lblcotizacion.AutoSize = True
-        Me.lblcotizacion.Location = New System.Drawing.Point(222, 94)
-        Me.lblcotizacion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblcotizacion.Name = "lblcotizacion"
-        Me.lblcotizacion.Size = New System.Drawing.Size(73, 17)
-        Me.lblcotizacion.TabIndex = 5
-        Me.lblcotizacion.Text = "Cotización"
+        Me.btnlaboratorio.BackgroundImage = CType(resources.GetObject("btnlaboratorio.BackgroundImage"), System.Drawing.Image)
+        Me.btnlaboratorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnlaboratorio.FlatAppearance.BorderSize = 0
+        Me.btnlaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnlaboratorio.Location = New System.Drawing.Point(102, 19)
+        Me.btnlaboratorio.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnlaboratorio.Name = "btnlaboratorio"
+        Me.btnlaboratorio.Size = New System.Drawing.Size(83, 71)
+        Me.btnlaboratorio.TabIndex = 6
+        Me.btnlaboratorio.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -158,8 +131,6 @@ Partial Class Form1
     Friend WithEvents lblcontabilidad As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents lblfacturacion As Label
-    Friend WithEvents btnFacturacion As Button
-    Friend WithEvents btnCotizacion As Button
-    Friend WithEvents lblcotizacion As Label
+    Friend WithEvents lbllaboratorio As Label
+    Friend WithEvents btnlaboratorio As Button
 End Class
