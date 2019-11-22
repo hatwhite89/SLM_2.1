@@ -248,7 +248,7 @@
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreEspecialidad.Text = CStr(row("nombre"))
             Catch ex As Exception
-                MsgBox("No existe ese código de especialidad.", MsgBoxStyle.Critical, "Validación")
+                'MsgBox("No existe ese código de especialidad.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoEspecialidad.Text = ""

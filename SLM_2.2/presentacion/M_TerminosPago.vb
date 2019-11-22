@@ -35,6 +35,7 @@
         txtcodigoCtaVentas.ReadOnly = True
         txtcodigo.ReadOnly = True
 
+        cbxtipoPago.Enabled = False
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
@@ -102,6 +103,7 @@
         txtdiasNeto.Text() = ""
         txtcodigoCtaContado.Text() = ""
         txtcodigoCtaVentas.Text() = ""
+        cbxtipoPago.SelectedItem = cbxtipoPago.Items(0)
 
         rtxtdescripcion.ReadOnly = False
         txtdiasNeto.ReadOnly = False
@@ -109,6 +111,7 @@
         txtcodigoCtaVentas.ReadOnly = False
         txtcodigo.ReadOnly = False
 
+        cbxtipoPago.Enabled = True
         btnbuscar.Enabled = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
@@ -269,7 +272,7 @@
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreCtaContado.Text = CStr(row("cuenta"))
             Catch ex As Exception
-                MsgBox("No existe el código de la cuenta.", MsgBoxStyle.Critical, "Validación")
+                'MsgBox("No existe el código de la cuenta.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoCtaContado.Text = ""
@@ -288,7 +291,7 @@
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreCtaVentas.Text = CStr(row("cuenta"))
             Catch ex As Exception
-                MsgBox("No existe el código de la cuenta.", MsgBoxStyle.Critical, "Validación")
+                'MsgBox("No existe el código de la cuenta.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoCtaVentas.Text = ""

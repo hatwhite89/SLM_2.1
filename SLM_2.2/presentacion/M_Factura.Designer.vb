@@ -417,6 +417,7 @@ Partial Class M_Factura
         Me.txtnumeroFactura.Location = New System.Drawing.Point(113, 86)
         Me.txtnumeroFactura.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnumeroFactura.Name = "txtnumeroFactura"
+        Me.txtnumeroFactura.ReadOnly = True
         Me.txtnumeroFactura.Size = New System.Drawing.Size(276, 22)
         Me.txtnumeroFactura.TabIndex = 39
         Me.txtnumeroFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -427,6 +428,7 @@ Partial Class M_Factura
         Me.txtnumeroOficial.Location = New System.Drawing.Point(500, 86)
         Me.txtnumeroOficial.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnumeroOficial.Name = "txtnumeroOficial"
+        Me.txtnumeroOficial.ReadOnly = True
         Me.txtnumeroOficial.Size = New System.Drawing.Size(229, 22)
         Me.txtnumeroOficial.TabIndex = 40
         Me.txtnumeroOficial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
