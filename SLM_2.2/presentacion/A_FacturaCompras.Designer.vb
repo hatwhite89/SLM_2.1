@@ -23,29 +23,29 @@ Partial Class A_FacturaCompras
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxInfoFact = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtCodFactura = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtCodProveedor = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtTotal = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.dtpFechaFactura = New System.Windows.Forms.DateTimePicker()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtTerminoPago = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.dtpTransaccion = New System.Windows.Forms.DateTimePicker()
+        Me.txtMoneda = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.dtpVencimiento = New System.Windows.Forms.DateTimePicker()
+        Me.dtpTransaccion = New System.Windows.Forms.DateTimePicker()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtTerminoPago = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.dtpFechaFactura = New System.Windows.Forms.DateTimePicker()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtTotal = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtCodProveedor = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtCodFactura = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dtDetalleFactura = New System.Windows.Forms.DataGridView()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtMoneda = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnCrear = New System.Windows.Forms.Button()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,111 +78,37 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.TabStop = False
         Me.gbxInfoFact.Text = "Información de Factura"
         '
-        'Label1
+        'txtMoneda
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 28)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Nro. Factura"
+        Me.txtMoneda.Location = New System.Drawing.Point(306, 129)
+        Me.txtMoneda.Name = "txtMoneda"
+        Me.txtMoneda.Size = New System.Drawing.Size(84, 20)
+        Me.txtMoneda.TabIndex = 18
         '
-        'txtCodFactura
+        'Label9
         '
-        Me.txtCodFactura.Location = New System.Drawing.Point(110, 25)
-        Me.txtCodFactura.Name = "txtCodFactura"
-        Me.txtCodFactura.Size = New System.Drawing.Size(83, 20)
-        Me.txtCodFactura.TabIndex = 1
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(206, 133)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(46, 13)
+        Me.Label9.TabIndex = 17
+        Me.Label9.Text = "Moneda"
         '
-        'Label2
+        'dtpVencimiento
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(228, 28)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(56, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Proveedor"
+        Me.dtpVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpVencimiento.Location = New System.Drawing.Point(109, 129)
+        Me.dtpVencimiento.Name = "dtpVencimiento"
+        Me.dtpVencimiento.Size = New System.Drawing.Size(84, 20)
+        Me.dtpVencimiento.TabIndex = 16
         '
-        'txtCodProveedor
+        'dtpTransaccion
         '
-        Me.txtCodProveedor.Location = New System.Drawing.Point(287, 25)
-        Me.txtCodProveedor.Name = "txtCodProveedor"
-        Me.txtCodProveedor.Size = New System.Drawing.Size(103, 20)
-        Me.txtCodProveedor.TabIndex = 3
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(206, 106)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(31, 13)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Total"
-        '
-        'txtTotal
-        '
-        Me.txtTotal.Location = New System.Drawing.Point(306, 103)
-        Me.txtTotal.Name = "txtTotal"
-        Me.txtTotal.Size = New System.Drawing.Size(84, 20)
-        Me.txtTotal.TabIndex = 5
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 54)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(96, 13)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Nombre Proveedor"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(109, 51)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(421, 20)
-        Me.TextBox1.TabIndex = 7
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(9, 83)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(76, 13)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Fecha Factura"
-        '
-        'dtpFechaFactura
-        '
-        Me.dtpFechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaFactura.Location = New System.Drawing.Point(109, 77)
-        Me.dtpFechaFactura.Name = "dtpFechaFactura"
-        Me.dtpFechaFactura.Size = New System.Drawing.Size(84, 20)
-        Me.dtpFechaFactura.TabIndex = 9
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(206, 80)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(93, 13)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Términos de Pago"
-        '
-        'txtTerminoPago
-        '
-        Me.txtTerminoPago.Location = New System.Drawing.Point(306, 77)
-        Me.txtTerminoPago.Name = "txtTerminoPago"
-        Me.txtTerminoPago.Size = New System.Drawing.Size(84, 20)
-        Me.txtTerminoPago.TabIndex = 11
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(9, 107)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(99, 13)
-        Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Fecha Transacción"
+        Me.dtpTransaccion.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpTransaccion.Location = New System.Drawing.Point(109, 103)
+        Me.dtpTransaccion.Name = "dtpTransaccion"
+        Me.dtpTransaccion.Size = New System.Drawing.Size(84, 20)
+        Me.dtpTransaccion.TabIndex = 15
         '
         'Label8
         '
@@ -193,21 +119,111 @@ Partial Class A_FacturaCompras
         Me.Label8.TabIndex = 14
         Me.Label8.Text = "Fecha Vencimiento"
         '
-        'dtpTransaccion
+        'Label7
         '
-        Me.dtpTransaccion.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpTransaccion.Location = New System.Drawing.Point(109, 103)
-        Me.dtpTransaccion.Name = "dtpTransaccion"
-        Me.dtpTransaccion.Size = New System.Drawing.Size(84, 20)
-        Me.dtpTransaccion.TabIndex = 15
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(9, 107)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(99, 13)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "Fecha Transacción"
         '
-        'dtpVencimiento
+        'txtTerminoPago
         '
-        Me.dtpVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpVencimiento.Location = New System.Drawing.Point(109, 129)
-        Me.dtpVencimiento.Name = "dtpVencimiento"
-        Me.dtpVencimiento.Size = New System.Drawing.Size(84, 20)
-        Me.dtpVencimiento.TabIndex = 16
+        Me.txtTerminoPago.Location = New System.Drawing.Point(306, 77)
+        Me.txtTerminoPago.Name = "txtTerminoPago"
+        Me.txtTerminoPago.Size = New System.Drawing.Size(84, 20)
+        Me.txtTerminoPago.TabIndex = 11
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(206, 80)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(93, 13)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "Términos de Pago"
+        '
+        'dtpFechaFactura
+        '
+        Me.dtpFechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaFactura.Location = New System.Drawing.Point(109, 77)
+        Me.dtpFechaFactura.Name = "dtpFechaFactura"
+        Me.dtpFechaFactura.Size = New System.Drawing.Size(84, 20)
+        Me.dtpFechaFactura.TabIndex = 9
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(9, 83)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(76, 13)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Fecha Factura"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(109, 51)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(421, 20)
+        Me.TextBox1.TabIndex = 7
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(6, 54)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(96, 13)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Nombre Proveedor"
+        '
+        'txtTotal
+        '
+        Me.txtTotal.Location = New System.Drawing.Point(306, 103)
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.Size = New System.Drawing.Size(84, 20)
+        Me.txtTotal.TabIndex = 5
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(206, 106)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(31, 13)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Total"
+        '
+        'txtCodProveedor
+        '
+        Me.txtCodProveedor.Location = New System.Drawing.Point(287, 25)
+        Me.txtCodProveedor.Name = "txtCodProveedor"
+        Me.txtCodProveedor.Size = New System.Drawing.Size(103, 20)
+        Me.txtCodProveedor.TabIndex = 3
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(228, 28)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(56, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Proveedor"
+        '
+        'txtCodFactura
+        '
+        Me.txtCodFactura.Location = New System.Drawing.Point(110, 25)
+        Me.txtCodFactura.Name = "txtCodFactura"
+        Me.txtCodFactura.Size = New System.Drawing.Size(83, 20)
+        Me.txtCodFactura.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 28)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(66, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Nro. Factura"
         '
         'GroupBox1
         '
@@ -233,60 +249,44 @@ Partial Class A_FacturaCompras
         Me.dtDetalleFactura.Size = New System.Drawing.Size(532, 285)
         Me.dtDetalleFactura.TabIndex = 0
         '
-        'Label9
+        'btnGuardar
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(206, 133)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(46, 13)
-        Me.Label9.TabIndex = 17
-        Me.Label9.Text = "Moneda"
+        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnGuardar.FlatAppearance.BorderSize = 0
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.ForeColor = System.Drawing.Color.White
+        Me.btnGuardar.Location = New System.Drawing.Point(479, 496)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 44)
+        Me.btnGuardar.TabIndex = 2
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = False
         '
-        'txtMoneda
+        'btnModificar
         '
-        Me.txtMoneda.Location = New System.Drawing.Point(306, 129)
-        Me.txtMoneda.Name = "txtMoneda"
-        Me.txtMoneda.Size = New System.Drawing.Size(84, 20)
-        Me.txtMoneda.TabIndex = 18
+        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnModificar.FlatAppearance.BorderSize = 0
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.ForeColor = System.Drawing.Color.White
+        Me.btnModificar.Location = New System.Drawing.Point(398, 496)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(75, 44)
+        Me.btnModificar.TabIndex = 3
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btnCrear
         '
-        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(479, 496)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 44)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Guardar"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(398, 496)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 44)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Modificar"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(317, 496)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 44)
-        Me.Button3.TabIndex = 4
-        Me.Button3.Text = "Crear Nuevo"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.btnCrear.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCrear.FlatAppearance.BorderSize = 0
+        Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCrear.ForeColor = System.Drawing.Color.White
+        Me.btnCrear.Location = New System.Drawing.Point(317, 496)
+        Me.btnCrear.Name = "btnCrear"
+        Me.btnCrear.Size = New System.Drawing.Size(75, 44)
+        Me.btnCrear.TabIndex = 4
+        Me.btnCrear.Text = "Crear Nuevo"
+        Me.btnCrear.UseVisualStyleBackColor = False
         '
         'A_FacturaCompras
         '
@@ -294,12 +294,13 @@ Partial Class A_FacturaCompras
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(563, 548)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnCrear)
+        Me.Controls.Add(Me.btnModificar)
+        Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoFact)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.KeyPreview = True
         Me.Name = "A_FacturaCompras"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Factura de Compra"
@@ -332,7 +333,7 @@ Partial Class A_FacturaCompras
     Friend WithEvents Label9 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents dtDetalleFactura As DataGridView
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents btnCrear As Button
 End Class
