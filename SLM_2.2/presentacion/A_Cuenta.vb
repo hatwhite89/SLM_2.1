@@ -12,15 +12,24 @@
 
             'Registro de Cuenta
             Cuenta.registrarNuevaCuenta()
-            MessageBox.Show("El registro se ha guardado exitosamente")
+            dtCuentas.DataSource = Cuenta.listarCuentas
+            Me.Close()
+            MessageBox.Show("El registro se ha guardado exitosamente.")
+
+            Dim fcuentas As A_Cuenta
+            fcuentas = New A_Cuenta
+            fcuentas.Show()
+
             Limpiar()
 
             'Actualiza lista de cuentas
+
             dtCuentas.DataSource = Cuenta.listarCuentas
 
         Catch ex As Exception
-
+            MessageBox.Show("Error: " + ex.Message)
         End Try
+
 
     End Sub
     Private Sub A_Cuenta_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
@@ -50,35 +59,25 @@
 
         'Cargar campos de cuenta en formulario
         Try
+
             lblCodCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(0).Value
             txtCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(1).Value
             txtNombre.Text = dtCuentas.Rows(e.RowIndex).Cells(2).Value
+            txtNombre.Text = txtNombre.Text.Trim
             lblTipoDetalle.Text = dtCuentas.Rows(e.RowIndex).Cells(3).Value
             chkEstado.Checked = dtCuentas.Rows(e.RowIndex).Cells(4).Value
+
         Catch ex As Exception
 
         End Try
         'Eliminar espacios 
-        Dim Tipo As String
-        Tipo = lblTipoDetalle.Text
-        Tipo = Trim(Tipo)
-
-        If (Tipo = "Activo") Then
-            cbxTipoCuenta.SelectedIndex = 0
-        ElseIf Tipo = "Pasivo" Then
-            cbxTipoCuenta.SelectedIndex = 1
-        ElseIf Tipo = "Patrimonio" Then
-            cbxTipoCuenta.SelectedIndex = 2
-        ElseIf Tipo = "Ingresos" Then
-            cbxTipoCuenta.SelectedIndex = 3
-        ElseIf Tipo = "Gastos" Then
-            cbxTipoCuenta.SelectedIndex = 4
-        End If
-
+        Tipo()
         'Habilitar edicion
         btnModificar.Visible = True
         btnNuevo.Visible = True
         btnGuardar.Visible = False
+
+
 
     End Sub
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
@@ -88,6 +87,38 @@
         btnNuevo.Visible = False
     End Sub
 
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+
+        'Modificacion de Cuenta
+
+        Try
+            'Variables de Cuenta
+            Cuenta.Cod_Cuenta = lblCodCuenta.Text
+            Cuenta.Cuent_a = Convert.ToInt32(txtCuenta.Text)
+            Cuenta.Nombr_e = txtNombre.Text
+            Cuenta.Tipo_Cuenta = cbxTipoCuenta.Text
+            Cuenta.Esta_do = chkEstado.Checked
+
+            'Registro de Cuenta
+            Cuenta.modificarCuenta()
+            dtCuentas.DataSource = Cuenta.listarCuentas
+            Me.Close()
+            MessageBox.Show("El registro se ha modificado exitosamente.")
+
+            Dim mcuentas As A_Cuenta
+            mcuentas = New A_Cuenta
+            mcuentas.Show()
+            Limpiar()
+
+            'Actualiza lista de cuentas
+
+            dtCuentas.DataSource = Cuenta.listarCuentas
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " + ex.Message)
+        End Try
+
+    End Sub
 
 
     ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -101,27 +132,22 @@
 
     End Sub
 
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+    Sub Tipo() 'Limpia los espacios de campo lblTipoDetalle
+        Dim Tipo As String
+        Tipo = lblTipoDetalle.Text
+        Tipo = Trim(Tipo)
 
-        'Modificacion de Cuenta
-
-        With Cuenta
-
-            'Captura de Variables
-            .Cod_Cuenta = lblCodCuenta.Text
-            .Cuent_a = txtCuenta.Text
-            .Nombr_e = txtNombre.Text
-            .Esta_do = chkEstado.Checked
-            .Tipo_Cuenta = cbxTipoCuenta.Text
-
-            'Modificar
-            .modificarCuenta()
-
-            'Limpiar Campos
-            Limpiar()
-            dtCuentas.DataSource = Cuenta.listarCuentas
-
-        End With
-
+        If (Tipo = "Activo") Then
+            cbxTipoCuenta.SelectedItem = "Activo"
+        ElseIf Tipo = "Pasivo" Then
+            cbxTipoCuenta.SelectedItem = "Pasivo"
+        ElseIf Tipo = "Patrimonio" Then
+            cbxTipoCuenta.SelectedItem = "Patrimonio"
+        ElseIf Tipo = "Ingresos" Then
+            cbxTipoCuenta.SelectedItem = "Ingresos"
+        ElseIf Tipo = "Gastos" Then
+            cbxTipoCuenta.SelectedItem = "Gastos"
+        End If
     End Sub
+
 End Class

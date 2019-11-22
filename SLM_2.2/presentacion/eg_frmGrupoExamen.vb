@@ -5,6 +5,7 @@
         End If
     End Sub
     Private Sub M_GrupoExamen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Dim objGrpE As New ClsGrupoExamen
         Dim dv As DataView = objGrpE.SeleccionarGrupoExamen.DefaultView
         dgbtabla.DataSource = dv
@@ -17,8 +18,6 @@
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
-
-
 
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
