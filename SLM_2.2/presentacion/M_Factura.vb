@@ -32,7 +32,7 @@
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
         limpiar()
     End Sub
-    Private Sub limpiar()
+    Public Sub limpiar()
 
         txtnumeroFactura.Text() = ""
         txtcodigoCliente.Text() = ""
@@ -51,6 +51,8 @@
 
         txtcodigoRecepecionista.Text() = ""
         txtcodigoCajero.Text() = ""
+        dtpfechaFactura.Value = Date.Now()
+        dtpfechaVto.Value = Date.Now()
 
         txtnumeroFactura.ReadOnly = False
         txtcodigoCliente.ReadOnly = False
@@ -260,6 +262,9 @@
                 Dim row As DataRow = dt.Rows(0)
                 dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
                 Dim subtotal As Double = Convert.ToDouble(CStr(row("total")))
+                Dim descuento As Double
+                descuento = subtotal * (0 / 100)
+                subtotal -= descuento
                 dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
                 totalFactura()
                 M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
@@ -284,7 +289,6 @@
                 M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(e.RowIndex.ToString))
                 M_ClienteVentana.dgvtabla.Rows.Add(New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
                 totalFactura()
-                MsgBox(dgblistadoExamenes.Rows(0).Cells(4).Value() + "    " + dtpfechaFactura.Value)
             Catch ex As Exception
                 MsgBox("Debe ingresar la cantidad correcta de examenes.", MsgBoxStyle.Critical)
                 dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))

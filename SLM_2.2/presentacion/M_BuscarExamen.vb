@@ -45,4 +45,5 @@
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
 End Class
