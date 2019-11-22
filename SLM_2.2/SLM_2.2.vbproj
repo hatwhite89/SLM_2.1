@@ -112,6 +112,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="presentacion\A_FacturaCompras.Designer.vb">
+      <DependentUpon>A_FacturaCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_FacturaCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListadoBancos.Designer.vb">
       <DependentUpon>A_ListadoBancos.vb</DependentUpon>
     </Compile>
@@ -213,6 +219,12 @@
       <DependentUpon>eg_frmPaciente.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\eg_frmPaciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_DetalleExamenes.Designer.vb">
+      <DependentUpon>E_DetalleExamenes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_DetalleExamenes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\Form2.Designer.vb">
@@ -364,6 +376,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_FacturaCompras.resx">
+      <DependentUpon>A_FacturaCompras.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoBancos.resx">
       <DependentUpon>A_ListadoBancos.vb</DependentUpon>
     </EmbeddedResource>
@@ -408,6 +423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_MenuConta.resx">
       <DependentUpon>A_MenuConta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_DetalleExamenes.resx">
+      <DependentUpon>E_DetalleExamenes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_BuscarCuenta.resx">
       <DependentUpon>M_BuscarCuenta.vb</DependentUpon>

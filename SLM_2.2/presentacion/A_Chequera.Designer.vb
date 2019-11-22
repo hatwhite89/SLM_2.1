@@ -264,6 +264,7 @@ Partial Class A_Chequera
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoChequeras)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.KeyPreview = True
         Me.Name = "A_Chequera"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mantenimiento de Chequeras"

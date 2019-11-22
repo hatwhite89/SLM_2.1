@@ -17,12 +17,13 @@
 
                 'Registrar Datos
                 .registrarNuevaChequera()
-                ' dtChequeras.DataSource = Chequera.listarChequeras
 
                 dtChequeras.DataSource = Chequera.listarUltimaChequera
                 lblCodChequera.Text = dtChequeras.Rows(0).Cells(0).Value
                 dtChequeras.DataSource = Chequera.listarChequeras
             End With
+
+
             'Nuevos Cheques
 
             Dim cantidad, contador As Integer
@@ -122,5 +123,11 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         A_ListarCuentas_Chequera.Show()
+    End Sub
+
+    Private Sub A_Chequera_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
     End Sub
 End Class
