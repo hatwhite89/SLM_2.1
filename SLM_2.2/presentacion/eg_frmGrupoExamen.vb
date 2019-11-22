@@ -110,7 +110,6 @@
                     .Codigo_ = txtcodigo.Text
                     .Nombre_ = txtnombre.Text
                 End With
-
                 If objGrpE.ModificarGrupoExamen() = 1 Then
                     MsgBox("Modificado correctamente.")
 
