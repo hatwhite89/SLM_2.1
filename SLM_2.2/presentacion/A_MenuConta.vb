@@ -38,9 +38,13 @@
         A_Bancos.Show()
     End Sub
 
-    Private Sub btnChequera_Click(sender As Object, e As EventArgs) Handles btnChequera.Click
 
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         A_Chequera.Show()
+    End Sub
 
+    Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
+        A_FacturaCompras.Show()
     End Sub
 End Class
