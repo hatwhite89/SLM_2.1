@@ -24,13 +24,13 @@ Partial Class M_MenuLaboratorio
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_MenuLaboratorio))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lbllaboratorio = New System.Windows.Forms.Label()
+        Me.btnlaboratorio = New System.Windows.Forms.Button()
         Me.lblcotizacion = New System.Windows.Forms.Label()
         Me.btnCotizacion = New System.Windows.Forms.Button()
         Me.lblfacturacion = New System.Windows.Forms.Label()
         Me.btnFacturacion = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnlaboratorio = New System.Windows.Forms.Button()
-        Me.lbllaboratorio = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -51,6 +51,29 @@ Partial Class M_MenuLaboratorio
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Menú Módulo Laboratorio"
+        '
+        'lbllaboratorio
+        '
+        Me.lbllaboratorio.AutoSize = True
+        Me.lbllaboratorio.Location = New System.Drawing.Point(195, 95)
+        Me.lbllaboratorio.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbllaboratorio.Name = "lbllaboratorio"
+        Me.lbllaboratorio.Size = New System.Drawing.Size(81, 17)
+        Me.lbllaboratorio.TabIndex = 7
+        Me.lbllaboratorio.Text = "Laboratorio"
+        '
+        'btnlaboratorio
+        '
+        Me.btnlaboratorio.BackgroundImage = CType(resources.GetObject("btnlaboratorio.BackgroundImage"), System.Drawing.Image)
+        Me.btnlaboratorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnlaboratorio.FlatAppearance.BorderSize = 0
+        Me.btnlaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnlaboratorio.Location = New System.Drawing.Point(196, 23)
+        Me.btnlaboratorio.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnlaboratorio.Name = "btnlaboratorio"
+        Me.btnlaboratorio.Size = New System.Drawing.Size(80, 70)
+        Me.btnlaboratorio.TabIndex = 6
+        Me.btnlaboratorio.UseVisualStyleBackColor = True
         '
         'lblcotizacion
         '
@@ -108,29 +131,6 @@ Partial Class M_MenuLaboratorio
         Me.PictureBox1.Size = New System.Drawing.Size(175, 80)
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
-        '
-        'btnlaboratorio
-        '
-        Me.btnlaboratorio.BackgroundImage = CType(resources.GetObject("btnlaboratorio.BackgroundImage"), System.Drawing.Image)
-        Me.btnlaboratorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnlaboratorio.FlatAppearance.BorderSize = 0
-        Me.btnlaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnlaboratorio.Location = New System.Drawing.Point(196, 23)
-        Me.btnlaboratorio.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnlaboratorio.Name = "btnlaboratorio"
-        Me.btnlaboratorio.Size = New System.Drawing.Size(80, 70)
-        Me.btnlaboratorio.TabIndex = 6
-        Me.btnlaboratorio.UseVisualStyleBackColor = True
-        '
-        'lbllaboratorio
-        '
-        Me.lbllaboratorio.AutoSize = True
-        Me.lbllaboratorio.Location = New System.Drawing.Point(195, 95)
-        Me.lbllaboratorio.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lbllaboratorio.Name = "lbllaboratorio"
-        Me.lbllaboratorio.Size = New System.Drawing.Size(81, 17)
-        Me.lbllaboratorio.TabIndex = 7
-        Me.lbllaboratorio.Text = "Laboratorio"
         '
         'M_MenuLaboratorio
         '
