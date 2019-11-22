@@ -9,7 +9,11 @@
     End Sub
 
     Private Sub btnFacturacion_Click(sender As Object, e As EventArgs) Handles btnFacturacion.Click
-        M_Factura.Show()
+        M_BuscarFactura.ShowDialog()
+    End Sub
+
+    Private Sub btnCotizacion_Click(sender As Object, e As EventArgs) Handles btnCotizacion.Click
+        M_BuscarCotizacion.ShowDialog()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

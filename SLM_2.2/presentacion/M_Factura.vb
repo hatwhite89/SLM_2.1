@@ -205,6 +205,7 @@
         btn.Text = "Eliminar"
         btn.Name = "btn"
         btn.UseColumnTextForButtonValue = True
+        totalFactura()
     End Sub
     Private Sub txtconvenio_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoConvenio.TextChanged
         M_ClienteVentana.txtnombreConvenio.Text = txtcodigoConvenio.Text
@@ -381,6 +382,53 @@
         End If
     End Sub
     Private Sub btncotizacion_Click(sender As Object, e As EventArgs) Handles btncotizacion.Click
+        Try
+            If (txtcodigoCliente.Text <> "" And txtcodigoTerminosPago.Text <> "" And
+                txtcodigoSucursal.Text <> "" And txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
 
+                Dim objCotiz As New ClsCotizacion
+                With objCotiz
+                    .codigoCliente_ = txtcodigoCliente.Text
+                    .codigoRecepcionista_ = txtcodigoRecepecionista.Text
+                    .codigoTerminoPago_ = txtcodigoTerminosPago.Text
+                    .codigoSucursal_ = txtcodigoSucursal.Text
+                    .total_ = txttotal.Text
+                End With
+
+                If objCotiz.RegistrarNuevaCotizacion() = 1 Then
+                    deshabilitar()
+
+                    Dim dt As New DataTable
+                    dt = objCotiz.BuscarCotizacionCode()
+                    Dim row As DataRow = dt.Rows(0)
+
+                    txtnumeroFactura.Text = CStr(row("numero"))
+                    btnguardar.Enabled = False
+                    btncotizacion.Enabled = False
+                    Dim objCotFact As New ClsCotizacionFactura
+                    For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
+                        With objCotFact
+                            .numeroCotizacion_ = Convert.ToInt32(txtnumeroFactura.Text)
+                            .codigoExamen_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(0).Value())
+                            .cantidad_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(1).Value())
+                            .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
+                            .descuento_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(5).Value())
+                            .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+                        End With
+                        If objCotFact.RegistrarNuevaCotizacionFactura() = 0 Then
+                            MsgBox("Error al querer insertar el detalle de la cotización.")
+                        End If
+                    Next
+                    MsgBox("Registrada la cotización correctamente.")
+                Else
+                    MsgBox("Error al querer registrar la cotización.", MsgBoxStyle.Critical)
+                End If
+            Else
+                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
     End Sub
 End Class

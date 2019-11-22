@@ -612,6 +612,7 @@ Partial Class M_Factura
         Me.txtvuelto.Location = New System.Drawing.Point(715, 500)
         Me.txtvuelto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtvuelto.Name = "txtvuelto"
+        Me.txtvuelto.ReadOnly = True
         Me.txtvuelto.Size = New System.Drawing.Size(143, 22)
         Me.txtvuelto.TabIndex = 65
         Me.txtvuelto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -768,6 +769,7 @@ Partial Class M_Factura
         Me.txttotal.Location = New System.Drawing.Point(931, 500)
         Me.txttotal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txttotal.Name = "txttotal"
+        Me.txttotal.ReadOnly = True
         Me.txttotal.Size = New System.Drawing.Size(143, 22)
         Me.txttotal.TabIndex = 84
         Me.txttotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center

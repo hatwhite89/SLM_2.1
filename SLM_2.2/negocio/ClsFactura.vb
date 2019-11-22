@@ -3,7 +3,7 @@
 Public Class ClsFactura
 
     Dim numero, codigoCliente, codigoMedico, codigoSede As Integer
-    Dim numeroOficial, codigoRecepcionista, codigoCajero, codigoTerminoPago As String
+    Dim numeroOficial, codigoRecepcionista, codigoCajero, codigoTerminoPago, nombreCliente As String
     Dim codigoCategoria, codigoSucursal, codigoConvenio, numeroPoliza, codigoTerminal As String
     Dim fechaFactura, fechaVto As Date
     Dim ok, enviarEmail, entregaPaciente, entregaMedico As Boolean
@@ -42,6 +42,14 @@ Public Class ClsFactura
         End Get
         Set(value As String)
             codigoCategoria = value
+        End Set
+    End Property
+    Public Property nombreCliente_ As String
+        Get
+            Return nombreCliente
+        End Get
+        Set(value As String)
+            nombreCliente = value
         End Set
     End Property
     Public Property codigoTerminoPago1 As String
@@ -460,7 +468,42 @@ Public Class ClsFactura
             End Using
         End Using
     End Function
-
+    Public Function BuscarFacturaNumero() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "slmBuscarFacturaNumero_M"
+            cmd.Parameters.Add("@numero", SqlDbType.Int).Value = numero_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
+    Public Function BuscarFacturaCliente() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "slmBuscarFacturaCliente_M"
+            cmd.Parameters.Add("@nombreCliente", SqlDbType.VarChar).Value = nombreCliente_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
     Public Function EliminarFactura() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
