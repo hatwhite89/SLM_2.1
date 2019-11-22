@@ -18,4 +18,10 @@
     Private Sub btnTerminoPago_Click(sender As Object, e As EventArgs) Handles btnTerminoPago.Click
         M_TerminosPago.ShowDialog()
     End Sub
+
+    Private Sub M_MenuLaboratorio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+
+    End Sub
 End Class
