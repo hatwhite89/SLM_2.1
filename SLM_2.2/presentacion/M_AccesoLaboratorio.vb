@@ -9,6 +9,8 @@
         txtnombre.ReadOnly = True
         txtcodigo.ReadOnly = True
 
+
+
         cbxConfirmar.Enabled = False
         cbxIngresar.Enabled = False
         cbxObjetar.Enabled = False

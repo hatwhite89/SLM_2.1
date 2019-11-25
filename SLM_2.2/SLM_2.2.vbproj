@@ -112,6 +112,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="negocio\ClsAccesoLaboratorio.vb" />
     <Compile Include="negocio\ClsDetalleFacturaCompra.vb" />
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
@@ -270,6 +271,12 @@
     <Compile Include="presentacion\A_MenuConta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_AccesoLaboratorio.Designer.vb">
+      <DependentUpon>M_AccesoLaboratorio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_AccesoLaboratorio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_BuscarCotizacion.Designer.vb">
       <DependentUpon>M_BuscarCotizacion.vb</DependentUpon>
     </Compile>
@@ -414,12 +421,6 @@
     <Compile Include="presentacion\M_TipoTermino.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\M_Ubicacion.Designer.vb">
-      <DependentUpon>M_Ubicacion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_Ubicacion.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="presentacion\prueba.Designer.vb">
       <DependentUpon>prueba.vb</DependentUpon>
     </Compile>
@@ -497,6 +498,9 @@
     <EmbeddedResource Include="presentacion\E_DetalleExamenes.resx">
       <DependentUpon>E_DetalleExamenes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_AccesoLaboratorio.resx">
+      <DependentUpon>M_AccesoLaboratorio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_BuscarCotizacion.resx">
       <DependentUpon>M_BuscarCotizacion.vb</DependentUpon>
     </EmbeddedResource>
@@ -568,9 +572,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_TipoTermino.resx">
       <DependentUpon>M_TipoTermino.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_Ubicacion.resx">
-      <DependentUpon>M_Ubicacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\prueba.resx">
       <DependentUpon>prueba.vb</DependentUpon>

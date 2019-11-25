@@ -251,6 +251,7 @@
                 MsgBox(ex.Message, MsgBoxStyle.Critical)
             End Try
         End If
+
     End Sub
     Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
 
