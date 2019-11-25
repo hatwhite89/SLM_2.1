@@ -252,9 +252,19 @@ Public Class ClsFacturaCompra
         End Using
     End Function
 
-
     'Capturar Factura Compra
+    Public Function capturarCodFacturaCompra() As DataTable
 
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("slmCapturarCodFacturaCompra_A", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 
 
 

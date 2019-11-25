@@ -24,6 +24,7 @@ Partial Class A_FacturaCompras
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_FacturaCompras))
         Me.gbxInfoFact = New System.Windows.Forms.GroupBox()
+        Me.btnBuscarTerminoPago = New System.Windows.Forms.Button()
         Me.txtMoneda = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.dtpVencimiento = New System.Windows.Forms.DateTimePicker()
@@ -44,10 +45,14 @@ Partial Class A_FacturaCompras
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dtDetalleFactura = New System.Windows.Forms.DataGridView()
+        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Objetos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Tipo_Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
-        Me.btnBuscarTerminoPago = New System.Windows.Forms.Button()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,6 +85,19 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.TabIndex = 0
         Me.gbxInfoFact.TabStop = False
         Me.gbxInfoFact.Text = "Información de Factura"
+        '
+        'btnBuscarTerminoPago
+        '
+        Me.btnBuscarTerminoPago.BackColor = System.Drawing.Color.Transparent
+        Me.btnBuscarTerminoPago.BackgroundImage = CType(resources.GetObject("btnBuscarTerminoPago.BackgroundImage"), System.Drawing.Image)
+        Me.btnBuscarTerminoPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBuscarTerminoPago.FlatAppearance.BorderSize = 0
+        Me.btnBuscarTerminoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarTerminoPago.Location = New System.Drawing.Point(364, 77)
+        Me.btnBuscarTerminoPago.Name = "btnBuscarTerminoPago"
+        Me.btnBuscarTerminoPago.Size = New System.Drawing.Size(21, 20)
+        Me.btnBuscarTerminoPago.TabIndex = 19
+        Me.btnBuscarTerminoPago.UseVisualStyleBackColor = False
         '
         'txtMoneda
         '
@@ -240,18 +258,44 @@ Partial Class A_FacturaCompras
         '
         'dtDetalleFactura
         '
-        Me.dtDetalleFactura.AllowUserToAddRows = False
         Me.dtDetalleFactura.AllowUserToDeleteRows = False
         Me.dtDetalleFactura.BackgroundColor = System.Drawing.Color.White
         Me.dtDetalleFactura.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtDetalleFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cuenta, Me.Objetos, Me.Descripción, Me.Monto, Me.Tipo_Stock})
         Me.dtDetalleFactura.GridColor = System.Drawing.Color.White
         Me.dtDetalleFactura.Location = New System.Drawing.Point(8, 18)
         Me.dtDetalleFactura.Name = "dtDetalleFactura"
-        Me.dtDetalleFactura.ReadOnly = True
-        Me.dtDetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtDetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.dtDetalleFactura.Size = New System.Drawing.Size(532, 285)
         Me.dtDetalleFactura.TabIndex = 0
+        '
+        'Cuenta
+        '
+        Me.Cuenta.HeaderText = "Cuenta"
+        Me.Cuenta.Name = "Cuenta"
+        '
+        'Objetos
+        '
+        Me.Objetos.HeaderText = "Objetos"
+        Me.Objetos.Name = "Objetos"
+        Me.Objetos.ReadOnly = True
+        '
+        'Descripción
+        '
+        Me.Descripción.HeaderText = "Descripción"
+        Me.Descripción.Name = "Descripción"
+        Me.Descripción.ReadOnly = True
+        '
+        'Monto
+        '
+        Me.Monto.HeaderText = "Monto"
+        Me.Monto.Name = "Monto"
+        '
+        'Tipo_Stock
+        '
+        Me.Tipo_Stock.HeaderText = "Tipo Stock"
+        Me.Tipo_Stock.Name = "Tipo_Stock"
         '
         'btnGuardar
         '
@@ -291,19 +335,6 @@ Partial Class A_FacturaCompras
         Me.btnCrear.TabIndex = 4
         Me.btnCrear.Text = "Crear Nuevo"
         Me.btnCrear.UseVisualStyleBackColor = False
-        '
-        'btnBuscarTerminoPago
-        '
-        Me.btnBuscarTerminoPago.BackColor = System.Drawing.Color.Transparent
-        Me.btnBuscarTerminoPago.BackgroundImage = CType(resources.GetObject("btnBuscarTerminoPago.BackgroundImage"), System.Drawing.Image)
-        Me.btnBuscarTerminoPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnBuscarTerminoPago.FlatAppearance.BorderSize = 0
-        Me.btnBuscarTerminoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarTerminoPago.Location = New System.Drawing.Point(364, 77)
-        Me.btnBuscarTerminoPago.Name = "btnBuscarTerminoPago"
-        Me.btnBuscarTerminoPago.Size = New System.Drawing.Size(21, 20)
-        Me.btnBuscarTerminoPago.TabIndex = 19
-        Me.btnBuscarTerminoPago.UseVisualStyleBackColor = False
         '
         'A_FacturaCompras
         '
@@ -354,4 +385,9 @@ Partial Class A_FacturaCompras
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnCrear As Button
     Friend WithEvents btnBuscarTerminoPago As Button
+    Friend WithEvents Cuenta As DataGridViewTextBoxColumn
+    Friend WithEvents Objetos As DataGridViewTextBoxColumn
+    Friend WithEvents Descripción As DataGridViewTextBoxColumn
+    Friend WithEvents Monto As DataGridViewTextBoxColumn
+    Friend WithEvents Tipo_Stock As DataGridViewTextBoxColumn
 End Class

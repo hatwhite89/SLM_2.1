@@ -43,4 +43,46 @@
     Private Sub btnBuscarTerminoPago_Click(sender As Object, e As EventArgs) Handles btnBuscarTerminoPago.Click
         A_ListarTerminoPago.Show()
     End Sub
+
+    Private Sub dtDetalleFactura_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellEndEdit
+
+        Dim Cuenta As New ClsCuenta
+
+        With Cuenta
+
+            .Cuent_a = dtDetalleFactura.Rows(e.RowIndex).Cells(0).Value()
+
+        End With
+
+        Dim dt As New DataTable
+        dt = Cuenta.BuscarCuenta
+
+        Dim row As DataRow = dt.Rows(0)
+
+        Dim nombre As String
+        nombre = row("nombre")
+
+        dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
+
+        dtDetalleFactura.Rows.Insert(e.RowIndex.ToString, New String() {Cuenta.Cuent_a, " ", nombre})
+
+
+
+
+    End Sub
+
+    Private Sub dtDetalleFactura_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellClick
+
+        'Listar objetos en Datagrid
+        If e.ColumnIndex = 1 Then
+
+            A_ListarObjetos.Show()
+
+        End If
+
+
+
+    End Sub
+
+
 End Class
