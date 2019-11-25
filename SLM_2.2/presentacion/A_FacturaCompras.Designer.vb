@@ -22,6 +22,7 @@ Partial Class A_FacturaCompras
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_FacturaCompras))
         Me.gbxInfoFact = New System.Windows.Forms.GroupBox()
         Me.txtMoneda = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -33,7 +34,7 @@ Partial Class A_FacturaCompras
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dtpFechaFactura = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtNombreProveedor = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -46,6 +47,7 @@ Partial Class A_FacturaCompras
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
+        Me.btnBuscarTerminoPago = New System.Windows.Forms.Button()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,6 +55,7 @@ Partial Class A_FacturaCompras
         '
         'gbxInfoFact
         '
+        Me.gbxInfoFact.Controls.Add(Me.btnBuscarTerminoPago)
         Me.gbxInfoFact.Controls.Add(Me.txtMoneda)
         Me.gbxInfoFact.Controls.Add(Me.Label9)
         Me.gbxInfoFact.Controls.Add(Me.dtpVencimiento)
@@ -63,7 +66,7 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.Controls.Add(Me.Label6)
         Me.gbxInfoFact.Controls.Add(Me.dtpFechaFactura)
         Me.gbxInfoFact.Controls.Add(Me.Label5)
-        Me.gbxInfoFact.Controls.Add(Me.TextBox1)
+        Me.gbxInfoFact.Controls.Add(Me.txtNombreProveedor)
         Me.gbxInfoFact.Controls.Add(Me.Label4)
         Me.gbxInfoFact.Controls.Add(Me.txtTotal)
         Me.gbxInfoFact.Controls.Add(Me.Label3)
@@ -132,7 +135,7 @@ Partial Class A_FacturaCompras
         '
         Me.txtTerminoPago.Location = New System.Drawing.Point(306, 77)
         Me.txtTerminoPago.Name = "txtTerminoPago"
-        Me.txtTerminoPago.Size = New System.Drawing.Size(84, 20)
+        Me.txtTerminoPago.Size = New System.Drawing.Size(52, 20)
         Me.txtTerminoPago.TabIndex = 11
         '
         'Label6
@@ -161,12 +164,12 @@ Partial Class A_FacturaCompras
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Fecha Factura"
         '
-        'TextBox1
+        'txtNombreProveedor
         '
-        Me.TextBox1.Location = New System.Drawing.Point(109, 51)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(421, 20)
-        Me.TextBox1.TabIndex = 7
+        Me.txtNombreProveedor.Location = New System.Drawing.Point(109, 51)
+        Me.txtNombreProveedor.Name = "txtNombreProveedor"
+        Me.txtNombreProveedor.Size = New System.Drawing.Size(421, 20)
+        Me.txtNombreProveedor.TabIndex = 7
         '
         'Label4
         '
@@ -246,6 +249,7 @@ Partial Class A_FacturaCompras
         Me.dtDetalleFactura.Location = New System.Drawing.Point(8, 18)
         Me.dtDetalleFactura.Name = "dtDetalleFactura"
         Me.dtDetalleFactura.ReadOnly = True
+        Me.dtDetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtDetalleFactura.Size = New System.Drawing.Size(532, 285)
         Me.dtDetalleFactura.TabIndex = 0
         '
@@ -288,6 +292,19 @@ Partial Class A_FacturaCompras
         Me.btnCrear.Text = "Crear Nuevo"
         Me.btnCrear.UseVisualStyleBackColor = False
         '
+        'btnBuscarTerminoPago
+        '
+        Me.btnBuscarTerminoPago.BackColor = System.Drawing.Color.Transparent
+        Me.btnBuscarTerminoPago.BackgroundImage = CType(resources.GetObject("btnBuscarTerminoPago.BackgroundImage"), System.Drawing.Image)
+        Me.btnBuscarTerminoPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBuscarTerminoPago.FlatAppearance.BorderSize = 0
+        Me.btnBuscarTerminoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarTerminoPago.Location = New System.Drawing.Point(364, 77)
+        Me.btnBuscarTerminoPago.Name = "btnBuscarTerminoPago"
+        Me.btnBuscarTerminoPago.Size = New System.Drawing.Size(21, 20)
+        Me.btnBuscarTerminoPago.TabIndex = 19
+        Me.btnBuscarTerminoPago.UseVisualStyleBackColor = False
+        '
         'A_FacturaCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -321,7 +338,7 @@ Partial Class A_FacturaCompras
     Friend WithEvents Label6 As Label
     Friend WithEvents dtpFechaFactura As DateTimePicker
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtNombreProveedor As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents txtTotal As TextBox
     Friend WithEvents Label3 As Label
@@ -336,4 +353,5 @@ Partial Class A_FacturaCompras
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnCrear As Button
+    Friend WithEvents btnBuscarTerminoPago As Button
 End Class
