@@ -112,7 +112,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="negocio\ClsAccesoLaboratorio.vb" />
+    <Compile Include="negocio\ClsDetalleFacturaCompra.vb" />
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
@@ -203,10 +203,22 @@
     <Compile Include="presentacion\A_Depositos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ListadoFacturaCompra.Designer.vb">
+      <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListadoFacturaCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListarCuentas_Chequera.Designer.vb">
       <DependentUpon>A_ListarCuentas_Chequera.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ListarCuentas_Chequera.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ListarObjetos.Designer.vb">
+      <DependentUpon>A_ListarObjetos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarObjetos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_ListarTerminoPago.Designer.vb">
@@ -402,10 +414,10 @@
     <Compile Include="presentacion\M_TipoTermino.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\M_AccesoLaboratorio.Designer.vb">
-      <DependentUpon>M_AccesoLaboratorio.vb</DependentUpon>
+    <Compile Include="presentacion\M_Ubicacion.Designer.vb">
+      <DependentUpon>M_Ubicacion.vb</DependentUpon>
     </Compile>
-    <Compile Include="presentacion\M_AccesoLaboratorio.vb">
+    <Compile Include="presentacion\M_Ubicacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\prueba.Designer.vb">
@@ -455,8 +467,14 @@
     <EmbeddedResource Include="presentacion\A_Depositos.resx">
       <DependentUpon>A_Depositos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListadoFacturaCompra.resx">
+      <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarCuentas_Chequera.resx">
       <DependentUpon>A_ListarCuentas_Chequera.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarObjetos.resx">
+      <DependentUpon>A_ListarObjetos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarTerminoPago.resx">
       <DependentUpon>A_ListarTerminoPago.vb</DependentUpon>
@@ -551,8 +569,8 @@
     <EmbeddedResource Include="presentacion\M_TipoTermino.resx">
       <DependentUpon>M_TipoTermino.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_AccesoLaboratorio.resx">
-      <DependentUpon>M_AccesoLaboratorio.vb</DependentUpon>
+    <EmbeddedResource Include="presentacion\M_Ubicacion.resx">
+      <DependentUpon>M_Ubicacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\prueba.resx">
       <DependentUpon>prueba.vb</DependentUpon>

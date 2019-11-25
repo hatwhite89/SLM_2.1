@@ -182,4 +182,20 @@ Public Class ClsObjeto
             Return dt
         End Using
     End Function
+
+
+    'Listar codigo y nombre de objeto
+    Public Function listarNombreObjeto() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("slmListarNombreObjetos_A", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
 End Class
