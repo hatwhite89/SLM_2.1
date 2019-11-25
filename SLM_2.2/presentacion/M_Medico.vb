@@ -6,27 +6,52 @@
     Private Sub btnbuscarEspecialidad_Click(sender As Object, e As EventArgs) Handles btnbuscarEspecialidad.Click
         M_Especialidad.ShowDialog()
     End Sub
+    Private Function sinEspacios(ByVal cadena As String) As String
+        Dim testString As String = cadena
+        Dim texto As String = ""
+        Dim testArray() As String = Split(testString)
+        Dim lastNonEmpty As Integer = -1
+        For i As Integer = 0 To testArray.Length - 1
+            If testArray(i) <> "" Then
+                lastNonEmpty += 1
+                testArray(lastNonEmpty) = testArray(i)
+                texto += testArray(i) + " "
+            End If
+        Next
+        ReDim Preserve testArray(lastNonEmpty)
+        Return texto
+    End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
+            Dim numero As Integer = 0
+            Dim val, val2, val3, val4, val5 As String
+            val = sinEspacios(txtcorreo.Text)
+            val2 = sinEspacios(txtcorreo2.Text)
+            val3 = sinEspacios(txttelefono.Text)
+            val4 = sinEspacios(txtcelular.Text)
+            val5 = sinEspacios(txtnombreCompleto.Text)
 
-            If (txtnombreCompleto.Text <> "" And txtcorreo.Text <> "" And txtcorreo2.Text <> "" And txttelefono.Text <> "" And txtcelular.Text <> "" And txtcodigoEspecialidad.Text <> "") Then
-                Dim testString As String = txtnombreCompleto.Text()
-                Dim texto As String = ""
-                Dim testArray() As String = Split(testString)
-                Dim lastNonEmpty As Integer = -1
-                For i As Integer = 0 To testArray.Length - 1
-                    If testArray(i) <> "" Then
-                        lastNonEmpty += 1
-                        testArray(lastNonEmpty) = testArray(i)
-                        texto += testArray(i) + " "
-                    End If
-                Next
-                ReDim Preserve testArray(lastNonEmpty)
-                txtnombreCompleto.Text() = texto
+            txtcorreo.Text = val
+            txtcorreo2.Text = val2
+            txttelefono.Text = val3
+            txtcelular.Text = val4
+            txtnombreCompleto.Text = val5
 
+            If (Trim(val) <> "") Then
+                numero += 1
+            ElseIf (Trim(val2) <> "") Then
+                numero += 1
+            ElseIf (Trim(val3) <> "") Then
+                numero += 1
+            ElseIf (Trim(val4) <> "") Then
+                numero += 1
+            Else
+                numero = 0
+            End If
+            If (Trim(val5) <> "" And txtcodigoEspecialidad.Text <> "") Then
                 Dim objMedico As New ClsMedico
                 With objMedico
-                    .Nombre_completo1 = texto
+                    .Nombre_completo1 = txtnombreCompleto.Text
                     .Correo1 = txtcorreo.Text
                     .Correo21 = txtcorreo2.Text
                     .Telefono1 = txttelefono.Text
@@ -177,25 +202,38 @@
     End Sub
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
+            Dim numero As Integer = 0
+            Dim val, val2, val3, val4, val5, val6 As String
+            val = sinEspacios(txtcorreo.Text)
+            val2 = sinEspacios(txtcorreo2.Text)
+            val3 = sinEspacios(txttelefono.Text)
+            val4 = sinEspacios(txtcelular.Text)
+            val5 = sinEspacios(txtnombreCompleto.Text)
+            val6 = sinEspacios(txtcodigo.Text)
 
-            If (txtcodigo.Text <> "" And txtnombreCompleto.Text <> "" And txtcorreo.Text <> "" And txtcorreo2.Text <> "" And txttelefono.Text <> "" And txtcelular.Text <> "" And txtcodigoEspecialidad.Text <> "") Then
-                Dim testString As String = txtnombreCompleto.Text()
-                Dim texto As String = ""
-                Dim testArray() As String = Split(testString)
-                Dim lastNonEmpty As Integer = -1
-                For i As Integer = 0 To testArray.Length - 1
-                    If testArray(i) <> "" Then
-                        lastNonEmpty += 1
-                        testArray(lastNonEmpty) = testArray(i)
-                        texto += testArray(i) + " "
-                    End If
-                Next
-                ReDim Preserve testArray(lastNonEmpty)
-                txtnombreCompleto.Text() = texto
+            txtcorreo.Text = val
+            txtcorreo2.Text = val2
+            txttelefono.Text = val3
+            txtcelular.Text = val4
+            txtnombreCompleto.Text = val5
+            txtcodigo.Text = val6
 
+            If (Trim(val) <> "") Then
+                numero += 1
+            ElseIf (Trim(val2) <> "") Then
+                numero += 1
+            ElseIf (Trim(val3) <> "") Then
+                numero += 1
+            ElseIf (Trim(val4) <> "") Then
+                numero += 1
+            Else
+                numero = 0
+            End If
+            If (Trim(val5) <> "" And numero > 0 And txtcodigoEspecialidad.Text <> "" And Trim(val6) <> "") Then
+                'If (txtcodigo.Text <> "" And txtnombreCompleto.Text <> "" And txtcorreo.Text <> "" And txtcorreo2.Text <> "" And txttelefono.Text <> "" And txtcelular.Text <> "" And txtcodigoEspecialidad.Text <> "") Then
                 Dim objMedico As New ClsMedico
                 With objMedico
-                    .Nombre_completo1 = texto
+                    .Nombre_completo1 = txtnombreCompleto.Text
                     .Correo1 = txtcorreo.Text
                     .Correo21 = txtcorreo2.Text
                     .Telefono1 = txttelefono.Text
