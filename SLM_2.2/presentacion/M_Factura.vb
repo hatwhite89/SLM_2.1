@@ -22,7 +22,7 @@
                 M_Cliente.txtcodigoCategoria.Text = CStr(row("codigoCategoria"))
                 M_ClienteVentana.txtnombreCategoria.Text = M_Cliente.txtnombreCategoria.Text
             Catch ex As Exception
-                MsgBox("No existe el código del cliente.", MsgBoxStyle.Critical, "Validación")
+                'MsgBox("No existe el código del cliente.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoCliente.Text = ""
@@ -54,7 +54,6 @@
         dtpfechaFactura.Value = Date.Now()
         dtpfechaVto.Value = Date.Now()
 
-        txtnumeroFactura.ReadOnly = False
         txtcodigoCliente.ReadOnly = False
         txtcodigoMedico.ReadOnly = False
         txtcodigoConvenio.ReadOnly = False
@@ -63,7 +62,6 @@
         txtcodigoRecepecionista.ReadOnly = False
         txtcodigoCajero.ReadOnly = False
 
-        txtnumeroOficial.ReadOnly = False
         txtnombreCliente.ReadOnly = False
         txtnombreMedico.ReadOnly = False
         txtcodigoSede.ReadOnly = False
@@ -80,6 +78,8 @@
         cbxentregarPaciente.Checked = False
         cbxenviarCorreo.Checked = False
         cbxok.Checked = False
+        dtpfechaFactura.Enabled = True
+        dtpfechaVto.Enabled = True
 
         btncotizacion.Enabled = True
         btnguardar.Enabled = True
@@ -107,6 +107,8 @@
         txtcodigoTerminal.ReadOnly = True
         txtnombreSede.ReadOnly = True
         txtcodigoTerminosPago.ReadOnly = True
+        dtpfechaFactura.Enabled = False
+        dtpfechaVto.Enabled = False
 
         txtpagoPaciente.ReadOnly = True
         txtvuelto.ReadOnly = True
@@ -124,7 +126,7 @@
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreMedico.Text = "Dr. " + CStr(row("nombre_completo"))
             Catch ex As Exception
-                MsgBox("No existe el código del médico.", MsgBoxStyle.Critical, "Validación")
+                'MsgBox("No existe el código del médico.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoMedico.Text = ""
@@ -143,7 +145,7 @@
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreSede.Text = CStr(row("nombre"))
             Catch ex As Exception
-                MsgBox("No existe el código de la sede.", MsgBoxStyle.Critical, "Validación")
+                ' MsgBox("No existe el código de la sede.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoSede.Text = ""
@@ -188,7 +190,7 @@
                 txtdescripcionTermino.Text = CStr(row("descripcion"))
                 M_ClienteVentana.txtnombreTerminos.Text = CStr(row("descripcion"))
             Catch ex As Exception
-                MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
+                'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoTerminosPago.Text = ""

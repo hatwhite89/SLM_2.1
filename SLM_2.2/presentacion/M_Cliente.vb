@@ -413,7 +413,7 @@
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreClasificacion.Text = CStr(row("comentario"))
             Catch ex As Exception
-                MsgBox("No existe el código de clasificación de contacto.", MsgBoxStyle.Critical, "Validación")
+                'MsgBox("No existe el código de clasificación de contacto.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoClasificacion.Text = ""
@@ -538,7 +538,7 @@
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreTerminos.Text = CStr(row("descripcion"))
             Catch ex As Exception
-                MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
+                'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoTermino.Text = ""
@@ -548,7 +548,6 @@
         If (txtcodigoCategoria.Text <> "") Then
             Try
                 Dim objCat As New ClsCategoria
-
                 With objCat
                     .Codigo1 = txtcodigoCategoria.Text
                 End With
@@ -557,11 +556,11 @@
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreCategoria.Text = CStr(row("descripcion"))
             Catch ex As Exception
-                MsgBox("No existe el código de la categoría.", MsgBoxStyle.Critical, "Validación")
+                'MsgBox("No existe el código de la categoría.", MsgBoxStyle.Critical, "Validación")
             End Try
 
         Else
-            txtcodigoTermino.Text = ""
+            txtcodigoCategoria.Text = ""
         End If
     End Sub
 End Class
