@@ -41,6 +41,10 @@ Partial Class frmMenuConta
         Me.btnCuentas = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnFormaPago = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.tcMenu.SuspendLayout()
         Me.tpCheque.SuspendLayout()
         Me.tpPagos.SuspendLayout()
@@ -60,6 +64,8 @@ Partial Class frmMenuConta
         '
         'tpCheque
         '
+        Me.tpCheque.Controls.Add(Me.Label7)
+        Me.tpCheque.Controls.Add(Me.Label6)
         Me.tpCheque.Controls.Add(Me.Button2)
         Me.tpCheque.Controls.Add(Me.btnDepoBanc)
         Me.tpCheque.Location = New System.Drawing.Point(4, 22)
@@ -72,31 +78,35 @@ Partial Class frmMenuConta
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(4, 6)
+        Me.Button2.Location = New System.Drawing.Point(15, 6)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(133, 23)
+        Me.Button2.Size = New System.Drawing.Size(69, 66)
         Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Chequera"
         Me.Button2.UseVisualStyleBackColor = False
         '
         'btnDepoBanc
         '
-        Me.btnDepoBanc.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnDepoBanc.BackColor = System.Drawing.Color.Transparent
+        Me.btnDepoBanc.BackgroundImage = CType(resources.GetObject("btnDepoBanc.BackgroundImage"), System.Drawing.Image)
+        Me.btnDepoBanc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnDepoBanc.FlatAppearance.BorderSize = 0
         Me.btnDepoBanc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDepoBanc.ForeColor = System.Drawing.Color.White
-        Me.btnDepoBanc.Location = New System.Drawing.Point(144, 6)
+        Me.btnDepoBanc.Location = New System.Drawing.Point(112, 12)
         Me.btnDepoBanc.Name = "btnDepoBanc"
-        Me.btnDepoBanc.Size = New System.Drawing.Size(133, 23)
+        Me.btnDepoBanc.Size = New System.Drawing.Size(63, 60)
         Me.btnDepoBanc.TabIndex = 0
-        Me.btnDepoBanc.Text = "Deposito Bancario"
         Me.btnDepoBanc.UseVisualStyleBackColor = False
         '
         'tpPagos
         '
+        Me.tpPagos.Controls.Add(Me.Label9)
+        Me.tpPagos.Controls.Add(Me.Label8)
         Me.tpPagos.Controls.Add(Me.Button1)
         Me.tpPagos.Controls.Add(Me.btnPagos)
         Me.tpPagos.Location = New System.Drawing.Point(4, 22)
@@ -109,28 +119,30 @@ Partial Class frmMenuConta
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(6, 6)
+        Me.Button1.Location = New System.Drawing.Point(11, 8)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(131, 23)
+        Me.Button1.Size = New System.Drawing.Size(70, 67)
         Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Factura Compra"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'btnPagos
         '
-        Me.btnPagos.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnPagos.BackColor = System.Drawing.Color.Transparent
+        Me.btnPagos.BackgroundImage = CType(resources.GetObject("btnPagos.BackgroundImage"), System.Drawing.Image)
+        Me.btnPagos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnPagos.FlatAppearance.BorderSize = 0
         Me.btnPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPagos.ForeColor = System.Drawing.Color.White
-        Me.btnPagos.Location = New System.Drawing.Point(145, 6)
+        Me.btnPagos.Location = New System.Drawing.Point(91, 3)
         Me.btnPagos.Name = "btnPagos"
-        Me.btnPagos.Size = New System.Drawing.Size(131, 23)
+        Me.btnPagos.Size = New System.Drawing.Size(71, 71)
         Me.btnPagos.TabIndex = 0
-        Me.btnPagos.Text = "Pagos"
         Me.btnPagos.UseVisualStyleBackColor = False
         '
         'TpMantenimiento
@@ -259,6 +271,42 @@ Partial Class frmMenuConta
         Me.btnFormaPago.TabIndex = 0
         Me.btnFormaPago.UseVisualStyleBackColor = True
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(22, 75)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(53, 13)
+        Me.Label6.TabIndex = 2
+        Me.Label6.Text = "Chequera"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(98, 75)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(94, 13)
+        Me.Label7.TabIndex = 3
+        Me.Label7.Text = "Deposito Bancario"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(3, 77)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(82, 13)
+        Me.Label8.TabIndex = 2
+        Me.Label8.Text = "Factura Compra"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(115, 77)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(37, 13)
+        Me.Label9.TabIndex = 3
+        Me.Label9.Text = "Pagos"
+        '
         'frmMenuConta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -272,7 +320,9 @@ Partial Class frmMenuConta
         Me.Text = "Contabilidad"
         Me.tcMenu.ResumeLayout(False)
         Me.tpCheque.ResumeLayout(False)
+        Me.tpCheque.PerformLayout()
         Me.tpPagos.ResumeLayout(False)
+        Me.tpPagos.PerformLayout()
         Me.TpMantenimiento.ResumeLayout(False)
         Me.TpMantenimiento.PerformLayout()
         Me.ResumeLayout(False)
@@ -297,4 +347,8 @@ Partial Class frmMenuConta
     Friend WithEvents btnBancos As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
 End Class

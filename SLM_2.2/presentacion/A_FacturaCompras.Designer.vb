@@ -53,6 +53,7 @@ Partial Class A_FacturaCompras
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
+        Me.lblFila = New System.Windows.Forms.Label()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,6 +61,7 @@ Partial Class A_FacturaCompras
         '
         'gbxInfoFact
         '
+        Me.gbxInfoFact.Controls.Add(Me.lblFila)
         Me.gbxInfoFact.Controls.Add(Me.btnBuscarTerminoPago)
         Me.gbxInfoFact.Controls.Add(Me.txtMoneda)
         Me.gbxInfoFact.Controls.Add(Me.Label9)
@@ -336,6 +338,15 @@ Partial Class A_FacturaCompras
         Me.btnCrear.Text = "Crear Nuevo"
         Me.btnCrear.UseVisualStyleBackColor = False
         '
+        'lblFila
+        '
+        Me.lblFila.AutoSize = True
+        Me.lblFila.Location = New System.Drawing.Point(485, 136)
+        Me.lblFila.Name = "lblFila"
+        Me.lblFila.Size = New System.Drawing.Size(45, 13)
+        Me.lblFila.TabIndex = 20
+        Me.lblFila.Text = "Label10"
+        '
         'A_FacturaCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -390,4 +401,5 @@ Partial Class A_FacturaCompras
     Friend WithEvents Descripción As DataGridViewTextBoxColumn
     Friend WithEvents Monto As DataGridViewTextBoxColumn
     Friend WithEvents Tipo_Stock As DataGridViewTextBoxColumn
+    Friend WithEvents lblFila As Label
 End Class
