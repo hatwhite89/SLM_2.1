@@ -106,6 +106,8 @@ Public Class ClsAccesoLaboratorio
 
         sqlcom.ExecuteNonQuery()
 
+        con.cerrarConexion()
+
         par_sal = sqlcom.Parameters("salida").Value
 
         Return par_sal
@@ -161,6 +163,8 @@ Public Class ClsAccesoLaboratorio
         sqlcom.Connection = con.getConexion
 
         sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
 
         par_sal = sqlcom.Parameters("salida").Value
 

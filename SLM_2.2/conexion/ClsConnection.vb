@@ -25,4 +25,9 @@ Public Class ClsConnection
         ''retorna la conexión abierta
     End Function
 
+    Public Sub cerrarConexion()
+        'cierra la conexión con la base de datos
+        sqlcon.Close()
+    End Sub
+
 End Class

@@ -85,6 +85,7 @@ Public Class ClsPaciente
 
         sqlcom.ExecuteNonQuery()
 
+
         par_sal = sqlcom.Parameters("Salida").Value
 
         Return par_sal
