@@ -12,7 +12,8 @@
         Dim obj As String
 
         obj = dtObjetos.Rows(e.RowIndex).Cells(0).Value
-        A_FacturaCompras.dtDetalleFactura.Rows(e.RowIndex).Cells(1).Value = obj
+        A_FacturaCompras.dtDetalleFactura.Rows(Convert.ToInt32(A_FacturaCompras.lblFila.Text)).Cells(1).Value = obj
+        Me.Close()
 
     End Sub
 End Class

@@ -1,12 +1,15 @@
 ﻿Public Class A_FacturaCompras
-
+    'Objetos de Clase
     Dim FacCompra As New ClsFacturaCompra
+    Dim DetalleFacCompra As New ClsDetalleFacturaCompra
     Private Sub A_FacturaCompras_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+
+        'Presionar ESC para cerrar ventana
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
         End If
-    End Sub
 
+    End Sub
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         Try
@@ -24,6 +27,32 @@
                 .Tota_l = txtTotal.Text
                 'registro de  factura compra
                 .registrarNuevaFacturaCompra()
+
+                'Registro de detalle de factura
+                Dim dt As New DataTable
+                'Capturar código de la factura creada
+                dt = FacCompra.capturarCodFacturaCompra
+                Dim row As DataRow = dt.Rows(0)
+                'Mostrar codigo en textbox 
+                txtCodFactura.Text = CStr(row("codFactura"))
+                Dim fila As Integer
+
+                'Recorrer filas para ingreso de detalle de factura
+                For fila = 0 To dtDetalleFactura.Rows.Count - 2
+
+                    'Insertar detalle de compra
+                    DetalleFacCompra.Cod_Factura = Convert.ToInt32(txtCodFactura.Text)
+                    DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(0).Value())
+                    DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(2).Value()
+                    DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(3).Value()))
+                    Dim stock As String = dtDetalleFactura.Rows(fila).Cells(4).Value()
+                    DetalleFacCompra.Tipo_Stock = stock
+                    DetalleFacCompra.Objeto_s = dtDetalleFactura.Rows(fila).Cells(1).Value()
+
+                    'Funcion de registro de detalle
+                    DetalleFacCompra.registrarDetalleFactura()
+                Next
+
                 MessageBox.Show("La factura se registro exitosamente.")
 
             End With
@@ -32,46 +61,49 @@
             Me.Close()
 
         Catch ex As Exception
-            MessageBox.Show("Error al guardar el registro." + ex.Message)
+            MessageBox.Show("Error al guardar la factura de compra. Detalles: " + ex.Message)
         End Try
 
         Me.Close()
-        A_ListadoFacturaCompra.Show()
+        A_ListadoFacturaCompra.ShowDialog()
 
     End Sub
 
     Private Sub btnBuscarTerminoPago_Click(sender As Object, e As EventArgs) Handles btnBuscarTerminoPago.Click
-        A_ListarTerminoPago.Show()
+        'Abrir busqueda de termino de pago
+        A_ListarTerminoPago.ShowDialog()
     End Sub
 
     Private Sub dtDetalleFactura_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellEndEdit
 
-        Dim Cuenta As New ClsCuenta
+        Try
+            Dim Cuenta As New ClsCuenta
+            'Capturar codigo de cuenta
+            With Cuenta
 
-        With Cuenta
+                .Cuent_a = dtDetalleFactura.Rows(e.RowIndex).Cells(0).Value()
 
-            .Cuent_a = dtDetalleFactura.Rows(e.RowIndex).Cells(0).Value()
+            End With
+            'Capturar informacion de cuenta
+            Dim dt As New DataTable
+            dt = Cuenta.BuscarCuenta
 
-        End With
+            Dim row As DataRow = dt.Rows(0)
+            Dim nombre As String
+            nombre = row("nombre")
+            'Asignar busqueda en Datagrid
+            dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
+            dtDetalleFactura.Rows.Insert(e.RowIndex.ToString, New String() {Cuenta.Cuent_a, " ", nombre})
 
-        Dim dt As New DataTable
-        dt = Cuenta.BuscarCuenta
+        Catch ex As Exception
 
-        Dim row As DataRow = dt.Rows(0)
-
-        Dim nombre As String
-        nombre = row("nombre")
-
-        dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
-
-        dtDetalleFactura.Rows.Insert(e.RowIndex.ToString, New String() {Cuenta.Cuent_a, " ", nombre})
-
-
-
+        End Try
 
     End Sub
 
     Private Sub dtDetalleFactura_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellClick
+        'Capturar numero de fila seleccionada
+        lblFila.Text = e.RowIndex
 
         'Listar objetos en Datagrid
         If e.ColumnIndex = 1 Then
@@ -79,8 +111,6 @@
             A_ListarObjetos.Show()
 
         End If
-
-
 
     End Sub
 

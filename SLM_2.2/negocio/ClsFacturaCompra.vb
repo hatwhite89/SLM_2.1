@@ -256,7 +256,7 @@ Public Class ClsFacturaCompra
         End Using
     End Function
 
-    'Capturar Factura Compra
+    'Capturar ultima Factura Compra
     Public Function capturarCodFacturaCompra() As DataTable
 
         Dim objCon As New ClsConnection
@@ -268,6 +268,8 @@ Public Class ClsFacturaCompra
             da.Fill(dt)
             Return dt
         End Using
+
+
     End Function
 
 

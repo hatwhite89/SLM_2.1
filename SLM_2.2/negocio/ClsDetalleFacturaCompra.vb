@@ -95,7 +95,7 @@ Public Class ClsDetalleFacturaCompra
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarDetalleFactura_A"
+        sqlcom.CommandText = "slmInsertarDetalleFacturaCompras_A"
 
         'VARIABLES 
         sqlpar = New SqlParameter
