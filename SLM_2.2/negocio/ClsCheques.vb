@@ -194,6 +194,8 @@ Public Class ClsCheques
         sqlcom.CommandTimeout = 1000
         sqlcom.ExecuteNonQuery()
 
+        con.cerrarConexion()
+
         par_sal = sqlcom.Parameters("salida").Value
         Return par_sal
 

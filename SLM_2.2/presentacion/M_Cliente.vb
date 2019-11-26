@@ -273,7 +273,7 @@
                 numero = 0
             End If
 
-            If (genero <> "" And txtnombreTerminos.Text <> "" And txtnombreCategoria.Text <> "" And numero > 0 And txtnombre1.Text <> "" And txtapellido1.Text <> "" And txtapellido2.Text <> "" And dtpfechaNacimiento.Text <> "" And rtxtdireccion.Text <> "" And txtcodigoClasificacion.Text <> "") Then
+            If (genero <> "" And txtnombreTerminos.Text <> "" And txtnombreCategoria.Text <> "" And numero > 0 And txtnombre1.Text <> "" And txtapellido1.Text <> "" And txtapellido2.Text <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoClasificacion.Text <> "") Then
 
                 Dim testString As String = txtnombreCompleto.Text()
                 Dim texto As String = ""

@@ -251,6 +251,7 @@
                 MsgBox(ex.Message, MsgBoxStyle.Critical)
             End Try
         End If
+
     End Sub
     Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
 
@@ -281,19 +282,21 @@
         ElseIf e.ColumnIndex = 1 Then
             Try
                 Dim code, cant As Integer
-                Dim precio, subtotal As Double
+                Dim precio, subtotal, descuento, porcDesc As Double
                 Dim descrip As String
                 code = Convert.ToInt32(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value())
                 cant = Convert.ToInt32(dgblistadoExamenes.Rows(e.RowIndex).Cells(1).Value())
                 precio = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(2).Value())
-                subtotal = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(6).Value())
                 descrip = dgblistadoExamenes.Rows(e.RowIndex).Cells(3).Value()
-                subtotal *= cant
+                porcDesc = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(5).Value())
+                subtotal = precio * cant
+                descuento = subtotal * (porcDesc / 100)
+                subtotal -= descuento
                 dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
-                dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
+                dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), porcDesc, subtotal})
 
                 M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(e.RowIndex.ToString))
-                M_ClienteVentana.dgvtabla.Rows.Add(New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
+                M_ClienteVentana.dgvtabla.Rows.Add(New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), porcDesc, subtotal})
                 totalFactura()
             Catch ex As Exception
                 MsgBox("Debe ingresar la cantidad correcta de examenes.", MsgBoxStyle.Critical)

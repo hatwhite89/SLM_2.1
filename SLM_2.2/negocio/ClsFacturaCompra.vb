@@ -163,6 +163,8 @@ Public Class ClsFacturaCompra
         sqlcom.Connection = con.getConexion
         sqlcom.ExecuteNonQuery()
 
+        con.cerrarConexion()
+
         par_sal = sqlcom.Parameters("salida").Value
 
         Return par_sal
@@ -231,6 +233,8 @@ Public Class ClsFacturaCompra
         Dim con As New ClsConnection
         sqlcom.Connection = con.getConexion
         sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
 
         par_sal = sqlcom.Parameters("salida").Value
 
