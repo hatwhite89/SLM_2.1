@@ -62,6 +62,7 @@ Partial Class M_Medico
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(179, 22)
         Me.txtcodigo.TabIndex = 88
+        Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblcodigo
         '
@@ -79,6 +80,7 @@ Partial Class M_Medico
         Me.txtcelular.Name = "txtcelular"
         Me.txtcelular.Size = New System.Drawing.Size(179, 22)
         Me.txtcelular.TabIndex = 92
+        Me.txtcelular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblcelular
         '
@@ -96,6 +98,7 @@ Partial Class M_Medico
         Me.txttelefono.Name = "txttelefono"
         Me.txttelefono.Size = New System.Drawing.Size(179, 22)
         Me.txttelefono.TabIndex = 90
+        Me.txttelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lbltelefono
         '
@@ -113,6 +116,7 @@ Partial Class M_Medico
         Me.txtcorreo.Name = "txtcorreo"
         Me.txtcorreo.Size = New System.Drawing.Size(179, 22)
         Me.txtcorreo.TabIndex = 94
+        Me.txtcorreo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblcorreo
         '
@@ -130,6 +134,7 @@ Partial Class M_Medico
         Me.txtcorreo2.Name = "txtcorreo2"
         Me.txtcorreo2.Size = New System.Drawing.Size(179, 22)
         Me.txtcorreo2.TabIndex = 96
+        Me.txtcorreo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblcorreo2
         '
@@ -161,6 +166,7 @@ Partial Class M_Medico
         Me.txtcodigoEspecialidad.Name = "txtcodigoEspecialidad"
         Me.txtcodigoEspecialidad.Size = New System.Drawing.Size(125, 22)
         Me.txtcodigoEspecialidad.TabIndex = 104
+        Me.txtcodigoEspecialidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblespecialidad
         '
@@ -178,6 +184,7 @@ Partial Class M_Medico
         Me.txtnombreCompleto.Name = "txtnombreCompleto"
         Me.txtnombreCompleto.Size = New System.Drawing.Size(435, 22)
         Me.txtnombreCompleto.TabIndex = 107
+        Me.txtnombreCompleto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblnombreCompleto
         '
@@ -321,9 +328,9 @@ Partial Class M_Medico
         Me.lbltotal.AutoSize = True
         Me.lbltotal.Location = New System.Drawing.Point(113, 260)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(147, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(143, 17)
         Me.lbltotal.TabIndex = 114
-        Me.lbltotal.Text = "TOTAL DE CLIENTES"
+        Me.lbltotal.Text = "TOTAL DE MÉDICOS"
         '
         'txtnombreB
         '

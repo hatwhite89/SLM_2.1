@@ -25,67 +25,77 @@ Partial Class frmTipoDeposito
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTipoDeposito))
         Me.btnTarjeta = New System.Windows.Forms.Button()
         Me.btnDeposito = New System.Windows.Forms.Button()
-        Me.btnRegresar = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnTarjeta
         '
-        Me.btnTarjeta.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnTarjeta.BackColor = System.Drawing.Color.Transparent
         Me.btnTarjeta.BackgroundImage = CType(resources.GetObject("btnTarjeta.BackgroundImage"), System.Drawing.Image)
         Me.btnTarjeta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnTarjeta.FlatAppearance.BorderSize = 0
         Me.btnTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTarjeta.Location = New System.Drawing.Point(12, 31)
+        Me.btnTarjeta.Location = New System.Drawing.Point(9, 13)
         Me.btnTarjeta.Name = "btnTarjeta"
-        Me.btnTarjeta.Size = New System.Drawing.Size(115, 118)
+        Me.btnTarjeta.Size = New System.Drawing.Size(101, 101)
         Me.btnTarjeta.TabIndex = 0
         Me.btnTarjeta.UseVisualStyleBackColor = False
         '
         'btnDeposito
         '
-        Me.btnDeposito.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnDeposito.BackColor = System.Drawing.Color.Transparent
         Me.btnDeposito.BackgroundImage = CType(resources.GetObject("btnDeposito.BackgroundImage"), System.Drawing.Image)
         Me.btnDeposito.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnDeposito.FlatAppearance.BorderSize = 0
         Me.btnDeposito.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDeposito.Location = New System.Drawing.Point(133, 29)
+        Me.btnDeposito.Location = New System.Drawing.Point(124, 4)
         Me.btnDeposito.Name = "btnDeposito"
         Me.btnDeposito.Size = New System.Drawing.Size(115, 118)
         Me.btnDeposito.TabIndex = 1
         Me.btnDeposito.UseVisualStyleBackColor = False
         '
-        'btnRegresar
+        'Label1
         '
-        Me.btnRegresar.BackColor = System.Drawing.Color.Transparent
-        Me.btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnRegresar.FlatAppearance.BorderSize = 0
-        Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegresar.Location = New System.Drawing.Point(238, 1)
-        Me.btnRegresar.Name = "btnRegresar"
-        Me.btnRegresar.Size = New System.Drawing.Size(25, 22)
-        Me.btnRegresar.TabIndex = 2
-        Me.btnRegresar.Text = "X"
-        Me.btnRegresar.UseVisualStyleBackColor = False
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(33, 119)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(45, 13)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Tarjetas"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(132, 119)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(104, 13)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Depositos Bancarios"
         '
         'frmTipoDeposito
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(260, 158)
+        Me.ClientSize = New System.Drawing.Size(243, 143)
         Me.ControlBox = False
-        Me.Controls.Add(Me.btnRegresar)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnDeposito)
         Me.Controls.Add(Me.btnTarjeta)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True
         Me.Name = "frmTipoDeposito"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Seleccione el tipo de Deposito"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents btnTarjeta As Button
     Friend WithEvents btnDeposito As Button
-    Friend WithEvents btnRegresar As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class

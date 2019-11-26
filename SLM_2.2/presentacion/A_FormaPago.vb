@@ -59,8 +59,6 @@ Public Class frmFormaPago
 
     End Sub
 
-
-
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs)
 
         Me.Height = 287
@@ -71,8 +69,6 @@ Public Class frmFormaPago
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
-
-
 
         Try
             Dim FormaPago As New ClsFormaPago
@@ -116,7 +112,6 @@ Public Class frmFormaPago
             'MessageBox.Show("Error al hacer la selección.")
         End Try
 
-
     End Sub
 
     Private Sub frmFormaPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -125,7 +120,11 @@ Public Class frmFormaPago
         'Cargar listado de formas de pago
         dtFormasPago.DataSource = formasPago.mostrarFormasPago
 
+    End Sub
 
-
+    Private Sub frmFormaPago_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
     End Sub
 End Class

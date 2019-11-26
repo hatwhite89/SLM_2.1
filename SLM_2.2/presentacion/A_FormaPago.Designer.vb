@@ -321,7 +321,10 @@ Partial Class frmFormaPago
         '
         Me.dtFormasPago.AllowUserToAddRows = False
         Me.dtFormasPago.AllowUserToDeleteRows = False
+        Me.dtFormasPago.BackgroundColor = System.Drawing.Color.White
+        Me.dtFormasPago.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtFormasPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtFormasPago.GridColor = System.Drawing.Color.White
         Me.dtFormasPago.Location = New System.Drawing.Point(11, 17)
         Me.dtFormasPago.Name = "dtFormasPago"
         Me.dtFormasPago.ReadOnly = True

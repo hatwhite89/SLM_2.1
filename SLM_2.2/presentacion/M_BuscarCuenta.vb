@@ -47,7 +47,7 @@
                 MsgBox("No existe la cuenta.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
-            MsgBox("Debe ingresar la cuenta para generar la búsqueda.", MsgBoxStyle.Critical, "Validación")
+            txtcuentaB.Text = ""
         End If
     End Sub
 End Class

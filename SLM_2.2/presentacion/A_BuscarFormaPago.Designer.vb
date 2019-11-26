@@ -31,19 +31,17 @@ Partial Class A_BuscarFormaPago
         '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(123, 14)
-        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCodigo.Location = New System.Drawing.Point(92, 11)
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(132, 22)
+        Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
         Me.txtCodigo.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(47, 18)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(35, 15)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(73, 17)
+        Me.Label1.Size = New System.Drawing.Size(57, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Buscar ID:"
         '
@@ -54,30 +52,28 @@ Partial Class A_BuscarFormaPago
         Me.dtFormasPago.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.dtFormasPago.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.dtFormasPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtFormasPago.Location = New System.Drawing.Point(16, 46)
-        Me.dtFormasPago.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtFormasPago.Location = New System.Drawing.Point(12, 37)
         Me.dtFormasPago.Name = "dtFormasPago"
         Me.dtFormasPago.ReadOnly = True
         Me.dtFormasPago.RowHeadersWidth = 51
         Me.dtFormasPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtFormasPago.Size = New System.Drawing.Size(276, 297)
+        Me.dtFormasPago.Size = New System.Drawing.Size(207, 241)
         Me.dtFormasPago.TabIndex = 3
         '
         'lblJC
         '
         Me.lblJC.AutoSize = True
-        Me.lblJC.Location = New System.Drawing.Point(248, 28)
-        Me.lblJC.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblJC.Location = New System.Drawing.Point(186, 23)
         Me.lblJC.Name = "lblJC"
-        Me.lblJC.Size = New System.Drawing.Size(0, 17)
+        Me.lblJC.Size = New System.Drawing.Size(0, 13)
         Me.lblJC.TabIndex = 4
         Me.lblJC.Visible = False
         '
         'A_BuscarFormaPago
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(300, 356)
+        Me.ClientSize = New System.Drawing.Size(225, 289)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblJC)
         Me.Controls.Add(Me.dtFormasPago)
@@ -85,7 +81,6 @@ Partial Class A_BuscarFormaPago
         Me.Controls.Add(Me.txtCodigo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "A_BuscarFormaPago"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Seleccionar forma de pago"

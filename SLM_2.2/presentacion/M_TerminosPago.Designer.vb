@@ -46,13 +46,13 @@ Partial Class M_TerminosPago
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
         Me.lblnombreB = New System.Windows.Forms.Label()
         Me.btnbuscar = New System.Windows.Forms.Button()
-        Me.lblform = New System.Windows.Forms.Label()
         Me.gbxterminosPago.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,6 +74,7 @@ Partial Class M_TerminosPago
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(179, 22)
         Me.txtcodigo.TabIndex = 86
+        Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblcodigo
         '
@@ -91,6 +92,7 @@ Partial Class M_TerminosPago
         Me.txtdiasNeto.Name = "txtdiasNeto"
         Me.txtdiasNeto.Size = New System.Drawing.Size(179, 22)
         Me.txtdiasNeto.TabIndex = 84
+        Me.txtdiasNeto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lbldiasNeto
         '
@@ -161,6 +163,7 @@ Partial Class M_TerminosPago
         Me.txtcodigoCtaContado.Name = "txtcodigoCtaContado"
         Me.txtcodigoCtaContado.Size = New System.Drawing.Size(117, 22)
         Me.txtcodigoCtaContado.TabIndex = 116
+        Me.txtcodigoCtaContado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnctaVentas
         '
@@ -182,6 +185,7 @@ Partial Class M_TerminosPago
         Me.txtcodigoCtaVentas.Name = "txtcodigoCtaVentas"
         Me.txtcodigoCtaVentas.Size = New System.Drawing.Size(117, 22)
         Me.txtcodigoCtaVentas.TabIndex = 120
+        Me.txtcodigoCtaVentas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'rtxtdescripcion
         '
@@ -319,6 +323,15 @@ Partial Class M_TerminosPago
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR TÉRMINO DE PAGO"
         '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(513, 22)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(0, 17)
+        Me.lblform.TabIndex = 116
+        Me.lblform.Visible = False
+        '
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
@@ -347,9 +360,9 @@ Partial Class M_TerminosPago
         Me.lbltotal.AutoSize = True
         Me.lbltotal.Location = New System.Drawing.Point(118, 340)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(155, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(220, 17)
         Me.lbltotal.TabIndex = 114
-        Me.lbltotal.Text = "TOTAL ESPECIALIDAD"
+        Me.lbltotal.Text = "TOTAL DE TÉRMINOS DE PAGO"
         '
         'txtdescripcionB
         '
@@ -380,15 +393,6 @@ Partial Class M_TerminosPago
         Me.btnbuscar.Text = "Buscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
         '
-        'lblform
-        '
-        Me.lblform.AutoSize = True
-        Me.lblform.Location = New System.Drawing.Point(513, 22)
-        Me.lblform.Name = "lblform"
-        Me.lblform.Size = New System.Drawing.Size(0, 17)
-        Me.lblform.TabIndex = 116
-        Me.lblform.Visible = False
-        '
         'M_TerminosPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -397,6 +401,7 @@ Partial Class M_TerminosPago
         Me.ClientSize = New System.Drawing.Size(669, 622)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.gbxterminosPago)
+        Me.KeyPreview = True
         Me.Name = "M_TerminosPago"
         Me.Text = "Términos de Pago"
         Me.gbxterminosPago.ResumeLayout(False)

@@ -9,14 +9,17 @@ Public Class ClsConnection
     'String Conexion
 
     Public Sub New()
-        str_con = "Data Source=10.172.3.10 ;Initial Catalog=slm_test; User Id=sa; Password=Lbm2019;"
+        str_con = "Data Source=10.172.3.10 ;Initial Catalog=slm_test; Min Pool Size=0;Max Pool Size=1024;Pooling=true; User Id=sa; Password=Lbm2019;"
     End Sub
 
     Public Function getConexion() As SqlConnection
 
+
         sqlcon = New SqlConnection(str_con)
         ''se conecta a la base de datos
+
         sqlcon.Open()
+
         ''abre la conexión a la base de datos
         Return sqlcon
         ''retorna la conexión abierta

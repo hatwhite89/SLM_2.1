@@ -58,6 +58,7 @@ Partial Class M_Especialidad
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(100, 22)
         Me.txtcodigo.TabIndex = 40
+        Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblnombre
         '
@@ -72,7 +73,7 @@ Partial Class M_Especialidad
         '
         Me.txtnombre.Location = New System.Drawing.Point(129, 62)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(281, 22)
+        Me.txtnombre.Size = New System.Drawing.Size(371, 22)
         Me.txtnombre.TabIndex = 38
         '
         'btncancelar
@@ -187,9 +188,9 @@ Partial Class M_Especialidad
         Me.lbltotal.AutoSize = True
         Me.lbltotal.Location = New System.Drawing.Point(118, 351)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(155, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(196, 17)
         Me.lbltotal.TabIndex = 114
-        Me.lbltotal.Text = "TOTAL ESPECIALIDAD"
+        Me.lbltotal.Text = "TOTAL DE ESPECIALIDADES"
         '
         'txtnombreB
         '

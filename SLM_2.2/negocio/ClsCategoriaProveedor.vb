@@ -23,7 +23,7 @@ Public Class ClsCategoriaProveedor
     'Cuenta Acreedores
     Public Property Cta_Acreedor As Integer
         Get
-            Return Cta_Acreedor
+            Return CtaAcreedores
         End Get
         Set(value As Integer)
             CtaAcreedores = value
@@ -59,6 +59,7 @@ Public Class ClsCategoriaProveedor
             codigo = value
         End Set
     End Property
+
     ':::::::::::::::::::::::: Funciones de Mantenimiento ::::::::::::::::::::::::::
 
     'Registrar nueva categoria
@@ -70,11 +71,11 @@ Public Class ClsCategoriaProveedor
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarCategoria_A"
+        sqlcom.CommandText = "slmInsertarCategoriaProveedor_A"
 
         'VARIABLES 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigo"
+        sqlpar.ParameterName = "codBreve"
         sqlpar.Value = Codig_o
         sqlcom.Parameters.Add(sqlpar)
 
@@ -89,7 +90,7 @@ Public Class ClsCategoriaProveedor
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "ctaAnticipo"
+        sqlpar.ParameterName = "ctaAnticipos"
         sqlpar.Value = Cta_Anticipos
         sqlcom.Parameters.Add(sqlpar)
 
@@ -104,14 +105,14 @@ Public Class ClsCategoriaProveedor
         sqlcom.Connection = con.getConexion
         sqlcom.ExecuteNonQuery()
 
-        par_sal = sqlcom.Parameters("Salida").Value
+        par_sal = sqlcom.Parameters("salida").Value
 
         Return par_sal
 
     End Function
 
     'Modificar Categoria
-    Public Function modificarNuevaCategoria() As String
+    Public Function modificarCategoria() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
@@ -119,11 +120,16 @@ Public Class ClsCategoriaProveedor
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmActualizarCategoria_A"
+        sqlcom.CommandText = "slmActualizarCategoriaProveedor_A"
 
         'VARIABLES 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigo"
+        sqlpar.ParameterName = "codCat"
+        sqlpar.Value = Cod
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codBreve"
         sqlpar.Value = Codig_o
         sqlcom.Parameters.Add(sqlpar)
 
@@ -138,7 +144,7 @@ Public Class ClsCategoriaProveedor
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "ctaAnticipo"
+        sqlpar.ParameterName = "ctaAnticipos"
         sqlpar.Value = Cta_Anticipos
         sqlcom.Parameters.Add(sqlpar)
 

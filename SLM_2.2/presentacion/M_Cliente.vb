@@ -66,21 +66,17 @@
             MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
         End If
     End Sub
-
     Private Sub btncrearCliente_Click(sender As Object, e As EventArgs)
         If (mtxtidentidad.MaskCompleted = True And txtnombreCompleto.Text <> "" And txttelefonoCasa.Text <> "" And txtcorreo.Text <> "" And rtxtdireccion.Text <> "") Then
             mtxtidentidadClienteB.Text = ""
-            'gbxinformacion.Visible = False
             Me.Close()
         Else
             MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
         End If
     End Sub
-
     Private Sub btnclasificacion_Click(sender As Object, e As EventArgs) Handles btnclasificacion.Click
         M_ClasificacionContacto.ShowDialog()
     End Sub
-
     Private Sub Habilitar()
         txtcorreo.ReadOnly = False
         txtcorreo2.ReadOnly = False
@@ -96,7 +92,6 @@
         txttelefonoTrabajo.ReadOnly = False
         txtcodigoClasificacion.ReadOnly = False
     End Sub
-
     Private Sub Deshabilitar()
         txtcorreo.ReadOnly = True
         txtcorreo2.ReadOnly = True
@@ -112,7 +107,6 @@
         txttelefonoTrabajo.ReadOnly = True
         txtcodigoClasificacion.ReadOnly = True
     End Sub
-
     Private Sub btnactualizarCliente_Click(sender As Object, e As EventArgs) Handles btnactualizarCliente.Click
         Try
 
@@ -130,7 +124,7 @@
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
                 txtnombreCompleto.Text() = texto
-                'MsgBox("txtNombre: " + texto + ", correo:" + txtcorreo.Text() + ", tel: " + txttelefono.Text())
+
                 Dim genero As String = ""
                 If (rbtnmasculino.Checked) Then
                     genero = "Masculino"
@@ -157,13 +151,14 @@
                     .Correo_1 = txtcorreo.Text
                     .Correo_2 = txtcorreo2.Text
                     .CodigoClasificacion1 = Convert.ToInt32(txtcodigoClasificacion.Text)
+                    .codigoCategoria1 = txtcodigoCategoria.Text
+                    .codigoTerminoPago1 = txtcodigoTermino.Text
                 End With
 
                 If objClient.ModificarCliente() = 1 Then
                     MsgBox("Modificado correctamente.")
 
                     Deshabilitar()
-
 
                     btnactualizarCliente.Enabled = True
                     btnseleccionarCliente.Enabled = True
@@ -172,7 +167,6 @@
                     MsgBox("Error al querer modificar el cliente.", MsgBoxStyle.Critical)
                 End If
 
-
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
@@ -180,13 +174,10 @@
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
-
     End Sub
-
     Private Sub txtnombre1_TextChanged(sender As Object, e As EventArgs) Handles txtnombre1.TextChanged
         txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
     End Sub
-
     Private Sub txtnombre1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombre1.KeyPress
         If Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
             e.Handled = True
@@ -203,12 +194,10 @@
         End If
         txtnombre1.Select(txtnombre1.Text.Length, 0)
     End Sub
-
-    Private Sub txtnombre2_TextChanged(sender As Object, e As EventArgs) Handles txtnombre2.TextChanged
+    Private Sub txtnombre2_TextChanged(sender As Object, e As EventArgs)
         txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
     End Sub
-
-    Private Sub txtnombre2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombre2.KeyPress
+    Private Sub txtnombre2_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
             e.Handled = True
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -224,12 +213,10 @@
         End If
         txtnombre2.Select(txtnombre2.Text.Length, 0)
     End Sub
-
-    Private Sub txtapellido1_TextChanged(sender As Object, e As EventArgs) Handles txtapellido1.TextChanged
+    Private Sub txtapellido1_TextChanged(sender As Object, e As EventArgs)
         txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
     End Sub
-
-    Private Sub txtapellido1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtapellido1.KeyPress
+    Private Sub txtapellido1_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
             e.Handled = True
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -245,11 +232,9 @@
         End If
         txtapellido1.Select(txtapellido1.Text.Length, 0)
     End Sub
-
     Private Sub txtapellido2_TextChanged(sender As Object, e As EventArgs) Handles txtapellido2.TextChanged
         txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
     End Sub
-
     Private Sub txtapellido2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtapellido2.KeyPress
         If Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
             e.Handled = True
@@ -266,7 +251,6 @@
         End If
         txtapellido2.Select(txtapellido2.Text.Length, 0)
     End Sub
-
     Private Sub btnguardarCliente_Click(sender As Object, e As EventArgs) Handles btnguardarCliente.Click
         Try
             Dim genero As String = ""
@@ -304,7 +288,6 @@
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
                 txtnombreCompleto.Text() = texto
-                'MsgBox("txtNombre: " + texto + ", correo:" + txtcorreo.Text() + ", tel: " + txttelefono.Text())
 
                 Dim objClient As New ClsCliente
                 With objClient
@@ -325,6 +308,8 @@
                     .Correo_1 = txtcorreo.Text
                     .Correo_2 = txtcorreo2.Text
                     .CodigoClasificacion1 = Convert.ToInt32(txtcodigoClasificacion.Text)
+                    .codigoCategoria1 = txtcodigoCategoria.Text
+                    .codigoTerminoPago1 = txtcodigoTermino.Text
                 End With
 
                 If objClient.RegistrarNuevoCliente() = 1 Then
@@ -355,17 +340,12 @@
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
-
     End Sub
-
     Private Sub txtcodigoClasificacion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoClasificacion.KeyPress
-
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
             e.Handled = True
         End If
-
     End Sub
-
     Private Sub limpiar()
         txtcorreo.ReadOnly = False
         txtcorreo2.ReadOnly = False
@@ -403,20 +383,24 @@
         txtnombreClasificacion.Text = ""
         txtnombreB.Text = ""
         txtcodigoTermino.Text = "CO"
+        txtcodigoCategoria.Text = ""
 
         rbtnfemenino.Checked = False
         rbtnmasculino.Checked = False
         gbxinfoCliente.Visible = False
     End Sub
-
     Private Sub btnseleccionarCliente_Click(sender As Object, e As EventArgs) Handles btnseleccionarCliente.Click
         M_Factura.txtcodigoCliente.Text = txtcodigo.Text
         M_Factura.txtnombreCliente.Text = txtnombreCompleto.Text
+
+        M_ClienteVentana.txtnombreCompleto.Text = UCase(txtnombreCompleto.Text)
+        M_ClienteVentana.txtnombreTerminos.Text = txtnombreTerminos.Text
+        M_ClienteVentana.txtnombreCategoria.Text = txtnombreCategoria.Text
+        M_ClienteVentana.txtnombreConvenio.Text = txtnombreConvenio.Text
+        M_ClienteVentana.txtnombreAseguradora.Text = txtnombreAseguradora.Text
         limpiar()
         Me.Close()
-
     End Sub
-
     Private Sub txtcodigoClasificacion_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoClasificacion.TextChanged
         If (txtcodigoClasificacion.Text <> "") Then
             Try
@@ -429,14 +413,13 @@
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreClasificacion.Text = CStr(row("comentario"))
             Catch ex As Exception
-                MsgBox("No existe el código de clasificación de contacto.", MsgBoxStyle.Critical, "Validación")
+                'MsgBox("No existe el código de clasificación de contacto.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoClasificacion.Text = ""
             txtnombreClasificacion.Text = ""
         End If
     End Sub
-
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
         gbxinfoCliente.Visible = True
@@ -447,13 +430,11 @@
         btnguardarCliente.Enabled = True
         btnseleccionarCliente.Enabled = False
     End Sub
-
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
         End If
     End Sub
-
     Private Sub btnpaciente_Click(sender As Object, e As EventArgs) Handles btnpaciente.Click
         Dim n As String = MsgBox("¿Desea crear un nuevo paciente?", MsgBoxStyle.YesNo, "Validación")
         If n = vbYes Then
@@ -469,7 +450,6 @@
             limpiar()
         End If
     End Sub
-
     Private Sub btnbuscarPorNombre_Click(sender As Object, e As EventArgs) Handles btnbuscarPorNombre.Click
         If (txtnombreB.Text <> "") Then
             Try
@@ -536,25 +516,20 @@
             MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
         End If
     End Sub
-
     Private Sub M_Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
-
     Private Sub btncategoria_Click(sender As Object, e As EventArgs) Handles btncategoria.Click
         M_Categoria.ShowDialog()
     End Sub
-
     Private Sub btnterminosPago_Click(sender As Object, e As EventArgs) Handles btnterminosPago.Click
         M_TerminosPago.lblform.Text = "cliente"
         M_TerminosPago.ShowDialog()
     End Sub
-
     Private Sub txtcodigoTermino_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoTermino.TextChanged
         If (txtcodigoTermino.Text <> "") Then
             Try
                 Dim objTerm As New ClsTerminoPago
-
                 With objTerm
                     .Codigo1 = txtcodigoTermino.Text
                 End With
@@ -563,19 +538,16 @@
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreTerminos.Text = CStr(row("descripcion"))
             Catch ex As Exception
-                MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
+                'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
             End Try
-
         Else
             txtcodigoTermino.Text = ""
         End If
     End Sub
-
     Private Sub txtcodigoCategoria_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoCategoria.TextChanged
         If (txtcodigoCategoria.Text <> "") Then
             Try
                 Dim objCat As New ClsCategoria
-
                 With objCat
                     .Codigo1 = txtcodigoCategoria.Text
                 End With
@@ -584,14 +556,11 @@
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreCategoria.Text = CStr(row("descripcion"))
             Catch ex As Exception
-                MsgBox("No existe el código de la categoría.", MsgBoxStyle.Critical, "Validación")
+                'MsgBox("No existe el código de la categoría.", MsgBoxStyle.Critical, "Validación")
             End Try
 
         Else
-            txtcodigoTermino.Text = ""
+            txtcodigoCategoria.Text = ""
         End If
-
-
-
     End Sub
 End Class

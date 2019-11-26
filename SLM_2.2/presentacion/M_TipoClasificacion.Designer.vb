@@ -23,6 +23,7 @@ Partial Class M_TipoClasificacion
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.lbltipo = New System.Windows.Forms.Label()
         Me.txtcomentarioB = New System.Windows.Forms.TextBox()
         Me.lblcomentarioB = New System.Windows.Forms.Label()
         Me.lblcantidad = New System.Windows.Forms.Label()
@@ -38,7 +39,6 @@ Partial Class M_TipoClasificacion
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.lblcomentario = New System.Windows.Forms.Label()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
-        Me.lbltipo = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxclasificacion.SuspendLayout()
@@ -59,6 +59,15 @@ Partial Class M_TipoClasificacion
         Me.gbxbusqueda.TabIndex = 114
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR TIPO CLASIFICACIÓN"
+        '
+        'lbltipo
+        '
+        Me.lbltipo.AutoSize = True
+        Me.lbltipo.Location = New System.Drawing.Point(521, 36)
+        Me.lbltipo.Name = "lbltipo"
+        Me.lbltipo.Size = New System.Drawing.Size(0, 17)
+        Me.lbltipo.TabIndex = 118
+        Me.lbltipo.Visible = False
         '
         'txtcomentarioB
         '
@@ -222,15 +231,7 @@ Partial Class M_TipoClasificacion
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(183, 22)
         Me.txtcodigo.TabIndex = 40
-        '
-        'lbltipo
-        '
-        Me.lbltipo.AutoSize = True
-        Me.lbltipo.Location = New System.Drawing.Point(521, 36)
-        Me.lbltipo.Name = "lbltipo"
-        Me.lbltipo.Size = New System.Drawing.Size(0, 17)
-        Me.lbltipo.TabIndex = 118
-        Me.lbltipo.Visible = False
+        Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'M_TipoClasificacion
         '
