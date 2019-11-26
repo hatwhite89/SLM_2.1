@@ -38,7 +38,6 @@
 
         rtxtdescripcion.ReadOnly = False
 
-        btnbuscar.Enabled = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
         btnnuevo.Enabled = False
@@ -138,14 +137,21 @@
         limpiar()
         Me.Close()
     End Sub
-    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
+    Private Sub txtdescripcionB_TextChanged(sender As Object, e As EventArgs) Handles txtdescripcionB.TextChanged
         Dim objTipo As New ClsTipoTermino
         With objTipo
             .Descripcion1 = txtdescripcionB.Text
         End With
-        Dim dv As DataView = objTipo.BuscarTipoTermino.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        If (Trim(txtdescripcionB.Text) <> "") Then
+            Dim dv As DataView = objTipo.BuscarTipoTermino.DefaultView
+            dgbtabla.DataSource = dv
+            lblcantidad.Text = dv.Count
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        Else
+            Dim dv As DataView = objTipo.SeleccionarTipoTermino.DefaultView
+            dgbtabla.DataSource = dv
+            lblcantidad.Text = dv.Count
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        End If
     End Sub
 End Class

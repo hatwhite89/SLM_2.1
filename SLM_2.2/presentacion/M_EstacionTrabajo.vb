@@ -158,7 +158,7 @@
     End Sub
 
     Private Sub rtxtdescripcionB_TextChanged(sender As Object, e As EventArgs) Handles rtxtdescripcionB.TextChanged
-        If (rtxtdescripcionB.Text <> "") Then
+        If (Trim(rtxtdescripcionB.Text) <> "") Then
             Try
                 Dim objEstTra As New ClsEstacionTrabajo
                 With objEstTra

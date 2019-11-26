@@ -234,6 +234,7 @@ Partial Class M_MenuLaboratorio
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(565, 477)
         Me.Controls.Add(Me.GroupBox1)
+        Me.KeyPreview = True
         Me.Name = "M_MenuLaboratorio"
         Me.Text = "Laboratorio"
         Me.GroupBox1.ResumeLayout(False)

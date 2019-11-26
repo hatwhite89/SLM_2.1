@@ -207,7 +207,7 @@
         dgblistadoExamenes.Columns.Add(btn)
         btn.HeaderText = "Eliminar"
         btn.Text = "Eliminar"
-        btn.Name = "btn"
+        btn.Name = "btnEliminar"
         btn.UseColumnTextForButtonValue = True
         totalFactura()
     End Sub
@@ -251,7 +251,6 @@
                 MsgBox(ex.Message, MsgBoxStyle.Critical)
             End Try
         End If
-
     End Sub
     Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
 
@@ -317,8 +316,8 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
             If (txtcodigoCliente.Text <> "" And txtcodigoMedico.Text <> "" And txtcodigoTerminosPago.Text <> "" And
-                txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And txtpagoPaciente.Text <> "" And
-                txtvuelto.Text <> "" And txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
+                txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And
+                txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
 
                 Dim objFact As New ClsFactura
                 With objFact
@@ -329,7 +328,7 @@
                     .codigoCajero_ = txtcodigoCajero.Text
                     .codigoTerminoPago1 = txtcodigoTerminosPago.Text
                     .codigoSede_ = txtcodigoSede.Text
-                    .fechaVto_ = dtpfechaVto.value
+                    .fechaVto_ = dtpfechaVto.Value
                     .codigoSucursal_ = txtcodigoSucursal.Text
                     .codigoConvenio_ = txtcodigoConvenio.Text
                     .numeroPoliza_ = txtnumeroPoliza.Text
@@ -374,7 +373,6 @@
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
-
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -439,11 +437,8 @@
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
-
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
-
 End Class

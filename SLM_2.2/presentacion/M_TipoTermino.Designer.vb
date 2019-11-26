@@ -28,7 +28,6 @@ Partial Class M_TipoTermino
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
         Me.lbldescripcionB = New System.Windows.Forms.Label()
-        Me.btnbuscar = New System.Windows.Forms.Button()
         Me.gbxsucursal = New System.Windows.Forms.GroupBox()
         Me.lbldireccion1 = New System.Windows.Forms.Label()
         Me.rtxtdescripcion = New System.Windows.Forms.RichTextBox()
@@ -50,7 +49,6 @@ Partial Class M_TipoTermino
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtdescripcionB)
         Me.gbxbusqueda.Controls.Add(Me.lbldescripcionB)
-        Me.gbxbusqueda.Controls.Add(Me.btnbuscar)
         Me.gbxbusqueda.Location = New System.Drawing.Point(28, 186)
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Size = New System.Drawing.Size(613, 416)
@@ -92,7 +90,7 @@ Partial Class M_TipoTermino
         '
         'txtdescripcionB
         '
-        Me.txtdescripcionB.Location = New System.Drawing.Point(205, 34)
+        Me.txtdescripcionB.Location = New System.Drawing.Point(241, 34)
         Me.txtdescripcionB.Name = "txtdescripcionB"
         Me.txtdescripcionB.Size = New System.Drawing.Size(192, 22)
         Me.txtdescripcionB.TabIndex = 115
@@ -100,24 +98,11 @@ Partial Class M_TipoTermino
         'lbldescripcionB
         '
         Me.lbldescripcionB.AutoSize = True
-        Me.lbldescripcionB.Location = New System.Drawing.Point(116, 36)
+        Me.lbldescripcionB.Location = New System.Drawing.Point(152, 36)
         Me.lbldescripcionB.Name = "lbldescripcionB"
         Me.lbldescripcionB.Size = New System.Drawing.Size(82, 17)
         Me.lbldescripcionB.TabIndex = 114
         Me.lbldescripcionB.Text = "Descripción"
-        '
-        'btnbuscar
-        '
-        Me.btnbuscar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnbuscar.Location = New System.Drawing.Point(404, 28)
-        Me.btnbuscar.Name = "btnbuscar"
-        Me.btnbuscar.Size = New System.Drawing.Size(78, 35)
-        Me.btnbuscar.TabIndex = 113
-        Me.btnbuscar.Text = "Buscar"
-        Me.btnbuscar.UseVisualStyleBackColor = False
         '
         'gbxsucursal
         '
@@ -249,7 +234,6 @@ Partial Class M_TipoTermino
     Friend WithEvents lbltotal As Label
     Friend WithEvents txtdescripcionB As TextBox
     Friend WithEvents lbldescripcionB As Label
-    Friend WithEvents btnbuscar As Button
     Friend WithEvents gbxsucursal As GroupBox
     Friend WithEvents btnmodificar As Button
     Friend WithEvents btncancelar As Button

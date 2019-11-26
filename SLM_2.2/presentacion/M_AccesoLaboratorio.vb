@@ -157,10 +157,18 @@
             With objAccLab
                 .usuario_ = txtcodigoB.Text
             End With
-            Dim dv As DataView = objAccLab.BuscarAccesoLaboratorio.DefaultView
-            dgbtabla.DataSource = dv
-            lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            If (Trim(txtcodigoB.Text) <> "") Then
+                Dim dv As DataView = objAccLab.BuscarAccesoLaboratorio.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            Else
+                Dim dv As DataView = objAccLab.SeleccionarAccesoLaboratorio.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            End If
+
         Catch ex As Exception
 
         End Try

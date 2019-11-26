@@ -29,7 +29,6 @@ Partial Class M_TipoClasificacion
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
-        Me.btnbuscar = New System.Windows.Forms.Button()
         Me.gbxclasificacion = New System.Windows.Forms.GroupBox()
         Me.rtxtcomentario = New System.Windows.Forms.RichTextBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
@@ -52,7 +51,6 @@ Partial Class M_TipoClasificacion
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
-        Me.gbxbusqueda.Controls.Add(Me.btnbuscar)
         Me.gbxbusqueda.Location = New System.Drawing.Point(24, 220)
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Size = New System.Drawing.Size(613, 390)
@@ -71,7 +69,7 @@ Partial Class M_TipoClasificacion
         '
         'txtcomentarioB
         '
-        Me.txtcomentarioB.Location = New System.Drawing.Point(176, 34)
+        Me.txtcomentarioB.Location = New System.Drawing.Point(243, 34)
         Me.txtcomentarioB.Name = "txtcomentarioB"
         Me.txtcomentarioB.Size = New System.Drawing.Size(192, 22)
         Me.txtcomentarioB.TabIndex = 117
@@ -79,7 +77,7 @@ Partial Class M_TipoClasificacion
         'lblcomentarioB
         '
         Me.lblcomentarioB.AutoSize = True
-        Me.lblcomentarioB.Location = New System.Drawing.Point(90, 36)
+        Me.lblcomentarioB.Location = New System.Drawing.Point(157, 36)
         Me.lblcomentarioB.Name = "lblcomentarioB"
         Me.lblcomentarioB.Size = New System.Drawing.Size(80, 17)
         Me.lblcomentarioB.TabIndex = 116
@@ -116,19 +114,6 @@ Partial Class M_TipoClasificacion
         Me.lbltotal.Size = New System.Drawing.Size(194, 17)
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL TIPO CLASIFICACIÓN"
-        '
-        'btnbuscar
-        '
-        Me.btnbuscar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnbuscar.Location = New System.Drawing.Point(380, 28)
-        Me.btnbuscar.Name = "btnbuscar"
-        Me.btnbuscar.Size = New System.Drawing.Size(78, 35)
-        Me.btnbuscar.TabIndex = 113
-        Me.btnbuscar.Text = "Buscar"
-        Me.btnbuscar.UseVisualStyleBackColor = False
         '
         'gbxclasificacion
         '
@@ -256,7 +241,6 @@ Partial Class M_TipoClasificacion
     Friend WithEvents lblcantidad As Label
     Friend WithEvents dgbtabla As DataGridView
     Friend WithEvents lbltotal As Label
-    Friend WithEvents btnbuscar As Button
     Friend WithEvents gbxclasificacion As GroupBox
     Friend WithEvents rtxtcomentario As RichTextBox
     Friend WithEvents btnmodificar As Button

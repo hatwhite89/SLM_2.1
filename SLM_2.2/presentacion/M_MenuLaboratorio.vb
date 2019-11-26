@@ -18,8 +18,9 @@
     Private Sub btnTerminoPago_Click(sender As Object, e As EventArgs) Handles btnTerminoPago.Click
         M_TerminosPago.ShowDialog()
     End Sub
-
-    Private Sub M_MenuLaboratorio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
     End Sub
 End Class
