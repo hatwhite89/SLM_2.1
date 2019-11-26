@@ -225,6 +225,8 @@ Public Class ClsDeposito
         sqlcom.Connection = con.getConexion
         sqlcom.ExecuteNonQuery()
 
+        con.cerrarConexion()
+
         par_sal = sqlcom.Parameters("Salida").Value
 
         Return par_sal
@@ -399,6 +401,8 @@ Public Class ClsDeposito
         Dim con As New ClsConnection
         sqlcom.Connection = con.getConexion
         sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
 
         par_sal = sqlcom.Parameters("salida").Value
 

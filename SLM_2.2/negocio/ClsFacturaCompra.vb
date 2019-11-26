@@ -12,8 +12,6 @@ Public Class ClsFacturaCompra
     Public Sub New()
 
     End Sub
-
-
     ':::::::::::::::::::::::::::::::::::::::::::: Metodos SET y GET ::::::::::::::::::::::::::::::::::::::::::::
 
     'Codigo Proveedor
@@ -109,9 +107,87 @@ Public Class ClsFacturaCompra
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarFacturaCompra_A"
+        sqlcom.CommandText = "slmInsertarFacturaCompras_A"
 
         'VARIABLES 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codProveedor"
+        sqlpar.Value = Cod_Proveedor
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nombreProveedor"
+        sqlpar.Value = Nombre_Proveedor
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "total"
+        sqlpar.Value = Tota_l
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "moneda"
+        sqlpar.Value = Moned_a
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "terminosPago"
+        sqlpar.Value = Terminos_Pago
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "fechaFactura"
+        sqlpar.Value = Fecha_Factura
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "fechaTransaccion"
+        sqlpar.Value = Fecha_Transaccion
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "fechaVencimiento"
+        sqlpar.Value = Fecha_Vencimiento
+        sqlcom.Parameters.Add(sqlpar)
+
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
+    'Modificacion registro de Factura Compra
+    Public Function modificarFacturaCompra() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        'PROCEDIMIENTO ALMACENADO
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "slmActualizarFacturaCompras_A"
+
+        'VARIABLES 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codFactura"
+        sqlpar.Value = Cod_Factura
+        sqlcom.Parameters.Add(sqlpar)
+
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codProveedor"
         sqlpar.Value = Cod_Proveedor
@@ -147,8 +223,6 @@ Public Class ClsFacturaCompra
         sqlpar.Value = Fecha_Vencimiento
         sqlcom.Parameters.Add(sqlpar)
 
-
-
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
@@ -160,21 +234,43 @@ Public Class ClsFacturaCompra
         sqlcom.Connection = con.getConexion
         sqlcom.ExecuteNonQuery()
 
+        con.cerrarConexion()
+
         par_sal = sqlcom.Parameters("salida").Value
 
         Return par_sal
 
     End Function
 
-
-    'Modificacion registro de Factura Compra
-
-
     'Listar Factura Compra
+    Public Function listarFacturaCompra() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("slmListarFacturasCompra_A", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+    'Capturar ultima Factura Compra
+    Public Function capturarCodFacturaCompra() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("slmCapturarCodFacturaCompra_A", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
 
 
-
-    'Capturar Factura Compra
+    End Function
 
 
 

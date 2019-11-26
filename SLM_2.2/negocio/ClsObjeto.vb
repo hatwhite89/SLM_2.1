@@ -79,6 +79,8 @@ Public Class ClsObjeto
 
         sqlcom.ExecuteNonQuery()
 
+        con.cerrarConexion()
+
         par_sal = sqlcom.Parameters("salida").Value
 
         Return par_sal
@@ -124,6 +126,8 @@ Public Class ClsObjeto
         sqlcom.Connection = con.getConexion
 
         sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
 
         par_sal = sqlcom.Parameters("salida").Value
 
@@ -182,4 +186,21 @@ Public Class ClsObjeto
             Return dt
         End Using
     End Function
+
+
+    'Listar codigo y nombre de objeto
+    Public Function listarNombreObjeto() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("slmListarNombreObjetos_A", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+
+    End Function
+
 End Class

@@ -118,6 +118,8 @@ Public Class ClsTerminoPago
 
         sqlcom.ExecuteNonQuery()
 
+        con.cerrarConexion()
+
         par_sal = sqlcom.Parameters("salida").Value
 
         Return par_sal
@@ -177,6 +179,8 @@ Public Class ClsTerminoPago
         sqlcom.Connection = con.getConexion
 
         sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
 
         par_sal = sqlcom.Parameters("salida").Value
 
@@ -242,6 +246,40 @@ Public Class ClsTerminoPago
         End Using
     End Function
 
+    'Listar código y descripcion de termino de pago
+    Public Function listarCodDescripTerminoPago() As DataTable
 
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("slmListarCodDescripTerminoPago_A", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+    'Listar por busqueda de codigo
+    Public Function listarBusquedaTerminoPago() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "slmBuscarTerminoPagoCod_A"
+            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Codigo1
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
 
 End Class

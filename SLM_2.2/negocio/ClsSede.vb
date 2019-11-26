@@ -152,6 +152,8 @@ Public Class ClsSede
 
         sqlcom.ExecuteNonQuery()
 
+        con.cerrarConexion()
+
         par_sal = sqlcom.Parameters("salida").Value
 
         Return par_sal
@@ -224,6 +226,8 @@ Public Class ClsSede
         sqlcom.Connection = con.getConexion
 
         sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
 
         par_sal = sqlcom.Parameters("salida").Value
 

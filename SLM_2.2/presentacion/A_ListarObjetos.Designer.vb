@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class A_ListarTerminoPago
+Partial Class A_ListarObjetos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,74 +22,73 @@ Partial Class A_ListarTerminoPago
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.dtObjetos = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.txtBusquedaTermino = New System.Windows.Forms.TextBox()
+        Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.dtTerminoPago = New System.Windows.Forms.DataGridView()
+        CType(Me.dtObjetos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.dtTerminoPago, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'dtObjetos
+        '
+        Me.dtObjetos.BackgroundColor = System.Drawing.Color.White
+        Me.dtObjetos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.dtObjetos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtObjetos.GridColor = System.Drawing.Color.White
+        Me.dtObjetos.Location = New System.Drawing.Point(6, 53)
+        Me.dtObjetos.Name = "dtObjetos"
+        Me.dtObjetos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtObjetos.Size = New System.Drawing.Size(225, 307)
+        Me.dtObjetos.TabIndex = 0
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.txtBusquedaTermino)
+        Me.GroupBox1.Controls.Add(Me.txtBusqueda)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.dtTerminoPago)
+        Me.GroupBox1.Controls.Add(Me.dtObjetos)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(290, 385)
-        Me.GroupBox1.TabIndex = 0
+        Me.GroupBox1.Size = New System.Drawing.Size(237, 366)
+        Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Seleccionar Término de Pago"
+        Me.GroupBox1.Text = "Seleccione un Objeto"
         '
-        'txtBusquedaTermino
+        'txtBusqueda
         '
-        Me.txtBusquedaTermino.Location = New System.Drawing.Point(113, 32)
-        Me.txtBusquedaTermino.Name = "txtBusquedaTermino"
-        Me.txtBusquedaTermino.Size = New System.Drawing.Size(100, 20)
-        Me.txtBusquedaTermino.TabIndex = 2
+        Me.txtBusqueda.Location = New System.Drawing.Point(89, 27)
+        Me.txtBusqueda.Name = "txtBusqueda"
+        Me.txtBusqueda.Size = New System.Drawing.Size(100, 20)
+        Me.txtBusqueda.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(67, 35)
+        Me.Label1.Location = New System.Drawing.Point(43, 30)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Código"
         '
-        'dtTerminoPago
-        '
-        Me.dtTerminoPago.BackgroundColor = System.Drawing.Color.White
-        Me.dtTerminoPago.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.dtTerminoPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtTerminoPago.GridColor = System.Drawing.Color.White
-        Me.dtTerminoPago.Location = New System.Drawing.Point(6, 61)
-        Me.dtTerminoPago.Name = "dtTerminoPago"
-        Me.dtTerminoPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtTerminoPago.Size = New System.Drawing.Size(278, 318)
-        Me.dtTerminoPago.TabIndex = 0
-        '
-        'A_ListarTerminoPago
+        'A_ListarObjetos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(314, 409)
+        Me.ClientSize = New System.Drawing.Size(261, 385)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Name = "A_ListarTerminoPago"
+        Me.Name = "A_ListarObjetos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Término de Pago"
+        Me.Text = "Objetos"
+        CType(Me.dtObjetos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.dtTerminoPago, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
+    Friend WithEvents dtObjetos As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents txtBusquedaTermino As TextBox
+    Friend WithEvents txtBusqueda As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents dtTerminoPago As DataGridView
 End Class

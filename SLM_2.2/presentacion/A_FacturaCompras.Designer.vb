@@ -22,7 +22,9 @@ Partial Class A_FacturaCompras
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_FacturaCompras))
         Me.gbxInfoFact = New System.Windows.Forms.GroupBox()
+        Me.btnBuscarTerminoPago = New System.Windows.Forms.Button()
         Me.txtMoneda = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.dtpVencimiento = New System.Windows.Forms.DateTimePicker()
@@ -33,7 +35,7 @@ Partial Class A_FacturaCompras
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dtpFechaFactura = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtNombreProveedor = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -43,9 +45,15 @@ Partial Class A_FacturaCompras
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dtDetalleFactura = New System.Windows.Forms.DataGridView()
+        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Objetos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Tipo_Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
+        Me.lblFila = New System.Windows.Forms.Label()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,6 +61,8 @@ Partial Class A_FacturaCompras
         '
         'gbxInfoFact
         '
+        Me.gbxInfoFact.Controls.Add(Me.lblFila)
+        Me.gbxInfoFact.Controls.Add(Me.btnBuscarTerminoPago)
         Me.gbxInfoFact.Controls.Add(Me.txtMoneda)
         Me.gbxInfoFact.Controls.Add(Me.Label9)
         Me.gbxInfoFact.Controls.Add(Me.dtpVencimiento)
@@ -63,7 +73,7 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.Controls.Add(Me.Label6)
         Me.gbxInfoFact.Controls.Add(Me.dtpFechaFactura)
         Me.gbxInfoFact.Controls.Add(Me.Label5)
-        Me.gbxInfoFact.Controls.Add(Me.TextBox1)
+        Me.gbxInfoFact.Controls.Add(Me.txtNombreProveedor)
         Me.gbxInfoFact.Controls.Add(Me.Label4)
         Me.gbxInfoFact.Controls.Add(Me.txtTotal)
         Me.gbxInfoFact.Controls.Add(Me.Label3)
@@ -77,6 +87,19 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.TabIndex = 0
         Me.gbxInfoFact.TabStop = False
         Me.gbxInfoFact.Text = "Información de Factura"
+        '
+        'btnBuscarTerminoPago
+        '
+        Me.btnBuscarTerminoPago.BackColor = System.Drawing.Color.Transparent
+        Me.btnBuscarTerminoPago.BackgroundImage = CType(resources.GetObject("btnBuscarTerminoPago.BackgroundImage"), System.Drawing.Image)
+        Me.btnBuscarTerminoPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBuscarTerminoPago.FlatAppearance.BorderSize = 0
+        Me.btnBuscarTerminoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarTerminoPago.Location = New System.Drawing.Point(364, 77)
+        Me.btnBuscarTerminoPago.Name = "btnBuscarTerminoPago"
+        Me.btnBuscarTerminoPago.Size = New System.Drawing.Size(21, 20)
+        Me.btnBuscarTerminoPago.TabIndex = 19
+        Me.btnBuscarTerminoPago.UseVisualStyleBackColor = False
         '
         'txtMoneda
         '
@@ -132,7 +155,7 @@ Partial Class A_FacturaCompras
         '
         Me.txtTerminoPago.Location = New System.Drawing.Point(306, 77)
         Me.txtTerminoPago.Name = "txtTerminoPago"
-        Me.txtTerminoPago.Size = New System.Drawing.Size(84, 20)
+        Me.txtTerminoPago.Size = New System.Drawing.Size(52, 20)
         Me.txtTerminoPago.TabIndex = 11
         '
         'Label6
@@ -161,12 +184,12 @@ Partial Class A_FacturaCompras
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Fecha Factura"
         '
-        'TextBox1
+        'txtNombreProveedor
         '
-        Me.TextBox1.Location = New System.Drawing.Point(109, 51)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(421, 20)
-        Me.TextBox1.TabIndex = 7
+        Me.txtNombreProveedor.Location = New System.Drawing.Point(109, 51)
+        Me.txtNombreProveedor.Name = "txtNombreProveedor"
+        Me.txtNombreProveedor.Size = New System.Drawing.Size(421, 20)
+        Me.txtNombreProveedor.TabIndex = 7
         '
         'Label4
         '
@@ -237,17 +260,44 @@ Partial Class A_FacturaCompras
         '
         'dtDetalleFactura
         '
-        Me.dtDetalleFactura.AllowUserToAddRows = False
         Me.dtDetalleFactura.AllowUserToDeleteRows = False
         Me.dtDetalleFactura.BackgroundColor = System.Drawing.Color.White
         Me.dtDetalleFactura.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtDetalleFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cuenta, Me.Objetos, Me.Descripción, Me.Monto, Me.Tipo_Stock})
         Me.dtDetalleFactura.GridColor = System.Drawing.Color.White
         Me.dtDetalleFactura.Location = New System.Drawing.Point(8, 18)
         Me.dtDetalleFactura.Name = "dtDetalleFactura"
-        Me.dtDetalleFactura.ReadOnly = True
+        Me.dtDetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.dtDetalleFactura.Size = New System.Drawing.Size(532, 285)
         Me.dtDetalleFactura.TabIndex = 0
+        '
+        'Cuenta
+        '
+        Me.Cuenta.HeaderText = "Cuenta"
+        Me.Cuenta.Name = "Cuenta"
+        '
+        'Objetos
+        '
+        Me.Objetos.HeaderText = "Objetos"
+        Me.Objetos.Name = "Objetos"
+        Me.Objetos.ReadOnly = True
+        '
+        'Descripción
+        '
+        Me.Descripción.HeaderText = "Descripción"
+        Me.Descripción.Name = "Descripción"
+        Me.Descripción.ReadOnly = True
+        '
+        'Monto
+        '
+        Me.Monto.HeaderText = "Monto"
+        Me.Monto.Name = "Monto"
+        '
+        'Tipo_Stock
+        '
+        Me.Tipo_Stock.HeaderText = "Tipo Stock"
+        Me.Tipo_Stock.Name = "Tipo_Stock"
         '
         'btnGuardar
         '
@@ -288,6 +338,15 @@ Partial Class A_FacturaCompras
         Me.btnCrear.Text = "Crear Nuevo"
         Me.btnCrear.UseVisualStyleBackColor = False
         '
+        'lblFila
+        '
+        Me.lblFila.AutoSize = True
+        Me.lblFila.Location = New System.Drawing.Point(485, 136)
+        Me.lblFila.Name = "lblFila"
+        Me.lblFila.Size = New System.Drawing.Size(45, 13)
+        Me.lblFila.TabIndex = 20
+        Me.lblFila.Text = "Label10"
+        '
         'A_FacturaCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -321,7 +380,7 @@ Partial Class A_FacturaCompras
     Friend WithEvents Label6 As Label
     Friend WithEvents dtpFechaFactura As DateTimePicker
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtNombreProveedor As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents txtTotal As TextBox
     Friend WithEvents Label3 As Label
@@ -336,4 +395,11 @@ Partial Class A_FacturaCompras
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnCrear As Button
+    Friend WithEvents btnBuscarTerminoPago As Button
+    Friend WithEvents Cuenta As DataGridViewTextBoxColumn
+    Friend WithEvents Objetos As DataGridViewTextBoxColumn
+    Friend WithEvents Descripción As DataGridViewTextBoxColumn
+    Friend WithEvents Monto As DataGridViewTextBoxColumn
+    Friend WithEvents Tipo_Stock As DataGridViewTextBoxColumn
+    Friend WithEvents lblFila As Label
 End Class
