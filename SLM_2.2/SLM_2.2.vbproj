@@ -361,6 +361,12 @@
     <Compile Include="presentacion\M_Medico.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_MenuFacturacion.Designer.vb">
+      <DependentUpon>M_MenuFacturacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_MenuFacturacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_MenuLaboratorio.Designer.vb">
       <DependentUpon>M_MenuLaboratorio.vb</DependentUpon>
     </Compile>
@@ -548,6 +554,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Medico.resx">
       <DependentUpon>M_Medico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_MenuFacturacion.resx">
+      <DependentUpon>M_MenuFacturacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_MenuLaboratorio.resx">
       <DependentUpon>M_MenuLaboratorio.vb</DependentUpon>

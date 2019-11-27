@@ -114,9 +114,6 @@
         txtvuelto.ReadOnly = True
         txttotal.ReadOnly = True
     End Sub
-
-
-
     Private Sub txtcodigoMedico_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoMedico.TextChanged
         If (txtcodigoMedico.Text <> "") Then
             Try
