@@ -132,10 +132,18 @@
             With objObj
                 .nombre_ = txtnombreB.Text
             End With
-            Dim dv As DataView = objObj.BuscarObjeto.DefaultView
-            dgbtabla.DataSource = dv
-            lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
+            If (Trim(txtnombreB.Text) <> "") Then
+                Dim dv As DataView = objObj.BuscarObjeto.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            Else
+                Dim dv As DataView = objObj.SeleccionarObjeto.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            End If
         Catch ex As Exception
 
         End Try

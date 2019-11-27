@@ -1,7 +1,6 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ClsConnection
-
     'esta clase sirve para abrir una conexxion en la base de datos 
 
     Private sqlcon As SqlConnection
@@ -13,8 +12,6 @@ Public Class ClsConnection
     End Sub
 
     Public Function getConexion() As SqlConnection
-
-
         sqlcon = New SqlConnection(str_con)
         ''se conecta a la base de datos
 

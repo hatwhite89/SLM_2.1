@@ -112,12 +112,17 @@
         End Try
     End Sub
     Private Sub txtcomentarioB_TextChanged(sender As Object, e As EventArgs) Handles txtcomentarioB.TextChanged
-        If (txtcomentarioB.Text <> "") Then
-            Dim objTipoObj As New ClsTipoObjeto
-            With objTipoObj
-                .comentario_ = txtcomentarioB.Text
-            End With
+        Dim objTipoObj As New ClsTipoObjeto
+        With objTipoObj
+            .comentario_ = txtcomentarioB.Text
+        End With
+        If (Trim(txtcomentarioB.Text) <> "") Then
             Dim dv As DataView = objTipoObj.BuscarTipoObjeto.DefaultView
+            dgbtabla.DataSource = dv
+            lblcantidad.Text = dv.Count
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        Else
+            Dim dv As DataView = objTipoObj.SeleccionarTipoObjeto.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
             dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells

@@ -8,7 +8,6 @@
         rtxtcomentario.ReadOnly = False
         txtcodigo.ReadOnly = True
 
-        btnbuscar.Enabled = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
         btnnuevo.Enabled = False
@@ -113,16 +112,6 @@
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         Me.Close()
     End Sub
-    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
-        Dim objTipoCla As New ClsTipoClasificacion
-        With objTipoCla
-            .Comentario1 = txtcomentarioB.Text
-        End With
-        Dim dv As DataView = objTipoCla.BuscarTipoClasificacion.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-    End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
@@ -162,5 +151,23 @@
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
+    End Sub
+
+    Private Sub txtcomentarioB_TextChanged(sender As Object, e As EventArgs) Handles txtcomentarioB.TextChanged
+        Dim objTipoCla As New ClsTipoClasificacion
+        With objTipoCla
+            .Comentario1 = txtcomentarioB.Text
+        End With
+        If (Trim(txtcomentarioB.Text) <> "") Then
+            Dim dv As DataView = objTipoCla.BuscarTipoClasificacion.DefaultView
+            dgbtabla.DataSource = dv
+            lblcantidad.Text = dv.Count
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        Else
+            Dim dv As DataView = objTipoCla.SeleccionarTipoClasificacion.DefaultView
+            dgbtabla.DataSource = dv
+            lblcantidad.Text = dv.Count
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        End If
     End Sub
 End Class
