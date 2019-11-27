@@ -1,4 +1,4 @@
-﻿Public Class M_AccesoLaboratorio
+﻿Public Class eg_frmAccesoLaboratorio
     Private Sub M_AccesoLaboratorio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objAccLab As New ClsAccesoLaboratorio
         Dim dv As DataView = objAccLab.SeleccionarAccesoLaboratorio.DefaultView
@@ -113,6 +113,10 @@
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         txtcodigo.Text() = ""
         txtnombre.Text() = ""
+        cbxIngresar.Checked = False
+        cbxValidar.Checked = False
+        cbxObjetar.Checked = False
+        cbxConfirmar.Checked = False
 
         cbxIngresar.Enabled = True
         cbxValidar.Enabled = True
@@ -144,6 +148,8 @@
             cbxObjetar.Enabled = True
             cbxConfirmar.Enabled = True
 
+            btnguardar.Enabled = False
+            btnnuevo.Enabled = True
             btnmodificar.Enabled = True
             txtnombre.ReadOnly = False
             txtcodigo.ReadOnly = True

@@ -32,8 +32,6 @@ Partial Class M_MenuFacturacion
         Me.lblsucursal = New System.Windows.Forms.Label()
         Me.lblpaciente = New System.Windows.Forms.Label()
         Me.btnCliente = New System.Windows.Forms.Button()
-        Me.lblmedico = New System.Windows.Forms.Label()
-        Me.btnmedico = New System.Windows.Forms.Button()
         Me.lblcotizacion = New System.Windows.Forms.Label()
         Me.btnCotizacion = New System.Windows.Forms.Button()
         Me.lblfacturacion = New System.Windows.Forms.Label()
@@ -51,8 +49,6 @@ Partial Class M_MenuFacturacion
         Me.GroupBox1.Controls.Add(Me.lblsucursal)
         Me.GroupBox1.Controls.Add(Me.lblpaciente)
         Me.GroupBox1.Controls.Add(Me.btnCliente)
-        Me.GroupBox1.Controls.Add(Me.lblmedico)
-        Me.GroupBox1.Controls.Add(Me.btnmedico)
         Me.GroupBox1.Controls.Add(Me.lblcotizacion)
         Me.GroupBox1.Controls.Add(Me.btnCotizacion)
         Me.GroupBox1.Controls.Add(Me.lblfacturacion)
@@ -64,7 +60,7 @@ Partial Class M_MenuFacturacion
         Me.GroupBox1.Size = New System.Drawing.Size(491, 411)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Menú Módulo Laboratorio"
+        Me.GroupBox1.Text = "Menú Módulo Facturación"
         '
         'btnTerminoPago
         '
@@ -95,7 +91,7 @@ Partial Class M_MenuFacturacion
         Me.btnSede.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSede.FlatAppearance.BorderSize = 0
         Me.btnSede.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSede.Location = New System.Drawing.Point(28, 132)
+        Me.btnSede.Location = New System.Drawing.Point(21, 132)
         Me.btnSede.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSede.Name = "btnSede"
         Me.btnSede.Size = New System.Drawing.Size(80, 70)
@@ -105,7 +101,7 @@ Partial Class M_MenuFacturacion
         'lblSede
         '
         Me.lblSede.AutoSize = True
-        Me.lblSede.Location = New System.Drawing.Point(44, 206)
+        Me.lblSede.Location = New System.Drawing.Point(40, 206)
         Me.lblSede.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSede.Name = "lblSede"
         Me.lblSede.Size = New System.Drawing.Size(41, 17)
@@ -118,7 +114,7 @@ Partial Class M_MenuFacturacion
         Me.btnSucursal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSucursal.FlatAppearance.BorderSize = 0
         Me.btnSucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSucursal.Location = New System.Drawing.Point(375, 27)
+        Me.btnSucursal.Location = New System.Drawing.Point(316, 27)
         Me.btnSucursal.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSucursal.Name = "btnSucursal"
         Me.btnSucursal.Size = New System.Drawing.Size(80, 70)
@@ -128,7 +124,7 @@ Partial Class M_MenuFacturacion
         'lblsucursal
         '
         Me.lblsucursal.AutoSize = True
-        Me.lblsucursal.Location = New System.Drawing.Point(384, 100)
+        Me.lblsucursal.Location = New System.Drawing.Point(325, 100)
         Me.lblsucursal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblsucursal.Name = "lblsucursal"
         Me.lblsucursal.Size = New System.Drawing.Size(63, 17)
@@ -138,12 +134,12 @@ Partial Class M_MenuFacturacion
         'lblpaciente
         '
         Me.lblpaciente.AutoSize = True
-        Me.lblpaciente.Location = New System.Drawing.Point(295, 99)
+        Me.lblpaciente.Location = New System.Drawing.Point(226, 100)
         Me.lblpaciente.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblpaciente.Name = "lblpaciente"
-        Me.lblpaciente.Size = New System.Drawing.Size(63, 17)
+        Me.lblpaciente.Size = New System.Drawing.Size(70, 17)
         Me.lblpaciente.TabIndex = 9
-        Me.lblpaciente.Text = "Paciente"
+        Me.lblpaciente.Text = "Pacientes"
         '
         'btnCliente
         '
@@ -151,40 +147,17 @@ Partial Class M_MenuFacturacion
         Me.btnCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCliente.FlatAppearance.BorderSize = 0
         Me.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCliente.Location = New System.Drawing.Point(283, 25)
+        Me.btnCliente.Location = New System.Drawing.Point(219, 27)
         Me.btnCliente.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCliente.Name = "btnCliente"
         Me.btnCliente.Size = New System.Drawing.Size(84, 72)
         Me.btnCliente.TabIndex = 8
         Me.btnCliente.UseVisualStyleBackColor = True
         '
-        'lblmedico
-        '
-        Me.lblmedico.AutoSize = True
-        Me.lblmedico.Location = New System.Drawing.Point(221, 99)
-        Me.lblmedico.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblmedico.Name = "lblmedico"
-        Me.lblmedico.Size = New System.Drawing.Size(53, 17)
-        Me.lblmedico.TabIndex = 7
-        Me.lblmedico.Text = "Médico"
-        '
-        'btnmedico
-        '
-        Me.btnmedico.BackgroundImage = CType(resources.GetObject("btnmedico.BackgroundImage"), System.Drawing.Image)
-        Me.btnmedico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnmedico.FlatAppearance.BorderSize = 0
-        Me.btnmedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnmedico.Location = New System.Drawing.Point(207, 27)
-        Me.btnmedico.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnmedico.Name = "btnmedico"
-        Me.btnmedico.Size = New System.Drawing.Size(80, 70)
-        Me.btnmedico.TabIndex = 6
-        Me.btnmedico.UseVisualStyleBackColor = True
-        '
         'lblcotizacion
         '
         Me.lblcotizacion.AutoSize = True
-        Me.lblcotizacion.Location = New System.Drawing.Point(125, 99)
+        Me.lblcotizacion.Location = New System.Drawing.Point(128, 99)
         Me.lblcotizacion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcotizacion.Name = "lblcotizacion"
         Me.lblcotizacion.Size = New System.Drawing.Size(73, 17)
@@ -197,7 +170,7 @@ Partial Class M_MenuFacturacion
         Me.btnCotizacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCotizacion.FlatAppearance.BorderSize = 0
         Me.btnCotizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCotizacion.Location = New System.Drawing.Point(119, 27)
+        Me.btnCotizacion.Location = New System.Drawing.Point(122, 27)
         Me.btnCotizacion.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCotizacion.Name = "btnCotizacion"
         Me.btnCotizacion.Size = New System.Drawing.Size(80, 70)
@@ -207,7 +180,7 @@ Partial Class M_MenuFacturacion
         'lblfacturacion
         '
         Me.lblfacturacion.AutoSize = True
-        Me.lblfacturacion.Location = New System.Drawing.Point(27, 99)
+        Me.lblfacturacion.Location = New System.Drawing.Point(20, 99)
         Me.lblfacturacion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblfacturacion.Name = "lblfacturacion"
         Me.lblfacturacion.Size = New System.Drawing.Size(82, 17)
@@ -220,7 +193,7 @@ Partial Class M_MenuFacturacion
         Me.btnFacturacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnFacturacion.FlatAppearance.BorderSize = 0
         Me.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFacturacion.Location = New System.Drawing.Point(28, 27)
+        Me.btnFacturacion.Location = New System.Drawing.Point(21, 27)
         Me.btnFacturacion.Margin = New System.Windows.Forms.Padding(4)
         Me.btnFacturacion.Name = "btnFacturacion"
         Me.btnFacturacion.Size = New System.Drawing.Size(80, 70)
@@ -231,8 +204,10 @@ Partial Class M_MenuFacturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(565, 477)
         Me.Controls.Add(Me.GroupBox1)
+        Me.KeyPreview = True
         Me.Name = "M_MenuFacturacion"
         Me.Text = "M_MenuFacturacion"
         Me.GroupBox1.ResumeLayout(False)
@@ -250,8 +225,6 @@ Partial Class M_MenuFacturacion
     Friend WithEvents lblsucursal As Label
     Friend WithEvents lblpaciente As Label
     Friend WithEvents btnCliente As Button
-    Friend WithEvents lblmedico As Label
-    Friend WithEvents btnmedico As Button
     Friend WithEvents lblcotizacion As Label
     Friend WithEvents btnCotizacion As Button
     Friend WithEvents lblfacturacion As Label

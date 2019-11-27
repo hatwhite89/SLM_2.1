@@ -1,43 +1,31 @@
-﻿Public Class M_TipoObjeto
-    Private Sub M_TipoObjeto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim objTipoObj As New ClsTipoObjeto
-        Dim dv As DataView = objTipoObj.SeleccionarTipoObjeto.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-        rtxtcomentario.ReadOnly = True
-        txtcodigo.ReadOnly = True
-        btnmodificar.Enabled = False
-        btnguardar.Enabled = False
-        btnnuevo.Enabled = True
-    End Sub
+﻿Public Class eg_frmAreaLaboratorio
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         Me.Close()
     End Sub
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (txtcodigo.Text <> "" And rtxtcomentario.Text <> "") Then
-                Dim objTipoObj As New ClsTipoObjeto
-                With objTipoObj
-                    .codigo_ = txtcodigo.Text
-                    .comentario_ = rtxtcomentario.Text
+            If (Trim(txtnombre.Text) <> "" And Trim(txtarea.Text) <> "") Then
+                Dim objAreaLabecialidad As New ClsAreaLaboratorio
+                With objAreaLabecialidad
+                    .Nombre_ = txtnombre.Text
+                    .Area_ = txtarea.Text
                 End With
 
-                If objTipoObj.RegistrarNuevoTipoObjeto() = 1 Then
+                If objAreaLabecialidad.RegistrarNuevaAreaLaboratorio() = 1 Then
                     MsgBox("Registrado correctamente.")
 
-                    Dim dv As DataView = objTipoObj.SeleccionarTipoObjeto.DefaultView
+                    Dim dv As DataView = objAreaLabecialidad.SeleccionarAreaLaboratorio.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-                    txtcodigo.ReadOnly = True
-                    rtxtcomentario.ReadOnly = True
+                    txtarea.ReadOnly = True
+                    txtnombre.ReadOnly = True
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
                     btnnuevo.Enabled = True
                 Else
-                    MsgBox("Error al querer ingresar el tipo de objeto.", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer ingresar la especialidad.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -51,28 +39,28 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (rtxtcomentario.Text <> "" And txtcodigo.Text <> "") Then
-                Dim objTipoObj As New ClsTipoObjeto
-                With objTipoObj
-                    .codigo_ = txtcodigo.Text
-                    .comentario_ = rtxtcomentario.Text
+            If (txtnombre.Text <> "" And txtarea.Text <> "") Then
+                Dim objAreaLabecialidad As New ClsAreaLaboratorio
+                With objAreaLabecialidad
+                    .Nombre_ = txtnombre.Text
+                    .Area_ = txtarea.Text
                 End With
 
-                If objTipoObj.ModificarTipoObjeto() = 1 Then
+                If objAreaLabecialidad.ModificarAreaLaboratorio() = 1 Then
                     MsgBox("Modificado correctamente.")
 
-                    Dim dv As DataView = objTipoObj.SeleccionarTipoObjeto.DefaultView
+                    Dim dv As DataView = objAreaLabecialidad.SeleccionarAreaLaboratorio.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
-                    txtcodigo.ReadOnly = True
-                    rtxtcomentario.ReadOnly = True
+                    txtarea.ReadOnly = True
+                    txtnombre.ReadOnly = True
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
                     btnnuevo.Enabled = True
                 Else
-                    MsgBox("Error al querer modificar el tipo de objeto.", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer modificar la especialidad.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -84,11 +72,12 @@
         End Try
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
-        txtcodigo.Text() = ""
-        rtxtcomentario.Text() = ""
+        txtarea.Text() = ""
+        txtnombre.Text() = ""
+        txtnombreB.Text() = ""
 
-        rtxtcomentario.ReadOnly = False
-        txtcodigo.ReadOnly = False
+        txtnombre.ReadOnly = False
+        txtarea.ReadOnly = False
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
         btnnuevo.Enabled = False
@@ -98,33 +87,43 @@
             Me.Close()
         End If
     End Sub
+    Private Sub E_AreaLaboratorio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim objAreaLab As New ClsAreaLaboratorio
+        Dim dv As DataView = objAreaLab.SeleccionarAreaLaboratorio.DefaultView
+        dgbtabla.DataSource = dv
+        lblcantidad.Text = dv.Count
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        txtnombre.ReadOnly = True
+        txtarea.ReadOnly = True
+        btnmodificar.Enabled = False
+        btnguardar.Enabled = False
+        btnnuevo.Enabled = True
+    End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-            rtxtcomentario.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            txtarea.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+            txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
             btnmodificar.Enabled = True
-            rtxtcomentario.ReadOnly = False
-            btnguardar.Enabled = False
             btnnuevo.Enabled = True
-            txtcodigo.ReadOnly = True
-            M_Objeto.txtcodigoTipo.Text = txtcodigo.Text
-            M_Objeto.txtcomentarioTipo.Text = rtxtcomentario.Text
+            btnguardar.Enabled = False
+            txtnombre.ReadOnly = False
+            txtarea.ReadOnly = True
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-    Private Sub txtcomentarioB_TextChanged(sender As Object, e As EventArgs) Handles txtcomentarioB.TextChanged
-        Dim objTipoObj As New ClsTipoObjeto
-        With objTipoObj
-            .comentario_ = txtcomentarioB.Text
+    Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
+        Dim objAreaLab As New ClsAreaLaboratorio
+        With objAreaLab
+            .Nombre_ = txtnombreB.Text
         End With
-        If (Trim(txtcomentarioB.Text) <> "") Then
-            Dim dv As DataView = objTipoObj.BuscarTipoObjeto.DefaultView
+        If (Trim(txtnombreB.Text) <> "") Then
+            Dim dv As DataView = objAreaLab.BuscarAreaLaboratorio.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
             dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
         Else
-            Dim dv As DataView = objTipoObj.SeleccionarTipoObjeto.DefaultView
+            Dim dv As DataView = objAreaLab.SeleccionarAreaLaboratorio.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
             dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells

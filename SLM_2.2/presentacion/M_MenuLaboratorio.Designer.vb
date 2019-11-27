@@ -24,27 +24,35 @@ Partial Class M_MenuLaboratorio
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_MenuLaboratorio))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblhojaTrabajo = New System.Windows.Forms.Label()
+        Me.lblmedico = New System.Windows.Forms.Label()
+        Me.btnHojaTrabajo = New System.Windows.Forms.Button()
+        Me.btnMedico = New System.Windows.Forms.Button()
+        Me.lblexamenes = New System.Windows.Forms.Label()
+        Me.btnExamenes = New System.Windows.Forms.Button()
+        Me.lblentregaResultado = New System.Windows.Forms.Label()
+        Me.btnEntregaResultado = New System.Windows.Forms.Button()
         Me.lblpaciente = New System.Windows.Forms.Label()
         Me.btnCliente = New System.Windows.Forms.Button()
-        Me.lblmedico = New System.Windows.Forms.Label()
-        Me.btnmedico = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.lblordentrabajo = New System.Windows.Forms.Label()
+        Me.btnOrdenTrab = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.lblhojaTrabajo)
+        Me.GroupBox1.Controls.Add(Me.lblmedico)
+        Me.GroupBox1.Controls.Add(Me.btnHojaTrabajo)
+        Me.GroupBox1.Controls.Add(Me.btnMedico)
+        Me.GroupBox1.Controls.Add(Me.lblexamenes)
+        Me.GroupBox1.Controls.Add(Me.btnExamenes)
+        Me.GroupBox1.Controls.Add(Me.lblentregaResultado)
+        Me.GroupBox1.Controls.Add(Me.btnEntregaResultado)
         Me.GroupBox1.Controls.Add(Me.lblpaciente)
         Me.GroupBox1.Controls.Add(Me.btnCliente)
-        Me.GroupBox1.Controls.Add(Me.lblmedico)
-        Me.GroupBox1.Controls.Add(Me.btnmedico)
+        Me.GroupBox1.Controls.Add(Me.lblordentrabajo)
+        Me.GroupBox1.Controls.Add(Me.btnOrdenTrab)
         Me.GroupBox1.Location = New System.Drawing.Point(36, 29)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
@@ -53,6 +61,98 @@ Partial Class M_MenuLaboratorio
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Menú Módulo Laboratorio"
+        '
+        'lblhojaTrabajo
+        '
+        Me.lblhojaTrabajo.Location = New System.Drawing.Point(26, 223)
+        Me.lblhojaTrabajo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblhojaTrabajo.Name = "lblhojaTrabajo"
+        Me.lblhojaTrabajo.Size = New System.Drawing.Size(69, 51)
+        Me.lblhojaTrabajo.TabIndex = 13
+        Me.lblhojaTrabajo.Text = "Hoja Trabajo Lab."
+        Me.lblhojaTrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblmedico
+        '
+        Me.lblmedico.AutoSize = True
+        Me.lblmedico.Location = New System.Drawing.Point(406, 103)
+        Me.lblmedico.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblmedico.Name = "lblmedico"
+        Me.lblmedico.Size = New System.Drawing.Size(60, 17)
+        Me.lblmedico.TabIndex = 15
+        Me.lblmedico.Text = "Médicos"
+        '
+        'btnHojaTrabajo
+        '
+        Me.btnHojaTrabajo.BackgroundImage = CType(resources.GetObject("btnHojaTrabajo.BackgroundImage"), System.Drawing.Image)
+        Me.btnHojaTrabajo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnHojaTrabajo.FlatAppearance.BorderSize = 0
+        Me.btnHojaTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHojaTrabajo.Location = New System.Drawing.Point(31, 154)
+        Me.btnHojaTrabajo.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnHojaTrabajo.Name = "btnHojaTrabajo"
+        Me.btnHojaTrabajo.Size = New System.Drawing.Size(61, 64)
+        Me.btnHojaTrabajo.TabIndex = 12
+        Me.btnHojaTrabajo.UseVisualStyleBackColor = True
+        '
+        'btnMedico
+        '
+        Me.btnMedico.BackgroundImage = CType(resources.GetObject("btnMedico.BackgroundImage"), System.Drawing.Image)
+        Me.btnMedico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnMedico.FlatAppearance.BorderSize = 0
+        Me.btnMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMedico.Location = New System.Drawing.Point(392, 28)
+        Me.btnMedico.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnMedico.Name = "btnMedico"
+        Me.btnMedico.Size = New System.Drawing.Size(80, 70)
+        Me.btnMedico.TabIndex = 14
+        Me.btnMedico.UseVisualStyleBackColor = True
+        '
+        'lblexamenes
+        '
+        Me.lblexamenes.AutoSize = True
+        Me.lblexamenes.Location = New System.Drawing.Point(116, 100)
+        Me.lblexamenes.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblexamenes.Name = "lblexamenes"
+        Me.lblexamenes.Size = New System.Drawing.Size(73, 17)
+        Me.lblexamenes.TabIndex = 13
+        Me.lblexamenes.Text = "Exámenes"
+        '
+        'btnExamenes
+        '
+        Me.btnExamenes.BackgroundImage = CType(resources.GetObject("btnExamenes.BackgroundImage"), System.Drawing.Image)
+        Me.btnExamenes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnExamenes.FlatAppearance.BorderSize = 0
+        Me.btnExamenes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExamenes.Location = New System.Drawing.Point(111, 23)
+        Me.btnExamenes.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnExamenes.Name = "btnExamenes"
+        Me.btnExamenes.Size = New System.Drawing.Size(80, 75)
+        Me.btnExamenes.TabIndex = 12
+        Me.btnExamenes.UseVisualStyleBackColor = True
+        '
+        'lblentregaResultado
+        '
+        Me.lblentregaResultado.Location = New System.Drawing.Point(301, 103)
+        Me.lblentregaResultado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblentregaResultado.Name = "lblentregaResultado"
+        Me.lblentregaResultado.Size = New System.Drawing.Size(91, 44)
+        Me.lblentregaResultado.TabIndex = 11
+        Me.lblentregaResultado.Text = "Entrega Resultados"
+        Me.lblentregaResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnEntregaResultado
+        '
+        Me.btnEntregaResultado.BackgroundImage = CType(resources.GetObject("btnEntregaResultado.BackgroundImage"), System.Drawing.Image)
+        Me.btnEntregaResultado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnEntregaResultado.FlatAppearance.BorderSize = 0
+        Me.btnEntregaResultado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEntregaResultado.Location = New System.Drawing.Point(303, 28)
+        Me.btnEntregaResultado.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnEntregaResultado.Name = "btnEntregaResultado"
+        Me.btnEntregaResultado.Size = New System.Drawing.Size(80, 70)
+        Me.btnEntregaResultado.TabIndex = 10
+        Me.btnEntregaResultado.UseVisualStyleBackColor = True
         '
         'lblpaciente
         '
@@ -77,74 +177,29 @@ Partial Class M_MenuLaboratorio
         Me.btnCliente.TabIndex = 8
         Me.btnCliente.UseVisualStyleBackColor = True
         '
-        'lblmedico
+        'lblordentrabajo
         '
-        Me.lblmedico.AutoSize = True
-        Me.lblmedico.Location = New System.Drawing.Point(219, 102)
-        Me.lblmedico.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblmedico.Name = "lblmedico"
-        Me.lblmedico.Size = New System.Drawing.Size(53, 17)
-        Me.lblmedico.TabIndex = 7
-        Me.lblmedico.Text = "Médico"
+        Me.lblordentrabajo.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblordentrabajo.Location = New System.Drawing.Point(210, 100)
+        Me.lblordentrabajo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblordentrabajo.Name = "lblordentrabajo"
+        Me.lblordentrabajo.Size = New System.Drawing.Size(72, 44)
+        Me.lblordentrabajo.TabIndex = 7
+        Me.lblordentrabajo.Text = "Orden de Trabajo"
+        Me.lblordentrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'btnmedico
+        'btnOrdenTrab
         '
-        Me.btnmedico.BackgroundImage = CType(resources.GetObject("btnmedico.BackgroundImage"), System.Drawing.Image)
-        Me.btnmedico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnmedico.FlatAppearance.BorderSize = 0
-        Me.btnmedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnmedico.Location = New System.Drawing.Point(205, 27)
-        Me.btnmedico.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnmedico.Name = "btnmedico"
-        Me.btnmedico.Size = New System.Drawing.Size(80, 70)
-        Me.btnmedico.TabIndex = 6
-        Me.btnmedico.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(317, 103)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 17)
-        Me.Label1.TabIndex = 11
-        Me.Label1.Text = "Médico"
-        '
-        'Button1
-        '
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(303, 28)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(80, 70)
-        Me.Button1.TabIndex = 10
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(125, 100)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(73, 17)
-        Me.Label2.TabIndex = 13
-        Me.Label2.Text = "Exámenes"
-        '
-        'Button2
-        '
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(111, 28)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(80, 70)
-        Me.Button2.TabIndex = 12
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnOrdenTrab.BackgroundImage = CType(resources.GetObject("btnOrdenTrab.BackgroundImage"), System.Drawing.Image)
+        Me.btnOrdenTrab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnOrdenTrab.FlatAppearance.BorderSize = 0
+        Me.btnOrdenTrab.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOrdenTrab.Location = New System.Drawing.Point(205, 27)
+        Me.btnOrdenTrab.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnOrdenTrab.Name = "btnOrdenTrab"
+        Me.btnOrdenTrab.Size = New System.Drawing.Size(80, 70)
+        Me.btnOrdenTrab.TabIndex = 6
+        Me.btnOrdenTrab.UseVisualStyleBackColor = True
         '
         'M_MenuLaboratorio
         '
@@ -163,12 +218,16 @@ Partial Class M_MenuLaboratorio
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents lblmedico As Label
-    Friend WithEvents btnmedico As Button
+    Friend WithEvents lblordentrabajo As Label
+    Friend WithEvents btnOrdenTrab As Button
     Friend WithEvents lblpaciente As Label
     Friend WithEvents btnCliente As Button
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents lblexamenes As Label
+    Friend WithEvents btnExamenes As Button
+    Friend WithEvents lblentregaResultado As Label
+    Friend WithEvents btnEntregaResultado As Button
+    Friend WithEvents lblhojaTrabajo As Label
+    Friend WithEvents lblmedico As Label
+    Friend WithEvents btnHojaTrabajo As Button
+    Friend WithEvents btnMedico As Button
 End Class

@@ -9,9 +9,10 @@
     Private Sub btnlaboratorio_Click(sender As Object, e As EventArgs) Handles btnlaboratorio.Click
         M_MenuLaboratorio.ShowDialog()
     End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         E_DetalleExamenes.Show()
     End Sub
-
+    Private Sub btnFacturacion_Click(sender As Object, e As EventArgs) Handles btnFacturacion.Click
+        M_MenuFacturacion.ShowDialog()
+    End Sub
 End Class
