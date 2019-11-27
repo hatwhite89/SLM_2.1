@@ -53,6 +53,7 @@ Partial Class frmDeposito
         Me.lblComentario = New System.Windows.Forms.Label()
         Me.txtComentario = New System.Windows.Forms.TextBox()
         Me.gbxInfoDepo = New System.Windows.Forms.GroupBox()
+        Me.txtComi = New System.Windows.Forms.TextBox()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.linklblCalcular = New System.Windows.Forms.LinkLabel()
         Me.btnCrearNuevo = New System.Windows.Forms.Button()
@@ -69,7 +70,6 @@ Partial Class frmDeposito
         Me.cbxTipo = New System.Windows.Forms.ComboBox()
         Me.dtDepositos = New System.Windows.Forms.DataGridView()
         Me.txtID = New System.Windows.Forms.TextBox()
-        Me.txtComi = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxInfoDepo.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -344,6 +344,13 @@ Partial Class frmDeposito
         Me.gbxInfoDepo.TabStop = False
         Me.gbxInfoDepo.Text = "Información de Deposito"
         '
+        'txtComi
+        '
+        Me.txtComi.Location = New System.Drawing.Point(195, 223)
+        Me.txtComi.Name = "txtComi"
+        Me.txtComi.Size = New System.Drawing.Size(76, 20)
+        Me.txtComi.TabIndex = 80
+        '
         'btnModificar
         '
         Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
@@ -526,13 +533,6 @@ Partial Class frmDeposito
         Me.txtID.Size = New System.Drawing.Size(80, 20)
         Me.txtID.TabIndex = 13
         Me.txtID.Visible = False
-        '
-        'txtComi
-        '
-        Me.txtComi.Location = New System.Drawing.Point(195, 223)
-        Me.txtComi.Name = "txtComi"
-        Me.txtComi.Size = New System.Drawing.Size(76, 20)
-        Me.txtComi.TabIndex = 80
         '
         'frmDeposito
         '

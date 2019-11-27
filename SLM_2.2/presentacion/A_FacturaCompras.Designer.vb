@@ -54,6 +54,7 @@ Partial Class A_FacturaCompras
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
+        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -195,6 +196,7 @@ Partial Class A_FacturaCompras
         '
         'txtNombreProveedor
         '
+        Me.txtNombreProveedor.Enabled = False
         Me.txtNombreProveedor.Location = New System.Drawing.Point(109, 51)
         Me.txtNombreProveedor.Name = "txtNombreProveedor"
         Me.txtNombreProveedor.Size = New System.Drawing.Size(421, 20)
@@ -291,7 +293,6 @@ Partial Class A_FacturaCompras
         '
         Me.Objetos.HeaderText = "Objetos"
         Me.Objetos.Name = "Objetos"
-        Me.Objetos.ReadOnly = True
         '
         'Descripción
         '
@@ -308,6 +309,7 @@ Partial Class A_FacturaCompras
         '
         Me.Tipo_Stock.HeaderText = "Tipo Stock"
         Me.Tipo_Stock.Name = "Tipo_Stock"
+        Me.Tipo_Stock.ToolTipText = "Comprado"
         '
         'btnGuardar
         '
@@ -348,12 +350,26 @@ Partial Class A_FacturaCompras
         Me.btnCrear.Text = "Crear Nuevo"
         Me.btnCrear.UseVisualStyleBackColor = False
         '
+        'btnRegresar
+        '
+        Me.btnRegresar.BackColor = System.Drawing.Color.Transparent
+        Me.btnRegresar.BackgroundImage = CType(resources.GetObject("btnRegresar.BackgroundImage"), System.Drawing.Image)
+        Me.btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnRegresar.FlatAppearance.BorderSize = 0
+        Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegresar.Location = New System.Drawing.Point(7, 500)
+        Me.btnRegresar.Name = "btnRegresar"
+        Me.btnRegresar.Size = New System.Drawing.Size(33, 37)
+        Me.btnRegresar.TabIndex = 14
+        Me.btnRegresar.UseVisualStyleBackColor = False
+        '
         'A_FacturaCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(563, 548)
+        Me.Controls.Add(Me.btnRegresar)
         Me.Controls.Add(Me.btnCrear)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnGuardar)
@@ -397,10 +413,11 @@ Partial Class A_FacturaCompras
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnCrear As Button
     Friend WithEvents btnBuscarTerminoPago As Button
+    Friend WithEvents lblFila As Label
     Friend WithEvents Cuenta As DataGridViewTextBoxColumn
     Friend WithEvents Objetos As DataGridViewTextBoxColumn
     Friend WithEvents Descripción As DataGridViewTextBoxColumn
     Friend WithEvents Monto As DataGridViewTextBoxColumn
     Friend WithEvents Tipo_Stock As DataGridViewTextBoxColumn
-    Friend WithEvents lblFila As Label
+    Friend WithEvents btnRegresar As Button
 End Class
