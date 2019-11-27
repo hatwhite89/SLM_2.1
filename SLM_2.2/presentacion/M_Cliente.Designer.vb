@@ -29,6 +29,8 @@ Partial Class M_Cliente
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbxinfoCliente = New System.Windows.Forms.GroupBox()
+        Me.txtnombre2 = New System.Windows.Forms.TextBox()
+        Me.txtapellido1 = New System.Windows.Forms.TextBox()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnseleccionarCliente = New System.Windows.Forms.Button()
         Me.txtnombreCategoria = New System.Windows.Forms.TextBox()
@@ -90,8 +92,6 @@ Partial Class M_Cliente
         Me.btnbuscarPorNombre = New System.Windows.Forms.Button()
         Me.lblNombreB = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
-        Me.txtapellido1 = New System.Windows.Forms.TextBox()
-        Me.txtnombre2 = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxinfoCliente.SuspendLayout()
         Me.gbxgenero.SuspendLayout()
@@ -214,6 +214,20 @@ Partial Class M_Cliente
         Me.gbxinfoCliente.TabStop = False
         Me.gbxinfoCliente.Text = "Información de Cliente/Paciente"
         Me.gbxinfoCliente.Visible = False
+        '
+        'txtnombre2
+        '
+        Me.txtnombre2.Location = New System.Drawing.Point(437, 86)
+        Me.txtnombre2.Name = "txtnombre2"
+        Me.txtnombre2.Size = New System.Drawing.Size(179, 22)
+        Me.txtnombre2.TabIndex = 118
+        '
+        'txtapellido1
+        '
+        Me.txtapellido1.Location = New System.Drawing.Point(154, 114)
+        Me.txtapellido1.Name = "txtapellido1"
+        Me.txtapellido1.Size = New System.Drawing.Size(179, 22)
+        Me.txtapellido1.TabIndex = 117
         '
         'btnnuevo
         '
@@ -817,20 +831,6 @@ Partial Class M_Cliente
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(206, 22)
         Me.txtnombreB.TabIndex = 117
-        '
-        'txtapellido1
-        '
-        Me.txtapellido1.Location = New System.Drawing.Point(154, 114)
-        Me.txtapellido1.Name = "txtapellido1"
-        Me.txtapellido1.Size = New System.Drawing.Size(179, 22)
-        Me.txtapellido1.TabIndex = 117
-        '
-        'txtnombre2
-        '
-        Me.txtnombre2.Location = New System.Drawing.Point(437, 86)
-        Me.txtnombre2.Name = "txtnombre2"
-        Me.txtnombre2.Size = New System.Drawing.Size(179, 22)
-        Me.txtnombre2.TabIndex = 118
         '
         'M_Cliente
         '

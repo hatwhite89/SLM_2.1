@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class M_AccesoLaboratorio
+Partial Class eg_frmAccesoLaboratorio
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.

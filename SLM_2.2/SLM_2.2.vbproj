@@ -113,6 +113,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="negocio\ClsAccesoLaboratorio.vb" />
+    <Compile Include="negocio\ClsAreaLaboratorio.vb" />
     <Compile Include="negocio\ClsDetalleFacturaCompra.vb" />
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
@@ -247,6 +248,18 @@
     <Compile Include="presentacion\eg_frmPaciente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\eg_frmUnidad.Designer.vb">
+      <DependentUpon>eg_frmUnidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\eg_frmUnidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\eg_frmParametroExamen.Designer.vb">
+      <DependentUpon>eg_frmParametroExamen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\eg_frmParametroExamen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_DetalleExamenes.Designer.vb">
       <DependentUpon>E_DetalleExamenes.vb</DependentUpon>
     </Compile>
@@ -271,10 +284,16 @@
     <Compile Include="presentacion\A_MenuConta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\M_AccesoLaboratorio.Designer.vb">
-      <DependentUpon>M_AccesoLaboratorio.vb</DependentUpon>
+    <Compile Include="presentacion\eg_frmAccesoLaboratorio.Designer.vb">
+      <DependentUpon>eg_frmAccesoLaboratorio.vb</DependentUpon>
     </Compile>
-    <Compile Include="presentacion\M_AccesoLaboratorio.vb">
+    <Compile Include="presentacion\eg_frmAccesoLaboratorio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\eg_frmAreaLaboratorio.Designer.vb">
+      <DependentUpon>eg_frmAreaLaboratorio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\eg_frmAreaLaboratorio.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_BuscarCotizacion.Designer.vb">
@@ -359,6 +378,12 @@
       <DependentUpon>M_Medico.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_Medico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_MenuFacturacion.Designer.vb">
+      <DependentUpon>M_MenuFacturacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_MenuFacturacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_MenuLaboratorio.Designer.vb">
@@ -501,11 +526,20 @@
     <EmbeddedResource Include="presentacion\A_MenuConta.resx">
       <DependentUpon>A_MenuConta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\eg_frmParametroExamen.resx">
+      <DependentUpon>eg_frmParametroExamen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\eg_frmUnidad.resx">
+      <DependentUpon>eg_frmUnidad.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_DetalleExamenes.resx">
       <DependentUpon>E_DetalleExamenes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_AccesoLaboratorio.resx">
-      <DependentUpon>M_AccesoLaboratorio.vb</DependentUpon>
+    <EmbeddedResource Include="presentacion\eg_frmAccesoLaboratorio.resx">
+      <DependentUpon>eg_frmAccesoLaboratorio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\eg_frmAreaLaboratorio.resx">
+      <DependentUpon>eg_frmAreaLaboratorio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_BuscarCotizacion.resx">
       <DependentUpon>M_BuscarCotizacion.vb</DependentUpon>
@@ -548,6 +582,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Medico.resx">
       <DependentUpon>M_Medico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_MenuFacturacion.resx">
+      <DependentUpon>M_MenuFacturacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_MenuLaboratorio.resx">
       <DependentUpon>M_MenuLaboratorio.vb</DependentUpon>

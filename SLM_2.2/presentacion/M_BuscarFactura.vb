@@ -64,6 +64,7 @@
                 Next
                 M_Factura.btnguardar.Enabled = False
                 M_Factura.btncotizacion.Enabled = False
+                M_Factura.dgblistadoExamenes.ReadOnly = True
                 M_Factura.ShowDialog()
             End If
         Catch ex As Exception

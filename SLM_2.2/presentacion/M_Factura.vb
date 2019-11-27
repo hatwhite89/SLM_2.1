@@ -72,7 +72,6 @@
 
         txtpagoPaciente.ReadOnly = False
         txtvuelto.ReadOnly = False
-        txttotal.ReadOnly = False
 
         cbxentregarMedico.Checked = False
         cbxentregarPaciente.Checked = False
@@ -80,6 +79,8 @@
         cbxok.Checked = False
         dtpfechaFactura.Enabled = True
         dtpfechaVto.Enabled = True
+
+        dgblistadoExamenes.ReadOnly = False
 
         btncotizacion.Enabled = True
         btnguardar.Enabled = True
@@ -112,11 +113,7 @@
 
         txtpagoPaciente.ReadOnly = True
         txtvuelto.ReadOnly = True
-        txttotal.ReadOnly = True
     End Sub
-
-
-
     Private Sub txtcodigoMedico_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoMedico.TextChanged
         If (txtcodigoMedico.Text <> "") Then
             Try

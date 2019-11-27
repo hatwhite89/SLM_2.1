@@ -1,4 +1,4 @@
-﻿Public Class M_TipoObjeto
+﻿Public Class eg_frmUnidad
     Private Sub M_TipoObjeto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objTipoObj As New ClsTipoObjeto
         Dim dv As DataView = objTipoObj.SeleccionarTipoObjeto.DefaultView
@@ -103,12 +103,10 @@
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
             rtxtcomentario.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
             btnmodificar.Enabled = True
-            rtxtcomentario.ReadOnly = False
             btnguardar.Enabled = False
             btnnuevo.Enabled = True
+            rtxtcomentario.ReadOnly = False
             txtcodigo.ReadOnly = True
-            M_Objeto.txtcodigoTipo.Text = txtcodigo.Text
-            M_Objeto.txtcomentarioTipo.Text = rtxtcomentario.Text
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
