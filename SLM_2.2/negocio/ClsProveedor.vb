@@ -11,11 +11,11 @@ Public Class ClsProveedor
 
     ':::::::::::::::::::::::: Metodos SET y GET :::::::::::::::::::::::
     'Codigo Proveedor
-    Public Property Cod_Proveedor As String
+    Public Property Cod_Proveedor As Integer
         Get
             Return codProveedor
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codProveedor = value
         End Set
     End Property
@@ -263,7 +263,7 @@ Public Class ClsProveedor
         End Using
     End Function
 
-    'Buscar Proveedor
+    'Buscar Proveedor por nombre
     Public Function buscarProveedor() As DataTable
 
         Dim objCon As New ClsConnection
@@ -285,5 +285,30 @@ Public Class ClsProveedor
         End Using
 
     End Function
+
+    'Capturar nombre de proveedor por codigo
+    Public Function capturarNombreProveedor() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "slmCapturarNombreProveedor_A"
+            cmd.Parameters.Add("@codProveedor", SqlDbType.VarChar).Value = Cod_Proveedor
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+
 
 End Class

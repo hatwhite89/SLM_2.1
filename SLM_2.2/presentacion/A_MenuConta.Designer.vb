@@ -314,6 +314,7 @@ Partial Class frmMenuConta
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(312, 366)
         Me.Controls.Add(Me.tcMenu)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "frmMenuConta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
