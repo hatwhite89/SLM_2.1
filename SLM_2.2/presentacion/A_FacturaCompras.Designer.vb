@@ -24,6 +24,7 @@ Partial Class A_FacturaCompras
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_FacturaCompras))
         Me.gbxInfoFact = New System.Windows.Forms.GroupBox()
+        Me.lblFila = New System.Windows.Forms.Label()
         Me.btnBuscarTerminoPago = New System.Windows.Forms.Button()
         Me.txtMoneda = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -53,7 +54,6 @@ Partial Class A_FacturaCompras
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
-        Me.lblFila = New System.Windows.Forms.Label()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,6 +88,15 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.TabStop = False
         Me.gbxInfoFact.Text = "Información de Factura"
         '
+        'lblFila
+        '
+        Me.lblFila.AutoSize = True
+        Me.lblFila.Location = New System.Drawing.Point(485, 136)
+        Me.lblFila.Name = "lblFila"
+        Me.lblFila.Size = New System.Drawing.Size(45, 13)
+        Me.lblFila.TabIndex = 20
+        Me.lblFila.Text = "Label10"
+        '
         'btnBuscarTerminoPago
         '
         Me.btnBuscarTerminoPago.BackColor = System.Drawing.Color.Transparent
@@ -98,7 +107,7 @@ Partial Class A_FacturaCompras
         Me.btnBuscarTerminoPago.Location = New System.Drawing.Point(364, 77)
         Me.btnBuscarTerminoPago.Name = "btnBuscarTerminoPago"
         Me.btnBuscarTerminoPago.Size = New System.Drawing.Size(21, 20)
-        Me.btnBuscarTerminoPago.TabIndex = 19
+        Me.btnBuscarTerminoPago.TabIndex = 7
         Me.btnBuscarTerminoPago.UseVisualStyleBackColor = False
         '
         'txtMoneda
@@ -106,7 +115,7 @@ Partial Class A_FacturaCompras
         Me.txtMoneda.Location = New System.Drawing.Point(306, 129)
         Me.txtMoneda.Name = "txtMoneda"
         Me.txtMoneda.Size = New System.Drawing.Size(84, 20)
-        Me.txtMoneda.TabIndex = 18
+        Me.txtMoneda.TabIndex = 9
         '
         'Label9
         '
@@ -123,7 +132,7 @@ Partial Class A_FacturaCompras
         Me.dtpVencimiento.Location = New System.Drawing.Point(109, 129)
         Me.dtpVencimiento.Name = "dtpVencimiento"
         Me.dtpVencimiento.Size = New System.Drawing.Size(84, 20)
-        Me.dtpVencimiento.TabIndex = 16
+        Me.dtpVencimiento.TabIndex = 5
         '
         'dtpTransaccion
         '
@@ -131,7 +140,7 @@ Partial Class A_FacturaCompras
         Me.dtpTransaccion.Location = New System.Drawing.Point(109, 103)
         Me.dtpTransaccion.Name = "dtpTransaccion"
         Me.dtpTransaccion.Size = New System.Drawing.Size(84, 20)
-        Me.dtpTransaccion.TabIndex = 15
+        Me.dtpTransaccion.TabIndex = 4
         '
         'Label8
         '
@@ -156,7 +165,7 @@ Partial Class A_FacturaCompras
         Me.txtTerminoPago.Location = New System.Drawing.Point(306, 77)
         Me.txtTerminoPago.Name = "txtTerminoPago"
         Me.txtTerminoPago.Size = New System.Drawing.Size(52, 20)
-        Me.txtTerminoPago.TabIndex = 11
+        Me.txtTerminoPago.TabIndex = 6
         '
         'Label6
         '
@@ -173,7 +182,7 @@ Partial Class A_FacturaCompras
         Me.dtpFechaFactura.Location = New System.Drawing.Point(109, 77)
         Me.dtpFechaFactura.Name = "dtpFechaFactura"
         Me.dtpFechaFactura.Size = New System.Drawing.Size(84, 20)
-        Me.dtpFechaFactura.TabIndex = 9
+        Me.dtpFechaFactura.TabIndex = 3
         '
         'Label5
         '
@@ -189,7 +198,7 @@ Partial Class A_FacturaCompras
         Me.txtNombreProveedor.Location = New System.Drawing.Point(109, 51)
         Me.txtNombreProveedor.Name = "txtNombreProveedor"
         Me.txtNombreProveedor.Size = New System.Drawing.Size(421, 20)
-        Me.txtNombreProveedor.TabIndex = 7
+        Me.txtNombreProveedor.TabIndex = 2
         '
         'Label4
         '
@@ -205,7 +214,7 @@ Partial Class A_FacturaCompras
         Me.txtTotal.Location = New System.Drawing.Point(306, 103)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.Size = New System.Drawing.Size(84, 20)
-        Me.txtTotal.TabIndex = 5
+        Me.txtTotal.TabIndex = 8
         '
         'Label3
         '
@@ -221,7 +230,7 @@ Partial Class A_FacturaCompras
         Me.txtCodProveedor.Location = New System.Drawing.Point(287, 25)
         Me.txtCodProveedor.Name = "txtCodProveedor"
         Me.txtCodProveedor.Size = New System.Drawing.Size(103, 20)
-        Me.txtCodProveedor.TabIndex = 3
+        Me.txtCodProveedor.TabIndex = 1
         '
         'Label2
         '
@@ -234,6 +243,7 @@ Partial Class A_FacturaCompras
         '
         'txtCodFactura
         '
+        Me.txtCodFactura.Enabled = False
         Me.txtCodFactura.Location = New System.Drawing.Point(110, 25)
         Me.txtCodFactura.Name = "txtCodFactura"
         Me.txtCodFactura.Size = New System.Drawing.Size(83, 20)
@@ -270,7 +280,7 @@ Partial Class A_FacturaCompras
         Me.dtDetalleFactura.Name = "dtDetalleFactura"
         Me.dtDetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.dtDetalleFactura.Size = New System.Drawing.Size(532, 285)
-        Me.dtDetalleFactura.TabIndex = 0
+        Me.dtDetalleFactura.TabIndex = 10
         '
         'Cuenta
         '
@@ -308,7 +318,7 @@ Partial Class A_FacturaCompras
         Me.btnGuardar.Location = New System.Drawing.Point(479, 496)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 44)
-        Me.btnGuardar.TabIndex = 2
+        Me.btnGuardar.TabIndex = 11
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
@@ -321,7 +331,7 @@ Partial Class A_FacturaCompras
         Me.btnModificar.Location = New System.Drawing.Point(398, 496)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 44)
-        Me.btnModificar.TabIndex = 3
+        Me.btnModificar.TabIndex = 13
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = False
         '
@@ -334,18 +344,9 @@ Partial Class A_FacturaCompras
         Me.btnCrear.Location = New System.Drawing.Point(317, 496)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 44)
-        Me.btnCrear.TabIndex = 4
+        Me.btnCrear.TabIndex = 12
         Me.btnCrear.Text = "Crear Nuevo"
         Me.btnCrear.UseVisualStyleBackColor = False
-        '
-        'lblFila
-        '
-        Me.lblFila.AutoSize = True
-        Me.lblFila.Location = New System.Drawing.Point(485, 136)
-        Me.lblFila.Name = "lblFila"
-        Me.lblFila.Size = New System.Drawing.Size(45, 13)
-        Me.lblFila.TabIndex = 20
-        Me.lblFila.Text = "Label10"
         '
         'A_FacturaCompras
         '

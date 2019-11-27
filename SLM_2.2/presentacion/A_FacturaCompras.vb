@@ -114,5 +114,38 @@
 
     End Sub
 
+    Private Sub txtCodProveedor_TextChanged(sender As Object, e As EventArgs) Handles txtCodProveedor.TextChanged
+        'Mostrar nombre de Proveedor ingresado
+        Try
+
+
+
+            If (txtNombreProveedor.Text <> "") Then
+                Try
+                    Dim Pro As New ClsProveedor
+                    With Pro
+                        .Cod_Proveedor = Convert.ToInt32(txtCodProveedor.Text)
+                    End With
+
+
+                    Dim dt As New DataTable
+                    dt = Pro.capturarNombreProveedor()
+
+                    Dim row As DataRow = dt.Rows(0)
+                    txtNombreProveedor.Text = row("nombreProveedor")
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                End Try
+
+
+            End If
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
 
 End Class
