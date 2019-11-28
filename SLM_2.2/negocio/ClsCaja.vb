@@ -33,7 +33,7 @@ Public Class ClsCaja
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarCaja_M"
+        sqlcom.CommandText = "M_slmInsertarCaja"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -74,7 +74,7 @@ Public Class ClsCaja
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarCaja_M"
+        sqlcom.CommandText = "M_slmModificarCaja"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -117,7 +117,7 @@ Public Class ClsCaja
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarCaja_M"
+            cmd.CommandText = "M_slmBuscarCaja"
             cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Nombre1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -139,7 +139,7 @@ Public Class ClsCaja
     '    Using cmd As New SqlCommand
     '        cmd.Connection = cn
     '        cmd.CommandType = CommandType.StoredProcedure
-    '        cmd.CommandText = "slmBuscarCajaCode_M"
+    '        cmd.CommandText = "M_slmBuscarCajaCode"
     '        cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Codigo1
     '        Using da As New SqlDataAdapter
     '            da.SelectCommand = cmd
@@ -158,7 +158,7 @@ Public Class ClsCaja
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmSeleccionarCaja_M", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarCaja", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

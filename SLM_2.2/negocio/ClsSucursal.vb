@@ -33,7 +33,7 @@ Public Class ClsSucursal
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarSucursal_M"
+        sqlcom.CommandText = "M_slmInsertarSucursal"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -74,7 +74,7 @@ Public Class ClsSucursal
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarSucursal_M"
+        sqlcom.CommandText = "M_slmModificarSucursal"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -117,7 +117,7 @@ Public Class ClsSucursal
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarSucursal_M"
+            cmd.CommandText = "M_slmBuscarSucursal"
             cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Nombre1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -139,7 +139,7 @@ Public Class ClsSucursal
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarSucursalCode_M"
+            cmd.CommandText = "M_slmBuscarSucursalCode"
             cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Codigo1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -158,7 +158,7 @@ Public Class ClsSucursal
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmSeleccionarSucursal_M", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarSucursal", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

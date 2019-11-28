@@ -62,7 +62,7 @@ Public Class ClsAccesoLaboratorio
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarAccesoLaboratorio_E"
+        sqlcom.CommandText = "E_slmInsertarAccesoLaboratorio"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "usuario" 'nombre campo en el procedimiento almacenado @
@@ -120,7 +120,7 @@ Public Class ClsAccesoLaboratorio
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarAccesoLaboratorio_E"
+        sqlcom.CommandText = "E_slmModificarAccesoLaboratorio"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "usuario" 'nombre campo en el procedimiento almacenado @
@@ -179,7 +179,7 @@ Public Class ClsAccesoLaboratorio
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarAccesoLaboratorio_E"
+            cmd.CommandText = "E_slmBuscarAccesoLaboratorio"
             cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -196,7 +196,7 @@ Public Class ClsAccesoLaboratorio
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmSeleccionarAccesoLaboratorio_E", cn)
+        Using da As New SqlDataAdapter("E_slmSeleccionarAccesoLaboratorio", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

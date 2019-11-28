@@ -205,7 +205,7 @@ Public Class ClsFactura
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarFactura_M"
+        sqlcom.CommandText = "M_slmInsertarFactura"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "numeroOficial" 'nombre campo en el procedimiento almacenado @
@@ -328,7 +328,7 @@ Public Class ClsFactura
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarFactura_M"
+        sqlcom.CommandText = "M_slmModificarFactura"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "numero" 'nombre campo en el procedimiento almacenado @
@@ -461,7 +461,7 @@ Public Class ClsFactura
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarFactura_M"
+            cmd.CommandText = "M_slmBuscarFactura"
             cmd.Parameters.Add("@numero", SqlDbType.Int).Value = numero_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -479,7 +479,7 @@ Public Class ClsFactura
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarFacturaNumero_M"
+            cmd.CommandText = "M_slmBuscarFacturaNumero"
             cmd.Parameters.Add("@numero", SqlDbType.Int).Value = numero_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -497,7 +497,7 @@ Public Class ClsFactura
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarFacturaCliente_M"
+            cmd.CommandText = "M_slmBuscarFacturaCliente"
             cmd.Parameters.Add("@nombreCliente", SqlDbType.VarChar).Value = nombreCliente_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -515,7 +515,7 @@ Public Class ClsFactura
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmEliminarFactura_M"
+        sqlcom.CommandText = "M_slmEliminarFactura"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "numero" 'nombre campo en el procedimiento almacenado @
@@ -549,7 +549,7 @@ Public Class ClsFactura
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarFacturaCode_M"
+            cmd.CommandText = "M_slmBuscarFacturaCode"
             cmd.Parameters.Add("@numeroOficial", SqlDbType.VarChar).Value = numeroOficial_
             cmd.Parameters.Add("@codigoCliente", SqlDbType.Int).Value = codigoCliente_
             cmd.Parameters.Add("@codigoRecepcionista", SqlDbType.VarChar).Value = codigoRecepcionista_
@@ -575,7 +575,7 @@ Public Class ClsFactura
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
-        Using da As New SqlDataAdapter("slmSeleccionarFactura_M", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarFactura", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

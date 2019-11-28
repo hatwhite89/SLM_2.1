@@ -69,7 +69,7 @@ Public Class ClsTerminoPago
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarTerminoPago_M"
+        sqlcom.CommandText = "M_slmInsertarTerminoPago"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -133,7 +133,7 @@ Public Class ClsTerminoPago
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarTerminoPago_M"
+        sqlcom.CommandText = "M_slmModificarTerminoPago"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -198,7 +198,7 @@ Public Class ClsTerminoPago
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarTerminoPago_M"
+            cmd.CommandText = "M_slmBuscarTerminoPago"
             cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = Descripcion1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -220,7 +220,7 @@ Public Class ClsTerminoPago
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarTerminoPagoCode_M"
+            cmd.CommandText = "M_slmBuscarTerminoPagoCode"
             cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Codigo1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -239,7 +239,7 @@ Public Class ClsTerminoPago
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmSeleccionarTerminoPago_M", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarTerminoPago", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -253,7 +253,7 @@ Public Class ClsTerminoPago
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmListarCodDescripTerminoPago_A", cn)
+        Using da As New SqlDataAdapter("M_slmListarCodDescripTerminoPago_A", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -269,7 +269,7 @@ Public Class ClsTerminoPago
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarTerminoPagoCod_A"
+            cmd.CommandText = "M_slmBuscarTerminoPagoCod_A"
             cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Codigo1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
