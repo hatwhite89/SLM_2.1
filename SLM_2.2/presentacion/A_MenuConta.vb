@@ -45,6 +45,6 @@
     End Sub
 
     Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
-        A_ListadoFacturaCompra.Show()
+        A_ListadoFacturaCompra.ShowDialog()
     End Sub
 End Class

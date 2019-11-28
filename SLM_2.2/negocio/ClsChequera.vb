@@ -75,7 +75,7 @@ Public Class ClsChequera
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarChequera_A"
+        sqlcom.CommandText = "A_slmInsertarChequera"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -129,7 +129,7 @@ Public Class ClsChequera
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmActualizarChequera_A"
+        sqlcom.CommandText = "A_slmActualizarChequera"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -184,7 +184,7 @@ Public Class ClsChequera
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmListarChequera_A", cn)
+        Using da As New SqlDataAdapter("A_slmListarChequera", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -198,7 +198,7 @@ Public Class ClsChequera
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmListarUltimaChequera_A", cn)
+        Using da As New SqlDataAdapter("A_slmListarUltimaChequera", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

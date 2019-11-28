@@ -71,7 +71,7 @@ Public Class ClsCategoriaProveedor
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarCategoriaProveedor_A"
+        sqlcom.CommandText = "A_slmInsertarCategoriaProveedor"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -122,7 +122,7 @@ Public Class ClsCategoriaProveedor
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmActualizarCategoriaProveedor_A"
+        sqlcom.CommandText = "A_slmActualizarCategoriaProveedor"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -176,7 +176,7 @@ Public Class ClsCategoriaProveedor
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmListarCategoriaProveedor_A", cn)
+        Using da As New SqlDataAdapter("A_slmListarCategoriaProveedor", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

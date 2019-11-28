@@ -159,7 +159,7 @@ Public Class ClsCheques
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarCheques_A"
+        sqlcom.CommandText = "A_slmInsertarCheques"
 
         'VARIABLES 
         sqlpar = New SqlParameter
