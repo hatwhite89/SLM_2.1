@@ -62,7 +62,6 @@ Public Class ClsFormaPago
             tipo = value
         End Set
     End Property
-
     'Banco
     Public Property Ban_co As String
         Get
