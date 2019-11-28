@@ -33,7 +33,7 @@ Public Class ClsGrupoExamen
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarGrupoExamen_E"
+        sqlcom.CommandText = "E_slmInsertarGrupoExamen"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -74,7 +74,7 @@ Public Class ClsGrupoExamen
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarGrupoExamen_E"
+        sqlcom.CommandText = "E_slmModificarGrupoExamen"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -117,7 +117,7 @@ Public Class ClsGrupoExamen
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarGrupoExamen_E"
+            cmd.CommandText = "E_slmBuscarGrupoExamen"
             cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Nombre_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -136,7 +136,7 @@ Public Class ClsGrupoExamen
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmSeleccionarGrupoExamen_E", cn)
+        Using da As New SqlDataAdapter("E_slmSeleccionarGrupoExamen", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

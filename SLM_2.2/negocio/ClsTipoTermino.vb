@@ -34,7 +34,7 @@ Public Class ClsTipoTermino
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarTipoTermino_M"
+        sqlcom.CommandText = "M_slmInsertarTipoTermino"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "descripcion" 'nombre campo en el procedimiento almacenado @
@@ -69,7 +69,7 @@ Public Class ClsTipoTermino
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarTipoTermino_M"
+        sqlcom.CommandText = "M_slmModificarTipoTermino"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -112,7 +112,7 @@ Public Class ClsTipoTermino
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarTipoTermino_M"
+            cmd.CommandText = "M_slmBuscarTipoTermino"
             cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = Descripcion1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -134,7 +134,7 @@ Public Class ClsTipoTermino
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarTipoTerminoCode_M"
+            cmd.CommandText = "M_slmBuscarTipoTerminoCode"
             cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Codigo1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -153,7 +153,7 @@ Public Class ClsTipoTermino
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmSeleccionarTipoTermino_M", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarTipoTermino", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

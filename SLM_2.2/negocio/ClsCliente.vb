@@ -197,7 +197,7 @@ Public Class ClsCliente
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarCliente_M"
+        sqlcom.CommandText = "M_slmInsertarCliente"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "scanId" 'nombre campo en el procedimiento almacenado @
@@ -321,7 +321,7 @@ Public Class ClsCliente
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarCliente_M"
+        sqlcom.CommandText = "M_slmModificarCliente"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -453,7 +453,7 @@ Public Class ClsCliente
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarClienteId_M"
+            cmd.CommandText = "M_slmBuscarClienteId"
             cmd.Parameters.Add("@identidad", SqlDbType.VarChar).Value = Identidad1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -475,7 +475,7 @@ Public Class ClsCliente
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarClienteName_M"
+            cmd.CommandText = "M_slmBuscarClienteName"
             cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = NombreCompleto1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -497,7 +497,7 @@ Public Class ClsCliente
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarClienteCode_M"
+            cmd.CommandText = "M_slmBuscarClienteCode"
             cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Codigo1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd

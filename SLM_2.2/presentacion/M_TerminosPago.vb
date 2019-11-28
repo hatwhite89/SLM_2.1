@@ -85,6 +85,7 @@
             Else
                 txtcodigoCtaVentas.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
             End If
+            cbxtipoPago.Enabled = True
 
             btnmodificar.Enabled = True
 

@@ -45,7 +45,7 @@ Public Class ClsObjeto
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarObjeto_M"
+        sqlcom.CommandText = "M_slmInsertarObjeto"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "objeto" 'nombre campo en el procedimiento almacenado @
@@ -93,7 +93,7 @@ Public Class ClsObjeto
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarObjeto_M"
+        sqlcom.CommandText = "M_slmModificarObjeto"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "objeto" 'nombre campo en el procedimiento almacenado @
@@ -142,7 +142,7 @@ Public Class ClsObjeto
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarObjeto_M"
+            cmd.CommandText = "M_slmBuscarObjeto"
             cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -162,7 +162,7 @@ Public Class ClsObjeto
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarObjetoCode_M"
+            cmd.CommandText = "M_slmBuscarObjetoCode"
             cmd.Parameters.Add("@objeto", SqlDbType.VarChar).Value = objeto_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -180,7 +180,7 @@ Public Class ClsObjeto
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmSeleccionarObjeto_M", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarObjeto", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -195,7 +195,7 @@ Public Class ClsObjeto
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmListarNombreObjetos_A", cn)
+        Using da As New SqlDataAdapter("M_slmListarNombreObjetos_A", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
