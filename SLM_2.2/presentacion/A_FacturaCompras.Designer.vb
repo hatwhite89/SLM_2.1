@@ -24,7 +24,6 @@ Partial Class A_FacturaCompras
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_FacturaCompras))
         Me.gbxInfoFact = New System.Windows.Forms.GroupBox()
-        Me.lblFila = New System.Windows.Forms.Label()
         Me.btnBuscarTerminoPago = New System.Windows.Forms.Button()
         Me.txtMoneda = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -55,6 +54,7 @@ Partial Class A_FacturaCompras
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.btnRegresar = New System.Windows.Forms.Button()
+        Me.lblFila = New System.Windows.Forms.Label()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,21 +82,12 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.Controls.Add(Me.Label2)
         Me.gbxInfoFact.Controls.Add(Me.txtCodFactura)
         Me.gbxInfoFact.Controls.Add(Me.Label1)
-        Me.gbxInfoFact.Location = New System.Drawing.Point(7, 12)
+        Me.gbxInfoFact.Location = New System.Drawing.Point(7, 5)
         Me.gbxInfoFact.Name = "gbxInfoFact"
         Me.gbxInfoFact.Size = New System.Drawing.Size(547, 162)
         Me.gbxInfoFact.TabIndex = 0
         Me.gbxInfoFact.TabStop = False
         Me.gbxInfoFact.Text = "Información de Factura"
-        '
-        'lblFila
-        '
-        Me.lblFila.AutoSize = True
-        Me.lblFila.Location = New System.Drawing.Point(485, 136)
-        Me.lblFila.Name = "lblFila"
-        Me.lblFila.Size = New System.Drawing.Size(45, 13)
-        Me.lblFila.TabIndex = 20
-        Me.lblFila.Text = "Label10"
         '
         'btnBuscarTerminoPago
         '
@@ -263,7 +254,7 @@ Partial Class A_FacturaCompras
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.dtDetalleFactura)
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 180)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 174)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(547, 310)
         Me.GroupBox1.TabIndex = 1
@@ -363,6 +354,16 @@ Partial Class A_FacturaCompras
         Me.btnRegresar.TabIndex = 14
         Me.btnRegresar.UseVisualStyleBackColor = False
         '
+        'lblFila
+        '
+        Me.lblFila.AutoSize = True
+        Me.lblFila.Location = New System.Drawing.Point(485, 136)
+        Me.lblFila.Name = "lblFila"
+        Me.lblFila.Size = New System.Drawing.Size(45, 13)
+        Me.lblFila.TabIndex = 20
+        Me.lblFila.Text = "Label10"
+        Me.lblFila.Visible = False
+        '
         'A_FacturaCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -413,11 +414,11 @@ Partial Class A_FacturaCompras
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnCrear As Button
     Friend WithEvents btnBuscarTerminoPago As Button
-    Friend WithEvents lblFila As Label
     Friend WithEvents Cuenta As DataGridViewTextBoxColumn
     Friend WithEvents Objetos As DataGridViewTextBoxColumn
     Friend WithEvents Descripción As DataGridViewTextBoxColumn
     Friend WithEvents Monto As DataGridViewTextBoxColumn
     Friend WithEvents Tipo_Stock As DataGridViewTextBoxColumn
     Friend WithEvents btnRegresar As Button
+    Friend WithEvents lblFila As Label
 End Class

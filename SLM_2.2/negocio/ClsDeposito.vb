@@ -151,7 +151,7 @@ Public Class ClsDeposito
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarDeposito"
+        sqlcom.CommandText = "A_slmInsertarDeposito"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -239,7 +239,7 @@ Public Class ClsDeposito
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmListarDepositos_A", cn)
+        Using da As New SqlDataAdapter("A_slmListarDepositos", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -256,7 +256,7 @@ Public Class ClsDeposito
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarDeposito_A"
+            cmd.CommandText = "A_slmBuscarDeposito"
             cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Cod
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -279,7 +279,7 @@ Public Class ClsDeposito
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarDepositoXTipoDepo_A"
+            cmd.CommandText = "A_slmBuscarDepositoXTipoDepo"
             cmd.Parameters.Add("@tipoDeposito", SqlDbType.VarChar).Value = Tipo_Deposito
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -301,7 +301,7 @@ Public Class ClsDeposito
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarDepositoXBanco_A"
+            cmd.CommandText = "A_slmBuscarDepositoXBanco"
             cmd.Parameters.Add("@banco", SqlDbType.VarChar).Value = Banc_o
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -323,7 +323,7 @@ Public Class ClsDeposito
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmActualizarDeposito_A"
+        sqlcom.CommandText = "A_slmActualizarDeposito"
 
         'VARIABLES
         sqlpar = New SqlParameter

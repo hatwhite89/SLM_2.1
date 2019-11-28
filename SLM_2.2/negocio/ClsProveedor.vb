@@ -111,7 +111,7 @@ Public Class ClsProveedor
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarProveedor_A"
+        sqlcom.CommandText = "A_slmInsertarProveedor"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -182,7 +182,7 @@ Public Class ClsProveedor
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmActualizarProveedor_A"
+        sqlcom.CommandText = "A_slmActualizarProveedor"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -256,7 +256,7 @@ Public Class ClsProveedor
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmListarProveedor_A", cn)
+        Using da As New SqlDataAdapter("A_slmListarProveedor", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -273,7 +273,7 @@ Public Class ClsProveedor
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarProveedor_A"
+            cmd.CommandText = "A_slmBuscarProveedor"
             cmd.Parameters.Add("@nombreProveedor", SqlDbType.VarChar).Value = Nombre_Proveedor
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -296,7 +296,7 @@ Public Class ClsProveedor
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmCapturarNombreProveedor_A"
+            cmd.CommandText = "A_slmCapturarNombreProveedor"
             cmd.Parameters.Add("@codProveedor", SqlDbType.Int).Value = Cod_Proveedor
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd

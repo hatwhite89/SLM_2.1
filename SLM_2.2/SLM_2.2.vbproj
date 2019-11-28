@@ -248,6 +248,12 @@
     <Compile Include="presentacion\eg_frmPaciente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\eg_frmSubArea.Designer.vb">
+      <DependentUpon>eg_frmSubArea.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\eg_frmSubArea.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\eg_frmUnidad.Designer.vb">
       <DependentUpon>eg_frmUnidad.vb</DependentUpon>
     </Compile>
@@ -528,6 +534,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\eg_frmParametroExamen.resx">
       <DependentUpon>eg_frmParametroExamen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\eg_frmSubArea.resx">
+      <DependentUpon>eg_frmSubArea.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\eg_frmUnidad.resx">
       <DependentUpon>eg_frmUnidad.vb</DependentUpon>

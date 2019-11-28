@@ -125,7 +125,7 @@ Public Class ClsFormaPago
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarFormaPago_A"
+        sqlcom.CommandText = "A_slmInsertarFormaPago"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -203,7 +203,7 @@ Public Class ClsFormaPago
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarCodigoFormaPago_A"
+            cmd.CommandText = "A_slmBuscarCodigoFormaPago"
             cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Cod
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -223,7 +223,7 @@ Public Class ClsFormaPago
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmListarFormasPago_A", cn)
+        Using da As New SqlDataAdapter("A_slmListarFormasPago", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -239,7 +239,7 @@ Public Class ClsFormaPago
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarCodFormaPago_A"
+            cmd.CommandText = "A_slmBuscarCodFormaPago"
             cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Cod
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -263,7 +263,7 @@ Public Class ClsFormaPago
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmEliminarFormaPago_A"
+            cmd.CommandText = "A_slmEliminarFormaPago"
             cmd.Parameters.Add("@codFormaPago", SqlDbType.VarChar).Value = Codigo_FormaPago
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -283,7 +283,7 @@ Public Class ClsFormaPago
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmInformacionFormaPago_A", cn)
+        Using da As New SqlDataAdapter("A_slmInformacionFormaPago", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -301,7 +301,7 @@ Public Class ClsFormaPago
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmActualizarFormaPago_A"
+        sqlcom.CommandText = "A_slmActualizarFormaPago"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -382,7 +382,7 @@ Public Class ClsFormaPago
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmMostrarFormaPago_A", cn)
+        Using da As New SqlDataAdapter("A_slmMostrarFormaPago", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

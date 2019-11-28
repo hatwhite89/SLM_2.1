@@ -224,4 +224,12 @@
 
 
     End Sub
+
+    Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
+
+        Dim Nueva As New A_FacturaCompras
+        Nueva.Show()
+        Me.Close()
+
+    End Sub
 End Class

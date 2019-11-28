@@ -63,7 +63,7 @@ Public Class ClsBancos
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarBanco_A"
+        sqlcom.CommandText = "A_slmInsertarBanco"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -111,7 +111,7 @@ Public Class ClsBancos
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmActualizarBanco_A"
+        sqlcom.CommandText = "A_slmActualizarBanco"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -161,7 +161,7 @@ Public Class ClsBancos
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmListarBancos_A", cn)
+        Using da As New SqlDataAdapter("A_slmListarBancos", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -178,7 +178,7 @@ Public Class ClsBancos
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarBanco_A"
+            cmd.CommandText = "A_slmBuscarBanco"
             cmd.Parameters.Add("@nombreBanco", SqlDbType.VarChar).Value = Nombre_Banco
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -198,7 +198,7 @@ Public Class ClsBancos
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmListarNombreBanco_A", cn)
+        Using da As New SqlDataAdapter("A_slmListarNombreBanco", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
