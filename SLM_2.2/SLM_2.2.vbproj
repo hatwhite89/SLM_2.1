@@ -119,6 +119,7 @@
     <Compile Include="negocio\ClsFacturaCompra.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
     <Compile Include="negocio\ClsItemExamen.vb" />
+    <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="presentacion\A_FacturaCompras.Designer.vb">
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
     </Compile>
@@ -236,6 +237,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="negocio\ClsChequera.vb" />
+    <Compile Include="presentacion\eg_frmListarSubAreas.Designer.vb">
+      <DependentUpon>eg_frmListarSubAreas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\eg_frmListarSubAreas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\eg_frmMenuLaboratorio.Designer.vb">
       <DependentUpon>eg_frmMenuLaboratorio.vb</DependentUpon>
     </Compile>
@@ -519,6 +526,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Proveedor.resx">
       <DependentUpon>A_Proveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\eg_frmListarSubAreas.resx">
+      <DependentUpon>eg_frmListarSubAreas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\eg_frmMenuLaboratorio.resx">
       <DependentUpon>eg_frmMenuLaboratorio.vb</DependentUpon>
