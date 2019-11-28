@@ -1,4 +1,4 @@
-﻿Public Class eg_frmUnidad
+﻿Public Class E_Unidad
     Private Sub M_TipoObjeto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objTipoObj As New ClsTipoObjeto
         Dim dv As DataView = objTipoObj.SeleccionarTipoObjeto.DefaultView

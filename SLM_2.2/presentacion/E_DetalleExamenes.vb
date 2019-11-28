@@ -126,7 +126,7 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        eg_frmGrupoExamen.Show()
+        E_GrupoExamen.Show()
     End Sub
 
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click

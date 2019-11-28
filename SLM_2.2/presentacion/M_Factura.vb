@@ -166,6 +166,7 @@
                 dt = objSuc.BuscarSucursalCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreSucursal.Text = CStr(row("nombre"))
+                txtcodigoSucursal.Text = UCase(txtcodigoSucursal.Text)
             Catch ex As Exception
                 'MsgBox("No existe el código de la sucursal.", MsgBoxStyle.Critical, "Validación")
             End Try

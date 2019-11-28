@@ -1,4 +1,4 @@
-﻿Public Class eg_frmPaciente
+﻿Public Class E_Paciente
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
     End Sub
