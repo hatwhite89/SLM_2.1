@@ -214,7 +214,13 @@
 
     Private Sub txtContado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtContado.KeyPress
         'Solo acepta numeros.
-        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
             e.Handled = True
         End If
     End Sub
@@ -225,4 +231,7 @@
         End If
     End Sub
 
+    Private Sub txtContado_TextChanged(sender As Object, e As EventArgs) Handles txtContado.TextChanged
+
+    End Sub
 End Class

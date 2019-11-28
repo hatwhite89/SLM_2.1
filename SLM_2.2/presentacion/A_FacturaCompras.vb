@@ -95,32 +95,21 @@
             dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
             dtDetalleFactura.Rows.Insert(e.RowIndex.ToString, New String() {Cuenta.Cuent_a, " ", nombre})
 
+
+
         Catch ex As Exception
 
         End Try
 
     End Sub
 
-    Private Sub dtDetalleFactura_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellClick
-        'Capturar numero de fila seleccionada
-        lblFila.Text = e.RowIndex
 
-        'Listar objetos en Datagrid
-        If e.ColumnIndex = 1 Then
-
-            A_ListarObjetos.Show()
-
-        End If
-
-    End Sub
 
     Private Sub txtCodProveedor_TextChanged(sender As Object, e As EventArgs) Handles txtCodProveedor.TextChanged
         'Mostrar nombre de Proveedor ingresado
         Try
 
-
-
-            If (txtNombreProveedor.Text <> "") Then
+            If (txtCodProveedor.Text <> "") Then
                 Try
                     Dim Pro As New ClsProveedor
                     With Pro
@@ -148,4 +137,91 @@
 
     End Sub
 
+    Private Sub dtDetalleFactura_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dtDetalleFactura.CellMouseDoubleClick
+        'Abrir formulario con doble click en celda Objetos
+
+        'Capturar numero de fila seleccionada
+        lblFila.Text = e.RowIndex
+
+        'Listar objetos en Datagrid
+        If e.ColumnIndex = 1 Then
+
+            A_ListarObjetos.Show()
+
+        End If
+
+
+
+    End Sub
+
+    Private Sub btnRegresar_Click(sender As Object, e As EventArgs) Handles btnRegresar.Click
+        Me.Close()
+        A_ListadoFacturaCompra.ShowDialog()
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+
+        Try
+            'Registrar nueva factura de compra
+            With FacCompra
+
+                'variables
+                .Cod_Factura = txtCodFactura.Text
+                .Cod_Proveedor = txtCodProveedor.Text
+                .Nombre_Proveedor = txtNombreProveedor.Text
+                .Fecha_Factura = dtpFechaFactura.Value
+                .Fecha_Transaccion = dtpTransaccion.Value
+                .Fecha_Vencimiento = dtpVencimiento.Value
+                .Moned_a = txtMoneda.Text
+                .Terminos_Pago = txtTerminoPago.Text
+                .Tota_l = txtTotal.Text
+                'registro de  factura compra
+                .modificarFacturaCompra()
+
+                'Registro de detalle de factura
+                Dim dt As New DataTable
+                'Capturar código de la factura creada
+                dt = FacCompra.capturarCodFacturaCompra
+                Dim row As DataRow = dt.Rows(0)
+                'Mostrar codigo en textbox 
+                txtCodFactura.Text = CStr(row("codFactura"))
+                Dim fila As Integer
+
+                'Recorrer filas para ingreso de detalle de factura
+                For fila = 0 To dtDetalleFactura.Rows.Count - 2
+
+                    'Insertar detalle de compra
+                    DetalleFacCompra.Cod_Factura = Convert.ToInt32(txtCodFactura.Text)
+                    DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(0).Value())
+                    DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(2).Value()
+                    DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(3).Value()))
+                    Dim stock As String = dtDetalleFactura.Rows(fila).Cells(4).Value()
+                    DetalleFacCompra.Tipo_Stock = stock
+                    DetalleFacCompra.Objeto_s = dtDetalleFactura.Rows(fila).Cells(1).Value()
+
+                    'Funcion de registro de detalle
+                    DetalleFacCompra.registrarDetalleFactura()
+                Next
+
+                MessageBox.Show("La factura se modifico exitosamente.")
+
+            End With
+
+            'Cerrar Formulario de creacion de facturas
+            Me.Close()
+
+        Catch ex As Exception
+            MessageBox.Show("Error al guardar la factura de compra. Detalles: " + ex.Message)
+        End Try
+
+        Me.Close()
+        A_ListadoFacturaCompra.ShowDialog()
+
+
+
+
+
+
+
+    End Sub
 End Class
