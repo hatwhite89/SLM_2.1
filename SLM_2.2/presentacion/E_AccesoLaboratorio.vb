@@ -1,4 +1,4 @@
-﻿Public Class eg_frmAccesoLaboratorio
+﻿Public Class E_AccesoLaboratorio
     Private Sub M_AccesoLaboratorio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objAccLab As New ClsAccesoLaboratorio
         Dim dv As DataView = objAccLab.SeleccionarAccesoLaboratorio.DefaultView

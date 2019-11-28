@@ -1,8 +1,8 @@
-﻿Public Class eg_frmMenuLaboratorio
+﻿Public Class E_MenuLaboratorio
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        eg_frmPaciente.MdiParent = Me
+        E_Paciente.MdiParent = Me
 
-        eg_frmPaciente.Show()
+        E_Paciente.Show()
 
     End Sub
 

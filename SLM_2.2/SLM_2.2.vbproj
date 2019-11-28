@@ -236,28 +236,28 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="negocio\ClsChequera.vb" />
-    <Compile Include="presentacion\eg_frmMenuLaboratorio.Designer.vb">
-      <DependentUpon>eg_frmMenuLaboratorio.vb</DependentUpon>
+    <Compile Include="presentacion\E_MenuLaboratorio.Designer.vb">
+      <DependentUpon>E_MenuLaboratorio.vb</DependentUpon>
     </Compile>
-    <Compile Include="presentacion\eg_frmMenuLaboratorio.vb">
+    <Compile Include="presentacion\E_MenuLaboratorio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\eg_frmPaciente.Designer.vb">
-      <DependentUpon>eg_frmPaciente.vb</DependentUpon>
+    <Compile Include="presentacion\E_Paciente.Designer.vb">
+      <DependentUpon>E_Paciente.vb</DependentUpon>
     </Compile>
-    <Compile Include="presentacion\eg_frmPaciente.vb">
+    <Compile Include="presentacion\E_Paciente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\eg_frmUnidad.Designer.vb">
-      <DependentUpon>eg_frmUnidad.vb</DependentUpon>
+    <Compile Include="presentacion\E_Unidad.Designer.vb">
+      <DependentUpon>E_Unidad.vb</DependentUpon>
     </Compile>
-    <Compile Include="presentacion\eg_frmUnidad.vb">
+    <Compile Include="presentacion\E_Unidad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\eg_frmParametroExamen.Designer.vb">
-      <DependentUpon>eg_frmParametroExamen.vb</DependentUpon>
+    <Compile Include="presentacion\E_ParametroExamen.Designer.vb">
+      <DependentUpon>E_ParametroExamen.vb</DependentUpon>
     </Compile>
-    <Compile Include="presentacion\eg_frmParametroExamen.vb">
+    <Compile Include="presentacion\E_ParametroExamen.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_DetalleExamenes.Designer.vb">
@@ -284,16 +284,16 @@
     <Compile Include="presentacion\A_MenuConta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\eg_frmAccesoLaboratorio.Designer.vb">
-      <DependentUpon>eg_frmAccesoLaboratorio.vb</DependentUpon>
+    <Compile Include="presentacion\E_AccesoLaboratorio.Designer.vb">
+      <DependentUpon>E_AccesoLaboratorio.vb</DependentUpon>
     </Compile>
-    <Compile Include="presentacion\eg_frmAccesoLaboratorio.vb">
+    <Compile Include="presentacion\E_AccesoLaboratorio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\eg_frmAreaLaboratorio.Designer.vb">
-      <DependentUpon>eg_frmAreaLaboratorio.vb</DependentUpon>
+    <Compile Include="presentacion\E_AreaLaboratorio.Designer.vb">
+      <DependentUpon>E_AreaLaboratorio.vb</DependentUpon>
     </Compile>
-    <Compile Include="presentacion\eg_frmAreaLaboratorio.vb">
+    <Compile Include="presentacion\E_AreaLaboratorio.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_BuscarCotizacion.Designer.vb">
@@ -356,10 +356,10 @@
     <Compile Include="presentacion\M_Especialidad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\eg_frmGrupoExamen.Designer.vb">
-      <DependentUpon>eg_frmGrupoExamen.vb</DependentUpon>
+    <Compile Include="presentacion\E_GrupoExamen.Designer.vb">
+      <DependentUpon>E_GrupoExamen.vb</DependentUpon>
     </Compile>
-    <Compile Include="presentacion\eg_frmGrupoExamen.vb">
+    <Compile Include="presentacion\E_GrupoExamen.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_EstacionTrabajo.Designer.vb">
@@ -514,11 +514,11 @@
     <EmbeddedResource Include="presentacion\A_Proveedor.resx">
       <DependentUpon>A_Proveedor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\eg_frmMenuLaboratorio.resx">
-      <DependentUpon>eg_frmMenuLaboratorio.vb</DependentUpon>
+    <EmbeddedResource Include="presentacion\E_MenuLaboratorio.resx">
+      <DependentUpon>E_MenuLaboratorio.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\eg_frmPaciente.resx">
-      <DependentUpon>eg_frmPaciente.vb</DependentUpon>
+    <EmbeddedResource Include="presentacion\E_Paciente.resx">
+      <DependentUpon>E_Paciente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_FormaPago.resx">
       <DependentUpon>A_FormaPago.vb</DependentUpon>
@@ -526,20 +526,20 @@
     <EmbeddedResource Include="presentacion\A_MenuConta.resx">
       <DependentUpon>A_MenuConta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\eg_frmParametroExamen.resx">
-      <DependentUpon>eg_frmParametroExamen.vb</DependentUpon>
+    <EmbeddedResource Include="presentacion\E_ParametroExamen.resx">
+      <DependentUpon>E_ParametroExamen.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\eg_frmUnidad.resx">
-      <DependentUpon>eg_frmUnidad.vb</DependentUpon>
+    <EmbeddedResource Include="presentacion\E_Unidad.resx">
+      <DependentUpon>E_Unidad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_DetalleExamenes.resx">
       <DependentUpon>E_DetalleExamenes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\eg_frmAccesoLaboratorio.resx">
-      <DependentUpon>eg_frmAccesoLaboratorio.vb</DependentUpon>
+    <EmbeddedResource Include="presentacion\E_AccesoLaboratorio.resx">
+      <DependentUpon>E_AccesoLaboratorio.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\eg_frmAreaLaboratorio.resx">
-      <DependentUpon>eg_frmAreaLaboratorio.vb</DependentUpon>
+    <EmbeddedResource Include="presentacion\E_AreaLaboratorio.resx">
+      <DependentUpon>E_AreaLaboratorio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_BuscarCotizacion.resx">
       <DependentUpon>M_BuscarCotizacion.vb</DependentUpon>
@@ -571,8 +571,8 @@
     <EmbeddedResource Include="presentacion\M_Especialidad.resx">
       <DependentUpon>M_Especialidad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\eg_frmGrupoExamen.resx">
-      <DependentUpon>eg_frmGrupoExamen.vb</DependentUpon>
+    <EmbeddedResource Include="presentacion\E_GrupoExamen.resx">
+      <DependentUpon>E_GrupoExamen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_EstacionTrabajo.resx">
       <DependentUpon>M_EstacionTrabajo.vb</DependentUpon>

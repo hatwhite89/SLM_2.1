@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class eg_frmParametroExamen
+Partial Class E_ParametroExamen
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class eg_frmParametroExamen
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(eg_frmParametroExamen))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_ParametroExamen))
         Me.cbxNoCalc = New System.Windows.Forms.CheckBox()
         Me.txtcomentarioUnidad = New System.Windows.Forms.TextBox()
         Me.lbltipo = New System.Windows.Forms.Label()
@@ -34,14 +34,13 @@ Partial Class eg_frmParametroExamen
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtBreve = New System.Windows.Forms.TextBox()
-        Me.dgbtabla = New System.Windows.Forms.DataGridView()
-        Me.posibleResult = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.valPorDefecto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cbxRequiereDet = New System.Windows.Forms.CheckBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.btncancelar = New System.Windows.Forms.Button()
+        Me.dgbtabla = New System.Windows.Forms.DataGridView()
+        Me.posiblesResultados = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -145,37 +144,6 @@ Partial Class eg_frmParametroExamen
         Me.txtBreve.TabIndex = 133
         Me.txtBreve.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'dgbtabla
-        '
-        Me.dgbtabla.AllowUserToAddRows = False
-        Me.dgbtabla.AllowUserToDeleteRows = False
-        Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.posibleResult, Me.valPorDefecto})
-        Me.dgbtabla.Location = New System.Drawing.Point(31, 179)
-        Me.dgbtabla.Name = "dgbtabla"
-        Me.dgbtabla.ReadOnly = True
-        Me.dgbtabla.RowHeadersWidth = 51
-        Me.dgbtabla.RowTemplate.Height = 24
-        Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(615, 356)
-        Me.dgbtabla.TabIndex = 134
-        '
-        'posibleResult
-        '
-        Me.posibleResult.HeaderText = "Posible Resultados"
-        Me.posibleResult.MinimumWidth = 6
-        Me.posibleResult.Name = "posibleResult"
-        Me.posibleResult.ReadOnly = True
-        Me.posibleResult.Width = 300
-        '
-        'valPorDefecto
-        '
-        Me.valPorDefecto.HeaderText = "Val. Por Defecto"
-        Me.valPorDefecto.MinimumWidth = 6
-        Me.valPorDefecto.Name = "valPorDefecto"
-        Me.valPorDefecto.ReadOnly = True
-        Me.valPorDefecto.Width = 125
-        '
         'cbxRequiereDet
         '
         Me.cbxRequiereDet.AutoSize = True
@@ -238,18 +206,37 @@ Partial Class eg_frmParametroExamen
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
         '
+        'dgbtabla
+        '
+        Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.posiblesResultados})
+        Me.dgbtabla.Location = New System.Drawing.Point(31, 174)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgbtabla.Name = "dgbtabla"
+        Me.dgbtabla.RowHeadersWidth = 51
+        Me.dgbtabla.RowTemplate.Height = 24
+        Me.dgbtabla.Size = New System.Drawing.Size(615, 358)
+        Me.dgbtabla.TabIndex = 140
+        '
+        'posiblesResultados
+        '
+        Me.posiblesResultados.HeaderText = "Posibles Resultados"
+        Me.posiblesResultados.MinimumWidth = 6
+        Me.posiblesResultados.Name = "posiblesResultados"
+        Me.posiblesResultados.Width = 206
+        '
         'eg_frmParametroExamen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(681, 622)
+        Me.Controls.Add(Me.dgbtabla)
         Me.Controls.Add(Me.btnmodificar)
         Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.btncancelar)
         Me.Controls.Add(Me.cbxRequiereDet)
-        Me.Controls.Add(Me.dgbtabla)
         Me.Controls.Add(Me.txtBreve)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lbldireccion1)
@@ -280,12 +267,11 @@ Partial Class eg_frmParametroExamen
     Friend WithEvents txtcodigo As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtBreve As TextBox
-    Friend WithEvents dgbtabla As DataGridView
-    Friend WithEvents posibleResult As DataGridViewTextBoxColumn
-    Friend WithEvents valPorDefecto As DataGridViewTextBoxColumn
     Friend WithEvents cbxRequiereDet As CheckBox
     Friend WithEvents btnmodificar As Button
     Friend WithEvents btnnuevo As Button
     Friend WithEvents btnguardar As Button
     Friend WithEvents btncancelar As Button
+    Friend WithEvents dgbtabla As DataGridView
+    Friend WithEvents posiblesResultados As DataGridViewTextBoxColumn
 End Class
