@@ -240,5 +240,6 @@
         cmb.Items.Add("Comprado")
         cmb.Items.Add("Consignado")
         cmb.Name = "cbx"
+
     End Sub
 End Class
