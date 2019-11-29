@@ -2,9 +2,9 @@
 
 Public Class ClsFactura
 
-    Dim numero, codigoCliente, codigoMedico, codigoSede As Integer
-    Dim numeroOficial, codigoRecepcionista, codigoCajero, codigoTerminoPago, nombreCliente As String
-    Dim codigoCategoria, codigoSucursal, codigoConvenio, numeroPoliza, codigoTerminal As String
+    Dim numero, codigoCliente, codigoMedico, codigoSede, codigoRecepcionista, codigoCajero, codigoTerminoPago As Integer
+    Dim numeroOficial, numeroPoliza, nombreCliente As String
+    Dim codigoSucursal, codigoConvenio, codigoTerminal As Integer
     Dim fechaFactura, fechaVto As Date
     Dim ok, enviarEmail, entregaPaciente, entregaMedico As Boolean
     Dim pagoPaciente, vuelto, total As Double
@@ -36,14 +36,6 @@ Public Class ClsFactura
             codigoMedico = value
         End Set
     End Property
-    Public Property codigoCategoria1 As String
-        Get
-            Return codigoCategoria
-        End Get
-        Set(value As String)
-            codigoCategoria = value
-        End Set
-    End Property
     Public Property nombreCliente_ As String
         Get
             Return nombreCliente
@@ -52,11 +44,11 @@ Public Class ClsFactura
             nombreCliente = value
         End Set
     End Property
-    Public Property codigoTerminoPago1 As String
+    Public Property codigoTerminoPago1 As Integer
         Get
             Return codigoTerminoPago
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoTerminoPago = value
         End Set
     End Property
@@ -68,19 +60,19 @@ Public Class ClsFactura
             numeroOficial = value
         End Set
     End Property
-    Public Property codigoRecepcionista_ As String
+    Public Property codigoRecepcionista_ As Integer
         Get
             Return codigoRecepcionista
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoRecepcionista = value
         End Set
     End Property
-    Public Property codigoCajero_ As String
+    Public Property codigoCajero_ As Integer
         Get
             Return codigoCajero
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoCajero = value
         End Set
     End Property
@@ -92,19 +84,19 @@ Public Class ClsFactura
             codigoSede = value
         End Set
     End Property
-    Public Property codigoSucursal_ As String
+    Public Property codigoSucursal_ As Integer
         Get
             Return codigoSucursal
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoSucursal = value
         End Set
     End Property
-    Public Property codigoConvenio_ As String
+    Public Property codigoConvenio_ As Integer
         Get
             Return codigoConvenio
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoConvenio = value
         End Set
     End Property
@@ -116,11 +108,11 @@ Public Class ClsFactura
             numeroPoliza = value
         End Set
     End Property
-    Public Property codigoTerminal_ As String
+    Public Property codigoTerminal_ As Integer
         Get
             Return codigoTerminal
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoTerminal = value
         End Set
     End Property
@@ -487,13 +479,13 @@ Public Class ClsFactura
             cmd.CommandText = "M_slmBuscarFacturaCode"
             cmd.Parameters.Add("@numeroOficial", SqlDbType.VarChar).Value = numeroOficial_
             cmd.Parameters.Add("@codigoCliente", SqlDbType.Int).Value = codigoCliente_
-            cmd.Parameters.Add("@codigoRecepcionista", SqlDbType.VarChar).Value = codigoRecepcionista_
+            cmd.Parameters.Add("@codigoRecepcionista", SqlDbType.Int).Value = codigoRecepcionista_
             cmd.Parameters.Add("@codigoMedico", SqlDbType.Int).Value = codigoMedico_
-            cmd.Parameters.Add("@codigoCajero", SqlDbType.VarChar).Value = codigoCajero_
-            cmd.Parameters.Add("@codigoTerminoPago", SqlDbType.VarChar).Value = codigoTerminoPago1
+            cmd.Parameters.Add("@codigoCajero", SqlDbType.Int).Value = codigoCajero_
+            cmd.Parameters.Add("@codigoTerminoPago", SqlDbType.Int).Value = codigoTerminoPago1
             cmd.Parameters.Add("@codigoSede", SqlDbType.Int).Value = codigoSede_
             cmd.Parameters.Add("@fechaVto", SqlDbType.DateTime).Value = fechaVto_
-            cmd.Parameters.Add("@codigoSucursal", SqlDbType.VarChar).Value = codigoSucursal_
+            cmd.Parameters.Add("@codigoSucursal", SqlDbType.Int).Value = codigoSucursal_
             cmd.Parameters.Add("@pagoPaciente", SqlDbType.Float).Value = pagoPaciente_
             cmd.Parameters.Add("@vuelto", SqlDbType.Float).Value = vuelto_
             cmd.Parameters.Add("@total", SqlDbType.Float).Value = total_

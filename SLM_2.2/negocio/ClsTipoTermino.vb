@@ -156,6 +156,7 @@ Public Class ClsTipoTermino
         Using da As New SqlDataAdapter("M_slmSeleccionarTipoTermino", cn)
             Dim dt As New DataTable
             da.Fill(dt)
+            objCon.cerrarConexion()
             Return dt
         End Using
     End Function
