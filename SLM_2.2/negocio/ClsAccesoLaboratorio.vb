@@ -2,11 +2,20 @@
 
 Public Class ClsAccesoLaboratorio
     Dim usuario, nombre As String
+    Dim codigo As Integer
     Dim ingresarResultado, objetarResultado, confirmarResultado, validarResultado As Boolean
     'Constructor
     Public Sub New()
 
     End Sub
+    Public Property codigo_ As Integer
+        Get
+            Return codigo
+        End Get
+        Set(value As Integer)
+            codigo = value
+        End Set
+    End Property
     Public Property usuario_ As String
         Get
             Return usuario
@@ -121,6 +130,11 @@ Public Class ClsAccesoLaboratorio
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
         sqlcom.CommandText = "E_slmModificarAccesoLaboratorio"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigo_
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "usuario" 'nombre campo en el procedimiento almacenado @

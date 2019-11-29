@@ -23,6 +23,7 @@ Partial Class E_AccesoLaboratorio
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxobjeto = New System.Windows.Forms.GroupBox()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.cbxValidar = New System.Windows.Forms.CheckBox()
         Me.cbxConfirmar = New System.Windows.Forms.CheckBox()
         Me.cbxObjetar = New System.Windows.Forms.CheckBox()
@@ -34,12 +35,12 @@ Partial Class E_AccesoLaboratorio
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.lblnombre = New System.Windows.Forms.Label()
-        Me.txtcodigo = New System.Windows.Forms.TextBox()
+        Me.txtusuario = New System.Windows.Forms.TextBox()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
-        Me.txtcodigoB = New System.Windows.Forms.TextBox()
+        Me.txtusuarioB = New System.Windows.Forms.TextBox()
         Me.lblcodigoB = New System.Windows.Forms.Label()
         Me.gbxobjeto.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
@@ -48,6 +49,7 @@ Partial Class E_AccesoLaboratorio
         '
         'gbxobjeto
         '
+        Me.gbxobjeto.Controls.Add(Me.lblcode)
         Me.gbxobjeto.Controls.Add(Me.cbxValidar)
         Me.gbxobjeto.Controls.Add(Me.cbxConfirmar)
         Me.gbxobjeto.Controls.Add(Me.cbxObjetar)
@@ -59,13 +61,22 @@ Partial Class E_AccesoLaboratorio
         Me.gbxobjeto.Controls.Add(Me.lblcodigo)
         Me.gbxobjeto.Controls.Add(Me.btncancelar)
         Me.gbxobjeto.Controls.Add(Me.lblnombre)
-        Me.gbxobjeto.Controls.Add(Me.txtcodigo)
+        Me.gbxobjeto.Controls.Add(Me.txtusuario)
         Me.gbxobjeto.Location = New System.Drawing.Point(23, 25)
         Me.gbxobjeto.Name = "gbxobjeto"
         Me.gbxobjeto.Size = New System.Drawing.Size(613, 208)
         Me.gbxobjeto.TabIndex = 119
         Me.gbxobjeto.TabStop = False
         Me.gbxobjeto.Text = "REGISTRAR ACCESO LABORATORIO"
+        '
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(447, 22)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 122
+        Me.lblcode.Visible = False
         '
         'cbxValidar
         '
@@ -159,9 +170,9 @@ Partial Class E_AccesoLaboratorio
         Me.lblcodigo.AutoSize = True
         Me.lblcodigo.Location = New System.Drawing.Point(103, 26)
         Me.lblcodigo.Name = "lblcodigo"
-        Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodigo.Size = New System.Drawing.Size(57, 17)
         Me.lblcodigo.TabIndex = 41
-        Me.lblcodigo.Text = "Código"
+        Me.lblcodigo.Text = "Usuario"
         '
         'btncancelar
         '
@@ -185,20 +196,20 @@ Partial Class E_AccesoLaboratorio
         Me.lblnombre.TabIndex = 39
         Me.lblnombre.Text = "Nombre"
         '
-        'txtcodigo
+        'txtusuario
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(174, 23)
-        Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(183, 22)
-        Me.txtcodigo.TabIndex = 40
-        Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtusuario.Location = New System.Drawing.Point(174, 23)
+        Me.txtusuario.Name = "txtusuario"
+        Me.txtusuario.Size = New System.Drawing.Size(183, 22)
+        Me.txtusuario.TabIndex = 40
+        Me.txtusuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'gbxbusqueda
         '
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
-        Me.gbxbusqueda.Controls.Add(Me.txtcodigoB)
+        Me.gbxbusqueda.Controls.Add(Me.txtusuarioB)
         Me.gbxbusqueda.Controls.Add(Me.lblcodigoB)
         Me.gbxbusqueda.Location = New System.Drawing.Point(23, 239)
         Me.gbxbusqueda.Name = "gbxbusqueda"
@@ -239,31 +250,32 @@ Partial Class E_AccesoLaboratorio
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL DE ACCESO LABORATORIO"
         '
-        'txtcodigoB
+        'txtusuarioB
         '
-        Me.txtcodigoB.Location = New System.Drawing.Point(235, 26)
-        Me.txtcodigoB.Name = "txtcodigoB"
-        Me.txtcodigoB.Size = New System.Drawing.Size(192, 22)
-        Me.txtcodigoB.TabIndex = 115
+        Me.txtusuarioB.Location = New System.Drawing.Point(235, 26)
+        Me.txtusuarioB.Name = "txtusuarioB"
+        Me.txtusuarioB.Size = New System.Drawing.Size(192, 22)
+        Me.txtusuarioB.TabIndex = 115
         '
         'lblcodigoB
         '
         Me.lblcodigoB.AutoSize = True
         Me.lblcodigoB.Location = New System.Drawing.Point(171, 28)
         Me.lblcodigoB.Name = "lblcodigoB"
-        Me.lblcodigoB.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodigoB.Size = New System.Drawing.Size(57, 17)
         Me.lblcodigoB.TabIndex = 114
-        Me.lblcodigoB.Text = "Código"
+        Me.lblcodigoB.Text = "Usuario"
         '
-        'M_AccesoLaboratorio
+        'E_AccesoLaboratorio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(669, 622)
         Me.Controls.Add(Me.gbxobjeto)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
-        Me.Name = "M_AccesoLaboratorio"
+        Me.Name = "E_AccesoLaboratorio"
         Me.Text = "Acceso Laboratorio"
         Me.gbxobjeto.ResumeLayout(False)
         Me.gbxobjeto.PerformLayout()
@@ -286,11 +298,12 @@ Partial Class E_AccesoLaboratorio
     Friend WithEvents lblcodigo As Label
     Friend WithEvents btncancelar As Button
     Friend WithEvents lblnombre As Label
-    Friend WithEvents txtcodigo As TextBox
+    Friend WithEvents txtusuario As TextBox
     Friend WithEvents gbxbusqueda As GroupBox
     Friend WithEvents lblcantidad As Label
     Friend WithEvents dgbtabla As DataGridView
     Friend WithEvents lbltotal As Label
-    Friend WithEvents txtcodigoB As TextBox
+    Friend WithEvents txtusuarioB As TextBox
     Friend WithEvents lblcodigoB As Label
+    Friend WithEvents lblcode As Label
 End Class

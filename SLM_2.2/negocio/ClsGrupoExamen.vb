@@ -1,18 +1,26 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ClsGrupoExamen
-    Dim codigo, nombre As String
+    Dim codigoGrupoExamen, nombre As String
+    Dim codigo As Integer
     'Constructor
     Public Sub New()
 
     End Sub
-
-    Public Property Codigo_ As String
+    Public Property codigo_ As Integer
         Get
             Return codigo
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigo = value
+        End Set
+    End Property
+    Public Property codigoGrupoExamen_ As String
+        Get
+            Return codigoGrupoExamen
+        End Get
+        Set(value As String)
+            codigoGrupoExamen = value
         End Set
     End Property
 
@@ -36,16 +44,14 @@ Public Class ClsGrupoExamen
         sqlcom.CommandText = "E_slmInsertarGrupoExamen"
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = Codigo_
+        sqlpar.ParameterName = "codigoGrupoExamen" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoGrupoExamen_
         sqlcom.Parameters.Add(sqlpar)
-
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "nombre" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = Nombre_
         sqlcom.Parameters.Add(sqlpar)
-
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -79,6 +85,11 @@ Public Class ClsGrupoExamen
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = Codigo_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoGrupoExamen" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoGrupoExamen_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

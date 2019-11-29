@@ -38,6 +38,7 @@ Partial Class M_TerminosPago
         Me.txtcodigoCtaVentas = New System.Windows.Forms.TextBox()
         Me.rtxtdescripcion = New System.Windows.Forms.RichTextBox()
         Me.gbxterminosPago = New System.Windows.Forms.GroupBox()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.txtnombreCtaVentas = New System.Windows.Forms.TextBox()
         Me.txtnombreCtaContado = New System.Windows.Forms.TextBox()
         Me.btntipoPago = New System.Windows.Forms.Button()
@@ -52,7 +53,6 @@ Partial Class M_TerminosPago
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
         Me.lblnombreB = New System.Windows.Forms.Label()
-        Me.btnbuscar = New System.Windows.Forms.Button()
         Me.gbxterminosPago.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -197,6 +197,7 @@ Partial Class M_TerminosPago
         '
         'gbxterminosPago
         '
+        Me.gbxterminosPago.Controls.Add(Me.lblcode)
         Me.gbxterminosPago.Controls.Add(Me.txtnombreCtaVentas)
         Me.gbxterminosPago.Controls.Add(Me.txtnombreCtaContado)
         Me.gbxterminosPago.Controls.Add(Me.btntipoPago)
@@ -224,6 +225,15 @@ Partial Class M_TerminosPago
         Me.gbxterminosPago.TabIndex = 126
         Me.gbxterminosPago.TabStop = False
         Me.gbxterminosPago.Text = "REGISTRAR TÉRMINO DE PAGO"
+        '
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(401, 23)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 128
+        Me.lblcode.Visible = False
         '
         'txtnombreCtaVentas
         '
@@ -315,7 +325,6 @@ Partial Class M_TerminosPago
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtdescripcionB)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
-        Me.gbxbusqueda.Controls.Add(Me.btnbuscar)
         Me.gbxbusqueda.Location = New System.Drawing.Point(18, 235)
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Size = New System.Drawing.Size(613, 375)
@@ -366,7 +375,7 @@ Partial Class M_TerminosPago
         '
         'txtdescripcionB
         '
-        Me.txtdescripcionB.Location = New System.Drawing.Point(207, 31)
+        Me.txtdescripcionB.Location = New System.Drawing.Point(239, 31)
         Me.txtdescripcionB.Name = "txtdescripcionB"
         Me.txtdescripcionB.Size = New System.Drawing.Size(192, 22)
         Me.txtdescripcionB.TabIndex = 115
@@ -374,24 +383,11 @@ Partial Class M_TerminosPago
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(116, 34)
+        Me.lblnombreB.Location = New System.Drawing.Point(148, 34)
         Me.lblnombreB.Name = "lblnombreB"
         Me.lblnombreB.Size = New System.Drawing.Size(82, 17)
         Me.lblnombreB.TabIndex = 114
         Me.lblnombreB.Text = "Descripción"
-        '
-        'btnbuscar
-        '
-        Me.btnbuscar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnbuscar.Location = New System.Drawing.Point(407, 25)
-        Me.btnbuscar.Name = "btnbuscar"
-        Me.btnbuscar.Size = New System.Drawing.Size(78, 35)
-        Me.btnbuscar.TabIndex = 113
-        Me.btnbuscar.Text = "Buscar"
-        Me.btnbuscar.UseVisualStyleBackColor = False
         '
         'M_TerminosPago
         '
@@ -438,8 +434,8 @@ Partial Class M_TerminosPago
     Friend WithEvents lbltotal As Label
     Friend WithEvents txtdescripcionB As TextBox
     Friend WithEvents lblnombreB As Label
-    Friend WithEvents btnbuscar As Button
     Friend WithEvents txtnombreCtaVentas As TextBox
     Friend WithEvents txtnombreCtaContado As TextBox
     Friend WithEvents lblform As Label
+    Friend WithEvents lblcode As Label
 End Class

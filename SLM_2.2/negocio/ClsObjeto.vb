@@ -1,11 +1,20 @@
 ﻿Imports System.Data.SqlClient
 Public Class ClsObjeto
-    Dim nombre, objeto, tipoObjeto As String
+    Dim nombre, objeto As String
     Dim cerrado As Boolean
+    Dim codigo, tipoObjeto As Integer
     'Constructor
     Public Sub New()
 
     End Sub
+    Public Property codigo_ As Integer
+        Get
+            Return codigo
+        End Get
+        Set(value As Integer)
+            codigo = value
+        End Set
+    End Property
     Public Property nombre_ As String
         Get
             Return nombre
@@ -30,11 +39,11 @@ Public Class ClsObjeto
             cerrado = value
         End Set
     End Property
-    Public Property tipoObjeto_ As String
+    Public Property tipoObjeto_ As Integer
         Get
             Return tipoObjeto
         End Get
-        Set(value As String)
+        Set(value As Integer)
             tipoObjeto = value
         End Set
     End Property
@@ -94,6 +103,11 @@ Public Class ClsObjeto
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
         sqlcom.CommandText = "M_slmModificarObjeto"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigo_
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "objeto" 'nombre campo en el procedimiento almacenado @
@@ -186,7 +200,6 @@ Public Class ClsObjeto
             Return dt
         End Using
     End Function
-
 
     'Listar codigo y nombre de objeto
     Public Function listarNombreObjeto() As DataTable

@@ -24,6 +24,8 @@ Partial Class M_Objeto
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Objeto))
         Me.gbxobjeto = New System.Windows.Forms.GroupBox()
+        Me.lblcodeTipoObjeto = New System.Windows.Forms.Label()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.cbxcerrado = New System.Windows.Forms.CheckBox()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.txtcomentarioTipo = New System.Windows.Forms.TextBox()
@@ -50,6 +52,8 @@ Partial Class M_Objeto
         '
         'gbxobjeto
         '
+        Me.gbxobjeto.Controls.Add(Me.lblcodeTipoObjeto)
+        Me.gbxobjeto.Controls.Add(Me.lblcode)
         Me.gbxobjeto.Controls.Add(Me.cbxcerrado)
         Me.gbxobjeto.Controls.Add(Me.txtnombre)
         Me.gbxobjeto.Controls.Add(Me.txtcomentarioTipo)
@@ -69,6 +73,24 @@ Partial Class M_Objeto
         Me.gbxobjeto.TabIndex = 117
         Me.gbxobjeto.TabStop = False
         Me.gbxobjeto.Text = "REGISTRAR OBJETO"
+        '
+        'lblcodeTipoObjeto
+        '
+        Me.lblcodeTipoObjeto.AutoSize = True
+        Me.lblcodeTipoObjeto.Location = New System.Drawing.Point(61, 86)
+        Me.lblcodeTipoObjeto.Name = "lblcodeTipoObjeto"
+        Me.lblcodeTipoObjeto.Size = New System.Drawing.Size(0, 17)
+        Me.lblcodeTipoObjeto.TabIndex = 124
+        Me.lblcodeTipoObjeto.Visible = False
+        '
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(439, 30)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 123
+        Me.lblcode.Visible = False
         '
         'cbxcerrado
         '
@@ -305,4 +327,6 @@ Partial Class M_Objeto
     Friend WithEvents lblnombreB As Label
     Friend WithEvents txtnombre As TextBox
     Friend WithEvents cbxcerrado As CheckBox
+    Friend WithEvents lblcodeTipoObjeto As Label
+    Friend WithEvents lblcode As Label
 End Class

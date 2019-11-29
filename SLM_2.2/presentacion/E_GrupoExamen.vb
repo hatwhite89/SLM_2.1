@@ -5,7 +5,6 @@
         End If
     End Sub
     Private Sub M_GrupoExamen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         Dim objGrpE As New ClsGrupoExamen
         Dim dv As DataView = objGrpE.SeleccionarGrupoExamen.DefaultView
         dgbtabla.DataSource = dv
@@ -18,17 +17,17 @@
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
-
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-            txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            lblcode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
 
             btnmodificar.Enabled = True
 
             txtnombre.ReadOnly = False
-            txtcodigo.ReadOnly = True
+            txtcodigo.ReadOnly = False
 
             E_DetalleExamenes.txtGrupo.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value
         Catch ex As Exception
@@ -70,10 +69,10 @@
             txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
             txtnombre.Text = sinDobleEspacio(txtnombre.Text)
 
-            If (txtcodigo.Text <> "" And txtnombre.Text <> "") Then
+            If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "") Then
                 Dim objGrpE As New ClsGrupoExamen
                 With objGrpE
-                    .Codigo_ = txtcodigo.Text
+                    .codigoGrupoExamen_ = txtcodigo.Text
                     .Nombre_ = txtnombre.Text
                 End With
 
@@ -92,7 +91,7 @@
                     btnguardar.Enabled = False
                     btnnuevo.Enabled = True
                 Else
-                    MsgBox("Error al querer ingresar el cajero(a).", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer ingresar el grupo de examen.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -106,13 +105,14 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (txtcodigo.Text <> "" And txtnombre.Text <> "") Then
+            If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "") Then
                 txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
                 txtnombre.Text = sinDobleEspacio(txtnombre.Text)
                 Dim objGrpE As New ClsGrupoExamen
                 With objGrpE
-                    .Codigo_ = txtcodigo.Text
+                    .codigoGrupoExamen_ = txtcodigo.Text
                     .Nombre_ = txtnombre.Text
+                    .codigo_ = lblcode.Text
                 End With
                 If objGrpE.ModificarGrupoExamen() = 1 Then
                     MsgBox("Modificado correctamente.")
@@ -129,7 +129,7 @@
                     btnguardar.Enabled = False
                     btnnuevo.Enabled = True
                 Else
-                    MsgBox("Error al querer modificar el cajero(a).", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer modificar el grupo del examen.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -145,13 +145,25 @@
         Me.Close()
     End Sub
     Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
-        Dim objGrpE As New ClsGrupoExamen
-        With objGrpE
-            .Nombre_ = txtnombreB.Text
-        End With
-        Dim dv As DataView = objGrpE.BuscarGrupoExamen.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        Try
+            Dim objGrpE As New ClsGrupoExamen
+            With objGrpE
+                .Nombre_ = txtnombreB.Text
+            End With
+
+            If (Trim(txtnombreB.Text) <> "") Then
+                Dim dv As DataView = objGrpE.BuscarGrupoExamen.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            Else
+                Dim dv As DataView = objGrpE.SeleccionarGrupoExamen.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

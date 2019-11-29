@@ -7,7 +7,7 @@
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
         txtnombre.ReadOnly = True
-        txtcodigo.ReadOnly = True
+        txtusuario.ReadOnly = True
 
         cbxConfirmar.Enabled = False
         cbxIngresar.Enabled = False
@@ -24,10 +24,10 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (txtcodigo.Text <> "" And txtnombre.Text <> "") Then
+            If (Trim(txtusuario.Text) <> "" And Trim(txtnombre.Text) <> "") Then
                 Dim objAccLab As New ClsAccesoLaboratorio
                 With objAccLab
-                    .usuario_ = txtcodigo.Text
+                    .usuario_ = txtusuario.Text
                     .Nombre_ = txtnombre.Text
                     .ingresarResultado_ = cbxIngresar.Checked
                     .objetarResultado_ = cbxObjetar.Checked
@@ -42,7 +42,7 @@
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-                    txtcodigo.ReadOnly = True
+                    txtusuario.ReadOnly = True
                     txtnombre.ReadOnly = True
 
                     cbxConfirmar.Enabled = False
@@ -68,10 +68,11 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (txtnombre.Text <> "" And txtcodigo.Text <> "") Then
+            If (Trim(txtnombre.Text) <> "" And Trim(txtusuario.Text) <> "") Then
                 Dim objAccLab As New ClsAccesoLaboratorio
                 With objAccLab
-                    .usuario_ = txtcodigo.Text
+                    .codigo_ = lblcode.Text
+                    .usuario_ = txtusuario.Text
                     .Nombre_ = txtnombre.Text
                     .ingresarResultado_ = cbxIngresar.Checked
                     .objetarResultado_ = cbxObjetar.Checked
@@ -87,7 +88,7 @@
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
-                    txtcodigo.ReadOnly = True
+                    txtusuario.ReadOnly = True
                     txtnombre.ReadOnly = True
 
                     cbxConfirmar.Enabled = False
@@ -111,7 +112,7 @@
         End Try
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
-        txtcodigo.Text() = ""
+        txtusuario.Text() = ""
         txtnombre.Text() = ""
         cbxIngresar.Checked = False
         cbxValidar.Checked = False
@@ -124,7 +125,7 @@
         cbxConfirmar.Enabled = True
 
         txtnombre.ReadOnly = False
-        txtcodigo.ReadOnly = False
+        txtusuario.ReadOnly = False
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
         btnnuevo.Enabled = False
@@ -136,12 +137,13 @@
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-            txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
-            cbxIngresar.Checked = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
-            cbxObjetar.Checked = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
-            cbxConfirmar.Checked = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
-            cbxValidar.Checked = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()
+            lblcode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+            txtusuario.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+            cbxIngresar.Checked = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+            cbxObjetar.Checked = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+            cbxConfirmar.Checked = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()
+            cbxValidar.Checked = Me.dgbtabla.Rows(e.RowIndex).Cells(6).Value()
 
             cbxIngresar.Enabled = True
             cbxValidar.Enabled = True
@@ -152,18 +154,18 @@
             btnnuevo.Enabled = True
             btnmodificar.Enabled = True
             txtnombre.ReadOnly = False
-            txtcodigo.ReadOnly = True
+            txtusuario.ReadOnly = False
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-    Private Sub txtcodigoB_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoB.TextChanged
+    Private Sub txtcodigoB_TextChanged(sender As Object, e As EventArgs) Handles txtusuarioB.TextChanged
         Try
             Dim objAccLab As New ClsAccesoLaboratorio
             With objAccLab
-                .usuario_ = txtcodigoB.Text
+                .usuario_ = txtusuarioB.Text
             End With
-            If (Trim(txtcodigoB.Text) <> "") Then
+            If (Trim(txtusuarioB.Text) <> "") Then
                 Dim dv As DataView = objAccLab.BuscarAccesoLaboratorio.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count

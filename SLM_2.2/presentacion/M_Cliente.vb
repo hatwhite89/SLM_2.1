@@ -531,7 +531,7 @@
             Try
                 Dim objTerm As New ClsTerminoPago
                 With objTerm
-                    .Codigo1 = txtcodigoTermino.Text
+                    .codigoTerminoPago_ = txtcodigoTermino.Text
                 End With
                 Dim dt As New DataTable
                 dt = objTerm.BuscarTerminoPagoCode()
@@ -549,12 +549,13 @@
             Try
                 Dim objCat As New ClsCategoria
                 With objCat
-                    .Codigo1 = txtcodigoCategoria.Text
+                    .codigoCategoria_ = txtcodigoCategoria.Text
                 End With
                 Dim dt As New DataTable
                 dt = objCat.BuscarCategoriaCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreCategoria.Text = CStr(row("descripcion"))
+                lblcodeCategoria.Text = CStr(row("codigo"))
             Catch ex As Exception
                 'MsgBox("No existe el código de la categoría.", MsgBoxStyle.Critical, "Validación")
             End Try

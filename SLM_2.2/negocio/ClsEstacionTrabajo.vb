@@ -1,21 +1,28 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ClsEstacionTrabajo
-    Dim codigo, descripcion As String
+    Dim codigoEstacionTrabajo, descripcion As String
+    Dim codigo As Integer
     'Constructor
     Public Sub New()
 
     End Sub
-
-    Public Property Codigo_ As String
+    Public Property codigo_ As Integer
         Get
             Return codigo
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigo = value
         End Set
     End Property
-
+    Public Property codigoEstacionTrabajo_ As String
+        Get
+            Return codigoEstacionTrabajo
+        End Get
+        Set(value As String)
+            codigoEstacionTrabajo = value
+        End Set
+    End Property
     Public Property descripcion_ As String
         Get
             Return descripcion
@@ -24,8 +31,6 @@ Public Class ClsEstacionTrabajo
             descripcion = value
         End Set
     End Property
-
-
     Public Function RegistrarNuevaEstacionTrabajo() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -33,19 +38,17 @@ Public Class ClsEstacionTrabajo
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarEstacionTrabajo_M"
+        sqlcom.CommandText = "M_slmInsertarEstacionTrabajo"
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigo" 'descripcion campo en el procedimiento almacenado @
-        sqlpar.Value = Codigo_
+        sqlpar.ParameterName = "codigoEstacionTrabajo" 'descripcion campo en el procedimiento almacenado @
+        sqlpar.Value = codigoEstacionTrabajo_
         sqlcom.Parameters.Add(sqlpar)
-
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "descripcion" 'descripcion campo en el procedimiento almacenado @
         sqlpar.Value = descripcion_
         sqlcom.Parameters.Add(sqlpar)
-
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -74,18 +77,22 @@ Public Class ClsEstacionTrabajo
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarEstacionTrabajo_M"
+        sqlcom.CommandText = "M_slmModificarEstacionTrabajo"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'descripcion campo en el procedimiento almacenado @
-        sqlpar.Value = Codigo_
+        sqlpar.Value = codigo_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoEstacionTrabajo" 'descripcion campo en el procedimiento almacenado @
+        sqlpar.Value = codigoEstacionTrabajo_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "descripcion" 'descripcion campo en el procedimiento almacenado @
         sqlpar.Value = descripcion_
         sqlcom.Parameters.Add(sqlpar)
-
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -117,7 +124,7 @@ Public Class ClsEstacionTrabajo
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarEstacionTrabajo_M"
+            cmd.CommandText = "M_slmBuscarEstacionTrabajo"
             cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -139,7 +146,7 @@ Public Class ClsEstacionTrabajo
     '    Using cmd As New SqlCommand
     '        cmd.Connection = cn
     '        cmd.CommandType = CommandType.StoredProcedure
-    '        cmd.CommandText = "slmBuscarEstacionTrabajoCode_M"
+    '        cmd.CommandText = "M_slmBuscarEstacionTrabajoCode"
     '        cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Codigo1
     '        Using da As New SqlDataAdapter
     '            da.SelectCommand = cmd
@@ -158,7 +165,7 @@ Public Class ClsEstacionTrabajo
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmSeleccionarEstacionTrabajo_M", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarEstacionTrabajo", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

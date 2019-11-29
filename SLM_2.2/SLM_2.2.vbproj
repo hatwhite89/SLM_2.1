@@ -120,6 +120,7 @@
     <Compile Include="negocio\ClsGrupoExamen.vb" />
     <Compile Include="negocio\ClsItemExamen.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
+    <Compile Include="negocio\ClsTerminoPago.vb" />
     <Compile Include="presentacion\A_FacturaCompras.Designer.vb">
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
     </Compile>
@@ -153,7 +154,6 @@
     <Compile Include="negocio\ClsProveedor.vb" />
     <Compile Include="negocio\ClsSede.vb" />
     <Compile Include="negocio\ClsSucursal.vb" />
-    <Compile Include="negocio\ClsTerminoPago.vb" />
     <Compile Include="negocio\ClsTipoClasificacion.vb" />
     <Compile Include="negocio\ClsTipoObjeto.vb" />
     <Compile Include="negocio\ClsTipoTermino.vb" />

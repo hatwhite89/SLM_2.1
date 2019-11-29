@@ -39,11 +39,12 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (txtnombre.Text <> "" And txtarea.Text <> "") Then
+            If (Trim(txtnombre.Text) <> "" And Trim(txtarea.Text) <> "") Then
                 Dim objAreaLabecialidad As New ClsAreaLaboratorio
                 With objAreaLabecialidad
                     .Nombre_ = txtnombre.Text
                     .Area_ = txtarea.Text
+                    .codigo_ = lblcode.Text
                 End With
 
                 If objAreaLabecialidad.ModificarAreaLaboratorio() = 1 Then
@@ -101,13 +102,14 @@
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            txtarea.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-            txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            lblcode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+            txtarea.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
             btnmodificar.Enabled = True
             btnnuevo.Enabled = True
             btnguardar.Enabled = False
             txtnombre.ReadOnly = False
-            txtarea.ReadOnly = True
+            txtarea.ReadOnly = False
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try

@@ -62,9 +62,10 @@
                     M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codigoExamen")), CStr(row("cantidad")), CStr(row("precio")), CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
                     M_ClienteVentana.dgvtabla.Rows.Add(New String() {CStr(row("codigoExamen")), CStr(row("cantidad")), CStr(row("precio")), CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
                 Next
-                M_Factura.btnguardar.Enabled = False
-                M_Factura.btncotizacion.Enabled = False
-                M_Factura.dgblistadoExamenes.ReadOnly = True
+                M_Factura.deshabilitar()
+                If (M_Factura.cbxok.Checked = "0") Then
+                    M_Factura.HabilitarActualizarFactura()
+                End If
                 M_Factura.ShowDialog()
             End If
         Catch ex As Exception

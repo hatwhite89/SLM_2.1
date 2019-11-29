@@ -29,6 +29,8 @@ Partial Class M_Cliente
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbxinfoCliente = New System.Windows.Forms.GroupBox()
+        Me.lblcodeTerminoPago = New System.Windows.Forms.Label()
+        Me.lblcodeCategoria = New System.Windows.Forms.Label()
         Me.txtnombre2 = New System.Windows.Forms.TextBox()
         Me.txtapellido1 = New System.Windows.Forms.TextBox()
         Me.btnnuevo = New System.Windows.Forms.Button()
@@ -150,6 +152,8 @@ Partial Class M_Cliente
         '
         'gbxinfoCliente
         '
+        Me.gbxinfoCliente.Controls.Add(Me.lblcodeTerminoPago)
+        Me.gbxinfoCliente.Controls.Add(Me.lblcodeCategoria)
         Me.gbxinfoCliente.Controls.Add(Me.txtnombre2)
         Me.gbxinfoCliente.Controls.Add(Me.txtapellido1)
         Me.gbxinfoCliente.Controls.Add(Me.btnnuevo)
@@ -214,6 +218,24 @@ Partial Class M_Cliente
         Me.gbxinfoCliente.TabStop = False
         Me.gbxinfoCliente.Text = "Información de Cliente/Paciente"
         Me.gbxinfoCliente.Visible = False
+        '
+        'lblcodeTerminoPago
+        '
+        Me.lblcodeTerminoPago.AutoSize = True
+        Me.lblcodeTerminoPago.Location = New System.Drawing.Point(6, 301)
+        Me.lblcodeTerminoPago.Name = "lblcodeTerminoPago"
+        Me.lblcodeTerminoPago.Size = New System.Drawing.Size(0, 17)
+        Me.lblcodeTerminoPago.TabIndex = 120
+        Me.lblcodeTerminoPago.Visible = False
+        '
+        'lblcodeCategoria
+        '
+        Me.lblcodeCategoria.AutoSize = True
+        Me.lblcodeCategoria.Location = New System.Drawing.Point(352, 33)
+        Me.lblcodeCategoria.Name = "lblcodeCategoria"
+        Me.lblcodeCategoria.Size = New System.Drawing.Size(0, 17)
+        Me.lblcodeCategoria.TabIndex = 119
+        Me.lblcodeCategoria.Visible = False
         '
         'txtnombre2
         '
@@ -932,4 +954,6 @@ Partial Class M_Cliente
     Friend WithEvents txtnombreB As TextBox
     Friend WithEvents txtnombre2 As TextBox
     Friend WithEvents txtapellido1 As TextBox
+    Friend WithEvents lblcodeCategoria As Label
+    Friend WithEvents lblcodeTerminoPago As Label
 End Class
