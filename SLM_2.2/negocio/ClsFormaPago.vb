@@ -3,8 +3,8 @@ Imports System.Data.SqlClient
 Public Class ClsFormaPago
     'GUARDAR CAMBIOS
     'VARIABLES DE FORMA DE PAGO
-    Dim codigo, comentario, nombreBanco, formulario, tipo, banco As String
-    Dim cuenta, nroCtaBanco, codFormaPago As Integer
+    Dim codigo, comentario, nombreBanco, formulario, tipo, banco, cuenta, nroCtaBanco As String
+    Dim codFormaPago As Integer
     Dim retencion As Double
     'Constructor
     Public Sub New()
@@ -82,21 +82,21 @@ Public Class ClsFormaPago
     End Property
 
     'Cuenta
-    Public Property Cuen_ta As Integer
+    Public Property Cuen_ta As String
         Get
             Return cuenta
         End Get
-        Set(value As Integer)
+        Set(value As String)
             cuenta = value
         End Set
     End Property
 
     'Numero de Cuenta de Banco
-    Public Property Cuenta_Banco As Integer
+    Public Property Cuenta_Banco As String
         Get
             Return nroCtaBanco
         End Get
-        Set(value As Integer)
+        Set(value As String)
             nroCtaBanco = value
         End Set
     End Property
@@ -250,7 +250,6 @@ Public Class ClsFormaPago
         End Using
 
     End Function
-
 
     'Eliminar Forma de Pago
     Public Function eliminarFormaPago() As DataTable

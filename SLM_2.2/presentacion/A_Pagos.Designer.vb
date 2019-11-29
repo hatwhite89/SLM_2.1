@@ -235,7 +235,7 @@ Partial Class frmPagos
         Me.DataGridView1.GridColor = System.Drawing.Color.White
         Me.DataGridView1.Location = New System.Drawing.Point(15, 138)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(530, 181)
+        Me.DataGridView1.Size = New System.Drawing.Size(530, 326)
         Me.DataGridView1.TabIndex = 20
         '
         'frmPagos
@@ -243,8 +243,7 @@ Partial Class frmPagos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(558, 333)
-        Me.ControlBox = False
+        Me.ClientSize = New System.Drawing.Size(558, 505)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.txtComentario)
         Me.Controls.Add(Me.lblComentario)

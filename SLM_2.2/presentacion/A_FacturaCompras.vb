@@ -232,4 +232,13 @@
         Me.Close()
 
     End Sub
+
+    Private Sub A_FacturaCompras_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim cmb As New DataGridViewComboBoxColumn()
+        dtDetalleFactura.Columns.Add(cmb)
+        cmb.HeaderText = "Tipo Stock"
+        cmb.Items.Add("Comprado")
+        cmb.Items.Add("Consignado")
+        cmb.Name = "cbx"
+    End Sub
 End Class

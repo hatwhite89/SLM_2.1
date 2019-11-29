@@ -9,7 +9,7 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnCrearFactura.Click
-        A_FacturaCompras.Show()
+        A_FacturaCompras.ShowDialog()
         Me.Close()
     End Sub
 
