@@ -195,7 +195,7 @@ Public Class ClsObjeto
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("M_slmListarNombreObjetos_A", cn)
+        Using da As New SqlDataAdapter("A_slmListarNombreObjetos", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

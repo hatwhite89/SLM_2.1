@@ -119,6 +119,7 @@
     <Compile Include="negocio\ClsFacturaCompra.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
     <Compile Include="negocio\ClsItemExamen.vb" />
+    <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="presentacion\A_FacturaCompras.Designer.vb">
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
     </Compile>
@@ -211,6 +212,12 @@
     <Compile Include="presentacion\A_ListadoFacturaCompra.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ListarCuentas.Designer.vb">
+      <DependentUpon>A_ListarCuentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarCuentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListarCuentas_Chequera.Designer.vb">
       <DependentUpon>A_ListarCuentas_Chequera.vb</DependentUpon>
     </Compile>
@@ -236,10 +243,16 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="negocio\ClsChequera.vb" />
-    <Compile Include="presentacion\eg_frmSubArea.Designer.vb">
-      <DependentUpon>eg_frmSubArea.vb</DependentUpon>
+    <Compile Include="presentacion\E_ListarSubAreas.Designer.vb">
+      <DependentUpon>E_ListarSubAreas.vb</DependentUpon>
     </Compile>
-    <Compile Include="presentacion\eg_frmSubArea.vb">
+    <Compile Include="presentacion\E_ListarSubAreas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_SubArea.Designer.vb">
+      <DependentUpon>E_SubArea.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_SubArea.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_AccesoLaboratorio.Designer.vb">
@@ -508,6 +521,9 @@
     <EmbeddedResource Include="presentacion\A_ListadoFacturaCompra.resx">
       <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarCuentas.resx">
+      <DependentUpon>A_ListarCuentas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarCuentas_Chequera.resx">
       <DependentUpon>A_ListarCuentas_Chequera.vb</DependentUpon>
     </EmbeddedResource>
@@ -526,8 +542,11 @@
     <EmbeddedResource Include="presentacion\A_MenuConta.resx">
       <DependentUpon>A_MenuConta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\eg_frmSubArea.resx">
-      <DependentUpon>eg_frmSubArea.vb</DependentUpon>
+    <EmbeddedResource Include="presentacion\E_ListarSubAreas.resx">
+      <DependentUpon>E_ListarSubAreas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_SubArea.resx">
+      <DependentUpon>E_SubArea.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_AccesoLaboratorio.resx">
       <DependentUpon>E_AccesoLaboratorio.vb</DependentUpon>

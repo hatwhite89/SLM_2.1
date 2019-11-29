@@ -263,9 +263,66 @@ Public Class ClsCuenta
         End Using
     End Function
 
+    'Listar Cuenta y Nombre de cuenta
+    Public Function listarCuentasNombre() As DataTable
 
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
 
+        Using da As New SqlDataAdapter("A_slmListarDescripCuenta", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 
+    'Buscar cuenta por textbox
+    Public Function buscarCtaXNombre() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarCuentaXNombre"
+            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Nombr_e
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+    'Comprabar si cuenta existe
+
+    Public Function Comprobar() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmComprobarCuenta"
+            cmd.Parameters.Add("@cuenta", SqlDbType.VarChar).Value = Cuent_a
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
 
 
 End Class

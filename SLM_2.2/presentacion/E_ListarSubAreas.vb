@@ -1,10 +1,10 @@
-﻿Public Class eg_frmListarSubAreas
+﻿Public Class E_ListarSubAreas
 
     'Objeto SubAreas
     Dim SubA As New ClsSubArea
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
-        eg_frmSubArea.ShowDialog()
+        E_SubArea.ShowDialog()
 
     End Sub
 

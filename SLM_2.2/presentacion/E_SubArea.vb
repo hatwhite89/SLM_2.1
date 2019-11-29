@@ -1,4 +1,4 @@
-﻿Public Class eg_frmSubArea
+﻿Public Class E_SubArea
     'Objeto SubArea
     Dim SubA As New ClsSubArea
 
