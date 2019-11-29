@@ -37,6 +37,7 @@ Partial Class E_AreaLaboratorio
         Me.lblnombre = New System.Windows.Forms.Label()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.btnguardar = New System.Windows.Forms.Button()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxArea.SuspendLayout()
@@ -106,6 +107,7 @@ Partial Class E_AreaLaboratorio
         '
         'gbxArea
         '
+        Me.gbxArea.Controls.Add(Me.lblcode)
         Me.gbxArea.Controls.Add(Me.btnmodificar)
         Me.gbxArea.Controls.Add(Me.btncancelar)
         Me.gbxArea.Controls.Add(Me.lblcodigo)
@@ -192,6 +194,7 @@ Partial Class E_AreaLaboratorio
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(371, 22)
         Me.txtnombre.TabIndex = 38
+        Me.txtnombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnguardar
         '
@@ -206,7 +209,16 @@ Partial Class E_AreaLaboratorio
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
         '
-        'eg_frmAreaLaboratorio
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(432, 27)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 123
+        Me.lblcode.Visible = False
+        '
+        'E_AreaLaboratorio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -215,7 +227,7 @@ Partial Class E_AreaLaboratorio
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.gbxArea)
         Me.KeyPreview = True
-        Me.Name = "eg_frmAreaLaboratorio"
+        Me.Name = "E_AreaLaboratorio"
         Me.Text = "Área Laboratorio"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
@@ -241,4 +253,5 @@ Partial Class E_AreaLaboratorio
     Friend WithEvents lblnombre As Label
     Friend WithEvents txtnombre As TextBox
     Friend WithEvents btnguardar As Button
+    Friend WithEvents lblcode As Label
 End Class

@@ -27,7 +27,7 @@
             With terminop
 
                 'txtBusquedaTermino.Text = txtBusquedaTermino.Text.Trim
-                .Codigo1 = txtBusquedaTermino.Text
+                .codigoTerminoPago_ = txtBusquedaTermino.Text
                 Dato = terminop.listarBusquedaTerminoPago.DefaultView
                 dtTerminoPago.DataSource = Dato
 

@@ -1,18 +1,27 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ClsCaja
-    Dim codigo, nombre As String
+    Dim codigoCaja, nombre As String
+    Dim codigo As Integer
     'Constructor
     Public Sub New()
 
     End Sub
-
-    Public Property Codigo1 As String
+    Public Property codigo_ As Integer
         Get
             Return codigo
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigo = value
+        End Set
+    End Property
+
+    Public Property codigoCaja_ As String
+        Get
+            Return codigoCaja
+        End Get
+        Set(value As String)
+            codigoCaja = value
         End Set
     End Property
 
@@ -36,8 +45,8 @@ Public Class ClsCaja
         sqlcom.CommandText = "M_slmInsertarCaja"
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = Codigo1
+        sqlpar.ParameterName = "codigoCaja" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoCaja_
         sqlcom.Parameters.Add(sqlpar)
 
 
@@ -78,7 +87,12 @@ Public Class ClsCaja
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = Codigo1
+        sqlpar.Value = codigo_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoCaja" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoCaja_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

@@ -28,7 +28,6 @@ Partial Class M_Sucursal
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnombreB = New System.Windows.Forms.Label()
-        Me.btnbuscar = New System.Windows.Forms.Button()
         Me.gbxsucursal = New System.Windows.Forms.GroupBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btncancelar = New System.Windows.Forms.Button()
@@ -38,6 +37,7 @@ Partial Class M_Sucursal
         Me.lblnombre = New System.Windows.Forms.Label()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.btnguardar = New System.Windows.Forms.Button()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxsucursal.SuspendLayout()
@@ -50,7 +50,6 @@ Partial Class M_Sucursal
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
-        Me.gbxbusqueda.Controls.Add(Me.btnbuscar)
         Me.gbxbusqueda.Location = New System.Drawing.Point(28, 179)
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Size = New System.Drawing.Size(613, 416)
@@ -92,7 +91,7 @@ Partial Class M_Sucursal
         '
         'txtnombreB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(182, 34)
+        Me.txtnombreB.Location = New System.Drawing.Point(223, 34)
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
         Me.txtnombreB.TabIndex = 115
@@ -100,27 +99,15 @@ Partial Class M_Sucursal
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(118, 37)
+        Me.lblnombreB.Location = New System.Drawing.Point(159, 37)
         Me.lblnombreB.Name = "lblnombreB"
         Me.lblnombreB.Size = New System.Drawing.Size(58, 17)
         Me.lblnombreB.TabIndex = 114
         Me.lblnombreB.Text = "Nombre"
         '
-        'btnbuscar
-        '
-        Me.btnbuscar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnbuscar.Location = New System.Drawing.Point(380, 28)
-        Me.btnbuscar.Name = "btnbuscar"
-        Me.btnbuscar.Size = New System.Drawing.Size(78, 35)
-        Me.btnbuscar.TabIndex = 113
-        Me.btnbuscar.Text = "Buscar"
-        Me.btnbuscar.UseVisualStyleBackColor = False
-        '
         'gbxsucursal
         '
+        Me.gbxsucursal.Controls.Add(Me.lblcode)
         Me.gbxsucursal.Controls.Add(Me.btnmodificar)
         Me.gbxsucursal.Controls.Add(Me.btncancelar)
         Me.gbxsucursal.Controls.Add(Me.lblcodigo)
@@ -221,6 +208,15 @@ Partial Class M_Sucursal
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
         '
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(248, 18)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 124
+        Me.lblcode.Visible = False
+        '
         'M_Sucursal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -248,7 +244,6 @@ Partial Class M_Sucursal
     Friend WithEvents lbltotal As Label
     Friend WithEvents txtnombreB As TextBox
     Friend WithEvents lblnombreB As Label
-    Friend WithEvents btnbuscar As Button
     Friend WithEvents gbxsucursal As GroupBox
     Friend WithEvents btnmodificar As Button
     Friend WithEvents btncancelar As Button
@@ -258,4 +253,5 @@ Partial Class M_Sucursal
     Friend WithEvents lblnombre As Label
     Friend WithEvents txtnombre As TextBox
     Friend WithEvents btnguardar As Button
+    Friend WithEvents lblcode As Label
 End Class

@@ -1,16 +1,25 @@
 ﻿Imports System.Data.SqlClient
 Public Class ClsTipoObjeto
-    Dim comentario, codigo As String
+    Dim comentario, codigoTipoObjeto As String
+    Dim codigo As Integer
     'Constructor
     Public Sub New()
 
     End Sub
-    Public Property codigo_ As String
+    Public Property codigo_ As Integer
         Get
             Return codigo
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigo = value
+        End Set
+    End Property
+    Public Property codigoTipoObjeto_ As String
+        Get
+            Return codigoTipoObjeto
+        End Get
+        Set(value As String)
+            codigoTipoObjeto = value
         End Set
     End Property
     Public Property comentario_ As String
@@ -31,8 +40,8 @@ Public Class ClsTipoObjeto
         sqlcom.CommandText = "M_slmInsertarTipoObjeto"
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigo_
+        sqlpar.ParameterName = "codigoTipoObjeto" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoTipoObjeto_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -71,6 +80,11 @@ Public Class ClsTipoObjeto
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = codigo_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoTipoObjeto" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoTipoObjeto_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -117,7 +131,6 @@ Public Class ClsTipoObjeto
         End Using
     End Function
     Public Function BuscarTipoObjetoCode() As DataTable
-
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -126,7 +139,7 @@ Public Class ClsTipoObjeto
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "M_slmBuscarTipoObjetoCode"
-            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = codigo_
+            cmd.Parameters.Add("@codigoTipoObjeto", SqlDbType.VarChar).Value = codigoTipoObjeto_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -135,10 +148,8 @@ Public Class ClsTipoObjeto
                 End Using
             End Using
         End Using
-
     End Function
     Public Function SeleccionarTipoObjeto() As DataTable
-
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion

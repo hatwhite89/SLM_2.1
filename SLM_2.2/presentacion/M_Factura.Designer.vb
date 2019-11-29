@@ -85,7 +85,7 @@ Partial Class M_Factura
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnbuscarSede = New System.Windows.Forms.Button()
         Me.btnbuscarMedico = New System.Windows.Forms.Button()
-        Me.btnterminosPago = New System.Windows.Forms.Button()
+        Me.btnbuscarTerminosPago = New System.Windows.Forms.Button()
         Me.txtpagoPaciente = New System.Windows.Forms.TextBox()
         Me.txttotal = New System.Windows.Forms.TextBox()
         Me.btnentregarExamen = New System.Windows.Forms.Button()
@@ -99,7 +99,9 @@ Partial Class M_Factura
         Me.txtnombreSucursal = New System.Windows.Forms.TextBox()
         Me.txtdescripcionTermino = New System.Windows.Forms.TextBox()
         Me.btncotizacion = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.lblcodeSucursal = New System.Windows.Forms.Label()
+        Me.lblcodeTerminoPago = New System.Windows.Forms.Label()
         Me.gbxlistadoExamenes.SuspendLayout()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -741,20 +743,20 @@ Partial Class M_Factura
         Me.btnbuscarMedico.TabIndex = 81
         Me.btnbuscarMedico.UseVisualStyleBackColor = False
         '
-        'btnterminosPago
+        'btnbuscarTerminosPago
         '
-        Me.btnterminosPago.BackColor = System.Drawing.Color.White
-        Me.btnterminosPago.BackgroundImage = CType(resources.GetObject("btnterminosPago.BackgroundImage"), System.Drawing.Image)
-        Me.btnterminosPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnterminosPago.FlatAppearance.BorderSize = 0
-        Me.btnterminosPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnterminosPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnterminosPago.Location = New System.Drawing.Point(127, 170)
-        Me.btnterminosPago.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnterminosPago.Name = "btnterminosPago"
-        Me.btnterminosPago.Size = New System.Drawing.Size(49, 22)
-        Me.btnterminosPago.TabIndex = 82
-        Me.btnterminosPago.UseVisualStyleBackColor = False
+        Me.btnbuscarTerminosPago.BackColor = System.Drawing.Color.White
+        Me.btnbuscarTerminosPago.BackgroundImage = CType(resources.GetObject("btnbuscarTerminosPago.BackgroundImage"), System.Drawing.Image)
+        Me.btnbuscarTerminosPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnbuscarTerminosPago.FlatAppearance.BorderSize = 0
+        Me.btnbuscarTerminosPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnbuscarTerminosPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnbuscarTerminosPago.Location = New System.Drawing.Point(127, 170)
+        Me.btnbuscarTerminosPago.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnbuscarTerminosPago.Name = "btnbuscarTerminosPago"
+        Me.btnbuscarTerminosPago.Size = New System.Drawing.Size(49, 22)
+        Me.btnbuscarTerminosPago.TabIndex = 82
+        Me.btnbuscarTerminosPago.UseVisualStyleBackColor = False
         '
         'txtpagoPaciente
         '
@@ -917,19 +919,36 @@ Partial Class M_Factura
         Me.btncotizacion.Text = "Cotización"
         Me.btncotizacion.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btnActualizar
         '
-        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button1.Location = New System.Drawing.Point(613, 41)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(96, 34)
-        Me.Button1.TabIndex = 97
-        Me.Button1.Text = "Actualizar"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnActualizar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnActualizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnActualizar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnActualizar.Location = New System.Drawing.Point(613, 41)
+        Me.btnActualizar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(96, 34)
+        Me.btnActualizar.TabIndex = 97
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = False
+        '
+        'lblcodeSucursal
+        '
+        Me.lblcodeSucursal.AutoSize = True
+        Me.lblcodeSucursal.Location = New System.Drawing.Point(396, 233)
+        Me.lblcodeSucursal.Name = "lblcodeSucursal"
+        Me.lblcodeSucursal.Size = New System.Drawing.Size(0, 17)
+        Me.lblcodeSucursal.TabIndex = 98
+        '
+        'lblcodeTerminoPago
+        '
+        Me.lblcodeTerminoPago.AutoSize = True
+        Me.lblcodeTerminoPago.Location = New System.Drawing.Point(0, 174)
+        Me.lblcodeTerminoPago.Name = "lblcodeTerminoPago"
+        Me.lblcodeTerminoPago.Size = New System.Drawing.Size(0, 17)
+        Me.lblcodeTerminoPago.TabIndex = 99
+        Me.lblcodeTerminoPago.Visible = False
         '
         'M_Factura
         '
@@ -937,7 +956,9 @@ Partial Class M_Factura
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1164, 668)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.lblcodeTerminoPago)
+        Me.Controls.Add(Me.lblcodeSucursal)
+        Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.btncotizacion)
         Me.Controls.Add(Me.txtdescripcionTermino)
         Me.Controls.Add(Me.txtnombreSucursal)
@@ -951,7 +972,7 @@ Partial Class M_Factura
         Me.Controls.Add(Me.btnentregarExamen)
         Me.Controls.Add(Me.txttotal)
         Me.Controls.Add(Me.txtpagoPaciente)
-        Me.Controls.Add(Me.btnterminosPago)
+        Me.Controls.Add(Me.btnbuscarTerminosPago)
         Me.Controls.Add(Me.btnbuscarMedico)
         Me.Controls.Add(Me.btnbuscarSede)
         Me.Controls.Add(Me.GroupBox1)
@@ -1069,7 +1090,7 @@ Partial Class M_Factura
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnbuscarSede As Button
     Friend WithEvents btnbuscarMedico As Button
-    Friend WithEvents btnterminosPago As Button
+    Friend WithEvents btnbuscarTerminosPago As Button
     Friend WithEvents txtpagoPaciente As TextBox
     Friend WithEvents txttotal As TextBox
     Friend WithEvents btnentregarExamen As Button
@@ -1090,5 +1111,7 @@ Partial Class M_Factura
     Friend WithEvents Subtotal As DataGridViewTextBoxColumn
     Friend WithEvents txtdescripcionTermino As TextBox
     Friend WithEvents btncotizacion As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnActualizar As Button
+    Friend WithEvents lblcodeSucursal As Label
+    Friend WithEvents lblcodeTerminoPago As Label
 End Class

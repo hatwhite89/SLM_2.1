@@ -47,7 +47,7 @@ Public Class ClsExamen
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarExamen_M"
+            cmd.CommandText = "M_slmBuscarExamen"
             cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Codigo1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -69,7 +69,7 @@ Public Class ClsExamen
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarExamenDesc_M"
+            cmd.CommandText = "M_slmBuscarExamenDesc"
             cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -88,7 +88,7 @@ Public Class ClsExamen
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmSeleccionarExamen_M", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarExamen", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

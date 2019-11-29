@@ -37,6 +37,7 @@ Partial Class E_GrupoExamen
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxcaja.SuspendLayout()
@@ -106,6 +107,7 @@ Partial Class E_GrupoExamen
         '
         'gbxcaja
         '
+        Me.gbxcaja.Controls.Add(Me.lblcode)
         Me.gbxcaja.Controls.Add(Me.lblcodigo)
         Me.gbxcaja.Controls.Add(Me.txtcodigo)
         Me.gbxcaja.Controls.Add(Me.lblnombre)
@@ -206,7 +208,16 @@ Partial Class E_GrupoExamen
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
         '
-        'eg_frmGrupoExamen
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(243, 18)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 124
+        Me.lblcode.Visible = False
+        '
+        'E_GrupoExamen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -214,7 +225,7 @@ Partial Class E_GrupoExamen
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.gbxcaja)
         Me.KeyPreview = True
-        Me.Name = "eg_frmGrupoExamen"
+        Me.Name = "E_GrupoExamen"
         Me.Text = "M_GrupoExamen"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
@@ -240,4 +251,5 @@ Partial Class E_GrupoExamen
     Friend WithEvents btncancelar As Button
     Friend WithEvents btnnuevo As Button
     Friend WithEvents btnguardar As Button
+    Friend WithEvents lblcode As Label
 End Class

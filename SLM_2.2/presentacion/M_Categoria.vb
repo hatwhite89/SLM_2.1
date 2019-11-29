@@ -35,7 +35,6 @@
         rtxtdescripcion.ReadOnly = False
         txtcodigo.ReadOnly = False
 
-        btnbuscar.Enabled = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
         btnnuevo.Enabled = False
@@ -48,26 +47,14 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (rtxtdescripcion.Text <> "" And txtcodigoTipo.Text <> "") Then
-                Dim testString As String = rtxtdescripcion.Text()
-                Dim texto As String = ""
-                Dim testArray() As String = Split(testString)
-                Dim lastNonEmpty As Integer = -1
-                For i As Integer = 0 To testArray.Length - 1
-                    If testArray(i) <> "" Then
-                        lastNonEmpty += 1
-                        testArray(lastNonEmpty) = testArray(i)
-                        texto += testArray(i) + " "
-                    End If
-                Next
-                ReDim Preserve testArray(lastNonEmpty)
-                rtxtdescripcion.Text() = texto
+            If (Trim(rtxtdescripcion.Text) <> "" And Trim(txtcodigoTipo.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
 
+                rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
                 Dim objCategoriaif As New ClsCategoria
                 With objCategoriaif
-                    .descripcion1 = texto
+                    .descripcion1 = rtxtdescripcion.Text
                     .CodigoTipo1 = txtcodigoTipo.Text
-                    .Codigo1 = txtcodigo.Text
+                    .codigoCategoria_ = txtcodigo.Text
                 End With
 
                 If objCategoriaif.RegistrarNuevaCategoria() = 1 Then
@@ -80,6 +67,7 @@
 
                     rtxtdescripcion.ReadOnly = True
                     txtcodigoTipo.ReadOnly = True
+                    txtcodigo.ReadOnly = True
 
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
@@ -96,29 +84,33 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+    Private Function sinDobleEspacio(ByVal cadena As String) As String
+        Dim testString As String = cadena
+        Dim texto As String = ""
+        Dim testArray() As String = Split(testString)
+        Dim lastNonEmpty As Integer = -1
+        For i As Integer = 0 To testArray.Length - 1
+            If testArray(i) <> "" Then
+                lastNonEmpty += 1
+                testArray(lastNonEmpty) = testArray(i)
+                texto += testArray(i) + " "
+            End If
+        Next
+        ReDim Preserve testArray(lastNonEmpty)
+        Return texto
+    End Function
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (rtxtdescripcion.Text <> "" And txtcodigoTipo.Text <> "" And txtcodigo.Text <> "") Then
-                Dim testString As String = rtxtdescripcion.Text()
-                Dim texto As String = ""
-                Dim testArray() As String = Split(testString)
-                Dim lastNonEmpty As Integer = -1
-                For i As Integer = 0 To testArray.Length - 1
-                    If testArray(i) <> "" Then
-                        lastNonEmpty += 1
-                        testArray(lastNonEmpty) = testArray(i)
-                        texto += testArray(i) + " "
-                    End If
-                Next
-                ReDim Preserve testArray(lastNonEmpty)
-                rtxtdescripcion.Text() = texto
+            If (Trim(rtxtdescripcion.Text) <> "" And Trim(txtcodigoTipo.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
 
+                rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
                 Dim objCategoriaif As New ClsCategoria
                 With objCategoriaif
-                    .descripcion1 = texto
-                    .Codigo1 = txtcodigo.Text
+                    .descripcion1 = rtxtdescripcion.Text
+                    .codigoCategoria_ = txtcodigo.Text
                     .CodigoTipo1 = txtcodigoTipo.Text
+                    .codigo_ = lblcode.Text
                 End With
 
                 If objCategoriaif.ModificarCategoria() = 1 Then
@@ -131,6 +123,7 @@
 
                     rtxtdescripcion.ReadOnly = True
                     txtcodigoTipo.ReadOnly = True
+                    txtcodigo.ReadOnly = True
 
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
@@ -147,22 +140,14 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
-        Dim objCategoria As New ClsCategoria
-        With objCategoria
-            .descripcion1 = txtdescripcionB.Text
-        End With
-        Dim dv As DataView = objCategoria.BuscarCategoria.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-    End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-            rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
-            txtcodigoTipo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+            lblcode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+            txtcodigoTipo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
 
+            M_Cliente.lblcodeCategoria.Text = lblcode.Text
             M_Cliente.txtcodigoCategoria.Text = txtcodigo.Text
             M_Cliente.txtnombreCategoria.Text = rtxtdescripcion.Text
 
@@ -170,7 +155,7 @@
 
             rtxtdescripcion.ReadOnly = False
             txtcodigoTipo.ReadOnly = False
-            txtcodigo.ReadOnly = True
+            txtcodigo.ReadOnly = False
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -179,7 +164,8 @@
         Me.Close()
     End Sub
     Private Sub txtcodigoTipo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoTipo.TextChanged
-        If (txtcodigoTipo.Text <> "") Then
+        txtdescripcionTipo.Text = ""
+        If (Trim(txtcodigoTipo.Text) <> "") Then
             Try
                 Dim objTipoClas As New ClsTipoClasificacion
                 With objTipoClas
@@ -190,7 +176,8 @@
                 Dim row As DataRow = dt.Rows(0)
                 txtdescripcionTipo.Text = CStr(row("comentario"))
             Catch ex As Exception
-                MsgBox("No existe el código del tipo de clasificación.", MsgBoxStyle.Critical, "Validación")
+                ' MsgBox("No existe el código del tipo de clasificación.", MsgBoxStyle.Critical, "Validación")
+                txtcodigoTipo.Text = ""
             End Try
         Else
             txtcodigoTipo.Text = ""
@@ -200,5 +187,29 @@
     Private Sub btnbuscarTipo_Click_1(sender As Object, e As EventArgs) Handles btnbuscarTipo.Click
         M_TipoClasificacion.lbltipo.Text = "Categoria"
         M_TipoClasificacion.ShowDialog()
+    End Sub
+
+    Private Sub txtdescripcionB_TextChanged(sender As Object, e As EventArgs) Handles txtdescripcionB.TextChanged
+        Try
+
+            Dim objCategoria As New ClsCategoria
+            With objCategoria
+                .descripcion1 = txtdescripcionB.Text
+            End With
+            If (Trim(txtdescripcionB.Text) <> "") Then
+                Dim dv As DataView = objCategoria.BuscarCategoria.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            Else
+                Dim dv As DataView = objCategoria.SeleccionarCategoria.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            End If
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

@@ -341,66 +341,6 @@ Public Class ClsFactura
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "fechaFactura" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = fechaFactura_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoCliente" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoCliente_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoRecepcionista" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoRecepcionista_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoMedico" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoMedico_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoCajero" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoCajero_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoTerminoPago" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoTerminoPago1
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoSede" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoSede_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "fechaVto" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = fechaVto_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoSucursal" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoSucursal_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoConvenio" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoConvenio_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "numeroPoliza" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = numeroPoliza_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoTerminal" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoTerminal_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
         sqlpar.ParameterName = "entregaMedico" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = entregaMedico_
         sqlcom.Parameters.Add(sqlpar)
@@ -423,11 +363,6 @@ Public Class ClsFactura
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "vuelto" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = vuelto_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "total" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = total_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

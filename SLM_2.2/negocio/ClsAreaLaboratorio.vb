@@ -2,10 +2,20 @@
 
 Public Class ClsAreaLaboratorio
     Dim area, nombre As String
+    Dim codigo As Integer
     'Constructor
     Public Sub New()
 
+
     End Sub
+    Public Property codigo_ As Integer
+        Get
+            Return codigo
+        End Get
+        Set(value As Integer)
+            codigo = value
+        End Set
+    End Property
     Public Property Nombre_ As String
         Get
             Return nombre
@@ -68,6 +78,11 @@ Public Class ClsAreaLaboratorio
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
         sqlcom.CommandText = "E_slmModificarAreaLaboratorio"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigo_
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "area" 'nombre campo en el procedimiento almacenado @
