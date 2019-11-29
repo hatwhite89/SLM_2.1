@@ -197,6 +197,7 @@
                 Dim dt As New DataTable
                 dt = objSuc.BuscarSucursalCode()
                 Dim row As DataRow = dt.Rows(0)
+                lblcodeSucursal.Text = CStr(row("codigo"))
                 txtnombreSucursal.Text = CStr(row("nombre"))
                 txtcodigoSucursal.Text = UCase(txtcodigoSucursal.Text)
             Catch ex As Exception

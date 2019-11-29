@@ -940,6 +940,7 @@ Partial Class M_Factura
         Me.lblcodeSucursal.Name = "lblcodeSucursal"
         Me.lblcodeSucursal.Size = New System.Drawing.Size(0, 17)
         Me.lblcodeSucursal.TabIndex = 98
+        Me.lblcodeSucursal.Visible = False
         '
         'lblcodeTerminoPago
         '
