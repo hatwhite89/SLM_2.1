@@ -1,8 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Public Class ClsProveedor
 
-    Dim codProveedor As Integer
-    Dim codBreve, nombreProveedor, telefono, contactoPrincipal, telContacto, email, direccion, sitioweb As String
+    Dim codProveedor, codCate As Integer
+    Dim codBreve, nombreProveedor, telefono, codBreveCate, contactoPrincipal, telContacto, email, direccion, sitioweb, idTributario As String
 
     'Constructor
     Public Sub New()
@@ -20,6 +20,15 @@ Public Class ClsProveedor
         End Set
     End Property
 
+    'Codigo Categoria
+    Public Property Cod_Cate As Integer
+        Get
+            Return codCate
+        End Get
+        Set(value As Integer)
+            codCate = value
+        End Set
+    End Property
     'codBreve
     Public Property Cod_Breve As String
         Get
@@ -27,6 +36,26 @@ Public Class ClsProveedor
         End Get
         Set(value As String)
             codBreve = value
+        End Set
+    End Property
+
+    'codBreve categoria
+    Public Property Cod_BreveCate As String
+        Get
+            Return codBreveCate
+        End Get
+        Set(value As String)
+            codBreveCate = value
+        End Set
+    End Property
+
+    'Id Tributario
+    Public Property Id_Tributario As String
+        Get
+            Return idTributario
+        End Get
+        Set(value As String)
+            idTributario = value
         End Set
     End Property
 
@@ -120,9 +149,21 @@ Public Class ClsProveedor
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codBreveCate"
+        sqlpar.Value = codBreveCate
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "idTributario"
+        sqlpar.Value = Id_Tributario
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "nombreProveedor"
         sqlpar.Value = Nombre_Proveedor
         sqlcom.Parameters.Add(sqlpar)
+
+
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "telefono"
@@ -152,6 +193,11 @@ Public Class ClsProveedor
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "sitioweb"
         sqlpar.Value = Sitio_Web
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codCate"
+        sqlpar.Value = Cod_Cate
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -196,6 +242,17 @@ Public Class ClsProveedor
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codBreveCate"
+        sqlpar.Value = codBreveCate
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "idTributario"
+        sqlpar.Value = Id_Tributario
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "nombreProveedor"
         sqlpar.Value = Nombre_Proveedor
         sqlcom.Parameters.Add(sqlpar)
@@ -228,6 +285,11 @@ Public Class ClsProveedor
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "sitioweb"
         sqlpar.Value = Sitio_Web
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codCate"
+        sqlpar.Value = Cod_Cate
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

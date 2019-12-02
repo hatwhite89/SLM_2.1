@@ -16,15 +16,28 @@
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        'Ingresar nueva categoria en base de datos
+        'Comprobar existencia de Clasificacion
+        Dim dt As New DataTable
+        Dim Cate As New ClsTipoClasificacion
 
-        With Categoria
-            .Codig_o = txtCodBreve.Text
-            .Descripcio_n = txtDescrip.Text
-            .Cta_Acreedor = Convert.ToInt32(txtAcreedores.Text)
-            .Cta_Anticipos = Convert.ToInt32(txtAnticipos.Text)
-            .registrarNuevaCategoria()
-        End With
+        Cate.Codigo1 = Convert.ToInt32(txtClasifica.Text)
+
+        dt = Cate.BuscarTipoClasificacionCode
+
+        If dt.Rows.Count > 0 Then
+            'Ingresar nueva categoria en base de datos
+            With Categoria
+                .Codig_o = txtCodBreve.Text
+                .Descripcio_n = txtDescrip.Text
+                .Cta_Acreedor = txtAcreedores.Text
+                .Cta_Anticipos = txtAnticipos.Text
+                .Cod_Clasi = Convert.ToInt32(txtClasifica.Text)
+                .registrarNuevaCategoria()
+            End With
+        Else
+            MsgBox("El Tipo de Clasificación no existe o hubo un error al seleccionarla.")
+
+        End If
 
         dtCategorias.DataSource = Categoria.listarCategoriasProveedor
 
@@ -33,11 +46,13 @@
     Private Sub dtCategorias_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtCategorias.CellClick
 
         'Listar informacion
+        lblCodCat.Text = dtCategorias.Rows(e.RowIndex).Cells(0).Value 'oculto
         txtCodBreve.Text = dtCategorias.Rows(e.RowIndex).Cells(1).Value
         txtDescrip.Text = dtCategorias.Rows(e.RowIndex).Cells(2).Value
         txtAcreedores.Text = dtCategorias.Rows(e.RowIndex).Cells(3).Value
         txtAnticipos.Text = dtCategorias.Rows(e.RowIndex).Cells(4).Value
-        lblCodCat.Text = dtCategorias.Rows(e.RowIndex).Cells(0).Value
+        txtClasifica.Text = dtCategorias.Rows(e.RowIndex).Cells(5).Value
+
         'Habilitar edicion
         btnCrear.Visible = True
         btnModificar.Visible = True
@@ -53,26 +68,41 @@
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        'Comprobar existencia de clasificacion
+        Dim dt As New DataTable
+        Dim Cate As New ClsTipoClasificacion
 
-        With Categoria
-            'Capturar variables editadas
-            .Cod = Convert.ToInt32(lblCodCat.Text)
-            .Codig_o = txtCodBreve.Text
-            .Descripcio_n = txtDescrip.Text
-            .Cta_Acreedor = Convert.ToInt32(txtAcreedores.Text)
-            .Cta_Anticipos = Convert.ToInt32(txtAnticipos.Text)
+        Cate.Codigo1 = Convert.ToInt32(txtClasifica.Text)
 
-            .modificarCategoria()
-        End With
+        dt = Cate.BuscarTipoClasificacionCode
 
-        'Actualizar listado
-        dtCategorias.DataSource = Categoria.listarCategoriasProveedor
-        'Limpiar campos
-        Limpiar()
+        If dt.Rows.Count > 0 Then
+            'Modificacion de categoria en base de datos
+            With Categoria
+                'Capturar variables editadas
+                .Cod = Convert.ToInt32(lblCodCat.Text) 'campo oculto
+                .Codig_o = txtCodBreve.Text
+                .Descripcio_n = txtDescrip.Text
+                .Cta_Acreedor = txtAcreedores.Text
+                .Cta_Anticipos = txtAnticipos.Text
+                .Cod_Clasi = Convert.ToInt32(txtClasifica.Text)
 
-        btnCrear.Visible = False
-        btnModificar.Visible = False
-        btnGuardar.Visible = True
+                .modificarCategoria()
+            End With
+
+            'Actualizar listado
+            dtCategorias.DataSource = Categoria.listarCategoriasProveedor
+            'Limpiar campos
+            Limpiar()
+
+            btnCrear.Visible = False
+            btnModificar.Visible = False
+            btnGuardar.Visible = True
+
+        Else
+            MsgBox("El Tipo de Clasificación no existe o hubo un error al seleccionarla.")
+
+        End If
 
 
     End Sub
@@ -84,8 +114,11 @@
         txtDescrip.Text = ""
         txtAcreedores.Text = ""
         txtAnticipos.Text = ""
+        txtClasifica.Text = ""
 
     End Sub
 
-
+    Private Sub btnBuscarClas_Click(sender As Object, e As EventArgs) Handles btnBuscarClas.Click
+        A_ListarTipoClasificacion.ShowDialog()
+    End Sub
 End Class

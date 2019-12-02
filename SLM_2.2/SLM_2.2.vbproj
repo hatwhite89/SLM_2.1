@@ -212,6 +212,12 @@
     <Compile Include="presentacion\A_ListadoFacturaCompra.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ListarCategoriasProveedor.Designer.vb">
+      <DependentUpon>A_ListarCategoriasProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarCategoriasProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListarCuentas.Designer.vb">
       <DependentUpon>A_ListarCuentas.vb</DependentUpon>
     </Compile>
@@ -224,6 +230,18 @@
     <Compile Include="presentacion\A_ListarCuentas_Chequera.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ListarFacCompraPagos.Designer.vb">
+      <DependentUpon>A_ListarFacCompraPagos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarFacCompraPagos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ListarFormasPagoPF.Designer.vb">
+      <DependentUpon>A_ListarFormasPagoPF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarFormasPagoPF.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListarObjetos.Designer.vb">
       <DependentUpon>A_ListarObjetos.vb</DependentUpon>
     </Compile>
@@ -234,6 +252,12 @@
       <DependentUpon>A_ListarTerminoPago.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ListarTerminoPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ListarTipoClasificacion.Designer.vb">
+      <DependentUpon>A_ListarTipoClasificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarTipoClasificacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_Proveedor.Designer.vb">
@@ -521,17 +545,29 @@
     <EmbeddedResource Include="presentacion\A_ListadoFacturaCompra.resx">
       <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarCategoriasProveedor.resx">
+      <DependentUpon>A_ListarCategoriasProveedor.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarCuentas.resx">
       <DependentUpon>A_ListarCuentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarCuentas_Chequera.resx">
       <DependentUpon>A_ListarCuentas_Chequera.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarFacCompraPagos.resx">
+      <DependentUpon>A_ListarFacCompraPagos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarFormasPagoPF.resx">
+      <DependentUpon>A_ListarFormasPagoPF.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarObjetos.resx">
       <DependentUpon>A_ListarObjetos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarTerminoPago.resx">
       <DependentUpon>A_ListarTerminoPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarTipoClasificacion.resx">
+      <DependentUpon>A_ListarTipoClasificacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Proveedor.resx">
       <DependentUpon>A_Proveedor.vb</DependentUpon>

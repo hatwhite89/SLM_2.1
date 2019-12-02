@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class A_CategoriaProveedor
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class A_CategoriaProveedor
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_CategoriaProveedor))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtCodBreve = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -31,6 +32,9 @@ Partial Class A_CategoriaProveedor
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtAnticipos = New System.Windows.Forms.TextBox()
         Me.gbxInfo = New System.Windows.Forms.GroupBox()
+        Me.btnBuscarClas = New System.Windows.Forms.Button()
+        Me.txtClasifica = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.lblCodCat = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -61,7 +65,7 @@ Partial Class A_CategoriaProveedor
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(200, 31)
+        Me.Label2.Location = New System.Drawing.Point(4, 57)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 2
@@ -69,15 +73,15 @@ Partial Class A_CategoriaProveedor
         '
         'txtDescrip
         '
-        Me.txtDescrip.Location = New System.Drawing.Point(289, 27)
+        Me.txtDescrip.Location = New System.Drawing.Point(93, 54)
         Me.txtDescrip.Name = "txtDescrip"
-        Me.txtDescrip.Size = New System.Drawing.Size(158, 20)
+        Me.txtDescrip.Size = New System.Drawing.Size(261, 20)
         Me.txtDescrip.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(5, 56)
+        Me.Label3.Location = New System.Drawing.Point(361, 27)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(83, 13)
         Me.Label3.TabIndex = 4
@@ -85,7 +89,7 @@ Partial Class A_CategoriaProveedor
         '
         'txtAcreedores
         '
-        Me.txtAcreedores.Location = New System.Drawing.Point(94, 53)
+        Me.txtAcreedores.Location = New System.Drawing.Point(450, 27)
         Me.txtAcreedores.Name = "txtAcreedores"
         Me.txtAcreedores.Size = New System.Drawing.Size(100, 20)
         Me.txtAcreedores.TabIndex = 5
@@ -93,7 +97,7 @@ Partial Class A_CategoriaProveedor
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(199, 56)
+        Me.Label4.Location = New System.Drawing.Point(360, 56)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(72, 13)
         Me.Label4.TabIndex = 6
@@ -101,13 +105,16 @@ Partial Class A_CategoriaProveedor
         '
         'txtAnticipos
         '
-        Me.txtAnticipos.Location = New System.Drawing.Point(289, 53)
+        Me.txtAnticipos.Location = New System.Drawing.Point(450, 53)
         Me.txtAnticipos.Name = "txtAnticipos"
         Me.txtAnticipos.Size = New System.Drawing.Size(100, 20)
         Me.txtAnticipos.TabIndex = 7
         '
         'gbxInfo
         '
+        Me.gbxInfo.Controls.Add(Me.btnBuscarClas)
+        Me.gbxInfo.Controls.Add(Me.txtClasifica)
+        Me.gbxInfo.Controls.Add(Me.Label5)
         Me.gbxInfo.Controls.Add(Me.lblCodCat)
         Me.gbxInfo.Controls.Add(Me.btnGuardar)
         Me.gbxInfo.Controls.Add(Me.btnModificar)
@@ -122,15 +129,44 @@ Partial Class A_CategoriaProveedor
         Me.gbxInfo.Controls.Add(Me.txtDescrip)
         Me.gbxInfo.Location = New System.Drawing.Point(10, 10)
         Me.gbxInfo.Name = "gbxInfo"
-        Me.gbxInfo.Size = New System.Drawing.Size(455, 123)
+        Me.gbxInfo.Size = New System.Drawing.Size(559, 146)
         Me.gbxInfo.TabIndex = 8
         Me.gbxInfo.TabStop = False
         Me.gbxInfo.Text = "Información"
         '
+        'btnBuscarClas
+        '
+        Me.btnBuscarClas.BackColor = System.Drawing.Color.Transparent
+        Me.btnBuscarClas.BackgroundImage = CType(resources.GetObject("btnBuscarClas.BackgroundImage"), System.Drawing.Image)
+        Me.btnBuscarClas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBuscarClas.FlatAppearance.BorderSize = 0
+        Me.btnBuscarClas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarClas.Location = New System.Drawing.Point(158, 82)
+        Me.btnBuscarClas.Name = "btnBuscarClas"
+        Me.btnBuscarClas.Size = New System.Drawing.Size(20, 17)
+        Me.btnBuscarClas.TabIndex = 14
+        Me.btnBuscarClas.UseVisualStyleBackColor = False
+        '
+        'txtClasifica
+        '
+        Me.txtClasifica.Location = New System.Drawing.Point(93, 80)
+        Me.txtClasifica.Name = "txtClasifica"
+        Me.txtClasifica.Size = New System.Drawing.Size(60, 20)
+        Me.txtClasifica.TabIndex = 13
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(4, 85)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(66, 13)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "Clasificación"
+        '
         'lblCodCat
         '
         Me.lblCodCat.AutoSize = True
-        Me.lblCodCat.Location = New System.Drawing.Point(154, 97)
+        Me.lblCodCat.Location = New System.Drawing.Point(259, 122)
         Me.lblCodCat.Name = "lblCodCat"
         Me.lblCodCat.Size = New System.Drawing.Size(39, 13)
         Me.lblCodCat.TabIndex = 11
@@ -143,7 +179,7 @@ Partial Class A_CategoriaProveedor
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(373, 92)
+        Me.btnGuardar.Location = New System.Drawing.Point(478, 117)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 10
@@ -156,7 +192,7 @@ Partial Class A_CategoriaProveedor
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(292, 92)
+        Me.btnModificar.Location = New System.Drawing.Point(397, 117)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 9
@@ -170,7 +206,7 @@ Partial Class A_CategoriaProveedor
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(211, 92)
+        Me.btnCrear.Location = New System.Drawing.Point(316, 117)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 8
@@ -181,9 +217,9 @@ Partial Class A_CategoriaProveedor
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.dtCategorias)
-        Me.GroupBox1.Location = New System.Drawing.Point(10, 139)
+        Me.GroupBox1.Location = New System.Drawing.Point(10, 162)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(455, 137)
+        Me.GroupBox1.Size = New System.Drawing.Size(559, 232)
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Categorias de Proveedor"
@@ -200,7 +236,7 @@ Partial Class A_CategoriaProveedor
         Me.dtCategorias.Name = "dtCategorias"
         Me.dtCategorias.ReadOnly = True
         Me.dtCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCategorias.Size = New System.Drawing.Size(442, 112)
+        Me.dtCategorias.Size = New System.Drawing.Size(544, 207)
         Me.dtCategorias.TabIndex = 0
         '
         'A_CategoriaProveedor
@@ -208,7 +244,7 @@ Partial Class A_CategoriaProveedor
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(474, 285)
+        Me.ClientSize = New System.Drawing.Size(578, 403)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -239,4 +275,7 @@ Partial Class A_CategoriaProveedor
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents dtCategorias As DataGridView
     Friend WithEvents lblCodCat As Label
+    Friend WithEvents txtClasifica As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents btnBuscarClas As Button
 End Class

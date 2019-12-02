@@ -76,6 +76,10 @@
 
     Private Sub dtDetalleFactura_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellEndEdit
 
+
+
+
+
         Try
             Dim Cuenta As New ClsCuenta
             'Capturar codigo de cuenta
@@ -217,12 +221,6 @@
         Me.Close()
         A_ListadoFacturaCompra.ShowDialog()
 
-
-
-
-
-
-
     End Sub
 
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
@@ -240,6 +238,10 @@
         cmb.Items.Add("Comprado")
         cmb.Items.Add("Consignado")
         cmb.Name = "cbx"
+
+    End Sub
+
+    Private Sub dtDetalleFactura_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellContentClick
 
     End Sub
 End Class
