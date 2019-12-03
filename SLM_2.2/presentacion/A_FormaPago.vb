@@ -1,30 +1,69 @@
 ﻿
 Public Class frmFormaPago
+    Dim FormaPago As New ClsFormaPago
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        'Guardar nuevo registro de forma de pago.
+        'Comprobar que la cuenta existe
+        Dim dtC As New DataTable
+        Dim cuenta As New ClsCuenta
+        cuenta.Cuent_a = txtCuenta.Text
 
-        Try
-            Dim FormaPago As New ClsFormaPago
+        dtC = cuenta.Comprobar
 
-            FormaPago.Cod = txtCodigo.Text
-            FormaPago.Cuen_ta = Convert.ToInt32(txtCuenta.Text)
-            FormaPago.Comenta_rio = txtComentario.Text
-            FormaPago.Cuenta_Banco = Convert.ToInt32(txtCtaBanco.Text)
-            FormaPago.Nombre_Banco = txtNombreBanco.Text
-            FormaPago.Formu_lario = txtFormulario.Text
-            FormaPago.Ti_po = txtTipo.Text
-            FormaPago.Ban_co = txtBanco.Text
-            'FormaPago.Comi_sion = Convert.ToDouble(txtComision.Text)
-            FormaPago.Retenci_on = Convert.ToDouble(txtRetencion.Text)
-            FormaPago.RegistrarNuevaFormaPago()
-            MessageBox.Show("El registro ha sido guardado exitosamente.")
+        If dtC.Rows.Count > 0 Then
 
-        Catch ex As Exception
 
-            MsgBox(ex.Message)
+            'Guardar nuevo registro de forma de pago.
 
-        End Try
+            'Limpiar espacios de textbox
+            Dim codi, comenta, namebanc, formu, tip, banco As String
+
+            codi = txtCodigo.Text.Trim
+            comenta = txtComentario.Text.Trim
+            namebanc = txtNombreBanco.Text.Trim
+            formu = txtFormulario.Text.Trim
+            tip = txtTipo.Text.Trim
+            banco = txtBanco.Text.Trim
+
+
+            Try
+
+                With FormaPago
+                    .Cod = codi
+                    .Cuen_ta = txtCuenta.Text
+                    .Comenta_rio = comenta
+                    .Cuenta_Banco = txtCtaBanco.Text
+                    .Nombre_Banco = namebanc
+                    .Formu_lario = formu
+                    .Ti_po = tip
+                    .Ban_co = banco
+                    .Retenci_on = Convert.ToDouble(txtRetencion.Text)
+                    'Funcion de registro de forma de pago
+                    .RegistrarNuevaFormaPago()
+                    MessageBox.Show("El registro ha sido guardado exitosamente.")
+                    Limpiar()
+                    'Actualizar tabla de registro
+                    dtFormasPago.DataSource = .informacionFormasPago
+
+                End With
+
+            Catch ex As Exception
+
+                MessageBox.Show("El registro no se guardo. Detalle: " + ex.Message)
+
+
+            End Try
+
+        Else
+
+            MsgBox("Hubo un error o la cuenta no existe.")
+
+        End If
+
+
+
+
+
     End Sub
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Me.Close()
@@ -54,47 +93,53 @@ Public Class frmFormaPago
         Else
             e.Handled = False
         End If
-
         txtNombreBanco.Select(txtNombreBanco.Text.Length, 0)
 
     End Sub
 
-    Private Sub btnCerrar_Click(sender As Object, e As EventArgs)
 
-        Me.Height = 287
-        If Me.Height = 287 Then
-            Me.StartPosition = FormStartPosition.CenterScreen
-        End If
-
-    End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
 
         Try
-            Dim FormaPago As New ClsFormaPago
 
+            FormaPago.Codigo_FormaPago = Convert.ToInt32(lblCodFormaPago.Text)
             FormaPago.Cod = txtCodigo.Text
-            FormaPago.Cuen_ta = Convert.ToInt32(txtCuenta.Text)
+            FormaPago.Cuen_ta = txtCuenta.Text
             FormaPago.Comenta_rio = txtComentario.Text
-            FormaPago.Cuenta_Banco = Convert.ToInt32(txtCtaBanco.Text)
+            FormaPago.Cuenta_Banco = txtCtaBanco.Text
             FormaPago.Nombre_Banco = txtNombreBanco.Text
             FormaPago.Formu_lario = txtFormulario.Text
             FormaPago.Ti_po = txtTipo.Text
             FormaPago.Ban_co = txtBanco.Text
-            'FormaPago.Comi_sion = Convert.ToDouble(txtComision.Text)
             FormaPago.Retenci_on = Convert.ToDouble(txtRetencion.Text)
 
+            'Funcion modificar forma de pago seleccionada
             FormaPago.modificarFormaPago()
+            'Actualizar informacion de formas de pago
+
             MessageBox.Show("El registro se ha modificado exitosamente.")
 
         Catch ex As Exception
 
-            MsgBox(ex.Message)
+            MsgBox("Error al modificar el registro. Detalle: " + ex.Message)
 
         End Try
+
+        'Limpiar campos, habilitar para guardar nuevo registro y actulizar tabla de datos
+        Limpiar()
+        btnGuardar.Visible = True
+        btnModificar.Visible = False
+        btnCrear.Visible = False
+        dtFormasPago.DataSource = FormaPago.informacionFormasPago()
+
     End Sub
 
     Private Sub dtFormasPago_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtFormasPago.CellClick
+
+        btnCrear.Visible = True
+        btnModificar.Visible = True
+        btnGuardar.Visible = False
         Try
             lblCodFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
             txtCodigo.Text = dtFormasPago.Rows(e.RowIndex).Cells(1).Value
@@ -105,11 +150,12 @@ Public Class frmFormaPago
             txtFormulario.Text = dtFormasPago.Rows(e.RowIndex).Cells(6).Value
             txtTipo.Text = dtFormasPago.Rows(e.RowIndex).Cells(7).Value
             txtBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(8).Value
-            'txtComision.Text = dtFormasPago.Rows(e.RowIndex).Cells(9).Value
             txtRetencion.Text = dtFormasPago.Rows(e.RowIndex).Cells(10).Value
 
+
+
         Catch ex As Exception
-            'MessageBox.Show("Error al hacer la selección.")
+
         End Try
 
     End Sub
@@ -126,5 +172,30 @@ Public Class frmFormaPago
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        A_ListarCuentas.ShowDialog()
+    End Sub
+
+    Sub Limpiar()
+        txtCodigo.Text = ""
+        txtCuenta.Text = ""
+        txtCtaBanco.Text = ""
+        txtNombreBanco.Text = ""
+        txtFormulario.Text = ""
+        txtBanco.Text = ""
+        txtTipo.Text = ""
+        txtComentario.Text = ""
+        txtRetencion.Text = "0.0"
+    End Sub
+
+    Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
+        'Limpiar campos y activar opcion de guardar
+        Limpiar()
+        btnCrear.Visible = False
+        btnModificar.Visible = False
+        btnGuardar.Visible = True
+
     End Sub
 End Class

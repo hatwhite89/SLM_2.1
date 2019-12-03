@@ -37,6 +37,7 @@ Partial Class M_TipoObjeto
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtcomentarioB = New System.Windows.Forms.TextBox()
         Me.lblcomentarioB = New System.Windows.Forms.Label()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.gbxtipoObjeto.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,6 +45,7 @@ Partial Class M_TipoObjeto
         '
         'gbxtipoObjeto
         '
+        Me.gbxtipoObjeto.Controls.Add(Me.lblcode)
         Me.gbxtipoObjeto.Controls.Add(Me.rtxtcomentario)
         Me.gbxtipoObjeto.Controls.Add(Me.btnmodificar)
         Me.gbxtipoObjeto.Controls.Add(Me.btnnuevo)
@@ -207,6 +209,15 @@ Partial Class M_TipoObjeto
         Me.lblcomentarioB.TabIndex = 114
         Me.lblcomentarioB.Text = "Comentario"
         '
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(429, 30)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 123
+        Me.lblcode.Visible = False
+        '
         'M_TipoObjeto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -242,4 +253,5 @@ Partial Class M_TipoObjeto
     Friend WithEvents lbltotal As Label
     Friend WithEvents txtcomentarioB As TextBox
     Friend WithEvents lblcomentarioB As Label
+    Friend WithEvents lblcode As Label
 End Class

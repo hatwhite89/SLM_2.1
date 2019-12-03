@@ -24,6 +24,7 @@ Partial Class M_Categoria
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Categoria))
         Me.gbxclasificacion = New System.Windows.Forms.GroupBox()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.txtdescripcionTipo = New System.Windows.Forms.TextBox()
         Me.lbltipo = New System.Windows.Forms.Label()
         Me.btnbuscarTipo = New System.Windows.Forms.Button()
@@ -42,7 +43,6 @@ Partial Class M_Categoria
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
         Me.lblcomentarioB = New System.Windows.Forms.Label()
-        Me.btnbuscar = New System.Windows.Forms.Button()
         Me.gbxclasificacion.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,6 +50,7 @@ Partial Class M_Categoria
         '
         'gbxclasificacion
         '
+        Me.gbxclasificacion.Controls.Add(Me.lblcode)
         Me.gbxclasificacion.Controls.Add(Me.txtdescripcionTipo)
         Me.gbxclasificacion.Controls.Add(Me.lbltipo)
         Me.gbxclasificacion.Controls.Add(Me.btnbuscarTipo)
@@ -67,7 +68,16 @@ Partial Class M_Categoria
         Me.gbxclasificacion.Size = New System.Drawing.Size(613, 224)
         Me.gbxclasificacion.TabIndex = 117
         Me.gbxclasificacion.TabStop = False
-        Me.gbxclasificacion.Text = "REGISTRAR CLASIFICACIÓN"
+        Me.gbxclasificacion.Text = "REGISTRAR CATEGORÍA"
+        '
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(407, 34)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 132
+        Me.lblcode.Visible = False
         '
         'txtdescripcionTipo
         '
@@ -130,7 +140,7 @@ Partial Class M_Categoria
         Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnmodificar.ForeColor = System.Drawing.Color.White
         Me.btnmodificar.Location = New System.Drawing.Point(326, 172)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(96, 35)
@@ -143,7 +153,7 @@ Partial Class M_Categoria
         Me.btnnuevo.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnnuevo.ForeColor = System.Drawing.Color.White
         Me.btnnuevo.Location = New System.Drawing.Point(44, 172)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(105, 35)
@@ -156,7 +166,7 @@ Partial Class M_Categoria
         Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnguardar.ForeColor = System.Drawing.Color.White
         Me.btnguardar.Location = New System.Drawing.Point(190, 172)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(96, 35)
@@ -178,7 +188,7 @@ Partial Class M_Categoria
         Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncancelar.ForeColor = System.Drawing.Color.White
         Me.btncancelar.Location = New System.Drawing.Point(468, 172)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(90, 35)
@@ -201,13 +211,12 @@ Partial Class M_Categoria
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtdescripcionB)
         Me.gbxbusqueda.Controls.Add(Me.lblcomentarioB)
-        Me.gbxbusqueda.Controls.Add(Me.btnbuscar)
         Me.gbxbusqueda.Location = New System.Drawing.Point(30, 251)
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Size = New System.Drawing.Size(613, 347)
         Me.gbxbusqueda.TabIndex = 116
         Me.gbxbusqueda.TabStop = False
-        Me.gbxbusqueda.Text = "BUSCAR CLASIFICACIÓN"
+        Me.gbxbusqueda.Text = "BUSCAR CATEGORÍA"
         '
         'lblcantidad
         '
@@ -243,7 +252,7 @@ Partial Class M_Categoria
         '
         'txtdescripcionB
         '
-        Me.txtdescripcionB.Location = New System.Drawing.Point(182, 26)
+        Me.txtdescripcionB.Location = New System.Drawing.Point(233, 26)
         Me.txtdescripcionB.Name = "txtdescripcionB"
         Me.txtdescripcionB.Size = New System.Drawing.Size(192, 22)
         Me.txtdescripcionB.TabIndex = 115
@@ -251,35 +260,23 @@ Partial Class M_Categoria
         'lblcomentarioB
         '
         Me.lblcomentarioB.AutoSize = True
-        Me.lblcomentarioB.Location = New System.Drawing.Point(96, 29)
+        Me.lblcomentarioB.Location = New System.Drawing.Point(147, 29)
         Me.lblcomentarioB.Name = "lblcomentarioB"
         Me.lblcomentarioB.Size = New System.Drawing.Size(82, 17)
         Me.lblcomentarioB.TabIndex = 114
         Me.lblcomentarioB.Text = "Descripción"
         '
-        'btnbuscar
-        '
-        Me.btnbuscar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnbuscar.Location = New System.Drawing.Point(380, 20)
-        Me.btnbuscar.Name = "btnbuscar"
-        Me.btnbuscar.Size = New System.Drawing.Size(78, 35)
-        Me.btnbuscar.TabIndex = 113
-        Me.btnbuscar.Text = "Buscar"
-        Me.btnbuscar.UseVisualStyleBackColor = False
-        '
         'M_Categoria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(669, 622)
         Me.Controls.Add(Me.gbxclasificacion)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
         Me.Name = "M_Categoria"
-        Me.Text = "M_Categoria"
+        Me.Text = "Categoría"
         Me.gbxclasificacion.ResumeLayout(False)
         Me.gbxclasificacion.PerformLayout()
         Me.gbxbusqueda.ResumeLayout(False)
@@ -302,11 +299,11 @@ Partial Class M_Categoria
     Friend WithEvents lbltotal As Label
     Friend WithEvents txtdescripcionB As TextBox
     Friend WithEvents lblcomentarioB As Label
-    Friend WithEvents btnbuscar As Button
     Friend WithEvents rtxtdescripcion As RichTextBox
     Friend WithEvents lbldescripcion As Label
     Friend WithEvents txtdescripcionTipo As TextBox
     Friend WithEvents lbltipo As Label
     Friend WithEvents btnbuscarTipo As Button
     Friend WithEvents txtcodigoTipo As TextBox
+    Friend WithEvents lblcode As Label
 End Class

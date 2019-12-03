@@ -96,7 +96,7 @@ Public Class ClsSede
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarSede_M"
+        sqlcom.CommandText = "M_slmInsertarSede"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "nombre" 'nombre campo en el procedimiento almacenado @
@@ -167,7 +167,7 @@ Public Class ClsSede
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarSede_M"
+        sqlcom.CommandText = "M_slmModificarSede"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -245,7 +245,7 @@ Public Class ClsSede
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarSede_M"
+            cmd.CommandText = "M_slmBuscarSede"
             cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Nombre1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -265,7 +265,7 @@ Public Class ClsSede
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmSeleccionarSede_M", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarSede", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -282,7 +282,7 @@ Public Class ClsSede
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarSedeCode_M"
+            cmd.CommandText = "M_slmBuscarSedeCode"
             cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Codigo1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd

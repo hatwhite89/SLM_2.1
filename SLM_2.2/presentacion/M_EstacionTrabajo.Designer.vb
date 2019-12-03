@@ -37,6 +37,7 @@ Partial Class M_EstacionTrabajo
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxcaja.SuspendLayout()
@@ -106,6 +107,7 @@ Partial Class M_EstacionTrabajo
         '
         'gbxcaja
         '
+        Me.gbxcaja.Controls.Add(Me.lblcode)
         Me.gbxcaja.Controls.Add(Me.rtxtdescripcion)
         Me.gbxcaja.Controls.Add(Me.lbldescripcion)
         Me.gbxcaja.Controls.Add(Me.lblcodigo)
@@ -208,10 +210,20 @@ Partial Class M_EstacionTrabajo
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
         '
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(407, 34)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 124
+        Me.lblcode.Visible = False
+        '
         'M_EstacionTrabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(669, 622)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.gbxcaja)
@@ -241,4 +253,5 @@ Partial Class M_EstacionTrabajo
     Friend WithEvents btnguardar As Button
     Friend WithEvents rtxtdescripcion As RichTextBox
     Friend WithEvents lbldescripcion As Label
+    Friend WithEvents lblcode As Label
 End Class

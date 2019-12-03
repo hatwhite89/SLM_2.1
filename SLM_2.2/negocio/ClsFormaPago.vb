@@ -3,8 +3,8 @@ Imports System.Data.SqlClient
 Public Class ClsFormaPago
     'GUARDAR CAMBIOS
     'VARIABLES DE FORMA DE PAGO
-    Dim codigo, comentario, nombreBanco, formulario, tipo, banco As String
-    Dim cuenta, nroCtaBanco, codFormaPago As Integer
+    Dim codigo, comentario, nombreBanco, formulario, tipo, banco, cuenta, nroCtaBanco As String
+    Dim codFormaPago As Integer
     Dim retencion As Double
     'Constructor
     Public Sub New()
@@ -62,7 +62,6 @@ Public Class ClsFormaPago
             tipo = value
         End Set
     End Property
-
     'Banco
     Public Property Ban_co As String
         Get
@@ -83,21 +82,21 @@ Public Class ClsFormaPago
     End Property
 
     'Cuenta
-    Public Property Cuen_ta As Integer
+    Public Property Cuen_ta As String
         Get
             Return cuenta
         End Get
-        Set(value As Integer)
+        Set(value As String)
             cuenta = value
         End Set
     End Property
 
     'Numero de Cuenta de Banco
-    Public Property Cuenta_Banco As Integer
+    Public Property Cuenta_Banco As String
         Get
             Return nroCtaBanco
         End Get
-        Set(value As Integer)
+        Set(value As String)
             nroCtaBanco = value
         End Set
     End Property
@@ -125,7 +124,7 @@ Public Class ClsFormaPago
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarFormaPago_A"
+        sqlcom.CommandText = "A_slmInsertarFormaPago"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -203,7 +202,7 @@ Public Class ClsFormaPago
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarCodigoFormaPago_A"
+            cmd.CommandText = "A_slmBuscarCodigoFormaPago"
             cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Cod
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -223,7 +222,7 @@ Public Class ClsFormaPago
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmListarFormasPago_A", cn)
+        Using da As New SqlDataAdapter("A_slmListarFormasPago", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -239,7 +238,7 @@ Public Class ClsFormaPago
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarCodFormaPago_A"
+            cmd.CommandText = "A_slmBuscarCodFormaPago"
             cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Cod
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -252,7 +251,6 @@ Public Class ClsFormaPago
 
     End Function
 
-
     'Eliminar Forma de Pago
     Public Function eliminarFormaPago() As DataTable
 
@@ -263,7 +261,7 @@ Public Class ClsFormaPago
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmEliminarFormaPago_A"
+            cmd.CommandText = "A_slmEliminarFormaPago"
             cmd.Parameters.Add("@codFormaPago", SqlDbType.VarChar).Value = Codigo_FormaPago
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -283,7 +281,7 @@ Public Class ClsFormaPago
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmInformacionFormaPago_A", cn)
+        Using da As New SqlDataAdapter("A_slmInformacionFormaPago", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -301,7 +299,7 @@ Public Class ClsFormaPago
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmActualizarFormaPago_A"
+        sqlcom.CommandText = "A_slmActualizarFormaPago"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -382,10 +380,35 @@ Public Class ClsFormaPago
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmMostrarFormaPago_A", cn)
+        Using da As New SqlDataAdapter("A_slmMostrarFormaPago", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
         End Using
     End Function
+
+    'Capturar numero de cuenta de banco
+    Public Function numerodeCuenta() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmCapturarNumeroCtaFormaPago"
+            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Cod
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+
 End Class

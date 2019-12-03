@@ -18,12 +18,12 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (txtcodigo.Text <> "" And txtnombre.Text <> "" And txtcodigoTipo.Text <> "") Then
+            If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "" And Trim(txtcodigoTipo.Text) <> "") Then
                 Dim objObj As New ClsObjeto
                 With objObj
                     .objeto_ = txtcodigo.Text
                     .nombre_ = txtnombre.Text
-                    .tipoObjeto_ = txtcodigoTipo.Text
+                    .tipoObjeto_ = lblcodeTipoObjeto.Text
                     .cerrado_ = cbxcerrado.Checked
                 End With
 
@@ -50,18 +50,19 @@
             End If
 
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox("Error al querer ingresar el objeto.", MsgBoxStyle.Critical)
         End Try
     End Sub
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (txtnombre.Text <> "" And txtcodigo.Text <> "") Then
+            If (Trim(txtnombre.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
                 Dim objObj As New ClsObjeto
                 With objObj
+                    .codigo_ = lblcode.Text
                     .objeto_ = txtcodigo.Text
                     .nombre_ = txtnombre.Text
-                    .tipoObjeto_ = txtcodigoTipo.Text
+                    .tipoObjeto_ = lblcodeTipoObjeto.Text
                     .cerrado_ = cbxcerrado.Checked
                 End With
 
@@ -89,7 +90,7 @@
             End If
 
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox("Error al querer modificar el objeto.", MsgBoxStyle.Critical)
         End Try
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
@@ -113,14 +114,16 @@
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-            txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
-            txtcodigoTipo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
-            cbxcerrado.Checked = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+            lblcode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+            lblcodeTipoObjeto.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+            txtcodigoTipo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+            cbxcerrado.Checked = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()
             btnmodificar.Enabled = True
             txtnombre.ReadOnly = False
             txtcodigoTipo.ReadOnly = False
-            txtcodigo.ReadOnly = True
+            txtcodigo.ReadOnly = False
             btnbuscarTipo.Enabled = True
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -132,10 +135,18 @@
             With objObj
                 .nombre_ = txtnombreB.Text
             End With
-            Dim dv As DataView = objObj.BuscarObjeto.DefaultView
-            dgbtabla.DataSource = dv
-            lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
+            If (Trim(txtnombreB.Text) <> "") Then
+                Dim dv As DataView = objObj.BuscarObjeto.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            Else
+                Dim dv As DataView = objObj.SeleccionarObjeto.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            End If
         Catch ex As Exception
 
         End Try
@@ -145,16 +156,20 @@
     End Sub
 
     Private Sub txtcodigoTipo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoTipo.TextChanged
-        If (txtcodigoTipo.Text <> "") Then
+        lblcodeTipoObjeto.Text = ""
+        txtcomentarioTipo.Text = ""
+        If (Trim(txtcodigoTipo.Text) <> "") Then
             Try
                 Dim objTipoObj As New ClsTipoObjeto
                 With objTipoObj
-                    .codigo_ = txtcodigoTipo.Text
+                    .codigoTipoObjeto_ = txtcodigoTipo.Text
                 End With
                 Dim dt As New DataTable
                 dt = objTipoObj.BuscarTipoObjetoCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtcomentarioTipo.Text = CStr(row("comentario"))
+                lblcodeTipoObjeto.Text = CStr(row("codigo"))
+                txtcodigoTipo.Text = UCase(txtcodigoTipo.Text)
             Catch ex As Exception
 
             End Try

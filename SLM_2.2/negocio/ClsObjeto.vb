@@ -1,11 +1,20 @@
 ﻿Imports System.Data.SqlClient
 Public Class ClsObjeto
-    Dim nombre, objeto, tipoObjeto As String
+    Dim nombre, objeto As String
     Dim cerrado As Boolean
+    Dim codigo, tipoObjeto As Integer
     'Constructor
     Public Sub New()
 
     End Sub
+    Public Property codigo_ As Integer
+        Get
+            Return codigo
+        End Get
+        Set(value As Integer)
+            codigo = value
+        End Set
+    End Property
     Public Property nombre_ As String
         Get
             Return nombre
@@ -30,11 +39,11 @@ Public Class ClsObjeto
             cerrado = value
         End Set
     End Property
-    Public Property tipoObjeto_ As String
+    Public Property tipoObjeto_ As Integer
         Get
             Return tipoObjeto
         End Get
-        Set(value As String)
+        Set(value As Integer)
             tipoObjeto = value
         End Set
     End Property
@@ -45,7 +54,7 @@ Public Class ClsObjeto
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarObjeto_M"
+        sqlcom.CommandText = "M_slmInsertarObjeto"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "objeto" 'nombre campo en el procedimiento almacenado @
@@ -93,7 +102,12 @@ Public Class ClsObjeto
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarObjeto_M"
+        sqlcom.CommandText = "M_slmModificarObjeto"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigo_
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "objeto" 'nombre campo en el procedimiento almacenado @
@@ -142,7 +156,7 @@ Public Class ClsObjeto
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarObjeto_M"
+            cmd.CommandText = "M_slmBuscarObjeto"
             cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -162,7 +176,7 @@ Public Class ClsObjeto
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarObjetoCode_M"
+            cmd.CommandText = "M_slmBuscarObjetoCode"
             cmd.Parameters.Add("@objeto", SqlDbType.VarChar).Value = objeto_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -180,13 +194,12 @@ Public Class ClsObjeto
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmSeleccionarObjeto_M", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarObjeto", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
         End Using
     End Function
-
 
     'Listar codigo y nombre de objeto
     Public Function listarNombreObjeto() As DataTable
@@ -195,7 +208,7 @@ Public Class ClsObjeto
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmListarNombreObjetos_A", cn)
+        Using da As New SqlDataAdapter("A_slmListarNombreObjetos", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

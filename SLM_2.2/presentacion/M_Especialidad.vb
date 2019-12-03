@@ -5,7 +5,7 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (txtnombre.Text <> "") Then
+            If (Trim(txtnombre.Text) <> "") Then
                 Dim objEspecialidad As New ClsEspecialidad
                 With objEspecialidad
                     .Nombre1 = txtnombre.Text
@@ -38,7 +38,7 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (txtnombre.Text <> "" And txtcodigo.Text <> "") Then
+            If (Trim(txtnombre.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
                 Dim objEspecialidad As New ClsEspecialidad
                 With objEspecialidad
                     .Nombre1 = txtnombre.Text
@@ -112,6 +112,8 @@
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
             txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
             btnmodificar.Enabled = True
+            btnnuevo.Enabled = True
+            btnguardar.Enabled = False
             txtnombre.ReadOnly = False
             txtcodigo.ReadOnly = True
             M_Medico.txtcodigoEspecialidad.Text = txtcodigo.Text

@@ -2,9 +2,9 @@
 
 Public Class ClsFactura
 
-    Dim numero, codigoCliente, codigoMedico, codigoSede As Integer
-    Dim numeroOficial, codigoRecepcionista, codigoCajero, codigoTerminoPago, nombreCliente As String
-    Dim codigoCategoria, codigoSucursal, codigoConvenio, numeroPoliza, codigoTerminal As String
+    Dim numero, codigoCliente, codigoMedico, codigoSede, codigoRecepcionista, codigoCajero, codigoTerminoPago As Integer
+    Dim numeroOficial, numeroPoliza, nombreCliente As String
+    Dim codigoSucursal, codigoConvenio, codigoTerminal As Integer
     Dim fechaFactura, fechaVto As Date
     Dim ok, enviarEmail, entregaPaciente, entregaMedico As Boolean
     Dim pagoPaciente, vuelto, total As Double
@@ -36,14 +36,6 @@ Public Class ClsFactura
             codigoMedico = value
         End Set
     End Property
-    Public Property codigoCategoria1 As String
-        Get
-            Return codigoCategoria
-        End Get
-        Set(value As String)
-            codigoCategoria = value
-        End Set
-    End Property
     Public Property nombreCliente_ As String
         Get
             Return nombreCliente
@@ -52,11 +44,11 @@ Public Class ClsFactura
             nombreCliente = value
         End Set
     End Property
-    Public Property codigoTerminoPago1 As String
+    Public Property codigoTerminoPago1 As Integer
         Get
             Return codigoTerminoPago
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoTerminoPago = value
         End Set
     End Property
@@ -68,19 +60,19 @@ Public Class ClsFactura
             numeroOficial = value
         End Set
     End Property
-    Public Property codigoRecepcionista_ As String
+    Public Property codigoRecepcionista_ As Integer
         Get
             Return codigoRecepcionista
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoRecepcionista = value
         End Set
     End Property
-    Public Property codigoCajero_ As String
+    Public Property codigoCajero_ As Integer
         Get
             Return codigoCajero
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoCajero = value
         End Set
     End Property
@@ -92,19 +84,19 @@ Public Class ClsFactura
             codigoSede = value
         End Set
     End Property
-    Public Property codigoSucursal_ As String
+    Public Property codigoSucursal_ As Integer
         Get
             Return codigoSucursal
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoSucursal = value
         End Set
     End Property
-    Public Property codigoConvenio_ As String
+    Public Property codigoConvenio_ As Integer
         Get
             Return codigoConvenio
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoConvenio = value
         End Set
     End Property
@@ -116,11 +108,11 @@ Public Class ClsFactura
             numeroPoliza = value
         End Set
     End Property
-    Public Property codigoTerminal_ As String
+    Public Property codigoTerminal_ As Integer
         Get
             Return codigoTerminal
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoTerminal = value
         End Set
     End Property
@@ -205,7 +197,7 @@ Public Class ClsFactura
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarFactura_M"
+        sqlcom.CommandText = "M_slmInsertarFactura"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "numeroOficial" 'nombre campo en el procedimiento almacenado @
@@ -328,7 +320,7 @@ Public Class ClsFactura
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarFactura_M"
+        sqlcom.CommandText = "M_slmModificarFactura"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "numero" 'nombre campo en el procedimiento almacenado @
@@ -338,66 +330,6 @@ Public Class ClsFactura
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "numeroOficial" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = numeroOficial_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "fechaFactura" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = fechaFactura_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoCliente" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoCliente_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoRecepcionista" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoRecepcionista_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoMedico" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoMedico_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoCajero" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoCajero_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoTerminoPago" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoTerminoPago1
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoSede" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoSede_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "fechaVto" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = fechaVto_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoSucursal" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoSucursal_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoConvenio" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoConvenio_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "numeroPoliza" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = numeroPoliza_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoTerminal" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoTerminal_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -423,11 +355,6 @@ Public Class ClsFactura
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "vuelto" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = vuelto_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "total" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = total_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -461,7 +388,7 @@ Public Class ClsFactura
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarFactura_M"
+            cmd.CommandText = "M_slmBuscarFactura"
             cmd.Parameters.Add("@numero", SqlDbType.Int).Value = numero_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -479,7 +406,7 @@ Public Class ClsFactura
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarFacturaNumero_M"
+            cmd.CommandText = "M_slmBuscarFacturaNumero"
             cmd.Parameters.Add("@numero", SqlDbType.Int).Value = numero_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -497,7 +424,7 @@ Public Class ClsFactura
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarFacturaCliente_M"
+            cmd.CommandText = "M_slmBuscarFacturaCliente"
             cmd.Parameters.Add("@nombreCliente", SqlDbType.VarChar).Value = nombreCliente_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -515,7 +442,7 @@ Public Class ClsFactura
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmEliminarFactura_M"
+        sqlcom.CommandText = "M_slmEliminarFactura"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "numero" 'nombre campo en el procedimiento almacenado @
@@ -549,16 +476,16 @@ Public Class ClsFactura
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarFacturaCode_M"
+            cmd.CommandText = "M_slmBuscarFacturaCode"
             cmd.Parameters.Add("@numeroOficial", SqlDbType.VarChar).Value = numeroOficial_
             cmd.Parameters.Add("@codigoCliente", SqlDbType.Int).Value = codigoCliente_
-            cmd.Parameters.Add("@codigoRecepcionista", SqlDbType.VarChar).Value = codigoRecepcionista_
+            cmd.Parameters.Add("@codigoRecepcionista", SqlDbType.Int).Value = codigoRecepcionista_
             cmd.Parameters.Add("@codigoMedico", SqlDbType.Int).Value = codigoMedico_
-            cmd.Parameters.Add("@codigoCajero", SqlDbType.VarChar).Value = codigoCajero_
-            cmd.Parameters.Add("@codigoTerminoPago", SqlDbType.VarChar).Value = codigoTerminoPago1
+            cmd.Parameters.Add("@codigoCajero", SqlDbType.Int).Value = codigoCajero_
+            cmd.Parameters.Add("@codigoTerminoPago", SqlDbType.Int).Value = codigoTerminoPago1
             cmd.Parameters.Add("@codigoSede", SqlDbType.Int).Value = codigoSede_
             cmd.Parameters.Add("@fechaVto", SqlDbType.DateTime).Value = fechaVto_
-            cmd.Parameters.Add("@codigoSucursal", SqlDbType.VarChar).Value = codigoSucursal_
+            cmd.Parameters.Add("@codigoSucursal", SqlDbType.Int).Value = codigoSucursal_
             cmd.Parameters.Add("@pagoPaciente", SqlDbType.Float).Value = pagoPaciente_
             cmd.Parameters.Add("@vuelto", SqlDbType.Float).Value = vuelto_
             cmd.Parameters.Add("@total", SqlDbType.Float).Value = total_
@@ -575,7 +502,7 @@ Public Class ClsFactura
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
-        Using da As New SqlDataAdapter("slmSeleccionarFactura_M", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarFactura", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

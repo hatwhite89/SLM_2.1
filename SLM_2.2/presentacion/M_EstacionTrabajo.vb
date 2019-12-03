@@ -20,13 +20,14 @@
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-            rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            lblcode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
 
             btnmodificar.Enabled = True
 
             rtxtdescripcion.ReadOnly = False
-            txtcodigo.ReadOnly = True
+            txtcodigo.ReadOnly = False
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -71,7 +72,7 @@
             If (t <> "" And t2 <> "") Then
                 Dim objEstTra As New ClsEstacionTrabajo
                 With objEstTra
-                    .Codigo_ = txtcodigo.Text
+                    .codigoEstacionTrabajo_ = txtcodigo.Text
                     .descripcion_ = rtxtdescripcion.Text
                 End With
 
@@ -112,8 +113,9 @@
             If (t <> "" And t2 <> "") Then
                 Dim objEstTra As New ClsEstacionTrabajo
                 With objEstTra
-                    .Codigo_ = txtcodigo.Text
+                    .codigoEstacionTrabajo_ = txtcodigo.Text
                     .descripcion_ = rtxtdescripcion.Text
+                    .codigo_ = lblcode.Text
                 End With
 
                 If objEstTra.ModificarEstacionTrabajo() = 1 Then
@@ -146,24 +148,13 @@
         limpiar()
         Me.Close()
     End Sub
-    Private Sub btnbuscar_Click(sender As Object, e As EventArgs)
+    Private Sub rtxtdescripcionB_TextChanged(sender As Object, e As EventArgs) Handles rtxtdescripcionB.TextChanged
         Dim objEstTra As New ClsEstacionTrabajo
         With objEstTra
             .descripcion_ = rtxtdescripcionB.Text
         End With
-        Dim dv As DataView = objEstTra.BuscarEstacionTrabajo.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-    End Sub
-
-    Private Sub rtxtdescripcionB_TextChanged(sender As Object, e As EventArgs) Handles rtxtdescripcionB.TextChanged
-        If (rtxtdescripcionB.Text <> "") Then
+        If (Trim(rtxtdescripcionB.Text) <> "") Then
             Try
-                Dim objEstTra As New ClsEstacionTrabajo
-                With objEstTra
-                    .descripcion_ = rtxtdescripcionB.Text
-                End With
                 Dim dv As DataView = objEstTra.BuscarEstacionTrabajo.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
@@ -173,6 +164,10 @@
             End Try
         Else
             rtxtdescripcionB.Text = ""
+            Dim dv As DataView = objEstTra.SeleccionarEstacionTrabajo.DefaultView
+            dgbtabla.DataSource = dv
+            lblcantidad.Text = dv.Count
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
         End If
     End Sub
 End Class

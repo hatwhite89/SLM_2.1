@@ -39,10 +39,10 @@
                 M_Factura.txtcodigoRecepecionista.Text = CStr(row("codigoRecepcionista"))
                 M_Factura.txtcodigoMedico.Text = CStr(row("codigoMedico"))
                 M_Factura.txtcodigoCajero.Text = CStr(row("codigoCajero"))
-                M_Factura.txtcodigoTerminosPago.Text = CStr(row("codigoTerminoPago"))
+                M_Factura.lblcodeTerminoPago.Text = CStr(row("codigoTerminoPago"))
                 M_Factura.txtcodigoSede.Text = CStr(row("codigoSede"))
                 M_Factura.dtpfechaVto.Value = CStr(row("fechaVto"))
-                M_Factura.txtcodigoSucursal.Text = CStr(row("codigoSucursal"))
+                M_Factura.lblcodeSucursal.Text = CStr(row("codigoSucursal"))
                 M_Factura.txtcodigoConvenio.Text = CStr(row("codigoConvenio"))
                 M_Factura.txtnumeroPoliza.Text = CStr(row("numeroPoliza"))
                 M_Factura.txtcodigoTerminal.Text = CStr(row("codigoTerminal"))
@@ -62,8 +62,12 @@
                     M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codigoExamen")), CStr(row("cantidad")), CStr(row("precio")), CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
                     M_ClienteVentana.dgvtabla.Rows.Add(New String() {CStr(row("codigoExamen")), CStr(row("cantidad")), CStr(row("precio")), CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
                 Next
-                M_Factura.btnguardar.Enabled = False
-                M_Factura.btncotizacion.Enabled = False
+                M_Factura.deshabilitar()
+                If (M_Factura.cbxok.Checked = "0") Then
+                    M_Factura.HabilitarActualizarFactura()
+                Else
+                    M_Factura.btnActualizar.Enabled = False
+                End If
                 M_Factura.ShowDialog()
             End If
         Catch ex As Exception
@@ -106,4 +110,5 @@
         M_Factura.limpiar()
         M_Factura.ShowDialog()
     End Sub
+
 End Class

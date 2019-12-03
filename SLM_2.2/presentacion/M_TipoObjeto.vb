@@ -17,10 +17,10 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (txtcodigo.Text <> "" And rtxtcomentario.Text <> "") Then
+            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtcomentario.Text) <> "") Then
                 Dim objTipoObj As New ClsTipoObjeto
                 With objTipoObj
-                    .codigo_ = txtcodigo.Text
+                    .codigoTipoObjeto_ = txtcodigo.Text
                     .comentario_ = rtxtcomentario.Text
                 End With
 
@@ -51,11 +51,12 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (rtxtcomentario.Text <> "" And txtcodigo.Text <> "") Then
+            If (Trim(rtxtcomentario.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
                 Dim objTipoObj As New ClsTipoObjeto
                 With objTipoObj
-                    .codigo_ = txtcodigo.Text
+                    .codigoTipoObjeto_ = txtcodigo.Text
                     .comentario_ = rtxtcomentario.Text
+                    .codigo_ = lblcode.Text
                 End With
 
                 If objTipoObj.ModificarTipoObjeto() = 1 Then
@@ -100,11 +101,15 @@
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-            rtxtcomentario.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            lblcode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            rtxtcomentario.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
             btnmodificar.Enabled = True
             rtxtcomentario.ReadOnly = False
-            txtcodigo.ReadOnly = True
+            btnguardar.Enabled = False
+            btnnuevo.Enabled = True
+            txtcodigo.ReadOnly = False
+            M_Objeto.lblcodeTipoObjeto.Text = lblcode.Text
             M_Objeto.txtcodigoTipo.Text = txtcodigo.Text
             M_Objeto.txtcomentarioTipo.Text = rtxtcomentario.Text
         Catch ex As Exception
@@ -112,15 +117,26 @@
         End Try
     End Sub
     Private Sub txtcomentarioB_TextChanged(sender As Object, e As EventArgs) Handles txtcomentarioB.TextChanged
-        If (txtcomentarioB.Text <> "") Then
+        Try
+
             Dim objTipoObj As New ClsTipoObjeto
             With objTipoObj
                 .comentario_ = txtcomentarioB.Text
             End With
-            Dim dv As DataView = objTipoObj.BuscarTipoObjeto.DefaultView
-            dgbtabla.DataSource = dv
-            lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-        End If
+            If (Trim(txtcomentarioB.Text) <> "") Then
+                Dim dv As DataView = objTipoObj.BuscarTipoObjeto.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            Else
+                Dim dv As DataView = objTipoObj.SeleccionarTipoObjeto.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            End If
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

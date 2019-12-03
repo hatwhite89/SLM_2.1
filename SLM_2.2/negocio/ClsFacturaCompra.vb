@@ -107,7 +107,7 @@ Public Class ClsFacturaCompra
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarFacturaCompras_A"
+        sqlcom.CommandText = "A_slmInsertarFacturaCompras"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -180,7 +180,7 @@ Public Class ClsFacturaCompra
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmActualizarFacturaCompras_A"
+        sqlcom.CommandText = "A_slmActualizarFacturaCompras"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -249,7 +249,7 @@ Public Class ClsFacturaCompra
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmListarFacturasCompra_A", cn)
+        Using da As New SqlDataAdapter("A_slmListarFacturasCompra", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -263,12 +263,35 @@ Public Class ClsFacturaCompra
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmCapturarCodFacturaCompra_A", cn)
+        Using da As New SqlDataAdapter("A_slmCapturarCodFacturaCompra", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
         End Using
 
+
+    End Function
+
+    'Filtro Factura por nombre de proveedor
+    Public Function buscarFacturaProveedor() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarFacturaCompraPro"
+            cmd.Parameters.Add("@nombreProveedor", SqlDbType.VarChar).Value = Nombre_Proveedor
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
 
     End Function
 

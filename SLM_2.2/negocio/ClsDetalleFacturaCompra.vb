@@ -95,7 +95,7 @@ Public Class ClsDetalleFacturaCompra
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarDetalleFacturaCompras_A"
+        sqlcom.CommandText = "A_slmInsertarDetalleFacturaCompras"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -156,7 +156,7 @@ Public Class ClsDetalleFacturaCompra
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmActualizarDetalleFacturaCompra_A"
+        sqlcom.CommandText = "A_slmActualizarDetalleFacturaCompra"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -210,6 +210,29 @@ Public Class ClsDetalleFacturaCompra
         par_sal = sqlcom.Parameters("salida").Value
 
         Return par_sal
+
+    End Function
+
+    'Listar detalles de Factura Compra
+    Public Function listarDetallesFacturaCompra() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmlistarDetalleFacturaCompra"
+            cmd.Parameters.Add("@codFactura", SqlDbType.Int).Value = Cod_Factura
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
 
     End Function
 

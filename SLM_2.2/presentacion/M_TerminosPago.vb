@@ -39,6 +39,7 @@
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
+        btntipoPago.Enabled = False
 
         Try
             Dim objTipoTerm As New ClsTipoTermino
@@ -57,34 +58,38 @@
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-            rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
-            Dim temp As Integer = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value().ToString
+            lblcode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+            Dim temp As Integer = Me.dgbtabla.Rows(e.RowIndex).Cells(6).Value().ToString
             cbxtipoPago.SelectedIndex = temp - 1
             If (lblform.Text = "factura") Then
+                M_Factura.lblcodeTerminoPago.Text = lblcode.Text
                 M_Factura.txtcodigoTerminosPago.Text = txtcodigo.Text
             ElseIf (lblform.Text = "cliente") Then
+                M_Cliente.lblcodeTerminoPago.Text = lblcode.Text
                 M_Cliente.txtcodigoTermino.Text = txtcodigo.Text
                 M_Cliente.txtnombreTerminos.Text = rtxtdescripcion.Text
             End If
 
-            If (Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value() = 0) Then
+            If (Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value() = 0) Then
                 txtdiasNeto.Text = ""
             Else
-                txtdiasNeto.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
-            End If
-
-            If (Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value() = 0) Then
-                txtcodigoCtaContado.Text = ""
-            Else
-                txtcodigoCtaContado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+                txtdiasNeto.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
             End If
 
             If (Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value() = 0) Then
+                txtcodigoCtaContado.Text = ""
+            Else
+                txtcodigoCtaContado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+            End If
+
+            If (Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value() = 0) Then
                 txtcodigoCtaVentas.Text = ""
             Else
-                txtcodigoCtaVentas.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+                txtcodigoCtaVentas.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()
             End If
+            cbxtipoPago.Enabled = True
 
             btnmodificar.Enabled = True
 
@@ -92,7 +97,7 @@
             txtdiasNeto.ReadOnly = False
             txtcodigoCtaContado.ReadOnly = False
             txtcodigoCtaVentas.ReadOnly = False
-            txtcodigo.ReadOnly = True
+            txtcodigo.ReadOnly = False
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -112,10 +117,10 @@
         txtcodigo.ReadOnly = False
 
         cbxtipoPago.Enabled = True
-        btnbuscar.Enabled = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
         btnnuevo.Enabled = False
+        btntipoPago.Enabled = True
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
@@ -138,12 +143,12 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (cbxtipoPago.SelectedIndex.ToString > -1 And rtxtdescripcion.Text <> "" And txtcodigo.Text <> "") Then
+            If (cbxtipoPago.SelectedIndex.ToString > -1 And Trim(rtxtdescripcion.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
                 txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
                 Dim objTerm As New ClsTerminoPago
                 With objTerm
-                    .Codigo1 = txtcodigo.Text
+                    .codigoTerminoPago_ = txtcodigo.Text
                     .Descripcion1 = rtxtdescripcion.Text
                     .codigoTipoTermino1 = Convert.ToInt32(cbxtipoPago.SelectedIndex.ToString) + 1
                 End With
@@ -188,13 +193,14 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (txtcodigo.Text <> "" And rtxtdescripcion.Text <> "") Then
+            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtdescripcion.Text) <> "") Then
 
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
 
                 Dim objTerm As New ClsTerminoPago
                 With objTerm
-                    .Codigo1 = txtcodigo.Text
+                    .codigo_ = lblcode.Text
+                    .codigoTerminoPago_ = txtcodigo.Text
                     .Descripcion1 = rtxtdescripcion.Text
                     .codigoTipoTermino1 = Convert.ToInt32(cbxtipoPago.SelectedIndex.ToString) + 1
                 End With
@@ -240,16 +246,6 @@
         limpiar()
         Me.Close()
     End Sub
-    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
-        Dim objTerm As New ClsTerminoPago
-        With objTerm
-            .Descripcion1 = txtdescripcionB.Text
-        End With
-        Dim dv As DataView = objTerm.BuscarTerminoPago.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-    End Sub
     Private Sub btnctaContado_Click(sender As Object, e As EventArgs) Handles btnctaContado.Click
         'Asignar valor a label para diferenciar campo a llenar.
         M_BuscarCuenta.lbltipoCta.Text = "Contado"
@@ -261,7 +257,7 @@
         M_BuscarCuenta.ShowDialog()
     End Sub
     Private Sub txtcodigoCtaContado_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoCtaContado.TextChanged
-        If (txtcodigoCtaContado.Text <> "") Then
+        If (Trim(txtcodigoCtaContado.Text) <> "") Then
             Try
                 Dim objEsp As New ClsCuenta
                 With objEsp
@@ -280,7 +276,7 @@
         End If
     End Sub
     Private Sub txtcodigoCtaVentas_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoCtaVentas.TextChanged
-        If (txtcodigoCtaVentas.Text <> "") Then
+        If (Trim(txtcodigoCtaVentas.Text) <> "") Then
             Try
                 Dim objEsp As New ClsCuenta
                 With objEsp
@@ -297,5 +293,29 @@
             txtcodigoCtaVentas.Text = ""
             txtnombreCtaVentas.Text = ""
         End If
+    End Sub
+
+    Private Sub txtdescripcionB_TextChanged(sender As Object, e As EventArgs) Handles txtdescripcionB.TextChanged
+        Try
+
+            Dim objTerm As New ClsTerminoPago
+            With objTerm
+                .Descripcion1 = txtdescripcionB.Text
+            End With
+            If (Trim(txtdescripcionB.Text) <> "") Then
+                Dim dv As DataView = objTerm.BuscarTerminoPago.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            Else
+                Dim dv As DataView = objTerm.SeleccionarTerminoPago.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            End If
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

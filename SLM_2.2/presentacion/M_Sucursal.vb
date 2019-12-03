@@ -20,16 +20,18 @@
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-            txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            lblcode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
 
+            M_Factura.lblcodeSucursal.Text = lblcode.Text
             M_Factura.txtcodigoSucursal.Text = txtcodigo.Text
             M_Factura.txtnombreSucursal.Text = txtnombre.Text
 
             btnmodificar.Enabled = True
 
             txtnombre.ReadOnly = False
-            txtcodigo.ReadOnly = True
+            txtcodigo.ReadOnly = False
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -42,7 +44,6 @@
         txtnombre.ReadOnly = False
         txtcodigo.ReadOnly = False
 
-        btnbuscar.Enabled = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
         btnnuevo.Enabled = False
@@ -68,12 +69,12 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (txtcodigo.Text <> "" And txtnombre.Text <> "") Then
+            If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "") Then
                 txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
                 txtnombre.Text = sinDobleEspacio(txtnombre.Text)
                 Dim objSuc As New ClsSucursal
                 With objSuc
-                    .Codigo1 = txtcodigo.Text
+                    .codigoSucursal_ = txtcodigo.Text
                     .Nombre1 = txtnombre.Text
                 End With
 
@@ -106,13 +107,14 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (txtcodigo.Text <> "" And txtnombre.Text <> "") Then
+            If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "") Then
                 txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
                 txtnombre.Text = sinDobleEspacio(txtnombre.Text)
                 Dim objSuc As New ClsSucursal
                 With objSuc
-                    .Codigo1 = txtcodigo.Text
+                    .codigoSucursal_ = txtcodigo.Text
                     .Nombre1 = txtnombre.Text
+                    .codigo_ = lblcode.Text
                 End With
 
                 If objSuc.ModificarSucursal() = 1 Then
@@ -145,14 +147,27 @@
         limpiar()
         Me.Close()
     End Sub
-    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
-        Dim objSuc As New ClsSucursal
-        With objSuc
-            .Nombre1 = txtnombreB.Text
-        End With
-        Dim dv As DataView = objSuc.BuscarSucursal.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+    Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
+        Try
+
+            Dim objSuc As New ClsSucursal
+            With objSuc
+                .Nombre1 = txtnombreB.Text
+            End With
+            If (Trim(txtnombreB.Text) <> "") Then
+                Dim dv As DataView = objSuc.BuscarSucursal.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            Else
+                Dim dv As DataView = objSuc.SeleccionarSucursal.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            End If
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

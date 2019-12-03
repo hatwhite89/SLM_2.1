@@ -1,8 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Public Class ClsProveedor
 
-    Dim codProveedor As Integer
-    Dim codBreve, nombreProveedor, telefono, contactoPrincipal, telContacto, email, direccion, sitioweb As String
+    Dim codProveedor, codCate As Integer
+    Dim codBreve, nombreProveedor, telefono, codBreveCate, contactoPrincipal, telContacto, email, direccion, sitioweb, idTributario As String
 
     'Constructor
     Public Sub New()
@@ -11,15 +11,24 @@ Public Class ClsProveedor
 
     ':::::::::::::::::::::::: Metodos SET y GET :::::::::::::::::::::::
     'Codigo Proveedor
-    Public Property Cod_Proveedor As String
+    Public Property Cod_Proveedor As Integer
         Get
             Return codProveedor
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codProveedor = value
         End Set
     End Property
 
+    'Codigo Categoria
+    Public Property Cod_Cate As Integer
+        Get
+            Return codCate
+        End Get
+        Set(value As Integer)
+            codCate = value
+        End Set
+    End Property
     'codBreve
     Public Property Cod_Breve As String
         Get
@@ -27,6 +36,26 @@ Public Class ClsProveedor
         End Get
         Set(value As String)
             codBreve = value
+        End Set
+    End Property
+
+    'codBreve categoria
+    Public Property Cod_BreveCate As String
+        Get
+            Return codBreveCate
+        End Get
+        Set(value As String)
+            codBreveCate = value
+        End Set
+    End Property
+
+    'Id Tributario
+    Public Property Id_Tributario As String
+        Get
+            Return idTributario
+        End Get
+        Set(value As String)
+            idTributario = value
         End Set
     End Property
 
@@ -111,7 +140,7 @@ Public Class ClsProveedor
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarProveedor_A"
+        sqlcom.CommandText = "A_slmInsertarProveedor"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -120,9 +149,21 @@ Public Class ClsProveedor
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codBreveCate"
+        sqlpar.Value = codBreveCate
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "idTributario"
+        sqlpar.Value = Id_Tributario
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "nombreProveedor"
         sqlpar.Value = Nombre_Proveedor
         sqlcom.Parameters.Add(sqlpar)
+
+
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "telefono"
@@ -152,6 +193,11 @@ Public Class ClsProveedor
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "sitioweb"
         sqlpar.Value = Sitio_Web
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codCate"
+        sqlpar.Value = Cod_Cate
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -182,7 +228,7 @@ Public Class ClsProveedor
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmActualizarProveedor_A"
+        sqlcom.CommandText = "A_slmActualizarProveedor"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -194,6 +240,17 @@ Public Class ClsProveedor
         sqlpar.ParameterName = "codBreve"
         sqlpar.Value = Cod_Breve
         sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codBreveCate"
+        sqlpar.Value = codBreveCate
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "idTributario"
+        sqlpar.Value = Id_Tributario
+        sqlcom.Parameters.Add(sqlpar)
+
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "nombreProveedor"
@@ -231,6 +288,11 @@ Public Class ClsProveedor
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codCate"
+        sqlpar.Value = Cod_Cate
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -256,14 +318,14 @@ Public Class ClsProveedor
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmListarProveedor_A", cn)
+        Using da As New SqlDataAdapter("A_slmListarProveedor", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
         End Using
     End Function
 
-    'Buscar Proveedor
+    'Buscar Proveedor por nombre
     Public Function buscarProveedor() As DataTable
 
         Dim objCon As New ClsConnection
@@ -273,7 +335,7 @@ Public Class ClsProveedor
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarProveedor_A"
+            cmd.CommandText = "A_slmBuscarProveedor"
             cmd.Parameters.Add("@nombreProveedor", SqlDbType.VarChar).Value = Nombre_Proveedor
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -285,5 +347,30 @@ Public Class ClsProveedor
         End Using
 
     End Function
+
+    'Capturar nombre de proveedor por codigo
+    Public Function capturarNombreProveedor() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmCapturarNombreProveedor"
+            cmd.Parameters.Add("@codProveedor", SqlDbType.Int).Value = Cod_Proveedor
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+
 
 End Class

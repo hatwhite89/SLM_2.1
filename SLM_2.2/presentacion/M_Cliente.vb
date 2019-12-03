@@ -110,7 +110,7 @@
     Private Sub btnactualizarCliente_Click(sender As Object, e As EventArgs) Handles btnactualizarCliente.Click
         Try
 
-            If (txtnombre1.Text <> "" And txtapellido1.Text <> "" And txtapellido2.Text <> "" And dtpfechaNacimiento.Text <> "" And rtxtdireccion.Text <> "" And txtcelular.Text <> "") Then
+            If (txtnombre1.Text <> "" And txtapellido1.Text <> "" And txtapellido2.Text <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoCategoria.Text <> "") Then
                 Dim testString As String = txtnombreCompleto.Text()
                 Dim texto As String = ""
                 Dim testArray() As String = Split(testString)
@@ -531,7 +531,7 @@
             Try
                 Dim objTerm As New ClsTerminoPago
                 With objTerm
-                    .Codigo1 = txtcodigoTermino.Text
+                    .codigoTerminoPago_ = txtcodigoTermino.Text
                 End With
                 Dim dt As New DataTable
                 dt = objTerm.BuscarTerminoPagoCode()
@@ -549,12 +549,13 @@
             Try
                 Dim objCat As New ClsCategoria
                 With objCat
-                    .Codigo1 = txtcodigoCategoria.Text
+                    .codigoCategoria_ = txtcodigoCategoria.Text
                 End With
                 Dim dt As New DataTable
                 dt = objCat.BuscarCategoriaCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreCategoria.Text = CStr(row("descripcion"))
+                lblcodeCategoria.Text = CStr(row("codigo"))
             Catch ex As Exception
                 'MsgBox("No existe el código de la categoría.", MsgBoxStyle.Critical, "Validación")
             End Try
@@ -562,5 +563,11 @@
         Else
             txtcodigoCategoria.Text = ""
         End If
+    End Sub
+    Private Sub txtapellido1_TextChanged_1(sender As Object, e As EventArgs) Handles txtapellido1.TextChanged
+        txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
+    End Sub
+    Private Sub txtnombre2_TextChanged_1(sender As Object, e As EventArgs) Handles txtnombre2.TextChanged
+        txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
     End Sub
 End Class

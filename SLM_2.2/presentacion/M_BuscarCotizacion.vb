@@ -18,6 +18,7 @@
                 n = MsgBox("¿Desea crear la factura de la cotización?", MsgBoxStyle.YesNo, "Validación")
             End If
             If n = vbYes Then
+                M_Factura.limpiar()
                 M_Factura.txtcodigoCliente.Text = dgbtabla.Rows(e.RowIndex).Cells(3).Value()
 
                 Dim objCotFact As New ClsCotizacionFactura
@@ -70,5 +71,11 @@
         Else
             txtnombreB.Text = ""
         End If
+    End Sub
+    Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
+        M_Factura.limpiar()
+        M_Factura.deshabilitar()
+        M_Factura.HabilitarCotizacionFactura()
+        M_Factura.ShowDialog()
     End Sub
 End Class

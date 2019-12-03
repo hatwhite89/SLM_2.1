@@ -37,6 +37,10 @@ Partial Class A_Proveedor
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dtProveedores = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnBuscarCate = New System.Windows.Forms.Button()
+        Me.lblCodCategoria = New System.Windows.Forms.Label()
+        Me.txtCategoria = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.lblCodProveedor = New System.Windows.Forms.Label()
         Me.txtTelContacto = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -49,6 +53,8 @@ Partial Class A_Proveedor
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtNombreBusqueda = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtIdTribu = New System.Windows.Forms.TextBox()
         CType(Me.dtProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -72,15 +78,15 @@ Partial Class A_Proveedor
         '
         'txtSitioWeb
         '
-        Me.txtSitioWeb.Location = New System.Drawing.Point(111, 109)
+        Me.txtSitioWeb.Location = New System.Drawing.Point(515, 108)
         Me.txtSitioWeb.Name = "txtSitioWeb"
-        Me.txtSitioWeb.Size = New System.Drawing.Size(100, 20)
+        Me.txtSitioWeb.Size = New System.Drawing.Size(144, 20)
         Me.txtSitioWeb.TabIndex = 7
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(10, 112)
+        Me.Label2.Location = New System.Drawing.Point(416, 111)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 13)
         Me.Label2.TabIndex = 2
@@ -88,15 +94,15 @@ Partial Class A_Proveedor
         '
         'txtDireccion
         '
-        Me.txtDireccion.Location = New System.Drawing.Point(111, 135)
+        Me.txtDireccion.Location = New System.Drawing.Point(111, 108)
         Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(218, 20)
+        Me.txtDireccion.Size = New System.Drawing.Size(282, 20)
         Me.txtDireccion.TabIndex = 8
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(11, 138)
+        Me.Label3.Location = New System.Drawing.Point(11, 111)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(52, 13)
         Me.Label3.TabIndex = 4
@@ -104,15 +110,15 @@ Partial Class A_Proveedor
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(111, 57)
+        Me.txtEmail.Location = New System.Drawing.Point(111, 82)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(100, 20)
+        Me.txtEmail.Size = New System.Drawing.Size(282, 20)
         Me.txtEmail.TabIndex = 3
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(10, 60)
+        Me.Label4.Location = New System.Drawing.Point(10, 85)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(32, 13)
         Me.Label4.TabIndex = 6
@@ -120,7 +126,7 @@ Partial Class A_Proveedor
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(111, 83)
+        Me.txtTelefono.Location = New System.Drawing.Point(515, 82)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(100, 20)
         Me.txtTelefono.TabIndex = 5
@@ -128,23 +134,23 @@ Partial Class A_Proveedor
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(10, 86)
+        Me.Label5.Location = New System.Drawing.Point(414, 85)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(49, 13)
+        Me.Label5.Size = New System.Drawing.Size(101, 13)
         Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Teléfono"
+        Me.Label5.Text = "Teléfono Proveedor"
         '
         'txtNombreProvee
         '
-        Me.txtNombreProvee.Location = New System.Drawing.Point(325, 31)
+        Me.txtNombreProvee.Location = New System.Drawing.Point(111, 57)
         Me.txtNombreProvee.Name = "txtNombreProvee"
-        Me.txtNombreProvee.Size = New System.Drawing.Size(144, 20)
+        Me.txtNombreProvee.Size = New System.Drawing.Size(282, 20)
         Me.txtNombreProvee.TabIndex = 2
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(224, 34)
+        Me.Label6.Location = New System.Drawing.Point(10, 60)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(96, 13)
         Me.Label6.TabIndex = 10
@@ -152,19 +158,26 @@ Partial Class A_Proveedor
         '
         'dtProveedores
         '
+        Me.dtProveedores.AllowUserToAddRows = False
         Me.dtProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.dtProveedores.BackgroundColor = System.Drawing.Color.White
         Me.dtProveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dtProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtProveedores.GridColor = System.Drawing.Color.White
-        Me.dtProveedores.Location = New System.Drawing.Point(6, 56)
+        Me.dtProveedores.Location = New System.Drawing.Point(9, 54)
         Me.dtProveedores.Name = "dtProveedores"
         Me.dtProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtProveedores.Size = New System.Drawing.Size(463, 163)
+        Me.dtProveedores.Size = New System.Drawing.Size(657, 256)
         Me.dtProveedores.TabIndex = 12
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtIdTribu)
+        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Controls.Add(Me.btnBuscarCate)
+        Me.GroupBox1.Controls.Add(Me.lblCodCategoria)
+        Me.GroupBox1.Controls.Add(Me.txtCategoria)
+        Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.lblCodProveedor)
         Me.GroupBox1.Controls.Add(Me.txtTelContacto)
         Me.GroupBox1.Controls.Add(Me.Label9)
@@ -187,32 +200,71 @@ Partial Class A_Proveedor
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(475, 197)
+        Me.GroupBox1.Size = New System.Drawing.Size(672, 197)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Proveedor"
         '
+        'btnBuscarCate
+        '
+        Me.btnBuscarCate.BackColor = System.Drawing.Color.Transparent
+        Me.btnBuscarCate.BackgroundImage = CType(resources.GetObject("btnBuscarCate.BackgroundImage"), System.Drawing.Image)
+        Me.btnBuscarCate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBuscarCate.FlatAppearance.BorderSize = 0
+        Me.btnBuscarCate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarCate.Location = New System.Drawing.Point(373, 139)
+        Me.btnBuscarCate.Name = "btnBuscarCate"
+        Me.btnBuscarCate.Size = New System.Drawing.Size(20, 17)
+        Me.btnBuscarCate.TabIndex = 21
+        Me.btnBuscarCate.UseVisualStyleBackColor = False
+        '
+        'lblCodCategoria
+        '
+        Me.lblCodCategoria.AutoSize = True
+        Me.lblCodCategoria.Location = New System.Drawing.Point(263, 167)
+        Me.lblCodCategoria.Name = "lblCodCategoria"
+        Me.lblCodCategoria.Size = New System.Drawing.Size(47, 13)
+        Me.lblCodCategoria.TabIndex = 15
+        Me.lblCodCategoria.Text = "codCate"
+        Me.lblCodCategoria.Visible = False
+        '
+        'txtCategoria
+        '
+        Me.txtCategoria.Location = New System.Drawing.Point(289, 136)
+        Me.txtCategoria.Name = "txtCategoria"
+        Me.txtCategoria.Size = New System.Drawing.Size(78, 20)
+        Me.txtCategoria.TabIndex = 20
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(231, 139)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(52, 13)
+        Me.Label10.TabIndex = 19
+        Me.Label10.Text = "Categoria"
+        '
         'lblCodProveedor
         '
         Me.lblCodProveedor.AutoSize = True
-        Me.lblCodProveedor.Location = New System.Drawing.Point(186, 171)
+        Me.lblCodProveedor.Location = New System.Drawing.Point(361, 167)
         Me.lblCodProveedor.Name = "lblCodProveedor"
-        Me.lblCodProveedor.Size = New System.Drawing.Size(45, 13)
+        Me.lblCodProveedor.Size = New System.Drawing.Size(60, 13)
         Me.lblCodProveedor.TabIndex = 18
-        Me.lblCodProveedor.Text = "Label10"
+        Me.lblCodProveedor.Text = "CodProvee"
         Me.lblCodProveedor.Visible = False
         '
         'txtTelContacto
         '
-        Me.txtTelContacto.Location = New System.Drawing.Point(325, 87)
+        Me.txtTelContacto.Location = New System.Drawing.Point(515, 57)
         Me.txtTelContacto.Name = "txtTelContacto"
-        Me.txtTelContacto.Size = New System.Drawing.Size(100, 20)
+        Me.txtTelContacto.Size = New System.Drawing.Size(144, 20)
         Me.txtTelContacto.TabIndex = 6
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(224, 90)
+        Me.Label9.Location = New System.Drawing.Point(414, 60)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(95, 13)
         Me.Label9.TabIndex = 17
@@ -220,7 +272,7 @@ Partial Class A_Proveedor
         '
         'txtContactoPrincipal
         '
-        Me.txtContactoPrincipal.Location = New System.Drawing.Point(325, 61)
+        Me.txtContactoPrincipal.Location = New System.Drawing.Point(515, 31)
         Me.txtContactoPrincipal.Name = "txtContactoPrincipal"
         Me.txtContactoPrincipal.Size = New System.Drawing.Size(144, 20)
         Me.txtContactoPrincipal.TabIndex = 4
@@ -228,7 +280,7 @@ Partial Class A_Proveedor
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(224, 64)
+        Me.Label8.Location = New System.Drawing.Point(414, 34)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(93, 13)
         Me.Label8.TabIndex = 15
@@ -240,7 +292,7 @@ Partial Class A_Proveedor
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(394, 166)
+        Me.btnGuardar.Location = New System.Drawing.Point(584, 162)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 14
@@ -253,7 +305,7 @@ Partial Class A_Proveedor
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(316, 166)
+        Me.btnModificar.Location = New System.Drawing.Point(506, 162)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 13
@@ -267,7 +319,7 @@ Partial Class A_Proveedor
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(237, 166)
+        Me.btnCrear.Location = New System.Drawing.Point(427, 162)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 12
@@ -283,7 +335,7 @@ Partial Class A_Proveedor
         Me.GroupBox2.Controls.Add(Me.dtProveedores)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 215)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(475, 232)
+        Me.GroupBox2.Size = New System.Drawing.Size(672, 318)
         Me.GroupBox2.TabIndex = 14
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Proveedores Registrados"
@@ -295,7 +347,7 @@ Partial Class A_Proveedor
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(400, 25)
+        Me.Button1.Location = New System.Drawing.Point(647, 29)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(18, 17)
         Me.Button1.TabIndex = 15
@@ -303,7 +355,7 @@ Partial Class A_Proveedor
         '
         'txtNombreBusqueda
         '
-        Me.txtNombreBusqueda.Location = New System.Drawing.Point(150, 24)
+        Me.txtNombreBusqueda.Location = New System.Drawing.Point(397, 28)
         Me.txtNombreBusqueda.Name = "txtNombreBusqueda"
         Me.txtNombreBusqueda.Size = New System.Drawing.Size(246, 20)
         Me.txtNombreBusqueda.TabIndex = 14
@@ -311,18 +363,34 @@ Partial Class A_Proveedor
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(54, 27)
+        Me.Label7.Location = New System.Drawing.Point(301, 31)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(95, 13)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Buscar Proveedor:"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(13, 139)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(66, 13)
+        Me.Label11.TabIndex = 22
+        Me.Label11.Text = "Id. Tributario"
+        '
+        'txtIdTribu
+        '
+        Me.txtIdTribu.Location = New System.Drawing.Point(111, 135)
+        Me.txtIdTribu.Name = "txtIdTribu"
+        Me.txtIdTribu.Size = New System.Drawing.Size(114, 20)
+        Me.txtIdTribu.TabIndex = 23
         '
         'A_Proveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(493, 459)
+        Me.ClientSize = New System.Drawing.Size(692, 541)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -365,4 +433,10 @@ Partial Class A_Proveedor
     Friend WithEvents txtContactoPrincipal As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents lblCodProveedor As Label
+    Friend WithEvents txtCategoria As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents lblCodCategoria As Label
+    Friend WithEvents btnBuscarCate As Button
+    Friend WithEvents txtIdTribu As TextBox
+    Friend WithEvents Label11 As Label
 End Class

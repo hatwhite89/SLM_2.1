@@ -1,8 +1,8 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ClsCotizacion
-    Dim numero, codigoCliente As Integer
-    Dim codigoRecepcionista, codigoTerminoPago, nombreCliente, codigoSucursal As String
+    Dim numero, codigoCliente, codigoRecepcionista, codigoTerminoPago, codigoSucursal As Integer
+    Dim nombreCliente As String
     Dim fecha As Date
     Dim total As Double
     'Constructor
@@ -25,11 +25,11 @@ Public Class ClsCotizacion
             codigoCliente = value
         End Set
     End Property
-    Public Property codigoTerminoPago_ As String
+    Public Property codigoTerminoPago_ As Integer
         Get
             Return codigoTerminoPago
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoTerminoPago = value
         End Set
     End Property
@@ -41,19 +41,19 @@ Public Class ClsCotizacion
             nombreCliente = value
         End Set
     End Property
-    Public Property codigoRecepcionista_ As String
+    Public Property codigoRecepcionista_ As Integer
         Get
             Return codigoRecepcionista
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoRecepcionista = value
         End Set
     End Property
-    Public Property codigoSucursal_ As String
+    Public Property codigoSucursal_ As Integer
         Get
             Return codigoSucursal
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoSucursal = value
         End Set
     End Property
@@ -80,7 +80,7 @@ Public Class ClsCotizacion
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarCotizacion_M"
+        sqlcom.CommandText = "M_slmInsertarCotizacion"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoCliente" 'nombre campo en el procedimiento almacenado @
@@ -133,7 +133,7 @@ Public Class ClsCotizacion
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarCotizacion_M"
+        sqlcom.CommandText = "M_slmModificarCotizacion"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "numero" 'nombre campo en el procedimiento almacenado @
@@ -196,7 +196,7 @@ Public Class ClsCotizacion
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarCotizacion_M"
+            cmd.CommandText = "M_slmBuscarCotizacion"
             cmd.Parameters.Add("@numero", SqlDbType.Int).Value = numero_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -214,7 +214,7 @@ Public Class ClsCotizacion
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarCotizacionNumero_M"
+            cmd.CommandText = "M_slmBuscarCotizacionNumero"
             cmd.Parameters.Add("@numero", SqlDbType.Int).Value = numero_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -232,7 +232,7 @@ Public Class ClsCotizacion
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarCotizacionCode_M"
+            cmd.CommandText = "M_slmBuscarCotizacionCode"
             cmd.Parameters.Add("@codigoCliente", SqlDbType.Int).Value = codigoCliente_
             cmd.Parameters.Add("@total", SqlDbType.Float).Value = total_
             Using da As New SqlDataAdapter
@@ -251,7 +251,7 @@ Public Class ClsCotizacion
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarCotizacionCliente_M"
+            cmd.CommandText = "M_slmBuscarCotizacionCliente"
             cmd.Parameters.Add("@nombreCliente", SqlDbType.VarChar).Value = nombreCliente_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -266,7 +266,7 @@ Public Class ClsCotizacion
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
-        Using da As New SqlDataAdapter("slmSeleccionarCotizacion_M", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarCotizacion", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

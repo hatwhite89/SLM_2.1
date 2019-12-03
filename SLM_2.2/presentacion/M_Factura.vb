@@ -1,5 +1,6 @@
 ﻿Public Class M_Factura
     Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
+        M_ClienteVentana.Close()
         Me.Close()
     End Sub
     Private Sub btnbuscarMedico_Click(sender As Object, e As EventArgs) Handles btnbuscarMedico.Click
@@ -33,10 +34,12 @@
         limpiar()
     End Sub
     Public Sub limpiar()
-
+        'limpiar los campos
         txtnumeroFactura.Text() = ""
         txtcodigoCliente.Text() = ""
         txtcodigoMedico.Text() = ""
+        txtcodigoTerminosPago.Text() = "CO"
+        dtpfechaVto.Value = Date.Now()
         txtcodigoConvenio.Text() = ""
         txtnumeroPoliza.Text() = ""
 
@@ -47,72 +50,116 @@
         txtcodigoSucursal.Text() = ""
         txtcodigoTerminal.Text() = ""
         txtnombreSede.Text() = ""
-        txtcodigoTerminosPago.Text() = "CO"
 
         txtcodigoRecepecionista.Text() = ""
         txtcodigoCajero.Text() = ""
         dtpfechaFactura.Value = Date.Now()
-        dtpfechaVto.Value = Date.Now()
-
-        txtcodigoCliente.ReadOnly = False
-        txtcodigoMedico.ReadOnly = False
-        txtcodigoConvenio.ReadOnly = False
-        txtnumeroPoliza.ReadOnly = False
-
-        txtcodigoRecepecionista.ReadOnly = False
-        txtcodigoCajero.ReadOnly = False
-
-        txtnombreCliente.ReadOnly = False
-        txtnombreMedico.ReadOnly = False
-        txtcodigoSede.ReadOnly = False
-        txtcodigoSucursal.ReadOnly = False
-        txtcodigoTerminal.ReadOnly = False
-        txtnombreSede.ReadOnly = False
-        txtcodigoTerminosPago.ReadOnly = False
-
-        txtpagoPaciente.ReadOnly = False
-        txtvuelto.ReadOnly = False
-        txttotal.ReadOnly = False
 
         cbxentregarMedico.Checked = False
         cbxentregarPaciente.Checked = False
         cbxenviarCorreo.Checked = False
-        cbxok.Checked = False
-        dtpfechaFactura.Enabled = True
-        dtpfechaVto.Enabled = True
 
-        btncotizacion.Enabled = True
-        btnguardar.Enabled = True
+        dgblistadoExamenes.Rows.Clear()
+        M_ClienteVentana.dgvtabla.Rows.Clear()
+
+        cbxok.Checked = False
         txtpagoPaciente.Text() = ""
         txtvuelto.Text() = ""
         txttotal.Text() = ""
-        dgblistadoExamenes.Rows.Clear()
-        M_ClienteVentana.dgvtabla.Rows.Clear()
+        'Habilitar los campos
+        txtcodigoCliente.ReadOnly = False
+        txtcodigoMedico.ReadOnly = False
+        txtcodigoTerminosPago.ReadOnly = False
+        dtpfechaVto.Enabled = True
+        txtcodigoConvenio.ReadOnly = False
+        txtnumeroPoliza.ReadOnly = False
+
+        btnbuscarCliente.Enabled = True
+        btnbuscarMedico.Enabled = True
+        btnbuscarTerminosPago.Enabled = True
+
+        txtcodigoSede.ReadOnly = False
+        txtcodigoSucursal.ReadOnly = False
+        txtcodigoTerminal.ReadOnly = False
+
+        btnbuscarSede.Enabled = True
+        btnbuscarSucursal.Enabled = True
+
+        dtpfechaFactura.Enabled = True
+        txtcodigoRecepecionista.ReadOnly = False
+        txtcodigoCajero.ReadOnly = False
+
+        cbxentregarMedico.Enabled = True
+        cbxentregarPaciente.Enabled = True
+        cbxenviarCorreo.Enabled = True
+
+        dgblistadoExamenes.ReadOnly = False
+
+        cbxok.Enabled = True
+        txtpagoPaciente.ReadOnly = False
+
+        btnActualizar.Enabled = False
+        btncotizacion.Enabled = True
+        btnguardar.Enabled = True
+
+        btnbusquedaExamen.Enabled = True
     End Sub
-    Private Sub deshabilitar()
-        txtnumeroFactura.ReadOnly = True
+    Public Sub deshabilitar()
         txtcodigoCliente.ReadOnly = True
         txtcodigoMedico.ReadOnly = True
+        txtcodigoTerminosPago.ReadOnly = True
+        dtpfechaVto.Enabled = False
         txtcodigoConvenio.ReadOnly = True
         txtnumeroPoliza.ReadOnly = True
 
-        txtcodigoRecepecionista.ReadOnly = True
-        txtcodigoCajero.ReadOnly = True
+        btnbuscarCliente.Enabled = False
+        btnbuscarMedico.Enabled = False
+        btnbuscarTerminosPago.Enabled = False
 
-        txtnumeroOficial.ReadOnly = True
-        txtnombreCliente.ReadOnly = True
-        txtnombreMedico.ReadOnly = True
         txtcodigoSede.ReadOnly = True
         txtcodigoSucursal.ReadOnly = True
         txtcodigoTerminal.ReadOnly = True
-        txtnombreSede.ReadOnly = True
-        txtcodigoTerminosPago.ReadOnly = True
-        dtpfechaFactura.Enabled = False
-        dtpfechaVto.Enabled = False
 
+        btnbuscarSede.Enabled = False
+        btnbuscarSucursal.Enabled = False
+
+        dtpfechaFactura.Enabled = False
+        txtcodigoRecepecionista.ReadOnly = True
+        txtcodigoCajero.ReadOnly = True
+
+        cbxentregarMedico.Enabled = False
+        cbxentregarPaciente.Enabled = False
+        cbxenviarCorreo.Enabled = False
+
+        dgblistadoExamenes.ReadOnly = True
+
+        cbxok.Enabled = False
         txtpagoPaciente.ReadOnly = True
-        txtvuelto.ReadOnly = True
-        txttotal.ReadOnly = True
+
+        btnActualizar.Enabled = True
+        btncotizacion.Enabled = False
+        btnguardar.Enabled = False
+
+        btnbusquedaExamen.Enabled = False
+    End Sub
+    Public Sub HabilitarActualizarFactura()
+        cbxentregarMedico.Enabled = True
+        cbxentregarPaciente.Enabled = True
+        cbxenviarCorreo.Enabled = True
+
+        cbxok.Enabled = True
+        txtpagoPaciente.ReadOnly = False
+    End Sub
+    Public Sub HabilitarCotizacionFactura()
+        txtcodigoCliente.ReadOnly = False
+        dtpfechaFactura.Enabled = True
+        txtcodigoTerminosPago.ReadOnly = False
+        txtcodigoRecepecionista.ReadOnly = False
+        txtcodigoSucursal.ReadOnly = False
+        btnbusquedaExamen.Enabled = True
+        dgblistadoExamenes.ReadOnly = False
+        btnActualizar.Enabled = False
+        btncotizacion.Enabled = True
     End Sub
     Private Sub txtcodigoMedico_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoMedico.TextChanged
         If (txtcodigoMedico.Text <> "") Then
@@ -160,12 +207,14 @@
             Try
                 Dim objSuc As New ClsSucursal
                 With objSuc
-                    .Codigo1 = txtcodigoSucursal.Text
+                    .codigoSucursal_ = txtcodigoSucursal.Text
                 End With
                 Dim dt As New DataTable
                 dt = objSuc.BuscarSucursalCode()
                 Dim row As DataRow = dt.Rows(0)
+                lblcodeSucursal.Text = CStr(row("codigo"))
                 txtnombreSucursal.Text = CStr(row("nombre"))
+                txtcodigoSucursal.Text = UCase(txtcodigoSucursal.Text)
             Catch ex As Exception
                 'MsgBox("No existe el código de la sucursal.", MsgBoxStyle.Critical, "Validación")
             End Try
@@ -182,13 +231,14 @@
             Try
                 Dim objTerm As New ClsTerminoPago
                 With objTerm
-                    .Codigo1 = txtcodigoTerminosPago.Text
+                    .codigoTerminoPago_ = txtcodigoTerminosPago.Text
                 End With
                 Dim dt As New DataTable
                 dt = objTerm.BuscarTerminoPagoCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtdescripcionTermino.Text = CStr(row("descripcion"))
                 M_ClienteVentana.txtnombreTerminos.Text = CStr(row("descripcion"))
+                lblcodeTerminoPago.Text = CStr(row("codigo"))
             Catch ex As Exception
                 'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
             End Try
@@ -197,7 +247,7 @@
             txtdescripcionTermino.Text = ""
         End If
     End Sub
-    Private Sub btnterminosPago_Click(sender As Object, e As EventArgs) Handles btnterminosPago.Click
+    Private Sub btnterminosPago_Click(sender As Object, e As EventArgs) Handles btnbuscarTerminosPago.Click
         M_TerminosPago.lblform.Text = "factura"
         M_TerminosPago.ShowDialog()
     End Sub
@@ -207,7 +257,7 @@
         dgblistadoExamenes.Columns.Add(btn)
         btn.HeaderText = "Eliminar"
         btn.Text = "Eliminar"
-        btn.Name = "btn"
+        btn.Name = "btnEliminar"
         btn.UseColumnTextForButtonValue = True
         totalFactura()
     End Sub
@@ -251,33 +301,40 @@
                 MsgBox(ex.Message, MsgBoxStyle.Critical)
             End Try
         End If
-
     End Sub
     Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
 
         If e.ColumnIndex = 0 Then
             Try
-                Dim objExam As New ClsExamen
-                With objExam
-                    .Codigo1 = dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()
-                End With
+                If (Trim(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()) <> "") Then
+                    Dim objExam As New ClsExamen
+                    With objExam
+                        .Codigo1 = dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()
+                    End With
 
-                Dim dt As New DataTable
-                dt = objExam.BuscarExamen()
+                    Dim dt As New DataTable
+                    dt = objExam.BuscarExamen()
 
-                Dim row As DataRow = dt.Rows(0)
-                dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
-                Dim subtotal As Double = Convert.ToDouble(CStr(row("total")))
-                Dim descuento As Double
-                descuento = subtotal * (0 / 100)
-                subtotal -= descuento
-                dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
-                totalFactura()
+                    Dim row As DataRow = dt.Rows(0)
+                    dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+                    Dim subtotal As Double = Convert.ToDouble(CStr(row("total")))
+                    Dim descuento As Double
+                    descuento = subtotal * (0 / 100)
+                    subtotal -= descuento
+                    dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
+                    totalFactura()
 
-                M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
+                    M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
+                Else
+                    dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+                End If
             Catch ex As Exception
                 MsgBox("No existe el código del examen", MsgBoxStyle.Critical)
-                dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+                Try
+                    dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+                Catch ex2 As Exception
+
+                End Try
             End Try
         ElseIf e.ColumnIndex = 1 Then
             Try
@@ -317,42 +374,41 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
             If (txtcodigoCliente.Text <> "" And txtcodigoMedico.Text <> "" And txtcodigoTerminosPago.Text <> "" And
-                txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And txtpagoPaciente.Text <> "" And
-                txtvuelto.Text <> "" And txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
+                txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And
+                txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
 
                 Dim objFact As New ClsFactura
                 With objFact
                     .numeroOficial_ = txtnumeroOficial.Text
-                    .codigoCliente_ = txtcodigoCliente.Text
-                    .codigoRecepcionista_ = txtcodigoRecepecionista.Text
-                    .codigoMedico_ = txtcodigoMedico.Text
-                    .codigoCajero_ = txtcodigoCajero.Text
-                    .codigoTerminoPago1 = txtcodigoTerminosPago.Text
-                    .codigoSede_ = txtcodigoSede.Text
-                    .fechaVto_ = dtpfechaVto.value
-                    .codigoSucursal_ = txtcodigoSucursal.Text
-                    .codigoConvenio_ = txtcodigoConvenio.Text
+                    .codigoCliente_ = Convert.ToInt32(txtcodigoCliente.Text)
+                    .codigoRecepcionista_ = Convert.ToInt32(txtcodigoRecepecionista.Text)
+                    .codigoMedico_ = Convert.ToInt32(txtcodigoMedico.Text)
+                    .codigoCajero_ = Convert.ToInt32(txtcodigoCajero.Text)
+                    .codigoTerminoPago1 = Convert.ToInt32(lblcodeTerminoPago.Text)
+                    .codigoSede_ = Convert.ToInt32(txtcodigoSede.Text)
+                    .fechaVto_ = dtpfechaVto.Value
+                    .codigoSucursal_ = Convert.ToInt32(lblcodeSucursal.Text)
+                    .codigoConvenio_ = Convert.ToInt32(txtcodigoConvenio.Text)
                     .numeroPoliza_ = txtnumeroPoliza.Text
-                    .codigoTerminal_ = txtcodigoTerminal.Text
+                    .codigoTerminal_ = Convert.ToInt32(txtcodigoTerminal.Text)
                     .entregaMedico_ = cbxentregarMedico.Checked
                     .entregaPaciente_ = cbxentregarPaciente.Checked
                     .enviarEmail_ = cbxenviarCorreo.Checked
-                    .pagoPaciente_ = txtpagoPaciente.Text
-                    .vuelto_ = txtvuelto.Text
-                    .total_ = txttotal.Text
+                    .pagoPaciente_ = Convert.ToDouble(txtpagoPaciente.Text)
+                    .vuelto_ = Convert.ToDouble(txtvuelto.Text)
+                    .total_ = Convert.ToDouble(txttotal.Text)
                     .ok_ = cbxok.Checked
                 End With
 
                 If objFact.RegistrarNuevaFactura() = 1 Then
                     deshabilitar()
-
+                    cbxok.Enabled = True
+                    txtpagoPaciente.ReadOnly = False
                     Dim dt As New DataTable
                     dt = objFact.BuscarFacturaCode()
                     Dim row As DataRow = dt.Rows(0)
 
                     txtnumeroFactura.Text = CStr(row("numero"))
-                    btnguardar.Enabled = False
-                    btncotizacion.Enabled = False
                     Dim objDetalleFact As New ClsDetalleFactura
                     For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
                         With objDetalleFact
@@ -374,7 +430,6 @@
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
-
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -401,16 +456,16 @@
 
                 Dim objCotiz As New ClsCotizacion
                 With objCotiz
-                    .codigoCliente_ = txtcodigoCliente.Text
-                    .codigoRecepcionista_ = txtcodigoRecepecionista.Text
-                    .codigoTerminoPago_ = txtcodigoTerminosPago.Text
-                    .codigoSucursal_ = txtcodigoSucursal.Text
-                    .total_ = txttotal.Text
+                    .codigoCliente_ = Convert.ToInt32(txtcodigoCliente.Text)
+                    .codigoRecepcionista_ = Convert.ToInt32(txtcodigoRecepecionista.Text)
+                    .codigoTerminoPago_ = Convert.ToInt32(lblcodeTerminoPago.Text)
+                    .codigoSucursal_ = Convert.ToInt32(lblcodeSucursal.Text)
+                    .total_ = Convert.ToDouble(txttotal.Text)
                 End With
 
                 If objCotiz.RegistrarNuevaCotizacion() = 1 Then
                     deshabilitar()
-
+                    btnActualizar.Enabled = False
                     Dim dt As New DataTable
                     dt = objCotiz.BuscarCotizacionCode()
                     Dim row As DataRow = dt.Rows(0)
@@ -439,11 +494,69 @@
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
-
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        Try
+            If (txtpagoPaciente.Text <> "") Then
+                Dim objFact As New ClsFactura
+                With objFact
+                    .numero_ = Convert.ToInt64(txtnumeroFactura.Text)
+                    .numeroOficial_ = txtnumeroOficial.Text
+                    .entregaMedico_ = cbxentregarMedico.Checked
+                    .entregaPaciente_ = cbxentregarPaciente.Checked
+                    .enviarEmail_ = cbxenviarCorreo.Checked
+                    .ok_ = cbxok.Checked
+                    .pagoPaciente_ = Convert.ToDouble(txtpagoPaciente.Text)
+                    .vuelto_ = Convert.ToDouble(txtvuelto.Text)
+                End With
 
+                If objFact.ModificarFactura() = 1 Then
+                    deshabilitar()
+                    btnActualizar.Enabled = False
+                    MsgBox("Actualizada la factura correctamente.")
+                Else
+                    MsgBox("Error al querer actualizar la factura.", MsgBoxStyle.Critical)
+                End If
+            Else
+                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+    Private Sub lblcodeTerminoPago_TextChanged(sender As Object, e As EventArgs) Handles lblcodeTerminoPago.TextChanged
+        Try
+            Dim objTerm As New ClsTerminoPago
+            With objTerm
+                .codigo_ = lblcodeTerminoPago.Text
+            End With
+            Dim dt As New DataTable
+            dt = objTerm.BuscarTerminoPagoNumero()
+            Dim row As DataRow = dt.Rows(0)
+            txtdescripcionTermino.Text = CStr(row("descripcion"))
+            M_ClienteVentana.txtnombreTerminos.Text = CStr(row("descripcion"))
+            txtcodigoTerminosPago.Text = CStr(row("codigoTerminoPago"))
+        Catch ex As Exception
+            'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
+        End Try
+    End Sub
+    Private Sub lblcodeSucursal_TextChanged(sender As Object, e As EventArgs) Handles lblcodeSucursal.TextChanged
+        Try
+            Dim objSuc As New ClsSucursal
+            With objSuc
+                .codigo_ = lblcodeSucursal.Text
+            End With
+            Dim dt As New DataTable
+            dt = objSuc.BuscarSucursalNumero()
+            Dim row As DataRow = dt.Rows(0)
+            txtnombreSucursal.Text = CStr(row("nombre"))
+            txtcodigoSucursal.Text = UCase(CStr(row("codigoSucursal")))
+        Catch ex As Exception
+            'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
+        End Try
+    End Sub
 End Class

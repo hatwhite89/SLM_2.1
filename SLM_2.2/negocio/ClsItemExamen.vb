@@ -117,7 +117,7 @@ Public Class ClsItemExamen
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarItemExamen_E"
+        sqlcom.CommandText = "E_slmInsertarItemExamen"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -190,7 +190,7 @@ Public Class ClsItemExamen
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarItemExamen_E"
+        sqlcom.CommandText = "E_slmModificarItemExamen"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -265,7 +265,7 @@ Public Class ClsItemExamen
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmListarItemExamenes_E", cn)
+        Using da As New SqlDataAdapter("E_slmListarItemExamenes", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

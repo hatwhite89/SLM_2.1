@@ -35,7 +35,7 @@ Public Class ClsTipoClasificacion
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmInsertarTipoClasificacion_M"
+        sqlcom.CommandText = "M_slmInsertarTipoClasificacion"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "comentario" 'nombre campo en el procedimiento almacenado @
@@ -70,7 +70,7 @@ Public Class ClsTipoClasificacion
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "slmModificarTipoClasificacion_M"
+        sqlcom.CommandText = "M_slmModificarTipoClasificacion"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -113,7 +113,7 @@ Public Class ClsTipoClasificacion
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarTipoClasificacion_M"
+            cmd.CommandText = "M_slmBuscarTipoClasificacion"
             cmd.Parameters.Add("@comentario", SqlDbType.VarChar).Value = Comentario1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -135,7 +135,7 @@ Public Class ClsTipoClasificacion
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "slmBuscarTipoClasificacionCode_M"
+            cmd.CommandText = "M_slmBuscarTipoClasificacionCode"
             cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Codigo1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -154,7 +154,7 @@ Public Class ClsTipoClasificacion
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("slmSeleccionarTipoClasificacion_M", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarTipoClasificacion", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

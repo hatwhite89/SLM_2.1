@@ -48,7 +48,9 @@ Partial Class M_BuscarFactura
         Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnumeroB)
         Me.gbxbusqueda.Location = New System.Drawing.Point(12, 12)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.gbxbusqueda.Size = New System.Drawing.Size(613, 598)
         Me.gbxbusqueda.TabIndex = 117
         Me.gbxbusqueda.TabStop = False
@@ -59,11 +61,11 @@ Partial Class M_BuscarFactura
         Me.btnnueva.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnnueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnueva.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnnueva.Location = New System.Drawing.Point(198, 19)
+        Me.btnnueva.ForeColor = System.Drawing.Color.White
+        Me.btnnueva.Location = New System.Drawing.Point(197, 18)
         Me.btnnueva.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnnueva.Name = "btnnueva"
-        Me.btnnueva.Size = New System.Drawing.Size(218, 34)
+        Me.btnnueva.Size = New System.Drawing.Size(219, 34)
         Me.btnnueva.TabIndex = 120
         Me.btnnueva.Text = "Nueva Factura"
         Me.btnnueva.UseVisualStyleBackColor = False
@@ -73,7 +75,8 @@ Partial Class M_BuscarFactura
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(42, 108)
+        Me.dgbtabla.Location = New System.Drawing.Point(43, 108)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
@@ -84,7 +87,8 @@ Partial Class M_BuscarFactura
         '
         'txtnumeroB
         '
-        Me.txtnumeroB.Location = New System.Drawing.Point(102, 65)
+        Me.txtnumeroB.Location = New System.Drawing.Point(101, 65)
+        Me.txtnumeroB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnumeroB.Name = "txtnumeroB"
         Me.txtnumeroB.Size = New System.Drawing.Size(192, 22)
         Me.txtnumeroB.TabIndex = 118
@@ -92,7 +96,7 @@ Partial Class M_BuscarFactura
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(310, 68)
+        Me.lblnombreB.Location = New System.Drawing.Point(309, 68)
         Me.lblnombreB.Name = "lblnombreB"
         Me.lblnombreB.Size = New System.Drawing.Size(58, 17)
         Me.lblnombreB.TabIndex = 117
@@ -127,7 +131,8 @@ Partial Class M_BuscarFactura
         '
         'txtnombreB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(374, 64)
+        Me.txtnombreB.Location = New System.Drawing.Point(373, 64)
+        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
         Me.txtnombreB.TabIndex = 115
@@ -145,9 +150,11 @@ Partial Class M_BuscarFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(640, 623)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "M_BuscarFactura"
         Me.Text = "Factura"
         Me.gbxbusqueda.ResumeLayout(False)

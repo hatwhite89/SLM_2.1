@@ -29,6 +29,7 @@
             Dim code As Integer
             Dim precio As Double
             Dim descrip As String
+            Dim fechaHoy As Date = Date.Now
 
             code = Convert.ToInt32(dgbtabla.Rows(e.RowIndex).Cells(0).Value())
             descrip = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
@@ -36,8 +37,8 @@
 
             Dim n As String = MsgBox("¿Desea agregar el examen a la factura?", MsgBoxStyle.YesNo, "Validación")
             If n = vbYes Then
-                M_Factura.dgblistadoExamenes.Rows.Add(New String() {code, "1", precio, descrip, "", "", precio})
-                M_ClienteVentana.dgvtabla.Rows.Add(New String() {code, "1", precio, descrip, "", "", precio})
+                M_Factura.dgblistadoExamenes.Rows.Add(New String() {code, "1", precio, descrip, fechaHoy.Date.AddDays(7), "0", precio})
+                M_ClienteVentana.dgvtabla.Rows.Add(New String() {code, "1", precio, descrip, fechaHoy.Date.AddDays(7), "0", precio})
                 M_Factura.totalFactura()
                 Me.Close()
             End If
