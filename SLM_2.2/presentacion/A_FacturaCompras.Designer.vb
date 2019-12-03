@@ -46,14 +46,14 @@ Partial Class A_FacturaCompras
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dtDetalleFactura = New System.Windows.Forms.DataGridView()
-        Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnCrear = New System.Windows.Forms.Button()
-        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Objetos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnCrear = New System.Windows.Forms.Button()
+        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -284,6 +284,27 @@ Partial Class A_FacturaCompras
         Me.dtDetalleFactura.Size = New System.Drawing.Size(532, 285)
         Me.dtDetalleFactura.TabIndex = 10
         '
+        'Cuenta
+        '
+        Me.Cuenta.HeaderText = "Cuenta"
+        Me.Cuenta.Name = "Cuenta"
+        '
+        'Objetos
+        '
+        Me.Objetos.HeaderText = "Objetos"
+        Me.Objetos.Name = "Objetos"
+        '
+        'Descripción
+        '
+        Me.Descripción.HeaderText = "Descripción"
+        Me.Descripción.Name = "Descripción"
+        Me.Descripción.ReadOnly = True
+        '
+        'Monto
+        '
+        Me.Monto.HeaderText = "Monto"
+        Me.Monto.Name = "Monto"
+        '
         'btnGuardar
         '
         Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
@@ -335,27 +356,6 @@ Partial Class A_FacturaCompras
         Me.btnRegresar.Size = New System.Drawing.Size(33, 37)
         Me.btnRegresar.TabIndex = 14
         Me.btnRegresar.UseVisualStyleBackColor = False
-        '
-        'Cuenta
-        '
-        Me.Cuenta.HeaderText = "Cuenta"
-        Me.Cuenta.Name = "Cuenta"
-        '
-        'Objetos
-        '
-        Me.Objetos.HeaderText = "Objetos"
-        Me.Objetos.Name = "Objetos"
-        '
-        'Descripción
-        '
-        Me.Descripción.HeaderText = "Descripción"
-        Me.Descripción.Name = "Descripción"
-        Me.Descripción.ReadOnly = True
-        '
-        'Monto
-        '
-        Me.Monto.HeaderText = "Monto"
-        Me.Monto.Name = "Monto"
         '
         'A_FacturaCompras
         '
