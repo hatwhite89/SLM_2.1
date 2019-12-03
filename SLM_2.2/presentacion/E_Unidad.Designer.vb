@@ -23,6 +23,7 @@ Partial Class E_Unidad
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxtipoObjeto = New System.Windows.Forms.GroupBox()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtFactorCantidad = New System.Windows.Forms.TextBox()
         Me.rtxtcomentario = New System.Windows.Forms.RichTextBox()
@@ -39,7 +40,6 @@ Partial Class E_Unidad
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtcomentarioB = New System.Windows.Forms.TextBox()
         Me.lblcomentarioB = New System.Windows.Forms.Label()
-        Me.lblcode = New System.Windows.Forms.Label()
         Me.gbxtipoObjeto.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,6 +64,15 @@ Partial Class E_Unidad
         Me.gbxtipoObjeto.TabIndex = 119
         Me.gbxtipoObjeto.TabStop = False
         Me.gbxtipoObjeto.Text = "REGISTRAR UNIDAD"
+        '
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(399, 29)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 118
+        Me.lblcode.Visible = False
         '
         'Label1
         '
@@ -95,7 +104,7 @@ Partial Class E_Unidad
         Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmodificar.ForeColor = System.Drawing.Color.White
+        Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnmodificar.Location = New System.Drawing.Point(333, 176)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(96, 35)
@@ -108,7 +117,7 @@ Partial Class E_Unidad
         Me.btnnuevo.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnuevo.ForeColor = System.Drawing.Color.White
+        Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnnuevo.Location = New System.Drawing.Point(51, 176)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(105, 35)
@@ -121,7 +130,7 @@ Partial Class E_Unidad
         Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardar.ForeColor = System.Drawing.Color.White
+        Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnguardar.Location = New System.Drawing.Point(197, 176)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(96, 35)
@@ -143,7 +152,7 @@ Partial Class E_Unidad
         Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncancelar.ForeColor = System.Drawing.Color.White
+        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btncancelar.Location = New System.Drawing.Point(475, 176)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(90, 35)
@@ -162,6 +171,7 @@ Partial Class E_Unidad
         '
         'txtcodigo
         '
+        Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigo.Location = New System.Drawing.Point(183, 27)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(183, 22)
@@ -229,14 +239,6 @@ Partial Class E_Unidad
         Me.lblcomentarioB.Size = New System.Drawing.Size(80, 17)
         Me.lblcomentarioB.TabIndex = 114
         Me.lblcomentarioB.Text = "Comentario"
-        '
-        'lblcode
-        '
-        Me.lblcode.AutoSize = True
-        Me.lblcode.Location = New System.Drawing.Point(399, 29)
-        Me.lblcode.Name = "lblcode"
-        Me.lblcode.Size = New System.Drawing.Size(0, 17)
-        Me.lblcode.TabIndex = 118
         '
         'E_Unidad
         '

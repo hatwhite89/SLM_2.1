@@ -29,6 +29,7 @@ Partial Class M_EstacionTrabajo
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.gbxcaja = New System.Windows.Forms.GroupBox()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.rtxtdescripcion = New System.Windows.Forms.RichTextBox()
         Me.lbldescripcion = New System.Windows.Forms.Label()
         Me.lblcodigo = New System.Windows.Forms.Label()
@@ -37,7 +38,6 @@ Partial Class M_EstacionTrabajo
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
-        Me.lblcode = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxcaja.SuspendLayout()
@@ -123,6 +123,15 @@ Partial Class M_EstacionTrabajo
         Me.gbxcaja.TabStop = False
         Me.gbxcaja.Text = "REGISTRAR ESTACIÓN TRABAJO"
         '
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(407, 34)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 124
+        Me.lblcode.Visible = False
+        '
         'rtxtdescripcion
         '
         Me.rtxtdescripcion.Location = New System.Drawing.Point(139, 67)
@@ -152,6 +161,7 @@ Partial Class M_EstacionTrabajo
         '
         'txtcodigo
         '
+        Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigo.Location = New System.Drawing.Point(139, 34)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(173, 22)
@@ -209,15 +219,6 @@ Partial Class M_EstacionTrabajo
         Me.btnguardar.TabIndex = 108
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
-        '
-        'lblcode
-        '
-        Me.lblcode.AutoSize = True
-        Me.lblcode.Location = New System.Drawing.Point(407, 34)
-        Me.lblcode.Name = "lblcode"
-        Me.lblcode.Size = New System.Drawing.Size(0, 17)
-        Me.lblcode.TabIndex = 124
-        Me.lblcode.Visible = False
         '
         'M_EstacionTrabajo
         '

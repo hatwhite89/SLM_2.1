@@ -37,8 +37,16 @@
                 txtcorreo.Text = CStr(row("correo1"))
                 txtcorreo2.Text = CStr(row("correo2"))
                 txtcodigoClasificacion.Text = CStr(row("codigoClasificacion"))
-                txtcodigoCategoria.Text = CStr(row("codigoCategoria"))
-                txtcodigoTermino.Text = CStr(row("codigoTerminoPago"))
+                lblcodeCategoria.Text = CStr(row("codigoCategoria"))
+                lblcodeTerminoPago.Text = CStr(row("codigoTerminoPago"))
+
+                'Dim objcuenta As New ClsCuenta
+                'Dim dt As New DataTable
+                'objcuenta.Cod_Cuenta = lblcodeCtaContado.Text
+                'dt = objcuenta.BuscarCuentaCode()
+                'Dim row As DataRow = dt.Rows(0)
+                'txtnombreCtaContado.Text = CStr(row("nombre"))
+                'txtcodigoCtaContado.Text = CStr(row("cuenta"))
 
                 gbxinfoCliente.Visible = True
                 btnactualizarCliente.Enabled = True
@@ -123,7 +131,7 @@
                     End If
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
-                txtnombreCompleto.Text() = texto
+                txtnombreCompleto.Text() = RTrim(texto)
 
                 Dim genero As String = ""
                 If (rbtnmasculino.Checked) Then
@@ -151,8 +159,8 @@
                     .Correo_1 = txtcorreo.Text
                     .Correo_2 = txtcorreo2.Text
                     .CodigoClasificacion1 = Convert.ToInt32(txtcodigoClasificacion.Text)
-                    .codigoCategoria1 = txtcodigoCategoria.Text
-                    .codigoTerminoPago1 = txtcodigoTermino.Text
+                    .codigoCategoria1 = lblcodeCategoria.Text
+                    .codigoTerminoPago1 = lblcodeTerminoPago.Text
                 End With
 
                 If objClient.ModificarCliente() = 1 Then
@@ -287,7 +295,7 @@
                     End If
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
-                txtnombreCompleto.Text() = texto
+                txtnombreCompleto.Text() = RTrim(texto)
 
                 Dim objClient As New ClsCliente
                 With objClient
@@ -308,8 +316,8 @@
                     .Correo_1 = txtcorreo.Text
                     .Correo_2 = txtcorreo2.Text
                     .CodigoClasificacion1 = Convert.ToInt32(txtcodigoClasificacion.Text)
-                    .codigoCategoria1 = txtcodigoCategoria.Text
-                    .codigoTerminoPago1 = txtcodigoTermino.Text
+                    .codigoCategoria1 = lblcodeCategoria.Text
+                    .codigoTerminoPago1 = lblcodeTerminoPago.Text
                 End With
 
                 If objClient.RegistrarNuevoCliente() = 1 Then
@@ -412,12 +420,15 @@
                 dt = objClas.BuscarClasificacionContactoCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreClasificacion.Text = CStr(row("comentario"))
+                txtcodigoClasificacion.BackColor = Color.White
             Catch ex As Exception
-                'MsgBox("No existe el código de clasificación de contacto.", MsgBoxStyle.Critical, "Validación")
+                txtcodigoClasificacion.BackColor = Color.Red
+                txtnombreClasificacion.Text = ""
             End Try
         Else
             txtcodigoClasificacion.Text = ""
             txtnombreClasificacion.Text = ""
+            txtcodigoClasificacion.BackColor = Color.White
         End If
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
@@ -487,8 +498,8 @@
                 txtcorreo.Text = CStr(row("correo1"))
                 txtcorreo2.Text = CStr(row("correo2"))
                 txtcodigoClasificacion.Text = CStr(row("codigoClasificacion"))
-                txtcodigoCategoria.Text = CStr(row("codigoCategoria"))
-                txtcodigoTermino.Text = CStr(row("codigoTerminoPago"))
+                lblcodeCategoria.Text = CStr(row("codigoCategoria"))
+                lblcodeTerminoPago.Text = CStr(row("codigoTerminoPago"))
 
                 gbxinfoCliente.Visible = True
                 btnactualizarCliente.Enabled = True
@@ -537,11 +548,17 @@
                 dt = objTerm.BuscarTerminoPagoCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreTerminos.Text = CStr(row("descripcion"))
+                lblcodeTerminoPago.Text = CStr(row("codigo"))
+                txtcodigoTermino.BackColor = Color.White
             Catch ex As Exception
-                'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
+                txtcodigoTermino.BackColor = Color.Red
+                txtnombreTerminos.Text = ""
             End Try
         Else
             txtcodigoTermino.Text = ""
+            txtnombreTerminos.Text = ""
+            lblcodeTerminoPago.Text = ""
+            txtcodigoTermino.BackColor = Color.White
         End If
     End Sub
     Private Sub txtcodigoCategoria_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoCategoria.TextChanged
@@ -556,12 +573,16 @@
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreCategoria.Text = CStr(row("descripcion"))
                 lblcodeCategoria.Text = CStr(row("codigo"))
+                txtcodigoCategoria.BackColor = Color.White
             Catch ex As Exception
-                'MsgBox("No existe el código de la categoría.", MsgBoxStyle.Critical, "Validación")
+                txtcodigoCategoria.BackColor = Color.Red
+                txtnombreCategoria.Text = ""
             End Try
-
         Else
             txtcodigoCategoria.Text = ""
+            txtnombreCategoria.Text = ""
+            lblcodeCategoria.Text = ""
+            txtcodigoCategoria.BackColor = Color.White
         End If
     End Sub
     Private Sub txtapellido1_TextChanged_1(sender As Object, e As EventArgs) Handles txtapellido1.TextChanged
@@ -570,4 +591,5 @@
     Private Sub txtnombre2_TextChanged_1(sender As Object, e As EventArgs) Handles txtnombre2.TextChanged
         txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
     End Sub
+
 End Class

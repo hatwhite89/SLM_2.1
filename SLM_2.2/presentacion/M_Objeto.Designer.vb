@@ -204,6 +204,7 @@ Partial Class M_Objeto
         '
         'txtcodigoTipo
         '
+        Me.txtcodigoTipo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigoTipo.Location = New System.Drawing.Point(244, 83)
         Me.txtcodigoTipo.Name = "txtcodigoTipo"
         Me.txtcodigoTipo.Size = New System.Drawing.Size(88, 22)
@@ -220,6 +221,7 @@ Partial Class M_Objeto
         '
         'txtcodigo
         '
+        Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigo.Location = New System.Drawing.Point(186, 27)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(183, 22)

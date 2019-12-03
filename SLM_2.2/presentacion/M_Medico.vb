@@ -19,7 +19,7 @@
             End If
         Next
         ReDim Preserve testArray(lastNonEmpty)
-        Return texto
+        Return RTrim(texto)
     End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
@@ -285,12 +285,16 @@
                 dt = objEsp.BuscarEspecialidadCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreEspecialidad.Text = CStr(row("nombre"))
+                txtcodigoEspecialidad.BackColor = Color.White
             Catch ex As Exception
+                txtcodigoEspecialidad.BackColor = Color.Red
+                txtnombreEspecialidad.Text = ""
                 'MsgBox("No existe ese código de especialidad.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoEspecialidad.Text = ""
             txtnombreEspecialidad.Text = ""
+            txtcodigoEspecialidad.BackColor = Color.White
         End If
     End Sub
 End Class

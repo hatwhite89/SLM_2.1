@@ -22,12 +22,16 @@
                 txtnombreCliente.Text = CStr(row("nombreCompleto"))
                 M_Cliente.txtcodigoCategoria.Text = CStr(row("codigoCategoria"))
                 M_ClienteVentana.txtnombreCategoria.Text = M_Cliente.txtnombreCategoria.Text
+                txtcodigoCliente.BackColor = Color.White
             Catch ex As Exception
+                txtcodigoCliente.BackColor = Color.Red
+                txtnombreCliente.Text = ""
                 'MsgBox("No existe el código del cliente.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoCliente.Text = ""
             txtnombreCliente.Text = ""
+            txtcodigoCliente.BackColor = Color.White
         End If
     End Sub
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
@@ -172,12 +176,16 @@
                 dt = objMed.BuscarMedicoCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreMedico.Text = "Dr. " + CStr(row("nombre_completo"))
+                txtcodigoMedico.BackColor = Color.White
             Catch ex As Exception
+                txtcodigoMedico.BackColor = Color.Red
+                txtnombreMedico.Text = ""
                 'MsgBox("No existe el código del médico.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoMedico.Text = ""
             txtnombreMedico.Text = ""
+            txtcodigoMedico.BackColor = Color.White
         End If
     End Sub
     Private Sub txtcodigoSede_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoSede.TextChanged
@@ -191,12 +199,16 @@
                 dt = objSede.BuscarSedeCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreSede.Text = CStr(row("nombre"))
+                txtcodigoSede.BackColor = Color.White
             Catch ex As Exception
+                txtcodigoSede.BackColor = Color.Red
+                txtnombreSede.Text = ""
                 ' MsgBox("No existe el código de la sede.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoSede.Text = ""
             txtnombreSede.Text = ""
+            txtcodigoSede.BackColor = Color.White
         End If
     End Sub
     Private Sub btnbuscarSede_Click(sender As Object, e As EventArgs) Handles btnbuscarSede.Click
@@ -214,13 +226,17 @@
                 Dim row As DataRow = dt.Rows(0)
                 lblcodeSucursal.Text = CStr(row("codigo"))
                 txtnombreSucursal.Text = CStr(row("nombre"))
-                txtcodigoSucursal.Text = UCase(txtcodigoSucursal.Text)
+                txtcodigoSucursal.BackColor = Color.White
             Catch ex As Exception
+                txtcodigoSucursal.BackColor = Color.Red
+                txtnombreSucursal.Text = ""
                 'MsgBox("No existe el código de la sucursal.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoSucursal.Text = ""
             txtnombreSucursal.Text = ""
+            lblcodeSucursal.Text = ""
+            txtcodigoSucursal.BackColor = Color.White
         End If
     End Sub
     Private Sub btnbuscarSucursal_Click(sender As Object, e As EventArgs) Handles btnbuscarSucursal.Click
@@ -239,12 +255,17 @@
                 txtdescripcionTermino.Text = CStr(row("descripcion"))
                 M_ClienteVentana.txtnombreTerminos.Text = CStr(row("descripcion"))
                 lblcodeTerminoPago.Text = CStr(row("codigo"))
+                txtcodigoTerminosPago.BackColor = Color.White
             Catch ex As Exception
+                txtcodigoTerminosPago.BackColor = Color.Red
+                txtdescripcionTermino.Text = ""
                 'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoTerminosPago.Text = ""
             txtdescripcionTermino.Text = ""
+            lblcodeTerminoPago.Text = ""
+            txtcodigoTerminosPago.BackColor = Color.White
         End If
     End Sub
     Private Sub btnterminosPago_Click(sender As Object, e As EventArgs) Handles btnbuscarTerminosPago.Click

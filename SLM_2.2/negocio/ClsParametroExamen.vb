@@ -1,14 +1,15 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class ClsUnidad
-    Dim codigo, factorCantidad As Integer
-    Dim comentario, codigoUnidad As String
+Public Class ClsParametroExamen
+    Dim codigo, codigoUnidad As Integer
+    Dim codigoParametroExam, descripcion, breve As String
+    Dim requiereDet, noCalc As Boolean
+
     'Constructor
     Public Sub New()
 
     End Sub
-    'get y set
-    Public Property Codigo_ As Integer
+    Public Property codigo_ As Integer
         Get
             Return codigo
         End Get
@@ -16,38 +17,77 @@ Public Class ClsUnidad
             codigo = value
         End Set
     End Property
-    Public Property factorCantidad_ As Integer
-        Get
-            Return factorCantidad
-        End Get
-        Set(value As Integer)
-            factorCantidad = value
-        End Set
-    End Property
-    Public Property comentario_ As String
-        Get
-            Return comentario
-        End Get
-        Set(value As String)
-            comentario = value
-        End Set
-    End Property
-    Public Property codigoUnidad_ As String
+    Public Property codigoUnidad_ As Integer
         Get
             Return codigoUnidad
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoUnidad = value
         End Set
     End Property
-    Public Function RegistrarNuevaUnidad() As String
+    Public Property Descripcion_ As String
+        Get
+            Return descripcion
+        End Get
+        Set(value As String)
+            descripcion = value
+        End Set
+    End Property
+    Public Property codigoParametroExam_ As String
+        Get
+            Return codigoParametroExam
+        End Get
+        Set(value As String)
+            codigoParametroExam = value
+        End Set
+    End Property
+    Public Property breve_ As String
+        Get
+            Return breve
+        End Get
+        Set(value As String)
+            breve = value
+        End Set
+    End Property
+    Public Property requiereDet_ As Boolean
+        Get
+            Return requiereDet
+        End Get
+        Set(value As Boolean)
+            requiereDet = value
+        End Set
+    End Property
+    Public Property noCalc_ As Boolean
+        Get
+            Return noCalc
+        End Get
+        Set(value As Boolean)
+            noCalc = value
+        End Set
+    End Property
+    Public Function RegistrarNuevoParametroExamen() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "E_slmInsertarUnidad"
+        sqlcom.CommandText = "E_slmInsertarParametroExamen"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoParametroExam" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoParametroExam_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "requiereDet" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = requiereDet_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "descripcion" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Descripcion_
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoUnidad" 'nombre campo en el procedimiento almacenado @
@@ -55,13 +95,13 @@ Public Class ClsUnidad
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "comentario" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = comentario_
+        sqlpar.ParameterName = "breve" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = breve_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "factorCantidad" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = factorCantidad_
+        sqlpar.ParameterName = "noCalc" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = noCalc_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -84,18 +124,33 @@ Public Class ClsUnidad
 
     End Function
 
-    Public Function ModificarUnidad() As String
+    Public Function ModificarParametroExamen() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "E_slmModificarUnidad"
+        sqlcom.CommandText = "E_slmModificarParametroExamen"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = Codigo_
+        sqlpar.Value = codigo_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoParametroExam" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoParametroExam_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "requiereDet" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = requiereDet_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "descripcion" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Descripcion_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -104,13 +159,13 @@ Public Class ClsUnidad
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "comentario" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = comentario_
+        sqlpar.ParameterName = "breve" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = breve_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "factorCantidad" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = factorCantidad_
+        sqlpar.ParameterName = "noCalc" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = noCalc_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -132,10 +187,7 @@ Public Class ClsUnidad
         Return par_sal
 
     End Function
-
-
-    Public Function BuscarUnidad() As DataTable
-
+    Public Function BuscarParametroExamenCode() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -143,21 +195,18 @@ Public Class ClsUnidad
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "E_slmBuscarUnidad"
-            cmd.Parameters.Add("@codigoUnidad", SqlDbType.VarChar).Value = codigoUnidad_
+            cmd.CommandText = "E_slmBuscarParametroExamenCode"
+            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = codigo_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
-                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
         End Using
     End Function
-
-    Public Function BuscarUnidadComment() As DataTable
-
+    Public Function BuscarParametroExamenDescripcion() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -165,21 +214,18 @@ Public Class ClsUnidad
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "E_slmBuscarUnidadComment"
-            cmd.Parameters.Add("@comentario", SqlDbType.VarChar).Value = comentario_
+            cmd.CommandText = "E_slmBuscarParametroExamenDes"
+            cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = Descripcion_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
-                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
         End Using
     End Function
-
-    Public Function BuscarUnidadCode() As DataTable
-
+    Public Function BuscarParametroExamen() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -187,32 +233,27 @@ Public Class ClsUnidad
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "E_slmBuscarUnidadCode"
-            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Codigo_
+            cmd.CommandText = "E_slmBuscarParametroExamen"
+            cmd.Parameters.Add("@codigoParametroExam", SqlDbType.VarChar).Value = codigoParametroExam_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
-                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
         End Using
     End Function
 
-    Public Function SeleccionarUnidad() As DataTable
-
+    Public Function SeleccionarParametroExamen() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("E_slmSeleccionarUnidad", cn)
+        Using da As New SqlDataAdapter("E_slmSeleccionarParametroExamen", cn)
             Dim dt As New DataTable
             da.Fill(dt)
-            objCon.cerrarConexion()
             Return dt
         End Using
     End Function
-
 End Class
-

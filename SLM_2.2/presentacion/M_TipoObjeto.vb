@@ -14,14 +14,29 @@
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         Me.Close()
     End Sub
+    Private Function sinDobleEspacio(ByVal cadena As String) As String
+        Dim testString As String = cadena
+        Dim texto As String = ""
+        Dim testArray() As String = Split(testString)
+        Dim lastNonEmpty As Integer = -1
+        For i As Integer = 0 To testArray.Length - 1
+            If testArray(i) <> "" Then
+                lastNonEmpty += 1
+                testArray(lastNonEmpty) = testArray(i)
+                texto += testArray(i) + " "
+            End If
+        Next
+        ReDim Preserve testArray(lastNonEmpty)
+        Return RTrim(texto)
+    End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
             If (Trim(txtcodigo.Text) <> "" And Trim(rtxtcomentario.Text) <> "") Then
                 Dim objTipoObj As New ClsTipoObjeto
                 With objTipoObj
-                    .codigoTipoObjeto_ = txtcodigo.Text
-                    .comentario_ = rtxtcomentario.Text
+                    .codigoTipoObjeto_ = sinDobleEspacio(txtcodigo.Text)
+                    .comentario_ = sinDobleEspacio(rtxtcomentario.Text)
                 End With
 
                 If objTipoObj.RegistrarNuevoTipoObjeto() = 1 Then
@@ -54,8 +69,8 @@
             If (Trim(rtxtcomentario.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
                 Dim objTipoObj As New ClsTipoObjeto
                 With objTipoObj
-                    .codigoTipoObjeto_ = txtcodigo.Text
-                    .comentario_ = rtxtcomentario.Text
+                    .codigoTipoObjeto_ = sinDobleEspacio(txtcodigo.Text)
+                    .comentario_ = sinDobleEspacio(rtxtcomentario.Text)
                     .codigo_ = lblcode.Text
                 End With
 

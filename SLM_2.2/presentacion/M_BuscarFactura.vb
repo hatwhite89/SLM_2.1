@@ -68,6 +68,7 @@
                 Else
                     M_Factura.btnActualizar.Enabled = False
                 End If
+                'Me.Close()
                 M_Factura.ShowDialog()
             End If
         Catch ex As Exception
@@ -107,6 +108,7 @@
         End If
     End Sub
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
+        'Me.Close
         M_Factura.limpiar()
         M_Factura.ShowDialog()
     End Sub

@@ -38,6 +38,8 @@ Partial Class M_TerminosPago
         Me.txtcodigoCtaVentas = New System.Windows.Forms.TextBox()
         Me.rtxtdescripcion = New System.Windows.Forms.RichTextBox()
         Me.gbxterminosPago = New System.Windows.Forms.GroupBox()
+        Me.lblcodeCtaVentas = New System.Windows.Forms.Label()
+        Me.lblcodeCtaContado = New System.Windows.Forms.Label()
         Me.lblcode = New System.Windows.Forms.Label()
         Me.txtnombreCtaVentas = New System.Windows.Forms.TextBox()
         Me.txtnombreCtaContado = New System.Windows.Forms.TextBox()
@@ -70,6 +72,7 @@ Partial Class M_TerminosPago
         '
         'txtcodigo
         '
+        Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigo.Location = New System.Drawing.Point(134, 20)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(179, 22)
@@ -197,6 +200,8 @@ Partial Class M_TerminosPago
         '
         'gbxterminosPago
         '
+        Me.gbxterminosPago.Controls.Add(Me.lblcodeCtaVentas)
+        Me.gbxterminosPago.Controls.Add(Me.lblcodeCtaContado)
         Me.gbxterminosPago.Controls.Add(Me.lblcode)
         Me.gbxterminosPago.Controls.Add(Me.txtnombreCtaVentas)
         Me.gbxterminosPago.Controls.Add(Me.txtnombreCtaContado)
@@ -225,6 +230,24 @@ Partial Class M_TerminosPago
         Me.gbxterminosPago.TabIndex = 126
         Me.gbxterminosPago.TabStop = False
         Me.gbxterminosPago.Text = "REGISTRAR TÉRMINO DE PAGO"
+        '
+        'lblcodeCtaVentas
+        '
+        Me.lblcodeCtaVentas.AutoSize = True
+        Me.lblcodeCtaVentas.Location = New System.Drawing.Point(18, 152)
+        Me.lblcodeCtaVentas.Name = "lblcodeCtaVentas"
+        Me.lblcodeCtaVentas.Size = New System.Drawing.Size(0, 17)
+        Me.lblcodeCtaVentas.TabIndex = 135
+        Me.lblcodeCtaVentas.Visible = False
+        '
+        'lblcodeCtaContado
+        '
+        Me.lblcodeCtaContado.AutoSize = True
+        Me.lblcodeCtaContado.Location = New System.Drawing.Point(7, 119)
+        Me.lblcodeCtaContado.Name = "lblcodeCtaContado"
+        Me.lblcodeCtaContado.Size = New System.Drawing.Size(0, 17)
+        Me.lblcodeCtaContado.TabIndex = 134
+        Me.lblcodeCtaContado.Visible = False
         '
         'lblcode
         '
@@ -438,4 +461,6 @@ Partial Class M_TerminosPago
     Friend WithEvents txtnombreCtaContado As TextBox
     Friend WithEvents lblform As Label
     Friend WithEvents lblcode As Label
+    Friend WithEvents lblcodeCtaVentas As Label
+    Friend WithEvents lblcodeCtaContado As Label
 End Class

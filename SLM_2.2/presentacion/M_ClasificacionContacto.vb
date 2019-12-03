@@ -61,7 +61,7 @@
                     End If
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
-                rtxtcomentario.Text() = texto
+                rtxtcomentario.Text() = RTrim(texto)
 
                 Dim objClasif As New ClsClasificacionContacto
                 With objClasif
@@ -111,7 +111,7 @@
                     End If
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
-                rtxtcomentario.Text() = texto
+                rtxtcomentario.Text() = RTrim(texto)
 
                 Dim objClasif As New ClsClasificacionContacto
                 With objClasif
@@ -185,12 +185,15 @@
                 dt = objTipoClas.BuscarTipoClasificacionCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtcomentarioTipo.Text = CStr(row("comentario"))
+                txtcodigoTipo.BackColor = Color.White
             Catch ex As Exception
-                MsgBox("No existe el código del tipo de clasificación.", MsgBoxStyle.Critical, "Validación")
+                txtcodigoTipo.BackColor = Color.Red
+                txtcomentarioTipo.Text = ""
             End Try
         Else
             txtcodigoTipo.Text = ""
             txtcomentarioTipo.Text = ""
+            txtcodigoTipo.BackColor = Color.White
         End If
     End Sub
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click

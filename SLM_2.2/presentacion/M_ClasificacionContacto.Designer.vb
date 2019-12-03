@@ -79,7 +79,7 @@ Partial Class M_ClasificacionContacto
         Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncancelar.ForeColor = System.Drawing.Color.White
+        Me.btncancelar.ForeColor = System.Drawing.Color.Black
         Me.btncancelar.Location = New System.Drawing.Point(468, 172)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(90, 35)
@@ -185,7 +185,7 @@ Partial Class M_ClasificacionContacto
         Me.btnbuscar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscar.ForeColor = System.Drawing.Color.White
+        Me.btnbuscar.ForeColor = System.Drawing.Color.Black
         Me.btnbuscar.Location = New System.Drawing.Point(380, 20)
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(78, 35)
@@ -235,7 +235,7 @@ Partial Class M_ClasificacionContacto
         Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmodificar.ForeColor = System.Drawing.Color.White
+        Me.btnmodificar.ForeColor = System.Drawing.Color.Black
         Me.btnmodificar.Location = New System.Drawing.Point(326, 172)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(96, 35)
@@ -248,7 +248,7 @@ Partial Class M_ClasificacionContacto
         Me.btnnuevo.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnuevo.ForeColor = System.Drawing.Color.White
+        Me.btnnuevo.ForeColor = System.Drawing.Color.Black
         Me.btnnuevo.Location = New System.Drawing.Point(44, 172)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(105, 35)
@@ -261,7 +261,7 @@ Partial Class M_ClasificacionContacto
         Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardar.ForeColor = System.Drawing.Color.White
+        Me.btnguardar.ForeColor = System.Drawing.Color.Black
         Me.btnguardar.Location = New System.Drawing.Point(190, 172)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(96, 35)

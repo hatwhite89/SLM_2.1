@@ -58,7 +58,7 @@
             End If
         Next
         ReDim Preserve testArray(lastNonEmpty)
-        Return texto
+        Return RTrim(texto)
     End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try

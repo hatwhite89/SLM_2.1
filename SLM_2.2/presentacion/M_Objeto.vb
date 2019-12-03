@@ -169,13 +169,16 @@
                 Dim row As DataRow = dt.Rows(0)
                 txtcomentarioTipo.Text = CStr(row("comentario"))
                 lblcodeTipoObjeto.Text = CStr(row("codigo"))
-                txtcodigoTipo.Text = UCase(txtcodigoTipo.Text)
+                txtcodigoTipo.BackColor = Color.White
             Catch ex As Exception
-
+                txtcodigoTipo.BackColor = Color.Red
+                txtcomentarioTipo.Text = ""
             End Try
         Else
             txtcodigoTipo.Text = ""
+            lblcodeTipoObjeto.Text = ""
             txtcomentarioTipo.Text = ""
+            txtcodigoTipo.BackColor = Color.White
         End If
     End Sub
 End Class

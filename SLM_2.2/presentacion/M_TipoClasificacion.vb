@@ -28,11 +28,11 @@
                     End If
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
-                rtxtcomentario.Text() = texto
+                rtxtcomentario.Text() = RTrim(texto)
 
                 Dim objTipoCla As New ClsTipoClasificacion
                 With objTipoCla
-                    .Comentario1 = texto
+                    .Comentario1 = rtxtcomentario.Text
                 End With
 
                 If objTipoCla.RegistrarNuevoTipoClasificacion() = 1 Then
@@ -76,11 +76,11 @@
                     End If
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
-                rtxtcomentario.Text() = texto
+                rtxtcomentario.Text() = RTrim(texto)
 
                 Dim objTipoCla As New ClsTipoClasificacion
                 With objTipoCla
-                    .Comentario1 = texto
+                    .Comentario1 = rtxtcomentario.Text
                     .Codigo1 = txtcodigo.Text
                 End With
 

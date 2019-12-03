@@ -119,6 +119,8 @@
     <Compile Include="negocio\ClsFacturaCompra.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
     <Compile Include="negocio\ClsItemExamen.vb" />
+    <Compile Include="negocio\ClsParametroExamen.vb" />
+    <Compile Include="negocio\ClsParametroExamenDetalle.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
     <Compile Include="negocio\ClsUnidad.vb" />
