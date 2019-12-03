@@ -1,8 +1,8 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ClsCotizacion
-    Dim numero, codigoCliente As Integer
-    Dim codigoRecepcionista, codigoTerminoPago, nombreCliente, codigoSucursal As String
+    Dim numero, codigoCliente, codigoRecepcionista, codigoTerminoPago, codigoSucursal As Integer
+    Dim nombreCliente As String
     Dim fecha As Date
     Dim total As Double
     'Constructor
@@ -25,11 +25,11 @@ Public Class ClsCotizacion
             codigoCliente = value
         End Set
     End Property
-    Public Property codigoTerminoPago_ As String
+    Public Property codigoTerminoPago_ As Integer
         Get
             Return codigoTerminoPago
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoTerminoPago = value
         End Set
     End Property
@@ -41,19 +41,19 @@ Public Class ClsCotizacion
             nombreCliente = value
         End Set
     End Property
-    Public Property codigoRecepcionista_ As String
+    Public Property codigoRecepcionista_ As Integer
         Get
             Return codigoRecepcionista
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoRecepcionista = value
         End Set
     End Property
-    Public Property codigoSucursal_ As String
+    Public Property codigoSucursal_ As Integer
         Get
             Return codigoSucursal
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoSucursal = value
         End Set
     End Property

@@ -29,6 +29,7 @@ Partial Class M_Caja
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.gbxcaja = New System.Windows.Forms.GroupBox()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.lblnombre = New System.Windows.Forms.Label()
@@ -37,7 +38,6 @@ Partial Class M_Caja
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
-        Me.lblcode = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxcaja.SuspendLayout()
@@ -123,6 +123,15 @@ Partial Class M_Caja
         Me.gbxcaja.TabStop = False
         Me.gbxcaja.Text = "REGISTRAR CAJERO(A)"
         '
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(257, 18)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 124
+        Me.lblcode.Visible = False
+        '
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
@@ -161,7 +170,7 @@ Partial Class M_Caja
         Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnmodificar.ForeColor = System.Drawing.Color.White
         Me.btnmodificar.Location = New System.Drawing.Point(336, 79)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(96, 35)
@@ -174,7 +183,7 @@ Partial Class M_Caja
         Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncancelar.ForeColor = System.Drawing.Color.White
         Me.btncancelar.Location = New System.Drawing.Point(474, 79)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(90, 35)
@@ -187,7 +196,7 @@ Partial Class M_Caja
         Me.btnnuevo.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnnuevo.ForeColor = System.Drawing.Color.White
         Me.btnnuevo.Location = New System.Drawing.Point(54, 79)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(105, 35)
@@ -200,7 +209,7 @@ Partial Class M_Caja
         Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnguardar.ForeColor = System.Drawing.Color.White
         Me.btnguardar.Location = New System.Drawing.Point(200, 79)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(96, 35)
@@ -208,19 +217,11 @@ Partial Class M_Caja
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
         '
-        'lblcode
-        '
-        Me.lblcode.AutoSize = True
-        Me.lblcode.Location = New System.Drawing.Point(257, 18)
-        Me.lblcode.Name = "lblcode"
-        Me.lblcode.Size = New System.Drawing.Size(0, 17)
-        Me.lblcode.TabIndex = 124
-        Me.lblcode.Visible = False
-        '
         'M_Caja
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(669, 622)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.gbxcaja)

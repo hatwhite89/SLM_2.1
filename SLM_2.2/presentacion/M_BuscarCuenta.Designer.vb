@@ -112,7 +112,7 @@ Partial Class M_BuscarCuenta
         Me.btnbuscar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnbuscar.ForeColor = System.Drawing.Color.White
         Me.btnbuscar.Location = New System.Drawing.Point(380, 28)
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(78, 35)
@@ -124,11 +124,12 @@ Partial Class M_BuscarCuenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(669, 622)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
         Me.Name = "M_BuscarCuenta"
-        Me.Text = "M_BuscarCuenta"
+        Me.Text = "Buscar Cuenta"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()

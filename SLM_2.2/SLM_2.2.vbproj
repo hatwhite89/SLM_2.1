@@ -121,6 +121,7 @@
     <Compile Include="negocio\ClsItemExamen.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
+    <Compile Include="negocio\ClsUnidad.vb" />
     <Compile Include="presentacion\A_FacturaCompras.Designer.vb">
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
     </Compile>

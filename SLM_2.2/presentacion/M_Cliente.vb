@@ -110,7 +110,7 @@
     Private Sub btnactualizarCliente_Click(sender As Object, e As EventArgs) Handles btnactualizarCliente.Click
         Try
 
-            If (txtnombre1.Text <> "" And txtapellido1.Text <> "" And txtapellido2.Text <> "" And dtpfechaNacimiento.Text <> "" And rtxtdireccion.Text <> "" And txtcelular.Text <> "") Then
+            If (txtnombre1.Text <> "" And txtapellido1.Text <> "" And txtapellido2.Text <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoCategoria.Text <> "") Then
                 Dim testString As String = txtnombreCompleto.Text()
                 Dim texto As String = ""
                 Dim testArray() As String = Split(testString)

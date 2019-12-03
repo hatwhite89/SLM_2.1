@@ -138,7 +138,7 @@ Partial Class M_Factura
         Me.btnnueva.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnnueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnueva.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnnueva.ForeColor = System.Drawing.Color.White
         Me.btnnueva.Location = New System.Drawing.Point(847, 41)
         Me.btnnueva.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnnueva.Name = "btnnueva"
@@ -152,7 +152,7 @@ Partial Class M_Factura
         Me.btnsalir.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnsalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnsalir.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnsalir.ForeColor = System.Drawing.Color.White
         Me.btnsalir.Location = New System.Drawing.Point(947, 41)
         Me.btnsalir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnsalir.Name = "btnsalir"
@@ -166,7 +166,7 @@ Partial Class M_Factura
         Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnguardar.ForeColor = System.Drawing.Color.White
         Me.btnguardar.Location = New System.Drawing.Point(1051, 41)
         Me.btnguardar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnguardar.Name = "btnguardar"
@@ -910,7 +910,7 @@ Partial Class M_Factura
         Me.btncotizacion.BackColor = System.Drawing.Color.DodgerBlue
         Me.btncotizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncotizacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncotizacion.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncotizacion.ForeColor = System.Drawing.Color.White
         Me.btncotizacion.Location = New System.Drawing.Point(731, 41)
         Me.btncotizacion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btncotizacion.Name = "btncotizacion"
@@ -924,7 +924,7 @@ Partial Class M_Factura
         Me.btnActualizar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnActualizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnActualizar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnActualizar.ForeColor = System.Drawing.Color.White
         Me.btnActualizar.Location = New System.Drawing.Point(613, 41)
         Me.btnActualizar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnActualizar.Name = "btnActualizar"
@@ -945,7 +945,7 @@ Partial Class M_Factura
         'lblcodeTerminoPago
         '
         Me.lblcodeTerminoPago.AutoSize = True
-        Me.lblcodeTerminoPago.Location = New System.Drawing.Point(0, 174)
+        Me.lblcodeTerminoPago.Location = New System.Drawing.Point(12, 174)
         Me.lblcodeTerminoPago.Name = "lblcodeTerminoPago"
         Me.lblcodeTerminoPago.Size = New System.Drawing.Size(0, 17)
         Me.lblcodeTerminoPago.TabIndex = 99
@@ -957,6 +957,7 @@ Partial Class M_Factura
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1164, 668)
+        Me.ControlBox = False
         Me.Controls.Add(Me.lblcodeTerminoPago)
         Me.Controls.Add(Me.lblcodeSucursal)
         Me.Controls.Add(Me.btnActualizar)

@@ -24,7 +24,7 @@ Partial Class E_Unidad
     Private Sub InitializeComponent()
         Me.gbxtipoObjeto = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtFactorCantidad = New System.Windows.Forms.TextBox()
         Me.rtxtcomentario = New System.Windows.Forms.RichTextBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
@@ -39,6 +39,7 @@ Partial Class E_Unidad
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtcomentarioB = New System.Windows.Forms.TextBox()
         Me.lblcomentarioB = New System.Windows.Forms.Label()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.gbxtipoObjeto.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,8 +47,9 @@ Partial Class E_Unidad
         '
         'gbxtipoObjeto
         '
+        Me.gbxtipoObjeto.Controls.Add(Me.lblcode)
         Me.gbxtipoObjeto.Controls.Add(Me.Label1)
-        Me.gbxtipoObjeto.Controls.Add(Me.TextBox1)
+        Me.gbxtipoObjeto.Controls.Add(Me.txtFactorCantidad)
         Me.gbxtipoObjeto.Controls.Add(Me.rtxtcomentario)
         Me.gbxtipoObjeto.Controls.Add(Me.btnmodificar)
         Me.gbxtipoObjeto.Controls.Add(Me.btnnuevo)
@@ -72,13 +74,13 @@ Partial Class E_Unidad
         Me.Label1.TabIndex = 117
         Me.Label1.Text = "Factor Cantidad"
         '
-        'TextBox1
+        'txtFactorCantidad
         '
-        Me.TextBox1.Location = New System.Drawing.Point(183, 129)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(183, 22)
-        Me.TextBox1.TabIndex = 116
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtFactorCantidad.Location = New System.Drawing.Point(183, 129)
+        Me.txtFactorCantidad.Name = "txtFactorCantidad"
+        Me.txtFactorCantidad.Size = New System.Drawing.Size(183, 22)
+        Me.txtFactorCantidad.TabIndex = 116
+        Me.txtFactorCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'rtxtcomentario
         '
@@ -93,7 +95,7 @@ Partial Class E_Unidad
         Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnmodificar.ForeColor = System.Drawing.Color.White
         Me.btnmodificar.Location = New System.Drawing.Point(333, 176)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(96, 35)
@@ -106,7 +108,7 @@ Partial Class E_Unidad
         Me.btnnuevo.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnnuevo.ForeColor = System.Drawing.Color.White
         Me.btnnuevo.Location = New System.Drawing.Point(51, 176)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(105, 35)
@@ -119,7 +121,7 @@ Partial Class E_Unidad
         Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnguardar.ForeColor = System.Drawing.Color.White
         Me.btnguardar.Location = New System.Drawing.Point(197, 176)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(96, 35)
@@ -141,7 +143,7 @@ Partial Class E_Unidad
         Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncancelar.ForeColor = System.Drawing.Color.White
         Me.btncancelar.Location = New System.Drawing.Point(475, 176)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(90, 35)
@@ -228,14 +230,23 @@ Partial Class E_Unidad
         Me.lblcomentarioB.TabIndex = 114
         Me.lblcomentarioB.Text = "Comentario"
         '
-        'eg_frmUnidad
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(399, 29)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 118
+        '
+        'E_Unidad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(669, 622)
         Me.Controls.Add(Me.gbxtipoObjeto)
         Me.Controls.Add(Me.gbxbusqueda)
-        Me.Name = "eg_frmUnidad"
+        Me.Name = "E_Unidad"
         Me.Text = "Unidad"
         Me.gbxtipoObjeto.ResumeLayout(False)
         Me.gbxtipoObjeto.PerformLayout()
@@ -262,5 +273,6 @@ Partial Class E_Unidad
     Friend WithEvents txtcomentarioB As TextBox
     Friend WithEvents lblcomentarioB As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtFactorCantidad As TextBox
+    Friend WithEvents lblcode As Label
 End Class

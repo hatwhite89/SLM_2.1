@@ -131,7 +131,7 @@ Partial Class E_AccesoLaboratorio
         Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnmodificar.ForeColor = System.Drawing.Color.White
         Me.btnmodificar.Location = New System.Drawing.Point(326, 149)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(96, 35)
@@ -144,7 +144,7 @@ Partial Class E_AccesoLaboratorio
         Me.btnnuevo.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnnuevo.ForeColor = System.Drawing.Color.White
         Me.btnnuevo.Location = New System.Drawing.Point(44, 149)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(105, 35)
@@ -157,7 +157,7 @@ Partial Class E_AccesoLaboratorio
         Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnguardar.ForeColor = System.Drawing.Color.White
         Me.btnguardar.Location = New System.Drawing.Point(190, 149)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(96, 35)
@@ -179,7 +179,7 @@ Partial Class E_AccesoLaboratorio
         Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncancelar.ForeColor = System.Drawing.Color.White
         Me.btncancelar.Location = New System.Drawing.Point(468, 149)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(90, 35)
