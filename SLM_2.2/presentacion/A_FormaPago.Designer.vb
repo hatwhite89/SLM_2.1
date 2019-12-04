@@ -63,7 +63,7 @@ Partial Class frmFormaPago
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(464, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(670, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -110,7 +110,7 @@ Partial Class frmFormaPago
         'lblDescrip
         '
         Me.lblDescrip.AutoSize = True
-        Me.lblDescrip.Location = New System.Drawing.Point(224, 81)
+        Me.lblDescrip.Location = New System.Drawing.Point(355, 83)
         Me.lblDescrip.Name = "lblDescrip"
         Me.lblDescrip.Size = New System.Drawing.Size(60, 13)
         Me.lblDescrip.TabIndex = 4
@@ -137,7 +137,7 @@ Partial Class frmFormaPago
         'lblTipo
         '
         Me.lblTipo.AutoSize = True
-        Me.lblTipo.Location = New System.Drawing.Point(224, 55)
+        Me.lblTipo.Location = New System.Drawing.Point(355, 57)
         Me.lblTipo.Name = "lblTipo"
         Me.lblTipo.Size = New System.Drawing.Size(28, 13)
         Me.lblTipo.TabIndex = 9
@@ -149,6 +149,7 @@ Partial Class frmFormaPago
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
         Me.txtCodigo.TabIndex = 10
+        Me.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtCuenta
         '
@@ -160,46 +161,49 @@ Partial Class frmFormaPago
         Me.txtCuenta.Name = "txtCuenta"
         Me.txtCuenta.Size = New System.Drawing.Size(71, 20)
         Me.txtCuenta.TabIndex = 11
+        Me.txtCuenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtComentario
         '
-        Me.txtComentario.Location = New System.Drawing.Point(324, 74)
+        Me.txtComentario.Location = New System.Drawing.Point(455, 76)
+        Me.txtComentario.Multiline = True
         Me.txtComentario.Name = "txtComentario"
-        Me.txtComentario.Size = New System.Drawing.Size(100, 20)
+        Me.txtComentario.Size = New System.Drawing.Size(186, 44)
         Me.txtComentario.TabIndex = 12
         '
         'txtCtaBanco
         '
         Me.txtCtaBanco.Location = New System.Drawing.Point(110, 76)
         Me.txtCtaBanco.Name = "txtCtaBanco"
-        Me.txtCtaBanco.Size = New System.Drawing.Size(100, 20)
+        Me.txtCtaBanco.Size = New System.Drawing.Size(239, 20)
         Me.txtCtaBanco.TabIndex = 13
+        Me.txtCtaBanco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtNombreBanco
         '
         Me.txtNombreBanco.Location = New System.Drawing.Point(110, 100)
         Me.txtNombreBanco.Name = "txtNombreBanco"
-        Me.txtNombreBanco.Size = New System.Drawing.Size(100, 20)
+        Me.txtNombreBanco.Size = New System.Drawing.Size(239, 20)
         Me.txtNombreBanco.TabIndex = 15
         '
         'txtFormulario
         '
         Me.txtFormulario.Location = New System.Drawing.Point(110, 126)
         Me.txtFormulario.Name = "txtFormulario"
-        Me.txtFormulario.Size = New System.Drawing.Size(100, 20)
+        Me.txtFormulario.Size = New System.Drawing.Size(239, 20)
         Me.txtFormulario.TabIndex = 16
         '
         'txtTipo
         '
-        Me.txtTipo.Location = New System.Drawing.Point(324, 48)
+        Me.txtTipo.Location = New System.Drawing.Point(455, 50)
         Me.txtTipo.Name = "txtTipo"
-        Me.txtTipo.Size = New System.Drawing.Size(100, 20)
+        Me.txtTipo.Size = New System.Drawing.Size(186, 20)
         Me.txtTipo.TabIndex = 18
         '
         'lblBanco
         '
         Me.lblBanco.AutoSize = True
-        Me.lblBanco.Location = New System.Drawing.Point(224, 28)
+        Me.lblBanco.Location = New System.Drawing.Point(355, 30)
         Me.lblBanco.Name = "lblBanco"
         Me.lblBanco.Size = New System.Drawing.Size(38, 13)
         Me.lblBanco.TabIndex = 29
@@ -207,9 +211,9 @@ Partial Class frmFormaPago
         '
         'txtBanco
         '
-        Me.txtBanco.Location = New System.Drawing.Point(324, 22)
+        Me.txtBanco.Location = New System.Drawing.Point(455, 24)
         Me.txtBanco.Name = "txtBanco"
-        Me.txtBanco.Size = New System.Drawing.Size(100, 20)
+        Me.txtBanco.Size = New System.Drawing.Size(186, 20)
         Me.txtBanco.TabIndex = 30
         '
         'btnGuardar
@@ -248,7 +252,7 @@ Partial Class frmFormaPago
         Me.gbxInfoFormaPago.Controls.Add(Me.lblNombreBanco)
         Me.gbxInfoFormaPago.Location = New System.Drawing.Point(11, 34)
         Me.gbxInfoFormaPago.Name = "gbxInfoFormaPago"
-        Me.gbxInfoFormaPago.Size = New System.Drawing.Size(443, 183)
+        Me.gbxInfoFormaPago.Size = New System.Drawing.Size(647, 183)
         Me.gbxInfoFormaPago.TabIndex = 51
         Me.gbxInfoFormaPago.TabStop = False
         Me.gbxInfoFormaPago.Text = "Información Forma de Pago"
@@ -268,16 +272,17 @@ Partial Class frmFormaPago
         '
         'txtRetencion
         '
-        Me.txtRetencion.Location = New System.Drawing.Point(324, 100)
+        Me.txtRetencion.Location = New System.Drawing.Point(455, 126)
         Me.txtRetencion.Name = "txtRetencion"
         Me.txtRetencion.Size = New System.Drawing.Size(100, 20)
         Me.txtRetencion.TabIndex = 54
         Me.txtRetencion.Text = "0.0"
+        Me.txtRetencion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblRetencion
         '
         Me.lblRetencion.AutoSize = True
-        Me.lblRetencion.Location = New System.Drawing.Point(224, 103)
+        Me.lblRetencion.Location = New System.Drawing.Point(355, 129)
         Me.lblRetencion.Name = "lblRetencion"
         Me.lblRetencion.Size = New System.Drawing.Size(56, 13)
         Me.lblRetencion.TabIndex = 53
@@ -291,7 +296,7 @@ Partial Class frmFormaPago
         Me.GroupBox1.Controls.Add(Me.dtFormasPago)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 223)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(442, 220)
+        Me.GroupBox1.Size = New System.Drawing.Size(646, 220)
         Me.GroupBox1.TabIndex = 52
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Formas de Pago"
@@ -302,7 +307,7 @@ Partial Class frmFormaPago
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(248, 185)
+        Me.btnCrear.Location = New System.Drawing.Point(454, 185)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(90, 23)
         Me.btnCrear.TabIndex = 5
@@ -313,7 +318,7 @@ Partial Class frmFormaPago
         'lblCodFormaPago
         '
         Me.lblCodFormaPago.AutoSize = True
-        Me.lblCodFormaPago.Location = New System.Drawing.Point(203, 190)
+        Me.lblCodFormaPago.Location = New System.Drawing.Point(409, 190)
         Me.lblCodFormaPago.Name = "lblCodFormaPago"
         Me.lblCodFormaPago.Size = New System.Drawing.Size(39, 13)
         Me.lblCodFormaPago.TabIndex = 4
@@ -326,7 +331,7 @@ Partial Class frmFormaPago
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(344, 185)
+        Me.btnModificar.Location = New System.Drawing.Point(550, 185)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(90, 23)
         Me.btnModificar.TabIndex = 1
@@ -346,7 +351,7 @@ Partial Class frmFormaPago
         Me.dtFormasPago.Name = "dtFormasPago"
         Me.dtFormasPago.ReadOnly = True
         Me.dtFormasPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtFormasPago.Size = New System.Drawing.Size(428, 162)
+        Me.dtFormasPago.Size = New System.Drawing.Size(634, 162)
         Me.dtFormasPago.TabIndex = 0
         '
         'frmFormaPago
@@ -354,7 +359,7 @@ Partial Class frmFormaPago
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(464, 451)
+        Me.ClientSize = New System.Drawing.Size(670, 451)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoFormaPago)
         Me.Controls.Add(Me.MenuStrip1)
