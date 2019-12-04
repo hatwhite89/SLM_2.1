@@ -105,7 +105,7 @@
         btnbuscarTipo.Enabled = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = False
+        btnnuevo.Enabled = True
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -120,7 +120,10 @@
             lblcodeTipoObjeto.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
             txtcodigoTipo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
             cbxcerrado.Checked = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()
+
             btnmodificar.Enabled = True
+            btnguardar.Enabled = False
+
             txtnombre.ReadOnly = False
             txtcodigoTipo.ReadOnly = False
             txtcodigo.ReadOnly = False

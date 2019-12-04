@@ -23,6 +23,7 @@ Partial Class M_TipoObjeto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxtipoObjeto = New System.Windows.Forms.GroupBox()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.rtxtcomentario = New System.Windows.Forms.RichTextBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
@@ -37,7 +38,6 @@ Partial Class M_TipoObjeto
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtcomentarioB = New System.Windows.Forms.TextBox()
         Me.lblcomentarioB = New System.Windows.Forms.Label()
-        Me.lblcode = New System.Windows.Forms.Label()
         Me.gbxtipoObjeto.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,9 +61,19 @@ Partial Class M_TipoObjeto
         Me.gbxtipoObjeto.TabStop = False
         Me.gbxtipoObjeto.Text = "REGISTRAR TIPO OBJETO"
         '
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(429, 30)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 123
+        Me.lblcode.Visible = False
+        '
         'rtxtcomentario
         '
         Me.rtxtcomentario.Location = New System.Drawing.Point(183, 55)
+        Me.rtxtcomentario.MaxLength = 200
         Me.rtxtcomentario.Name = "rtxtcomentario"
         Me.rtxtcomentario.Size = New System.Drawing.Size(321, 62)
         Me.rtxtcomentario.TabIndex = 115
@@ -142,6 +152,7 @@ Partial Class M_TipoObjeto
         'txtcodigo
         '
         Me.txtcodigo.Location = New System.Drawing.Point(183, 27)
+        Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(183, 22)
         Me.txtcodigo.TabIndex = 40
@@ -196,6 +207,7 @@ Partial Class M_TipoObjeto
         'txtcomentarioB
         '
         Me.txtcomentarioB.Location = New System.Drawing.Point(237, 26)
+        Me.txtcomentarioB.MaxLength = 200
         Me.txtcomentarioB.Name = "txtcomentarioB"
         Me.txtcomentarioB.Size = New System.Drawing.Size(192, 22)
         Me.txtcomentarioB.TabIndex = 115
@@ -208,15 +220,6 @@ Partial Class M_TipoObjeto
         Me.lblcomentarioB.Size = New System.Drawing.Size(80, 17)
         Me.lblcomentarioB.TabIndex = 114
         Me.lblcomentarioB.Text = "Comentario"
-        '
-        'lblcode
-        '
-        Me.lblcode.AutoSize = True
-        Me.lblcode.Location = New System.Drawing.Point(429, 30)
-        Me.lblcode.Name = "lblcode"
-        Me.lblcode.Size = New System.Drawing.Size(0, 17)
-        Me.lblcode.TabIndex = 123
-        Me.lblcode.Visible = False
         '
         'M_TipoObjeto
         '

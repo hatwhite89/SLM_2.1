@@ -71,13 +71,13 @@ Partial Class M_BuscarCuenta
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(44, 86)
+        Me.dgbtabla.Location = New System.Drawing.Point(44, 76)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(520, 446)
+        Me.dgbtabla.Size = New System.Drawing.Size(520, 456)
         Me.dgbtabla.TabIndex = 22
         '
         'lbltotal
@@ -91,7 +91,8 @@ Partial Class M_BuscarCuenta
         '
         'txtnombreB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(230, 34)
+        Me.txtnombreB.Location = New System.Drawing.Point(230, 30)
+        Me.txtnombreB.MaxLength = 50
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
         Me.txtnombreB.TabIndex = 115
@@ -99,7 +100,7 @@ Partial Class M_BuscarCuenta
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(166, 37)
+        Me.lblnombreB.Location = New System.Drawing.Point(166, 33)
         Me.lblnombreB.Name = "lblnombreB"
         Me.lblnombreB.Size = New System.Drawing.Size(58, 17)
         Me.lblnombreB.TabIndex = 114

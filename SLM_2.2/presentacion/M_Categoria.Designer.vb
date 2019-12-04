@@ -113,6 +113,7 @@ Partial Class M_Categoria
         'txtcodigoTipo
         '
         Me.txtcodigoTipo.Location = New System.Drawing.Point(187, 116)
+        Me.txtcodigoTipo.MaxLength = 20
         Me.txtcodigoTipo.Name = "txtcodigoTipo"
         Me.txtcodigoTipo.Size = New System.Drawing.Size(88, 22)
         Me.txtcodigoTipo.TabIndex = 128
@@ -120,6 +121,7 @@ Partial Class M_Categoria
         'rtxtdescripcion
         '
         Me.rtxtdescripcion.Location = New System.Drawing.Point(130, 65)
+        Me.rtxtdescripcion.MaxLength = 100
         Me.rtxtdescripcion.Name = "rtxtdescripcion"
         Me.rtxtdescripcion.Size = New System.Drawing.Size(423, 37)
         Me.rtxtdescripcion.TabIndex = 127
@@ -200,6 +202,7 @@ Partial Class M_Categoria
         '
         Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigo.Location = New System.Drawing.Point(131, 29)
+        Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(183, 22)
         Me.txtcodigo.TabIndex = 40
@@ -254,6 +257,7 @@ Partial Class M_Categoria
         'txtdescripcionB
         '
         Me.txtdescripcionB.Location = New System.Drawing.Point(233, 26)
+        Me.txtdescripcionB.MaxLength = 100
         Me.txtdescripcionB.Name = "txtdescripcionB"
         Me.txtdescripcionB.Size = New System.Drawing.Size(192, 22)
         Me.txtdescripcionB.TabIndex = 115

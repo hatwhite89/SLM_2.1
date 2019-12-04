@@ -441,6 +441,7 @@ Partial Class M_Factura
         Me.txtcodigoCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcodigoCliente.Location = New System.Drawing.Point(204, 114)
         Me.txtcodigoCliente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcodigoCliente.MaxLength = 20
         Me.txtcodigoCliente.Name = "txtcodigoCliente"
         Me.txtcodigoCliente.Size = New System.Drawing.Size(185, 22)
         Me.txtcodigoCliente.TabIndex = 41
@@ -461,6 +462,7 @@ Partial Class M_Factura
         Me.txtcodigoMedico.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcodigoMedico.Location = New System.Drawing.Point(204, 142)
         Me.txtcodigoMedico.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcodigoMedico.MaxLength = 20
         Me.txtcodigoMedico.Name = "txtcodigoMedico"
         Me.txtcodigoMedico.Size = New System.Drawing.Size(185, 22)
         Me.txtcodigoMedico.TabIndex = 43
@@ -554,6 +556,7 @@ Partial Class M_Factura
         Me.txtcodigoSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcodigoSucursal.Location = New System.Drawing.Point(597, 228)
         Me.txtcodigoSucursal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcodigoSucursal.MaxLength = 20
         Me.txtcodigoSucursal.Name = "txtcodigoSucursal"
         Me.txtcodigoSucursal.Size = New System.Drawing.Size(133, 22)
         Me.txtcodigoSucursal.TabIndex = 53
@@ -575,6 +578,7 @@ Partial Class M_Factura
         Me.txtcodigoTerminosPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcodigoTerminosPago.Location = New System.Drawing.Point(204, 170)
         Me.txtcodigoTerminosPago.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcodigoTerminosPago.MaxLength = 20
         Me.txtcodigoTerminosPago.Name = "txtcodigoTerminosPago"
         Me.txtcodigoTerminosPago.Size = New System.Drawing.Size(185, 22)
         Me.txtcodigoTerminosPago.TabIndex = 58
@@ -586,6 +590,7 @@ Partial Class M_Factura
         Me.txtcodigoSede.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcodigoSede.Location = New System.Drawing.Point(597, 199)
         Me.txtcodigoSede.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcodigoSede.MaxLength = 20
         Me.txtcodigoSede.Name = "txtcodigoSede"
         Me.txtcodigoSede.Size = New System.Drawing.Size(133, 22)
         Me.txtcodigoSede.TabIndex = 60
@@ -767,6 +772,7 @@ Partial Class M_Factura
         Me.txtpagoPaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtpagoPaciente.Location = New System.Drawing.Point(483, 500)
         Me.txtpagoPaciente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtpagoPaciente.MaxLength = 20
         Me.txtpagoPaciente.Name = "txtpagoPaciente"
         Me.txtpagoPaciente.Size = New System.Drawing.Size(143, 22)
         Me.txtpagoPaciente.TabIndex = 83

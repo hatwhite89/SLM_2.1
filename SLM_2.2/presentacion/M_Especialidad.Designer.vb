@@ -54,6 +54,7 @@ Partial Class M_Especialidad
         'txtcodigo
         '
         Me.txtcodigo.Location = New System.Drawing.Point(129, 34)
+        Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(100, 22)
         Me.txtcodigo.TabIndex = 40
@@ -71,6 +72,7 @@ Partial Class M_Especialidad
         'txtnombre
         '
         Me.txtnombre.Location = New System.Drawing.Point(129, 62)
+        Me.txtnombre.MaxLength = 100
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(371, 22)
         Me.txtnombre.TabIndex = 38
@@ -172,13 +174,13 @@ Partial Class M_Especialidad
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(44, 88)
+        Me.dgbtabla.Location = New System.Drawing.Point(44, 78)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(520, 245)
+        Me.dgbtabla.Size = New System.Drawing.Size(520, 255)
         Me.dgbtabla.TabIndex = 22
         '
         'lbltotal
@@ -192,7 +194,8 @@ Partial Class M_Especialidad
         '
         'txtnombreB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(220, 34)
+        Me.txtnombreB.Location = New System.Drawing.Point(220, 31)
+        Me.txtnombreB.MaxLength = 100
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
         Me.txtnombreB.TabIndex = 115
@@ -200,7 +203,7 @@ Partial Class M_Especialidad
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(156, 37)
+        Me.lblnombreB.Location = New System.Drawing.Point(156, 34)
         Me.lblnombreB.Name = "lblnombreB"
         Me.lblnombreB.Size = New System.Drawing.Size(58, 17)
         Me.lblnombreB.TabIndex = 114

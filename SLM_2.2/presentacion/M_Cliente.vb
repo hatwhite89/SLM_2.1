@@ -40,13 +40,23 @@
                 lblcodeCategoria.Text = CStr(row("codigoCategoria"))
                 lblcodeTerminoPago.Text = CStr(row("codigoTerminoPago"))
 
-                'Dim objcuenta As New ClsCuenta
-                'Dim dt As New DataTable
-                'objcuenta.Cod_Cuenta = lblcodeCtaContado.Text
-                'dt = objcuenta.BuscarCuentaCode()
-                'Dim row As DataRow = dt.Rows(0)
-                'txtnombreCtaContado.Text = CStr(row("nombre"))
-                'txtcodigoCtaContado.Text = CStr(row("cuenta"))
+                'buscar el codigoCategoriaCliente y descripcion
+
+                Dim objCat As New ClsCategoria
+                objCat.codigo_ = lblcodeCategoria.Text
+                dt = objCat.BuscarCategoriaNumero()
+                row = dt.Rows(0)
+                txtcodigoCategoria.Text = CStr(row("codigoCategoriaCliente"))
+                txtnombreCategoria.Text = CStr(row("descripcion"))
+
+                'buscar el codigoterminoPago y descripcion
+
+                Dim objTerm As New ClsTerminoPago
+                objTerm.codigo_ = lblcodeTerminoPago.Text
+                dt = objTerm.BuscarTerminoPagoNumero()
+                row = dt.Rows(0)
+                txtcodigoTermino.Text = CStr(row("codigoTerminoPago"))
+                txtnombreTerminos.Text = CStr(row("descripcion"))
 
                 gbxinfoCliente.Visible = True
                 btnactualizarCliente.Enabled = True
@@ -99,6 +109,18 @@
         txttelefonoCasa.ReadOnly = False
         txttelefonoTrabajo.ReadOnly = False
         txtcodigoClasificacion.ReadOnly = False
+        txtcodigoCategoria.ReadOnly = False
+        rbtnmasculino.Enabled = True
+        rbtnfemenino.Enabled = True
+        txtaseguradora.ReadOnly = False
+        txtconvenio.ReadOnly = False
+        txtcodigoTermino.ReadOnly = False
+
+        btnterminosPago.Enabled = True
+        btnconvenio.Enabled = True
+        btnaseguradora.Enabled = True
+        btncategoria.Enabled = True
+        btnclasificacion.Enabled = True
     End Sub
     Private Sub Deshabilitar()
         txtcorreo.ReadOnly = True
@@ -114,24 +136,24 @@
         txttelefonoCasa.ReadOnly = True
         txttelefonoTrabajo.ReadOnly = True
         txtcodigoClasificacion.ReadOnly = True
+        txtcodigoCategoria.ReadOnly = True
+        rbtnmasculino.Enabled = False
+        rbtnfemenino.Enabled = False
+        txtaseguradora.ReadOnly = True
+        txtconvenio.ReadOnly = True
+        txtcodigoTermino.ReadOnly = True
+
+        btnterminosPago.Enabled = False
+        btnconvenio.Enabled = False
+        btnaseguradora.Enabled = False
+        btncategoria.Enabled = False
+        btnclasificacion.Enabled = False
     End Sub
     Private Sub btnactualizarCliente_Click(sender As Object, e As EventArgs) Handles btnactualizarCliente.Click
         Try
 
             If (txtnombre1.Text <> "" And txtapellido1.Text <> "" And txtapellido2.Text <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoCategoria.Text <> "") Then
-                Dim testString As String = txtnombreCompleto.Text()
-                Dim texto As String = ""
-                Dim testArray() As String = Split(testString)
-                Dim lastNonEmpty As Integer = -1
-                For i As Integer = 0 To testArray.Length - 1
-                    If testArray(i) <> "" Then
-                        lastNonEmpty += 1
-                        testArray(lastNonEmpty) = testArray(i)
-                        texto += testArray(i) + " "
-                    End If
-                Next
-                ReDim Preserve testArray(lastNonEmpty)
-                txtnombreCompleto.Text() = RTrim(texto)
+                txtnombreCompleto.Text = sinDobleEspacio(txtnombreCompleto.Text)
 
                 Dim genero As String = ""
                 If (rbtnmasculino.Checked) Then
@@ -142,7 +164,7 @@
                 Dim objClient As New ClsCliente
                 With objClient
                     .Codigo1 = Convert.ToInt32(txtcodigo.Text)
-                    .NombreCompleto1 = texto
+                    .NombreCompleto1 = txtnombreCompleto.Text
                     .ScanId1 = txtscanId.Text
                     .Identidad1 = mtxtidentidadClienteB.Text
                     .Rtn1 = txtrtn.Text
@@ -159,8 +181,8 @@
                     .Correo_1 = txtcorreo.Text
                     .Correo_2 = txtcorreo2.Text
                     .CodigoClasificacion1 = Convert.ToInt32(txtcodigoClasificacion.Text)
-                    .codigoCategoria1 = lblcodeCategoria.Text
-                    .codigoTerminoPago1 = lblcodeTerminoPago.Text
+                    .codigoCategoria1 = Convert.ToInt32(lblcodeCategoria.Text)
+                    .codigoTerminoPago1 = Convert.ToInt32(lblcodeTerminoPago.Text)
                 End With
 
                 If objClient.ModificarCliente() = 1 Then
@@ -168,7 +190,7 @@
 
                     Deshabilitar()
 
-                    btnactualizarCliente.Enabled = True
+                    btnactualizarCliente.Enabled = False
                     btnseleccionarCliente.Enabled = True
                     btnguardarCliente.Enabled = False
                 Else
@@ -281,25 +303,13 @@
                 numero = 0
             End If
 
-            If (genero <> "" And txtnombreTerminos.Text <> "" And txtnombreCategoria.Text <> "" And numero > 0 And txtnombre1.Text <> "" And txtapellido1.Text <> "" And txtapellido2.Text <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoClasificacion.Text <> "") Then
+            If (genero <> "" And txtnombreTerminos.Text <> "" And txtnombreCategoria.Text <> "" And numero > 0 And Trim(txtnombre1.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoClasificacion.Text <> "") Then
 
-                Dim testString As String = txtnombreCompleto.Text()
-                Dim texto As String = ""
-                Dim testArray() As String = Split(testString)
-                Dim lastNonEmpty As Integer = -1
-                For i As Integer = 0 To testArray.Length - 1
-                    If testArray(i) <> "" Then
-                        lastNonEmpty += 1
-                        testArray(lastNonEmpty) = testArray(i)
-                        texto += testArray(i) + " "
-                    End If
-                Next
-                ReDim Preserve testArray(lastNonEmpty)
-                txtnombreCompleto.Text() = RTrim(texto)
+                txtnombreCompleto.Text = sinDobleEspacio(txtnombreCompleto.Text)
 
                 Dim objClient As New ClsCliente
                 With objClient
-                    .NombreCompleto1 = texto
+                    .NombreCompleto1 = txtnombreCompleto.Text
                     .ScanId1 = txtscanId.Text
                     .Identidad1 = mtxtidentidadClienteB.Text
                     .Rtn1 = txtrtn.Text
@@ -316,13 +326,13 @@
                     .Correo_1 = txtcorreo.Text
                     .Correo_2 = txtcorreo2.Text
                     .CodigoClasificacion1 = Convert.ToInt32(txtcodigoClasificacion.Text)
-                    .codigoCategoria1 = lblcodeCategoria.Text
-                    .codigoTerminoPago1 = lblcodeTerminoPago.Text
+                    .codigoCategoria1 = Convert.ToInt32(lblcodeCategoria.Text)
+                    .codigoTerminoPago1 = Convert.ToInt32(lblcodeTerminoPago.Text)
                 End With
 
                 If objClient.RegistrarNuevoCliente() = 1 Then
                     MsgBox("Registrado correctamente.")
-
+                    Deshabilitar()
                     Dim objClient2 As New ClsCliente
                     With objClient2
                         .Identidad1 = mtxtidentidadClienteB.Text
@@ -334,7 +344,7 @@
 
                     txtcodigo.Text = CStr(row("codigo"))
 
-                    btnactualizarCliente.Enabled = True
+                    btnactualizarCliente.Enabled = False
                     btnguardarCliente.Enabled = False
                     btnseleccionarCliente.Enabled = True
                 Else
@@ -396,6 +406,8 @@
         rbtnfemenino.Checked = False
         rbtnmasculino.Checked = False
         gbxinfoCliente.Visible = False
+
+        Habilitar()
     End Sub
     Private Sub btnseleccionarCliente_Click(sender As Object, e As EventArgs) Handles btnseleccionarCliente.Click
         M_Factura.txtcodigoCliente.Text = txtcodigo.Text
@@ -436,7 +448,6 @@
         gbxinfoCliente.Visible = True
         mtxtidentidad.ReadOnly = False
 
-        btnnuevo.Enabled = False
         btnactualizarCliente.Enabled = False
         btnguardarCliente.Enabled = True
         btnseleccionarCliente.Enabled = False
@@ -461,14 +472,29 @@
             limpiar()
         End If
     End Sub
+    Private Function sinDobleEspacio(ByVal cadena As String) As String
+        Dim testString As String = cadena
+        Dim texto As String = ""
+        Dim testArray() As String = Split(testString)
+        Dim lastNonEmpty As Integer = -1
+        For i As Integer = 0 To testArray.Length - 1
+            If testArray(i) <> "" Then
+                lastNonEmpty += 1
+                testArray(lastNonEmpty) = testArray(i)
+                texto += testArray(i) + " "
+            End If
+        Next
+        ReDim Preserve testArray(lastNonEmpty)
+        Return RTrim(texto)
+    End Function
     Private Sub btnbuscarPorNombre_Click(sender As Object, e As EventArgs) Handles btnbuscarPorNombre.Click
-        If (txtnombreB.Text <> "") Then
+        If (Trim(txtnombreB.Text) <> "") Then
             Try
                 Habilitar()
                 Dim genero As String = ""
                 Dim objClient As New ClsCliente
                 With objClient
-                    .NombreCompleto1 = txtnombreB.Text
+                    .NombreCompleto1 = sinDobleEspacio(txtnombreB.Text)
                 End With
 
                 Dim dt As New DataTable
@@ -498,9 +524,28 @@
                 txtcorreo.Text = CStr(row("correo1"))
                 txtcorreo2.Text = CStr(row("correo2"))
                 txtcodigoClasificacion.Text = CStr(row("codigoClasificacion"))
-                lblcodeCategoria.Text = CStr(row("codigoCategoria"))
                 lblcodeTerminoPago.Text = CStr(row("codigoTerminoPago"))
+                lblcodeCategoria.Text = CStr(row("codigoCategoria"))
 
+                'buscar el codigoCategoriaCliente y descripcion
+
+                Dim objCat As New ClsCategoria
+                objCat.codigo_ = lblcodeCategoria.Text
+                dt = objCat.BuscarCategoriaNumero()
+                row = dt.Rows(0)
+                txtcodigoCategoria.Text = CStr(row("codigoCategoriaCliente"))
+                txtnombreCategoria.Text = CStr(row("descripcion"))
+
+                'buscar el codigoterminoPago y descripcion
+
+                Dim objTerm As New ClsTerminoPago
+                objTerm.codigo_ = lblcodeTerminoPago.Text
+                dt = objTerm.BuscarTerminoPagoNumero()
+                row = dt.Rows(0)
+                txtcodigoTermino.Text = CStr(row("codigoTerminoPago"))
+                txtnombreTerminos.Text = CStr(row("descripcion"))
+
+                'Habilitar botones
                 gbxinfoCliente.Visible = True
                 btnactualizarCliente.Enabled = True
                 btnguardarCliente.Enabled = False
@@ -528,7 +573,7 @@
         End If
     End Sub
     Private Sub M_Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        limpiar()
     End Sub
     Private Sub btncategoria_Click(sender As Object, e As EventArgs) Handles btncategoria.Click
         M_Categoria.ShowDialog()

@@ -25,6 +25,7 @@
 
             txtcodigo.ReadOnly = True
             btnmodificar.Enabled = True
+            btnguardar.Enabled = False
 
             rtxtdescripcion.ReadOnly = False
         Catch ex As Exception
@@ -40,7 +41,7 @@
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = False
+        btnnuevo.Enabled = True
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()

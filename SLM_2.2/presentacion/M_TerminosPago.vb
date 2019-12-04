@@ -119,6 +119,7 @@
             btntipoPago.Enabled = True
 
             btnmodificar.Enabled = True
+            btnguardar.Enabled = False
 
             rtxtdescripcion.ReadOnly = False
             txtdiasNeto.ReadOnly = False
@@ -151,7 +152,7 @@
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = False
+        btnnuevo.Enabled = True
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()

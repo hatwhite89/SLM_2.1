@@ -68,7 +68,7 @@ Partial Class E_Unidad
         'lblcode
         '
         Me.lblcode.AutoSize = True
-        Me.lblcode.Location = New System.Drawing.Point(399, 29)
+        Me.lblcode.Location = New System.Drawing.Point(414, 29)
         Me.lblcode.Name = "lblcode"
         Me.lblcode.Size = New System.Drawing.Size(0, 17)
         Me.lblcode.TabIndex = 118
@@ -77,7 +77,7 @@ Partial Class E_Unidad
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(62, 132)
+        Me.Label1.Location = New System.Drawing.Point(77, 132)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(108, 17)
         Me.Label1.TabIndex = 117
@@ -85,7 +85,8 @@ Partial Class E_Unidad
         '
         'txtFactorCantidad
         '
-        Me.txtFactorCantidad.Location = New System.Drawing.Point(183, 129)
+        Me.txtFactorCantidad.Location = New System.Drawing.Point(198, 129)
+        Me.txtFactorCantidad.MaxLength = 20
         Me.txtFactorCantidad.Name = "txtFactorCantidad"
         Me.txtFactorCantidad.Size = New System.Drawing.Size(183, 22)
         Me.txtFactorCantidad.TabIndex = 116
@@ -93,7 +94,8 @@ Partial Class E_Unidad
         '
         'rtxtcomentario
         '
-        Me.rtxtcomentario.Location = New System.Drawing.Point(183, 58)
+        Me.rtxtcomentario.Location = New System.Drawing.Point(198, 58)
+        Me.rtxtcomentario.MaxLength = 100
         Me.rtxtcomentario.Name = "rtxtcomentario"
         Me.rtxtcomentario.Size = New System.Drawing.Size(321, 62)
         Me.rtxtcomentario.TabIndex = 115
@@ -141,7 +143,7 @@ Partial Class E_Unidad
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(118, 30)
+        Me.lblcodigo.Location = New System.Drawing.Point(133, 30)
         Me.lblcodigo.Name = "lblcodigo"
         Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
         Me.lblcodigo.TabIndex = 41
@@ -163,7 +165,7 @@ Partial Class E_Unidad
         'lblcomentario
         '
         Me.lblcomentario.AutoSize = True
-        Me.lblcomentario.Location = New System.Drawing.Point(90, 61)
+        Me.lblcomentario.Location = New System.Drawing.Point(105, 61)
         Me.lblcomentario.Name = "lblcomentario"
         Me.lblcomentario.Size = New System.Drawing.Size(80, 17)
         Me.lblcomentario.TabIndex = 39
@@ -172,7 +174,8 @@ Partial Class E_Unidad
         'txtcodigo
         '
         Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtcodigo.Location = New System.Drawing.Point(183, 27)
+        Me.txtcodigo.Location = New System.Drawing.Point(198, 27)
+        Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(183, 22)
         Me.txtcodigo.TabIndex = 40
@@ -227,6 +230,7 @@ Partial Class E_Unidad
         'txtcomentarioB
         '
         Me.txtcomentarioB.Location = New System.Drawing.Point(237, 26)
+        Me.txtcomentarioB.MaxLength = 100
         Me.txtcomentarioB.Name = "txtcomentarioB"
         Me.txtcomentarioB.Size = New System.Drawing.Size(192, 22)
         Me.txtcomentarioB.TabIndex = 115

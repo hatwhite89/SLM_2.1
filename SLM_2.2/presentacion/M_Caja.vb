@@ -27,6 +27,7 @@
             txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
 
             btnmodificar.Enabled = True
+            btnguardar.Enabled = False
 
             txtnombre.ReadOnly = False
             txtcodigo.ReadOnly = False
@@ -44,7 +45,6 @@
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = False
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()

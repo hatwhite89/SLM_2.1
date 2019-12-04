@@ -10,7 +10,7 @@
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = False
+        btnnuevo.Enabled = True
     End Sub
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
@@ -142,9 +142,13 @@
             ElseIf (lbltipo.Text = "ClasificacionContacto") Then
                 M_ClasificacionContacto.txtcodigoTipo.Text = txtcodigo.Text
                 M_ClasificacionContacto.txtcomentarioTipo.Text = rtxtcomentario.Text
+            ElseIf (lbltipo.Text = "ClasificacionItem") Then
+                E_ClasificacionItem.txtcodigoTipo.Text = txtcodigo.Text
+                E_ClasificacionItem.txtcomentarioTipo.Text = rtxtcomentario.Text
             End If
 
             btnmodificar.Enabled = True
+            btnguardar.Enabled = False
 
             rtxtcomentario.ReadOnly = False
             txtcodigo.ReadOnly = True
