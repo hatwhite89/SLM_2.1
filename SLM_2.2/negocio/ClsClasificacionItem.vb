@@ -1,13 +1,15 @@
 ﻿Imports System.Data.SqlClient
-Public Class ClsCategoria
-    Dim codigoTipo As Integer
-    Dim descripcion, codigoCategoria As String
-    Dim codigo As Integer
+
+Public Class ClsClasificacionItem
+
+    Dim codigo, codigoTipo As Integer
+    Dim nombre, codigoClasificacionItem As String
     'Constructor
     Public Sub New()
 
     End Sub
-    Public Property codigo_ As Integer
+
+    Public Property Codigo_ As Integer
         Get
             Return codigo
         End Get
@@ -15,16 +17,8 @@ Public Class ClsCategoria
             codigo = value
         End Set
     End Property
-    Public Property codigoCategoria_ As String
-        Get
-            Return codigoCategoria
-        End Get
-        Set(value As String)
-            codigoCategoria = value
-        End Set
-    End Property
 
-    Public Property CodigoTipo1 As Integer
+    Public Property CodigoTipo_ As Integer
         Get
             Return codigoTipo
         End Get
@@ -33,38 +27,46 @@ Public Class ClsCategoria
         End Set
     End Property
 
-    Public Property descripcion1 As String
+    Public Property nombre_ As String
         Get
-            Return descripcion
+            Return nombre
         End Get
         Set(value As String)
-            descripcion = value
+            nombre = value
+        End Set
+    End Property
+    Public Property codigoClasificacionItem_ As String
+        Get
+            Return codigoClasificacionItem
+        End Get
+        Set(value As String)
+            codigoClasificacionItem = value
         End Set
     End Property
 
 
-    Public Function RegistrarNuevaCategoria() As String
+    Public Function RegistrarNuevaClasificacionItem() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "M_slmInsertarCategoria"
+        sqlcom.CommandText = "E_slmInsertarClasificacionItem"
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoCategoria" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoCategoria_
+        sqlpar.ParameterName = "codigoClasificacionItem" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoClasificacionItem_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "descripcion" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = descripcion1
+        sqlpar.ParameterName = "nombre" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = nombre_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoTipo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = CodigoTipo1
+        sqlpar.Value = CodigoTipo_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -87,35 +89,34 @@ Public Class ClsCategoria
 
     End Function
 
-    Public Function ModificarCategoria() As String
+    Public Function ModificarClasificacionItem() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "M_slmModificarCategoria"
+        sqlcom.CommandText = "E_slmModificarClasificacionItem"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigo_
+        sqlpar.Value = Codigo_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoCategoria" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoCategoria_
+        sqlpar.ParameterName = "codigoClasificacionItem" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoClasificacionItem_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "descripcion" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = descripcion1
+        sqlpar.ParameterName = "nombre" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = nombre_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoTipo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = CodigoTipo1
+        sqlpar.Value = CodigoTipo_
         sqlcom.Parameters.Add(sqlpar)
-
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -136,7 +137,10 @@ Public Class ClsCategoria
         Return par_sal
 
     End Function
-    Public Function BuscarCategoria() As DataTable
+
+
+    Public Function BuscarClasificacionItem() As DataTable
+
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -144,8 +148,8 @@ Public Class ClsCategoria
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarCategoria"
-            cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion
+            cmd.CommandText = "E_slmBuscarClasificacionItem"
+            cmd.Parameters.Add("@codigoClasificacionItem", SqlDbType.VarChar).Value = codigoClasificacionItem_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -154,8 +158,11 @@ Public Class ClsCategoria
                 End Using
             End Using
         End Using
+
     End Function
-    Public Function BuscarCategoriaNumero() As DataTable
+
+    Public Function BuscarClasificacionItemName() As DataTable
+
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -163,8 +170,8 @@ Public Class ClsCategoria
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarCategoriaNumero"
-            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = codigo_
+            cmd.CommandText = "E_slmBuscarClasificacionItemName"
+            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -173,8 +180,10 @@ Public Class ClsCategoria
                 End Using
             End Using
         End Using
+
     End Function
-    Public Function BuscarCategoriaCode() As DataTable
+    Public Function BuscarClasificacionItemCode() As DataTable
+
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -182,8 +191,8 @@ Public Class ClsCategoria
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarCategoriaCode"
-            cmd.Parameters.Add("@codigoCategoriaCliente", SqlDbType.VarChar).Value = codigoCategoria_
+            cmd.CommandText = "E_slmBuscarClasificacionItemCode"
+            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Codigo_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -192,17 +201,20 @@ Public Class ClsCategoria
                 End Using
             End Using
         End Using
+
     End Function
-    Public Function SeleccionarCategoria() As DataTable
+
+    Public Function SeleccionarClasificacionItem() As DataTable
 
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("M_slmSeleccionarCategoria", cn)
+        Using da As New SqlDataAdapter("E_slmSeleccionarClasificacionItem", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
         End Using
     End Function
+
 End Class

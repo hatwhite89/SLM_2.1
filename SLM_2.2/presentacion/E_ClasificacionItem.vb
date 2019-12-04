@@ -1,42 +1,64 @@
-﻿Public Class M_ClasificacionContacto
+﻿Public Class E_ClasificacionItem
     Private Sub btnbuscarTipo_Click(sender As Object, e As EventArgs) Handles btnbuscarTipo.Click
-        M_TipoClasificacion.lbltipo.Text = "ClasificacionContacto"
+        M_TipoClasificacion.lbltipo.Text = "ClasificacionItem"
         M_TipoClasificacion.ShowDialog()
     End Sub
-    Private Sub M_ClasificacionContacto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim objClas As New ClsClasificacionContacto
-        Dim dv As DataView = objClas.SeleccionarClasificacionContacto.DefaultView
+    Private Sub M_ClasificacionItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim objClasItem As New ClsClasificacionItem
+        Dim dv As DataView = objClasItem.SeleccionarClasificacionItem.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
-        rtxtcomentario.ReadOnly = True
-        txtcodigoTipo.ReadOnly = True
-        txtcodigo.ReadOnly = True
+        dgbtabla.Columns("codigo").Visible = False
+        limpiar()
+        deshabilitar()
 
-        btnmodificar.Enabled = False
-        btnguardar.Enabled = False
-        btnnuevo.Enabled = True
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
         End If
     End Sub
-    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+    Private Sub limpiar()
+
+        lblcode.Text = ""
         txtcodigo.Text() = ""
         txtcodigoTipo.Text() = ""
-        txtcomentarioB.Text() = ""
+        txtNombreB.Text() = ""
         txtcomentarioTipo.Text() = ""
-        rtxtcomentario.Text() = ""
+        rtxtNombre.Text() = ""
 
         txtcodigoTipo.ReadOnly = False
-        txtcomentarioB.ReadOnly = False
-        rtxtcomentario.ReadOnly = False
-        txtcodigo.ReadOnly = True
+        txtNombreB.ReadOnly = False
+        rtxtNombre.ReadOnly = False
+        txtcodigo.ReadOnly = False
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
+
+    End Sub
+    Private Sub deshabilitar()
+
+        rtxtNombre.ReadOnly = True
+        txtcodigoTipo.ReadOnly = True
+        txtcodigo.ReadOnly = True
+        btnbuscarTipo.Enabled = False
+
+        btnmodificar.Enabled = False
+        btnguardar.Enabled = False
+
+    End Sub
+    Private Sub habilitar()
+
+        rtxtNombre.ReadOnly = False
+        txtcodigoTipo.ReadOnly = False
+        txtcodigo.ReadOnly = False
+        btnbuscarTipo.Enabled = True
+
+    End Sub
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+        limpiar()
     End Sub
     Private Sub txtcodigoTipo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoTipo.KeyPress
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
@@ -46,8 +68,8 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (rtxtcomentario.Text <> "" And txtcodigoTipo.Text <> "") Then
-                Dim testString As String = rtxtcomentario.Text()
+            If (Trim(rtxtNombre.Text) <> "" And Trim(txtcodigoTipo.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
+                Dim testString As String = rtxtNombre.Text()
                 Dim texto As String = ""
                 Dim testArray() As String = Split(testString)
                 Dim lastNonEmpty As Integer = -1
@@ -59,30 +81,27 @@
                     End If
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
-                rtxtcomentario.Text() = RTrim(texto)
+                rtxtNombre.Text() = RTrim(texto)
 
-                Dim objClasif As New ClsClasificacionContacto
-                With objClasif
-                    .Comentario1 = rtxtcomentario.Text
-                    .CodigoTipo1 = txtcodigoTipo.Text
+                Dim objClasItemif As New ClsClasificacionItem
+                With objClasItemif
+                    .nombre_ = rtxtNombre.Text
+                    .CodigoTipo_ = txtcodigoTipo.Text
+                    .codigoClasificacionItem_ = txtcodigo.Text
                 End With
 
-                If objClasif.RegistrarNuevaClasificacionContacto() = 1 Then
+                If objClasItemif.RegistrarNuevaClasificacionItem() = 1 Then
                     MsgBox("Registrado correctamente.")
 
-                    Dim dv As DataView = objClasif.SeleccionarClasificacionContacto.DefaultView
+                    Dim dv As DataView = objClasItemif.SeleccionarClasificacionItem.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
-                    rtxtcomentario.ReadOnly = True
-                    txtcodigoTipo.ReadOnly = True
+                    deshabilitar()
 
-                    btnmodificar.Enabled = False
-                    btnguardar.Enabled = False
-                    btnnuevo.Enabled = True
                 Else
-                    MsgBox("Error al querer ingresar la clasificación del contacto.", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer ingresar la clasificación del item.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -96,8 +115,8 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (rtxtcomentario.Text <> "" And txtcodigoTipo.Text <> "" And txtcodigo.Text <> "") Then
-                Dim testString As String = rtxtcomentario.Text()
+            If (Trim(rtxtNombre.Text) <> "" And Trim(txtcodigoTipo.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
+                Dim testString As String = rtxtNombre.Text()
                 Dim texto As String = ""
                 Dim testArray() As String = Split(testString)
                 Dim lastNonEmpty As Integer = -1
@@ -109,31 +128,27 @@
                     End If
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
-                rtxtcomentario.Text() = RTrim(texto)
+                rtxtNombre.Text() = RTrim(texto)
 
-                Dim objClasif As New ClsClasificacionContacto
-                With objClasif
-                    .Comentario1 = rtxtcomentario.Text
-                    .Codigo1 = txtcodigo.Text
-                    .CodigoTipo1 = txtcodigoTipo.Text
+                Dim objClasItemif As New ClsClasificacionItem
+                With objClasItemif
+                    .nombre_ = rtxtNombre.Text
+                    .CodigoTipo_ = txtcodigoTipo.Text
+                    .codigoClasificacionItem_ = txtcodigo.Text
+                    .Codigo_ = lblcode.Text
                 End With
 
-                If objClasif.ModificarClasificacionContacto() = 1 Then
+                If objClasItemif.ModificarClasificacionItem() = 1 Then
                     MsgBox("Modificado correctamente.")
 
-                    Dim dv As DataView = objClasif.SeleccionarClasificacionContacto.DefaultView
+                    Dim dv As DataView = objClasItemif.SeleccionarClasificacionItem.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
-                    rtxtcomentario.ReadOnly = True
-                    txtcodigoTipo.ReadOnly = True
-
-                    btnmodificar.Enabled = False
-                    btnguardar.Enabled = False
-                    btnnuevo.Enabled = True
+                    deshabilitar()
                 Else
-                    MsgBox("Error al querer modificar la clasificación del contacto.", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer modificar la clasificación del item.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -144,21 +159,17 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-            rtxtcomentario.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
-            txtcodigoTipo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+            lblcode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            rtxtNombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+            txtcodigoTipo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
 
-            M_Cliente.txtcodigoClasificacion.Text = txtcodigo.Text
-            M_Cliente.txtnombreClasificacion.Text = rtxtcomentario.Text
-
+            habilitar()
             btnmodificar.Enabled = True
             btnguardar.Enabled = False
-
-            rtxtcomentario.ReadOnly = False
-            txtcodigoTipo.ReadOnly = False
-            txtcodigo.ReadOnly = True
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -189,12 +200,12 @@
         Me.Close()
     End Sub
 
-    Private Sub txtcomentarioB_TextChanged(sender As Object, e As EventArgs) Handles txtcomentarioB.TextChanged
-        Dim objClas As New ClsClasificacionContacto
-        With objClas
-            .Comentario1 = txtcomentarioB.Text
+    Private Sub txtNombreB_TextChanged(sender As Object, e As EventArgs) Handles txtNombreB.TextChanged
+        Dim objClasItem As New ClsClasificacionItem
+        With objClasItem
+            .nombre_ = txtNombreB.Text
         End With
-        Dim dv As DataView = objClas.BuscarClasificacionContacto.DefaultView
+        Dim dv As DataView = objClasItem.BuscarClasificacionItemName.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells

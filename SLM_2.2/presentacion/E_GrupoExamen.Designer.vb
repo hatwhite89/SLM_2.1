@@ -60,6 +60,7 @@ Partial Class E_GrupoExamen
         'txtnombreB
         '
         Me.txtnombreB.Location = New System.Drawing.Point(223, 37)
+        Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
         Me.txtnombreB.TabIndex = 118
@@ -144,6 +145,7 @@ Partial Class E_GrupoExamen
         'txtcodigo
         '
         Me.txtcodigo.Location = New System.Drawing.Point(106, 37)
+        Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(100, 22)
         Me.txtcodigo.TabIndex = 114
@@ -161,6 +163,7 @@ Partial Class E_GrupoExamen
         'txtnombre
         '
         Me.txtnombre.Location = New System.Drawing.Point(297, 37)
+        Me.txtnombre.MaxLength = 80
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(281, 22)
         Me.txtnombre.TabIndex = 112

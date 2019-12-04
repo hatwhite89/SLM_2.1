@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class M_Sede
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class M_Sede
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
@@ -51,7 +51,6 @@ Partial Class M_Sede
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnombreB = New System.Windows.Forms.Label()
-        Me.btnbuscar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -153,6 +152,7 @@ Partial Class M_Sede
         'txttelefono
         '
         Me.txttelefono.Location = New System.Drawing.Point(133, 281)
+        Me.txttelefono.MaxLength = 20
         Me.txttelefono.Name = "txttelefono"
         Me.txttelefono.Size = New System.Drawing.Size(179, 22)
         Me.txttelefono.TabIndex = 134
@@ -191,6 +191,7 @@ Partial Class M_Sede
         'txtcontacto
         '
         Me.txtcontacto.Location = New System.Drawing.Point(133, 253)
+        Me.txtcontacto.MaxLength = 80
         Me.txtcontacto.Name = "txtcontacto"
         Me.txtcontacto.Size = New System.Drawing.Size(179, 22)
         Me.txtcontacto.TabIndex = 129
@@ -199,6 +200,7 @@ Partial Class M_Sede
         'txtcorreo
         '
         Me.txtcorreo.Location = New System.Drawing.Point(377, 253)
+        Me.txtcorreo.MaxLength = 80
         Me.txtcorreo.Name = "txtcorreo"
         Me.txtcorreo.Size = New System.Drawing.Size(179, 22)
         Me.txtcorreo.TabIndex = 130
@@ -207,6 +209,7 @@ Partial Class M_Sede
         'rtxtdireccion4
         '
         Me.rtxtdireccion4.Location = New System.Drawing.Point(133, 210)
+        Me.rtxtdireccion4.MaxLength = 200
         Me.rtxtdireccion4.Name = "rtxtdireccion4"
         Me.rtxtdireccion4.Size = New System.Drawing.Size(423, 37)
         Me.rtxtdireccion4.TabIndex = 128
@@ -215,6 +218,7 @@ Partial Class M_Sede
         'rtxtdireccion3
         '
         Me.rtxtdireccion3.Location = New System.Drawing.Point(133, 167)
+        Me.rtxtdireccion3.MaxLength = 200
         Me.rtxtdireccion3.Name = "rtxtdireccion3"
         Me.rtxtdireccion3.Size = New System.Drawing.Size(423, 37)
         Me.rtxtdireccion3.TabIndex = 127
@@ -223,6 +227,7 @@ Partial Class M_Sede
         'rtxtdireccion2
         '
         Me.rtxtdireccion2.Location = New System.Drawing.Point(133, 124)
+        Me.rtxtdireccion2.MaxLength = 200
         Me.rtxtdireccion2.Name = "rtxtdireccion2"
         Me.rtxtdireccion2.Size = New System.Drawing.Size(423, 37)
         Me.rtxtdireccion2.TabIndex = 125
@@ -251,6 +256,7 @@ Partial Class M_Sede
         'txtnombre
         '
         Me.txtnombre.Location = New System.Drawing.Point(133, 53)
+        Me.txtnombre.MaxLength = 80
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(423, 22)
         Me.txtnombre.TabIndex = 121
@@ -298,6 +304,7 @@ Partial Class M_Sede
         'rtxtdireccion1
         '
         Me.rtxtdireccion1.Location = New System.Drawing.Point(133, 81)
+        Me.rtxtdireccion1.MaxLength = 200
         Me.rtxtdireccion1.Name = "rtxtdireccion1"
         Me.rtxtdireccion1.Size = New System.Drawing.Size(423, 37)
         Me.rtxtdireccion1.TabIndex = 124
@@ -310,7 +317,6 @@ Partial Class M_Sede
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
-        Me.gbxbusqueda.Controls.Add(Me.btnbuscar)
         Me.gbxbusqueda.Location = New System.Drawing.Point(28, 397)
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Size = New System.Drawing.Size(613, 269)
@@ -352,7 +358,8 @@ Partial Class M_Sede
         '
         'txtnombreB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(186, 27)
+        Me.txtnombreB.Location = New System.Drawing.Point(226, 27)
+        Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
         Me.txtnombreB.TabIndex = 115
@@ -360,24 +367,11 @@ Partial Class M_Sede
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(122, 30)
+        Me.lblnombreB.Location = New System.Drawing.Point(162, 30)
         Me.lblnombreB.Name = "lblnombreB"
         Me.lblnombreB.Size = New System.Drawing.Size(58, 17)
         Me.lblnombreB.TabIndex = 114
         Me.lblnombreB.Text = "Nombre"
-        '
-        'btnbuscar
-        '
-        Me.btnbuscar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnbuscar.Location = New System.Drawing.Point(384, 21)
-        Me.btnbuscar.Name = "btnbuscar"
-        Me.btnbuscar.Size = New System.Drawing.Size(78, 35)
-        Me.btnbuscar.TabIndex = 113
-        Me.btnbuscar.Text = "Buscar"
-        Me.btnbuscar.UseVisualStyleBackColor = False
         '
         'M_Sede
         '
@@ -427,5 +421,4 @@ Partial Class M_Sede
     Friend WithEvents lbltotal As Label
     Friend WithEvents txtnombreB As TextBox
     Friend WithEvents lblnombreB As Label
-    Friend WithEvents btnbuscar As Button
 End Class

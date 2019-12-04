@@ -64,7 +64,6 @@
 
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
-                    btnnuevo.Enabled = True
                 Else
                     MsgBox("Error al querer ingresar la unidad.", MsgBoxStyle.Critical)
                 End If
@@ -103,7 +102,6 @@
 
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
-                    btnnuevo.Enabled = True
                 Else
                     MsgBox("Error al querer modificar la unidad.", MsgBoxStyle.Critical)
                 End If
@@ -127,7 +125,6 @@
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = False
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -145,7 +142,6 @@
 
             btnmodificar.Enabled = True
             btnguardar.Enabled = False
-            btnnuevo.Enabled = True
 
             txtFactorCantidad.ReadOnly = False
             rtxtcomentario.ReadOnly = False

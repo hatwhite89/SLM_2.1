@@ -240,6 +240,7 @@ Partial Class M_Cliente
         'txtnombre2
         '
         Me.txtnombre2.Location = New System.Drawing.Point(437, 86)
+        Me.txtnombre2.MaxLength = 20
         Me.txtnombre2.Name = "txtnombre2"
         Me.txtnombre2.Size = New System.Drawing.Size(179, 22)
         Me.txtnombre2.TabIndex = 118
@@ -247,6 +248,7 @@ Partial Class M_Cliente
         'txtapellido1
         '
         Me.txtapellido1.Location = New System.Drawing.Point(154, 114)
+        Me.txtapellido1.MaxLength = 20
         Me.txtapellido1.Name = "txtapellido1"
         Me.txtapellido1.Size = New System.Drawing.Size(179, 22)
         Me.txtapellido1.TabIndex = 117
@@ -529,6 +531,7 @@ Partial Class M_Cliente
         'txtcodigoCategoria
         '
         Me.txtcodigoCategoria.Location = New System.Drawing.Point(490, 30)
+        Me.txtcodigoCategoria.MaxLength = 20
         Me.txtcodigoCategoria.Name = "txtcodigoCategoria"
         Me.txtcodigoCategoria.Size = New System.Drawing.Size(125, 22)
         Me.txtcodigoCategoria.TabIndex = 88
@@ -569,6 +572,7 @@ Partial Class M_Cliente
         'rtxtdireccion
         '
         Me.rtxtdireccion.Location = New System.Drawing.Point(154, 170)
+        Me.rtxtdireccion.MaxLength = 200
         Me.rtxtdireccion.Name = "rtxtdireccion"
         Me.rtxtdireccion.Size = New System.Drawing.Size(461, 95)
         Me.rtxtdireccion.TabIndex = 61
@@ -577,6 +581,7 @@ Partial Class M_Cliente
         'txtcorreo
         '
         Me.txtcorreo.Location = New System.Drawing.Point(749, 278)
+        Me.txtcorreo.MaxLength = 100
         Me.txtcorreo.Name = "txtcorreo"
         Me.txtcorreo.Size = New System.Drawing.Size(193, 22)
         Me.txtcorreo.TabIndex = 65
@@ -605,6 +610,7 @@ Partial Class M_Cliente
         'txttelefonoCasa
         '
         Me.txttelefonoCasa.Location = New System.Drawing.Point(749, 194)
+        Me.txttelefonoCasa.MaxLength = 20
         Me.txttelefonoCasa.Name = "txttelefonoCasa"
         Me.txttelefonoCasa.Size = New System.Drawing.Size(193, 22)
         Me.txttelefonoCasa.TabIndex = 64
@@ -613,6 +619,7 @@ Partial Class M_Cliente
         'txtscanId
         '
         Me.txtscanId.Location = New System.Drawing.Point(154, 58)
+        Me.txtscanId.MaxLength = 50
         Me.txtscanId.Name = "txtscanId"
         Me.txtscanId.Size = New System.Drawing.Size(179, 22)
         Me.txtscanId.TabIndex = 84
@@ -621,6 +628,7 @@ Partial Class M_Cliente
         'txtnombreCompleto
         '
         Me.txtnombreCompleto.Location = New System.Drawing.Point(155, 142)
+        Me.txtnombreCompleto.MaxLength = 80
         Me.txtnombreCompleto.Name = "txtnombreCompleto"
         Me.txtnombreCompleto.ReadOnly = True
         Me.txtnombreCompleto.Size = New System.Drawing.Size(461, 22)
@@ -671,6 +679,7 @@ Partial Class M_Cliente
         'txtcorreo2
         '
         Me.txtcorreo2.Location = New System.Drawing.Point(749, 306)
+        Me.txtcorreo2.MaxLength = 100
         Me.txtcorreo2.Name = "txtcorreo2"
         Me.txtcorreo2.Size = New System.Drawing.Size(193, 22)
         Me.txtcorreo2.TabIndex = 82
@@ -689,6 +698,7 @@ Partial Class M_Cliente
         'txtcelular
         '
         Me.txtcelular.Location = New System.Drawing.Point(749, 250)
+        Me.txtcelular.MaxLength = 20
         Me.txtcelular.Name = "txtcelular"
         Me.txtcelular.Size = New System.Drawing.Size(193, 22)
         Me.txtcelular.TabIndex = 80
@@ -727,6 +737,7 @@ Partial Class M_Cliente
         'txttelefonoTrabajo
         '
         Me.txttelefonoTrabajo.Location = New System.Drawing.Point(749, 222)
+        Me.txttelefonoTrabajo.MaxLength = 20
         Me.txttelefonoTrabajo.Name = "txttelefonoTrabajo"
         Me.txttelefonoTrabajo.Size = New System.Drawing.Size(193, 22)
         Me.txttelefonoTrabajo.TabIndex = 78
@@ -745,6 +756,7 @@ Partial Class M_Cliente
         'txtrtn
         '
         Me.txtrtn.Location = New System.Drawing.Point(749, 61)
+        Me.txtrtn.MaxLength = 20
         Me.txtrtn.Name = "txtrtn"
         Me.txtrtn.Size = New System.Drawing.Size(193, 22)
         Me.txtrtn.TabIndex = 76
@@ -763,6 +775,7 @@ Partial Class M_Cliente
         'txtapellido2
         '
         Me.txtapellido2.Location = New System.Drawing.Point(437, 114)
+        Me.txtapellido2.MaxLength = 20
         Me.txtapellido2.Name = "txtapellido2"
         Me.txtapellido2.Size = New System.Drawing.Size(179, 22)
         Me.txtapellido2.TabIndex = 74
@@ -800,6 +813,7 @@ Partial Class M_Cliente
         'txtnombre1
         '
         Me.txtnombre1.Location = New System.Drawing.Point(155, 86)
+        Me.txtnombre1.MaxLength = 20
         Me.txtnombre1.Name = "txtnombre1"
         Me.txtnombre1.Size = New System.Drawing.Size(179, 22)
         Me.txtnombre1.TabIndex = 68
@@ -855,6 +869,7 @@ Partial Class M_Cliente
         'txtnombreB
         '
         Me.txtnombreB.Location = New System.Drawing.Point(502, 45)
+        Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(206, 22)
         Me.txtnombreB.TabIndex = 117

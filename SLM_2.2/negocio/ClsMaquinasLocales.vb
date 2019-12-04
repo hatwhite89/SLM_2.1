@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
-Public Class ClsCategoria
-    Dim codigoTipo As Integer
-    Dim descripcion, codigoCategoria As String
+
+Public Class ClsMaquinasLocales
+    Dim codigoMaquinasLocales, descripcion As String
     Dim codigo As Integer
     'Constructor
     Public Sub New()
@@ -15,25 +15,15 @@ Public Class ClsCategoria
             codigo = value
         End Set
     End Property
-    Public Property codigoCategoria_ As String
+    Public Property codigoMaquinasLocales_ As String
         Get
-            Return codigoCategoria
+            Return codigoMaquinasLocales
         End Get
         Set(value As String)
-            codigoCategoria = value
+            codigoMaquinasLocales = value
         End Set
     End Property
-
-    Public Property CodigoTipo1 As Integer
-        Get
-            Return codigoTipo
-        End Get
-        Set(value As Integer)
-            codigoTipo = value
-        End Set
-    End Property
-
-    Public Property descripcion1 As String
+    Public Property descripcion_ As String
         Get
             Return descripcion
         End Get
@@ -41,30 +31,23 @@ Public Class ClsCategoria
             descripcion = value
         End Set
     End Property
-
-
-    Public Function RegistrarNuevaCategoria() As String
+    Public Function RegistrarNuevaMaquinaLocal() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "M_slmInsertarCategoria"
+        sqlcom.CommandText = "M_slmInsertarMaquinasLocales"
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoCategoria" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoCategoria_
+        sqlpar.ParameterName = "codigoMaquinasLocales" 'descripcion campo en el procedimiento almacenado @
+        sqlpar.Value = codigoMaquinasLocales_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "descripcion" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = descripcion1
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoTipo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = CodigoTipo1
+        sqlpar.ParameterName = "descripcion" 'descripcion campo en el procedimiento almacenado @
+        sqlpar.Value = descripcion_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -87,35 +70,29 @@ Public Class ClsCategoria
 
     End Function
 
-    Public Function ModificarCategoria() As String
+    Public Function ModificarMaquinasLocales() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "M_slmModificarCategoria"
+        sqlcom.CommandText = "M_slmModificarMaquinasLocales"
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.ParameterName = "codigo" 'descripcion campo en el procedimiento almacenado @
         sqlpar.Value = codigo_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoCategoria" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoCategoria_
+        sqlpar.ParameterName = "codigoMaquinasLocales" 'descripcion campo en el procedimiento almacenado @
+        sqlpar.Value = codigoMaquinasLocales_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "descripcion" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = descripcion1
+        sqlpar.ParameterName = "descripcion" 'descripcion campo en el procedimiento almacenado @
+        sqlpar.Value = descripcion_
         sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoTipo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = CodigoTipo1
-        sqlcom.Parameters.Add(sqlpar)
-
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -136,7 +113,8 @@ Public Class ClsCategoria
         Return par_sal
 
     End Function
-    Public Function BuscarCategoria() As DataTable
+    Public Function BuscarMaquinasLocales() As DataTable
+
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -144,8 +122,8 @@ Public Class ClsCategoria
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarCategoria"
-            cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion
+            cmd.CommandText = "M_slmBuscarMaquinasLocales"
+            cmd.Parameters.Add("@codigoMaquinasLocales", SqlDbType.VarChar).Value = codigoMaquinasLocales_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -154,8 +132,10 @@ Public Class ClsCategoria
                 End Using
             End Using
         End Using
+
     End Function
-    Public Function BuscarCategoriaNumero() As DataTable
+    Public Function BuscarMaquinasLocalesDesc() As DataTable
+
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -163,8 +143,8 @@ Public Class ClsCategoria
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarCategoriaNumero"
-            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = codigo_
+            cmd.CommandText = "M_slmBuscarMaquinasLocalesDesc"
+            cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -173,8 +153,10 @@ Public Class ClsCategoria
                 End Using
             End Using
         End Using
+
     End Function
-    Public Function BuscarCategoriaCode() As DataTable
+    Public Function BuscarMaquinasLocalesCode() As DataTable
+
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -182,8 +164,8 @@ Public Class ClsCategoria
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarCategoriaCode"
-            cmd.Parameters.Add("@codigoCategoriaCliente", SqlDbType.VarChar).Value = codigoCategoria_
+            cmd.CommandText = "M_slmBuscarMaquinasLocalesCode"
+            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = codigo_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -192,17 +174,19 @@ Public Class ClsCategoria
                 End Using
             End Using
         End Using
+
     End Function
-    Public Function SeleccionarCategoria() As DataTable
+    Public Function SeleccionarMaquinasLocales() As DataTable
 
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("M_slmSeleccionarCategoria", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarMaquinasLocales", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
         End Using
     End Function
+
 End Class

@@ -70,6 +70,7 @@ Partial Class M_TipoClasificacion
         'txtcomentarioB
         '
         Me.txtcomentarioB.Location = New System.Drawing.Point(243, 34)
+        Me.txtcomentarioB.MaxLength = 200
         Me.txtcomentarioB.Name = "txtcomentarioB"
         Me.txtcomentarioB.Size = New System.Drawing.Size(192, 22)
         Me.txtcomentarioB.TabIndex = 117
@@ -135,6 +136,7 @@ Partial Class M_TipoClasificacion
         'rtxtcomentario
         '
         Me.rtxtcomentario.Location = New System.Drawing.Point(183, 55)
+        Me.rtxtcomentario.MaxLength = 200
         Me.rtxtcomentario.Name = "rtxtcomentario"
         Me.rtxtcomentario.Size = New System.Drawing.Size(321, 62)
         Me.rtxtcomentario.TabIndex = 115
@@ -213,6 +215,7 @@ Partial Class M_TipoClasificacion
         'txtcodigo
         '
         Me.txtcodigo.Location = New System.Drawing.Point(183, 27)
+        Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(183, 22)
         Me.txtcodigo.TabIndex = 40

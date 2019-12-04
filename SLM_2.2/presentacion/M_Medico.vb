@@ -113,7 +113,7 @@
         btnbuscarEspecialidad.Enabled = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = False
+        btnnuevo.Enabled = True
     End Sub
     Private Sub txtnombreCompleto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombreCompleto.KeyPress
 
@@ -163,7 +163,7 @@
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
     End Sub
-    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
+    Private Sub btnbuscar_Click(sender As Object, e As EventArgs)
         Dim objMed As New ClsMedico
         With objMed
             .Nombre_completo1 = txtnombreB.Text
@@ -187,6 +187,7 @@
             M_Factura.txtnombreMedico.Text = txtnombreCompleto.Text
 
             btnmodificar.Enabled = True
+            btnguardar.Enabled = False
             btnbuscarEspecialidad.Enabled = True
 
             txtcorreo.ReadOnly = False
@@ -296,5 +297,16 @@
             txtnombreEspecialidad.Text = ""
             txtcodigoEspecialidad.BackColor = Color.White
         End If
+    End Sub
+
+    Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
+        Dim objMed As New ClsMedico
+        With objMed
+            .Nombre_completo1 = txtnombreB.Text
+        End With
+        Dim dv As DataView = objMed.BuscarMedico.DefaultView
+        dgbtabla.DataSource = dv
+        lblcantidad.Text = dv.Count
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
     End Sub
 End Class

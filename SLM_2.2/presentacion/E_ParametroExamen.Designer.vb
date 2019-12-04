@@ -91,6 +91,7 @@ Partial Class E_ParametroExamen
         '
         Me.txtcodigoUnidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigoUnidad.Location = New System.Drawing.Point(178, 103)
+        Me.txtcodigoUnidad.MaxLength = 20
         Me.txtcodigoUnidad.Name = "txtcodigoUnidad"
         Me.txtcodigoUnidad.Size = New System.Drawing.Size(88, 22)
         Me.txtcodigoUnidad.TabIndex = 122
@@ -108,6 +109,7 @@ Partial Class E_ParametroExamen
         'rtxtdescripcion
         '
         Me.rtxtdescripcion.Location = New System.Drawing.Point(121, 56)
+        Me.rtxtdescripcion.MaxLength = 100
         Me.rtxtdescripcion.Name = "rtxtdescripcion"
         Me.rtxtdescripcion.Size = New System.Drawing.Size(525, 37)
         Me.rtxtdescripcion.TabIndex = 131
@@ -125,6 +127,7 @@ Partial Class E_ParametroExamen
         'txtcodigo
         '
         Me.txtcodigo.Location = New System.Drawing.Point(123, 26)
+        Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(133, 22)
         Me.txtcodigo.TabIndex = 128
@@ -142,6 +145,7 @@ Partial Class E_ParametroExamen
         'txtBreve
         '
         Me.txtBreve.Location = New System.Drawing.Point(513, 104)
+        Me.txtBreve.MaxLength = 50
         Me.txtBreve.Name = "txtBreve"
         Me.txtBreve.Size = New System.Drawing.Size(133, 22)
         Me.txtBreve.TabIndex = 133

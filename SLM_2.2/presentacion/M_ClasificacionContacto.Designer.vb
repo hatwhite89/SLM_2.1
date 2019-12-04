@@ -36,7 +36,6 @@ Partial Class M_ClasificacionContacto
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtcomentarioB = New System.Windows.Forms.TextBox()
         Me.lblcomentarioB = New System.Windows.Forms.Label()
-        Me.btnbuscar = New System.Windows.Forms.Button()
         Me.gbxclasificacion = New System.Windows.Forms.GroupBox()
         Me.txtcomentarioTipo = New System.Windows.Forms.TextBox()
         Me.rtxtcomentario = New System.Windows.Forms.RichTextBox()
@@ -60,6 +59,7 @@ Partial Class M_ClasificacionContacto
         'txtcodigo
         '
         Me.txtcodigo.Location = New System.Drawing.Point(183, 27)
+        Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(183, 22)
         Me.txtcodigo.TabIndex = 40
@@ -104,6 +104,7 @@ Partial Class M_ClasificacionContacto
         'txtcodigoTipo
         '
         Me.txtcodigoTipo.Location = New System.Drawing.Point(241, 126)
+        Me.txtcodigoTipo.MaxLength = 20
         Me.txtcodigoTipo.Name = "txtcodigoTipo"
         Me.txtcodigoTipo.Size = New System.Drawing.Size(88, 22)
         Me.txtcodigoTipo.TabIndex = 107
@@ -124,7 +125,6 @@ Partial Class M_ClasificacionContacto
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtcomentarioB)
         Me.gbxbusqueda.Controls.Add(Me.lblcomentarioB)
-        Me.gbxbusqueda.Controls.Add(Me.btnbuscar)
         Me.gbxbusqueda.Location = New System.Drawing.Point(25, 252)
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Size = New System.Drawing.Size(613, 347)
@@ -166,7 +166,8 @@ Partial Class M_ClasificacionContacto
         '
         'txtcomentarioB
         '
-        Me.txtcomentarioB.Location = New System.Drawing.Point(182, 26)
+        Me.txtcomentarioB.Location = New System.Drawing.Point(241, 26)
+        Me.txtcomentarioB.MaxLength = 200
         Me.txtcomentarioB.Name = "txtcomentarioB"
         Me.txtcomentarioB.Size = New System.Drawing.Size(192, 22)
         Me.txtcomentarioB.TabIndex = 115
@@ -174,24 +175,11 @@ Partial Class M_ClasificacionContacto
         'lblcomentarioB
         '
         Me.lblcomentarioB.AutoSize = True
-        Me.lblcomentarioB.Location = New System.Drawing.Point(96, 29)
+        Me.lblcomentarioB.Location = New System.Drawing.Point(155, 29)
         Me.lblcomentarioB.Name = "lblcomentarioB"
         Me.lblcomentarioB.Size = New System.Drawing.Size(80, 17)
         Me.lblcomentarioB.TabIndex = 114
         Me.lblcomentarioB.Text = "Comentario"
-        '
-        'btnbuscar
-        '
-        Me.btnbuscar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscar.ForeColor = System.Drawing.Color.Black
-        Me.btnbuscar.Location = New System.Drawing.Point(380, 20)
-        Me.btnbuscar.Name = "btnbuscar"
-        Me.btnbuscar.Size = New System.Drawing.Size(78, 35)
-        Me.btnbuscar.TabIndex = 113
-        Me.btnbuscar.Text = "Buscar"
-        Me.btnbuscar.UseVisualStyleBackColor = False
         '
         'gbxclasificacion
         '
@@ -225,6 +213,7 @@ Partial Class M_ClasificacionContacto
         'rtxtcomentario
         '
         Me.rtxtcomentario.Location = New System.Drawing.Point(183, 55)
+        Me.rtxtcomentario.MaxLength = 200
         Me.rtxtcomentario.Name = "rtxtcomentario"
         Me.rtxtcomentario.Size = New System.Drawing.Size(321, 62)
         Me.rtxtcomentario.TabIndex = 115
@@ -302,7 +291,6 @@ Partial Class M_ClasificacionContacto
     Friend WithEvents lbltotal As Label
     Friend WithEvents txtcomentarioB As TextBox
     Friend WithEvents lblcomentarioB As Label
-    Friend WithEvents btnbuscar As Button
     Friend WithEvents gbxclasificacion As GroupBox
     Friend WithEvents btnmodificar As Button
     Friend WithEvents btnnuevo As Button

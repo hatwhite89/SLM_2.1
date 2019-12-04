@@ -50,7 +50,6 @@ Partial Class M_Medico
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnombre = New System.Windows.Forms.Label()
-        Me.btnbuscar = New System.Windows.Forms.Button()
         Me.gbxmedico.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,6 +58,7 @@ Partial Class M_Medico
         'txtcodigo
         '
         Me.txtcodigo.Location = New System.Drawing.Point(145, 36)
+        Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(179, 22)
         Me.txtcodigo.TabIndex = 88
@@ -77,6 +77,7 @@ Partial Class M_Medico
         'txtcelular
         '
         Me.txtcelular.Location = New System.Drawing.Point(402, 122)
+        Me.txtcelular.MaxLength = 20
         Me.txtcelular.Name = "txtcelular"
         Me.txtcelular.Size = New System.Drawing.Size(179, 22)
         Me.txtcelular.TabIndex = 92
@@ -95,6 +96,7 @@ Partial Class M_Medico
         'txttelefono
         '
         Me.txttelefono.Location = New System.Drawing.Point(402, 94)
+        Me.txttelefono.MaxLength = 20
         Me.txttelefono.Name = "txttelefono"
         Me.txttelefono.Size = New System.Drawing.Size(179, 22)
         Me.txttelefono.TabIndex = 90
@@ -113,6 +115,7 @@ Partial Class M_Medico
         'txtcorreo
         '
         Me.txtcorreo.Location = New System.Drawing.Point(144, 92)
+        Me.txtcorreo.MaxLength = 50
         Me.txtcorreo.Name = "txtcorreo"
         Me.txtcorreo.Size = New System.Drawing.Size(179, 22)
         Me.txtcorreo.TabIndex = 94
@@ -131,6 +134,7 @@ Partial Class M_Medico
         'txtcorreo2
         '
         Me.txtcorreo2.Location = New System.Drawing.Point(145, 120)
+        Me.txtcorreo2.MaxLength = 50
         Me.txtcorreo2.Name = "txtcorreo2"
         Me.txtcorreo2.Size = New System.Drawing.Size(179, 22)
         Me.txtcorreo2.TabIndex = 96
@@ -163,6 +167,7 @@ Partial Class M_Medico
         'txtcodigoEspecialidad
         '
         Me.txtcodigoEspecialidad.Location = New System.Drawing.Point(199, 150)
+        Me.txtcodigoEspecialidad.MaxLength = 20
         Me.txtcodigoEspecialidad.Name = "txtcodigoEspecialidad"
         Me.txtcodigoEspecialidad.Size = New System.Drawing.Size(125, 22)
         Me.txtcodigoEspecialidad.TabIndex = 104
@@ -181,6 +186,7 @@ Partial Class M_Medico
         'txtnombreCompleto
         '
         Me.txtnombreCompleto.Location = New System.Drawing.Point(145, 64)
+        Me.txtnombreCompleto.MaxLength = 100
         Me.txtnombreCompleto.Name = "txtnombreCompleto"
         Me.txtnombreCompleto.Size = New System.Drawing.Size(435, 22)
         Me.txtnombreCompleto.TabIndex = 107
@@ -292,7 +298,6 @@ Partial Class M_Medico
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnombre)
-        Me.gbxbusqueda.Controls.Add(Me.btnbuscar)
         Me.gbxbusqueda.Location = New System.Drawing.Point(23, 288)
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Size = New System.Drawing.Size(613, 302)
@@ -314,13 +319,13 @@ Partial Class M_Medico
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(39, 90)
+        Me.dgbtabla.Location = New System.Drawing.Point(39, 72)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(520, 150)
+        Me.dgbtabla.Size = New System.Drawing.Size(520, 168)
         Me.dgbtabla.TabIndex = 22
         '
         'lbltotal
@@ -334,7 +339,8 @@ Partial Class M_Medico
         '
         'txtnombreB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(177, 36)
+        Me.txtnombreB.Location = New System.Drawing.Point(227, 28)
+        Me.txtnombreB.MaxLength = 100
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
         Me.txtnombreB.TabIndex = 115
@@ -342,24 +348,11 @@ Partial Class M_Medico
         'lblnombre
         '
         Me.lblnombre.AutoSize = True
-        Me.lblnombre.Location = New System.Drawing.Point(113, 39)
+        Me.lblnombre.Location = New System.Drawing.Point(163, 31)
         Me.lblnombre.Name = "lblnombre"
         Me.lblnombre.Size = New System.Drawing.Size(58, 17)
         Me.lblnombre.TabIndex = 114
         Me.lblnombre.Text = "Nombre"
-        '
-        'btnbuscar
-        '
-        Me.btnbuscar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnbuscar.Location = New System.Drawing.Point(375, 30)
-        Me.btnbuscar.Name = "btnbuscar"
-        Me.btnbuscar.Size = New System.Drawing.Size(78, 35)
-        Me.btnbuscar.TabIndex = 113
-        Me.btnbuscar.Text = "Buscar"
-        Me.btnbuscar.UseVisualStyleBackColor = False
         '
         'M_Medico
         '
@@ -403,7 +396,6 @@ Partial Class M_Medico
     Friend WithEvents gbxbusqueda As GroupBox
     Friend WithEvents txtnombreB As TextBox
     Friend WithEvents lblnombre As Label
-    Friend WithEvents btnbuscar As Button
     Friend WithEvents lbltotal As Label
     Friend WithEvents lblcantidad As Label
     Friend WithEvents btnmodificar As Button

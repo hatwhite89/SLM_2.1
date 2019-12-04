@@ -1,19 +1,19 @@
-﻿Public Class M_Sucursal
+﻿Public Class M_MaquinasLocales
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
         End If
     End Sub
-    Private Sub M_Sucursal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim objSuc As New ClsSucursal
-        Dim dv As DataView = objSuc.SeleccionarSucursal.DefaultView
+    Private Sub M_MaquinasLocales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim objMaqLoc As New ClsMaquinasLocales
+        Dim dv As DataView = objMaqLoc.SeleccionarMaquinasLocales.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
-        dgbtabla.Columns("codigo").Visible = False
+        Me.dgbtabla.Columns("codigo").Visible = False
 
-        txtnombre.ReadOnly = True
+        rtxtdescripcion.ReadOnly = True
         txtcodigo.ReadOnly = True
 
         btnmodificar.Enabled = False
@@ -24,16 +24,12 @@
         Try
             lblcode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
-            txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
-
-            M_Factura.lblcodeSucursal.Text = lblcode.Text
-            M_Factura.txtcodigoSucursal.Text = txtcodigo.Text
-            M_Factura.txtnombreSucursal.Text = txtnombre.Text
+            rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
 
             btnmodificar.Enabled = True
             btnguardar.Enabled = False
 
-            txtnombre.ReadOnly = False
+            rtxtdescripcion.ReadOnly = False
             txtcodigo.ReadOnly = False
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -41,15 +37,14 @@
     End Sub
     Private Sub limpiar()
         txtcodigo.Text() = ""
-        txtnombre.Text() = ""
-        txtnombreB.Text() = ""
+        rtxtdescripcion.Text() = ""
+        rtxtdescripcionB.Text() = ""
 
-        txtnombre.ReadOnly = False
+        rtxtdescripcion.ReadOnly = False
         txtcodigo.ReadOnly = False
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = True
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
@@ -71,32 +66,31 @@
     End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
-
-            If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "") Then
-                txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
-                txtnombre.Text = sinDobleEspacio(txtnombre.Text)
-                Dim objSuc As New ClsSucursal
-                With objSuc
-                    .codigoSucursal_ = txtcodigo.Text
-                    .Nombre1 = txtnombre.Text
+            txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
+            rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
+            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtdescripcion.Text) <> "") Then
+                Dim objMaqLoc As New ClsMaquinasLocales
+                With objMaqLoc
+                    .codigoMaquinasLocales_ = txtcodigo.Text
+                    .descripcion_ = rtxtdescripcion.Text
                 End With
 
-                If objSuc.RegistrarNuevaSucursal() = 1 Then
+                If objMaqLoc.RegistrarNuevaMaquinaLocal() = 1 Then
                     MsgBox("Registrado correctamente.")
 
-                    Dim dv As DataView = objSuc.SeleccionarSucursal.DefaultView
+                    Dim dv As DataView = objMaqLoc.SeleccionarMaquinasLocales.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
                     txtcodigo.ReadOnly = True
-                    txtnombre.ReadOnly = True
+                    rtxtdescripcion.ReadOnly = True
 
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
                     btnnuevo.Enabled = True
                 Else
-                    MsgBox("Error al querer ingresar la sucursal.", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer ingresar la máquina local.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -110,32 +104,35 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "") Then
-                txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
-                txtnombre.Text = sinDobleEspacio(txtnombre.Text)
-                Dim objSuc As New ClsSucursal
-                With objSuc
-                    .codigoSucursal_ = txtcodigo.Text
-                    .Nombre1 = txtnombre.Text
+            txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
+            rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
+            Dim t, t2 As String
+            t = Trim(txtcodigo.Text)
+            t2 = Trim(rtxtdescripcion.Text)
+            If (t <> "" And t2 <> "") Then
+                Dim objMaqLoc As New ClsMaquinasLocales
+                With objMaqLoc
+                    .codigoMaquinasLocales_ = txtcodigo.Text
+                    .descripcion_ = rtxtdescripcion.Text
                     .codigo_ = lblcode.Text
                 End With
 
-                If objSuc.ModificarSucursal() = 1 Then
+                If objMaqLoc.ModificarMaquinasLocales() = 1 Then
                     MsgBox("Modificado correctamente.")
 
-                    Dim dv As DataView = objSuc.SeleccionarSucursal.DefaultView
+                    Dim dv As DataView = objMaqLoc.SeleccionarMaquinasLocales.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
                     txtcodigo.ReadOnly = True
-                    txtnombre.ReadOnly = True
+                    rtxtdescripcion.ReadOnly = True
 
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
                     btnnuevo.Enabled = True
                 Else
-                    MsgBox("Error al querer modificar la sucursal.", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer modificar la máquina local.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -150,27 +147,19 @@
         limpiar()
         Me.Close()
     End Sub
-    Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
+    Private Sub rtxtdescripcionB_TextChanged(sender As Object, e As EventArgs) Handles rtxtdescripcionB.TextChanged
+        Dim objMaqLoc As New ClsMaquinasLocales
+        With objMaqLoc
+            .descripcion_ = rtxtdescripcionB.Text
+        End With
         Try
-
-            Dim objSuc As New ClsSucursal
-            With objSuc
-                .Nombre1 = txtnombreB.Text
-            End With
-            If (Trim(txtnombreB.Text) <> "") Then
-                Dim dv As DataView = objSuc.BuscarSucursal.DefaultView
-                dgbtabla.DataSource = dv
-                lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-            Else
-                Dim dv As DataView = objSuc.SeleccionarSucursal.DefaultView
-                dgbtabla.DataSource = dv
-                lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-            End If
-
+            Dim dv As DataView = objMaqLoc.BuscarMaquinasLocalesDesc.DefaultView
+            dgbtabla.DataSource = dv
+            lblcantidad.Text = dv.Count
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
         Catch ex As Exception
-
+            MsgBox("No existe la máquina local.", MsgBoxStyle.Critical, "Validación")
         End Try
     End Sub
+
 End Class

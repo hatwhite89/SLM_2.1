@@ -18,6 +18,7 @@
             Me.Close()
         End If
     End Sub
+
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
             Dim n As String = ""

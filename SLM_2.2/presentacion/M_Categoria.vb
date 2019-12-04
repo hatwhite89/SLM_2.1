@@ -39,7 +39,6 @@
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = False
     End Sub
     Private Sub txtcodigoTipo_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
@@ -154,6 +153,7 @@
             M_Cliente.txtnombreCategoria.Text = rtxtdescripcion.Text
 
             btnmodificar.Enabled = True
+            btnguardar.Enabled = False
 
             rtxtdescripcion.ReadOnly = False
             txtcodigoTipo.ReadOnly = False

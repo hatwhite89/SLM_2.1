@@ -63,7 +63,7 @@ Partial Class M_TerminosPago
         'lbldescripcion
         '
         Me.lbldescripcion.AutoSize = True
-        Me.lbldescripcion.Location = New System.Drawing.Point(45, 51)
+        Me.lbldescripcion.Location = New System.Drawing.Point(50, 51)
         Me.lbldescripcion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbldescripcion.Name = "lbldescripcion"
         Me.lbldescripcion.Size = New System.Drawing.Size(82, 17)
@@ -73,7 +73,8 @@ Partial Class M_TerminosPago
         'txtcodigo
         '
         Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtcodigo.Location = New System.Drawing.Point(134, 20)
+        Me.txtcodigo.Location = New System.Drawing.Point(139, 20)
+        Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(179, 22)
         Me.txtcodigo.TabIndex = 86
@@ -82,7 +83,7 @@ Partial Class M_TerminosPago
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(74, 23)
+        Me.lblcodigo.Location = New System.Drawing.Point(79, 23)
         Me.lblcodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcodigo.Name = "lblcodigo"
         Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
@@ -91,7 +92,8 @@ Partial Class M_TerminosPago
         '
         'txtdiasNeto
         '
-        Me.txtdiasNeto.Location = New System.Drawing.Point(135, 91)
+        Me.txtdiasNeto.Location = New System.Drawing.Point(140, 91)
+        Me.txtdiasNeto.MaxLength = 20
         Me.txtdiasNeto.Name = "txtdiasNeto"
         Me.txtdiasNeto.Size = New System.Drawing.Size(179, 22)
         Me.txtdiasNeto.TabIndex = 84
@@ -100,7 +102,7 @@ Partial Class M_TerminosPago
         'lbldiasNeto
         '
         Me.lbldiasNeto.AutoSize = True
-        Me.lbldiasNeto.Location = New System.Drawing.Point(57, 94)
+        Me.lbldiasNeto.Location = New System.Drawing.Point(62, 94)
         Me.lbldiasNeto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbldiasNeto.Name = "lbldiasNeto"
         Me.lbldiasNeto.Size = New System.Drawing.Size(70, 17)
@@ -110,7 +112,7 @@ Partial Class M_TerminosPago
         'lblctaVentas
         '
         Me.lblctaVentas.AutoSize = True
-        Me.lblctaVentas.Location = New System.Drawing.Point(47, 150)
+        Me.lblctaVentas.Location = New System.Drawing.Point(52, 150)
         Me.lblctaVentas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblctaVentas.Name = "lblctaVentas"
         Me.lblctaVentas.Size = New System.Drawing.Size(81, 17)
@@ -120,7 +122,7 @@ Partial Class M_TerminosPago
         'lbltipo
         '
         Me.lbltipo.AutoSize = True
-        Me.lbltipo.Location = New System.Drawing.Point(326, 94)
+        Me.lbltipo.Location = New System.Drawing.Point(331, 94)
         Me.lbltipo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbltipo.Name = "lbltipo"
         Me.lbltipo.Size = New System.Drawing.Size(36, 17)
@@ -130,7 +132,7 @@ Partial Class M_TerminosPago
         'lblctaContado
         '
         Me.lblctaContado.AutoSize = True
-        Me.lblctaContado.Location = New System.Drawing.Point(38, 121)
+        Me.lblctaContado.Location = New System.Drawing.Point(43, 121)
         Me.lblctaContado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblctaContado.Name = "lblctaContado"
         Me.lblctaContado.Size = New System.Drawing.Size(90, 17)
@@ -141,7 +143,7 @@ Partial Class M_TerminosPago
         '
         Me.cbxtipoPago.DropDownWidth = 170
         Me.cbxtipoPago.FormattingEnabled = True
-        Me.cbxtipoPago.Location = New System.Drawing.Point(369, 91)
+        Me.cbxtipoPago.Location = New System.Drawing.Point(374, 91)
         Me.cbxtipoPago.Name = "cbxtipoPago"
         Me.cbxtipoPago.Size = New System.Drawing.Size(132, 24)
         Me.cbxtipoPago.TabIndex = 113
@@ -154,7 +156,7 @@ Partial Class M_TerminosPago
         Me.btnctaContado.FlatAppearance.BorderSize = 0
         Me.btnctaContado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnctaContado.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnctaContado.Location = New System.Drawing.Point(140, 119)
+        Me.btnctaContado.Location = New System.Drawing.Point(145, 119)
         Me.btnctaContado.Name = "btnctaContado"
         Me.btnctaContado.Size = New System.Drawing.Size(49, 22)
         Me.btnctaContado.TabIndex = 117
@@ -162,7 +164,8 @@ Partial Class M_TerminosPago
         '
         'txtcodigoCtaContado
         '
-        Me.txtcodigoCtaContado.Location = New System.Drawing.Point(197, 119)
+        Me.txtcodigoCtaContado.Location = New System.Drawing.Point(202, 119)
+        Me.txtcodigoCtaContado.MaxLength = 20
         Me.txtcodigoCtaContado.Name = "txtcodigoCtaContado"
         Me.txtcodigoCtaContado.Size = New System.Drawing.Size(117, 22)
         Me.txtcodigoCtaContado.TabIndex = 116
@@ -176,7 +179,7 @@ Partial Class M_TerminosPago
         Me.btnctaVentas.FlatAppearance.BorderSize = 0
         Me.btnctaVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnctaVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnctaVentas.Location = New System.Drawing.Point(140, 147)
+        Me.btnctaVentas.Location = New System.Drawing.Point(145, 147)
         Me.btnctaVentas.Name = "btnctaVentas"
         Me.btnctaVentas.Size = New System.Drawing.Size(49, 22)
         Me.btnctaVentas.TabIndex = 121
@@ -184,7 +187,8 @@ Partial Class M_TerminosPago
         '
         'txtcodigoCtaVentas
         '
-        Me.txtcodigoCtaVentas.Location = New System.Drawing.Point(197, 147)
+        Me.txtcodigoCtaVentas.Location = New System.Drawing.Point(202, 147)
+        Me.txtcodigoCtaVentas.MaxLength = 20
         Me.txtcodigoCtaVentas.Name = "txtcodigoCtaVentas"
         Me.txtcodigoCtaVentas.Size = New System.Drawing.Size(117, 22)
         Me.txtcodigoCtaVentas.TabIndex = 120
@@ -192,7 +196,8 @@ Partial Class M_TerminosPago
         '
         'rtxtdescripcion
         '
-        Me.rtxtdescripcion.Location = New System.Drawing.Point(134, 48)
+        Me.rtxtdescripcion.Location = New System.Drawing.Point(139, 48)
+        Me.rtxtdescripcion.MaxLength = 80
         Me.rtxtdescripcion.Name = "rtxtdescripcion"
         Me.rtxtdescripcion.Size = New System.Drawing.Size(423, 37)
         Me.rtxtdescripcion.TabIndex = 125
@@ -224,9 +229,9 @@ Partial Class M_TerminosPago
         Me.gbxterminosPago.Controls.Add(Me.cbxtipoPago)
         Me.gbxterminosPago.Controls.Add(Me.lbltipo)
         Me.gbxterminosPago.Controls.Add(Me.lblctaVentas)
-        Me.gbxterminosPago.Location = New System.Drawing.Point(24, 10)
+        Me.gbxterminosPago.Location = New System.Drawing.Point(29, 10)
         Me.gbxterminosPago.Name = "gbxterminosPago"
-        Me.gbxterminosPago.Size = New System.Drawing.Size(607, 226)
+        Me.gbxterminosPago.Size = New System.Drawing.Size(613, 226)
         Me.gbxterminosPago.TabIndex = 126
         Me.gbxterminosPago.TabStop = False
         Me.gbxterminosPago.Text = "REGISTRAR TÉRMINO DE PAGO"
@@ -252,7 +257,7 @@ Partial Class M_TerminosPago
         'lblcode
         '
         Me.lblcode.AutoSize = True
-        Me.lblcode.Location = New System.Drawing.Point(401, 23)
+        Me.lblcode.Location = New System.Drawing.Point(406, 23)
         Me.lblcode.Name = "lblcode"
         Me.lblcode.Size = New System.Drawing.Size(0, 17)
         Me.lblcode.TabIndex = 128
@@ -260,7 +265,7 @@ Partial Class M_TerminosPago
         '
         'txtnombreCtaVentas
         '
-        Me.txtnombreCtaVentas.Location = New System.Drawing.Point(330, 147)
+        Me.txtnombreCtaVentas.Location = New System.Drawing.Point(335, 147)
         Me.txtnombreCtaVentas.Name = "txtnombreCtaVentas"
         Me.txtnombreCtaVentas.ReadOnly = True
         Me.txtnombreCtaVentas.Size = New System.Drawing.Size(228, 22)
@@ -268,7 +273,7 @@ Partial Class M_TerminosPago
         '
         'txtnombreCtaContado
         '
-        Me.txtnombreCtaContado.Location = New System.Drawing.Point(329, 120)
+        Me.txtnombreCtaContado.Location = New System.Drawing.Point(334, 120)
         Me.txtnombreCtaContado.Name = "txtnombreCtaContado"
         Me.txtnombreCtaContado.ReadOnly = True
         Me.txtnombreCtaContado.Size = New System.Drawing.Size(228, 22)
@@ -282,7 +287,7 @@ Partial Class M_TerminosPago
         Me.btntipoPago.FlatAppearance.BorderSize = 0
         Me.btntipoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btntipoPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btntipoPago.Location = New System.Drawing.Point(507, 91)
+        Me.btntipoPago.Location = New System.Drawing.Point(512, 91)
         Me.btntipoPago.Name = "btntipoPago"
         Me.btntipoPago.Size = New System.Drawing.Size(49, 22)
         Me.btntipoPago.TabIndex = 131
@@ -294,7 +299,7 @@ Partial Class M_TerminosPago
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnmodificar.Location = New System.Drawing.Point(326, 177)
+        Me.btnmodificar.Location = New System.Drawing.Point(331, 177)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(96, 35)
         Me.btnmodificar.TabIndex = 130
@@ -307,7 +312,7 @@ Partial Class M_TerminosPago
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(464, 177)
+        Me.btncancelar.Location = New System.Drawing.Point(469, 177)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(90, 35)
         Me.btncancelar.TabIndex = 127
@@ -320,7 +325,7 @@ Partial Class M_TerminosPago
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnnuevo.Location = New System.Drawing.Point(44, 177)
+        Me.btnnuevo.Location = New System.Drawing.Point(49, 177)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(105, 35)
         Me.btnnuevo.TabIndex = 129
@@ -333,7 +338,7 @@ Partial Class M_TerminosPago
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnguardar.Location = New System.Drawing.Point(190, 177)
+        Me.btnguardar.Location = New System.Drawing.Point(195, 177)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(96, 35)
         Me.btnguardar.TabIndex = 128
@@ -348,7 +353,7 @@ Partial Class M_TerminosPago
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtdescripcionB)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
-        Me.gbxbusqueda.Location = New System.Drawing.Point(18, 235)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(29, 235)
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Size = New System.Drawing.Size(613, 375)
         Me.gbxbusqueda.TabIndex = 127
@@ -399,6 +404,7 @@ Partial Class M_TerminosPago
         'txtdescripcionB
         '
         Me.txtdescripcionB.Location = New System.Drawing.Point(239, 31)
+        Me.txtdescripcionB.MaxLength = 80
         Me.txtdescripcionB.Name = "txtdescripcionB"
         Me.txtdescripcionB.Size = New System.Drawing.Size(192, 22)
         Me.txtdescripcionB.TabIndex = 115

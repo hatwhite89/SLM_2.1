@@ -114,11 +114,13 @@
     </Compile>
     <Compile Include="negocio\ClsAccesoLaboratorio.vb" />
     <Compile Include="negocio\ClsAreaLaboratorio.vb" />
+    <Compile Include="negocio\ClsClasificacionItem.vb" />
     <Compile Include="negocio\ClsDetalleFacturaCompra.vb" />
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
     <Compile Include="negocio\ClsItemExamen.vb" />
+    <Compile Include="negocio\ClsMaquinasLocales.vb" />
     <Compile Include="negocio\ClsParametroExamen.vb" />
     <Compile Include="negocio\ClsParametroExamenDetalle.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
@@ -390,6 +392,12 @@
     <Compile Include="presentacion\M_ClasificacionContacto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_ClasificacionItem.Designer.vb">
+      <DependentUpon>E_ClasificacionItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_ClasificacionItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_Cliente.Designer.vb">
       <DependentUpon>M_Cliente.vb</DependentUpon>
     </Compile>
@@ -418,6 +426,12 @@
       <DependentUpon>M_InicioSesion.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_InicioSesion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_MaquinasLocales.Designer.vb">
+      <DependentUpon>M_MaquinasLocales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_MaquinasLocales.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_Medico.Designer.vb">
@@ -632,6 +646,9 @@
     <EmbeddedResource Include="presentacion\M_ClasificacionContacto.resx">
       <DependentUpon>M_ClasificacionContacto.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_ClasificacionItem.resx">
+      <DependentUpon>E_ClasificacionItem.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Cliente.resx">
       <DependentUpon>M_Cliente.vb</DependentUpon>
     </EmbeddedResource>
@@ -646,6 +663,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_InicioSesion.resx">
       <DependentUpon>M_InicioSesion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_MaquinasLocales.resx">
+      <DependentUpon>M_MaquinasLocales.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Medico.resx">
       <DependentUpon>M_Medico.vb</DependentUpon>
