@@ -39,10 +39,10 @@
                 M_Factura.txtcodigoRecepecionista.Text = CStr(row("codigoRecepcionista"))
                 M_Factura.txtcodigoMedico.Text = CStr(row("codigoMedico"))
                 M_Factura.txtcodigoCajero.Text = CStr(row("codigoCajero"))
-                M_Factura.txtcodigoTerminosPago.Text = CStr(row("codigoTerminoPago"))
+                M_Factura.lblcodeTerminoPago.Text = CStr(row("codigoTerminoPago"))
                 M_Factura.txtcodigoSede.Text = CStr(row("codigoSede"))
                 M_Factura.dtpfechaVto.Value = CStr(row("fechaVto"))
-                M_Factura.txtcodigoSucursal.Text = CStr(row("codigoSucursal"))
+                M_Factura.lblcodeSucursal.Text = CStr(row("codigoSucursal"))
                 M_Factura.txtcodigoConvenio.Text = CStr(row("codigoConvenio"))
                 M_Factura.txtnumeroPoliza.Text = CStr(row("numeroPoliza"))
                 M_Factura.txtcodigoTerminal.Text = CStr(row("codigoTerminal"))
@@ -65,7 +65,10 @@
                 M_Factura.deshabilitar()
                 If (M_Factura.cbxok.Checked = "0") Then
                     M_Factura.HabilitarActualizarFactura()
+                Else
+                    M_Factura.btnActualizar.Enabled = False
                 End If
+                'Me.Close()
                 M_Factura.ShowDialog()
             End If
         Catch ex As Exception
@@ -105,9 +108,9 @@
         End If
     End Sub
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
+        'Me.Close
         M_Factura.limpiar()
         M_Factura.ShowDialog()
     End Sub
-
 
 End Class

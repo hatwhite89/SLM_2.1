@@ -23,8 +23,9 @@ Partial Class E_Unidad
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxtipoObjeto = New System.Windows.Forms.GroupBox()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtFactorCantidad = New System.Windows.Forms.TextBox()
         Me.rtxtcomentario = New System.Windows.Forms.RichTextBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
@@ -46,8 +47,9 @@ Partial Class E_Unidad
         '
         'gbxtipoObjeto
         '
+        Me.gbxtipoObjeto.Controls.Add(Me.lblcode)
         Me.gbxtipoObjeto.Controls.Add(Me.Label1)
-        Me.gbxtipoObjeto.Controls.Add(Me.TextBox1)
+        Me.gbxtipoObjeto.Controls.Add(Me.txtFactorCantidad)
         Me.gbxtipoObjeto.Controls.Add(Me.rtxtcomentario)
         Me.gbxtipoObjeto.Controls.Add(Me.btnmodificar)
         Me.gbxtipoObjeto.Controls.Add(Me.btnnuevo)
@@ -63,6 +65,15 @@ Partial Class E_Unidad
         Me.gbxtipoObjeto.TabStop = False
         Me.gbxtipoObjeto.Text = "REGISTRAR UNIDAD"
         '
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(399, 29)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 118
+        Me.lblcode.Visible = False
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -72,13 +83,13 @@ Partial Class E_Unidad
         Me.Label1.TabIndex = 117
         Me.Label1.Text = "Factor Cantidad"
         '
-        'TextBox1
+        'txtFactorCantidad
         '
-        Me.TextBox1.Location = New System.Drawing.Point(183, 129)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(183, 22)
-        Me.TextBox1.TabIndex = 116
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtFactorCantidad.Location = New System.Drawing.Point(183, 129)
+        Me.txtFactorCantidad.Name = "txtFactorCantidad"
+        Me.txtFactorCantidad.Size = New System.Drawing.Size(183, 22)
+        Me.txtFactorCantidad.TabIndex = 116
+        Me.txtFactorCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'rtxtcomentario
         '
@@ -160,6 +171,7 @@ Partial Class E_Unidad
         '
         'txtcodigo
         '
+        Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigo.Location = New System.Drawing.Point(183, 27)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(183, 22)
@@ -228,14 +240,15 @@ Partial Class E_Unidad
         Me.lblcomentarioB.TabIndex = 114
         Me.lblcomentarioB.Text = "Comentario"
         '
-        'eg_frmUnidad
+        'E_Unidad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(669, 622)
         Me.Controls.Add(Me.gbxtipoObjeto)
         Me.Controls.Add(Me.gbxbusqueda)
-        Me.Name = "eg_frmUnidad"
+        Me.Name = "E_Unidad"
         Me.Text = "Unidad"
         Me.gbxtipoObjeto.ResumeLayout(False)
         Me.gbxtipoObjeto.PerformLayout()
@@ -262,5 +275,6 @@ Partial Class E_Unidad
     Friend WithEvents txtcomentarioB As TextBox
     Friend WithEvents lblcomentarioB As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtFactorCantidad As TextBox
+    Friend WithEvents lblcode As Label
 End Class

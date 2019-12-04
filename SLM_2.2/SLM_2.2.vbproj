@@ -115,14 +115,15 @@
     <Compile Include="negocio\ClsAccesoLaboratorio.vb" />
     <Compile Include="negocio\ClsAreaLaboratorio.vb" />
     <Compile Include="negocio\ClsDetalleFacturaCompra.vb" />
-    <Compile Include="negocio\ClsDetallePago.vb" />
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
     <Compile Include="negocio\ClsItemExamen.vb" />
-    <Compile Include="negocio\ClsPago.vb" />
+    <Compile Include="negocio\ClsParametroExamen.vb" />
+    <Compile Include="negocio\ClsParametroExamenDetalle.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
+    <Compile Include="negocio\ClsUnidad.vb" />
     <Compile Include="presentacion\A_FacturaCompras.Designer.vb">
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
     </Compile>
@@ -248,12 +249,6 @@
       <DependentUpon>A_ListarObjetos.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ListarObjetos.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="presentacion\A_ListarPagos.Designer.vb">
-      <DependentUpon>A_ListarPagos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\A_ListarPagos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_ListarTerminoPago.Designer.vb">
@@ -570,9 +565,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarObjetos.resx">
       <DependentUpon>A_ListarObjetos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\A_ListarPagos.resx">
-      <DependentUpon>A_ListarPagos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarTerminoPago.resx">
       <DependentUpon>A_ListarTerminoPago.vb</DependentUpon>

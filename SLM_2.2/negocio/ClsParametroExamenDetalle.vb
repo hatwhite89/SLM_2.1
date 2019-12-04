@@ -1,8 +1,9 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class ClsSucursal
-    Dim codigoSucursal, nombre As String
-    Dim codigo As Integer
+Public Class ClsParametroExamenDetalle
+    Dim codigo, codigoParametroExam As Integer
+    Dim posibleResultado, valPorDefecto As String
+
     'Constructor
     Public Sub New()
 
@@ -15,40 +16,52 @@ Public Class ClsSucursal
             codigo = value
         End Set
     End Property
-    Public Property codigoSucursal_ As String
+    Public Property codigoParametroExam_ As Integer
         Get
-            Return codigoSucursal
+            Return codigoParametroExam
         End Get
-        Set(value As String)
-            codigoSucursal = value
+        Set(value As Integer)
+            codigoParametroExam = value
         End Set
     End Property
-
-    Public Property Nombre1 As String
+    Public Property posibleResultado_ As String
         Get
-            Return nombre
+            Return posibleResultado
         End Get
         Set(value As String)
-            nombre = value
+            posibleResultado = value
         End Set
     End Property
-    Public Function RegistrarNuevaSucursal() As String
+    Public Property valPorDefecto_ As String
+        Get
+            Return valPorDefecto
+        End Get
+        Set(value As String)
+            valPorDefecto = value
+        End Set
+    End Property
+    Public Function RegistrarNuevoParametroExamenDetalle() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "M_slmInsertarSucursal"
+        sqlcom.CommandText = "E_slmInsertarParametroExamenDetalle"
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoSucursal" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoSucursal_
+        sqlpar.ParameterName = "codigoParametroExam" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoParametroExam_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "nombre" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = Nombre1
+        sqlpar.ParameterName = "posibleResultado" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = posibleResultado_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "valPorDefecto" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = valPorDefecto_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -71,14 +84,14 @@ Public Class ClsSucursal
 
     End Function
 
-    Public Function ModificarSucursal() As String
+    Public Function ModificarParametroExamenDetalle() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "M_slmModificarSucursal"
+        sqlcom.CommandText = "E_slmModificarParametroExamenDetalle"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -86,13 +99,18 @@ Public Class ClsSucursal
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoSucursal" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoSucursal_
+        sqlpar.ParameterName = "codigoParametroExam" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoParametroExam_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "nombre" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = Nombre1
+        sqlpar.ParameterName = "posibleResultado" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = posibleResultado_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "valPorDefecto" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = valPorDefecto_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -114,7 +132,7 @@ Public Class ClsSucursal
         Return par_sal
 
     End Function
-    Public Function BuscarSucursal() As DataTable
+    Public Function BuscarParametroExamenDetalle() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -122,8 +140,8 @@ Public Class ClsSucursal
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarSucursal"
-            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Nombre1
+            cmd.CommandText = "E_slmBuscarParametroExamenDetalle"
+            cmd.Parameters.Add("@codigoParametroExam", SqlDbType.Int).Value = codigoParametroExam_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -133,50 +151,13 @@ Public Class ClsSucursal
             End Using
         End Using
     End Function
-    Public Function BuscarSucursalCode() As DataTable
+
+    Public Function SeleccionarParametroExamenDetalle() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using cmd As New SqlCommand
-            cmd.Connection = cn
-            cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarSucursalCode"
-            cmd.Parameters.Add("@codigoSucursal", SqlDbType.VarChar).Value = codigoSucursal_
-            Using da As New SqlDataAdapter
-                da.SelectCommand = cmd
-                Using dt As New DataTable
-                    da.Fill(dt)
-                    Return dt
-                End Using
-            End Using
-        End Using
-    End Function
-    Public Function BuscarSucursalNumero() As DataTable
-        Dim objCon As New ClsConnection
-        Dim cn As New SqlConnection
-        cn = objCon.getConexion
-
-        Using cmd As New SqlCommand
-            cmd.Connection = cn
-            cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarSucursalNumero"
-            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = codigo_
-            Using da As New SqlDataAdapter
-                da.SelectCommand = cmd
-                Using dt As New DataTable
-                    da.Fill(dt)
-                    Return dt
-                End Using
-            End Using
-        End Using
-    End Function
-    Public Function SeleccionarSucursal() As DataTable
-        Dim objCon As New ClsConnection
-        Dim cn As New SqlConnection
-        cn = objCon.getConexion
-
-        Using da As New SqlDataAdapter("M_slmSeleccionarSucursal", cn)
+        Using da As New SqlDataAdapter("E_slmSeleccionarParametroExamenDetalle", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

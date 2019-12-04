@@ -256,6 +256,7 @@ Partial Class M_Cliente
         Me.btnnuevo.BackColor = System.Drawing.Color.SkyBlue
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnnuevo.ForeColor = System.Drawing.Color.Black
         Me.btnnuevo.Location = New System.Drawing.Point(182, 414)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(130, 38)
@@ -268,6 +269,7 @@ Partial Class M_Cliente
         Me.btnseleccionarCliente.BackColor = System.Drawing.Color.SkyBlue
         Me.btnseleccionarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnseleccionarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnseleccionarCliente.ForeColor = System.Drawing.Color.Black
         Me.btnseleccionarCliente.Location = New System.Drawing.Point(645, 414)
         Me.btnseleccionarCliente.Name = "btnseleccionarCliente"
         Me.btnseleccionarCliente.Size = New System.Drawing.Size(130, 38)
@@ -320,6 +322,7 @@ Partial Class M_Cliente
         Me.btnguardarCliente.BackColor = System.Drawing.Color.SkyBlue
         Me.btnguardarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnguardarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnguardarCliente.ForeColor = System.Drawing.Color.Black
         Me.btnguardarCliente.Location = New System.Drawing.Point(336, 414)
         Me.btnguardarCliente.Name = "btnguardarCliente"
         Me.btnguardarCliente.Size = New System.Drawing.Size(130, 38)
@@ -546,6 +549,7 @@ Partial Class M_Cliente
         Me.btnactualizarCliente.BackColor = System.Drawing.Color.SkyBlue
         Me.btnactualizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnactualizarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnactualizarCliente.ForeColor = System.Drawing.Color.Black
         Me.btnactualizarCliente.Location = New System.Drawing.Point(492, 414)
         Me.btnactualizarCliente.Name = "btnactualizarCliente"
         Me.btnactualizarCliente.Size = New System.Drawing.Size(130, 38)
@@ -815,6 +819,7 @@ Partial Class M_Cliente
         Me.btnpaciente.BackColor = System.Drawing.Color.SkyBlue
         Me.btnpaciente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnpaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnpaciente.ForeColor = System.Drawing.Color.Black
         Me.btnpaciente.Location = New System.Drawing.Point(819, 37)
         Me.btnpaciente.Name = "btnpaciente"
         Me.btnpaciente.Size = New System.Drawing.Size(130, 32)

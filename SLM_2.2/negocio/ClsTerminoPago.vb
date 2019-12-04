@@ -188,6 +188,25 @@ Public Class ClsTerminoPago
         Return par_sal
 
     End Function
+    Public Function BuscarTerminoPagoNumero() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_slmBuscarTerminoPagoNumero"
+            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = codigo_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
     Public Function BuscarTerminoPago() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection

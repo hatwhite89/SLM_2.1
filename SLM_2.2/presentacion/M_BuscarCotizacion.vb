@@ -18,6 +18,7 @@
                 n = MsgBox("¿Desea crear la factura de la cotización?", MsgBoxStyle.YesNo, "Validación")
             End If
             If n = vbYes Then
+                M_Factura.limpiar()
                 M_Factura.txtcodigoCliente.Text = dgbtabla.Rows(e.RowIndex).Cells(3).Value()
 
                 Dim objCotFact As New ClsCotizacionFactura
@@ -55,20 +56,10 @@
             txtnumeroB.Text = ""
         End If
     End Sub
-    Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
-        If (txtnombreB.Text <> "") Then
-            Try
-                Dim objCot As New ClsCotizacion
-                objCot.nombreCliente_ = txtnombreB.Text
-                Dim dv As DataView = objCot.BuscarCotizacionCliente.DefaultView
-                dgbtabla.DataSource = dv
-                lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-            Catch ex As Exception
-                MsgBox("No existe la cotización.", MsgBoxStyle.Critical, "Validación")
-            End Try
-        Else
-            txtnombreB.Text = ""
-        End If
+    Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
+        M_Factura.limpiar()
+        M_Factura.deshabilitar()
+        M_Factura.HabilitarCotizacionFactura()
+        M_Factura.ShowDialog()
     End Sub
 End Class

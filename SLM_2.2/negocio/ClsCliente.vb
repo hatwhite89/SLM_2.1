@@ -1,9 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Public Class ClsCliente
 
-    Dim codigo, codigoClasificacion As Integer
+    Dim codigo, codigoClasificacion, codigoCategoria, codigoTerminoPago As Integer
     Dim nombre1, nombre2, apellido1, apellido2, nombreCompleto, scanId, identidad, rtn, genero, direccion, telCasa, telTrabajo, celular, correo1, correo2 As String
-    Dim codigoCategoria, codigoTerminoPago As String
     Dim fechaNacimiento As Date
     'Constructor
     Public Sub New()
@@ -28,20 +27,20 @@ Public Class ClsCliente
         End Set
     End Property
 
-    Public Property codigoCategoria1 As String
+    Public Property codigoCategoria1 As Integer
         Get
             Return codigoCategoria
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoCategoria = value
         End Set
     End Property
 
-    Public Property codigoTerminoPago1 As String
+    Public Property codigoTerminoPago1 As Integer
         Get
             Return codigoTerminoPago
         End Get
-        Set(value As String)
+        Set(value As Integer)
             codigoTerminoPago = value
         End Set
     End Property

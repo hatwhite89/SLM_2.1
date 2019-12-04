@@ -41,6 +41,8 @@ Partial Class E_ParametroExamen
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.posiblesResultados = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lblcodeUnidad = New System.Windows.Forms.Label()
+        Me.lblcode = New System.Windows.Forms.Label()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -87,6 +89,7 @@ Partial Class E_ParametroExamen
         '
         'txtcodigoUnidad
         '
+        Me.txtcodigoUnidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigoUnidad.Location = New System.Drawing.Point(178, 103)
         Me.txtcodigoUnidad.Name = "txtcodigoUnidad"
         Me.txtcodigoUnidad.Size = New System.Drawing.Size(88, 22)
@@ -159,7 +162,7 @@ Partial Class E_ParametroExamen
         Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnmodificar.ForeColor = System.Drawing.Color.Black
         Me.btnmodificar.Location = New System.Drawing.Point(354, 558)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(96, 35)
@@ -172,7 +175,7 @@ Partial Class E_ParametroExamen
         Me.btnnuevo.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnnuevo.ForeColor = System.Drawing.Color.Black
         Me.btnnuevo.Location = New System.Drawing.Point(72, 558)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(105, 35)
@@ -185,7 +188,7 @@ Partial Class E_ParametroExamen
         Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnguardar.ForeColor = System.Drawing.Color.Black
         Me.btnguardar.Location = New System.Drawing.Point(218, 558)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(96, 35)
@@ -198,7 +201,7 @@ Partial Class E_ParametroExamen
         Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncancelar.ForeColor = System.Drawing.Color.Black
         Me.btncancelar.Location = New System.Drawing.Point(496, 558)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(90, 35)
@@ -210,12 +213,12 @@ Partial Class E_ParametroExamen
         '
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.posiblesResultados})
-        Me.dgbtabla.Location = New System.Drawing.Point(31, 174)
+        Me.dgbtabla.Location = New System.Drawing.Point(39, 174)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
-        Me.dgbtabla.Size = New System.Drawing.Size(615, 358)
+        Me.dgbtabla.Size = New System.Drawing.Size(600, 358)
         Me.dgbtabla.TabIndex = 140
         '
         'posiblesResultados
@@ -225,12 +228,31 @@ Partial Class E_ParametroExamen
         Me.posiblesResultados.Name = "posiblesResultados"
         Me.posiblesResultados.Width = 206
         '
-        'eg_frmParametroExamen
+        'lblcodeUnidad
+        '
+        Me.lblcodeUnidad.AutoSize = True
+        Me.lblcodeUnidad.Location = New System.Drawing.Point(13, 105)
+        Me.lblcodeUnidad.Name = "lblcodeUnidad"
+        Me.lblcodeUnidad.Size = New System.Drawing.Size(0, 17)
+        Me.lblcodeUnidad.TabIndex = 141
+        Me.lblcodeUnidad.Visible = False
+        '
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(28, 31)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 142
+        '
+        'E_ParametroExamen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(681, 622)
+        Me.Controls.Add(Me.lblcode)
+        Me.Controls.Add(Me.lblcodeUnidad)
         Me.Controls.Add(Me.dgbtabla)
         Me.Controls.Add(Me.btnmodificar)
         Me.Controls.Add(Me.btnnuevo)
@@ -248,8 +270,8 @@ Partial Class E_ParametroExamen
         Me.Controls.Add(Me.lbltipo)
         Me.Controls.Add(Me.btnbuscarUnidad)
         Me.Controls.Add(Me.txtcodigoUnidad)
-        Me.Name = "eg_frmParametroExamen"
-        Me.Text = "Paramentro de Examen"
+        Me.Name = "E_ParametroExamen"
+        Me.Text = "Parámetro de Examen"
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -274,4 +296,6 @@ Partial Class E_ParametroExamen
     Friend WithEvents btncancelar As Button
     Friend WithEvents dgbtabla As DataGridView
     Friend WithEvents posiblesResultados As DataGridViewTextBoxColumn
+    Friend WithEvents lblcodeUnidad As Label
+    Friend WithEvents lblcode As Label
 End Class

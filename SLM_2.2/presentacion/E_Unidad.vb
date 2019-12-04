@@ -1,10 +1,14 @@
 ﻿Public Class E_Unidad
-    Private Sub M_TipoObjeto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim objTipoObj As New ClsTipoObjeto
-        Dim dv As DataView = objTipoObj.SeleccionarTipoObjeto.DefaultView
+    Private Sub M_Unidad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim objUnidad As New ClsUnidad
+        Dim dv As DataView = objUnidad.SeleccionarUnidad.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
+        dgbtabla.Columns("codigo").Visible = False
+
+        txtFactorCantidad.ReadOnly = True
         rtxtcomentario.ReadOnly = True
         txtcodigo.ReadOnly = True
         btnmodificar.Enabled = False
@@ -14,30 +18,55 @@
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         Me.Close()
     End Sub
+    Private Sub txtFactorCantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtFactorCantidad.KeyPress
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
+    Private Function sinDobleEspacio(ByVal cadena As String) As String
+        Dim testString As String = cadena
+        Dim texto As String = ""
+        Dim testArray() As String = Split(testString)
+        Dim lastNonEmpty As Integer = -1
+        For i As Integer = 0 To testArray.Length - 1
+            If testArray(i) <> "" Then
+                lastNonEmpty += 1
+                testArray(lastNonEmpty) = testArray(i)
+                texto += testArray(i) + " "
+            End If
+        Next
+        ReDim Preserve testArray(lastNonEmpty)
+        Return RTrim(texto)
+    End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (txtcodigo.Text <> "" And rtxtcomentario.Text <> "") Then
-                Dim objTipoObj As New ClsTipoObjeto
-                With objTipoObj
-                    .codigo_ = txtcodigo.Text
+            rtxtcomentario.Text = sinDobleEspacio(rtxtcomentario.Text)
+            If (txtcodigo.Text <> "" And rtxtcomentario.Text <> "" And txtFactorCantidad.Text <> "") Then
+                Dim objUnidad As New ClsUnidad
+                With objUnidad
+                    .codigoUnidad_ = txtcodigo.Text
                     .comentario_ = rtxtcomentario.Text
+                    .factorCantidad_ = txtFactorCantidad.Text
                 End With
 
-                If objTipoObj.RegistrarNuevoTipoObjeto() = 1 Then
+                If objUnidad.RegistrarNuevaUnidad() = 1 Then
                     MsgBox("Registrado correctamente.")
 
-                    Dim dv As DataView = objTipoObj.SeleccionarTipoObjeto.DefaultView
+                    Dim dv As DataView = objUnidad.SeleccionarUnidad.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
                     txtcodigo.ReadOnly = True
                     rtxtcomentario.ReadOnly = True
+                    txtFactorCantidad.ReadOnly = True
+
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
                     btnnuevo.Enabled = True
                 Else
-                    MsgBox("Error al querer ingresar el tipo de objeto.", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer ingresar la unidad.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -45,34 +74,38 @@
             End If
 
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox("Error al querer ingregar la unidad.", MsgBoxStyle.Critical)
         End Try
     End Sub
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
-
-            If (rtxtcomentario.Text <> "" And txtcodigo.Text <> "") Then
-                Dim objTipoObj As New ClsTipoObjeto
-                With objTipoObj
-                    .codigo_ = txtcodigo.Text
+            rtxtcomentario.Text = sinDobleEspacio(rtxtcomentario.Text)
+            If (Trim(rtxtcomentario.Text) <> "" And Trim(txtcodigo.Text) <> "" And txtFactorCantidad.Text <> "") Then
+                Dim objUnidad As New ClsUnidad
+                With objUnidad
+                    .Codigo_ = lblcode.Text
+                    .codigoUnidad_ = txtcodigo.Text
                     .comentario_ = rtxtcomentario.Text
+                    .factorCantidad_ = txtFactorCantidad.Text
                 End With
 
-                If objTipoObj.ModificarTipoObjeto() = 1 Then
+                If objUnidad.ModificarUnidad() = 1 Then
                     MsgBox("Modificado correctamente.")
 
-                    Dim dv As DataView = objTipoObj.SeleccionarTipoObjeto.DefaultView
+                    Dim dv As DataView = objUnidad.SeleccionarUnidad.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
                     txtcodigo.ReadOnly = True
                     rtxtcomentario.ReadOnly = True
+                    txtFactorCantidad.ReadOnly = True
+
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
                     btnnuevo.Enabled = True
                 Else
-                    MsgBox("Error al querer modificar el tipo de objeto.", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer modificar la unidad.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -80,15 +113,18 @@
             End If
 
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox("Error al querer ingregar la unidad.", MsgBoxStyle.Critical)
         End Try
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
-        txtcodigo.Text() = ""
-        rtxtcomentario.Text() = ""
+        txtcodigo.Text = ""
+        rtxtcomentario.Text = ""
+        txtFactorCantidad.Text = ""
 
+        txtFactorCantidad.ReadOnly = False
         rtxtcomentario.ReadOnly = False
         txtcodigo.ReadOnly = False
+
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
         btnnuevo.Enabled = False
@@ -100,32 +136,43 @@
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-            rtxtcomentario.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            lblcode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            rtxtcomentario.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+            txtFactorCantidad.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+
+            E_ParametroExamen.lblcodeUnidad.Text = lblcode.Text
+
             btnmodificar.Enabled = True
             btnguardar.Enabled = False
             btnnuevo.Enabled = True
+
+            txtFactorCantidad.ReadOnly = False
             rtxtcomentario.ReadOnly = False
-            txtcodigo.ReadOnly = True
+            txtcodigo.ReadOnly = False
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
     Private Sub txtcomentarioB_TextChanged(sender As Object, e As EventArgs) Handles txtcomentarioB.TextChanged
-        Dim objTipoObj As New ClsTipoObjeto
-        With objTipoObj
-            .comentario_ = txtcomentarioB.Text
-        End With
-        If (Trim(txtcomentarioB.Text) <> "") Then
-            Dim dv As DataView = objTipoObj.BuscarTipoObjeto.DefaultView
-            dgbtabla.DataSource = dv
-            lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-        Else
-            Dim dv As DataView = objTipoObj.SeleccionarTipoObjeto.DefaultView
-            dgbtabla.DataSource = dv
-            lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-        End If
+        Try
+            Dim objUnidad As New ClsUnidad
+            With objUnidad
+                .comentario_ = txtcomentarioB.Text
+            End With
+            If (Trim(txtcomentarioB.Text) <> "") Then
+                Dim dv As DataView = objUnidad.BuscarUnidadComment.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            Else
+                Dim dv As DataView = objUnidad.SeleccionarUnidad.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
