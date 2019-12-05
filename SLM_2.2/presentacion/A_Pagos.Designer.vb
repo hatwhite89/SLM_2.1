@@ -55,11 +55,11 @@ Partial Class frmPagos
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.gbxInfo = New System.Windows.Forms.GroupBox()
+        Me.chkPagado = New System.Windows.Forms.CheckBox()
         Me.gbxDetalle = New System.Windows.Forms.GroupBox()
         Me.lblTotalSuma = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnRegresar = New System.Windows.Forms.Button()
-        Me.chkPagado = New System.Windows.Forms.CheckBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dtDetallePagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxInfo.SuspendLayout()
@@ -362,6 +362,16 @@ Partial Class frmPagos
         Me.gbxInfo.TabStop = False
         Me.gbxInfo.Text = "Información de Pago"
         '
+        'chkPagado
+        '
+        Me.chkPagado.AutoSize = True
+        Me.chkPagado.Location = New System.Drawing.Point(558, 44)
+        Me.chkPagado.Name = "chkPagado"
+        Me.chkPagado.Size = New System.Drawing.Size(63, 17)
+        Me.chkPagado.TabIndex = 22
+        Me.chkPagado.Text = "Pagado"
+        Me.chkPagado.UseVisualStyleBackColor = True
+        '
         'gbxDetalle
         '
         Me.gbxDetalle.Controls.Add(Me.lblTotalSuma)
@@ -379,9 +389,8 @@ Partial Class frmPagos
         Me.lblTotalSuma.AutoSize = True
         Me.lblTotalSuma.Location = New System.Drawing.Point(555, 240)
         Me.lblTotalSuma.Name = "lblTotalSuma"
-        Me.lblTotalSuma.Size = New System.Drawing.Size(22, 13)
+        Me.lblTotalSuma.Size = New System.Drawing.Size(0, 13)
         Me.lblTotalSuma.TabIndex = 22
-        Me.lblTotalSuma.Text = "0.0"
         '
         'Label4
         '
@@ -404,16 +413,6 @@ Partial Class frmPagos
         Me.btnRegresar.Size = New System.Drawing.Size(33, 37)
         Me.btnRegresar.TabIndex = 27
         Me.btnRegresar.UseVisualStyleBackColor = False
-        '
-        'chkPagado
-        '
-        Me.chkPagado.AutoSize = True
-        Me.chkPagado.Location = New System.Drawing.Point(558, 44)
-        Me.chkPagado.Name = "chkPagado"
-        Me.chkPagado.Size = New System.Drawing.Size(63, 17)
-        Me.chkPagado.TabIndex = 22
-        Me.chkPagado.Text = "Pagado"
-        Me.chkPagado.UseVisualStyleBackColor = True
         '
         'frmPagos
         '

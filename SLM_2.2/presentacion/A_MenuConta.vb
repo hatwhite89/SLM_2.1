@@ -7,7 +7,7 @@
     End Sub
 
     Private Sub btnPagos_Click(sender As Object, e As EventArgs) Handles btnPagos.Click
-        frmPagos.Show()
+        A_ListarPagos.Show()
     End Sub
 
     Private Sub btnFormaPago_Click(sender As Object, e As EventArgs) Handles btnFormaPago.Click
