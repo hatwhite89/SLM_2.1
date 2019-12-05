@@ -33,9 +33,9 @@ Partial Class A_ListarFormasPagoPF
         '
         Me.GroupBox1.Controls.Add(Me.dtFormasPago)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 15)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(412, 411)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -48,7 +48,7 @@ Partial Class A_ListarFormasPagoPF
         Me.dtFormasPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtFormasPago.GridColor = System.Drawing.Color.White
         Me.dtFormasPago.Location = New System.Drawing.Point(8, 23)
-        Me.dtFormasPago.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtFormasPago.Margin = New System.Windows.Forms.Padding(4)
         Me.dtFormasPago.Name = "dtFormasPago"
         Me.dtFormasPago.ReadOnly = True
         Me.dtFormasPago.RowHeadersWidth = 51
@@ -74,7 +74,7 @@ Partial Class A_ListarFormasPagoPF
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "A_ListarFormasPagoPF"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Formas Pago"
