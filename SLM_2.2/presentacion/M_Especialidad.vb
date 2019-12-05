@@ -38,6 +38,7 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
+
             If (Trim(txtnombre.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
                 Dim objEspecialidad As New ClsEspecialidad
                 With objEspecialidad
