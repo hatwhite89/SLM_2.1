@@ -26,27 +26,37 @@
         dtDetallePagos.Columns(2).ReadOnly = True
         dtDetallePagos.Columns(3).ReadOnly = True
 
-        Dim dt As New DataTable
 
-        With factuCompra
-            .Cod_Factura = dtDetallePagos.Rows(e.RowIndex).Cells(0).Value
-            dt = .comprobarFactura() 'Comprobar existencia de factura compra
 
-            If dt.Rows.Count > 0 Then 'Si la factura existe, llenar campos
+        Try
+            Dim dt As New DataTable
+            With factuCompra
+                .Cod_Factura = dtDetallePagos.Rows(e.RowIndex).Cells(0).Value
+                dt = .comprobarFactura() 'Comprobar existencia de factura compra
 
-                Dim row As DataRow = dt.Rows(0)
-                dtDetallePagos.Rows(e.RowIndex).Cells(1).Value = row("nombreProveedor")
-                dtDetallePagos.Rows(e.RowIndex).Cells(2).Value = row("moneda")
-                dtDetallePagos.Rows(e.RowIndex).Cells(3).Value = row("total")
+                If dt.Rows.Count > 0 Then 'Si la factura existe, llenar campos
 
-                'Sumar totales de factura
-                lblTotalSuma.Text = Convert.ToDouble(lblTotalSuma.Text) + dtDetallePagos.Rows(e.RowIndex).Cells(3).Value
+                    Dim row As DataRow = dt.Rows(0)
+                    dtDetallePagos.Rows(e.RowIndex).Cells(1).Value = row("nombreProveedor")
+                    dtDetallePagos.Rows(e.RowIndex).Cells(2).Value = row("moneda")
+                    dtDetallePagos.Rows(e.RowIndex).Cells(3).Value = row("total")
 
-            Else
-                MsgBox("La factura de compra no existe. Verifique el código.")
-            End If
 
-        End With
+                    'Sumar totales de factura
+
+                    lblTotalSuma.Text = dtDetallePagos.Rows(e.RowIndex).Cells(3).Value
+
+                Else
+                    MsgBox("La factura de compra no existe. Verifique el código.")
+                End If
+
+            End With
+        Catch ex As Exception
+
+        End Try
+
+
+
 
     End Sub
 
@@ -136,6 +146,7 @@
             If dt.Rows.Count > 0 Then
 
                 With pagos
+
                     'Variables
                     .Forma_Pago = txtFormaP.Text
                     .Cuenta_Banco = txtCtaBanco.Text
@@ -148,41 +159,39 @@
                     .Suma_Total = lblTotalSuma.Text
                     'Ingresar registro en base de datos
                     .registrarNuevoPago()
-                    'Actualizar tabla de pagos
-                    Me.Close()
-                    A_ListarPagos.Show()
 
                 End With
 
                 'Registro Detalle de Pago
                 Dim dt2 As DataTable
                 'Capturar codigo del pago guardado
-                dt = pagos.capturarUltimoPago
-                Dim row As DataRow = dt.Rows(0)
+                dt2 = pagos.capturarUltimoPago
 
+                Dim row As DataRow = dt2.Rows(0)
                 txtNro.Text = CStr(row("codPago"))
-
-                'Recorrer filas para ingreso de detalle de factura
-                For fila = 0 To dtDetallePagos.Rows.Count - 2
-
-                    'Insertar detalle de pago
-                    detallePago.Cod_Pago = Convert.ToInt32(txtNro.Text)
-                    detallePago.Cod_Factura = Convert.ToInt32(dtDetallePagos.Rows(fila).Cells(0).Value)
-                    detallePago.Forma_Pago = dtDetallePagos.Rows(fila).Cells(4).Value
-                    detallePago.Nro_Cheque = dtDetallePagos.Rows(fila).Cells(5).Value
-
-                    'Funcion de registro de detalle
-                    detallePago.registrarDetallePago()
-
-                Next
 
             End If 'If conteo de filas
 
         End If 'Verificar que campo txtFormaPago no este vacio.
 
+        'Recorrer filas para ingreso de detalle de factura
+        For fila = 0 To dtDetallePagos.Rows.Count - 2
+            Try
+                'Insertar detalle de pago
+                detallePago.Cod_Pago = Convert.ToInt32(txtNro.Text)
+                detallePago.Cod_Factura = Convert.ToInt32(dtDetallePagos.Rows(fila).Cells(0).Value)
+                detallePago.Forma_Pago = dtDetallePagos.Rows(fila).Cells(4).Value
+                detallePago.Nro_Cheque = +dtDetallePagos.Rows(fila).Cells(5).Value
 
+                'Funcion de registro de detalle
+                detallePago.registrarDetallePago()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
 
-
+        Next
+        Me.Close()
+        A_ListarPagos.ShowDialog()
 
     End Sub
 End Class
