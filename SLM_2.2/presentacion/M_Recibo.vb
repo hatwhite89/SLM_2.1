@@ -41,15 +41,19 @@
             cbxInfoClte.Checked = False
             cbxOk.Checked = False
             dgbtabla.Rows.Clear()
+            txtMoneda.Text = "LPS"
+            txtDepositado.Text = "0"
 
             dtpFechaTrans.Enabled = True
             rtxtReferencia.ReadOnly = False
             txtcodigoFormaPago.ReadOnly = False
             cbxInfoClte.Enabled = True
             cbxOk.Enabled = True
-            dgbtabla.ReadOnly = False
+            'dgbtabla.ReadOnly = False
+            txtMoneda.ReadOnly = False
 
             btnmodificar.Enabled = False
+            btnguardar.Enabled = True
 
         Catch ex As Exception
 
@@ -62,10 +66,12 @@
         txtcodigoFormaPago.ReadOnly = True
         cbxInfoClte.Enabled = False
         cbxOk.Enabled = False
-        dgbtabla.ReadOnly = True
+        'dgbtabla.ReadOnly = True
+        txtMoneda.ReadOnly = True
 
         btnmodificar.Enabled = True
         btnguardar.Enabled = False
+
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
@@ -93,7 +99,7 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
             rtxtReferencia.Text = sinDobleEspacio(rtxtReferencia.Text)
-            If (Trim(rtxtReferencia.Text) <> "" And Trim(txtcodigoFormaPago.Text) <> "" And dgbtabla.Rows.Count > 0) Then
+            If (Trim(rtxtReferencia.Text) <> "" And Trim(txtcodigoFormaPago.Text) <> "" And dgbtabla.Rows.Count > 1 And Trim(txtMoneda.Text) <> "") Then
 
                 Dim objRbo As New ClsRecibo
 
@@ -103,29 +109,31 @@
                     .codigoFormaPago_ = lblcodeFormaPago.Text
                     .infoClte_ = cbxInfoClte.Checked
                     .ok_ = cbxOk.Checked
+                    .moneda_ = txtMoneda.Text
+                    .depositado_ = Convert.ToDouble(txtDepositado.Text)
                 End With
 
-                If objRbo.referencia_() = 1 Then
-                    deshabilitar()
+                If objRbo.RegistrarNuevoRecibo() = 1 Then
+                    'deshabilitar()
+                    btnguardar.Enabled = False
                     Dim dt As New DataTable
-                    'dt = objRbo.BuscarParametroExamen()
+                    dt = objRbo.CapturarRecibo()
                     Dim row As DataRow = dt.Rows(0)
 
-                    '   lblcode.Text = CStr(row("codigo"))
-                    Dim objParExamDet As New ClsParametroExamenDetalle
+                    txtnumero.Text = CStr(row("numero"))
+                    Dim objDetRbo As New ClsDetalleRecibo
                     For index As Integer = 0 To dgbtabla.Rows.Count - 2
-                        With objParExamDet
-                            '.codigoParametroExam_ = Convert.ToInt32(lblcode.Text)
-                            .posibleResultado_ = dgbtabla.Rows(index).Cells(0).Value()
-                            .valPorDefecto_ = dgbtabla.Rows(index).Cells(1).Value()
+                        With objDetRbo
+                            .codigoRecibo_ = txtnumero.Text
+                            .numeroFactura_ = dgbtabla.Rows(index).Cells(0).Value()
                         End With
-                        If objParExamDet.RegistrarNuevoParametroExamenDetalle() = 0 Then
-                            MsgBox("Error al querer insertar el posible resultado.")
+                        If objDetRbo.RegistrarNuevoDetalleRecibo() = 0 Then
+                            MsgBox("Error al querer insertar el detalle del recibo.")
                         End If
                     Next
-                    MsgBox("Registrado el parámetro correctamente.")
+                    MsgBox("Registrado el recibo correctamente.")
                 Else
-                    MsgBox("Error al querer ingresar el parámetro de examen.", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer ingresar el recibo.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -139,5 +147,38 @@
 
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
 
+    End Sub
+
+    Public Sub calcularTotal()
+        Dim total As Double
+        For index As Integer = 0 To dgbtabla.Rows.Count - 1
+            total += Convert.ToDouble(dgbtabla.Rows(index).Cells(7).Value())
+        Next
+        txtDepositado.Text = total
+    End Sub
+    Private Sub dgbtabla_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
+        Try
+            If e.ColumnIndex = 0 Then
+                M_ListarFactura.ShowDialog()
+            ElseIf e.ColumnIndex = 8 Then
+                Dim n As String = MsgBox("¿Desea eliminar la factura del recibo?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+                    dgbtabla.Rows.Remove(dgbtabla.Rows(e.RowIndex.ToString))
+                    calcularTotal()
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+    Private Sub M_Recibo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim btn As New DataGridViewButtonColumn()
+        dgbtabla.Columns.Add(btn)
+        btn.HeaderText = "Eliminar"
+        btn.Text = "Eliminar"
+        btn.Name = "btnEliminar"
+        btn.UseColumnTextForButtonValue = True
+        btnmodificar.Enabled = False
     End Sub
 End Class

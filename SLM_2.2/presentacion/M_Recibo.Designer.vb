@@ -33,7 +33,6 @@ Partial Class M_Recibo
         Me.txtcodigoFormaPago = New System.Windows.Forms.TextBox()
         Me.cbxInfoClte = New System.Windows.Forms.CheckBox()
         Me.cbxOk = New System.Windows.Forms.CheckBox()
-        Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.txtMoneda = New System.Windows.Forms.TextBox()
         Me.txtDepositado = New System.Windows.Forms.TextBox()
         Me.lblMoneda = New System.Windows.Forms.Label()
@@ -45,6 +44,15 @@ Partial Class M_Recibo
         Me.btnbuscarFormaPago = New System.Windows.Forms.Button()
         Me.txtnombreFormaPago = New System.Windows.Forms.TextBox()
         Me.lblcodeFormaPago = New System.Windows.Forms.Label()
+        Me.dgbtabla = New System.Windows.Forms.DataGridView()
+        Me.nroFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.texto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mBanco = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MontoBanco = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mRec = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.valorRecibido = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -91,6 +99,7 @@ Partial Class M_Recibo
         Me.txtnumero.ReadOnly = True
         Me.txtnumero.Size = New System.Drawing.Size(133, 22)
         Me.txtnumero.TabIndex = 5
+        Me.txtnumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'dtpFechaTrans
         '
@@ -110,11 +119,13 @@ Partial Class M_Recibo
         '
         'txtcodigoFormaPago
         '
+        Me.txtcodigoFormaPago.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigoFormaPago.Location = New System.Drawing.Point(200, 99)
         Me.txtcodigoFormaPago.MaxLength = 20
         Me.txtcodigoFormaPago.Name = "txtcodigoFormaPago"
         Me.txtcodigoFormaPago.Size = New System.Drawing.Size(100, 22)
         Me.txtcodigoFormaPago.TabIndex = 8
+        Me.txtcodigoFormaPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'cbxInfoClte
         '
@@ -136,26 +147,14 @@ Partial Class M_Recibo
         Me.cbxOk.Text = "Ok"
         Me.cbxOk.UseVisualStyleBackColor = True
         '
-        'dgbtabla
-        '
-        Me.dgbtabla.AllowUserToAddRows = False
-        Me.dgbtabla.AllowUserToDeleteRows = False
-        Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(32, 170)
-        Me.dgbtabla.Name = "dgbtabla"
-        Me.dgbtabla.ReadOnly = True
-        Me.dgbtabla.RowHeadersWidth = 51
-        Me.dgbtabla.RowTemplate.Height = 24
-        Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(616, 306)
-        Me.dgbtabla.TabIndex = 23
-        '
         'txtMoneda
         '
         Me.txtMoneda.Location = New System.Drawing.Point(241, 497)
         Me.txtMoneda.Name = "txtMoneda"
         Me.txtMoneda.Size = New System.Drawing.Size(133, 22)
         Me.txtMoneda.TabIndex = 24
+        Me.txtMoneda.Text = "LPS"
+        Me.txtMoneda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtDepositado
         '
@@ -164,6 +163,8 @@ Partial Class M_Recibo
         Me.txtDepositado.ReadOnly = True
         Me.txtDepositado.Size = New System.Drawing.Size(133, 22)
         Me.txtDepositado.TabIndex = 25
+        Me.txtDepositado.Text = "0"
+        Me.txtDepositado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblMoneda
         '
@@ -266,12 +267,88 @@ Partial Class M_Recibo
         Me.lblcodeFormaPago.TabIndex = 145
         Me.lblcodeFormaPago.Visible = False
         '
+        'dgbtabla
+        '
+        Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nroFactura, Me.cliente, Me.texto, Me.FechaPago, Me.mBanco, Me.MontoBanco, Me.mRec, Me.valorRecibido})
+        Me.dgbtabla.Location = New System.Drawing.Point(37, 169)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgbtabla.Name = "dgbtabla"
+        Me.dgbtabla.RowHeadersWidth = 51
+        Me.dgbtabla.RowTemplate.Height = 24
+        Me.dgbtabla.Size = New System.Drawing.Size(600, 311)
+        Me.dgbtabla.TabIndex = 146
+        '
+        'nroFactura
+        '
+        Me.nroFactura.HeaderText = "Nro. Factura"
+        Me.nroFactura.MinimumWidth = 6
+        Me.nroFactura.Name = "nroFactura"
+        Me.nroFactura.Width = 125
+        '
+        'cliente
+        '
+        Me.cliente.HeaderText = "Cliente"
+        Me.cliente.MinimumWidth = 6
+        Me.cliente.Name = "cliente"
+        Me.cliente.ReadOnly = True
+        Me.cliente.Width = 125
+        '
+        'texto
+        '
+        Me.texto.HeaderText = "Texto"
+        Me.texto.MinimumWidth = 6
+        Me.texto.Name = "texto"
+        Me.texto.ReadOnly = True
+        Me.texto.Width = 125
+        '
+        'FechaPago
+        '
+        Me.FechaPago.HeaderText = "Fecha Pago"
+        Me.FechaPago.MinimumWidth = 6
+        Me.FechaPago.Name = "FechaPago"
+        Me.FechaPago.ReadOnly = True
+        Me.FechaPago.Width = 125
+        '
+        'mBanco
+        '
+        Me.mBanco.HeaderText = "M. Bco."
+        Me.mBanco.MinimumWidth = 6
+        Me.mBanco.Name = "mBanco"
+        Me.mBanco.ReadOnly = True
+        Me.mBanco.Width = 125
+        '
+        'MontoBanco
+        '
+        Me.MontoBanco.HeaderText = "Monto Banco"
+        Me.MontoBanco.MinimumWidth = 6
+        Me.MontoBanco.Name = "MontoBanco"
+        Me.MontoBanco.ReadOnly = True
+        Me.MontoBanco.Width = 125
+        '
+        'mRec
+        '
+        Me.mRec.HeaderText = "M. Rec."
+        Me.mRec.MinimumWidth = 6
+        Me.mRec.Name = "mRec"
+        Me.mRec.ReadOnly = True
+        Me.mRec.Width = 125
+        '
+        'valorRecibido
+        '
+        Me.valorRecibido.HeaderText = "Valor Recibido"
+        Me.valorRecibido.MinimumWidth = 6
+        Me.valorRecibido.Name = "valorRecibido"
+        Me.valorRecibido.ReadOnly = True
+        Me.valorRecibido.Width = 125
+        '
         'M_Recibo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(681, 622)
+        Me.Controls.Add(Me.dgbtabla)
         Me.Controls.Add(Me.lblcodeFormaPago)
         Me.Controls.Add(Me.txtnombreFormaPago)
         Me.Controls.Add(Me.btnbuscarFormaPago)
@@ -283,7 +360,6 @@ Partial Class M_Recibo
         Me.Controls.Add(Me.lblMoneda)
         Me.Controls.Add(Me.txtDepositado)
         Me.Controls.Add(Me.txtMoneda)
-        Me.Controls.Add(Me.dgbtabla)
         Me.Controls.Add(Me.cbxOk)
         Me.Controls.Add(Me.cbxInfoClte)
         Me.Controls.Add(Me.txtcodigoFormaPago)
@@ -313,7 +389,6 @@ Partial Class M_Recibo
     Friend WithEvents txtcodigoFormaPago As TextBox
     Friend WithEvents cbxInfoClte As CheckBox
     Friend WithEvents cbxOk As CheckBox
-    Friend WithEvents dgbtabla As DataGridView
     Friend WithEvents txtMoneda As TextBox
     Friend WithEvents txtDepositado As TextBox
     Friend WithEvents lblMoneda As Label
@@ -325,4 +400,13 @@ Partial Class M_Recibo
     Friend WithEvents btnbuscarFormaPago As Button
     Friend WithEvents txtnombreFormaPago As TextBox
     Friend WithEvents lblcodeFormaPago As Label
+    Friend WithEvents dgbtabla As DataGridView
+    Friend WithEvents nroFactura As DataGridViewTextBoxColumn
+    Friend WithEvents cliente As DataGridViewTextBoxColumn
+    Friend WithEvents texto As DataGridViewTextBoxColumn
+    Friend WithEvents FechaPago As DataGridViewTextBoxColumn
+    Friend WithEvents mBanco As DataGridViewTextBoxColumn
+    Friend WithEvents MontoBanco As DataGridViewTextBoxColumn
+    Friend WithEvents mRec As DataGridViewTextBoxColumn
+    Friend WithEvents valorRecibido As DataGridViewTextBoxColumn
 End Class
