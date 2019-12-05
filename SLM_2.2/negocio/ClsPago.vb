@@ -1,0 +1,212 @@
+﻿
+Imports System.Data.SqlClient
+Public Class ClsPago
+
+    'Variables
+    Dim codPago As Integer
+    Dim formaPago, referencia, comentario, ctaBanco, codOrden, sumaTotal As String
+    Dim fechaPago, fechaTransferencia As Date
+    Dim pagado As Boolean
+
+    'Constructor
+    Public Sub New()
+
+    End Sub
+
+
+    '::::::::::::::::::::::::::::::::::: Metodos SET y GET :::::::::::::::::::::::::::::::::::
+
+    'Codigo de Pago
+    Public Property Cod_Pago As Integer
+        Get
+            Return codPago
+        End Get
+        Set(value As Integer)
+            codPago = value
+        End Set
+    End Property
+
+    'Forma de Pago
+    Public Property Forma_Pago As String
+        Get
+            Return formaPago
+        End Get
+        Set(value As String)
+            formaPago = value
+        End Set
+    End Property
+
+    'Referencia
+    Public Property Referenci_a As String
+        Get
+            Return referencia
+        End Get
+        Set(value As String)
+            referencia = value
+        End Set
+    End Property
+
+    'Comentario
+    Public Property Comentari_o As String
+        Get
+            Return comentario
+        End Get
+        Set(value As String)
+            comentario = value
+        End Set
+    End Property
+
+    'Cuenta de Banco
+    Public Property Cuenta_Banco As String
+        Get
+            Return ctaBanco
+        End Get
+        Set(value As String)
+            ctaBanco = value
+        End Set
+    End Property
+
+    'Codigo Orden
+    Public Property Cod_Orden As String
+        Get
+            Return codOrden
+        End Get
+        Set(value As String)
+            codOrden = value
+        End Set
+    End Property
+
+    'Suma Total
+    Public Property Suma_Total As String
+        Get
+            Return sumaTotal
+        End Get
+        Set(value As String)
+            sumaTotal = value
+        End Set
+    End Property
+
+    'Fecha de Pago
+    Public Property Fecha_Pago As Date
+        Get
+            Return fechaPago
+        End Get
+        Set(value As Date)
+            fechaPago = value
+        End Set
+    End Property
+
+    'Fecha Transferencia
+    Public Property Fecha_transfer As Date
+        Get
+            Return fechaTransferencia
+        End Get
+        Set(value As Date)
+            fechaTransferencia = value
+        End Set
+    End Property
+
+    'Estado Pagado
+    Public Property Paga_do As Boolean
+        Get
+            Return pagado
+        End Get
+        Set(value As Boolean)
+            pagado = value
+        End Set
+    End Property
+
+
+    '::::::::::::::::::::::::::::::::::: Funciones de Mantenimiento :::::::::::::::::::::::::::::::::::
+    'Registrar nuevo pago
+    Public Function registrarNuevoPago() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        'PROCEDIMIENTO ALMACENADO
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "A_slmInsertarPagos"
+
+        'VARIABLES 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "formaPago"
+        sqlpar.Value = Forma_Pago
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "referencia"
+        sqlpar.Value = Referenci_a
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "comentario"
+        sqlpar.Value = Comentari_o
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "fechaPago"
+        sqlpar.Value = Fecha_Pago
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "ctaBanco"
+        sqlpar.Value = Cuenta_Banco
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "fechaTransferencia"
+        sqlpar.Value = Fecha_transfer
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "pagado"
+        sqlpar.Value = Paga_do
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codOrden"
+        sqlpar.Value = Cod_Orden
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "sumaTotal"
+        sqlpar.Value = Suma_Total
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
+    'Listar Pagos
+    Public Function listarPagos() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("A_slmListarPagos", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+End Class

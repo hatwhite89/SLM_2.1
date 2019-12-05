@@ -205,4 +205,27 @@ Public Class ClsBancos
         End Using
     End Function
 
+    'Buscar Bancos por codigo breve
+    Public Function buscarBancoCod() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarBancoCod"
+            cmd.Parameters.Add("@codBreve", SqlDbType.VarChar).Value = cod_breve
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
 End Class
