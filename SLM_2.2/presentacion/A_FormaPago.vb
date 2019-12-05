@@ -152,8 +152,6 @@ Public Class frmFormaPago
             txtBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(8).Value
             txtRetencion.Text = dtFormasPago.Rows(e.RowIndex).Cells(10).Value
 
-
-
         Catch ex As Exception
 
         End Try
