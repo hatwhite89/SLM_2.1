@@ -127,7 +127,7 @@ Public Class ClsPago
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "A_slmInsertarPagos"
+        sqlcom.CommandText = "A_slmInsertarPago"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -207,6 +207,22 @@ Public Class ClsPago
             da.Fill(dt)
             Return dt
         End Using
+    End Function
+
+    'Capturar Codigo de ultimo pago guardado
+    Public Function capturarUltimoPago() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("A_slmCapturarCodPago", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+
+
     End Function
 
 End Class

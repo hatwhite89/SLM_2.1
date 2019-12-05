@@ -3,6 +3,7 @@
     Dim formaPago As New ClsFormaPago
     Dim factuCompra As New ClsFacturaCompra
     Dim pagos As New ClsPago
+    Dim detallePago As New ClsDetallePago
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         'Cerrar Ventana Pagos
         Me.Close()
@@ -153,12 +154,27 @@
 
                 End With
 
+                'Registro Detalle de Pago
+                Dim dt2 As DataTable
+                'Capturar codigo del pago guardado
+                dt = pagos.capturarUltimoPago
+                Dim row As DataRow = dt.Rows(0)
 
+                txtNro.Text = CStr(row("codPago"))
 
+                'Recorrer filas para ingreso de detalle de factura
+                For fila = 0 To dtDetallePagos.Rows.Count - 2
 
+                    'Insertar detalle de pago
+                    detallePago.Cod_Pago = Convert.ToInt32(txtNro.Text)
+                    detallePago.Cod_Factura = Convert.ToInt32(dtDetallePagos.Rows(fila).Cells(0).Value)
+                    detallePago.Forma_Pago = dtDetallePagos.Rows(fila).Cells(4).Value
+                    detallePago.Nro_Cheque = dtDetallePagos.Rows(fila).Cells(5).Value
 
+                    'Funcion de registro de detalle
+                    detallePago.registrarDetallePago()
 
-
+                Next
 
             End If 'If conteo de filas
 
