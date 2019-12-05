@@ -177,7 +177,7 @@ Partial Class M_Recibo
         'lblDepositado
         '
         Me.lblDepositado.AutoSize = True
-        Me.lblDepositado.Location = New System.Drawing.Point(419, 502)
+        Me.lblDepositado.Location = New System.Drawing.Point(419, 500)
         Me.lblDepositado.Name = "lblDepositado"
         Me.lblDepositado.Size = New System.Drawing.Size(80, 17)
         Me.lblDepositado.TabIndex = 27
@@ -264,6 +264,7 @@ Partial Class M_Recibo
         Me.lblcodeFormaPago.Name = "lblcodeFormaPago"
         Me.lblcodeFormaPago.Size = New System.Drawing.Size(0, 17)
         Me.lblcodeFormaPago.TabIndex = 145
+        Me.lblcodeFormaPago.Visible = False
         '
         'M_Recibo
         '
@@ -293,6 +294,7 @@ Partial Class M_Recibo
         Me.Controls.Add(Me.lblReferencia)
         Me.Controls.Add(Me.lblFechaTrans)
         Me.Controls.Add(Me.lblnro)
+        Me.KeyPreview = True
         Me.Name = "M_Recibo"
         Me.Text = "M_Recibo"
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
