@@ -251,6 +251,29 @@ Public Class ClsFormaPago
 
     End Function
 
+    'Buscar Forma de Pago por codFormaPago
+    Public Function buscarFormaPago() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarFormaPago"
+            cmd.Parameters.Add("@codFormaPago", SqlDbType.Int).Value = Codigo_FormaPago
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
     'Eliminar Forma de Pago
     Public Function eliminarFormaPago() As DataTable
 
@@ -262,7 +285,7 @@ Public Class ClsFormaPago
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "A_slmEliminarFormaPago"
-            cmd.Parameters.Add("@codFormaPago", SqlDbType.VarChar).Value = Codigo_FormaPago
+            cmd.Parameters.Add("@codFormaPago", SqlDbType.Int).Value = Codigo_FormaPago
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable

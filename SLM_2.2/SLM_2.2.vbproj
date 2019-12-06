@@ -117,6 +117,7 @@
     <Compile Include="negocio\ClsClasificacionItem.vb" />
     <Compile Include="negocio\ClsDetalleFacturaCompra.vb" />
     <Compile Include="negocio\ClsDetallePago.vb" />
+    <Compile Include="negocio\ClsDetalleRecibo.vb" />
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
@@ -125,6 +126,7 @@
     <Compile Include="negocio\ClsPago.vb" />
     <Compile Include="negocio\ClsParametroExamen.vb" />
     <Compile Include="negocio\ClsParametroExamenDetalle.vb" />
+    <Compile Include="negocio\ClsRecibo.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
     <Compile Include="negocio\ClsUnidad.vb" />
@@ -388,6 +390,12 @@
     <Compile Include="presentacion\M_BuscarFactura.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_BuscarRecibo.Designer.vb">
+      <DependentUpon>M_BuscarRecibo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarRecibo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_Caja.Designer.vb">
       <DependentUpon>M_Caja.vb</DependentUpon>
     </Compile>
@@ -440,6 +448,12 @@
       <DependentUpon>M_InicioSesion.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_InicioSesion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_ListarFactura.Designer.vb">
+      <DependentUpon>M_ListarFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ListarFactura.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_MaquinasLocales.Designer.vb">
@@ -663,6 +677,9 @@
     <EmbeddedResource Include="presentacion\M_BuscarFactura.resx">
       <DependentUpon>M_BuscarFactura.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_BuscarRecibo.resx">
+      <DependentUpon>M_BuscarRecibo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Caja.resx">
       <DependentUpon>M_Caja.vb</DependentUpon>
     </EmbeddedResource>
@@ -689,6 +706,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_InicioSesion.resx">
       <DependentUpon>M_InicioSesion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ListarFactura.resx">
+      <DependentUpon>M_ListarFactura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_MaquinasLocales.resx">
       <DependentUpon>M_MaquinasLocales.vb</DependentUpon>

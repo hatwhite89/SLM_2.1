@@ -230,6 +230,7 @@
             Catch ex As Exception
                 txtcodigoSucursal.BackColor = Color.Red
                 txtnombreSucursal.Text = ""
+                lblcodeSucursal.Text = ""
                 'MsgBox("No existe el código de la sucursal.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
