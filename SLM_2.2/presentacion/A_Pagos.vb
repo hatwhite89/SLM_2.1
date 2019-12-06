@@ -17,6 +17,7 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnBuscarFormaPago.Click
         'Mostrar formas de pago
+        A_ListarFormasPagoPF.lblForm.Text = "Pagos"
         A_ListarFormasPagoPF.ShowDialog()
     End Sub
 
@@ -25,8 +26,6 @@
         dtDetallePagos.Columns(1).ReadOnly = True
         dtDetallePagos.Columns(2).ReadOnly = True
         dtDetallePagos.Columns(3).ReadOnly = True
-
-
 
         Try
             Dim dt As New DataTable
@@ -54,9 +53,6 @@
         Catch ex As Exception
 
         End Try
-
-
-
 
     End Sub
 
@@ -118,8 +114,6 @@
             End If
         End If
     End Sub
-
-
 
     Sub limpiar() 'Limpiar todos los campos
         txtNro.Text = ""
@@ -194,4 +188,29 @@
         A_ListarPagos.ShowDialog()
 
     End Sub
+
+    Private Sub dtDetallePagos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetallePagos.CellDoubleClick
+
+        If e.ColumnIndex = 4 Then
+
+            'Columna de Forma de Pago
+            A_ListarFormasPagoPF.lblForm.Text = "DetallePagoFormaPagos"
+            lblFila.Text = e.RowIndex
+            A_ListarFormasPagoPF.ShowDialog()
+
+        ElseIf e.ColumnIndex = 5 Then
+
+            'Columna de Cheques
+            A_ListarChequesHabilitados.Show()
+            lblFila.Text = e.RowIndex
+
+        End If
+
+
+
+
+
+    End Sub
+
+
 End Class

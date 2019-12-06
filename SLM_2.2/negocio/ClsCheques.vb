@@ -193,6 +193,16 @@ Public Class ClsCheques
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "moneda"
+        sqlpar.Value = Moned_a
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nombreBanco"
+        sqlpar.Value = Nombre_Banco
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "cantidad"
         sqlpar.Value = Cantida_d
         sqlcom.Parameters.Add(sqlpar)
@@ -221,6 +231,27 @@ Public Class ClsCheques
 
     End Function
 
-    'Modificar cheque
+    'Listar cheques disponibles
+    Public Function listarChequesDisponibles() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmListarChequesHabilitados"
+            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Cod_BreveBanco
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
 
 End Class

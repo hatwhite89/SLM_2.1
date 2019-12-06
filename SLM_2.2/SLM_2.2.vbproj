@@ -227,6 +227,12 @@
     <Compile Include="presentacion\A_ListarCategoriasProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ListarChequesHabilitados.Designer.vb">
+      <DependentUpon>A_ListarChequesHabilitados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarChequesHabilitados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListarCuentas.Designer.vb">
       <DependentUpon>A_ListarCuentas.vb</DependentUpon>
     </Compile>
@@ -598,6 +604,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarCategoriasProveedor.resx">
       <DependentUpon>A_ListarCategoriasProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarChequesHabilitados.resx">
+      <DependentUpon>A_ListarChequesHabilitados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarCuentas.resx">
       <DependentUpon>A_ListarCuentas.vb</DependentUpon>
