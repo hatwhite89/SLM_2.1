@@ -213,6 +213,7 @@ Partial Class M_Recibo
         'btnmodificar
         '
         Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnmodificar.Enabled = False
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.Color.Black

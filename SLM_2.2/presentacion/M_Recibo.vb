@@ -29,7 +29,8 @@
             txtcodigoFormaPago.BackColor = Color.White
         End If
     End Sub
-    Private Sub limpiar()
+    Public Sub limpiar()
+        dgbtabla.Rows.Clear()
         Try
 
             txtnumero.Text = ""
@@ -40,7 +41,6 @@
             lblcodeFormaPago.Text = ""
             cbxInfoClte.Checked = False
             cbxOk.Checked = False
-            dgbtabla.Rows.Clear()
             txtMoneda.Text = "LPS"
             txtDepositado.Text = "0"
 
@@ -54,9 +54,9 @@
 
             btnmodificar.Enabled = False
             btnguardar.Enabled = True
-
+            ' MsgBox("entra")
         Catch ex As Exception
-
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
     Private Sub deshabilitar()
@@ -171,7 +171,21 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
+    Private Sub lblcodeFormaPago_TextChanged(sender As Object, e As EventArgs) Handles lblcodeFormaPago.TextChanged
+        Try
+            Dim objFmaPgo As New ClsFormaPago
+            With objFmaPgo
+                .Codigo_FormaPago = lblcodeFormaPago.Text
+            End With
+            Dim dt As New DataTable
+            dt = objFmaPgo.buscarFormaPago()
+            Dim row As DataRow = dt.Rows(0)
+            txtcodigoFormaPago.Text = CStr(row("codigo"))
+            txtnombreFormaPago.Text = UCase(CStr(row("nombreBanco")))
+        Catch ex As Exception
+            'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
+        End Try
+    End Sub
     Private Sub M_Recibo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim btn As New DataGridViewButtonColumn()
         dgbtabla.Columns.Add(btn)
@@ -179,6 +193,5 @@
         btn.Text = "Eliminar"
         btn.Name = "btnEliminar"
         btn.UseColumnTextForButtonValue = True
-        btnmodificar.Enabled = False
     End Sub
 End Class

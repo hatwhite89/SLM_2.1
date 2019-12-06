@@ -132,5 +132,3 @@ Public Class ClsDetalleRecibo
     End Function
 
 End Class
-
-

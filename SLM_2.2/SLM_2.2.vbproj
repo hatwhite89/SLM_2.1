@@ -384,6 +384,12 @@
     <Compile Include="presentacion\M_BuscarFactura.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_BuscarRecibo.Designer.vb">
+      <DependentUpon>M_BuscarRecibo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarRecibo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_Caja.Designer.vb">
       <DependentUpon>M_Caja.vb</DependentUpon>
     </Compile>
@@ -661,6 +667,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_BuscarFactura.resx">
       <DependentUpon>M_BuscarFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_BuscarRecibo.resx">
+      <DependentUpon>M_BuscarRecibo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Caja.resx">
       <DependentUpon>M_Caja.vb</DependentUpon>
