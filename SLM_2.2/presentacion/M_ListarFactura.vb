@@ -5,6 +5,7 @@
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgbtabla.Columns("codigo").Visible = False
     End Sub
     Private Sub seleccionarFacturas()
         Dim objFact As New ClsFactura
@@ -26,11 +27,11 @@
                 n = MsgBox("¿Desea agregar la factura al recibo?", MsgBoxStyle.YesNo, "Validación")
             End If
             If n = vbYes Then
-                M_Recibo.dgbtabla.Rows.Add(New String() {dgbtabla.Rows(e.RowIndex).Cells(0).Value(), dgbtabla.Rows(e.RowIndex).Cells(4).Value(), dgbtabla.Rows(e.RowIndex).Cells(5).Value(), dgbtabla.Rows(e.RowIndex).Cells(2).Value(), "LPS", dgbtabla.Rows(e.RowIndex).Cells(6).Value(), "LPS", dgbtabla.Rows(e.RowIndex).Cells(6).Value()})
+                M_Recibo.dgbtabla.Rows.Add(New String() {"0", dgbtabla.Rows(e.RowIndex).Cells(1).Value(), dgbtabla.Rows(e.RowIndex).Cells(5).Value(), dgbtabla.Rows(e.RowIndex).Cells(6).Value(), dgbtabla.Rows(e.RowIndex).Cells(3).Value(), "LPS", dgbtabla.Rows(e.RowIndex).Cells(7).Value(), "LPS", dgbtabla.Rows(e.RowIndex).Cells(7).Value()})
                 M_Recibo.calcularTotal()
             End If
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox(ex.Message + "    subir", MsgBoxStyle.Critical)
         End Try
     End Sub
     Private Sub txtnumeroB_TextChanged(sender As Object, e As EventArgs) Handles txtnumeroB.TextChanged

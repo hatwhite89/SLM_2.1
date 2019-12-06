@@ -444,6 +444,12 @@
     <Compile Include="presentacion\M_InicioSesion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_ListarClientes.Designer.vb">
+      <DependentUpon>M_ListarClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ListarClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_ListarFactura.Designer.vb">
       <DependentUpon>M_ListarFactura.vb</DependentUpon>
     </Compile>
@@ -697,6 +703,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_InicioSesion.resx">
       <DependentUpon>M_InicioSesion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ListarClientes.resx">
+      <DependentUpon>M_ListarClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ListarFactura.resx">
       <DependentUpon>M_ListarFactura.vb</DependentUpon>

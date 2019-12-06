@@ -275,12 +275,14 @@
     End Sub
     Private Sub M_Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         M_ClienteVentana.Show()
-        Dim btn As New DataGridViewButtonColumn()
-        dgblistadoExamenes.Columns.Add(btn)
-        btn.HeaderText = "Eliminar"
-        btn.Text = "Eliminar"
-        btn.Name = "btnEliminar"
-        btn.UseColumnTextForButtonValue = True
+        If dgblistadoExamenes.Columns.Contains("btnEliminar") = False Then
+            Dim btn As New DataGridViewButtonColumn()
+            dgblistadoExamenes.Columns.Add(btn)
+            btn.HeaderText = "Eliminar"
+            btn.Text = "Eliminar"
+            btn.Name = "btnEliminar"
+            btn.UseColumnTextForButtonValue = True
+        End If
         totalFactura()
     End Sub
     Private Sub txtconvenio_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoConvenio.TextChanged

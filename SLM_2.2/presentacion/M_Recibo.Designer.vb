@@ -45,6 +45,7 @@ Partial Class M_Recibo
         Me.txtnombreFormaPago = New System.Windows.Forms.TextBox()
         Me.lblcodeFormaPago = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nroFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.texto = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -53,6 +54,7 @@ Partial Class M_Recibo
         Me.MontoBanco = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.mRec = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.valorRecibido = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lblEstado = New System.Windows.Forms.Label()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -271,20 +273,30 @@ Partial Class M_Recibo
         'dgbtabla
         '
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nroFactura, Me.cliente, Me.texto, Me.FechaPago, Me.mBanco, Me.MontoBanco, Me.mRec, Me.valorRecibido})
+        Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nroFactura, Me.cliente, Me.texto, Me.FechaPago, Me.mBanco, Me.MontoBanco, Me.mRec, Me.valorRecibido})
         Me.dgbtabla.Location = New System.Drawing.Point(37, 169)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
+        Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.Size = New System.Drawing.Size(600, 311)
         Me.dgbtabla.TabIndex = 146
+        '
+        'codigo
+        '
+        Me.codigo.HeaderText = "codigo"
+        Me.codigo.MinimumWidth = 6
+        Me.codigo.Name = "codigo"
+        Me.codigo.ReadOnly = True
+        Me.codigo.Width = 125
         '
         'nroFactura
         '
         Me.nroFactura.HeaderText = "Nro. Factura"
         Me.nroFactura.MinimumWidth = 6
         Me.nroFactura.Name = "nroFactura"
+        Me.nroFactura.ReadOnly = True
         Me.nroFactura.Width = 125
         '
         'cliente
@@ -343,12 +355,22 @@ Partial Class M_Recibo
         Me.valorRecibido.ReadOnly = True
         Me.valorRecibido.Width = 125
         '
+        'lblEstado
+        '
+        Me.lblEstado.AutoSize = True
+        Me.lblEstado.Location = New System.Drawing.Point(565, 133)
+        Me.lblEstado.Name = "lblEstado"
+        Me.lblEstado.Size = New System.Drawing.Size(0, 17)
+        Me.lblEstado.TabIndex = 147
+        Me.lblEstado.Visible = False
+        '
         'M_Recibo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(681, 622)
+        Me.Controls.Add(Me.lblEstado)
         Me.Controls.Add(Me.dgbtabla)
         Me.Controls.Add(Me.lblcodeFormaPago)
         Me.Controls.Add(Me.txtnombreFormaPago)
@@ -402,6 +424,7 @@ Partial Class M_Recibo
     Friend WithEvents txtnombreFormaPago As TextBox
     Friend WithEvents lblcodeFormaPago As Label
     Friend WithEvents dgbtabla As DataGridView
+    Friend WithEvents codigo As DataGridViewTextBoxColumn
     Friend WithEvents nroFactura As DataGridViewTextBoxColumn
     Friend WithEvents cliente As DataGridViewTextBoxColumn
     Friend WithEvents texto As DataGridViewTextBoxColumn
@@ -410,4 +433,5 @@ Partial Class M_Recibo
     Friend WithEvents MontoBanco As DataGridViewTextBoxColumn
     Friend WithEvents mRec As DataGridViewTextBoxColumn
     Friend WithEvents valorRecibido As DataGridViewTextBoxColumn
+    Friend WithEvents lblEstado As Label
 End Class

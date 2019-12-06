@@ -37,26 +37,24 @@
 
                 Dim objDetRbo As New ClsDetalleRecibo
                 objDetRbo.codigoRecibo_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-
-                For index As Integer = 0 To M_Recibo.dgbtabla.Columns.Count - 1
-                    M_Recibo.dgbtabla.Columns.RemoveAt(0)
+                Dim dt As New DataTable
+                dt = objDetRbo.BuscarDetalleRecibo()
+                Dim row As DataRow
+                For index As Integer = 0 To dt.Rows.Count - 1
+                    row = dt.Rows(index)
+                    M_Recibo.dgbtabla.Rows.Add(New String() {CStr(row("codigo")), CStr(row("Nro_Factura")), CStr(row("Cliente")), CStr(row("Texto")), CStr(row("Fecha_Pago")), CStr(row("M_Banco")), CStr(row("Monto_Banco")), CStr(row("M_Rec")), CStr(row("ValorRecibido"))})
                 Next
 
-                Dim dv As DataView = objDetRbo.BuscarDetalleRecibo.DefaultView
-                M_Recibo.dgbtabla.DataSource = dv
-                M_Recibo.dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-
-                M_Recibo.dgbtabla.Columns("codigo").Visible = False
-
-                M_Recibo.btnmodificar.Enabled = True
                 M_Recibo.btnguardar.Enabled = False
-                'M_Recibo.deshabilitar()
-                'If (M_Recibo.cbxOk.Checked = "0") Then
-                '    M_Recibo.()
-                'Else
-                '    M_Recibo.btnmodificar.Enabled = False
-                'End If
-                'Me.Close()
+
+                If (M_Recibo.cbxOk.Checked = "1") Then
+                    M_Recibo.lblEstado.Text = "OK"
+                    M_Recibo.deshabilitar()
+                Else
+                    M_Recibo.lblEstado.Text = "Modificar"
+                    M_Recibo.btnmodificar.Enabled = True
+                End If
+
                 M_Recibo.ShowDialog()
             End If
         Catch ex As Exception
@@ -97,6 +95,7 @@
     End Sub
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
         'Me.Close
+        M_Recibo.lblEstado.Text = "Nuevo"
         M_Recibo.limpiar()
         M_Recibo.ShowDialog()
     End Sub
