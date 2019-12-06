@@ -135,7 +135,7 @@ Partial Class E_GrupoExamen
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(41, 40)
+        Me.lblcodigo.Location = New System.Drawing.Point(16, 40)
         Me.lblcodigo.Name = "lblcodigo"
         Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
         Me.lblcodigo.TabIndex = 115
@@ -143,7 +143,7 @@ Partial Class E_GrupoExamen
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(106, 37)
+        Me.txtcodigo.Location = New System.Drawing.Point(74, 37)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(100, 22)
         Me.txtcodigo.TabIndex = 114
