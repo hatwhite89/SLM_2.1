@@ -23,7 +23,6 @@ Public Class ClsCuenta
             tipoCuenta = value
         End Set
     End Property
-
     'nombre
     Public Property Nombr_e As String
         Get
@@ -33,7 +32,6 @@ Public Class ClsCuenta
             nombre = value
         End Set
     End Property
-
     'Cuenta
     Public Property Cuent_a As Integer
         Get
@@ -43,7 +41,6 @@ Public Class ClsCuenta
             cuenta = value
         End Set
     End Property
-
     'Codigo de Cuenta
     Public Property Cod_Cuenta As Integer
         Get
@@ -53,7 +50,6 @@ Public Class ClsCuenta
             codCuenta = value
         End Set
     End Property
-
     'Estado
     Public Property Esta_do As Boolean
         Get
@@ -301,7 +297,6 @@ Public Class ClsCuenta
     End Function
 
     'Comprabar si cuenta existe
-
     Public Function Comprobar() As DataTable
 
         Dim objCon As New ClsConnection

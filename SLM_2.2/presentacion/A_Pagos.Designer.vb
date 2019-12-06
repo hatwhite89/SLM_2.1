@@ -57,9 +57,11 @@ Partial Class frmPagos
         Me.gbxInfo = New System.Windows.Forms.GroupBox()
         Me.chkPagado = New System.Windows.Forms.CheckBox()
         Me.gbxDetalle = New System.Windows.Forms.GroupBox()
+        Me.lblFila = New System.Windows.Forms.Label()
         Me.lblTotalSuma = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnRegresar = New System.Windows.Forms.Button()
+        Me.lblNombreBanco = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dtDetallePagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxInfo.SuspendLayout()
@@ -374,6 +376,8 @@ Partial Class frmPagos
         '
         'gbxDetalle
         '
+        Me.gbxDetalle.Controls.Add(Me.lblNombreBanco)
+        Me.gbxDetalle.Controls.Add(Me.lblFila)
         Me.gbxDetalle.Controls.Add(Me.lblTotalSuma)
         Me.gbxDetalle.Controls.Add(Me.Label4)
         Me.gbxDetalle.Controls.Add(Me.dtDetallePagos)
@@ -383,6 +387,15 @@ Partial Class frmPagos
         Me.gbxDetalle.TabIndex = 26
         Me.gbxDetalle.TabStop = False
         Me.gbxDetalle.Text = "Detalle de Pago"
+        '
+        'lblFila
+        '
+        Me.lblFila.AutoSize = True
+        Me.lblFila.Location = New System.Drawing.Point(11, 240)
+        Me.lblFila.Name = "lblFila"
+        Me.lblFila.Size = New System.Drawing.Size(39, 13)
+        Me.lblFila.TabIndex = 23
+        Me.lblFila.Text = "Label3"
         '
         'lblTotalSuma
         '
@@ -413,6 +426,15 @@ Partial Class frmPagos
         Me.btnRegresar.Size = New System.Drawing.Size(33, 37)
         Me.btnRegresar.TabIndex = 27
         Me.btnRegresar.UseVisualStyleBackColor = False
+        '
+        'lblNombreBanco
+        '
+        Me.lblNombreBanco.AutoSize = True
+        Me.lblNombreBanco.Location = New System.Drawing.Point(56, 240)
+        Me.lblNombreBanco.Name = "lblNombreBanco"
+        Me.lblNombreBanco.Size = New System.Drawing.Size(66, 13)
+        Me.lblNombreBanco.TabIndex = 24
+        Me.lblNombreBanco.Text = "NameBanco"
         '
         'frmPagos
         '
@@ -482,4 +504,6 @@ Partial Class frmPagos
     Friend WithEvents FORMAP As DataGridViewTextBoxColumn
     Friend WithEvents NroCheque As DataGridViewTextBoxColumn
     Friend WithEvents chkPagado As CheckBox
+    Friend WithEvents lblFila As Label
+    Friend WithEvents lblNombreBanco As Label
 End Class

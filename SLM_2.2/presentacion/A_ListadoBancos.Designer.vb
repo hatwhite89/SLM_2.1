@@ -27,6 +27,7 @@ Partial Class A_ListadoBancos
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.dtBancos = New System.Windows.Forms.DataGridView()
+        Me.lblFormBanco = New System.Windows.Forms.Label()
         CType(Me.dtBancos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -75,12 +76,22 @@ Partial Class A_ListadoBancos
         Me.dtBancos.Size = New System.Drawing.Size(223, 264)
         Me.dtBancos.TabIndex = 3
         '
+        'lblFormBanco
+        '
+        Me.lblFormBanco.AutoSize = True
+        Me.lblFormBanco.Location = New System.Drawing.Point(12, 9)
+        Me.lblFormBanco.Name = "lblFormBanco"
+        Me.lblFormBanco.Size = New System.Drawing.Size(27, 13)
+        Me.lblFormBanco.TabIndex = 4
+        Me.lblFormBanco.Text = "LblF"
+        '
         'A_ListadoBancos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(247, 324)
+        Me.Controls.Add(Me.lblFormBanco)
         Me.Controls.Add(Me.dtBancos)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
@@ -98,4 +109,5 @@ Partial Class A_ListadoBancos
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents dtBancos As DataGridView
+    Friend WithEvents lblFormBanco As Label
 End Class

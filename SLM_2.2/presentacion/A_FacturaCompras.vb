@@ -65,7 +65,7 @@
         End Try
 
         Me.Close()
-        A_ListadoFacturaCompra.ShowDialog()
+        A_ListadoFacturaCompra.Show()
 
     End Sub
 
@@ -86,10 +86,12 @@
             End With
             'Capturar informacion de cuenta
             Dim dt As New DataTable
-            dt = Cuenta.BuscarCuenta
+            dt = Cuenta.Comprobar
+
 
 
             If dt.Rows.Count > 0 Then
+
                 Dim row As DataRow = dt.Rows(0)
                 Dim nombre As String
                 nombre = row("nombre")
@@ -133,8 +135,6 @@
 
 
             End If
-
-
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -240,6 +240,5 @@
         cmb.Name = "cbx"
 
     End Sub
-
 
 End Class

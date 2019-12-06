@@ -196,4 +196,15 @@ Public Class frmFormaPago
         btnGuardar.Visible = True
 
     End Sub
+
+    Private Sub btnBuscarBanco_Click(sender As Object, e As EventArgs)
+
+
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnBuscarBanco.Click
+        A_ListadoBancos.lblFormBanco.Text = "1"
+        A_ListadoBancos.ShowDialog()
+    End Sub
 End Class
