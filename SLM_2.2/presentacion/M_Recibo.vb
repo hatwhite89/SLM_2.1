@@ -96,6 +96,14 @@
         Next
         Return RTrim(texto)
     End Function
+    Public Function validarFactura(ByVal numeroFactura As Integer)
+        For index As Integer = 0 To dgbtabla.Rows.Count - 2
+            If (dgbtabla.Rows(index).Cells(1).Value() = numeroFactura) Then
+                Return 1
+            End If
+        Next
+        Return 0
+    End Function
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()

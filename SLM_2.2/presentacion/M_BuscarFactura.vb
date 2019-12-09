@@ -1,10 +1,7 @@
 ﻿Public Class M_BuscarFactura
     Private Sub M_BuscarCotizacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim objFact As New ClsFactura
-        Dim dv As DataView = objFact.SeleccionarFactura.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        seleccionarFacturas()
+        Me.dgbtabla.Columns("codigo").Visible = False
     End Sub
     Private Sub seleccionarFacturas()
         Dim objFact As New ClsFactura
@@ -27,7 +24,7 @@
             End If
             If n = vbYes Then
                 Dim objFact As New ClsFactura
-                objFact.numero_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                objFact.numero_ = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
 
                 Dim dt As New DataTable
                 dt = objFact.BuscarFacturaNumero()
@@ -56,7 +53,7 @@
                 M_Factura.cbxok.Checked = CStr(row("ok"))
 
                 Dim objDetFact As New ClsDetalleFactura
-                objDetFact.numeroFactura_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                objDetFact.numeroFactura_ = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
                 dt = objDetFact.BuscarDetalleFactura()
                 For index As Integer = 0 To dt.Rows.Count - 1
                     row = dt.Rows(index)

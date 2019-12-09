@@ -7,6 +7,7 @@
         M_Medico.ShowDialog()
     End Sub
     Private Sub btnbuscarCliente_Click(sender As Object, e As EventArgs) Handles btnbuscarCliente.Click
+        M_Cliente.limpiar()
         M_Cliente.ShowDialog()
     End Sub
     Private Sub txtcodigoCliente_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoCliente.TextChanged

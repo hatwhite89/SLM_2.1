@@ -224,10 +224,8 @@
         End If
         txtnombre1.Select(txtnombre1.Text.Length, 0)
     End Sub
-    Private Sub txtnombre2_TextChanged(sender As Object, e As EventArgs)
-        txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
-    End Sub
-    Private Sub txtnombre2_KeyPress(sender As Object, e As KeyPressEventArgs)
+
+    Private Sub txtnombre2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombre2.KeyPress
         If Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
             e.Handled = True
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -243,10 +241,8 @@
         End If
         txtnombre2.Select(txtnombre2.Text.Length, 0)
     End Sub
-    Private Sub txtapellido1_TextChanged(sender As Object, e As EventArgs)
-        txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
-    End Sub
-    Private Sub txtapellido1_KeyPress(sender As Object, e As KeyPressEventArgs)
+
+    Private Sub txtapellido1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtapellido1.KeyPress
         If Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
             e.Handled = True
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -364,7 +360,7 @@
             e.Handled = True
         End If
     End Sub
-    Private Sub limpiar()
+    Public Sub limpiar()
         txtcorreo.ReadOnly = False
         txtcorreo2.ReadOnly = False
         txtscanId.ReadOnly = False
@@ -572,9 +568,6 @@
             MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
         End If
     End Sub
-    Private Sub M_Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        limpiar()
-    End Sub
     Private Sub btncategoria_Click(sender As Object, e As EventArgs) Handles btncategoria.Click
         M_Categoria.ShowDialog()
     End Sub
@@ -636,5 +629,34 @@
     Private Sub txtnombre2_TextChanged_1(sender As Object, e As EventArgs) Handles txtnombre2.TextChanged
         txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
     End Sub
-
+    Private Sub lblcodeTerminoPago_TextChanged(sender As Object, e As EventArgs) Handles lblcodeTerminoPago.TextChanged
+        Try
+            Dim objTerm As New ClsTerminoPago
+            With objTerm
+                .codigo_ = lblcodeTerminoPago.Text
+            End With
+            Dim dt As New DataTable
+            dt = objTerm.BuscarTerminoPagoNumero()
+            Dim row As DataRow = dt.Rows(0)
+            txtnombreTerminos.Text = CStr(row("descripcion"))
+            txtcodigoTermino.Text = CStr(row("codigoTerminoPago"))
+        Catch ex As Exception
+            'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
+        End Try
+    End Sub
+    Private Sub lblcodeCategoria_TextChanged(sender As Object, e As EventArgs) Handles lblcodeCategoria.TextChanged
+        Try
+            Dim objCat As New ClsCategoria
+            With objCat
+                .codigo_ = lblcodeCategoria.Text
+            End With
+            Dim dt As New DataTable
+            dt = objCat.BuscarCategoriaNumero()
+            Dim row As DataRow = dt.Rows(0)
+            txtnombreCategoria.Text = CStr(row("descripcion"))
+            txtcodigoCategoria.Text = CStr(row("codigoCategoriaCliente"))
+        Catch ex As Exception
+            'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
+        End Try
+    End Sub
 End Class

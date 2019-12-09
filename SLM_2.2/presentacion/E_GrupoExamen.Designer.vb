@@ -230,7 +230,7 @@ Partial Class E_GrupoExamen
         Me.Controls.Add(Me.gbxcaja)
         Me.KeyPreview = True
         Me.Name = "E_GrupoExamen"
-        Me.Text = "M_GrupoExamen"
+        Me.Text = "Grupo Examen"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()

@@ -1,11 +1,25 @@
 ﻿Public Class M_ListarClientes
+    Dim objCli As New ClsCliente
+    Dim dv As DataView = objCli.SeleccionarClientes.DefaultView
     Private Sub M_ListarClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SeleccionarClientes()
-        'Me.dgbtabla.Columns("codigo").Visible = False
+        Me.dgbtabla.Columns("scanId").Visible = False
+        Me.dgbtabla.Columns("rtn").Visible = False
+        Me.dgbtabla.Columns("nombre1").Visible = False
+        Me.dgbtabla.Columns("nombre2").Visible = False
+        Me.dgbtabla.Columns("apellido1").Visible = False
+        Me.dgbtabla.Columns("apellido2").Visible = False
+        Me.dgbtabla.Columns("fechaNacimiento").Visible = False
+        Me.dgbtabla.Columns("direccion").Visible = False
+        Me.dgbtabla.Columns("telTrabajo").Visible = False
+        Me.dgbtabla.Columns("correo2").Visible = False
+        Me.dgbtabla.Columns("codigoClasificacion").Visible = False
+        Me.dgbtabla.Columns("codigoCategoria").Visible = False
+        Me.dgbtabla.Columns("codigoTerminoPago").Visible = False
+        Me.dgbtabla.Columns("genero").Visible = False
     End Sub
     Private Sub SeleccionarClientes()
-        Dim objCli As New ClsCliente
-        Dim dv As DataView = objCli.SeleccionarClientes.DefaultView
+        dv = objCli.SeleccionarClientes.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -23,63 +37,99 @@
                 n = MsgBox("¿Desea ver los datos del paciente?", MsgBoxStyle.YesNo, "Validación")
             End If
             If n = vbYes Then
-                M_Recibo.dgbtabla.Rows.Add(New String() {"0", dgbtabla.Rows(e.RowIndex).Cells(1).Value(), dgbtabla.Rows(e.RowIndex).Cells(5).Value(), dgbtabla.Rows(e.RowIndex).Cells(6).Value(), dgbtabla.Rows(e.RowIndex).Cells(3).Value(), "LPS", dgbtabla.Rows(e.RowIndex).Cells(7).Value(), "LPS", dgbtabla.Rows(e.RowIndex).Cells(7).Value()})
-                M_Cliente.txtcodigo.Text = ""
-                M_Cliente.txtnombreCompleto.Text = ""
-                M_Cliente.txtscanId.Text = ""
-                M_Cliente.mtxtidentidadClienteB.Text = ""
-                M_Cliente.txtrtn.Text = ""
-                M_Cliente.txtnombre1.Text = ""
-                M_Cliente.txtnombre2.Text = ""
-                M_Cliente.txtapellido1.Text = ""
-                M_Cliente.txtapellido2.Text = ""
-                M_Cliente.dtpfechaNacimiento.Text = ""
+                M_Cliente.limpiar()
+                M_Cliente.txtcodigo.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                M_Cliente.txtnombreCompleto.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                M_Cliente.txtcorreo.Text = dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+                M_Cliente.txttelefonoCasa.Text = dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+                M_Cliente.txtcelular.Text = dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+                M_Cliente.mtxtidentidad.Text = dgbtabla.Rows(e.RowIndex).Cells(5).Value()
 
-                M_Cliente.rtxtdireccion.Text = ""
-                M_Cliente.txttelefonoCasa.Text = ""
-                M_Cliente.txttelefonoTrabajo.Text = ""
-                M_Cliente.txtcelular.Text = ""
-                M_Cliente.txtcorreo.Text = ""
-                M_Cliente.txtcorreo2.Text = ""
-                M_Cliente.txtcodigoClasificacion.Text = ""
-                M_Cliente.lblcodeCategoria.Text = ""
-                M_Cliente.lblcodeTerminoPago.Text = ""
+                M_Cliente.txtscanId.Text = dgbtabla.Rows(e.RowIndex).Cells(6).Value()
+                M_Cliente.txtrtn.Text = dgbtabla.Rows(e.RowIndex).Cells(7).Value()
+                M_Cliente.txtnombre1.Text = dgbtabla.Rows(e.RowIndex).Cells(8).Value()
+                M_Cliente.txtnombre2.Text = dgbtabla.Rows(e.RowIndex).Cells(9).Value()
+                M_Cliente.txtapellido1.Text = dgbtabla.Rows(e.RowIndex).Cells(10).Value()
+                M_Cliente.txtapellido2.Text = dgbtabla.Rows(e.RowIndex).Cells(11).Value()
+                M_Cliente.dtpfechaNacimiento.Text = dgbtabla.Rows(e.RowIndex).Cells(12).Value()
+
+                M_Cliente.rtxtdireccion.Text = dgbtabla.Rows(e.RowIndex).Cells(13).Value()
+                M_Cliente.txttelefonoTrabajo.Text = dgbtabla.Rows(e.RowIndex).Cells(14).Value()
+                M_Cliente.txtcorreo2.Text = dgbtabla.Rows(e.RowIndex).Cells(15).Value()
+                M_Cliente.txtcodigoClasificacion.Text = dgbtabla.Rows(e.RowIndex).Cells(16).Value()
+                M_Cliente.lblcodeCategoria.Text = dgbtabla.Rows(e.RowIndex).Cells(17).Value()
+                M_Cliente.lblcodeTerminoPago.Text = dgbtabla.Rows(e.RowIndex).Cells(18).Value()
+
+                If (dgbtabla.Rows(e.RowIndex).Cells(19).Value() = "Masculino") Then
+                    M_Cliente.rbtnmasculino.Checked = True
+                ElseIf (dgbtabla.Rows(e.RowIndex).Cells(19).Value() = "Femenino") Then
+                    M_Cliente.rbtnfemenino.Checked = True
+                Else
+                    M_Cliente.rbtnmasculino.Checked = False
+                    M_Cliente.rbtnfemenino.Checked = False
+                End If
+                M_Cliente.gbxinfoCliente.Visible = True
+                M_Cliente.ShowDialog()
             End If
         Catch ex As Exception
-            MsgBox(ex.Message + "    subir", MsgBoxStyle.Critical)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-    Private Sub txtnumeroB_TextChanged(sender As Object, e As EventArgs) Handles txtIdentidadB.TextChanged
-        If (txtIdentidadB.Text <> "") Then
-            Try
-                Dim objCli As New ClsCliente
-                objCli.Identidad1 = txtIdentidadB.Text
-                Dim dv As DataView = objCli.BuscarCliente.DefaultView
-                dgbtabla.DataSource = dv
-                lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-            Catch ex As Exception
-                MsgBox("No existe la factura.", MsgBoxStyle.Critical, "Validación")
-            End Try
-        Else
+
+    Private Sub txtIdentidadB_TextChanged(sender As Object, e As EventArgs) Handles txtIdentidadB.TextChanged
+        dv.RowFilter = String.Format("Identidad Like '%{0}%'", txtIdentidadB.Text)
+        lblcantidad.Text = dv.Count
+
+
+        If lblcantidad.Text = "0" Then
+            MsgBox("No existe el paciente.", MsgBoxStyle.Exclamation)
+            txtIdentidadB.Text = ""
             SeleccionarClientes()
         End If
     End Sub
-    Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtNombreB.TextChanged
-        If (txtNombreB.Text <> "") Then
-            Try
-                Dim objCli As New ClsCliente
-                objCli.NombreCompleto1 = txtNombreB.Text
-                Dim dv As DataView = objCli.BuscarClienteNombre.DefaultView
-                dgbtabla.DataSource = dv
-                lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-            Catch ex As Exception
-                MsgBox("No existe la factura.", MsgBoxStyle.Critical, "Validación")
-            End Try
-        Else
+
+    Private Sub txtNombreB_TextChanged(sender As Object, e As EventArgs) Handles txtNombreB.TextChanged
+        dv.RowFilter = String.Format("Nombre Like '%{0}%'", txtNombreB.Text)
+        lblcantidad.Text = dv.Count
+
+
+        If lblcantidad.Text = "0" Then
+            MsgBox("No existe el paciente.", MsgBoxStyle.Exclamation)
+            txtNombreB.Text = ""
             SeleccionarClientes()
         End If
     End Sub
+    'Private Sub txtnumeroB_TextChanged(sender As Object, e As EventArgs) Handles txtIdentidadB.TextChanged
+    '    If (txtIdentidadB.Text <> "") Then
+    '        Try
+    '            Dim objCli As New ClsCliente
+    '            objCli.Identidad1 = txtIdentidadB.Text
+    '            Dim dv As DataView = objCli.BuscarCliente.DefaultView
+    '            dgbtabla.DataSource = dv
+    '            lblcantidad.Text = dv.Count
+    '            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+    '        Catch ex As Exception
+    '            MsgBox("No existe la factura.", MsgBoxStyle.Critical, "Validación")
+    '        End Try
+    '    Else
+    '        SeleccionarClientes()
+    '    End If
+    'End Sub
+    'Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtNombreB.TextChanged
+    '    If (txtNombreB.Text <> "") Then
+    '        Try
+    '            Dim objCli As New ClsCliente
+    '            objCli.NombreCompleto1 = txtNombreB.Text
+    '            Dim dv As DataView = objCli.BuscarClienteNombre.DefaultView
+    '            dgbtabla.DataSource = dv
+    '            lblcantidad.Text = dv.Count
+    '            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+    '        Catch ex As Exception
+    '            MsgBox("No existe la factura.", MsgBoxStyle.Critical, "Validación")
+    '        End Try
+    '    Else
+    '        SeleccionarClientes()
+    '    End If
+    'End Sub
 
 End Class
