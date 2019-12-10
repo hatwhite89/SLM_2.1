@@ -104,6 +104,8 @@ Partial Class M_BuscarRecibo
         '
         'dgbtabla
         '
+        Me.dgbtabla.AllowUserToAddRows = False
+        Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(33, 115)
         Me.dgbtabla.Name = "dgbtabla"

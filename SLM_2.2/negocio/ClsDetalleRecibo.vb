@@ -111,6 +111,39 @@ Public Class ClsDetalleRecibo
         Return par_sal
 
     End Function
+    Public Function EliminarDetalleRecibo() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "M_slmEliminarDetalleRecibo"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigo_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
     Public Function BuscarDetalleRecibo() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection

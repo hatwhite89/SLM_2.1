@@ -1,10 +1,7 @@
 ﻿Public Class M_ListarFactura
-    Private Sub M_BuscarCotizacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim objFact As New ClsFactura
-        Dim dv As DataView = objFact.SeleccionarFactura.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+    Private Sub M_ListarFactura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        seleccionarFacturas()
+        Me.dgbtabla.Columns("codigo").Visible = False
     End Sub
     Private Sub seleccionarFacturas()
         Dim objFact As New ClsFactura
@@ -26,8 +23,12 @@
                 n = MsgBox("¿Desea agregar la factura al recibo?", MsgBoxStyle.YesNo, "Validación")
             End If
             If n = vbYes Then
-                M_Recibo.dgbtabla.Rows.Add(New String() {dgbtabla.Rows(e.RowIndex).Cells(0).Value(), dgbtabla.Rows(e.RowIndex).Cells(4).Value(), dgbtabla.Rows(e.RowIndex).Cells(5).Value(), dgbtabla.Rows(e.RowIndex).Cells(2).Value(), "LPS", dgbtabla.Rows(e.RowIndex).Cells(6).Value(), "LPS", dgbtabla.Rows(e.RowIndex).Cells(6).Value()})
-                M_Recibo.calcularTotal()
+                If M_Recibo.validarFactura(Convert.ToInt64(dgbtabla.Rows(e.RowIndex).Cells(1).Value())) = 0 Then
+                    M_Recibo.dgbtabla.Rows.Add(New String() {"0", dgbtabla.Rows(e.RowIndex).Cells(1).Value(), dgbtabla.Rows(e.RowIndex).Cells(5).Value(), dgbtabla.Rows(e.RowIndex).Cells(6).Value(), dgbtabla.Rows(e.RowIndex).Cells(3).Value(), "LPS", dgbtabla.Rows(e.RowIndex).Cells(7).Value(), "LPS", dgbtabla.Rows(e.RowIndex).Cells(7).Value()})
+                    M_Recibo.calcularTotal()
+                Else
+                    MsgBox("Ya existe la factura en el recibo", MsgBoxStyle.Critical)
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)

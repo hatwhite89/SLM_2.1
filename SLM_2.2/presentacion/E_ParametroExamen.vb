@@ -2,19 +2,24 @@
     Private Sub eg_frmParametroExamen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         limpiar()
 
-        Dim cmb As New DataGridViewComboBoxColumn()
-        dgbtabla.Columns.Add(cmb)
-        cmb.HeaderText = "Val. Por Defecto"
-        cmb.Items.Add("No")
-        cmb.Items.Add("Si")
-        cmb.Name = "cbx"
+        If dgbtabla.Columns.Contains("cbx") = False Then
+            Dim cmb As New DataGridViewComboBoxColumn()
+            dgbtabla.Columns.Add(cmb)
+            cmb.HeaderText = "Val. Por Defecto"
+            cmb.Items.Add("No")
+            cmb.Items.Add("Si")
+            cmb.Name = "cbx"
+        End If
 
-        Dim btn As New DataGridViewButtonColumn()
-        dgbtabla.Columns.Add(btn)
-        btn.HeaderText = "Eliminar"
-        btn.Text = "Eliminar"
-        btn.Name = "btnEliminar"
-        btn.UseColumnTextForButtonValue = True
+        If dgbtabla.Columns.Contains("btnEliminar") = False Then
+            Dim btn As New DataGridViewButtonColumn()
+            dgbtabla.Columns.Add(btn)
+            btn.HeaderText = "Eliminar"
+            btn.Text = "Eliminar"
+            btn.Name = "btnEliminar"
+            btn.UseColumnTextForButtonValue = True
+        End If
+
     End Sub
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         limpiar()

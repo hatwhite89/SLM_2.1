@@ -1,4 +1,5 @@
 ﻿Public Class M_Recibo
+    Dim codigoDetalleRecibo As ArrayList = New ArrayList()
     Private Sub btnbuscarUnidad_Click(sender As Object, e As EventArgs) Handles btnbuscarFormaPago.Click
         A_ListarFormasPagoPF.lblForm.Text = "M_Recibo"
         A_ListarFormasPagoPF.ShowDialog()
@@ -30,7 +31,7 @@
         End If
     End Sub
     Public Sub limpiar()
-        dgbtabla.Rows.Clear()
+
         Try
 
             txtnumero.Text = ""
@@ -44,32 +45,36 @@
             txtMoneda.Text = "LPS"
             txtDepositado.Text = "0"
 
+            dgbtabla.Rows.Clear()
+
             dtpFechaTrans.Enabled = True
             rtxtReferencia.ReadOnly = False
             txtcodigoFormaPago.ReadOnly = False
             cbxInfoClte.Enabled = True
             cbxOk.Enabled = True
-            'dgbtabla.ReadOnly = False
             txtMoneda.ReadOnly = False
 
+            btnbuscarFormaPago.Enabled = True
             btnmodificar.Enabled = False
             btnguardar.Enabled = True
-            ' MsgBox("entra")
+
+            codigoDetalleRecibo.Clear()
+
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-    Private Sub deshabilitar()
+    Public Sub deshabilitar()
 
         dtpFechaTrans.Enabled = False
         rtxtReferencia.ReadOnly = True
         txtcodigoFormaPago.ReadOnly = True
         cbxInfoClte.Enabled = False
         cbxOk.Enabled = False
-        'dgbtabla.ReadOnly = True
         txtMoneda.ReadOnly = True
 
-        btnmodificar.Enabled = True
+        btnbuscarFormaPago.Enabled = False
+        btnmodificar.Enabled = False
         btnguardar.Enabled = False
 
     End Sub
@@ -90,6 +95,14 @@
             End If
         Next
         Return RTrim(texto)
+    End Function
+    Public Function validarFactura(ByVal numeroFactura As Integer)
+        For index As Integer = 0 To dgbtabla.Rows.Count - 2
+            If (dgbtabla.Rows(index).Cells(1).Value() = numeroFactura) Then
+                Return 1
+            End If
+        Next
+        Return 0
     End Function
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -125,7 +138,7 @@
                     For index As Integer = 0 To dgbtabla.Rows.Count - 2
                         With objDetRbo
                             .codigoRecibo_ = txtnumero.Text
-                            .numeroFactura_ = dgbtabla.Rows(index).Cells(0).Value()
+                            .numeroFactura_ = dgbtabla.Rows(index).Cells(1).Value()
                         End With
                         If objDetRbo.RegistrarNuevoDetalleRecibo() = 0 Then
                             MsgBox("Error al querer insertar el detalle del recibo.")
@@ -146,25 +159,81 @@
     End Sub
 
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
+        Try
+            rtxtReferencia.Text = sinDobleEspacio(rtxtReferencia.Text)
+            If (Trim(rtxtReferencia.Text) <> "" And Trim(txtcodigoFormaPago.Text) <> "" And dgbtabla.Rows.Count > 1 And Trim(txtMoneda.Text) <> "") Then
 
+                Dim objRbo As New ClsRecibo
+                With objRbo
+                    .numero_ = txtnumero.Text
+                    .fechaTrans_ = dtpFechaTrans.Value
+                    .referencia_ = rtxtReferencia.Text
+                    .codigoFormaPago_ = lblcodeFormaPago.Text
+                    .infoClte_ = cbxInfoClte.Checked
+                    .ok_ = cbxOk.Checked
+                    .moneda_ = txtMoneda.Text
+                    .depositado_ = Convert.ToDouble(txtDepositado.Text)
+                End With
+
+                If objRbo.ModificarRecibo() = 1 Then
+                    Dim objDetRbo As New ClsDetalleRecibo
+                    For index As Integer = 0 To codigoDetalleRecibo.Count - 1
+                        objDetRbo.codigo_ = Convert.ToInt64(codigoDetalleRecibo(index))
+                        If objDetRbo.EliminarDetalleRecibo() <> 1 Then
+                            MsgBox("Error al querer modificar el recibo")
+                        End If
+                    Next
+                    codigoDetalleRecibo.Clear()
+                    For index As Integer = 0 To dgbtabla.Rows.Count - 2
+                        If dgbtabla.Rows(index).Cells(0).Value() = 0 Then
+                            With objDetRbo
+                                .codigoRecibo_ = txtnumero.Text
+                                .numeroFactura_ = dgbtabla.Rows(index).Cells(1).Value()
+                            End With
+                            If objDetRbo.RegistrarNuevoDetalleRecibo() = 0 Then
+                                MsgBox("Error al querer insertar el detalle del recibo.")
+                            End If
+                        End If
+                    Next
+                    MsgBox("Modificado correctamente.")
+                End If
+
+                If (cbxOk.Checked) Then
+                    deshabilitar()
+                End If
+
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
     End Sub
 
     Public Sub calcularTotal()
         Dim total As Double
         For index As Integer = 0 To dgbtabla.Rows.Count - 1
-            total += Convert.ToDouble(dgbtabla.Rows(index).Cells(7).Value())
+            total += Convert.ToDouble(dgbtabla.Rows(index).Cells(8).Value())
         Next
         txtDepositado.Text = total
     End Sub
     Private Sub dgbtabla_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            If e.ColumnIndex = 0 Then
-                M_ListarFactura.ShowDialog()
-            ElseIf e.ColumnIndex = 8 Then
-                Dim n As String = MsgBox("¿Desea eliminar la factura del recibo?", MsgBoxStyle.YesNo, "Validación")
-                If n = vbYes Then
-                    dgbtabla.Rows.Remove(dgbtabla.Rows(e.RowIndex.ToString))
-                    calcularTotal()
+            If e.RowIndex >= 0 Then
+                If e.ColumnIndex = 1 And lblEstado.Text <> "OK" Then
+                    M_ListarFactura.ShowDialog()
+                ElseIf e.ColumnIndex = 9 And lblEstado.Text = "Nuevo" Then
+                    Dim n As String = MsgBox("¿Desea eliminar la factura del recibo?", MsgBoxStyle.YesNo, "Validación")
+                    If n = vbYes Then
+                        dgbtabla.Rows.Remove(dgbtabla.Rows(e.RowIndex.ToString))
+                        calcularTotal()
+                    End If
+                ElseIf e.ColumnIndex = 9 And lblEstado.Text = "Modificar" And Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value() <> "" Then
+                    Dim n As String = MsgBox("¿Desea eliminar la factura del recibo?", MsgBoxStyle.YesNo, "Validación")
+                    If n = vbYes Then
+                        codigoDetalleRecibo.Add(Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value())
+                        dgbtabla.Rows.Remove(dgbtabla.Rows(e.RowIndex.ToString))
+                        calcularTotal()
+                    End If
                 End If
             End If
         Catch ex As Exception
@@ -187,11 +256,19 @@
         End Try
     End Sub
     Private Sub M_Recibo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim btn As New DataGridViewButtonColumn()
-        dgbtabla.Columns.Add(btn)
-        btn.HeaderText = "Eliminar"
-        btn.Text = "Eliminar"
-        btn.Name = "btnEliminar"
-        btn.UseColumnTextForButtonValue = True
+        Try
+            Me.dgbtabla.Columns("codigo").Visible = False
+
+            If dgbtabla.Columns.Contains("btnEliminar") = False Then
+                Dim btn As New DataGridViewButtonColumn()
+                dgbtabla.Columns.Add(btn)
+                btn.HeaderText = "Eliminar"
+                btn.Text = "Eliminar"
+                btn.Name = "btnEliminar"
+                btn.UseColumnTextForButtonValue = True
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
