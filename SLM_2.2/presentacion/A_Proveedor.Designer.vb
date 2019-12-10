@@ -37,6 +37,8 @@ Partial Class A_Proveedor
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dtProveedores = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtIdTribu = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.btnBuscarCate = New System.Windows.Forms.Button()
         Me.lblCodCategoria = New System.Windows.Forms.Label()
         Me.txtCategoria = New System.Windows.Forms.TextBox()
@@ -53,11 +55,13 @@ Partial Class A_Proveedor
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtNombreBusqueda = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtIdTribu = New System.Windows.Forms.TextBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         CType(Me.dtProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -167,7 +171,7 @@ Partial Class A_Proveedor
         Me.dtProveedores.Location = New System.Drawing.Point(9, 54)
         Me.dtProveedores.Name = "dtProveedores"
         Me.dtProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtProveedores.Size = New System.Drawing.Size(657, 256)
+        Me.dtProveedores.Size = New System.Drawing.Size(387, 370)
         Me.dtProveedores.TabIndex = 12
         '
         'GroupBox1
@@ -204,6 +208,22 @@ Partial Class A_Proveedor
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Proveedor"
+        '
+        'txtIdTribu
+        '
+        Me.txtIdTribu.Location = New System.Drawing.Point(111, 135)
+        Me.txtIdTribu.Name = "txtIdTribu"
+        Me.txtIdTribu.Size = New System.Drawing.Size(114, 20)
+        Me.txtIdTribu.TabIndex = 23
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(13, 139)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(66, 13)
+        Me.Label11.TabIndex = 22
+        Me.Label11.Text = "Id. Tributario"
         '
         'btnBuscarCate
         '
@@ -333,9 +353,9 @@ Partial Class A_Proveedor
         Me.GroupBox2.Controls.Add(Me.txtNombreBusqueda)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.dtProveedores)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 215)
+        Me.GroupBox2.Location = New System.Drawing.Point(690, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(672, 318)
+        Me.GroupBox2.Size = New System.Drawing.Size(407, 430)
         Me.GroupBox2.TabIndex = 14
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Proveedores Registrados"
@@ -347,7 +367,7 @@ Partial Class A_Proveedor
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(647, 29)
+        Me.Button1.Location = New System.Drawing.Point(365, 29)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(18, 17)
         Me.Button1.TabIndex = 15
@@ -355,7 +375,7 @@ Partial Class A_Proveedor
         '
         'txtNombreBusqueda
         '
-        Me.txtNombreBusqueda.Location = New System.Drawing.Point(397, 28)
+        Me.txtNombreBusqueda.Location = New System.Drawing.Point(115, 28)
         Me.txtNombreBusqueda.Name = "txtNombreBusqueda"
         Me.txtNombreBusqueda.Size = New System.Drawing.Size(246, 20)
         Me.txtNombreBusqueda.TabIndex = 14
@@ -363,34 +383,39 @@ Partial Class A_Proveedor
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(301, 31)
+        Me.Label7.Location = New System.Drawing.Point(19, 31)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(95, 13)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Buscar Proveedor:"
         '
-        'Label11
+        'GroupBox3
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(13, 139)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(66, 13)
-        Me.Label11.TabIndex = 22
-        Me.Label11.Text = "Id. Tributario"
+        Me.GroupBox3.Controls.Add(Me.DataGridView1)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 215)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(672, 227)
+        Me.GroupBox3.TabIndex = 15
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Contactos Principales"
         '
-        'txtIdTribu
+        'DataGridView1
         '
-        Me.txtIdTribu.Location = New System.Drawing.Point(111, 135)
-        Me.txtIdTribu.Name = "txtIdTribu"
-        Me.txtIdTribu.Size = New System.Drawing.Size(114, 20)
-        Me.txtIdTribu.TabIndex = 23
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.GridColor = System.Drawing.Color.White
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 19)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(660, 202)
+        Me.DataGridView1.TabIndex = 0
         '
         'A_Proveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(692, 541)
+        Me.ClientSize = New System.Drawing.Size(1107, 451)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -403,6 +428,8 @@ Partial Class A_Proveedor
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -439,4 +466,6 @@ Partial Class A_Proveedor
     Friend WithEvents btnBuscarCate As Button
     Friend WithEvents txtIdTribu As TextBox
     Friend WithEvents Label11 As Label
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

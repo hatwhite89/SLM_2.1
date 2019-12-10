@@ -23,6 +23,12 @@ Partial Class A_Cheques
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblEstado = New System.Windows.Forms.Label()
+        Me.rbtnRechazado = New System.Windows.Forms.RadioButton()
+        Me.rbtnCancelado = New System.Windows.Forms.RadioButton()
+        Me.rbtnAcreditado = New System.Windows.Forms.RadioButton()
+        Me.rbtnEmitido = New System.Windows.Forms.RadioButton()
+        Me.rbtnChequera = New System.Windows.Forms.RadioButton()
         Me.txtMoneda = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.dtpFechaVto = New System.Windows.Forms.DateTimePicker()
@@ -37,6 +43,28 @@ Partial Class A_Cheques
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.gbxTipo = New System.Windows.Forms.GroupBox()
+        Me.rbtnCheque = New System.Windows.Forms.RadioButton()
+        Me.rbtnPagare = New System.Windows.Forms.RadioButton()
+        Me.rbtnDiferido = New System.Windows.Forms.RadioButton()
+        Me.txtCtaDestino = New System.Windows.Forms.TextBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.txtCtaTemporal = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.txtCtaOrigen = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.dtpCancelado = New System.Windows.Forms.DateTimePicker()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.dtpEmision = New System.Windows.Forms.DateTimePicker()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.dtpRechazo = New System.Windows.Forms.DateTimePicker()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.dtpAcredita = New System.Windows.Forms.DateTimePicker()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.txtComentario = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.txtnombreBanco = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtBanco = New System.Windows.Forms.TextBox()
@@ -48,47 +76,20 @@ Partial Class A_Cheques
         Me.txtcodProvee = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.txtComentario = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.dtpAcredita = New System.Windows.Forms.DateTimePicker()
-        Me.dtpRechazo = New System.Windows.Forms.DateTimePicker()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.dtpEmision = New System.Windows.Forms.DateTimePicker()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.dtpCancelado = New System.Windows.Forms.DateTimePicker()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.txtCtaOrigen = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.txtCtaTemporal = New System.Windows.Forms.TextBox()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.txtCtaDestino = New System.Windows.Forms.TextBox()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.gbxTipo = New System.Windows.Forms.GroupBox()
-        Me.rbtnDiferido = New System.Windows.Forms.RadioButton()
-        Me.rbtnPagare = New System.Windows.Forms.RadioButton()
-        Me.rbtnCheque = New System.Windows.Forms.RadioButton()
-        Me.Label20 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.rbtnChequera = New System.Windows.Forms.RadioButton()
-        Me.rbtnEmitido = New System.Windows.Forms.RadioButton()
-        Me.rbtnAcreditado = New System.Windows.Forms.RadioButton()
-        Me.rbtnCancelado = New System.Windows.Forms.RadioButton()
-        Me.rbtnRechazado = New System.Windows.Forms.RadioButton()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
         Me.gbxTipo.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.lblEstado)
         Me.GroupBox1.Controls.Add(Me.rbtnRechazado)
         Me.GroupBox1.Controls.Add(Me.rbtnCancelado)
         Me.GroupBox1.Controls.Add(Me.rbtnAcreditado)
@@ -113,8 +114,73 @@ Partial Class A_Cheques
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Cheque"
         '
+        'lblEstado
+        '
+        Me.lblEstado.AutoSize = True
+        Me.lblEstado.Location = New System.Drawing.Point(646, 72)
+        Me.lblEstado.Name = "lblEstado"
+        Me.lblEstado.Size = New System.Drawing.Size(40, 13)
+        Me.lblEstado.TabIndex = 17
+        Me.lblEstado.Text = "Estado"
+        '
+        'rbtnRechazado
+        '
+        Me.rbtnRechazado.AutoSize = True
+        Me.rbtnRechazado.Location = New System.Drawing.Point(635, 47)
+        Me.rbtnRechazado.Name = "rbtnRechazado"
+        Me.rbtnRechazado.Size = New System.Drawing.Size(80, 17)
+        Me.rbtnRechazado.TabIndex = 16
+        Me.rbtnRechazado.TabStop = True
+        Me.rbtnRechazado.Text = "Rechazado"
+        Me.rbtnRechazado.UseVisualStyleBackColor = True
+        '
+        'rbtnCancelado
+        '
+        Me.rbtnCancelado.AutoSize = True
+        Me.rbtnCancelado.Location = New System.Drawing.Point(635, 24)
+        Me.rbtnCancelado.Name = "rbtnCancelado"
+        Me.rbtnCancelado.Size = New System.Drawing.Size(76, 17)
+        Me.rbtnCancelado.TabIndex = 15
+        Me.rbtnCancelado.TabStop = True
+        Me.rbtnCancelado.Text = "Cancelado"
+        Me.rbtnCancelado.UseVisualStyleBackColor = True
+        '
+        'rbtnAcreditado
+        '
+        Me.rbtnAcreditado.AutoSize = True
+        Me.rbtnAcreditado.Location = New System.Drawing.Point(524, 70)
+        Me.rbtnAcreditado.Name = "rbtnAcreditado"
+        Me.rbtnAcreditado.Size = New System.Drawing.Size(76, 17)
+        Me.rbtnAcreditado.TabIndex = 14
+        Me.rbtnAcreditado.TabStop = True
+        Me.rbtnAcreditado.Text = "Acreditado"
+        Me.rbtnAcreditado.UseVisualStyleBackColor = True
+        '
+        'rbtnEmitido
+        '
+        Me.rbtnEmitido.AutoSize = True
+        Me.rbtnEmitido.Location = New System.Drawing.Point(524, 47)
+        Me.rbtnEmitido.Name = "rbtnEmitido"
+        Me.rbtnEmitido.Size = New System.Drawing.Size(59, 17)
+        Me.rbtnEmitido.TabIndex = 13
+        Me.rbtnEmitido.TabStop = True
+        Me.rbtnEmitido.Text = "Emitido"
+        Me.rbtnEmitido.UseVisualStyleBackColor = True
+        '
+        'rbtnChequera
+        '
+        Me.rbtnChequera.AutoSize = True
+        Me.rbtnChequera.Location = New System.Drawing.Point(524, 24)
+        Me.rbtnChequera.Name = "rbtnChequera"
+        Me.rbtnChequera.Size = New System.Drawing.Size(87, 17)
+        Me.rbtnChequera.TabIndex = 12
+        Me.rbtnChequera.TabStop = True
+        Me.rbtnChequera.Text = "En Chequera"
+        Me.rbtnChequera.UseVisualStyleBackColor = True
+        '
         'txtMoneda
         '
+        Me.txtMoneda.Enabled = False
         Me.txtMoneda.Location = New System.Drawing.Point(301, 75)
         Me.txtMoneda.Name = "txtMoneda"
         Me.txtMoneda.Size = New System.Drawing.Size(100, 20)
@@ -179,6 +245,7 @@ Partial Class A_Cheques
         '
         'txtNroCheq
         '
+        Me.txtNroCheq.Enabled = False
         Me.txtNroCheq.Location = New System.Drawing.Point(88, 49)
         Me.txtNroCheq.Name = "txtNroCheq"
         Me.txtNroCheq.Size = New System.Drawing.Size(100, 20)
@@ -195,6 +262,7 @@ Partial Class A_Cheques
         '
         'txtNro
         '
+        Me.txtNro.Enabled = False
         Me.txtNro.Location = New System.Drawing.Point(88, 23)
         Me.txtNro.Name = "txtNro"
         Me.txtNro.Size = New System.Drawing.Size(100, 20)
@@ -258,8 +326,202 @@ Partial Class A_Cheques
         Me.TabPage1.Text = "Proveedor"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'gbxTipo
+        '
+        Me.gbxTipo.Controls.Add(Me.rbtnCheque)
+        Me.gbxTipo.Controls.Add(Me.rbtnPagare)
+        Me.gbxTipo.Controls.Add(Me.rbtnDiferido)
+        Me.gbxTipo.Location = New System.Drawing.Point(243, 158)
+        Me.gbxTipo.Name = "gbxTipo"
+        Me.gbxTipo.Size = New System.Drawing.Size(200, 95)
+        Me.gbxTipo.TabIndex = 28
+        Me.gbxTipo.TabStop = False
+        Me.gbxTipo.Text = "Tipo"
+        '
+        'rbtnCheque
+        '
+        Me.rbtnCheque.AutoSize = True
+        Me.rbtnCheque.Location = New System.Drawing.Point(20, 63)
+        Me.rbtnCheque.Name = "rbtnCheque"
+        Me.rbtnCheque.Size = New System.Drawing.Size(62, 17)
+        Me.rbtnCheque.TabIndex = 31
+        Me.rbtnCheque.TabStop = True
+        Me.rbtnCheque.Text = "Cheque"
+        Me.rbtnCheque.UseVisualStyleBackColor = True
+        '
+        'rbtnPagare
+        '
+        Me.rbtnPagare.AutoSize = True
+        Me.rbtnPagare.Location = New System.Drawing.Point(20, 41)
+        Me.rbtnPagare.Name = "rbtnPagare"
+        Me.rbtnPagare.Size = New System.Drawing.Size(59, 17)
+        Me.rbtnPagare.TabIndex = 30
+        Me.rbtnPagare.TabStop = True
+        Me.rbtnPagare.Text = "Pagaré"
+        Me.rbtnPagare.UseVisualStyleBackColor = True
+        '
+        'rbtnDiferido
+        '
+        Me.rbtnDiferido.AutoSize = True
+        Me.rbtnDiferido.Location = New System.Drawing.Point(20, 19)
+        Me.rbtnDiferido.Name = "rbtnDiferido"
+        Me.rbtnDiferido.Size = New System.Drawing.Size(101, 17)
+        Me.rbtnDiferido.TabIndex = 29
+        Me.rbtnDiferido.TabStop = True
+        Me.rbtnDiferido.Text = "Cheque Diferido"
+        Me.rbtnDiferido.UseVisualStyleBackColor = True
+        '
+        'txtCtaDestino
+        '
+        Me.txtCtaDestino.Location = New System.Drawing.Point(116, 233)
+        Me.txtCtaDestino.Name = "txtCtaDestino"
+        Me.txtCtaDestino.Size = New System.Drawing.Size(100, 20)
+        Me.txtCtaDestino.TabIndex = 27
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(11, 236)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(65, 13)
+        Me.Label19.TabIndex = 26
+        Me.Label19.Text = "Cta. Destino"
+        '
+        'txtCtaTemporal
+        '
+        Me.txtCtaTemporal.Location = New System.Drawing.Point(116, 207)
+        Me.txtCtaTemporal.Name = "txtCtaTemporal"
+        Me.txtCtaTemporal.Size = New System.Drawing.Size(100, 20)
+        Me.txtCtaTemporal.TabIndex = 25
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(11, 210)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(73, 13)
+        Me.Label18.TabIndex = 24
+        Me.Label18.Text = "Cta. Temporal"
+        '
+        'txtCtaOrigen
+        '
+        Me.txtCtaOrigen.Location = New System.Drawing.Point(116, 181)
+        Me.txtCtaOrigen.Name = "txtCtaOrigen"
+        Me.txtCtaOrigen.Size = New System.Drawing.Size(100, 20)
+        Me.txtCtaOrigen.TabIndex = 23
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(11, 184)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(60, 13)
+        Me.Label17.TabIndex = 22
+        Me.Label17.Text = "Cta. Origen"
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(116, 155)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox8.TabIndex = 21
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(11, 158)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(75, 13)
+        Me.Label16.TabIndex = 20
+        Me.Label16.Text = "Cuenta Banco"
+        '
+        'dtpCancelado
+        '
+        Me.dtpCancelado.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpCancelado.Location = New System.Drawing.Point(345, 129)
+        Me.dtpCancelado.Name = "dtpCancelado"
+        Me.dtpCancelado.Size = New System.Drawing.Size(98, 20)
+        Me.dtpCancelado.TabIndex = 19
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(240, 132)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(91, 13)
+        Me.Label15.TabIndex = 18
+        Me.Label15.Text = "Fecha Cancelado"
+        '
+        'dtpEmision
+        '
+        Me.dtpEmision.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpEmision.Location = New System.Drawing.Point(345, 103)
+        Me.dtpEmision.Name = "dtpEmision"
+        Me.dtpEmision.Size = New System.Drawing.Size(98, 20)
+        Me.dtpEmision.TabIndex = 17
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(240, 106)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(76, 13)
+        Me.Label14.TabIndex = 16
+        Me.Label14.Text = "Fecha Emisión"
+        '
+        'dtpRechazo
+        '
+        Me.dtpRechazo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpRechazo.Location = New System.Drawing.Point(116, 129)
+        Me.dtpRechazo.Name = "dtpRechazo"
+        Me.dtpRechazo.Size = New System.Drawing.Size(98, 20)
+        Me.dtpRechazo.TabIndex = 15
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(11, 132)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(83, 13)
+        Me.Label13.TabIndex = 14
+        Me.Label13.Text = "Fecha Rechazo"
+        '
+        'dtpAcredita
+        '
+        Me.dtpAcredita.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpAcredita.Location = New System.Drawing.Point(116, 103)
+        Me.dtpAcredita.Name = "dtpAcredita"
+        Me.dtpAcredita.Size = New System.Drawing.Size(98, 20)
+        Me.dtpAcredita.TabIndex = 13
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(11, 106)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(99, 13)
+        Me.Label12.TabIndex = 12
+        Me.Label12.Text = "Fecha Acreditación"
+        '
+        'txtComentario
+        '
+        Me.txtComentario.Location = New System.Drawing.Point(86, 61)
+        Me.txtComentario.Name = "txtComentario"
+        Me.txtComentario.Size = New System.Drawing.Size(601, 20)
+        Me.txtComentario.TabIndex = 11
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(11, 64)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(60, 13)
+        Me.Label11.TabIndex = 10
+        Me.Label11.Text = "Comentario"
+        '
         'txtnombreBanco
         '
+        Me.txtnombreBanco.Enabled = False
         Me.txtnombreBanco.Location = New System.Drawing.Point(263, 35)
         Me.txtnombreBanco.Name = "txtnombreBanco"
         Me.txtnombreBanco.Size = New System.Drawing.Size(234, 20)
@@ -276,6 +538,7 @@ Partial Class A_Cheques
         '
         'txtBanco
         '
+        Me.txtBanco.Enabled = False
         Me.txtBanco.Location = New System.Drawing.Point(86, 35)
         Me.txtBanco.Name = "txtBanco"
         Me.txtBanco.Size = New System.Drawing.Size(100, 20)
@@ -292,6 +555,7 @@ Partial Class A_Cheques
         '
         'txtTributario
         '
+        Me.txtTributario.Enabled = False
         Me.txtTributario.Location = New System.Drawing.Point(587, 9)
         Me.txtTributario.Name = "txtTributario"
         Me.txtTributario.Size = New System.Drawing.Size(100, 20)
@@ -308,6 +572,7 @@ Partial Class A_Cheques
         '
         'txtNombreProvee
         '
+        Me.txtNombreProvee.Enabled = False
         Me.txtNombreProvee.Location = New System.Drawing.Point(263, 9)
         Me.txtNombreProvee.Name = "txtNombreProvee"
         Me.txtNombreProvee.Size = New System.Drawing.Size(234, 20)
@@ -350,237 +615,13 @@ Partial Class A_Cheques
         Me.TabPage2.Text = "Voucher"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'btnGuardar
+        'TextBox1
         '
-        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnGuardar.FlatAppearance.BorderSize = 0
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(698, 428)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
-        Me.btnGuardar.TabIndex = 2
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = False
-        '
-        'btnModificar
-        '
-        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnModificar.FlatAppearance.BorderSize = 0
-        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(617, 428)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
-        Me.btnModificar.TabIndex = 3
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(536, 428)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 4
-        Me.Button3.Text = "Crear Nuevo"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'txtComentario
-        '
-        Me.txtComentario.Location = New System.Drawing.Point(86, 61)
-        Me.txtComentario.Name = "txtComentario"
-        Me.txtComentario.Size = New System.Drawing.Size(601, 20)
-        Me.txtComentario.TabIndex = 11
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(11, 64)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(60, 13)
-        Me.Label11.TabIndex = 10
-        Me.Label11.Text = "Comentario"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(11, 106)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(99, 13)
-        Me.Label12.TabIndex = 12
-        Me.Label12.Text = "Fecha Acreditación"
-        '
-        'dtpAcredita
-        '
-        Me.dtpAcredita.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpAcredita.Location = New System.Drawing.Point(116, 103)
-        Me.dtpAcredita.Name = "dtpAcredita"
-        Me.dtpAcredita.Size = New System.Drawing.Size(98, 20)
-        Me.dtpAcredita.TabIndex = 13
-        '
-        'dtpRechazo
-        '
-        Me.dtpRechazo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpRechazo.Location = New System.Drawing.Point(116, 129)
-        Me.dtpRechazo.Name = "dtpRechazo"
-        Me.dtpRechazo.Size = New System.Drawing.Size(98, 20)
-        Me.dtpRechazo.TabIndex = 15
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(11, 132)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(83, 13)
-        Me.Label13.TabIndex = 14
-        Me.Label13.Text = "Fecha Rechazo"
-        '
-        'dtpEmision
-        '
-        Me.dtpEmision.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpEmision.Location = New System.Drawing.Point(345, 103)
-        Me.dtpEmision.Name = "dtpEmision"
-        Me.dtpEmision.Size = New System.Drawing.Size(98, 20)
-        Me.dtpEmision.TabIndex = 17
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(240, 106)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(76, 13)
-        Me.Label14.TabIndex = 16
-        Me.Label14.Text = "Fecha Emisión"
-        '
-        'dtpCancelado
-        '
-        Me.dtpCancelado.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpCancelado.Location = New System.Drawing.Point(345, 129)
-        Me.dtpCancelado.Name = "dtpCancelado"
-        Me.dtpCancelado.Size = New System.Drawing.Size(98, 20)
-        Me.dtpCancelado.TabIndex = 19
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(240, 132)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(91, 13)
-        Me.Label15.TabIndex = 18
-        Me.Label15.Text = "Fecha Cancelado"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(11, 158)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(75, 13)
-        Me.Label16.TabIndex = 20
-        Me.Label16.Text = "Cuenta Banco"
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Location = New System.Drawing.Point(116, 155)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox8.TabIndex = 21
-        '
-        'txtCtaOrigen
-        '
-        Me.txtCtaOrigen.Location = New System.Drawing.Point(116, 181)
-        Me.txtCtaOrigen.Name = "txtCtaOrigen"
-        Me.txtCtaOrigen.Size = New System.Drawing.Size(100, 20)
-        Me.txtCtaOrigen.TabIndex = 23
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(11, 184)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(60, 13)
-        Me.Label17.TabIndex = 22
-        Me.Label17.Text = "Cta. Origen"
-        '
-        'txtCtaTemporal
-        '
-        Me.txtCtaTemporal.Location = New System.Drawing.Point(116, 207)
-        Me.txtCtaTemporal.Name = "txtCtaTemporal"
-        Me.txtCtaTemporal.Size = New System.Drawing.Size(100, 20)
-        Me.txtCtaTemporal.TabIndex = 25
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(11, 210)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(73, 13)
-        Me.Label18.TabIndex = 24
-        Me.Label18.Text = "Cta. Temporal"
-        '
-        'txtCtaDestino
-        '
-        Me.txtCtaDestino.Location = New System.Drawing.Point(116, 233)
-        Me.txtCtaDestino.Name = "txtCtaDestino"
-        Me.txtCtaDestino.Size = New System.Drawing.Size(100, 20)
-        Me.txtCtaDestino.TabIndex = 27
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(11, 236)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(65, 13)
-        Me.Label19.TabIndex = 26
-        Me.Label19.Text = "Cta. Destino"
-        '
-        'gbxTipo
-        '
-        Me.gbxTipo.Controls.Add(Me.rbtnCheque)
-        Me.gbxTipo.Controls.Add(Me.rbtnPagare)
-        Me.gbxTipo.Controls.Add(Me.rbtnDiferido)
-        Me.gbxTipo.Location = New System.Drawing.Point(243, 158)
-        Me.gbxTipo.Name = "gbxTipo"
-        Me.gbxTipo.Size = New System.Drawing.Size(200, 95)
-        Me.gbxTipo.TabIndex = 28
-        Me.gbxTipo.TabStop = False
-        Me.gbxTipo.Text = "Tipo"
-        '
-        'rbtnDiferido
-        '
-        Me.rbtnDiferido.AutoSize = True
-        Me.rbtnDiferido.Location = New System.Drawing.Point(20, 19)
-        Me.rbtnDiferido.Name = "rbtnDiferido"
-        Me.rbtnDiferido.Size = New System.Drawing.Size(101, 17)
-        Me.rbtnDiferido.TabIndex = 29
-        Me.rbtnDiferido.TabStop = True
-        Me.rbtnDiferido.Text = "Cheque Diferido"
-        Me.rbtnDiferido.UseVisualStyleBackColor = True
-        '
-        'rbtnPagare
-        '
-        Me.rbtnPagare.AutoSize = True
-        Me.rbtnPagare.Location = New System.Drawing.Point(20, 41)
-        Me.rbtnPagare.Name = "rbtnPagare"
-        Me.rbtnPagare.Size = New System.Drawing.Size(59, 17)
-        Me.rbtnPagare.TabIndex = 30
-        Me.rbtnPagare.TabStop = True
-        Me.rbtnPagare.Text = "Pagaré"
-        Me.rbtnPagare.UseVisualStyleBackColor = True
-        '
-        'rbtnCheque
-        '
-        Me.rbtnCheque.AutoSize = True
-        Me.rbtnCheque.Location = New System.Drawing.Point(20, 63)
-        Me.rbtnCheque.Name = "rbtnCheque"
-        Me.rbtnCheque.Size = New System.Drawing.Size(62, 17)
-        Me.rbtnCheque.TabIndex = 31
-        Me.rbtnCheque.TabStop = True
-        Me.rbtnCheque.Text = "Cheque"
-        Me.rbtnCheque.UseVisualStyleBackColor = True
+        Me.TextBox1.Location = New System.Drawing.Point(14, 31)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(723, 70)
+        Me.TextBox1.TabIndex = 1
         '
         'Label20
         '
@@ -591,68 +632,31 @@ Partial Class A_Cheques
         Me.Label20.TabIndex = 0
         Me.Label20.Text = "Nota de Voucher"
         '
-        'TextBox1
+        'btnGuardar
         '
-        Me.TextBox1.Location = New System.Drawing.Point(14, 31)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(723, 70)
-        Me.TextBox1.TabIndex = 1
+        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnGuardar.FlatAppearance.BorderSize = 0
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.ForeColor = System.Drawing.Color.White
+        Me.btnGuardar.Location = New System.Drawing.Point(618, 428)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.TabIndex = 2
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = False
         '
-        'rbtnChequera
+        'Button1
         '
-        Me.rbtnChequera.AutoSize = True
-        Me.rbtnChequera.Location = New System.Drawing.Point(524, 24)
-        Me.rbtnChequera.Name = "rbtnChequera"
-        Me.rbtnChequera.Size = New System.Drawing.Size(87, 17)
-        Me.rbtnChequera.TabIndex = 12
-        Me.rbtnChequera.TabStop = True
-        Me.rbtnChequera.Text = "En Chequera"
-        Me.rbtnChequera.UseVisualStyleBackColor = True
-        '
-        'rbtnEmitido
-        '
-        Me.rbtnEmitido.AutoSize = True
-        Me.rbtnEmitido.Location = New System.Drawing.Point(524, 47)
-        Me.rbtnEmitido.Name = "rbtnEmitido"
-        Me.rbtnEmitido.Size = New System.Drawing.Size(59, 17)
-        Me.rbtnEmitido.TabIndex = 13
-        Me.rbtnEmitido.TabStop = True
-        Me.rbtnEmitido.Text = "Emitido"
-        Me.rbtnEmitido.UseVisualStyleBackColor = True
-        '
-        'rbtnAcreditado
-        '
-        Me.rbtnAcreditado.AutoSize = True
-        Me.rbtnAcreditado.Location = New System.Drawing.Point(524, 70)
-        Me.rbtnAcreditado.Name = "rbtnAcreditado"
-        Me.rbtnAcreditado.Size = New System.Drawing.Size(76, 17)
-        Me.rbtnAcreditado.TabIndex = 14
-        Me.rbtnAcreditado.TabStop = True
-        Me.rbtnAcreditado.Text = "Acreditado"
-        Me.rbtnAcreditado.UseVisualStyleBackColor = True
-        '
-        'rbtnCancelado
-        '
-        Me.rbtnCancelado.AutoSize = True
-        Me.rbtnCancelado.Location = New System.Drawing.Point(635, 24)
-        Me.rbtnCancelado.Name = "rbtnCancelado"
-        Me.rbtnCancelado.Size = New System.Drawing.Size(76, 17)
-        Me.rbtnCancelado.TabIndex = 15
-        Me.rbtnCancelado.TabStop = True
-        Me.rbtnCancelado.Text = "Cancelado"
-        Me.rbtnCancelado.UseVisualStyleBackColor = True
-        '
-        'rbtnRechazado
-        '
-        Me.rbtnRechazado.AutoSize = True
-        Me.rbtnRechazado.Location = New System.Drawing.Point(635, 47)
-        Me.rbtnRechazado.Name = "rbtnRechazado"
-        Me.rbtnRechazado.Size = New System.Drawing.Size(80, 17)
-        Me.rbtnRechazado.TabIndex = 16
-        Me.rbtnRechazado.TabStop = True
-        Me.rbtnRechazado.Text = "Rechazado"
-        Me.rbtnRechazado.UseVisualStyleBackColor = True
+        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(699, 428)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "Cancelar"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'A_Cheques
         '
@@ -660,8 +664,7 @@ Partial Class A_Cheques
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(785, 461)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.btnModificar)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.GroupBox1)
@@ -673,10 +676,10 @@ Partial Class A_Cheques
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
         Me.gbxTipo.ResumeLayout(False)
         Me.gbxTipo.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -708,8 +711,6 @@ Partial Class A_Cheques
     Friend WithEvents Label6 As Label
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents btnGuardar As Button
-    Friend WithEvents btnModificar As Button
-    Friend WithEvents Button3 As Button
     Friend WithEvents txtComentario As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents dtpAcredita As DateTimePicker
@@ -739,4 +740,6 @@ Partial Class A_Cheques
     Friend WithEvents rbtnAcreditado As RadioButton
     Friend WithEvents rbtnEmitido As RadioButton
     Friend WithEvents rbtnChequera As RadioButton
+    Friend WithEvents lblEstado As Label
+    Friend WithEvents Button1 As Button
 End Class

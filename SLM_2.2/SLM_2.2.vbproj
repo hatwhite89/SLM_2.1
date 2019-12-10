@@ -269,6 +269,12 @@
     <Compile Include="presentacion\A_ListarPagos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ListarProveedores.Designer.vb">
+      <DependentUpon>A_ListarProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListarTerminoPago.Designer.vb">
       <DependentUpon>A_ListarTerminoPago.vb</DependentUpon>
     </Compile>
@@ -631,6 +637,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarPagos.resx">
       <DependentUpon>A_ListarPagos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarProveedores.resx">
+      <DependentUpon>A_ListarProveedores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarTerminoPago.resx">
       <DependentUpon>A_ListarTerminoPago.vb</DependentUpon>

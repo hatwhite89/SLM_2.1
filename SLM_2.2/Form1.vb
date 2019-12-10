@@ -4,7 +4,7 @@
     End Sub
     Private Sub btnContabilidad_Click(sender As Object, e As EventArgs) Handles btnContabilidad.Click
         'Abrir formulario menu contabilidad.
-        frmMenuConta.ShowDialog()
+        frmMenuConta.Show()
     End Sub
     Private Sub btnlaboratorio_Click(sender As Object, e As EventArgs) Handles btnlaboratorio.Click
         M_MenuLaboratorio.ShowDialog()

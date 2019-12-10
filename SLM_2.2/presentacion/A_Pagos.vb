@@ -201,6 +201,7 @@
         ElseIf e.ColumnIndex = 5 Then
 
             'Columna de Cheques
+            lblFila.Text = e.RowIndex
             A_ListarChequesHabilitados.Show()
             lblFila.Text = e.RowIndex
 

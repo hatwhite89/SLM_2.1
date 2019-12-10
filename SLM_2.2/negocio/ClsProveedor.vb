@@ -10,6 +10,7 @@ Public Class ClsProveedor
     End Sub
 
     ':::::::::::::::::::::::: Metodos SET y GET :::::::::::::::::::::::
+
     'Codigo Proveedor
     Public Property Cod_Proveedor As Integer
         Get
@@ -370,7 +371,5 @@ Public Class ClsProveedor
         End Using
 
     End Function
-
-
 
 End Class

@@ -57,11 +57,11 @@ Partial Class frmPagos
         Me.gbxInfo = New System.Windows.Forms.GroupBox()
         Me.chkPagado = New System.Windows.Forms.CheckBox()
         Me.gbxDetalle = New System.Windows.Forms.GroupBox()
+        Me.lblNombreBanco = New System.Windows.Forms.Label()
         Me.lblFila = New System.Windows.Forms.Label()
         Me.lblTotalSuma = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnRegresar = New System.Windows.Forms.Button()
-        Me.lblNombreBanco = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dtDetallePagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxInfo.SuspendLayout()
@@ -73,7 +73,7 @@ Partial Class frmPagos
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(684, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(682, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -239,6 +239,7 @@ Partial Class frmPagos
         Me.dtDetallePagos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtDetallePagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDetallePagos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NroFac, Me.Proveedor, Me.Moneda, Me.ValorPago, Me.FORMAP, Me.NroCheque})
+        Me.dtDetallePagos.Enabled = False
         Me.dtDetallePagos.GridColor = System.Drawing.Color.White
         Me.dtDetallePagos.Location = New System.Drawing.Point(6, 19)
         Me.dtDetallePagos.Name = "dtDetallePagos"
@@ -388,6 +389,15 @@ Partial Class frmPagos
         Me.gbxDetalle.TabStop = False
         Me.gbxDetalle.Text = "Detalle de Pago"
         '
+        'lblNombreBanco
+        '
+        Me.lblNombreBanco.AutoSize = True
+        Me.lblNombreBanco.Location = New System.Drawing.Point(56, 240)
+        Me.lblNombreBanco.Name = "lblNombreBanco"
+        Me.lblNombreBanco.Size = New System.Drawing.Size(66, 13)
+        Me.lblNombreBanco.TabIndex = 24
+        Me.lblNombreBanco.Text = "NameBanco"
+        '
         'lblFila
         '
         Me.lblFila.AutoSize = True
@@ -427,21 +437,12 @@ Partial Class frmPagos
         Me.btnRegresar.TabIndex = 27
         Me.btnRegresar.UseVisualStyleBackColor = False
         '
-        'lblNombreBanco
-        '
-        Me.lblNombreBanco.AutoSize = True
-        Me.lblNombreBanco.Location = New System.Drawing.Point(56, 240)
-        Me.lblNombreBanco.Name = "lblNombreBanco"
-        Me.lblNombreBanco.Size = New System.Drawing.Size(66, 13)
-        Me.lblNombreBanco.TabIndex = 24
-        Me.lblNombreBanco.Text = "NameBanco"
-        '
         'frmPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(684, 463)
+        Me.ClientSize = New System.Drawing.Size(682, 463)
         Me.Controls.Add(Me.btnRegresar)
         Me.Controls.Add(Me.gbxDetalle)
         Me.Controls.Add(Me.gbxInfo)
