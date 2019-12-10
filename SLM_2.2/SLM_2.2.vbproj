@@ -366,6 +366,12 @@
     <Compile Include="presentacion\A_MenuConta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_Apertura.Designer.vb">
+      <DependentUpon>M_Apertura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Apertura.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_BuscarCotizacion.Designer.vb">
       <DependentUpon>M_BuscarCotizacion.vb</DependentUpon>
     </Compile>
@@ -670,6 +676,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_Unidad.resx">
       <DependentUpon>E_Unidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Apertura.resx">
+      <DependentUpon>M_Apertura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_BuscarCotizacion.resx">
       <DependentUpon>M_BuscarCotizacion.vb</DependentUpon>
