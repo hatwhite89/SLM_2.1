@@ -30,6 +30,7 @@
             frmPagos.txtFormaP.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
             frmPagos.txtCtaBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(2).Value
             frmPagos.txtComentario.Text = dtFormasPago.Rows(e.RowIndex).Cells(1).Value
+            frmPagos.dtDetallePagos.Enabled = True
         End If
 
         Me.Close()

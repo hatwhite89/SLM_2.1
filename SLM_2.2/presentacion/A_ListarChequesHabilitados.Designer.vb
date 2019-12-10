@@ -45,6 +45,7 @@ Partial Class A_ListarChequesHabilitados
         Me.dtCheques.GridColor = System.Drawing.Color.White
         Me.dtCheques.Location = New System.Drawing.Point(6, 19)
         Me.dtCheques.Name = "dtCheques"
+        Me.dtCheques.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtCheques.Size = New System.Drawing.Size(508, 241)
         Me.dtCheques.TabIndex = 0
         '
@@ -56,6 +57,7 @@ Partial Class A_ListarChequesHabilitados
         Me.Controls.Add(Me.gbxCheque)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "A_ListarChequesHabilitados"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cheques Disponibles"
         Me.gbxCheque.ResumeLayout(False)
         CType(Me.dtCheques, System.ComponentModel.ISupportInitialize).EndInit()
