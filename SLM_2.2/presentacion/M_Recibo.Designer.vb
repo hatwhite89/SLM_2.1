@@ -274,13 +274,13 @@ Partial Class M_Recibo
         '
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nroFactura, Me.cliente, Me.texto, Me.FechaPago, Me.mBanco, Me.MontoBanco, Me.mRec, Me.valorRecibido})
-        Me.dgbtabla.Location = New System.Drawing.Point(37, 169)
+        Me.dgbtabla.Location = New System.Drawing.Point(30, 170)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
-        Me.dgbtabla.Size = New System.Drawing.Size(600, 311)
+        Me.dgbtabla.Size = New System.Drawing.Size(618, 311)
         Me.dgbtabla.TabIndex = 146
         '
         'codigo

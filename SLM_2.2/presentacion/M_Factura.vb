@@ -455,6 +455,7 @@
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
+            M_BuscarFactura.seleccionarFacturas()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -516,6 +517,7 @@
                 Else
                     MsgBox("Error al querer registrar la cotización.", MsgBoxStyle.Critical)
                 End If
+                M_BuscarCotizacion.actualizarCotizacion()
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
@@ -549,6 +551,7 @@
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
+            M_BuscarFactura.seleccionarFacturas()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try

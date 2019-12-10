@@ -1,6 +1,6 @@
 ﻿Public Class M_ListarClientes
-    Dim objCli As New ClsCliente
-    Dim dv As DataView = objCli.SeleccionarClientes.DefaultView
+    'Dim objCli As New ClsCliente
+    'Dim dv As DataView = objCli.SeleccionarClientes.DefaultView
     Private Sub M_ListarClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SeleccionarClientes()
         Me.dgbtabla.Columns("scanId").Visible = False
@@ -19,6 +19,8 @@
         Me.dgbtabla.Columns("genero").Visible = False
     End Sub
     Private Sub SeleccionarClientes()
+        Dim objCli As New ClsCliente
+        Dim dv As DataView = objCli.SeleccionarClientes.DefaultView
         dv = objCli.SeleccionarClientes.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
@@ -76,60 +78,61 @@
         End Try
     End Sub
 
+    'Private Sub txtIdentidadB_TextChanged(sender As Object, e As EventArgs) Handles txtIdentidadB.TextChanged
+    '    dv.RowFilter = String.Format("Identidad Like '%{0}%'", txtIdentidadB.Text)
+    '    lblcantidad.Text = dv.Count
+
+
+    '    If lblcantidad.Text = "0" Then
+    '        MsgBox("No existe el paciente.", MsgBoxStyle.Exclamation)
+    '        txtIdentidadB.Text = ""
+    '        SeleccionarClientes()
+    '    End If
+    'End Sub
+
+    'Private Sub txtNombreB_TextChanged(sender As Object, e As EventArgs) Handles txtNombreB.TextChanged
+    '    dv.RowFilter = String.Format("Nombre Like '%{0}%'", txtNombreB.Text)
+    '    lblcantidad.Text = dv.Count
+
+
+    '    If lblcantidad.Text = "0" Then
+    '        MsgBox("No existe el paciente.", MsgBoxStyle.Exclamation)
+    '        txtNombreB.Text = ""
+    '        SeleccionarClientes()
+    '    End If
+    'End Sub
+
+    Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtNombreB.TextChanged
+        If (txtNombreB.Text <> "") Then
+            Try
+                Dim objCli As New ClsCliente
+                objCli.NombreCompleto1 = txtNombreB.Text
+                Dim dv As DataView = objCli.BuscarClienteNombre.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            Catch ex As Exception
+                MsgBox("No existe la factura.", MsgBoxStyle.Critical, "Validación")
+            End Try
+        Else
+            SeleccionarClientes()
+        End If
+    End Sub
+
     Private Sub txtIdentidadB_TextChanged(sender As Object, e As EventArgs) Handles txtIdentidadB.TextChanged
-        dv.RowFilter = String.Format("Identidad Like '%{0}%'", txtIdentidadB.Text)
-        lblcantidad.Text = dv.Count
-
-
-        If lblcantidad.Text = "0" Then
-            MsgBox("No existe el paciente.", MsgBoxStyle.Exclamation)
-            txtIdentidadB.Text = ""
+        If (txtIdentidadB.Text <> "") Then
+            Try
+                Dim objCli As New ClsCliente
+                objCli.Identidad1 = txtIdentidadB.Text
+                Dim dv As DataView = objCli.BuscarCliente.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            Catch ex As Exception
+                MsgBox("No existe la factura.", MsgBoxStyle.Critical, "Validación")
+            End Try
+        Else
             SeleccionarClientes()
         End If
     End Sub
-
-    Private Sub txtNombreB_TextChanged(sender As Object, e As EventArgs) Handles txtNombreB.TextChanged
-        dv.RowFilter = String.Format("Nombre Like '%{0}%'", txtNombreB.Text)
-        lblcantidad.Text = dv.Count
-
-
-        If lblcantidad.Text = "0" Then
-            MsgBox("No existe el paciente.", MsgBoxStyle.Exclamation)
-            txtNombreB.Text = ""
-            SeleccionarClientes()
-        End If
-    End Sub
-    'Private Sub txtnumeroB_TextChanged(sender As Object, e As EventArgs) Handles txtIdentidadB.TextChanged
-    '    If (txtIdentidadB.Text <> "") Then
-    '        Try
-    '            Dim objCli As New ClsCliente
-    '            objCli.Identidad1 = txtIdentidadB.Text
-    '            Dim dv As DataView = objCli.BuscarCliente.DefaultView
-    '            dgbtabla.DataSource = dv
-    '            lblcantidad.Text = dv.Count
-    '            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-    '        Catch ex As Exception
-    '            MsgBox("No existe la factura.", MsgBoxStyle.Critical, "Validación")
-    '        End Try
-    '    Else
-    '        SeleccionarClientes()
-    '    End If
-    'End Sub
-    'Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtNombreB.TextChanged
-    '    If (txtNombreB.Text <> "") Then
-    '        Try
-    '            Dim objCli As New ClsCliente
-    '            objCli.NombreCompleto1 = txtNombreB.Text
-    '            Dim dv As DataView = objCli.BuscarClienteNombre.DefaultView
-    '            dgbtabla.DataSource = dv
-    '            lblcantidad.Text = dv.Count
-    '            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-    '        Catch ex As Exception
-    '            MsgBox("No existe la factura.", MsgBoxStyle.Critical, "Validación")
-    '        End Try
-    '    Else
-    '        SeleccionarClientes()
-    '    End If
-    'End Sub
-
 End Class
