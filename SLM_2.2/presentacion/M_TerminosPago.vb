@@ -58,7 +58,7 @@
                 cbxtipoPago.Items.Add(CStr(row("descripcion")))
             Next
         Catch ex As Exception
-            MsgBox("No existe el código del tipo de término de pago.", MsgBoxStyle.Critical, "Validación")
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Validación")
         End Try
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick

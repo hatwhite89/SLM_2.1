@@ -122,6 +122,7 @@
     <Compile Include="negocio\ClsAccesoLaboratorio.vb" />
     <Compile Include="negocio\ClsAreaLaboratorio.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
+    <Compile Include="negocio\ClsDetalleContactos.vb" />
     <Compile Include="negocio\ClsDetalleFacturaCompra.vb" />
     <Compile Include="negocio\ClsDetallePago.vb" />
     <Compile Include="negocio\ClsDetalleRecibo.vb" />
@@ -386,6 +387,12 @@
     <Compile Include="presentacion\A_MenuConta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_Apertura.Designer.vb">
+      <DependentUpon>M_Apertura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Apertura.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_BuscarCotizacion.Designer.vb">
       <DependentUpon>M_BuscarCotizacion.vb</DependentUpon>
     </Compile>
@@ -480,6 +487,12 @@
       <DependentUpon>M_ListarFactura.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_ListarFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_ListarTerminoPago.Designer.vb">
+      <DependentUpon>M_ListarTerminoPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ListarTerminoPago.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_MaquinasLocales.Designer.vb">
@@ -697,6 +710,9 @@
     <EmbeddedResource Include="presentacion\E_Unidad.resx">
       <DependentUpon>E_Unidad.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Apertura.resx">
+      <DependentUpon>M_Apertura.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_BuscarCotizacion.resx">
       <DependentUpon>M_BuscarCotizacion.vb</DependentUpon>
     </EmbeddedResource>
@@ -744,6 +760,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ListarFactura.resx">
       <DependentUpon>M_ListarFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ListarTerminoPago.resx">
+      <DependentUpon>M_ListarTerminoPago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_MaquinasLocales.resx">
       <DependentUpon>M_MaquinasLocales.vb</DependentUpon>

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class M_ListarClientes
+Partial Class M_ListarTerminoPago
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,36 +23,43 @@ Partial Class M_ListarClientes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.txtCodigoB = New System.Windows.Forms.TextBox()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lblnombreB = New System.Windows.Forms.Label()
         Me.lbltipoCta = New System.Windows.Forms.Label()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
-        Me.txtNombreB = New System.Windows.Forms.TextBox()
-        Me.lblIdentidadB = New System.Windows.Forms.Label()
-        Me.txtIdentidadB = New System.Windows.Forms.TextBox()
+        Me.txtDescripcionB = New System.Windows.Forms.TextBox()
+        Me.lblCodigoT = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbxbusqueda
         '
-        Me.gbxbusqueda.Controls.Add(Me.txtIdentidadB)
+        Me.gbxbusqueda.Controls.Add(Me.txtCodigoB)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lbltipoCta)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
-        Me.gbxbusqueda.Controls.Add(Me.txtNombreB)
-        Me.gbxbusqueda.Controls.Add(Me.lblIdentidadB)
-        Me.gbxbusqueda.Location = New System.Drawing.Point(31, 31)
+        Me.gbxbusqueda.Controls.Add(Me.txtDescripcionB)
+        Me.gbxbusqueda.Controls.Add(Me.lblCodigoT)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(8, 12)
         Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.gbxbusqueda.Size = New System.Drawing.Size(624, 598)
-        Me.gbxbusqueda.TabIndex = 119
+        Me.gbxbusqueda.TabIndex = 120
         Me.gbxbusqueda.TabStop = False
-        Me.gbxbusqueda.Text = "BUSCAR CLIENTES"
+        Me.gbxbusqueda.Text = "BUSCAR TERMINO DE PAGO"
+        '
+        'txtCodigoB
+        '
+        Me.txtCodigoB.Location = New System.Drawing.Point(111, 29)
+        Me.txtCodigoB.Name = "txtCodigoB"
+        Me.txtCodigoB.Size = New System.Drawing.Size(192, 22)
+        Me.txtCodigoB.TabIndex = 120
         '
         'dgbtabla
         '
@@ -105,41 +112,32 @@ Partial Class M_ListarClientes
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL DE CLIENTES"
         '
-        'txtNombreB
+        'txtDescripcionB
         '
-        Me.txtNombreB.Location = New System.Drawing.Point(385, 29)
-        Me.txtNombreB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtNombreB.MaxLength = 80
-        Me.txtNombreB.Name = "txtNombreB"
-        Me.txtNombreB.Size = New System.Drawing.Size(192, 22)
-        Me.txtNombreB.TabIndex = 115
+        Me.txtDescripcionB.Location = New System.Drawing.Point(385, 29)
+        Me.txtDescripcionB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtDescripcionB.MaxLength = 80
+        Me.txtDescripcionB.Name = "txtDescripcionB"
+        Me.txtDescripcionB.Size = New System.Drawing.Size(192, 22)
+        Me.txtDescripcionB.TabIndex = 115
         '
-        'lblIdentidadB
+        'lblCodigoT
         '
-        Me.lblIdentidadB.AutoSize = True
-        Me.lblIdentidadB.Location = New System.Drawing.Point(39, 33)
-        Me.lblIdentidadB.Name = "lblIdentidadB"
-        Me.lblIdentidadB.Size = New System.Drawing.Size(66, 17)
-        Me.lblIdentidadB.TabIndex = 114
-        Me.lblIdentidadB.Text = "Identidad"
+        Me.lblCodigoT.AutoSize = True
+        Me.lblCodigoT.Location = New System.Drawing.Point(39, 33)
+        Me.lblCodigoT.Name = "lblCodigoT"
+        Me.lblCodigoT.Size = New System.Drawing.Size(52, 17)
+        Me.lblCodigoT.TabIndex = 114
+        Me.lblCodigoT.Text = "Código"
         '
-        'txtIdentidadB
-        '
-        Me.txtIdentidadB.Location = New System.Drawing.Point(111, 29)
-        Me.txtIdentidadB.Name = "txtIdentidadB"
-        Me.txtIdentidadB.Size = New System.Drawing.Size(192, 22)
-        Me.txtIdentidadB.TabIndex = 120
-        '
-        'M_ListarClientes
+        'M_ListarTerminoPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(692, 662)
+        Me.ClientSize = New System.Drawing.Size(640, 623)
         Me.Controls.Add(Me.gbxbusqueda)
-        Me.KeyPreview = True
-        Me.Name = "M_ListarClientes"
-        Me.Text = "M_ListarClientes"
+        Me.Name = "M_ListarTerminoPago"
+        Me.Text = "M_ListarTerminoPago"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
@@ -148,12 +146,12 @@ Partial Class M_ListarClientes
     End Sub
 
     Friend WithEvents gbxbusqueda As GroupBox
+    Friend WithEvents txtCodigoB As TextBox
     Friend WithEvents dgbtabla As DataGridView
     Friend WithEvents lblnombreB As Label
     Friend WithEvents lbltipoCta As Label
     Friend WithEvents lblcantidad As Label
     Friend WithEvents lbltotal As Label
-    Friend WithEvents txtNombreB As TextBox
-    Friend WithEvents lblIdentidadB As Label
-    Friend WithEvents txtIdentidadB As TextBox
+    Friend WithEvents txtDescripcionB As TextBox
+    Friend WithEvents lblCodigoT As Label
 End Class

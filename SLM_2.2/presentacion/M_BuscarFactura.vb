@@ -3,7 +3,7 @@
         seleccionarFacturas()
         Me.dgbtabla.Columns("codigo").Visible = False
     End Sub
-    Private Sub seleccionarFacturas()
+    Public Sub seleccionarFacturas()
         Dim objFact As New ClsFactura
         Dim dv As DataView = objFact.SeleccionarFactura.DefaultView
         dgbtabla.DataSource = dv
