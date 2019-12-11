@@ -23,6 +23,7 @@
         frmDeposito.txtComision.Visible = False
         frmDeposito.lblComision.Visible = False
 
+
         frmDeposito.lblTipoDeposito.Text = "Deposito Bancario"
         Limpiar()
     End Sub

@@ -4,12 +4,12 @@
         'Cargar cheques habilitados
         Dim fila As String = frmPagos.lblFila.Text
         Dim dato As String
-        dato = frmPagos.dtDetallePagos.Rows(fila).Cells(4).Value
+        dato = frmPagos.txtFormaP.Text
 
 
         If (dato <> "") Then
 
-            cheque.Cod_BreveBanco = frmPagos.dtDetallePagos.Rows(fila).Cells(4).Value
+            cheque.Cod_BreveBanco = frmPagos.txtFormaP.Text
             dtCheques.DataSource = cheque.listarChequesDisponibles
 
         Else
@@ -26,14 +26,26 @@
         Try
             A_Cheques.Show()
 
-            A_Cheques.txtNro.Text = dtCheques.Rows(e.RowIndex).Cells(0).Value
-            A_Cheques.txtNroCheq.Text = dtCheques.Rows(e.RowIndex).Cells(2).Value
-            A_Cheques.txtMoneda.Text = dtCheques.Rows(e.RowIndex).Cells(6).Value
-            A_Cheques.txtBanco.Text = dtCheques.Rows(e.RowIndex).Cells(9).Value
-            A_Cheques.txtnombreBanco.Text = dtCheques.Rows(e.RowIndex).Cells(10).Value
-            A_Cheques.lblEstado.Text = dtCheques.Rows(e.RowIndex).Cells(11).Value
+            Dim dt As New DataTable
+            dt = dtCheques.DataSource
+
+            Dim row As DataRow = dt.Rows(0)
+
+
+
+            A_Cheques.txtNro.Text = row("codCheque")
+            A_Cheques.txtNroCheq.Text = row("nroCheque")
+            A_Cheques.txtMoneda.Text = row("moneda")
+            A_Cheques.txtBanco.Text = row("codBreveBanco")
+            A_Cheques.txtnombreBanco.Text = row("nombreBanco")
+            A_Cheques.lblEstado.Text = row("estado")
+            A_Cheques.txtNroCtaBanco.Text = frmPagos.txtCtaBanco.Text
+            Me.Close()
+
         Catch ex As Exception
+
             MsgBox("Error al seleccionar el cheque. Form: A_ListarChequesHabilitados. " + ex.Message)
+
         End Try
 
 

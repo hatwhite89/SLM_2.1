@@ -22,6 +22,7 @@ Partial Class A_Cheques
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Cheques))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblEstado = New System.Windows.Forms.Label()
         Me.rbtnRechazado = New System.Windows.Forms.RadioButton()
@@ -53,7 +54,7 @@ Partial Class A_Cheques
         Me.Label18 = New System.Windows.Forms.Label()
         Me.txtCtaOrigen = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.txtNroCtaBanco = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.dtpCancelado = New System.Windows.Forms.DateTimePicker()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -76,10 +77,11 @@ Partial Class A_Cheques
         Me.txtcodProvee = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtVoucher = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -130,7 +132,6 @@ Partial Class A_Cheques
         Me.rbtnRechazado.Name = "rbtnRechazado"
         Me.rbtnRechazado.Size = New System.Drawing.Size(80, 17)
         Me.rbtnRechazado.TabIndex = 16
-        Me.rbtnRechazado.TabStop = True
         Me.rbtnRechazado.Text = "Rechazado"
         Me.rbtnRechazado.UseVisualStyleBackColor = True
         '
@@ -141,7 +142,6 @@ Partial Class A_Cheques
         Me.rbtnCancelado.Name = "rbtnCancelado"
         Me.rbtnCancelado.Size = New System.Drawing.Size(76, 17)
         Me.rbtnCancelado.TabIndex = 15
-        Me.rbtnCancelado.TabStop = True
         Me.rbtnCancelado.Text = "Cancelado"
         Me.rbtnCancelado.UseVisualStyleBackColor = True
         '
@@ -152,7 +152,6 @@ Partial Class A_Cheques
         Me.rbtnAcreditado.Name = "rbtnAcreditado"
         Me.rbtnAcreditado.Size = New System.Drawing.Size(76, 17)
         Me.rbtnAcreditado.TabIndex = 14
-        Me.rbtnAcreditado.TabStop = True
         Me.rbtnAcreditado.Text = "Acreditado"
         Me.rbtnAcreditado.UseVisualStyleBackColor = True
         '
@@ -163,7 +162,6 @@ Partial Class A_Cheques
         Me.rbtnEmitido.Name = "rbtnEmitido"
         Me.rbtnEmitido.Size = New System.Drawing.Size(59, 17)
         Me.rbtnEmitido.TabIndex = 13
-        Me.rbtnEmitido.TabStop = True
         Me.rbtnEmitido.Text = "Emitido"
         Me.rbtnEmitido.UseVisualStyleBackColor = True
         '
@@ -174,7 +172,6 @@ Partial Class A_Cheques
         Me.rbtnChequera.Name = "rbtnChequera"
         Me.rbtnChequera.Size = New System.Drawing.Size(87, 17)
         Me.rbtnChequera.TabIndex = 12
-        Me.rbtnChequera.TabStop = True
         Me.rbtnChequera.Text = "En Chequera"
         Me.rbtnChequera.UseVisualStyleBackColor = True
         '
@@ -296,7 +293,7 @@ Partial Class A_Cheques
         Me.TabPage1.Controls.Add(Me.Label18)
         Me.TabPage1.Controls.Add(Me.txtCtaOrigen)
         Me.TabPage1.Controls.Add(Me.Label17)
-        Me.TabPage1.Controls.Add(Me.TextBox8)
+        Me.TabPage1.Controls.Add(Me.txtNroCtaBanco)
         Me.TabPage1.Controls.Add(Me.Label16)
         Me.TabPage1.Controls.Add(Me.dtpCancelado)
         Me.TabPage1.Controls.Add(Me.Label15)
@@ -341,6 +338,7 @@ Partial Class A_Cheques
         'rbtnCheque
         '
         Me.rbtnCheque.AutoSize = True
+        Me.rbtnCheque.Checked = True
         Me.rbtnCheque.Location = New System.Drawing.Point(20, 63)
         Me.rbtnCheque.Name = "rbtnCheque"
         Me.rbtnCheque.Size = New System.Drawing.Size(62, 17)
@@ -356,7 +354,6 @@ Partial Class A_Cheques
         Me.rbtnPagare.Name = "rbtnPagare"
         Me.rbtnPagare.Size = New System.Drawing.Size(59, 17)
         Me.rbtnPagare.TabIndex = 30
-        Me.rbtnPagare.TabStop = True
         Me.rbtnPagare.Text = "Pagaré"
         Me.rbtnPagare.UseVisualStyleBackColor = True
         '
@@ -367,7 +364,6 @@ Partial Class A_Cheques
         Me.rbtnDiferido.Name = "rbtnDiferido"
         Me.rbtnDiferido.Size = New System.Drawing.Size(101, 17)
         Me.rbtnDiferido.TabIndex = 29
-        Me.rbtnDiferido.TabStop = True
         Me.rbtnDiferido.Text = "Cheque Diferido"
         Me.rbtnDiferido.UseVisualStyleBackColor = True
         '
@@ -419,12 +415,12 @@ Partial Class A_Cheques
         Me.Label17.TabIndex = 22
         Me.Label17.Text = "Cta. Origen"
         '
-        'TextBox8
+        'txtNroCtaBanco
         '
-        Me.TextBox8.Location = New System.Drawing.Point(116, 155)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox8.TabIndex = 21
+        Me.txtNroCtaBanco.Location = New System.Drawing.Point(116, 155)
+        Me.txtNroCtaBanco.Name = "txtNroCtaBanco"
+        Me.txtNroCtaBanco.Size = New System.Drawing.Size(100, 20)
+        Me.txtNroCtaBanco.TabIndex = 21
         '
         'Label16
         '
@@ -493,6 +489,7 @@ Partial Class A_Cheques
         Me.dtpAcredita.Name = "dtpAcredita"
         Me.dtpAcredita.Size = New System.Drawing.Size(98, 20)
         Me.dtpAcredita.TabIndex = 13
+        Me.dtpAcredita.Value = New Date(2019, 12, 11, 10, 21, 36, 0)
         '
         'Label12
         '
@@ -605,7 +602,7 @@ Partial Class A_Cheques
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.TextBox1)
+        Me.TabPage2.Controls.Add(Me.txtVoucher)
         Me.TabPage2.Controls.Add(Me.Label20)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
@@ -615,13 +612,13 @@ Partial Class A_Cheques
         Me.TabPage2.Text = "Voucher"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txtVoucher
         '
-        Me.TextBox1.Location = New System.Drawing.Point(14, 31)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(723, 70)
-        Me.TextBox1.TabIndex = 1
+        Me.txtVoucher.Location = New System.Drawing.Point(14, 31)
+        Me.txtVoucher.Multiline = True
+        Me.txtVoucher.Name = "txtVoucher"
+        Me.txtVoucher.Size = New System.Drawing.Size(723, 70)
+        Me.txtVoucher.TabIndex = 1
         '
         'Label20
         '
@@ -640,31 +637,46 @@ Partial Class A_Cheques
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
         Me.btnGuardar.Location = New System.Drawing.Point(618, 428)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 40)
         Me.btnGuardar.TabIndex = 2
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btnCancelar
         '
-        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(699, 428)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Cancelar"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnCancelar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCancelar.FlatAppearance.BorderSize = 0
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.ForeColor = System.Drawing.Color.White
+        Me.btnCancelar.Location = New System.Drawing.Point(699, 428)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 40)
+        Me.btnCancelar.TabIndex = 3
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = False
+        '
+        'btnImprimir
+        '
+        Me.btnImprimir.BackColor = System.Drawing.Color.Transparent
+        Me.btnImprimir.BackgroundImage = CType(resources.GetObject("btnImprimir.BackgroundImage"), System.Drawing.Image)
+        Me.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnImprimir.FlatAppearance.BorderSize = 0
+        Me.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImprimir.Location = New System.Drawing.Point(16, 428)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(48, 40)
+        Me.btnImprimir.TabIndex = 4
+        Me.btnImprimir.UseVisualStyleBackColor = False
+        Me.btnImprimir.Visible = False
         '
         'A_Cheques
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(785, 461)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(785, 480)
+        Me.Controls.Add(Me.btnImprimir)
+        Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.GroupBox1)
@@ -721,7 +733,7 @@ Partial Class A_Cheques
     Friend WithEvents Label13 As Label
     Friend WithEvents txtCtaOrigen As TextBox
     Friend WithEvents Label17 As Label
-    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents txtNroCtaBanco As TextBox
     Friend WithEvents Label16 As Label
     Friend WithEvents dtpCancelado As DateTimePicker
     Friend WithEvents Label15 As Label
@@ -733,7 +745,7 @@ Partial Class A_Cheques
     Friend WithEvents Label19 As Label
     Friend WithEvents txtCtaTemporal As TextBox
     Friend WithEvents Label18 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtVoucher As TextBox
     Friend WithEvents Label20 As Label
     Friend WithEvents rbtnRechazado As RadioButton
     Friend WithEvents rbtnCancelado As RadioButton
@@ -741,5 +753,6 @@ Partial Class A_Cheques
     Friend WithEvents rbtnEmitido As RadioButton
     Friend WithEvents rbtnChequera As RadioButton
     Friend WithEvents lblEstado As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents btnImprimir As Button
 End Class

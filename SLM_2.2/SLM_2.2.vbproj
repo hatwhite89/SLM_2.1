@@ -63,10 +63,17 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -120,6 +127,7 @@
     <Compile Include="negocio\ClsDetalleRecibo.vb" />
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
+    <Compile Include="negocio\ClsFuncionesVarias.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
     <Compile Include="negocio\ClsItemExamen.vb" />
     <Compile Include="negocio\ClsMaquinasLocales.vb" />
@@ -134,6 +142,12 @@
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_FacturaCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ImpresionCheque.Designer.vb">
+      <DependentUpon>A_ImpresionCheque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ImpresionCheque.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_ListadoBancos.Designer.vb">
@@ -578,6 +592,9 @@
     <EmbeddedResource Include="presentacion\A_FacturaCompras.resx">
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ImpresionCheque.resx">
+      <DependentUpon>A_ImpresionCheque.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoBancos.resx">
       <DependentUpon>A_ListadoBancos.vb</DependentUpon>
     </EmbeddedResource>
@@ -801,5 +818,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

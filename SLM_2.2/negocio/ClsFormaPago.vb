@@ -433,5 +433,28 @@ Public Class ClsFormaPago
 
     End Function
 
+    'Capturar toda informacion por codigo de forma de pago
+    Public Function infoFormaPago() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmInfoFormaPagoxCod"
+            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Cod
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
 
 End Class
