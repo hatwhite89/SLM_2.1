@@ -342,16 +342,6 @@ Public Class ClsCheques
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codChequera"
-        sqlpar.Value = Cod_Chequera
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "nroCheque"
-        sqlpar.Value = Numero_Cheque
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
         sqlpar.ParameterName = "monto"
         sqlpar.Value = Mont_o
         sqlcom.Parameters.Add(sqlpar)
@@ -367,11 +357,6 @@ Public Class ClsCheques
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "moneda"
-        sqlpar.Value = Cod_Cheque
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
         sqlpar.ParameterName = "codBreveProveedor"
         sqlpar.Value = Cod_BreveProvee
         sqlcom.Parameters.Add(sqlpar)
@@ -379,16 +364,6 @@ Public Class ClsCheques
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "nombreProveedor"
         sqlpar.Value = Nombre_Proveedor
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codBreveBanco"
-        sqlpar.Value = Cod_BreveBanco
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "nombreBanco"
-        sqlpar.Value = Nombre_Banco
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

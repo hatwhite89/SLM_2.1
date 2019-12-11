@@ -23,14 +23,14 @@ Partial Class A_ListarFacCompraPagos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dtFacturasCompra = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtFacturasCompra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.dtFacturasCompra)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(524, 291)
@@ -38,16 +38,16 @@ Partial Class A_ListarFacCompraPagos
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Facturas de Compra"
         '
-        'DataGridView1
+        'dtFacturasCompra
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.GridColor = System.Drawing.Color.White
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 19)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(512, 266)
-        Me.DataGridView1.TabIndex = 0
+        Me.dtFacturasCompra.BackgroundColor = System.Drawing.Color.White
+        Me.dtFacturasCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtFacturasCompra.GridColor = System.Drawing.Color.White
+        Me.dtFacturasCompra.Location = New System.Drawing.Point(6, 19)
+        Me.dtFacturasCompra.Name = "dtFacturasCompra"
+        Me.dtFacturasCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtFacturasCompra.Size = New System.Drawing.Size(512, 266)
+        Me.dtFacturasCompra.TabIndex = 0
         '
         'A_ListarFacCompraPagos
         '
@@ -59,11 +59,11 @@ Partial Class A_ListarFacCompraPagos
         Me.Name = "A_ListarFacCompraPagos"
         Me.Text = "Listado de Facturas de Compra"
         Me.GroupBox1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtFacturasCompra, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dtFacturasCompra As DataGridView
 End Class

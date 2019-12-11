@@ -11,10 +11,12 @@
     Private Sub dtProveedor_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtProveedor.CellDoubleClick
 
         'Cargar informacion de proveedor
+        Dim dt As DataTable = dtProveedor.DataSource
+        Dim row As DataRow = dt.Rows(0)
 
-        A_Cheques.txtcodProvee.Text = dtProveedor.Rows(e.RowIndex).Cells(1).Value 'Codigo Proveedor
-        A_Cheques.txtNombreProvee.Text = dtProveedor.Rows(e.RowIndex).Cells(4).Value 'Nombre de proveedor
-        A_Cheques.txtTributario.Text = dtProveedor.Rows(e.RowIndex).Cells(3).Value 'Id tributario
+        A_Cheques.txtcodProvee.Text = row("codBreve") 'Codigo Proveedor
+        A_Cheques.txtNombreProvee.Text = row("nombreProveedor")  'Nombre de proveedor
+        A_Cheques.txtTributario.Text = row("idTributario") 'Id tributario
         Me.Close()
 
     End Sub

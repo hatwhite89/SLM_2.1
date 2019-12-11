@@ -114,7 +114,6 @@
             End If
         End If
     End Sub
-
     Sub limpiar() 'Limpiar todos los campos
         txtNro.Text = ""
         txtComentario.Text = ""
@@ -205,13 +204,12 @@
             A_ListarChequesHabilitados.Show()
             lblFila.Text = e.RowIndex
 
+        ElseIf e.ColumnIndex = 0 Then
+
+            A_ListarFacCompraPagos.Show()
+
         End If
 
-
-
-
-
     End Sub
-
 
 End Class
