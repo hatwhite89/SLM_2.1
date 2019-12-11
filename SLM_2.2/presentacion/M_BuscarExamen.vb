@@ -36,11 +36,13 @@
             precio = Convert.ToDouble(dgbtabla.Rows(e.RowIndex).Cells(2).Value())
 
             Dim n As String = MsgBox("¿Desea agregar el examen a la factura?", MsgBoxStyle.YesNo, "Validación")
-            If n = vbYes Then
+            If n = vbYes And M_Factura.validarFactura2(code) = 0 Then
                 M_Factura.dgblistadoExamenes.Rows.Add(New String() {code, "1", precio, descrip, fechaHoy.Date.AddDays(7), "0", precio})
                 M_ClienteVentana.dgvtabla.Rows.Add(New String() {code, "1", precio, descrip, fechaHoy.Date.AddDays(7), "0", precio})
                 M_Factura.totalFactura()
                 Me.Close()
+            Else
+                MsgBox("El examen ya a sido registrado en la factura.", MsgBoxStyle.Critical)
             End If
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)

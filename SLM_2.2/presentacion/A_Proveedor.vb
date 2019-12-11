@@ -1,10 +1,14 @@
 ﻿Public Class A_Proveedor
     Dim Proveedor As New ClsProveedor
+    Dim codigoDetalleContacto As ArrayList = New ArrayList()
 
     Private Sub A_Proveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             'lista los proveedores
             dgvProveedores.DataSource = Proveedor.listarProveedores
+
+            'estado del formulario
+            lblEstado.Text = "Nuevo"
 
             'oculta el campo codigo
             Me.dgvDetalleContactos.Columns("codigo").Visible = False
@@ -36,9 +40,16 @@
     Private Sub dgvDetalleContactos_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvDetalleContactos.CellClick
         Try
 
-            If e.ColumnIndex = 3 And Me.dgvDetalleContactos.Rows(e.RowIndex).Cells(0).Value() <> "" Then
+            If e.ColumnIndex = 4 And dgvDetalleContactos.Rows(e.RowIndex).Cells(1).Value <> "" Then
                 Dim n As String = MsgBox("¿Desea eliminar el contacto?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then
+                    dgvDetalleContactos.Rows.Remove(dgvDetalleContactos.Rows(e.RowIndex.ToString))
+                End If
+
+            ElseIf e.ColumnIndex = 4 And lblEstado.Text = "Modificar" And Me.dgvDetalleContactos.Rows(e.RowIndex).Cells(0).Value() <> "" Then
+                Dim n As String = MsgBox("¿Desea eliminar la factura del recibo?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+                    codigoDetalleContacto.Add(Me.dgvDetalleContactos.Rows(e.RowIndex).Cells(0).Value())
                     dgvDetalleContactos.Rows.Remove(dgvDetalleContactos.Rows(e.RowIndex.ToString))
                 End If
             End If
@@ -48,10 +59,8 @@
     End Sub
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-
-        If txtNombreProvee.Text <> "" Then 'Comprobar si el campo categoria esta vacio.
-
-
+        'Comprobar si los campos no estan vacios.
+        If txtNombreProvee.Text <> "" And txtCodBreve.Text <> "" And txtCodigoTerminoPago.Text <> "" Then
             Try
 
                 With Proveedor
@@ -100,11 +109,7 @@
                 MessageBox.Show("Error al guardar. Detalle: " + ex.Message)
             End Try
 
-
         End If
-
-
-
     End Sub
 
     Private Sub dtProveedores_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProveedores.CellClick
@@ -121,6 +126,20 @@
             Dim temp As Integer = Me.dgvProveedores.Rows(e.RowIndex).Cells(8).Value().ToString
             cbxCategoria.SelectedIndex = temp - 1
             lblCodeTerminoPago.Text = dgvProveedores.Rows(e.RowIndex).Cells(9).Value
+            'cambio del estado del formulario
+            lblEstado.Text = "Modificar"
+
+            'Búsqueda y llenado del detalle contacto
+            Dim objDetCont As New ClsDetalleContactos
+            objDetCont.codProveedor_ = txtCodProveedor.Text
+            Dim dt As New DataTable
+            dt = objDetCont.BuscarDetalleContactos()
+            Dim row As DataRow
+            dgvDetalleContactos.Rows.Clear()
+            For index As Integer = 0 To dt.Rows.Count - 1
+                row = dt.Rows(index)
+                dgvDetalleContactos.Rows.Add(New String() {CStr(row("codigo")), CStr(row("nombre")), CStr(row("telefono")), CStr(row("correo"))})
+            Next
 
             'Habilitar botones
             btnGuardar.Visible = False
@@ -128,64 +147,90 @@
             btnNuevo.Visible = True
 
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
 
-
-        If txtNombreProvee.Text <> "" Then ' Comprobar que el campo categoria no este vacio.
-
-            With Proveedor
-                ' Capturar variables
-                .Cod_Proveedor = txtCodProveedor.Text
-                .Cod_Breve = txtCodBreve.Text
-                .Id_Tributario = txtIdTribu.Text
-                .Nombre_Proveedor = txtNombreProvee.Text
-                .Telefo_no = txtTelefono.Text
-                .Emai_l = txtEmail.Text
-                .Direcci_on = txtDireccion.Text
-                .Sitio_Web = txtSitioWeb.Text
-                .Cod_Cate = Convert.ToInt32(cbxCategoria.SelectedIndex.ToString) + 1
-                .cod_TermPago = Convert.ToInt32(lblCodeTerminoPago.Text)
-
-                ' Registrar proveedor en base de datos
-                '.ModificarProveedor()
-                Limpiar()
+        Try
+            'Comprobar si los campos no estan vacios.
+            If txtNombreProvee.Text <> "" And txtCodBreve.Text <> "" And txtCodigoTerminoPago.Text <> "" Then
+                With Proveedor
+                    ' Capturar variables
+                    .Cod_Proveedor = txtCodProveedor.Text
+                    .Cod_Breve = txtCodBreve.Text
+                    .Id_Tributario = txtIdTribu.Text
+                    .Nombre_Proveedor = txtNombreProvee.Text
+                    .Telefo_no = txtTelefono.Text
+                    .Emai_l = txtEmail.Text
+                    .Direcci_on = txtDireccion.Text
+                    .Sitio_Web = txtSitioWeb.Text
+                    .Cod_Cate = Convert.ToInt32(cbxCategoria.SelectedIndex.ToString) + 1
+                    .cod_TermPago = Convert.ToInt32(lblCodeTerminoPago.Text)
+                End With
                 'Actualizar listado de proveedores
                 dgvProveedores.DataSource = Proveedor.listarProveedores
+                'Modifica el proveedor
+                If Proveedor.ModificarProveedor() = 1 Then
+                    btnGuardar.Enabled = False
 
-            End With
-            If Proveedor.ModificarProveedor() = 1 Then
-                'deshabilitar()
-                btnGuardar.Enabled = False
+                    Dim objDetCont As New ClsDetalleContactos
+                    For index As Integer = 0 To codigoDetalleContacto.Count - 1
+                        objDetCont.codigo_ = Convert.ToInt64(codigoDetalleContacto(index))
+                        If objDetCont.EliminarDetalleContactos() <> 1 Then
+                            MsgBox("Error al querer modificar el recibo")
+                        End If
+                    Next
+                    'limpiar el arraylist
+                    codigoDetalleContacto.Clear()
+                    'modificar y agregar nuevos contactos a la base de datos
+                    For index As Integer = 0 To dgvDetalleContactos.Rows.Count - 2
+                        If (dgvDetalleContactos.Rows(index).Cells(0).Value() = "") Then
+                            'nuevos
+                            With objDetCont
+                                .codProveedor_ = txtCodProveedor.Text
+                                .nombre_ = dgvDetalleContactos.Rows(index).Cells(1).Value()
+                                .telefono_ = dgvDetalleContactos.Rows(index).Cells(2).Value()
+                                .correo_ = dgvDetalleContactos.Rows(index).Cells(3).Value()
+                            End With
+                            If objDetCont.RegistrarNuevoDetalleContactos() = 0 Then
+                                MsgBox("Error al querer modificar el contacto.")
+                            End If
+                        Else
+                            'actualiza los contactos
+                            With objDetCont
+                                .codigo_ = dgvDetalleContactos.Rows(index).Cells(0).Value()
+                                .codProveedor_ = txtCodProveedor.Text
+                                .nombre_ = dgvDetalleContactos.Rows(index).Cells(1).Value()
+                                .telefono_ = dgvDetalleContactos.Rows(index).Cells(2).Value()
+                                .correo_ = dgvDetalleContactos.Rows(index).Cells(3).Value()
+                            End With
+                            If objDetCont.ModificarDetalleContactos() = 0 Then
+                                MsgBox("Error al querer modificar el contacto.")
+                            End If
+                        End If
+                    Next
+                    'limpia lo ingresado 
+                    Limpiar()
+                    'muestra el mensaje 
+                    MsgBox("El registro se ha modificado exitosamente.")
+                Else
+                    MsgBox("Error al querer modificar el proveedor.", MsgBoxStyle.Critical)
+                End If
 
-                Dim objDetCont As New ClsDetalleContactos
-                For index As Integer = 0 To dgvDetalleContactos.Rows.Count - 2
-                    With objDetCont
-                        .codProveedor_ = txtCodProveedor.Text
-                        .nombre_ = dgvDetalleContactos.Rows(index).Cells(1).Value()
-                        .telefono_ = dgvDetalleContactos.Rows(index).Cells(2).Value()
-                        .correo_ = dgvDetalleContactos.Rows(index).Cells(3).Value()
-                    End With
-                    If objDetCont.RegistrarNuevoDetalleContactos() = 0 Then
-                        MsgBox("Error al querer modificar el contacto.")
-                    End If
-                Next
-                MsgBox("El registro se ha modificado exitosamente.")
             Else
-                MsgBox("Error al querer modificar el proveedor.", MsgBoxStyle.Critical)
+                MsgBox("Debe ingresar los campos necesarios.")
             End If
 
-        Else
-            MsgBox("El campo Categoria esta vacio.")
-        End If
-
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
     End Sub
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Limpiar()
+        lblEstado.Text = "Nuevo"
         btnNuevo.Visible = False
         btnModificar.Visible = False
         btnGuardar.Visible = True
@@ -199,7 +244,6 @@
     Private Sub txtNombreBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtNombreBusqueda.TextChanged
 
         'Busqueda de Proveedor
-
         Dim Dato As New DataView
 
         'Actualizar datos en datagrid con textbox
@@ -280,4 +324,5 @@
     Private Sub btnBuscarTerminoPago_Click(sender As Object, e As EventArgs) Handles btnBuscarTerminoPago.Click
         M_ListarTerminoPago.ShowDialog()
     End Sub
+
 End Class

@@ -37,6 +37,7 @@ Partial Class A_Proveedor
         Me.lblNombreProv = New System.Windows.Forms.Label()
         Me.dgvProveedores = New System.Windows.Forms.DataGridView()
         Me.gbxInformacion = New System.Windows.Forms.GroupBox()
+        Me.lblEstado = New System.Windows.Forms.Label()
         Me.cbxCategoria = New System.Windows.Forms.ComboBox()
         Me.txtCodBreve = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -91,6 +92,7 @@ Partial Class A_Proveedor
         '
         Me.txtSitioWeb.Location = New System.Drawing.Point(687, 102)
         Me.txtSitioWeb.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtSitioWeb.MaxLength = 100
         Me.txtSitioWeb.Name = "txtSitioWeb"
         Me.txtSitioWeb.Size = New System.Drawing.Size(191, 22)
         Me.txtSitioWeb.TabIndex = 7
@@ -109,6 +111,7 @@ Partial Class A_Proveedor
         '
         Me.txtDireccion.Location = New System.Drawing.Point(148, 133)
         Me.txtDireccion.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtDireccion.MaxLength = 200
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(375, 22)
         Me.txtDireccion.TabIndex = 8
@@ -127,6 +130,7 @@ Partial Class A_Proveedor
         '
         Me.txtEmail.Location = New System.Drawing.Point(148, 101)
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtEmail.MaxLength = 100
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(375, 22)
         Me.txtEmail.TabIndex = 3
@@ -145,6 +149,7 @@ Partial Class A_Proveedor
         '
         Me.txtTelefono.Location = New System.Drawing.Point(687, 71)
         Me.txtTelefono.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTelefono.MaxLength = 20
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(132, 22)
         Me.txtTelefono.TabIndex = 5
@@ -163,6 +168,7 @@ Partial Class A_Proveedor
         '
         Me.txtNombreProvee.Location = New System.Drawing.Point(148, 70)
         Me.txtNombreProvee.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNombreProvee.MaxLength = 50
         Me.txtNombreProvee.Name = "txtNombreProvee"
         Me.txtNombreProvee.Size = New System.Drawing.Size(375, 22)
         Me.txtNombreProvee.TabIndex = 2
@@ -197,6 +203,7 @@ Partial Class A_Proveedor
         '
         'gbxInformacion
         '
+        Me.gbxInformacion.Controls.Add(Me.lblEstado)
         Me.gbxInformacion.Controls.Add(Me.cbxCategoria)
         Me.gbxInformacion.Controls.Add(Me.txtCodBreve)
         Me.gbxInformacion.Controls.Add(Me.Label9)
@@ -231,6 +238,15 @@ Partial Class A_Proveedor
         Me.gbxInformacion.TabStop = False
         Me.gbxInformacion.Text = "Información de Proveedor"
         '
+        'lblEstado
+        '
+        Me.lblEstado.AutoSize = True
+        Me.lblEstado.Location = New System.Drawing.Point(335, 218)
+        Me.lblEstado.Name = "lblEstado"
+        Me.lblEstado.Size = New System.Drawing.Size(0, 17)
+        Me.lblEstado.TabIndex = 29
+        Me.lblEstado.Visible = False
+        '
         'cbxCategoria
         '
         Me.cbxCategoria.DropDownWidth = 170
@@ -244,6 +260,7 @@ Partial Class A_Proveedor
         '
         Me.txtCodBreve.Location = New System.Drawing.Point(392, 39)
         Me.txtCodBreve.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCodBreve.MaxLength = 50
         Me.txtCodBreve.Name = "txtCodBreve"
         Me.txtCodBreve.Size = New System.Drawing.Size(132, 22)
         Me.txtCodBreve.TabIndex = 27
@@ -286,6 +303,7 @@ Partial Class A_Proveedor
         '
         Me.txtIdTribu.Location = New System.Drawing.Point(148, 166)
         Me.txtIdTribu.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtIdTribu.MaxLength = 20
         Me.txtIdTribu.Name = "txtIdTribu"
         Me.txtIdTribu.Size = New System.Drawing.Size(151, 22)
         Me.txtIdTribu.TabIndex = 23
@@ -314,6 +332,7 @@ Partial Class A_Proveedor
         '
         Me.txtCodigoTerminoPago.Location = New System.Drawing.Point(687, 38)
         Me.txtCodigoTerminoPago.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCodigoTerminoPago.MaxLength = 20
         Me.txtCodigoTerminoPago.Name = "txtCodigoTerminoPago"
         Me.txtCodigoTerminoPago.Size = New System.Drawing.Size(156, 22)
         Me.txtCodigoTerminoPago.TabIndex = 4
@@ -405,6 +424,7 @@ Partial Class A_Proveedor
         '
         Me.txtNombreBusqueda.Location = New System.Drawing.Point(153, 34)
         Me.txtNombreBusqueda.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNombreBusqueda.MaxLength = 50
         Me.txtNombreBusqueda.Name = "txtNombreBusqueda"
         Me.txtNombreBusqueda.Size = New System.Drawing.Size(327, 22)
         Me.txtNombreBusqueda.TabIndex = 14
@@ -412,12 +432,12 @@ Partial Class A_Proveedor
         'lblBuscarProv
         '
         Me.lblBuscarProv.AutoSize = True
-        Me.lblBuscarProv.Location = New System.Drawing.Point(25, 38)
+        Me.lblBuscarProv.Location = New System.Drawing.Point(19, 36)
         Me.lblBuscarProv.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblBuscarProv.Name = "lblBuscarProv"
-        Me.lblBuscarProv.Size = New System.Drawing.Size(126, 17)
+        Me.lblBuscarProv.Size = New System.Drawing.Size(128, 17)
         Me.lblBuscarProv.TabIndex = 13
-        Me.lblBuscarProv.Text = "Buscar Proveedor:"
+        Me.lblBuscarProv.Text = "Nombre Proveedor"
         '
         'gbxContactos
         '
@@ -538,4 +558,5 @@ Partial Class A_Proveedor
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents Telefono As DataGridViewTextBoxColumn
     Friend WithEvents Correo As DataGridViewTextBoxColumn
+    Friend WithEvents lblEstado As Label
 End Class

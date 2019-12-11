@@ -145,7 +145,7 @@ Public Class ClsCategoria
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "M_slmBuscarCategoria"
-            cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion
+            cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion1
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
