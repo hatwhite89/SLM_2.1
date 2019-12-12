@@ -327,6 +327,26 @@
             End Try
         End If
     End Sub
+    Private Function validarFactura(ByVal codigoExamen As Integer)
+        Dim cont As Integer = 0
+        For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
+            If (dgblistadoExamenes.Rows(index).Cells(0).Value().ToString = codigoExamen) Then
+                cont += 1
+            End If
+            If (cont >= 2) Then
+                Return 1
+            End If
+        Next
+        Return 0
+    End Function
+    Public Function validarFactura2(ByVal codigoExamen As Integer)
+        For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
+            If (dgblistadoExamenes.Rows(index).Cells(0).Value().ToString = codigoExamen) Then
+                Return 1
+            End If
+        Next
+        Return 0
+    End Function
     Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
 
         If e.ColumnIndex = 0 Then
@@ -339,17 +359,23 @@
 
                     Dim dt As New DataTable
                     dt = objExam.BuscarExamen()
+                    'valido que no haya agregado el examen anteriormente
+                    If (validarFactura(objExam.Codigo1) = 0) Then
+                        Dim row As DataRow = dt.Rows(0)
+                        dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+                        Dim subtotal As Double = Convert.ToDouble(CStr(row("total")))
+                        Dim descuento As Double
+                        descuento = subtotal * (0 / 100)
+                        subtotal -= descuento
+                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
+                        totalFactura()
 
-                    Dim row As DataRow = dt.Rows(0)
-                    dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
-                    Dim subtotal As Double = Convert.ToDouble(CStr(row("total")))
-                    Dim descuento As Double
-                    descuento = subtotal * (0 / 100)
-                    subtotal -= descuento
-                    dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
-                    totalFactura()
+                        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
+                    Else 'muestro el mensaje de error
+                        MsgBox("El examen ya a sido agregado.")
+                        dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+                    End If
 
-                    M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
                 Else
                     dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
                 End If

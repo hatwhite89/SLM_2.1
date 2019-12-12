@@ -193,6 +193,16 @@
                             If objDetRbo.RegistrarNuevoDetalleRecibo() = 0 Then
                                 MsgBox("Error al querer insertar el detalle del recibo.")
                             End If
+                        Else
+                            'actualiza los recibos
+                            With objDetRbo
+                                .codigo_ = dgbtabla.Rows(index).Cells(0).Value()
+                                .codigoRecibo_ = txtnumero.Text
+                                .numeroFactura_ = dgbtabla.Rows(index).Cells(1).Value()
+                            End With
+                            If objDetRbo.ModificarDetalleRecibo() = 0 Then
+                                MsgBox("Error al querer modificar el recibo.")
+                            End If
                         End If
                     Next
                     MsgBox("Modificado correctamente.")
