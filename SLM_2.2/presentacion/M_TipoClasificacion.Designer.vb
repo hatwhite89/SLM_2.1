@@ -231,7 +231,7 @@ Partial Class M_TipoClasificacion
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
         Me.Name = "M_TipoClasificacion"
-        Me.Text = "TipoClasificacion"
+        Me.Text = "Tipo Clasificación"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()

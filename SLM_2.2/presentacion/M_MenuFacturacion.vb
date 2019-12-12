@@ -23,8 +23,10 @@
     Private Sub btnItems_Click(sender As Object, e As EventArgs) Handles btnItems.Click
         E_DetalleExamenes.ShowDialog()
     End Sub
-
     Private Sub btnGrupoExamen_Click(sender As Object, e As EventArgs) Handles btnGrupoExamen.Click
         E_GrupoExamen.ShowDialog()
+    End Sub
+    Private Sub btnContactos_Click(sender As Object, e As EventArgs) Handles btnContactos.Click
+        A_Proveedor.ShowDialog()
     End Sub
 End Class

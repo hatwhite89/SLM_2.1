@@ -140,7 +140,7 @@ Partial Class M_ListarFactura
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
         Me.Name = "M_ListarFactura"
-        Me.Text = "M_ListarFactura"
+        Me.Text = "Facturas"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()

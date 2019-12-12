@@ -23,6 +23,7 @@ Partial Class M_ListarClientes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.txtIdentidadB = New System.Windows.Forms.TextBox()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lblnombreB = New System.Windows.Forms.Label()
         Me.lbltipoCta = New System.Windows.Forms.Label()
@@ -30,7 +31,6 @@ Partial Class M_ListarClientes
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtNombreB = New System.Windows.Forms.TextBox()
         Me.lblIdentidadB = New System.Windows.Forms.Label()
-        Me.txtIdentidadB = New System.Windows.Forms.TextBox()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -53,6 +53,13 @@ Partial Class M_ListarClientes
         Me.gbxbusqueda.TabIndex = 119
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR CLIENTES"
+        '
+        'txtIdentidadB
+        '
+        Me.txtIdentidadB.Location = New System.Drawing.Point(111, 29)
+        Me.txtIdentidadB.Name = "txtIdentidadB"
+        Me.txtIdentidadB.Size = New System.Drawing.Size(192, 22)
+        Me.txtIdentidadB.TabIndex = 120
         '
         'dgbtabla
         '
@@ -123,13 +130,6 @@ Partial Class M_ListarClientes
         Me.lblIdentidadB.TabIndex = 114
         Me.lblIdentidadB.Text = "Identidad"
         '
-        'txtIdentidadB
-        '
-        Me.txtIdentidadB.Location = New System.Drawing.Point(111, 29)
-        Me.txtIdentidadB.Name = "txtIdentidadB"
-        Me.txtIdentidadB.Size = New System.Drawing.Size(192, 22)
-        Me.txtIdentidadB.TabIndex = 120
-        '
         'M_ListarClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -139,7 +139,7 @@ Partial Class M_ListarClientes
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
         Me.Name = "M_ListarClientes"
-        Me.Text = "M_ListarClientes"
+        Me.Text = "Clientes"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()

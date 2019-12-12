@@ -102,6 +102,8 @@ Partial Class M_Factura
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.lblcodeSucursal = New System.Windows.Forms.Label()
         Me.lblcodeTerminoPago = New System.Windows.Forms.Label()
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.gbxlistadoExamenes.SuspendLayout()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -961,6 +963,10 @@ Partial Class M_Factura
         Me.lblcodeTerminoPago.TabIndex = 99
         Me.lblcodeTerminoPago.Visible = False
         '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.UseEXDialog = True
+        '
         'M_Factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1126,4 +1132,6 @@ Partial Class M_Factura
     Friend WithEvents btnActualizar As Button
     Friend WithEvents lblcodeSucursal As Label
     Friend WithEvents lblcodeTerminoPago As Label
+    Friend WithEvents PrintDialog1 As PrintDialog
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
 End Class
