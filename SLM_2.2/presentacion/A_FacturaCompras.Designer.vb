@@ -24,6 +24,8 @@ Partial Class A_FacturaCompras
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_FacturaCompras))
         Me.gbxInfoFact = New System.Windows.Forms.GroupBox()
+        Me.txtNroFactura = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.lblFila = New System.Windows.Forms.Label()
         Me.btnBuscarTerminoPago = New System.Windows.Forms.Button()
         Me.txtMoneda = New System.Windows.Forms.TextBox()
@@ -50,8 +52,6 @@ Partial Class A_FacturaCompras
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.btnRegresar = New System.Windows.Forms.Button()
-        Me.txtNroFactura = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.area = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Sede = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -88,15 +88,33 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.Controls.Add(Me.Label1)
         Me.gbxInfoFact.Location = New System.Drawing.Point(7, 5)
         Me.gbxInfoFact.Name = "gbxInfoFact"
-        Me.gbxInfoFact.Size = New System.Drawing.Size(547, 185)
+        Me.gbxInfoFact.Size = New System.Drawing.Size(652, 164)
         Me.gbxInfoFact.TabIndex = 0
         Me.gbxInfoFact.TabStop = False
         Me.gbxInfoFact.Text = "Información de Factura"
         '
+        'txtNroFactura
+        '
+        Me.txtNroFactura.Location = New System.Drawing.Point(306, 25)
+        Me.txtNroFactura.MaxLength = 100
+        Me.txtNroFactura.Name = "txtNroFactura"
+        Me.txtNroFactura.Size = New System.Drawing.Size(340, 20)
+        Me.txtNroFactura.TabIndex = 1
+        Me.txtNroFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(198, 28)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(66, 13)
+        Me.Label10.TabIndex = 22
+        Me.Label10.Text = "Nro. Factura"
+        '
         'lblFila
         '
         Me.lblFila.AutoSize = True
-        Me.lblFila.Location = New System.Drawing.Point(485, 162)
+        Me.lblFila.Location = New System.Drawing.Point(485, 137)
         Me.lblFila.Name = "lblFila"
         Me.lblFila.Size = New System.Drawing.Size(45, 13)
         Me.lblFila.TabIndex = 20
@@ -110,7 +128,7 @@ Partial Class A_FacturaCompras
         Me.btnBuscarTerminoPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscarTerminoPago.FlatAppearance.BorderSize = 0
         Me.btnBuscarTerminoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarTerminoPago.Location = New System.Drawing.Point(364, 103)
+        Me.btnBuscarTerminoPago.Location = New System.Drawing.Point(364, 78)
         Me.btnBuscarTerminoPago.Name = "btnBuscarTerminoPago"
         Me.btnBuscarTerminoPago.Size = New System.Drawing.Size(21, 20)
         Me.btnBuscarTerminoPago.TabIndex = 7
@@ -118,7 +136,7 @@ Partial Class A_FacturaCompras
         '
         'txtMoneda
         '
-        Me.txtMoneda.Location = New System.Drawing.Point(306, 155)
+        Me.txtMoneda.Location = New System.Drawing.Point(306, 130)
         Me.txtMoneda.MaxLength = 10
         Me.txtMoneda.Name = "txtMoneda"
         Me.txtMoneda.Size = New System.Drawing.Size(84, 20)
@@ -127,7 +145,7 @@ Partial Class A_FacturaCompras
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(206, 159)
+        Me.Label9.Location = New System.Drawing.Point(198, 131)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(46, 13)
         Me.Label9.TabIndex = 17
@@ -136,7 +154,7 @@ Partial Class A_FacturaCompras
         'dtpVencimiento
         '
         Me.dtpVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpVencimiento.Location = New System.Drawing.Point(109, 155)
+        Me.dtpVencimiento.Location = New System.Drawing.Point(109, 129)
         Me.dtpVencimiento.Name = "dtpVencimiento"
         Me.dtpVencimiento.Size = New System.Drawing.Size(84, 20)
         Me.dtpVencimiento.TabIndex = 5
@@ -144,7 +162,7 @@ Partial Class A_FacturaCompras
         'dtpTransaccion
         '
         Me.dtpTransaccion.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpTransaccion.Location = New System.Drawing.Point(109, 129)
+        Me.dtpTransaccion.Location = New System.Drawing.Point(109, 103)
         Me.dtpTransaccion.Name = "dtpTransaccion"
         Me.dtpTransaccion.Size = New System.Drawing.Size(84, 20)
         Me.dtpTransaccion.TabIndex = 4
@@ -152,7 +170,7 @@ Partial Class A_FacturaCompras
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(9, 159)
+        Me.Label8.Location = New System.Drawing.Point(6, 128)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(98, 13)
         Me.Label8.TabIndex = 14
@@ -161,7 +179,7 @@ Partial Class A_FacturaCompras
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(9, 133)
+        Me.Label7.Location = New System.Drawing.Point(6, 102)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(99, 13)
         Me.Label7.TabIndex = 12
@@ -169,7 +187,7 @@ Partial Class A_FacturaCompras
         '
         'txtTerminoPago
         '
-        Me.txtTerminoPago.Location = New System.Drawing.Point(306, 103)
+        Me.txtTerminoPago.Location = New System.Drawing.Point(306, 78)
         Me.txtTerminoPago.MaxLength = 5
         Me.txtTerminoPago.Name = "txtTerminoPago"
         Me.txtTerminoPago.Size = New System.Drawing.Size(52, 20)
@@ -178,7 +196,7 @@ Partial Class A_FacturaCompras
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(206, 106)
+        Me.Label6.Location = New System.Drawing.Point(198, 78)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(93, 13)
         Me.Label6.TabIndex = 10
@@ -187,7 +205,7 @@ Partial Class A_FacturaCompras
         'dtpFechaFactura
         '
         Me.dtpFechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaFactura.Location = New System.Drawing.Point(109, 103)
+        Me.dtpFechaFactura.Location = New System.Drawing.Point(109, 77)
         Me.dtpFechaFactura.Name = "dtpFechaFactura"
         Me.dtpFechaFactura.Size = New System.Drawing.Size(84, 20)
         Me.dtpFechaFactura.TabIndex = 3
@@ -195,7 +213,7 @@ Partial Class A_FacturaCompras
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(9, 109)
+        Me.Label5.Location = New System.Drawing.Point(6, 78)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(76, 13)
         Me.Label5.TabIndex = 8
@@ -204,16 +222,16 @@ Partial Class A_FacturaCompras
         'txtNombreProveedor
         '
         Me.txtNombreProveedor.Enabled = False
-        Me.txtNombreProveedor.Location = New System.Drawing.Point(109, 77)
+        Me.txtNombreProveedor.Location = New System.Drawing.Point(306, 51)
         Me.txtNombreProveedor.MaxLength = 150
         Me.txtNombreProveedor.Name = "txtNombreProveedor"
-        Me.txtNombreProveedor.Size = New System.Drawing.Size(421, 20)
+        Me.txtNombreProveedor.Size = New System.Drawing.Size(340, 20)
         Me.txtNombreProveedor.TabIndex = 2
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 80)
+        Me.Label4.Location = New System.Drawing.Point(198, 54)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(96, 13)
         Me.Label4.TabIndex = 6
@@ -221,7 +239,7 @@ Partial Class A_FacturaCompras
         '
         'txtTotal
         '
-        Me.txtTotal.Location = New System.Drawing.Point(306, 129)
+        Me.txtTotal.Location = New System.Drawing.Point(306, 104)
         Me.txtTotal.MaxLength = 9
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.Size = New System.Drawing.Size(84, 20)
@@ -230,7 +248,7 @@ Partial Class A_FacturaCompras
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(206, 132)
+        Me.Label3.Location = New System.Drawing.Point(198, 104)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(31, 13)
         Me.Label3.TabIndex = 4
@@ -242,7 +260,7 @@ Partial Class A_FacturaCompras
         Me.txtCodProveedor.MaxLength = 5
         Me.txtCodProveedor.Name = "txtCodProveedor"
         Me.txtCodProveedor.Size = New System.Drawing.Size(84, 20)
-        Me.txtCodProveedor.TabIndex = 1
+        Me.txtCodProveedor.TabIndex = 2
         '
         'Label2
         '
@@ -273,9 +291,9 @@ Partial Class A_FacturaCompras
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.dtDetalleFactura)
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 196)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 175)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(547, 310)
+        Me.GroupBox1.Size = New System.Drawing.Size(655, 310)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalle de Factura"
@@ -287,11 +305,12 @@ Partial Class A_FacturaCompras
         Me.dtDetalleFactura.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDetalleFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cuenta, Me.area, Me.Sede, Me.Descripción, Me.Monto})
+        Me.dtDetalleFactura.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtDetalleFactura.GridColor = System.Drawing.Color.White
-        Me.dtDetalleFactura.Location = New System.Drawing.Point(8, 18)
+        Me.dtDetalleFactura.Location = New System.Drawing.Point(3, 16)
         Me.dtDetalleFactura.Name = "dtDetalleFactura"
         Me.dtDetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.dtDetalleFactura.Size = New System.Drawing.Size(532, 285)
+        Me.dtDetalleFactura.Size = New System.Drawing.Size(649, 291)
         Me.dtDetalleFactura.TabIndex = 10
         '
         'btnGuardar
@@ -300,7 +319,7 @@ Partial Class A_FacturaCompras
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(479, 510)
+        Me.btnGuardar.Location = New System.Drawing.Point(588, 488)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 44)
         Me.btnGuardar.TabIndex = 11
@@ -313,7 +332,7 @@ Partial Class A_FacturaCompras
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(398, 510)
+        Me.btnModificar.Location = New System.Drawing.Point(507, 488)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 44)
         Me.btnModificar.TabIndex = 13
@@ -326,7 +345,7 @@ Partial Class A_FacturaCompras
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(317, 510)
+        Me.btnCrear.Location = New System.Drawing.Point(426, 488)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 44)
         Me.btnCrear.TabIndex = 12
@@ -340,54 +359,41 @@ Partial Class A_FacturaCompras
         Me.btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnRegresar.FlatAppearance.BorderSize = 0
         Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegresar.Location = New System.Drawing.Point(7, 514)
+        Me.btnRegresar.Location = New System.Drawing.Point(7, 488)
         Me.btnRegresar.Name = "btnRegresar"
         Me.btnRegresar.Size = New System.Drawing.Size(33, 37)
         Me.btnRegresar.TabIndex = 14
         Me.btnRegresar.UseVisualStyleBackColor = False
         '
-        'txtNroFactura
-        '
-        Me.txtNroFactura.Location = New System.Drawing.Point(274, 25)
-        Me.txtNroFactura.MaxLength = 100
-        Me.txtNroFactura.Name = "txtNroFactura"
-        Me.txtNroFactura.Size = New System.Drawing.Size(256, 20)
-        Me.txtNroFactura.TabIndex = 21
-        Me.txtNroFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(198, 28)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(66, 13)
-        Me.Label10.TabIndex = 22
-        Me.Label10.Text = "Nro. Factura"
-        '
         'Cuenta
         '
         Me.Cuenta.HeaderText = "Cuenta"
+        Me.Cuenta.MaxInputLength = 10
         Me.Cuenta.Name = "Cuenta"
         '
         'area
         '
         Me.area.HeaderText = "Area"
+        Me.area.MaxInputLength = 10
         Me.area.Name = "area"
         '
         'Sede
         '
         Me.Sede.HeaderText = "Sede"
+        Me.Sede.MaxInputLength = 10
         Me.Sede.Name = "Sede"
         '
         'Descripción
         '
         Me.Descripción.HeaderText = "Descripción"
+        Me.Descripción.MaxInputLength = 200
         Me.Descripción.Name = "Descripción"
         Me.Descripción.ReadOnly = True
         '
         'Monto
         '
         Me.Monto.HeaderText = "Monto"
+        Me.Monto.MaxInputLength = 10
         Me.Monto.Name = "Monto"
         '
         'A_FacturaCompras
@@ -395,7 +401,7 @@ Partial Class A_FacturaCompras
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(563, 561)
+        Me.ClientSize = New System.Drawing.Size(670, 540)
         Me.Controls.Add(Me.btnRegresar)
         Me.Controls.Add(Me.btnCrear)
         Me.Controls.Add(Me.btnModificar)

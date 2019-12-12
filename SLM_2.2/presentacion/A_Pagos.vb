@@ -212,4 +212,45 @@
 
     End Sub
 
+    Private Sub frmPagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+
+        Try
+
+            If txtNro.Text <> "" Then
+                'Mostrar detalle de factura
+                Dim dpago As New ClsDetallePago
+                Dim dtPago As New DataTable
+
+                dpago.Cod_Pago = Convert.ToInt32(txtNro.Text)
+
+                dtPago = dpago.listarDetallePago
+
+                For index As Integer = 0 To dtPago.Rows.Count - 1
+                    Dim row As DataRow = dtPago.Rows(index)
+                    dtDetallePagos.Rows.Add(New String() {(row("codProveedor")), CStr(row("nombreProveedor")), CStr(row("moneda")), CStr(row("total")), CStr(row("formaPago")), CStr(row("nroCheque"))})
+                Next
+
+            End If
+
+
+            'Bloquear datos si pago ya fue realizado
+            If chkPagado.Checked = True Then
+
+                dtDetallePagos.Columns(0).ReadOnly = True
+                dtDetallePagos.Columns(1).ReadOnly = True
+                dtDetallePagos.Columns(2).ReadOnly = True
+                dtDetallePagos.Columns(3).ReadOnly = True
+                dtDetallePagos.Columns(4).ReadOnly = True
+
+            End If
+
+
+        Catch ex As Exception
+            MsgBox("Error al cargar el detalle del pago. Detalle: " + ex.Message)
+        End Try
+
+
+    End Sub
 End Class

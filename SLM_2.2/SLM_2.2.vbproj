@@ -129,7 +129,6 @@
     <Compile Include="negocio\ClsDetalleRecibo.vb" />
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
-    <Compile Include="negocio\ClsFuncionesVarias.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
     <Compile Include="negocio\ClsItemExamen.vb" />
     <Compile Include="negocio\ClsMaquinasLocales.vb" />

@@ -95,7 +95,7 @@ Public Class ClsFacturaCompra
             fechaFactura = value
         End Set
     End Property
-
+    'NroFactura
     Public Property Nro_Factura As String
         Get
             Return nroFactura

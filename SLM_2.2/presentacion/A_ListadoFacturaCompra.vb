@@ -19,7 +19,6 @@
 
             Dim dt As New DataTable
 
-
             dt = dtFacturasCompra.DataSource
             Dim row As DataRow = dt.Rows(e.RowIndex)
 
@@ -32,6 +31,7 @@
             A_FacturaCompras.txtTerminoPago.Text = row("terminosPago")
             A_FacturaCompras.dtpTransaccion.Value = row("fechaTransaccion")
             A_FacturaCompras.dtpVencimiento.Value = row("fechaVencimiento")
+            A_FacturaCompras.txtNroFactura.Text = row("nroFactura")
 
 
             'Mostrar detalle de factura
@@ -44,13 +44,12 @@
 
             For index As Integer = 0 To dtFac.Rows.Count - 1
                 row = dtFac.Rows(index)
-                A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {(row("cuenta")), CStr(row("objetos")), CStr(row("descripcion")), CStr(row("monto")), CStr(row("tipoStock"))})
+                A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {(row("cuenta")), CStr(row("area")), CStr(row("sede")), CStr(row("descripcion")), CStr(row("monto")), CStr(row("tipoStock"))})
             Next
 
             A_FacturaCompras.btnCrear.Visible = True
             A_FacturaCompras.btnModificar.Visible = True
             A_FacturaCompras.btnGuardar.Visible = False
-
 
             Me.Close()
             A_FacturaCompras.Show()

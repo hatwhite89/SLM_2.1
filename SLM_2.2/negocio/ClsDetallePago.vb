@@ -120,6 +120,29 @@ Public Class ClsDetallePago
 
     End Function
 
+    'Cargar detalles de pago
+    Public Function listarDetallePago() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmListarDetallePago"
+            cmd.Parameters.Add("@codPago", SqlDbType.Int).Value = Cod_Pago
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
 
 
 
