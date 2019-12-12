@@ -4,7 +4,7 @@ Public Class ClsDetalleFacturaCompra
 
     'Variables 
     Dim codDetalle, cuenta, codFactura As Integer
-    Dim objetos, descripcion, tipoStock As String
+    Dim area, sede, descripcion, tipoStock As String
     Dim monto As Double
 
     'Constructor
@@ -13,7 +13,6 @@ Public Class ClsDetalleFacturaCompra
     End Sub
 
     ':::::::::::::::::::::::::::::::::::::::::::: Metodos SET y GET ::::::::::::::::::::::::::::::::::::::::::::
-
     'Monto
     Public Property Mont_o As Double
         Get
@@ -44,13 +43,23 @@ Public Class ClsDetalleFacturaCompra
         End Set
     End Property
 
-    'Objeto
-    Public Property Objeto_s As String
+    'Area
+    Public Property Are_a As String
         Get
-            Return objetos
+            Return area
         End Get
         Set(value As String)
-            objetos = value
+            area = value
+        End Set
+    End Property
+
+    'Sede
+    Public Property Sed_e As String
+        Get
+            Return sede
+        End Get
+        Set(value As String)
+            sede = value
         End Set
     End Property
 
@@ -104,8 +113,13 @@ Public Class ClsDetalleFacturaCompra
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "objetos"
-        sqlpar.Value = Objeto_s
+        sqlpar.ParameterName = "area"
+        sqlpar.Value = Are_a
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "sede"
+        sqlpar.Value = Sed_e
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -170,8 +184,13 @@ Public Class ClsDetalleFacturaCompra
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "objetos"
-        sqlpar.Value = Objeto_s
+        sqlpar.ParameterName = "area"
+        sqlpar.Value = Are_a
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "sede"
+        sqlpar.Value = Sed_e
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

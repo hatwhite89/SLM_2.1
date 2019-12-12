@@ -7,13 +7,24 @@
 
     End Sub
 
+
     Private Sub dtObjetos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtObjetos.CellClick
 
         Dim obj As String
 
-        obj = dtObjetos.Rows(e.RowIndex).Cells(0).Value
-        A_FacturaCompras.dtDetalleFactura.Rows(Convert.ToInt32(A_FacturaCompras.lblFila.Text)).Cells(1).Value = obj
-        Me.Close()
+
+        If lblForm.Text = "area" Then
+            obj = dtObjetos.Rows(e.RowIndex).Cells(0).Value
+            A_FacturaCompras.dtDetalleFactura.Rows(Convert.ToInt32(A_FacturaCompras.lblFila.Text)).Cells(1).Value = obj
+            Me.Close()
+        ElseIf lblForm.Text = "sede" Then
+            obj = dtObjetos.Rows(e.RowIndex).Cells(0).Value
+            A_FacturaCompras.dtDetalleFactura.Rows(Convert.ToInt32(A_FacturaCompras.lblFila.Text)).Cells(2).Value = obj
+            Me.Close()
+
+        End If
+
+
 
     End Sub
 End Class

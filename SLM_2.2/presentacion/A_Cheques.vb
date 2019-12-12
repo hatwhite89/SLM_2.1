@@ -11,8 +11,6 @@ Public Class A_Cheques
 
         Dim tipo As String
 
-
-
         Try
 
             If txtMonto.Text <> "" And txtcodProvee.Text <> "" Then
@@ -42,7 +40,13 @@ Public Class A_Cheques
                     .Fecha_emision = dtpEmision.Value
                     .Fecha_cancelado = dtpCancelado.Value
                     .Tip_o = tipo
-                    .cta_Origen = Convert.ToInt32("211100")
+
+                    If txtCtaOrigen.Text = "" Then
+                        .cta_Origen = Convert.ToInt32("211100")
+                    Else
+                        .cta_Origen = txtCtaOrigen.Text
+                    End If
+
                     .cta_Temporal = Convert.ToInt32(txtCtaTemporal.Text)
                     .cta_Destino = Convert.ToInt32(txtCtaDestino.Text)
 
@@ -232,77 +236,23 @@ Public Class A_Cheques
         A_ImpresionCheque.Show()
     End Sub
 
-    'Leer numeros
-    Public Function Num2Text(ByVal value As Double) As String
-
-        Select Case value
-            Case 0 : Num2Text = “CERO”
-            Case 1 : Num2Text = “UN”
-            Case 2 : Num2Text = “DOS”
-            Case 3 : Num2Text = “TRES”
-            Case 4 : Num2Text = “CUATRO”
-            Case 5 : Num2Text = “CINCO”
-            Case 6 : Num2Text = “SEIS”
-            Case 7 : Num2Text = “SIETE”
-            Case 8 : Num2Text = “OCHO”
-            Case 9 : Num2Text = “NUEVE”
-            Case 10 : Num2Text = “DIEZ”
-            Case 11 : Num2Text = “ONCE”
-            Case 12 : Num2Text = “DOCE”
-            Case 13 : Num2Text = “TRECE”
-            Case 14 : Num2Text = “CATORCE”
-            Case 15 : Num2Text = “QUINCE”
-            Case Is < 20 : Num2Text = “DIECI” & Num2Text(value - 10)
-            Case 20 : Num2Text = “VEINTE”
-            Case Is < 30 : Num2Text = “VEINTI” & Num2Text(value - 20)
-            Case 30 : Num2Text = “TREINTA”
-            Case 40 : Num2Text = “CUARENTA”
-            Case 50 : Num2Text = “CINCUENTA”
-            Case 60 : Num2Text = “SESENTA”
-            Case 70 : Num2Text = “SETENTA”
-            Case 80 : Num2Text = “OCHENTA”
-            Case 90 : Num2Text = “NOVENTA”
-            Case Is < 100 : Num2Text = Num2Text(Int(value \ 10) * 10) & ” Y ” & Num2Text(value Mod 10)
-            Case 100 : Num2Text = “CIEN”
-            Case Is < 200 : Num2Text = “CIENTO ” & Num2Text(value - 100)
-            Case 200, 300, 400, 600, 800 : Num2Text = Num2Text(Int(value \ 100)) & “CIENTOS”
-            Case 500 : Num2Text = “QUINIENTOS”
-            Case 700 : Num2Text = “SETECIENTOS”
-            Case 900 : Num2Text = “NOVECIENTOS”
-            Case Is < 1000 : Num2Text = Num2Text(Int(value \ 100) * 100) & ” ” & Num2Text(value Mod 100)
-            Case 1000 : Num2Text = “MIL”
-            Case Is < 2000 : Num2Text = “MIL ” & Num2Text(value Mod 1000)
-            Case Is < 1000000 : Num2Text = Num2Text(Int(value \ 1000)) & ” MIL”
-                If value Mod 1000 Then Num2Text = Num2Text & ” ” & Num2Text(value Mod 1000)
-            Case 1000000 : Num2Text = “UN MILLON”
-            Case Is < 2000000 : Num2Text = “UN MILLON ” & Num2Text(value Mod 1000000)
-            Case Is < 1000000000000.0# : Num2Text = Num2Text(Int(value / 1000000)) & ” MILLONES “
-                If (value - Int(value / 1000000) * 1000000) Then Num2Text = Num2Text & ” ” & Num2Text(value - Int(value / 1000000) * 1000000)
-            Case 1000000000000.0# : Num2Text = “UN BILLON”
-            Case Is < 2000000000000.0# : Num2Text = “UN BILLON ” & Num2Text(value - Int(value / 1000000000000.0#) * 1000000000000.0#)
-            Case Else : Num2Text = Num2Text(Int(value / 1000000000000.0#)) & ” BILLONES”
-                If (value - Int(value / 1000000000000.0#) * 1000000000000.0#) Then Num2Text = Num2Text & ” ” & Num2Text(value - Int(value / 1000000000000.0#) * 1000000000000.0#)
-        End Select
 
 
-    End Function
-
-
-    'Leer numeros 2
+    'Convertir numeros a letras para impresión de cheque
     Public NotInheritable Class Numalet
 
 #Region "Miembros estáticos"
 
         Private Const UNI As Integer = 0, DIECI As Integer = 1, DECENA As Integer = 2, CENTENA As Integer = 3
         Private Shared _matriz As String(,) = New String(CENTENA, 9) {
-            {Nothing, " Uno", " Dos", " Tres", " Cuatro", " Cinco", " Seis", " Siete", " Ocho", " Nueve"},
-            {" Diez", " Once", " doce", " trece", " catorce", " quince", " dieciséis", " diecisiete", " dieciocho", " diecinueve"},
-            {Nothing, Nothing, Nothing, " treinta", " cuarenta", " cincuenta", " sesenta", " setenta", " ochenta", " noventa"},
-            {Nothing, Nothing, Nothing, Nothing, Nothing, " quinientos", Nothing, " setecientos", Nothing, " novecientos"}}
+            {Nothing, " UNO", " DOS", " TRES", " CUATRO", " CINCO", " SEIS", " SIETE", " OCHO", " NUEVE"},
+            {" DIEZ", " ONCE", " DOCE", " TRECE", " CATORCE", " QUINCE", " DIECISEIS", " DIECISIETE", " DIECIOCHO", " DIECINUEVE"},
+            {Nothing, Nothing, Nothing, " TREINTA", " CUARENTA", " CONCUENTA", " SESENTA", " SETENTA", " OCHENTA", " NOVENTA"},
+            {Nothing, Nothing, Nothing, Nothing, Nothing, " QUINIENTOS", Nothing, " SETECIENTOS", Nothing, " NOVECIENTOS"}}
         Private Const [sub] As Char = CChar(ChrW(26))
         'Cambiar acá si se quiere otro comportamiento en los métodos de clase
-        Public Const SeparadorDecimalSalidaDefault As String = "con"
-        Public Const MascaraSalidaDecimalDefault As String = "'Lempiras con '00' Centavos.'"
+        Public Const SeparadorDecimalSalidaDefault As String = "LEMPIRAS CON "
+        Public Const MascaraSalidaDecimalDefault As String = "00' CENTAVOS.'"
         Public Const DecimalesDefault As Int32 = 2
         Public Const LetraCapitalDefault As Boolean = False
         Public Const ConvertirDecimalesDefault As Boolean = False
@@ -559,7 +509,7 @@ Public Class A_Cheques
                 Throw New ArgumentException("El número '" + Numero.ToString() + "' excedió los límites del conversor: [0;1.000.000.000.001]")
             End If
             If Num = 0 Then
-                Resultado.Append(" cero")
+                Resultado.Append(" CERO")
             Else
                 iTerna = 0
 
@@ -579,12 +529,12 @@ Public Class A_Cheques
                         Case 10 To 19
                             cadTerna = cadTerna + _matriz(DIECI, unidadTerna)
                         Case 20
-                            cadTerna = cadTerna + " veinte"
+                            cadTerna = cadTerna + " VEINTE"
                         Case 21 To 29
-                            cadTerna = " veinti" + _matriz(UNI, unidadTerna).Substring(1)
+                            cadTerna = " VEINTI" + _matriz(UNI, unidadTerna).Substring(1)
                         Case 30 To 99
                             If unidadTerna <> 0 Then
-                                cadTerna = _matriz(DECENA, Int(decenaTerna / 10)) + " y" + _matriz(UNI, unidadTerna) + cadTerna
+                                cadTerna = _matriz(DECENA, Int(decenaTerna / 10)) + " Y" + _matriz(UNI, unidadTerna) + cadTerna
                             Else
                                 cadTerna += _matriz(DECENA, Int(decenaTerna / 10))
                             End If
@@ -593,9 +543,9 @@ Public Class A_Cheques
                     Select Case centenaTerna
                         Case 1
                             If decenaTerna > 0 Then
-                                cadTerna = " ciento" + cadTerna
+                                cadTerna = " CIENTO" + cadTerna
                             Else
-                                cadTerna = " cien" + cadTerna
+                                cadTerna = " CIEN" + cadTerna
                             End If
                             Exit Select
                         Case 5, 7, 9
@@ -603,34 +553,34 @@ Public Class A_Cheques
                             Exit Select
                         Case Else
                             If Int(terna / 100) > 1 Then
-                                cadTerna = _matriz(UNI, Int(terna / 100)) + "cientos" + cadTerna
+                                cadTerna = _matriz(UNI, Int(terna / 100)) + "CIENTOS" + cadTerna
                             End If
                             Exit Select
                     End Select
                     'Reemplazo el 'uno' por 'un' si no es en las únidades o si se solicító apocopar
                     If (iTerna > 1 OrElse ApocoparUnoParteEntera) AndAlso decenaTerna = 21 Then
-                        cadTerna = cadTerna.Replace("veintiuno", "veintiún")
+                        cadTerna = cadTerna.Replace("VEINTIUNO", "VEINTIUN")
                     ElseIf (iTerna > 1 OrElse ApocoparUnoParteEntera) AndAlso unidadTerna = 1 AndAlso decenaTerna <> 11 Then
                         cadTerna = cadTerna.Substring(0, cadTerna.Length - 1)
                         'Acentúo 'veintidós', 'veintitrés' y 'veintiséis'
                     ElseIf decenaTerna = 22 Then
-                        cadTerna = cadTerna.Replace("veintidos", "veintidós")
+                        cadTerna = cadTerna.Replace("VEINTIDOS", "VEINTIDOS")
                     ElseIf decenaTerna = 23 Then
-                        cadTerna = cadTerna.Replace("veintitres", "veintitrés")
+                        cadTerna = cadTerna.Replace("VEINTITRES", "VEINTITRES")
                     ElseIf decenaTerna = 26 Then
-                        cadTerna = cadTerna.Replace("veintiseis", "veintiséis")
+                        cadTerna = cadTerna.Replace("VEINTISEIS", "VEINTISEIS")
                     End If
 
                     'Completo miles y millones
                     Select Case iTerna
                         Case 3
                             If Numero < 2000000 Then
-                                cadTerna += " millón"
+                                cadTerna += " MILLON"
                             Else
-                                cadTerna += " millones"
+                                cadTerna += " MILLONES"
                             End If
                         Case 2, 4
-                            If terna > 0 Then cadTerna += " mil"
+                            If terna > 0 Then cadTerna += " MIL"
                     End Select
                     Resultado.Insert(0, cadTerna)
                     Num = Int(Num / 1000)
