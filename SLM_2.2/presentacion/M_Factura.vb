@@ -492,6 +492,12 @@ Public Class M_Factura
             e.Handled = True
         End If
     End Sub
+    'Private Sub ejemplo_Double(sender As Object, e As KeyPressEventArgs) Handles txtcodigoConvenio.KeyPress
+    '    If (Not IsNumeric(e.KeyChar) And (e.KeyChar <> ".")) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
+
     Private Sub txtcodigoMedico_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoMedico.KeyPress
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
             e.Handled = True
@@ -623,9 +629,9 @@ Public Class M_Factura
         If PrintDialog1.ShowDialog = DialogResult.OK Then
             PrintDocument1.PrinterSettings = PrintDialog1.PrinterSettings
             PrintDocument1.Print()
+            'Printer
         End If
     End Sub
-
     Private Sub enviarCorreo()
         'in the shadows of the moon
         If cbxenviarCorreo.Checked Then

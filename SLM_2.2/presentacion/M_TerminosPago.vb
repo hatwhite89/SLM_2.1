@@ -158,24 +158,19 @@
         limpiar()
     End Sub
     Private Function sinDobleEspacio(ByVal cadena As String) As String
-        Dim testString As String = cadena
         Dim texto As String = ""
-        Dim testArray() As String = Split(testString)
-        Dim lastNonEmpty As Integer = -1
+        Dim testArray() As String = Split(cadena)
         For i As Integer = 0 To testArray.Length - 1
             If testArray(i) <> "" Then
-                lastNonEmpty += 1
-                testArray(lastNonEmpty) = testArray(i)
                 texto += testArray(i) + " "
             End If
         Next
-        ReDim Preserve testArray(lastNonEmpty)
         Return RTrim(texto)
     End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (cbxtipoPago.SelectedIndex.ToString > -1 And Trim(rtxtdescripcion.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
+            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtdescripcion.Text) <> "" And txtcodigoCtaVentas.BackColor = Color.White And txtcodigoCtaContado.BackColor = Color.White) Then
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
                 txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
                 Dim objTerm As New ClsTerminoPago
@@ -206,7 +201,7 @@
                 End If
 
             Else
-                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+                MsgBox("Debe ingresar los campos necesarios correctamente.", MsgBoxStyle.Critical, "Validación")
             End If
 
         Catch ex As Exception
@@ -231,7 +226,7 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtdescripcion.Text) <> "") Then
+            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtdescripcion.Text) <> "" And txtcodigoCtaVentas.BackColor = Color.White And txtcodigoCtaContado.BackColor = Color.White) Then
 
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
 
@@ -266,7 +261,7 @@
                 End If
 
             Else
-                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+                MsgBox("Debe ingresar los campos necesarios correctamente.", MsgBoxStyle.Critical, "Validación")
             End If
 
         Catch ex As Exception

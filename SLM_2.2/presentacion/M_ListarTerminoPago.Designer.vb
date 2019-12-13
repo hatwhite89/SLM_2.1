@@ -134,6 +134,7 @@ Partial Class M_ListarTerminoPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(640, 623)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Name = "M_ListarTerminoPago"

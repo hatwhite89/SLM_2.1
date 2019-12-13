@@ -9,7 +9,7 @@ Public Class A_Cheques
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        Dim tipo As String
+        Dim tipo As String = ""
 
         Try
 

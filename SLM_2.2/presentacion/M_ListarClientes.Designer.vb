@@ -31,6 +31,7 @@ Partial Class M_ListarClientes
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtNombreB = New System.Windows.Forms.TextBox()
         Me.lblIdentidadB = New System.Windows.Forms.Label()
+        Me.lblForm = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -130,12 +131,21 @@ Partial Class M_ListarClientes
         Me.lblIdentidadB.TabIndex = 114
         Me.lblIdentidadB.Text = "Identidad"
         '
+        'lblForm
+        '
+        Me.lblForm.AutoSize = True
+        Me.lblForm.Location = New System.Drawing.Point(301, 9)
+        Me.lblForm.Name = "lblForm"
+        Me.lblForm.Size = New System.Drawing.Size(0, 17)
+        Me.lblForm.TabIndex = 120
+        '
         'M_ListarClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(692, 662)
+        Me.Controls.Add(Me.lblForm)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
         Me.Name = "M_ListarClientes"
@@ -144,6 +154,7 @@ Partial Class M_ListarClientes
         Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -156,4 +167,5 @@ Partial Class M_ListarClientes
     Friend WithEvents txtNombreB As TextBox
     Friend WithEvents lblIdentidadB As Label
     Friend WithEvents txtIdentidadB As TextBox
+    Friend WithEvents lblForm As Label
 End Class

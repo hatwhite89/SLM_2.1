@@ -585,6 +585,12 @@
     <Compile Include="presentacion\M_TipoTermino.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_VerPaciente.Designer.vb">
+      <DependentUpon>M_VerPaciente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_VerPaciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\prueba.Designer.vb">
       <DependentUpon>prueba.vb</DependentUpon>
     </Compile>
@@ -808,6 +814,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_TipoTermino.resx">
       <DependentUpon>M_TipoTermino.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_VerPaciente.resx">
+      <DependentUpon>M_VerPaciente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\prueba.resx">
       <DependentUpon>prueba.vb</DependentUpon>

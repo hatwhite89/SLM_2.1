@@ -2,9 +2,19 @@
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         Me.Close()
     End Sub
+    Private Function sinDobleEspacio(ByVal cadena As String) As String
+        Dim texto As String = ""
+        Dim testArray() As String = Split(cadena)
+        For i As Integer = 0 To testArray.Length - 1
+            If testArray(i) <> "" Then
+                texto += testArray(i) + " "
+            End If
+        Next
+        Return RTrim(texto)
+    End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
-
+            txtnombre.Text = sinDobleEspacio(txtnombre.Text)
             If (Trim(txtnombre.Text) <> "") Then
                 Dim objEspecialidad As New ClsEspecialidad
                 With objEspecialidad
@@ -38,6 +48,7 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
+            txtnombre.Text = sinDobleEspacio(txtnombre.Text)
 
             If (Trim(txtnombre.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
                 Dim objEspecialidad As New ClsEspecialidad
@@ -72,6 +83,9 @@
         End Try
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+        limpiar()
+    End Sub
+    Private Sub limpiar()
         txtcodigo.Text() = ""
         txtnombre.Text() = ""
 
@@ -82,6 +96,7 @@
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
+            limpiar()
             Me.Close()
         End If
     End Sub

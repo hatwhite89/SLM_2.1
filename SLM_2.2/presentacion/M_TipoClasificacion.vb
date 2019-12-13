@@ -12,23 +12,22 @@
         btnguardar.Enabled = True
         btnnuevo.Enabled = True
     End Sub
+    Private Function sinDobleEspacio(ByVal cadena As String) As String
+        Dim texto As String = ""
+        Dim testArray() As String = Split(cadena)
+        For i As Integer = 0 To testArray.Length - 1
+            If testArray(i) <> "" Then
+                texto += testArray(i) + " "
+            End If
+        Next
+        Return RTrim(texto)
+    End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (rtxtcomentario.Text <> "") Then
-                Dim testString As String = rtxtcomentario.Text()
-                Dim texto As String = ""
-                Dim testArray() As String = Split(testString)
-                Dim lastNonEmpty As Integer = -1
-                For i As Integer = 0 To testArray.Length - 1
-                    If testArray(i) <> "" Then
-                        lastNonEmpty += 1
-                        testArray(lastNonEmpty) = testArray(i)
-                        texto += testArray(i) + " "
-                    End If
-                Next
-                ReDim Preserve testArray(lastNonEmpty)
-                rtxtcomentario.Text() = RTrim(texto)
+            If (Trim(rtxtcomentario.Text) <> "") Then
+
+                rtxtcomentario.Text = sinDobleEspacio(rtxtcomentario.Text)
 
                 Dim objTipoCla As New ClsTipoClasificacion
                 With objTipoCla
@@ -63,20 +62,9 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (rtxtcomentario.Text <> "" And txtcodigo.Text <> "") Then
-                Dim testString As String = rtxtcomentario.Text()
-                Dim texto As String = ""
-                Dim testArray() As String = Split(testString)
-                Dim lastNonEmpty As Integer = -1
-                For i As Integer = 0 To testArray.Length - 1
-                    If testArray(i) <> "" Then
-                        lastNonEmpty += 1
-                        testArray(lastNonEmpty) = testArray(i)
-                        texto += testArray(i) + " "
-                    End If
-                Next
-                ReDim Preserve testArray(lastNonEmpty)
-                rtxtcomentario.Text() = RTrim(texto)
+            If (Trim(rtxtcomentario.Text) <> "") Then
+
+                rtxtcomentario.Text = sinDobleEspacio(rtxtcomentario.Text)
 
                 Dim objTipoCla As New ClsTipoClasificacion
                 With objTipoCla
