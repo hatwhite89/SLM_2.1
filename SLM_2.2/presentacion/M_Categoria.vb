@@ -22,10 +22,14 @@
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
+            limpiar()
             Me.Close()
         End If
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+        limpiar()
+    End Sub
+    Private Sub limpiar()
         txtcodigo.Text() = ""
         txtcodigoTipo.Text() = ""
         txtdescripcionB.Text() = ""
@@ -40,15 +44,11 @@
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
     End Sub
-    Private Sub txtcodigoTipo_KeyPress(sender As Object, e As KeyPressEventArgs)
-        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
-            e.Handled = True
-        End If
-    End Sub
+
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (Trim(rtxtdescripcion.Text) <> "" And Trim(txtcodigoTipo.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
+            If (Trim(rtxtdescripcion.Text) <> "" And Trim(txtcodigoTipo.Text) <> "" And txtcodigoTipo.BackColor = Color.White And Trim(txtcodigo.Text) <> "") Then
 
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
                 Dim objCategoriaif As New ClsCategoria
@@ -78,7 +78,7 @@
                 End If
 
             Else
-                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+                MsgBox("Debe ingresar los campos necesarios correctamente.", MsgBoxStyle.Critical, "Validación")
             End If
 
         Catch ex As Exception
@@ -86,24 +86,19 @@
         End Try
     End Sub
     Private Function sinDobleEspacio(ByVal cadena As String) As String
-        Dim testString As String = cadena
         Dim texto As String = ""
-        Dim testArray() As String = Split(testString)
-        Dim lastNonEmpty As Integer = -1
+        Dim testArray() As String = Split(cadena)
         For i As Integer = 0 To testArray.Length - 1
             If testArray(i) <> "" Then
-                lastNonEmpty += 1
-                testArray(lastNonEmpty) = testArray(i)
                 texto += testArray(i) + " "
             End If
         Next
-        ReDim Preserve testArray(lastNonEmpty)
         Return RTrim(texto)
     End Function
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (Trim(rtxtdescripcion.Text) <> "" And Trim(txtcodigoTipo.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
+            If (Trim(rtxtdescripcion.Text) <> "" And Trim(txtcodigoTipo.Text) <> "" And txtcodigoTipo.BackColor = Color.White And Trim(txtcodigo.Text) <> "") Then
 
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
                 Dim objCategoriaif As New ClsCategoria
@@ -134,7 +129,7 @@
                 End If
 
             Else
-                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+                MsgBox("Debe ingresar los campos necesarios correctamente.", MsgBoxStyle.Critical, "Validación")
             End If
 
         Catch ex As Exception

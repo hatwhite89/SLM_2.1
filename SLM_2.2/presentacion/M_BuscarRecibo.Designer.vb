@@ -136,7 +136,7 @@ Partial Class M_BuscarRecibo
         Me.ClientSize = New System.Drawing.Size(722, 657)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "M_BuscarRecibo"
-        Me.Text = "Buscar Recibo"
+        Me.Text = "Búsqueda de Recibos"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()

@@ -112,7 +112,7 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
             rtxtReferencia.Text = sinDobleEspacio(rtxtReferencia.Text)
-            If (Trim(rtxtReferencia.Text) <> "" And Trim(txtcodigoFormaPago.Text) <> "" And dgbtabla.Rows.Count > 1 And Trim(txtMoneda.Text) <> "") Then
+            If (Trim(rtxtReferencia.Text) <> "" And Trim(txtcodigoFormaPago.Text) <> "" And txtcodigoFormaPago.BackColor = Color.White And dgbtabla.Rows.Count > 1 And Trim(txtMoneda.Text) <> "") Then
 
                 Dim objRbo As New ClsRecibo
 
@@ -150,7 +150,7 @@
                 End If
 
             Else
-                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+                MsgBox("Debe ingresar los campos necesarios correctamente.", MsgBoxStyle.Critical, "Validación")
             End If
 
         Catch ex As Exception
@@ -161,7 +161,7 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
             rtxtReferencia.Text = sinDobleEspacio(rtxtReferencia.Text)
-            If (Trim(rtxtReferencia.Text) <> "" And Trim(txtcodigoFormaPago.Text) <> "" And dgbtabla.Rows.Count > 1 And Trim(txtMoneda.Text) <> "") Then
+            If (Trim(rtxtReferencia.Text) <> "" And Trim(txtcodigoFormaPago.Text) <> "" And txtcodigoFormaPago.BackColor = Color.White And dgbtabla.Rows.Count > 1 And Trim(txtMoneda.Text) <> "") Then
 
                 Dim objRbo As New ClsRecibo
                 With objRbo
@@ -186,6 +186,7 @@
                     codigoDetalleRecibo.Clear()
                     For index As Integer = 0 To dgbtabla.Rows.Count - 2
                         If dgbtabla.Rows(index).Cells(0).Value() = 0 Then
+                            'agrega
                             With objDetRbo
                                 .codigoRecibo_ = txtnumero.Text
                                 .numeroFactura_ = dgbtabla.Rows(index).Cells(1).Value()

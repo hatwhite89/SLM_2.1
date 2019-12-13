@@ -11,6 +11,8 @@
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
+
+        dgbtabla.Columns("codigo").Visible = False
     End Sub
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         Me.Close()
@@ -18,7 +20,7 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "" And Trim(txtcodigoTipo.Text) <> "") Then
+            If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "" And Trim(txtcodigoTipo.Text) <> "" And txtcodigoTipo.BackColor = Color.White) Then
                 Dim objObj As New ClsObjeto
                 With objObj
                     .objeto_ = txtcodigo.Text
@@ -46,7 +48,7 @@
                 End If
 
             Else
-                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+                MsgBox("Debe ingresar los campos necesarios correctamente.", MsgBoxStyle.Critical, "Validación")
             End If
 
         Catch ex As Exception
@@ -56,7 +58,7 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (Trim(txtnombre.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
+            If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "" And Trim(txtcodigoTipo.Text) <> "" And txtcodigoTipo.BackColor = Color.White) Then
                 Dim objObj As New ClsObjeto
                 With objObj
                     .codigo_ = lblcode.Text
@@ -86,7 +88,7 @@
                 End If
 
             Else
-                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+                MsgBox("Debe ingresar los campos necesarios correctamente.", MsgBoxStyle.Critical, "Validación")
             End If
 
         Catch ex As Exception
@@ -94,6 +96,9 @@
         End Try
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+        limpiar()
+    End Sub
+    Private Sub limpiar()
         txtcodigo.Text() = ""
         txtnombre.Text() = ""
         txtcodigoTipo.Text() = ""
@@ -109,6 +114,7 @@
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
+            limpiar()
             Me.Close()
         End If
     End Sub

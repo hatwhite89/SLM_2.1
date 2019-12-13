@@ -1,5 +1,6 @@
 ﻿Public Class M_MenuLaboratorio
     Private Sub btnCliente_Click(sender As Object, e As EventArgs) Handles btnCliente.Click
+        M_ListarClientes.lblForm.Text = "VerPaciente"
         M_ListarClientes.ShowDialog()
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown

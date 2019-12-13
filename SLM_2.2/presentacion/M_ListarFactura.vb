@@ -1,6 +1,8 @@
 ﻿Public Class M_ListarFactura
     Private Sub M_ListarFactura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         seleccionarFacturas()
+        txtnombreB.Text = ""
+        txtnumeroB.Text = ""
         Me.dgbtabla.Columns("codigo").Visible = False
     End Sub
     Private Sub seleccionarFacturas()

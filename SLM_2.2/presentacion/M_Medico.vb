@@ -6,49 +6,38 @@
     Private Sub btnbuscarEspecialidad_Click(sender As Object, e As EventArgs) Handles btnbuscarEspecialidad.Click
         M_Especialidad.ShowDialog()
     End Sub
-    Private Function sinEspacios(ByVal cadena As String) As String
-        Dim testString As String = cadena
+    Private Function sinDobleEspacio(ByVal cadena As String) As String
         Dim texto As String = ""
-        Dim testArray() As String = Split(testString)
-        Dim lastNonEmpty As Integer = -1
+        Dim testArray() As String = Split(cadena)
         For i As Integer = 0 To testArray.Length - 1
             If testArray(i) <> "" Then
-                lastNonEmpty += 1
-                testArray(lastNonEmpty) = testArray(i)
                 texto += testArray(i) + " "
             End If
         Next
-        ReDim Preserve testArray(lastNonEmpty)
         Return RTrim(texto)
     End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
             Dim numero As Integer = 0
-            Dim val, val2, val3, val4, val5 As String
-            val = sinEspacios(txtcorreo.Text)
-            val2 = sinEspacios(txtcorreo2.Text)
-            val3 = sinEspacios(txttelefono.Text)
-            val4 = sinEspacios(txtcelular.Text)
-            val5 = sinEspacios(txtnombreCompleto.Text)
 
-            txtcorreo.Text = val
-            txtcorreo2.Text = val2
-            txttelefono.Text = val3
-            txtcelular.Text = val4
-            txtnombreCompleto.Text = val5
+            txtcorreo.Text = sinDobleEspacio(txtcorreo.Text)
+            txtcorreo2.Text = sinDobleEspacio(txtcorreo2.Text)
+            txttelefono.Text = sinDobleEspacio(txttelefono.Text)
+            txtcelular.Text = sinDobleEspacio(txtcelular.Text)
+            txtnombreCompleto.Text = sinDobleEspacio(txtnombreCompleto.Text)
 
-            If (Trim(val) <> "") Then
+            If (Trim(txtcorreo.Text) <> "") Then
                 numero += 1
-            ElseIf (Trim(val2) <> "") Then
+            ElseIf (Trim(txtcorreo2.Text) <> "") Then
                 numero += 1
-            ElseIf (Trim(val3) <> "") Then
+            ElseIf (Trim(txttelefono.Text) <> "") Then
                 numero += 1
-            ElseIf (Trim(val4) <> "") Then
+            ElseIf (Trim(txtcelular.Text) <> "") Then
                 numero += 1
             Else
                 numero = 0
             End If
-            If (Trim(val5) <> "" And txtcodigoEspecialidad.Text <> "") Then
+            If (Trim(txtnombreCompleto.Text) <> "" And numero <> 0 And Trim(txtcodigoEspecialidad.Text) <> "" And txtcodigoEspecialidad.BackColor = Color.White) Then
                 Dim objMedico As New ClsMedico
                 With objMedico
                     .Nombre_completo1 = txtnombreCompleto.Text
@@ -82,7 +71,7 @@
                 End If
 
             Else
-                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+                MsgBox("Debe ingresar los campos necesarios correctamente.", MsgBoxStyle.Critical, "Validación")
             End If
 
         Catch ex As Exception
@@ -140,6 +129,7 @@
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
+            limpiar()
             Me.Close()
         End If
     End Sub
@@ -163,16 +153,7 @@
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
     End Sub
-    Private Sub btnbuscar_Click(sender As Object, e As EventArgs)
-        Dim objMed As New ClsMedico
-        With objMed
-            .Nombre_completo1 = txtnombreB.Text
-        End With
-        Dim dv As DataView = objMed.BuscarMedico.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-    End Sub
+
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
@@ -204,34 +185,25 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
             Dim numero As Integer = 0
-            Dim val, val2, val3, val4, val5, val6 As String
-            val = sinEspacios(txtcorreo.Text)
-            val2 = sinEspacios(txtcorreo2.Text)
-            val3 = sinEspacios(txttelefono.Text)
-            val4 = sinEspacios(txtcelular.Text)
-            val5 = sinEspacios(txtnombreCompleto.Text)
-            val6 = sinEspacios(txtcodigo.Text)
 
-            txtcorreo.Text = val
-            txtcorreo2.Text = val2
-            txttelefono.Text = val3
-            txtcelular.Text = val4
-            txtnombreCompleto.Text = val5
-            txtcodigo.Text = val6
+            txtcorreo.Text = sinDobleEspacio(txtcorreo.Text)
+            txtcorreo2.Text = sinDobleEspacio(txtcorreo2.Text)
+            txttelefono.Text = sinDobleEspacio(txttelefono.Text)
+            txtcelular.Text = sinDobleEspacio(txtcelular.Text)
+            txtnombreCompleto.Text = sinDobleEspacio(txtnombreCompleto.Text)
 
-            If (Trim(val) <> "") Then
+            If (Trim(txtcorreo.Text) <> "") Then
                 numero += 1
-            ElseIf (Trim(val2) <> "") Then
+            ElseIf (Trim(txtcorreo2.Text) <> "") Then
                 numero += 1
-            ElseIf (Trim(val3) <> "") Then
+            ElseIf (Trim(txttelefono.Text) <> "") Then
                 numero += 1
-            ElseIf (Trim(val4) <> "") Then
+            ElseIf (Trim(txtcelular.Text) <> "") Then
                 numero += 1
             Else
                 numero = 0
             End If
-            If (Trim(val5) <> "" And numero > 0 And txtcodigoEspecialidad.Text <> "" And Trim(val6) <> "") Then
-                'If (txtcodigo.Text <> "" And txtnombreCompleto.Text <> "" And txtcorreo.Text <> "" And txtcorreo2.Text <> "" And txttelefono.Text <> "" And txtcelular.Text <> "" And txtcodigoEspecialidad.Text <> "") Then
+            If (Trim(txtnombreCompleto.Text) <> "" And numero <> 0 And Trim(txtcodigoEspecialidad.Text) <> "" And txtcodigoEspecialidad.BackColor = Color.White) Then
                 Dim objMedico As New ClsMedico
                 With objMedico
                     .Nombre_completo1 = txtnombreCompleto.Text
@@ -268,7 +240,7 @@
                 End If
 
             Else
-                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+                MsgBox("Debe ingresar los campos necesarios correctamente.", MsgBoxStyle.Critical, "Validación")
             End If
 
         Catch ex As Exception

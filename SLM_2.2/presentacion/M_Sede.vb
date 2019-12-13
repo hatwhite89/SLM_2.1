@@ -47,40 +47,36 @@
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
     End Sub
-    Private Function sinEspacios(ByVal cadena As String) As String
-        Dim testString As String = cadena
+    Private Function sinDobleEspacio(ByVal cadena As String) As String
         Dim texto As String = ""
-        Dim testArray() As String = Split(testString)
-        Dim lastNonEmpty As Integer = -1
+        Dim testArray() As String = Split(cadena)
         For i As Integer = 0 To testArray.Length - 1
             If testArray(i) <> "" Then
-                lastNonEmpty += 1
-                testArray(lastNonEmpty) = testArray(i)
                 texto += testArray(i) + " "
             End If
         Next
-        ReDim Preserve testArray(lastNonEmpty)
         Return RTrim(texto)
     End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
             Dim numero As Integer = 0
-            If (rtxtdireccion1.Text <> "") Then
+            If (Trim(rtxtdireccion1.Text) <> "") Then
                 numero += 1
-                rtxtdireccion1.Text = sinEspacios(rtxtdireccion1.Text)
-            ElseIf (rtxtdireccion2.Text <> "") Then
-                numero += 1
-                rtxtdireccion2.Text = sinEspacios(rtxtdireccion2.Text)
-            ElseIf (rtxtdireccion3.Text <> "") Then
-                numero += 1
-                rtxtdireccion3.Text = sinEspacios(rtxtdireccion3.Text)
-            ElseIf (rtxtdireccion4.Text <> "") Then
-                numero += 1
-                rtxtdireccion4.Text = sinEspacios(rtxtdireccion4.Text)
-            Else
-                numero = 0
+                rtxtdireccion1.Text = sinDobleEspacio(rtxtdireccion1.Text)
             End If
-            If (numero > 0 And txtnombre.Text <> "" And txtcorreo.Text <> "" And txttelefono.Text <> "" And txtcontacto.Text <> "") Then
+            If (Trim(rtxtdireccion2.Text) <> "") Then
+                numero += 1
+                rtxtdireccion2.Text = sinDobleEspacio(rtxtdireccion2.Text)
+            End If
+            If (Trim(rtxtdireccion3.Text) <> "") Then
+                numero += 1
+                rtxtdireccion3.Text = sinDobleEspacio(rtxtdireccion3.Text)
+            End If
+            If (Trim(rtxtdireccion4.Text) <> "") Then
+                numero += 1
+                rtxtdireccion4.Text = sinDobleEspacio(rtxtdireccion4.Text)
+            End If
+            If (numero > 0 And Trim(txtnombre.Text) <> "") Then
                 Dim objSede As New ClsSede
                 With objSede
                     .Nombre1 = txtnombre.Text
@@ -117,22 +113,23 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
             Dim numero As Integer = 0
-            If (rtxtdireccion1.Text <> "") Then
+            If (Trim(rtxtdireccion1.Text) <> "") Then
                 numero += 1
-                rtxtdireccion1.Text = sinEspacios(rtxtdireccion1.Text)
-            ElseIf (rtxtdireccion2.Text <> "") Then
-                numero += 1
-                rtxtdireccion2.Text = sinEspacios(rtxtdireccion2.Text)
-            ElseIf (rtxtdireccion3.Text <> "") Then
-                numero += 1
-                rtxtdireccion3.Text = sinEspacios(rtxtdireccion3.Text)
-            ElseIf (rtxtdireccion4.Text <> "") Then
-                numero += 1
-                rtxtdireccion4.Text = sinEspacios(rtxtdireccion4.Text)
-            Else
-                numero = 0
+                rtxtdireccion1.Text = sinDobleEspacio(rtxtdireccion1.Text)
             End If
-            If (numero > 0 And txtnombre.Text <> "" And txtcorreo.Text <> "" And txttelefono.Text <> "" And txtcontacto.Text <> "" And txtcodigo.Text <> "") Then
+            If (Trim(rtxtdireccion2.Text) <> "") Then
+                numero += 1
+                rtxtdireccion2.Text = sinDobleEspacio(rtxtdireccion2.Text)
+            End If
+            If (Trim(rtxtdireccion3.Text) <> "") Then
+                numero += 1
+                rtxtdireccion3.Text = sinDobleEspacio(rtxtdireccion3.Text)
+            End If
+            If (Trim(rtxtdireccion4.Text) <> "") Then
+                numero += 1
+                rtxtdireccion4.Text = sinDobleEspacio(rtxtdireccion4.Text)
+            End If
+            If (numero > 0 And Trim(txtnombre.Text) <> "" And txtcodigo.Text <> "") Then
                 Dim objSede As New ClsSede
                 With objSede
                     .Codigo1 = txtcodigo.Text

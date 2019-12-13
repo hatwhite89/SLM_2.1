@@ -1,6 +1,8 @@
 ﻿Public Class M_ListarTerminoPago
     Private Sub M_ListarTerminoPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         seleccionarTerminoPago()
+        txtCodigoB.Text = ""
+        txtDescripcionB.Text = ""
         Me.dgbtabla.Columns("codigo").Visible = False
         Me.dgbtabla.Columns("diasNeto").Visible = False
         Me.dgbtabla.Columns("codigoCtaContado").Visible = False

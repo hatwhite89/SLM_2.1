@@ -47,24 +47,19 @@
         limpiar()
     End Sub
     Private Function sinDobleEspacio(ByVal cadena As String) As String
-        Dim testString As String = cadena
         Dim texto As String = ""
-        Dim testArray() As String = Split(testString)
-        Dim lastNonEmpty As Integer = -1
+        Dim testArray() As String = Split(cadena)
         For i As Integer = 0 To testArray.Length - 1
             If testArray(i) <> "" Then
-                lastNonEmpty += 1
-                testArray(lastNonEmpty) = testArray(i)
                 texto += testArray(i) + " "
             End If
         Next
-        ReDim Preserve testArray(lastNonEmpty)
         Return RTrim(texto)
     End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (rtxtdescripcion.Text <> "") Then
+            If (Trim(rtxtdescripcion.Text) <> "") Then
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
                 Dim objTipo As New ClsTipoTermino
                 With objTipo
@@ -100,7 +95,7 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (txtcodigo.Text <> "" And rtxtdescripcion.Text <> "") Then
+            If (txtcodigo.Text <> "" And Trim(rtxtdescripcion.Text) <> "") Then
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
                 Dim objTipo As New ClsTipoTermino
                 With objTipo

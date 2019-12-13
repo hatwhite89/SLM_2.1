@@ -52,7 +52,7 @@ Partial Class M_ListarTerminoPago
         Me.gbxbusqueda.Size = New System.Drawing.Size(624, 598)
         Me.gbxbusqueda.TabIndex = 120
         Me.gbxbusqueda.TabStop = False
-        Me.gbxbusqueda.Text = "BUSCAR TERMINO DE PAGO"
+        Me.gbxbusqueda.Text = "BUSCAR TÉRMINO DE PAGO"
         '
         'txtCodigoB
         '
@@ -108,9 +108,9 @@ Partial Class M_ListarTerminoPago
         Me.lbltotal.AutoSize = True
         Me.lbltotal.Location = New System.Drawing.Point(107, 564)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(147, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(229, 17)
         Me.lbltotal.TabIndex = 114
-        Me.lbltotal.Text = "TOTAL DE CLIENTES"
+        Me.lbltotal.Text = "TOTAL DE TÉRMINOS DE PAGOS"
         '
         'txtDescripcionB
         '
@@ -134,10 +134,11 @@ Partial Class M_ListarTerminoPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(640, 623)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Name = "M_ListarTerminoPago"
-        Me.Text = "M_ListarTerminoPago"
+        Me.Text = "Términos de Pago"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()

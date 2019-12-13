@@ -1,4 +1,5 @@
-﻿Public Class M_Factura
+﻿Imports System.Net.Mail
+Public Class M_Factura
     Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
         M_ClienteVentana.Close()
         Me.Close()
@@ -491,6 +492,12 @@
             e.Handled = True
         End If
     End Sub
+    'Private Sub ejemplo_Double(sender As Object, e As KeyPressEventArgs) Handles txtcodigoConvenio.KeyPress
+    '    If (Not IsNumeric(e.KeyChar) And (e.KeyChar <> ".")) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
+
     Private Sub txtcodigoMedico_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoMedico.KeyPress
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
             e.Handled = True
@@ -612,5 +619,46 @@
         Catch ex As Exception
             'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
         End Try
+    End Sub
+
+    Private Sub btnimprimirComprobante_Click(sender As Object, e As EventArgs) Handles btnimprimirComprobante.Click
+        PrintDialog1.Document = PrintDocument1
+        PrintDialog1.PrinterSettings = PrintDocument1.PrinterSettings
+        PrintDialog1.AllowSomePages = True
+
+        If PrintDialog1.ShowDialog = DialogResult.OK Then
+            PrintDocument1.PrinterSettings = PrintDialog1.PrinterSettings
+            PrintDocument1.Print()
+            'Printer
+        End If
+    End Sub
+    Private Sub enviarCorreo()
+        'in the shadows of the moon
+        If cbxenviarCorreo.Checked Then
+            Try
+                Dim Smtp_Server As New SmtpClient
+                Dim e_mail As New MailMessage()
+                Smtp_Server.UseDefaultCredentials = False
+                Smtp_Server.Credentials = New Net.NetworkCredential("username@gmail.com", "password")
+                Smtp_Server.Port = 587
+                Smtp_Server.EnableSsl = True
+                Smtp_Server.Host = "smtp.gmail.com"
+
+                e_mail = New MailMessage()
+                'txtfrom.text
+                e_mail.From = New MailAddress("ejemplo@hotmail.com")
+                'txtto.text
+                e_mail.To.Add("para@hotmail.com")
+                e_mail.Subject = "Email Sending"
+                e_mail.IsBodyHtml = False
+                'txtMessage.text
+                e_mail.Body = "Funciona el envio por correo."
+                Smtp_Server.Send(e_mail)
+                MsgBox("Mail Sent")
+
+            Catch error_t As Exception
+                MsgBox(error_t.ToString)
+            End Try
+        End If
     End Sub
 End Class
