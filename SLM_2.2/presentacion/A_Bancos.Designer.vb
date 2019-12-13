@@ -149,6 +149,7 @@ Partial Class A_Bancos
         'txtNombreBanco
         '
         Me.txtNombreBanco.Location = New System.Drawing.Point(100, 81)
+        Me.txtNombreBanco.MaxLength = 150
         Me.txtNombreBanco.Name = "txtNombreBanco"
         Me.txtNombreBanco.Size = New System.Drawing.Size(221, 20)
         Me.txtNombreBanco.TabIndex = 5
@@ -165,6 +166,7 @@ Partial Class A_Bancos
         'txtCodBreve
         '
         Me.txtCodBreve.Location = New System.Drawing.Point(100, 55)
+        Me.txtCodBreve.MaxLength = 50
         Me.txtCodBreve.Name = "txtCodBreve"
         Me.txtCodBreve.Size = New System.Drawing.Size(100, 20)
         Me.txtCodBreve.TabIndex = 3
@@ -182,6 +184,7 @@ Partial Class A_Bancos
         '
         Me.txtCodigo.Enabled = False
         Me.txtCodigo.Location = New System.Drawing.Point(100, 29)
+        Me.txtCodigo.MaxLength = 10
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
         Me.txtCodigo.TabIndex = 1
@@ -226,6 +229,7 @@ Partial Class A_Bancos
         'txtBusquedaBanco
         '
         Me.txtBusquedaBanco.Location = New System.Drawing.Point(138, 22)
+        Me.txtBusquedaBanco.MaxLength = 20
         Me.txtBusquedaBanco.Name = "txtBusquedaBanco"
         Me.txtBusquedaBanco.Size = New System.Drawing.Size(165, 20)
         Me.txtBusquedaBanco.TabIndex = 1

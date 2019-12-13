@@ -48,15 +48,15 @@ Partial Class A_FacturaCompras
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dtDetalleFactura = New System.Windows.Forms.DataGridView()
-        Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnCrear = New System.Windows.Forms.Button()
-        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.area = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Sede = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnCrear = New System.Windows.Forms.Button()
+        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -188,7 +188,7 @@ Partial Class A_FacturaCompras
         'txtTerminoPago
         '
         Me.txtTerminoPago.Location = New System.Drawing.Point(306, 78)
-        Me.txtTerminoPago.MaxLength = 5
+        Me.txtTerminoPago.MaxLength = 10
         Me.txtTerminoPago.Name = "txtTerminoPago"
         Me.txtTerminoPago.Size = New System.Drawing.Size(52, 20)
         Me.txtTerminoPago.TabIndex = 6
@@ -313,6 +313,37 @@ Partial Class A_FacturaCompras
         Me.dtDetalleFactura.Size = New System.Drawing.Size(649, 291)
         Me.dtDetalleFactura.TabIndex = 10
         '
+        'Cuenta
+        '
+        Me.Cuenta.HeaderText = "Cuenta"
+        Me.Cuenta.MaxInputLength = 10
+        Me.Cuenta.Name = "Cuenta"
+        '
+        'area
+        '
+        Me.area.HeaderText = "Area"
+        Me.area.MaxInputLength = 10
+        Me.area.Name = "area"
+        '
+        'Sede
+        '
+        Me.Sede.HeaderText = "Sede"
+        Me.Sede.MaxInputLength = 10
+        Me.Sede.Name = "Sede"
+        '
+        'Descripción
+        '
+        Me.Descripción.HeaderText = "Descripción"
+        Me.Descripción.MaxInputLength = 200
+        Me.Descripción.Name = "Descripción"
+        Me.Descripción.ReadOnly = True
+        '
+        'Monto
+        '
+        Me.Monto.HeaderText = "Monto"
+        Me.Monto.MaxInputLength = 10
+        Me.Monto.Name = "Monto"
+        '
         'btnGuardar
         '
         Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
@@ -364,37 +395,6 @@ Partial Class A_FacturaCompras
         Me.btnRegresar.Size = New System.Drawing.Size(33, 37)
         Me.btnRegresar.TabIndex = 14
         Me.btnRegresar.UseVisualStyleBackColor = False
-        '
-        'Cuenta
-        '
-        Me.Cuenta.HeaderText = "Cuenta"
-        Me.Cuenta.MaxInputLength = 10
-        Me.Cuenta.Name = "Cuenta"
-        '
-        'area
-        '
-        Me.area.HeaderText = "Area"
-        Me.area.MaxInputLength = 10
-        Me.area.Name = "area"
-        '
-        'Sede
-        '
-        Me.Sede.HeaderText = "Sede"
-        Me.Sede.MaxInputLength = 10
-        Me.Sede.Name = "Sede"
-        '
-        'Descripción
-        '
-        Me.Descripción.HeaderText = "Descripción"
-        Me.Descripción.MaxInputLength = 200
-        Me.Descripción.Name = "Descripción"
-        Me.Descripción.ReadOnly = True
-        '
-        'Monto
-        '
-        Me.Monto.HeaderText = "Monto"
-        Me.Monto.MaxInputLength = 10
-        Me.Monto.Name = "Monto"
         '
         'A_FacturaCompras
         '

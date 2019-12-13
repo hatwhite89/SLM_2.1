@@ -12,6 +12,7 @@
         'Presionar ESC para salida
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
+            frmMenuConta.Show()
         End If
     End Sub
 
@@ -214,10 +215,7 @@
 
     Private Sub frmPagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
-
         Try
-
             If txtNro.Text <> "" Then
                 'Mostrar detalle de factura
                 Dim dpago As New ClsDetallePago
@@ -234,7 +232,6 @@
 
             End If
 
-
             'Bloquear datos si pago ya fue realizado
             If chkPagado.Checked = True Then
 
@@ -246,11 +243,14 @@
 
             End If
 
-
         Catch ex As Exception
             MsgBox("Error al cargar el detalle del pago. Detalle: " + ex.Message)
         End Try
 
 
+    End Sub
+
+    Private Sub frmPagos_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        frmMenuConta.Show()
     End Sub
 End Class

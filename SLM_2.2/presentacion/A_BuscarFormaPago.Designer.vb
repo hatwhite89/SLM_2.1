@@ -32,6 +32,7 @@ Partial Class A_BuscarFormaPago
         'txtCodigo
         '
         Me.txtCodigo.Location = New System.Drawing.Point(92, 11)
+        Me.txtCodigo.MaxLength = 20
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
         Me.txtCodigo.TabIndex = 0

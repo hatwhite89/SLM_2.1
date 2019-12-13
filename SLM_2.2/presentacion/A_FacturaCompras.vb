@@ -7,6 +7,7 @@
         'Presionar ESC para cerrar ventana
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
+            frmMenuConta.Show()
         End If
 
     End Sub
@@ -253,5 +254,7 @@
 
     End Sub
 
-
+    Private Sub A_FacturaCompras_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        frmMenuConta.Show()
+    End Sub
 End Class

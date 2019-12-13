@@ -227,6 +227,7 @@ Partial Class A_Cheques
         'txtMonto
         '
         Me.txtMonto.Location = New System.Drawing.Point(88, 75)
+        Me.txtMonto.MaxLength = 15
         Me.txtMonto.Name = "txtMonto"
         Me.txtMonto.Size = New System.Drawing.Size(100, 20)
         Me.txtMonto.TabIndex = 5
@@ -503,6 +504,7 @@ Partial Class A_Cheques
         'txtComentario
         '
         Me.txtComentario.Location = New System.Drawing.Point(86, 61)
+        Me.txtComentario.MaxLength = 500
         Me.txtComentario.Name = "txtComentario"
         Me.txtComentario.Size = New System.Drawing.Size(601, 20)
         Me.txtComentario.TabIndex = 11
@@ -587,6 +589,7 @@ Partial Class A_Cheques
         'txtcodProvee
         '
         Me.txtcodProvee.Location = New System.Drawing.Point(86, 9)
+        Me.txtcodProvee.MaxLength = 20
         Me.txtcodProvee.Name = "txtcodProvee"
         Me.txtcodProvee.Size = New System.Drawing.Size(100, 20)
         Me.txtcodProvee.TabIndex = 1

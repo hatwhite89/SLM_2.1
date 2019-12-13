@@ -147,6 +147,7 @@ Partial Class frmDeposito
         '
         'txtBanco
         '
+        Me.txtBanco.Enabled = False
         Me.txtBanco.Location = New System.Drawing.Point(96, 78)
         Me.txtBanco.MaxLength = 4
         Me.txtBanco.Name = "txtBanco"
@@ -174,13 +175,14 @@ Partial Class frmDeposito
         'txtContado
         '
         Me.txtContado.Location = New System.Drawing.Point(95, 102)
-        Me.txtContado.MaxLength = 9
+        Me.txtContado.MaxLength = 10
         Me.txtContado.Name = "txtContado"
         Me.txtContado.Size = New System.Drawing.Size(71, 20)
         Me.txtContado.TabIndex = 5
         '
         'txtTipoConta
         '
+        Me.txtTipoConta.Enabled = False
         Me.txtTipoConta.Location = New System.Drawing.Point(95, 127)
         Me.txtTipoConta.MaxLength = 4
         Me.txtTipoConta.Name = "txtTipoConta"
@@ -274,7 +276,6 @@ Partial Class frmDeposito
         Me.txtComision.Name = "txtComision"
         Me.txtComision.Size = New System.Drawing.Size(70, 20)
         Me.txtComision.TabIndex = 11
-        Me.txtComision.Text = "0"
         '
         'lblCajero
         '

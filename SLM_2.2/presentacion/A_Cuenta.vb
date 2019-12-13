@@ -36,6 +36,7 @@
         'Presionar ESC para cerrar
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
+            frmMenuConta.Show()
         End If
     End Sub
     Private Sub A_Cuenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -150,9 +151,6 @@
         End If
     End Sub
 
-    Private Sub txtCuenta_TextChanged(sender As Object, e As EventArgs) Handles txtCuenta.TextChanged
-
-    End Sub
 
     Private Sub txtCuenta_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCuenta.KeyPress
         If Char.IsNumber(e.KeyChar) Then
@@ -164,5 +162,9 @@
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub A_Cuenta_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        frmMenuConta.Show()
     End Sub
 End Class

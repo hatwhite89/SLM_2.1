@@ -223,6 +223,7 @@ Partial Class A_Chequera
         '
         Me.txtCodChequera.Enabled = False
         Me.txtCodChequera.Location = New System.Drawing.Point(92, 27)
+        Me.txtCodChequera.MaxLength = 50
         Me.txtCodChequera.Name = "txtCodChequera"
         Me.txtCodChequera.Size = New System.Drawing.Size(70, 20)
         Me.txtCodChequera.TabIndex = 1

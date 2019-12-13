@@ -23,7 +23,6 @@ Public Class A_Cheques
                     tipo = "cheque"
                 End If
 
-
                 With cheque
 
                     .Cod_Cheque = Convert.ToInt32(txtNro.Text)
@@ -233,8 +232,26 @@ Public Class A_Cheques
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
         Me.Hide()
-        A_ImpresionCheque.Show()
     End Sub
+
+    Private Sub A_Cheques_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        frmMenuConta.Show()
+    End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -169,6 +169,7 @@ Public Class frmFormaPago
     Private Sub frmFormaPago_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
+            frmMenuConta.Show()
         End If
     End Sub
 
@@ -206,5 +207,9 @@ Public Class frmFormaPago
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnBuscarBanco.Click
         A_ListadoBancos.lblFormBanco.Text = "1"
         A_ListadoBancos.ShowDialog()
+    End Sub
+
+    Private Sub frmFormaPago_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        frmMenuConta.Show()
     End Sub
 End Class
