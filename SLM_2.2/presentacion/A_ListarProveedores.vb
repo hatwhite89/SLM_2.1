@@ -12,7 +12,7 @@
 
         'Cargar informacion de proveedor
         Dim dt As DataTable = dtProveedor.DataSource
-        Dim row As DataRow = dt.Rows(0)
+        Dim row As DataRow = dt.Rows(e.RowIndex)
 
         A_Cheques.txtcodProvee.Text = row("codBreve") 'Codigo Proveedor
         A_Cheques.txtNombreProvee.Text = row("nombreProveedor")  'Nombre de proveedor

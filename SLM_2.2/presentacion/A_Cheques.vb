@@ -6,6 +6,8 @@ Public Class A_Cheques
     'Objeto Cheques
     Dim cheque As New ClsCheques
     Dim formap As New ClsFormaPago
+    Public letras As String
+
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
@@ -30,7 +32,7 @@ Public Class A_Cheques
                     .Fecha_reg = dtpFechaReg.Value
                     .Fecha_Vto = dtpFechaVto.Value
                     .Cod_BreveProvee = txtcodProvee.Text
-                    .Nombre_Proveedor = txtnombreBanco.Text
+                    .Nombre_Proveedor = txtNombreProvee.Text
                     .Estad_o = "Acreditado"
                     .Descripcio_n = txtVoucher.Text
                     .Comentari_o = txtComentario.Text
@@ -56,7 +58,7 @@ Public Class A_Cheques
                         MsgBox("El cheque se guardo correctamente para su impresión.")
                         btnImprimir.Visible = True
 
-                        MsgBox("El numero es: " + A_Cheques.Numalet.ToCardinal(txtMonto.Text))
+                        letras = A_Cheques.Numalet.ToCardinal(txtMonto.Text)
 
                     End If
 
@@ -231,7 +233,26 @@ Public Class A_Cheques
     End Sub
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
-        Me.Hide()
+
+
+        Dim nroCheque As String
+        Dim codFactura As Integer
+        Dim objVistaCheque As New VistaCheque
+
+
+        nroCheque = txtNroCheq.Text
+
+        codFactura = Convert.ToInt32(frmPagos.dtDetallePagos.Rows(0).Cells(0).Value)
+
+        objVistaCheque.SetParameterValue("@nroCheque", nroCheque)
+        objVistaCheque.SetParameterValue("@codFactura", codFactura)
+        objVistaCheque.SetParameterValue("numalet", letras)
+        objVistaCheque.SetParameterValue("ChequeNumero", nroCheque)
+
+
+        A_PrintCheque.crvImprimirCheque.ReportSource = objVistaCheque
+        A_PrintCheque.Show()
+
     End Sub
 
     Private Sub A_Cheques_Closed(sender As Object, e As EventArgs) Handles Me.Closed
@@ -269,7 +290,7 @@ Public Class A_Cheques
         Private Const [sub] As Char = CChar(ChrW(26))
         'Cambiar acá si se quiere otro comportamiento en los métodos de clase
         Public Const SeparadorDecimalSalidaDefault As String = "LEMPIRAS CON "
-        Public Const MascaraSalidaDecimalDefault As String = "00' CENTAVOS.'"
+        Public Const MascaraSalidaDecimalDefault As String = "00' CENTAVOS.****'"
         Public Const DecimalesDefault As Int32 = 2
         Public Const LetraCapitalDefault As Boolean = False
         Public Const ConvertirDecimalesDefault As Boolean = False
