@@ -622,14 +622,15 @@ Public Class M_Factura
     End Sub
 
     Private Sub btnimprimirComprobante_Click(sender As Object, e As EventArgs) Handles btnimprimirComprobante.Click
-        PrintDialog1.Document = PrintDocument1
-        PrintDialog1.PrinterSettings = PrintDocument1.PrinterSettings
-        PrintDialog1.AllowSomePages = True
-
-        If PrintDialog1.ShowDialog = DialogResult.OK Then
-            PrintDocument1.PrinterSettings = PrintDialog1.PrinterSettings
-            PrintDocument1.Print()
-            'Printer
+        If (Trim(txtnumeroFactura.Text) <> "") Then
+            Dim numero As Integer = Convert.ToInt64(txtnumeroFactura.Text)
+            'le asigno un valor a los parametros del procedimiento almacenado
+            Dim form As New M_ComprobanteEntrega
+            form.numeroFactura = numero
+            'muestro el reporte
+            form.ShowDialog()
+        Else
+            MsgBox("Debe estar creada o guardada la factura para poder imprimir el comprobante de entrega.", MsgBoxStyle.Critical)
         End If
     End Sub
     Private Sub enviarCorreo()
@@ -656,8 +657,8 @@ Public Class M_Factura
                 Smtp_Server.Send(e_mail)
                 MsgBox("Mail Sent")
 
-            Catch error_t As Exception
-                MsgBox(error_t.ToString)
+            Catch ex As Exception
+                MsgBox(ex.Message)
             End Try
         End If
     End Sub

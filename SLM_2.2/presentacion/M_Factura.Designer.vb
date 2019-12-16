@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class M_Factura
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class M_Factura
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Factura))
         Me.lblcodigo = New System.Windows.Forms.Label()
@@ -102,8 +102,6 @@ Partial Class M_Factura
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.lblcodeSucursal = New System.Windows.Forms.Label()
         Me.lblcodeTerminoPago = New System.Windows.Forms.Label()
-        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
-        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.gbxlistadoExamenes.SuspendLayout()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -963,10 +961,6 @@ Partial Class M_Factura
         Me.lblcodeTerminoPago.TabIndex = 99
         Me.lblcodeTerminoPago.Visible = False
         '
-        'PrintDialog1
-        '
-        Me.PrintDialog1.UseEXDialog = True
-        '
         'M_Factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1132,6 +1126,4 @@ Partial Class M_Factura
     Friend WithEvents btnActualizar As Button
     Friend WithEvents lblcodeSucursal As Label
     Friend WithEvents lblcodeTerminoPago As Label
-    Friend WithEvents PrintDialog1 As PrintDialog
-    Friend WithEvents PrintDocument1 As Printing.PrintDocument
 End Class

@@ -663,6 +663,9 @@
         Dim yr As Integer = DateDiff(DateInterval.Year, dtpfechaNacimiento.Value, Now)
         Dim month As Integer = DateDiff(DateInterval.Month, dtpfechaNacimiento.Value, Now) Mod 12
         Dim day As Integer = DateDiff(DateInterval.Day, dtpfechaNacimiento.Value, Now) Mod 30 - 10
-        MsgBox(yr & " Years, " & month & " Months ")
+        If (yr >= 60) Then
+            lblcodeCategoria.Text = "2"
+            MsgBox(yr & " Years, " & month & " Months ")
+        End If
     End Sub
 End Class
