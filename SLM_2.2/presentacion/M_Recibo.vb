@@ -30,7 +30,8 @@
         End If
     End Sub
     Public Sub limpiar()
-        dgbtabla.Rows.Clear()
+        M_BuscarRecibo.dgbtabla.Rows.Clear()
+
         Try
 
             txtnumero.Text = ""

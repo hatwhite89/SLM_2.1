@@ -38,9 +38,9 @@
                 Dim objDetRbo As New ClsDetalleRecibo
                 objDetRbo.codigoRecibo_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
 
-                For index As Integer = 0 To M_Recibo.dgbtabla.Columns.Count - 1
-                    M_Recibo.dgbtabla.Columns.RemoveAt(0)
-                Next
+
+                M_Recibo.dgbtabla.Columns.Clear()
+
 
                 Dim dv As DataView = objDetRbo.BuscarDetalleRecibo.DefaultView
                 M_Recibo.dgbtabla.DataSource = dv
@@ -101,4 +101,7 @@
         M_Recibo.ShowDialog()
     End Sub
 
+    Private Sub dgbtabla_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellContentClick
+
+    End Sub
 End Class
