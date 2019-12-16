@@ -122,6 +122,7 @@
     Private Sub A_Bancos_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
+            frmMenuConta.Show()
         End If
     End Sub
 
@@ -149,5 +150,9 @@
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub A_Bancos_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        frmMenuConta.Show()
     End Sub
 End Class

@@ -145,12 +145,6 @@
     <Compile Include="presentacion\A_FacturaCompras.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\A_ImpresionCheque.Designer.vb">
-      <DependentUpon>A_ImpresionCheque.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\A_ImpresionCheque.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="presentacion\A_ListadoBancos.Designer.vb">
       <DependentUpon>A_ListadoBancos.vb</DependentUpon>
     </Compile>
@@ -300,6 +294,12 @@
       <DependentUpon>A_ListarTipoClasificacion.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ListarTipoClasificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_PrintCheque.Designer.vb">
+      <DependentUpon>A_PrintCheque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_PrintCheque.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_Proveedor.Designer.vb">
@@ -615,6 +615,12 @@
     <Compile Include="presentacion\prueba.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="VistaCheque.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VistaCheque.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -628,9 +634,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_FacturaCompras.resx">
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\A_ImpresionCheque.resx">
-      <DependentUpon>A_ImpresionCheque.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoBancos.resx">
       <DependentUpon>A_ListadoBancos.vb</DependentUpon>
@@ -694,6 +697,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarTipoClasificacion.resx">
       <DependentUpon>A_ListarTipoClasificacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_PrintCheque.resx">
+      <DependentUpon>A_PrintCheque.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Proveedor.resx">
       <DependentUpon>A_Proveedor.vb</DependentUpon>
@@ -848,6 +854,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\prueba.resx">
       <DependentUpon>prueba.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaCheque.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VistaCheque.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

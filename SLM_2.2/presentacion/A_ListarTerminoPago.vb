@@ -11,7 +11,7 @@
     Private Sub dtTerminoPago_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtTerminoPago.CellClick
 
         'Seleccion de termino de pago
-        A_FacturaCompras.txtTerminoPago.Text = dtTerminoPago.Rows(e.RowIndex).Cells(0).Value
+        A_FacturaCompras.txtTerminoPago.Text = dtTerminoPago.Rows(e.RowIndex).Cells(1).Value
         'Cerrar Formulario al seleccionar
         Me.Close()
 

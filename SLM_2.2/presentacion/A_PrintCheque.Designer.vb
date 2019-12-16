@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class A_ImpresionCheque
+Partial Class A_PrintCheque
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -33,18 +33,19 @@ Partial Class A_ImpresionCheque
         Me.crvImprimirCheque.Dock = System.Windows.Forms.DockStyle.Fill
         Me.crvImprimirCheque.Location = New System.Drawing.Point(0, 0)
         Me.crvImprimirCheque.Name = "crvImprimirCheque"
-        Me.crvImprimirCheque.Size = New System.Drawing.Size(820, 450)
+        Me.crvImprimirCheque.ShowLogo = False
+        Me.crvImprimirCheque.Size = New System.Drawing.Size(800, 450)
         Me.crvImprimirCheque.TabIndex = 0
+        Me.crvImprimirCheque.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
-        'A_ImpresionCheque
+        'A_PrintCheque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(820, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.crvImprimirCheque)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Name = "A_ImpresionCheque"
-        Me.Text = "Vista Previa de Cheque"
+        Me.Name = "A_PrintCheque"
+        Me.Text = "Print Cheque"
         Me.ResumeLayout(False)
 
     End Sub

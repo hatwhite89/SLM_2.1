@@ -48,6 +48,7 @@
                         .cod_Cajero = txtCajero.Text
                         .Cod_FormaPago = Convert.ToInt32(lblCodFormaPago.Text)
                         .registrarNuevoDeposito()
+                        Limpiar()
                     End With
 
                 Else
@@ -66,7 +67,12 @@
                         .cod_Cajero = txtCajero.Text
                         .Cod_FormaPago = Convert.ToInt32(lblCodFormaPago.Text)
                         .registrarNuevoDeposito()
+                        Limpiar()
                     End With
+
+
+
+
 
                 End If
 
@@ -80,7 +86,20 @@
 
             MsgBox("Falta información en el formulario.")
 
+            If txtBanco.Text = "" Then
+                txtBanco.BackColor = Color.Red
+            ElseIf txtContado.Text = "" Then
+                txtContado.BackColor = Color.Red
+            ElseIf txtTipoConta.Text = "" Then
+                txtTipoConta.BackColor = Color.Red
+            ElseIf txtCajero.Text = "" Then
+                txtCajero.BackColor = Color.Red
+            End If
+
+
+
         End If
+
 
     End Sub
     Private Sub btnBuscarBanco_Click(sender As Object, e As EventArgs) Handles btnBuscarBanco.Click
@@ -240,20 +259,19 @@
 
     Private Sub txtContado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtContado.KeyPress
         'Solo acepta numeros.
-        If Char.IsNumber(e.KeyChar) Then
+        If (Char.IsNumber(e.KeyChar)) Then
             e.Handled = False
-        ElseIf Char.IsControl(e.KeyChar) Then
+        ElseIf (Char.IsControl(e.KeyChar)) Then
             e.Handled = False
-        ElseIf Char.IsSeparator(e.KeyChar) Then
+        ElseIf (Char.IsPunctuation(e.KeyChar)) Then
             e.Handled = False
-        Else
-            e.Handled = True
         End If
     End Sub
 
     Private Sub frmDeposito_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
+            frmMenuConta.Show()
         End If
     End Sub
 
@@ -265,5 +283,41 @@
         End Try
 
 
+    End Sub
+
+    Private Sub txtComision_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtComision.KeyPress
+        'Solo acepta numeros.
+        If (Char.IsNumber(e.KeyChar)) Then
+            e.Handled = False
+        ElseIf (Char.IsControl(e.KeyChar)) Then
+            e.Handled = False
+        ElseIf (Char.IsPunctuation(e.KeyChar)) Then
+            e.Handled = False
+        End If
+    End Sub
+
+
+    Sub Limpiar()
+        txtNro.Text = ""
+        dtpFecha.ResetText()
+        txtBanco.Text = ""
+        txtContado.Text = ""
+        txtTipoConta.Text = ""
+        txtTotalDep.Text = ""
+        txtMoneda.Text = ""
+        txtMonBase.Text = ""
+        txtComision.Text = ""
+        txtCajero.Text = ""
+        txtComentario.Text = ""
+
+        'Color TextBox
+        txtBanco.BackColor = Color.White
+        txtContado.BackColor = Color.White
+        txtTipoConta.BackColor = Color.White
+        txtCajero.BackColor = Color.White
+    End Sub
+
+    Private Sub frmDeposito_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        frmMenuConta.Show()
     End Sub
 End Class

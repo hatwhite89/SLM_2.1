@@ -4,6 +4,7 @@
     Private Sub A_CategoriaProveedor_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
+            frmMenuConta.Show()
         End If
     End Sub
 
@@ -120,5 +121,9 @@
 
     Private Sub btnBuscarClas_Click(sender As Object, e As EventArgs) Handles btnBuscarClas.Click
         A_ListarTipoClasificacion.ShowDialog()
+    End Sub
+
+    Private Sub A_CategoriaProveedor_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        frmMenuConta.Show()
     End Sub
 End Class
