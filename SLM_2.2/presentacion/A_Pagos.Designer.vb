@@ -35,14 +35,12 @@ Partial Class frmPagos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtFormaP = New System.Windows.Forms.TextBox()
         Me.lblReferencia = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtReferencia = New System.Windows.Forms.TextBox()
         Me.lblCtaBanco = New System.Windows.Forms.Label()
         Me.txtCtaBanco = New System.Windows.Forms.TextBox()
         Me.chxInfo = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.txtCodOrden = New System.Windows.Forms.TextBox()
-        Me.txtIdioma = New System.Windows.Forms.TextBox()
         Me.lblComentario = New System.Windows.Forms.Label()
         Me.txtComentario = New System.Windows.Forms.TextBox()
         Me.dtDetallePagos = New System.Windows.Forms.DataGridView()
@@ -57,10 +55,11 @@ Partial Class frmPagos
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.gbxInfo = New System.Windows.Forms.GroupBox()
+        Me.chkPagado = New System.Windows.Forms.CheckBox()
         Me.gbxDetalle = New System.Windows.Forms.GroupBox()
-        Me.btnRegresar = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.lblTotalSuma = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dtDetallePagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxInfo.SuspendLayout()
@@ -100,6 +99,7 @@ Partial Class frmPagos
         '
         'txtNro
         '
+        Me.txtNro.Enabled = False
         Me.txtNro.Location = New System.Drawing.Point(77, 18)
         Me.txtNro.Name = "txtNro"
         Me.txtNro.Size = New System.Drawing.Size(93, 20)
@@ -164,12 +164,12 @@ Partial Class frmPagos
         Me.lblReferencia.TabIndex = 9
         Me.lblReferencia.Text = "Referencia"
         '
-        'TextBox1
+        'txtReferencia
         '
-        Me.TextBox1.Location = New System.Drawing.Point(77, 66)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(93, 20)
-        Me.TextBox1.TabIndex = 10
+        Me.txtReferencia.Location = New System.Drawing.Point(77, 66)
+        Me.txtReferencia.Name = "txtReferencia"
+        Me.txtReferencia.Size = New System.Drawing.Size(93, 20)
+        Me.txtReferencia.TabIndex = 10
         '
         'lblCtaBanco
         '
@@ -201,34 +201,18 @@ Partial Class frmPagos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(490, 44)
+        Me.Label2.Location = New System.Drawing.Point(490, 67)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(61, 13)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Cod. Orden"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(513, 67)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(38, 13)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Idioma"
-        '
         'txtCodOrden
         '
-        Me.txtCodOrden.Location = New System.Drawing.Point(557, 41)
+        Me.txtCodOrden.Location = New System.Drawing.Point(557, 64)
         Me.txtCodOrden.Name = "txtCodOrden"
         Me.txtCodOrden.Size = New System.Drawing.Size(93, 20)
         Me.txtCodOrden.TabIndex = 16
-        '
-        'txtIdioma
-        '
-        Me.txtIdioma.Location = New System.Drawing.Point(557, 64)
-        Me.txtIdioma.Name = "txtIdioma"
-        Me.txtIdioma.Size = New System.Drawing.Size(93, 20)
-        Me.txtIdioma.TabIndex = 17
         '
         'lblComentario
         '
@@ -241,6 +225,7 @@ Partial Class frmPagos
         '
         'txtComentario
         '
+        Me.txtComentario.Enabled = False
         Me.txtComentario.Location = New System.Drawing.Point(77, 90)
         Me.txtComentario.Name = "txtComentario"
         Me.txtComentario.Size = New System.Drawing.Size(573, 20)
@@ -262,26 +247,33 @@ Partial Class frmPagos
         '
         Me.NroFac.HeaderText = "Nro.Fac"
         Me.NroFac.Name = "NroFac"
+        Me.NroFac.Width = 50
         '
         'Proveedor
         '
         Me.Proveedor.HeaderText = "Proveedor"
         Me.Proveedor.Name = "Proveedor"
+        Me.Proveedor.ReadOnly = True
+        Me.Proveedor.Width = 300
         '
         'Moneda
         '
         Me.Moneda.HeaderText = "Moneda"
         Me.Moneda.Name = "Moneda"
+        Me.Moneda.ReadOnly = True
+        Me.Moneda.Width = 30
         '
         'ValorPago
         '
-        Me.ValorPago.HeaderText = "ValorPago"
+        Me.ValorPago.HeaderText = "Monto"
         Me.ValorPago.Name = "ValorPago"
+        Me.ValorPago.ReadOnly = True
         '
         'FORMAP
         '
-        Me.FORMAP.HeaderText = "F.Pago"
+        Me.FORMAP.HeaderText = "F.P"
         Me.FORMAP.Name = "FORMAP"
+        Me.FORMAP.Width = 30
         '
         'NroCheque
         '
@@ -307,7 +299,7 @@ Partial Class frmPagos
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(596, 462)
+        Me.btnGuardar.Location = New System.Drawing.Point(596, 430)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 22
@@ -320,12 +312,13 @@ Partial Class frmPagos
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(514, 462)
+        Me.btnModificar.Location = New System.Drawing.Point(514, 430)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 23
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = False
+        Me.btnModificar.Visible = False
         '
         'btnCrear
         '
@@ -333,15 +326,17 @@ Partial Class frmPagos
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(433, 462)
+        Me.btnCrear.Location = New System.Drawing.Point(433, 430)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 24
         Me.btnCrear.Text = "Crear Nuevo"
         Me.btnCrear.UseVisualStyleBackColor = False
+        Me.btnCrear.Visible = False
         '
         'gbxInfo
         '
+        Me.gbxInfo.Controls.Add(Me.chkPagado)
         Me.gbxInfo.Controls.Add(Me.dtpFechaP)
         Me.gbxInfo.Controls.Add(Me.lblNro)
         Me.gbxInfo.Controls.Add(Me.txtNro)
@@ -353,11 +348,9 @@ Partial Class frmPagos
         Me.gbxInfo.Controls.Add(Me.Label1)
         Me.gbxInfo.Controls.Add(Me.lblComentario)
         Me.gbxInfo.Controls.Add(Me.txtFormaP)
-        Me.gbxInfo.Controls.Add(Me.txtIdioma)
         Me.gbxInfo.Controls.Add(Me.lblReferencia)
         Me.gbxInfo.Controls.Add(Me.txtCodOrden)
-        Me.gbxInfo.Controls.Add(Me.TextBox1)
-        Me.gbxInfo.Controls.Add(Me.Label3)
+        Me.gbxInfo.Controls.Add(Me.txtReferencia)
         Me.gbxInfo.Controls.Add(Me.lblCtaBanco)
         Me.gbxInfo.Controls.Add(Me.Label2)
         Me.gbxInfo.Controls.Add(Me.txtCtaBanco)
@@ -369,6 +362,16 @@ Partial Class frmPagos
         Me.gbxInfo.TabStop = False
         Me.gbxInfo.Text = "Información de Pago"
         '
+        'chkPagado
+        '
+        Me.chkPagado.AutoSize = True
+        Me.chkPagado.Location = New System.Drawing.Point(558, 44)
+        Me.chkPagado.Name = "chkPagado"
+        Me.chkPagado.Size = New System.Drawing.Size(63, 17)
+        Me.chkPagado.TabIndex = 22
+        Me.chkPagado.Text = "Pagado"
+        Me.chkPagado.UseVisualStyleBackColor = True
+        '
         'gbxDetalle
         '
         Me.gbxDetalle.Controls.Add(Me.lblTotalSuma)
@@ -376,10 +379,27 @@ Partial Class frmPagos
         Me.gbxDetalle.Controls.Add(Me.dtDetallePagos)
         Me.gbxDetalle.Location = New System.Drawing.Point(12, 157)
         Me.gbxDetalle.Name = "gbxDetalle"
-        Me.gbxDetalle.Size = New System.Drawing.Size(659, 293)
+        Me.gbxDetalle.Size = New System.Drawing.Size(659, 267)
         Me.gbxDetalle.TabIndex = 26
         Me.gbxDetalle.TabStop = False
         Me.gbxDetalle.Text = "Detalle de Pago"
+        '
+        'lblTotalSuma
+        '
+        Me.lblTotalSuma.AutoSize = True
+        Me.lblTotalSuma.Location = New System.Drawing.Point(555, 240)
+        Me.lblTotalSuma.Name = "lblTotalSuma"
+        Me.lblTotalSuma.Size = New System.Drawing.Size(0, 13)
+        Me.lblTotalSuma.TabIndex = 22
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(472, 239)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(77, 13)
+        Me.Label4.TabIndex = 21
+        Me.Label4.Text = "Total de Pago:"
         '
         'btnRegresar
         '
@@ -388,36 +408,18 @@ Partial Class frmPagos
         Me.btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnRegresar.FlatAppearance.BorderSize = 0
         Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegresar.Location = New System.Drawing.Point(12, 456)
+        Me.btnRegresar.Location = New System.Drawing.Point(12, 424)
         Me.btnRegresar.Name = "btnRegresar"
         Me.btnRegresar.Size = New System.Drawing.Size(33, 37)
         Me.btnRegresar.TabIndex = 27
         Me.btnRegresar.UseVisualStyleBackColor = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(464, 258)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(77, 13)
-        Me.Label4.TabIndex = 21
-        Me.Label4.Text = "Total de Pago:"
-        '
-        'lblTotalSuma
-        '
-        Me.lblTotalSuma.AutoSize = True
-        Me.lblTotalSuma.Location = New System.Drawing.Point(547, 259)
-        Me.lblTotalSuma.Name = "lblTotalSuma"
-        Me.lblTotalSuma.Size = New System.Drawing.Size(22, 13)
-        Me.lblTotalSuma.TabIndex = 22
-        Me.lblTotalSuma.Text = "0.0"
         '
         'frmPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(684, 497)
+        Me.ClientSize = New System.Drawing.Size(684, 463)
         Me.Controls.Add(Me.btnRegresar)
         Me.Controls.Add(Me.gbxDetalle)
         Me.Controls.Add(Me.gbxInfo)
@@ -455,14 +457,12 @@ Partial Class frmPagos
     Friend WithEvents Label1 As Label
     Friend WithEvents txtFormaP As TextBox
     Friend WithEvents lblReferencia As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtReferencia As TextBox
     Friend WithEvents lblCtaBanco As Label
     Friend WithEvents txtCtaBanco As TextBox
     Friend WithEvents chxInfo As CheckBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents txtCodOrden As TextBox
-    Friend WithEvents txtIdioma As TextBox
     Friend WithEvents lblComentario As Label
     Friend WithEvents txtComentario As TextBox
     Friend WithEvents dtDetallePagos As DataGridView
@@ -473,12 +473,13 @@ Partial Class frmPagos
     Friend WithEvents gbxInfo As GroupBox
     Friend WithEvents gbxDetalle As GroupBox
     Friend WithEvents btnRegresar As Button
+    Friend WithEvents lblTotalSuma As Label
+    Friend WithEvents Label4 As Label
     Friend WithEvents NroFac As DataGridViewTextBoxColumn
     Friend WithEvents Proveedor As DataGridViewTextBoxColumn
     Friend WithEvents Moneda As DataGridViewTextBoxColumn
     Friend WithEvents ValorPago As DataGridViewTextBoxColumn
     Friend WithEvents FORMAP As DataGridViewTextBoxColumn
     Friend WithEvents NroCheque As DataGridViewTextBoxColumn
-    Friend WithEvents lblTotalSuma As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents chkPagado As CheckBox
 End Class

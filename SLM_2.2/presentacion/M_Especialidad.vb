@@ -38,6 +38,7 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
+
             If (Trim(txtnombre.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
                 Dim objEspecialidad As New ClsEspecialidad
                 With objEspecialidad
@@ -78,7 +79,6 @@
         txtcodigo.ReadOnly = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = False
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -97,16 +97,6 @@
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
     End Sub
-    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
-        Dim objEsp As New ClsEspecialidad
-        With objEsp
-            .Nombre1 = txtnombreB.Text
-        End With
-        Dim dv As DataView = objEsp.BuscarEspecialidad.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-    End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
@@ -121,5 +111,16 @@
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
+    End Sub
+
+    Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
+        Dim objEsp As New ClsEspecialidad
+        With objEsp
+            .Nombre1 = txtnombreB.Text
+        End With
+        Dim dv As DataView = objEsp.BuscarEspecialidad.DefaultView
+        dgbtabla.DataSource = dv
+        lblcantidad.Text = dv.Count
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
     End Sub
 End Class

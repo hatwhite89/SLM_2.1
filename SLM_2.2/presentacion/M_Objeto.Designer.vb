@@ -105,6 +105,7 @@ Partial Class M_Objeto
         'txtnombre
         '
         Me.txtnombre.Location = New System.Drawing.Point(185, 55)
+        Me.txtnombre.MaxLength = 80
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(322, 22)
         Me.txtnombre.TabIndex = 117
@@ -204,7 +205,9 @@ Partial Class M_Objeto
         '
         'txtcodigoTipo
         '
+        Me.txtcodigoTipo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigoTipo.Location = New System.Drawing.Point(244, 83)
+        Me.txtcodigoTipo.MaxLength = 20
         Me.txtcodigoTipo.Name = "txtcodigoTipo"
         Me.txtcodigoTipo.Size = New System.Drawing.Size(88, 22)
         Me.txtcodigoTipo.TabIndex = 107
@@ -220,7 +223,9 @@ Partial Class M_Objeto
         '
         'txtcodigo
         '
+        Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigo.Location = New System.Drawing.Point(186, 27)
+        Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(183, 22)
         Me.txtcodigo.TabIndex = 40
@@ -275,6 +280,7 @@ Partial Class M_Objeto
         'txtnombreB
         '
         Me.txtnombreB.Location = New System.Drawing.Point(235, 26)
+        Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
         Me.txtnombreB.TabIndex = 115

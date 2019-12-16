@@ -19,7 +19,7 @@
             End If
         Next
         ReDim Preserve testArray(lastNonEmpty)
-        Return texto
+        Return RTrim(texto)
     End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
@@ -113,7 +113,7 @@
         btnbuscarEspecialidad.Enabled = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = False
+        btnnuevo.Enabled = True
     End Sub
     Private Sub txtnombreCompleto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombreCompleto.KeyPress
 
@@ -163,7 +163,7 @@
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
     End Sub
-    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
+    Private Sub btnbuscar_Click(sender As Object, e As EventArgs)
         Dim objMed As New ClsMedico
         With objMed
             .Nombre_completo1 = txtnombreB.Text
@@ -187,6 +187,7 @@
             M_Factura.txtnombreMedico.Text = txtnombreCompleto.Text
 
             btnmodificar.Enabled = True
+            btnguardar.Enabled = False
             btnbuscarEspecialidad.Enabled = True
 
             txtcorreo.ReadOnly = False
@@ -285,12 +286,27 @@
                 dt = objEsp.BuscarEspecialidadCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreEspecialidad.Text = CStr(row("nombre"))
+                txtcodigoEspecialidad.BackColor = Color.White
             Catch ex As Exception
+                txtcodigoEspecialidad.BackColor = Color.Red
+                txtnombreEspecialidad.Text = ""
                 'MsgBox("No existe ese código de especialidad.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoEspecialidad.Text = ""
             txtnombreEspecialidad.Text = ""
+            txtcodigoEspecialidad.BackColor = Color.White
         End If
+    End Sub
+
+    Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
+        Dim objMed As New ClsMedico
+        With objMed
+            .Nombre_completo1 = txtnombreB.Text
+        End With
+        Dim dv As DataView = objMed.BuscarMedico.DefaultView
+        dgbtabla.DataSource = dv
+        lblcantidad.Text = dv.Count
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
     End Sub
 End Class

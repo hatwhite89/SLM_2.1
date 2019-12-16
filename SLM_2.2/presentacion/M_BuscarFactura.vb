@@ -18,6 +18,7 @@
             Me.Close()
         End If
     End Sub
+
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
             Dim n As String = ""
@@ -68,6 +69,7 @@
                 Else
                     M_Factura.btnActualizar.Enabled = False
                 End If
+                'Me.Close()
                 M_Factura.ShowDialog()
             End If
         Catch ex As Exception
@@ -107,6 +109,7 @@
         End If
     End Sub
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
+        'Me.Close
         M_Factura.limpiar()
         M_Factura.ShowDialog()
     End Sub

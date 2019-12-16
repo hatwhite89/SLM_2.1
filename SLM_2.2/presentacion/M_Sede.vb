@@ -27,10 +27,9 @@
         rtxtdireccion4.ReadOnly = False
         txtcontacto.ReadOnly = False
 
-        btnbuscar.Enabled = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = False
+        btnnuevo.Enabled = True
     End Sub
     Private Sub deshabilitar()
 
@@ -44,7 +43,6 @@
         rtxtdireccion4.ReadOnly = True
         txtcontacto.ReadOnly = True
 
-        btnbuscar.Enabled = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
@@ -62,7 +60,7 @@
             End If
         Next
         ReDim Preserve testArray(lastNonEmpty)
-        Return texto
+        Return RTrim(texto)
     End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
@@ -175,7 +173,7 @@
     Private Sub btncancelar_Click_1(sender As Object, e As EventArgs) Handles btncancelar.Click
         Me.Close()
     End Sub
-    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
+    Private Sub btnbuscar_Click(sender As Object, e As EventArgs)
         Dim objSede As New ClsSede
         With objSede
             .Nombre1 = txtnombreB.Text
@@ -201,6 +199,7 @@
             M_Factura.txtnombreSede.Text = txtnombre.Text
 
             btnmodificar.Enabled = True
+            btnguardar.Enabled = False
 
             txttelefono.ReadOnly = False
             txtnombre.ReadOnly = False
@@ -229,5 +228,16 @@
         Me.Width = 687
         Me.Height = 725
         deshabilitar()
+    End Sub
+
+    Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
+        Dim objSede As New ClsSede
+        With objSede
+            .Nombre1 = txtnombreB.Text
+        End With
+        Dim dv As DataView = objSede.BuscarSede.DefaultView
+        dgbtabla.DataSource = dv
+        lblcantidad.Text = dv.Count
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
     End Sub
 End Class

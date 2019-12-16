@@ -35,10 +35,8 @@
         rtxtcomentario.ReadOnly = False
         txtcodigo.ReadOnly = True
 
-        btnbuscar.Enabled = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = False
     End Sub
     Private Sub txtcodigoTipo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoTipo.KeyPress
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
@@ -61,11 +59,11 @@
                     End If
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
-                rtxtcomentario.Text() = texto
+                rtxtcomentario.Text() = RTrim(texto)
 
                 Dim objClasif As New ClsClasificacionContacto
                 With objClasif
-                    .Comentario1 = texto
+                    .Comentario1 = rtxtcomentario.Text
                     .CodigoTipo1 = txtcodigoTipo.Text
                 End With
 
@@ -111,11 +109,11 @@
                     End If
                 Next
                 ReDim Preserve testArray(lastNonEmpty)
-                rtxtcomentario.Text() = texto
+                rtxtcomentario.Text() = RTrim(texto)
 
                 Dim objClasif As New ClsClasificacionContacto
                 With objClasif
-                    .Comentario1 = texto
+                    .Comentario1 = rtxtcomentario.Text
                     .Codigo1 = txtcodigo.Text
                     .CodigoTipo1 = txtcodigoTipo.Text
                 End With
@@ -146,16 +144,6 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
-        Dim objClas As New ClsClasificacionContacto
-        With objClas
-            .Comentario1 = txtcomentarioB.Text
-        End With
-        Dim dv As DataView = objClas.BuscarClasificacionContacto.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-    End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
@@ -166,6 +154,7 @@
             M_Cliente.txtnombreClasificacion.Text = rtxtcomentario.Text
 
             btnmodificar.Enabled = True
+            btnguardar.Enabled = False
 
             rtxtcomentario.ReadOnly = False
             txtcodigoTipo.ReadOnly = False
@@ -185,15 +174,29 @@
                 dt = objTipoClas.BuscarTipoClasificacionCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtcomentarioTipo.Text = CStr(row("comentario"))
+                txtcodigoTipo.BackColor = Color.White
             Catch ex As Exception
-                MsgBox("No existe el código del tipo de clasificación.", MsgBoxStyle.Critical, "Validación")
+                txtcodigoTipo.BackColor = Color.Red
+                txtcomentarioTipo.Text = ""
             End Try
         Else
             txtcodigoTipo.Text = ""
             txtcomentarioTipo.Text = ""
+            txtcodigoTipo.BackColor = Color.White
         End If
     End Sub
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         Me.Close()
+    End Sub
+
+    Private Sub txtcomentarioB_TextChanged(sender As Object, e As EventArgs) Handles txtcomentarioB.TextChanged
+        Dim objClas As New ClsClasificacionContacto
+        With objClas
+            .Comentario1 = txtcomentarioB.Text
+        End With
+        Dim dv As DataView = objClas.BuscarClasificacionContacto.DefaultView
+        dgbtabla.DataSource = dv
+        lblcantidad.Text = dv.Count
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
     End Sub
 End Class

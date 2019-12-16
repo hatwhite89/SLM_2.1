@@ -9,6 +9,8 @@
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
+        dgbtabla.Columns("codigo").Visible = False
+
         rtxtdescripcion.ReadOnly = True
         txtcodigoTipo.ReadOnly = True
         txtcodigo.ReadOnly = True
@@ -37,7 +39,6 @@
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = False
     End Sub
     Private Sub txtcodigoTipo_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
@@ -97,7 +98,7 @@
             End If
         Next
         ReDim Preserve testArray(lastNonEmpty)
-        Return texto
+        Return RTrim(texto)
     End Function
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
@@ -152,6 +153,7 @@
             M_Cliente.txtnombreCategoria.Text = rtxtdescripcion.Text
 
             btnmodificar.Enabled = True
+            btnguardar.Enabled = False
 
             rtxtdescripcion.ReadOnly = False
             txtcodigoTipo.ReadOnly = False
@@ -175,13 +177,15 @@
                 dt = objTipoClas.BuscarTipoClasificacionCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtdescripcionTipo.Text = CStr(row("comentario"))
+                txtcodigoTipo.BackColor = Color.White
             Catch ex As Exception
-                ' MsgBox("No existe el código del tipo de clasificación.", MsgBoxStyle.Critical, "Validación")
-                txtcodigoTipo.Text = ""
+                txtcodigoTipo.BackColor = Color.Red
+                txtdescripcionTipo.Text = ""
             End Try
         Else
             txtcodigoTipo.Text = ""
             txtdescripcionTipo.Text = ""
+            txtcodigoTipo.BackColor = Color.White
         End If
     End Sub
     Private Sub btnbuscarTipo_Click_1(sender As Object, e As EventArgs) Handles btnbuscarTipo.Click

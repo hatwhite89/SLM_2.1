@@ -138,7 +138,7 @@ Partial Class M_Factura
         Me.btnnueva.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnnueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnueva.ForeColor = System.Drawing.Color.White
+        Me.btnnueva.ForeColor = System.Drawing.Color.Black
         Me.btnnueva.Location = New System.Drawing.Point(847, 41)
         Me.btnnueva.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnnueva.Name = "btnnueva"
@@ -152,7 +152,7 @@ Partial Class M_Factura
         Me.btnsalir.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnsalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnsalir.ForeColor = System.Drawing.Color.White
+        Me.btnsalir.ForeColor = System.Drawing.Color.Black
         Me.btnsalir.Location = New System.Drawing.Point(947, 41)
         Me.btnsalir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnsalir.Name = "btnsalir"
@@ -166,7 +166,7 @@ Partial Class M_Factura
         Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardar.ForeColor = System.Drawing.Color.White
+        Me.btnguardar.ForeColor = System.Drawing.Color.Black
         Me.btnguardar.Location = New System.Drawing.Point(1051, 41)
         Me.btnguardar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnguardar.Name = "btnguardar"
@@ -441,6 +441,7 @@ Partial Class M_Factura
         Me.txtcodigoCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcodigoCliente.Location = New System.Drawing.Point(204, 114)
         Me.txtcodigoCliente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcodigoCliente.MaxLength = 20
         Me.txtcodigoCliente.Name = "txtcodigoCliente"
         Me.txtcodigoCliente.Size = New System.Drawing.Size(185, 22)
         Me.txtcodigoCliente.TabIndex = 41
@@ -461,6 +462,7 @@ Partial Class M_Factura
         Me.txtcodigoMedico.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcodigoMedico.Location = New System.Drawing.Point(204, 142)
         Me.txtcodigoMedico.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcodigoMedico.MaxLength = 20
         Me.txtcodigoMedico.Name = "txtcodigoMedico"
         Me.txtcodigoMedico.Size = New System.Drawing.Size(185, 22)
         Me.txtcodigoMedico.TabIndex = 43
@@ -528,6 +530,7 @@ Partial Class M_Factura
         '
         'txtcodigoRecepecionista
         '
+        Me.txtcodigoRecepecionista.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigoRecepecionista.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcodigoRecepecionista.Location = New System.Drawing.Point(851, 114)
         Me.txtcodigoRecepecionista.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -538,6 +541,7 @@ Partial Class M_Factura
         '
         'txtcodigoCajero
         '
+        Me.txtcodigoCajero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigoCajero.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcodigoCajero.Location = New System.Drawing.Point(851, 143)
         Me.txtcodigoCajero.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -548,9 +552,11 @@ Partial Class M_Factura
         '
         'txtcodigoSucursal
         '
+        Me.txtcodigoSucursal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigoSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcodigoSucursal.Location = New System.Drawing.Point(597, 228)
         Me.txtcodigoSucursal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcodigoSucursal.MaxLength = 20
         Me.txtcodigoSucursal.Name = "txtcodigoSucursal"
         Me.txtcodigoSucursal.Size = New System.Drawing.Size(133, 22)
         Me.txtcodigoSucursal.TabIndex = 53
@@ -568,9 +574,11 @@ Partial Class M_Factura
         '
         'txtcodigoTerminosPago
         '
+        Me.txtcodigoTerminosPago.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigoTerminosPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcodigoTerminosPago.Location = New System.Drawing.Point(204, 170)
         Me.txtcodigoTerminosPago.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcodigoTerminosPago.MaxLength = 20
         Me.txtcodigoTerminosPago.Name = "txtcodigoTerminosPago"
         Me.txtcodigoTerminosPago.Size = New System.Drawing.Size(185, 22)
         Me.txtcodigoTerminosPago.TabIndex = 58
@@ -582,6 +590,7 @@ Partial Class M_Factura
         Me.txtcodigoSede.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcodigoSede.Location = New System.Drawing.Point(597, 199)
         Me.txtcodigoSede.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcodigoSede.MaxLength = 20
         Me.txtcodigoSede.Name = "txtcodigoSede"
         Me.txtcodigoSede.Size = New System.Drawing.Size(133, 22)
         Me.txtcodigoSede.TabIndex = 60
@@ -763,6 +772,7 @@ Partial Class M_Factura
         Me.txtpagoPaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtpagoPaciente.Location = New System.Drawing.Point(483, 500)
         Me.txtpagoPaciente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtpagoPaciente.MaxLength = 20
         Me.txtpagoPaciente.Name = "txtpagoPaciente"
         Me.txtpagoPaciente.Size = New System.Drawing.Size(143, 22)
         Me.txtpagoPaciente.TabIndex = 83
@@ -910,7 +920,7 @@ Partial Class M_Factura
         Me.btncotizacion.BackColor = System.Drawing.Color.DodgerBlue
         Me.btncotizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncotizacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncotizacion.ForeColor = System.Drawing.Color.White
+        Me.btncotizacion.ForeColor = System.Drawing.Color.Black
         Me.btncotizacion.Location = New System.Drawing.Point(731, 41)
         Me.btncotizacion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btncotizacion.Name = "btncotizacion"
@@ -924,7 +934,7 @@ Partial Class M_Factura
         Me.btnActualizar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnActualizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnActualizar.ForeColor = System.Drawing.Color.White
+        Me.btnActualizar.ForeColor = System.Drawing.Color.Black
         Me.btnActualizar.Location = New System.Drawing.Point(613, 41)
         Me.btnActualizar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnActualizar.Name = "btnActualizar"

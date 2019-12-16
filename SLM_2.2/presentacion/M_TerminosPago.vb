@@ -29,11 +29,16 @@
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
+        dgbtabla.Columns("codigo").Visible = False
+
         rtxtdescripcion.ReadOnly = True
         txtdiasNeto.ReadOnly = True
         txtcodigoCtaContado.ReadOnly = True
         txtcodigoCtaVentas.ReadOnly = True
         txtcodigo.ReadOnly = True
+
+        btnctaContado.Enabled = False
+        btnctaVentas.Enabled = False
 
         cbxtipoPago.Enabled = False
         btnmodificar.Enabled = False
@@ -66,6 +71,7 @@
             If (lblform.Text = "factura") Then
                 M_Factura.lblcodeTerminoPago.Text = lblcode.Text
                 M_Factura.txtcodigoTerminosPago.Text = txtcodigo.Text
+                M_Factura.txtdescripcionTermino.Text = rtxtdescripcion.Text
             ElseIf (lblform.Text = "cliente") Then
                 M_Cliente.lblcodeTerminoPago.Text = lblcode.Text
                 M_Cliente.txtcodigoTermino.Text = txtcodigo.Text
@@ -78,20 +84,42 @@
                 txtdiasNeto.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
             End If
 
-            If (Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value() = 0) Then
+            If (Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value() = "0") Then
                 txtcodigoCtaContado.Text = ""
+                lblcodeCtaContado.Text = "0"
             Else
-                txtcodigoCtaContado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+                lblcodeCtaContado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+                Dim objcuenta As New ClsCuenta
+                Dim dt As New DataTable
+                objcuenta.Cod_Cuenta = lblcodeCtaContado.Text
+                dt = objcuenta.BuscarCuentaCode()
+                Dim row As DataRow = dt.Rows(0)
+                txtnombreCtaContado.Text = CStr(row("nombre"))
+                txtcodigoCtaContado.Text = CStr(row("cuenta"))
             End If
 
-            If (Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value() = 0) Then
+            If (Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value() = "0") Then
                 txtcodigoCtaVentas.Text = ""
+                lblcodeCtaVentas.Text = "0"
             Else
-                txtcodigoCtaVentas.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()
+                lblcodeCtaVentas.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()
+                Dim objcuenta As New ClsCuenta
+                Dim dt As New DataTable
+                objcuenta.Cod_Cuenta = lblcodeCtaVentas.Text
+                dt = objcuenta.BuscarCuentaCode()
+                Dim row As DataRow = dt.Rows(0)
+                txtnombreCtaVentas.Text = CStr(row("nombre"))
+                txtcodigoCtaVentas.Text = CStr(row("cuenta"))
             End If
+
             cbxtipoPago.Enabled = True
 
+            btnctaVentas.Enabled = True
+            btnctaContado.Enabled = True
+            btntipoPago.Enabled = True
+
             btnmodificar.Enabled = True
+            btnguardar.Enabled = False
 
             rtxtdescripcion.ReadOnly = False
             txtdiasNeto.ReadOnly = False
@@ -117,10 +145,14 @@
         txtcodigo.ReadOnly = False
 
         cbxtipoPago.Enabled = True
+
+        btnctaContado.Enabled = True
+        btnctaVentas.Enabled = True
+        btntipoPago.Enabled = True
+
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = False
-        btntipoPago.Enabled = True
+        btnnuevo.Enabled = True
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
@@ -138,7 +170,7 @@
             End If
         Next
         ReDim Preserve testArray(lastNonEmpty)
-        Return texto
+        Return RTrim(texto)
     End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
@@ -154,9 +186,9 @@
                 End With
 
                 If (txtcodigoCtaContado.Text <> "") Then
-                    objTerm.codigoCtaContado1 = Convert.ToInt32(txtcodigoCtaContado.Text)
+                    objTerm.codigoCtaContado1 = Convert.ToInt32(lblcodeCtaContado.Text)
                 ElseIf (txtcodigoCtaVentas.Text <> "") Then
-                    objTerm.codigoCtaVentas1 = Convert.ToInt32(txtcodigoCtaVentas.Text)
+                    objTerm.codigoCtaVentas1 = Convert.ToInt32(lblcodeCtaVentas.Text)
                 ElseIf (txtdiasNeto.Text <> "") Then
                     objTerm.diasNeto1 = Convert.ToInt32(txtdiasNeto.Text)
                 End If
@@ -168,16 +200,7 @@
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-
-                    rtxtdescripcion.ReadOnly = True
-                    txtdiasNeto.ReadOnly = True
-                    txtcodigoCtaContado.ReadOnly = True
-                    txtcodigoCtaVentas.ReadOnly = True
-                    txtcodigo.ReadOnly = True
-
-                    btnmodificar.Enabled = False
-                    btnguardar.Enabled = False
-                    btnnuevo.Enabled = True
+                    deshabilitar()
                 Else
                     MsgBox("Error al querer ingresar el término de pago.", MsgBoxStyle.Critical)
                 End If
@@ -189,6 +212,21 @@
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
+    End Sub
+    Private Sub deshabilitar()
+        rtxtdescripcion.ReadOnly = True
+        txtdiasNeto.ReadOnly = True
+        txtcodigoCtaContado.ReadOnly = True
+        txtcodigoCtaVentas.ReadOnly = True
+        txtcodigo.ReadOnly = True
+
+        btnctaContado.Enabled = False
+        btnctaVentas.Enabled = False
+        btntipoPago.Enabled = False
+
+        btnmodificar.Enabled = False
+        btnguardar.Enabled = False
+        btnnuevo.Enabled = True
     End Sub
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
@@ -206,10 +244,12 @@
                 End With
 
                 If (txtcodigoCtaContado.Text <> "") Then
-                    objTerm.codigoCtaContado1 = Convert.ToInt32(txtcodigoCtaContado.Text)
-                ElseIf (txtcodigoCtaVentas.Text <> "") Then
-                    objTerm.codigoCtaVentas1 = Convert.ToInt32(txtcodigoCtaVentas.Text)
-                ElseIf (txtdiasNeto.Text <> "") Then
+                    objTerm.codigoCtaContado1 = Convert.ToInt32(lblcodeCtaContado.Text)
+                End If
+                If (txtcodigoCtaVentas.Text <> "") Then
+                    objTerm.codigoCtaVentas1 = Convert.ToInt32(lblcodeCtaVentas.Text)
+                End If
+                If (txtdiasNeto.Text <> "") Then
                     objTerm.diasNeto1 = Convert.ToInt32(txtdiasNeto.Text)
                 End If
 
@@ -220,16 +260,7 @@
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-
-                    rtxtdescripcion.ReadOnly = True
-                    txtdiasNeto.ReadOnly = True
-                    txtcodigoCtaContado.ReadOnly = True
-                    txtcodigoCtaVentas.ReadOnly = True
-                    txtcodigo.ReadOnly = True
-
-                    btnmodificar.Enabled = False
-                    btnguardar.Enabled = False
-                    btnnuevo.Enabled = True
+                    deshabilitar()
                 Else
                     MsgBox("Error al querer modificar el término de pago.", MsgBoxStyle.Critical)
                 End If
@@ -261,18 +292,24 @@
             Try
                 Dim objEsp As New ClsCuenta
                 With objEsp
-                    .Cod_Cuenta = txtcodigoCtaContado.Text
+                    .Cuent_a = txtcodigoCtaContado.Text
                 End With
                 Dim dt As New DataTable
-                dt = objEsp.BuscarCuentaCode()
+                dt = objEsp.Comprobar()
                 Dim row As DataRow = dt.Rows(0)
-                txtnombreCtaContado.Text = CStr(row("cuenta"))
+                txtnombreCtaContado.Text = CStr(row("nombre"))
+                lblcodeCtaContado.Text = CStr(row("codCuenta"))
+                txtcodigoCtaContado.BackColor = Color.White
             Catch ex As Exception
+                txtcodigoCtaContado.BackColor = Color.Red
+                txtnombreCtaContado.Text = ""
                 'MsgBox("No existe el código de la cuenta.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoCtaContado.Text = ""
             txtnombreCtaContado.Text = ""
+            lblcodeCtaContado.Text = ""
+            txtcodigoCtaContado.BackColor = Color.White
         End If
     End Sub
     Private Sub txtcodigoCtaVentas_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoCtaVentas.TextChanged
@@ -280,18 +317,24 @@
             Try
                 Dim objEsp As New ClsCuenta
                 With objEsp
-                    .Cod_Cuenta = txtcodigoCtaVentas.Text
+                    .Cuent_a = txtcodigoCtaVentas.Text
                 End With
                 Dim dt As New DataTable
-                dt = objEsp.BuscarCuentaCode()
+                dt = objEsp.Comprobar()
                 Dim row As DataRow = dt.Rows(0)
-                txtnombreCtaVentas.Text = CStr(row("cuenta"))
+                txtnombreCtaVentas.Text = CStr(row("nombre"))
+                lblcodeCtaVentas.Text = CStr(row("codCuenta"))
+                txtcodigoCtaVentas.BackColor = Color.White
             Catch ex As Exception
+                txtcodigoCtaVentas.BackColor = Color.Red
+                txtnombreCtaVentas.Text = ""
                 'MsgBox("No existe el código de la cuenta.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoCtaVentas.Text = ""
             txtnombreCtaVentas.Text = ""
+            lblcodeCtaVentas.Text = ""
+            txtcodigoCtaVentas.BackColor = Color.White
         End If
     End Sub
 
@@ -318,4 +361,22 @@
 
         End Try
     End Sub
+    'Private Sub lblcodeCtaContado_TextChanged(sender As Object, e As EventArgs) Handles lblcodeCtaContado.TextChanged
+    '    Dim objcuenta As New ClsCuenta
+    '    Dim dt As New DataTable
+    '    objcuenta.Cod_Cuenta = lblcodeCtaContado.Text
+    '    dt = objcuenta.BuscarCuentaCode()
+    '    Dim row As DataRow = dt.Rows(0)
+    '    txtnombreCtaContado.Text = CStr(row("nombre"))
+    '    txtcodigoCtaContado.Text = CStr(row("cuenta"))
+    'End Sub
+    'Private Sub lblcodeCtaVentas_TextChanged(sender As Object, e As EventArgs) Handles lblcodeCtaVentas.TextChanged
+    '    Dim objcuenta As New ClsCuenta
+    '    Dim dt As New DataTable
+    '    objcuenta.Cod_Cuenta = lblcodeCtaVentas.Text
+    '    dt = objcuenta.BuscarCuentaCode()
+    '    Dim row As DataRow = dt.Rows(0)
+    '    txtnombreCtaVentas.Text = CStr(row("nombre"))
+    '    txtcodigoCtaVentas.Text = CStr(row("cuenta"))
+    'End Sub
 End Class

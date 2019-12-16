@@ -89,7 +89,9 @@ Partial Class E_ParametroExamen
         '
         'txtcodigoUnidad
         '
+        Me.txtcodigoUnidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigoUnidad.Location = New System.Drawing.Point(178, 103)
+        Me.txtcodigoUnidad.MaxLength = 20
         Me.txtcodigoUnidad.Name = "txtcodigoUnidad"
         Me.txtcodigoUnidad.Size = New System.Drawing.Size(88, 22)
         Me.txtcodigoUnidad.TabIndex = 122
@@ -107,6 +109,7 @@ Partial Class E_ParametroExamen
         'rtxtdescripcion
         '
         Me.rtxtdescripcion.Location = New System.Drawing.Point(121, 56)
+        Me.rtxtdescripcion.MaxLength = 100
         Me.rtxtdescripcion.Name = "rtxtdescripcion"
         Me.rtxtdescripcion.Size = New System.Drawing.Size(525, 37)
         Me.rtxtdescripcion.TabIndex = 131
@@ -124,6 +127,7 @@ Partial Class E_ParametroExamen
         'txtcodigo
         '
         Me.txtcodigo.Location = New System.Drawing.Point(123, 26)
+        Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(133, 22)
         Me.txtcodigo.TabIndex = 128
@@ -141,6 +145,7 @@ Partial Class E_ParametroExamen
         'txtBreve
         '
         Me.txtBreve.Location = New System.Drawing.Point(513, 104)
+        Me.txtBreve.MaxLength = 50
         Me.txtBreve.Name = "txtBreve"
         Me.txtBreve.Size = New System.Drawing.Size(133, 22)
         Me.txtBreve.TabIndex = 133
@@ -161,7 +166,7 @@ Partial Class E_ParametroExamen
         Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmodificar.ForeColor = System.Drawing.Color.White
+        Me.btnmodificar.ForeColor = System.Drawing.Color.Black
         Me.btnmodificar.Location = New System.Drawing.Point(354, 558)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(96, 35)
@@ -174,7 +179,7 @@ Partial Class E_ParametroExamen
         Me.btnnuevo.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnuevo.ForeColor = System.Drawing.Color.White
+        Me.btnnuevo.ForeColor = System.Drawing.Color.Black
         Me.btnnuevo.Location = New System.Drawing.Point(72, 558)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(105, 35)
@@ -187,7 +192,7 @@ Partial Class E_ParametroExamen
         Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardar.ForeColor = System.Drawing.Color.White
+        Me.btnguardar.ForeColor = System.Drawing.Color.Black
         Me.btnguardar.Location = New System.Drawing.Point(218, 558)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(96, 35)
@@ -200,7 +205,7 @@ Partial Class E_ParametroExamen
         Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncancelar.ForeColor = System.Drawing.Color.White
+        Me.btncancelar.ForeColor = System.Drawing.Color.Black
         Me.btncancelar.Location = New System.Drawing.Point(496, 558)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(90, 35)
@@ -234,6 +239,7 @@ Partial Class E_ParametroExamen
         Me.lblcodeUnidad.Name = "lblcodeUnidad"
         Me.lblcodeUnidad.Size = New System.Drawing.Size(0, 17)
         Me.lblcodeUnidad.TabIndex = 141
+        Me.lblcodeUnidad.Visible = False
         '
         'lblcode
         '
@@ -269,7 +275,7 @@ Partial Class E_ParametroExamen
         Me.Controls.Add(Me.btnbuscarUnidad)
         Me.Controls.Add(Me.txtcodigoUnidad)
         Me.Name = "E_ParametroExamen"
-        Me.Text = "Paramentro de Examen"
+        Me.Text = "Parámetro de Examen"
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

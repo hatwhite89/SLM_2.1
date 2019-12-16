@@ -92,6 +92,7 @@ Partial Class M_BuscarExamen
         'txtnombreB
         '
         Me.txtnombreB.Location = New System.Drawing.Point(242, 35)
+        Me.txtnombreB.MaxLength = 200
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
         Me.txtnombreB.TabIndex = 115

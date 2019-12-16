@@ -155,7 +155,25 @@ Public Class ClsCategoria
             End Using
         End Using
     End Function
+    Public Function BuscarCategoriaNumero() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
 
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_slmBuscarCategoriaNumero"
+            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = codigo_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
     Public Function BuscarCategoriaCode() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection

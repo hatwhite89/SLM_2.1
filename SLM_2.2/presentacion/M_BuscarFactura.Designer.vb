@@ -89,6 +89,7 @@ Partial Class M_BuscarFactura
         '
         Me.txtnumeroB.Location = New System.Drawing.Point(101, 65)
         Me.txtnumeroB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtnumeroB.MaxLength = 20
         Me.txtnumeroB.Name = "txtnumeroB"
         Me.txtnumeroB.Size = New System.Drawing.Size(192, 22)
         Me.txtnumeroB.TabIndex = 118
@@ -133,6 +134,7 @@ Partial Class M_BuscarFactura
         '
         Me.txtnombreB.Location = New System.Drawing.Point(373, 64)
         Me.txtnombreB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
         Me.txtnombreB.TabIndex = 115

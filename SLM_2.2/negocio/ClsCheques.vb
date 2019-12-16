@@ -3,7 +3,7 @@ Imports System.Data.SqlClient
 Public Class ClsCheques
 
     'Variables de Cheque
-    Dim codCheque, codChequera As Integer
+    Dim codCheque, codChequera, cantidad As Integer
     Dim nroCheque, moneda, codBreveProve, nombreProveedor, codBreveBanco, nombreBanco, descripcion, estado As String
     Dim monto As Double
     Dim fechaReg, fechaVto As Date
@@ -147,6 +147,16 @@ Public Class ClsCheques
     End Property
 
 
+    'Cantidad
+    Public Property Cantida_d As Integer
+        Get
+            Return cantidad
+        End Get
+        Set(value As Integer)
+            cantidad = value
+        End Set
+    End Property
+
 
     ':::::::::::::::::::::::::::::::::::::::::::::: FUNCIONES DE MANTENIMIENTO ::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -159,7 +169,7 @@ Public Class ClsCheques
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "A_slmInsertarCheques"
+        sqlcom.CommandText = "A_InsertarXCantidad"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -183,6 +193,16 @@ Public Class ClsCheques
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cantidad"
+        sqlpar.Value = Cantida_d
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "counter"
+        sqlpar.Value = "1"
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -191,7 +211,7 @@ Public Class ClsCheques
 
         Dim con As New ClsConnection
         sqlcom.Connection = con.getConexion
-        sqlcom.CommandTimeout = 1000
+
         sqlcom.ExecuteNonQuery()
 
         con.cerrarConexion()

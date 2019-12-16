@@ -156,7 +156,7 @@ Public Class ClsCuenta
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "M_slmBuscarCuenta"
-            cmd.Parameters.Add("@cuenta", SqlDbType.Int).Value = Cuent_a
+            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Nombr_e
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable

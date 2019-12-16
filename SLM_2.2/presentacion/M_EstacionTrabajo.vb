@@ -11,6 +11,8 @@
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
+        Me.dgbtabla.Columns("codigo").Visible = False
+
         rtxtdescripcion.ReadOnly = True
         txtcodigo.ReadOnly = True
 
@@ -25,6 +27,7 @@
             rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
 
             btnmodificar.Enabled = True
+            btnguardar.Enabled = False
 
             rtxtdescripcion.ReadOnly = False
             txtcodigo.ReadOnly = False
@@ -42,7 +45,6 @@
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = False
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
@@ -60,16 +62,14 @@
             End If
         Next
         ReDim Preserve testArray(lastNonEmpty)
-        Return texto
+        Return RTrim(texto)
     End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
             txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
             rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
-            Dim t, t2 As String
-            t = Trim(txtcodigo.Text)
-            t2 = Trim(rtxtdescripcion.Text)
-            If (t <> "" And t2 <> "") Then
+
+            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtdescripcion.Text) <> "") Then
                 Dim objEstTra As New ClsEstacionTrabajo
                 With objEstTra
                     .codigoEstacionTrabajo_ = txtcodigo.Text
@@ -91,7 +91,7 @@
                     btnguardar.Enabled = False
                     btnnuevo.Enabled = True
                 Else
-                    MsgBox("Error al querer ingresar el cajero(a).", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer ingresar la estación de trabajo.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -107,10 +107,8 @@
 
             txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
             rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
-            Dim t, t2 As String
-            t = Trim(txtcodigo.Text)
-            t2 = Trim(rtxtdescripcion.Text)
-            If (t <> "" And t2 <> "") Then
+
+            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtdescripcion.Text) <> "") Then
                 Dim objEstTra As New ClsEstacionTrabajo
                 With objEstTra
                     .codigoEstacionTrabajo_ = txtcodigo.Text
@@ -133,7 +131,7 @@
                     btnguardar.Enabled = False
                     btnnuevo.Enabled = True
                 Else
-                    MsgBox("Error al querer modificar el cajero(a).", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer modificar la estación de trabajo.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -160,7 +158,7 @@
                 lblcantidad.Text = dv.Count
                 dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
             Catch ex As Exception
-                MsgBox("No existe la cotización.", MsgBoxStyle.Critical, "Validación")
+                MsgBox("No existe la estación de trabajo.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             rtxtdescripcionB.Text = ""
@@ -170,4 +168,5 @@
             dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
         End If
     End Sub
+
 End Class

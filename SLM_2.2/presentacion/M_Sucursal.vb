@@ -11,6 +11,8 @@
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
+        dgbtabla.Columns("codigo").Visible = False
+
         txtnombre.ReadOnly = True
         txtcodigo.ReadOnly = True
 
@@ -29,6 +31,7 @@
             M_Factura.txtnombreSucursal.Text = txtnombre.Text
 
             btnmodificar.Enabled = True
+            btnguardar.Enabled = False
 
             txtnombre.ReadOnly = False
             txtcodigo.ReadOnly = False
@@ -46,7 +49,7 @@
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
-        btnnuevo.Enabled = False
+        btnnuevo.Enabled = True
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
@@ -64,7 +67,7 @@
             End If
         Next
         ReDim Preserve testArray(lastNonEmpty)
-        Return texto
+        Return RTrim(texto)
     End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try

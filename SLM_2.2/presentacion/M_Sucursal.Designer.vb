@@ -29,6 +29,7 @@ Partial Class M_Sucursal
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnombreB = New System.Windows.Forms.Label()
         Me.gbxsucursal = New System.Windows.Forms.GroupBox()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.lblcodigo = New System.Windows.Forms.Label()
@@ -37,7 +38,6 @@ Partial Class M_Sucursal
         Me.lblnombre = New System.Windows.Forms.Label()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.btnguardar = New System.Windows.Forms.Button()
-        Me.lblcode = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxsucursal.SuspendLayout()
@@ -92,6 +92,7 @@ Partial Class M_Sucursal
         'txtnombreB
         '
         Me.txtnombreB.Location = New System.Drawing.Point(223, 34)
+        Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
         Me.txtnombreB.TabIndex = 115
@@ -122,6 +123,15 @@ Partial Class M_Sucursal
         Me.gbxsucursal.TabIndex = 114
         Me.gbxsucursal.TabStop = False
         Me.gbxsucursal.Text = "REGISTRAR SUCURSAL"
+        '
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(248, 18)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 124
+        Me.lblcode.Visible = False
         '
         'btnmodificar
         '
@@ -173,7 +183,9 @@ Partial Class M_Sucursal
         '
         'txtcodigo
         '
+        Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigo.Location = New System.Drawing.Point(99, 34)
+        Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(100, 22)
         Me.txtcodigo.TabIndex = 40
@@ -191,6 +203,7 @@ Partial Class M_Sucursal
         'txtnombre
         '
         Me.txtnombre.Location = New System.Drawing.Point(290, 34)
+        Me.txtnombre.MaxLength = 80
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(281, 22)
         Me.txtnombre.TabIndex = 38
@@ -207,15 +220,6 @@ Partial Class M_Sucursal
         Me.btnguardar.TabIndex = 108
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
-        '
-        'lblcode
-        '
-        Me.lblcode.AutoSize = True
-        Me.lblcode.Location = New System.Drawing.Point(248, 18)
-        Me.lblcode.Name = "lblcode"
-        Me.lblcode.Size = New System.Drawing.Size(0, 17)
-        Me.lblcode.TabIndex = 124
-        Me.lblcode.Visible = False
         '
         'M_Sucursal
         '

@@ -5,6 +5,8 @@
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
+        Me.dgbtabla.Columns("codCuenta").Visible = False
     End Sub
 
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
@@ -15,39 +17,38 @@
 
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            Dim objCuenta As New ClsCuenta
-            Dim dt As New DataTable
-            objCuenta.Cuent_a = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-            dt = objCuenta.BuscarCuenta()
-            Dim row As DataRow = dt.Rows(0)
-            If lbltipoCta.Text = "Contado" Then
-                M_TerminosPago.txtcodigoCtaContado.Text = CStr(row("codCuenta"))
-                M_TerminosPago.txtnombreCtaContado.Text = CStr(row("cuenta"))
-                Me.Close()
-            ElseIf lbltipoCta.Text = "Ventas" Then
-                M_TerminosPago.txtcodigoCtaVentas.Text = CStr(row("codCuenta"))
-                M_TerminosPago.txtnombreCtaVentas.Text = CStr(row("cuenta"))
-                Me.Close()
+
+            Dim n As String = MsgBox("¿Desea seleccionar la cuenta?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
+                If lbltipoCta.Text = "Contado" Then
+                    M_TerminosPago.lblcodeCtaContado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_TerminosPago.txtcodigoCtaContado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    M_TerminosPago.txtnombreCtaContado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+                    Me.Close()
+                ElseIf lbltipoCta.Text = "Ventas" Then
+                    M_TerminosPago.lblcodeCtaVentas.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_TerminosPago.txtcodigoCtaVentas.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    M_TerminosPago.txtnombreCtaVentas.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+                    Me.Close()
+                End If
             End If
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
-    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
-        If (txtcuentaB.Text <> "") Then
-            Try
-                Dim objCuenta As New ClsCuenta
-                objCuenta.Cuent_a = txtcuentaB.Text
-                Dim dv As DataView = objCuenta.BuscarCuenta.DefaultView
-                dgbtabla.DataSource = dv
-                lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-            Catch ex As Exception
-                MsgBox("No existe la cuenta.", MsgBoxStyle.Critical, "Validación")
-            End Try
-        Else
-            txtcuentaB.Text = ""
-        End If
+    Private Sub txtcuentaB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
+
+        Try
+            Dim objCuenta As New ClsCuenta
+            objCuenta.Nombr_e = txtnombreB.Text
+            Dim dv As DataView = objCuenta.BuscarCuenta.DefaultView
+
+            dgbtabla.DataSource = dv
+            lblcantidad.Text = dv.Count
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

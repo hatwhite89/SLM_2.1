@@ -47,8 +47,8 @@ Public Class ClsUnidad
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "M_slmInsertarUnidad"
-        
+        sqlcom.CommandText = "E_slmInsertarUnidad"
+
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoUnidad" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = codigoUnidad_
@@ -91,7 +91,7 @@ Public Class ClsUnidad
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "M_slmModificarUnidad"
+        sqlcom.CommandText = "E_slmModificarUnidad"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -143,12 +143,13 @@ Public Class ClsUnidad
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarUnidad"
+            cmd.CommandText = "E_slmBuscarUnidad"
             cmd.Parameters.Add("@codigoUnidad", SqlDbType.VarChar).Value = codigoUnidad_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -164,12 +165,13 @@ Public Class ClsUnidad
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarUnidadComment"
+            cmd.CommandText = "E_slmBuscarUnidadComment"
             cmd.Parameters.Add("@comentario", SqlDbType.VarChar).Value = comentario_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -185,12 +187,13 @@ Public Class ClsUnidad
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarUnidadCode"
+            cmd.CommandText = "E_slmBuscarUnidadCode"
             cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Codigo_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -203,7 +206,7 @@ Public Class ClsUnidad
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("M_slmSeleccionarUnidad", cn)
+        Using da As New SqlDataAdapter("E_slmSeleccionarUnidad", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             objCon.cerrarConexion()

@@ -24,6 +24,7 @@ Partial Class A_ListarFormasPagoPF
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dtFormasPago = New System.Windows.Forms.DataGridView()
+        Me.lblForm = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtFormasPago, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -31,9 +32,11 @@ Partial Class A_ListarFormasPagoPF
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.dtFormasPago)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 15)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(309, 334)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Size = New System.Drawing.Size(412, 411)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccione la forma de pago"
@@ -44,29 +47,45 @@ Partial Class A_ListarFormasPagoPF
         Me.dtFormasPago.BackgroundColor = System.Drawing.Color.White
         Me.dtFormasPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtFormasPago.GridColor = System.Drawing.Color.White
-        Me.dtFormasPago.Location = New System.Drawing.Point(6, 19)
+        Me.dtFormasPago.Location = New System.Drawing.Point(8, 23)
+        Me.dtFormasPago.Margin = New System.Windows.Forms.Padding(4)
         Me.dtFormasPago.Name = "dtFormasPago"
+        Me.dtFormasPago.ReadOnly = True
+        Me.dtFormasPago.RowHeadersWidth = 51
         Me.dtFormasPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtFormasPago.Size = New System.Drawing.Size(297, 309)
+        Me.dtFormasPago.Size = New System.Drawing.Size(396, 380)
         Me.dtFormasPago.TabIndex = 0
+        '
+        'lblForm
+        '
+        Me.lblForm.AutoSize = True
+        Me.lblForm.Location = New System.Drawing.Point(274, 9)
+        Me.lblForm.Name = "lblForm"
+        Me.lblForm.Size = New System.Drawing.Size(0, 17)
+        Me.lblForm.TabIndex = 57
+        Me.lblForm.Visible = False
         '
         'A_ListarFormasPagoPF
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(333, 356)
+        Me.ClientSize = New System.Drawing.Size(444, 438)
+        Me.Controls.Add(Me.lblForm)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "A_ListarFormasPagoPF"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Formas Pago"
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dtFormasPago, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents dtFormasPago As DataGridView
+    Friend WithEvents lblForm As Label
 End Class

@@ -76,10 +76,6 @@
 
     Private Sub dtDetalleFactura_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellEndEdit
 
-
-
-
-
         Try
             Dim Cuenta As New ClsCuenta
             'Capturar codigo de cuenta
@@ -92,14 +88,19 @@
             Dim dt As New DataTable
             dt = Cuenta.BuscarCuenta
 
-            Dim row As DataRow = dt.Rows(0)
-            Dim nombre As String
-            nombre = row("nombre")
-            'Asignar busqueda en Datagrid
-            dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
-            dtDetalleFactura.Rows.Insert(e.RowIndex.ToString, New String() {Cuenta.Cuent_a, " ", nombre})
 
+            If dt.Rows.Count > 0 Then
+                Dim row As DataRow = dt.Rows(0)
+                Dim nombre As String
+                nombre = row("nombre")
+                'Asignar busqueda en Datagrid
+                dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
+                dtDetalleFactura.Rows.Insert(e.RowIndex.ToString, New String() {Cuenta.Cuent_a, " ", nombre})
 
+            Else
+                MsgBox("La cuenta no existe.")
+
+            End If
 
         Catch ex As Exception
 
@@ -153,8 +154,6 @@
             A_ListarObjetos.Show()
 
         End If
-
-
 
     End Sub
 
@@ -232,6 +231,7 @@
     End Sub
 
     Private Sub A_FacturaCompras_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Dim cmb As New DataGridViewComboBoxColumn()
         dtDetalleFactura.Columns.Add(cmb)
         cmb.HeaderText = "Tipo Stock"
@@ -241,7 +241,5 @@
 
     End Sub
 
-    Private Sub dtDetalleFactura_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellContentClick
 
-    End Sub
 End Class

@@ -29,6 +29,7 @@ Partial Class M_EstacionTrabajo
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.gbxcaja = New System.Windows.Forms.GroupBox()
+        Me.lblcode = New System.Windows.Forms.Label()
         Me.rtxtdescripcion = New System.Windows.Forms.RichTextBox()
         Me.lbldescripcion = New System.Windows.Forms.Label()
         Me.lblcodigo = New System.Windows.Forms.Label()
@@ -37,7 +38,6 @@ Partial Class M_EstacionTrabajo
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
-        Me.lblcode = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxcaja.SuspendLayout()
@@ -59,7 +59,8 @@ Partial Class M_EstacionTrabajo
         '
         'rtxtdescripcionB
         '
-        Me.rtxtdescripcionB.Location = New System.Drawing.Point(240, 26)
+        Me.rtxtdescripcionB.Location = New System.Drawing.Point(251, 26)
+        Me.rtxtdescripcionB.MaxLength = 200
         Me.rtxtdescripcionB.Name = "rtxtdescripcionB"
         Me.rtxtdescripcionB.Size = New System.Drawing.Size(192, 22)
         Me.rtxtdescripcionB.TabIndex = 118
@@ -67,7 +68,7 @@ Partial Class M_EstacionTrabajo
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(149, 28)
+        Me.lblnombreB.Location = New System.Drawing.Point(160, 28)
         Me.lblnombreB.Name = "lblnombreB"
         Me.lblnombreB.Size = New System.Drawing.Size(82, 17)
         Me.lblnombreB.TabIndex = 117
@@ -76,7 +77,7 @@ Partial Class M_EstacionTrabajo
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(407, 382)
+        Me.lblcantidad.Location = New System.Drawing.Point(429, 377)
         Me.lblcantidad.Name = "lblcantidad"
         Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
         Me.lblcantidad.TabIndex = 115
@@ -99,11 +100,11 @@ Partial Class M_EstacionTrabajo
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(118, 382)
+        Me.lbltotal.Location = New System.Drawing.Point(98, 377)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(173, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(259, 17)
         Me.lbltotal.TabIndex = 114
-        Me.lbltotal.Text = "TOTAL DE CAJEROS(AS)"
+        Me.lbltotal.Text = "TOTAL DE ESTACIONES DE TRABAJO"
         '
         'gbxcaja
         '
@@ -123,9 +124,19 @@ Partial Class M_EstacionTrabajo
         Me.gbxcaja.TabStop = False
         Me.gbxcaja.Text = "REGISTRAR ESTACIÓN TRABAJO"
         '
+        'lblcode
+        '
+        Me.lblcode.AutoSize = True
+        Me.lblcode.Location = New System.Drawing.Point(407, 34)
+        Me.lblcode.Name = "lblcode"
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
+        Me.lblcode.TabIndex = 124
+        Me.lblcode.Visible = False
+        '
         'rtxtdescripcion
         '
         Me.rtxtdescripcion.Location = New System.Drawing.Point(139, 67)
+        Me.rtxtdescripcion.MaxLength = 200
         Me.rtxtdescripcion.Name = "rtxtdescripcion"
         Me.rtxtdescripcion.Size = New System.Drawing.Size(423, 37)
         Me.rtxtdescripcion.TabIndex = 129
@@ -152,7 +163,9 @@ Partial Class M_EstacionTrabajo
         '
         'txtcodigo
         '
+        Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigo.Location = New System.Drawing.Point(139, 34)
+        Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(173, 22)
         Me.txtcodigo.TabIndex = 114
@@ -209,15 +222,6 @@ Partial Class M_EstacionTrabajo
         Me.btnguardar.TabIndex = 108
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
-        '
-        'lblcode
-        '
-        Me.lblcode.AutoSize = True
-        Me.lblcode.Location = New System.Drawing.Point(407, 34)
-        Me.lblcode.Name = "lblcode"
-        Me.lblcode.Size = New System.Drawing.Size(0, 17)
-        Me.lblcode.TabIndex = 124
-        Me.lblcode.Visible = False
         '
         'M_EstacionTrabajo
         '
