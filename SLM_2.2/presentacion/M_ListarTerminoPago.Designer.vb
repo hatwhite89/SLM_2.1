@@ -138,6 +138,7 @@ Partial Class M_ListarTerminoPago
         Me.ClientSize = New System.Drawing.Size(640, 623)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Name = "M_ListarTerminoPago"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Términos de Pago"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()

@@ -253,6 +253,7 @@ Partial Class E_Unidad
         Me.Controls.Add(Me.gbxtipoObjeto)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Name = "E_Unidad"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Unidad"
         Me.gbxtipoObjeto.ResumeLayout(False)
         Me.gbxtipoObjeto.PerformLayout()

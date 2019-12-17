@@ -395,6 +395,7 @@ Partial Class M_Recibo
         Me.Controls.Add(Me.lblnro)
         Me.KeyPreview = True
         Me.Name = "M_Recibo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Recibo"
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

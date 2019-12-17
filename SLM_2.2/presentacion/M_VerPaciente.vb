@@ -73,4 +73,8 @@
             'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
         End Try
     End Sub
+
+    Private Sub M_VerPaciente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

@@ -428,6 +428,7 @@ Partial Class M_TerminosPago
         Me.Controls.Add(Me.gbxterminosPago)
         Me.KeyPreview = True
         Me.Name = "M_TerminosPago"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Términos de Pago"
         Me.gbxterminosPago.ResumeLayout(False)
         Me.gbxterminosPago.PerformLayout()

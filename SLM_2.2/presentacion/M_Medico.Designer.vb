@@ -364,6 +364,7 @@ Partial Class M_Medico
         Me.Controls.Add(Me.gbxmedico)
         Me.KeyPreview = True
         Me.Name = "M_Medico"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Médico"
         Me.gbxmedico.ResumeLayout(False)
         Me.gbxmedico.PerformLayout()

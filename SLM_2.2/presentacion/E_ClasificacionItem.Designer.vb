@@ -269,7 +269,7 @@ Partial Class E_ClasificacionItem
         Me.lblNombreB.TabIndex = 114
         Me.lblNombreB.Text = "Nombre"
         '
-        'M_ClasificacionItem
+        'E_ClasificacionItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -278,7 +278,8 @@ Partial Class E_ClasificacionItem
         Me.Controls.Add(Me.gbxclasificacion)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
-        Me.Name = "M_ClasificacionItem"
+        Me.Name = "E_ClasificacionItem"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clasificación Item"
         Me.gbxclasificacion.ResumeLayout(False)
         Me.gbxclasificacion.PerformLayout()

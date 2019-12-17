@@ -233,6 +233,7 @@ Partial Class M_MaquinasLocales
         Me.Controls.Add(Me.gbxcaja)
         Me.KeyPreview = True
         Me.Name = "M_MaquinasLocales"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Máquinas Locales"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()

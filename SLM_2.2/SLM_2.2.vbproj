@@ -507,6 +507,12 @@
     <Compile Include="presentacion\M_ListarFactura.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_ListarMedicos.Designer.vb">
+      <DependentUpon>M_ListarMedicos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ListarMedicos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_ListarTerminoPago.Designer.vb">
       <DependentUpon>M_ListarTerminoPago.vb</DependentUpon>
     </Compile>
@@ -800,6 +806,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ListarFactura.resx">
       <DependentUpon>M_ListarFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ListarMedicos.resx">
+      <DependentUpon>M_ListarMedicos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ListarTerminoPago.resx">
       <DependentUpon>M_ListarTerminoPago.vb</DependentUpon>

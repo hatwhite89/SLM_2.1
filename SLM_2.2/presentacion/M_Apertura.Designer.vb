@@ -245,6 +245,7 @@ Partial Class M_Apertura
         Me.Controls.Add(Me.GroupBox1)
         Me.KeyPreview = True
         Me.Name = "M_Apertura"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Apertura"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

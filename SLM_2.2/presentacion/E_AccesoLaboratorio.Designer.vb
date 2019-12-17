@@ -276,6 +276,7 @@ Partial Class E_AccesoLaboratorio
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
         Me.Name = "E_AccesoLaboratorio"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Acceso Laboratorio"
         Me.gbxobjeto.ResumeLayout(False)
         Me.gbxobjeto.PerformLayout()

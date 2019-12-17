@@ -222,6 +222,7 @@ Partial Class M_TipoTermino
         Me.Controls.Add(Me.gbxsucursal)
         Me.KeyPreview = True
         Me.Name = "M_TipoTermino"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tipo Término"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
