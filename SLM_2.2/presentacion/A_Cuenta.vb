@@ -36,7 +36,7 @@
         'Presionar ESC para cerrar
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
-            frmMenuConta.Show()
+            'frmMenuConta.Show()
         End If
     End Sub
     Private Sub A_Cuenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -165,6 +165,6 @@
     End Sub
 
     Private Sub A_Cuenta_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        frmMenuConta.Show()
+        ' frmMenuConta.Show()
     End Sub
 End Class

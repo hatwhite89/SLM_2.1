@@ -6,7 +6,6 @@
         Dim dato As String
         dato = frmPagos.txtFormaP.Text
 
-
         If (dato <> "") Then
 
             cheque.Cod_BreveBanco = frmPagos.txtFormaP.Text
@@ -30,8 +29,6 @@
             dt = dtCheques.DataSource
 
             Dim row As DataRow = dt.Rows(0)
-
-
 
             A_Cheques.txtNro.Text = row("codCheque")
             A_Cheques.txtNroCheq.Text = row("nroCheque")

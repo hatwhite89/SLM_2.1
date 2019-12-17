@@ -249,8 +249,9 @@ Public Class A_Cheques
         objVistaCheque.SetParameterValue("numalet", letras)
         objVistaCheque.SetParameterValue("ChequeNumero", nroCheque)
 
-
+        objVistaCheque.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
         A_PrintCheque.crvImprimirCheque.ReportSource = objVistaCheque
+
         A_PrintCheque.Show()
 
     End Sub

@@ -12,7 +12,7 @@
         'Presionar ESC para salida
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
-            frmMenuConta.Show()
+            'frmMenuConta.Show()
         End If
     End Sub
 
@@ -203,6 +203,7 @@
             'Columna de Cheques
             lblFila.Text = e.RowIndex
             A_ListarChequesHabilitados.Show()
+            'A_ListarChequesHabilitados.l
             lblFila.Text = e.RowIndex
 
         ElseIf e.ColumnIndex = 0 Then
@@ -251,6 +252,6 @@
     End Sub
 
     Private Sub frmPagos_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        frmMenuConta.Show()
+        'frmMenuConta.Show()
     End Sub
 End Class

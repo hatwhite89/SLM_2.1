@@ -464,4 +464,43 @@ Public Class ClsCheques
 
     End Function
 
+    'Buscar Cheques
+    Public Function buscarCheques() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarCheques"
+            cmd.Parameters.Add("@nroCheque", SqlDbType.VarChar).Value = Numero_Cheque
+            cmd.Parameters.Add("@nombreProveedor", SqlDbType.VarChar).Value = Nombre_Proveedor
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+    'Listar cheques
+    Public Function listarCheques() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("A_slmListarCheques", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+
 End Class
