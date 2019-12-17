@@ -465,6 +465,18 @@
     <Compile Include="presentacion\M_ClienteVentana.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_ComprobanteEntrega.Designer.vb">
+      <DependentUpon>M_ComprobanteEntrega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ComprobanteEntrega.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_CryComprobanteEntrega.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M_CryComprobanteEntrega.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="presentacion\M_Especialidad.Designer.vb">
       <DependentUpon>M_Especialidad.vb</DependentUpon>
     </Compile>
@@ -481,6 +493,12 @@
       <DependentUpon>M_InicioSesion.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_InicioSesion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_ListadoSede.Designer.vb">
+      <DependentUpon>M_ListadoSede.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ListadoSede.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_ListarClientes.Designer.vb">
@@ -767,6 +785,13 @@
     <EmbeddedResource Include="presentacion\M_ClienteVentana.resx">
       <DependentUpon>M_ClienteVentana.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ComprobanteEntrega.resx">
+      <DependentUpon>M_ComprobanteEntrega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_CryComprobanteEntrega.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>M_CryComprobanteEntrega.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Especialidad.resx">
       <DependentUpon>M_Especialidad.vb</DependentUpon>
     </EmbeddedResource>
@@ -775,6 +800,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_InicioSesion.resx">
       <DependentUpon>M_InicioSesion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ListadoSede.resx">
+      <DependentUpon>M_ListadoSede.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ListarClientes.resx">
       <DependentUpon>M_ListarClientes.vb</DependentUpon>

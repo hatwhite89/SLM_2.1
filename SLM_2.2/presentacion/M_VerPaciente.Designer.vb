@@ -75,12 +75,14 @@ Partial Class M_VerPaciente
         Me.lblapellido1 = New System.Windows.Forms.Label()
         Me.txtnombre1 = New System.Windows.Forms.TextBox()
         Me.lblnombre1 = New System.Windows.Forms.Label()
+        Me.txtEdad = New System.Windows.Forms.TextBox()
         Me.gbxinfoCliente.SuspendLayout()
         Me.gbxgenero.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbxinfoCliente
         '
+        Me.gbxinfoCliente.Controls.Add(Me.txtEdad)
         Me.gbxinfoCliente.Controls.Add(Me.lblcodeTerminoPago)
         Me.gbxinfoCliente.Controls.Add(Me.lblcodeCategoria)
         Me.gbxinfoCliente.Controls.Add(Me.txtnombre2)
@@ -251,9 +253,10 @@ Partial Class M_VerPaciente
         'dtpfechaNacimiento
         '
         Me.dtpfechaNacimiento.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpfechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfechaNacimiento.Location = New System.Drawing.Point(749, 92)
         Me.dtpfechaNacimiento.Name = "dtpfechaNacimiento"
-        Me.dtpfechaNacimiento.Size = New System.Drawing.Size(193, 22)
+        Me.dtpfechaNacimiento.Size = New System.Drawing.Size(113, 22)
         Me.dtpfechaNacimiento.TabIndex = 99
         '
         'gbxgenero
@@ -626,6 +629,13 @@ Partial Class M_VerPaciente
         Me.lblnombre1.TabIndex = 67
         Me.lblnombre1.Text = "1er Nombre"
         '
+        'txtEdad
+        '
+        Me.txtEdad.Location = New System.Drawing.Point(868, 92)
+        Me.txtEdad.Name = "txtEdad"
+        Me.txtEdad.Size = New System.Drawing.Size(74, 22)
+        Me.txtEdad.TabIndex = 121
+        '
         'M_VerPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -697,4 +707,5 @@ Partial Class M_VerPaciente
     Friend WithEvents lblapellido1 As Label
     Friend WithEvents txtnombre1 As TextBox
     Friend WithEvents lblnombre1 As Label
+    Friend WithEvents txtEdad As TextBox
 End Class
