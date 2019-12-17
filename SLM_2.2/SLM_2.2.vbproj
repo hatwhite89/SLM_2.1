@@ -224,6 +224,12 @@
     <Compile Include="presentacion\A_Depositos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ListadoCheques.Designer.vb">
+      <DependentUpon>A_ListadoCheques.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListadoCheques.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListadoFacturaCompra.Designer.vb">
       <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>
     </Compile>
@@ -643,6 +649,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Depositos.resx">
       <DependentUpon>A_Depositos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListadoCheques.resx">
+      <DependentUpon>A_ListadoCheques.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoFacturaCompra.resx">
       <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>

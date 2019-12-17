@@ -31,7 +31,7 @@ Partial Class A_ListarChequesHabilitados
         'gbxCheque
         '
         Me.gbxCheque.Controls.Add(Me.dtCheques)
-        Me.gbxCheque.Location = New System.Drawing.Point(12, 12)
+        Me.gbxCheque.Location = New System.Drawing.Point(7, 12)
         Me.gbxCheque.Name = "gbxCheque"
         Me.gbxCheque.Size = New System.Drawing.Size(520, 266)
         Me.gbxCheque.TabIndex = 0
@@ -53,7 +53,7 @@ Partial Class A_ListarChequesHabilitados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(544, 290)
+        Me.ClientSize = New System.Drawing.Size(534, 286)
         Me.Controls.Add(Me.gbxCheque)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "A_ListarChequesHabilitados"

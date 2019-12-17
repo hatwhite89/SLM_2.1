@@ -30,7 +30,7 @@
             txtnombre.ReadOnly = False
             txtcodigo.ReadOnly = False
 
-            E_DetalleExamenes.txtGrupo.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value
+            E_DetalleExamenes.txtGrupo.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -166,4 +166,6 @@
 
         End Try
     End Sub
+
+
 End Class
