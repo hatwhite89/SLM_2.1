@@ -5,7 +5,7 @@ Public Class M_Factura
         Me.Close()
     End Sub
     Private Sub btnbuscarMedico_Click(sender As Object, e As EventArgs) Handles btnbuscarMedico.Click
-        M_Medico.ShowDialog()
+        M_ListarMedicos.ShowDialog()
     End Sub
     Private Sub btnbuscarCliente_Click(sender As Object, e As EventArgs) Handles btnbuscarCliente.Click
         M_Cliente.limpiar()
@@ -425,6 +425,17 @@ Public Class M_Factura
     End Sub
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
+
+            If Trim(txtcodigoRecepecionista.Text) = "" Then
+                txtcodigoRecepecionista.Text = "1"
+            ElseIf Trim(txtcodigoCajero.Text) = "" Then
+                txtcodigoCajero.Text = "1"
+            ElseIf Trim(txtcodigoConvenio.Text) = "" Then
+                txtcodigoConvenio.Text = "0"
+            ElseIf Trim(txtcodigoTerminal.Text) = "" Then
+                txtcodigoTerminal.Text = "1"
+            End If
+
             If (txtcodigoCliente.Text <> "" And txtcodigoMedico.Text <> "" And txtcodigoTerminosPago.Text <> "" And
                 txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And
                 txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
@@ -622,7 +633,7 @@ Public Class M_Factura
     End Sub
 
     Private Sub btnimprimirComprobante_Click(sender As Object, e As EventArgs) Handles btnimprimirComprobante.Click
-        If (Trim(txtnumeroFactura.Text) <> "") Then
+        If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
             Dim numero As Integer = Convert.ToInt64(txtnumeroFactura.Text)
             'le asigno un valor a los parametros del procedimiento almacenado
             Dim form As New M_ComprobanteEntrega

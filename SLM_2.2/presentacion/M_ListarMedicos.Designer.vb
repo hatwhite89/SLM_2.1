@@ -29,12 +29,14 @@ Partial Class M_ListarMedicos
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtNombreB = New System.Windows.Forms.TextBox()
+        Me.btnnueva = New System.Windows.Forms.Button()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.Controls.Add(Me.btnnueva)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lbltipoCta)
@@ -55,20 +57,20 @@ Partial Class M_ListarMedicos
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(20, 71)
+        Me.dgbtabla.Location = New System.Drawing.Point(20, 112)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(536, 476)
+        Me.dgbtabla.Size = New System.Drawing.Size(536, 434)
         Me.dgbtabla.TabIndex = 119
         '
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(157, 30)
+        Me.lblnombreB.Location = New System.Drawing.Point(169, 72)
         Me.lblnombreB.Name = "lblnombreB"
         Me.lblnombreB.Size = New System.Drawing.Size(58, 17)
         Me.lblnombreB.TabIndex = 117
@@ -103,12 +105,26 @@ Partial Class M_ListarMedicos
         '
         'txtNombreB
         '
-        Me.txtNombreB.Location = New System.Drawing.Point(221, 27)
+        Me.txtNombreB.Location = New System.Drawing.Point(233, 69)
         Me.txtNombreB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNombreB.MaxLength = 80
         Me.txtNombreB.Name = "txtNombreB"
         Me.txtNombreB.Size = New System.Drawing.Size(192, 22)
         Me.txtNombreB.TabIndex = 115
+        '
+        'btnnueva
+        '
+        Me.btnnueva.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnnueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnnueva.ForeColor = System.Drawing.Color.White
+        Me.btnnueva.Location = New System.Drawing.Point(192, 19)
+        Me.btnnueva.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnnueva.Name = "btnnueva"
+        Me.btnnueva.Size = New System.Drawing.Size(219, 34)
+        Me.btnnueva.TabIndex = 121
+        Me.btnnueva.Text = "Nuevo Médico"
+        Me.btnnueva.UseVisualStyleBackColor = False
         '
         'M_ListarMedicos
         '
@@ -117,6 +133,7 @@ Partial Class M_ListarMedicos
         Me.ClientSize = New System.Drawing.Size(628, 628)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Name = "M_ListarMedicos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Médicos"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
@@ -132,4 +149,5 @@ Partial Class M_ListarMedicos
     Friend WithEvents lblcantidad As Label
     Friend WithEvents lbltotal As Label
     Friend WithEvents txtNombreB As TextBox
+    Friend WithEvents btnnueva As Button
 End Class
