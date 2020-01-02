@@ -231,6 +231,7 @@ Partial Class M_TipoClasificacion
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
         Me.Name = "M_TipoClasificacion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tipo Clasificación"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()

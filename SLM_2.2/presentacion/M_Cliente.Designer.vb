@@ -893,6 +893,7 @@ Partial Class M_Cliente
         Me.KeyPreview = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "M_Cliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cliente"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()

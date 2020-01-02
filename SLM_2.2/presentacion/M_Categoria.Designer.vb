@@ -281,6 +281,7 @@ Partial Class M_Categoria
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
         Me.Name = "M_Categoria"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Categoría del Cliente"
         Me.gbxclasificacion.ResumeLayout(False)
         Me.gbxclasificacion.PerformLayout()

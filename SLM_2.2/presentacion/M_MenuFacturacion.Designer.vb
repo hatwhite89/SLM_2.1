@@ -265,6 +265,7 @@ Partial Class M_MenuFacturacion
         Me.Controls.Add(Me.GroupBox1)
         Me.KeyPreview = True
         Me.Name = "M_MenuFacturacion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "M_MenuFacturacion"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

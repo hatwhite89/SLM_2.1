@@ -219,6 +219,7 @@ Partial Class M_Especialidad
         Me.Controls.Add(Me.gbxespecialidad)
         Me.KeyPreview = True
         Me.Name = "M_Especialidad"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Especialidad Médica"
         Me.gbxespecialidad.ResumeLayout(False)
         Me.gbxespecialidad.PerformLayout()

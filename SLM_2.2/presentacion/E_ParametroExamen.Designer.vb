@@ -275,6 +275,7 @@ Partial Class E_ParametroExamen
         Me.Controls.Add(Me.btnbuscarUnidad)
         Me.Controls.Add(Me.txtcodigoUnidad)
         Me.Name = "E_ParametroExamen"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Parámetro de Examen"
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

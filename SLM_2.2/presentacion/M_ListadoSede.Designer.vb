@@ -29,7 +29,7 @@ Partial Class M_ListadoSede
         Me.lbltipoCta = New System.Windows.Forms.Label()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
-        Me.txtDescripcionB = New System.Windows.Forms.TextBox()
+        Me.txtNombreB = New System.Windows.Forms.TextBox()
         Me.lblCodigoT = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -43,7 +43,7 @@ Partial Class M_ListadoSede
         Me.gbxbusqueda.Controls.Add(Me.lbltipoCta)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
-        Me.gbxbusqueda.Controls.Add(Me.txtDescripcionB)
+        Me.gbxbusqueda.Controls.Add(Me.txtNombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblCodigoT)
         Me.gbxbusqueda.Location = New System.Drawing.Point(8, 12)
         Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -56,7 +56,7 @@ Partial Class M_ListadoSede
         '
         'txtCodigoB
         '
-        Me.txtCodigoB.Location = New System.Drawing.Point(111, 29)
+        Me.txtCodigoB.Location = New System.Drawing.Point(105, 29)
         Me.txtCodigoB.Name = "txtCodigoB"
         Me.txtCodigoB.Size = New System.Drawing.Size(192, 22)
         Me.txtCodigoB.TabIndex = 120
@@ -79,7 +79,7 @@ Partial Class M_ListadoSede
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(321, 32)
+        Me.lblnombreB.Location = New System.Drawing.Point(320, 32)
         Me.lblnombreB.Name = "lblnombreB"
         Me.lblnombreB.Size = New System.Drawing.Size(58, 17)
         Me.lblnombreB.TabIndex = 117
@@ -106,25 +106,25 @@ Partial Class M_ListadoSede
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(107, 564)
+        Me.lbltotal.Location = New System.Drawing.Point(117, 564)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(229, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(127, 17)
         Me.lbltotal.TabIndex = 114
-        Me.lbltotal.Text = "TOTAL DE TÉRMINOS DE PAGOS"
+        Me.lbltotal.Text = "TOTAL DE SEDES"
         '
-        'txtDescripcionB
+        'txtNombreB
         '
-        Me.txtDescripcionB.Location = New System.Drawing.Point(385, 29)
-        Me.txtDescripcionB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtDescripcionB.MaxLength = 80
-        Me.txtDescripcionB.Name = "txtDescripcionB"
-        Me.txtDescripcionB.Size = New System.Drawing.Size(192, 22)
-        Me.txtDescripcionB.TabIndex = 115
+        Me.txtNombreB.Location = New System.Drawing.Point(385, 29)
+        Me.txtNombreB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtNombreB.MaxLength = 80
+        Me.txtNombreB.Name = "txtNombreB"
+        Me.txtNombreB.Size = New System.Drawing.Size(192, 22)
+        Me.txtNombreB.TabIndex = 115
         '
         'lblCodigoT
         '
         Me.lblCodigoT.AutoSize = True
-        Me.lblCodigoT.Location = New System.Drawing.Point(39, 33)
+        Me.lblCodigoT.Location = New System.Drawing.Point(46, 32)
         Me.lblCodigoT.Name = "lblCodigoT"
         Me.lblCodigoT.Size = New System.Drawing.Size(52, 17)
         Me.lblCodigoT.TabIndex = 114
@@ -134,9 +134,11 @@ Partial Class M_ListadoSede
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(640, 623)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Name = "M_ListadoSede"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sedes"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
@@ -152,6 +154,6 @@ Partial Class M_ListadoSede
     Friend WithEvents lbltipoCta As Label
     Friend WithEvents lblcantidad As Label
     Friend WithEvents lbltotal As Label
-    Friend WithEvents txtDescripcionB As TextBox
+    Friend WithEvents txtNombreB As TextBox
     Friend WithEvents lblCodigoT As Label
 End Class

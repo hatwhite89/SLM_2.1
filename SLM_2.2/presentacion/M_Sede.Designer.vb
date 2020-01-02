@@ -383,6 +383,7 @@ Partial Class M_Sede
         Me.Controls.Add(Me.GroupBox1)
         Me.KeyPreview = True
         Me.Name = "M_Sede"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " Sede"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

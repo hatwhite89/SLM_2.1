@@ -23,6 +23,7 @@ Partial Class M_VerPaciente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxinfoCliente = New System.Windows.Forms.GroupBox()
+        Me.txtEdad = New System.Windows.Forms.TextBox()
         Me.lblcodeTerminoPago = New System.Windows.Forms.Label()
         Me.lblcodeCategoria = New System.Windows.Forms.Label()
         Me.txtnombre2 = New System.Windows.Forms.TextBox()
@@ -75,7 +76,6 @@ Partial Class M_VerPaciente
         Me.lblapellido1 = New System.Windows.Forms.Label()
         Me.txtnombre1 = New System.Windows.Forms.TextBox()
         Me.lblnombre1 = New System.Windows.Forms.Label()
-        Me.txtEdad = New System.Windows.Forms.TextBox()
         Me.gbxinfoCliente.SuspendLayout()
         Me.gbxgenero.SuspendLayout()
         Me.SuspendLayout()
@@ -140,6 +140,13 @@ Partial Class M_VerPaciente
         Me.gbxinfoCliente.TabStop = False
         Me.gbxinfoCliente.Text = "Información de Cliente/Paciente"
         Me.gbxinfoCliente.Visible = False
+        '
+        'txtEdad
+        '
+        Me.txtEdad.Location = New System.Drawing.Point(868, 92)
+        Me.txtEdad.Name = "txtEdad"
+        Me.txtEdad.Size = New System.Drawing.Size(74, 22)
+        Me.txtEdad.TabIndex = 121
         '
         'lblcodeTerminoPago
         '
@@ -629,13 +636,6 @@ Partial Class M_VerPaciente
         Me.lblnombre1.TabIndex = 67
         Me.lblnombre1.Text = "1er Nombre"
         '
-        'txtEdad
-        '
-        Me.txtEdad.Location = New System.Drawing.Point(868, 92)
-        Me.txtEdad.Name = "txtEdad"
-        Me.txtEdad.Size = New System.Drawing.Size(74, 22)
-        Me.txtEdad.TabIndex = 121
-        '
         'M_VerPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -645,6 +645,7 @@ Partial Class M_VerPaciente
         Me.Controls.Add(Me.gbxinfoCliente)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "M_VerPaciente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Información del Paciente"
         Me.gbxinfoCliente.ResumeLayout(False)
         Me.gbxinfoCliente.PerformLayout()

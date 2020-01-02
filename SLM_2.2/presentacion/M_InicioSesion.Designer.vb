@@ -118,6 +118,7 @@ Partial Class M_InicioSesion
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True
         Me.Name = "M_InicioSesion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ingresar: Laboratorios Médicos S de R L"
         Me.gbxInicioSesion.ResumeLayout(False)
         Me.gbxInicioSesion.PerformLayout()
