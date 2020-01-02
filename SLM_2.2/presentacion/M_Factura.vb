@@ -572,6 +572,7 @@ Public Class M_Factura
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Try
+
             If (txtpagoPaciente.Text <> "") Then
                 Dim objFact As New ClsFactura
                 With objFact
