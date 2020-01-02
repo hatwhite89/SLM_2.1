@@ -114,6 +114,7 @@
     End Sub
     Private Sub frmDeposito_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
         Dim Deposito As New ClsDeposito
         'Mostrar todos los depositos registrados
         dtDepositos.DataSource = Deposito.listarDepositos

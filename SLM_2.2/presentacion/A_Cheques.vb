@@ -8,12 +8,13 @@ Public Class A_Cheques
     Dim formap As New ClsFormaPago
     Public letras As String
 
-
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         Dim tipo As String = ""
 
         Try
+
+
 
             If txtMonto.Text <> "" And txtcodProvee.Text <> "" Then
 
@@ -24,6 +25,7 @@ Public Class A_Cheques
                 ElseIf rbtnCheque.Checked = True Then
                     tipo = "cheque"
                 End If
+
 
                 With cheque
 
@@ -75,10 +77,8 @@ Public Class A_Cheques
         End Try
 
     End Sub
-
     Private Sub txtcodProvee_DoubleClick(sender As Object, e As EventArgs) Handles txtcodProvee.DoubleClick
         A_ListarProveedores.ShowDialog()
-
     End Sub
 
     Private Sub lblEstado_TextChanged(sender As Object, e As EventArgs) Handles lblEstado.TextChanged
@@ -112,30 +112,36 @@ Public Class A_Cheques
     End Sub
     Private Sub A_Cheques_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        formap.Cod = frmPagos.txtFormaP.Text
-        Dim dt As New DataTable
-        dt = formap.infoFormaPago()
-        Dim row As DataRow = dt.Rows(0)
-        txtCtaDestino.Text = row("cuenta")
+        If lblForm.Text = "ChequeSeleccionado" Then
 
-        'Limpiar campos de fecha
-        dtpAcredita.Format = DateTimePickerFormat.Custom
-        dtpAcredita.CustomFormat = " "
+        Else
 
-        dtpEmision.Format = DateTimePickerFormat.Custom
-        dtpEmision.CustomFormat = " "
+            formap.Cod = frmPagos.txtFormaP.Text
+            Dim dt As New DataTable
+            dt = formap.infoFormaPago()
+            Dim row As DataRow = dt.Rows(0)
+            txtCtaDestino.Text = row("cuenta")
 
-        dtpRechazo.Format = DateTimePickerFormat.Custom
-        dtpRechazo.CustomFormat = " "
+            'Limpiar campos de fecha
+            dtpAcredita.Format = DateTimePickerFormat.Custom
+            dtpAcredita.CustomFormat = " "
 
-        dtpCancelado.Format = DateTimePickerFormat.Custom
-        dtpCancelado.CustomFormat = " "
+            dtpEmision.Format = DateTimePickerFormat.Custom
+            dtpEmision.CustomFormat = " "
 
-        dtpFechaReg.Format = DateTimePickerFormat.Custom
-        dtpFechaReg.CustomFormat = " "
+            dtpRechazo.Format = DateTimePickerFormat.Custom
+            dtpRechazo.CustomFormat = " "
 
-        dtpFechaVto.Format = DateTimePickerFormat.Custom
-        dtpFechaVto.CustomFormat = " "
+            dtpCancelado.Format = DateTimePickerFormat.Custom
+            dtpCancelado.CustomFormat = " "
+
+            dtpFechaReg.Format = DateTimePickerFormat.Custom
+            dtpFechaReg.CustomFormat = " "
+
+            dtpFechaVto.Format = DateTimePickerFormat.Custom
+            dtpFechaVto.CustomFormat = " "
+
+        End If
 
     End Sub
 
@@ -187,7 +193,6 @@ Public Class A_Cheques
         End Select
 
     End Sub
-
     Private Sub dtpRechazo_MouseDown(sender As Object, e As MouseEventArgs) Handles dtpRechazo.MouseDown
 
         Select Case e.Button
@@ -234,11 +239,9 @@ Public Class A_Cheques
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
 
-
         Dim nroCheque As String
         Dim codFactura As Integer
         Dim objVistaCheque As New VistaCheque
-
 
         nroCheque = txtNroCheq.Text
 
@@ -257,11 +260,8 @@ Public Class A_Cheques
     End Sub
 
     Private Sub A_Cheques_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        frmMenuConta.Show()
+        'frmMenuConta.Show()
     End Sub
-
-
-
 
 
 
@@ -649,7 +649,5 @@ Public Class A_Cheques
         End Function
 
     End Class
-
-
 
 End Class

@@ -52,4 +52,53 @@
         ttBusqueda.ToolTipTitle = "Búsqueda"
         ttBusqueda.ToolTipIcon = ToolTipIcon.Info
     End Sub
+
+    Private Sub dtCheques_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtCheques.CellDoubleClick
+
+        Try
+
+            Dim dt As DataTable
+            Dim row As DataRow
+            Dim pro As New ClsProveedor
+
+            dt = dtCheques.DataSource
+            row = dt.Rows(e.RowIndex)
+
+            With A_Cheques
+
+                .txtNro.Text = row("codCheque")
+                .txtNroCheq.Text = row("nroCheque")
+                .txtMonto.Text = row("monto")
+                .dtpFechaReg.Value = row("fechaReg")
+                .dtpFechaVto.Value = row("fechaVto")
+                .txtMoneda.Text = row("moneda")
+                .lblEstado.Text = row("estado")
+                .txtcodProvee.Text = row("codBreveProveedor")
+                .txtNombreProvee.Text = row("nombreProveedor")
+                .txtBanco.Text = row("codBreveBanco")
+                .txtnombreBanco.Text = row("nombreBanco")
+                .dtpAcredita.Value = row("fechaacreditacion")
+                .dtpRechazo.Value = row("fechaRechazo")
+                .dtpEmision.Value = row("fechaEmision")
+                .dtpCancelado.Value = row("fechaCancelado")
+                .txtCtaOrigen.Text = row("ctaOrigen")
+                .txtCtaDestino.Text = row("ctaDestino")
+                .txtCtaTemporal.Text = row("ctaTemporal")
+                .lblForm.Text = "ChequeSeleccionado"
+                .Show()
+
+                '.txtNroCtaBanco.Text = row("nroCheque")
+
+                ' .txtTributario.Text = row("")
+
+            End With
+
+        Catch ex As Exception
+            MsgBox("Error al seleccionar. Detalle: " + ex.Message)
+        End Try
+
+
+
+
+    End Sub
 End Class
