@@ -29,4 +29,10 @@
     Private Sub btnContactos_Click(sender As Object, e As EventArgs) Handles btnContactos.Click
         A_Proveedor.ShowDialog()
     End Sub
+
+    Private Sub M_MenuFacturacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MsgBox("Ejemplo 1", MsgBoxStyle.AbortRetryIgnore)
+
+        MsgBox("Ejemplo 2", MsgBoxStyle.Question)
+    End Sub
 End Class

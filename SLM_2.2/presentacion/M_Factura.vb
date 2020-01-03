@@ -644,6 +644,17 @@ Public Class M_Factura
         Else
             MsgBox("Debe estar creada o guardada la factura para poder imprimir el comprobante de entrega.", MsgBoxStyle.Critical)
         End If
+
+        If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
+            Dim numero As Integer = Convert.ToInt64(txtnumeroFactura.Text)
+            'le asigno un valor a los parametros del procedimiento almacenado
+            Dim form As New M_ComprobanteEntrega
+            form.numeroFactura = numero
+            'muestro el reporte
+            form.ShowDialog()
+        Else
+            MsgBox("Debe estar creada o guardada la factura para poder imprimir el comprobante de entrega.", MsgBoxStyle.Critical)
+        End If
     End Sub
     Private Sub enviarCorreo()
         'in the shadows of the moon
@@ -673,5 +684,9 @@ Public Class M_Factura
                 MsgBox(ex.Message)
             End Try
         End If
+    End Sub
+
+    Private Sub btncontado_Click(sender As Object, e As EventArgs) Handles btncontado.Click
+
     End Sub
 End Class
