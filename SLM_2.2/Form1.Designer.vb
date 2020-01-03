@@ -25,7 +25,9 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.btnContabilidad = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.gbxMenu = New System.Windows.Forms.GroupBox()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.btnPrecio = New System.Windows.Forms.Button()
         Me.btnFacturacion = New System.Windows.Forms.Button()
         Me.lblfacturacion = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -59,7 +61,7 @@ Partial Class Form1
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnFormaPago = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
+        Me.gbxMenu.SuspendLayout()
         Me.panelMenu.SuspendLayout()
         Me.tcMenu.SuspendLayout()
         Me.tpCheque.SuspendLayout()
@@ -90,23 +92,51 @@ Partial Class Form1
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
-        'GroupBox1
+        'gbxMenu
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.MidnightBlue
-        Me.GroupBox1.Controls.Add(Me.btnFacturacion)
-        Me.GroupBox1.Controls.Add(Me.lblfacturacion)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.lbllaboratorio)
-        Me.GroupBox1.Controls.Add(Me.btnlaboratorio)
-        Me.GroupBox1.Controls.Add(Me.btnContabilidad)
-        Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.GroupBox1.Location = New System.Drawing.Point(-1, -13)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(88, 405)
-        Me.GroupBox1.TabIndex = 3
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Opciones"
+        Me.gbxMenu.BackColor = System.Drawing.Color.MidnightBlue
+        Me.gbxMenu.Controls.Add(Me.btnCerrar)
+        Me.gbxMenu.Controls.Add(Me.btnPrecio)
+        Me.gbxMenu.Controls.Add(Me.btnFacturacion)
+        Me.gbxMenu.Controls.Add(Me.lblfacturacion)
+        Me.gbxMenu.Controls.Add(Me.Label1)
+        Me.gbxMenu.Controls.Add(Me.Button1)
+        Me.gbxMenu.Controls.Add(Me.lbllaboratorio)
+        Me.gbxMenu.Controls.Add(Me.btnlaboratorio)
+        Me.gbxMenu.Controls.Add(Me.btnContabilidad)
+        Me.gbxMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.gbxMenu.Location = New System.Drawing.Point(-1, -13)
+        Me.gbxMenu.Name = "gbxMenu"
+        Me.gbxMenu.Size = New System.Drawing.Size(88, 405)
+        Me.gbxMenu.TabIndex = 3
+        Me.gbxMenu.TabStop = False
+        Me.gbxMenu.Text = "Opciones"
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCerrar.FlatAppearance.BorderSize = 0
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Location = New System.Drawing.Point(-3, 365)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(95, 27)
+        Me.btnCerrar.TabIndex = 13
+        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
+        'btnPrecio
+        '
+        Me.btnPrecio.BackColor = System.Drawing.Color.LightGray
+        Me.btnPrecio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnPrecio.FlatAppearance.BorderSize = 0
+        Me.btnPrecio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPrecio.Location = New System.Drawing.Point(-3, 52)
+        Me.btnPrecio.Name = "btnPrecio"
+        Me.btnPrecio.Size = New System.Drawing.Size(95, 36)
+        Me.btnPrecio.TabIndex = 12
+        Me.btnPrecio.Text = "Precios y Descuentos"
+        Me.btnPrecio.UseVisualStyleBackColor = False
         '
         'btnFacturacion
         '
@@ -183,7 +213,7 @@ Partial Class Form1
         Me.panelMenu.Controls.Add(Me.tcMenu)
         Me.panelMenu.Location = New System.Drawing.Point(16, -4)
         Me.panelMenu.Name = "panelMenu"
-        Me.panelMenu.Size = New System.Drawing.Size(26, 390)
+        Me.panelMenu.Size = New System.Drawing.Size(30, 390)
         Me.panelMenu.TabIndex = 4
         '
         'btnCancelar
@@ -485,11 +515,11 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DimGray
+        Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(392, 379)
         Me.ControlBox = False
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.gbxMenu)
         Me.Controls.Add(Me.panelMenu)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -498,8 +528,8 @@ Partial Class Form1
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " "
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.gbxMenu.ResumeLayout(False)
+        Me.gbxMenu.PerformLayout()
         Me.panelMenu.ResumeLayout(False)
         Me.tcMenu.ResumeLayout(False)
         Me.tpCheque.ResumeLayout(False)
@@ -514,7 +544,7 @@ Partial Class Form1
 
     Friend WithEvents btnContabilidad As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents gbxMenu As GroupBox
     Friend WithEvents lbllaboratorio As Label
     Friend WithEvents btnlaboratorio As Button
     Friend WithEvents Label1 As Label
@@ -547,4 +577,6 @@ Partial Class Form1
     Friend WithEvents btnCuentas As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents btnFormaPago As Button
+    Friend WithEvents btnPrecio As Button
+    Friend WithEvents btnCerrar As Button
 End Class

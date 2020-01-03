@@ -27,7 +27,7 @@
                 .Terminos_Pago = txtTerminoPago.Text
                 .Tota_l = txtTotal.Text
                 .Nro_Factura = txtNroFactura.Text
-                'registro de  factura compra
+                'registro de factura compra
                 .registrarNuevaFacturaCompra()
 
                 'Registro de detalle de factura

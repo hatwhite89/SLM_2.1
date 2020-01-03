@@ -41,7 +41,4 @@
         End If
     End Sub
 
-    Private Sub dtFormasPago_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtFormasPago.CellContentClick
-
-    End Sub
 End Class

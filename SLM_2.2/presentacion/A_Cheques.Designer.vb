@@ -82,6 +82,7 @@ Partial Class A_Cheques
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.lblForm = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -672,12 +673,22 @@ Partial Class A_Cheques
         Me.btnImprimir.UseVisualStyleBackColor = False
         Me.btnImprimir.Visible = False
         '
+        'lblForm
+        '
+        Me.lblForm.AutoSize = True
+        Me.lblForm.Location = New System.Drawing.Point(296, 442)
+        Me.lblForm.Name = "lblForm"
+        Me.lblForm.Size = New System.Drawing.Size(30, 13)
+        Me.lblForm.TabIndex = 5
+        Me.lblForm.Text = "Form"
+        '
         'A_Cheques
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(785, 480)
+        Me.Controls.Add(Me.lblForm)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnGuardar)
@@ -696,6 +707,7 @@ Partial Class A_Cheques
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -758,4 +770,5 @@ Partial Class A_Cheques
     Friend WithEvents lblEstado As Label
     Friend WithEvents btnCancelar As Button
     Friend WithEvents btnImprimir As Button
+    Friend WithEvents lblForm As Label
 End Class

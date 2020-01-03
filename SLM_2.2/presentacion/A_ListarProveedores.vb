@@ -16,7 +16,8 @@
 
         A_Cheques.txtcodProvee.Text = row("codBreve") 'Codigo Proveedor
         A_Cheques.txtNombreProvee.Text = row("nombreProveedor")  'Nombre de proveedor
-        A_Cheques.txtTributario.Text = row("idTributario") 'Id tributario
+        'A_Cheques.txtTributario.Text = row("idTributario") 'Id tributario
+
         Me.Close()
 
     End Sub

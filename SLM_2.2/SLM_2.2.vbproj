@@ -302,6 +302,12 @@
     <Compile Include="presentacion\A_ListarTipoClasificacion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ListasPrecio.Designer.vb">
+      <DependentUpon>A_ListasPrecio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListasPrecio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_PrintCheque.Designer.vb">
       <DependentUpon>A_PrintCheque.vb</DependentUpon>
     </Compile>
@@ -385,12 +391,6 @@
       <DependentUpon>A_FormaPago.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_FormaPago.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="presentacion\A_MenuConta.Designer.vb">
-      <DependentUpon>A_MenuConta.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\A_MenuConta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_Apertura.Designer.vb">
@@ -713,6 +713,9 @@
     <EmbeddedResource Include="presentacion\A_ListarTipoClasificacion.resx">
       <DependentUpon>A_ListarTipoClasificacion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListasPrecio.resx">
+      <DependentUpon>A_ListasPrecio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_PrintCheque.resx">
       <DependentUpon>A_PrintCheque.vb</DependentUpon>
     </EmbeddedResource>
@@ -721,9 +724,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_FormaPago.resx">
       <DependentUpon>A_FormaPago.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\A_MenuConta.resx">
-      <DependentUpon>A_MenuConta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_ListarSubAreas.resx">
       <DependentUpon>E_ListarSubAreas.vb</DependentUpon>
