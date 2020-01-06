@@ -104,6 +104,8 @@ Partial Class M_BuscarRecibo
         '
         'dgbtabla
         '
+        Me.dgbtabla.AllowUserToAddRows = False
+        Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(33, 115)
         Me.dgbtabla.Name = "dgbtabla"
@@ -134,7 +136,8 @@ Partial Class M_BuscarRecibo
         Me.ClientSize = New System.Drawing.Size(722, 657)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "M_BuscarRecibo"
-        Me.Text = "Buscar Recibo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Búsqueda de Recibos"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()

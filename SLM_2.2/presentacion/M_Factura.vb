@@ -1,12 +1,14 @@
-﻿Public Class M_Factura
+﻿Imports System.Net.Mail
+Public Class M_Factura
     Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
         M_ClienteVentana.Close()
         Me.Close()
     End Sub
     Private Sub btnbuscarMedico_Click(sender As Object, e As EventArgs) Handles btnbuscarMedico.Click
-        M_Medico.ShowDialog()
+        M_ListarMedicos.ShowDialog()
     End Sub
     Private Sub btnbuscarCliente_Click(sender As Object, e As EventArgs) Handles btnbuscarCliente.Click
+        M_Cliente.limpiar()
         M_Cliente.ShowDialog()
     End Sub
     Private Sub txtcodigoCliente_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoCliente.TextChanged
@@ -275,12 +277,14 @@
     End Sub
     Private Sub M_Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         M_ClienteVentana.Show()
-        Dim btn As New DataGridViewButtonColumn()
-        dgblistadoExamenes.Columns.Add(btn)
-        btn.HeaderText = "Eliminar"
-        btn.Text = "Eliminar"
-        btn.Name = "btnEliminar"
-        btn.UseColumnTextForButtonValue = True
+        If dgblistadoExamenes.Columns.Contains("btnEliminar") = False Then
+            Dim btn As New DataGridViewButtonColumn()
+            dgblistadoExamenes.Columns.Add(btn)
+            btn.HeaderText = "Eliminar"
+            btn.Text = "Eliminar"
+            btn.Name = "btnEliminar"
+            btn.UseColumnTextForButtonValue = True
+        End If
         totalFactura()
     End Sub
     Private Sub txtconvenio_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoConvenio.TextChanged
@@ -324,6 +328,26 @@
             End Try
         End If
     End Sub
+    Private Function validarFactura(ByVal codigoExamen As Integer)
+        Dim cont As Integer = 0
+        For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
+            If (dgblistadoExamenes.Rows(index).Cells(0).Value().ToString = codigoExamen) Then
+                cont += 1
+            End If
+            If (cont >= 2) Then
+                Return 1
+            End If
+        Next
+        Return 0
+    End Function
+    Public Function validarFactura2(ByVal codigoExamen As Integer)
+        For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
+            If (dgblistadoExamenes.Rows(index).Cells(0).Value().ToString = codigoExamen) Then
+                Return 1
+            End If
+        Next
+        Return 0
+    End Function
     Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
 
         If e.ColumnIndex = 0 Then
@@ -336,17 +360,23 @@
 
                     Dim dt As New DataTable
                     dt = objExam.BuscarExamen()
+                    'valido que no haya agregado el examen anteriormente
+                    If (validarFactura(objExam.Codigo1) = 0) Then
+                        Dim row As DataRow = dt.Rows(0)
+                        dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+                        Dim subtotal As Double = Convert.ToDouble(CStr(row("total")))
+                        Dim descuento As Double
+                        descuento = subtotal * (0 / 100)
+                        subtotal -= descuento
+                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
+                        totalFactura()
 
-                    Dim row As DataRow = dt.Rows(0)
-                    dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
-                    Dim subtotal As Double = Convert.ToDouble(CStr(row("total")))
-                    Dim descuento As Double
-                    descuento = subtotal * (0 / 100)
-                    subtotal -= descuento
-                    dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
-                    totalFactura()
+                        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
+                    Else 'muestro el mensaje de error
+                        MsgBox("El examen ya a sido agregado.")
+                        dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+                    End If
 
-                    M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
                 Else
                     dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
                 End If
@@ -395,6 +425,17 @@
     End Sub
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
+
+            If Trim(txtcodigoRecepecionista.Text) = "" Then
+                txtcodigoRecepecionista.Text = "1"
+            ElseIf Trim(txtcodigoCajero.Text) = "" Then
+                txtcodigoCajero.Text = "1"
+            ElseIf Trim(txtcodigoConvenio.Text) = "" Then
+                txtcodigoConvenio.Text = "0"
+            ElseIf Trim(txtcodigoTerminal.Text) = "" Then
+                txtcodigoTerminal.Text = "1"
+            End If
+
             If (txtcodigoCliente.Text <> "" And txtcodigoMedico.Text <> "" And txtcodigoTerminosPago.Text <> "" And
                 txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And
                 txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
@@ -452,6 +493,7 @@
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
+            M_BuscarFactura.seleccionarFacturas()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -461,6 +503,12 @@
             e.Handled = True
         End If
     End Sub
+    'Private Sub ejemplo_Double(sender As Object, e As KeyPressEventArgs) Handles txtcodigoConvenio.KeyPress
+    '    If (Not IsNumeric(e.KeyChar) And (e.KeyChar <> ".")) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
+
     Private Sub txtcodigoMedico_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoMedico.KeyPress
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
             e.Handled = True
@@ -513,6 +561,7 @@
                 Else
                     MsgBox("Error al querer registrar la cotización.", MsgBoxStyle.Critical)
                 End If
+                M_BuscarCotizacion.actualizarCotizacion()
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
@@ -523,6 +572,7 @@
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Try
+
             If (txtpagoPaciente.Text <> "") Then
                 Dim objFact As New ClsFactura
                 With objFact
@@ -546,6 +596,7 @@
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
+            M_BuscarFactura.seleccionarFacturas()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -580,5 +631,62 @@
         Catch ex As Exception
             'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
         End Try
+    End Sub
+
+    Private Sub btnimprimirComprobante_Click(sender As Object, e As EventArgs) Handles btnimprimirComprobante.Click
+        If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
+            Dim numero As Integer = Convert.ToInt64(txtnumeroFactura.Text)
+            'le asigno un valor a los parametros del procedimiento almacenado
+            Dim form As New M_ComprobanteEntrega
+            form.numeroFactura = numero
+            'muestro el reporte
+            form.ShowDialog()
+        Else
+            MsgBox("Debe estar creada o guardada la factura para poder imprimir el comprobante de entrega.", MsgBoxStyle.Critical)
+        End If
+
+        If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
+            Dim numero As Integer = Convert.ToInt64(txtnumeroFactura.Text)
+            'le asigno un valor a los parametros del procedimiento almacenado
+            Dim form As New M_ComprobanteEntrega
+            form.numeroFactura = numero
+            'muestro el reporte
+            form.ShowDialog()
+        Else
+            MsgBox("Debe estar creada o guardada la factura para poder imprimir el comprobante de entrega.", MsgBoxStyle.Critical)
+        End If
+    End Sub
+    Private Sub enviarCorreo()
+        'in the shadows of the moon
+        If cbxenviarCorreo.Checked Then
+            Try
+                Dim Smtp_Server As New SmtpClient
+                Dim e_mail As New MailMessage()
+                Smtp_Server.UseDefaultCredentials = False
+                Smtp_Server.Credentials = New Net.NetworkCredential("username@gmail.com", "password")
+                Smtp_Server.Port = 587
+                Smtp_Server.EnableSsl = True
+                Smtp_Server.Host = "smtp.gmail.com"
+
+                e_mail = New MailMessage()
+                'txtfrom.text
+                e_mail.From = New MailAddress("ejemplo@hotmail.com")
+                'txtto.text
+                e_mail.To.Add("para@hotmail.com")
+                e_mail.Subject = "Email Sending"
+                e_mail.IsBodyHtml = False
+                'txtMessage.text
+                e_mail.Body = "Funciona el envio por correo."
+                Smtp_Server.Send(e_mail)
+                MsgBox("Mail Sent")
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
+    End Sub
+
+    Private Sub btncontado_Click(sender As Object, e As EventArgs) Handles btncontado.Click
+
     End Sub
 End Class

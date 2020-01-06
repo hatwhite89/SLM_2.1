@@ -10,8 +10,8 @@
 
     Private Sub dtCategorias_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dtCategorias.CellMouseDoubleClick
 
-        A_Proveedor.txtCategoria.Text = dtCategorias.Rows(e.RowIndex).Cells(0).Value
-        A_Proveedor.lblCodCategoria.Text = dtCategorias.Rows(e.RowIndex).Cells(2).Value
+        Dim temp As Integer = Me.dtCategorias.Rows(e.RowIndex).Cells(2).Value().ToString
+        A_Proveedor.cbxCategoria.SelectedIndex = temp - 1
 
         Me.Close()
 

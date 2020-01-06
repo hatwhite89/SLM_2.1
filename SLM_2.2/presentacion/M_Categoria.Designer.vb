@@ -250,9 +250,9 @@ Partial Class M_Categoria
         Me.lbltotal.AutoSize = True
         Me.lbltotal.Location = New System.Drawing.Point(118, 322)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(199, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(170, 17)
         Me.lbltotal.TabIndex = 114
-        Me.lbltotal.Text = "TOTAL DE CLASIFICACIONES"
+        Me.lbltotal.Text = "TOTAL DE CATEGORIAS"
         '
         'txtdescripcionB
         '
@@ -281,7 +281,8 @@ Partial Class M_Categoria
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
         Me.Name = "M_Categoria"
-        Me.Text = "Categoría"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Categoría del Cliente"
         Me.gbxclasificacion.ResumeLayout(False)
         Me.gbxclasificacion.PerformLayout()
         Me.gbxbusqueda.ResumeLayout(False)

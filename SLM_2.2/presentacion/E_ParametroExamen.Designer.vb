@@ -58,16 +58,16 @@ Partial Class E_ParametroExamen
         '
         'txtcomentarioUnidad
         '
-        Me.txtcomentarioUnidad.Location = New System.Drawing.Point(272, 103)
+        Me.txtcomentarioUnidad.Location = New System.Drawing.Point(286, 103)
         Me.txtcomentarioUnidad.Name = "txtcomentarioUnidad"
         Me.txtcomentarioUnidad.ReadOnly = True
-        Me.txtcomentarioUnidad.Size = New System.Drawing.Size(169, 22)
+        Me.txtcomentarioUnidad.Size = New System.Drawing.Size(155, 22)
         Me.txtcomentarioUnidad.TabIndex = 125
         '
         'lbltipo
         '
         Me.lbltipo.AutoSize = True
-        Me.lbltipo.Location = New System.Drawing.Point(57, 104)
+        Me.lbltipo.Location = New System.Drawing.Point(65, 103)
         Me.lbltipo.Name = "lbltipo"
         Me.lbltipo.Size = New System.Drawing.Size(53, 17)
         Me.lbltipo.TabIndex = 124
@@ -81,7 +81,7 @@ Partial Class E_ParametroExamen
         Me.btnbuscarUnidad.FlatAppearance.BorderSize = 0
         Me.btnbuscarUnidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarUnidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscarUnidad.Location = New System.Drawing.Point(123, 103)
+        Me.btnbuscarUnidad.Location = New System.Drawing.Point(133, 104)
         Me.btnbuscarUnidad.Name = "btnbuscarUnidad"
         Me.btnbuscarUnidad.Size = New System.Drawing.Size(49, 22)
         Me.btnbuscarUnidad.TabIndex = 123
@@ -90,7 +90,7 @@ Partial Class E_ParametroExamen
         'txtcodigoUnidad
         '
         Me.txtcodigoUnidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtcodigoUnidad.Location = New System.Drawing.Point(178, 103)
+        Me.txtcodigoUnidad.Location = New System.Drawing.Point(192, 103)
         Me.txtcodigoUnidad.MaxLength = 20
         Me.txtcodigoUnidad.Name = "txtcodigoUnidad"
         Me.txtcodigoUnidad.Size = New System.Drawing.Size(88, 22)
@@ -99,7 +99,7 @@ Partial Class E_ParametroExamen
         'lbldireccion1
         '
         Me.lbldireccion1.AutoSize = True
-        Me.lbldireccion1.Location = New System.Drawing.Point(28, 64)
+        Me.lbldireccion1.Location = New System.Drawing.Point(36, 63)
         Me.lbldireccion1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbldireccion1.Name = "lbldireccion1"
         Me.lbldireccion1.Size = New System.Drawing.Size(82, 17)
@@ -108,17 +108,17 @@ Partial Class E_ParametroExamen
         '
         'rtxtdescripcion
         '
-        Me.rtxtdescripcion.Location = New System.Drawing.Point(121, 56)
+        Me.rtxtdescripcion.Location = New System.Drawing.Point(125, 56)
         Me.rtxtdescripcion.MaxLength = 100
         Me.rtxtdescripcion.Name = "rtxtdescripcion"
-        Me.rtxtdescripcion.Size = New System.Drawing.Size(525, 37)
+        Me.rtxtdescripcion.Size = New System.Drawing.Size(514, 37)
         Me.rtxtdescripcion.TabIndex = 131
         Me.rtxtdescripcion.Text = ""
         '
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(58, 29)
+        Me.lblcodigo.Location = New System.Drawing.Point(65, 30)
         Me.lblcodigo.Name = "lblcodigo"
         Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
         Me.lblcodigo.TabIndex = 129
@@ -126,7 +126,7 @@ Partial Class E_ParametroExamen
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(123, 26)
+        Me.txtcodigo.Location = New System.Drawing.Point(125, 27)
         Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(133, 22)
@@ -136,7 +136,7 @@ Partial Class E_ParametroExamen
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(462, 106)
+        Me.Label1.Location = New System.Drawing.Point(455, 106)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 17)
         Me.Label1.TabIndex = 132
@@ -144,7 +144,7 @@ Partial Class E_ParametroExamen
         '
         'txtBreve
         '
-        Me.txtBreve.Location = New System.Drawing.Point(513, 104)
+        Me.txtBreve.Location = New System.Drawing.Point(506, 104)
         Me.txtBreve.MaxLength = 50
         Me.txtBreve.Name = "txtBreve"
         Me.txtBreve.Size = New System.Drawing.Size(133, 22)
@@ -275,6 +275,7 @@ Partial Class E_ParametroExamen
         Me.Controls.Add(Me.btnbuscarUnidad)
         Me.Controls.Add(Me.txtcodigoUnidad)
         Me.Name = "E_ParametroExamen"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Parámetro de Examen"
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

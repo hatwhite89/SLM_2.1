@@ -231,6 +231,7 @@ Partial Class M_TipoObjeto
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
         Me.Name = "M_TipoObjeto"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tipo Objeto"
         Me.gbxtipoObjeto.ResumeLayout(False)
         Me.gbxtipoObjeto.PerformLayout()

@@ -302,7 +302,9 @@ Partial Class M_Objeto
         Me.ClientSize = New System.Drawing.Size(669, 622)
         Me.Controls.Add(Me.gbxobjeto)
         Me.Controls.Add(Me.gbxbusqueda)
+        Me.KeyPreview = True
         Me.Name = "M_Objeto"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Objeto"
         Me.gbxobjeto.ResumeLayout(False)
         Me.gbxobjeto.PerformLayout()

@@ -1,8 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Public Class ClsProveedor
 
-    Dim codProveedor, codCate As Integer
-    Dim codBreve, nombreProveedor, telefono, codBreveCate, contactoPrincipal, telContacto, email, direccion, sitioweb, idTributario As String
+    Dim codProveedor, codCate, codTermPago As Integer
+    Dim codBreve, nombreProveedor, telefono, email, direccion, sitioweb, idTributario As String
 
     'Constructor
     Public Sub New()
@@ -10,6 +10,7 @@ Public Class ClsProveedor
     End Sub
 
     ':::::::::::::::::::::::: Metodos SET y GET :::::::::::::::::::::::
+
     'Codigo Proveedor
     Public Property Cod_Proveedor As Integer
         Get
@@ -29,6 +30,15 @@ Public Class ClsProveedor
             codCate = value
         End Set
     End Property
+    'Codigo TerminoPago
+    Public Property cod_TermPago As Integer
+        Get
+            Return codTermPago
+        End Get
+        Set(value As Integer)
+            codTermPago = value
+        End Set
+    End Property
     'codBreve
     Public Property Cod_Breve As String
         Get
@@ -36,16 +46,6 @@ Public Class ClsProveedor
         End Get
         Set(value As String)
             codBreve = value
-        End Set
-    End Property
-
-    'codBreve categoria
-    Public Property Cod_BreveCate As String
-        Get
-            Return codBreveCate
-        End Get
-        Set(value As String)
-            codBreveCate = value
         End Set
     End Property
 
@@ -76,26 +76,6 @@ Public Class ClsProveedor
         End Get
         Set(value As String)
             telefono = value
-        End Set
-    End Property
-
-    'Contacto Principal
-    Public Property Contacto_Principal As String
-        Get
-            Return contactoPrincipal
-        End Get
-        Set(value As String)
-            contactoPrincipal = value
-        End Set
-    End Property
-
-    'Telefono Contacto Principal
-    Public Property Telefono_ContactoPrincipal As String
-        Get
-            Return telContacto
-        End Get
-        Set(value As String)
-            telContacto = value
         End Set
     End Property
 
@@ -149,11 +129,6 @@ Public Class ClsProveedor
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codBreveCate"
-        sqlpar.Value = codBreveCate
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
         sqlpar.ParameterName = "idTributario"
         sqlpar.Value = Id_Tributario
         sqlcom.Parameters.Add(sqlpar)
@@ -163,21 +138,9 @@ Public Class ClsProveedor
         sqlpar.Value = Nombre_Proveedor
         sqlcom.Parameters.Add(sqlpar)
 
-
-
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "telefono"
         sqlpar.Value = Telefo_no
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "contactoPrincipal"
-        sqlpar.Value = Contacto_Principal
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "telContacto"
-        sqlpar.Value = Telefono_ContactoPrincipal
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -198,6 +161,11 @@ Public Class ClsProveedor
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codCate"
         sqlpar.Value = Cod_Cate
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codTermPago"
+        sqlpar.Value = cod_TermPago
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -242,15 +210,9 @@ Public Class ClsProveedor
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codBreveCate"
-        sqlpar.Value = codBreveCate
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
         sqlpar.ParameterName = "idTributario"
         sqlpar.Value = Id_Tributario
         sqlcom.Parameters.Add(sqlpar)
-
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "nombreProveedor"
@@ -260,16 +222,6 @@ Public Class ClsProveedor
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "telefono"
         sqlpar.Value = Telefo_no
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "contactoPrincipal"
-        sqlpar.Value = Contacto_Principal
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "telContacto"
-        sqlpar.Value = Telefono_ContactoPrincipal
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -290,6 +242,11 @@ Public Class ClsProveedor
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codCate"
         sqlpar.Value = Cod_Cate
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codTermPago"
+        sqlpar.Value = cod_TermPago
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -371,6 +328,20 @@ Public Class ClsProveedor
 
     End Function
 
+    'Obtener el codigo del Proveedor
+    Public Function obtenerProveedor() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("M_slmCapturarProveedor", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
 
 
 End Class

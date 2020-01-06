@@ -24,6 +24,10 @@ Partial Class M_MenuLaboratorio
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_MenuLaboratorio))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnSucursal = New System.Windows.Forms.Button()
+        Me.lblsucursal = New System.Windows.Forms.Label()
+        Me.btnSede = New System.Windows.Forms.Button()
+        Me.lblSede = New System.Windows.Forms.Label()
         Me.lblhojaTrabajo = New System.Windows.Forms.Label()
         Me.lblmedico = New System.Windows.Forms.Label()
         Me.btnHojaTrabajo = New System.Windows.Forms.Button()
@@ -41,6 +45,10 @@ Partial Class M_MenuLaboratorio
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnSucursal)
+        Me.GroupBox1.Controls.Add(Me.lblsucursal)
+        Me.GroupBox1.Controls.Add(Me.btnSede)
+        Me.GroupBox1.Controls.Add(Me.lblSede)
         Me.GroupBox1.Controls.Add(Me.lblhojaTrabajo)
         Me.GroupBox1.Controls.Add(Me.lblmedico)
         Me.GroupBox1.Controls.Add(Me.btnHojaTrabajo)
@@ -62,9 +70,55 @@ Partial Class M_MenuLaboratorio
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Menú Módulo Laboratorio"
         '
+        'btnSucursal
+        '
+        Me.btnSucursal.BackgroundImage = CType(resources.GetObject("btnSucursal.BackgroundImage"), System.Drawing.Image)
+        Me.btnSucursal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSucursal.FlatAppearance.BorderSize = 0
+        Me.btnSucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSucursal.Location = New System.Drawing.Point(202, 154)
+        Me.btnSucursal.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSucursal.Name = "btnSucursal"
+        Me.btnSucursal.Size = New System.Drawing.Size(80, 70)
+        Me.btnSucursal.TabIndex = 19
+        Me.btnSucursal.UseVisualStyleBackColor = True
+        '
+        'lblsucursal
+        '
+        Me.lblsucursal.AutoSize = True
+        Me.lblsucursal.Location = New System.Drawing.Point(211, 227)
+        Me.lblsucursal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblsucursal.Name = "lblsucursal"
+        Me.lblsucursal.Size = New System.Drawing.Size(63, 17)
+        Me.lblsucursal.TabIndex = 18
+        Me.lblsucursal.Text = "Sucursal"
+        '
+        'btnSede
+        '
+        Me.btnSede.BackgroundImage = CType(resources.GetObject("btnSede.BackgroundImage"), System.Drawing.Image)
+        Me.btnSede.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSede.FlatAppearance.BorderSize = 0
+        Me.btnSede.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSede.Location = New System.Drawing.Point(109, 151)
+        Me.btnSede.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSede.Name = "btnSede"
+        Me.btnSede.Size = New System.Drawing.Size(80, 70)
+        Me.btnSede.TabIndex = 17
+        Me.btnSede.UseVisualStyleBackColor = True
+        '
+        'lblSede
+        '
+        Me.lblSede.AutoSize = True
+        Me.lblSede.Location = New System.Drawing.Point(128, 225)
+        Me.lblSede.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblSede.Name = "lblSede"
+        Me.lblSede.Size = New System.Drawing.Size(41, 17)
+        Me.lblSede.TabIndex = 16
+        Me.lblSede.Text = "Sede"
+        '
         'lblhojaTrabajo
         '
-        Me.lblhojaTrabajo.Location = New System.Drawing.Point(26, 223)
+        Me.lblhojaTrabajo.Location = New System.Drawing.Point(24, 223)
         Me.lblhojaTrabajo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblhojaTrabajo.Name = "lblhojaTrabajo"
         Me.lblhojaTrabajo.Size = New System.Drawing.Size(69, 51)
@@ -133,7 +187,7 @@ Partial Class M_MenuLaboratorio
         '
         'lblentregaResultado
         '
-        Me.lblentregaResultado.Location = New System.Drawing.Point(301, 103)
+        Me.lblentregaResultado.Location = New System.Drawing.Point(292, 100)
         Me.lblentregaResultado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblentregaResultado.Name = "lblentregaResultado"
         Me.lblentregaResultado.Size = New System.Drawing.Size(91, 44)
@@ -210,6 +264,7 @@ Partial Class M_MenuLaboratorio
         Me.Controls.Add(Me.GroupBox1)
         Me.KeyPreview = True
         Me.Name = "M_MenuLaboratorio"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Laboratorio"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -230,4 +285,8 @@ Partial Class M_MenuLaboratorio
     Friend WithEvents lblmedico As Label
     Friend WithEvents btnHojaTrabajo As Button
     Friend WithEvents btnMedico As Button
+    Friend WithEvents btnSede As Button
+    Friend WithEvents lblSede As Label
+    Friend WithEvents btnSucursal As Button
+    Friend WithEvents lblsucursal As Label
 End Class

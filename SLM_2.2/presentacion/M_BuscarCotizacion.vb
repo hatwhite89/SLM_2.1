@@ -1,5 +1,8 @@
 ﻿Public Class M_BuscarCotizacion
     Private Sub M_BuscarCotizacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        actualizarCotizacion()
+    End Sub
+    Public Sub actualizarCotizacion()
         Dim objCot As New ClsCotizacion
         Dim dv As DataView = objCot.SeleccionarCotizacion.DefaultView
         dgbtabla.DataSource = dv

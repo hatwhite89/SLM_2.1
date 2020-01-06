@@ -23,268 +23,329 @@ Partial Class A_Proveedor
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Proveedor))
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtCodBreve = New System.Windows.Forms.TextBox()
+        Me.lblCodeProveedor = New System.Windows.Forms.Label()
+        Me.txtCodProveedor = New System.Windows.Forms.TextBox()
         Me.txtSitioWeb = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblSitioWeb = New System.Windows.Forms.Label()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblDireccion = New System.Windows.Forms.Label()
         Me.txtEmail = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblCorreo = New System.Windows.Forms.Label()
         Me.txtTelefono = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblTelefonoProv = New System.Windows.Forms.Label()
         Me.txtNombreProvee = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.dtProveedores = New System.Windows.Forms.DataGridView()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnBuscarCate = New System.Windows.Forms.Button()
-        Me.lblCodCategoria = New System.Windows.Forms.Label()
-        Me.txtCategoria = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.lblCodProveedor = New System.Windows.Forms.Label()
-        Me.txtTelContacto = New System.Windows.Forms.TextBox()
+        Me.lblNombreProv = New System.Windows.Forms.Label()
+        Me.dgvProveedores = New System.Windows.Forms.DataGridView()
+        Me.gbxInformacion = New System.Windows.Forms.GroupBox()
+        Me.lblEstado = New System.Windows.Forms.Label()
+        Me.cbxCategoria = New System.Windows.Forms.ComboBox()
+        Me.txtCodBreve = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtContactoPrincipal = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblCodeTerminoPago = New System.Windows.Forms.Label()
+        Me.btnBuscarTerminoPago = New System.Windows.Forms.Button()
+        Me.txtIdTribu = New System.Windows.Forms.TextBox()
+        Me.lblIdTrib = New System.Windows.Forms.Label()
+        Me.lblCategoriaProv = New System.Windows.Forms.Label()
+        Me.txtCodigoTerminoPago = New System.Windows.Forms.TextBox()
+        Me.lblTerminoPago = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnCrear = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.gbxListado = New System.Windows.Forms.GroupBox()
+        Me.btnLimpiarBusqueda = New System.Windows.Forms.Button()
         Me.txtNombreBusqueda = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtIdTribu = New System.Windows.Forms.TextBox()
-        CType(Me.dtProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
+        Me.lblBuscarProv = New System.Windows.Forms.Label()
+        Me.gbxContactos = New System.Windows.Forms.GroupBox()
+        Me.dgvDetalleContactos = New System.Windows.Forms.DataGridView()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.dgvProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbxInformacion.SuspendLayout()
+        Me.gbxListado.SuspendLayout()
+        Me.gbxContactos.SuspendLayout()
+        CType(Me.dgvDetalleContactos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label1
+        'lblCodeProveedor
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(10, 34)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(60, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Cód. Breve"
+        Me.lblCodeProveedor.AutoSize = True
+        Me.lblCodeProveedor.Location = New System.Drawing.Point(13, 42)
+        Me.lblCodeProveedor.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCodeProveedor.Name = "lblCodeProveedor"
+        Me.lblCodeProveedor.Size = New System.Drawing.Size(107, 17)
+        Me.lblCodeProveedor.TabIndex = 0
+        Me.lblCodeProveedor.Text = "Cód. Proveedor"
         '
-        'txtCodBreve
+        'txtCodProveedor
         '
-        Me.txtCodBreve.Location = New System.Drawing.Point(111, 31)
-        Me.txtCodBreve.Name = "txtCodBreve"
-        Me.txtCodBreve.Size = New System.Drawing.Size(100, 20)
-        Me.txtCodBreve.TabIndex = 1
+        Me.txtCodProveedor.Location = New System.Drawing.Point(148, 38)
+        Me.txtCodProveedor.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCodProveedor.Name = "txtCodProveedor"
+        Me.txtCodProveedor.ReadOnly = True
+        Me.txtCodProveedor.Size = New System.Drawing.Size(132, 22)
+        Me.txtCodProveedor.TabIndex = 1
+        Me.txtCodProveedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtSitioWeb
         '
-        Me.txtSitioWeb.Location = New System.Drawing.Point(515, 108)
+        Me.txtSitioWeb.Location = New System.Drawing.Point(687, 102)
+        Me.txtSitioWeb.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtSitioWeb.MaxLength = 100
         Me.txtSitioWeb.Name = "txtSitioWeb"
-        Me.txtSitioWeb.Size = New System.Drawing.Size(144, 20)
+        Me.txtSitioWeb.Size = New System.Drawing.Size(191, 22)
         Me.txtSitioWeb.TabIndex = 7
         '
-        'Label2
+        'lblSitioWeb
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(416, 111)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(53, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Sitio Web"
+        Me.lblSitioWeb.AutoSize = True
+        Me.lblSitioWeb.Location = New System.Drawing.Point(601, 104)
+        Me.lblSitioWeb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblSitioWeb.Name = "lblSitioWeb"
+        Me.lblSitioWeb.Size = New System.Drawing.Size(68, 17)
+        Me.lblSitioWeb.TabIndex = 2
+        Me.lblSitioWeb.Text = "Sitio Web"
         '
         'txtDireccion
         '
-        Me.txtDireccion.Location = New System.Drawing.Point(111, 108)
+        Me.txtDireccion.Location = New System.Drawing.Point(148, 133)
+        Me.txtDireccion.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtDireccion.MaxLength = 200
         Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(282, 20)
+        Me.txtDireccion.Size = New System.Drawing.Size(375, 22)
         Me.txtDireccion.TabIndex = 8
         '
-        'Label3
+        'lblDireccion
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(11, 111)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(52, 13)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Dirección"
+        Me.lblDireccion.AutoSize = True
+        Me.lblDireccion.Location = New System.Drawing.Point(15, 137)
+        Me.lblDireccion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblDireccion.Name = "lblDireccion"
+        Me.lblDireccion.Size = New System.Drawing.Size(67, 17)
+        Me.lblDireccion.TabIndex = 4
+        Me.lblDireccion.Text = "Dirección"
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(111, 82)
+        Me.txtEmail.Location = New System.Drawing.Point(148, 101)
+        Me.txtEmail.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtEmail.MaxLength = 100
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(282, 20)
+        Me.txtEmail.Size = New System.Drawing.Size(375, 22)
         Me.txtEmail.TabIndex = 3
         '
-        'Label4
+        'lblCorreo
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(10, 85)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(32, 13)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Email"
+        Me.lblCorreo.AutoSize = True
+        Me.lblCorreo.Location = New System.Drawing.Point(13, 105)
+        Me.lblCorreo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCorreo.Name = "lblCorreo"
+        Me.lblCorreo.Size = New System.Drawing.Size(42, 17)
+        Me.lblCorreo.TabIndex = 6
+        Me.lblCorreo.Text = "Email"
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(515, 82)
+        Me.txtTelefono.Location = New System.Drawing.Point(687, 71)
+        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTelefono.MaxLength = 20
         Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(100, 20)
+        Me.txtTelefono.Size = New System.Drawing.Size(132, 22)
         Me.txtTelefono.TabIndex = 5
         '
-        'Label5
+        'lblTelefonoProv
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(414, 85)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(101, 13)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Teléfono Proveedor"
+        Me.lblTelefonoProv.AutoSize = True
+        Me.lblTelefonoProv.Location = New System.Drawing.Point(535, 73)
+        Me.lblTelefonoProv.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTelefonoProv.Name = "lblTelefonoProv"
+        Me.lblTelefonoProv.Size = New System.Drawing.Size(134, 17)
+        Me.lblTelefonoProv.TabIndex = 8
+        Me.lblTelefonoProv.Text = "Teléfono Proveedor"
         '
         'txtNombreProvee
         '
-        Me.txtNombreProvee.Location = New System.Drawing.Point(111, 57)
+        Me.txtNombreProvee.Location = New System.Drawing.Point(148, 70)
+        Me.txtNombreProvee.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNombreProvee.MaxLength = 50
         Me.txtNombreProvee.Name = "txtNombreProvee"
-        Me.txtNombreProvee.Size = New System.Drawing.Size(282, 20)
+        Me.txtNombreProvee.Size = New System.Drawing.Size(375, 22)
         Me.txtNombreProvee.TabIndex = 2
         '
-        'Label6
+        'lblNombreProv
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(10, 60)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(96, 13)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Nombre Proveedor"
+        Me.lblNombreProv.AutoSize = True
+        Me.lblNombreProv.Location = New System.Drawing.Point(13, 74)
+        Me.lblNombreProv.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblNombreProv.Name = "lblNombreProv"
+        Me.lblNombreProv.Size = New System.Drawing.Size(128, 17)
+        Me.lblNombreProv.TabIndex = 10
+        Me.lblNombreProv.Text = "Nombre Proveedor"
         '
-        'dtProveedores
+        'dgvProveedores
         '
-        Me.dtProveedores.AllowUserToAddRows = False
-        Me.dtProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
-        Me.dtProveedores.BackgroundColor = System.Drawing.Color.White
-        Me.dtProveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.dtProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtProveedores.GridColor = System.Drawing.Color.White
-        Me.dtProveedores.Location = New System.Drawing.Point(9, 54)
-        Me.dtProveedores.Name = "dtProveedores"
-        Me.dtProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtProveedores.Size = New System.Drawing.Size(657, 256)
-        Me.dtProveedores.TabIndex = 12
+        Me.dgvProveedores.AllowUserToAddRows = False
+        Me.dgvProveedores.AllowUserToDeleteRows = False
+        Me.dgvProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
+        Me.dgvProveedores.BackgroundColor = System.Drawing.Color.White
+        Me.dgvProveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProveedores.GridColor = System.Drawing.Color.White
+        Me.dgvProveedores.Location = New System.Drawing.Point(12, 66)
+        Me.dgvProveedores.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgvProveedores.Name = "dgvProveedores"
+        Me.dgvProveedores.ReadOnly = True
+        Me.dgvProveedores.RowHeadersWidth = 51
+        Me.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvProveedores.Size = New System.Drawing.Size(516, 455)
+        Me.dgvProveedores.TabIndex = 12
         '
-        'GroupBox1
+        'gbxInformacion
         '
-        Me.GroupBox1.Controls.Add(Me.txtIdTribu)
-        Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Controls.Add(Me.btnBuscarCate)
-        Me.GroupBox1.Controls.Add(Me.lblCodCategoria)
-        Me.GroupBox1.Controls.Add(Me.txtCategoria)
-        Me.GroupBox1.Controls.Add(Me.Label10)
-        Me.GroupBox1.Controls.Add(Me.lblCodProveedor)
-        Me.GroupBox1.Controls.Add(Me.txtTelContacto)
-        Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.txtContactoPrincipal)
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.btnGuardar)
-        Me.GroupBox1.Controls.Add(Me.btnModificar)
-        Me.GroupBox1.Controls.Add(Me.btnCrear)
-        Me.GroupBox1.Controls.Add(Me.txtCodBreve)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.txtDireccion)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.txtEmail)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.txtSitioWeb)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.txtTelefono)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.txtNombreProvee)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(672, 197)
-        Me.GroupBox1.TabIndex = 13
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Información de Proveedor"
+        Me.gbxInformacion.Controls.Add(Me.lblEstado)
+        Me.gbxInformacion.Controls.Add(Me.cbxCategoria)
+        Me.gbxInformacion.Controls.Add(Me.txtCodBreve)
+        Me.gbxInformacion.Controls.Add(Me.Label9)
+        Me.gbxInformacion.Controls.Add(Me.lblCodeTerminoPago)
+        Me.gbxInformacion.Controls.Add(Me.btnBuscarTerminoPago)
+        Me.gbxInformacion.Controls.Add(Me.txtIdTribu)
+        Me.gbxInformacion.Controls.Add(Me.lblIdTrib)
+        Me.gbxInformacion.Controls.Add(Me.lblCategoriaProv)
+        Me.gbxInformacion.Controls.Add(Me.txtCodigoTerminoPago)
+        Me.gbxInformacion.Controls.Add(Me.lblTerminoPago)
+        Me.gbxInformacion.Controls.Add(Me.btnGuardar)
+        Me.gbxInformacion.Controls.Add(Me.btnModificar)
+        Me.gbxInformacion.Controls.Add(Me.btnNuevo)
+        Me.gbxInformacion.Controls.Add(Me.txtCodProveedor)
+        Me.gbxInformacion.Controls.Add(Me.lblCodeProveedor)
+        Me.gbxInformacion.Controls.Add(Me.txtDireccion)
+        Me.gbxInformacion.Controls.Add(Me.lblDireccion)
+        Me.gbxInformacion.Controls.Add(Me.txtEmail)
+        Me.gbxInformacion.Controls.Add(Me.lblCorreo)
+        Me.gbxInformacion.Controls.Add(Me.txtSitioWeb)
+        Me.gbxInformacion.Controls.Add(Me.lblSitioWeb)
+        Me.gbxInformacion.Controls.Add(Me.txtTelefono)
+        Me.gbxInformacion.Controls.Add(Me.lblTelefonoProv)
+        Me.gbxInformacion.Controls.Add(Me.txtNombreProvee)
+        Me.gbxInformacion.Controls.Add(Me.lblNombreProv)
+        Me.gbxInformacion.Location = New System.Drawing.Point(16, 15)
+        Me.gbxInformacion.Margin = New System.Windows.Forms.Padding(4)
+        Me.gbxInformacion.Name = "gbxInformacion"
+        Me.gbxInformacion.Padding = New System.Windows.Forms.Padding(4)
+        Me.gbxInformacion.Size = New System.Drawing.Size(896, 242)
+        Me.gbxInformacion.TabIndex = 13
+        Me.gbxInformacion.TabStop = False
+        Me.gbxInformacion.Text = "Información de Proveedor"
         '
-        'btnBuscarCate
+        'lblEstado
         '
-        Me.btnBuscarCate.BackColor = System.Drawing.Color.Transparent
-        Me.btnBuscarCate.BackgroundImage = CType(resources.GetObject("btnBuscarCate.BackgroundImage"), System.Drawing.Image)
-        Me.btnBuscarCate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnBuscarCate.FlatAppearance.BorderSize = 0
-        Me.btnBuscarCate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarCate.Location = New System.Drawing.Point(373, 139)
-        Me.btnBuscarCate.Name = "btnBuscarCate"
-        Me.btnBuscarCate.Size = New System.Drawing.Size(20, 17)
-        Me.btnBuscarCate.TabIndex = 21
-        Me.btnBuscarCate.UseVisualStyleBackColor = False
+        Me.lblEstado.AutoSize = True
+        Me.lblEstado.Location = New System.Drawing.Point(335, 218)
+        Me.lblEstado.Name = "lblEstado"
+        Me.lblEstado.Size = New System.Drawing.Size(0, 17)
+        Me.lblEstado.TabIndex = 29
+        Me.lblEstado.Visible = False
         '
-        'lblCodCategoria
+        'cbxCategoria
         '
-        Me.lblCodCategoria.AutoSize = True
-        Me.lblCodCategoria.Location = New System.Drawing.Point(263, 167)
-        Me.lblCodCategoria.Name = "lblCodCategoria"
-        Me.lblCodCategoria.Size = New System.Drawing.Size(47, 13)
-        Me.lblCodCategoria.TabIndex = 15
-        Me.lblCodCategoria.Text = "codCate"
-        Me.lblCodCategoria.Visible = False
+        Me.cbxCategoria.DropDownWidth = 170
+        Me.cbxCategoria.FormattingEnabled = True
+        Me.cbxCategoria.Location = New System.Drawing.Point(392, 166)
+        Me.cbxCategoria.Name = "cbxCategoria"
+        Me.cbxCategoria.Size = New System.Drawing.Size(131, 24)
+        Me.cbxCategoria.TabIndex = 28
         '
-        'txtCategoria
+        'txtCodBreve
         '
-        Me.txtCategoria.Location = New System.Drawing.Point(289, 136)
-        Me.txtCategoria.Name = "txtCategoria"
-        Me.txtCategoria.Size = New System.Drawing.Size(78, 20)
-        Me.txtCategoria.TabIndex = 20
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(231, 139)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(52, 13)
-        Me.Label10.TabIndex = 19
-        Me.Label10.Text = "Categoria"
-        '
-        'lblCodProveedor
-        '
-        Me.lblCodProveedor.AutoSize = True
-        Me.lblCodProveedor.Location = New System.Drawing.Point(361, 167)
-        Me.lblCodProveedor.Name = "lblCodProveedor"
-        Me.lblCodProveedor.Size = New System.Drawing.Size(60, 13)
-        Me.lblCodProveedor.TabIndex = 18
-        Me.lblCodProveedor.Text = "CodProvee"
-        Me.lblCodProveedor.Visible = False
-        '
-        'txtTelContacto
-        '
-        Me.txtTelContacto.Location = New System.Drawing.Point(515, 57)
-        Me.txtTelContacto.Name = "txtTelContacto"
-        Me.txtTelContacto.Size = New System.Drawing.Size(144, 20)
-        Me.txtTelContacto.TabIndex = 6
+        Me.txtCodBreve.Location = New System.Drawing.Point(392, 39)
+        Me.txtCodBreve.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCodBreve.MaxLength = 50
+        Me.txtCodBreve.Name = "txtCodBreve"
+        Me.txtCodBreve.Size = New System.Drawing.Size(132, 22)
+        Me.txtCodBreve.TabIndex = 27
+        Me.txtCodBreve.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(414, 60)
+        Me.Label9.Location = New System.Drawing.Point(299, 40)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(95, 13)
-        Me.Label9.TabIndex = 17
-        Me.Label9.Text = "Teléfono Contacto"
+        Me.Label9.Size = New System.Drawing.Size(78, 17)
+        Me.Label9.TabIndex = 26
+        Me.Label9.Text = "Cód. Breve"
         '
-        'txtContactoPrincipal
+        'lblCodeTerminoPago
         '
-        Me.txtContactoPrincipal.Location = New System.Drawing.Point(515, 31)
-        Me.txtContactoPrincipal.Name = "txtContactoPrincipal"
-        Me.txtContactoPrincipal.Size = New System.Drawing.Size(144, 20)
-        Me.txtContactoPrincipal.TabIndex = 4
+        Me.lblCodeTerminoPago.AutoSize = True
+        Me.lblCodeTerminoPago.Location = New System.Drawing.Point(580, 19)
+        Me.lblCodeTerminoPago.Name = "lblCodeTerminoPago"
+        Me.lblCodeTerminoPago.Size = New System.Drawing.Size(0, 17)
+        Me.lblCodeTerminoPago.TabIndex = 25
+        Me.lblCodeTerminoPago.Visible = False
         '
-        'Label8
+        'btnBuscarTerminoPago
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(414, 34)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(93, 13)
-        Me.Label8.TabIndex = 15
-        Me.Label8.Text = "Contacto Principal"
+        Me.btnBuscarTerminoPago.BackColor = System.Drawing.Color.Transparent
+        Me.btnBuscarTerminoPago.BackgroundImage = CType(resources.GetObject("btnBuscarTerminoPago.BackgroundImage"), System.Drawing.Image)
+        Me.btnBuscarTerminoPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBuscarTerminoPago.FlatAppearance.BorderSize = 0
+        Me.btnBuscarTerminoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarTerminoPago.Location = New System.Drawing.Point(851, 39)
+        Me.btnBuscarTerminoPago.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnBuscarTerminoPago.Name = "btnBuscarTerminoPago"
+        Me.btnBuscarTerminoPago.Size = New System.Drawing.Size(27, 21)
+        Me.btnBuscarTerminoPago.TabIndex = 24
+        Me.btnBuscarTerminoPago.UseVisualStyleBackColor = False
+        '
+        'txtIdTribu
+        '
+        Me.txtIdTribu.Location = New System.Drawing.Point(148, 166)
+        Me.txtIdTribu.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtIdTribu.MaxLength = 20
+        Me.txtIdTribu.Name = "txtIdTribu"
+        Me.txtIdTribu.Size = New System.Drawing.Size(151, 22)
+        Me.txtIdTribu.TabIndex = 23
+        '
+        'lblIdTrib
+        '
+        Me.lblIdTrib.AutoSize = True
+        Me.lblIdTrib.Location = New System.Drawing.Point(17, 171)
+        Me.lblIdTrib.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblIdTrib.Name = "lblIdTrib"
+        Me.lblIdTrib.Size = New System.Drawing.Size(88, 17)
+        Me.lblIdTrib.TabIndex = 22
+        Me.lblIdTrib.Text = "Id. Tributario"
+        '
+        'lblCategoriaProv
+        '
+        Me.lblCategoriaProv.AutoSize = True
+        Me.lblCategoriaProv.Location = New System.Drawing.Point(308, 171)
+        Me.lblCategoriaProv.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCategoriaProv.Name = "lblCategoriaProv"
+        Me.lblCategoriaProv.Size = New System.Drawing.Size(69, 17)
+        Me.lblCategoriaProv.TabIndex = 19
+        Me.lblCategoriaProv.Text = "Categoria"
+        '
+        'txtCodigoTerminoPago
+        '
+        Me.txtCodigoTerminoPago.Location = New System.Drawing.Point(687, 38)
+        Me.txtCodigoTerminoPago.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCodigoTerminoPago.MaxLength = 20
+        Me.txtCodigoTerminoPago.Name = "txtCodigoTerminoPago"
+        Me.txtCodigoTerminoPago.Size = New System.Drawing.Size(156, 22)
+        Me.txtCodigoTerminoPago.TabIndex = 4
+        '
+        'lblTerminoPago
+        '
+        Me.lblTerminoPago.AutoSize = True
+        Me.lblTerminoPago.Location = New System.Drawing.Point(552, 42)
+        Me.lblTerminoPago.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTerminoPago.Name = "lblTerminoPago"
+        Me.lblTerminoPago.Size = New System.Drawing.Size(117, 17)
+        Me.lblTerminoPago.TabIndex = 15
+        Me.lblTerminoPago.Text = "Término de Pago"
         '
         'btnGuardar
         '
@@ -292,9 +353,10 @@ Partial Class A_Proveedor
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(584, 162)
+        Me.btnGuardar.Location = New System.Drawing.Point(779, 199)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.Size = New System.Drawing.Size(100, 28)
         Me.btnGuardar.TabIndex = 14
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
@@ -305,138 +367,196 @@ Partial Class A_Proveedor
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(506, 162)
+        Me.btnModificar.Location = New System.Drawing.Point(675, 199)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar.Size = New System.Drawing.Size(100, 28)
         Me.btnModificar.TabIndex = 13
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = False
         Me.btnModificar.Visible = False
         '
-        'btnCrear
+        'btnNuevo
         '
-        Me.btnCrear.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnCrear.FlatAppearance.BorderSize = 0
-        Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(427, 162)
-        Me.btnCrear.Name = "btnCrear"
-        Me.btnCrear.Size = New System.Drawing.Size(75, 23)
-        Me.btnCrear.TabIndex = 12
-        Me.btnCrear.Text = "Crear Nuevo"
-        Me.btnCrear.UseVisualStyleBackColor = False
-        Me.btnCrear.Visible = False
+        Me.btnNuevo.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnNuevo.FlatAppearance.BorderSize = 0
+        Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNuevo.ForeColor = System.Drawing.Color.White
+        Me.btnNuevo.Location = New System.Drawing.Point(569, 199)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(100, 28)
+        Me.btnNuevo.TabIndex = 12
+        Me.btnNuevo.Text = "Crear Nuevo"
+        Me.btnNuevo.UseVisualStyleBackColor = False
+        Me.btnNuevo.Visible = False
         '
-        'GroupBox2
+        'gbxListado
         '
-        Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Controls.Add(Me.txtNombreBusqueda)
-        Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.dtProveedores)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 215)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(672, 318)
-        Me.GroupBox2.TabIndex = 14
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Proveedores Registrados"
+        Me.gbxListado.Controls.Add(Me.btnLimpiarBusqueda)
+        Me.gbxListado.Controls.Add(Me.txtNombreBusqueda)
+        Me.gbxListado.Controls.Add(Me.lblBuscarProv)
+        Me.gbxListado.Controls.Add(Me.dgvProveedores)
+        Me.gbxListado.Location = New System.Drawing.Point(920, 15)
+        Me.gbxListado.Margin = New System.Windows.Forms.Padding(4)
+        Me.gbxListado.Name = "gbxListado"
+        Me.gbxListado.Padding = New System.Windows.Forms.Padding(4)
+        Me.gbxListado.Size = New System.Drawing.Size(543, 529)
+        Me.gbxListado.TabIndex = 14
+        Me.gbxListado.TabStop = False
+        Me.gbxListado.Text = "Proveedores Registrados"
         '
-        'Button1
+        'btnLimpiarBusqueda
         '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(647, 29)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(18, 17)
-        Me.Button1.TabIndex = 15
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnLimpiarBusqueda.BackColor = System.Drawing.Color.Transparent
+        Me.btnLimpiarBusqueda.BackgroundImage = CType(resources.GetObject("btnLimpiarBusqueda.BackgroundImage"), System.Drawing.Image)
+        Me.btnLimpiarBusqueda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnLimpiarBusqueda.FlatAppearance.BorderSize = 0
+        Me.btnLimpiarBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLimpiarBusqueda.Location = New System.Drawing.Point(487, 36)
+        Me.btnLimpiarBusqueda.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda"
+        Me.btnLimpiarBusqueda.Size = New System.Drawing.Size(24, 21)
+        Me.btnLimpiarBusqueda.TabIndex = 15
+        Me.btnLimpiarBusqueda.UseVisualStyleBackColor = False
         '
         'txtNombreBusqueda
         '
-        Me.txtNombreBusqueda.Location = New System.Drawing.Point(397, 28)
+        Me.txtNombreBusqueda.Location = New System.Drawing.Point(153, 34)
+        Me.txtNombreBusqueda.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNombreBusqueda.MaxLength = 50
         Me.txtNombreBusqueda.Name = "txtNombreBusqueda"
-        Me.txtNombreBusqueda.Size = New System.Drawing.Size(246, 20)
+        Me.txtNombreBusqueda.Size = New System.Drawing.Size(327, 22)
         Me.txtNombreBusqueda.TabIndex = 14
         '
-        'Label7
+        'lblBuscarProv
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(301, 31)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(95, 13)
-        Me.Label7.TabIndex = 13
-        Me.Label7.Text = "Buscar Proveedor:"
+        Me.lblBuscarProv.AutoSize = True
+        Me.lblBuscarProv.Location = New System.Drawing.Point(19, 36)
+        Me.lblBuscarProv.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblBuscarProv.Name = "lblBuscarProv"
+        Me.lblBuscarProv.Size = New System.Drawing.Size(128, 17)
+        Me.lblBuscarProv.TabIndex = 13
+        Me.lblBuscarProv.Text = "Nombre Proveedor"
         '
-        'Label11
+        'gbxContactos
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(13, 139)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(66, 13)
-        Me.Label11.TabIndex = 22
-        Me.Label11.Text = "Id. Tributario"
+        Me.gbxContactos.Controls.Add(Me.dgvDetalleContactos)
+        Me.gbxContactos.Location = New System.Drawing.Point(16, 265)
+        Me.gbxContactos.Margin = New System.Windows.Forms.Padding(4)
+        Me.gbxContactos.Name = "gbxContactos"
+        Me.gbxContactos.Padding = New System.Windows.Forms.Padding(4)
+        Me.gbxContactos.Size = New System.Drawing.Size(896, 279)
+        Me.gbxContactos.TabIndex = 15
+        Me.gbxContactos.TabStop = False
+        Me.gbxContactos.Text = "Contactos Principales"
         '
-        'txtIdTribu
+        'dgvDetalleContactos
         '
-        Me.txtIdTribu.Location = New System.Drawing.Point(111, 135)
-        Me.txtIdTribu.Name = "txtIdTribu"
-        Me.txtIdTribu.Size = New System.Drawing.Size(114, 20)
-        Me.txtIdTribu.TabIndex = 23
+        Me.dgvDetalleContactos.BackgroundColor = System.Drawing.Color.White
+        Me.dgvDetalleContactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvDetalleContactos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.Nombre, Me.Telefono, Me.Correo})
+        Me.dgvDetalleContactos.GridColor = System.Drawing.Color.White
+        Me.dgvDetalleContactos.Location = New System.Drawing.Point(8, 23)
+        Me.dgvDetalleContactos.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgvDetalleContactos.Name = "dgvDetalleContactos"
+        Me.dgvDetalleContactos.RowHeadersWidth = 51
+        Me.dgvDetalleContactos.Size = New System.Drawing.Size(880, 249)
+        Me.dgvDetalleContactos.TabIndex = 0
+        '
+        'codigo
+        '
+        Me.codigo.HeaderText = "Codigo"
+        Me.codigo.MinimumWidth = 6
+        Me.codigo.Name = "codigo"
+        Me.codigo.Width = 125
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre Contacto"
+        Me.Nombre.MaxInputLength = 100
+        Me.Nombre.MinimumWidth = 6
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.Width = 240
+        '
+        'Telefono
+        '
+        Me.Telefono.HeaderText = "Teléfono"
+        Me.Telefono.MaxInputLength = 40
+        Me.Telefono.MinimumWidth = 6
+        Me.Telefono.Name = "Telefono"
+        Me.Telefono.Width = 115
+        '
+        'Correo
+        '
+        Me.Correo.HeaderText = "Correo"
+        Me.Correo.MaxInputLength = 80
+        Me.Correo.MinimumWidth = 6
+        Me.Correo.Name = "Correo"
+        Me.Correo.Width = 150
         '
         'A_Proveedor
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(692, 541)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.ClientSize = New System.Drawing.Size(1476, 555)
+        Me.Controls.Add(Me.gbxContactos)
+        Me.Controls.Add(Me.gbxListado)
+        Me.Controls.Add(Me.gbxInformacion)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "A_Proveedor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mantenimiento Proveedores"
-        CType(Me.dtProveedores, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        CType(Me.dgvProveedores, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbxInformacion.ResumeLayout(False)
+        Me.gbxInformacion.PerformLayout()
+        Me.gbxListado.ResumeLayout(False)
+        Me.gbxListado.PerformLayout()
+        Me.gbxContactos.ResumeLayout(False)
+        CType(Me.dgvDetalleContactos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents txtCodBreve As TextBox
+    Friend WithEvents lblCodeProveedor As Label
+    Friend WithEvents txtCodProveedor As TextBox
     Friend WithEvents txtSitioWeb As TextBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblSitioWeb As Label
     Friend WithEvents txtDireccion As TextBox
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblDireccion As Label
     Friend WithEvents txtEmail As TextBox
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblCorreo As Label
     Friend WithEvents txtTelefono As TextBox
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lblTelefonoProv As Label
     Friend WithEvents txtNombreProvee As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents dtProveedores As DataGridView
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents lblNombreProv As Label
+    Friend WithEvents dgvProveedores As DataGridView
+    Friend WithEvents gbxInformacion As GroupBox
+    Friend WithEvents gbxListado As GroupBox
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnModificar As Button
-    Friend WithEvents btnCrear As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnNuevo As Button
+    Friend WithEvents btnLimpiarBusqueda As Button
     Friend WithEvents txtNombreBusqueda As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents txtTelContacto As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents txtContactoPrincipal As TextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents lblCodProveedor As Label
-    Friend WithEvents txtCategoria As TextBox
-    Friend WithEvents Label10 As Label
-    Friend WithEvents lblCodCategoria As Label
-    Friend WithEvents btnBuscarCate As Button
+    Friend WithEvents lblBuscarProv As Label
+    Friend WithEvents txtCodigoTerminoPago As TextBox
+    Friend WithEvents lblTerminoPago As Label
+    Friend WithEvents lblCategoriaProv As Label
     Friend WithEvents txtIdTribu As TextBox
-    Friend WithEvents Label11 As Label
+    Friend WithEvents lblIdTrib As Label
+    Friend WithEvents gbxContactos As GroupBox
+    Friend WithEvents dgvDetalleContactos As DataGridView
+    Friend WithEvents lblCodeTerminoPago As Label
+    Friend WithEvents btnBuscarTerminoPago As Button
+    Friend WithEvents txtCodBreve As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents cbxCategoria As ComboBox
+    Friend WithEvents codigo As DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Telefono As DataGridViewTextBoxColumn
+    Friend WithEvents Correo As DataGridViewTextBoxColumn
+    Friend WithEvents lblEstado As Label
 End Class

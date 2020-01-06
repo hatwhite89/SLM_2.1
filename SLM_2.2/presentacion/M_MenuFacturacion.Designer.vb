@@ -24,12 +24,16 @@ Partial Class M_MenuFacturacion
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_MenuFacturacion))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnTerminoPago = New System.Windows.Forms.Button()
         Me.lblTerminoPago = New System.Windows.Forms.Label()
-        Me.btnSede = New System.Windows.Forms.Button()
-        Me.lblSede = New System.Windows.Forms.Label()
-        Me.btnSucursal = New System.Windows.Forms.Button()
-        Me.lblsucursal = New System.Windows.Forms.Label()
+        Me.lblGrupoExamen = New System.Windows.Forms.Label()
+        Me.btnGrupoExamen = New System.Windows.Forms.Button()
+        Me.btnItems = New System.Windows.Forms.Button()
+        Me.lblItems = New System.Windows.Forms.Label()
+        Me.btnContactos = New System.Windows.Forms.Button()
+        Me.lblContactos = New System.Windows.Forms.Label()
+        Me.btnRecibos = New System.Windows.Forms.Button()
+        Me.lblRecibos = New System.Windows.Forms.Label()
+        Me.btnTerminoPago = New System.Windows.Forms.Button()
         Me.lblpaciente = New System.Windows.Forms.Label()
         Me.btnCliente = New System.Windows.Forms.Button()
         Me.lblcotizacion = New System.Windows.Forms.Label()
@@ -41,12 +45,16 @@ Partial Class M_MenuFacturacion
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.btnTerminoPago)
         Me.GroupBox1.Controls.Add(Me.lblTerminoPago)
-        Me.GroupBox1.Controls.Add(Me.btnSede)
-        Me.GroupBox1.Controls.Add(Me.lblSede)
-        Me.GroupBox1.Controls.Add(Me.btnSucursal)
-        Me.GroupBox1.Controls.Add(Me.lblsucursal)
+        Me.GroupBox1.Controls.Add(Me.lblGrupoExamen)
+        Me.GroupBox1.Controls.Add(Me.btnGrupoExamen)
+        Me.GroupBox1.Controls.Add(Me.btnItems)
+        Me.GroupBox1.Controls.Add(Me.lblItems)
+        Me.GroupBox1.Controls.Add(Me.btnContactos)
+        Me.GroupBox1.Controls.Add(Me.lblContactos)
+        Me.GroupBox1.Controls.Add(Me.btnRecibos)
+        Me.GroupBox1.Controls.Add(Me.lblRecibos)
+        Me.GroupBox1.Controls.Add(Me.btnTerminoPago)
         Me.GroupBox1.Controls.Add(Me.lblpaciente)
         Me.GroupBox1.Controls.Add(Me.btnCliente)
         Me.GroupBox1.Controls.Add(Me.lblcotizacion)
@@ -57,10 +65,114 @@ Partial Class M_MenuFacturacion
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(491, 411)
+        Me.GroupBox1.Size = New System.Drawing.Size(508, 411)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Menú Módulo Facturación"
+        '
+        'lblTerminoPago
+        '
+        Me.lblTerminoPago.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblTerminoPago.Location = New System.Drawing.Point(220, 216)
+        Me.lblTerminoPago.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTerminoPago.Name = "lblTerminoPago"
+        Me.lblTerminoPago.Size = New System.Drawing.Size(72, 44)
+        Me.lblTerminoPago.TabIndex = 26
+        Me.lblTerminoPago.Text = "Term. de Pago"
+        Me.lblTerminoPago.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblGrupoExamen
+        '
+        Me.lblGrupoExamen.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblGrupoExamen.Location = New System.Drawing.Point(26, 216)
+        Me.lblGrupoExamen.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblGrupoExamen.Name = "lblGrupoExamen"
+        Me.lblGrupoExamen.Size = New System.Drawing.Size(72, 44)
+        Me.lblGrupoExamen.TabIndex = 25
+        Me.lblGrupoExamen.Text = "Grupo de Items"
+        Me.lblGrupoExamen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnGrupoExamen
+        '
+        Me.btnGrupoExamen.BackgroundImage = CType(resources.GetObject("btnGrupoExamen.BackgroundImage"), System.Drawing.Image)
+        Me.btnGrupoExamen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnGrupoExamen.FlatAppearance.BorderSize = 0
+        Me.btnGrupoExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGrupoExamen.Location = New System.Drawing.Point(21, 144)
+        Me.btnGrupoExamen.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnGrupoExamen.Name = "btnGrupoExamen"
+        Me.btnGrupoExamen.Size = New System.Drawing.Size(80, 70)
+        Me.btnGrupoExamen.TabIndex = 24
+        Me.btnGrupoExamen.UseVisualStyleBackColor = True
+        '
+        'btnItems
+        '
+        Me.btnItems.BackgroundImage = CType(resources.GetObject("btnItems.BackgroundImage"), System.Drawing.Image)
+        Me.btnItems.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnItems.FlatAppearance.BorderSize = 0
+        Me.btnItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnItems.Location = New System.Drawing.Point(402, 28)
+        Me.btnItems.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnItems.Name = "btnItems"
+        Me.btnItems.Size = New System.Drawing.Size(80, 70)
+        Me.btnItems.TabIndex = 22
+        Me.btnItems.UseVisualStyleBackColor = True
+        '
+        'lblItems
+        '
+        Me.lblItems.AutoSize = True
+        Me.lblItems.Location = New System.Drawing.Point(421, 102)
+        Me.lblItems.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblItems.Name = "lblItems"
+        Me.lblItems.Size = New System.Drawing.Size(41, 17)
+        Me.lblItems.TabIndex = 21
+        Me.lblItems.Text = "Items"
+        '
+        'btnContactos
+        '
+        Me.btnContactos.BackgroundImage = CType(resources.GetObject("btnContactos.BackgroundImage"), System.Drawing.Image)
+        Me.btnContactos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnContactos.FlatAppearance.BorderSize = 0
+        Me.btnContactos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnContactos.Location = New System.Drawing.Point(309, 27)
+        Me.btnContactos.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnContactos.Name = "btnContactos"
+        Me.btnContactos.Size = New System.Drawing.Size(80, 70)
+        Me.btnContactos.TabIndex = 20
+        Me.btnContactos.UseVisualStyleBackColor = True
+        '
+        'lblContactos
+        '
+        Me.lblContactos.AutoSize = True
+        Me.lblContactos.Location = New System.Drawing.Point(313, 101)
+        Me.lblContactos.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblContactos.Name = "lblContactos"
+        Me.lblContactos.Size = New System.Drawing.Size(71, 17)
+        Me.lblContactos.TabIndex = 19
+        Me.lblContactos.Text = "Contactos"
+        '
+        'btnRecibos
+        '
+        Me.btnRecibos.BackgroundImage = CType(resources.GetObject("btnRecibos.BackgroundImage"), System.Drawing.Image)
+        Me.btnRecibos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnRecibos.FlatAppearance.BorderSize = 0
+        Me.btnRecibos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRecibos.Location = New System.Drawing.Point(215, 27)
+        Me.btnRecibos.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnRecibos.Name = "btnRecibos"
+        Me.btnRecibos.Size = New System.Drawing.Size(80, 70)
+        Me.btnRecibos.TabIndex = 18
+        Me.btnRecibos.UseVisualStyleBackColor = True
+        '
+        'lblRecibos
+        '
+        Me.lblRecibos.AutoSize = True
+        Me.lblRecibos.Location = New System.Drawing.Point(228, 101)
+        Me.lblRecibos.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblRecibos.Name = "lblRecibos"
+        Me.lblRecibos.Size = New System.Drawing.Size(59, 17)
+        Me.lblRecibos.TabIndex = 17
+        Me.lblRecibos.Text = "Recibos"
         '
         'btnTerminoPago
         '
@@ -68,73 +180,17 @@ Partial Class M_MenuFacturacion
         Me.btnTerminoPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnTerminoPago.FlatAppearance.BorderSize = 0
         Me.btnTerminoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTerminoPago.Location = New System.Drawing.Point(119, 132)
+        Me.btnTerminoPago.Location = New System.Drawing.Point(215, 149)
         Me.btnTerminoPago.Margin = New System.Windows.Forms.Padding(4)
         Me.btnTerminoPago.Name = "btnTerminoPago"
         Me.btnTerminoPago.Size = New System.Drawing.Size(80, 70)
         Me.btnTerminoPago.TabIndex = 16
         Me.btnTerminoPago.UseVisualStyleBackColor = True
         '
-        'lblTerminoPago
-        '
-        Me.lblTerminoPago.AutoSize = True
-        Me.lblTerminoPago.Location = New System.Drawing.Point(111, 206)
-        Me.lblTerminoPago.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblTerminoPago.Name = "lblTerminoPago"
-        Me.lblTerminoPago.Size = New System.Drawing.Size(102, 17)
-        Me.lblTerminoPago.TabIndex = 15
-        Me.lblTerminoPago.Text = "Term. de Pago"
-        '
-        'btnSede
-        '
-        Me.btnSede.BackgroundImage = CType(resources.GetObject("btnSede.BackgroundImage"), System.Drawing.Image)
-        Me.btnSede.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnSede.FlatAppearance.BorderSize = 0
-        Me.btnSede.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSede.Location = New System.Drawing.Point(21, 132)
-        Me.btnSede.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnSede.Name = "btnSede"
-        Me.btnSede.Size = New System.Drawing.Size(80, 70)
-        Me.btnSede.TabIndex = 14
-        Me.btnSede.UseVisualStyleBackColor = True
-        '
-        'lblSede
-        '
-        Me.lblSede.AutoSize = True
-        Me.lblSede.Location = New System.Drawing.Point(40, 206)
-        Me.lblSede.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblSede.Name = "lblSede"
-        Me.lblSede.Size = New System.Drawing.Size(41, 17)
-        Me.lblSede.TabIndex = 13
-        Me.lblSede.Text = "Sede"
-        '
-        'btnSucursal
-        '
-        Me.btnSucursal.BackgroundImage = CType(resources.GetObject("btnSucursal.BackgroundImage"), System.Drawing.Image)
-        Me.btnSucursal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnSucursal.FlatAppearance.BorderSize = 0
-        Me.btnSucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSucursal.Location = New System.Drawing.Point(316, 27)
-        Me.btnSucursal.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnSucursal.Name = "btnSucursal"
-        Me.btnSucursal.Size = New System.Drawing.Size(80, 70)
-        Me.btnSucursal.TabIndex = 12
-        Me.btnSucursal.UseVisualStyleBackColor = True
-        '
-        'lblsucursal
-        '
-        Me.lblsucursal.AutoSize = True
-        Me.lblsucursal.Location = New System.Drawing.Point(325, 100)
-        Me.lblsucursal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblsucursal.Name = "lblsucursal"
-        Me.lblsucursal.Size = New System.Drawing.Size(63, 17)
-        Me.lblsucursal.TabIndex = 11
-        Me.lblsucursal.Text = "Sucursal"
-        '
         'lblpaciente
         '
         Me.lblpaciente.AutoSize = True
-        Me.lblpaciente.Location = New System.Drawing.Point(226, 100)
+        Me.lblpaciente.Location = New System.Drawing.Point(129, 223)
         Me.lblpaciente.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblpaciente.Name = "lblpaciente"
         Me.lblpaciente.Size = New System.Drawing.Size(70, 17)
@@ -147,10 +203,10 @@ Partial Class M_MenuFacturacion
         Me.btnCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCliente.FlatAppearance.BorderSize = 0
         Me.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCliente.Location = New System.Drawing.Point(219, 27)
+        Me.btnCliente.Location = New System.Drawing.Point(122, 144)
         Me.btnCliente.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCliente.Name = "btnCliente"
-        Me.btnCliente.Size = New System.Drawing.Size(84, 72)
+        Me.btnCliente.Size = New System.Drawing.Size(80, 75)
         Me.btnCliente.TabIndex = 8
         Me.btnCliente.UseVisualStyleBackColor = True
         '
@@ -205,10 +261,11 @@ Partial Class M_MenuFacturacion
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(565, 477)
+        Me.ClientSize = New System.Drawing.Size(584, 477)
         Me.Controls.Add(Me.GroupBox1)
         Me.KeyPreview = True
         Me.Name = "M_MenuFacturacion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "M_MenuFacturacion"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -218,15 +275,19 @@ Partial Class M_MenuFacturacion
 
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnTerminoPago As Button
-    Friend WithEvents lblTerminoPago As Label
-    Friend WithEvents btnSede As Button
-    Friend WithEvents lblSede As Label
-    Friend WithEvents btnSucursal As Button
-    Friend WithEvents lblsucursal As Label
     Friend WithEvents lblpaciente As Label
     Friend WithEvents btnCliente As Button
     Friend WithEvents lblcotizacion As Label
     Friend WithEvents btnCotizacion As Button
     Friend WithEvents lblfacturacion As Label
     Friend WithEvents btnFacturacion As Button
+    Friend WithEvents btnGrupoExamen As Button
+    Friend WithEvents btnItems As Button
+    Friend WithEvents lblItems As Label
+    Friend WithEvents btnContactos As Button
+    Friend WithEvents lblContactos As Label
+    Friend WithEvents btnRecibos As Button
+    Friend WithEvents lblRecibos As Label
+    Friend WithEvents lblTerminoPago As Label
+    Friend WithEvents lblGrupoExamen As Label
 End Class

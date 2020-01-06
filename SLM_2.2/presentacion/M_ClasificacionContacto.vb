@@ -43,23 +43,22 @@
             e.Handled = True
         End If
     End Sub
+    Private Function sinDobleEspacio(ByVal cadena As String) As String
+        Dim texto As String = ""
+        Dim testArray() As String = Split(cadena)
+        For i As Integer = 0 To testArray.Length - 1
+            If testArray(i) <> "" Then
+                texto += testArray(i) + " "
+            End If
+        Next
+        Return RTrim(texto)
+    End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (rtxtcomentario.Text <> "" And txtcodigoTipo.Text <> "") Then
-                Dim testString As String = rtxtcomentario.Text()
-                Dim texto As String = ""
-                Dim testArray() As String = Split(testString)
-                Dim lastNonEmpty As Integer = -1
-                For i As Integer = 0 To testArray.Length - 1
-                    If testArray(i) <> "" Then
-                        lastNonEmpty += 1
-                        testArray(lastNonEmpty) = testArray(i)
-                        texto += testArray(i) + " "
-                    End If
-                Next
-                ReDim Preserve testArray(lastNonEmpty)
-                rtxtcomentario.Text() = RTrim(texto)
+            If (Trim(rtxtcomentario.Text) <> "" And Trim(txtcodigoTipo.Text) <> "" And txtcodigoTipo.BackColor = Color.White) Then
+
+                rtxtcomentario.Text = sinDobleEspacio(rtxtcomentario.Text)
 
                 Dim objClasif As New ClsClasificacionContacto
                 With objClasif
@@ -86,7 +85,7 @@
                 End If
 
             Else
-                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+                MsgBox("Debe ingresar los campos necesarios correctamente.", MsgBoxStyle.Critical, "Validación")
             End If
 
         Catch ex As Exception
@@ -96,20 +95,9 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (rtxtcomentario.Text <> "" And txtcodigoTipo.Text <> "" And txtcodigo.Text <> "") Then
-                Dim testString As String = rtxtcomentario.Text()
-                Dim texto As String = ""
-                Dim testArray() As String = Split(testString)
-                Dim lastNonEmpty As Integer = -1
-                For i As Integer = 0 To testArray.Length - 1
-                    If testArray(i) <> "" Then
-                        lastNonEmpty += 1
-                        testArray(lastNonEmpty) = testArray(i)
-                        texto += testArray(i) + " "
-                    End If
-                Next
-                ReDim Preserve testArray(lastNonEmpty)
-                rtxtcomentario.Text() = RTrim(texto)
+            If (Trim(rtxtcomentario.Text) <> "" And Trim(txtcodigoTipo.Text) <> "" And txtcodigoTipo.BackColor = Color.White) Then
+
+                rtxtcomentario.Text = sinDobleEspacio(rtxtcomentario.Text)
 
                 Dim objClasif As New ClsClasificacionContacto
                 With objClasif
@@ -137,7 +125,7 @@
                 End If
 
             Else
-                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+                MsgBox("Debe ingresar los campos necesarios correctamente.", MsgBoxStyle.Critical, "Validación")
             End If
 
         Catch ex As Exception

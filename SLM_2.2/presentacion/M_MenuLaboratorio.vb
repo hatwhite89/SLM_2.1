@@ -1,6 +1,7 @@
 ﻿Public Class M_MenuLaboratorio
     Private Sub btnCliente_Click(sender As Object, e As EventArgs) Handles btnCliente.Click
-        M_Cliente.ShowDialog()
+        M_ListarClientes.lblForm.Text = "VerPaciente"
+        M_ListarClientes.ShowDialog()
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -12,5 +13,13 @@
     End Sub
     Private Sub btnExamenes_Click(sender As Object, e As EventArgs) Handles btnExamenes.Click
         E_DetalleExamenes.ShowDialog()
+    End Sub
+
+    Private Sub btnSede_Click(sender As Object, e As EventArgs) Handles btnSede.Click
+        M_Sede.ShowDialog()
+    End Sub
+
+    Private Sub btnSucursal_Click(sender As Object, e As EventArgs) Handles btnSucursal.Click
+        M_Sucursal.ShowDialog()
     End Sub
 End Class

@@ -55,7 +55,7 @@ Partial Class M_MaquinasLocales
         Me.gbxbusqueda.Size = New System.Drawing.Size(613, 413)
         Me.gbxbusqueda.TabIndex = 123
         Me.gbxbusqueda.TabStop = False
-        Me.gbxbusqueda.Text = "BUSCAR MAQUINAS LOCALES"
+        Me.gbxbusqueda.Text = "BUSCAR MÁQUINAS LOCALES"
         '
         'rtxtdescripcionB
         '
@@ -104,7 +104,7 @@ Partial Class M_MaquinasLocales
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(220, 17)
         Me.lbltotal.TabIndex = 114
-        Me.lbltotal.Text = "TOTAL DE MAQUINAS LOCALES"
+        Me.lbltotal.Text = "TOTAL DE MÁQUINAS LOCALES"
         '
         'gbxcaja
         '
@@ -122,7 +122,7 @@ Partial Class M_MaquinasLocales
         Me.gbxcaja.Size = New System.Drawing.Size(613, 171)
         Me.gbxcaja.TabIndex = 122
         Me.gbxcaja.TabStop = False
-        Me.gbxcaja.Text = "REGISTRAR MAQUINAS LOCALES"
+        Me.gbxcaja.Text = "REGISTRAR MÁQUINAS LOCALES"
         '
         'lblcode
         '
@@ -233,6 +233,7 @@ Partial Class M_MaquinasLocales
         Me.Controls.Add(Me.gbxcaja)
         Me.KeyPreview = True
         Me.Name = "M_MaquinasLocales"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Máquinas Locales"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()

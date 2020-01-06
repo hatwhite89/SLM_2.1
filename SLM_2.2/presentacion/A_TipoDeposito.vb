@@ -23,6 +23,7 @@
         frmDeposito.txtComision.Visible = False
         frmDeposito.lblComision.Visible = False
 
+
         frmDeposito.lblTipoDeposito.Text = "Deposito Bancario"
         Limpiar()
     End Sub
@@ -50,7 +51,5 @@
 
     End Sub
 
-    Private Sub frmTipoDeposito_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 End Class

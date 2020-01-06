@@ -63,10 +63,17 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -113,8 +120,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="negocio\ClsAccesoLaboratorio.vb" />
+    <Compile Include="negocio\ClsApertura.vb" />
     <Compile Include="negocio\ClsAreaLaboratorio.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
+    <Compile Include="negocio\ClsDetalleContactos.vb" />
     <Compile Include="negocio\ClsDetalleFacturaCompra.vb" />
     <Compile Include="negocio\ClsDetallePago.vb" />
     <Compile Include="negocio\ClsDetalleRecibo.vb" />
@@ -215,6 +224,12 @@
     <Compile Include="presentacion\A_Depositos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ListadoCheques.Designer.vb">
+      <DependentUpon>A_ListadoCheques.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListadoCheques.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListadoFacturaCompra.Designer.vb">
       <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>
     </Compile>
@@ -225,6 +240,12 @@
       <DependentUpon>A_ListarCategoriasProveedor.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ListarCategoriasProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ListarChequesHabilitados.Designer.vb">
+      <DependentUpon>A_ListarChequesHabilitados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarChequesHabilitados.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_ListarCuentas.Designer.vb">
@@ -263,6 +284,12 @@
     <Compile Include="presentacion\A_ListarPagos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ListarProveedores.Designer.vb">
+      <DependentUpon>A_ListarProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListarTerminoPago.Designer.vb">
       <DependentUpon>A_ListarTerminoPago.vb</DependentUpon>
     </Compile>
@@ -273,6 +300,18 @@
       <DependentUpon>A_ListarTipoClasificacion.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ListarTipoClasificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ListasPrecio.Designer.vb">
+      <DependentUpon>A_ListasPrecio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListasPrecio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_PrintCheque.Designer.vb">
+      <DependentUpon>A_PrintCheque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_PrintCheque.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_Proveedor.Designer.vb">
@@ -354,10 +393,10 @@
     <Compile Include="presentacion\A_FormaPago.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\A_MenuConta.Designer.vb">
-      <DependentUpon>A_MenuConta.vb</DependentUpon>
+    <Compile Include="presentacion\M_Apertura.Designer.vb">
+      <DependentUpon>M_Apertura.vb</DependentUpon>
     </Compile>
-    <Compile Include="presentacion\A_MenuConta.vb">
+    <Compile Include="presentacion\M_Apertura.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_BuscarCotizacion.Designer.vb">
@@ -426,6 +465,18 @@
     <Compile Include="presentacion\M_ClienteVentana.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_ComprobanteEntrega.Designer.vb">
+      <DependentUpon>M_ComprobanteEntrega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ComprobanteEntrega.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_CryComprobanteEntrega.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M_CryComprobanteEntrega.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="presentacion\M_Especialidad.Designer.vb">
       <DependentUpon>M_Especialidad.vb</DependentUpon>
     </Compile>
@@ -444,10 +495,34 @@
     <Compile Include="presentacion\M_InicioSesion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_ListadoSede.Designer.vb">
+      <DependentUpon>M_ListadoSede.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ListadoSede.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_ListarClientes.Designer.vb">
+      <DependentUpon>M_ListarClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ListarClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_ListarFactura.Designer.vb">
       <DependentUpon>M_ListarFactura.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_ListarFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_ListarMedicos.Designer.vb">
+      <DependentUpon>M_ListarMedicos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ListarMedicos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_ListarTerminoPago.Designer.vb">
+      <DependentUpon>M_ListarTerminoPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ListarTerminoPago.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_MaquinasLocales.Designer.vb">
@@ -540,11 +615,23 @@
     <Compile Include="presentacion\M_TipoTermino.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_VerPaciente.Designer.vb">
+      <DependentUpon>M_VerPaciente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_VerPaciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\prueba.Designer.vb">
       <DependentUpon>prueba.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\prueba.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaCheque.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VistaCheque.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -587,11 +674,17 @@
     <EmbeddedResource Include="presentacion\A_Depositos.resx">
       <DependentUpon>A_Depositos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListadoCheques.resx">
+      <DependentUpon>A_ListadoCheques.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoFacturaCompra.resx">
       <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarCategoriasProveedor.resx">
       <DependentUpon>A_ListarCategoriasProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarChequesHabilitados.resx">
+      <DependentUpon>A_ListarChequesHabilitados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarCuentas.resx">
       <DependentUpon>A_ListarCuentas.vb</DependentUpon>
@@ -611,20 +704,26 @@
     <EmbeddedResource Include="presentacion\A_ListarPagos.resx">
       <DependentUpon>A_ListarPagos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarProveedores.resx">
+      <DependentUpon>A_ListarProveedores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarTerminoPago.resx">
       <DependentUpon>A_ListarTerminoPago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarTipoClasificacion.resx">
       <DependentUpon>A_ListarTipoClasificacion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListasPrecio.resx">
+      <DependentUpon>A_ListasPrecio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_PrintCheque.resx">
+      <DependentUpon>A_PrintCheque.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Proveedor.resx">
       <DependentUpon>A_Proveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_FormaPago.resx">
       <DependentUpon>A_FormaPago.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\A_MenuConta.resx">
-      <DependentUpon>A_MenuConta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_ListarSubAreas.resx">
       <DependentUpon>E_ListarSubAreas.vb</DependentUpon>
@@ -655,6 +754,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_Unidad.resx">
       <DependentUpon>E_Unidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Apertura.resx">
+      <DependentUpon>M_Apertura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_BuscarCotizacion.resx">
       <DependentUpon>M_BuscarCotizacion.vb</DependentUpon>
@@ -689,6 +791,13 @@
     <EmbeddedResource Include="presentacion\M_ClienteVentana.resx">
       <DependentUpon>M_ClienteVentana.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ComprobanteEntrega.resx">
+      <DependentUpon>M_ComprobanteEntrega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_CryComprobanteEntrega.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>M_CryComprobanteEntrega.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Especialidad.resx">
       <DependentUpon>M_Especialidad.vb</DependentUpon>
     </EmbeddedResource>
@@ -698,8 +807,20 @@
     <EmbeddedResource Include="presentacion\M_InicioSesion.resx">
       <DependentUpon>M_InicioSesion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ListadoSede.resx">
+      <DependentUpon>M_ListadoSede.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ListarClientes.resx">
+      <DependentUpon>M_ListarClientes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ListarFactura.resx">
       <DependentUpon>M_ListarFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ListarMedicos.resx">
+      <DependentUpon>M_ListarMedicos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ListarTerminoPago.resx">
+      <DependentUpon>M_ListarTerminoPago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_MaquinasLocales.resx">
       <DependentUpon>M_MaquinasLocales.vb</DependentUpon>
@@ -746,8 +867,15 @@
     <EmbeddedResource Include="presentacion\M_TipoTermino.resx">
       <DependentUpon>M_TipoTermino.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_VerPaciente.resx">
+      <DependentUpon>M_VerPaciente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\prueba.resx">
       <DependentUpon>prueba.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaCheque.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VistaCheque.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -773,6 +901,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

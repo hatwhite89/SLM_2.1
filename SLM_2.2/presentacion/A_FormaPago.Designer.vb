@@ -44,6 +44,7 @@ Partial Class frmFormaPago
         Me.txtBanco = New System.Windows.Forms.TextBox()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.gbxInfoFormaPago = New System.Windows.Forms.GroupBox()
+        Me.btnBuscarBanco = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtRetencion = New System.Windows.Forms.TextBox()
         Me.lblRetencion = New System.Windows.Forms.Label()
@@ -159,7 +160,7 @@ Partial Class frmFormaPago
         Me.txtCuenta.ForeColor = System.Drawing.Color.Black
         Me.txtCuenta.Location = New System.Drawing.Point(110, 52)
         Me.txtCuenta.Name = "txtCuenta"
-        Me.txtCuenta.Size = New System.Drawing.Size(71, 20)
+        Me.txtCuenta.Size = New System.Drawing.Size(97, 20)
         Me.txtCuenta.TabIndex = 11
         Me.txtCuenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -213,7 +214,7 @@ Partial Class frmFormaPago
         '
         Me.txtBanco.Location = New System.Drawing.Point(455, 24)
         Me.txtBanco.Name = "txtBanco"
-        Me.txtBanco.Size = New System.Drawing.Size(186, 20)
+        Me.txtBanco.Size = New System.Drawing.Size(156, 20)
         Me.txtBanco.TabIndex = 30
         '
         'btnGuardar
@@ -230,6 +231,7 @@ Partial Class frmFormaPago
         '
         'gbxInfoFormaPago
         '
+        Me.gbxInfoFormaPago.Controls.Add(Me.btnBuscarBanco)
         Me.gbxInfoFormaPago.Controls.Add(Me.Button1)
         Me.gbxInfoFormaPago.Controls.Add(Me.txtRetencion)
         Me.gbxInfoFormaPago.Controls.Add(Me.lblRetencion)
@@ -257,6 +259,19 @@ Partial Class frmFormaPago
         Me.gbxInfoFormaPago.TabStop = False
         Me.gbxInfoFormaPago.Text = "Información Forma de Pago"
         '
+        'btnBuscarBanco
+        '
+        Me.btnBuscarBanco.BackColor = System.Drawing.Color.Transparent
+        Me.btnBuscarBanco.BackgroundImage = CType(resources.GetObject("btnBuscarBanco.BackgroundImage"), System.Drawing.Image)
+        Me.btnBuscarBanco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBuscarBanco.FlatAppearance.BorderSize = 0
+        Me.btnBuscarBanco.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarBanco.Location = New System.Drawing.Point(617, 24)
+        Me.btnBuscarBanco.Name = "btnBuscarBanco"
+        Me.btnBuscarBanco.Size = New System.Drawing.Size(20, 19)
+        Me.btnBuscarBanco.TabIndex = 56
+        Me.btnBuscarBanco.UseVisualStyleBackColor = False
+        '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Transparent
@@ -264,7 +279,7 @@ Partial Class frmFormaPago
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(187, 53)
+        Me.Button1.Location = New System.Drawing.Point(213, 53)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(20, 19)
         Me.Button1.TabIndex = 55
@@ -410,4 +425,5 @@ Partial Class frmFormaPago
     Friend WithEvents lblRetencion As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents btnCrear As Button
+    Friend WithEvents btnBuscarBanco As Button
 End Class

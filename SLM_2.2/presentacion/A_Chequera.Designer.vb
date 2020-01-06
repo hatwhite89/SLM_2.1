@@ -24,6 +24,7 @@ Partial Class A_Chequera
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Chequera))
         Me.gbxInfoChequeras = New System.Windows.Forms.GroupBox()
+        Me.lblNombreBanc = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.mtxtNumInicio = New System.Windows.Forms.MaskedTextBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
@@ -49,6 +50,7 @@ Partial Class A_Chequera
         '
         'gbxInfoChequeras
         '
+        Me.gbxInfoChequeras.Controls.Add(Me.lblNombreBanc)
         Me.gbxInfoChequeras.Controls.Add(Me.Button1)
         Me.gbxInfoChequeras.Controls.Add(Me.mtxtNumInicio)
         Me.gbxInfoChequeras.Controls.Add(Me.btnBuscar)
@@ -70,6 +72,16 @@ Partial Class A_Chequera
         Me.gbxInfoChequeras.TabIndex = 0
         Me.gbxInfoChequeras.TabStop = False
         Me.gbxInfoChequeras.Text = "Información de Chequera"
+        '
+        'lblNombreBanc
+        '
+        Me.lblNombreBanc.AutoSize = True
+        Me.lblNombreBanc.Location = New System.Drawing.Point(254, 78)
+        Me.lblNombreBanc.Name = "lblNombreBanc"
+        Me.lblNombreBanc.Size = New System.Drawing.Size(85, 13)
+        Me.lblNombreBanc.TabIndex = 16
+        Me.lblNombreBanc.Text = "lblNombreBanco"
+        Me.lblNombreBanc.Visible = False
         '
         'Button1
         '
@@ -150,6 +162,7 @@ Partial Class A_Chequera
         'txtBanco
         '
         Me.txtBanco.Location = New System.Drawing.Point(257, 53)
+        Me.txtBanco.MaxLength = 10
         Me.txtBanco.Name = "txtBanco"
         Me.txtBanco.Size = New System.Drawing.Size(42, 20)
         Me.txtBanco.TabIndex = 9
@@ -166,6 +179,7 @@ Partial Class A_Chequera
         'txtCantidad
         '
         Me.txtCantidad.Location = New System.Drawing.Point(257, 27)
+        Me.txtCantidad.MaxLength = 4
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(70, 20)
         Me.txtCantidad.TabIndex = 7
@@ -191,6 +205,7 @@ Partial Class A_Chequera
         'txtCtaDestino
         '
         Me.txtCtaDestino.Location = New System.Drawing.Point(92, 52)
+        Me.txtCtaDestino.MaxLength = 10
         Me.txtCtaDestino.Name = "txtCtaDestino"
         Me.txtCtaDestino.Size = New System.Drawing.Size(42, 20)
         Me.txtCtaDestino.TabIndex = 3
@@ -208,6 +223,7 @@ Partial Class A_Chequera
         '
         Me.txtCodChequera.Enabled = False
         Me.txtCodChequera.Location = New System.Drawing.Point(92, 27)
+        Me.txtCodChequera.MaxLength = 50
         Me.txtCodChequera.Name = "txtCodChequera"
         Me.txtCodChequera.Size = New System.Drawing.Size(70, 20)
         Me.txtCodChequera.TabIndex = 1
@@ -298,4 +314,5 @@ Partial Class A_Chequera
     Friend WithEvents mtxtNumInicio As MaskedTextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents lblCodChequera As Label
+    Friend WithEvents lblNombreBanc As Label
 End Class

@@ -231,6 +231,7 @@ Partial Class M_Caja
         Me.Controls.Add(Me.gbxcaja)
         Me.KeyPreview = True
         Me.Name = "M_Caja"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cajero(a)"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()

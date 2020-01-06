@@ -58,6 +58,7 @@ Partial Class A_CategoriaProveedor
         'txtCodBreve
         '
         Me.txtCodBreve.Location = New System.Drawing.Point(93, 27)
+        Me.txtCodBreve.MaxLength = 50
         Me.txtCodBreve.Name = "txtCodBreve"
         Me.txtCodBreve.Size = New System.Drawing.Size(100, 20)
         Me.txtCodBreve.TabIndex = 1
@@ -74,6 +75,7 @@ Partial Class A_CategoriaProveedor
         'txtDescrip
         '
         Me.txtDescrip.Location = New System.Drawing.Point(93, 54)
+        Me.txtDescrip.MaxLength = 150
         Me.txtDescrip.Name = "txtDescrip"
         Me.txtDescrip.Size = New System.Drawing.Size(261, 20)
         Me.txtDescrip.TabIndex = 3
@@ -90,6 +92,7 @@ Partial Class A_CategoriaProveedor
         'txtAcreedores
         '
         Me.txtAcreedores.Location = New System.Drawing.Point(450, 27)
+        Me.txtAcreedores.MaxLength = 20
         Me.txtAcreedores.Name = "txtAcreedores"
         Me.txtAcreedores.Size = New System.Drawing.Size(100, 20)
         Me.txtAcreedores.TabIndex = 5
@@ -106,6 +109,7 @@ Partial Class A_CategoriaProveedor
         'txtAnticipos
         '
         Me.txtAnticipos.Location = New System.Drawing.Point(450, 53)
+        Me.txtAnticipos.MaxLength = 20
         Me.txtAnticipos.Name = "txtAnticipos"
         Me.txtAnticipos.Size = New System.Drawing.Size(100, 20)
         Me.txtAnticipos.TabIndex = 7
@@ -150,6 +154,7 @@ Partial Class A_CategoriaProveedor
         'txtClasifica
         '
         Me.txtClasifica.Location = New System.Drawing.Point(93, 80)
+        Me.txtClasifica.MaxLength = 50
         Me.txtClasifica.Name = "txtClasifica"
         Me.txtClasifica.Size = New System.Drawing.Size(60, 20)
         Me.txtClasifica.TabIndex = 13

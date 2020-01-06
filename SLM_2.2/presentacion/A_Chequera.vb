@@ -45,7 +45,9 @@
                         .Cod_Chequera = Convert.ToInt64(lblCodChequera.Text)
                         .Numero_Cheque = mtxtNumInicio.Text
                         .Cod_BreveBanco = txtBanco.Text
+                        .Nombre_Banco = lblNombreBanc.Text
                         .Estad_o = "Habilitado"
+                        .Moned_a = "Lps"
                         .Cantida_d = Convert.ToInt64(txtCantidad.Text)
                         .registrarNuevosCheques()
 
@@ -138,7 +140,7 @@
         txtCtaDestino.Text = ""
         txtBanco.Text = ""
         txtCantidad.Text = ""
-        mtxtNumInicio.Text = ""
+        mtxtNumInicio.Text = "00000000"
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
@@ -152,6 +154,7 @@
     Private Sub A_Chequera_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
+            'frmMenuConta.Show()
         End If
     End Sub
 
@@ -201,5 +204,9 @@
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub A_Chequera_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        'frmMenuConta.Show()
     End Sub
 End Class

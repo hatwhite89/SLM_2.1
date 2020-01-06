@@ -509,4 +509,17 @@ Public Class ClsCliente
 
     End Function
 
+    Public Function SeleccionarClientes() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("M_slmSeleccionarCliente", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
 End Class

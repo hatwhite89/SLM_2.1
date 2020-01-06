@@ -5,7 +5,7 @@ Public Class ClsFacturaCompra
 
     Dim codFactura, codProveedor As Integer
     Dim total As Double
-    Dim nombreProveedor, moneda, terminosPago As String
+    Dim nombreProveedor, moneda, terminosPago, nroFactura As String
     Dim fechaFactura, fechaTransaccion, fechaVencimiento As Date
 
     'Constructor
@@ -95,7 +95,15 @@ Public Class ClsFacturaCompra
             fechaFactura = value
         End Set
     End Property
-
+    'NroFactura
+    Public Property Nro_Factura As String
+        Get
+            Return nroFactura
+        End Get
+        Set(value As String)
+            nroFactura = value
+        End Set
+    End Property
     ':::::::::::::::::::::::::::::::::::::::::::: Funciones de Mantenimiento ::::::::::::::::::::::::::::::::::::::::::::
 
     'Nuevo registro de Factura Compra
@@ -150,7 +158,10 @@ Public Class ClsFacturaCompra
         sqlpar.Value = Fecha_Vencimiento
         sqlcom.Parameters.Add(sqlpar)
 
-
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nroFactura"
+        sqlpar.Value = Nro_Factura
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -221,6 +232,11 @@ Public Class ClsFacturaCompra
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "fechaVencimiento"
         sqlpar.Value = Fecha_Vencimiento
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nroFactura"
+        sqlpar.Value = Nro_Factura
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
