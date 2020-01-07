@@ -487,8 +487,11 @@ Public Class M_Factura
                         End If
                     Next
                     MsgBox("Registrada la factura correctamente.")
+                    If (cbxok.Checked) Then
+                        Imprimir_Factura()
+                    End If
                 Else
-                    MsgBox("Error al querer registrar la factura.", MsgBoxStyle.Critical)
+                        MsgBox("Error al querer registrar la factura.", MsgBoxStyle.Critical)
                 End If
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
@@ -521,8 +524,8 @@ Public Class M_Factura
     End Sub
     Private Sub btncotizacion_Click(sender As Object, e As EventArgs) Handles btncotizacion.Click
         Try
-            If (txtcodigoCliente.Text <> "" And txtcodigoTerminosPago.Text <> "" And
-                txtcodigoSucursal.Text <> "" And txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
+            If (Trim(txtcodigoCliente.Text) <> "" And Trim(txtcodigoTerminosPago.Text) <> "" And
+                Trim(txtcodigoSucursal.Text) <> "" And txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
 
                 Dim objCotiz As New ClsCotizacion
                 With objCotiz
@@ -558,6 +561,7 @@ Public Class M_Factura
                         End If
                     Next
                     MsgBox("Registrada la cotización correctamente.")
+                    Imprimir_Cotizacion()
                 Else
                     MsgBox("Error al querer registrar la cotización.", MsgBoxStyle.Critical)
                 End If
@@ -590,6 +594,9 @@ Public Class M_Factura
                     deshabilitar()
                     btnActualizar.Enabled = False
                     MsgBox("Actualizada la factura correctamente.")
+                    If (cbxok.Checked) Then
+                        Imprimir_Factura()
+                    End If
                 Else
                     MsgBox("Error al querer actualizar la factura.", MsgBoxStyle.Critical)
                 End If
@@ -673,5 +680,35 @@ Public Class M_Factura
                 MsgBox(ex.Message)
             End Try
         End If
+    End Sub
+
+    Private Sub Imprimir_Factura()
+
+        If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
+            Dim numero As Integer = Convert.ToInt64(txtnumeroFactura.Text)
+            'le asigno un valor a los parametros del procedimiento almacenado
+            Dim form As New M_ComprobanteEntrega
+            form.numeroFactura = numero
+            'muestro el reporte
+            form.ShowDialog()
+        Else
+            MsgBox("Debe estar creada o guardada la factura para poder imprimirla.", MsgBoxStyle.Critical)
+        End If
+
+    End Sub
+
+    Private Sub Imprimir_Cotizacion()
+
+        If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
+            Dim numero As Integer = Convert.ToInt64(txtnumeroFactura.Text)
+            'le asigno un valor a los parametros del procedimiento almacenado
+            Dim form As New M_ComprobanteEntrega
+            form.numeroFactura = numero
+            'muestro el reporte
+            form.ShowDialog()
+        Else
+            MsgBox("Debe estar creada o guardada la factura para poder imprimir la cotización.", MsgBoxStyle.Critical)
+        End If
+
     End Sub
 End Class

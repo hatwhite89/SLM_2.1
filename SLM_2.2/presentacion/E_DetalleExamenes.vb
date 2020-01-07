@@ -74,7 +74,7 @@
         txtComentario.Text = dtItem.Rows(e.RowIndex).Cells(7).Value
         chkEstado.Checked = dtItem.Rows(e.RowIndex).Cells(8).Value
 
-
+        M_Precio.txtcodigoItem.Text = txtCodExamen.Text
 
     End Sub
 
@@ -124,6 +124,28 @@
 
 
     End Sub
+    Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dtItem.CellMouseDoubleClick
+        Try
+            Dim n As String = ""
+            Dim temp As String = M_ListaPrecios.dgbtabla.Rows(lblFila.Text).Cells(3).Value()
+            If e.RowIndex >= 0 Then
+                n = MsgBox("¿Desea utilizar el examen que a seleccionado?", MsgBoxStyle.YesNo, "Validación")
+            End If
+            If n = vbYes Then
+                If (M_ListaPrecios.validarItem(dtItem.Rows(e.RowIndex).Cells(0).Value()) = 0) Then
+                    If Convert.ToInt64(lblFila.Text) >= 0 And temp <> "" Then
+                        M_ListaPrecios.dgbtabla.Rows.Remove(M_ListaPrecios.dgbtabla.Rows(lblFila.Text))
+                    End If
+                    M_ListaPrecios.dgbtabla.Rows.Insert(lblFila.Text, New String() {"", "", dtItem.Rows(e.RowIndex).Cells(0).Value(), temp})
+                    Me.Close()
+                Else
+                    MsgBox("Ya a sido agregado anteriormente el examen o grupo de examen.")
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         E_GrupoExamen.Show()
@@ -135,4 +157,5 @@
         btnModificar.Visible = False
         btnGuardar.Visible = True
     End Sub
+
 End Class

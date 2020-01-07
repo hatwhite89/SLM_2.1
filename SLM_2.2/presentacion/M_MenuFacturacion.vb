@@ -29,4 +29,5 @@
     Private Sub btnContactos_Click(sender As Object, e As EventArgs) Handles btnContactos.Click
         A_Proveedor.ShowDialog()
     End Sub
+
 End Class
