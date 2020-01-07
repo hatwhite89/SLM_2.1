@@ -46,6 +46,7 @@ Partial Class M_Precio
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
         Me.lblcomentarioB = New System.Windows.Forms.Label()
+        Me.lblCode = New System.Windows.Forms.Label()
         Me.gbxPrecio.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,6 +54,7 @@ Partial Class M_Precio
         '
         'gbxPrecio
         '
+        Me.gbxPrecio.Controls.Add(Me.lblCode)
         Me.gbxPrecio.Controls.Add(Me.txtdescripcionListaPrecios)
         Me.gbxPrecio.Controls.Add(Me.txtdescripcionItem)
         Me.gbxPrecio.Controls.Add(Me.btnBuscarListaPrecios)
@@ -307,6 +309,14 @@ Partial Class M_Precio
         Me.lblcomentarioB.TabIndex = 114
         Me.lblcomentarioB.Text = "Descripción"
         '
+        'lblCode
+        '
+        Me.lblCode.AutoSize = True
+        Me.lblCode.Location = New System.Drawing.Point(18, 129)
+        Me.lblCode.Name = "lblCode"
+        Me.lblCode.Size = New System.Drawing.Size(0, 17)
+        Me.lblCode.TabIndex = 138
+        '
         'M_Precio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -318,7 +328,7 @@ Partial Class M_Precio
         Me.KeyPreview = True
         Me.Name = "M_Precio"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "M_Precio"
+        Me.Text = "Precios"
         Me.gbxPrecio.ResumeLayout(False)
         Me.gbxPrecio.PerformLayout()
         Me.gbxbusqueda.ResumeLayout(False)
@@ -351,4 +361,5 @@ Partial Class M_Precio
     Friend WithEvents btnbuscarItem As Button
     Friend WithEvents txtdescripcionListaPrecios As TextBox
     Friend WithEvents txtdescripcionItem As TextBox
+    Friend WithEvents lblCode As Label
 End Class

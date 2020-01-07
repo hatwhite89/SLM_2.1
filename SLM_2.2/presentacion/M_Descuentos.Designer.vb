@@ -41,6 +41,7 @@ Partial Class M_Descuentos
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
         Me.lblcomentarioB = New System.Windows.Forms.Label()
+        Me.lblFila = New System.Windows.Forms.Label()
         Me.gbxclasificacion.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,20 +70,20 @@ Partial Class M_Descuentos
         '
         'txtPorcentaje
         '
-        Me.txtPorcentaje.Location = New System.Drawing.Point(168, 124)
+        Me.txtPorcentaje.Location = New System.Drawing.Point(166, 127)
         Me.txtPorcentaje.MaxLength = 20
         Me.txtPorcentaje.Name = "txtPorcentaje"
         Me.txtPorcentaje.Size = New System.Drawing.Size(181, 22)
         Me.txtPorcentaje.TabIndex = 134
+        Me.txtPorcentaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtDescripcion
         '
         Me.txtDescripcion.Location = New System.Drawing.Point(166, 93)
-        Me.txtDescripcion.MaxLength = 20
+        Me.txtDescripcion.MaxLength = 100
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(392, 22)
         Me.txtDescripcion.TabIndex = 133
-        Me.txtDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcodigoBreve
         '
@@ -92,6 +93,7 @@ Partial Class M_Descuentos
         Me.txtcodigoBreve.Name = "txtcodigoBreve"
         Me.txtcodigoBreve.Size = New System.Drawing.Size(183, 22)
         Me.txtcodigoBreve.TabIndex = 132
+        Me.txtcodigoBreve.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcodigo
         '
@@ -195,6 +197,7 @@ Partial Class M_Descuentos
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.Controls.Add(Me.lblFila)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
@@ -256,6 +259,15 @@ Partial Class M_Descuentos
         Me.lblcomentarioB.TabIndex = 114
         Me.lblcomentarioB.Text = "Descripción"
         '
+        'lblFila
+        '
+        Me.lblFila.AutoSize = True
+        Me.lblFila.Location = New System.Drawing.Point(488, 30)
+        Me.lblFila.Name = "lblFila"
+        Me.lblFila.Size = New System.Drawing.Size(51, 17)
+        Me.lblFila.TabIndex = 116
+        Me.lblFila.Text = "Label2"
+        '
         'M_Descuentos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -267,7 +279,7 @@ Partial Class M_Descuentos
         Me.KeyPreview = True
         Me.Name = "M_Descuentos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "M_Descuentos"
+        Me.Text = "Descuentos"
         Me.gbxclasificacion.ResumeLayout(False)
         Me.gbxclasificacion.PerformLayout()
         Me.gbxbusqueda.ResumeLayout(False)
@@ -296,4 +308,5 @@ Partial Class M_Descuentos
     Friend WithEvents lbltotal As Label
     Friend WithEvents txtdescripcionB As TextBox
     Friend WithEvents lblcomentarioB As Label
+    Friend WithEvents lblFila As Label
 End Class

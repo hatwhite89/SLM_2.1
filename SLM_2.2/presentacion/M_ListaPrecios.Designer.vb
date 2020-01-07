@@ -23,6 +23,14 @@ Partial Class M_ListaPrecios
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxclasificacion = New System.Windows.Forms.GroupBox()
+        Me.dgbtabla = New System.Windows.Forms.DataGridView()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codigoListaPrecios = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.grupoOitem = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtDescripcion = New System.Windows.Forms.TextBox()
+        Me.txtcodigoBreve = New System.Windows.Forms.TextBox()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.lbltipo = New System.Windows.Forms.Label()
         Me.lbldescripcion = New System.Windows.Forms.Label()
         Me.btnmodificar = New System.Windows.Forms.Button()
@@ -30,14 +38,6 @@ Partial Class M_ListaPrecios
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.btncancelar = New System.Windows.Forms.Button()
-        Me.txtcodigo = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.dgbtabla = New System.Windows.Forms.DataGridView()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codigoListaPrecios = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.grupoOitem = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbxclasificacion.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,8 +45,8 @@ Partial Class M_ListaPrecios
         'gbxclasificacion
         '
         Me.gbxclasificacion.Controls.Add(Me.dgbtabla)
-        Me.gbxclasificacion.Controls.Add(Me.TextBox2)
-        Me.gbxclasificacion.Controls.Add(Me.TextBox1)
+        Me.gbxclasificacion.Controls.Add(Me.txtDescripcion)
+        Me.gbxclasificacion.Controls.Add(Me.txtcodigoBreve)
         Me.gbxclasificacion.Controls.Add(Me.txtcodigo)
         Me.gbxclasificacion.Controls.Add(Me.lbltipo)
         Me.gbxclasificacion.Controls.Add(Me.lbldescripcion)
@@ -61,6 +61,81 @@ Partial Class M_ListaPrecios
         Me.gbxclasificacion.TabIndex = 119
         Me.gbxclasificacion.TabStop = False
         Me.gbxclasificacion.Text = "REGISTRAR LISTA DE PRECIOS"
+        '
+        'dgbtabla
+        '
+        Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.codigoListaPrecios, Me.grupoOitem, Me.Descuento})
+        Me.dgbtabla.Location = New System.Drawing.Point(25, 146)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgbtabla.Name = "dgbtabla"
+        Me.dgbtabla.ReadOnly = True
+        Me.dgbtabla.RowHeadersWidth = 51
+        Me.dgbtabla.RowTemplate.Height = 24
+        Me.dgbtabla.Size = New System.Drawing.Size(563, 337)
+        Me.dgbtabla.TabIndex = 147
+        '
+        'codigo
+        '
+        Me.codigo.HeaderText = "codigo"
+        Me.codigo.MinimumWidth = 6
+        Me.codigo.Name = "codigo"
+        Me.codigo.ReadOnly = True
+        Me.codigo.Visible = False
+        Me.codigo.Width = 125
+        '
+        'codigoListaPrecios
+        '
+        Me.codigoListaPrecios.HeaderText = "Codigo Lista Precios"
+        Me.codigoListaPrecios.MinimumWidth = 6
+        Me.codigoListaPrecios.Name = "codigoListaPrecios"
+        Me.codigoListaPrecios.ReadOnly = True
+        Me.codigoListaPrecios.Visible = False
+        Me.codigoListaPrecios.Width = 125
+        '
+        'grupoOitem
+        '
+        Me.grupoOitem.HeaderText = "Grupo ó Examen"
+        Me.grupoOitem.MinimumWidth = 6
+        Me.grupoOitem.Name = "grupoOitem"
+        Me.grupoOitem.ReadOnly = True
+        Me.grupoOitem.Width = 125
+        '
+        'Descuento
+        '
+        Me.Descuento.HeaderText = "Descuento"
+        Me.Descuento.MinimumWidth = 6
+        Me.Descuento.Name = "Descuento"
+        Me.Descuento.ReadOnly = True
+        Me.Descuento.Width = 125
+        '
+        'txtDescripcion
+        '
+        Me.txtDescripcion.Location = New System.Drawing.Point(155, 103)
+        Me.txtDescripcion.MaxLength = 20
+        Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.Size = New System.Drawing.Size(409, 22)
+        Me.txtDescripcion.TabIndex = 133
+        '
+        'txtcodigoBreve
+        '
+        Me.txtcodigoBreve.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtcodigoBreve.Location = New System.Drawing.Point(155, 65)
+        Me.txtcodigoBreve.MaxLength = 20
+        Me.txtcodigoBreve.Name = "txtcodigoBreve"
+        Me.txtcodigoBreve.Size = New System.Drawing.Size(183, 22)
+        Me.txtcodigoBreve.TabIndex = 132
+        Me.txtcodigoBreve.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtcodigo
+        '
+        Me.txtcodigo.Location = New System.Drawing.Point(155, 29)
+        Me.txtcodigo.MaxLength = 20
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.ReadOnly = True
+        Me.txtcodigo.Size = New System.Drawing.Size(183, 22)
+        Me.txtcodigo.TabIndex = 131
+        Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lbltipo
         '
@@ -142,82 +217,6 @@ Partial Class M_ListaPrecios
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
         '
-        'txtcodigo
-        '
-        Me.txtcodigo.Location = New System.Drawing.Point(155, 29)
-        Me.txtcodigo.MaxLength = 20
-        Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.ReadOnly = True
-        Me.txtcodigo.Size = New System.Drawing.Size(183, 22)
-        Me.txtcodigo.TabIndex = 131
-        Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox1
-        '
-        Me.TextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox1.Location = New System.Drawing.Point(155, 65)
-        Me.TextBox1.MaxLength = 20
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(183, 22)
-        Me.TextBox1.TabIndex = 132
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(155, 103)
-        Me.TextBox2.MaxLength = 20
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(409, 22)
-        Me.TextBox2.TabIndex = 133
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'dgbtabla
-        '
-        Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.codigoListaPrecios, Me.grupoOitem, Me.Descuento})
-        Me.dgbtabla.Location = New System.Drawing.Point(25, 146)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.dgbtabla.Name = "dgbtabla"
-        Me.dgbtabla.ReadOnly = True
-        Me.dgbtabla.RowHeadersWidth = 51
-        Me.dgbtabla.RowTemplate.Height = 24
-        Me.dgbtabla.Size = New System.Drawing.Size(563, 337)
-        Me.dgbtabla.TabIndex = 147
-        '
-        'codigo
-        '
-        Me.codigo.HeaderText = "codigo"
-        Me.codigo.MinimumWidth = 6
-        Me.codigo.Name = "codigo"
-        Me.codigo.ReadOnly = True
-        Me.codigo.Visible = False
-        Me.codigo.Width = 125
-        '
-        'codigoListaPrecios
-        '
-        Me.codigoListaPrecios.HeaderText = "Codigo Lista Precios"
-        Me.codigoListaPrecios.MinimumWidth = 6
-        Me.codigoListaPrecios.Name = "codigoListaPrecios"
-        Me.codigoListaPrecios.ReadOnly = True
-        Me.codigoListaPrecios.Visible = False
-        Me.codigoListaPrecios.Width = 125
-        '
-        'grupoOitem
-        '
-        Me.grupoOitem.HeaderText = "Grupo ó Examen"
-        Me.grupoOitem.MinimumWidth = 6
-        Me.grupoOitem.Name = "grupoOitem"
-        Me.grupoOitem.ReadOnly = True
-        Me.grupoOitem.Width = 125
-        '
-        'Descuento
-        '
-        Me.Descuento.HeaderText = "Descuento"
-        Me.Descuento.MinimumWidth = 6
-        Me.Descuento.Name = "Descuento"
-        Me.Descuento.ReadOnly = True
-        Me.Descuento.Width = 125
-        '
         'M_ListaPrecios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -225,9 +224,10 @@ Partial Class M_ListaPrecios
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(669, 622)
         Me.Controls.Add(Me.gbxclasificacion)
+        Me.KeyPreview = True
         Me.Name = "M_ListaPrecios"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "M_ListaPrecios"
+        Me.Text = "Lista de Precios"
         Me.gbxclasificacion.ResumeLayout(False)
         Me.gbxclasificacion.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
@@ -243,8 +243,8 @@ Partial Class M_ListaPrecios
     Friend WithEvents btnguardar As Button
     Friend WithEvents lblcodigo As Label
     Friend WithEvents btncancelar As Button
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtDescripcion As TextBox
+    Friend WithEvents txtcodigoBreve As TextBox
     Friend WithEvents txtcodigo As TextBox
     Friend WithEvents dgbtabla As DataGridView
     Friend WithEvents codigo As DataGridViewTextBoxColumn

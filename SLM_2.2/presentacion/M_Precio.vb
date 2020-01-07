@@ -103,7 +103,7 @@
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
             txtcodigoItem.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
             txtPrecio.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
-            txtcodigoListaPrecios.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+            lblCode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
 
             btnmodificar.Enabled = True
             btnguardar.Enabled = False
@@ -138,7 +138,7 @@
                     .Cod_ItemExa = txtcodigoItem.Text
                 End With
                 Dim dt As New DataTable
-                'dt = objItem.BuscarEspecialidadCode()
+                dt = objItem.BuscarItemExam()
                 Dim row As DataRow = dt.Rows(0)
                 txtdescripcionItem.Text = CStr(row("descripcion"))
                 txtcodigoItem.BackColor = Color.White
@@ -157,14 +157,15 @@
     Private Sub txtcodigoListaPrecios_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoListaPrecios.TextChanged
         If (txtcodigoListaPrecios.Text <> "") Then
             Try
-                Dim objItem As New ClsItemExamen
-                With objItem
-                    .Cod_ItemExa = txtcodigoListaPrecios.Text
+                Dim objPriceList As New ClsListaPrecios
+                With objPriceList
+                    .codigoBreve_ = txtcodigoListaPrecios.Text
                 End With
                 Dim dt As New DataTable
-                'dt = objItem.BuscarEspecialidadCode()
+                dt = objPriceList.BuscarListaPreciosCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtdescripcionListaPrecios.Text = CStr(row("descripcion"))
+                lblCode.Text = CStr(row("codigo"))
                 txtcodigoListaPrecios.BackColor = Color.White
             Catch ex As Exception
                 txtcodigoListaPrecios.BackColor = Color.Red
@@ -174,18 +175,26 @@
         Else
             txtcodigoListaPrecios.Text = ""
             txtdescripcionListaPrecios.Text = ""
+            lblCode.Text = ""
             txtcodigoListaPrecios.BackColor = Color.White
         End If
     End Sub
 
-    'Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
-    '    Dim objPre As New ClsSede
-    '    With objPre
-    '        .Nombre1 = txtnombreB.Text
-    '    End With
-    '    Dim dv As DataView = objPre.BuscarSede.DefaultView
-    '    dgbtabla.DataSource = dv
-    '    lblcantidad.Text = dv.Count
-    '    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-    'End Sub
+    Private Sub btnbuscarItem_Click(sender As Object, e As EventArgs) Handles btnbuscarItem.Click
+        E_DetalleExamenes.ShowDialog()
+    End Sub
+
+    Private Sub btnBuscarListaPrecios_Click(sender As Object, e As EventArgs) Handles btnBuscarListaPrecios.Click
+        M_ListadoDePrecios.ShowDialog()
+    End Sub
+
+    Private Sub lblCode_TextChanged(sender As Object, e As EventArgs) Handles lblCode.TextChanged
+        Dim dt As New DataTable
+        Dim objPriceList As New ClsListaPrecios
+        objPriceList.codigo_ = lblCode.Text
+        dt = objPriceList.BuscarListaPrecios()
+        Dim row As DataRow = dt.Rows(0)
+        txtcodigoListaPrecios.Text = CStr(row("codigoBreve"))
+        txtdescripcionListaPrecios.Text = CStr(row("descripcion"))
+    End Sub
 End Class
