@@ -24,12 +24,25 @@
         End Try
 
     End Sub
-
-
-
     Private Sub dtCuentas_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtCuentas.CellDoubleClick
         'Seleccionar campo cuenta para formulario forma pago
-        frmFormaPago.txtCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(0).Value
+
+        If lblForm.Text = "facturaCompra" Then
+
+            Dim cuenta, nombre As String
+
+            cuenta = dtCuentas.Rows(e.RowIndex).Cells(0).Value
+            nombre = dtCuentas.Rows(e.RowIndex).Cells(1).Value
+
+            'Asignar busqueda en Datagrid
+            'A_FacturaCompras.dtDetalleFactura.Rows.Remove(A_FacturaCompras.dtDetalleFactura.Rows(e.RowIndex.ToString))
+            A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {cuenta, " ", " ", nombre})
+
+        Else
+
+            frmFormaPago.txtCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(0).Value
+
+        End If
 
         'Cerrar forma al seleccionar
         Me.Close()

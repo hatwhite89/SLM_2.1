@@ -23,15 +23,17 @@ Partial Class A_ListarProveedores
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.dtProveedor = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.dtProveedor = New System.Windows.Forms.DataGridView()
+        Me.lblForm = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.lblForm)
         Me.GroupBox1.Controls.Add(Me.txtBusqueda)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.dtProveedor)
@@ -41,6 +43,22 @@ Partial Class A_ListarProveedores
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Proveedores"
+        '
+        'txtBusqueda
+        '
+        Me.txtBusqueda.Location = New System.Drawing.Point(205, 19)
+        Me.txtBusqueda.Name = "txtBusqueda"
+        Me.txtBusqueda.Size = New System.Drawing.Size(209, 20)
+        Me.txtBusqueda.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(103, 22)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(96, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Nombre Proveedor"
         '
         'dtProveedor
         '
@@ -56,21 +74,14 @@ Partial Class A_ListarProveedores
         Me.dtProveedor.Size = New System.Drawing.Size(408, 220)
         Me.dtProveedor.TabIndex = 0
         '
-        'Label1
+        'lblForm
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(103, 22)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(96, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Nombre Proveedor"
-        '
-        'txtBusqueda
-        '
-        Me.txtBusqueda.Location = New System.Drawing.Point(205, 19)
-        Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(209, 20)
-        Me.txtBusqueda.TabIndex = 2
+        Me.lblForm.AutoSize = True
+        Me.lblForm.Location = New System.Drawing.Point(6, 22)
+        Me.lblForm.Name = "lblForm"
+        Me.lblForm.Size = New System.Drawing.Size(30, 13)
+        Me.lblForm.TabIndex = 3
+        Me.lblForm.Text = "Form"
         '
         'A_ListarProveedores
         '
@@ -92,4 +103,5 @@ Partial Class A_ListarProveedores
     Friend WithEvents dtProveedor As DataGridView
     Friend WithEvents txtBusqueda As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents lblForm As Label
 End Class

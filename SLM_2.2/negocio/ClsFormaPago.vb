@@ -456,5 +456,27 @@ Public Class ClsFormaPago
 
     End Function
 
+    'Capturar informacion de forma de pago por banco
+    Public Function ctaBancoXBanco() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmCtaBancoXBanco"
+            cmd.Parameters.Add("@banco", SqlDbType.VarChar).Value = Ban_co
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
 
 End Class

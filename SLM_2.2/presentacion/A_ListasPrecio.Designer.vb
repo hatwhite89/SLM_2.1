@@ -24,14 +24,14 @@ Partial Class A_ListasPrecio
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,14 +59,6 @@ Partial Class A_ListasPrecio
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Lista de Precio"
         '
-        'txtCodigo
-        '
-        Me.txtCodigo.Location = New System.Drawing.Point(75, 26)
-        Me.txtCodigo.MaxLength = 10
-        Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(67, 20)
-        Me.txtCodigo.TabIndex = 1
-        '
         'txtDescripcion
         '
         Me.txtDescripcion.Location = New System.Drawing.Point(75, 52)
@@ -84,6 +76,14 @@ Partial Class A_ListasPrecio
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Descripción"
         '
+        'txtCodigo
+        '
+        Me.txtCodigo.Location = New System.Drawing.Point(75, 26)
+        Me.txtCodigo.MaxLength = 10
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(67, 20)
+        Me.txtCodigo.TabIndex = 1
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
@@ -93,6 +93,16 @@ Partial Class A_ListasPrecio
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Grupos/Item"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.GridColor = System.Drawing.Color.White
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 19)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(354, 207)
+        Me.DataGridView1.TabIndex = 0
         '
         'btnGuardar
         '
@@ -132,16 +142,6 @@ Partial Class A_ListasPrecio
         Me.btnCrear.TabIndex = 4
         Me.btnCrear.Text = "Crear Nuevo"
         Me.btnCrear.UseVisualStyleBackColor = False
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.GridColor = System.Drawing.Color.White
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 19)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(354, 207)
-        Me.DataGridView1.TabIndex = 0
         '
         'A_ListasPrecio
         '

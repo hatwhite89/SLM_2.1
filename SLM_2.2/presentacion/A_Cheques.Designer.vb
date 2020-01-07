@@ -70,8 +70,6 @@ Partial Class A_Cheques
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtBanco = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtTributario = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.txtNombreProvee = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtcodProvee = New System.Windows.Forms.TextBox()
@@ -311,8 +309,6 @@ Partial Class A_Cheques
         Me.TabPage1.Controls.Add(Me.Label10)
         Me.TabPage1.Controls.Add(Me.txtBanco)
         Me.TabPage1.Controls.Add(Me.Label9)
-        Me.TabPage1.Controls.Add(Me.txtTributario)
-        Me.TabPage1.Controls.Add(Me.Label8)
         Me.TabPage1.Controls.Add(Me.txtNombreProvee)
         Me.TabPage1.Controls.Add(Me.Label7)
         Me.TabPage1.Controls.Add(Me.txtcodProvee)
@@ -524,7 +520,7 @@ Partial Class A_Cheques
         Me.txtnombreBanco.Enabled = False
         Me.txtnombreBanco.Location = New System.Drawing.Point(263, 35)
         Me.txtnombreBanco.Name = "txtnombreBanco"
-        Me.txtnombreBanco.Size = New System.Drawing.Size(234, 20)
+        Me.txtnombreBanco.Size = New System.Drawing.Size(424, 20)
         Me.txtnombreBanco.TabIndex = 9
         '
         'Label10
@@ -553,29 +549,12 @@ Partial Class A_Cheques
         Me.Label9.TabIndex = 6
         Me.Label9.Text = "Banco"
         '
-        'txtTributario
-        '
-        Me.txtTributario.Enabled = False
-        Me.txtTributario.Location = New System.Drawing.Point(587, 9)
-        Me.txtTributario.Name = "txtTributario"
-        Me.txtTributario.Size = New System.Drawing.Size(100, 20)
-        Me.txtTributario.TabIndex = 5
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(512, 12)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(63, 13)
-        Me.Label8.TabIndex = 4
-        Me.Label8.Text = "Id Tributario"
-        '
         'txtNombreProvee
         '
         Me.txtNombreProvee.Enabled = False
         Me.txtNombreProvee.Location = New System.Drawing.Point(263, 9)
         Me.txtNombreProvee.Name = "txtNombreProvee"
-        Me.txtNombreProvee.Size = New System.Drawing.Size(234, 20)
+        Me.txtNombreProvee.Size = New System.Drawing.Size(424, 20)
         Me.txtNombreProvee.TabIndex = 3
         '
         'Label7
@@ -730,8 +709,6 @@ Partial Class A_Cheques
     Friend WithEvents Label10 As Label
     Friend WithEvents txtBanco As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents txtTributario As TextBox
-    Friend WithEvents Label8 As Label
     Friend WithEvents txtNombreProvee As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents txtcodProvee As TextBox
