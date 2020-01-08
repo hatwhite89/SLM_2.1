@@ -24,6 +24,7 @@ Partial Class M_Precio
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Precio))
         Me.gbxPrecio = New System.Windows.Forms.GroupBox()
+        Me.lblCode = New System.Windows.Forms.Label()
         Me.txtdescripcionListaPrecios = New System.Windows.Forms.TextBox()
         Me.txtdescripcionItem = New System.Windows.Forms.TextBox()
         Me.btnBuscarListaPrecios = New System.Windows.Forms.Button()
@@ -46,7 +47,6 @@ Partial Class M_Precio
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
         Me.lblcomentarioB = New System.Windows.Forms.Label()
-        Me.lblCode = New System.Windows.Forms.Label()
         Me.gbxPrecio.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,6 +77,14 @@ Partial Class M_Precio
         Me.gbxPrecio.TabIndex = 119
         Me.gbxPrecio.TabStop = False
         Me.gbxPrecio.Text = "REGISTRAR PRECIO"
+        '
+        'lblCode
+        '
+        Me.lblCode.AutoSize = True
+        Me.lblCode.Location = New System.Drawing.Point(18, 129)
+        Me.lblCode.Name = "lblCode"
+        Me.lblCode.Size = New System.Drawing.Size(0, 17)
+        Me.lblCode.TabIndex = 138
         '
         'txtdescripcionListaPrecios
         '
@@ -152,6 +160,7 @@ Partial Class M_Precio
         Me.txtcodigo.Location = New System.Drawing.Point(148, 29)
         Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.ReadOnly = True
         Me.txtcodigo.Size = New System.Drawing.Size(183, 22)
         Me.txtcodigo.TabIndex = 120
         Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -308,14 +317,6 @@ Partial Class M_Precio
         Me.lblcomentarioB.Size = New System.Drawing.Size(82, 17)
         Me.lblcomentarioB.TabIndex = 114
         Me.lblcomentarioB.Text = "Descripción"
-        '
-        'lblCode
-        '
-        Me.lblCode.AutoSize = True
-        Me.lblCode.Location = New System.Drawing.Point(18, 129)
-        Me.lblCode.Name = "lblCode"
-        Me.lblCode.Size = New System.Drawing.Size(0, 17)
-        Me.lblCode.TabIndex = 138
         '
         'M_Precio
         '

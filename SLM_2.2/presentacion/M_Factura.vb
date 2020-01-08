@@ -349,7 +349,6 @@ Public Class M_Factura
         Return 0
     End Function
     Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
-
         If e.ColumnIndex = 0 Then
             Try
                 If (Trim(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()) <> "") Then
@@ -434,6 +433,8 @@ Public Class M_Factura
                 txtcodigoConvenio.Text = "0"
             ElseIf Trim(txtcodigoTerminal.Text) = "" Then
                 txtcodigoTerminal.Text = "1"
+            ElseIf Trim(txtpagoPaciente.Text) = "" Then
+                txtcodigoTerminal.Text = "0"
             End If
 
             If (txtcodigoCliente.Text <> "" And txtcodigoMedico.Text <> "" And txtcodigoTerminosPago.Text <> "" And

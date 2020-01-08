@@ -35,11 +35,18 @@
         txtdescripcionB.Text() = ""
         txtdescripcionTipo.Text() = ""
         rtxtdescripcion.Text() = ""
+        txtcodigoListaPrecios.Text = ""
+        txtdescripcionListaPrecios.Text = ""
+        lblCodePriceList.Text = ""
 
         txtcodigoTipo.ReadOnly = False
         txtdescripcionB.ReadOnly = False
         rtxtdescripcion.ReadOnly = False
         txtcodigo.ReadOnly = False
+        txtcodigoListaPrecios.ReadOnly = False
+
+        btnbuscarTipo.Enabled = True
+        btnBuscarListaPrecios.Enabled = True
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
@@ -48,7 +55,7 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (Trim(rtxtdescripcion.Text) <> "" And Trim(txtcodigoTipo.Text) <> "" And txtcodigoTipo.BackColor = Color.White And Trim(txtcodigo.Text) <> "") Then
+            If (Trim(rtxtdescripcion.Text) <> "" And Trim(txtcodigoListaPrecios.Text) <> "" And txtcodigoListaPrecios.BackColor = Color.White And Trim(txtcodigoTipo.Text) <> "" And txtcodigoTipo.BackColor = Color.White And Trim(txtcodigo.Text) <> "") Then
 
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
                 Dim objCategoriaif As New ClsCategoria
@@ -56,6 +63,7 @@
                     .descripcion1 = rtxtdescripcion.Text
                     .CodigoTipo1 = txtcodigoTipo.Text
                     .codigoCategoria_ = txtcodigo.Text
+                    .codigoListaPrecios_ = lblCodePriceList.Text
                 End With
 
                 If objCategoriaif.RegistrarNuevaCategoria() = 1 Then
@@ -98,7 +106,7 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (Trim(rtxtdescripcion.Text) <> "" And Trim(txtcodigoTipo.Text) <> "" And txtcodigoTipo.BackColor = Color.White And Trim(txtcodigo.Text) <> "") Then
+            If (Trim(rtxtdescripcion.Text) <> "" And Trim(txtcodigoListaPrecios.Text) <> "" And txtcodigoListaPrecios.BackColor = Color.White And Trim(txtcodigoTipo.Text) <> "" And txtcodigoTipo.BackColor = Color.White And Trim(txtcodigo.Text) <> "") Then
 
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
                 Dim objCategoriaif As New ClsCategoria
@@ -107,6 +115,7 @@
                     .codigoCategoria_ = txtcodigo.Text
                     .CodigoTipo1 = txtcodigoTipo.Text
                     .codigo_ = lblcode.Text
+                    .codigoListaPrecios_ = lblCodePriceList.Text
                 End With
 
                 If objCategoriaif.ModificarCategoria() = 1 Then
@@ -142,6 +151,7 @@
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
             rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
             txtcodigoTipo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+            lblCodePriceList.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
 
             M_Cliente.lblcodeCategoria.Text = lblcode.Text
             M_Cliente.txtcodigoCategoria.Text = txtcodigo.Text
@@ -210,5 +220,49 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub txtcodigoListaPrecios_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoListaPrecios.TextChanged
+        If (txtcodigoListaPrecios.Text <> "") Then
+            Try
+                Dim objPriceList As New ClsListaPrecios
+                With objPriceList
+                    .codigoBreve_ = txtcodigoListaPrecios.Text
+                End With
+                Dim dt As New DataTable
+                dt = objPriceList.BuscarListaPreciosCode()
+                Dim row As DataRow = dt.Rows(0)
+                txtdescripcionListaPrecios.Text = CStr(row("descripcion"))
+                lblCodePriceList.Text = CStr(row("codigo"))
+                txtcodigoListaPrecios.BackColor = Color.White
+            Catch ex As Exception
+                txtcodigoListaPrecios.BackColor = Color.Red
+                txtdescripcionListaPrecios.Text = ""
+                'MsgBox("No existe ese código de especialidad.", MsgBoxStyle.Critical, "Validación")
+            End Try
+        Else
+            txtcodigoListaPrecios.Text = ""
+            txtdescripcionListaPrecios.Text = ""
+            lblCodePriceList.Text = ""
+            txtcodigoListaPrecios.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub lblCodePriceList_TextChanged(sender As Object, e As EventArgs) Handles lblCodePriceList.TextChanged
+        Try
+            Dim dt As New DataTable
+            Dim objPriceList As New ClsListaPrecios
+            objPriceList.codigo_ = lblCodePriceList.Text
+            dt = objPriceList.BuscarListaPreciosCodigo()
+            Dim row As DataRow = dt.Rows(0)
+            txtcodigoListaPrecios.Text = CStr(row("codigoBreve"))
+            txtdescripcionListaPrecios.Text = CStr(row("descripcion"))
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnBuscarListaPrecios_Click(sender As Object, e As EventArgs) Handles btnBuscarListaPrecios.Click
+        M_ListadoDePrecios.lblForm.Text = "Categoria"
+        M_ListadoDePrecios.ShowDialog()
     End Sub
 End Class

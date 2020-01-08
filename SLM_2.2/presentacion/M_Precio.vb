@@ -13,6 +13,9 @@
         txtPrecio.ReadOnly = False
         txtcodigoListaPrecios.ReadOnly = False
 
+        btnbuscarItem.Enabled = True
+        btnBuscarListaPrecios.Enabled = True
+
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
         btnnuevo.Enabled = True
@@ -21,6 +24,9 @@
         txtcodigoItem.ReadOnly = True
         txtPrecio.ReadOnly = True
         txtcodigoListaPrecios.ReadOnly = True
+
+        btnbuscarItem.Enabled = False
+        btnBuscarListaPrecios.Enabled = False
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
@@ -35,7 +41,7 @@
                 With objPre
                     .codigoItem_ = txtcodigoItem.Text
                     .precio_ = txtPrecio.Text
-                    .codigoListaPrecios_ = txtcodigoListaPrecios.Text
+                    .codigoListaPrecios_ = lblCode.Text
                 End With
 
                 If objPre.RegistrarNuevoPrecio() = 1 Then
@@ -67,7 +73,7 @@
                     .codigo_ = txtcodigo.Text
                     .codigoItem_ = txtcodigoItem.Text
                     .precio_ = txtPrecio.Text
-                    .codigoListaPrecios_ = txtcodigoListaPrecios.Text
+                    .codigoListaPrecios_ = lblCode.Text
                 End With
 
                 If objPre.ModificarPrecio() = 1 Then
@@ -185,16 +191,21 @@
     End Sub
 
     Private Sub btnBuscarListaPrecios_Click(sender As Object, e As EventArgs) Handles btnBuscarListaPrecios.Click
+        M_ListadoDePrecios.lblForm.Text = "Precio"
         M_ListadoDePrecios.ShowDialog()
     End Sub
 
     Private Sub lblCode_TextChanged(sender As Object, e As EventArgs) Handles lblCode.TextChanged
-        Dim dt As New DataTable
-        Dim objPriceList As New ClsListaPrecios
-        objPriceList.codigo_ = lblCode.Text
-        dt = objPriceList.BuscarListaPrecios()
-        Dim row As DataRow = dt.Rows(0)
-        txtcodigoListaPrecios.Text = CStr(row("codigoBreve"))
-        txtdescripcionListaPrecios.Text = CStr(row("descripcion"))
+        Try
+            Dim dt As New DataTable
+            Dim objPriceList As New ClsListaPrecios
+            objPriceList.codigo_ = lblCode.Text
+            dt = objPriceList.BuscarListaPreciosCodigo()
+            Dim row As DataRow = dt.Rows(0)
+            txtcodigoListaPrecios.Text = CStr(row("codigoBreve"))
+            txtdescripcionListaPrecios.Text = CStr(row("descripcion"))
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

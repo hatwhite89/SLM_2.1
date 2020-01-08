@@ -24,8 +24,11 @@
             If e.RowIndex >= 0 Then
                 n = MsgBox("¿Desea utilizar la lista de precio que a seleccionado?", MsgBoxStyle.YesNo, "Validación")
             End If
-            If n = vbYes Then
-                M_Precio.txtcodigoListaPrecios.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+            If n = vbYes And lblForm.Text = "Precio" Then
+                M_Precio.lblCode.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                Me.Close()
+            ElseIf n = vbYes And lblForm.Text = "Categoria" Then
+                M_Categoria.lblCodePriceList.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
                 Me.Close()
             End If
         Catch ex As Exception
