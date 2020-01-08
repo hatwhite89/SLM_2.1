@@ -23,14 +23,14 @@
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
 
         Try
-            Dim Dato As New DataView
+            Dim Dato As New DataTable
             'Actualizar datos en datagrid con textbox
             With cheque
 
                 .Numero_Cheque = txtBusqueda.Text
                 .Nombre_Proveedor = txtBusqueda.Text
 
-                Dato = cheque.buscarCheques.DefaultView
+                Dato = cheque.buscarCheques
                 dtCheques.DataSource = Dato
 
             End With
@@ -57,12 +57,16 @@
 
         Try
 
-            Dim dt As DataTable
-            Dim row As DataRow
-            Dim pro As New ClsProveedor
+            Dim dt, dt2 As DataTable
+            Dim row, row2 As DataRow
+            Dim formap As New ClsFormaPago
 
             dt = dtCheques.DataSource
             row = dt.Rows(e.RowIndex)
+
+            formap.Ban_co = row("nombreBanco")
+            dt2 = formap.ctaBancoXBanco()
+            row2 = dt2.Rows(0)
 
             With A_Cheques
 
@@ -76,6 +80,7 @@
                 .txtcodProvee.Text = row("codBreveProveedor")
                 .txtNombreProvee.Text = row("nombreProveedor")
                 .txtBanco.Text = row("codBreveBanco")
+                .txtNroCtaBanco.Text = row2("nroCtaBanco")
                 .txtnombreBanco.Text = row("nombreBanco")
                 .dtpAcredita.Value = row("fechaacreditacion")
                 .dtpRechazo.Value = row("fechaRechazo")
@@ -87,16 +92,17 @@
                 .lblForm.Text = "ChequeSeleccionado"
                 .Show()
 
-                '.txtNroCtaBanco.Text = row("nroCheque")
-
-                ' .txtTributario.Text = row("")
-
             End With
+
+
+
+
+
+
 
         Catch ex As Exception
             MsgBox("Error al seleccionar. Detalle: " + ex.Message)
         End Try
-
 
 
 

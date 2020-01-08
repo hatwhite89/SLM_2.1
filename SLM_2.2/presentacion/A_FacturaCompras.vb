@@ -82,37 +82,7 @@
 
     Private Sub dtDetalleFactura_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellEndEdit
 
-        Try
-            Dim Cuenta As New ClsCuenta
-            'Capturar codigo de cuenta
-            With Cuenta
 
-                .Cuent_a = dtDetalleFactura.Rows(e.RowIndex).Cells(0).Value()
-
-            End With
-            'Capturar informacion de cuenta
-            Dim dt As New DataTable
-            dt = Cuenta.Comprobar
-
-
-
-            If dt.Rows.Count > 0 Then
-
-                Dim row As DataRow = dt.Rows(0)
-                Dim nombre As String
-                nombre = row("nombre")
-                'Asignar busqueda en Datagrid
-                dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
-                dtDetalleFactura.Rows.Insert(e.RowIndex.ToString, New String() {Cuenta.Cuent_a, " ", " ", nombre})
-
-            Else
-                MsgBox("La cuenta no existe.")
-
-            End If
-
-        Catch ex As Exception
-
-        End Try
 
     End Sub
 
@@ -164,6 +134,13 @@
 
             A_ListarObjetos.Show()
             A_ListarObjetos.lblForm.Text = "sede"
+
+        ElseIf e.ColumnIndex = 0 Then
+
+            A_ListarCuentas.Show()
+            A_ListarCuentas.lblForm.Text = "facturaCompra"
+
+
 
         End If
 
@@ -257,4 +234,18 @@
     Private Sub A_FacturaCompras_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         'frmMenuConta.Show()
     End Sub
+
+    Private Sub txtCodProveedor_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtCodProveedor.MouseDoubleClick
+
+        'Listado de Proveedores para seleccionar
+        With A_ListarProveedores
+
+            .Show()
+            .lblForm.Text = "facturaCompra"
+
+        End With
+
+    End Sub
+
+
 End Class

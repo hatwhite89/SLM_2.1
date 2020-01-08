@@ -14,8 +14,6 @@ Public Class A_Cheques
 
         Try
 
-
-
             If txtMonto.Text <> "" And txtcodProvee.Text <> "" Then
 
                 If rbtnDiferido.Checked = True Then
@@ -25,7 +23,6 @@ Public Class A_Cheques
                 ElseIf rbtnCheque.Checked = True Then
                     tipo = "cheque"
                 End If
-
 
                 With cheque
 
@@ -64,6 +61,11 @@ Public Class A_Cheques
 
                     End If
 
+                    Dim fila As String = frmPagos.lblFila.Text
+
+                    frmPagos.dtDetallePagos.Rows(fila).Cells(5).Value = txtNroCheq.Text
+
+
                 End With
 
             Else
@@ -80,7 +82,6 @@ Public Class A_Cheques
     Private Sub txtcodProvee_DoubleClick(sender As Object, e As EventArgs) Handles txtcodProvee.DoubleClick
         A_ListarProveedores.ShowDialog()
     End Sub
-
     Private Sub lblEstado_TextChanged(sender As Object, e As EventArgs) Handles lblEstado.TextChanged
 
         If lblEstado.Text = "Habilitado" Then
@@ -140,7 +141,6 @@ Public Class A_Cheques
 
             dtpFechaVto.Format = DateTimePickerFormat.Custom
             dtpFechaVto.CustomFormat = " "
-
         End If
 
     End Sub
@@ -159,7 +159,6 @@ Public Class A_Cheques
             Case Windows.Forms.MouseButtons.Right
                 Me.dtpAcredita.Format = DateTimePickerFormat.Custom
                 Me.dtpAcredita.CustomFormat = " "
-
         End Select
 
     End Sub

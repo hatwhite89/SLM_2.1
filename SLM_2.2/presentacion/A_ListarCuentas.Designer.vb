@@ -23,15 +23,17 @@ Partial Class A_ListarCuentas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.dtCuentas = New System.Windows.Forms.DataGridView()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.dtCuentas = New System.Windows.Forms.DataGridView()
+        Me.lblForm = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.lblForm)
         Me.GroupBox1.Controls.Add(Me.dtCuentas)
         Me.GroupBox1.Controls.Add(Me.txtBusqueda)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -41,6 +43,22 @@ Partial Class A_ListarCuentas
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccione una Cuenta"
+        '
+        'dtCuentas
+        '
+        Me.dtCuentas.AllowDrop = True
+        Me.dtCuentas.AllowUserToOrderColumns = True
+        Me.dtCuentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtCuentas.BackgroundColor = System.Drawing.Color.White
+        Me.dtCuentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.dtCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtCuentas.GridColor = System.Drawing.Color.White
+        Me.dtCuentas.Location = New System.Drawing.Point(6, 50)
+        Me.dtCuentas.Name = "dtCuentas"
+        Me.dtCuentas.ReadOnly = True
+        Me.dtCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtCuentas.Size = New System.Drawing.Size(356, 326)
+        Me.dtCuentas.TabIndex = 3
         '
         'txtBusqueda
         '
@@ -58,21 +76,14 @@ Partial Class A_ListarCuentas
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Nombre"
         '
-        'dtCuentas
+        'lblForm
         '
-        Me.dtCuentas.AllowDrop = True
-        Me.dtCuentas.AllowUserToOrderColumns = True
-        Me.dtCuentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dtCuentas.BackgroundColor = System.Drawing.Color.White
-        Me.dtCuentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.dtCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtCuentas.GridColor = System.Drawing.Color.White
-        Me.dtCuentas.Location = New System.Drawing.Point(6, 50)
-        Me.dtCuentas.Name = "dtCuentas"
-        Me.dtCuentas.ReadOnly = True
-        Me.dtCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCuentas.Size = New System.Drawing.Size(356, 326)
-        Me.dtCuentas.TabIndex = 3
+        Me.lblForm.AutoSize = True
+        Me.lblForm.Location = New System.Drawing.Point(251, 27)
+        Me.lblForm.Name = "lblForm"
+        Me.lblForm.Size = New System.Drawing.Size(30, 13)
+        Me.lblForm.TabIndex = 4
+        Me.lblForm.Text = "Form"
         '
         'A_ListarCuentas
         '
@@ -95,4 +106,5 @@ Partial Class A_ListarCuentas
     Friend WithEvents txtBusqueda As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents dtCuentas As DataGridView
+    Friend WithEvents lblForm As Label
 End Class

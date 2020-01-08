@@ -235,6 +235,7 @@ Partial Class frmPagos
         '
         'dtDetallePagos
         '
+        Me.dtDetallePagos.AllowUserToDeleteRows = False
         Me.dtDetallePagos.BackgroundColor = System.Drawing.Color.White
         Me.dtDetallePagos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtDetallePagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -418,7 +419,7 @@ Partial Class frmPagos
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(472, 239)
+        Me.Label4.Location = New System.Drawing.Point(465, 239)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(77, 13)
         Me.Label4.TabIndex = 21
