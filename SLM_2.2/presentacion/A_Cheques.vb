@@ -85,25 +85,15 @@ Public Class A_Cheques
     Private Sub lblEstado_TextChanged(sender As Object, e As EventArgs) Handles lblEstado.TextChanged
 
         If lblEstado.Text = "Habilitado" Then
-
             rbtnChequera.Checked = True
-
         ElseIf lblEstado.Text = "Emitido" Then
-
             rbtnEmitido.Checked = True
-
         ElseIf lblEstado.Text = "Acreditado" Then
-
             rbtnAcreditado.Checked = True
-
         ElseIf lblEstado.Text = "Cancelado" Then
-
             rbtnCancelado.Checked = True
-
         ElseIf lblEstado.Text = "Rechazado" Then
-
             rbtnAcreditado.Checked = True
-
         End If
 
     End Sub
@@ -238,6 +228,9 @@ Public Class A_Cheques
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
 
+
+        A_PrintCheque.Show()
+
         Dim nroCheque As String
         Dim codFactura As Integer
         Dim objVistaCheque As New VistaCheque
@@ -254,7 +247,6 @@ Public Class A_Cheques
         objVistaCheque.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
         A_PrintCheque.crvImprimirCheque.ReportSource = objVistaCheque
 
-        A_PrintCheque.Show()
 
     End Sub
 

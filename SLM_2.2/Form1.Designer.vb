@@ -60,6 +60,13 @@ Partial Class Form1
         Me.btnCuentas = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnFormaPago = New System.Windows.Forms.Button()
+        Me.tpPrecios = New System.Windows.Forms.TabPage()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxMenu.SuspendLayout()
         Me.panelMenu.SuspendLayout()
@@ -67,6 +74,7 @@ Partial Class Form1
         Me.tpCheque.SuspendLayout()
         Me.tpPagos.SuspendLayout()
         Me.TpMantenimiento.SuspendLayout()
+        Me.tpPrecios.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -107,7 +115,7 @@ Partial Class Form1
         Me.gbxMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.gbxMenu.Location = New System.Drawing.Point(-1, -13)
         Me.gbxMenu.Name = "gbxMenu"
-        Me.gbxMenu.Size = New System.Drawing.Size(88, 405)
+        Me.gbxMenu.Size = New System.Drawing.Size(30, 405)
         Me.gbxMenu.TabIndex = 3
         Me.gbxMenu.TabStop = False
         Me.gbxMenu.Text = "Opciones"
@@ -213,7 +221,7 @@ Partial Class Form1
         Me.panelMenu.Controls.Add(Me.tcMenu)
         Me.panelMenu.Location = New System.Drawing.Point(16, -4)
         Me.panelMenu.Name = "panelMenu"
-        Me.panelMenu.Size = New System.Drawing.Size(30, 390)
+        Me.panelMenu.Size = New System.Drawing.Size(364, 390)
         Me.panelMenu.TabIndex = 4
         '
         'btnCancelar
@@ -233,6 +241,7 @@ Partial Class Form1
         '
         Me.tcMenu.Controls.Add(Me.tpCheque)
         Me.tcMenu.Controls.Add(Me.tpPagos)
+        Me.tcMenu.Controls.Add(Me.tpPrecios)
         Me.tcMenu.Controls.Add(Me.TpMantenimiento)
         Me.tcMenu.Location = New System.Drawing.Point(77, 21)
         Me.tcMenu.Name = "tcMenu"
@@ -511,6 +520,90 @@ Partial Class Form1
         Me.btnFormaPago.TabIndex = 0
         Me.btnFormaPago.UseVisualStyleBackColor = True
         '
+        'tpPrecios
+        '
+        Me.tpPrecios.Controls.Add(Me.Button7)
+        Me.tpPrecios.Controls.Add(Me.Button6)
+        Me.tpPrecios.Controls.Add(Me.Button5)
+        Me.tpPrecios.Controls.Add(Me.Label14)
+        Me.tpPrecios.Controls.Add(Me.Label13)
+        Me.tpPrecios.Controls.Add(Me.Label12)
+        Me.tpPrecios.Location = New System.Drawing.Point(4, 22)
+        Me.tpPrecios.Name = "tpPrecios"
+        Me.tpPrecios.Size = New System.Drawing.Size(282, 317)
+        Me.tpPrecios.TabIndex = 3
+        Me.tpPrecios.Text = "Precios y Descuentos"
+        Me.tpPrecios.UseVisualStyleBackColor = True
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(206, 79)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(59, 13)
+        Me.Label12.TabIndex = 10
+        Me.Label12.Text = "Descuento"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(25, 79)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(37, 13)
+        Me.Label13.TabIndex = 12
+        Me.Label13.Text = "Precio"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(97, 79)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(82, 13)
+        Me.Label14.TabIndex = 14
+        Me.Label14.Text = "Listas de Precio"
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.Transparent
+        Me.Button5.BackgroundImage = CType(resources.GetObject("Button5.BackgroundImage"), System.Drawing.Image)
+        Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button5.FlatAppearance.BorderSize = 0
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.ForeColor = System.Drawing.Color.White
+        Me.Button5.Location = New System.Drawing.Point(9, 9)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(70, 67)
+        Me.Button5.TabIndex = 15
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'Button6
+        '
+        Me.Button6.BackColor = System.Drawing.Color.Transparent
+        Me.Button6.BackgroundImage = CType(resources.GetObject("Button6.BackgroundImage"), System.Drawing.Image)
+        Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button6.FlatAppearance.BorderSize = 0
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.ForeColor = System.Drawing.Color.White
+        Me.Button6.Location = New System.Drawing.Point(100, 9)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(70, 67)
+        Me.Button6.TabIndex = 16
+        Me.Button6.UseVisualStyleBackColor = False
+        '
+        'Button7
+        '
+        Me.Button7.BackColor = System.Drawing.Color.Transparent
+        Me.Button7.BackgroundImage = CType(resources.GetObject("Button7.BackgroundImage"), System.Drawing.Image)
+        Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button7.FlatAppearance.BorderSize = 0
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button7.ForeColor = System.Drawing.Color.White
+        Me.Button7.Location = New System.Drawing.Point(195, 9)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(70, 67)
+        Me.Button7.TabIndex = 17
+        Me.Button7.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -537,6 +630,8 @@ Partial Class Form1
         Me.tpPagos.PerformLayout()
         Me.TpMantenimiento.ResumeLayout(False)
         Me.TpMantenimiento.PerformLayout()
+        Me.tpPrecios.ResumeLayout(False)
+        Me.tpPrecios.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -578,4 +673,11 @@ Partial Class Form1
     Friend WithEvents btnFormaPago As Button
     Friend WithEvents btnPrecio As Button
     Friend WithEvents btnCerrar As Button
+    Friend WithEvents tpPrecios As TabPage
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label12 As Label
 End Class

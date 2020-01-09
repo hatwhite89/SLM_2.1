@@ -174,6 +174,7 @@
         'Recorrer filas para ingreso de detalle de factura
         For fila = 0 To dtDetallePagos.Rows.Count - 2
             Try
+
                 'Insertar detalle de pago
                 detallePago.Cod_Pago = Convert.ToInt32(txtNro.Text)
                 detallePago.Cod_Factura = Convert.ToInt32(dtDetallePagos.Rows(fila).Cells(0).Value)
