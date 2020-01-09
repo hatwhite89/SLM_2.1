@@ -138,8 +138,6 @@
 
             dt = ObjFpago.buscarCodigoFormaPago()
 
-
-
             If dt.Rows.Count > 0 Then
 
                 With pagos
@@ -233,6 +231,5 @@
         End If
 
     End Sub
-
 
 End Class

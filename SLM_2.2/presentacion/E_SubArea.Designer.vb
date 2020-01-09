@@ -26,6 +26,8 @@ Partial Class E_SubArea
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSubArea = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.chkConsolidado = New System.Windows.Forms.CheckBox()
         Me.chkNoSolitar = New System.Windows.Forms.CheckBox()
         Me.txtSecImpre = New System.Windows.Forms.TextBox()
@@ -42,8 +44,6 @@ Partial Class E_SubArea
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrearNuevo = New System.Windows.Forms.Button()
         Me.btnRegresar = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,6 +87,23 @@ Partial Class E_SubArea
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de SubArea"
+        '
+        'txtCodigo
+        '
+        Me.txtCodigo.Enabled = False
+        Me.txtCodigo.Location = New System.Drawing.Point(89, 22)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
+        Me.txtCodigo.TabIndex = 13
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(39, 24)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(40, 13)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "Código"
         '
         'chkConsolidado
         '
@@ -244,24 +261,7 @@ Partial Class E_SubArea
         Me.btnRegresar.TabIndex = 15
         Me.btnRegresar.UseVisualStyleBackColor = False
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(39, 24)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(40, 13)
-        Me.Label6.TabIndex = 12
-        Me.Label6.Text = "Código"
-        '
-        'txtCodigo
-        '
-        Me.txtCodigo.Enabled = False
-        Me.txtCodigo.Location = New System.Drawing.Point(89, 22)
-        Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
-        Me.txtCodigo.TabIndex = 13
-        '
-        'eg_frmSubArea
+        'E_SubArea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -274,7 +274,7 @@ Partial Class E_SubArea
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Name = "eg_frmSubArea"
+        Me.Name = "E_SubArea"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mantenimiento SubArea"
         Me.GroupBox1.ResumeLayout(False)
