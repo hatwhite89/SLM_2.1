@@ -70,10 +70,6 @@
                         Limpiar()
                     End With
 
-
-
-
-
                 End If
 
             Catch ex As Exception

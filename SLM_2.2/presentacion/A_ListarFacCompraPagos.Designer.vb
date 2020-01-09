@@ -24,10 +24,10 @@ Partial Class A_ListarFacCompraPagos
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListarFacCompraPagos))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.dtFacturasCompra = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.dtFacturasCompra = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtFacturasCompra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,34 +45,6 @@ Partial Class A_ListarFacCompraPagos
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Facturas de Compra"
         '
-        'dtFacturasCompra
-        '
-        Me.dtFacturasCompra.BackgroundColor = System.Drawing.Color.White
-        Me.dtFacturasCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtFacturasCompra.GridColor = System.Drawing.Color.White
-        Me.dtFacturasCompra.Location = New System.Drawing.Point(6, 54)
-        Me.dtFacturasCompra.Name = "dtFacturasCompra"
-        Me.dtFacturasCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtFacturasCompra.Size = New System.Drawing.Size(512, 266)
-        Me.dtFacturasCompra.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 30)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Nro. Factura"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(78, 27)
-        Me.TextBox1.MaxLength = 30
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(237, 20)
-        Me.TextBox1.TabIndex = 2
-        '
         'btnCancelar
         '
         Me.btnCancelar.BackColor = System.Drawing.Color.Transparent
@@ -85,6 +57,34 @@ Partial Class A_ListarFacCompraPagos
         Me.btnCancelar.Size = New System.Drawing.Size(20, 18)
         Me.btnCancelar.TabIndex = 3
         Me.btnCancelar.UseVisualStyleBackColor = False
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(78, 27)
+        Me.TextBox1.MaxLength = 30
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(237, 20)
+        Me.TextBox1.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 30)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(66, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Nro. Factura"
+        '
+        'dtFacturasCompra
+        '
+        Me.dtFacturasCompra.BackgroundColor = System.Drawing.Color.White
+        Me.dtFacturasCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtFacturasCompra.GridColor = System.Drawing.Color.White
+        Me.dtFacturasCompra.Location = New System.Drawing.Point(6, 54)
+        Me.dtFacturasCompra.Name = "dtFacturasCompra"
+        Me.dtFacturasCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtFacturasCompra.Size = New System.Drawing.Size(512, 266)
+        Me.dtFacturasCompra.TabIndex = 0
         '
         'A_ListarFacCompraPagos
         '

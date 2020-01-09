@@ -123,18 +123,22 @@
     <Compile Include="negocio\ClsApertura.vb" />
     <Compile Include="negocio\ClsAreaLaboratorio.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
+    <Compile Include="negocio\ClsDescuentos.vb" />
     <Compile Include="negocio\ClsDetalleContactos.vb" />
     <Compile Include="negocio\ClsDetalleFacturaCompra.vb" />
+    <Compile Include="negocio\ClsDetalleListaPrecios.vb" />
     <Compile Include="negocio\ClsDetallePago.vb" />
     <Compile Include="negocio\ClsDetalleRecibo.vb" />
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
     <Compile Include="negocio\ClsItemExamen.vb" />
+    <Compile Include="negocio\ClsListaPrecios.vb" />
     <Compile Include="negocio\ClsMaquinasLocales.vb" />
     <Compile Include="negocio\ClsPago.vb" />
     <Compile Include="negocio\ClsParametroExamen.vb" />
     <Compile Include="negocio\ClsParametroExamenDetalle.vb" />
+    <Compile Include="negocio\ClsPrecio.vb" />
     <Compile Include="negocio\ClsRecibo.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
@@ -477,6 +481,12 @@
       <DependentUpon>M_CryComprobanteEntrega.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="presentacion\M_Descuentos.Designer.vb">
+      <DependentUpon>M_Descuentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Descuentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_Especialidad.Designer.vb">
       <DependentUpon>M_Especialidad.vb</DependentUpon>
     </Compile>
@@ -495,10 +505,22 @@
     <Compile Include="presentacion\M_InicioSesion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_ListadoDePrecios.Designer.vb">
+      <DependentUpon>M_ListadoDePrecios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ListadoDePrecios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_ListadoSede.Designer.vb">
       <DependentUpon>M_ListadoSede.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_ListadoSede.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_ListaPrecios.Designer.vb">
+      <DependentUpon>M_ListaPrecios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ListaPrecios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_ListarClientes.Designer.vb">
@@ -559,6 +581,12 @@
       <DependentUpon>M_Factura.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_Factura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_Precio.Designer.vb">
+      <DependentUpon>M_Precio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Precio.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_Recibo.Designer.vb">
@@ -798,6 +826,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>M_CryComprobanteEntrega.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Descuentos.resx">
+      <DependentUpon>M_Descuentos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Especialidad.resx">
       <DependentUpon>M_Especialidad.vb</DependentUpon>
     </EmbeddedResource>
@@ -807,8 +838,14 @@
     <EmbeddedResource Include="presentacion\M_InicioSesion.resx">
       <DependentUpon>M_InicioSesion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ListadoDePrecios.resx">
+      <DependentUpon>M_ListadoDePrecios.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ListadoSede.resx">
       <DependentUpon>M_ListadoSede.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ListaPrecios.resx">
+      <DependentUpon>M_ListaPrecios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ListarClientes.resx">
       <DependentUpon>M_ListarClientes.vb</DependentUpon>
@@ -839,6 +876,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Factura.resx">
       <DependentUpon>M_Factura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Precio.resx">
+      <DependentUpon>M_Precio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Recibo.resx">
       <DependentUpon>M_Recibo.vb</DependentUpon>

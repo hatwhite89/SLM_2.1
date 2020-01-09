@@ -11,7 +11,6 @@
     Private Sub A_ListarPagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Cargar listado de pagos
 
-
         dtPagos.DataSource = pagos.listarPagos
 
     End Sub
@@ -43,6 +42,30 @@
             frmPagos.txtCodOrden.Text = row("codOrden")
             frmPagos.lblTotalSuma.Text = row("sumaTotal")
 
+
+
+            'Listar detalle de pago
+
+            'mostrar detalle de factura
+            Dim dpago As New ClsDetallePago
+            Dim dtpago As New DataTable
+
+            dpago.Cod_Pago = row("codPago")
+
+            dtpago = dpago.listarDetallePago
+
+            For Index As Integer = 0 To dtpago.Rows.Count - 1
+                Dim row2 As DataRow = dtpago.Rows(Index)
+                frmPagos.dtDetallePagos.Rows.Add(New String() {(row2("codproveedor")), CStr(row2("nombreproveedor")), CStr(row2("moneda")), CStr(row2("total")), CStr(row2("formapago")), CStr(row2("nrocheque"))})
+            Next
+
+
+
+
+
+
+
+
             frmPagos.Show()
 
         Catch ex As Exception
@@ -51,4 +74,6 @@
 
         Me.Close()
     End Sub
+
+
 End Class

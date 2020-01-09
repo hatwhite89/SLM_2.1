@@ -128,7 +128,7 @@ Partial Class A_FacturaCompras
         Me.btnBuscarTerminoPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscarTerminoPago.FlatAppearance.BorderSize = 0
         Me.btnBuscarTerminoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarTerminoPago.Location = New System.Drawing.Point(364, 78)
+        Me.btnBuscarTerminoPago.Location = New System.Drawing.Point(393, 78)
         Me.btnBuscarTerminoPago.Name = "btnBuscarTerminoPago"
         Me.btnBuscarTerminoPago.Size = New System.Drawing.Size(21, 20)
         Me.btnBuscarTerminoPago.TabIndex = 7
@@ -141,6 +141,7 @@ Partial Class A_FacturaCompras
         Me.txtMoneda.Name = "txtMoneda"
         Me.txtMoneda.Size = New System.Drawing.Size(84, 20)
         Me.txtMoneda.TabIndex = 9
+        Me.txtMoneda.Text = "Lps"
         '
         'Label9
         '
@@ -190,7 +191,7 @@ Partial Class A_FacturaCompras
         Me.txtTerminoPago.Location = New System.Drawing.Point(306, 78)
         Me.txtTerminoPago.MaxLength = 10
         Me.txtTerminoPago.Name = "txtTerminoPago"
-        Me.txtTerminoPago.Size = New System.Drawing.Size(52, 20)
+        Me.txtTerminoPago.Size = New System.Drawing.Size(84, 20)
         Me.txtTerminoPago.TabIndex = 6
         '
         'Label6

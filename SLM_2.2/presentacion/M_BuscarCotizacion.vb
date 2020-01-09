@@ -65,4 +65,21 @@
         M_Factura.HabilitarCotizacionFactura()
         M_Factura.ShowDialog()
     End Sub
+
+    Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
+        If (txtnombreB.Text <> "") Then
+            Try
+                Dim objCot As New ClsCotizacion
+                objCot.nombreCliente_ = txtnombreB.Text
+                Dim dv As DataView = objCot.BuscarCotizacionCliente.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            Catch ex As Exception
+                MsgBox("No existe la cotización.", MsgBoxStyle.Critical, "Validación")
+            End Try
+        Else
+            txtnombreB.Text = ""
+        End If
+    End Sub
 End Class

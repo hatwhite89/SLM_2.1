@@ -1,7 +1,4 @@
 ﻿Public Class M_Sede
-    Private Sub btncancelar_Click(sender As Object, e As EventArgs)
-        Me.Close()
-    End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
     End Sub
@@ -222,8 +219,6 @@
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-        Me.Width = 687
-        Me.Height = 725
         deshabilitar()
     End Sub
 
