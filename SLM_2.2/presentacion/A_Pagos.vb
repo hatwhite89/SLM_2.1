@@ -167,6 +167,7 @@
                 Dim row As DataRow = dt2.Rows(0)
                 txtNro.Text = CStr(row("codPago"))
 
+
             End If 'If conteo de filas
 
         End If 'Verificar que campo txtFormaPago no este vacio.
