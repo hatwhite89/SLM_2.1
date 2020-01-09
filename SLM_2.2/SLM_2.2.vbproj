@@ -397,6 +397,12 @@
     <Compile Include="presentacion\A_FormaPago.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_ImprimirCotizacion.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M_ImprimirCotizacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="presentacion\M_Apertura.Designer.vb">
       <DependentUpon>M_Apertura.vb</DependentUpon>
     </Compile>
@@ -497,6 +503,12 @@
       <DependentUpon>M_EstacionTrabajo.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_EstacionTrabajo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_ImprimirCotizacionForm.Designer.vb">
+      <DependentUpon>M_ImprimirCotizacionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ImprimirCotizacionForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_InicioSesion.Designer.vb">
@@ -783,6 +795,10 @@
     <EmbeddedResource Include="presentacion\E_Unidad.resx">
       <DependentUpon>E_Unidad.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ImprimirCotizacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>M_ImprimirCotizacion.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Apertura.resx">
       <DependentUpon>M_Apertura.vb</DependentUpon>
     </EmbeddedResource>
@@ -834,6 +850,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_EstacionTrabajo.resx">
       <DependentUpon>M_EstacionTrabajo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ImprimirCotizacionForm.resx">
+      <DependentUpon>M_ImprimirCotizacionForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_InicioSesion.resx">
       <DependentUpon>M_InicioSesion.vb</DependentUpon>

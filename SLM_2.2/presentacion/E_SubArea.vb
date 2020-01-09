@@ -30,5 +30,11 @@
 
     End Sub
 
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
 
+    End Sub
+
+    Private Sub txtArea_TextChanged(sender As Object, e As EventArgs) Handles txtArea.TextChanged
+
+    End Sub
 End Class

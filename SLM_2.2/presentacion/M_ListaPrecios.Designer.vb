@@ -24,10 +24,6 @@ Partial Class M_ListaPrecios
     Private Sub InitializeComponent()
         Me.gbxclasificacion = New System.Windows.Forms.GroupBox()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codigoListaPrecios = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.grupoOitem = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.txtcodigoBreve = New System.Windows.Forms.TextBox()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
@@ -38,6 +34,11 @@ Partial Class M_ListaPrecios
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.btncancelar = New System.Windows.Forms.Button()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codigoListaPrecios = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.grupoOitem = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodigoBreveDescuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbxclasificacion.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -65,7 +66,7 @@ Partial Class M_ListaPrecios
         'dgbtabla
         '
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.codigoListaPrecios, Me.grupoOitem, Me.Descuento})
+        Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.codigoListaPrecios, Me.grupoOitem, Me.Descuento, Me.CodigoBreveDescuento})
         Me.dgbtabla.Location = New System.Drawing.Point(25, 146)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
@@ -74,40 +75,6 @@ Partial Class M_ListaPrecios
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.Size = New System.Drawing.Size(563, 337)
         Me.dgbtabla.TabIndex = 147
-        '
-        'codigo
-        '
-        Me.codigo.HeaderText = "codigo"
-        Me.codigo.MinimumWidth = 6
-        Me.codigo.Name = "codigo"
-        Me.codigo.ReadOnly = True
-        Me.codigo.Visible = False
-        Me.codigo.Width = 125
-        '
-        'codigoListaPrecios
-        '
-        Me.codigoListaPrecios.HeaderText = "Codigo Lista Precios"
-        Me.codigoListaPrecios.MinimumWidth = 6
-        Me.codigoListaPrecios.Name = "codigoListaPrecios"
-        Me.codigoListaPrecios.ReadOnly = True
-        Me.codigoListaPrecios.Visible = False
-        Me.codigoListaPrecios.Width = 125
-        '
-        'grupoOitem
-        '
-        Me.grupoOitem.HeaderText = "Grupo ó Examen"
-        Me.grupoOitem.MinimumWidth = 6
-        Me.grupoOitem.Name = "grupoOitem"
-        Me.grupoOitem.ReadOnly = True
-        Me.grupoOitem.Width = 125
-        '
-        'Descuento
-        '
-        Me.Descuento.HeaderText = "Descuento"
-        Me.Descuento.MinimumWidth = 6
-        Me.Descuento.Name = "Descuento"
-        Me.Descuento.ReadOnly = True
-        Me.Descuento.Width = 125
         '
         'txtDescripcion
         '
@@ -217,6 +184,49 @@ Partial Class M_ListaPrecios
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
         '
+        'codigo
+        '
+        Me.codigo.HeaderText = "codigo"
+        Me.codigo.MinimumWidth = 6
+        Me.codigo.Name = "codigo"
+        Me.codigo.ReadOnly = True
+        Me.codigo.Visible = False
+        Me.codigo.Width = 125
+        '
+        'codigoListaPrecios
+        '
+        Me.codigoListaPrecios.HeaderText = "Codigo Lista Precios"
+        Me.codigoListaPrecios.MinimumWidth = 6
+        Me.codigoListaPrecios.Name = "codigoListaPrecios"
+        Me.codigoListaPrecios.ReadOnly = True
+        Me.codigoListaPrecios.Visible = False
+        Me.codigoListaPrecios.Width = 125
+        '
+        'grupoOitem
+        '
+        Me.grupoOitem.HeaderText = "Grupo ó Examen"
+        Me.grupoOitem.MinimumWidth = 6
+        Me.grupoOitem.Name = "grupoOitem"
+        Me.grupoOitem.ReadOnly = True
+        Me.grupoOitem.Width = 125
+        '
+        'Descuento
+        '
+        Me.Descuento.HeaderText = "Codigo Descuento"
+        Me.Descuento.MinimumWidth = 6
+        Me.Descuento.Name = "Descuento"
+        Me.Descuento.ReadOnly = True
+        Me.Descuento.Visible = False
+        Me.Descuento.Width = 125
+        '
+        'CodigoBreveDescuento
+        '
+        Me.CodigoBreveDescuento.HeaderText = "Descuento"
+        Me.CodigoBreveDescuento.MinimumWidth = 6
+        Me.CodigoBreveDescuento.Name = "CodigoBreveDescuento"
+        Me.CodigoBreveDescuento.ReadOnly = True
+        Me.CodigoBreveDescuento.Width = 125
+        '
         'M_ListaPrecios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -251,4 +261,5 @@ Partial Class M_ListaPrecios
     Friend WithEvents codigoListaPrecios As DataGridViewTextBoxColumn
     Friend WithEvents grupoOitem As DataGridViewTextBoxColumn
     Friend WithEvents Descuento As DataGridViewTextBoxColumn
+    Friend WithEvents CodigoBreveDescuento As DataGridViewTextBoxColumn
 End Class

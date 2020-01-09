@@ -102,6 +102,8 @@ Partial Class M_Factura
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.lblcodeSucursal = New System.Windows.Forms.Label()
         Me.lblcodeTerminoPago = New System.Windows.Forms.Label()
+        Me.lblcodePriceList = New System.Windows.Forms.Label()
+        Me.lblFechaNacimiento = New System.Windows.Forms.Label()
         Me.gbxlistadoExamenes.SuspendLayout()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -961,6 +963,24 @@ Partial Class M_Factura
         Me.lblcodeTerminoPago.TabIndex = 99
         Me.lblcodeTerminoPago.Visible = False
         '
+        'lblcodePriceList
+        '
+        Me.lblcodePriceList.AutoSize = True
+        Me.lblcodePriceList.Location = New System.Drawing.Point(245, 41)
+        Me.lblcodePriceList.Name = "lblcodePriceList"
+        Me.lblcodePriceList.Size = New System.Drawing.Size(51, 17)
+        Me.lblcodePriceList.TabIndex = 100
+        Me.lblcodePriceList.Text = "Label1"
+        '
+        'lblFechaNacimiento
+        '
+        Me.lblFechaNacimiento.AutoSize = True
+        Me.lblFechaNacimiento.Location = New System.Drawing.Point(419, 41)
+        Me.lblFechaNacimiento.Name = "lblFechaNacimiento"
+        Me.lblFechaNacimiento.Size = New System.Drawing.Size(51, 17)
+        Me.lblFechaNacimiento.TabIndex = 101
+        Me.lblFechaNacimiento.Text = "Label1"
+        '
         'M_Factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -968,6 +988,8 @@ Partial Class M_Factura
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1164, 668)
         Me.ControlBox = False
+        Me.Controls.Add(Me.lblFechaNacimiento)
+        Me.Controls.Add(Me.lblcodePriceList)
         Me.Controls.Add(Me.lblcodeTerminoPago)
         Me.Controls.Add(Me.lblcodeSucursal)
         Me.Controls.Add(Me.btnActualizar)
@@ -1126,4 +1148,6 @@ Partial Class M_Factura
     Friend WithEvents btnActualizar As Button
     Friend WithEvents lblcodeSucursal As Label
     Friend WithEvents lblcodeTerminoPago As Label
+    Friend WithEvents lblcodePriceList As Label
+    Friend WithEvents lblFechaNacimiento As Label
 End Class

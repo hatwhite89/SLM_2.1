@@ -189,15 +189,15 @@
                 If e.ColumnIndex = 2 Then
                     E_DetalleExamenes.lblFila.Text = e.RowIndex.ToString
                     E_DetalleExamenes.ShowDialog()
-                ElseIf e.ColumnIndex = 3 Then
+                ElseIf e.ColumnIndex = 4 Then
                     M_Descuentos.lblFila.Text = e.RowIndex.ToString
                     M_Descuentos.ShowDialog()
-                ElseIf e.ColumnIndex = 4 And dgbtabla.Rows(e.RowIndex).Cells(0).Value() = "" Then
+                ElseIf e.ColumnIndex = 5 And dgbtabla.Rows(e.RowIndex).Cells(0).Value() = "" Then
                     Dim n As String = MsgBox("¿Desea eliminarlo de la lista de precios?", MsgBoxStyle.YesNo, "Validación")
                     If n = vbYes Then
                         dgbtabla.Rows.Remove(dgbtabla.Rows(e.RowIndex.ToString))
                     End If
-                ElseIf e.ColumnIndex = 4 And Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value() <> "" Then
+                ElseIf e.ColumnIndex = 5 And Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value() <> "" Then
                     Dim n As String = MsgBox("¿Desea eliminarlo de la lista de precios?", MsgBoxStyle.YesNo, "Validación")
                     If n = vbYes Then
                         codigoDetallePriceList.Add(Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value())

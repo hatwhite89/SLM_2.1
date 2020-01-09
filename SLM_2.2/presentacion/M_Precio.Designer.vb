@@ -45,8 +45,8 @@ Partial Class M_Precio
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
-        Me.txtdescripcionB = New System.Windows.Forms.TextBox()
-        Me.lblcomentarioB = New System.Windows.Forms.Label()
+        Me.txtCodigoB = New System.Windows.Forms.TextBox()
+        Me.lblcodigoB = New System.Windows.Forms.Label()
         Me.gbxPrecio.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -260,8 +260,8 @@ Partial Class M_Precio
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
-        Me.gbxbusqueda.Controls.Add(Me.txtdescripcionB)
-        Me.gbxbusqueda.Controls.Add(Me.lblcomentarioB)
+        Me.gbxbusqueda.Controls.Add(Me.txtCodigoB)
+        Me.gbxbusqueda.Controls.Add(Me.lblcodigoB)
         Me.gbxbusqueda.Location = New System.Drawing.Point(25, 242)
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Size = New System.Drawing.Size(613, 347)
@@ -301,22 +301,22 @@ Partial Class M_Precio
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL DE PRECIOS"
         '
-        'txtdescripcionB
+        'txtCodigoB
         '
-        Me.txtdescripcionB.Location = New System.Drawing.Point(233, 26)
-        Me.txtdescripcionB.MaxLength = 100
-        Me.txtdescripcionB.Name = "txtdescripcionB"
-        Me.txtdescripcionB.Size = New System.Drawing.Size(192, 22)
-        Me.txtdescripcionB.TabIndex = 115
+        Me.txtCodigoB.Location = New System.Drawing.Point(233, 26)
+        Me.txtCodigoB.MaxLength = 100
+        Me.txtCodigoB.Name = "txtCodigoB"
+        Me.txtCodigoB.Size = New System.Drawing.Size(192, 22)
+        Me.txtCodigoB.TabIndex = 115
         '
-        'lblcomentarioB
+        'lblcodigoB
         '
-        Me.lblcomentarioB.AutoSize = True
-        Me.lblcomentarioB.Location = New System.Drawing.Point(147, 29)
-        Me.lblcomentarioB.Name = "lblcomentarioB"
-        Me.lblcomentarioB.Size = New System.Drawing.Size(82, 17)
-        Me.lblcomentarioB.TabIndex = 114
-        Me.lblcomentarioB.Text = "Descripción"
+        Me.lblcodigoB.AutoSize = True
+        Me.lblcodigoB.Location = New System.Drawing.Point(163, 26)
+        Me.lblcodigoB.Name = "lblcodigoB"
+        Me.lblcodigoB.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodigoB.TabIndex = 114
+        Me.lblcodigoB.Text = "Código"
         '
         'M_Precio
         '
@@ -352,8 +352,8 @@ Partial Class M_Precio
     Friend WithEvents lblcantidad As Label
     Friend WithEvents dgbtabla As DataGridView
     Friend WithEvents lbltotal As Label
-    Friend WithEvents txtdescripcionB As TextBox
-    Friend WithEvents lblcomentarioB As Label
+    Friend WithEvents txtCodigoB As TextBox
+    Friend WithEvents lblcodigoB As Label
     Friend WithEvents txtcodigo As TextBox
     Friend WithEvents txtPrecio As TextBox
     Friend WithEvents txtcodigoItem As TextBox

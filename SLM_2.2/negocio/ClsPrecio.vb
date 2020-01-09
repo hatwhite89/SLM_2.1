@@ -3,6 +3,7 @@
 Public Class ClsPrecio
     Dim codigo, codigoItem, codigoListaPrecios As Integer
     Dim precio As Double
+    Dim descripcion As String
     'Constructor
     Public Sub New()
 
@@ -37,6 +38,14 @@ Public Class ClsPrecio
         End Get
         Set(value As Double)
             precio = value
+        End Set
+    End Property
+    Public Property descripcion_ As String
+        Get
+            Return descripcion
+        End Get
+        Set(value As String)
+            descripcion = value
         End Set
     End Property
     Public Function RegistrarNuevoPrecio() As String
@@ -151,18 +160,65 @@ Public Class ClsPrecio
             End Using
         End Using
     End Function
-
-    Public Function SeleccionarPrecios() As DataTable
-
+    Public Function BuscarPrecioDescripcion() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("M_slmSeleccionarPrecios", cn)
-            Dim dt As New DataTable
-            da.Fill(dt)
-            objCon.cerrarConexion()
-            Return dt
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_slmBuscarPrecioDescripcion"
+            cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion_
+            cmd.Parameters.Add("@codigoListaPrecios", SqlDbType.Int).Value = codigoListaPrecios_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
+    Public Function BuscarPrecioCode() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_slmBuscarPrecioCode"
+            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = codigo_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
+    Public Function SeleccionarPrecios() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_slmSeleccionarPrecios"
+            cmd.Parameters.Add("@codigoListaPrecios", SqlDbType.Int).Value = codigoListaPrecios_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
         End Using
     End Function
 End Class

@@ -228,7 +228,6 @@
         End If
         txtnombre1.Select(txtnombre1.Text.Length, 0)
     End Sub
-
     Private Sub txtnombre2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombre2.KeyPress
         If Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
             e.Handled = True
@@ -613,6 +612,7 @@
                 txtcodigoCategoria.BackColor = Color.White
             Catch ex As Exception
                 txtcodigoCategoria.BackColor = Color.Red
+                txtcodigoCategoria.Text = ""
                 txtnombreCategoria.Text = ""
             End Try
         Else
@@ -658,7 +658,6 @@
             'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
         End Try
     End Sub
-
     Private Sub dtpfechaNacimiento_ValueChanged(sender As Object, e As EventArgs) Handles dtpfechaNacimiento.ValueChanged
         Dim yr As Integer = DateDiff(DateInterval.Year, dtpfechaNacimiento.Value, Now)
         Dim month As Integer = DateDiff(DateInterval.Month, dtpfechaNacimiento.Value, Now) Mod 12
@@ -668,5 +667,4 @@
             'MsgBox(yr & " Years, " & month & " Months ")
         End If
     End Sub
-
 End Class

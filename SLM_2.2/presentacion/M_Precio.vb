@@ -9,6 +9,8 @@
         txtPrecio.Text() = ""
         txtcodigoListaPrecios.Text() = ""
 
+        txtCodigoB.Text = ""
+
         txtcodigoItem.ReadOnly = False
         txtPrecio.ReadOnly = False
         txtcodigoListaPrecios.ReadOnly = False
@@ -108,8 +110,8 @@
         Try
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
             txtcodigoItem.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
-            txtPrecio.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
-            lblCode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+            txtPrecio.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+            lblCode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
 
             btnmodificar.Enabled = True
             btnguardar.Enabled = False
@@ -121,7 +123,7 @@
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+    Private Sub M_Precio_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
         End If
@@ -204,6 +206,18 @@
             Dim row As DataRow = dt.Rows(0)
             txtcodigoListaPrecios.Text = CStr(row("codigoBreve"))
             txtdescripcionListaPrecios.Text = CStr(row("descripcion"))
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub txtCodigoB_TextChanged(sender As Object, e As EventArgs) Handles txtCodigoB.TextChanged
+        Try
+            objPre.codigo_ = txtCodigoB.Text
+            Dim dv As DataView = objPre.BuscarPrecioCode.DefaultView
+            dgbtabla.DataSource = dv
+            lblcantidad.Text = dv.Count
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
         Catch ex As Exception
 
         End Try
