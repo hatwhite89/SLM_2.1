@@ -142,10 +142,12 @@
     <Compile Include="negocio\ClsParametroExamen.vb" />
     <Compile Include="negocio\ClsParametroExamenDetalle.vb" />
     <Compile Include="negocio\ClsPrecio.vb" />
+    <Compile Include="negocio\ClsPromociones.vb" />
     <Compile Include="negocio\ClsRecibo.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
     <Compile Include="negocio\ClsUnidad.vb" />
+    <Compile Include="negocio\ClsDetallePromociones.vb" />
     <Compile Include="negocio\Importar.vb" />
     <Compile Include="presentacion\A_FacturaCompras.Designer.vb">
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
@@ -527,6 +529,12 @@
     <Compile Include="presentacion\M_ListadoDePrecios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_ListadoPromociones.Designer.vb">
+      <DependentUpon>M_ListadoPromociones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ListadoPromociones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_ListadoSede.Designer.vb">
       <DependentUpon>M_ListadoSede.vb</DependentUpon>
     </Compile>
@@ -863,6 +871,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ListadoDePrecios.resx">
       <DependentUpon>M_ListadoDePrecios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ListadoPromociones.resx">
+      <DependentUpon>M_ListadoPromociones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ListadoSede.resx">
       <DependentUpon>M_ListadoSede.vb</DependentUpon>

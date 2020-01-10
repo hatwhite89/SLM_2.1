@@ -541,7 +541,7 @@ Public Class M_Factura
                     .codigoSede_ = Convert.ToInt32(txtcodigoSede.Text)
                     .fechaVto_ = dtpfechaVto.Value
                     .codigoSucursal_ = Convert.ToInt32(lblcodeSucursal.Text)
-                    .codigoConvenio_ = Convert.ToInt32(txtcodigoConvenio.Text)
+                    .codigoConvenio_ = Convert.ToInt32(lblcodePriceList.Text)
                     .numeroPoliza_ = txtnumeroPoliza.Text
                     .codigoTerminal_ = Convert.ToInt32(txtcodigoTerminal.Text)
                     .entregaMedico_ = cbxentregarMedico.Checked
