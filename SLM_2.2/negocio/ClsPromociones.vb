@@ -4,7 +4,7 @@ Public Class ClsPromociones
     Dim descripcion As String
     Dim codigo, contador As Integer
     Dim precio As Double
-    Dim img As Byte
+    Dim img As Image
     Dim fechaInicio, fechaFinal As Date
 
     'Constructor
@@ -44,11 +44,11 @@ Public Class ClsPromociones
             precio = value
         End Set
     End Property
-    Public Property img_ As Byte
+    Public Property img_ As Image
         Get
             Return img
         End Get
-        Set(value As Byte)
+        Set(value As Image)
             img = value
         End Set
     End Property
@@ -206,6 +206,12 @@ Public Class ClsPromociones
             Return dt
         End Using
     End Function
+
+
+
+
+
+
 
 End Class
 

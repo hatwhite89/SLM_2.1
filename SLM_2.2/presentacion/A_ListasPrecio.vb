@@ -1,13 +1,11 @@
 ﻿Public Class A_ListasPrecio
-    Private Sub A_ListasPrecio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+
         importarExcel(dtExcel)
 
         lblCantidadR.Text = dtExcel.Rows.Count - 1
-
 
     End Sub
 
@@ -36,7 +34,7 @@
 
         ' M_Precio.dgbtabla.DataSource = precios.SeleccionarPrecios
 
-        Dim dv As DataView = precios.SeleccionarPrecios.DefaultView
+        Dim dv As DataView = precios.ListarPrecios.DefaultView
         M_Precio.dgbtabla.DataSource = dv
         M_Precio.lblcantidad.Text = dv.Count
         M_Precio.dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
