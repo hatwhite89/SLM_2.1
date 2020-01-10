@@ -651,7 +651,7 @@ Public Class M_Factura
                         End If
                     Next
                     MsgBox("Registrada la cotización correctamente.")
-                    Imprimir_Cotizacion()
+
                 Else
                     MsgBox("Error al querer registrar la cotización.", MsgBoxStyle.Critical)
                 End If
@@ -662,6 +662,8 @@ Public Class M_Factura
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
+
+        Imprimir_Cotizacion()
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
@@ -790,11 +792,13 @@ Public Class M_Factura
 
         If (Trim(txtnumeroFactura.Text) <> "") Then
             'le asigno un valor a los parametros del procedimiento almacenado
-            Dim form As New M_ImprimirCotizacionForm
-            form.numeroCotizacion = Convert.ToInt64(txtnumeroFactura.Text)
-            form.fechaNacimiento = Convert.ToDateTime(lblFechaNacimiento.Text)
-            'muestro el reporte
-            form.ShowDialog()
+            Dim objReporte As New M_ImprimirCotizacion
+            objReporte.SetParameterValue("@numero", Convert.ToInt64(txtnumeroFactura.Text))
+            objReporte.SetParameterValue("@numeroCotizacion", Convert.ToInt64(txtnumeroFactura.Text))
+            objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
+            objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+            M_ImprimirCotizacionForm.CrystalReportViewer1.ReportSource = objReporte
+            M_ImprimirCotizacionForm.ShowDialog()
         Else
             MsgBox("Debe estar creada o guardada la cotización para poder imprimirla.", MsgBoxStyle.Critical)
         End If
