@@ -25,6 +25,8 @@ Partial Class A_ListasPrecio
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.dtExcel = New System.Windows.Forms.DataGridView()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblCantidadR = New System.Windows.Forms.Label()
         CType(Me.dtExcel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -62,12 +64,32 @@ Partial Class A_ListasPrecio
         Me.dtExcel.Size = New System.Drawing.Size(484, 518)
         Me.dtExcel.TabIndex = 4
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(12, 546)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(114, 13)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Cantidad de Registros:"
+        '
+        'lblCantidadR
+        '
+        Me.lblCantidadR.AutoSize = True
+        Me.lblCantidadR.Location = New System.Drawing.Point(132, 546)
+        Me.lblCantidadR.Name = "lblCantidadR"
+        Me.lblCantidadR.Size = New System.Drawing.Size(10, 13)
+        Me.lblCantidadR.TabIndex = 6
+        Me.lblCantidadR.Text = "-"
+        '
         'A_ListasPrecio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(508, 571)
+        Me.Controls.Add(Me.lblCantidadR)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dtExcel)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnGuardar)
@@ -76,9 +98,12 @@ Partial Class A_ListasPrecio
         Me.Text = "Importar Precios"
         CType(Me.dtExcel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents dtExcel As DataGridView
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lblCantidadR As Label
 End Class
