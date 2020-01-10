@@ -27,7 +27,6 @@ Partial Class Form1
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.gbxMenu = New System.Windows.Forms.GroupBox()
         Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.btnPrecio = New System.Windows.Forms.Button()
         Me.btnFacturacion = New System.Windows.Forms.Button()
         Me.lblfacturacion = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -83,9 +82,9 @@ Partial Class Form1
         Me.btnContabilidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnContabilidad.FlatAppearance.BorderSize = 0
         Me.btnContabilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnContabilidad.Location = New System.Drawing.Point(0, 26)
+        Me.btnContabilidad.Location = New System.Drawing.Point(0, 22)
         Me.btnContabilidad.Name = "btnContabilidad"
-        Me.btnContabilidad.Size = New System.Drawing.Size(95, 27)
+        Me.btnContabilidad.Size = New System.Drawing.Size(92, 27)
         Me.btnContabilidad.TabIndex = 0
         Me.btnContabilidad.Text = "Contabilidad"
         Me.btnContabilidad.UseVisualStyleBackColor = False
@@ -104,7 +103,6 @@ Partial Class Form1
         '
         Me.gbxMenu.BackColor = System.Drawing.Color.MidnightBlue
         Me.gbxMenu.Controls.Add(Me.btnCerrar)
-        Me.gbxMenu.Controls.Add(Me.btnPrecio)
         Me.gbxMenu.Controls.Add(Me.btnFacturacion)
         Me.gbxMenu.Controls.Add(Me.lblfacturacion)
         Me.gbxMenu.Controls.Add(Me.Label1)
@@ -115,36 +113,24 @@ Partial Class Form1
         Me.gbxMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.gbxMenu.Location = New System.Drawing.Point(-1, -13)
         Me.gbxMenu.Name = "gbxMenu"
-        Me.gbxMenu.Size = New System.Drawing.Size(88, 405)
+        Me.gbxMenu.Size = New System.Drawing.Size(92, 405)
         Me.gbxMenu.TabIndex = 3
         Me.gbxMenu.TabStop = False
         Me.gbxMenu.Text = "Opciones"
         '
         'btnCerrar
         '
-        Me.btnCerrar.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
         Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCerrar.FlatAppearance.BorderSize = 0
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.ForeColor = System.Drawing.Color.White
         Me.btnCerrar.Location = New System.Drawing.Point(-3, 365)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(95, 27)
         Me.btnCerrar.TabIndex = 13
         Me.btnCerrar.Text = "Cerrar"
         Me.btnCerrar.UseVisualStyleBackColor = False
-        '
-        'btnPrecio
-        '
-        Me.btnPrecio.BackColor = System.Drawing.Color.LightGray
-        Me.btnPrecio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnPrecio.FlatAppearance.BorderSize = 0
-        Me.btnPrecio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPrecio.Location = New System.Drawing.Point(-3, 52)
-        Me.btnPrecio.Name = "btnPrecio"
-        Me.btnPrecio.Size = New System.Drawing.Size(95, 36)
-        Me.btnPrecio.TabIndex = 12
-        Me.btnPrecio.Text = "Precios y Descuentos"
-        Me.btnPrecio.UseVisualStyleBackColor = False
         '
         'btnFacturacion
         '
@@ -671,7 +657,6 @@ Partial Class Form1
     Friend WithEvents btnCuentas As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents btnFormaPago As Button
-    Friend WithEvents btnPrecio As Button
     Friend WithEvents btnCerrar As Button
     Friend WithEvents tpPrecios As TabPage
     Friend WithEvents Button7 As Button

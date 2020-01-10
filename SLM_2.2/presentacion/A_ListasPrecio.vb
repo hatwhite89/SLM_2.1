@@ -5,6 +5,10 @@
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         importarExcel(dtExcel)
+
+        lblCantidadR.Text = dtExcel.Rows.Count - 1
+
+
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
