@@ -94,6 +94,7 @@ Partial Class M_ListadoPromociones
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(663, 322)
         Me.Controls.Add(Me.gbxbusqueda)
+        Me.KeyPreview = True
         Me.Name = "M_ListadoPromociones"
         Me.Text = "Listado de Promociones"
         Me.gbxbusqueda.ResumeLayout(False)

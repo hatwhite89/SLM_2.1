@@ -118,15 +118,23 @@ Public Class ClsDetallePromociones
     End Function
 
     Public Function SeleccionarDetallePromocion() As DataTable
-
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("M_slmSeleccionarDetallePromocion", cn)
-            Dim dt As New DataTable
-            da.Fill(dt)
-            Return dt
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_slmSeleccionarDetallePromociones"
+            cmd.Parameters.Add("@codigoPromocion", SqlDbType.Int).Value = codigoPromocion_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
         End Using
     End Function
 

@@ -42,6 +42,9 @@ Partial Class M_Factura
         Me.lblpoliza = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.gbxlistadoExamenes = New System.Windows.Forms.GroupBox()
+        Me.lblPromocion = New System.Windows.Forms.Label()
+        Me.btnQuitarPromocion = New System.Windows.Forms.Button()
+        Me.btnPromocion = New System.Windows.Forms.Button()
         Me.dgblistadoExamenes = New System.Windows.Forms.DataGridView()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -105,8 +108,6 @@ Partial Class M_Factura
         Me.lblcodePriceList = New System.Windows.Forms.Label()
         Me.lblFechaNacimiento = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.gbxlistadoExamenes.SuspendLayout()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -312,8 +313,9 @@ Partial Class M_Factura
         '
         'gbxlistadoExamenes
         '
-        Me.gbxlistadoExamenes.Controls.Add(Me.Button3)
-        Me.gbxlistadoExamenes.Controls.Add(Me.Button2)
+        Me.gbxlistadoExamenes.Controls.Add(Me.lblPromocion)
+        Me.gbxlistadoExamenes.Controls.Add(Me.btnQuitarPromocion)
+        Me.gbxlistadoExamenes.Controls.Add(Me.btnPromocion)
         Me.gbxlistadoExamenes.Controls.Add(Me.dgblistadoExamenes)
         Me.gbxlistadoExamenes.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbxlistadoExamenes.Location = New System.Drawing.Point(28, 284)
@@ -324,6 +326,43 @@ Partial Class M_Factura
         Me.gbxlistadoExamenes.TabIndex = 34
         Me.gbxlistadoExamenes.TabStop = False
         Me.gbxlistadoExamenes.Text = "Listado Exámenes"
+        '
+        'lblPromocion
+        '
+        Me.lblPromocion.AutoSize = True
+        Me.lblPromocion.Location = New System.Drawing.Point(504, 18)
+        Me.lblPromocion.Name = "lblPromocion"
+        Me.lblPromocion.Size = New System.Drawing.Size(16, 17)
+        Me.lblPromocion.TabIndex = 105
+        Me.lblPromocion.Text = "0"
+        '
+        'btnQuitarPromocion
+        '
+        Me.btnQuitarPromocion.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnQuitarPromocion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnQuitarPromocion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnQuitarPromocion.ForeColor = System.Drawing.Color.Black
+        Me.btnQuitarPromocion.Location = New System.Drawing.Point(703, 18)
+        Me.btnQuitarPromocion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnQuitarPromocion.Name = "btnQuitarPromocion"
+        Me.btnQuitarPromocion.Size = New System.Drawing.Size(208, 34)
+        Me.btnQuitarPromocion.TabIndex = 104
+        Me.btnQuitarPromocion.Text = "Quitar Promoción"
+        Me.btnQuitarPromocion.UseVisualStyleBackColor = False
+        '
+        'btnPromocion
+        '
+        Me.btnPromocion.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnPromocion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPromocion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPromocion.ForeColor = System.Drawing.Color.Black
+        Me.btnPromocion.Location = New System.Drawing.Point(161, 19)
+        Me.btnPromocion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnPromocion.Name = "btnPromocion"
+        Me.btnPromocion.Size = New System.Drawing.Size(216, 34)
+        Me.btnPromocion.TabIndex = 103
+        Me.btnPromocion.Text = "Agregar Promoción"
+        Me.btnPromocion.UseVisualStyleBackColor = False
         '
         'dgblistadoExamenes
         '
@@ -670,38 +709,38 @@ Partial Class M_Factura
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1164, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1164, 28)
         Me.MenuStrip1.TabIndex = 76
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ArchivoToolStripMenuItem
         '
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 26)
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 24)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
         '
         'EditarToolStripMenuItem
         '
         Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(62, 26)
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(62, 24)
         Me.EditarToolStripMenuItem.Text = "Editar"
         '
         'RegistroToolStripMenuItem
         '
         Me.RegistroToolStripMenuItem.Name = "RegistroToolStripMenuItem"
-        Me.RegistroToolStripMenuItem.Size = New System.Drawing.Size(78, 26)
+        Me.RegistroToolStripMenuItem.Size = New System.Drawing.Size(78, 24)
         Me.RegistroToolStripMenuItem.Text = "Registro"
         '
         'VentanaToolStripMenuItem
         '
         Me.VentanaToolStripMenuItem.Name = "VentanaToolStripMenuItem"
-        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(76, 26)
+        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(76, 24)
         Me.VentanaToolStripMenuItem.Text = "Ventana"
         '
         'InfoToolStripMenuItem
         '
         Me.InfoToolStripMenuItem.Name = "InfoToolStripMenuItem"
-        Me.InfoToolStripMenuItem.Size = New System.Drawing.Size(49, 26)
+        Me.InfoToolStripMenuItem.Size = New System.Drawing.Size(49, 24)
         Me.InfoToolStripMenuItem.Text = "Info"
         '
         'txtnombreSede
@@ -995,34 +1034,6 @@ Partial Class M_Factura
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(161, 19)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(216, 34)
-        Me.Button2.TabIndex = 103
-        Me.Button2.Text = "Agregar Promoción"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Location = New System.Drawing.Point(703, 18)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(208, 34)
-        Me.Button3.TabIndex = 104
-        Me.Button3.Text = "Quitar Promoción"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
         'M_Factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1102,6 +1113,7 @@ Partial Class M_Factura
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Factura Laboratorios Médicos"
         Me.gbxlistadoExamenes.ResumeLayout(False)
+        Me.gbxlistadoExamenes.PerformLayout()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -1193,7 +1205,8 @@ Partial Class M_Factura
     Friend WithEvents lblcodeTerminoPago As Label
     Friend WithEvents lblcodePriceList As Label
     Friend WithEvents lblFechaNacimiento As Label
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnQuitarPromocion As Button
+    Friend WithEvents btnPromocion As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents lblPromocion As Label
 End Class
