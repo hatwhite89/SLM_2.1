@@ -22,11 +22,15 @@ Public Class M_Factura
                 dt = objClient.BuscarClienteCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreCliente.Text = CStr(row("nombreCompleto"))
-                M_Cliente.txtcodigoCategoria.Text = CStr(row("codigoCategoria"))
+                lblcodePriceList.Text = CStr(row("codigoListaPrecios"))
+                lblFechaNacimiento.Text = CStr(row("fechaNacimiento"))
+                txtcodigoConvenio.Text = CStr(row("descripcionLp"))
+                M_Cliente.lblcodeCategoria.Text = CStr(row("codigoCategoria"))
                 M_ClienteVentana.txtnombreCategoria.Text = M_Cliente.txtnombreCategoria.Text
                 txtcodigoCliente.BackColor = Color.White
             Catch ex As Exception
                 txtcodigoCliente.BackColor = Color.Red
+                txtcodigoCliente.Text = ""
                 txtnombreCliente.Text = ""
                 'MsgBox("No existe el código del cliente.", MsgBoxStyle.Critical, "Validación")
             End Try
@@ -348,30 +352,94 @@ Public Class M_Factura
         Next
         Return 0
     End Function
-    Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
+    'Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
+    '    If e.ColumnIndex = 0 Then
+    '        Try
+    '            If (Trim(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()) <> "") Then
+    '                Dim objExam As New ClsExamen
+    '                With objExam
+    '                    .Codigo1 = dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()
+    '                End With
 
+    '                Dim dt As New DataTable
+    '                dt = objExam.BuscarExamen()
+    '                'valido que no haya agregado el examen anteriormente
+    '                If (validarFactura(objExam.Codigo1) = 0) Then
+    '                    Dim row As DataRow = dt.Rows(0)
+    '                    dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+    '                    Dim subtotal As Double = Convert.ToDouble(CStr(row("total")))
+    '                    Dim descuento As Double
+    '                    descuento = subtotal * (0 / 100)
+    '                    subtotal -= descuento
+    '                    dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
+    '                    totalFactura()
+
+    '                    M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
+    '                Else 'muestro el mensaje de error
+    '                    MsgBox("El examen ya a sido agregado.")
+    '                    dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+    '                End If
+
+    '            Else
+    '                dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+    '            End If
+    '        Catch ex As Exception
+    '            MsgBox("No existe el código del examen", MsgBoxStyle.Critical)
+    '            Try
+    '                dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+    '            Catch ex2 As Exception
+
+    '            End Try
+    '        End Try
+    '    ElseIf e.ColumnIndex = 1 Then
+    '        Try
+    '            Dim code, cant As Integer
+    '            Dim precio, subtotal, descuento, porcDesc As Double
+    '            Dim descrip As String
+    '            code = Convert.ToInt32(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value())
+    '            cant = Convert.ToInt32(dgblistadoExamenes.Rows(e.RowIndex).Cells(1).Value())
+    '            precio = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(2).Value())
+    '            descrip = dgblistadoExamenes.Rows(e.RowIndex).Cells(3).Value()
+    '            porcDesc = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(5).Value())
+    '            subtotal = precio * cant
+    '            descuento = subtotal * (porcDesc / 100)
+    '            subtotal -= descuento
+    '            dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+    '            dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), porcDesc, subtotal})
+
+    '            M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(e.RowIndex.ToString))
+    '            M_ClienteVentana.dgvtabla.Rows.Add(New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), porcDesc, subtotal})
+    '            totalFactura()
+    '        Catch ex As Exception
+    '            MsgBox("Debe ingresar la cantidad correcta de examenes.", MsgBoxStyle.Critical)
+    '            dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+    '        End Try
+    '    End If
+    'End Sub
+    Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
         If e.ColumnIndex = 0 Then
             Try
                 If (Trim(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()) <> "") Then
-                    Dim objExam As New ClsExamen
+                    Dim objExam As New ClsPrecio
                     With objExam
-                        .Codigo1 = dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()
+                        .codigoItem_ = dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()
+                        .codigoListaPrecios_ = lblcodePriceList.text
                     End With
 
                     Dim dt As New DataTable
-                    dt = objExam.BuscarExamen()
+                    dt = objExam.BuscarPrecio()
                     'valido que no haya agregado el examen anteriormente
-                    If (validarFactura(objExam.Codigo1) = 0) Then
+                    If (validarFactura(objExam.codigoItem_) = 0) Then
                         Dim row As DataRow = dt.Rows(0)
                         dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
-                        Dim subtotal As Double = Convert.ToDouble(CStr(row("total")))
-                        Dim descuento As Double
-                        descuento = subtotal * (0 / 100)
+                        Dim subtotal As Double = Convert.ToDouble(CStr(row("precio")))
+                        Dim descuento As Double = Convert.ToDouble(CStr(row("porcentaje")))
+                        descuento = subtotal * (descuento / 100)
                         subtotal -= descuento
-                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
+                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), Math.Ceiling(subtotal)})
                         totalFactura()
 
-                        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
+                        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), Math.Ceiling(subtotal)})
                     Else 'muestro el mensaje de error
                         MsgBox("El examen ya a sido agregado.")
                         dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
@@ -413,6 +481,26 @@ Public Class M_Factura
             End Try
         End If
     End Sub
+    Public Sub AgregarExamen(ByVal codigoItem As Integer)
+        Dim objExam As New ClsPrecio
+        With objExam
+            .codigoItem_ = codigoItem
+            .codigoListaPrecios_ = lblcodePriceList.Text
+        End With
+
+        Dim dt As New DataTable
+        dt = objExam.BuscarPrecio()
+        Dim row As DataRow = dt.Rows(0)
+        Dim subtotal As Double = Convert.ToDouble(CStr(row("precio")))
+        Dim descuento As Double = Convert.ToDouble(CStr(row("porcentaje")))
+
+        descuento = subtotal * (descuento / 100)
+        subtotal -= descuento
+
+        dgblistadoExamenes.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), Math.Ceiling(subtotal)})
+        totalFactura()
+        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), Math.Ceiling(subtotal)})
+    End Sub
     Public Sub totalFactura()
         Dim total As Double
         For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 1
@@ -434,6 +522,8 @@ Public Class M_Factura
                 txtcodigoConvenio.Text = "0"
             ElseIf Trim(txtcodigoTerminal.Text) = "" Then
                 txtcodigoTerminal.Text = "1"
+            ElseIf Trim(txtpagoPaciente.Text) = "" Then
+                txtcodigoTerminal.Text = "0"
             End If
 
             If (txtcodigoCliente.Text <> "" And txtcodigoMedico.Text <> "" And txtcodigoTerminosPago.Text <> "" And
@@ -561,7 +651,7 @@ Public Class M_Factura
                         End If
                     Next
                     MsgBox("Registrada la cotización correctamente.")
-                    Imprimir_Cotizacion()
+
                 Else
                     MsgBox("Error al querer registrar la cotización.", MsgBoxStyle.Critical)
                 End If
@@ -572,6 +662,8 @@ Public Class M_Factura
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
+
+        Imprimir_Cotizacion()
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
@@ -642,10 +734,9 @@ Public Class M_Factura
 
     Private Sub btnimprimirComprobante_Click(sender As Object, e As EventArgs) Handles btnimprimirComprobante.Click
         If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
-            Dim numero As Integer = Convert.ToInt64(txtnumeroFactura.Text)
             'le asigno un valor a los parametros del procedimiento almacenado
             Dim form As New M_ComprobanteEntrega
-            form.numeroFactura = numero
+            form.numeroFactura = Convert.ToInt64(txtnumeroFactura.Text)
             'muestro el reporte
             form.ShowDialog()
         Else
@@ -699,15 +790,17 @@ Public Class M_Factura
 
     Private Sub Imprimir_Cotizacion()
 
-        If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
-            Dim numero As Integer = Convert.ToInt64(txtnumeroFactura.Text)
+        If (Trim(txtnumeroFactura.Text) <> "") Then
             'le asigno un valor a los parametros del procedimiento almacenado
-            Dim form As New M_ComprobanteEntrega
-            form.numeroFactura = numero
-            'muestro el reporte
-            form.ShowDialog()
+            Dim objReporte As New M_ImprimirCotizacion
+            objReporte.SetParameterValue("@numero", Convert.ToInt64(txtnumeroFactura.Text))
+            objReporte.SetParameterValue("@numeroCotizacion", Convert.ToInt64(txtnumeroFactura.Text))
+            objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
+            objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+            M_ImprimirCotizacionForm.CrystalReportViewer1.ReportSource = objReporte
+            M_ImprimirCotizacionForm.ShowDialog()
         Else
-            MsgBox("Debe estar creada o guardada la factura para poder imprimir la cotización.", MsgBoxStyle.Critical)
+            MsgBox("Debe estar creada o guardada la cotización para poder imprimirla.", MsgBoxStyle.Critical)
         End If
 
     End Sub

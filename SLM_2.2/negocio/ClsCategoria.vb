@@ -1,8 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class ClsCategoria
-    Dim codigoTipo As Integer
+    Dim codigoTipo, codigo, codigoListaPrecios As Integer
     Dim descripcion, codigoCategoria As String
-    Dim codigo As Integer
     'Constructor
     Public Sub New()
 
@@ -13,6 +12,14 @@ Public Class ClsCategoria
         End Get
         Set(value As Integer)
             codigo = value
+        End Set
+    End Property
+    Public Property codigoListaPrecios_ As Integer
+        Get
+            Return codigoListaPrecios
+        End Get
+        Set(value As Integer)
+            codigoListaPrecios = value
         End Set
     End Property
     Public Property codigoCategoria_ As String
@@ -68,6 +75,11 @@ Public Class ClsCategoria
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoListaPrecios" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoListaPrecios_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -116,6 +128,10 @@ Public Class ClsCategoria
         sqlpar.Value = CodigoTipo1
         sqlcom.Parameters.Add(sqlpar)
 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoListaPrecios" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoListaPrecios_
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -194,7 +210,6 @@ Public Class ClsCategoria
         End Using
     End Function
     Public Function SeleccionarCategoria() As DataTable
-
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion

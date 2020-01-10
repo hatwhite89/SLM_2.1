@@ -31,12 +31,14 @@ Partial Class M_ListadoDePrecios
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.lblCodigoT = New System.Windows.Forms.Label()
+        Me.lblForm = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.Controls.Add(Me.lblForm)
         Me.gbxbusqueda.Controls.Add(Me.txtCodigoBreve)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
@@ -130,6 +132,15 @@ Partial Class M_ListadoDePrecios
         Me.lblCodigoT.TabIndex = 114
         Me.lblCodigoT.Text = "Código Breve"
         '
+        'lblForm
+        '
+        Me.lblForm.AutoSize = True
+        Me.lblForm.Location = New System.Drawing.Point(272, 0)
+        Me.lblForm.Name = "lblForm"
+        Me.lblForm.Size = New System.Drawing.Size(51, 17)
+        Me.lblForm.TabIndex = 121
+        Me.lblForm.Text = "Label1"
+        '
         'M_ListadoDePrecios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -157,4 +168,5 @@ Partial Class M_ListadoDePrecios
     Friend WithEvents lbltotal As Label
     Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents lblCodigoT As Label
+    Friend WithEvents lblForm As Label
 End Class
