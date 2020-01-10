@@ -49,7 +49,7 @@
                 If objPre.RegistrarNuevoPrecio() = 1 Then
                     MsgBox("Registrado correctamente.")
 
-                    Dim dv As DataView = objPre.SeleccionarPrecios.DefaultView
+                    Dim dv As DataView = objPre.ListarPrecios.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -81,7 +81,7 @@
                 If objPre.ModificarPrecio() = 1 Then
                     MsgBox("Modificado correctamente.")
 
-                    Dim dv As DataView = objPre.SeleccionarPrecios.DefaultView
+                    Dim dv As DataView = objPre.ListarPrecios.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -129,7 +129,7 @@
         End If
     End Sub
     Private Sub M_Precio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim dv As DataView = objPre.SeleccionarPrecios.DefaultView
+        Dim dv As DataView = objPre.ListarPrecios.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
