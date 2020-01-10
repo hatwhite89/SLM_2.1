@@ -36,7 +36,7 @@
 
         ' M_Precio.dgbtabla.DataSource = precios.SeleccionarPrecios
 
-        Dim dv As DataView = precios.SeleccionarPrecios.DefaultView
+        Dim dv As DataView = precios.ListarPrecios.DefaultView
         M_Precio.dgbtabla.DataSource = dv
         M_Precio.lblcantidad.Text = dv.Count
         M_Precio.dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
