@@ -223,8 +223,7 @@
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnImportar_Click(sender As Object, e As EventArgs) Handles btnImportar.Click
         A_ListasPrecio.Show()
-
     End Sub
 End Class
