@@ -1,13 +1,11 @@
 ﻿Public Class A_ListasPrecio
-    Private Sub A_ListasPrecio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+
         importarExcel(dtExcel)
 
         lblCantidadR.Text = dtExcel.Rows.Count - 1
-
 
     End Sub
 

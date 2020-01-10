@@ -24,37 +24,38 @@ Partial Class A_Promociones
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Promociones))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtCod = New System.Windows.Forms.TextBox()
-        Me.txtDescrip = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.dtpFechaI = New System.Windows.Forms.DateTimePicker()
+        Me.txtPrecio = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.btnBuscarImage = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.dtpFechaF = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtImage = New System.Windows.Forms.TextBox()
+        Me.dtpFechaI = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtDescrip = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtCod = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dtDetallePromo = New System.Windows.Forms.DataGridView()
+        Me.Cod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.Cod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnBuscarImage = New System.Windows.Forms.Button()
-        Me.txtPrecio = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.pbxPromo = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dtDetallePromo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxPromo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.pbxPromo)
         Me.GroupBox1.Controls.Add(Me.txtPrecio)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.btnBuscarImage)
-        Me.GroupBox1.Controls.Add(Me.txtImage)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.dtpFechaF)
         Me.GroupBox1.Controls.Add(Me.Label4)
@@ -66,59 +67,48 @@ Partial Class A_Promociones
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(530, 202)
+        Me.GroupBox1.Size = New System.Drawing.Size(393, 313)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Promoción"
         '
-        'Label1
+        'txtPrecio
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(18, 36)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(62, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Cod. Promo"
+        Me.txtPrecio.Location = New System.Drawing.Point(135, 137)
+        Me.txtPrecio.Name = "txtPrecio"
+        Me.txtPrecio.Size = New System.Drawing.Size(200, 20)
+        Me.txtPrecio.TabIndex = 24
         '
-        'txtCod
+        'Label6
         '
-        Me.txtCod.Location = New System.Drawing.Point(135, 33)
-        Me.txtCod.Name = "txtCod"
-        Me.txtCod.Size = New System.Drawing.Size(100, 20)
-        Me.txtCod.TabIndex = 1
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(20, 140)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(37, 13)
+        Me.Label6.TabIndex = 23
+        Me.Label6.Text = "Precio"
         '
-        'txtDescrip
+        'btnBuscarImage
         '
-        Me.txtDescrip.Location = New System.Drawing.Point(135, 59)
-        Me.txtDescrip.MaxLength = 200
-        Me.txtDescrip.Name = "txtDescrip"
-        Me.txtDescrip.Size = New System.Drawing.Size(329, 20)
-        Me.txtDescrip.TabIndex = 3
+        Me.btnBuscarImage.BackColor = System.Drawing.Color.Transparent
+        Me.btnBuscarImage.BackgroundImage = CType(resources.GetObject("btnBuscarImage.BackgroundImage"), System.Drawing.Image)
+        Me.btnBuscarImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBuscarImage.FlatAppearance.BorderSize = 0
+        Me.btnBuscarImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarImage.Location = New System.Drawing.Point(341, 166)
+        Me.btnBuscarImage.Name = "btnBuscarImage"
+        Me.btnBuscarImage.Size = New System.Drawing.Size(18, 18)
+        Me.btnBuscarImage.TabIndex = 22
+        Me.btnBuscarImage.UseVisualStyleBackColor = False
         '
-        'Label2
+        'Label5
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(18, 62)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(63, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Descripción"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(18, 88)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(65, 13)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Fecha Inicio"
-        '
-        'dtpFechaI
-        '
-        Me.dtpFechaI.Location = New System.Drawing.Point(135, 85)
-        Me.dtpFechaI.Name = "dtpFechaI"
-        Me.dtpFechaI.Size = New System.Drawing.Size(200, 20)
-        Me.dtpFechaI.TabIndex = 5
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(20, 166)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(103, 13)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Imagen Promocional"
         '
         'dtpFechaF
         '
@@ -136,28 +126,61 @@ Partial Class A_Promociones
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Fecha Final"
         '
-        'Label5
+        'dtpFechaI
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(20, 140)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(103, 13)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Imagen Promocional"
+        Me.dtpFechaI.Location = New System.Drawing.Point(135, 85)
+        Me.dtpFechaI.Name = "dtpFechaI"
+        Me.dtpFechaI.Size = New System.Drawing.Size(200, 20)
+        Me.dtpFechaI.TabIndex = 5
         '
-        'txtImage
+        'Label3
         '
-        Me.txtImage.Location = New System.Drawing.Point(135, 137)
-        Me.txtImage.Name = "txtImage"
-        Me.txtImage.Size = New System.Drawing.Size(200, 20)
-        Me.txtImage.TabIndex = 9
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(18, 88)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(65, 13)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Fecha Inicio"
+        '
+        'txtDescrip
+        '
+        Me.txtDescrip.Location = New System.Drawing.Point(135, 59)
+        Me.txtDescrip.MaxLength = 200
+        Me.txtDescrip.Name = "txtDescrip"
+        Me.txtDescrip.Size = New System.Drawing.Size(200, 20)
+        Me.txtDescrip.TabIndex = 3
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(18, 62)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(63, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Descripción"
+        '
+        'txtCod
+        '
+        Me.txtCod.Location = New System.Drawing.Point(135, 33)
+        Me.txtCod.Name = "txtCod"
+        Me.txtCod.Size = New System.Drawing.Size(100, 20)
+        Me.txtCod.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(18, 36)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(62, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Cod. Promo"
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.dtDetallePromo)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 220)
+        Me.GroupBox2.Location = New System.Drawing.Point(411, 13)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(530, 292)
+        Me.GroupBox2.Size = New System.Drawing.Size(440, 312)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detalle de Promoción"
@@ -168,47 +191,8 @@ Partial Class A_Promociones
         Me.dtDetallePromo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cod, Me.Column1})
         Me.dtDetallePromo.Location = New System.Drawing.Point(6, 19)
         Me.dtDetallePromo.Name = "dtDetallePromo"
-        Me.dtDetallePromo.Size = New System.Drawing.Size(518, 267)
+        Me.dtDetallePromo.Size = New System.Drawing.Size(427, 287)
         Me.dtDetallePromo.TabIndex = 0
-        '
-        'btnCrear
-        '
-        Me.btnCrear.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnCrear.FlatAppearance.BorderSize = 0
-        Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(305, 517)
-        Me.btnCrear.Name = "btnCrear"
-        Me.btnCrear.Size = New System.Drawing.Size(75, 23)
-        Me.btnCrear.TabIndex = 2
-        Me.btnCrear.Text = "Crear Nuevo"
-        Me.btnCrear.UseVisualStyleBackColor = False
-        '
-        'btnModificar
-        '
-        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnModificar.FlatAppearance.BorderSize = 0
-        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(386, 517)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
-        Me.btnModificar.TabIndex = 3
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = False
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnGuardar.FlatAppearance.BorderSize = 0
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(467, 517)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
-        Me.btnGuardar.TabIndex = 4
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'Cod
         '
@@ -221,41 +205,59 @@ Partial Class A_Promociones
         Me.Column1.Name = "Column1"
         Me.Column1.Width = 400
         '
-        'btnBuscarImage
+        'btnCrear
         '
-        Me.btnBuscarImage.BackColor = System.Drawing.Color.Transparent
-        Me.btnBuscarImage.BackgroundImage = CType(resources.GetObject("btnBuscarImage.BackgroundImage"), System.Drawing.Image)
-        Me.btnBuscarImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnBuscarImage.FlatAppearance.BorderSize = 0
-        Me.btnBuscarImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarImage.Location = New System.Drawing.Point(339, 137)
-        Me.btnBuscarImage.Name = "btnBuscarImage"
-        Me.btnBuscarImage.Size = New System.Drawing.Size(18, 18)
-        Me.btnBuscarImage.TabIndex = 22
-        Me.btnBuscarImage.UseVisualStyleBackColor = False
+        Me.btnCrear.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCrear.FlatAppearance.BorderSize = 0
+        Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCrear.ForeColor = System.Drawing.Color.White
+        Me.btnCrear.Location = New System.Drawing.Point(614, 329)
+        Me.btnCrear.Name = "btnCrear"
+        Me.btnCrear.Size = New System.Drawing.Size(75, 23)
+        Me.btnCrear.TabIndex = 2
+        Me.btnCrear.Text = "Crear Nuevo"
+        Me.btnCrear.UseVisualStyleBackColor = False
         '
-        'txtPrecio
+        'btnModificar
         '
-        Me.txtPrecio.Location = New System.Drawing.Point(135, 163)
-        Me.txtPrecio.Name = "txtPrecio"
-        Me.txtPrecio.Size = New System.Drawing.Size(100, 20)
-        Me.txtPrecio.TabIndex = 24
+        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnModificar.FlatAppearance.BorderSize = 0
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.ForeColor = System.Drawing.Color.White
+        Me.btnModificar.Location = New System.Drawing.Point(695, 329)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar.TabIndex = 3
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
         '
-        'Label6
+        'btnGuardar
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(18, 166)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(37, 13)
-        Me.Label6.TabIndex = 23
-        Me.Label6.Text = "Precio"
+        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnGuardar.FlatAppearance.BorderSize = 0
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.ForeColor = System.Drawing.Color.White
+        Me.btnGuardar.Location = New System.Drawing.Point(776, 329)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.TabIndex = 4
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = False
+        '
+        'pbxPromo
+        '
+        Me.pbxPromo.Location = New System.Drawing.Point(135, 166)
+        Me.pbxPromo.Name = "pbxPromo"
+        Me.pbxPromo.Size = New System.Drawing.Size(200, 137)
+        Me.pbxPromo.TabIndex = 25
+        Me.pbxPromo.TabStop = False
         '
         'A_Promociones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(554, 548)
+        Me.ClientSize = New System.Drawing.Size(860, 364)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnCrear)
@@ -268,12 +270,12 @@ Partial Class A_Promociones
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.dtDetallePromo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxPromo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents txtImage As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents dtpFechaF As DateTimePicker
     Friend WithEvents Label4 As Label
@@ -293,4 +295,5 @@ Partial Class A_Promociones
     Friend WithEvents txtPrecio As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents btnBuscarImage As Button
+    Friend WithEvents pbxPromo As PictureBox
 End Class
