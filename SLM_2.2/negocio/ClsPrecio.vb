@@ -181,6 +181,18 @@ Public Class ClsPrecio
             End Using
         End Using
     End Function
+    Public Function ListarPrecios() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("M_slmListarPrecios", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
     Public Function BuscarPrecioCode() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection

@@ -737,6 +737,7 @@ Public Class M_Factura
             'le asigno un valor a los parametros del procedimiento almacenado
             Dim form As New M_ComprobanteEntrega
             form.numeroFactura = Convert.ToInt64(txtnumeroFactura.Text)
+            form.fechaNacimiento = Convert.ToDateTime(lblFechaNacimiento.Text)
             'muestro el reporte
             form.ShowDialog()
         Else
