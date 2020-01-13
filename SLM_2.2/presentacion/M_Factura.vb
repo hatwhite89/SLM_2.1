@@ -527,14 +527,21 @@ Public Class M_Factura
 
             If Trim(txtcodigoRecepecionista.Text) = "" Then
                 txtcodigoRecepecionista.Text = "1"
-            ElseIf Trim(txtcodigoCajero.Text) = "" Then
+            End If
+            If Trim(txtcodigoCajero.Text) = "" Then
                 txtcodigoCajero.Text = "1"
-            ElseIf Trim(txtcodigoConvenio.Text) = "" Then
-                txtcodigoConvenio.Text = "0"
-            ElseIf Trim(txtcodigoTerminal.Text) = "" Then
+            End If
+            If Trim(txtcodigoConvenio.Text) = "" Then
+                txtcodigoConvenio.Text = "1"
+            End If
+            If Trim(txtcodigoTerminal.Text) = "" Then
                 txtcodigoTerminal.Text = "1"
-            ElseIf Trim(txtpagoPaciente.Text) = "" Then
-                txtcodigoTerminal.Text = "0"
+            End If
+            If Trim(txtnumeroPoliza.Text) = "" Then
+                txtnumeroPoliza.Text = "1"
+            End If
+            If Trim(txtpagoPaciente.Text) = "" Then
+                txtpagoPaciente.Text = "0"
             End If
 
             If (txtcodigoCliente.Text <> "" And txtcodigoMedico.Text <> "" And txtcodigoTerminosPago.Text <> "" And
@@ -805,6 +812,7 @@ Public Class M_Factura
             'le asigno un valor a los parametros del procedimiento almacenado
             Dim objReporte As New M_CryComprobanteEntrega
             objReporte.SetParameterValue("@numeroFactura", Convert.ToInt64(txtnumeroFactura.Text))
+            objReporte.SetParameterValue("@numero", Convert.ToInt64(txtnumeroFactura.Text))
             objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
             objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
             M_ComprobanteEntrega.CrystalReportViewer1.ReportSource = objReporte

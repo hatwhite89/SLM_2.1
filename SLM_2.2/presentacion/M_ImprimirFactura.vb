@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class VistaCheque
+Public Class M_ImprimirFactura
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class VistaCheque
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "VistaCheque.rpt"
+            Return "M_ImprimirFactura.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class VistaCheque
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "SLM_2._2.VistaCheque.rpt"
+            Return "SLM_2._2.M_ImprimirFactura.rpt"
         End Get
         Set
             'Do nothing
@@ -91,42 +91,10 @@ Public Class VistaCheque
             Return Me.ReportDefinition.Sections(4)
         End Get
     End Property
-    
-    <Browsable(false),  _
-     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_codFactura() As CrystalDecisions.[Shared].IParameterField
-        Get
-            Return Me.DataDefinition.ParameterFields(0)
-        End Get
-    End Property
-    
-    <Browsable(false),  _
-     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_nroCheque() As CrystalDecisions.[Shared].IParameterField
-        Get
-            Return Me.DataDefinition.ParameterFields(1)
-        End Get
-    End Property
-    
-    <Browsable(false),  _
-     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_numalet() As CrystalDecisions.[Shared].IParameterField
-        Get
-            Return Me.DataDefinition.ParameterFields(2)
-        End Get
-    End Property
-    
-    <Browsable(false),  _
-     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_ChequeNumero() As CrystalDecisions.[Shared].IParameterField
-        Get
-            Return Me.DataDefinition.ParameterFields(3)
-        End Get
-    End Property
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedVistaCheque
+Public Class CachedM_ImprimirFactura
     Inherits Component
     Implements ICachedReport
     
@@ -168,7 +136,7 @@ Public Class CachedVistaCheque
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As VistaCheque = New VistaCheque()
+        Dim rpt As M_ImprimirFactura = New M_ImprimirFactura()
         rpt.Site = Me.Site
         Return rpt
     End Function
