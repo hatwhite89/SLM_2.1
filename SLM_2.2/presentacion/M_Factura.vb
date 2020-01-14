@@ -544,9 +544,26 @@ Public Class M_Factura
                 txtpagoPaciente.Text = "0"
             End If
 
+            Dim dt As New DataTable
+            Dim row As DataRow
+
             If (txtcodigoCliente.Text <> "" And txtcodigoMedico.Text <> "" And txtcodigoTerminosPago.Text <> "" And
                 txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And
                 txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
+
+                If (cbxok.Checked) Then
+                    Dim objCAI As New ClsCAI
+                    objCAI.codigoMaquinaLocal_ = txtcodigoTerminal.Text
+                    dt = objCAI.BuscarCAI()
+                    row = dt.Rows(0)
+                    txtnumeroOficial.Text = CStr(row("numeroOficial"))
+
+                    Dim objDetCAI As New ClsDetalleCAI
+                    objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
+                    If objDetCAI.ModificarDetalleCAI() = 1 Then
+                        'MsgBox("Funciona la actualizacion del detalle del CAI.")
+                    End If
+                End If
 
                 Dim objFact As New ClsFactura
                 With objFact
@@ -570,14 +587,13 @@ Public Class M_Factura
                     .total_ = Convert.ToDouble(txttotal.Text)
                     .ok_ = cbxok.Checked
                 End With
-
                 If objFact.RegistrarNuevaFactura() = 1 Then
                     deshabilitar()
                     cbxok.Enabled = True
                     txtpagoPaciente.ReadOnly = False
-                    Dim dt As New DataTable
+
                     dt = objFact.BuscarFacturaCode()
-                    Dim row As DataRow = dt.Rows(0)
+                    row = dt.Rows(0)
 
                     txtnumeroFactura.Text = CStr(row("numero"))
                     Dim objDetalleFact As New ClsDetalleFactura
@@ -687,7 +703,25 @@ Public Class M_Factura
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Try
 
-            If (txtpagoPaciente.Text <> "") Then
+            Dim dt As New DataTable
+            Dim row As DataRow
+
+            If (txtpagoPaciente.Text <> "" And Trim(txtnumeroFactura.Text) <> "") Then
+
+                If (cbxok.Checked) Then
+                    Dim objCAI As New ClsCAI
+                    objCAI.codigoMaquinaLocal_ = txtcodigoTerminal.Text
+                    dt = objCAI.BuscarCAI()
+                    row = dt.Rows(0)
+                    txtnumeroOficial.Text = CStr(row("numeroOficial"))
+
+                    Dim objDetCAI As New ClsDetalleCAI
+                    objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
+                    If objDetCAI.ModificarDetalleCAI() = 1 Then
+                        'MsgBox("Funciona la actualizacion del detalle del CAI.")
+                    End If
+                End If
+
                 Dim objFact As New ClsFactura
                 With objFact
                     .numero_ = Convert.ToInt64(txtnumeroFactura.Text)

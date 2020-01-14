@@ -154,6 +154,7 @@ Public Class ClsClasificacionItem
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -176,6 +177,7 @@ Public Class ClsClasificacionItem
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -197,6 +199,7 @@ Public Class ClsClasificacionItem
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -213,8 +216,10 @@ Public Class ClsClasificacionItem
         Using da As New SqlDataAdapter("E_slmSeleccionarClasificacionItem", cn)
             Dim dt As New DataTable
             da.Fill(dt)
+            objCon.cerrarConexion()
             Return dt
         End Using
+
     End Function
 
 End Class

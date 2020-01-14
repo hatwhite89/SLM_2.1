@@ -134,6 +134,7 @@ Public Class ClsGrupoExamen
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -150,6 +151,7 @@ Public Class ClsGrupoExamen
         Using da As New SqlDataAdapter("E_slmSeleccionarGrupoExamen", cn)
             Dim dt As New DataTable
             da.Fill(dt)
+            objCon.cerrarConexion()
             Return dt
         End Using
     End Function

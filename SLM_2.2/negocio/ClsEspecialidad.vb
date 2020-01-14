@@ -118,6 +118,7 @@ Public Class ClsEspecialidad
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -135,6 +136,7 @@ Public Class ClsEspecialidad
         Using da As New SqlDataAdapter("M_slmSeleccionarEspecialidad", cn)
             Dim dt As New DataTable
             da.Fill(dt)
+            objCon.cerrarConexion()
             Return dt
         End Using
     End Function
@@ -153,6 +155,7 @@ Public Class ClsEspecialidad
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
