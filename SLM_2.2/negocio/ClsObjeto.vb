@@ -162,6 +162,7 @@ Public Class ClsObjeto
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -182,6 +183,7 @@ Public Class ClsObjeto
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -197,6 +199,7 @@ Public Class ClsObjeto
         Using da As New SqlDataAdapter("M_slmSeleccionarObjeto", cn)
             Dim dt As New DataTable
             da.Fill(dt)
+            objCon.cerrarConexion()
             Return dt
         End Using
     End Function
@@ -211,6 +214,7 @@ Public Class ClsObjeto
         Using da As New SqlDataAdapter("A_slmListarNombreObjetos", cn)
             Dim dt As New DataTable
             da.Fill(dt)
+            objCon.cerrarConexion()
             Return dt
         End Using
 

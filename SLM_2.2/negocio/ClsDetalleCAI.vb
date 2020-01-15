@@ -1,14 +1,15 @@
 ﻿Imports System.Data.SqlClient
-Public Class ClsApertura
-    Dim estado As String
-    Dim fecha As Date
-    Dim fondo As Double
-    Dim codigo, codigoMaquinaLocal, codigoCajero As Integer
+
+Public Class ClsDetalleCAI
+    Dim codigo, codigoCAI As Integer
+    Dim numeroOficial As String
+    Dim estado As Boolean
     'Constructor
     Public Sub New()
 
     End Sub
-    Public Property codigo_ As Integer
+    'get y set
+    Public Property Codigo_ As Integer
         Get
             Return codigo
         End Get
@@ -16,82 +17,64 @@ Public Class ClsApertura
             codigo = value
         End Set
     End Property
-    Public Property codigoCajero_ As Integer
+    Public Property codigoCAI_ As Integer
         Get
-            Return codigoCajero
+            Return codigoCAI
         End Get
         Set(value As Integer)
-            codigoCajero = value
+            codigoCAI = value
+        End Set
+    End Property
+    Public Property numeroOficial_ As String
+        Get
+            Return numeroOficial
+        End Get
+        Set(value As String)
+            numeroOficial = value
         End Set
     End Property
 
-    Public Property codigoMaquinaLocal_ As Integer
-        Get
-            Return codigoMaquinaLocal
-        End Get
-        Set(value As Integer)
-            codigoMaquinaLocal = value
-        End Set
-    End Property
-
-    Public Property estado_ As String
+    Public Property estado_ As Boolean
         Get
             Return estado
         End Get
-        Set(value As String)
+        Set(value As Boolean)
             estado = value
         End Set
     End Property
 
-    Public Property fecha_ As Date
-        Get
-            Return fecha
-        End Get
-        Set(value As Date)
-            fecha = value
-        End Set
-    End Property
-
-    Public Property fondo_ As Double
-        Get
-            Return fondo
-        End Get
-        Set(value As Double)
-            fondo = value
-        End Set
-    End Property
-    Public Function RegistrarNuevaApertura() As String
+    Public Function RegistrarNuevoDetalleCAI(ByVal serie As String, ByVal desde As String, ByVal cantidad As Integer) As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "M_slmInsertarApertura"
+        sqlcom.CommandText = "M_slmInsertarDetalleCAI"
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoMaquinaLocal" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoMaquinaLocal_
+        sqlpar.ParameterName = "codigoCAI" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoCAI_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoCajero" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoCajero_
+        sqlpar.ParameterName = "serie" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = serie
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "fecha" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = fecha_
+        sqlpar.ParameterName = "desde" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = desde
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "fondo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = fondo_
+        sqlpar.ParameterName = "cantidad" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = cantidad
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "estado" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = estado_
+        sqlpar.ParameterName = "counter" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -114,43 +97,18 @@ Public Class ClsApertura
 
     End Function
 
-    Public Function ModificarApertura() As String
+    Public Function ModificarDetalleCAI() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "M_slmModificarApertura"
+        sqlcom.CommandText = "M_slmModificarDetalleCAI"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigo_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoMaquinaLocal" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoMaquinaLocal_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoCajero" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoCajero_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "fecha" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = fecha_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "fondo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = fondo_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "estado" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = estado_
+        sqlpar.Value = Codigo_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -172,7 +130,8 @@ Public Class ClsApertura
         Return par_sal
 
     End Function
-    Public Function BuscarApertura() As DataTable
+    Public Function BuscarDetalleCAI() As DataTable
+
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -180,8 +139,8 @@ Public Class ClsApertura
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarApertura"
-            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = codigo_
+            cmd.CommandText = "M_slmBuscarDetalleCAI"
+            cmd.Parameters.Add("@codigoCAI", SqlDbType.Int).Value = codigoCAI_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -193,17 +152,19 @@ Public Class ClsApertura
         End Using
     End Function
 
-    Public Function SeleccionarApertura() As DataTable
+    Public Function SeleccionarCAI() As DataTable
+
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("M_slmSeleccionarApertura", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarDetalleCAI", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             objCon.cerrarConexion()
             Return dt
         End Using
     End Function
-End Class
 
+
+End Class

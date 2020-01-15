@@ -72,6 +72,10 @@ Public Class M_Factura
         dgblistadoExamenes.Rows.Clear()
         M_ClienteVentana.dgvtabla.Rows.Clear()
 
+        lblPromocion.Text = "0"
+        lblcodePriceList.Text = ""
+        lblFechaNacimiento.Text = ""
+
         cbxok.Checked = False
         txtpagoPaciente.Text() = ""
         txtvuelto.Text() = ""
@@ -113,6 +117,9 @@ Public Class M_Factura
         btnguardar.Enabled = True
 
         btnbusquedaExamen.Enabled = True
+
+        btnPromocion.Enabled = True
+        btnQuitarPromocion.Enabled = True
     End Sub
     Public Sub deshabilitar()
         txtcodigoCliente.ReadOnly = True
@@ -151,6 +158,9 @@ Public Class M_Factura
         btnguardar.Enabled = False
 
         btnbusquedaExamen.Enabled = False
+
+        btnPromocion.Enabled = False
+        btnQuitarPromocion.Enabled = False
     End Sub
     Public Sub HabilitarActualizarFactura()
         cbxentregarMedico.Enabled = True
@@ -170,6 +180,7 @@ Public Class M_Factura
         dgblistadoExamenes.ReadOnly = False
         btnActualizar.Enabled = False
         btncotizacion.Enabled = True
+        btnbuscarSucursal.Enabled = True
     End Sub
     Private Sub txtcodigoMedico_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoMedico.TextChanged
         If (txtcodigoMedico.Text <> "") Then
@@ -516,19 +527,43 @@ Public Class M_Factura
 
             If Trim(txtcodigoRecepecionista.Text) = "" Then
                 txtcodigoRecepecionista.Text = "1"
-            ElseIf Trim(txtcodigoCajero.Text) = "" Then
-                txtcodigoCajero.Text = "1"
-            ElseIf Trim(txtcodigoConvenio.Text) = "" Then
-                txtcodigoConvenio.Text = "0"
-            ElseIf Trim(txtcodigoTerminal.Text) = "" Then
-                txtcodigoTerminal.Text = "1"
-            ElseIf Trim(txtpagoPaciente.Text) = "" Then
-                txtcodigoTerminal.Text = "0"
             End If
+            If Trim(txtcodigoCajero.Text) = "" Then
+                txtcodigoCajero.Text = "1"
+            End If
+            If Trim(txtcodigoConvenio.Text) = "" Then
+                txtcodigoConvenio.Text = "1"
+            End If
+            If Trim(txtcodigoTerminal.Text) = "" Then
+                txtcodigoTerminal.Text = "1"
+            End If
+            If Trim(txtnumeroPoliza.Text) = "" Then
+                txtnumeroPoliza.Text = "1"
+            End If
+            If Trim(txtpagoPaciente.Text) = "" Then
+                txtpagoPaciente.Text = "0"
+            End If
+
+            Dim dt As New DataTable
+            Dim row As DataRow
 
             If (txtcodigoCliente.Text <> "" And txtcodigoMedico.Text <> "" And txtcodigoTerminosPago.Text <> "" And
                 txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And
                 txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
+
+                If (cbxok.Checked) Then
+                    Dim objCAI As New ClsCAI
+                    objCAI.codigoMaquinaLocal_ = txtcodigoTerminal.Text
+                    dt = objCAI.BuscarCAI()
+                    row = dt.Rows(0)
+                    txtnumeroOficial.Text = CStr(row("numeroOficial"))
+
+                    Dim objDetCAI As New ClsDetalleCAI
+                    objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
+                    If objDetCAI.ModificarDetalleCAI() = 1 Then
+                        'MsgBox("Funciona la actualizacion del detalle del CAI.")
+                    End If
+                End If
 
                 Dim objFact As New ClsFactura
                 With objFact
@@ -552,14 +587,13 @@ Public Class M_Factura
                     .total_ = Convert.ToDouble(txttotal.Text)
                     .ok_ = cbxok.Checked
                 End With
-
                 If objFact.RegistrarNuevaFactura() = 1 Then
                     deshabilitar()
                     cbxok.Enabled = True
                     txtpagoPaciente.ReadOnly = False
-                    Dim dt As New DataTable
+
                     dt = objFact.BuscarFacturaCode()
-                    Dim row As DataRow = dt.Rows(0)
+                    row = dt.Rows(0)
 
                     txtnumeroFactura.Text = CStr(row("numero"))
                     Dim objDetalleFact As New ClsDetalleFactura
@@ -669,7 +703,25 @@ Public Class M_Factura
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Try
 
-            If (txtpagoPaciente.Text <> "") Then
+            Dim dt As New DataTable
+            Dim row As DataRow
+
+            If (txtpagoPaciente.Text <> "" And Trim(txtnumeroFactura.Text) <> "") Then
+
+                If (cbxok.Checked) Then
+                    Dim objCAI As New ClsCAI
+                    objCAI.codigoMaquinaLocal_ = txtcodigoTerminal.Text
+                    dt = objCAI.BuscarCAI()
+                    row = dt.Rows(0)
+                    txtnumeroOficial.Text = CStr(row("numeroOficial"))
+
+                    Dim objDetCAI As New ClsDetalleCAI
+                    objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
+                    If objDetCAI.ModificarDetalleCAI() = 1 Then
+                        'MsgBox("Funciona la actualizacion del detalle del CAI.")
+                    End If
+                End If
+
                 Dim objFact As New ClsFactura
                 With objFact
                     .numero_ = Convert.ToInt64(txtnumeroFactura.Text)
@@ -732,18 +784,19 @@ Public Class M_Factura
         End Try
     End Sub
 
-    Private Sub btnimprimirComprobante_Click(sender As Object, e As EventArgs) Handles btnimprimirComprobante.Click
-        If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
-            'le asigno un valor a los parametros del procedimiento almacenado
-            Dim form As New M_ComprobanteEntrega
-            form.numeroFactura = Convert.ToInt64(txtnumeroFactura.Text)
-            form.fechaNacimiento = Convert.ToDateTime(lblFechaNacimiento.Text)
-            'muestro el reporte
-            form.ShowDialog()
-        Else
-            MsgBox("Debe estar creada o guardada la factura para poder imprimir el comprobante de entrega.", MsgBoxStyle.Critical)
-        End If
-    End Sub
+    'Private Sub btnimprimirComprobante_Click(sender As Object, e As EventArgs) Handles btnimprimirComprobante.Click
+    '    If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
+    '        'le asigno un valor a los parametros del procedimiento almacenado
+    '        Dim form As New M_ComprobanteEntrega
+    '        form.numeroFactura = Convert.ToInt64(txtnumeroFactura.Text)
+    '        form.fechaNacimiento = Convert.ToDateTime(lblFechaNacimiento.Text)
+    '        'muestro el reporte
+    '        form.ShowDialog()
+    '    Else
+    '        MsgBox("Debe estar creada o guardada la factura para poder imprimir el comprobante de entrega.", MsgBoxStyle.Critical)
+    '    End If
+    'End Sub
+
     Private Sub enviarCorreo()
         'in the shadows of the moon
         If cbxenviarCorreo.Checked Then
@@ -788,7 +841,20 @@ Public Class M_Factura
         End If
 
     End Sub
-
+    Private Sub btnimprimirComprobante_Click(sender As Object, e As EventArgs) Handles btnimprimirComprobante.Click
+        If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
+            'le asigno un valor a los parametros del procedimiento almacenado
+            Dim objReporte As New M_CryComprobanteEntrega
+            objReporte.SetParameterValue("@numeroFactura", Convert.ToInt64(txtnumeroFactura.Text))
+            objReporte.SetParameterValue("@numero", Convert.ToInt64(txtnumeroFactura.Text))
+            objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
+            objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+            M_ComprobanteEntrega.CrystalReportViewer1.ReportSource = objReporte
+            M_ComprobanteEntrega.ShowDialog()
+        Else
+            MsgBox("Debe estar creada o guardada la factura para poder imprimir el comprobante de entrega.", MsgBoxStyle.Critical)
+        End If
+    End Sub
     Private Sub Imprimir_Cotizacion()
 
         If (Trim(txtnumeroFactura.Text) <> "") Then
@@ -806,4 +872,31 @@ Public Class M_Factura
 
     End Sub
 
+    Private Sub btnPromocion_Click(sender As Object, e As EventArgs) Handles btnPromocion.Click
+        M_ListadoPromociones.ShowDialog()
+    End Sub
+
+    Private Sub btnQuitarPromocion_Click(sender As Object, e As EventArgs) Handles btnQuitarPromocion.Click
+        Try
+            If (lblPromocion.Text <> "0") Then
+                For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
+                    If dgblistadoExamenes.Rows(index).Cells(6).Value() = "0" Then
+                        dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(index))
+                        M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(index))
+                        index -= index
+                    ElseIf dgblistadoExamenes.Rows(index).Cells(0).Value() = lblPromocion.Text Then
+                        dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(index))
+                        M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(index))
+                        index -= index
+                    End If
+                Next
+                lblPromocion.Text = "0"
+                totalFactura()
+            Else
+                MsgBox("Debe agregar la promoción primero.", MsgBoxStyle.Critical)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
 End Class

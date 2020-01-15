@@ -36,6 +36,22 @@
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+    Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
+        Try
+            Dim n As String = ""
+            If e.RowIndex >= 0 Then
+                n = MsgBox("¿Desea utilizar la máquina local seleccionada?", MsgBoxStyle.YesNo, "Validación")
+            End If
+            If n = vbYes Then
+                M_CAI.lblCodeMaquinaLocal.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                M_CAI.txtcodigoMaquina.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                M_CAI.txtdescripcionMaquina.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+                Me.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
     Private Sub limpiar()
         txtcodigo.Text() = ""
         rtxtdescripcion.Text() = ""

@@ -125,6 +125,7 @@ Public Class ClsTipoObjeto
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -144,6 +145,7 @@ Public Class ClsTipoObjeto
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -157,6 +159,7 @@ Public Class ClsTipoObjeto
         Using da As New SqlDataAdapter("M_slmSeleccionarTipoObjeto", cn)
             Dim dt As New DataTable
             da.Fill(dt)
+            objCon.cerrarConexion()
             Return dt
         End Using
     End Function

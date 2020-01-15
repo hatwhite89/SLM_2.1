@@ -125,8 +125,10 @@
     <Compile Include="negocio\ClsAccesoLaboratorio.vb" />
     <Compile Include="negocio\ClsApertura.vb" />
     <Compile Include="negocio\ClsAreaLaboratorio.vb" />
+    <Compile Include="negocio\ClsCAI.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
     <Compile Include="negocio\ClsDescuentos.vb" />
+    <Compile Include="negocio\ClsDetalleCAI.vb" />
     <Compile Include="negocio\ClsDetalleContactos.vb" />
     <Compile Include="negocio\ClsDetalleFacturaCompra.vb" />
     <Compile Include="negocio\ClsDetalleListaPrecios.vb" />
@@ -421,6 +423,12 @@
     <Compile Include="presentacion\A_FormaPago.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_CAI.Designer.vb">
+      <DependentUpon>M_CAI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_CAI.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_ImprimirCotizacion.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -534,6 +542,12 @@
     </Compile>
     <Compile Include="presentacion\M_ImprimirCotizacionForm.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_ImprimirFactura.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M_ImprimirFactura.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="presentacion\M_InicioSesion.Designer.vb">
       <DependentUpon>M_InicioSesion.vb</DependentUpon>
@@ -834,6 +848,9 @@
     <EmbeddedResource Include="presentacion\E_Unidad.resx">
       <DependentUpon>E_Unidad.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_CAI.resx">
+      <DependentUpon>M_CAI.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ImprimirCotizacion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>M_ImprimirCotizacion.vb</LastGenOutput>
@@ -892,6 +909,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ImprimirCotizacionForm.resx">
       <DependentUpon>M_ImprimirCotizacionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ImprimirFactura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>M_ImprimirFactura.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_InicioSesion.resx">
       <DependentUpon>M_InicioSesion.vb</DependentUpon>

@@ -237,6 +237,7 @@ Public Class ClsSubArea
         Using da As New SqlDataAdapter("E_slmListarSubAreas", cn)
             Dim dt As New DataTable
             da.Fill(dt)
+            objCon.cerrarConexion()
             Return dt
         End Using
     End Function

@@ -251,6 +251,7 @@ Public Class ClsSede
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -268,6 +269,7 @@ Public Class ClsSede
         Using da As New SqlDataAdapter("M_slmSeleccionarSede", cn)
             Dim dt As New DataTable
             da.Fill(dt)
+            objCon.cerrarConexion()
             Return dt
         End Using
     End Function
@@ -288,6 +290,7 @@ Public Class ClsSede
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
