@@ -1,25 +1,33 @@
 ﻿Public Class M_BuscarExamen
     Dim objPrice As New ClsPrecio
     Private Sub M_BuscarExamen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        objPrice.codigoListaPrecios_ = M_Factura.lblcodePriceList.Text
-        Dim dv As DataView = objPrice.SeleccionarPrecios.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-
-        Me.dgbtabla.Columns("codigo").Visible = False
-        Me.dgbtabla.Columns("codigoListaPrecios").Visible = False
-    End Sub
-
-    Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
-        If (txtnombreB.Text <> "") Then
-            objPrice.descripcion_ = txtnombreB.Text
+        Try
             objPrice.codigoListaPrecios_ = M_Factura.lblcodePriceList.Text
-            Dim dv As DataView = objPrice.BuscarPrecioDescripcion.DefaultView
+            Dim dv As DataView = objPrice.SeleccionarPrecios.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
             dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-        End If
+
+            Me.dgbtabla.Columns("codigo").Visible = False
+            Me.dgbtabla.Columns("codigoListaPrecios").Visible = False
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
+        Try
+            If (txtnombreB.Text <> "") Then
+                objPrice.descripcion_ = txtnombreB.Text
+                objPrice.codigoListaPrecios_ = M_Factura.lblcodePriceList.Text
+                Dim dv As DataView = objPrice.BuscarPrecioDescripcion.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown

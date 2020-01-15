@@ -513,7 +513,7 @@ Public Class M_Factura
         M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), Math.Ceiling(subtotal)})
     End Sub
     Public Sub totalFactura()
-        Dim total As Double
+        Dim total As Double = 0
         For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 1
             total += Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
         Next
@@ -883,11 +883,13 @@ Public Class M_Factura
                     If dgblistadoExamenes.Rows(index).Cells(6).Value() = "0" Then
                         dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(index))
                         M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(index))
-                        index -= index
+                        index -= 1
                     ElseIf dgblistadoExamenes.Rows(index).Cells(0).Value() = lblPromocion.Text Then
                         dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(index))
                         M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(index))
-                        index -= index
+                        index -= 1
+                    ElseIf index >= dgblistadoExamenes.Rows.Count - 2 Then
+                        Exit For
                     End If
                 Next
                 lblPromocion.Text = "0"
@@ -899,4 +901,5 @@ Public Class M_Factura
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
 End Class
