@@ -94,7 +94,7 @@
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        A_Promociones.Show()
+        A_ListarPromociones.Show()
 
     End Sub
 End Class

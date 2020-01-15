@@ -53,10 +53,7 @@ Module ModulosVarios
 
     '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
     ':::::::::::::::::::::::: Conversion Imagenes ::::::::::::::::::::::::
-
-
 
     'Imagen a bytes
     Public Function ImagenToBytes(ByVal Imagen As Image) As Byte()
@@ -99,7 +96,20 @@ Module ModulosVarios
 
     End Function
 
+    Function bytesToString(ByVal arreglo As Byte()) As String
+        Dim salida As String = ""
+        Dim x As Integer = 0
+        'MsgBox("Tamaño del arreglo: " + arreglo.Length.ToString)
+        Try
+            For x = 0 To arreglo.Length - 1
+                salida += arreglo(x).ToString + ","
+            Next
+        Catch ex As Exception
+            MsgBox("No lo convertio a String por: " + ex.ToString)
+        End Try
 
+        Return salida
+    End Function
 
     '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
