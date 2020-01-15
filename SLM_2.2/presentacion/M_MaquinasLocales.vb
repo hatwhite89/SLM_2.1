@@ -118,10 +118,9 @@
 
             txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
             rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
-            Dim t, t2 As String
-            t = Trim(txtcodigo.Text)
-            t2 = Trim(rtxtdescripcion.Text)
-            If (t <> "" And t2 <> "") Then
+
+            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtdescripcion.Text) <> "") Then
+
                 Dim objMaqLoc As New ClsMaquinasLocales
                 With objMaqLoc
                     .codigoMaquinasLocales_ = txtcodigo.Text
@@ -173,5 +172,4 @@
             MsgBox("No existe la máquina local.", MsgBoxStyle.Critical, "Validación")
         End Try
     End Sub
-
 End Class

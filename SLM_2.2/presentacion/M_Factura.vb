@@ -32,7 +32,6 @@ Public Class M_Factura
                 txtcodigoCliente.BackColor = Color.Red
                 txtcodigoCliente.Text = ""
                 txtnombreCliente.Text = ""
-                'MsgBox("No existe el código del cliente.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoCliente.Text = ""
@@ -80,6 +79,7 @@ Public Class M_Factura
         txtpagoPaciente.Text() = ""
         txtvuelto.Text() = ""
         txttotal.Text() = ""
+
         'Habilitar los campos
         txtcodigoCliente.ReadOnly = False
         txtcodigoMedico.ReadOnly = False
@@ -248,7 +248,6 @@ Public Class M_Factura
                 txtcodigoSucursal.BackColor = Color.Red
                 txtnombreSucursal.Text = ""
                 lblcodeSucursal.Text = ""
-                'MsgBox("No existe el código de la sucursal.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoSucursal.Text = ""
@@ -277,7 +276,7 @@ Public Class M_Factura
             Catch ex As Exception
                 txtcodigoTerminosPago.BackColor = Color.Red
                 txtdescripcionTermino.Text = ""
-                'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
+                lblcodeTerminoPago.Text = ""
             End Try
         Else
             txtcodigoTerminosPago.Text = ""
@@ -447,10 +446,10 @@ Public Class M_Factura
                         Dim descuento As Double = Convert.ToDouble(CStr(row("porcentaje")))
                         descuento = subtotal * (descuento / 100)
                         subtotal -= descuento
-                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), Math.Ceiling(subtotal)})
+                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
                         totalFactura()
 
-                        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), Math.Ceiling(subtotal)})
+                        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
                     Else 'muestro el mensaje de error
                         MsgBox("El examen ya a sido agregado.")
                         dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
@@ -508,16 +507,16 @@ Public Class M_Factura
         descuento = subtotal * (descuento / 100)
         subtotal -= descuento
 
-        dgblistadoExamenes.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), Math.Ceiling(subtotal)})
+        dgblistadoExamenes.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
         totalFactura()
-        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), Math.Ceiling(subtotal)})
+        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
     End Sub
     Public Sub totalFactura()
         Dim total As Double = 0
         For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 1
             total += Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
         Next
-        txttotal.Text = total
+        txttotal.Text = Math.Ceiling(total)
     End Sub
     Private Sub btnbusquedaExamen_Click(sender As Object, e As EventArgs) Handles btnbusquedaExamen.Click
         M_BuscarExamen.ShowDialog()
@@ -560,8 +559,8 @@ Public Class M_Factura
 
                     Dim objDetCAI As New ClsDetalleCAI
                     objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
-                    If objDetCAI.ModificarDetalleCAI() = 1 Then
-                        'MsgBox("Funciona la actualizacion del detalle del CAI.")
+                    If objDetCAI.ModificarDetalleCAI() <> 1 Then
+                        MsgBox("Error en la actualización del detalle del CAI.")
                     End If
                 End If
 
@@ -630,11 +629,6 @@ Public Class M_Factura
             e.Handled = True
         End If
     End Sub
-    'Private Sub ejemplo_Double(sender As Object, e As KeyPressEventArgs) Handles txtcodigoConvenio.KeyPress
-    '    If (Not IsNumeric(e.KeyChar) And (e.KeyChar <> ".")) Then
-    '        e.Handled = True
-    '    End If
-    'End Sub
 
     Private Sub txtcodigoMedico_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoMedico.KeyPress
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
@@ -717,8 +711,8 @@ Public Class M_Factura
 
                     Dim objDetCAI As New ClsDetalleCAI
                     objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
-                    If objDetCAI.ModificarDetalleCAI() = 1 Then
-                        'MsgBox("Funciona la actualizacion del detalle del CAI.")
+                    If objDetCAI.ModificarDetalleCAI() <> 1 Then
+                        MsgBox("Error en la actualización del detalle del CAI.")
                     End If
                 End If
 

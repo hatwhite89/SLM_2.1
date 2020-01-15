@@ -103,6 +103,7 @@
         End Try
     End Sub
     Private Sub btncancelar_Click_1(sender As Object, e As EventArgs) Handles btncancelar.Click
+        limpiar()
         Me.Close()
     End Sub
 
@@ -153,7 +154,6 @@
             Catch ex As Exception
                 txtcodigoItem.BackColor = Color.Red
                 txtdescripcionItem.Text = ""
-                'MsgBox("No existe ese código de especialidad.", MsgBoxStyle.Critical, "Validación")
             End Try
         Else
             txtcodigoItem.Text = ""
@@ -178,7 +178,7 @@
             Catch ex As Exception
                 txtcodigoListaPrecios.BackColor = Color.Red
                 txtdescripcionListaPrecios.Text = ""
-                'MsgBox("No existe ese código de especialidad.", MsgBoxStyle.Critical, "Validación")
+                lblCode.Text = ""
             End Try
         Else
             txtcodigoListaPrecios.Text = ""
@@ -226,6 +226,4 @@
     Private Sub btnImportar_Click(sender As Object, e As EventArgs) Handles btnImportar.Click
         A_ListasPrecio.Show()
     End Sub
-
-
 End Class

@@ -297,6 +297,7 @@
                 txtcodigoCtaContado.BackColor = Color.White
             Catch ex As Exception
                 txtcodigoCtaContado.BackColor = Color.Red
+                lblcodeCtaContado.Text = ""
                 txtnombreCtaContado.Text = ""
                 'MsgBox("No existe el código de la cuenta.", MsgBoxStyle.Critical, "Validación")
             End Try
@@ -322,6 +323,7 @@
                 txtcodigoCtaVentas.BackColor = Color.White
             Catch ex As Exception
                 txtcodigoCtaVentas.BackColor = Color.Red
+                lblcodeCtaVentas.Text = ""
                 txtnombreCtaVentas.Text = ""
                 'MsgBox("No existe el código de la cuenta.", MsgBoxStyle.Critical, "Validación")
             End Try

@@ -28,10 +28,14 @@
         Try
 
             If (Trim(txtcodigo.Text) <> "" And Trim(rtxtcomentario.Text) <> "") Then
+
+                txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
+                rtxtcomentario.Text = sinDobleEspacio(rtxtcomentario.Text)
+
                 Dim objTipoObj As New ClsTipoObjeto
                 With objTipoObj
-                    .codigoTipoObjeto_ = sinDobleEspacio(txtcodigo.Text)
-                    .comentario_ = sinDobleEspacio(rtxtcomentario.Text)
+                    .codigoTipoObjeto_ = txtcodigo.Text
+                    .comentario_ = rtxtcomentario.Text
                 End With
 
                 If objTipoObj.RegistrarNuevoTipoObjeto() = 1 Then
@@ -62,10 +66,14 @@
         Try
 
             If (Trim(rtxtcomentario.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
+
+                txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
+                rtxtcomentario.Text = sinDobleEspacio(rtxtcomentario.Text)
+
                 Dim objTipoObj As New ClsTipoObjeto
                 With objTipoObj
-                    .codigoTipoObjeto_ = sinDobleEspacio(txtcodigo.Text)
-                    .comentario_ = sinDobleEspacio(rtxtcomentario.Text)
+                    .codigoTipoObjeto_ = txtcodigo.Text
+                    .comentario_ = rtxtcomentario.Text
                     .codigo_ = lblcode.Text
                 End With
 
@@ -114,11 +122,13 @@
             lblcode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
             rtxtcomentario.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+
             btnmodificar.Enabled = True
             rtxtcomentario.ReadOnly = False
             btnguardar.Enabled = False
             btnnuevo.Enabled = True
             txtcodigo.ReadOnly = False
+
             M_Objeto.lblcodeTipoObjeto.Text = lblcode.Text
             M_Objeto.txtcodigoTipo.Text = txtcodigo.Text
             M_Objeto.txtcomentarioTipo.Text = rtxtcomentario.Text

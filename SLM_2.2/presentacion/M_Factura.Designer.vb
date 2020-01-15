@@ -46,13 +46,6 @@ Partial Class M_Factura
         Me.btnQuitarPromocion = New System.Windows.Forms.Button()
         Me.btnPromocion = New System.Windows.Forms.Button()
         Me.dgblistadoExamenes = New System.Windows.Forms.DataGridView()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaEntrega = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblpagoPaciente = New System.Windows.Forms.Label()
         Me.lblvuelto = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
@@ -107,6 +100,13 @@ Partial Class M_Factura
         Me.lblcodeTerminoPago = New System.Windows.Forms.Label()
         Me.lblcodePriceList = New System.Windows.Forms.Label()
         Me.lblFechaNacimiento = New System.Windows.Forms.Label()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaEntrega = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbxlistadoExamenes.SuspendLayout()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -374,60 +374,6 @@ Partial Class M_Factura
         Me.dgblistadoExamenes.RowTemplate.Height = 24
         Me.dgblistadoExamenes.Size = New System.Drawing.Size(1061, 158)
         Me.dgblistadoExamenes.TabIndex = 0
-        '
-        'codigo
-        '
-        Me.codigo.HeaderText = "Código"
-        Me.codigo.MinimumWidth = 6
-        Me.codigo.Name = "codigo"
-        Me.codigo.Width = 120
-        '
-        'Cantidad
-        '
-        Me.Cantidad.HeaderText = "Cantidad"
-        Me.Cantidad.MinimumWidth = 6
-        Me.Cantidad.Name = "Cantidad"
-        Me.Cantidad.Width = 60
-        '
-        'Precio
-        '
-        Me.Precio.HeaderText = "Precio"
-        Me.Precio.MinimumWidth = 6
-        Me.Precio.Name = "Precio"
-        Me.Precio.ReadOnly = True
-        Me.Precio.Width = 80
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripción"
-        Me.Descripcion.MinimumWidth = 100
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
-        Me.Descripcion.Width = 220
-        '
-        'FechaEntrega
-        '
-        Me.FechaEntrega.HeaderText = "Fecha Entrega"
-        Me.FechaEntrega.MinimumWidth = 6
-        Me.FechaEntrega.Name = "FechaEntrega"
-        Me.FechaEntrega.ReadOnly = True
-        Me.FechaEntrega.Width = 90
-        '
-        'Descuento
-        '
-        Me.Descuento.HeaderText = "Descuento"
-        Me.Descuento.MinimumWidth = 6
-        Me.Descuento.Name = "Descuento"
-        Me.Descuento.ReadOnly = True
-        Me.Descuento.Width = 80
-        '
-        'Subtotal
-        '
-        Me.Subtotal.HeaderText = "Subtotal"
-        Me.Subtotal.MinimumWidth = 6
-        Me.Subtotal.Name = "Subtotal"
-        Me.Subtotal.ReadOnly = True
-        Me.Subtotal.Width = 118
         '
         'lblpagoPaciente
         '
@@ -708,7 +654,7 @@ Partial Class M_Factura
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1164, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1164, 30)
         Me.MenuStrip1.TabIndex = 76
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -1024,6 +970,60 @@ Partial Class M_Factura
         Me.lblFechaNacimiento.TabIndex = 101
         Me.lblFechaNacimiento.Text = "Label1"
         '
+        'codigo
+        '
+        Me.codigo.HeaderText = "Código"
+        Me.codigo.MinimumWidth = 6
+        Me.codigo.Name = "codigo"
+        Me.codigo.Width = 70
+        '
+        'Cantidad
+        '
+        Me.Cantidad.HeaderText = "Cantidad"
+        Me.Cantidad.MinimumWidth = 6
+        Me.Cantidad.Name = "Cantidad"
+        Me.Cantidad.Width = 60
+        '
+        'Precio
+        '
+        Me.Precio.HeaderText = "Precio"
+        Me.Precio.MinimumWidth = 6
+        Me.Precio.Name = "Precio"
+        Me.Precio.ReadOnly = True
+        Me.Precio.Width = 70
+        '
+        'Descripcion
+        '
+        Me.Descripcion.HeaderText = "Descripción"
+        Me.Descripcion.MinimumWidth = 100
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.ReadOnly = True
+        Me.Descripcion.Width = 220
+        '
+        'FechaEntrega
+        '
+        Me.FechaEntrega.HeaderText = "Fecha Entrega"
+        Me.FechaEntrega.MinimumWidth = 6
+        Me.FechaEntrega.Name = "FechaEntrega"
+        Me.FechaEntrega.ReadOnly = True
+        Me.FechaEntrega.Width = 80
+        '
+        'Descuento
+        '
+        Me.Descuento.HeaderText = "Descuento"
+        Me.Descuento.MinimumWidth = 6
+        Me.Descuento.Name = "Descuento"
+        Me.Descuento.ReadOnly = True
+        Me.Descuento.Width = 70
+        '
+        'Subtotal
+        '
+        Me.Subtotal.HeaderText = "Subtotal"
+        Me.Subtotal.MinimumWidth = 6
+        Me.Subtotal.Name = "Subtotal"
+        Me.Subtotal.ReadOnly = True
+        Me.Subtotal.Width = 90
+        '
         'M_Factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1180,13 +1180,6 @@ Partial Class M_Factura
     Friend WithEvents btncontado As Button
     Friend WithEvents btnbuscarSucursal As Button
     Friend WithEvents txtnombreSucursal As TextBox
-    Friend WithEvents codigo As DataGridViewTextBoxColumn
-    Friend WithEvents Cantidad As DataGridViewTextBoxColumn
-    Friend WithEvents Precio As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents FechaEntrega As DataGridViewTextBoxColumn
-    Friend WithEvents Descuento As DataGridViewTextBoxColumn
-    Friend WithEvents Subtotal As DataGridViewTextBoxColumn
     Friend WithEvents txtdescripcionTermino As TextBox
     Friend WithEvents btncotizacion As Button
     Friend WithEvents btnActualizar As Button
@@ -1197,4 +1190,11 @@ Partial Class M_Factura
     Friend WithEvents btnQuitarPromocion As Button
     Friend WithEvents btnPromocion As Button
     Friend WithEvents lblPromocion As Label
+    Friend WithEvents codigo As DataGridViewTextBoxColumn
+    Friend WithEvents Cantidad As DataGridViewTextBoxColumn
+    Friend WithEvents Precio As DataGridViewTextBoxColumn
+    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents FechaEntrega As DataGridViewTextBoxColumn
+    Friend WithEvents Descuento As DataGridViewTextBoxColumn
+    Friend WithEvents Subtotal As DataGridViewTextBoxColumn
 End Class

@@ -33,6 +33,7 @@
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
     End Sub
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
+        limpiar()
         Me.Close()
     End Sub
     Private Sub txtPorcentaje_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPorcentaje.KeyPress
@@ -131,6 +132,7 @@
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
+            limpiar()
             Me.Close()
         End If
     End Sub

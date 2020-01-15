@@ -74,7 +74,27 @@
         End Try
     End Sub
 
-    Private Sub M_VerPaciente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub dtpfechaNacimiento_ValueChanged(sender As Object, e As EventArgs) Handles dtpfechaNacimiento.ValueChanged
+        Dim yr As Integer = DateDiff(DateInterval.Year, dtpfechaNacimiento.Value, Now)
+        Dim month As Integer = DateDiff(DateInterval.Month, dtpfechaNacimiento.Value, Now)
+        Dim day As Integer = DateDiff(DateInterval.Day, dtpfechaNacimiento.Value, Now)
 
+        If (Now.Month < dtpfechaNacimiento.Value.Month) Then
+            yr -= 1
+        ElseIf (Now.Month = dtpfechaNacimiento.Value.Month And Now.Day < dtpfechaNacimiento.Value.Day) Then
+            yr -= 1
+        End If
+
+        If (yr = 0 And month = 1 And Now.Day < dtpfechaNacimiento.Value.Day) Then
+            month -= 1
+        End If
+
+        If (yr >= 1) Then
+            txtEdad.Text = yr & "a"
+        ElseIf (yr = 0 And month > 0) Then
+            txtEdad.Text = month & "m"
+        Else
+            txtEdad.Text = day & "d"
+        End If
     End Sub
 End Class
