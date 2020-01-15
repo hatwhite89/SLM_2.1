@@ -588,6 +588,7 @@
                 txtcodigoTermino.BackColor = Color.White
             Catch ex As Exception
                 txtcodigoTermino.BackColor = Color.Red
+                lblcodeTerminoPago.Text = ""
                 txtnombreTerminos.Text = ""
             End Try
         Else
@@ -612,6 +613,7 @@
                 txtcodigoCategoria.BackColor = Color.White
             Catch ex As Exception
                 txtcodigoCategoria.BackColor = Color.Red
+                lblcodeCategoria.Text = ""
                 txtcodigoCategoria.Text = ""
                 txtnombreCategoria.Text = ""
             End Try
@@ -660,11 +662,25 @@
     End Sub
     Private Sub dtpfechaNacimiento_ValueChanged(sender As Object, e As EventArgs) Handles dtpfechaNacimiento.ValueChanged
         Dim yr As Integer = DateDiff(DateInterval.Year, dtpfechaNacimiento.Value, Now)
-        Dim month As Integer = DateDiff(DateInterval.Month, dtpfechaNacimiento.Value, Now) Mod 12
-        Dim day As Integer = DateDiff(DateInterval.Day, dtpfechaNacimiento.Value, Now) Mod 30 - 10
-        If (yr >= 60) Then
-            'lblcodeCategoria.Text = "2"
-            'MsgBox(yr & " Years, " & month & " Months ")
+        Dim month As Integer = DateDiff(DateInterval.Month, dtpfechaNacimiento.Value, Now)
+        Dim day As Integer = DateDiff(DateInterval.Day, dtpfechaNacimiento.Value, Now)
+
+        If (Now.Month < dtpfechaNacimiento.Value.Month) Then
+            yr -= 1
+        ElseIf (Now.Month = dtpfechaNacimiento.Value.Month And Now.Day < dtpfechaNacimiento.Value.Day) Then
+            yr -= 1
+        End If
+
+        If (yr = 0 And month = 1 And Now.Day < dtpfechaNacimiento.Value.Day) Then
+            month -= 1
+        End If
+
+        If (yr >= 1) Then
+            txtEdad.Text = yr & "a"
+        ElseIf (yr = 0 And month > 0) Then
+            txtEdad.Text = month & "m"
+        Else
+            txtEdad.Text =  day & "d"
         End If
     End Sub
 End Class

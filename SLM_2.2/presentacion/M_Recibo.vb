@@ -12,6 +12,7 @@
                 With objFrmPgo
                     .Cod = txtcodigoFormaPago.Text
                 End With
+
                 Dim dt As New DataTable
                 dt = objFrmPgo.buscarCodigoFormaPago()
                 Dim row As DataRow = dt.Rows(0)
@@ -106,6 +107,7 @@
     End Function
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
+            limpiar()
             Me.Close()
         End If
     End Sub

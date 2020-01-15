@@ -94,6 +94,7 @@ Partial Class M_Cliente
         Me.btnbuscarPorNombre = New System.Windows.Forms.Button()
         Me.lblNombreB = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
+        Me.txtEdad = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxinfoCliente.SuspendLayout()
         Me.gbxgenero.SuspendLayout()
@@ -152,6 +153,7 @@ Partial Class M_Cliente
         '
         'gbxinfoCliente
         '
+        Me.gbxinfoCliente.Controls.Add(Me.txtEdad)
         Me.gbxinfoCliente.Controls.Add(Me.lblcodeTerminoPago)
         Me.gbxinfoCliente.Controls.Add(Me.lblcodeCategoria)
         Me.gbxinfoCliente.Controls.Add(Me.txtnombre2)
@@ -440,9 +442,10 @@ Partial Class M_Cliente
         'dtpfechaNacimiento
         '
         Me.dtpfechaNacimiento.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpfechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfechaNacimiento.Location = New System.Drawing.Point(749, 89)
         Me.dtpfechaNacimiento.Name = "dtpfechaNacimiento"
-        Me.dtpfechaNacimiento.Size = New System.Drawing.Size(193, 22)
+        Me.dtpfechaNacimiento.Size = New System.Drawing.Size(115, 22)
         Me.dtpfechaNacimiento.TabIndex = 99
         '
         'gbxgenero
@@ -874,6 +877,14 @@ Partial Class M_Cliente
         Me.txtnombreB.Size = New System.Drawing.Size(206, 22)
         Me.txtnombreB.TabIndex = 117
         '
+        'txtEdad
+        '
+        Me.txtEdad.Location = New System.Drawing.Point(870, 89)
+        Me.txtEdad.Name = "txtEdad"
+        Me.txtEdad.ReadOnly = True
+        Me.txtEdad.Size = New System.Drawing.Size(72, 22)
+        Me.txtEdad.TabIndex = 121
+        '
         'M_Cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -977,4 +988,5 @@ Partial Class M_Cliente
     Friend WithEvents txtapellido1 As TextBox
     Friend WithEvents lblcodeCategoria As Label
     Friend WithEvents lblcodeTerminoPago As Label
+    Friend WithEvents txtEdad As TextBox
 End Class

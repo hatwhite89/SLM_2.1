@@ -233,9 +233,8 @@ Partial Class M_CAI
         Me.lblCodeMaquinaLocal.AutoSize = True
         Me.lblCodeMaquinaLocal.Location = New System.Drawing.Point(43, 206)
         Me.lblCodeMaquinaLocal.Name = "lblCodeMaquinaLocal"
-        Me.lblCodeMaquinaLocal.Size = New System.Drawing.Size(16, 17)
+        Me.lblCodeMaquinaLocal.Size = New System.Drawing.Size(0, 21)
         Me.lblCodeMaquinaLocal.TabIndex = 128
-        Me.lblCodeMaquinaLocal.Text = "1"
         Me.lblCodeMaquinaLocal.Visible = False
         '
         'M_CAI

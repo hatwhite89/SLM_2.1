@@ -49,9 +49,7 @@
 
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
-            'If (mtxtCAI.MaskCompleted = True And dtpDesdeFecha.Value <= dtpHastaFecha.Value And Trim(txtcodigoMaquina.Text) <> "" And
-            '    mtxtserie.MaskCompleted = True And mtxtdesde.MaskCompleted = True And mtxthasta.MaskCompleted = True And txtcodigoMaquina.BackColor = Color.White) Then
-            If (mtxtCAI.MaskCompleted = True And dtpDesdeFecha.Value <= dtpHastaFecha.Value And
+            If (mtxtCAI.MaskCompleted = True And dtpDesdeFecha.Value <= dtpHastaFecha.Value And Trim(txtcodigoMaquina.Text) <> "" And
                 mtxtserie.MaskCompleted = True And mtxtdesde.MaskCompleted = True And mtxthasta.MaskCompleted = True And txtcodigoMaquina.BackColor = Color.White) Then
 
                 Dim objCAI As New ClsCAI

@@ -77,9 +77,9 @@
             ElseIf n = vbYes And lblForm.Text = "VerPaciente" Then
                 M_VerPaciente.limpiar()
                 'conseguir la edad del paciente
-                Dim yr As Integer = DateDiff(DateInterval.Year, dgbtabla.Rows(e.RowIndex).Cells(12).Value(), Now)
+                'Dim yr As Integer = DateDiff(DateInterval.Year, dgbtabla.Rows(e.RowIndex).Cells(12).Value(), Now)
                 'Dim month As Integer = DateDiff(DateInterval.Month, dgbtabla.Rows(e.RowIndex).Cells(12).Value(), Now) Mod 12
-                M_VerPaciente.txtEdad.Text = yr & " a"
+                'M_VerPaciente.txtEdad.Text = yr & " a"
 
                 M_VerPaciente.txtcodigo.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
                 M_VerPaciente.txtnombreCompleto.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()

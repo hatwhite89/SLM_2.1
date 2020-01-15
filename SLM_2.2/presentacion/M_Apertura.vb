@@ -1,17 +1,16 @@
 ﻿Public Class M_Apertura
     Private Sub M_Apertura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtHora.Text = Date.Now.ToLongTimeString
-        txtFecha.Text = Date.Today
-        txtFondo.Text = ""
+        limpiar()
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
+            limpiar()
             Me.Close()
         End If
     End Sub
 
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
-        txtFondo.Text = ""
+        limpiar()
         Me.Close()
     End Sub
 
@@ -41,8 +40,12 @@
             MsgBox("Debe ingresar el fondo.", MsgBoxStyle.Critical)
         End If
     End Sub
-
-    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+    Private Sub limpiar()
         txtFondo.Text = ""
+        txtHora.Text = Date.Now.ToLongTimeString
+        txtFecha.Text = Date.Today
+    End Sub
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+        limpiar()
     End Sub
 End Class

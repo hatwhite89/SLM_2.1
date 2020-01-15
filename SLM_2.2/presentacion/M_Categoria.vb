@@ -238,7 +238,7 @@
             Catch ex As Exception
                 txtcodigoListaPrecios.BackColor = Color.Red
                 txtdescripcionListaPrecios.Text = ""
-                'MsgBox("No existe ese código de especialidad.", MsgBoxStyle.Critical, "Validación")
+                lblCodePriceList.Text = ""
             End Try
         Else
             txtcodigoListaPrecios.Text = ""

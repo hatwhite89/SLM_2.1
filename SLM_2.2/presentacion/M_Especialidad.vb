@@ -116,11 +116,13 @@
         Try
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
             txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+
             btnmodificar.Enabled = True
             btnnuevo.Enabled = True
             btnguardar.Enabled = False
             txtnombre.ReadOnly = False
             txtcodigo.ReadOnly = True
+
             M_Medico.txtcodigoEspecialidad.Text = txtcodigo.Text
             M_Medico.txtnombreEspecialidad.Text = txtnombre.Text
         Catch ex As Exception
