@@ -179,7 +179,7 @@ Partial Class A_Chequera
         'txtCantidad
         '
         Me.txtCantidad.Location = New System.Drawing.Point(257, 27)
-        Me.txtCantidad.MaxLength = 4
+        Me.txtCantidad.MaxLength = 3
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(70, 20)
         Me.txtCantidad.TabIndex = 7

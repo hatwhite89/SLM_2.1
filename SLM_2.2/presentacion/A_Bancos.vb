@@ -12,21 +12,26 @@
     End Sub
     ':::::::::::::::::::::::::::::::::::::::::::::::::::
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        Try
-            'Captura de variables
-            With Banco
-                .cod_breve = txtCodBreve.Text
-                .Nombre_Banco = txtNombreBanco.Text
-                .Estad_o = chkEstado.Checked
 
-                'Registro de Banco
-                .registrarNuevoBanco()
-                dtBancos.DataSource = Banco.listarBancos()
-            End With
+        If txtCodBreve.Text <> "" Or txtNombreBanco.Text <> "" Then
 
-        Catch ex As Exception
+            Try
+                'Captura de variables
+                With Banco
+                    .cod_breve = txtCodBreve.Text
+                    .Nombre_Banco = txtNombreBanco.Text
+                    .Estad_o = chkEstado.Checked
 
-        End Try
+                    'Registro de Banco
+                    .registrarNuevoBanco()
+                    dtBancos.DataSource = Banco.listarBancos()
+                End With
+
+            Catch ex As Exception
+
+            End Try
+
+        End If
 
     End Sub
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click

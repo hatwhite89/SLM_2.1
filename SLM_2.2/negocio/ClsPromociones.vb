@@ -4,7 +4,7 @@ Public Class ClsPromociones
     Dim descripcion As String
     Dim codigo, contador As Integer
     Dim precio As Double
-    Dim img As Image
+    Dim img As Byte()
     Dim fechaInicio, fechaFinal As Date
 
     'Constructor
@@ -44,11 +44,11 @@ Public Class ClsPromociones
             precio = value
         End Set
     End Property
-    Public Property img_ As Image
+    Public Property img_ As Byte()
         Get
             Return img
         End Get
-        Set(value As Image)
+        Set(value As Byte())
             img = value
         End Set
     End Property
@@ -95,11 +95,6 @@ Public Class ClsPromociones
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "contador" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = contador_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
         sqlpar.ParameterName = "img" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = img_
         sqlcom.Parameters.Add(sqlpar)
@@ -136,7 +131,7 @@ Public Class ClsPromociones
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "A_slmModificarCaja"
+        sqlcom.CommandText = "A_slmModificarPromocion"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -156,11 +151,6 @@ Public Class ClsPromociones
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "fechaFinal" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = fechaFinal_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "contador" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = contador_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -207,9 +197,35 @@ Public Class ClsPromociones
         End Using
     End Function
 
+    Public Function ListarPromociones() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("A_slmListarPromociones", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
 
 
+    Public Function capturarCodPromocion() As DataTable
 
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("A_slmCapturarCodPromo", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+
+
+    End Function
 
 
 

@@ -270,6 +270,12 @@
     <Compile Include="presentacion\A_ListarCuentas_Chequera.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ListarExamenes.Designer.vb">
+      <DependentUpon>A_ListarExamenes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarExamenes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListarFacCompraPagos.Designer.vb">
       <DependentUpon>A_ListarFacCompraPagos.vb</DependentUpon>
     </Compile>
@@ -292,6 +298,12 @@
       <DependentUpon>A_ListarPagos.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ListarPagos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ListarPromociones.Designer.vb">
+      <DependentUpon>A_ListarPromociones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarPromociones.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_ListarProveedores.Designer.vb">
@@ -750,6 +762,9 @@
     <EmbeddedResource Include="presentacion\A_ListarCuentas_Chequera.resx">
       <DependentUpon>A_ListarCuentas_Chequera.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarExamenes.resx">
+      <DependentUpon>A_ListarExamenes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarFacCompraPagos.resx">
       <DependentUpon>A_ListarFacCompraPagos.vb</DependentUpon>
     </EmbeddedResource>
@@ -761,6 +776,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarPagos.resx">
       <DependentUpon>A_ListarPagos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarPromociones.resx">
+      <DependentUpon>A_ListarPromociones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarProveedores.resx">
       <DependentUpon>A_ListarProveedores.vb</DependentUpon>

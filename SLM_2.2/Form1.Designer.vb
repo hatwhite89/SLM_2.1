@@ -66,6 +66,8 @@ Partial Class Form1
         Me.btnCuentas = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnFormaPago = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Label15 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxMenu.SuspendLayout()
         Me.panelMenu.SuspendLayout()
@@ -207,7 +209,7 @@ Partial Class Form1
         Me.panelMenu.Controls.Add(Me.tcMenu)
         Me.panelMenu.Location = New System.Drawing.Point(16, -4)
         Me.panelMenu.Name = "panelMenu"
-        Me.panelMenu.Size = New System.Drawing.Size(21, 390)
+        Me.panelMenu.Size = New System.Drawing.Size(30, 390)
         Me.panelMenu.TabIndex = 4
         '
         'btnCancelar
@@ -217,7 +219,7 @@ Partial Class Form1
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCancelar.FlatAppearance.BorderSize = 0
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(345, 14)
+        Me.btnCancelar.Location = New System.Drawing.Point(345, 3)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(20, 18)
         Me.btnCancelar.TabIndex = 3
@@ -382,6 +384,8 @@ Partial Class Form1
         '
         'tpPrecios
         '
+        Me.tpPrecios.Controls.Add(Me.Label15)
+        Me.tpPrecios.Controls.Add(Me.Button8)
         Me.tpPrecios.Controls.Add(Me.Button7)
         Me.tpPrecios.Controls.Add(Me.Button6)
         Me.tpPrecios.Controls.Add(Me.Button5)
@@ -590,6 +594,29 @@ Partial Class Form1
         Me.btnFormaPago.TabIndex = 0
         Me.btnFormaPago.UseVisualStyleBackColor = True
         '
+        'Button8
+        '
+        Me.Button8.BackColor = System.Drawing.Color.Transparent
+        Me.Button8.BackgroundImage = CType(resources.GetObject("Button8.BackgroundImage"), System.Drawing.Image)
+        Me.Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button8.FlatAppearance.BorderSize = 0
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button8.ForeColor = System.Drawing.Color.White
+        Me.Button8.Location = New System.Drawing.Point(9, 116)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(70, 67)
+        Me.Button8.TabIndex = 18
+        Me.Button8.UseVisualStyleBackColor = False
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(11, 189)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(68, 13)
+        Me.Label15.TabIndex = 19
+        Me.Label15.Text = "Promociones"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -665,4 +692,6 @@ Partial Class Form1
     Friend WithEvents Label14 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Button8 As Button
 End Class
