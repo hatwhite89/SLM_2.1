@@ -166,6 +166,7 @@ Public Class ClsCategoria
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -185,6 +186,7 @@ Public Class ClsCategoria
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -204,6 +206,7 @@ Public Class ClsCategoria
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -217,6 +220,7 @@ Public Class ClsCategoria
         Using da As New SqlDataAdapter("M_slmSeleccionarCategoria", cn)
             Dim dt As New DataTable
             da.Fill(dt)
+            objCon.cerrarConexion()
             Return dt
         End Using
     End Function

@@ -41,7 +41,7 @@ Public Class ClsDetallePromociones
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "M_slmInsertarDetallePromocion"
+        sqlcom.CommandText = "A_slmInsertarDetallePromocion"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoPromocion" 'nombre campo en el procedimiento almacenado @

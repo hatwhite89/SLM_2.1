@@ -92,4 +92,9 @@
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         M_ListaPrecios.Show()
     End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        A_Promociones.Show()
+
+    End Sub
 End Class

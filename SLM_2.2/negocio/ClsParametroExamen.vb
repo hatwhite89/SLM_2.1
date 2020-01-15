@@ -201,6 +201,7 @@ Public Class ClsParametroExamen
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -220,6 +221,7 @@ Public Class ClsParametroExamen
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -239,6 +241,7 @@ Public Class ClsParametroExamen
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -253,6 +256,7 @@ Public Class ClsParametroExamen
         Using da As New SqlDataAdapter("E_slmSeleccionarParametroExamen", cn)
             Dim dt As New DataTable
             da.Fill(dt)
+            objCon.cerrarConexion()
             Return dt
         End Using
     End Function

@@ -3,7 +3,7 @@
     Private Sub M_ListadoPromociones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         seleccionarPromociones()
         Me.dgbtabla.Columns("contador").Visible = False
-        Me.dgbtabla.Columns("img").Visible = False
+        'Me.dgbtabla.Columns("img").Visible = False
     End Sub
     Private Sub seleccionarPromociones()
         Dim dv As DataView = objPromo.SeleccionarPromociones.DefaultView
@@ -37,6 +37,7 @@
                     M_ClienteVentana.dgvtabla.Rows.Add(New String() {CStr(row("codigoExamen")), "1", "0", CStr(row("descripcion")), M_Factura.dtpfechaFactura.Value.Date.AddDays(7), "0", "0"})
                 Next
                 M_Factura.lblPromocion.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                M_Factura.totalFactura()
                 Me.Close()
             Else
                 MsgBox("La promoción ya a sido registrada en la factura.", MsgBoxStyle.Critical)

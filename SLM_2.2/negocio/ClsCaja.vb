@@ -137,6 +137,7 @@ Public Class ClsCaja
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -167,7 +168,6 @@ Public Class ClsCaja
     'End Function
 
     Public Function SeleccionarCaja() As DataTable
-
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -175,6 +175,7 @@ Public Class ClsCaja
         Using da As New SqlDataAdapter("M_slmSeleccionarCaja", cn)
             Dim dt As New DataTable
             da.Fill(dt)
+            objCon.cerrarConexion()
             Return dt
         End Using
     End Function

@@ -220,6 +220,7 @@ Public Class ClsRecibo
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -239,6 +240,7 @@ Public Class ClsRecibo
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -252,6 +254,7 @@ Public Class ClsRecibo
         Using da As New SqlDataAdapter("M_slmCapturarNumeroRecibo", cn)
             Dim dt As New DataTable
             da.Fill(dt)
+            objCon.cerrarConexion()
             Return dt
         End Using
     End Function
@@ -263,6 +266,7 @@ Public Class ClsRecibo
         Using da As New SqlDataAdapter("M_slmSeleccionarRecibo", cn)
             Dim dt As New DataTable
             da.Fill(dt)
+            objCon.cerrarConexion()
             Return dt
         End Using
     End Function

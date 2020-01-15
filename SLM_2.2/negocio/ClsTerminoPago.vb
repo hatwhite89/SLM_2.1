@@ -202,6 +202,7 @@ Public Class ClsTerminoPago
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -221,6 +222,7 @@ Public Class ClsTerminoPago
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -240,6 +242,7 @@ Public Class ClsTerminoPago
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
@@ -254,6 +257,7 @@ Public Class ClsTerminoPago
         Using da As New SqlDataAdapter("M_slmSeleccionarTerminoPago", cn)
             Dim dt As New DataTable
             da.Fill(dt)
+            objCon.cerrarConexion()
             Return dt
         End Using
     End Function
@@ -267,6 +271,7 @@ Public Class ClsTerminoPago
         Using da As New SqlDataAdapter("A_slmListarCodDescripTerminoPago", cn)
             Dim dt As New DataTable
             da.Fill(dt)
+            objCon.cerrarConexion()
             Return dt
         End Using
     End Function
@@ -286,6 +291,7 @@ Public Class ClsTerminoPago
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
+                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using

@@ -513,7 +513,7 @@ Public Class M_Factura
         M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), Math.Ceiling(subtotal)})
     End Sub
     Public Sub totalFactura()
-        Dim total As Double
+        Dim total As Double = 0
         For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 1
             total += Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
         Next
@@ -527,19 +527,43 @@ Public Class M_Factura
 
             If Trim(txtcodigoRecepecionista.Text) = "" Then
                 txtcodigoRecepecionista.Text = "1"
-            ElseIf Trim(txtcodigoCajero.Text) = "" Then
-                txtcodigoCajero.Text = "1"
-            ElseIf Trim(txtcodigoConvenio.Text) = "" Then
-                txtcodigoConvenio.Text = "0"
-            ElseIf Trim(txtcodigoTerminal.Text) = "" Then
-                txtcodigoTerminal.Text = "1"
-            ElseIf Trim(txtpagoPaciente.Text) = "" Then
-                txtcodigoTerminal.Text = "0"
             End If
+            If Trim(txtcodigoCajero.Text) = "" Then
+                txtcodigoCajero.Text = "1"
+            End If
+            If Trim(txtcodigoConvenio.Text) = "" Then
+                txtcodigoConvenio.Text = "1"
+            End If
+            If Trim(txtcodigoTerminal.Text) = "" Then
+                txtcodigoTerminal.Text = "1"
+            End If
+            If Trim(txtnumeroPoliza.Text) = "" Then
+                txtnumeroPoliza.Text = "1"
+            End If
+            If Trim(txtpagoPaciente.Text) = "" Then
+                txtpagoPaciente.Text = "0"
+            End If
+
+            Dim dt As New DataTable
+            Dim row As DataRow
 
             If (txtcodigoCliente.Text <> "" And txtcodigoMedico.Text <> "" And txtcodigoTerminosPago.Text <> "" And
                 txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And
                 txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
+
+                If (cbxok.Checked) Then
+                    Dim objCAI As New ClsCAI
+                    objCAI.codigoMaquinaLocal_ = txtcodigoTerminal.Text
+                    dt = objCAI.BuscarCAI()
+                    row = dt.Rows(0)
+                    txtnumeroOficial.Text = CStr(row("numeroOficial"))
+
+                    Dim objDetCAI As New ClsDetalleCAI
+                    objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
+                    If objDetCAI.ModificarDetalleCAI() = 1 Then
+                        'MsgBox("Funciona la actualizacion del detalle del CAI.")
+                    End If
+                End If
 
                 Dim objFact As New ClsFactura
                 With objFact
@@ -563,14 +587,13 @@ Public Class M_Factura
                     .total_ = Convert.ToDouble(txttotal.Text)
                     .ok_ = cbxok.Checked
                 End With
-
                 If objFact.RegistrarNuevaFactura() = 1 Then
                     deshabilitar()
                     cbxok.Enabled = True
                     txtpagoPaciente.ReadOnly = False
-                    Dim dt As New DataTable
+
                     dt = objFact.BuscarFacturaCode()
-                    Dim row As DataRow = dt.Rows(0)
+                    row = dt.Rows(0)
 
                     txtnumeroFactura.Text = CStr(row("numero"))
                     Dim objDetalleFact As New ClsDetalleFactura
@@ -680,7 +703,25 @@ Public Class M_Factura
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Try
 
-            If (txtpagoPaciente.Text <> "") Then
+            Dim dt As New DataTable
+            Dim row As DataRow
+
+            If (txtpagoPaciente.Text <> "" And Trim(txtnumeroFactura.Text) <> "") Then
+
+                If (cbxok.Checked) Then
+                    Dim objCAI As New ClsCAI
+                    objCAI.codigoMaquinaLocal_ = txtcodigoTerminal.Text
+                    dt = objCAI.BuscarCAI()
+                    row = dt.Rows(0)
+                    txtnumeroOficial.Text = CStr(row("numeroOficial"))
+
+                    Dim objDetCAI As New ClsDetalleCAI
+                    objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
+                    If objDetCAI.ModificarDetalleCAI() = 1 Then
+                        'MsgBox("Funciona la actualizacion del detalle del CAI.")
+                    End If
+                End If
+
                 Dim objFact As New ClsFactura
                 With objFact
                     .numero_ = Convert.ToInt64(txtnumeroFactura.Text)
@@ -805,6 +846,7 @@ Public Class M_Factura
             'le asigno un valor a los parametros del procedimiento almacenado
             Dim objReporte As New M_CryComprobanteEntrega
             objReporte.SetParameterValue("@numeroFactura", Convert.ToInt64(txtnumeroFactura.Text))
+            objReporte.SetParameterValue("@numero", Convert.ToInt64(txtnumeroFactura.Text))
             objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
             objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
             M_ComprobanteEntrega.CrystalReportViewer1.ReportSource = objReporte
@@ -841,11 +883,13 @@ Public Class M_Factura
                     If dgblistadoExamenes.Rows(index).Cells(6).Value() = "0" Then
                         dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(index))
                         M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(index))
-                        index -= index
+                        index -= 1
                     ElseIf dgblistadoExamenes.Rows(index).Cells(0).Value() = lblPromocion.Text Then
                         dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(index))
                         M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(index))
-                        index -= index
+                        index -= 1
+                    ElseIf index >= dgblistadoExamenes.Rows.Count - 2 Then
+                        Exit For
                     End If
                 Next
                 lblPromocion.Text = "0"
@@ -857,4 +901,5 @@ Public Class M_Factura
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
 End Class

@@ -120,6 +120,7 @@ Partial Class A_Cuenta
         Me.lblTipoDetalle.Size = New System.Drawing.Size(17, 13)
         Me.lblTipoDetalle.TabIndex = 16
         Me.lblTipoDetalle.Text = "lbl"
+        Me.lblTipoDetalle.Visible = False
         '
         'btnModificar
         '
