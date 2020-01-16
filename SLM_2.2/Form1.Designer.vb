@@ -209,7 +209,7 @@ Partial Class Form1
         Me.panelMenu.Controls.Add(Me.tcMenu)
         Me.panelMenu.Location = New System.Drawing.Point(16, -4)
         Me.panelMenu.Name = "panelMenu"
-        Me.panelMenu.Size = New System.Drawing.Size(25, 390)
+        Me.panelMenu.Size = New System.Drawing.Size(20, 390)
         Me.panelMenu.TabIndex = 4
         '
         'btnCancelar

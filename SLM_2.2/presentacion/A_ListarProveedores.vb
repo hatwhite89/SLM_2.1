@@ -15,32 +15,43 @@
         Dim dt As DataTable = dtProveedor.DataSource
         Dim row As DataRow = dt.Rows(e.RowIndex)
 
-        'Cargar informacion de proveedor
-        If lblForm.Text = "facturaCompra" Then
+        Try
+            'Cargar informacion de proveedor
+            If lblForm.Text = "facturaCompra" Then
 
-            A_FacturaCompras.txtCodProveedor.Text = row("codProveedor")
+                A_FacturaCompras.txtCodProveedor.Text = row("codProveedor")
 
-        Else
+            Else
 
-            A_Cheques.txtcodProvee.Text = row("codBreve") 'Codigo Proveedor
-            A_Cheques.txtNombreProvee.Text = row("nombreProveedor")  'Nombre de proveedor
+                A_Cheques.txtcodProvee.Text = row("codBreve") 'Codigo Proveedor
+                A_Cheques.txtNombreProvee.Text = row("nombreProveedor")  'Nombre de proveedor
 
-        End If
+            End If
 
-        Me.Close()
+            Me.Close()
+        Catch ex As Exception
+            MsgBox("No se ha seleccionado una opción.")
+        End Try
+
+
 
     End Sub
 
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
 
         'Busqueda de Proveedor
+        Try
 
-        Dim Dato As New DataView
+            Dim Dato As New DataView
 
-        'Actualizar datos en datagrid con textbox
-        proveedor.Nombre_Proveedor = txtBusqueda.Text
-        Dato = proveedor.buscarProveedor.DefaultView
-        dtProveedor.DataSource = Dato
+            'Actualizar datos en datagrid con textbox
+            proveedor.Nombre_Proveedor = txtBusqueda.Text
+            Dato = proveedor.buscarProveedor.DefaultView
+            dtProveedor.DataSource = Dato
+
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 End Class
