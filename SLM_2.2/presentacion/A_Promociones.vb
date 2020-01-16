@@ -5,16 +5,13 @@ Public Class A_Promociones
 
     Dim promo As New ClsPromociones
     Dim Imagen As String
-    Dim datos_ As Byte
+    Dim img As Image
+    Dim datos As Byte()
 
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         If dtDetallePromo.Rows.Count > 1 Then
-
-
-
-
 
             If txtDescrip.Text <> "" And txtPrecio.Text <> "" Then
                 txtDescrip.BackColor = Color.White
@@ -28,6 +25,7 @@ Public Class A_Promociones
                         .fechaInicio_ = dtpFechaI.Value
                         .fechaFinal_ = dtpFechaF.Value
                         .precio_ = Convert.ToDouble(txtPrecio.Text)
+
 
                         'Guardar imagen
                         Dim ms As New MemoryStream
@@ -79,53 +77,83 @@ Public Class A_Promociones
                 txtPrecio.BackColor = Color.Red
             End If
 
-
         Else
 
             MsgBox("La promoción esta incompleta. Debe gregar exámenes y llenar todos los campos.")
 
         End If
 
-
-
-
-
-        'Limpiar todo
-
-
-
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
 
         'Modificar promocion
-        Try
+        If dtDetallePromo.Rows.Count > 1 Then
 
-            With promo
+            If txtDescrip.Text <> "" And txtPrecio.Text <> "" Then
+                txtDescrip.BackColor = Color.White
+                txtPrecio.BackColor = Color.White
 
-                .codigo_ = Convert.ToInt64(txtCod.Text)
-                .descripcion_ = txtDescrip.Text
-                .fechaInicio_ = dtpFechaI.Value
-                .fechaFinal_ = dtpFechaF.Value
-                .precio_ = Convert.ToDouble(txtPrecio.Text)
+                Try
 
-                'Guardar imagen
-                Dim ms As New MemoryStream
-                pbxPromo.Image.Save(ms, pbxPromo.Image.RawFormat)
+                    With promo
 
-                .img_ = ms.GetBuffer
+                        .codigo_ = Convert.ToInt32(txtCod.Text)
+                        .descripcion_ = txtDescrip.Text
+                        .fechaInicio_ = dtpFechaI.Value
+                        .fechaFinal_ = dtpFechaF.Value
+                        .precio_ = Convert.ToDouble(txtPrecio.Text)
 
-                If .RegistrarPromocion = 1 Then
 
-                    MsgBox("La edición del registro fue exitosa.")
+                        'Guardar imagen
+                        Dim ms As New MemoryStream
+                        pbxPromo.Image.Save(ms, pbxPromo.Image.RawFormat)
 
-                End If
+                        .img_ = ms.GetBuffer
 
-            End With
+                        If .RegistrarPromocion = 1 Then
 
-        Catch ex As Exception
-            MsgBox("Error al editar. Detalle: " + ex.Message)
-        End Try
+                            MsgBox("Se registro una nueva promoción.")
+
+                        End If
+
+                    End With
+
+                    'Ingreso detalle de promo
+                    Dim detalle As New ClsDetallePromociones
+
+                    Dim fila As Integer
+
+                    For fila = 0 To dtDetallePromo.Rows.Count - 2
+
+                        With detalle
+
+                            .codigoExamen_ = Convert.ToInt32(dtDetallePromo.Rows(fila).Cells(0).Value)
+                            .codigoPromocion_ = Convert.ToInt32(txtCod.Text)
+                            If .RegistrarDetallePromocion <> 1 Then
+                                MsgBox("Error al modificar el detalle.")
+                            End If
+                        End With
+
+                    Next
+                    LimpiarForma()
+                Catch ex As Exception
+                    MsgBox("Error al modificar o falta imagen de promoción. Detalle: " + ex.Message)
+                End Try
+
+            ElseIf txtDescrip.Text = "" Then
+                MsgBox("Existen campos vacíos.")
+                txtDescrip.BackColor = Color.Red
+            ElseIf txtPrecio.Text = "" Then
+                MsgBox("Existen campos vacíos.")
+                txtPrecio.BackColor = Color.Red
+            End If
+
+        Else
+
+            MsgBox("La promoción esta incompleta. Debe gregar exámenes y llenar todos los campos.")
+
+        End If
 
     End Sub
     Private Sub btnBuscarImage_Click(sender As Object, e As EventArgs) Handles btnBuscarImage.Click
@@ -163,8 +191,6 @@ Public Class A_Promociones
         A_ListarExamenes.ShowDialog()
     End Sub
 
-
-
     Sub LimpiarForma()
 
         Me.Close()
@@ -172,7 +198,6 @@ Public Class A_Promociones
         frm.Show()
 
     End Sub
-
 
     Public Function validarDetalle(ByVal codigoExamen As Integer)
         For index As Integer = 0 To dtDetallePromo.Rows.Count - 2
@@ -183,7 +208,4 @@ Public Class A_Promociones
         Return 0
     End Function
 
-    Private Sub A_Promociones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

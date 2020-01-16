@@ -7,71 +7,100 @@
         'Presionar ESC para cerrar ventana
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
-            'frmMenuConta.Show()
         End If
 
     End Sub
+
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        Try
-            'Registrar nueva factura de compra
-            With FacCompra
+        If txtNroFactura.Text <> "" And txtCodProveedor.Text <> "" And txtTerminoPago.Text <> "" And txtTotal.Text <> "" Then
 
-                'variables
-                .Cod_Proveedor = txtCodProveedor.Text
-                .Nombre_Proveedor = txtNombreProveedor.Text
-                .Fecha_Factura = dtpFechaFactura.Value
-                .Fecha_Transaccion = dtpTransaccion.Value
-                .Fecha_Vencimiento = dtpVencimiento.Value
-                .Moned_a = txtMoneda.Text
-                .Terminos_Pago = txtTerminoPago.Text
-                .Tota_l = txtTotal.Text
-                .Nro_Factura = txtNroFactura.Text
-                'registro de factura compra
-                .registrarNuevaFacturaCompra()
+            Try
+                'Registrar nueva factura de compra
+                With FacCompra
+
+                    'variables
+                    .Cod_Proveedor = txtCodProveedor.Text
+                    .Nombre_Proveedor = txtNombreProveedor.Text
+                    .Fecha_Factura = dtpFechaFactura.Value
+                    .Fecha_Transaccion = dtpTransaccion.Value
+                    .Fecha_Vencimiento = dtpVencimiento.Value
+                    .Moned_a = txtMoneda.Text
+                    .Terminos_Pago = txtTerminoPago.Text
+                    .Tota_l = txtTotal.Text
+                    .Nro_Factura = txtNroFactura.Text
+
+                End With
 
                 'Registro de detalle de factura
-                Dim dt As New DataTable
-                'Capturar código de la factura creada
-                dt = FacCompra.capturarCodFacturaCompra
-                Dim row As DataRow = dt.Rows(0)
-                'Mostrar codigo en textbox 
-                txtCodFactura.Text = CStr(row("codFactura"))
-                Dim fila As Integer
+                If dtDetalleFactura.Rows.Count > 1 Then 'if detalle de factura
 
-                'Recorrer filas para ingreso de detalle de factura
+                    Dim fila As Integer
+
+                    FacCompra.registrarNuevaFacturaCompra()
+                    Dim dt As New DataTable
+                    'Capturar código de la factura creada
+                    dt = FacCompra.capturarCodFacturaCompra
+                    Dim row As DataRow = dt.Rows(0)
+                    'Mostrar codigo en textbox 
+                    txtCodFactura.Text = CStr(row("codFactura"))
+
+                    For fila = 0 To dtDetalleFactura.Rows.Count - 2
+
+                        If (A_Promociones.validarDetalle(dtDetalleFactura.Rows(fila).Cells(0).Value)) = 0 Then
+
+                            'Insertar detalle de compra
+                            DetalleFacCompra.Cod_Factura = Convert.ToInt32(txtCodFactura.Text)
+                            DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(0).Value())
+                            DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(1).Value
+                            DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(2).Value
+                            DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(3).Value()
+                            DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(4).Value()))
+                            DetalleFacCompra.Tipo_Stock = dtDetalleFactura.Rows(fila).Cells(5).Value()
+
+                            'Funcion de registro de detalle
+                            DetalleFacCompra.registrarDetalleFactura()
+                        Else
+                            MsgBox("Error. El código esta duplicado.")
+                        End If
+                        MessageBox.Show("La factura se registro exitosamente.")
+
+                    Next
+
+                    Me.Close()
+                    A_ListadoFacturaCompra.Show()
+
+                Else ' else detalle de factura
+                    MsgBox("Falta detalle de Factura. No se guardo la factura")
+
+                End If ' if detalle de factura
 
 
-                MessageBox.Show("La factura se registro exitosamente.")
+            Catch ex As Exception
+                MessageBox.Show("Error al guardar la factura de compra. Detalles: " + ex.Message)
+            End Try
 
-            End With
-
-            'Cerrar Formulario de creacion de facturas
-            Me.Close()
-
-        Catch ex As Exception
-            MessageBox.Show("Error al guardar la factura de compra. Detalles: " + ex.Message)
-        End Try
+        Else 'if campos vacios
 
 
-        For fila = 0 To dtDetalleFactura.Rows.Count - 2
+            MsgBox("Existen campos vacíos. No se guardo la factura.")
 
-            'Insertar detalle de compra
-            DetalleFacCompra.Cod_Factura = Convert.ToInt32(txtCodFactura.Text)
-            DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(0).Value())
-            DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(3).Value()
-            DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(4).Value()))
-            DetalleFacCompra.Tipo_Stock = dtDetalleFactura.Rows(fila).Cells(4).Value()
-            DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(1).Value()
-            DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(2).Value()
+            If txtNroFactura.Text = "" Then
+                txtNroFactura.BackColor = Color.Red
+            ElseIf txtCodProveedor.Text = "" Then
+                txtCodProveedor.BackColor = Color.Red
+                txtNombreProveedor.BackColor = Color.Red
 
-            'Funcion de registro de detalle
-            DetalleFacCompra.registrarDetalleFactura()
-        Next
+            ElseIf txtTerminoPago.Text = "" Then
+                txtTerminoPago.BackColor = Color.Red
+            ElseIf txtTotal.Text = "" Then
+                txtTotal.BackColor = Color.Red
+            ElseIf txtMoneda.Text = "" Then
+                txtMoneda.BackColor = Color.Red
+            End If
 
 
-        Me.Close()
-        A_ListadoFacturaCompra.Show()
+        End If 'if campos vacios
 
     End Sub
 
@@ -80,13 +109,14 @@
         A_ListarTerminoPago.ShowDialog()
     End Sub
 
-    Private Sub dtDetalleFactura_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellEndEdit
-
-
-
-    End Sub
-
-
+    Public Function validarDetalle(ByVal codigo As Integer)
+        For index As Integer = 0 To dtDetalleFactura.Rows.Count - 2
+            If (dtDetalleFactura.Rows(index).Cells(0).Value().ToString = codigo) Then
+                Return 1
+            End If
+        Next
+        Return 0
+    End Function
 
     Private Sub txtCodProveedor_TextChanged(sender As Object, e As EventArgs) Handles txtCodProveedor.TextChanged
         'Mostrar nombre de Proveedor ingresado
@@ -105,6 +135,7 @@
 
                     Dim row As DataRow = dt.Rows(0)
                     txtNombreProveedor.Text = row("nombreProveedor")
+                    txtNombreProveedor.BackColor = Color.White
                 Catch ex As Exception
                     MessageBox.Show(ex.Message)
                 End Try
@@ -115,6 +146,8 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+
+        txtCodProveedor.BackColor = Color.White
 
     End Sub
 
@@ -139,8 +172,6 @@
 
             A_ListarCuentas.Show()
             A_ListarCuentas.lblForm.Text = "facturaCompra"
-
-
 
         End If
 
@@ -247,5 +278,22 @@
 
     End Sub
 
+    Private Sub txtNroFactura_TextChanged(sender As Object, e As EventArgs) Handles txtNroFactura.TextChanged
+        With txtNroFactura
+            .BackColor = Color.White
+        End With
+    End Sub
 
+    Private Sub txtTerminoPago_TextChanged(sender As Object, e As EventArgs) Handles txtTerminoPago.TextChanged
+        txtTerminoPago.BackColor = Color.White
+
+    End Sub
+
+    Private Sub txtTotal_TextChanged(sender As Object, e As EventArgs) Handles txtTotal.TextChanged
+        txtTotal.BackColor = Color.White
+    End Sub
+
+    Private Sub txtMoneda_TextChanged(sender As Object, e As EventArgs) Handles txtMoneda.TextChanged
+        txtMoneda.BackColor = Color.White
+    End Sub
 End Class

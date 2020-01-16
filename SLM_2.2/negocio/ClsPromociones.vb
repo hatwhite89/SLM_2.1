@@ -69,7 +69,6 @@ Public Class ClsPromociones
         End Set
     End Property
 
-
     Public Function RegistrarPromocion() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -210,7 +209,6 @@ Public Class ClsPromociones
             Return dt
         End Using
     End Function
-
 
     Public Function capturarCodPromocion() As DataTable
 

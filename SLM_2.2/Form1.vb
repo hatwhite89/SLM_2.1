@@ -53,7 +53,7 @@
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        A_FacturaCompras.Show()
+        A_ListadoFacturaCompra.Show()
     End Sub
 
     Private Sub btnFormaPago_Click(sender As Object, e As EventArgs) Handles btnFormaPago.Click
@@ -94,7 +94,7 @@
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        A_Promociones.Show()
+        A_ListarPromociones.Show()
 
     End Sub
 End Class
