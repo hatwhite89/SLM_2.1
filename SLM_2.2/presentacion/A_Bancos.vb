@@ -13,7 +13,7 @@
     ':::::::::::::::::::::::::::::::::::::::::::::::::::
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        If txtCodBreve.Text <> "" Or txtNombreBanco.Text <> "" Then
+        If txtCodBreve.Text <> "" And txtNombreBanco.Text <> "" Then
 
             Try
                 'Captura de variables
@@ -21,15 +21,26 @@
                     .cod_breve = txtCodBreve.Text
                     .Nombre_Banco = txtNombreBanco.Text
                     .Estad_o = chkEstado.Checked
-
-                    'Registro de Banco
-                    .registrarNuevoBanco()
-                    dtBancos.DataSource = Banco.listarBancos()
                 End With
 
-            Catch ex As Exception
+                'Registro de Banco
+                If Banco.registrarNuevoBanco() = 1 Then
+                    dtBancos.DataSource = Banco.listarBancos()
+                    MsgBox("El registro se guardo exitosamente")
+                End If
 
+            Catch ex As Exception
+                MsgBox("Error al guardar el registro. Detalle: " + ex.Message)
             End Try
+        Else
+
+            MsgBox("Existen campos vacíos.")
+
+            If txtCodBreve.Text = "" Then
+                txtCodBreve.BackColor = Color.Red
+            ElseIf txtNombreBanco.Text = "" Then
+                txtNombreBanco.BackColor = Color.Red
+            End If
 
         End If
 
@@ -162,4 +173,18 @@
     Private Sub A_Bancos_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         'frmMenuConta.Show()
     End Sub
+
+    Private Sub txtCodBreve_TextChanged(sender As Object, e As EventArgs) Handles txtCodBreve.TextChanged
+        If txtCodBreve.BackColor = Color.Red Then
+            txtCodBreve.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub txtNombreBanco_TextChanged(sender As Object, e As EventArgs) Handles txtNombreBanco.TextChanged
+        If txtNombreBanco.BackColor = Color.Red Then
+            txtNombreBanco.BackColor = Color.White
+        End If
+    End Sub
+
+
 End Class

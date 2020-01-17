@@ -36,10 +36,10 @@
                 If dtDetalleFactura.Rows.Count > 1 Then 'if detalle de factura
 
                     Dim fila As Integer
-
+                    'Registro de factura en BD
                     FacCompra.registrarNuevaFacturaCompra()
                     Dim dt As New DataTable
-                    'Capturar código de la factura creada
+                    'Capturar código de la factura recien guardada
                     dt = FacCompra.capturarCodFacturaCompra
                     Dim row As DataRow = dt.Rows(0)
                     'Mostrar codigo en textbox 

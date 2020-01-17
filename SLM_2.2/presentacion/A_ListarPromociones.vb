@@ -8,7 +8,7 @@
         dtPromos.Columns("contador").Visible = False
         dtPromos.Columns("precio").Visible = False
         dtPromos.Columns("img").Visible = False
-
+        dtPromos.Columns("descripcion").Width = 230
     End Sub
 
     Private Sub dtPromos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtPromos.CellDoubleClick
@@ -33,4 +33,12 @@
         End With
 
     End Sub
+
+    Private Sub A_ListarPromociones_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        'Presionar ESC para cerrar ventana
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
+    End Sub
+
 End Class

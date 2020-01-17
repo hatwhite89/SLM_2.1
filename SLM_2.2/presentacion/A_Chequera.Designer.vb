@@ -29,7 +29,6 @@ Partial Class A_Chequera
         Me.mtxtNumInicio = New System.Windows.Forms.MaskedTextBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.txtBanco = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -55,7 +54,6 @@ Partial Class A_Chequera
         Me.gbxInfoChequeras.Controls.Add(Me.mtxtNumInicio)
         Me.gbxInfoChequeras.Controls.Add(Me.btnBuscar)
         Me.gbxInfoChequeras.Controls.Add(Me.btnGuardar)
-        Me.gbxInfoChequeras.Controls.Add(Me.btnModificar)
         Me.gbxInfoChequeras.Controls.Add(Me.btnCrear)
         Me.gbxInfoChequeras.Controls.Add(Me.txtBanco)
         Me.gbxInfoChequeras.Controls.Add(Me.Label5)
@@ -76,7 +74,7 @@ Partial Class A_Chequera
         'lblNombreBanc
         '
         Me.lblNombreBanc.AutoSize = True
-        Me.lblNombreBanc.Location = New System.Drawing.Point(254, 78)
+        Me.lblNombreBanc.Location = New System.Drawing.Point(258, 82)
         Me.lblNombreBanc.Name = "lblNombreBanc"
         Me.lblNombreBanc.Size = New System.Drawing.Size(85, 13)
         Me.lblNombreBanc.TabIndex = 16
@@ -131,27 +129,13 @@ Partial Class A_Chequera
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
-        'btnModificar
-        '
-        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnModificar.FlatAppearance.BorderSize = 0
-        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(196, 118)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
-        Me.btnModificar.TabIndex = 11
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = False
-        Me.btnModificar.Visible = False
-        '
         'btnCrear
         '
         Me.btnCrear.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(118, 118)
+        Me.btnCrear.Location = New System.Drawing.Point(193, 118)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 10
@@ -205,7 +189,7 @@ Partial Class A_Chequera
         'txtCtaDestino
         '
         Me.txtCtaDestino.Location = New System.Drawing.Point(92, 52)
-        Me.txtCtaDestino.MaxLength = 10
+        Me.txtCtaDestino.MaxLength = 6
         Me.txtCtaDestino.Name = "txtCtaDestino"
         Me.txtCtaDestino.Size = New System.Drawing.Size(42, 20)
         Me.txtCtaDestino.TabIndex = 3
@@ -285,7 +269,7 @@ Partial Class A_Chequera
         Me.KeyPreview = True
         Me.Name = "A_Chequera"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Mantenimiento de Chequeras"
+        Me.Text = "Chequera"
         Me.gbxInfoChequeras.ResumeLayout(False)
         Me.gbxInfoChequeras.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -299,7 +283,6 @@ Partial Class A_Chequera
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents dtChequeras As DataGridView
     Friend WithEvents btnGuardar As Button
-    Friend WithEvents btnModificar As Button
     Friend WithEvents btnCrear As Button
     Friend WithEvents txtBanco As TextBox
     Friend WithEvents Label5 As Label
