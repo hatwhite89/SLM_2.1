@@ -2,15 +2,14 @@
 
     Dim Chequera As New ClsChequera
     Dim Cheques As New ClsCheques
+    Dim banco As New ClsBancos
+    Dim cuenta As New ClsCuenta
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         'Creacion de nueva chequera y cheques
 
+        If txtCtaDestino.Text <> "" And txtCantidad.Text <> "" And txtBanco.Text <> "" And mtxtNumInicio.Text <> "" Then 'if Campos Vacios
 
-        If txtCtaDestino.Text <> "" And txtCantidad.Text <> "" And txtBanco.Text <> "" And mtxtNumInicio.Text <> "" Then
-
-            Dim banco As New ClsBancos
-            Dim cuenta As New ClsCuenta
             Dim dt1, dt2 As New DataTable
 
             banco.cod_breve = txtBanco.Text
@@ -59,62 +58,31 @@
 
                 Catch ex As Exception
 
-                    MsgBox("Hubo un error al crear la chequera. Detalle: " + ex.Message)
+                    MsgBox("Hubo un error al generar la chequera. Detalle: " + ex.Message)
 
                 End Try
 
             End If
 
-        Else
+        Else ' else campos vacios
+
             MsgBox("Faltan campos que llenar.")
-        End If
 
-    End Sub
+            If txtCtaDestino.Text = "" Then
+                txtCtaDestino.BackColor = Color.Red
 
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+            ElseIf txtCantidad.Text = "" Then
+                txtCantidad.BackColor = Color.Red
 
+            ElseIf txtBanco.Text = "" Then
+                txtBanco.BackColor = Color.Red
 
-        Dim banco As New ClsBancos
-        Dim cuenta As New ClsCuenta
-        Dim dt1, dt2 As New DataTable
+            ElseIf mtxtNumInicio.Text = "" Then
+                mtxtNumInicio.BackColor = Color.Red
 
-        banco.cod_breve = txtBanco.Text
-        cuenta.Cuent_a = Convert.ToInt64(txtCtaDestino.Text)
+            End If
 
-        dt1 = banco.buscarBancoCod
-        dt2 = cuenta.BuscarCuenta
-
-
-        If dt1.Rows.Count > 0 And dt2.Rows.Count > 0 Then
-
-            Try
-
-                With Chequera
-
-                    'Capturar Variables
-                    .Cod_Chequera = txtCodChequera.Text
-                    .Cuenta_Destino = txtCtaDestino.Text
-                    .Numero_Inicio = mtxtNumInicio.Text
-                    .Cuenta_Destino = txtCtaDestino.Text
-                    .Cantida_d = txtCantidad.Text
-                    .Banc_o = txtBanco.Text
-
-                    'Modificar datos de chequera
-                    .modificarChequera()
-                    dtChequeras.DataSource = Chequera.listarChequeras
-
-                End With
-
-            Catch ex As Exception
-                MsgBox("Se ha modificado el registro.")
-            End Try
-
-        End If
-
-        'Habilitar Botones
-        btnGuardar.Visible = True
-        btnCrear.Visible = False
-        btnModificar.Visible = False
+        End If ' if campos vacios
 
     End Sub
 
@@ -129,7 +97,6 @@
 
         Limpiar()
         btnCrear.Visible = False
-        btnModificar.Visible = False
         btnGuardar.Visible = True
 
     End Sub
@@ -195,6 +162,7 @@
     End Sub
 
     Private Sub txtCtaDestino_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCtaDestino.KeyPress
+
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -204,9 +172,64 @@
         Else
             e.Handled = True
         End If
+
     End Sub
 
-    Private Sub A_Chequera_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        'frmMenuConta.Show()
+    Private Sub dtChequeras_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtChequeras.CellClick
+        'Muestra información de chequera en los textbox
+        Try
+
+            Dim dt As DataTable
+            Dim rows As DataRow
+
+            dt = dtChequeras.DataSource
+            rows = dt.Rows(e.RowIndex)
+
+            txtCodChequera.Text = rows("codChequera")
+            txtCtaDestino.Text = rows("ctaDestino")
+            mtxtNumInicio.Text = rows("nroInicio")
+            txtCantidad.Text = rows("cantidad")
+            txtBanco.Text = rows("banco")
+
+            'Ocultar botones
+            btnGuardar.Visible = False
+            btnCrear.Visible = True
+
+        Catch ex As Exception
+            MsgBox("No se selecciono una fila o hubo un error al seleccionar.")
+        End Try
+
+    End Sub
+
+    Private Sub txtCtaDestino_TextChanged(sender As Object, e As EventArgs) Handles txtCtaDestino.TextChanged
+
+        If txtCtaDestino.BackColor = Color.Red Then
+            txtCtaDestino.BackColor = Color.White
+        End If
+
+    End Sub
+
+    Private Sub mtxtNumInicio_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles mtxtNumInicio.MaskInputRejected
+
+        If mtxtNumInicio.BackColor = Color.Red Then
+            mtxtNumInicio.BackColor = Color.White
+        End If
+
+    End Sub
+
+    Private Sub txtCantidad_TextChanged(sender As Object, e As EventArgs) Handles txtCantidad.TextChanged
+
+        If txtCantidad.BackColor = Color.Red Then
+            txtCantidad.BackColor = Color.White
+        End If
+
+    End Sub
+
+    Private Sub txtBanco_TextChanged(sender As Object, e As EventArgs) Handles txtBanco.TextChanged
+
+        If txtBanco.BackColor = Color.Red Then
+            txtBanco.BackColor = Color.White
+        End If
+
     End Sub
 End Class

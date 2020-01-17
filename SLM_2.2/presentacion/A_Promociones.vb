@@ -208,4 +208,12 @@ Public Class A_Promociones
         Return 0
     End Function
 
+    Private Sub A_Promociones_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+
+        'Presionar ESC para cerrar ventana
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
+
+    End Sub
 End Class

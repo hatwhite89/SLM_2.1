@@ -149,7 +149,7 @@ Partial Class A_Bancos
         'txtNombreBanco
         '
         Me.txtNombreBanco.Location = New System.Drawing.Point(100, 81)
-        Me.txtNombreBanco.MaxLength = 150
+        Me.txtNombreBanco.MaxLength = 100
         Me.txtNombreBanco.Name = "txtNombreBanco"
         Me.txtNombreBanco.Size = New System.Drawing.Size(221, 20)
         Me.txtNombreBanco.TabIndex = 5
@@ -166,7 +166,7 @@ Partial Class A_Bancos
         'txtCodBreve
         '
         Me.txtCodBreve.Location = New System.Drawing.Point(100, 55)
-        Me.txtCodBreve.MaxLength = 50
+        Me.txtCodBreve.MaxLength = 20
         Me.txtCodBreve.Name = "txtCodBreve"
         Me.txtCodBreve.Size = New System.Drawing.Size(100, 20)
         Me.txtCodBreve.TabIndex = 3
@@ -204,6 +204,9 @@ Partial Class A_Bancos
         '
         'dtBancos
         '
+        Me.dtBancos.AllowUserToAddRows = False
+        Me.dtBancos.AllowUserToDeleteRows = False
+        Me.dtBancos.AllowUserToResizeColumns = False
         Me.dtBancos.BackgroundColor = System.Drawing.Color.White
         Me.dtBancos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtBancos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize

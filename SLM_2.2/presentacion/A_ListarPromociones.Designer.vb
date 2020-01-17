@@ -92,6 +92,7 @@ Partial Class A_ListarPromociones
         Me.ClientSize = New System.Drawing.Size(611, 340)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.KeyPreview = True
         Me.Name = "A_ListarPromociones"
         Me.Text = "Listado de Promociones"
         Me.GroupBox1.ResumeLayout(False)
