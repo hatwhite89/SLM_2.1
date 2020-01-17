@@ -197,6 +197,7 @@
                                 MsgBox("Error al querer insertar el detalle del recibo.")
                             End If
                         Else
+
                             'actualiza los recibos
                             With objDetRbo
                                 .codigo_ = dgbtabla.Rows(index).Cells(0).Value()
