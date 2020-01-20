@@ -80,10 +80,12 @@ Public Class M_Factura
         lblFechaNacimiento.Text = ""
 
         cbxok.Checked = False
-        txtpagoPaciente.Text() = ""
-        txtvuelto.Text() = ""
-        txttotal.Text() = ""
+        txtpagoPaciente.Text() = "0"
+        txtvuelto.Text() = "0"
+        txttotal.Text() = "0"
 
+        txtTarjeta.Text() = "0"
+        txtEfectivo.Text() = "0"
         'Habilitar los campos
         txtcodigoCliente.ReadOnly = False
         txtcodigoMedico.ReadOnly = False
@@ -114,7 +116,6 @@ Public Class M_Factura
         dgblistadoExamenes.ReadOnly = False
 
         cbxok.Enabled = True
-        txtpagoPaciente.ReadOnly = False
 
         btnActualizar.Enabled = False
         btncotizacion.Enabled = True
@@ -124,6 +125,9 @@ Public Class M_Factura
 
         btnPromocion.Enabled = True
         btnQuitarPromocion.Enabled = True
+
+        txtEfectivo.ReadOnly = False
+        txtTarjeta.ReadOnly = False
     End Sub
     Public Sub deshabilitar()
         txtcodigoCliente.ReadOnly = True
@@ -155,7 +159,6 @@ Public Class M_Factura
         dgblistadoExamenes.ReadOnly = True
 
         cbxok.Enabled = False
-        txtpagoPaciente.ReadOnly = True
 
         btnActualizar.Enabled = True
         btncotizacion.Enabled = False
@@ -165,6 +168,9 @@ Public Class M_Factura
 
         btnPromocion.Enabled = False
         btnQuitarPromocion.Enabled = False
+
+        txtEfectivo.ReadOnly = True
+        txtTarjeta.ReadOnly = True
     End Sub
     Public Sub HabilitarActualizarFactura()
         cbxentregarMedico.Enabled = True
@@ -172,7 +178,9 @@ Public Class M_Factura
         cbxenviarCorreo.Enabled = True
 
         cbxok.Enabled = True
-        txtpagoPaciente.ReadOnly = False
+
+        txtEfectivo.ReadOnly = False
+        txtTarjeta.ReadOnly = False
     End Sub
     Public Sub HabilitarCotizacionFactura()
         txtcodigoCliente.ReadOnly = False
@@ -303,7 +311,7 @@ Public Class M_Factura
             btn.Name = "btnEliminar"
             btn.UseColumnTextForButtonValue = True
         End If
-        totalFactura()
+        'totalFactura()
     End Sub
     Private Sub txtconvenio_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoConvenio.TextChanged
         M_ClienteVentana.txtnombreConvenio.Text = txtcodigoConvenio.Text
@@ -311,8 +319,8 @@ Public Class M_Factura
     Private Sub txtpagoPaciente_TextChanged(sender As Object, e As EventArgs) Handles txtpagoPaciente.TextChanged
         Try
             M_ClienteVentana.txtpagoPaciente.Text = txtpagoPaciente.Text
-            txtvuelto.Text = Convert.ToInt32(txtpagoPaciente.Text) - Convert.ToInt32(txttotal.Text)
-            M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
+            'txtvuelto.Text = Convert.ToInt32(txtpagoPaciente.Text) - Convert.ToInt32(txttotal.Text)
+            'M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
         Catch ex As Exception
         End Try
     End Sub
@@ -321,19 +329,26 @@ Public Class M_Factura
     End Sub
     Private Sub txtvuelto_TextChanged(sender As Object, e As EventArgs) Handles txtvuelto.TextChanged
         M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
+        If (Convert.ToDouble(txtvuelto.Text) >= 0) Then
+            txtvuelto.ForeColor = Color.Black
+            M_ClienteVentana.txtvuelto.ForeColor = Color.Black
+        Else
+            txtvuelto.ForeColor = Color.Red
+            M_ClienteVentana.txtvuelto.ForeColor = Color.Red
+        End If
+
     End Sub
     Private Sub txttotal_TextChanged(sender As Object, e As EventArgs) Handles txttotal.TextChanged
         M_ClienteVentana.txttotal.Text = txttotal.Text
         Try
-            M_ClienteVentana.txtpagoPaciente.Text = txtpagoPaciente.Text
-            txtvuelto.Text = Convert.ToInt32(txtpagoPaciente.Text) - Convert.ToInt32(txttotal.Text)
+            txtvuelto.Text = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txttotal.Text)
             M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
         Catch ex As Exception
 
         End Try
     End Sub
     Private Sub dgblistadoExamenes_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellClick
-        If e.ColumnIndex = 7 Then
+        If e.ColumnIndex = 7 And Trim(txtnumeroFactura.Text) = "" Then
             Try
                 Dim n As String = MsgBox("¿Desea eliminar el examen de la factura?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then
@@ -432,6 +447,7 @@ Public Class M_Factura
     'End Sub
     Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
         If e.ColumnIndex = 0 Then
+            'MsgBox("cambia los datos")
             Try
                 If (Trim(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()) <> "") Then
                     Dim objExam As New ClsPrecio
@@ -554,7 +570,12 @@ Public Class M_Factura
                 txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And
                 txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
 
+
                 If (cbxok.Checked) Then
+                    If (Convert.ToDouble(txtvuelto.Text) < 0) Then
+                        MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
+                        Exit Sub
+                    End If
                     Dim objCAI As New ClsCAI
                     objCAI.codigoMaquinaLocal_ = txtcodigoTerminal.Text
                     dt = objCAI.BuscarCAI()
@@ -589,11 +610,12 @@ Public Class M_Factura
                     .vuelto_ = Convert.ToDouble(txtvuelto.Text)
                     .total_ = Convert.ToDouble(txttotal.Text)
                     .ok_ = cbxok.Checked
+                    .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
+                    .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
                 End With
                 If objFact.RegistrarNuevaFactura() = 1 Then
                     deshabilitar()
                     cbxok.Enabled = True
-                    txtpagoPaciente.ReadOnly = False
 
                     dt = objFact.BuscarFacturaCode()
                     row = dt.Rows(0)
@@ -616,6 +638,8 @@ Public Class M_Factura
                     MsgBox("Registrada la factura correctamente.")
                     If (cbxok.Checked) Then
                         Imprimir_Factura()
+                    Else
+                        HabilitarActualizarFactura()
                     End If
                 Else
                     MsgBox("Error al querer registrar la factura.", MsgBoxStyle.Critical)
@@ -648,7 +672,9 @@ Public Class M_Factura
         Try
             If (Trim(txtcodigoCliente.Text) <> "" And Trim(txtcodigoTerminosPago.Text) <> "" And
                 Trim(txtcodigoSucursal.Text) <> "" And txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
-
+                If Trim(txtcodigoRecepecionista.Text) = "" Then
+                    txtcodigoRecepecionista.Text = "1"
+                End If
                 Dim objCotiz As New ClsCotizacion
                 With objCotiz
                     .codigoCliente_ = Convert.ToInt32(txtcodigoCliente.Text)
@@ -708,6 +734,10 @@ Public Class M_Factura
             If (txtpagoPaciente.Text <> "" And Trim(txtnumeroFactura.Text) <> "") Then
 
                 If (cbxok.Checked) Then
+                    If (Convert.ToDouble(txtvuelto.Text) < 0) Then
+                        MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
+                        Exit Sub
+                    End If
                     Dim objCAI As New ClsCAI
                     objCAI.codigoMaquinaLocal_ = txtcodigoTerminal.Text
                     dt = objCAI.BuscarCAI()
@@ -731,6 +761,8 @@ Public Class M_Factura
                     .ok_ = cbxok.Checked
                     .pagoPaciente_ = Convert.ToDouble(txtpagoPaciente.Text)
                     .vuelto_ = Convert.ToDouble(txtvuelto.Text)
+                    .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
+                    .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
                 End With
 
                 If objFact.ModificarFactura() = 1 Then
@@ -739,6 +771,8 @@ Public Class M_Factura
                     MsgBox("Actualizada la factura correctamente.")
                     If (cbxok.Checked) Then
                         Imprimir_Factura()
+                    Else
+                        HabilitarActualizarFactura()
                     End If
                 Else
                     MsgBox("Error al querer actualizar la factura.", MsgBoxStyle.Critical)
@@ -829,12 +863,15 @@ Public Class M_Factura
     Private Sub Imprimir_Factura()
 
         If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
-            Dim numero As Integer = Convert.ToInt64(txtnumeroFactura.Text)
             'le asigno un valor a los parametros del procedimiento almacenado
-            Dim form As New M_ComprobanteEntrega
-            form.numeroFactura = numero
-            'muestro el reporte
-            form.ShowDialog()
+            Dim objReporte As New M_CryComprobanteEntrega
+
+            objReporte.SetParameterValue("@numero", Convert.ToInt64(txtnumeroFactura.Text))
+            objReporte.SetParameterValue("@numeroFactura", Convert.ToInt64(txtnumeroFactura.Text))
+            objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
+            objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+            M_ComprobanteEntrega.CrystalReportViewer1.ReportSource = objReporte
+            M_ComprobanteEntrega.ShowDialog()
         Else
             MsgBox("Debe estar creada o guardada la factura para poder imprimirla.", MsgBoxStyle.Critical)
         End If
@@ -902,6 +939,24 @@ Public Class M_Factura
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
+    Private Sub txtEfectivo_TextChanged(sender As Object, e As EventArgs) Handles txtEfectivo.TextChanged
+        Try
+            txtpagoPaciente.Text = Convert.ToDouble(txtEfectivo.Text) + Convert.ToDouble(txtTarjeta.Text)
+            txtvuelto.Text = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txttotal.Text)
+            'M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtTarjeta_TextChanged(sender As Object, e As EventArgs) Handles txtTarjeta.TextChanged
+        Try
+            txtpagoPaciente.Text = Convert.ToDouble(txtEfectivo.Text) + Convert.ToDouble(txtTarjeta.Text)
+            txtvuelto.Text = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txttotal.Text)
+        Catch ex As Exception
+        End Try
+    End Sub
+
 
 
 
@@ -1281,6 +1336,5 @@ Public Class M_Factura
         End Function
 
     End Class
-
 
 End Class

@@ -125,6 +125,7 @@
     <Compile Include="negocio\ClsAccesoLaboratorio.vb" />
     <Compile Include="negocio\ClsApertura.vb" />
     <Compile Include="negocio\ClsAreaLaboratorio.vb" />
+    <Compile Include="negocio\ClsArqueos.vb" />
     <Compile Include="negocio\ClsCAI.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
     <Compile Include="negocio\ClsDescuentos.vb" />
@@ -421,6 +422,12 @@
       <DependentUpon>A_FormaPago.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_FormaPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_Arqueos.Designer.vb">
+      <DependentUpon>M_Arqueos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Arqueos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_CAI.Designer.vb">
@@ -847,6 +854,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_Unidad.resx">
       <DependentUpon>E_Unidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Arqueos.resx">
+      <DependentUpon>M_Arqueos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_CAI.resx">
       <DependentUpon>M_CAI.vb</DependentUpon>
