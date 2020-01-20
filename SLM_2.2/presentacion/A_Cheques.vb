@@ -1,5 +1,4 @@
-﻿
-Imports System
+﻿Imports System
 Imports System.Text
 Imports System.Globalization
 Public Class A_Cheques
@@ -64,7 +63,6 @@ Public Class A_Cheques
                     Dim fila As String = frmPagos.lblFila.Text
 
                     frmPagos.dtDetallePagos.Rows(fila).Cells(5).Value = txtNroCheq.Text
-
 
                 End With
 
