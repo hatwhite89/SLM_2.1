@@ -1,12 +1,53 @@
 ﻿Public Class frmDeposito
     Dim nuevoDeposito As New ClsDeposito
     Dim buscarCodigo As New ClsFormaPago
+    Dim asiento As New ClsAsientoContable
+    Dim detalleAsiento As New ClsDetalleAsiento
+    Dim periodo As New ClsPeriodoContable
     Private Sub CerrarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CerrarToolStripMenuItem1.Click
         Me.Close()
     End Sub
 
     Private Sub ListarDepositosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarDepositosToolStripMenuItem.Click
-        frmAsientos.Show()
+
+
+        If txtNro.Text = "" Then
+
+            MsgBox("Debe seleccionar una transacción para ver un asiento contable.")
+
+        Else
+
+            With asiento
+
+                .Campo_Llave = Convert.ToInt32(txtNro.Text)
+
+                Dim dtA As DataTable
+                Dim rows As DataRow
+
+                dtA = .VerAsiento
+                rows = dtA.Rows(0)
+
+                'Asignando valores a forma Asiento
+
+                With frmAsientos
+
+                    .txtNro.Text = rows("campoLlave")
+                    .txtTexto.Text = rows("descripcion")
+                    .dtpFecha.Value = rows("fecha")
+                    .lblCodAsiento.Text = rows("cod_asiento")
+
+                    .Show()
+                End With
+
+
+            End With
+
+
+        End If
+
+
+
+
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -48,8 +89,53 @@
                         .cod_Cajero = txtCajero.Text
                         .Cod_FormaPago = Convert.ToInt32(lblCodFormaPago.Text)
                         .registrarNuevoDeposito()
-                        Limpiar()
+
                     End With
+
+                    '::::::::::::::::::::::::::::::::  Partida Contable  ::::::::::::::::::::::::::::::::
+
+                    Try
+
+                        With asiento
+
+                            .Cod_Periodo = Convert.ToInt32(periodo.capturarCodPeriodo)
+                            .Descrip = txtComentario.Text
+                            .Fecha_ = dtpFecha.Value
+                            .Campo_Llave = 111111
+
+                            If .registrarAsiento = 1 Then
+
+
+
+                                With detalleAsiento
+
+                                    .Cod_Asiento = Convert.ToInt32(asiento.capturarCodAsiento)
+                                    .Debe_ = Convert.ToDouble(txtContado.Text)
+                                    .Haber_ = 0.0
+
+                                    Dim dt As DataTable
+                                    Dim row As DataRow
+
+                                    dt = buscarCodigo.infoFormaPago
+                                    row = dt.Rows(1)
+
+                                    .Cuenta_ = Convert.ToInt32(row("cuenta"))
+
+                                End With
+
+                            End If
+
+
+
+
+                        End With
+
+
+                    Catch ex As Exception
+                        MsgBox("Aqui hay error: " + ex.Message)
+                    End Try
+
+                    Limpiar()
 
                 Else
                     'Campos para tipo de deposito: Deposito Bancario
@@ -67,8 +153,79 @@
                         .cod_Cajero = txtCajero.Text
                         .Cod_FormaPago = Convert.ToInt32(lblCodFormaPago.Text)
                         .registrarNuevoDeposito()
-                        Limpiar()
+
                     End With
+
+                    '::::::::::::::::::::::::::::::::  Partida Contable  ::::::::::::::::::::::::::::::::
+
+                    Try
+
+
+
+
+                        With asiento
+
+                            .Cod_Periodo = 1
+                            .Descrip = txtComentario.Text
+                            .Fecha_ = dtpFecha.Value
+
+
+
+                            Dim ultimo As DataTable
+                            Dim nro As DataRow
+
+                            ultimo = nuevoDeposito.listarUltimoDeposito
+                            nro = ultimo.Rows(0)
+
+                            .Campo_Llave = Convert.ToInt32(nro("codDeposito"))
+
+                            If .registrarAsiento = 1 Then
+
+
+                                Try
+
+                                    With detalleAsiento
+
+                                        Dim codasi As DataTable
+                                        Dim cod As DataRow
+
+                                        codasi = asiento.capturarCodAsiento
+                                        cod = codasi.Rows(0)
+
+
+                                        .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
+                                        .Debe_ = Convert.ToDouble(txtContado.Text)
+                                        .Haber_ = 0.0
+
+                                        Dim dt As DataTable
+                                        Dim row As DataRow
+
+                                        dt = buscarCodigo.infoFormaPago
+                                        row = dt.Rows(0)
+
+                                        .Cuenta_ = Convert.ToInt32(row("cuenta"))
+
+                                        .registrarDetalleAsiento()
+
+                                    End With
+
+                                Catch ex As Exception
+                                    MsgBox("Error en detalle de asiento" + ex.Message)
+                                End Try
+
+
+                            End If
+
+                        End With
+
+
+                    Catch ex As Exception
+                        MsgBox("Aqui hay error: " + ex.Message)
+                    End Try
+
+                    Limpiar()
+
+
 
                 End If
 
@@ -77,6 +234,7 @@
             End Try
 
             dtDepositos.DataSource = nuevoDeposito.listarDepositos
+
 
         Else
 
