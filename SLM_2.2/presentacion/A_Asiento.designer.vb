@@ -22,52 +22,29 @@ Partial Class frmAsientos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblNro = New System.Windows.Forms.Label()
         Me.txtNro = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtReferencia = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.txtTexto = New System.Windows.Forms.TextBox()
+        Me.dtDetalleAsiento = New System.Windows.Forms.DataGridView()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtTotal = New System.Windows.Forms.TextBox()
-        Me.txtTotal2 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtTotalB = New System.Windows.Forms.TextBox()
-        Me.txtTotalB2 = New System.Windows.Forms.TextBox()
-        Me.MenuStrip1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.txtTotalDebe = New System.Windows.Forms.TextBox()
+        Me.txtTotalHaber = New System.Windows.Forms.TextBox()
+        Me.lblCodAsiento = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Debe = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Haber = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.dtDetalleAsiento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(447, 24)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'ArchivoToolStripMenuItem
-        '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem})
-        Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
-        Me.ArchivoToolStripMenuItem.Text = "Archivo"
-        '
-        'SalirToolStripMenuItem
-        '
-        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
-        Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'lblNro
         '
         Me.lblNro.AutoSize = True
-        Me.lblNro.Location = New System.Drawing.Point(12, 41)
+        Me.lblNro.Location = New System.Drawing.Point(13, 11)
         Me.lblNro.Name = "lblNro"
         Me.lblNro.Size = New System.Drawing.Size(27, 13)
         Me.lblNro.TabIndex = 1
@@ -75,15 +52,16 @@ Partial Class frmAsientos
         '
         'txtNro
         '
-        Me.txtNro.Location = New System.Drawing.Point(45, 38)
+        Me.txtNro.Enabled = False
+        Me.txtNro.Location = New System.Drawing.Point(53, 8)
         Me.txtNro.Name = "txtNro"
-        Me.txtNro.Size = New System.Drawing.Size(59, 20)
+        Me.txtNro.Size = New System.Drawing.Size(112, 20)
         Me.txtNro.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(110, 41)
+        Me.Label1.Location = New System.Drawing.Point(177, 12)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(70, 13)
         Me.Label1.TabIndex = 3
@@ -92,130 +70,146 @@ Partial Class frmAsientos
         'dtpFecha
         '
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(182, 38)
+        Me.dtpFecha.Location = New System.Drawing.Point(249, 9)
         Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(98, 20)
+        Me.dtpFecha.Size = New System.Drawing.Size(112, 20)
         Me.dtpFecha.TabIndex = 4
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(286, 41)
+        Me.Label2.Location = New System.Drawing.Point(13, 37)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 13)
+        Me.Label2.Size = New System.Drawing.Size(34, 13)
         Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Referencia"
+        Me.Label2.Text = "Texto"
         '
-        'txtReferencia
+        'txtTexto
         '
-        Me.txtReferencia.Location = New System.Drawing.Point(351, 38)
-        Me.txtReferencia.Name = "txtReferencia"
-        Me.txtReferencia.Size = New System.Drawing.Size(88, 20)
-        Me.txtReferencia.TabIndex = 6
+        Me.txtTexto.Location = New System.Drawing.Point(53, 34)
+        Me.txtTexto.MaxLength = 200
+        Me.txtTexto.Name = "txtTexto"
+        Me.txtTexto.Size = New System.Drawing.Size(371, 20)
+        Me.txtTexto.TabIndex = 6
         '
-        'DataGridView1
+        'dtDetalleAsiento
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 64)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(427, 171)
-        Me.DataGridView1.TabIndex = 7
+        Me.dtDetalleAsiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtDetalleAsiento.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cuenta, Me.Descripcion, Me.Debe, Me.Haber})
+        Me.dtDetalleAsiento.Location = New System.Drawing.Point(12, 64)
+        Me.dtDetalleAsiento.Name = "dtDetalleAsiento"
+        Me.dtDetalleAsiento.Size = New System.Drawing.Size(613, 365)
+        Me.dtDetalleAsiento.TabIndex = 7
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(268, 244)
+        Me.Label5.Location = New System.Drawing.Point(384, 439)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(31, 13)
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Total"
         '
-        'txtTotal
+        'txtTotalDebe
         '
-        Me.txtTotal.Location = New System.Drawing.Point(305, 241)
-        Me.txtTotal.Name = "txtTotal"
-        Me.txtTotal.Size = New System.Drawing.Size(64, 20)
-        Me.txtTotal.TabIndex = 13
+        Me.txtTotalDebe.Location = New System.Drawing.Point(424, 436)
+        Me.txtTotalDebe.Name = "txtTotalDebe"
+        Me.txtTotalDebe.Size = New System.Drawing.Size(101, 20)
+        Me.txtTotalDebe.TabIndex = 13
         '
-        'txtTotal2
+        'txtTotalHaber
         '
-        Me.txtTotal2.Location = New System.Drawing.Point(375, 241)
-        Me.txtTotal2.Name = "txtTotal2"
-        Me.txtTotal2.Size = New System.Drawing.Size(64, 20)
-        Me.txtTotal2.TabIndex = 14
+        Me.txtTotalHaber.Location = New System.Drawing.Point(531, 436)
+        Me.txtTotalHaber.Name = "txtTotalHaber"
+        Me.txtTotalHaber.Size = New System.Drawing.Size(93, 20)
+        Me.txtTotalHaber.TabIndex = 14
         '
-        'Label6
+        'lblCodAsiento
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(268, 267)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(31, 13)
-        Me.Label6.TabIndex = 15
-        Me.Label6.Text = "Total"
+        Me.lblCodAsiento.AutoSize = True
+        Me.lblCodAsiento.Location = New System.Drawing.Point(575, 37)
+        Me.lblCodAsiento.Name = "lblCodAsiento"
+        Me.lblCodAsiento.Size = New System.Drawing.Size(10, 13)
+        Me.lblCodAsiento.TabIndex = 15
+        Me.lblCodAsiento.Text = "-"
         '
-        'txtTotalB
+        'Label4
         '
-        Me.txtTotalB.Location = New System.Drawing.Point(305, 264)
-        Me.txtTotalB.Name = "txtTotalB"
-        Me.txtTotalB.Size = New System.Drawing.Size(64, 20)
-        Me.txtTotalB.TabIndex = 16
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(490, 37)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(65, 13)
+        Me.Label4.TabIndex = 16
+        Me.Label4.Text = "Asiento Nro."
         '
-        'txtTotalB2
+        'Cuenta
         '
-        Me.txtTotalB2.Location = New System.Drawing.Point(375, 264)
-        Me.txtTotalB2.Name = "txtTotalB2"
-        Me.txtTotalB2.Size = New System.Drawing.Size(64, 20)
-        Me.txtTotalB2.TabIndex = 17
+        Me.Cuenta.HeaderText = "Cuenta"
+        Me.Cuenta.Name = "Cuenta"
+        Me.Cuenta.ReadOnly = True
+        '
+        'Descripcion
+        '
+        Me.Descripcion.HeaderText = "Descripción"
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.ReadOnly = True
+        Me.Descripcion.Width = 270
+        '
+        'Debe
+        '
+        Me.Debe.HeaderText = "Debe"
+        Me.Debe.Name = "Debe"
+        Me.Debe.ReadOnly = True
+        '
+        'Haber
+        '
+        Me.Haber.HeaderText = "Haber"
+        Me.Haber.Name = "Haber"
+        Me.Haber.ReadOnly = True
         '
         'frmAsientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(447, 292)
+        Me.ClientSize = New System.Drawing.Size(637, 463)
         Me.ControlBox = False
-        Me.Controls.Add(Me.txtTotalB2)
-        Me.Controls.Add(Me.txtTotalB)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.txtTotal2)
-        Me.Controls.Add(Me.txtTotal)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblCodAsiento)
+        Me.Controls.Add(Me.txtTotalHaber)
+        Me.Controls.Add(Me.txtTotalDebe)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.txtReferencia)
+        Me.Controls.Add(Me.dtDetalleAsiento)
+        Me.Controls.Add(Me.txtTexto)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.dtpFecha)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtNro)
         Me.Controls.Add(Me.lblNro)
-        Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True
-        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmAsientos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Asiento"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtDetalleAsiento, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lblNro As Label
     Friend WithEvents txtNro As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents dtpFecha As DateTimePicker
     Friend WithEvents Label2 As Label
-    Friend WithEvents txtReferencia As TextBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents txtTexto As TextBox
+    Friend WithEvents dtDetalleAsiento As DataGridView
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtTotal As TextBox
-    Friend WithEvents txtTotal2 As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents txtTotalB As TextBox
-    Friend WithEvents txtTotalB2 As TextBox
-    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents txtTotalDebe As TextBox
+    Friend WithEvents txtTotalHaber As TextBox
+    Friend WithEvents lblCodAsiento As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Cuenta As DataGridViewTextBoxColumn
+    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents Debe As DataGridViewTextBoxColumn
+    Friend WithEvents Haber As DataGridViewTextBoxColumn
 End Class

@@ -410,4 +410,22 @@ Public Class ClsDeposito
 
     End Function
 
+
+    'Listar Ultimo
+    Public Function listarUltimoDeposito() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("A_slmUltimoDeposito", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+
+
+
 End Class

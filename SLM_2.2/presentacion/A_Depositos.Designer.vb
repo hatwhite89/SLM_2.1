@@ -102,8 +102,8 @@ Partial Class frmDeposito
         'ListarDepositosToolStripMenuItem
         '
         Me.ListarDepositosToolStripMenuItem.Name = "ListarDepositosToolStripMenuItem"
-        Me.ListarDepositosToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
-        Me.ListarDepositosToolStripMenuItem.Text = "Crear Asiento"
+        Me.ListarDepositosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ListarDepositosToolStripMenuItem.Text = "Asiento"
         '
         'CerrarToolStripMenuItem1
         '
@@ -240,7 +240,7 @@ Partial Class frmDeposito
         Me.txtMonBase.Name = "txtMonBase"
         Me.txtMonBase.Size = New System.Drawing.Size(71, 20)
         Me.txtMonBase.TabIndex = 10
-        Me.txtMonBase.Text = "0"
+        Me.txtMonBase.Text = "1"
         '
         'lblTDepo
         '

@@ -97,4 +97,8 @@
         A_ListarPromociones.Show()
 
     End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        A_PeriodoContable.Show()
+    End Sub
 End Class

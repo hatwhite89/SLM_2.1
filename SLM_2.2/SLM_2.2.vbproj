@@ -125,9 +125,11 @@
     <Compile Include="negocio\ClsAccesoLaboratorio.vb" />
     <Compile Include="negocio\ClsApertura.vb" />
     <Compile Include="negocio\ClsAreaLaboratorio.vb" />
+    <Compile Include="negocio\ClsAsientoContable.vb" />
     <Compile Include="negocio\ClsCAI.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
     <Compile Include="negocio\ClsDescuentos.vb" />
+    <Compile Include="negocio\ClsDetalleAsiento.vb" />
     <Compile Include="negocio\ClsDetalleCAI.vb" />
     <Compile Include="negocio\ClsDetalleContactos.vb" />
     <Compile Include="negocio\ClsDetalleFacturaCompra.vb" />
@@ -143,6 +145,7 @@
     <Compile Include="negocio\ClsPago.vb" />
     <Compile Include="negocio\ClsParametroExamen.vb" />
     <Compile Include="negocio\ClsParametroExamenDetalle.vb" />
+    <Compile Include="negocio\ClsPeriodoContable.vb" />
     <Compile Include="negocio\ClsPrecio.vb" />
     <Compile Include="negocio\ClsPromociones.vb" />
     <Compile Include="negocio\ClsRecibo.vb" />
@@ -330,6 +333,12 @@
       <DependentUpon>A_ListasPrecio.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ListasPrecio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_PeriodoContable.Designer.vb">
+      <DependentUpon>A_PeriodoContable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_PeriodoContable.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_PrintCheque.Designer.vb">
@@ -805,6 +814,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListasPrecio.resx">
       <DependentUpon>A_ListasPrecio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_PeriodoContable.resx">
+      <DependentUpon>A_PeriodoContable.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_PrintCheque.resx">
       <DependentUpon>A_PrintCheque.vb</DependentUpon>
