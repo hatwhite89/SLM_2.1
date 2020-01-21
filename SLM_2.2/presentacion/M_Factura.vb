@@ -893,7 +893,6 @@ Public Class M_Factura
         End If
     End Sub
     Private Sub Imprimir_Cotizacion()
-
         If (Trim(txtnumeroFactura.Text) <> "") Then
             'le asigno un valor a los parametros del procedimiento almacenado
             Dim objReporte As New M_ImprimirCotizacion
@@ -907,9 +906,14 @@ Public Class M_Factura
         Else
             MsgBox("Debe estar creada o guardada la cotización para poder imprimirla.", MsgBoxStyle.Critical)
         End If
-
     End Sub
-
+    Private Sub Imprimir_TipoDePacientes()
+        'le asigno un valor a los parametros del procedimiento almacenado
+        Dim objReporte As New M_CryTiposDePacientes
+        objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+        M_ReportTipoDePacientes.CrystalReportViewer1.ReportSource = objReporte
+        M_ReportTipoDePacientes.ShowDialog()
+    End Sub
     Private Sub btnPromocion_Click(sender As Object, e As EventArgs) Handles btnPromocion.Click
         M_ListadoPromociones.ShowDialog()
     End Sub

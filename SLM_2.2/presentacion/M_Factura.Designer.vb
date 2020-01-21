@@ -694,7 +694,7 @@ Partial Class M_Factura
         Me.btnimprimirComprobante.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnimprimirComprobante.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnimprimirComprobante.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnimprimirComprobante.Location = New System.Drawing.Point(845, 582)
+        Me.btnimprimirComprobante.Location = New System.Drawing.Point(834, 582)
         Me.btnimprimirComprobante.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnimprimirComprobante.Name = "btnimprimirComprobante"
         Me.btnimprimirComprobante.Size = New System.Drawing.Size(125, 94)
@@ -841,7 +841,7 @@ Partial Class M_Factura
         Me.btnentregarExamen.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnentregarExamen.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnentregarExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnentregarExamen.Location = New System.Drawing.Point(976, 582)
+        Me.btnentregarExamen.Location = New System.Drawing.Point(965, 582)
         Me.btnentregarExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnentregarExamen.Name = "btnentregarExamen"
         Me.btnentregarExamen.Size = New System.Drawing.Size(125, 94)
@@ -854,7 +854,7 @@ Partial Class M_Factura
         Me.btnbusquedaExamen.BackColor = System.Drawing.Color.Yellow
         Me.btnbusquedaExamen.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnbusquedaExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbusquedaExamen.Location = New System.Drawing.Point(715, 582)
+        Me.btnbusquedaExamen.Location = New System.Drawing.Point(704, 582)
         Me.btnbusquedaExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnbusquedaExamen.Name = "btnbusquedaExamen"
         Me.btnbusquedaExamen.Size = New System.Drawing.Size(125, 94)
@@ -867,7 +867,7 @@ Partial Class M_Factura
         Me.btnmuestrasPendientes.BackColor = System.Drawing.Color.Yellow
         Me.btnmuestrasPendientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnmuestrasPendientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmuestrasPendientes.Location = New System.Drawing.Point(583, 582)
+        Me.btnmuestrasPendientes.Location = New System.Drawing.Point(572, 582)
         Me.btnmuestrasPendientes.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnmuestrasPendientes.Name = "btnmuestrasPendientes"
         Me.btnmuestrasPendientes.Size = New System.Drawing.Size(125, 94)
@@ -880,7 +880,7 @@ Partial Class M_Factura
         Me.btnestadoFactura.BackColor = System.Drawing.Color.Yellow
         Me.btnestadoFactura.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnestadoFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnestadoFactura.Location = New System.Drawing.Point(452, 582)
+        Me.btnestadoFactura.Location = New System.Drawing.Point(441, 582)
         Me.btnestadoFactura.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnestadoFactura.Name = "btnestadoFactura"
         Me.btnestadoFactura.Size = New System.Drawing.Size(125, 94)
@@ -990,11 +990,11 @@ Partial Class M_Factura
         'txtEfectivo
         '
         Me.txtEfectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEfectivo.Location = New System.Drawing.Point(118, 582)
+        Me.txtEfectivo.Location = New System.Drawing.Point(162, 593)
         Me.txtEfectivo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtEfectivo.MaxLength = 20
         Me.txtEfectivo.Name = "txtEfectivo"
-        Me.txtEfectivo.Size = New System.Drawing.Size(160, 22)
+        Me.txtEfectivo.Size = New System.Drawing.Size(185, 22)
         Me.txtEfectivo.TabIndex = 103
         Me.txtEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -1002,18 +1002,18 @@ Partial Class M_Factura
         '
         Me.txtTarjeta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtTarjeta.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTarjeta.Location = New System.Drawing.Point(118, 632)
+        Me.txtTarjeta.Location = New System.Drawing.Point(162, 643)
         Me.txtTarjeta.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTarjeta.MaxLength = 20
         Me.txtTarjeta.Name = "txtTarjeta"
-        Me.txtTarjeta.Size = New System.Drawing.Size(160, 22)
+        Me.txtTarjeta.Size = New System.Drawing.Size(185, 22)
         Me.txtTarjeta.TabIndex = 102
         Me.txtTarjeta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblEfectivo
         '
         Me.lblEfectivo.AutoSize = True
-        Me.lblEfectivo.Location = New System.Drawing.Point(37, 584)
+        Me.lblEfectivo.Location = New System.Drawing.Point(81, 595)
         Me.lblEfectivo.Name = "lblEfectivo"
         Me.lblEfectivo.Size = New System.Drawing.Size(58, 17)
         Me.lblEfectivo.TabIndex = 104
@@ -1022,7 +1022,7 @@ Partial Class M_Factura
         'lblTarjeta
         '
         Me.lblTarjeta.AutoSize = True
-        Me.lblTarjeta.Location = New System.Drawing.Point(42, 634)
+        Me.lblTarjeta.Location = New System.Drawing.Point(86, 645)
         Me.lblTarjeta.Name = "lblTarjeta"
         Me.lblTarjeta.Size = New System.Drawing.Size(53, 17)
         Me.lblTarjeta.TabIndex = 105

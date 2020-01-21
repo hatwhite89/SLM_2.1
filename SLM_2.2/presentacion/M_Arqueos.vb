@@ -15,8 +15,9 @@
                 t3 = Convert.ToDouble(row("vuelto"))
                 t4 = Convert.ToDouble(row("total"))
                 t5 = Convert.ToDouble(row("fondo"))
-                MsgBox("Efectivo facturado: " & t - t3 & ", Tarjeta: " & t2 & ", Total facturado: " & t4 & ", Fondo Aperturado: " & t5)
+                MsgBox("Efectivo facturado: " & t - t3 & ", Tarjeta: " & t2 & ", Total facturado: " & t4 & ", Fondo Aperturado: " & t5 & ", Total Efectivo en Caja: " & ((t - t3) + t5))
             Catch ex As Exception
+                MsgBox(ex.Message)
             End Try
         End If
     End Sub
