@@ -82,7 +82,6 @@
 
         Else 'if campos vacios
 
-
             MsgBox("Existen campos vacíos. No se guardo la factura.")
 
             If txtNroFactura.Text = "" Then
@@ -90,7 +89,6 @@
             ElseIf txtCodProveedor.Text = "" Then
                 txtCodProveedor.BackColor = Color.Red
                 txtNombreProveedor.BackColor = Color.Red
-
             ElseIf txtTerminoPago.Text = "" Then
                 txtTerminoPago.BackColor = Color.Red
             ElseIf txtTotal.Text = "" Then
@@ -98,7 +96,6 @@
             ElseIf txtMoneda.Text = "" Then
                 txtMoneda.BackColor = Color.Red
             End If
-
 
         End If 'if campos vacios
 
@@ -140,6 +137,9 @@
                     MessageBox.Show(ex.Message)
                 End Try
 
+            Else
+
+                txtNombreProveedor.Text = ""
 
             End If
 
@@ -295,5 +295,29 @@
 
     Private Sub txtMoneda_TextChanged(sender As Object, e As EventArgs) Handles txtMoneda.TextChanged
         txtMoneda.BackColor = Color.White
+    End Sub
+
+    Private Sub txtNroFactura_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNroFactura.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtCodProveedor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCodProveedor.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
     End Sub
 End Class

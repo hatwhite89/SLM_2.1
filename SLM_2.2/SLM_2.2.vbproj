@@ -160,6 +160,12 @@
     <Compile Include="presentacion\A_FacturaCompras.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ListadoAsientos.Designer.vb">
+      <DependentUpon>A_ListadoAsientos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListadoAsientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListadoBancos.Designer.vb">
       <DependentUpon>A_ListadoBancos.vb</DependentUpon>
     </Compile>
@@ -739,6 +745,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_FacturaCompras.resx">
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListadoAsientos.resx">
+      <DependentUpon>A_ListadoAsientos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoBancos.resx">
       <DependentUpon>A_ListadoBancos.vb</DependentUpon>

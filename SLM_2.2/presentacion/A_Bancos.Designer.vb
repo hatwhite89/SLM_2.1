@@ -222,6 +222,7 @@ Partial Class A_Bancos
         Me.btnCancelar.BackColor = System.Drawing.Color.Transparent
         Me.btnCancelar.BackgroundImage = CType(resources.GetObject("btnCancelar.BackgroundImage"), System.Drawing.Image)
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCancelar.FlatAppearance.BorderSize = 0
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Location = New System.Drawing.Point(305, 23)
         Me.btnCancelar.Name = "btnCancelar"

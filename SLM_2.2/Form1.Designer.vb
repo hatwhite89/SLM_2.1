@@ -58,6 +58,10 @@ Partial Class Form1
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TpMantenimiento = New System.Windows.Forms.TabPage()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Button9 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnBancos = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -68,8 +72,6 @@ Partial Class Form1
         Me.btnCuentas = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnFormaPago = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Label16 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxMenu.SuspendLayout()
         Me.panelMenu.SuspendLayout()
@@ -117,7 +119,7 @@ Partial Class Form1
         Me.gbxMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.gbxMenu.Location = New System.Drawing.Point(-1, -13)
         Me.gbxMenu.Name = "gbxMenu"
-        Me.gbxMenu.Size = New System.Drawing.Size(92, 405)
+        Me.gbxMenu.Size = New System.Drawing.Size(88, 405)
         Me.gbxMenu.TabIndex = 3
         Me.gbxMenu.TabStop = False
         Me.gbxMenu.Text = "Opciones"
@@ -211,7 +213,7 @@ Partial Class Form1
         Me.panelMenu.Controls.Add(Me.tcMenu)
         Me.panelMenu.Location = New System.Drawing.Point(16, -4)
         Me.panelMenu.Name = "panelMenu"
-        Me.panelMenu.Size = New System.Drawing.Size(31, 390)
+        Me.panelMenu.Size = New System.Drawing.Size(44, 390)
         Me.panelMenu.TabIndex = 4
         '
         'btnCancelar
@@ -495,6 +497,8 @@ Partial Class Form1
         '
         'TpMantenimiento
         '
+        Me.TpMantenimiento.Controls.Add(Me.Label17)
+        Me.TpMantenimiento.Controls.Add(Me.Button10)
         Me.TpMantenimiento.Controls.Add(Me.Label16)
         Me.TpMantenimiento.Controls.Add(Me.Button9)
         Me.TpMantenimiento.Controls.Add(Me.Label5)
@@ -514,6 +518,48 @@ Partial Class Form1
         Me.TpMantenimiento.TabIndex = 2
         Me.TpMantenimiento.Text = "Mantenimiento"
         Me.TpMantenimiento.UseVisualStyleBackColor = True
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(118, 205)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(47, 13)
+        Me.Label17.TabIndex = 13
+        Me.Label17.Text = "Asientos"
+        '
+        'Button10
+        '
+        Me.Button10.BackgroundImage = CType(resources.GetObject("Button10.BackgroundImage"), System.Drawing.Image)
+        Me.Button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button10.FlatAppearance.BorderSize = 0
+        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button10.Location = New System.Drawing.Point(120, 163)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(41, 38)
+        Me.Button10.TabIndex = 12
+        Me.Button10.UseVisualStyleBackColor = True
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(6, 205)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(90, 13)
+        Me.Label16.TabIndex = 11
+        Me.Label16.Text = "Período Contable"
+        '
+        'Button9
+        '
+        Me.Button9.BackgroundImage = CType(resources.GetObject("Button9.BackgroundImage"), System.Drawing.Image)
+        Me.Button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button9.FlatAppearance.BorderSize = 0
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.Location = New System.Drawing.Point(26, 164)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(41, 38)
+        Me.Button9.TabIndex = 10
+        Me.Button9.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -621,27 +667,6 @@ Partial Class Form1
         Me.btnFormaPago.TabIndex = 0
         Me.btnFormaPago.UseVisualStyleBackColor = True
         '
-        'Button9
-        '
-        Me.Button9.BackgroundImage = CType(resources.GetObject("Button9.BackgroundImage"), System.Drawing.Image)
-        Me.Button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button9.FlatAppearance.BorderSize = 0
-        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button9.Location = New System.Drawing.Point(26, 164)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(41, 38)
-        Me.Button9.TabIndex = 10
-        Me.Button9.UseVisualStyleBackColor = True
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(6, 205)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(90, 13)
-        Me.Label16.TabIndex = 11
-        Me.Label16.Text = "Período Contable"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -721,4 +746,6 @@ Partial Class Form1
     Friend WithEvents Button8 As Button
     Friend WithEvents Label16 As Label
     Friend WithEvents Button9 As Button
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Button10 As Button
 End Class
