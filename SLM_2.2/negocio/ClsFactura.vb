@@ -7,7 +7,7 @@ Public Class ClsFactura
     Dim codigoSucursal, codigoConvenio, codigoTerminal As Integer
     Dim fechaFactura, fechaVto As Date
     Dim ok, enviarEmail, entregaPaciente, entregaMedico As Boolean
-    Dim pagoPaciente, vuelto, total As Double
+    Dim pagoPaciente, vuelto, total, ingresoEfectivo, ingresoTarjeta As Double
     'Constructor
     Public Sub New()
 
@@ -165,6 +165,22 @@ Public Class ClsFactura
         End Set
     End Property
 
+    Public Property ingresoEfectivo_ As Double
+        Get
+            Return ingresoEfectivo
+        End Get
+        Set(value As Double)
+            ingresoEfectivo = value
+        End Set
+    End Property
+    Public Property ingresoTarjeta_ As Double
+        Get
+            Return ingresoTarjeta
+        End Get
+        Set(value As Double)
+            ingresoTarjeta = value
+        End Set
+    End Property
     Public Property pagoPaciente_ As Double
         Get
             Return pagoPaciente
@@ -295,6 +311,16 @@ Public Class ClsFactura
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "ingresoEfectivo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = ingresoEfectivo_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "ingresoTarjeta" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = ingresoTarjeta_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -360,6 +386,16 @@ Public Class ClsFactura
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "ok" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = ok_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "ingresoEfectivo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = ingresoEfectivo_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "ingresoTarjeta" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = ingresoTarjeta_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

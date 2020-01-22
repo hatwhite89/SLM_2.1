@@ -5,7 +5,7 @@
         End If
     End Sub
     Private Sub btnFacturacion_Click(sender As Object, e As EventArgs) Handles btnFacturacion.Click
-        M_Factura.limpiar()
+        'M_Factura.limpiar()
         M_BuscarFactura.ShowDialog()
     End Sub
     Private Sub btnCotizacion_Click(sender As Object, e As EventArgs) Handles btnCotizacion.Click

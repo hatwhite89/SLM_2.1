@@ -23,6 +23,7 @@
                 n = MsgBox("¿Desea ver la factura?", MsgBoxStyle.YesNo, "Validación")
             End If
             If n = vbYes Then
+                M_Factura.limpiar()
                 Dim objFact As New ClsFactura
                 objFact.numero_ = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
 
@@ -41,13 +42,15 @@
                 M_Factura.txtcodigoSede.Text = CStr(row("codigoSede"))
                 M_Factura.dtpfechaVto.Value = CStr(row("fechaVto"))
                 M_Factura.lblcodeSucursal.Text = CStr(row("codigoSucursal"))
-                M_Factura.txtcodigoConvenio.Text = CStr(row("codigoConvenio"))
+                'M_Factura.txtcodigoConvenio.Text = CStr(row("codigoConvenio"))
                 M_Factura.txtnumeroPoliza.Text = CStr(row("numeroPoliza"))
                 M_Factura.txtcodigoTerminal.Text = CStr(row("codigoTerminal"))
                 M_Factura.cbxentregarMedico.Checked = CStr(row("entregaMedico"))
                 M_Factura.cbxentregarPaciente.Checked = CStr(row("entregaPaciente"))
                 M_Factura.cbxenviarCorreo.Checked = CStr(row("enviarEmail"))
                 M_Factura.txtpagoPaciente.Text = CStr(row("pagoPaciente"))
+                M_Factura.txtEfectivo.Text = CStr(row("ingresoEfectivo"))
+                M_Factura.txtTarjeta.Text = CStr(row("ingresoTarjeta"))
                 M_Factura.txtvuelto.Text = CStr(row("vuelto"))
                 M_Factura.txttotal.Text = CStr(row("total"))
                 M_Factura.cbxok.Checked = CStr(row("ok"))

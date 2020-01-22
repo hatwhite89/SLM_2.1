@@ -26,14 +26,16 @@
 
                 Dim objCotFact As New ClsCotizacionFactura
                 Dim dt As New DataTable
+                Dim precio As Double = 0
                 objCotFact.numeroCotizacion_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
                 dt = objCotFact.BuscarCotizacionFactura()
                 Dim row As DataRow
                 'dgblistadoExamenes.Rows(Index).Cells(0).Value()
                 For index As Integer = 0 To dt.Rows.Count - 1
                     row = dt.Rows(index)
-                    M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codigoExamen")), CStr(row("cantidad")), CStr(row("precio")), CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
-                    M_ClienteVentana.dgvtabla.Rows.Add(New String() {CStr(row("codigoExamen")), CStr(row("cantidad")), CStr(row("precio")), CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
+                    precio = ((row("subtotal")) / (((row("descuento")) / 100) - 1)) * (-1)
+                    M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codigoExamen")), CStr(row("cantidad")), precio, CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
+                    M_ClienteVentana.dgvtabla.Rows.Add(New String() {CStr(row("codigoExamen")), CStr(row("cantidad")), precio, CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
                 Next
                 Me.Close()
                 M_Factura.ShowDialog()

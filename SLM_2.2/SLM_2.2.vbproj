@@ -125,6 +125,7 @@
     <Compile Include="negocio\ClsAccesoLaboratorio.vb" />
     <Compile Include="negocio\ClsApertura.vb" />
     <Compile Include="negocio\ClsAreaLaboratorio.vb" />
+    <Compile Include="negocio\ClsArqueos.vb" />
     <Compile Include="negocio\ClsAsientoContable.vb" />
     <Compile Include="negocio\ClsCAI.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
@@ -438,11 +439,23 @@
     <Compile Include="presentacion\A_FormaPago.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_Arqueos.Designer.vb">
+      <DependentUpon>M_Arqueos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Arqueos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_CAI.Designer.vb">
       <DependentUpon>M_CAI.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_CAI.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_CryTiposDePacientes.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M_CryTiposDePacientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="presentacion\M_ImprimirCotizacion.vb">
       <AutoGen>True</AutoGen>
@@ -666,6 +679,12 @@
     <Compile Include="presentacion\M_Recibo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_ReportTipoDePacientes.Designer.vb">
+      <DependentUpon>M_ReportTipoDePacientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ReportTipoDePacientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_Sede.Designer.vb">
       <DependentUpon>M_Sede.vb</DependentUpon>
     </Compile>
@@ -869,8 +888,15 @@
     <EmbeddedResource Include="presentacion\E_Unidad.resx">
       <DependentUpon>E_Unidad.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Arqueos.resx">
+      <DependentUpon>M_Arqueos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_CAI.resx">
       <DependentUpon>M_CAI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_CryTiposDePacientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>M_CryTiposDePacientes.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ImprimirCotizacion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -985,6 +1011,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Recibo.resx">
       <DependentUpon>M_Recibo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ReportTipoDePacientes.resx">
+      <DependentUpon>M_ReportTipoDePacientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Sede.resx">
       <DependentUpon>M_Sede.vb</DependentUpon>

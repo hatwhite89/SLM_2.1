@@ -46,6 +46,13 @@ Partial Class M_Factura
         Me.btnQuitarPromocion = New System.Windows.Forms.Button()
         Me.btnPromocion = New System.Windows.Forms.Button()
         Me.dgblistadoExamenes = New System.Windows.Forms.DataGridView()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaEntrega = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblpagoPaciente = New System.Windows.Forms.Label()
         Me.lblvuelto = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
@@ -88,9 +95,6 @@ Partial Class M_Factura
         Me.btnbusquedaExamen = New System.Windows.Forms.Button()
         Me.btnmuestrasPendientes = New System.Windows.Forms.Button()
         Me.btnestadoFactura = New System.Windows.Forms.Button()
-        Me.btnaplicarDescuento = New System.Windows.Forms.Button()
-        Me.btntarjeta = New System.Windows.Forms.Button()
-        Me.btncontado = New System.Windows.Forms.Button()
         Me.btnbuscarSucursal = New System.Windows.Forms.Button()
         Me.txtnombreSucursal = New System.Windows.Forms.TextBox()
         Me.txtdescripcionTermino = New System.Windows.Forms.TextBox()
@@ -100,13 +104,10 @@ Partial Class M_Factura
         Me.lblcodeTerminoPago = New System.Windows.Forms.Label()
         Me.lblcodePriceList = New System.Windows.Forms.Label()
         Me.lblFechaNacimiento = New System.Windows.Forms.Label()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaEntrega = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtEfectivo = New System.Windows.Forms.TextBox()
+        Me.txtTarjeta = New System.Windows.Forms.TextBox()
+        Me.lblEfectivo = New System.Windows.Forms.Label()
+        Me.lblTarjeta = New System.Windows.Forms.Label()
         Me.gbxlistadoExamenes.SuspendLayout()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -375,6 +376,60 @@ Partial Class M_Factura
         Me.dgblistadoExamenes.Size = New System.Drawing.Size(1061, 158)
         Me.dgblistadoExamenes.TabIndex = 0
         '
+        'codigo
+        '
+        Me.codigo.HeaderText = "Código"
+        Me.codigo.MinimumWidth = 6
+        Me.codigo.Name = "codigo"
+        Me.codigo.Width = 70
+        '
+        'Cantidad
+        '
+        Me.Cantidad.HeaderText = "Cantidad"
+        Me.Cantidad.MinimumWidth = 6
+        Me.Cantidad.Name = "Cantidad"
+        Me.Cantidad.Width = 60
+        '
+        'Precio
+        '
+        Me.Precio.HeaderText = "Precio"
+        Me.Precio.MinimumWidth = 6
+        Me.Precio.Name = "Precio"
+        Me.Precio.ReadOnly = True
+        Me.Precio.Width = 70
+        '
+        'Descripcion
+        '
+        Me.Descripcion.HeaderText = "Descripción"
+        Me.Descripcion.MinimumWidth = 100
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.ReadOnly = True
+        Me.Descripcion.Width = 220
+        '
+        'FechaEntrega
+        '
+        Me.FechaEntrega.HeaderText = "Fecha Entrega"
+        Me.FechaEntrega.MinimumWidth = 6
+        Me.FechaEntrega.Name = "FechaEntrega"
+        Me.FechaEntrega.ReadOnly = True
+        Me.FechaEntrega.Width = 80
+        '
+        'Descuento
+        '
+        Me.Descuento.HeaderText = "Descuento"
+        Me.Descuento.MinimumWidth = 6
+        Me.Descuento.Name = "Descuento"
+        Me.Descuento.ReadOnly = True
+        Me.Descuento.Width = 70
+        '
+        'Subtotal
+        '
+        Me.Subtotal.HeaderText = "Subtotal"
+        Me.Subtotal.MinimumWidth = 6
+        Me.Subtotal.Name = "Subtotal"
+        Me.Subtotal.ReadOnly = True
+        Me.Subtotal.Width = 90
+        '
         'lblpagoPaciente
         '
         Me.lblpagoPaciente.AutoSize = True
@@ -639,7 +694,7 @@ Partial Class M_Factura
         Me.btnimprimirComprobante.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnimprimirComprobante.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnimprimirComprobante.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnimprimirComprobante.Location = New System.Drawing.Point(845, 582)
+        Me.btnimprimirComprobante.Location = New System.Drawing.Point(834, 582)
         Me.btnimprimirComprobante.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnimprimirComprobante.Name = "btnimprimirComprobante"
         Me.btnimprimirComprobante.Size = New System.Drawing.Size(125, 94)
@@ -654,7 +709,7 @@ Partial Class M_Factura
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1164, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1164, 28)
         Me.MenuStrip1.TabIndex = 76
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -765,6 +820,7 @@ Partial Class M_Factura
         Me.txtpagoPaciente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtpagoPaciente.MaxLength = 20
         Me.txtpagoPaciente.Name = "txtpagoPaciente"
+        Me.txtpagoPaciente.ReadOnly = True
         Me.txtpagoPaciente.Size = New System.Drawing.Size(143, 22)
         Me.txtpagoPaciente.TabIndex = 83
         Me.txtpagoPaciente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -785,7 +841,7 @@ Partial Class M_Factura
         Me.btnentregarExamen.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnentregarExamen.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnentregarExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnentregarExamen.Location = New System.Drawing.Point(976, 582)
+        Me.btnentregarExamen.Location = New System.Drawing.Point(965, 582)
         Me.btnentregarExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnentregarExamen.Name = "btnentregarExamen"
         Me.btnentregarExamen.Size = New System.Drawing.Size(125, 94)
@@ -798,7 +854,7 @@ Partial Class M_Factura
         Me.btnbusquedaExamen.BackColor = System.Drawing.Color.Yellow
         Me.btnbusquedaExamen.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnbusquedaExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbusquedaExamen.Location = New System.Drawing.Point(715, 582)
+        Me.btnbusquedaExamen.Location = New System.Drawing.Point(704, 582)
         Me.btnbusquedaExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnbusquedaExamen.Name = "btnbusquedaExamen"
         Me.btnbusquedaExamen.Size = New System.Drawing.Size(125, 94)
@@ -811,7 +867,7 @@ Partial Class M_Factura
         Me.btnmuestrasPendientes.BackColor = System.Drawing.Color.Yellow
         Me.btnmuestrasPendientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnmuestrasPendientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmuestrasPendientes.Location = New System.Drawing.Point(583, 582)
+        Me.btnmuestrasPendientes.Location = New System.Drawing.Point(572, 582)
         Me.btnmuestrasPendientes.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnmuestrasPendientes.Name = "btnmuestrasPendientes"
         Me.btnmuestrasPendientes.Size = New System.Drawing.Size(125, 94)
@@ -824,52 +880,13 @@ Partial Class M_Factura
         Me.btnestadoFactura.BackColor = System.Drawing.Color.Yellow
         Me.btnestadoFactura.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnestadoFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnestadoFactura.Location = New System.Drawing.Point(452, 582)
+        Me.btnestadoFactura.Location = New System.Drawing.Point(441, 582)
         Me.btnestadoFactura.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnestadoFactura.Name = "btnestadoFactura"
         Me.btnestadoFactura.Size = New System.Drawing.Size(125, 94)
         Me.btnestadoFactura.TabIndex = 88
         Me.btnestadoFactura.Text = "Estado Factura"
         Me.btnestadoFactura.UseVisualStyleBackColor = False
-        '
-        'btnaplicarDescuento
-        '
-        Me.btnaplicarDescuento.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnaplicarDescuento.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnaplicarDescuento.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnaplicarDescuento.Location = New System.Drawing.Point(321, 582)
-        Me.btnaplicarDescuento.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnaplicarDescuento.Name = "btnaplicarDescuento"
-        Me.btnaplicarDescuento.Size = New System.Drawing.Size(125, 94)
-        Me.btnaplicarDescuento.TabIndex = 89
-        Me.btnaplicarDescuento.Text = "Aplicar Descuento"
-        Me.btnaplicarDescuento.UseVisualStyleBackColor = False
-        '
-        'btntarjeta
-        '
-        Me.btntarjeta.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btntarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btntarjeta.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btntarjeta.Location = New System.Drawing.Point(189, 582)
-        Me.btntarjeta.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btntarjeta.Name = "btntarjeta"
-        Me.btntarjeta.Size = New System.Drawing.Size(125, 94)
-        Me.btntarjeta.TabIndex = 90
-        Me.btntarjeta.Text = "Tarjeta"
-        Me.btntarjeta.UseVisualStyleBackColor = False
-        '
-        'btncontado
-        '
-        Me.btncontado.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btncontado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btncontado.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncontado.Location = New System.Drawing.Point(59, 582)
-        Me.btncontado.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btncontado.Name = "btncontado"
-        Me.btncontado.Size = New System.Drawing.Size(125, 94)
-        Me.btncontado.TabIndex = 91
-        Me.btncontado.Text = "Contado"
-        Me.btncontado.UseVisualStyleBackColor = False
         '
         'btnbuscarSucursal
         '
@@ -970,59 +987,46 @@ Partial Class M_Factura
         Me.lblFechaNacimiento.TabIndex = 101
         Me.lblFechaNacimiento.Text = "Label1"
         '
-        'codigo
+        'txtEfectivo
         '
-        Me.codigo.HeaderText = "Código"
-        Me.codigo.MinimumWidth = 6
-        Me.codigo.Name = "codigo"
-        Me.codigo.Width = 70
+        Me.txtEfectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEfectivo.Location = New System.Drawing.Point(162, 593)
+        Me.txtEfectivo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtEfectivo.MaxLength = 20
+        Me.txtEfectivo.Name = "txtEfectivo"
+        Me.txtEfectivo.Size = New System.Drawing.Size(185, 22)
+        Me.txtEfectivo.TabIndex = 103
+        Me.txtEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Cantidad
+        'txtTarjeta
         '
-        Me.Cantidad.HeaderText = "Cantidad"
-        Me.Cantidad.MinimumWidth = 6
-        Me.Cantidad.Name = "Cantidad"
-        Me.Cantidad.Width = 60
+        Me.txtTarjeta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtTarjeta.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTarjeta.Location = New System.Drawing.Point(162, 643)
+        Me.txtTarjeta.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtTarjeta.MaxLength = 20
+        Me.txtTarjeta.Name = "txtTarjeta"
+        Me.txtTarjeta.Size = New System.Drawing.Size(185, 22)
+        Me.txtTarjeta.TabIndex = 102
+        Me.txtTarjeta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Precio
+        'lblEfectivo
         '
-        Me.Precio.HeaderText = "Precio"
-        Me.Precio.MinimumWidth = 6
-        Me.Precio.Name = "Precio"
-        Me.Precio.ReadOnly = True
-        Me.Precio.Width = 70
+        Me.lblEfectivo.AutoSize = True
+        Me.lblEfectivo.Location = New System.Drawing.Point(81, 595)
+        Me.lblEfectivo.Name = "lblEfectivo"
+        Me.lblEfectivo.Size = New System.Drawing.Size(58, 17)
+        Me.lblEfectivo.TabIndex = 104
+        Me.lblEfectivo.Text = "Efectivo"
         '
-        'Descripcion
+        'lblTarjeta
         '
-        Me.Descripcion.HeaderText = "Descripción"
-        Me.Descripcion.MinimumWidth = 100
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
-        Me.Descripcion.Width = 220
-        '
-        'FechaEntrega
-        '
-        Me.FechaEntrega.HeaderText = "Fecha Entrega"
-        Me.FechaEntrega.MinimumWidth = 6
-        Me.FechaEntrega.Name = "FechaEntrega"
-        Me.FechaEntrega.ReadOnly = True
-        Me.FechaEntrega.Width = 80
-        '
-        'Descuento
-        '
-        Me.Descuento.HeaderText = "Descuento"
-        Me.Descuento.MinimumWidth = 6
-        Me.Descuento.Name = "Descuento"
-        Me.Descuento.ReadOnly = True
-        Me.Descuento.Width = 70
-        '
-        'Subtotal
-        '
-        Me.Subtotal.HeaderText = "Subtotal"
-        Me.Subtotal.MinimumWidth = 6
-        Me.Subtotal.Name = "Subtotal"
-        Me.Subtotal.ReadOnly = True
-        Me.Subtotal.Width = 90
+        Me.lblTarjeta.AutoSize = True
+        Me.lblTarjeta.Location = New System.Drawing.Point(86, 645)
+        Me.lblTarjeta.Name = "lblTarjeta"
+        Me.lblTarjeta.Size = New System.Drawing.Size(53, 17)
+        Me.lblTarjeta.TabIndex = 105
+        Me.lblTarjeta.Text = "Tarjeta"
         '
         'M_Factura
         '
@@ -1031,6 +1035,10 @@ Partial Class M_Factura
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1164, 703)
         Me.ControlBox = False
+        Me.Controls.Add(Me.lblTarjeta)
+        Me.Controls.Add(Me.lblEfectivo)
+        Me.Controls.Add(Me.txtEfectivo)
+        Me.Controls.Add(Me.txtTarjeta)
         Me.Controls.Add(Me.lblFechaNacimiento)
         Me.Controls.Add(Me.lblcodePriceList)
         Me.Controls.Add(Me.lblcodeTerminoPago)
@@ -1040,9 +1048,6 @@ Partial Class M_Factura
         Me.Controls.Add(Me.txtdescripcionTermino)
         Me.Controls.Add(Me.txtnombreSucursal)
         Me.Controls.Add(Me.btnbuscarSucursal)
-        Me.Controls.Add(Me.btncontado)
-        Me.Controls.Add(Me.btntarjeta)
-        Me.Controls.Add(Me.btnaplicarDescuento)
         Me.Controls.Add(Me.btnestadoFactura)
         Me.Controls.Add(Me.btnmuestrasPendientes)
         Me.Controls.Add(Me.btnbusquedaExamen)
@@ -1175,9 +1180,6 @@ Partial Class M_Factura
     Friend WithEvents btnbusquedaExamen As Button
     Friend WithEvents btnmuestrasPendientes As Button
     Friend WithEvents btnestadoFactura As Button
-    Friend WithEvents btnaplicarDescuento As Button
-    Friend WithEvents btntarjeta As Button
-    Friend WithEvents btncontado As Button
     Friend WithEvents btnbuscarSucursal As Button
     Friend WithEvents txtnombreSucursal As TextBox
     Friend WithEvents txtdescripcionTermino As TextBox
@@ -1197,4 +1199,8 @@ Partial Class M_Factura
     Friend WithEvents FechaEntrega As DataGridViewTextBoxColumn
     Friend WithEvents Descuento As DataGridViewTextBoxColumn
     Friend WithEvents Subtotal As DataGridViewTextBoxColumn
+    Friend WithEvents txtEfectivo As TextBox
+    Friend WithEvents txtTarjeta As TextBox
+    Friend WithEvents lblEfectivo As Label
+    Friend WithEvents lblTarjeta As Label
 End Class
