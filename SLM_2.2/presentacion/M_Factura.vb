@@ -861,7 +861,6 @@ Public Class M_Factura
     End Sub
 
     Private Sub Imprimir_Factura()
-
         If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
             'le asigno un valor a los parametros del procedimiento almacenado
             Dim objReporte As New M_CryComprobanteEntrega
@@ -875,7 +874,6 @@ Public Class M_Factura
         Else
             MsgBox("Debe estar creada o guardada la factura para poder imprimirla.", MsgBoxStyle.Critical)
         End If
-
     End Sub
     Private Sub btnimprimirComprobante_Click(sender As Object, e As EventArgs) Handles btnimprimirComprobante.Click
         If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
