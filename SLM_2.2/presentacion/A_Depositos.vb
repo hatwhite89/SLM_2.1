@@ -10,51 +10,46 @@
 
     Private Sub ListarDepositosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarDepositosToolStripMenuItem.Click
 
-
         If txtNro.Text = "" Then
 
             MsgBox("Debe seleccionar una transacción para ver un asiento contable.")
 
         Else
+            Try
+                With asiento
 
-            With asiento
+                    .Campo_Llave = Convert.ToInt32(txtNro.Text)
 
-                .Campo_Llave = Convert.ToInt32(txtNro.Text)
+                    Dim dtA As DataTable
+                    Dim rows As DataRow
 
-                Dim dtA As DataTable
-                Dim rows As DataRow
+                    dtA = .VerAsiento
+                    rows = dtA.Rows(0)
 
-                dtA = .VerAsiento
-                rows = dtA.Rows(0)
+                    'Asignando valores a forma Asiento
 
-                'Asignando valores a forma Asiento
+                    With frmAsientos
 
-                With frmAsientos
+                        .txtNro.Text = rows("campoLlave")
+                        .txtTexto.Text = rows("descripcion")
+                        .dtpFecha.Value = rows("fecha")
+                        .lblCodAsiento.Text = rows("cod_asiento")
 
-                    .txtNro.Text = rows("campoLlave")
-                    .txtTexto.Text = rows("descripcion")
-                    .dtpFecha.Value = rows("fecha")
-                    .lblCodAsiento.Text = rows("cod_asiento")
+                        .Show()
+                    End With
 
-                    .Show()
                 End With
-
-
-            End With
-
+            Catch ex As Exception
+                MsgBox("No se registro asiento de la transaccion o ocurrio un error. Detalle: " + ex.Message)
+            End Try
 
         End If
-
-
-
 
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-
         If txtBanco.Text <> "" And txtContado.Text <> "" And txtTipoConta.Text <> "" And txtCajero.Text <> "" Then
-
 
             'Capturar informacion de DataTable en Label
             'Validación de codigo de banco.
@@ -98,42 +93,78 @@
 
                         With asiento
 
-                            .Cod_Periodo = Convert.ToInt32(periodo.capturarCodPeriodo)
+                            .Cod_Periodo = 1
                             .Descrip = txtComentario.Text
                             .Fecha_ = dtpFecha.Value
-                            .Campo_Llave = 111111
+
+                            Dim ultimo As DataTable
+                            Dim nro As DataRow
+
+                            ultimo = nuevoDeposito.listarUltimoDeposito
+                            nro = ultimo.Rows(0)
+
+                            .Campo_Llave = Convert.ToInt32(nro("codDeposito"))
 
                             If .registrarAsiento = 1 Then
 
+                                Try
+                                    Dim codasi As DataTable
+                                    Dim cod As DataRow
+                                    With detalleAsiento
 
 
-                                With detalleAsiento
 
-                                    .Cod_Asiento = Convert.ToInt32(asiento.capturarCodAsiento)
-                                    .Debe_ = Convert.ToDouble(txtContado.Text)
-                                    .Haber_ = 0.0
+                                        codasi = asiento.capturarCodAsiento
+                                        cod = codasi.Rows(0)
 
-                                    Dim dt As DataTable
-                                    Dim row As DataRow
+                                        .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
+                                        .Debe_ = 0.0
+                                        .Haber_ = Convert.ToDouble(txtContado.Text)
 
-                                    dt = buscarCodigo.infoFormaPago
-                                    row = dt.Rows(1)
+                                        Dim dt As DataTable
+                                        Dim row As DataRow
 
-                                    .Cuenta_ = Convert.ToInt32(row("cuenta"))
+                                        dt = buscarCodigo.infoFormaPago
+                                        row = dt.Rows(0)
 
-                                End With
+                                        .Cuenta_ = Convert.ToInt32(row("cuenta"))
+
+                                        .registrarDetalleAsiento()
+
+                                    End With
+
+                                    'Segunda Partida
+                                    Dim detalleAsiento2 As New ClsDetalleAsiento
+
+                                    With detalleAsiento2
+
+                                        .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
+                                        .Debe_ = Convert.ToDouble(txtContado.Text)
+                                        .Haber_ = 0.0
+
+                                        Dim dt As DataTable
+                                        Dim row As DataRow
+                                        buscarCodigo.Cod = txtTipoConta.Text
+                                        dt = buscarCodigo.infoFormaPago
+                                        row = dt.Rows(0)
+
+                                        .Cuenta_ = Convert.ToInt32(row("cuenta"))
+
+                                        .registrarDetalleAsiento()
+
+                                    End With
+
+                                Catch ex As Exception
+                                    MsgBox("Error en detalle de asiento" + ex.Message)
+                                End Try
 
                             End If
 
-
-
-
                         End With
-
 
                     Catch ex As Exception
                         MsgBox("Aqui hay error: " + ex.Message)
-                    End Try
+                    End Try 'Partida Contable
 
                     Limpiar()
 
@@ -160,16 +191,11 @@
 
                     Try
 
-
-
-
                         With asiento
 
                             .Cod_Periodo = 1
                             .Descrip = txtComentario.Text
                             .Fecha_ = dtpFecha.Value
-
-
 
                             Dim ultimo As DataTable
                             Dim nro As DataRow
@@ -180,22 +206,18 @@
                             .Campo_Llave = Convert.ToInt32(nro("codDeposito"))
 
                             If .registrarAsiento = 1 Then
-
-
+                                Dim codasi As DataTable
+                                Dim cod As DataRow
                                 Try
 
                                     With detalleAsiento
 
-                                        Dim codasi As DataTable
-                                        Dim cod As DataRow
-
                                         codasi = asiento.capturarCodAsiento
                                         cod = codasi.Rows(0)
 
-
                                         .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
-                                        .Debe_ = Convert.ToDouble(txtContado.Text)
-                                        .Haber_ = 0.0
+                                        .Debe_ = 0.0
+                                        .Haber_ = Convert.ToDouble(txtContado.Text)
 
                                         Dim dt As DataTable
                                         Dim row As DataRow
@@ -209,23 +231,40 @@
 
                                     End With
 
+                                    'Segunda Partida
+                                    Dim detalleAsiento2 As New ClsDetalleAsiento
+
+                                    With detalleAsiento2
+
+                                        .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
+                                        .Debe_ = Convert.ToDouble(txtContado.Text)
+                                        .Haber_ = 0.0
+
+                                        Dim dt As DataTable
+                                        Dim row As DataRow
+                                        buscarCodigo.Cod = txtTipoConta.Text
+                                        dt = buscarCodigo.infoFormaPago
+                                        row = dt.Rows(0)
+
+                                        .Cuenta_ = Convert.ToInt32(row("cuenta"))
+
+                                        .registrarDetalleAsiento()
+
+                                    End With
+
                                 Catch ex As Exception
                                     MsgBox("Error en detalle de asiento" + ex.Message)
                                 End Try
-
 
                             End If
 
                         End With
 
-
                     Catch ex As Exception
                         MsgBox("Aqui hay error: " + ex.Message)
-                    End Try
+                    End Try 'Partida Contable
 
                     Limpiar()
-
-
 
                 End If
 
@@ -234,7 +273,6 @@
             End Try
 
             dtDepositos.DataSource = nuevoDeposito.listarDepositos
-
 
         Else
 
@@ -249,8 +287,6 @@
             ElseIf txtCajero.Text = "" Then
                 txtCajero.BackColor = Color.Red
             End If
-
-
 
         End If
 
@@ -472,7 +508,4 @@
         txtCajero.BackColor = Color.White
     End Sub
 
-    Private Sub frmDeposito_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        'frmMenuConta.Show()
-    End Sub
 End Class

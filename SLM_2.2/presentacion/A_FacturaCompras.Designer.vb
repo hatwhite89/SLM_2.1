@@ -188,6 +188,7 @@ Partial Class A_FacturaCompras
         '
         'txtTerminoPago
         '
+        Me.txtTerminoPago.Enabled = False
         Me.txtTerminoPago.Location = New System.Drawing.Point(306, 78)
         Me.txtTerminoPago.MaxLength = 10
         Me.txtTerminoPago.Name = "txtTerminoPago"
@@ -241,7 +242,7 @@ Partial Class A_FacturaCompras
         'txtTotal
         '
         Me.txtTotal.Location = New System.Drawing.Point(306, 104)
-        Me.txtTotal.MaxLength = 9
+        Me.txtTotal.MaxLength = 10
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.Size = New System.Drawing.Size(84, 20)
         Me.txtTotal.TabIndex = 8

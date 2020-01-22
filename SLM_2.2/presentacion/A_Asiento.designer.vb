@@ -29,15 +29,17 @@ Partial Class frmAsientos
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtTexto = New System.Windows.Forms.TextBox()
         Me.dtDetalleAsiento = New System.Windows.Forms.DataGridView()
+        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Debe = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Haber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtTotalDebe = New System.Windows.Forms.TextBox()
         Me.txtTotalHaber = New System.Windows.Forms.TextBox()
         Me.lblCodAsiento = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Debe = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Haber = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.lblForm = New System.Windows.Forms.Label()
         CType(Me.dtDetalleAsiento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -94,53 +96,14 @@ Partial Class frmAsientos
         '
         'dtDetalleAsiento
         '
+        Me.dtDetalleAsiento.AllowUserToAddRows = False
+        Me.dtDetalleAsiento.AllowUserToDeleteRows = False
         Me.dtDetalleAsiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDetalleAsiento.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cuenta, Me.Descripcion, Me.Debe, Me.Haber})
         Me.dtDetalleAsiento.Location = New System.Drawing.Point(12, 64)
         Me.dtDetalleAsiento.Name = "dtDetalleAsiento"
         Me.dtDetalleAsiento.Size = New System.Drawing.Size(613, 365)
         Me.dtDetalleAsiento.TabIndex = 7
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(384, 439)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(31, 13)
-        Me.Label5.TabIndex = 12
-        Me.Label5.Text = "Total"
-        '
-        'txtTotalDebe
-        '
-        Me.txtTotalDebe.Location = New System.Drawing.Point(424, 436)
-        Me.txtTotalDebe.Name = "txtTotalDebe"
-        Me.txtTotalDebe.Size = New System.Drawing.Size(101, 20)
-        Me.txtTotalDebe.TabIndex = 13
-        '
-        'txtTotalHaber
-        '
-        Me.txtTotalHaber.Location = New System.Drawing.Point(531, 436)
-        Me.txtTotalHaber.Name = "txtTotalHaber"
-        Me.txtTotalHaber.Size = New System.Drawing.Size(93, 20)
-        Me.txtTotalHaber.TabIndex = 14
-        '
-        'lblCodAsiento
-        '
-        Me.lblCodAsiento.AutoSize = True
-        Me.lblCodAsiento.Location = New System.Drawing.Point(575, 37)
-        Me.lblCodAsiento.Name = "lblCodAsiento"
-        Me.lblCodAsiento.Size = New System.Drawing.Size(10, 13)
-        Me.lblCodAsiento.TabIndex = 15
-        Me.lblCodAsiento.Text = "-"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(490, 37)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(65, 13)
-        Me.Label4.TabIndex = 16
-        Me.Label4.Text = "Asiento Nro."
         '
         'Cuenta
         '
@@ -167,6 +130,72 @@ Partial Class frmAsientos
         Me.Haber.Name = "Haber"
         Me.Haber.ReadOnly = True
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(384, 439)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(31, 13)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "Total"
+        '
+        'txtTotalDebe
+        '
+        Me.txtTotalDebe.Enabled = False
+        Me.txtTotalDebe.Location = New System.Drawing.Point(424, 436)
+        Me.txtTotalDebe.Name = "txtTotalDebe"
+        Me.txtTotalDebe.Size = New System.Drawing.Size(101, 20)
+        Me.txtTotalDebe.TabIndex = 13
+        '
+        'txtTotalHaber
+        '
+        Me.txtTotalHaber.Enabled = False
+        Me.txtTotalHaber.Location = New System.Drawing.Point(531, 436)
+        Me.txtTotalHaber.Name = "txtTotalHaber"
+        Me.txtTotalHaber.Size = New System.Drawing.Size(93, 20)
+        Me.txtTotalHaber.TabIndex = 14
+        '
+        'lblCodAsiento
+        '
+        Me.lblCodAsiento.AutoSize = True
+        Me.lblCodAsiento.Location = New System.Drawing.Point(575, 37)
+        Me.lblCodAsiento.Name = "lblCodAsiento"
+        Me.lblCodAsiento.Size = New System.Drawing.Size(10, 13)
+        Me.lblCodAsiento.TabIndex = 15
+        Me.lblCodAsiento.Text = "-"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(490, 37)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(65, 13)
+        Me.Label4.TabIndex = 16
+        Me.Label4.Text = "Asiento Nro."
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCerrar.FlatAppearance.BorderSize = 0
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.ForeColor = System.Drawing.Color.White
+        Me.btnCerrar.Location = New System.Drawing.Point(12, 434)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCerrar.TabIndex = 17
+        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
+        'lblForm
+        '
+        Me.lblForm.AutoSize = True
+        Me.lblForm.Location = New System.Drawing.Point(93, 439)
+        Me.lblForm.Name = "lblForm"
+        Me.lblForm.Size = New System.Drawing.Size(27, 13)
+        Me.lblForm.TabIndex = 18
+        Me.lblForm.Text = "form"
+        Me.lblForm.Visible = False
+        '
         'frmAsientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -174,6 +203,8 @@ Partial Class frmAsientos
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(637, 463)
         Me.ControlBox = False
+        Me.Controls.Add(Me.lblForm)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.lblCodAsiento)
         Me.Controls.Add(Me.txtTotalHaber)
@@ -212,4 +243,6 @@ Partial Class frmAsientos
     Friend WithEvents Descripcion As DataGridViewTextBoxColumn
     Friend WithEvents Debe As DataGridViewTextBoxColumn
     Friend WithEvents Haber As DataGridViewTextBoxColumn
+    Friend WithEvents btnCerrar As Button
+    Friend WithEvents lblForm As Label
 End Class

@@ -102,13 +102,13 @@ Partial Class frmDeposito
         'ListarDepositosToolStripMenuItem
         '
         Me.ListarDepositosToolStripMenuItem.Name = "ListarDepositosToolStripMenuItem"
-        Me.ListarDepositosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ListarDepositosToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.ListarDepositosToolStripMenuItem.Text = "Asiento"
         '
         'CerrarToolStripMenuItem1
         '
         Me.CerrarToolStripMenuItem1.Name = "CerrarToolStripMenuItem1"
-        Me.CerrarToolStripMenuItem1.Size = New System.Drawing.Size(145, 22)
+        Me.CerrarToolStripMenuItem1.Size = New System.Drawing.Size(114, 22)
         Me.CerrarToolStripMenuItem1.Text = "Cerrar"
         '
         'txtNro
@@ -398,6 +398,7 @@ Partial Class frmDeposito
         Me.lblCodFormaPago.Name = "lblCodFormaPago"
         Me.lblCodFormaPago.Size = New System.Drawing.Size(0, 13)
         Me.lblCodFormaPago.TabIndex = 75
+        Me.lblCodFormaPago.Visible = False
         '
         'btnBuscarBanco
         '
@@ -495,7 +496,7 @@ Partial Class frmDeposito
         'cbxTipo
         '
         Me.cbxTipo.FormattingEnabled = True
-        Me.cbxTipo.Items.AddRange(New Object() {"Tarjeta", "Dep. Bancario"})
+        Me.cbxTipo.Items.AddRange(New Object() {"Tarjeta", "Deposito Bancario"})
         Me.cbxTipo.Location = New System.Drawing.Point(180, 39)
         Me.cbxTipo.Name = "cbxTipo"
         Me.cbxTipo.Size = New System.Drawing.Size(80, 21)

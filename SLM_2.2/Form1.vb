@@ -17,13 +17,30 @@
 
     End Sub
     Private Sub btnlaboratorio_Click(sender As Object, e As EventArgs) Handles btnlaboratorio.Click
-        M_MenuLaboratorio.ShowDialog()
+
+        Try
+            M_MenuLaboratorio.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        E_DetalleExamenes.Show()
+
+
+        Try
+            E_DetalleExamenes.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
     End Sub
     Private Sub btnFacturacion_Click(sender As Object, e As EventArgs) Handles btnFacturacion.Click
-        M_MenuFacturacion.ShowDialog()
+
+
+        Try
+            M_MenuFacturacion.ShowDialog()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -37,43 +54,108 @@
     End Sub
 
     Private Sub btnDepoBanc_Click(sender As Object, e As EventArgs) Handles btnDepoBanc.Click
-        frmTipoDeposito.Show()
+
+        Try
+            frmTipoDeposito.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
     End Sub
 
     Private Sub btnPagos_Click(sender As Object, e As EventArgs) Handles btnPagos.Click
-        A_ListarPagos.Show()
+
+
+        Try
+            A_ListarPagos.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        A_Chequera.Show()
+
+
+        Try
+            A_Chequera.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        A_ListadoCheques.Show()
+
+        Try
+            A_ListadoCheques.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        A_ListadoFacturaCompra.Show()
+
+
+        Try
+
+            A_ListadoFacturaCompra.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
     End Sub
 
     Private Sub btnFormaPago_Click(sender As Object, e As EventArgs) Handles btnFormaPago.Click
-        frmFormaPago.Show()
+
+
+        Try
+
+            frmFormaPago.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
     End Sub
 
     Private Sub btnBancos_Click(sender As Object, e As EventArgs) Handles btnBancos.Click
-        A_Bancos.Show()
+
+
+        Try
+
+            A_Bancos.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
     End Sub
 
     Private Sub btnCuentas_Click(sender As Object, e As EventArgs) Handles btnCuentas.Click
-        A_Cuenta.Show()
+
+
+        Try
+
+            A_Cuenta.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
+
     End Sub
 
     Private Sub btnCategoriaProveedor_Click(sender As Object, e As EventArgs) Handles btnCategoriaProveedor.Click
-        A_CategoriaProveedor.Show()
+
+
+        Try
+
+            A_CategoriaProveedor.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
     End Sub
 
     Private Sub btnProveedor_Click(sender As Object, e As EventArgs) Handles btnProveedor.Click
-        A_Proveedor.Show()
+
+        Try
+
+            A_Proveedor.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
+
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
@@ -81,24 +163,63 @@
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        M_Precio.Show()
+
+        Try
+
+            M_Precio.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
 
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        M_Descuentos.Show()
+
+        Try
+            M_Descuentos.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
+
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        M_ListaPrecios.Show()
+
+        Try
+
+            M_ListaPrecios.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
+
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        A_ListarPromociones.Show()
+
+        Try
+            A_ListarPromociones.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
 
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-        A_PeriodoContable.Show()
+        Try
+
+            A_PeriodoContable.Show()
+        Catch ex As Exception
+
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        Try
+            A_ListadoAsientos.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
+        End Try
     End Sub
 End Class

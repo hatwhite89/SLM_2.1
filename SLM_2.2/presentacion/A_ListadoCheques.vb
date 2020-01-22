@@ -15,8 +15,12 @@
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
 
-        txtBusqueda.Text = ""
-        dtCheques.DataSource = cheque.listarCheques
+        Try
+            txtBusqueda.Text = ""
+            dtCheques.DataSource = cheque.listarCheques
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
@@ -94,17 +98,10 @@
 
             End With
 
-
-
-
-
-
-
         Catch ex As Exception
             MsgBox("Error al seleccionar. Detalle: " + ex.Message)
         End Try
 
-
-
     End Sub
+
 End Class
