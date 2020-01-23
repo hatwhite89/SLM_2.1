@@ -32,20 +32,20 @@ Partial Class M_Arqueos
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(115, 66)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(51, 17)
+        Me.Label1.Size = New System.Drawing.Size(36, 17)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Label1"
+        Me.Label1.Text = "Caja"
         '
         'txtcodigoMaquina
         '
-        Me.txtcodigoMaquina.Location = New System.Drawing.Point(228, 66)
+        Me.txtcodigoMaquina.Location = New System.Drawing.Point(169, 66)
         Me.txtcodigoMaquina.Name = "txtcodigoMaquina"
-        Me.txtcodigoMaquina.Size = New System.Drawing.Size(100, 22)
+        Me.txtcodigoMaquina.Size = New System.Drawing.Size(159, 22)
         Me.txtcodigoMaquina.TabIndex = 1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(416, 66)
+        Me.Button1.Location = New System.Drawing.Point(364, 66)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 2
