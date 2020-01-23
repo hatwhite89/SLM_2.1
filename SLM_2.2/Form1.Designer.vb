@@ -27,11 +27,8 @@ Partial Class Form1
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.gbxMenu = New System.Windows.Forms.GroupBox()
         Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.btnFacturacion = New System.Windows.Forms.Button()
-        Me.lblfacturacion = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.lbllaboratorio = New System.Windows.Forms.Label()
+        Me.btnFacturacion = New System.Windows.Forms.Button()
         Me.btnlaboratorio = New System.Windows.Forms.Button()
         Me.panelMenu = New System.Windows.Forms.Panel()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -72,6 +69,7 @@ Partial Class Form1
         Me.btnCuentas = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnFormaPago = New System.Windows.Forms.Button()
+        Me.SkinEngine1 = New Sunisoft.IrisSkin.SkinEngine(CType(Me, System.ComponentModel.Component))
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxMenu.SuspendLayout()
         Me.panelMenu.SuspendLayout()
@@ -88,10 +86,10 @@ Partial Class Form1
         Me.btnContabilidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnContabilidad.FlatAppearance.BorderSize = 0
         Me.btnContabilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnContabilidad.Location = New System.Drawing.Point(0, 22)
+        Me.btnContabilidad.Location = New System.Drawing.Point(4, 40)
         Me.btnContabilidad.Name = "btnContabilidad"
         Me.btnContabilidad.Size = New System.Drawing.Size(92, 27)
-        Me.btnContabilidad.TabIndex = 0
+        Me.btnContabilidad.TabIndex = 1
         Me.btnContabilidad.Text = "Contabilidad"
         Me.btnContabilidad.UseVisualStyleBackColor = False
         '
@@ -99,7 +97,7 @@ Partial Class Form1
         '
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(106, 113)
+        Me.PictureBox1.Location = New System.Drawing.Point(135, 103)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(265, 137)
         Me.PictureBox1.TabIndex = 2
@@ -109,17 +107,14 @@ Partial Class Form1
         '
         Me.gbxMenu.BackColor = System.Drawing.Color.MidnightBlue
         Me.gbxMenu.Controls.Add(Me.btnCerrar)
-        Me.gbxMenu.Controls.Add(Me.btnFacturacion)
-        Me.gbxMenu.Controls.Add(Me.lblfacturacion)
-        Me.gbxMenu.Controls.Add(Me.Label1)
         Me.gbxMenu.Controls.Add(Me.Button1)
-        Me.gbxMenu.Controls.Add(Me.lbllaboratorio)
+        Me.gbxMenu.Controls.Add(Me.btnFacturacion)
         Me.gbxMenu.Controls.Add(Me.btnlaboratorio)
         Me.gbxMenu.Controls.Add(Me.btnContabilidad)
         Me.gbxMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.gbxMenu.Location = New System.Drawing.Point(-1, -13)
         Me.gbxMenu.Name = "gbxMenu"
-        Me.gbxMenu.Size = New System.Drawing.Size(88, 405)
+        Me.gbxMenu.Size = New System.Drawing.Size(101, 405)
         Me.gbxMenu.TabIndex = 3
         Me.gbxMenu.TabStop = False
         Me.gbxMenu.Text = "Opciones"
@@ -131,102 +126,75 @@ Partial Class Form1
         Me.btnCerrar.FlatAppearance.BorderSize = 0
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.ForeColor = System.Drawing.Color.White
-        Me.btnCerrar.Location = New System.Drawing.Point(-3, 365)
+        Me.btnCerrar.Location = New System.Drawing.Point(4, 365)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(95, 27)
-        Me.btnCerrar.TabIndex = 13
+        Me.btnCerrar.Size = New System.Drawing.Size(93, 27)
+        Me.btnCerrar.TabIndex = 5
         Me.btnCerrar.Text = "Cerrar"
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
-        'btnFacturacion
-        '
-        Me.btnFacturacion.BackColor = System.Drawing.Color.Transparent
-        Me.btnFacturacion.BackgroundImage = CType(resources.GetObject("btnFacturacion.BackgroundImage"), System.Drawing.Image)
-        Me.btnFacturacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnFacturacion.FlatAppearance.BorderSize = 0
-        Me.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFacturacion.Location = New System.Drawing.Point(14, 197)
-        Me.btnFacturacion.Name = "btnFacturacion"
-        Me.btnFacturacion.Size = New System.Drawing.Size(60, 57)
-        Me.btnFacturacion.TabIndex = 10
-        Me.btnFacturacion.UseVisualStyleBackColor = False
-        '
-        'lblfacturacion
-        '
-        Me.lblfacturacion.AutoSize = True
-        Me.lblfacturacion.ForeColor = System.Drawing.Color.White
-        Me.lblfacturacion.Location = New System.Drawing.Point(15, 254)
-        Me.lblfacturacion.Name = "lblfacturacion"
-        Me.lblfacturacion.Size = New System.Drawing.Size(63, 13)
-        Me.lblfacturacion.TabIndex = 11
-        Me.lblfacturacion.Text = "Facturación"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(7, 331)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 13)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Item Exámenes"
-        '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackColor = System.Drawing.Color.DarkGray
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(13, 270)
+        Me.Button1.Location = New System.Drawing.Point(4, 140)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(61, 58)
-        Me.Button1.TabIndex = 8
+        Me.Button1.Size = New System.Drawing.Size(92, 27)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Item Exámenes"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'lbllaboratorio
+        'btnFacturacion
         '
-        Me.lbllaboratorio.AutoSize = True
-        Me.lbllaboratorio.ForeColor = System.Drawing.Color.White
-        Me.lbllaboratorio.Location = New System.Drawing.Point(14, 181)
-        Me.lbllaboratorio.Name = "lbllaboratorio"
-        Me.lbllaboratorio.Size = New System.Drawing.Size(60, 13)
-        Me.lbllaboratorio.TabIndex = 7
-        Me.lbllaboratorio.Text = "Laboratorio"
+        Me.btnFacturacion.BackColor = System.Drawing.Color.Gray
+        Me.btnFacturacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnFacturacion.FlatAppearance.BorderSize = 0
+        Me.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFacturacion.Location = New System.Drawing.Point(4, 74)
+        Me.btnFacturacion.Name = "btnFacturacion"
+        Me.btnFacturacion.Size = New System.Drawing.Size(92, 27)
+        Me.btnFacturacion.TabIndex = 2
+        Me.btnFacturacion.Text = "Facturación"
+        Me.btnFacturacion.UseVisualStyleBackColor = False
         '
         'btnlaboratorio
         '
-        Me.btnlaboratorio.BackgroundImage = CType(resources.GetObject("btnlaboratorio.BackgroundImage"), System.Drawing.Image)
+        Me.btnlaboratorio.BackColor = System.Drawing.Color.SlateGray
         Me.btnlaboratorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnlaboratorio.FlatAppearance.BorderSize = 0
         Me.btnlaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnlaboratorio.Location = New System.Drawing.Point(12, 120)
+        Me.btnlaboratorio.Location = New System.Drawing.Point(4, 107)
         Me.btnlaboratorio.Name = "btnlaboratorio"
-        Me.btnlaboratorio.Size = New System.Drawing.Size(62, 58)
-        Me.btnlaboratorio.TabIndex = 6
-        Me.btnlaboratorio.UseVisualStyleBackColor = True
+        Me.btnlaboratorio.Size = New System.Drawing.Size(92, 27)
+        Me.btnlaboratorio.TabIndex = 3
+        Me.btnlaboratorio.Text = "Laboratorio"
+        Me.btnlaboratorio.UseVisualStyleBackColor = False
         '
         'panelMenu
         '
         Me.panelMenu.BackColor = System.Drawing.Color.White
         Me.panelMenu.Controls.Add(Me.btnCancelar)
         Me.panelMenu.Controls.Add(Me.tcMenu)
-        Me.panelMenu.Location = New System.Drawing.Point(16, -4)
+        Me.panelMenu.Location = New System.Drawing.Point(106, 6)
         Me.panelMenu.Name = "panelMenu"
-        Me.panelMenu.Size = New System.Drawing.Size(44, 390)
+        Me.panelMenu.Size = New System.Drawing.Size(324, 373)
         Me.panelMenu.TabIndex = 4
+        Me.panelMenu.Visible = False
         '
         'btnCancelar
         '
         Me.btnCancelar.BackColor = System.Drawing.Color.Transparent
-        Me.btnCancelar.BackgroundImage = CType(resources.GetObject("btnCancelar.BackgroundImage"), System.Drawing.Image)
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCancelar.FlatAppearance.BorderSize = 0
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(342, 9)
+        Me.btnCancelar.ForeColor = System.Drawing.Color.Red
+        Me.btnCancelar.Location = New System.Drawing.Point(287, 2)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(20, 18)
-        Me.btnCancelar.TabIndex = 3
+        Me.btnCancelar.TabIndex = 5
+        Me.btnCancelar.Text = "X"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'tcMenu
@@ -235,12 +203,11 @@ Partial Class Form1
         Me.tcMenu.Controls.Add(Me.tpPagos)
         Me.tcMenu.Controls.Add(Me.tpPrecios)
         Me.tcMenu.Controls.Add(Me.TpMantenimiento)
-        Me.tcMenu.Location = New System.Drawing.Point(77, 31)
+        Me.tcMenu.Location = New System.Drawing.Point(24, 24)
         Me.tcMenu.Name = "tcMenu"
         Me.tcMenu.SelectedIndex = 0
         Me.tcMenu.Size = New System.Drawing.Size(290, 343)
-        Me.tcMenu.TabIndex = 4
-        Me.tcMenu.Visible = False
+        Me.tcMenu.TabIndex = 6
         '
         'tpCheque
         '
@@ -667,24 +634,35 @@ Partial Class Form1
         Me.btnFormaPago.TabIndex = 0
         Me.btnFormaPago.UseVisualStyleBackColor = True
         '
+        'SkinEngine1
+        '
+        Me.SkinEngine1.DefaultButtonStyle = Sunisoft.IrisSkin.DefaultButtonStyle.Shadow
+        Me.SkinEngine1.Enable3rdControl = True
+        Me.SkinEngine1.ResSysMenuClose = ""
+        Me.SkinEngine1.ResSysMenuMax = ""
+        Me.SkinEngine1.ResSysMenuMin = ""
+        Me.SkinEngine1.SerialNumber = "U4N2UjLguUZs33UR+Vy47JAZ81t2fjIFvut28vc5oHiVeivGb/NZMA=="
+        Me.SkinEngine1.SkinFile = "C:\Users\Software 3\Desktop\Componentes Graficos Vb2\Componentes Graficos Vb2\SKI" &
+    "N NET 2010 WIN 7\SkinVS.NET\MacOS\MacOS.ssk"
+        Me.SkinEngine1.SkinStreamMain = CType(resources.GetObject("SkinEngine1.SkinStreamMain"), System.IO.Stream)
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(392, 379)
+        Me.ClientSize = New System.Drawing.Size(437, 379)
         Me.Controls.Add(Me.gbxMenu)
         Me.Controls.Add(Me.panelMenu)
         Me.Controls.Add(Me.PictureBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = " "
+        Me.Text = " Sistema Laboratorios Médicos"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbxMenu.ResumeLayout(False)
-        Me.gbxMenu.PerformLayout()
         Me.panelMenu.ResumeLayout(False)
         Me.tcMenu.ResumeLayout(False)
         Me.tpCheque.ResumeLayout(False)
@@ -702,13 +680,12 @@ Partial Class Form1
     Friend WithEvents btnContabilidad As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents gbxMenu As GroupBox
-    Friend WithEvents lbllaboratorio As Label
     Friend WithEvents btnlaboratorio As Button
-    Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents btnFacturacion As Button
-    Friend WithEvents lblfacturacion As Label
     Friend WithEvents panelMenu As Panel
+    Friend WithEvents btnCerrar As Button
+    Friend WithEvents SkinEngine1 As Sunisoft.IrisSkin.SkinEngine
     Friend WithEvents btnCancelar As Button
     Friend WithEvents tcMenu As TabControl
     Friend WithEvents tpCheque As TabPage
@@ -723,7 +700,20 @@ Partial Class Form1
     Friend WithEvents Label8 As Label
     Friend WithEvents Button4 As Button
     Friend WithEvents btnPagos As Button
+    Friend WithEvents tpPrecios As TabPage
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Button8 As Button
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label12 As Label
     Friend WithEvents TpMantenimiento As TabPage
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Button10 As Button
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Button9 As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents btnBancos As Button
     Friend WithEvents Label4 As Label
@@ -734,18 +724,4 @@ Partial Class Form1
     Friend WithEvents btnCuentas As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents btnFormaPago As Button
-    Friend WithEvents btnCerrar As Button
-    Friend WithEvents tpPrecios As TabPage
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Button9 As Button
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Button10 As Button
 End Class

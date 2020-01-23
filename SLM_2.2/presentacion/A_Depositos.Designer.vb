@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmDeposito
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmDeposito
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDeposito))
         Me.lblNro = New System.Windows.Forms.Label()
@@ -314,6 +314,7 @@ Partial Class frmDeposito
         '
         'gbxInfoDepo
         '
+        Me.gbxInfoDepo.BackColor = System.Drawing.SystemColors.Control
         Me.gbxInfoDepo.Controls.Add(Me.btnModificar)
         Me.gbxInfoDepo.Controls.Add(Me.btnCrearNuevo)
         Me.gbxInfoDepo.Controls.Add(Me.btnBuscarTipoConta)
@@ -427,6 +428,7 @@ Partial Class frmDeposito
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
         Me.GroupBox1.Controls.Add(Me.rbtnFormaP)
         Me.GroupBox1.Controls.Add(Me.rbtnTipo)
         Me.GroupBox1.Controls.Add(Me.rbtnID)
@@ -543,6 +545,7 @@ Partial Class frmDeposito
         Me.Name = "frmDeposito"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Deposito Bancario"
+        Me.TransparencyKey = System.Drawing.Color.Fuchsia
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.gbxInfoDepo.ResumeLayout(False)

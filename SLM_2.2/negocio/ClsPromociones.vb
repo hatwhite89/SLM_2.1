@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ClsPromociones
-    Dim descripcion As String
+    Dim descripcion, imagen As String
     Dim codigo, contador As Integer
     Dim precio As Double
     Dim img As Byte()
@@ -33,6 +33,15 @@ Public Class ClsPromociones
         End Get
         Set(value As String)
             descripcion = value
+        End Set
+    End Property
+
+    Public Property imagen_ As String
+        Get
+            Return imagen
+        End Get
+        Set(value As String)
+            imagen = value
         End Set
     End Property
 
@@ -100,6 +109,11 @@ Public Class ClsPromociones
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "precio" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = precio_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "imagen" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = precio_
         sqlcom.Parameters.Add(sqlpar)
 

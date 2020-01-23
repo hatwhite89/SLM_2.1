@@ -8,7 +8,6 @@ Public Class A_Promociones
     Dim img As Image
     Dim datos As Byte()
 
-
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         If dtDetallePromo.Rows.Count > 1 Then
@@ -25,13 +24,8 @@ Public Class A_Promociones
                         .fechaInicio_ = dtpFechaI.Value
                         .fechaFinal_ = dtpFechaF.Value
                         .precio_ = Convert.ToDouble(txtPrecio.Text)
-
-
-                        'Guardar imagen
-                        Dim ms As New MemoryStream
-                        pbxPromo.Image.Save(ms, pbxPromo.Image.RawFormat)
-
-                        .img_ = ms.GetBuffer
+                        .imagen_ = "ok"
+                        .img_ = ImagenToBytes(pbxPromo.Image)
 
                         If .RegistrarPromocion = 1 Then
 
@@ -103,13 +97,7 @@ Public Class A_Promociones
                         .fechaInicio_ = dtpFechaI.Value
                         .fechaFinal_ = dtpFechaF.Value
                         .precio_ = Convert.ToDouble(txtPrecio.Text)
-
-
-                        'Guardar imagen
-                        Dim ms As New MemoryStream
-                        pbxPromo.Image.Save(ms, pbxPromo.Image.RawFormat)
-
-                        .img_ = ms.GetBuffer
+                        .img_ = ImagenToBytes(pbxPromo.Image)
 
                         If .RegistrarPromocion = 1 Then
 

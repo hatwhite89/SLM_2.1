@@ -26,7 +26,7 @@
             .txtPrecio.Text = rows("precio")
             .dtpFechaI.Value = rows("fechaInicio")
             .dtpFechaF.Value = rows("fechaFinal")
-            '.pbxPromo.Image = dtPromos.Rows(e.RowIndex).Cells(7).FormattedValue
+            .pbxPromo.Image = BytesToImagen(rows("img"))
 
             .Show()
 
@@ -47,4 +47,5 @@
         A_Promociones.Show()
 
     End Sub
+
 End Class

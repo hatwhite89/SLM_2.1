@@ -107,7 +107,6 @@ Module ModulosVarios
         Catch ex As Exception
             MsgBox("No lo convertio a String por: " + ex.ToString)
         End Try
-
         Return salida
     End Function
 

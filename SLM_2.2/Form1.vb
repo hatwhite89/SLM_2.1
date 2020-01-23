@@ -3,17 +3,8 @@
         'Prueba Cambio
     End Sub
     Private Sub btnContabilidad_Click(sender As Object, e As EventArgs) Handles btnContabilidad.Click
-        'Abrir formulario menu contabilidad.
-        'frmMenuConta.Show()
 
-
-        While (panelMenu.Width < 375)
-            panelMenu.Width += 1
-        End While
-        tcMenu.Visible = True
-        btnContabilidad.BackColor = Color.White
-
-
+        panelMenu.Visible = True
 
     End Sub
     Private Sub btnlaboratorio_Click(sender As Object, e As EventArgs) Handles btnlaboratorio.Click
@@ -45,12 +36,8 @@
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
 
-        tcMenu.Visible = False
-        While (panelMenu.Width > 20)
-            panelMenu.Width -= 1
-        End While
+        panelMenu.Visible = False
 
-        btnContabilidad.BackColor = Color.LightGray
     End Sub
 
     Private Sub btnDepoBanc_Click(sender As Object, e As EventArgs) Handles btnDepoBanc.Click
@@ -222,4 +209,6 @@
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
     End Sub
+
+
 End Class

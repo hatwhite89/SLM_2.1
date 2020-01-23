@@ -60,6 +60,7 @@
 
                             'Funcion de registro de detalle
                             DetalleFacCompra.registrarDetalleFactura()
+
                         Else
                             MsgBox("Error. El código esta duplicado.")
                         End If
