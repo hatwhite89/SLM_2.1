@@ -328,21 +328,24 @@ Public Class M_Factura
         M_ClienteVentana.txtnombreCompleto.Text = txtnombreCliente.Text
     End Sub
     Private Sub txtvuelto_TextChanged(sender As Object, e As EventArgs) Handles txtvuelto.TextChanged
-        M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
-        If (Convert.ToDouble(txtvuelto.Text) >= 0) Then
-            txtvuelto.ForeColor = Color.Black
-            M_ClienteVentana.txtvuelto.ForeColor = Color.Black
+        'If (Convert.ToDouble(txtvuelto.Text) >= 0) Then
+        '    txtvuelto.ForeColor = Color.Black
+        '    M_ClienteVentana.txtvuelto.ForeColor = Color.Black
+        'Else
+        '    txtvuelto.ForeColor = Color.Red
+        '    M_ClienteVentana.txtvuelto.ForeColor = Color.Red
+        'End If
+        If Convert.ToDouble(txtvuelto.Text) >= 0 Then
+            M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
         Else
-            txtvuelto.ForeColor = Color.Red
-            M_ClienteVentana.txtvuelto.ForeColor = Color.Red
+            txtvuelto.Text = "0"
+            M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
         End If
-
     End Sub
     Private Sub txttotal_TextChanged(sender As Object, e As EventArgs) Handles txttotal.TextChanged
         M_ClienteVentana.txttotal.Text = txttotal.Text
         Try
             txtvuelto.Text = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txttotal.Text)
-            M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
         Catch ex As Exception
 
         End Try

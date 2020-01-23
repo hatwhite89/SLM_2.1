@@ -183,7 +183,6 @@ Public Class ClsPromociones
     End Function
 
     Public Function SeleccionarPromociones() As DataTable
-
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
