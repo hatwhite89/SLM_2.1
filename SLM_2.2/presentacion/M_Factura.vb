@@ -660,7 +660,6 @@ Public Class M_Factura
             e.Handled = True
         End If
     End Sub
-
     Private Sub txtcodigoMedico_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoMedico.KeyPress
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
             e.Handled = True
@@ -727,7 +726,6 @@ Public Class M_Factura
         End Try
 
     End Sub
-
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Try
 
@@ -862,7 +860,6 @@ Public Class M_Factura
             End Try
         End If
     End Sub
-
     Private Sub Imprimir_Factura()
         If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
             'le asigno un valor a los parametros del procedimiento almacenado
@@ -918,7 +915,6 @@ Public Class M_Factura
     Private Sub btnPromocion_Click(sender As Object, e As EventArgs) Handles btnPromocion.Click
         M_ListadoPromociones.ShowDialog()
     End Sub
-
     Private Sub btnQuitarPromocion_Click(sender As Object, e As EventArgs) Handles btnQuitarPromocion.Click
         Try
             If (lblPromocion.Text <> "0") Then
@@ -944,7 +940,6 @@ Public Class M_Factura
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
     Private Sub txtEfectivo_TextChanged(sender As Object, e As EventArgs) Handles txtEfectivo.TextChanged
         Try
             txtpagoPaciente.Text = Convert.ToDouble(txtEfectivo.Text) + Convert.ToDouble(txtTarjeta.Text)
@@ -953,7 +948,6 @@ Public Class M_Factura
         Catch ex As Exception
         End Try
     End Sub
-
     Private Sub txtTarjeta_TextChanged(sender As Object, e As EventArgs) Handles txtTarjeta.TextChanged
         Try
             txtpagoPaciente.Text = Convert.ToDouble(txtEfectivo.Text) + Convert.ToDouble(txtTarjeta.Text)
