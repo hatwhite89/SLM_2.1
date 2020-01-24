@@ -86,6 +86,16 @@
         btnGuardar.Visible = True
         btnModificar.Visible = False
         btnNuevo.Visible = False
+
+
+        Me.Close()
+        Dim nuevo As New A_Cuenta
+        nuevo.Show()
+
+
+
+
+
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click

@@ -37,7 +37,6 @@ Public Class frmFormaPago
                     .Formu_lario = formu
                     .Ti_po = tip
                     .Ban_co = banco
-                    .Retenci_on = Convert.ToDouble(txtRetencion.Text)
                     'Funcion de registro de forma de pago
                     .RegistrarNuevaFormaPago()
                     MessageBox.Show("El registro ha sido guardado exitosamente.")
@@ -112,7 +111,6 @@ Public Class frmFormaPago
             FormaPago.Formu_lario = txtFormulario.Text
             FormaPago.Ti_po = txtTipo.Text
             FormaPago.Ban_co = txtBanco.Text
-            FormaPago.Retenci_on = Convert.ToDouble(txtRetencion.Text)
 
             'Funcion modificar forma de pago seleccionada
             FormaPago.modificarFormaPago()
@@ -150,7 +148,6 @@ Public Class frmFormaPago
             txtFormulario.Text = dtFormasPago.Rows(e.RowIndex).Cells(6).Value
             txtTipo.Text = dtFormasPago.Rows(e.RowIndex).Cells(7).Value
             txtBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(8).Value
-            txtRetencion.Text = dtFormasPago.Rows(e.RowIndex).Cells(10).Value
 
         Catch ex As Exception
 
@@ -186,7 +183,6 @@ Public Class frmFormaPago
         txtBanco.Text = ""
         txtTipo.Text = ""
         txtComentario.Text = ""
-        txtRetencion.Text = "0.0"
     End Sub
 
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click

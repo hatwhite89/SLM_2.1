@@ -20,7 +20,23 @@
 
         frmPagos.dtDetallePagos.Rows.Add(New String() {nroFact, proveedor, moneda, monto, " ", " "})
 
+        Try
+            Dim Total As Single
+            Dim Col As Integer = 3
+            For Each row As DataGridViewRow In frmPagos.dtDetallePagos.Rows
+                Total += Val(row.Cells(Col).Value)
+            Next
+            frmPagos.lblTotalSuma.Text = Total.ToString
+
+        Catch ex As Exception
+            MsgBox("Error: " + ex.Message)
+        End Try
+
         Me.Close()
+
+    End Sub
+
+    Private Sub dtFacturasCompra_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtFacturasCompra.CellContentClick
 
     End Sub
 End Class

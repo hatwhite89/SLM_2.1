@@ -46,8 +46,6 @@ Partial Class frmFormaPago
         Me.gbxInfoFormaPago = New System.Windows.Forms.GroupBox()
         Me.btnBuscarBanco = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.txtRetencion = New System.Windows.Forms.TextBox()
-        Me.lblRetencion = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.lblCodFormaPago = New System.Windows.Forms.Label()
@@ -222,7 +220,7 @@ Partial Class frmFormaPago
         Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(343, 152)
+        Me.btnGuardar.Location = New System.Drawing.Point(545, 154)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(92, 23)
         Me.btnGuardar.TabIndex = 47
@@ -233,8 +231,6 @@ Partial Class frmFormaPago
         '
         Me.gbxInfoFormaPago.Controls.Add(Me.btnBuscarBanco)
         Me.gbxInfoFormaPago.Controls.Add(Me.Button1)
-        Me.gbxInfoFormaPago.Controls.Add(Me.txtRetencion)
-        Me.gbxInfoFormaPago.Controls.Add(Me.lblRetencion)
         Me.gbxInfoFormaPago.Controls.Add(Me.txtCodigo)
         Me.gbxInfoFormaPago.Controls.Add(Me.lblCod)
         Me.gbxInfoFormaPago.Controls.Add(Me.txtCuenta)
@@ -284,24 +280,6 @@ Partial Class frmFormaPago
         Me.Button1.Size = New System.Drawing.Size(20, 19)
         Me.Button1.TabIndex = 55
         Me.Button1.UseVisualStyleBackColor = False
-        '
-        'txtRetencion
-        '
-        Me.txtRetencion.Location = New System.Drawing.Point(455, 126)
-        Me.txtRetencion.Name = "txtRetencion"
-        Me.txtRetencion.Size = New System.Drawing.Size(100, 20)
-        Me.txtRetencion.TabIndex = 54
-        Me.txtRetencion.Text = "0.0"
-        Me.txtRetencion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'lblRetencion
-        '
-        Me.lblRetencion.AutoSize = True
-        Me.lblRetencion.Location = New System.Drawing.Point(355, 129)
-        Me.lblRetencion.Name = "lblRetencion"
-        Me.lblRetencion.Size = New System.Drawing.Size(56, 13)
-        Me.lblRetencion.TabIndex = 53
-        Me.lblRetencion.Text = "Retención"
         '
         'GroupBox1
         '
@@ -421,8 +399,6 @@ Partial Class frmFormaPago
     Friend WithEvents btnModificar As Button
     Friend WithEvents dtFormasPago As DataGridView
     Friend WithEvents lblCodFormaPago As Label
-    Friend WithEvents txtRetencion As TextBox
-    Friend WithEvents lblRetencion As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents btnCrear As Button
     Friend WithEvents btnBuscarBanco As Button

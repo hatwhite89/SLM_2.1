@@ -203,7 +203,7 @@ Partial Class Form1
         Me.tcMenu.Controls.Add(Me.tpPagos)
         Me.tcMenu.Controls.Add(Me.tpPrecios)
         Me.tcMenu.Controls.Add(Me.TpMantenimiento)
-        Me.tcMenu.Location = New System.Drawing.Point(24, 24)
+        Me.tcMenu.Location = New System.Drawing.Point(18, 24)
         Me.tcMenu.Name = "tcMenu"
         Me.tcMenu.SelectedIndex = 0
         Me.tcMenu.Size = New System.Drawing.Size(290, 343)
@@ -268,7 +268,7 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Button2.BackColor = System.Drawing.Color.White
         Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat

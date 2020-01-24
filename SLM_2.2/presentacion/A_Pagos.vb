@@ -206,7 +206,6 @@
             'Columna de Cheques
             lblFila.Text = e.RowIndex
             A_ListarChequesHabilitados.Show()
-            'A_ListarChequesHabilitados.l
             lblFila.Text = e.RowIndex
 
         ElseIf e.ColumnIndex = 0 Then
@@ -232,4 +231,10 @@
 
     End Sub
 
+    Private Sub lblTotalSuma_Click(sender As Object, e As EventArgs) Handles lblTotalSuma.Click
+
+
+
+
+    End Sub
 End Class

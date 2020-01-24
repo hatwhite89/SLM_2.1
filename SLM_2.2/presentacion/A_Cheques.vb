@@ -76,6 +76,13 @@ Public Class A_Cheques
             MsgBox("Error al guardar. Detalle: " + ex.Message)
         End Try
 
+
+        '::::: Registro de Retención :::::
+
+
+
+
+
     End Sub
     Private Sub txtcodProvee_DoubleClick(sender As Object, e As EventArgs) Handles txtcodProvee.DoubleClick
         A_ListarProveedores.ShowDialog()
@@ -251,20 +258,6 @@ Public Class A_Cheques
     Private Sub A_Cheques_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         'frmMenuConta.Show()
     End Sub
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     'Convertir numeros a letras para impresión de cheque
     Public NotInheritable Class Numalet

@@ -413,8 +413,9 @@ Partial Class frmPagos
         Me.lblTotalSuma.AutoSize = True
         Me.lblTotalSuma.Location = New System.Drawing.Point(555, 240)
         Me.lblTotalSuma.Name = "lblTotalSuma"
-        Me.lblTotalSuma.Size = New System.Drawing.Size(0, 13)
+        Me.lblTotalSuma.Size = New System.Drawing.Size(10, 13)
         Me.lblTotalSuma.TabIndex = 22
+        Me.lblTotalSuma.Text = "-"
         '
         'Label4
         '

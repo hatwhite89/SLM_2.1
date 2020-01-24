@@ -5,9 +5,9 @@ Public Class ClsFormaPago
     'VARIABLES DE FORMA DE PAGO
     Dim codigo, comentario, nombreBanco, formulario, tipo, banco, cuenta, nroCtaBanco As String
     Dim codFormaPago As Integer
-    Dim retencion As Double
     'Constructor
     Public Sub New()
+
 
     End Sub
 
@@ -101,15 +101,6 @@ Public Class ClsFormaPago
         End Set
     End Property
 
-    'Retencion
-    Public Property Retenci_on As Double
-        Get
-            Return retencion
-        End Get
-        Set(value As Double)
-            retencion = value
-        End Set
-    End Property
 
     '::::::::::::::::::::::::::::: FUNCIONES DE MANTENIMIENTO ::::::::::::::::::::::::::::::
 
@@ -167,10 +158,7 @@ Public Class ClsFormaPago
         sqlpar.Value = Ban_co
         sqlcom.Parameters.Add(sqlpar)
 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "retencion"
-        sqlpar.Value = Retenci_on
-        sqlcom.Parameters.Add(sqlpar)
+
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -369,12 +357,6 @@ Public Class ClsFormaPago
         sqlpar.ParameterName = "banco"
         sqlpar.Value = Ban_co
         sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "retencion"
-        sqlpar.Value = Retenci_on
-        sqlcom.Parameters.Add(sqlpar)
-
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
