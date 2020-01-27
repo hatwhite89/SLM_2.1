@@ -55,6 +55,10 @@
         Try
 
             txtDescripcion.Text = sinDobleEspacio(txtDescripcion.Text)
+            If (Trim(txtPorcentaje.Text) = "") Then
+                txtPorcentaje.Text = "0"
+            End If
+
             If (Trim(txtcodigoBreve.Text) <> "" And Trim(txtDescripcion.Text) <> "" And Trim(txtPorcentaje.Text) <> "") Then
 
                 With objDesc
@@ -87,6 +91,10 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
             txtDescripcion.Text = sinDobleEspacio(txtDescripcion.Text)
+            If (Trim(txtPorcentaje.Text) = "") Then
+                txtPorcentaje.Text = "0"
+            End If
+
             If (Trim(txtcodigoBreve.Text) <> "" And Trim(txtDescripcion.Text) <> "" And Trim(txtPorcentaje.Text) <> "") Then
 
                 With objDesc
@@ -181,4 +189,5 @@
             SeleccionarDescuentos()
         End If
     End Sub
+
 End Class

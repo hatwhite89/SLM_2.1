@@ -28,7 +28,13 @@ Public Class M_Factura
                 txtnombreCliente.Text = CStr(row("nombreCompleto"))
                 lblcodePriceList.Text = CStr(row("codigoListaPrecios"))
                 lblFechaNacimiento.Text = CStr(row("fechaNacimiento"))
-                txtcodigoConvenio.Text = CStr(row("descripcionLp"))
+                MsgBox(CStr(row("tipoConvenio")))
+                If (row("tipoConvenio")) Then
+                    txtcodigoConvenio.Text = CStr(row("descripcionLp"))
+                Else
+                    'lblcodePriceList.Text = "0"
+                    txtcodigoConvenio.Text = ""
+                End If
                 M_Cliente.lblcodeCategoria.Text = CStr(row("codigoCategoria"))
                 M_ClienteVentana.txtnombreCategoria.Text = M_Cliente.txtnombreCategoria.Text
                 txtcodigoCliente.BackColor = Color.White
@@ -38,6 +44,8 @@ Public Class M_Factura
                 txtnombreCliente.Text = ""
             End Try
         Else
+            lblcodePriceList.Text = "0"
+            txtcodigoConvenio.Text = ""
             txtcodigoCliente.Text = ""
             txtnombreCliente.Text = ""
             txtcodigoCliente.BackColor = Color.White
@@ -554,7 +562,8 @@ Public Class M_Factura
                 txtcodigoCajero.Text = "1"
             End If
             If Trim(txtcodigoConvenio.Text) = "" Then
-                txtcodigoConvenio.Text = "1"
+                txtcodigoConvenio.Text = "0"
+                lblcodePriceList.Text = "0"
             End If
             If Trim(txtcodigoTerminal.Text) = "" Then
                 txtcodigoTerminal.Text = "1"
@@ -616,6 +625,7 @@ Public Class M_Factura
                     .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
                     .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
                 End With
+
                 If objFact.RegistrarNuevaFactura() = 1 Then
                     deshabilitar()
                     cbxok.Enabled = True

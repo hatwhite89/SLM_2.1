@@ -29,6 +29,7 @@ Partial Class M_Cliente
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbxinfoCliente = New System.Windows.Forms.GroupBox()
+        Me.txtEdad = New System.Windows.Forms.TextBox()
         Me.lblcodeTerminoPago = New System.Windows.Forms.Label()
         Me.lblcodeCategoria = New System.Windows.Forms.Label()
         Me.txtnombre2 = New System.Windows.Forms.TextBox()
@@ -94,7 +95,6 @@ Partial Class M_Cliente
         Me.btnbuscarPorNombre = New System.Windows.Forms.Button()
         Me.lblNombreB = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
-        Me.txtEdad = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxinfoCliente.SuspendLayout()
         Me.gbxgenero.SuspendLayout()
@@ -220,6 +220,14 @@ Partial Class M_Cliente
         Me.gbxinfoCliente.TabStop = False
         Me.gbxinfoCliente.Text = "Información de Cliente/Paciente"
         Me.gbxinfoCliente.Visible = False
+        '
+        'txtEdad
+        '
+        Me.txtEdad.Location = New System.Drawing.Point(870, 89)
+        Me.txtEdad.Name = "txtEdad"
+        Me.txtEdad.ReadOnly = True
+        Me.txtEdad.Size = New System.Drawing.Size(72, 22)
+        Me.txtEdad.TabIndex = 121
         '
         'lblcodeTerminoPago
         '
@@ -876,14 +884,6 @@ Partial Class M_Cliente
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(206, 22)
         Me.txtnombreB.TabIndex = 117
-        '
-        'txtEdad
-        '
-        Me.txtEdad.Location = New System.Drawing.Point(870, 89)
-        Me.txtEdad.Name = "txtEdad"
-        Me.txtEdad.ReadOnly = True
-        Me.txtEdad.Size = New System.Drawing.Size(72, 22)
-        Me.txtEdad.TabIndex = 121
         '
         'M_Cliente
         '

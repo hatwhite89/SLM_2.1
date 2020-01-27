@@ -7,6 +7,8 @@
             txtcodigoBreve.Text = ""
             txtDescripcion.Text = ""
 
+            rbtnNo.Checked = True
+
             dgbtabla.Rows.Clear()
 
             txtcodigoBreve.ReadOnly = False
@@ -48,6 +50,7 @@
                 With objPriceList
                     .codigoBreve_ = txtcodigoBreve.Text
                     .descripcion_ = txtDescripcion.Text
+                    .tipoConvenio_ = rbtnSi.Checked
                 End With
 
                 If objPriceList.RegistrarNuevaListaPrecios() = 1 Then
@@ -118,6 +121,7 @@
                     .codigo_ = txtcodigo.Text
                     .codigoBreve_ = txtcodigoBreve.Text
                     .descripcion_ = txtDescripcion.Text
+                    .tipoConvenio_ = rbtnSi.Checked
                 End With
 
                 If objPriceList.ModificarListaPrecios() = 1 Then
