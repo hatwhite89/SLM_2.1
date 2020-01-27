@@ -390,6 +390,7 @@ Partial Class frmDeposito
         Me.btnBuscarTipoConta.Name = "btnBuscarTipoConta"
         Me.btnBuscarTipoConta.Size = New System.Drawing.Size(21, 17)
         Me.btnBuscarTipoConta.TabIndex = 7
+        Me.btnBuscarTipoConta.Text = "..."
         Me.btnBuscarTipoConta.UseVisualStyleBackColor = True
         '
         'lblCodFormaPago
@@ -411,6 +412,7 @@ Partial Class frmDeposito
         Me.btnBuscarBanco.Name = "btnBuscarBanco"
         Me.btnBuscarBanco.Size = New System.Drawing.Size(21, 17)
         Me.btnBuscarBanco.TabIndex = 4
+        Me.btnBuscarBanco.Text = "..."
         Me.btnBuscarBanco.UseVisualStyleBackColor = True
         '
         'btnGuardar

@@ -147,8 +147,9 @@ Partial Class A_CategoriaProveedor
         Me.btnBuscarClas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscarClas.Location = New System.Drawing.Point(158, 82)
         Me.btnBuscarClas.Name = "btnBuscarClas"
-        Me.btnBuscarClas.Size = New System.Drawing.Size(20, 17)
+        Me.btnBuscarClas.Size = New System.Drawing.Size(27, 18)
         Me.btnBuscarClas.TabIndex = 14
+        Me.btnBuscarClas.Text = "..."
         Me.btnBuscarClas.UseVisualStyleBackColor = False
         '
         'txtClasifica

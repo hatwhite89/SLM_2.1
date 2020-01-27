@@ -266,6 +266,7 @@ Partial Class frmFormaPago
         Me.btnBuscarBanco.Name = "btnBuscarBanco"
         Me.btnBuscarBanco.Size = New System.Drawing.Size(20, 19)
         Me.btnBuscarBanco.TabIndex = 56
+        Me.btnBuscarBanco.Text = "..."
         Me.btnBuscarBanco.UseVisualStyleBackColor = False
         '
         'Button1
@@ -279,6 +280,7 @@ Partial Class frmFormaPago
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(20, 19)
         Me.Button1.TabIndex = 55
+        Me.Button1.Text = "..."
         Me.Button1.UseVisualStyleBackColor = False
         '
         'GroupBox1

@@ -295,6 +295,7 @@ Partial Class frmPagos
         Me.btnBuscarFormaPago.Name = "btnBuscarFormaPago"
         Me.btnBuscarFormaPago.Size = New System.Drawing.Size(18, 18)
         Me.btnBuscarFormaPago.TabIndex = 21
+        Me.btnBuscarFormaPago.Text = "..."
         Me.btnBuscarFormaPago.UseVisualStyleBackColor = False
         '
         'btnGuardar

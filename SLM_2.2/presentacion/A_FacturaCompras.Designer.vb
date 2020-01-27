@@ -132,6 +132,7 @@ Partial Class A_FacturaCompras
         Me.btnBuscarTerminoPago.Name = "btnBuscarTerminoPago"
         Me.btnBuscarTerminoPago.Size = New System.Drawing.Size(21, 20)
         Me.btnBuscarTerminoPago.TabIndex = 7
+        Me.btnBuscarTerminoPago.Text = "..."
         Me.btnBuscarTerminoPago.UseVisualStyleBackColor = False
         '
         'txtMoneda

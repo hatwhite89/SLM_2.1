@@ -77,7 +77,10 @@ Public Class A_Cheques
         End Try
 
 
-        '::::: Registro de Retención :::::
+        ':::::::::::::::::: Registro de Retención ::::::::::::::::::
+
+
+
 
 
 
@@ -233,7 +236,6 @@ Public Class A_Cheques
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
 
-
         A_PrintCheque.Show()
 
         Dim nroCheque As String
@@ -252,12 +254,14 @@ Public Class A_Cheques
         objVistaCheque.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
         A_PrintCheque.crvImprimirCheque.ReportSource = objVistaCheque
 
-
     End Sub
 
     Private Sub A_Cheques_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         'frmMenuConta.Show()
     End Sub
+
+
+
 
     'Convertir numeros a letras para impresión de cheque
     Public NotInheritable Class Numalet
@@ -630,6 +634,6 @@ Public Class A_Cheques
             End If
         End Function
 
-    End Class
+    End Class 'Fin clase Numalet
 
 End Class

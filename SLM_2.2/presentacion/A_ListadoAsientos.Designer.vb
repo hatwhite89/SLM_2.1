@@ -22,12 +22,11 @@ Partial Class A_ListadoAsientos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListadoAsientos))
         Me.gbxAsientos = New System.Windows.Forms.GroupBox()
-        Me.lblCod = New System.Windows.Forms.Label()
-        Me.txtCod = New System.Windows.Forms.TextBox()
-        Me.dtAsientos = New System.Windows.Forms.DataGridView()
         Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.dtAsientos = New System.Windows.Forms.DataGridView()
+        Me.txtCod = New System.Windows.Forms.TextBox()
+        Me.lblCod = New System.Windows.Forms.Label()
         Me.gbxAsientos.SuspendLayout()
         CType(Me.dtAsientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,22 +44,20 @@ Partial Class A_ListadoAsientos
         Me.gbxAsientos.TabStop = False
         Me.gbxAsientos.Text = "Asientos Contables"
         '
-        'lblCod
+        'btnCancelar
         '
-        Me.lblCod.AutoSize = True
-        Me.lblCod.Location = New System.Drawing.Point(248, 25)
-        Me.lblCod.Name = "lblCod"
-        Me.lblCod.Size = New System.Drawing.Size(65, 13)
-        Me.lblCod.TabIndex = 0
-        Me.lblCod.Text = "Nro. Asiento"
-        '
-        'txtCod
-        '
-        Me.txtCod.Location = New System.Drawing.Point(319, 22)
-        Me.txtCod.MaxLength = 8
-        Me.txtCod.Name = "txtCod"
-        Me.txtCod.Size = New System.Drawing.Size(120, 20)
-        Me.txtCod.TabIndex = 1
+        Me.btnCancelar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCancelar.FlatAppearance.BorderSize = 0
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.ForeColor = System.Drawing.Color.Red
+        Me.btnCancelar.Location = New System.Drawing.Point(445, 22)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(20, 18)
+        Me.btnCancelar.TabIndex = 3
+        Me.btnCancelar.Text = "X"
+        Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'dtAsientos
         '
@@ -74,18 +71,22 @@ Partial Class A_ListadoAsientos
         Me.dtAsientos.Size = New System.Drawing.Size(464, 259)
         Me.dtAsientos.TabIndex = 2
         '
-        'btnCancelar
+        'txtCod
         '
-        Me.btnCancelar.BackColor = System.Drawing.Color.Transparent
-        Me.btnCancelar.BackgroundImage = CType(resources.GetObject("btnCancelar.BackgroundImage"), System.Drawing.Image)
-        Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCancelar.FlatAppearance.BorderSize = 0
-        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(445, 22)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(20, 18)
-        Me.btnCancelar.TabIndex = 3
-        Me.btnCancelar.UseVisualStyleBackColor = False
+        Me.txtCod.Location = New System.Drawing.Point(319, 22)
+        Me.txtCod.MaxLength = 8
+        Me.txtCod.Name = "txtCod"
+        Me.txtCod.Size = New System.Drawing.Size(120, 20)
+        Me.txtCod.TabIndex = 1
+        '
+        'lblCod
+        '
+        Me.lblCod.AutoSize = True
+        Me.lblCod.Location = New System.Drawing.Point(248, 25)
+        Me.lblCod.Name = "lblCod"
+        Me.lblCod.Size = New System.Drawing.Size(65, 13)
+        Me.lblCod.TabIndex = 0
+        Me.lblCod.Text = "Nro. Asiento"
         '
         'A_ListadoAsientos
         '

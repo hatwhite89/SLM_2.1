@@ -22,7 +22,6 @@ Partial Class A_Cheques
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Cheques))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblEstado = New System.Windows.Forms.Label()
         Me.rbtnRechazado = New System.Windows.Forms.RadioButton()
@@ -620,7 +619,7 @@ Partial Class A_Cheques
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
         Me.btnGuardar.Location = New System.Drawing.Point(618, 428)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(75, 40)
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 27)
         Me.btnGuardar.TabIndex = 2
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
@@ -633,22 +632,22 @@ Partial Class A_Cheques
         Me.btnCancelar.ForeColor = System.Drawing.Color.White
         Me.btnCancelar.Location = New System.Drawing.Point(699, 428)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 40)
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 27)
         Me.btnCancelar.TabIndex = 3
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'btnImprimir
         '
-        Me.btnImprimir.BackColor = System.Drawing.Color.Transparent
-        Me.btnImprimir.BackgroundImage = CType(resources.GetObject("btnImprimir.BackgroundImage"), System.Drawing.Image)
+        Me.btnImprimir.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnImprimir.FlatAppearance.BorderSize = 0
         Me.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnImprimir.Location = New System.Drawing.Point(16, 428)
         Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(48, 40)
+        Me.btnImprimir.Size = New System.Drawing.Size(65, 27)
         Me.btnImprimir.TabIndex = 4
+        Me.btnImprimir.Text = "Imprimir"
         Me.btnImprimir.UseVisualStyleBackColor = False
         Me.btnImprimir.Visible = False
         '
@@ -666,7 +665,7 @@ Partial Class A_Cheques
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(785, 480)
+        Me.ClientSize = New System.Drawing.Size(785, 463)
         Me.Controls.Add(Me.lblForm)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnCancelar)
