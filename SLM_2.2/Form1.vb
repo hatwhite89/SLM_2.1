@@ -14,24 +14,25 @@
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
+
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
 
         Try
             E_DetalleExamenes.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
+
     End Sub
     Private Sub btnFacturacion_Click(sender As Object, e As EventArgs) Handles btnFacturacion.Click
-
 
         Try
             M_MenuFacturacion.ShowDialog()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
+
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -47,20 +48,20 @@
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
+
     End Sub
 
     Private Sub btnPagos_Click(sender As Object, e As EventArgs) Handles btnPagos.Click
-
 
         Try
             A_ListarPagos.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
 
         Try
             A_Chequera.Show()
@@ -80,13 +81,13 @@
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
-
         Try
 
             A_ListadoFacturaCompra.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
+
     End Sub
 
     Private Sub btnFormaPago_Click(sender As Object, e As EventArgs) Handles btnFormaPago.Click

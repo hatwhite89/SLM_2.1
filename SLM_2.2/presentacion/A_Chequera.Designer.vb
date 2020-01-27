@@ -92,6 +92,7 @@ Partial Class A_Chequera
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(23, 17)
         Me.Button1.TabIndex = 15
+        Me.Button1.Text = "..."
         Me.Button1.UseVisualStyleBackColor = False
         '
         'mtxtNumInicio
@@ -114,6 +115,7 @@ Partial Class A_Chequera
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(23, 17)
         Me.btnBuscar.TabIndex = 13
+        Me.btnBuscar.Text = "..."
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'btnGuardar

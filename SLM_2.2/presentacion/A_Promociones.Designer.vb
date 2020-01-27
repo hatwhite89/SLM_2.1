@@ -22,7 +22,6 @@ Partial Class A_Promociones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Promociones))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -120,15 +119,15 @@ Partial Class A_Promociones
         '
         'btnCancelar
         '
-        Me.btnCancelar.BackColor = System.Drawing.Color.Transparent
-        Me.btnCancelar.BackgroundImage = CType(resources.GetObject("btnCancelar.BackgroundImage"), System.Drawing.Image)
+        Me.btnCancelar.BackColor = System.Drawing.Color.DimGray
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCancelar.FlatAppearance.BorderSize = 0
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Location = New System.Drawing.Point(276, 193)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(20, 18)
+        Me.btnCancelar.Size = New System.Drawing.Size(59, 21)
         Me.btnCancelar.TabIndex = 26
+        Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'pbxPromo
@@ -160,15 +159,15 @@ Partial Class A_Promociones
         '
         'btnBuscarImage
         '
-        Me.btnBuscarImage.BackColor = System.Drawing.Color.Transparent
-        Me.btnBuscarImage.BackgroundImage = CType(resources.GetObject("btnBuscarImage.BackgroundImage"), System.Drawing.Image)
+        Me.btnBuscarImage.BackColor = System.Drawing.Color.DimGray
         Me.btnBuscarImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscarImage.FlatAppearance.BorderSize = 0
         Me.btnBuscarImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscarImage.Location = New System.Drawing.Point(276, 166)
         Me.btnBuscarImage.Name = "btnBuscarImage"
-        Me.btnBuscarImage.Size = New System.Drawing.Size(18, 18)
+        Me.btnBuscarImage.Size = New System.Drawing.Size(59, 21)
         Me.btnBuscarImage.TabIndex = 22
+        Me.btnBuscarImage.Text = "Buscar"
         Me.btnBuscarImage.UseVisualStyleBackColor = False
         '
         'Label5

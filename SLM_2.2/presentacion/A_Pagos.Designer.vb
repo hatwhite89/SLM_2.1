@@ -295,6 +295,7 @@ Partial Class frmPagos
         Me.btnBuscarFormaPago.Name = "btnBuscarFormaPago"
         Me.btnBuscarFormaPago.Size = New System.Drawing.Size(18, 18)
         Me.btnBuscarFormaPago.TabIndex = 21
+        Me.btnBuscarFormaPago.Text = "..."
         Me.btnBuscarFormaPago.UseVisualStyleBackColor = False
         '
         'btnGuardar
@@ -413,8 +414,9 @@ Partial Class frmPagos
         Me.lblTotalSuma.AutoSize = True
         Me.lblTotalSuma.Location = New System.Drawing.Point(555, 240)
         Me.lblTotalSuma.Name = "lblTotalSuma"
-        Me.lblTotalSuma.Size = New System.Drawing.Size(0, 13)
+        Me.lblTotalSuma.Size = New System.Drawing.Size(10, 13)
         Me.lblTotalSuma.TabIndex = 22
+        Me.lblTotalSuma.Text = "-"
         '
         'Label4
         '

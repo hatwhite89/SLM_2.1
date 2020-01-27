@@ -47,7 +47,7 @@
             Dim Total As Single
             Dim Col As Integer = 2
             For Each row As DataGridViewRow In dtDetalleAsiento.Rows
-                Total += Val(row.Cells(Col).Value)
+                Total += Val(row.Cells(2).Value)
             Next
             txtTotalDebe.Text = Total.ToString
 
@@ -55,9 +55,9 @@
             Dim Total2 As Single
             Dim Col2 As Integer = 3
             For Each row As DataGridViewRow In dtDetalleAsiento.Rows
-                Total2 += Val(row.Cells(Col2).Value)
+                Total2 += Val(row.Cells(3).Value)
             Next
-            txtTotalHaber.Text = Total.ToString
+            txtTotalHaber.Text = Total2.ToString
 
         Catch ex As Exception
             MsgBox("Error:" + ex.Message)
@@ -77,4 +77,5 @@
 
 
     End Sub
+
 End Class

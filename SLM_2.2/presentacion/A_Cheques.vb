@@ -76,6 +76,16 @@ Public Class A_Cheques
             MsgBox("Error al guardar. Detalle: " + ex.Message)
         End Try
 
+
+        ':::::::::::::::::: Registro de Retención ::::::::::::::::::
+
+
+
+
+
+
+
+
     End Sub
     Private Sub txtcodProvee_DoubleClick(sender As Object, e As EventArgs) Handles txtcodProvee.DoubleClick
         A_ListarProveedores.ShowDialog()
@@ -226,7 +236,6 @@ Public Class A_Cheques
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
 
-
         A_PrintCheque.Show()
 
         Dim nroCheque As String
@@ -245,23 +254,11 @@ Public Class A_Cheques
         objVistaCheque.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
         A_PrintCheque.crvImprimirCheque.ReportSource = objVistaCheque
 
-
     End Sub
 
     Private Sub A_Cheques_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         'frmMenuConta.Show()
     End Sub
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -637,6 +634,6 @@ Public Class A_Cheques
             End If
         End Function
 
-    End Class
+    End Class 'Fin clase Numalet
 
 End Class

@@ -112,14 +112,12 @@
                                     Dim cod As DataRow
                                     With detalleAsiento
 
-
-
                                         codasi = asiento.capturarCodAsiento
                                         cod = codasi.Rows(0)
 
                                         .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
-                                        .Debe_ = 0.0
-                                        .Haber_ = Convert.ToDouble(txtContado.Text)
+                                        .Debe_ = Convert.ToDouble(txtTotalDep.Text)
+                                        .Haber_ = 0.0
 
                                         Dim dt As DataTable
                                         Dim row As DataRow
@@ -139,8 +137,8 @@
                                     With detalleAsiento2
 
                                         .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
-                                        .Debe_ = Convert.ToDouble(txtContado.Text)
-                                        .Haber_ = 0.0
+                                        .Debe_ = 0.0
+                                        .Haber_ = Convert.ToDouble(txtContado.Text)
 
                                         Dim dt As DataTable
                                         Dim row As DataRow
@@ -150,6 +148,19 @@
 
                                         .Cuenta_ = Convert.ToInt32(row("cuenta"))
 
+                                        .registrarDetalleAsiento()
+
+                                    End With
+
+                                    'Partida de Comisión
+                                    Dim comision As New ClsDetalleAsiento
+
+                                    With comision
+
+                                        .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
+                                        .Debe_ = Convert.ToDouble(txtComision.Text)
+                                        .Haber_ = 0.0
+                                        .Cuenta_ = 660005
                                         .registrarDetalleAsiento()
 
                                     End With
@@ -216,8 +227,8 @@
                                         cod = codasi.Rows(0)
 
                                         .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
-                                        .Debe_ = 0.0
-                                        .Haber_ = Convert.ToDouble(txtContado.Text)
+                                        .Debe_ = Convert.ToDouble(txtContado.Text)
+                                        .Haber_ = 0.0
 
                                         Dim dt As DataTable
                                         Dim row As DataRow
@@ -237,8 +248,8 @@
                                     With detalleAsiento2
 
                                         .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
-                                        .Debe_ = Convert.ToDouble(txtContado.Text)
-                                        .Haber_ = 0.0
+                                        .Debe_ = 0.0
+                                        .Haber_ = Convert.ToDouble(txtContado.Text)
 
                                         Dim dt As DataTable
                                         Dim row As DataRow
@@ -289,7 +300,6 @@
             End If
 
         End If
-
 
     End Sub
     Private Sub btnBuscarBanco_Click(sender As Object, e As EventArgs) Handles btnBuscarBanco.Click
@@ -508,4 +518,7 @@
         txtCajero.BackColor = Color.White
     End Sub
 
+    Private Sub txtContado_TextChanged(sender As Object, e As EventArgs)
+        txtTotalDep.Text = txtContado.Text
+    End Sub
 End Class
