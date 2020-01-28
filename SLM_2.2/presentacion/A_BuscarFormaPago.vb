@@ -1,6 +1,5 @@
 ﻿Public Class A_BuscarFormaPago
 
-
     Private Sub A_BuscarFormaPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'llenar DataGrid de formas de pago
@@ -32,13 +31,14 @@
             Me.Close()
         End If
 
-
     End Sub
 
     Private Sub A_BuscarFormaPago_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
         End If
+
     End Sub
 
 End Class

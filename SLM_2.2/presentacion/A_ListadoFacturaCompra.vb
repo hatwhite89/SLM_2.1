@@ -9,8 +9,8 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnCrearFactura.Click
-        A_FacturaCompras.ShowDialog()
         Me.Close()
+        A_FacturaCompras.Show()
     End Sub
 
     Private Sub dtFacturasCompra_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtFacturasCompra.CellClick
@@ -32,7 +32,7 @@
             A_FacturaCompras.dtpTransaccion.Value = row("fechaTransaccion")
             A_FacturaCompras.dtpVencimiento.Value = row("fechaVencimiento")
             A_FacturaCompras.txtNroFactura.Text = row("nroFactura")
-
+            A_FacturaCompras.lblTotal.Text = row("total")
 
             'Mostrar detalle de factura
             Dim DetalleFac As New ClsDetalleFacturaCompra
@@ -64,9 +64,18 @@
 
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
         'Busqueda de facturas por nombre de proveedor
-        FacCompra.Nombre_Proveedor = txtBusqueda.Text
 
-        dtFacturasCompra.DataSource = FacCompra.buscarFacturaProveedor()
+
+        Try
+
+            FacCompra.Nombre_Proveedor = txtBusqueda.Text
+
+            dtFacturasCompra.DataSource = FacCompra.buscarFacturaProveedor()
+
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
 
@@ -87,5 +96,6 @@
             e.Handled = True
         End If
     End Sub
+
 
 End Class

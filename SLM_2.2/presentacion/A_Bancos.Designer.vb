@@ -22,7 +22,6 @@ Partial Class A_Bancos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Bancos))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnGuardar = New System.Windows.Forms.Button()
@@ -219,20 +218,20 @@ Partial Class A_Bancos
         '
         'btnCancelar
         '
-        Me.btnCancelar.BackColor = System.Drawing.Color.Transparent
-        Me.btnCancelar.BackgroundImage = CType(resources.GetObject("btnCancelar.BackgroundImage"), System.Drawing.Image)
+        Me.btnCancelar.BackColor = System.Drawing.Color.DimGray
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCancelar.FlatAppearance.BorderSize = 0
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(305, 23)
+        Me.btnCancelar.Location = New System.Drawing.Point(303, 23)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(20, 18)
+        Me.btnCancelar.Size = New System.Drawing.Size(64, 18)
         Me.btnCancelar.TabIndex = 2
+        Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'txtBusquedaBanco
         '
-        Me.txtBusquedaBanco.Location = New System.Drawing.Point(138, 22)
+        Me.txtBusquedaBanco.Location = New System.Drawing.Point(104, 22)
         Me.txtBusquedaBanco.MaxLength = 20
         Me.txtBusquedaBanco.Name = "txtBusquedaBanco"
         Me.txtBusquedaBanco.Size = New System.Drawing.Size(165, 20)
@@ -241,7 +240,7 @@ Partial Class A_Bancos
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(43, 25)
+        Me.Label5.Location = New System.Drawing.Point(9, 25)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(93, 13)
         Me.Label5.TabIndex = 0

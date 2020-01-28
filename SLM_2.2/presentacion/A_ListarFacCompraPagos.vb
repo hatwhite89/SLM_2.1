@@ -36,7 +36,5 @@
 
     End Sub
 
-    Private Sub dtFacturasCompra_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtFacturasCompra.CellContentClick
 
-    End Sub
 End Class

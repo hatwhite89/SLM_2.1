@@ -40,6 +40,9 @@ Partial Class A_CategoriaProveedor
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.txtBusqueda = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.dtCategorias = New System.Windows.Forms.DataGridView()
         Me.gbxInfo.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -222,13 +225,41 @@ Partial Class A_CategoriaProveedor
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnCancelar)
+        Me.GroupBox1.Controls.Add(Me.txtBusqueda)
+        Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.dtCategorias)
         Me.GroupBox1.Location = New System.Drawing.Point(10, 162)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(559, 232)
+        Me.GroupBox1.Size = New System.Drawing.Size(559, 261)
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Categorias de Proveedor"
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Location = New System.Drawing.Point(228, 22)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 20)
+        Me.btnCancelar.TabIndex = 3
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'txtBusqueda
+        '
+        Me.txtBusqueda.Location = New System.Drawing.Point(53, 22)
+        Me.txtBusqueda.Name = "txtBusqueda"
+        Me.txtBusqueda.Size = New System.Drawing.Size(169, 20)
+        Me.txtBusqueda.TabIndex = 2
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 25)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(43, 13)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Buscar:"
         '
         'dtCategorias
         '
@@ -238,7 +269,7 @@ Partial Class A_CategoriaProveedor
         Me.dtCategorias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtCategorias.GridColor = System.Drawing.Color.White
-        Me.dtCategorias.Location = New System.Drawing.Point(6, 19)
+        Me.dtCategorias.Location = New System.Drawing.Point(6, 48)
         Me.dtCategorias.Name = "dtCategorias"
         Me.dtCategorias.ReadOnly = True
         Me.dtCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -250,7 +281,7 @@ Partial Class A_CategoriaProveedor
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(578, 403)
+        Me.ClientSize = New System.Drawing.Size(578, 430)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -261,6 +292,7 @@ Partial Class A_CategoriaProveedor
         Me.gbxInfo.ResumeLayout(False)
         Me.gbxInfo.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.dtCategorias, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -284,4 +316,7 @@ Partial Class A_CategoriaProveedor
     Friend WithEvents txtClasifica As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents btnBuscarClas As Button
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents txtBusqueda As TextBox
+    Friend WithEvents Label6 As Label
 End Class

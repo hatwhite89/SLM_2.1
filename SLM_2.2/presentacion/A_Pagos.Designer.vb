@@ -412,7 +412,7 @@ Partial Class frmPagos
         'lblTotalSuma
         '
         Me.lblTotalSuma.AutoSize = True
-        Me.lblTotalSuma.Location = New System.Drawing.Point(555, 240)
+        Me.lblTotalSuma.Location = New System.Drawing.Point(587, 240)
         Me.lblTotalSuma.Name = "lblTotalSuma"
         Me.lblTotalSuma.Size = New System.Drawing.Size(10, 13)
         Me.lblTotalSuma.TabIndex = 22
@@ -429,15 +429,15 @@ Partial Class frmPagos
         '
         'btnRegresar
         '
-        Me.btnRegresar.BackColor = System.Drawing.Color.Transparent
-        Me.btnRegresar.BackgroundImage = CType(resources.GetObject("btnRegresar.BackgroundImage"), System.Drawing.Image)
+        Me.btnRegresar.BackColor = System.Drawing.Color.DimGray
         Me.btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnRegresar.FlatAppearance.BorderSize = 0
         Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegresar.Location = New System.Drawing.Point(12, 424)
+        Me.btnRegresar.Location = New System.Drawing.Point(12, 430)
         Me.btnRegresar.Name = "btnRegresar"
-        Me.btnRegresar.Size = New System.Drawing.Size(33, 37)
+        Me.btnRegresar.Size = New System.Drawing.Size(70, 23)
         Me.btnRegresar.TabIndex = 27
+        Me.btnRegresar.Text = "Regresar"
         Me.btnRegresar.UseVisualStyleBackColor = False
         '
         'frmPagos

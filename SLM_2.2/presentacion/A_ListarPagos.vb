@@ -2,6 +2,7 @@
 
     Dim pagos As New ClsPago
 
+
     Private Sub A_ListarPagos_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
@@ -10,14 +11,18 @@
 
     Private Sub A_ListarPagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Cargar listado de pagos
+        Try
+            dtPagos.DataSource = pagos.listarPagos
 
-        dtPagos.DataSource = pagos.listarPagos
+        Catch ex As Exception
+            MsgBox("Error al cargar listado de Pagos. Error: " + ex.Message)
+        End Try
+
 
     End Sub
 
-
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
         frmPagos.Show()
         Me.Close()
 
@@ -42,10 +47,8 @@
             frmPagos.txtCodOrden.Text = row("codOrden")
             frmPagos.lblTotalSuma.Text = row("sumaTotal")
 
-
-
             'Listar detalle de pago
-
+            frmPagos.dtDetallePagos.Enabled = True
             'mostrar detalle de factura
             Dim dpago As New ClsDetallePago
             Dim dtpago As New DataTable
@@ -59,21 +62,37 @@
                 frmPagos.dtDetallePagos.Rows.Add(New String() {(row2("codproveedor")), CStr(row2("nombreproveedor")), CStr(row2("moneda")), CStr(row2("total")), CStr(row2("formapago")), CStr(row2("nrocheque"))})
             Next
 
-
-
-
-
-
-
-
             frmPagos.Show()
 
         Catch ex As Exception
-            MsgBox("Hubo un error al cargar la información. Detalle: " + ex.Message)
+            MsgBox("Hubo un error al cargar la información del pago seleccionado. Detalle: " + ex.Message)
         End Try
 
         Me.Close()
     End Sub
 
+    Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
 
+        Try
+
+            If txtBusqueda.Text <> "" Then
+
+                pagos.Cod_Pago = Convert.ToInt32(txtBusqueda.Text)
+                dtPagos.DataSource = pagos.buscarPago
+
+            ElseIf txtBusqueda.Text = "" Then
+
+                dtPagos.DataSource = pagos.listarPagos
+
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub btnCancelarBusqueda_Click(sender As Object, e As EventArgs) Handles btnCancelarBusqueda.Click
+        dtPagos.DataSource = pagos.listarPagos
+    End Sub
 End Class

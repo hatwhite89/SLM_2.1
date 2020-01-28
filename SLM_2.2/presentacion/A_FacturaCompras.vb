@@ -13,7 +13,7 @@
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        If txtNroFactura.Text <> "" And txtCodProveedor.Text <> "" And txtTerminoPago.Text <> "" And txtTotal.Text <> "" Then
+        If txtNroFactura.Text <> "" And txtCodProveedor.Text <> "" And txtTerminoPago.Text <> "" And txtTotal.Text <> "" And txtTotal.Text = lblTotal.Text Then
 
             Try
                 'Registrar nueva factura de compra
@@ -28,6 +28,7 @@
                     .Moned_a = txtMoneda.Text
                     .Terminos_Pago = txtTerminoPago.Text
                     .Tota_l = txtTotal.Text
+
                     .Nro_Factura = txtNroFactura.Text
 
                 End With
@@ -64,7 +65,6 @@
                         Else
                             MsgBox("Error. El código esta duplicado.")
                         End If
-                        MessageBox.Show("La factura se registro exitosamente.")
 
                     Next
 
@@ -76,14 +76,14 @@
 
                 End If ' if detalle de factura
 
-
             Catch ex As Exception
                 MessageBox.Show("Error al guardar la factura de compra. Detalles: " + ex.Message)
             End Try
+            MessageBox.Show("La factura se registro exitosamente.")
 
         Else 'if campos vacios
 
-            MsgBox("Existen campos vacíos. No se guardo la factura.")
+            MsgBox("Existen campos vacíos o hubo un error.")
 
             If txtNroFactura.Text = "" Then
                 txtNroFactura.BackColor = Color.Red
@@ -96,6 +96,10 @@
                 txtTotal.BackColor = Color.Red
             ElseIf txtMoneda.Text = "" Then
                 txtMoneda.BackColor = Color.Red
+            ElseIf txtTotal.Text <> lblTotal.Text Then
+                MsgBox("Los totales no coinciden.Revise el detalle de Factura de Compra.")
+                txtTotal.BackColor = Color.Yellow
+                lblTotal.BackColor = Color.Yellow
             End If
 
         End If 'if campos vacios
@@ -261,6 +265,16 @@
         cmb.Items.Add("Consignado")
         cmb.Name = "cbx"
 
+
+        If dtDetalleFactura.Columns.Contains("btnEliminar") = False Then
+            Dim btn As New DataGridViewButtonColumn()
+            dtDetalleFactura.Columns.Add(btn)
+            btn.HeaderText = "Eliminar"
+            btn.Text = "Eliminar"
+            btn.Name = "btnEliminar"
+            btn.UseColumnTextForButtonValue = True
+        End If
+
     End Sub
 
     Private Sub A_FacturaCompras_Closed(sender As Object, e As EventArgs) Handles Me.Closed
@@ -319,6 +333,98 @@
             e.Handled = False
         Else
             e.Handled = True
+        End If
+    End Sub
+
+    Private Sub dtDetalleFactura_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellEndEdit
+
+
+        If e.ColumnIndex = 0 Then
+
+
+            Try
+
+                Dim cuenta As New ClsCuenta
+                Dim data As DataTable
+                Dim rows As DataRow
+
+                cuenta.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(e.RowIndex).Cells(0).Value)
+
+                data = cuenta.Comprobar
+                rows = data.Rows(0)
+
+                dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
+                dtDetalleFactura.Rows.Add(New String() {cuenta.Cuent_a, "", "", rows("nombre")})
+
+            Catch ex As Exception
+
+                Try
+
+                    dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
+                Catch ex2 As Exception
+
+                End Try
+
+            End Try
+
+        ElseIf e.ColumnIndex = 4 Then
+
+            Dim Total As Double
+            Dim Col As Integer = 4
+            For Each row As DataGridViewRow In dtDetalleFactura.Rows
+                Total += Val(row.Cells(Col).Value)
+            Next
+            lblTotal.Text = Total
+
+            txtTotal.BackColor = Color.White
+            lblTotal.BackColor = Color.Transparent
+
+        End If
+
+    End Sub
+
+    Private Sub dtDetalleFactura_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dtDetalleFactura.CellMouseClick
+
+        If e.ColumnIndex = 1 Then
+
+            Try
+
+                Dim cuenta As New ClsCuenta
+                Dim data As DataTable
+                Dim rows As DataRow
+
+                cuenta.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(e.RowIndex).Cells(0).Value)
+
+                data = cuenta.Comprobar
+                rows = data.Rows(0)
+
+                dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
+                dtDetalleFactura.Rows.Add(New String() {cuenta.Cuent_a, "", "", rows("nombre")})
+
+            Catch ex As Exception
+
+            End Try
+
+        End If
+
+
+
+
+    End Sub
+
+
+
+    Private Sub dtDetalleFactura_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellClick
+        If e.ColumnIndex = 6 Then
+            Try
+                Dim n As String = MsgBox("¿Desea eliminar la cuenta de la factura?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+                    dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
+
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message, MsgBoxStyle.Critical)
+            End Try
         End If
     End Sub
 End Class

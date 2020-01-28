@@ -17,30 +17,47 @@
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        'Comprobar existencia de Clasificacion
-        Dim dt As New DataTable
-        Dim Cate As New ClsTipoClasificacion
 
-        Cate.Codigo1 = Convert.ToInt32(txtClasifica.Text)
+        If txtCodBreve.Text <> "" And txtDescrip.Text <> "" And txtClasifica.Text <> "" Then
 
-        dt = Cate.BuscarTipoClasificacionCode
+            'Comprobar existencia de Clasificacion
+            Dim dt As New DataTable
+            Dim Cate As New ClsTipoClasificacion
 
-        If dt.Rows.Count > 0 Then
-            'Ingresar nueva categoria en base de datos
-            With Categoria
-                .Codig_o = txtCodBreve.Text
-                .Descripcio_n = txtDescrip.Text
-                .Cta_Acreedor = txtAcreedores.Text
-                .Cta_Anticipos = txtAnticipos.Text
-                .Cod_Clasi = Convert.ToInt32(txtClasifica.Text)
-                .registrarNuevaCategoria()
-            End With
-        Else
-            MsgBox("El Tipo de Clasificación no existe o hubo un error al seleccionarla.")
+            Cate.Codigo1 = Convert.ToInt32(txtClasifica.Text)
+
+            dt = Cate.BuscarTipoClasificacionCode
+
+            If dt.Rows.Count > 0 Then
+                'Ingresar nueva categoria en base de datos
+                With Categoria
+                    .Codig_o = txtCodBreve.Text
+                    .Descripcio_n = txtDescrip.Text
+                    .Cta_Acreedor = txtAcreedores.Text
+                    .Cta_Anticipos = txtAnticipos.Text
+                    .Cod_Clasi = Convert.ToInt32(txtClasifica.Text)
+                    .registrarNuevaCategoria()
+                End With
+            Else
+                MsgBox("El Tipo de Clasificación no existe o hubo un error al seleccionarla.")
+
+            End If
+
+            dtCategorias.DataSource = Categoria.listarCategoriasProveedor
+
+        ElseIf txtCodBreve.Text = "" Then
+            MsgBox("Existen campos vacíos.")
+            txtCodBreve.BackColor = Color.Red
+
+        ElseIf txtDescrip.Text = "" Then
+            MsgBox("Existen campos vacíos.")
+            txtDescrip.BackColor = Color.Red
+
+        ElseIf txtClasifica.Text = "" Then
+            MsgBox("Existen campos vacíos.")
+            txtClasifica.BackColor = Color.Red
 
         End If
-
-        dtCategorias.DataSource = Categoria.listarCategoriasProveedor
 
     End Sub
 
@@ -117,13 +134,64 @@
         txtAnticipos.Text = ""
         txtClasifica.Text = ""
 
+        txtCodBreve.BackColor = Color.White
+        txtDescrip.BackColor = Color.White
+        txtClasifica.BackColor = Color.White
+
     End Sub
 
     Private Sub btnBuscarClas_Click(sender As Object, e As EventArgs) Handles btnBuscarClas.Click
         A_ListarTipoClasificacion.ShowDialog()
     End Sub
 
-    Private Sub A_CategoriaProveedor_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        'frmMenuConta.Show()
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+
+        Limpiar()
+        btnCrear.Visible = False
+        btnModificar.Visible = False
+        btnGuardar.Visible = True
+        dtCategorias.DataSource = Categoria.listarCategoriasProveedor
+
+    End Sub
+
+    Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
+
+        Try
+
+            If txtBusqueda.Text <> "" Then
+
+                Categoria.Descripcio_n = txtBusqueda.Text
+
+                dtCategorias.DataSource = Categoria.buscar()
+            Else
+
+                dtCategorias.DataSource = Categoria.listarCategoriasProveedor
+
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
+
+
+    End Sub
+
+    Private Sub txtCodBreve_TextChanged(sender As Object, e As EventArgs) Handles txtCodBreve.TextChanged
+        If txtCodBreve.BackColor = Color.Red Then
+            txtCodBreve.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub txtDescrip_TextChanged(sender As Object, e As EventArgs) Handles txtDescrip.TextChanged
+        If txtDescrip.BackColor = Color.Red Then
+            txtDescrip.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub txtClasifica_TextChanged(sender As Object, e As EventArgs) Handles txtClasifica.TextChanged
+        If txtClasifica.BackColor = Color.Red Then
+            txtClasifica.BackColor = Color.White
+        End If
     End Sub
 End Class

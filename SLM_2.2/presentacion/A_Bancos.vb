@@ -124,6 +124,10 @@
 
             End With
 
+            If txtBusquedaBanco.Text = "" Then
+                dtBancos.DataSource = Banco.listarBancos
+            End If
+
         Catch ex As Exception
         End Try
     End Sub
@@ -185,6 +189,5 @@
             txtNombreBanco.BackColor = Color.White
         End If
     End Sub
-
 
 End Class
