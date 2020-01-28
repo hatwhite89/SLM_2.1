@@ -24,7 +24,7 @@ Partial Class M_Arqueos
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtcodigoMaquina = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnGenerar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -43,21 +43,21 @@ Partial Class M_Arqueos
         Me.txtcodigoMaquina.Size = New System.Drawing.Size(159, 22)
         Me.txtcodigoMaquina.TabIndex = 1
         '
-        'Button1
+        'btnGenerar
         '
-        Me.Button1.Location = New System.Drawing.Point(364, 66)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnGenerar.Location = New System.Drawing.Point(364, 66)
+        Me.btnGenerar.Name = "btnGenerar"
+        Me.btnGenerar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGenerar.TabIndex = 2
+        Me.btnGenerar.Text = "Generar"
+        Me.btnGenerar.UseVisualStyleBackColor = True
         '
         'M_Arqueos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnGenerar)
         Me.Controls.Add(Me.txtcodigoMaquina)
         Me.Controls.Add(Me.Label1)
         Me.Name = "M_Arqueos"
@@ -69,5 +69,5 @@ Partial Class M_Arqueos
 
     Friend WithEvents Label1 As Label
     Friend WithEvents txtcodigoMaquina As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnGenerar As Button
 End Class

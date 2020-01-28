@@ -7,6 +7,7 @@ Public Class M_Factura
     Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
         M_ClienteVentana.Close()
         Me.Close()
+        M_BuscarFactura.Visible = True
     End Sub
     Private Sub btnbuscarMedico_Click(sender As Object, e As EventArgs) Handles btnbuscarMedico.Click
         M_ListarMedicos.ShowDialog()
@@ -28,7 +29,7 @@ Public Class M_Factura
                 txtnombreCliente.Text = CStr(row("nombreCompleto"))
                 lblcodePriceList.Text = CStr(row("codigoListaPrecios"))
                 lblFechaNacimiento.Text = CStr(row("fechaNacimiento"))
-                MsgBox(CStr(row("tipoConvenio")))
+                'MsgBox(CStr(row("tipoConvenio")))
                 If (row("tipoConvenio")) Then
                     txtcodigoConvenio.Text = CStr(row("descripcionLp"))
                 Else
@@ -310,6 +311,12 @@ Public Class M_Factura
         M_TerminosPago.ShowDialog()
     End Sub
     Private Sub M_Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Timer1.Interval = 3000
+        Timer1.Start()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        'MsgBox("Entra despues de 3 seg")
         M_ClienteVentana.Show()
         If dgblistadoExamenes.Columns.Contains("btnEliminar") = False Then
             Dim btn As New DataGridViewButtonColumn()
@@ -319,7 +326,7 @@ Public Class M_Factura
             btn.Name = "btnEliminar"
             btn.UseColumnTextForButtonValue = True
         End If
-        'totalFactura()
+        Timer1.Stop()
     End Sub
     Private Sub txtconvenio_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoConvenio.TextChanged
         M_ClienteVentana.txtnombreConvenio.Text = txtcodigoConvenio.Text
@@ -827,19 +834,6 @@ Public Class M_Factura
             'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
         End Try
     End Sub
-
-    'Private Sub btnimprimirComprobante_Click(sender As Object, e As EventArgs) Handles btnimprimirComprobante.Click
-    '    If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
-    '        'le asigno un valor a los parametros del procedimiento almacenado
-    '        Dim form As New M_ComprobanteEntrega
-    '        form.numeroFactura = Convert.ToInt64(txtnumeroFactura.Text)
-    '        form.fechaNacimiento = Convert.ToDateTime(lblFechaNacimiento.Text)
-    '        'muestro el reporte
-    '        form.ShowDialog()
-    '    Else
-    '        MsgBox("Debe estar creada o guardada la factura para poder imprimir el comprobante de entrega.", MsgBoxStyle.Critical)
-    '    End If
-    'End Sub
 
     Private Sub enviarCorreo()
         'in the shadows of the moon

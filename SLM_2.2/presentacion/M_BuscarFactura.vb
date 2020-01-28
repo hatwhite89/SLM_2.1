@@ -72,6 +72,7 @@
                     M_Factura.btnActualizar.Enabled = False
                 End If
                 'Me.Close()
+                Me.Hide()
                 M_Factura.ShowDialog()
             End If
         Catch ex As Exception

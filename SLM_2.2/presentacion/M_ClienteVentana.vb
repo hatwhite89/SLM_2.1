@@ -4,7 +4,7 @@
     Dim cont As Integer = 9
     Dim row As DataRow
     Private Sub M_ClienteVentana_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Timer1.Interval = 3000
+        Timer1.Interval = 5000
         Timer1.Start()
 
         Try
@@ -23,17 +23,12 @@
         Try
             If (cont < dt.Rows.Count) Then
                 row = dt.Rows(cont)
+                cont += 1
                 If IsDBNull(row("img")) = False Then
                     pbxImagenes.Image = BytesToImagen(row("img"))
-                    cont += 1
                 End If
             Else
                 cont = 0
-                row = dt.Rows(cont)
-                If IsDBNull(row("img")) = False Then
-                    pbxImagenes.Image = BytesToImagen(row("img"))
-                    cont += 1
-                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
