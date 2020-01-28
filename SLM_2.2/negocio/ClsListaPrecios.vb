@@ -2,6 +2,7 @@
 Public Class ClsListaPrecios
     Dim descripcion, codigoBreve As String
     Dim codigo As Integer
+    Dim tipoConvenio As Boolean
     'Constructor
     Public Sub New()
 
@@ -30,6 +31,14 @@ Public Class ClsListaPrecios
             descripcion = value
         End Set
     End Property
+    Public Property tipoConvenio_ As Boolean
+        Get
+            Return tipoConvenio
+        End Get
+        Set(value As Boolean)
+            tipoConvenio = value
+        End Set
+    End Property
     Public Function RegistrarNuevaListaPrecios() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -47,6 +56,11 @@ Public Class ClsListaPrecios
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "descripcion" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = descripcion_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "tipoConvenio" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = tipoConvenio_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -90,6 +104,11 @@ Public Class ClsListaPrecios
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "descripcion" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = descripcion_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "tipoConvenio" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = tipoConvenio_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

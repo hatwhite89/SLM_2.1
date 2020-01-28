@@ -7,6 +7,7 @@ Public Class M_Factura
     Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
         M_ClienteVentana.Close()
         Me.Close()
+        M_BuscarFactura.Visible = True
     End Sub
     Private Sub btnbuscarMedico_Click(sender As Object, e As EventArgs) Handles btnbuscarMedico.Click
         M_ListarMedicos.ShowDialog()
@@ -28,7 +29,13 @@ Public Class M_Factura
                 txtnombreCliente.Text = CStr(row("nombreCompleto"))
                 lblcodePriceList.Text = CStr(row("codigoListaPrecios"))
                 lblFechaNacimiento.Text = CStr(row("fechaNacimiento"))
-                txtcodigoConvenio.Text = CStr(row("descripcionLp"))
+                'MsgBox(CStr(row("tipoConvenio")))
+                If (row("tipoConvenio")) Then
+                    txtcodigoConvenio.Text = CStr(row("descripcionLp"))
+                Else
+                    'lblcodePriceList.Text = "0"
+                    txtcodigoConvenio.Text = ""
+                End If
                 M_Cliente.lblcodeCategoria.Text = CStr(row("codigoCategoria"))
                 M_ClienteVentana.txtnombreCategoria.Text = M_Cliente.txtnombreCategoria.Text
                 txtcodigoCliente.BackColor = Color.White
@@ -38,6 +45,8 @@ Public Class M_Factura
                 txtnombreCliente.Text = ""
             End Try
         Else
+            lblcodePriceList.Text = "0"
+            txtcodigoConvenio.Text = ""
             txtcodigoCliente.Text = ""
             txtnombreCliente.Text = ""
             txtcodigoCliente.BackColor = Color.White
@@ -302,6 +311,12 @@ Public Class M_Factura
         M_TerminosPago.ShowDialog()
     End Sub
     Private Sub M_Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Timer1.Interval = 3000
+        Timer1.Start()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        'MsgBox("Entra despues de 3 seg")
         M_ClienteVentana.Show()
         If dgblistadoExamenes.Columns.Contains("btnEliminar") = False Then
             Dim btn As New DataGridViewButtonColumn()
@@ -311,7 +326,7 @@ Public Class M_Factura
             btn.Name = "btnEliminar"
             btn.UseColumnTextForButtonValue = True
         End If
-        'totalFactura()
+        Timer1.Stop()
     End Sub
     Private Sub txtconvenio_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoConvenio.TextChanged
         M_ClienteVentana.txtnombreConvenio.Text = txtcodigoConvenio.Text
@@ -554,7 +569,8 @@ Public Class M_Factura
                 txtcodigoCajero.Text = "1"
             End If
             If Trim(txtcodigoConvenio.Text) = "" Then
-                txtcodigoConvenio.Text = "1"
+                txtcodigoConvenio.Text = "0"
+                lblcodePriceList.Text = "0"
             End If
             If Trim(txtcodigoTerminal.Text) = "" Then
                 txtcodigoTerminal.Text = "1"
@@ -616,6 +632,7 @@ Public Class M_Factura
                     .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
                     .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
                 End With
+
                 If objFact.RegistrarNuevaFactura() = 1 Then
                     deshabilitar()
                     cbxok.Enabled = True
@@ -817,19 +834,6 @@ Public Class M_Factura
             'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
         End Try
     End Sub
-
-    'Private Sub btnimprimirComprobante_Click(sender As Object, e As EventArgs) Handles btnimprimirComprobante.Click
-    '    If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
-    '        'le asigno un valor a los parametros del procedimiento almacenado
-    '        Dim form As New M_ComprobanteEntrega
-    '        form.numeroFactura = Convert.ToInt64(txtnumeroFactura.Text)
-    '        form.fechaNacimiento = Convert.ToDateTime(lblFechaNacimiento.Text)
-    '        'muestro el reporte
-    '        form.ShowDialog()
-    '    Else
-    '        MsgBox("Debe estar creada o guardada la factura para poder imprimir el comprobante de entrega.", MsgBoxStyle.Critical)
-    '    End If
-    'End Sub
 
     Private Sub enviarCorreo()
         'in the shadows of the moon

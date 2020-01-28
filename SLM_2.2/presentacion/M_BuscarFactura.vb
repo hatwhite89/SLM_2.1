@@ -42,7 +42,9 @@
                 M_Factura.txtcodigoSede.Text = CStr(row("codigoSede"))
                 M_Factura.dtpfechaVto.Value = CStr(row("fechaVto"))
                 M_Factura.lblcodeSucursal.Text = CStr(row("codigoSucursal"))
-                'M_Factura.txtcodigoConvenio.Text = CStr(row("codigoConvenio"))
+
+                M_Factura.lblcodePriceList.Text = CStr(row("codigoConvenio"))
+
                 M_Factura.txtnumeroPoliza.Text = CStr(row("numeroPoliza"))
                 M_Factura.txtcodigoTerminal.Text = CStr(row("codigoTerminal"))
                 M_Factura.cbxentregarMedico.Checked = CStr(row("entregaMedico"))
@@ -70,6 +72,7 @@
                     M_Factura.btnActualizar.Enabled = False
                 End If
                 'Me.Close()
+                Me.Hide()
                 M_Factura.ShowDialog()
             End If
         Catch ex As Exception

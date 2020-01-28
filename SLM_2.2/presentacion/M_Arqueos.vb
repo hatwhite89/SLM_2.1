@@ -1,5 +1,5 @@
 ﻿Public Class M_Arqueos
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnGenerar_Click(sender As Object, e As EventArgs) Handles btnGenerar.Click
         If (txtcodigoMaquina.Text <> "") Then
             Try
                 Dim t, t2, t3, t4, t5 As Double

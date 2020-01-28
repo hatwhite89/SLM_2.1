@@ -109,6 +109,7 @@
 
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
+            limpiar()
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
             txtcodigoItem.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
             txtPrecio.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
@@ -117,9 +118,6 @@
             btnmodificar.Enabled = True
             btnguardar.Enabled = False
 
-            txtcodigoItem.ReadOnly = False
-            txtPrecio.ReadOnly = False
-            txtcodigoListaPrecios.ReadOnly = False
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try

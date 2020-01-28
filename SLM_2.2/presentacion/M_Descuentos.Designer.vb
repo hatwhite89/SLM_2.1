@@ -36,12 +36,12 @@ Partial Class M_Descuentos
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.lblFila = New System.Windows.Forms.Label()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
         Me.lblcomentarioB = New System.Windows.Forms.Label()
-        Me.lblFila = New System.Windows.Forms.Label()
         Me.gbxclasificacion.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -210,6 +210,15 @@ Partial Class M_Descuentos
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR DESCUENTO"
         '
+        'lblFila
+        '
+        Me.lblFila.AutoSize = True
+        Me.lblFila.Location = New System.Drawing.Point(488, 30)
+        Me.lblFila.Name = "lblFila"
+        Me.lblFila.Size = New System.Drawing.Size(51, 17)
+        Me.lblFila.TabIndex = 116
+        Me.lblFila.Text = "Label2"
+        '
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
@@ -258,15 +267,6 @@ Partial Class M_Descuentos
         Me.lblcomentarioB.Size = New System.Drawing.Size(82, 17)
         Me.lblcomentarioB.TabIndex = 114
         Me.lblcomentarioB.Text = "Descripción"
-        '
-        'lblFila
-        '
-        Me.lblFila.AutoSize = True
-        Me.lblFila.Location = New System.Drawing.Point(488, 30)
-        Me.lblFila.Name = "lblFila"
-        Me.lblFila.Size = New System.Drawing.Size(51, 17)
-        Me.lblFila.TabIndex = 116
-        Me.lblFila.Text = "Label2"
         '
         'M_Descuentos
         '
