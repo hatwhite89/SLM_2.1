@@ -25,7 +25,6 @@ Public Class frmFormaPago
             tip = txtTipo.Text.Trim
             banco = txtBanco.Text.Trim
 
-
             Try
 
                 With FormaPago

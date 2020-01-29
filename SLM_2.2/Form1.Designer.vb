@@ -151,10 +151,10 @@ Partial Class Form1
         Me.btnContabilidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnContabilidad.FlatAppearance.BorderSize = 0
         Me.btnContabilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnContabilidad.Location = New System.Drawing.Point(4, 21)
+        Me.btnContabilidad.Location = New System.Drawing.Point(5, 85)
         Me.btnContabilidad.Name = "btnContabilidad"
         Me.btnContabilidad.Size = New System.Drawing.Size(92, 27)
-        Me.btnContabilidad.TabIndex = 1
+        Me.btnContabilidad.TabIndex = 4
         Me.btnContabilidad.Text = "Contabilidad"
         Me.btnContabilidad.UseVisualStyleBackColor = False
         '
@@ -193,7 +193,7 @@ Partial Class Form1
         Me.btnAcerca.Location = New System.Drawing.Point(4, 349)
         Me.btnAcerca.Name = "btnAcerca"
         Me.btnAcerca.Size = New System.Drawing.Size(92, 27)
-        Me.btnAcerca.TabIndex = 4
+        Me.btnAcerca.TabIndex = 5
         Me.btnAcerca.Text = "Acerca de"
         Me.btnAcerca.UseVisualStyleBackColor = False
         '
@@ -203,7 +203,7 @@ Partial Class Form1
         Me.btnFacturacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnFacturacion.FlatAppearance.BorderSize = 0
         Me.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFacturacion.Location = New System.Drawing.Point(4, 55)
+        Me.btnFacturacion.Location = New System.Drawing.Point(5, 52)
         Me.btnFacturacion.Name = "btnFacturacion"
         Me.btnFacturacion.Size = New System.Drawing.Size(92, 27)
         Me.btnFacturacion.TabIndex = 2
@@ -216,10 +216,10 @@ Partial Class Form1
         Me.btnlaboratorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnlaboratorio.FlatAppearance.BorderSize = 0
         Me.btnlaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnlaboratorio.Location = New System.Drawing.Point(4, 88)
+        Me.btnlaboratorio.Location = New System.Drawing.Point(5, 19)
         Me.btnlaboratorio.Name = "btnlaboratorio"
         Me.btnlaboratorio.Size = New System.Drawing.Size(92, 27)
-        Me.btnlaboratorio.TabIndex = 3
+        Me.btnlaboratorio.TabIndex = 1
         Me.btnlaboratorio.Text = "Laboratorio"
         Me.btnlaboratorio.UseVisualStyleBackColor = False
         '
@@ -728,7 +728,7 @@ Partial Class Form1
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(438, 24)
-        Me.MenuStrip1.TabIndex = 5
+        Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ArchivoToolStripMenuItem
