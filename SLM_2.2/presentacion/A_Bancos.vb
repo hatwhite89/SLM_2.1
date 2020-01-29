@@ -107,7 +107,16 @@
 
     Private Sub A_Bancos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Listar Bancos registrados
-        dtBancos.DataSource = Banco.listarBancos
+        Try
+            dtBancos.DataSource = Banco.listarBancos
+
+            dtBancos.Columns("nombreBanco").Width = 170
+
+
+        Catch ex As Exception
+            MsgBox("Hubo un error al consultar los bancos. " + ex.Message)
+        End Try
+
     End Sub
 
     Private Sub txtBusquedaBanco_TextChanged(sender As Object, e As EventArgs) Handles txtBusquedaBanco.TextChanged

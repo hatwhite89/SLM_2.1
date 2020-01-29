@@ -26,26 +26,41 @@ Partial Class Form1
         Me.btnContabilidad = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.gbxMenu = New System.Windows.Forms.GroupBox()
-        Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnAcerca = New System.Windows.Forms.Button()
         Me.btnFacturacion = New System.Windows.Forms.Button()
         Me.btnlaboratorio = New System.Windows.Forms.Button()
         Me.panelMenu = New System.Windows.Forms.Panel()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.tcMenu = New System.Windows.Forms.TabControl()
         Me.tpCheque = New System.Windows.Forms.TabPage()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btnDepoBanc = New System.Windows.Forms.Button()
         Me.tpPagos = New System.Windows.Forms.TabPage()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.btnPagos = New System.Windows.Forms.Button()
         Me.tpPrecios = New System.Windows.Forms.TabPage()
+        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.TpMantenimiento = New System.Windows.Forms.TabPage()
+        Me.PictureBox17 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox16 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox15 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox14 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.Button10 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.btnBancos = New System.Windows.Forms.Button()
@@ -54,46 +69,80 @@ Partial Class Form1
         Me.btnCuentas = New System.Windows.Forms.Button()
         Me.btnFormaPago = New System.Windows.Forms.Button()
         Me.Apariencia = New Sunisoft.IrisSkin.SkinEngine(CType(Me, System.ComponentModel.Component))
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox14 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox15 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox16 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox17 = New System.Windows.Forms.PictureBox()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CerrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TemaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SLMBlueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SLMGrayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SLMLongHordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SLMLightToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SLMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SLMSilverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PanelFactura = New System.Windows.Forms.Panel()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.btnTermino = New System.Windows.Forms.Button()
+        Me.btnGrupo = New System.Windows.Forms.Button()
+        Me.btnItem = New System.Windows.Forms.Button()
+        Me.btnContactos = New System.Windows.Forms.Button()
+        Me.btnRecibos = New System.Windows.Forms.Button()
+        Me.btnCotizar = New System.Windows.Forms.Button()
+        Me.btnFactura = New System.Windows.Forms.Button()
+        Me.PanelLab = New System.Windows.Forms.Panel()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.TabControl2 = New System.Windows.Forms.TabControl()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnConvenio = New System.Windows.Forms.Button()
+        Me.btnPaciente = New System.Windows.Forms.Button()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.btnEntrega = New System.Windows.Forms.Button()
+        Me.btnHojaTrabajo = New System.Windows.Forms.Button()
+        Me.btnTrabajo = New System.Windows.Forms.Button()
+        Me.btnExamen = New System.Windows.Forms.Button()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.btnSucursal = New System.Windows.Forms.Button()
+        Me.btnSede = New System.Windows.Forms.Button()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.btnMedico = New System.Windows.Forms.Button()
+        Me.SLMSportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxMenu.SuspendLayout()
         Me.panelMenu.SuspendLayout()
         Me.tcMenu.SuspendLayout()
         Me.tpCheque.SuspendLayout()
-        Me.tpPagos.SuspendLayout()
-        Me.tpPrecios.SuspendLayout()
-        Me.TpMantenimiento.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tpPagos.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tpPrecios.SuspendLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TpMantenimiento.SuspendLayout()
         CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
+        Me.PanelFactura.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.PanelLab.SuspendLayout()
+        Me.TabControl2.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
+        Me.TabPage5.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -102,7 +151,7 @@ Partial Class Form1
         Me.btnContabilidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnContabilidad.FlatAppearance.BorderSize = 0
         Me.btnContabilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnContabilidad.Location = New System.Drawing.Point(4, 20)
+        Me.btnContabilidad.Location = New System.Drawing.Point(4, 21)
         Me.btnContabilidad.Name = "btnContabilidad"
         Me.btnContabilidad.Size = New System.Drawing.Size(92, 27)
         Me.btnContabilidad.TabIndex = 1
@@ -113,7 +162,7 @@ Partial Class Form1
         '
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(152, 107)
+        Me.PictureBox1.Location = New System.Drawing.Point(127, 115)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(265, 137)
         Me.PictureBox1.TabIndex = 2
@@ -122,45 +171,31 @@ Partial Class Form1
         'gbxMenu
         '
         Me.gbxMenu.BackColor = System.Drawing.Color.MidnightBlue
-        Me.gbxMenu.Controls.Add(Me.btnCerrar)
-        Me.gbxMenu.Controls.Add(Me.Button1)
+        Me.gbxMenu.Controls.Add(Me.btnAcerca)
         Me.gbxMenu.Controls.Add(Me.btnFacturacion)
         Me.gbxMenu.Controls.Add(Me.btnlaboratorio)
         Me.gbxMenu.Controls.Add(Me.btnContabilidad)
         Me.gbxMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.gbxMenu.Location = New System.Drawing.Point(-1, -13)
+        Me.gbxMenu.ForeColor = System.Drawing.Color.White
+        Me.gbxMenu.Location = New System.Drawing.Point(-1, 27)
         Me.gbxMenu.Name = "gbxMenu"
-        Me.gbxMenu.Size = New System.Drawing.Size(101, 405)
+        Me.gbxMenu.Size = New System.Drawing.Size(101, 438)
         Me.gbxMenu.TabIndex = 3
         Me.gbxMenu.TabStop = False
         Me.gbxMenu.Text = "Opciones"
         '
-        'btnCerrar
+        'btnAcerca
         '
-        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
-        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCerrar.FlatAppearance.BorderSize = 0
-        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.ForeColor = System.Drawing.Color.White
-        Me.btnCerrar.Location = New System.Drawing.Point(4, 365)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(93, 27)
-        Me.btnCerrar.TabIndex = 5
-        Me.btnCerrar.Text = "Cerrar Programa"
-        Me.btnCerrar.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.DarkGray
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(4, 120)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(92, 27)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Item Exámenes"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnAcerca.BackColor = System.Drawing.Color.SlateGray
+        Me.btnAcerca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnAcerca.FlatAppearance.BorderSize = 0
+        Me.btnAcerca.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAcerca.Location = New System.Drawing.Point(4, 349)
+        Me.btnAcerca.Name = "btnAcerca"
+        Me.btnAcerca.Size = New System.Drawing.Size(92, 27)
+        Me.btnAcerca.TabIndex = 4
+        Me.btnAcerca.Text = "Acerca de"
+        Me.btnAcerca.UseVisualStyleBackColor = False
         '
         'btnFacturacion
         '
@@ -168,7 +203,7 @@ Partial Class Form1
         Me.btnFacturacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnFacturacion.FlatAppearance.BorderSize = 0
         Me.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFacturacion.Location = New System.Drawing.Point(4, 54)
+        Me.btnFacturacion.Location = New System.Drawing.Point(4, 55)
         Me.btnFacturacion.Name = "btnFacturacion"
         Me.btnFacturacion.Size = New System.Drawing.Size(92, 27)
         Me.btnFacturacion.TabIndex = 2
@@ -181,7 +216,7 @@ Partial Class Form1
         Me.btnlaboratorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnlaboratorio.FlatAppearance.BorderSize = 0
         Me.btnlaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnlaboratorio.Location = New System.Drawing.Point(4, 87)
+        Me.btnlaboratorio.Location = New System.Drawing.Point(4, 88)
         Me.btnlaboratorio.Name = "btnlaboratorio"
         Me.btnlaboratorio.Size = New System.Drawing.Size(92, 27)
         Me.btnlaboratorio.TabIndex = 3
@@ -193,7 +228,7 @@ Partial Class Form1
         Me.panelMenu.BackColor = System.Drawing.Color.White
         Me.panelMenu.Controls.Add(Me.btnCancelar)
         Me.panelMenu.Controls.Add(Me.tcMenu)
-        Me.panelMenu.Location = New System.Drawing.Point(106, 6)
+        Me.panelMenu.Location = New System.Drawing.Point(106, 32)
         Me.panelMenu.Name = "panelMenu"
         Me.panelMenu.Size = New System.Drawing.Size(324, 373)
         Me.panelMenu.TabIndex = 4
@@ -236,10 +271,40 @@ Partial Class Form1
         Me.tpCheque.Location = New System.Drawing.Point(4, 22)
         Me.tpCheque.Name = "tpCheque"
         Me.tpCheque.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpCheque.Size = New System.Drawing.Size(282, 317)
+        Me.tpCheque.Size = New System.Drawing.Size(282, 307)
         Me.tpCheque.TabIndex = 0
         Me.tpCheque.Text = "Cheque"
         Me.tpCheque.UseVisualStyleBackColor = True
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox4.Location = New System.Drawing.Point(202, 12)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(61, 60)
+        Me.PictureBox4.TabIndex = 7
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox3.Location = New System.Drawing.Point(111, 12)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(61, 60)
+        Me.PictureBox3.TabIndex = 6
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Location = New System.Drawing.Point(20, 12)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(61, 60)
+        Me.PictureBox2.TabIndex = 5
+        Me.PictureBox2.TabStop = False
         '
         'Button3
         '
@@ -292,10 +357,32 @@ Partial Class Form1
         Me.tpPagos.Location = New System.Drawing.Point(4, 22)
         Me.tpPagos.Name = "tpPagos"
         Me.tpPagos.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpPagos.Size = New System.Drawing.Size(282, 317)
+        Me.tpPagos.Size = New System.Drawing.Size(282, 307)
         Me.tpPagos.TabIndex = 1
         Me.tpPagos.Text = "Pagos"
         Me.tpPagos.UseVisualStyleBackColor = True
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.BackgroundImage = CType(resources.GetObject("PictureBox6.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox6.Location = New System.Drawing.Point(113, 11)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(67, 63)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 3
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.BackgroundImage = CType(resources.GetObject("PictureBox5.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox5.Location = New System.Drawing.Point(15, 11)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(67, 63)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 2
+        Me.PictureBox5.TabStop = False
         '
         'Button4
         '
@@ -337,10 +424,50 @@ Partial Class Form1
         Me.tpPrecios.Controls.Add(Me.Button5)
         Me.tpPrecios.Location = New System.Drawing.Point(4, 22)
         Me.tpPrecios.Name = "tpPrecios"
-        Me.tpPrecios.Size = New System.Drawing.Size(282, 317)
+        Me.tpPrecios.Size = New System.Drawing.Size(282, 307)
         Me.tpPrecios.TabIndex = 3
         Me.tpPrecios.Text = "Precios y Descuentos"
         Me.tpPrecios.UseVisualStyleBackColor = True
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), System.Drawing.Image)
+        Me.PictureBox10.Location = New System.Drawing.Point(19, 111)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(53, 50)
+        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox10.TabIndex = 22
+        Me.PictureBox10.TabStop = False
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
+        Me.PictureBox9.Location = New System.Drawing.Point(207, 19)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(53, 50)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 21
+        Me.PictureBox9.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
+        Me.PictureBox8.Location = New System.Drawing.Point(114, 19)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(53, 50)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 20
+        Me.PictureBox8.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
+        Me.PictureBox7.Location = New System.Drawing.Point(19, 19)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(53, 50)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 19
+        Me.PictureBox7.TabStop = False
         '
         'Button8
         '
@@ -421,6 +548,76 @@ Partial Class Form1
         Me.TpMantenimiento.TabIndex = 2
         Me.TpMantenimiento.Text = "Mantenimiento"
         Me.TpMantenimiento.UseVisualStyleBackColor = True
+        '
+        'PictureBox17
+        '
+        Me.PictureBox17.Image = CType(resources.GetObject("PictureBox17.Image"), System.Drawing.Image)
+        Me.PictureBox17.Location = New System.Drawing.Point(3, 193)
+        Me.PictureBox17.Name = "PictureBox17"
+        Me.PictureBox17.Size = New System.Drawing.Size(28, 25)
+        Me.PictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox17.TabIndex = 19
+        Me.PictureBox17.TabStop = False
+        '
+        'PictureBox16
+        '
+        Me.PictureBox16.Image = CType(resources.GetObject("PictureBox16.Image"), System.Drawing.Image)
+        Me.PictureBox16.Location = New System.Drawing.Point(3, 162)
+        Me.PictureBox16.Name = "PictureBox16"
+        Me.PictureBox16.Size = New System.Drawing.Size(28, 25)
+        Me.PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox16.TabIndex = 18
+        Me.PictureBox16.TabStop = False
+        '
+        'PictureBox15
+        '
+        Me.PictureBox15.Image = CType(resources.GetObject("PictureBox15.Image"), System.Drawing.Image)
+        Me.PictureBox15.Location = New System.Drawing.Point(3, 131)
+        Me.PictureBox15.Name = "PictureBox15"
+        Me.PictureBox15.Size = New System.Drawing.Size(28, 25)
+        Me.PictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox15.TabIndex = 17
+        Me.PictureBox15.TabStop = False
+        '
+        'PictureBox14
+        '
+        Me.PictureBox14.Image = CType(resources.GetObject("PictureBox14.Image"), System.Drawing.Image)
+        Me.PictureBox14.Location = New System.Drawing.Point(3, 100)
+        Me.PictureBox14.Name = "PictureBox14"
+        Me.PictureBox14.Size = New System.Drawing.Size(28, 25)
+        Me.PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox14.TabIndex = 16
+        Me.PictureBox14.TabStop = False
+        '
+        'PictureBox13
+        '
+        Me.PictureBox13.Image = CType(resources.GetObject("PictureBox13.Image"), System.Drawing.Image)
+        Me.PictureBox13.Location = New System.Drawing.Point(3, 69)
+        Me.PictureBox13.Name = "PictureBox13"
+        Me.PictureBox13.Size = New System.Drawing.Size(28, 25)
+        Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox13.TabIndex = 15
+        Me.PictureBox13.TabStop = False
+        '
+        'PictureBox12
+        '
+        Me.PictureBox12.Image = CType(resources.GetObject("PictureBox12.Image"), System.Drawing.Image)
+        Me.PictureBox12.Location = New System.Drawing.Point(3, 38)
+        Me.PictureBox12.Name = "PictureBox12"
+        Me.PictureBox12.Size = New System.Drawing.Size(28, 25)
+        Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox12.TabIndex = 14
+        Me.PictureBox12.TabStop = False
+        '
+        'PictureBox11
+        '
+        Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
+        Me.PictureBox11.Location = New System.Drawing.Point(3, 7)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(28, 25)
+        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox11.TabIndex = 13
+        Me.PictureBox11.TabStop = False
         '
         'Button10
         '
@@ -517,7 +714,6 @@ Partial Class Form1
         'Apariencia
         '
         Me.Apariencia.DefaultButtonStyle = Sunisoft.IrisSkin.DefaultButtonStyle.Shadow
-        Me.Apariencia.Enable3rdControl = True
         Me.Apariencia.ResSysMenuClose = ""
         Me.Apariencia.ResSysMenuMax = ""
         Me.Apariencia.ResSysMenuMin = ""
@@ -526,167 +722,371 @@ Partial Class Form1
     "N NET 2010 WIN 7\SkinVS.NET\RealOne\RealOne.ssk"
         Me.Apariencia.SkinStreamMain = CType(resources.GetObject("Apariencia.SkinStreamMain"), System.IO.Stream)
         '
-        'PictureBox2
+        'MenuStrip1
         '
-        Me.PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Location = New System.Drawing.Point(20, 12)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(61, 60)
-        Me.PictureBox2.TabIndex = 5
-        Me.PictureBox2.TabStop = False
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.OpcionesToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(438, 24)
+        Me.MenuStrip1.TabIndex = 5
+        Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'PictureBox3
+        'ArchivoToolStripMenuItem
         '
-        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Location = New System.Drawing.Point(111, 12)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(61, 60)
-        Me.PictureBox3.TabIndex = 6
-        Me.PictureBox3.TabStop = False
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarToolStripMenuItem})
+        Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
+        Me.ArchivoToolStripMenuItem.Text = "Archivo"
         '
-        'PictureBox4
+        'CerrarToolStripMenuItem
         '
-        Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox4.Location = New System.Drawing.Point(202, 12)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(61, 60)
-        Me.PictureBox4.TabIndex = 7
-        Me.PictureBox4.TabStop = False
+        Me.CerrarToolStripMenuItem.Name = "CerrarToolStripMenuItem"
+        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(106, 22)
+        Me.CerrarToolStripMenuItem.Text = "Cerrar"
         '
-        'PictureBox5
+        'OpcionesToolStripMenuItem
         '
-        Me.PictureBox5.BackgroundImage = CType(resources.GetObject("PictureBox5.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox5.Location = New System.Drawing.Point(15, 11)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(67, 63)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 2
-        Me.PictureBox5.TabStop = False
+        Me.OpcionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TemaToolStripMenuItem})
+        Me.OpcionesToolStripMenuItem.Name = "OpcionesToolStripMenuItem"
+        Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(69, 20)
+        Me.OpcionesToolStripMenuItem.Text = "Opciones"
         '
-        'PictureBox6
+        'TemaToolStripMenuItem
         '
-        Me.PictureBox6.BackgroundImage = CType(resources.GetObject("PictureBox6.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox6.Location = New System.Drawing.Point(113, 11)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(67, 63)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 3
-        Me.PictureBox6.TabStop = False
+        Me.TemaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SLMBlueToolStripMenuItem, Me.SLMGrayToolStripMenuItem, Me.SLMLongHordToolStripMenuItem, Me.SLMLightToolStripMenuItem, Me.SLMToolStripMenuItem, Me.SLMSilverToolStripMenuItem, Me.SLMSportToolStripMenuItem})
+        Me.TemaToolStripMenuItem.Name = "TemaToolStripMenuItem"
+        Me.TemaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TemaToolStripMenuItem.Text = "Tema"
         '
-        'PictureBox7
+        'SLMBlueToolStripMenuItem
         '
-        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(19, 19)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(53, 50)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox7.TabIndex = 19
-        Me.PictureBox7.TabStop = False
+        Me.SLMBlueToolStripMenuItem.Name = "SLMBlueToolStripMenuItem"
+        Me.SLMBlueToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.SLMBlueToolStripMenuItem.Text = "SLM Diamond"
         '
-        'PictureBox8
+        'SLMGrayToolStripMenuItem
         '
-        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
-        Me.PictureBox8.Location = New System.Drawing.Point(114, 19)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(53, 50)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox8.TabIndex = 20
-        Me.PictureBox8.TabStop = False
+        Me.SLMGrayToolStripMenuItem.Name = "SLMGrayToolStripMenuItem"
+        Me.SLMGrayToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.SLMGrayToolStripMenuItem.Text = "SLM Emerald"
         '
-        'PictureBox9
+        'SLMLongHordToolStripMenuItem
         '
-        Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
-        Me.PictureBox9.Location = New System.Drawing.Point(207, 19)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(53, 50)
-        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox9.TabIndex = 21
-        Me.PictureBox9.TabStop = False
+        Me.SLMLongHordToolStripMenuItem.Name = "SLMLongHordToolStripMenuItem"
+        Me.SLMLongHordToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.SLMLongHordToolStripMenuItem.Text = "SLM LongHord"
         '
-        'PictureBox10
+        'SLMLightToolStripMenuItem
         '
-        Me.PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), System.Drawing.Image)
-        Me.PictureBox10.Location = New System.Drawing.Point(19, 111)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(53, 50)
-        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox10.TabIndex = 22
-        Me.PictureBox10.TabStop = False
+        Me.SLMLightToolStripMenuItem.Name = "SLMLightToolStripMenuItem"
+        Me.SLMLightToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.SLMLightToolStripMenuItem.Text = "SLM Light"
         '
-        'PictureBox11
+        'SLMToolStripMenuItem
         '
-        Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
-        Me.PictureBox11.Location = New System.Drawing.Point(3, 7)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(28, 25)
-        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox11.TabIndex = 13
-        Me.PictureBox11.TabStop = False
+        Me.SLMToolStripMenuItem.Name = "SLMToolStripMenuItem"
+        Me.SLMToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.SLMToolStripMenuItem.Text = "SLM Classic"
         '
-        'PictureBox12
+        'SLMSilverToolStripMenuItem
         '
-        Me.PictureBox12.Image = CType(resources.GetObject("PictureBox12.Image"), System.Drawing.Image)
-        Me.PictureBox12.Location = New System.Drawing.Point(3, 38)
-        Me.PictureBox12.Name = "PictureBox12"
-        Me.PictureBox12.Size = New System.Drawing.Size(28, 25)
-        Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox12.TabIndex = 14
-        Me.PictureBox12.TabStop = False
+        Me.SLMSilverToolStripMenuItem.Name = "SLMSilverToolStripMenuItem"
+        Me.SLMSilverToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.SLMSilverToolStripMenuItem.Text = "SLM Silver"
         '
-        'PictureBox13
+        'PanelFactura
         '
-        Me.PictureBox13.Image = CType(resources.GetObject("PictureBox13.Image"), System.Drawing.Image)
-        Me.PictureBox13.Location = New System.Drawing.Point(3, 69)
-        Me.PictureBox13.Name = "PictureBox13"
-        Me.PictureBox13.Size = New System.Drawing.Size(28, 25)
-        Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox13.TabIndex = 15
-        Me.PictureBox13.TabStop = False
+        Me.PanelFactura.BackColor = System.Drawing.Color.White
+        Me.PanelFactura.Controls.Add(Me.Button11)
+        Me.PanelFactura.Controls.Add(Me.TabControl1)
+        Me.PanelFactura.Location = New System.Drawing.Point(106, 32)
+        Me.PanelFactura.Name = "PanelFactura"
+        Me.PanelFactura.Size = New System.Drawing.Size(324, 373)
+        Me.PanelFactura.TabIndex = 7
+        Me.PanelFactura.Visible = False
         '
-        'PictureBox14
+        'Button11
         '
-        Me.PictureBox14.Image = CType(resources.GetObject("PictureBox14.Image"), System.Drawing.Image)
-        Me.PictureBox14.Location = New System.Drawing.Point(3, 100)
-        Me.PictureBox14.Name = "PictureBox14"
-        Me.PictureBox14.Size = New System.Drawing.Size(28, 25)
-        Me.PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox14.TabIndex = 16
-        Me.PictureBox14.TabStop = False
+        Me.Button11.BackColor = System.Drawing.Color.Transparent
+        Me.Button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button11.FlatAppearance.BorderSize = 0
+        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button11.ForeColor = System.Drawing.Color.Red
+        Me.Button11.Location = New System.Drawing.Point(253, 342)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(55, 26)
+        Me.Button11.TabIndex = 5
+        Me.Button11.Text = "Cerrar"
+        Me.Button11.UseVisualStyleBackColor = False
         '
-        'PictureBox15
+        'TabControl1
         '
-        Me.PictureBox15.Image = CType(resources.GetObject("PictureBox15.Image"), System.Drawing.Image)
-        Me.PictureBox15.Location = New System.Drawing.Point(3, 131)
-        Me.PictureBox15.Name = "PictureBox15"
-        Me.PictureBox15.Size = New System.Drawing.Size(28, 25)
-        Me.PictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox15.TabIndex = 17
-        Me.PictureBox15.TabStop = False
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Location = New System.Drawing.Point(18, 5)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(290, 333)
+        Me.TabControl1.TabIndex = 6
         '
-        'PictureBox16
+        'TabPage1
         '
-        Me.PictureBox16.Image = CType(resources.GetObject("PictureBox16.Image"), System.Drawing.Image)
-        Me.PictureBox16.Location = New System.Drawing.Point(3, 162)
-        Me.PictureBox16.Name = "PictureBox16"
-        Me.PictureBox16.Size = New System.Drawing.Size(28, 25)
-        Me.PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox16.TabIndex = 18
-        Me.PictureBox16.TabStop = False
+        Me.TabPage1.Controls.Add(Me.Button13)
+        Me.TabPage1.Controls.Add(Me.btnTermino)
+        Me.TabPage1.Controls.Add(Me.btnGrupo)
+        Me.TabPage1.Controls.Add(Me.btnItem)
+        Me.TabPage1.Controls.Add(Me.btnContactos)
+        Me.TabPage1.Controls.Add(Me.btnRecibos)
+        Me.TabPage1.Controls.Add(Me.btnCotizar)
+        Me.TabPage1.Controls.Add(Me.btnFactura)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(282, 307)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Facturación"
+        Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'PictureBox17
+        'Button13
         '
-        Me.PictureBox17.Image = CType(resources.GetObject("PictureBox17.Image"), System.Drawing.Image)
-        Me.PictureBox17.Location = New System.Drawing.Point(3, 193)
-        Me.PictureBox17.Name = "PictureBox17"
-        Me.PictureBox17.Size = New System.Drawing.Size(28, 25)
-        Me.PictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox17.TabIndex = 19
-        Me.PictureBox17.TabStop = False
+        Me.Button13.Location = New System.Drawing.Point(104, 278)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(75, 23)
+        Me.Button13.TabIndex = 8
+        Me.Button13.Text = "Pacientes"
+        Me.Button13.UseVisualStyleBackColor = True
+        '
+        'btnTermino
+        '
+        Me.btnTermino.Location = New System.Drawing.Point(10, 278)
+        Me.btnTermino.Name = "btnTermino"
+        Me.btnTermino.Size = New System.Drawing.Size(75, 23)
+        Me.btnTermino.TabIndex = 7
+        Me.btnTermino.Text = "Term. Pago"
+        Me.btnTermino.UseVisualStyleBackColor = True
+        '
+        'btnGrupo
+        '
+        Me.btnGrupo.Location = New System.Drawing.Point(196, 185)
+        Me.btnGrupo.Name = "btnGrupo"
+        Me.btnGrupo.Size = New System.Drawing.Size(75, 23)
+        Me.btnGrupo.TabIndex = 5
+        Me.btnGrupo.Text = "Grupo Items"
+        Me.btnGrupo.UseVisualStyleBackColor = True
+        '
+        'btnItem
+        '
+        Me.btnItem.Location = New System.Drawing.Point(104, 185)
+        Me.btnItem.Name = "btnItem"
+        Me.btnItem.Size = New System.Drawing.Size(75, 23)
+        Me.btnItem.TabIndex = 4
+        Me.btnItem.Text = "Items"
+        Me.btnItem.UseVisualStyleBackColor = True
+        '
+        'btnContactos
+        '
+        Me.btnContactos.Location = New System.Drawing.Point(10, 185)
+        Me.btnContactos.Name = "btnContactos"
+        Me.btnContactos.Size = New System.Drawing.Size(75, 23)
+        Me.btnContactos.TabIndex = 3
+        Me.btnContactos.Text = "Contactos"
+        Me.btnContactos.UseVisualStyleBackColor = True
+        '
+        'btnRecibos
+        '
+        Me.btnRecibos.Location = New System.Drawing.Point(196, 72)
+        Me.btnRecibos.Name = "btnRecibos"
+        Me.btnRecibos.Size = New System.Drawing.Size(75, 23)
+        Me.btnRecibos.TabIndex = 2
+        Me.btnRecibos.Text = "Recibos"
+        Me.btnRecibos.UseVisualStyleBackColor = True
+        '
+        'btnCotizar
+        '
+        Me.btnCotizar.Location = New System.Drawing.Point(104, 72)
+        Me.btnCotizar.Name = "btnCotizar"
+        Me.btnCotizar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCotizar.TabIndex = 1
+        Me.btnCotizar.Text = "Cotización"
+        Me.btnCotizar.UseVisualStyleBackColor = True
+        '
+        'btnFactura
+        '
+        Me.btnFactura.Location = New System.Drawing.Point(10, 72)
+        Me.btnFactura.Name = "btnFactura"
+        Me.btnFactura.Size = New System.Drawing.Size(75, 23)
+        Me.btnFactura.TabIndex = 0
+        Me.btnFactura.Text = "Facturación"
+        Me.btnFactura.UseVisualStyleBackColor = True
+        '
+        'PanelLab
+        '
+        Me.PanelLab.BackColor = System.Drawing.Color.White
+        Me.PanelLab.Controls.Add(Me.Button12)
+        Me.PanelLab.Controls.Add(Me.TabControl2)
+        Me.PanelLab.Location = New System.Drawing.Point(106, 32)
+        Me.PanelLab.Name = "PanelLab"
+        Me.PanelLab.Size = New System.Drawing.Size(324, 373)
+        Me.PanelLab.TabIndex = 8
+        Me.PanelLab.Visible = False
+        '
+        'Button12
+        '
+        Me.Button12.BackColor = System.Drawing.Color.Transparent
+        Me.Button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button12.FlatAppearance.BorderSize = 0
+        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button12.ForeColor = System.Drawing.Color.Red
+        Me.Button12.Location = New System.Drawing.Point(253, 342)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(55, 26)
+        Me.Button12.TabIndex = 5
+        Me.Button12.Text = "Cerrar"
+        Me.Button12.UseVisualStyleBackColor = False
+        '
+        'TabControl2
+        '
+        Me.TabControl2.Controls.Add(Me.TabPage2)
+        Me.TabControl2.Controls.Add(Me.TabPage3)
+        Me.TabControl2.Controls.Add(Me.TabPage4)
+        Me.TabControl2.Controls.Add(Me.TabPage5)
+        Me.TabControl2.Location = New System.Drawing.Point(18, 5)
+        Me.TabControl2.Name = "TabControl2"
+        Me.TabControl2.SelectedIndex = 0
+        Me.TabControl2.Size = New System.Drawing.Size(290, 333)
+        Me.TabControl2.TabIndex = 6
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.btnConvenio)
+        Me.TabPage2.Controls.Add(Me.btnPaciente)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(282, 307)
+        Me.TabPage2.TabIndex = 0
+        Me.TabPage2.Text = "Clientes"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'btnConvenio
+        '
+        Me.btnConvenio.Location = New System.Drawing.Point(109, 66)
+        Me.btnConvenio.Name = "btnConvenio"
+        Me.btnConvenio.Size = New System.Drawing.Size(75, 23)
+        Me.btnConvenio.TabIndex = 7
+        Me.btnConvenio.Text = "Convenios"
+        Me.btnConvenio.UseVisualStyleBackColor = True
+        '
+        'btnPaciente
+        '
+        Me.btnPaciente.Location = New System.Drawing.Point(11, 66)
+        Me.btnPaciente.Name = "btnPaciente"
+        Me.btnPaciente.Size = New System.Drawing.Size(75, 23)
+        Me.btnPaciente.TabIndex = 6
+        Me.btnPaciente.Text = "Pacientes"
+        Me.btnPaciente.UseVisualStyleBackColor = True
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.btnEntrega)
+        Me.TabPage3.Controls.Add(Me.btnHojaTrabajo)
+        Me.TabPage3.Controls.Add(Me.btnTrabajo)
+        Me.TabPage3.Controls.Add(Me.btnExamen)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(282, 307)
+        Me.TabPage3.TabIndex = 1
+        Me.TabPage3.Text = "Exámenes"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'btnEntrega
+        '
+        Me.btnEntrega.Location = New System.Drawing.Point(146, 162)
+        Me.btnEntrega.Name = "btnEntrega"
+        Me.btnEntrega.Size = New System.Drawing.Size(99, 23)
+        Me.btnEntrega.TabIndex = 10
+        Me.btnEntrega.Text = "Entrega Result."
+        Me.btnEntrega.UseVisualStyleBackColor = True
+        '
+        'btnHojaTrabajo
+        '
+        Me.btnHojaTrabajo.Location = New System.Drawing.Point(21, 162)
+        Me.btnHojaTrabajo.Name = "btnHojaTrabajo"
+        Me.btnHojaTrabajo.Size = New System.Drawing.Size(99, 23)
+        Me.btnHojaTrabajo.TabIndex = 9
+        Me.btnHojaTrabajo.Text = "Hoja Trabajo"
+        Me.btnHojaTrabajo.UseVisualStyleBackColor = True
+        '
+        'btnTrabajo
+        '
+        Me.btnTrabajo.Location = New System.Drawing.Point(146, 69)
+        Me.btnTrabajo.Name = "btnTrabajo"
+        Me.btnTrabajo.Size = New System.Drawing.Size(99, 23)
+        Me.btnTrabajo.TabIndex = 8
+        Me.btnTrabajo.Text = "Or. Trabajo"
+        Me.btnTrabajo.UseVisualStyleBackColor = True
+        '
+        'btnExamen
+        '
+        Me.btnExamen.Location = New System.Drawing.Point(21, 69)
+        Me.btnExamen.Name = "btnExamen"
+        Me.btnExamen.Size = New System.Drawing.Size(99, 23)
+        Me.btnExamen.TabIndex = 7
+        Me.btnExamen.Text = "Exámenes"
+        Me.btnExamen.UseVisualStyleBackColor = True
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.btnSucursal)
+        Me.TabPage4.Controls.Add(Me.btnSede)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Size = New System.Drawing.Size(282, 307)
+        Me.TabPage4.TabIndex = 2
+        Me.TabPage4.Text = "Sedes"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'btnSucursal
+        '
+        Me.btnSucursal.Location = New System.Drawing.Point(108, 72)
+        Me.btnSucursal.Name = "btnSucursal"
+        Me.btnSucursal.Size = New System.Drawing.Size(87, 23)
+        Me.btnSucursal.TabIndex = 11
+        Me.btnSucursal.Text = "Sucursal"
+        Me.btnSucursal.UseVisualStyleBackColor = True
+        '
+        'btnSede
+        '
+        Me.btnSede.Location = New System.Drawing.Point(15, 72)
+        Me.btnSede.Name = "btnSede"
+        Me.btnSede.Size = New System.Drawing.Size(87, 23)
+        Me.btnSede.TabIndex = 10
+        Me.btnSede.Text = "Sede"
+        Me.btnSede.UseVisualStyleBackColor = True
+        '
+        'TabPage5
+        '
+        Me.TabPage5.Controls.Add(Me.btnMedico)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Size = New System.Drawing.Size(282, 307)
+        Me.TabPage5.TabIndex = 3
+        Me.TabPage5.Text = "Médicos"
+        Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'btnMedico
+        '
+        Me.btnMedico.Location = New System.Drawing.Point(15, 71)
+        Me.btnMedico.Name = "btnMedico"
+        Me.btnMedico.Size = New System.Drawing.Size(87, 23)
+        Me.btnMedico.TabIndex = 11
+        Me.btnMedico.Text = "Médicos"
+        Me.btnMedico.UseVisualStyleBackColor = True
+        '
+        'SLMSportToolStripMenuItem
+        '
+        Me.SLMSportToolStripMenuItem.Name = "SLMSportToolStripMenuItem"
+        Me.SLMSportToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SLMSportToolStripMenuItem.Text = "SLM Sport"
         '
         'Form1
         '
@@ -694,12 +1094,16 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(438, 379)
+        Me.ClientSize = New System.Drawing.Size(438, 409)
+        Me.Controls.Add(Me.PanelLab)
         Me.Controls.Add(Me.gbxMenu)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.PanelFactura)
         Me.Controls.Add(Me.panelMenu)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " Sistema Laboratorios Médicos"
@@ -708,26 +1112,38 @@ Partial Class Form1
         Me.panelMenu.ResumeLayout(False)
         Me.tcMenu.ResumeLayout(False)
         Me.tpCheque.ResumeLayout(False)
-        Me.tpPagos.ResumeLayout(False)
-        Me.tpPrecios.ResumeLayout(False)
-        Me.TpMantenimiento.ResumeLayout(False)
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tpPagos.ResumeLayout(False)
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tpPrecios.ResumeLayout(False)
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TpMantenimiento.ResumeLayout(False)
         CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        Me.PanelFactura.ResumeLayout(False)
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.PanelLab.ResumeLayout(False)
+        Me.TabControl2.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage5.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -735,10 +1151,8 @@ Partial Class Form1
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents gbxMenu As GroupBox
     Friend WithEvents btnlaboratorio As Button
-    Friend WithEvents Button1 As Button
     Friend WithEvents btnFacturacion As Button
     Friend WithEvents panelMenu As Panel
-    Friend WithEvents btnCerrar As Button
     Friend WithEvents Apariencia As Sunisoft.IrisSkin.SkinEngine
     Friend WithEvents btnCancelar As Button
     Friend WithEvents tcMenu As TabControl
@@ -778,4 +1192,45 @@ Partial Class Form1
     Friend WithEvents PictureBox13 As PictureBox
     Friend WithEvents PictureBox12 As PictureBox
     Friend WithEvents PictureBox11 As PictureBox
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CerrarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OpcionesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TemaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SLMBlueToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SLMGrayToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SLMLongHordToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SLMLightToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SLMToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SLMSilverToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PanelFactura As Panel
+    Friend WithEvents Button11 As Button
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents btnTermino As Button
+    Friend WithEvents btnGrupo As Button
+    Friend WithEvents btnItem As Button
+    Friend WithEvents btnContactos As Button
+    Friend WithEvents btnRecibos As Button
+    Friend WithEvents btnCotizar As Button
+    Friend WithEvents btnFactura As Button
+    Friend WithEvents PanelLab As Panel
+    Friend WithEvents Button12 As Button
+    Friend WithEvents TabControl2 As TabControl
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents btnConvenio As Button
+    Friend WithEvents btnPaciente As Button
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents btnEntrega As Button
+    Friend WithEvents btnHojaTrabajo As Button
+    Friend WithEvents btnTrabajo As Button
+    Friend WithEvents btnExamen As Button
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents btnSucursal As Button
+    Friend WithEvents btnSede As Button
+    Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents btnMedico As Button
+    Friend WithEvents Button13 As Button
+    Friend WithEvents btnAcerca As Button
+    Friend WithEvents SLMSportToolStripMenuItem As ToolStripMenuItem
 End Class

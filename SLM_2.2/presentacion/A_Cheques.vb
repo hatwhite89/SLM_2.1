@@ -66,9 +66,17 @@ Public Class A_Cheques
 
                 End With
 
-            Else
+            ElseIf txtMonto.Text = "" Then
+
 
                 MsgBox("Error al guardar. Uno de los campos requeridos está vacio.")
+                txtMonto.BackColor = Color.Red
+
+            ElseIf txtcodProvee.Text = "" Then
+
+                MsgBox("Error al guardar. Uno de los campos requeridos está vacio.")
+                txtcodProvee.BackColor = Color.Red
+                txtNombreProvee.BackColor = Color.Red
 
             End If
 
@@ -636,4 +644,11 @@ Public Class A_Cheques
 
     End Class 'Fin clase Numalet
 
+    Private Sub txtMonto_TextChanged(sender As Object, e As EventArgs) Handles txtMonto.TextChanged
+        txtMonto.BackColor = Color.White
+    End Sub
+
+    Private Sub txtcodProvee_TextChanged(sender As Object, e As EventArgs) Handles txtcodProvee.TextChanged
+        txtcodProvee.BackColor = Color.White
+    End Sub
 End Class

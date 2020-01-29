@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class A_Cuenta
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class A_Cuenta
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.lblCuenta = New System.Windows.Forms.Label()
         Me.txtCuenta = New System.Windows.Forms.TextBox()
@@ -38,6 +38,9 @@ Partial Class A_Cuenta
         Me.lblEstado = New System.Windows.Forms.Label()
         Me.lblCodCuenta = New System.Windows.Forms.Label()
         Me.gbxCuentas = New System.Windows.Forms.GroupBox()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.txtBusqueda = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.dtCuentas = New System.Windows.Forms.DataGridView()
         Me.gbxCuenta.SuspendLayout()
         Me.gbxCuentas.SuspendLayout()
@@ -56,6 +59,7 @@ Partial Class A_Cuenta
         'txtCuenta
         '
         Me.txtCuenta.Location = New System.Drawing.Point(54, 28)
+        Me.txtCuenta.MaxLength = 8
         Me.txtCuenta.Name = "txtCuenta"
         Me.txtCuenta.Size = New System.Drawing.Size(100, 20)
         Me.txtCuenta.TabIndex = 1
@@ -72,6 +76,7 @@ Partial Class A_Cuenta
         'txtNombre
         '
         Me.txtNombre.Location = New System.Drawing.Point(54, 54)
+        Me.txtNombre.MaxLength = 50
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(316, 20)
         Me.txtNombre.TabIndex = 3
@@ -93,7 +98,7 @@ Partial Class A_Cuenta
         Me.gbxCuenta.Controls.Add(Me.lblEstado)
         Me.gbxCuenta.Location = New System.Drawing.Point(13, 12)
         Me.gbxCuenta.Name = "gbxCuenta"
-        Me.gbxCuenta.Size = New System.Drawing.Size(520, 152)
+        Me.gbxCuenta.Size = New System.Drawing.Size(532, 152)
         Me.gbxCuenta.TabIndex = 4
         Me.gbxCuenta.TabStop = False
         Me.gbxCuenta.Text = "Información de Cuenta"
@@ -104,7 +109,7 @@ Partial Class A_Cuenta
         Me.btnNuevo.FlatAppearance.BorderSize = 0
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNuevo.ForeColor = System.Drawing.Color.White
-        Me.btnNuevo.Location = New System.Drawing.Point(278, 118)
+        Me.btnNuevo.Location = New System.Drawing.Point(291, 118)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
         Me.btnNuevo.TabIndex = 14
@@ -128,7 +133,7 @@ Partial Class A_Cuenta
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(356, 118)
+        Me.btnModificar.Location = New System.Drawing.Point(369, 118)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 9
@@ -142,7 +147,7 @@ Partial Class A_Cuenta
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(434, 118)
+        Me.btnGuardar.Location = New System.Drawing.Point(447, 118)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 8
@@ -174,9 +179,9 @@ Partial Class A_Cuenta
         Me.lblEstadoColor.ForeColor = System.Drawing.Color.Red
         Me.lblEstadoColor.Location = New System.Drawing.Point(418, 57)
         Me.lblEstadoColor.Name = "lblEstadoColor"
-        Me.lblEstadoColor.Size = New System.Drawing.Size(45, 13)
+        Me.lblEstadoColor.Size = New System.Drawing.Size(16, 13)
         Me.lblEstadoColor.TabIndex = 12
-        Me.lblEstadoColor.Text = "Inactiva"
+        Me.lblEstadoColor.Text = "---"
         '
         'chkEstado
         '
@@ -209,29 +214,56 @@ Partial Class A_Cuenta
         '
         'gbxCuentas
         '
+        Me.gbxCuentas.Controls.Add(Me.btnCancelar)
+        Me.gbxCuentas.Controls.Add(Me.txtBusqueda)
+        Me.gbxCuentas.Controls.Add(Me.Label1)
         Me.gbxCuentas.Controls.Add(Me.dtCuentas)
         Me.gbxCuentas.Location = New System.Drawing.Point(13, 170)
         Me.gbxCuentas.Name = "gbxCuentas"
-        Me.gbxCuentas.Size = New System.Drawing.Size(520, 235)
+        Me.gbxCuentas.Size = New System.Drawing.Size(532, 271)
         Me.gbxCuentas.TabIndex = 7
         Me.gbxCuentas.TabStop = False
         Me.gbxCuentas.Text = "Listado de Cuentas"
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Location = New System.Drawing.Point(447, 19)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.TabIndex = 3
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'txtBusqueda
+        '
+        Me.txtBusqueda.Location = New System.Drawing.Point(60, 25)
+        Me.txtBusqueda.Name = "txtBusqueda"
+        Me.txtBusqueda.Size = New System.Drawing.Size(214, 20)
+        Me.txtBusqueda.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(10, 28)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(47, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Nombre:"
         '
         'dtCuentas
         '
         Me.dtCuentas.AllowUserToAddRows = False
         Me.dtCuentas.AllowUserToDeleteRows = False
-        Me.dtCuentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader
         Me.dtCuentas.BackgroundColor = System.Drawing.Color.White
         Me.dtCuentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.dtCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtCuentas.GridColor = System.Drawing.Color.White
-        Me.dtCuentas.Location = New System.Drawing.Point(6, 19)
+        Me.dtCuentas.Location = New System.Drawing.Point(6, 51)
+        Me.dtCuentas.MultiSelect = False
         Me.dtCuentas.Name = "dtCuentas"
         Me.dtCuentas.ReadOnly = True
         Me.dtCuentas.RowHeadersVisible = False
         Me.dtCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCuentas.Size = New System.Drawing.Size(505, 210)
+        Me.dtCuentas.Size = New System.Drawing.Size(520, 210)
         Me.dtCuentas.TabIndex = 0
         '
         'A_Cuenta
@@ -239,7 +271,7 @@ Partial Class A_Cuenta
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(536, 413)
+        Me.ClientSize = New System.Drawing.Size(557, 446)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblCodCuenta)
         Me.Controls.Add(Me.gbxCuentas)
@@ -251,6 +283,7 @@ Partial Class A_Cuenta
         Me.gbxCuenta.ResumeLayout(False)
         Me.gbxCuenta.PerformLayout()
         Me.gbxCuentas.ResumeLayout(False)
+        Me.gbxCuentas.PerformLayout()
         CType(Me.dtCuentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -274,4 +307,7 @@ Partial Class A_Cuenta
     Friend WithEvents cbxTipoCuenta As ComboBox
     Friend WithEvents lblCodCuenta As Label
     Friend WithEvents lblTipoDetalle As Label
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents txtBusqueda As TextBox
+    Friend WithEvents Label1 As Label
 End Class

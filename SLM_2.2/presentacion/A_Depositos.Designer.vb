@@ -68,6 +68,7 @@ Partial Class frmDeposito
         Me.cbxTipo = New System.Windows.Forms.ComboBox()
         Me.dtDepositos = New System.Windows.Forms.DataGridView()
         Me.txtID = New System.Windows.Forms.TextBox()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxInfoDepo.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -431,6 +432,7 @@ Partial Class frmDeposito
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox1.Controls.Add(Me.btnCancelar)
         Me.GroupBox1.Controls.Add(Me.rbtnFormaP)
         Me.GroupBox1.Controls.Add(Me.rbtnTipo)
         Me.GroupBox1.Controls.Add(Me.rbtnID)
@@ -531,6 +533,15 @@ Partial Class frmDeposito
         Me.txtID.TabIndex = 13
         Me.txtID.Visible = False
         '
+        'btnCancelar
+        '
+        Me.btnCancelar.Location = New System.Drawing.Point(385, 58)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.TabIndex = 23
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
         'frmDeposito
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -604,4 +615,5 @@ Partial Class frmDeposito
     Friend WithEvents txtID As TextBox
     Friend WithEvents btnCrearNuevo As Button
     Friend WithEvents btnModificar As Button
+    Friend WithEvents btnCancelar As Button
 End Class

@@ -1,10 +1,18 @@
 ﻿Public Class A_BuscarFormaPago
 
     Private Sub A_BuscarFormaPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            Dim formaPago As New ClsFormaPago
+            dtFormasPago.DataSource = formaPago.listarFormaPago
 
+            dtFormasPago.Columns("nroCtaBanco").Visible = False
+            dtFormasPago.Columns("codFormaPago").Visible = False
+
+        Catch ex As Exception
+            MsgBox("Hubo un error al cargar información. " + ex.Message)
+        End Try
         'llenar DataGrid de formas de pago
-        Dim formaPago As New ClsFormaPago
-        dtFormasPago.DataSource = formaPago.listarFormaPago
+
 
     End Sub
 

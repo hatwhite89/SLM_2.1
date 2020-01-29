@@ -31,7 +31,7 @@ Partial Class A_BuscarFormaPago
         '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(92, 11)
+        Me.txtCodigo.Location = New System.Drawing.Point(73, 11)
         Me.txtCodigo.MaxLength = 20
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
@@ -40,7 +40,7 @@ Partial Class A_BuscarFormaPago
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(35, 15)
+        Me.Label1.Location = New System.Drawing.Point(16, 15)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(57, 13)
         Me.Label1.TabIndex = 1
@@ -50,14 +50,21 @@ Partial Class A_BuscarFormaPago
         '
         Me.dtFormasPago.AllowUserToAddRows = False
         Me.dtFormasPago.AllowUserToDeleteRows = False
+        Me.dtFormasPago.AllowUserToResizeColumns = False
+        Me.dtFormasPago.AllowUserToResizeRows = False
         Me.dtFormasPago.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.dtFormasPago.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.dtFormasPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtFormasPago.Location = New System.Drawing.Point(12, 37)
+        Me.dtFormasPago.MultiSelect = False
         Me.dtFormasPago.Name = "dtFormasPago"
         Me.dtFormasPago.ReadOnly = True
         Me.dtFormasPago.RowHeadersWidth = 51
+        Me.dtFormasPago.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dtFormasPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtFormasPago.ShowCellErrors = False
+        Me.dtFormasPago.ShowCellToolTips = False
+        Me.dtFormasPago.ShowEditingIcon = False
         Me.dtFormasPago.Size = New System.Drawing.Size(207, 241)
         Me.dtFormasPago.TabIndex = 3
         '

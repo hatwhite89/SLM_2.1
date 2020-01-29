@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmTipoDeposito
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,58 +20,62 @@ Partial Class frmTipoDeposito
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTipoDeposito))
         Me.btnTarjeta = New System.Windows.Forms.Button()
         Me.btnDeposito = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnTarjeta
         '
-        Me.btnTarjeta.BackColor = System.Drawing.Color.Transparent
-        Me.btnTarjeta.BackgroundImage = CType(resources.GetObject("btnTarjeta.BackgroundImage"), System.Drawing.Image)
+        Me.btnTarjeta.BackColor = System.Drawing.Color.DimGray
         Me.btnTarjeta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnTarjeta.FlatAppearance.BorderSize = 0
         Me.btnTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTarjeta.Location = New System.Drawing.Point(9, 13)
+        Me.btnTarjeta.Location = New System.Drawing.Point(8, 111)
         Me.btnTarjeta.Name = "btnTarjeta"
-        Me.btnTarjeta.Size = New System.Drawing.Size(101, 101)
+        Me.btnTarjeta.Size = New System.Drawing.Size(112, 23)
         Me.btnTarjeta.TabIndex = 0
+        Me.btnTarjeta.Text = "Tarjeta"
         Me.btnTarjeta.UseVisualStyleBackColor = False
         '
         'btnDeposito
         '
-        Me.btnDeposito.BackColor = System.Drawing.Color.Transparent
-        Me.btnDeposito.BackgroundImage = CType(resources.GetObject("btnDeposito.BackgroundImage"), System.Drawing.Image)
+        Me.btnDeposito.BackColor = System.Drawing.Color.DimGray
         Me.btnDeposito.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnDeposito.FlatAppearance.BorderSize = 0
         Me.btnDeposito.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDeposito.Location = New System.Drawing.Point(124, 4)
+        Me.btnDeposito.Location = New System.Drawing.Point(126, 111)
         Me.btnDeposito.Name = "btnDeposito"
-        Me.btnDeposito.Size = New System.Drawing.Size(115, 118)
+        Me.btnDeposito.Size = New System.Drawing.Size(112, 23)
         Me.btnDeposito.TabIndex = 1
+        Me.btnDeposito.Text = "Deposito Bancario"
         Me.btnDeposito.UseVisualStyleBackColor = False
         '
-        'Label1
+        'PictureBox1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(33, 119)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(45, 13)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Tarjetas"
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(14, 9)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 93)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
         '
-        'Label2
+        'PictureBox2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(132, 119)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(104, 13)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Depositos Bancarios"
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(131, 9)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(100, 93)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 3
+        Me.PictureBox2.TabStop = False
         '
         'frmTipoDeposito
         '
@@ -80,8 +84,8 @@ Partial Class frmTipoDeposito
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(243, 143)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnDeposito)
         Me.Controls.Add(Me.btnTarjeta)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -89,13 +93,14 @@ Partial Class frmTipoDeposito
         Me.Name = "frmTipoDeposito"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Seleccione el tipo de Deposito"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents btnTarjeta As Button
     Friend WithEvents btnDeposito As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

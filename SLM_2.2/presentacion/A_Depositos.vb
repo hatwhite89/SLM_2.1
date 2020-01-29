@@ -49,7 +49,7 @@
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        If txtBanco.Text <> "" And txtContado.Text <> "" And txtTipoConta.Text <> "" And txtCajero.Text <> "" Then
+        If txtBanco.Text <> "" And txtContado.Text <> "" And txtTipoConta.Text <> "" And txtCajero.Text <> "" And txtBanco.Text <> txtTipoConta.Text Then
 
             'Capturar informacion de DataTable en Label
             'Validación de codigo de banco.
@@ -287,16 +287,22 @@
 
         Else
 
-            MsgBox("Falta información en el formulario.")
-
             If txtBanco.Text = "" Then
+                MsgBox("Falta información en el formulario.")
                 txtBanco.BackColor = Color.Red
             ElseIf txtContado.Text = "" Then
+                MsgBox("Falta información en el formulario.")
                 txtContado.BackColor = Color.Red
             ElseIf txtTipoConta.Text = "" Then
+                MsgBox("Falta información en el formulario.")
                 txtTipoConta.BackColor = Color.Red
             ElseIf txtCajero.Text = "" Then
+                MsgBox("Falta información en el formulario.")
                 txtCajero.BackColor = Color.Red
+            ElseIf txtBanco.Text = txtTipoConta.Text Then
+                MsgBox("Las cuentas seleccionadas no pueden ser iguales.")
+                txtBanco.BackColor = Color.Red
+                txtContado.BackColor = Color.Red
             End If
 
         End If
@@ -520,5 +526,51 @@
 
     Private Sub txtContado_TextChanged(sender As Object, e As EventArgs)
         txtTotalDep.Text = txtContado.Text
+    End Sub
+
+    Private Sub txtBanco_TextChanged(sender As Object, e As EventArgs) Handles txtBanco.TextChanged
+        If txtBanco.BackColor = Color.Red Then
+            txtBanco.BackColor = Color.White
+
+        End If
+
+        If txtTipoConta.BackColor = Color.Red Then
+            txtTipoConta.BackColor = Color.White
+        End If
+
+    End Sub
+
+    Private Sub txtTipoConta_TextChanged(sender As Object, e As EventArgs) Handles txtTipoConta.TextChanged
+        If txtTipoConta.BackColor = Color.Red Then
+            txtTipoConta.BackColor = Color.White
+        End If
+
+        If txtBanco.BackColor = Color.Red Then
+            txtBanco.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub txtContado_TextChanged_1(sender As Object, e As EventArgs) Handles txtContado.TextChanged
+        If txtContado.BackColor = Color.Red Then
+            txtContado.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+
+        Try
+            'Listar todos los depositos y cancelar busqueda
+            dtDepositos.DataSource = nuevoDeposito.listarDepositos
+
+
+            txtID.Visible = False
+            cbxTipo.Visible = False
+            txtForma.Visible = False
+            Limpiar()
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 End Class

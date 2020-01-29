@@ -3,32 +3,51 @@
     Dim Cuenta As New ClsCuenta
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        Try
-            'Variables de Cuenta
-            Cuenta.Cuent_a = Convert.ToInt32(txtCuenta.Text)
-            Cuenta.Nombr_e = txtNombre.Text
-            Cuenta.Tipo_Cuenta = cbxTipoCuenta.Text
-            Cuenta.Esta_do = chkEstado.Checked
 
-            'Registro de Cuenta
-            Cuenta.registrarNuevaCuenta()
-            dtCuentas.DataSource = Cuenta.listarCuentas
-            Me.Close()
-            MessageBox.Show("El registro se ha guardado exitosamente.")
+        If txtCuenta.Text <> "" And txtNombre.Text <> "" And cbxTipoCuenta.Text <> "" Then
 
-            Dim fcuentas As A_Cuenta
-            fcuentas = New A_Cuenta
-            fcuentas.Show()
+            Try
+                'Variables de Cuenta
+                Cuenta.Cuent_a = Convert.ToInt32(txtCuenta.Text)
+                Cuenta.Nombr_e = txtNombre.Text
+                Cuenta.Tipo_Cuenta = cbxTipoCuenta.Text
+                Cuenta.Esta_do = chkEstado.Checked
 
-            Limpiar()
+                'Registro de Cuenta
+                Cuenta.registrarNuevaCuenta()
+                dtCuentas.DataSource = Cuenta.listarCuentas
 
-            'Actualiza lista de cuentas
+                MessageBox.Show("El registro se ha guardado exitosamente.")
+                Me.Close()
+                Dim fcuentas As A_Cuenta
+                fcuentas = New A_Cuenta
+                fcuentas.Show()
 
-            dtCuentas.DataSource = Cuenta.listarCuentas
+                Limpiar()
 
-        Catch ex As Exception
-            MessageBox.Show("Error: " + ex.Message)
-        End Try
+                'Actualiza lista de cuentas
+
+                dtCuentas.DataSource = Cuenta.listarCuentas
+
+            Catch ex As Exception
+                MessageBox.Show("Error: " + ex.Message)
+            End Try
+
+        ElseIf txtCuenta.Text = "" Then
+            MsgBox("Existen campos vacíos.")
+            txtCuenta.BackColor = Color.Red
+
+        ElseIf txtNombre.Text = "" Then
+            MsgBox("Existen campos vacíos.")
+            txtNombre.BackColor = Color.Red
+
+        ElseIf cbxTipoCuenta.Text = "" Then
+            MsgBox("Existen campos vacíos.")
+            cbxTipoCuenta.BackColor = Color.Red
+
+        End If
+
+
 
 
     End Sub
@@ -40,9 +59,34 @@
         End If
     End Sub
     Private Sub A_Cuenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
 
-        'Listar cuentas al cargar formulario
-        dtCuentas.DataSource = Cuenta.listarCuentas
+            'Listar cuentas al cargar formulario
+            dtCuentas.DataSource = Cuenta.listarCuentas
+
+            dtCuentas.Columns("codCuenta").Width = 30
+            dtCuentas.Columns("codCuenta").HeaderText = "Cód"
+
+
+            dtCuentas.Columns("cuenta").Width = 50
+            dtCuentas.Columns("cuenta").HeaderText = "Cuenta"
+
+
+            dtCuentas.Columns("nombre").Width = 300
+            dtCuentas.Columns("nombre").HeaderText = "Nombre de Cuenta"
+
+
+            dtCuentas.Columns("tipoCuenta").Width = 50
+            dtCuentas.Columns("tipoCuenta").HeaderText = "Tipo"
+
+            dtCuentas.Columns("estado").Width = 70
+            dtCuentas.Columns("estado").HeaderText = "Habilitado"
+
+
+
+        Catch ex As Exception
+            MsgBox("Error al cargar las cuentas." + ex.Message)
+        End Try
 
     End Sub
     Private Sub cbxEstado_CheckedChanged(sender As Object, e As EventArgs) Handles chkEstado.CheckedChanged
@@ -174,7 +218,63 @@
         End If
     End Sub
 
-    Private Sub A_Cuenta_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        ' frmMenuConta.Show()
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Limpiar()
+        btnNuevo.Visible = False
+        btnModificar.Visible = False
+        btnGuardar.Visible = True
+    End Sub
+
+    Private Sub txtCuenta_TextChanged(sender As Object, e As EventArgs) Handles txtCuenta.TextChanged
+
+        If txtCuenta.BackColor = Color.Red Then
+            txtCuenta.BackColor = Color.White
+        End If
+
+    End Sub
+
+    Private Sub txtNombre_TextChanged(sender As Object, e As EventArgs) Handles txtNombre.TextChanged
+        If txtNombre.BackColor = Color.Red Then
+            txtNombre.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub cbxTipoCuenta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxTipoCuenta.SelectedIndexChanged
+        If cbxTipoCuenta.BackColor = Color.Red Then
+            cbxTipoCuenta.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub cbxTipoCuenta_Click(sender As Object, e As EventArgs) Handles cbxTipoCuenta.Click
+        If cbxTipoCuenta.BackColor = Color.Red Then
+            cbxTipoCuenta.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
+
+        Try
+
+            If txtBusqueda.Text <> "" Then
+
+                With Cuenta
+
+                    .Nombr_e = txtBusqueda.Text
+
+                    dtCuentas.DataSource = .busqueda
+
+                End With
+            Else
+
+                dtCuentas.DataSource = Cuenta.listarCuentas
+
+            End If
+
+
+        Catch ex As Exception
+
+        End Try
+
+
     End Sub
 End Class
