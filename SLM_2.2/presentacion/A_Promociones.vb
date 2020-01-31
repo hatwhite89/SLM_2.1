@@ -4,6 +4,7 @@ Imports System.IO
 Public Class A_Promociones
 
     Dim promo As New ClsPromociones
+    Dim detallepromo As New ClsDetallePromociones
     Dim Imagen As String
     Dim img As Image
     Dim datos As Byte()
@@ -24,8 +25,7 @@ Public Class A_Promociones
                         .fechaInicio_ = dtpFechaI.Value
                         .fechaFinal_ = dtpFechaF.Value
                         .precio_ = Convert.ToDouble(txtPrecio.Text)
-                        .imagen_ = "ok"
-                        .img_ = ImagenToBytes(pbxPromo.Image)
+                        .imagen_ = txtRuta.Text
 
                         If .RegistrarPromocion = 1 Then
 
@@ -81,90 +81,41 @@ Public Class A_Promociones
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
 
-        'Modificar promocion
-        If dtDetallePromo.Rows.Count > 1 Then
 
-            If txtDescrip.Text <> "" And txtPrecio.Text <> "" Then
-                txtDescrip.BackColor = Color.White
-                txtPrecio.BackColor = Color.White
-
-                Try
-
-                    With promo
-
-                        .codigo_ = Convert.ToInt32(txtCod.Text)
-                        .descripcion_ = txtDescrip.Text
-                        .fechaInicio_ = dtpFechaI.Value
-                        .fechaFinal_ = dtpFechaF.Value
-                        .precio_ = Convert.ToDouble(txtPrecio.Text)
-                        .img_ = ImagenToBytes(pbxPromo.Image)
-
-                        If .RegistrarPromocion = 1 Then
-
-                            MsgBox("Se registro una nueva promoción.")
-
-                        End If
-
-                    End With
-
-                    'Ingreso detalle de promo
-                    Dim detalle As New ClsDetallePromociones
-
-                    Dim fila As Integer
-
-                    For fila = 0 To dtDetallePromo.Rows.Count - 2
-
-                        With detalle
-
-                            .codigoExamen_ = Convert.ToInt32(dtDetallePromo.Rows(fila).Cells(0).Value)
-                            .codigoPromocion_ = Convert.ToInt32(txtCod.Text)
-                            If .RegistrarDetallePromocion <> 1 Then
-                                MsgBox("Error al modificar el detalle.")
-                            End If
-                        End With
-
-                    Next
-                    LimpiarForma()
-                Catch ex As Exception
-                    MsgBox("Error al modificar o falta imagen de promoción. Detalle: " + ex.Message)
-                End Try
-
-            ElseIf txtDescrip.Text = "" Then
-                MsgBox("Existen campos vacíos.")
-                txtDescrip.BackColor = Color.Red
-            ElseIf txtPrecio.Text = "" Then
-                MsgBox("Existen campos vacíos.")
-                txtPrecio.BackColor = Color.Red
-            End If
-
-        Else
-
-            MsgBox("La promoción esta incompleta. Debe gregar exámenes y llenar todos los campos.")
-
-        End If
 
     End Sub
     Private Sub btnBuscarImage_Click(sender As Object, e As EventArgs) Handles btnBuscarImage.Click
         SubirImagen()
     End Sub
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         pbxPromo.Image = Nothing
     End Sub
     Sub SubirImagen() 'Metodo que selecciona imagen
 
         Try
+            Me.OpenFileDialog1.ShowDialog()
+            If Me.OpenFileDialog1.FileName <> "" Then
 
-            ofdImagen.Filter = "Imagenes JPG|*.jpg|Imagenes GIF|*.gif|Imagenes bitmaps|*.bmp|Imagenes JPEG|*.jpeg"
+                Imagen = OpenFileDialog1.FileName
+                txtRuta.Text = Imagen.ToString
+                Dim largo As Integer = Imagen.Length
+                Dim imagen2 As String
+                imagen2 = CStr(Microsoft.VisualBasic.Mid(RTrim(Imagen), largo - 2, largo))
+                If imagen2 <> "gif" And imagen2 <> "bmp" And imagen2 <> "jpg" And imagen2 <> "jpeg" And imagen2 <> "GIF" And imagen2 <> "BMP" And imagen2 <> "JPG" And imagen2 <> "JPEG" Then
+                    imagen2 = CStr(Microsoft.VisualBasic.Mid(RTrim(Imagen), largo - 3, largo))
+                    If imagen2 <> "jpeg" And imagen2 <> "JPEG" And imagen2 <> "log1" Then
+                        MsgBox("Formato no valido") : Exit Sub
+                        If imagen2 <> "log1" Then Exit Sub
+                    End If
+                    pbxPromo.Load(Imagen)
+                End If
 
-            If ofdImagen.ShowDialog() = Windows.Forms.DialogResult.OK Then
-
-                pbxPromo.Image = Image.FromFile(ofdImagen.FileName)
-
+                pbxPromo.Load(Imagen)
             End If
-
         Catch ex As Exception
-            MsgBox("No se selecciono una imagen o hubo un error al intentarlo. Detalle: " + ex.Message)
+            MsgBox("Error al cargar la imagen." + ex.Message)
         End Try
+
 
     End Sub
 
@@ -203,5 +154,51 @@ Public Class A_Promociones
             Me.Close()
         End If
 
+    End Sub
+
+    Private Sub A_Promociones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Try
+
+            If txtCod.Text <> "" Then
+
+                detallepromo.codigo_ = Convert.ToInt32(txtCod.Text)
+                dtDetallePromo.DataSource = detallepromo.VerDetallePromocion
+
+            End If
+
+
+        Catch ex As Exception
+
+        End Try
+
+
+
+    End Sub
+
+    Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
+
+        btnModificar.Visible = False
+        btnCrear.Visible = False
+        btnGuardar.Visible = True
+        limpiar()
+
+    End Sub
+
+
+    Sub limpiar()
+
+        txtCod.Text = ""
+        dtpFechaF.Value = Date.Now
+        dtpFechaI.Value = Date.Now
+        txtDescrip.Text = ""
+        pbxPromo.Image = Nothing
+        txtPrecio.Text = ""
+        dtDetallePromo.DataSource = Nothing
+
+    End Sub
+
+    Private Sub btnCancelarRegistro_Click(sender As Object, e As EventArgs) Handles btnCancelarRegistro.Click
+        limpiar()
     End Sub
 End Class

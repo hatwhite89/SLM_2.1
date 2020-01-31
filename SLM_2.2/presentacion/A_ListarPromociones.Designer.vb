@@ -24,7 +24,7 @@ Partial Class A_ListarPromociones
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListarPromociones))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnNuevaPromo = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -35,7 +35,7 @@ Partial Class A_ListarPromociones
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.btnNuevaPromo)
         Me.GroupBox1.Controls.Add(Me.btnCancelar)
         Me.GroupBox1.Controls.Add(Me.txtBusqueda)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -47,18 +47,18 @@ Partial Class A_ListarPromociones
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Promociones Registradas"
         '
-        'Button1
+        'btnNuevaPromo
         '
-        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(450, 320)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(131, 23)
-        Me.Button1.TabIndex = 28
-        Me.Button1.Text = "Nueva Promoción"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnNuevaPromo.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnNuevaPromo.FlatAppearance.BorderSize = 0
+        Me.btnNuevaPromo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNuevaPromo.ForeColor = System.Drawing.Color.White
+        Me.btnNuevaPromo.Location = New System.Drawing.Point(450, 320)
+        Me.btnNuevaPromo.Name = "btnNuevaPromo"
+        Me.btnNuevaPromo.Size = New System.Drawing.Size(131, 23)
+        Me.btnNuevaPromo.TabIndex = 28
+        Me.btnNuevaPromo.Text = "Nueva Promoción"
+        Me.btnNuevaPromo.UseVisualStyleBackColor = False
         '
         'btnCancelar
         '
@@ -109,6 +109,7 @@ Partial Class A_ListarPromociones
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True
         Me.Name = "A_ListarPromociones"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listado de Promociones"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -122,5 +123,5 @@ Partial Class A_ListarPromociones
     Friend WithEvents txtBusqueda As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnCancelar As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnNuevaPromo As Button
 End Class

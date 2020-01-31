@@ -3,64 +3,88 @@ Public Class frmFormaPago
     Dim FormaPago As New ClsFormaPago
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        'Comprobar que la cuenta existe
-        Dim dtC As New DataTable
-        Dim cuenta As New ClsCuenta
-        cuenta.Cuent_a = txtCuenta.Text
+        Try
 
-        dtC = cuenta.Comprobar
+            If txtCodigo.Text <> "" And txtCuenta.Text <> "" And txtCtaBanco.Text <> "" And txtNombreBanco.Text <> "" And txtBanco.Text <> "" Then
 
-        If dtC.Rows.Count > 0 Then
+                'Comprobar que la cuenta existe
+                Dim dtC As New DataTable
+                Dim cuenta As New ClsCuenta
+                cuenta.Cuent_a = txtCuenta.Text
 
+                dtC = cuenta.Comprobar
 
-            'Guardar nuevo registro de forma de pago.
+                If dtC.Rows.Count > 0 Then
 
-            'Limpiar espacios de textbox
-            Dim codi, comenta, namebanc, formu, tip, banco As String
+                    'Guardar nuevo registro de forma de pago.
 
-            codi = txtCodigo.Text.Trim
-            comenta = txtComentario.Text.Trim
-            namebanc = txtNombreBanco.Text.Trim
-            formu = txtFormulario.Text.Trim
-            tip = txtTipo.Text.Trim
-            banco = txtBanco.Text.Trim
+                    'Limpiar espacios de textbox
+                    Dim codi, comenta, namebanc, formu, tip, banco As String
 
-            Try
+                    codi = txtCodigo.Text.Trim
+                    comenta = txtComentario.Text.Trim
+                    namebanc = txtNombreBanco.Text.Trim
+                    formu = txtFormulario.Text.Trim
+                    tip = txtTipo.Text.Trim
+                    banco = txtBanco.Text.Trim
 
-                With FormaPago
-                    .Cod = codi
-                    .Cuen_ta = txtCuenta.Text
-                    .Comenta_rio = comenta
-                    .Cuenta_Banco = txtCtaBanco.Text
-                    .Nombre_Banco = namebanc
-                    .Formu_lario = formu
-                    .Ti_po = tip
-                    .Ban_co = banco
-                    'Funcion de registro de forma de pago
-                    .RegistrarNuevaFormaPago()
-                    MessageBox.Show("El registro ha sido guardado exitosamente.")
-                    Limpiar()
-                    'Actualizar tabla de registro
-                    dtFormasPago.DataSource = .informacionFormasPago
+                    Try
 
-                End With
+                        With FormaPago
+                            .Cod = codi
+                            .Cuen_ta = txtCuenta.Text
+                            .Comenta_rio = comenta
+                            .Cuenta_Banco = txtCtaBanco.Text
+                            .Nombre_Banco = namebanc
+                            .Formu_lario = formu
+                            .Ti_po = tip
+                            .Ban_co = banco
+                            'Funcion de registro de forma de pago
+                            .RegistrarNuevaFormaPago()
+                            MessageBox.Show("El registro ha sido guardado exitosamente.")
+                            Limpiar()
+                            'Actualizar tabla de registro
+                            dtFormasPago.DataSource = .informacionFormasPago
 
-            Catch ex As Exception
+                        End With
 
-                MessageBox.Show("El registro no se guardo. Detalle: " + ex.Message)
+                    Catch ex As Exception
 
-
-            End Try
-
-        Else
-
-            MsgBox("Hubo un error o la cuenta no existe.")
-
-        End If
+                        MessageBox.Show("El registro no se guardo. Detalle: " + ex.Message)
 
 
+                    End Try
 
+                Else
 
+                    MsgBox("Hubo un error o la cuenta no existe.")
+
+                End If
+
+            ElseIf txtCodigo.Text = "" Then
+
+                MsgBox("Existen campos vacíos.")
+                txtCodigo.BackColor = color.Red
+
+            ElseIf txtCuenta.Text = "" Then
+                MsgBox("Existen campos vacíos.")
+                txtCuenta.BackColor = color.red
+            ElseIf txtCtaBanco.Text = "" Then
+                MsgBox("Existen campos vacíos.")
+                txtCtaBanco.BackColor = color.Red
+            ElseIf txtNombreBanco.Text = "" Then
+                MsgBox("Existen campos vacíos.")
+                txtNombreBanco.BackColor = color.red
+            ElseIf txtBanco.Text = "" Then
+                MsgBox("Existen campos vacíos.")
+                txtBanco.BackColor = color.Red
+            End If
+
+        Catch ex As Exception
+
+            MsgBox("Error. " + ex.Message)
+
+        End Try
 
     End Sub
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
@@ -95,41 +119,100 @@ Public Class frmFormaPago
 
     End Sub
 
-
-
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
 
         Try
 
-            FormaPago.Codigo_FormaPago = Convert.ToInt32(lblCodFormaPago.Text)
-            FormaPago.Cod = txtCodigo.Text
-            FormaPago.Cuen_ta = txtCuenta.Text
-            FormaPago.Comenta_rio = txtComentario.Text
-            FormaPago.Cuenta_Banco = txtCtaBanco.Text
-            FormaPago.Nombre_Banco = txtNombreBanco.Text
-            FormaPago.Formu_lario = txtFormulario.Text
-            FormaPago.Ti_po = txtTipo.Text
-            FormaPago.Ban_co = txtBanco.Text
+            If txtCodigo.Text <> "" And txtCuenta.Text <> "" And txtCtaBanco.Text <> "" And txtNombreBanco.Text <> "" And txtBanco.Text <> "" Then
 
-            'Funcion modificar forma de pago seleccionada
-            FormaPago.modificarFormaPago()
-            'Actualizar informacion de formas de pago
+                'Comprobar que la cuenta existe
+                Dim dtC As New DataTable
+                Dim cuenta As New ClsCuenta
+                cuenta.Cuent_a = txtCuenta.Text
 
-            MessageBox.Show("El registro se ha modificado exitosamente.")
+                dtC = cuenta.Comprobar
+
+                If dtC.Rows.Count > 0 Then
+
+                    'Guardar nuevo registro de forma de pago.
+
+                    'Limpiar espacios de textbox
+                    Dim codi, comenta, namebanc, formu, tip, banco As String
+
+                    codi = txtCodigo.Text.Trim
+                    comenta = txtComentario.Text.Trim
+                    namebanc = txtNombreBanco.Text.Trim
+                    formu = txtFormulario.Text.Trim
+                    tip = txtTipo.Text.Trim
+                    banco = txtBanco.Text.Trim
+
+                    Try
+
+                        With FormaPago
+                            .Codigo_FormaPago = Convert.ToInt32(lblCodFormaPago.Text)
+                            .Cod = codi
+                            .Cuen_ta = txtCuenta.Text
+                            .Comenta_rio = comenta
+                            .Cuenta_Banco = txtCtaBanco.Text
+                            .Nombre_Banco = namebanc
+                            .Formu_lario = formu
+                            .Ti_po = tip
+                            .Ban_co = banco
+
+                            'Funcion modificar forma de pago seleccionada
+                            FormaPago.modificarFormaPago()
+                            'Actualizar informacion de formas de pago
+                            MessageBox.Show("El registro se ha modificado exitosamente.")
+
+                            Limpiar()
+                            'Actualizar tabla de registro
+                            dtFormasPago.DataSource = .informacionFormasPago
+
+                        End With
+
+                    Catch ex As Exception
+
+                        MessageBox.Show("El registro no se modifico. Detalle: " + ex.Message)
+
+
+                    End Try
+
+                Else
+
+                    MsgBox("Hubo un error o la cuenta no existe.")
+
+                End If
+
+            ElseIf txtCodigo.Text = "" Then
+
+                MsgBox("Existen campos vacíos.")
+                txtCodigo.BackColor = Color.Red
+
+            ElseIf txtCuenta.Text = "" Then
+                MsgBox("Existen campos vacíos.")
+                txtCuenta.BackColor = Color.Red
+            ElseIf txtCtaBanco.Text = "" Then
+                MsgBox("Existen campos vacíos.")
+                txtCtaBanco.BackColor = Color.Red
+            ElseIf txtNombreBanco.Text = "" Then
+                MsgBox("Existen campos vacíos.")
+                txtNombreBanco.BackColor = Color.Red
+            ElseIf txtBanco.Text = "" Then
+                MsgBox("Existen campos vacíos.")
+                txtBanco.BackColor = Color.Red
+            End If
+
+            Limpiar()
+            btnGuardar.Visible = True
+            btnModificar.Visible = False
+            btnCrear.Visible = False
+            dtFormasPago.DataSource = FormaPago.informacionFormasPago()
 
         Catch ex As Exception
 
-            MsgBox("Error al modificar el registro. Detalle: " + ex.Message)
+            MsgBox("Error. " + ex.Message)
 
         End Try
-
-        'Limpiar campos, habilitar para guardar nuevo registro y actulizar tabla de datos
-        Limpiar()
-        btnGuardar.Visible = True
-        btnModificar.Visible = False
-        btnCrear.Visible = False
-        dtFormasPago.DataSource = FormaPago.informacionFormasPago()
-
     End Sub
 
     Private Sub dtFormasPago_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtFormasPago.CellClick
@@ -137,6 +220,7 @@ Public Class frmFormaPago
         btnCrear.Visible = True
         btnModificar.Visible = True
         btnGuardar.Visible = False
+
         Try
             lblCodFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
             txtCodigo.Text = dtFormasPago.Rows(e.RowIndex).Cells(1).Value
@@ -159,6 +243,30 @@ Public Class frmFormaPago
         Dim formasPago As New ClsFormaPago
         'Cargar listado de formas de pago
         dtFormasPago.DataSource = formasPago.mostrarFormasPago
+
+        Try
+
+            dtFormasPago.Columns("codFormaPago").Visible = False
+            dtFormasPago.Columns("comentario").Visible = False
+            dtFormasPago.Columns("formulario").Visible = False
+            dtFormasPago.Columns("banco").Visible = False
+
+
+            dtFormasPago.Columns("codigo").HeaderText = "Cód. Breve"
+            dtFormasPago.Columns("codigo").Width = 53
+
+            dtFormasPago.Columns("cuenta").HeaderText = "Cuenta"
+            dtFormasPago.Columns("cuenta").Width = 50
+
+            dtFormasPago.Columns("nroCtaBanco").HeaderText = "Cuenta Banco"
+            dtFormasPago.Columns("nroCtaBanco").Width = 120
+
+            dtFormasPago.Columns("nombreBanco").HeaderText = "Nombre de Banco"
+            dtFormasPago.Columns("nombreBanco").Width = 250
+
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
@@ -193,13 +301,84 @@ Public Class frmFormaPago
 
     End Sub
 
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnBuscarBanco.Click
         A_ListadoBancos.lblFormBanco.Text = "1"
         A_ListadoBancos.ShowDialog()
     End Sub
 
-    Private Sub frmFormaPago_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        ' frmMenuConta.Show()
+    Private Sub txtCodigo_TextChanged(sender As Object, e As EventArgs) Handles txtCodigo.TextChanged
+        If txtCodigo.BackColor = Color.Red Then
+            txtCodigo.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub txtCuenta_TextChanged(sender As Object, e As EventArgs) Handles txtCuenta.TextChanged
+        If txtCuenta.BackColor = Color.Red Then
+            txtCuenta.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub txtCtaBanco_TextChanged(sender As Object, e As EventArgs) Handles txtCtaBanco.TextChanged
+        If txtCtaBanco.BackColor = Color.Red Then
+            txtCtaBanco.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub txtNombreBanco_TextChanged(sender As Object, e As EventArgs) Handles txtNombreBanco.TextChanged
+        If txtNombreBanco.BackColor = Color.Red Then
+            txtNombreBanco.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub txtBanco_TextChanged(sender As Object, e As EventArgs) Handles txtBanco.TextChanged
+        If txtBanco.BackColor = Color.Red Then
+            txtBanco.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
+
+        With FormaPago
+
+            If txtBusqueda.Text = "" Then
+
+                .mostrarFormasPago()
+
+            Else
+
+                .Cod = txtBusqueda.Text
+                dtFormasPago.DataSource = .infoFormaPago
+                dtFormasPago.Columns("codFormaPago").Visible = False
+                dtFormasPago.Columns("comentario").Visible = False
+                dtFormasPago.Columns("formulario").Visible = False
+                dtFormasPago.Columns("banco").Visible = False
+
+
+                dtFormasPago.Columns("codigo").HeaderText = "Cód. Breve"
+                dtFormasPago.Columns("codigo").Width = 53
+
+                dtFormasPago.Columns("cuenta").HeaderText = "Cuenta"
+                dtFormasPago.Columns("cuenta").Width = 50
+
+                dtFormasPago.Columns("nroCtaBanco").HeaderText = "Cuenta Banco"
+                dtFormasPago.Columns("nroCtaBanco").Width = 120
+
+                dtFormasPago.Columns("nombreBanco").HeaderText = "Nombre de Banco"
+                dtFormasPago.Columns("nombreBanco").Width = 250
+
+
+            End If
+
+
+        End With
+
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Limpiar()
+        btnCrear.Visible = False
+        btnModificar.Visible = False
+        btnGuardar.Visible = True
+        dtFormasPago.DataSource = FormaPago.mostrarFormasPago
     End Sub
 End Class

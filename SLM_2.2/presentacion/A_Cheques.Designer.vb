@@ -674,6 +674,7 @@ Partial Class A_Cheques
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "A_Cheques"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cheques"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

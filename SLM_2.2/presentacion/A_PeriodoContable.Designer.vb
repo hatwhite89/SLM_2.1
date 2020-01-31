@@ -135,6 +135,7 @@ Partial Class A_PeriodoContable
         Me.ClientSize = New System.Drawing.Size(359, 129)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "A_PeriodoContable"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Periodo Contable"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

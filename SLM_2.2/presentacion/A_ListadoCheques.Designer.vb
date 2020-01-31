@@ -96,6 +96,7 @@ Partial Class A_ListadoCheques
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True
         Me.Name = "A_ListadoCheques"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listado Cheques"
         Me.gbxCheque.ResumeLayout(False)
         Me.gbxCheque.PerformLayout()

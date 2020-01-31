@@ -139,7 +139,7 @@
                     txtNombreProveedor.Text = row("nombreProveedor")
                     txtNombreProveedor.BackColor = Color.White
                 Catch ex As Exception
-                    MessageBox.Show(ex.Message)
+                    MessageBox.Show("El proveedor no existe o hubo un error." + ex.Message)
                 End Try
 
             Else

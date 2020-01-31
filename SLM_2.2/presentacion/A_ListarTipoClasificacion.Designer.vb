@@ -61,6 +61,7 @@ Partial Class A_ListarTipoClasificacion
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "A_ListarTipoClasificacion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tipo Clasificacion"
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dtTipoClasific, System.ComponentModel.ISupportInitialize).EndInit()

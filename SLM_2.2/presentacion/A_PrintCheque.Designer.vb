@@ -45,6 +45,7 @@ Partial Class A_PrintCheque
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.crvImprimirCheque)
         Me.Name = "A_PrintCheque"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Print Cheque"
         Me.ResumeLayout(False)
 

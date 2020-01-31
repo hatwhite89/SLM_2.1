@@ -98,6 +98,7 @@ Partial Class A_ListadoBancos
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "A_ListadoBancos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Seleccione un banco"
         CType(Me.dtBancos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

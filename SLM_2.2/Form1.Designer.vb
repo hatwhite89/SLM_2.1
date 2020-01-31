@@ -80,6 +80,7 @@ Partial Class Form1
         Me.SLMLightToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SLMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SLMSilverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SLMSportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelFactura = New System.Windows.Forms.Panel()
         Me.Button11 = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -108,7 +109,6 @@ Partial Class Form1
         Me.btnSede = New System.Windows.Forms.Button()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.btnMedico = New System.Windows.Forms.Button()
-        Me.SLMSportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxMenu.SuspendLayout()
         Me.panelMenu.SuspendLayout()
@@ -151,7 +151,7 @@ Partial Class Form1
         Me.btnContabilidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnContabilidad.FlatAppearance.BorderSize = 0
         Me.btnContabilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnContabilidad.Location = New System.Drawing.Point(5, 85)
+        Me.btnContabilidad.Location = New System.Drawing.Point(3, 85)
         Me.btnContabilidad.Name = "btnContabilidad"
         Me.btnContabilidad.Size = New System.Drawing.Size(92, 27)
         Me.btnContabilidad.TabIndex = 4
@@ -182,7 +182,7 @@ Partial Class Form1
         Me.gbxMenu.Size = New System.Drawing.Size(101, 438)
         Me.gbxMenu.TabIndex = 3
         Me.gbxMenu.TabStop = False
-        Me.gbxMenu.Text = "Opciones"
+        Me.gbxMenu.Text = "SLM"
         '
         'btnAcerca
         '
@@ -190,7 +190,7 @@ Partial Class Form1
         Me.btnAcerca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnAcerca.FlatAppearance.BorderSize = 0
         Me.btnAcerca.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAcerca.Location = New System.Drawing.Point(4, 349)
+        Me.btnAcerca.Location = New System.Drawing.Point(2, 349)
         Me.btnAcerca.Name = "btnAcerca"
         Me.btnAcerca.Size = New System.Drawing.Size(92, 27)
         Me.btnAcerca.TabIndex = 5
@@ -203,7 +203,7 @@ Partial Class Form1
         Me.btnFacturacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnFacturacion.FlatAppearance.BorderSize = 0
         Me.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFacturacion.Location = New System.Drawing.Point(5, 52)
+        Me.btnFacturacion.Location = New System.Drawing.Point(3, 52)
         Me.btnFacturacion.Name = "btnFacturacion"
         Me.btnFacturacion.Size = New System.Drawing.Size(92, 27)
         Me.btnFacturacion.TabIndex = 2
@@ -216,7 +216,7 @@ Partial Class Form1
         Me.btnlaboratorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnlaboratorio.FlatAppearance.BorderSize = 0
         Me.btnlaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnlaboratorio.Location = New System.Drawing.Point(5, 19)
+        Me.btnlaboratorio.Location = New System.Drawing.Point(3, 19)
         Me.btnlaboratorio.Name = "btnlaboratorio"
         Me.btnlaboratorio.Size = New System.Drawing.Size(92, 27)
         Me.btnlaboratorio.TabIndex = 1
@@ -755,7 +755,7 @@ Partial Class Form1
         '
         Me.TemaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SLMBlueToolStripMenuItem, Me.SLMGrayToolStripMenuItem, Me.SLMLongHordToolStripMenuItem, Me.SLMLightToolStripMenuItem, Me.SLMToolStripMenuItem, Me.SLMSilverToolStripMenuItem, Me.SLMSportToolStripMenuItem})
         Me.TemaToolStripMenuItem.Name = "TemaToolStripMenuItem"
-        Me.TemaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TemaToolStripMenuItem.Size = New System.Drawing.Size(102, 22)
         Me.TemaToolStripMenuItem.Text = "Tema"
         '
         'SLMBlueToolStripMenuItem
@@ -793,6 +793,12 @@ Partial Class Form1
         Me.SLMSilverToolStripMenuItem.Name = "SLMSilverToolStripMenuItem"
         Me.SLMSilverToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.SLMSilverToolStripMenuItem.Text = "SLM Silver"
+        '
+        'SLMSportToolStripMenuItem
+        '
+        Me.SLMSportToolStripMenuItem.Name = "SLMSportToolStripMenuItem"
+        Me.SLMSportToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.SLMSportToolStripMenuItem.Text = "SLM Sport"
         '
         'PanelFactura
         '
@@ -1081,12 +1087,6 @@ Partial Class Form1
         Me.btnMedico.TabIndex = 11
         Me.btnMedico.Text = "Médicos"
         Me.btnMedico.UseVisualStyleBackColor = True
-        '
-        'SLMSportToolStripMenuItem
-        '
-        Me.SLMSportToolStripMenuItem.Name = "SLMSportToolStripMenuItem"
-        Me.SLMSportToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.SLMSportToolStripMenuItem.Text = "SLM Sport"
         '
         'Form1
         '

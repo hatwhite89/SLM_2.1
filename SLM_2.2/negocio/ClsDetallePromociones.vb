@@ -138,5 +138,27 @@ Public Class ClsDetallePromociones
         End Using
     End Function
 
+    Public Function VerDetallePromocion() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmListarDetalleExamen"
+            cmd.Parameters.Add("@codPromocion", SqlDbType.Int).Value = codigoPromocion_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
+
+
 End Class
 

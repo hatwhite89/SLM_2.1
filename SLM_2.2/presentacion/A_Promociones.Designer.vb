@@ -26,7 +26,7 @@ Partial Class A_Promociones
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.pbxPromo = New System.Windows.Forms.PictureBox()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -46,6 +46,9 @@ Partial Class A_Promociones
         Me.Cod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descrip = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ofdImagen = New System.Windows.Forms.OpenFileDialog()
+        Me.btnCancelarRegistro = New System.Windows.Forms.Button()
+        Me.txtRuta = New System.Windows.Forms.TextBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.GroupBox1.SuspendLayout()
         CType(Me.pbxPromo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -54,10 +57,12 @@ Partial Class A_Promociones
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtRuta)
+        Me.GroupBox1.Controls.Add(Me.btnCancelarRegistro)
         Me.GroupBox1.Controls.Add(Me.btnCrear)
         Me.GroupBox1.Controls.Add(Me.btnModificar)
         Me.GroupBox1.Controls.Add(Me.btnGuardar)
-        Me.GroupBox1.Controls.Add(Me.btnCancelar)
+        Me.GroupBox1.Controls.Add(Me.btnEliminar)
         Me.GroupBox1.Controls.Add(Me.pbxPromo)
         Me.GroupBox1.Controls.Add(Me.txtPrecio)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -73,7 +78,7 @@ Partial Class A_Promociones
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(373, 340)
+        Me.GroupBox1.Size = New System.Drawing.Size(352, 386)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Promoción"
@@ -84,7 +89,7 @@ Partial Class A_Promociones
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(6, 276)
+        Me.btnCrear.Location = New System.Drawing.Point(7, 305)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(123, 23)
         Me.btnCrear.TabIndex = 2
@@ -97,7 +102,7 @@ Partial Class A_Promociones
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(6, 247)
+        Me.btnModificar.Location = New System.Drawing.Point(7, 276)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(123, 23)
         Me.btnModificar.TabIndex = 3
@@ -110,33 +115,33 @@ Partial Class A_Promociones
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(6, 218)
+        Me.btnGuardar.Location = New System.Drawing.Point(7, 247)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(123, 23)
         Me.btnGuardar.TabIndex = 4
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
-        'btnCancelar
+        'btnEliminar
         '
-        Me.btnCancelar.BackColor = System.Drawing.Color.DimGray
-        Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCancelar.FlatAppearance.BorderSize = 0
-        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(276, 193)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(59, 21)
-        Me.btnCancelar.TabIndex = 26
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = False
+        Me.btnEliminar.BackColor = System.Drawing.Color.DimGray
+        Me.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnEliminar.FlatAppearance.BorderSize = 0
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminar.Location = New System.Drawing.Point(276, 223)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(59, 21)
+        Me.btnEliminar.TabIndex = 26
+        Me.btnEliminar.Text = "Borrar"
+        Me.btnEliminar.UseVisualStyleBackColor = False
         '
         'pbxPromo
         '
         Me.pbxPromo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pbxPromo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbxPromo.Location = New System.Drawing.Point(135, 166)
+        Me.pbxPromo.Location = New System.Drawing.Point(135, 194)
         Me.pbxPromo.Name = "pbxPromo"
-        Me.pbxPromo.Size = New System.Drawing.Size(135, 152)
+        Me.pbxPromo.Size = New System.Drawing.Size(135, 185)
         Me.pbxPromo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbxPromo.TabIndex = 25
         Me.pbxPromo.TabStop = False
@@ -163,7 +168,7 @@ Partial Class A_Promociones
         Me.btnBuscarImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscarImage.FlatAppearance.BorderSize = 0
         Me.btnBuscarImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarImage.Location = New System.Drawing.Point(276, 166)
+        Me.btnBuscarImage.Location = New System.Drawing.Point(276, 196)
         Me.btnBuscarImage.Name = "btnBuscarImage"
         Me.btnBuscarImage.Size = New System.Drawing.Size(59, 21)
         Me.btnBuscarImage.TabIndex = 22
@@ -249,9 +254,9 @@ Partial Class A_Promociones
         '
         Me.GroupBox2.Controls.Add(Me.btnAgregar)
         Me.GroupBox2.Controls.Add(Me.dtDetallePromo)
-        Me.GroupBox2.Location = New System.Drawing.Point(392, 13)
+        Me.GroupBox2.Location = New System.Drawing.Point(370, 13)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(440, 339)
+        Me.GroupBox2.Size = New System.Drawing.Size(440, 385)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detalle de Promoción"
@@ -262,7 +267,7 @@ Partial Class A_Promociones
         Me.btnAgregar.FlatAppearance.BorderSize = 0
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.ForeColor = System.Drawing.Color.White
-        Me.btnAgregar.Location = New System.Drawing.Point(359, 304)
+        Me.btnAgregar.Location = New System.Drawing.Point(359, 355)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
         Me.btnAgregar.TabIndex = 27
@@ -277,7 +282,7 @@ Partial Class A_Promociones
         Me.dtDetallePromo.Location = New System.Drawing.Point(6, 19)
         Me.dtDetallePromo.Name = "dtDetallePromo"
         Me.dtDetallePromo.ReadOnly = True
-        Me.dtDetallePromo.Size = New System.Drawing.Size(428, 279)
+        Me.dtDetallePromo.Size = New System.Drawing.Size(428, 330)
         Me.dtDetallePromo.TabIndex = 0
         '
         'Cod
@@ -297,12 +302,32 @@ Partial Class A_Promociones
         '
         Me.ofdImagen.FileName = "OpenFileDialog1"
         '
+        'btnCancelarRegistro
+        '
+        Me.btnCancelarRegistro.Location = New System.Drawing.Point(7, 218)
+        Me.btnCancelarRegistro.Name = "btnCancelarRegistro"
+        Me.btnCancelarRegistro.Size = New System.Drawing.Size(123, 23)
+        Me.btnCancelarRegistro.TabIndex = 27
+        Me.btnCancelarRegistro.Text = "Cancelar"
+        Me.btnCancelarRegistro.UseVisualStyleBackColor = True
+        '
+        'txtRuta
+        '
+        Me.txtRuta.Location = New System.Drawing.Point(135, 163)
+        Me.txtRuta.Name = "txtRuta"
+        Me.txtRuta.Size = New System.Drawing.Size(200, 20)
+        Me.txtRuta.TabIndex = 28
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'A_Promociones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(841, 361)
+        Me.ClientSize = New System.Drawing.Size(819, 410)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -339,8 +364,11 @@ Partial Class A_Promociones
     Friend WithEvents btnBuscarImage As Button
     Friend WithEvents pbxPromo As PictureBox
     Friend WithEvents ofdImagen As OpenFileDialog
-    Friend WithEvents btnCancelar As Button
+    Friend WithEvents btnEliminar As Button
     Friend WithEvents Cod As DataGridViewTextBoxColumn
     Friend WithEvents Descrip As DataGridViewTextBoxColumn
     Friend WithEvents btnAgregar As Button
+    Friend WithEvents btnCancelarRegistro As Button
+    Friend WithEvents txtRuta As TextBox
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

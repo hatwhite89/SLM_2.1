@@ -1,4 +1,5 @@
 ﻿Public Class A_Proveedor
+
     Dim Proveedor As New ClsProveedor
     Dim codigoDetalleContacto As ArrayList = New ArrayList()
 
@@ -33,6 +34,26 @@
                 row = dt.Rows(index)
                 cbxCategoria.Items.Add(CStr(row("descripcion")))
             Next
+
+            'Ocultar campos de Datagrid
+            dgvProveedores.Columns("idTributario").Visible = False
+            dgvProveedores.Columns("telefono").Visible = False
+            dgvProveedores.Columns("email").Visible = False
+            dgvProveedores.Columns("direccion").Visible = False
+            dgvProveedores.Columns("sitioweb").Visible = False
+            dgvProveedores.Columns("codCate").Visible = False
+            dgvProveedores.Columns("codTermPago").Visible = False
+
+            'Tamaño de campos
+            dgvProveedores.Columns("codProveedor").Width = 25
+            dgvProveedores.Columns("codProveedor").HeaderText = "Cód"
+
+            dgvProveedores.Columns("codBreve").Width = 50
+            dgvProveedores.Columns("CodBreve").HeaderText = "C.Breve"
+
+            dgvProveedores.Columns("nombreProveedor").Width = 300
+            dgvProveedores.Columns("nombreProveedor").HeaderText = "Nombre"
+
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Validación")
         End Try
@@ -227,6 +248,7 @@
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
+
     End Sub
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Limpiar()

@@ -64,6 +64,10 @@ Public Class A_Cheques
 
                     frmPagos.dtDetallePagos.Rows(fila).Cells(5).Value = txtNroCheq.Text
 
+
+
+
+
                 End With
 
             ElseIf txtMonto.Text = "" Then

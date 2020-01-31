@@ -51,6 +51,9 @@ Partial Class frmFormaPago
         Me.lblCodFormaPago = New System.Windows.Forms.Label()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.dtFormasPago = New System.Windows.Forms.DataGridView()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtBusqueda = New System.Windows.Forms.TextBox()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxInfoFormaPago.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -285,13 +288,16 @@ Partial Class frmFormaPago
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnCancelar)
+        Me.GroupBox1.Controls.Add(Me.txtBusqueda)
+        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.btnCrear)
         Me.GroupBox1.Controls.Add(Me.lblCodFormaPago)
         Me.GroupBox1.Controls.Add(Me.btnModificar)
         Me.GroupBox1.Controls.Add(Me.dtFormasPago)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 223)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(646, 220)
+        Me.GroupBox1.Size = New System.Drawing.Size(646, 254)
         Me.GroupBox1.TabIndex = 52
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Formas de Pago"
@@ -302,7 +308,7 @@ Partial Class frmFormaPago
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(454, 185)
+        Me.btnCrear.Location = New System.Drawing.Point(454, 223)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(90, 23)
         Me.btnCrear.TabIndex = 5
@@ -313,7 +319,7 @@ Partial Class frmFormaPago
         'lblCodFormaPago
         '
         Me.lblCodFormaPago.AutoSize = True
-        Me.lblCodFormaPago.Location = New System.Drawing.Point(409, 190)
+        Me.lblCodFormaPago.Location = New System.Drawing.Point(409, 228)
         Me.lblCodFormaPago.Name = "lblCodFormaPago"
         Me.lblCodFormaPago.Size = New System.Drawing.Size(39, 13)
         Me.lblCodFormaPago.TabIndex = 4
@@ -326,7 +332,7 @@ Partial Class frmFormaPago
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(550, 185)
+        Me.btnModificar.Location = New System.Drawing.Point(550, 223)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(90, 23)
         Me.btnModificar.TabIndex = 1
@@ -342,19 +348,44 @@ Partial Class frmFormaPago
         Me.dtFormasPago.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtFormasPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtFormasPago.GridColor = System.Drawing.Color.White
-        Me.dtFormasPago.Location = New System.Drawing.Point(6, 17)
+        Me.dtFormasPago.Location = New System.Drawing.Point(6, 55)
         Me.dtFormasPago.Name = "dtFormasPago"
         Me.dtFormasPago.ReadOnly = True
         Me.dtFormasPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtFormasPago.Size = New System.Drawing.Size(634, 162)
         Me.dtFormasPago.TabIndex = 0
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(10, 29)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(43, 13)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Código:"
+        '
+        'txtBusqueda
+        '
+        Me.txtBusqueda.Location = New System.Drawing.Point(59, 26)
+        Me.txtBusqueda.Name = "txtBusqueda"
+        Me.txtBusqueda.Size = New System.Drawing.Size(160, 20)
+        Me.txtBusqueda.TabIndex = 7
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Location = New System.Drawing.Point(544, 24)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(92, 23)
+        Me.btnCancelar.TabIndex = 8
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
         'frmFormaPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(670, 451)
+        Me.ClientSize = New System.Drawing.Size(670, 489)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoFormaPago)
         Me.Controls.Add(Me.MenuStrip1)
@@ -404,4 +435,7 @@ Partial Class frmFormaPago
     Friend WithEvents Button1 As Button
     Friend WithEvents btnCrear As Button
     Friend WithEvents btnBuscarBanco As Button
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents txtBusqueda As TextBox
+    Friend WithEvents Label1 As Label
 End Class

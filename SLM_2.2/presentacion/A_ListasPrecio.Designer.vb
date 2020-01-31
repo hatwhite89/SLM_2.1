@@ -95,6 +95,7 @@ Partial Class A_ListasPrecio
         Me.Controls.Add(Me.btnGuardar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "A_ListasPrecio"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Importar Precios"
         CType(Me.dtExcel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

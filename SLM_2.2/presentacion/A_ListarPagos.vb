@@ -2,7 +2,6 @@
 
     Dim pagos As New ClsPago
 
-
     Private Sub A_ListarPagos_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
@@ -30,6 +29,7 @@
 
     Private Sub dtPagos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtPagos.CellDoubleClick
         'Cargar datos de fila seleccionada en formulario Pagos
+
 
         Try
             Dim dt As New DataTable
@@ -59,7 +59,7 @@
 
             For Index As Integer = 0 To dtpago.Rows.Count - 1
                 Dim row2 As DataRow = dtpago.Rows(Index)
-                frmPagos.dtDetallePagos.Rows.Add(New String() {(row2("codproveedor")), CStr(row2("nombreproveedor")), CStr(row2("moneda")), CStr(row2("total")), CStr(row2("formapago")), CStr(row2("nrocheque"))})
+                frmPagos.dtDetallePagos.Rows.Add(New String() {(row2("codproveedor")), CStr(row2("nombreproveedor")), CStr(row2("moneda")), CStr(row2("monto")), CStr(row2("formapago")), CStr(row2("nrocheque"))})
             Next
 
             frmPagos.Show()
@@ -69,6 +69,7 @@
         End Try
 
         Me.Close()
+
     End Sub
 
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
@@ -95,4 +96,6 @@
     Private Sub btnCancelarBusqueda_Click(sender As Object, e As EventArgs) Handles btnCancelarBusqueda.Click
         dtPagos.DataSource = pagos.listarPagos
     End Sub
+
+
 End Class

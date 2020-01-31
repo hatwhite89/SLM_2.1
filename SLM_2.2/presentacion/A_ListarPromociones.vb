@@ -7,30 +7,46 @@
         'Ocultar columnas
         dtPromos.Columns("contador").Visible = False
         dtPromos.Columns("precio").Visible = False
-        dtPromos.Columns("img").Visible = False
+        dtPromos.Columns("imagen").Visible = False
         dtPromos.Columns("descripcion").Width = 230
     End Sub
 
     Private Sub dtPromos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtPromos.CellDoubleClick
 
-        Dim dt As DataTable
-        Dim rows As DataRow
+        Try
 
-        dt = dtPromos.DataSource
-        rows = dt.Rows(e.RowIndex)
 
-        With A_Promociones
+            Dim dt As DataTable
+            Dim rows As DataRow
 
-            .txtCod.Text = rows("codigo")
-            .txtDescrip.Text = rows("descripcion")
-            .txtPrecio.Text = rows("precio")
-            .dtpFechaI.Value = rows("fechaInicio")
-            .dtpFechaF.Value = rows("fechaFinal")
-            .pbxPromo.Image = BytesToImagen(rows("img"))
+            dt = dtPromos.DataSource
+            rows = dt.Rows(e.RowIndex)
 
-            .Show()
+            With A_Promociones
 
-        End With
+                .txtCod.Text = rows("codigo")
+                .txtDescrip.Text = rows("descripcion")
+                .txtPrecio.Text = rows("precio")
+                .dtpFechaI.Value = rows("fechaInicio")
+                .dtpFechaF.Value = rows("fechaFinal")
+                .pbxPromo.Load(rows("imagen"))
+
+                .Show()
+
+            End With
+
+            With A_Promociones
+
+                .btnCrear.Visible = True
+                .btnModificar.Visible = True
+                .btnGuardar.Visible = False
+
+            End With
+
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
 
@@ -41,10 +57,23 @@
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Close()
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnNuevaPromo.Click
+        Try
 
-        A_Promociones.Show()
+            Me.Close()
+
+            With A_Promociones
+
+                .Show()
+                .btnGuardar.Visible = True
+                .btnCrear.Visible = False
+                .btnModificar.Visible = False
+
+            End With
+
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 

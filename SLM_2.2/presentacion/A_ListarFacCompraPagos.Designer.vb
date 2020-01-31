@@ -94,6 +94,7 @@ Partial Class A_ListarFacCompraPagos
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "A_ListarFacCompraPagos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listado de Facturas de Compra"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

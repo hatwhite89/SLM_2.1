@@ -4,7 +4,6 @@ Public Class ClsPromociones
     Dim descripcion, imagen As String
     Dim codigo, contador As Integer
     Dim precio As Double
-    Dim img As Byte()
     Dim fechaInicio, fechaFinal As Date
 
     'Constructor
@@ -53,14 +52,7 @@ Public Class ClsPromociones
             precio = value
         End Set
     End Property
-    Public Property img_ As Byte()
-        Get
-            Return img
-        End Get
-        Set(value As Byte())
-            img = value
-        End Set
-    End Property
+
     Public Property fechaInicio_ As Date
         Get
             Return fechaInicio
@@ -103,18 +95,13 @@ Public Class ClsPromociones
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "img" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = img_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
         sqlpar.ParameterName = "precio" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = precio_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "imagen" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = precio_
+        sqlpar.Value = imagen_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -167,13 +154,13 @@ Public Class ClsPromociones
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "img" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = img_
+        sqlpar.ParameterName = "precio" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = precio_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "precio" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = precio_
+        sqlpar.ParameterName = "imagen" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = imagen_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

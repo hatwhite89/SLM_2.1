@@ -7,6 +7,7 @@ Public Class ClsDetallePago
     'Variables
     Dim codDetalle, codPago, codFactura As Integer
     Dim formaPago, nroCheque As String
+    Dim monto As Double
 
     'Constructor
     Public Sub New()
@@ -64,6 +65,16 @@ Public Class ClsDetallePago
         End Set
     End Property
 
+    'Monto
+    Public Property Monto_ As Double
+        Get
+            Return monto
+        End Get
+        Set(value As Double)
+            monto = value
+        End Set
+    End Property
+
     '::::::::::::::::::::::::::::: FUNCIONES DE MANTENIMIENTO ::::::::::::::::::::::::::::::
 
     'Guardar una nueva forma de pago
@@ -97,6 +108,11 @@ Public Class ClsDetallePago
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "nroCheque"
+        sqlpar.Value = Nro_Cheque
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "monto"
         sqlpar.Value = Nro_Cheque
         sqlcom.Parameters.Add(sqlpar)
 

@@ -4,6 +4,7 @@
     Dim factuCompra As New ClsFacturaCompra
     Dim pagos As New ClsPago
     Dim detallePago As New ClsDetallePago
+
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         'Cerrar Ventana Pagos
         Me.Close()
@@ -138,7 +139,7 @@
 
             dt = ObjFpago.buscarCodigoFormaPago()
 
-            If dt.Rows.Count > 0 Then
+            If dt.Rows.Count > 0 Then ' Conteo de filas
 
                 With pagos
 
@@ -168,25 +169,40 @@
 
             End If 'If conteo de filas
 
+
+
+
+            If dtDetallePagos.Rows.Count > 1 Then
+
+                'Recorrer filas para ingreso de detalle de factura
+                For fila = 0 To dtDetallePagos.Rows.Count - 2
+                    Try
+
+                        'Insertar detalle de pago
+                        detallePago.Cod_Pago = Convert.ToInt32(txtNro.Text)
+                        detallePago.Cod_Factura = Convert.ToInt32(dtDetallePagos.Rows(fila).Cells(0).Value)
+                        detallePago.Forma_Pago = dtDetallePagos.Rows(fila).Cells(4).Value
+                        detallePago.Nro_Cheque = dtDetallePagos.Rows(fila).Cells(5).Value
+                        detallePago.Monto_ = dtDetallePagos.Rows(fila).Cells(3).Value
+
+                        'Funcion de registro de detalle
+                        detallePago.registrarDetallePago()
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
+
+                Next
+
+            Else
+                MsgBox("No existe un detalle de pago.")
+            End If
+
+        Else
+
+            txtFormaP.BackColor = Color.Red
+
         End If 'Verificar que campo txtFormaPago no este vacio.
 
-        'Recorrer filas para ingreso de detalle de factura
-        For fila = 0 To dtDetallePagos.Rows.Count - 2
-            Try
-
-                'Insertar detalle de pago
-                detallePago.Cod_Pago = Convert.ToInt32(txtNro.Text)
-                detallePago.Cod_Factura = Convert.ToInt32(dtDetallePagos.Rows(fila).Cells(0).Value)
-                detallePago.Forma_Pago = dtDetallePagos.Rows(fila).Cells(4).Value
-                detallePago.Nro_Cheque = +dtDetallePagos.Rows(fila).Cells(5).Value
-
-                'Funcion de registro de detalle
-                detallePago.registrarDetallePago()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-
-        Next
         Me.Close()
         A_ListarPagos.ShowDialog()
 
@@ -231,10 +247,18 @@
 
     End Sub
 
-    Private Sub lblTotalSuma_Click(sender As Object, e As EventArgs) Handles lblTotalSuma.Click
+    Private Sub dtDetallePagos_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles dtDetallePagos.RowsAdded
+        Dim Total2 As Single
+        Dim Col2 As Integer = 3
+        For Each row As DataGridViewRow In dtDetallePagos.Rows
+            Total2 += Val(row.Cells(3).Value)
+        Next
+        lblTotalSuma.Text = Total2.ToString
+    End Sub
 
-
-
-
+    Private Sub txtFormaP_TextChanged(sender As Object, e As EventArgs) Handles txtFormaP.TextChanged
+        If txtFormaP.BackColor = Color.Red Then
+            txtFormaP.BackColor = Color.White
+        End If
     End Sub
 End Class

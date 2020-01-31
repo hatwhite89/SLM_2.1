@@ -23,10 +23,10 @@ Partial Class A_ListarProveedores
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblForm = New System.Windows.Forms.Label()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtProveedor = New System.Windows.Forms.DataGridView()
-        Me.lblForm = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -43,6 +43,15 @@ Partial Class A_ListarProveedores
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Proveedores"
+        '
+        'lblForm
+        '
+        Me.lblForm.AutoSize = True
+        Me.lblForm.Location = New System.Drawing.Point(6, 22)
+        Me.lblForm.Name = "lblForm"
+        Me.lblForm.Size = New System.Drawing.Size(30, 13)
+        Me.lblForm.TabIndex = 3
+        Me.lblForm.Text = "Form"
         '
         'txtBusqueda
         '
@@ -74,15 +83,6 @@ Partial Class A_ListarProveedores
         Me.dtProveedor.Size = New System.Drawing.Size(408, 220)
         Me.dtProveedor.TabIndex = 0
         '
-        'lblForm
-        '
-        Me.lblForm.AutoSize = True
-        Me.lblForm.Location = New System.Drawing.Point(6, 22)
-        Me.lblForm.Name = "lblForm"
-        Me.lblForm.Size = New System.Drawing.Size(30, 13)
-        Me.lblForm.TabIndex = 3
-        Me.lblForm.Text = "Form"
-        '
         'A_ListarProveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -91,6 +91,7 @@ Partial Class A_ListarProveedores
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "A_ListarProveedores"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Proveedores"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
