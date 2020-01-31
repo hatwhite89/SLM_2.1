@@ -376,6 +376,12 @@
     <Compile Include="presentacion\E_ListarSubAreas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_OrdenTrabajo.Designer.vb">
+      <DependentUpon>E_OrdenTrabajo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_OrdenTrabajo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_SubArea.Designer.vb">
       <DependentUpon>E_SubArea.vb</DependentUpon>
     </Compile>
@@ -453,6 +459,12 @@
     </Compile>
     <Compile Include="presentacion\M_CAI.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_CierreCaja.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M_CierreCaja.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="presentacion\M_CryTiposDePacientes.vb">
       <AutoGen>True</AutoGen>
@@ -870,6 +882,9 @@
     <EmbeddedResource Include="presentacion\E_ListarSubAreas.resx">
       <DependentUpon>E_ListarSubAreas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_OrdenTrabajo.resx">
+      <DependentUpon>E_OrdenTrabajo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_SubArea.resx">
       <DependentUpon>E_SubArea.vb</DependentUpon>
     </EmbeddedResource>
@@ -902,6 +917,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_CAI.resx">
       <DependentUpon>M_CAI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_CierreCaja.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>M_CierreCaja.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_CryTiposDePacientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

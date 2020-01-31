@@ -1,7 +1,7 @@
 ﻿Public Class M_ClienteVentana
     Dim objPromo As New ClsPromociones
     Dim dt As New DataTable
-    Dim cont As Integer = 9
+    Dim cont As Integer = 0
     Dim row As DataRow
     Private Sub M_ClienteVentana_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Interval = 5000
@@ -10,12 +10,12 @@
         Try
             dt = objPromo.ListarPromociones
             row = dt.Rows(cont)
-            If IsDBNull(row("img")) = False Then
-                pbxImagenes.Image = BytesToImagen(row("img"))
+            If IsDBNull(row("imagen")) = False Then
+                pbxImagenes.Load(row("imagen"))
                 cont += 1
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.Message + "Cliente")
         End Try
     End Sub
 
@@ -24,8 +24,8 @@
             If (cont < dt.Rows.Count) Then
                 row = dt.Rows(cont)
                 cont += 1
-                If IsDBNull(row("img")) = False Then
-                    pbxImagenes.Image = BytesToImagen(row("img"))
+                If IsDBNull(row("imagen")) = False Then
+                    pbxImagenes.Load(row("imagen"))
                 End If
             Else
                 cont = 0
