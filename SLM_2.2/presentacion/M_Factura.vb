@@ -657,6 +657,7 @@ Public Class M_Factura
                     Next
                     MsgBox("Registrada la factura correctamente.")
                     If (cbxok.Checked) Then
+                        letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
                         Imprimir_Factura()
                     Else
                         HabilitarActualizarFactura()
@@ -788,6 +789,7 @@ Public Class M_Factura
                     btnActualizar.Enabled = False
                     MsgBox("Actualizada la factura correctamente.")
                     If (cbxok.Checked) Then
+                        letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
                         Imprimir_Factura()
                     Else
                         HabilitarActualizarFactura()
@@ -867,14 +869,15 @@ Public Class M_Factura
     Private Sub Imprimir_Factura()
         If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
             'le asigno un valor a los parametros del procedimiento almacenado
-            Dim objReporte As New M_CryComprobanteEntrega
+            Dim objReporte As New M_ImprimirFactura
 
             objReporte.SetParameterValue("@numero", Convert.ToInt64(txtnumeroFactura.Text))
             objReporte.SetParameterValue("@numeroFactura", Convert.ToInt64(txtnumeroFactura.Text))
             objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
+            objReporte.SetParameterValue("numalet", letras)
             objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
-            M_ComprobanteEntrega.CrystalReportViewer1.ReportSource = objReporte
-            M_ComprobanteEntrega.ShowDialog()
+            M_ImprimirFacturaReport.CrystalReportViewer1.ReportSource = objReporte
+            M_ImprimirFacturaReport.ShowDialog()
         Else
             MsgBox("Debe estar creada o guardada la factura para poder imprimirla.", MsgBoxStyle.Critical)
         End If

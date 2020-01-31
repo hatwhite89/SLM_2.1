@@ -580,6 +580,12 @@
       <DependentUpon>M_ImprimirFactura.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="presentacion\M_ImprimirFacturaReport.Designer.vb">
+      <DependentUpon>M_ImprimirFacturaReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ImprimirFacturaReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_InicioSesion.Designer.vb">
       <DependentUpon>M_InicioSesion.vb</DependentUpon>
     </Compile>
@@ -963,6 +969,9 @@
     <EmbeddedResource Include="presentacion\M_ImprimirFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>M_ImprimirFactura.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ImprimirFacturaReport.resx">
+      <DependentUpon>M_ImprimirFacturaReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_InicioSesion.resx">
       <DependentUpon>M_InicioSesion.vb</DependentUpon>
