@@ -23,6 +23,8 @@ Partial Class A_Promociones
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtRuta = New System.Windows.Forms.TextBox()
+        Me.btnCancelarRegistro = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
@@ -46,8 +48,6 @@ Partial Class A_Promociones
         Me.Cod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descrip = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ofdImagen = New System.Windows.Forms.OpenFileDialog()
-        Me.btnCancelarRegistro = New System.Windows.Forms.Button()
-        Me.txtRuta = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.GroupBox1.SuspendLayout()
         CType(Me.pbxPromo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,6 +82,23 @@ Partial Class A_Promociones
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Promoción"
+        '
+        'txtRuta
+        '
+        Me.txtRuta.Enabled = False
+        Me.txtRuta.Location = New System.Drawing.Point(135, 163)
+        Me.txtRuta.Name = "txtRuta"
+        Me.txtRuta.Size = New System.Drawing.Size(200, 20)
+        Me.txtRuta.TabIndex = 28
+        '
+        'btnCancelarRegistro
+        '
+        Me.btnCancelarRegistro.Location = New System.Drawing.Point(7, 218)
+        Me.btnCancelarRegistro.Name = "btnCancelarRegistro"
+        Me.btnCancelarRegistro.Size = New System.Drawing.Size(123, 23)
+        Me.btnCancelarRegistro.TabIndex = 27
+        Me.btnCancelarRegistro.Text = "Cancelar"
+        Me.btnCancelarRegistro.UseVisualStyleBackColor = True
         '
         'btnCrear
         '
@@ -276,6 +293,7 @@ Partial Class A_Promociones
         '
         'dtDetallePromo
         '
+        Me.dtDetallePromo.AllowUserToAddRows = False
         Me.dtDetallePromo.AllowUserToDeleteRows = False
         Me.dtDetallePromo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDetallePromo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cod, Me.Descrip})
@@ -301,22 +319,6 @@ Partial Class A_Promociones
         'ofdImagen
         '
         Me.ofdImagen.FileName = "OpenFileDialog1"
-        '
-        'btnCancelarRegistro
-        '
-        Me.btnCancelarRegistro.Location = New System.Drawing.Point(7, 218)
-        Me.btnCancelarRegistro.Name = "btnCancelarRegistro"
-        Me.btnCancelarRegistro.Size = New System.Drawing.Size(123, 23)
-        Me.btnCancelarRegistro.TabIndex = 27
-        Me.btnCancelarRegistro.Text = "Cancelar"
-        Me.btnCancelarRegistro.UseVisualStyleBackColor = True
-        '
-        'txtRuta
-        '
-        Me.txtRuta.Location = New System.Drawing.Point(135, 163)
-        Me.txtRuta.Name = "txtRuta"
-        Me.txtRuta.Size = New System.Drawing.Size(200, 20)
-        Me.txtRuta.TabIndex = 28
         '
         'OpenFileDialog1
         '

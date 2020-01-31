@@ -245,40 +245,6 @@
     End Sub
 
 
-    Private Sub SLMBlueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SLMBlueToolStripMenuItem.Click
-
-        Apariencia.SkinFile = "C:\Users\Software 3\Source\Repos\hatwhite89\SLM_2.1\SLM_2.2\Themes\Componentes Graficos Vb2\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\Diamond\DiamondBlue.ssk"
-
-    End Sub
-
-    Private Sub SLMGrayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SLMGrayToolStripMenuItem.Click
-        Apariencia.SkinFile = "C:\Users\Software 3\Source\Repos\hatwhite89\SLM_2.1\SLM_2.2\Themes\Componentes Graficos Vb2\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\Emerald\EmeraldColor1.ssk"
-
-    End Sub
-
-    Private Sub SLMLongHordToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SLMLongHordToolStripMenuItem.Click
-        Apariencia.SkinFile = "C:\Users\Software 3\Source\Repos\hatwhite89\SLM_2.1\SLM_2.2\Themes\Componentes Graficos Vb2\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\Longhorn\Longhorn.ssk"
-
-    End Sub
-
-    Private Sub SLMLightToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SLMLightToolStripMenuItem.Click
-
-        Apariencia.SkinFile = "C:\Users\Software 3\Source\Repos\hatwhite89\SLM_2.1\SLM_2.2\Themes\Componentes Graficos Vb2\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\MacOS\MacOS.ssk"
-
-
-    End Sub
-
-    Private Sub SLMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SLMToolStripMenuItem.Click
-
-        Apariencia.SkinFile = "C:\Users\Software 3\Source\Repos\hatwhite89\SLM_2.1\SLM_2.2\Themes\Componentes Graficos Vb2\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\RealOne\realone.ssk"
-
-    End Sub
-
-    Private Sub SLMSilverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SLMSilverToolStripMenuItem.Click
-        Apariencia.SkinFile = "C:\Users\Software 3\Source\Repos\hatwhite89\SLM_2.1\SLM_2.2\Themes\Componentes Graficos Vb2\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\Silver\silver.ssk"
-
-    End Sub
-
     Private Sub btnFactura_Click(sender As Object, e As EventArgs) Handles btnFactura.Click
         M_BuscarFactura.ShowDialog()
     End Sub
@@ -352,8 +318,17 @@
         MsgBox("Version 0.01")
     End Sub
 
-    Private Sub SLMSportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SLMSportToolStripMenuItem.Click
+    Private Sub SLMSportToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Apariencia.SkinFile = "C:\Users\Software 3\Source\Repos\hatwhite89\SLM_2.1\SLM_2.2\Themes\Componentes Graficos Vb2\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\Sports\SportsBlue.ssk"
 
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnCAI.Click
+        Try
+            M_CAI.Show()
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

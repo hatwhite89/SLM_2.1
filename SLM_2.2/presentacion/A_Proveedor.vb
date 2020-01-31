@@ -130,6 +130,17 @@
                 MessageBox.Show("Error al guardar. Detalle: " + ex.Message)
             End Try
 
+
+        ElseIf txtNombreProvee.Text = "" Then
+            MsgBox("Existen campos vacíos.")
+            txtNombreProvee.BackColor = Color.Red
+        ElseIf txtCodBreve.Text = "" Then
+            MsgBox("Existen campos vacíos.")
+            txtCodBreve.BackColor = Color.Red
+        ElseIf txtCodigoTerminoPago.Text = "" Then
+            MsgBox("Existen campos vacíos.")
+            txtCodigoTerminoPago.BackColor = color.Red
+
         End If
     End Sub
 
@@ -241,8 +252,16 @@
                     MsgBox("Error al querer modificar el proveedor.", MsgBoxStyle.Critical)
                 End If
 
-            Else
-                MsgBox("Debe ingresar los campos necesarios.")
+            ElseIf txtNombreProvee.Text = "" Then
+                MsgBox("Existen campos vacíos.")
+                txtNombreProvee.BackColor = Color.Red
+            ElseIf txtCodBreve.Text = "" Then
+                MsgBox("Existen campos vacíos.")
+                txtCodBreve.BackColor = Color.Red
+            ElseIf txtCodigoTerminoPago.Text = "" Then
+                MsgBox("Existen campos vacíos.")
+                txtCodigoTerminoPago.BackColor = color.Red
+
             End If
 
         Catch ex As Exception
@@ -328,7 +347,14 @@
             'txtdescripcionTermino.Text = ""
             lblCodeTerminoPago.Text = ""
             txtCodigoTerminoPago.BackColor = Color.White
+
+            If txtCodigoTerminoPago.BackColor = Color.Red Then
+                txtCodigoTerminoPago.BackColor = Color.White
+            End If
+
+
         End If
+
     End Sub
     Private Sub lblcodeTerminoPago_TextChanged(sender As Object, e As EventArgs) Handles lblCodeTerminoPago.TextChanged
         Try
@@ -348,7 +374,16 @@
         M_ListarTerminoPago.ShowDialog()
     End Sub
 
-    Private Sub A_Proveedor_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        'frmMenuConta.Show()
+
+    Private Sub txtCodBreve_TextChanged(sender As Object, e As EventArgs) Handles txtCodBreve.TextChanged
+        If txtCodBreve.BackColor = Color.Red Then
+            txtCodBreve.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub txtNombreProvee_TextChanged(sender As Object, e As EventArgs) Handles txtNombreProvee.TextChanged
+        If txtNombreProvee.BackColor = Color.Red Then
+            txtNombreProvee.BackColor = Color.White
+        End If
     End Sub
 End Class

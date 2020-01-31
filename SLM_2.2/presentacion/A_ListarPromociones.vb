@@ -29,6 +29,7 @@
                 .txtPrecio.Text = rows("precio")
                 .dtpFechaI.Value = rows("fechaInicio")
                 .dtpFechaF.Value = rows("fechaFinal")
+                .txtRuta.Text = rows("imagen")
                 .pbxPromo.Load(rows("imagen"))
 
                 .Show()

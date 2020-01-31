@@ -283,6 +283,7 @@
                 MsgBox(ex.Message)
             End Try
 
+            MsgBox("Se registro un nuevo deposito.")
             dtDepositos.DataSource = nuevoDeposito.listarDepositos
 
         Else
@@ -320,10 +321,16 @@
     End Sub
     Private Sub frmDeposito_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Try
 
-        Dim Deposito As New ClsDeposito
-        'Mostrar todos los depositos registrados
-        dtDepositos.DataSource = Deposito.listarDepositos
+            txtMonBase.Text = "1"
+            Dim Deposito As New ClsDeposito
+            'Mostrar todos los depositos registrados
+            dtDepositos.DataSource = Deposito.listarDepositos
+
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
