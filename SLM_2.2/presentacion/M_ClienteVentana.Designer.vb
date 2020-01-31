@@ -349,7 +349,7 @@ Partial Class M_ClienteVentana
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1822, 852)
+        Me.ClientSize = New System.Drawing.Size(1822, 913)
         Me.ControlBox = False
         Me.Controls.Add(Me.pbxImagenes)
         Me.Controls.Add(Me.dgvtabla)

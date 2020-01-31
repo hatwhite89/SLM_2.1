@@ -18,8 +18,6 @@
     Private Sub btnlaboratorio_Click(sender As Object, e As EventArgs) Handles btnlaboratorio.Click
 
         Try
-
-
             If PanelFactura.Visible = True Or panelMenu.Visible = True Then
                 PanelFactura.Visible = False
                 panelMenu.Visible = False
@@ -27,10 +25,7 @@
                 PanelLab.Visible = True
             Else
                 PanelLab.Visible = True
-
             End If
-
-
             'M_MenuLaboratorio.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
@@ -49,8 +44,6 @@
     Private Sub btnFacturacion_Click(sender As Object, e As EventArgs) Handles btnFacturacion.Click
 
         Try
-
-
             If panelMenu.Visible = True Or PanelLab.Visible = True Then
                 PanelFactura.Visible = True
                 PanelLab.Visible = False
@@ -58,8 +51,6 @@
             Else
                 PanelFactura.Visible = True
             End If
-
-
             'M_MenuFacturacion.ShowDialog()
 
         Catch ex As Exception
@@ -95,7 +86,6 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
         Try
             A_Chequera.Show()
         Catch ex As Exception
@@ -104,7 +94,6 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-
         Try
             A_ListadoCheques.Show()
         Catch ex As Exception
@@ -115,7 +104,6 @@
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
         Try
-
             A_ListadoFacturaCompra.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
@@ -124,10 +112,7 @@
     End Sub
 
     Private Sub btnFormaPago_Click(sender As Object, e As EventArgs) Handles btnFormaPago.Click
-
-
         Try
-
             frmFormaPago.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
@@ -138,7 +123,6 @@
 
 
         Try
-
             A_Bancos.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
@@ -149,7 +133,6 @@
 
 
         Try
-
             A_Cuenta.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
@@ -161,7 +144,6 @@
 
 
         Try
-
             A_CategoriaProveedor.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
@@ -171,7 +153,6 @@
     Private Sub btnProveedor_Click(sender As Object, e As EventArgs) Handles btnProveedor.Click
 
         Try
-
             A_Proveedor.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
@@ -186,7 +167,6 @@
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
 
         Try
-
             M_Precio.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
@@ -207,7 +187,6 @@
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
 
         Try
-
             M_ListaPrecios.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
@@ -216,24 +195,19 @@
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-
         Try
             A_ListarPromociones.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
-
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         Try
-
             A_PeriodoContable.Show()
         Catch ex As Exception
-
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
-
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
@@ -354,6 +328,6 @@
 
     Private Sub SLMSportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SLMSportToolStripMenuItem.Click
         Apariencia.SkinFile = "C:\Users\Software 3\Source\Repos\hatwhite89\SLM_2.1\SLM_2.2\Themes\Componentes Graficos Vb2\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\Sports\SportsBlue.ssk"
-
     End Sub
+
 End Class

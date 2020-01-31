@@ -4,6 +4,7 @@ Imports System.Text
 Imports System.Globalization
 Public Class M_Factura
     Public letras As String
+    Dim subtotalF, descuentoF, abonoF, saldoF As Double
     Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
         M_ClienteVentana.Close()
         Me.Close()
@@ -311,8 +312,20 @@ Public Class M_Factura
         M_TerminosPago.ShowDialog()
     End Sub
     Private Sub M_Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Timer1.Interval = 3000
-        Timer1.Start()
+        'CON TIMER
+        'Timer1.Interval = 3000
+        'Timer1.Start()
+
+        'SIN TIMER
+        M_ClienteVentana.Show()
+        If dgblistadoExamenes.Columns.Contains("btnEliminar") = False Then
+            Dim btn As New DataGridViewButtonColumn()
+            dgblistadoExamenes.Columns.Add(btn)
+            btn.HeaderText = "Eliminar"
+            btn.Text = "Eliminar"
+            btn.Name = "btnEliminar"
+            btn.UseColumnTextForButtonValue = True
+        End If
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -658,6 +671,7 @@ Public Class M_Factura
                     MsgBox("Registrada la factura correctamente.")
                     If (cbxok.Checked) Then
                         letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
+                        calcularDescuento()
                         Imprimir_Factura()
                     Else
                         HabilitarActualizarFactura()
@@ -790,6 +804,7 @@ Public Class M_Factura
                     MsgBox("Actualizada la factura correctamente.")
                     If (cbxok.Checked) Then
                         letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
+                        calcularDescuento()
                         Imprimir_Factura()
                     Else
                         HabilitarActualizarFactura()
@@ -875,6 +890,10 @@ Public Class M_Factura
             objReporte.SetParameterValue("@numeroFactura", Convert.ToInt64(txtnumeroFactura.Text))
             objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
             objReporte.SetParameterValue("numalet", letras)
+            objReporte.SetParameterValue("subtotal", subtotalF)
+            objReporte.SetParameterValue("descuento", descuentoF)
+            objReporte.SetParameterValue("saldo", saldoF)
+            objReporte.SetParameterValue("abono", abonoF)
             objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
             M_ImprimirFacturaReport.CrystalReportViewer1.ReportSource = objReporte
             M_ImprimirFacturaReport.ShowDialog()
@@ -962,7 +981,32 @@ Public Class M_Factura
         Catch ex As Exception
         End Try
     End Sub
+    Private Sub calcularDescuento()
+        Dim dt As New DataTable
+        Dim row As DataRow
+        Dim objDetFact As New ClsDetalleFactura
+        objDetFact.numeroFactura_ = txtnumeroFactura.Text
+        dt = objDetFact.BuscarDetalleFactura()
 
+        subtotalF = 0
+        descuentoF = 0
+        abonoF = 0
+        saldoF = 0
+
+        For index As Integer = 0 To dt.Rows.Count - 1
+            row = dt.Rows(index)
+            subtotalF += Convert.ToDouble(row("precio"))
+        Next
+        descuentoF = subtotalF - Convert.ToDouble(txttotal.Text)
+
+        If Convert.ToDouble(txtpagoPaciente.Text) > Convert.ToDouble(txttotal.Text) Then
+            abonoF = Convert.ToDouble(txttotal.Text)
+            saldoF = 0
+        Else
+            abonoF = Convert.ToDouble(txtpagoPaciente.Text)
+            saldoF = Convert.ToDouble(txttotal.Text) - abonoF
+        End If
+    End Sub
 
 
 

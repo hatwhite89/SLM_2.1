@@ -205,5 +205,26 @@ Public Class ClsApertura
             Return dt
         End Using
     End Function
+    Public Function CierreCaja(ByVal codigoCajero As Integer, ByVal codigoMaquinaLocal As Integer) As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_slmBuscarTotalCaja"
+            cmd.Parameters.Add("@codigoCajero", SqlDbType.Int).Value = codigoCajero
+            cmd.Parameters.Add("@codigoMaquinaLocal", SqlDbType.Int).Value = codigoMaquinaLocal
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
 End Class
 
