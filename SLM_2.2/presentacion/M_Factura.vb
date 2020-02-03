@@ -203,6 +203,9 @@ Public Class M_Factura
         btnActualizar.Enabled = False
         btncotizacion.Enabled = True
         btnbuscarSucursal.Enabled = True
+
+        btnbuscarCliente.Enabled = True
+        btnbuscarTerminosPago.Enabled = True
     End Sub
     Private Sub txtcodigoMedico_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoMedico.TextChanged
         If (txtcodigoMedico.Text <> "") Then
@@ -582,7 +585,7 @@ Public Class M_Factura
                 txtcodigoCajero.Text = "1"
             End If
             If Trim(txtcodigoConvenio.Text) = "" Then
-                txtcodigoConvenio.Text = "0"
+                'txtcodigoConvenio.Text = "0"
                 lblcodePriceList.Text = "0"
             End If
             If Trim(txtcodigoTerminal.Text) = "" Then

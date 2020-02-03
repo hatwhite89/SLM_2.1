@@ -337,6 +337,7 @@ Partial Class M_Factura
         Me.lblPromocion.Size = New System.Drawing.Size(16, 17)
         Me.lblPromocion.TabIndex = 105
         Me.lblPromocion.Text = "0"
+        Me.lblPromocion.Visible = False
         '
         'btnQuitarPromocion
         '
@@ -711,7 +712,7 @@ Partial Class M_Factura
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1164, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1164, 28)
         Me.MenuStrip1.TabIndex = 76
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -979,6 +980,7 @@ Partial Class M_Factura
         Me.lblcodePriceList.Size = New System.Drawing.Size(51, 17)
         Me.lblcodePriceList.TabIndex = 100
         Me.lblcodePriceList.Text = "Label1"
+        Me.lblcodePriceList.Visible = False
         '
         'lblFechaNacimiento
         '
@@ -988,6 +990,7 @@ Partial Class M_Factura
         Me.lblFechaNacimiento.Size = New System.Drawing.Size(51, 17)
         Me.lblFechaNacimiento.TabIndex = 101
         Me.lblFechaNacimiento.Text = "Label1"
+        Me.lblFechaNacimiento.Visible = False
         '
         'txtEfectivo
         '

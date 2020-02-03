@@ -2,7 +2,7 @@
     Private Sub M_BuscarRecibo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         seleccionarRecibo()
     End Sub
-    Private Sub seleccionarRecibo()
+    Public Sub seleccionarRecibo()
         Dim objRbo As New ClsRecibo
         Dim dv As DataView = objRbo.SeleccionarRecibo.DefaultView
         dgbtabla.DataSource = dv

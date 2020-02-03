@@ -50,8 +50,10 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim dt As New DataTable
-        Dim row As DataRow
+        Try
+
+            Dim dt As New DataTable
+            Dim row As DataRow
         Dim objAp As New ClsApertura
         Dim fondo As Double
         dt = objAp.CierreCaja(Convert.ToInt64(txtCaja2.Text), 1)
@@ -73,6 +75,10 @@
         objReporte.SetParameterValue("fondo", fondo)
         objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
         M_ComprobanteEntrega.CrystalReportViewer1.ReportSource = objReporte
-        M_ComprobanteEntrega.ShowDialog()
+            M_ComprobanteEntrega.ShowDialog()
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

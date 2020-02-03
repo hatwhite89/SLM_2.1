@@ -254,7 +254,13 @@
     End Sub
 
     Private Sub btnFactura_Click(sender As Object, e As EventArgs) Handles btnFactura.Click
-        M_BuscarFactura.ShowDialog()
+        Try
+            M_BuscarFactura.ShowDialog()
+
+        Catch ex As Exception
+            M_BuscarFactura.Close()
+            M_BuscarFactura.ShowDialog()
+        End Try
     End Sub
 
     Private Sub btnCotizar_Click(sender As Object, e As EventArgs) Handles btnCotizar.Click
