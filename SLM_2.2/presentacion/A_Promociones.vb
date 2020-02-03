@@ -181,7 +181,6 @@ Public Class A_Promociones
             MsgBox("Error al cargar la imagen." + ex.Message)
         End Try
 
-
     End Sub
 
     Private Sub txtDescrip_TextChanged(sender As Object, e As EventArgs) Handles txtDescrip.TextChanged
@@ -274,7 +273,6 @@ Public Class A_Promociones
         Catch ex As Exception
 
         End Try
-
 
     End Sub
 
