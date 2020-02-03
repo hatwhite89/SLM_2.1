@@ -370,6 +370,7 @@ Partial Class frmPagos
         'chkPagado
         '
         Me.chkPagado.AutoSize = True
+        Me.chkPagado.Enabled = False
         Me.chkPagado.Location = New System.Drawing.Point(558, 44)
         Me.chkPagado.Name = "chkPagado"
         Me.chkPagado.Size = New System.Drawing.Size(63, 17)

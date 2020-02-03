@@ -659,6 +659,7 @@ Partial Class A_Cheques
         Me.lblForm.Size = New System.Drawing.Size(30, 13)
         Me.lblForm.TabIndex = 5
         Me.lblForm.Text = "Form"
+        Me.lblForm.Visible = False
         '
         'A_Cheques
         '

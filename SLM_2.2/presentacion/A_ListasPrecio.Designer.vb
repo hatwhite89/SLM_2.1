@@ -27,6 +27,7 @@ Partial Class A_ListasPrecio
         Me.dtExcel = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblCantidadR = New System.Windows.Forms.Label()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         CType(Me.dtExcel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -36,7 +37,7 @@ Partial Class A_ListasPrecio
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(421, 536)
+        Me.btnGuardar.Location = New System.Drawing.Point(340, 536)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 0
@@ -49,7 +50,7 @@ Partial Class A_ListasPrecio
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(340, 536)
+        Me.btnModificar.Location = New System.Drawing.Point(259, 536)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 3
@@ -82,12 +83,26 @@ Partial Class A_ListasPrecio
         Me.lblCantidadR.TabIndex = 6
         Me.lblCantidadR.Text = "-"
         '
+        'btnCancelar
+        '
+        Me.btnCancelar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCancelar.FlatAppearance.BorderSize = 0
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.ForeColor = System.Drawing.Color.White
+        Me.btnCancelar.Location = New System.Drawing.Point(421, 536)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.TabIndex = 7
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = False
+        '
         'A_ListasPrecio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(508, 571)
+        Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.lblCantidadR)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dtExcel)
@@ -107,4 +122,5 @@ Partial Class A_ListasPrecio
     Friend WithEvents dtExcel As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents lblCantidadR As Label
+    Friend WithEvents btnCancelar As Button
 End Class

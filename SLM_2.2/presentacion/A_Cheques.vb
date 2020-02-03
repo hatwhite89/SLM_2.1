@@ -64,14 +64,12 @@ Public Class A_Cheques
 
                     frmPagos.dtDetallePagos.Rows(fila).Cells(5).Value = txtNroCheq.Text
 
-
-
+                    frmPagos.chkPagado.Checked = True
 
 
                 End With
 
             ElseIf txtMonto.Text = "" Then
-
 
                 MsgBox("Error al guardar. Uno de los campos requeridos está vacio.")
                 txtMonto.BackColor = Color.Red
@@ -91,9 +89,25 @@ Public Class A_Cheques
 
         ':::::::::::::::::: Registro de Retención ::::::::::::::::::
 
+        Dim montop, monto As Double
+        Dim resultado As Double
+
+        monto = Convert.ToDouble(txtMonto.Text)
+        montop = Convert.ToDouble(frmPagos.dtDetallePagos.Rows(0).Cells(3).Value)
+
+        If txtMonto.Text < montop Then
 
 
+            montop = montop - monto
 
+            frmPagos.dtDetallePagos.Rows.Add(" ", frmPagos.dtDetallePagos.Rows(0).Cells(1).Value, frmPagos.dtDetallePagos.Rows(0).Cells(2).Value, montop, "", "")
+
+            resultado = Convert.ToDouble(frmPagos.dtDetallePagos.Rows(0).Cells(3).Value) - montop
+
+            frmPagos.dtDetallePagos.Rows(0).Cells(3).Value = resultado.ToString
+            frmPagos.suma()
+
+        End If
 
 
 
@@ -124,6 +138,9 @@ Public Class A_Cheques
     Private Sub A_Cheques_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If lblForm.Text = "ChequeSeleccionado" Then
+
+            btnGuardar.Visible = False
+
 
         Else
 
@@ -267,13 +284,6 @@ Public Class A_Cheques
         A_PrintCheque.crvImprimirCheque.ReportSource = objVistaCheque
 
     End Sub
-
-    Private Sub A_Cheques_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        'frmMenuConta.Show()
-    End Sub
-
-
-
 
     'Convertir numeros a letras para impresión de cheque
     Public NotInheritable Class Numalet
@@ -655,4 +665,5 @@ Public Class A_Cheques
     Private Sub txtcodProvee_TextChanged(sender As Object, e As EventArgs) Handles txtcodProvee.TextChanged
         txtcodProvee.BackColor = Color.White
     End Sub
+
 End Class

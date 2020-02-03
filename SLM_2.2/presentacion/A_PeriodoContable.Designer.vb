@@ -113,6 +113,7 @@ Partial Class A_PeriodoContable
         '
         'txtCod
         '
+        Me.txtCod.Enabled = False
         Me.txtCod.Location = New System.Drawing.Point(95, 24)
         Me.txtCod.Name = "txtCod"
         Me.txtCod.Size = New System.Drawing.Size(95, 20)

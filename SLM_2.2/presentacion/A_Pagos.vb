@@ -9,6 +9,7 @@
         'Cerrar Ventana Pagos
         Me.Close()
     End Sub
+
     Private Sub frmPagos_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         'Presionar ESC para salida
         If (e.KeyCode = Keys.Escape) Then
@@ -169,9 +170,6 @@
 
             End If 'If conteo de filas
 
-
-
-
             If dtDetallePagos.Rows.Count > 1 Then
 
                 'Recorrer filas para ingreso de detalle de factura
@@ -180,15 +178,66 @@
 
                         'Insertar detalle de pago
                         detallePago.Cod_Pago = Convert.ToInt32(txtNro.Text)
-                        detallePago.Cod_Factura = Convert.ToInt32(dtDetallePagos.Rows(fila).Cells(0).Value)
-                        detallePago.Forma_Pago = dtDetallePagos.Rows(fila).Cells(4).Value
-                        detallePago.Nro_Cheque = dtDetallePagos.Rows(fila).Cells(5).Value
-                        detallePago.Monto_ = dtDetallePagos.Rows(fila).Cells(3).Value
+
+                        Try
+                            Dim a As Integer
+                            a = Convert.ToInt32(dtDetallePagos.Rows(fila).Cells(0).Value)
+
+                            If dtDetallePagos.Rows(fila).Cells(0).Value <> "" Then
+
+                                detallePago.Cod_Factura = a
+
+                            Else
+
+                                detallePago.Cod_Factura = Convert.ToInt32(dtDetallePagos.Rows(fila - 1).Cells(0).Value)
+
+                            End If
+
+                        Catch ex As Exception
+
+                        End Try
+
+                        Try
+                            If dtDetallePagos.Rows(fila).Cells(4).Value = "" Then
+                                detallePago.Forma_Pago = "-"
+                            Else
+                                detallePago.Forma_Pago = dtDetallePagos.Rows(fila).Cells(4).Value.ToString
+
+                            End If
+
+                        Catch ex As Exception
+                            MsgBox("formapago")
+                        End Try
+
+                        Try
+                            If dtDetallePagos.Rows(fila).Cells(5).Value = "" Then
+
+                                detallePago.Nro_Cheque = "-"
+
+                            Else
+                                detallePago.Nro_Cheque = dtDetallePagos.Rows(fila).Cells(5).Value.ToString
+
+                            End If
+
+                        Catch ex As Exception
+                            MsgBox("es el numero de cheque")
+                        End Try
+
+                        Try
+                            detallePago.Monto_ = Convert.ToDouble(dtDetallePagos.Rows(fila).Cells(3).Value.ToString)
+
+                        Catch ex As Exception
+                            MsgBox("es el monto")
+                        End Try
 
                         'Funcion de registro de detalle
                         detallePago.registrarDetallePago()
+
+
+
+
                     Catch ex As Exception
-                        MsgBox(ex.Message)
+                        MsgBox("Error en detalle." + ex.Message)
                     End Try
 
                 Next
@@ -244,10 +293,21 @@
             dtDetallePagos.Columns(4).ReadOnly = True
 
         End If
-
+        suma()
     End Sub
 
     Private Sub dtDetallePagos_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles dtDetallePagos.RowsAdded
+        suma()
+
+    End Sub
+
+    Private Sub txtFormaP_TextChanged(sender As Object, e As EventArgs) Handles txtFormaP.TextChanged
+        If txtFormaP.BackColor = Color.Red Then
+            txtFormaP.BackColor = Color.White
+        End If
+    End Sub
+
+    Sub suma()
         Dim Total2 As Single
         Dim Col2 As Integer = 3
         For Each row As DataGridViewRow In dtDetallePagos.Rows
@@ -256,9 +316,4 @@
         lblTotalSuma.Text = Total2.ToString
     End Sub
 
-    Private Sub txtFormaP_TextChanged(sender As Object, e As EventArgs) Handles txtFormaP.TextChanged
-        If txtFormaP.BackColor = Color.Red Then
-            txtFormaP.BackColor = Color.White
-        End If
-    End Sub
 End Class

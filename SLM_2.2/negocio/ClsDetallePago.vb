@@ -113,7 +113,7 @@ Public Class ClsDetallePago
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "monto"
-        sqlpar.Value = Nro_Cheque
+        sqlpar.Value = Monto_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
