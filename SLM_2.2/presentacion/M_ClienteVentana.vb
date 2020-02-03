@@ -15,23 +15,30 @@
                 cont += 1
             End If
         Catch ex As Exception
-            ' MsgBox(ex.Message + "Cliente")
+            MsgBox(ex.Message + "Cliente")
         End Try
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Try
-            If (cont < dt.Rows.Count) Then
+            If (cont < dt.Rows.Count - 1) Then
                 row = dt.Rows(cont)
                 cont += 1
+                'MsgBox(cont & "     " & dt.Rows.Count)
                 If IsDBNull(row("imagen")) = False Then
                     pbxImagenes.Load(row("imagen"))
                 End If
             Else
                 cont = 0
+                row = dt.Rows(cont)
+                cont += 1
+                'MsgBox(cont & "     " & dt.Rows.Count)
+                If IsDBNull(row("imagen")) = False Then
+                    pbxImagenes.Load(row("imagen"))
+                End If
             End If
         Catch ex As Exception
-            'MsgBox(ex.Message)
+            MsgBox(ex.Message)
         End Try
     End Sub
 End Class

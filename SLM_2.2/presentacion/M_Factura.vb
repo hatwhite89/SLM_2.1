@@ -319,6 +319,7 @@ Public Class M_Factura
         'Timer1.Interval = 3000
         'Timer1.Start()
 
+
         'SIN TIMER
         M_ClienteVentana.Show()
         If dgblistadoExamenes.Columns.Contains("btnEliminar") = False Then
