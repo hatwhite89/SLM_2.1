@@ -22,7 +22,6 @@ Partial Class M_CAI
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_CAI))
         Me.lblCAI = New System.Windows.Forms.Label()
         Me.lbldesde = New System.Windows.Forms.Label()
         Me.lblhasta = New System.Windows.Forms.Label()
@@ -48,36 +47,40 @@ Partial Class M_CAI
         'lblCAI
         '
         Me.lblCAI.AutoSize = True
-        Me.lblCAI.Location = New System.Drawing.Point(94, 36)
+        Me.lblCAI.Location = New System.Drawing.Point(70, 29)
+        Me.lblCAI.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCAI.Name = "lblCAI"
-        Me.lblCAI.Size = New System.Drawing.Size(33, 17)
+        Me.lblCAI.Size = New System.Drawing.Size(27, 13)
         Me.lblCAI.TabIndex = 0
         Me.lblCAI.Text = "CAI:"
         '
         'lbldesde
         '
         Me.lbldesde.AutoSize = True
-        Me.lbldesde.Location = New System.Drawing.Point(74, 148)
+        Me.lbldesde.Location = New System.Drawing.Point(304, 90)
+        Me.lbldesde.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbldesde.Name = "lbldesde"
-        Me.lbldesde.Size = New System.Drawing.Size(53, 17)
+        Me.lbldesde.Size = New System.Drawing.Size(41, 13)
         Me.lbldesde.TabIndex = 1
         Me.lbldesde.Text = "Desde:"
         '
         'lblhasta
         '
         Me.lblhasta.AutoSize = True
-        Me.lblhasta.Location = New System.Drawing.Point(419, 148)
+        Me.lblhasta.Location = New System.Drawing.Point(314, 120)
+        Me.lblhasta.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblhasta.Name = "lblhasta"
-        Me.lblhasta.Size = New System.Drawing.Size(49, 17)
+        Me.lblhasta.Size = New System.Drawing.Size(38, 13)
         Me.lblhasta.TabIndex = 2
         Me.lblhasta.Text = "Hasta:"
         '
         'lblDesdeF
         '
         Me.lblDesdeF.AutoSize = True
-        Me.lblDesdeF.Location = New System.Drawing.Point(31, 74)
+        Me.lblDesdeF.Location = New System.Drawing.Point(23, 60)
+        Me.lblDesdeF.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblDesdeF.Name = "lblDesdeF"
-        Me.lblDesdeF.Size = New System.Drawing.Size(96, 17)
+        Me.lblDesdeF.Size = New System.Drawing.Size(74, 13)
         Me.lblDesdeF.TabIndex = 3
         Me.lblDesdeF.Text = "Desde Fecha:"
         '
@@ -87,9 +90,10 @@ Partial Class M_CAI
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(522, 242)
+        Me.btncancelar.Location = New System.Drawing.Point(438, 179)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btncancelar.Name = "btncancelar"
-        Me.btncancelar.Size = New System.Drawing.Size(90, 35)
+        Me.btncancelar.Size = New System.Drawing.Size(68, 28)
         Me.btncancelar.TabIndex = 112
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
@@ -100,9 +104,10 @@ Partial Class M_CAI
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnnuevo.Location = New System.Drawing.Point(102, 242)
+        Me.btnnuevo.Location = New System.Drawing.Point(266, 179)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(105, 35)
+        Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
         Me.btnnuevo.TabIndex = 114
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.UseVisualStyleBackColor = False
@@ -113,136 +118,150 @@ Partial Class M_CAI
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnguardar.Location = New System.Drawing.Point(324, 242)
+        Me.btnguardar.Location = New System.Drawing.Point(356, 179)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(96, 35)
+        Me.btnguardar.Size = New System.Drawing.Size(72, 28)
         Me.btnguardar.TabIndex = 113
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
         '
         'mtxtCAI
         '
-        Me.mtxtCAI.Location = New System.Drawing.Point(142, 33)
+        Me.mtxtCAI.Location = New System.Drawing.Point(106, 27)
+        Me.mtxtCAI.Margin = New System.Windows.Forms.Padding(2)
         Me.mtxtCAI.Mask = "AAAAAA-AAAAAA-AAAAAA-AAAAAA-AAAAAA-AA"
         Me.mtxtCAI.Name = "mtxtCAI"
-        Me.mtxtCAI.Size = New System.Drawing.Size(532, 22)
+        Me.mtxtCAI.Size = New System.Drawing.Size(400, 20)
         Me.mtxtCAI.TabIndex = 116
         Me.mtxtCAI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblhastaF
         '
         Me.lblhastaF.AutoSize = True
-        Me.lblhastaF.Location = New System.Drawing.Point(376, 74)
+        Me.lblhastaF.Location = New System.Drawing.Point(282, 60)
+        Me.lblhastaF.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblhastaF.Name = "lblhastaF"
-        Me.lblhastaF.Size = New System.Drawing.Size(92, 17)
+        Me.lblhastaF.Size = New System.Drawing.Size(71, 13)
         Me.lblhastaF.TabIndex = 117
         Me.lblhastaF.Text = "Hasta Fecha:"
         '
         'lblserie
         '
         Me.lblserie.AutoSize = True
-        Me.lblserie.Location = New System.Drawing.Point(82, 111)
+        Me.lblserie.Location = New System.Drawing.Point(62, 90)
+        Me.lblserie.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblserie.Name = "lblserie"
-        Me.lblserie.Size = New System.Drawing.Size(45, 17)
+        Me.lblserie.Size = New System.Drawing.Size(34, 13)
         Me.lblserie.TabIndex = 118
         Me.lblserie.Text = "Serie:"
         '
         'lblmaquinaLocal
         '
         Me.lblmaquinaLocal.AutoSize = True
-        Me.lblmaquinaLocal.Location = New System.Drawing.Point(23, 185)
+        Me.lblmaquinaLocal.Location = New System.Drawing.Point(17, 123)
+        Me.lblmaquinaLocal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblmaquinaLocal.Name = "lblmaquinaLocal"
-        Me.lblmaquinaLocal.Size = New System.Drawing.Size(104, 17)
+        Me.lblmaquinaLocal.Size = New System.Drawing.Size(80, 13)
         Me.lblmaquinaLocal.TabIndex = 119
         Me.lblmaquinaLocal.Text = "Máquina Local:"
         '
         'dtpDesdeFecha
         '
-        Me.dtpDesdeFecha.Location = New System.Drawing.Point(142, 74)
+        Me.dtpDesdeFecha.Location = New System.Drawing.Point(106, 60)
+        Me.dtpDesdeFecha.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpDesdeFecha.Name = "dtpDesdeFecha"
-        Me.dtpDesdeFecha.Size = New System.Drawing.Size(200, 22)
+        Me.dtpDesdeFecha.Size = New System.Drawing.Size(151, 20)
         Me.dtpDesdeFecha.TabIndex = 120
         '
         'dtpHastaFecha
         '
-        Me.dtpHastaFecha.Location = New System.Drawing.Point(474, 74)
+        Me.dtpHastaFecha.Location = New System.Drawing.Point(356, 60)
+        Me.dtpHastaFecha.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpHastaFecha.Name = "dtpHastaFecha"
-        Me.dtpHastaFecha.Size = New System.Drawing.Size(200, 22)
+        Me.dtpHastaFecha.Size = New System.Drawing.Size(151, 20)
         Me.dtpHastaFecha.TabIndex = 121
         '
         'mtxtserie
         '
-        Me.mtxtserie.Location = New System.Drawing.Point(142, 111)
+        Me.mtxtserie.Location = New System.Drawing.Point(106, 90)
+        Me.mtxtserie.Margin = New System.Windows.Forms.Padding(2)
         Me.mtxtserie.Mask = "000-000-00-"
         Me.mtxtserie.Name = "mtxtserie"
-        Me.mtxtserie.Size = New System.Drawing.Size(263, 22)
+        Me.mtxtserie.Size = New System.Drawing.Size(152, 20)
         Me.mtxtserie.TabIndex = 122
         Me.mtxtserie.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'mtxtdesde
         '
-        Me.mtxtdesde.Location = New System.Drawing.Point(142, 148)
+        Me.mtxtdesde.Location = New System.Drawing.Point(354, 87)
+        Me.mtxtdesde.Margin = New System.Windows.Forms.Padding(2)
         Me.mtxtdesde.Mask = "00000000"
         Me.mtxtdesde.Name = "mtxtdesde"
-        Me.mtxtdesde.Size = New System.Drawing.Size(202, 22)
+        Me.mtxtdesde.Size = New System.Drawing.Size(152, 20)
         Me.mtxtdesde.TabIndex = 123
         Me.mtxtdesde.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'mtxthasta
         '
-        Me.mtxthasta.Location = New System.Drawing.Point(474, 148)
+        Me.mtxthasta.Location = New System.Drawing.Point(356, 120)
+        Me.mtxthasta.Margin = New System.Windows.Forms.Padding(2)
         Me.mtxthasta.Mask = "00000000"
         Me.mtxthasta.Name = "mtxthasta"
-        Me.mtxthasta.Size = New System.Drawing.Size(200, 22)
+        Me.mtxthasta.Size = New System.Drawing.Size(151, 20)
         Me.mtxthasta.TabIndex = 124
         Me.mtxthasta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtdescripcionMaquina
         '
-        Me.txtdescripcionMaquina.Location = New System.Drawing.Point(358, 185)
+        Me.txtdescripcionMaquina.Location = New System.Drawing.Point(106, 149)
+        Me.txtdescripcionMaquina.Margin = New System.Windows.Forms.Padding(2)
         Me.txtdescripcionMaquina.Name = "txtdescripcionMaquina"
         Me.txtdescripcionMaquina.ReadOnly = True
-        Me.txtdescripcionMaquina.Size = New System.Drawing.Size(316, 22)
+        Me.txtdescripcionMaquina.Size = New System.Drawing.Size(152, 20)
         Me.txtdescripcionMaquina.TabIndex = 127
         '
         'btnbuscarMaquinaLocal
         '
         Me.btnbuscarMaquinaLocal.BackColor = System.Drawing.Color.White
-        Me.btnbuscarMaquinaLocal.BackgroundImage = CType(resources.GetObject("btnbuscarMaquinaLocal.BackgroundImage"), System.Drawing.Image)
         Me.btnbuscarMaquinaLocal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnbuscarMaquinaLocal.FlatAppearance.BorderSize = 0
         Me.btnbuscarMaquinaLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarMaquinaLocal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscarMaquinaLocal.Location = New System.Drawing.Point(142, 183)
+        Me.btnbuscarMaquinaLocal.Location = New System.Drawing.Point(106, 149)
+        Me.btnbuscarMaquinaLocal.Margin = New System.Windows.Forms.Padding(2)
         Me.btnbuscarMaquinaLocal.Name = "btnbuscarMaquinaLocal"
-        Me.btnbuscarMaquinaLocal.Size = New System.Drawing.Size(49, 22)
+        Me.btnbuscarMaquinaLocal.Size = New System.Drawing.Size(22, 18)
         Me.btnbuscarMaquinaLocal.TabIndex = 126
+        Me.btnbuscarMaquinaLocal.Text = "..."
         Me.btnbuscarMaquinaLocal.UseVisualStyleBackColor = False
         '
         'txtcodigoMaquina
         '
-        Me.txtcodigoMaquina.Location = New System.Drawing.Point(198, 185)
+        Me.txtcodigoMaquina.Location = New System.Drawing.Point(106, 120)
+        Me.txtcodigoMaquina.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoMaquina.MaxLength = 20
         Me.txtcodigoMaquina.Name = "txtcodigoMaquina"
-        Me.txtcodigoMaquina.Size = New System.Drawing.Size(144, 22)
+        Me.txtcodigoMaquina.Size = New System.Drawing.Size(125, 20)
         Me.txtcodigoMaquina.TabIndex = 125
         Me.txtcodigoMaquina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblCodeMaquinaLocal
         '
         Me.lblCodeMaquinaLocal.AutoSize = True
-        Me.lblCodeMaquinaLocal.Location = New System.Drawing.Point(43, 206)
+        Me.lblCodeMaquinaLocal.Location = New System.Drawing.Point(32, 167)
+        Me.lblCodeMaquinaLocal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCodeMaquinaLocal.Name = "lblCodeMaquinaLocal"
-        Me.lblCodeMaquinaLocal.Size = New System.Drawing.Size(0, 21)
+        Me.lblCodeMaquinaLocal.Size = New System.Drawing.Size(0, 13)
         Me.lblCodeMaquinaLocal.TabIndex = 128
         Me.lblCodeMaquinaLocal.Visible = False
         '
         'M_CAI
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(719, 324)
+        Me.ClientSize = New System.Drawing.Size(518, 218)
         Me.Controls.Add(Me.lblCodeMaquinaLocal)
         Me.Controls.Add(Me.txtdescripcionMaquina)
         Me.Controls.Add(Me.btnbuscarMaquinaLocal)
@@ -263,6 +282,7 @@ Partial Class M_CAI
         Me.Controls.Add(Me.lblhasta)
         Me.Controls.Add(Me.lbldesde)
         Me.Controls.Add(Me.lblCAI)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_CAI"
         Me.Text = "CAI"
         Me.ResumeLayout(False)

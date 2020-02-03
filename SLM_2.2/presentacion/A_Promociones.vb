@@ -162,17 +162,15 @@ Public Class A_Promociones
 
             If txtCod.Text <> "" Then
 
-                detallepromo.codigo_ = Convert.ToInt32(txtCod.Text)
-                dtDetallePromo.DataSource = detallepromo.VerDetallePromocion
+                detallepromo.codigoPromocion_ = Convert.ToInt32(txtCod.Text)
+
 
             End If
 
 
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
-
-
 
     End Sub
 
@@ -185,20 +183,26 @@ Public Class A_Promociones
 
     End Sub
 
-
     Sub limpiar()
 
-        txtCod.Text = ""
-        dtpFechaF.Value = Date.Now
-        dtpFechaI.Value = Date.Now
-        txtDescrip.Text = ""
-        pbxPromo.Image = Nothing
-        txtPrecio.Text = ""
-        dtDetallePromo.DataSource = Nothing
+        Try
+            txtCod.Text = ""
+            dtpFechaF.Value = Date.Now
+            dtpFechaI.Value = Date.Now
+            txtDescrip.Text = ""
+            pbxPromo.Image = Nothing
+            txtPrecio.Text = ""
+            dtDetallePromo.Rows.Clear()
+
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
 
     Private Sub btnCancelarRegistro_Click(sender As Object, e As EventArgs) Handles btnCancelarRegistro.Click
         limpiar()
     End Sub
+
 End Class

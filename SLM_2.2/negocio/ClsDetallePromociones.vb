@@ -146,7 +146,7 @@ Public Class ClsDetallePromociones
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "A_slmListarDetalleExamen"
+            cmd.CommandText = "A_slmListarDetallePromo"
             cmd.Parameters.Add("@codPromocion", SqlDbType.Int).Value = codigoPromocion_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd

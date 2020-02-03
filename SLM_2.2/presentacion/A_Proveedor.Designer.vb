@@ -237,7 +237,7 @@ Partial Class A_Proveedor
         Me.cbxCategoria.DropDownWidth = 170
         Me.cbxCategoria.FormattingEnabled = True
         Me.cbxCategoria.Location = New System.Drawing.Point(294, 135)
-        Me.cbxCategoria.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbxCategoria.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxCategoria.Name = "cbxCategoria"
         Me.cbxCategoria.Size = New System.Drawing.Size(99, 21)
         Me.cbxCategoria.TabIndex = 28

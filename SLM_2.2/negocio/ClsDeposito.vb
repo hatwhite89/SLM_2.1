@@ -10,7 +10,6 @@ Public Class ClsDeposito
     Public Sub New()
 
 
-
     End Sub
 
     '::::::::::::::::::::::::::::: METODOS SET Y GET ::::::::::::::::::::::::::::::

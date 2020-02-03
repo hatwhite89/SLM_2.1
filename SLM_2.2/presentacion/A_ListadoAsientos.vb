@@ -10,6 +10,8 @@
         dtAsientos.Columns("codPeriodo").Visible = False
         dtAsientos.Columns("fecha").Visible = False
         dtAsientos.Columns("descripcion").Width = 320
+        dtAsientos.Columns("descripcion").HeaderText = "Descripción"
+        dtAsientos.Columns("campoLlave").HeaderText = "Transf."
 
 
     End Sub
