@@ -230,6 +230,7 @@
 
                     'Funcion de registro de detalle
                     DetalleFacCompra.registrarDetalleFactura()
+
                 Next
 
                 MessageBox.Show("La factura se modifico exitosamente.")

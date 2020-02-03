@@ -125,6 +125,9 @@ Public Class A_Cheques
 
         If lblForm.Text = "ChequeSeleccionado" Then
 
+            btnGuardar.Visible = False
+
+
         Else
 
             formap.Cod = frmPagos.txtFormaP.Text
@@ -655,4 +658,5 @@ Public Class A_Cheques
     Private Sub txtcodProvee_TextChanged(sender As Object, e As EventArgs) Handles txtcodProvee.TextChanged
         txtcodProvee.BackColor = Color.White
     End Sub
+
 End Class

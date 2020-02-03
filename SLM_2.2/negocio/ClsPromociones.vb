@@ -131,7 +131,7 @@ Public Class ClsPromociones
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "A_slmModificarPromocion"
+        sqlcom.CommandText = "A_slmActualizarPromocion"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
