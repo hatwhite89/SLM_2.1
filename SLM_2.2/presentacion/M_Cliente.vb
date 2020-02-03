@@ -108,6 +108,7 @@
         txtaseguradora.ReadOnly = False
         txtconvenio.ReadOnly = False
         txtcodigoTermino.ReadOnly = False
+        mtxtidentidad.ReadOnly = False
 
         btnterminosPago.Enabled = True
         btnconvenio.Enabled = True
@@ -462,9 +463,9 @@
             btnactualizarCliente.Enabled = False
             btnguardarCliente.Enabled = True
             limpiar()
-            mtxtidentidad.ReadOnly = True
-            txtrtn.ReadOnly = True
-            txtscanId.ReadOnly = True
+            'mtxtidentidad.ReadOnly = True
+            'txtrtn.ReadOnly = True
+            'txtscanId.ReadOnly = True
             btnseleccionarCliente.Enabled = False
             gbxinfoCliente.Visible = True
         Else

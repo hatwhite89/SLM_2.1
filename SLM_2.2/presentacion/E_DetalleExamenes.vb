@@ -143,7 +143,7 @@
                 End If
             End If
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 

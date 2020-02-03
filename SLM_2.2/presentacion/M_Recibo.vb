@@ -210,12 +210,13 @@
                         End If
                     Next
                     MsgBox("Modificado correctamente.")
+                    btnmodificar.Enabled = False
                 End If
 
                 If (cbxOk.Checked) Then
                     deshabilitar()
                 End If
-
+                M_BuscarRecibo.seleccionarRecibo()
             End If
 
         Catch ex As Exception

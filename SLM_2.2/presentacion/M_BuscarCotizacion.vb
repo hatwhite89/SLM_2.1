@@ -38,6 +38,7 @@
                     M_ClienteVentana.dgvtabla.Rows.Add(New String() {CStr(row("codigoExamen")), CStr(row("cantidad")), precio, CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
                 Next
                 Me.Close()
+                M_Factura.totalFactura()
                 M_Factura.ShowDialog()
 
             End If

@@ -15,7 +15,7 @@
                 cont += 1
             End If
         Catch ex As Exception
-            MsgBox(ex.Message + "Cliente")
+            ' MsgBox(ex.Message + "Cliente")
         End Try
     End Sub
 
@@ -31,7 +31,7 @@
                 cont = 0
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            'MsgBox(ex.Message)
         End Try
     End Sub
 End Class

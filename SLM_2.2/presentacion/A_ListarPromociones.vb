@@ -22,6 +22,8 @@
             dt = dtPromos.DataSource
             rows = dt.Rows(e.RowIndex)
 
+
+
             With A_Promociones
 
                 .txtCod.Text = rows("codigo")
@@ -31,6 +33,14 @@
                 .dtpFechaF.Value = rows("fechaFinal")
                 .txtRuta.Text = rows("imagen")
                 .pbxPromo.Load(rows("imagen"))
+
+                Dim objDetProm As New ClsDetallePromociones
+                objDetProm.codigoPromocion_ = rows("codigo")
+                dt = objDetProm.SeleccionarDetallePromocion()
+                For index As Integer = 0 To dt.Rows.Count - 1
+                    rows = dt.Rows(index)
+                    .dtDetallePromo.Rows.Add(New String() {CStr(rows("codigoExamen")), CStr(rows("descripcion"))})
+                Next
 
                 .Show()
 
