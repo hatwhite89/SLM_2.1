@@ -109,9 +109,6 @@ Public Class A_Cheques
 
         End If
 
-
-
-
     End Sub
     Private Sub txtcodProvee_DoubleClick(sender As Object, e As EventArgs) Handles txtcodProvee.DoubleClick
         A_ListarProveedores.ShowDialog()
@@ -140,7 +137,6 @@ Public Class A_Cheques
         If lblForm.Text = "ChequeSeleccionado" Then
 
             btnGuardar.Visible = False
-
 
         Else
 
@@ -173,7 +169,9 @@ Public Class A_Cheques
     End Sub
 
     Private Sub txtCtaDestino_TextChanged(sender As Object, e As EventArgs) Handles txtCtaDestino.TextChanged
+
         txtCtaTemporal.Text = txtCtaDestino.Text
+
     End Sub
 
     Private Sub dtpAcredita_MouseDown(sender As Object, e As MouseEventArgs) Handles dtpAcredita.MouseDown
@@ -282,6 +280,8 @@ Public Class A_Cheques
 
         objVistaCheque.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
         A_PrintCheque.crvImprimirCheque.ReportSource = objVistaCheque
+
+        A_PrintCheque.Show()
 
     End Sub
 
@@ -660,6 +660,8 @@ Public Class A_Cheques
 
     Private Sub txtMonto_TextChanged(sender As Object, e As EventArgs) Handles txtMonto.TextChanged
         txtMonto.BackColor = Color.White
+
+
     End Sub
 
     Private Sub txtcodProvee_TextChanged(sender As Object, e As EventArgs) Handles txtcodProvee.TextChanged

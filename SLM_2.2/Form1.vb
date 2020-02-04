@@ -1,6 +1,11 @@
 ﻿Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Prueba Cambio
+        'Notificación
+
+
+
+
+
     End Sub
     Private Sub btnContabilidad_Click(sender As Object, e As EventArgs) Handles btnContabilidad.Click
 
@@ -336,5 +341,9 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
+        A_Notificacion.Show()
     End Sub
 End Class

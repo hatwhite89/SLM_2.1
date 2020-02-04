@@ -53,6 +53,7 @@ Partial Class Form1
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.TpCobranza = New System.Windows.Forms.TabPage()
         Me.TpMantenimiento = New System.Windows.Forms.TabPage()
         Me.PictureBox35 = New System.Windows.Forms.PictureBox()
         Me.btnCAI = New System.Windows.Forms.Button()
@@ -119,7 +120,7 @@ Partial Class Form1
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.PictureBox26 = New System.Windows.Forms.PictureBox()
         Me.btnMedico = New System.Windows.Forms.Button()
-        Me.TpCobranza = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxMenu.SuspendLayout()
         Me.panelMenu.SuspendLayout()
@@ -200,6 +201,7 @@ Partial Class Form1
         'gbxMenu
         '
         Me.gbxMenu.BackColor = System.Drawing.Color.MidnightBlue
+        Me.gbxMenu.Controls.Add(Me.Button1)
         Me.gbxMenu.Controls.Add(Me.btnAcerca)
         Me.gbxMenu.Controls.Add(Me.btnFacturacion)
         Me.gbxMenu.Controls.Add(Me.btnlaboratorio)
@@ -554,6 +556,15 @@ Partial Class Form1
         Me.Button5.TabIndex = 15
         Me.Button5.Text = "Precio"
         Me.Button5.UseVisualStyleBackColor = False
+        '
+        'TpCobranza
+        '
+        Me.TpCobranza.Location = New System.Drawing.Point(4, 22)
+        Me.TpCobranza.Name = "TpCobranza"
+        Me.TpCobranza.Size = New System.Drawing.Size(282, 307)
+        Me.TpCobranza.TabIndex = 4
+        Me.TpCobranza.Text = "Cobranza"
+        Me.TpCobranza.UseVisualStyleBackColor = True
         '
         'TpMantenimiento
         '
@@ -1300,14 +1311,14 @@ Partial Class Form1
         Me.btnMedico.Text = "Médicos"
         Me.btnMedico.UseVisualStyleBackColor = True
         '
-        'TpCobranza
+        'Button1
         '
-        Me.TpCobranza.Location = New System.Drawing.Point(4, 22)
-        Me.TpCobranza.Name = "TpCobranza"
-        Me.TpCobranza.Size = New System.Drawing.Size(282, 307)
-        Me.TpCobranza.TabIndex = 4
-        Me.TpCobranza.Text = "Cobranza"
-        Me.TpCobranza.UseVisualStyleBackColor = True
+        Me.Button1.Location = New System.Drawing.Point(13, 315)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "noti"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -1483,4 +1494,5 @@ Partial Class Form1
     Friend WithEvents PictureBox35 As PictureBox
     Friend WithEvents btnCAI As Button
     Friend WithEvents TpCobranza As TabPage
+    Friend WithEvents Button1 As Button
 End Class

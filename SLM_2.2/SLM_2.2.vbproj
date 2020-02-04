@@ -345,6 +345,12 @@
     <Compile Include="presentacion\A_ListasPrecio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_Notificacion.Designer.vb">
+      <DependentUpon>A_Notificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_Notificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_PeriodoContable.Designer.vb">
       <DependentUpon>A_PeriodoContable.vb</DependentUpon>
     </Compile>
@@ -863,6 +869,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListasPrecio.resx">
       <DependentUpon>A_ListasPrecio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_Notificacion.resx">
+      <DependentUpon>A_Notificacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_PeriodoContable.resx">
       <DependentUpon>A_PeriodoContable.vb</DependentUpon>
