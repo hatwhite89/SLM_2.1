@@ -1,5 +1,5 @@
 ﻿Public Class M_BuscarFactura
-    Private Sub M_BuscarCotizacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub M_BuscarFactura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         seleccionarFacturas()
         Me.dgbtabla.Columns("codigo").Visible = False
     End Sub
@@ -9,6 +9,12 @@
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        '   CAMBIAR EL COLOR DE UN DATA GRID VIEW POR FILA O POR DEFECTO
+        'dgbtabla.Rows(0).DefaultCellStyle.BackColor = Color.Green
+        'dgbtabla.Rows(1).DefaultCellStyle.BackColor = Color.Green
+        'dgbtabla.Rows(2).DefaultCellStyle.BackColor = Color.Green
+
+        'dgbtabla.RowsDefaultCellStyle.BackColor = Color.Red
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -74,6 +80,7 @@
                 End If
                 'Me.Close()
                 Me.Hide()
+
                 M_Factura.ShowDialog()
             End If
         Catch ex As Exception
@@ -113,7 +120,8 @@
         End If
     End Sub
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
-        'Me.Close
+        'Me.Close()
+        Me.Hide()
         M_Factura.limpiar()
         M_Factura.ShowDialog()
     End Sub

@@ -897,6 +897,7 @@ Partial Class E_OrdenTrabajo
         Me.dtpFechaEntrega.Name = "dtpFechaEntrega"
         Me.dtpFechaEntrega.Size = New System.Drawing.Size(152, 22)
         Me.dtpFechaEntrega.TabIndex = 98
+        Me.dtpFechaEntrega.Value = New Date(2020, 2, 3, 16, 27, 34, 0)
         '
         'lbllinea
         '

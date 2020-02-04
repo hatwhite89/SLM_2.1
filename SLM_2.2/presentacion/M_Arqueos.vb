@@ -54,31 +54,35 @@
 
             Dim dt As New DataTable
             Dim row As DataRow
-        Dim objAp As New ClsApertura
-        Dim fondo As Double
-        dt = objAp.CierreCaja(Convert.ToInt64(txtCaja2.Text), 1)
+            Dim objAp As New ClsApertura
+            Dim fondo As Double
+            dt = objAp.CierreCaja(Convert.ToInt64(txtCaja2.Text), 1)
 
-        row = dt.Rows(0)
+            row = dt.Rows(0)
 
-        If IsDBNull(row("fondo")) = False Then
-            fondo = Convert.ToDouble(row("fondo"))
-        Else
-            fondo = 0
-        End If
-        'le asigno un valor a los parametros del procedimiento almacenado
-        Dim objReporte As New M_CierreCaja
+            If IsDBNull(row("fondo")) = False Then
+                fondo = Convert.ToDouble(row("fondo"))
+            Else
+                fondo = 0
+            End If
 
-        objReporte.SetParameterValue("@codigoCajero", Convert.ToInt64(txtCaja2.Text))
-        objReporte.SetParameterValue("efectivo", Convert.ToDouble(row("efectivo")) - Convert.ToDouble(row("vuelto")))
-        objReporte.SetParameterValue("tarjeta", Convert.ToDouble(row("tarjeta")))
-        objReporte.SetParameterValue("total", Convert.ToDouble(row("total")))
-        objReporte.SetParameterValue("fondo", fondo)
-        objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
-        M_ComprobanteEntrega.CrystalReportViewer1.ReportSource = objReporte
+            'le asigno un valor a los parametros del procedimiento almacenado
+            Dim objReporte As New M_CierreCaja
+
+            objReporte.SetParameterValue("@codigoCajero", Convert.ToInt64(txtCaja2.Text))
+            objReporte.SetParameterValue("efectivo", Convert.ToDouble(row("efectivo")) - Convert.ToDouble(row("vuelto")))
+            objReporte.SetParameterValue("tarjeta", Convert.ToDouble(row("tarjeta")))
+            objReporte.SetParameterValue("total", Convert.ToDouble(row("total")))
+            objReporte.SetParameterValue("fondo", fondo)
+            objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+
+            M_ComprobanteEntrega.CrystalReportViewer1.ReportSource = objReporte
             M_ComprobanteEntrega.ShowDialog()
 
         Catch ex As Exception
 
         End Try
     End Sub
+
+
 End Class
