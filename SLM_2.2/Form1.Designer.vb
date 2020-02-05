@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.btnContabilidad = New System.Windows.Forms.Button()
@@ -53,6 +53,7 @@ Partial Class Form1
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.TpCobranza = New System.Windows.Forms.TabPage()
         Me.TpMantenimiento = New System.Windows.Forms.TabPage()
         Me.PictureBox35 = New System.Windows.Forms.PictureBox()
         Me.btnCAI = New System.Windows.Forms.Button()
@@ -119,7 +120,6 @@ Partial Class Form1
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.PictureBox26 = New System.Windows.Forms.PictureBox()
         Me.btnMedico = New System.Windows.Forms.Button()
-        Me.TpCobranza = New System.Windows.Forms.TabPage()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxMenu.SuspendLayout()
         Me.panelMenu.SuspendLayout()
@@ -554,6 +554,15 @@ Partial Class Form1
         Me.Button5.TabIndex = 15
         Me.Button5.Text = "Precio"
         Me.Button5.UseVisualStyleBackColor = False
+        '
+        'TpCobranza
+        '
+        Me.TpCobranza.Location = New System.Drawing.Point(4, 22)
+        Me.TpCobranza.Name = "TpCobranza"
+        Me.TpCobranza.Size = New System.Drawing.Size(282, 307)
+        Me.TpCobranza.TabIndex = 4
+        Me.TpCobranza.Text = "Cobranza"
+        Me.TpCobranza.UseVisualStyleBackColor = True
         '
         'TpMantenimiento
         '
@@ -1299,15 +1308,6 @@ Partial Class Form1
         Me.btnMedico.TabIndex = 11
         Me.btnMedico.Text = "Médicos"
         Me.btnMedico.UseVisualStyleBackColor = True
-        '
-        'TpCobranza
-        '
-        Me.TpCobranza.Location = New System.Drawing.Point(4, 22)
-        Me.TpCobranza.Name = "TpCobranza"
-        Me.TpCobranza.Size = New System.Drawing.Size(282, 307)
-        Me.TpCobranza.TabIndex = 4
-        Me.TpCobranza.Text = "Cobranza"
-        Me.TpCobranza.UseVisualStyleBackColor = True
         '
         'Form1
         '
