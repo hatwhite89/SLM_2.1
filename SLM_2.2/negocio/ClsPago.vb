@@ -196,13 +196,13 @@ Public Class ClsPago
     End Function
 
     'Listar Pagos
-    Public Function listarPagos() As DataTable
+    Public Function listarPagosOk() As DataTable
 
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("A_slmListarPagos", cn)
+        Using da As New SqlDataAdapter("A_slmPagosok", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -247,6 +247,20 @@ Public Class ClsPago
             End Using
         End Using
 
+    End Function
+
+
+    Public Function listarSinPago() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("A_slmPagossinOk", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
     End Function
 
 End Class

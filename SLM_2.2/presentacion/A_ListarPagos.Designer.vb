@@ -28,12 +28,14 @@ Partial Class A_ListarPagos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtPagos = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtPagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.btnCancelarBusqueda)
         Me.GroupBox1.Controls.Add(Me.txtBusqueda)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -48,7 +50,7 @@ Partial Class A_ListarPagos
         'btnCancelarBusqueda
         '
         Me.btnCancelarBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelarBusqueda.Location = New System.Drawing.Point(608, 21)
+        Me.btnCancelarBusqueda.Location = New System.Drawing.Point(231, 21)
         Me.btnCancelarBusqueda.Name = "btnCancelarBusqueda"
         Me.btnCancelarBusqueda.Size = New System.Drawing.Size(23, 18)
         Me.btnCancelarBusqueda.TabIndex = 3
@@ -57,7 +59,7 @@ Partial Class A_ListarPagos
         '
         'txtBusqueda
         '
-        Me.txtBusqueda.Location = New System.Drawing.Point(433, 21)
+        Me.txtBusqueda.Location = New System.Drawing.Point(56, 21)
         Me.txtBusqueda.Name = "txtBusqueda"
         Me.txtBusqueda.Size = New System.Drawing.Size(169, 20)
         Me.txtBusqueda.TabIndex = 2
@@ -65,7 +67,7 @@ Partial Class A_ListarPagos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(387, 24)
+        Me.Label1.Location = New System.Drawing.Point(10, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(43, 13)
         Me.Label1.TabIndex = 1
@@ -98,6 +100,15 @@ Partial Class A_ListarPagos
         Me.Button1.Text = "Crear Pago"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Sin pago", "Pagados"})
+        Me.ComboBox1.Location = New System.Drawing.Point(519, 21)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 4
+        '
         'A_ListarPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -122,4 +133,5 @@ Partial Class A_ListarPagos
     Friend WithEvents Label1 As Label
     Friend WithEvents btnCancelarBusqueda As Button
     Friend WithEvents txtBusqueda As TextBox
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

@@ -373,7 +373,7 @@
             Dim Total As Double
             Dim Col As Integer = 4
             For Each row As DataGridViewRow In dtDetalleFactura.Rows
-                Total += Val(row.Cells(Col).Value)
+                Total += Convert.ToDouble(row.Cells(Col).Value)
             Next
             lblTotal.Text = Total
 
