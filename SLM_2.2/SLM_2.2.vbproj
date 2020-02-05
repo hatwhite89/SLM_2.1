@@ -144,6 +144,7 @@
     <Compile Include="negocio\ClsFacturaCompra.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
     <Compile Include="negocio\ClsItemExamen.vb" />
+    <Compile Include="negocio\ClsItemExamenDetalle.vb" />
     <Compile Include="negocio\ClsListaPrecios.vb" />
     <Compile Include="negocio\ClsMaquinasLocales.vb" />
     <Compile Include="negocio\ClsOrdenDeTrabajo.vb" />
