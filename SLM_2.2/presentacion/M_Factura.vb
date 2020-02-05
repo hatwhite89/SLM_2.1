@@ -604,7 +604,7 @@ Public Class M_Factura
 
             If (txtcodigoCliente.Text <> "" And txtcodigoMedico.Text <> "" And txtcodigoTerminosPago.Text <> "" And
                 txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And
-                txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
+                txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 1) Then
 
 
                 If (cbxok.Checked) Then

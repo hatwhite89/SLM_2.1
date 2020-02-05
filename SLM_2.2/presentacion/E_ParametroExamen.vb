@@ -202,4 +202,7 @@
         End Try
     End Sub
 
+    Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
+
+    End Sub
 End Class
