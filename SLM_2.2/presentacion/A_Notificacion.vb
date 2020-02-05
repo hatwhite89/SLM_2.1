@@ -4,27 +4,33 @@
 
     Private Sub A_Notificacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Me.Location = New Point(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height)
 
-        Dim cai As New ClsCAI
-        Dim numfact, dias As DataTable
-        Dim rowD, rowsF As DataRow
+        Try
 
-        numfact = cai.ContarFacturas
-        dias = cai.DiaVencimiento
+            Me.Location = New Point(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height)
 
-        rowD = dias.Rows(0)
-        rowsF = numfact.Rows(0)
-
-        lblMensajeDias.Text = "En " & rowD("diasFaltantes") & " días vence la Facturación."
-
-        lblMensajeFact.Text = "Quedan " & rowsF("disponible") & " facturas disponibles."
+            My.Computer.Audio.Play(My.Resources.Definite_c47a609e_37f4_4678_9cb8_79a06e5845bb, AudioPlayMode.Background)
 
 
 
+            Dim cai As New ClsCAI
+            Dim numfact, dias As DataTable
+            Dim rowD, rowsF As DataRow
+
+            numfact = cai.ContarFacturas
+            dias = cai.DiaVencimiento
+
+            rowD = dias.Rows(0)
+            rowsF = numfact.Rows(0)
+
+            lblMensajeDias.Text = "En " & rowD("diasFaltantes") & " días vence la Facturación."
+
+            lblMensajeFact.Text = "Quedan " & rowsF("disponible") & " facturas disponibles."
 
 
-
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 

@@ -2,9 +2,33 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Notificación
 
+        Dim cai As New ClsCAI
+        Dim numfact, dias As DataTable
+        Dim rowD, rowsF As DataRow
 
+        numfact = cai.ContarFacturas
+        dias = cai.DiaVencimiento
 
+        rowD = dias.Rows(0)
+        rowsF = numfact.Rows(0)
 
+        If Convert.ToInt32(rowD("diasFaltantes")) < 7 Then
+
+            A_Notificacion.lblMensajeDias.Visible = True
+            A_Notificacion.Show()
+
+        ElseIf Convert.ToInt32(rowsF("disponible")) < 150 Then
+
+            A_Notificacion.lblMensajeFact.Visible = True
+            A_Notificacion.Show()
+
+        ElseIf Convert.ToInt32(rowD("diasFaltantes")) < 7 And Convert.ToInt32(rowsF("disponible")) < 150 Then
+
+            A_Notificacion.lblMensajeFact.Visible = True
+            A_Notificacion.lblMensajeDias.Visible = True
+            A_Notificacion.Show()
+
+        End If
 
     End Sub
     Private Sub btnContabilidad_Click(sender As Object, e As EventArgs) Handles btnContabilidad.Click
@@ -343,7 +367,7 @@
         End Try
     End Sub
 
-    Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_2(sender As Object, e As EventArgs)
         A_Notificacion.Show()
     End Sub
 End Class

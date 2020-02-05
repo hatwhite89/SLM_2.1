@@ -63,6 +63,7 @@ Partial Class A_Notificacion
         Me.lblMensajeDias.Size = New System.Drawing.Size(16, 13)
         Me.lblMensajeDias.TabIndex = 2
         Me.lblMensajeDias.Text = "---"
+        Me.lblMensajeDias.Visible = False
         '
         'Timer1
         '
@@ -79,6 +80,7 @@ Partial Class A_Notificacion
         Me.lblMensajeFact.Size = New System.Drawing.Size(16, 13)
         Me.lblMensajeFact.TabIndex = 3
         Me.lblMensajeFact.Text = "---"
+        Me.lblMensajeFact.Visible = False
         '
         'A_Notificacion
         '
