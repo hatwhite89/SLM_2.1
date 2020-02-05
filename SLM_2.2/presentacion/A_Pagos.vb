@@ -36,7 +36,7 @@
                 .Cod_Factura = dtDetallePagos.Rows(e.RowIndex).Cells(0).Value
                 dt = .comprobarFactura() 'Comprobar existencia de factura compra
 
-                If dt.Rows.Count > 0 Then 'Si la factura existe, llenar campos
+                If dt.Rows.Count < 0 Then 'Si la factura existe, llenar campos
 
                     Dim row As DataRow = dt.Rows(0)
                     dtDetallePagos.Rows(e.RowIndex).Cells(1).Value = row("nombreProveedor")
@@ -48,13 +48,12 @@
 
                     lblTotalSuma.Text = dtDetallePagos.Rows(e.RowIndex).Cells(3).Value
 
-                Else
-                    MsgBox("La factura de compra no existe. Verifique el código.")
+
                 End If
 
             End With
         Catch ex As Exception
-
+            MsgBox("La factura de compra no existe o hubo un error. Verifique el código.")
         End Try
 
     End Sub
@@ -64,6 +63,20 @@
         dtDetallePagos.Columns(1).ReadOnly = True
         dtDetallePagos.Columns(2).ReadOnly = True
         dtDetallePagos.Columns(3).ReadOnly = True
+
+        If e.ColumnIndex = 6 Then
+            Try
+                Dim n As String = MsgBox("¿Desea eliminar la factura?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+                    dtDetallePagos.Rows.Remove(dtDetallePagos.Rows(e.RowIndex.ToString))
+
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message, MsgBoxStyle.Critical)
+            End Try
+            suma()
+
+        End If
 
     End Sub
 
@@ -233,9 +246,6 @@
                         'Funcion de registro de detalle
                         detallePago.registrarDetallePago()
 
-
-
-
                     Catch ex As Exception
                         MsgBox("Error en detalle." + ex.Message)
                     End Try
@@ -292,11 +302,28 @@
             dtDetallePagos.Columns(3).ReadOnly = True
             dtDetallePagos.Columns(4).ReadOnly = True
 
+            btnModificar.Visible = False
+            btnCrear.Visible = False
+            btnGuardar.Visible = False
+
+
         End If
+
+        If dtDetallePagos.Columns.Contains("btnEliminar") = False Then
+            Dim btn As New DataGridViewButtonColumn()
+            dtDetallePagos.Columns.Add(btn)
+            btn.HeaderText = "Eliminar"
+            btn.Text = "Eliminar"
+            btn.Name = "btnEliminar"
+            btn.UseColumnTextForButtonValue = True
+        End If
+
         suma()
+
     End Sub
 
     Private Sub dtDetallePagos_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles dtDetallePagos.RowsAdded
+
         suma()
 
     End Sub
@@ -308,12 +335,25 @@
     End Sub
 
     Sub suma()
-        Dim Total2 As Single
+        Dim Total2 As Double
         Dim Col2 As Integer = 3
         For Each row As DataGridViewRow In dtDetallePagos.Rows
-            Total2 += Val(row.Cells(3).Value)
+            Total2 += Convert.ToDouble(row.Cells(Col2).Value)
         Next
-        lblTotalSuma.Text = Total2.ToString
+        lblTotalSuma.Text = Total2
     End Sub
 
+    Public Function validarFacturaPago(ByVal codigo As Integer)
+        For index As Integer = 0 To dtDetallePagos.Rows.Count - 2
+            If (dtDetallePagos.Rows(index).Cells(0).Value().ToString = codigo) Then
+                Return 1
+            End If
+        Next
+        Return 0
+    End Function
+
+    Private Sub btnRegresar_Click(sender As Object, e As EventArgs) Handles btnRegresar.Click
+        Me.Close()
+        A_ListarPagos.ShowDialog()
+    End Sub
 End Class

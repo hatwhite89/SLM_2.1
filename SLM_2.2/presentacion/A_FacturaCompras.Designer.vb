@@ -90,7 +90,7 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.Controls.Add(Me.Label1)
         Me.gbxInfoFact.Location = New System.Drawing.Point(7, 5)
         Me.gbxInfoFact.Name = "gbxInfoFact"
-        Me.gbxInfoFact.Size = New System.Drawing.Size(754, 164)
+        Me.gbxInfoFact.Size = New System.Drawing.Size(748, 164)
         Me.gbxInfoFact.TabIndex = 0
         Me.gbxInfoFact.TabStop = False
         Me.gbxInfoFact.Text = "Información de Factura"
@@ -100,7 +100,7 @@ Partial Class A_FacturaCompras
         Me.txtNroFactura.Location = New System.Drawing.Point(306, 25)
         Me.txtNroFactura.MaxLength = 100
         Me.txtNroFactura.Name = "txtNroFactura"
-        Me.txtNroFactura.Size = New System.Drawing.Size(442, 20)
+        Me.txtNroFactura.Size = New System.Drawing.Size(436, 20)
         Me.txtNroFactura.TabIndex = 1
         Me.txtNroFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -230,7 +230,7 @@ Partial Class A_FacturaCompras
         Me.txtNombreProveedor.Location = New System.Drawing.Point(306, 51)
         Me.txtNombreProveedor.MaxLength = 150
         Me.txtNombreProveedor.Name = "txtNombreProveedor"
-        Me.txtNombreProveedor.Size = New System.Drawing.Size(442, 20)
+        Me.txtNombreProveedor.Size = New System.Drawing.Size(436, 20)
         Me.txtNombreProveedor.TabIndex = 2
         '
         'Label4
@@ -300,7 +300,7 @@ Partial Class A_FacturaCompras
         Me.GroupBox1.Controls.Add(Me.dtDetalleFactura)
         Me.GroupBox1.Location = New System.Drawing.Point(7, 175)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(754, 342)
+        Me.GroupBox1.Size = New System.Drawing.Size(730, 342)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalle de Factura"
@@ -334,7 +334,7 @@ Partial Class A_FacturaCompras
         Me.dtDetalleFactura.Location = New System.Drawing.Point(3, 16)
         Me.dtDetalleFactura.Name = "dtDetalleFactura"
         Me.dtDetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.dtDetalleFactura.Size = New System.Drawing.Size(745, 291)
+        Me.dtDetalleFactura.Size = New System.Drawing.Size(721, 291)
         Me.dtDetalleFactura.TabIndex = 10
         '
         'Cuenta
@@ -374,7 +374,7 @@ Partial Class A_FacturaCompras
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(686, 523)
+        Me.btnGuardar.Location = New System.Drawing.Point(680, 523)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 11
@@ -387,7 +387,7 @@ Partial Class A_FacturaCompras
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(605, 523)
+        Me.btnModificar.Location = New System.Drawing.Point(599, 523)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 13
@@ -400,7 +400,7 @@ Partial Class A_FacturaCompras
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(524, 523)
+        Me.btnCrear.Location = New System.Drawing.Point(518, 523)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 12
@@ -425,7 +425,7 @@ Partial Class A_FacturaCompras
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(773, 553)
+        Me.ClientSize = New System.Drawing.Size(762, 553)
         Me.Controls.Add(Me.btnRegresar)
         Me.Controls.Add(Me.btnCrear)
         Me.Controls.Add(Me.btnModificar)

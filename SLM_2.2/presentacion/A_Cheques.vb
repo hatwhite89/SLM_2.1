@@ -97,7 +97,6 @@ Public Class A_Cheques
 
         If txtMonto.Text < montop Then
 
-
             montop = montop - monto
 
             frmPagos.dtDetallePagos.Rows.Add(" ", frmPagos.dtDetallePagos.Rows(0).Cells(1).Value, frmPagos.dtDetallePagos.Rows(0).Cells(2).Value, montop, "", "")

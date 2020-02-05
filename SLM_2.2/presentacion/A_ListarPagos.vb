@@ -11,7 +11,7 @@
     Private Sub A_ListarPagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Cargar listado de pagos
         Try
-            dtPagos.DataSource = pagos.listarPagos
+            dtPagos.DataSource = pagos.listarSinPago
 
         Catch ex As Exception
             MsgBox("Error al cargar listado de Pagos. Error: " + ex.Message)
@@ -83,7 +83,7 @@
 
             ElseIf txtBusqueda.Text = "" Then
 
-                dtPagos.DataSource = pagos.listarPagos
+                dtPagos.DataSource = pagos.listarSinPago
 
             End If
 
@@ -94,7 +94,19 @@
     End Sub
 
     Private Sub btnCancelarBusqueda_Click(sender As Object, e As EventArgs) Handles btnCancelarBusqueda.Click
-        dtPagos.DataSource = pagos.listarPagos
+        dtPagos.DataSource = pagos.listarSinPago
     End Sub
 
+
+    Private Sub ComboBox1_TextChanged(sender As Object, e As EventArgs) Handles ComboBox1.TextChanged
+        If ComboBox1.Text = "Sin pago" Then
+
+            dtPagos.DataSource = pagos.listarSinPago
+
+        Else
+            dtPagos.DataSource = pagos.listarPagosOk
+
+        End If
+
+    End Sub
 End Class

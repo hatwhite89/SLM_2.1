@@ -1,10 +1,12 @@
-﻿Public Class A_Notificacion
+﻿Imports System.Net.Mail
+
+Public Class A_Notificacion
 
     Dim x As Integer
 
     Private Sub A_Notificacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
+        enviarCorreo()
         Try
 
             Me.Location = New Point(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height)
@@ -55,4 +57,41 @@
         End If
 
     End Sub
+
+    Private Sub A_Notificacion_Click(sender As Object, e As EventArgs) Handles Me.Click
+
+        Me.Opacity = 100
+
+    End Sub
+
+    Private Sub enviarCorreo()
+        'In the shadows of the moon
+
+        Try
+            Dim Smtp_Server As New SmtpClient
+            Dim e_mail As New MailMessage()
+            Smtp_Server.UseDefaultCredentials = False
+            Smtp_Server.Credentials = New Net.NetworkCredential("HOTMAIL", "CONTRASEÑA")
+            Smtp_Server.Port = 587
+            Smtp_Server.EnableSsl = True
+            Smtp_Server.Host = "smtp.live.com"
+
+            e_mail = New MailMessage()
+            'txtfrom.text
+            e_mail.From = New MailAddress("HOTMAIL")
+            'txtto.text
+            e_mail.To.Add("CORREO CLIENTE")
+            e_mail.Subject = "Email Sending"
+            e_mail.IsBodyHtml = False
+            'txtMessage.text
+            e_mail.Body = "Funciona el envio por correo."
+            Smtp_Server.Send(e_mail)
+            MsgBox("Mail Sent")
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+
 End Class

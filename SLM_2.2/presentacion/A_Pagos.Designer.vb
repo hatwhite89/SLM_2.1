@@ -73,7 +73,7 @@ Partial Class frmPagos
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(682, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(801, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -193,7 +193,7 @@ Partial Class frmPagos
         'chxInfo
         '
         Me.chxInfo.AutoSize = True
-        Me.chxInfo.Location = New System.Drawing.Point(280, 67)
+        Me.chxInfo.Location = New System.Drawing.Point(259, 68)
         Me.chxInfo.Name = "chxInfo"
         Me.chxInfo.Size = New System.Drawing.Size(122, 17)
         Me.chxInfo.TabIndex = 13
@@ -203,7 +203,7 @@ Partial Class frmPagos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(490, 67)
+        Me.Label2.Location = New System.Drawing.Point(490, 45)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(61, 13)
         Me.Label2.TabIndex = 14
@@ -211,7 +211,7 @@ Partial Class frmPagos
         '
         'txtCodOrden
         '
-        Me.txtCodOrden.Location = New System.Drawing.Point(557, 64)
+        Me.txtCodOrden.Location = New System.Drawing.Point(557, 42)
         Me.txtCodOrden.Name = "txtCodOrden"
         Me.txtCodOrden.Size = New System.Drawing.Size(93, 20)
         Me.txtCodOrden.TabIndex = 16
@@ -244,7 +244,7 @@ Partial Class frmPagos
         Me.dtDetallePagos.GridColor = System.Drawing.Color.White
         Me.dtDetallePagos.Location = New System.Drawing.Point(6, 19)
         Me.dtDetallePagos.Name = "dtDetallePagos"
-        Me.dtDetallePagos.Size = New System.Drawing.Size(644, 209)
+        Me.dtDetallePagos.Size = New System.Drawing.Size(765, 209)
         Me.dtDetallePagos.TabIndex = 20
         '
         'NroFac
@@ -304,7 +304,7 @@ Partial Class frmPagos
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(596, 430)
+        Me.btnGuardar.Location = New System.Drawing.Point(710, 430)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 22
@@ -317,7 +317,7 @@ Partial Class frmPagos
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(514, 430)
+        Me.btnModificar.Location = New System.Drawing.Point(628, 430)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 23
@@ -331,7 +331,7 @@ Partial Class frmPagos
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(433, 430)
+        Me.btnCrear.Location = New System.Drawing.Point(547, 430)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 24
@@ -362,7 +362,7 @@ Partial Class frmPagos
         Me.gbxInfo.Controls.Add(Me.chxInfo)
         Me.gbxInfo.Location = New System.Drawing.Point(12, 27)
         Me.gbxInfo.Name = "gbxInfo"
-        Me.gbxInfo.Size = New System.Drawing.Size(659, 124)
+        Me.gbxInfo.Size = New System.Drawing.Size(777, 124)
         Me.gbxInfo.TabIndex = 25
         Me.gbxInfo.TabStop = False
         Me.gbxInfo.Text = "Información de Pago"
@@ -371,7 +371,7 @@ Partial Class frmPagos
         '
         Me.chkPagado.AutoSize = True
         Me.chkPagado.Enabled = False
-        Me.chkPagado.Location = New System.Drawing.Point(558, 44)
+        Me.chkPagado.Location = New System.Drawing.Point(660, 18)
         Me.chkPagado.Name = "chkPagado"
         Me.chkPagado.Size = New System.Drawing.Size(63, 17)
         Me.chkPagado.TabIndex = 22
@@ -387,7 +387,7 @@ Partial Class frmPagos
         Me.gbxDetalle.Controls.Add(Me.dtDetallePagos)
         Me.gbxDetalle.Location = New System.Drawing.Point(12, 157)
         Me.gbxDetalle.Name = "gbxDetalle"
-        Me.gbxDetalle.Size = New System.Drawing.Size(659, 267)
+        Me.gbxDetalle.Size = New System.Drawing.Size(777, 267)
         Me.gbxDetalle.TabIndex = 26
         Me.gbxDetalle.TabStop = False
         Me.gbxDetalle.Text = "Detalle de Pago"
@@ -400,6 +400,7 @@ Partial Class frmPagos
         Me.lblNombreBanco.Size = New System.Drawing.Size(66, 13)
         Me.lblNombreBanco.TabIndex = 24
         Me.lblNombreBanco.Text = "NameBanco"
+        Me.lblNombreBanco.Visible = False
         '
         'lblFila
         '
@@ -409,11 +410,12 @@ Partial Class frmPagos
         Me.lblFila.Size = New System.Drawing.Size(39, 13)
         Me.lblFila.TabIndex = 23
         Me.lblFila.Text = "Label3"
+        Me.lblFila.Visible = False
         '
         'lblTotalSuma
         '
         Me.lblTotalSuma.AutoSize = True
-        Me.lblTotalSuma.Location = New System.Drawing.Point(587, 240)
+        Me.lblTotalSuma.Location = New System.Drawing.Point(713, 240)
         Me.lblTotalSuma.Name = "lblTotalSuma"
         Me.lblTotalSuma.Size = New System.Drawing.Size(10, 13)
         Me.lblTotalSuma.TabIndex = 22
@@ -422,7 +424,7 @@ Partial Class frmPagos
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(465, 239)
+        Me.Label4.Location = New System.Drawing.Point(591, 239)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(77, 13)
         Me.Label4.TabIndex = 21
@@ -446,7 +448,7 @@ Partial Class frmPagos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(682, 463)
+        Me.ClientSize = New System.Drawing.Size(801, 463)
         Me.Controls.Add(Me.btnRegresar)
         Me.Controls.Add(Me.gbxDetalle)
         Me.Controls.Add(Me.gbxInfo)

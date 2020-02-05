@@ -18,13 +18,26 @@
         moneda = dtFacturasCompra.Rows(e.RowIndex).Cells(4).Value
         monto = dtFacturasCompra.Rows(e.RowIndex).Cells(3).Value
 
-        frmPagos.dtDetallePagos.Rows.Add(New String() {nroFact, proveedor, moneda, monto, " ", " "})
+
+
+        Dim i, rows As Integer
+        rows = dtFacturasCompra.Rows.Count - 2
+
+        'Comprobar que la factura no este duplicada.
+
+        If (frmPagos.validarFacturaPago(nroFact) = 0) Then
+
+            frmPagos.dtDetallePagos.Rows.Add(New String() {nroFact, proveedor, moneda, monto, " ", " "})
+            Me.Close()
+        Else
+            MsgBox("La factura ya ha sido agregado.")
+        End If
 
         Try
-            Dim Total As Single
+            Dim Total As Double
             Dim Col As Integer = 3
             For Each row As DataGridViewRow In frmPagos.dtDetallePagos.Rows
-                Total += Val(row.Cells(Col).Value)
+                Total += Convert.ToDouble(row.Cells(Col).Value)
             Next
             frmPagos.lblTotalSuma.Text = Total.ToString
 
@@ -32,9 +45,8 @@
             MsgBox("Error: " + ex.Message)
         End Try
 
-        Me.Close()
+
 
     End Sub
-
 
 End Class

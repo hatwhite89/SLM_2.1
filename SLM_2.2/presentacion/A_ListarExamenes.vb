@@ -32,6 +32,7 @@
                 'Agregar colección de exámenes
 
                 If (A_Promociones.validarDetalle(dtExamenes.Rows(i).Cells(1).Value)) = 0 Then
+
                     A_Promociones.dtDetallePromo.Rows.Add(dtExamenes.Rows(i).Cells(1).Value, dtExamenes.Rows(i).Cells(3).Value)
 
                 Else
@@ -44,4 +45,5 @@
         Me.Close()
 
     End Sub
+
 End Class
