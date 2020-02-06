@@ -2,6 +2,7 @@
 Imports System
 Imports System.Text
 Imports System.Globalization
+Imports System.ComponentModel
 Public Class M_Factura
     Public letras As String
     Dim subtotalF, descuentoF, abonoF, saldoF As Double
@@ -383,7 +384,7 @@ Public Class M_Factura
         End Try
     End Sub
     Private Sub dgblistadoExamenes_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellClick
-        If e.ColumnIndex = 7 And Trim(txtnumeroFactura.Text) = "" Then
+        If e.ColumnIndex = 8 And Trim(txtnumeroFactura.Text) = "" Then
             Try
                 Dim n As String = MsgBox("¿Desea eliminar el examen de la factura?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then
@@ -501,7 +502,7 @@ Public Class M_Factura
                         Dim descuento As Double = Convert.ToDouble(CStr(row("porcentaje")))
                         descuento = subtotal * (descuento / 100)
                         subtotal -= descuento
-                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
+                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("grupo"))})
                         totalFactura()
 
                         M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
@@ -562,7 +563,7 @@ Public Class M_Factura
         descuento = subtotal * (descuento / 100)
         subtotal -= descuento
 
-        dgblistadoExamenes.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
+        dgblistadoExamenes.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("grupo"))})
         totalFactura()
         M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
     End Sub
@@ -604,7 +605,7 @@ Public Class M_Factura
 
             If (txtcodigoCliente.Text <> "" And txtcodigoMedico.Text <> "" And txtcodigoTerminosPago.Text <> "" And
                 txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And
-                txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
+                txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 1) Then
 
 
                 If (cbxok.Checked) Then
@@ -673,6 +674,7 @@ Public Class M_Factura
                         End If
                     Next
                     MsgBox("Registrada la factura correctamente.")
+
                     If (cbxok.Checked) Then
                         letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
                         calcularDescuento()
@@ -764,7 +766,6 @@ Public Class M_Factura
     End Sub
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Try
-
             Dim dt As New DataTable
             Dim row As DataRow
 
@@ -775,6 +776,7 @@ Public Class M_Factura
                         MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
                         Exit Sub
                     End If
+
                     Dim objCAI As New ClsCAI
                     objCAI.codigoMaquinaLocal_ = txtcodigoTerminal.Text
                     dt = objCAI.BuscarCAI()
@@ -978,6 +980,41 @@ Public Class M_Factura
         Catch ex As Exception
         End Try
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+            MsgBox("FUNCIONA 1")
+            Dim dv As DataView = dgblistadoExamenes.DataSource
+            MsgBox("////")
+            Dim dt As DataTable = dgblistadoExamenes.DataSource
+            'dv.Sort = "grupo Desc"
+            'dt
+            dv = dt.DefaultView
+            'Dim objOrden As New ClsOrdenDeTrabajo
+            'dgblistadoExamenes.Sort(dgblistadoExamenes.Columns(3), ListSortDirection.Ascending)
+            lblcliente.Text = dv.Count
+            MsgBox("FUNCIONA 2: " & lblcliente.Text)
+            For index As Integer = 0 To dv.Count
+                'With objOrden
+                '.cod_factura_ = Convert.ToInt32(txtnumeroFactura.Text)
+                '.cod_objeto_ = Convert.ToInt32(dv(index)(7))
+                '.cantidad_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(1).Value())
+                '.fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
+                '.descuento_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(5).Value())
+                '.subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+                'End With
+                'If objOrden.cod_factura_ = 0 Then
+                '    MsgBox("Error al querer insertar el detalle de factura.")
+                'End If
+                MsgBox("FUNCIONA 3")
+                MsgBox("GRUPO: " & dv(index)(7))
+            Next
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
     Private Sub txtTarjeta_TextChanged(sender As Object, e As EventArgs) Handles txtTarjeta.TextChanged
         Try
             txtpagoPaciente.Text = Convert.ToDouble(txtEfectivo.Text) + Convert.ToDouble(txtTarjeta.Text)

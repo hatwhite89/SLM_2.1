@@ -273,6 +273,20 @@ Public Class ClsItemExamen
         End Using
     End Function
 
+    'Capturar Item
+    Public Function CapturarItem() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("E_slmCapturarItem_Examenes", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
+
     'Búsqueda Item
     Public Function BuscarItemExam() As DataTable
         Dim objCon As New ClsConnection
