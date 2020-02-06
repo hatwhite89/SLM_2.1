@@ -90,14 +90,10 @@
         Dim Celda As DataGridViewCell = Me.dtDetallePagos.CurrentCell()
 
         If Celda.ColumnIndex = 0 Or Celda.ColumnIndex = 5 Then
-
             If e.KeyChar = "."c Then
-
                 If InStr(Celda.EditedFormattedValue.ToString, ".", CompareMethod.Text) > 0 Then
-
                     e.Handled = True
                 Else
-
                     e.Handled = False
                 End If
             Else
@@ -306,9 +302,9 @@
             btnCrear.Visible = False
             btnGuardar.Visible = False
 
-
         End If
 
+        'habilitar boton para eliminar fila
         If dtDetallePagos.Columns.Contains("btnEliminar") = False Then
             Dim btn As New DataGridViewButtonColumn()
             dtDetallePagos.Columns.Add(btn)

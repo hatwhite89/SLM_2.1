@@ -11,12 +11,19 @@ Public Class ClsConnection
     End Sub
 
     Public Function getConexion() As SqlConnection
-        sqlcon = New SqlConnection(str_con)
-        ''se conecta a la base de datos
-        sqlcon.Open()
-        ''abre la conexión a la base de datos
-        Return sqlcon
-        ''retorna la conexión abierta
+
+        Try
+            sqlcon = New SqlConnection(str_con)
+            ''se conecta a la base de datos
+            sqlcon.Open()
+            ''abre la conexión a la base de datos
+            Return sqlcon
+            ''retorna la conexión abierta
+        Catch ex As Exception
+            MsgBox("Error en la conexión con la base de datos. No se podrá generar registros.")
+        End Try
+
+
     End Function
     Public Sub cerrarConexion()
         'cierra la conexión con la base de datos
