@@ -1,7 +1,12 @@
-﻿Public Class M_BuscarFactura
+﻿Imports System.ComponentModel
+Public Class M_BuscarFactura
     Private Sub M_BuscarFactura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         seleccionarFacturas()
         Me.dgbtabla.Columns("codigo").Visible = False
+        Dim dv As DataView = dgbtabla.DataSource
+        dv.Sort = "FechaFactura Desc"
+        'dgbtabla.DataSource = dv
+        'dgbtabla.Sort(dgbtabla.Columns(3), ListSortDirection.Ascending)
     End Sub
     Public Sub seleccionarFacturas()
         Dim objFact As New ClsFactura
@@ -13,7 +18,7 @@
         'dgbtabla.Rows(0).DefaultCellStyle.BackColor = Color.Green
         'dgbtabla.Rows(1).DefaultCellStyle.BackColor = Color.Green
         'dgbtabla.Rows(2).DefaultCellStyle.BackColor = Color.Green
-
+        '   
         'dgbtabla.RowsDefaultCellStyle.BackColor = Color.Red
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
