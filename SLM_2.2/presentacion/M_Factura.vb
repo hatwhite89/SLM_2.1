@@ -983,36 +983,40 @@ Public Class M_Factura
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            MsgBox("FUNCIONA 1")
-            Dim dv As DataView = dgblistadoExamenes.DataSource
-            MsgBox("////")
-            Dim dt As DataTable = dgblistadoExamenes.DataSource
+            MsgBox("FUNCIONA        1")
+            Dim dt As New DataTable
+            dt = TryCast(dgblistadoExamenes.DataSource, DataTable)
+            Dim dv As DataView
+            dt.DefaultView.Sort = "grupo Desc"
+            MsgBox("\\\\\\\\\\\\\\\\\\\")
+            dgblistadoExamenes.DataSource = dt
+            'MsgBox("////")
+            'Dim dt As DataTable = dgblistadoExamenes.DataSource
             'dv.Sort = "grupo Desc"
             'dt
-            dv = dt.DefaultView
+            'dv = dt.DefaultView
             'Dim objOrden As New ClsOrdenDeTrabajo
             'dgblistadoExamenes.Sort(dgblistadoExamenes.Columns(3), ListSortDirection.Ascending)
-            lblcliente.Text = dv.Count
-            MsgBox("FUNCIONA 2: " & lblcliente.Text)
-            For index As Integer = 0 To dv.Count
-                'With objOrden
-                '.cod_factura_ = Convert.ToInt32(txtnumeroFactura.Text)
-                '.cod_objeto_ = Convert.ToInt32(dv(index)(7))
-                '.cantidad_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(1).Value())
-                '.fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
-                '.descuento_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(5).Value())
-                '.subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
-                'End With
-                'If objOrden.cod_factura_ = 0 Then
-                '    MsgBox("Error al querer insertar el detalle de factura.")
-                'End If
-                MsgBox("FUNCIONA 3")
-                MsgBox("GRUPO: " & dv(index)(7))
-            Next
+            'lblcliente.Text = dv.Count
+            'MsgBox("FUNCIONA 2: " & lblcliente.Text)
+            'For index As Integer = 0 To dv.Count
+            '    'With objOrden
+            '    '.cod_factura_ = Convert.ToInt32(txtnumeroFactura.Text)
+            '    '.cod_objeto_ = Convert.ToInt32(dv(index)(7))
+            '    '.cantidad_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(1).Value())
+            '    '.fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
+            '    '.descuento_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(5).Value())
+            '    '.subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+            '    'End With
+            '    'If objOrden.cod_factura_ = 0 Then
+            '    '    MsgBox("Error al querer insertar el detalle de factura.")
+            '    'End If
+            '    MsgBox("FUNCIONA 3")
+            '    MsgBox("GRUPO: " & dv(index)(7))
+            'Next
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
     End Sub
 
     Private Sub txtTarjeta_TextChanged(sender As Object, e As EventArgs) Handles txtTarjeta.TextChanged

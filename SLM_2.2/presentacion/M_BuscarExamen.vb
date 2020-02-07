@@ -4,6 +4,7 @@
         Try
             objPrice.codigoListaPrecios_ = M_Factura.lblcodePriceList.Text
             Dim dv As DataView = objPrice.SeleccionarPrecios.DefaultView
+
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
             dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -51,5 +52,4 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
 End Class
