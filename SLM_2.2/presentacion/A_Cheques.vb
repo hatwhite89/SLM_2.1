@@ -84,9 +84,9 @@ Public Class A_Cheques
             End If
 
         Catch ex As Exception
+
             MsgBox("Error al guardar. Detalle: " + ex.Message)
         End Try
-
 
         ':::::::::::::::::: Registro de Retención ::::::::::::::::::
 
@@ -130,7 +130,9 @@ Public Class A_Cheques
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+
         Me.Close()
+
     End Sub
     Private Sub A_Cheques_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -688,7 +690,36 @@ Public Class A_Cheques
 
     Private Sub txtcodProvee_TextChanged(sender As Object, e As EventArgs) Handles txtcodProvee.TextChanged
 
+        'Cambio de color
         txtcodProvee.BackColor = Color.White
+
+        Try
+
+            If txtcodProvee.Text = "" Then
+
+                txtNombreProvee.Text = ""
+
+            Else
+
+                'Busqueda de proveedor
+                Dim proveedor As New ClsProveedor
+                Dim dt As DataTable
+                Dim row As DataRow
+
+                proveedor.Cod_Proveedor = Convert.ToInt32(txtcodProvee.Text)
+
+                dt = proveedor.capturarNombreProveedor()
+                row = dt.Rows(0)
+
+                txtNombreProvee.Text = row("nombreProveedor")
+
+
+            End If
+
+
+        Catch ex As Exception
+            MsgBox("El proveedor no existe.")
+        End Try
 
     End Sub
 

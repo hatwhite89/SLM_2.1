@@ -6,22 +6,28 @@
     Dim detallePago As New ClsDetallePago
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+
         'Cerrar Ventana Pagos
         Me.Close()
+
     End Sub
 
     Private Sub frmPagos_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+
         'Presionar ESC para salida
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
             'frmMenuConta.Show()
         End If
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnBuscarFormaPago.Click
+
         'Mostrar formas de pago
         A_ListarFormasPagoPF.lblForm.Text = "Pagos"
         A_ListarFormasPagoPF.ShowDialog()
+
     End Sub
 
     Private Sub dtDetallePagos_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetallePagos.CellEndEdit
@@ -43,11 +49,9 @@
                     dtDetallePagos.Rows(e.RowIndex).Cells(2).Value = row("moneda")
                     dtDetallePagos.Rows(e.RowIndex).Cells(3).Value = row("total")
 
-
                     'Sumar totales de factura
 
                     lblTotalSuma.Text = dtDetallePagos.Rows(e.RowIndex).Cells(3).Value
-
 
                 End If
 
@@ -74,6 +78,7 @@
             Catch ex As Exception
                 MsgBox(ex.Message, MsgBoxStyle.Critical)
             End Try
+
             suma()
 
         End If
@@ -85,6 +90,7 @@
     End Sub
 
     'Solo permitir numeros en celda codigo y nro de cheque
+
     Private Sub Validar_Numeros(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
 
         Dim Celda As DataGridViewCell = Me.dtDetallePagos.CurrentCell()
@@ -97,7 +103,6 @@
                     e.Handled = False
                 End If
             Else
-
                 If Len(Trim(Celda.EditedFormattedValue.ToString)) > 0 Then
 
                     If Char.IsNumber(e.KeyChar) Or e.KeyChar = Convert.ToChar(8) Then
@@ -127,6 +132,7 @@
         End If
     End Sub
     Sub limpiar() 'Limpiar todos los campos
+
         txtNro.Text = ""
         txtComentario.Text = ""
         txtCtaBanco.Text = ""
@@ -175,7 +181,6 @@
 
                 Dim row As DataRow = dt2.Rows(0)
                 txtNro.Text = CStr(row("codPago"))
-
 
             End If 'If conteo de filas
 

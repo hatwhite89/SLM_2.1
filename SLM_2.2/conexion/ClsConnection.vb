@@ -20,7 +20,7 @@ Public Class ClsConnection
             Return sqlcon
             ''retorna la conexión abierta
         Catch ex As Exception
-            MsgBox("Error en la conexión con la base de datos. No se podrá generar registros.")
+            MsgBox("Error en la conexión con la base de datos. No se podrá generar registros en el sistema.")
         End Try
 
 
