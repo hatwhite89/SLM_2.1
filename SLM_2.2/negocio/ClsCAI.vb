@@ -270,32 +270,42 @@ Public Class ClsCAI
     ':::::::::::::::::::::::::::::::::::::::: Procedimientos de Notificación ::::::::::::::::::::::::::::::::::::::::
 
     Public Function ContarFacturas() As DataTable
+        Try
+            Dim objCon As New ClsConnection
+            Dim cn As New SqlConnection
+            cn = objCon.getConexion
 
-        Dim objCon As New ClsConnection
-        Dim cn As New SqlConnection
-        cn = objCon.getConexion
+            Using da As New SqlDataAdapter("M_slmValidacionCAICantidad", cn)
+                Dim dt As New DataTable
+                da.Fill(dt)
+                objCon.cerrarConexion()
+                Return dt
+            End Using
 
-        Using da As New SqlDataAdapter("M_slmValidacionCAICantidad", cn)
-            Dim dt As New DataTable
-            da.Fill(dt)
-            objCon.cerrarConexion()
-            Return dt
-        End Using
+        Catch ex As Exception
+
+        End Try
 
     End Function
 
     Public Function DiaVencimiento() As DataTable
+        Try
 
-        Dim objCon As New ClsConnection
-        Dim cn As New SqlConnection
-        cn = objCon.getConexion
+            Dim objCon As New ClsConnection
+            Dim cn As New SqlConnection
+            cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("M_slmValidacionCAIDias", cn)
-            Dim dt As New DataTable
-            da.Fill(dt)
-            objCon.cerrarConexion()
-            Return dt
-        End Using
+            Using da As New SqlDataAdapter("M_slmValidacionCAIDias", cn)
+                Dim dt As New DataTable
+                da.Fill(dt)
+                objCon.cerrarConexion()
+                Return dt
+            End Using
+
+
+        Catch ex As Exception
+
+        End Try
 
     End Function
 End Class

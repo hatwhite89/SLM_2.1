@@ -2,6 +2,7 @@
 Imports System.Text
 Imports System.Globalization
 Public Class A_Cheques
+
     'Objeto Cheques
     Dim cheque As New ClsCheques
     Dim formap As New ClsFormaPago
@@ -83,9 +84,9 @@ Public Class A_Cheques
             End If
 
         Catch ex As Exception
+
             MsgBox("Error al guardar. Detalle: " + ex.Message)
         End Try
-
 
         ':::::::::::::::::: Registro de Retención ::::::::::::::::::
 
@@ -129,7 +130,9 @@ Public Class A_Cheques
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+
         Me.Close()
+
     End Sub
     Private Sub A_Cheques_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -262,25 +265,31 @@ Public Class A_Cheques
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
 
-        A_PrintCheque.Show()
+        Try
+            Dim nroCheque As String
+            Dim codFactura As Integer
+            Dim objVistaCheque As New VistaCheque
 
-        Dim nroCheque As String
-        Dim codFactura As Integer
-        Dim objVistaCheque As New VistaCheque
+            nroCheque = txtNroCheq.Text
 
-        nroCheque = txtNroCheq.Text
+            codFactura = Convert.ToInt32(frmPagos.dtDetallePagos.Rows(0).Cells(0).Value)
 
-        codFactura = Convert.ToInt32(frmPagos.dtDetallePagos.Rows(0).Cells(0).Value)
+            objVistaCheque.SetParameterValue("@nroCheque", nroCheque)
+            objVistaCheque.SetParameterValue("@codFactura", codFactura)
+            objVistaCheque.SetParameterValue("numalet", letras)
+            objVistaCheque.SetParameterValue("ChequeNumero", nroCheque)
 
-        objVistaCheque.SetParameterValue("@nroCheque", nroCheque)
-        objVistaCheque.SetParameterValue("@codFactura", codFactura)
-        objVistaCheque.SetParameterValue("numalet", letras)
-        objVistaCheque.SetParameterValue("ChequeNumero", nroCheque)
+            objVistaCheque.SetDatabaseLogon("sa", "Lbm2019")
 
-        objVistaCheque.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
-        A_PrintCheque.crvImprimirCheque.ReportSource = objVistaCheque
+            A_PrintCheque.crvImprimirCheque.ReportSource = objVistaCheque
 
-        A_PrintCheque.Show()
+            A_PrintCheque.crvImprimirCheque.ParameterFieldInfo.Clear()
+
+            A_PrintCheque.Show()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 
@@ -660,11 +669,58 @@ Public Class A_Cheques
     Private Sub txtMonto_TextChanged(sender As Object, e As EventArgs) Handles txtMonto.TextChanged
         txtMonto.BackColor = Color.White
 
+        Try
+            Dim monto, montocheque As Double
+
+            monto = Convert.ToDouble(frmPagos.lblTotalSuma.Text)
+            montocheque = Convert.ToDouble(txtMonto.Text)
+
+            If montocheque > monto Then
+
+                MsgBox("El monto del cheque sobrepasa el pago.")
+                txtMonto.Text = ""
+
+            End If
+
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
     Private Sub txtcodProvee_TextChanged(sender As Object, e As EventArgs) Handles txtcodProvee.TextChanged
+
+        'Cambio de color
         txtcodProvee.BackColor = Color.White
+
+        Try
+
+            If txtcodProvee.Text = "" Then
+
+                txtNombreProvee.Text = ""
+
+            Else
+
+                'Busqueda de proveedor
+                Dim proveedor As New ClsProveedor
+                Dim dt As DataTable
+                Dim row As DataRow
+
+                proveedor.Cod_Proveedor = Convert.ToInt32(txtcodProvee.Text)
+
+                dt = proveedor.capturarNombreProveedor()
+                row = dt.Rows(0)
+
+                txtNombreProvee.Text = row("nombreProveedor")
+
+
+            End If
+
+
+        Catch ex As Exception
+            MsgBox("El proveedor no existe.")
+        End Try
+
     End Sub
 
 End Class
