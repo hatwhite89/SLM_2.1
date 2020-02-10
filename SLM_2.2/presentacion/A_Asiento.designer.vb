@@ -91,7 +91,7 @@ Partial Class frmAsientos
         Me.txtTexto.Location = New System.Drawing.Point(53, 34)
         Me.txtTexto.MaxLength = 200
         Me.txtTexto.Name = "txtTexto"
-        Me.txtTexto.Size = New System.Drawing.Size(371, 20)
+        Me.txtTexto.Size = New System.Drawing.Size(559, 20)
         Me.txtTexto.TabIndex = 6
         '
         'dtDetalleAsiento
@@ -158,20 +158,22 @@ Partial Class frmAsientos
         'lblCodAsiento
         '
         Me.lblCodAsiento.AutoSize = True
-        Me.lblCodAsiento.Location = New System.Drawing.Point(575, 37)
+        Me.lblCodAsiento.Location = New System.Drawing.Point(494, 12)
         Me.lblCodAsiento.Name = "lblCodAsiento"
         Me.lblCodAsiento.Size = New System.Drawing.Size(10, 13)
         Me.lblCodAsiento.TabIndex = 15
         Me.lblCodAsiento.Text = "-"
+        Me.lblCodAsiento.Visible = False
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(490, 37)
+        Me.Label4.Location = New System.Drawing.Point(409, 12)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(65, 13)
         Me.Label4.TabIndex = 16
         Me.Label4.Text = "Asiento Nro."
+        Me.Label4.Visible = False
         '
         'btnCerrar
         '
