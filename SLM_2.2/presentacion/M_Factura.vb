@@ -32,6 +32,11 @@ Public Class M_Factura
                 lblcodePriceList.Text = CStr(row("codigoListaPrecios"))
                 lblFechaNacimiento.Text = CStr(row("fechaNacimiento"))
                 'MsgBox(CStr(row("tipoConvenio")))
+                'txtcodigoCajero.Text = CStr(row("telCasa"))
+                'txtcodigoRecepecionista.Text = CStr(row("telTrabajo"))
+                'lblFechaNacimiento.Text = CStr(row("celular"))
+                'txtnombreCliente.Text = CStr(row("correo1"))
+                'lblcodePriceList.Text = CStr(row("correo2"))
                 If (row("tipoConvenio")) Then
                     txtcodigoConvenio.Text = CStr(row("descripcionLp"))
                 Else

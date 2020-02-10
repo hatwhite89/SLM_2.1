@@ -15,7 +15,7 @@
                 cont += 1
             End If
         Catch ex As Exception
-            MsgBox(ex.Message + "Cliente")
+            MsgBox(ex.Message)
         End Try
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
