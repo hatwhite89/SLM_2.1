@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class A_BuscarFormaPago
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class A_BuscarFormaPago
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -71,10 +71,11 @@ Partial Class A_BuscarFormaPago
         'lblJC
         '
         Me.lblJC.AutoSize = True
-        Me.lblJC.Location = New System.Drawing.Point(186, 23)
+        Me.lblJC.Location = New System.Drawing.Point(188, 15)
         Me.lblJC.Name = "lblJC"
-        Me.lblJC.Size = New System.Drawing.Size(0, 13)
+        Me.lblJC.Size = New System.Drawing.Size(27, 13)
         Me.lblJC.TabIndex = 4
+        Me.lblJC.Text = "form"
         Me.lblJC.Visible = False
         '
         'A_BuscarFormaPago

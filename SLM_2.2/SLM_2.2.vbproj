@@ -160,6 +160,12 @@
     <Compile Include="negocio\ClsUnidad.vb" />
     <Compile Include="negocio\ClsDetallePromociones.vb" />
     <Compile Include="negocio\ModulosVarios.vb" />
+    <Compile Include="presentacion\A_Consolidacion.Designer.vb">
+      <DependentUpon>A_Consolidacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_Consolidacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_FacturaCompras.Designer.vb">
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
     </Compile>
@@ -378,6 +384,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="negocio\ClsChequera.vb" />
+    <Compile Include="presentacion\A_Transferencias.Designer.vb">
+      <DependentUpon>A_Transferencias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_Transferencias.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_BuscarOrdenDeTrabajo.Designer.vb">
       <DependentUpon>E_BuscarOrdenDeTrabajo.vb</DependentUpon>
     </Compile>
@@ -803,6 +815,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_Consolidacion.resx">
+      <DependentUpon>A_Consolidacion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_FacturaCompras.resx">
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
     </EmbeddedResource>
@@ -901,6 +916,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_FormaPago.resx">
       <DependentUpon>A_FormaPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_Transferencias.resx">
+      <DependentUpon>A_Transferencias.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_BuscarOrdenDeTrabajo.resx">
       <DependentUpon>E_BuscarOrdenDeTrabajo.vb</DependentUpon>
