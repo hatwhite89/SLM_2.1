@@ -251,6 +251,7 @@ Partial Class M_Recibo
         Me.btnbuscarFormaPago.Name = "btnbuscarFormaPago"
         Me.btnbuscarFormaPago.Size = New System.Drawing.Size(49, 22)
         Me.btnbuscarFormaPago.TabIndex = 143
+        Me.btnbuscarFormaPago.Text = "..."
         Me.btnbuscarFormaPago.UseVisualStyleBackColor = False
         '
         'txtnombreFormaPago

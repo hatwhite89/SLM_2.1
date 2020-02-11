@@ -67,6 +67,7 @@ Public Class M_BuscarFactura
                 M_Factura.txtvuelto.Text = CStr(row("vuelto"))
                 M_Factura.txttotal.Text = CStr(row("total"))
                 M_Factura.cbxok.Checked = CStr(row("ok"))
+                M_Factura.cbxAnular.Checked = CStr(row("estado"))
 
                 Dim objDetFact As New ClsDetalleFactura
                 objDetFact.numeroFactura_ = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
@@ -81,7 +82,7 @@ Public Class M_BuscarFactura
                 If (M_Factura.cbxok.Checked = "0") Then
                     M_Factura.HabilitarActualizarFactura()
                 Else
-                    M_Factura.btnActualizar.Enabled = False
+                    M_Factura.btnActualizar.Enabled = True
                 End If
                 'Me.Close()
                 Me.Hide()

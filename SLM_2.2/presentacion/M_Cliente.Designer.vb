@@ -141,14 +141,14 @@ Partial Class M_Cliente
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1056, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1056, 30)
         Me.MenuStrip1.TabIndex = 53
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ArchivoToolStripMenuItem
         '
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 24)
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 26)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
         '
         'gbxinfoCliente
@@ -354,6 +354,7 @@ Partial Class M_Cliente
         Me.btnclasificacion.Name = "btnclasificacion"
         Me.btnclasificacion.Size = New System.Drawing.Size(49, 22)
         Me.btnclasificacion.TabIndex = 108
+        Me.btnclasificacion.Text = "..."
         Me.btnclasificacion.UseVisualStyleBackColor = False
         '
         'txtcodigoClasificacion
@@ -376,6 +377,7 @@ Partial Class M_Cliente
         Me.btnterminosPago.Name = "btnterminosPago"
         Me.btnterminosPago.Size = New System.Drawing.Size(49, 22)
         Me.btnterminosPago.TabIndex = 106
+        Me.btnterminosPago.Text = "..."
         Me.btnterminosPago.UseVisualStyleBackColor = False
         '
         'txtcodigoTermino
@@ -445,6 +447,7 @@ Partial Class M_Cliente
         Me.btncategoria.Name = "btncategoria"
         Me.btncategoria.Size = New System.Drawing.Size(49, 22)
         Me.btncategoria.TabIndex = 100
+        Me.btncategoria.Text = "..."
         Me.btncategoria.UseVisualStyleBackColor = False
         '
         'dtpfechaNacimiento

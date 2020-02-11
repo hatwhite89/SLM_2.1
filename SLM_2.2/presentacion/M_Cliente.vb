@@ -417,7 +417,7 @@
         M_ClienteVentana.txtnombreTerminos.Text = txtnombreTerminos.Text
         M_ClienteVentana.txtnombreCategoria.Text = txtnombreCategoria.Text
         M_ClienteVentana.txtnombreConvenio.Text = txtnombreConvenio.Text
-        M_ClienteVentana.txtnombreAseguradora.Text = txtnombreAseguradora.Text
+        M_ClienteVentana.txttelefonoCasa.Text = txtnombreAseguradora.Text
         limpiar()
         Me.Close()
     End Sub

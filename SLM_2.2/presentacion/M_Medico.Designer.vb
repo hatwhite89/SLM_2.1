@@ -162,6 +162,7 @@ Partial Class M_Medico
         Me.btnbuscarEspecialidad.Name = "btnbuscarEspecialidad"
         Me.btnbuscarEspecialidad.Size = New System.Drawing.Size(49, 22)
         Me.btnbuscarEspecialidad.TabIndex = 105
+        Me.btnbuscarEspecialidad.Text = "..."
         Me.btnbuscarEspecialidad.UseVisualStyleBackColor = False
         '
         'txtcodigoEspecialidad

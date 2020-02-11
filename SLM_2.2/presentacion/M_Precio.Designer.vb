@@ -121,6 +121,7 @@ Partial Class M_Precio
         Me.btnBuscarListaPrecios.Name = "btnBuscarListaPrecios"
         Me.btnBuscarListaPrecios.Size = New System.Drawing.Size(49, 22)
         Me.btnBuscarListaPrecios.TabIndex = 136
+        Me.btnBuscarListaPrecios.Text = "..."
         Me.btnBuscarListaPrecios.UseVisualStyleBackColor = False
         '
         'btnbuscarItem
@@ -136,6 +137,7 @@ Partial Class M_Precio
         Me.btnbuscarItem.Name = "btnbuscarItem"
         Me.btnbuscarItem.Size = New System.Drawing.Size(49, 22)
         Me.btnbuscarItem.TabIndex = 135
+        Me.btnbuscarItem.Text = "..."
         Me.btnbuscarItem.UseVisualStyleBackColor = False
         '
         'txtcodigoListaPrecios
@@ -295,7 +297,7 @@ Partial Class M_Precio
         Me.btnImportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnImportar.ForeColor = System.Drawing.Color.White
         Me.btnImportar.Location = New System.Drawing.Point(461, 32)
-        Me.btnImportar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnImportar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnImportar.Name = "btnImportar"
         Me.btnImportar.Size = New System.Drawing.Size(100, 28)
         Me.btnImportar.TabIndex = 116

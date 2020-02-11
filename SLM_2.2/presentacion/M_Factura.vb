@@ -32,11 +32,11 @@ Public Class M_Factura
                 lblcodePriceList.Text = CStr(row("codigoListaPrecios"))
                 lblFechaNacimiento.Text = CStr(row("fechaNacimiento"))
                 'MsgBox(CStr(row("tipoConvenio")))
-                'txtcodigoCajero.Text = CStr(row("telCasa"))
-                'txtcodigoRecepecionista.Text = CStr(row("telTrabajo"))
-                'lblFechaNacimiento.Text = CStr(row("celular"))
-                'txtnombreCliente.Text = CStr(row("correo1"))
-                'lblcodePriceList.Text = CStr(row("correo2"))
+                M_ClienteVentana.txttelefonoCasa.Text = CStr(row("telCasa"))
+                M_ClienteVentana.txttelefonoTrabajo.Text = CStr(row("telTrabajo"))
+                M_ClienteVentana.txtcelular.Text = CStr(row("celular"))
+                M_ClienteVentana.txtcorreo1.Text = CStr(row("correo1"))
+                M_ClienteVentana.txtcorreo2.Text = CStr(row("correo2"))
                 If (row("tipoConvenio")) Then
                     txtcodigoConvenio.Text = CStr(row("descripcionLp"))
                 Else
@@ -57,6 +57,11 @@ Public Class M_Factura
             txtcodigoCliente.Text = ""
             txtnombreCliente.Text = ""
             txtcodigoCliente.BackColor = Color.White
+            M_ClienteVentana.txttelefonoCasa.Text = ""
+            M_ClienteVentana.txttelefonoTrabajo.Text = ""
+            M_ClienteVentana.txtcelular.Text = ""
+            M_ClienteVentana.txtcorreo1.Text = ""
+            M_ClienteVentana.txtcorreo2.Text = ""
         End If
     End Sub
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
@@ -95,6 +100,7 @@ Public Class M_Factura
         lblcodePriceList.Text = ""
         lblFechaNacimiento.Text = ""
 
+        cbxAnular.Checked = False
         cbxok.Checked = False
         txtpagoPaciente.Text() = "0"
         txtvuelto.Text() = "0"
@@ -193,6 +199,7 @@ Public Class M_Factura
         cbxentregarPaciente.Enabled = True
         cbxenviarCorreo.Enabled = True
 
+        dgblistadoExamenes.ReadOnly = True
         cbxok.Enabled = True
 
         txtEfectivo.ReadOnly = False
@@ -324,7 +331,11 @@ Public Class M_Factura
         'CON TIMER
         'Timer1.Interval = 3000
         'Timer1.Start()
-
+        If (Trim(txtnumeroOficial.Text) <> "") Then
+            cbxAnular.Enabled = True
+        Else
+            cbxAnular.Enabled = False
+        End If
 
         'SIN TIMER
         M_ClienteVentana.Show()
@@ -654,6 +665,7 @@ Public Class M_Factura
                     .ok_ = cbxok.Checked
                     .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
                     .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
+                    .estado_ = cbxAnular.Checked
                 End With
 
                 If objFact.RegistrarNuevaFactura() = 1 Then
@@ -776,7 +788,7 @@ Public Class M_Factura
 
             If (txtpagoPaciente.Text <> "" And Trim(txtnumeroFactura.Text) <> "") Then
 
-                If (cbxok.Checked) Then
+                If (cbxok.Checked And Trim(txtnumeroOficial.Text) <> "") Then
                     If (Convert.ToDouble(txtvuelto.Text) < 0) Then
                         MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
                         Exit Sub
@@ -807,13 +819,14 @@ Public Class M_Factura
                     .vuelto_ = Convert.ToDouble(txtvuelto.Text)
                     .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
                     .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
+                    .estado_ = cbxAnular.Checked
                 End With
 
                 If objFact.ModificarFactura() = 1 Then
                     deshabilitar()
                     btnActualizar.Enabled = False
                     MsgBox("Actualizada la factura correctamente.")
-                    If (cbxok.Checked) Then
+                    If (cbxok.Checked And cbxAnular.Checked = False) Then
                         letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
                         calcularDescuento()
                         Imprimir_Factura()
@@ -1024,6 +1037,13 @@ Public Class M_Factura
         End Try
     End Sub
 
+    Private Sub txtnumeroOficial_TextChanged(sender As Object, e As EventArgs) Handles txtnumeroOficial.TextChanged
+        If (Trim(txtnumeroOficial.Text) <> "") Then
+            cbxAnular.Enabled = True
+        Else
+            cbxAnular.Enabled = False
+        End If
+    End Sub
     Private Sub txtTarjeta_TextChanged(sender As Object, e As EventArgs) Handles txtTarjeta.TextChanged
         Try
             txtpagoPaciente.Text = Convert.ToDouble(txtEfectivo.Text) + Convert.ToDouble(txtTarjeta.Text)

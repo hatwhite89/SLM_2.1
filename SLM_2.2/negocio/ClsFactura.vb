@@ -6,7 +6,7 @@ Public Class ClsFactura
     Dim numeroOficial, numeroPoliza, nombreCliente As String
     Dim codigoSucursal, codigoConvenio, codigoTerminal As Integer
     Dim fechaFactura, fechaVto As Date
-    Dim ok, enviarEmail, entregaPaciente, entregaMedico As Boolean
+    Dim ok, enviarEmail, entregaPaciente, entregaMedico, estado As Boolean
     Dim pagoPaciente, vuelto, total, ingresoEfectivo, ingresoTarjeta As Double
     'Constructor
     Public Sub New()
@@ -138,6 +138,14 @@ Public Class ClsFactura
         End Get
         Set(value As Boolean)
             ok = value
+        End Set
+    End Property
+    Public Property estado_ As Boolean
+        Get
+            Return estado
+        End Get
+        Set(value As Boolean)
+            estado = value
         End Set
     End Property
     Public Property enviarEmail_ As Boolean
@@ -321,6 +329,11 @@ Public Class ClsFactura
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = estado_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -396,6 +409,11 @@ Public Class ClsFactura
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "ingresoTarjeta" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = ingresoTarjeta_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = estado_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

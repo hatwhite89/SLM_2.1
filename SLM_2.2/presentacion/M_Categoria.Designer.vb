@@ -125,6 +125,7 @@ Partial Class M_Categoria
         Me.btnBuscarListaPrecios.Name = "btnBuscarListaPrecios"
         Me.btnBuscarListaPrecios.Size = New System.Drawing.Size(49, 22)
         Me.btnBuscarListaPrecios.TabIndex = 141
+        Me.btnBuscarListaPrecios.Text = "..."
         Me.btnBuscarListaPrecios.UseVisualStyleBackColor = False
         '
         'lbltipo
@@ -165,6 +166,7 @@ Partial Class M_Categoria
         Me.btnbuscarTipo.Name = "btnbuscarTipo"
         Me.btnbuscarTipo.Size = New System.Drawing.Size(49, 22)
         Me.btnbuscarTipo.TabIndex = 129
+        Me.btnbuscarTipo.Text = "..."
         Me.btnbuscarTipo.UseVisualStyleBackColor = False
         '
         'txtcodigoTipo
