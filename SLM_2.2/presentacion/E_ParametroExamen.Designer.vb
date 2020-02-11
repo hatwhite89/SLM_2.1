@@ -85,6 +85,7 @@ Partial Class E_ParametroExamen
         Me.btnbuscarUnidad.Name = "btnbuscarUnidad"
         Me.btnbuscarUnidad.Size = New System.Drawing.Size(49, 22)
         Me.btnbuscarUnidad.TabIndex = 123
+        Me.btnbuscarUnidad.Text = "..."
         Me.btnbuscarUnidad.UseVisualStyleBackColor = False
         '
         'txtcodigoUnidad

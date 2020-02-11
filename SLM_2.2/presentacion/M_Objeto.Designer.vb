@@ -201,6 +201,7 @@ Partial Class M_Objeto
         Me.btnbuscarTipo.Name = "btnbuscarTipo"
         Me.btnbuscarTipo.Size = New System.Drawing.Size(49, 22)
         Me.btnbuscarTipo.TabIndex = 108
+        Me.btnbuscarTipo.Text = "..."
         Me.btnbuscarTipo.UseVisualStyleBackColor = False
         '
         'txtcodigoTipo

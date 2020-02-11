@@ -160,6 +160,7 @@ Partial Class M_TerminosPago
         Me.btnctaContado.Name = "btnctaContado"
         Me.btnctaContado.Size = New System.Drawing.Size(49, 22)
         Me.btnctaContado.TabIndex = 117
+        Me.btnctaContado.Text = "..."
         Me.btnctaContado.UseVisualStyleBackColor = False
         '
         'txtcodigoCtaContado
@@ -183,6 +184,7 @@ Partial Class M_TerminosPago
         Me.btnctaVentas.Name = "btnctaVentas"
         Me.btnctaVentas.Size = New System.Drawing.Size(49, 22)
         Me.btnctaVentas.TabIndex = 121
+        Me.btnctaVentas.Text = "..."
         Me.btnctaVentas.UseVisualStyleBackColor = False
         '
         'txtcodigoCtaVentas
@@ -291,6 +293,7 @@ Partial Class M_TerminosPago
         Me.btntipoPago.Name = "btntipoPago"
         Me.btntipoPago.Size = New System.Drawing.Size(49, 22)
         Me.btntipoPago.TabIndex = 131
+        Me.btntipoPago.Text = "..."
         Me.btntipoPago.UseVisualStyleBackColor = False
         '
         'btnmodificar
