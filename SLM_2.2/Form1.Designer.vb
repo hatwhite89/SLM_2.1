@@ -54,7 +54,9 @@ Partial Class Form1
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.TpCobranza = New System.Windows.Forms.TabPage()
+        Me.TpProcesos = New System.Windows.Forms.TabPage()
+        Me.btnConsolidar = New System.Windows.Forms.Button()
+        Me.PictureBox36 = New System.Windows.Forms.PictureBox()
         Me.TpMantenimiento = New System.Windows.Forms.TabPage()
         Me.PictureBox35 = New System.Windows.Forms.PictureBox()
         Me.btnCAI = New System.Windows.Forms.Button()
@@ -121,6 +123,8 @@ Partial Class Form1
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.PictureBox26 = New System.Windows.Forms.PictureBox()
         Me.btnMedico = New System.Windows.Forms.Button()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.PictureBox37 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxMenu.SuspendLayout()
         Me.panelMenu.SuspendLayout()
@@ -137,6 +141,8 @@ Partial Class Form1
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TpProcesos.SuspendLayout()
+        CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TpMantenimiento.SuspendLayout()
         CType(Me.PictureBox35, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -173,6 +179,7 @@ Partial Class Form1
         CType(Me.PictureBox24, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
         CType(Me.PictureBox26, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -293,7 +300,7 @@ Partial Class Form1
         Me.tcMenu.Controls.Add(Me.tpCheque)
         Me.tcMenu.Controls.Add(Me.tpPagos)
         Me.tcMenu.Controls.Add(Me.tpPrecios)
-        Me.tcMenu.Controls.Add(Me.TpCobranza)
+        Me.tcMenu.Controls.Add(Me.TpProcesos)
         Me.tcMenu.Controls.Add(Me.TpMantenimiento)
         Me.tcMenu.Location = New System.Drawing.Point(18, 5)
         Me.tcMenu.Name = "tcMenu"
@@ -566,14 +573,37 @@ Partial Class Form1
         Me.Button5.Text = "Precio"
         Me.Button5.UseVisualStyleBackColor = False
         '
-        'TpCobranza
+        'TpProcesos
         '
-        Me.TpCobranza.Location = New System.Drawing.Point(4, 22)
-        Me.TpCobranza.Name = "TpCobranza"
-        Me.TpCobranza.Size = New System.Drawing.Size(282, 307)
-        Me.TpCobranza.TabIndex = 4
-        Me.TpCobranza.Text = "Cobranza"
-        Me.TpCobranza.UseVisualStyleBackColor = True
+        Me.TpProcesos.Controls.Add(Me.Button14)
+        Me.TpProcesos.Controls.Add(Me.PictureBox37)
+        Me.TpProcesos.Controls.Add(Me.btnConsolidar)
+        Me.TpProcesos.Controls.Add(Me.PictureBox36)
+        Me.TpProcesos.Location = New System.Drawing.Point(4, 22)
+        Me.TpProcesos.Name = "TpProcesos"
+        Me.TpProcesos.Size = New System.Drawing.Size(282, 307)
+        Me.TpProcesos.TabIndex = 4
+        Me.TpProcesos.Text = "Procesos"
+        Me.TpProcesos.UseVisualStyleBackColor = True
+        '
+        'btnConsolidar
+        '
+        Me.btnConsolidar.Location = New System.Drawing.Point(6, 64)
+        Me.btnConsolidar.Name = "btnConsolidar"
+        Me.btnConsolidar.Size = New System.Drawing.Size(92, 23)
+        Me.btnConsolidar.TabIndex = 1
+        Me.btnConsolidar.Text = "Consolidación"
+        Me.btnConsolidar.UseVisualStyleBackColor = True
+        '
+        'PictureBox36
+        '
+        Me.PictureBox36.Image = CType(resources.GetObject("PictureBox36.Image"), System.Drawing.Image)
+        Me.PictureBox36.Location = New System.Drawing.Point(29, 12)
+        Me.PictureBox36.Name = "PictureBox36"
+        Me.PictureBox36.Size = New System.Drawing.Size(51, 50)
+        Me.PictureBox36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox36.TabIndex = 0
+        Me.PictureBox36.TabStop = False
         '
         'TpMantenimiento
         '
@@ -803,7 +833,7 @@ Partial Class Form1
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(437, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(440, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -1320,19 +1350,38 @@ Partial Class Form1
         Me.btnMedico.Text = "Médicos"
         Me.btnMedico.UseVisualStyleBackColor = True
         '
+        'Button14
+        '
+        Me.Button14.Location = New System.Drawing.Point(6, 144)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(92, 23)
+        Me.Button14.TabIndex = 3
+        Me.Button14.Text = "Planilla"
+        Me.Button14.UseVisualStyleBackColor = True
+        '
+        'PictureBox37
+        '
+        Me.PictureBox37.Image = CType(resources.GetObject("PictureBox37.Image"), System.Drawing.Image)
+        Me.PictureBox37.Location = New System.Drawing.Point(29, 93)
+        Me.PictureBox37.Name = "PictureBox37"
+        Me.PictureBox37.Size = New System.Drawing.Size(51, 50)
+        Me.PictureBox37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox37.TabIndex = 2
+        Me.PictureBox37.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(437, 409)
-        Me.Controls.Add(Me.PanelLab)
+        Me.ClientSize = New System.Drawing.Size(440, 409)
         Me.Controls.Add(Me.gbxMenu)
-        Me.Controls.Add(Me.PanelFactura)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.panelMenu)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.PanelLab)
+        Me.Controls.Add(Me.PanelFactura)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -1355,6 +1404,8 @@ Partial Class Form1
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TpProcesos.ResumeLayout(False)
+        CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TpMantenimiento.ResumeLayout(False)
         CType(Me.PictureBox35, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1392,6 +1443,7 @@ Partial Class Form1
         CType(Me.PictureBox24, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage5.ResumeLayout(False)
         CType(Me.PictureBox26, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1493,6 +1545,10 @@ Partial Class Form1
     Friend WithEvents PictureBox27 As PictureBox
     Friend WithEvents PictureBox35 As PictureBox
     Friend WithEvents btnCAI As Button
-    Friend WithEvents TpCobranza As TabPage
+    Friend WithEvents TpProcesos As TabPage
     Friend WithEvents Button1 As Button
+    Friend WithEvents btnConsolidar As Button
+    Friend WithEvents PictureBox36 As PictureBox
+    Friend WithEvents Button14 As Button
+    Friend WithEvents PictureBox37 As PictureBox
 End Class

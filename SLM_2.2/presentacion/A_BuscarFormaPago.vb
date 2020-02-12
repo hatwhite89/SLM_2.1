@@ -7,7 +7,7 @@
 
             dtFormasPago.Columns("nroCtaBanco").Visible = False
             dtFormasPago.Columns("codFormaPago").Visible = False
-
+            dtFormasPago.Columns("banco").Visible = False
         Catch ex As Exception
             MsgBox("Hubo un error al cargar información. " + ex.Message)
         End Try
@@ -37,6 +37,10 @@
         ElseIf lblJC.Text = "2" Then
             frmDeposito.txtTipoConta.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
             Me.Close()
+        ElseIf lblJC.Text = "3" Then
+            A_Consolidacion.txtBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(4).Value
+            A_Consolidacion.txtCodBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
+            Me.Close()
         End If
 
     End Sub
@@ -48,5 +52,6 @@
         End If
 
     End Sub
+
 
 End Class

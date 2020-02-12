@@ -179,7 +179,6 @@
 
     Private Sub btnCuentas_Click(sender As Object, e As EventArgs) Handles btnCuentas.Click
 
-
         Try
 
             A_Cuenta.Show()
@@ -357,6 +356,7 @@
     End Sub
 
     Private Sub SLMSportToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
         Apariencia.SkinFile = "C:\Users\Software 3\Source\Repos\hatwhite89\SLM_2.1\SLM_2.2\Themes\Componentes Graficos Vb2\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\Sports\SportsBlue.ssk"
 
     End Sub
@@ -376,5 +376,13 @@
 
     Private Sub Button1_Click_3(sender As Object, e As EventArgs) Handles Button1.Click
         A_Notificacion.Show()
+    End Sub
+
+    Private Sub btnConsolidar_Click(sender As Object, e As EventArgs) Handles btnConsolidar.Click
+        Try
+            A_Consolidacion.Show()
+        Catch ex As Exception
+            MsgBox("Error al abrir el formulario. Error: " + ex.Message)
+        End Try
     End Sub
 End Class
