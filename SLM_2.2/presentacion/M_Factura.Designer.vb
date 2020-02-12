@@ -695,7 +695,7 @@ Partial Class M_Factura
         '
         Me.cbxok.AutoSize = True
         Me.cbxok.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxok.Location = New System.Drawing.Point(103, 542)
+        Me.cbxok.Location = New System.Drawing.Point(52, 541)
         Me.cbxok.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbxok.Name = "cbxok"
         Me.cbxok.Size = New System.Drawing.Size(50, 21)
@@ -1063,11 +1063,11 @@ Partial Class M_Factura
         'cbxAnular
         '
         Me.cbxAnular.AutoSize = True
-        Me.cbxAnular.Location = New System.Drawing.Point(189, 542)
+        Me.cbxAnular.Location = New System.Drawing.Point(138, 541)
         Me.cbxAnular.Name = "cbxAnular"
-        Me.cbxAnular.Size = New System.Drawing.Size(71, 21)
+        Me.cbxAnular.Size = New System.Drawing.Size(123, 21)
         Me.cbxAnular.TabIndex = 107
-        Me.cbxAnular.Text = "Anular"
+        Me.cbxAnular.Text = "Anular Factura"
         Me.cbxAnular.UseVisualStyleBackColor = True
         '
         'M_Factura
