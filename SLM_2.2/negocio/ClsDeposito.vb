@@ -424,8 +424,6 @@ Public Class ClsDeposito
         End Using
     End Function
 
-
-
     'Listar Depositos en conciliacion
     Public Function ConciliacionDeposito() As DataTable
 
