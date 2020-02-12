@@ -39,6 +39,29 @@
 
                         'Falta ocultar columnas de cheque y demas transferencias
 
+                    End With
+
+                ElseIf a = "Depositos Bancarios" Then
+
+                    Dim depo As New ClsDeposito
+
+                    With depo
+
+                        .Banc_o = txtCodBanco.Text
+                        dtTransferencia.DataSource = .ConciliacionDeposito
+                        'Falta ocultar columnas
+
+                    End With
+
+                ElseIf a = "Tarjeta" Then
+
+                    Dim depo As New ClsDeposito
+
+                    With depo
+
+                        .Banc_o = txtCodBanco.Text
+                        dtTransferencia.DataSource = .ConciliacionDepositoTarjeta
+                        'Falta ocultar columnas
 
                     End With
 
@@ -54,7 +77,7 @@
                 MsgBox("Falta información que completar.")
                 cbxTransferencia.BackColor = Color.Red
 
-            End If
+            End If ' final consulta de transferencia
 
         Catch ex As Exception
 
@@ -76,4 +99,20 @@
 
     End Sub
 
+    Private Sub txtCodBanco_TextChanged(sender As Object, e As EventArgs) Handles txtCodBanco.TextChanged
+
+        If txtCodBanco.BackColor = Color.Red Then
+            txtCodBanco.BackColor = Color.White
+            txtBanco.BackColor = Color.White
+        End If
+
+    End Sub
+
+    Private Sub cbxTransferencia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxTransferencia.SelectedIndexChanged
+
+        If cbxTransferencia.BackColor = Color.Red Then
+            cbxTransferencia.BackColor = Color.White
+        End If
+
+    End Sub
 End Class

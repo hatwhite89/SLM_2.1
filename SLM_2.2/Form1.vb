@@ -179,7 +179,6 @@
 
     Private Sub btnCuentas_Click(sender As Object, e As EventArgs) Handles btnCuentas.Click
 
-
         Try
 
             A_Cuenta.Show()

@@ -24,6 +24,8 @@ Partial Class A_Consolidacion
     Private Sub InitializeComponent()
         Me.dtTransferencia = New System.Windows.Forms.DataGridView()
         Me.gbxTransferencias = New System.Windows.Forms.GroupBox()
+        Me.cbxTransferencia = New System.Windows.Forms.ComboBox()
+        Me.txtCodBanco = New System.Windows.Forms.TextBox()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnConsultar = New System.Windows.Forms.Button()
         Me.btnBanco = New System.Windows.Forms.Button()
@@ -35,8 +37,6 @@ Partial Class A_Consolidacion
         Me.btnProcesar = New System.Windows.Forms.Button()
         Me.dtExcel = New System.Windows.Forms.DataGridView()
         Me.btnImportar = New System.Windows.Forms.Button()
-        Me.txtCodBanco = New System.Windows.Forms.TextBox()
-        Me.cbxTransferencia = New System.Windows.Forms.ComboBox()
         CType(Me.dtTransferencia, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxTransferencias.SuspendLayout()
         Me.gbxConsolidacion.SuspendLayout()
@@ -71,6 +71,23 @@ Partial Class A_Consolidacion
         Me.gbxTransferencias.TabIndex = 1
         Me.gbxTransferencias.TabStop = False
         Me.gbxTransferencias.Text = "Transferencias Registradas"
+        '
+        'cbxTransferencia
+        '
+        Me.cbxTransferencia.FormattingEnabled = True
+        Me.cbxTransferencia.Items.AddRange(New Object() {"Depositos Bancarios", "Tarjeta", "Cheques"})
+        Me.cbxTransferencia.Location = New System.Drawing.Point(91, 49)
+        Me.cbxTransferencia.Name = "cbxTransferencia"
+        Me.cbxTransferencia.Size = New System.Drawing.Size(176, 21)
+        Me.cbxTransferencia.TabIndex = 11
+        '
+        'txtCodBanco
+        '
+        Me.txtCodBanco.Enabled = False
+        Me.txtCodBanco.Location = New System.Drawing.Point(91, 23)
+        Me.txtCodBanco.Name = "txtCodBanco"
+        Me.txtCodBanco.Size = New System.Drawing.Size(36, 20)
+        Me.txtCodBanco.TabIndex = 10
         '
         'btnLimpiar
         '
@@ -175,23 +192,6 @@ Partial Class A_Consolidacion
         Me.btnImportar.TabIndex = 3
         Me.btnImportar.Text = "Importar"
         Me.btnImportar.UseVisualStyleBackColor = True
-        '
-        'txtCodBanco
-        '
-        Me.txtCodBanco.Enabled = False
-        Me.txtCodBanco.Location = New System.Drawing.Point(91, 23)
-        Me.txtCodBanco.Name = "txtCodBanco"
-        Me.txtCodBanco.Size = New System.Drawing.Size(36, 20)
-        Me.txtCodBanco.TabIndex = 10
-        '
-        'cbxTransferencia
-        '
-        Me.cbxTransferencia.FormattingEnabled = True
-        Me.cbxTransferencia.Items.AddRange(New Object() {"Depositos Bancarios", "Notas de Credito", "Cheques"})
-        Me.cbxTransferencia.Location = New System.Drawing.Point(91, 49)
-        Me.cbxTransferencia.Name = "cbxTransferencia"
-        Me.cbxTransferencia.Size = New System.Drawing.Size(176, 21)
-        Me.cbxTransferencia.TabIndex = 11
         '
         'A_Consolidacion
         '
