@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class A_Consolidacion
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class A_Consolidacion
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.dtTransferencia = New System.Windows.Forms.DataGridView()
         Me.gbxTransferencias = New System.Windows.Forms.GroupBox()
@@ -49,8 +49,10 @@ Partial Class A_Consolidacion
         Me.dtTransferencia.AllowUserToDeleteRows = False
         Me.dtTransferencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtTransferencia.Location = New System.Drawing.Point(6, 83)
+        Me.dtTransferencia.MultiSelect = False
         Me.dtTransferencia.Name = "dtTransferencia"
         Me.dtTransferencia.ReadOnly = True
+        Me.dtTransferencia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtTransferencia.Size = New System.Drawing.Size(458, 458)
         Me.dtTransferencia.TabIndex = 0
         '
@@ -75,7 +77,7 @@ Partial Class A_Consolidacion
         'cbxTransferencia
         '
         Me.cbxTransferencia.FormattingEnabled = True
-        Me.cbxTransferencia.Items.AddRange(New Object() {"Depositos Bancarios", "Tarjeta", "Cheques"})
+        Me.cbxTransferencia.Items.AddRange(New Object() {"Depositos", "Cheques"})
         Me.cbxTransferencia.Location = New System.Drawing.Point(91, 49)
         Me.cbxTransferencia.Name = "cbxTransferencia"
         Me.cbxTransferencia.Size = New System.Drawing.Size(176, 21)
@@ -166,7 +168,7 @@ Partial Class A_Consolidacion
         '
         'btnProcesar
         '
-        Me.btnProcesar.Location = New System.Drawing.Point(6, 25)
+        Me.btnProcesar.Location = New System.Drawing.Point(96, 23)
         Me.btnProcesar.Name = "btnProcesar"
         Me.btnProcesar.Size = New System.Drawing.Size(88, 52)
         Me.btnProcesar.TabIndex = 4
@@ -179,14 +181,16 @@ Partial Class A_Consolidacion
         Me.dtExcel.AllowUserToDeleteRows = False
         Me.dtExcel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtExcel.Location = New System.Drawing.Point(6, 83)
+        Me.dtExcel.MultiSelect = False
         Me.dtExcel.Name = "dtExcel"
         Me.dtExcel.ReadOnly = True
+        Me.dtExcel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtExcel.Size = New System.Drawing.Size(458, 458)
         Me.dtExcel.TabIndex = 0
         '
         'btnImportar
         '
-        Me.btnImportar.Location = New System.Drawing.Point(100, 25)
+        Me.btnImportar.Location = New System.Drawing.Point(6, 23)
         Me.btnImportar.Name = "btnImportar"
         Me.btnImportar.Size = New System.Drawing.Size(84, 52)
         Me.btnImportar.TabIndex = 3

@@ -380,6 +380,7 @@
 
     Private Sub btnConsolidar_Click(sender As Object, e As EventArgs) Handles btnConsolidar.Click
         Try
+
             A_Consolidacion.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario. Error: " + ex.Message)
