@@ -331,6 +331,7 @@ Public Class M_Factura
         'CON TIMER
         'Timer1.Interval = 3000
         'Timer1.Start()
+        'MsgBox(My.Computer.Name.ToString)
         If (Trim(txtnumeroOficial.Text) <> "") Then
             cbxAnular.Enabled = True
         Else
@@ -1001,13 +1002,14 @@ Public Class M_Factura
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
+            ejemplo()
             MsgBox("FUNCIONA        1")
-            Dim dt As New DataTable
-            dt = TryCast(dgblistadoExamenes.DataSource, DataTable)
-            Dim dv As DataView
-            dt.DefaultView.Sort = "grupo Desc"
-            MsgBox("\\\\\\\\\\\\\\\\\\\")
-            dgblistadoExamenes.DataSource = dt
+            'Dim dt As New DataTable
+            'dt = TryCast(dgblistadoExamenes.DataSource, DataTable)
+            'Dim dv As DataView
+            'dt.DefaultView.Sort = "grupo Desc"
+            'MsgBox("\\\\\\\\\\\\\\\\\\\")
+            'dgblistadoExamenes.DataSource = dt
             'MsgBox("////")
             'Dim dt As DataTable = dgblistadoExamenes.DataSource
             'dv.Sort = "grupo Desc"
@@ -1033,8 +1035,28 @@ Public Class M_Factura
             '    MsgBox("GRUPO: " & dv(index)(7))
             'Next
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox("Ejemplo fuera de " & ex.Message)
         End Try
+    End Sub
+    Private Sub ejemplo()
+        'Creating DataTable.
+        Dim dt As New DataTable()
+        MsgBox("Empieza el ejemplo")
+        'Adding the Columns.
+        For Each column As DataGridViewColumn In dgblistadoExamenes.Columns
+            dt.Columns.Add(column.HeaderText, column.ValueType)
+        Next
+        MsgBox("ejemplo")
+        'Adding the Rows.
+        For Each row As DataGridViewRow In dgblistadoExamenes.Rows
+            dt.Rows.Add()
+            For Each cell As DataGridViewCell In row.Cells
+                dt.Rows(dt.Rows.Count - 1)(cell.ColumnIndex) = cell.Value.ToString()
+            Next
+        Next
+        dt.DefaultView.Sort = "grupo Desc"
+        MsgBox("\\\\\\\\\\\\\\\\\\\")
+        dgblistadoExamenes.DataSource = dt
     End Sub
 
     Private Sub txtnumeroOficial_TextChanged(sender As Object, e As EventArgs) Handles txtnumeroOficial.TextChanged
