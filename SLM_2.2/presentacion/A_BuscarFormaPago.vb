@@ -29,19 +29,24 @@
     End Sub
 
     Private Sub dtFormasPago_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtFormasPago.CellClick
+        Try
 
-        'COPIAR CODIGO DE BANCO
-        If lblJC.Text = "1" Then
-            frmDeposito.txtBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
-            Me.Close()
-        ElseIf lblJC.Text = "2" Then
-            frmDeposito.txtTipoConta.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
-            Me.Close()
-        ElseIf lblJC.Text = "3" Then
-            A_Consolidacion.txtBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(4).Value
-            A_Consolidacion.txtCodBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
-            Me.Close()
-        End If
+            'COPIAR CODIGO DE BANCO
+            If lblJC.Text = "1" Then
+                frmDeposito.txtBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
+                Me.Close()
+            ElseIf lblJC.Text = "2" Then
+                frmDeposito.txtTipoConta.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
+                Me.Close()
+            ElseIf lblJC.Text = "3" Then
+                A_Consolidacion.txtBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(4).Value
+                A_Consolidacion.txtCodBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
+                Me.Close()
+            End If
+
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 

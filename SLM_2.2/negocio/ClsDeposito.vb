@@ -409,7 +409,6 @@ Public Class ClsDeposito
 
     End Function
 
-
     'Listar Ultimo
     Public Function listarUltimoDeposito() As DataTable
 
@@ -434,7 +433,7 @@ Public Class ClsDeposito
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "A_slmListarDepositoBancario"
+            cmd.CommandText = "A_slmBuscarDepositoXBanco"
             cmd.Parameters.Add("@banco", SqlDbType.VarChar).Value = Banc_o
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -446,28 +445,5 @@ Public Class ClsDeposito
         End Using
 
     End Function
-
-    Public Function ConciliacionDepositoTarjeta() As DataTable
-
-        Dim objCon As New ClsConnection
-        Dim cn As New SqlConnection
-        cn = objCon.getConexion
-
-        Using cmd As New SqlCommand
-            cmd.Connection = cn
-            cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "A_slmListarDepositoTarjeta"
-            cmd.Parameters.Add("@banco", SqlDbType.VarChar).Value = Banc_o
-            Using da As New SqlDataAdapter
-                da.SelectCommand = cmd
-                Using dt As New DataTable
-                    da.Fill(dt)
-                    Return dt
-                End Using
-            End Using
-        End Using
-
-    End Function
-
 
 End Class
