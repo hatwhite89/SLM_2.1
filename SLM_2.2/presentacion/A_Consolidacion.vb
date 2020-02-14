@@ -44,6 +44,7 @@
 
                         'Falta ocultar columnas de cheque y demas transferencias
 
+
                     End With
 
                 ElseIf a = "Depositos" Then
@@ -65,6 +66,9 @@
                         dtTransferencia.Columns("tipoDeposito").Visible = False
                         dtTransferencia.Columns("codCajero").Visible = False
                         dtTransferencia.Columns("codFormaPago").Visible = False
+
+
+
 
                     End With
 
