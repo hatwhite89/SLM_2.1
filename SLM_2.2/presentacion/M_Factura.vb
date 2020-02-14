@@ -6,6 +6,7 @@ Imports System.ComponentModel
 Public Class M_Factura
     Public letras As String
     Dim subtotalF, descuentoF, abonoF, saldoF As Double
+    Dim codigoDetalleFactura As ArrayList
     Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
         M_ClienteVentana.Close()
         Me.Close()
@@ -20,6 +21,7 @@ Public Class M_Factura
     End Sub
     Private Sub txtcodigoCliente_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoCliente.TextChanged
         If (txtcodigoCliente.Text <> "") Then
+            MsgBox("Busca al cliente")
             Try
                 Dim objClient As New ClsCliente
                 With objClient
@@ -30,6 +32,7 @@ Public Class M_Factura
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreCliente.Text = CStr(row("nombreCompleto"))
                 lblcodePriceList.Text = CStr(row("codigoListaPrecios"))
+                'MsgBox(CStr(row("codigoListaPrecios")) & "   ------    " & lblcodePriceList.Text)
                 lblFechaNacimiento.Text = CStr(row("fechaNacimiento"))
                 'MsgBox(CStr(row("tipoConvenio")))
                 M_ClienteVentana.txttelefonoCasa.Text = CStr(row("telCasa"))
@@ -52,6 +55,7 @@ Public Class M_Factura
                 txtnombreCliente.Text = ""
             End Try
         Else
+            MsgBox("le asigno 0 al codigo de lista de trabajo")
             lblcodePriceList.Text = "0"
             txtcodigoConvenio.Text = ""
             txtcodigoCliente.Text = ""
@@ -370,7 +374,7 @@ Public Class M_Factura
     Private Sub txtpagoPaciente_TextChanged(sender As Object, e As EventArgs) Handles txtpagoPaciente.TextChanged
         Try
             M_ClienteVentana.txtpagoPaciente.Text = txtpagoPaciente.Text
-            'txtvuelto.Text = Convert.ToInt32(txtpagoPaciente.Text) - Convert.ToInt32(txttotal.Text)
+            'txtvuelto.Text = Convert.ToInt64(txtpagoPaciente.Text) - Convert.ToInt64(txttotal.Text)
             'M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
         Catch ex As Exception
         End Try
@@ -402,10 +406,13 @@ Public Class M_Factura
         End Try
     End Sub
     Private Sub dgblistadoExamenes_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellClick
-        If e.ColumnIndex = 8 And Trim(txtnumeroFactura.Text) = "" Then
+        If e.ColumnIndex = 9 And Trim(txtnumeroFactura.Text) = "" Then
             Try
                 Dim n As String = MsgBox("¿Desea eliminar el examen de la factura?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then
+                    If dgblistadoExamenes.Rows(e.RowIndex).Cells(8).Value() <> "0" Then
+                        codigoDetalleFactura.Add(Me.dgblistadoExamenes.Rows(e.RowIndex).Cells(8).Value())
+                    End If
                     dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
                     M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(e.RowIndex.ToString))
                     totalFactura()
@@ -479,8 +486,8 @@ Public Class M_Factura
     '            Dim code, cant As Integer
     '            Dim precio, subtotal, descuento, porcDesc As Double
     '            Dim descrip As String
-    '            code = Convert.ToInt32(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value())
-    '            cant = Convert.ToInt32(dgblistadoExamenes.Rows(e.RowIndex).Cells(1).Value())
+    '            code = Convert.ToInt64(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value())
+    '            cant = Convert.ToInt64(dgblistadoExamenes.Rows(e.RowIndex).Cells(1).Value())
     '            precio = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(2).Value())
     '            descrip = dgblistadoExamenes.Rows(e.RowIndex).Cells(3).Value()
     '            porcDesc = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(5).Value())
@@ -520,7 +527,7 @@ Public Class M_Factura
                         Dim descuento As Double = Convert.ToDouble(CStr(row("porcentaje")))
                         descuento = subtotal * (descuento / 100)
                         subtotal -= descuento
-                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("grupo"))})
+                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("grupo")), 0})
                         totalFactura()
 
                         M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
@@ -545,8 +552,8 @@ Public Class M_Factura
                 Dim code, cant As Integer
                 Dim precio, subtotal, descuento, porcDesc As Double
                 Dim descrip As String
-                code = Convert.ToInt32(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value())
-                cant = Convert.ToInt32(dgblistadoExamenes.Rows(e.RowIndex).Cells(1).Value())
+                code = Convert.ToInt64(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value())
+                cant = Convert.ToInt64(dgblistadoExamenes.Rows(e.RowIndex).Cells(1).Value())
                 precio = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(2).Value())
                 descrip = dgblistadoExamenes.Rows(e.RowIndex).Cells(3).Value()
                 porcDesc = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(5).Value())
@@ -581,7 +588,7 @@ Public Class M_Factura
         descuento = subtotal * (descuento / 100)
         subtotal -= descuento
 
-        dgblistadoExamenes.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("grupo"))})
+        dgblistadoExamenes.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("grupo")), 0})
         totalFactura()
         M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
     End Sub
@@ -604,10 +611,7 @@ Public Class M_Factura
             If Trim(txtcodigoCajero.Text) = "" Then
                 txtcodigoCajero.Text = "1"
             End If
-            If Trim(txtcodigoConvenio.Text) = "" Then
-                'txtcodigoConvenio.Text = "0"
-                lblcodePriceList.Text = "0"
-            End If
+
             If Trim(txtcodigoTerminal.Text) = "" Then
                 txtcodigoTerminal.Text = "1"
             End If
@@ -647,17 +651,23 @@ Public Class M_Factura
                 Dim objFact As New ClsFactura
                 With objFact
                     .numeroOficial_ = txtnumeroOficial.Text
-                    .codigoCliente_ = Convert.ToInt32(txtcodigoCliente.Text)
-                    .codigoRecepcionista_ = Convert.ToInt32(txtcodigoRecepecionista.Text)
-                    .codigoMedico_ = Convert.ToInt32(txtcodigoMedico.Text)
-                    .codigoCajero_ = Convert.ToInt32(txtcodigoCajero.Text)
-                    .codigoTerminoPago1 = Convert.ToInt32(lblcodeTerminoPago.Text)
-                    .codigoSede_ = Convert.ToInt32(txtcodigoSede.Text)
+                    .codigoCliente_ = Convert.ToInt64(txtcodigoCliente.Text)
+                    .codigoRecepcionista_ = Convert.ToInt64(txtcodigoRecepecionista.Text)
+                    .codigoMedico_ = Convert.ToInt64(txtcodigoMedico.Text)
+                    .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
+                    .codigoTerminoPago1 = Convert.ToInt64(lblcodeTerminoPago.Text)
+                    .codigoSede_ = Convert.ToInt64(txtcodigoSede.Text)
                     .fechaVto_ = dtpfechaVto.Value
-                    .codigoSucursal_ = Convert.ToInt32(lblcodeSucursal.Text)
-                    .codigoConvenio_ = Convert.ToInt32(lblcodePriceList.Text)
+                    .codigoSucursal_ = Convert.ToInt64(lblcodeSucursal.Text)
+
+                    If Trim(txtcodigoConvenio.Text) = "" Then
+                        .codigoConvenio_ = 0
+                    Else
+                        .codigoConvenio_ = Convert.ToInt64(lblcodePriceList.Text)
+                    End If
+
                     .numeroPoliza_ = txtnumeroPoliza.Text
-                    .codigoTerminal_ = Convert.ToInt32(txtcodigoTerminal.Text)
+                    .codigoTerminal_ = Convert.ToInt64(txtcodigoTerminal.Text)
                     .entregaMedico_ = cbxentregarMedico.Checked
                     .entregaPaciente_ = cbxentregarPaciente.Checked
                     .enviarEmail_ = cbxenviarCorreo.Checked
@@ -681,11 +691,11 @@ Public Class M_Factura
                     Dim objDetalleFact As New ClsDetalleFactura
                     For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
                         With objDetalleFact
-                            .numeroFactura_ = Convert.ToInt32(txtnumeroFactura.Text)
-                            .codigoExamen_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(0).Value())
-                            .cantidad_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(1).Value())
+                            .numeroFactura_ = Convert.ToInt64(txtnumeroFactura.Text)
+                            .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(0).Value())
+                            .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
                             .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
-                            .descuento_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(5).Value())
+                            .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
                             .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
                         End With
                         If objDetalleFact.RegistrarNuevoDetalleFactura() = 0 Then
@@ -736,10 +746,10 @@ Public Class M_Factura
                 End If
                 Dim objCotiz As New ClsCotizacion
                 With objCotiz
-                    .codigoCliente_ = Convert.ToInt32(txtcodigoCliente.Text)
-                    .codigoRecepcionista_ = Convert.ToInt32(txtcodigoRecepecionista.Text)
-                    .codigoTerminoPago_ = Convert.ToInt32(lblcodeTerminoPago.Text)
-                    .codigoSucursal_ = Convert.ToInt32(lblcodeSucursal.Text)
+                    .codigoCliente_ = Convert.ToInt64(txtcodigoCliente.Text)
+                    .codigoRecepcionista_ = Convert.ToInt64(txtcodigoRecepecionista.Text)
+                    .codigoTerminoPago_ = Convert.ToInt64(lblcodeTerminoPago.Text)
+                    .codigoSucursal_ = Convert.ToInt64(lblcodeSucursal.Text)
                     .total_ = Convert.ToDouble(txttotal.Text)
                 End With
 
@@ -756,11 +766,11 @@ Public Class M_Factura
                     Dim objCotFact As New ClsCotizacionFactura
                     For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
                         With objCotFact
-                            .numeroCotizacion_ = Convert.ToInt32(txtnumeroFactura.Text)
-                            .codigoExamen_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(0).Value())
-                            .cantidad_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(1).Value())
+                            .numeroCotizacion_ = Convert.ToInt64(txtnumeroFactura.Text)
+                            .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(0).Value())
+                            .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
                             .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
-                            .descuento_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(5).Value())
+                            .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
                             .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
                         End With
                         If objCotFact.RegistrarNuevaCotizacionFactura() = 0 Then
@@ -787,10 +797,11 @@ Public Class M_Factura
         Try
             Dim dt As New DataTable
             Dim row As DataRow
-
+            'si la factura YA existe 
             If (txtpagoPaciente.Text <> "" And Trim(txtnumeroFactura.Text) <> "") Then
-
-                If (cbxok.Checked And Trim(txtnumeroOficial.Text) <> "") Then
+                'si la factura a sido aprobada (OK) y quiere obtener el numero del CAI y no a sido anulada la factura (ANULADA)
+                If (cbxok.Checked And Trim(txtnumeroOficial.Text) = "" And cbxAnular.Checked = False) Then
+                    'VALIDACION DE DINERO
                     If (Convert.ToDouble(txtvuelto.Text) < 0) Then
                         MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
                         Exit Sub
@@ -801,11 +812,13 @@ Public Class M_Factura
                     dt = objCAI.BuscarCAI()
                     row = dt.Rows(0)
                     txtnumeroOficial.Text = CStr(row("numeroOficial"))
-
+                    MsgBox("Consigo el cai")
                     Dim objDetCAI As New ClsDetalleCAI
                     objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
+                    'SI SE LOGRO HACER LA MODIFICACION DEL ESTADO DEL CAI 
                     If objDetCAI.ModificarDetalleCAI() <> 1 Then
                         MsgBox("Error en la actualización del detalle del CAI.")
+                        Exit Sub
                     End If
                 End If
 
@@ -823,11 +836,58 @@ Public Class M_Factura
                     .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
                     .estado_ = cbxAnular.Checked
                 End With
-
+                'MODIFICO LOS DATOS DE LA FACTURA
+                MsgBox("se van a cambiar los datos .", MsgBoxStyle.MsgBoxHelp)
                 If objFact.ModificarFactura() = 1 Then
+
+                    'SI LA FACTURA YA TIENE EL (OK) Y NO ESTA ANULADA LA FACTURA (ANULAR)
+                    If (cbxAnular.Checked = False) Then
+                        MsgBox("eNTRA EN LA MODIFICACION Y ELIMINACION DEL DETALLE FACTURA", MsgBoxStyle.MsgBoxHelp)
+                        Dim objDetFac As New ClsDetalleFactura
+                        For index As Integer = 0 To codigoDetalleFactura.Count - 1
+                            objDetFac.numero_ = Convert.ToInt64(codigoDetalleFactura(index))
+                            If objDetFac.EliminarDetalleFactura() <> 1 Then
+                                MsgBox("Error al querer modificar el detalle de factura.")
+                            End If
+                        Next
+                        codigoDetalleFactura.Clear()
+                        For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
+                            If dgblistadoExamenes.Rows(index).Cells(8).Value() = 0 Then
+                                'agrega
+                                With objDetFac
+                                    .numeroFactura_ = Convert.ToInt64(txtnumeroFactura.Text)
+                                    .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(0).Value())
+                                    .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
+                                    .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
+                                    .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
+                                    .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+                                End With
+                                If objDetFac.RegistrarNuevoDetalleFactura() = 0 Then
+                                    MsgBox("Error al querer insertar el detalle de factura.")
+                                End If
+                            Else
+
+                                'actualiza los detalles de factura
+                                With objDetFac
+                                    .numero_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(8).Value())
+                                    .numeroFactura_ = Convert.ToInt64(txtnumeroFactura.Text)
+                                    .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(0).Value())
+                                    .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
+                                    .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
+                                    .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
+                                    .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+                                End With
+                                If objDetFac.ModificarDetalleFactura() = 0 Then
+                                    MsgBox("Error al querer modificar el detalle de factura.")
+                                End If
+                            End If
+                        Next
+                    End If
                     deshabilitar()
                     btnActualizar.Enabled = True
+
                     MsgBox("Actualizada la factura correctamente.")
+
                     If (cbxok.Checked And cbxAnular.Checked = False) Then
                         letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
                         calcularDescuento()
@@ -1027,11 +1087,11 @@ Public Class M_Factura
             'MsgBox("FUNCIONA 2: " & lblcliente.Text)
             'For index As Integer = 0 To dv.Count
             '    'With objOrden
-            '    '.cod_factura_ = Convert.ToInt32(txtnumeroFactura.Text)
-            '    '.cod_objeto_ = Convert.ToInt32(dv(index)(7))
-            '    '.cantidad_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(1).Value())
+            '    '.cod_factura_ = Convert.ToInt64(txtnumeroFactura.Text)
+            '    '.cod_objeto_ = Convert.ToInt64(dv(index)(7))
+            '    '.cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
             '    '.fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
-            '    '.descuento_ = Convert.ToInt32(dgblistadoExamenes.Rows(index).Cells(5).Value())
+            '    '.descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
             '    '.subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
             '    'End With
             '    'If objOrden.cod_factura_ = 0 Then
@@ -1072,6 +1132,7 @@ Public Class M_Factura
             cbxAnular.Enabled = False
         End If
     End Sub
+
     Private Sub txtTarjeta_TextChanged(sender As Object, e As EventArgs) Handles txtTarjeta.TextChanged
         Try
             txtpagoPaciente.Text = Convert.ToDouble(txtEfectivo.Text) + Convert.ToDouble(txtTarjeta.Text)
