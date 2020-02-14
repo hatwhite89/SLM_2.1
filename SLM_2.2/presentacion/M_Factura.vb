@@ -199,8 +199,9 @@ Public Class M_Factura
         cbxentregarPaciente.Enabled = True
         cbxenviarCorreo.Enabled = True
 
-        dgblistadoExamenes.ReadOnly = True
+        dgblistadoExamenes.ReadOnly = False
         cbxok.Enabled = True
+        btnbusquedaExamen.Enabled = True
 
         txtEfectivo.ReadOnly = False
         txtTarjeta.ReadOnly = False
@@ -825,7 +826,7 @@ Public Class M_Factura
 
                 If objFact.ModificarFactura() = 1 Then
                     deshabilitar()
-                    btnActualizar.Enabled = False
+                    btnActualizar.Enabled = True
                     MsgBox("Actualizada la factura correctamente.")
                     If (cbxok.Checked And cbxAnular.Checked = False) Then
                         letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
@@ -1002,17 +1003,22 @@ Public Class M_Factura
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            ejemplo()
-            MsgBox("FUNCIONA        1")
-            'Dim dt As New DataTable
-            'dt = TryCast(dgblistadoExamenes.DataSource, DataTable)
+            'ejemplo()
+            Dim dt As New DataTable
+            dt = TryCast(dgblistadoExamenes.DataSource, DataTable)
             'Dim dv As DataView
-            'dt.DefaultView.Sort = "grupo Desc"
+            dt.DefaultView.Sort = "grupo Desc"
             'MsgBox("\\\\\\\\\\\\\\\\\\\")
             'dgblistadoExamenes.DataSource = dt
             'MsgBox("////")
             'Dim dt As DataTable = dgblistadoExamenes.DataSource
-            'dv.Sort = "grupo Desc"
+            'DataGridView1.DataSource = dgblistadoExamenes.DataSource
+            'dgblistadoExamenes.DataSource = dv
+            MsgBox("FUNCIONA        1")
+            'dv.Sort = "codigo DESC"
+            'DataGridView1.Sort(DataGridView1.Columns(3), ListSortDirection.Ascending)
+            'MsgBox("FUNCIONA        el sort")
+            'dgblistadoExamenes.DataSource = dv
             'dt
             'dv = dt.DefaultView
             'Dim objOrden As New ClsOrdenDeTrabajo
