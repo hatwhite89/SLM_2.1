@@ -42,13 +42,20 @@ Module ModulosVarios
                 dt = ds.Tables("MyData")
                 tabla.DataSource = ds
                 tabla.DataMember = "MyData"
+
             Catch ex As Exception
                 MsgBox("Inserte un nombre válido de la Hoja que desea importar.", MsgBoxStyle.Information, "Información")
             Finally
                 conn.Close()
             End Try
+
+
+            MsgBox("Se ha cargado la importación correctamente. ", MsgBoxStyle.Information, "Importado con exito")
+
+        Else
+            MsgBox("No se logro la importación.")
         End If
-        MsgBox("Se ha cargado la importación correctamente. ", MsgBoxStyle.Information, "Importado con exito")
+
     End Sub
 
     '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
