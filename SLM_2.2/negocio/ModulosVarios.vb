@@ -8,6 +8,8 @@ Imports Microsoft.VisualBasic
 
 Module ModulosVarios
 
+
+
     ':::::::::::::::::::::::: Importar Excel ::::::::::::::::::::::::
     Sub importarExcel(ByVal tabla As DataGridView)
         Dim myFileDialog As New OpenFileDialog()
@@ -49,7 +51,6 @@ Module ModulosVarios
                 conn.Close()
             End Try
 
-
             MsgBox("Se ha cargado la importación correctamente. ", MsgBoxStyle.Information, "Importado con exito")
 
         Else
@@ -59,7 +60,5 @@ Module ModulosVarios
     End Sub
 
     '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
 
 End Module
