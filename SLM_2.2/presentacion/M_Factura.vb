@@ -796,7 +796,15 @@ Public Class M_Factura
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Try
             Dim dt As New DataTable
+            Dim bandera As Integer = 0
             Dim row As DataRow
+
+            If Trim(txtnumeroOficial.Text) = "" And cbxAnular.Checked = False Then
+                bandera = 1
+            Else
+                bandera = 0
+            End If
+
             'si la factura YA existe 
             If (txtpagoPaciente.Text <> "" And Trim(txtnumeroFactura.Text) <> "") Then
                 'si la factura a sido aprobada (OK) y quiere obtener el numero del CAI y no a sido anulada la factura (ANULADA)
@@ -822,82 +830,119 @@ Public Class M_Factura
                     End If
                 End If
 
-                Dim objFact As New ClsFactura
-                With objFact
-                    .numero_ = Convert.ToInt64(txtnumeroFactura.Text)
-                    .numeroOficial_ = txtnumeroOficial.Text
-                    .entregaMedico_ = cbxentregarMedico.Checked
-                    .entregaPaciente_ = cbxentregarPaciente.Checked
-                    .enviarEmail_ = cbxenviarCorreo.Checked
-                    .ok_ = cbxok.Checked
-                    .pagoPaciente_ = Convert.ToDouble(txtpagoPaciente.Text)
-                    .vuelto_ = Convert.ToDouble(txtvuelto.Text)
-                    .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
-                    .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
-                    .estado_ = cbxAnular.Checked
-                End With
-                'MODIFICO LOS DATOS DE LA FACTURA
-                MsgBox("se van a cambiar los datos .", MsgBoxStyle.MsgBoxHelp)
-                If objFact.ModificarFactura() = 1 Then
+                If bandera = 1 Then
+                    Dim objFact As New ClsFactura
+                    With objFact
+                        .numero_ = Convert.ToInt64(txtnumeroFactura.Text)
+                        .numeroOficial_ = txtnumeroOficial.Text
+                        .entregaMedico_ = cbxentregarMedico.Checked
+                        .entregaPaciente_ = cbxentregarPaciente.Checked
+                        .enviarEmail_ = cbxenviarCorreo.Checked
+                        .ok_ = cbxok.Checked
+                        .pagoPaciente_ = Convert.ToDouble(txtpagoPaciente.Text)
+                        .vuelto_ = Convert.ToDouble(txtvuelto.Text)
+                        .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
+                        .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
+                        .estado_ = cbxAnular.Checked
+                    End With
+                    'MODIFICO LOS DATOS DE LA FACTURA
+                    MsgBox("se van a cambiar los datos .", MsgBoxStyle.MsgBoxHelp)
+                    If objFact.ModificarFactura() = 1 Then
 
-                    'SI LA FACTURA YA TIENE EL (OK) Y NO ESTA ANULADA LA FACTURA (ANULAR)
-                    If (cbxAnular.Checked = False) Then
-                        MsgBox("eNTRA EN LA MODIFICACION Y ELIMINACION DEL DETALLE FACTURA", MsgBoxStyle.MsgBoxHelp)
-                        Dim objDetFac As New ClsDetalleFactura
-                        For index As Integer = 0 To codigoDetalleFactura.Count - 1
-                            objDetFac.numero_ = Convert.ToInt64(codigoDetalleFactura(index))
-                            If objDetFac.EliminarDetalleFactura() <> 1 Then
-                                MsgBox("Error al querer modificar el detalle de factura.")
-                            End If
-                        Next
-                        codigoDetalleFactura.Clear()
-                        For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
-                            If dgblistadoExamenes.Rows(index).Cells(8).Value() = 0 Then
-                                'agrega
-                                With objDetFac
-                                    .numeroFactura_ = Convert.ToInt64(txtnumeroFactura.Text)
-                                    .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(0).Value())
-                                    .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
-                                    .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
-                                    .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
-                                    .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
-                                End With
-                                If objDetFac.RegistrarNuevoDetalleFactura() = 0 Then
-                                    MsgBox("Error al querer insertar el detalle de factura.")
-                                End If
-                            Else
-
-                                'actualiza los detalles de factura
-                                With objDetFac
-                                    .numero_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(8).Value())
-                                    .numeroFactura_ = Convert.ToInt64(txtnumeroFactura.Text)
-                                    .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(0).Value())
-                                    .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
-                                    .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
-                                    .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
-                                    .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
-                                End With
-                                If objDetFac.ModificarDetalleFactura() = 0 Then
+                        'SI LA FACTURA YA TIENE EL (OK) Y NO ESTA ANULADA LA FACTURA (ANULAR)
+                        If (cbxAnular.Checked = False) Then
+                            MsgBox("eNTRA EN LA MODIFICACION Y ELIMINACION DEL DETALLE FACTURA", MsgBoxStyle.MsgBoxHelp)
+                            Dim objDetFac As New ClsDetalleFactura
+                            For index As Integer = 0 To codigoDetalleFactura.Count - 1
+                                objDetFac.numero_ = Convert.ToInt64(codigoDetalleFactura(index))
+                                If objDetFac.EliminarDetalleFactura() <> 1 Then
                                     MsgBox("Error al querer modificar el detalle de factura.")
                                 End If
-                            End If
-                        Next
-                    End If
-                    deshabilitar()
-                    btnActualizar.Enabled = True
+                            Next
+                            codigoDetalleFactura.Clear()
+                            For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
+                                If dgblistadoExamenes.Rows(index).Cells(8).Value() = 0 Then
+                                    'agrega
+                                    With objDetFac
+                                        .numeroFactura_ = Convert.ToInt64(txtnumeroFactura.Text)
+                                        .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(0).Value())
+                                        .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
+                                        .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
+                                        .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
+                                        .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+                                    End With
+                                    If objDetFac.RegistrarNuevoDetalleFactura() = 0 Then
+                                        MsgBox("Error al querer insertar el detalle de factura.")
+                                    End If
+                                Else
+                                    'actualiza los detalles de factura
+                                    With objDetFac
+                                        .numero_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(8).Value())
+                                        .numeroFactura_ = Convert.ToInt64(txtnumeroFactura.Text)
+                                        .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(0).Value())
+                                        .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
+                                        .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
+                                        .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
+                                        .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+                                    End With
+                                    If objDetFac.ModificarDetalleFactura() = 0 Then
+                                        MsgBox("Error al querer modificar el detalle de factura.")
+                                    End If
+                                End If
+                            Next
+                        End If
+                        deshabilitar()
+                        btnActualizar.Enabled = True
 
-                    MsgBox("Actualizada la factura correctamente.")
+                        MsgBox("Actualizada la factura correctamente.")
 
-                    If (cbxok.Checked And cbxAnular.Checked = False) Then
-                        letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
-                        calcularDescuento()
-                        Imprimir_Factura()
+                        If (cbxok.Checked And cbxAnular.Checked = False) Then
+                            letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
+                            calcularDescuento()
+                            Imprimir_Factura()
+                        Else
+                            HabilitarActualizarFactura()
+                        End If
                     Else
-                        HabilitarActualizarFactura()
+                        MsgBox("Error al querer actualizar la factura.", MsgBoxStyle.Critical)
                     End If
                 Else
-                    MsgBox("Error al querer actualizar la factura.", MsgBoxStyle.Critical)
+
+                    Dim objFact As New ClsFactura
+                    With objFact
+                        .numero_ = Convert.ToInt64(txtnumeroFactura.Text)
+                        .numeroOficial_ = txtnumeroOficial.Text
+                        .entregaMedico_ = cbxentregarMedico.Checked
+                        .entregaPaciente_ = cbxentregarPaciente.Checked
+                        .enviarEmail_ = cbxenviarCorreo.Checked
+                        .ok_ = cbxok.Checked
+                        .pagoPaciente_ = Convert.ToDouble(txtpagoPaciente.Text)
+                        .vuelto_ = Convert.ToDouble(txtvuelto.Text)
+                        .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
+                        .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
+                        .estado_ = cbxAnular.Checked
+                    End With
+                    'MODIFICO LOS DATOS DE LA FACTURA
+                    MsgBox("se van a cambiar los datos .", MsgBoxStyle.MsgBoxHelp)
+                    If objFact.ModificarFactura() = 1 Then
+                        deshabilitar()
+                        btnActualizar.Enabled = True
+
+                        MsgBox("Actualizada la factura correctamente.", MsgBoxStyle.Information)
+
+                        If (cbxok.Checked And cbxAnular.Checked = False) Then
+                            letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
+                            calcularDescuento()
+                            Imprimir_Factura()
+                        Else
+                            HabilitarActualizarFactura()
+                        End If
+                    Else
+                        MsgBox("Error en la actualización de la factura.", MsgBoxStyle.Critical)
+                    End If
                 End If
+
+
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
