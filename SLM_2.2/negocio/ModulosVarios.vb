@@ -8,8 +8,6 @@ Imports Microsoft.VisualBasic
 
 Module ModulosVarios
 
-
-
     ':::::::::::::::::::::::: Importar Excel ::::::::::::::::::::::::
     Sub importarExcel(ByVal tabla As DataGridView)
         Dim myFileDialog As New OpenFileDialog()

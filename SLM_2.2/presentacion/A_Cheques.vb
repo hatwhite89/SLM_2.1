@@ -682,6 +682,28 @@ Public Class A_Cheques
 
             End If
 
+            'Numeros y comas'
+
+            If (txtMonto.Text) Then
+
+
+
+
+
+
+
+
+
+
+
+
+
+            End If
+
+
+
+
+
         Catch ex As Exception
 
         End Try
