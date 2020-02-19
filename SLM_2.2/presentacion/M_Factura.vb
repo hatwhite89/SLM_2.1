@@ -1119,7 +1119,7 @@ Public Class M_Factura
             'Dim dt As DataTable = dgblistadoExamenes.DataSource
             'DataGridView1.DataSource = dgblistadoExamenes.DataSource
             'dgblistadoExamenes.DataSource = dv
-            MsgBox("FUNCIONA        1")
+            MsgBox("FUNCIONA   1")
             'dv.Sort = "codigo DESC"
             'DataGridView1.Sort(DataGridView1.Columns(3), ListSortDirection.Ascending)
             'MsgBox("FUNCIONA        el sort")
@@ -1167,7 +1167,7 @@ Public Class M_Factura
             Next
         Next
         dt.DefaultView.Sort = "grupo Desc"
-        MsgBox("\\\\\\\\\\\\\\\\\\\")
+        MsgBox("\\\\\\\\FINALIZA EL EJEMPLO\\\\\\\\\\\")
         dgblistadoExamenes.DataSource = dt
     End Sub
 
