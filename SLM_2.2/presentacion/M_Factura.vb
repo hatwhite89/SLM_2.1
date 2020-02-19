@@ -1159,6 +1159,7 @@ Public Class M_Factura
         Next
         MsgBox("ejemplo")
         'Adding the Rows.
+
         For Each row As DataGridViewRow In dgblistadoExamenes.Rows
             dt.Rows.Add()
             For Each cell As DataGridViewCell In row.Cells
