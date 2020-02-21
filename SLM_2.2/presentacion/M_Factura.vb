@@ -21,7 +21,6 @@ Public Class M_Factura
     End Sub
     Private Sub txtcodigoCliente_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoCliente.TextChanged
         If (txtcodigoCliente.Text <> "") Then
-            MsgBox("Busca al cliente")
             Try
                 Dim objClient As New ClsCliente
                 With objClient
@@ -645,6 +644,7 @@ Public Class M_Factura
                     objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
                     If objDetCAI.ModificarDetalleCAI() <> 1 Then
                         MsgBox("Error en la actualización del detalle del CAI.")
+                        Exit Sub
                     End If
                 End If
 
@@ -942,7 +942,6 @@ Public Class M_Factura
                     End If
                 End If
 
-
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
@@ -1157,7 +1156,7 @@ Public Class M_Factura
         For Each column As DataGridViewColumn In dgblistadoExamenes.Columns
             dt.Columns.Add(column.HeaderText, column.ValueType)
         Next
-        MsgBox("ejemplo")
+        MsgBox("agrego las filas")
         'Adding the Rows.
 
         For Each row As DataGridViewRow In dgblistadoExamenes.Rows
