@@ -929,7 +929,6 @@ Public Class M_Factura
                         btnActualizar.Enabled = True
 
                         MsgBox("Actualizada la factura correctamente.", MsgBoxStyle.Information)
-
                         If (cbxok.Checked And cbxAnular.Checked = False) Then
                             letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
                             calcularDescuento()
