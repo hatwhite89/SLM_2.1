@@ -54,7 +54,6 @@ Public Class M_Factura
                 txtnombreCliente.Text = ""
             End Try
         Else
-            MsgBox("le asigno 0 al codigo de lista de trabajo")
             lblcodePriceList.Text = "0"
             txtcodigoConvenio.Text = ""
             txtcodigoCliente.Text = ""
@@ -846,7 +845,7 @@ Public Class M_Factura
                         .estado_ = cbxAnular.Checked
                     End With
                     'MODIFICO LOS DATOS DE LA FACTURA
-                    MsgBox("se van a cambiar los datos .", MsgBoxStyle.MsgBoxHelp)
+                    MsgBox("antes de modificar los datos de la factura donde eli,mod,insert.", MsgBoxStyle.MsgBoxHelp)
                     If objFact.ModificarFactura() = 1 Then
 
                         'SI LA FACTURA YA TIENE EL (OK) Y NO ESTA ANULADA LA FACTURA (ANULAR)
@@ -923,7 +922,7 @@ Public Class M_Factura
                         .estado_ = cbxAnular.Checked
                     End With
                     'MODIFICO LOS DATOS DE LA FACTURA
-                    MsgBox("se van a cambiar los datos .", MsgBoxStyle.MsgBoxHelp)
+                    MsgBox("antes de modificar los datos de la factura.", MsgBoxStyle.MsgBoxHelp)
                     If objFact.ModificarFactura() = 1 Then
                         deshabilitar()
                         btnActualizar.Enabled = True
