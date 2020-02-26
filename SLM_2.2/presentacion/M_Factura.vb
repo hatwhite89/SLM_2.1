@@ -391,7 +391,7 @@ Public Class M_Factura
         If Convert.ToDouble(txtvuelto.Text) >= 0 Then
             M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
         Else
-            txtvuelto.Text = "0"
+            'txtvuelto.Text = "0"
             M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
         End If
     End Sub
@@ -609,7 +609,6 @@ Public Class M_Factura
             If Trim(txtcodigoCajero.Text) = "" Then
                 txtcodigoCajero.Text = "1"
             End If
-
             If Trim(txtcodigoTerminal.Text) = "" Then
                 txtcodigoTerminal.Text = "1"
             End If
@@ -703,10 +702,11 @@ Public Class M_Factura
                     Next
                     MsgBox("Registrada la factura correctamente.")
 
-                    If (cbxok.Checked) Then
+                    If (cbxAnular.Checked = False And Trim(txtnumeroOficial.Text) <> "") Then
                         letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
                         calcularDescuento()
                         Imprimir_Factura()
+                        MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
                     Else
                         HabilitarActualizarFactura()
                     End If
@@ -895,10 +895,11 @@ Public Class M_Factura
 
                         MsgBox("Actualizada la factura correctamente.")
 
-                        If (cbxok.Checked And cbxAnular.Checked = False) Then
+                        If (Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False) Then
                             letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
                             calcularDescuento()
                             Imprimir_Factura()
+                            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
                         Else
                             HabilitarActualizarFactura()
                         End If
@@ -928,10 +929,11 @@ Public Class M_Factura
                         btnActualizar.Enabled = True
 
                         MsgBox("Actualizada la factura correctamente.", MsgBoxStyle.Information)
-                        If (cbxok.Checked And cbxAnular.Checked = False) Then
+                        If (Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False) Then
                             letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
                             calcularDescuento()
                             Imprimir_Factura()
+                            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
                         Else
                             HabilitarActualizarFactura()
                         End If
@@ -1024,7 +1026,8 @@ Public Class M_Factura
             objReporte.SetParameterValue("abono", abonoF)
             objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
             M_ImprimirFacturaReport.CrystalReportViewer1.ReportSource = objReporte
-            M_ImprimirFacturaReport.ShowDialog()
+            'M_ImprimirFacturaReport.CrystalReportViewer1.Refresh()
+            M_ImprimirFacturaReport.Show()
         Else
             MsgBox("Debe estar creada o guardada la factura para poder imprimirla.", MsgBoxStyle.Critical)
         End If
@@ -1039,7 +1042,7 @@ Public Class M_Factura
             objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
             objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
             M_ComprobanteEntrega.CrystalReportViewer1.ReportSource = objReporte
-            M_ComprobanteEntrega.ShowDialog()
+            M_ComprobanteEntrega.Show()
         Else
             MsgBox("Debe estar creada o guardada la factura para poder imprimir el comprobante de entrega.", MsgBoxStyle.Critical)
         End If
@@ -1054,7 +1057,7 @@ Public Class M_Factura
             objReporte.SetParameterValue("numalet", letras)
             objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
             M_ImprimirCotizacionForm.CrystalReportViewer1.ReportSource = objReporte
-            M_ImprimirCotizacionForm.ShowDialog()
+            M_ImprimirCotizacionForm.Show()
         Else
             MsgBox("Debe estar creada o guardada la cotización para poder imprimirla.", MsgBoxStyle.Critical)
         End If
@@ -1064,7 +1067,7 @@ Public Class M_Factura
         Dim objReporte As New M_CryTiposDePacientes
         objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
         M_ReportTipoDePacientes.CrystalReportViewer1.ReportSource = objReporte
-        M_ReportTipoDePacientes.ShowDialog()
+        M_ReportTipoDePacientes.Show()
     End Sub
     Private Sub btnPromocion_Click(sender As Object, e As EventArgs) Handles btnPromocion.Click
         M_ListadoPromociones.ShowDialog()
@@ -1106,10 +1109,11 @@ Public Class M_Factura
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
             'ejemplo()
-            Dim dt As New DataTable
-            dt = TryCast(dgblistadoExamenes.DataSource, DataTable)
+            dgridViewTods()
+            'Dim dt As New DataTable
+            'dt = TryCast(dgblistadoExamenes.DataSource, DataTable)
             'Dim dv As DataView
-            dt.DefaultView.Sort = "grupo Desc"
+            'dt.DefaultView.Sort = "grupo Desc"
             'MsgBox("\\\\\\\\\\\\\\\\\\\")
             'dgblistadoExamenes.DataSource = dt
             'MsgBox("////")
@@ -1146,6 +1150,44 @@ Public Class M_Factura
             MsgBox("Ejemplo fuera de " & ex.Message)
         End Try
     End Sub
+    Private Function dgridViewTods() As DataSet
+        Dim ds As New DataSet
+        Try
+            ' Add Table
+            ds.Tables.Add("Invoices")
+
+            ' Add Columns
+            Dim col As DataColumn
+            For Each dgvCol As DataGridViewColumn In dgblistadoExamenes.Columns
+                col = New DataColumn(dgvCol.Name)
+                ds.Tables("Invoices").Columns.Add(col)
+            Next
+
+            'Add Rows from the datagridview
+            Dim row As DataRow
+            Dim colcount As Integer = dgblistadoExamenes.Columns.Count - 1
+            For i As Integer = 0 To dgblistadoExamenes.Rows.Count - 1
+                row = ds.Tables("Invoices").Rows.Add
+                For Each column As DataGridViewColumn In dgblistadoExamenes.Columns
+                    row.Item(column.Index) = dgblistadoExamenes.Rows.Item(i).Cells(column.Index).Value
+                Next
+            Next
+            Dim dt As New DataTable
+            dt = ds.Tables(0)
+            Dim dv As New DataView
+            dv = dt.DefaultView
+            dv.Sort = "grupo Desc"
+
+            'DataGridView1.DataSource = dv
+
+            Return ds
+
+        Catch ex As Exception
+
+            MsgBox("CRITICAL ERROR : Exception caught while converting dataGridView to DataSet (dgvtods).. " & Chr(10) & ex.Message)
+            Return Nothing
+        End Try
+    End Function
     Private Sub ejemplo()
         'Creating DataTable.
         Dim dt As New DataTable()
@@ -1154,7 +1196,7 @@ Public Class M_Factura
         For Each column As DataGridViewColumn In dgblistadoExamenes.Columns
             dt.Columns.Add(column.HeaderText, column.ValueType)
         Next
-        MsgBox("agrego las filas")
+        MsgBox("agrego las columnas y luego empieza el for de las filas.")
         'Adding the Rows.
 
         For Each row As DataGridViewRow In dgblistadoExamenes.Rows
@@ -1177,9 +1219,14 @@ Public Class M_Factura
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
-        calcularDescuento()
-        Imprimir_Factura()
+        If Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False Then
+            letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
+            calcularDescuento()
+            Imprimir_Factura()
+            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
+        Else
+            MsgBox("Debe tener el número oficial de la factura y no ser anulada o cancelada.", MsgBoxStyle.Information)
+        End If
     End Sub
 
     Private Sub txtTarjeta_TextChanged(sender As Object, e As EventArgs) Handles txtTarjeta.TextChanged
