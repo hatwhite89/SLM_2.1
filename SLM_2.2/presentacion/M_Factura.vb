@@ -1010,7 +1010,7 @@ Public Class M_Factura
         End If
     End Sub
     Private Sub Imprimir_Factura()
-        If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
+        If (Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False) Then
             'le asigno un valor a los parametros del procedimiento almacenado
             Dim objReporte As New M_ImprimirFactura
 
@@ -1174,6 +1174,12 @@ Public Class M_Factura
         Else
             cbxAnular.Enabled = False
         End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
+        calcularDescuento()
+        Imprimir_Factura()
     End Sub
 
     Private Sub txtTarjeta_TextChanged(sender As Object, e As EventArgs) Handles txtTarjeta.TextChanged
