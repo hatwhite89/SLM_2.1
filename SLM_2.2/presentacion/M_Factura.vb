@@ -1154,20 +1154,20 @@ Public Class M_Factura
         Dim ds As New DataSet
         Try
             ' Add Table
-            ds.Tables.Add("Invoices")
+            ds.Tables.Add("ListaExamenes")
 
             ' Add Columns
             Dim col As DataColumn
             For Each dgvCol As DataGridViewColumn In dgblistadoExamenes.Columns
                 col = New DataColumn(dgvCol.Name)
-                ds.Tables("Invoices").Columns.Add(col)
+                ds.Tables("ListaExamenes").Columns.Add(col)
             Next
 
             'Add Rows from the datagridview
             Dim row As DataRow
             Dim colcount As Integer = dgblistadoExamenes.Columns.Count - 1
             For i As Integer = 0 To dgblistadoExamenes.Rows.Count - 1
-                row = ds.Tables("Invoices").Rows.Add
+                row = ds.Tables("ListaExamenes").Rows.Add
                 For Each column As DataGridViewColumn In dgblistadoExamenes.Columns
                     row.Item(column.Index) = dgblistadoExamenes.Rows.Item(i).Cells(column.Index).Value
                 Next
@@ -1178,7 +1178,7 @@ Public Class M_Factura
             dv = dt.DefaultView
             dv.Sort = "grupo Desc"
 
-            'DataGridView1.DataSource = dv
+            DataGridView1.DataSource = dv
 
             Return ds
 
