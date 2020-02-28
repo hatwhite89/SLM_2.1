@@ -1108,8 +1108,8 @@ Public Class M_Factura
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            'ejemplo()
-            dgridViewTods()
+            'ORDEN DE TRABAJO
+            OrdenDeTrabajo()
             'Dim dt As New DataTable
             'dt = TryCast(dgblistadoExamenes.DataSource, DataTable)
             'Dim dv As DataView
@@ -1120,7 +1120,7 @@ Public Class M_Factura
             'Dim dt As DataTable = dgblistadoExamenes.DataSource
             'DataGridView1.DataSource = dgblistadoExamenes.DataSource
             'dgblistadoExamenes.DataSource = dv
-            MsgBox("FUNCIONA   1")
+            'MsgBox("FUNCIONA   1")
             'dv.Sort = "codigo DESC"
             'DataGridView1.Sort(DataGridView1.Columns(3), ListSortDirection.Ascending)
             'MsgBox("FUNCIONA        el sort")
@@ -1150,19 +1150,17 @@ Public Class M_Factura
             MsgBox("Ejemplo fuera de " & ex.Message)
         End Try
     End Sub
-    Private Function dgridViewTods() As DataSet
+    Private Sub OrdenDeTrabajo()
         Dim ds As New DataSet
         Try
             ' Add Table
             ds.Tables.Add("ListaExamenes")
-
             ' Add Columns
             Dim col As DataColumn
             For Each dgvCol As DataGridViewColumn In dgblistadoExamenes.Columns
                 col = New DataColumn(dgvCol.Name)
                 ds.Tables("ListaExamenes").Columns.Add(col)
             Next
-
             'Add Rows from the datagridview
             Dim row As DataRow
             Dim colcount As Integer = dgblistadoExamenes.Columns.Count - 1
@@ -1172,22 +1170,62 @@ Public Class M_Factura
                     row.Item(column.Index) = dgblistadoExamenes.Rows.Item(i).Cells(column.Index).Value
                 Next
             Next
+            'Ordenar el data table por grupo
             Dim dt As New DataTable
             dt = ds.Tables(0)
-            Dim dv As New DataView
-            dv = dt.DefaultView
-            dv.Sort = "grupo Desc"
+            dt.DefaultView.Sort = "grupo DESC"
+            'Dim dv As New DataView
+            'dv = dt.DefaultView
+            'dv.Sort = "grupo Desc"
 
-            DataGridView1.DataSource = dv
+            Dim rowC As DataRow 'fila a comparar
+            Dim rowI As DataRow 'fila item detalle
+            Dim rowO As DataRow 'fila orden de trabajo
 
-            Return ds
+            Dim dt2 As New DataTable
+            Dim dtO As New DataTable
+
+            Dim objItemD As New ClsItemExamenDetalle
+            Dim objOrd As New ClsOrdenDeTrabajo
+            For i As Integer = 0 To dt.Rows.Count - 2
+                row = dt.Rows(i)
+                With objOrd
+                    .cod_factura_ = txtnumeroFactura.Text
+                    .coFecha_ = dtpfechaFactura.Value
+                    .coUsuario_ = txtcodigoCajero.Text
+                    .RegistrarOrdenDeTrabajo()
+                    dtO = .CapturarOrdenDeTrabajo()
+                End With
+                rowO = dtO.Rows(0)
+                For j As Integer = i To dt.Rows.Count - 1
+                    rowC = dt.Rows(j)
+                    If row("grupo") = rowC("grupo") Then
+                        objItemD.codigoItemExamen_ = Convert.ToInt64(rowC("codigo"))
+                        dt2 = objItemD.BuscarItemExamenDetalle
+                        For x As Integer = 0 To dt2.Rows.Count - 1
+                            rowI = dt.Rows(x)
+                            Dim objDetOrd As New ClsOrdenTrabajoDetalle
+                            With objDetOrd
+                                .cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
+                                .cod_item_examen_detalle_ = rowI("codigo")
+                            End With
+                            If objDetOrd.RegistrarNuevoDetalleOrdenTrabajo = 0 Then
+                                MsgBox("Error en la insercion del detalle orden de trabajo.", MsgBoxStyle.Information)
+                            End If
+                        Next
+                    Else
+                        i = j - 1
+                        Exit For
+                    End If
+                Next
+            Next
+
+            DataGridView1.DataSource = dt
 
         Catch ex As Exception
-
             MsgBox("CRITICAL ERROR : Exception caught while converting dataGridView to DataSet (dgvtods).. " & Chr(10) & ex.Message)
-            Return Nothing
         End Try
-    End Function
+    End Sub
     Private Sub ejemplo()
         'Creating DataTable.
         Dim dt As New DataTable()
@@ -1218,7 +1256,7 @@ Public Class M_Factura
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
         If Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False Then
             letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
             calcularDescuento()
