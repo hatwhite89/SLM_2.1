@@ -1178,6 +1178,7 @@ Public Class M_Factura
             'dv = dt.DefaultView
             'dv.Sort = "grupo Desc"
 
+
             Dim rowC As DataRow 'fila a comparar
             Dim rowI As DataRow 'fila item detalle
             Dim rowO As DataRow 'fila orden de trabajo
