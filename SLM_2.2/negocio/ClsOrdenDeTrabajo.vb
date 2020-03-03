@@ -275,22 +275,22 @@ Public Class ClsOrdenDeTrabajo
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "M_slmInsertarOrdenDeTrabajo"
+        sqlcom.CommandText = "E_slmInsertarOrdenDeTrabajo"
 
-        '    sqlpar = New SqlParameter
-        '    sqlpar.ParameterName = "@cod_factura" 'nombre campo en el procedimiento almacenado @
-        '    sqlpar.Value = @cod_factura
-        '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "@cod_factura" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = cod_factura_
+        sqlcom.Parameters.Add(sqlpar)
 
-        '    sqlpar = New SqlParameter
-        '    sqlpar.ParameterName = "@pmFecha" 'nombre campo en el procedimiento almacenado @
-        '    sqlpar.Value = @pmFecha
-        '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "@pmFecha" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = pmFecha_
+        sqlcom.Parameters.Add(sqlpar)
 
-        '    sqlpar = New SqlParameter
-        '    sqlpar.ParameterName = "@pmUsuario" 'nombre campo en el procedimiento almacenado @
-        '    sqlpar.Value = @pmUsuario
-        '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "@pmUsuario" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = pmUsuario_
+        sqlcom.Parameters.Add(sqlpar)
 
         '    sqlpar = New SqlParameter
         '    sqlpar.ParameterName = "@npFecha" 'nombre campo en el procedimiento almacenado @
@@ -549,7 +549,7 @@ Public Class ClsOrdenDeTrabajo
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
-        Using da As New SqlDataAdapter("M_slmSeleccionarOrdenDeTrabajo", cn)
+        Using da As New SqlDataAdapter("E_slmSeleccionarOrdenDeTrabajo", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             objCon.cerrarConexion()

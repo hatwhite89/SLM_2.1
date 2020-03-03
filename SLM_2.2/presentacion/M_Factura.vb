@@ -50,13 +50,13 @@ Public Class M_Factura
                 txtcodigoCliente.BackColor = Color.White
             Catch ex As Exception
                 txtcodigoCliente.BackColor = Color.Red
-                txtcodigoCliente.Text = ""
+                'txtcodigoCliente.Text = ""
                 txtnombreCliente.Text = ""
             End Try
         Else
             lblcodePriceList.Text = "0"
             txtcodigoConvenio.Text = ""
-            txtcodigoCliente.Text = ""
+            'txtcodigoCliente.Text = ""
             txtnombreCliente.Text = ""
             txtcodigoCliente.BackColor = Color.White
             M_ClienteVentana.txttelefonoCasa.Text = ""
@@ -1151,7 +1151,7 @@ Public Class M_Factura
         End Try
     End Sub
     Private Sub OrdenDeTrabajo()
-        Dim ds As New DataSet
+        Dim ds As New DataSet 'Orden de los examenes por grupo o laboratorio
         Try
             ' Add Table
             ds.Tables.Add("ListaExamenes")
@@ -1171,7 +1171,7 @@ Public Class M_Factura
                 Next
             Next
             'Ordenar el data table por grupo
-            Dim dt As New DataTable
+            Dim dt As New DataTable 'tabla de los items ordenador por grupo o laboratorio
             dt = ds.Tables(0)
             dt.DefaultView.Sort = "grupo DESC"
             'Dim dv As New DataView
@@ -1183,28 +1183,31 @@ Public Class M_Factura
             Dim rowI As DataRow 'fila item detalle
             Dim rowO As DataRow 'fila orden de trabajo
 
-            Dim dt2 As New DataTable
-            Dim dtO As New DataTable
+            Dim dt2 As New DataTable 'lista el detalle de los items
+            Dim dtO As New DataTable 'obtiene el codigo de la orden de trabajo
 
             Dim objItemD As New ClsItemExamenDetalle
             Dim objOrd As New ClsOrdenDeTrabajo
             For i As Integer = 0 To dt.Rows.Count - 2
                 row = dt.Rows(i)
                 With objOrd
-                    .cod_factura_ = txtnumeroFactura.Text
-                    .coFecha_ = dtpfechaFactura.Value
-                    .coUsuario_ = txtcodigoCajero.Text
-                    .RegistrarOrdenDeTrabajo()
+                    .cod_factura_ = Convert.ToInt64(txtnumeroFactura.Text)
+                    .pmFecha_ = dtpfechaFactura.Value
+                    .pmUsuario_ = txtcodigoCajero.Text
+                    If .RegistrarOrdenDeTrabajo() = 0 Then
+                        MsgBox("Error al querer insertar la orden de trabajo.", MsgBoxStyle.Information)
+                        Exit Sub
+                    End If
                     dtO = .CapturarOrdenDeTrabajo()
                 End With
                 rowO = dtO.Rows(0)
-                For j As Integer = i To dt.Rows.Count - 1
+                For j As Integer = i To dt.Rows.Count - 2
                     rowC = dt.Rows(j)
                     If row("grupo") = rowC("grupo") Then
                         objItemD.codigoItemExamen_ = Convert.ToInt64(rowC("codigo"))
                         dt2 = objItemD.BuscarItemExamenDetalle
                         For x As Integer = 0 To dt2.Rows.Count - 1
-                            rowI = dt.Rows(x)
+                            rowI = dt2.Rows(x)
                             Dim objDetOrd As New ClsOrdenTrabajoDetalle
                             With objDetOrd
                                 .cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
@@ -1212,8 +1215,12 @@ Public Class M_Factura
                             End With
                             If objDetOrd.RegistrarNuevoDetalleOrdenTrabajo = 0 Then
                                 MsgBox("Error en la insercion del detalle orden de trabajo.", MsgBoxStyle.Information)
+                                Exit Sub
                             End If
+                            'MsgBox("i=" & i & "    j=" & j & "  x=" & x & "         " & dt.Rows.Count)
                         Next
+                    ElseIf dt.Rows.Count = i + 1 Then
+                        Exit Sub
                     Else
                         i = j - 1
                         Exit For
@@ -1224,7 +1231,7 @@ Public Class M_Factura
             DataGridView1.DataSource = dt
 
         Catch ex As Exception
-            MsgBox("CRITICAL ERROR : Exception caught while converting dataGridView to DataSet (dgvtods).. " & Chr(10) & ex.Message)
+            MsgBox("CRITICAL ERROR : " & ex.Message)
         End Try
     End Sub
     Private Sub ejemplo()
