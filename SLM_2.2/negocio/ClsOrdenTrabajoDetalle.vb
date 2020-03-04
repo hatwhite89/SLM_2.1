@@ -5,7 +5,6 @@ Public Class ClsOrdenTrabajoDetalle
     'Constructor
     Public Sub New()
 
-
     End Sub
     Public Property codigo_ As Integer
         Get
@@ -82,14 +81,14 @@ Public Class ClsOrdenTrabajoDetalle
         Return par_sal
 
     End Function
-    Public Function ModificarOrdenTrabajo() As String
+    Public Function ModificarOrdenTrabajoDetalle() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "E_slmModificarOrdenTrabajo"
+        sqlcom.CommandText = "E_slmModificarOrdenTrabajoDetalle"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -131,7 +130,7 @@ Public Class ClsOrdenTrabajoDetalle
         Return par_sal
 
     End Function
-    Public Function BuscarOrdenTrabajo() As DataTable
+    Public Function BuscarOrdenTrabajoDetalle() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -139,38 +138,8 @@ Public Class ClsOrdenTrabajoDetalle
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "E_slmBuscarOrdenTrabajo"
+            cmd.CommandText = "E_slmBuscarOrdenTrabajoDetalle"
             cmd.Parameters.Add("@cod_orden_trabajo", SqlDbType.Int).Value = cod_orden_trabajo_
-            Using da As New SqlDataAdapter
-                da.SelectCommand = cmd
-                Using dt As New DataTable
-                    da.Fill(dt)
-                    Return dt
-                End Using
-            End Using
-        End Using
-    End Function
-    Public Function SeleccionarOrdenTrabajo() As DataTable
-        Dim objCon As New ClsConnection
-        Dim cn As New SqlConnection
-        cn = objCon.getConexion
-
-        Using da As New SqlDataAdapter("E_slmSeleccionarOrdenTrabajo", cn)
-            Dim dt As New DataTable
-            da.Fill(dt)
-            Return dt
-        End Using
-    End Function
-    Public Function BuscarOrdenTrabajoCode() As DataTable
-        Dim objCon As New ClsConnection
-        Dim cn As New SqlConnection
-        cn = objCon.getConexion
-
-        Using cmd As New SqlCommand
-            cmd.Connection = cn
-            cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "E_slmBuscarOrdenTrabajoCode"
-            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = codigo_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable

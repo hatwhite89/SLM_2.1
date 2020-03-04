@@ -1194,6 +1194,7 @@ Public Class M_Factura
                     .cod_factura_ = Convert.ToInt64(txtnumeroFactura.Text)
                     .pmFecha_ = dtpfechaFactura.Value
                     .pmUsuario_ = txtcodigoCajero.Text
+                    .cod_grupo_ = Convert.ToInt64(row("grupo"))
                     If .RegistrarOrdenDeTrabajo() = 0 Then
                         MsgBox("Error al querer insertar la orden de trabajo.", MsgBoxStyle.Information)
                         Exit Sub
@@ -1228,8 +1229,8 @@ Public Class M_Factura
                 Next
             Next
 
-            DataGridView1.DataSource = dt
-
+            'DataGridView1.DataSource = dt
+            MsgBox("Orden de trabajo registrada con exito.", MsgBoxStyle.Information)
         Catch ex As Exception
             MsgBox("CRITICAL ERROR : " & ex.Message)
         End Try
@@ -1258,7 +1259,6 @@ Public Class M_Factura
 
     Private Sub txtnumeroOficial_TextChanged(sender As Object, e As EventArgs) Handles txtnumeroOficial.TextChanged
         If (Trim(txtnumeroOficial.Text) <> "") Then
-            cbxAnular.Enabled = True
         Else
             cbxAnular.Enabled = False
         End If
@@ -1266,10 +1266,10 @@ Public Class M_Factura
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
         If Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False Then
+            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
             letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
             calcularDescuento()
             Imprimir_Factura()
-            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
         Else
             MsgBox("Debe tener el número oficial de la factura y no ser anulada o cancelada.", MsgBoxStyle.Information)
         End If
