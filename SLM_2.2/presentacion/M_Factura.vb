@@ -1259,6 +1259,7 @@ Public Class M_Factura
 
     Private Sub txtnumeroOficial_TextChanged(sender As Object, e As EventArgs) Handles txtnumeroOficial.TextChanged
         If (Trim(txtnumeroOficial.Text) <> "") Then
+
         Else
             cbxAnular.Enabled = False
         End If
