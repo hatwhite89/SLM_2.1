@@ -702,11 +702,24 @@ Public Class M_Factura
                     Next
                     MsgBox("Registrada la factura correctamente.")
 
+                    'temporal
+                    Dim objDetFact As New ClsDetalleFactura
+                    objDetFact.numeroFactura_ = txtnumeroFactura.Text
+                    dt = objDetFact.BuscarDetalleFactura()
+                    For index As Integer = 0 To dt.Rows.Count - 1
+                        row = dt.Rows(index)
+                        dgblistadoExamenes.Rows(index).Cells(8).Value() = CStr(row("numero"))
+                    Next
+
+
+
+
+
                     If (cbxAnular.Checked = False And Trim(txtnumeroOficial.Text) <> "") Then
+                        MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
                         letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
                         calcularDescuento()
                         Imprimir_Factura()
-                        MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
                     Else
                         HabilitarActualizarFactura()
                     End If
@@ -896,10 +909,10 @@ Public Class M_Factura
                         MsgBox("Actualizada la factura correctamente.")
 
                         If (Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False) Then
+                            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
                             letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
                             calcularDescuento()
                             Imprimir_Factura()
-                            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
                         Else
                             HabilitarActualizarFactura()
                         End If
@@ -1310,8 +1323,10 @@ Public Class M_Factura
         End If
     End Sub
 
+    Private Sub calcularDescuentoDePrecios()
 
 
+    End Sub
 
 
 
