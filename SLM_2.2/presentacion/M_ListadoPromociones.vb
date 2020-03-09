@@ -26,14 +26,16 @@
                 n = MsgBox("¿Desea utilizar la promoción en la factura?", MsgBoxStyle.YesNo)
             End If
             If n = vbYes And M_Factura.validarFactura2(dgbtabla.Rows(e.RowIndex).Cells(0).Value()) = 0 Then
-                M_Factura.dgblistadoExamenes.Rows.Add(New String() {dgbtabla.Rows(e.RowIndex).Cells(0).Value(), "1", dgbtabla.Rows(e.RowIndex).Cells(5).Value(), dgbtabla.Rows(e.RowIndex).Cells(1).Value(), M_Factura.dtpfechaFactura.Value.Date.AddDays(7), "0", dgbtabla.Rows(e.RowIndex).Cells(5).Value()})
+                'M_Factura.dgblistadoExamenes.Rows.Add(New String() {dgbtabla.Rows(e.RowIndex).Cells(0).Value(), "1", dgbtabla.Rows(e.RowIndex).Cells(5).Value(), dgbtabla.Rows(e.RowIndex).Cells(1).Value(), M_Factura.dtpfechaFactura.Value.Date.AddDays(7), "0", dgbtabla.Rows(e.RowIndex).Cells(5).Value()})
+                M_Factura.dgblistadoExamenes.Rows.Add(New String() {dgbtabla.Rows(e.RowIndex).Cells(0).Value(), "1", dgbtabla.Rows(e.RowIndex).Cells(5).Value(), dgbtabla.Rows(e.RowIndex).Cells(1).Value(), M_Factura.dtpfechaFactura.Value.Date.AddDays(7), "0", dgbtabla.Rows(e.RowIndex).Cells(5).Value(), "0", "0"})
                 M_ClienteVentana.dgvtabla.Rows.Add(New String() {dgbtabla.Rows(e.RowIndex).Cells(0).Value(), "1", dgbtabla.Rows(e.RowIndex).Cells(5).Value(), dgbtabla.Rows(e.RowIndex).Cells(1).Value(), M_Factura.dtpfechaFactura.Value.Date.AddDays(7), "0", dgbtabla.Rows(e.RowIndex).Cells(5).Value()})
                 Dim objDetPromo As New ClsDetallePromociones
                 objDetPromo.codigoPromocion_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
                 dt = objDetPromo.SeleccionarDetallePromocion()
                 For index As Integer = 0 To dt.Rows.Count - 1
                     row = dt.Rows(index)
-                    M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codigoExamen")), "1", "0", CStr(row("descripcion")), M_Factura.dtpfechaFactura.Value.Date.AddDays(7), "0", "0", CStr(row("grupo"))})
+                    'M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codigoExamen")), "1", "0", CStr(row("descripcion")), M_Factura.dtpfechaFactura.Value.Date.AddDays(7), "0", "0", CStr(row("grupo"))})
+                    M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codigoExamen")), "1", "0", CStr(row("descripcion")), M_Factura.dtpfechaFactura.Value.Date.AddDays(7), "0", "0", CStr(row("grupo")), "0"})
                     M_ClienteVentana.dgvtabla.Rows.Add(New String() {CStr(row("codigoExamen")), "1", "0", CStr(row("descripcion")), M_Factura.dtpfechaFactura.Value.Date.AddDays(7), "0", "0"})
                 Next
                 M_Factura.lblPromocion.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()

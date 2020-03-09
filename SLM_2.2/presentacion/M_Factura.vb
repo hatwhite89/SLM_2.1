@@ -871,7 +871,9 @@ Public Class M_Factura
                                     MsgBox("Error al querer modificar el detalle de factura.")
                                 End If
                             Next
+                            MsgBox("Antes de limpiar el arraylist")
                             codigoDetalleFactura.Clear()
+                            MsgBox("agregar y actualizar los datos del detalle fatura")
                             For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
                                 If dgblistadoExamenes.Rows(index).Cells(8).Value() = 0 Then
                                     'agrega
@@ -1203,43 +1205,47 @@ Public Class M_Factura
             Dim objOrd As New ClsOrdenDeTrabajo
             For i As Integer = 0 To dt.Rows.Count - 2
                 row = dt.Rows(i)
-                With objOrd
-                    .cod_factura_ = Convert.ToInt64(txtnumeroFactura.Text)
-                    .pmFecha_ = dtpfechaFactura.Value
-                    .pmUsuario_ = txtcodigoCajero.Text
-                    .cod_grupo_ = Convert.ToInt64(row("grupo"))
-                    If .RegistrarOrdenDeTrabajo() = 0 Then
-                        MsgBox("Error al querer insertar la orden de trabajo.", MsgBoxStyle.Information)
-                        Exit Sub
-                    End If
-                    dtO = .CapturarOrdenDeTrabajo()
-                End With
-                rowO = dtO.Rows(0)
-                For j As Integer = i To dt.Rows.Count - 2
-                    rowC = dt.Rows(j)
-                    If row("grupo") = rowC("grupo") Then
-                        objItemD.codigoItemExamen_ = Convert.ToInt64(rowC("codigo"))
-                        dt2 = objItemD.BuscarItemExamenDetalle
-                        For x As Integer = 0 To dt2.Rows.Count - 1
-                            rowI = dt2.Rows(x)
-                            Dim objDetOrd As New ClsOrdenTrabajoDetalle
-                            With objDetOrd
-                                .cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
-                                .cod_item_examen_detalle_ = rowI("codigo")
-                            End With
-                            If objDetOrd.RegistrarNuevoDetalleOrdenTrabajo = 0 Then
-                                MsgBox("Error en la insercion del detalle orden de trabajo.", MsgBoxStyle.Information)
-                                Exit Sub
-                            End If
-                            'MsgBox("i=" & i & "    j=" & j & "  x=" & x & "         " & dt.Rows.Count)
-                        Next
-                    ElseIf dt.Rows.Count = i + 1 Then
-                        Exit Sub
-                    Else
-                        i = j - 1
-                        Exit For
-                    End If
-                Next
+                If CStr(row("grupo")) <> "0" Then
+
+                    With objOrd
+                        .cod_factura_ = Convert.ToInt64(txtnumeroFactura.Text)
+                        .pmFecha_ = dtpfechaFactura.Value
+                        .pmUsuario_ = txtcodigoCajero.Text
+                        .cod_grupo_ = Convert.ToInt64(row("grupo"))
+                        If .RegistrarOrdenDeTrabajo() = 0 Then
+                            MsgBox("Error al querer insertar la orden de trabajo.", MsgBoxStyle.Information)
+                            Exit Sub
+                        End If
+                        dtO = .CapturarOrdenDeTrabajo()
+                    End With
+                    rowO = dtO.Rows(0)
+                    For j As Integer = i To dt.Rows.Count - 2
+                        rowC = dt.Rows(j)
+                        If row("grupo") = rowC("grupo") Then
+                            objItemD.codigoItemExamen_ = Convert.ToInt64(rowC("codigo"))
+                            dt2 = objItemD.BuscarItemExamenDetalle
+                            For x As Integer = 0 To dt2.Rows.Count - 1
+                                rowI = dt2.Rows(x)
+                                Dim objDetOrd As New ClsOrdenTrabajoDetalle
+                                With objDetOrd
+                                    .cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
+                                    .cod_item_examen_detalle_ = rowI("codigo")
+                                End With
+                                If objDetOrd.RegistrarNuevoDetalleOrdenTrabajo = 0 Then
+                                    MsgBox("Error en la insercion del detalle orden de trabajo.", MsgBoxStyle.Information)
+                                    Exit Sub
+                                End If
+                                'MsgBox("i=" & i & "    j=" & j & "  x=" & x & "         " & dt.Rows.Count)
+                            Next
+                        ElseIf dt.Rows.Count = i + 1 Then
+                            Exit Sub
+                        Else
+                            i = j - 1
+                            Exit For
+                        End If
+                    Next
+
+                End If
             Next
 
             'DataGridView1.DataSource = dt
