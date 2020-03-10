@@ -6,7 +6,7 @@ Imports System.ComponentModel
 Public Class M_Factura
     Public letras As String
     Dim subtotalF, descuentoF, abonoF, saldoF As Double
-    Dim codigoDetalleFactura As ArrayList
+    Dim codigoDetalleFactura As New ArrayList
     Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
         M_ClienteVentana.Close()
         Me.Close()
@@ -404,7 +404,7 @@ Public Class M_Factura
         End Try
     End Sub
     Private Sub dgblistadoExamenes_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellClick
-        If e.ColumnIndex = 9 And Trim(txtnumeroFactura.Text) = "" Then
+        If e.ColumnIndex = 9 And Trim(txtnumeroOficial.Text) = "" Then
             Try
                 Dim n As String = MsgBox("¿Desea eliminar el examen de la factura?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then
@@ -658,7 +658,7 @@ Public Class M_Factura
                     .fechaVto_ = dtpfechaVto.Value
                     .codigoSucursal_ = Convert.ToInt64(lblcodeSucursal.Text)
 
-                    If Trim(txtcodigoConvenio.Text) = "" Then
+                    If Trim(txtcodigoConvenio.Text) = "" Or Trim(txtcodigoConvenio.Text) = "0" Then
                         .codigoConvenio_ = 0
                     Else
                         .codigoConvenio_ = Convert.ToInt64(lblcodePriceList.Text)
@@ -832,7 +832,7 @@ Public Class M_Factura
                     dt = objCAI.BuscarCAI()
                     row = dt.Rows(0)
                     txtnumeroOficial.Text = CStr(row("numeroOficial"))
-                    MsgBox("Consigo el cai")
+                    'MsgBox("Consigo el cai")
                     Dim objDetCAI As New ClsDetalleCAI
                     objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
                     'SI SE LOGRO HACER LA MODIFICACION DEL ESTADO DEL CAI 
@@ -856,24 +856,16 @@ Public Class M_Factura
                         .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
                         .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
                         .estado_ = cbxAnular.Checked
+                        .total_ = Convert.ToDouble(txttotal.Text)
                     End With
                     'MODIFICO LOS DATOS DE LA FACTURA
-                    MsgBox("antes de modificar los datos de la factura donde eli,mod,insert.", MsgBoxStyle.MsgBoxHelp)
+                    'MsgBox("antes de modificar los datos de la factura donde eli,mod,insert.", MsgBoxStyle.MsgBoxHelp)
                     If objFact.ModificarFactura() = 1 Then
 
                         'SI LA FACTURA YA TIENE EL (OK) Y NO ESTA ANULADA LA FACTURA (ANULAR)
                         If (cbxAnular.Checked = False) Then
-                            MsgBox("eNTRA EN LA MODIFICACION Y ELIMINACION DEL DETALLE FACTURA", MsgBoxStyle.MsgBoxHelp)
                             Dim objDetFac As New ClsDetalleFactura
-                            For index As Integer = 0 To codigoDetalleFactura.Count - 1
-                                objDetFac.numero_ = Convert.ToInt64(codigoDetalleFactura(index))
-                                If objDetFac.EliminarDetalleFactura() <> 1 Then
-                                    MsgBox("Error al querer modificar el detalle de factura.")
-                                End If
-                            Next
-                            MsgBox("Antes de limpiar el arraylist")
-                            codigoDetalleFactura.Clear()
-                            MsgBox("agregar y actualizar los datos del detalle fatura")
+                            'MsgBox("agregar y actualizar los datos del detalle fatura")
                             For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
                                 If dgblistadoExamenes.Rows(index).Cells(8).Value() = 0 Then
                                     'agrega
@@ -904,11 +896,35 @@ Public Class M_Factura
                                     End If
                                 End If
                             Next
+
+                            'MsgBox("eNTRA EN LA MODIFICACION Y ELIMINACION DEL DETALLE FACTURA --", MsgBoxStyle.MsgBoxHelp)
+                            'MsgBox("eNTRA EN LA MODIFICACION Y ELIMINACION DEL DETALLE FACTURA --" & codigoDetalleFactura.Count, MsgBoxStyle.MsgBoxHelp)
+
+                            For index As Integer = 0 To codigoDetalleFactura.Count - 1
+                                objDetFac.numero_ = Convert.ToInt64(codigoDetalleFactura(index))
+                                If objDetFac.EliminarDetalleFactura() <> 1 Then
+                                    MsgBox("Error al querer modificar el detalle de factura.")
+                                End If
+                            Next
+                            'MsgBox("Antes de limpiar el arraylist")
+                            codigoDetalleFactura.Clear()
                         End If
                         deshabilitar()
                         btnActualizar.Enabled = True
 
                         MsgBox("Actualizada la factura correctamente.")
+
+
+
+                        'temporal
+                        Dim objDetFact As New ClsDetalleFactura
+                        objDetFact.numeroFactura_ = txtnumeroFactura.Text
+                        dt = objDetFact.BuscarDetalleFactura()
+                        For index As Integer = 0 To dt.Rows.Count - 1
+                            row = dt.Rows(index)
+                            dgblistadoExamenes.Rows(index).Cells(8).Value() = CStr(row("numero"))
+                        Next
+
 
                         If (Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False) Then
                             MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
@@ -936,6 +952,7 @@ Public Class M_Factura
                         .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
                         .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
                         .estado_ = cbxAnular.Checked
+                        .total_ = Convert.ToDouble(txttotal.Text)
                     End With
                     'MODIFICO LOS DATOS DE LA FACTURA
                     MsgBox("antes de modificar los datos de la factura.", MsgBoxStyle.MsgBoxHelp)
