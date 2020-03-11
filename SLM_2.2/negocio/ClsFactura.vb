@@ -417,6 +417,11 @@ Public Class ClsFactura
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "total" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = total_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)

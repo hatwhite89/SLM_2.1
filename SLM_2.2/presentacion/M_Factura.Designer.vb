@@ -24,6 +24,9 @@ Partial Class M_Factura
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Factura))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.btnbuscarCliente = New System.Windows.Forms.Button()
         Me.btnnueva = New System.Windows.Forms.Button()
@@ -43,6 +46,7 @@ Partial Class M_Factura
         Me.lblpoliza = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.gbxlistadoExamenes = New System.Windows.Forms.GroupBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.lblPromocion = New System.Windows.Forms.Label()
         Me.btnQuitarPromocion = New System.Windows.Forms.Button()
         Me.btnPromocion = New System.Windows.Forms.Button()
@@ -105,6 +109,7 @@ Partial Class M_Factura
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Button1 = New System.Windows.Forms.Button()
         Me.cbxAnular = New System.Windows.Forms.CheckBox()
+        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -115,6 +120,7 @@ Partial Class M_Factura
         Me.grupo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.codeDetFact = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbxlistadoExamenes.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -320,6 +326,7 @@ Partial Class M_Factura
         '
         'gbxlistadoExamenes
         '
+        Me.gbxlistadoExamenes.Controls.Add(Me.DataGridView1)
         Me.gbxlistadoExamenes.Controls.Add(Me.lblPromocion)
         Me.gbxlistadoExamenes.Controls.Add(Me.btnQuitarPromocion)
         Me.gbxlistadoExamenes.Controls.Add(Me.btnPromocion)
@@ -333,6 +340,41 @@ Partial Class M_Factura
         Me.gbxlistadoExamenes.TabIndex = 34
         Me.gbxlistadoExamenes.TabStop = False
         Me.gbxlistadoExamenes.Text = "Listado Exámenes"
+        '
+        'DataGridView1
+        '
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.Location = New System.Drawing.Point(844, 66)
+        Me.DataGridView1.Name = "DataGridView1"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.Size = New System.Drawing.Size(240, 150)
+        Me.DataGridView1.TabIndex = 106
+        Me.DataGridView1.Visible = False
         '
         'lblPromocion
         '
@@ -1008,6 +1050,15 @@ Partial Class M_Factura
         Me.cbxAnular.Text = "Anular Factura"
         Me.cbxAnular.UseVisualStyleBackColor = True
         '
+        'btnImprimir
+        '
+        Me.btnImprimir.Location = New System.Drawing.Point(500, 41)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(99, 34)
+        Me.btnImprimir.TabIndex = 108
+        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.UseVisualStyleBackColor = True
+        '
         'codigo
         '
         Me.codigo.HeaderText = "Código"
@@ -1067,6 +1118,7 @@ Partial Class M_Factura
         Me.grupo.HeaderText = "grupo"
         Me.grupo.MinimumWidth = 6
         Me.grupo.Name = "grupo"
+        Me.grupo.Visible = False
         Me.grupo.Width = 125
         '
         'codeDetFact
@@ -1074,6 +1126,7 @@ Partial Class M_Factura
         Me.codeDetFact.HeaderText = "codeDetFact"
         Me.codeDetFact.MinimumWidth = 6
         Me.codeDetFact.Name = "codeDetFact"
+        Me.codeDetFact.Visible = False
         Me.codeDetFact.Width = 125
         '
         'M_Factura
@@ -1083,6 +1136,7 @@ Partial Class M_Factura
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1164, 703)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.cbxAnular)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lblTarjeta)
@@ -1158,6 +1212,7 @@ Partial Class M_Factura
         Me.Text = "Factura Laboratorios Médicos"
         Me.gbxlistadoExamenes.ResumeLayout(False)
         Me.gbxlistadoExamenes.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -1249,6 +1304,8 @@ Partial Class M_Factura
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Button1 As Button
     Friend WithEvents cbxAnular As CheckBox
+    Friend WithEvents btnImprimir As Button
+    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents codigo As DataGridViewTextBoxColumn
     Friend WithEvents Cantidad As DataGridViewTextBoxColumn
     Friend WithEvents Precio As DataGridViewTextBoxColumn

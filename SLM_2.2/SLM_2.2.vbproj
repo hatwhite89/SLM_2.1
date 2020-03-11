@@ -148,6 +148,7 @@
     <Compile Include="negocio\ClsListaPrecios.vb" />
     <Compile Include="negocio\ClsMaquinasLocales.vb" />
     <Compile Include="negocio\ClsOrdenDeTrabajo.vb" />
+    <Compile Include="negocio\ClsOrdenTrabajoDetalle.vb" />
     <Compile Include="negocio\ClsPago.vb" />
     <Compile Include="negocio\ClsParametroExamen.vb" />
     <Compile Include="negocio\ClsParametroExamenDetalle.vb" />

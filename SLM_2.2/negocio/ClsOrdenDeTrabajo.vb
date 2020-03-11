@@ -4,7 +4,7 @@ Public Class ClsOrdenDeTrabajo
 
     Dim cod_orden_trabajo, cod_factura, pmUsuario, npUsuario, epUsuario, prUsuario, coUsuario As Integer
     Dim estado, curva, facturaTomaMuestra, tecnicoLab As String
-    Dim enUsuario, inUsuario, cod_sede, cod_tecnico, cod_validador, cod_objeto As Integer
+    Dim enUsuario, inUsuario, cod_sede, cod_tecnico, cod_validador, cod_objeto, cod_grupo As Integer
     Dim pmFecha, npFecha, epFecha, prFecha, coFecha, enFecha, inFecha, fechaEntrega As Date
     Dim enviadaWS, enviadaEmail, cortesia, urgente, entregarMedico, entregarPaciente As Boolean
     'Constructor
@@ -17,6 +17,14 @@ Public Class ClsOrdenDeTrabajo
         End Get
         Set(value As Integer)
             cod_orden_trabajo = value
+        End Set
+    End Property
+    Public Property cod_grupo_ As Integer
+        Get
+            Return cod_grupo
+        End Get
+        Set(value As Integer)
+            cod_grupo = value
         End Set
     End Property
     Public Property cod_factura_ As Integer
@@ -268,277 +276,277 @@ Public Class ClsOrdenDeTrabajo
         End Set
     End Property
 
-    'Public Function RegistrarNuevaFactura() As String
-    '    Dim sqlcom As SqlCommand
-    '    Dim sqlpar As SqlParameter
-    '    Dim par_sal As Integer
+    Public Function RegistrarOrdenDeTrabajo() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
 
-    '    sqlcom = New SqlCommand
-    '    sqlcom.CommandType = CommandType.StoredProcedure
-    '    sqlcom.CommandText = "M_slmInsertarFactura"
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slmInsertarOrdenDeTrabajo"
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "@cod_factura" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = @cod_factura
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_factura" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cod_factura_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "@pmFecha" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = @pmFecha
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "pmFecha" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = pmFecha_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "@pmUsuario" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = @pmUsuario
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "pmUsuario" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = pmUsuario_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "@npFecha" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = @npFecha
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_grupo" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cod_grupo_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "@npUsuario" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = @npUsuario
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "@epFecha" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = @epFecha
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar.Direction = ParameterDirection.Output
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "@epUsuario" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = @epUsuario
-    '    sqlcom.Parameters.Add(sqlpar)
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "@prFecha" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = @prFecha
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlcom.ExecuteNonQuery()
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "@prUsuario" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = @prUsuario
-    '    sqlcom.Parameters.Add(sqlpar)
+        con.cerrarConexion()
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "@coFecha" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = @coFecha
-    '    sqlcom.Parameters.Add(sqlpar)
+        par_sal = sqlcom.Parameters("salida").Value
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "@coUsuario" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = @coUsuario
-    '    sqlcom.Parameters.Add(sqlpar)
+        Return par_sal
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "@enFecha" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = @enFecha
-    '    sqlcom.Parameters.Add(sqlpar)
+    End Function
+    Public Function ModificarOrdenDeTrabajo() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "@enUsuario" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = @enUsuario
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slmModificarOrdenDeTrabajo"
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "entregaPaciente" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = entregaPaciente_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_orden_trabajo" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cod_orden_trabajo_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "enviarEmail" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = enviarEmail_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_factura" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cod_factura_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "pagoPaciente" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = pagoPaciente_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "pmFecha" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = pmFecha_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "vuelto" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = vuelto_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "pmUsuario" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = pmUsuario_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "total" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = total_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "npFecha" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = npFecha_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "ok" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = ok_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "npUsuario" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = npUsuario_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "ingresoEfectivo" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = ingresoEfectivo_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "epFecha" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = epFecha_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "ingresoTarjeta" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = ingresoTarjeta_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "epUsuario" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = epUsuario_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "salida"
-    '    sqlpar.Value = ""
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "prFecha" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = prFecha_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar.Direction = ParameterDirection.Output
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "prUsuario" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = prUsuario_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    Dim con As New ClsConnection
-    '    sqlcom.Connection = con.getConexion
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "coFecha" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = coFecha_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlcom.ExecuteNonQuery()
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "coUsuario" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = coUsuario_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    con.cerrarConexion()
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "enFecha" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = enFecha_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    par_sal = sqlcom.Parameters("salida").Value
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "enUsuario" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = enUsuario_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    Return par_sal
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "inFecha" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = inFecha_
+        sqlcom.Parameters.Add(sqlpar)
 
-    'End Function
-    'Public Function ModificarFactura() As String
-    '    Dim sqlcom As SqlCommand
-    '    Dim sqlpar As SqlParameter
-    '    Dim par_sal As Integer
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "inUsuario" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = inUsuario_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlcom = New SqlCommand
-    '    sqlcom.CommandType = CommandType.StoredProcedure
-    '    sqlcom.CommandText = "M_slmModificarFactura"
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = estado_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "numero" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = numero_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "curva" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = curva_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "numeroOficial" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = numeroOficial_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_sede" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cod_sede_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "entregaMedico" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = entregaMedico_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_tecnico" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cod_tecnico_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "entregaPaciente" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = entregaPaciente_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_validador" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cod_validador_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "enviarEmail" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = enviarEmail_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_objeto" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cod_objeto_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "pagoPaciente" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = pagoPaciente_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "facturaTomaMuestra" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = facturaTomaMuestra_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "vuelto" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = vuelto_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "tecnicoLab" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = tecnicoLab_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "ok" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = ok_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "enviadaWS" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = enviadaWS_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "ingresoEfectivo" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = ingresoEfectivo_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "enviadaEmail" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = enviadaEmail_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "ingresoTarjeta" 'nombre campo en el procedimiento almacenado @
-    '    sqlpar.Value = ingresoTarjeta_
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "fechaEntrega" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = fechaEntrega_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar = New SqlParameter
-    '    sqlpar.ParameterName = "salida"
-    '    sqlpar.Value = ""
-    '    sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cortesia" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cortesia_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlpar.Direction = ParameterDirection.Output
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "urgente" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = urgente_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    Dim con As New ClsConnection
-    '    sqlcom.Connection = con.getConexion
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "entregarMedico" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = entregarMedico_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    sqlcom.ExecuteNonQuery()
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "entregarPaciente" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = entregarPaciente_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    con.cerrarConexion()
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_grupo" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cod_grupo_
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    par_sal = sqlcom.Parameters("salida").Value
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
 
-    '    Return par_sal
+        sqlpar.Direction = ParameterDirection.Output
 
-    'End Function
-    'Public Function BuscarFactura() As DataTable
-    '    Dim objCon As New ClsConnection
-    '    Dim cn As New SqlConnection
-    '    cn = objCon.getConexion
-    '    Using cmd As New SqlCommand
-    '        cmd.Connection = cn
-    '        cmd.CommandType = CommandType.StoredProcedure
-    '        cmd.CommandText = "M_slmBuscarFactura"
-    '        cmd.Parameters.Add("@numero", SqlDbType.Int).Value = numero_
-    '        Using da As New SqlDataAdapter
-    '            da.SelectCommand = cmd
-    '            Using dt As New DataTable
-    '                da.Fill(dt)
-    '                Return dt
-    '            End Using
-    '        End Using
-    '    End Using
-    'End Function
-    'Public Function BuscarFacturaNumero() As DataTable
-    '    Dim objCon As New ClsConnection
-    '    Dim cn As New SqlConnection
-    '    cn = objCon.getConexion
-    '    Using cmd As New SqlCommand
-    '        cmd.Connection = cn
-    '        cmd.CommandType = CommandType.StoredProcedure
-    '        cmd.CommandText = "M_slmBuscarFacturaNumero"
-    '        cmd.Parameters.Add("@numero", SqlDbType.Int).Value = numero_
-    '        Using da As New SqlDataAdapter
-    '            da.SelectCommand = cmd
-    '            Using dt As New DataTable
-    '                da.Fill(dt)
-    '                Return dt
-    '            End Using
-    '        End Using
-    '    End Using
-    'End Function
-    'Public Function BuscarFacturaCliente() As DataTable
-    '    Dim objCon As New ClsConnection
-    '    Dim cn As New SqlConnection
-    '    cn = objCon.getConexion
-    '    Using cmd As New SqlCommand
-    '        cmd.Connection = cn
-    '        cmd.CommandType = CommandType.StoredProcedure
-    '        cmd.CommandText = "M_slmBuscarFacturaCliente"
-    '        cmd.Parameters.Add("@nombreCliente", SqlDbType.VarChar).Value = nombreCliente_
-    '        Using da As New SqlDataAdapter
-    '            da.SelectCommand = cmd
-    '            Using dt As New DataTable
-    '                da.Fill(dt)
-    '                Return dt
-    '            End Using
-    '        End Using
-    '    End Using
-    'End Function
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
 
-    Public Function SeleccionarFactura() As DataTable
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+    Public Function BuscarFactura() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
-        Using da As New SqlDataAdapter("M_slmSeleccionarFactura", cn)
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "E_slmBuscarOrdenDeTrabajo"
+            cmd.Parameters.Add("cod_orden_trabajo", SqlDbType.Int).Value = cod_orden_trabajo_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
+    Public Function CapturarOrdenDeTrabajo() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("E_slmCapturarOrdenDeTrabajo", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
+    Public Function SeleccionarOrdenDeTrabajo() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using da As New SqlDataAdapter("E_slmSeleccionarOrdenDeTrabajo", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             objCon.cerrarConexion()

@@ -54,7 +54,8 @@ Public Class M_BuscarFactura
                 M_Factura.dtpfechaVto.Value = CStr(row("fechaVto"))
                 M_Factura.lblcodeSucursal.Text = CStr(row("codigoSucursal"))
 
-                M_Factura.lblcodePriceList.Text = CStr(row("codigoConvenio"))
+                'M_Factura.lblcodePriceList.Text = CStr(row("codigoConvenio"))
+                M_Factura.txtcodigoConvenio.Text = CStr(row("codigoConvenio"))
 
                 M_Factura.txtnumeroPoliza.Text = CStr(row("numeroPoliza"))
                 M_Factura.txtcodigoTerminal.Text = CStr(row("codigoTerminal"))
