@@ -12,8 +12,6 @@ Public Class A_Notificacion
 
             My.Computer.Audio.Play(My.Resources.Definite_c47a609e_37f4_4678_9cb8_79a06e5845bb, AudioPlayMode.Background)
 
-
-
             Dim cai As New ClsCAI
             Dim numfact, dias As DataTable
             Dim rowD, rowsF As DataRow
@@ -29,8 +27,6 @@ Public Class A_Notificacion
             lblMensajeFact.Text = "Quedan " & rowsF("disponible") & " facturas disponibles."
 
             enviarCorreo()
-
-
 
         Catch ex As Exception
             MsgBox(ex.Message)

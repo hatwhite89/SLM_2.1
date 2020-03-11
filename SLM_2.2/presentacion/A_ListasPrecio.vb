@@ -1,6 +1,5 @@
 ﻿Public Class A_ListasPrecio
 
-
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
 
         importarExcel(dtExcel)
@@ -15,7 +14,7 @@
 
         For fila = 0 To dtExcel.Rows.Count - 2
             Try
-                'Insertar precio
+                'Insertar precio/2
                 With precios
                     .codigoItem_ = Convert.ToInt16(dtExcel.Rows(fila).Cells(0).Value)
                     .codigoListaPrecios_ = Convert.ToInt16(dtExcel.Rows(fila).Cells(1).Value)
@@ -24,7 +23,6 @@
 
                 'Funcion de registro de precio
                 precios.RegistrarNuevoPrecio()
-
 
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -44,6 +42,9 @@
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+
         Me.Close()
+
     End Sub
+
 End Class

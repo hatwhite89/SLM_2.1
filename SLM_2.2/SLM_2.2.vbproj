@@ -160,6 +160,12 @@
     <Compile Include="negocio\ClsUnidad.vb" />
     <Compile Include="negocio\ClsDetallePromociones.vb" />
     <Compile Include="negocio\ModulosVarios.vb" />
+    <Compile Include="presentacion\A_Alertas.Designer.vb">
+      <DependentUpon>A_Alertas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_Alertas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_Consolidacion.Designer.vb">
       <DependentUpon>A_Consolidacion.vb</DependentUpon>
     </Compile>
@@ -814,6 +820,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_Alertas.resx">
+      <DependentUpon>A_Alertas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Consolidacion.resx">
       <DependentUpon>A_Consolidacion.vb</DependentUpon>

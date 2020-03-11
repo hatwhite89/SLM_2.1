@@ -94,7 +94,7 @@ Public Class VistaCheque
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_codFactura() As CrystalDecisions.[Shared].IParameterField
+    Public ReadOnly Property Parameter_numalet() As CrystalDecisions.[Shared].IParameterField
         Get
             Return Me.DataDefinition.ParameterFields(0)
         End Get
@@ -102,7 +102,7 @@ Public Class VistaCheque
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_nroCheque() As CrystalDecisions.[Shared].IParameterField
+    Public ReadOnly Property Parameter_codCheque() As CrystalDecisions.[Shared].IParameterField
         Get
             Return Me.DataDefinition.ParameterFields(1)
         End Get
@@ -110,7 +110,7 @@ Public Class VistaCheque
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_numalet() As CrystalDecisions.[Shared].IParameterField
+    Public ReadOnly Property Parameter_Cheque() As CrystalDecisions.[Shared].IParameterField
         Get
             Return Me.DataDefinition.ParameterFields(2)
         End Get
@@ -118,7 +118,7 @@ Public Class VistaCheque
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_ChequeNumero() As CrystalDecisions.[Shared].IParameterField
+    Public ReadOnly Property Parameter_codFactura() As CrystalDecisions.[Shared].IParameterField
         Get
             Return Me.DataDefinition.ParameterFields(3)
         End Get

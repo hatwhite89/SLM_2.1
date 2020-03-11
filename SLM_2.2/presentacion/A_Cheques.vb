@@ -67,7 +67,6 @@ Public Class A_Cheques
 
                     frmPagos.chkPagado.Checked = True
 
-
                 End With
 
             ElseIf txtMonto.Text = "" Then
@@ -86,6 +85,7 @@ Public Class A_Cheques
         Catch ex As Exception
 
             MsgBox("Error al guardar. Detalle: " + ex.Message)
+
         End Try
 
         ':::::::::::::::::: Registro de Retención ::::::::::::::::::
@@ -100,7 +100,7 @@ Public Class A_Cheques
 
             montop = montop - monto
 
-            frmPagos.dtDetallePagos.Rows.Add(" ", frmPagos.dtDetallePagos.Rows(0).Cells(1).Value, frmPagos.dtDetallePagos.Rows(0).Cells(2).Value, montop, "", "")
+            frmPagos.dtDetallePagos.Rows.Add(" ", frmPagos.dtDetallePagos.Rows(0).Cells(1).Value, frmPagos.dtDetallePagos.Rows(0).Cells(2).Value, montop, " ", " ")
 
             resultado = Convert.ToDouble(frmPagos.dtDetallePagos.Rows(0).Cells(3).Value) - montop
 
@@ -111,7 +111,9 @@ Public Class A_Cheques
 
     End Sub
     Private Sub txtcodProvee_DoubleClick(sender As Object, e As EventArgs) Handles txtcodProvee.DoubleClick
+
         A_ListarProveedores.ShowDialog()
+
     End Sub
     Private Sub lblEstado_TextChanged(sender As Object, e As EventArgs) Handles lblEstado.TextChanged
 
@@ -265,31 +267,9 @@ Public Class A_Cheques
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
 
-        Try
-            Dim nroCheque As String
-            Dim codFactura As Integer
-            Dim objVistaCheque As New VistaCheque
 
-            nroCheque = txtNroCheq.Text
+        A_PrintCheque.Show()
 
-            codFactura = Convert.ToInt32(frmPagos.dtDetallePagos.Rows(0).Cells(0).Value)
-
-            objVistaCheque.SetParameterValue("@nroCheque", nroCheque)
-            objVistaCheque.SetParameterValue("@codFactura", codFactura)
-            objVistaCheque.SetParameterValue("numalet", letras)
-            objVistaCheque.SetParameterValue("ChequeNumero", nroCheque)
-
-            objVistaCheque.SetDatabaseLogon("sa", "Lbm2019")
-
-            A_PrintCheque.crvImprimirCheque.ReportSource = objVistaCheque
-
-            A_PrintCheque.crvImprimirCheque.ParameterFieldInfo.Clear()
-
-            A_PrintCheque.Show()
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
 
     End Sub
 
@@ -682,28 +662,6 @@ Public Class A_Cheques
 
             End If
 
-            'Numeros y comas'
-
-            If (txtMonto.Text) Then
-
-
-
-
-
-
-
-
-
-
-
-
-
-            End If
-
-
-
-
-
         Catch ex As Exception
 
         End Try
@@ -714,15 +672,12 @@ Public Class A_Cheques
 
         'Cambio de color
         txtcodProvee.BackColor = Color.White
+        If txtcodProvee.Text = "" Then
 
-        Try
+            txtNombreProvee.Text = ""
 
-            If txtcodProvee.Text = "" Then
-
-                txtNombreProvee.Text = ""
-
-            Else
-
+        Else
+            Try
                 'Busqueda de proveedor
                 Dim proveedor As New ClsProveedor
                 Dim dt As DataTable
@@ -735,14 +690,43 @@ Public Class A_Cheques
 
                 txtNombreProvee.Text = row("nombreProveedor")
 
+            Catch ex As Exception
 
-            End If
+            End Try
 
-
-        Catch ex As Exception
-            MsgBox("El proveedor no existe.")
-        End Try
+        End If
 
     End Sub
 
+    Private Sub txtMonto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMonto.KeyPress
+        'Numeros y comas'
+
+        NUMEROSCOMA(e, 2, sender)
+
+    End Sub
+
+    Sub Imprimir()
+        Try
+
+            Dim codCheque As Integer
+            Dim codFactura As Integer
+            Dim objVistaCheque As New VistaCheque
+            'objVistaCheque.SetDatabaseLogon("sa", "Lbm2019")
+
+            codCheque = Convert.ToInt32(txtNro.Text)
+
+            codFactura = Convert.ToInt32(frmPagos.dtDetallePagos.Rows(0).Cells(0).Value)
+
+            objVistaCheque.SetParameterValue("@codCheque", codCheque)
+            objVistaCheque.SetParameterValue("@codFactura", codFactura)
+            objVistaCheque.SetParameterValue("numalet", letras)
+            objVistaCheque.SetParameterValue("Cheque", txtNroCheq.Text)
+
+            objVistaCheque.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+            A_PrintCheque.crvImprimirCheque.ReportSource = objVistaCheque
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class
