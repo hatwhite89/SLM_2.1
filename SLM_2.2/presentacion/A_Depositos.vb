@@ -1,11 +1,15 @@
 ﻿Public Class frmDeposito
+
     Dim nuevoDeposito As New ClsDeposito
     Dim buscarCodigo As New ClsFormaPago
     Dim asiento As New ClsAsientoContable
     Dim detalleAsiento As New ClsDetalleAsiento
     Dim periodo As New ClsPeriodoContable
+
     Private Sub CerrarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CerrarToolStripMenuItem1.Click
+
         Me.Close()
+
     End Sub
 
     Private Sub ListarDepositosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarDepositosToolStripMenuItem.Click
@@ -15,6 +19,7 @@
             MsgBox("Debe seleccionar una transacción para ver un asiento contable.")
 
         Else
+
             Try
                 With asiento
 
@@ -509,7 +514,6 @@
             e.Handled = False
         End If
     End Sub
-
 
     Sub Limpiar()
         txtNro.Text = ""

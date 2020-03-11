@@ -1,5 +1,6 @@
 ﻿Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         'Notificación
 
         Dim cai As New ClsCAI
@@ -359,7 +360,6 @@
 
         Apariencia.SkinFile = "C:\Users\Software 3\Source\Repos\hatwhite89\SLM_2.1\SLM_2.2\Themes\Componentes Graficos Vb2\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\Sports\SportsBlue.ssk"
 
-
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnCAI.Click
@@ -381,11 +381,13 @@
     End Sub
 
     Private Sub btnConsolidar_Click(sender As Object, e As EventArgs) Handles btnConsolidar.Click
+
         Try
 
             A_Consolidacion.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario. Error: " + ex.Message)
         End Try
+
     End Sub
 End Class
