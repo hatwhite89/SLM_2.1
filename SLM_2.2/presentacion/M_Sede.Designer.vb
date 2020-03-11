@@ -51,6 +51,7 @@ Partial Class M_Sede
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnombreB = New System.Windows.Forms.Label()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,6 +59,7 @@ Partial Class M_Sede
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.lblform)
         Me.GroupBox1.Controls.Add(Me.btnmodificar)
         Me.GroupBox1.Controls.Add(Me.btnnuevo)
         Me.GroupBox1.Controls.Add(Me.btncancelar)
@@ -373,6 +375,16 @@ Partial Class M_Sede
         Me.lblnombreB.TabIndex = 114
         Me.lblnombreB.Text = "Nombre"
         '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(366, 22)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(51, 17)
+        Me.lblform.TabIndex = 140
+        Me.lblform.Text = "Label1"
+        Me.lblform.Visible = False
+        '
         'M_Sede
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -422,4 +434,5 @@ Partial Class M_Sede
     Friend WithEvents lbltotal As Label
     Friend WithEvents txtnombreB As TextBox
     Friend WithEvents lblnombreB As Label
+    Friend WithEvents lblform As Label
 End Class

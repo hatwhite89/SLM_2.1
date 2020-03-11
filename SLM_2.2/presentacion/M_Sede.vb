@@ -212,14 +212,16 @@
     Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
         Try
             Dim n As String = ""
-            If e.RowIndex >= 0 Then
-                n = MsgBox("¿Desea utilizar la sede en la factura?", MsgBoxStyle.YesNo)
-            End If
-            If n = vbYes Then
-                'M_Factura.txtcodigoMedico.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-                M_Factura.txtcodigoSede.Text = txtcodigo.Text
-                M_Factura.txtnombreSede.Text = txtnombre.Text
-                Me.Close()
+            If (lblform.Text = "factura") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar la sede en la factura?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    'M_Factura.txtcodigoMedico.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_Factura.txtcodigoSede.Text = txtcodigo.Text
+                    M_Factura.txtnombreSede.Text = txtnombre.Text
+                    Me.Close()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)

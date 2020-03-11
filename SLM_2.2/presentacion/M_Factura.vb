@@ -270,6 +270,7 @@ Public Class M_Factura
         End If
     End Sub
     Private Sub btnbuscarSede_Click(sender As Object, e As EventArgs) Handles btnbuscarSede.Click
+        M_Sede.lblform.Text = "factura"
         M_Sede.ShowDialog()
     End Sub
     Private Sub txtcodigoSucursal_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoSucursal.TextChanged
@@ -298,6 +299,7 @@ Public Class M_Factura
         End If
     End Sub
     Private Sub btnbuscarSucursal_Click(sender As Object, e As EventArgs) Handles btnbuscarSucursal.Click
+        M_Sucursal.lblform.Text = "factura"
         M_Sucursal.ShowDialog()
     End Sub
     Private Sub txtcodigoTerminosPago_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoTerminosPago.TextChanged
@@ -530,7 +532,7 @@ Public Class M_Factura
 
                         M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
                     Else 'muestro el mensaje de error
-                        MsgBox("El examen ya a sido agregado.")
+                        MsgBox("El examen ya a sido agregado.", MsgBoxStyle.Information)
                         dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
                     End If
 
@@ -641,7 +643,7 @@ Public Class M_Factura
                     Dim objDetCAI As New ClsDetalleCAI
                     objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
                     If objDetCAI.ModificarDetalleCAI() <> 1 Then
-                        MsgBox("Error en la actualización del detalle del CAI.")
+                        MsgBox("Error en la actualización del detalle del CAI.", MsgBoxStyle.Critical)
                         Exit Sub
                     End If
                 End If
@@ -697,10 +699,10 @@ Public Class M_Factura
                             .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
                         End With
                         If objDetalleFact.RegistrarNuevoDetalleFactura() = 0 Then
-                            MsgBox("Error al querer insertar el detalle de factura.")
+                            MsgBox("Error al querer insertar el detalle de factura.", MsgBoxStyle.Critical)
                         End If
                     Next
-                    MsgBox("Registrada la factura correctamente.")
+                    MsgBox("Registrada la factura correctamente.", MsgBoxStyle.Information)
 
                     'temporal
                     Dim objDetFact As New ClsDetalleFactura
@@ -786,10 +788,10 @@ Public Class M_Factura
                             .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
                         End With
                         If objCotFact.RegistrarNuevaCotizacionFactura() = 0 Then
-                            MsgBox("Error al querer insertar el detalle de la cotización.")
+                            MsgBox("Error al querer insertar el detalle de la cotización.", MsgBoxStyle.Critical)
                         End If
                     Next
-                    MsgBox("Registrada la cotización correctamente.")
+                    MsgBox("Registrada la cotización correctamente.", MsgBoxStyle.Information)
                     letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
 
                 Else
@@ -798,7 +800,7 @@ Public Class M_Factura
                 M_BuscarCotizacion.actualizarCotizacion()
                 Imprimir_Cotizacion()
             Else
-                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Information, "Validación")
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -837,7 +839,7 @@ Public Class M_Factura
                     objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
                     'SI SE LOGRO HACER LA MODIFICACION DEL ESTADO DEL CAI 
                     If objDetCAI.ModificarDetalleCAI() <> 1 Then
-                        MsgBox("Error en la actualización del detalle del CAI.")
+                        MsgBox("Error en la actualización del detalle del CAI.", MsgBoxStyle.Critical)
                         Exit Sub
                     End If
                 End If
@@ -878,7 +880,7 @@ Public Class M_Factura
                                         .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
                                     End With
                                     If objDetFac.RegistrarNuevoDetalleFactura() = 0 Then
-                                        MsgBox("Error al querer insertar el detalle de factura.")
+                                        MsgBox("Error al querer insertar el detalle de factura.", MsgBoxStyle.Critical)
                                     End If
                                 Else
                                     'actualiza los detalles de factura
@@ -892,7 +894,7 @@ Public Class M_Factura
                                         .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
                                     End With
                                     If objDetFac.ModificarDetalleFactura() = 0 Then
-                                        MsgBox("Error al querer modificar el detalle de factura.")
+                                        MsgBox("Error al querer modificar el detalle de factura.", MsgBoxStyle.Critical)
                                     End If
                                 End If
                             Next
@@ -903,7 +905,7 @@ Public Class M_Factura
                             For index As Integer = 0 To codigoDetalleFactura.Count - 1
                                 objDetFac.numero_ = Convert.ToInt64(codigoDetalleFactura(index))
                                 If objDetFac.EliminarDetalleFactura() <> 1 Then
-                                    MsgBox("Error al querer modificar el detalle de factura.")
+                                    MsgBox("Error al querer modificar el detalle de factura.", MsgBoxStyle.Critical)
                                 End If
                             Next
                             'MsgBox("Antes de limpiar el arraylist")
@@ -912,7 +914,7 @@ Public Class M_Factura
                         deshabilitar()
                         btnActualizar.Enabled = True
 
-                        MsgBox("Actualizada la factura correctamente.")
+                        MsgBox("Actualizada la factura correctamente.", MsgBoxStyle.Information)
 
 
 
@@ -955,7 +957,7 @@ Public Class M_Factura
                         .total_ = Convert.ToDouble(txttotal.Text)
                     End With
                     'MODIFICO LOS DATOS DE LA FACTURA
-                    MsgBox("antes de modificar los datos de la factura.", MsgBoxStyle.MsgBoxHelp)
+                    'MsgBox("antes de modificar los datos de la factura.", MsgBoxStyle.MsgBoxHelp)
                     If objFact.ModificarFactura() = 1 Then
                         deshabilitar()
                         btnActualizar.Enabled = True
@@ -975,7 +977,7 @@ Public Class M_Factura
                 End If
 
             Else
-                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Information, "Validación")
             End If
             M_BuscarFactura.seleccionarFacturas()
         Catch ex As Exception
@@ -1229,8 +1231,9 @@ Public Class M_Factura
                         .pmFecha_ = dtpfechaFactura.Value
                         .pmUsuario_ = txtcodigoCajero.Text
                         .cod_grupo_ = Convert.ToInt64(row("grupo"))
+                        .estado_ = "No procesado"
                         If .RegistrarOrdenDeTrabajo() = 0 Then
-                            MsgBox("Error al querer insertar la orden de trabajo.", MsgBoxStyle.Information)
+                            MsgBox("Error al querer insertar la orden de trabajo.", MsgBoxStyle.Critical)
                             Exit Sub
                         End If
                         dtO = .CapturarOrdenDeTrabajo()
@@ -1249,7 +1252,7 @@ Public Class M_Factura
                                     .cod_item_examen_detalle_ = rowI("codigo")
                                 End With
                                 If objDetOrd.RegistrarNuevoDetalleOrdenTrabajo = 0 Then
-                                    MsgBox("Error en la insercion del detalle orden de trabajo.", MsgBoxStyle.Information)
+                                    MsgBox("Error en la insercion del detalle orden de trabajo.", MsgBoxStyle.Critical)
                                     Exit Sub
                                 End If
                                 'MsgBox("i=" & i & "    j=" & j & "  x=" & x & "         " & dt.Rows.Count)
@@ -1319,6 +1322,13 @@ Public Class M_Factura
         Catch ex As Exception
         End Try
     End Sub
+
+    Private Sub BuscarExamenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscarExamenToolStripMenuItem.Click
+        If btnbusquedaExamen.Enabled Then
+            M_BuscarExamen.ShowDialog()
+        End If
+    End Sub
+
     Private Sub calcularDescuento()
         Dim dt As New DataTable
         Dim row As DataRow

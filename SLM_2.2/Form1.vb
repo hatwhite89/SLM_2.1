@@ -332,10 +332,12 @@
     End Sub
 
     Private Sub btnSede_Click(sender As Object, e As EventArgs) Handles btnSede.Click
+        M_Sede.lblform.Text = "Sede"
         M_Sede.ShowDialog()
     End Sub
 
     Private Sub btnSucursal_Click(sender As Object, e As EventArgs) Handles btnSucursal.Click
+        M_Sucursal.lblform.Text = "Sucursal"
         M_Sucursal.ShowDialog()
     End Sub
 
