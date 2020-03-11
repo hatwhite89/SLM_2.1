@@ -359,10 +359,12 @@
 
         Apariencia.SkinFile = "C:\Users\Software 3\Source\Repos\hatwhite89\SLM_2.1\SLM_2.2\Themes\Componentes Graficos Vb2\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\Sports\SportsBlue.ssk"
 
+
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnCAI.Click
         Try
+
             M_CAI.Show()
 
         Catch ex As Exception

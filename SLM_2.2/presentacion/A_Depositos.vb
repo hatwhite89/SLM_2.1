@@ -303,7 +303,7 @@
             ElseIf txtBanco.Text = txtTipoConta.Text Then
                 MsgBox("Las cuentas seleccionadas no pueden ser iguales.")
                 txtBanco.BackColor = Color.Red
-                txtContado.BackColor = Color.Red
+                txtTipoConta.BackColor = Color.Red
             End If
 
         End If
@@ -579,5 +579,11 @@
 
         End Try
 
+    End Sub
+
+    Private Sub txtCajero_TextChanged(sender As Object, e As EventArgs) Handles txtCajero.TextChanged
+        If txtCajero.BackColor = Color.Red Then
+            txtCajero.BackColor = Color.White
+        End If
     End Sub
 End Class

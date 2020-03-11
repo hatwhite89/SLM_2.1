@@ -30,6 +30,7 @@ Partial Class A_PrintCheque
         Me.crvImprimirCheque.ActiveViewIndex = -1
         Me.crvImprimirCheque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.crvImprimirCheque.Cursor = System.Windows.Forms.Cursors.Default
+        Me.crvImprimirCheque.DisplayStatusBar = False
         Me.crvImprimirCheque.Dock = System.Windows.Forms.DockStyle.Fill
         Me.crvImprimirCheque.Location = New System.Drawing.Point(0, 0)
         Me.crvImprimirCheque.Name = "crvImprimirCheque"

@@ -60,6 +60,7 @@ Partial Class frmDeposito
         Me.btnBuscarBanco = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.rbtnFormaP = New System.Windows.Forms.RadioButton()
         Me.rbtnTipo = New System.Windows.Forms.RadioButton()
         Me.rbtnID = New System.Windows.Forms.RadioButton()
@@ -68,7 +69,6 @@ Partial Class frmDeposito
         Me.cbxTipo = New System.Windows.Forms.ComboBox()
         Me.dtDepositos = New System.Windows.Forms.DataGridView()
         Me.txtID = New System.Windows.Forms.TextBox()
-        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxInfoDepo.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -448,6 +448,15 @@ Partial Class frmDeposito
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Depositos"
         '
+        'btnCancelar
+        '
+        Me.btnCancelar.Location = New System.Drawing.Point(385, 58)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.TabIndex = 23
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
         'rbtnFormaP
         '
         Me.rbtnFormaP.AutoSize = True
@@ -532,15 +541,6 @@ Partial Class frmDeposito
         Me.txtID.Size = New System.Drawing.Size(80, 20)
         Me.txtID.TabIndex = 13
         Me.txtID.Visible = False
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.Location = New System.Drawing.Point(385, 58)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar.TabIndex = 23
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'frmDeposito
         '

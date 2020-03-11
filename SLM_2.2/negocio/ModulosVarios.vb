@@ -8,7 +8,7 @@ Imports Microsoft.VisualBasic
 
 Module ModulosVarios
 
-    ':::::::::::::::::::::::: Importar Excel ::::::::::::::::::::::::
+    '::::::::::::::::::::::::::::: Importar Excel ::::::::::::::::::::::::
     Sub importarExcel(ByVal tabla As DataGridView)
         Dim myFileDialog As New OpenFileDialog()
         Dim xSheet As String = ""
@@ -52,11 +52,81 @@ Module ModulosVarios
             MsgBox("Se ha cargado la importación correctamente. ", MsgBoxStyle.Information, "Importado con exito")
 
         Else
+
             MsgBox("No se logro la importación.")
+
         End If
 
     End Sub
 
-    '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    '::::::::::::::::::::::::::::::::::::::::::::::::::::Final Importar Excel
+
+    '::::::::::::::::::::::::::::: Numeros y Comas :::::::::::::::::::::::::::
+
+    Public CODIGOSEPARADOR As Char = System.Globalization.CultureInfo.CurrentUICulture.NumberFormat.CurrencyDecimalSeparator
+
+
+    Sub NUMEROSCOMA(EV As KeyPressEventArgs, DECIMALES As Integer, TXB As TextBox)
+
+        'PALNUMEROS(e, 2, sender)
+        'El 2 es la cantidad de decimales 
+
+        If DECIMALES < 0 Then DECIMALES = 0
+
+        If EV.KeyChar = Convert.ToChar(Keys.Return) Then
+            EV.Handled = True
+            TXB.Focus()
+        ElseIf EV.KeyChar = ","c Then
+            If (TXB.Text.IndexOf(","c) >= 0) Or (DECIMALES = 0) Then
+                EV.Handled = True
+            Else
+                EV.KeyChar = CODIGOSEPARADOR  REM","c
+            End If
+        ElseIf EV.KeyChar = "-"c And TXB.TextLength = 0 Then
+            EV.KeyChar = "-"c
+        ElseIf TXB.Text.IndexOf(","c) > 0 Then
+            If (TXB.Text.Length - TXB.Text.IndexOf(","c) > DECIMALES) And (TXB.SelectionStart > TXB.Text.IndexOf(","c)) And (Not (Char.IsControl(EV.KeyChar))) Then
+                EV.Handled = True
+            End If
+        ElseIf Not (Char.IsControl(EV.KeyChar) Or Char.IsDigit(EV.KeyChar)) Then
+            EV.Handled = True
+        End If
+    End Sub
+
+    ':::::::::::::::::::::::::::::::::::::::::::::::::::::Final Numeros y Comas
+
+
+    '::::::::::::::::::::::::::::: Numeros y Puntos :::::::::::::::::::::::::::
+
+    Public CODIGOSEPARA As Char = System.Globalization.CultureInfo.CurrentUICulture.NumberFormat.CurrencyDecimalSeparator
+
+    Sub NUMEROSPUNTO(EV As KeyPressEventArgs, DECIMALES As Integer, TXB As TextBox)
+
+        'PALNUMEROS(e, 2, sender)
+        'El 2 es la cantidad de decimales 
+
+        If DECIMALES < 0 Then DECIMALES = 0
+
+        If EV.KeyChar = Convert.ToChar(Keys.Return) Then
+            EV.Handled = True
+            TXB.Focus()
+        ElseIf EV.KeyChar = "."c Then
+            If (TXB.Text.IndexOf(","c) >= 0) Or (DECIMALES = 0) Then
+                EV.Handled = True
+            Else
+                EV.KeyChar = CODIGOSEPARA  REM","c
+            End If
+        ElseIf EV.KeyChar = "-"c And TXB.TextLength = 0 Then
+            EV.KeyChar = "-"c
+        ElseIf TXB.Text.IndexOf(","c) > 0 Then
+            If (TXB.Text.Length - TXB.Text.IndexOf(","c) > DECIMALES) And (TXB.SelectionStart > TXB.Text.IndexOf(","c)) And (Not (Char.IsControl(EV.KeyChar))) Then
+                EV.Handled = True
+            End If
+        ElseIf Not (Char.IsControl(EV.KeyChar) Or Char.IsDigit(EV.KeyChar)) Then
+            EV.Handled = True
+        End If
+    End Sub
+
+    ':::::::::::::::::::::::::::::::::::::::::::::::::::::Final Numeros y Punto
 
 End Module

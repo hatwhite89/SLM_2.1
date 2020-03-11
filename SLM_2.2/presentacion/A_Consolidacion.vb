@@ -17,6 +17,7 @@
 
         End Try
 
+
     End Sub
 
     Private Sub btnConsultar_Click(sender As Object, e As EventArgs) Handles btnConsultar.Click
@@ -52,17 +53,23 @@
 
                         .Banc_o = txtCodBanco.Text
                         dt = .ConciliacionDeposito
-                        dtTransferencia.DataSource = dt
 
-                        'ocultar columnas
-                        dtTransferencia.Columns("banco").Visible = False
-                        dtTransferencia.Columns("contado").Visible = False
-                        dtTransferencia.Columns("TipoContado").Visible = False
-                        dtTransferencia.Columns("moneda").Visible = False
-                        dtTransferencia.Columns("monBase").Visible = False
-                        dtTransferencia.Columns("tipoDeposito").Visible = False
-                        dtTransferencia.Columns("codCajero").Visible = False
-                        dtTransferencia.Columns("codFormaPago").Visible = False
+                        If dt.Rows.Count = Nothing Then
+                            MsgBox("No existen transferencias del banco seleccionado.")
+                        Else
+                            dtTransferencia.DataSource = dt
+
+                            'ocultar columnas
+                            dtTransferencia.Columns("banco").Visible = False
+                            dtTransferencia.Columns("contado").Visible = False
+                            dtTransferencia.Columns("TipoContado").Visible = False
+                            dtTransferencia.Columns("moneda").Visible = False
+                            dtTransferencia.Columns("monBase").Visible = False
+                            dtTransferencia.Columns("tipoDeposito").Visible = False
+                            dtTransferencia.Columns("codCajero").Visible = False
+                            dtTransferencia.Columns("codFormaPago").Visible = False
+
+                        End If
 
                     End With
 
@@ -90,6 +97,7 @@
     End Sub
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+
         limpiar()
 
     End Sub
