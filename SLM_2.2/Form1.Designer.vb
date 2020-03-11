@@ -852,7 +852,7 @@ Partial Class Form1
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(439, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(440, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -1375,13 +1375,13 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(439, 409)
+        Me.ClientSize = New System.Drawing.Size(440, 409)
         Me.Controls.Add(Me.gbxMenu)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.panelMenu)
         Me.Controls.Add(Me.PanelFactura)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.PanelLab)
+        Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
