@@ -51,6 +51,15 @@ Partial Class M_Factura
         Me.btnQuitarPromocion = New System.Windows.Forms.Button()
         Me.btnPromocion = New System.Windows.Forms.Button()
         Me.dgblistadoExamenes = New System.Windows.Forms.DataGridView()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaEntrega = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.grupo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codeDetFact = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblpagoPaciente = New System.Windows.Forms.Label()
         Me.lblvuelto = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
@@ -110,15 +119,7 @@ Partial Class M_Factura
         Me.Button1 = New System.Windows.Forms.Button()
         Me.cbxAnular = New System.Windows.Forms.CheckBox()
         Me.btnImprimir = New System.Windows.Forms.Button()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaEntrega = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.grupo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codeDetFact = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BuscarExamenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbxlistadoExamenes.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -426,6 +427,76 @@ Partial Class M_Factura
         Me.dgblistadoExamenes.Size = New System.Drawing.Size(1061, 158)
         Me.dgblistadoExamenes.TabIndex = 0
         '
+        'codigo
+        '
+        Me.codigo.HeaderText = "Código"
+        Me.codigo.MinimumWidth = 6
+        Me.codigo.Name = "codigo"
+        Me.codigo.Width = 70
+        '
+        'Cantidad
+        '
+        Me.Cantidad.HeaderText = "Cantidad"
+        Me.Cantidad.MinimumWidth = 6
+        Me.Cantidad.Name = "Cantidad"
+        Me.Cantidad.Width = 60
+        '
+        'Precio
+        '
+        Me.Precio.HeaderText = "Precio"
+        Me.Precio.MinimumWidth = 6
+        Me.Precio.Name = "Precio"
+        Me.Precio.ReadOnly = True
+        Me.Precio.Width = 70
+        '
+        'Descripcion
+        '
+        Me.Descripcion.HeaderText = "Descripción"
+        Me.Descripcion.MinimumWidth = 100
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.ReadOnly = True
+        Me.Descripcion.Width = 220
+        '
+        'FechaEntrega
+        '
+        Me.FechaEntrega.HeaderText = "Fecha Entrega"
+        Me.FechaEntrega.MinimumWidth = 6
+        Me.FechaEntrega.Name = "FechaEntrega"
+        Me.FechaEntrega.ReadOnly = True
+        Me.FechaEntrega.Width = 80
+        '
+        'Descuento
+        '
+        Me.Descuento.HeaderText = "Descuento"
+        Me.Descuento.MinimumWidth = 6
+        Me.Descuento.Name = "Descuento"
+        Me.Descuento.ReadOnly = True
+        Me.Descuento.Width = 70
+        '
+        'Subtotal
+        '
+        Me.Subtotal.HeaderText = "Subtotal"
+        Me.Subtotal.MinimumWidth = 6
+        Me.Subtotal.Name = "Subtotal"
+        Me.Subtotal.ReadOnly = True
+        Me.Subtotal.Width = 90
+        '
+        'grupo
+        '
+        Me.grupo.HeaderText = "grupo"
+        Me.grupo.MinimumWidth = 6
+        Me.grupo.Name = "grupo"
+        Me.grupo.Visible = False
+        Me.grupo.Width = 125
+        '
+        'codeDetFact
+        '
+        Me.codeDetFact.HeaderText = "codeDetFact"
+        Me.codeDetFact.MinimumWidth = 6
+        Me.codeDetFact.Name = "codeDetFact"
+        Me.codeDetFact.Visible = False
+        Me.codeDetFact.Width = 125
+        '
         'lblpagoPaciente
         '
         Me.lblpagoPaciente.AutoSize = True
@@ -723,6 +794,7 @@ Partial Class M_Factura
         '
         'RegistroToolStripMenuItem
         '
+        Me.RegistroToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarExamenToolStripMenuItem})
         Me.RegistroToolStripMenuItem.Name = "RegistroToolStripMenuItem"
         Me.RegistroToolStripMenuItem.Size = New System.Drawing.Size(78, 24)
         Me.RegistroToolStripMenuItem.Text = "Registro"
@@ -977,6 +1049,7 @@ Partial Class M_Factura
         Me.lblcodePriceList.Size = New System.Drawing.Size(51, 17)
         Me.lblcodePriceList.TabIndex = 100
         Me.lblcodePriceList.Text = "Label1"
+        Me.lblcodePriceList.Visible = False
         '
         'lblFechaNacimiento
         '
@@ -986,6 +1059,7 @@ Partial Class M_Factura
         Me.lblFechaNacimiento.Size = New System.Drawing.Size(51, 17)
         Me.lblFechaNacimiento.TabIndex = 101
         Me.lblFechaNacimiento.Text = "Label1"
+        Me.lblFechaNacimiento.Visible = False
         '
         'txtEfectivo
         '
@@ -1039,6 +1113,7 @@ Partial Class M_Factura
         Me.Button1.TabIndex = 106
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'cbxAnular
         '
@@ -1059,75 +1134,12 @@ Partial Class M_Factura
         Me.btnImprimir.Text = "Imprimir"
         Me.btnImprimir.UseVisualStyleBackColor = True
         '
-        'codigo
+        'BuscarExamenToolStripMenuItem
         '
-        Me.codigo.HeaderText = "Código"
-        Me.codigo.MinimumWidth = 6
-        Me.codigo.Name = "codigo"
-        Me.codigo.Width = 70
-        '
-        'Cantidad
-        '
-        Me.Cantidad.HeaderText = "Cantidad"
-        Me.Cantidad.MinimumWidth = 6
-        Me.Cantidad.Name = "Cantidad"
-        Me.Cantidad.Width = 60
-        '
-        'Precio
-        '
-        Me.Precio.HeaderText = "Precio"
-        Me.Precio.MinimumWidth = 6
-        Me.Precio.Name = "Precio"
-        Me.Precio.ReadOnly = True
-        Me.Precio.Width = 70
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripción"
-        Me.Descripcion.MinimumWidth = 100
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
-        Me.Descripcion.Width = 220
-        '
-        'FechaEntrega
-        '
-        Me.FechaEntrega.HeaderText = "Fecha Entrega"
-        Me.FechaEntrega.MinimumWidth = 6
-        Me.FechaEntrega.Name = "FechaEntrega"
-        Me.FechaEntrega.ReadOnly = True
-        Me.FechaEntrega.Width = 80
-        '
-        'Descuento
-        '
-        Me.Descuento.HeaderText = "Descuento"
-        Me.Descuento.MinimumWidth = 6
-        Me.Descuento.Name = "Descuento"
-        Me.Descuento.ReadOnly = True
-        Me.Descuento.Width = 70
-        '
-        'Subtotal
-        '
-        Me.Subtotal.HeaderText = "Subtotal"
-        Me.Subtotal.MinimumWidth = 6
-        Me.Subtotal.Name = "Subtotal"
-        Me.Subtotal.ReadOnly = True
-        Me.Subtotal.Width = 90
-        '
-        'grupo
-        '
-        Me.grupo.HeaderText = "grupo"
-        Me.grupo.MinimumWidth = 6
-        Me.grupo.Name = "grupo"
-        Me.grupo.Visible = False
-        Me.grupo.Width = 125
-        '
-        'codeDetFact
-        '
-        Me.codeDetFact.HeaderText = "codeDetFact"
-        Me.codeDetFact.MinimumWidth = 6
-        Me.codeDetFact.Name = "codeDetFact"
-        Me.codeDetFact.Visible = False
-        Me.codeDetFact.Width = 125
+        Me.BuscarExamenToolStripMenuItem.Name = "BuscarExamenToolStripMenuItem"
+        Me.BuscarExamenToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.B), System.Windows.Forms.Keys)
+        Me.BuscarExamenToolStripMenuItem.Size = New System.Drawing.Size(242, 26)
+        Me.BuscarExamenToolStripMenuItem.Text = "Buscar Examen"
         '
         'M_Factura
         '
@@ -1315,4 +1327,5 @@ Partial Class M_Factura
     Friend WithEvents Subtotal As DataGridViewTextBoxColumn
     Friend WithEvents grupo As DataGridViewTextBoxColumn
     Friend WithEvents codeDetFact As DataGridViewTextBoxColumn
+    Friend WithEvents BuscarExamenToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -38,6 +38,7 @@ Partial Class M_Sucursal
         Me.lblnombre = New System.Windows.Forms.Label()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.btnguardar = New System.Windows.Forms.Button()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxsucursal.SuspendLayout()
@@ -108,6 +109,7 @@ Partial Class M_Sucursal
         '
         'gbxsucursal
         '
+        Me.gbxsucursal.Controls.Add(Me.lblform)
         Me.gbxsucursal.Controls.Add(Me.lblcode)
         Me.gbxsucursal.Controls.Add(Me.btnmodificar)
         Me.gbxsucursal.Controls.Add(Me.btncancelar)
@@ -221,6 +223,16 @@ Partial Class M_Sucursal
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
         '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(6, 54)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(51, 17)
+        Me.lblform.TabIndex = 141
+        Me.lblform.Text = "Label1"
+        Me.lblform.Visible = False
+        '
         'M_Sucursal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -259,4 +271,5 @@ Partial Class M_Sucursal
     Friend WithEvents txtnombre As TextBox
     Friend WithEvents btnguardar As Button
     Friend WithEvents lblcode As Label
+    Friend WithEvents lblform As Label
 End Class

@@ -306,6 +306,11 @@ Public Class ClsOrdenDeTrabajo
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = estado_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)

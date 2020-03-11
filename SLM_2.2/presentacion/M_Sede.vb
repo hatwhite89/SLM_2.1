@@ -190,8 +190,8 @@
             txtcorreo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(7).Value()
             txttelefono.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(8).Value()
 
-            M_Factura.txtcodigoSede.Text = txtcodigo.Text
-            M_Factura.txtnombreSede.Text = txtnombre.Text
+            'M_Factura.txtcodigoSede.Text = txtcodigo.Text
+            'M_Factura.txtnombreSede.Text = txtnombre.Text
 
             btnmodificar.Enabled = True
             btnguardar.Enabled = False
@@ -207,6 +207,24 @@
             txtcontacto.ReadOnly = False
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+    Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
+        Try
+            Dim n As String = ""
+            If (lblform.Text = "factura") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar la sede en la factura?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    'M_Factura.txtcodigoMedico.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_Factura.txtcodigoSede.Text = txtcodigo.Text
+                    M_Factura.txtnombreSede.Text = txtnombre.Text
+                    Me.Close()
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
