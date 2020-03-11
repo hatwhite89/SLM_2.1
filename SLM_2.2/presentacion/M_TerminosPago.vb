@@ -130,6 +130,25 @@
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+    Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
+        Try
+            Dim n As String = ""
+            If (lblform.Text = "factura") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el termino de pago en la factura?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    'M_Factura.txtcodigoMedico.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_Factura.lblcodeTerminoPago.Text = lblcode.Text
+                    M_Factura.txtcodigoTerminosPago.Text = txtcodigo.Text
+                    M_Factura.txtdescripcionTermino.Text = rtxtdescripcion.Text
+                    Me.Close()
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
     Private Sub limpiar()
         txtcodigo.Text() = ""
         rtxtdescripcion.Text() = ""
