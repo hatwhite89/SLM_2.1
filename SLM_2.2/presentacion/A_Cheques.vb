@@ -52,6 +52,7 @@ Public Class A_Cheques
 
                     'Actualizar Cheque
                     .modificarCheque()
+
                     If .modificarCheque = 1 Then
 
                         MsgBox("El cheque se guardo correctamente para su impresión.")
@@ -94,6 +95,7 @@ Public Class A_Cheques
         Dim resultado As Double
 
         monto = Convert.ToDouble(txtMonto.Text)
+
         montop = Convert.ToDouble(frmPagos.dtDetallePagos.Rows(0).Cells(3).Value)
 
         If txtMonto.Text < montop Then

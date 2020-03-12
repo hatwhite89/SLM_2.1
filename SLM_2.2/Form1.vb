@@ -1,5 +1,6 @@
 ﻿Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         'Notificación
 
         Dim cai As New ClsCAI
@@ -12,6 +13,7 @@
         Try
             rowD = dias.Rows(0)
             rowsF = numfact.Rows(0)
+
             If Convert.ToInt32(rowD("diasFaltantes")) < 7 Then
 
                 A_Notificacion.lblMensajeDias.Visible = True
@@ -353,14 +355,13 @@
         PanelLab.Visible = False
     End Sub
 
-    Private Sub btnAcerca_Click(sender As Object, e As EventArgs) Handles btnAcerca.Click
-        MsgBox("Version 0.01")
+    Private Sub btnAcerca_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub SLMSportToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
         Apariencia.SkinFile = "C:\Users\Software 3\Source\Repos\hatwhite89\SLM_2.1\SLM_2.2\Themes\Componentes Graficos Vb2\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\Sports\SportsBlue.ssk"
-
 
     End Sub
 
@@ -383,11 +384,21 @@
     End Sub
 
     Private Sub btnConsolidar_Click(sender As Object, e As EventArgs) Handles btnConsolidar.Click
+
         Try
 
             A_Consolidacion.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario. Error: " + ex.Message)
         End Try
+
+    End Sub
+
+    Private Sub AcercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaDeToolStripMenuItem.Click
+        MsgBox("Version 0.01")
+    End Sub
+
+    Private Sub PictureBox38_Click(sender As Object, e As EventArgs) Handles pbxNoti.Click
+        A_Alertas.Show()
     End Sub
 End Class

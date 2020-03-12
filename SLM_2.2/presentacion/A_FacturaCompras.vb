@@ -68,6 +68,7 @@
 
                     Next
 
+
                     Me.Close()
                     A_ListadoFacturaCompra.Show()
 
@@ -408,12 +409,7 @@
 
         End If
 
-
-
-
     End Sub
-
-
 
     Private Sub dtDetalleFactura_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellClick
         If e.ColumnIndex = 6 Then
@@ -428,4 +424,5 @@
             End Try
         End If
     End Sub
+
 End Class
