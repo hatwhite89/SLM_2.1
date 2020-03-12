@@ -43,7 +43,7 @@ Public Class A_Notificacion
 
                 .nombreAlerta_ = nombre
                 .descripcion_ = descripcion
-                .estado_ = 1
+                .estado_ = 0
 
                 .registrarNotificacion()
 

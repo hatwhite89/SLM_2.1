@@ -42,10 +42,12 @@ Partial Class A_Alertas
         '
         'dtNotificaciones
         '
+        Me.dtNotificaciones.AllowUserToAddRows = False
         Me.dtNotificaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtNotificaciones.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtNotificaciones.Location = New System.Drawing.Point(3, 16)
         Me.dtNotificaciones.Name = "dtNotificaciones"
+        Me.dtNotificaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtNotificaciones.Size = New System.Drawing.Size(554, 222)
         Me.dtNotificaciones.TabIndex = 0
         '
@@ -77,7 +79,8 @@ Partial Class A_Alertas
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "A_Alertas"
-        Me.Text = "A_Alertas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Notificaciones del Sistema"
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dtNotificaciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -168,6 +168,12 @@
     <Compile Include="presentacion\A_Alertas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_Bitacora.Designer.vb">
+      <DependentUpon>A_Bitacora.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_Bitacora.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_Consolidacion.Designer.vb">
       <DependentUpon>A_Consolidacion.vb</DependentUpon>
     </Compile>
@@ -831,6 +837,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Alertas.resx">
       <DependentUpon>A_Alertas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_Bitacora.resx">
+      <DependentUpon>A_Bitacora.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Consolidacion.resx">
       <DependentUpon>A_Consolidacion.vb</DependentUpon>
