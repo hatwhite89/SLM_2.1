@@ -26,6 +26,7 @@ Partial Class Form1
         Me.btnContabilidad = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.gbxMenu = New System.Windows.Forms.GroupBox()
+        Me.pbxNoti = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnFacturacion = New System.Windows.Forms.Button()
         Me.btnlaboratorio = New System.Windows.Forms.Button()
@@ -79,6 +80,7 @@ Partial Class Form1
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelFactura = New System.Windows.Forms.Panel()
         Me.Button11 = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -124,10 +126,9 @@ Partial Class Form1
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.PictureBox26 = New System.Windows.Forms.PictureBox()
         Me.btnMedico = New System.Windows.Forms.Button()
-        Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.pbxNoti = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxMenu.SuspendLayout()
+        CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
         Me.tcMenu.SuspendLayout()
         Me.tpCheque.SuspendLayout()
@@ -181,7 +182,6 @@ Partial Class Form1
         CType(Me.PictureBox24, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
         CType(Me.PictureBox26, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -223,6 +223,17 @@ Partial Class Form1
         Me.gbxMenu.TabIndex = 3
         Me.gbxMenu.TabStop = False
         Me.gbxMenu.Text = "Opciones"
+        '
+        'pbxNoti
+        '
+        Me.pbxNoti.Image = CType(resources.GetObject("pbxNoti.Image"), System.Drawing.Image)
+        Me.pbxNoti.Location = New System.Drawing.Point(66, 348)
+        Me.pbxNoti.Name = "pbxNoti"
+        Me.pbxNoti.Size = New System.Drawing.Size(29, 27)
+        Me.pbxNoti.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbxNoti.TabIndex = 7
+        Me.pbxNoti.TabStop = False
+        Me.pbxNoti.Visible = False
         '
         'Button1
         '
@@ -841,7 +852,7 @@ Partial Class Form1
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(579, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(441, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -855,8 +866,14 @@ Partial Class Form1
         'CerrarToolStripMenuItem
         '
         Me.CerrarToolStripMenuItem.Name = "CerrarToolStripMenuItem"
-        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.CerrarToolStripMenuItem.Text = "Cerrar"
+        '
+        'AcercaDeToolStripMenuItem
+        '
+        Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
         '
         'PanelFactura
         '
@@ -1358,30 +1375,13 @@ Partial Class Form1
         Me.btnMedico.Text = "Médicos"
         Me.btnMedico.UseVisualStyleBackColor = True
         '
-        'AcercaDeToolStripMenuItem
-        '
-        Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
-        '
-        'pbxNoti
-        '
-        Me.pbxNoti.Image = CType(resources.GetObject("pbxNoti.Image"), System.Drawing.Image)
-        Me.pbxNoti.Location = New System.Drawing.Point(66, 348)
-        Me.pbxNoti.Name = "pbxNoti"
-        Me.pbxNoti.Size = New System.Drawing.Size(29, 27)
-        Me.pbxNoti.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbxNoti.TabIndex = 7
-        Me.pbxNoti.TabStop = False
-        Me.pbxNoti.Visible = False
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(579, 409)
+        Me.ClientSize = New System.Drawing.Size(441, 409)
         Me.Controls.Add(Me.gbxMenu)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.panelMenu)
@@ -1396,6 +1396,7 @@ Partial Class Form1
         Me.Text = " Sistema Laboratorios Médicos"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbxMenu.ResumeLayout(False)
+        CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelMenu.ResumeLayout(False)
         Me.tcMenu.ResumeLayout(False)
         Me.tpCheque.ResumeLayout(False)
@@ -1450,7 +1451,6 @@ Partial Class Form1
         CType(Me.PictureBox24, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage5.ResumeLayout(False)
         CType(Me.PictureBox26, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
