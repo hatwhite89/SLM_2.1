@@ -732,6 +732,18 @@ Public Class M_Factura
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
             M_BuscarFactura.seleccionarFacturas()
+
+            '::::::::::::::::::::::::::::::::::::::::::::: INSERTAR BITACORA ::::::::::::::::::::::
+            Dim Bitacora As New ClsBitacora
+
+            With Bitacora
+                .usuario_ = txtcodigoCajero.Text
+                .accion_ = "Creacion de Factura"
+                .fecha_ = dtpfechaFactura.Value()
+                .registrarBitacora()
+            End With
+            '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try

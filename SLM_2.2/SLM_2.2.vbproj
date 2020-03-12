@@ -130,6 +130,7 @@
     <Compile Include="negocio\ClsAreaLaboratorio.vb" />
     <Compile Include="negocio\ClsArqueos.vb" />
     <Compile Include="negocio\ClsAsientoContable.vb" />
+    <Compile Include="negocio\ClsBitacora.vb" />
     <Compile Include="negocio\ClsCAI.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
     <Compile Include="negocio\ClsDescuentos.vb" />

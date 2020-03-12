@@ -23,14 +23,14 @@ Partial Class A_Bitacora
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxBitacora = New System.Windows.Forms.GroupBox()
-        Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtUsuario = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtUsuario = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.dtBitacora = New System.Windows.Forms.DataGridView()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.gbxBitacora.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtBitacora, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbxBitacora
@@ -39,7 +39,7 @@ Partial Class A_Bitacora
         Me.gbxBitacora.Controls.Add(Me.Label2)
         Me.gbxBitacora.Controls.Add(Me.txtUsuario)
         Me.gbxBitacora.Controls.Add(Me.Label1)
-        Me.gbxBitacora.Controls.Add(Me.DataGridView1)
+        Me.gbxBitacora.Controls.Add(Me.dtBitacora)
         Me.gbxBitacora.Location = New System.Drawing.Point(12, 12)
         Me.gbxBitacora.Name = "gbxBitacora"
         Me.gbxBitacora.Size = New System.Drawing.Size(513, 517)
@@ -47,38 +47,13 @@ Partial Class A_Bitacora
         Me.gbxBitacora.TabStop = False
         Me.gbxBitacora.Text = "Registros"
         '
-        'btnCerrar
+        'DateTimePicker1
         '
-        Me.btnCerrar.Location = New System.Drawing.Point(450, 535)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCerrar.TabIndex = 1
-        Me.btnCerrar.Text = "Cerrar"
-        Me.btnCerrar.UseVisualStyleBackColor = True
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 53)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(501, 458)
-        Me.DataGridView1.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(10, 25)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(49, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Usuario: "
-        '
-        'txtUsuario
-        '
-        Me.txtUsuario.Location = New System.Drawing.Point(63, 22)
-        Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(129, 20)
-        Me.txtUsuario.TabIndex = 2
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(250, 22)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(129, 20)
+        Me.DateTimePicker1.TabIndex = 4
         '
         'Label2
         '
@@ -89,13 +64,38 @@ Partial Class A_Bitacora
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Fecha: "
         '
-        'DateTimePicker1
+        'txtUsuario
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(250, 22)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(129, 20)
-        Me.DateTimePicker1.TabIndex = 4
+        Me.txtUsuario.Location = New System.Drawing.Point(63, 22)
+        Me.txtUsuario.Name = "txtUsuario"
+        Me.txtUsuario.Size = New System.Drawing.Size(129, 20)
+        Me.txtUsuario.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(10, 25)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(49, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Usuario: "
+        '
+        'dtBitacora
+        '
+        Me.dtBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtBitacora.Location = New System.Drawing.Point(6, 53)
+        Me.dtBitacora.Name = "dtBitacora"
+        Me.dtBitacora.Size = New System.Drawing.Size(501, 458)
+        Me.dtBitacora.TabIndex = 0
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.Location = New System.Drawing.Point(450, 535)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCerrar.TabIndex = 1
+        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = True
         '
         'A_Bitacora
         '
@@ -108,13 +108,13 @@ Partial Class A_Bitacora
         Me.Text = "Bitácora"
         Me.gbxBitacora.ResumeLayout(False)
         Me.gbxBitacora.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtBitacora, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents gbxBitacora As GroupBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dtBitacora As DataGridView
     Friend WithEvents btnCerrar As Button
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label2 As Label
