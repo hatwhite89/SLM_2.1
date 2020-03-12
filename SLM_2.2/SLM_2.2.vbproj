@@ -130,6 +130,7 @@
     <Compile Include="negocio\ClsAreaLaboratorio.vb" />
     <Compile Include="negocio\ClsArqueos.vb" />
     <Compile Include="negocio\ClsAsientoContable.vb" />
+    <Compile Include="negocio\ClsBitacora.vb" />
     <Compile Include="negocio\ClsCAI.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
     <Compile Include="negocio\ClsDescuentos.vb" />
@@ -166,6 +167,12 @@
       <DependentUpon>A_Alertas.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_Alertas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_Bitacora.Designer.vb">
+      <DependentUpon>A_Bitacora.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_Bitacora.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_Consolidacion.Designer.vb">
@@ -474,6 +481,12 @@
       <DependentUpon>E_Unidad.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\E_Unidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_Usuarios.Designer.vb">
+      <DependentUpon>E_Usuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_Usuarios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\Form2.Designer.vb">
@@ -826,6 +839,9 @@
     <EmbeddedResource Include="presentacion\A_Alertas.resx">
       <DependentUpon>A_Alertas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_Bitacora.resx">
+      <DependentUpon>A_Bitacora.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Consolidacion.resx">
       <DependentUpon>A_Consolidacion.vb</DependentUpon>
     </EmbeddedResource>
@@ -969,6 +985,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_Unidad.resx">
       <DependentUpon>E_Unidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_Usuarios.resx">
+      <DependentUpon>E_Usuarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Arqueos.resx">
       <DependentUpon>M_Arqueos.vb</DependentUpon>

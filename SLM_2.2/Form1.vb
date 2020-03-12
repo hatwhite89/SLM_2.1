@@ -102,9 +102,9 @@
 
     End Sub
 
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs)
 
-        panelMenu.Visible = False
+
 
     End Sub
 
@@ -400,5 +400,17 @@
 
     Private Sub PictureBox38_Click(sender As Object, e As EventArgs) Handles pbxNoti.Click
         A_Alertas.Show()
+    End Sub
+
+    Private Sub panelMenu_Paint(sender As Object, e As PaintEventArgs) Handles panelMenu.Paint
+
+    End Sub
+
+    Private Sub ToolStripStatusLabel1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+        panelMenu.Visible = False
     End Sub
 End Class
