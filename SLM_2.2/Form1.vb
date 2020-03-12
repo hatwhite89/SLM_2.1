@@ -388,6 +388,7 @@
         Try
 
             A_Consolidacion.Show()
+
         Catch ex As Exception
             MsgBox("Error al abrir el formulario. Error: " + ex.Message)
         End Try
@@ -413,4 +414,5 @@
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
         panelMenu.Visible = False
     End Sub
+
 End Class
