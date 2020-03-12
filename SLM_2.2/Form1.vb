@@ -13,6 +13,7 @@
         Try
             rowD = dias.Rows(0)
             rowsF = numfact.Rows(0)
+
             If Convert.ToInt32(rowD("diasFaltantes")) < 7 Then
 
                 A_Notificacion.lblMensajeDias.Visible = True
@@ -354,8 +355,8 @@
         PanelLab.Visible = False
     End Sub
 
-    Private Sub btnAcerca_Click(sender As Object, e As EventArgs) Handles btnAcerca.Click
-        MsgBox("Version 0.01")
+    Private Sub btnAcerca_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub SLMSportToolStripMenuItem_Click(sender As Object, e As EventArgs)
@@ -391,5 +392,13 @@
             MsgBox("Error al abrir el formulario. Error: " + ex.Message)
         End Try
 
+    End Sub
+
+    Private Sub AcercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaDeToolStripMenuItem.Click
+        MsgBox("Version 0.01")
+    End Sub
+
+    Private Sub PictureBox38_Click(sender As Object, e As EventArgs) Handles pbxNoti.Click
+        A_Alertas.Show()
     End Sub
 End Class

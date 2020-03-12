@@ -27,7 +27,6 @@ Partial Class Form1
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.gbxMenu = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.btnAcerca = New System.Windows.Forms.Button()
         Me.btnFacturacion = New System.Windows.Forms.Button()
         Me.btnlaboratorio = New System.Windows.Forms.Button()
         Me.panelMenu = New System.Windows.Forms.Panel()
@@ -125,6 +124,8 @@ Partial Class Form1
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.PictureBox26 = New System.Windows.Forms.PictureBox()
         Me.btnMedico = New System.Windows.Forms.Button()
+        Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.pbxNoti = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxMenu.SuspendLayout()
         Me.panelMenu.SuspendLayout()
@@ -180,6 +181,7 @@ Partial Class Form1
         CType(Me.PictureBox24, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
         CType(Me.PictureBox26, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -208,8 +210,8 @@ Partial Class Form1
         'gbxMenu
         '
         Me.gbxMenu.BackColor = System.Drawing.Color.MidnightBlue
+        Me.gbxMenu.Controls.Add(Me.pbxNoti)
         Me.gbxMenu.Controls.Add(Me.Button1)
-        Me.gbxMenu.Controls.Add(Me.btnAcerca)
         Me.gbxMenu.Controls.Add(Me.btnFacturacion)
         Me.gbxMenu.Controls.Add(Me.btnlaboratorio)
         Me.gbxMenu.Controls.Add(Me.btnContabilidad)
@@ -224,25 +226,12 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(13, 309)
+        Me.Button1.Location = New System.Drawing.Point(13, 118)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "noti"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'btnAcerca
-        '
-        Me.btnAcerca.BackColor = System.Drawing.Color.SlateGray
-        Me.btnAcerca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnAcerca.FlatAppearance.BorderSize = 0
-        Me.btnAcerca.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAcerca.Location = New System.Drawing.Point(4, 349)
-        Me.btnAcerca.Name = "btnAcerca"
-        Me.btnAcerca.Size = New System.Drawing.Size(92, 27)
-        Me.btnAcerca.TabIndex = 5
-        Me.btnAcerca.Text = "Acerca de"
-        Me.btnAcerca.UseVisualStyleBackColor = False
         '
         'btnFacturacion
         '
@@ -852,13 +841,13 @@ Partial Class Form1
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(440, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(579, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ArchivoToolStripMenuItem
         '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarToolStripMenuItem})
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
         Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
@@ -866,7 +855,7 @@ Partial Class Form1
         'CerrarToolStripMenuItem
         '
         Me.CerrarToolStripMenuItem.Name = "CerrarToolStripMenuItem"
-        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(106, 22)
+        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CerrarToolStripMenuItem.Text = "Cerrar"
         '
         'PanelFactura
@@ -1369,13 +1358,30 @@ Partial Class Form1
         Me.btnMedico.Text = "Médicos"
         Me.btnMedico.UseVisualStyleBackColor = True
         '
+        'AcercaDeToolStripMenuItem
+        '
+        Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
+        '
+        'pbxNoti
+        '
+        Me.pbxNoti.Image = CType(resources.GetObject("pbxNoti.Image"), System.Drawing.Image)
+        Me.pbxNoti.Location = New System.Drawing.Point(66, 348)
+        Me.pbxNoti.Name = "pbxNoti"
+        Me.pbxNoti.Size = New System.Drawing.Size(29, 27)
+        Me.pbxNoti.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbxNoti.TabIndex = 7
+        Me.pbxNoti.TabStop = False
+        Me.pbxNoti.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(440, 409)
+        Me.ClientSize = New System.Drawing.Size(579, 409)
         Me.Controls.Add(Me.gbxMenu)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.panelMenu)
@@ -1444,6 +1450,7 @@ Partial Class Form1
         CType(Me.PictureBox24, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage5.ResumeLayout(False)
         CType(Me.PictureBox26, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1525,7 +1532,6 @@ Partial Class Form1
     Friend WithEvents TabPage5 As TabPage
     Friend WithEvents btnMedico As Button
     Friend WithEvents Button13 As Button
-    Friend WithEvents btnAcerca As Button
     Friend WithEvents PictureBox19 As PictureBox
     Friend WithEvents PictureBox18 As PictureBox
     Friend WithEvents PictureBox23 As PictureBox
@@ -1551,4 +1557,6 @@ Partial Class Form1
     Friend WithEvents PictureBox36 As PictureBox
     Friend WithEvents Button14 As Button
     Friend WithEvents PictureBox37 As PictureBox
+    Friend WithEvents AcercaDeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents pbxNoti As PictureBox
 End Class
