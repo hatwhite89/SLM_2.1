@@ -196,6 +196,7 @@
         Try
 
             A_CategoriaProveedor.Show()
+
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
