@@ -704,19 +704,6 @@ Public Class M_Factura
                     Next
                     MsgBox("Registrada la factura correctamente.", MsgBoxStyle.Information)
 
-                    'temporal
-                    Dim objDetFact As New ClsDetalleFactura
-                    objDetFact.numeroFactura_ = txtnumeroFactura.Text
-                    dt = objDetFact.BuscarDetalleFactura()
-                    For index As Integer = 0 To dt.Rows.Count - 1
-                        row = dt.Rows(index)
-                        dgblistadoExamenes.Rows(index).Cells(8).Value() = CStr(row("numero"))
-                    Next
-
-
-
-
-
                     If (cbxAnular.Checked = False And Trim(txtnumeroOficial.Text) <> "") Then
                         MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
                         letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
@@ -725,6 +712,19 @@ Public Class M_Factura
                     Else
                         HabilitarActualizarFactura()
                     End If
+
+                    If Trim(txtnumeroOficial.Text) <> "" Then
+                        OrdenDeTrabajo()
+                    End If
+
+                    'temporal
+                    Dim objDetFact As New ClsDetalleFactura
+                    objDetFact.numeroFactura_ = txtnumeroFactura.Text
+                    dt = objDetFact.BuscarDetalleFactura()
+                    For index As Integer = 0 To dt.Rows.Count - 1
+                        row = dt.Rows(index)
+                        dgblistadoExamenes.Rows(index).Cells(8).Value() = CStr(row("numero"))
+                    Next
                 Else
                     MsgBox("Error al querer registrar la factura.", MsgBoxStyle.Critical)
                 End If
@@ -917,6 +917,19 @@ Public Class M_Factura
                         MsgBox("Actualizada la factura correctamente.", MsgBoxStyle.Information)
 
 
+                        If (Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False) Then
+                            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
+                            letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
+                            calcularDescuento()
+                            Imprimir_Factura()
+                        Else
+                            HabilitarActualizarFactura()
+                        End If
+
+
+                        If Trim(txtnumeroOficial.Text) <> "" Then
+                            OrdenDeTrabajo()
+                        End If
 
                         'temporal
                         Dim objDetFact As New ClsDetalleFactura
@@ -926,19 +939,10 @@ Public Class M_Factura
                             row = dt.Rows(index)
                             dgblistadoExamenes.Rows(index).Cells(8).Value() = CStr(row("numero"))
                         Next
-
-
-                        If (Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False) Then
-                            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
-                            letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
-                            calcularDescuento()
-                            Imprimir_Factura()
-                        Else
-                            HabilitarActualizarFactura()
-                        End If
                     Else
                         MsgBox("Error al querer actualizar la factura.", MsgBoxStyle.Critical)
                     End If
+
                 Else
 
                     Dim objFact As New ClsFactura
@@ -964,10 +968,10 @@ Public Class M_Factura
 
                         MsgBox("Actualizada la factura correctamente.", MsgBoxStyle.Information)
                         If (Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False) Then
+                            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
                             letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
                             calcularDescuento()
                             Imprimir_Factura()
-                            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
                         Else
                             HabilitarActualizarFactura()
                         End If

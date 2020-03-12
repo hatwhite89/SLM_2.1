@@ -482,6 +482,12 @@
     <Compile Include="presentacion\E_Unidad.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_Usuarios.Designer.vb">
+      <DependentUpon>E_Usuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_Usuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\Form2.Designer.vb">
       <DependentUpon>Form2.vb</DependentUpon>
     </Compile>
@@ -978,6 +984,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_Unidad.resx">
       <DependentUpon>E_Unidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_Usuarios.resx">
+      <DependentUpon>E_Usuarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Arqueos.resx">
       <DependentUpon>M_Arqueos.vb</DependentUpon>
