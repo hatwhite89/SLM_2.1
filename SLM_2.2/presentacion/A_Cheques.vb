@@ -52,6 +52,7 @@ Public Class A_Cheques
 
                     'Actualizar Cheque
                     .modificarCheque()
+
                     If .modificarCheque = 1 Then
 
                         MsgBox("El cheque se guardo correctamente para su impresión.")

@@ -3,6 +3,7 @@
 Public Class A_Notificacion
 
     Dim x As Integer
+    Dim notificacion As New ClsNotificaciones
 
     Private Sub A_Notificacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -26,7 +27,27 @@ Public Class A_Notificacion
 
             lblMensajeFact.Text = "Quedan " & rowsF("disponible") & " facturas disponibles."
 
-            enviarCorreo()
+            'ENVIO DE CORREO CON ALERTA
+            'enviarCorreo()
+
+            Form1.pbxNoti.Visible = True
+
+            'INSERTAR ALERTA EN BD
+            Dim nombre, descripcion As String
+
+            nombre = "Advertencia Factura"
+
+            descripcion = lblMensajeDias.Text + "," + lblMensajeFact.Text
+
+            With notificacion
+
+                .nombreAlerta_ = nombre
+                .descripcion_ = descripcion
+                .estado_ = 1
+
+                .registrarNotificacion()
+
+            End With
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -94,7 +115,7 @@ Public Class A_Notificacion
     End Sub
 
     'Enviar correo Dinamico
-    Private Sub enviarCorreo(correoSalida As String, correoCliente As String, pass As String)
+    Private Sub enviarMail(correoSalida As String, correoCliente As String, pass As String)
 
         'In the shadows of the moon
 
