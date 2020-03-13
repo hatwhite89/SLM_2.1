@@ -703,28 +703,26 @@ Public Class M_Factura
                         End If
                     Next
                     MsgBox("Registrada la factura correctamente.", MsgBoxStyle.Information)
+                    calcularDescuento2(objDetalleFact)
 
                     If (cbxAnular.Checked = False And Trim(txtnumeroOficial.Text) <> "") Then
                         MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
                         letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
-                        calcularDescuento()
                         Imprimir_Factura()
+                        OrdenDeTrabajo()
                     Else
                         HabilitarActualizarFactura()
                     End If
 
-                    If Trim(txtnumeroOficial.Text) <> "" Then
-                        OrdenDeTrabajo()
-                    End If
 
                     'temporal
-                    Dim objDetFact As New ClsDetalleFactura
-                    objDetFact.numeroFactura_ = txtnumeroFactura.Text
-                    dt = objDetFact.BuscarDetalleFactura()
-                    For index As Integer = 0 To dt.Rows.Count - 1
-                        row = dt.Rows(index)
-                        dgblistadoExamenes.Rows(index).Cells(8).Value() = CStr(row("numero"))
-                    Next
+                    'Dim objDetFact As New ClsDetalleFactura
+                    'objDetFact.numeroFactura_ = txtnumeroFactura.Text
+                    'dt = objDetFact.BuscarDetalleFactura()
+                    'For index As Integer = 0 To dt.Rows.Count - 1
+                    '    row = dt.Rows(index)
+                    '    dgblistadoExamenes.Rows(index).Cells(8).Value() = CStr(row("numero"))
+                    'Next
                 Else
                     MsgBox("Error al querer registrar la factura.", MsgBoxStyle.Critical)
                 End If
@@ -732,6 +730,18 @@ Public Class M_Factura
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
             M_BuscarFactura.seleccionarFacturas()
+
+            '::::::::::::::::::::::::::::::::::::::::::::: INSERTAR BITACORA ::::::::::::::::::::::
+            Dim Bitacora As New ClsBitacora
+
+            With Bitacora
+                .usuario_ = txtcodigoCajero.Text
+                .accion_ = "Creacion de Factura"
+                .fecha_ = dtpfechaFactura.Value()
+                .registrarBitacora()
+            End With
+            '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -812,6 +822,7 @@ Public Class M_Factura
             Dim dt As New DataTable
             Dim bandera As Integer = 0
             Dim row As DataRow
+            Dim objDetFac As New ClsDetalleFactura
 
             If Trim(txtnumeroOficial.Text) = "" And cbxAnular.Checked = False Then
                 bandera = 1
@@ -834,7 +845,6 @@ Public Class M_Factura
                     dt = objCAI.BuscarCAI()
                     row = dt.Rows(0)
                     txtnumeroOficial.Text = CStr(row("numeroOficial"))
-                    'MsgBox("Consigo el cai")
                     Dim objDetCAI As New ClsDetalleCAI
                     objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
                     'SI SE LOGRO HACER LA MODIFICACION DEL ESTADO DEL CAI 
@@ -861,13 +871,10 @@ Public Class M_Factura
                         .total_ = Convert.ToDouble(txttotal.Text)
                     End With
                     'MODIFICO LOS DATOS DE LA FACTURA
-                    'MsgBox("antes de modificar los datos de la factura donde eli,mod,insert.", MsgBoxStyle.MsgBoxHelp)
                     If objFact.ModificarFactura() = 1 Then
 
                         'SI LA FACTURA YA TIENE EL (OK) Y NO ESTA ANULADA LA FACTURA (ANULAR)
                         If (cbxAnular.Checked = False) Then
-                            Dim objDetFac As New ClsDetalleFactura
-                            'MsgBox("agregar y actualizar los datos del detalle fatura")
                             For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
                                 If dgblistadoExamenes.Rows(index).Cells(8).Value() = 0 Then
                                     'agrega
@@ -899,8 +906,6 @@ Public Class M_Factura
                                 End If
                             Next
 
-                            'MsgBox("eNTRA EN LA MODIFICACION Y ELIMINACION DEL DETALLE FACTURA --", MsgBoxStyle.MsgBoxHelp)
-                            'MsgBox("eNTRA EN LA MODIFICACION Y ELIMINACION DEL DETALLE FACTURA --" & codigoDetalleFactura.Count, MsgBoxStyle.MsgBoxHelp)
 
                             For index As Integer = 0 To codigoDetalleFactura.Count - 1
                                 objDetFac.numero_ = Convert.ToInt64(codigoDetalleFactura(index))
@@ -908,37 +913,27 @@ Public Class M_Factura
                                     MsgBox("Error al querer modificar el detalle de factura.", MsgBoxStyle.Critical)
                                 End If
                             Next
-                            'MsgBox("Antes de limpiar el arraylist")
                             codigoDetalleFactura.Clear()
                         End If
                         deshabilitar()
                         btnActualizar.Enabled = True
 
                         MsgBox("Actualizada la factura correctamente.", MsgBoxStyle.Information)
+                        calcularDescuento2(objDetFac)
 
 
                         If (Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False) Then
                             MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
                             letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
-                            calcularDescuento()
+                            'calcularDescuento()
+                            'Imprimir_Factura()
                             Imprimir_Factura()
+                            OrdenDeTrabajo()
                         Else
                             HabilitarActualizarFactura()
                         End If
 
 
-                        If Trim(txtnumeroOficial.Text) <> "" Then
-                            OrdenDeTrabajo()
-                        End If
-
-                        'temporal
-                        Dim objDetFact As New ClsDetalleFactura
-                        objDetFact.numeroFactura_ = txtnumeroFactura.Text
-                        dt = objDetFact.BuscarDetalleFactura()
-                        For index As Integer = 0 To dt.Rows.Count - 1
-                            row = dt.Rows(index)
-                            dgblistadoExamenes.Rows(index).Cells(8).Value() = CStr(row("numero"))
-                        Next
                     Else
                         MsgBox("Error al querer actualizar la factura.", MsgBoxStyle.Critical)
                     End If
@@ -961,7 +956,6 @@ Public Class M_Factura
                         .total_ = Convert.ToDouble(txttotal.Text)
                     End With
                     'MODIFICO LOS DATOS DE LA FACTURA
-                    'MsgBox("antes de modificar los datos de la factura.", MsgBoxStyle.MsgBoxHelp)
                     If objFact.ModificarFactura() = 1 Then
                         deshabilitar()
                         btnActualizar.Enabled = True
@@ -1259,7 +1253,6 @@ Public Class M_Factura
                                     MsgBox("Error en la insercion del detalle orden de trabajo.", MsgBoxStyle.Critical)
                                     Exit Sub
                                 End If
-                                'MsgBox("i=" & i & "    j=" & j & "  x=" & x & "         " & dt.Rows.Count)
                             Next
                         ElseIf dt.Rows.Count = i + 1 Then
                             Exit Sub
@@ -1360,13 +1353,33 @@ Public Class M_Factura
         End If
     End Sub
 
-    Private Sub calcularDescuentoDePrecios()
+    Private Sub calcularDescuento2(ByRef objDetFact As ClsDetalleFactura)
+        Dim dt As New DataTable
+        Dim row As DataRow
+        'Dim objDetFact As New ClsDetalleFactura
+        objDetFact.numeroFactura_ = txtnumeroFactura.Text
+        dt = objDetFact.BuscarDetalleFactura()
 
+        subtotalF = 0
+        descuentoF = 0
+        abonoF = 0
+        saldoF = 0
 
+        For index As Integer = 0 To dt.Rows.Count - 1
+            row = dt.Rows(index)
+            subtotalF += Convert.ToDouble(row("precio"))
+            dgblistadoExamenes.Rows(index).Cells(8).Value() = CStr(row("numero"))
+        Next
+        descuentoF = subtotalF - Convert.ToDouble(txttotal.Text)
+
+        If Convert.ToDouble(txtpagoPaciente.Text) > Convert.ToDouble(txttotal.Text) Then
+            abonoF = Convert.ToDouble(txttotal.Text)
+            saldoF = 0
+        Else
+            abonoF = Convert.ToDouble(txtpagoPaciente.Text)
+            saldoF = Convert.ToDouble(txttotal.Text) - abonoF
+        End If
     End Sub
-
-
-
 
     'Convertir numeros a letras para impresión de cheque
     Public NotInheritable Class Numalet
