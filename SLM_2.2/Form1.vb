@@ -38,8 +38,8 @@
     End Sub
     Private Sub btnContabilidad_Click(sender As Object, e As EventArgs) Handles btnContabilidad.Click
 
-        If PanelFactura.Visible = True Or PanelLab.Visible = True Then
-
+        If PanelFactura.Visible = True Or PanelLab.Visible = True Or PanelSistema.Visible = True Then
+            PanelSistema.Visible = False
             PanelFactura.Visible = False
             PanelLab.Visible = False
             panelMenu.Visible = True
@@ -54,10 +54,10 @@
         Try
 
 
-            If PanelFactura.Visible = True Or panelMenu.Visible = True Then
+            If PanelFactura.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Then
                 PanelFactura.Visible = False
                 panelMenu.Visible = False
-
+                PanelSistema.Visible = False
                 PanelLab.Visible = True
             Else
                 PanelLab.Visible = True
@@ -85,10 +85,11 @@
         Try
 
 
-            If panelMenu.Visible = True Or PanelLab.Visible = True Then
+            If panelMenu.Visible = True Or PanelLab.Visible = True Or PanelSistema.Visible = True Then
                 PanelFactura.Visible = True
                 PanelLab.Visible = False
                 panelMenu.Visible = False
+                PanelSistema.Visible = False
             Else
                 PanelFactura.Visible = True
             End If
@@ -416,7 +417,23 @@
         panelMenu.Visible = False
     End Sub
 
-    Private Sub btnTrabajo_Click(sender As Object, e As EventArgs) Handles btnTrabajo.Click
-        E_ListarOrdenesDeTrabajo.ShowDialog()
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+        If PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Then
+
+            PanelFactura.Visible = False
+            PanelLab.Visible = False
+            panelMenu.Visible = False
+            PanelSistema.Visible = True
+        Else
+            PanelSistema.Visible = True
+        End If
+    End Sub
+
+    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
+        PanelSistema.Visible = False
+    End Sub
+
+    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
+        E_Usuarios.Show()
     End Sub
 End Class

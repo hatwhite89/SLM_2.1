@@ -32,26 +32,24 @@ Partial Class M_BuscarFactura
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnumeroB = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbxbusqueda
         '
-        Me.gbxbusqueda.Controls.Add(Me.btnnueva)
-        Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.txtnumeroB)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lbltipoCta)
-        Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
-        Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnumeroB)
-        Me.gbxbusqueda.Location = New System.Drawing.Point(9, 10)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(12, 12)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.gbxbusqueda.Size = New System.Drawing.Size(460, 486)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.gbxbusqueda.Size = New System.Drawing.Size(1027, 81)
         Me.gbxbusqueda.TabIndex = 117
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR FACTURA"
@@ -62,10 +60,10 @@ Partial Class M_BuscarFactura
         Me.btnnueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnueva.ForeColor = System.Drawing.Color.White
-        Me.btnnueva.Location = New System.Drawing.Point(148, 15)
-        Me.btnnueva.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnueva.Location = New System.Drawing.Point(777, 47)
+        Me.btnnueva.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnnueva.Name = "btnnueva"
-        Me.btnnueva.Size = New System.Drawing.Size(164, 28)
+        Me.btnnueva.Size = New System.Drawing.Size(219, 34)
         Me.btnnueva.TabIndex = 120
         Me.btnnueva.Text = "Nueva Factura"
         Me.btnnueva.UseVisualStyleBackColor = False
@@ -75,99 +73,108 @@ Partial Class M_BuscarFactura
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(32, 88)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Location = New System.Drawing.Point(20, 110)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(390, 359)
+        Me.dgbtabla.Size = New System.Drawing.Size(1015, 442)
         Me.dgbtabla.TabIndex = 119
         '
         'txtnumeroB
         '
-        Me.txtnumeroB.Location = New System.Drawing.Point(76, 53)
-        Me.txtnumeroB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnumeroB.Location = New System.Drawing.Point(102, 33)
+        Me.txtnumeroB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnumeroB.MaxLength = 20
         Me.txtnumeroB.Name = "txtnumeroB"
-        Me.txtnumeroB.Size = New System.Drawing.Size(145, 20)
+        Me.txtnumeroB.Size = New System.Drawing.Size(279, 22)
         Me.txtnumeroB.TabIndex = 118
         '
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(232, 55)
-        Me.lblnombreB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblnombreB.Location = New System.Drawing.Point(404, 33)
         Me.lblnombreB.Name = "lblnombreB"
-        Me.lblnombreB.Size = New System.Drawing.Size(44, 13)
+        Me.lblnombreB.Size = New System.Drawing.Size(58, 17)
         Me.lblnombreB.TabIndex = 117
         Me.lblnombreB.Text = "Nombre"
         '
         'lbltipoCta
         '
         Me.lbltipoCta.AutoSize = True
-        Me.lbltipoCta.Location = New System.Drawing.Point(214, 148)
-        Me.lbltipoCta.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbltipoCta.Location = New System.Drawing.Point(285, 182)
         Me.lbltipoCta.Name = "lbltipoCta"
-        Me.lbltipoCta.Size = New System.Drawing.Size(0, 13)
+        Me.lbltipoCta.Size = New System.Drawing.Size(0, 17)
         Me.lbltipoCta.TabIndex = 116
         Me.lbltipoCta.Visible = False
         '
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(313, 458)
-        Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblcantidad.Location = New System.Drawing.Point(191, 75)
         Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
+        Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
         Me.lblcantidad.TabIndex = 115
         Me.lblcantidad.Text = "000"
         '
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(96, 458)
-        Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbltotal.Location = New System.Drawing.Point(16, 75)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(120, 13)
+        Me.lbltotal.Size = New System.Drawing.Size(154, 17)
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL DE FACTURAS"
         '
         'txtnombreB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(280, 52)
-        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreB.Location = New System.Drawing.Point(481, 33)
+        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
-        Me.txtnombreB.Size = New System.Drawing.Size(145, 20)
+        Me.txtnombreB.Size = New System.Drawing.Size(523, 22)
         Me.txtnombreB.TabIndex = 115
         '
         'lblnumeroB
         '
         Me.lblnumeroB.AutoSize = True
-        Me.lblnumeroB.Location = New System.Drawing.Point(29, 55)
-        Me.lblnumeroB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblnumeroB.Location = New System.Drawing.Point(40, 36)
         Me.lblnumeroB.Name = "lblnumeroB"
-        Me.lblnumeroB.Size = New System.Drawing.Size(44, 13)
+        Me.lblnumeroB.Size = New System.Drawing.Size(58, 17)
         Me.lblnumeroB.TabIndex = 114
         Me.lblnumeroB.Text = "Número"
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.btnnueva)
+        Me.Panel1.Controls.Add(Me.lbltotal)
+        Me.Panel1.Controls.Add(Me.lblcantidad)
+        Me.Panel1.Location = New System.Drawing.Point(20, 557)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1015, 105)
+        Me.Panel1.TabIndex = 120
+        '
         'M_BuscarFactura
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(480, 506)
+        Me.ClientSize = New System.Drawing.Size(1047, 667)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.gbxbusqueda)
+        Me.Controls.Add(Me.dgbtabla)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "M_BuscarFactura"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Búsqueda de Facturas"
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -182,4 +189,5 @@ Partial Class M_BuscarFactura
     Friend WithEvents txtnombreB As TextBox
     Friend WithEvents lblnumeroB As Label
     Friend WithEvents btnnueva As Button
+    Friend WithEvents Panel1 As Panel
 End Class
