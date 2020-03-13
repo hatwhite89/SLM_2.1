@@ -130,12 +130,12 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PanelSistema = New System.Windows.Forms.Panel()
-        Me.TabPage6 = New System.Windows.Forms.TabPage()
-        Me.TabControl3 = New System.Windows.Forms.TabControl()
         Me.Button17 = New System.Windows.Forms.Button()
-        Me.Button18 = New System.Windows.Forms.Button()
-        Me.Button19 = New System.Windows.Forms.Button()
+        Me.TabControl3 = New System.Windows.Forms.TabControl()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.Button20 = New System.Windows.Forms.Button()
+        Me.Button19 = New System.Windows.Forms.Button()
+        Me.Button18 = New System.Windows.Forms.Button()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.gbxMenu.SuspendLayout()
@@ -194,8 +194,8 @@ Partial Class Form1
         CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelFactura.SuspendLayout()
         Me.PanelSistema.SuspendLayout()
-        Me.TabPage6.SuspendLayout()
         Me.TabControl3.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -308,10 +308,10 @@ Partial Class Form1
         Me.panelMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.panelMenu.Controls.Add(Me.Button15)
         Me.panelMenu.Controls.Add(Me.tcMenu)
-        Me.panelMenu.Location = New System.Drawing.Point(159, 33)
+        Me.panelMenu.Location = New System.Drawing.Point(161, 33)
         Me.panelMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.panelMenu.Name = "panelMenu"
-        Me.panelMenu.Size = New System.Drawing.Size(759, 543)
+        Me.panelMenu.Size = New System.Drawing.Size(757, 543)
         Me.panelMenu.TabIndex = 4
         Me.panelMenu.Visible = False
         '
@@ -323,7 +323,7 @@ Partial Class Form1
         Me.Button15.FlatAppearance.BorderSize = 0
         Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button15.ForeColor = System.Drawing.Color.Red
-        Me.Button15.Location = New System.Drawing.Point(675, 502)
+        Me.Button15.Location = New System.Drawing.Point(673, 502)
         Me.Button15.Margin = New System.Windows.Forms.Padding(4)
         Me.Button15.Name = "Button15"
         Me.Button15.Size = New System.Drawing.Size(73, 32)
@@ -345,7 +345,7 @@ Partial Class Form1
         Me.tcMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.tcMenu.Name = "tcMenu"
         Me.tcMenu.SelectedIndex = 0
-        Me.tcMenu.Size = New System.Drawing.Size(752, 489)
+        Me.tcMenu.Size = New System.Drawing.Size(750, 489)
         Me.tcMenu.TabIndex = 6
         '
         'tpPrecios
@@ -361,7 +361,7 @@ Partial Class Form1
         Me.tpPrecios.Location = New System.Drawing.Point(4, 25)
         Me.tpPrecios.Margin = New System.Windows.Forms.Padding(4)
         Me.tpPrecios.Name = "tpPrecios"
-        Me.tpPrecios.Size = New System.Drawing.Size(744, 460)
+        Me.tpPrecios.Size = New System.Drawing.Size(742, 460)
         Me.tpPrecios.TabIndex = 3
         Me.tpPrecios.Text = "Precios y Descuentos"
         Me.tpPrecios.UseVisualStyleBackColor = True
@@ -479,7 +479,7 @@ Partial Class Form1
         Me.TpProcesos.Location = New System.Drawing.Point(4, 25)
         Me.TpProcesos.Margin = New System.Windows.Forms.Padding(4)
         Me.TpProcesos.Name = "TpProcesos"
-        Me.TpProcesos.Size = New System.Drawing.Size(462, 460)
+        Me.TpProcesos.Size = New System.Drawing.Size(744, 460)
         Me.TpProcesos.TabIndex = 4
         Me.TpProcesos.Text = "Procesos"
         Me.TpProcesos.UseVisualStyleBackColor = True
@@ -548,7 +548,7 @@ Partial Class Form1
         Me.TpMantenimiento.Margin = New System.Windows.Forms.Padding(4)
         Me.TpMantenimiento.Name = "TpMantenimiento"
         Me.TpMantenimiento.Padding = New System.Windows.Forms.Padding(4)
-        Me.TpMantenimiento.Size = New System.Drawing.Size(462, 460)
+        Me.TpMantenimiento.Size = New System.Drawing.Size(744, 460)
         Me.TpMantenimiento.TabIndex = 2
         Me.TpMantenimiento.Text = "Mantenimiento"
         Me.TpMantenimiento.UseVisualStyleBackColor = True
@@ -766,7 +766,7 @@ Partial Class Form1
         Me.tpCheque.Margin = New System.Windows.Forms.Padding(4)
         Me.tpCheque.Name = "tpCheque"
         Me.tpCheque.Padding = New System.Windows.Forms.Padding(4)
-        Me.tpCheque.Size = New System.Drawing.Size(462, 460)
+        Me.tpCheque.Size = New System.Drawing.Size(744, 460)
         Me.tpCheque.TabIndex = 0
         Me.tpCheque.Text = "Cheque"
         Me.tpCheque.UseVisualStyleBackColor = True
@@ -859,7 +859,7 @@ Partial Class Form1
         Me.tpPagos.Margin = New System.Windows.Forms.Padding(4)
         Me.tpPagos.Name = "tpPagos"
         Me.tpPagos.Padding = New System.Windows.Forms.Padding(4)
-        Me.tpPagos.Size = New System.Drawing.Size(462, 460)
+        Me.tpPagos.Size = New System.Drawing.Size(744, 460)
         Me.tpPagos.TabIndex = 1
         Me.tpPagos.Text = "Pagos"
         Me.tpPagos.UseVisualStyleBackColor = True
@@ -977,7 +977,7 @@ Partial Class Form1
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(744, 493)
+        Me.TabControl1.Size = New System.Drawing.Size(742, 493)
         Me.TabControl1.TabIndex = 6
         '
         'TabPage1
@@ -1002,7 +1002,7 @@ Partial Class Form1
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabPage1.Size = New System.Drawing.Size(736, 464)
+        Me.TabPage1.Size = New System.Drawing.Size(734, 464)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Facturación"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -1486,7 +1486,7 @@ Partial Class Form1
         Me.Button11.FlatAppearance.BorderSize = 0
         Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button11.ForeColor = System.Drawing.Color.Red
-        Me.Button11.Location = New System.Drawing.Point(656, 503)
+        Me.Button11.Location = New System.Drawing.Point(654, 503)
         Me.Button11.Margin = New System.Windows.Forms.Padding(4)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(73, 32)
@@ -1502,10 +1502,10 @@ Partial Class Form1
         Me.PanelFactura.BackColor = System.Drawing.Color.Silver
         Me.PanelFactura.Controls.Add(Me.Button11)
         Me.PanelFactura.Controls.Add(Me.TabControl1)
-        Me.PanelFactura.Location = New System.Drawing.Point(159, 33)
+        Me.PanelFactura.Location = New System.Drawing.Point(161, 33)
         Me.PanelFactura.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelFactura.Name = "PanelFactura"
-        Me.PanelFactura.Size = New System.Drawing.Size(759, 539)
+        Me.PanelFactura.Size = New System.Drawing.Size(757, 539)
         Me.PanelFactura.TabIndex = 7
         Me.PanelFactura.Visible = False
         '
@@ -1542,34 +1542,6 @@ Partial Class Form1
         Me.PanelSistema.TabIndex = 23
         Me.PanelSistema.Visible = False
         '
-        'TabPage6
-        '
-        Me.TabPage6.Controls.Add(Me.Button20)
-        Me.TabPage6.Controls.Add(Me.Button19)
-        Me.TabPage6.Controls.Add(Me.Button18)
-        Me.TabPage6.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage6.Margin = New System.Windows.Forms.Padding(4)
-        Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(742, 470)
-        Me.TabPage6.TabIndex = 3
-        Me.TabPage6.Text = "Usuarios"
-        Me.TabPage6.UseVisualStyleBackColor = True
-        '
-        'TabControl3
-        '
-        Me.TabControl3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TabControl3.Controls.Add(Me.TabPage6)
-        Me.TabControl3.Controls.Add(Me.TabPage7)
-        Me.TabControl3.Controls.Add(Me.TabPage8)
-        Me.TabControl3.Location = New System.Drawing.Point(4, 5)
-        Me.TabControl3.Margin = New System.Windows.Forms.Padding(4)
-        Me.TabControl3.Name = "TabControl3"
-        Me.TabControl3.SelectedIndex = 0
-        Me.TabControl3.Size = New System.Drawing.Size(750, 499)
-        Me.TabControl3.TabIndex = 7
-        '
         'Button17
         '
         Me.Button17.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -1586,20 +1558,48 @@ Partial Class Form1
         Me.Button17.Text = "Cerrar"
         Me.Button17.UseVisualStyleBackColor = False
         '
-        'Button18
+        'TabControl3
         '
-        Me.Button18.BackColor = System.Drawing.Color.DimGray
-        Me.Button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button18.FlatAppearance.BorderSize = 0
-        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button18.ForeColor = System.Drawing.Color.White
-        Me.Button18.Location = New System.Drawing.Point(17, 89)
-        Me.Button18.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(103, 26)
-        Me.Button18.TabIndex = 19
-        Me.Button18.Text = "Usuarios"
-        Me.Button18.UseVisualStyleBackColor = False
+        Me.TabControl3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TabControl3.Controls.Add(Me.TabPage6)
+        Me.TabControl3.Controls.Add(Me.TabPage7)
+        Me.TabControl3.Controls.Add(Me.TabPage8)
+        Me.TabControl3.Location = New System.Drawing.Point(4, 5)
+        Me.TabControl3.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabControl3.Name = "TabControl3"
+        Me.TabControl3.SelectedIndex = 0
+        Me.TabControl3.Size = New System.Drawing.Size(750, 499)
+        Me.TabControl3.TabIndex = 7
+        '
+        'TabPage6
+        '
+        Me.TabPage6.Controls.Add(Me.Button20)
+        Me.TabPage6.Controls.Add(Me.Button19)
+        Me.TabPage6.Controls.Add(Me.Button18)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage6.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Size = New System.Drawing.Size(742, 470)
+        Me.TabPage6.TabIndex = 3
+        Me.TabPage6.Text = "Usuarios"
+        Me.TabPage6.UseVisualStyleBackColor = True
+        '
+        'Button20
+        '
+        Me.Button20.BackColor = System.Drawing.Color.DimGray
+        Me.Button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button20.FlatAppearance.BorderSize = 0
+        Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button20.ForeColor = System.Drawing.Color.White
+        Me.Button20.Location = New System.Drawing.Point(423, 89)
+        Me.Button20.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Size = New System.Drawing.Size(103, 26)
+        Me.Button20.TabIndex = 21
+        Me.Button20.Text = "Permisos"
+        Me.Button20.UseVisualStyleBackColor = False
         '
         'Button19
         '
@@ -1616,20 +1616,20 @@ Partial Class Form1
         Me.Button19.Text = "Grupos"
         Me.Button19.UseVisualStyleBackColor = False
         '
-        'Button20
+        'Button18
         '
-        Me.Button20.BackColor = System.Drawing.Color.DimGray
-        Me.Button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button20.FlatAppearance.BorderSize = 0
-        Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button20.ForeColor = System.Drawing.Color.White
-        Me.Button20.Location = New System.Drawing.Point(423, 89)
-        Me.Button20.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button20.Name = "Button20"
-        Me.Button20.Size = New System.Drawing.Size(103, 26)
-        Me.Button20.TabIndex = 21
-        Me.Button20.Text = "Permisos"
-        Me.Button20.UseVisualStyleBackColor = False
+        Me.Button18.BackColor = System.Drawing.Color.DimGray
+        Me.Button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button18.FlatAppearance.BorderSize = 0
+        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button18.ForeColor = System.Drawing.Color.White
+        Me.Button18.Location = New System.Drawing.Point(17, 89)
+        Me.Button18.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button18.Name = "Button18"
+        Me.Button18.Size = New System.Drawing.Size(103, 26)
+        Me.Button18.TabIndex = 19
+        Me.Button18.Text = "Usuarios"
+        Me.Button18.UseVisualStyleBackColor = False
         '
         'TabPage7
         '
@@ -1732,8 +1732,8 @@ Partial Class Form1
         CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelFactura.ResumeLayout(False)
         Me.PanelSistema.ResumeLayout(False)
-        Me.TabPage6.ResumeLayout(False)
         Me.TabControl3.ResumeLayout(False)
+        Me.TabPage6.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

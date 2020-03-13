@@ -436,4 +436,8 @@
     Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
         E_Usuarios.Show()
     End Sub
+
+    Private Sub btnTrabajo_Click(sender As Object, e As EventArgs) Handles btnTrabajo.Click
+        E_ListarOrdenesDeTrabajo.ShowDialog()
+    End Sub
 End Class
