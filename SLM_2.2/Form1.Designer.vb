@@ -467,7 +467,7 @@ Partial Class Form1
         Me.TpProcesos.Location = New System.Drawing.Point(4, 25)
         Me.TpProcesos.Margin = New System.Windows.Forms.Padding(4)
         Me.TpProcesos.Name = "TpProcesos"
-        Me.TpProcesos.Size = New System.Drawing.Size(744, 460)
+        Me.TpProcesos.Size = New System.Drawing.Size(462, 460)
         Me.TpProcesos.TabIndex = 4
         Me.TpProcesos.Text = "Procesos"
         Me.TpProcesos.UseVisualStyleBackColor = True
@@ -536,7 +536,7 @@ Partial Class Form1
         Me.TpMantenimiento.Margin = New System.Windows.Forms.Padding(4)
         Me.TpMantenimiento.Name = "TpMantenimiento"
         Me.TpMantenimiento.Padding = New System.Windows.Forms.Padding(4)
-        Me.TpMantenimiento.Size = New System.Drawing.Size(744, 460)
+        Me.TpMantenimiento.Size = New System.Drawing.Size(462, 460)
         Me.TpMantenimiento.TabIndex = 2
         Me.TpMantenimiento.Text = "Mantenimiento"
         Me.TpMantenimiento.UseVisualStyleBackColor = True
@@ -754,7 +754,7 @@ Partial Class Form1
         Me.tpCheque.Margin = New System.Windows.Forms.Padding(4)
         Me.tpCheque.Name = "tpCheque"
         Me.tpCheque.Padding = New System.Windows.Forms.Padding(4)
-        Me.tpCheque.Size = New System.Drawing.Size(744, 460)
+        Me.tpCheque.Size = New System.Drawing.Size(462, 460)
         Me.tpCheque.TabIndex = 0
         Me.tpCheque.Text = "Cheque"
         Me.tpCheque.UseVisualStyleBackColor = True
@@ -847,7 +847,7 @@ Partial Class Form1
         Me.tpPagos.Margin = New System.Windows.Forms.Padding(4)
         Me.tpPagos.Name = "tpPagos"
         Me.tpPagos.Padding = New System.Windows.Forms.Padding(4)
-        Me.tpPagos.Size = New System.Drawing.Size(744, 460)
+        Me.tpPagos.Size = New System.Drawing.Size(462, 460)
         Me.tpPagos.TabIndex = 1
         Me.tpPagos.Text = "Pagos"
         Me.tpPagos.UseVisualStyleBackColor = True
@@ -923,7 +923,7 @@ Partial Class Form1
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(922, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(922, 28)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -965,7 +965,7 @@ Partial Class Form1
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(740, 493)
+        Me.TabControl1.Size = New System.Drawing.Size(744, 493)
         Me.TabControl1.TabIndex = 6
         '
         'TabPage1
@@ -990,7 +990,7 @@ Partial Class Form1
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabPage1.Size = New System.Drawing.Size(732, 464)
+        Me.TabPage1.Size = New System.Drawing.Size(736, 464)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Facturación"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -1474,7 +1474,7 @@ Partial Class Form1
         Me.Button11.FlatAppearance.BorderSize = 0
         Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button11.ForeColor = System.Drawing.Color.Red
-        Me.Button11.Location = New System.Drawing.Point(652, 503)
+        Me.Button11.Location = New System.Drawing.Point(656, 503)
         Me.Button11.Margin = New System.Windows.Forms.Padding(4)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(73, 32)
@@ -1490,10 +1490,10 @@ Partial Class Form1
         Me.PanelFactura.BackColor = System.Drawing.Color.Silver
         Me.PanelFactura.Controls.Add(Me.Button11)
         Me.PanelFactura.Controls.Add(Me.TabControl1)
-        Me.PanelFactura.Location = New System.Drawing.Point(163, 33)
+        Me.PanelFactura.Location = New System.Drawing.Point(159, 33)
         Me.PanelFactura.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelFactura.Name = "PanelFactura"
-        Me.PanelFactura.Size = New System.Drawing.Size(755, 539)
+        Me.PanelFactura.Size = New System.Drawing.Size(759, 539)
         Me.PanelFactura.TabIndex = 7
         Me.PanelFactura.Visible = False
         '

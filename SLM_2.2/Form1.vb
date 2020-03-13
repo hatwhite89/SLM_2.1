@@ -416,4 +416,7 @@
         panelMenu.Visible = False
     End Sub
 
+    Private Sub btnTrabajo_Click(sender As Object, e As EventArgs) Handles btnTrabajo.Click
+        E_ListarOrdenesDeTrabajo.ShowDialog()
+    End Sub
 End Class
