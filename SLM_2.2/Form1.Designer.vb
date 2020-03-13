@@ -129,6 +129,15 @@ Partial Class Form1
         Me.PanelFactura = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PanelSistema = New System.Windows.Forms.Panel()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.TabControl3 = New System.Windows.Forms.TabControl()
+        Me.Button17 = New System.Windows.Forms.Button()
+        Me.Button18 = New System.Windows.Forms.Button()
+        Me.Button19 = New System.Windows.Forms.Button()
+        Me.Button20 = New System.Windows.Forms.Button()
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.gbxMenu.SuspendLayout()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
@@ -184,6 +193,9 @@ Partial Class Form1
         CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelFactura.SuspendLayout()
+        Me.PanelSistema.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
+        Me.TabControl3.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -923,7 +935,7 @@ Partial Class Form1
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(922, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(922, 28)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -1516,6 +1528,129 @@ Partial Class Form1
         Me.Label1.TabIndex = 23
         Me.Label1.Text = "Usuario: Administrador"
         '
+        'PanelSistema
+        '
+        Me.PanelSistema.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PanelSistema.BackColor = System.Drawing.Color.Beige
+        Me.PanelSistema.Controls.Add(Me.Button17)
+        Me.PanelSistema.Controls.Add(Me.TabControl3)
+        Me.PanelSistema.Location = New System.Drawing.Point(159, 34)
+        Me.PanelSistema.Name = "PanelSistema"
+        Me.PanelSistema.Size = New System.Drawing.Size(760, 542)
+        Me.PanelSistema.TabIndex = 23
+        Me.PanelSistema.Visible = False
+        '
+        'TabPage6
+        '
+        Me.TabPage6.Controls.Add(Me.Button20)
+        Me.TabPage6.Controls.Add(Me.Button19)
+        Me.TabPage6.Controls.Add(Me.Button18)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage6.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Size = New System.Drawing.Size(742, 470)
+        Me.TabPage6.TabIndex = 3
+        Me.TabPage6.Text = "Usuarios"
+        Me.TabPage6.UseVisualStyleBackColor = True
+        '
+        'TabControl3
+        '
+        Me.TabControl3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TabControl3.Controls.Add(Me.TabPage6)
+        Me.TabControl3.Controls.Add(Me.TabPage7)
+        Me.TabControl3.Controls.Add(Me.TabPage8)
+        Me.TabControl3.Location = New System.Drawing.Point(4, 5)
+        Me.TabControl3.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabControl3.Name = "TabControl3"
+        Me.TabControl3.SelectedIndex = 0
+        Me.TabControl3.Size = New System.Drawing.Size(750, 499)
+        Me.TabControl3.TabIndex = 7
+        '
+        'Button17
+        '
+        Me.Button17.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button17.BackColor = System.Drawing.Color.Transparent
+        Me.Button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button17.FlatAppearance.BorderSize = 0
+        Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button17.ForeColor = System.Drawing.Color.Red
+        Me.Button17.Location = New System.Drawing.Point(675, 504)
+        Me.Button17.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button17.Name = "Button17"
+        Me.Button17.Size = New System.Drawing.Size(73, 32)
+        Me.Button17.TabIndex = 7
+        Me.Button17.Text = "Cerrar"
+        Me.Button17.UseVisualStyleBackColor = False
+        '
+        'Button18
+        '
+        Me.Button18.BackColor = System.Drawing.Color.DimGray
+        Me.Button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button18.FlatAppearance.BorderSize = 0
+        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button18.ForeColor = System.Drawing.Color.White
+        Me.Button18.Location = New System.Drawing.Point(17, 89)
+        Me.Button18.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button18.Name = "Button18"
+        Me.Button18.Size = New System.Drawing.Size(103, 26)
+        Me.Button18.TabIndex = 19
+        Me.Button18.Text = "Usuarios"
+        Me.Button18.UseVisualStyleBackColor = False
+        '
+        'Button19
+        '
+        Me.Button19.BackColor = System.Drawing.Color.DimGray
+        Me.Button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button19.FlatAppearance.BorderSize = 0
+        Me.Button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button19.ForeColor = System.Drawing.Color.White
+        Me.Button19.Location = New System.Drawing.Point(233, 89)
+        Me.Button19.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button19.Name = "Button19"
+        Me.Button19.Size = New System.Drawing.Size(103, 26)
+        Me.Button19.TabIndex = 20
+        Me.Button19.Text = "Grupos"
+        Me.Button19.UseVisualStyleBackColor = False
+        '
+        'Button20
+        '
+        Me.Button20.BackColor = System.Drawing.Color.DimGray
+        Me.Button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button20.FlatAppearance.BorderSize = 0
+        Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button20.ForeColor = System.Drawing.Color.White
+        Me.Button20.Location = New System.Drawing.Point(423, 89)
+        Me.Button20.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Size = New System.Drawing.Size(103, 26)
+        Me.Button20.TabIndex = 21
+        Me.Button20.Text = "Permisos"
+        Me.Button20.UseVisualStyleBackColor = False
+        '
+        'TabPage7
+        '
+        Me.TabPage7.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage7.Name = "TabPage7"
+        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage7.Size = New System.Drawing.Size(742, 470)
+        Me.TabPage7.TabIndex = 4
+        Me.TabPage7.Text = "Notificaciones"
+        Me.TabPage7.UseVisualStyleBackColor = True
+        '
+        'TabPage8
+        '
+        Me.TabPage8.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage8.Name = "TabPage8"
+        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage8.Size = New System.Drawing.Size(742, 470)
+        Me.TabPage8.TabIndex = 5
+        Me.TabPage8.Text = "Bitacoras"
+        Me.TabPage8.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1527,6 +1662,7 @@ Partial Class Form1
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxMenu)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.PanelSistema)
         Me.Controls.Add(Me.panelMenu)
         Me.Controls.Add(Me.PanelFactura)
         Me.Controls.Add(Me.PanelLab)
@@ -1595,6 +1731,9 @@ Partial Class Form1
         CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelFactura.ResumeLayout(False)
+        Me.PanelSistema.ResumeLayout(False)
+        Me.TabPage6.ResumeLayout(False)
+        Me.TabControl3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1706,4 +1845,13 @@ Partial Class Form1
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button16 As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents PanelSistema As Panel
+    Friend WithEvents Button17 As Button
+    Friend WithEvents TabControl3 As TabControl
+    Friend WithEvents TabPage6 As TabPage
+    Friend WithEvents Button18 As Button
+    Friend WithEvents Button20 As Button
+    Friend WithEvents Button19 As Button
+    Friend WithEvents TabPage7 As TabPage
+    Friend WithEvents TabPage8 As TabPage
 End Class
