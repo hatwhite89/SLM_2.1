@@ -89,7 +89,7 @@ Partial Class frmDeposito
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(487, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(718, 24)
         Me.MenuStrip1.TabIndex = 29
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -117,13 +117,13 @@ Partial Class frmDeposito
         Me.txtNro.Enabled = False
         Me.txtNro.Location = New System.Drawing.Point(96, 27)
         Me.txtNro.Name = "txtNro"
-        Me.txtNro.Size = New System.Drawing.Size(70, 20)
+        Me.txtNro.Size = New System.Drawing.Size(109, 20)
         Me.txtNro.TabIndex = 1
         '
         'lblFecha
         '
         Me.lblFecha.AutoSize = True
-        Me.lblFecha.Location = New System.Drawing.Point(16, 57)
+        Me.lblFecha.Location = New System.Drawing.Point(220, 30)
         Me.lblFecha.Name = "lblFecha"
         Me.lblFecha.Size = New System.Drawing.Size(37, 13)
         Me.lblFecha.TabIndex = 31
@@ -132,7 +132,7 @@ Partial Class frmDeposito
         'dtpFecha
         '
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(96, 52)
+        Me.dtpFecha.Location = New System.Drawing.Point(300, 25)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(70, 20)
         Me.dtpFecha.TabIndex = 2
@@ -140,7 +140,7 @@ Partial Class frmDeposito
         'lblFormaPago
         '
         Me.lblFormaPago.AutoSize = True
-        Me.lblFormaPago.Location = New System.Drawing.Point(16, 80)
+        Me.lblFormaPago.Location = New System.Drawing.Point(17, 53)
         Me.lblFormaPago.Name = "lblFormaPago"
         Me.lblFormaPago.Size = New System.Drawing.Size(38, 13)
         Me.lblFormaPago.TabIndex = 33
@@ -149,16 +149,16 @@ Partial Class frmDeposito
         'txtBanco
         '
         Me.txtBanco.Enabled = False
-        Me.txtBanco.Location = New System.Drawing.Point(96, 78)
+        Me.txtBanco.Location = New System.Drawing.Point(97, 51)
         Me.txtBanco.MaxLength = 4
         Me.txtBanco.Name = "txtBanco"
-        Me.txtBanco.Size = New System.Drawing.Size(48, 20)
+        Me.txtBanco.Size = New System.Drawing.Size(108, 20)
         Me.txtBanco.TabIndex = 3
         '
         'lblContado
         '
         Me.lblContado.AutoSize = True
-        Me.lblContado.Location = New System.Drawing.Point(16, 106)
+        Me.lblContado.Location = New System.Drawing.Point(17, 83)
         Me.lblContado.Name = "lblContado"
         Me.lblContado.Size = New System.Drawing.Size(47, 13)
         Me.lblContado.TabIndex = 35
@@ -167,7 +167,7 @@ Partial Class frmDeposito
         'lbltipoCon
         '
         Me.lbltipoCon.AutoSize = True
-        Me.lbltipoCon.Location = New System.Drawing.Point(16, 130)
+        Me.lbltipoCon.Location = New System.Drawing.Point(17, 107)
         Me.lbltipoCon.Name = "lbltipoCon"
         Me.lbltipoCon.Size = New System.Drawing.Size(71, 13)
         Me.lbltipoCon.TabIndex = 36
@@ -175,25 +175,25 @@ Partial Class frmDeposito
         '
         'txtContado
         '
-        Me.txtContado.Location = New System.Drawing.Point(95, 102)
+        Me.txtContado.Location = New System.Drawing.Point(96, 79)
         Me.txtContado.MaxLength = 10
         Me.txtContado.Name = "txtContado"
-        Me.txtContado.Size = New System.Drawing.Size(71, 20)
+        Me.txtContado.Size = New System.Drawing.Size(110, 20)
         Me.txtContado.TabIndex = 5
         '
         'txtTipoConta
         '
         Me.txtTipoConta.Enabled = False
-        Me.txtTipoConta.Location = New System.Drawing.Point(95, 127)
+        Me.txtTipoConta.Location = New System.Drawing.Point(96, 104)
         Me.txtTipoConta.MaxLength = 4
         Me.txtTipoConta.Name = "txtTipoConta"
-        Me.txtTipoConta.Size = New System.Drawing.Size(49, 20)
+        Me.txtTipoConta.Size = New System.Drawing.Size(110, 20)
         Me.txtTipoConta.TabIndex = 6
         '
         'lblTotalDep
         '
         Me.lblTotalDep.AutoSize = True
-        Me.lblTotalDep.Location = New System.Drawing.Point(16, 152)
+        Me.lblTotalDep.Location = New System.Drawing.Point(17, 131)
         Me.lblTotalDep.Name = "lblTotalDep"
         Me.lblTotalDep.Size = New System.Drawing.Size(57, 13)
         Me.lblTotalDep.TabIndex = 39
@@ -202,7 +202,7 @@ Partial Class frmDeposito
         'txtTotalDep
         '
         Me.txtTotalDep.Enabled = False
-        Me.txtTotalDep.Location = New System.Drawing.Point(95, 151)
+        Me.txtTotalDep.Location = New System.Drawing.Point(96, 130)
         Me.txtTotalDep.Name = "txtTotalDep"
         Me.txtTotalDep.Size = New System.Drawing.Size(70, 20)
         Me.txtTotalDep.TabIndex = 8
@@ -210,7 +210,7 @@ Partial Class frmDeposito
         'lblMoneda
         '
         Me.lblMoneda.AutoSize = True
-        Me.lblMoneda.Location = New System.Drawing.Point(17, 179)
+        Me.lblMoneda.Location = New System.Drawing.Point(18, 158)
         Me.lblMoneda.Name = "lblMoneda"
         Me.lblMoneda.Size = New System.Drawing.Size(46, 13)
         Me.lblMoneda.TabIndex = 41
@@ -218,7 +218,7 @@ Partial Class frmDeposito
         '
         'txtMoneda
         '
-        Me.txtMoneda.Location = New System.Drawing.Point(95, 176)
+        Me.txtMoneda.Location = New System.Drawing.Point(96, 155)
         Me.txtMoneda.MaxLength = 5
         Me.txtMoneda.Name = "txtMoneda"
         Me.txtMoneda.Size = New System.Drawing.Size(71, 20)
@@ -228,7 +228,7 @@ Partial Class frmDeposito
         'lblMonBase
         '
         Me.lblMonBase.AutoSize = True
-        Me.lblMonBase.Location = New System.Drawing.Point(15, 204)
+        Me.lblMonBase.Location = New System.Drawing.Point(16, 183)
         Me.lblMonBase.Name = "lblMonBase"
         Me.lblMonBase.Size = New System.Drawing.Size(67, 13)
         Me.lblMonBase.TabIndex = 43
@@ -236,7 +236,7 @@ Partial Class frmDeposito
         '
         'txtMonBase
         '
-        Me.txtMonBase.Location = New System.Drawing.Point(95, 201)
+        Me.txtMonBase.Location = New System.Drawing.Point(96, 180)
         Me.txtMonBase.MaxLength = 8
         Me.txtMonBase.Name = "txtMonBase"
         Me.txtMonBase.Size = New System.Drawing.Size(71, 20)
@@ -246,7 +246,7 @@ Partial Class frmDeposito
         'lblTDepo
         '
         Me.lblTDepo.AutoSize = True
-        Me.lblTDepo.Location = New System.Drawing.Point(188, 31)
+        Me.lblTDepo.Location = New System.Drawing.Point(392, 27)
         Me.lblTDepo.Name = "lblTDepo"
         Me.lblTDepo.Size = New System.Drawing.Size(88, 13)
         Me.lblTDepo.TabIndex = 48
@@ -255,7 +255,7 @@ Partial Class frmDeposito
         'lblTipoDeposito
         '
         Me.lblTipoDeposito.AutoSize = True
-        Me.lblTipoDeposito.Location = New System.Drawing.Point(280, 32)
+        Me.lblTipoDeposito.Location = New System.Drawing.Point(484, 28)
         Me.lblTipoDeposito.Name = "lblTipoDeposito"
         Me.lblTipoDeposito.Size = New System.Drawing.Size(47, 13)
         Me.lblTipoDeposito.TabIndex = 49
@@ -264,7 +264,7 @@ Partial Class frmDeposito
         'lblComision
         '
         Me.lblComision.AutoSize = True
-        Me.lblComision.Location = New System.Drawing.Point(15, 230)
+        Me.lblComision.Location = New System.Drawing.Point(16, 209)
         Me.lblComision.Name = "lblComision"
         Me.lblComision.Size = New System.Drawing.Size(49, 13)
         Me.lblComision.TabIndex = 60
@@ -272,7 +272,7 @@ Partial Class frmDeposito
         '
         'txtComision
         '
-        Me.txtComision.Location = New System.Drawing.Point(96, 227)
+        Me.txtComision.Location = New System.Drawing.Point(97, 206)
         Me.txtComision.MaxLength = 10
         Me.txtComision.Name = "txtComision"
         Me.txtComision.Size = New System.Drawing.Size(70, 20)
@@ -281,7 +281,7 @@ Partial Class frmDeposito
         'lblCajero
         '
         Me.lblCajero.AutoSize = True
-        Me.lblCajero.Location = New System.Drawing.Point(188, 52)
+        Me.lblCajero.Location = New System.Drawing.Point(392, 48)
         Me.lblCajero.Name = "lblCajero"
         Me.lblCajero.Size = New System.Drawing.Size(37, 13)
         Me.lblCajero.TabIndex = 70
@@ -289,7 +289,7 @@ Partial Class frmDeposito
         '
         'txtCajero
         '
-        Me.txtCajero.Location = New System.Drawing.Point(280, 50)
+        Me.txtCajero.Location = New System.Drawing.Point(484, 46)
         Me.txtCajero.MaxLength = 7
         Me.txtCajero.Name = "txtCajero"
         Me.txtCajero.Size = New System.Drawing.Size(71, 20)
@@ -298,7 +298,7 @@ Partial Class frmDeposito
         'lblComentario
         '
         Me.lblComentario.AutoSize = True
-        Me.lblComentario.Location = New System.Drawing.Point(188, 74)
+        Me.lblComentario.Location = New System.Drawing.Point(392, 70)
         Me.lblComentario.Name = "lblComentario"
         Me.lblComentario.Size = New System.Drawing.Size(60, 13)
         Me.lblComentario.TabIndex = 72
@@ -306,7 +306,7 @@ Partial Class frmDeposito
         '
         'txtComentario
         '
-        Me.txtComentario.Location = New System.Drawing.Point(191, 90)
+        Me.txtComentario.Location = New System.Drawing.Point(395, 106)
         Me.txtComentario.MaxLength = 100
         Me.txtComentario.Multiline = True
         Me.txtComentario.Name = "txtComentario"
@@ -348,7 +348,7 @@ Partial Class frmDeposito
         Me.gbxInfoDepo.Controls.Add(Me.txtMonBase)
         Me.gbxInfoDepo.Location = New System.Drawing.Point(12, 36)
         Me.gbxInfoDepo.Name = "gbxInfoDepo"
-        Me.gbxInfoDepo.Size = New System.Drawing.Size(466, 265)
+        Me.gbxInfoDepo.Size = New System.Drawing.Size(694, 265)
         Me.gbxInfoDepo.TabIndex = 74
         Me.gbxInfoDepo.TabStop = False
         Me.gbxInfoDepo.Text = "Información de Deposito"
@@ -359,7 +359,7 @@ Partial Class frmDeposito
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(304, 230)
+        Me.btnModificar.Location = New System.Drawing.Point(90, 236)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 79
@@ -373,7 +373,7 @@ Partial Class frmDeposito
         Me.btnCrearNuevo.FlatAppearance.BorderSize = 0
         Me.btnCrearNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrearNuevo.ForeColor = System.Drawing.Color.White
-        Me.btnCrearNuevo.Location = New System.Drawing.Point(223, 230)
+        Me.btnCrearNuevo.Location = New System.Drawing.Point(9, 236)
         Me.btnCrearNuevo.Name = "btnCrearNuevo"
         Me.btnCrearNuevo.Size = New System.Drawing.Size(75, 23)
         Me.btnCrearNuevo.TabIndex = 77
@@ -387,7 +387,7 @@ Partial Class frmDeposito
         Me.btnBuscarTipoConta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscarTipoConta.FlatAppearance.BorderSize = 0
         Me.btnBuscarTipoConta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarTipoConta.Location = New System.Drawing.Point(147, 129)
+        Me.btnBuscarTipoConta.Location = New System.Drawing.Point(224, 104)
         Me.btnBuscarTipoConta.Name = "btnBuscarTipoConta"
         Me.btnBuscarTipoConta.Size = New System.Drawing.Size(21, 17)
         Me.btnBuscarTipoConta.TabIndex = 7
@@ -409,7 +409,7 @@ Partial Class frmDeposito
         Me.btnBuscarBanco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscarBanco.FlatAppearance.BorderSize = 0
         Me.btnBuscarBanco.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarBanco.Location = New System.Drawing.Point(146, 79)
+        Me.btnBuscarBanco.Location = New System.Drawing.Point(223, 51)
         Me.btnBuscarBanco.Name = "btnBuscarBanco"
         Me.btnBuscarBanco.Size = New System.Drawing.Size(21, 17)
         Me.btnBuscarBanco.TabIndex = 4
@@ -422,7 +422,7 @@ Partial Class frmDeposito
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(385, 230)
+        Me.btnGuardar.Location = New System.Drawing.Point(171, 236)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 67
@@ -443,14 +443,14 @@ Partial Class frmDeposito
         Me.GroupBox1.Controls.Add(Me.txtID)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 307)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(466, 265)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 265)
         Me.GroupBox1.TabIndex = 75
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Depositos"
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(385, 58)
+        Me.btnCancelar.Location = New System.Drawing.Point(584, 13)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 23
@@ -530,7 +530,7 @@ Partial Class frmDeposito
         Me.dtDepositos.Name = "dtDepositos"
         Me.dtDepositos.ReadOnly = True
         Me.dtDepositos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtDepositos.Size = New System.Drawing.Size(448, 167)
+        Me.dtDepositos.Size = New System.Drawing.Size(652, 167)
         Me.dtDepositos.TabIndex = 14
         '
         'txtID
@@ -547,7 +547,7 @@ Partial Class frmDeposito
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(487, 575)
+        Me.ClientSize = New System.Drawing.Size(718, 575)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoDepo)

@@ -42,6 +42,8 @@ Partial Class M_CAI
         Me.btnbuscarMaquinaLocal = New System.Windows.Forms.Button()
         Me.txtcodigoMaquina = New System.Windows.Forms.TextBox()
         Me.lblCodeMaquinaLocal = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblCAI
@@ -57,7 +59,7 @@ Partial Class M_CAI
         'lbldesde
         '
         Me.lbldesde.AutoSize = True
-        Me.lbldesde.Location = New System.Drawing.Point(304, 90)
+        Me.lbldesde.Location = New System.Drawing.Point(45, 80)
         Me.lbldesde.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbldesde.Name = "lbldesde"
         Me.lbldesde.Size = New System.Drawing.Size(41, 13)
@@ -67,7 +69,7 @@ Partial Class M_CAI
         'lblhasta
         '
         Me.lblhasta.AutoSize = True
-        Me.lblhasta.Location = New System.Drawing.Point(314, 120)
+        Me.lblhasta.Location = New System.Drawing.Point(311, 87)
         Me.lblhasta.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblhasta.Name = "lblhasta"
         Me.lblhasta.Size = New System.Drawing.Size(38, 13)
@@ -90,7 +92,7 @@ Partial Class M_CAI
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(438, 179)
+        Me.btncancelar.Location = New System.Drawing.Point(170, 179)
         Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(68, 28)
@@ -104,7 +106,7 @@ Partial Class M_CAI
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnnuevo.Location = New System.Drawing.Point(266, 179)
+        Me.btnnuevo.Location = New System.Drawing.Point(11, 179)
         Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
@@ -118,7 +120,7 @@ Partial Class M_CAI
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnguardar.Location = New System.Drawing.Point(356, 179)
+        Me.btnguardar.Location = New System.Drawing.Point(94, 179)
         Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(72, 28)
@@ -149,7 +151,7 @@ Partial Class M_CAI
         'lblserie
         '
         Me.lblserie.AutoSize = True
-        Me.lblserie.Location = New System.Drawing.Point(62, 90)
+        Me.lblserie.Location = New System.Drawing.Point(311, 116)
         Me.lblserie.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblserie.Name = "lblserie"
         Me.lblserie.Size = New System.Drawing.Size(34, 13)
@@ -184,7 +186,7 @@ Partial Class M_CAI
         '
         'mtxtserie
         '
-        Me.mtxtserie.Location = New System.Drawing.Point(106, 90)
+        Me.mtxtserie.Location = New System.Drawing.Point(350, 113)
         Me.mtxtserie.Margin = New System.Windows.Forms.Padding(2)
         Me.mtxtserie.Mask = "000-000-00-"
         Me.mtxtserie.Name = "mtxtserie"
@@ -194,7 +196,7 @@ Partial Class M_CAI
         '
         'mtxtdesde
         '
-        Me.mtxtdesde.Location = New System.Drawing.Point(354, 87)
+        Me.mtxtdesde.Location = New System.Drawing.Point(101, 80)
         Me.mtxtdesde.Margin = New System.Windows.Forms.Padding(2)
         Me.mtxtdesde.Mask = "00000000"
         Me.mtxtdesde.Name = "mtxtdesde"
@@ -204,7 +206,7 @@ Partial Class M_CAI
         '
         'mtxthasta
         '
-        Me.mtxthasta.Location = New System.Drawing.Point(356, 120)
+        Me.mtxthasta.Location = New System.Drawing.Point(351, 84)
         Me.mtxthasta.Margin = New System.Windows.Forms.Padding(2)
         Me.mtxthasta.Mask = "00000000"
         Me.mtxthasta.Name = "mtxthasta"
@@ -242,7 +244,7 @@ Partial Class M_CAI
         Me.txtcodigoMaquina.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoMaquina.MaxLength = 20
         Me.txtcodigoMaquina.Name = "txtcodigoMaquina"
-        Me.txtcodigoMaquina.Size = New System.Drawing.Size(125, 20)
+        Me.txtcodigoMaquina.Size = New System.Drawing.Size(152, 20)
         Me.txtcodigoMaquina.TabIndex = 125
         Me.txtcodigoMaquina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -256,35 +258,47 @@ Partial Class M_CAI
         Me.lblCodeMaquinaLocal.TabIndex = 128
         Me.lblCodeMaquinaLocal.Visible = False
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.mtxtserie)
+        Me.GroupBox1.Controls.Add(Me.lblserie)
+        Me.GroupBox1.Controls.Add(Me.lbldesde)
+        Me.GroupBox1.Controls.Add(Me.mtxtdesde)
+        Me.GroupBox1.Controls.Add(Me.mtxthasta)
+        Me.GroupBox1.Controls.Add(Me.lblhasta)
+        Me.GroupBox1.Location = New System.Drawing.Point(4, 7)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(703, 215)
+        Me.GroupBox1.TabIndex = 129
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "CAI"
+        '
         'M_CAI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(518, 218)
+        Me.ClientSize = New System.Drawing.Size(719, 234)
         Me.Controls.Add(Me.lblCodeMaquinaLocal)
         Me.Controls.Add(Me.txtdescripcionMaquina)
         Me.Controls.Add(Me.btnbuscarMaquinaLocal)
         Me.Controls.Add(Me.txtcodigoMaquina)
-        Me.Controls.Add(Me.mtxthasta)
-        Me.Controls.Add(Me.mtxtdesde)
-        Me.Controls.Add(Me.mtxtserie)
         Me.Controls.Add(Me.dtpHastaFecha)
         Me.Controls.Add(Me.dtpDesdeFecha)
         Me.Controls.Add(Me.lblmaquinaLocal)
-        Me.Controls.Add(Me.lblserie)
         Me.Controls.Add(Me.lblhastaF)
         Me.Controls.Add(Me.mtxtCAI)
         Me.Controls.Add(Me.btncancelar)
         Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.lblDesdeF)
-        Me.Controls.Add(Me.lblhasta)
-        Me.Controls.Add(Me.lbldesde)
         Me.Controls.Add(Me.lblCAI)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_CAI"
         Me.Text = "CAI"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -310,4 +324,5 @@ Partial Class M_CAI
     Friend WithEvents btnbuscarMaquinaLocal As Button
     Friend WithEvents txtcodigoMaquina As TextBox
     Friend WithEvents lblCodeMaquinaLocal As Label
+    Friend WithEvents GroupBox1 As GroupBox
 End Class

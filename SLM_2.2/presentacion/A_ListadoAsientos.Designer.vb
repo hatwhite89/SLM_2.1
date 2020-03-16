@@ -39,7 +39,7 @@ Partial Class A_ListadoAsientos
         Me.gbxAsientos.Controls.Add(Me.lblCod)
         Me.gbxAsientos.Location = New System.Drawing.Point(12, 12)
         Me.gbxAsientos.Name = "gbxAsientos"
-        Me.gbxAsientos.Size = New System.Drawing.Size(476, 322)
+        Me.gbxAsientos.Size = New System.Drawing.Size(694, 322)
         Me.gbxAsientos.TabIndex = 0
         Me.gbxAsientos.TabStop = False
         Me.gbxAsientos.Text = "Asientos Contables"
@@ -52,7 +52,7 @@ Partial Class A_ListadoAsientos
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.Red
-        Me.btnCancelar.Location = New System.Drawing.Point(445, 22)
+        Me.btnCancelar.Location = New System.Drawing.Point(343, 26)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(20, 18)
         Me.btnCancelar.TabIndex = 3
@@ -68,21 +68,21 @@ Partial Class A_ListadoAsientos
         Me.dtAsientos.Location = New System.Drawing.Point(6, 57)
         Me.dtAsientos.Name = "dtAsientos"
         Me.dtAsientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtAsientos.Size = New System.Drawing.Size(464, 259)
+        Me.dtAsientos.Size = New System.Drawing.Size(688, 259)
         Me.dtAsientos.TabIndex = 2
         '
         'txtCod
         '
-        Me.txtCod.Location = New System.Drawing.Point(319, 22)
+        Me.txtCod.Location = New System.Drawing.Point(88, 26)
         Me.txtCod.MaxLength = 8
         Me.txtCod.Name = "txtCod"
-        Me.txtCod.Size = New System.Drawing.Size(120, 20)
+        Me.txtCod.Size = New System.Drawing.Size(235, 20)
         Me.txtCod.TabIndex = 1
         '
         'lblCod
         '
         Me.lblCod.AutoSize = True
-        Me.lblCod.Location = New System.Drawing.Point(248, 25)
+        Me.lblCod.Location = New System.Drawing.Point(17, 29)
         Me.lblCod.Name = "lblCod"
         Me.lblCod.Size = New System.Drawing.Size(65, 13)
         Me.lblCod.TabIndex = 0
@@ -92,7 +92,7 @@ Partial Class A_ListadoAsientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(499, 342)
+        Me.ClientSize = New System.Drawing.Size(718, 342)
         Me.Controls.Add(Me.gbxAsientos)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "A_ListadoAsientos"

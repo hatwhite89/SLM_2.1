@@ -1,6 +1,6 @@
 ﻿Public Class A_ListasPrecio
 
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) 
 
         importarExcel(dtExcel)
 
@@ -8,7 +8,7 @@
 
     End Sub
 
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) 
 
         Dim precios As New ClsPrecio
 
@@ -41,7 +41,7 @@
 
     End Sub
 
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) 
 
         Me.Close()
 

@@ -42,7 +42,7 @@ Partial Class A_ListadoCheques
         Me.gbxCheque.Controls.Add(Me.dtCheques)
         Me.gbxCheque.Location = New System.Drawing.Point(9, 12)
         Me.gbxCheque.Name = "gbxCheque"
-        Me.gbxCheque.Size = New System.Drawing.Size(552, 334)
+        Me.gbxCheque.Size = New System.Drawing.Size(697, 334)
         Me.gbxCheque.TabIndex = 0
         Me.gbxCheque.TabStop = False
         Me.gbxCheque.Text = "Cheques Generados"
@@ -83,7 +83,7 @@ Partial Class A_ListadoCheques
         Me.dtCheques.Location = New System.Drawing.Point(3, 52)
         Me.dtCheques.Name = "dtCheques"
         Me.dtCheques.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCheques.Size = New System.Drawing.Size(546, 277)
+        Me.dtCheques.Size = New System.Drawing.Size(688, 277)
         Me.dtCheques.TabIndex = 0
         '
         'A_ListadoCheques
@@ -91,7 +91,7 @@ Partial Class A_ListadoCheques
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(570, 349)
+        Me.ClientSize = New System.Drawing.Size(718, 349)
         Me.Controls.Add(Me.gbxCheque)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True

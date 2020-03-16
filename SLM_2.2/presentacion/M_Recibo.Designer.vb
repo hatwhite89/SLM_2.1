@@ -61,80 +61,89 @@ Partial Class M_Recibo
         'lblnro
         '
         Me.lblnro.AutoSize = True
-        Me.lblnro.Location = New System.Drawing.Point(104, 28)
+        Me.lblnro.Location = New System.Drawing.Point(14, 22)
+        Me.lblnro.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblnro.Name = "lblnro"
-        Me.lblnro.Size = New System.Drawing.Size(35, 17)
+        Me.lblnro.Size = New System.Drawing.Size(27, 13)
         Me.lblnro.TabIndex = 0
         Me.lblnro.Text = "Nro."
         '
         'lblFechaTrans
         '
         Me.lblFechaTrans.AutoSize = True
-        Me.lblFechaTrans.Location = New System.Drawing.Point(291, 28)
+        Me.lblFechaTrans.Location = New System.Drawing.Point(183, 24)
+        Me.lblFechaTrans.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblFechaTrans.Name = "lblFechaTrans"
-        Me.lblFechaTrans.Size = New System.Drawing.Size(92, 17)
+        Me.lblFechaTrans.Size = New System.Drawing.Size(70, 13)
         Me.lblFechaTrans.TabIndex = 1
         Me.lblFechaTrans.Text = "Fecha Trans."
         '
         'lblReferencia
         '
         Me.lblReferencia.AutoSize = True
-        Me.lblReferencia.Location = New System.Drawing.Point(62, 58)
+        Me.lblReferencia.Location = New System.Drawing.Point(469, 24)
+        Me.lblReferencia.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblReferencia.Name = "lblReferencia"
-        Me.lblReferencia.Size = New System.Drawing.Size(77, 17)
+        Me.lblReferencia.Size = New System.Drawing.Size(59, 13)
         Me.lblReferencia.TabIndex = 2
         Me.lblReferencia.Text = "Referencia"
         '
         'lblFormaP
         '
         Me.lblFormaP.AutoSize = True
-        Me.lblFormaP.Location = New System.Drawing.Point(29, 100)
+        Me.lblFormaP.Location = New System.Drawing.Point(2, 68)
+        Me.lblFormaP.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblFormaP.Name = "lblFormaP"
-        Me.lblFormaP.Size = New System.Drawing.Size(105, 17)
+        Me.lblFormaP.Size = New System.Drawing.Size(79, 13)
         Me.lblFormaP.TabIndex = 3
         Me.lblFormaP.Text = "Forma de Pago"
         '
         'txtnumero
         '
-        Me.txtnumero.Location = New System.Drawing.Point(145, 26)
+        Me.txtnumero.Location = New System.Drawing.Point(45, 20)
+        Me.txtnumero.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnumero.Name = "txtnumero"
         Me.txtnumero.ReadOnly = True
-        Me.txtnumero.Size = New System.Drawing.Size(133, 22)
+        Me.txtnumero.Size = New System.Drawing.Size(101, 20)
         Me.txtnumero.TabIndex = 5
         Me.txtnumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'dtpFechaTrans
         '
-        Me.dtpFechaTrans.Location = New System.Drawing.Point(389, 26)
+        Me.dtpFechaTrans.Location = New System.Drawing.Point(257, 22)
+        Me.dtpFechaTrans.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dtpFechaTrans.Name = "dtpFechaTrans"
-        Me.dtpFechaTrans.Size = New System.Drawing.Size(259, 22)
+        Me.dtpFechaTrans.Size = New System.Drawing.Size(195, 20)
         Me.dtpFechaTrans.TabIndex = 6
         '
         'rtxtReferencia
         '
-        Me.rtxtReferencia.Location = New System.Drawing.Point(145, 55)
+        Me.rtxtReferencia.Location = New System.Drawing.Point(472, 39)
+        Me.rtxtReferencia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rtxtReferencia.MaxLength = 100
         Me.rtxtReferencia.Name = "rtxtReferencia"
-        Me.rtxtReferencia.Size = New System.Drawing.Size(503, 37)
+        Me.rtxtReferencia.Size = New System.Drawing.Size(243, 73)
         Me.rtxtReferencia.TabIndex = 7
         Me.rtxtReferencia.Text = ""
         '
         'txtcodigoFormaPago
         '
         Me.txtcodigoFormaPago.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtcodigoFormaPago.Location = New System.Drawing.Point(200, 99)
+        Me.txtcodigoFormaPago.Location = New System.Drawing.Point(130, 67)
+        Me.txtcodigoFormaPago.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcodigoFormaPago.MaxLength = 20
         Me.txtcodigoFormaPago.Name = "txtcodigoFormaPago"
-        Me.txtcodigoFormaPago.Size = New System.Drawing.Size(100, 22)
+        Me.txtcodigoFormaPago.Size = New System.Drawing.Size(60, 20)
         Me.txtcodigoFormaPago.TabIndex = 8
         Me.txtcodigoFormaPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'cbxInfoClte
         '
         Me.cbxInfoClte.AutoSize = True
-        Me.cbxInfoClte.Location = New System.Drawing.Point(146, 133)
+        Me.cbxInfoClte.Location = New System.Drawing.Point(90, 95)
+        Me.cbxInfoClte.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cbxInfoClte.Name = "cbxInfoClte"
-        Me.cbxInfoClte.Size = New System.Drawing.Size(216, 21)
+        Me.cbxInfoClte.Size = New System.Drawing.Size(166, 17)
         Me.cbxInfoClte.TabIndex = 10
         Me.cbxInfoClte.Text = "Info Clte. en Asiento Contable"
         Me.cbxInfoClte.UseVisualStyleBackColor = True
@@ -142,28 +151,31 @@ Partial Class M_Recibo
         'cbxOk
         '
         Me.cbxOk.AutoSize = True
-        Me.cbxOk.Location = New System.Drawing.Point(446, 133)
+        Me.cbxOk.Location = New System.Drawing.Point(334, 108)
+        Me.cbxOk.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cbxOk.Name = "cbxOk"
-        Me.cbxOk.Size = New System.Drawing.Size(48, 21)
+        Me.cbxOk.Size = New System.Drawing.Size(40, 17)
         Me.cbxOk.TabIndex = 11
         Me.cbxOk.Text = "Ok"
         Me.cbxOk.UseVisualStyleBackColor = True
         '
         'txtMoneda
         '
-        Me.txtMoneda.Location = New System.Drawing.Point(241, 497)
+        Me.txtMoneda.Location = New System.Drawing.Point(60, 404)
+        Me.txtMoneda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtMoneda.Name = "txtMoneda"
-        Me.txtMoneda.Size = New System.Drawing.Size(133, 22)
+        Me.txtMoneda.Size = New System.Drawing.Size(101, 20)
         Me.txtMoneda.TabIndex = 24
         Me.txtMoneda.Text = "LPS"
         Me.txtMoneda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtDepositado
         '
-        Me.txtDepositado.Location = New System.Drawing.Point(504, 497)
+        Me.txtDepositado.Location = New System.Drawing.Point(257, 404)
+        Me.txtDepositado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtDepositado.Name = "txtDepositado"
         Me.txtDepositado.ReadOnly = True
-        Me.txtDepositado.Size = New System.Drawing.Size(133, 22)
+        Me.txtDepositado.Size = New System.Drawing.Size(101, 20)
         Me.txtDepositado.TabIndex = 25
         Me.txtDepositado.Text = "0"
         Me.txtDepositado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -171,18 +183,20 @@ Partial Class M_Recibo
         'lblMoneda
         '
         Me.lblMoneda.AutoSize = True
-        Me.lblMoneda.Location = New System.Drawing.Point(176, 500)
+        Me.lblMoneda.Location = New System.Drawing.Point(11, 406)
+        Me.lblMoneda.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblMoneda.Name = "lblMoneda"
-        Me.lblMoneda.Size = New System.Drawing.Size(59, 17)
+        Me.lblMoneda.Size = New System.Drawing.Size(46, 13)
         Me.lblMoneda.TabIndex = 26
         Me.lblMoneda.Text = "Moneda"
         '
         'lblDepositado
         '
         Me.lblDepositado.AutoSize = True
-        Me.lblDepositado.Location = New System.Drawing.Point(419, 500)
+        Me.lblDepositado.Location = New System.Drawing.Point(193, 406)
+        Me.lblDepositado.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblDepositado.Name = "lblDepositado"
-        Me.lblDepositado.Size = New System.Drawing.Size(80, 17)
+        Me.lblDepositado.Size = New System.Drawing.Size(61, 13)
         Me.lblDepositado.TabIndex = 27
         Me.lblDepositado.Text = "Depositado"
         '
@@ -192,9 +206,10 @@ Partial Class M_Recibo
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.Color.Black
-        Me.btnnuevo.Location = New System.Drawing.Point(47, 550)
+        Me.btnnuevo.Location = New System.Drawing.Point(14, 447)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(105, 35)
+        Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
         Me.btnnuevo.TabIndex = 139
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.UseVisualStyleBackColor = False
@@ -205,9 +220,10 @@ Partial Class M_Recibo
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.Color.Black
-        Me.btnguardar.Location = New System.Drawing.Point(219, 550)
+        Me.btnguardar.Location = New System.Drawing.Point(97, 447)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(96, 35)
+        Me.btnguardar.Size = New System.Drawing.Size(72, 28)
         Me.btnguardar.TabIndex = 140
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
@@ -219,9 +235,10 @@ Partial Class M_Recibo
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.Color.Black
-        Me.btnmodificar.Location = New System.Drawing.Point(381, 550)
+        Me.btnmodificar.Location = New System.Drawing.Point(173, 447)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnmodificar.Name = "btnmodificar"
-        Me.btnmodificar.Size = New System.Drawing.Size(96, 35)
+        Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
         Me.btnmodificar.TabIndex = 141
         Me.btnmodificar.Text = "Modificar"
         Me.btnmodificar.UseVisualStyleBackColor = False
@@ -232,9 +249,10 @@ Partial Class M_Recibo
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.Color.Black
-        Me.btncancelar.Location = New System.Drawing.Point(540, 550)
+        Me.btncancelar.Location = New System.Drawing.Point(249, 447)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btncancelar.Name = "btncancelar"
-        Me.btncancelar.Size = New System.Drawing.Size(90, 35)
+        Me.btncancelar.Size = New System.Drawing.Size(68, 28)
         Me.btncancelar.TabIndex = 142
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
@@ -247,27 +265,30 @@ Partial Class M_Recibo
         Me.btnbuscarFormaPago.FlatAppearance.BorderSize = 0
         Me.btnbuscarFormaPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarFormaPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscarFormaPago.Location = New System.Drawing.Point(145, 99)
+        Me.btnbuscarFormaPago.Location = New System.Drawing.Point(89, 67)
+        Me.btnbuscarFormaPago.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnbuscarFormaPago.Name = "btnbuscarFormaPago"
-        Me.btnbuscarFormaPago.Size = New System.Drawing.Size(49, 22)
+        Me.btnbuscarFormaPago.Size = New System.Drawing.Size(21, 18)
         Me.btnbuscarFormaPago.TabIndex = 143
         Me.btnbuscarFormaPago.Text = "..."
         Me.btnbuscarFormaPago.UseVisualStyleBackColor = False
         '
         'txtnombreFormaPago
         '
-        Me.txtnombreFormaPago.Location = New System.Drawing.Point(306, 99)
+        Me.txtnombreFormaPago.Location = New System.Drawing.Point(210, 67)
+        Me.txtnombreFormaPago.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnombreFormaPago.Name = "txtnombreFormaPago"
         Me.txtnombreFormaPago.ReadOnly = True
-        Me.txtnombreFormaPago.Size = New System.Drawing.Size(342, 22)
+        Me.txtnombreFormaPago.Size = New System.Drawing.Size(242, 20)
         Me.txtnombreFormaPago.TabIndex = 144
         '
         'lblcodeFormaPago
         '
         Me.lblcodeFormaPago.AutoSize = True
-        Me.lblcodeFormaPago.Location = New System.Drawing.Point(47, 121)
+        Me.lblcodeFormaPago.Location = New System.Drawing.Point(15, 85)
+        Me.lblcodeFormaPago.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcodeFormaPago.Name = "lblcodeFormaPago"
-        Me.lblcodeFormaPago.Size = New System.Drawing.Size(0, 17)
+        Me.lblcodeFormaPago.Size = New System.Drawing.Size(0, 13)
         Me.lblcodeFormaPago.TabIndex = 145
         Me.lblcodeFormaPago.Visible = False
         '
@@ -275,13 +296,13 @@ Partial Class M_Recibo
         '
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nroFactura, Me.cliente, Me.texto, Me.FechaPago, Me.mBanco, Me.MontoBanco, Me.mRec, Me.valorRecibido})
-        Me.dgbtabla.Location = New System.Drawing.Point(30, 170)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgbtabla.Location = New System.Drawing.Point(4, 138)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
-        Me.dgbtabla.Size = New System.Drawing.Size(618, 311)
+        Me.dgbtabla.Size = New System.Drawing.Size(711, 253)
         Me.dgbtabla.TabIndex = 146
         '
         'codigo
@@ -359,18 +380,19 @@ Partial Class M_Recibo
         'lblEstado
         '
         Me.lblEstado.AutoSize = True
-        Me.lblEstado.Location = New System.Drawing.Point(565, 133)
+        Me.lblEstado.Location = New System.Drawing.Point(424, 108)
+        Me.lblEstado.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblEstado.Name = "lblEstado"
-        Me.lblEstado.Size = New System.Drawing.Size(0, 17)
+        Me.lblEstado.Size = New System.Drawing.Size(0, 13)
         Me.lblEstado.TabIndex = 147
         Me.lblEstado.Visible = False
         '
         'M_Recibo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(681, 622)
+        Me.ClientSize = New System.Drawing.Size(718, 485)
         Me.Controls.Add(Me.lblEstado)
         Me.Controls.Add(Me.dgbtabla)
         Me.Controls.Add(Me.lblcodeFormaPago)
@@ -395,6 +417,7 @@ Partial Class M_Recibo
         Me.Controls.Add(Me.lblFechaTrans)
         Me.Controls.Add(Me.lblnro)
         Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "M_Recibo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Recibo"

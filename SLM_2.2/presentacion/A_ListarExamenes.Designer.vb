@@ -36,7 +36,7 @@ Partial Class A_ListarExamenes
         Me.GroupBox1.Controls.Add(Me.dtExamenes)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(483, 305)
+        Me.GroupBox1.Size = New System.Drawing.Size(698, 305)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccione los exámenes"
@@ -47,7 +47,7 @@ Partial Class A_ListarExamenes
         Me.btnAgregar.FlatAppearance.BorderSize = 0
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.ForeColor = System.Drawing.Color.White
-        Me.btnAgregar.Location = New System.Drawing.Point(344, 276)
+        Me.btnAgregar.Location = New System.Drawing.Point(559, 18)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(133, 23)
         Me.btnAgregar.TabIndex = 3
@@ -61,10 +61,10 @@ Partial Class A_ListarExamenes
         Me.dtExamenes.BackgroundColor = System.Drawing.Color.White
         Me.dtExamenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtExamenes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.chk})
-        Me.dtExamenes.Location = New System.Drawing.Point(7, 19)
+        Me.dtExamenes.Location = New System.Drawing.Point(4, 47)
         Me.dtExamenes.Name = "dtExamenes"
         Me.dtExamenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtExamenes.Size = New System.Drawing.Size(472, 252)
+        Me.dtExamenes.Size = New System.Drawing.Size(688, 252)
         Me.dtExamenes.TabIndex = 0
         '
         'chk
@@ -77,7 +77,7 @@ Partial Class A_ListarExamenes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(499, 326)
+        Me.ClientSize = New System.Drawing.Size(718, 326)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "A_ListarExamenes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

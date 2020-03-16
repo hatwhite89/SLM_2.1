@@ -33,10 +33,13 @@ Partial Class A_ListadoFacturaCompra
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnCrearFactura)
         Me.GroupBox1.Controls.Add(Me.dtFacturasCompra)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 41)
+        Me.GroupBox1.Controls.Add(Me.txtBusqueda)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(585, 317)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 373)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Facturas de Compra"
@@ -49,17 +52,17 @@ Partial Class A_ListadoFacturaCompra
         Me.dtFacturasCompra.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtFacturasCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtFacturasCompra.GridColor = System.Drawing.Color.White
-        Me.dtFacturasCompra.Location = New System.Drawing.Point(6, 19)
+        Me.dtFacturasCompra.Location = New System.Drawing.Point(6, 49)
         Me.dtFacturasCompra.Name = "dtFacturasCompra"
         Me.dtFacturasCompra.ReadOnly = True
         Me.dtFacturasCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtFacturasCompra.Size = New System.Drawing.Size(573, 292)
+        Me.dtFacturasCompra.Size = New System.Drawing.Size(682, 318)
         Me.dtFacturasCompra.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(322, 16)
+        Me.Label1.Location = New System.Drawing.Point(22, 27)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(96, 13)
         Me.Label1.TabIndex = 2
@@ -67,7 +70,7 @@ Partial Class A_ListadoFacturaCompra
         '
         'txtBusqueda
         '
-        Me.txtBusqueda.Location = New System.Drawing.Point(421, 12)
+        Me.txtBusqueda.Location = New System.Drawing.Point(121, 23)
         Me.txtBusqueda.Name = "txtBusqueda"
         Me.txtBusqueda.Size = New System.Drawing.Size(176, 20)
         Me.txtBusqueda.TabIndex = 3
@@ -79,7 +82,7 @@ Partial Class A_ListadoFacturaCompra
         Me.btnCrearFactura.FlatAppearance.BorderSize = 0
         Me.btnCrearFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrearFactura.ForeColor = System.Drawing.Color.White
-        Me.btnCrearFactura.Location = New System.Drawing.Point(452, 364)
+        Me.btnCrearFactura.Location = New System.Drawing.Point(532, 19)
         Me.btnCrearFactura.Name = "btnCrearFactura"
         Me.btnCrearFactura.Size = New System.Drawing.Size(145, 23)
         Me.btnCrearFactura.TabIndex = 5
@@ -90,10 +93,7 @@ Partial Class A_ListadoFacturaCompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(609, 397)
-        Me.Controls.Add(Me.btnCrearFactura)
-        Me.Controls.Add(Me.txtBusqueda)
-        Me.Controls.Add(Me.Label1)
+        Me.ClientSize = New System.Drawing.Size(718, 397)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True
@@ -101,9 +101,9 @@ Partial Class A_ListadoFacturaCompra
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Facturas de Compra"
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.dtFacturasCompra, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 

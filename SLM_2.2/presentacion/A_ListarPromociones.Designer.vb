@@ -42,7 +42,7 @@ Partial Class A_ListarPromociones
         Me.GroupBox1.Controls.Add(Me.dtPromos)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(587, 358)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 358)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Promociones Registradas"
@@ -53,7 +53,7 @@ Partial Class A_ListarPromociones
         Me.btnNuevaPromo.FlatAppearance.BorderSize = 0
         Me.btnNuevaPromo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNuevaPromo.ForeColor = System.Drawing.Color.White
-        Me.btnNuevaPromo.Location = New System.Drawing.Point(450, 320)
+        Me.btnNuevaPromo.Location = New System.Drawing.Point(557, 16)
         Me.btnNuevaPromo.Name = "btnNuevaPromo"
         Me.btnNuevaPromo.Size = New System.Drawing.Size(131, 23)
         Me.btnNuevaPromo.TabIndex = 28
@@ -67,7 +67,7 @@ Partial Class A_ListarPromociones
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCancelar.FlatAppearance.BorderSize = 0
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(544, 17)
+        Me.btnCancelar.Location = New System.Drawing.Point(241, 19)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(20, 18)
         Me.btnCancelar.TabIndex = 27
@@ -75,7 +75,7 @@ Partial Class A_ListarPromociones
         '
         'txtBusqueda
         '
-        Me.txtBusqueda.Location = New System.Drawing.Point(362, 17)
+        Me.txtBusqueda.Location = New System.Drawing.Point(58, 19)
         Me.txtBusqueda.Name = "txtBusqueda"
         Me.txtBusqueda.Size = New System.Drawing.Size(177, 20)
         Me.txtBusqueda.TabIndex = 2
@@ -83,7 +83,7 @@ Partial Class A_ListarPromociones
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(310, 20)
+        Me.Label1.Location = New System.Drawing.Point(6, 22)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(46, 13)
         Me.Label1.TabIndex = 1
@@ -96,7 +96,7 @@ Partial Class A_ListarPromociones
         Me.dtPromos.Location = New System.Drawing.Point(6, 46)
         Me.dtPromos.Name = "dtPromos"
         Me.dtPromos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtPromos.Size = New System.Drawing.Size(575, 268)
+        Me.dtPromos.Size = New System.Drawing.Size(682, 306)
         Me.dtPromos.TabIndex = 0
         '
         'A_ListarPromociones
@@ -104,7 +104,7 @@ Partial Class A_ListarPromociones
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(611, 382)
+        Me.ClientSize = New System.Drawing.Size(718, 382)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True

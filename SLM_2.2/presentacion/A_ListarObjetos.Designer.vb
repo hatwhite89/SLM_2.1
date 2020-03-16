@@ -40,7 +40,7 @@ Partial Class A_ListarObjetos
         Me.dtObjetos.Location = New System.Drawing.Point(6, 53)
         Me.dtObjetos.Name = "dtObjetos"
         Me.dtObjetos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtObjetos.Size = New System.Drawing.Size(225, 307)
+        Me.dtObjetos.Size = New System.Drawing.Size(686, 307)
         Me.dtObjetos.TabIndex = 0
         '
         'GroupBox1
@@ -50,22 +50,22 @@ Partial Class A_ListarObjetos
         Me.GroupBox1.Controls.Add(Me.dtObjetos)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(237, 366)
+        Me.GroupBox1.Size = New System.Drawing.Size(698, 366)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccione un Objeto"
         '
         'txtBusqueda
         '
-        Me.txtBusqueda.Location = New System.Drawing.Point(89, 27)
+        Me.txtBusqueda.Location = New System.Drawing.Point(52, 22)
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(100, 20)
+        Me.txtBusqueda.Size = New System.Drawing.Size(640, 20)
         Me.txtBusqueda.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(43, 30)
+        Me.Label1.Location = New System.Drawing.Point(6, 25)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 1
@@ -85,7 +85,7 @@ Partial Class A_ListarObjetos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(252, 382)
+        Me.ClientSize = New System.Drawing.Size(718, 382)
         Me.Controls.Add(Me.lblForm)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow

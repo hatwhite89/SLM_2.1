@@ -47,9 +47,11 @@ Partial Class M_BuscarCotizacion
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnumeroB)
-        Me.gbxbusqueda.Location = New System.Drawing.Point(13, 13)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(10, 11)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Size = New System.Drawing.Size(613, 598)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
+        Me.gbxbusqueda.Size = New System.Drawing.Size(705, 486)
         Me.gbxbusqueda.TabIndex = 116
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR COTIZACIÓN"
@@ -60,10 +62,10 @@ Partial Class M_BuscarCotizacion
         Me.btnnueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnueva.ForeColor = System.Drawing.Color.White
-        Me.btnnueva.Location = New System.Drawing.Point(200, 16)
-        Me.btnnueva.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnnueva.Location = New System.Drawing.Point(533, 13)
+        Me.btnnueva.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnueva.Name = "btnnueva"
-        Me.btnnueva.Size = New System.Drawing.Size(219, 34)
+        Me.btnnueva.Size = New System.Drawing.Size(164, 28)
         Me.btnnueva.TabIndex = 121
         Me.btnnueva.Text = "Nueva Cotización"
         Me.btnnueva.UseVisualStyleBackColor = False
@@ -73,84 +75,93 @@ Partial Class M_BuscarCotizacion
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(46, 112)
+        Me.dgbtabla.Location = New System.Drawing.Point(4, 71)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(520, 410)
+        Me.dgbtabla.Size = New System.Drawing.Size(693, 373)
         Me.dgbtabla.TabIndex = 119
         '
         'txtnumeroB
         '
-        Me.txtnumeroB.Location = New System.Drawing.Point(102, 67)
+        Me.txtnumeroB.Location = New System.Drawing.Point(54, 47)
+        Me.txtnumeroB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnumeroB.MaxLength = 20
         Me.txtnumeroB.Name = "txtnumeroB"
-        Me.txtnumeroB.Size = New System.Drawing.Size(192, 22)
+        Me.txtnumeroB.Size = New System.Drawing.Size(145, 20)
         Me.txtnumeroB.TabIndex = 118
         '
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(310, 70)
+        Me.lblnombreB.Location = New System.Drawing.Point(210, 50)
+        Me.lblnombreB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblnombreB.Name = "lblnombreB"
-        Me.lblnombreB.Size = New System.Drawing.Size(58, 17)
+        Me.lblnombreB.Size = New System.Drawing.Size(44, 13)
         Me.lblnombreB.TabIndex = 117
         Me.lblnombreB.Text = "Nombre"
         '
         'lbltipoCta
         '
         Me.lbltipoCta.AutoSize = True
-        Me.lbltipoCta.Location = New System.Drawing.Point(285, 182)
+        Me.lbltipoCta.Location = New System.Drawing.Point(214, 148)
+        Me.lbltipoCta.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbltipoCta.Name = "lbltipoCta"
-        Me.lbltipoCta.Size = New System.Drawing.Size(0, 17)
+        Me.lbltipoCta.Size = New System.Drawing.Size(0, 13)
         Me.lbltipoCta.TabIndex = 116
         Me.lbltipoCta.Visible = False
         '
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(417, 554)
+        Me.lblcantidad.Location = New System.Drawing.Point(231, 460)
+        Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
+        Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
         Me.lblcantidad.TabIndex = 115
         Me.lblcantidad.Text = "000"
         '
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(128, 554)
+        Me.lbltotal.Location = New System.Drawing.Point(14, 460)
+        Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(182, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(142, 13)
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL DE COTIZACIONES"
         '
         'txtnombreB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(374, 66)
+        Me.txtnombreB.Location = New System.Drawing.Point(258, 47)
+        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
-        Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
+        Me.txtnombreB.Size = New System.Drawing.Size(305, 20)
         Me.txtnombreB.TabIndex = 115
         '
         'lblnumeroB
         '
         Me.lblnumeroB.AutoSize = True
-        Me.lblnumeroB.Location = New System.Drawing.Point(39, 70)
+        Me.lblnumeroB.Location = New System.Drawing.Point(7, 50)
+        Me.lblnumeroB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblnumeroB.Name = "lblnumeroB"
-        Me.lblnumeroB.Size = New System.Drawing.Size(58, 17)
+        Me.lblnumeroB.Size = New System.Drawing.Size(44, 13)
         Me.lblnumeroB.TabIndex = 114
         Me.lblnumeroB.Text = "Número"
         '
         'M_BuscarCotizacion
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(640, 623)
+        Me.ClientSize = New System.Drawing.Size(718, 506)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_BuscarCotizacion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Búsqueda de Cotizaciones"

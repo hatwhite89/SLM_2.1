@@ -31,10 +31,10 @@ Partial Class A_BuscarFormaPago
         '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(73, 11)
+        Me.txtCodigo.Location = New System.Drawing.Point(79, 11)
         Me.txtCodigo.MaxLength = 20
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
+        Me.txtCodigo.Size = New System.Drawing.Size(382, 20)
         Me.txtCodigo.TabIndex = 0
         '
         'Label1
@@ -65,13 +65,13 @@ Partial Class A_BuscarFormaPago
         Me.dtFormasPago.ShowCellErrors = False
         Me.dtFormasPago.ShowCellToolTips = False
         Me.dtFormasPago.ShowEditingIcon = False
-        Me.dtFormasPago.Size = New System.Drawing.Size(207, 241)
+        Me.dtFormasPago.Size = New System.Drawing.Size(694, 286)
         Me.dtFormasPago.TabIndex = 3
         '
         'lblJC
         '
         Me.lblJC.AutoSize = True
-        Me.lblJC.Location = New System.Drawing.Point(188, 15)
+        Me.lblJC.Location = New System.Drawing.Point(476, 15)
         Me.lblJC.Name = "lblJC"
         Me.lblJC.Size = New System.Drawing.Size(27, 13)
         Me.lblJC.TabIndex = 4
@@ -82,7 +82,7 @@ Partial Class A_BuscarFormaPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(225, 289)
+        Me.ClientSize = New System.Drawing.Size(718, 335)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblJC)
         Me.Controls.Add(Me.dtFormasPago)

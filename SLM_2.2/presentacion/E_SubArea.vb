@@ -2,7 +2,7 @@
     'Objeto SubArea
     Dim SubA As New ClsSubArea
 
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) 
 
         Try
 
@@ -30,7 +30,7 @@
 
     End Sub
 
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) 
 
     End Sub
 

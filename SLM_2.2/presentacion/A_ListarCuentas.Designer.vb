@@ -39,7 +39,7 @@ Partial Class A_ListarCuentas
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(368, 382)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 382)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccione una Cuenta"
@@ -47,7 +47,7 @@ Partial Class A_ListarCuentas
         'lblForm
         '
         Me.lblForm.AutoSize = True
-        Me.lblForm.Location = New System.Drawing.Point(251, 27)
+        Me.lblForm.Location = New System.Drawing.Point(430, 27)
         Me.lblForm.Name = "lblForm"
         Me.lblForm.Size = New System.Drawing.Size(30, 13)
         Me.lblForm.TabIndex = 4
@@ -66,14 +66,14 @@ Partial Class A_ListarCuentas
         Me.dtCuentas.Name = "dtCuentas"
         Me.dtCuentas.ReadOnly = True
         Me.dtCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCuentas.Size = New System.Drawing.Size(356, 326)
+        Me.dtCuentas.Size = New System.Drawing.Size(682, 326)
         Me.dtCuentas.TabIndex = 3
         '
         'txtBusqueda
         '
         Me.txtBusqueda.Location = New System.Drawing.Point(52, 24)
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(100, 20)
+        Me.txtBusqueda.Size = New System.Drawing.Size(303, 20)
         Me.txtBusqueda.TabIndex = 2
         '
         'Label1
@@ -90,7 +90,7 @@ Partial Class A_ListarCuentas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(392, 406)
+        Me.ClientSize = New System.Drawing.Size(718, 406)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "A_ListarCuentas"

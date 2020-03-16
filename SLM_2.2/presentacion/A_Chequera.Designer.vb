@@ -24,6 +24,7 @@ Partial Class A_Chequera
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Chequera))
         Me.gbxInfoChequeras = New System.Windows.Forms.GroupBox()
+        Me.lblCodChequera = New System.Windows.Forms.Label()
         Me.lblNombreBanc = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.mtxtNumInicio = New System.Windows.Forms.MaskedTextBox()
@@ -41,7 +42,6 @@ Partial Class A_Chequera
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dtChequeras = New System.Windows.Forms.DataGridView()
-        Me.lblCodChequera = New System.Windows.Forms.Label()
         Me.gbxInfoChequeras.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtChequeras, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,6 +49,7 @@ Partial Class A_Chequera
         '
         'gbxInfoChequeras
         '
+        Me.gbxInfoChequeras.Controls.Add(Me.lblCodChequera)
         Me.gbxInfoChequeras.Controls.Add(Me.lblNombreBanc)
         Me.gbxInfoChequeras.Controls.Add(Me.Button1)
         Me.gbxInfoChequeras.Controls.Add(Me.mtxtNumInicio)
@@ -66,10 +67,20 @@ Partial Class A_Chequera
         Me.gbxInfoChequeras.Controls.Add(Me.Label1)
         Me.gbxInfoChequeras.Location = New System.Drawing.Point(12, 12)
         Me.gbxInfoChequeras.Name = "gbxInfoChequeras"
-        Me.gbxInfoChequeras.Size = New System.Drawing.Size(358, 150)
+        Me.gbxInfoChequeras.Size = New System.Drawing.Size(694, 150)
         Me.gbxInfoChequeras.TabIndex = 0
         Me.gbxInfoChequeras.TabStop = False
         Me.gbxInfoChequeras.Text = "Información de Chequera"
+        '
+        'lblCodChequera
+        '
+        Me.lblCodChequera.AutoSize = True
+        Me.lblCodChequera.Location = New System.Drawing.Point(540, 16)
+        Me.lblCodChequera.Name = "lblCodChequera"
+        Me.lblCodChequera.Size = New System.Drawing.Size(39, 13)
+        Me.lblCodChequera.TabIndex = 16
+        Me.lblCodChequera.Text = "Label6"
+        Me.lblCodChequera.Visible = False
         '
         'lblNombreBanc
         '
@@ -124,7 +135,7 @@ Partial Class A_Chequera
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(274, 118)
+        Me.btnGuardar.Location = New System.Drawing.Point(92, 121)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 12
@@ -137,7 +148,7 @@ Partial Class A_Chequera
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(193, 118)
+        Me.btnCrear.Location = New System.Drawing.Point(11, 121)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 10
@@ -228,7 +239,7 @@ Partial Class A_Chequera
         Me.GroupBox1.Controls.Add(Me.dtChequeras)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 168)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(358, 236)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 236)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Chequeras"
@@ -245,26 +256,15 @@ Partial Class A_Chequera
         Me.dtChequeras.Name = "dtChequeras"
         Me.dtChequeras.ReadOnly = True
         Me.dtChequeras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtChequeras.Size = New System.Drawing.Size(346, 211)
+        Me.dtChequeras.Size = New System.Drawing.Size(682, 211)
         Me.dtChequeras.TabIndex = 0
-        '
-        'lblCodChequera
-        '
-        Me.lblCodChequera.AutoSize = True
-        Me.lblCodChequera.Location = New System.Drawing.Point(376, 21)
-        Me.lblCodChequera.Name = "lblCodChequera"
-        Me.lblCodChequera.Size = New System.Drawing.Size(39, 13)
-        Me.lblCodChequera.TabIndex = 16
-        Me.lblCodChequera.Text = "Label6"
-        Me.lblCodChequera.Visible = False
         '
         'A_Chequera
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(379, 416)
-        Me.Controls.Add(Me.lblCodChequera)
+        Me.ClientSize = New System.Drawing.Size(718, 416)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoChequeras)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -277,7 +277,6 @@ Partial Class A_Chequera
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dtChequeras, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 

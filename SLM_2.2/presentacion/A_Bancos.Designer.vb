@@ -70,7 +70,7 @@ Partial Class A_Bancos
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(530, 126)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 156)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Banco"
@@ -81,7 +81,7 @@ Partial Class A_Bancos
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(449, 91)
+        Me.btnGuardar.Location = New System.Drawing.Point(168, 127)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 11
@@ -94,7 +94,7 @@ Partial Class A_Bancos
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(368, 91)
+        Me.btnModificar.Location = New System.Drawing.Point(87, 127)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 10
@@ -108,7 +108,7 @@ Partial Class A_Bancos
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(287, 91)
+        Me.btnCrear.Location = New System.Drawing.Point(6, 127)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 9
@@ -194,9 +194,9 @@ Partial Class A_Bancos
         Me.GroupBox2.Controls.Add(Me.btnCancelar)
         Me.GroupBox2.Controls.Add(Me.txtBusquedaBanco)
         Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 144)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 174)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(530, 290)
+        Me.GroupBox2.Size = New System.Drawing.Size(694, 273)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Listado de Bancos"
@@ -213,7 +213,7 @@ Partial Class A_Bancos
         Me.dtBancos.Location = New System.Drawing.Point(6, 48)
         Me.dtBancos.Name = "dtBancos"
         Me.dtBancos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtBancos.Size = New System.Drawing.Size(518, 236)
+        Me.dtBancos.Size = New System.Drawing.Size(682, 217)
         Me.dtBancos.TabIndex = 3
         '
         'btnCancelar
@@ -222,9 +222,9 @@ Partial Class A_Bancos
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCancelar.FlatAppearance.BorderSize = 0
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(460, 24)
+        Me.btnCancelar.Location = New System.Drawing.Point(624, 19)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(64, 18)
+        Me.btnCancelar.Size = New System.Drawing.Size(64, 19)
         Me.btnCancelar.TabIndex = 2
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
@@ -234,7 +234,7 @@ Partial Class A_Bancos
         Me.txtBusquedaBanco.Location = New System.Drawing.Point(104, 22)
         Me.txtBusquedaBanco.MaxLength = 20
         Me.txtBusquedaBanco.Name = "txtBusquedaBanco"
-        Me.txtBusquedaBanco.Size = New System.Drawing.Size(165, 20)
+        Me.txtBusquedaBanco.Size = New System.Drawing.Size(456, 20)
         Me.txtBusquedaBanco.TabIndex = 1
         '
         'Label5
@@ -251,7 +251,7 @@ Partial Class A_Bancos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(554, 442)
+        Me.ClientSize = New System.Drawing.Size(718, 452)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow

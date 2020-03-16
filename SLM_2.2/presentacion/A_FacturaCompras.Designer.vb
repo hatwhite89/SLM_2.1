@@ -67,7 +67,10 @@ Partial Class A_FacturaCompras
         'gbxInfoFact
         '
         Me.gbxInfoFact.Controls.Add(Me.txtNroFactura)
+        Me.gbxInfoFact.Controls.Add(Me.btnCrear)
         Me.gbxInfoFact.Controls.Add(Me.Label10)
+        Me.gbxInfoFact.Controls.Add(Me.btnModificar)
+        Me.gbxInfoFact.Controls.Add(Me.btnGuardar)
         Me.gbxInfoFact.Controls.Add(Me.lblFila)
         Me.gbxInfoFact.Controls.Add(Me.btnBuscarTerminoPago)
         Me.gbxInfoFact.Controls.Add(Me.txtMoneda)
@@ -90,7 +93,7 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.Controls.Add(Me.Label1)
         Me.gbxInfoFact.Location = New System.Drawing.Point(7, 5)
         Me.gbxInfoFact.Name = "gbxInfoFact"
-        Me.gbxInfoFact.Size = New System.Drawing.Size(748, 164)
+        Me.gbxInfoFact.Size = New System.Drawing.Size(748, 198)
         Me.gbxInfoFact.TabIndex = 0
         Me.gbxInfoFact.TabStop = False
         Me.gbxInfoFact.Text = "Información de Factura"
@@ -298,9 +301,9 @@ Partial Class A_FacturaCompras
         Me.GroupBox1.Controls.Add(Me.lblTotal)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.dtDetalleFactura)
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 175)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 209)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(730, 342)
+        Me.GroupBox1.Size = New System.Drawing.Size(748, 308)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalle de Factura"
@@ -331,10 +334,10 @@ Partial Class A_FacturaCompras
         Me.dtDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDetalleFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cuenta, Me.area, Me.Sede, Me.Descripción, Me.Monto})
         Me.dtDetalleFactura.GridColor = System.Drawing.Color.White
-        Me.dtDetalleFactura.Location = New System.Drawing.Point(3, 16)
+        Me.dtDetalleFactura.Location = New System.Drawing.Point(3, 19)
         Me.dtDetalleFactura.Name = "dtDetalleFactura"
         Me.dtDetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.dtDetalleFactura.Size = New System.Drawing.Size(721, 291)
+        Me.dtDetalleFactura.Size = New System.Drawing.Size(739, 288)
         Me.dtDetalleFactura.TabIndex = 10
         '
         'Cuenta
@@ -374,7 +377,7 @@ Partial Class A_FacturaCompras
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(680, 523)
+        Me.btnGuardar.Location = New System.Drawing.Point(167, 169)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 11
@@ -387,7 +390,7 @@ Partial Class A_FacturaCompras
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(599, 523)
+        Me.btnModificar.Location = New System.Drawing.Point(86, 169)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 13
@@ -400,7 +403,7 @@ Partial Class A_FacturaCompras
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(518, 523)
+        Me.btnCrear.Location = New System.Drawing.Point(5, 169)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 12
@@ -427,9 +430,6 @@ Partial Class A_FacturaCompras
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(762, 553)
         Me.Controls.Add(Me.btnRegresar)
-        Me.Controls.Add(Me.btnCrear)
-        Me.Controls.Add(Me.btnModificar)
-        Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoFact)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow

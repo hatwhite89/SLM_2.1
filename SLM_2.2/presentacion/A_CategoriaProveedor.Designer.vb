@@ -97,7 +97,7 @@ Partial Class A_CategoriaProveedor
         Me.txtAcreedores.Location = New System.Drawing.Point(450, 27)
         Me.txtAcreedores.MaxLength = 20
         Me.txtAcreedores.Name = "txtAcreedores"
-        Me.txtAcreedores.Size = New System.Drawing.Size(100, 20)
+        Me.txtAcreedores.Size = New System.Drawing.Size(240, 20)
         Me.txtAcreedores.TabIndex = 5
         '
         'Label4
@@ -114,7 +114,7 @@ Partial Class A_CategoriaProveedor
         Me.txtAnticipos.Location = New System.Drawing.Point(450, 53)
         Me.txtAnticipos.MaxLength = 20
         Me.txtAnticipos.Name = "txtAnticipos"
-        Me.txtAnticipos.Size = New System.Drawing.Size(100, 20)
+        Me.txtAnticipos.Size = New System.Drawing.Size(240, 20)
         Me.txtAnticipos.TabIndex = 7
         '
         'gbxInfo
@@ -136,7 +136,7 @@ Partial Class A_CategoriaProveedor
         Me.gbxInfo.Controls.Add(Me.txtDescrip)
         Me.gbxInfo.Location = New System.Drawing.Point(10, 10)
         Me.gbxInfo.Name = "gbxInfo"
-        Me.gbxInfo.Size = New System.Drawing.Size(559, 146)
+        Me.gbxInfo.Size = New System.Drawing.Size(696, 146)
         Me.gbxInfo.TabIndex = 8
         Me.gbxInfo.TabStop = False
         Me.gbxInfo.Text = "Información"
@@ -188,7 +188,7 @@ Partial Class A_CategoriaProveedor
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(478, 117)
+        Me.btnGuardar.Location = New System.Drawing.Point(168, 117)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 10
@@ -201,7 +201,7 @@ Partial Class A_CategoriaProveedor
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(397, 117)
+        Me.btnModificar.Location = New System.Drawing.Point(87, 117)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 9
@@ -215,7 +215,7 @@ Partial Class A_CategoriaProveedor
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(316, 117)
+        Me.btnCrear.Location = New System.Drawing.Point(6, 117)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 8
@@ -231,14 +231,14 @@ Partial Class A_CategoriaProveedor
         Me.GroupBox1.Controls.Add(Me.dtCategorias)
         Me.GroupBox1.Location = New System.Drawing.Point(10, 162)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(559, 261)
+        Me.GroupBox1.Size = New System.Drawing.Size(696, 261)
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Categorias de Proveedor"
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(228, 22)
+        Me.btnCancelar.Location = New System.Drawing.Point(615, 19)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 20)
         Me.btnCancelar.TabIndex = 3
@@ -249,7 +249,7 @@ Partial Class A_CategoriaProveedor
         '
         Me.txtBusqueda.Location = New System.Drawing.Point(53, 22)
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(169, 20)
+        Me.txtBusqueda.Size = New System.Drawing.Size(462, 20)
         Me.txtBusqueda.TabIndex = 2
         '
         'Label6
@@ -273,7 +273,7 @@ Partial Class A_CategoriaProveedor
         Me.dtCategorias.Name = "dtCategorias"
         Me.dtCategorias.ReadOnly = True
         Me.dtCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCategorias.Size = New System.Drawing.Size(544, 207)
+        Me.dtCategorias.Size = New System.Drawing.Size(684, 207)
         Me.dtCategorias.TabIndex = 0
         '
         'A_CategoriaProveedor
@@ -281,7 +281,7 @@ Partial Class A_CategoriaProveedor
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(578, 430)
+        Me.ClientSize = New System.Drawing.Size(718, 430)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow

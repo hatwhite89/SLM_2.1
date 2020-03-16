@@ -33,7 +33,7 @@ Partial Class A_ListarTipoClasificacion
         Me.GroupBox1.Controls.Add(Me.dtTipoClasific)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(430, 254)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 305)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccione un tipo"
@@ -50,14 +50,14 @@ Partial Class A_ListarTipoClasificacion
         Me.dtTipoClasific.Location = New System.Drawing.Point(6, 19)
         Me.dtTipoClasific.Name = "dtTipoClasific"
         Me.dtTipoClasific.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtTipoClasific.Size = New System.Drawing.Size(418, 229)
+        Me.dtTipoClasific.Size = New System.Drawing.Size(682, 280)
         Me.dtTipoClasific.TabIndex = 0
         '
         'A_ListarTipoClasificacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(454, 278)
+        Me.ClientSize = New System.Drawing.Size(718, 329)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "A_ListarTipoClasificacion"

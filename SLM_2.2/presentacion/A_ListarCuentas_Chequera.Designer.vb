@@ -33,7 +33,7 @@ Partial Class A_ListarCuentas_Chequera
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(96, 26)
+        Me.Label1.Location = New System.Drawing.Point(13, 26)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(41, 13)
         Me.Label1.TabIndex = 0
@@ -41,9 +41,9 @@ Partial Class A_ListarCuentas_Chequera
         '
         'txtCuentaBusqueda
         '
-        Me.txtCuentaBusqueda.Location = New System.Drawing.Point(139, 23)
+        Me.txtCuentaBusqueda.Location = New System.Drawing.Point(56, 23)
         Me.txtCuentaBusqueda.Name = "txtCuentaBusqueda"
-        Me.txtCuentaBusqueda.Size = New System.Drawing.Size(100, 20)
+        Me.txtCuentaBusqueda.Size = New System.Drawing.Size(330, 20)
         Me.txtCuentaBusqueda.TabIndex = 1
         '
         'btnCancelar
@@ -53,7 +53,7 @@ Partial Class A_ListarCuentas_Chequera
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCancelar.FlatAppearance.BorderSize = 0
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(245, 23)
+        Me.btnCancelar.Location = New System.Drawing.Point(392, 23)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(22, 20)
         Me.btnCancelar.TabIndex = 2
@@ -70,7 +70,7 @@ Partial Class A_ListarCuentas_Chequera
         Me.dtCuentas.Name = "dtCuentas"
         Me.dtCuentas.RowHeadersVisible = False
         Me.dtCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCuentas.Size = New System.Drawing.Size(332, 389)
+        Me.dtCuentas.Size = New System.Drawing.Size(694, 389)
         Me.dtCuentas.TabIndex = 3
         '
         'A_ListarCuentas_Chequera
@@ -78,7 +78,7 @@ Partial Class A_ListarCuentas_Chequera
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(353, 447)
+        Me.ClientSize = New System.Drawing.Size(718, 447)
         Me.ControlBox = False
         Me.Controls.Add(Me.dtCuentas)
         Me.Controls.Add(Me.btnCancelar)
