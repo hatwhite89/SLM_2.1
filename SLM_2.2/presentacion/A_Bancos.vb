@@ -100,6 +100,7 @@
             lblEstado.Text = "Activa"
             lblEstado.ForeColor = Color.Green
         Else
+
             lblEstado.Text = "Inactiva"
             lblEstado.ForeColor = Color.Red
         End If
