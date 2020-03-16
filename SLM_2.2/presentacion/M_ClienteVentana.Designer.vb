@@ -23,10 +23,10 @@ Partial Class M_ClienteVentana
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_ClienteVentana))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_ClienteVentana))
         Me.txtnombreCompleto = New System.Windows.Forms.TextBox()
         Me.lblnombre = New System.Windows.Forms.Label()
         Me.txtnombreTerminos = New System.Windows.Forms.TextBox()
@@ -37,7 +37,6 @@ Partial Class M_ClienteVentana
         Me.lblconvenio = New System.Windows.Forms.Label()
         Me.txttelefonoCasa = New System.Windows.Forms.TextBox()
         Me.lblaseguradora = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.txttotal = New System.Windows.Forms.TextBox()
         Me.txtpagoPaciente = New System.Windows.Forms.TextBox()
         Me.txtvuelto = New System.Windows.Forms.TextBox()
@@ -62,13 +61,18 @@ Partial Class M_ClienteVentana
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtcelular = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         CType(Me.dgvtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxImagenes, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtnombreCompleto
         '
-        Me.txtnombreCompleto.Location = New System.Drawing.Point(153, 172)
+        Me.txtnombreCompleto.Location = New System.Drawing.Point(154, 18)
         Me.txtnombreCompleto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombreCompleto.Name = "txtnombreCompleto"
         Me.txtnombreCompleto.ReadOnly = True
@@ -79,7 +83,7 @@ Partial Class M_ClienteVentana
         'lblnombre
         '
         Me.lblnombre.AutoSize = True
-        Me.lblnombre.Location = New System.Drawing.Point(25, 176)
+        Me.lblnombre.Location = New System.Drawing.Point(26, 22)
         Me.lblnombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblnombre.Name = "lblnombre"
         Me.lblnombre.Size = New System.Drawing.Size(121, 17)
@@ -88,7 +92,7 @@ Partial Class M_ClienteVentana
         '
         'txtnombreTerminos
         '
-        Me.txtnombreTerminos.Location = New System.Drawing.Point(153, 233)
+        Me.txtnombreTerminos.Location = New System.Drawing.Point(154, 79)
         Me.txtnombreTerminos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombreTerminos.Name = "txtnombreTerminos"
         Me.txtnombreTerminos.ReadOnly = True
@@ -100,7 +104,7 @@ Partial Class M_ClienteVentana
         'lblterminosPago
         '
         Me.lblterminosPago.AutoSize = True
-        Me.lblterminosPago.Location = New System.Drawing.Point(25, 236)
+        Me.lblterminosPago.Location = New System.Drawing.Point(26, 82)
         Me.lblterminosPago.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblterminosPago.Name = "lblterminosPago"
         Me.lblterminosPago.Size = New System.Drawing.Size(124, 17)
@@ -109,7 +113,7 @@ Partial Class M_ClienteVentana
         '
         'txtnombreCategoria
         '
-        Me.txtnombreCategoria.Location = New System.Drawing.Point(153, 203)
+        Me.txtnombreCategoria.Location = New System.Drawing.Point(154, 49)
         Me.txtnombreCategoria.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombreCategoria.Name = "txtnombreCategoria"
         Me.txtnombreCategoria.ReadOnly = True
@@ -120,7 +124,7 @@ Partial Class M_ClienteVentana
         'lblcategoria
         '
         Me.lblcategoria.AutoSize = True
-        Me.lblcategoria.Location = New System.Drawing.Point(25, 207)
+        Me.lblcategoria.Location = New System.Drawing.Point(26, 53)
         Me.lblcategoria.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcategoria.Name = "lblcategoria"
         Me.lblcategoria.Size = New System.Drawing.Size(69, 17)
@@ -129,7 +133,7 @@ Partial Class M_ClienteVentana
         '
         'txtnombreConvenio
         '
-        Me.txtnombreConvenio.Location = New System.Drawing.Point(153, 263)
+        Me.txtnombreConvenio.Location = New System.Drawing.Point(154, 109)
         Me.txtnombreConvenio.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombreConvenio.Name = "txtnombreConvenio"
         Me.txtnombreConvenio.ReadOnly = True
@@ -140,7 +144,7 @@ Partial Class M_ClienteVentana
         'lblconvenio
         '
         Me.lblconvenio.AutoSize = True
-        Me.lblconvenio.Location = New System.Drawing.Point(27, 266)
+        Me.lblconvenio.Location = New System.Drawing.Point(28, 112)
         Me.lblconvenio.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblconvenio.Name = "lblconvenio"
         Me.lblconvenio.Size = New System.Drawing.Size(67, 17)
@@ -149,7 +153,7 @@ Partial Class M_ClienteVentana
         '
         'txttelefonoCasa
         '
-        Me.txttelefonoCasa.Location = New System.Drawing.Point(675, 233)
+        Me.txttelefonoCasa.Location = New System.Drawing.Point(676, 79)
         Me.txttelefonoCasa.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txttelefonoCasa.Name = "txttelefonoCasa"
         Me.txttelefonoCasa.ReadOnly = True
@@ -160,26 +164,17 @@ Partial Class M_ClienteVentana
         'lblaseguradora
         '
         Me.lblaseguradora.AutoSize = True
-        Me.lblaseguradora.Location = New System.Drawing.Point(529, 236)
+        Me.lblaseguradora.Location = New System.Drawing.Point(530, 82)
         Me.lblaseguradora.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblaseguradora.Name = "lblaseguradora"
         Me.lblaseguradora.Size = New System.Drawing.Size(100, 17)
         Me.lblaseguradora.TabIndex = 124
         Me.lblaseguradora.Text = "Teléfono Casa"
         '
-        'Label1
-        '
-        Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label1.Image = CType(resources.GetObject("Label1.Image"), System.Drawing.Image)
-        Me.Label1.Location = New System.Drawing.Point(76, 11)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(777, 139)
-        Me.Label1.TabIndex = 128
-        '
         'txttotal
         '
         Me.txttotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txttotal.Location = New System.Drawing.Point(661, 682)
+        Me.txttotal.Location = New System.Drawing.Point(627, 20)
         Me.txttotal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txttotal.Name = "txttotal"
         Me.txttotal.ReadOnly = True
@@ -190,7 +185,7 @@ Partial Class M_ClienteVentana
         'txtpagoPaciente
         '
         Me.txtpagoPaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpagoPaciente.Location = New System.Drawing.Point(661, 713)
+        Me.txtpagoPaciente.Location = New System.Drawing.Point(627, 51)
         Me.txtpagoPaciente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtpagoPaciente.Name = "txtpagoPaciente"
         Me.txtpagoPaciente.ReadOnly = True
@@ -201,7 +196,7 @@ Partial Class M_ClienteVentana
         'txtvuelto
         '
         Me.txtvuelto.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtvuelto.Location = New System.Drawing.Point(661, 743)
+        Me.txtvuelto.Location = New System.Drawing.Point(627, 81)
         Me.txtvuelto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtvuelto.Name = "txtvuelto"
         Me.txtvuelto.ReadOnly = True
@@ -213,7 +208,7 @@ Partial Class M_ClienteVentana
         '
         Me.lbltotal.AutoSize = True
         Me.lbltotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbltotal.Location = New System.Drawing.Point(617, 686)
+        Me.lbltotal.Location = New System.Drawing.Point(583, 24)
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(40, 17)
         Me.lbltotal.TabIndex = 132
@@ -223,7 +218,7 @@ Partial Class M_ClienteVentana
         '
         Me.lblvuelto.AutoSize = True
         Me.lblvuelto.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblvuelto.Location = New System.Drawing.Point(609, 746)
+        Me.lblvuelto.Location = New System.Drawing.Point(575, 84)
         Me.lblvuelto.Name = "lblvuelto"
         Me.lblvuelto.Size = New System.Drawing.Size(48, 17)
         Me.lblvuelto.TabIndex = 131
@@ -233,7 +228,7 @@ Partial Class M_ClienteVentana
         '
         Me.lblpagoPaciente.AutoSize = True
         Me.lblpagoPaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblpagoPaciente.Location = New System.Drawing.Point(497, 715)
+        Me.lblpagoPaciente.Location = New System.Drawing.Point(463, 53)
         Me.lblpagoPaciente.Name = "lblpagoPaciente"
         Me.lblpagoPaciente.Size = New System.Drawing.Size(158, 17)
         Me.lblpagoPaciente.TabIndex = 130
@@ -280,7 +275,7 @@ Partial Class M_ClienteVentana
         Me.dgvtabla.RowHeadersWidth = 51
         Me.dgvtabla.RowTemplate.Height = 24
         Me.dgvtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvtabla.Size = New System.Drawing.Size(916, 315)
+        Me.dgvtabla.Size = New System.Drawing.Size(953, 333)
         Me.dgvtabla.TabIndex = 136
         '
         'codigo
@@ -341,10 +336,11 @@ Partial Class M_ClienteVentana
         '
         'pbxImagenes
         '
+        Me.pbxImagenes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pbxImagenes.Location = New System.Drawing.Point(1018, 26)
-        Me.pbxImagenes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pbxImagenes.Margin = New System.Windows.Forms.Padding(4)
         Me.pbxImagenes.Name = "pbxImagenes"
-        Me.pbxImagenes.Size = New System.Drawing.Size(748, 748)
+        Me.pbxImagenes.Size = New System.Drawing.Size(748, 773)
         Me.pbxImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbxImagenes.TabIndex = 137
         Me.pbxImagenes.TabStop = False
@@ -354,7 +350,7 @@ Partial Class M_ClienteVentana
         '
         'txttelefonoTrabajo
         '
-        Me.txttelefonoTrabajo.Location = New System.Drawing.Point(674, 264)
+        Me.txttelefonoTrabajo.Location = New System.Drawing.Point(675, 110)
         Me.txttelefonoTrabajo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txttelefonoTrabajo.Name = "txttelefonoTrabajo"
         Me.txttelefonoTrabajo.ReadOnly = True
@@ -365,7 +361,7 @@ Partial Class M_ClienteVentana
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(529, 267)
+        Me.Label2.Location = New System.Drawing.Point(530, 113)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(117, 17)
@@ -374,7 +370,7 @@ Partial Class M_ClienteVentana
         '
         'txtcorreo2
         '
-        Me.txtcorreo2.Location = New System.Drawing.Point(674, 204)
+        Me.txtcorreo2.Location = New System.Drawing.Point(675, 50)
         Me.txtcorreo2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcorreo2.Name = "txtcorreo2"
         Me.txtcorreo2.ReadOnly = True
@@ -385,7 +381,7 @@ Partial Class M_ClienteVentana
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(529, 207)
+        Me.Label3.Location = New System.Drawing.Point(530, 53)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(132, 17)
@@ -394,7 +390,7 @@ Partial Class M_ClienteVentana
         '
         'txtcorreo1
         '
-        Me.txtcorreo1.Location = New System.Drawing.Point(153, 294)
+        Me.txtcorreo1.Location = New System.Drawing.Point(154, 140)
         Me.txtcorreo1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcorreo1.Name = "txtcorreo1"
         Me.txtcorreo1.ReadOnly = True
@@ -405,7 +401,7 @@ Partial Class M_ClienteVentana
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(25, 297)
+        Me.Label5.Location = New System.Drawing.Point(26, 143)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(119, 17)
@@ -414,7 +410,7 @@ Partial Class M_ClienteVentana
         '
         'txtcelular
         '
-        Me.txtcelular.Location = New System.Drawing.Point(675, 294)
+        Me.txtcelular.Location = New System.Drawing.Point(676, 140)
         Me.txtcelular.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcelular.Name = "txtcelular"
         Me.txtcelular.ReadOnly = True
@@ -425,12 +421,63 @@ Partial Class M_ClienteVentana
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(529, 297)
+        Me.Label6.Location = New System.Drawing.Point(530, 143)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(52, 17)
         Me.Label6.TabIndex = 142
         Me.Label6.Text = "Celular"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Panel1.Location = New System.Drawing.Point(352, 26)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(258, 127)
+        Me.Panel1.TabIndex = 146
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.txttotal)
+        Me.GroupBox1.Controls.Add(Me.lblpagoPaciente)
+        Me.GroupBox1.Controls.Add(Me.lblvuelto)
+        Me.GroupBox1.Controls.Add(Me.lbltotal)
+        Me.GroupBox1.Controls.Add(Me.txtvuelto)
+        Me.GroupBox1.Controls.Add(Me.txtpagoPaciente)
+        Me.GroupBox1.Location = New System.Drawing.Point(31, 682)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(953, 118)
+        Me.GroupBox1.TabIndex = 147
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Detalle de pago"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.txtcorreo1)
+        Me.GroupBox2.Controls.Add(Me.lblnombre)
+        Me.GroupBox2.Controls.Add(Me.txtnombreCompleto)
+        Me.GroupBox2.Controls.Add(Me.lblterminosPago)
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Controls.Add(Me.txtnombreTerminos)
+        Me.GroupBox2.Controls.Add(Me.txtcelular)
+        Me.GroupBox2.Controls.Add(Me.lblcategoria)
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.txtnombreCategoria)
+        Me.GroupBox2.Controls.Add(Me.txtcorreo2)
+        Me.GroupBox2.Controls.Add(Me.lblconvenio)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Controls.Add(Me.txtnombreConvenio)
+        Me.GroupBox2.Controls.Add(Me.txttelefonoTrabajo)
+        Me.GroupBox2.Controls.Add(Me.lblaseguradora)
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.txttelefonoCasa)
+        Me.GroupBox2.Location = New System.Drawing.Point(31, 148)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(953, 182)
+        Me.GroupBox2.TabIndex = 148
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Detalle Paciente"
         '
         'M_ClienteVentana
         '
@@ -439,41 +486,22 @@ Partial Class M_ClienteVentana
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1812, 812)
         Me.ControlBox = False
-        Me.Controls.Add(Me.txtcorreo1)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.txtcelular)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.txtcorreo2)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txttelefonoTrabajo)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pbxImagenes)
         Me.Controls.Add(Me.dgvtabla)
-        Me.Controls.Add(Me.txttotal)
-        Me.Controls.Add(Me.txtpagoPaciente)
-        Me.Controls.Add(Me.txtvuelto)
-        Me.Controls.Add(Me.lbltotal)
-        Me.Controls.Add(Me.lblvuelto)
-        Me.Controls.Add(Me.lblpagoPaciente)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txttelefonoCasa)
-        Me.Controls.Add(Me.lblaseguradora)
-        Me.Controls.Add(Me.txtnombreConvenio)
-        Me.Controls.Add(Me.lblconvenio)
-        Me.Controls.Add(Me.txtnombreCategoria)
-        Me.Controls.Add(Me.lblcategoria)
-        Me.Controls.Add(Me.txtnombreTerminos)
-        Me.Controls.Add(Me.lblterminosPago)
-        Me.Controls.Add(Me.txtnombreCompleto)
-        Me.Controls.Add(Me.lblnombre)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "M_ClienteVentana"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Laboratorios Médicos"
         CType(Me.dgvtabla, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxImagenes, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -487,7 +515,6 @@ Partial Class M_ClienteVentana
     Friend WithEvents lblconvenio As Label
     Friend WithEvents txttelefonoCasa As TextBox
     Friend WithEvents lblaseguradora As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents txttotal As TextBox
     Friend WithEvents txtpagoPaciente As TextBox
     Friend WithEvents txtvuelto As TextBox
@@ -512,4 +539,7 @@ Partial Class M_ClienteVentana
     Friend WithEvents Label5 As Label
     Friend WithEvents txtcelular As TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
 End Class

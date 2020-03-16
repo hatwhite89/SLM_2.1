@@ -91,7 +91,7 @@ Partial Class frmAsientos
         Me.txtTexto.Location = New System.Drawing.Point(53, 34)
         Me.txtTexto.MaxLength = 200
         Me.txtTexto.Name = "txtTexto"
-        Me.txtTexto.Size = New System.Drawing.Size(559, 20)
+        Me.txtTexto.Size = New System.Drawing.Size(653, 20)
         Me.txtTexto.TabIndex = 6
         '
         'dtDetalleAsiento
@@ -102,7 +102,7 @@ Partial Class frmAsientos
         Me.dtDetalleAsiento.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cuenta, Me.Descripcion, Me.Debe, Me.Haber})
         Me.dtDetalleAsiento.Location = New System.Drawing.Point(12, 64)
         Me.dtDetalleAsiento.Name = "dtDetalleAsiento"
-        Me.dtDetalleAsiento.Size = New System.Drawing.Size(613, 365)
+        Me.dtDetalleAsiento.Size = New System.Drawing.Size(694, 365)
         Me.dtDetalleAsiento.TabIndex = 7
         '
         'Cuenta
@@ -203,7 +203,7 @@ Partial Class frmAsientos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(637, 463)
+        Me.ClientSize = New System.Drawing.Size(718, 463)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblForm)
         Me.Controls.Add(Me.btnCerrar)

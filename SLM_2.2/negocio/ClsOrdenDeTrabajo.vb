@@ -301,6 +301,16 @@ Public Class ClsOrdenDeTrabajo
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "npFecha" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = pmFecha_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "npUsuario" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = pmUsuario_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "cod_grupo" 'nombre campo en el procedimiento almacenado 
         sqlpar.Value = cod_grupo_
         sqlcom.Parameters.Add(sqlpar)
@@ -517,7 +527,7 @@ Public Class ClsOrdenDeTrabajo
         Return par_sal
 
     End Function
-    Public Function BuscarFactura() As DataTable
+    Public Function BuscarOrdenDeTrabajo() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion

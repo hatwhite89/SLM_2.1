@@ -159,7 +159,7 @@ Partial Class A_Consolidacion
         '
         'btnLimpiarExcel
         '
-        Me.btnLimpiarExcel.Location = New System.Drawing.Point(190, 25)
+        Me.btnLimpiarExcel.Location = New System.Drawing.Point(190, 23)
         Me.btnLimpiarExcel.Name = "btnLimpiarExcel"
         Me.btnLimpiarExcel.Size = New System.Drawing.Size(84, 52)
         Me.btnLimpiarExcel.TabIndex = 5

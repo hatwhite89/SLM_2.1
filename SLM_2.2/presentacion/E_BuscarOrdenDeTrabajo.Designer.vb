@@ -45,9 +45,11 @@ Partial Class E_BuscarOrdenDeTrabajo
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnumeroB)
-        Me.gbxbusqueda.Location = New System.Drawing.Point(29, 23)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(11, 11)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Size = New System.Drawing.Size(740, 641)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Size = New System.Drawing.Size(696, 521)
         Me.gbxbusqueda.TabIndex = 117
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR ORDEN DE TRABAJO"
@@ -57,82 +59,91 @@ Partial Class E_BuscarOrdenDeTrabajo
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(46, 80)
+        Me.dgbtabla.Location = New System.Drawing.Point(4, 65)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(649, 475)
+        Me.dgbtabla.Size = New System.Drawing.Size(688, 414)
         Me.dgbtabla.TabIndex = 119
         '
         'txtnumeroB
         '
-        Me.txtnumeroB.Location = New System.Drawing.Point(102, 37)
+        Me.txtnumeroB.Location = New System.Drawing.Point(58, 25)
+        Me.txtnumeroB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnumeroB.MaxLength = 20
         Me.txtnumeroB.Name = "txtnumeroB"
-        Me.txtnumeroB.Size = New System.Drawing.Size(192, 22)
+        Me.txtnumeroB.Size = New System.Drawing.Size(145, 20)
         Me.txtnumeroB.TabIndex = 118
         '
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(439, 39)
+        Me.lblnombreB.Location = New System.Drawing.Point(236, 29)
+        Me.lblnombreB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblnombreB.Name = "lblnombreB"
-        Me.lblnombreB.Size = New System.Drawing.Size(58, 17)
+        Me.lblnombreB.Size = New System.Drawing.Size(44, 13)
         Me.lblnombreB.TabIndex = 117
         Me.lblnombreB.Text = "Nombre"
         '
         'lbltipoCta
         '
         Me.lbltipoCta.AutoSize = True
-        Me.lbltipoCta.Location = New System.Drawing.Point(285, 182)
+        Me.lbltipoCta.Location = New System.Drawing.Point(214, 148)
+        Me.lbltipoCta.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbltipoCta.Name = "lbltipoCta"
-        Me.lbltipoCta.Size = New System.Drawing.Size(0, 17)
+        Me.lbltipoCta.Size = New System.Drawing.Size(0, 13)
         Me.lbltipoCta.TabIndex = 116
         Me.lbltipoCta.Visible = False
         '
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(513, 585)
+        Me.lblcantidad.Location = New System.Drawing.Point(243, 505)
+        Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
+        Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
         Me.lblcantidad.TabIndex = 115
         Me.lblcantidad.Text = "000"
         '
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(155, 585)
+        Me.lbltotal.Location = New System.Drawing.Point(4, 494)
+        Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(240, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(186, 13)
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL DE ORDENES DE TRABAJO"
         '
         'txtnombreB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(503, 35)
+        Me.txtnombreB.Location = New System.Drawing.Point(284, 25)
+        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
-        Me.txtnombreB.Size = New System.Drawing.Size(192, 22)
+        Me.txtnombreB.Size = New System.Drawing.Size(408, 20)
         Me.txtnombreB.TabIndex = 115
         '
         'lblnumeroB
         '
         Me.lblnumeroB.AutoSize = True
-        Me.lblnumeroB.Location = New System.Drawing.Point(39, 40)
+        Me.lblnumeroB.Location = New System.Drawing.Point(11, 27)
+        Me.lblnumeroB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblnumeroB.Name = "lblnumeroB"
-        Me.lblnumeroB.Size = New System.Drawing.Size(58, 17)
+        Me.lblnumeroB.Size = New System.Drawing.Size(44, 13)
         Me.lblnumeroB.TabIndex = 114
         Me.lblnumeroB.Text = "Número"
         '
         'E_BuscarOrdenDeTrabajo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 694)
+        Me.ClientSize = New System.Drawing.Size(718, 538)
         Me.Controls.Add(Me.gbxbusqueda)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "E_BuscarOrdenDeTrabajo"
         Me.Text = "E_BuscarOrdenDeTrabajo"
         Me.gbxbusqueda.ResumeLayout(False)

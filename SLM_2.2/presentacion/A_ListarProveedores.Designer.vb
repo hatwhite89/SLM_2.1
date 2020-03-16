@@ -39,7 +39,7 @@ Partial Class A_ListarProveedores
         Me.GroupBox1.Controls.Add(Me.dtProveedor)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(420, 274)
+        Me.GroupBox1.Size = New System.Drawing.Size(699, 332)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Proveedores"
@@ -57,7 +57,7 @@ Partial Class A_ListarProveedores
         '
         Me.txtBusqueda.Location = New System.Drawing.Point(205, 19)
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(209, 20)
+        Me.txtBusqueda.Size = New System.Drawing.Size(488, 20)
         Me.txtBusqueda.TabIndex = 2
         '
         'Label1
@@ -80,14 +80,14 @@ Partial Class A_ListarProveedores
         Me.dtProveedor.Name = "dtProveedor"
         Me.dtProveedor.ReadOnly = True
         Me.dtProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtProveedor.Size = New System.Drawing.Size(408, 220)
+        Me.dtProveedor.Size = New System.Drawing.Size(688, 281)
         Me.dtProveedor.TabIndex = 0
         '
         'A_ListarProveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(442, 295)
+        Me.ClientSize = New System.Drawing.Size(718, 356)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "A_ListarProveedores"

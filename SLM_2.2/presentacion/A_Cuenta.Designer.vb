@@ -98,7 +98,7 @@ Partial Class A_Cuenta
         Me.gbxCuenta.Controls.Add(Me.lblEstado)
         Me.gbxCuenta.Location = New System.Drawing.Point(13, 12)
         Me.gbxCuenta.Name = "gbxCuenta"
-        Me.gbxCuenta.Size = New System.Drawing.Size(532, 152)
+        Me.gbxCuenta.Size = New System.Drawing.Size(698, 152)
         Me.gbxCuenta.TabIndex = 4
         Me.gbxCuenta.TabStop = False
         Me.gbxCuenta.Text = "Información de Cuenta"
@@ -109,7 +109,7 @@ Partial Class A_Cuenta
         Me.btnNuevo.FlatAppearance.BorderSize = 0
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNuevo.ForeColor = System.Drawing.Color.White
-        Me.btnNuevo.Location = New System.Drawing.Point(291, 118)
+        Me.btnNuevo.Location = New System.Drawing.Point(6, 123)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
         Me.btnNuevo.TabIndex = 14
@@ -133,7 +133,7 @@ Partial Class A_Cuenta
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(369, 118)
+        Me.btnModificar.Location = New System.Drawing.Point(84, 123)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 9
@@ -147,7 +147,7 @@ Partial Class A_Cuenta
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(447, 118)
+        Me.btnGuardar.Location = New System.Drawing.Point(162, 123)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 8
@@ -205,7 +205,7 @@ Partial Class A_Cuenta
         'lblCodCuenta
         '
         Me.lblCodCuenta.AutoSize = True
-        Me.lblCodCuenta.Location = New System.Drawing.Point(573, 47)
+        Me.lblCodCuenta.Location = New System.Drawing.Point(728, 66)
         Me.lblCodCuenta.Name = "lblCodCuenta"
         Me.lblCodCuenta.Size = New System.Drawing.Size(39, 13)
         Me.lblCodCuenta.TabIndex = 15
@@ -220,14 +220,14 @@ Partial Class A_Cuenta
         Me.gbxCuentas.Controls.Add(Me.dtCuentas)
         Me.gbxCuentas.Location = New System.Drawing.Point(13, 170)
         Me.gbxCuentas.Name = "gbxCuentas"
-        Me.gbxCuentas.Size = New System.Drawing.Size(532, 271)
+        Me.gbxCuentas.Size = New System.Drawing.Size(698, 271)
         Me.gbxCuentas.TabIndex = 7
         Me.gbxCuentas.TabStop = False
         Me.gbxCuentas.Text = "Listado de Cuentas"
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(447, 19)
+        Me.btnCancelar.Location = New System.Drawing.Point(617, 23)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 3
@@ -238,7 +238,7 @@ Partial Class A_Cuenta
         '
         Me.txtBusqueda.Location = New System.Drawing.Point(60, 25)
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(214, 20)
+        Me.txtBusqueda.Size = New System.Drawing.Size(374, 20)
         Me.txtBusqueda.TabIndex = 2
         '
         'Label1
@@ -263,7 +263,7 @@ Partial Class A_Cuenta
         Me.dtCuentas.ReadOnly = True
         Me.dtCuentas.RowHeadersVisible = False
         Me.dtCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCuentas.Size = New System.Drawing.Size(520, 210)
+        Me.dtCuentas.Size = New System.Drawing.Size(686, 210)
         Me.dtCuentas.TabIndex = 0
         '
         'A_Cuenta
@@ -271,7 +271,7 @@ Partial Class A_Cuenta
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(557, 446)
+        Me.ClientSize = New System.Drawing.Size(718, 446)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblCodCuenta)
         Me.Controls.Add(Me.gbxCuentas)

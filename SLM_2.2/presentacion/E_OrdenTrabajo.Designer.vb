@@ -49,8 +49,6 @@ Partial Class E_OrdenTrabajo
         Me.txtcodigoArea = New System.Windows.Forms.TextBox()
         Me.txtnumeroFactura = New System.Windows.Forms.TextBox()
         Me.txtcodigoCajero = New System.Windows.Forms.TextBox()
-        Me.txtFechaFactura = New System.Windows.Forms.TextBox()
-        Me.txtHoraFactura = New System.Windows.Forms.TextBox()
         Me.txtcodigoSubArea = New System.Windows.Forms.TextBox()
         Me.txtcodigoSucursal = New System.Windows.Forms.TextBox()
         Me.txtcodigoPaciente = New System.Windows.Forms.TextBox()
@@ -68,29 +66,15 @@ Partial Class E_OrdenTrabajo
         Me.txtnombreTecnico = New System.Windows.Forms.TextBox()
         Me.txtcodigoValidador = New System.Windows.Forms.TextBox()
         Me.txtnombreValidador = New System.Windows.Forms.TextBox()
-        Me.txtanalizador = New System.Windows.Forms.TextBox()
+        Me.txtcodigoObjeto = New System.Windows.Forms.TextBox()
         Me.txtfacturaTomaMuestra = New System.Windows.Forms.TextBox()
         Me.txttecnicoLab = New System.Windows.Forms.TextBox()
         Me.txtpmUsuario = New System.Windows.Forms.TextBox()
-        Me.txtpmFecha = New System.Windows.Forms.TextBox()
-        Me.txtpmHora = New System.Windows.Forms.TextBox()
-        Me.txtnpHora = New System.Windows.Forms.TextBox()
-        Me.txtnpFecha = New System.Windows.Forms.TextBox()
         Me.txtnpUsuario = New System.Windows.Forms.TextBox()
-        Me.txtepHora = New System.Windows.Forms.TextBox()
-        Me.txtepFecha = New System.Windows.Forms.TextBox()
         Me.txtepUsuario = New System.Windows.Forms.TextBox()
-        Me.txtprHora = New System.Windows.Forms.TextBox()
-        Me.txtprFecha = New System.Windows.Forms.TextBox()
         Me.txtprUsuario = New System.Windows.Forms.TextBox()
-        Me.txtcoHora = New System.Windows.Forms.TextBox()
-        Me.txtcoFecha = New System.Windows.Forms.TextBox()
         Me.txtcoUsuario = New System.Windows.Forms.TextBox()
-        Me.txtenHora = New System.Windows.Forms.TextBox()
-        Me.txtenFecha = New System.Windows.Forms.TextBox()
-        Me.TextBox44 = New System.Windows.Forms.TextBox()
-        Me.txtinHora = New System.Windows.Forms.TextBox()
-        Me.txtinFecha = New System.Windows.Forms.TextBox()
+        Me.txtenUsuario = New System.Windows.Forms.TextBox()
         Me.txtinUsuario = New System.Windows.Forms.TextBox()
         Me.lblpm = New System.Windows.Forms.Label()
         Me.lblnp = New System.Windows.Forms.Label()
@@ -116,10 +100,31 @@ Partial Class E_OrdenTrabajo
         Me.cbxentregaMedico = New System.Windows.Forms.CheckBox()
         Me.cbxentregaPaciente = New System.Windows.Forms.CheckBox()
         Me.dtpFechaEntrega = New System.Windows.Forms.DateTimePicker()
-        Me.lbllinea = New System.Windows.Forms.Label()
+        Me.lblEstadoOrden = New System.Windows.Forms.Label()
         Me.lbllinea2 = New System.Windows.Forms.Label()
-        Me.dgvParametros = New System.Windows.Forms.DataGridView()
-        CType(Me.dgvParametros, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dgvResultados = New System.Windows.Forms.DataGridView()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Resultado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Unidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dtpPmFecha = New System.Windows.Forms.DateTimePicker()
+        Me.dtpPmHora = New System.Windows.Forms.DateTimePicker()
+        Me.dtpNpHora = New System.Windows.Forms.DateTimePicker()
+        Me.dtpNpFecha = New System.Windows.Forms.DateTimePicker()
+        Me.dtpEpHora = New System.Windows.Forms.DateTimePicker()
+        Me.dtpEpFecha = New System.Windows.Forms.DateTimePicker()
+        Me.dtpPrHora = New System.Windows.Forms.DateTimePicker()
+        Me.dtpPrFecha = New System.Windows.Forms.DateTimePicker()
+        Me.dtpCoHora = New System.Windows.Forms.DateTimePicker()
+        Me.dtpCoFecha = New System.Windows.Forms.DateTimePicker()
+        Me.dtpEnHora = New System.Windows.Forms.DateTimePicker()
+        Me.dtpEnFecha = New System.Windows.Forms.DateTimePicker()
+        Me.dtpInHora = New System.Windows.Forms.DateTimePicker()
+        Me.dtpInFecha = New System.Windows.Forms.DateTimePicker()
+        Me.dtpFechaFactura = New System.Windows.Forms.DateTimePicker()
+        Me.dtpHoraFactura = New System.Windows.Forms.DateTimePicker()
+        CType(Me.dgvResultados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblnumero
@@ -359,6 +364,7 @@ Partial Class E_OrdenTrabajo
         Me.txtnumero.Name = "txtnumero"
         Me.txtnumero.Size = New System.Drawing.Size(126, 20)
         Me.txtnumero.TabIndex = 24
+        Me.txtnumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcodigoArea
         '
@@ -367,6 +373,7 @@ Partial Class E_OrdenTrabajo
         Me.txtcodigoArea.Name = "txtcodigoArea"
         Me.txtcodigoArea.Size = New System.Drawing.Size(97, 20)
         Me.txtcodigoArea.TabIndex = 25
+        Me.txtcodigoArea.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtnumeroFactura
         '
@@ -375,6 +382,7 @@ Partial Class E_OrdenTrabajo
         Me.txtnumeroFactura.Name = "txtnumeroFactura"
         Me.txtnumeroFactura.Size = New System.Drawing.Size(126, 20)
         Me.txtnumeroFactura.TabIndex = 26
+        Me.txtnumeroFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcodigoCajero
         '
@@ -383,22 +391,7 @@ Partial Class E_OrdenTrabajo
         Me.txtcodigoCajero.Name = "txtcodigoCajero"
         Me.txtcodigoCajero.Size = New System.Drawing.Size(93, 20)
         Me.txtcodigoCajero.TabIndex = 27
-        '
-        'txtFechaFactura
-        '
-        Me.txtFechaFactura.Location = New System.Drawing.Point(794, 23)
-        Me.txtFechaFactura.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtFechaFactura.Name = "txtFechaFactura"
-        Me.txtFechaFactura.Size = New System.Drawing.Size(78, 20)
-        Me.txtFechaFactura.TabIndex = 28
-        '
-        'txtHoraFactura
-        '
-        Me.txtHoraFactura.Location = New System.Drawing.Point(875, 23)
-        Me.txtHoraFactura.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtHoraFactura.Name = "txtHoraFactura"
-        Me.txtHoraFactura.Size = New System.Drawing.Size(78, 20)
-        Me.txtHoraFactura.TabIndex = 29
+        Me.txtcodigoCajero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcodigoSubArea
         '
@@ -407,6 +400,7 @@ Partial Class E_OrdenTrabajo
         Me.txtcodigoSubArea.Name = "txtcodigoSubArea"
         Me.txtcodigoSubArea.Size = New System.Drawing.Size(97, 20)
         Me.txtcodigoSubArea.TabIndex = 30
+        Me.txtcodigoSubArea.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcodigoSucursal
         '
@@ -415,6 +409,7 @@ Partial Class E_OrdenTrabajo
         Me.txtcodigoSucursal.Name = "txtcodigoSucursal"
         Me.txtcodigoSucursal.Size = New System.Drawing.Size(126, 20)
         Me.txtcodigoSucursal.TabIndex = 31
+        Me.txtcodigoSucursal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcodigoPaciente
         '
@@ -423,6 +418,7 @@ Partial Class E_OrdenTrabajo
         Me.txtcodigoPaciente.Name = "txtcodigoPaciente"
         Me.txtcodigoPaciente.Size = New System.Drawing.Size(79, 20)
         Me.txtcodigoPaciente.TabIndex = 32
+        Me.txtcodigoPaciente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtnombrePaciente
         '
@@ -440,6 +436,7 @@ Partial Class E_OrdenTrabajo
         Me.txtedad.Name = "txtedad"
         Me.txtedad.Size = New System.Drawing.Size(79, 20)
         Me.txtedad.TabIndex = 34
+        Me.txtedad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txttelefono
         '
@@ -448,6 +445,7 @@ Partial Class E_OrdenTrabajo
         Me.txttelefono.Name = "txttelefono"
         Me.txttelefono.Size = New System.Drawing.Size(126, 20)
         Me.txttelefono.TabIndex = 35
+        Me.txttelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtgenero
         '
@@ -456,6 +454,7 @@ Partial Class E_OrdenTrabajo
         Me.txtgenero.Name = "txtgenero"
         Me.txtgenero.Size = New System.Drawing.Size(79, 20)
         Me.txtgenero.TabIndex = 36
+        Me.txtgenero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtemail
         '
@@ -464,6 +463,7 @@ Partial Class E_OrdenTrabajo
         Me.txtemail.Name = "txtemail"
         Me.txtemail.Size = New System.Drawing.Size(126, 20)
         Me.txtemail.TabIndex = 37
+        Me.txtemail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcodigoMedico
         '
@@ -472,6 +472,7 @@ Partial Class E_OrdenTrabajo
         Me.txtcodigoMedico.Name = "txtcodigoMedico"
         Me.txtcodigoMedico.Size = New System.Drawing.Size(79, 20)
         Me.txtcodigoMedico.TabIndex = 38
+        Me.txtcodigoMedico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtnombreMedico
         '
@@ -489,6 +490,7 @@ Partial Class E_OrdenTrabajo
         Me.txtcurva.Name = "txtcurva"
         Me.txtcurva.Size = New System.Drawing.Size(79, 20)
         Me.txtcurva.TabIndex = 40
+        Me.txtcurva.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtsede
         '
@@ -497,6 +499,7 @@ Partial Class E_OrdenTrabajo
         Me.txtsede.Name = "txtsede"
         Me.txtsede.Size = New System.Drawing.Size(79, 20)
         Me.txtsede.TabIndex = 41
+        Me.txtsede.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtnombreSede
         '
@@ -514,6 +517,7 @@ Partial Class E_OrdenTrabajo
         Me.txtcodigoTecnico.Name = "txtcodigoTecnico"
         Me.txtcodigoTecnico.Size = New System.Drawing.Size(79, 20)
         Me.txtcodigoTecnico.TabIndex = 43
+        Me.txtcodigoTecnico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtnombreTecnico
         '
@@ -531,6 +535,7 @@ Partial Class E_OrdenTrabajo
         Me.txtcodigoValidador.Name = "txtcodigoValidador"
         Me.txtcodigoValidador.Size = New System.Drawing.Size(79, 20)
         Me.txtcodigoValidador.TabIndex = 45
+        Me.txtcodigoValidador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtnombreValidador
         '
@@ -541,13 +546,14 @@ Partial Class E_OrdenTrabajo
         Me.txtnombreValidador.Size = New System.Drawing.Size(192, 20)
         Me.txtnombreValidador.TabIndex = 46
         '
-        'txtanalizador
+        'txtcodigoObjeto
         '
-        Me.txtanalizador.Location = New System.Drawing.Point(477, 286)
-        Me.txtanalizador.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtanalizador.Name = "txtanalizador"
-        Me.txtanalizador.Size = New System.Drawing.Size(126, 20)
-        Me.txtanalizador.TabIndex = 47
+        Me.txtcodigoObjeto.Location = New System.Drawing.Point(477, 286)
+        Me.txtcodigoObjeto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoObjeto.Name = "txtcodigoObjeto"
+        Me.txtcodigoObjeto.Size = New System.Drawing.Size(126, 20)
+        Me.txtcodigoObjeto.TabIndex = 47
+        Me.txtcodigoObjeto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtfacturaTomaMuestra
         '
@@ -556,6 +562,7 @@ Partial Class E_OrdenTrabajo
         Me.txtfacturaTomaMuestra.Name = "txtfacturaTomaMuestra"
         Me.txtfacturaTomaMuestra.Size = New System.Drawing.Size(290, 20)
         Me.txtfacturaTomaMuestra.TabIndex = 48
+        Me.txtfacturaTomaMuestra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txttecnicoLab
         '
@@ -564,6 +571,7 @@ Partial Class E_OrdenTrabajo
         Me.txttecnicoLab.Name = "txttecnicoLab"
         Me.txttecnicoLab.Size = New System.Drawing.Size(290, 20)
         Me.txttecnicoLab.TabIndex = 49
+        Me.txttecnicoLab.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtpmUsuario
         '
@@ -572,38 +580,7 @@ Partial Class E_OrdenTrabajo
         Me.txtpmUsuario.Name = "txtpmUsuario"
         Me.txtpmUsuario.Size = New System.Drawing.Size(102, 20)
         Me.txtpmUsuario.TabIndex = 50
-        '
-        'txtpmFecha
-        '
-        Me.txtpmFecha.Location = New System.Drawing.Point(664, 109)
-        Me.txtpmFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtpmFecha.Name = "txtpmFecha"
-        Me.txtpmFecha.Size = New System.Drawing.Size(102, 20)
-        Me.txtpmFecha.TabIndex = 53
-        '
-        'txtpmHora
-        '
-        Me.txtpmHora.Location = New System.Drawing.Point(782, 109)
-        Me.txtpmHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtpmHora.Name = "txtpmHora"
-        Me.txtpmHora.Size = New System.Drawing.Size(102, 20)
-        Me.txtpmHora.TabIndex = 56
-        '
-        'txtnpHora
-        '
-        Me.txtnpHora.Location = New System.Drawing.Point(782, 132)
-        Me.txtnpHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtnpHora.Name = "txtnpHora"
-        Me.txtnpHora.Size = New System.Drawing.Size(102, 20)
-        Me.txtnpHora.TabIndex = 59
-        '
-        'txtnpFecha
-        '
-        Me.txtnpFecha.Location = New System.Drawing.Point(664, 132)
-        Me.txtnpFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtnpFecha.Name = "txtnpFecha"
-        Me.txtnpFecha.Size = New System.Drawing.Size(102, 20)
-        Me.txtnpFecha.TabIndex = 58
+        Me.txtpmUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtnpUsuario
         '
@@ -612,22 +589,7 @@ Partial Class E_OrdenTrabajo
         Me.txtnpUsuario.Name = "txtnpUsuario"
         Me.txtnpUsuario.Size = New System.Drawing.Size(102, 20)
         Me.txtnpUsuario.TabIndex = 57
-        '
-        'txtepHora
-        '
-        Me.txtepHora.Location = New System.Drawing.Point(782, 154)
-        Me.txtepHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtepHora.Name = "txtepHora"
-        Me.txtepHora.Size = New System.Drawing.Size(102, 20)
-        Me.txtepHora.TabIndex = 62
-        '
-        'txtepFecha
-        '
-        Me.txtepFecha.Location = New System.Drawing.Point(664, 154)
-        Me.txtepFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtepFecha.Name = "txtepFecha"
-        Me.txtepFecha.Size = New System.Drawing.Size(102, 20)
-        Me.txtepFecha.TabIndex = 61
+        Me.txtnpUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtepUsuario
         '
@@ -636,22 +598,7 @@ Partial Class E_OrdenTrabajo
         Me.txtepUsuario.Name = "txtepUsuario"
         Me.txtepUsuario.Size = New System.Drawing.Size(102, 20)
         Me.txtepUsuario.TabIndex = 60
-        '
-        'txtprHora
-        '
-        Me.txtprHora.Location = New System.Drawing.Point(782, 177)
-        Me.txtprHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtprHora.Name = "txtprHora"
-        Me.txtprHora.Size = New System.Drawing.Size(102, 20)
-        Me.txtprHora.TabIndex = 65
-        '
-        'txtprFecha
-        '
-        Me.txtprFecha.Location = New System.Drawing.Point(664, 177)
-        Me.txtprFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtprFecha.Name = "txtprFecha"
-        Me.txtprFecha.Size = New System.Drawing.Size(102, 20)
-        Me.txtprFecha.TabIndex = 64
+        Me.txtepUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtprUsuario
         '
@@ -660,22 +607,7 @@ Partial Class E_OrdenTrabajo
         Me.txtprUsuario.Name = "txtprUsuario"
         Me.txtprUsuario.Size = New System.Drawing.Size(102, 20)
         Me.txtprUsuario.TabIndex = 63
-        '
-        'txtcoHora
-        '
-        Me.txtcoHora.Location = New System.Drawing.Point(782, 200)
-        Me.txtcoHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtcoHora.Name = "txtcoHora"
-        Me.txtcoHora.Size = New System.Drawing.Size(102, 20)
-        Me.txtcoHora.TabIndex = 68
-        '
-        'txtcoFecha
-        '
-        Me.txtcoFecha.Location = New System.Drawing.Point(664, 200)
-        Me.txtcoFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtcoFecha.Name = "txtcoFecha"
-        Me.txtcoFecha.Size = New System.Drawing.Size(102, 20)
-        Me.txtcoFecha.TabIndex = 67
+        Me.txtprUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcoUsuario
         '
@@ -684,46 +616,16 @@ Partial Class E_OrdenTrabajo
         Me.txtcoUsuario.Name = "txtcoUsuario"
         Me.txtcoUsuario.Size = New System.Drawing.Size(102, 20)
         Me.txtcoUsuario.TabIndex = 66
+        Me.txtcoUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txtenHora
+        'txtenUsuario
         '
-        Me.txtenHora.Location = New System.Drawing.Point(782, 223)
-        Me.txtenHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtenHora.Name = "txtenHora"
-        Me.txtenHora.Size = New System.Drawing.Size(102, 20)
-        Me.txtenHora.TabIndex = 71
-        '
-        'txtenFecha
-        '
-        Me.txtenFecha.Location = New System.Drawing.Point(664, 223)
-        Me.txtenFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtenFecha.Name = "txtenFecha"
-        Me.txtenFecha.Size = New System.Drawing.Size(102, 20)
-        Me.txtenFecha.TabIndex = 70
-        '
-        'TextBox44
-        '
-        Me.TextBox44.Location = New System.Drawing.Point(901, 223)
-        Me.TextBox44.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.TextBox44.Name = "TextBox44"
-        Me.TextBox44.Size = New System.Drawing.Size(102, 20)
-        Me.TextBox44.TabIndex = 69
-        '
-        'txtinHora
-        '
-        Me.txtinHora.Location = New System.Drawing.Point(782, 245)
-        Me.txtinHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtinHora.Name = "txtinHora"
-        Me.txtinHora.Size = New System.Drawing.Size(102, 20)
-        Me.txtinHora.TabIndex = 74
-        '
-        'txtinFecha
-        '
-        Me.txtinFecha.Location = New System.Drawing.Point(664, 245)
-        Me.txtinFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtinFecha.Name = "txtinFecha"
-        Me.txtinFecha.Size = New System.Drawing.Size(102, 20)
-        Me.txtinFecha.TabIndex = 73
+        Me.txtenUsuario.Location = New System.Drawing.Point(901, 223)
+        Me.txtenUsuario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtenUsuario.Name = "txtenUsuario"
+        Me.txtenUsuario.Size = New System.Drawing.Size(102, 20)
+        Me.txtenUsuario.TabIndex = 69
+        Me.txtenUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtinUsuario
         '
@@ -732,6 +634,7 @@ Partial Class E_OrdenTrabajo
         Me.txtinUsuario.Name = "txtinUsuario"
         Me.txtinUsuario.Size = New System.Drawing.Size(102, 20)
         Me.txtinUsuario.TabIndex = 72
+        Me.txtinUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblpm
         '
@@ -993,15 +896,17 @@ Partial Class E_OrdenTrabajo
         Me.dtpFechaEntrega.TabIndex = 98
         Me.dtpFechaEntrega.Value = New Date(2020, 2, 3, 16, 27, 34, 0)
         '
-        'lbllinea
+        'lblEstadoOrden
         '
-        Me.lbllinea.AutoSize = True
-        Me.lbllinea.Location = New System.Drawing.Point(505, 84)
-        Me.lbllinea.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbllinea.Name = "lbllinea"
-        Me.lbllinea.Size = New System.Drawing.Size(115, 13)
-        Me.lbllinea.TabIndex = 99
-        Me.lbllinea.Text = "__________________"
+        Me.lblEstadoOrden.AutoSize = True
+        Me.lblEstadoOrden.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEstadoOrden.Location = New System.Drawing.Point(505, 84)
+        Me.lblEstadoOrden.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblEstadoOrden.Name = "lblEstadoOrden"
+        Me.lblEstadoOrden.Size = New System.Drawing.Size(115, 13)
+        Me.lblEstadoOrden.TabIndex = 99
+        Me.lblEstadoOrden.Text = "__________________"
+        Me.lblEstadoOrden.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lbllinea2
         '
@@ -1013,25 +918,228 @@ Partial Class E_OrdenTrabajo
         Me.lbllinea2.TabIndex = 100
         Me.lbllinea2.Text = "__________________"
         '
-        'dgvParametros
+        'dgvResultados
         '
-        Me.dgvParametros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvParametros.Location = New System.Drawing.Point(36, 440)
-        Me.dgvParametros.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.dgvParametros.Name = "dgvParametros"
-        Me.dgvParametros.RowHeadersWidth = 51
-        Me.dgvParametros.RowTemplate.Height = 24
-        Me.dgvParametros.Size = New System.Drawing.Size(981, 175)
-        Me.dgvParametros.TabIndex = 101
+        Me.dgvResultados.AllowUserToAddRows = False
+        Me.dgvResultados.AllowUserToDeleteRows = False
+        Me.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvResultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.Descripcion, Me.Resultado, Me.Unidad, Me.Estado})
+        Me.dgvResultados.Location = New System.Drawing.Point(11, 440)
+        Me.dgvResultados.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgvResultados.Name = "dgvResultados"
+        Me.dgvResultados.RowHeadersWidth = 51
+        Me.dgvResultados.RowTemplate.Height = 24
+        Me.dgvResultados.Size = New System.Drawing.Size(1030, 175)
+        Me.dgvResultados.TabIndex = 101
+        '
+        'codigo
+        '
+        Me.codigo.HeaderText = "codigo"
+        Me.codigo.MinimumWidth = 6
+        Me.codigo.Name = "codigo"
+        Me.codigo.ReadOnly = True
+        Me.codigo.Visible = False
+        Me.codigo.Width = 125
+        '
+        'Descripcion
+        '
+        Me.Descripcion.HeaderText = "Descripcion"
+        Me.Descripcion.MinimumWidth = 6
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.ReadOnly = True
+        Me.Descripcion.Width = 300
+        '
+        'Resultado
+        '
+        Me.Resultado.HeaderText = "Resultado"
+        Me.Resultado.MinimumWidth = 6
+        Me.Resultado.Name = "Resultado"
+        Me.Resultado.Width = 200
+        '
+        'Unidad
+        '
+        Me.Unidad.HeaderText = "Unidad"
+        Me.Unidad.MinimumWidth = 6
+        Me.Unidad.Name = "Unidad"
+        Me.Unidad.ReadOnly = True
+        Me.Unidad.Width = 175
+        '
+        'Estado
+        '
+        Me.Estado.HeaderText = "Estado"
+        Me.Estado.MinimumWidth = 6
+        Me.Estado.Name = "Estado"
+        Me.Estado.ReadOnly = True
+        Me.Estado.Width = 300
+        '
+        'dtpPmFecha
+        '
+        Me.dtpPmFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpPmFecha.Location = New System.Drawing.Point(664, 107)
+        Me.dtpPmFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpPmFecha.Name = "dtpPmFecha"
+        Me.dtpPmFecha.Size = New System.Drawing.Size(102, 20)
+        Me.dtpPmFecha.TabIndex = 102
+        '
+        'dtpPmHora
+        '
+        Me.dtpPmHora.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpPmHora.Location = New System.Drawing.Point(782, 107)
+        Me.dtpPmHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpPmHora.Name = "dtpPmHora"
+        Me.dtpPmHora.Size = New System.Drawing.Size(102, 20)
+        Me.dtpPmHora.TabIndex = 103
+        '
+        'dtpNpHora
+        '
+        Me.dtpNpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpNpHora.Location = New System.Drawing.Point(782, 130)
+        Me.dtpNpHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpNpHora.Name = "dtpNpHora"
+        Me.dtpNpHora.Size = New System.Drawing.Size(102, 20)
+        Me.dtpNpHora.TabIndex = 105
+        '
+        'dtpNpFecha
+        '
+        Me.dtpNpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpNpFecha.Location = New System.Drawing.Point(664, 130)
+        Me.dtpNpFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpNpFecha.Name = "dtpNpFecha"
+        Me.dtpNpFecha.Size = New System.Drawing.Size(102, 20)
+        Me.dtpNpFecha.TabIndex = 104
+        '
+        'dtpEpHora
+        '
+        Me.dtpEpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpEpHora.Location = New System.Drawing.Point(782, 154)
+        Me.dtpEpHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpEpHora.Name = "dtpEpHora"
+        Me.dtpEpHora.Size = New System.Drawing.Size(102, 20)
+        Me.dtpEpHora.TabIndex = 107
+        '
+        'dtpEpFecha
+        '
+        Me.dtpEpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpEpFecha.Location = New System.Drawing.Point(664, 154)
+        Me.dtpEpFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpEpFecha.Name = "dtpEpFecha"
+        Me.dtpEpFecha.Size = New System.Drawing.Size(102, 20)
+        Me.dtpEpFecha.TabIndex = 106
+        '
+        'dtpPrHora
+        '
+        Me.dtpPrHora.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpPrHora.Location = New System.Drawing.Point(782, 177)
+        Me.dtpPrHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpPrHora.Name = "dtpPrHora"
+        Me.dtpPrHora.Size = New System.Drawing.Size(102, 20)
+        Me.dtpPrHora.TabIndex = 109
+        '
+        'dtpPrFecha
+        '
+        Me.dtpPrFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpPrFecha.Location = New System.Drawing.Point(664, 177)
+        Me.dtpPrFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpPrFecha.Name = "dtpPrFecha"
+        Me.dtpPrFecha.Size = New System.Drawing.Size(102, 20)
+        Me.dtpPrFecha.TabIndex = 108
+        '
+        'dtpCoHora
+        '
+        Me.dtpCoHora.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpCoHora.Location = New System.Drawing.Point(782, 201)
+        Me.dtpCoHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpCoHora.Name = "dtpCoHora"
+        Me.dtpCoHora.Size = New System.Drawing.Size(102, 20)
+        Me.dtpCoHora.TabIndex = 111
+        '
+        'dtpCoFecha
+        '
+        Me.dtpCoFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpCoFecha.Location = New System.Drawing.Point(664, 201)
+        Me.dtpCoFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpCoFecha.Name = "dtpCoFecha"
+        Me.dtpCoFecha.Size = New System.Drawing.Size(102, 20)
+        Me.dtpCoFecha.TabIndex = 110
+        '
+        'dtpEnHora
+        '
+        Me.dtpEnHora.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpEnHora.Location = New System.Drawing.Point(782, 223)
+        Me.dtpEnHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpEnHora.Name = "dtpEnHora"
+        Me.dtpEnHora.Size = New System.Drawing.Size(102, 20)
+        Me.dtpEnHora.TabIndex = 113
+        '
+        'dtpEnFecha
+        '
+        Me.dtpEnFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpEnFecha.Location = New System.Drawing.Point(664, 223)
+        Me.dtpEnFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpEnFecha.Name = "dtpEnFecha"
+        Me.dtpEnFecha.Size = New System.Drawing.Size(102, 20)
+        Me.dtpEnFecha.TabIndex = 112
+        '
+        'dtpInHora
+        '
+        Me.dtpInHora.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpInHora.Location = New System.Drawing.Point(782, 245)
+        Me.dtpInHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpInHora.Name = "dtpInHora"
+        Me.dtpInHora.Size = New System.Drawing.Size(102, 20)
+        Me.dtpInHora.TabIndex = 115
+        '
+        'dtpInFecha
+        '
+        Me.dtpInFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpInFecha.Location = New System.Drawing.Point(664, 245)
+        Me.dtpInFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpInFecha.Name = "dtpInFecha"
+        Me.dtpInFecha.Size = New System.Drawing.Size(102, 20)
+        Me.dtpInFecha.TabIndex = 114
+        '
+        'dtpFechaFactura
+        '
+        Me.dtpFechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaFactura.Location = New System.Drawing.Point(798, 23)
+        Me.dtpFechaFactura.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpFechaFactura.Name = "dtpFechaFactura"
+        Me.dtpFechaFactura.Size = New System.Drawing.Size(78, 20)
+        Me.dtpFechaFactura.TabIndex = 116
+        '
+        'dtpHoraFactura
+        '
+        Me.dtpHoraFactura.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpHoraFactura.Location = New System.Drawing.Point(880, 23)
+        Me.dtpHoraFactura.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpHoraFactura.Name = "dtpHoraFactura"
+        Me.dtpHoraFactura.Size = New System.Drawing.Size(78, 20)
+        Me.dtpHoraFactura.TabIndex = 117
         '
         'E_OrdenTrabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 609)
-        Me.Controls.Add(Me.dgvParametros)
+        Me.ClientSize = New System.Drawing.Size(1052, 623)
+        Me.Controls.Add(Me.dtpHoraFactura)
+        Me.Controls.Add(Me.dtpFechaFactura)
+        Me.Controls.Add(Me.dtpInHora)
+        Me.Controls.Add(Me.dtpInFecha)
+        Me.Controls.Add(Me.dtpEnHora)
+        Me.Controls.Add(Me.dtpEnFecha)
+        Me.Controls.Add(Me.dtpCoHora)
+        Me.Controls.Add(Me.dtpCoFecha)
+        Me.Controls.Add(Me.dtpPrHora)
+        Me.Controls.Add(Me.dtpPrFecha)
+        Me.Controls.Add(Me.dtpEpHora)
+        Me.Controls.Add(Me.dtpEpFecha)
+        Me.Controls.Add(Me.dtpNpHora)
+        Me.Controls.Add(Me.dtpNpFecha)
+        Me.Controls.Add(Me.dtpPmHora)
+        Me.Controls.Add(Me.dtpPmFecha)
+        Me.Controls.Add(Me.dgvResultados)
         Me.Controls.Add(Me.lbllinea2)
-        Me.Controls.Add(Me.lbllinea)
+        Me.Controls.Add(Me.lblEstadoOrden)
         Me.Controls.Add(Me.dtpFechaEntrega)
         Me.Controls.Add(Me.cbxentregaPaciente)
         Me.Controls.Add(Me.cbxentregaMedico)
@@ -1056,30 +1164,16 @@ Partial Class E_OrdenTrabajo
         Me.Controls.Add(Me.lblep)
         Me.Controls.Add(Me.lblnp)
         Me.Controls.Add(Me.lblpm)
-        Me.Controls.Add(Me.txtinHora)
-        Me.Controls.Add(Me.txtinFecha)
         Me.Controls.Add(Me.txtinUsuario)
-        Me.Controls.Add(Me.txtenHora)
-        Me.Controls.Add(Me.txtenFecha)
-        Me.Controls.Add(Me.TextBox44)
-        Me.Controls.Add(Me.txtcoHora)
-        Me.Controls.Add(Me.txtcoFecha)
+        Me.Controls.Add(Me.txtenUsuario)
         Me.Controls.Add(Me.txtcoUsuario)
-        Me.Controls.Add(Me.txtprHora)
-        Me.Controls.Add(Me.txtprFecha)
         Me.Controls.Add(Me.txtprUsuario)
-        Me.Controls.Add(Me.txtepHora)
-        Me.Controls.Add(Me.txtepFecha)
         Me.Controls.Add(Me.txtepUsuario)
-        Me.Controls.Add(Me.txtnpHora)
-        Me.Controls.Add(Me.txtnpFecha)
         Me.Controls.Add(Me.txtnpUsuario)
-        Me.Controls.Add(Me.txtpmHora)
-        Me.Controls.Add(Me.txtpmFecha)
         Me.Controls.Add(Me.txtpmUsuario)
         Me.Controls.Add(Me.txttecnicoLab)
         Me.Controls.Add(Me.txtfacturaTomaMuestra)
-        Me.Controls.Add(Me.txtanalizador)
+        Me.Controls.Add(Me.txtcodigoObjeto)
         Me.Controls.Add(Me.txtnombreValidador)
         Me.Controls.Add(Me.txtcodigoValidador)
         Me.Controls.Add(Me.txtnombreTecnico)
@@ -1097,8 +1191,6 @@ Partial Class E_OrdenTrabajo
         Me.Controls.Add(Me.txtcodigoPaciente)
         Me.Controls.Add(Me.txtcodigoSucursal)
         Me.Controls.Add(Me.txtcodigoSubArea)
-        Me.Controls.Add(Me.txtHoraFactura)
-        Me.Controls.Add(Me.txtFechaFactura)
         Me.Controls.Add(Me.txtcodigoCajero)
         Me.Controls.Add(Me.txtnumeroFactura)
         Me.Controls.Add(Me.txtcodigoArea)
@@ -1129,7 +1221,7 @@ Partial Class E_OrdenTrabajo
         Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "E_OrdenTrabajo"
         Me.Text = "Orden de Trabajo"
-        CType(Me.dgvParametros, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvResultados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1162,8 +1254,6 @@ Partial Class E_OrdenTrabajo
     Friend WithEvents txtcodigoArea As TextBox
     Friend WithEvents txtnumeroFactura As TextBox
     Friend WithEvents txtcodigoCajero As TextBox
-    Friend WithEvents txtFechaFactura As TextBox
-    Friend WithEvents txtHoraFactura As TextBox
     Friend WithEvents txtcodigoSubArea As TextBox
     Friend WithEvents txtcodigoSucursal As TextBox
     Friend WithEvents txtcodigoPaciente As TextBox
@@ -1181,29 +1271,15 @@ Partial Class E_OrdenTrabajo
     Friend WithEvents txtnombreTecnico As TextBox
     Friend WithEvents txtcodigoValidador As TextBox
     Friend WithEvents txtnombreValidador As TextBox
-    Friend WithEvents txtanalizador As TextBox
+    Friend WithEvents txtcodigoObjeto As TextBox
     Friend WithEvents txtfacturaTomaMuestra As TextBox
     Friend WithEvents txttecnicoLab As TextBox
     Friend WithEvents txtpmUsuario As TextBox
-    Friend WithEvents txtpmFecha As TextBox
-    Friend WithEvents txtpmHora As TextBox
-    Friend WithEvents txtnpHora As TextBox
-    Friend WithEvents txtnpFecha As TextBox
     Friend WithEvents txtnpUsuario As TextBox
-    Friend WithEvents txtepHora As TextBox
-    Friend WithEvents txtepFecha As TextBox
     Friend WithEvents txtepUsuario As TextBox
-    Friend WithEvents txtprHora As TextBox
-    Friend WithEvents txtprFecha As TextBox
     Friend WithEvents txtprUsuario As TextBox
-    Friend WithEvents txtcoHora As TextBox
-    Friend WithEvents txtcoFecha As TextBox
     Friend WithEvents txtcoUsuario As TextBox
-    Friend WithEvents txtenHora As TextBox
-    Friend WithEvents txtenFecha As TextBox
-    Friend WithEvents TextBox44 As TextBox
-    Friend WithEvents txtinHora As TextBox
-    Friend WithEvents txtinFecha As TextBox
+    Friend WithEvents txtenUsuario As TextBox
     Friend WithEvents txtinUsuario As TextBox
     Friend WithEvents lblpm As Label
     Friend WithEvents lblnp As Label
@@ -1229,7 +1305,28 @@ Partial Class E_OrdenTrabajo
     Friend WithEvents cbxentregaMedico As CheckBox
     Friend WithEvents cbxentregaPaciente As CheckBox
     Friend WithEvents dtpFechaEntrega As DateTimePicker
-    Friend WithEvents lbllinea As Label
+    Friend WithEvents lblEstadoOrden As Label
     Friend WithEvents lbllinea2 As Label
-    Friend WithEvents dgvParametros As DataGridView
+    Friend WithEvents dgvResultados As DataGridView
+    Friend WithEvents dtpPmFecha As DateTimePicker
+    Friend WithEvents dtpPmHora As DateTimePicker
+    Friend WithEvents dtpNpHora As DateTimePicker
+    Friend WithEvents dtpNpFecha As DateTimePicker
+    Friend WithEvents dtpEpHora As DateTimePicker
+    Friend WithEvents dtpEpFecha As DateTimePicker
+    Friend WithEvents dtpPrHora As DateTimePicker
+    Friend WithEvents dtpPrFecha As DateTimePicker
+    Friend WithEvents dtpCoHora As DateTimePicker
+    Friend WithEvents dtpCoFecha As DateTimePicker
+    Friend WithEvents dtpEnHora As DateTimePicker
+    Friend WithEvents dtpEnFecha As DateTimePicker
+    Friend WithEvents dtpInHora As DateTimePicker
+    Friend WithEvents dtpInFecha As DateTimePicker
+    Friend WithEvents dtpFechaFactura As DateTimePicker
+    Friend WithEvents dtpHoraFactura As DateTimePicker
+    Friend WithEvents codigo As DataGridViewTextBoxColumn
+    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents Resultado As DataGridViewTextBoxColumn
+    Friend WithEvents Unidad As DataGridViewTextBoxColumn
+    Friend WithEvents Estado As DataGridViewTextBoxColumn
 End Class

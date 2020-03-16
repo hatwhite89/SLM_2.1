@@ -736,7 +736,7 @@ Public Class M_Factura
 
             With Bitacora
                 .usuario_ = txtcodigoCajero.Text
-                .accion_ = "Creacion de Factura"
+                .accion_ = "Creación de Factura."
                 .fecha_ = dtpfechaFactura.Value()
                 .registrarBitacora()
             End With
@@ -1228,8 +1228,10 @@ Public Class M_Factura
                         .cod_factura_ = Convert.ToInt64(txtnumeroFactura.Text)
                         .pmFecha_ = dtpfechaFactura.Value
                         .pmUsuario_ = txtcodigoCajero.Text
+                        .npFecha_ = dtpfechaFactura.Value
+                        .npUsuario_ = txtcodigoCajero.Text
                         .cod_grupo_ = Convert.ToInt64(row("grupo"))
-                        .estado_ = "No procesado"
+                        .estado_ = "No Procesado"
                         If .RegistrarOrdenDeTrabajo() = 0 Then
                             MsgBox("Error al querer insertar la orden de trabajo.", MsgBoxStyle.Critical)
                             Exit Sub

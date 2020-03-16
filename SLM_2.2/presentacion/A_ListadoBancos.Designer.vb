@@ -44,7 +44,7 @@ Partial Class A_ListadoBancos
         '
         Me.TextBox1.Location = New System.Drawing.Point(80, 22)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(317, 20)
         Me.TextBox1.TabIndex = 1
         '
         'Button1
@@ -54,7 +54,7 @@ Partial Class A_ListadoBancos
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(185, 24)
+        Me.Button1.Location = New System.Drawing.Point(426, 24)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(19, 15)
         Me.Button1.TabIndex = 2
@@ -73,7 +73,7 @@ Partial Class A_ListadoBancos
         Me.dtBancos.ReadOnly = True
         Me.dtBancos.RowHeadersVisible = False
         Me.dtBancos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtBancos.Size = New System.Drawing.Size(223, 264)
+        Me.dtBancos.Size = New System.Drawing.Size(694, 264)
         Me.dtBancos.TabIndex = 3
         '
         'lblFormBanco
@@ -90,7 +90,7 @@ Partial Class A_ListadoBancos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(247, 324)
+        Me.ClientSize = New System.Drawing.Size(718, 324)
         Me.Controls.Add(Me.lblFormBanco)
         Me.Controls.Add(Me.dtBancos)
         Me.Controls.Add(Me.Button1)

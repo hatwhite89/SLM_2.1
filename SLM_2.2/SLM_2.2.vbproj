@@ -411,6 +411,12 @@
     <Compile Include="presentacion\E_BuscarOrdenDeTrabajo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_ListarOrdenesDeTrabajo.Designer.vb">
+      <DependentUpon>E_ListarOrdenesDeTrabajo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_ListarOrdenesDeTrabajo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_ListarSubAreas.Designer.vb">
       <DependentUpon>E_ListarSubAreas.vb</DependentUpon>
     </Compile>
@@ -949,6 +955,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_BuscarOrdenDeTrabajo.resx">
       <DependentUpon>E_BuscarOrdenDeTrabajo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_ListarOrdenesDeTrabajo.resx">
+      <DependentUpon>E_ListarOrdenesDeTrabajo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_ListarSubAreas.resx">
       <DependentUpon>E_ListarSubAreas.vb</DependentUpon>

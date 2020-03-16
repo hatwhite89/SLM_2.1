@@ -42,7 +42,7 @@ Partial Class A_Bitacora
         Me.gbxBitacora.Controls.Add(Me.dtBitacora)
         Me.gbxBitacora.Location = New System.Drawing.Point(12, 12)
         Me.gbxBitacora.Name = "gbxBitacora"
-        Me.gbxBitacora.Size = New System.Drawing.Size(513, 517)
+        Me.gbxBitacora.Size = New System.Drawing.Size(694, 517)
         Me.gbxBitacora.TabIndex = 0
         Me.gbxBitacora.TabStop = False
         Me.gbxBitacora.Text = "Registros"
@@ -85,12 +85,12 @@ Partial Class A_Bitacora
         Me.dtBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtBitacora.Location = New System.Drawing.Point(6, 53)
         Me.dtBitacora.Name = "dtBitacora"
-        Me.dtBitacora.Size = New System.Drawing.Size(501, 458)
+        Me.dtBitacora.Size = New System.Drawing.Size(682, 458)
         Me.dtBitacora.TabIndex = 0
         '
         'btnCerrar
         '
-        Me.btnCerrar.Location = New System.Drawing.Point(450, 535)
+        Me.btnCerrar.Location = New System.Drawing.Point(631, 535)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
         Me.btnCerrar.TabIndex = 1
@@ -101,7 +101,7 @@ Partial Class A_Bitacora
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(537, 567)
+        Me.ClientSize = New System.Drawing.Size(718, 567)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.gbxBitacora)
         Me.Name = "A_Bitacora"

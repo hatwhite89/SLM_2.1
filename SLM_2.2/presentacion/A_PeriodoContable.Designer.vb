@@ -46,7 +46,7 @@ Partial Class A_PeriodoContable
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(339, 106)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 117)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Período Contable"
@@ -57,7 +57,7 @@ Partial Class A_PeriodoContable
         Me.btnCerrar.FlatAppearance.BorderSize = 0
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.ForeColor = System.Drawing.Color.White
-        Me.btnCerrar.Location = New System.Drawing.Point(209, 63)
+        Me.btnCerrar.Location = New System.Drawing.Point(9, 77)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(113, 23)
         Me.btnCerrar.TabIndex = 7
@@ -70,7 +70,7 @@ Partial Class A_PeriodoContable
         Me.btnHabilitar.FlatAppearance.BorderSize = 0
         Me.btnHabilitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnHabilitar.ForeColor = System.Drawing.Color.White
-        Me.btnHabilitar.Location = New System.Drawing.Point(209, 33)
+        Me.btnHabilitar.Location = New System.Drawing.Point(137, 77)
         Me.btnHabilitar.Name = "btnHabilitar"
         Me.btnHabilitar.Size = New System.Drawing.Size(113, 23)
         Me.btnHabilitar.TabIndex = 6
@@ -80,7 +80,7 @@ Partial Class A_PeriodoContable
         'dtpFinal
         '
         Me.dtpFinal.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFinal.Location = New System.Drawing.Point(95, 74)
+        Me.dtpFinal.Location = New System.Drawing.Point(525, 24)
         Me.dtpFinal.Name = "dtpFinal"
         Me.dtpFinal.Size = New System.Drawing.Size(95, 20)
         Me.dtpFinal.TabIndex = 5
@@ -88,7 +88,7 @@ Partial Class A_PeriodoContable
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(5, 77)
+        Me.Label3.Location = New System.Drawing.Point(435, 27)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(82, 13)
         Me.Label3.TabIndex = 4
@@ -97,7 +97,7 @@ Partial Class A_PeriodoContable
         'dtpInicio
         '
         Me.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpInicio.Location = New System.Drawing.Point(95, 49)
+        Me.dtpInicio.Location = New System.Drawing.Point(311, 24)
         Me.dtpInicio.Name = "dtpInicio"
         Me.dtpInicio.Size = New System.Drawing.Size(95, 20)
         Me.dtpInicio.TabIndex = 3
@@ -105,7 +105,7 @@ Partial Class A_PeriodoContable
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 52)
+        Me.Label2.Location = New System.Drawing.Point(222, 27)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(80, 13)
         Me.Label2.TabIndex = 2
@@ -133,7 +133,7 @@ Partial Class A_PeriodoContable
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(359, 129)
+        Me.ClientSize = New System.Drawing.Size(718, 276)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "A_PeriodoContable"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

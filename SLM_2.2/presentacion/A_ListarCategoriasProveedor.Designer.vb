@@ -33,7 +33,7 @@ Partial Class A_ListarCategoriasProveedor
         Me.GroupBox1.Controls.Add(Me.dtCategorias)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(403, 292)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 292)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccione una Categoria"
@@ -46,14 +46,14 @@ Partial Class A_ListarCategoriasProveedor
         Me.dtCategorias.Location = New System.Drawing.Point(6, 19)
         Me.dtCategorias.Name = "dtCategorias"
         Me.dtCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCategorias.Size = New System.Drawing.Size(391, 267)
+        Me.dtCategorias.Size = New System.Drawing.Size(682, 267)
         Me.dtCategorias.TabIndex = 0
         '
         'A_ListarCategoriasProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(425, 313)
+        Me.ClientSize = New System.Drawing.Size(718, 315)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "A_ListarCategoriasProveedor"

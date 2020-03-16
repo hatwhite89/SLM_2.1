@@ -37,22 +37,22 @@ Partial Class A_ListarTerminoPago
         Me.GroupBox1.Controls.Add(Me.dtTerminoPago)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(290, 385)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 385)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccionar Término de Pago"
         '
         'txtBusquedaTermino
         '
-        Me.txtBusquedaTermino.Location = New System.Drawing.Point(113, 32)
+        Me.txtBusquedaTermino.Location = New System.Drawing.Point(52, 26)
         Me.txtBusquedaTermino.Name = "txtBusquedaTermino"
-        Me.txtBusquedaTermino.Size = New System.Drawing.Size(100, 20)
+        Me.txtBusquedaTermino.Size = New System.Drawing.Size(636, 20)
         Me.txtBusquedaTermino.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(67, 35)
+        Me.Label1.Location = New System.Drawing.Point(6, 29)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 1
@@ -67,7 +67,7 @@ Partial Class A_ListarTerminoPago
         Me.dtTerminoPago.Location = New System.Drawing.Point(6, 61)
         Me.dtTerminoPago.Name = "dtTerminoPago"
         Me.dtTerminoPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtTerminoPago.Size = New System.Drawing.Size(278, 318)
+        Me.dtTerminoPago.Size = New System.Drawing.Size(682, 318)
         Me.dtTerminoPago.TabIndex = 0
         '
         'A_ListarTerminoPago
@@ -75,7 +75,7 @@ Partial Class A_ListarTerminoPago
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(314, 409)
+        Me.ClientSize = New System.Drawing.Size(718, 409)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "A_ListarTerminoPago"
