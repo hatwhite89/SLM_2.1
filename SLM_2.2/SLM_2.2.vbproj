@@ -181,6 +181,12 @@
     <Compile Include="presentacion\A_Consolidacion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_Depreciacion.Designer.vb">
+      <DependentUpon>A_Depreciacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_Depreciacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_FacturaCompras.Designer.vb">
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
     </Compile>
@@ -850,6 +856,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Consolidacion.resx">
       <DependentUpon>A_Consolidacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_Depreciacion.resx">
+      <DependentUpon>A_Depreciacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_FacturaCompras.resx">
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
