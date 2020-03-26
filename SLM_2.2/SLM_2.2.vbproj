@@ -133,6 +133,7 @@
     <Compile Include="negocio\ClsBitacora.vb" />
     <Compile Include="negocio\ClsCAI.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
+    <Compile Include="negocio\ClsDepreciacion.vb" />
     <Compile Include="negocio\ClsDescuentos.vb" />
     <Compile Include="negocio\ClsDetalleAsiento.vb" />
     <Compile Include="negocio\ClsDetalleCAI.vb" />
@@ -312,6 +313,12 @@
       <DependentUpon>A_ListarCuentas_Chequera.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ListarCuentas_Chequera.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ListarDepreciacion.Designer.vb">
+      <DependentUpon>A_ListarDepreciacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarDepreciacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_ListarExamenes.Designer.vb">
@@ -910,6 +917,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarCuentas_Chequera.resx">
       <DependentUpon>A_ListarCuentas_Chequera.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarDepreciacion.resx">
+      <DependentUpon>A_ListarDepreciacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarExamenes.resx">
       <DependentUpon>A_ListarExamenes.vb</DependentUpon>
