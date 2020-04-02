@@ -14,6 +14,9 @@
             rowD = dias.Rows(0)
             rowsF = numfact.Rows(0)
 
+
+
+
             If Convert.ToInt32(rowD("diasFaltantes")) < 7 Then
 
                 A_Notificacion.lblMensajeDias.Visible = True
@@ -29,7 +32,9 @@
                 A_Notificacion.lblMensajeFact.Visible = True
                 A_Notificacion.lblMensajeDias.Visible = True
                 A_Notificacion.Show()
-
+            ElseIf Convert.ToInt32(rowD("diasFaltantes")) < 0 Then
+                A_Notificacion.lblMensajeDias.Visible = True
+                A_Notificacion.Show()
             End If
         Catch ex As Exception
 

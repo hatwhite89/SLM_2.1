@@ -23,9 +23,20 @@ Public Class A_Notificacion
             rowD = dias.Rows(0)
             rowsF = numfact.Rows(0)
 
-            lblMensajeDias.Text = "En " & rowD("diasFaltantes") & " días vence la Facturación."
+            'Validacion de Dias faltantes
 
-            lblMensajeFact.Text = "Quedan " & rowsF("disponible") & " facturas disponibles."
+            If Convert.ToInt32(rowD("diasFaltantes")) < 0 Then
+
+                lblMensajeDias.Text = "**ALERTA** Las facturas ya vencieron."
+
+            Else
+
+                lblMensajeDias.Text = "En " & rowD("diasFaltantes") & " días vence la Facturación."
+
+                lblMensajeFact.Text = "Quedan " & rowsF("disponible") & " facturas disponibles."
+
+            End If
+
 
             'ENVIO DE CORREO CON ALERTA
             'enviarCorreo()
