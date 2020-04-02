@@ -440,4 +440,12 @@
     Private Sub btnTrabajo_Click(sender As Object, e As EventArgs) Handles btnTrabajo.Click
         E_ListarOrdenesDeTrabajo.ShowDialog()
     End Sub
+
+    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
+        Try
+            A_ListarDepreciacion.Show()
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class
