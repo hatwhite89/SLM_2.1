@@ -23,15 +23,16 @@ Partial Class A_ListarDepreciacion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dtDepreciacion = New System.Windows.Forms.DataGridView()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.btnCrear = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtDepreciacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.dtDepreciacion)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(577, 400)
@@ -39,17 +40,18 @@ Partial Class A_ListarDepreciacion
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Registros de Depreciación"
         '
-        'DataGridView1
+        'dtDepreciacion
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(571, 381)
-        Me.DataGridView1.TabIndex = 0
+        Me.dtDepreciacion.AllowUserToAddRows = False
+        Me.dtDepreciacion.AllowUserToDeleteRows = False
+        Me.dtDepreciacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtDepreciacion.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dtDepreciacion.Location = New System.Drawing.Point(3, 16)
+        Me.dtDepreciacion.Name = "dtDepreciacion"
+        Me.dtDepreciacion.ReadOnly = True
+        Me.dtDepreciacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtDepreciacion.Size = New System.Drawing.Size(571, 381)
+        Me.dtDepreciacion.TabIndex = 0
         '
         'btnCerrar
         '
@@ -60,22 +62,33 @@ Partial Class A_ListarDepreciacion
         Me.btnCerrar.Text = "Cerrar"
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
+        'btnCrear
+        '
+        Me.btnCrear.Location = New System.Drawing.Point(433, 418)
+        Me.btnCrear.Name = "btnCrear"
+        Me.btnCrear.Size = New System.Drawing.Size(75, 23)
+        Me.btnCrear.TabIndex = 2
+        Me.btnCrear.Text = "Crear"
+        Me.btnCrear.UseVisualStyleBackColor = True
+        '
         'A_ListarDepreciacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(601, 450)
+        Me.Controls.Add(Me.btnCrear)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "A_ListarDepreciacion"
         Me.Text = "A_ListarDepreciacion"
         Me.GroupBox1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtDepreciacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dtDepreciacion As DataGridView
     Friend WithEvents btnCerrar As Button
+    Friend WithEvents btnCrear As Button
 End Class

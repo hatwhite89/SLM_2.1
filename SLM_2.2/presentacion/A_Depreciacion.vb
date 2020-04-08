@@ -141,4 +141,20 @@
         limpia()
 
     End Sub
+
+    Private Sub A_Depreciacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If txtCod.Text <> "" Then
+
+            If lblTipo.Text = "1" Then
+                rbtAnual.Checked = True
+            ElseIf lblTipo.Text = "2" Then
+                rbtMensual.Checked = True
+            Else
+                rbtDiaria.Checked = True
+            End If
+
+            Calcular_Depreciacion()
+
+        End If
+    End Sub
 End Class

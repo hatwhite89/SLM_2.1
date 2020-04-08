@@ -37,7 +37,6 @@ Public Class A_Notificacion
 
             End If
 
-
             'ENVIO DE CORREO CON ALERTA
             'enviarCorreo()
 
@@ -101,14 +100,14 @@ Public Class A_Notificacion
             Dim Smtp_Server As New SmtpClient
             Dim e_mail As New MailMessage()
             Smtp_Server.UseDefaultCredentials = False
-            Smtp_Server.Credentials = New Net.NetworkCredential("prueba@laboratoriosmedicos.hn", "S1nergia2020")
+            Smtp_Server.Credentials = New Net.NetworkCredential("sinergia@laboratoriosmedicos.hn", "Lmsinergia2020")
             Smtp_Server.Port = 587
             Smtp_Server.EnableSsl = True
             Smtp_Server.Host = "mail.laboratoriosmedicos.hn"
 
             e_mail = New MailMessage()
             'txtfrom.text
-            e_mail.From = New MailAddress("prueba@laboratoriosmedicos.hn")
+            e_mail.From = New MailAddress("sinergia@laboratoriosmedicos.hn")
             'txtto.text
             e_mail.To.Add("mario200924@hotmail.com")
             e_mail.Subject = "Email Sending"
