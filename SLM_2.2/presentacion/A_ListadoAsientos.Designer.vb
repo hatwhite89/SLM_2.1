@@ -52,7 +52,7 @@ Partial Class A_ListadoAsientos
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.Red
-        Me.btnCancelar.Location = New System.Drawing.Point(343, 26)
+        Me.btnCancelar.Location = New System.Drawing.Point(329, 26)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(20, 18)
         Me.btnCancelar.TabIndex = 3
@@ -62,13 +62,15 @@ Partial Class A_ListadoAsientos
         'dtAsientos
         '
         Me.dtAsientos.AllowUserToAddRows = False
+        Me.dtAsientos.AllowUserToDeleteRows = False
         Me.dtAsientos.BackgroundColor = System.Drawing.Color.White
         Me.dtAsientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtAsientos.GridColor = System.Drawing.Color.White
         Me.dtAsientos.Location = New System.Drawing.Point(6, 57)
         Me.dtAsientos.Name = "dtAsientos"
+        Me.dtAsientos.ReadOnly = True
         Me.dtAsientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtAsientos.Size = New System.Drawing.Size(688, 259)
+        Me.dtAsientos.Size = New System.Drawing.Size(682, 259)
         Me.dtAsientos.TabIndex = 2
         '
         'txtCod

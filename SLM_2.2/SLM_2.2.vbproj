@@ -133,7 +133,7 @@
     <Compile Include="negocio\ClsBitacora.vb" />
     <Compile Include="negocio\ClsCAI.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
-    <Compile Include="negocio\ClsContratos.vb" />
+    <Compile Include="negocio\ClsDepreciacion.vb" />
     <Compile Include="negocio\ClsDescuentos.vb" />
     <Compile Include="negocio\ClsDetalleAsiento.vb" />
     <Compile Include="negocio\ClsDetalleCAI.vb" />
@@ -142,11 +142,9 @@
     <Compile Include="negocio\ClsDetalleListaPrecios.vb" />
     <Compile Include="negocio\ClsDetallePago.vb" />
     <Compile Include="negocio\ClsDetalleRecibo.vb" />
-    <Compile Include="negocio\ClsEmpleados.vb" />
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
-    <Compile Include="negocio\ClsHorarios.vb" />
     <Compile Include="negocio\ClsItemExamen.vb" />
     <Compile Include="negocio\ClsItemExamenDetalle.vb" />
     <Compile Include="negocio\ClsListaPrecios.vb" />
@@ -158,11 +156,8 @@
     <Compile Include="negocio\ClsParametroExamen.vb" />
     <Compile Include="negocio\ClsParametroExamenDetalle.vb" />
     <Compile Include="negocio\ClsPeriodoContable.vb" />
-    <Compile Include="negocio\ClsPermisos.vb" />
     <Compile Include="negocio\ClsPrecio.vb" />
-    <Compile Include="negocio\ClsProfesion.vb" />
     <Compile Include="negocio\ClsPromociones.vb" />
-    <Compile Include="negocio\ClsPuestoTrabajo.vb" />
     <Compile Include="negocio\ClsRecibo.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
@@ -185,6 +180,12 @@
       <DependentUpon>A_Consolidacion.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_Consolidacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_Depreciacion.Designer.vb">
+      <DependentUpon>A_Depreciacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_Depreciacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_FacturaCompras.Designer.vb">
@@ -312,6 +313,12 @@
       <DependentUpon>A_ListarCuentas_Chequera.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ListarCuentas_Chequera.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ListarDepreciacion.Designer.vb">
+      <DependentUpon>A_ListarDepreciacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarDepreciacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_ListarExamenes.Designer.vb">
@@ -513,12 +520,6 @@
     <Compile Include="presentacion\A_FormaPago.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\M_BuscarEmpleados.Designer.vb">
-      <DependentUpon>M_BuscarEmpleados.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_BuscarEmpleados.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="presentacion\M_Arqueos.Designer.vb">
       <DependentUpon>M_Arqueos.vb</DependentUpon>
     </Compile>
@@ -537,29 +538,11 @@
       <DependentUpon>M_CierreCaja.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="presentacion\M_Contratos.Designer.vb">
-      <DependentUpon>M_Contratos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_Contratos.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="presentacion\M_CryTiposDePacientes.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>M_CryTiposDePacientes.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="presentacion\M_Empleados.Designer.vb">
-      <DependentUpon>M_Empleados.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_Empleados.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="presentacion\M_Horarios.Designer.vb">
-      <DependentUpon>M_Horarios.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_Horarios.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_ImprimirCotizacion.vb">
       <AutoGen>True</AutoGen>
@@ -699,12 +682,6 @@
     <Compile Include="presentacion\M_ListadoDePrecios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\M_ListadoEmpleados.Designer.vb">
-      <DependentUpon>M_ListadoEmpleados.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_ListadoEmpleados.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="presentacion\M_ListadoPromociones.Designer.vb">
       <DependentUpon>M_ListadoPromociones.vb</DependentUpon>
     </Compile>
@@ -783,28 +760,10 @@
     <Compile Include="presentacion\M_Factura.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\M_Permisos.Designer.vb">
-      <DependentUpon>M_Permisos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_Permisos.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="presentacion\M_Precio.Designer.vb">
       <DependentUpon>M_Precio.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_Precio.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="presentacion\M_Profesion.Designer.vb">
-      <DependentUpon>M_Profesion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_Profesion.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="presentacion\M_PuestoTrabajo.Designer.vb">
-      <DependentUpon>M_PuestoTrabajo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_PuestoTrabajo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_Recibo.Designer.vb">
@@ -867,12 +826,6 @@
     <Compile Include="presentacion\M_TipoTermino.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\M_Vacaciones.Designer.vb">
-      <DependentUpon>M_Vacaciones.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_Vacaciones.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="presentacion\M_VerPaciente.Designer.vb">
       <DependentUpon>M_VerPaciente.vb</DependentUpon>
     </Compile>
@@ -910,6 +863,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Consolidacion.resx">
       <DependentUpon>A_Consolidacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_Depreciacion.resx">
+      <DependentUpon>A_Depreciacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_FacturaCompras.resx">
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
@@ -961,6 +917,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarCuentas_Chequera.resx">
       <DependentUpon>A_ListarCuentas_Chequera.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarDepreciacion.resx">
+      <DependentUpon>A_ListarDepreciacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarExamenes.resx">
       <DependentUpon>A_ListarExamenes.vb</DependentUpon>
@@ -1058,9 +1017,6 @@
     <EmbeddedResource Include="presentacion\E_Usuarios.resx">
       <DependentUpon>E_Usuarios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_BuscarEmpleados.resx">
-      <DependentUpon>M_BuscarEmpleados.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Arqueos.resx">
       <DependentUpon>M_Arqueos.vb</DependentUpon>
     </EmbeddedResource>
@@ -1071,18 +1027,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>M_CierreCaja.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_Contratos.resx">
-      <DependentUpon>M_Contratos.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_CryTiposDePacientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>M_CryTiposDePacientes.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_Empleados.resx">
-      <DependentUpon>M_Empleados.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_Horarios.resx">
-      <DependentUpon>M_Horarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ImprimirCotizacion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1156,9 +1103,6 @@
     <EmbeddedResource Include="presentacion\M_ListadoDePrecios.resx">
       <DependentUpon>M_ListadoDePrecios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_ListadoEmpleados.resx">
-      <DependentUpon>M_ListadoEmpleados.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ListadoPromociones.resx">
       <DependentUpon>M_ListadoPromociones.vb</DependentUpon>
     </EmbeddedResource>
@@ -1198,17 +1142,8 @@
     <EmbeddedResource Include="presentacion\M_Factura.resx">
       <DependentUpon>M_Factura.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_Permisos.resx">
-      <DependentUpon>M_Permisos.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Precio.resx">
       <DependentUpon>M_Precio.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_Profesion.resx">
-      <DependentUpon>M_Profesion.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_PuestoTrabajo.resx">
-      <DependentUpon>M_PuestoTrabajo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Recibo.resx">
       <DependentUpon>M_Recibo.vb</DependentUpon>
@@ -1239,9 +1174,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_TipoTermino.resx">
       <DependentUpon>M_TipoTermino.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_Vacaciones.resx">
-      <DependentUpon>M_Vacaciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_VerPaciente.resx">
       <DependentUpon>M_VerPaciente.vb</DependentUpon>

@@ -164,7 +164,7 @@ Public Class ClsAsientoContable
 
         Using da As New SqlDataAdapter("A_slmListarAsientos", cn)
             Dim dt As New DataTable
-            'da.Fill(dt)
+            da.Fill(dt)
             Return dt
         End Using
     End Function

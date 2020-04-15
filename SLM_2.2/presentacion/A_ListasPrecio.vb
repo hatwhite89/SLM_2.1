@@ -1,15 +1,14 @@
 ﻿Public Class A_ListasPrecio
 
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) 
 
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         importarExcel(dtExcel)
 
         lblCantidadR.Text = dtExcel.Rows.Count - 1
-
     End Sub
 
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) 
-
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim precios As New ClsPrecio
 
         For fila = 0 To dtExcel.Rows.Count - 2
@@ -38,13 +37,9 @@
         M_Precio.dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
         Me.Close()
-
     End Sub
 
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) 
-
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Close()
-
     End Sub
-
 End Class

@@ -3,15 +3,20 @@
     Dim asiento As New ClsAsientoContable
 
     Private Sub A_ListadoAsientos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
 
-        dtAsientos.DataSource = asiento.listarAsientos()
+            dtAsientos.DataSource = asiento.listarAsientos()
 
-        dtAsientos.Columns("cod_asiento").Visible = False
-        dtAsientos.Columns("codPeriodo").Visible = False
-        dtAsientos.Columns("fecha").Visible = False
-        dtAsientos.Columns("descripcion").Width = 320
-        dtAsientos.Columns("descripcion").HeaderText = "Descripción"
-        dtAsientos.Columns("campoLlave").HeaderText = "Transf."
+            dtAsientos.Columns("cod_asiento").Visible = False
+            dtAsientos.Columns("codPeriodo").Visible = False
+            dtAsientos.Columns("fecha").Visible = False
+            dtAsientos.Columns("descripcion").Width = 320
+            dtAsientos.Columns("descripcion").HeaderText = "Descripción"
+            dtAsientos.Columns("campoLlave").HeaderText = "Transf."
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
 
     End Sub
@@ -54,12 +59,20 @@
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        dtAsientos.DataSource = asiento.listarAsientos()
 
-        dtAsientos.Columns("cod_asiento").Visible = False
-        dtAsientos.Columns("codPeriodo").Visible = False
-        dtAsientos.Columns("fecha").Visible = False
-        dtAsientos.Columns("descripcion").Width = 320
+        Try
+
+            dtAsientos.DataSource = asiento.listarAsientos()
+
+            dtAsientos.Columns("cod_asiento").Visible = False
+            dtAsientos.Columns("codPeriodo").Visible = False
+            dtAsientos.Columns("fecha").Visible = False
+            dtAsientos.Columns("descripcion").Width = 320
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub dtAsientos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtAsientos.CellDoubleClick
@@ -86,5 +99,16 @@
 
 
 
+    End Sub
+
+    Private Sub txtCod_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCod.KeyPress
+        'Solo acepta numeros.
+        If (Char.IsNumber(e.KeyChar)) Then
+            e.Handled = False
+        ElseIf (Char.IsControl(e.KeyChar)) Then
+            e.Handled = False
+        ElseIf (Char.IsPunctuation(e.KeyChar)) Then
+            e.Handled = False
+        End If
     End Sub
 End Class
