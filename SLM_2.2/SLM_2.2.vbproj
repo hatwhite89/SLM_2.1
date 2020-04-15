@@ -291,6 +291,12 @@
     <Compile Include="presentacion\A_ListadoFacturaCompra.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ListarCAI.Designer.vb">
+      <DependentUpon>A_ListarCAI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarCAI.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListarCategoriasProveedor.Designer.vb">
       <DependentUpon>A_ListarCategoriasProveedor.vb</DependentUpon>
     </Compile>
@@ -905,6 +911,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoFacturaCompra.resx">
       <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarCAI.resx">
+      <DependentUpon>A_ListarCAI.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarCategoriasProveedor.resx">
       <DependentUpon>A_ListarCategoriasProveedor.vb</DependentUpon>
