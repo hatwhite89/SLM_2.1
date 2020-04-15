@@ -23,19 +23,24 @@ Partial Class A_Depreciacion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnLimpiar = New System.Windows.Forms.Button()
+        Me.btnCalcular = New System.Windows.Forms.Button()
+        Me.txtSede = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtTipo = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.lblTipo = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtCod = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.btnGuardarPDF = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnLimpiar = New System.Windows.Forms.Button()
-        Me.btnCalcular = New System.Windows.Forms.Button()
         Me.rbtDiaria = New System.Windows.Forms.RadioButton()
         Me.rbtMensual = New System.Windows.Forms.RadioButton()
         Me.rbtAnual = New System.Windows.Forms.RadioButton()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.dtpFechaCalculo = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dtpCreacion = New System.Windows.Forms.DateTimePicker()
@@ -57,19 +62,24 @@ Partial Class A_Depreciacion
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnModificar)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.btnGuardar)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiar)
+        Me.GroupBox1.Controls.Add(Me.btnCalcular)
+        Me.GroupBox1.Controls.Add(Me.txtSede)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.txtTipo)
+        Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.lblTipo)
         Me.GroupBox1.Controls.Add(Me.txtDescripcion)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.txtCod)
         Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.btnGuardarPDF)
-        Me.GroupBox1.Controls.Add(Me.btnGuardar)
-        Me.GroupBox1.Controls.Add(Me.btnLimpiar)
-        Me.GroupBox1.Controls.Add(Me.btnCalcular)
         Me.GroupBox1.Controls.Add(Me.rbtDiaria)
         Me.GroupBox1.Controls.Add(Me.rbtMensual)
         Me.GroupBox1.Controls.Add(Me.rbtAnual)
-        Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.dtpFechaCalculo)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.dtpCreacion)
@@ -80,31 +90,123 @@ Partial Class A_Depreciacion
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(325, 522)
+        Me.GroupBox1.Size = New System.Drawing.Size(431, 522)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Activo"
         '
+        'btnModificar
+        '
+        Me.btnModificar.Location = New System.Drawing.Point(218, 406)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(90, 98)
+        Me.btnModificar.TabIndex = 11
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(10, 234)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(196, 13)
+        Me.Label5.TabIndex = 30
+        Me.Label5.Text = "Seleccionar tipo de Depreciación"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(391, 57)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(28, 23)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "..."
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Location = New System.Drawing.Point(124, 406)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(90, 98)
+        Me.btnGuardar.TabIndex = 10
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = True
+        '
+        'btnLimpiar
+        '
+        Me.btnLimpiar.Location = New System.Drawing.Point(314, 406)
+        Me.btnLimpiar.Name = "btnLimpiar"
+        Me.btnLimpiar.Size = New System.Drawing.Size(90, 98)
+        Me.btnLimpiar.TabIndex = 12
+        Me.btnLimpiar.Text = "Cancelar"
+        Me.btnLimpiar.UseVisualStyleBackColor = True
+        '
+        'btnCalcular
+        '
+        Me.btnCalcular.Location = New System.Drawing.Point(28, 406)
+        Me.btnCalcular.Name = "btnCalcular"
+        Me.btnCalcular.Size = New System.Drawing.Size(90, 98)
+        Me.btnCalcular.TabIndex = 9
+        Me.btnCalcular.Text = "Calcular"
+        Me.btnCalcular.UseVisualStyleBackColor = True
+        '
+        'txtSede
+        '
+        Me.txtSede.Enabled = False
+        Me.txtSede.Location = New System.Drawing.Point(294, 59)
+        Me.txtSede.Name = "txtSede"
+        Me.txtSede.Size = New System.Drawing.Size(92, 20)
+        Me.txtSede.TabIndex = 24
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(256, 62)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(35, 13)
+        Me.Label9.TabIndex = 23
+        Me.Label9.Text = "Sede:"
+        '
+        'txtTipo
+        '
+        Me.txtTipo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.txtTipo.Location = New System.Drawing.Point(85, 58)
+        Me.txtTipo.MaxLength = 50
+        Me.txtTipo.Name = "txtTipo"
+        Me.txtTipo.Size = New System.Drawing.Size(165, 20)
+        Me.txtTipo.TabIndex = 1
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(9, 61)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(31, 13)
+        Me.Label8.TabIndex = 21
+        Me.Label8.Text = "Tipo:"
+        '
         'lblTipo
         '
         Me.lblTipo.AutoSize = True
-        Me.lblTipo.Location = New System.Drawing.Point(13, 317)
+        Me.lblTipo.Location = New System.Drawing.Point(8, 339)
         Me.lblTipo.Name = "lblTipo"
         Me.lblTipo.Size = New System.Drawing.Size(86, 13)
         Me.lblTipo.TabIndex = 20
         Me.lblTipo.Text = "Seleccion Depre"
+        Me.lblTipo.Visible = False
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(111, 58)
+        Me.txtDescripcion.Location = New System.Drawing.Point(85, 85)
+        Me.txtDescripcion.MaxLength = 150
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(200, 20)
-        Me.txtDescripcion.TabIndex = 19
+        Me.txtDescripcion.Size = New System.Drawing.Size(334, 20)
+        Me.txtDescripcion.TabIndex = 3
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(9, 61)
+        Me.Label7.Location = New System.Drawing.Point(9, 88)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(66, 13)
         Me.Label7.TabIndex = 18
@@ -112,10 +214,11 @@ Partial Class A_Depreciacion
         '
         'txtCod
         '
-        Me.txtCod.Location = New System.Drawing.Point(111, 32)
+        Me.txtCod.Enabled = False
+        Me.txtCod.Location = New System.Drawing.Point(85, 32)
         Me.txtCod.Name = "txtCod"
-        Me.txtCod.Size = New System.Drawing.Size(200, 20)
-        Me.txtCod.TabIndex = 17
+        Me.txtCod.Size = New System.Drawing.Size(63, 20)
+        Me.txtCod.TabIndex = 0
         '
         'Label6
         '
@@ -126,49 +229,13 @@ Partial Class A_Depreciacion
         Me.Label6.TabIndex = 16
         Me.Label6.Text = "Código:"
         '
-        'btnGuardarPDF
-        '
-        Me.btnGuardarPDF.Location = New System.Drawing.Point(16, 456)
-        Me.btnGuardarPDF.Name = "btnGuardarPDF"
-        Me.btnGuardarPDF.Size = New System.Drawing.Size(292, 23)
-        Me.btnGuardarPDF.TabIndex = 15
-        Me.btnGuardarPDF.Text = "Guardar como PDF"
-        Me.btnGuardarPDF.UseVisualStyleBackColor = True
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.Location = New System.Drawing.Point(16, 427)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(292, 23)
-        Me.btnGuardar.TabIndex = 14
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
-        '
-        'btnLimpiar
-        '
-        Me.btnLimpiar.Location = New System.Drawing.Point(16, 485)
-        Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(292, 23)
-        Me.btnLimpiar.TabIndex = 13
-        Me.btnLimpiar.Text = "Cancelar"
-        Me.btnLimpiar.UseVisualStyleBackColor = True
-        '
-        'btnCalcular
-        '
-        Me.btnCalcular.Location = New System.Drawing.Point(16, 398)
-        Me.btnCalcular.Name = "btnCalcular"
-        Me.btnCalcular.Size = New System.Drawing.Size(292, 23)
-        Me.btnCalcular.TabIndex = 12
-        Me.btnCalcular.Text = "Calcular"
-        Me.btnCalcular.UseVisualStyleBackColor = True
-        '
         'rbtDiaria
         '
         Me.rbtDiaria.AutoSize = True
-        Me.rbtDiaria.Location = New System.Drawing.Point(16, 277)
+        Me.rbtDiaria.Location = New System.Drawing.Point(13, 301)
         Me.rbtDiaria.Name = "rbtDiaria"
         Me.rbtDiaria.Size = New System.Drawing.Size(118, 17)
-        Me.rbtDiaria.TabIndex = 11
+        Me.rbtDiaria.TabIndex = 8
         Me.rbtDiaria.TabStop = True
         Me.rbtDiaria.Text = "Depreciación Diaria"
         Me.rbtDiaria.UseVisualStyleBackColor = True
@@ -176,10 +243,10 @@ Partial Class A_Depreciacion
         'rbtMensual
         '
         Me.rbtMensual.AutoSize = True
-        Me.rbtMensual.Location = New System.Drawing.Point(16, 254)
+        Me.rbtMensual.Location = New System.Drawing.Point(13, 278)
         Me.rbtMensual.Name = "rbtMensual"
         Me.rbtMensual.Size = New System.Drawing.Size(131, 17)
-        Me.rbtMensual.TabIndex = 10
+        Me.rbtMensual.TabIndex = 7
         Me.rbtMensual.TabStop = True
         Me.rbtMensual.Text = "Depreciación Mensual"
         Me.rbtMensual.UseVisualStyleBackColor = True
@@ -187,35 +254,26 @@ Partial Class A_Depreciacion
         'rbtAnual
         '
         Me.rbtAnual.AutoSize = True
-        Me.rbtAnual.Location = New System.Drawing.Point(16, 231)
+        Me.rbtAnual.Location = New System.Drawing.Point(13, 255)
         Me.rbtAnual.Name = "rbtAnual"
         Me.rbtAnual.Size = New System.Drawing.Size(118, 17)
-        Me.rbtAnual.TabIndex = 9
+        Me.rbtAnual.TabIndex = 6
         Me.rbtAnual.TabStop = True
         Me.rbtAnual.Text = "Depreciación Anual"
         Me.rbtAnual.UseVisualStyleBackColor = True
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(84, 199)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(168, 18)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Tipo de Depreciación"
-        '
         'dtpFechaCalculo
         '
-        Me.dtpFechaCalculo.Location = New System.Drawing.Point(111, 162)
+        Me.dtpFechaCalculo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaCalculo.Location = New System.Drawing.Point(109, 192)
         Me.dtpFechaCalculo.Name = "dtpFechaCalculo"
-        Me.dtpFechaCalculo.Size = New System.Drawing.Size(200, 20)
+        Me.dtpFechaCalculo.Size = New System.Drawing.Size(108, 20)
         Me.dtpFechaCalculo.TabIndex = 7
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(9, 165)
+        Me.Label4.Location = New System.Drawing.Point(8, 195)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(90, 13)
         Me.Label4.TabIndex = 6
@@ -223,15 +281,16 @@ Partial Class A_Depreciacion
         '
         'dtpCreacion
         '
-        Me.dtpCreacion.Location = New System.Drawing.Point(111, 136)
+        Me.dtpCreacion.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpCreacion.Location = New System.Drawing.Point(110, 166)
         Me.dtpCreacion.Name = "dtpCreacion"
-        Me.dtpCreacion.Size = New System.Drawing.Size(200, 20)
+        Me.dtpCreacion.Size = New System.Drawing.Size(107, 20)
         Me.dtpCreacion.TabIndex = 5
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(9, 139)
+        Me.Label3.Location = New System.Drawing.Point(8, 169)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(100, 13)
         Me.Label3.TabIndex = 4
@@ -239,15 +298,16 @@ Partial Class A_Depreciacion
         '
         'txtValorResidual
         '
-        Me.txtValorResidual.Location = New System.Drawing.Point(111, 110)
+        Me.txtValorResidual.Location = New System.Drawing.Point(85, 140)
+        Me.txtValorResidual.MaxLength = 10
         Me.txtValorResidual.Name = "txtValorResidual"
-        Me.txtValorResidual.Size = New System.Drawing.Size(200, 20)
-        Me.txtValorResidual.TabIndex = 3
+        Me.txtValorResidual.Size = New System.Drawing.Size(131, 20)
+        Me.txtValorResidual.TabIndex = 5
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(9, 113)
+        Me.Label2.Location = New System.Drawing.Point(10, 143)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(78, 13)
         Me.Label2.TabIndex = 2
@@ -255,24 +315,25 @@ Partial Class A_Depreciacion
         '
         'txtCosto
         '
-        Me.txtCosto.Location = New System.Drawing.Point(111, 84)
+        Me.txtCosto.Location = New System.Drawing.Point(85, 114)
+        Me.txtCosto.MaxLength = 10
         Me.txtCosto.Name = "txtCosto"
-        Me.txtCosto.Size = New System.Drawing.Size(200, 20)
-        Me.txtCosto.TabIndex = 1
+        Me.txtCosto.Size = New System.Drawing.Size(131, 20)
+        Me.txtCosto.TabIndex = 4
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(9, 87)
+        Me.Label1.Location = New System.Drawing.Point(10, 117)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(85, 13)
+        Me.Label1.Size = New System.Drawing.Size(37, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Costo de Activo:"
+        Me.Label1.Text = "Costo:"
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.dtDepreciacion)
-        Me.GroupBox2.Location = New System.Drawing.Point(343, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(449, 12)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(445, 522)
         Me.GroupBox2.TabIndex = 1
@@ -287,7 +348,7 @@ Partial Class A_Depreciacion
         Me.dtDepreciacion.Location = New System.Drawing.Point(3, 16)
         Me.dtDepreciacion.Name = "dtDepreciacion"
         Me.dtDepreciacion.Size = New System.Drawing.Size(439, 503)
-        Me.dtDepreciacion.TabIndex = 0
+        Me.dtDepreciacion.TabIndex = 13
         '
         'fecha
         '
@@ -313,7 +374,7 @@ Partial Class A_Depreciacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 546)
+        Me.ClientSize = New System.Drawing.Size(901, 546)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "A_Depreciacion"
@@ -327,12 +388,9 @@ Partial Class A_Depreciacion
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btnLimpiar As Button
-    Friend WithEvents btnCalcular As Button
     Friend WithEvents rbtDiaria As RadioButton
     Friend WithEvents rbtMensual As RadioButton
     Friend WithEvents rbtAnual As RadioButton
-    Friend WithEvents Label5 As Label
     Friend WithEvents dtpFechaCalculo As DateTimePicker
     Friend WithEvents Label4 As Label
     Friend WithEvents dtpCreacion As DateTimePicker
@@ -347,11 +405,19 @@ Partial Class A_Depreciacion
     Friend WithEvents Depre As DataGridViewTextBoxColumn
     Friend WithEvents DepreciacionAcumulada As DataGridViewTextBoxColumn
     Friend WithEvents ValorAnual As DataGridViewTextBoxColumn
-    Friend WithEvents btnGuardar As Button
-    Friend WithEvents btnGuardarPDF As Button
     Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents txtCod As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents lblTipo As Label
+    Friend WithEvents txtSede As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txtTipo As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnLimpiar As Button
+    Friend WithEvents btnCalcular As Button
 End Class

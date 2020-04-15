@@ -40,6 +40,8 @@
                 .dtpCreacion.Value = row("fechaCreacion")
                 .dtpFechaCalculo.Value = row("fechaCalculo")
                 .lblTipo.Text = row("tipoDepreciacion")
+                .txtSede.Text = row("sede")
+                .txtTipo.Text = row("tipo")
                 .Show()
             End With
 

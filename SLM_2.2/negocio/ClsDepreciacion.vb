@@ -4,8 +4,8 @@ Public Class ClsDepreciacion
 
 	'Variables
 	Dim cod_Depreciacion, tipoDepreciacion As Integer
-	Dim descripcion As String
-	Dim costoActivo, valorResidual As Double
+    Dim descripcion, sede, tipoActivo As String
+    Dim costoActivo, valorResidual As Double
 	Dim fechaCreacion, fechaCalculo As Date
 
 	'Constructor Depreciacion
@@ -65,6 +65,26 @@ Public Class ClsDepreciacion
         End Set
     End Property
 
+    'Sede
+    Public Property Sede_ As String
+        Get
+            Return sede
+        End Get
+        Set(value As String)
+            sede = value
+        End Set
+    End Property
+
+    'Tipo Activo
+    Public Property Tipo_Activo As String
+        Get
+            Return tipoActivo
+        End Get
+        Set(value As String)
+            tipoActivo = value
+        End Set
+    End Property
+
     'Costo Activo
     Public Property Costo_Activo As Double
         Get
@@ -102,6 +122,16 @@ Public Class ClsDepreciacion
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "descripcion"
         sqlpar.Value = Descripcion_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "sede"
+        sqlpar.Value = Sede_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "tipo"
+        sqlpar.Value = Tipo_Activo
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -147,6 +177,79 @@ Public Class ClsDepreciacion
         Return par_sal
 
     End Function
+
+
+    'Modificar depreciacion en base de datos
+    Public Function modificarDepreciacion() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        'PROCEDIMIENTO ALMACENADO
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "A_slmActualizarDepreciacion"
+
+        'VARIABLES 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "descripcion"
+        sqlpar.Value = Descripcion_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "sede"
+        sqlpar.Value = Sede_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "tipo"
+        sqlpar.Value = Tipo_Activo
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "costoActivo"
+        sqlpar.Value = Costo_Activo
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "valorResidual"
+        sqlpar.Value = Valor_Residual
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "fechaCreacion"
+        sqlpar.Value = Fecha_Creacion
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "fechaCalculo"
+        sqlpar.Value = Fecha_Calculo
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "tipoDepreciacion"
+        sqlpar.Value = Tipo
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
 
     'Listar registros de depreciacion
     Public Function listarDepreciacion() As DataTable

@@ -410,13 +410,6 @@
         A_Alertas.Show()
     End Sub
 
-    Private Sub panelMenu_Paint(sender As Object, e As PaintEventArgs) Handles panelMenu.Paint
-
-    End Sub
-
-    Private Sub ToolStripStatusLabel1_Click(sender As Object, e As EventArgs)
-
-    End Sub
 
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
         panelMenu.Visible = False
@@ -452,5 +445,20 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
+        Try
+
+
+            M_InicioSesion.Show()
+
+            Me.Close()
+
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 End Class

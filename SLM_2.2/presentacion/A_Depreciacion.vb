@@ -7,7 +7,7 @@
     Private Formato_Decimales As String = "###,###,###,##.00"
     Dim Depreciacion As New ClsDepreciacion
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         dtDepreciacion.Rows.Clear()
         dtDepreciacion.DataSource = Nothing
         Calcular_Depreciacion()
@@ -92,37 +92,6 @@
         lblTipo.Text = 3
     End Sub
 
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        'Validar campos vacios
-        If txtCosto.Text <> "" And txtValorResidual.Text <> "" Then
-
-            With Depreciacion
-                'VARIABLES DE DEPRECIACION
-                .Descripcion_ = txtDescripcion.Text
-                .Costo_Activo = Convert.ToDouble(txtCosto.Text)
-                .Valor_Residual = Convert.ToDouble(txtValorResidual.Text)
-                .Fecha_Creacion = dtpCreacion.Value
-                .Fecha_Calculo = dtpFechaCalculo.Value
-                .Tipo = Convert.ToInt16(lblTipo.Text)
-                'REGISTRO DE DATOS DE DEPRECIACION
-                If .registrarDepreciacion() = 1 Then
-                    MsgBox("El registro se guardo correctamente.")
-                    limpia()
-                End If
-            End With
-
-        ElseIf txtCosto.Text = "" Then 'Si esta vacio marcar en rojo
-
-            txtCosto.ForeColor = Color.Red
-
-        ElseIf txtValorResidual.Text = "" Then 'Si esta vacio marcar en rojo
-
-            txtValorResidual.ForeColor = Color.Red
-
-        End If
-
-    End Sub
-
     Sub limpia()
 
         txtCod.Text = ""
@@ -137,7 +106,7 @@
 
     End Sub
 
-    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs)
         limpia()
 
     End Sub
@@ -156,5 +125,108 @@
             Calcular_Depreciacion()
 
         End If
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+
+            'Listado Sucursales
+            M_Sucursal.Show()
+            M_Sucursal.lblform.Text = "Depreciacion"
+
+        Catch ex As Exception
+            MsgBox("Error al cargar la información. Detalle:" + ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+
+        'Registro de depreciacion
+
+        Try
+
+
+            If txtTipo.Text <> "" And txtDescripcion.Text <> "" And txtCosto.Text <> "" And txtValorResidual.Text <> "" Then 'fin if validaciones
+
+
+                With Depreciacion
+
+                    .Tipo_Activo = txtTipo.Text
+                    .Sede_ = txtSede.Text
+                    .Descripcion_ = txtDescripcion.Text
+                    .Costo_Activo = txtCosto.Text
+                    .Valor_Residual = txtValorResidual.Text
+                    .Fecha_Calculo = dtpFechaCalculo.Value
+                    .Fecha_Creacion = dtpCreacion.Value
+                    .Tipo = Convert.ToInt32(lblTipo.Text)
+
+                    If .registrarDepreciacion = 1 Then
+                        MsgBox("Se guardo el registro exitosamente.")
+
+                    End If
+
+                End With
+
+            ElseIf txtTipo.Text = "" Then
+                txtTipo.BackColor = Color.Red
+            ElseIf txtDescripcion.Text = "" Then
+                txtDescripcion.BackColor = color.red
+            ElseIf txtCosto.text = "" Then
+                txtCosto.BackColor = Color.Red
+            ElseIf txtValorResidual.Text = "" Then
+                txtValorResidual.BackColor = Color.Red
+
+            End If 'fin if validaciones
+
+        Catch ex As Exception
+            MsgBox("No se pudo crear el registro. Error: " + ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+
+        'Modificar registro de depreciacion
+
+        Try
+
+
+            If txtTipo.Text <> "" And txtDescripcion.Text <> "" And txtCosto.Text <> "" And txtValorResidual.Text <> "" Then 'fin if validaciones
+
+
+                With Depreciacion
+
+                    .Cod = Convert.ToInt32(txtCod.Text)
+                    .Tipo_Activo = txtTipo.Text
+                    .Sede_ = txtSede.Text
+                    .Descripcion_ = txtDescripcion.Text
+                    .Costo_Activo = txtCosto.Text
+                    .Valor_Residual = txtValorResidual.Text
+                    .Fecha_Calculo = dtpFechaCalculo.Value
+                    .Fecha_Creacion = dtpCreacion.Value
+                    .Tipo = Convert.ToInt32(lblTipo.Text)
+
+                    If .modificarDepreciacion = 1 Then
+                        MsgBox("Se modificó el registro exitosamente.")
+
+                    End If
+
+                End With
+
+            ElseIf txtTipo.Text = "" Then
+                txtTipo.BackColor = Color.Red
+            ElseIf txtDescripcion.Text = "" Then
+                txtDescripcion.BackColor = Color.Red
+            ElseIf txtCosto.Text = "" Then
+                txtCosto.BackColor = Color.Red
+            ElseIf txtValorResidual.Text = "" Then
+                txtValorResidual.BackColor = Color.Red
+
+            End If 'fin if validaciones
+
+        Catch ex As Exception
+            MsgBox("No se pudo modificar el registro. Error: " + ex.Message)
+        End Try
+
     End Sub
 End Class
