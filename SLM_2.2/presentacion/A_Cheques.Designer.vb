@@ -108,9 +108,9 @@ Partial Class A_Cheques
         Me.GroupBox1.Controls.Add(Me.txtNro)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 15)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(1016, 134)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -130,7 +130,7 @@ Partial Class A_Cheques
         '
         Me.rbtnRechazado.AutoSize = True
         Me.rbtnRechazado.Location = New System.Drawing.Point(847, 58)
-        Me.rbtnRechazado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rbtnRechazado.Margin = New System.Windows.Forms.Padding(4)
         Me.rbtnRechazado.Name = "rbtnRechazado"
         Me.rbtnRechazado.Size = New System.Drawing.Size(101, 21)
         Me.rbtnRechazado.TabIndex = 16
@@ -141,7 +141,7 @@ Partial Class A_Cheques
         '
         Me.rbtnCancelado.AutoSize = True
         Me.rbtnCancelado.Location = New System.Drawing.Point(847, 30)
-        Me.rbtnCancelado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rbtnCancelado.Margin = New System.Windows.Forms.Padding(4)
         Me.rbtnCancelado.Name = "rbtnCancelado"
         Me.rbtnCancelado.Size = New System.Drawing.Size(96, 21)
         Me.rbtnCancelado.TabIndex = 15
@@ -152,7 +152,7 @@ Partial Class A_Cheques
         '
         Me.rbtnAcreditado.AutoSize = True
         Me.rbtnAcreditado.Location = New System.Drawing.Point(699, 86)
-        Me.rbtnAcreditado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rbtnAcreditado.Margin = New System.Windows.Forms.Padding(4)
         Me.rbtnAcreditado.Name = "rbtnAcreditado"
         Me.rbtnAcreditado.Size = New System.Drawing.Size(97, 21)
         Me.rbtnAcreditado.TabIndex = 14
@@ -163,7 +163,7 @@ Partial Class A_Cheques
         '
         Me.rbtnEmitido.AutoSize = True
         Me.rbtnEmitido.Location = New System.Drawing.Point(699, 58)
-        Me.rbtnEmitido.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rbtnEmitido.Margin = New System.Windows.Forms.Padding(4)
         Me.rbtnEmitido.Name = "rbtnEmitido"
         Me.rbtnEmitido.Size = New System.Drawing.Size(75, 21)
         Me.rbtnEmitido.TabIndex = 13
@@ -174,7 +174,7 @@ Partial Class A_Cheques
         '
         Me.rbtnChequera.AutoSize = True
         Me.rbtnChequera.Location = New System.Drawing.Point(699, 30)
-        Me.rbtnChequera.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rbtnChequera.Margin = New System.Windows.Forms.Padding(4)
         Me.rbtnChequera.Name = "rbtnChequera"
         Me.rbtnChequera.Size = New System.Drawing.Size(112, 21)
         Me.rbtnChequera.TabIndex = 12
@@ -185,7 +185,7 @@ Partial Class A_Cheques
         '
         Me.txtMoneda.Enabled = False
         Me.txtMoneda.Location = New System.Drawing.Point(401, 92)
-        Me.txtMoneda.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtMoneda.Margin = New System.Windows.Forms.Padding(4)
         Me.txtMoneda.Name = "txtMoneda"
         Me.txtMoneda.Size = New System.Drawing.Size(132, 22)
         Me.txtMoneda.TabIndex = 11
@@ -203,7 +203,7 @@ Partial Class A_Cheques
         'dtpFechaVto
         '
         Me.dtpFechaVto.Location = New System.Drawing.Point(401, 60)
-        Me.dtpFechaVto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtpFechaVto.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpFechaVto.Name = "dtpFechaVto"
         Me.dtpFechaVto.Size = New System.Drawing.Size(265, 22)
         Me.dtpFechaVto.TabIndex = 9
@@ -221,7 +221,7 @@ Partial Class A_Cheques
         'dtpFechaReg
         '
         Me.dtpFechaReg.Location = New System.Drawing.Point(401, 28)
-        Me.dtpFechaReg.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtpFechaReg.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpFechaReg.Name = "dtpFechaReg"
         Me.dtpFechaReg.Size = New System.Drawing.Size(265, 22)
         Me.dtpFechaReg.TabIndex = 7
@@ -239,7 +239,7 @@ Partial Class A_Cheques
         'txtMonto
         '
         Me.txtMonto.Location = New System.Drawing.Point(117, 92)
-        Me.txtMonto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtMonto.Margin = New System.Windows.Forms.Padding(4)
         Me.txtMonto.MaxLength = 15
         Me.txtMonto.Name = "txtMonto"
         Me.txtMonto.Size = New System.Drawing.Size(132, 22)
@@ -259,7 +259,7 @@ Partial Class A_Cheques
         '
         Me.txtNroCheq.Enabled = False
         Me.txtNroCheq.Location = New System.Drawing.Point(117, 60)
-        Me.txtNroCheq.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNroCheq.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNroCheq.Name = "txtNroCheq"
         Me.txtNroCheq.Size = New System.Drawing.Size(132, 22)
         Me.txtNroCheq.TabIndex = 3
@@ -278,7 +278,7 @@ Partial Class A_Cheques
         '
         Me.txtNro.Enabled = False
         Me.txtNro.Location = New System.Drawing.Point(117, 28)
-        Me.txtNro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNro.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNro.Name = "txtNro"
         Me.txtNro.Size = New System.Drawing.Size(132, 22)
         Me.txtNro.TabIndex = 1
@@ -298,7 +298,7 @@ Partial Class A_Cheques
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Location = New System.Drawing.Point(16, 156)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1016, 363)
@@ -334,9 +334,9 @@ Partial Class A_Cheques
         Me.TabPage1.Controls.Add(Me.txtcodProvee)
         Me.TabPage1.Controls.Add(Me.Label6)
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Size = New System.Drawing.Size(1008, 334)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Proveedor"
@@ -348,9 +348,9 @@ Partial Class A_Cheques
         Me.gbxTipo.Controls.Add(Me.rbtnPagare)
         Me.gbxTipo.Controls.Add(Me.rbtnDiferido)
         Me.gbxTipo.Location = New System.Drawing.Point(324, 194)
-        Me.gbxTipo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.gbxTipo.Margin = New System.Windows.Forms.Padding(4)
         Me.gbxTipo.Name = "gbxTipo"
-        Me.gbxTipo.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.gbxTipo.Padding = New System.Windows.Forms.Padding(4)
         Me.gbxTipo.Size = New System.Drawing.Size(267, 117)
         Me.gbxTipo.TabIndex = 28
         Me.gbxTipo.TabStop = False
@@ -361,7 +361,7 @@ Partial Class A_Cheques
         Me.rbtnCheque.AutoSize = True
         Me.rbtnCheque.Checked = True
         Me.rbtnCheque.Location = New System.Drawing.Point(27, 78)
-        Me.rbtnCheque.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rbtnCheque.Margin = New System.Windows.Forms.Padding(4)
         Me.rbtnCheque.Name = "rbtnCheque"
         Me.rbtnCheque.Size = New System.Drawing.Size(78, 21)
         Me.rbtnCheque.TabIndex = 31
@@ -373,7 +373,7 @@ Partial Class A_Cheques
         '
         Me.rbtnPagare.AutoSize = True
         Me.rbtnPagare.Location = New System.Drawing.Point(27, 50)
-        Me.rbtnPagare.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rbtnPagare.Margin = New System.Windows.Forms.Padding(4)
         Me.rbtnPagare.Name = "rbtnPagare"
         Me.rbtnPagare.Size = New System.Drawing.Size(75, 21)
         Me.rbtnPagare.TabIndex = 30
@@ -384,7 +384,7 @@ Partial Class A_Cheques
         '
         Me.rbtnDiferido.AutoSize = True
         Me.rbtnDiferido.Location = New System.Drawing.Point(27, 23)
-        Me.rbtnDiferido.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rbtnDiferido.Margin = New System.Windows.Forms.Padding(4)
         Me.rbtnDiferido.Name = "rbtnDiferido"
         Me.rbtnDiferido.Size = New System.Drawing.Size(131, 21)
         Me.rbtnDiferido.TabIndex = 29
@@ -394,7 +394,7 @@ Partial Class A_Cheques
         'txtCtaDestino
         '
         Me.txtCtaDestino.Location = New System.Drawing.Point(155, 287)
-        Me.txtCtaDestino.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCtaDestino.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCtaDestino.Name = "txtCtaDestino"
         Me.txtCtaDestino.Size = New System.Drawing.Size(132, 22)
         Me.txtCtaDestino.TabIndex = 27
@@ -412,7 +412,7 @@ Partial Class A_Cheques
         'txtCtaTemporal
         '
         Me.txtCtaTemporal.Location = New System.Drawing.Point(155, 255)
-        Me.txtCtaTemporal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCtaTemporal.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCtaTemporal.Name = "txtCtaTemporal"
         Me.txtCtaTemporal.Size = New System.Drawing.Size(132, 22)
         Me.txtCtaTemporal.TabIndex = 25
@@ -430,7 +430,7 @@ Partial Class A_Cheques
         'txtCtaOrigen
         '
         Me.txtCtaOrigen.Location = New System.Drawing.Point(155, 223)
-        Me.txtCtaOrigen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCtaOrigen.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCtaOrigen.Name = "txtCtaOrigen"
         Me.txtCtaOrigen.Size = New System.Drawing.Size(132, 22)
         Me.txtCtaOrigen.TabIndex = 23
@@ -448,7 +448,7 @@ Partial Class A_Cheques
         'txtNroCtaBanco
         '
         Me.txtNroCtaBanco.Location = New System.Drawing.Point(155, 191)
-        Me.txtNroCtaBanco.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNroCtaBanco.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNroCtaBanco.Name = "txtNroCtaBanco"
         Me.txtNroCtaBanco.Size = New System.Drawing.Size(132, 22)
         Me.txtNroCtaBanco.TabIndex = 21
@@ -467,7 +467,7 @@ Partial Class A_Cheques
         '
         Me.dtpCancelado.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpCancelado.Location = New System.Drawing.Point(460, 159)
-        Me.dtpCancelado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtpCancelado.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpCancelado.Name = "dtpCancelado"
         Me.dtpCancelado.Size = New System.Drawing.Size(129, 22)
         Me.dtpCancelado.TabIndex = 19
@@ -486,7 +486,7 @@ Partial Class A_Cheques
         '
         Me.dtpEmision.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpEmision.Location = New System.Drawing.Point(460, 127)
-        Me.dtpEmision.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtpEmision.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpEmision.Name = "dtpEmision"
         Me.dtpEmision.Size = New System.Drawing.Size(129, 22)
         Me.dtpEmision.TabIndex = 17
@@ -505,7 +505,7 @@ Partial Class A_Cheques
         '
         Me.dtpRechazo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpRechazo.Location = New System.Drawing.Point(155, 159)
-        Me.dtpRechazo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtpRechazo.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpRechazo.Name = "dtpRechazo"
         Me.dtpRechazo.Size = New System.Drawing.Size(129, 22)
         Me.dtpRechazo.TabIndex = 15
@@ -524,7 +524,7 @@ Partial Class A_Cheques
         '
         Me.dtpAcredita.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpAcredita.Location = New System.Drawing.Point(155, 127)
-        Me.dtpAcredita.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtpAcredita.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpAcredita.Name = "dtpAcredita"
         Me.dtpAcredita.Size = New System.Drawing.Size(129, 22)
         Me.dtpAcredita.TabIndex = 13
@@ -543,7 +543,7 @@ Partial Class A_Cheques
         'txtComentario
         '
         Me.txtComentario.Location = New System.Drawing.Point(115, 75)
-        Me.txtComentario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtComentario.Margin = New System.Windows.Forms.Padding(4)
         Me.txtComentario.MaxLength = 500
         Me.txtComentario.Name = "txtComentario"
         Me.txtComentario.Size = New System.Drawing.Size(800, 22)
@@ -563,7 +563,7 @@ Partial Class A_Cheques
         '
         Me.txtnombreBanco.Enabled = False
         Me.txtnombreBanco.Location = New System.Drawing.Point(351, 43)
-        Me.txtnombreBanco.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtnombreBanco.Margin = New System.Windows.Forms.Padding(4)
         Me.txtnombreBanco.Name = "txtnombreBanco"
         Me.txtnombreBanco.Size = New System.Drawing.Size(564, 22)
         Me.txtnombreBanco.TabIndex = 9
@@ -582,7 +582,7 @@ Partial Class A_Cheques
         '
         Me.txtBanco.Enabled = False
         Me.txtBanco.Location = New System.Drawing.Point(115, 43)
-        Me.txtBanco.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtBanco.Margin = New System.Windows.Forms.Padding(4)
         Me.txtBanco.Name = "txtBanco"
         Me.txtBanco.Size = New System.Drawing.Size(132, 22)
         Me.txtBanco.TabIndex = 7
@@ -601,7 +601,7 @@ Partial Class A_Cheques
         '
         Me.txtNombreProvee.Enabled = False
         Me.txtNombreProvee.Location = New System.Drawing.Point(351, 11)
-        Me.txtNombreProvee.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNombreProvee.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNombreProvee.Name = "txtNombreProvee"
         Me.txtNombreProvee.Size = New System.Drawing.Size(564, 22)
         Me.txtNombreProvee.TabIndex = 3
@@ -619,7 +619,7 @@ Partial Class A_Cheques
         'txtcodProvee
         '
         Me.txtcodProvee.Location = New System.Drawing.Point(115, 11)
-        Me.txtcodProvee.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtcodProvee.Margin = New System.Windows.Forms.Padding(4)
         Me.txtcodProvee.MaxLength = 20
         Me.txtcodProvee.Name = "txtcodProvee"
         Me.txtcodProvee.Size = New System.Drawing.Size(132, 22)
@@ -640,9 +640,9 @@ Partial Class A_Cheques
         Me.TabPage2.Controls.Add(Me.txtVoucher)
         Me.TabPage2.Controls.Add(Me.Label20)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Size = New System.Drawing.Size(1008, 334)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Voucher"
@@ -651,7 +651,7 @@ Partial Class A_Cheques
         'txtVoucher
         '
         Me.txtVoucher.Location = New System.Drawing.Point(19, 38)
-        Me.txtVoucher.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtVoucher.Margin = New System.Windows.Forms.Padding(4)
         Me.txtVoucher.Multiline = True
         Me.txtVoucher.Name = "txtVoucher"
         Me.txtVoucher.Size = New System.Drawing.Size(963, 85)
@@ -674,7 +674,7 @@ Partial Class A_Cheques
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
         Me.btnGuardar.Location = New System.Drawing.Point(824, 527)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(100, 33)
         Me.btnGuardar.TabIndex = 2
@@ -688,7 +688,7 @@ Partial Class A_Cheques
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.ForeColor = System.Drawing.Color.White
         Me.btnCancelar.Location = New System.Drawing.Point(932, 527)
-        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(100, 33)
         Me.btnCancelar.TabIndex = 3
@@ -702,7 +702,7 @@ Partial Class A_Cheques
         Me.btnImprimir.FlatAppearance.BorderSize = 0
         Me.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnImprimir.Location = New System.Drawing.Point(21, 527)
-        Me.btnImprimir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnImprimir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(87, 33)
         Me.btnImprimir.TabIndex = 4
@@ -734,7 +734,7 @@ Partial Class A_Cheques
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "A_Cheques"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cheques"

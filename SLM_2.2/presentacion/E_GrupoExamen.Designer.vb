@@ -38,6 +38,7 @@ Partial Class E_GrupoExamen
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxcaja.SuspendLayout()
@@ -50,41 +51,39 @@ Partial Class E_GrupoExamen
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
-        Me.gbxbusqueda.Location = New System.Drawing.Point(11, 128)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(15, 158)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
-        Me.gbxbusqueda.Size = New System.Drawing.Size(696, 361)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.gbxbusqueda.Size = New System.Drawing.Size(928, 444)
         Me.gbxbusqueda.TabIndex = 121
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR GRUPO"
         '
         'txtnombreB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(58, 17)
-        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtnombreB.Location = New System.Drawing.Point(77, 21)
+        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
-        Me.txtnombreB.Size = New System.Drawing.Size(634, 20)
+        Me.txtnombreB.Size = New System.Drawing.Size(844, 22)
         Me.txtnombreB.TabIndex = 118
         '
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(10, 19)
-        Me.lblnombreB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblnombreB.Location = New System.Drawing.Point(13, 23)
         Me.lblnombreB.Name = "lblnombreB"
-        Me.lblnombreB.Size = New System.Drawing.Size(44, 13)
+        Me.lblnombreB.Size = New System.Drawing.Size(58, 17)
         Me.lblnombreB.TabIndex = 117
         Me.lblnombreB.Text = "Nombre"
         '
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(227, 337)
-        Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblcantidad.Location = New System.Drawing.Point(303, 415)
         Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
+        Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
         Me.lblcantidad.TabIndex = 115
         Me.lblcantidad.Text = "000"
         '
@@ -93,28 +92,28 @@ Partial Class E_GrupoExamen
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(4, 41)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgbtabla.Location = New System.Drawing.Point(5, 50)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(688, 282)
+        Me.dgbtabla.Size = New System.Drawing.Size(917, 347)
         Me.dgbtabla.TabIndex = 22
         '
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(10, 337)
-        Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbltotal.Location = New System.Drawing.Point(13, 415)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(109, 13)
+        Me.lbltotal.Size = New System.Drawing.Size(141, 17)
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL DE GRUPOS"
         '
         'gbxcaja
         '
+        Me.gbxcaja.Controls.Add(Me.lblform)
         Me.gbxcaja.Controls.Add(Me.lblcode)
         Me.gbxcaja.Controls.Add(Me.lblcodigo)
         Me.gbxcaja.Controls.Add(Me.txtcodigo)
@@ -124,11 +123,11 @@ Partial Class E_GrupoExamen
         Me.gbxcaja.Controls.Add(Me.btncancelar)
         Me.gbxcaja.Controls.Add(Me.btnnuevo)
         Me.gbxcaja.Controls.Add(Me.btnguardar)
-        Me.gbxcaja.Location = New System.Drawing.Point(11, 10)
-        Me.gbxcaja.Margin = New System.Windows.Forms.Padding(2)
+        Me.gbxcaja.Location = New System.Drawing.Point(15, 12)
+        Me.gbxcaja.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.gbxcaja.Name = "gbxcaja"
-        Me.gbxcaja.Padding = New System.Windows.Forms.Padding(2)
-        Me.gbxcaja.Size = New System.Drawing.Size(696, 114)
+        Me.gbxcaja.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.gbxcaja.Size = New System.Drawing.Size(928, 140)
         Me.gbxcaja.TabIndex = 120
         Me.gbxcaja.TabStop = False
         Me.gbxcaja.Text = "REGISTRAR GRUPO"
@@ -136,50 +135,47 @@ Partial Class E_GrupoExamen
         'lblcode
         '
         Me.lblcode.AutoSize = True
-        Me.lblcode.Location = New System.Drawing.Point(182, 15)
-        Me.lblcode.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblcode.Location = New System.Drawing.Point(243, 18)
         Me.lblcode.Name = "lblcode"
-        Me.lblcode.Size = New System.Drawing.Size(0, 13)
+        Me.lblcode.Size = New System.Drawing.Size(0, 17)
         Me.lblcode.TabIndex = 124
         Me.lblcode.Visible = False
         '
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(31, 32)
-        Me.lblcodigo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblcodigo.Location = New System.Drawing.Point(41, 39)
         Me.lblcodigo.Name = "lblcodigo"
-        Me.lblcodigo.Size = New System.Drawing.Size(40, 13)
+        Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
         Me.lblcodigo.TabIndex = 115
         Me.lblcodigo.Text = "Código"
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(80, 30)
-        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtcodigo.Location = New System.Drawing.Point(107, 37)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(76, 20)
+        Me.txtcodigo.Size = New System.Drawing.Size(100, 22)
         Me.txtcodigo.TabIndex = 114
         Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblnombre
         '
         Me.lblnombre.AutoSize = True
-        Me.lblnombre.Location = New System.Drawing.Point(170, 32)
-        Me.lblnombre.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblnombre.Location = New System.Drawing.Point(227, 39)
         Me.lblnombre.Name = "lblnombre"
-        Me.lblnombre.Size = New System.Drawing.Size(44, 13)
+        Me.lblnombre.Size = New System.Drawing.Size(58, 17)
         Me.lblnombre.TabIndex = 113
         Me.lblnombre.Text = "Nombre"
         '
         'txtnombre
         '
-        Me.txtnombre.Location = New System.Drawing.Point(223, 30)
-        Me.txtnombre.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtnombre.Location = New System.Drawing.Point(297, 37)
+        Me.txtnombre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombre.MaxLength = 80
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(469, 20)
+        Me.txtnombre.Size = New System.Drawing.Size(624, 22)
         Me.txtnombre.TabIndex = 112
         '
         'btnmodificar
@@ -188,10 +184,10 @@ Partial Class E_GrupoExamen
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.Color.White
-        Me.btnmodificar.Location = New System.Drawing.Point(163, 82)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnmodificar.Location = New System.Drawing.Point(217, 101)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnmodificar.Name = "btnmodificar"
-        Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
+        Me.btnmodificar.Size = New System.Drawing.Size(96, 34)
         Me.btnmodificar.TabIndex = 111
         Me.btnmodificar.Text = "Modificar"
         Me.btnmodificar.UseVisualStyleBackColor = False
@@ -202,10 +198,10 @@ Partial Class E_GrupoExamen
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.Color.White
-        Me.btncancelar.Location = New System.Drawing.Point(239, 82)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btncancelar.Location = New System.Drawing.Point(319, 101)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btncancelar.Name = "btncancelar"
-        Me.btncancelar.Size = New System.Drawing.Size(68, 28)
+        Me.btncancelar.Size = New System.Drawing.Size(91, 34)
         Me.btncancelar.TabIndex = 37
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
@@ -216,10 +212,10 @@ Partial Class E_GrupoExamen
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.Color.White
-        Me.btnnuevo.Location = New System.Drawing.Point(4, 82)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnnuevo.Location = New System.Drawing.Point(5, 101)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
+        Me.btnnuevo.Size = New System.Drawing.Size(105, 34)
         Me.btnnuevo.TabIndex = 110
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.UseVisualStyleBackColor = False
@@ -230,24 +226,33 @@ Partial Class E_GrupoExamen
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.Color.White
-        Me.btnguardar.Location = New System.Drawing.Point(87, 82)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnguardar.Location = New System.Drawing.Point(116, 101)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(72, 28)
+        Me.btnguardar.Size = New System.Drawing.Size(96, 34)
         Me.btnguardar.TabIndex = 108
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
         '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(469, 80)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(51, 17)
+        Me.lblform.TabIndex = 125
+        Me.lblform.Text = "Label1"
+        '
         'E_GrupoExamen
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(718, 505)
+        Me.ClientSize = New System.Drawing.Size(957, 622)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.gbxcaja)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "E_GrupoExamen"
         Me.Text = "Grupo Examen"
         Me.gbxbusqueda.ResumeLayout(False)
@@ -275,4 +280,5 @@ Partial Class E_GrupoExamen
     Friend WithEvents btnnuevo As Button
     Friend WithEvents btnguardar As Button
     Friend WithEvents lblcode As Label
+    Friend WithEvents lblform As Label
 End Class
