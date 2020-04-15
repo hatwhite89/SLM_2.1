@@ -706,6 +706,12 @@
     <Compile Include="presentacion\M_ListadoDePrecios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_ListadoEmpleados.Designer.vb">
+      <DependentUpon>M_ListadoEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ListadoEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_ListadoPromociones.Designer.vb">
       <DependentUpon>M_ListadoPromociones.vb</DependentUpon>
     </Compile>
@@ -1159,6 +1165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ListadoDePrecios.resx">
       <DependentUpon>M_ListadoDePrecios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ListadoEmpleados.resx">
+      <DependentUpon>M_ListadoEmpleados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ListadoPromociones.resx">
       <DependentUpon>M_ListadoPromociones.vb</DependentUpon>
