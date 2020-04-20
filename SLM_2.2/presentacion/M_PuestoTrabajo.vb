@@ -9,6 +9,9 @@
 
             rtxtdescripcion.ReadOnly = True
             txtcodigo.ReadOnly = True
+            txtcodigoDepto.ReadOnly = True
+
+            btnDepto.Enabled = False
 
             btnmodificar.Enabled = False
             btnguardar.Enabled = False
@@ -27,8 +30,13 @@
         Try
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
             rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            txtcodigoDepto.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
 
-            txtcodigo.ReadOnly = True
+            rtxtdescripcion.ReadOnly = False
+            txtcodigoDepto.ReadOnly = False
+
+            btnDepto.Enabled = True
+
             btnmodificar.Enabled = True
             btnguardar.Enabled = False
 
@@ -46,8 +54,8 @@
                 End If
                 If n = vbYes Then
                     'M_Factura.txtcodigoMedico.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-                    M_Empleados.txtcodigoPuestoTrabajo.Text = txtcodigo.Text
-                    M_Empleados.txtdescripcionPuesto.Text = rtxtdescripcion.Text
+                    M_Empleados.lblcodePuesto.Text = txtcodigo.Text
+                    M_Empleados.txtPuestoTrabajo.Text = rtxtdescripcion.Text
                     MsgBox(txtcodigo.Text)
                     Me.Close()
                 End If
@@ -60,9 +68,13 @@
         txtcodigo.Text() = ""
         rtxtdescripcion.Text() = ""
         txtdescripcionB.Text() = ""
+        txtnombreDepto.Text = ""
+        txtcodigoDepto.Text = ""
 
         rtxtdescripcion.ReadOnly = False
+        txtcodigoDepto.ReadOnly = False
 
+        btnDepto.Enabled = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
         btnnuevo.Enabled = True
@@ -87,11 +99,12 @@
             Else
                 rtxtdescripcion.BackColor = Color.White
             End If
-            If (Trim(rtxtdescripcion.Text) <> "") Then
+            If (Trim(rtxtdescripcion.Text) <> "" And Trim(txtcodigoDepto.Text) <> "") Then
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
                 Dim objPuesto As New ClsPuestoTrabajo
                 With objPuesto
                     .Descripcion_ = rtxtdescripcion.Text
+                    .codigoDepto_ = txtcodigoDepto.Text
                 End With
 
                 If objPuesto.RegistrarNuevoPuestoTrabajo() = 1 Then
@@ -104,6 +117,9 @@
 
                     txtcodigo.ReadOnly = True
                     rtxtdescripcion.ReadOnly = True
+                    txtcodigoDepto.ReadOnly = True
+
+                    btnDepto.Enabled = False
 
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
@@ -123,12 +139,13 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (txtcodigo.Text <> "" And Trim(rtxtdescripcion.Text) <> "") Then
+            If (txtcodigo.Text <> "" And Trim(rtxtdescripcion.Text) <> "" And Trim(txtcodigoDepto.Text) <> "") Then
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
                 Dim objPuesto As New ClsPuestoTrabajo
                 With objPuesto
                     .Codigo_ = txtcodigo.Text
                     .Descripcion_ = rtxtdescripcion.Text
+                    .codigoDepto_ = txtcodigoDepto.Text
                 End With
 
                 If objPuesto.ModificarPuestoTrabajo() = 1 Then
@@ -141,6 +158,9 @@
 
                     txtcodigo.ReadOnly = True
                     rtxtdescripcion.ReadOnly = True
+                    txtcodigoDepto.ReadOnly = True
+
+                    btnDepto.Enabled = False
 
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
@@ -191,6 +211,34 @@
             rtxtdescripcion.BackColor = Color.Red
         Else
             rtxtdescripcion.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub btnDepto_Click(sender As Object, e As EventArgs) Handles btnDepto.Click
+        M_Departamento.lblform.Text = "M_PuestoTrabajo"
+        M_Departamento.ShowDialog()
+    End Sub
+
+    Private Sub txtcodigoDepto_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoDepto.TextChanged
+        If (txtcodigoDepto.Text <> "") Then
+            Try
+                Dim objDepto As New ClsDepartamento
+                With objDepto
+                    .codigo_ = txtcodigoDepto.Text
+                End With
+                Dim dt As New DataTable
+                dt = objDepto.BuscarDepartamento()
+                Dim row As DataRow = dt.Rows(0)
+                txtnombreDepto.Text = CStr(row("nombre"))
+                txtcodigoDepto.BackColor = Color.White
+            Catch ex As Exception
+                txtcodigoDepto.BackColor = Color.Red
+                txtnombreDepto.Text = ""
+            End Try
+        Else
+            txtcodigoDepto.Text = ""
+            txtnombreDepto.Text = ""
+            txtcodigoDepto.BackColor = Color.White
         End If
     End Sub
 End Class

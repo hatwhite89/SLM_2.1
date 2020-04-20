@@ -1,15 +1,13 @@
-﻿
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 
-Public Class ClsPuestoTrabajo
-    Dim codigo, codigoDepto As Integer
-    Dim descripcion As String
+Public Class ClsDepartamento
+    Dim nombre As String
+    Dim codigo, codigoArea As Integer
     'Constructor
     Public Sub New()
 
     End Sub
-
-    Public Property Codigo_ As Integer
+    Public Property codigo_ As Integer
         Get
             Return codigo
         End Get
@@ -18,41 +16,41 @@ Public Class ClsPuestoTrabajo
         End Set
     End Property
 
-    Public Property Descripcion_ As String
+    Public Property Nombre_ As String
         Get
-            Return descripcion
+            Return nombre
         End Get
         Set(value As String)
-            descripcion = value
+            nombre = value
         End Set
     End Property
 
-    Public Property codigoDepto_ As Integer
+    Public Property codigoArea_ As Integer
         Get
-            Return codigoDepto
+            Return codigoArea
         End Get
         Set(value As Integer)
-            codigoDepto = value
+            codigoArea = value
         End Set
     End Property
 
-    Public Function RegistrarNuevoPuestoTrabajo() As String
+    Public Function RegistrarNuevaDepartamento() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "M_slmInsertarPuestoTrabajo"
+        sqlcom.CommandText = "M_slmInsertarDepartamento"
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "descripcion" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = Descripcion_
+        sqlpar.ParameterName = "nombre" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Nombre_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoDepto" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoDepto_
+        sqlpar.ParameterName = "codigoArea" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoArea_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -75,28 +73,28 @@ Public Class ClsPuestoTrabajo
 
     End Function
 
-    Public Function ModificarPuestoTrabajo() As String
+    Public Function ModificarDepartamento() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "M_slmModificarPuestoTrabajo"
+        sqlcom.CommandText = "M_slmModificarDepartamento"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = Codigo_
+        sqlpar.Value = codigo_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "descripcion" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = descripcion
+        sqlpar.ParameterName = "nombre" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Nombre_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoDepto" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoDepto_
+        sqlpar.ParameterName = "codigoArea" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoArea_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -120,7 +118,7 @@ Public Class ClsPuestoTrabajo
     End Function
 
 
-    Public Function BuscarPuestoTrabajo() As DataTable
+    Public Function BuscarDepartamentoNombre() As DataTable
 
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
@@ -129,8 +127,8 @@ Public Class ClsPuestoTrabajo
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarPuestoTrabajo"
-            cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = Descripcion_
+            cmd.CommandText = "M_slmBuscarDepartamentoNombre"
+            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Nombre_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -143,7 +141,7 @@ Public Class ClsPuestoTrabajo
 
     End Function
 
-    Public Function BuscarPuestoTrabajoCode() As DataTable
+    Public Function BuscarDepartamento() As DataTable
 
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
@@ -152,20 +150,20 @@ Public Class ClsPuestoTrabajo
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarPuestoTrabajoCode"
-            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Codigo_
+            cmd.CommandText = "M_slmBuscarDepartamento"
+            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = codigo_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
-                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
         End Using
 
     End Function
-    Public Function BuscarPuestoTrabajoDepto() As DataTable
+
+    Public Function BuscarDepartamentoArea() As DataTable
 
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
@@ -174,26 +172,25 @@ Public Class ClsPuestoTrabajo
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarPuestoTrabajoDepto"
-            cmd.Parameters.Add("@codigoDepto", SqlDbType.Int).Value = codigoDepto_
+            cmd.CommandText = "M_slmBuscarDepartamentoArea"
+            cmd.Parameters.Add("@codigoArea", SqlDbType.Int).Value = codigoArea_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
-                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
         End Using
 
     End Function
-    Public Function SeleccionarPuestoTrabajo() As DataTable
 
+    Public Function SeleccionarDepartamento() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("M_slmSeleccionarPuestoTrabajo", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarDepartamento", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             objCon.cerrarConexion()
@@ -202,4 +199,3 @@ Public Class ClsPuestoTrabajo
     End Function
 
 End Class
-

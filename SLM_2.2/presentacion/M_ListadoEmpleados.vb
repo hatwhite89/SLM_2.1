@@ -49,6 +49,47 @@ Public Class M_ListadoEmpleados
                     M_Permisos.txtEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
                     Me.Close()
                 End If
+            ElseIf lblform.Text = "M_Vacaciones_Depto" Then
+                Dim n As String = ""
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_Vacaciones.lblcodeJefeDepto.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_Vacaciones.txtJefeDepto.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    Me.Close()
+                End If
+            ElseIf lblform.Text = "M_Vacaciones_Humano" Then
+                Dim n As String = ""
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_Vacaciones.lblcodeTalHum.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_Vacaciones.txtTalentoHumano.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    Me.Close()
+                End If
+            ElseIf lblform.Text = "M_Vacaciones_Supervisor" Then
+                Dim n As String = ""
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_Vacaciones.lblcodeSupervisor.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_Vacaciones.txtSupervisor.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    Me.Close()
+                End If
+            ElseIf lblform.Text = "M_Vacaciones_Empleado" Then
+                Dim n As String = ""
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_Vacaciones.lblcodeEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_Vacaciones.txtEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    M_Vacaciones.txtFirmaEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    Me.Close()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)

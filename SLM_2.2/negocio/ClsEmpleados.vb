@@ -2,12 +2,13 @@
 
 Public Class ClsEmpleados
 
-    Dim codigo, codigoGrupo, codigoHorario, codigoFormaPago, codigoPuestoTrab, codigoContrato, codigoProfesion As Integer
+    Dim codigo, codigoArea, codigoHorario, codigoFormaPago, codigoPuestoTrab, codigoContrato, codigoProfesion, codigoDepto As Integer
     Dim nombre1, nombre2, apellido1, apellido2, nombreCompleto, nIdentidad, nSeguroSocial, nSeguroVida, banco, cuentaBancaria As String
     Dim fechaAlta, fechaNacimiento As Date
     Dim fechaBaja, fechaAvisoBaja As System.Nullable(Of Date)
     Dim crearPersona As Boolean
-    Dim motivoBaja, departamento, tipoCuenta, estadoLaboral, direccion1, direccion2, correo1, correo2, telefono, celular, rtn As String
+    Dim salario As Double
+    Dim motivoBaja, tipoCuenta, estadoLaboral, direccion1, direccion2, correo1, correo2, telefono, celular, rtn As String
     Dim lugarNacimiento, grupoSangineo, contactoUrgencias, telUrgencias, celUrgencias, contactoUrgencias2, telUrgencias2, celUrgencias2, imagen, nombreConyugue, nombrePadre, nombreMadre, genero, estadoCivil As String
     'Constructor
     Public Sub New()
@@ -21,12 +22,20 @@ Public Class ClsEmpleados
             codigo = value
         End Set
     End Property
-    Public Property codigoGrupo_ As Integer
+    Public Property salario_ As Double
         Get
-            Return codigoGrupo
+            Return salario
+        End Get
+        Set(value As Double)
+            salario = value
+        End Set
+    End Property
+    Public Property codigoArea_ As Integer
+        Get
+            Return codigoArea
         End Get
         Set(value As Integer)
-            codigoGrupo = value
+            codigoArea = value
         End Set
     End Property
     Public Property codigoHorario_ As Integer
@@ -179,12 +188,12 @@ Public Class ClsEmpleados
         End Set
     End Property
 
-    Public Property departamento_ As String
+    Public Property codigoDepto_ As Integer
         Get
-            Return departamento
+            Return codigoDepto
         End Get
-        Set(value As String)
-            departamento = value
+        Set(value As Integer)
+            codigoDepto = value
         End Set
     End Property
 
@@ -462,8 +471,8 @@ Public Class ClsEmpleados
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoGrupo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoGrupo_
+        sqlpar.ParameterName = "codigoArea" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoArea_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -532,8 +541,8 @@ Public Class ClsEmpleados
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "departamento" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = departamento_
+        sqlpar.ParameterName = "codigoDepto" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoDepto_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -664,6 +673,11 @@ Public Class ClsEmpleados
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "imagen"
         sqlpar.Value = imagen_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salario"
+        sqlpar.Value = salario_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -725,8 +739,8 @@ Public Class ClsEmpleados
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoGrupo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoGrupo_
+        sqlpar.ParameterName = "codigoArea" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoArea_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -795,8 +809,8 @@ Public Class ClsEmpleados
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "departamento" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = departamento_
+        sqlpar.ParameterName = "codigoDepto" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoDepto_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -927,6 +941,11 @@ Public Class ClsEmpleados
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "imagen"
         sqlpar.Value = imagen_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salario"
+        sqlpar.Value = salario_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

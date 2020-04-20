@@ -38,7 +38,7 @@ Public Class M_BuscarEmpleados
                 M_Empleados.txtapellido1.Text = CStr(row("apellido1"))
                 M_Empleados.txtapellido2.Text = CStr(row("apellido2"))
                 M_Empleados.txtnombreCompleto.Text = CStr(row("nombreCompleto"))
-                M_Empleados.lblcodigoArea.Text = CStr(row("codigoGrupo"))
+                M_Empleados.lblcodigoArea.Text = CStr(row("codigoArea"))
                 'M_Empleados.txtcodigoArea.Text = CStr(row("numero"))
                 M_Empleados.cbxCrearPersona.Checked = CStr(row("crearPersona"))
                 M_Empleados.dtpfechaAlta.Text = CStr(row("fechaAlta"))
@@ -66,8 +66,9 @@ Public Class M_BuscarEmpleados
                 End If
 
                 M_Empleados.rtxtmotivoBaja.Text = CStr(row("motivoBaja"))
-                M_Empleados.txtcodigoPuestoTrabajo.Text = CStr(row("codigoPuestoTrab"))
-                M_Empleados.txtdepartamento.Text = CStr(row("departamento"))
+                M_Empleados.lblcodePuesto.Text = CStr(row("codigoPuestoTrab"))
+                M_Empleados.lblcodeDepto.Text = CStr(row("codigoDepto"))
+                M_Empleados.txtsalario.Text = CStr(row("salario"))
                 M_Empleados.cmbxtipoCuenta.SelectedItem = CStr(row("tipoCuenta"))
 
                 'M_Empleados.cmbxcodigoContrato.SelectedItem = CStr(row("codigoContrato"))
