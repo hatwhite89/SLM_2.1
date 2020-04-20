@@ -126,6 +126,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="negocio\ClsAccesoLaboratorio.vb" />
+    <Compile Include="negocio\ClsAlmacen.vb" />
     <Compile Include="negocio\ClsApertura.vb" />
     <Compile Include="negocio\ClsAreaLaboratorio.vb" />
     <Compile Include="negocio\ClsArqueos.vb" />
@@ -156,6 +157,7 @@
     <Compile Include="negocio\ClsParametroExamenDetalle.vb" />
     <Compile Include="negocio\ClsPeriodoContable.vb" />
     <Compile Include="negocio\ClsPrecio.vb" />
+    <Compile Include="negocio\ClsProducto.vb" />
     <Compile Include="negocio\ClsPromociones.vb" />
     <Compile Include="negocio\ClsRecibo.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
@@ -417,6 +419,48 @@
     <Compile Include="presentacion\E_BuscarOrdenDeTrabajo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frmCategoriaProducto.Designer.vb">
+      <DependentUpon>E_frmCategoriaProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmCategoriaProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmMenuAlmacen.Designer.vb">
+      <DependentUpon>E_frmMenuAlmacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmMenuAlmacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmProducto.Designer.vb">
+      <DependentUpon>E_frmProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmSalida.Designer.vb">
+      <DependentUpon>E_frmSalida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmSalida.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmTipoMovientoAlmacen.Designer.vb">
+      <DependentUpon>E_frmTipoMovientoAlmacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmTipoMovientoAlmacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmUbicacion.Designer.vb">
+      <DependentUpon>E_frmUbicacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmUbicacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmUnidadMedida_almacen.Designer.vb">
+      <DependentUpon>E_frmUnidadMedida_almacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmUnidadMedida_almacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_ListarOrdenesDeTrabajo.Designer.vb">
       <DependentUpon>E_ListarOrdenesDeTrabajo.vb</DependentUpon>
     </Compile>
@@ -511,6 +555,12 @@
       <DependentUpon>A_FormaPago.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_FormaPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\frmEntrada.Designer.vb">
+      <DependentUpon>frmEntrada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\frmEntrada.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_Arqueos.Designer.vb">
@@ -965,6 +1015,27 @@
     <EmbeddedResource Include="presentacion\E_BuscarOrdenDeTrabajo.resx">
       <DependentUpon>E_BuscarOrdenDeTrabajo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmCategoriaProducto.resx">
+      <DependentUpon>E_frmCategoriaProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmMenuAlmacen.resx">
+      <DependentUpon>E_frmMenuAlmacen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmProducto.resx">
+      <DependentUpon>E_frmProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmSalida.resx">
+      <DependentUpon>E_frmSalida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmTipoMovientoAlmacen.resx">
+      <DependentUpon>E_frmTipoMovientoAlmacen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmUbicacion.resx">
+      <DependentUpon>E_frmUbicacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmUnidadMedida_almacen.resx">
+      <DependentUpon>E_frmUnidadMedida_almacen.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_ListarOrdenesDeTrabajo.resx">
       <DependentUpon>E_ListarOrdenesDeTrabajo.vb</DependentUpon>
     </EmbeddedResource>
@@ -1006,6 +1077,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_Usuarios.resx">
       <DependentUpon>E_Usuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\frmEntrada.resx">
+      <DependentUpon>frmEntrada.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Arqueos.resx">
       <DependentUpon>M_Arqueos.vb</DependentUpon>
