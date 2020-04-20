@@ -164,6 +164,7 @@
     <Compile Include="negocio\ClsPeriodoContable.vb" />
     <Compile Include="negocio\ClsPermisos.vb" />
     <Compile Include="negocio\ClsPrecio.vb" />
+    <Compile Include="negocio\ClsProducto.vb" />
     <Compile Include="negocio\ClsProfesion.vb" />
     <Compile Include="negocio\ClsPromociones.vb" />
     <Compile Include="negocio\ClsPuestoTrabajo.vb" />
