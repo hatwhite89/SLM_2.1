@@ -167,6 +167,7 @@
     <Compile Include="negocio\ClsPromociones.vb" />
     <Compile Include="negocio\ClsPuestoTrabajo.vb" />
     <Compile Include="negocio\ClsRecibo.vb" />
+    <Compile Include="negocio\ClsServidorCorreo.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
     <Compile Include="negocio\ClsUnidad.vb" />
@@ -183,6 +184,12 @@
       <DependentUpon>A_Bitacora.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_Bitacora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ConfiguracionCorreo.Designer.vb">
+      <DependentUpon>A_ConfiguracionCorreo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ConfiguracionCorreo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_Consolidacion.Designer.vb">
@@ -298,6 +305,12 @@
       <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ListadoFacturaCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ListarCAI.Designer.vb">
+      <DependentUpon>A_ListarCAI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListarCAI.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_ListarCategoriasProveedor.Designer.vb">
@@ -942,6 +955,9 @@
     <EmbeddedResource Include="presentacion\A_Bitacora.resx">
       <DependentUpon>A_Bitacora.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ConfiguracionCorreo.resx">
+      <DependentUpon>A_ConfiguracionCorreo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Consolidacion.resx">
       <DependentUpon>A_Consolidacion.vb</DependentUpon>
     </EmbeddedResource>
@@ -986,6 +1002,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoFacturaCompra.resx">
       <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListarCAI.resx">
+      <DependentUpon>A_ListarCAI.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarCategoriasProveedor.resx">
       <DependentUpon>A_ListarCategoriasProveedor.vb</DependentUpon>

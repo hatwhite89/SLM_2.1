@@ -229,4 +229,24 @@
         End Try
 
     End Sub
+
+    Private Sub txtCosto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCosto.KeyPress
+
+        'Numeros y comas
+        NUMEROSCOMA(e, 2, sender)
+
+    End Sub
+
+    Private Sub txtValorResidual_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtValorResidual.KeyPress
+        'Numeros y comas
+        NUMEROSCOMA(e, 2, sender)
+    End Sub
+
+    Private Sub A_Depreciacion_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+
+        'Cerrar ventana
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
+    End Sub
 End Class

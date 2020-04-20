@@ -14,9 +14,6 @@
             rowD = dias.Rows(0)
             rowsF = numfact.Rows(0)
 
-
-
-
             If Convert.ToInt32(rowD("diasFaltantes")) < 7 Then
 
                 A_Notificacion.lblMensajeDias.Visible = True
@@ -436,7 +433,11 @@
     End Sub
 
     Private Sub btnTrabajo_Click(sender As Object, e As EventArgs) Handles btnTrabajo.Click
-        E_ListarOrdenesDeTrabajo.ShowDialog()
+        E_frmUbicacion.Show()
+    End Sub
+
+    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
+        E_frmTipoMovientoAlmacen.Show()
     End Sub
 
     Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
@@ -460,5 +461,13 @@
 
         End Try
 
+    End Sub
+
+    Private Sub btnServidorCorreo_Click(sender As Object, e As EventArgs) Handles btnServidorCorreo.Click
+        Try
+            A_ConfiguracionCorreo.Show()
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

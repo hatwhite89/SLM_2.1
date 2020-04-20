@@ -377,6 +377,7 @@ Partial Class A_Depreciacion
         Me.ClientSize = New System.Drawing.Size(901, 546)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.KeyPreview = True
         Me.Name = "A_Depreciacion"
         Me.Text = "Depreciación de Activo"
         Me.GroupBox1.ResumeLayout(False)

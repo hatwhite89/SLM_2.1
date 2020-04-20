@@ -43,6 +43,7 @@ Partial Class M_CAI
         Me.txtcodigoMaquina = New System.Windows.Forms.TextBox()
         Me.lblCodeMaquinaLocal = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.chkEstado = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -260,6 +261,7 @@ Partial Class M_CAI
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.chkEstado)
         Me.GroupBox1.Controls.Add(Me.mtxtserie)
         Me.GroupBox1.Controls.Add(Me.lblserie)
         Me.GroupBox1.Controls.Add(Me.lbldesde)
@@ -272,6 +274,16 @@ Partial Class M_CAI
         Me.GroupBox1.TabIndex = 129
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "CAI"
+        '
+        'chkEstado
+        '
+        Me.chkEstado.AutoSize = True
+        Me.chkEstado.Location = New System.Drawing.Point(351, 145)
+        Me.chkEstado.Name = "chkEstado"
+        Me.chkEstado.Size = New System.Drawing.Size(118, 17)
+        Me.chkEstado.TabIndex = 125
+        Me.chkEstado.Text = "Activar Facturación"
+        Me.chkEstado.UseVisualStyleBackColor = True
         '
         'M_CAI
         '
@@ -325,4 +337,5 @@ Partial Class M_CAI
     Friend WithEvents txtcodigoMaquina As TextBox
     Friend WithEvents lblCodeMaquinaLocal As Label
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents chkEstado As CheckBox
 End Class

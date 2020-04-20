@@ -308,4 +308,19 @@ Public Class ClsCAI
         End Try
 
     End Function
+
+
+    '::::::::::::::::::::::::::: LISTAR CAI :::::::::::::::::::::::::
+    Public Function listarCAI() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("A_slmListarCAI", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 End Class
