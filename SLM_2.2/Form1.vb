@@ -436,9 +436,9 @@
         E_frmUbicacion.Show()
     End Sub
 
-    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
-        E_frmTipoMovientoAlmacen.Show()
-    End Sub
+    'Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
+    '    E_frmTipoMovientoAlmacen.Show()
+    'End Sub
 
     Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
         Try
