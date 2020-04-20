@@ -29,7 +29,9 @@
                 A_Notificacion.lblMensajeFact.Visible = True
                 A_Notificacion.lblMensajeDias.Visible = True
                 A_Notificacion.Show()
-
+            ElseIf Convert.ToInt32(rowD("diasFaltantes")) < 0 Then
+                A_Notificacion.lblMensajeDias.Visible = True
+                A_Notificacion.Show()
             End If
         Catch ex As Exception
 
@@ -405,13 +407,6 @@
         A_Alertas.Show()
     End Sub
 
-    Private Sub panelMenu_Paint(sender As Object, e As PaintEventArgs) Handles panelMenu.Paint
-
-    End Sub
-
-    Private Sub ToolStripStatusLabel1_Click(sender As Object, e As EventArgs)
-
-    End Sub
 
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
         panelMenu.Visible = False
@@ -443,5 +438,36 @@
 
     Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
         E_frmTipoMovientoAlmacen.Show()
+    End Sub
+
+    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
+        Try
+            A_ListarDepreciacion.Show()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
+        Try
+
+
+            M_InicioSesion.Show()
+
+            Me.Close()
+
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub btnServidorCorreo_Click(sender As Object, e As EventArgs) Handles btnServidorCorreo.Click
+        Try
+            A_ConfiguracionCorreo.Show()
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

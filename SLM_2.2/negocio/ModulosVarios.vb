@@ -5,6 +5,7 @@ Imports System.Data
 Imports System.Data.OleDb
 Imports System
 Imports Microsoft.VisualBasic
+Imports System.Net.Mail
 
 Module ModulosVarios
 
@@ -128,5 +129,44 @@ Module ModulosVarios
     End Sub
 
     ':::::::::::::::::::::::::::::::::::::::::::::::::::::Final Numeros y Punto
+
+
+
+    ':::::::::::::::::::::::::: ENVIO DE CORREO ELECTRONICO::::::::::::::::::::::::::::
+    'Enviar correo Dinamico
+    Sub enviarMail(correoSalida As String, pass As String, puerto As Integer, sslOK As Boolean, host As String, correoNoti As String, texto As String)
+
+        'In the shadows of the moon
+
+        Try
+            Dim Smtp_Server As New SmtpClient
+            Dim e_mail As New MailMessage()
+            Smtp_Server.UseDefaultCredentials = False
+            Smtp_Server.Credentials = New Net.NetworkCredential(correoSalida, pass)
+            Smtp_Server.Port = puerto
+            Smtp_Server.EnableSsl = sslOK
+            Smtp_Server.Host = host
+
+            e_mail = New MailMessage()
+            'txtfrom.text
+            e_mail.From = New MailAddress(correoSalida)
+            'txtto.text
+            e_mail.To.Add(correoNoti)
+            e_mail.Subject = "ALERTA DE SISTEMA"
+            e_mail.IsBodyHtml = False
+            'txtMessage.text
+            e_mail.Body = texto
+            Smtp_Server.Send(e_mail)
+
+            'omitir mensaje
+            MsgBox("Mail Sent")
+
+        Catch ex As Exception
+            MsgBox("No se envío el correo. " + ex.Message)
+        End Try
+
+    End Sub
+
+    ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Final envio de Correo Electronico
 
 End Module

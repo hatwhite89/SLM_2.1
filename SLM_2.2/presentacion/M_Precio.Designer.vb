@@ -73,9 +73,9 @@ Partial Class M_Precio
         Me.gbxPrecio.Controls.Add(Me.lblcodigo)
         Me.gbxPrecio.Controls.Add(Me.btncancelar)
         Me.gbxPrecio.Location = New System.Drawing.Point(11, 10)
-        Me.gbxPrecio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxPrecio.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxPrecio.Name = "gbxPrecio"
-        Me.gbxPrecio.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxPrecio.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxPrecio.Size = New System.Drawing.Size(696, 170)
         Me.gbxPrecio.TabIndex = 119
         Me.gbxPrecio.TabStop = False
@@ -94,7 +94,7 @@ Partial Class M_Precio
         'txtdescripcionListaPrecios
         '
         Me.txtdescripcionListaPrecios.Location = New System.Drawing.Point(433, 57)
-        Me.txtdescripcionListaPrecios.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtdescripcionListaPrecios.Margin = New System.Windows.Forms.Padding(2)
         Me.txtdescripcionListaPrecios.Name = "txtdescripcionListaPrecios"
         Me.txtdescripcionListaPrecios.ReadOnly = True
         Me.txtdescripcionListaPrecios.Size = New System.Drawing.Size(205, 20)
@@ -103,7 +103,7 @@ Partial Class M_Precio
         'txtdescripcionItem
         '
         Me.txtdescripcionItem.Location = New System.Drawing.Point(435, 21)
-        Me.txtdescripcionItem.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtdescripcionItem.Margin = New System.Windows.Forms.Padding(2)
         Me.txtdescripcionItem.Name = "txtdescripcionItem"
         Me.txtdescripcionItem.ReadOnly = True
         Me.txtdescripcionItem.Size = New System.Drawing.Size(205, 20)
@@ -118,7 +118,7 @@ Partial Class M_Precio
         Me.btnBuscarListaPrecios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscarListaPrecios.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscarListaPrecios.Location = New System.Drawing.Point(321, 57)
-        Me.btnBuscarListaPrecios.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuscarListaPrecios.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuscarListaPrecios.Name = "btnBuscarListaPrecios"
         Me.btnBuscarListaPrecios.Size = New System.Drawing.Size(37, 18)
         Me.btnBuscarListaPrecios.TabIndex = 136
@@ -134,7 +134,7 @@ Partial Class M_Precio
         Me.btnbuscarItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnbuscarItem.Location = New System.Drawing.Point(323, 21)
-        Me.btnbuscarItem.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnbuscarItem.Margin = New System.Windows.Forms.Padding(2)
         Me.btnbuscarItem.Name = "btnbuscarItem"
         Me.btnbuscarItem.Size = New System.Drawing.Size(37, 18)
         Me.btnbuscarItem.TabIndex = 135
@@ -144,7 +144,7 @@ Partial Class M_Precio
         'txtcodigoListaPrecios
         '
         Me.txtcodigoListaPrecios.Location = New System.Drawing.Point(362, 58)
-        Me.txtcodigoListaPrecios.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoListaPrecios.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoListaPrecios.MaxLength = 20
         Me.txtcodigoListaPrecios.Name = "txtcodigoListaPrecios"
         Me.txtcodigoListaPrecios.Size = New System.Drawing.Size(67, 20)
@@ -153,7 +153,7 @@ Partial Class M_Precio
         'txtPrecio
         '
         Me.txtPrecio.Location = New System.Drawing.Point(58, 60)
-        Me.txtPrecio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtPrecio.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPrecio.MaxLength = 20
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.Size = New System.Drawing.Size(138, 20)
@@ -163,7 +163,7 @@ Partial Class M_Precio
         'txtcodigoItem
         '
         Me.txtcodigoItem.Location = New System.Drawing.Point(364, 21)
-        Me.txtcodigoItem.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoItem.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoItem.MaxLength = 20
         Me.txtcodigoItem.Name = "txtcodigoItem"
         Me.txtcodigoItem.Size = New System.Drawing.Size(67, 20)
@@ -172,7 +172,7 @@ Partial Class M_Precio
         'txtcodigo
         '
         Me.txtcodigo.Location = New System.Drawing.Point(58, 22)
-        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.ReadOnly = True
@@ -215,7 +215,7 @@ Partial Class M_Precio
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.Color.Black
         Me.btnmodificar.Location = New System.Drawing.Point(167, 138)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
         Me.btnmodificar.TabIndex = 114
@@ -229,7 +229,7 @@ Partial Class M_Precio
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.Color.Black
         Me.btnnuevo.Location = New System.Drawing.Point(8, 138)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
         Me.btnnuevo.TabIndex = 113
@@ -243,7 +243,7 @@ Partial Class M_Precio
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.Color.Black
         Me.btnguardar.Location = New System.Drawing.Point(91, 138)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(72, 28)
         Me.btnguardar.TabIndex = 112
@@ -267,7 +267,7 @@ Partial Class M_Precio
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.Color.Black
         Me.btncancelar.Location = New System.Drawing.Point(243, 138)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(68, 28)
         Me.btncancelar.TabIndex = 37
@@ -283,9 +283,9 @@ Partial Class M_Precio
         Me.gbxbusqueda.Controls.Add(Me.txtCodigoB)
         Me.gbxbusqueda.Controls.Add(Me.lblcodigoB)
         Me.gbxbusqueda.Location = New System.Drawing.Point(11, 184)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Size = New System.Drawing.Size(696, 310)
         Me.gbxbusqueda.TabIndex = 118
         Me.gbxbusqueda.TabStop = False
@@ -320,7 +320,7 @@ Partial Class M_Precio
         Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(4, 54)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
@@ -342,7 +342,7 @@ Partial Class M_Precio
         'txtCodigoB
         '
         Me.txtCodigoB.Location = New System.Drawing.Point(68, 17)
-        Me.txtCodigoB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtCodigoB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCodigoB.MaxLength = 100
         Me.txtCodigoB.Name = "txtCodigoB"
         Me.txtCodigoB.Size = New System.Drawing.Size(145, 20)
@@ -363,11 +363,11 @@ Partial Class M_Precio
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(718, 505)
+        Me.ClientSize = New System.Drawing.Size(715, 505)
         Me.Controls.Add(Me.gbxPrecio)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_Precio"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Precios"

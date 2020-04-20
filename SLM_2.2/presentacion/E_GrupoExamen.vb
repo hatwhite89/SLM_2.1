@@ -30,9 +30,30 @@
             txtnombre.ReadOnly = False
             txtcodigo.ReadOnly = False
 
-            E_DetalleExamenes.txtGrupo.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value
+            If (lblform.Text <> "Empleados") Then
+                E_DetalleExamenes.lblcodigoGrupo.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value
+                E_DetalleExamenes.txtGrupo.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value
+            End If
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+    Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
+        Try
+            Dim n As String = ""
+            If (lblform.Text = "Empleados") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el area de trabajo en el empleado?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_Empleados.lblcodigoArea.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_Empleados.txtcodigoArea.Text = txtcodigo.Text
+                    M_Empleados.txtdescripcionArea.Text = txtnombre.Text
+                    Me.Close()
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
     Private Sub limpiar()

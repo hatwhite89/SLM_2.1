@@ -35,7 +35,7 @@
             With Item
                 .Cod_Breve = txtCodBreve.Text
                 .Descripcio_n = txtDescripcion.Text
-                .Grup_o = txtGrupo.Text
+                .Grup_o = lblcodigoGrupo.Text
                 .Precio_Base = txtPrecioBase.Text
                 .Clasificacio_n = txtClasificación.Text
                 .Abreviatur_a = txtAbreviatura.Text
@@ -118,7 +118,10 @@
             txtCodExamen.Text = dtItem.Rows(e.RowIndex).Cells(0).Value
             txtCodBreve.Text = dtItem.Rows(e.RowIndex).Cells(1).Value
             txtDescripcion.Text = dtItem.Rows(e.RowIndex).Cells(2).Value
+
             txtGrupo.Text = dtItem.Rows(e.RowIndex).Cells(3).Value
+            lblcodigoGrupo.Text = dtItem.Rows(e.RowIndex).Cells(3).Value
+
             txtPrecioBase.Text = dtItem.Rows(e.RowIndex).Cells(4).Value
             txtClasificación.Text = dtItem.Rows(e.RowIndex).Cells(5).Value
             txtAbreviatura.Text = dtItem.Rows(e.RowIndex).Cells(6).Value
@@ -180,7 +183,7 @@
                 .Cod_ItemExa = Convert.ToInt64(txtCodExamen.Text)
                 .Cod_Breve = txtCodBreve.Text
                 .Descripcio_n = txtDescripcion.Text
-                .Grup_o = txtGrupo.Text
+                .Grup_o = lblcodigoGrupo.Text
                 .Precio_Base = Convert.ToDouble(txtPrecioBase.Text)
                 .Clasificacio_n = txtClasificación.Text
                 .Abreviatur_a = txtAbreviatura.Text

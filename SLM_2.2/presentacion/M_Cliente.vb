@@ -403,6 +403,8 @@
         txtcodigoTermino.Text = "CO"
         txtcodigoCategoria.Text = ""
 
+        dtpfechaNacimiento.Value = Date.Today
+
         rbtnfemenino.Checked = False
         rbtnmasculino.Checked = False
         gbxinfoCliente.Visible = False

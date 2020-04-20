@@ -22,43 +22,10 @@ Partial Class A_ListadoBancos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListadoBancos))
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.dtBancos = New System.Windows.Forms.DataGridView()
         Me.lblFormBanco = New System.Windows.Forms.Label()
         CType(Me.dtBancos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(40, 25)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(38, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Banco"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(80, 22)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(317, 20)
-        Me.TextBox1.TabIndex = 1
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(426, 24)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(19, 15)
-        Me.Button1.TabIndex = 2
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'dtBancos
         '
@@ -68,7 +35,7 @@ Partial Class A_ListadoBancos
         Me.dtBancos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtBancos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtBancos.GridColor = System.Drawing.Color.White
-        Me.dtBancos.Location = New System.Drawing.Point(12, 48)
+        Me.dtBancos.Location = New System.Drawing.Point(12, 25)
         Me.dtBancos.Name = "dtBancos"
         Me.dtBancos.ReadOnly = True
         Me.dtBancos.RowHeadersVisible = False
@@ -84,18 +51,16 @@ Partial Class A_ListadoBancos
         Me.lblFormBanco.Size = New System.Drawing.Size(27, 13)
         Me.lblFormBanco.TabIndex = 4
         Me.lblFormBanco.Text = "LblF"
+        Me.lblFormBanco.Visible = False
         '
         'A_ListadoBancos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(718, 324)
+        Me.ClientSize = New System.Drawing.Size(718, 298)
         Me.Controls.Add(Me.lblFormBanco)
         Me.Controls.Add(Me.dtBancos)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "A_ListadoBancos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -105,10 +70,6 @@ Partial Class A_ListadoBancos
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button1 As Button
     Friend WithEvents dtBancos As DataGridView
     Friend WithEvents lblFormBanco As Label
 End Class

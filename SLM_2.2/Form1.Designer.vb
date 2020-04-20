@@ -25,7 +25,6 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.btnContabilidad = New System.Windows.Forms.Button()
         Me.gbxMenu = New System.Windows.Forms.GroupBox()
-        Me.Button21 = New System.Windows.Forms.Button()
         Me.Button16 = New System.Windows.Forms.Button()
         Me.pbxNoti = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -44,6 +43,8 @@ Partial Class Form1
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.TpProcesos = New System.Windows.Forms.TabPage()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Button21 = New System.Windows.Forms.Button()
         Me.Button14 = New System.Windows.Forms.Button()
         Me.PictureBox37 = New System.Windows.Forms.PictureBox()
         Me.btnConsolidar = New System.Windows.Forms.Button()
@@ -82,6 +83,7 @@ Partial Class Form1
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -139,6 +141,8 @@ Partial Class Form1
         Me.Button18 = New System.Windows.Forms.Button()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.btnServidorCorreo = New System.Windows.Forms.Button()
+        Me.PictureBox38 = New System.Windows.Forms.PictureBox()
         Me.gbxMenu.SuspendLayout()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
@@ -149,6 +153,7 @@ Partial Class Form1
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TpProcesos.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TpMantenimiento.SuspendLayout()
@@ -197,6 +202,8 @@ Partial Class Form1
         Me.PanelSistema.SuspendLayout()
         Me.TabControl3.SuspendLayout()
         Me.TabPage6.SuspendLayout()
+        Me.TabPage7.SuspendLayout()
+        CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -217,7 +224,6 @@ Partial Class Form1
         Me.gbxMenu.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.gbxMenu.BackColor = System.Drawing.Color.MidnightBlue
-        Me.gbxMenu.Controls.Add(Me.Button21)
         Me.gbxMenu.Controls.Add(Me.Button16)
         Me.gbxMenu.Controls.Add(Me.pbxNoti)
         Me.gbxMenu.Controls.Add(Me.Button1)
@@ -233,26 +239,13 @@ Partial Class Form1
         Me.gbxMenu.TabStop = False
         Me.gbxMenu.Text = "Opciones"
         '
-        'Button21
-        '
-        Me.Button21.BackColor = System.Drawing.Color.LightGray
-        Me.Button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button21.FlatAppearance.BorderSize = 0
-        Me.Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button21.Location = New System.Drawing.Point(6, 152)
-        Me.Button21.Name = "Button21"
-        Me.Button21.Size = New System.Drawing.Size(103, 27)
-        Me.Button21.TabIndex = 9
-        Me.Button21.Text = "Almacen"
-        Me.Button21.UseVisualStyleBackColor = False
-        '
         'Button16
         '
         Me.Button16.BackColor = System.Drawing.Color.LightGray
         Me.Button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button16.FlatAppearance.BorderSize = 0
         Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button16.Location = New System.Drawing.Point(6, 119)
+        Me.Button16.Location = New System.Drawing.Point(5, 119)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(103, 27)
         Me.Button16.TabIndex = 8
@@ -279,6 +272,7 @@ Partial Class Form1
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "noti"
         Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'btnFacturacion
         '
@@ -467,6 +461,8 @@ Partial Class Form1
         '
         'TpProcesos
         '
+        Me.TpProcesos.Controls.Add(Me.PictureBox1)
+        Me.TpProcesos.Controls.Add(Me.Button21)
         Me.TpProcesos.Controls.Add(Me.Button14)
         Me.TpProcesos.Controls.Add(Me.PictureBox37)
         Me.TpProcesos.Controls.Add(Me.btnConsolidar)
@@ -477,6 +473,25 @@ Partial Class Form1
         Me.TpProcesos.TabIndex = 4
         Me.TpProcesos.Text = "Procesos"
         Me.TpProcesos.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(160, 11)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(51, 50)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
+        '
+        'Button21
+        '
+        Me.Button21.Location = New System.Drawing.Point(143, 62)
+        Me.Button21.Name = "Button21"
+        Me.Button21.Size = New System.Drawing.Size(92, 23)
+        Me.Button21.TabIndex = 4
+        Me.Button21.Text = "Depreciación"
+        Me.Button21.UseVisualStyleBackColor = True
         '
         'Button14
         '
@@ -902,7 +917,7 @@ Partial Class Form1
         '
         'ArchivoToolStripMenuItem
         '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.CerrarSesiónToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
         Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
@@ -910,14 +925,20 @@ Partial Class Form1
         'CerrarToolStripMenuItem
         '
         Me.CerrarToolStripMenuItem.Name = "CerrarToolStripMenuItem"
-        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.CerrarToolStripMenuItem.Text = "Cerrar"
         '
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
+        '
+        'CerrarSesiónToolStripMenuItem
+        '
+        Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'StatusStrip1
         '
@@ -1472,10 +1493,10 @@ Partial Class Form1
         Me.PanelSistema.BackColor = System.Drawing.Color.Beige
         Me.PanelSistema.Controls.Add(Me.Button17)
         Me.PanelSistema.Controls.Add(Me.TabControl3)
-        Me.PanelSistema.Location = New System.Drawing.Point(119, 28)
+        Me.PanelSistema.Location = New System.Drawing.Point(119, 26)
         Me.PanelSistema.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelSistema.Name = "PanelSistema"
-        Me.PanelSistema.Size = New System.Drawing.Size(570, 440)
+        Me.PanelSistema.Size = New System.Drawing.Size(572, 440)
         Me.PanelSistema.TabIndex = 23
         Me.PanelSistema.Visible = False
         '
@@ -1487,7 +1508,7 @@ Partial Class Form1
         Me.Button17.FlatAppearance.BorderSize = 0
         Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button17.ForeColor = System.Drawing.Color.Red
-        Me.Button17.Location = New System.Drawing.Point(506, 410)
+        Me.Button17.Location = New System.Drawing.Point(508, 410)
         Me.Button17.Name = "Button17"
         Me.Button17.Size = New System.Drawing.Size(55, 26)
         Me.Button17.TabIndex = 7
@@ -1505,7 +1526,7 @@ Partial Class Form1
         Me.TabControl3.Location = New System.Drawing.Point(3, 4)
         Me.TabControl3.Name = "TabControl3"
         Me.TabControl3.SelectedIndex = 0
-        Me.TabControl3.Size = New System.Drawing.Size(562, 405)
+        Me.TabControl3.Size = New System.Drawing.Size(558, 405)
         Me.TabControl3.TabIndex = 7
         '
         'TabPage6
@@ -1515,7 +1536,7 @@ Partial Class Form1
         Me.TabPage6.Controls.Add(Me.Button18)
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(554, 379)
+        Me.TabPage6.Size = New System.Drawing.Size(550, 379)
         Me.TabPage6.TabIndex = 3
         Me.TabPage6.Text = "Usuarios"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -1541,7 +1562,7 @@ Partial Class Form1
         Me.Button19.FlatAppearance.BorderSize = 0
         Me.Button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button19.ForeColor = System.Drawing.Color.White
-        Me.Button19.Location = New System.Drawing.Point(175, 72)
+        Me.Button19.Location = New System.Drawing.Point(169, 73)
         Me.Button19.Name = "Button19"
         Me.Button19.Size = New System.Drawing.Size(77, 21)
         Me.Button19.TabIndex = 20
@@ -1564,11 +1585,13 @@ Partial Class Form1
         '
         'TabPage7
         '
+        Me.TabPage7.Controls.Add(Me.PictureBox38)
+        Me.TabPage7.Controls.Add(Me.btnServidorCorreo)
         Me.TabPage7.Location = New System.Drawing.Point(4, 22)
         Me.TabPage7.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage7.Name = "TabPage7"
         Me.TabPage7.Padding = New System.Windows.Forms.Padding(2)
-        Me.TabPage7.Size = New System.Drawing.Size(554, 379)
+        Me.TabPage7.Size = New System.Drawing.Size(550, 379)
         Me.TabPage7.TabIndex = 4
         Me.TabPage7.Text = "Notificaciones"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -1579,10 +1602,29 @@ Partial Class Form1
         Me.TabPage8.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage8.Name = "TabPage8"
         Me.TabPage8.Padding = New System.Windows.Forms.Padding(2)
-        Me.TabPage8.Size = New System.Drawing.Size(554, 379)
+        Me.TabPage8.Size = New System.Drawing.Size(550, 379)
         Me.TabPage8.TabIndex = 5
         Me.TabPage8.Text = "Bitacoras"
         Me.TabPage8.UseVisualStyleBackColor = True
+        '
+        'btnServidorCorreo
+        '
+        Me.btnServidorCorreo.Location = New System.Drawing.Point(13, 87)
+        Me.btnServidorCorreo.Name = "btnServidorCorreo"
+        Me.btnServidorCorreo.Size = New System.Drawing.Size(108, 23)
+        Me.btnServidorCorreo.TabIndex = 0
+        Me.btnServidorCorreo.Text = "Servidor de Correo"
+        Me.btnServidorCorreo.UseVisualStyleBackColor = True
+        '
+        'PictureBox38
+        '
+        Me.PictureBox38.Image = CType(resources.GetObject("PictureBox38.Image"), System.Drawing.Image)
+        Me.PictureBox38.Location = New System.Drawing.Point(36, 16)
+        Me.PictureBox38.Name = "PictureBox38"
+        Me.PictureBox38.Size = New System.Drawing.Size(65, 65)
+        Me.PictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox38.TabIndex = 1
+        Me.PictureBox38.TabStop = False
         '
         'Form1
         '
@@ -1617,6 +1659,7 @@ Partial Class Form1
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TpProcesos.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TpMantenimiento.ResumeLayout(False)
@@ -1666,6 +1709,8 @@ Partial Class Form1
         Me.PanelSistema.ResumeLayout(False)
         Me.TabControl3.ResumeLayout(False)
         Me.TabPage6.ResumeLayout(False)
+        Me.TabPage7.ResumeLayout(False)
+        CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1786,5 +1831,9 @@ Partial Class Form1
     Friend WithEvents Button19 As Button
     Friend WithEvents TabPage7 As TabPage
     Friend WithEvents TabPage8 As TabPage
+    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button21 As Button
+    Friend WithEvents CerrarSesiónToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PictureBox38 As PictureBox
+    Friend WithEvents btnServidorCorreo As Button
 End Class

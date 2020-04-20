@@ -52,6 +52,7 @@ Public Class ClsBancos
             estado = value
         End Set
     End Property
+
     ':::::::::::::::::::::: Funciones de Mantenimiento ::::::::::::::::::
 
     'Registrar nuevo banco en base de datos

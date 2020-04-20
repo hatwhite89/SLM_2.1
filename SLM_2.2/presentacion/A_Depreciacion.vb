@@ -5,8 +5,9 @@
     'Posible agregar procedimiento para impresion en CrystalReport.
 
     Private Formato_Decimales As String = "###,###,###,##.00"
+    Dim Depreciacion As New ClsDepreciacion
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         dtDepreciacion.Rows.Clear()
         dtDepreciacion.DataSource = Nothing
         Calcular_Depreciacion()
@@ -75,4 +76,177 @@
             MessageBox.Show("Error: " + ex.ToString)
         End Try
     End Sub 'Fin Calculo depreciación
+
+    Private Sub rbtAnual_CheckedChanged(sender As Object, e As EventArgs) Handles rbtAnual.CheckedChanged
+        'Tipo Depreciacion Anual
+        lblTipo.Text = 1
+    End Sub
+
+    Private Sub rbtMensual_CheckedChanged(sender As Object, e As EventArgs) Handles rbtMensual.CheckedChanged
+        'Tipo Depreciacion Mensual
+        lblTipo.Text = 2
+    End Sub
+
+    Private Sub rbtDiaria_CheckedChanged(sender As Object, e As EventArgs) Handles rbtDiaria.CheckedChanged
+        'Tipo Depreciacion Diaria
+        lblTipo.Text = 3
+    End Sub
+
+    Sub limpia()
+
+        txtCod.Text = ""
+        txtDescripcion.Text = ""
+        txtCosto.Text = ""
+        txtValorResidual.Text = ""
+        dtpCreacion.Value = DateTime.Now
+        dtpFechaCalculo.Value = DateTime.Now
+        rbtAnual.Checked = False
+        rbtMensual.Checked = False
+        rbtDiaria.Checked = False
+
+    End Sub
+
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs)
+        limpia()
+
+    End Sub
+
+    Private Sub A_Depreciacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If txtCod.Text <> "" Then
+
+            If lblTipo.Text = "1" Then
+                rbtAnual.Checked = True
+            ElseIf lblTipo.Text = "2" Then
+                rbtMensual.Checked = True
+            Else
+                rbtDiaria.Checked = True
+            End If
+
+            Calcular_Depreciacion()
+
+        End If
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+
+            'Listado Sucursales
+            M_Sucursal.Show()
+            M_Sucursal.lblform.Text = "Depreciacion"
+
+        Catch ex As Exception
+            MsgBox("Error al cargar la información. Detalle:" + ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+
+        'Registro de depreciacion
+
+        Try
+
+
+            If txtTipo.Text <> "" And txtDescripcion.Text <> "" And txtCosto.Text <> "" And txtValorResidual.Text <> "" Then 'fin if validaciones
+
+
+                With Depreciacion
+
+                    .Tipo_Activo = txtTipo.Text
+                    .Sede_ = txtSede.Text
+                    .Descripcion_ = txtDescripcion.Text
+                    .Costo_Activo = txtCosto.Text
+                    .Valor_Residual = txtValorResidual.Text
+                    .Fecha_Calculo = dtpFechaCalculo.Value
+                    .Fecha_Creacion = dtpCreacion.Value
+                    .Tipo = Convert.ToInt32(lblTipo.Text)
+
+                    If .registrarDepreciacion = 1 Then
+                        MsgBox("Se guardo el registro exitosamente.")
+
+                    End If
+
+                End With
+
+            ElseIf txtTipo.Text = "" Then
+                txtTipo.BackColor = Color.Red
+            ElseIf txtDescripcion.Text = "" Then
+                txtDescripcion.BackColor = color.red
+            ElseIf txtCosto.text = "" Then
+                txtCosto.BackColor = Color.Red
+            ElseIf txtValorResidual.Text = "" Then
+                txtValorResidual.BackColor = Color.Red
+
+            End If 'fin if validaciones
+
+        Catch ex As Exception
+            MsgBox("No se pudo crear el registro. Error: " + ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+
+        'Modificar registro de depreciacion
+
+        Try
+
+
+            If txtTipo.Text <> "" And txtDescripcion.Text <> "" And txtCosto.Text <> "" And txtValorResidual.Text <> "" Then 'fin if validaciones
+
+
+                With Depreciacion
+
+                    .Cod = Convert.ToInt32(txtCod.Text)
+                    .Tipo_Activo = txtTipo.Text
+                    .Sede_ = txtSede.Text
+                    .Descripcion_ = txtDescripcion.Text
+                    .Costo_Activo = txtCosto.Text
+                    .Valor_Residual = txtValorResidual.Text
+                    .Fecha_Calculo = dtpFechaCalculo.Value
+                    .Fecha_Creacion = dtpCreacion.Value
+                    .Tipo = Convert.ToInt32(lblTipo.Text)
+
+                    If .modificarDepreciacion = 1 Then
+                        MsgBox("Se modificó el registro exitosamente.")
+
+                    End If
+
+                End With
+
+            ElseIf txtTipo.Text = "" Then
+                txtTipo.BackColor = Color.Red
+            ElseIf txtDescripcion.Text = "" Then
+                txtDescripcion.BackColor = Color.Red
+            ElseIf txtCosto.Text = "" Then
+                txtCosto.BackColor = Color.Red
+            ElseIf txtValorResidual.Text = "" Then
+                txtValorResidual.BackColor = Color.Red
+
+            End If 'fin if validaciones
+
+        Catch ex As Exception
+            MsgBox("No se pudo modificar el registro. Error: " + ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub txtCosto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCosto.KeyPress
+
+        'Numeros y comas
+        NUMEROSCOMA(e, 2, sender)
+
+    End Sub
+
+    Private Sub txtValorResidual_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtValorResidual.KeyPress
+        'Numeros y comas
+        NUMEROSCOMA(e, 2, sender)
+    End Sub
+
+    Private Sub A_Depreciacion_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+
+        'Cerrar ventana
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
+    End Sub
 End Class
