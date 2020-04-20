@@ -1,39 +1,38 @@
-﻿Public Class E_GrupoExamen
+﻿Public Class M_Profesion
+    Private Sub M_Profesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            Dim objProfesion As New ClsProfesion
+            Dim dv As DataView = objProfesion.SeleccionarProfesion.DefaultView
+            dgbtabla.DataSource = dv
+            lblcantidad.Text = dv.Count
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
+            rtxtdescripcion.ReadOnly = True
+            txtcodigo.ReadOnly = True
+
+            btnmodificar.Enabled = False
+            btnguardar.Enabled = False
+            btnnuevo.Enabled = True
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
         End If
     End Sub
-    Private Sub M_GrupoExamen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim objGrpE As New ClsGrupoExamen
-        Dim dv As DataView = objGrpE.SeleccionarGrupoExamen.DefaultView
-        dgbtabla.DataSource = dv
-        lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-
-        txtnombre.ReadOnly = True
-        txtcodigo.ReadOnly = True
-
-        btnmodificar.Enabled = False
-        btnguardar.Enabled = False
-        btnnuevo.Enabled = True
-    End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
-            lblcode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
-            txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+            rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
 
+            txtcodigo.ReadOnly = True
             btnmodificar.Enabled = True
             btnguardar.Enabled = False
 
-            txtnombre.ReadOnly = False
-            txtcodigo.ReadOnly = False
-
-            If (lblform.Text <> "Empleados") Then
-                E_DetalleExamenes.lblcodigoGrupo.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value
-                E_DetalleExamenes.txtGrupo.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value
-            End If
+            rtxtdescripcion.ReadOnly = False
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -43,12 +42,12 @@
             Dim n As String = ""
             If (lblform.Text = "Empleados") Then
                 If e.RowIndex >= 0 Then
-                    n = MsgBox("¿Desea utilizar el area de trabajo en el empleado?", MsgBoxStyle.YesNo)
+                    n = MsgBox("¿Desea utilizar el puesto de trabajo en el empleado?", MsgBoxStyle.YesNo)
                 End If
                 If n = vbYes Then
-                    M_Empleados.lblcodigoArea.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-                    M_Empleados.txtcodigoArea.Text = txtcodigo.Text
-                    M_Empleados.txtdescripcionArea.Text = txtnombre.Text
+                    'M_Factura.txtcodigoMedico.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_Empleados.txtcodigoProfesion.Text = txtcodigo.Text
+                    M_Empleados.txtdescripcionProfesion.Text = rtxtdescripcion.Text
                     Me.Close()
                 End If
             End If
@@ -58,61 +57,58 @@
     End Sub
     Private Sub limpiar()
         txtcodigo.Text() = ""
-        txtnombre.Text() = ""
-        txtnombreB.Text() = ""
+        rtxtdescripcion.Text() = ""
+        txtdescripcionB.Text() = ""
 
-        txtnombre.ReadOnly = False
-        txtcodigo.ReadOnly = False
+        rtxtdescripcion.ReadOnly = False
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
+        btnnuevo.Enabled = True
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
     End Sub
     Private Function sinDobleEspacio(ByVal cadena As String) As String
-        Dim testString As String = cadena
         Dim texto As String = ""
-        Dim testArray() As String = Split(testString)
-        Dim lastNonEmpty As Integer = -1
+        Dim testArray() As String = Split(cadena)
         For i As Integer = 0 To testArray.Length - 1
             If testArray(i) <> "" Then
-                lastNonEmpty += 1
-                testArray(lastNonEmpty) = testArray(i)
                 texto += testArray(i) + " "
             End If
         Next
-        ReDim Preserve testArray(lastNonEmpty)
-        Return texto
+        Return RTrim(texto)
     End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
-            txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
-            txtnombre.Text = sinDobleEspacio(txtnombre.Text)
-
-            If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "") Then
-                Dim objGrpE As New ClsGrupoExamen
-                With objGrpE
-                    .codigoGrupoExamen_ = txtcodigo.Text
-                    .Nombre_ = txtnombre.Text
+            If rtxtdescripcion.TextLength = 0 Then
+                rtxtdescripcion.BackColor = Color.Red
+            Else
+                rtxtdescripcion.BackColor = Color.White
+            End If
+            If (Trim(rtxtdescripcion.Text) <> "") Then
+                rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
+                Dim objProfesion As New ClsProfesion
+                With objProfesion
+                    .Descripcion_ = rtxtdescripcion.Text
                 End With
 
-                If objGrpE.RegistrarNuevaGrupoExamen() = 1 Then
+                If objProfesion.RegistrarNuevaProfesion() = 1 Then
                     MsgBox("Registrado correctamente.")
 
-                    Dim dv As DataView = objGrpE.SeleccionarGrupoExamen.DefaultView
+                    Dim dv As DataView = objProfesion.SeleccionarProfesion.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
                     txtcodigo.ReadOnly = True
-                    txtnombre.ReadOnly = True
+                    rtxtdescripcion.ReadOnly = True
 
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
                     btnnuevo.Enabled = True
                 Else
-                    MsgBox("Error al querer ingresar el grupo de examen.", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer ingresar el puesto de trabajo.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -126,31 +122,30 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "") Then
-                txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
-                txtnombre.Text = sinDobleEspacio(txtnombre.Text)
-                Dim objGrpE As New ClsGrupoExamen
-                With objGrpE
-                    .codigoGrupoExamen_ = txtcodigo.Text
-                    .Nombre_ = txtnombre.Text
-                    .codigo_ = lblcode.Text
+            If (txtcodigo.Text <> "" And Trim(rtxtdescripcion.Text) <> "") Then
+                rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
+                Dim objProfesion As New ClsProfesion
+                With objProfesion
+                    .Codigo_ = txtcodigo.Text
+                    .Descripcion_ = rtxtdescripcion.Text
                 End With
-                If objGrpE.ModificarGrupoExamen() = 1 Then
+
+                If objProfesion.ModificarProfesion() = 1 Then
                     MsgBox("Modificado correctamente.")
 
-                    Dim dv As DataView = objGrpE.SeleccionarGrupoExamen.DefaultView
+                    Dim dv As DataView = objProfesion.SeleccionarProfesion.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
                     txtcodigo.ReadOnly = True
-                    txtnombre.ReadOnly = True
+                    rtxtdescripcion.ReadOnly = True
 
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
                     btnnuevo.Enabled = True
                 Else
-                    MsgBox("Error al querer modificar el grupo del examen.", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer modificar el puesto de trabajo.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -165,28 +160,36 @@
         limpiar()
         Me.Close()
     End Sub
-    Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
+    Private Sub txtdescripcionB_TextChanged(sender As Object, e As EventArgs) Handles txtdescripcionB.TextChanged
         Try
-            Dim objGrpE As New ClsGrupoExamen
-            With objGrpE
-                .Nombre_ = txtnombreB.Text
+
+            Dim objProfesion As New ClsProfesion
+            With objProfesion
+                .Descripcion_ = txtdescripcionB.Text
             End With
 
-            If (Trim(txtnombreB.Text) <> "") Then
-                Dim dv As DataView = objGrpE.BuscarGrupoExamen.DefaultView
+            If (Trim(txtdescripcionB.Text) <> "") Then
+                Dim dv As DataView = objProfesion.BuscarProfesion.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
                 dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
             Else
-                Dim dv As DataView = objGrpE.SeleccionarGrupoExamen.DefaultView
+                Dim dv As DataView = objProfesion.SeleccionarProfesion.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
                 dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
             End If
+
         Catch ex As Exception
 
         End Try
     End Sub
 
-
+    Private Sub rtxtdescripcion_TextChanged(sender As Object, e As EventArgs) Handles rtxtdescripcion.TextChanged
+        If rtxtdescripcion.TextLength = 0 Then
+            rtxtdescripcion.BackColor = Color.Red
+        Else
+            rtxtdescripcion.BackColor = Color.White
+        End If
+    End Sub
 End Class

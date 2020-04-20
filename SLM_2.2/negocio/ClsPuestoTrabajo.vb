@@ -1,13 +1,15 @@
-﻿Imports System.Data.SqlClient
+﻿
+Imports System.Data.SqlClient
 
-Public Class ClsGrupoExamen
-    Dim codigoGrupoExamen, nombre As String
+Public Class ClsPuestoTrabajo
     Dim codigo As Integer
+    Dim descripcion As String
     'Constructor
     Public Sub New()
 
     End Sub
-    Public Property codigo_ As Integer
+
+    Public Property Codigo_ As Integer
         Get
             Return codigo
         End Get
@@ -15,43 +17,31 @@ Public Class ClsGrupoExamen
             codigo = value
         End Set
     End Property
-    Public Property codigoGrupoExamen_ As String
-        Get
-            Return codigoGrupoExamen
-        End Get
-        Set(value As String)
-            codigoGrupoExamen = value
-        End Set
-    End Property
 
-    Public Property Nombre_ As String
+    Public Property Descripcion_ As String
         Get
-            Return nombre
+            Return descripcion
         End Get
         Set(value As String)
-            nombre = value
+            descripcion = value
         End Set
     End Property
 
 
-    Public Function RegistrarNuevaGrupoExamen() As String
+    Public Function RegistrarNuevoPuestoTrabajo() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "E_slmInsertarGrupoExamen"
+        sqlcom.CommandText = "M_slmInsertarPuestoTrabajo"
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoGrupoExamen" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoGrupoExamen_
+        sqlpar.ParameterName = "descripcion" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Descripcion_
         sqlcom.Parameters.Add(sqlpar)
 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "nombre" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = Nombre_
-        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -73,14 +63,14 @@ Public Class ClsGrupoExamen
 
     End Function
 
-    Public Function ModificarGrupoExamen() As String
+    Public Function ModificarPuestoTrabajo() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "E_slmModificarGrupoExamen"
+        sqlcom.CommandText = "M_slmModificarPuestoTrabajo"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -88,13 +78,8 @@ Public Class ClsGrupoExamen
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoGrupoExamen" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoGrupoExamen_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "nombre" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = Nombre_
+        sqlpar.ParameterName = "descripcion" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = descripcion
         sqlcom.Parameters.Add(sqlpar)
 
 
@@ -117,7 +102,9 @@ Public Class ClsGrupoExamen
         Return par_sal
 
     End Function
-    Public Function BuscarGrupoExamenCodigo() As DataTable
+
+
+    Public Function BuscarPuestoTrabajo() As DataTable
 
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
@@ -126,8 +113,8 @@ Public Class ClsGrupoExamen
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "E_slmBuscarGrupoExamenCode"
-            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = codigo_
+            cmd.CommandText = "M_slmBuscarPuestoTrabajo"
+            cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = Descripcion_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -140,7 +127,7 @@ Public Class ClsGrupoExamen
 
     End Function
 
-    Public Function BuscarGrupoExamen() As DataTable
+    Public Function BuscarPuestoTrabajoCode() As DataTable
 
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
@@ -149,8 +136,8 @@ Public Class ClsGrupoExamen
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "E_slmBuscarGrupoExamen"
-            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Nombre_
+            cmd.CommandText = "M_slmBuscarPuestoTrabajoCode"
+            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Codigo_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -163,36 +150,13 @@ Public Class ClsGrupoExamen
 
     End Function
 
-    Public Function BuscarGrupoExamenCodigoBreve() As DataTable
+    Public Function SeleccionarPuestoTrabajo() As DataTable
 
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using cmd As New SqlCommand
-            cmd.Connection = cn
-            cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "E_slmBuscarGrupoExamenCodigoBreve"
-            cmd.Parameters.Add("@codigoGrupoExamen", SqlDbType.VarChar).Value = codigoGrupoExamen_
-            Using da As New SqlDataAdapter
-                da.SelectCommand = cmd
-                Using dt As New DataTable
-                    da.Fill(dt)
-                    objCon.cerrarConexion()
-                    Return dt
-                End Using
-            End Using
-        End Using
-
-    End Function
-
-    Public Function SeleccionarGrupoExamen() As DataTable
-
-        Dim objCon As New ClsConnection
-        Dim cn As New SqlConnection
-        cn = objCon.getConexion
-
-        Using da As New SqlDataAdapter("E_slmSeleccionarGrupoExamen", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarPuestoTrabajo", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             objCon.cerrarConexion()

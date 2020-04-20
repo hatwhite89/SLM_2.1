@@ -31,6 +31,8 @@
             frmPagos.txtCtaBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(2).Value
             frmPagos.txtComentario.Text = dtFormasPago.Rows(e.RowIndex).Cells(1).Value
             frmPagos.dtDetallePagos.Enabled = True
+        ElseIf (lblForm.Text = "M_Empleados") Then
+            M_Empleados.txtcodigoFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(3).Value
         End If
 
         Me.Close()
