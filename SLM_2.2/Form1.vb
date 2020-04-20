@@ -470,4 +470,8 @@
 
         End Try
     End Sub
+
+    Private Sub Button22_Click(sender As Object, e As EventArgs) Handles Button22.Click
+        E_frmSalida.Show()
+    End Sub
 End Class

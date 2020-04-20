@@ -140,9 +140,10 @@ Partial Class Form1
         Me.Button19 = New System.Windows.Forms.Button()
         Me.Button18 = New System.Windows.Forms.Button()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
-        Me.TabPage8 = New System.Windows.Forms.TabPage()
-        Me.btnServidorCorreo = New System.Windows.Forms.Button()
         Me.PictureBox38 = New System.Windows.Forms.PictureBox()
+        Me.btnServidorCorreo = New System.Windows.Forms.Button()
+        Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.Button22 = New System.Windows.Forms.Button()
         Me.gbxMenu.SuspendLayout()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
@@ -224,6 +225,7 @@ Partial Class Form1
         Me.gbxMenu.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.gbxMenu.BackColor = System.Drawing.Color.MidnightBlue
+        Me.gbxMenu.Controls.Add(Me.Button22)
         Me.gbxMenu.Controls.Add(Me.Button16)
         Me.gbxMenu.Controls.Add(Me.pbxNoti)
         Me.gbxMenu.Controls.Add(Me.Button1)
@@ -1596,6 +1598,25 @@ Partial Class Form1
         Me.TabPage7.Text = "Notificaciones"
         Me.TabPage7.UseVisualStyleBackColor = True
         '
+        'PictureBox38
+        '
+        Me.PictureBox38.Image = CType(resources.GetObject("PictureBox38.Image"), System.Drawing.Image)
+        Me.PictureBox38.Location = New System.Drawing.Point(36, 16)
+        Me.PictureBox38.Name = "PictureBox38"
+        Me.PictureBox38.Size = New System.Drawing.Size(65, 65)
+        Me.PictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox38.TabIndex = 1
+        Me.PictureBox38.TabStop = False
+        '
+        'btnServidorCorreo
+        '
+        Me.btnServidorCorreo.Location = New System.Drawing.Point(13, 87)
+        Me.btnServidorCorreo.Name = "btnServidorCorreo"
+        Me.btnServidorCorreo.Size = New System.Drawing.Size(108, 23)
+        Me.btnServidorCorreo.TabIndex = 0
+        Me.btnServidorCorreo.Text = "Servidor de Correo"
+        Me.btnServidorCorreo.UseVisualStyleBackColor = True
+        '
         'TabPage8
         '
         Me.TabPage8.Location = New System.Drawing.Point(4, 22)
@@ -1607,24 +1628,18 @@ Partial Class Form1
         Me.TabPage8.Text = "Bitacoras"
         Me.TabPage8.UseVisualStyleBackColor = True
         '
-        'btnServidorCorreo
+        'Button22
         '
-        Me.btnServidorCorreo.Location = New System.Drawing.Point(13, 87)
-        Me.btnServidorCorreo.Name = "btnServidorCorreo"
-        Me.btnServidorCorreo.Size = New System.Drawing.Size(108, 23)
-        Me.btnServidorCorreo.TabIndex = 0
-        Me.btnServidorCorreo.Text = "Servidor de Correo"
-        Me.btnServidorCorreo.UseVisualStyleBackColor = True
-        '
-        'PictureBox38
-        '
-        Me.PictureBox38.Image = CType(resources.GetObject("PictureBox38.Image"), System.Drawing.Image)
-        Me.PictureBox38.Location = New System.Drawing.Point(36, 16)
-        Me.PictureBox38.Name = "PictureBox38"
-        Me.PictureBox38.Size = New System.Drawing.Size(65, 65)
-        Me.PictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox38.TabIndex = 1
-        Me.PictureBox38.TabStop = False
+        Me.Button22.BackColor = System.Drawing.Color.LightGray
+        Me.Button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button22.FlatAppearance.BorderSize = 0
+        Me.Button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button22.Location = New System.Drawing.Point(5, 154)
+        Me.Button22.Name = "Button22"
+        Me.Button22.Size = New System.Drawing.Size(103, 27)
+        Me.Button22.TabIndex = 9
+        Me.Button22.Text = "Almacen"
+        Me.Button22.UseVisualStyleBackColor = False
         '
         'Form1
         '
@@ -1836,4 +1851,5 @@ Partial Class Form1
     Friend WithEvents CerrarSesiónToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox38 As PictureBox
     Friend WithEvents btnServidorCorreo As Button
+    Friend WithEvents Button22 As Button
 End Class
