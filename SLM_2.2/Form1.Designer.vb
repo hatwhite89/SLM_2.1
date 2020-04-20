@@ -83,6 +83,7 @@ Partial Class Form1
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -140,7 +141,8 @@ Partial Class Form1
         Me.Button18 = New System.Windows.Forms.Button()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
-        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnServidorCorreo = New System.Windows.Forms.Button()
+        Me.PictureBox38 = New System.Windows.Forms.PictureBox()
         Me.gbxMenu.SuspendLayout()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
@@ -200,6 +202,8 @@ Partial Class Form1
         Me.PanelSistema.SuspendLayout()
         Me.TabControl3.SuspendLayout()
         Me.TabPage6.SuspendLayout()
+        Me.TabPage7.SuspendLayout()
+        CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -921,14 +925,20 @@ Partial Class Form1
         'CerrarToolStripMenuItem
         '
         Me.CerrarToolStripMenuItem.Name = "CerrarToolStripMenuItem"
-        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.CerrarToolStripMenuItem.Text = "Cerrar"
         '
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
+        '
+        'CerrarSesiónToolStripMenuItem
+        '
+        Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'StatusStrip1
         '
@@ -1552,7 +1562,7 @@ Partial Class Form1
         Me.Button19.FlatAppearance.BorderSize = 0
         Me.Button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button19.ForeColor = System.Drawing.Color.White
-        Me.Button19.Location = New System.Drawing.Point(175, 72)
+        Me.Button19.Location = New System.Drawing.Point(169, 73)
         Me.Button19.Name = "Button19"
         Me.Button19.Size = New System.Drawing.Size(77, 21)
         Me.Button19.TabIndex = 20
@@ -1575,6 +1585,8 @@ Partial Class Form1
         '
         'TabPage7
         '
+        Me.TabPage7.Controls.Add(Me.PictureBox38)
+        Me.TabPage7.Controls.Add(Me.btnServidorCorreo)
         Me.TabPage7.Location = New System.Drawing.Point(4, 22)
         Me.TabPage7.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage7.Name = "TabPage7"
@@ -1595,11 +1607,24 @@ Partial Class Form1
         Me.TabPage8.Text = "Bitacoras"
         Me.TabPage8.UseVisualStyleBackColor = True
         '
-        'CerrarSesiónToolStripMenuItem
+        'btnServidorCorreo
         '
-        Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
+        Me.btnServidorCorreo.Location = New System.Drawing.Point(13, 87)
+        Me.btnServidorCorreo.Name = "btnServidorCorreo"
+        Me.btnServidorCorreo.Size = New System.Drawing.Size(108, 23)
+        Me.btnServidorCorreo.TabIndex = 0
+        Me.btnServidorCorreo.Text = "Servidor de Correo"
+        Me.btnServidorCorreo.UseVisualStyleBackColor = True
+        '
+        'PictureBox38
+        '
+        Me.PictureBox38.Image = CType(resources.GetObject("PictureBox38.Image"), System.Drawing.Image)
+        Me.PictureBox38.Location = New System.Drawing.Point(36, 16)
+        Me.PictureBox38.Name = "PictureBox38"
+        Me.PictureBox38.Size = New System.Drawing.Size(65, 65)
+        Me.PictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox38.TabIndex = 1
+        Me.PictureBox38.TabStop = False
         '
         'Form1
         '
@@ -1684,6 +1709,8 @@ Partial Class Form1
         Me.PanelSistema.ResumeLayout(False)
         Me.TabControl3.ResumeLayout(False)
         Me.TabPage6.ResumeLayout(False)
+        Me.TabPage7.ResumeLayout(False)
+        CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1807,4 +1834,6 @@ Partial Class Form1
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button21 As Button
     Friend WithEvents CerrarSesiónToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PictureBox38 As PictureBox
+    Friend WithEvents btnServidorCorreo As Button
 End Class

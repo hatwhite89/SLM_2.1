@@ -159,6 +159,7 @@
     <Compile Include="negocio\ClsPrecio.vb" />
     <Compile Include="negocio\ClsPromociones.vb" />
     <Compile Include="negocio\ClsRecibo.vb" />
+    <Compile Include="negocio\ClsServidorCorreo.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
     <Compile Include="negocio\ClsUnidad.vb" />
@@ -174,6 +175,12 @@
       <DependentUpon>A_Bitacora.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_Bitacora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ConfiguracionCorreo.Designer.vb">
+      <DependentUpon>A_ConfiguracionCorreo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ConfiguracionCorreo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_Consolidacion.Designer.vb">
@@ -866,6 +873,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Bitacora.resx">
       <DependentUpon>A_Bitacora.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ConfiguracionCorreo.resx">
+      <DependentUpon>A_ConfiguracionCorreo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Consolidacion.resx">
       <DependentUpon>A_Consolidacion.vb</DependentUpon>

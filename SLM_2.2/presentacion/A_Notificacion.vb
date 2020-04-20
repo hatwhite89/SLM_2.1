@@ -38,7 +38,7 @@ Public Class A_Notificacion
             End If
 
             'ENVIO DE CORREO CON ALERTA
-            'enviarCorreo()
+            'enviarMail()
 
             Form1.pbxNoti.Visible = True
 
@@ -124,38 +124,6 @@ Public Class A_Notificacion
         End Try
     End Sub
 
-    'Enviar correo Dinamico
-    Private Sub enviarMail(correoSalida As String, correoCliente As String, pass As String)
 
-        'In the shadows of the moon
-
-        Try
-            Dim Smtp_Server As New SmtpClient
-            Dim e_mail As New MailMessage()
-            Smtp_Server.UseDefaultCredentials = False
-            Smtp_Server.Credentials = New Net.NetworkCredential(correoSalida, pass)
-            Smtp_Server.Port = 587
-            Smtp_Server.EnableSsl = True
-            Smtp_Server.Host = "mail.laboratoriosmedicos.hn"
-
-            e_mail = New MailMessage()
-            'txtfrom.text
-            e_mail.From = New MailAddress(correoSalida)
-            'txtto.text
-            e_mail.To.Add(correoCliente)
-            e_mail.Subject = "Email Sending"
-            e_mail.IsBodyHtml = False
-            'txtMessage.text
-            e_mail.Body = "Funciona el envio por correo."
-            Smtp_Server.Send(e_mail)
-
-            'omitir mensaje
-            MsgBox("Mail Sent")
-
-        Catch ex As Exception
-            MsgBox("error correo" + ex.Message)
-        End Try
-
-    End Sub
 
 End Class

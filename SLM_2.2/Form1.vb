@@ -14,9 +14,6 @@
             rowD = dias.Rows(0)
             rowsF = numfact.Rows(0)
 
-
-
-
             If Convert.ToInt32(rowD("diasFaltantes")) < 7 Then
 
                 A_Notificacion.lblMensajeDias.Visible = True
@@ -460,5 +457,13 @@
 
         End Try
 
+    End Sub
+
+    Private Sub btnServidorCorreo_Click(sender As Object, e As EventArgs) Handles btnServidorCorreo.Click
+        Try
+            A_ConfiguracionCorreo.Show()
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
