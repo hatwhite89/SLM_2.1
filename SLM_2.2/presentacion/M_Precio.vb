@@ -112,8 +112,8 @@
             limpiar()
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
             txtcodigoItem.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
-            txtPrecio.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
-            lblCode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+            txtPrecio.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+            lblCode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
 
             btnmodificar.Enabled = True
             btnguardar.Enabled = False

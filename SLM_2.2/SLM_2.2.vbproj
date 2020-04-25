@@ -615,6 +615,12 @@
       <DependentUpon>M_CierreCaja.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="presentacion\M_Contratos.Designer.vb">
+      <DependentUpon>M_Contratos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Contratos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_CryTiposDePacientes.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1196,6 +1202,9 @@
     <EmbeddedResource Include="presentacion\M_CierreCaja.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>M_CierreCaja.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Contratos.resx">
+      <DependentUpon>M_Contratos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_CryTiposDePacientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

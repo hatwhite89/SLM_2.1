@@ -487,24 +487,14 @@
         txtapellido2.Select(txtapellido2.Text.Length, 0)
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
-        If (e.KeyCode = Keys.Escape And lblform.Text = "M_BuscarEmpleados") Then
-            limpiar()
-            M_BuscarEmpleados.ShowDialog()
-            Me.Close()
-        ElseIf (e.KeyCode = Keys.Escape And lblform.Text = "") Then
+        If (e.KeyCode = Keys.Escape) Then
             limpiar()
             Me.Close()
         End If
     End Sub
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
-        If lblform.Text = "M_BuscarEmpleados" Then
-            limpiar()
-            M_BuscarEmpleados.ShowDialog()
-            Me.Close()
-        Else
-            limpiar()
-            Me.Close()
-        End If
+        limpiar()
+        Me.Close()
     End Sub
 
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
@@ -577,7 +567,6 @@
                     End If
                     '.fechaBaja_ = dtpfechaBaja.Text
                     '.fechaAvisoBaja_ = dtpFechaAvisoBaja.Text
-                    MsgBox("paso")
                     .motivoBaja_ = rtxtmotivoBaja.Text
                     .codigoPuestoTrab_ = Convert.ToInt64(lblcodePuesto.Text)
                     .codigoDepto_ = Convert.ToInt64(lblcodeDepto.Text)

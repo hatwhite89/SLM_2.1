@@ -1,6 +1,8 @@
 ﻿Public Class M_BuscarCotizacion
     Private Sub M_BuscarCotizacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         actualizarCotizacion()
+        txtnombreB.Text = ""
+        txtnumeroB.Text = ""
     End Sub
     Public Sub actualizarCotizacion()
         Dim objCot As New ClsCotizacion
@@ -37,6 +39,8 @@
                     M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codigoExamen")), CStr(row("cantidad")), precio, CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
                     M_ClienteVentana.dgvtabla.Rows.Add(New String() {CStr(row("codigoExamen")), CStr(row("cantidad")), precio, CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
                 Next
+                txtnombreB.Text = ""
+                txtnumeroB.Text = ""
                 Me.Close()
                 M_Factura.totalFactura()
                 M_Factura.ShowDialog()
@@ -63,6 +67,8 @@
         End If
     End Sub
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
+        txtnombreB.Text = ""
+        txtnumeroB.Text = ""
         M_Factura.limpiar()
         M_Factura.deshabilitar()
         M_Factura.HabilitarCotizacionFactura()
