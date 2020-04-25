@@ -148,6 +148,8 @@ Partial Class Form1
         Me.btnCerrarTalentoHumano = New System.Windows.Forms.Button()
         Me.TabControl4 = New System.Windows.Forms.TabControl()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
+        Me.PictureBox39 = New System.Windows.Forms.PictureBox()
+        Me.btnEmpleados = New System.Windows.Forms.Button()
         Me.PictureBox40 = New System.Windows.Forms.PictureBox()
         Me.PictureBox41 = New System.Windows.Forms.PictureBox()
         Me.PictureBox42 = New System.Windows.Forms.PictureBox()
@@ -160,8 +162,6 @@ Partial Class Form1
         Me.btnContratos = New System.Windows.Forms.Button()
         Me.btnHorarios = New System.Windows.Forms.Button()
         Me.btnPuestoTrabajo = New System.Windows.Forms.Button()
-        Me.PictureBox39 = New System.Windows.Forms.PictureBox()
-        Me.btnEmpleados = New System.Windows.Forms.Button()
         Me.gbxMenu.SuspendLayout()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
@@ -226,13 +226,13 @@ Partial Class Form1
         Me.PanelTalentoHumano.SuspendLayout()
         Me.TabControl4.SuspendLayout()
         Me.TabPage9.SuspendLayout()
+        CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox40, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox41, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox42, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox43, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox45, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox46, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -1831,6 +1831,27 @@ Partial Class Form1
         Me.TabPage9.Text = "Talento Humano"
         Me.TabPage9.UseVisualStyleBackColor = True
         '
+        'PictureBox39
+        '
+        Me.PictureBox39.Image = CType(resources.GetObject("PictureBox39.Image"), System.Drawing.Image)
+        Me.PictureBox39.Location = New System.Drawing.Point(14, 308)
+        Me.PictureBox39.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox39.Name = "PictureBox39"
+        Me.PictureBox39.Size = New System.Drawing.Size(100, 64)
+        Me.PictureBox39.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox39.TabIndex = 18
+        Me.PictureBox39.TabStop = False
+        '
+        'btnEmpleados
+        '
+        Me.btnEmpleados.Location = New System.Drawing.Point(14, 384)
+        Me.btnEmpleados.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnEmpleados.Name = "btnEmpleados"
+        Me.btnEmpleados.Size = New System.Drawing.Size(100, 43)
+        Me.btnEmpleados.TabIndex = 17
+        Me.btnEmpleados.Text = "Empleados"
+        Me.btnEmpleados.UseVisualStyleBackColor = True
+        '
         'PictureBox40
         '
         Me.PictureBox40.Image = CType(resources.GetObject("PictureBox40.Image"), System.Drawing.Image)
@@ -1887,7 +1908,6 @@ Partial Class Form1
         '
         'PictureBox46
         '
-        Me.PictureBox46.Image = CType(resources.GetObject("PictureBox46.Image"), System.Drawing.Image)
         Me.PictureBox46.Location = New System.Drawing.Point(139, 26)
         Me.PictureBox46.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox46.Name = "PictureBox46"
@@ -1955,27 +1975,6 @@ Partial Class Form1
         Me.btnPuestoTrabajo.TabIndex = 0
         Me.btnPuestoTrabajo.Text = "Puesto de Trabajo"
         Me.btnPuestoTrabajo.UseVisualStyleBackColor = True
-        '
-        'PictureBox39
-        '
-        Me.PictureBox39.Image = CType(resources.GetObject("PictureBox39.Image"), System.Drawing.Image)
-        Me.PictureBox39.Location = New System.Drawing.Point(14, 308)
-        Me.PictureBox39.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox39.Name = "PictureBox39"
-        Me.PictureBox39.Size = New System.Drawing.Size(100, 64)
-        Me.PictureBox39.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox39.TabIndex = 18
-        Me.PictureBox39.TabStop = False
-        '
-        'btnEmpleados
-        '
-        Me.btnEmpleados.Location = New System.Drawing.Point(14, 384)
-        Me.btnEmpleados.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnEmpleados.Name = "btnEmpleados"
-        Me.btnEmpleados.Size = New System.Drawing.Size(100, 43)
-        Me.btnEmpleados.TabIndex = 17
-        Me.btnEmpleados.Text = "Empleados"
-        Me.btnEmpleados.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -2067,13 +2066,13 @@ Partial Class Form1
         Me.PanelTalentoHumano.ResumeLayout(False)
         Me.TabControl4.ResumeLayout(False)
         Me.TabPage9.ResumeLayout(False)
+        CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox40, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox41, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox42, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox43, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox45, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox46, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
