@@ -126,6 +126,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="negocio\ClsAccesoLaboratorio.vb" />
+    <Compile Include="negocio\ClsAlmacen2.vb" />
     <Compile Include="negocio\ClsApertura.vb" />
     <Compile Include="negocio\ClsArea.vb" />
     <Compile Include="negocio\ClsAreaLaboratorio.vb" />
