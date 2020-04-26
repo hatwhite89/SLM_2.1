@@ -25,6 +25,7 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.btnContabilidad = New System.Windows.Forms.Button()
         Me.gbxMenu = New System.Windows.Forms.GroupBox()
+        Me.Button22 = New System.Windows.Forms.Button()
         Me.Button16 = New System.Windows.Forms.Button()
         Me.pbxNoti = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -143,7 +144,6 @@ Partial Class Form1
         Me.PictureBox38 = New System.Windows.Forms.PictureBox()
         Me.btnServidorCorreo = New System.Windows.Forms.Button()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
-        Me.Button22 = New System.Windows.Forms.Button()
         Me.gbxMenu.SuspendLayout()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
@@ -240,6 +240,19 @@ Partial Class Form1
         Me.gbxMenu.TabIndex = 3
         Me.gbxMenu.TabStop = False
         Me.gbxMenu.Text = "Opciones"
+        '
+        'Button22
+        '
+        Me.Button22.BackColor = System.Drawing.Color.LightGray
+        Me.Button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button22.FlatAppearance.BorderSize = 0
+        Me.Button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button22.Location = New System.Drawing.Point(5, 154)
+        Me.Button22.Name = "Button22"
+        Me.Button22.Size = New System.Drawing.Size(103, 27)
+        Me.Button22.TabIndex = 9
+        Me.Button22.Text = "Almacen"
+        Me.Button22.UseVisualStyleBackColor = False
         '
         'Button16
         '
@@ -1627,19 +1640,6 @@ Partial Class Form1
         Me.TabPage8.TabIndex = 5
         Me.TabPage8.Text = "Bitacoras"
         Me.TabPage8.UseVisualStyleBackColor = True
-        '
-        'Button22
-        '
-        Me.Button22.BackColor = System.Drawing.Color.LightGray
-        Me.Button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button22.FlatAppearance.BorderSize = 0
-        Me.Button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button22.Location = New System.Drawing.Point(5, 154)
-        Me.Button22.Name = "Button22"
-        Me.Button22.Size = New System.Drawing.Size(103, 27)
-        Me.Button22.TabIndex = 9
-        Me.Button22.Text = "Almacen"
-        Me.Button22.UseVisualStyleBackColor = False
         '
         'Form1
         '

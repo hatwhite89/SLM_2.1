@@ -29,15 +29,17 @@ Partial Class E_frmUnidadMedida_almacen
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtDescripcion = New System.Windows.Forms.RichTextBox()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -45,15 +47,12 @@ Partial Class E_frmUnidadMedida_almacen
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.Button3)
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.RichTextBox1)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Controls.Add(Me.txtDescripcion)
+        Me.GroupBox1.Controls.Add(Me.txtCodigo)
+        Me.GroupBox1.Controls.Add(Me.txtNombre)
+        Me.GroupBox1.Location = New System.Drawing.Point(8, 57)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(694, 166)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 149)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Almacen"
@@ -87,7 +86,7 @@ Partial Class E_frmUnidadMedida_almacen
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(219, 137)
+        Me.Button3.Location = New System.Drawing.Point(598, 10)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 5
@@ -96,7 +95,7 @@ Partial Class E_frmUnidadMedida_almacen
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(124, 137)
+        Me.Button2.Location = New System.Drawing.Point(503, 10)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 4
@@ -105,40 +104,41 @@ Partial Class E_frmUnidadMedida_almacen
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(26, 137)
+        Me.Button1.Location = New System.Drawing.Point(405, 10)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "Guardar"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'RichTextBox1
+        'txtDescripcion
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(292, 32)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(368, 67)
-        Me.RichTextBox1.TabIndex = 2
-        Me.RichTextBox1.Text = ""
+        Me.txtDescripcion.Location = New System.Drawing.Point(292, 32)
+        Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.Size = New System.Drawing.Size(368, 67)
+        Me.txtDescripcion.TabIndex = 2
+        Me.txtDescripcion.Text = ""
         '
-        'TextBox2
+        'txtCodigo
         '
-        Me.TextBox2.Location = New System.Drawing.Point(26, 39)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 1
+        Me.txtCodigo.Location = New System.Drawing.Point(26, 39)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.ReadOnly = True
+        Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
+        Me.txtCodigo.TabIndex = 1
         '
-        'TextBox1
+        'txtNombre
         '
-        Me.TextBox1.Location = New System.Drawing.Point(26, 79)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(251, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.txtNombre.Location = New System.Drawing.Point(26, 79)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(251, 20)
+        Me.txtNombre.TabIndex = 0
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.txtBuscar)
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 184)
+        Me.GroupBox2.Location = New System.Drawing.Point(8, 212)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(694, 216)
         Me.GroupBox2.TabIndex = 3
@@ -160,11 +160,23 @@ Partial Class E_frmUnidadMedida_almacen
         Me.DataGridView1.Size = New System.Drawing.Size(682, 173)
         Me.DataGridView1.TabIndex = 0
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.Button3)
+        Me.Panel1.Location = New System.Drawing.Point(8, 9)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(694, 42)
+        Me.Panel1.TabIndex = 2
+        '
         'E_frmUnidadMedida_almacen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(714, 450)
+        Me.ClientSize = New System.Drawing.Size(714, 434)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "E_frmUnidadMedida_almacen"
@@ -174,6 +186,7 @@ Partial Class E_frmUnidadMedida_almacen
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -185,10 +198,11 @@ Partial Class E_frmUnidadMedida_almacen
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents RichTextBox1 As RichTextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtDescripcion As RichTextBox
+    Friend WithEvents txtCodigo As TextBox
+    Friend WithEvents txtNombre As TextBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Panel1 As Panel
 End Class
