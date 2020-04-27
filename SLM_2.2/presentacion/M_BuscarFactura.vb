@@ -2,6 +2,8 @@
 Public Class M_BuscarFactura
     Private Sub M_BuscarFactura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         seleccionarFacturas()
+        txtnombreB.Text = ""
+        txtnumeroB.Text = ""
         Me.dgbtabla.Columns("codigo").Visible = False
         Dim dv As DataView = dgbtabla.DataSource
         dv.Sort = "FechaFactura Desc"
@@ -86,6 +88,8 @@ Public Class M_BuscarFactura
                     M_Factura.btnActualizar.Enabled = True
                 End If
                 'Me.Close()
+                txtnombreB.Text = ""
+                txtnumeroB.Text = ""
                 Me.Hide()
 
                 M_Factura.ShowDialog()
@@ -99,7 +103,7 @@ Public Class M_BuscarFactura
             Try
                 Dim objFact As New ClsFactura
                 objFact.numero_ = txtnumeroB.Text
-                Dim dv As DataView = objFact.BuscarFactura.DefaultView
+                Dim dv As DataView = objFact.BuscarFacturaNumeroF.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
                 dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -128,6 +132,8 @@ Public Class M_BuscarFactura
     End Sub
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
         'Me.Close()
+        txtnombreB.Text = ""
+        txtnumeroB.Text = ""
         Me.Hide()
         M_Factura.limpiar()
         M_Factura.ShowDialog()

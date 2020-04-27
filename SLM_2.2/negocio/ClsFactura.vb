@@ -476,6 +476,24 @@ Public Class ClsFactura
             End Using
         End Using
     End Function
+    Public Function BuscarFacturaNumeroF() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_slmBuscarFacturaNumeroF"
+            cmd.Parameters.Add("@numero", SqlDbType.Int).Value = numero_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
     Public Function BuscarFacturaCliente() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection

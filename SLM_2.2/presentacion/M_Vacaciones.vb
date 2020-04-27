@@ -1,24 +1,24 @@
 ﻿Public Class M_Vacaciones
 
-    Private Sub txtJefeDepto_TextChanged(sender As Object, e As EventArgs) Handles txtJefeDepto.Click
+    Private Sub txtJefeDepto_Click(sender As Object, e As EventArgs) Handles txtJefeDepto.Click
         If lblEstado.Text <> "Deshabilitado" Then
             M_ListadoEmpleados.lblform.Text = "M_Vacaciones_Depto"
             M_ListadoEmpleados.ShowDialog()
         End If
     End Sub
-    Private Sub txtTalentoHumano_TextChanged(sender As Object, e As EventArgs) Handles txtTalentoHumano.Click
+    Private Sub txtTalentoHumano_Click(sender As Object, e As EventArgs) Handles txtTalentoHumano.Click
         If lblEstado.Text <> "Deshabilitado" Then
             M_ListadoEmpleados.lblform.Text = "M_Vacaciones_Humano"
             M_ListadoEmpleados.ShowDialog()
         End If
     End Sub
-    Private Sub txtSupervisor_TextChanged(sender As Object, e As EventArgs) Handles txtSupervisor.Click
+    Private Sub txtSupervisor_Click(sender As Object, e As EventArgs) Handles txtSupervisor.Click
         If lblEstado.Text <> "Deshabilitado" Then
             M_ListadoEmpleados.lblform.Text = "M_Vacaciones_Supervisor"
             M_ListadoEmpleados.ShowDialog()
         End If
     End Sub
-    Private Sub txtEmpleado_TextChanged(sender As Object, e As EventArgs) Handles txtEmpleado.Click
+    Private Sub txtEmpleado_Click(sender As Object, e As EventArgs) Handles txtEmpleado.Click
         If lblEstado.Text <> "Deshabilitado" Then
             M_ListadoEmpleados.lblform.Text = "M_Vacaciones_Empleado"
             M_ListadoEmpleados.ShowDialog()
@@ -99,28 +99,7 @@
     End Sub
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
-            If txtEmpleado.TextLength = 0 Then
-                txtEmpleado.BackColor = Color.Red
-            Else
-                txtEmpleado.BackColor = Color.White
-            End If
-            'If txtjefeInmediato.TextLength = 0 Then
-            '    txtjefeInmediato.BackColor = Color.Red
-            'Else
-            '    txtjefeInmediato.BackColor = Color.White
-            'End If
-            If txtTalentoHumano.TextLength = 0 Then
-                txtTalentoHumano.BackColor = Color.Red
-            Else
-                txtTalentoHumano.BackColor = Color.White
-            End If
-            'If Trim(rtxtAsunto.Text) = "" Then
-            '    rtxtAsunto.BackColor = Color.Red
-            'Else
-            '    sinDobleEspacio(rtxtAsunto.Text)
-            '    rtxtAsunto.BackColor = Color.White
-            'End If
-            If (txtEmpleado.BackColor = Color.White And txtTalentoHumano.BackColor = Color.White And rtxtMotivoInasistencia.BackColor = Color.White) Then
+            If (Trim(txtEmpleado.Text) <> "" And Trim(txtTalentoHumano.Text) <> "" And Trim(txtJefeDepto.Text) <> "" And Trim(txtSupervisor.Text) <> "" And Trim(rtxtMotivoInasistencia.Text) <> "") Then
                 Dim objVac As New ClsVacaciones
                 With objVac
                     .codigoEmpleado_ = lblcodeEmpleado.Text
@@ -158,28 +137,7 @@
 
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
-            If txtEmpleado.TextLength = 0 Then
-                txtEmpleado.BackColor = Color.Red
-            Else
-                txtEmpleado.BackColor = Color.White
-            End If
-            'If txtjefeInmediato.TextLength = 0 Then
-            '    txtjefeInmediato.BackColor = Color.Red
-            'Else
-            '    txtjefeInmediato.BackColor = Color.White
-            'End If
-            If txtTalentoHumano.TextLength = 0 Then
-                txtTalentoHumano.BackColor = Color.Red
-            Else
-                txtTalentoHumano.BackColor = Color.White
-            End If
-            'If Trim(rtxtAsunto.Text) = "" Then
-            '    rtxtAsunto.BackColor = Color.Red
-            'Else
-            '    sinDobleEspacio(rtxtAsunto.Text)
-            '    rtxtAsunto.BackColor = Color.White
-            'End If
-            If (txtEmpleado.BackColor = Color.White And txtcodigo.Text <> "" And txtTalentoHumano.BackColor = Color.White And rtxtMotivoInasistencia.BackColor = Color.White) Then
+            If (txtcodigo.Text <> "" And Trim(txtEmpleado.Text) <> "" And Trim(txtTalentoHumano.Text) <> "" And Trim(txtJefeDepto.Text) <> "" And Trim(txtSupervisor.Text) <> "" And Trim(rtxtMotivoInasistencia.Text) <> "") Then
                 Dim objVac As New ClsVacaciones
                 With objVac
                     .codigo_ = txtcodigo.Text
@@ -262,4 +220,110 @@
         Me.dgbtabla.Columns("codigoJefeDepto").Visible = False
         Me.dgbtabla.Columns("codigoTalentoHumano").Visible = False
     End Sub
+
+    Private Sub lblcodeTalHum_TextChanged(sender As Object, e As EventArgs) Handles lblcodeTalHum.TextChanged
+        Try
+            Dim objEmp As New ClsEmpleados
+            With objEmp
+                .codigo_ = lblcodeTalHum.Text
+            End With
+            Dim dt As New DataTable
+            dt = objEmp.BuscarEmpleadosPorCodigo()
+            Dim row As DataRow = dt.Rows(0)
+            txtTalentoHumano.Text = CStr(row("nombreCompleto"))
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Sub lblcodeEmpleado_TextChanged(sender As Object, e As EventArgs) Handles lblcodeEmpleado.TextChanged
+        Try
+            Dim objEmp As New ClsEmpleados
+            With objEmp
+                .codigo_ = lblcodeEmpleado.Text
+            End With
+            Dim dt As New DataTable
+            dt = objEmp.BuscarEmpleadosPorCodigo()
+            Dim row As DataRow = dt.Rows(0)
+            txtEmpleado.Text = CStr(row("nombreCompleto"))
+            txtFirmaEmpleado.Text = CStr(row("nombreCompleto"))
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Sub lblcodeSupervisor_TextChanged(sender As Object, e As EventArgs) Handles lblcodeSupervisor.TextChanged
+        Try
+            Dim objEmp As New ClsEmpleados
+            With objEmp
+                .codigo_ = lblcodeSupervisor.Text
+            End With
+            Dim dt As New DataTable
+            dt = objEmp.BuscarEmpleadosPorCodigo()
+            Dim row As DataRow = dt.Rows(0)
+            txtSupervisor.Text = CStr(row("nombreCompleto"))
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Sub lblcodeJefeDepto_TextChanged(sender As Object, e As EventArgs) Handles lblcodeJefeDepto.TextChanged
+        Try
+            Dim objEmp As New ClsEmpleados
+            With objEmp
+                .codigo_ = lblcodeJefeDepto.Text
+            End With
+            Dim dt As New DataTable
+            dt = objEmp.BuscarEmpleadosPorCodigo()
+            Dim row As DataRow = dt.Rows(0)
+            txtJefeDepto.Text = CStr(row("nombreCompleto"))
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
+        Try
+            If e.RowIndex >= 0 Then
+                limpiar()
+
+                txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                lblcodeEmpleado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                dtpFechaInasistencia.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+                rtxtMotivoInasistencia.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+                If Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value() Then
+                    rbtnSi.Checked = True
+                Else
+                    rbtnNo.Checked = True
+                End If
+                'valida que no sea nulo para poner la hora ingresada.
+                If Trim(Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value().ToString) <> "" Then
+                    dtpfecha.Format = DateTimePickerFormat.Short
+                    dtpfecha.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value().ToString
+                End If
+                'If IsDBNull(Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()) = False Then
+                '    dtpfecha.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()
+                'Else
+                '    dtpfecha.Format = DateTimePickerFormat.Custom
+                '    dtpfecha.CustomFormat = " "
+                'End If
+                rtxtcubrira.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(6).Value()
+                rtxtObservaciones.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(7).Value()
+                lblcodeSupervisor.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(8).Value()
+                lblcodeJefeDepto.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(9).Value()
+                lblcodeTalHum.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(10).Value()
+
+                Dim objEmp As New ClsEmpleados
+                With objEmp
+                    .codigo_ = lblcodeTalHum.Text
+                End With
+                Dim dt As New DataTable
+                dt = objEmp.BuscarEmpleadosPorCodigo()
+                Dim row As DataRow = dt.Rows(0)
+                txtTalentoHumano.Text = CStr(row("nombreCompleto"))
+
+                btnmodificar.Enabled = True
+                btnguardar.Enabled = False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
 End Class

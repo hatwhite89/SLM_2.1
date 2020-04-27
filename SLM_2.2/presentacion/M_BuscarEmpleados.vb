@@ -20,7 +20,7 @@ Public Class M_BuscarEmpleados
         Try
             Dim n As String = ""
             If e.RowIndex >= 0 Then
-                n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
+                n = MsgBox("¿Desea ver los datos del empleado?", MsgBoxStyle.YesNo)
             End If
             If n = vbYes Then
                 M_Empleados.limpiar()
@@ -107,8 +107,9 @@ Public Class M_BuscarEmpleados
                 'radio boton 
                 M_Empleados.lblEstadoCvl2.Text = CStr(row("estadoCivil"))
 
-                'imagen 
-                If IsDBNull(row("imagen")) = False Or Trim(row("imagen").ToString) <> "" Then
+                ''imagen 
+                'If IsDBNull(row("imagen")) = False Or Trim(row("imagen").ToString) <> "" Then
+                If Trim(row("imagen").ToString) <> "" Then
                     M_Empleados.txtRuta.Text = CStr(row("imagen"))
                     M_Empleados.pbxEmpleado.LoadAsync(row("imagen"))
                 End If
@@ -116,8 +117,7 @@ Public Class M_BuscarEmpleados
                 M_Empleados.btnguardar.Enabled = False
                 M_Empleados.btnmodificar.Enabled = True
                 M_Empleados.lblform.Text = "M_BuscarEmpleados"
-                M_Empleados.ShowDialog()
-                Me.Close()
+                M_Empleados.Show()
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -156,11 +156,10 @@ Public Class M_BuscarEmpleados
         End If
     End Sub
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
-        'Me.Hide()
+        'Me.Close()
         M_Empleados.limpiar()
         M_Empleados.lblform.Text = "M_BuscarEmpleados"
-        M_Empleados.ShowDialog()
-        Me.Close()
+        M_Empleados.Show()
     End Sub
 
 End Class
