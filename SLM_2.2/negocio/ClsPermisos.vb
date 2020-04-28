@@ -2,7 +2,7 @@
 
 Public Class ClsPermisos
     Dim asunto As String
-    Dim codigo, codigoEmpleado, codigoJefeInmediato, codigoTalentoHumano As Integer
+    Dim codigo, codigoEmpleado, codigoJefeInmediato, codigoTalentoHumano, codigoDepto As Integer
     Dim fecha As Date
     Dim entradaTarde, salidaTemprano, salidaTarde As System.Nullable(Of Date)
     'Constructor
@@ -56,6 +56,14 @@ Public Class ClsPermisos
         End Get
         Set(value As Integer)
             codigoTalentoHumano = value
+        End Set
+    End Property
+    Public Property codigoDepto_ As Integer
+        Get
+            Return codigoDepto
+        End Get
+        Set(value As Integer)
+            codigoDepto = value
         End Set
     End Property
     Public Property entradaTarde_ As System.Nullable(Of Date)
@@ -248,6 +256,42 @@ Public Class ClsPermisos
             End Using
         End Using
 
+    End Function
+
+    Public Function BuscarPermisoJefeInmediato() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_slmBuscarPermisoJefeInmediato"
+            cmd.Parameters.Add("@codigoDepto", SqlDbType.Int).Value = codigoDepto_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+    Public Function BuscarJefeTalentoHumano() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("M_slmBuscarPermisoJefeTalentoHumano", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
     End Function
 
     Public Function BuscarPermisos() As DataTable

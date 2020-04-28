@@ -3,6 +3,7 @@ Public Class M_ListadoEmpleados
 
     Private Sub M_ListadoEmpleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SeleccionarEmpleados()
+        Me.dgbtabla.Columns("codigoDepto").Visible = False
     End Sub
     Public Sub SeleccionarEmpleados()
         Dim objEmp As New ClsEmpleados
@@ -47,6 +48,80 @@ Public Class M_ListadoEmpleados
                 If n = vbYes Then
                     M_Permisos.lblcodigoEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
                     M_Permisos.txtEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    'buscar el jefe inmediato del empleado
+                    Dim objEmp As New ClsPermisos
+                    With objEmp
+                        .codigoDepto_ = Convert.ToInt64(dgbtabla.Rows(e.RowIndex).Cells(2).Value())
+                    End With
+                    Dim dt As New DataTable
+                    dt = objEmp.BuscarPermisoJefeInmediato()
+                    Dim row As DataRow = dt.Rows(0)
+                    M_Permisos.lblcodeJefeInme.Text = CStr(row("codigo"))
+                    M_Permisos.txtjefeInmediato.Text = CStr(row("nombreCompleto"))
+
+                    'buscar el jefe de talento humano
+                    dt = objEmp.BuscarJefeTalentoHumano()
+                    row = dt.Rows(0)
+                    M_Permisos.lblcodeTalentoHumano.Text = CStr(row("codigo"))
+                    M_Permisos.txtTalentoHumano.Text = CStr(row("nombreCompleto"))
+                    Me.Close()
+                End If
+            ElseIf lblform.Text = "M_Vacaciones_Depto" Then
+                Dim n As String = ""
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_Vacaciones.lblcodeJefeDepto.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_Vacaciones.txtJefeDepto.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    Me.Close()
+                End If
+            ElseIf lblform.Text = "M_Vacaciones_Humano" Then
+                Dim n As String = ""
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_Vacaciones.lblcodeTalHum.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_Vacaciones.txtTalentoHumano.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    Me.Close()
+                End If
+            ElseIf lblform.Text = "M_Vacaciones_Supervisor" Then
+                Dim n As String = ""
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_Vacaciones.lblcodeSupervisor.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_Vacaciones.txtSupervisor.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    Me.Close()
+                End If
+            ElseIf lblform.Text = "M_Vacaciones_Empleado" Then
+                Dim n As String = ""
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_Vacaciones.lblcodeEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_Vacaciones.txtEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    M_Vacaciones.txtFirmaEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+
+                    'buscar el jefe inmediato del empleado
+                    Dim objEmp As New ClsPermisos
+                    With objEmp
+                        .codigoDepto_ = Convert.ToInt64(dgbtabla.Rows(e.RowIndex).Cells(2).Value())
+                    End With
+                    Dim dt As New DataTable
+                    dt = objEmp.BuscarPermisoJefeInmediato()
+                    Dim row As DataRow = dt.Rows(0)
+                    M_Vacaciones.lblcodeJefeDepto.Text = CStr(row("codigo"))
+                    M_Vacaciones.txtJefeDepto.Text = CStr(row("nombreCompleto"))
+
+                    'buscar el jefe de talento humano
+                    dt = objEmp.BuscarJefeTalentoHumano()
+                    row = dt.Rows(0)
+                    M_Vacaciones.lblcodeTalHum.Text = CStr(row("codigo"))
+                    M_Vacaciones.txtTalentoHumano.Text = CStr(row("nombreCompleto"))
                     Me.Close()
                 End If
             End If

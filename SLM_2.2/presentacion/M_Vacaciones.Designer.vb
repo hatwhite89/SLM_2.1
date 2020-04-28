@@ -29,12 +29,26 @@ Partial Class M_Vacaciones
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnombreB = New System.Windows.Forms.Label()
         Me.gbxRegistrar = New System.Windows.Forms.GroupBox()
-        Me.lblcodeTalentoHumano = New System.Windows.Forms.Label()
-        Me.lblcodeJefeInme = New System.Windows.Forms.Label()
-        Me.lblcodigoEmpleado = New System.Windows.Forms.Label()
-        Me.txtjefeInmediato = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblEstado = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.rtxtcubrira = New System.Windows.Forms.RichTextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.lblcodeTalHum = New System.Windows.Forms.Label()
+        Me.lblcodeJefeDepto = New System.Windows.Forms.Label()
+        Me.txtJefeDepto = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.txtTalentoHumano = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.dtpfecha = New System.Windows.Forms.DateTimePicker()
+        Me.rbtnNo = New System.Windows.Forms.RadioButton()
+        Me.lblcodeSupervisor = New System.Windows.Forms.Label()
+        Me.rbtnSi = New System.Windows.Forms.RadioButton()
+        Me.rtxtMotivoInasistencia = New System.Windows.Forms.RichTextBox()
+        Me.dtpFechaInasistencia = New System.Windows.Forms.DateTimePicker()
+        Me.lblcodeEmpleado = New System.Windows.Forms.Label()
+        Me.txtFirmaEmpleado = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtSupervisor = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -46,25 +60,11 @@ Partial Class M_Vacaciones
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
-        Me.rtxtAsunto = New System.Windows.Forms.RichTextBox()
+        Me.rtxtObservaciones = New System.Windows.Forms.RichTextBox()
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxRegistrar.SuspendLayout()
@@ -139,26 +139,26 @@ Partial Class M_Vacaciones
         '
         'gbxRegistrar
         '
+        Me.gbxRegistrar.Controls.Add(Me.lblEstado)
         Me.gbxRegistrar.Controls.Add(Me.Label15)
-        Me.gbxRegistrar.Controls.Add(Me.RichTextBox2)
+        Me.gbxRegistrar.Controls.Add(Me.rtxtcubrira)
         Me.gbxRegistrar.Controls.Add(Me.Label14)
-        Me.gbxRegistrar.Controls.Add(Me.Label10)
-        Me.gbxRegistrar.Controls.Add(Me.Label11)
-        Me.gbxRegistrar.Controls.Add(Me.TextBox1)
+        Me.gbxRegistrar.Controls.Add(Me.lblcodeTalHum)
+        Me.gbxRegistrar.Controls.Add(Me.lblcodeJefeDepto)
+        Me.gbxRegistrar.Controls.Add(Me.txtJefeDepto)
         Me.gbxRegistrar.Controls.Add(Me.Label12)
-        Me.gbxRegistrar.Controls.Add(Me.TextBox2)
-        Me.gbxRegistrar.Controls.Add(Me.Label13)
-        Me.gbxRegistrar.Controls.Add(Me.DateTimePicker1)
-        Me.gbxRegistrar.Controls.Add(Me.RadioButton2)
-        Me.gbxRegistrar.Controls.Add(Me.lblcodeTalentoHumano)
-        Me.gbxRegistrar.Controls.Add(Me.RadioButton1)
-        Me.gbxRegistrar.Controls.Add(Me.RichTextBox1)
-        Me.gbxRegistrar.Controls.Add(Me.dtpFecha)
-        Me.gbxRegistrar.Controls.Add(Me.lblcodeJefeInme)
-        Me.gbxRegistrar.Controls.Add(Me.lblcodigoEmpleado)
-        Me.gbxRegistrar.Controls.Add(Me.txtjefeInmediato)
-        Me.gbxRegistrar.Controls.Add(Me.Label8)
         Me.gbxRegistrar.Controls.Add(Me.txtTalentoHumano)
+        Me.gbxRegistrar.Controls.Add(Me.Label13)
+        Me.gbxRegistrar.Controls.Add(Me.dtpfecha)
+        Me.gbxRegistrar.Controls.Add(Me.rbtnNo)
+        Me.gbxRegistrar.Controls.Add(Me.lblcodeSupervisor)
+        Me.gbxRegistrar.Controls.Add(Me.rbtnSi)
+        Me.gbxRegistrar.Controls.Add(Me.rtxtMotivoInasistencia)
+        Me.gbxRegistrar.Controls.Add(Me.dtpFechaInasistencia)
+        Me.gbxRegistrar.Controls.Add(Me.lblcodeEmpleado)
+        Me.gbxRegistrar.Controls.Add(Me.txtFirmaEmpleado)
+        Me.gbxRegistrar.Controls.Add(Me.Label8)
+        Me.gbxRegistrar.Controls.Add(Me.txtSupervisor)
         Me.gbxRegistrar.Controls.Add(Me.Label9)
         Me.gbxRegistrar.Controls.Add(Me.Label5)
         Me.gbxRegistrar.Controls.Add(Me.Label7)
@@ -170,7 +170,7 @@ Partial Class M_Vacaciones
         Me.gbxRegistrar.Controls.Add(Me.btnmodificar)
         Me.gbxRegistrar.Controls.Add(Me.btnnuevo)
         Me.gbxRegistrar.Controls.Add(Me.btnguardar)
-        Me.gbxRegistrar.Controls.Add(Me.rtxtAsunto)
+        Me.gbxRegistrar.Controls.Add(Me.rtxtObservaciones)
         Me.gbxRegistrar.Controls.Add(Me.btncancelar)
         Me.gbxRegistrar.Controls.Add(Me.Label6)
         Me.gbxRegistrar.Controls.Add(Me.Label1)
@@ -182,46 +182,182 @@ Partial Class M_Vacaciones
         Me.gbxRegistrar.TabStop = False
         Me.gbxRegistrar.Text = "REGISTRAR HOJA DE INASISTENCIA O SOLICITUD DE VACACIONES"
         '
-        'lblcodeTalentoHumano
+        'lblEstado
         '
-        Me.lblcodeTalentoHumano.AutoSize = True
-        Me.lblcodeTalentoHumano.Location = New System.Drawing.Point(851, 216)
-        Me.lblcodeTalentoHumano.Name = "lblcodeTalentoHumano"
-        Me.lblcodeTalentoHumano.Size = New System.Drawing.Size(80, 17)
-        Me.lblcodeTalentoHumano.TabIndex = 162
-        Me.lblcodeTalentoHumano.Text = "codTalHum"
-        Me.lblcodeTalentoHumano.Visible = False
+        Me.lblEstado.AutoSize = True
+        Me.lblEstado.Location = New System.Drawing.Point(13, 47)
+        Me.lblEstado.Name = "lblEstado"
+        Me.lblEstado.Size = New System.Drawing.Size(87, 17)
+        Me.lblEstado.TabIndex = 177
+        Me.lblEstado.Text = "LabelEstado"
+        Me.lblEstado.Visible = False
         '
-        'lblcodeJefeInme
+        'Label15
         '
-        Me.lblcodeJefeInme.AutoSize = True
-        Me.lblcodeJefeInme.Location = New System.Drawing.Point(875, 185)
-        Me.lblcodeJefeInme.Name = "lblcodeJefeInme"
-        Me.lblcodeJefeInme.Size = New System.Drawing.Size(57, 17)
-        Me.lblcodeJefeInme.TabIndex = 161
-        Me.lblcodeJefeInme.Text = "codJeIn"
-        Me.lblcodeJefeInme.Visible = False
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(108, 126)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(223, 17)
+        Me.Label15.TabIndex = 176
+        Me.Label15.Text = "Uso exclusivo de Talento Humano"
         '
-        'lblcodigoEmpleado
+        'rtxtcubrira
         '
-        Me.lblcodigoEmpleado.AutoSize = True
-        Me.lblcodigoEmpleado.Location = New System.Drawing.Point(877, 32)
-        Me.lblcodigoEmpleado.Name = "lblcodigoEmpleado"
-        Me.lblcodigoEmpleado.Size = New System.Drawing.Size(59, 17)
-        Me.lblcodigoEmpleado.TabIndex = 160
-        Me.lblcodigoEmpleado.Text = "codEmp"
-        Me.lblcodigoEmpleado.Visible = False
+        Me.rtxtcubrira.Location = New System.Drawing.Point(146, 169)
+        Me.rtxtcubrira.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rtxtcubrira.MaxLength = 200
+        Me.rtxtcubrira.Name = "rtxtcubrira"
+        Me.rtxtcubrira.Size = New System.Drawing.Size(276, 37)
+        Me.rtxtcubrira.TabIndex = 175
+        Me.rtxtcubrira.Text = ""
         '
-        'txtjefeInmediato
+        'Label14
         '
-        Me.txtjefeInmediato.Location = New System.Drawing.Point(669, 180)
-        Me.txtjefeInmediato.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtjefeInmediato.MaxLength = 80
-        Me.txtjefeInmediato.Name = "txtjefeInmediato"
-        Me.txtjefeInmediato.ReadOnly = True
-        Me.txtjefeInmediato.Size = New System.Drawing.Size(200, 22)
-        Me.txtjefeInmediato.TabIndex = 159
-        Me.txtjefeInmediato.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(82, 172)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(58, 17)
+        Me.Label14.TabIndex = 174
+        Me.Label14.Text = "Cubrirá:"
+        '
+        'lblcodeTalHum
+        '
+        Me.lblcodeTalHum.AutoSize = True
+        Me.lblcodeTalHum.Location = New System.Drawing.Point(851, 284)
+        Me.lblcodeTalHum.Name = "lblcodeTalHum"
+        Me.lblcodeTalHum.Size = New System.Drawing.Size(80, 17)
+        Me.lblcodeTalHum.TabIndex = 173
+        Me.lblcodeTalHum.Text = "codTalHum"
+        Me.lblcodeTalHum.Visible = False
+        '
+        'lblcodeJefeDepto
+        '
+        Me.lblcodeJefeDepto.AutoSize = True
+        Me.lblcodeJefeDepto.Location = New System.Drawing.Point(875, 255)
+        Me.lblcodeJefeDepto.Name = "lblcodeJefeDepto"
+        Me.lblcodeJefeDepto.Size = New System.Drawing.Size(84, 17)
+        Me.lblcodeJefeDepto.TabIndex = 172
+        Me.lblcodeJefeDepto.Text = "codJeDepto"
+        Me.lblcodeJefeDepto.Visible = False
+        '
+        'txtJefeDepto
+        '
+        Me.txtJefeDepto.Location = New System.Drawing.Point(669, 250)
+        Me.txtJefeDepto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtJefeDepto.MaxLength = 80
+        Me.txtJefeDepto.Name = "txtJefeDepto"
+        Me.txtJefeDepto.ReadOnly = True
+        Me.txtJefeDepto.Size = New System.Drawing.Size(200, 22)
+        Me.txtJefeDepto.TabIndex = 171
+        Me.txtJefeDepto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(532, 255)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(120, 17)
+        Me.Label12.TabIndex = 170
+        Me.Label12.Text = "Firma Jefe Depto:"
+        '
+        'txtTalentoHumano
+        '
+        Me.txtTalentoHumano.Location = New System.Drawing.Point(669, 284)
+        Me.txtTalentoHumano.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtTalentoHumano.MaxLength = 80
+        Me.txtTalentoHumano.Name = "txtTalentoHumano"
+        Me.txtTalentoHumano.ReadOnly = True
+        Me.txtTalentoHumano.Size = New System.Drawing.Size(200, 22)
+        Me.txtTalentoHumano.TabIndex = 169
+        Me.txtTalentoHumano.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(443, 289)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(209, 17)
+        Me.Label13.TabIndex = 168
+        Me.Label13.Text = "Firma Gestión Talento Humano:"
+        '
+        'dtpfecha
+        '
+        Me.dtpfecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpfecha.Location = New System.Drawing.Point(695, 121)
+        Me.dtpfecha.Name = "dtpfecha"
+        Me.dtpfecha.Size = New System.Drawing.Size(176, 22)
+        Me.dtpfecha.TabIndex = 167
+        '
+        'rbtnNo
+        '
+        Me.rbtnNo.AutoSize = True
+        Me.rbtnNo.Location = New System.Drawing.Point(573, 122)
+        Me.rbtnNo.Name = "rbtnNo"
+        Me.rbtnNo.Size = New System.Drawing.Size(47, 21)
+        Me.rbtnNo.TabIndex = 166
+        Me.rbtnNo.TabStop = True
+        Me.rbtnNo.Text = "No"
+        Me.rbtnNo.UseVisualStyleBackColor = True
+        '
+        'lblcodeSupervisor
+        '
+        Me.lblcodeSupervisor.AutoSize = True
+        Me.lblcodeSupervisor.Location = New System.Drawing.Point(851, 216)
+        Me.lblcodeSupervisor.Name = "lblcodeSupervisor"
+        Me.lblcodeSupervisor.Size = New System.Drawing.Size(39, 17)
+        Me.lblcodeSupervisor.TabIndex = 162
+        Me.lblcodeSupervisor.Text = "code"
+        Me.lblcodeSupervisor.Visible = False
+        '
+        'rbtnSi
+        '
+        Me.rbtnSi.AutoSize = True
+        Me.rbtnSi.Location = New System.Drawing.Point(526, 122)
+        Me.rbtnSi.Name = "rbtnSi"
+        Me.rbtnSi.Size = New System.Drawing.Size(41, 21)
+        Me.rbtnSi.TabIndex = 165
+        Me.rbtnSi.TabStop = True
+        Me.rbtnSi.Text = "Si"
+        Me.rbtnSi.UseVisualStyleBackColor = True
+        '
+        'rtxtMotivoInasistencia
+        '
+        Me.rtxtMotivoInasistencia.Location = New System.Drawing.Point(670, 59)
+        Me.rtxtMotivoInasistencia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rtxtMotivoInasistencia.MaxLength = 200
+        Me.rtxtMotivoInasistencia.Name = "rtxtMotivoInasistencia"
+        Me.rtxtMotivoInasistencia.Size = New System.Drawing.Size(200, 37)
+        Me.rtxtMotivoInasistencia.TabIndex = 164
+        Me.rtxtMotivoInasistencia.Text = ""
+        '
+        'dtpFechaInasistencia
+        '
+        Me.dtpFechaInasistencia.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaInasistencia.Location = New System.Drawing.Point(221, 74)
+        Me.dtpFechaInasistencia.Name = "dtpFechaInasistencia"
+        Me.dtpFechaInasistencia.Size = New System.Drawing.Size(200, 22)
+        Me.dtpFechaInasistencia.TabIndex = 163
+        '
+        'lblcodeEmpleado
+        '
+        Me.lblcodeEmpleado.AutoSize = True
+        Me.lblcodeEmpleado.Location = New System.Drawing.Point(877, 32)
+        Me.lblcodeEmpleado.Name = "lblcodeEmpleado"
+        Me.lblcodeEmpleado.Size = New System.Drawing.Size(59, 17)
+        Me.lblcodeEmpleado.TabIndex = 160
+        Me.lblcodeEmpleado.Text = "codEmp"
+        Me.lblcodeEmpleado.Visible = False
+        '
+        'txtFirmaEmpleado
+        '
+        Me.txtFirmaEmpleado.Location = New System.Drawing.Point(669, 180)
+        Me.txtFirmaEmpleado.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtFirmaEmpleado.MaxLength = 80
+        Me.txtFirmaEmpleado.Name = "txtFirmaEmpleado"
+        Me.txtFirmaEmpleado.ReadOnly = True
+        Me.txtFirmaEmpleado.Size = New System.Drawing.Size(200, 22)
+        Me.txtFirmaEmpleado.TabIndex = 159
+        Me.txtFirmaEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label8
         '
@@ -232,16 +368,16 @@ Partial Class M_Vacaciones
         Me.Label8.TabIndex = 158
         Me.Label8.Text = "Firma del Empleado:"
         '
-        'txtTalentoHumano
+        'txtSupervisor
         '
-        Me.txtTalentoHumano.Location = New System.Drawing.Point(669, 216)
-        Me.txtTalentoHumano.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtTalentoHumano.MaxLength = 80
-        Me.txtTalentoHumano.Name = "txtTalentoHumano"
-        Me.txtTalentoHumano.ReadOnly = True
-        Me.txtTalentoHumano.Size = New System.Drawing.Size(200, 22)
-        Me.txtTalentoHumano.TabIndex = 157
-        Me.txtTalentoHumano.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtSupervisor.Location = New System.Drawing.Point(669, 216)
+        Me.txtSupervisor.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtSupervisor.MaxLength = 80
+        Me.txtSupervisor.Name = "txtSupervisor"
+        Me.txtSupervisor.ReadOnly = True
+        Me.txtSupervisor.Size = New System.Drawing.Size(200, 22)
+        Me.txtSupervisor.TabIndex = 157
+        Me.txtSupervisor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label9
         '
@@ -322,6 +458,7 @@ Partial Class M_Vacaciones
         'btnmodificar
         '
         Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnmodificar.Enabled = False
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
@@ -361,15 +498,15 @@ Partial Class M_Vacaciones
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
         '
-        'rtxtAsunto
+        'rtxtObservaciones
         '
-        Me.rtxtAsunto.Location = New System.Drawing.Point(146, 210)
-        Me.rtxtAsunto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.rtxtAsunto.MaxLength = 200
-        Me.rtxtAsunto.Name = "rtxtAsunto"
-        Me.rtxtAsunto.Size = New System.Drawing.Size(276, 37)
-        Me.rtxtAsunto.TabIndex = 144
-        Me.rtxtAsunto.Text = ""
+        Me.rtxtObservaciones.Location = New System.Drawing.Point(146, 210)
+        Me.rtxtObservaciones.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rtxtObservaciones.MaxLength = 200
+        Me.rtxtObservaciones.Name = "rtxtObservaciones"
+        Me.rtxtObservaciones.Size = New System.Drawing.Size(276, 37)
+        Me.rtxtObservaciones.TabIndex = 144
+        Me.rtxtObservaciones.Text = ""
         '
         'btncancelar
         '
@@ -412,142 +549,6 @@ Partial Class M_Vacaciones
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Motivo de Inasistencia:"
         '
-        'dtpFecha
-        '
-        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(221, 74)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(200, 22)
-        Me.dtpFecha.TabIndex = 163
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.Location = New System.Drawing.Point(670, 59)
-        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.RichTextBox1.MaxLength = 200
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(200, 37)
-        Me.RichTextBox1.TabIndex = 164
-        Me.RichTextBox1.Text = ""
-        '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(526, 122)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(41, 21)
-        Me.RadioButton1.TabIndex = 165
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Si"
-        Me.RadioButton1.UseVisualStyleBackColor = True
-        '
-        'RadioButton2
-        '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(573, 122)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(47, 21)
-        Me.RadioButton2.TabIndex = 166
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "No"
-        Me.RadioButton2.UseVisualStyleBackColor = True
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(695, 121)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(176, 22)
-        Me.DateTimePicker1.TabIndex = 167
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(851, 284)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(80, 17)
-        Me.Label10.TabIndex = 173
-        Me.Label10.Text = "codTalHum"
-        Me.Label10.Visible = False
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(875, 255)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(57, 17)
-        Me.Label11.TabIndex = 172
-        Me.Label11.Text = "codJeIn"
-        Me.Label11.Visible = False
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(669, 250)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TextBox1.MaxLength = 80
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(200, 22)
-        Me.TextBox1.TabIndex = 171
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(532, 255)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(120, 17)
-        Me.Label12.TabIndex = 170
-        Me.Label12.Text = "Firma Jefe Depto:"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(669, 284)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TextBox2.MaxLength = 80
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(200, 22)
-        Me.TextBox2.TabIndex = 169
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(443, 289)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(209, 17)
-        Me.Label13.TabIndex = 168
-        Me.Label13.Text = "Firma Gestión Talento Humano:"
-        '
-        'RichTextBox2
-        '
-        Me.RichTextBox2.Location = New System.Drawing.Point(146, 169)
-        Me.RichTextBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.RichTextBox2.MaxLength = 200
-        Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(276, 37)
-        Me.RichTextBox2.TabIndex = 175
-        Me.RichTextBox2.Text = ""
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(82, 172)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(58, 17)
-        Me.Label14.TabIndex = 174
-        Me.Label14.Text = "Cubrirá:"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(108, 126)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(223, 17)
-        Me.Label15.TabIndex = 176
-        Me.Label15.Text = "Uso exclusivo de Talento Humano"
-        '
         'M_Vacaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -576,12 +577,11 @@ Partial Class M_Vacaciones
     Friend WithEvents txtnombreB As TextBox
     Friend WithEvents lblnombreB As Label
     Friend WithEvents gbxRegistrar As GroupBox
-    Friend WithEvents lblcodeTalentoHumano As Label
-    Friend WithEvents lblcodeJefeInme As Label
-    Friend WithEvents lblcodigoEmpleado As Label
-    Friend WithEvents txtjefeInmediato As TextBox
+    Friend WithEvents lblcodeSupervisor As Label
+    Friend WithEvents lblcodeEmpleado As Label
+    Friend WithEvents txtFirmaEmpleado As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents txtTalentoHumano As TextBox
+    Friend WithEvents txtSupervisor As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label7 As Label
@@ -593,23 +593,24 @@ Partial Class M_Vacaciones
     Friend WithEvents btnmodificar As Button
     Friend WithEvents btnnuevo As Button
     Friend WithEvents btnguardar As Button
-    Friend WithEvents rtxtAsunto As RichTextBox
+    Friend WithEvents rtxtObservaciones As RichTextBox
     Friend WithEvents btncancelar As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents RichTextBox1 As RichTextBox
-    Friend WithEvents dtpFecha As DateTimePicker
+    Friend WithEvents dtpfecha As DateTimePicker
+    Friend WithEvents rbtnNo As RadioButton
+    Friend WithEvents rbtnSi As RadioButton
+    Friend WithEvents rtxtMotivoInasistencia As RichTextBox
+    Friend WithEvents dtpFechaInasistencia As DateTimePicker
     Friend WithEvents Label15 As Label
-    Friend WithEvents RichTextBox2 As RichTextBox
+    Friend WithEvents rtxtcubrira As RichTextBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents lblcodeTalHum As Label
+    Friend WithEvents lblcodeJefeDepto As Label
+    Friend WithEvents txtJefeDepto As TextBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtTalentoHumano As TextBox
     Friend WithEvents Label13 As Label
+    Friend WithEvents lblEstado As Label
 End Class

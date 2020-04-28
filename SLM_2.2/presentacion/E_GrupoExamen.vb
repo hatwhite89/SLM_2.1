@@ -46,9 +46,8 @@
                     n = MsgBox("¿Desea utilizar el area de trabajo en el empleado?", MsgBoxStyle.YesNo)
                 End If
                 If n = vbYes Then
-                    M_Empleados.lblcodigoArea.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-                    M_Empleados.txtcodigoArea.Text = txtcodigo.Text
-                    M_Empleados.txtdescripcionArea.Text = txtnombre.Text
+                    'M_Empleados.lblcodigoArea.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    'M_Empleados.txtArea.Text = txtnombre.Text
                     Me.Close()
                 End If
             End If

@@ -2,11 +2,6 @@
     Dim Imagen As String
     'Dim img As Image
     'Dim datos As Byte()
-    Private Sub btnPuestoTrabajo_Click(sender As Object, e As EventArgs) Handles btnPuestoTrabajo.Click
-        M_PuestoTrabajo.lblform.Text = "Empleados"
-        M_PuestoTrabajo.ShowDialog()
-    End Sub
-
     Private Sub btnProfesion_Click(sender As Object, e As EventArgs) Handles btnProfesion.Click
         M_Profesion.lblform.Text = "Empleados"
         M_Profesion.ShowDialog()
@@ -20,7 +15,7 @@
             txtapellido2.Text = ""
             txtnombreCompleto.Text = ""
             lblcodigoArea.Text = ""
-            txtcodigoArea.Text = ""
+            txtArea.Text = ""
             cbxCrearPersona.Checked = False
             dtpfechaAlta.Value = Date.Now
             mtxtidentidad.Text = ""
@@ -33,8 +28,11 @@
             txtcodigoFormaPago.Text = ""
 
             rtxtmotivoBaja.Text = ""
-            txtcodigoPuestoTrabajo.Text = ""
+            lblcodePuesto.Text = ""
+            txtPuestoTrabajo.Text = ""
+            lblcodeDepto.Text = ""
             txtdepartamento.Text = ""
+            txtsalario.Text = ""
             cmbxtipoCuenta.SelectedItem = ""
 
             cmbxcodigoContrato.SelectedItem = ""
@@ -112,77 +110,69 @@
         End If
     End Sub
 
-    Private Sub txtcodigoPuestoTrabajo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoPuestoTrabajo.TextChanged
-        If (txtcodigoPuestoTrabajo.Text <> "") Then
+    Private Sub lblcodePuesto_TextChanged(sender As Object, e As EventArgs) Handles lblcodePuesto.TextChanged
+        If (lblcodePuesto.Text <> "") Then
             Try
                 Dim objPuesto As New ClsPuestoTrabajo
                 With objPuesto
-                    .Codigo_ = txtcodigoPuestoTrabajo.Text
+                    .Codigo_ = lblcodePuesto.Text
                 End With
                 Dim dt As New DataTable
                 dt = objPuesto.BuscarPuestoTrabajoCode()
                 Dim row As DataRow = dt.Rows(0)
-                txtdescripcionPuesto.Text = CStr(row("descripcion"))
-                txtcodigoPuestoTrabajo.BackColor = Color.White
+                txtPuestoTrabajo.Text = CStr(row("descripcion"))
+                txtPuestoTrabajo.BackColor = Color.White
             Catch ex As Exception
-                txtcodigoPuestoTrabajo.BackColor = Color.Red
-                txtdescripcionPuesto.Text = ""
+                txtPuestoTrabajo.BackColor = Color.Red
+                txtPuestoTrabajo.Text = ""
+                lblcodePuesto.Text = ""
             End Try
         Else
-            txtcodigoPuestoTrabajo.Text = ""
-            txtdescripcionPuesto.Text = ""
-            txtcodigoPuestoTrabajo.BackColor = Color.White
+            lblcodePuesto.Text = ""
+            txtPuestoTrabajo.Text = ""
+            txtPuestoTrabajo.BackColor = Color.White
         End If
-    End Sub
-
-    Private Sub btnArea_Click(sender As Object, e As EventArgs) Handles btnArea.Click
-        E_GrupoExamen.lblform.Text = "Empleados"
-        E_GrupoExamen.ShowDialog()
     End Sub
 
     Private Sub lblcodigoArea_TextChanged(sender As Object, e As EventArgs) Handles lblcodigoArea.TextChanged
         If (lblcodigoArea.Text <> "") Then
             Try
-                Dim objGroup As New ClsGrupoExamen
-                With objGroup
+                Dim objArea As New ClsArea
+                With objArea
                     .codigo_ = lblcodigoArea.Text
                 End With
                 Dim dt As New DataTable
-                dt = objGroup.BuscarGrupoExamenCodigo()
+                dt = objArea.BuscarArea()
                 Dim row As DataRow = dt.Rows(0)
-                txtdescripcionArea.Text = CStr(row("nombre"))
-                txtcodigoArea.Text = CStr(row("codigoGrupoExamen"))
-                txtcodigoArea.BackColor = Color.White
+                txtArea.Text = CStr(row("nombre"))
+                txtArea.BackColor = Color.White
             Catch ex As Exception
-                txtcodigoArea.BackColor = Color.Red
-                txtdescripcionArea.Text = ""
+                txtArea.BackColor = Color.Red
+                txtArea.Text = ""
                 lblcodigoArea.Text = ""
             End Try
         End If
     End Sub
-    Private Sub txtcodigoArea_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoArea.TextChanged
-        If (txtcodigoArea.Text <> "") Then
+    Private Sub lblcodeDepto_TextChanged(sender As Object, e As EventArgs) Handles lblcodeDepto.TextChanged
+        If (lblcodeDepto.Text <> "") Then
             Try
-                Dim objGroup As New ClsGrupoExamen
-                With objGroup
-                    .codigoGrupoExamen_ = txtcodigoArea.Text
+                Dim objDepto As New ClsDepartamento
+                With objDepto
+                    .codigo_ = lblcodeDepto.Text
                 End With
                 Dim dt As New DataTable
-                dt = objGroup.BuscarGrupoExamenCodigoBreve()
+                dt = objDepto.BuscarDepartamento()
                 Dim row As DataRow = dt.Rows(0)
-                txtdescripcionArea.Text = CStr(row("nombre"))
-                lblcodigoArea.Text = CStr(row("codigo"))
-                txtcodigoArea.BackColor = Color.White
+                txtdepartamento.Text = CStr(row("nombre"))
+                txtdepartamento.BackColor = Color.White
             Catch ex As Exception
-                txtcodigoArea.BackColor = Color.Red
-                txtdescripcionArea.Text = ""
-                lblcodigoArea.Text = ""
+                txtdepartamento.BackColor = Color.Red
+                lblcodeDepto.Text = ""
             End Try
         Else
-            txtcodigoArea.Text = ""
-            txtdescripcionArea.Text = ""
-            lblcodigoArea.Text = ""
-            txtcodigoArea.BackColor = Color.White
+            txtdepartamento.Text = ""
+            lblcodeDepto.Text = ""
+            txtdepartamento.BackColor = Color.White
         End If
     End Sub
 
@@ -230,10 +220,6 @@
 
     End Sub
 
-    Private Sub btnbuscarTipo_Click(sender As Object, e As EventArgs)
-        E_GrupoExamen.lblform.Text = "Empleados"
-        E_GrupoExamen.ShowDialog()
-    End Sub
     Private Sub sinDobleEspacio(ByRef cadena As String)
         Dim texto As String = ""
         Dim testArray() As String = Split(cadena)
@@ -319,7 +305,7 @@
             Dim dt As New DataTable
             'Dim row As DataRow
 
-            If (txtnombreCompleto.Text <> "" And Trim(txtcodigoHorario.Text) <> "" And Trim(txtcodigoFormaPago.Text) <> "") Then
+            If (Trim(txtsalario.Text) <> "" And txtnombreCompleto.Text <> "" And Trim(txtcodigoHorario.Text) <> "" And Trim(txtcodigoFormaPago.Text) <> "") Then
 
                 Dim objEmp As New ClsEmpleados
                 With objEmp
@@ -328,7 +314,7 @@
                     .Apellido1_ = txtapellido1.Text
                     .Apellido2_ = txtapellido2.Text
                     .NombreCompleto_ = txtnombreCompleto.Text
-                    .codigoGrupo_ = Convert.ToInt64(lblcodigoArea.Text)
+                    .codigoArea_ = Convert.ToInt64(lblcodigoArea.Text)
                     .crearPersona_ = cbxCrearPersona.Checked
                     .fechaAlta_ = dtpfechaAlta.Value
                     .nIdentidad_ = mtxtidentidad.Text
@@ -354,8 +340,9 @@
                     '.fechaAvisoBaja_ = dtpFechaAvisoBaja.Text
                     MsgBox("paso")
                     .motivoBaja_ = rtxtmotivoBaja.Text
-                    .codigoPuestoTrab_ = Convert.ToInt64(txtcodigoPuestoTrabajo.Text)
-                    .departamento_ = txtdepartamento.Text
+                    .codigoPuestoTrab_ = Convert.ToInt64(lblcodePuesto.Text)
+                    .codigoDepto_ = Convert.ToInt64(lblcodeDepto.Text)
+                    .salario_ = Convert.ToDouble(txtsalario.Text)
                     .tipoCuenta_ = cmbxtipoCuenta.SelectedItem.ToString
 
                     .codigoContrato_ = Convert.ToInt64("1")
@@ -500,24 +487,14 @@
         txtapellido2.Select(txtapellido2.Text.Length, 0)
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
-        If (e.KeyCode = Keys.Escape And lblform.Text = "M_BuscarEmpleados") Then
-            limpiar()
-            M_BuscarEmpleados.ShowDialog()
-            Me.Close()
-        ElseIf (e.KeyCode = Keys.Escape And lblform.Text = "") Then
+        If (e.KeyCode = Keys.Escape) Then
             limpiar()
             Me.Close()
         End If
     End Sub
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
-        If lblform.Text = "M_BuscarEmpleados" Then
-            limpiar()
-            M_BuscarEmpleados.ShowDialog()
-            Me.Close()
-        Else
-            limpiar()
-            Me.Close()
-        End If
+        limpiar()
+        Me.Close()
     End Sub
 
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
@@ -566,7 +543,7 @@
                     .Apellido1_ = txtapellido1.Text
                     .Apellido2_ = txtapellido2.Text
                     .NombreCompleto_ = txtnombreCompleto.Text
-                    .codigoGrupo_ = Convert.ToInt64(lblcodigoArea.Text)
+                    .codigoArea_ = Convert.ToInt64(lblcodigoArea.Text)
                     .crearPersona_ = cbxCrearPersona.Checked
                     .fechaAlta_ = dtpfechaAlta.Value
                     .nIdentidad_ = mtxtidentidad.Text
@@ -590,10 +567,10 @@
                     End If
                     '.fechaBaja_ = dtpfechaBaja.Text
                     '.fechaAvisoBaja_ = dtpFechaAvisoBaja.Text
-                    MsgBox("paso")
                     .motivoBaja_ = rtxtmotivoBaja.Text
-                    .codigoPuestoTrab_ = Convert.ToInt64(txtcodigoPuestoTrabajo.Text)
-                    .departamento_ = txtdepartamento.Text
+                    .codigoPuestoTrab_ = Convert.ToInt64(lblcodePuesto.Text)
+                    .codigoDepto_ = Convert.ToInt64(lblcodeDepto.Text)
+                    .salario_ = Convert.ToDouble(txtsalario.Text)
                     .tipoCuenta_ = cmbxtipoCuenta.SelectedItem.ToString
 
                     .codigoContrato_ = Convert.ToInt64("1")
@@ -703,5 +680,22 @@
         End Try
 
     End Sub
-
+    Private Sub btnArea_Click(sender As Object, e As EventArgs) Handles txtArea.Click
+        M_Area.lblform.Text = "M_Empleados"
+        M_Area.ShowDialog()
+    End Sub
+    Private Sub txtdepartamento_click(sender As Object, e As EventArgs) Handles txtdepartamento.Click
+        If Trim(txtArea.Text) <> "" Then
+            M_ListadoDepartamentos.lblform.Text = "M_Empleados"
+            M_ListadoDepartamentos.lblcodeArea.Text = lblcodigoArea.Text
+            M_ListadoDepartamentos.ShowDialog()
+        End If
+    End Sub
+    Private Sub txtPuestoTrabajo_click(sender As Object, e As EventArgs) Handles txtPuestoTrabajo.Click
+        If Trim(txtdepartamento.Text) <> "" Then
+            M_ListadoPuestoTrabajo.lblform.Text = "M_Empleados"
+            M_ListadoPuestoTrabajo.lblcodeDepto.Text = lblcodeDepto.Text
+            M_ListadoPuestoTrabajo.ShowDialog()
+        End If
+    End Sub
 End Class

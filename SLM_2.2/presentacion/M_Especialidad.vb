@@ -123,13 +123,26 @@
             txtnombre.ReadOnly = False
             txtcodigo.ReadOnly = True
 
-            M_Medico.txtcodigoEspecialidad.Text = txtcodigo.Text
-            M_Medico.txtnombreEspecialidad.Text = txtnombre.Text
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
+    Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
+        Try
+            Dim n As String = ""
+            If e.RowIndex >= 0 Then
+                n = MsgBox("¿Desea seleccionar la especialidad médica?", MsgBoxStyle.YesNo, "Validación")
+            End If
+            If n = vbYes Then
+                M_Medico.txtcodigoEspecialidad.Text = txtcodigo.Text
+                M_Medico.txtnombreEspecialidad.Text = txtnombre.Text
+                limpiar()
+                Me.Close()
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
     Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
         Dim objEsp As New ClsEspecialidad
         With objEsp

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class M_Empleados
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class M_Empleados
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Empleados))
         Me.gbxobjeto = New System.Windows.Forms.GroupBox()
@@ -54,14 +54,12 @@ Partial Class M_Empleados
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtsalario = New System.Windows.Forms.TextBox()
+        Me.Label33 = New System.Windows.Forms.Label()
         Me.lblcodigoArea = New System.Windows.Forms.Label()
-        Me.txtdescripcionArea = New System.Windows.Forms.TextBox()
-        Me.btnArea = New System.Windows.Forms.Button()
-        Me.txtcodigoArea = New System.Windows.Forms.TextBox()
+        Me.txtArea = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtdescripcionPuesto = New System.Windows.Forms.TextBox()
-        Me.btnPuestoTrabajo = New System.Windows.Forms.Button()
-        Me.txtcodigoPuestoTrabajo = New System.Windows.Forms.TextBox()
+        Me.txtPuestoTrabajo = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtdepartamento = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -130,6 +128,8 @@ Partial Class M_Empleados
         Me.dtpfechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.txtgrupoSanguineo = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.txttelUrgencias2 = New System.Windows.Forms.TextBox()
@@ -152,8 +152,8 @@ Partial Class M_Empleados
         Me.btnBuscarImage = New System.Windows.Forms.Button()
         Me.ofdImagen = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.txtgrupoSanguineo = New System.Windows.Forms.TextBox()
-        Me.Label22 = New System.Windows.Forms.Label()
+        Me.lblcodeDepto = New System.Windows.Forms.Label()
+        Me.lblcodePuesto = New System.Windows.Forms.Label()
         Me.gbxobjeto.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -527,17 +527,17 @@ Partial Class M_Empleados
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.lblcodePuesto)
+        Me.GroupBox2.Controls.Add(Me.lblcodeDepto)
+        Me.GroupBox2.Controls.Add(Me.txtsalario)
+        Me.GroupBox2.Controls.Add(Me.Label33)
         Me.GroupBox2.Controls.Add(Me.lblcodigoArea)
-        Me.GroupBox2.Controls.Add(Me.txtdescripcionArea)
-        Me.GroupBox2.Controls.Add(Me.btnArea)
-        Me.GroupBox2.Controls.Add(Me.txtcodigoArea)
-        Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.txtdescripcionPuesto)
-        Me.GroupBox2.Controls.Add(Me.btnPuestoTrabajo)
-        Me.GroupBox2.Controls.Add(Me.txtcodigoPuestoTrabajo)
+        Me.GroupBox2.Controls.Add(Me.txtPuestoTrabajo)
+        Me.GroupBox2.Controls.Add(Me.txtArea)
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.txtdepartamento)
         Me.GroupBox2.Controls.Add(Me.Label12)
+        Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Location = New System.Drawing.Point(339, 121)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(567, 83)
@@ -545,10 +545,28 @@ Partial Class M_Empleados
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Puesto Laboral"
         '
+        'txtsalario
+        '
+        Me.txtsalario.Location = New System.Drawing.Point(391, 53)
+        Me.txtsalario.MaxLength = 20
+        Me.txtsalario.Name = "txtsalario"
+        Me.txtsalario.Size = New System.Drawing.Size(153, 22)
+        Me.txtsalario.TabIndex = 165
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(332, 56)
+        Me.Label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(52, 17)
+        Me.Label33.TabIndex = 164
+        Me.Label33.Text = "Salario"
+        '
         'lblcodigoArea
         '
         Me.lblcodigoArea.AutoSize = True
-        Me.lblcodigoArea.Location = New System.Drawing.Point(297, 8)
+        Me.lblcodigoArea.Location = New System.Drawing.Point(30, 9)
         Me.lblcodigoArea.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcodigoArea.Name = "lblcodigoArea"
         Me.lblcodigoArea.Size = New System.Drawing.Size(38, 17)
@@ -556,104 +574,57 @@ Partial Class M_Empleados
         Me.lblcodigoArea.Text = "Area"
         Me.lblcodigoArea.Visible = False
         '
-        'txtdescripcionArea
+        'txtArea
         '
-        Me.txtdescripcionArea.Location = New System.Drawing.Point(440, 23)
-        Me.txtdescripcionArea.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtdescripcionArea.Name = "txtdescripcionArea"
-        Me.txtdescripcionArea.ReadOnly = True
-        Me.txtdescripcionArea.Size = New System.Drawing.Size(104, 22)
-        Me.txtdescripcionArea.TabIndex = 158
-        '
-        'btnArea
-        '
-        Me.btnArea.BackColor = System.Drawing.Color.White
-        Me.btnArea.BackgroundImage = CType(resources.GetObject("btnArea.BackgroundImage"), System.Drawing.Image)
-        Me.btnArea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnArea.FlatAppearance.BorderSize = 0
-        Me.btnArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnArea.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnArea.Location = New System.Drawing.Point(336, 22)
-        Me.btnArea.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnArea.Name = "btnArea"
-        Me.btnArea.Size = New System.Drawing.Size(49, 22)
-        Me.btnArea.TabIndex = 159
-        Me.btnArea.Text = "..."
-        Me.btnArea.UseVisualStyleBackColor = False
-        '
-        'txtcodigoArea
-        '
-        Me.txtcodigoArea.Location = New System.Drawing.Point(391, 23)
-        Me.txtcodigoArea.MaxLength = 20
-        Me.txtcodigoArea.Name = "txtcodigoArea"
-        Me.txtcodigoArea.Size = New System.Drawing.Size(43, 22)
-        Me.txtcodigoArea.TabIndex = 161
+        Me.txtArea.Location = New System.Drawing.Point(124, 24)
+        Me.txtArea.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtArea.Name = "txtArea"
+        Me.txtArea.ReadOnly = True
+        Me.txtArea.Size = New System.Drawing.Size(154, 22)
+        Me.txtArea.TabIndex = 158
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(291, 25)
+        Me.Label11.Location = New System.Drawing.Point(11, 27)
         Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(38, 17)
+        Me.Label11.Size = New System.Drawing.Size(100, 17)
         Me.Label11.TabIndex = 160
-        Me.Label11.Text = "Area"
+        Me.Label11.Text = "Area/Gerencia"
         '
-        'txtdescripcionPuesto
+        'txtPuestoTrabajo
         '
-        Me.txtdescripcionPuesto.Location = New System.Drawing.Point(167, 22)
-        Me.txtdescripcionPuesto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtdescripcionPuesto.Name = "txtdescripcionPuesto"
-        Me.txtdescripcionPuesto.ReadOnly = True
-        Me.txtdescripcionPuesto.Size = New System.Drawing.Size(104, 22)
-        Me.txtdescripcionPuesto.TabIndex = 134
-        '
-        'btnPuestoTrabajo
-        '
-        Me.btnPuestoTrabajo.BackColor = System.Drawing.Color.White
-        Me.btnPuestoTrabajo.BackgroundImage = CType(resources.GetObject("btnPuestoTrabajo.BackgroundImage"), System.Drawing.Image)
-        Me.btnPuestoTrabajo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnPuestoTrabajo.FlatAppearance.BorderSize = 0
-        Me.btnPuestoTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPuestoTrabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPuestoTrabajo.Location = New System.Drawing.Point(63, 21)
-        Me.btnPuestoTrabajo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnPuestoTrabajo.Name = "btnPuestoTrabajo"
-        Me.btnPuestoTrabajo.Size = New System.Drawing.Size(49, 22)
-        Me.btnPuestoTrabajo.TabIndex = 134
-        Me.btnPuestoTrabajo.Text = "..."
-        Me.btnPuestoTrabajo.UseVisualStyleBackColor = False
-        '
-        'txtcodigoPuestoTrabajo
-        '
-        Me.txtcodigoPuestoTrabajo.Location = New System.Drawing.Point(118, 22)
-        Me.txtcodigoPuestoTrabajo.MaxLength = 20
-        Me.txtcodigoPuestoTrabajo.Name = "txtcodigoPuestoTrabajo"
-        Me.txtcodigoPuestoTrabajo.Size = New System.Drawing.Size(43, 22)
-        Me.txtcodigoPuestoTrabajo.TabIndex = 153
+        Me.txtPuestoTrabajo.Location = New System.Drawing.Point(124, 54)
+        Me.txtPuestoTrabajo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtPuestoTrabajo.Name = "txtPuestoTrabajo"
+        Me.txtPuestoTrabajo.ReadOnly = True
+        Me.txtPuestoTrabajo.Size = New System.Drawing.Size(153, 22)
+        Me.txtPuestoTrabajo.TabIndex = 134
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(10, 24)
+        Me.Label10.Location = New System.Drawing.Point(4, 58)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(46, 17)
+        Me.Label10.Size = New System.Drawing.Size(105, 17)
         Me.Label10.TabIndex = 152
-        Me.Label10.Text = "Cargo"
+        Me.Label10.Text = "Puesto Trabajo"
         '
         'txtdepartamento
         '
-        Me.txtdepartamento.Location = New System.Drawing.Point(118, 53)
+        Me.txtdepartamento.Location = New System.Drawing.Point(391, 24)
         Me.txtdepartamento.MaxLength = 20
         Me.txtdepartamento.Name = "txtdepartamento"
-        Me.txtdepartamento.Size = New System.Drawing.Size(426, 22)
+        Me.txtdepartamento.ReadOnly = True
+        Me.txtdepartamento.Size = New System.Drawing.Size(153, 22)
         Me.txtdepartamento.TabIndex = 157
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(11, 53)
+        Me.Label12.Location = New System.Drawing.Point(286, 24)
         Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(98, 17)
@@ -1337,6 +1308,25 @@ Partial Class M_Empleados
         Me.TabPage4.Text = "En Caso de Emergencias"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
+        'txtgrupoSanguineo
+        '
+        Me.txtgrupoSanguineo.Location = New System.Drawing.Point(417, 19)
+        Me.txtgrupoSanguineo.MaxLength = 20
+        Me.txtgrupoSanguineo.Name = "txtgrupoSanguineo"
+        Me.txtgrupoSanguineo.Size = New System.Drawing.Size(218, 22)
+        Me.txtgrupoSanguineo.TabIndex = 186
+        Me.txtgrupoSanguineo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(290, 19)
+        Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(120, 17)
+        Me.Label22.TabIndex = 185
+        Me.Label22.Text = "Grupo Sanguíneo"
+        '
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.Label29)
@@ -1563,24 +1553,27 @@ Partial Class M_Empleados
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'txtgrupoSanguineo
+        'lblcodeDepto
         '
-        Me.txtgrupoSanguineo.Location = New System.Drawing.Point(417, 19)
-        Me.txtgrupoSanguineo.MaxLength = 20
-        Me.txtgrupoSanguineo.Name = "txtgrupoSanguineo"
-        Me.txtgrupoSanguineo.Size = New System.Drawing.Size(218, 22)
-        Me.txtgrupoSanguineo.TabIndex = 186
-        Me.txtgrupoSanguineo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.lblcodeDepto.AutoSize = True
+        Me.lblcodeDepto.Location = New System.Drawing.Point(322, 10)
+        Me.lblcodeDepto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcodeDepto.Name = "lblcodeDepto"
+        Me.lblcodeDepto.Size = New System.Drawing.Size(46, 17)
+        Me.lblcodeDepto.TabIndex = 166
+        Me.lblcodeDepto.Text = "Depto"
+        Me.lblcodeDepto.Visible = False
         '
-        'Label22
+        'lblcodePuesto
         '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(290, 19)
-        Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(120, 17)
-        Me.Label22.TabIndex = 185
-        Me.Label22.Text = "Grupo Sanguíneo"
+        Me.lblcodePuesto.AutoSize = True
+        Me.lblcodePuesto.Location = New System.Drawing.Point(30, 44)
+        Me.lblcodePuesto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcodePuesto.Name = "lblcodePuesto"
+        Me.lblcodePuesto.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodePuesto.TabIndex = 167
+        Me.lblcodePuesto.Text = "Puesto"
+        Me.lblcodePuesto.Visible = False
         '
         'M_Empleados
         '
@@ -1661,13 +1654,9 @@ Partial Class M_Empleados
     Friend WithEvents Label14 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents txtdescripcionArea As TextBox
-    Friend WithEvents btnArea As Button
-    Friend WithEvents txtcodigoArea As TextBox
+    Friend WithEvents txtArea As TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents txtdescripcionPuesto As TextBox
-    Friend WithEvents btnPuestoTrabajo As Button
-    Friend WithEvents txtcodigoPuestoTrabajo As TextBox
+    Friend WithEvents txtPuestoTrabajo As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents txtdepartamento As TextBox
     Friend WithEvents Label12 As Label
@@ -1755,4 +1744,8 @@ Partial Class M_Empleados
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents txtgrupoSanguineo As TextBox
     Friend WithEvents Label22 As Label
+    Friend WithEvents txtsalario As TextBox
+    Friend WithEvents Label33 As Label
+    Friend WithEvents lblcodePuesto As Label
+    Friend WithEvents lblcodeDepto As Label
 End Class

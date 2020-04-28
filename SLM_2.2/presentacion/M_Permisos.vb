@@ -306,7 +306,7 @@
             Me.Close()
         End If
     End Sub
-    Private Sub M_Sede_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub M_Permisos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         seleccionarPermisos()
         Me.dgbtabla.Columns("codigoTalentoHumano").Visible = False
         Me.dgbtabla.Columns("codigoJefeInmediato").Visible = False

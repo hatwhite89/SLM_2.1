@@ -148,7 +148,7 @@
             Try
                 Dim objCli As New ClsCliente
                 objCli.NombreCompleto1 = txtNombreB.Text
-                Dim dv As DataView = objCli.BuscarClienteNombre.DefaultView
+                Dim dv As DataView = objCli.BuscarClienteNombre2.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
                 dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -165,7 +165,7 @@
             Try
                 Dim objCli As New ClsCliente
                 objCli.Identidad1 = txtIdentidadB.Text
-                Dim dv As DataView = objCli.BuscarCliente.DefaultView
+                Dim dv As DataView = objCli.BuscarCliente2.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
                 dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
