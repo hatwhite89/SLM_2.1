@@ -4,7 +4,6 @@
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         Try
-
             'Validacion de campos vacios
             If txtUsuario.Text <> "" And txtPerfil.Text <> "" Then
 
@@ -23,11 +22,9 @@
                 End With
 
             ElseIf txtUsuario.Text = "" Then
-
                 txtUsuario.BackColor = Color.Red
             ElseIf txtPerfil.TextAlign = "" Then
                 txtPerfil.BackColor = Color.Red
-
             End If
 
         Catch ex As Exception
@@ -113,6 +110,7 @@
             btnGuardar.Enabled = False
             btnModificar.Enabled = True
             btnCambio.Visible = True
+
 
         Catch ex As Exception
 
