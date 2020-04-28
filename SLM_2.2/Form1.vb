@@ -40,10 +40,11 @@
     End Sub
     Private Sub btnContabilidad_Click(sender As Object, e As EventArgs) Handles btnContabilidad.Click
 
-        If PanelFactura.Visible = True Or PanelLab.Visible = True Or PanelSistema.Visible = True Or PanelTalentoHumano.Visible = True Then
+        If PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or PanelSistema.Visible = True Or PanelTalentoHumano.Visible = True Then
             PanelSistema.Visible = False
             PanelFactura.Visible = False
             PanelLab.Visible = False
+            PanelAlmacen.Visible = False
             PanelTalentoHumano.Visible = False
             panelMenu.Visible = True
 
@@ -57,11 +58,12 @@
         Try
 
 
-            If PanelFactura.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Or PanelTalentoHumano.Visible = True Then
+            If PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Or PanelTalentoHumano.Visible = True Then
                 PanelFactura.Visible = False
                 panelMenu.Visible = False
                 PanelSistema.Visible = False
                 PanelLab.Visible = True
+                PanelAlmacen.Visible = False
                 PanelTalentoHumano.Visible = False
             Else
                 PanelLab.Visible = True
@@ -89,11 +91,12 @@
         Try
 
 
-            If panelMenu.Visible = True Or PanelLab.Visible = True Or PanelSistema.Visible = True Or PanelTalentoHumano.Visible = True Then
+            If PanelAlmacen.Visible = True Or panelMenu.Visible = True Or PanelLab.Visible = True Or PanelSistema.Visible = True Or PanelTalentoHumano.Visible = True Then
                 PanelFactura.Visible = True
                 PanelLab.Visible = False
                 panelMenu.Visible = False
                 PanelSistema.Visible = False
+                PanelAlmacen.Visible = False
                 PanelTalentoHumano.Visible = False
             Else
                 PanelFactura.Visible = True
@@ -375,7 +378,7 @@
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnCAI.Click
         Try
 
-            M_CAI.Show()
+            A_ListarCAI.Show()
 
         Catch ex As Exception
 
@@ -416,13 +419,15 @@
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
-        If PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelTalentoHumano.Visible = True Then
+        If PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelTalentoHumano.Visible = True Then
 
             PanelFactura.Visible = False
             PanelLab.Visible = False
             panelMenu.Visible = False
             PanelTalentoHumano.Visible = False
+            PanelAlmacen.Visible = False
             PanelSistema.Visible = True
+
         Else
             PanelSistema.Visible = True
         End If
@@ -476,12 +481,15 @@
     End Sub
 
     Private Sub btnTalentoHumano_Click(sender As Object, e As EventArgs) Handles btnTalentoHumano.Click
-        If PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Then
+        If PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Then
+            PanelTalentoHumano.Visible = True
             PanelFactura.Visible = False
             PanelLab.Visible = False
             panelMenu.Visible = False
             PanelSistema.Visible = False
-            PanelTalentoHumano.Visible = True
+            PanelAlmacen.Visible = False
+
+
         Else
             PanelTalentoHumano.Visible = True
         End If
@@ -519,7 +527,37 @@
         M_BuscarEmpleados.ShowDialog()
     End Sub
 
-    Private Sub btnTipoDeducciones_Click(sender As Object, e As EventArgs) Handles btnTipoDeducciones.Click
-        M_TipoDeducciones.ShowDialog()
+    Private Sub Button22_Click(sender As Object, e As EventArgs) Handles Button22.Click
+        If PanelTalentoHumano.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Then
+
+            PanelFactura.Visible = False
+            PanelLab.Visible = False
+            panelMenu.Visible = False
+            PanelSistema.Visible = False
+            PanelTalentoHumano.Visible = False
+            PanelAlmacen.Visible = True
+        Else
+            PanelAlmacen.Visible = True
+        End If
+    End Sub
+
+    Private Sub Button28_Click(sender As Object, e As EventArgs) Handles Button28.Click
+        E_frmProducto.Show()
+    End Sub
+
+    Private Sub Button27_Click(sender As Object, e As EventArgs) Handles Button27.Click
+        E_frmCategoriaProducto.Show()
+    End Sub
+
+    Private Sub Button29_Click(sender As Object, e As EventArgs) Handles Button29.Click
+        E_frmUnidadMedida_almacen.Show()
+    End Sub
+
+    Private Sub Button24_Click(sender As Object, e As EventArgs) Handles Button24.Click
+        E_frmUbicacion.Show()
+    End Sub
+
+    Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
+        E_frmOrdenCompra.Show()
     End Sub
 End Class

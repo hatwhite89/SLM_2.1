@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class E_Usuarios
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,237 +20,291 @@ Partial Class E_Usuarios
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_Usuarios))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.dtUsuarios = New System.Windows.Forms.DataGridView()
+        Me.btnImportar = New System.Windows.Forms.Button()
+        Me.txtBusqueda = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.chkHabilitar = New System.Windows.Forms.CheckBox()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtPerfil = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Panel1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
+        Me.txtPass = New System.Windows.Forms.TextBox()
+        Me.txtUsuario = New System.Windows.Forms.TextBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnCambio = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.GroupBox2)
-        Me.Panel1.Controls.Add(Me.GroupBox1)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.TextBox2)
-        Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Location = New System.Drawing.Point(9, 10)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(698, 198)
-        Me.Panel1.TabIndex = 0
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.ComboBox1)
-        Me.GroupBox2.Location = New System.Drawing.Point(410, 107)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox2.Size = New System.Drawing.Size(272, 89)
-        Me.GroupBox2.TabIndex = 8
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Grupo"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(11, 27)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(258, 21)
-        Me.ComboBox1.TabIndex = 0
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.RadioButton2)
-        Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(410, 13)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox1.Controls.Add(Me.dtUsuarios)
+        Me.GroupBox1.Controls.Add(Me.btnImportar)
+        Me.GroupBox1.Controls.Add(Me.txtBusqueda)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 245)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(272, 92)
-        Me.GroupBox1.TabIndex = 7
+        Me.GroupBox1.Size = New System.Drawing.Size(531, 314)
+        Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Estado"
+        Me.GroupBox1.Text = "Usuarios Registrados"
         '
-        'RadioButton2
+        'dtUsuarios
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(20, 57)
-        Me.RadioButton2.Margin = New System.Windows.Forms.Padding(2)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(79, 17)
-        Me.RadioButton2.TabIndex = 1
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Inhabilitado"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.dtUsuarios.AllowUserToAddRows = False
+        Me.dtUsuarios.AllowUserToDeleteRows = False
+        Me.dtUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtUsuarios.Location = New System.Drawing.Point(6, 54)
+        Me.dtUsuarios.Name = "dtUsuarios"
+        Me.dtUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtUsuarios.Size = New System.Drawing.Size(519, 254)
+        Me.dtUsuarios.TabIndex = 27
         '
-        'RadioButton1
+        'btnImportar
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(20, 31)
-        Me.RadioButton1.Margin = New System.Windows.Forms.Padding(2)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(72, 17)
-        Me.RadioButton1.TabIndex = 0
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Habilitado"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.btnImportar.Location = New System.Drawing.Point(398, 25)
+        Me.btnImportar.Name = "btnImportar"
+        Me.btnImportar.Size = New System.Drawing.Size(127, 23)
+        Me.btnImportar.TabIndex = 10
+        Me.btnImportar.Text = "Importar Usuarios"
+        Me.btnImportar.UseVisualStyleBackColor = True
+        '
+        'txtBusqueda
+        '
+        Me.txtBusqueda.Location = New System.Drawing.Point(60, 28)
+        Me.txtBusqueda.Name = "txtBusqueda"
+        Me.txtBusqueda.Size = New System.Drawing.Size(171, 20)
+        Me.txtBusqueda.TabIndex = 9
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(12, 31)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(46, 13)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Usuario:"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(341, 25)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(142, 143)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 22
+        Me.PictureBox1.TabStop = False
+        '
+        'chkHabilitar
+        '
+        Me.chkHabilitar.AutoSize = True
+        Me.chkHabilitar.Location = New System.Drawing.Point(89, 122)
+        Me.chkHabilitar.Name = "chkHabilitar"
+        Me.chkHabilitar.Size = New System.Drawing.Size(103, 17)
+        Me.chkHabilitar.TabIndex = 4
+        Me.chkHabilitar.Text = "Habilitar Usuario"
+        Me.chkHabilitar.UseVisualStyleBackColor = True
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.Location = New System.Drawing.Point(236, 96)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(57, 23)
+        Me.btnBuscar.TabIndex = 3
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(12, 101)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(33, 13)
+        Me.Label3.TabIndex = 18
+        Me.Label3.Text = "Perfil:"
+        '
+        'txtPerfil
+        '
+        Me.txtPerfil.Location = New System.Drawing.Point(89, 97)
+        Me.txtPerfil.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtPerfil.MaxLength = 30
+        Me.txtPerfil.Name = "txtPerfil"
+        Me.txtPerfil.Size = New System.Drawing.Size(142, 20)
+        Me.txtPerfil.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(15, 67)
+        Me.Label2.Location = New System.Drawing.Point(12, 77)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(56, 13)
-        Me.Label2.TabIndex = 6
+        Me.Label2.TabIndex = 16
         Me.Label2.Text = "Password:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(24, 30)
+        Me.Label1.Location = New System.Drawing.Point(21, 53)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(46, 13)
-        Me.Label1.TabIndex = 5
+        Me.Label1.TabIndex = 15
         Me.Label1.Text = "Usuario:"
         '
-        'TextBox2
+        'txtPass
         '
-        Me.TextBox2.Location = New System.Drawing.Point(92, 63)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(204, 20)
-        Me.TextBox2.TabIndex = 4
+        Me.txtPass.Location = New System.Drawing.Point(89, 73)
+        Me.txtPass.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtPass.MaxLength = 30
+        Me.txtPass.Name = "txtPass"
+        Me.txtPass.Size = New System.Drawing.Size(204, 20)
+        Me.txtPass.TabIndex = 1
         '
-        'TextBox1
+        'txtUsuario
         '
-        Me.TextBox1.Location = New System.Drawing.Point(92, 26)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(204, 20)
-        Me.TextBox1.TabIndex = 3
+        Me.txtUsuario.Location = New System.Drawing.Point(89, 49)
+        Me.txtUsuario.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtUsuario.MaxLength = 30
+        Me.txtUsuario.Name = "txtUsuario"
+        Me.txtUsuario.Size = New System.Drawing.Size(204, 20)
+        Me.txtUsuario.TabIndex = 0
         '
-        'Button2
+        'GroupBox2
         '
-        Me.Button2.Location = New System.Drawing.Point(125, 134)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(103, 38)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Cancelar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.GroupBox2.Controls.Add(Me.btnCancelar)
+        Me.GroupBox2.Controls.Add(Me.btnModificar)
+        Me.GroupBox2.Controls.Add(Me.btnGuardar)
+        Me.GroupBox2.Controls.Add(Me.txtCodigo)
+        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.btnCambio)
+        Me.GroupBox2.Controls.Add(Me.PictureBox1)
+        Me.GroupBox2.Controls.Add(Me.txtUsuario)
+        Me.GroupBox2.Controls.Add(Me.chkHabilitar)
+        Me.GroupBox2.Controls.Add(Me.txtPass)
+        Me.GroupBox2.Controls.Add(Me.btnBuscar)
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.txtPerfil)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(531, 227)
+        Me.GroupBox2.TabIndex = 23
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Información de Usuario"
         '
-        'Button1
+        'btnCancelar
         '
-        Me.Button1.Location = New System.Drawing.Point(26, 134)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(95, 38)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Guardar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnCancelar.Location = New System.Drawing.Point(449, 183)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.TabIndex = 7
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
         '
-        'Panel2
+        'btnModificar
         '
-        Me.Panel2.Controls.Add(Me.Label3)
-        Me.Panel2.Controls.Add(Me.TextBox3)
-        Me.Panel2.Controls.Add(Me.DataGridView1)
-        Me.Panel2.Location = New System.Drawing.Point(9, 222)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(698, 248)
-        Me.Panel2.TabIndex = 1
+        Me.btnModificar.Enabled = False
+        Me.btnModificar.Location = New System.Drawing.Point(368, 183)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar.TabIndex = 6
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
         '
-        'Label3
+        'btnGuardar
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(15, 13)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(77, 13)
-        Me.Label3.TabIndex = 10
-        Me.Label3.Text = "Buscar usuario"
+        Me.btnGuardar.Location = New System.Drawing.Point(283, 184)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.TabIndex = 5
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = True
         '
-        'TextBox3
+        'txtCodigo
         '
-        Me.TextBox3.Location = New System.Drawing.Point(96, 13)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(600, 20)
-        Me.TextBox3.TabIndex = 9
+        Me.txtCodigo.Enabled = False
+        Me.txtCodigo.Location = New System.Drawing.Point(89, 25)
+        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(204, 20)
+        Me.txtCodigo.TabIndex = 24
         '
-        'DataGridView1
+        'Label4
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(2, 36)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(696, 210)
-        Me.DataGridView1.TabIndex = 0
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(21, 29)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(43, 13)
+        Me.Label4.TabIndex = 25
+        Me.Label4.Text = "Código:"
+        '
+        'btnCambio
+        '
+        Me.btnCambio.Location = New System.Drawing.Point(89, 145)
+        Me.btnCambio.Name = "btnCambio"
+        Me.btnCambio.Size = New System.Drawing.Size(204, 23)
+        Me.btnCambio.TabIndex = 8
+        Me.btnCambio.Text = "Habilitar Cambio de Contraseña"
+        Me.btnCambio.UseVisualStyleBackColor = True
+        Me.btnCambio.Visible = False
         '
         'E_Usuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(715, 478)
-        Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
+        Me.ClientSize = New System.Drawing.Size(555, 569)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "E_Usuarios"
-        Me.Text = "E_Usuarios"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
+        Me.Text = "Mantenimiento Usuarios"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents chkHabilitar As CheckBox
+    Friend WithEvents btnBuscar As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtPerfil As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents txtPass As TextBox
+    Friend WithEvents txtUsuario As TextBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents btnCambio As Button
+    Friend WithEvents txtCodigo As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents dtUsuarios As DataGridView
+    Friend WithEvents btnImportar As Button
+    Friend WithEvents txtBusqueda As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents btnModificar As Button
 End Class

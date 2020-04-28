@@ -44,6 +44,8 @@ Partial Class M_CAI
         Me.lblCodeMaquinaLocal = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.chkEstado = New System.Windows.Forms.CheckBox()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.lblCodigo = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -93,7 +95,7 @@ Partial Class M_CAI
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(170, 179)
+        Me.btncancelar.Location = New System.Drawing.Point(277, 172)
         Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(68, 28)
@@ -261,6 +263,8 @@ Partial Class M_CAI
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.lblCodigo)
+        Me.GroupBox1.Controls.Add(Me.btnModificar)
         Me.GroupBox1.Controls.Add(Me.chkEstado)
         Me.GroupBox1.Controls.Add(Me.mtxtserie)
         Me.GroupBox1.Controls.Add(Me.lblserie)
@@ -268,6 +272,7 @@ Partial Class M_CAI
         Me.GroupBox1.Controls.Add(Me.mtxtdesde)
         Me.GroupBox1.Controls.Add(Me.mtxthasta)
         Me.GroupBox1.Controls.Add(Me.lblhasta)
+        Me.GroupBox1.Controls.Add(Me.btncancelar)
         Me.GroupBox1.Location = New System.Drawing.Point(4, 7)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(703, 215)
@@ -285,12 +290,36 @@ Partial Class M_CAI
         Me.chkEstado.Text = "Activar Facturación"
         Me.chkEstado.UseVisualStyleBackColor = True
         '
+        'btnModificar
+        '
+        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnModificar.Location = New System.Drawing.Point(166, 172)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(107, 28)
+        Me.btnModificar.TabIndex = 130
+        Me.btnModificar.Text = "Modificar Estado"
+        Me.btnModificar.UseVisualStyleBackColor = False
+        '
+        'lblCodigo
+        '
+        Me.lblCodigo.AutoSize = True
+        Me.lblCodigo.Location = New System.Drawing.Point(523, 27)
+        Me.lblCodigo.Name = "lblCodigo"
+        Me.lblCodigo.Size = New System.Drawing.Size(39, 13)
+        Me.lblCodigo.TabIndex = 131
+        Me.lblCodigo.Text = "codigo"
+        Me.lblCodigo.Visible = False
+        '
         'M_CAI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(719, 234)
+        Me.ClientSize = New System.Drawing.Size(719, 230)
         Me.Controls.Add(Me.lblCodeMaquinaLocal)
         Me.Controls.Add(Me.txtdescripcionMaquina)
         Me.Controls.Add(Me.btnbuscarMaquinaLocal)
@@ -300,7 +329,6 @@ Partial Class M_CAI
         Me.Controls.Add(Me.lblmaquinaLocal)
         Me.Controls.Add(Me.lblhastaF)
         Me.Controls.Add(Me.mtxtCAI)
-        Me.Controls.Add(Me.btncancelar)
         Me.Controls.Add(Me.btnnuevo)
         Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.lblDesdeF)
@@ -338,4 +366,6 @@ Partial Class M_CAI
     Friend WithEvents lblCodeMaquinaLocal As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents chkEstado As CheckBox
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents lblCodigo As Label
 End Class
