@@ -518,4 +518,8 @@
     Private Sub btnEmpleados_Click(sender As Object, e As EventArgs) Handles btnEmpleados.Click
         M_BuscarEmpleados.ShowDialog()
     End Sub
+
+    Private Sub btnTipoDeducciones_Click(sender As Object, e As EventArgs) Handles btnTipoDeducciones.Click
+        M_TipoDeducciones.ShowDialog()
+    End Sub
 End Class

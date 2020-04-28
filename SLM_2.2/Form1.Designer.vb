@@ -148,6 +148,8 @@ Partial Class Form1
         Me.btnCerrarTalentoHumano = New System.Windows.Forms.Button()
         Me.TabControl4 = New System.Windows.Forms.TabControl()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
+        Me.PictureBox44 = New System.Windows.Forms.PictureBox()
+        Me.btnTipoDeducciones = New System.Windows.Forms.Button()
         Me.PictureBox39 = New System.Windows.Forms.PictureBox()
         Me.btnEmpleados = New System.Windows.Forms.Button()
         Me.PictureBox40 = New System.Windows.Forms.PictureBox()
@@ -226,6 +228,7 @@ Partial Class Form1
         Me.PanelTalentoHumano.SuspendLayout()
         Me.TabControl4.SuspendLayout()
         Me.TabPage9.SuspendLayout()
+        CType(Me.PictureBox44, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox40, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox41, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1011,7 +1014,7 @@ Partial Class Form1
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(923, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(923, 28)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -1019,7 +1022,7 @@ Partial Class Form1
         '
         Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.CerrarSesiónToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 26)
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 24)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
         '
         'CerrarToolStripMenuItem
@@ -1808,6 +1811,8 @@ Partial Class Form1
         '
         'TabPage9
         '
+        Me.TabPage9.Controls.Add(Me.PictureBox44)
+        Me.TabPage9.Controls.Add(Me.btnTipoDeducciones)
         Me.TabPage9.Controls.Add(Me.PictureBox39)
         Me.TabPage9.Controls.Add(Me.btnEmpleados)
         Me.TabPage9.Controls.Add(Me.PictureBox40)
@@ -1830,6 +1835,27 @@ Partial Class Form1
         Me.TabPage9.TabIndex = 0
         Me.TabPage9.Text = "Talento Humano"
         Me.TabPage9.UseVisualStyleBackColor = True
+        '
+        'PictureBox44
+        '
+        Me.PictureBox44.Image = CType(resources.GetObject("PictureBox44.Image"), System.Drawing.Image)
+        Me.PictureBox44.Location = New System.Drawing.Point(139, 308)
+        Me.PictureBox44.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox44.Name = "PictureBox44"
+        Me.PictureBox44.Size = New System.Drawing.Size(100, 64)
+        Me.PictureBox44.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox44.TabIndex = 20
+        Me.PictureBox44.TabStop = False
+        '
+        'btnTipoDeducciones
+        '
+        Me.btnTipoDeducciones.Location = New System.Drawing.Point(139, 384)
+        Me.btnTipoDeducciones.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnTipoDeducciones.Name = "btnTipoDeducciones"
+        Me.btnTipoDeducciones.Size = New System.Drawing.Size(100, 43)
+        Me.btnTipoDeducciones.TabIndex = 19
+        Me.btnTipoDeducciones.Text = "Tipo Deducciones"
+        Me.btnTipoDeducciones.UseVisualStyleBackColor = True
         '
         'PictureBox39
         '
@@ -2066,6 +2092,7 @@ Partial Class Form1
         Me.PanelTalentoHumano.ResumeLayout(False)
         Me.TabControl4.ResumeLayout(False)
         Me.TabPage9.ResumeLayout(False)
+        CType(Me.PictureBox44, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox40, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox41, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2217,4 +2244,6 @@ Partial Class Form1
     Friend WithEvents btnPuestoTrabajo As Button
     Friend WithEvents PictureBox39 As PictureBox
     Friend WithEvents btnEmpleados As Button
+    Friend WithEvents PictureBox44 As PictureBox
+    Friend WithEvents btnTipoDeducciones As Button
 End Class

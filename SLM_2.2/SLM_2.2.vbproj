@@ -175,6 +175,7 @@
     <Compile Include="negocio\ClsServidorCorreo.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
+    <Compile Include="negocio\ClsTipoDeducciones.vb" />
     <Compile Include="negocio\ClsUnidad.vb" />
     <Compile Include="negocio\ClsDetallePromociones.vb" />
     <Compile Include="negocio\ClsUnidadMedidaAlmacen.vb" />
@@ -962,6 +963,12 @@
     <Compile Include="presentacion\M_TipoClasificacion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_TipoDeducciones.Designer.vb">
+      <DependentUpon>M_TipoDeducciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_TipoDeducciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_TipoObjeto.Designer.vb">
       <DependentUpon>M_TipoObjeto.vb</DependentUpon>
     </Compile>
@@ -1400,6 +1407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_TipoClasificacion.resx">
       <DependentUpon>M_TipoClasificacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_TipoDeducciones.resx">
+      <DependentUpon>M_TipoDeducciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_TipoObjeto.resx">
       <DependentUpon>M_TipoObjeto.vb</DependentUpon>
