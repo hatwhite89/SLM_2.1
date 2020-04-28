@@ -178,6 +178,7 @@
     <Compile Include="negocio\ClsUnidad.vb" />
     <Compile Include="negocio\ClsDetallePromociones.vb" />
     <Compile Include="negocio\ClsUnidadMedidaAlmacen.vb" />
+    <Compile Include="negocio\ClsUsuario.vb" />
     <Compile Include="negocio\ClsVacaciones.vb" />
     <Compile Include="negocio\ModulosVarios.vb" />
     <Compile Include="presentacion\A_Alertas.Designer.vb">
