@@ -140,9 +140,10 @@ Partial Class Form1
         Me.Button19 = New System.Windows.Forms.Button()
         Me.Button18 = New System.Windows.Forms.Button()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
-        Me.TabPage8 = New System.Windows.Forms.TabPage()
-        Me.btnServidorCorreo = New System.Windows.Forms.Button()
         Me.PictureBox38 = New System.Windows.Forms.PictureBox()
+        Me.btnServidorCorreo = New System.Windows.Forms.Button()
+        Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.lblMiUser = New System.Windows.Forms.Label()
         Me.gbxMenu.SuspendLayout()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
@@ -1481,9 +1482,9 @@ Partial Class Form1
         Me.Label1.Location = New System.Drawing.Point(4, 474)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(112, 13)
+        Me.Label1.Size = New System.Drawing.Size(49, 13)
         Me.Label1.TabIndex = 23
-        Me.Label1.Text = "Usuario: Administrador"
+        Me.Label1.Text = "Usuario: "
         '
         'PanelSistema
         '
@@ -1596,6 +1597,25 @@ Partial Class Form1
         Me.TabPage7.Text = "Notificaciones"
         Me.TabPage7.UseVisualStyleBackColor = True
         '
+        'PictureBox38
+        '
+        Me.PictureBox38.Image = CType(resources.GetObject("PictureBox38.Image"), System.Drawing.Image)
+        Me.PictureBox38.Location = New System.Drawing.Point(36, 16)
+        Me.PictureBox38.Name = "PictureBox38"
+        Me.PictureBox38.Size = New System.Drawing.Size(65, 65)
+        Me.PictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox38.TabIndex = 1
+        Me.PictureBox38.TabStop = False
+        '
+        'btnServidorCorreo
+        '
+        Me.btnServidorCorreo.Location = New System.Drawing.Point(13, 87)
+        Me.btnServidorCorreo.Name = "btnServidorCorreo"
+        Me.btnServidorCorreo.Size = New System.Drawing.Size(108, 23)
+        Me.btnServidorCorreo.TabIndex = 0
+        Me.btnServidorCorreo.Text = "Servidor de Correo"
+        Me.btnServidorCorreo.UseVisualStyleBackColor = True
+        '
         'TabPage8
         '
         Me.TabPage8.Location = New System.Drawing.Point(4, 22)
@@ -1607,24 +1627,15 @@ Partial Class Form1
         Me.TabPage8.Text = "Bitacoras"
         Me.TabPage8.UseVisualStyleBackColor = True
         '
-        'btnServidorCorreo
+        'lblMiUser
         '
-        Me.btnServidorCorreo.Location = New System.Drawing.Point(13, 87)
-        Me.btnServidorCorreo.Name = "btnServidorCorreo"
-        Me.btnServidorCorreo.Size = New System.Drawing.Size(108, 23)
-        Me.btnServidorCorreo.TabIndex = 0
-        Me.btnServidorCorreo.Text = "Servidor de Correo"
-        Me.btnServidorCorreo.UseVisualStyleBackColor = True
-        '
-        'PictureBox38
-        '
-        Me.PictureBox38.Image = CType(resources.GetObject("PictureBox38.Image"), System.Drawing.Image)
-        Me.PictureBox38.Location = New System.Drawing.Point(36, 16)
-        Me.PictureBox38.Name = "PictureBox38"
-        Me.PictureBox38.Size = New System.Drawing.Size(65, 65)
-        Me.PictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox38.TabIndex = 1
-        Me.PictureBox38.TabStop = False
+        Me.lblMiUser.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblMiUser.AutoSize = True
+        Me.lblMiUser.Location = New System.Drawing.Point(57, 474)
+        Me.lblMiUser.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblMiUser.Name = "lblMiUser"
+        Me.lblMiUser.Size = New System.Drawing.Size(0, 13)
+        Me.lblMiUser.TabIndex = 24
         '
         'Form1
         '
@@ -1633,6 +1644,7 @@ Partial Class Form1
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(692, 489)
+        Me.Controls.Add(Me.lblMiUser)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxMenu)
@@ -1836,4 +1848,5 @@ Partial Class Form1
     Friend WithEvents CerrarSesiónToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox38 As PictureBox
     Friend WithEvents btnServidorCorreo As Button
+    Friend WithEvents lblMiUser As Label
 End Class

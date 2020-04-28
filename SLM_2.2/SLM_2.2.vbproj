@@ -170,6 +170,7 @@
     <Compile Include="negocio\ClsTerminoPago.vb" />
     <Compile Include="negocio\ClsUnidad.vb" />
     <Compile Include="negocio\ClsDetallePromociones.vb" />
+    <Compile Include="negocio\ClsUsuario.vb" />
     <Compile Include="negocio\ModulosVarios.vb" />
     <Compile Include="presentacion\A_Alertas.Designer.vb">
       <DependentUpon>A_Alertas.vb</DependentUpon>
@@ -181,6 +182,12 @@
       <DependentUpon>A_Bitacora.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_Bitacora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_CambioPassword.Designer.vb">
+      <DependentUpon>A_CambioPassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_CambioPassword.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_ConfiguracionCorreo.Designer.vb">
@@ -404,6 +411,12 @@
       <DependentUpon>A_Notificacion.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_Notificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_PerfilUsuario.Designer.vb">
+      <DependentUpon>A_PerfilUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_PerfilUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_PeriodoContable.Designer.vb">
@@ -928,6 +941,9 @@
     <EmbeddedResource Include="presentacion\A_Bitacora.resx">
       <DependentUpon>A_Bitacora.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_CambioPassword.resx">
+      <DependentUpon>A_CambioPassword.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ConfiguracionCorreo.resx">
       <DependentUpon>A_ConfiguracionCorreo.vb</DependentUpon>
     </EmbeddedResource>
@@ -1026,6 +1042,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Notificacion.resx">
       <DependentUpon>A_Notificacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_PerfilUsuario.resx">
+      <DependentUpon>A_PerfilUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_PeriodoContable.resx">
       <DependentUpon>A_PeriodoContable.vb</DependentUpon>

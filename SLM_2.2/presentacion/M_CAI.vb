@@ -94,6 +94,7 @@
     End Sub
 
     Private Sub txtcodigoMaquina_TextChanged_1(sender As Object, e As EventArgs) Handles txtcodigoMaquina.TextChanged
+
         If (Trim(txtcodigoMaquina.Text) <> "") Then
             Try
                 Dim objMaq As New ClsMaquinasLocales
@@ -120,5 +121,43 @@
 
     Private Sub btnbuscarMaquinaLocal_Click(sender As Object, e As EventArgs) Handles btnbuscarMaquinaLocal.Click
         M_MaquinasLocales.ShowDialog()
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+
+        Try
+
+            If lblCodigo.Text <> "" Then
+
+                Dim CAI As New ClsCAI
+
+                With CAI
+
+                    .Codigo_ = Convert.ToInt32(lblCodigo.Text)
+                    .estado_ = chkEstado.Checked
+
+                    'Habilitar CAI
+                    If .HabilitarCAI = 1 Then
+                        MsgBox("Se habilito el registro de CAI.")
+                    End If
+
+                End With
+
+            End If
+
+        Catch ex As Exception
+            MsgBox("No se seleccionó un registro o ocurrio un error." + ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub M_CAI_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        If lblCodigo.Text <> "" Then
+            btnModificar.Enabled = True
+        Else
+            btnModificar.Enabled = False
+        End If
+
     End Sub
 End Class

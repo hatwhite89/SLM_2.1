@@ -28,10 +28,10 @@ Partial Class M_InicioSesion
         Me.txtusuario = New System.Windows.Forms.TextBox()
         Me.btnInicioSesion = New System.Windows.Forms.Button()
         Me.gbxInicioSesion = New System.Windows.Forms.GroupBox()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.SkinEngine1 = New Sunisoft.IrisSkin.SkinEngine(CType(Me, System.ComponentModel.Component))
-        Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.gbxInicioSesion.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -91,13 +91,23 @@ Partial Class M_InicioSesion
         Me.gbxInicioSesion.Controls.Add(Me.btnInicioSesion)
         Me.gbxInicioSesion.Controls.Add(Me.lblclave)
         Me.gbxInicioSesion.Controls.Add(Me.txtusuario)
-        Me.gbxInicioSesion.Location = New System.Drawing.Point(11, 193)
+        Me.gbxInicioSesion.Location = New System.Drawing.Point(11, 267)
         Me.gbxInicioSesion.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxInicioSesion.Name = "gbxInicioSesion"
         Me.gbxInicioSesion.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxInicioSesion.Size = New System.Drawing.Size(240, 232)
         Me.gbxInicioSesion.TabIndex = 134
         Me.gbxInicioSesion.TabStop = False
+        '
+        'txtPassword
+        '
+        Me.txtPassword.Location = New System.Drawing.Point(41, 118)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtPassword.Size = New System.Drawing.Size(158, 20)
+        Me.txtPassword.TabIndex = 1
+        Me.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Button1
         '
@@ -114,9 +124,9 @@ Partial Class M_InicioSesion
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(41, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(177, 176)
+        Me.PictureBox1.Size = New System.Drawing.Size(239, 250)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 135
         Me.PictureBox1.TabStop = False
@@ -130,23 +140,13 @@ Partial Class M_InicioSesion
         Me.SkinEngine1.SerialNumber = "U4N2UjLguUZs33UR+Vy47JAZ81t2fjIFvut28vc5oHiVeivGb/NZMA=="
         Me.SkinEngine1.SkinFile = Nothing
         '
-        'txtPassword
-        '
-        Me.txtPassword.Location = New System.Drawing.Point(41, 118)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(158, 20)
-        Me.txtPassword.TabIndex = 1
-        Me.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'M_InicioSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(267, 437)
+        Me.ClientSize = New System.Drawing.Size(267, 510)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.gbxInicioSesion)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
