@@ -106,7 +106,7 @@ Public Class ClsProducto
     Public Function RecuperarProductoOC() As SqlDataReader
         Dim sqlcom As SqlCommand
         sqlcom = New SqlCommand
-        sqlcom.CommandText = "select * from Producto"
+        sqlcom.CommandText = "select * from ProductoAlmacen"
         sqlcom.Connection = New ClsConnection().getConexion
         Return sqlcom.ExecuteReader
     End Function
@@ -143,8 +143,9 @@ Public Class ClsProducto
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "cantidad_minima"
-        sqlpar.Value = cantidad_minima
+        sqlpar.Value = CantidadMinimaProducto
         sqlcom.Parameters.Add(sqlpar)
+
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "id_unidad_medida"

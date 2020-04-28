@@ -22,6 +22,10 @@ Partial Class E_frmProducto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtCantidadMinima = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -48,6 +52,8 @@ Partial Class E_frmProducto
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,7 +85,7 @@ Partial Class E_frmProducto
         Me.GroupBox1.Size = New System.Drawing.Size(694, 228)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Almacen"
+        Me.GroupBox1.Text = "Datos Generales"
         '
         'txtCantidadMinima
         '
@@ -100,7 +106,7 @@ Partial Class E_frmProducto
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(157, 16)
+        Me.Label11.Location = New System.Drawing.Point(158, 23)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(60, 13)
         Me.Label11.TabIndex = 25
@@ -108,7 +114,7 @@ Partial Class E_frmProducto
         '
         'txtExistencia
         '
-        Me.txtExistencia.Location = New System.Drawing.Point(160, 39)
+        Me.txtExistencia.Location = New System.Drawing.Point(161, 46)
         Me.txtExistencia.Name = "txtExistencia"
         Me.txtExistencia.Size = New System.Drawing.Size(117, 20)
         Me.txtExistencia.TabIndex = 24
@@ -116,15 +122,15 @@ Partial Class E_frmProducto
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(23, 142)
+        Me.Label9.Location = New System.Drawing.Point(24, 149)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(75, 13)
+        Me.Label9.Size = New System.Drawing.Size(40, 13)
         Me.Label9.TabIndex = 21
-        Me.Label9.Text = "Marca Modelo"
+        Me.Label9.Text = "Marca "
         '
         'txtModelo
         '
-        Me.txtModelo.Location = New System.Drawing.Point(26, 159)
+        Me.txtModelo.Location = New System.Drawing.Point(27, 166)
         Me.txtModelo.Name = "txtModelo"
         Me.txtModelo.Size = New System.Drawing.Size(251, 20)
         Me.txtModelo.TabIndex = 20
@@ -132,15 +138,15 @@ Partial Class E_frmProducto
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(23, 102)
+        Me.Label8.Location = New System.Drawing.Point(24, 109)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(83, 13)
+        Me.Label8.Size = New System.Drawing.Size(40, 13)
         Me.Label8.TabIndex = 19
-        Me.Label8.Text = "Marca Producto"
+        Me.Label8.Text = "Marca "
         '
         'txtMarca
         '
-        Me.txtMarca.Location = New System.Drawing.Point(26, 119)
+        Me.txtMarca.Location = New System.Drawing.Point(27, 126)
         Me.txtMarca.Name = "txtMarca"
         Me.txtMarca.Size = New System.Drawing.Size(251, 20)
         Me.txtMarca.TabIndex = 18
@@ -191,7 +197,7 @@ Partial Class E_frmProducto
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(23, 62)
+        Me.Label2.Location = New System.Drawing.Point(24, 69)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(90, 13)
         Me.Label2.TabIndex = 7
@@ -200,7 +206,7 @@ Partial Class E_frmProducto
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(23, 16)
+        Me.Label1.Location = New System.Drawing.Point(24, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(86, 13)
         Me.Label1.TabIndex = 6
@@ -216,14 +222,15 @@ Partial Class E_frmProducto
         '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(26, 39)
+        Me.txtCodigo.Location = New System.Drawing.Point(27, 46)
         Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.ReadOnly = True
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
         Me.txtCodigo.TabIndex = 1
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(26, 79)
+        Me.txtNombre.Location = New System.Drawing.Point(27, 86)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(251, 20)
         Me.txtNombre.TabIndex = 0
@@ -239,16 +246,16 @@ Partial Class E_frmProducto
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(519, 8)
+        Me.Button2.Location = New System.Drawing.Point(452, 8)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Mofidicar"
+        Me.Button2.Text = "Nuevo"
         Me.Button2.UseVisualStyleBackColor = False
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(421, 8)
+        Me.Button1.Location = New System.Drawing.Point(533, 8)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 3
@@ -257,6 +264,7 @@ Partial Class E_frmProducto
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.txtBuscar)
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
         Me.GroupBox2.Location = New System.Drawing.Point(8, 281)
@@ -264,13 +272,13 @@ Partial Class E_frmProducto
         Me.GroupBox2.Size = New System.Drawing.Size(694, 216)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Buscar  producto"
+        Me.GroupBox2.Text = "Buscador"
         '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(171, 11)
+        Me.txtBuscar.Location = New System.Drawing.Point(212, 23)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(517, 20)
+        Me.txtBuscar.Size = New System.Drawing.Size(476, 20)
         Me.txtBuscar.TabIndex = 1
         '
         'DataGridView1
@@ -278,15 +286,45 @@ Partial Class E_frmProducto
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.GrayText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 37)
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.LightSalmon
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle10
+        Me.DataGridView1.EnableHeadersVisualStyles = False
+        Me.DataGridView1.GridColor = System.Drawing.Color.Black
+        Me.DataGridView1.Location = New System.Drawing.Point(7, 55)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(682, 173)
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.LightSalmon
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle12
+        Me.DataGridView1.Size = New System.Drawing.Size(682, 161)
         Me.DataGridView1.TabIndex = 0
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button3)
@@ -294,6 +332,25 @@ Partial Class E_frmProducto
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(694, 37)
         Me.Panel1.TabIndex = 3
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(20, 11)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(90, 20)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Productos"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(6, 30)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(200, 13)
+        Me.Label7.TabIndex = 10
+        Me.Label7.Text = "Ingrese el texto para realizar la busqueda"
         '
         'E_frmProducto
         '
@@ -311,6 +368,7 @@ Partial Class E_frmProducto
         Me.GroupBox2.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -327,8 +385,6 @@ Partial Class E_frmProducto
     Friend WithEvents Label6 As Label
     Friend WithEvents txtCantidadMinima As TextBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents txtExistencia As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txtModelo As TextBox
     Friend WithEvents Label8 As Label
@@ -341,4 +397,8 @@ Partial Class E_frmProducto
     Friend WithEvents Button1 As Button
     Friend WithEvents txtDescripcion As RichTextBox
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label11 As Label
+    Friend WithEvents txtExistencia As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label7 As Label
 End Class

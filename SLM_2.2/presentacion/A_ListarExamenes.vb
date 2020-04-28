@@ -46,4 +46,7 @@
 
     End Sub
 
+    Private Sub dtExamenes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtExamenes.CellContentClick
+
+    End Sub
 End Class
