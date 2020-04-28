@@ -194,6 +194,7 @@
                     E_DetalleExamenes.lblFila.Text = e.RowIndex.ToString
                     E_DetalleExamenes.ShowDialog()
                 ElseIf e.ColumnIndex = 4 Then
+                    M_Descuentos.lblform.Text = "M_ListaPrecios"
                     M_Descuentos.lblFila.Text = e.RowIndex.ToString
                     M_Descuentos.ShowDialog()
                 ElseIf e.ColumnIndex = 5 And dgbtabla.Rows(e.RowIndex).Cells(0).Value() = "" Then
