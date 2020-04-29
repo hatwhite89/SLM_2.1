@@ -2,46 +2,7 @@
     Private Sub btnInicioSesion_Click(sender As Object, e As EventArgs) Handles btnInicioSesion.Click
 
         'Login
-
-        Try
-
-            Dim usuario As New ClsUsuario
-
-            With usuario
-
-                .Usuario_ = txtusuario.Text
-                .password_ = Encriptar(txtPassword.Text)
-
-            End With
-
-            Dim dt As New DataTable
-            Dim row As DataRow
-
-            dt = usuario.Login
-
-            If dt.Rows.Count < 0 Then
-                MsgBox("Error al ingresar. Verifique usuario y contraseña.")
-            Else
-                row = dt.Rows(0)
-                If row("estado") = 0 Then
-
-                    MsgBox("Su usuario ha sido deshabilitado. Contactar al administrador")
-
-                Else
-
-                    Form1.Show()
-                    Form1.lblMiUser.Text = txtusuario.Text
-                    txtusuario.Text = ""
-                    txtPassword.Text = ""
-                    Me.Hide()
-
-                End If
-
-            End If
-
-        Catch ex As Exception
-            MsgBox("El usuario no existe o hubo un error.")
-        End Try
+        LOGIN(txtusuario.Text, txtPassword.Text)
 
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
@@ -54,4 +15,52 @@
         SkinEngine1.SkinFile = "C:\Users\Software 3\Source\Repos\hatwhite89\SLM_2.1\SLM_2.2\Themes\Componentes Graficos Vb2\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\Sports\SportsBlue.ssk"
 
     End Sub
+
+    ' Sub INICIO_DE_SESION()
+    'try
+
+    '        dim usuario as new clsusuario
+
+    '        with usuario
+
+    '            .usuario_ = txtusuario.text
+    '            .password_ = encriptar(txtpassword.text)
+
+    '        end with
+
+    '        dim dt as new datatable
+    '        dim row as datarow
+
+    '        dt = usuario.login
+
+    '        if dt.rows.count < 0 then
+    '            msgbox("error al ingresar. verifique usuario y contraseña.")
+    '        else
+    '            row = dt.rows(0)
+    '            if row("estado") = 0 then
+
+    '                msgbox("su usuario ha sido deshabilitado. contactar al administrador")
+
+    '            else
+
+    '                form1.show()
+    '                form1.lblmiuser.text = txtusuario.text
+    '                form1.lblusercod.text = row("cod_usuario")
+    '                txtusuario.text = ""
+    '                txtpassword.text = ""
+    '                me.hide()
+
+    '            end if
+
+    '        end if
+
+    '    catch ex as exception
+    '        msgbox("el usuario no existe o hubo un error.")
+    '    end try
+
+
+    'end sub
+
+
+
 End Class

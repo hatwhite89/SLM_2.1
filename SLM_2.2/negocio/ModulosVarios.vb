@@ -209,4 +209,54 @@ Module ModulosVarios
 
 
 
+    ':::::::::::::::::::::::::::::::::::::: LOGIN
+    Public Function LOGIN(User As String, Password As String)
+        Try
+
+            Dim usuario As New ClsUsuario
+
+            With usuario
+
+                .Usuario_ = User
+                .password_ = Encriptar(Password)
+
+            End With
+
+            Dim dt As New DataTable
+            Dim row As DataRow
+
+            dt = usuario.Login
+
+            If dt.Rows.Count < 0 Then
+                MsgBox("Error al ingresar. Verifique usuario y contraseña.")
+            Else
+                row = dt.Rows(0)
+                If row("estado") = 0 Then
+
+                    MsgBox("Su usuario ha sido deshabilitado. Contactar al administrador")
+
+                Else
+
+                    Form1.Show()
+                    Form1.lblMiUser.Text = User
+                    Form1.lblUserCod.Text = row("cod_usuario")
+                    M_InicioSesion.txtusuario.Text = ""
+                    M_InicioSesion.txtPassword.Text = ""
+                    M_InicioSesion.Hide()
+
+                End If
+
+            End If
+
+        Catch ex As Exception
+            MsgBox("El usuario no existe o hubo un error.")
+        End Try
+
+    End Function
+
+    ':::::::::::::::::::::::::::::::::::::::::::: FINAL LOGIN
+
+
+
+
 End Module
