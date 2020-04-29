@@ -12,9 +12,16 @@
     End Sub
 
     Private Sub M_InicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SkinEngine1.SkinFile = "C:\Users\Software 3\Source\Repos\hatwhite89\SLM_2.1\SLM_2.2\Themes\Componentes Graficos Vb2\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\Sports\SportsBlue.ssk"
+
 
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Me.Close()
+
+    End Sub
+
 
     ' Sub INICIO_DE_SESION()
     'try
