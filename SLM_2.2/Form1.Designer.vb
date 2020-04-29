@@ -175,7 +175,6 @@ Partial Class Form1
         Me.Button28 = New System.Windows.Forms.Button()
         Me.Button27 = New System.Windows.Forms.Button()
         Me.lblMiUser = New System.Windows.Forms.Label()
-        Me.lblUserCod = New System.Windows.Forms.Label()
         Me.gbxMenu.SuspendLayout()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
@@ -2067,15 +2066,6 @@ Partial Class Form1
         Me.lblMiUser.TabIndex = 26
         Me.lblMiUser.Text = "Label3"
         '
-        'lblUserCod
-        '
-        Me.lblUserCod.AutoSize = True
-        Me.lblUserCod.Location = New System.Drawing.Point(307, 471)
-        Me.lblUserCod.Name = "lblUserCod"
-        Me.lblUserCod.Size = New System.Drawing.Size(39, 13)
-        Me.lblUserCod.TabIndex = 27
-        Me.lblUserCod.Text = "Label3"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2083,7 +2073,6 @@ Partial Class Form1
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(687, 489)
-        Me.Controls.Add(Me.lblUserCod)
         Me.Controls.Add(Me.lblMiUser)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.StatusStrip1)
@@ -2336,5 +2325,4 @@ Partial Class Form1
     Friend WithEvents Button28 As Button
     Friend WithEvents Button27 As Button
     Friend WithEvents lblMiUser As Label
-    Friend WithEvents lblUserCod As Label
 End Class
