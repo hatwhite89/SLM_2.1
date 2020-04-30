@@ -227,7 +227,7 @@ Module ModulosVarios
 
             dt = usuario.Login
 
-            If dt.Rows.Count < 0 Then
+            If dt.Rows.Count < 0 Then 'Verificar existencia
                 MsgBox("Error al ingresar. Verifique usuario y contraseña.")
             Else
                 row = dt.Rows(0)
@@ -246,17 +246,50 @@ Module ModulosVarios
 
                 End If
 
-            End If
+            End If ' final verificar existencia
 
         Catch ex As Exception
-            MsgBox("El usuario no existe o hubo un error.")
+            MsgBox("Usuario o contraseña incorrectos. Vuelva a intentarlo.")
         End Try
 
     End Function
+
+
+
 
     ':::::::::::::::::::::::::::::::::::::::::::: FINAL LOGIN
 
 
 
+    ':::::::::::::::::::::::::::::::::::::::::::: LOGIN PASS
+
+    Public Function LOGINPASS(User As String)
+        Try
+
+            Dim usuario As New ClsUsuario
+
+            With usuario
+
+                .Usuario_ = User
+
+            End With
+
+            Dim dt As New DataTable
+            Dim row As DataRow
+
+            dt = usuario.LoginPass
+            row = dt.Rows(0)
+
+            If row("pass") = "#changepass#" Then
+                A_CambioPassword.ShowDialog()
+            End If
+
+        Catch ex As Exception
+            MsgBox("Usuario incorrecto o hubo un error al realizar la consulta. Vuelva a intentarlo.")
+        End Try
+
+    End Function
+
+    ':::::::::::::::::::::::::::::::::::::::::::: FINAL LOGIN
 
 End Module

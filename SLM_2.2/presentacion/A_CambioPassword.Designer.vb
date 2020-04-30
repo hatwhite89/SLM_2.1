@@ -45,26 +45,34 @@ Partial Class A_CambioPassword
         Me.txtPass.Location = New System.Drawing.Point(167, 28)
         Me.txtPass.MaxLength = 30
         Me.txtPass.Name = "txtPass"
+        Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPass.Size = New System.Drawing.Size(208, 20)
         Me.txtPass.TabIndex = 1
+        Me.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'btnGuardar
         '
+        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.ForeColor = System.Drawing.Color.White
         Me.btnGuardar.Location = New System.Drawing.Point(265, 54)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 2
         Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
+        Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'btnCancelar
         '
+        Me.btnCancelar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.ForeColor = System.Drawing.Color.White
         Me.btnCancelar.Location = New System.Drawing.Point(346, 54)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 3
         Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
+        Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'GroupBox1
         '
@@ -82,20 +90,26 @@ Partial Class A_CambioPassword
         '
         'btnVer
         '
+        Me.btnVer.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVer.ForeColor = System.Drawing.Color.White
         Me.btnVer.Location = New System.Drawing.Point(379, 27)
         Me.btnVer.Name = "btnVer"
         Me.btnVer.Size = New System.Drawing.Size(42, 23)
         Me.btnVer.TabIndex = 4
         Me.btnVer.Text = "Ver"
-        Me.btnVer.UseVisualStyleBackColor = True
+        Me.btnVer.UseVisualStyleBackColor = False
         '
         'A_CambioPassword
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(453, 113)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(453, 119)
+        Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "A_CambioPassword"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cambio de Contraseña"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
