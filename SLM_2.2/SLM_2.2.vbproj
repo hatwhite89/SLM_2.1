@@ -110,6 +110,7 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -146,9 +147,11 @@
     <Compile Include="negocio\ClsDetalleContactos.vb" />
     <Compile Include="negocio\ClsDetalleFacturaCompra.vb" />
     <Compile Include="negocio\ClsDetalleListaPrecios.vb" />
+    <Compile Include="negocio\clsDetalleOC.vb" />
     <Compile Include="negocio\ClsDetallePago.vb" />
     <Compile Include="negocio\ClsDetalleRecibo.vb" />
     <Compile Include="negocio\ClsEmpleados.vb" />
+    <Compile Include="negocio\clsEntradaAlmacen.vb" />
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
@@ -465,6 +468,12 @@
     <Compile Include="presentacion\E_frmCategoriaProducto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frmEntrada.Designer.vb">
+      <DependentUpon>E_frmEntrada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmEntrada.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_frmMenuAlmacen.Designer.vb">
       <DependentUpon>E_frmMenuAlmacen.vb</DependentUpon>
     </Compile>
@@ -481,6 +490,12 @@
       <DependentUpon>E_frmProducto.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\E_frmProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmProveedorOC.Designer.vb">
+      <DependentUpon>E_frmProveedorOC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmProveedorOC.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_frmSalida.Designer.vb">
@@ -1154,6 +1169,9 @@
     <EmbeddedResource Include="presentacion\E_frmCategoriaProducto.resx">
       <DependentUpon>E_frmCategoriaProducto.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmEntrada.resx">
+      <DependentUpon>E_frmEntrada.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmMenuAlmacen.resx">
       <DependentUpon>E_frmMenuAlmacen.vb</DependentUpon>
     </EmbeddedResource>
@@ -1162,6 +1180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmProducto.resx">
       <DependentUpon>E_frmProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmProveedorOC.resx">
+      <DependentUpon>E_frmProveedorOC.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmSalida.resx">
       <DependentUpon>E_frmSalida.vb</DependentUpon>

@@ -10,6 +10,8 @@
         ds.Load(clsD.RecuperarUnidadMedida())
         ds2.Load(clsCP.RecuperarCategoriaProducto())
 
+
+
         cmbUnidadMedida.DataSource = ds
         cmbUnidadMedida.DisplayMember = "nombre_unidad_medida"
         cmbUnidadMedida.ValueMember = "id_unidad_medida"
@@ -26,8 +28,10 @@
         Dim TableUM As New DataTable
         Dim clsP As New ClsProducto
         TableUM.Load(clsP.RecuperarProductoOC())
+        BindingSource1.DataSource = TableUM
 
-        DataGridView1.DataSource = TableUM
+        DataGridView1.DataSource = BindingSource1
+        ' DataGridView1.DataSource = TableUM
         'campos 
         txtNombre.ReadOnly = True
         txtModelo.ReadOnly = True
@@ -138,4 +142,11 @@
         txtCantidadMinima.Text = ""
     End Sub
 
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
 End Class

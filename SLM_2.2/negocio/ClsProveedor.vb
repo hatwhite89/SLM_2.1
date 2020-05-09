@@ -343,5 +343,30 @@ Public Class ClsProveedor
         End Using
     End Function
 
+    'Listar Proveedores oc
+    Public Function listarProveedoresOC() As DataTable
 
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("A_slmListarProveedor", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+    Public Function listarProveedoresOC2(ByVal cod As String) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select * from Proveedor where codProveedor='" + cod + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 End Class
