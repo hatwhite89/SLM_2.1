@@ -4,7 +4,6 @@
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         Try
-
             'Validacion de campos vacios
             If txtUsuario.Text <> "" And txtPerfil.Text <> "" Then
 
@@ -23,15 +22,13 @@
                 End With
 
             ElseIf txtUsuario.Text = "" Then
-
                 txtUsuario.BackColor = Color.Red
             ElseIf txtPerfil.TextAlign = "" Then
                 txtPerfil.BackColor = Color.Red
-
             End If
 
         Catch ex As Exception
-            MsgBox("Hubo un error. " + ex.Message)
+            MsgBox("El usuario " + txtUsuario.Text + " ya existe o hubo un error al registrar el error.")
         End Try
 
     End Sub
@@ -114,6 +111,7 @@
             btnModificar.Enabled = True
             btnCambio.Visible = True
 
+
         Catch ex As Exception
 
         End Try
@@ -126,5 +124,26 @@
         btnModificar.Enabled = False
         btnCambio.Visible = False
         txtPass.Enabled = True
+    End Sub
+
+    Private Sub btnCambio_Click(sender As Object, e As EventArgs) Handles btnCambio.Click
+
+        Try
+            With usuario
+
+                .Cod = Convert.ToInt32(txtCodigo.Text)
+                .CambioPassword()
+                MsgBox("Se habilito el cambio de contraseña para el usuario " + txtUsuario.Text + ".")
+                Limpiar()
+                btnGuardar.Enabled = True
+                btnModificar.Enabled = False
+                btnCambio.Visible = False
+                txtPass.Enabled = True
+
+            End With
+        Catch ex As Exception
+            MsgBox("Hubo un error al habilitar el cambio de contraseña." + ex.Message)
+        End Try
+
     End Sub
 End Class

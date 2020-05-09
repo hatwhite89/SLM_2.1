@@ -449,6 +449,7 @@
     '    E_frmTipoMovientoAlmacen.Show()
     'End Sub
 
+
     Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
         Try
             A_ListarDepreciacion.Show()
@@ -457,7 +458,7 @@
         End Try
     End Sub
 
-    Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
+    Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         Try
 
 

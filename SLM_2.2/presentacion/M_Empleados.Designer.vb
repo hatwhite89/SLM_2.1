@@ -54,15 +54,17 @@ Partial Class M_Empleados
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.lblcodePuesto = New System.Windows.Forms.Label()
+        Me.lblcodeDepto = New System.Windows.Forms.Label()
         Me.txtsalario = New System.Windows.Forms.TextBox()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.lblcodigoArea = New System.Windows.Forms.Label()
-        Me.txtArea = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.txtPuestoTrabajo = New System.Windows.Forms.TextBox()
+        Me.txtArea = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtdepartamento = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.rtxtmotivoBaja = New System.Windows.Forms.RichTextBox()
         Me.dtpfechaBaja = New System.Windows.Forms.DateTimePicker()
@@ -152,8 +154,6 @@ Partial Class M_Empleados
         Me.btnBuscarImage = New System.Windows.Forms.Button()
         Me.ofdImagen = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.lblcodeDepto = New System.Windows.Forms.Label()
-        Me.lblcodePuesto = New System.Windows.Forms.Label()
         Me.gbxobjeto.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -212,6 +212,7 @@ Partial Class M_Empleados
         '
         'txtnombre2
         '
+        Me.txtnombre2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtnombre2.Location = New System.Drawing.Point(471, 81)
         Me.txtnombre2.MaxLength = 20
         Me.txtnombre2.Name = "txtnombre2"
@@ -220,6 +221,7 @@ Partial Class M_Empleados
         '
         'txtapellido1
         '
+        Me.txtapellido1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtapellido1.Location = New System.Drawing.Point(188, 109)
         Me.txtapellido1.MaxLength = 20
         Me.txtapellido1.Name = "txtapellido1"
@@ -228,6 +230,7 @@ Partial Class M_Empleados
         '
         'txtapellido2
         '
+        Me.txtapellido2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtapellido2.Location = New System.Drawing.Point(471, 109)
         Me.txtapellido2.MaxLength = 20
         Me.txtapellido2.Name = "txtapellido2"
@@ -266,6 +269,7 @@ Partial Class M_Empleados
         '
         'txtnombre1
         '
+        Me.txtnombre1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtnombre1.Location = New System.Drawing.Point(189, 81)
         Me.txtnombre1.MaxLength = 20
         Me.txtnombre1.Name = "txtnombre1"
@@ -545,6 +549,28 @@ Partial Class M_Empleados
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Puesto Laboral"
         '
+        'lblcodePuesto
+        '
+        Me.lblcodePuesto.AutoSize = True
+        Me.lblcodePuesto.Location = New System.Drawing.Point(30, 44)
+        Me.lblcodePuesto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcodePuesto.Name = "lblcodePuesto"
+        Me.lblcodePuesto.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodePuesto.TabIndex = 167
+        Me.lblcodePuesto.Text = "Puesto"
+        Me.lblcodePuesto.Visible = False
+        '
+        'lblcodeDepto
+        '
+        Me.lblcodeDepto.AutoSize = True
+        Me.lblcodeDepto.Location = New System.Drawing.Point(322, 10)
+        Me.lblcodeDepto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcodeDepto.Name = "lblcodeDepto"
+        Me.lblcodeDepto.Size = New System.Drawing.Size(46, 17)
+        Me.lblcodeDepto.TabIndex = 166
+        Me.lblcodeDepto.Text = "Depto"
+        Me.lblcodeDepto.Visible = False
+        '
         'txtsalario
         '
         Me.txtsalario.Location = New System.Drawing.Point(391, 53)
@@ -574,25 +600,6 @@ Partial Class M_Empleados
         Me.lblcodigoArea.Text = "Area"
         Me.lblcodigoArea.Visible = False
         '
-        'txtArea
-        '
-        Me.txtArea.Location = New System.Drawing.Point(124, 24)
-        Me.txtArea.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtArea.Name = "txtArea"
-        Me.txtArea.ReadOnly = True
-        Me.txtArea.Size = New System.Drawing.Size(154, 22)
-        Me.txtArea.TabIndex = 158
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(11, 27)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(100, 17)
-        Me.Label11.TabIndex = 160
-        Me.Label11.Text = "Area/Gerencia"
-        '
         'txtPuestoTrabajo
         '
         Me.txtPuestoTrabajo.Location = New System.Drawing.Point(124, 54)
@@ -601,6 +608,15 @@ Partial Class M_Empleados
         Me.txtPuestoTrabajo.ReadOnly = True
         Me.txtPuestoTrabajo.Size = New System.Drawing.Size(153, 22)
         Me.txtPuestoTrabajo.TabIndex = 134
+        '
+        'txtArea
+        '
+        Me.txtArea.Location = New System.Drawing.Point(124, 24)
+        Me.txtArea.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtArea.Name = "txtArea"
+        Me.txtArea.ReadOnly = True
+        Me.txtArea.Size = New System.Drawing.Size(154, 22)
+        Me.txtArea.TabIndex = 158
         '
         'Label10
         '
@@ -630,6 +646,16 @@ Partial Class M_Empleados
         Me.Label12.Size = New System.Drawing.Size(98, 17)
         Me.Label12.TabIndex = 156
         Me.Label12.Text = "Departamento"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(11, 27)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(100, 17)
+        Me.Label11.TabIndex = 160
+        Me.Label11.Text = "Area/Gerencia"
         '
         'GroupBox1
         '
@@ -1552,28 +1578,6 @@ Partial Class M_Empleados
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'lblcodeDepto
-        '
-        Me.lblcodeDepto.AutoSize = True
-        Me.lblcodeDepto.Location = New System.Drawing.Point(322, 10)
-        Me.lblcodeDepto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblcodeDepto.Name = "lblcodeDepto"
-        Me.lblcodeDepto.Size = New System.Drawing.Size(46, 17)
-        Me.lblcodeDepto.TabIndex = 166
-        Me.lblcodeDepto.Text = "Depto"
-        Me.lblcodeDepto.Visible = False
-        '
-        'lblcodePuesto
-        '
-        Me.lblcodePuesto.AutoSize = True
-        Me.lblcodePuesto.Location = New System.Drawing.Point(30, 44)
-        Me.lblcodePuesto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblcodePuesto.Name = "lblcodePuesto"
-        Me.lblcodePuesto.Size = New System.Drawing.Size(52, 17)
-        Me.lblcodePuesto.TabIndex = 167
-        Me.lblcodePuesto.Text = "Puesto"
-        Me.lblcodePuesto.Visible = False
         '
         'M_Empleados
         '

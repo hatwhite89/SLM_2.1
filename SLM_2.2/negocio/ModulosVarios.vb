@@ -209,4 +209,87 @@ Module ModulosVarios
 
 
 
+    ':::::::::::::::::::::::::::::::::::::: LOGIN
+    Public Function LOGIN(User As String, Password As String)
+        Try
+
+            Dim usuario As New ClsUsuario
+
+            With usuario
+
+                .Usuario_ = User
+                .password_ = Encriptar(Password)
+
+            End With
+
+            Dim dt As New DataTable
+            Dim row As DataRow
+
+            dt = usuario.Login
+
+            If dt.Rows.Count < 0 Then 'Verificar existencia
+                MsgBox("Error al ingresar. Verifique usuario y contraseña.")
+            Else
+                row = dt.Rows(0)
+                If row("estado") = 0 Then
+
+                    MsgBox("Su usuario ha sido deshabilitado. Contactar al administrador")
+
+                Else
+
+                    Form1.Show()
+                    Form1.lblMiUser.Text = User
+                    Form1.lblUserCod.Text = row("cod_usuario")
+                    M_InicioSesion.txtusuario.Text = ""
+                    M_InicioSesion.txtPassword.Text = ""
+                    M_InicioSesion.Hide()
+
+                End If
+
+            End If ' final verificar existencia
+
+        Catch ex As Exception
+            MsgBox("Usuario o contraseña incorrectos. Vuelva a intentarlo.")
+        End Try
+
+    End Function
+
+
+
+
+    ':::::::::::::::::::::::::::::::::::::::::::: FINAL LOGIN
+
+
+
+    ':::::::::::::::::::::::::::::::::::::::::::: LOGIN PASS
+
+    Public Function LOGINPASS(User As String)
+        Try
+
+            Dim usuario As New ClsUsuario
+
+            With usuario
+
+                .Usuario_ = User
+
+            End With
+
+            Dim dt As New DataTable
+            Dim row As DataRow
+
+            dt = usuario.LoginPass
+            row = dt.Rows(0)
+
+            If row("pass") = "#changepass#" Then
+                A_CambioPassword.ShowDialog()
+            End If
+
+        Catch ex As Exception
+            MsgBox("Usuario incorrecto o hubo un error al realizar la consulta. Vuelva a intentarlo.")
+        End Try
+
+    End Function
+
+    ':::::::::::::::::::::::::::::::::::::::::::: FINAL LOGIN
+
 End Module
