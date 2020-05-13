@@ -424,7 +424,4 @@
         End If
     End Sub
 
-    Private Sub dtDetalleFactura_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellContentClick
-
-    End Sub
 End Class

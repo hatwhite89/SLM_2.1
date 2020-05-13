@@ -16,7 +16,7 @@
 
         Else
 
-            MsgBox("Error al ingresar al sistema.")
+            MsgBox("Error al ingresar al sistema. Debe ingresar usuario y contraseña.")
 
         End If
 

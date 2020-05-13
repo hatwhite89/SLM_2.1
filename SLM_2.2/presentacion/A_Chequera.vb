@@ -7,89 +7,97 @@
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         'Creacion de nueva chequera y cheques
+        Try
+            If txtCtaDestino.Text <> "" And txtCantidad.Text <> "" And txtBanco.Text <> "" And mtxtNumInicio.Text <> "" Then 'if Campos Vacios
 
-        If txtCtaDestino.Text <> "" And txtCantidad.Text <> "" And txtBanco.Text <> "" And mtxtNumInicio.Text <> "" Then 'if Campos Vacios
+                Dim dt1, dt2 As New DataTable
 
-            Dim dt1, dt2 As New DataTable
+                banco.cod_breve = txtBanco.Text
+                cuenta.Cuent_a = Convert.ToInt64(txtCtaDestino.Text)
 
-            banco.cod_breve = txtBanco.Text
-            cuenta.Cuent_a = Convert.ToInt64(txtCtaDestino.Text)
+                dt1 = banco.buscarBancoCod
+                dt2 = cuenta.Comprobar
 
-            dt1 = banco.buscarBancoCod
-            dt2 = cuenta.Comprobar
+                If dt1.Rows.Count > 0 And dt2.Rows.Count > 0 Then
 
-            If dt1.Rows.Count > 0 And dt2.Rows.Count > 0 Then
+                    Try
 
-                Try
+                        With Chequera
 
-                    With Chequera
+                            'Capturar Variables
+                            .Cuenta_Destino = txtCtaDestino.Text
+                            .Numero_Inicio = mtxtNumInicio.Text
+                            .Cuenta_Destino = txtCtaDestino.Text
+                            .Cantida_d = Convert.ToInt32(txtCantidad.Text)
+                            .Banc_o = txtBanco.Text
 
-                        'Capturar Variables
-                        .Cuenta_Destino = txtCtaDestino.Text
-                        .Numero_Inicio = mtxtNumInicio.Text
-                        .Cuenta_Destino = txtCtaDestino.Text
-                        .Cantida_d = Convert.ToInt32(txtCantidad.Text)
-                        .Banc_o = txtBanco.Text
+                            'Registrar Datos
+                            .registrarNuevaChequera()
 
-                        'Registrar Datos
-                        .registrarNuevaChequera()
+                            dtChequeras.DataSource = Chequera.listarUltimaChequera
+                            lblCodChequera.Text = dtChequeras.Rows(0).Cells(0).Value
+                            dtChequeras.DataSource = Chequera.listarChequeras
+                        End With
 
-                        dtChequeras.DataSource = Chequera.listarUltimaChequera
-                        lblCodChequera.Text = dtChequeras.Rows(0).Cells(0).Value
-                        dtChequeras.DataSource = Chequera.listarChequeras
-                    End With
+                        'Nuevos Cheques
+                        With Cheques
+                            .Cod_Chequera = Convert.ToInt64(lblCodChequera.Text)
+                            .Numero_Cheque = mtxtNumInicio.Text
+                            .Cod_BreveBanco = txtBanco.Text
+                            .Nombre_Banco = lblNombreBanc.Text
+                            .Estad_o = "Habilitado"
+                            .Moned_a = "Lps"
+                            .Cantida_d = Convert.ToInt64(txtCantidad.Text)
+                            .registrarNuevosCheques()
 
-                    'Nuevos Cheques
-                    With Cheques
-                        .Cod_Chequera = Convert.ToInt64(lblCodChequera.Text)
-                        .Numero_Cheque = mtxtNumInicio.Text
-                        .Cod_BreveBanco = txtBanco.Text
-                        .Nombre_Banco = lblNombreBanc.Text
-                        .Estad_o = "Habilitado"
-                        .Moned_a = "Lps"
-                        .Cantida_d = Convert.ToInt64(txtCantidad.Text)
-                        .registrarNuevosCheques()
+                            MessageBox.Show("Se crearon " + txtCantidad.Text + "  registros de cheques.")
+                        End With
 
-                        MessageBox.Show("Se crearon " + txtCantidad.Text + "  registros de cheques.")
-                    End With
+                        'Limpiar Campos
+                        Limpiar()
 
-                    'Limpiar Campos
-                    Limpiar()
+                    Catch ex As Exception
 
-                Catch ex As Exception
+                        MsgBox("Hubo un error al generar la chequera. Detalle: " + ex.Message)
 
-                    MsgBox("Hubo un error al generar la chequera. Detalle: " + ex.Message)
+                    End Try
 
-                End Try
+                End If
 
-            End If
+            Else ' else campos vacios
 
-        Else ' else campos vacios
+                MsgBox("Faltan campos que llenar.")
 
-            MsgBox("Faltan campos que llenar.")
+                If txtCtaDestino.Text = "" Then
+                    txtCtaDestino.BackColor = Color.Red
 
-            If txtCtaDestino.Text = "" Then
-                txtCtaDestino.BackColor = Color.Red
+                ElseIf txtCantidad.Text = "" Then
+                    txtCantidad.BackColor = Color.Red
 
-            ElseIf txtCantidad.Text = "" Then
-                txtCantidad.BackColor = Color.Red
+                ElseIf txtBanco.Text = "" Then
+                    txtBanco.BackColor = Color.Red
 
-            ElseIf txtBanco.Text = "" Then
-                txtBanco.BackColor = Color.Red
+                ElseIf mtxtNumInicio.Text = "" Then
+                    mtxtNumInicio.BackColor = Color.Red
 
-            ElseIf mtxtNumInicio.Text = "" Then
-                mtxtNumInicio.BackColor = Color.Red
+                End If
 
-            End If
+            End If ' if campos vacios
 
-        End If ' if campos vacios
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
     Private Sub A_Chequera_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            'Listar contactos
+            dtChequeras.DataSource = Chequera.listarChequeras
+        Catch ex As Exception
 
-        'Listar contactos
-        dtChequeras.DataSource = Chequera.listarChequeras
+        End Try
+
 
     End Sub
 

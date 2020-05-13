@@ -2,6 +2,7 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'Notificación
+        'ApruebaS.Show()
 
         Dim cai As New ClsCAI
         Dim numfact, dias As DataTable
@@ -33,6 +34,16 @@
                 A_Notificacion.lblMensajeDias.Visible = True
                 A_Notificacion.Show()
             End If
+
+
+
+
+
+
+
+
+
+
         Catch ex As Exception
 
         End Try
@@ -418,7 +429,7 @@
         panelMenu.Visible = False
     End Sub
 
-    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+    Private Sub btnSistema_Click(sender As Object, e As EventArgs) Handles btnSistema.Click
         If PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelTalentoHumano.Visible = True Then
 
             PanelFactura.Visible = False
@@ -528,7 +539,7 @@
         M_BuscarEmpleados.ShowDialog()
     End Sub
 
-    Private Sub Button22_Click(sender As Object, e As EventArgs) Handles Button22.Click
+    Private Sub Button22_Click(sender As Object, e As EventArgs) Handles btnAlmacen.Click
         If PanelTalentoHumano.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Then
 
             PanelFactura.Visible = False
@@ -562,11 +573,7 @@
         E_frmOrdenCompra.Show()
     End Sub
 
-    Private Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
-        E_frmEntrada.Show()
-    End Sub
-
-    Private Sub Button30_Click(sender As Object, e As EventArgs) Handles Button30.Click
-        E_frmSalida.Show()
+    Private Sub btnPerfiles_Click(sender As Object, e As EventArgs) Handles btnPerfiles.Click
+        A_PerfilUsuario.Show()
     End Sub
 End Class

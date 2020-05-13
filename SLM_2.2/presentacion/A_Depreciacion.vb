@@ -7,7 +7,7 @@
     Private Formato_Decimales As String = "###,###,###,##.00"
     Dim Depreciacion As New ClsDepreciacion
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
         dtDepreciacion.Rows.Clear()
         dtDepreciacion.DataSource = Nothing
         Calcular_Depreciacion()
@@ -96,6 +96,8 @@
 
         txtCod.Text = ""
         txtDescripcion.Text = ""
+        txtSede.Text = ""
+        txtTipo.Text = ""
         txtCosto.Text = ""
         txtValorResidual.Text = ""
         dtpCreacion.Value = DateTime.Now
@@ -103,10 +105,11 @@
         rbtAnual.Checked = False
         rbtMensual.Checked = False
         rbtDiaria.Checked = False
+        dtDepreciacion.DataSource = ""
 
     End Sub
 
-    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs)
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
         limpia()
 
     End Sub
@@ -162,6 +165,7 @@
 
                     If .registrarDepreciacion = 1 Then
                         MsgBox("Se guardo el registro exitosamente.")
+                        limpia()
 
                     End If
 
@@ -208,6 +212,7 @@
 
                     If .modificarDepreciacion = 1 Then
                         MsgBox("Se modificó el registro exitosamente.")
+                        limpia()
 
                     End If
 
@@ -249,4 +254,8 @@
             Me.Close()
         End If
     End Sub
+
+
+
+
 End Class

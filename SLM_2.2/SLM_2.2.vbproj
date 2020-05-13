@@ -155,6 +155,7 @@
     <Compile Include="negocio\clsEntradaAlmacen.vb" />
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
+    <Compile Include="negocio\ClsFormularios.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
     <Compile Include="negocio\ClsHorarios.vb" />
     <Compile Include="negocio\ClsItemExamen.vb" />
@@ -169,6 +170,7 @@
     <Compile Include="negocio\ClsPago.vb" />
     <Compile Include="negocio\ClsParametroExamen.vb" />
     <Compile Include="negocio\ClsParametroExamenDetalle.vb" />
+    <Compile Include="negocio\ClsPerfilesUsuario.vb" />
     <Compile Include="negocio\ClsPeriodoContable.vb" />
     <Compile Include="negocio\ClsPermisos.vb" />
     <Compile Include="negocio\ClsPrecio.vb" />
@@ -326,6 +328,12 @@
     <Compile Include="presentacion\A_ListadoFacturaCompra.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ListadoPerfiles.Designer.vb">
+      <DependentUpon>A_ListadoPerfiles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListadoPerfiles.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListarCAI.Designer.vb">
       <DependentUpon>A_ListarCAI.vb</DependentUpon>
     </Compile>
@@ -428,6 +436,12 @@
     <Compile Include="presentacion\A_Notificacion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_PerfilUsuario.Designer.vb">
+      <DependentUpon>A_PerfilUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_PerfilUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_PeriodoContable.Designer.vb">
       <DependentUpon>A_PeriodoContable.vb</DependentUpon>
     </Compile>
@@ -457,6 +471,12 @@
       <DependentUpon>A_Transferencias.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_Transferencias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ValoresRefPar.Designer.vb">
+      <DependentUpon>A_ValoresRefPar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ValoresRefPar.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_BuscarOrdenDeTrabajo.Designer.vb">
@@ -1115,6 +1135,9 @@
     <EmbeddedResource Include="presentacion\A_ListadoFacturaCompra.resx">
       <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListadoPerfiles.resx">
+      <DependentUpon>A_ListadoPerfiles.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarCAI.resx">
       <DependentUpon>A_ListarCAI.vb</DependentUpon>
     </EmbeddedResource>
@@ -1166,6 +1189,9 @@
     <EmbeddedResource Include="presentacion\A_Notificacion.resx">
       <DependentUpon>A_Notificacion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_PerfilUsuario.resx">
+      <DependentUpon>A_PerfilUsuario.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_PeriodoContable.resx">
       <DependentUpon>A_PeriodoContable.vb</DependentUpon>
     </EmbeddedResource>
@@ -1183,6 +1209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Transferencias.resx">
       <DependentUpon>A_Transferencias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ValoresRefPar.resx">
+      <DependentUpon>A_ValoresRefPar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_BuscarOrdenDeTrabajo.resx">
       <DependentUpon>E_BuscarOrdenDeTrabajo.vb</DependentUpon>

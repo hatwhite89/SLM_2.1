@@ -1,6 +1,6 @@
 ﻿Public Class frmDeposito
 
-    Dim nuevoDeposito As New ClsDeposito
+    Dim Deposito As New ClsDeposito
     Dim buscarCodigo As New ClsFormaPago
     Dim asiento As New ClsAsientoContable
     Dim detalleAsiento As New ClsDetalleAsiento
@@ -56,39 +56,27 @@
 
         If txtBanco.Text <> "" And txtContado.Text <> "" And txtTipoConta.Text <> "" And txtCajero.Text <> "" And txtBanco.Text <> txtTipoConta.Text Then
 
-            'Capturar informacion de DataTable en Label
-            'Validación de codigo de banco.
-            Try
-                Dim dt As New DataTable
-                buscarCodigo.Cod = txtBanco.Text
-                dt = buscarCodigo.buscarCodigoFormaPago()
-                Dim row As DataRow = dt.Rows(0)
-                lblCodFormaPago.Text = CStr(row("codFormaPago"))
-
-            Catch ex As Exception
-                MessageBox.Show("El código de banco no existe.")
-            End Try
 
             'Guardar deposito en la base de datos
 
             Try
 
                 If lblTipoDeposito.Text = "Tarjeta" Then
+
                     'Campos para tipo de deposito : Tarjeta
-                    With nuevoDeposito
+                    With Deposito
                         .Fech_a = dtpFecha.Value
-                        .Banc_o = txtBanco.Text
+                        .CodFP_Banco = Convert.ToInt32(lblCodFPBanco.Text)
                         .conta_do = Convert.ToDouble(txtContado.Text)
-                        .Tipo_Contado = txtTipoConta.Text
+                        .CodFP_Contado = Convert.ToInt32(lblCodFPContado.Text)
                         .total_Depositado = Convert.ToDouble(txtTotalDep.Text)
                         .Mone_da = txtMoneda.Text
-                        .mon_base = Convert.ToDouble(txtMonBase.Text)
+                        .mon_base = Convert.ToInt32(txtMonBase.Text)
                         .comisi_on = Convert.ToDouble(txtComision.Text)
                         .Comenta_rio = txtComentario.Text
                         .Tipo_Deposito = lblTipoDeposito.Text
                         .cod_Cajero = txtCajero.Text
-                        .Cod_FormaPago = Convert.ToInt32(lblCodFormaPago.Text)
-                        .registrarNuevoDeposito()
+                        .registrarDepositos()
 
                     End With
 
@@ -105,7 +93,7 @@
                             Dim ultimo As DataTable
                             Dim nro As DataRow
 
-                            ultimo = nuevoDeposito.listarUltimoDeposito
+                            ultimo = Deposito.listarUltimoDeposito
                             nro = ultimo.Rows(0)
 
                             .Campo_Llave = Convert.ToInt32(nro("codDeposito"))
@@ -126,7 +114,7 @@
 
                                         Dim dt As DataTable
                                         Dim row As DataRow
-
+                                        buscarCodigo.Cod = txtBanco.Text
                                         dt = buscarCodigo.infoFormaPago
                                         row = dt.Rows(0)
 
@@ -186,20 +174,20 @@
 
                 Else
                     'Campos para tipo de deposito: Deposito Bancario
-                    With nuevoDeposito
+                    With Deposito
                         .Fech_a = dtpFecha.Value
-                        .Banc_o = txtBanco.Text
+                        .CodFP_Banco = Convert.ToInt32(lblCodFPBanco.Text)
                         .conta_do = Convert.ToDouble(txtContado.Text)
-                        .Tipo_Contado = txtTipoConta.Text
+                        .CodFP_Contado = Convert.ToInt32(lblCodFPContado.Text)
                         .total_Depositado = Convert.ToDouble(txtContado.Text)
                         .Mone_da = txtMoneda.Text
-                        .mon_base = Convert.ToDouble(txtMonBase.Text)
-                        .comisi_on = "0"
+                        .mon_base = Convert.ToInt32(txtMonBase.Text)
+                        .comisi_on = 0.0
                         .Comenta_rio = txtComentario.Text
                         .Tipo_Deposito = lblTipoDeposito.Text
                         .cod_Cajero = txtCajero.Text
-                        .Cod_FormaPago = Convert.ToInt32(lblCodFormaPago.Text)
-                        .registrarNuevoDeposito()
+                        .registrarDepositos()
+
 
                     End With
 
@@ -216,7 +204,7 @@
                             Dim ultimo As DataTable
                             Dim nro As DataRow
 
-                            ultimo = nuevoDeposito.listarUltimoDeposito
+                            ultimo = Deposito.listarUltimoDeposito
                             nro = ultimo.Rows(0)
 
                             .Campo_Llave = Convert.ToInt32(nro("codDeposito"))
@@ -237,7 +225,7 @@
 
                                         Dim dt As DataTable
                                         Dim row As DataRow
-
+                                        buscarCodigo.Cod = txtBanco.Text
                                         dt = buscarCodigo.infoFormaPago
                                         row = dt.Rows(0)
 
@@ -289,7 +277,7 @@
             End Try
 
             MsgBox("Se registro un nuevo deposito.")
-            dtDepositos.DataSource = nuevoDeposito.listarDepositos
+            dtDepositos.DataSource = Deposito.listarDepositos
 
         Else
 
@@ -339,141 +327,97 @@
 
     End Sub
 
-    Private Sub txtID_TextChanged(sender As Object, e As EventArgs) Handles txtID.TextChanged
-        Dim Deposito As New ClsDeposito
-        Dim Dato As New DataView
 
-        Try
-            'Actualizar datos en datagrid con textbox
-            Deposito.Cod = txtID.Text
-            Dato = Deposito.buscarDepositoXCod.DefaultView
-            dtDepositos.DataSource = Dato
-        Catch ex As Exception
-            MessageBox.Show("El código es incorrecto o el campo está vacio.")
-        End Try
-    End Sub
 
-    Private Sub cbxTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxTipo.SelectedIndexChanged
-        Dim Deposito As New ClsDeposito
-        Dim Dato As New DataView
 
-        Try
-            'Actualizar datos en datagrid con textbox
-            Deposito.Tipo_Deposito = cbxTipo.Text
-            Dato = Deposito.buscarDepositoXTipoDepo.DefaultView
-            dtDepositos.DataSource = Dato
-        Catch ex As Exception
-            MessageBox.Show("Seleccione un tipo de deposito.")
-        End Try
-
-    End Sub
-
-    Private Sub rbtnID_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnID.CheckedChanged
-
-        txtID.Visible = True
-        cbxTipo.Visible = False
-        txtForma.Visible = False
-    End Sub
-
-    Private Sub rbtnTipo_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnTipo.CheckedChanged
-
-        txtID.Visible = False
-        cbxTipo.Visible = True
-        txtForma.Visible = False
-    End Sub
-
-    Private Sub rbtnFormaP_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnFormaP.CheckedChanged
-
-        txtID.Visible = False
-        cbxTipo.Visible = False
-        txtForma.Visible = True
-    End Sub
-
-    Private Sub txtForma_TextChanged(sender As Object, e As EventArgs) Handles txtForma.TextChanged
-
-        Dim Deposito As New ClsDeposito
-        Dim Dato As New DataView
-
-        Try
-            'Actualizar datos en datagrid con textbox
-            Deposito.Banc_o = txtForma.Text
-            Dato = Deposito.buscarDepositoXBanco.DefaultView
-            dtDepositos.DataSource = Dato
-        Catch ex As Exception
-            MessageBox.Show("El código es incorrecto o el campo está vacio.")
-        End Try
-
-    End Sub
 
     Private Sub dtDepositos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDepositos.CellClick
 
         'Mostrar datos seleccionados del datagrid
         Try
+
+            Dim dt, dt2 As New DataTable
+            dt = dtDepositos.DataSource
+            Dim row, row2 As DataRow
+            row = dt.Rows(e.RowIndex)
+
+
             btnCrearNuevo.Visible = True
             btnModificar.Visible = True
             btnGuardar.Visible = False
-            txtNro.Text = dtDepositos.Rows(e.RowIndex).Cells(0).Value
-            dtpFecha.Value = dtDepositos.Rows(e.RowIndex).Cells(1).Value
-            txtBanco.Text = dtDepositos.Rows(e.RowIndex).Cells(2).Value
-            txtContado.Text = dtDepositos.Rows(e.RowIndex).Cells(3).Value
-            txtTipoConta.Text = dtDepositos.Rows(e.RowIndex).Cells(4).Value
-            txtTotalDep.Text = dtDepositos.Rows(e.RowIndex).Cells(5).Value
-            txtMoneda.Text = dtDepositos.Rows(e.RowIndex).Cells(6).Value
-            txtMonBase.Text = dtDepositos.Rows(e.RowIndex).Cells(7).Value
-            txtComision.Text = dtDepositos.Rows(e.RowIndex).Cells(8).Value
-            txtComentario.Text = dtDepositos.Rows(e.RowIndex).Cells(9).Value
-            lblTipoDeposito.Text = dtDepositos.Rows(e.RowIndex).Cells(10).Value
-            txtCajero.Text = dtDepositos.Rows(e.RowIndex).Cells(11).Value
+
+            txtNro.Text = row("codDeposito")
+            dtpFecha.Value = row("fecha")
+
+            lblCodFPBanco.Text = row("codFPBanco")
+            buscarCodigo.Codigo_FormaPago = Convert.ToInt32(lblCodFPBanco.Text)
+            dt2 = buscarCodigo.buscarFormaPago()
+            row2 = dt2.Rows(0)
+            txtBanco.Text = row2("codigo")
+
+            txtContado.Text = row("contado")
+
+            lblCodFPContado.Text = row("codFPContado")
+            buscarCodigo.Codigo_FormaPago = Convert.ToInt32(lblCodFPContado.Text)
+            dt2 = buscarCodigo.buscarFormaPago()
+            row2 = dt2.Rows(0)
+            txtTipoConta.Text = row2("codigo")
+
+            txtTotalDep.Text = row("totalDeposito")
+            txtMoneda.Text = row("moneda")
+            txtMonBase.Text = row("monBase")
+            txtComision.Text = row("comision")
+            txtComentario.Text = row("comentario")
+            lblTipoDeposito.Text = row("tipoDeposito")
+            txtCajero.Text = row("codCajero")
         Catch ex As Exception
-            'MessageBox.Show("Error al hacer la selección.")
+
         End Try
 
     End Sub
 
     Private Sub btnCrearNuevo_Click(sender As Object, e As EventArgs) Handles btnCrearNuevo.Click
+        Try
+            frmTipoDeposito.Show()
+            btnGuardar.Visible = True
+            Me.Close()
+        Catch ex As Exception
 
-        frmTipoDeposito.Show()
-        btnGuardar.Visible = True
-        Me.Close()
+        End Try
+
 
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
-
-        Dim modificarDeposito As New ClsDeposito
-        Dim buscarCodigo As New ClsFormaPago
-
-        'Capturar informacion de DataTable en Label
-        'Validación de codigo de banco.
         Try
-            Dim dt As New DataTable
-            buscarCodigo.Cod = txtBanco.Text
-            dt = buscarCodigo.buscarCodigoFormaPago()
-            Dim row As DataRow = dt.Rows(0)
-            lblCodFormaPago.Text = CStr(row("codFormaPago"))
+            'Enviar datos para modificar depositos
 
+            With Deposito
+                .Cod = Convert.ToInt32(txtNro.Text)
+                .Fech_a = dtpFecha.Value
+                .CodFP_Banco = Convert.ToInt32(lblCodFPBanco.Text)
+                .conta_do = Convert.ToDouble(txtContado.Text)
+                .CodFP_Contado = Convert.ToInt32(lblCodFPContado.Text)
+                .total_Depositado = Convert.ToDouble(txtTotalDep.Text)
+                .Mone_da = txtMoneda.Text
+                .mon_base = Convert.ToInt32(txtMonBase.Text)
+                .comisi_on = Convert.ToDouble(txtComision.Text)
+                .Comenta_rio = txtComentario.Text
+                .Tipo_Deposito = lblTipoDeposito.Text
+                .cod_Cajero = txtCajero.Text
+                If .modificarDepositos() = 1 Then
+                    MsgBox("Se modifico el registro.")
+                    Limpiar()
+                    dtDepositos.DataSource = Deposito.listarDepositos
+                End If
+
+            End With
         Catch ex As Exception
-            MessageBox.Show("El código de banco no existe.")
+            MsgBox(ex.Message)
         End Try
 
-        'Enviar datos para modificar depositos
 
-        With modificarDeposito
-            .Cod = Convert.ToInt32(txtNro.Text)
-            .Fech_a = dtpFecha.Value
-            .Banc_o = txtBanco.Text
-            .conta_do = Convert.ToDouble(txtContado.Text)
-            .Tipo_Contado = txtTipoConta.Text
-            .total_Depositado = Convert.ToDouble(txtTotalDep.Text)
-            .Mone_da = txtMoneda.Text
-            .mon_base = Convert.ToDouble(txtMonBase.Text)
-            .comisi_on = Convert.ToDouble(txtComision.Text)
-            .Comenta_rio = txtComentario.Text
-            .Tipo_Deposito = lblTipoDeposito.Text
-            .cod_Cajero = txtCajero.Text
-            .Cod_FormaPago = Convert.ToInt32(lblCodFormaPago.Text)
-            .modificarDeposito()
-        End With
+
     End Sub
 
     Private Sub txtContado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtContado.KeyPress
@@ -533,6 +477,8 @@
         txtContado.BackColor = Color.White
         txtTipoConta.BackColor = Color.White
         txtCajero.BackColor = Color.White
+
+
     End Sub
 
     Private Sub txtContado_TextChanged(sender As Object, e As EventArgs)
@@ -567,21 +513,8 @@
         End If
     End Sub
 
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs)
 
-        Try
-            'Listar todos los depositos y cancelar busqueda
-            dtDepositos.DataSource = nuevoDeposito.listarDepositos
-
-
-            txtID.Visible = False
-            cbxTipo.Visible = False
-            txtForma.Visible = False
-            Limpiar()
-
-        Catch ex As Exception
-
-        End Try
 
     End Sub
 
@@ -589,5 +522,27 @@
         If txtCajero.BackColor = Color.Red Then
             txtCajero.BackColor = Color.White
         End If
+    End Sub
+
+    Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
+
+        Try
+            Dim data As New DataTable
+            With Deposito
+
+                .Comenta_rio = txtBusqueda.Text
+                .cod_Cajero = txtBusqueda.Text
+                data = .buscarDepo
+                dtDepositos.DataSource = data
+
+
+            End With
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
     End Sub
 End Class

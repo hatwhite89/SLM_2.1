@@ -24,7 +24,7 @@ Partial Class A_PerfilUsuario
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_PerfilUsuario))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.btnCrearPerfil = New System.Windows.Forms.Button()
         Me.chkHabilitar = New System.Windows.Forms.CheckBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
@@ -33,26 +33,57 @@ Partial Class A_PerfilUsuario
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
+        Me.gbxModulos = New System.Windows.Forms.GroupBox()
+        Me.tcModulos = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.chkFacturacion = New System.Windows.Forms.CheckBox()
+        Me.dtFacturacion = New System.Windows.Forms.DataGridView()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.chkContabilidad = New System.Windows.Forms.CheckBox()
+        Me.dtContabilidad = New System.Windows.Forms.DataGridView()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.chkLaboratorio = New System.Windows.Forms.CheckBox()
+        Me.dtLaboratorio = New System.Windows.Forms.DataGridView()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.chkTalentoHumano = New System.Windows.Forms.CheckBox()
+        Me.dtTalentoHumano = New System.Windows.Forms.DataGridView()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.chkSistema = New System.Windows.Forms.CheckBox()
+        Me.dtSistema = New System.Windows.Forms.DataGridView()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.chkAlmacen = New System.Windows.Forms.CheckBox()
+        Me.dtAlmacen = New System.Windows.Forms.DataGridView()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.gbxPerfil = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.gbxRegistros = New System.Windows.Forms.GroupBox()
+        Me.dtPerfiles = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
+        Me.gbxModulos.SuspendLayout()
+        Me.tcModulos.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        CType(Me.dtFacturacion, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
+        CType(Me.dtContabilidad, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
+        CType(Me.dtLaboratorio, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage4.SuspendLayout()
+        CType(Me.dtTalentoHumano, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage5.SuspendLayout()
+        CType(Me.dtSistema, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage6.SuspendLayout()
+        CType(Me.dtAlmacen, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbxPerfil.SuspendLayout()
+        Me.gbxRegistros.SuspendLayout()
+        CType(Me.dtPerfiles, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.LinkLabel1)
+        Me.GroupBox1.Controls.Add(Me.btnCrearPerfil)
         Me.GroupBox1.Controls.Add(Me.chkHabilitar)
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.Controls.Add(Me.txtDescripcion)
@@ -61,22 +92,21 @@ Partial Class A_PerfilUsuario
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtCodigo)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 74)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(502, 159)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Perfil"
         '
-        'LinkLabel1
+        'btnCrearPerfil
         '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(381, 136)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(98, 13)
-        Me.LinkLabel1.TabIndex = 8
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Crear Administrador"
+        Me.btnCrearPerfil.Location = New System.Drawing.Point(397, 127)
+        Me.btnCrearPerfil.Name = "btnCrearPerfil"
+        Me.btnCrearPerfil.Size = New System.Drawing.Size(75, 23)
+        Me.btnCrearPerfil.TabIndex = 8
+        Me.btnCrearPerfil.Text = "Crear Perfil"
+        Me.btnCrearPerfil.UseVisualStyleBackColor = True
         '
         'chkHabilitar
         '
@@ -91,7 +121,7 @@ Partial Class A_PerfilUsuario
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(379, 31)
+        Me.PictureBox1.Location = New System.Drawing.Point(386, 19)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 102)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -101,7 +131,7 @@ Partial Class A_PerfilUsuario
         'txtDescripcion
         '
         Me.txtDescripcion.Location = New System.Drawing.Point(120, 86)
-        Me.txtDescripcion.MaxLength = 200
+        Me.txtDescripcion.MaxLength = 149
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(235, 20)
         Me.txtDescripcion.TabIndex = 5
@@ -119,7 +149,7 @@ Partial Class A_PerfilUsuario
         'txtCodBreve
         '
         Me.txtCodBreve.Location = New System.Drawing.Point(120, 60)
-        Me.txtCodBreve.MaxLength = 50
+        Me.txtCodBreve.MaxLength = 19
         Me.txtCodBreve.Name = "txtCodBreve"
         Me.txtCodBreve.Size = New System.Drawing.Size(235, 20)
         Me.txtCodBreve.TabIndex = 3
@@ -152,137 +182,318 @@ Partial Class A_PerfilUsuario
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Cód. :"
         '
-        'GroupBox2
+        'gbxModulos
         '
-        Me.GroupBox2.Controls.Add(Me.CheckBox4)
-        Me.GroupBox2.Controls.Add(Me.CheckBox3)
-        Me.GroupBox2.Controls.Add(Me.CheckBox2)
-        Me.GroupBox2.Controls.Add(Me.CheckBox1)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 175)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(501, 143)
-        Me.GroupBox2.TabIndex = 1
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Módulos Habilitados"
+        Me.gbxModulos.Controls.Add(Me.tcModulos)
+        Me.gbxModulos.Enabled = False
+        Me.gbxModulos.Location = New System.Drawing.Point(12, 237)
+        Me.gbxModulos.Name = "gbxModulos"
+        Me.gbxModulos.Size = New System.Drawing.Size(501, 259)
+        Me.gbxModulos.TabIndex = 1
+        Me.gbxModulos.TabStop = False
+        Me.gbxModulos.Text = "Módulos Habilitados"
         '
-        'CheckBox4
+        'tcModulos
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(19, 101)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(63, 17)
-        Me.CheckBox4.TabIndex = 3
-        Me.CheckBox4.Text = "Sistema"
-        Me.CheckBox4.UseVisualStyleBackColor = True
+        Me.tcModulos.Controls.Add(Me.TabPage1)
+        Me.tcModulos.Controls.Add(Me.TabPage2)
+        Me.tcModulos.Controls.Add(Me.TabPage3)
+        Me.tcModulos.Controls.Add(Me.TabPage4)
+        Me.tcModulos.Controls.Add(Me.TabPage5)
+        Me.tcModulos.Controls.Add(Me.TabPage6)
+        Me.tcModulos.Location = New System.Drawing.Point(10, 19)
+        Me.tcModulos.Name = "tcModulos"
+        Me.tcModulos.SelectedIndex = 0
+        Me.tcModulos.Size = New System.Drawing.Size(485, 234)
+        Me.tcModulos.TabIndex = 0
         '
-        'CheckBox3
+        'TabPage1
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(19, 78)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(84, 17)
-        Me.CheckBox3.TabIndex = 2
-        Me.CheckBox3.Text = "Contabilidad"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.TabPage1.Controls.Add(Me.chkFacturacion)
+        Me.TabPage1.Controls.Add(Me.dtFacturacion)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(477, 208)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Facturación"
+        Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'chkFacturacion
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(19, 55)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(79, 17)
-        Me.CheckBox2.TabIndex = 1
-        Me.CheckBox2.Text = "Laboratorio"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.chkFacturacion.AutoSize = True
+        Me.chkFacturacion.Location = New System.Drawing.Point(15, 9)
+        Me.chkFacturacion.Name = "chkFacturacion"
+        Me.chkFacturacion.Size = New System.Drawing.Size(120, 17)
+        Me.chkFacturacion.TabIndex = 5
+        Me.chkFacturacion.Text = "Módulo Facturación"
+        Me.chkFacturacion.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'dtFacturacion
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(19, 32)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(82, 17)
-        Me.CheckBox1.TabIndex = 0
-        Me.CheckBox1.Text = "Facturación"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.dtFacturacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtFacturacion.Location = New System.Drawing.Point(4, 34)
+        Me.dtFacturacion.Name = "dtFacturacion"
+        Me.dtFacturacion.Size = New System.Drawing.Size(468, 165)
+        Me.dtFacturacion.TabIndex = 4
         '
-        'GroupBox3
+        'TabPage2
         '
-        Me.GroupBox3.Controls.Add(Me.CheckBox6)
-        Me.GroupBox3.Controls.Add(Me.CheckBox5)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 321)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(502, 69)
-        Me.GroupBox3.TabIndex = 2
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Acciones Habilitadas"
+        Me.TabPage2.Controls.Add(Me.chkContabilidad)
+        Me.TabPage2.Controls.Add(Me.dtContabilidad)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(477, 208)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Contabilidad"
+        Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'CheckBox6
+        'chkContabilidad
         '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Location = New System.Drawing.Point(182, 31)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(100, 17)
-        Me.CheckBox6.TabIndex = 1
-        Me.CheckBox6.Text = "Editar Registros"
-        Me.CheckBox6.UseVisualStyleBackColor = True
+        Me.chkContabilidad.AutoSize = True
+        Me.chkContabilidad.Location = New System.Drawing.Point(15, 9)
+        Me.chkContabilidad.Name = "chkContabilidad"
+        Me.chkContabilidad.Size = New System.Drawing.Size(122, 17)
+        Me.chkContabilidad.TabIndex = 3
+        Me.chkContabilidad.Text = "Módulo Contabilidad"
+        Me.chkContabilidad.UseVisualStyleBackColor = True
         '
-        'CheckBox5
+        'dtContabilidad
         '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(19, 30)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(138, 17)
-        Me.CheckBox5.TabIndex = 0
-        Me.CheckBox5.Text = "Crear Nuevos Registros"
-        Me.CheckBox5.UseVisualStyleBackColor = True
+        Me.dtContabilidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtContabilidad.Location = New System.Drawing.Point(4, 34)
+        Me.dtContabilidad.Name = "dtContabilidad"
+        Me.dtContabilidad.Size = New System.Drawing.Size(468, 165)
+        Me.dtContabilidad.TabIndex = 2
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.chkLaboratorio)
+        Me.TabPage3.Controls.Add(Me.dtLaboratorio)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(477, 208)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Laboratorio"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'chkLaboratorio
+        '
+        Me.chkLaboratorio.AutoSize = True
+        Me.chkLaboratorio.Location = New System.Drawing.Point(15, 9)
+        Me.chkLaboratorio.Name = "chkLaboratorio"
+        Me.chkLaboratorio.Size = New System.Drawing.Size(117, 17)
+        Me.chkLaboratorio.TabIndex = 5
+        Me.chkLaboratorio.Text = "Módulo Laboratorio"
+        Me.chkLaboratorio.UseVisualStyleBackColor = True
+        '
+        'dtLaboratorio
+        '
+        Me.dtLaboratorio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtLaboratorio.Location = New System.Drawing.Point(4, 34)
+        Me.dtLaboratorio.Name = "dtLaboratorio"
+        Me.dtLaboratorio.Size = New System.Drawing.Size(468, 165)
+        Me.dtLaboratorio.TabIndex = 4
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.chkTalentoHumano)
+        Me.TabPage4.Controls.Add(Me.dtTalentoHumano)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Size = New System.Drawing.Size(477, 208)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Talento Humano"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'chkTalentoHumano
+        '
+        Me.chkTalentoHumano.AutoSize = True
+        Me.chkTalentoHumano.Location = New System.Drawing.Point(15, 9)
+        Me.chkTalentoHumano.Name = "chkTalentoHumano"
+        Me.chkTalentoHumano.Size = New System.Drawing.Size(143, 17)
+        Me.chkTalentoHumano.TabIndex = 5
+        Me.chkTalentoHumano.Text = "Módulo Talento Humano"
+        Me.chkTalentoHumano.UseVisualStyleBackColor = True
+        '
+        'dtTalentoHumano
+        '
+        Me.dtTalentoHumano.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtTalentoHumano.Location = New System.Drawing.Point(4, 34)
+        Me.dtTalentoHumano.Name = "dtTalentoHumano"
+        Me.dtTalentoHumano.Size = New System.Drawing.Size(468, 165)
+        Me.dtTalentoHumano.TabIndex = 4
+        '
+        'TabPage5
+        '
+        Me.TabPage5.Controls.Add(Me.chkSistema)
+        Me.TabPage5.Controls.Add(Me.dtSistema)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Size = New System.Drawing.Size(477, 208)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "Sistema"
+        Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'chkSistema
+        '
+        Me.chkSistema.AutoSize = True
+        Me.chkSistema.Location = New System.Drawing.Point(15, 9)
+        Me.chkSistema.Name = "chkSistema"
+        Me.chkSistema.Size = New System.Drawing.Size(101, 17)
+        Me.chkSistema.TabIndex = 5
+        Me.chkSistema.Text = "Módulo Sistema"
+        Me.chkSistema.UseVisualStyleBackColor = True
+        '
+        'dtSistema
+        '
+        Me.dtSistema.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtSistema.Location = New System.Drawing.Point(4, 34)
+        Me.dtSistema.Name = "dtSistema"
+        Me.dtSistema.Size = New System.Drawing.Size(468, 165)
+        Me.dtSistema.TabIndex = 4
+        '
+        'TabPage6
+        '
+        Me.TabPage6.Controls.Add(Me.chkAlmacen)
+        Me.TabPage6.Controls.Add(Me.dtAlmacen)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Size = New System.Drawing.Size(477, 208)
+        Me.TabPage6.TabIndex = 5
+        Me.TabPage6.Text = "Almacen"
+        Me.TabPage6.UseVisualStyleBackColor = True
+        '
+        'chkAlmacen
+        '
+        Me.chkAlmacen.AutoSize = True
+        Me.chkAlmacen.Location = New System.Drawing.Point(15, 9)
+        Me.chkAlmacen.Name = "chkAlmacen"
+        Me.chkAlmacen.Size = New System.Drawing.Size(105, 17)
+        Me.chkAlmacen.TabIndex = 5
+        Me.chkAlmacen.Text = "Módulo Almacen"
+        Me.chkAlmacen.UseVisualStyleBackColor = True
+        '
+        'dtAlmacen
+        '
+        Me.dtAlmacen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtAlmacen.Location = New System.Drawing.Point(4, 34)
+        Me.dtAlmacen.Name = "dtAlmacen"
+        Me.dtAlmacen.Size = New System.Drawing.Size(468, 165)
+        Me.dtAlmacen.TabIndex = 4
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(272, 397)
+        Me.btnGuardar.Enabled = False
+        Me.btnGuardar.Location = New System.Drawing.Point(258, 15)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 38)
         Me.btnGuardar.TabIndex = 3
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(353, 397)
+        Me.btnModificar.Enabled = False
+        Me.btnModificar.Location = New System.Drawing.Point(339, 15)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar.Size = New System.Drawing.Size(75, 38)
         Me.btnModificar.TabIndex = 4
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
-        'btnCerrar
+        'btnCancelar
         '
-        Me.btnCerrar.Location = New System.Drawing.Point(439, 397)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCerrar.TabIndex = 5
-        Me.btnCerrar.Text = "Cerrar"
-        Me.btnCerrar.UseVisualStyleBackColor = True
+        Me.btnCancelar.Location = New System.Drawing.Point(420, 15)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 38)
+        Me.btnCancelar.TabIndex = 5
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'gbxPerfil
+        '
+        Me.gbxPerfil.Controls.Add(Me.Label4)
+        Me.gbxPerfil.Controls.Add(Me.btnGuardar)
+        Me.gbxPerfil.Controls.Add(Me.btnCancelar)
+        Me.gbxPerfil.Controls.Add(Me.btnModificar)
+        Me.gbxPerfil.Location = New System.Drawing.Point(12, 5)
+        Me.gbxPerfil.Name = "gbxPerfil"
+        Me.gbxPerfil.Size = New System.Drawing.Size(502, 63)
+        Me.gbxPerfil.TabIndex = 6
+        Me.gbxPerfil.TabStop = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(8, 22)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(244, 24)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Administración de Permisos"
+        '
+        'gbxRegistros
+        '
+        Me.gbxRegistros.Controls.Add(Me.dtPerfiles)
+        Me.gbxRegistros.Location = New System.Drawing.Point(520, 12)
+        Me.gbxRegistros.Name = "gbxRegistros"
+        Me.gbxRegistros.Size = New System.Drawing.Size(315, 484)
+        Me.gbxRegistros.TabIndex = 7
+        Me.gbxRegistros.TabStop = False
+        Me.gbxRegistros.Text = "Registros"
+        '
+        'dtPerfiles
+        '
+        Me.dtPerfiles.AllowUserToAddRows = False
+        Me.dtPerfiles.AllowUserToDeleteRows = False
+        Me.dtPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtPerfiles.Location = New System.Drawing.Point(6, 62)
+        Me.dtPerfiles.Name = "dtPerfiles"
+        Me.dtPerfiles.ReadOnly = True
+        Me.dtPerfiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtPerfiles.Size = New System.Drawing.Size(303, 416)
+        Me.dtPerfiles.TabIndex = 0
         '
         'A_PerfilUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(525, 432)
-        Me.Controls.Add(Me.btnCerrar)
-        Me.Controls.Add(Me.btnModificar)
-        Me.Controls.Add(Me.btnGuardar)
-        Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.ClientSize = New System.Drawing.Size(847, 504)
+        Me.Controls.Add(Me.gbxRegistros)
+        Me.Controls.Add(Me.gbxPerfil)
+        Me.Controls.Add(Me.gbxModulos)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "A_PerfilUsuario"
         Me.Text = "Perfiles de Usuario"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
+        Me.gbxModulos.ResumeLayout(False)
+        Me.tcModulos.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
+        CType(Me.dtFacturacion, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        CType(Me.dtContabilidad, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
+        CType(Me.dtLaboratorio, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage4.PerformLayout()
+        CType(Me.dtTalentoHumano, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage5.ResumeLayout(False)
+        Me.TabPage5.PerformLayout()
+        CType(Me.dtSistema, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage6.ResumeLayout(False)
+        Me.TabPage6.PerformLayout()
+        CType(Me.dtAlmacen, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbxPerfil.ResumeLayout(False)
+        Me.gbxPerfil.PerformLayout()
+        Me.gbxRegistros.ResumeLayout(False)
+        CType(Me.dtPerfiles, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -291,21 +502,37 @@ Partial Class A_PerfilUsuario
     Friend WithEvents Label2 As Label
     Friend WithEvents txtCodigo As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents chkHabilitar As CheckBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents txtCodBreve As TextBox
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents CheckBox4 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents CheckBox6 As CheckBox
-    Friend WithEvents CheckBox5 As CheckBox
+    Friend WithEvents gbxModulos As GroupBox
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnModificar As Button
-    Friend WithEvents btnCerrar As Button
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents tcModulos As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents TabPage6 As TabPage
+    Friend WithEvents gbxPerfil As GroupBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents chkFacturacion As CheckBox
+    Friend WithEvents dtFacturacion As DataGridView
+    Friend WithEvents chkContabilidad As CheckBox
+    Friend WithEvents dtContabilidad As DataGridView
+    Friend WithEvents chkLaboratorio As CheckBox
+    Friend WithEvents dtLaboratorio As DataGridView
+    Friend WithEvents chkTalentoHumano As CheckBox
+    Friend WithEvents dtTalentoHumano As DataGridView
+    Friend WithEvents chkSistema As CheckBox
+    Friend WithEvents dtSistema As DataGridView
+    Friend WithEvents chkAlmacen As CheckBox
+    Friend WithEvents dtAlmacen As DataGridView
+    Friend WithEvents btnCrearPerfil As Button
+    Friend WithEvents gbxRegistros As GroupBox
+    Friend WithEvents dtPerfiles As DataGridView
 End Class

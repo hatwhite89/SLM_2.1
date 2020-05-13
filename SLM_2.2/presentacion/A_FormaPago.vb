@@ -5,7 +5,7 @@ Public Class frmFormaPago
 
         Try
 
-            If txtCodigo.Text <> "" And txtCuenta.Text <> "" And txtCtaBanco.Text <> "" And txtNombreBanco.Text <> "" And txtBanco.Text <> "" Then
+            If txtCuenta.Text <> "" And txtNombreBanco.Text <> "" And txtBanco.Text <> "" Then
 
                 'Comprobar que la cuenta existe
                 Dim dtC As New DataTable
@@ -64,17 +64,15 @@ Public Class frmFormaPago
             ElseIf txtCodigo.Text = "" Then
 
                 MsgBox("Existen campos vacíos.")
-                txtCodigo.BackColor = color.Red
+                txtCodigo.BackColor = Color.Red
 
             ElseIf txtCuenta.Text = "" Then
                 MsgBox("Existen campos vacíos.")
-                txtCuenta.BackColor = color.red
-            ElseIf txtCtaBanco.Text = "" Then
-                MsgBox("Existen campos vacíos.")
-                txtCtaBanco.BackColor = color.Red
+                txtCuenta.BackColor = Color.Red
+
             ElseIf txtNombreBanco.Text = "" Then
                 MsgBox("Existen campos vacíos.")
-                txtNombreBanco.BackColor = color.red
+                txtNombreBanco.BackColor = Color.Red
             ElseIf txtBanco.Text = "" Then
                 MsgBox("Existen campos vacíos.")
                 txtBanco.BackColor = color.Red
@@ -123,7 +121,7 @@ Public Class frmFormaPago
 
         Try
 
-            If txtCodigo.Text <> "" And txtCuenta.Text <> "" And txtCtaBanco.Text <> "" And txtNombreBanco.Text <> "" And txtBanco.Text <> "" Then
+            If txtCodigo.Text <> "" And txtCuenta.Text <> "" And txtNombreBanco.Text <> "" And txtBanco.Text <> "" Then
 
                 'Comprobar que la cuenta existe
                 Dim dtC As New DataTable
@@ -191,9 +189,6 @@ Public Class frmFormaPago
             ElseIf txtCuenta.Text = "" Then
                 MsgBox("Existen campos vacíos.")
                 txtCuenta.BackColor = Color.Red
-            ElseIf txtCtaBanco.Text = "" Then
-                MsgBox("Existen campos vacíos.")
-                txtCtaBanco.BackColor = Color.Red
             ElseIf txtNombreBanco.Text = "" Then
                 MsgBox("Existen campos vacíos.")
                 txtNombreBanco.BackColor = Color.Red

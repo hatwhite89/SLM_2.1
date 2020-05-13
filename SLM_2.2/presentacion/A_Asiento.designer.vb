@@ -22,6 +22,7 @@ Partial Class frmAsientos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAsientos))
         Me.lblNro = New System.Windows.Forms.Label()
         Me.txtNro = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -204,7 +205,6 @@ Partial Class frmAsientos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(718, 463)
-        Me.ControlBox = False
         Me.Controls.Add(Me.lblForm)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.Label4)
@@ -220,7 +220,10 @@ Partial Class frmAsientos
         Me.Controls.Add(Me.txtNro)
         Me.Controls.Add(Me.lblNro)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmAsientos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Asiento"

@@ -192,6 +192,11 @@ Public Class ClsDepreciacion
 
         'VARIABLES 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_Depreciacion"
+        sqlpar.Value = Cod
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "descripcion"
         sqlpar.Value = Descripcion_
         sqlcom.Parameters.Add(sqlpar)

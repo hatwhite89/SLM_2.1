@@ -35,6 +35,7 @@
                 .chkEstado.Checked = row("estado")
                 .Show()
             End With
+            Me.Close()
 
         Catch ex As Exception
 
@@ -44,10 +45,17 @@
 
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
         Try
+            Me.Close()
+
             M_CAI.Show()
 
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
+
     End Sub
 End Class

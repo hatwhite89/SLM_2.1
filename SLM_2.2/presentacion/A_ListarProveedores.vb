@@ -12,10 +12,12 @@
 
     Private Sub dtProveedor_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtProveedor.CellDoubleClick
 
-        Dim dt As DataTable = dtProveedor.DataSource
-        Dim row As DataRow = dt.Rows(e.RowIndex)
+
 
         Try
+
+            Dim dt As DataTable = dtProveedor.DataSource
+            Dim row As DataRow = dt.Rows(e.RowIndex)
             'Cargar informacion de proveedor
             If lblForm.Text = "facturaCompra" Then
 

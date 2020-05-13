@@ -5,9 +5,16 @@
             Dim formaPago As New ClsFormaPago
             dtFormasPago.DataSource = formaPago.listarFormaPago
 
+
             dtFormasPago.Columns("nroCtaBanco").Visible = False
             dtFormasPago.Columns("codFormaPago").Visible = False
             dtFormasPago.Columns("banco").Visible = False
+            dtFormasPago.Columns("cuenta").Visible = False
+            dtFormasPago.Columns("comentario").Visible = False
+            dtFormasPago.Columns("formulario").Visible = False
+            dtFormasPago.Columns("tipo").Visible = False
+            dtFormasPago.Columns("banco").Visible = False
+
         Catch ex As Exception
             MsgBox("Hubo un error al cargar información. " + ex.Message)
         End Try
@@ -31,12 +38,21 @@
     Private Sub dtFormasPago_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtFormasPago.CellClick
         Try
 
+            Dim dt As New DataTable
+            dt = dtFormasPago.DataSource
+            Dim row As DataRow
+            row = dt.Rows(e.RowIndex)
+
+
+
             'COPIAR CODIGO DE BANCO
             If lblJC.Text = "1" Then
-                frmDeposito.txtBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
+                frmDeposito.txtBanco.Text = row("codigo")
+                frmDeposito.lblCodFPBanco.Text = row("codFormaPago")
                 Me.Close()
             ElseIf lblJC.Text = "2" Then
-                frmDeposito.txtTipoConta.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
+                frmDeposito.txtTipoConta.Text = row("codigo")
+                frmDeposito.lblCodFPContado.Text = row("codFormaPago")
                 Me.Close()
             ElseIf lblJC.Text = "3" Then
                 A_Consolidacion.txtBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(4).Value
