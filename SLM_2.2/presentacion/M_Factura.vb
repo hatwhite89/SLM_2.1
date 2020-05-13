@@ -742,6 +742,15 @@ Public Class M_Factura
             End With
             '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+            'PARTIDA CONTABLE
+
+
+
+
+
+            '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try

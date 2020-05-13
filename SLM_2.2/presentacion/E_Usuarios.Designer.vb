@@ -44,6 +44,7 @@ Partial Class E_Usuarios
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnCambio = New System.Windows.Forms.Button()
+        Me.lblCodPerfil = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -140,6 +141,7 @@ Partial Class E_Usuarios
         '
         'txtPerfil
         '
+        Me.txtPerfil.Enabled = False
         Me.txtPerfil.Location = New System.Drawing.Point(89, 97)
         Me.txtPerfil.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPerfil.MaxLength = 30
@@ -187,6 +189,7 @@ Partial Class E_Usuarios
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.lblCodPerfil)
         Me.GroupBox2.Controls.Add(Me.btnCancelar)
         Me.GroupBox2.Controls.Add(Me.btnModificar)
         Me.GroupBox2.Controls.Add(Me.btnGuardar)
@@ -266,6 +269,15 @@ Partial Class E_Usuarios
         Me.btnCambio.UseVisualStyleBackColor = True
         Me.btnCambio.Visible = False
         '
+        'lblCodPerfil
+        '
+        Me.lblCodPerfil.AutoSize = True
+        Me.lblCodPerfil.Location = New System.Drawing.Point(6, 194)
+        Me.lblCodPerfil.Name = "lblCodPerfil"
+        Me.lblCodPerfil.Size = New System.Drawing.Size(66, 13)
+        Me.lblCodPerfil.TabIndex = 26
+        Me.lblCodPerfil.Text = "Codigo Perfil"
+        '
         'E_Usuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -308,4 +320,5 @@ Partial Class E_Usuarios
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnCancelar As Button
     Friend WithEvents btnModificar As Button
+    Friend WithEvents lblCodPerfil As Label
 End Class

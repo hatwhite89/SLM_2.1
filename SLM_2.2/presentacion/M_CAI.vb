@@ -139,6 +139,8 @@
                     'Habilitar CAI
                     If .HabilitarCAI = 1 Then
                         MsgBox("Se habilito el registro de CAI.")
+                        limpiar()
+
                     End If
 
                 End With
@@ -155,6 +157,22 @@
 
         If lblCodigo.Text <> "" Then
             btnModificar.Enabled = True
+
+            Dim maquina As New ClsMaquinasLocales
+            With maquina
+                .codigo_ = Convert.ToInt32(lblCodeMaquinaLocal.Text)
+
+            End With
+
+            Dim dt As New DataTable
+            dt = maquina.BuscarMaquinasLocalesCode()
+
+            Dim row As DataRow
+            row = dt.Rows(0)
+
+            txtcodigoMaquina.Text = row("codigoMaquinasLocales")
+            txtdescripcionMaquina.Text = row("descripcion")
+
         Else
             btnModificar.Enabled = False
         End If

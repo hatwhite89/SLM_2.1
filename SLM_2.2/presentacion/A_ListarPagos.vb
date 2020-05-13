@@ -99,14 +99,21 @@
 
 
     Private Sub ComboBox1_TextChanged(sender As Object, e As EventArgs) Handles ComboBox1.TextChanged
-        If ComboBox1.Text = "Sin pago" Then
 
-            dtPagos.DataSource = pagos.listarSinPago
+        Try
+            If ComboBox1.Text = "Sin pago" Then
 
-        Else
-            dtPagos.DataSource = pagos.listarPagosOk
+                dtPagos.DataSource = pagos.listarSinPago
 
-        End If
+            Else
+                dtPagos.DataSource = pagos.listarPagosOk
+
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
 End Class

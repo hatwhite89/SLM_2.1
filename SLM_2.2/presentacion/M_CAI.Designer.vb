@@ -43,9 +43,9 @@ Partial Class M_CAI
         Me.txtcodigoMaquina = New System.Windows.Forms.TextBox()
         Me.lblCodeMaquinaLocal = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.chkEstado = New System.Windows.Forms.CheckBox()
-        Me.btnModificar = New System.Windows.Forms.Button()
         Me.lblCodigo = New System.Windows.Forms.Label()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.chkEstado = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -280,15 +280,15 @@ Partial Class M_CAI
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "CAI"
         '
-        'chkEstado
+        'lblCodigo
         '
-        Me.chkEstado.AutoSize = True
-        Me.chkEstado.Location = New System.Drawing.Point(351, 145)
-        Me.chkEstado.Name = "chkEstado"
-        Me.chkEstado.Size = New System.Drawing.Size(118, 17)
-        Me.chkEstado.TabIndex = 125
-        Me.chkEstado.Text = "Activar Facturación"
-        Me.chkEstado.UseVisualStyleBackColor = True
+        Me.lblCodigo.AutoSize = True
+        Me.lblCodigo.Location = New System.Drawing.Point(19, 22)
+        Me.lblCodigo.Name = "lblCodigo"
+        Me.lblCodigo.Size = New System.Drawing.Size(39, 13)
+        Me.lblCodigo.TabIndex = 131
+        Me.lblCodigo.Text = "codigo"
+        Me.lblCodigo.Visible = False
         '
         'btnModificar
         '
@@ -304,15 +304,15 @@ Partial Class M_CAI
         Me.btnModificar.Text = "Modificar Estado"
         Me.btnModificar.UseVisualStyleBackColor = False
         '
-        'lblCodigo
+        'chkEstado
         '
-        Me.lblCodigo.AutoSize = True
-        Me.lblCodigo.Location = New System.Drawing.Point(523, 27)
-        Me.lblCodigo.Name = "lblCodigo"
-        Me.lblCodigo.Size = New System.Drawing.Size(39, 13)
-        Me.lblCodigo.TabIndex = 131
-        Me.lblCodigo.Text = "codigo"
-        Me.lblCodigo.Visible = False
+        Me.chkEstado.AutoSize = True
+        Me.chkEstado.Location = New System.Drawing.Point(351, 145)
+        Me.chkEstado.Name = "chkEstado"
+        Me.chkEstado.Size = New System.Drawing.Size(118, 17)
+        Me.chkEstado.TabIndex = 125
+        Me.chkEstado.Text = "Activar Facturación"
+        Me.chkEstado.UseVisualStyleBackColor = True
         '
         'M_CAI
         '
