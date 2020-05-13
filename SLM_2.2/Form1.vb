@@ -576,4 +576,16 @@
     Private Sub btnPerfiles_Click(sender As Object, e As EventArgs) Handles btnPerfiles.Click
         A_PerfilUsuario.Show()
     End Sub
+
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+        E_frmEntrada.Show()
+    End Sub
+
+    Private Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
+        E_frmSalida.Show()
+    End Sub
+
+    Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
+        E_frmSolicitudInternaAlmacen.Show()
+    End Sub
 End Class
