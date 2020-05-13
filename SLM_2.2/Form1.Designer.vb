@@ -176,6 +176,8 @@ Partial Class Form1
         Me.lblMiUser = New System.Windows.Forms.Label()
         Me.lblUserCod = New System.Windows.Forms.Label()
         Me.Apariencia = New Sunisoft.IrisSkin.SkinEngine(CType(Me, System.ComponentModel.Component))
+        Me.Button16 = New System.Windows.Forms.Button()
+        Me.Button19 = New System.Windows.Forms.Button()
         Me.gbxMenu.SuspendLayout()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
@@ -1951,6 +1953,8 @@ Partial Class Form1
         '
         'TabPage10
         '
+        Me.TabPage10.Controls.Add(Me.Button19)
+        Me.TabPage10.Controls.Add(Me.Button16)
         Me.TabPage10.Controls.Add(Me.Button26)
         Me.TabPage10.Controls.Add(Me.Button25)
         Me.TabPage10.Controls.Add(Me.Button24)
@@ -1973,7 +1977,7 @@ Partial Class Form1
         Me.Button26.Name = "Button26"
         Me.Button26.Size = New System.Drawing.Size(77, 21)
         Me.Button26.TabIndex = 22
-        Me.Button26.Text = "Usuarios"
+        Me.Button26.Text = "Salidas"
         Me.Button26.UseVisualStyleBackColor = False
         '
         'Button25
@@ -2090,6 +2094,34 @@ Partial Class Form1
         Me.Apariencia.SkinFile = Nothing
         Me.Apariencia.SkinStreamMain = CType(resources.GetObject("Apariencia.SkinStreamMain"), System.IO.Stream)
         '
+        'Button16
+        '
+        Me.Button16.BackColor = System.Drawing.Color.DimGray
+        Me.Button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button16.FlatAppearance.BorderSize = 0
+        Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button16.ForeColor = System.Drawing.Color.White
+        Me.Button16.Location = New System.Drawing.Point(9, 149)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(77, 21)
+        Me.Button16.TabIndex = 23
+        Me.Button16.Text = "Entradas"
+        Me.Button16.UseVisualStyleBackColor = False
+        '
+        'Button19
+        '
+        Me.Button19.BackColor = System.Drawing.Color.DimGray
+        Me.Button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button19.FlatAppearance.BorderSize = 0
+        Me.Button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button19.ForeColor = System.Drawing.Color.White
+        Me.Button19.Location = New System.Drawing.Point(235, 128)
+        Me.Button19.Name = "Button19"
+        Me.Button19.Size = New System.Drawing.Size(77, 39)
+        Me.Button19.TabIndex = 24
+        Me.Button19.Text = "Orden Interna"
+        Me.Button19.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2103,13 +2135,13 @@ Partial Class Form1
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxMenu)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.PanelAlmacen)
+        Me.Controls.Add(Me.PanelTalentoHumano)
         Me.Controls.Add(Me.panelMenu)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PanelFactura)
         Me.Controls.Add(Me.PanelLab)
         Me.Controls.Add(Me.PanelSistema)
-        Me.Controls.Add(Me.PanelAlmacen)
-        Me.Controls.Add(Me.PanelTalentoHumano)
-        Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -2353,4 +2385,6 @@ Partial Class Form1
     Friend WithEvents lblUserCod As Label
     Friend WithEvents PictureBox47 As PictureBox
     Friend WithEvents PictureBox44 As PictureBox
+    Friend WithEvents Button19 As Button
+    Friend WithEvents Button16 As Button
 End Class

@@ -14,7 +14,7 @@
         Dim clsE As New clsEntradaAlmacen
         Dim dvOC As DataView = clsE.ListarEntradaInventario.DefaultView
 
-        dvOC.RowFilter = String.Format("CONVERT(id_entrada, System.String) LIKE '%{0}%'", TextBox5.Text)
+        dvOC.RowFilter = String.Format("CONVERT(lote, System.String) LIKE '%{0}%'", TextBox5.Text)
         DataGridView2.DataSource = dvOC
     End Sub
     Private Sub ComboAlmacen()
@@ -99,5 +99,9 @@
 
     Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs) Handles TextBox5.TextChanged
         cargarInventario()
+    End Sub
+
+    Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
+
     End Sub
 End Class
