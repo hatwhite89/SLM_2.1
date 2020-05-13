@@ -148,6 +148,7 @@
     <Compile Include="negocio\ClsDetalleFacturaCompra.vb" />
     <Compile Include="negocio\ClsDetalleListaPrecios.vb" />
     <Compile Include="negocio\clsDetalleOC.vb" />
+    <Compile Include="negocio\clsDetalleOI.vb" />
     <Compile Include="negocio\ClsDetallePago.vb" />
     <Compile Include="negocio\ClsDetalleRecibo.vb" />
     <Compile Include="negocio\ClsEmpleados.vb" />
@@ -163,6 +164,7 @@
     <Compile Include="negocio\ClsNotificaciones.vb" />
     <Compile Include="negocio\ClsOrdenDeCompra.vb" />
     <Compile Include="negocio\ClsOrdenDeTrabajo.vb" />
+    <Compile Include="negocio\clsOrdenInterna.vb" />
     <Compile Include="negocio\ClsOrdenTrabajoDetalle.vb" />
     <Compile Include="negocio\ClsPago.vb" />
     <Compile Include="negocio\ClsParametroExamen.vb" />
@@ -509,6 +511,12 @@
       <DependentUpon>E_frmSalida.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\E_frmSalida.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmSolicitudInternaAlmacen.Designer.vb">
+      <DependentUpon>E_frmSolicitudInternaAlmacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmSolicitudInternaAlmacen.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_frmTipoMovientoAlmacen.Designer.vb">
@@ -1202,6 +1210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmSalida.resx">
       <DependentUpon>E_frmSalida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmSolicitudInternaAlmacen.resx">
+      <DependentUpon>E_frmSolicitudInternaAlmacen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmTipoMovientoAlmacen.resx">
       <DependentUpon>E_frmTipoMovientoAlmacen.vb</DependentUpon>

@@ -175,6 +175,7 @@ Partial Class Form1
         Me.Button27 = New System.Windows.Forms.Button()
         Me.lblMiUser = New System.Windows.Forms.Label()
         Me.lblUserCod = New System.Windows.Forms.Label()
+        Me.Button30 = New System.Windows.Forms.Button()
         Me.gbxMenu.SuspendLayout()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
@@ -1943,6 +1944,7 @@ Partial Class Form1
         '
         'TabPage10
         '
+        Me.TabPage10.Controls.Add(Me.Button30)
         Me.TabPage10.Controls.Add(Me.Button26)
         Me.TabPage10.Controls.Add(Me.Button25)
         Me.TabPage10.Controls.Add(Me.Button24)
@@ -1965,7 +1967,7 @@ Partial Class Form1
         Me.Button26.Name = "Button26"
         Me.Button26.Size = New System.Drawing.Size(77, 21)
         Me.Button26.TabIndex = 22
-        Me.Button26.Text = "Usuarios"
+        Me.Button26.Text = "Entradas"
         Me.Button26.UseVisualStyleBackColor = False
         '
         'Button25
@@ -2069,6 +2071,20 @@ Partial Class Form1
         Me.lblUserCod.TabIndex = 27
         Me.lblUserCod.Text = "Label3"
         Me.lblUserCod.Visible = False
+        '
+        'Button30
+        '
+        Me.Button30.BackColor = System.Drawing.Color.DimGray
+        Me.Button30.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button30.FlatAppearance.BorderSize = 0
+        Me.Button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button30.ForeColor = System.Drawing.Color.White
+        Me.Button30.Location = New System.Drawing.Point(9, 172)
+        Me.Button30.Name = "Button30"
+        Me.Button30.Size = New System.Drawing.Size(77, 21)
+        Me.Button30.TabIndex = 23
+        Me.Button30.Text = "Salidas"
+        Me.Button30.UseVisualStyleBackColor = False
         '
         'Form1
         '
@@ -2330,4 +2346,5 @@ Partial Class Form1
     Friend WithEvents Button27 As Button
     Friend WithEvents lblMiUser As Label
     Friend WithEvents lblUserCod As Label
+    Friend WithEvents Button30 As Button
 End Class

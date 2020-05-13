@@ -158,4 +158,12 @@ Public Class ClsArea
         End Using
     End Function
 
+    Public Function RecuperarAreaOrdenInterna() As SqlDataReader
+        Dim sqlcom As SqlCommand
+        sqlcom = New SqlCommand
+        sqlcom.CommandText = "select * from area"
+        sqlcom.Connection = New ClsConnection().getConexion
+        Return sqlcom.ExecuteReader
+    End Function
+
 End Class

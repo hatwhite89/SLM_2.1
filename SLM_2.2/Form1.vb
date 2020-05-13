@@ -561,4 +561,12 @@
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
         E_frmOrdenCompra.Show()
     End Sub
+
+    Private Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
+        E_frmEntrada.Show()
+    End Sub
+
+    Private Sub Button30_Click(sender As Object, e As EventArgs) Handles Button30.Click
+        E_frmSalida.Show()
+    End Sub
 End Class
