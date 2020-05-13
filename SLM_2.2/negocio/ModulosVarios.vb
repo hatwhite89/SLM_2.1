@@ -298,10 +298,6 @@ Module ModulosVarios
 
             End If ' final verificar existencia
 
-
-
-
-
         Catch ex As Exception
             MsgBox("Usuario o contraseña incorrectos. Vuelva a intentarlo." + ex.Message)
         End Try
@@ -312,7 +308,6 @@ Module ModulosVarios
 
 
     ':::::::::::::::::::::::::::::::::::::::::::: FINAL LOGIN
-
 
 
     ':::::::::::::::::::::::::::::::::::::::::::: LOGIN PASS
