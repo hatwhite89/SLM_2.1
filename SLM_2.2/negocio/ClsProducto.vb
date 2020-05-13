@@ -111,6 +111,19 @@ Public Class ClsProducto
         Return sqlcom.ExecuteReader
     End Function
 
+    Public Function RecuperarProducto2() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select * from ProductoAlmacen", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
+
 
     Public Function RegistrarProducto() As String
         Dim sqlcom As SqlCommand
