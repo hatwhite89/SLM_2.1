@@ -179,6 +179,7 @@
     <Compile Include="negocio\ClsPromociones.vb" />
     <Compile Include="negocio\ClsPuestoTrabajo.vb" />
     <Compile Include="negocio\ClsRecibo.vb" />
+    <Compile Include="negocio\ClsSalidaAlmacen.vb" />
     <Compile Include="negocio\ClsServidorCorreo.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
