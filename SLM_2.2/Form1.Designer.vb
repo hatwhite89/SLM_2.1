@@ -166,6 +166,8 @@ Partial Class Form1
         Me.Button23 = New System.Windows.Forms.Button()
         Me.TabControl5 = New System.Windows.Forms.TabControl()
         Me.TabPage10 = New System.Windows.Forms.TabPage()
+        Me.Button19 = New System.Windows.Forms.Button()
+        Me.Button16 = New System.Windows.Forms.Button()
         Me.Button26 = New System.Windows.Forms.Button()
         Me.Button25 = New System.Windows.Forms.Button()
         Me.Button24 = New System.Windows.Forms.Button()
@@ -176,8 +178,6 @@ Partial Class Form1
         Me.lblMiUser = New System.Windows.Forms.Label()
         Me.lblUserCod = New System.Windows.Forms.Label()
         Me.Apariencia = New Sunisoft.IrisSkin.SkinEngine(CType(Me, System.ComponentModel.Component))
-        Me.Button16 = New System.Windows.Forms.Button()
-        Me.Button19 = New System.Windows.Forms.Button()
         Me.gbxMenu.SuspendLayout()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
@@ -1565,7 +1565,7 @@ Partial Class Form1
         Me.PanelTalentoHumano.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.PanelTalentoHumano.Controls.Add(Me.btnCerrarTalentoHumano)
         Me.PanelTalentoHumano.Controls.Add(Me.TabControl4)
-        Me.PanelTalentoHumano.Location = New System.Drawing.Point(120, 28)
+        Me.PanelTalentoHumano.Location = New System.Drawing.Point(11, 6)
         Me.PanelTalentoHumano.Name = "PanelTalentoHumano"
         Me.PanelTalentoHumano.Size = New System.Drawing.Size(567, 438)
         Me.PanelTalentoHumano.TabIndex = 8
@@ -1901,6 +1901,7 @@ Partial Class Form1
         Me.PanelSistema.BackColor = System.Drawing.Color.Beige
         Me.PanelSistema.Controls.Add(Me.Button17)
         Me.PanelSistema.Controls.Add(Me.TabControl3)
+        Me.PanelSistema.Controls.Add(Me.PanelTalentoHumano)
         Me.PanelSistema.Location = New System.Drawing.Point(120, 26)
         Me.PanelSistema.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelSistema.Name = "PanelSistema"
@@ -1965,6 +1966,34 @@ Partial Class Form1
         Me.TabPage10.TabIndex = 0
         Me.TabPage10.Text = "Almacen"
         Me.TabPage10.UseVisualStyleBackColor = True
+        '
+        'Button19
+        '
+        Me.Button19.BackColor = System.Drawing.Color.DimGray
+        Me.Button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button19.FlatAppearance.BorderSize = 0
+        Me.Button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button19.ForeColor = System.Drawing.Color.White
+        Me.Button19.Location = New System.Drawing.Point(235, 128)
+        Me.Button19.Name = "Button19"
+        Me.Button19.Size = New System.Drawing.Size(77, 39)
+        Me.Button19.TabIndex = 24
+        Me.Button19.Text = "Orden Interna"
+        Me.Button19.UseVisualStyleBackColor = False
+        '
+        'Button16
+        '
+        Me.Button16.BackColor = System.Drawing.Color.DimGray
+        Me.Button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button16.FlatAppearance.BorderSize = 0
+        Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button16.ForeColor = System.Drawing.Color.White
+        Me.Button16.Location = New System.Drawing.Point(9, 149)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(77, 21)
+        Me.Button16.TabIndex = 23
+        Me.Button16.Text = "Entradas"
+        Me.Button16.UseVisualStyleBackColor = False
         '
         'Button26
         '
@@ -2082,7 +2111,6 @@ Partial Class Form1
         Me.lblUserCod.Size = New System.Drawing.Size(54, 13)
         Me.lblUserCod.TabIndex = 27
         Me.lblUserCod.Text = "UserCode"
-        Me.lblUserCod.Visible = False
         '
         'Apariencia
         '
@@ -2093,34 +2121,6 @@ Partial Class Form1
         Me.Apariencia.SerialNumber = "U4N2UjLguUZs33UR+Vy47JAZ81t2fjIFvut28vc5oHiVeivGb/NZMA=="
         Me.Apariencia.SkinFile = Nothing
         Me.Apariencia.SkinStreamMain = CType(resources.GetObject("Apariencia.SkinStreamMain"), System.IO.Stream)
-        '
-        'Button16
-        '
-        Me.Button16.BackColor = System.Drawing.Color.DimGray
-        Me.Button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button16.FlatAppearance.BorderSize = 0
-        Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button16.ForeColor = System.Drawing.Color.White
-        Me.Button16.Location = New System.Drawing.Point(9, 149)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(77, 21)
-        Me.Button16.TabIndex = 23
-        Me.Button16.Text = "Entradas"
-        Me.Button16.UseVisualStyleBackColor = False
-        '
-        'Button19
-        '
-        Me.Button19.BackColor = System.Drawing.Color.DimGray
-        Me.Button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button19.FlatAppearance.BorderSize = 0
-        Me.Button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button19.ForeColor = System.Drawing.Color.White
-        Me.Button19.Location = New System.Drawing.Point(235, 128)
-        Me.Button19.Name = "Button19"
-        Me.Button19.Size = New System.Drawing.Size(77, 39)
-        Me.Button19.TabIndex = 24
-        Me.Button19.Text = "Orden Interna"
-        Me.Button19.UseVisualStyleBackColor = False
         '
         'Form1
         '
@@ -2135,13 +2135,12 @@ Partial Class Form1
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxMenu)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.PanelAlmacen)
-        Me.Controls.Add(Me.PanelTalentoHumano)
-        Me.Controls.Add(Me.panelMenu)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PanelFactura)
         Me.Controls.Add(Me.PanelLab)
         Me.Controls.Add(Me.PanelSistema)
+        Me.Controls.Add(Me.PanelAlmacen)
+        Me.Controls.Add(Me.panelMenu)
+        Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

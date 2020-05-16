@@ -252,7 +252,7 @@ Module ModulosVarios
                         Dim filas As Integer
                         dtPerfil = .FormulariosHabilitados()
 
-
+                        'Recorrer Data para habilitar botones
                         For filas = 0 To dtPerfil.Rows.Count
 
 
@@ -292,15 +292,9 @@ Module ModulosVarios
                     M_InicioSesion.txtPassword.Text = ""
                     M_InicioSesion.Hide()
 
-
-
                 End If
 
             End If ' final verificar existencia
-
-
-
-
 
         Catch ex As Exception
             MsgBox("Usuario o contraseña incorrectos. Vuelva a intentarlo." + ex.Message)
@@ -309,10 +303,7 @@ Module ModulosVarios
     End Function
 
 
-
-
     ':::::::::::::::::::::::::::::::::::::::::::: FINAL LOGIN
-
 
 
     ':::::::::::::::::::::::::::::::::::::::::::: LOGIN PASS
@@ -345,5 +336,12 @@ Module ModulosVarios
     End Function
 
     ':::::::::::::::::::::::::::::::::::::::::::: FINAL LOGIN
+
+    Sub alternarColoFilasDatagridview(ByVal dgv As DataGridView)
+        With dgv
+            .RowsDefaultCellStyle.BackColor = Color.LightBlue
+            .AlternatingRowsDefaultCellStyle.BackColor = Color.White
+        End With
+    End Sub
 
 End Module
