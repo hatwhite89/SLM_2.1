@@ -2,6 +2,9 @@
 
     Dim perfil As New ClsPerfilesUsuario
 
+
+
+
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
 
 
@@ -121,6 +124,8 @@
 
     Private Sub A_PerfilUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            alternarColoFilasDatagridview(dtPerfiles)
+            llenarDataGrid()
             dtPerfiles.DataSource = perfil.listarPerfiles
 
         Catch ex As Exception
@@ -209,5 +214,33 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    'Llenar Datagrid con item vacios
+
+    Sub llenarDataGrid()
+
+        'Facturacion
+
+        'Contabilidad
+        dtContabilidad.Rows.Add("", "Depositos", False, "")
+
+
+
+
+
+    End Sub
+
+    Private Sub dtContabilidad_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtContabilidad.CellContentClick
+
+
+
+        If e.ColumnIndex = 2 Then
+            If dtContabilidad.Rows(e.RowIndex).Cells(2).Value = False Then
+                dtContabilidad.Rows(e.RowIndex).Cells(2).Value = True
+            Else
+                dtContabilidad.Rows(e.RowIndex).Cells(2).Value = False
+            End If
+        End If
     End Sub
 End Class

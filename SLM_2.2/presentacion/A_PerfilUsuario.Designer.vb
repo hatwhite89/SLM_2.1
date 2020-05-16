@@ -40,7 +40,6 @@ Partial Class A_PerfilUsuario
         Me.dtFacturacion = New System.Windows.Forms.DataGridView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.chkContabilidad = New System.Windows.Forms.CheckBox()
-        Me.dtContabilidad = New System.Windows.Forms.DataGridView()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.chkLaboratorio = New System.Windows.Forms.CheckBox()
         Me.dtLaboratorio = New System.Windows.Forms.DataGridView()
@@ -60,6 +59,18 @@ Partial Class A_PerfilUsuario
         Me.Label4 = New System.Windows.Forms.Label()
         Me.gbxRegistros = New System.Windows.Forms.GroupBox()
         Me.dtPerfiles = New System.Windows.Forms.DataGridView()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtBusqueda = New System.Windows.Forms.TextBox()
+        Me.btnCrear = New System.Windows.Forms.Button()
+        Me.Cod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descrip = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estado = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.CodModulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dtContabilidad = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxModulos.SuspendLayout()
@@ -67,7 +78,6 @@ Partial Class A_PerfilUsuario
         Me.TabPage1.SuspendLayout()
         CType(Me.dtFacturacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
-        CType(Me.dtContabilidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         CType(Me.dtLaboratorio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
@@ -79,6 +89,7 @@ Partial Class A_PerfilUsuario
         Me.gbxPerfil.SuspendLayout()
         Me.gbxRegistros.SuspendLayout()
         CType(Me.dtPerfiles, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtContabilidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -231,16 +242,20 @@ Partial Class A_PerfilUsuario
         '
         'dtFacturacion
         '
+        Me.dtFacturacion.AllowUserToAddRows = False
+        Me.dtFacturacion.AllowUserToDeleteRows = False
         Me.dtFacturacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtFacturacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cod, Me.Descrip, Me.Estado, Me.CodModulo})
         Me.dtFacturacion.Location = New System.Drawing.Point(4, 34)
         Me.dtFacturacion.Name = "dtFacturacion"
+        Me.dtFacturacion.ReadOnly = True
         Me.dtFacturacion.Size = New System.Drawing.Size(468, 165)
         Me.dtFacturacion.TabIndex = 4
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.chkContabilidad)
         Me.TabPage2.Controls.Add(Me.dtContabilidad)
+        Me.TabPage2.Controls.Add(Me.chkContabilidad)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -258,14 +273,6 @@ Partial Class A_PerfilUsuario
         Me.chkContabilidad.TabIndex = 3
         Me.chkContabilidad.Text = "Módulo Contabilidad"
         Me.chkContabilidad.UseVisualStyleBackColor = True
-        '
-        'dtContabilidad
-        '
-        Me.dtContabilidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtContabilidad.Location = New System.Drawing.Point(4, 34)
-        Me.dtContabilidad.Name = "dtContabilidad"
-        Me.dtContabilidad.Size = New System.Drawing.Size(468, 165)
-        Me.dtContabilidad.TabIndex = 2
         '
         'TabPage3
         '
@@ -414,6 +421,7 @@ Partial Class A_PerfilUsuario
         '
         'gbxPerfil
         '
+        Me.gbxPerfil.Controls.Add(Me.btnCrear)
         Me.gbxPerfil.Controls.Add(Me.Label4)
         Me.gbxPerfil.Controls.Add(Me.btnGuardar)
         Me.gbxPerfil.Controls.Add(Me.btnCancelar)
@@ -427,15 +435,17 @@ Partial Class A_PerfilUsuario
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(8, 22)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(244, 24)
+        Me.Label4.Size = New System.Drawing.Size(135, 13)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Administración de Permisos"
         '
         'gbxRegistros
         '
+        Me.gbxRegistros.Controls.Add(Me.txtBusqueda)
+        Me.gbxRegistros.Controls.Add(Me.Label5)
         Me.gbxRegistros.Controls.Add(Me.dtPerfiles)
         Me.gbxRegistros.Location = New System.Drawing.Point(520, 12)
         Me.gbxRegistros.Name = "gbxRegistros"
@@ -455,6 +465,96 @@ Partial Class A_PerfilUsuario
         Me.dtPerfiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtPerfiles.Size = New System.Drawing.Size(303, 416)
         Me.dtPerfiles.TabIndex = 0
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(6, 33)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(43, 13)
+        Me.Label5.TabIndex = 1
+        Me.Label5.Text = "Buscar:"
+        '
+        'txtBusqueda
+        '
+        Me.txtBusqueda.Location = New System.Drawing.Point(55, 30)
+        Me.txtBusqueda.Name = "txtBusqueda"
+        Me.txtBusqueda.Size = New System.Drawing.Size(203, 20)
+        Me.txtBusqueda.TabIndex = 2
+        '
+        'btnCrear
+        '
+        Me.btnCrear.Enabled = False
+        Me.btnCrear.Location = New System.Drawing.Point(177, 15)
+        Me.btnCrear.Name = "btnCrear"
+        Me.btnCrear.Size = New System.Drawing.Size(75, 38)
+        Me.btnCrear.TabIndex = 7
+        Me.btnCrear.Text = "Crear Nuevo"
+        Me.btnCrear.UseVisualStyleBackColor = True
+        '
+        'Cod
+        '
+        Me.Cod.HeaderText = "Código"
+        Me.Cod.Name = "Cod"
+        Me.Cod.ReadOnly = True
+        '
+        'Descrip
+        '
+        Me.Descrip.HeaderText = "Descripción"
+        Me.Descrip.Name = "Descrip"
+        Me.Descrip.ReadOnly = True
+        Me.Descrip.Width = 270
+        '
+        'Estado
+        '
+        Me.Estado.HeaderText = "Estado"
+        Me.Estado.Name = "Estado"
+        Me.Estado.ReadOnly = True
+        Me.Estado.Width = 55
+        '
+        'CodModulo
+        '
+        Me.CodModulo.HeaderText = "CodModulo"
+        Me.CodModulo.Name = "CodModulo"
+        Me.CodModulo.ReadOnly = True
+        Me.CodModulo.Visible = False
+        '
+        'dtContabilidad
+        '
+        Me.dtContabilidad.AllowUserToAddRows = False
+        Me.dtContabilidad.AllowUserToDeleteRows = False
+        Me.dtContabilidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtContabilidad.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewCheckBoxColumn1, Me.DataGridViewTextBoxColumn3})
+        Me.dtContabilidad.Location = New System.Drawing.Point(4, 34)
+        Me.dtContabilidad.Name = "dtContabilidad"
+        Me.dtContabilidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtContabilidad.Size = New System.Drawing.Size(468, 165)
+        Me.dtContabilidad.TabIndex = 5
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Código"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Descripción"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.Width = 270
+        '
+        'DataGridViewCheckBoxColumn1
+        '
+        Me.DataGridViewCheckBoxColumn1.HeaderText = "Estado"
+        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
+        Me.DataGridViewCheckBoxColumn1.ReadOnly = True
+        Me.DataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewCheckBoxColumn1.Width = 55
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "CodModulo"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.Visible = False
         '
         'A_PerfilUsuario
         '
@@ -477,7 +577,6 @@ Partial Class A_PerfilUsuario
         CType(Me.dtFacturacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
-        CType(Me.dtContabilidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         CType(Me.dtLaboratorio, System.ComponentModel.ISupportInitialize).EndInit()
@@ -493,7 +592,9 @@ Partial Class A_PerfilUsuario
         Me.gbxPerfil.ResumeLayout(False)
         Me.gbxPerfil.PerformLayout()
         Me.gbxRegistros.ResumeLayout(False)
+        Me.gbxRegistros.PerformLayout()
         CType(Me.dtPerfiles, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtContabilidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -523,7 +624,6 @@ Partial Class A_PerfilUsuario
     Friend WithEvents chkFacturacion As CheckBox
     Friend WithEvents dtFacturacion As DataGridView
     Friend WithEvents chkContabilidad As CheckBox
-    Friend WithEvents dtContabilidad As DataGridView
     Friend WithEvents chkLaboratorio As CheckBox
     Friend WithEvents dtLaboratorio As DataGridView
     Friend WithEvents chkTalentoHumano As CheckBox
@@ -535,4 +635,16 @@ Partial Class A_PerfilUsuario
     Friend WithEvents btnCrearPerfil As Button
     Friend WithEvents gbxRegistros As GroupBox
     Friend WithEvents dtPerfiles As DataGridView
+    Friend WithEvents btnCrear As Button
+    Friend WithEvents txtBusqueda As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Cod As DataGridViewTextBoxColumn
+    Friend WithEvents Descrip As DataGridViewTextBoxColumn
+    Friend WithEvents Estado As DataGridViewCheckBoxColumn
+    Friend WithEvents CodModulo As DataGridViewTextBoxColumn
+    Friend WithEvents dtContabilidad As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewCheckBoxColumn1 As DataGridViewCheckBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
 End Class

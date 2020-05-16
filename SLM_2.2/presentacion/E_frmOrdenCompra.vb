@@ -190,9 +190,6 @@ Public Class E_frmOrdenCompra
             txtDiasCredito.Text = "0"
         End If
 
-
-
-
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
