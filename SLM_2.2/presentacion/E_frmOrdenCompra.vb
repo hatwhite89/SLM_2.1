@@ -197,6 +197,8 @@ Public Class E_frmOrdenCompra
     End Sub
 
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
+
+
         txtCodOC.Text = DataGridView2.Rows(e.RowIndex).Cells(0).Value
         txtCodProveedor.Text = DataGridView2.Rows(e.RowIndex).Cells(2).Value
         txtCondicionEntrega.Text = DataGridView2.Rows(e.RowIndex).Cells(4).Value
