@@ -1,9 +1,9 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ClsSalidaAlmacen
-    Dim id_producto, id_almacen, id_oi, id_departamento As Integer
+    Dim id_producto, id_oi, id_detalle_oi As Integer
     Dim cantidad As Double
-    Dim lote, descrip, tipo_movimiento, producto, persona_recibe, persona_entrega As String
+    Dim lote, descrip, tipo_movimiento, producto, persona_recibe, id_almacen, persona_entrega, id_departamento As String
     Dim fecha_vence As Date
 
     Public Sub New()
@@ -19,11 +19,11 @@ Public Class ClsSalidaAlmacen
         End Set
     End Property
 
-    Public Property IdAlmacen As Integer
+    Public Property IdAlmacen As String
         Get
             Return id_almacen
         End Get
-        Set(value As Integer)
+        Set(value As String)
             id_almacen = value
         End Set
     End Property
@@ -92,11 +92,11 @@ Public Class ClsSalidaAlmacen
         End Set
     End Property
 
-    Public Property Id_departamento1 As Integer
+    Public Property Id_departamento1 As String
         Get
             Return id_departamento
         End Get
-        Set(value As Integer)
+        Set(value As String)
             id_departamento = value
         End Set
     End Property
@@ -119,6 +119,15 @@ Public Class ClsSalidaAlmacen
         End Set
     End Property
 
+    Public Property Id_detalle_oi1 As Integer
+        Get
+            Return id_detalle_oi
+        End Get
+        Set(value As Integer)
+            id_detalle_oi = value
+        End Set
+    End Property
+
     Public Function RegistrarSalidaAlmacen() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -132,6 +141,11 @@ Public Class ClsSalidaAlmacen
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "id_io"
         sqlpar.Value = Id_oi1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_detalle_io"
+        sqlpar.Value = Id_detalle_oi1
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

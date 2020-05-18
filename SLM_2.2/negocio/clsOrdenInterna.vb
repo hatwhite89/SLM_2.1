@@ -141,4 +141,69 @@ Public Class clsOrdenInterna
         sqlcom.Connection = New ClsConnection().getConexion
         Return sqlcom.ExecuteScalar
     End Function
+    Public Function ActualizarOrdenInterna() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slmActualizarOrdenInterna"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_io"
+        sqlpar.Value = Id_oi1
+        sqlcom.Parameters.Add(sqlpar)
+
+
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "fecha_entrega"
+        sqlpar.Value = Fecha_entrega1
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_departamento"
+        sqlpar.Value = Id_departamento1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_usuario"
+        sqlpar.Value = Id_solicitante1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_sede"
+        sqlpar.Value = Id_entrega1
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_estado"
+        sqlpar.Value = Estado1
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
 End Class

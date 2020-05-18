@@ -1295,6 +1295,9 @@
     <EmbeddedResource Include="presentacion\E_Usuarios.resx">
       <DependentUpon>E_Usuarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\frmEntrada.resx">
       <DependentUpon>frmEntrada.vb</DependentUpon>
     </EmbeddedResource>

@@ -49,12 +49,17 @@
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        txtCodAlmacen.Text = DataGridView1.Rows(e.RowIndex).Cells(0).Value
-        txtNombreAlmacen.Text = DataGridView1.Rows(e.RowIndex).Cells(1).Value
-        txtDescripcion.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
+        Try
+            txtCodAlmacen.Text = DataGridView1.Rows(e.RowIndex).Cells(0).Value
+            txtNombreAlmacen.Text = DataGridView1.Rows(e.RowIndex).Cells(1).Value
+            txtDescripcion.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
 
-        txtDescripcion.ReadOnly = False
-        txtNombreAlmacen.ReadOnly = False
+            txtDescripcion.ReadOnly = False
+            txtNombreAlmacen.ReadOnly = False
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged

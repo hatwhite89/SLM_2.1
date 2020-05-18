@@ -138,6 +138,19 @@ Public Class ClsOrdenDeCompra
         End Using
     End Function
 
+    Public Function RecuperarOCPrFechas(ByVal inicio As Date, ByVal fin As Date) As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select * from OrdenDeCompra where fecha_elaboracion between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "' ", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
+
 
     Public Function ActualizarOC() As String
         Dim sqlcom As SqlCommand

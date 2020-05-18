@@ -588,4 +588,10 @@
     Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
         E_frmSolicitudInternaAlmacen.Show()
     End Sub
+
+    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
+        A_Proveedor.Show()
+    End Sub
+
+
 End Class

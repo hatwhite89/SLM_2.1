@@ -166,6 +166,7 @@ Partial Class Form1
         Me.Button23 = New System.Windows.Forms.Button()
         Me.TabControl5 = New System.Windows.Forms.TabControl()
         Me.TabPage10 = New System.Windows.Forms.TabPage()
+        Me.Button20 = New System.Windows.Forms.Button()
         Me.Button19 = New System.Windows.Forms.Button()
         Me.Button16 = New System.Windows.Forms.Button()
         Me.Button26 = New System.Windows.Forms.Button()
@@ -1954,6 +1955,7 @@ Partial Class Form1
         '
         'TabPage10
         '
+        Me.TabPage10.Controls.Add(Me.Button20)
         Me.TabPage10.Controls.Add(Me.Button19)
         Me.TabPage10.Controls.Add(Me.Button16)
         Me.TabPage10.Controls.Add(Me.Button26)
@@ -1966,6 +1968,20 @@ Partial Class Form1
         Me.TabPage10.TabIndex = 0
         Me.TabPage10.Text = "Almacen"
         Me.TabPage10.UseVisualStyleBackColor = True
+        '
+        'Button20
+        '
+        Me.Button20.BackColor = System.Drawing.Color.DimGray
+        Me.Button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button20.FlatAppearance.BorderSize = 0
+        Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button20.ForeColor = System.Drawing.Color.White
+        Me.Button20.Location = New System.Drawing.Point(6, 141)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Size = New System.Drawing.Size(77, 21)
+        Me.Button20.TabIndex = 25
+        Me.Button20.Text = "Proveedores"
+        Me.Button20.UseVisualStyleBackColor = False
         '
         'Button19
         '
@@ -1988,7 +2004,7 @@ Partial Class Form1
         Me.Button16.FlatAppearance.BorderSize = 0
         Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button16.ForeColor = System.Drawing.Color.White
-        Me.Button16.Location = New System.Drawing.Point(9, 149)
+        Me.Button16.Location = New System.Drawing.Point(128, 63)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(77, 21)
         Me.Button16.TabIndex = 23
@@ -2002,7 +2018,7 @@ Partial Class Form1
         Me.Button26.FlatAppearance.BorderSize = 0
         Me.Button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button26.ForeColor = System.Drawing.Color.White
-        Me.Button26.Location = New System.Drawing.Point(118, 63)
+        Me.Button26.Location = New System.Drawing.Point(128, 140)
         Me.Button26.Name = "Button26"
         Me.Button26.Size = New System.Drawing.Size(77, 21)
         Me.Button26.TabIndex = 22
@@ -2138,8 +2154,8 @@ Partial Class Form1
         Me.Controls.Add(Me.PanelFactura)
         Me.Controls.Add(Me.PanelLab)
         Me.Controls.Add(Me.PanelSistema)
-        Me.Controls.Add(Me.PanelAlmacen)
         Me.Controls.Add(Me.panelMenu)
+        Me.Controls.Add(Me.PanelAlmacen)
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -2386,4 +2402,5 @@ Partial Class Form1
     Friend WithEvents PictureBox44 As PictureBox
     Friend WithEvents Button19 As Button
     Friend WithEvents Button16 As Button
+    Friend WithEvents Button20 As Button
 End Class

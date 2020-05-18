@@ -22,78 +22,109 @@
         cmbCategoria.ValueMember = "id_categoria_producto"
 
         txtCantidadMinima.Text = "0"
-        txtExistencia.Text = 0
 
-        'datagridview
-        Dim TableUM As New DataTable
-        Dim clsP As New ClsProducto
-        TableUM.Load(clsP.RecuperarProductoOC())
-        BindingSource1.DataSource = TableUM
-
-        DataGridView1.DataSource = BindingSource1
+        cargarData()
         ' DataGridView1.DataSource = TableUM
         'campos 
         txtNombre.ReadOnly = True
         txtModelo.ReadOnly = True
         txtMarca.ReadOnly = True
-        txtExistencia.ReadOnly = True
+
         txtDescripcion.ReadOnly = True
         txtCantidadMinima.ReadOnly = True
         'botones
         Button1.Enabled = False
     End Sub
+    Private Sub cargarData()
+        Try
+            'datagridview
+            Dim TableUM As New DataTable
+            Dim clsP As New ClsProducto
+            TableUM.Load(clsP.RecuperarProductoOC())
+            BindingSource1.DataSource = TableUM
 
+            DataGridView1.DataSource = BindingSource1
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        'seleccionar datos gridview 
-        txtCodigo.Text = DataGridView1.Rows(e.RowIndex).Cells(0).Value
-        txtNombre.Text = DataGridView1.Rows(e.RowIndex).Cells(1).Value
-        txtMarca.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
-        txtModelo.Text = DataGridView1.Rows(e.RowIndex).Cells(3).Value
-        txtDescripcion.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value
-        txtCantidadMinima.Text = DataGridView1.Rows(e.RowIndex).Cells(5).Value
 
-        'botones
-        Button1.Enabled = True
+        Try
+            'seleccionar datos gridview 
+            txtCodigo.Text = DataGridView1.Rows(e.RowIndex).Cells(0).Value
+            txtNombre.Text = DataGridView1.Rows(e.RowIndex).Cells(1).Value
+            txtMarca.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
+            txtModelo.Text = DataGridView1.Rows(e.RowIndex).Cells(3).Value
+            txtDescripcion.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value
+            txtCantidadMinima.Text = DataGridView1.Rows(e.RowIndex).Cells(5).Value
 
 
-        'campos 
-        txtNombre.ReadOnly = False
-        txtModelo.ReadOnly = False
-        txtMarca.ReadOnly = False
-        txtExistencia.ReadOnly = False
-        txtDescripcion.ReadOnly = False
-        txtCantidadMinima.ReadOnly = False
+            'botones
+            Button1.Enabled = True
+
+
+            'campos 
+            txtNombre.ReadOnly = False
+            txtModelo.ReadOnly = False
+            txtMarca.ReadOnly = False
+
+            txtDescripcion.ReadOnly = False
+            txtCantidadMinima.ReadOnly = False
+        Catch ex As Exception
+
+        End Try
+
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim clsP As New ClsProducto
-        With clsP
-            .IdProducto = Integer.Parse(txtCodigo.Text)
-            .NombreProducto = txtNombre.Text
-            .MarcaProducto = txtMarca.Text
-            .ModeloProducto = txtModelo.Text
-            .DescripcionProducto = txtDescripcion.Text
-            .ExistenciaProducto = Integer.Parse(txtExistencia.Text)
-            .CantidadMinimaProducto = Integer.Parse(txtCantidadMinima.Text)
-            .UnidadMedida = Integer.Parse(cmbUnidadMedida.SelectedValue)
-            .CategoriaProducto = Integer.Parse(cmbCategoria.SelectedValue)
-        End With
+
         If txtCodigo.Text = "" Then
+            With clsP
+
+                .NombreProducto = txtNombre.Text
+                .MarcaProducto = txtMarca.Text
+                .ModeloProducto = txtModelo.Text
+                .DescripcionProducto = txtDescripcion.Text
+                .ExistenciaProducto = "0"
+                .CantidadMinimaProducto = Integer.Parse(txtCantidadMinima.Text)
+                .UnidadMedida = Integer.Parse(cmbUnidadMedida.SelectedValue)
+                .CategoriaProducto = Integer.Parse(cmbCategoria.SelectedValue)
+            End With
             If clsP.RegistrarProducto() = "1" Then
                 'campos 
                 txtNombre.ReadOnly = True
                 txtModelo.ReadOnly = True
                 txtMarca.ReadOnly = True
-                txtExistencia.ReadOnly = True
+
                 txtDescripcion.ReadOnly = True
                 txtCantidadMinima.ReadOnly = True
                 'botones
                 Button1.Enabled = False
                 MsgBox("Registrado exitosamente")
+                cargarData()
+
             End If
 
         ElseIf txtCodigo.Text <> "" Then
-
+            With clsP
+                .IdProducto = Integer.Parse(txtCodigo.Text)
+                .NombreProducto = txtNombre.Text
+                .MarcaProducto = txtMarca.Text
+                .ModeloProducto = txtModelo.Text
+                .DescripcionProducto = txtDescripcion.Text
+                .ExistenciaProducto = "0"
+                .CantidadMinimaProducto = Integer.Parse(txtCantidadMinima.Text)
+                .UnidadMedida = Integer.Parse(cmbUnidadMedida.SelectedValue)
+                .CategoriaProducto = Integer.Parse(cmbCategoria.SelectedValue)
+            End With
+            If clsP.ActualizarProducto() = "1" Then
+                MsgBox("Actualizado exitosamente")
+                cargarData()
+            End If
         End If
 
     End Sub
@@ -105,7 +136,7 @@
         txtNombre.ReadOnly = False
         txtModelo.ReadOnly = False
         txtMarca.ReadOnly = False
-        txtExistencia.ReadOnly = False
+
         txtDescripcion.ReadOnly = False
         txtCantidadMinima.ReadOnly = False
 
@@ -114,7 +145,7 @@
         txtNombre.Text = ""
         txtModelo.Text = ""
         txtMarca.Text = ""
-        txtExistencia.Text = ""
+
         txtDescripcion.Text = ""
         txtCantidadMinima.Text = ""
 
@@ -128,7 +159,7 @@
         txtNombre.ReadOnly = True
         txtModelo.ReadOnly = True
         txtMarca.ReadOnly = True
-        txtExistencia.ReadOnly = True
+
         txtDescripcion.ReadOnly = True
         txtCantidadMinima.ReadOnly = True
 
@@ -137,7 +168,7 @@
         txtNombre.Text = ""
         txtModelo.Text = ""
         txtMarca.Text = ""
-        txtExistencia.Text = ""
+
         txtDescripcion.Text = ""
         txtCantidadMinima.Text = ""
     End Sub
@@ -147,6 +178,18 @@
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        Dim objOrd As New ClsProducto
+
+
+        Dim dv As DataView = objOrd.RecuperarProducto2.DefaultView
+
+        dv.RowFilter = String.Format("CONVERT(nombre_producto, System.String) LIKE '%{0}%'", txtBuscar.Text)
+        DataGridView1.DataSource = dv
+
 
     End Sub
 End Class

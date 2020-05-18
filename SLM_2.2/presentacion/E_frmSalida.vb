@@ -1,17 +1,19 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class E_frmSalida
-    Private id_almacen, id_departamento_recibe, id_producto As Integer
+    Private id_almacen, id_departamento_recibe, id_producto, id_detalle_oi As Integer
 
     Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
 
     End Sub
 
     Private Sub E_frmSalida_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        ComboBox1.Items.Add("Salida orden interna")
     End Sub
 
     Private Sub CargarDataOI(ByVal cod)
+        DataGridView1.Columns.Clear()
+
         Dim clsDeOC As New clsDetalleOI
         Dim dvOC As DataView = clsDeOC.listarOrdenesInternasConParametro(cod).DefaultView
         DataGridView1.DataSource = dvOC
@@ -31,12 +33,13 @@ Public Class E_frmSalida
         Dim respuesta As SqlDataReader
 
         Try
-            enunciado = New SqlCommand("select Identificacion from Empleados", clsC.getConexion)
+            enunciado = New SqlCommand("select  d.nombre,u.usuario from OrdenInterna o, Area d, Usuario u
+where o.id_departamento=d.codigo and o.id_usuario = u.cod_usuario and o.id_oi='11'", clsC.getConexion)
             respuesta = enunciado.ExecuteReader()
             While respuesta.Read
 
-                txtAreaSolicitante.Text = respuesta.Item("Identificacion")
-                txtAlmacenRecibe.Text = respuesta.Item("Identificacion")
+                txtAreaSolicitante.Text = respuesta.Item("usuario")
+                txtAlmacenRecibe.Text = respuesta.Item("nombre")
 
 
             End While
@@ -47,13 +50,20 @@ Public Class E_frmSalida
         End Try
     End Sub
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        txtProducto.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
+        id_detalle_oi = Integer.Parse(DataGridView1.Rows(e.RowIndex).Cells(0).Value)
         txtLote.Text = DataGridView1.Rows(e.RowIndex).Cells(1).Value
+        txtProducto.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
         txtCantidad.Text = DataGridView1.Rows(e.RowIndex).Cells(3).Value
+        txtAlmacenRecibe.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value
+        txtAreaSolicitante.Text = DataGridView1.Rows(e.RowIndex).Cells(5).Value
+        txtPersonaRecibe.Text = DataGridView1.Rows(e.RowIndex).Cells(6).Value
+
+
 
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
         Dim clsS As New ClsSalidaAlmacen
 
         With clsS
@@ -68,8 +78,15 @@ Public Class E_frmSalida
             .Persona_entrega1 = txtEntrega.Text
             .Persona_recibe1 = txtPersonaRecibe.Text
             .Producto1 = txtProducto.Text
-            .Tipo_movimiento1 = ComboBox1.SelectedValue
+            .Tipo_movimiento1 = ComboBox1.SelectedItem.ToString
+            .Id_detalle_oi1 = id_detalle_oi
 
         End With
+
+        If clsS.RegistrarSalidaAlmacen() = "1" Then
+            MsgBox("salida registrada exitosamente")
+        End If
+
+        CargarDataOI(txtCodOI.Text)
     End Sub
 End Class

@@ -148,8 +148,22 @@ Public Class clsEntradaAlmacen
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select e.lote,p.id_producto,p.nombre_producto,e.cantidad,e.precio_unitario,e.fecha_vencimiento from EntradaAlmacen e, ProductoAlmacen p
+        Using da As New SqlDataAdapter("select e.lote,p.id_producto,p.nombre_producto,e.cantidad,e.precio_unitario,e.fecha_vencimiento, e.id_entrada from EntradaAlmacen e, ProductoAlmacen p
 where e.id_producto = p.id_producto", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+    Public Function ListarEntradaInventarioFecha(ByVal inicio As Date, ByVal fin As Date) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select e.lote,p.id_producto,p.nombre_producto,e.cantidad,e.precio_unitario,e.fecha_vencimiento, e.id_entrada from EntradaAlmacen e, ProductoAlmacen p
+where e.id_producto = p.id_producto and e.fecha_registro between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "'", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
