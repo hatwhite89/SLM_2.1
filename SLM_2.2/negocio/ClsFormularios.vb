@@ -124,6 +124,21 @@ Public Class ClsFormularios
     End Function
 
 
+    'Capturar ultimo registro
+    Public Function listarUltimoFormulario() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("A_slmUltimoFormulario", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+
 
 End Class
 
