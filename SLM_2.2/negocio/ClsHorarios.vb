@@ -4,7 +4,7 @@ Public Class ClsHorarios
     Dim codigo As Integer
     Dim nombre, codigoBreve, observacion As String
     Dim lunes, martes, miercoles, jueves, viernes, sabado, domingo As Boolean
-    Dim entrada, salida As Date
+    Dim entrada, salida, entradaFinSemana, salidaFinSemana As Date
     'Constructor
     Public Sub New()
 
@@ -108,6 +108,22 @@ Public Class ClsHorarios
             domingo = value
         End Set
     End Property
+    Public Property entradaFinSemana_ As Date
+        Get
+            Return entradaFinSemana
+        End Get
+        Set(value As Date)
+            entradaFinSemana = value
+        End Set
+    End Property
+    Public Property salidaFinSemana_ As Date
+        Get
+            Return salidaFinSemana
+        End Get
+        Set(value As Date)
+            salidaFinSemana = value
+        End Set
+    End Property
     Public Property entrada_ As Date
         Get
             Return entrada
@@ -193,6 +209,16 @@ Public Class ClsHorarios
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "observacion" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = observacion_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "entradaFinSemana" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = entradaFinSemana_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salidaFinSemana" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = salidaFinSemana_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -287,6 +313,16 @@ Public Class ClsHorarios
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "observacion" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = observacion_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "entradaFinSemana" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = entradaFinSemana_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salidaFinSemana" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = salidaFinSemana_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

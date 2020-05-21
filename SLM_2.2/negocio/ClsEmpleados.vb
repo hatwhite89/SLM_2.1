@@ -6,7 +6,6 @@ Public Class ClsEmpleados
     Dim nombre1, nombre2, apellido1, apellido2, nombreCompleto, nIdentidad, nSeguroSocial, nSeguroVida, banco, cuentaBancaria As String
     Dim fechaAlta, fechaNacimiento As Date
     Dim fechaBaja, fechaAvisoBaja As System.Nullable(Of Date)
-    Dim crearPersona As Boolean
     Dim salario As Double
     Dim motivoBaja, tipoCuenta, estadoLaboral, direccion1, direccion2, correo1, correo2, telefono, celular, rtn As String
     Dim lugarNacimiento, grupoSangineo, contactoUrgencias, telUrgencias, celUrgencias, contactoUrgencias2, telUrgencias2, celUrgencias2, imagen, nombreConyugue, nombrePadre, nombreMadre, genero, estadoCivil As String
@@ -428,14 +427,6 @@ Public Class ClsEmpleados
             fechaAvisoBaja = value
         End Set
     End Property
-    Public Property crearPersona_ As Boolean
-        Get
-            Return crearPersona
-        End Get
-        Set(value As Boolean)
-            crearPersona = value
-        End Set
-    End Property
     Public Function RegistrarNuevoEmpleados() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -473,11 +464,6 @@ Public Class ClsEmpleados
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoArea" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = codigoArea_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "crearPersona" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = crearPersona_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -741,11 +727,6 @@ Public Class ClsEmpleados
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoArea" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = codigoArea_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "crearPersona" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = crearPersona_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

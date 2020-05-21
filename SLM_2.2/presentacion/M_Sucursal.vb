@@ -64,6 +64,16 @@
                     Me.Close()
                 End If
 
+            ElseIf (lblform.Text = "M_MaquinasLocales") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar la sucursal en la máquina local?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_MaquinasLocales.lblcodeSucursal.Text = lblcode.Text
+                    M_MaquinasLocales.txtcodigoSucursal.Text = txtcodigo.Text
+                    M_MaquinasLocales.txtnombreSucursal.Text = txtnombre.Text
+                    Me.Close()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)

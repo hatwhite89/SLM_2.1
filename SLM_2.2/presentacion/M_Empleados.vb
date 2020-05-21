@@ -16,7 +16,6 @@
             txtnombreCompleto.Text = ""
             lblcodigoArea.Text = ""
             txtArea.Text = ""
-            cbxCrearPersona.Checked = False
             dtpfechaAlta.Value = Date.Now
             mtxtidentidad.Text = ""
 
@@ -34,8 +33,7 @@
             txtdepartamento.Text = ""
             txtsalario.Text = ""
             cmbxtipoCuenta.SelectedItem = ""
-
-            cmbxcodigoContrato.SelectedItem = ""
+            cmbxcodigoContrato.SelectedValue = "1"
             cmbxestadoLaboral.SelectedItem = ""
             rtxtdireccion.Text = ""
             rtxtdireccion2.Text = ""
@@ -63,7 +61,6 @@
             txtnombrePadre.Text = ""
             txtnombreMadre.Text = ""
 
-
             rbtnmasculino.Checked = True
             lblEstadoCvl.Text = "Soltero"
             rbtnsoltero.Checked = True
@@ -75,6 +72,7 @@
             dtpFechaAvisoBaja.CustomFormat = " "
 
             btnmodificar.Enabled = False
+            btnguardar.Enabled = True
 
             lblform.Text = ""
 
@@ -82,6 +80,14 @@
             'picture box
             pbxEmpleado.Image = Nothing
             txtRuta.Text = ""
+
+            btnImprimirCarnet.Enabled = True
+            'habilitar el boton para imprimir el carnet en caso que sea permanente
+            'If cmbxcodigoContrato.SelectedValue.ToString = "1" Then
+            '    btnImprimirCarnet.Enabled = True
+            'Else
+            '    btnImprimirCarnet.Enabled = False
+            'End If
 
         Catch ex As Exception
             MsgBox("En la limpieza: " & ex.Message, MsgBoxStyle.Critical)
@@ -177,21 +183,7 @@
     End Sub
 
     Private Sub M_Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'llenar el combo box CONTRATOS
-        Try
-            Dim objContratos As New ClsContratos
-            Dim dt As New DataTable
-            dt = objContratos.SeleccionarContratos
-            Dim cant As Integer = dt.Rows.Count
-            Dim row As DataRow
-            cmbxcodigoContrato.Items.Clear()
-            For index As Integer = 0 To cant - 1
-                row = dt.Rows(index)
-                cmbxcodigoContrato.Items.Add(CStr(row("descripcion")))
-            Next
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical, "Validación")
-        End Try
+
     End Sub
     Private Sub dtpfechaBaja_MouseDown(sender As Object, e As MouseEventArgs) Handles dtpfechaBaja.MouseDown
 
@@ -315,7 +307,6 @@
                     .Apellido2_ = txtapellido2.Text
                     .NombreCompleto_ = txtnombreCompleto.Text
                     .codigoArea_ = Convert.ToInt64(lblcodigoArea.Text)
-                    .crearPersona_ = cbxCrearPersona.Checked
                     .fechaAlta_ = dtpfechaAlta.Value
                     .nIdentidad_ = mtxtidentidad.Text
 
@@ -345,7 +336,8 @@
                     .salario_ = Convert.ToDouble(txtsalario.Text)
                     .tipoCuenta_ = cmbxtipoCuenta.SelectedItem.ToString
 
-                    .codigoContrato_ = Convert.ToInt64("1")
+                    '.codigoContrato_ = Convert.ToInt64("1")
+                    .codigoContrato_ = Integer.Parse(cmbxcodigoContrato.SelectedValue)
                     .estadoLaboral_ = cmbxestadoLaboral.SelectedItem.ToString
                     .direccion1_ = rtxtdireccion.Text
                     .direccion2_ = rtxtdireccion2.Text
@@ -384,24 +376,25 @@
 
                     btnguardar.Enabled = False
                     btnmodificar.Enabled = True
+
+                    'actualizar la tabla
+                    M_BuscarEmpleados.SeleccionarEmpleados()
+                    '::::::::::::::::::::::::::::::::::::::::::::: INSERTAR BITACORA ::::::::::::::::::::::
+                    'Dim Bitacora As New ClsBitacora
+
+                    'With Bitacora
+                    '    .usuario_ = "1"
+                    '    .accion_ = "Creación de un empleado."
+                    '    .fecha_ = Date.Now
+                    '    .registrarBitacora()
+                    'End With
+                    '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
                 Else
                     MsgBox("Error al querer registrar el empleado.", MsgBoxStyle.Critical)
                 End If
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
-            'M_BuscarFactura.seleccionarFacturas()
-
-            '::::::::::::::::::::::::::::::::::::::::::::: INSERTAR BITACORA ::::::::::::::::::::::
-            'Dim Bitacora As New ClsBitacora
-
-            'With Bitacora
-            '    .usuario_ = "1"
-            '    .accion_ = "Creación de un empleado."
-            '    .fecha_ = Date.Now
-            '    .registrarBitacora()
-            'End With
-            '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -544,7 +537,6 @@
                     .Apellido2_ = txtapellido2.Text
                     .NombreCompleto_ = txtnombreCompleto.Text
                     .codigoArea_ = Convert.ToInt64(lblcodigoArea.Text)
-                    .crearPersona_ = cbxCrearPersona.Checked
                     .fechaAlta_ = dtpfechaAlta.Value
                     .nIdentidad_ = mtxtidentidad.Text
 
@@ -573,7 +565,8 @@
                     .salario_ = Convert.ToDouble(txtsalario.Text)
                     .tipoCuenta_ = cmbxtipoCuenta.SelectedItem.ToString
 
-                    .codigoContrato_ = Convert.ToInt64("1")
+                    '.codigoContrato_ = Convert.ToInt64("1")
+                    .codigoContrato_ = Integer.Parse(cmbxcodigoContrato.SelectedValue)
                     .estadoLaboral_ = cmbxestadoLaboral.SelectedItem.ToString
                     .direccion1_ = rtxtdireccion.Text
                     .direccion2_ = rtxtdireccion2.Text
@@ -608,36 +601,59 @@
 
                     btnguardar.Enabled = False
                     btnmodificar.Enabled = True
+
+                    'actualizar la tabla
+                    M_BuscarEmpleados.SeleccionarEmpleados()
+
+                    '::::::::::::::::::::::::::::::::::::::::::::: INSERTAR BITACORA ::::::::::::::::::::::
+                    'Dim Bitacora As New ClsBitacora
+
+                    'With Bitacora
+                    '    .usuario_ = "1"
+                    '    .accion_ = "Creación de un empleado."
+                    '    .fecha_ = Date.Now
+                    '    .registrarBitacora()
+                    'End With
+                    '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
                 Else
                     MsgBox("Error al querer actualizar los datos del empleado.", MsgBoxStyle.Critical)
                 End If
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If
-            'M_BuscarFactura.seleccionarFacturas()
-
-            '::::::::::::::::::::::::::::::::::::::::::::: INSERTAR BITACORA ::::::::::::::::::::::
-            'Dim Bitacora As New ClsBitacora
-
-            'With Bitacora
-            '    .usuario_ = "1"
-            '    .accion_ = "Creación de un empleado."
-            '    .fecha_ = Date.Now
-            '    .registrarBitacora()
-            'End With
-            '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+    Public Sub llenarContratos()
+        'llenar el combo box CONTRATOS
+        Try
+            Dim objContratos As New ClsContratos
+            Dim dt As New DataTable
+            dt = objContratos.SeleccionarContratos
 
+            'dt.Load(objContratos.SeleccionarContratos)
+            cmbxcodigoContrato.DataSource = dt
+            cmbxcodigoContrato.DisplayMember = "descripcion"
+            cmbxcodigoContrato.ValueMember = "codigo"
+            'Dim cant As Integer = dt.Rows.Count
+            'Dim row As DataRow
+            'cmbxcodigoContrato.Items.Clear()
+            'For index As Integer = 0 To cant - 1
+            '    row = dt.Rows(index)
+            '    cmbxcodigoContrato.Items.Add(CStr(row("descripcion")))
+            'Next
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Validación")
+        End Try
+    End Sub
     Private Sub txtcodigoHorario_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoHorario.Click
         M_Horarios.lblform.Text = "M_Empleados"
         M_Horarios.ShowDialog()
     End Sub
 
-    Private Sub txtcodigoFormaPago_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoFormaPago.Click
+    Private Sub txtcodigoFormaPago_Click(sender As Object, e As EventArgs) Handles txtcodigoFormaPago.Click
         A_ListarFormasPagoPF.lblForm.Text = "M_Empleados"
         A_ListarFormasPagoPF.ShowDialog()
     End Sub
@@ -697,5 +713,52 @@
             M_ListadoPuestoTrabajo.lblcodeDepto.Text = lblcodeDepto.Text
             M_ListadoPuestoTrabajo.ShowDialog()
         End If
+    End Sub
+
+    Private Sub txtcodigoFormaPago_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoFormaPago.TextChanged
+        If (txtcodigoFormaPago.Text <> "") Then
+            Try
+                Dim objForPa As New ClsFormaPago
+                With objForPa
+                    .Codigo_FormaPago = txtcodigoFormaPago.Text
+                End With
+                Dim dt As New DataTable
+                dt = objForPa.buscarFormaPago()
+                Dim row As DataRow = dt.Rows(0)
+                txtnombreFormaPago.Text = CStr(row("nombreBanco"))
+                txtcodigoFormaPago.BackColor = Color.White
+            Catch ex As Exception
+                txtcodigoFormaPago.BackColor = Color.Red
+                txtnombreFormaPago.Text = ""
+            End Try
+        Else
+            txtcodigoFormaPago.Text = ""
+            txtnombreFormaPago.Text = ""
+            txtcodigoFormaPago.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub cmbxcodigoContrato_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cmbxcodigoContrato.SelectedIndexChanged
+        'habilitar el boton para imprimir el carnet en caso que sea permanente
+        Try
+            If cmbxcodigoContrato.SelectedValue.ToString = "1" Then
+                btnImprimirCarnet.Enabled = True
+            Else
+                btnImprimirCarnet.Enabled = False
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub txtsalario_Leave(sender As Object, e As EventArgs) Handles txtsalario.Leave
+        'Mostrar el numero con 2 decimales N2 = 1,000.00   y F2 = 1000.00
+        Try
+            If Trim(txtsalario.Text) <> "" Then
+                txtsalario.Text = Convert.ToDecimal(txtsalario.Text).ToString("N2")
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

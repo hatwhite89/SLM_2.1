@@ -193,6 +193,7 @@
                     MsgBox("Error al querer ingresar el parámetro de examen.", MsgBoxStyle.Critical)
                 End If
 
+
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
             End If

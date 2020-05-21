@@ -36,7 +36,6 @@ Partial Class M_Empleados
         Me.txtnombreCompleto = New System.Windows.Forms.TextBox()
         Me.lblnombre = New System.Windows.Forms.Label()
         Me.lblcode = New System.Windows.Forms.Label()
-        Me.cbxCrearPersona = New System.Windows.Forms.CheckBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
@@ -46,6 +45,7 @@ Partial Class M_Empleados
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.txtnombreFormaPago = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.cmbxestadoLaboral = New System.Windows.Forms.ComboBox()
         Me.cmbxcodigoContrato = New System.Windows.Forms.ComboBox()
@@ -147,6 +147,7 @@ Partial Class M_Empleados
         Me.Label25 = New System.Windows.Forms.Label()
         Me.txtcelularUrgencias = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnImprimirCarnet = New System.Windows.Forms.Button()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.txtRuta = New System.Windows.Forms.TextBox()
         Me.btnEliminar = New System.Windows.Forms.Button()
@@ -185,7 +186,6 @@ Partial Class M_Empleados
         Me.gbxobjeto.Controls.Add(Me.txtnombreCompleto)
         Me.gbxobjeto.Controls.Add(Me.lblnombre)
         Me.gbxobjeto.Controls.Add(Me.lblcode)
-        Me.gbxobjeto.Controls.Add(Me.cbxCrearPersona)
         Me.gbxobjeto.Controls.Add(Me.btnmodificar)
         Me.gbxobjeto.Controls.Add(Me.btnnuevo)
         Me.gbxobjeto.Controls.Add(Me.btnguardar)
@@ -214,7 +214,7 @@ Partial Class M_Empleados
         '
         Me.txtnombre2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtnombre2.Location = New System.Drawing.Point(471, 81)
-        Me.txtnombre2.MaxLength = 20
+        Me.txtnombre2.MaxLength = 50
         Me.txtnombre2.Name = "txtnombre2"
         Me.txtnombre2.Size = New System.Drawing.Size(179, 22)
         Me.txtnombre2.TabIndex = 133
@@ -223,7 +223,7 @@ Partial Class M_Empleados
         '
         Me.txtapellido1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtapellido1.Location = New System.Drawing.Point(188, 109)
-        Me.txtapellido1.MaxLength = 20
+        Me.txtapellido1.MaxLength = 50
         Me.txtapellido1.Name = "txtapellido1"
         Me.txtapellido1.Size = New System.Drawing.Size(179, 22)
         Me.txtapellido1.TabIndex = 132
@@ -232,7 +232,7 @@ Partial Class M_Empleados
         '
         Me.txtapellido2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtapellido2.Location = New System.Drawing.Point(471, 109)
-        Me.txtapellido2.MaxLength = 20
+        Me.txtapellido2.MaxLength = 50
         Me.txtapellido2.Name = "txtapellido2"
         Me.txtapellido2.Size = New System.Drawing.Size(179, 22)
         Me.txtapellido2.TabIndex = 131
@@ -271,7 +271,7 @@ Partial Class M_Empleados
         '
         Me.txtnombre1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtnombre1.Location = New System.Drawing.Point(189, 81)
-        Me.txtnombre1.MaxLength = 20
+        Me.txtnombre1.MaxLength = 50
         Me.txtnombre1.Name = "txtnombre1"
         Me.txtnombre1.Size = New System.Drawing.Size(179, 22)
         Me.txtnombre1.TabIndex = 127
@@ -289,7 +289,7 @@ Partial Class M_Empleados
         'txtnombreCompleto
         '
         Me.txtnombreCompleto.Location = New System.Drawing.Point(188, 51)
-        Me.txtnombreCompleto.MaxLength = 80
+        Me.txtnombreCompleto.MaxLength = 200
         Me.txtnombreCompleto.Name = "txtnombreCompleto"
         Me.txtnombreCompleto.ReadOnly = True
         Me.txtnombreCompleto.Size = New System.Drawing.Size(461, 22)
@@ -314,17 +314,6 @@ Partial Class M_Empleados
         Me.lblcode.Size = New System.Drawing.Size(0, 17)
         Me.lblcode.TabIndex = 123
         Me.lblcode.Visible = False
-        '
-        'cbxCrearPersona
-        '
-        Me.cbxCrearPersona.AutoSize = True
-        Me.cbxCrearPersona.Location = New System.Drawing.Point(733, 80)
-        Me.cbxCrearPersona.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.cbxCrearPersona.Name = "cbxCrearPersona"
-        Me.cbxCrearPersona.Size = New System.Drawing.Size(179, 21)
-        Me.cbxCrearPersona.TabIndex = 118
-        Me.cbxCrearPersona.Text = "Crear Registro Persona"
-        Me.cbxCrearPersona.UseVisualStyleBackColor = True
         '
         'btnmodificar
         '
@@ -429,6 +418,7 @@ Partial Class M_Empleados
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.txtnombreFormaPago)
         Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
@@ -455,6 +445,15 @@ Partial Class M_Empleados
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Laboral"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'txtnombreFormaPago
+        '
+        Me.txtnombreFormaPago.Location = New System.Drawing.Point(185, 249)
+        Me.txtnombreFormaPago.MaxLength = 20
+        Me.txtnombreFormaPago.Name = "txtnombreFormaPago"
+        Me.txtnombreFormaPago.ReadOnly = True
+        Me.txtnombreFormaPago.Size = New System.Drawing.Size(131, 22)
+        Me.txtnombreFormaPago.TabIndex = 160
         '
         'GroupBox3
         '
@@ -483,6 +482,7 @@ Partial Class M_Empleados
         '
         'cmbxcodigoContrato
         '
+        Me.cmbxcodigoContrato.DropDownWidth = 180
         Me.cmbxcodigoContrato.FormattingEnabled = True
         Me.cmbxcodigoContrato.Location = New System.Drawing.Point(391, 30)
         Me.cmbxcodigoContrato.Name = "cmbxcodigoContrato"
@@ -574,10 +574,11 @@ Partial Class M_Empleados
         'txtsalario
         '
         Me.txtsalario.Location = New System.Drawing.Point(391, 53)
-        Me.txtsalario.MaxLength = 20
+        Me.txtsalario.MaxLength = 200
         Me.txtsalario.Name = "txtsalario"
         Me.txtsalario.Size = New System.Drawing.Size(153, 22)
         Me.txtsalario.TabIndex = 165
+        Me.txtsalario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label33
         '
@@ -631,7 +632,7 @@ Partial Class M_Empleados
         'txtdepartamento
         '
         Me.txtdepartamento.Location = New System.Drawing.Point(391, 24)
-        Me.txtdepartamento.MaxLength = 20
+        Me.txtdepartamento.MaxLength = 2000
         Me.txtdepartamento.Name = "txtdepartamento"
         Me.txtdepartamento.ReadOnly = True
         Me.txtdepartamento.Size = New System.Drawing.Size(153, 22)
@@ -675,6 +676,7 @@ Partial Class M_Empleados
         'rtxtmotivoBaja
         '
         Me.rtxtmotivoBaja.Location = New System.Drawing.Point(116, 53)
+        Me.rtxtmotivoBaja.MaxLength = 200
         Me.rtxtmotivoBaja.Name = "rtxtmotivoBaja"
         Me.rtxtmotivoBaja.Size = New System.Drawing.Size(420, 43)
         Me.rtxtmotivoBaja.TabIndex = 158
@@ -731,10 +733,10 @@ Partial Class M_Empleados
         'txtcodigoFormaPago
         '
         Me.txtcodigoFormaPago.Location = New System.Drawing.Point(137, 249)
-        Me.txtcodigoFormaPago.MaxLength = 20
+        Me.txtcodigoFormaPago.MaxLength = 200
         Me.txtcodigoFormaPago.Name = "txtcodigoFormaPago"
         Me.txtcodigoFormaPago.ReadOnly = True
-        Me.txtcodigoFormaPago.Size = New System.Drawing.Size(179, 22)
+        Me.txtcodigoFormaPago.Size = New System.Drawing.Size(42, 22)
         Me.txtcodigoFormaPago.TabIndex = 145
         '
         'Label6
@@ -768,7 +770,7 @@ Partial Class M_Empleados
         'txtbanco
         '
         Me.txtbanco.Location = New System.Drawing.Point(137, 188)
-        Me.txtbanco.MaxLength = 20
+        Me.txtbanco.MaxLength = 50
         Me.txtbanco.Name = "txtbanco"
         Me.txtbanco.Size = New System.Drawing.Size(179, 22)
         Me.txtbanco.TabIndex = 141
@@ -786,7 +788,7 @@ Partial Class M_Empleados
         'txtcodigoHorario
         '
         Me.txtcodigoHorario.Location = New System.Drawing.Point(137, 157)
-        Me.txtcodigoHorario.MaxLength = 20
+        Me.txtcodigoHorario.MaxLength = 200
         Me.txtcodigoHorario.Name = "txtcodigoHorario"
         Me.txtcodigoHorario.ReadOnly = True
         Me.txtcodigoHorario.Size = New System.Drawing.Size(179, 22)
@@ -977,7 +979,7 @@ Partial Class M_Empleados
         'txtcorreo2
         '
         Me.txtcorreo2.Location = New System.Drawing.Point(639, 60)
-        Me.txtcorreo2.MaxLength = 100
+        Me.txtcorreo2.MaxLength = 50
         Me.txtcorreo2.Name = "txtcorreo2"
         Me.txtcorreo2.Size = New System.Drawing.Size(256, 22)
         Me.txtcorreo2.TabIndex = 193
@@ -986,7 +988,7 @@ Partial Class M_Empleados
         'txtcorreo
         '
         Me.txtcorreo.Location = New System.Drawing.Point(155, 62)
-        Me.txtcorreo.MaxLength = 100
+        Me.txtcorreo.MaxLength = 50
         Me.txtcorreo.Name = "txtcorreo"
         Me.txtcorreo.Size = New System.Drawing.Size(256, 22)
         Me.txtcorreo.TabIndex = 191
@@ -1015,6 +1017,7 @@ Partial Class M_Empleados
         'rtxtdireccion2
         '
         Me.rtxtdireccion2.Location = New System.Drawing.Point(637, 9)
+        Me.rtxtdireccion2.MaxLength = 50
         Me.rtxtdireccion2.Name = "rtxtdireccion2"
         Me.rtxtdireccion2.Size = New System.Drawing.Size(256, 43)
         Me.rtxtdireccion2.TabIndex = 189
@@ -1033,6 +1036,7 @@ Partial Class M_Empleados
         'rtxtdireccion
         '
         Me.rtxtdireccion.Location = New System.Drawing.Point(155, 9)
+        Me.rtxtdireccion.MaxLength = 50
         Me.rtxtdireccion.Name = "rtxtdireccion"
         Me.rtxtdireccion.Size = New System.Drawing.Size(256, 43)
         Me.rtxtdireccion.TabIndex = 187
@@ -1187,7 +1191,7 @@ Partial Class M_Empleados
         'txtnombreMadre
         '
         Me.txtnombreMadre.Location = New System.Drawing.Point(158, 293)
-        Me.txtnombreMadre.MaxLength = 20
+        Me.txtnombreMadre.MaxLength = 50
         Me.txtnombreMadre.Name = "txtnombreMadre"
         Me.txtnombreMadre.Size = New System.Drawing.Size(256, 22)
         Me.txtnombreMadre.TabIndex = 182
@@ -1206,7 +1210,7 @@ Partial Class M_Empleados
         'txtnombrePadre
         '
         Me.txtnombrePadre.Location = New System.Drawing.Point(158, 263)
-        Me.txtnombrePadre.MaxLength = 20
+        Me.txtnombrePadre.MaxLength = 50
         Me.txtnombrePadre.Name = "txtnombrePadre"
         Me.txtnombrePadre.Size = New System.Drawing.Size(256, 22)
         Me.txtnombrePadre.TabIndex = 180
@@ -1225,7 +1229,7 @@ Partial Class M_Empleados
         'txtnombreConyugue
         '
         Me.txtnombreConyugue.Location = New System.Drawing.Point(158, 232)
-        Me.txtnombreConyugue.MaxLength = 20
+        Me.txtnombreConyugue.MaxLength = 50
         Me.txtnombreConyugue.Name = "txtnombreConyugue"
         Me.txtnombreConyugue.Size = New System.Drawing.Size(256, 22)
         Me.txtnombreConyugue.TabIndex = 178
@@ -1287,6 +1291,7 @@ Partial Class M_Empleados
         'rtxtlugarNacimiento
         '
         Me.rtxtlugarNacimiento.Location = New System.Drawing.Point(639, 132)
+        Me.rtxtlugarNacimiento.MaxLength = 100
         Me.rtxtlugarNacimiento.Name = "rtxtlugarNacimiento"
         Me.rtxtlugarNacimiento.Size = New System.Drawing.Size(256, 43)
         Me.rtxtlugarNacimiento.TabIndex = 162
@@ -1400,7 +1405,7 @@ Partial Class M_Empleados
         'txtcontactoUrgencias2
         '
         Me.txtcontactoUrgencias2.Location = New System.Drawing.Point(183, 33)
-        Me.txtcontactoUrgencias2.MaxLength = 20
+        Me.txtcontactoUrgencias2.MaxLength = 50
         Me.txtcontactoUrgencias2.Name = "txtcontactoUrgencias2"
         Me.txtcontactoUrgencias2.Size = New System.Drawing.Size(193, 22)
         Me.txtcontactoUrgencias2.TabIndex = 178
@@ -1472,7 +1477,7 @@ Partial Class M_Empleados
         'txtcontactoUrgencias
         '
         Me.txtcontactoUrgencias.Location = New System.Drawing.Point(183, 33)
-        Me.txtcontactoUrgencias.MaxLength = 20
+        Me.txtcontactoUrgencias.MaxLength = 50
         Me.txtcontactoUrgencias.Name = "txtcontactoUrgencias"
         Me.txtcontactoUrgencias.Size = New System.Drawing.Size(193, 22)
         Me.txtcontactoUrgencias.TabIndex = 178
@@ -1499,6 +1504,7 @@ Partial Class M_Empleados
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.btnImprimirCarnet)
         Me.TabPage2.Controls.Add(Me.Label32)
         Me.TabPage2.Controls.Add(Me.txtRuta)
         Me.TabPage2.Controls.Add(Me.btnEliminar)
@@ -1510,6 +1516,20 @@ Partial Class M_Empleados
         Me.TabPage2.TabIndex = 4
         Me.TabPage2.Text = "Datos Adjuntos"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'btnImprimirCarnet
+        '
+        Me.btnImprimirCarnet.BackColor = System.Drawing.Color.DimGray
+        Me.btnImprimirCarnet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnImprimirCarnet.FlatAppearance.BorderSize = 0
+        Me.btnImprimirCarnet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImprimirCarnet.Location = New System.Drawing.Point(168, 279)
+        Me.btnImprimirCarnet.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnImprimirCarnet.Name = "btnImprimirCarnet"
+        Me.btnImprimirCarnet.Size = New System.Drawing.Size(141, 26)
+        Me.btnImprimirCarnet.TabIndex = 34
+        Me.btnImprimirCarnet.Text = "Imprimir Carnet"
+        Me.btnImprimirCarnet.UseVisualStyleBackColor = False
         '
         'Label32
         '
@@ -1623,7 +1643,6 @@ Partial Class M_Empleados
 
     Friend WithEvents gbxobjeto As GroupBox
     Friend WithEvents lblcode As Label
-    Friend WithEvents cbxCrearPersona As CheckBox
     Friend WithEvents btnmodificar As Button
     Friend WithEvents btnnuevo As Button
     Friend WithEvents btnguardar As Button
@@ -1752,4 +1771,6 @@ Partial Class M_Empleados
     Friend WithEvents Label33 As Label
     Friend WithEvents lblcodePuesto As Label
     Friend WithEvents lblcodeDepto As Label
+    Friend WithEvents txtnombreFormaPago As TextBox
+    Friend WithEvents btnImprimirCarnet As Button
 End Class

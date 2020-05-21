@@ -152,6 +152,27 @@ Public Class M_Factura
 
         txtEfectivo.ReadOnly = False
         txtTarjeta.ReadOnly = False
+
+        'obtener maquina local
+        buscarMaquinaLocal()
+
+    End Sub
+    Private Sub buscarMaquinaLocal()
+        Try
+            Dim objMaq As New ClsMaquinasLocales
+            With objMaq
+                .descripcion_ = System.Environment.MachineName
+            End With
+            Dim dt As New DataTable
+            dt = objMaq.BuscarMaquinasLocalesDesc()
+            Dim row As DataRow = dt.Rows(0)
+            txtcodigoTerminal.Text = CStr(row("codigo"))
+            txtCodigoBreveMaquina.Text = CStr(row("codigoMaquinasLocales"))
+            lblcodeSucursal.Text = CStr(row("codigoSucursal"))
+        Catch ex As Exception
+            txtcodigoSucursal.Text = ""
+            txtcodigoTerminal.Text = ""
+        End Try
     End Sub
     Public Sub deshabilitar()
         txtcodigoCliente.ReadOnly = True
@@ -222,6 +243,30 @@ Public Class M_Factura
 
         btnbuscarCliente.Enabled = True
         btnbuscarTerminosPago.Enabled = True
+    End Sub
+    Private Sub txtcodigoTerminal_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoTerminal.TextChanged
+        If (txtcodigoTerminal.Text <> "") Then
+            Try
+                Dim objMaq As New ClsMaquinasLocales
+                With objMaq
+                    .codigo_ = txtcodigoTerminal.Text
+                End With
+                Dim dt As New DataTable
+                dt = objMaq.BuscarMaquinasLocalesCode()
+                Dim row As DataRow = dt.Rows(0)
+                txtcodigoTerminal.Text = CStr(row("codigo"))
+                txtCodigoBreveMaquina.Text = CStr(row("codigoMaquinasLocales"))
+                lblcodeSucursal.Text = CStr(row("codigoSucursal"))
+            Catch ex As Exception
+                txtcodigoSucursal.Text = ""
+                txtcodigoTerminal.Text = ""
+                txtCodigoBreveMaquina.Text = ""
+            End Try
+        Else
+            txtcodigoSucursal.Text = ""
+            txtcodigoTerminal.Text = ""
+            txtCodigoBreveMaquina.Text = ""
+        End If
     End Sub
     Private Sub txtcodigoMedico_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoMedico.TextChanged
         If (txtcodigoMedico.Text <> "") Then
@@ -612,13 +657,18 @@ Public Class M_Factura
                 txtcodigoCajero.Text = "1"
             End If
             If Trim(txtcodigoTerminal.Text) = "" Then
-                txtcodigoTerminal.Text = "1"
+                buscarMaquinaLocal()
             End If
             If Trim(txtnumeroPoliza.Text) = "" Then
                 txtnumeroPoliza.Text = "1"
             End If
             If Trim(txtpagoPaciente.Text) = "" Then
                 txtpagoPaciente.Text = "0"
+            End If
+
+            If Trim(txtcodigoTerminal.Text) = "" Then
+                MsgBox("No existe la máquina local.", MsgBoxStyle.Critical)
+                Exit Sub
             End If
 
             Dim dt As New DataTable
@@ -637,15 +687,20 @@ Public Class M_Factura
                     Dim objCAI As New ClsCAI
                     objCAI.codigoMaquinaLocal_ = txtcodigoTerminal.Text
                     dt = objCAI.BuscarCAI()
-                    row = dt.Rows(0)
-                    txtnumeroOficial.Text = CStr(row("numeroOficial"))
+                    If dt.Rows.Count >= 1 Then
+                        row = dt.Rows(0)
+                        txtnumeroOficial.Text = CStr(row("numeroOficial"))
 
-                    Dim objDetCAI As New ClsDetalleCAI
-                    objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
-                    If objDetCAI.ModificarDetalleCAI() <> 1 Then
-                        MsgBox("Error en la actualización del detalle del CAI.", MsgBoxStyle.Critical)
-                        Exit Sub
+                        Dim objDetCAI As New ClsDetalleCAI
+                        objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
+                        If objDetCAI.ModificarDetalleCAI() <> 1 Then
+                            MsgBox("Error en la actualización del detalle del CAI.", MsgBoxStyle.Critical)
+                            Exit Sub
+                        End If
+                    Else
+                        MsgBox("No existe un CAI activo." & dt.Rows.Count)
                     End If
+
                 End If
 
                 Dim objFact As New ClsFactura
@@ -843,14 +898,19 @@ Public Class M_Factura
                     Dim objCAI As New ClsCAI
                     objCAI.codigoMaquinaLocal_ = txtcodigoTerminal.Text
                     dt = objCAI.BuscarCAI()
-                    row = dt.Rows(0)
-                    txtnumeroOficial.Text = CStr(row("numeroOficial"))
-                    Dim objDetCAI As New ClsDetalleCAI
-                    objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
-                    'SI SE LOGRO HACER LA MODIFICACION DEL ESTADO DEL CAI 
-                    If objDetCAI.ModificarDetalleCAI() <> 1 Then
-                        MsgBox("Error en la actualización del detalle del CAI.", MsgBoxStyle.Critical)
-                        Exit Sub
+
+                    If dt.Rows.Count >= 1 Then
+                        row = dt.Rows(0)
+                        txtnumeroOficial.Text = CStr(row("numeroOficial"))
+
+                        Dim objDetCAI As New ClsDetalleCAI
+                        objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
+                        If objDetCAI.ModificarDetalleCAI() <> 1 Then
+                            MsgBox("Error en la actualización del detalle del CAI.", MsgBoxStyle.Critical)
+                            Exit Sub
+                        End If
+                    Else
+                        MsgBox("No existe un CAI activo." & dt.Rows.Count)
                     End If
                 End If
 

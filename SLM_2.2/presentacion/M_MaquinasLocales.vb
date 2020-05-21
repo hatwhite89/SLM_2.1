@@ -16,7 +16,9 @@
 
         rtxtdescripcion.ReadOnly = True
         txtcodigo.ReadOnly = True
+        txtcodigoSucursal.ReadOnly = True
 
+        btnSucursal.Enabled = False
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
@@ -26,27 +28,32 @@
             lblcode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
             rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+            lblcodeSucursal.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
 
             btnmodificar.Enabled = True
             btnguardar.Enabled = False
+            btnSucursal.Enabled = True
 
             rtxtdescripcion.ReadOnly = False
             txtcodigo.ReadOnly = False
+            txtcodigoSucursal.ReadOnly = False
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
     Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
         Try
-            Dim n As String = ""
-            If e.RowIndex >= 0 Then
-                n = MsgBox("¿Desea utilizar la máquina local seleccionada?", MsgBoxStyle.YesNo, "Validación")
-            End If
-            If n = vbYes Then
-                M_CAI.lblCodeMaquinaLocal.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-                M_CAI.txtcodigoMaquina.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
-                M_CAI.txtdescripcionMaquina.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
-                Me.Close()
+            If lblform.Text = "M_CAI" Then
+                Dim n As String = ""
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar la máquina local seleccionada?", MsgBoxStyle.YesNo, "Validación")
+                End If
+                If n = vbYes Then
+                    M_CAI.lblCodeMaquinaLocal.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_CAI.txtcodigoMaquina.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    M_CAI.txtdescripcionMaquina.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+                    Me.Close()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -54,11 +61,18 @@
     End Sub
     Private Sub limpiar()
         txtcodigo.Text() = ""
-        rtxtdescripcion.Text() = ""
+        txtcodigoSucursal.Text = ""
+        rtxtdescripcion.Text = System.Environment.MachineName
+        '2 formas para obtener el nombre de la computadora
+        'rtxtdescripcion.Text = System.Windows.Forms.SystemInformation.ComputerName & "----" & System.Environment.MachineName
+
         rtxtdescripcionB.Text() = ""
 
         rtxtdescripcion.ReadOnly = False
         txtcodigo.ReadOnly = False
+        txtcodigoSucursal.ReadOnly = False
+
+        btnSucursal.Enabled = True
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
@@ -85,6 +99,7 @@
                 With objMaqLoc
                     .codigoMaquinasLocales_ = txtcodigo.Text
                     .descripcion_ = rtxtdescripcion.Text
+                    .codigoSucursal_ = lblcodeSucursal.Text
                 End With
 
                 If objMaqLoc.RegistrarNuevaMaquinaLocal() = 1 Then
@@ -126,6 +141,7 @@
                     .codigoMaquinasLocales_ = txtcodigo.Text
                     .descripcion_ = rtxtdescripcion.Text
                     .codigo_ = lblcode.Text
+                    .codigoSucursal_ = lblcodeSucursal.Text
                 End With
 
                 If objMaqLoc.ModificarMaquinasLocales() = 1 Then
@@ -171,5 +187,60 @@
         Catch ex As Exception
             MsgBox("No existe la máquina local.", MsgBoxStyle.Critical, "Validación")
         End Try
+    End Sub
+
+    Private Sub txtcodigoSucursal_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoSucursal.TextChanged
+        If (txtcodigoSucursal.Text <> "") Then
+            Try
+                Dim objSuc As New ClsSucursal
+                With objSuc
+                    .codigoSucursal_ = txtcodigoSucursal.Text
+                End With
+                Dim dt As New DataTable
+                dt = objSuc.BuscarSucursalCode()
+                Dim row As DataRow = dt.Rows(0)
+                lblcodeSucursal.Text = CStr(row("codigo"))
+                txtnombreSucursal.Text = CStr(row("nombre"))
+                txtcodigoSucursal.BackColor = Color.White
+            Catch ex As Exception
+                txtcodigoSucursal.BackColor = Color.Red
+                txtnombreSucursal.Text = ""
+                lblcodeSucursal.Text = ""
+            End Try
+        Else
+            txtcodigoSucursal.Text = ""
+            txtnombreSucursal.Text = ""
+            lblcodeSucursal.Text = ""
+            txtcodigoSucursal.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub lblcodeSucursal_TextChanged(sender As Object, e As EventArgs) Handles lblcodeSucursal.TextChanged
+        If (lblcodeSucursal.Text <> "") Then
+            Try
+                Dim objSuc As New ClsSucursal
+                With objSuc
+                    .codigo_ = lblcodeSucursal.Text
+                End With
+                Dim dt As New DataTable
+                dt = objSuc.BuscarSucursalNumero()
+                Dim row As DataRow = dt.Rows(0)
+                txtcodigoSucursal.Text = CStr(row("codigoSucursal"))
+                txtnombreSucursal.Text = CStr(row("nombre"))
+                txtcodigoSucursal.BackColor = Color.White
+            Catch ex As Exception
+                txtcodigoSucursal.BackColor = Color.Red
+                txtnombreSucursal.Text = ""
+                lblcodeSucursal.Text = ""
+            End Try
+        Else
+            txtcodigoSucursal.Text = ""
+            txtnombreSucursal.Text = ""
+            lblcodeSucursal.Text = ""
+            txtcodigoSucursal.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub btnSucursal_Click(sender As Object, e As EventArgs) Handles btnSucursal.Click
+        M_Sucursal.lblform.Text = "M_MaquinasLocales"
+        M_Sucursal.ShowDialog()
     End Sub
 End Class

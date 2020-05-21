@@ -118,8 +118,34 @@
             txtcodigoMaquina.BackColor = Color.White
         End If
     End Sub
-
+    Private Sub lblCodeMaquinaLocal_TextChanged(sender As Object, e As EventArgs) Handles lblCodeMaquinaLocal.TextChanged
+        If (lblCodeMaquinaLocal.Text <> "") Then
+            Try
+                Dim objMaq As New ClsMaquinasLocales
+                With objMaq
+                    .codigo_ = lblCodeMaquinaLocal.Text
+                End With
+                Dim dt As New DataTable
+                dt = objMaq.BuscarMaquinasLocalesCode()
+                Dim row As DataRow = dt.Rows(0)
+                txtcodigoMaquina.Text = CStr(row("codigoMaquinasLocales"))
+                txtcodigoMaquina.BackColor = Color.White
+                txtdescripcionMaquina.Text = CStr(row("descripcion"))
+            Catch ex As Exception
+                lblCodeMaquinaLocal.Text = ""
+                txtcodigoMaquina.Text = ""
+                txtcodigoMaquina.BackColor = Color.Red
+                txtdescripcionMaquina.Text = ""
+            End Try
+        Else
+            lblCodeMaquinaLocal.Text = ""
+            txtcodigoMaquina.Text = ""
+            txtcodigoMaquina.BackColor = Color.Red
+            txtdescripcionMaquina.Text = ""
+        End If
+    End Sub
     Private Sub btnbuscarMaquinaLocal_Click(sender As Object, e As EventArgs) Handles btnbuscarMaquinaLocal.Click
+        M_MaquinasLocales.lblform.Text = "M_CAI"
         M_MaquinasLocales.ShowDialog()
     End Sub
 

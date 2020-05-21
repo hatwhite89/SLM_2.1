@@ -40,7 +40,6 @@ Public Class M_BuscarEmpleados
                 M_Empleados.txtnombreCompleto.Text = CStr(row("nombreCompleto"))
                 M_Empleados.lblcodigoArea.Text = CStr(row("codigoArea"))
                 'M_Empleados.txtcodigoArea.Text = CStr(row("numero"))
-                M_Empleados.cbxCrearPersona.Checked = CStr(row("crearPersona"))
                 M_Empleados.dtpfechaAlta.Text = CStr(row("fechaAlta"))
                 M_Empleados.mtxtidentidad.Text = CStr(row("nIdentidad"))
 
@@ -68,10 +67,11 @@ Public Class M_BuscarEmpleados
                 M_Empleados.rtxtmotivoBaja.Text = CStr(row("motivoBaja"))
                 M_Empleados.lblcodePuesto.Text = CStr(row("codigoPuestoTrab"))
                 M_Empleados.lblcodeDepto.Text = CStr(row("codigoDepto"))
-                M_Empleados.txtsalario.Text = CStr(row("salario"))
+                M_Empleados.txtsalario.Text = Convert.ToDecimal(CStr(row("salario"))).ToString("N2")
                 M_Empleados.cmbxtipoCuenta.SelectedItem = CStr(row("tipoCuenta"))
 
-                'M_Empleados.cmbxcodigoContrato.SelectedItem = CStr(row("codigoContrato"))
+                M_Empleados.llenarContratos()
+                M_Empleados.cmbxcodigoContrato.SelectedValue = CStr(row("codigoContrato"))
                 M_Empleados.cmbxestadoLaboral.SelectedItem = CStr(row("estadoLaboral"))
                 M_Empleados.rtxtdireccion.Text = CStr(row("direccion1"))
                 M_Empleados.rtxtdireccion2.Text = CStr(row("direccion2"))
@@ -93,7 +93,7 @@ Public Class M_BuscarEmpleados
                 M_Empleados.txtnombrePadre.Text = CStr(row("nombrePadre"))
 
                 M_Empleados.txtnombreMadre.Text = CStr(row("nombreMadre"))
-                If CStr(row("nombreMadre")) = "Masculino" Then
+                If CStr(row("genero")) = "Masculino" Then
                     M_Empleados.rbtnmasculino.Checked = True
                 Else
                     M_Empleados.rbtnfemenino.Checked = True
@@ -157,6 +157,7 @@ Public Class M_BuscarEmpleados
     End Sub
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         'Me.Close()
+        M_Empleados.llenarContratos()
         M_Empleados.limpiar()
         M_Empleados.lblform.Text = "M_BuscarEmpleados"
         M_Empleados.Show()

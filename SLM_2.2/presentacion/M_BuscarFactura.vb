@@ -61,6 +61,7 @@ Public Class M_BuscarFactura
 
                 M_Factura.txtnumeroPoliza.Text = CStr(row("numeroPoliza"))
                 M_Factura.txtcodigoTerminal.Text = CStr(row("codigoTerminal"))
+                M_Factura.lblcodeSucursal.Text = CStr(row("codigoSucursal"))
                 M_Factura.cbxentregarMedico.Checked = CStr(row("entregaMedico"))
                 M_Factura.cbxentregarPaciente.Checked = CStr(row("entregaPaciente"))
                 M_Factura.cbxenviarCorreo.Checked = CStr(row("enviarEmail"))

@@ -23,6 +23,7 @@ Partial Class M_Descuentos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxclasificacion = New System.Windows.Forms.GroupBox()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.txtPorcentaje = New System.Windows.Forms.TextBox()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.txtcodigoBreve = New System.Windows.Forms.TextBox()
@@ -42,7 +43,7 @@ Partial Class M_Descuentos
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
         Me.lblcomentarioB = New System.Windows.Forms.Label()
-        Me.lblform = New System.Windows.Forms.Label()
+        Me.txtcodigoBreveB = New System.Windows.Forms.TextBox()
         Me.gbxclasificacion.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +72,16 @@ Partial Class M_Descuentos
         Me.gbxclasificacion.TabIndex = 121
         Me.gbxclasificacion.TabStop = False
         Me.gbxclasificacion.Text = "REGISTRAR DESCUENTO"
+        '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(362, 0)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(71, 17)
+        Me.lblform.TabIndex = 135
+        Me.lblform.Text = "formulario"
+        Me.lblform.Visible = False
         '
         'txtPorcentaje
         '
@@ -209,6 +220,7 @@ Partial Class M_Descuentos
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.Controls.Add(Me.txtcodigoBreveB)
         Me.gbxbusqueda.Controls.Add(Me.lblFila)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
@@ -284,15 +296,14 @@ Partial Class M_Descuentos
         Me.lblcomentarioB.TabIndex = 114
         Me.lblcomentarioB.Text = "Descripción"
         '
-        'lblform
+        'txtcodigoBreveB
         '
-        Me.lblform.AutoSize = True
-        Me.lblform.Location = New System.Drawing.Point(362, 0)
-        Me.lblform.Name = "lblform"
-        Me.lblform.Size = New System.Drawing.Size(71, 17)
-        Me.lblform.TabIndex = 135
-        Me.lblform.Text = "formulario"
-        Me.lblform.Visible = False
+        Me.txtcodigoBreveB.Location = New System.Drawing.Point(495, 22)
+        Me.txtcodigoBreveB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcodigoBreveB.MaxLength = 100
+        Me.txtcodigoBreveB.Name = "txtcodigoBreveB"
+        Me.txtcodigoBreveB.Size = New System.Drawing.Size(192, 22)
+        Me.txtcodigoBreveB.TabIndex = 117
         '
         'M_Descuentos
         '
@@ -337,4 +348,5 @@ Partial Class M_Descuentos
     Friend WithEvents lblcomentarioB As Label
     Friend WithEvents lblFila As Label
     Friend WithEvents lblform As Label
+    Friend WithEvents txtcodigoBreveB As TextBox
 End Class
