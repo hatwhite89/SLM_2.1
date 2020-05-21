@@ -53,6 +53,7 @@ Public Class ClsPerfilesUsuario
             estado = value
         End Set
     End Property
+
     ':::::::::::::::::::::: Funciones de Mantenimiento ::::::::::::::::::
 
     'Registrar nuevo perfil en base de datos
@@ -67,6 +68,57 @@ Public Class ClsPerfilesUsuario
         sqlcom.CommandText = "A_slmInsertarPerfilUsuario"
 
         'VARIABLES 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codBreve"
+        sqlpar.Value = Cod_Breve
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "descripcion"
+        sqlpar.Value = Descripcion_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado"
+        sqlpar.Value = Estado_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
+    'Modificar perfil en base de datos
+    Public Function modificarPerfil() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        'PROCEDIMIENTO ALMACENADO
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "A_slmModificarPerfilUsuario"
+
+        'VARIABLES 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod"
+        sqlpar.Value = Cod
+        sqlcom.Parameters.Add(sqlpar)
+
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codBreve"
         sqlpar.Value = Cod_Breve
@@ -142,6 +194,9 @@ Public Class ClsPerfilesUsuario
             Return dt
         End Using
     End Function
+
+
+
 
 
 

@@ -236,8 +236,8 @@ Module ModulosVarios
                     MsgBox("Su usuario ha sido deshabilitado. Contactar al administrador")
 
                 Else
+                    _1A_PantallaCarga.Show()
 
-                    Form1.Show()
                     Form1.lblMiUser.Text = User
                     Form1.lblUserCod.Text = row("cod_usuario")
 
@@ -250,7 +250,7 @@ Module ModulosVarios
 
                         Dim dtPerfil As New DataTable
                         Dim filas As Integer
-                        dtPerfil = .FormulariosHabilitados()
+                        dtPerfil = .formulariosDePerfil()
 
                         'Recorrer Data para habilitar botones
                         For filas = 0 To dtPerfil.Rows.Count
@@ -259,32 +259,40 @@ Module ModulosVarios
                             If filas = 0 Then 'if conteo filas
                                 If dtPerfil.Rows(filas).Item(2) = True Then
                                     Form1.btnFacturacion.Enabled = True
+                                    _1A_PantallaCarga.pBarInicio.Value += 20
                                 End If
                             ElseIf filas = 1 Then
                                 If dtPerfil.Rows(filas).Item(2) = True Then
                                     Form1.btnContabilidad.Enabled = True
+                                    _1A_PantallaCarga.pBarInicio.Value += 20
                                 End If
                             ElseIf filas = 2 Then
                                 If dtPerfil.Rows(filas).Item(2) = True Then
                                     Form1.btnlaboratorio.Enabled = True
+                                    _1A_PantallaCarga.pBarInicio.Value += 20
                                 End If
                             ElseIf filas = 3 Then
                                 If dtPerfil.Rows(filas).Item(2) = True Then
                                     Form1.btnTalentoHumano.Enabled = True
+                                    _1A_PantallaCarga.pBarInicio.Value += 20
                                 End If
                             ElseIf filas = 4 Then
                                 If dtPerfil.Rows(filas).Item(2) = True Then
 
                                     Form1.btnSistema.Enabled = True
+                                    _1A_PantallaCarga.pBarInicio.Value += 5
                                 End If
                             ElseIf filas = 5 Then
                                 If dtPerfil.Rows(filas).Item(2) = True Then
                                     Form1.btnAlmacen.Enabled = True
+                                    _1A_PantallaCarga.pBarInicio.Value += 15
                                 End If
 
                             End If ' final if conteo filas
 
                         Next
+                        _1A_PantallaCarga.Close()
+                        Form1.Show()
 
                     End With
 

@@ -35,15 +35,6 @@
                 A_Notificacion.Show()
             End If
 
-
-
-
-
-
-
-
-
-
         Catch ex As Exception
 
         End Try
@@ -401,7 +392,7 @@
     End Sub
 
     Private Sub Button1_Click_3(sender As Object, e As EventArgs) Handles Button1.Click
-        A_Notificacion.Show()
+        AA_Guardado.Show()
     End Sub
 
     Private Sub btnConsolidar_Click(sender As Object, e As EventArgs) Handles btnConsolidar.Click

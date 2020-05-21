@@ -54,7 +54,7 @@ Public Class ClsFormularios
     End Property
     ':::::::::::::::::::::: Funciones de Mantenimiento ::::::::::::::::::
 
-    'Registrar nuevo perfil en base de datos
+    'Registrar nuevo modulo en base de datos
     Public Function registrarFormulario() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -101,7 +101,7 @@ Public Class ClsFormularios
     End Function
 
     'Listar formularios por codigo de perfil
-    Public Function FormulariosHabilitados() As DataTable
+    Public Function formulariosDePerfil() As DataTable
 
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
@@ -138,6 +138,47 @@ Public Class ClsFormularios
         End Using
     End Function
 
+    'modificar modulos en base de datos
+    Public Function modificarEstado() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        'PROCEDIMIENTO ALMACENADO
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "A_slmActualizarModulosXPerfil"
+
+        'VARIABLES 
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codModulos"
+        sqlpar.Value = Cod_Modulo
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado"
+        sqlpar.Value = Estado_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
 
 
 End Class

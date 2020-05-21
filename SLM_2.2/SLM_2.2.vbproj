@@ -191,6 +191,18 @@
     <Compile Include="negocio\ClsVacaciones.vb" />
     <Compile Include="negocio\ClsVentanasModulos.vb" />
     <Compile Include="negocio\ModulosVarios.vb" />
+    <Compile Include="presentacion\1A_PantallaCarga.Designer.vb">
+      <DependentUpon>1A_PantallaCarga.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\1A_PantallaCarga.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\AA_Guardado.Designer.vb">
+      <DependentUpon>AA_Guardado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\AA_Guardado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_Alertas.Designer.vb">
       <DependentUpon>A_Alertas.vb</DependentUpon>
     </Compile>
@@ -1079,6 +1091,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\1A_PantallaCarga.resx">
+      <DependentUpon>1A_PantallaCarga.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\AA_Guardado.resx">
+      <DependentUpon>AA_Guardado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Alertas.resx">
       <DependentUpon>A_Alertas.vb</DependentUpon>
