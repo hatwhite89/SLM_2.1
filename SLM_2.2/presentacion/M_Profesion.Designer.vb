@@ -140,6 +140,7 @@ Partial Class M_Profesion
         Me.lblform.Size = New System.Drawing.Size(46, 17)
         Me.lblform.TabIndex = 127
         Me.lblform.Text = "label1"
+        Me.lblform.Visible = False
         '
         'lbldireccion1
         '

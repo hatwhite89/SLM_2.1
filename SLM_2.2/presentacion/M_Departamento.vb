@@ -21,6 +21,12 @@
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
     End Sub
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            limpiar()
+            Me.Close()
+        End If
+    End Sub
     Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
         Try
             Dim n As String = ""

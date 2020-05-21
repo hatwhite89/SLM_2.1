@@ -364,7 +364,7 @@
         M_Sucursal.ShowDialog()
     End Sub
 
-    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+    Private Sub btnPacientesFact_Click(sender As Object, e As EventArgs) Handles btnPacientesFact.Click
         M_Cliente.ShowDialog()
     End Sub
 
@@ -512,10 +512,12 @@
     End Sub
 
     Private Sub btnPuestoTrabajo_Click(sender As Object, e As EventArgs) Handles btnPuestoTrabajo.Click
+        M_PuestoTrabajo.lblform.Text = "M_PuestoTrabajo"
         M_PuestoTrabajo.ShowDialog()
     End Sub
 
     Private Sub btnHorarios_Click(sender As Object, e As EventArgs) Handles btnHorarios.Click
+        M_Horarios.lblform.Text = "M_Horarios"
         M_Horarios.ShowDialog()
     End Sub
 
@@ -524,14 +526,17 @@
     End Sub
 
     Private Sub btnSucursales_Click(sender As Object, e As EventArgs) Handles btnSucursales.Click
+        M_Sucursal.lblform.Text = "M_Sucursal"
         M_Sucursal.ShowDialog()
     End Sub
 
     Private Sub btnPermisos_Click(sender As Object, e As EventArgs) Handles btnPermisos.Click
+        M_Permisos.lblform.Text = "M_Permisos"
         M_Permisos.ShowDialog()
     End Sub
 
     Private Sub btnVacaciones_Click(sender As Object, e As EventArgs) Handles btnVacaciones.Click
+        M_Vacaciones.lblform.Text = "M_Vacaciones"
         M_Vacaciones.ShowDialog()
     End Sub
 
@@ -599,5 +604,25 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub btnProfesion_Click(sender As Object, e As EventArgs) Handles btnProfesion.Click
+        M_Profesion.lblform.Text = "M_Profesion"
+        M_Profesion.ShowDialog()
+    End Sub
+
+    Private Sub btnTipoDeducciones_Click(sender As Object, e As EventArgs) Handles btnTipoDeducciones.Click
+        M_TipoDeducciones.lblform.Text = "M_TipoDeducciones"
+        M_TipoDeducciones.ShowDialog()
+    End Sub
+
+    Private Sub btnArea_Click(sender As Object, e As EventArgs) Handles btnArea.Click
+        M_Area.lblform.Text = "M_Area"
+        M_Area.ShowDialog()
+    End Sub
+
+    Private Sub btnDepto_Click(sender As Object, e As EventArgs) Handles btnDepto.Click
+        M_Departamento.lblform.Text = "M_Departamento"
+        M_Departamento.ShowDialog()
     End Sub
 End Class

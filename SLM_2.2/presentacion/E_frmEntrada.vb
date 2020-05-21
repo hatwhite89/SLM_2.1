@@ -14,8 +14,8 @@
         Dim clsE As New clsEntradaAlmacen
         Dim dvOC As DataView = clsE.ListarEntradaInventario.DefaultView
 
-        dvOC.RowFilter = String.Format("CONVERT(lote, System.String) LIKE '%{0}%'", TextBox5.Text)
-        DataGridView2.DataSource = dvOC
+        'dvOC.RowFilter = String.Format("CONVERT(lote, System.String) LIKE '%{0}%'", TextBox5.Text)
+        'DataGridView2.DataSource = dvOC
     End Sub
     Private Sub ComboAlmacen()
         Dim clsD As New ClsAlmacen
@@ -37,9 +37,9 @@
 
         ds.Load(clsD.RecuperarAlmacenes())
 
-        ComboBox2.DataSource = ds
-        ComboBox2.DisplayMember = "nombre_almacen"
-        ComboBox2.ValueMember = "id_almacen"
+        'ComboBox2.DataSource = ds
+        'ComboBox2.DisplayMember = "nombre_almacen"
+        'ComboBox2.ValueMember = "id_almacen"
     End Sub
 
     Private Sub DetalleOC(ByVal cod As String)
