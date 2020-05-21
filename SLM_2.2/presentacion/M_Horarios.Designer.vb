@@ -22,11 +22,11 @@ Partial Class M_Horarios
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblEntrada = New System.Windows.Forms.Label()
+        Me.lblSalida = New System.Windows.Forms.Label()
+        Me.lblCodigo = New System.Windows.Forms.Label()
+        Me.lblCodigoBreve = New System.Windows.Forms.Label()
+        Me.lblNombre = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.gbxRegistrar = New System.Windows.Forms.GroupBox()
         Me.estadoForm = New System.Windows.Forms.Label()
@@ -55,61 +55,67 @@ Partial Class M_Horarios
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnombreB = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.dtpSalidaFinSemana = New System.Windows.Forms.DateTimePicker()
+        Me.lblsalidaFinSemana = New System.Windows.Forms.Label()
+        Me.lblEntradaFinSemana = New System.Windows.Forms.Label()
+        Me.dtpEntradaFinSemana = New System.Windows.Forms.DateTimePicker()
         Me.gbxRegistrar.SuspendLayout()
         Me.gbxDiasSemanales.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label1
+        'lblEntrada
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(65, 92)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(62, 17)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Entrada:"
+        Me.lblEntrada.AutoSize = True
+        Me.lblEntrada.Location = New System.Drawing.Point(131, 67)
+        Me.lblEntrada.Name = "lblEntrada"
+        Me.lblEntrada.Size = New System.Drawing.Size(62, 17)
+        Me.lblEntrada.TabIndex = 0
+        Me.lblEntrada.Text = "Entrada:"
         '
-        'Label2
+        'lblSalida
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(423, 94)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(51, 17)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Salida:"
+        Me.lblSalida.AutoSize = True
+        Me.lblSalida.Location = New System.Drawing.Point(489, 69)
+        Me.lblSalida.Name = "lblSalida"
+        Me.lblSalida.Size = New System.Drawing.Size(51, 17)
+        Me.lblSalida.TabIndex = 1
+        Me.lblSalida.Text = "Salida:"
         '
-        'Label3
+        'lblCodigo
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(71, 27)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(56, 17)
-        Me.Label3.TabIndex = 9
-        Me.Label3.Text = "Código:"
+        Me.lblCodigo.AutoSize = True
+        Me.lblCodigo.Location = New System.Drawing.Point(71, 27)
+        Me.lblCodigo.Name = "lblCodigo"
+        Me.lblCodigo.Size = New System.Drawing.Size(56, 17)
+        Me.lblCodigo.TabIndex = 9
+        Me.lblCodigo.Text = "Código:"
         '
-        'Label4
+        'lblCodigoBreve
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(377, 27)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(97, 17)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Código Breve:"
+        Me.lblCodigoBreve.AutoSize = True
+        Me.lblCodigoBreve.Location = New System.Drawing.Point(377, 27)
+        Me.lblCodigoBreve.Name = "lblCodigoBreve"
+        Me.lblCodigoBreve.Size = New System.Drawing.Size(97, 17)
+        Me.lblCodigoBreve.TabIndex = 10
+        Me.lblCodigoBreve.Text = "Código Breve:"
         '
-        'Label5
+        'lblNombre
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(65, 59)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(62, 17)
-        Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Nombre:"
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.Location = New System.Drawing.Point(65, 59)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(62, 17)
+        Me.lblNombre.TabIndex = 11
+        Me.lblNombre.Text = "Nombre:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(35, 205)
+        Me.Label6.Location = New System.Drawing.Point(35, 265)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(92, 17)
         Me.Label6.TabIndex = 12
@@ -117,28 +123,25 @@ Partial Class M_Horarios
         '
         'gbxRegistrar
         '
+        Me.gbxRegistrar.Controls.Add(Me.GroupBox1)
         Me.gbxRegistrar.Controls.Add(Me.estadoForm)
         Me.gbxRegistrar.Controls.Add(Me.lblform)
         Me.gbxRegistrar.Controls.Add(Me.txtcodigoBreve)
         Me.gbxRegistrar.Controls.Add(Me.txtnombre)
         Me.gbxRegistrar.Controls.Add(Me.txtcodigo)
-        Me.gbxRegistrar.Controls.Add(Me.dtpSalida)
         Me.gbxRegistrar.Controls.Add(Me.gbxDiasSemanales)
-        Me.gbxRegistrar.Controls.Add(Me.Label4)
-        Me.gbxRegistrar.Controls.Add(Me.dtpEntrada)
-        Me.gbxRegistrar.Controls.Add(Me.Label3)
+        Me.gbxRegistrar.Controls.Add(Me.lblCodigoBreve)
+        Me.gbxRegistrar.Controls.Add(Me.lblCodigo)
         Me.gbxRegistrar.Controls.Add(Me.btnmodificar)
-        Me.gbxRegistrar.Controls.Add(Me.Label5)
+        Me.gbxRegistrar.Controls.Add(Me.lblNombre)
         Me.gbxRegistrar.Controls.Add(Me.btnnuevo)
         Me.gbxRegistrar.Controls.Add(Me.btnguardar)
         Me.gbxRegistrar.Controls.Add(Me.rtxtObservacion)
         Me.gbxRegistrar.Controls.Add(Me.btncancelar)
         Me.gbxRegistrar.Controls.Add(Me.Label6)
-        Me.gbxRegistrar.Controls.Add(Me.Label1)
-        Me.gbxRegistrar.Controls.Add(Me.Label2)
         Me.gbxRegistrar.Location = New System.Drawing.Point(15, 14)
         Me.gbxRegistrar.Name = "gbxRegistrar"
-        Me.gbxRegistrar.Size = New System.Drawing.Size(928, 326)
+        Me.gbxRegistrar.Size = New System.Drawing.Size(928, 368)
         Me.gbxRegistrar.TabIndex = 14
         Me.gbxRegistrar.TabStop = False
         Me.gbxRegistrar.Text = "REGISTRAR HORARIO DE TRABAJO"
@@ -167,7 +170,7 @@ Partial Class M_Horarios
         '
         Me.txtcodigoBreve.Location = New System.Drawing.Point(480, 24)
         Me.txtcodigoBreve.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtcodigoBreve.MaxLength = 80
+        Me.txtcodigoBreve.MaxLength = 20
         Me.txtcodigoBreve.Name = "txtcodigoBreve"
         Me.txtcodigoBreve.Size = New System.Drawing.Size(179, 22)
         Me.txtcodigoBreve.TabIndex = 130
@@ -179,7 +182,7 @@ Partial Class M_Horarios
         Me.txtnombre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombre.MaxLength = 80
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(423, 22)
+        Me.txtnombre.Size = New System.Drawing.Size(526, 22)
         Me.txtnombre.TabIndex = 131
         Me.txtnombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -196,23 +199,25 @@ Partial Class M_Horarios
         'dtpSalida
         '
         Me.dtpSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpSalida.Location = New System.Drawing.Point(480, 91)
+        Me.dtpSalida.Location = New System.Drawing.Point(546, 66)
         Me.dtpSalida.Name = "dtpSalida"
         Me.dtpSalida.Size = New System.Drawing.Size(179, 22)
         Me.dtpSalida.TabIndex = 146
         '
         'gbxDiasSemanales
         '
-        Me.gbxDiasSemanales.Controls.Add(Me.cbxDomingo)
         Me.gbxDiasSemanales.Controls.Add(Me.cbxMiercoles)
-        Me.gbxDiasSemanales.Controls.Add(Me.cbxSabado)
         Me.gbxDiasSemanales.Controls.Add(Me.cbxLunes)
+        Me.gbxDiasSemanales.Controls.Add(Me.dtpSalida)
         Me.gbxDiasSemanales.Controls.Add(Me.cbxViernes)
+        Me.gbxDiasSemanales.Controls.Add(Me.lblSalida)
         Me.gbxDiasSemanales.Controls.Add(Me.cbxMartes)
+        Me.gbxDiasSemanales.Controls.Add(Me.lblEntrada)
         Me.gbxDiasSemanales.Controls.Add(Me.cbxJueves)
-        Me.gbxDiasSemanales.Location = New System.Drawing.Point(20, 122)
+        Me.gbxDiasSemanales.Controls.Add(Me.dtpEntrada)
+        Me.gbxDiasSemanales.Location = New System.Drawing.Point(20, 82)
         Me.gbxDiasSemanales.Name = "gbxDiasSemanales"
-        Me.gbxDiasSemanales.Size = New System.Drawing.Size(880, 69)
+        Me.gbxDiasSemanales.Size = New System.Drawing.Size(880, 105)
         Me.gbxDiasSemanales.TabIndex = 147
         Me.gbxDiasSemanales.TabStop = False
         Me.gbxDiasSemanales.Text = "Días Semanales"
@@ -220,7 +225,7 @@ Partial Class M_Horarios
         'cbxDomingo
         '
         Me.cbxDomingo.AutoSize = True
-        Me.cbxDomingo.Location = New System.Drawing.Point(731, 30)
+        Me.cbxDomingo.Location = New System.Drawing.Point(139, 32)
         Me.cbxDomingo.Name = "cbxDomingo"
         Me.cbxDomingo.Size = New System.Drawing.Size(86, 21)
         Me.cbxDomingo.TabIndex = 154
@@ -230,7 +235,7 @@ Partial Class M_Horarios
         'cbxMiercoles
         '
         Me.cbxMiercoles.AutoSize = True
-        Me.cbxMiercoles.Location = New System.Drawing.Point(300, 30)
+        Me.cbxMiercoles.Location = New System.Drawing.Point(388, 30)
         Me.cbxMiercoles.Name = "cbxMiercoles"
         Me.cbxMiercoles.Size = New System.Drawing.Size(90, 21)
         Me.cbxMiercoles.TabIndex = 150
@@ -240,7 +245,7 @@ Partial Class M_Horarios
         'cbxSabado
         '
         Me.cbxSabado.AutoSize = True
-        Me.cbxSabado.Location = New System.Drawing.Point(629, 30)
+        Me.cbxSabado.Location = New System.Drawing.Point(37, 32)
         Me.cbxSabado.Name = "cbxSabado"
         Me.cbxSabado.Size = New System.Drawing.Size(79, 21)
         Me.cbxSabado.TabIndex = 153
@@ -260,7 +265,7 @@ Partial Class M_Horarios
         'cbxViernes
         '
         Me.cbxViernes.AutoSize = True
-        Me.cbxViernes.Location = New System.Drawing.Point(521, 30)
+        Me.cbxViernes.Location = New System.Drawing.Point(744, 30)
         Me.cbxViernes.Name = "cbxViernes"
         Me.cbxViernes.Size = New System.Drawing.Size(78, 21)
         Me.cbxViernes.TabIndex = 152
@@ -270,7 +275,7 @@ Partial Class M_Horarios
         'cbxMartes
         '
         Me.cbxMartes.AutoSize = True
-        Me.cbxMartes.Location = New System.Drawing.Point(186, 30)
+        Me.cbxMartes.Location = New System.Drawing.Point(219, 30)
         Me.cbxMartes.Name = "cbxMartes"
         Me.cbxMartes.Size = New System.Drawing.Size(73, 21)
         Me.cbxMartes.TabIndex = 149
@@ -280,7 +285,7 @@ Partial Class M_Horarios
         'cbxJueves
         '
         Me.cbxJueves.AutoSize = True
-        Me.cbxJueves.Location = New System.Drawing.Point(422, 30)
+        Me.cbxJueves.Location = New System.Drawing.Point(564, 30)
         Me.cbxJueves.Name = "cbxJueves"
         Me.cbxJueves.Size = New System.Drawing.Size(75, 21)
         Me.cbxJueves.TabIndex = 151
@@ -290,7 +295,7 @@ Partial Class M_Horarios
         'dtpEntrada
         '
         Me.dtpEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpEntrada.Location = New System.Drawing.Point(133, 89)
+        Me.dtpEntrada.Location = New System.Drawing.Point(199, 64)
         Me.dtpEntrada.Name = "dtpEntrada"
         Me.dtpEntrada.Size = New System.Drawing.Size(179, 22)
         Me.dtpEntrada.TabIndex = 145
@@ -301,7 +306,7 @@ Partial Class M_Horarios
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnmodificar.Location = New System.Drawing.Point(228, 278)
+        Me.btnmodificar.Location = New System.Drawing.Point(228, 318)
         Me.btnmodificar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(96, 34)
@@ -315,7 +320,7 @@ Partial Class M_Horarios
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnnuevo.Location = New System.Drawing.Point(16, 278)
+        Me.btnnuevo.Location = New System.Drawing.Point(16, 318)
         Me.btnnuevo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(105, 34)
@@ -329,7 +334,7 @@ Partial Class M_Horarios
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnguardar.Location = New System.Drawing.Point(127, 278)
+        Me.btnguardar.Location = New System.Drawing.Point(127, 318)
         Me.btnguardar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(96, 34)
@@ -339,11 +344,11 @@ Partial Class M_Horarios
         '
         'rtxtObservacion
         '
-        Me.rtxtObservacion.Location = New System.Drawing.Point(133, 205)
+        Me.rtxtObservacion.Location = New System.Drawing.Point(133, 265)
         Me.rtxtObservacion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rtxtObservacion.MaxLength = 200
         Me.rtxtObservacion.Name = "rtxtObservacion"
-        Me.rtxtObservacion.Size = New System.Drawing.Size(423, 37)
+        Me.rtxtObservacion.Size = New System.Drawing.Size(526, 37)
         Me.rtxtObservacion.TabIndex = 144
         Me.rtxtObservacion.Text = ""
         '
@@ -353,7 +358,7 @@ Partial Class M_Horarios
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(330, 278)
+        Me.btncancelar.Location = New System.Drawing.Point(330, 318)
         Me.btncancelar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(91, 34)
@@ -368,11 +373,11 @@ Partial Class M_Horarios
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
-        Me.gbxbusqueda.Location = New System.Drawing.Point(15, 345)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(15, 387)
         Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.gbxbusqueda.Size = New System.Drawing.Size(928, 322)
+        Me.gbxbusqueda.Size = New System.Drawing.Size(928, 280)
         Me.gbxbusqueda.TabIndex = 114
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR HORARIO DE TRABAJO"
@@ -380,7 +385,7 @@ Partial Class M_Horarios
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(307, 289)
+        Me.lblcantidad.Location = New System.Drawing.Point(307, 249)
         Me.lblcantidad.Name = "lblcantidad"
         Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
         Me.lblcantidad.TabIndex = 115
@@ -391,20 +396,20 @@ Partial Class M_Horarios
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(5, 57)
+        Me.dgbtabla.Location = New System.Drawing.Point(5, 55)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(917, 215)
+        Me.dgbtabla.Size = New System.Drawing.Size(917, 182)
         Me.dgbtabla.TabIndex = 22
         '
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(17, 289)
+        Me.lbltotal.Location = New System.Drawing.Point(17, 249)
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(245, 17)
         Me.lbltotal.TabIndex = 114
@@ -428,6 +433,55 @@ Partial Class M_Horarios
         Me.lblnombreB.TabIndex = 114
         Me.lblnombreB.Text = "Nombre"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.dtpSalidaFinSemana)
+        Me.GroupBox1.Controls.Add(Me.cbxDomingo)
+        Me.GroupBox1.Controls.Add(Me.lblsalidaFinSemana)
+        Me.GroupBox1.Controls.Add(Me.cbxSabado)
+        Me.GroupBox1.Controls.Add(Me.lblEntradaFinSemana)
+        Me.GroupBox1.Controls.Add(Me.dtpEntradaFinSemana)
+        Me.GroupBox1.Location = New System.Drawing.Point(20, 193)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(880, 69)
+        Me.GroupBox1.TabIndex = 155
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Fin de Semana"
+        '
+        'dtpSalidaFinSemana
+        '
+        Me.dtpSalidaFinSemana.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpSalidaFinSemana.Location = New System.Drawing.Point(670, 32)
+        Me.dtpSalidaFinSemana.Name = "dtpSalidaFinSemana"
+        Me.dtpSalidaFinSemana.Size = New System.Drawing.Size(179, 22)
+        Me.dtpSalidaFinSemana.TabIndex = 156
+        '
+        'lblsalidaFinSemana
+        '
+        Me.lblsalidaFinSemana.AutoSize = True
+        Me.lblsalidaFinSemana.Location = New System.Drawing.Point(613, 35)
+        Me.lblsalidaFinSemana.Name = "lblsalidaFinSemana"
+        Me.lblsalidaFinSemana.Size = New System.Drawing.Size(51, 17)
+        Me.lblsalidaFinSemana.TabIndex = 154
+        Me.lblsalidaFinSemana.Text = "Salida:"
+        '
+        'lblEntradaFinSemana
+        '
+        Me.lblEntradaFinSemana.AutoSize = True
+        Me.lblEntradaFinSemana.Location = New System.Drawing.Point(269, 35)
+        Me.lblEntradaFinSemana.Name = "lblEntradaFinSemana"
+        Me.lblEntradaFinSemana.Size = New System.Drawing.Size(62, 17)
+        Me.lblEntradaFinSemana.TabIndex = 153
+        Me.lblEntradaFinSemana.Text = "Entrada:"
+        '
+        'dtpEntradaFinSemana
+        '
+        Me.dtpEntradaFinSemana.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpEntradaFinSemana.Location = New System.Drawing.Point(337, 32)
+        Me.dtpEntradaFinSemana.Name = "dtpEntradaFinSemana"
+        Me.dtpEntradaFinSemana.Size = New System.Drawing.Size(179, 22)
+        Me.dtpEntradaFinSemana.TabIndex = 155
+        '
         'M_Horarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -447,15 +501,17 @@ Partial Class M_Horarios
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lblEntrada As Label
+    Friend WithEvents lblSalida As Label
+    Friend WithEvents lblCodigo As Label
+    Friend WithEvents lblCodigoBreve As Label
+    Friend WithEvents lblNombre As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents gbxRegistrar As GroupBox
     Friend WithEvents txtcodigo As TextBox
@@ -484,4 +540,9 @@ Partial Class M_Horarios
     Friend WithEvents lblnombreB As Label
     Friend WithEvents lblform As Label
     Friend WithEvents estadoForm As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents dtpSalidaFinSemana As DateTimePicker
+    Friend WithEvents lblsalidaFinSemana As Label
+    Friend WithEvents lblEntradaFinSemana As Label
+    Friend WithEvents dtpEntradaFinSemana As DateTimePicker
 End Class

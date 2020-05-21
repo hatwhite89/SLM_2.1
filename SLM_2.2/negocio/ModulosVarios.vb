@@ -240,7 +240,8 @@ Module ModulosVarios
 
                     Form1.lblMiUser.Text = User
                     Form1.lblUserCod.Text = row("cod_usuario")
-
+                    nombre_usurio = row("usuario")
+                    codigo_usuario = row("cod_usuario")
                     'PERFIL DE USUARIO MODULOS HABILITADOS
                     Dim formulario As New ClsFormularios
 

@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class clsDetalleOI
-    Dim id, id_producto, id_oi As Integer
+    Dim id, id_producto, id_oi, id_entrada As Integer
     Dim lote, producto As String
     Dim cantidad_solicitada As Double
     Dim cantidad_entregada As Double
@@ -69,6 +69,15 @@ Public Class clsDetalleOI
         End Set
     End Property
 
+    Public Property Id_entrada1 As Integer
+        Get
+            Return id_entrada
+        End Get
+        Set(value As Integer)
+            id_entrada = value
+        End Set
+    End Property
+
     Public Function RegistrarOrdenInterna() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -112,6 +121,11 @@ Public Class clsDetalleOI
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_entrada"
+        sqlpar.Value = Id_entrada1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -138,8 +152,11 @@ Public Class clsDetalleOI
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select d.id_detalle_oi,d.lote,p.nombre_producto,d.cantidad_solicitada ,a.nombre_almacen from detalleOrdenInterna d, ProductoAlmacen p,EntradaAlmacen e,Almacen a
-where d.id_producto = p.id_producto and e.lote=d.lote and d.id_producto =e.id_producto  and a.id_almacen = e.id_almacen and d.id_oi='" + codigo + "'", cn)
+        Using da As New SqlDataAdapter("select d.id_detalle_oi,d.lote,p.nombre_producto,d.cantidad_solicitada ,a.nombre_almacen,dep.nombre ,u.usuario
+from Departamento dep, OrdenInterna o, detalleOrdenInterna d, ProductoAlmacen p,EntradaAlmacen e,Almacen a, Usuario u
+where d.id_producto = p.id_producto and e.lote=d.lote and d.id_producto =e.id_producto and a.id_almacen = e.id_almacen  and o.id_oi = d.id_oi and dep.codigo=o.id_departamento and  o.id_usuario= u.cod_usuario
+
+ and d.estado = 0  and d.id_oi='" + codigo + "'", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

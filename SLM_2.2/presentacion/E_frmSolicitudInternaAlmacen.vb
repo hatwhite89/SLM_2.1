@@ -1,19 +1,20 @@
 ﻿Public Class E_frmSolicitudInternaAlmacen
     Dim objOrd As New clsEntradaAlmacen
-    Dim dv As DataView = objOrd.ListarEntradaInventario.DefaultView
-    Dim codigo_producto As Integer
+    Dim dv1 As New DataView
+    Dim codigo_producto, id_entrada As Integer
 
     Private Sub txtBuscarIventario_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarIventario.TextChanged
 
-
-        dv.RowFilter = String.Format("CONVERT(nombre_producto, System.String) LIKE '%{0}%'", txtBuscarIventario.Text)
-        DataGridView1.DataSource = dv
+        dv1 = objOrd.ListarEntradaInventario.DefaultView
+        dv1.RowFilter = String.Format("CONVERT(nombre_producto, System.String) LIKE '%{0}%'", txtBuscarIventario.Text)
+        DataGridView1.DataSource = dv1
     End Sub
 
     Private Sub E_frmSolicitudInternaAlmacen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CargarDGOC()
+
         CargarComboSedes()
         CargarAreas()
+        txtSolicitante.Text = nombre_usurio
     End Sub
 
     Private Sub CargarComboSedes()
@@ -41,23 +42,28 @@
     End Sub
 
     Private Sub CargarDGOC()
+        DataGridView1.Columns.Clear()
         Dim clsOCOB As New clsEntradaAlmacen
-        Dim dv As DataView = objOrd.ListarEntradaInventario.DefaultView
-        DataGridView1.DataSource = dv
+        Dim dv2 As DataView = objOrd.ListarEntradaInventario.DefaultView
+        DataGridView1.DataSource = dv2
     End Sub
     Private Sub CargarDGOI()
+        DataGridView2.Columns.Clear()
         Dim clsOI As New clsDetalleOI
-        Dim dv As DataView = clsOI.listarOrdenesInternasConParametro(txtCodSolicitud.Text).DefaultView
-        DataGridView2.DataSource = dv
+        Dim dv2 As New DataView
+        dv2 = clsOI.listarOrdenesInternasConParametro(txtCodSolicitud.Text).DefaultView
+        DataGridView2.DataSource = dv2
     End Sub
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         txtLote.Text = DataGridView1.Rows(e.RowIndex).Cells(0).Value
         codigo_producto = Integer.Parse(DataGridView1.Rows(e.RowIndex).Cells(1).Value)
         txtProducto.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
+        id_entrada = Integer.Parse(DataGridView1.Rows(e.RowIndex).Cells(6).Value)
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         CrearOI()
+        CargarDGOC()
     End Sub
 
     Private Sub CrearOI()
@@ -67,7 +73,7 @@
         txtCodSolicitud.Text = clsOC.CrearrOrdenInterna
 
         'limpiar data
-        txtSolicitante.Clear()
+
         txtProducto.Clear()
         txtLote.Clear()
         txtCantidadRequerida.Clear()
@@ -80,19 +86,47 @@
     End Sub
 
     Private Sub txtAgregarInventario_Click(sender As Object, e As EventArgs) Handles txtAgregarInventario.Click
+        agregarInventario()
+        Threading.Thread.Sleep(1000)
+        ActualizarOrdenInterna()
+        CargarDGOI()
+
+    End Sub
+
+    Private Sub agregarInventario()
         Dim clsD As New clsDetalleOI
 
         With clsD
-            .Id_producto1 = codigo_producto
+            .Id_producto1 = Integer.Parse(codigo_producto)
             .Producto1 = txtProducto.Text
             .Lote1 = txtLote.Text
-            .Cantidad_solicitada1 = txtCantidadRequerida.Text
+            .Cantidad_solicitada1 = Double.Parse(txtCantidadRequerida.Text)
             .Cantidad_entregada1 = 0
             .Id_oi1 = Integer.Parse(txtCodSolicitud.Text)
+            .Id_entrada1 = id_entrada
+
         End With
 
         If clsD.RegistrarOrdenInterna = "1" Then
-            CargarDGOI()
+            DataGridView2.Columns.Clear()
+        End If
+    End Sub
+
+    Public Sub ActualizarOrdenInterna()
+        Dim clsOI As New clsOrdenInterna
+
+        With clsOI
+            .Fecha_entrega1 = DateTimePicker1.Value
+            .Id_departamento1 = Integer.Parse(cmbDepartamento.SelectedValue)
+            .Id_entrega1 = Integer.Parse(cmbSede.SelectedValue)
+            .Id_oi1 = Integer.Parse(txtCodSolicitud.Text)
+            .Id_solicitante1 = Integer.Parse(codigo_usuario)
+            .Estado1 = "creado"
+
+        End With
+
+        If clsOI.ActualizarOrdenInterna = "1" Then
+
         End If
 
     End Sub

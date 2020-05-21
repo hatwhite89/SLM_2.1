@@ -2,37 +2,51 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim clsUM As New ClsUnidadMedidaAlmacen
 
-        With clsUM
-            .IdUnidadMedida = Integer.Parse(txtCodigo.Text)
-            .NombreUnidadMedida = txtNombre.Text
-            .DescripcionUnidadMedida = txtDescripcion.Text
-        End With
+
         If txtCodigo.Text = "" Then
+            With clsUM
+
+                .NombreUnidadMedida = txtNombre.Text
+                .DescripcionUnidadMedida = txtDescripcion.Text
+            End With
             If clsUM.RegistrarUnidadMedida() = "1" Then
                 MsgBox("Registrado exitosamente")
+                cargarData()
                 Button1.Enabled = False
                 txtDescripcion.ReadOnly = True
                 txtNombre.ReadOnly = True
 
             End If
         ElseIf txtCodigo.Text <> "" Then
-
+            With clsUM
+                .IdUnidadMedida = Integer.Parse(txtCodigo.Text)
+                .NombreUnidadMedida = txtNombre.Text
+                .DescripcionUnidadMedida = txtDescripcion.Text
+            End With
             If clsUM.ActualizarUnidadMedida() = "1" Then
 
                 MsgBox("Actualizado exitosamente")
-
+                cargarData()
             End If
             Exit Sub
         End If
 
     End Sub
+    Private Sub cargarData()
+        Try
+            Dim TableUM As New DataTable
+            Dim clsUM As New ClsUnidadMedidaAlmacen
+            TableUM.Load(clsUM.RecuperarUnidadMedida())
+
+            DataGridView1.DataSource = TableUM
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 
     Private Sub E_frmUnidadMedida_almacen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim TableUM As New DataTable
-        Dim clsUM As New ClsUnidadMedidaAlmacen
-        TableUM.Load(clsUM.RecuperarUnidadMedida())
-
-        DataGridView1.DataSource = TableUM
+        cargarData()
 
         'campos
         txtDescripcion.ReadOnly = True
@@ -73,6 +87,16 @@
         txtDescripcion.Text = ""
         txtCodigo.Text = ""
         Button1.Enabled = False
+
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        Dim objOrd As New ClsUnidadMedidaAlmacen
+
+
+        Dim dv As DataView = objOrd.RecuperarUM.DefaultView
+        dv.RowFilter = String.Format("CONVERT(nombre_unidad_medida, System.String) LIKE '%{0}%'", txtBuscar.Text)
+        DataGridView1.DataSource = dv
 
     End Sub
 End Class

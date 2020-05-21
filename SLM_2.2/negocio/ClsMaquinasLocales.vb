@@ -2,7 +2,7 @@
 
 Public Class ClsMaquinasLocales
     Dim codigoMaquinasLocales, descripcion As String
-    Dim codigo As Integer
+    Dim codigo, codigoSucursal As Integer
     'Constructor
     Public Sub New()
 
@@ -13,6 +13,14 @@ Public Class ClsMaquinasLocales
         End Get
         Set(value As Integer)
             codigo = value
+        End Set
+    End Property
+    Public Property codigoSucursal_ As Integer
+        Get
+            Return codigoSucursal
+        End Get
+        Set(value As Integer)
+            codigoSucursal = value
         End Set
     End Property
     Public Property codigoMaquinasLocales_ As String
@@ -48,6 +56,11 @@ Public Class ClsMaquinasLocales
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "descripcion" 'descripcion campo en el procedimiento almacenado @
         sqlpar.Value = descripcion_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoSucursal" 'descripcion campo en el procedimiento almacenado @
+        sqlpar.Value = codigoSucursal_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -92,6 +105,11 @@ Public Class ClsMaquinasLocales
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "descripcion" 'descripcion campo en el procedimiento almacenado @
         sqlpar.Value = descripcion_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoSucursal" 'descripcion campo en el procedimiento almacenado @
+        sqlpar.Value = codigoSucursal_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -167,7 +185,7 @@ Public Class ClsMaquinasLocales
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "M_slmBuscarMaquinasLocalesCode"
-            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = codigo_
+            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = codigo_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable

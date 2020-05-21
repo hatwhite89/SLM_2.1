@@ -26,12 +26,18 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtLote = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtProducto = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtCantidadRequerida = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -50,13 +56,15 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.txtSolicitante = New System.Windows.Forms.TextBox()
         Me.txtCodSolicitud = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.txtProducto = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtLote = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -65,6 +73,10 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -96,7 +108,6 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDark
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Location = New System.Drawing.Point(7, 7)
@@ -110,18 +121,9 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(4, 8)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(139, 20)
+        Me.Label4.Size = New System.Drawing.Size(165, 20)
         Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Solicitud interna"
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(696, 8)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Guardar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Label4.Text = "Salidas de almacen"
         '
         'Button3
         '
@@ -154,6 +156,31 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Detalle solicitud"
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(7, 19)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(86, 13)
+        Me.Label11.TabIndex = 8
+        Me.Label11.Text = "Buscar Producto"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(667, 10)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(187, 23)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Quitar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(112, 13)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(270, 20)
+        Me.TextBox1.TabIndex = 8
+        '
         'DataGridView2
         '
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -180,6 +207,40 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Inventario disponible"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(659, 10)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(31, 13)
+        Me.Label10.TabIndex = 7
+        Me.Label10.Text = "Lote "
+        '
+        'txtLote
+        '
+        Me.txtLote.Location = New System.Drawing.Point(661, 26)
+        Me.txtLote.Name = "txtLote"
+        Me.txtLote.ReadOnly = True
+        Me.txtLote.Size = New System.Drawing.Size(187, 20)
+        Me.txtLote.TabIndex = 6
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(659, 48)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(97, 13)
+        Me.Label9.TabIndex = 5
+        Me.Label9.Text = "Producto requerido"
+        '
+        'txtProducto
+        '
+        Me.txtProducto.Location = New System.Drawing.Point(661, 64)
+        Me.txtProducto.Name = "txtProducto"
+        Me.txtProducto.ReadOnly = True
+        Me.txtProducto.Size = New System.Drawing.Size(187, 20)
+        Me.txtProducto.TabIndex = 4
         '
         'Label2
         '
@@ -217,9 +278,9 @@ Partial Class E_frmSolicitudInternaAlmacen
         '
         'txtBuscarIventario
         '
-        Me.txtBuscarIventario.Location = New System.Drawing.Point(98, 14)
+        Me.txtBuscarIventario.Location = New System.Drawing.Point(111, 14)
         Me.txtBuscarIventario.Name = "txtBuscarIventario"
-        Me.txtBuscarIventario.Size = New System.Drawing.Size(283, 20)
+        Me.txtBuscarIventario.Size = New System.Drawing.Size(270, 20)
         Me.txtBuscarIventario.TabIndex = 1
         '
         'DataGridView1
@@ -321,6 +382,7 @@ Partial Class E_frmSolicitudInternaAlmacen
         '
         Me.txtSolicitante.Location = New System.Drawing.Point(124, 30)
         Me.txtSolicitante.Name = "txtSolicitante"
+        Me.txtSolicitante.ReadOnly = True
         Me.txtSolicitante.Size = New System.Drawing.Size(143, 20)
         Me.txtSolicitante.TabIndex = 2
         '
@@ -334,72 +396,96 @@ Partial Class E_frmSolicitudInternaAlmacen
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Button5)
+        Me.TabPage2.Controls.Add(Me.Label14)
+        Me.TabPage2.Controls.Add(Me.DataGridView4)
+        Me.TabPage2.Controls.Add(Me.DataGridView3)
+        Me.TabPage2.Controls.Add(Me.Label13)
+        Me.TabPage2.Controls.Add(Me.DateTimePicker3)
+        Me.TabPage2.Controls.Add(Me.DateTimePicker2)
+        Me.TabPage2.Controls.Add(Me.Panel2)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(870, 485)
+        Me.TabPage2.Size = New System.Drawing.Size(870, 509)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Mis solicitudes"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'txtProducto
+        'Button5
         '
-        Me.txtProducto.Location = New System.Drawing.Point(661, 64)
-        Me.txtProducto.Name = "txtProducto"
-        Me.txtProducto.ReadOnly = True
-        Me.txtProducto.Size = New System.Drawing.Size(187, 20)
-        Me.txtProducto.TabIndex = 4
+        Me.Button5.Location = New System.Drawing.Point(731, 36)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.TabIndex = 7
+        Me.Button5.Text = "Buscar"
+        Me.Button5.UseVisualStyleBackColor = True
         '
-        'Label9
+        'Label14
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(659, 48)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(97, 13)
-        Me.Label9.TabIndex = 5
-        Me.Label9.Text = "Producto requerido"
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(17, 271)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(131, 13)
+        Me.Label14.TabIndex = 6
+        Me.Label14.Text = "Detalle de la orden interna"
         '
-        'Label10
+        'DataGridView4
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(659, 10)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(31, 13)
-        Me.Label10.TabIndex = 7
-        Me.Label10.Text = "Lote "
+        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView4.Location = New System.Drawing.Point(6, 287)
+        Me.DataGridView4.Name = "DataGridView4"
+        Me.DataGridView4.Size = New System.Drawing.Size(858, 211)
+        Me.DataGridView4.TabIndex = 5
         '
-        'txtLote
+        'DataGridView3
         '
-        Me.txtLote.Location = New System.Drawing.Point(661, 26)
-        Me.txtLote.Name = "txtLote"
-        Me.txtLote.ReadOnly = True
-        Me.txtLote.Size = New System.Drawing.Size(187, 20)
-        Me.txtLote.TabIndex = 6
+        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView3.Location = New System.Drawing.Point(6, 83)
+        Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.Size = New System.Drawing.Size(858, 168)
+        Me.DataGridView3.TabIndex = 4
         '
-        'TextBox1
+        'Label13
         '
-        Me.TextBox1.Location = New System.Drawing.Point(112, 13)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(270, 20)
-        Me.TextBox1.TabIndex = 8
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(364, 43)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(35, 13)
+        Me.Label13.TabIndex = 3
+        Me.Label13.Text = "Hasta"
         '
-        'Button1
+        'Label12
         '
-        Me.Button1.Location = New System.Drawing.Point(667, 10)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(187, 23)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Quitar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(24, 30)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(38, 13)
+        Me.Label12.TabIndex = 2
+        Me.Label12.Text = "Desde"
         '
-        'Label11
+        'DateTimePicker3
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(7, 19)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(86, 13)
-        Me.Label11.TabIndex = 8
-        Me.Label11.Text = "Buscar Producto"
+        Me.DateTimePicker3.Location = New System.Drawing.Point(453, 36)
+        Me.DateTimePicker3.Name = "DateTimePicker3"
+        Me.DateTimePicker3.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker3.TabIndex = 1
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Location = New System.Drawing.Point(74, 36)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker2.TabIndex = 0
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Gray
+        Me.Panel2.Controls.Add(Me.Label12)
+        Me.Panel2.Location = New System.Drawing.Point(6, 6)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(858, 71)
+        Me.Panel2.TabIndex = 8
         '
         'E_frmSolicitudInternaAlmacen
         '
@@ -421,6 +507,12 @@ Partial Class E_frmSolicitudInternaAlmacen
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -429,7 +521,6 @@ Partial Class E_frmSolicitudInternaAlmacen
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label4 As Label
-    Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents GroupBox3 As GroupBox
@@ -460,4 +551,13 @@ Partial Class E_frmSolicitudInternaAlmacen
     Friend WithEvents Label11 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents DataGridView3 As DataGridView
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents DateTimePicker3 As DateTimePicker
+    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Label14 As Label
+    Friend WithEvents DataGridView4 As DataGridView
+    Friend WithEvents Panel2 As Panel
 End Class

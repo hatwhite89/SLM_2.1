@@ -82,8 +82,13 @@ Public Class E_frmOrdenCompra
         DataGridView2.DataSource = dvOC
     End Sub
     Private Sub DataGridView3_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellClick
-        txtCodigProducto.Text = DataGridView3.Rows(e.RowIndex).Cells(0).Value
-        txtProducto.Text = DataGridView3.Rows(e.RowIndex).Cells(1).Value
+        Try
+            txtCodigProducto.Text = DataGridView3.Rows(e.RowIndex).Cells(0).Value
+            txtProducto.Text = DataGridView3.Rows(e.RowIndex).Cells(1).Value
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub CargarDetalleOC(ByVal cod As String)
@@ -114,11 +119,38 @@ Public Class E_frmOrdenCompra
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         txtCodOC.Clear()
+        txtConsignado.Clear()
+        txtAutorizado.Clear()
+        txtCodProveedor.Clear()
+        txtRTNProveedor.Clear()
+        txtNombreProveedor.Clear()
+        txtDiasCredito.Clear()
+        txtNumFactura.Clear()
+        txtLugarEntrega.Clear()
+        txtCondicionEntrega.Clear()
+        txtObservaciones.Clear()
+        txtProducto.Clear()
+        txtCodigProducto.Clear()
+        txtLoteProducto.Clear()
+        txtISVProductos.Clear()
+        txtCantidadProductos.Clear()
+        txtPrecioUnitarioProductos.Clear()
+        txtCostoTotal.Clear()
+
+
+
 
         Dim clsOC As New ClsOrdenDeCompra
 
         txtCodOC.Text = clsOC.CrearrOrdenDeCompra()
         CargarDetalleOC(txtCodOC.Text)
+
+        'detalle orden
+        txtISVProductos.Text = "0"
+        txtCantidadProductos.Text = "0"
+        txtPrecioUnitarioProductos.Text = "0"
+        txtCantidadProductos.Text = "0"
+        txtNombreProveedor.Text = nombre_proveedorOC
 
     End Sub
     Private Sub ActualizarOC()
@@ -174,10 +206,12 @@ Public Class E_frmOrdenCompra
             dt = objP.listarProveedoresOC2(txtCodProveedor.Text)
             Dim row As DataRow = dt.Rows(0)
             txtNombreProveedor.Text = CStr(row("nombreProveedor"))
+            txtRTNProveedor.Text = CStr(row("idTributario"))
             txtNombreProveedor.BackColor = Color.White
         Catch ex As Exception
             txtNombreProveedor.BackColor = Color.Red
             txtNombreProveedor.Text = ""
+            txtRTNProveedor.Text = ""
 
         End Try
     End Sub
@@ -192,22 +226,62 @@ Public Class E_frmOrdenCompra
 
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Button6_Click(sender As Object, e As EventArgs)
         CargarDGOC()
     End Sub
 
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
+        Try
+            txtCodOC.Text = DataGridView2.Rows(e.RowIndex).Cells(0).Value
 
+            txtCodProveedor.Text = DataGridView2.Rows(e.RowIndex).Cells(2).Value
+            txtCondicionEntrega.Text = DataGridView2.Rows(e.RowIndex).Cells(4).Value
+            txtCondicionEntrega.Text = DataGridView2.Rows(e.RowIndex).Cells(5).Value
+            txtConsignado.Text = DataGridView2.Rows(e.RowIndex).Cells(6).Value
+            txtObservaciones.Text = DataGridView2.Rows(e.RowIndex).Cells(10).Value
 
-        txtCodOC.Text = DataGridView2.Rows(e.RowIndex).Cells(0).Value
-        txtCodProveedor.Text = DataGridView2.Rows(e.RowIndex).Cells(2).Value
-        txtCondicionEntrega.Text = DataGridView2.Rows(e.RowIndex).Cells(4).Value
-        txtObservaciones.Text = DataGridView2.Rows(e.RowIndex).Cells(10).Value
-        CargarDetalleOC(txtCodOC.Text)
+            CargarDetalleOC(txtCodOC.Text)
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
 
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Try
+            CargarDGOCFecha(DateTimePicker3.Value.Date, DateTimePicker4.Value.Date)
 
+        Catch ex As Exception
 
+        End Try
 
+    End Sub
+
+    Private Sub CargarDGOCFecha(ByVal inicio As Date, ByVal fin As Date)
+        Try
+            Dim clsOCOB As New ClsOrdenDeCompra
+            Dim dvOC As DataView = clsOCOB.RecuperarOCPrFechas(DateTimePicker3.Value.Date, DateTimePicker4.Value.Date).DefaultView
+            DataGridView4.DataSource = dvOC
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub DataGridView4_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView4.CellClick
+        Try
+            Dim codigo_oc As String
+            codigo_oc = DataGridView4.Rows(e.RowIndex).Cells(0).Value
+            CargarDetalleOC2(codigo_oc)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub CargarDetalleOC2(ByVal cod As String)
+        Dim clsDeOC As New clsDetalleOC
+        Dim dvOC As DataView = clsDeOC.ListarDetalleOC(cod).DefaultView
+        DataGridView5.DataSource = dvOC
+    End Sub
 End Class
