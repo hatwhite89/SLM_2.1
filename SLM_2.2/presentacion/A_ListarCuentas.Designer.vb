@@ -52,6 +52,7 @@ Partial Class A_ListarCuentas
         Me.lblForm.Size = New System.Drawing.Size(30, 13)
         Me.lblForm.TabIndex = 4
         Me.lblForm.Text = "Form"
+        Me.lblForm.Visible = False
         '
         'dtCuentas
         '

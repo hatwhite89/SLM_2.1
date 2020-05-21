@@ -294,32 +294,56 @@
     End Sub
 
     Private Sub frmPagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'bloquear datos si pago ya fue realizado
-        If chkPagado.Checked = True Then
 
-            dtDetallePagos.Columns(0).ReadOnly = True
-            dtDetallePagos.Columns(1).ReadOnly = True
-            dtDetallePagos.Columns(2).ReadOnly = True
-            dtDetallePagos.Columns(3).ReadOnly = True
-            dtDetallePagos.Columns(4).ReadOnly = True
 
-            btnModificar.Visible = False
-            btnCrear.Visible = False
-            btnGuardar.Visible = False
+        Try
 
-        End If
+            If txtNro.Text <> "" Then
+                btnModificar.Visible = True
+                btnCrear.Visible = True
+                btnGuardar.Visible = False
 
-        'habilitar boton para eliminar fila
-        If dtDetallePagos.Columns.Contains("btnEliminar") = False Then
-            Dim btn As New DataGridViewButtonColumn()
-            dtDetallePagos.Columns.Add(btn)
-            btn.HeaderText = "Eliminar"
-            btn.Text = "Eliminar"
-            btn.Name = "btnEliminar"
-            btn.UseColumnTextForButtonValue = True
-        End If
 
-        suma()
+
+
+
+            End If
+
+
+
+            'bloquear datos si pago ya fue realizado
+            If chkPagado.Checked = True Then
+
+                dtDetallePagos.Columns(0).ReadOnly = True
+                dtDetallePagos.Columns(1).ReadOnly = True
+                dtDetallePagos.Columns(2).ReadOnly = True
+                dtDetallePagos.Columns(3).ReadOnly = True
+                dtDetallePagos.Columns(4).ReadOnly = True
+
+                btnModificar.Visible = False
+                btnCrear.Visible = False
+                btnGuardar.Visible = False
+
+            End If
+
+            'habilitar boton para eliminar fila
+            If dtDetallePagos.Columns.Contains("btnEliminar") = False Then
+                Dim btn As New DataGridViewButtonColumn()
+                dtDetallePagos.Columns.Add(btn)
+                btn.HeaderText = "Eliminar"
+                btn.Text = "Eliminar"
+                btn.Name = "btnEliminar"
+                btn.UseColumnTextForButtonValue = True
+            End If
+
+            suma()
+
+
+
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
 
@@ -356,5 +380,143 @@
     Private Sub btnRegresar_Click(sender As Object, e As EventArgs) Handles btnRegresar.Click
         Me.Close()
         A_ListarPagos.ShowDialog()
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+
+        Try
+            'Ingresar un nuevo pago
+            If txtFormaP.Text <> "" Then
+
+                dtDetallePagos.Enabled = True
+                Dim ObjFpago As New ClsFormaPago
+                Dim dt As DataTable
+                ObjFpago.Cod = txtFormaP.Text
+
+                dt = ObjFpago.buscarCodigoFormaPago()
+
+                If dt.Rows.Count > 0 Then ' Conteo de filas
+
+                    With pagos
+
+                        'Variables
+                        .Cod_Pago = Convert.ToInt32(txtNro.Text)
+                        .Forma_Pago = txtFormaP.Text
+                        .Cuenta_Banco = txtCtaBanco.Text
+                        .Comentari_o = txtComentario.Text
+                        .Fecha_transfer = dtpFechaT.Value
+                        .Fecha_Pago = dtpFechaP.Value
+                        .Referenci_a = txtReferencia.Text
+                        .Paga_do = chkPagado.Checked
+                        .Cod_Orden = txtCodOrden.Text
+                        .Suma_Total = lblTotalSuma.Text
+
+                        'Ingresar registro en base de datos
+                        .modificarPago()
+
+                    End With
+
+                End If 'If conteo de filas
+
+                If dtDetallePagos.Rows.Count > 1 Then
+
+                    'Recorrer filas para ingreso de detalle de factura
+                    For fila = 0 To dtDetallePagos.Rows.Count - 2
+                        Try
+
+                            'Insertar detalle de pago
+                            detallePago.Cod_Pago = Convert.ToInt32(txtNro.Text)
+
+                            Try
+                                Dim a As Integer
+                                a = Convert.ToInt32(dtDetallePagos.Rows(fila).Cells(0).Value)
+
+                                If dtDetallePagos.Rows(fila).Cells(0).Value <> "" Then
+
+                                    detallePago.Cod_Factura = a
+
+                                Else
+
+                                    detallePago.Cod_Factura = Convert.ToInt32(dtDetallePagos.Rows(fila - 1).Cells(0).Value)
+
+                                End If
+
+                            Catch ex As Exception
+
+                            End Try
+
+                            Try
+                                If dtDetallePagos.Rows(fila).Cells(4).Value = "" Then
+                                    detallePago.Forma_Pago = "-"
+                                Else
+                                    detallePago.Forma_Pago = dtDetallePagos.Rows(fila).Cells(4).Value.ToString
+
+                                End If
+
+                            Catch ex As Exception
+                                MsgBox("formapago")
+                            End Try
+
+                            Try
+                                If dtDetallePagos.Rows(fila).Cells(5).Value = "" Then
+
+                                    detallePago.Nro_Cheque = "-"
+
+                                Else
+                                    detallePago.Nro_Cheque = dtDetallePagos.Rows(fila).Cells(5).Value.ToString
+
+                                End If
+
+                            Catch ex As Exception
+                                MsgBox("es el numero de cheque")
+                            End Try
+
+                            Try
+                                detallePago.Monto_ = Convert.ToDouble(dtDetallePagos.Rows(fila).Cells(3).Value.ToString)
+
+                            Catch ex As Exception
+                                MsgBox("es el monto")
+                            End Try
+
+                            'Funcion de registro de detalle
+                            detallePago.modificarDetallePago()
+
+                        Catch ex As Exception
+                            MsgBox("Error en detalle." + ex.Message)
+                        End Try
+
+                    Next
+
+                Else
+                    MsgBox("No existe un detalle de pago.")
+                End If
+
+            Else
+
+                txtFormaP.BackColor = Color.Red
+
+            End If 'Verificar que campo txtFormaPago no este vacio.
+
+            Me.Close()
+            A_ListarPagos.ShowDialog()
+
+
+        Catch ex As Exception
+            MsgBox("Error. " + ex.Message)
+        End Try
+
+
+
+
+
+    End Sub
+
+    Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
+        limpiar()
+        dtDetallePagos.DataSource = Nothing
+        btnModificar.Visible = False
+        btnCrear.Visible = False
+        btnGuardar.Visible = True
+
     End Sub
 End Class

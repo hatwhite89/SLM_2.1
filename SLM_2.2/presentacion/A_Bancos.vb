@@ -27,6 +27,8 @@
                 If Banco.registrarNuevoBanco() = 1 Then
                     dtBancos.DataSource = Banco.listarBancos()
                     MsgBox("El registro se guardo exitosamente")
+                    Limpiar()
+
                 End If
 
             Catch ex As Exception
@@ -199,5 +201,14 @@
             txtNombreBanco.BackColor = Color.White
         End If
     End Sub
+
+    'Public Sub Limpiar()
+
+    '    txtCodigo.Text = ""
+    '    txtCodBreve.Text = ""
+    '    txtNombreBanco.Text = ""
+    '    chkEstado.Checked = False
+
+    'End Sub
 
 End Class

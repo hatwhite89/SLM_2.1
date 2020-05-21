@@ -147,6 +147,7 @@ Partial Class frmFormaPago
         '
         'txtCodigo
         '
+        Me.txtCodigo.Enabled = False
         Me.txtCodigo.Location = New System.Drawing.Point(110, 28)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
@@ -157,6 +158,7 @@ Partial Class frmFormaPago
         '
         Me.txtCuenta.BackColor = System.Drawing.Color.White
         Me.txtCuenta.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtCuenta.Enabled = False
         Me.txtCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCuenta.ForeColor = System.Drawing.Color.Black
         Me.txtCuenta.Location = New System.Drawing.Point(110, 52)
@@ -168,14 +170,16 @@ Partial Class frmFormaPago
         'txtComentario
         '
         Me.txtComentario.Location = New System.Drawing.Point(501, 80)
+        Me.txtComentario.MaxLength = 200
         Me.txtComentario.Multiline = True
         Me.txtComentario.Name = "txtComentario"
-        Me.txtComentario.Size = New System.Drawing.Size(186, 44)
+        Me.txtComentario.Size = New System.Drawing.Size(186, 66)
         Me.txtComentario.TabIndex = 12
         '
         'txtCtaBanco
         '
         Me.txtCtaBanco.Location = New System.Drawing.Point(110, 76)
+        Me.txtCtaBanco.MaxLength = 50
         Me.txtCtaBanco.Name = "txtCtaBanco"
         Me.txtCtaBanco.Size = New System.Drawing.Size(239, 20)
         Me.txtCtaBanco.TabIndex = 13
@@ -184,6 +188,7 @@ Partial Class frmFormaPago
         'txtNombreBanco
         '
         Me.txtNombreBanco.Location = New System.Drawing.Point(110, 100)
+        Me.txtNombreBanco.MaxLength = 100
         Me.txtNombreBanco.Name = "txtNombreBanco"
         Me.txtNombreBanco.Size = New System.Drawing.Size(239, 20)
         Me.txtNombreBanco.TabIndex = 15
@@ -191,6 +196,7 @@ Partial Class frmFormaPago
         'txtFormulario
         '
         Me.txtFormulario.Location = New System.Drawing.Point(110, 126)
+        Me.txtFormulario.MaxLength = 150
         Me.txtFormulario.Name = "txtFormulario"
         Me.txtFormulario.Size = New System.Drawing.Size(239, 20)
         Me.txtFormulario.TabIndex = 16
@@ -198,6 +204,7 @@ Partial Class frmFormaPago
         'txtTipo
         '
         Me.txtTipo.Location = New System.Drawing.Point(501, 54)
+        Me.txtTipo.MaxLength = 50
         Me.txtTipo.Name = "txtTipo"
         Me.txtTipo.Size = New System.Drawing.Size(186, 20)
         Me.txtTipo.TabIndex = 18
@@ -213,7 +220,9 @@ Partial Class frmFormaPago
         '
         'txtBanco
         '
+        Me.txtBanco.Enabled = False
         Me.txtBanco.Location = New System.Drawing.Point(501, 28)
+        Me.txtBanco.MaxLength = 100
         Me.txtBanco.Name = "txtBanco"
         Me.txtBanco.Size = New System.Drawing.Size(156, 20)
         Me.txtBanco.TabIndex = 30

@@ -84,6 +84,20 @@ Public Class ClsUnidadMedidaAlmacen
         Return sqlcom.ExecuteReader
     End Function
 
+
+    Public Function RecuperarUM() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select * from UnidadMedidaAlmacen", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
+
     Public Function ActualizarUnidadMedida() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter

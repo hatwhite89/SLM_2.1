@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 Public Class ClsUsuario
 
     'Variables
-    Dim cod_Usuario As Integer
+    Dim cod_Usuario, codPerfil As Integer
     Dim usuario, password, perfil As String
     Dim estado As Boolean
 
@@ -21,6 +21,16 @@ Public Class ClsUsuario
         End Get
         Set(value As Integer)
             cod_Usuario = value
+        End Set
+    End Property
+
+    'Codigo perfil
+    Public Property Cod_Perfil As Integer
+        Get
+            Return codPerfil
+        End Get
+        Set(value As Integer)
+            codPerfil = value
         End Set
     End Property
 
@@ -100,6 +110,11 @@ Public Class ClsUsuario
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codPerfil"
+        sqlpar.Value = Cod_Perfil
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -153,6 +168,11 @@ Public Class ClsUsuario
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "estado"
         sqlpar.Value = Estad_o
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codPerfil"
+        sqlpar.Value = Cod_Perfil
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

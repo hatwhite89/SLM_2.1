@@ -240,6 +240,55 @@ Module ModulosVarios
                     Form1.Show()
                     Form1.lblMiUser.Text = User
                     Form1.lblUserCod.Text = row("cod_usuario")
+                    nombre_usurio = row("usuario")
+                    codigo_usuario = row("cod_usuario")
+                    'PERFIL DE USUARIO MODULOS HABILITADOS
+                    Dim formulario As New ClsFormularios
+
+                    With formulario
+
+                        .Cod_Perfil = Convert.ToInt32(row("codPerfil"))
+
+                        Dim dtPerfil As New DataTable
+                        Dim filas As Integer
+                        dtPerfil = .FormulariosHabilitados()
+
+                        'Recorrer Data para habilitar botones
+                        For filas = 0 To dtPerfil.Rows.Count
+
+
+                            If filas = 0 Then 'if conteo filas
+                                If dtPerfil.Rows(filas).Item(2) = True Then
+                                    Form1.btnFacturacion.Enabled = True
+                                End If
+                            ElseIf filas = 1 Then
+                                If dtPerfil.Rows(filas).Item(2) = True Then
+                                    Form1.btnContabilidad.Enabled = True
+                                End If
+                            ElseIf filas = 2 Then
+                                If dtPerfil.Rows(filas).Item(2) = True Then
+                                    Form1.btnlaboratorio.Enabled = True
+                                End If
+                            ElseIf filas = 3 Then
+                                If dtPerfil.Rows(filas).Item(2) = True Then
+                                    Form1.btnTalentoHumano.Enabled = True
+                                End If
+                            ElseIf filas = 4 Then
+                                If dtPerfil.Rows(filas).Item(2) = True Then
+
+                                    Form1.btnSistema.Enabled = True
+                                End If
+                            ElseIf filas = 5 Then
+                                If dtPerfil.Rows(filas).Item(2) = True Then
+                                    Form1.btnAlmacen.Enabled = True
+                                End If
+
+                            End If ' final if conteo filas
+
+                        Next
+
+                    End With
+
                     M_InicioSesion.txtusuario.Text = ""
                     M_InicioSesion.txtPassword.Text = ""
                     M_InicioSesion.Hide()
@@ -249,16 +298,13 @@ Module ModulosVarios
             End If ' final verificar existencia
 
         Catch ex As Exception
-            MsgBox("Usuario o contraseña incorrectos. Vuelva a intentarlo.")
+            MsgBox("Usuario o contraseña incorrectos. Vuelva a intentarlo." + ex.Message)
         End Try
 
     End Function
 
 
-
-
     ':::::::::::::::::::::::::::::::::::::::::::: FINAL LOGIN
-
 
 
     ':::::::::::::::::::::::::::::::::::::::::::: LOGIN PASS
@@ -291,5 +337,12 @@ Module ModulosVarios
     End Function
 
     ':::::::::::::::::::::::::::::::::::::::::::: FINAL LOGIN
+
+    Sub alternarColoFilasDatagridview(ByVal dgv As DataGridView)
+        With dgv
+            .RowsDefaultCellStyle.BackColor = Color.LightBlue
+            .AlternatingRowsDefaultCellStyle.BackColor = Color.White
+        End With
+    End Sub
 
 End Module

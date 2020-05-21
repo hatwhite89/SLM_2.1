@@ -272,7 +272,6 @@ Partial Class A_Cuenta
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(718, 446)
-        Me.ControlBox = False
         Me.Controls.Add(Me.lblCodCuenta)
         Me.Controls.Add(Me.gbxCuentas)
         Me.Controls.Add(Me.gbxCuenta)

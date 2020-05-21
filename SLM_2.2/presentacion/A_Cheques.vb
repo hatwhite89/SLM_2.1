@@ -65,7 +65,6 @@ Public Class A_Cheques
                     Dim fila As String = frmPagos.lblFila.Text
 
                     frmPagos.dtDetallePagos.Rows(fila).Cells(5).Value = txtNroCheq.Text
-
                     frmPagos.chkPagado.Checked = True
 
                 End With

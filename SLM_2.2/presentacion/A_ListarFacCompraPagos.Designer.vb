@@ -25,7 +25,7 @@ Partial Class A_ListarFacCompraPagos
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListarFacCompraPagos))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtFacturasCompra = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
@@ -35,7 +35,7 @@ Partial Class A_ListarFacCompraPagos
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.btnCancelar)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtBusqueda)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.dtFacturasCompra)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 12)
@@ -58,13 +58,13 @@ Partial Class A_ListarFacCompraPagos
         Me.btnCancelar.TabIndex = 3
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
-        'TextBox1
+        'txtBusqueda
         '
-        Me.TextBox1.Location = New System.Drawing.Point(78, 27)
-        Me.TextBox1.MaxLength = 30
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(237, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.txtBusqueda.Location = New System.Drawing.Point(78, 27)
+        Me.txtBusqueda.MaxLength = 30
+        Me.txtBusqueda.Name = "txtBusqueda"
+        Me.txtBusqueda.Size = New System.Drawing.Size(237, 20)
+        Me.txtBusqueda.TabIndex = 2
         '
         'Label1
         '
@@ -105,7 +105,7 @@ Partial Class A_ListarFacCompraPagos
 
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents dtFacturasCompra As DataGridView
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtBusqueda As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnCancelar As Button
 End Class

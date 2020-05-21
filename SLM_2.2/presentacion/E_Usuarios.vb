@@ -13,6 +13,7 @@
                     .password_ = Encriptar(txtPass.Text)
                     .perfil_ = txtPerfil.Text
                     .Estad_o = chkHabilitar.Checked
+                    .Cod_Perfil = Convert.ToInt32(lblCodPerfil.Text)
                     If .registrarNuevoUsuario = 1 Then
                         MsgBox("El registro se ha guardado correctamente.")
                         Limpiar()
@@ -45,6 +46,7 @@
                     .password_ = Encriptar(txtPass.Text)
                     .perfil_ = txtPerfil.Text
                     .Estad_o = chkHabilitar.Checked
+                    .Cod_Perfil = Convert.ToInt32(lblCodPerfil.Text)
 
                     If .ModificarUsuario = 1 Then
                         MsgBox("El registro se ha modificado correctamente.")
@@ -76,6 +78,7 @@
         txtUsuario.Text = ""
         txtPass.Text = ""
         txtPerfil.Text = ""
+        lblCodPerfil.Text = ""
         chkHabilitar.Checked = False
 
     End Sub
@@ -85,6 +88,7 @@
         Try
 
             dtUsuarios.DataSource = usuario.listarUsuarios
+            dtUsuarios.Columns("codPerfil").Visible = False
 
         Catch ex As Exception
 
@@ -96,6 +100,10 @@
 
         Try
 
+            btnGuardar.Enabled = False
+            btnModificar.Enabled = True
+            btnCambio.Visible = True
+
             Dim dt As New DataTable
             dt = dtUsuarios.DataSource
             Dim row As DataRow = dt.Rows(e.RowIndex)
@@ -106,10 +114,8 @@
             txtPass.Text = Desencriptar(row("pass"))
             txtPerfil.Text = row("perfil")
             chkHabilitar.Checked = row("estado")
+            lblCodPerfil.Text = row("codPerfil")
 
-            btnGuardar.Enabled = False
-            btnModificar.Enabled = True
-            btnCambio.Visible = True
 
 
         Catch ex As Exception
@@ -145,5 +151,15 @@
             MsgBox("Hubo un error al habilitar el cambio de contraseña." + ex.Message)
         End Try
 
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Try
+
+            A_ListadoPerfiles.ShowDialog()
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

@@ -113,6 +113,7 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -149,11 +150,15 @@
     <Compile Include="negocio\ClsDetalleContactos.vb" />
     <Compile Include="negocio\ClsDetalleFacturaCompra.vb" />
     <Compile Include="negocio\ClsDetalleListaPrecios.vb" />
+    <Compile Include="negocio\clsDetalleOC.vb" />
+    <Compile Include="negocio\clsDetalleOI.vb" />
     <Compile Include="negocio\ClsDetallePago.vb" />
     <Compile Include="negocio\ClsDetalleRecibo.vb" />
     <Compile Include="negocio\ClsEmpleados.vb" />
+    <Compile Include="negocio\clsEntradaAlmacen.vb" />
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
+    <Compile Include="negocio\ClsFormularios.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
     <Compile Include="negocio\ClsHorarios.vb" />
     <Compile Include="negocio\ClsItemExamen.vb" />
@@ -163,10 +168,12 @@
     <Compile Include="negocio\ClsNotificaciones.vb" />
     <Compile Include="negocio\ClsOrdenDeCompra.vb" />
     <Compile Include="negocio\ClsOrdenDeTrabajo.vb" />
+    <Compile Include="negocio\clsOrdenInterna.vb" />
     <Compile Include="negocio\ClsOrdenTrabajoDetalle.vb" />
     <Compile Include="negocio\ClsPago.vb" />
     <Compile Include="negocio\ClsParametroExamen.vb" />
     <Compile Include="negocio\ClsParametroExamenDetalle.vb" />
+    <Compile Include="negocio\ClsPerfilesUsuario.vb" />
     <Compile Include="negocio\ClsPeriodoContable.vb" />
     <Compile Include="negocio\ClsPermisos.vb" />
     <Compile Include="negocio\ClsPrecio.vb" />
@@ -175,6 +182,7 @@
     <Compile Include="negocio\ClsPromociones.vb" />
     <Compile Include="negocio\ClsPuestoTrabajo.vb" />
     <Compile Include="negocio\ClsRecibo.vb" />
+    <Compile Include="negocio\ClsSalidaAlmacen.vb" />
     <Compile Include="negocio\ClsServidorCorreo.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
@@ -184,6 +192,7 @@
     <Compile Include="negocio\ClsUnidadMedidaAlmacen.vb" />
     <Compile Include="negocio\ClsUsuario.vb" />
     <Compile Include="negocio\ClsVacaciones.vb" />
+    <Compile Include="negocio\ClsVentanasModulos.vb" />
     <Compile Include="negocio\ModulosVarios.vb" />
     <Compile Include="presentacion\A_Alertas.Designer.vb">
       <DependentUpon>A_Alertas.vb</DependentUpon>
@@ -324,6 +333,12 @@
     <Compile Include="presentacion\A_ListadoFacturaCompra.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ListadoPerfiles.Designer.vb">
+      <DependentUpon>A_ListadoPerfiles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListadoPerfiles.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListarCAI.Designer.vb">
       <DependentUpon>A_ListarCAI.vb</DependentUpon>
     </Compile>
@@ -426,6 +441,12 @@
     <Compile Include="presentacion\A_Notificacion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_PerfilUsuario.Designer.vb">
+      <DependentUpon>A_PerfilUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_PerfilUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_PeriodoContable.Designer.vb">
       <DependentUpon>A_PeriodoContable.vb</DependentUpon>
     </Compile>
@@ -457,6 +478,12 @@
     <Compile Include="presentacion\A_Transferencias.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ValoresRefPar.Designer.vb">
+      <DependentUpon>A_ValoresRefPar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ValoresRefPar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_BuscarOrdenDeTrabajo.Designer.vb">
       <DependentUpon>E_BuscarOrdenDeTrabajo.vb</DependentUpon>
     </Compile>
@@ -473,6 +500,12 @@
       <DependentUpon>E_frmCategoriaProducto.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\E_frmCategoriaProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmEntrada.Designer.vb">
+      <DependentUpon>E_frmEntrada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmEntrada.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_frmMenuAlmacen.Designer.vb">
@@ -493,10 +526,22 @@
     <Compile Include="presentacion\E_frmProducto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frmProveedorOC.Designer.vb">
+      <DependentUpon>E_frmProveedorOC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmProveedorOC.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_frmSalida.Designer.vb">
       <DependentUpon>E_frmSalida.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\E_frmSalida.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmSolicitudInternaAlmacen.Designer.vb">
+      <DependentUpon>E_frmSolicitudInternaAlmacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmSolicitudInternaAlmacen.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_frmTipoMovientoAlmacen.Designer.vb">
@@ -1095,6 +1140,9 @@
     <EmbeddedResource Include="presentacion\A_ListadoFacturaCompra.resx">
       <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListadoPerfiles.resx">
+      <DependentUpon>A_ListadoPerfiles.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListarCAI.resx">
       <DependentUpon>A_ListarCAI.vb</DependentUpon>
     </EmbeddedResource>
@@ -1146,6 +1194,9 @@
     <EmbeddedResource Include="presentacion\A_Notificacion.resx">
       <DependentUpon>A_Notificacion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_PerfilUsuario.resx">
+      <DependentUpon>A_PerfilUsuario.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_PeriodoContable.resx">
       <DependentUpon>A_PeriodoContable.vb</DependentUpon>
     </EmbeddedResource>
@@ -1164,6 +1215,9 @@
     <EmbeddedResource Include="presentacion\A_Transferencias.resx">
       <DependentUpon>A_Transferencias.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ValoresRefPar.resx">
+      <DependentUpon>A_ValoresRefPar.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_BuscarOrdenDeTrabajo.resx">
       <DependentUpon>E_BuscarOrdenDeTrabajo.vb</DependentUpon>
     </EmbeddedResource>
@@ -1172,6 +1226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmCategoriaProducto.resx">
       <DependentUpon>E_frmCategoriaProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmEntrada.resx">
+      <DependentUpon>E_frmEntrada.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmMenuAlmacen.resx">
       <DependentUpon>E_frmMenuAlmacen.vb</DependentUpon>
@@ -1182,8 +1239,14 @@
     <EmbeddedResource Include="presentacion\E_frmProducto.resx">
       <DependentUpon>E_frmProducto.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmProveedorOC.resx">
+      <DependentUpon>E_frmProveedorOC.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmSalida.resx">
       <DependentUpon>E_frmSalida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmSolicitudInternaAlmacen.resx">
+      <DependentUpon>E_frmSolicitudInternaAlmacen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmTipoMovientoAlmacen.resx">
       <DependentUpon>E_frmTipoMovientoAlmacen.vb</DependentUpon>
@@ -1235,6 +1298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_Usuarios.resx">
       <DependentUpon>E_Usuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\frmEntrada.resx">
       <DependentUpon>frmEntrada.vb</DependentUpon>

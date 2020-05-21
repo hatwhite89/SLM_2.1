@@ -23,9 +23,9 @@
         frmDeposito.txtComision.Visible = False
         frmDeposito.lblComision.Visible = False
 
-
         frmDeposito.lblTipoDeposito.Text = "Deposito Bancario"
         Limpiar()
+
     End Sub
 
     Private Sub frmTipoDeposito_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
@@ -44,12 +44,11 @@
         frmDeposito.txtTipoConta.Text = ""
         frmDeposito.txtTotalDep.Text = ""
         frmDeposito.txtMoneda.Text = "Lps"
-        frmDeposito.txtMonBase.Text = ""
+        frmDeposito.txtMonBase.Text = "1"
         frmDeposito.txtComision.Text = ""
         frmDeposito.txtCajero.Text = ""
         frmDeposito.txtComentario.Text = ""
 
     End Sub
-
 
 End Class

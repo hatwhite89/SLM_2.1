@@ -334,7 +334,28 @@ Public Class ClsFacturaCompra
 
     End Function
 
+    'Capturar factura por numero de factura
+    Public Function BuscarFacturaXNro() As DataTable
 
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarFacturaCompraNroFactura"
+            cmd.Parameters.Add("@nroFactura", SqlDbType.VarChar).Value = Nro_Factura
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
 
 
 End Class
