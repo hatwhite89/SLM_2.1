@@ -355,7 +355,7 @@
         M_Sucursal.ShowDialog()
     End Sub
 
-    Private Sub btnPacientesFact_Click(sender As Object, e As EventArgs) Handles btnPacientesFact.Click
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
         M_Cliente.ShowDialog()
     End Sub
 
@@ -503,12 +503,10 @@
     End Sub
 
     Private Sub btnPuestoTrabajo_Click(sender As Object, e As EventArgs) Handles btnPuestoTrabajo.Click
-        M_PuestoTrabajo.lblform.Text = "M_PuestoTrabajo"
         M_PuestoTrabajo.ShowDialog()
     End Sub
 
     Private Sub btnHorarios_Click(sender As Object, e As EventArgs) Handles btnHorarios.Click
-        M_Horarios.lblform.Text = "M_Horarios"
         M_Horarios.ShowDialog()
     End Sub
 
@@ -517,17 +515,14 @@
     End Sub
 
     Private Sub btnSucursales_Click(sender As Object, e As EventArgs) Handles btnSucursales.Click
-        M_Sucursal.lblform.Text = "M_Sucursal"
         M_Sucursal.ShowDialog()
     End Sub
 
     Private Sub btnPermisos_Click(sender As Object, e As EventArgs) Handles btnPermisos.Click
-        M_Permisos.lblform.Text = "M_Permisos"
         M_Permisos.ShowDialog()
     End Sub
 
     Private Sub btnVacaciones_Click(sender As Object, e As EventArgs) Handles btnVacaciones.Click
-        M_Vacaciones.lblform.Text = "M_Vacaciones"
         M_Vacaciones.ShowDialog()
     End Sub
 
@@ -597,23 +592,23 @@
         End Try
     End Sub
 
-    Private Sub btnProfesion_Click(sender As Object, e As EventArgs) Handles btnProfesion.Click
-        M_Profesion.lblform.Text = "M_Profesion"
-        M_Profesion.ShowDialog()
+    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
+        A_Proveedor.Show()
     End Sub
 
-    Private Sub btnTipoDeducciones_Click(sender As Object, e As EventArgs) Handles btnTipoDeducciones.Click
-        M_TipoDeducciones.lblform.Text = "M_TipoDeducciones"
-        M_TipoDeducciones.ShowDialog()
+    Private Sub Button22_Click_1(sender As Object, e As EventArgs) Handles Button22.Click
+        E_frmInventario.Show()
     End Sub
 
-    Private Sub btnArea_Click(sender As Object, e As EventArgs) Handles btnArea.Click
-        M_Area.lblform.Text = "M_Area"
-        M_Area.ShowDialog()
+    Private Sub Button30_Click(sender As Object, e As EventArgs) Handles Button30.Click
+        E_frmAutorizarOC.Show()
     End Sub
 
-    Private Sub btnDepto_Click(sender As Object, e As EventArgs) Handles btnDepto.Click
-        M_Departamento.lblform.Text = "M_Departamento"
-        M_Departamento.ShowDialog()
+    Private Sub Button32_Click(sender As Object, e As EventArgs) Handles Button32.Click
+        E_frmBIAlmacen.Show()
+    End Sub
+
+    Private Sub Button33_Click(sender As Object, e As EventArgs) Handles Button33.Click
+        A_FacturaCompras.Show()
     End Sub
 End Class

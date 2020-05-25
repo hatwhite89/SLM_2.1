@@ -226,6 +226,44 @@ Public Class clsDetalleOC
 
     End Function
 
+    Public Function EliminarDetalleOCEntrada() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slmEliminarDetalleOCEntrada"
+
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_detalle_oc" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = IdDetalleOC
+        sqlcom.Parameters.Add(sqlpar)
+
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
     Public Function ListarDetalleOC(ByVal cod As String) As DataTable
 
         Dim objCon As New ClsConnection
