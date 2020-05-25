@@ -228,5 +228,17 @@ Public Class ClsSalidaAlmacen
         Return par_sal
 
     End Function
+    Public Function ListarSalidaInventarioFecha(ByVal inicio As Date, ByVal fin As Date) As DataTable
 
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select id_salida,id_producto,producto,cantidad_entregada,persona_recibe,persona_entrega from SalidaAlmacen
+where fecha_salida between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 End Class

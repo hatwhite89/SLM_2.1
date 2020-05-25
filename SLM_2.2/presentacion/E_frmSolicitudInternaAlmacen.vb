@@ -1,6 +1,7 @@
 ﻿Public Class E_frmSolicitudInternaAlmacen
     Dim objOrd As New clsEntradaAlmacen
     Dim dv1 As New DataView
+    Dim cod_oi As String
     Dim codigo_producto, id_entrada As Integer
 
     Private Sub txtBuscarIventario_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarIventario.TextChanged
@@ -61,9 +62,8 @@
         id_entrada = Integer.Parse(DataGridView1.Rows(e.RowIndex).Cells(6).Value)
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        CrearOI()
-        CargarDGOC()
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub CrearOI()
@@ -110,6 +110,46 @@
         If clsD.RegistrarOrdenInterna = "1" Then
             DataGridView2.Columns.Clear()
         End If
+    End Sub
+
+    Private Sub cmbDepartamento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbDepartamento.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+        CrearOI()
+        CargarDGOC()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        'eliminar fila de la solicitud
+        Try
+            Dim clsD As New clsDetalleOI
+            With clsD
+                .Id_oi1 = cod_oi
+            End With
+            If clsD.EliminarOrdenInterna() = "1" Then
+                MsgBox("Fila eliminada")
+                CargarDGOI()
+            End If
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
+        'variables de codigo de oi
+        Try
+            cod_oi = DataGridView2.Rows(e.RowIndex).Cells(0).Value
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Public Sub ActualizarOrdenInterna()

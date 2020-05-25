@@ -600,4 +600,24 @@
 
         End Try
     End Sub
+
+    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
+        A_Proveedor.Show()
+    End Sub
+
+    Private Sub Button22_Click_1(sender As Object, e As EventArgs) Handles Button22.Click
+        E_frmInventario.Show()
+    End Sub
+
+    Private Sub Button30_Click(sender As Object, e As EventArgs) Handles Button30.Click
+        E_frmAutorizarOC.Show()
+    End Sub
+
+    Private Sub Button32_Click(sender As Object, e As EventArgs) Handles Button32.Click
+        E_frmBIAlmacen.Show()
+    End Sub
+
+    Private Sub Button33_Click(sender As Object, e As EventArgs) Handles Button33.Click
+        A_FacturaCompras.Show()
+    End Sub
 End Class

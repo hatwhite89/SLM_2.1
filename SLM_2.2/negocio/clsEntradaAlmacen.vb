@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class clsEntradaAlmacen
-    Dim id_producto, id_almacen As Integer
+    Dim id_producto, id_almacen, id_entrada As Integer
     Dim cantidad, precio As Double
     Dim lote, descrip As String
     Dim fecha_vence As Date
@@ -69,6 +69,15 @@ Public Class clsEntradaAlmacen
         End Set
     End Property
 
+    Public Property Id_entrada1 As Integer
+        Get
+            Return id_entrada
+        End Get
+        Set(value As Integer)
+            id_entrada = value
+        End Set
+    End Property
+
     Public Function RegistrarEntradaAlmacen() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -112,6 +121,52 @@ Public Class clsEntradaAlmacen
         sqlpar.ParameterName = "fecha_vencimiento"
         sqlpar.Value = FechaVencimiento
         sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
+    Public Function ActualizarEntradaAlmacen() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slmActualizarEntradaAlmacen"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_entrada"
+        sqlpar.Value = Id_entrada1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cantidad"
+        sqlpar.Value = CantidadProducto
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "lote"
+        sqlpar.Value = LoteProducto
+        sqlcom.Parameters.Add(sqlpar)
+
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
