@@ -18,6 +18,8 @@
         cbxSabado.Checked = False
         cbxDomingo.Checked = False
         rtxtObservacion.Text() = ""
+        dtpEntradaFinSemana.Value() = Date.Now()
+        dtpSalidaFinSemana.Value() = Date.Now()
 
         txtcodigoBreve.ReadOnly = False
         txtnombre.ReadOnly = False
@@ -31,6 +33,9 @@
         cbxViernes.Enabled = True
         cbxSabado.Enabled = True
         cbxDomingo.Enabled = True
+
+        dtpEntradaFinSemana.Enabled = True
+        dtpSalidaFinSemana.Enabled = True
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
@@ -50,6 +55,8 @@
         cbxViernes.Enabled = False
         cbxSabado.Enabled = False
         cbxDomingo.Enabled = False
+        dtpEntradaFinSemana.Enabled = False
+        dtpSalidaFinSemana.Enabled = False
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
@@ -93,6 +100,8 @@
                     .sabado_ = cbxSabado.Checked
                     .domingo_ = cbxDomingo.Checked
                     .observacion_ = rtxtObservacion.Text
+                    .entradaFinSemana_ = dtpEntradaFinSemana.Value
+                    .salidaFinSemana_ = dtpSalidaFinSemana.Value
                 End With
 
                 If objHorario.RegistrarNuevoHorario() = 1 Then
@@ -131,6 +140,8 @@
                     .sabado_ = cbxSabado.Checked
                     .domingo_ = cbxDomingo.Checked
                     .observacion_ = rtxtObservacion.Text
+                    .entradaFinSemana_ = dtpEntradaFinSemana.Value
+                    .salidaFinSemana_ = dtpSalidaFinSemana.Value
                 End With
 
                 If objHorario.ModificarHorario() = 1 Then
@@ -174,6 +185,9 @@
             cbxSabado.Checked = Me.dgbtabla.Rows(e.RowIndex).Cells(10).Value()
             cbxDomingo.Checked = Me.dgbtabla.Rows(e.RowIndex).Cells(11).Value()
             rtxtObservacion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(12).Value()
+
+            dtpEntradaFinSemana.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(13).Value().ToString
+            dtpSalidaFinSemana.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(14).Value().ToString
 
             btnmodificar.Enabled = True
             btnguardar.Enabled = False

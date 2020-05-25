@@ -295,6 +295,7 @@ Partial Class M_Departamento
         Me.Controls.Add(Me.lblform)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.gbxcaja)
+        Me.KeyPreview = True
         Me.Name = "M_Departamento"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "M_Departamento"

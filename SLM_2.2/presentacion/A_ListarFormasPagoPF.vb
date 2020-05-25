@@ -13,9 +13,9 @@
         'Recibe los campos para el formulario M_Recibo
         If (lblForm.Text = "M_Recibo") Then
 
-            M_Recibo.lblcodeFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(3).Value
-            M_Recibo.txtcodigoFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
-            M_Recibo.txtnombreFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(1).Value
+            M_Recibo.lblcodeFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
+            M_Recibo.txtcodigoFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(1).Value
+            M_Recibo.txtnombreFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(5).Value
 
         ElseIf (lblForm.Text = "DetallePagoFormaPagos") Then
             Dim fp, fila As String
@@ -32,7 +32,8 @@
             frmPagos.txtComentario.Text = dtFormasPago.Rows(e.RowIndex).Cells(1).Value
             frmPagos.dtDetallePagos.Enabled = True
         ElseIf (lblForm.Text = "M_Empleados") Then
-            M_Empleados.txtcodigoFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(3).Value
+            M_Empleados.txtcodigoFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
+            M_Empleados.txtnombreFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(5).Value
         End If
 
         Me.Close()
