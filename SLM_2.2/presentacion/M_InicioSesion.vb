@@ -36,8 +36,8 @@
     End Sub
 
     Sub Limpiar()
-        txtusuario.Text = ""
-        txtPassword.Text = ""
+        txtUsuario.Text = "Usuario"
+        txtPassword.Text = "Contraseña"
     End Sub
 
     Private Sub M_InicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load

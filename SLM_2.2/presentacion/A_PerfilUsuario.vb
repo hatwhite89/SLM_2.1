@@ -440,7 +440,6 @@
             btnGuardar.Enabled = False
             btnModificar.Enabled = True
 
-
             gbxModulos.Enabled = True
             gbxRegistros.Enabled = True
             pbarCarga.Value = 0
