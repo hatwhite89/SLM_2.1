@@ -231,30 +231,11 @@ Public Class E_frmOrdenCompra
     End Sub
 
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
-        Try
-            txtCodOC.Text = DataGridView2.Rows(e.RowIndex).Cells(0).Value
-
-            txtCodProveedor.Text = DataGridView2.Rows(e.RowIndex).Cells(2).Value
-            txtCondicionEntrega.Text = DataGridView2.Rows(e.RowIndex).Cells(4).Value
-            txtCondicionEntrega.Text = DataGridView2.Rows(e.RowIndex).Cells(5).Value
-            txtConsignado.Text = DataGridView2.Rows(e.RowIndex).Cells(6).Value
-            txtObservaciones.Text = DataGridView2.Rows(e.RowIndex).Cells(10).Value
-
-            CargarDetalleOC(txtCodOC.Text)
-        Catch ex As Exception
-
-        End Try
-
-
-    End Sub
-
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        Try
-            CargarDGOCFecha(DateTimePicker3.Value.Date, DateTimePicker4.Value.Date)
-
-        Catch ex As Exception
-
-        End Try
+        txtCodOC.Text = DataGridView2.Rows(e.RowIndex).Cells(0).Value
+        txtCodProveedor.Text = DataGridView2.Rows(e.RowIndex).Cells(2).Value
+        txtCondicionEntrega.Text = DataGridView2.Rows(e.RowIndex).Cells(4).Value
+        txtObservaciones.Text = DataGridView2.Rows(e.RowIndex).Cells(10).Value
+        CargarDetalleOC(txtCodOC.Text)
 
     End Sub
 
