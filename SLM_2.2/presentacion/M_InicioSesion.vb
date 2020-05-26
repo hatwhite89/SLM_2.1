@@ -35,6 +35,7 @@
 
     End Sub
 
+
     Sub Limpiar()
         txtUsuario.Text = "Usuario"
         txtPassword.Text = "Contraseña"
