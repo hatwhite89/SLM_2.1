@@ -1571,7 +1571,7 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label1.Location = New System.Drawing.Point(3, 471)
+        Me.Label1.Location = New System.Drawing.Point(6, 471)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(49, 13)
@@ -2193,7 +2193,7 @@ Partial Class Form1
         'lblUserCod
         '
         Me.lblUserCod.AutoSize = True
-        Me.lblUserCod.Location = New System.Drawing.Point(117, 471)
+        Me.lblUserCod.Location = New System.Drawing.Point(149, 471)
         Me.lblUserCod.Name = "lblUserCod"
         Me.lblUserCod.Size = New System.Drawing.Size(54, 13)
         Me.lblUserCod.TabIndex = 27
