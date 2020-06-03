@@ -24,13 +24,13 @@ Partial Class M_InicioSesion
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_InicioSesion))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtPassword = New UIDC.UI_MaterialTextBox()
         Me.txtUsuario = New UIDC.UI_MaterialTextBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnInicioSesion = New System.Windows.Forms.Button()
-        Me.txtPassword = New UIDC.UI_MaterialTextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,6 +54,27 @@ Partial Class M_InicioSesion
         Me.Panel1.Size = New System.Drawing.Size(328, 416)
         Me.Panel1.TabIndex = 135
         '
+        'txtPassword
+        '
+        Me.txtPassword.BackColor = System.Drawing.Color.White
+        Me.txtPassword.FocusedColor = "#508ef5"
+        Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.IsEnabled = True
+        Me.txtPassword.Location = New System.Drawing.Point(76, 254)
+        Me.txtPassword.MaxLength = 32767
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(202, 24)
+        Me.txtPassword.TabIndex = 139
+        Me.txtPassword.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtPassword.UIFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.UIFontColor = "#999999"
+        Me.txtPassword.UIMultiline = False
+        Me.txtPassword.UIReadOnly = False
+        Me.txtPassword.UseSystemPasswordChar = True
+        Me.txtPassword.ValidateMessageText = "MessageBox Error Text "
+        Me.txtPassword.ValidateMessageTitle = "MessageBox Title Text "
+        Me.txtPassword.ValidateText = UIDC.UI_MaterialTextBox.TextValidate.Null
+        '
         'txtUsuario
         '
         Me.txtUsuario.BackColor = System.Drawing.Color.White
@@ -65,7 +86,6 @@ Partial Class M_InicioSesion
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(202, 24)
         Me.txtUsuario.TabIndex = 138
-        Me.txtUsuario.Text = "Usuario"
         Me.txtUsuario.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtUsuario.UIFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.UIFontColor = "#999999"
@@ -131,28 +151,6 @@ Partial Class M_InicioSesion
         Me.btnInicioSesion.TabIndex = 122
         Me.btnInicioSesion.Text = "Iniciar Sesión"
         Me.btnInicioSesion.UseVisualStyleBackColor = False
-        '
-        'txtPassword
-        '
-        Me.txtPassword.BackColor = System.Drawing.Color.White
-        Me.txtPassword.FocusedColor = "#508ef5"
-        Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.IsEnabled = True
-        Me.txtPassword.Location = New System.Drawing.Point(76, 254)
-        Me.txtPassword.MaxLength = 32767
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(202, 24)
-        Me.txtPassword.TabIndex = 139
-        Me.txtPassword.Text = "Contraseña"
-        Me.txtPassword.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtPassword.UIFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.UIFontColor = "#999999"
-        Me.txtPassword.UIMultiline = False
-        Me.txtPassword.UIReadOnly = False
-        Me.txtPassword.UseSystemPasswordChar = True
-        Me.txtPassword.ValidateMessageText = "MessageBox Error Text "
-        Me.txtPassword.ValidateMessageTitle = "MessageBox Title Text "
-        Me.txtPassword.ValidateText = UIDC.UI_MaterialTextBox.TextValidate.Null
         '
         'M_InicioSesion
         '

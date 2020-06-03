@@ -258,7 +258,8 @@
     End Sub
 
     Private Sub A_FacturaCompras_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        'colores datagrid
+        alternarColoFilasDatagridview(dtDetalleFactura)
         Dim cmb As New DataGridViewComboBoxColumn()
         dtDetalleFactura.Columns.Add(cmb)
         cmb.HeaderText = "Tipo Stock"

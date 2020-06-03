@@ -1,6 +1,10 @@
 ﻿Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        btnUsuarios.Enabled = True
+        btnPerfiles.Enabled = True
+
+
         'Notificación
         'ApruebaS.Show()
 
@@ -139,7 +143,7 @@
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnChequera.Click
 
         Try
             A_Chequera.Show()
@@ -148,7 +152,7 @@
         End Try
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnCheques.Click
 
         Try
             A_ListadoCheques.Show()
@@ -157,7 +161,7 @@
         End Try
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnFacturaCompra.Click
 
         Try
 
@@ -228,7 +232,7 @@
         Me.Close()
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles btnPrecio.Click
 
         Try
 
@@ -239,7 +243,7 @@
 
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles btnDescuento.Click
 
         Try
             M_Descuentos.Show()
@@ -249,7 +253,7 @@
 
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles btnListaPrecio.Click
 
         Try
 
@@ -260,7 +264,7 @@
 
     End Sub
 
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles btnPromociones.Click
 
         Try
             A_ListarPromociones.Show()
@@ -270,7 +274,7 @@
 
     End Sub
 
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles btnPeriodoContable.Click
         Try
 
             A_PeriodoContable.Show()
@@ -281,7 +285,7 @@
 
     End Sub
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles btnAsientos.Click
         Try
             A_ListadoAsientos.Show()
         Catch ex As Exception
@@ -355,7 +359,7 @@
         M_Sucursal.ShowDialog()
     End Sub
 
-    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles btnPacienteF.Click
         M_Cliente.ShowDialog()
     End Sub
 
@@ -439,7 +443,7 @@
         PanelSistema.Visible = False
     End Sub
 
-    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
+    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
         E_Usuarios.Show()
     End Sub
 
@@ -452,7 +456,7 @@
     'End Sub
 
 
-    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
+    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles btnDepreciacion.Click
         Try
             A_ListarDepreciacion.Show()
         Catch ex As Exception
@@ -544,23 +548,23 @@
         End If
     End Sub
 
-    Private Sub Button28_Click(sender As Object, e As EventArgs) Handles Button28.Click
+    Private Sub Button28_Click(sender As Object, e As EventArgs) Handles btnProducto.Click
         E_frmProducto.Show()
     End Sub
 
-    Private Sub Button27_Click(sender As Object, e As EventArgs) Handles Button27.Click
+    Private Sub Button27_Click(sender As Object, e As EventArgs) Handles btnCategoria.Click
         E_frmCategoriaProducto.Show()
     End Sub
 
-    Private Sub Button29_Click(sender As Object, e As EventArgs) Handles Button29.Click
+    Private Sub Button29_Click(sender As Object, e As EventArgs) Handles btnUnidadMedida.Click
         E_frmUnidadMedida_almacen.Show()
     End Sub
 
-    Private Sub Button24_Click(sender As Object, e As EventArgs) Handles Button24.Click
+    Private Sub Button24_Click(sender As Object, e As EventArgs) Handles btnAlmacenes.Click
         E_frmUbicacion.Show()
     End Sub
 
-    Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
+    Private Sub Button25_Click(sender As Object, e As EventArgs) Handles btnOrdeCompra.Click
         E_frmOrdenCompra.Show()
     End Sub
 
@@ -568,15 +572,15 @@
         A_PerfilUsuario.Show()
     End Sub
 
-    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles btnEntradas.Click
         E_frmEntrada.Show()
     End Sub
 
-    Private Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
+    Private Sub Button26_Click(sender As Object, e As EventArgs) Handles btnSalidas.Click
         E_frmSalida.Show()
     End Sub
 
-    Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
+    Private Sub Button19_Click(sender As Object, e As EventArgs) Handles btnOrdenInterna.Click
         E_frmSolicitudInternaAlmacen.Show()
     End Sub
 
@@ -592,23 +596,23 @@
         End Try
     End Sub
 
-    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
+    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
         A_Proveedor.Show()
     End Sub
 
-    Private Sub Button22_Click_1(sender As Object, e As EventArgs) Handles Button22.Click
+    Private Sub Button22_Click_1(sender As Object, e As EventArgs) Handles btnInventario.Click
         E_frmInventario.Show()
     End Sub
 
-    Private Sub Button30_Click(sender As Object, e As EventArgs) Handles Button30.Click
+    Private Sub Button30_Click(sender As Object, e As EventArgs) Handles btnAutorizacion.Click
         E_frmAutorizarOC.Show()
     End Sub
 
-    Private Sub Button32_Click(sender As Object, e As EventArgs) Handles Button32.Click
+    Private Sub Button32_Click(sender As Object, e As EventArgs) Handles btnBI.Click
         E_frmBIAlmacen.Show()
     End Sub
 
-    Private Sub Button33_Click(sender As Object, e As EventArgs) Handles Button33.Click
+    Private Sub Button33_Click(sender As Object, e As EventArgs)
         A_FacturaCompras.Show()
     End Sub
 End Class
