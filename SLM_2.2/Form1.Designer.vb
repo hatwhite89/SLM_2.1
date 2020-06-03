@@ -386,6 +386,9 @@ Partial Class Form1
         '
         'panelMenu
         '
+        Me.panelMenu.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panelMenu.BackColor = System.Drawing.Color.Gray
         Me.panelMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.panelMenu.Controls.Add(Me.Button15)
@@ -1235,6 +1238,9 @@ Partial Class Form1
         '
         'PanelLab
         '
+        Me.PanelLab.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelLab.BackColor = System.Drawing.Color.Gainsboro
         Me.PanelLab.Controls.Add(Me.Button12)
         Me.PanelLab.Controls.Add(Me.TabControl2)
@@ -1534,6 +1540,9 @@ Partial Class Form1
         '
         'PanelFactura
         '
+        Me.PanelFactura.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelFactura.BackColor = System.Drawing.Color.Silver
         Me.PanelFactura.Controls.Add(Me.Button11)
         Me.PanelFactura.Controls.Add(Me.TabControl1)
@@ -1545,6 +1554,9 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Panel1.Location = New System.Drawing.Point(146, 56)
@@ -1568,6 +1580,9 @@ Partial Class Form1
         '
         'PanelTalentoHumano
         '
+        Me.PanelTalentoHumano.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelTalentoHumano.BackColor = System.Drawing.Color.Silver
         Me.PanelTalentoHumano.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.PanelTalentoHumano.Controls.Add(Me.btnCerrarTalentoHumano)
@@ -1880,6 +1895,9 @@ Partial Class Form1
         '
         'PanelSistema
         '
+        Me.PanelSistema.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelSistema.BackColor = System.Drawing.Color.Beige
         Me.PanelSistema.Controls.Add(Me.Button17)
         Me.PanelSistema.Controls.Add(Me.TabControl3)
@@ -1892,6 +1910,9 @@ Partial Class Form1
         '
         'PanelAlmacen
         '
+        Me.PanelAlmacen.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelAlmacen.BackColor = System.Drawing.Color.Maroon
         Me.PanelAlmacen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.PanelAlmacen.Controls.Add(Me.Button23)
