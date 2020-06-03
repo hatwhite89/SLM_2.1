@@ -7,7 +7,7 @@
         If txtusuario.Text <> "" And txtPassword.Text <> "" Then
 
             LOGIN(txtusuario.Text, txtPassword.Text)
-            Limpiar()
+            'Limpiar()
 
 
         ElseIf txtusuario.Text <> "" And txtPassword.Text = "" Then
@@ -34,6 +34,7 @@
         Me.Close()
 
     End Sub
+
 
     Sub Limpiar()
         txtUsuario.Text = "Usuario"

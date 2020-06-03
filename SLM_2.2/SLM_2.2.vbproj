@@ -253,6 +253,12 @@
     <Compile Include="presentacion\A_FacturaCompras.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_ImportarUserAD.Designer.vb">
+      <DependentUpon>A_ImportarUserAD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ImportarUserAD.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListadoAsientos.Designer.vb">
       <DependentUpon>A_ListadoAsientos.vb</DependentUpon>
     </Compile>
@@ -1144,6 +1150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_FacturaCompras.resx">
       <DependentUpon>A_FacturaCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ImportarUserAD.resx">
+      <DependentUpon>A_ImportarUserAD.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoAsientos.resx">
       <DependentUpon>A_ListadoAsientos.vb</DependentUpon>

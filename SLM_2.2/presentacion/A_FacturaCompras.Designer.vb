@@ -59,18 +59,22 @@ Partial Class A_FacturaCompras
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnRegresar = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbxInfoFact
         '
+        Me.gbxInfoFact.Controls.Add(Me.txtDescripcion)
+        Me.gbxInfoFact.Controls.Add(Me.Label13)
         Me.gbxInfoFact.Controls.Add(Me.txtNroFactura)
-        Me.gbxInfoFact.Controls.Add(Me.btnCrear)
         Me.gbxInfoFact.Controls.Add(Me.Label10)
-        Me.gbxInfoFact.Controls.Add(Me.btnModificar)
-        Me.gbxInfoFact.Controls.Add(Me.btnGuardar)
         Me.gbxInfoFact.Controls.Add(Me.lblFila)
         Me.gbxInfoFact.Controls.Add(Me.btnBuscarTerminoPago)
         Me.gbxInfoFact.Controls.Add(Me.txtMoneda)
@@ -91,9 +95,9 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.Controls.Add(Me.Label2)
         Me.gbxInfoFact.Controls.Add(Me.txtCodFactura)
         Me.gbxInfoFact.Controls.Add(Me.Label1)
-        Me.gbxInfoFact.Location = New System.Drawing.Point(7, 5)
+        Me.gbxInfoFact.Location = New System.Drawing.Point(7, 50)
         Me.gbxInfoFact.Name = "gbxInfoFact"
-        Me.gbxInfoFact.Size = New System.Drawing.Size(748, 198)
+        Me.gbxInfoFact.Size = New System.Drawing.Size(748, 182)
         Me.gbxInfoFact.TabIndex = 0
         Me.gbxInfoFact.TabStop = False
         Me.gbxInfoFact.Text = "Información de Factura"
@@ -113,7 +117,7 @@ Partial Class A_FacturaCompras
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(5, 169)
+        Me.btnCrear.Location = New System.Drawing.Point(506, 13)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 12
@@ -135,7 +139,7 @@ Partial Class A_FacturaCompras
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(86, 169)
+        Me.btnModificar.Location = New System.Drawing.Point(587, 13)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 13
@@ -148,7 +152,7 @@ Partial Class A_FacturaCompras
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(167, 169)
+        Me.btnGuardar.Location = New System.Drawing.Point(668, 13)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 11
@@ -158,7 +162,7 @@ Partial Class A_FacturaCompras
         'lblFila
         '
         Me.lblFila.AutoSize = True
-        Me.lblFila.Location = New System.Drawing.Point(485, 137)
+        Me.lblFila.Location = New System.Drawing.Point(665, 109)
         Me.lblFila.Name = "lblFila"
         Me.lblFila.Size = New System.Drawing.Size(45, 13)
         Me.lblFila.TabIndex = 20
@@ -338,7 +342,7 @@ Partial Class A_FacturaCompras
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.dtDetalleFactura)
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 209)
+        Me.GroupBox1.Location = New System.Drawing.Point(8, 236)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(748, 308)
         Me.GroupBox1.TabIndex = 1
@@ -393,7 +397,7 @@ Partial Class A_FacturaCompras
         'lblTotal
         '
         Me.lblTotal.AutoSize = True
-        Me.lblTotal.Location = New System.Drawing.Point(644, 528)
+        Me.lblTotal.Location = New System.Drawing.Point(723, 558)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(22, 13)
         Me.lblTotal.TabIndex = 12
@@ -403,7 +407,7 @@ Partial Class A_FacturaCompras
         '
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Location = New System.Drawing.Point(550, 528)
+        Me.Label11.Location = New System.Drawing.Point(629, 558)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(88, 13)
         Me.Label11.TabIndex = 11
@@ -415,19 +419,58 @@ Partial Class A_FacturaCompras
         Me.btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnRegresar.FlatAppearance.BorderSize = 0
         Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegresar.Location = New System.Drawing.Point(7, 523)
+        Me.btnRegresar.Location = New System.Drawing.Point(12, 553)
         Me.btnRegresar.Name = "btnRegresar"
         Me.btnRegresar.Size = New System.Drawing.Size(62, 23)
         Me.btnRegresar.TabIndex = 14
         Me.btnRegresar.Text = "Regresar"
         Me.btnRegresar.UseVisualStyleBackColor = False
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Label12)
+        Me.GroupBox2.Controls.Add(Me.btnGuardar)
+        Me.GroupBox2.Controls.Add(Me.btnCrear)
+        Me.GroupBox2.Controls.Add(Me.btnModificar)
+        Me.GroupBox2.Location = New System.Drawing.Point(7, 1)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(749, 43)
+        Me.GroupBox2.TabIndex = 15
+        Me.GroupBox2.TabStop = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(17, 13)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(146, 20)
+        Me.Label12.TabIndex = 14
+        Me.Label12.Text = "Factura de Compra"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(7, 158)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(63, 13)
+        Me.Label13.TabIndex = 23
+        Me.Label13.Text = "Descripción"
+        '
+        'txtDescripcion
+        '
+        Me.txtDescripcion.Location = New System.Drawing.Point(109, 155)
+        Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.Size = New System.Drawing.Size(634, 20)
+        Me.txtDescripcion.TabIndex = 24
+        '
         'A_FacturaCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(766, 553)
+        Me.ClientSize = New System.Drawing.Size(766, 583)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.btnRegresar)
@@ -442,6 +485,8 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -483,4 +528,8 @@ Partial Class A_FacturaCompras
     Friend WithEvents Monto As DataGridViewTextBoxColumn
     Friend WithEvents lblTotal As Label
     Friend WithEvents Label11 As Label
+    Friend WithEvents txtDescripcion As TextBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Label12 As Label
 End Class
