@@ -48,6 +48,7 @@ Partial Class M_Categoria
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
         Me.lblcomentarioB = New System.Windows.Forms.Label()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.gbxclasificacion.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,6 +56,7 @@ Partial Class M_Categoria
         '
         'gbxclasificacion
         '
+        Me.gbxclasificacion.Controls.Add(Me.lblform)
         Me.gbxclasificacion.Controls.Add(Me.lblCodePriceList)
         Me.gbxclasificacion.Controls.Add(Me.lblcode)
         Me.gbxclasificacion.Controls.Add(Me.txtdescripcionListaPrecios)
@@ -349,6 +351,16 @@ Partial Class M_Categoria
         Me.lblcomentarioB.TabIndex = 114
         Me.lblcomentarioB.Text = "Descripción"
         '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(413, 27)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(36, 17)
+        Me.lblform.TabIndex = 144
+        Me.lblform.Text = "form"
+        Me.lblform.Visible = False
+        '
         'M_Categoria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -396,4 +408,5 @@ Partial Class M_Categoria
     Friend WithEvents btnBuscarListaPrecios As Button
     Friend WithEvents txtcodigoListaPrecios As TextBox
     Friend WithEvents lblListaPrecios As Label
+    Friend WithEvents lblform As Label
 End Class

@@ -564,6 +564,23 @@ Public Class M_Factura
 
                     Dim dt As New DataTable
                     dt = objExam.BuscarPrecio()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     'valido que no haya agregado el examen anteriormente
                     If (validarFactura(objExam.codigoItem_) = 0) Then
                         Dim row As DataRow = dt.Rows(0)
@@ -572,7 +589,7 @@ Public Class M_Factura
                         Dim descuento As Double = Convert.ToDouble(CStr(row("porcentaje")))
                         descuento = subtotal * (descuento / 100)
                         subtotal -= descuento
-                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("grupo")), 0})
+                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0})
                         totalFactura()
 
                         M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
@@ -630,10 +647,29 @@ Public Class M_Factura
         Dim subtotal As Double = Convert.ToDouble(CStr(row("precio")))
         Dim descuento As Double = Convert.ToDouble(CStr(row("porcentaje")))
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         descuento = subtotal * (descuento / 100)
         subtotal -= descuento
 
-        dgblistadoExamenes.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("grupo")), 0})
+        dgblistadoExamenes.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0})
         totalFactura()
         M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
     End Sub
@@ -1251,6 +1287,97 @@ Public Class M_Factura
             MsgBox("Ejemplo fuera de " & ex.Message)
         End Try
     End Sub
+    'Private Sub OrdenDeTrabajo()
+    '    Dim ds As New DataSet 'Orden de los examenes por grupo o laboratorio
+    '    Try
+    '        ' Add Table
+    '        ds.Tables.Add("ListaExamenes")
+    '        ' Add Columns
+    '        Dim col As DataColumn
+    '        For Each dgvCol As DataGridViewColumn In dgblistadoExamenes.Columns
+    '            col = New DataColumn(dgvCol.Name)
+    '            ds.Tables("ListaExamenes").Columns.Add(col)
+    '        Next
+    '        'Add Rows from the datagridview
+    '        Dim row As DataRow
+    '        Dim colcount As Integer = dgblistadoExamenes.Columns.Count - 1
+    '        For i As Integer = 0 To dgblistadoExamenes.Rows.Count - 1
+    '            row = ds.Tables("ListaExamenes").Rows.Add
+    '            For Each column As DataGridViewColumn In dgblistadoExamenes.Columns
+    '                row.Item(column.Index) = dgblistadoExamenes.Rows.Item(i).Cells(column.Index).Value
+    '            Next
+    '        Next
+    '        'Ordenar el data table por grupo
+    '        Dim dt As New DataTable 'tabla de los items ordenador por grupo o laboratorio
+    '        dt = ds.Tables(0)
+    '        dt.DefaultView.Sort = "grupo DESC"
+    '        'Dim dv As New DataView
+    '        'dv = dt.DefaultView
+    '        'dv.Sort = "grupo Desc"
+
+
+    '        Dim rowC As DataRow 'fila a comparar
+    '        Dim rowI As DataRow 'fila item detalle
+    '        Dim rowO As DataRow 'fila orden de trabajo
+
+    '        Dim dt2 As New DataTable 'lista el detalle de los items
+    '        Dim dtO As New DataTable 'obtiene el codigo de la orden de trabajo
+
+    '        Dim objItemD As New ClsItemExamenDetalle
+    '        Dim objOrd As New ClsOrdenDeTrabajo
+    '        For i As Integer = 0 To dt.Rows.Count - 2
+    '            row = dt.Rows(i)
+    '            If CStr(row("grupo")) <> "0" Then
+
+    '                With objOrd
+    '                    .cod_factura_ = Convert.ToInt64(txtnumeroFactura.Text)
+    '                    .pmFecha_ = dtpfechaFactura.Value
+    '                    .pmUsuario_ = txtcodigoCajero.Text
+    '                    .npFecha_ = dtpfechaFactura.Value
+    '                    .npUsuario_ = txtcodigoCajero.Text
+    '                    .cod_grupo_ = Convert.ToInt64(row("grupo"))
+    '                    .estado_ = "No Procesado"
+    '                    If .RegistrarOrdenDeTrabajo() = 0 Then
+    '                        MsgBox("Error al querer insertar la orden de trabajo.", MsgBoxStyle.Critical)
+    '                        Exit Sub
+    '                    End If
+    '                    dtO = .CapturarOrdenDeTrabajo()
+    '                End With
+    '                rowO = dtO.Rows(0)
+    '                For j As Integer = i To dt.Rows.Count - 2
+    '                    rowC = dt.Rows(j)
+    '                    If row("grupo") = rowC("grupo") Then
+    '                        objItemD.codigoItemExamen_ = Convert.ToInt64(rowC("codigo"))
+    '                        dt2 = objItemD.BuscarItemExamenDetalle
+    '                        For x As Integer = 0 To dt2.Rows.Count - 1
+    '                            rowI = dt2.Rows(x)
+    '                            Dim objDetOrd As New ClsOrdenTrabajoDetalle
+    '                            With objDetOrd
+    '                                .cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
+    '                                .cod_item_examen_detalle_ = rowI("codigo")
+    '                            End With
+    '                            If objDetOrd.RegistrarNuevoDetalleOrdenTrabajo = 0 Then
+    '                                MsgBox("Error en la insercion del detalle orden de trabajo.", MsgBoxStyle.Critical)
+    '                                Exit Sub
+    '                            End If
+    '                        Next
+    '                    ElseIf dt.Rows.Count = i + 1 Then
+    '                        Exit Sub
+    '                    Else
+    '                        i = j - 1
+    '                        Exit For
+    '                    End If
+    '                Next
+
+    '            End If
+    '        Next
+
+    '        'DataGridView1.DataSource = dt
+    '        MsgBox("Orden de trabajo registrada con exito.", MsgBoxStyle.Information)
+    '    Catch ex As Exception
+    '        MsgBox("CRITICAL ERROR : " & ex.Message)
+    '    End Try
+    'End Sub
     Private Sub OrdenDeTrabajo()
         Dim ds As New DataSet 'Orden de los examenes por grupo o laboratorio
         Try
@@ -1272,9 +1399,9 @@ Public Class M_Factura
                 Next
             Next
             'Ordenar el data table por grupo
-            Dim dt As New DataTable 'tabla de los items ordenador por grupo o laboratorio
+            Dim dt As New DataTable 'tabla de los items ordenador por subarea
             dt = ds.Tables(0)
-            dt.DefaultView.Sort = "grupo DESC"
+            dt.DefaultView.Sort = "subArea DESC"
             'Dim dv As New DataView
             'dv = dt.DefaultView
             'dv.Sort = "grupo Desc"
@@ -1291,7 +1418,8 @@ Public Class M_Factura
             Dim objOrd As New ClsOrdenDeTrabajo
             For i As Integer = 0 To dt.Rows.Count - 2
                 row = dt.Rows(i)
-                If CStr(row("grupo")) <> "0" Then
+                'MsgBox(i & " i(ES DISTINTO A 0) row(subArea)=" & CStr(row("subArea")))
+                If CStr(row("subArea")) <> "0" Then
 
                     With objOrd
                         .cod_factura_ = Convert.ToInt64(txtnumeroFactura.Text)
@@ -1299,7 +1427,7 @@ Public Class M_Factura
                         .pmUsuario_ = txtcodigoCajero.Text
                         .npFecha_ = dtpfechaFactura.Value
                         .npUsuario_ = txtcodigoCajero.Text
-                        .cod_grupo_ = Convert.ToInt64(row("grupo"))
+                        .codigoSubArea_ = Convert.ToInt64(row("subArea"))
                         .estado_ = "No Procesado"
                         If .RegistrarOrdenDeTrabajo() = 0 Then
                             MsgBox("Error al querer insertar la orden de trabajo.", MsgBoxStyle.Critical)
@@ -1310,7 +1438,9 @@ Public Class M_Factura
                     rowO = dtO.Rows(0)
                     For j As Integer = i To dt.Rows.Count - 2
                         rowC = dt.Rows(j)
-                        If row("grupo") = rowC("grupo") Then
+                        'MsgBox("i=" & i & "  ,dt.Rows.Count=" & dt.Rows.Count & "  ,j=" & j)
+                        'MsgBox("row(subArea)=" & CStr(row("subArea")) & "(son iguales) = rowC(subArea)=" & CStr(rowC("subArea")))
+                        If row("subArea") = rowC("subArea") Then
                             objItemD.codigoItemExamen_ = Convert.ToInt64(rowC("codigo"))
                             dt2 = objItemD.BuscarItemExamenDetalle
                             For x As Integer = 0 To dt2.Rows.Count - 1
@@ -1325,10 +1455,14 @@ Public Class M_Factura
                                     Exit Sub
                                 End If
                             Next
-                        ElseIf dt.Rows.Count = i + 1 Then
-                            Exit Sub
+                            'si inserto el ultimo item 
+                            If j = dt.Rows.Count - 3 Then
+                                MsgBox("Orden de trabajo registrada con éxito.", MsgBoxStyle.Information)
+                                Exit Sub
+                            End If
+
                         Else
-                            i = j - 1
+                                i = j - 1
                             Exit For
                         End If
                     Next
@@ -1337,11 +1471,12 @@ Public Class M_Factura
             Next
 
             'DataGridView1.DataSource = dt
-            MsgBox("Orden de trabajo registrada con exito.", MsgBoxStyle.Information)
+            MsgBox("Orden de trabajo registrada con éxito.", MsgBoxStyle.Information)
         Catch ex As Exception
             MsgBox("CRITICAL ERROR : " & ex.Message)
         End Try
     End Sub
+
     Private Sub ejemplo()
         'Creating DataTable.
         Dim dt As New DataTable()

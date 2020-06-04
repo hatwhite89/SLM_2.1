@@ -183,7 +183,10 @@ Partial Class Form1
         Me.Button27 = New System.Windows.Forms.Button()
         Me.lblMiUser = New System.Windows.Forms.Label()
         Me.lblUserCod = New System.Windows.Forms.Label()
+        Me.btnPrueba = New System.Windows.Forms.Button()
         Me.Apariencia = New Sunisoft.IrisSkin.SkinEngine(CType(Me, System.ComponentModel.Component))
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.Button20 = New System.Windows.Forms.Button()
         Me.gbxMenu.SuspendLayout()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
@@ -2304,6 +2307,16 @@ Partial Class Form1
         Me.lblUserCod.TabIndex = 27
         Me.lblUserCod.Text = "UserCode"
         '
+        'btnPrueba
+        '
+        Me.btnPrueba.Location = New System.Drawing.Point(889, 143)
+        Me.btnPrueba.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnPrueba.Name = "btnPrueba"
+        Me.btnPrueba.Size = New System.Drawing.Size(100, 28)
+        Me.btnPrueba.TabIndex = 18
+        Me.btnPrueba.Text = "SubArea"
+        Me.btnPrueba.UseVisualStyleBackColor = True
+        '
         'Apariencia
         '
         Me.Apariencia.DefaultButtonStyle = Sunisoft.IrisSkin.DefaultButtonStyle.Shadow
@@ -2314,6 +2327,26 @@ Partial Class Form1
         Me.Apariencia.SkinFile = Nothing
         Me.Apariencia.SkinStreamMain = CType(resources.GetObject("Apariencia.SkinStreamMain"), System.IO.Stream)
         '
+        'Button13
+        '
+        Me.Button13.Location = New System.Drawing.Point(889, 209)
+        Me.Button13.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(100, 28)
+        Me.Button13.TabIndex = 28
+        Me.Button13.Text = "Item"
+        Me.Button13.UseVisualStyleBackColor = True
+        '
+        'Button20
+        '
+        Me.Button20.Location = New System.Drawing.Point(889, 279)
+        Me.Button20.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Size = New System.Drawing.Size(100, 28)
+        Me.Button20.TabIndex = 29
+        Me.Button20.Text = "CAI"
+        Me.Button20.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -2321,6 +2354,9 @@ Partial Class Form1
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1692, 602)
+        Me.Controls.Add(Me.Button20)
+        Me.Controls.Add(Me.Button13)
+        Me.Controls.Add(Me.btnPrueba)
         Me.Controls.Add(Me.PanelFactura)
         Me.Controls.Add(Me.PanelLab)
         Me.Controls.Add(Me.PanelSistema)
@@ -2589,4 +2625,7 @@ Partial Class Form1
     Friend WithEvents btnArea As Button
     Friend WithEvents btnTipoDeducciones As Button
     Friend WithEvents btnProfesion As Button
+    Friend WithEvents btnPrueba As Button
+    Friend WithEvents Button13 As Button
+    Friend WithEvents Button20 As Button
 End Class

@@ -625,4 +625,20 @@
         M_Departamento.lblform.Text = "M_Departamento"
         M_Departamento.ShowDialog()
     End Sub
+
+    Private Sub btnPrueba_Click(sender As Object, e As EventArgs) Handles btnPrueba.Click
+        E_SubArea.ShowDialog()
+    End Sub
+
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+        E_DetalleExamenes.ShowDialog()
+    End Sub
+
+    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
+        Try
+            E_ListarOrdenesDeTrabajo.Show()
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class
