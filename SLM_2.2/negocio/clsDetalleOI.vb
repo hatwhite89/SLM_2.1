@@ -162,5 +162,40 @@ where d.id_producto = p.id_producto and e.lote=d.lote and d.id_producto =e.id_pr
             Return dt
         End Using
     End Function
+    Public Function EliminarOrdenInterna() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
 
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slmEliminarDetalleOI"
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_detalle_oc"
+        sqlpar.Value = Id_oi1
+        sqlcom.Parameters.Add(sqlpar)
+
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
 End Class

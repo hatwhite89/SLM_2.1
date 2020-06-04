@@ -41,13 +41,23 @@ Partial Class frmAsientos
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.lblForm = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.btnCrear = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.dtDetalleAsiento, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblNro
         '
         Me.lblNro.AutoSize = True
-        Me.lblNro.Location = New System.Drawing.Point(13, 11)
+        Me.lblNro.Location = New System.Drawing.Point(10, 22)
         Me.lblNro.Name = "lblNro"
         Me.lblNro.Size = New System.Drawing.Size(27, 13)
         Me.lblNro.TabIndex = 1
@@ -56,7 +66,7 @@ Partial Class frmAsientos
         'txtNro
         '
         Me.txtNro.Enabled = False
-        Me.txtNro.Location = New System.Drawing.Point(53, 8)
+        Me.txtNro.Location = New System.Drawing.Point(50, 19)
         Me.txtNro.Name = "txtNro"
         Me.txtNro.Size = New System.Drawing.Size(112, 20)
         Me.txtNro.TabIndex = 2
@@ -64,7 +74,7 @@ Partial Class frmAsientos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(177, 12)
+        Me.Label1.Location = New System.Drawing.Point(174, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(70, 13)
         Me.Label1.TabIndex = 3
@@ -73,7 +83,7 @@ Partial Class frmAsientos
         'dtpFecha
         '
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(249, 9)
+        Me.dtpFecha.Location = New System.Drawing.Point(246, 20)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(112, 20)
         Me.dtpFecha.TabIndex = 4
@@ -81,7 +91,7 @@ Partial Class frmAsientos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(13, 37)
+        Me.Label2.Location = New System.Drawing.Point(10, 48)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(34, 13)
         Me.Label2.TabIndex = 5
@@ -89,10 +99,10 @@ Partial Class frmAsientos
         '
         'txtTexto
         '
-        Me.txtTexto.Location = New System.Drawing.Point(53, 34)
+        Me.txtTexto.Location = New System.Drawing.Point(50, 45)
         Me.txtTexto.MaxLength = 200
         Me.txtTexto.Name = "txtTexto"
-        Me.txtTexto.Size = New System.Drawing.Size(653, 20)
+        Me.txtTexto.Size = New System.Drawing.Size(572, 20)
         Me.txtTexto.TabIndex = 6
         '
         'dtDetalleAsiento
@@ -101,9 +111,9 @@ Partial Class frmAsientos
         Me.dtDetalleAsiento.AllowUserToDeleteRows = False
         Me.dtDetalleAsiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDetalleAsiento.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cuenta, Me.Descripcion, Me.Debe, Me.Haber})
-        Me.dtDetalleAsiento.Location = New System.Drawing.Point(12, 64)
+        Me.dtDetalleAsiento.Location = New System.Drawing.Point(6, 19)
         Me.dtDetalleAsiento.Name = "dtDetalleAsiento"
-        Me.dtDetalleAsiento.Size = New System.Drawing.Size(694, 365)
+        Me.dtDetalleAsiento.Size = New System.Drawing.Size(614, 321)
         Me.dtDetalleAsiento.TabIndex = 7
         '
         'Cuenta
@@ -134,7 +144,7 @@ Partial Class frmAsientos
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(384, 439)
+        Me.Label5.Location = New System.Drawing.Point(391, 494)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(31, 13)
         Me.Label5.TabIndex = 12
@@ -143,7 +153,7 @@ Partial Class frmAsientos
         'txtTotalDebe
         '
         Me.txtTotalDebe.Enabled = False
-        Me.txtTotalDebe.Location = New System.Drawing.Point(424, 436)
+        Me.txtTotalDebe.Location = New System.Drawing.Point(431, 491)
         Me.txtTotalDebe.Name = "txtTotalDebe"
         Me.txtTotalDebe.Size = New System.Drawing.Size(101, 20)
         Me.txtTotalDebe.TabIndex = 13
@@ -151,7 +161,7 @@ Partial Class frmAsientos
         'txtTotalHaber
         '
         Me.txtTotalHaber.Enabled = False
-        Me.txtTotalHaber.Location = New System.Drawing.Point(531, 436)
+        Me.txtTotalHaber.Location = New System.Drawing.Point(538, 491)
         Me.txtTotalHaber.Name = "txtTotalHaber"
         Me.txtTotalHaber.Size = New System.Drawing.Size(93, 20)
         Me.txtTotalHaber.TabIndex = 14
@@ -159,7 +169,7 @@ Partial Class frmAsientos
         'lblCodAsiento
         '
         Me.lblCodAsiento.AutoSize = True
-        Me.lblCodAsiento.Location = New System.Drawing.Point(494, 12)
+        Me.lblCodAsiento.Location = New System.Drawing.Point(491, 23)
         Me.lblCodAsiento.Name = "lblCodAsiento"
         Me.lblCodAsiento.Size = New System.Drawing.Size(10, 13)
         Me.lblCodAsiento.TabIndex = 15
@@ -169,7 +179,7 @@ Partial Class frmAsientos
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(409, 12)
+        Me.Label4.Location = New System.Drawing.Point(406, 23)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(65, 13)
         Me.Label4.TabIndex = 16
@@ -182,7 +192,7 @@ Partial Class frmAsientos
         Me.btnCerrar.FlatAppearance.BorderSize = 0
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.ForeColor = System.Drawing.Color.White
-        Me.btnCerrar.Location = New System.Drawing.Point(12, 434)
+        Me.btnCerrar.Location = New System.Drawing.Point(19, 489)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
         Me.btnCerrar.TabIndex = 17
@@ -192,33 +202,103 @@ Partial Class frmAsientos
         'lblForm
         '
         Me.lblForm.AutoSize = True
-        Me.lblForm.Location = New System.Drawing.Point(93, 439)
+        Me.lblForm.Location = New System.Drawing.Point(100, 494)
         Me.lblForm.Name = "lblForm"
         Me.lblForm.Size = New System.Drawing.Size(27, 13)
         Me.lblForm.TabIndex = 18
         Me.lblForm.Text = "form"
         Me.lblForm.Visible = False
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.dtDetalleAsiento)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 140)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(628, 346)
+        Me.GroupBox1.TabIndex = 19
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Detalle de Asiento"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.txtNro)
+        Me.GroupBox2.Controls.Add(Me.lblNro)
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.dtpFecha)
+        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.lblCodAsiento)
+        Me.GroupBox2.Controls.Add(Me.txtTexto)
+        Me.GroupBox2.Location = New System.Drawing.Point(16, 61)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(628, 73)
+        Me.GroupBox2.TabIndex = 20
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Descripción"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Label3)
+        Me.GroupBox3.Controls.Add(Me.btnGuardar)
+        Me.GroupBox3.Controls.Add(Me.btnModificar)
+        Me.GroupBox3.Controls.Add(Me.btnCrear)
+        Me.GroupBox3.Location = New System.Drawing.Point(16, 12)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(628, 43)
+        Me.GroupBox3.TabIndex = 21
+        Me.GroupBox3.TabStop = False
+        '
+        'btnCrear
+        '
+        Me.btnCrear.Location = New System.Drawing.Point(383, 13)
+        Me.btnCrear.Name = "btnCrear"
+        Me.btnCrear.Size = New System.Drawing.Size(75, 23)
+        Me.btnCrear.TabIndex = 0
+        Me.btnCrear.Text = "Crear Nuevo"
+        Me.btnCrear.UseVisualStyleBackColor = True
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Location = New System.Drawing.Point(464, 13)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar.TabIndex = 1
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Location = New System.Drawing.Point(545, 13)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.TabIndex = 2
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(6, 12)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(171, 24)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Asientos Contables"
+        '
         'frmAsientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(718, 463)
+        Me.ClientSize = New System.Drawing.Size(658, 522)
+        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lblForm)
         Me.Controls.Add(Me.btnCerrar)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.lblCodAsiento)
         Me.Controls.Add(Me.txtTotalHaber)
         Me.Controls.Add(Me.txtTotalDebe)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.dtDetalleAsiento)
-        Me.Controls.Add(Me.txtTexto)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.dtpFecha)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtNro)
-        Me.Controls.Add(Me.lblNro)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
@@ -228,6 +308,11 @@ Partial Class frmAsientos
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Asiento"
         CType(Me.dtDetalleAsiento, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -250,4 +335,11 @@ Partial Class frmAsientos
     Friend WithEvents Haber As DataGridViewTextBoxColumn
     Friend WithEvents btnCerrar As Button
     Friend WithEvents lblForm As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents btnCrear As Button
 End Class

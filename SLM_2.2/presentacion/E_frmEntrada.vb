@@ -14,8 +14,7 @@
         Dim clsE As New clsEntradaAlmacen
         Dim dvOC As DataView = clsE.ListarEntradaInventario.DefaultView
 
-        'dvOC.RowFilter = String.Format("CONVERT(lote, System.String) LIKE '%{0}%'", TextBox5.Text)
-        'DataGridView2.DataSource = dvOC
+
     End Sub
     Private Sub ComboAlmacen()
         Dim clsD As New ClsAlmacen
@@ -37,9 +36,6 @@
 
         ds.Load(clsD.RecuperarAlmacenes())
 
-        'ComboBox2.DataSource = ds
-        'ComboBox2.DisplayMember = "nombre_almacen"
-        'ComboBox2.ValueMember = "id_almacen"
     End Sub
 
     Private Sub DetalleOC(ByVal cod As String)
@@ -148,5 +144,32 @@
 
         dv.RowFilter = String.Format("CONVERT(nombre_producto, System.String) LIKE '%{0}%'", TextBox3.Text)
         DataGridView3.DataSource = dv
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        'modificar entradas 
+        Dim clsE As New clsEntradaAlmacen
+
+        With clsE
+            .CantidadProducto = TextBox8.Text
+            .LoteProducto = TextBox7.Text
+            .Id_entrada1 = TextBox5.Text
+        End With
+        If clsE.ActualizarEntradaAlmacen() = "1" Then
+            MsgBox("Actualizado exitosamente")
+            CargarDGOCFecha()
+        End If
+    End Sub
+
+    Private Sub DataGridView3_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellClick
+        Try
+            TextBox4.Text = DataGridView3.Rows(e.RowIndex).Cells(1).Value
+            TextBox5.Text = DataGridView3.Rows(e.RowIndex).Cells(6).Value
+            TextBox6.Text = DataGridView3.Rows(e.RowIndex).Cells(2).Value
+            TextBox7.Text = DataGridView3.Rows(e.RowIndex).Cells(0).Value
+            TextBox8.Text = DataGridView3.Rows(e.RowIndex).Cells(3).Value
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

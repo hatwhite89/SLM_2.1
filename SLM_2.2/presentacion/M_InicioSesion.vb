@@ -7,7 +7,7 @@
         If txtusuario.Text <> "" And txtPassword.Text <> "" Then
 
             LOGIN(txtusuario.Text, txtPassword.Text)
-            Limpiar()
+            'Limpiar()
 
 
         ElseIf txtusuario.Text <> "" And txtPassword.Text = "" Then
@@ -35,9 +35,13 @@
 
     End Sub
 
+
     Sub Limpiar()
-        txtusuario.Text = ""
-        txtPassword.Text = ""
+        txtUsuario.Text = "Usuario"
+        txtPassword.Text = "Contraseña"
     End Sub
 
+    Private Sub M_InicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

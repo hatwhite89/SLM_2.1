@@ -8,30 +8,39 @@ Public Class E_frmOrdenCompra
     Dim TableUM As New DataTable
     Dim objOrd As New ClsProducto
     Dim clsProve As New ClsProveedor
-
+    Dim codigo_globas As String
     Dim dv As DataView = objOrd.RecuperarProducto2.DefaultView
     Dim dvProveedor As DataView = clsProve.listarProveedoresOC.DefaultView
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If txtCodOC.Text <> "" Then
             Dim clsDOC As New clsDetalleOC
-            With clsDOC
-                .ProductoOC = txtProducto.Text
-                .CodigoProducto = Integer.Parse(txtCodigProducto.Text)
-                .Numerolote = txtLoteProducto.Text
-                .FechaVencimiento = DateTimePicker1.Value
-                .ISVDetalle = Double.Parse(txtISVProductos.Text)
-                .CantidadDetalle = Double.Parse(txtCantidadProductos.Text)
-                .PrecioUnitario = Double.Parse(txtPrecioUnitarioProductos.Text)
-                .CostoTotal = Double.Parse(txtCostoTotal.Text)
-                .EstadoOC = False
-                .IdOC = Integer.Parse(txtCodOC.Text)
+            Try
+                With clsDOC
+                    .ProductoOC = txtProducto.Text
+                    .CodigoProducto = Integer.Parse(txtCodigProducto.Text)
+                    .Numerolote = txtLoteProducto.Text
+                    .FechaVencimiento = DateTimePicker1.Value
+                    .ISVDetalle = Double.Parse(txtISVProductos.Text)
+                    .CantidadDetalle = Double.Parse(txtCantidadProductos.Text)
+                    .PrecioUnitario = Double.Parse(txtPrecioUnitarioProductos.Text)
+                    .CostoTotal = Double.Parse(txtCostoTotal.Text)
+                    .EstadoOC = False
+                    .IdOC = Integer.Parse(txtCodOC.Text)
 
-            End With
+                End With
 
-            If clsDOC.RegistrarDetalleOC() = "1" Then
-                MsgBox("Registrado Exitosamente ")
-            End If
+                If clsDOC.RegistrarDetalleOC() = "1" Then
+                    MsgBox("Registrado Exitosamente ")
+                    txtCantidadProductos.Text = "0"
+                    txtPrecioUnitarioProductos.Text = "0"
+                    txtISVProductos.Text = "0"
+                    txtCostoTotal.Text = "0"
+                End If
+            Catch ex As Exception
+                MsgBox("Debe llenar todos los campos obligatorios *")
+            End Try
+
         ElseIf txtCodOC.Text = "" Then
             MsgBox("Debe asignar una orden de compra")
         End If
@@ -55,7 +64,8 @@ Public Class E_frmOrdenCompra
     Public Sub E_frmOrdenCompra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtDiasCredito.Text = "0"
 
-
+        Label38.Text = ""
+        Label38.Text = ""
         Dim TableUM As New DataTable
         Dim TableUM2 As New DataTable
         Dim clsP As New ClsProducto
@@ -138,6 +148,18 @@ Public Class E_frmOrdenCompra
         txtCostoTotal.Clear()
 
 
+        txtConsignado.ReadOnly = False
+        txtAutorizado.ReadOnly = False
+        txtCodProveedor.ReadOnly = False
+
+        txtDiasCredito.ReadOnly = False
+        txtNumFactura.ReadOnly = False
+        txtLugarEntrega.ReadOnly = False
+        txtCondicionEntrega.ReadOnly = False
+        txtObservaciones.ReadOnly = False
+
+
+
 
 
         Dim clsOC As New ClsOrdenDeCompra
@@ -155,28 +177,33 @@ Public Class E_frmOrdenCompra
     End Sub
     Private Sub ActualizarOC()
         Dim clsOC As New ClsOrdenDeCompra
+        Dim estado As Boolean = False
+        Try
+            With clsOC
+                .IdOrdenCompra = Integer.Parse(txtCodOC.Text)
+                .IdFormaPago = cmbFormaDePago.SelectedValue()
+                .FechaElaboracion = DateTimePicker1.Value
+                .Condiciones = txtCondicionEntrega.Text
+                .UsuarioConsignado = txtConsignado.Text
+                .UsuarioSolicito = txtAutorizado.Text
+                .UsuarioAutorizo = ""
+                .DepartamentSolicita = Integer.Parse("1")
+                .DepartamentoAutoriza = Integer.Parse("1")
+                .ObservacionesOC = txtObservaciones.Text
+                .EstadoOC = estado
+                .IdProveedor = Integer.Parse(txtCodProveedor.Text)
+            End With
 
-        With clsOC
-            .IdOrdenCompra = Integer.Parse(txtCodOC.Text)
-            .IdFormaPago = cmbFormaDePago.SelectedValue()
-            .FechaElaboracion = DateTimePicker1.Value
-            .Condiciones = txtCondicionEntrega.Text
-            .UsuarioConsignado = txtConsignado.Text
-            .UsuarioSolicito = txtAutorizado.Text
-            .UsuarioAutorizo = ""
-            .DepartamentSolicita = Integer.Parse("1")
-            .DepartamentoAutoriza = Integer.Parse("1")
-            .ObservacionesOC = txtObservaciones.Text
-            .EstadoOC = False
-            .IdProveedor = Integer.Parse(txtCodProveedor.Text)
-        End With
+            If clsOC.ActualizarOC() = "1" Then
+                MsgBox("Agregado Exitosamente")
 
-        If clsOC.ActualizarOC() = "1" Then
-            MsgBox("Agregado Exitosamente")
+            End If
 
-        End If
+            CargarDGOC()
+        Catch ex As Exception
+            MsgBox("Debe llenar todos los campos obligatorios *")
+        End Try
 
-        CargarDGOC()
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         ActualizarOC()
@@ -231,16 +258,29 @@ Public Class E_frmOrdenCompra
     End Sub
 
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
+
+        cmbFormaDePago.SelectedValue = DataGridView2.Rows(e.RowIndex).Cells(2).Value
         Try
             txtCodOC.Text = DataGridView2.Rows(e.RowIndex).Cells(0).Value
-
             txtCodProveedor.Text = DataGridView2.Rows(e.RowIndex).Cells(2).Value
             txtCondicionEntrega.Text = DataGridView2.Rows(e.RowIndex).Cells(4).Value
-            txtCondicionEntrega.Text = DataGridView2.Rows(e.RowIndex).Cells(5).Value
-            txtConsignado.Text = DataGridView2.Rows(e.RowIndex).Cells(6).Value
             txtObservaciones.Text = DataGridView2.Rows(e.RowIndex).Cells(10).Value
 
+            txtAutorizado.Text = DataGridView2.Rows(e.RowIndex).Cells(7).Value
+            txt_estado_autorizacion.Text = DataGridView2.Rows(e.RowIndex).Cells(12).Value
+            RichTextBox1.Text = DataGridView2.Rows(e.RowIndex).Cells(14).Value
             CargarDetalleOC(txtCodOC.Text)
+            Label38.Text = DataGridView2.Rows(e.RowIndex).Cells(13).Value
+            Label37.Text = DataGridView2.Rows(e.RowIndex).Cells(3).Value
+            txtConsignado.ReadOnly = False
+            txtAutorizado.ReadOnly = False
+            txtCodProveedor.ReadOnly = False
+
+            txtDiasCredito.ReadOnly = False
+            txtNumFactura.ReadOnly = False
+            txtLugarEntrega.ReadOnly = False
+            txtCondicionEntrega.ReadOnly = False
+            txtObservaciones.ReadOnly = False
         Catch ex As Exception
 
         End Try
@@ -248,17 +288,7 @@ Public Class E_frmOrdenCompra
 
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        Try
-            CargarDGOCFecha(DateTimePicker3.Value.Date, DateTimePicker4.Value.Date)
-
-        Catch ex As Exception
-
-        End Try
-
-    End Sub
-
-    Private Sub CargarDGOCFecha(ByVal inicio As Date, ByVal fin As Date)
+    Private Sub CargarDGOCFecha()
         Try
             Dim clsOCOB As New ClsOrdenDeCompra
             Dim dvOC As DataView = clsOCOB.RecuperarOCPrFechas(DateTimePicker3.Value.Date, DateTimePicker4.Value.Date).DefaultView
@@ -283,5 +313,45 @@ Public Class E_frmOrdenCompra
         Dim clsDeOC As New clsDetalleOC
         Dim dvOC As DataView = clsDeOC.ListarDetalleOC(cod).DefaultView
         DataGridView5.DataSource = dvOC
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        CargarDGOCFecha()
+    End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+        Dim clsOCOB As New ClsOrdenDeCompra
+        Dim dvOC As DataView = clsOCOB.RecuperarOCPrFechas(DateTimePicker3.Value.Date, DateTimePicker4.Value.Date).DefaultView
+        dvOC.RowFilter = String.Format("CONVERT(id_oc, System.String) LIKE '%{0}%'", TextBox2.Text)
+        DataGridView4.DataSource = dvOC
+
+
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        MsgBox(RichTextBox1.Text)
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim clsD As New clsDetalleOC
+
+        With clsD
+            .IdDetalleOC = codigo_globas
+        End With
+
+        If clsD.EliminarDetalleOCEntrada() = "1" Then
+            MsgBox("Se elimino fila")
+            CargarDetalleOC(txtCodOC.Text)
+        End If
+
+    End Sub
+
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        Try
+            codigo_globas = DataGridView1.Rows(e.RowIndex).Cells(0).Value
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 End Class

@@ -236,56 +236,411 @@ Module ModulosVarios
                     MsgBox("Su usuario ha sido deshabilitado. Contactar al administrador")
 
                 Else
+                    _1A_PantallaCarga.Show()
 
-                    Form1.Show()
                     Form1.lblMiUser.Text = User
                     Form1.lblUserCod.Text = row("cod_usuario")
                     nombre_usurio = row("usuario")
                     codigo_usuario = row("cod_usuario")
                     'PERFIL DE USUARIO MODULOS HABILITADOS
                     Dim formulario As New ClsFormularios
+                    Dim ventanas As New ClsVentanasModulos
 
                     With formulario
 
                         .Cod_Perfil = Convert.ToInt32(row("codPerfil"))
 
-                        Dim dtPerfil As New DataTable
+                        Dim dtPerfil, dtVentanas As New DataTable
                         Dim filas As Integer
-                        dtPerfil = .FormulariosHabilitados()
+                        dtPerfil = .formulariosDePerfil()
 
                         'Recorrer Data para habilitar botones
                         For filas = 0 To dtPerfil.Rows.Count
 
 
                             If filas = 0 Then 'if conteo filas
-                                If dtPerfil.Rows(filas).Item(2) = True Then
+                                If dtPerfil.Rows(filas).Item(2) = True Then 'Permisos en Facturación
                                     Form1.btnFacturacion.Enabled = True
+
+                                    With ventanas
+                                        .Cod_Modulo = Convert.ToInt32(dtPerfil.Rows(filas).Item(0).ToString)
+                                        dtVentanas = .listarPermisos
+                                    End With
+
+                                    For i = 0 To dtVentanas.Rows.Count
+
+                                        If i = 0 Then 'if conteo
+
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnFactura.Enabled = True
+                                            End If
+                                        ElseIf i = 1 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnCotizar.Enabled = True
+                                            End If
+
+                                        ElseIf i = 2 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnRecibos.Enabled = True
+                                            End If
+                                        ElseIf i = 3 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnContactos.Enabled = True
+                                            End If
+                                        ElseIf i = 4 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnItem.Enabled = True
+                                            End If
+                                        ElseIf i = 5 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnGrupo.Enabled = True
+                                            End If
+                                        ElseIf i = 6 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnTermino.Enabled = True
+                                            End If
+                                        ElseIf i = 7 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnPacienteF.Enabled = True
+                                            End If
+                                        End If 'if conteo
+
+                                    Next
+
+
+                                    _1A_PantallaCarga.pBarInicio.Value += 20
+
+
+
+
+
                                 End If
-                            ElseIf filas = 1 Then
+                            ElseIf filas = 1 Then 'Permisos en Contabilidad
                                 If dtPerfil.Rows(filas).Item(2) = True Then
                                     Form1.btnContabilidad.Enabled = True
+
+
+                                    With ventanas
+                                        .Cod_Modulo = Convert.ToInt32(dtPerfil.Rows(filas).Item(0).ToString)
+                                        dtVentanas = .listarPermisos
+                                    End With
+
+                                    For i = 0 To dtVentanas.Rows.Count
+
+                                        If i = 0 Then 'if conteo
+
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnPrecio.Enabled = True
+                                            End If
+                                        ElseIf i = 1 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnListaPrecio.Enabled = True
+                                            End If
+
+                                        ElseIf i = 2 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnDescuento.Enabled = True
+                                            End If
+                                        ElseIf i = 3 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnPromociones.Enabled = True
+                                            End If
+                                        ElseIf i = 4 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnConsolidar.Enabled = True
+                                            End If
+                                        ElseIf i = 5 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnDepreciacion.Enabled = True
+                                            End If
+                                        ElseIf i = 6 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnPlanilla.Enabled = True
+                                            End If
+                                        ElseIf i = 7 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnCuentas.Enabled = True
+                                            End If
+                                        ElseIf i = 8 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnAsientos.Enabled = True
+                                            End If
+                                        ElseIf i = 9 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnCategoriaProveedor.Enabled = True
+                                            End If
+                                        ElseIf i = 10 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnProveedor.Enabled = True
+                                            End If
+                                        ElseIf i = 11 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnBancos.Enabled = True
+                                            End If
+                                        ElseIf i = 12 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnPeriodoContable.Enabled = True
+                                            End If
+                                        ElseIf i = 13 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnFormaPago.Enabled = True
+                                            End If
+                                        ElseIf i = 14 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnCAI.Enabled = True
+                                            End If
+                                        ElseIf i = 15 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnChequera.Enabled = True
+                                            End If
+                                        ElseIf i = 16 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnCheques.Enabled = True
+                                            End If
+                                        ElseIf i = 17 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnDepoBanc.Enabled = True
+                                            End If
+                                        ElseIf i = 18 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnFacturaCompra.Enabled = True
+                                            End If
+                                        ElseIf i = 19 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnPagos.Enabled = True
+                                            End If
+                                        End If 'if conteo
+
+                                    Next
+
+
+
+                                    _1A_PantallaCarga.pBarInicio.Value += 20
+
                                 End If
-                            ElseIf filas = 2 Then
+                            ElseIf filas = 2 Then 'Permisos en Laboratorio
                                 If dtPerfil.Rows(filas).Item(2) = True Then
                                     Form1.btnlaboratorio.Enabled = True
+
+
+                                    With ventanas
+                                        .Cod_Modulo = Convert.ToInt32(dtPerfil.Rows(filas).Item(0).ToString)
+                                        dtVentanas = .listarPermisos
+                                    End With
+
+                                    For i = 0 To dtVentanas.Rows.Count
+
+                                        If i = 0 Then 'if conteo
+
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnExamen.Enabled = True
+                                            Else
+                                                Form1.btnExamen.Enabled = False
+                                            End If
+                                        ElseIf i = 1 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnTrabajo.Enabled = True
+                                            End If
+
+                                        ElseIf i = 2 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnHojaTrabajo.Enabled = True
+                                            End If
+                                        ElseIf i = 3 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnEntrega.Enabled = True
+                                            End If
+                                        ElseIf i = 4 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnSede.Enabled = True
+                                            End If
+                                        ElseIf i = 5 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnSucursal.Enabled = True
+                                            End If
+                                        ElseIf i = 6 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnMedico.Enabled = True
+                                            End If
+                                        ElseIf i = 7 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnPaciente.Enabled = True
+                                            End If
+                                        ElseIf i = 8 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnConvenio.Enabled = True
+                                            End If
+                                        End If 'if conteo
+
+                                    Next
+
+                                    _1A_PantallaCarga.pBarInicio.Value += 20
+
                                 End If
-                            ElseIf filas = 3 Then
+
+                            ElseIf filas = 3 Then 'Permisos talento humano
                                 If dtPerfil.Rows(filas).Item(2) = True Then
                                     Form1.btnTalentoHumano.Enabled = True
+
+                                    With ventanas
+                                        .Cod_Modulo = Convert.ToInt32(dtPerfil.Rows(filas).Item(0).ToString)
+                                        dtVentanas = .listarPermisos
+                                    End With
+
+                                    For i = 0 To dtVentanas.Rows.Count
+
+                                        If i = 0 Then 'if conteo
+
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnPuestoTrabajo.Enabled = True
+                                            End If
+                                        ElseIf i = 1 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnHorarios.Enabled = True
+                                            End If
+
+                                        ElseIf i = 2 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnContratos.Enabled = True
+                                            End If
+                                        ElseIf i = 3 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnSucursales.Enabled = True
+                                            End If
+                                        ElseIf i = 4 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnPermisos.Enabled = True
+                                            End If
+                                        ElseIf i = 5 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnVacaciones.Enabled = True
+                                            End If
+                                        ElseIf i = 6 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnEmpleados.Enabled = True
+                                            End If
+                                        End If
+                                    Next
+
+
+                                    _1A_PantallaCarga.pBarInicio.Value += 20
+
                                 End If
-                            ElseIf filas = 4 Then
+
+                            ElseIf filas = 4 Then 'permisos en sistemas
                                 If dtPerfil.Rows(filas).Item(2) = True Then
 
                                     Form1.btnSistema.Enabled = True
+                                    With ventanas
+                                        .Cod_Modulo = Convert.ToInt32(dtPerfil.Rows(filas).Item(0).ToString)
+                                        dtVentanas = .listarPermisos
+                                    End With
+
+
+                                    For i = 0 To dtVentanas.Rows.Count
+
+                                        If i = 0 Then 'if conteo
+
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnUsuarios.Enabled = True
+                                            End If
+                                        ElseIf i = 1 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnPerfiles.Enabled = True
+                                            End If
+
+                                        ElseIf i = 2 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnServidorCorreo.Enabled = True
+                                            Else
+                                                Form1.btnServidorCorreo.Enabled = False
+                                            End If
+
+                                        End If
+                                    Next
+
+                                    _1A_PantallaCarga.pBarInicio.Value += 5
+
                                 End If
-                            ElseIf filas = 5 Then
+
+                            ElseIf filas = 5 Then 'Permisos Almacen
                                 If dtPerfil.Rows(filas).Item(2) = True Then
                                     Form1.btnAlmacen.Enabled = True
+                                    With ventanas
+                                        .Cod_Modulo = Convert.ToInt32(dtPerfil.Rows(filas).Item(0).ToString)
+                                        dtVentanas = .listarPermisos
+                                    End With
+
+                                    For i = 0 To dtVentanas.Rows.Count
+
+                                        If i = 0 Then 'if conteo
+
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnAlmacenes.Enabled = True
+                                            End If
+                                        ElseIf i = 1 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnSalidas.Enabled = True
+                                            End If
+
+                                        ElseIf i = 2 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnOrdeCompra.Enabled = True
+                                            End If
+                                        ElseIf i = 3 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnFactCompra.Enabled = True
+                                            End If
+                                        ElseIf i = 4 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnOrdenInterna.Enabled = True
+                                            End If
+                                        ElseIf i = 5 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnEntradas.Enabled = True
+                                            End If
+                                        ElseIf i = 6 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnProducto.Enabled = True
+                                            End If
+                                        ElseIf i = 7 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnProveedores.Enabled = True
+                                            End If
+                                        ElseIf i = 8 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnAutorizacion.Enabled = True
+
+                                            End If
+                                        ElseIf i = 9 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnBI.Enabled = True
+                                            End If
+                                        ElseIf i = 10 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnInventario.Enabled = True
+                                            End If
+                                        ElseIf i = 11 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnCategoria.Enabled = True
+                                            End If
+                                        ElseIf i = 12 Then
+                                            If dtVentanas.Rows(i).Item(2) = True Then
+                                                Form1.btnUnidadMedida.Enabled = True
+                                            End If
+                                        End If
+                                    Next
+
+                                    _1A_PantallaCarga.pBarInicio.Value += 15
+
+                                    _1A_PantallaCarga.Close()
+                                    Form1.Show()
                                 End If
 
                             End If ' final if conteo filas
 
                         Next
+
 
                     End With
 

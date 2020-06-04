@@ -5,7 +5,7 @@ Public Class ClsOrdenDeCompra
 
     Dim fecha_elaboracion As Date
 
-    Dim condicion, usuario_consignado, usuario_solicito, usuario_autorizo, departamento_solicita, departamento_autoriza, observaciones As String
+    Dim condicion, usuario_consignado, usuario_solicito, usuario_autorizo, departamento_solicita, departamento_autoriza, observaciones, obser_autorizacion, autorizacion_estado As String
     Dim estado As Boolean
 
     Public Property IdOrdenCompra As Integer
@@ -116,6 +116,24 @@ Public Class ClsOrdenDeCompra
         End Set
     End Property
 
+    Public Property Obser_autorizacion1 As String
+        Get
+            Return obser_autorizacion
+        End Get
+        Set(value As String)
+            obser_autorizacion = value
+        End Set
+    End Property
+
+    Public Property Autorizacion_estado1 As String
+        Get
+            Return autorizacion_estado
+        End Get
+        Set(value As String)
+            autorizacion_estado = value
+        End Set
+    End Property
+
     Public Function CrearrOrdenDeCompra() As Integer
         Dim sqlcom As SqlCommand
         sqlcom = New SqlCommand
@@ -130,7 +148,47 @@ Public Class ClsOrdenDeCompra
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select * from OrdenDeCompra", cn)
+        Using da As New SqlDataAdapter("select * from OrdenDeCompra where autorizacion = 'Pendiente' or autorizacion='Rechazada' ", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
+
+    Public Function RecuperarOCParaAutorizar() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select * from OrdenDeCompra where autorizacion <> 'Autorizada'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
+
+    Public Function RecuperarOCRechazadas(ByVal usuario As String, ByVal inicio As Date, ByVal fin As Date) As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select * from OrdenDeCompra where autorizacion = 'Rechazada' and usuario_autorizo ='" + usuario + "' and fecha_elaboracion between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
+
+
+    Public Function RecuperarOCAutorizadasUsuario(ByVal usuario As String, ByVal inicio As Date, ByVal fin As Date) As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select * from OrdenDeCompra where autorizacion = 'Autorizada' and usuario_autorizo ='" + usuario + "' and fecha_elaboracion between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "'", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             objCon.cerrarConexion()
@@ -220,6 +278,102 @@ Public Class ClsOrdenDeCompra
         sqlpar.ParameterName = "estado" 'nombre campo en el procedimiento almacenado 
         sqlpar.Value = EstadoOC
         sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
+
+    Public Function AutorizarOC() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slm_AutorizarOC"
+
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_oc" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = IdOrdenCompra
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "usuario_autorizo" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = UsuarioAutorizo
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "observaciones_autorizacion" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = Obser_autorizacion1
+        sqlcom.Parameters.Add(sqlpar)
+
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+    Public Function REchazarOC() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slm_REchazarOC"
+
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_oc" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = IdOrdenCompra
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "usuario_autorizo" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = UsuarioAutorizo
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "observaciones_autorizacion" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = Obser_autorizacion1
+        sqlcom.Parameters.Add(sqlpar)
+
+
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"

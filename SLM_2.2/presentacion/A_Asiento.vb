@@ -13,7 +13,7 @@
     Private Sub frmAsientos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try
-
+            alternarColoFilasDatagridview(dtDetalleAsiento)
             Dim Detalle As New ClsDetalleAsiento
 
             With Detalle
