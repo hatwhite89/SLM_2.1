@@ -189,6 +189,8 @@ Partial Class Form1
         Me.lblMiUser = New System.Windows.Forms.Label()
         Me.lblUserCod = New System.Windows.Forms.Label()
         Me.Apariencia = New Sunisoft.IrisSkin.SkinEngine(CType(Me, System.ComponentModel.Component))
+        Me.pbxMaquinasLocales = New System.Windows.Forms.PictureBox()
+        Me.btnMaquinasLocales = New System.Windows.Forms.Button()
         Me.gbxMenu.SuspendLayout()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
@@ -269,6 +271,7 @@ Partial Class Form1
         Me.TabControl5.SuspendLayout()
         Me.TabPage10.SuspendLayout()
         Me.TabPage11.SuspendLayout()
+        CType(Me.pbxMaquinasLocales, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -1083,7 +1086,7 @@ Partial Class Form1
         '
         Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 24)
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 26)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
         '
         'CerrarToolStripMenuItem
@@ -1123,6 +1126,8 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.pbxMaquinasLocales)
+        Me.TabPage1.Controls.Add(Me.btnMaquinasLocales)
         Me.TabPage1.Controls.Add(Me.PictureBox34)
         Me.TabPage1.Controls.Add(Me.PictureBox33)
         Me.TabPage1.Controls.Add(Me.PictureBox32)
@@ -2410,7 +2415,7 @@ Partial Class Form1
         Me.lblMiUser.AutoSize = True
         Me.lblMiUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMiUser.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.lblMiUser.Location = New System.Drawing.Point(76, 580)
+        Me.lblMiUser.Location = New System.Drawing.Point(76, 581)
         Me.lblMiUser.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblMiUser.Name = "lblMiUser"
         Me.lblMiUser.Size = New System.Drawing.Size(51, 17)
@@ -2437,6 +2442,26 @@ Partial Class Form1
         Me.Apariencia.SerialNumber = "U4N2UjLguUZs33UR+Vy47JAZ81t2fjIFvut28vc5oHiVeivGb/NZMA=="
         Me.Apariencia.SkinFile = Nothing
         Me.Apariencia.SkinStreamMain = CType(resources.GetObject("Apariencia.SkinStreamMain"), System.IO.Stream)
+        '
+        'pbxMaquinasLocales
+        '
+        Me.pbxMaquinasLocales.Location = New System.Drawing.Point(261, 267)
+        Me.pbxMaquinasLocales.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pbxMaquinasLocales.Name = "pbxMaquinasLocales"
+        Me.pbxMaquinasLocales.Size = New System.Drawing.Size(100, 64)
+        Me.pbxMaquinasLocales.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbxMaquinasLocales.TabIndex = 19
+        Me.pbxMaquinasLocales.TabStop = False
+        '
+        'btnMaquinasLocales
+        '
+        Me.btnMaquinasLocales.Location = New System.Drawing.Point(261, 340)
+        Me.btnMaquinasLocales.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnMaquinasLocales.Name = "btnMaquinasLocales"
+        Me.btnMaquinasLocales.Size = New System.Drawing.Size(100, 46)
+        Me.btnMaquinasLocales.TabIndex = 18
+        Me.btnMaquinasLocales.Text = "Máquinas Locales"
+        Me.btnMaquinasLocales.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -2547,6 +2572,7 @@ Partial Class Form1
         Me.TabControl5.ResumeLayout(False)
         Me.TabPage10.ResumeLayout(False)
         Me.TabPage11.ResumeLayout(False)
+        CType(Me.pbxMaquinasLocales, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2718,4 +2744,6 @@ Partial Class Form1
     Friend WithEvents btnArea As Button
     Friend WithEvents btnTipoDeducciones As Button
     Friend WithEvents btnProfesion As Button
+    Friend WithEvents pbxMaquinasLocales As PictureBox
+    Friend WithEvents btnMaquinasLocales As Button
 End Class

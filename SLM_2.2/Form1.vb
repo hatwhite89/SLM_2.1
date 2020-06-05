@@ -637,4 +637,8 @@
         M_Departamento.ShowDialog()
     End Sub
 
+    Private Sub btnMaquinasLocales_Click(sender As Object, e As EventArgs) Handles btnMaquinasLocales.Click
+        M_MaquinasLocales.lblform.Text = "Form1"
+        M_MaquinasLocales.ShowDialog()
+    End Sub
 End Class
