@@ -94,7 +94,7 @@
         Try
             txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
             rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
-            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtdescripcion.Text) <> "") Then
+            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtdescripcion.Text) <> "" And Trim(lblcodeSucursal.Text) <> "") Then
                 Dim objMaqLoc As New ClsMaquinasLocales
                 With objMaqLoc
                     .codigoMaquinasLocales_ = txtcodigo.Text
@@ -103,7 +103,7 @@
                 End With
 
                 If objMaqLoc.RegistrarNuevaMaquinaLocal() = 1 Then
-                    MsgBox("Registrado correctamente.")
+                    MsgBox("Registrado correctamente.", MsgBoxStyle.Information)
 
                     Dim dv As DataView = objMaqLoc.SeleccionarMaquinasLocales.DefaultView
                     dgbtabla.DataSource = dv
@@ -125,7 +125,7 @@
             End If
 
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox("Debe ingresar un código breve y descripción único en el sistema.", MsgBoxStyle.Critical)
         End Try
     End Sub
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
@@ -134,7 +134,7 @@
             txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
             rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
 
-            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtdescripcion.Text) <> "") Then
+            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtdescripcion.Text) <> "" And Trim(lblcodeSucursal.Text) <> "") Then
 
                 Dim objMaqLoc As New ClsMaquinasLocales
                 With objMaqLoc
@@ -145,7 +145,7 @@
                 End With
 
                 If objMaqLoc.ModificarMaquinasLocales() = 1 Then
-                    MsgBox("Modificado correctamente.")
+                    MsgBox("Modificado correctamente.", MsgBoxStyle.Information)
 
                     Dim dv As DataView = objMaqLoc.SeleccionarMaquinasLocales.DefaultView
                     dgbtabla.DataSource = dv
@@ -243,4 +243,5 @@
         M_Sucursal.lblform.Text = "M_MaquinasLocales"
         M_Sucursal.ShowDialog()
     End Sub
+
 End Class

@@ -30,6 +30,7 @@ Partial Class M_MaquinasLocales
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.gbxcaja = New System.Windows.Forms.GroupBox()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.lblcodeSucursal = New System.Windows.Forms.Label()
         Me.txtnombreSucursal = New System.Windows.Forms.TextBox()
         Me.lblcode = New System.Windows.Forms.Label()
@@ -44,7 +45,6 @@ Partial Class M_MaquinasLocales
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
-        Me.lblform = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxcaja.SuspendLayout()
@@ -143,15 +143,26 @@ Partial Class M_MaquinasLocales
         Me.gbxcaja.TabStop = False
         Me.gbxcaja.Text = "REGISTRAR MÁQUINAS LOCALES"
         '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(354, 0)
+        Me.lblform.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(71, 17)
+        Me.lblform.TabIndex = 138
+        Me.lblform.Text = "formulario"
+        Me.lblform.Visible = False
+        '
         'lblcodeSucursal
         '
         Me.lblcodeSucursal.AutoSize = True
         Me.lblcodeSucursal.Location = New System.Drawing.Point(117, 71)
         Me.lblcodeSucursal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcodeSucursal.Name = "lblcodeSucursal"
-        Me.lblcodeSucursal.Size = New System.Drawing.Size(50, 17)
+        Me.lblcodeSucursal.Size = New System.Drawing.Size(0, 17)
         Me.lblcodeSucursal.TabIndex = 137
-        Me.lblcodeSucursal.Text = "codigo"
+        Me.lblcodeSucursal.Visible = False
         '
         'txtnombreSucursal
         '
@@ -302,16 +313,6 @@ Partial Class M_MaquinasLocales
         Me.btnguardar.TabIndex = 108
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
-        '
-        'lblform
-        '
-        Me.lblform.AutoSize = True
-        Me.lblform.Location = New System.Drawing.Point(354, 0)
-        Me.lblform.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblform.Name = "lblform"
-        Me.lblform.Size = New System.Drawing.Size(71, 17)
-        Me.lblform.TabIndex = 138
-        Me.lblform.Text = "formulario"
         '
         'M_MaquinasLocales
         '
