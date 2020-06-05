@@ -33,9 +33,11 @@ Partial Class A_ListarCAI
         'gbxRegistros
         '
         Me.gbxRegistros.Controls.Add(Me.dtCAIS)
-        Me.gbxRegistros.Location = New System.Drawing.Point(12, 12)
+        Me.gbxRegistros.Location = New System.Drawing.Point(16, 15)
+        Me.gbxRegistros.Margin = New System.Windows.Forms.Padding(4)
         Me.gbxRegistros.Name = "gbxRegistros"
-        Me.gbxRegistros.Size = New System.Drawing.Size(515, 397)
+        Me.gbxRegistros.Padding = New System.Windows.Forms.Padding(4)
+        Me.gbxRegistros.Size = New System.Drawing.Size(687, 489)
         Me.gbxRegistros.TabIndex = 0
         Me.gbxRegistros.TabStop = False
         Me.gbxRegistros.Text = "Registros"
@@ -43,38 +45,45 @@ Partial Class A_ListarCAI
         'dtCAIS
         '
         Me.dtCAIS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtCAIS.Location = New System.Drawing.Point(6, 19)
+        Me.dtCAIS.Location = New System.Drawing.Point(8, 23)
+        Me.dtCAIS.Margin = New System.Windows.Forms.Padding(4)
         Me.dtCAIS.Name = "dtCAIS"
+        Me.dtCAIS.ReadOnly = True
+        Me.dtCAIS.RowHeadersWidth = 51
         Me.dtCAIS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCAIS.Size = New System.Drawing.Size(503, 372)
+        Me.dtCAIS.Size = New System.Drawing.Size(671, 458)
         Me.dtCAIS.TabIndex = 0
         '
         'btnCrear
         '
-        Me.btnCrear.Location = New System.Drawing.Point(366, 415)
+        Me.btnCrear.Location = New System.Drawing.Point(488, 511)
+        Me.btnCrear.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCrear.Name = "btnCrear"
-        Me.btnCrear.Size = New System.Drawing.Size(75, 23)
+        Me.btnCrear.Size = New System.Drawing.Size(100, 28)
         Me.btnCrear.TabIndex = 1
         Me.btnCrear.Text = "Crear"
         Me.btnCrear.UseVisualStyleBackColor = True
         '
         'btnCerrar
         '
-        Me.btnCerrar.Location = New System.Drawing.Point(452, 415)
+        Me.btnCerrar.Location = New System.Drawing.Point(603, 511)
+        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCerrar.Size = New System.Drawing.Size(100, 28)
         Me.btnCerrar.TabIndex = 2
         Me.btnCerrar.Text = "Cerrar"
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
         'A_ListarCAI
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(535, 446)
+        Me.ClientSize = New System.Drawing.Size(713, 549)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnCrear)
         Me.Controls.Add(Me.gbxRegistros)
+        Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "A_ListarCAI"
         Me.Text = "Registros"
         Me.gbxRegistros.ResumeLayout(False)

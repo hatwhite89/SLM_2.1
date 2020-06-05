@@ -1,4 +1,6 @@
-﻿Public Class E_frmInventario
+﻿
+Imports Microsoft.Office.Interop
+Public Class E_frmInventario
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         Dim clsA As New clsInventario
         Try

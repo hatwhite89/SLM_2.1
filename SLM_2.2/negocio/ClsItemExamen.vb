@@ -3,7 +3,7 @@ Imports System.Data.SqlClient
 Public Class ClsItemExamen
 
     'Variables
-    Dim codItemExa As Integer
+    Dim codItemExa, codigoSubArea As Integer
     Dim codBreve, descripcion, grupo, clasificacion, abreviatura, comentario As String
     Dim precioBase As Double
     Dim estado As Boolean
@@ -105,6 +105,16 @@ Public Class ClsItemExamen
         End Set
     End Property
 
+    'codigoSubArea
+    Public Property codigoSubArea_ As Integer
+        Get
+            Return codigoSubArea
+        End Get
+        Set(value As Integer)
+            codigoSubArea = value
+        End Set
+    End Property
+
 
     ':::::::::::::::::::::::::::::::::::::::::::::: Funciones de Mantenimiento ::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -158,6 +168,11 @@ Public Class ClsItemExamen
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "estado"
         sqlpar.Value = Estad_o
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoSubArea"
+        sqlpar.Value = codigoSubArea_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -236,6 +251,11 @@ Public Class ClsItemExamen
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "estado"
         sqlpar.Value = Estad_o
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoSubArea"
+        sqlpar.Value = codigoSubArea_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

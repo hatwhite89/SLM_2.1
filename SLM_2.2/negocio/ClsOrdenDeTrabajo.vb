@@ -4,7 +4,7 @@ Public Class ClsOrdenDeTrabajo
 
     Dim cod_orden_trabajo, cod_factura, pmUsuario, npUsuario, epUsuario, prUsuario, coUsuario As Integer
     Dim estado, curva, facturaTomaMuestra, tecnicoLab As String
-    Dim enUsuario, inUsuario, cod_sede, cod_tecnico, cod_validador, cod_objeto, cod_grupo As Integer
+    Dim enUsuario, inUsuario, cod_sede, cod_tecnico, cod_validador, cod_objeto, codigoSubArea As Integer
     Dim pmFecha, npFecha, epFecha, prFecha, coFecha, enFecha, inFecha, fechaEntrega As Date
     Dim enviadaWS, enviadaEmail, cortesia, urgente, entregarMedico, entregarPaciente As Boolean
     'Constructor
@@ -19,12 +19,12 @@ Public Class ClsOrdenDeTrabajo
             cod_orden_trabajo = value
         End Set
     End Property
-    Public Property cod_grupo_ As Integer
+    Public Property codigoSubArea_ As Integer
         Get
-            Return cod_grupo
+            Return codigoSubArea
         End Get
         Set(value As Integer)
-            cod_grupo = value
+            codigoSubArea = value
         End Set
     End Property
     Public Property cod_factura_ As Integer
@@ -311,8 +311,8 @@ Public Class ClsOrdenDeTrabajo
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "cod_grupo" 'nombre campo en el procedimiento almacenado 
-        sqlpar.Value = cod_grupo_
+        sqlpar.ParameterName = "codigoSubArea" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = codigoSubArea_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -504,8 +504,8 @@ Public Class ClsOrdenDeTrabajo
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "cod_grupo" 'nombre campo en el procedimiento almacenado 
-        sqlpar.Value = cod_grupo_
+        sqlpar.ParameterName = "codigoSubArea" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = codigoSubArea_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

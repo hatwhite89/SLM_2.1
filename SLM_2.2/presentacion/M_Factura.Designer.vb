@@ -43,20 +43,10 @@ Partial Class M_Factura
         Me.lblpoliza = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.gbxlistadoExamenes = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.lblPromocion = New System.Windows.Forms.Label()
         Me.btnQuitarPromocion = New System.Windows.Forms.Button()
         Me.btnPromocion = New System.Windows.Forms.Button()
         Me.dgblistadoExamenes = New System.Windows.Forms.DataGridView()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaEntrega = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.grupo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codeDetFact = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblpagoPaciente = New System.Windows.Forms.Label()
         Me.lblvuelto = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
@@ -120,8 +110,16 @@ Partial Class M_Factura
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtCodigoBreveMaquina = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaEntrega = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.subArea = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codeDetFact = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbxlistadoExamenes.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -331,7 +329,6 @@ Partial Class M_Factura
         '
         Me.gbxlistadoExamenes.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.gbxlistadoExamenes.Controls.Add(Me.DataGridView1)
         Me.gbxlistadoExamenes.Controls.Add(Me.lblPromocion)
         Me.gbxlistadoExamenes.Controls.Add(Me.btnQuitarPromocion)
         Me.gbxlistadoExamenes.Controls.Add(Me.btnPromocion)
@@ -345,18 +342,6 @@ Partial Class M_Factura
         Me.gbxlistadoExamenes.TabIndex = 34
         Me.gbxlistadoExamenes.TabStop = False
         Me.gbxlistadoExamenes.Text = "Listado Exámenes"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(844, 66)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(280, 150)
-        Me.DataGridView1.TabIndex = 106
-        Me.DataGridView1.Visible = False
         '
         'lblPromocion
         '
@@ -401,7 +386,7 @@ Partial Class M_Factura
         Me.dgblistadoExamenes.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgblistadoExamenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgblistadoExamenes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.Cantidad, Me.Precio, Me.Descripcion, Me.FechaEntrega, Me.Descuento, Me.Subtotal, Me.grupo, Me.codeDetFact})
+        Me.dgblistadoExamenes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.Cantidad, Me.Precio, Me.Descripcion, Me.FechaEntrega, Me.Descuento, Me.Subtotal, Me.subArea, Me.codeDetFact})
         Me.dgblistadoExamenes.Location = New System.Drawing.Point(21, 58)
         Me.dgblistadoExamenes.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgblistadoExamenes.Name = "dgblistadoExamenes"
@@ -409,76 +394,6 @@ Partial Class M_Factura
         Me.dgblistadoExamenes.RowTemplate.Height = 24
         Me.dgblistadoExamenes.Size = New System.Drawing.Size(1103, 158)
         Me.dgblistadoExamenes.TabIndex = 0
-        '
-        'codigo
-        '
-        Me.codigo.HeaderText = "Código"
-        Me.codigo.MinimumWidth = 6
-        Me.codigo.Name = "codigo"
-        Me.codigo.Width = 70
-        '
-        'Cantidad
-        '
-        Me.Cantidad.HeaderText = "Cantidad"
-        Me.Cantidad.MinimumWidth = 6
-        Me.Cantidad.Name = "Cantidad"
-        Me.Cantidad.Width = 60
-        '
-        'Precio
-        '
-        Me.Precio.HeaderText = "Precio"
-        Me.Precio.MinimumWidth = 6
-        Me.Precio.Name = "Precio"
-        Me.Precio.ReadOnly = True
-        Me.Precio.Width = 70
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripción"
-        Me.Descripcion.MinimumWidth = 100
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
-        Me.Descripcion.Width = 220
-        '
-        'FechaEntrega
-        '
-        Me.FechaEntrega.HeaderText = "Fecha Entrega"
-        Me.FechaEntrega.MinimumWidth = 6
-        Me.FechaEntrega.Name = "FechaEntrega"
-        Me.FechaEntrega.ReadOnly = True
-        Me.FechaEntrega.Width = 80
-        '
-        'Descuento
-        '
-        Me.Descuento.HeaderText = "Descuento"
-        Me.Descuento.MinimumWidth = 6
-        Me.Descuento.Name = "Descuento"
-        Me.Descuento.ReadOnly = True
-        Me.Descuento.Width = 70
-        '
-        'Subtotal
-        '
-        Me.Subtotal.HeaderText = "Subtotal"
-        Me.Subtotal.MinimumWidth = 6
-        Me.Subtotal.Name = "Subtotal"
-        Me.Subtotal.ReadOnly = True
-        Me.Subtotal.Width = 90
-        '
-        'grupo
-        '
-        Me.grupo.HeaderText = "grupo"
-        Me.grupo.MinimumWidth = 6
-        Me.grupo.Name = "grupo"
-        Me.grupo.Visible = False
-        Me.grupo.Width = 125
-        '
-        'codeDetFact
-        '
-        Me.codeDetFact.HeaderText = "codeDetFact"
-        Me.codeDetFact.MinimumWidth = 6
-        Me.codeDetFact.Name = "codeDetFact"
-        Me.codeDetFact.Visible = False
-        Me.codeDetFact.Width = 125
         '
         'lblpagoPaciente
         '
@@ -1183,6 +1098,75 @@ Partial Class M_Factura
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Detalle de pago"
         '
+        'codigo
+        '
+        Me.codigo.HeaderText = "Código"
+        Me.codigo.MinimumWidth = 6
+        Me.codigo.Name = "codigo"
+        Me.codigo.Width = 70
+        '
+        'Cantidad
+        '
+        Me.Cantidad.HeaderText = "Cantidad"
+        Me.Cantidad.MinimumWidth = 6
+        Me.Cantidad.Name = "Cantidad"
+        Me.Cantidad.Width = 60
+        '
+        'Precio
+        '
+        Me.Precio.HeaderText = "Precio"
+        Me.Precio.MinimumWidth = 6
+        Me.Precio.Name = "Precio"
+        Me.Precio.ReadOnly = True
+        Me.Precio.Width = 70
+        '
+        'Descripcion
+        '
+        Me.Descripcion.HeaderText = "Descripción"
+        Me.Descripcion.MinimumWidth = 100
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.ReadOnly = True
+        Me.Descripcion.Width = 220
+        '
+        'FechaEntrega
+        '
+        Me.FechaEntrega.HeaderText = "Fecha Entrega"
+        Me.FechaEntrega.MinimumWidth = 6
+        Me.FechaEntrega.Name = "FechaEntrega"
+        Me.FechaEntrega.ReadOnly = True
+        Me.FechaEntrega.Width = 80
+        '
+        'Descuento
+        '
+        Me.Descuento.HeaderText = "Descuento"
+        Me.Descuento.MinimumWidth = 6
+        Me.Descuento.Name = "Descuento"
+        Me.Descuento.ReadOnly = True
+        Me.Descuento.Width = 70
+        '
+        'Subtotal
+        '
+        Me.Subtotal.HeaderText = "Subtotal"
+        Me.Subtotal.MinimumWidth = 6
+        Me.Subtotal.Name = "Subtotal"
+        Me.Subtotal.ReadOnly = True
+        Me.Subtotal.Width = 90
+        '
+        'subArea
+        '
+        Me.subArea.HeaderText = "subArea"
+        Me.subArea.MinimumWidth = 6
+        Me.subArea.Name = "subArea"
+        Me.subArea.Width = 125
+        '
+        'codeDetFact
+        '
+        Me.codeDetFact.HeaderText = "codeDetFact"
+        Me.codeDetFact.MinimumWidth = 6
+        Me.codeDetFact.Name = "codeDetFact"
+        Me.codeDetFact.Visible = False
+        Me.codeDetFact.Width = 125
+        '
         'M_Factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1250,7 +1234,6 @@ Partial Class M_Factura
         Me.Text = "Factura Laboratorios Médicos"
         Me.gbxlistadoExamenes.ResumeLayout(False)
         Me.gbxlistadoExamenes.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -1347,7 +1330,10 @@ Partial Class M_Factura
     Friend WithEvents Button1 As Button
     Friend WithEvents cbxAnular As CheckBox
     Friend WithEvents btnImprimir As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents BuscarExamenToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents txtCodigoBreveMaquina As TextBox
     Friend WithEvents codigo As DataGridViewTextBoxColumn
     Friend WithEvents Cantidad As DataGridViewTextBoxColumn
     Friend WithEvents Precio As DataGridViewTextBoxColumn
@@ -1355,10 +1341,6 @@ Partial Class M_Factura
     Friend WithEvents FechaEntrega As DataGridViewTextBoxColumn
     Friend WithEvents Descuento As DataGridViewTextBoxColumn
     Friend WithEvents Subtotal As DataGridViewTextBoxColumn
-    Friend WithEvents grupo As DataGridViewTextBoxColumn
+    Friend WithEvents subArea As DataGridViewTextBoxColumn
     Friend WithEvents codeDetFact As DataGridViewTextBoxColumn
-    Friend WithEvents BuscarExamenToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents txtCodigoBreveMaquina As TextBox
 End Class

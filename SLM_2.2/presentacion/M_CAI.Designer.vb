@@ -283,7 +283,6 @@ Partial Class M_CAI
         Me.lblCodigo.Size = New System.Drawing.Size(50, 17)
         Me.lblCodigo.TabIndex = 131
         Me.lblCodigo.Text = "codigo"
-        Me.lblCodigo.Visible = False
         '
         'btnModificar
         '
@@ -330,6 +329,7 @@ Partial Class M_CAI
         Me.Controls.Add(Me.lblDesdeF)
         Me.Controls.Add(Me.lblCAI)
         Me.Controls.Add(Me.GroupBox1)
+        Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "M_CAI"
         Me.Text = "CAI"
