@@ -118,31 +118,40 @@ where o.id_departamento=d.codigo and o.id_usuario = u.cod_usuario and o.id_oi='1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-        Dim clsS As New ClsSalidaAlmacen
-
-        With clsS
-            .CantidadProducto = txtCantidad.Text
-            .Descripcion = RichTextBox1.Text
-            .FechaVencimiento = DateTimePicker2.Value
-            .IdAlmacen = id_almacen
-            .IdProducto = id_producto
-            .Id_departamento1 = id_departamento_recibe
-            .Id_oi1 = txtCodOI.Text
-            .LoteProducto = txtLote.Text
-            .Persona_entrega1 = txtEntrega.Text
-            .Persona_recibe1 = txtPersonaRecibe.Text
-            .Producto1 = txtProducto.Text
-            .Tipo_movimiento1 = ComboBox1.SelectedItem.ToString
-            .Id_detalle_oi1 = id_detalle_oi
-
-        End With
-
-        If clsS.RegistrarSalidaAlmacen() = "1" Then
-            MsgBox("salida registrada exitosamente")
+        If txtCantidadEntregada.Text = "" Then
+            MsgBox("Debe ingresar la cantidad a entregar")
+            Exit Sub
         End If
 
-        CargarDataOI(txtCodOI.Text)
+        Dim clsS As New ClsSalidaAlmacen
+        Try
+
+
+            With clsS
+                .CantidadProducto = txtCantidad.Text
+                .Descripcion = RichTextBox1.Text
+                .FechaVencimiento = DateTimePicker2.Value
+                .IdAlmacen = id_almacen
+                .IdProducto = id_producto
+                .Id_departamento1 = id_departamento_recibe
+                .Id_oi1 = txtCodOI.Text
+                .LoteProducto = txtLote.Text
+                .Persona_entrega1 = txtEntrega.Text
+                .Persona_recibe1 = txtPersonaRecibe.Text
+                .Producto1 = txtProducto.Text
+                .Tipo_movimiento1 = ComboBox1.SelectedItem.ToString
+                .Id_detalle_oi1 = id_detalle_oi
+
+            End With
+
+            If clsS.RegistrarSalidaAlmacen() = "1" Then
+                MsgBox("salida registrada exitosamente")
+            End If
+
+            CargarDataOI(txtCodOI.Text)
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Function GridAExcel(ByVal miDataGridView As DataGridView) As Boolean

@@ -12,7 +12,7 @@
     End Sub
 
     Private Sub E_frmSolicitudInternaAlmacen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        txtCantidadRequerida.Text = "0"
         CargarComboSedes()
         CargarAreas()
         txtSolicitante.Text = nombre_usurio
@@ -86,10 +86,15 @@
     End Sub
 
     Private Sub txtAgregarInventario_Click(sender As Object, e As EventArgs) Handles txtAgregarInventario.Click
-        agregarInventario()
-        Threading.Thread.Sleep(1000)
-        ActualizarOrdenInterna()
-        CargarDGOI()
+        Try
+            agregarInventario()
+            Threading.Thread.Sleep(1000)
+            ActualizarOrdenInterna()
+            CargarDGOI()
+            txtCantidadRequerida.Text = "0"
+        Catch ex As Exception
+            MsgBox("Debe seleccionar un producto y asignar una cantidad")
+        End Try
 
     End Sub
 
@@ -122,9 +127,30 @@
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-
+        CargarMisSolicitudes()
     End Sub
 
+    Private Sub CargarMisSolicitudes()
+        Try
+            Dim clsOCOB As New clsOrdenInterna
+            Dim dvOC As DataView = clsOCOB.MisSolicitudesFecha(DateTimePicker2.Value.Date, DateTimePicker3.Value.Date, codigo_usuario).DefaultView
+            DataGridView3.DataSource = dvOC
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+    Private Sub cargarDetalleSolicitudes(ByVal id As String)
+        Try
+            Dim clsOI As New clsOrdenInterna
+            Dim dvOC As DataView = clsOI.listarDetallesMisSolicitudes(id).DefaultView
+
+            DataGridView4.DataSource = dvOC
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'eliminar fila de la solicitud
         Try
@@ -150,6 +176,14 @@
 
         End Try
 
+    End Sub
+
+    Private Sub DataGridView3_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellClick
+        Try
+            cargarDetalleSolicitudes(DataGridView3.Rows(e.RowIndex).Cells(0).Value)
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Public Sub ActualizarOrdenInterna()
