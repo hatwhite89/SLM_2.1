@@ -624,6 +624,12 @@
     <Compile Include="presentacion\E_ListarSubAreas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_ListarSubAreasXArea.Designer.vb">
+      <DependentUpon>E_ListarSubAreasXArea.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_ListarSubAreasXArea.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_ListarUnidades.Designer.vb">
       <DependentUpon>E_ListarUnidades.vb</DependentUpon>
     </Compile>
@@ -1333,6 +1339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_ListarSubAreas.resx">
       <DependentUpon>E_ListarSubAreas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_ListarSubAreasXArea.resx">
+      <DependentUpon>E_ListarSubAreasXArea.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_ListarUnidades.resx">
       <DependentUpon>E_ListarUnidades.vb</DependentUpon>

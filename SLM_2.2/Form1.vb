@@ -641,4 +641,12 @@
         M_MaquinasLocales.lblform.Text = "Form1"
         M_MaquinasLocales.ShowDialog()
     End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+        E_frmProcesarSolicitudInterna.ShowDialog()
+    End Sub
+
+    Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
+        PanelAlmacen.Visible = False
+    End Sub
 End Class
