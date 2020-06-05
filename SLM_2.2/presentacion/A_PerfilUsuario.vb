@@ -151,6 +151,7 @@
                 With perfil
                     .Cod_Breve = txtCodBreve.Text
                     .Descripcion_ = txtDescripcion.Text
+                    .Estado_ = chkHabilitar.Checked
 
                     If .registrarPerfil = 1 Then ' Se valida guardado de datos del perfil 
                         Dim dt As New DataTable
@@ -547,6 +548,8 @@
         dtAlmacen.Rows.Add("", "Inventario", False, "")
         dtAlmacen.Rows.Add("", "Categorias", False, "")
         dtAlmacen.Rows.Add("", "Unidad de Medida", False, "")
+        dtAlmacen.Rows.Add("", "Solicitudes", False, "")
+
 
     End Sub
 
