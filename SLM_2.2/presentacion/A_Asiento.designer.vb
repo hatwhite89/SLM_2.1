@@ -44,10 +44,10 @@ Partial Class frmAsientos
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.btnCrear = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnCrear = New System.Windows.Forms.Button()
         CType(Me.dtDetalleAsiento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -248,23 +248,15 @@ Partial Class frmAsientos
         Me.GroupBox3.TabIndex = 21
         Me.GroupBox3.TabStop = False
         '
-        'btnCrear
+        'Label3
         '
-        Me.btnCrear.Location = New System.Drawing.Point(383, 13)
-        Me.btnCrear.Name = "btnCrear"
-        Me.btnCrear.Size = New System.Drawing.Size(75, 23)
-        Me.btnCrear.TabIndex = 0
-        Me.btnCrear.Text = "Crear Nuevo"
-        Me.btnCrear.UseVisualStyleBackColor = True
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Location = New System.Drawing.Point(464, 13)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
-        Me.btnModificar.TabIndex = 1
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(6, 12)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(171, 24)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Asientos Contables"
         '
         'btnGuardar
         '
@@ -275,15 +267,23 @@ Partial Class frmAsientos
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
-        'Label3
+        'btnModificar
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(6, 12)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(171, 24)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Asientos Contables"
+        Me.btnModificar.Location = New System.Drawing.Point(464, 13)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar.TabIndex = 1
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
+        'btnCrear
+        '
+        Me.btnCrear.Location = New System.Drawing.Point(383, 13)
+        Me.btnCrear.Name = "btnCrear"
+        Me.btnCrear.Size = New System.Drawing.Size(75, 23)
+        Me.btnCrear.TabIndex = 0
+        Me.btnCrear.Text = "Crear Nuevo"
+        Me.btnCrear.UseVisualStyleBackColor = True
         '
         'frmAsientos
         '

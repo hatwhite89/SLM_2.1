@@ -64,7 +64,7 @@ Partial Class M_InicioSesion
         Me.txtPassword.MaxLength = 32767
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(202, 24)
-        Me.txtPassword.TabIndex = 139
+        Me.txtPassword.TabIndex = 1
         Me.txtPassword.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtPassword.UIFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.UIFontColor = "#999999"
@@ -85,7 +85,7 @@ Partial Class M_InicioSesion
         Me.txtUsuario.MaxLength = 32767
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(202, 24)
-        Me.txtUsuario.TabIndex = 138
+        Me.txtUsuario.TabIndex = 0
         Me.txtUsuario.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtUsuario.UIFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.UIFontColor = "#999999"
@@ -134,7 +134,7 @@ Partial Class M_InicioSesion
         Me.Button1.Location = New System.Drawing.Point(60, 353)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(218, 28)
-        Me.Button1.TabIndex = 123
+        Me.Button1.TabIndex = 3
         Me.Button1.Text = "Cerrar"
         Me.Button1.UseVisualStyleBackColor = False
         '
@@ -148,7 +148,7 @@ Partial Class M_InicioSesion
         Me.btnInicioSesion.Margin = New System.Windows.Forms.Padding(2)
         Me.btnInicioSesion.Name = "btnInicioSesion"
         Me.btnInicioSesion.Size = New System.Drawing.Size(218, 28)
-        Me.btnInicioSesion.TabIndex = 122
+        Me.btnInicioSesion.TabIndex = 2
         Me.btnInicioSesion.Text = "Iniciar Sesión"
         Me.btnInicioSesion.UseVisualStyleBackColor = False
         '

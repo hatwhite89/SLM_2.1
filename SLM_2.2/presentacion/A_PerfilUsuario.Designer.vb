@@ -36,6 +36,7 @@ Partial Class A_PerfilUsuario
         Me.gbxModulos = New System.Windows.Forms.GroupBox()
         Me.tcModulos = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.lblCod_MFact = New System.Windows.Forms.Label()
         Me.chkFacturacion = New System.Windows.Forms.CheckBox()
         Me.dtFacturacion = New System.Windows.Forms.DataGridView()
         Me.Cod = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -43,20 +44,45 @@ Partial Class A_PerfilUsuario
         Me.Estado = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.CodModulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.lblCod_MCont = New System.Windows.Forms.Label()
         Me.dtContabilidad = New System.Windows.Forms.DataGridView()
+        Me.CodC = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstadoC = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.chkContabilidad = New System.Windows.Forms.CheckBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.lblCod_MLab = New System.Windows.Forms.Label()
         Me.chkLaboratorio = New System.Windows.Forms.CheckBox()
         Me.dtLaboratorio = New System.Windows.Forms.DataGridView()
+        Me.CodL = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstadoL = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.lblCod_MTalento = New System.Windows.Forms.Label()
         Me.chkTalentoHumano = New System.Windows.Forms.CheckBox()
         Me.dtTalentoHumano = New System.Windows.Forms.DataGridView()
+        Me.CodT = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstadoT = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.lblCod_MSist = New System.Windows.Forms.Label()
         Me.chkSistema = New System.Windows.Forms.CheckBox()
         Me.dtSistema = New System.Windows.Forms.DataGridView()
+        Me.CodS = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstadoS = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.lblCod_MAlma = New System.Windows.Forms.Label()
         Me.chkAlmacen = New System.Windows.Forms.CheckBox()
         Me.dtAlmacen = New System.Windows.Forms.DataGridView()
+        Me.CodA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstadoE = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -68,32 +94,6 @@ Partial Class A_PerfilUsuario
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.dtPerfiles = New System.Windows.Forms.DataGridView()
-        Me.lblCod_MFact = New System.Windows.Forms.Label()
-        Me.lblCod_MCont = New System.Windows.Forms.Label()
-        Me.lblCod_MLab = New System.Windows.Forms.Label()
-        Me.lblCod_MTalento = New System.Windows.Forms.Label()
-        Me.lblCod_MSist = New System.Windows.Forms.Label()
-        Me.lblCod_MAlma = New System.Windows.Forms.Label()
-        Me.CodC = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstadoC = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodL = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstadoL = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodT = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descripccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstadoT = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodS = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstadoS = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstadoE = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxModulos.SuspendLayout()
@@ -138,7 +138,7 @@ Partial Class A_PerfilUsuario
         Me.btnCrearPerfil.Location = New System.Drawing.Point(386, 127)
         Me.btnCrearPerfil.Name = "btnCrearPerfil"
         Me.btnCrearPerfil.Size = New System.Drawing.Size(100, 23)
-        Me.btnCrearPerfil.TabIndex = 8
+        Me.btnCrearPerfil.TabIndex = 3
         Me.btnCrearPerfil.Text = "Crear Perfil"
         Me.btnCrearPerfil.UseVisualStyleBackColor = True
         '
@@ -148,7 +148,7 @@ Partial Class A_PerfilUsuario
         Me.chkHabilitar.Location = New System.Drawing.Point(120, 116)
         Me.chkHabilitar.Name = "chkHabilitar"
         Me.chkHabilitar.Size = New System.Drawing.Size(90, 17)
-        Me.chkHabilitar.TabIndex = 7
+        Me.chkHabilitar.TabIndex = 2
         Me.chkHabilitar.Text = "Habilitar Perfil"
         Me.chkHabilitar.UseVisualStyleBackColor = True
         '
@@ -168,7 +168,7 @@ Partial Class A_PerfilUsuario
         Me.txtDescripcion.MaxLength = 149
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(235, 20)
-        Me.txtDescripcion.TabIndex = 5
+        Me.txtDescripcion.TabIndex = 1
         Me.txtDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label3
@@ -186,7 +186,7 @@ Partial Class A_PerfilUsuario
         Me.txtCodBreve.MaxLength = 19
         Me.txtCodBreve.Name = "txtCodBreve"
         Me.txtCodBreve.Size = New System.Drawing.Size(235, 20)
-        Me.txtCodBreve.TabIndex = 3
+        Me.txtCodBreve.TabIndex = 0
         Me.txtCodBreve.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
@@ -254,6 +254,16 @@ Partial Class A_PerfilUsuario
         Me.TabPage1.Text = "Facturación"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'lblCod_MFact
+        '
+        Me.lblCod_MFact.AutoSize = True
+        Me.lblCod_MFact.Location = New System.Drawing.Point(411, 9)
+        Me.lblCod_MFact.Name = "lblCod_MFact"
+        Me.lblCod_MFact.Size = New System.Drawing.Size(39, 13)
+        Me.lblCod_MFact.TabIndex = 6
+        Me.lblCod_MFact.Text = "Label6"
+        Me.lblCod_MFact.Visible = False
+        '
         'chkFacturacion
         '
         Me.chkFacturacion.AutoSize = True
@@ -318,6 +328,16 @@ Partial Class A_PerfilUsuario
         Me.TabPage2.Text = "Contabilidad"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'lblCod_MCont
+        '
+        Me.lblCod_MCont.AutoSize = True
+        Me.lblCod_MCont.Location = New System.Drawing.Point(423, 10)
+        Me.lblCod_MCont.Name = "lblCod_MCont"
+        Me.lblCod_MCont.Size = New System.Drawing.Size(39, 13)
+        Me.lblCod_MCont.TabIndex = 7
+        Me.lblCod_MCont.Text = "Label6"
+        Me.lblCod_MCont.Visible = False
+        '
         'dtContabilidad
         '
         Me.dtContabilidad.AllowUserToAddRows = False
@@ -330,6 +350,35 @@ Partial Class A_PerfilUsuario
         Me.dtContabilidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtContabilidad.Size = New System.Drawing.Size(468, 165)
         Me.dtContabilidad.TabIndex = 5
+        '
+        'CodC
+        '
+        Me.CodC.HeaderText = "Código"
+        Me.CodC.Name = "CodC"
+        Me.CodC.ReadOnly = True
+        Me.CodC.Visible = False
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Descripción"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 369
+        '
+        'EstadoC
+        '
+        Me.EstadoC.HeaderText = "Estado"
+        Me.EstadoC.Name = "EstadoC"
+        Me.EstadoC.ReadOnly = True
+        Me.EstadoC.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.EstadoC.Width = 55
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "CodModulo"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Visible = False
         '
         'chkContabilidad
         '
@@ -353,6 +402,16 @@ Partial Class A_PerfilUsuario
         Me.TabPage3.Text = "Laboratorio"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'lblCod_MLab
+        '
+        Me.lblCod_MLab.AutoSize = True
+        Me.lblCod_MLab.Location = New System.Drawing.Point(432, 10)
+        Me.lblCod_MLab.Name = "lblCod_MLab"
+        Me.lblCod_MLab.Size = New System.Drawing.Size(39, 13)
+        Me.lblCod_MLab.TabIndex = 8
+        Me.lblCod_MLab.Text = "Label6"
+        Me.lblCod_MLab.Visible = False
+        '
         'chkLaboratorio
         '
         Me.chkLaboratorio.AutoSize = True
@@ -375,6 +434,34 @@ Partial Class A_PerfilUsuario
         Me.dtLaboratorio.Size = New System.Drawing.Size(468, 165)
         Me.dtLaboratorio.TabIndex = 4
         '
+        'CodL
+        '
+        Me.CodL.HeaderText = "Codigo"
+        Me.CodL.Name = "CodL"
+        Me.CodL.ReadOnly = True
+        Me.CodL.Visible = False
+        '
+        'Descripc
+        '
+        Me.Descripc.HeaderText = "Descripción"
+        Me.Descripc.Name = "Descripc"
+        Me.Descripc.ReadOnly = True
+        Me.Descripc.Width = 369
+        '
+        'EstadoL
+        '
+        Me.EstadoL.HeaderText = "Estado"
+        Me.EstadoL.Name = "EstadoL"
+        Me.EstadoL.ReadOnly = True
+        Me.EstadoL.Width = 55
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "CodModulo"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        '
         'TabPage4
         '
         Me.TabPage4.Controls.Add(Me.lblCod_MTalento)
@@ -386,6 +473,16 @@ Partial Class A_PerfilUsuario
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Talento Humano"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'lblCod_MTalento
+        '
+        Me.lblCod_MTalento.AutoSize = True
+        Me.lblCod_MTalento.Location = New System.Drawing.Point(432, 9)
+        Me.lblCod_MTalento.Name = "lblCod_MTalento"
+        Me.lblCod_MTalento.Size = New System.Drawing.Size(39, 13)
+        Me.lblCod_MTalento.TabIndex = 8
+        Me.lblCod_MTalento.Text = "Label6"
+        Me.lblCod_MTalento.Visible = False
         '
         'chkTalentoHumano
         '
@@ -409,6 +506,36 @@ Partial Class A_PerfilUsuario
         Me.dtTalentoHumano.Size = New System.Drawing.Size(468, 165)
         Me.dtTalentoHumano.TabIndex = 4
         '
+        'CodT
+        '
+        Me.CodT.HeaderText = "Codigo"
+        Me.CodT.Name = "CodT"
+        Me.CodT.ReadOnly = True
+        Me.CodT.Visible = False
+        '
+        'descripccion
+        '
+        Me.descripccion.HeaderText = "Descripción"
+        Me.descripccion.Name = "descripccion"
+        Me.descripccion.ReadOnly = True
+        Me.descripccion.Width = 369
+        '
+        'EstadoT
+        '
+        Me.EstadoT.HeaderText = "Estado"
+        Me.EstadoT.Name = "EstadoT"
+        Me.EstadoT.ReadOnly = True
+        Me.EstadoT.Width = 55
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "CodModulo"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.Column4.Visible = False
+        '
         'TabPage5
         '
         Me.TabPage5.Controls.Add(Me.lblCod_MSist)
@@ -420,6 +547,16 @@ Partial Class A_PerfilUsuario
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Sistema"
         Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'lblCod_MSist
+        '
+        Me.lblCod_MSist.AutoSize = True
+        Me.lblCod_MSist.Location = New System.Drawing.Point(432, 9)
+        Me.lblCod_MSist.Name = "lblCod_MSist"
+        Me.lblCod_MSist.Size = New System.Drawing.Size(39, 13)
+        Me.lblCod_MSist.TabIndex = 8
+        Me.lblCod_MSist.Text = "Label6"
+        Me.lblCod_MSist.Visible = False
         '
         'chkSistema
         '
@@ -443,6 +580,35 @@ Partial Class A_PerfilUsuario
         Me.dtSistema.Size = New System.Drawing.Size(468, 165)
         Me.dtSistema.TabIndex = 4
         '
+        'CodS
+        '
+        Me.CodS.HeaderText = "Codigo"
+        Me.CodS.Name = "CodS"
+        Me.CodS.ReadOnly = True
+        Me.CodS.Visible = False
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Descripción"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 369
+        '
+        'EstadoS
+        '
+        Me.EstadoS.HeaderText = "Estado"
+        Me.EstadoS.Name = "EstadoS"
+        Me.EstadoS.ReadOnly = True
+        Me.EstadoS.Width = 55
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "CodModulo"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Visible = False
+        Me.Column7.Width = 55
+        '
         'TabPage6
         '
         Me.TabPage6.Controls.Add(Me.lblCod_MAlma)
@@ -454,6 +620,16 @@ Partial Class A_PerfilUsuario
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Almacen"
         Me.TabPage6.UseVisualStyleBackColor = True
+        '
+        'lblCod_MAlma
+        '
+        Me.lblCod_MAlma.AutoSize = True
+        Me.lblCod_MAlma.Location = New System.Drawing.Point(432, 10)
+        Me.lblCod_MAlma.Name = "lblCod_MAlma"
+        Me.lblCod_MAlma.Size = New System.Drawing.Size(39, 13)
+        Me.lblCod_MAlma.TabIndex = 8
+        Me.lblCod_MAlma.Text = "Label6"
+        Me.lblCod_MAlma.Visible = False
         '
         'chkAlmacen
         '
@@ -476,6 +652,34 @@ Partial Class A_PerfilUsuario
         Me.dtAlmacen.ReadOnly = True
         Me.dtAlmacen.Size = New System.Drawing.Size(468, 165)
         Me.dtAlmacen.TabIndex = 4
+        '
+        'CodA
+        '
+        Me.CodA.HeaderText = "Codigo"
+        Me.CodA.Name = "CodA"
+        Me.CodA.ReadOnly = True
+        Me.CodA.Visible = False
+        '
+        'Column9
+        '
+        Me.Column9.HeaderText = "Descripción"
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
+        Me.Column9.Width = 369
+        '
+        'EstadoE
+        '
+        Me.EstadoE.HeaderText = "Estado"
+        Me.EstadoE.Name = "EstadoE"
+        Me.EstadoE.ReadOnly = True
+        Me.EstadoE.Width = 55
+        '
+        'Column11
+        '
+        Me.Column11.HeaderText = "CodModulo"
+        Me.Column11.Name = "Column11"
+        Me.Column11.ReadOnly = True
+        Me.Column11.Visible = False
         '
         'btnGuardar
         '
@@ -588,210 +792,6 @@ Partial Class A_PerfilUsuario
         Me.dtPerfiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtPerfiles.Size = New System.Drawing.Size(383, 433)
         Me.dtPerfiles.TabIndex = 0
-        '
-        'lblCod_MFact
-        '
-        Me.lblCod_MFact.AutoSize = True
-        Me.lblCod_MFact.Location = New System.Drawing.Point(411, 9)
-        Me.lblCod_MFact.Name = "lblCod_MFact"
-        Me.lblCod_MFact.Size = New System.Drawing.Size(39, 13)
-        Me.lblCod_MFact.TabIndex = 6
-        Me.lblCod_MFact.Text = "Label6"
-        Me.lblCod_MFact.Visible = False
-        '
-        'lblCod_MCont
-        '
-        Me.lblCod_MCont.AutoSize = True
-        Me.lblCod_MCont.Location = New System.Drawing.Point(423, 10)
-        Me.lblCod_MCont.Name = "lblCod_MCont"
-        Me.lblCod_MCont.Size = New System.Drawing.Size(39, 13)
-        Me.lblCod_MCont.TabIndex = 7
-        Me.lblCod_MCont.Text = "Label6"
-        Me.lblCod_MCont.Visible = False
-        '
-        'lblCod_MLab
-        '
-        Me.lblCod_MLab.AutoSize = True
-        Me.lblCod_MLab.Location = New System.Drawing.Point(432, 10)
-        Me.lblCod_MLab.Name = "lblCod_MLab"
-        Me.lblCod_MLab.Size = New System.Drawing.Size(39, 13)
-        Me.lblCod_MLab.TabIndex = 8
-        Me.lblCod_MLab.Text = "Label6"
-        Me.lblCod_MLab.Visible = False
-        '
-        'lblCod_MTalento
-        '
-        Me.lblCod_MTalento.AutoSize = True
-        Me.lblCod_MTalento.Location = New System.Drawing.Point(432, 9)
-        Me.lblCod_MTalento.Name = "lblCod_MTalento"
-        Me.lblCod_MTalento.Size = New System.Drawing.Size(39, 13)
-        Me.lblCod_MTalento.TabIndex = 8
-        Me.lblCod_MTalento.Text = "Label6"
-        Me.lblCod_MTalento.Visible = False
-        '
-        'lblCod_MSist
-        '
-        Me.lblCod_MSist.AutoSize = True
-        Me.lblCod_MSist.Location = New System.Drawing.Point(432, 9)
-        Me.lblCod_MSist.Name = "lblCod_MSist"
-        Me.lblCod_MSist.Size = New System.Drawing.Size(39, 13)
-        Me.lblCod_MSist.TabIndex = 8
-        Me.lblCod_MSist.Text = "Label6"
-        Me.lblCod_MSist.Visible = False
-        '
-        'lblCod_MAlma
-        '
-        Me.lblCod_MAlma.AutoSize = True
-        Me.lblCod_MAlma.Location = New System.Drawing.Point(432, 10)
-        Me.lblCod_MAlma.Name = "lblCod_MAlma"
-        Me.lblCod_MAlma.Size = New System.Drawing.Size(39, 13)
-        Me.lblCod_MAlma.TabIndex = 8
-        Me.lblCod_MAlma.Text = "Label6"
-        Me.lblCod_MAlma.Visible = False
-        '
-        'CodC
-        '
-        Me.CodC.HeaderText = "Código"
-        Me.CodC.Name = "CodC"
-        Me.CodC.ReadOnly = True
-        Me.CodC.Visible = False
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Descripción"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 369
-        '
-        'EstadoC
-        '
-        Me.EstadoC.HeaderText = "Estado"
-        Me.EstadoC.Name = "EstadoC"
-        Me.EstadoC.ReadOnly = True
-        Me.EstadoC.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.EstadoC.Width = 55
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "CodModulo"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Visible = False
-        '
-        'CodL
-        '
-        Me.CodL.HeaderText = "Codigo"
-        Me.CodL.Name = "CodL"
-        Me.CodL.ReadOnly = True
-        Me.CodL.Visible = False
-        '
-        'Descripc
-        '
-        Me.Descripc.HeaderText = "Descripción"
-        Me.Descripc.Name = "Descripc"
-        Me.Descripc.ReadOnly = True
-        Me.Descripc.Width = 369
-        '
-        'EstadoL
-        '
-        Me.EstadoL.HeaderText = "Estado"
-        Me.EstadoL.Name = "EstadoL"
-        Me.EstadoL.ReadOnly = True
-        Me.EstadoL.Width = 55
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "CodModulo"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        '
-        'CodT
-        '
-        Me.CodT.HeaderText = "Codigo"
-        Me.CodT.Name = "CodT"
-        Me.CodT.ReadOnly = True
-        Me.CodT.Visible = False
-        '
-        'descripccion
-        '
-        Me.descripccion.HeaderText = "Descripción"
-        Me.descripccion.Name = "descripccion"
-        Me.descripccion.ReadOnly = True
-        Me.descripccion.Width = 369
-        '
-        'EstadoT
-        '
-        Me.EstadoT.HeaderText = "Estado"
-        Me.EstadoT.Name = "EstadoT"
-        Me.EstadoT.ReadOnly = True
-        Me.EstadoT.Width = 55
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "CodModulo"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Column4.Visible = False
-        '
-        'CodS
-        '
-        Me.CodS.HeaderText = "Codigo"
-        Me.CodS.Name = "CodS"
-        Me.CodS.ReadOnly = True
-        Me.CodS.Visible = False
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Descripción"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 369
-        '
-        'EstadoS
-        '
-        Me.EstadoS.HeaderText = "Estado"
-        Me.EstadoS.Name = "EstadoS"
-        Me.EstadoS.ReadOnly = True
-        Me.EstadoS.Width = 55
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "CodModulo"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Visible = False
-        Me.Column7.Width = 55
-        '
-        'CodA
-        '
-        Me.CodA.HeaderText = "Codigo"
-        Me.CodA.Name = "CodA"
-        Me.CodA.ReadOnly = True
-        Me.CodA.Visible = False
-        '
-        'Column9
-        '
-        Me.Column9.HeaderText = "Descripción"
-        Me.Column9.Name = "Column9"
-        Me.Column9.ReadOnly = True
-        Me.Column9.Width = 369
-        '
-        'EstadoE
-        '
-        Me.EstadoE.HeaderText = "Estado"
-        Me.EstadoE.Name = "EstadoE"
-        Me.EstadoE.ReadOnly = True
-        Me.EstadoE.Width = 55
-        '
-        'Column11
-        '
-        Me.Column11.HeaderText = "CodModulo"
-        Me.Column11.Name = "Column11"
-        Me.Column11.ReadOnly = True
-        Me.Column11.Visible = False
         '
         'A_PerfilUsuario
         '
