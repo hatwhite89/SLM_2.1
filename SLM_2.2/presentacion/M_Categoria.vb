@@ -145,6 +145,25 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+    Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
+        Try
+            Dim n As String = ""
+            If (lblform.Text = "M_Cliente") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar la categoría de cliente?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_Cliente.lblcodeCategoria.Text = lblcode.Text
+                    M_Cliente.txtcodigoCategoria.Text = txtcodigo.Text
+                    M_Cliente.txtnombreCategoria.Text = rtxtdescripcion.Text
+                    Me.Close()
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
             lblcode.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
@@ -152,10 +171,6 @@
             rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
             txtcodigoTipo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
             lblCodePriceList.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
-
-            M_Cliente.lblcodeCategoria.Text = lblcode.Text
-            M_Cliente.txtcodigoCategoria.Text = txtcodigo.Text
-            M_Cliente.txtnombreCategoria.Text = rtxtdescripcion.Text
 
             btnmodificar.Enabled = True
             btnguardar.Enabled = False

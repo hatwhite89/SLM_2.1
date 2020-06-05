@@ -74,8 +74,10 @@
     <Reference Include="IrisSkin2">
       <HintPath>..\..\..\..\Documents\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\IrisSkin2.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Downloads\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -122,6 +124,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -561,6 +564,12 @@
     <Compile Include="presentacion\E_frmOrdenCompra.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frmProcesarSolicitudInterna.Designer.vb">
+      <DependentUpon>E_frmProcesarSolicitudInterna.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmProcesarSolicitudInterna.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_frmProducto.Designer.vb">
       <DependentUpon>E_frmProducto.vb</DependentUpon>
     </Compile>
@@ -613,6 +622,12 @@
       <DependentUpon>E_ListarSubAreas.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\E_ListarSubAreas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_ListarSubAreasXArea.Designer.vb">
+      <DependentUpon>E_ListarSubAreasXArea.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_ListarSubAreasXArea.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_ListarUnidades.Designer.vb">
@@ -1295,6 +1310,9 @@
     <EmbeddedResource Include="presentacion\E_frmOrdenCompra.resx">
       <DependentUpon>E_frmOrdenCompra.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmProcesarSolicitudInterna.resx">
+      <DependentUpon>E_frmProcesarSolicitudInterna.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmProducto.resx">
       <DependentUpon>E_frmProducto.vb</DependentUpon>
     </EmbeddedResource>
@@ -1321,6 +1339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_ListarSubAreas.resx">
       <DependentUpon>E_ListarSubAreas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_ListarSubAreasXArea.resx">
+      <DependentUpon>E_ListarSubAreasXArea.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_ListarUnidades.resx">
       <DependentUpon>E_ListarUnidades.vb</DependentUpon>
@@ -1603,6 +1624,7 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\Definite-c47a609e-37f4-4678-9cb8-79a06e5845bb.wav" />
   </ItemGroup>
   <ItemGroup>
@@ -1615,21 +1637,12 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-    <COMReference Include="Microsoft.Office.Interop.Excel1">
-      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+    <COMReference Include="UCAddinLib">
+      <Guid>{AB54A09E-1604-4438-9AC7-04BE3E6B0320}</Guid>
       <VersionMajor>1</VersionMajor>
-      <VersionMinor>9</VersionMinor>
+      <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="VBIDE">
-      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>5</VersionMajor>
-      <VersionMinor>3</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
+      <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>

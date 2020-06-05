@@ -29,11 +29,6 @@
 
             txtnombre.ReadOnly = False
             txtcodigo.ReadOnly = False
-
-            If (lblform.Text <> "Empleados") Then
-                E_DetalleExamenes.lblcodigoGrupo.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value
-                E_DetalleExamenes.txtGrupo.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value
-            End If
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -41,13 +36,13 @@
     Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
         Try
             Dim n As String = ""
-            If (lblform.Text = "Empleados") Then
+            If (lblform.Text = "E_DetalleExamenes") Then
                 If e.RowIndex >= 0 Then
-                    n = MsgBox("¿Desea utilizar el area de trabajo en el empleado?", MsgBoxStyle.YesNo)
+                    n = MsgBox("¿Desea utilizar el grupo de examen en el item facturable?", MsgBoxStyle.YesNo)
                 End If
                 If n = vbYes Then
-                    'M_Empleados.lblcodigoArea.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-                    'M_Empleados.txtArea.Text = txtnombre.Text
+                    E_DetalleExamenes.lblcodigoGrupo.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value
+                    E_DetalleExamenes.txtGrupo.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value
                     Me.Close()
                 End If
             End If

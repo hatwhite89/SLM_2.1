@@ -15,6 +15,7 @@
         mtxtdesde.ReadOnly = False
         mtxthasta.ReadOnly = False
 
+        btnModificar.Enabled = False
         btnbuscarMaquinaLocal.Enabled = True
         btnguardar.Enabled = True
     End Sub
@@ -69,6 +70,7 @@
                     Dim dt As New DataTable
                     dt = objCAI.CapturarCAI()
                     Dim row As DataRow = dt.Rows(0)
+                    lblCodigo.Text = CStr(row("codigo"))
 
                     Dim objDetCAI As New ClsDetalleCAI
                     objDetCAI.codigoCAI_ = Convert.ToInt64(CStr(row("codigo")))
@@ -77,6 +79,8 @@
 
                     If objDetCAI.RegistrarNuevoDetalleCAI(mtxtserie.Text, mtxtdesde.Text.ToString, cant) = 1 Then
                         MsgBox("Registrado correctamente.")
+                        btnModificar.Enabled = True
+                        A_ListarCAI.actualizarListado()
                     Else
                         MsgBox("Error al querer ingresar el detalle del CAI.", MsgBoxStyle.Critical)
                     End If
@@ -153,18 +157,19 @@
 
         Try
 
-            If lblCodigo.Text <> "" Then
+            If Trim(lblCodigo.Text) <> "" And Trim(lblCodigo.Text) <> "codigo" Then
 
                 Dim CAI As New ClsCAI
 
                 With CAI
 
-                    .Codigo_ = Convert.ToInt32(lblCodigo.Text)
+                    .Codigo_ = Convert.ToInt64(lblCodigo.Text)
                     .estado_ = chkEstado.Checked
 
                     'Habilitar CAI
                     If .HabilitarCAI = 1 Then
-                        MsgBox("Se habilito el registro de CAI.")
+                        MsgBox("Se actualizo correctamente el registro de CAI.")
+                        A_ListarCAI.actualizarListado()
                         limpiar()
 
                     End If
@@ -181,26 +186,12 @@
 
     Private Sub M_CAI_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        If lblCodigo.Text <> "" Then
+        If Trim(lblCodigo.Text) <> "" And Trim(lblCodigo.Text) <> "codigo" Then
             btnModificar.Enabled = True
-
-            Dim maquina As New ClsMaquinasLocales
-            With maquina
-                .codigo_ = Convert.ToInt32(lblCodeMaquinaLocal.Text)
-
-            End With
-
-            Dim dt As New DataTable
-            dt = maquina.BuscarMaquinasLocalesCode()
-
-            Dim row As DataRow
-            row = dt.Rows(0)
-
-            txtcodigoMaquina.Text = row("codigoMaquinasLocales")
-            txtdescripcionMaquina.Text = row("descripcion")
-
+            btnguardar.Enabled = False
         Else
             btnModificar.Enabled = False
+            btnguardar.Enabled = True
         End If
 
     End Sub

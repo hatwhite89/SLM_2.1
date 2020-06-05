@@ -72,7 +72,6 @@
                     btnguardarCliente.Enabled = True
                     limpiar()
                     btnseleccionarCliente.Enabled = False
-                    mtxtidentidadClienteB.Text = id
                     mtxtidentidad.Text = id
                     gbxinfoCliente.Visible = True
                 Else
@@ -86,6 +85,7 @@
     End Sub
 
     Private Sub btnclasificacion_Click(sender As Object, e As EventArgs) Handles btnclasificacion.Click
+        M_ClasificacionContacto.lblform.Text = "M_Cliente"
         M_ClasificacionContacto.ShowDialog()
     End Sub
     Private Sub Habilitar()
@@ -105,14 +105,14 @@
         txtcodigoCategoria.ReadOnly = False
         rbtnmasculino.Enabled = True
         rbtnfemenino.Enabled = True
-        txtaseguradora.ReadOnly = False
-        txtconvenio.ReadOnly = False
+        'txtaseguradora.ReadOnly = False
+        'txtconvenio.ReadOnly = False
         txtcodigoTermino.ReadOnly = False
         mtxtidentidad.ReadOnly = False
 
         btnterminosPago.Enabled = True
-        btnconvenio.Enabled = True
-        btnaseguradora.Enabled = True
+        'btnconvenio.Enabled = True
+        'btnaseguradora.Enabled = True
         btncategoria.Enabled = True
         btnclasificacion.Enabled = True
     End Sub
@@ -153,6 +153,8 @@
                 genero = "Femenino"
             End If
 
+
+            'al menos debe ingresar un telefono o correo
             Dim numero As Integer = 0
             If (txttelefonoTrabajo.Text <> "") Then
                 numero += 1
@@ -160,6 +162,12 @@
                 numero += 1
             ElseIf (txtcelular.Text <> "") Then
                 numero += 1
+            ElseIf (txtcorreo.Text <> "") Then
+                numero += 1
+            ElseIf (txtcorreo2.Text <> "") Then
+                numero += 1
+            Else
+                numero = 0
             End If
 
             If (genero <> "" And txtcodigoTermino.Text <> "" And txtcodigoTermino.BackColor = Color.White And txtcodigoCategoria.Text <> "" And txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoClasificacion.Text <> "") Then
@@ -168,10 +176,10 @@
 
                 Dim objClient As New ClsCliente
                 With objClient
-                    .Codigo1 = Convert.ToInt32(txtcodigo.Text)
+                    .Codigo1 = Convert.ToInt64(txtcodigo.Text)
                     .NombreCompleto1 = txtnombreCompleto.Text
                     .ScanId1 = txtscanId.Text
-                    .Identidad1 = mtxtidentidadClienteB.Text
+                    .Identidad1 = mtxtidentidad.Text
                     .Rtn1 = txtrtn.Text
                     .Nombre_1 = txtnombre1.Text
                     .Nombre_2 = txtnombre2.Text
@@ -185,17 +193,17 @@
                     .Celular1 = txtcelular.Text
                     .Correo_1 = txtcorreo.Text
                     .Correo_2 = txtcorreo2.Text
-                    .CodigoClasificacion1 = Convert.ToInt32(txtcodigoClasificacion.Text)
-                    .codigoCategoria1 = Convert.ToInt32(lblcodeCategoria.Text)
-                    .codigoTerminoPago1 = Convert.ToInt32(lblcodeTerminoPago.Text)
+                    .CodigoClasificacion1 = Convert.ToInt64(txtcodigoClasificacion.Text)
+                    .codigoCategoria1 = Convert.ToInt64(lblcodeCategoria.Text)
+                    .codigoTerminoPago1 = Convert.ToInt64(lblcodeTerminoPago.Text)
                 End With
 
                 If objClient.ModificarCliente() = 1 Then
                     MsgBox("Modificado correctamente.")
 
-                    Deshabilitar()
+                    'Deshabilitar()
 
-                    btnactualizarCliente.Enabled = False
+                    btnactualizarCliente.Enabled = True
                     btnseleccionarCliente.Enabled = True
                     btnguardarCliente.Enabled = False
                 Else
@@ -283,6 +291,7 @@
     End Sub
     Private Sub btnguardarCliente_Click(sender As Object, e As EventArgs) Handles btnguardarCliente.Click
         Try
+            'genero
             Dim genero As String = ""
             If (rbtnmasculino.Checked) Then
                 genero = "Masculino"
@@ -292,12 +301,17 @@
                 genero = ""
             End If
 
+            'al menos debe ingresar un telefono o correo
             Dim numero As Integer = 0
             If (txttelefonoTrabajo.Text <> "") Then
                 numero += 1
             ElseIf (txttelefonoCasa.Text <> "") Then
                 numero += 1
             ElseIf (txtcelular.Text <> "") Then
+                numero += 1
+            ElseIf (txtcorreo.Text <> "") Then
+                numero += 1
+            ElseIf (txtcorreo2.Text <> "") Then
                 numero += 1
             Else
                 numero = 0
@@ -311,7 +325,7 @@
                 With objClient
                     .NombreCompleto1 = txtnombreCompleto.Text
                     .ScanId1 = txtscanId.Text
-                    .Identidad1 = mtxtidentidadClienteB.Text
+                    .Identidad1 = mtxtidentidad.Text
                     .Rtn1 = txtrtn.Text
                     .Nombre_1 = txtnombre1.Text
                     .Nombre_2 = txtnombre2.Text
@@ -325,26 +339,31 @@
                     .Celular1 = txtcelular.Text
                     .Correo_1 = txtcorreo.Text
                     .Correo_2 = txtcorreo2.Text
-                    .CodigoClasificacion1 = Convert.ToInt32(txtcodigoClasificacion.Text)
-                    .codigoCategoria1 = Convert.ToInt32(lblcodeCategoria.Text)
-                    .codigoTerminoPago1 = Convert.ToInt32(lblcodeTerminoPago.Text)
+                    .CodigoClasificacion1 = Convert.ToInt64(txtcodigoClasificacion.Text)
+                    .codigoCategoria1 = Convert.ToInt64(lblcodeCategoria.Text)
+                    .codigoTerminoPago1 = Convert.ToInt64(lblcodeTerminoPago.Text)
                 End With
 
                 If objClient.RegistrarNuevoCliente() = 1 Then
                     MsgBox("Registrado correctamente.")
-                    Deshabilitar()
-                    Dim objClient2 As New ClsCliente
-                    With objClient2
-                        .Identidad1 = mtxtidentidadClienteB.Text
-                    End With
+                    'Deshabilitar()
+                    'Dim objClient2 As New ClsCliente
+                    'With objClient2
+                    '    .Identidad1 = mtxtidentidadClienteB.Text
+                    'End With
+
+                    'Dim dt As New DataTable
+                    'dt = objClient2.BuscarCliente()
+                    'Dim row As DataRow = dt.Rows(0)
+
+                    'txtcodigo.Text = CStr(row("codigo"))
 
                     Dim dt As New DataTable
-                    dt = objClient2.BuscarCliente()
+                    dt = objClient.CapturarCliente()
                     Dim row As DataRow = dt.Rows(0)
-
                     txtcodigo.Text = CStr(row("codigo"))
 
-                    btnactualizarCliente.Enabled = False
+                    btnactualizarCliente.Enabled = True
                     btnguardarCliente.Enabled = False
                     btnseleccionarCliente.Enabled = True
                 Else
@@ -570,6 +589,7 @@
         End If
     End Sub
     Private Sub btncategoria_Click(sender As Object, e As EventArgs) Handles btncategoria.Click
+        M_Categoria.lblform.Text = "M_Cliente"
         M_Categoria.ShowDialog()
     End Sub
     Private Sub btnterminosPago_Click(sender As Object, e As EventArgs) Handles btnterminosPago.Click
@@ -617,14 +637,12 @@
             Catch ex As Exception
                 txtcodigoCategoria.BackColor = Color.Red
                 lblcodeCategoria.Text = ""
-                txtcodigoCategoria.Text = ""
                 txtnombreCategoria.Text = ""
             End Try
         Else
-            txtcodigoCategoria.Text = ""
             txtnombreCategoria.Text = ""
             lblcodeCategoria.Text = ""
-            txtcodigoCategoria.BackColor = Color.White
+            txtcodigoCategoria.BackColor = Color.Red
         End If
     End Sub
     Private Sub txtapellido1_TextChanged_1(sender As Object, e As EventArgs) Handles txtapellido1.TextChanged
@@ -687,4 +705,7 @@
         End If
     End Sub
 
+    Private Sub txtnombre1_TextChanged_1(sender As Object, e As EventArgs) Handles txtnombre1.TextChanged
+
+    End Sub
 End Class

@@ -423,9 +423,9 @@ Partial Class E_frmSalida
         Me.GroupBox1.Controls.Add(Me.Label19)
         Me.GroupBox1.Controls.Add(Me.TextBox6)
         Me.GroupBox1.Controls.Add(Me.Label18)
-        Me.GroupBox1.Location = New System.Drawing.Point(9, 320)
+        Me.GroupBox1.Location = New System.Drawing.Point(5, 317)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(909, 156)
+        Me.GroupBox1.Size = New System.Drawing.Size(913, 124)
         Me.GroupBox1.TabIndex = 21
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Modificar salida"
@@ -466,7 +466,7 @@ Partial Class E_frmSalida
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(757, 118)
+        Me.Button4.Location = New System.Drawing.Point(755, 91)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(148, 23)
         Me.Button4.TabIndex = 19

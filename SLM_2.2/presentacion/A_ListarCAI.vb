@@ -14,7 +14,17 @@
 
 
     End Sub
+    Public Sub actualizarListado()
 
+        Try
+
+            dtCAIS.DataSource = cai.listarCAI
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
     Private Sub dtCAIS_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dtCAIS.CellMouseDoubleClick
 
         Try
@@ -35,7 +45,7 @@
                 .chkEstado.Checked = row("estado")
                 .Show()
             End With
-            Me.Close()
+            'Me.Close()
 
         Catch ex As Exception
 
@@ -45,7 +55,7 @@
 
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
         Try
-            Me.Close()
+            'Me.Close()
 
             M_CAI.Show()
 
@@ -57,5 +67,11 @@
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
 
+    End Sub
+
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
     End Sub
 End Class

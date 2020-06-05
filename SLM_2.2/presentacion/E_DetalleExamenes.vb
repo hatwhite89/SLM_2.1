@@ -9,6 +9,7 @@
     Sub Limpiar()
 
         Try
+            txtCodExamen.Text = ""
             txtCodBreve.Text = ""
             txtDescripcion.Text = ""
             txtGrupo.Text = ""
@@ -16,6 +17,7 @@
             txtClasificación.Text = ""
             txtAbreviatura.Text = ""
             txtComentario.Text = ""
+            txtCodigoSubArea.ResetText()
             dtResultados.Rows.Clear()
         Catch ex As Exception
 
@@ -31,18 +33,42 @@
                 MsgBox("Debe ingresar un resultado de examen por lo menos.")
                 Exit Sub
             End If
+            If (Trim(txtCodBreve.Text) = "") Then
+                MsgBox("Debe ingresar el código breve.")
+                Exit Sub
+            End If
+            If (Trim(txtGrupo.Text) = "") Then
+                MsgBox("Debe ingresar o seleccionar el grupo de examen.")
+                Exit Sub
+            End If
+            If (Trim(txtCodigoSubArea.Text) = "") Then
+                MsgBox("Debe seleccionar la subárea que pertenece el item.")
+                Exit Sub
+            End If
+            If (Trim(txtDescripcion.Text) = "") Then
+                MsgBox("Debe ingresar una descripción del item facturable.")
+                Exit Sub
+            End If
+            If (Trim(txtPrecioBase.Text) = "") Then
+                txtPrecioBase.Text = "0"
+                Exit Sub
+            End If
 
             With Item
                 .Cod_Breve = txtCodBreve.Text
                 .Descripcio_n = txtDescripcion.Text
                 .Grup_o = lblcodigoGrupo.Text
-                .Precio_Base = txtPrecioBase.Text
+                .Precio_Base = Convert.ToDouble(txtPrecioBase.Text)
                 .Clasificacio_n = txtClasificación.Text
                 .Abreviatur_a = txtAbreviatura.Text
                 .Comentari_o = txtComentario.Text
                 .Estad_o = chkEstado.Checked
+                .codigoSubArea_ = txtCodigoSubArea.Text
 
-                .registrarNuevoItemExamen()
+                If .registrarNuevoItemExamen() = 0 Then
+                    MsgBox("Error al querer insertar el item.")
+                    Exit Sub
+                End If
                 dtItem.DataSource = .listarItemExamen()
             End With
 
@@ -61,6 +87,7 @@
                 End With
                 If objItemDet.RegistrarNuevoItemExamenDetalle() = 0 Then
                     MsgBox("Error al querer insertar el posible resultado.")
+                    Exit Sub
                 End If
             Next
 
@@ -127,6 +154,7 @@
             txtAbreviatura.Text = dtItem.Rows(e.RowIndex).Cells(6).Value
             txtComentario.Text = dtItem.Rows(e.RowIndex).Cells(7).Value
             chkEstado.Checked = dtItem.Rows(e.RowIndex).Cells(8).Value
+            txtCodigoSubArea.Text = dtItem.Rows(e.RowIndex).Cells(9).Value
 
             dtResultados.Rows.Clear()
 
@@ -178,6 +206,26 @@
                 MsgBox("Debe ingresar un resultado de examen por lo menos.")
                 Exit Sub
             End If
+            If (Trim(txtCodBreve.Text) = "") Then
+                MsgBox("Debe ingresar el código breve.")
+                Exit Sub
+            End If
+            If (Trim(txtGrupo.Text) = "") Then
+                MsgBox("Debe ingresar o seleccionar el grupo de examen.")
+                Exit Sub
+            End If
+            If (Trim(txtCodigoSubArea.Text) = "") Then
+                MsgBox("Debe seleccionar la subárea que pertenece el item.")
+                Exit Sub
+            End If
+            If (Trim(txtDescripcion.Text) = "") Then
+                MsgBox("Debe ingresar una descripción del item facturable.")
+                Exit Sub
+            End If
+            If (Trim(txtPrecioBase.Text) = "") Then
+                txtPrecioBase.Text = "0"
+                Exit Sub
+            End If
 
             With Item
                 .Cod_ItemExa = Convert.ToInt64(txtCodExamen.Text)
@@ -189,8 +237,12 @@
                 .Abreviatur_a = txtAbreviatura.Text
                 .Comentari_o = txtComentario.Text
                 .Estad_o = chkEstado.Checked
+                .codigoSubArea_ = txtCodigoSubArea.Text
 
-                .modificarItemExamen()
+                If .modificarItemExamen() = 0 Then
+                    MsgBox("Error al querer actualizar el item.")
+                    Exit Sub
+                End If
                 dtItem.DataSource = .listarItemExamen()
             End With
             '''''''
@@ -199,7 +251,7 @@
                 'elimina
                 objItemDet.codigo_ = Convert.ToInt64(codigoItemDetalle(index))
                 If objItemDet.EliminarItemDetalle() <> 1 Then
-                    MsgBox("Error al querer modificar el recibo")
+                    MsgBox("Error al querer modificar el detalle del item.")
                 End If
             Next
             codigoItemDetalle.Clear()
@@ -264,7 +316,8 @@
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnGrupoExamen_Click(sender As Object, e As EventArgs) Handles btnGrupoExamen.Click
+        E_GrupoExamen.lblform.Text = "E_DetalleExamenes"
         E_GrupoExamen.Show()
     End Sub
 
@@ -275,4 +328,71 @@
         btnGuardar.Visible = True
     End Sub
 
+    Private Sub txtSubArea_CLICK(sender As Object, e As EventArgs) Handles txtCodigoSubArea.Click
+        Try
+            'validacion antes del llenado
+            If Trim(lblcodigoGrupo.Text) <> "" And Trim(lblcodigoGrupo.Text) <> "label" Then
+                E_ListarSubAreasXArea.lblcodeArea.Text = lblcodigoGrupo.Text
+                E_ListarSubAreasXArea.lblform.Text = "E_DetalleExamenes"
+                E_ListarSubAreasXArea.ShowDialog()
+            Else
+                MsgBox("Debe seleccionar el grupo de examen.", MsgBoxStyle.Information)
+            End If
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub txtGrupo_TextChanged(sender As Object, e As EventArgs) Handles txtGrupo.TextChanged
+        If (Trim(txtGrupo.Text) <> "") Then
+            Try
+                Dim objGroup As New ClsGrupoExamen
+                With objGroup
+                    .codigoGrupoExamen_ = txtGrupo.Text
+                End With
+                Dim dt As New DataTable
+                dt = objGroup.BuscarGrupoExamenCodigoBreve()
+                Dim row As DataRow = dt.Rows(0)
+                lblcodigoGrupo.Text = CStr(row("codigo"))
+                txtGrupo.BackColor = Color.White
+                If lblcodeSubGrupo.Text <> lblcodigoGrupo.Text Then
+                    txtCodigoSubArea.Text = ""
+                End If
+            Catch ex As Exception
+                lblcodigoGrupo.Text = ""
+                txtGrupo.BackColor = Color.Red
+            End Try
+        Else
+            lblcodigoGrupo.Text = ""
+            txtGrupo.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub lblcodigoGrupo_TextChanged(sender As Object, e As EventArgs) Handles lblcodigoGrupo.TextChanged
+        If (Trim(lblcodigoGrupo.Text) <> "") Then
+            Try
+                Dim objGroup As New ClsGrupoExamen
+                With objGroup
+                    .codigo_ = lblcodigoGrupo.Text
+                End With
+                Dim dt As New DataTable
+                dt = objGroup.BuscarGrupoExamenCodigo()
+                Dim row As DataRow = dt.Rows(0)
+                txtGrupo.Text = CStr(row("codigoGrupoExamen"))
+                txtGrupo.BackColor = Color.White
+            Catch ex As Exception
+                lblcodigoGrupo.Text = ""
+                txtGrupo.BackColor = Color.Red
+                'validacion
+                lblcodeSubGrupo.Text = ""
+                txtCodigoSubArea.Text = ""
+            End Try
+        Else
+            lblcodigoGrupo.Text = ""
+            txtGrupo.BackColor = Color.White
+            'validacion
+            lblcodeSubGrupo.Text = ""
+            txtCodigoSubArea.Text = ""
+        End If
+    End Sub
 End Class

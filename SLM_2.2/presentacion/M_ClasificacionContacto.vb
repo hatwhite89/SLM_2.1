@@ -132,14 +132,28 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+    Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
+        Try
+            Dim n As String = ""
+            If (lblform.Text = "M_Cliente") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar la clasificación en el cliente?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_Cliente.txtcodigoClasificacion.Text = txtcodigo.Text
+                    M_Cliente.txtnombreClasificacion.Text = rtxtcomentario.Text
+                    Me.Close()
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
             rtxtcomentario.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
             txtcodigoTipo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
-
-            M_Cliente.txtcodigoClasificacion.Text = txtcodigo.Text
-            M_Cliente.txtnombreClasificacion.Text = rtxtcomentario.Text
 
             btnmodificar.Enabled = True
             btnguardar.Enabled = False

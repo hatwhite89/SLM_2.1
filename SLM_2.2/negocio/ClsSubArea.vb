@@ -2,8 +2,8 @@
 Imports System.Data.SqlClient
 Public Class ClsSubArea
 
-    Dim SubArea, area, nombre, Formulario As String
-    Dim codSubArea, secImpresion As Integer
+    Dim SubArea, nombre, Formulario, secImpresion As String
+    Dim codSubArea, codigoArea As Integer
     Dim noSolicitarSucursal, formularioConsolidado As Boolean
 
     'Constructor
@@ -32,12 +32,12 @@ Public Class ClsSubArea
         End Set
     End Property
     'Area
-    Public Property Are_a As String
+    Public Property codigoArea_ As Integer
         Get
-            Return area
+            Return codigoArea
         End Get
-        Set(value As String)
-            area = value
+        Set(value As Integer)
+            codigoArea = value
         End Set
     End Property
     'Nombre
@@ -59,11 +59,11 @@ Public Class ClsSubArea
         End Set
     End Property
     'Impresion
-    Public Property sec_Impresion As Integer
+    Public Property sec_Impresion As String
         Get
             Return secImpresion
         End Get
-        Set(value As Integer)
+        Set(value As String)
             secImpresion = value
         End Set
     End Property
@@ -107,8 +107,8 @@ Public Class ClsSubArea
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "area"
-        sqlpar.Value = Are_a
+        sqlpar.ParameterName = "codigoArea"
+        sqlpar.Value = codigoArea_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -178,8 +178,8 @@ Public Class ClsSubArea
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "area"
-        sqlpar.Value = Are_a
+        sqlpar.ParameterName = "codigoArea"
+        sqlpar.Value = codigoArea_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -242,7 +242,64 @@ Public Class ClsSubArea
         End Using
     End Function
 
-
+    'Buscar por codSubArea
+    Public Function BuscarSubarea() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "E_slmBuscarSubArea"
+            cmd.Parameters.Add("@codSubArea", SqlDbType.Int).Value = Cod
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
+    Public Function BuscarSubAreaXArea() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "E_slmBuscarSubAreaXArea"
+            cmd.Parameters.Add("@codigoArea", SqlDbType.Int).Value = codigoArea_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
+    Public Function BuscarSubAreaNombre() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "E_slmBuscarSubAreaNombre"
+            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Nombr_e
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
 
 
 End Class

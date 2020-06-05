@@ -35,7 +35,7 @@
                 For index As Integer = 0 To dt.Rows.Count - 1
                     row = dt.Rows(index)
                     'M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codigoExamen")), "1", "0", CStr(row("descripcion")), M_Factura.dtpfechaFactura.Value.Date.AddDays(7), "0", "0", CStr(row("grupo"))})
-                    M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codigoExamen")), "1", "0", CStr(row("descripcion")), M_Factura.dtpfechaFactura.Value.Date.AddDays(7), "0", "0", CStr(row("grupo")), "0"})
+                    M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codigoExamen")), "1", "0", CStr(row("descripcion")), M_Factura.dtpfechaFactura.Value.Date.AddDays(7), "0", "0", CStr(row("codigoSubArea")), "0"})
                     M_ClienteVentana.dgvtabla.Rows.Add(New String() {CStr(row("codigoExamen")), "1", "0", CStr(row("descripcion")), M_Factura.dtpfechaFactura.Value.Date.AddDays(7), "0", "0"})
                 Next
                 M_Factura.lblPromocion.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()

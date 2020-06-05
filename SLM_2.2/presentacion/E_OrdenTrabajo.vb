@@ -107,6 +107,7 @@
             cbxentregaMedico.Checked = row("entregarMedico")
             cbxentregaPaciente.Checked = row("entregarPaciente")
             txtcodigoArea.Text = CStr(row("cod_grupo"))
+            txtcodigoSubArea.Text = CStr(row("codigoSubArea"))
 
 
             Dim objOrdDet As New ClsOrdenTrabajoDetalle
