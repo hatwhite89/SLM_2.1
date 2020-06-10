@@ -24,11 +24,10 @@ Partial Class A_FacturaCompras
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_FacturaCompras))
         Me.gbxInfoFact = New System.Windows.Forms.GroupBox()
+        Me.txtDescripcion = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.txtNroFactura = New System.Windows.Forms.TextBox()
-        Me.btnCrear = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.lblFila = New System.Windows.Forms.Label()
         Me.btnBuscarTerminoPago = New System.Windows.Forms.Button()
         Me.txtMoneda = New System.Windows.Forms.TextBox()
@@ -49,6 +48,9 @@ Partial Class A_FacturaCompras
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtCodFactura = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnCrear = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dtDetalleFactura = New System.Windows.Forms.DataGridView()
         Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,8 +63,9 @@ Partial Class A_FacturaCompras
         Me.btnRegresar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.txtDescripcion = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.lblEstado = New System.Windows.Forms.Label()
+        Me.lblCodTerminoPago = New System.Windows.Forms.Label()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +74,9 @@ Partial Class A_FacturaCompras
         '
         'gbxInfoFact
         '
+        Me.gbxInfoFact.Controls.Add(Me.lblCodTerminoPago)
+        Me.gbxInfoFact.Controls.Add(Me.lblEstado)
+        Me.gbxInfoFact.Controls.Add(Me.Label14)
         Me.gbxInfoFact.Controls.Add(Me.txtDescripcion)
         Me.gbxInfoFact.Controls.Add(Me.Label13)
         Me.gbxInfoFact.Controls.Add(Me.txtNroFactura)
@@ -102,6 +108,22 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.TabStop = False
         Me.gbxInfoFact.Text = "Información de Factura"
         '
+        'txtDescripcion
+        '
+        Me.txtDescripcion.Location = New System.Drawing.Point(109, 155)
+        Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.Size = New System.Drawing.Size(634, 20)
+        Me.txtDescripcion.TabIndex = 24
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(7, 158)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(63, 13)
+        Me.Label13.TabIndex = 23
+        Me.Label13.Text = "Descripción"
+        '
         'txtNroFactura
         '
         Me.txtNroFactura.Location = New System.Drawing.Point(306, 25)
@@ -110,19 +132,6 @@ Partial Class A_FacturaCompras
         Me.txtNroFactura.Size = New System.Drawing.Size(436, 20)
         Me.txtNroFactura.TabIndex = 1
         Me.txtNroFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'btnCrear
-        '
-        Me.btnCrear.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnCrear.FlatAppearance.BorderSize = 0
-        Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(506, 13)
-        Me.btnCrear.Name = "btnCrear"
-        Me.btnCrear.Size = New System.Drawing.Size(75, 23)
-        Me.btnCrear.TabIndex = 12
-        Me.btnCrear.Text = "Crear Nuevo"
-        Me.btnCrear.UseVisualStyleBackColor = False
         '
         'Label10
         '
@@ -133,36 +142,10 @@ Partial Class A_FacturaCompras
         Me.Label10.TabIndex = 22
         Me.Label10.Text = "Nro. Factura"
         '
-        'btnModificar
-        '
-        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnModificar.FlatAppearance.BorderSize = 0
-        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(587, 13)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
-        Me.btnModificar.TabIndex = 13
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = False
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnGuardar.FlatAppearance.BorderSize = 0
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(668, 13)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
-        Me.btnGuardar.TabIndex = 11
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = False
-        '
         'lblFila
         '
         Me.lblFila.AutoSize = True
-        Me.lblFila.Location = New System.Drawing.Point(665, 109)
+        Me.lblFila.Location = New System.Drawing.Point(644, 81)
         Me.lblFila.Name = "lblFila"
         Me.lblFila.Size = New System.Drawing.Size(45, 13)
         Me.lblFila.TabIndex = 20
@@ -339,6 +322,47 @@ Partial Class A_FacturaCompras
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Cód. Factura"
         '
+        'btnCrear
+        '
+        Me.btnCrear.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCrear.Enabled = False
+        Me.btnCrear.FlatAppearance.BorderSize = 0
+        Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCrear.ForeColor = System.Drawing.Color.White
+        Me.btnCrear.Location = New System.Drawing.Point(506, 13)
+        Me.btnCrear.Name = "btnCrear"
+        Me.btnCrear.Size = New System.Drawing.Size(75, 23)
+        Me.btnCrear.TabIndex = 12
+        Me.btnCrear.Text = "Crear Nuevo"
+        Me.btnCrear.UseVisualStyleBackColor = False
+        '
+        'btnModificar
+        '
+        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnModificar.Enabled = False
+        Me.btnModificar.FlatAppearance.BorderSize = 0
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.ForeColor = System.Drawing.Color.White
+        Me.btnModificar.Location = New System.Drawing.Point(587, 13)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar.TabIndex = 13
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnGuardar.FlatAppearance.BorderSize = 0
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.ForeColor = System.Drawing.Color.White
+        Me.btnGuardar.Location = New System.Drawing.Point(668, 13)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.TabIndex = 11
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = False
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.dtDetalleFactura)
@@ -353,6 +377,7 @@ Partial Class A_FacturaCompras
         '
         Me.dtDetalleFactura.AllowUserToDeleteRows = False
         Me.dtDetalleFactura.BackgroundColor = System.Drawing.Color.White
+        Me.dtDetalleFactura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical
         Me.dtDetalleFactura.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDetalleFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cuenta, Me.area, Me.Sede, Me.Descripción, Me.Monto})
@@ -448,21 +473,32 @@ Partial Class A_FacturaCompras
         Me.Label12.TabIndex = 14
         Me.Label12.Text = "Factura de Compra"
         '
-        'Label13
+        'Label14
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(7, 158)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(63, 13)
-        Me.Label13.TabIndex = 23
-        Me.Label13.Text = "Descripción"
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(469, 133)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(43, 13)
+        Me.Label14.TabIndex = 25
+        Me.Label14.Text = "Estado:"
         '
-        'txtDescripcion
+        'lblEstado
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(109, 155)
-        Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(634, 20)
-        Me.txtDescripcion.TabIndex = 24
+        Me.lblEstado.AutoSize = True
+        Me.lblEstado.Location = New System.Drawing.Point(518, 133)
+        Me.lblEstado.Name = "lblEstado"
+        Me.lblEstado.Size = New System.Drawing.Size(16, 13)
+        Me.lblEstado.TabIndex = 26
+        Me.lblEstado.Text = "---"
+        '
+        'lblCodTerminoPago
+        '
+        Me.lblCodTerminoPago.AutoSize = True
+        Me.lblCodTerminoPago.Location = New System.Drawing.Point(644, 107)
+        Me.lblCodTerminoPago.Name = "lblCodTerminoPago"
+        Me.lblCodTerminoPago.Size = New System.Drawing.Size(45, 13)
+        Me.lblCodTerminoPago.TabIndex = 27
+        Me.lblCodTerminoPago.Text = "Label15"
         '
         'A_FacturaCompras
         '
@@ -532,4 +568,7 @@ Partial Class A_FacturaCompras
     Friend WithEvents Label13 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label12 As Label
+    Friend WithEvents lblEstado As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents lblCodTerminoPago As Label
 End Class

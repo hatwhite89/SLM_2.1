@@ -26,9 +26,10 @@
                     .Fecha_Transaccion = dtpTransaccion.Value
                     .Fecha_Vencimiento = dtpVencimiento.Value
                     .Moned_a = txtMoneda.Text
-                    .Terminos_Pago = txtTerminoPago.Text
+                    .Cod_TerminoPago = Convert.ToInt32(lblCodTerminoPago.Text)
                     .Tota_l = txtTotal.Text
-
+                    .Descripcion_ = txtDescripcion.Text
+                    .Estado_ = "Ingresada"
                     .Nro_Factura = txtNroFactura.Text
 
                 End With
@@ -80,6 +81,7 @@
                 MessageBox.Show("Error al guardar la factura de compra. Detalles: " + ex.Message)
             End Try
             MessageBox.Show("La factura se registro exitosamente.")
+            Limpiar()
 
         Else 'if campos vacios
 
@@ -201,8 +203,10 @@
                 .Fecha_Transaccion = dtpTransaccion.Value
                 .Fecha_Vencimiento = dtpVencimiento.Value
                 .Moned_a = txtMoneda.Text
-                .Terminos_Pago = txtTerminoPago.Text
+                .Cod_TerminoPago = Convert.ToInt32(lblCodTerminoPago.Text)
                 .Tota_l = txtTotal.Text
+                .Descripcion_ = txtDescripcion.Text
+                .Estado_ = lblEstado.Text
                 'registro de  factura compra
                 .modificarFacturaCompra()
 
@@ -234,6 +238,7 @@
                 Next
 
                 MessageBox.Show("La factura se modifico exitosamente.")
+                Limpiar()
 
             End With
 
@@ -251,31 +256,61 @@
 
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
 
-        Dim Nueva As New A_FacturaCompras
-        Nueva.Show()
-        Me.Close()
+        Limpiar()
+        btnCrear.Enabled = False
+        btnModificar.Enabled = False
+        btnGuardar.Enabled = True
+        'Dim Nueva As New A_FacturaCompras
+        'Nueva.Show()
+        'Me.Close()
 
     End Sub
 
     Private Sub A_FacturaCompras_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'colores datagrid
-        alternarColoFilasDatagridview(dtDetalleFactura)
-        Dim cmb As New DataGridViewComboBoxColumn()
-        dtDetalleFactura.Columns.Add(cmb)
-        cmb.HeaderText = "Tipo Stock"
-        cmb.Items.Add("Comprado")
-        cmb.Items.Add("Consignado")
-        cmb.Name = "cbx"
 
 
-        If dtDetalleFactura.Columns.Contains("btnEliminar") = False Then
-            Dim btn As New DataGridViewButtonColumn()
-            dtDetalleFactura.Columns.Add(btn)
-            btn.HeaderText = "Eliminar"
-            btn.Text = "Eliminar"
-            btn.Name = "btnEliminar"
-            btn.UseColumnTextForButtonValue = True
-        End If
+        Try
+            'colores datagrid
+            alternarColoFilasDatagridview(dtDetalleFactura)
+
+
+            'Cargar termino de pago
+            Dim terminopago As New ClsTerminoPago
+            Dim dt As New DataTable
+            Dim row As DataRow
+            If txtCodFactura.Text <> "" Then
+
+                terminopago.codigo_ = Convert.ToInt32(lblCodTerminoPago.Text)
+                dt = terminopago.listarBusquedaTerminoPago
+                row = dt.Rows(0)
+                txtTerminoPago.Text = row("descripcion")
+
+            End If
+
+            Dim cmb As New DataGridViewComboBoxColumn()
+            dtDetalleFactura.Columns.Add(cmb)
+            cmb.HeaderText = "Tipo Stock"
+            cmb.Items.Add("Comprado")
+            cmb.Items.Add("Consignado")
+            cmb.Name = "cbx"
+
+            If dtDetalleFactura.Columns.Contains("btnEliminar") = False Then
+                Dim btn As New DataGridViewButtonColumn()
+                dtDetalleFactura.Columns.Add(btn)
+                btn.HeaderText = "Eliminar"
+                btn.Text = "Eliminar"
+                btn.Name = "btnEliminar"
+                btn.UseColumnTextForButtonValue = True
+            End If
+
+
+
+
+
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
 
@@ -424,5 +459,23 @@
             End Try
         End If
     End Sub
+
+    Sub Limpiar()
+        txtCodFactura.Clear()
+        txtNroFactura.Clear()
+        txtCodProveedor.Clear()
+        txtNombreProveedor.Clear()
+        txtTerminoPago.Clear()
+        txtTotal.Clear()
+        txtMoneda.Text = "Lps"
+        lblEstado.Text = "---"
+        txtDescripcion.Clear()
+        dtpFechaFactura.ResetText()
+        dtpTransaccion.ResetText()
+        dtpVencimiento.ResetText()
+
+        dtDetalleFactura.Rows.Clear()
+    End Sub
+
 
 End Class

@@ -25,14 +25,17 @@
             A_FacturaCompras.txtCodFactura.Text = row("codFactura")
             A_FacturaCompras.txtCodProveedor.Text = row("codProveedor")
             'A_FacturaCompras.txtNombreProveedor.Text = row("codFactura")
+            A_FacturaCompras.txtDescripcion.Text = row("descripcion")
             A_FacturaCompras.txtTotal.Text = row("total")
             A_FacturaCompras.txtMoneda.Text = row("moneda")
             A_FacturaCompras.dtpFechaFactura.Value = row("fechaFactura")
-            A_FacturaCompras.txtTerminoPago.Text = row("terminosPago")
+            A_FacturaCompras.lblCodTerminoPago.Text = row("CodTerminoPago")
             A_FacturaCompras.dtpTransaccion.Value = row("fechaTransaccion")
             A_FacturaCompras.dtpVencimiento.Value = row("fechaVencimiento")
             A_FacturaCompras.txtNroFactura.Text = row("nroFactura")
             A_FacturaCompras.lblTotal.Text = row("total")
+            A_FacturaCompras.lblEstado.Text = row("estado")
+
 
             'Mostrar detalle de factura
             Dim DetalleFac As New ClsDetalleFacturaCompra
@@ -47,12 +50,11 @@
                 A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {(row("cuenta")), CStr(row("area")), CStr(row("sede")), CStr(row("descripcion")), CStr(row("monto")), CStr(row("tipoStock"))})
             Next
 
-            A_FacturaCompras.btnCrear.Visible = True
-            A_FacturaCompras.btnModificar.Visible = True
-            A_FacturaCompras.btnGuardar.Visible = False
-
             Me.Close()
             A_FacturaCompras.Show()
+            A_FacturaCompras.btnGuardar.Enabled = False
+            A_FacturaCompras.btnModificar.Enabled = True
+            A_FacturaCompras.btnCrear.Enabled = True
 
         Catch ex As Exception
 
@@ -65,11 +67,9 @@
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
         'Busqueda de facturas por nombre de proveedor
 
-
         Try
 
             FacCompra.Nombre_Proveedor = txtBusqueda.Text
-
             dtFacturasCompra.DataSource = FacCompra.buscarFacturaProveedor()
 
         Catch ex As Exception

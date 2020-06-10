@@ -286,7 +286,7 @@ Public Class ClsTerminoPago
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "A_slmBuscarTerminoPagoCod"
-            cmd.Parameters.Add("@codigoTerminoPago", SqlDbType.VarChar).Value = codigoTerminoPago_
+            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = codigo_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable

@@ -111,4 +111,13 @@
             e.Handled = False
         End If
     End Sub
+
+    Private Sub btnIngresarAsiento_Click(sender As Object, e As EventArgs) Handles btnIngresarAsiento.Click
+        Try
+            frmAsientos.Show()
+            Me.Close()
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class
