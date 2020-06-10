@@ -67,7 +67,7 @@
                 End With
 
                 If objCategoriaif.RegistrarNuevaCategoria() = 1 Then
-                    MsgBox("Registrado correctamente.")
+                    MsgBox("Registrado correctamente.", MsgBoxStyle.Information)
 
                     Dim dv As DataView = objCategoriaif.SeleccionarCategoria.DefaultView
                     dgbtabla.DataSource = dv

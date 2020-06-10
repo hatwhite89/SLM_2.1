@@ -24,6 +24,7 @@ Partial Class M_Categoria
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Categoria))
         Me.gbxclasificacion = New System.Windows.Forms.GroupBox()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.lblCodePriceList = New System.Windows.Forms.Label()
         Me.lblcode = New System.Windows.Forms.Label()
         Me.txtdescripcionListaPrecios = New System.Windows.Forms.TextBox()
@@ -48,7 +49,6 @@ Partial Class M_Categoria
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
         Me.lblcomentarioB = New System.Windows.Forms.Label()
-        Me.lblform = New System.Windows.Forms.Label()
         Me.gbxclasificacion.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,6 +83,16 @@ Partial Class M_Categoria
         Me.gbxclasificacion.TabIndex = 117
         Me.gbxclasificacion.TabStop = False
         Me.gbxclasificacion.Text = "REGISTRAR CATEGORÍA"
+        '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(413, 27)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(36, 17)
+        Me.lblform.TabIndex = 144
+        Me.lblform.Text = "form"
+        Me.lblform.Visible = False
         '
         'lblCodePriceList
         '
@@ -350,16 +360,6 @@ Partial Class M_Categoria
         Me.lblcomentarioB.Size = New System.Drawing.Size(82, 17)
         Me.lblcomentarioB.TabIndex = 114
         Me.lblcomentarioB.Text = "Descripción"
-        '
-        'lblform
-        '
-        Me.lblform.AutoSize = True
-        Me.lblform.Location = New System.Drawing.Point(413, 27)
-        Me.lblform.Name = "lblform"
-        Me.lblform.Size = New System.Drawing.Size(36, 17)
-        Me.lblform.TabIndex = 144
-        Me.lblform.Text = "form"
-        Me.lblform.Visible = False
         '
         'M_Categoria
         '

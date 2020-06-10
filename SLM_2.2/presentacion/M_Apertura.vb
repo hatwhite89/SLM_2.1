@@ -13,7 +13,22 @@
         limpiar()
         Me.Close()
     End Sub
-
+    Private Sub buscarMaquinaLocal()
+        Try
+            Dim objMaq As New ClsMaquinasLocales
+            With objMaq
+                .descripcion_ = System.Environment.MachineName
+            End With
+            Dim dt As New DataTable
+            dt = objMaq.BuscarMaquinasLocalesDesc()
+            Dim row As DataRow = dt.Rows(0)
+            lblcodeMaquinaLocal.Text = CStr(row("codigo"))
+            txtMaquinaLocal.Text = CStr(row("codigoMaquinasLocales"))
+        Catch ex As Exception
+            lblcodeMaquinaLocal.Text = ""
+            txtMaquinaLocal.Text = ""
+        End Try
+    End Sub
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         If Trim(txtFondo.Text) <> "" Then
             Try
@@ -44,6 +59,7 @@
         txtFondo.Text = ""
         txtHora.Text = Date.Now.ToLongTimeString
         txtFecha.Text = Date.Today
+        buscarMaquinaLocal()
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
