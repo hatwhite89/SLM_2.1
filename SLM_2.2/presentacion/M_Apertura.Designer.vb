@@ -33,7 +33,7 @@ Partial Class M_Apertura
         Me.txtHora = New System.Windows.Forms.TextBox()
         Me.txtFecha = New System.Windows.Forms.TextBox()
         Me.txtCajera = New System.Windows.Forms.TextBox()
-        Me.txtEstacion = New System.Windows.Forms.TextBox()
+        Me.txtMaquinaLocal = New System.Windows.Forms.TextBox()
         Me.lblEstado = New System.Windows.Forms.Label()
         Me.lblFondo = New System.Windows.Forms.Label()
         Me.lblHora = New System.Windows.Forms.Label()
@@ -55,7 +55,7 @@ Partial Class M_Apertura
         Me.GroupBox1.Controls.Add(Me.txtHora)
         Me.GroupBox1.Controls.Add(Me.txtFecha)
         Me.GroupBox1.Controls.Add(Me.txtCajera)
-        Me.GroupBox1.Controls.Add(Me.txtEstacion)
+        Me.GroupBox1.Controls.Add(Me.txtMaquinaLocal)
         Me.GroupBox1.Controls.Add(Me.lblEstado)
         Me.GroupBox1.Controls.Add(Me.lblFondo)
         Me.GroupBox1.Controls.Add(Me.lblHora)
@@ -184,16 +184,16 @@ Partial Class M_Apertura
         Me.txtCajera.Text = "MEC"
         Me.txtCajera.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txtEstacion
+        'txtMaquinaLocal
         '
-        Me.txtEstacion.Location = New System.Drawing.Point(105, 32)
-        Me.txtEstacion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtEstacion.Name = "txtEstacion"
-        Me.txtEstacion.ReadOnly = True
-        Me.txtEstacion.Size = New System.Drawing.Size(185, 22)
-        Me.txtEstacion.TabIndex = 117
-        Me.txtEstacion.Text = "01_RD"
-        Me.txtEstacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtMaquinaLocal.Location = New System.Drawing.Point(105, 32)
+        Me.txtMaquinaLocal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtMaquinaLocal.Name = "txtMaquinaLocal"
+        Me.txtMaquinaLocal.ReadOnly = True
+        Me.txtMaquinaLocal.Size = New System.Drawing.Size(185, 22)
+        Me.txtMaquinaLocal.TabIndex = 117
+        Me.txtMaquinaLocal.Text = "01_RD"
+        Me.txtMaquinaLocal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblEstado
         '
@@ -275,7 +275,7 @@ Partial Class M_Apertura
     Friend WithEvents txtHora As TextBox
     Friend WithEvents txtFecha As TextBox
     Friend WithEvents txtCajera As TextBox
-    Friend WithEvents txtEstacion As TextBox
+    Friend WithEvents txtMaquinaLocal As TextBox
     Friend WithEvents lblEstado As Label
     Friend WithEvents lblFondo As Label
     Friend WithEvents lblHora As Label

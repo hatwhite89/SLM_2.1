@@ -156,6 +156,7 @@ Public Class M_Factura
         'obtener maquina local
         buscarMaquinaLocal()
 
+
     End Sub
     Private Sub buscarMaquinaLocal()
         Try
