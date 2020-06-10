@@ -24,11 +24,14 @@ Public Class ClsConnection
             MsgBox("Error en la conexión con la base de datos. No se podrá generar registros en el sistema.")
         End Try
 
-
     End Function
     Public Sub cerrarConexion()
         'cierra la conexión con la base de datos
+
         sqlcon.Close()
+
+        'Modificar close
+        'Destructor para cerrar proceso
     End Sub
 
 End Class

@@ -1,6 +1,5 @@
 ﻿Public Class A_PerfilUsuario
 
-
     Dim perfil As New ClsPerfilesUsuario
     Dim form As New ClsFormularios
     Dim ventanas As New ClsVentanasModulos
@@ -140,7 +139,6 @@
             txtCodBreve.BackColor = Color.White
         End If
     End Sub
-
     Private Sub btnCrearPerfil_Click(sender As Object, e As EventArgs) Handles btnCrearPerfil.Click
 
         Try

@@ -55,7 +55,7 @@ Partial Class _1A_PantallaCarga
         Me.ClientSize = New System.Drawing.Size(666, 382)
         Me.Controls.Add(Me.lblCarga)
         Me.Controls.Add(Me.pBarInicio)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "_1A_PantallaCarga"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "_1A_PantallaCarga"
