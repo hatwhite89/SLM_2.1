@@ -107,7 +107,6 @@ Partial Class frmAsientos
         '
         'dtDetalleAsiento
         '
-        Me.dtDetalleAsiento.AllowUserToAddRows = False
         Me.dtDetalleAsiento.AllowUserToDeleteRows = False
         Me.dtDetalleAsiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDetalleAsiento.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cuenta, Me.Descripcion, Me.Debe, Me.Haber})
@@ -144,7 +143,7 @@ Partial Class frmAsientos
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(391, 494)
+        Me.Label5.Location = New System.Drawing.Point(379, 347)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(31, 13)
         Me.Label5.TabIndex = 12
@@ -153,7 +152,7 @@ Partial Class frmAsientos
         'txtTotalDebe
         '
         Me.txtTotalDebe.Enabled = False
-        Me.txtTotalDebe.Location = New System.Drawing.Point(431, 491)
+        Me.txtTotalDebe.Location = New System.Drawing.Point(419, 344)
         Me.txtTotalDebe.Name = "txtTotalDebe"
         Me.txtTotalDebe.Size = New System.Drawing.Size(101, 20)
         Me.txtTotalDebe.TabIndex = 13
@@ -161,7 +160,7 @@ Partial Class frmAsientos
         'txtTotalHaber
         '
         Me.txtTotalHaber.Enabled = False
-        Me.txtTotalHaber.Location = New System.Drawing.Point(538, 491)
+        Me.txtTotalHaber.Location = New System.Drawing.Point(526, 344)
         Me.txtTotalHaber.Name = "txtTotalHaber"
         Me.txtTotalHaber.Size = New System.Drawing.Size(93, 20)
         Me.txtTotalHaber.TabIndex = 14
@@ -192,7 +191,7 @@ Partial Class frmAsientos
         Me.btnCerrar.FlatAppearance.BorderSize = 0
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.ForeColor = System.Drawing.Color.White
-        Me.btnCerrar.Location = New System.Drawing.Point(19, 489)
+        Me.btnCerrar.Location = New System.Drawing.Point(544, 13)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
         Me.btnCerrar.TabIndex = 17
@@ -202,7 +201,7 @@ Partial Class frmAsientos
         'lblForm
         '
         Me.lblForm.AutoSize = True
-        Me.lblForm.Location = New System.Drawing.Point(100, 494)
+        Me.lblForm.Location = New System.Drawing.Point(667, 291)
         Me.lblForm.Name = "lblForm"
         Me.lblForm.Size = New System.Drawing.Size(27, 13)
         Me.lblForm.TabIndex = 18
@@ -212,9 +211,12 @@ Partial Class frmAsientos
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.dtDetalleAsiento)
+        Me.GroupBox1.Controls.Add(Me.txtTotalHaber)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.txtTotalDebe)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 140)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(628, 346)
+        Me.GroupBox1.Size = New System.Drawing.Size(628, 370)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalle de Asiento"
@@ -242,6 +244,7 @@ Partial Class frmAsientos
         Me.GroupBox3.Controls.Add(Me.btnGuardar)
         Me.GroupBox3.Controls.Add(Me.btnModificar)
         Me.GroupBox3.Controls.Add(Me.btnCrear)
+        Me.GroupBox3.Controls.Add(Me.btnCerrar)
         Me.GroupBox3.Location = New System.Drawing.Point(16, 12)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(628, 43)
@@ -260,7 +263,7 @@ Partial Class frmAsientos
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(545, 13)
+        Me.btnGuardar.Location = New System.Drawing.Point(464, 13)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 2
@@ -269,7 +272,7 @@ Partial Class frmAsientos
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(464, 13)
+        Me.btnModificar.Location = New System.Drawing.Point(383, 13)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 1
@@ -278,7 +281,7 @@ Partial Class frmAsientos
         '
         'btnCrear
         '
-        Me.btnCrear.Location = New System.Drawing.Point(383, 13)
+        Me.btnCrear.Location = New System.Drawing.Point(302, 13)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 0
@@ -290,15 +293,11 @@ Partial Class frmAsientos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(658, 522)
+        Me.ClientSize = New System.Drawing.Size(652, 516)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lblForm)
-        Me.Controls.Add(Me.btnCerrar)
-        Me.Controls.Add(Me.txtTotalHaber)
-        Me.Controls.Add(Me.txtTotalDebe)
-        Me.Controls.Add(Me.Label5)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
@@ -309,6 +308,7 @@ Partial Class frmAsientos
         Me.Text = "Asiento"
         CType(Me.dtDetalleAsiento, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)

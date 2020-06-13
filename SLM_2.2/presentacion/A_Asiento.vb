@@ -18,6 +18,7 @@
             If txtNro.Text = "" Then
 
                 MsgBox("El registro de hará bajo el periodo contable vigente.")
+                txtNro.Enabled = True
 
             Else
 
@@ -86,4 +87,53 @@
 
     End Sub
 
+    Sub Limpiar()
+
+        txtNro.Clear()
+        txtTexto.Clear()
+        dtpFecha.ResetText()
+        dtDetalleAsiento.Rows.Clear()
+        lblCodAsiento.Text = "-"
+        txtTotalDebe.Clear()
+        txtTotalHaber.Clear()
+
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+
+
+        Try
+            Dim asiento As New ClsAsientoContable
+            Dim dasiento As New ClsDetalleAsiento
+            Dim dt As New DataTable
+            Dim row As DataRow
+
+            With asiento
+
+                .Cod_Periodo = 1
+                .Descrip = txtTexto.Text
+                .Fecha_ = dtpFecha.Value
+                .Campo_Llave = 0
+
+                .registrarAsiento()
+
+                dt = .capturarCodAsiento()
+                row = dt.Rows(0)
+
+                lblCodAsiento.Text = row("cod_asiento")
+                txtNro.Text = row("cod_asiento")
+                txtTexto.Text = row("descripcion")
+                dtpFecha.Value = row("fecha")
+
+            End With
+
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+
+    End Sub
 End Class

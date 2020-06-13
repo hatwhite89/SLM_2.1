@@ -55,6 +55,7 @@
             End If
 
             With Item
+                .Cod_Interno = Convert.ToInt32(txtCodInterno.Text)
                 .Cod_Breve = txtCodBreve.Text
                 .Descripcio_n = txtDescripcion.Text
                 .Grup_o = lblcodigoGrupo.Text
@@ -143,18 +144,19 @@
             btnGuardar.Visible = False
 
             txtCodExamen.Text = dtItem.Rows(e.RowIndex).Cells(0).Value
-            txtCodBreve.Text = dtItem.Rows(e.RowIndex).Cells(1).Value
-            txtDescripcion.Text = dtItem.Rows(e.RowIndex).Cells(2).Value
+            txtCodInterno.Text = dtItem.Rows(e.RowIndex).Cells(1).Value
+            txtCodBreve.Text = dtItem.Rows(e.RowIndex).Cells(2).Value
+            txtDescripcion.Text = dtItem.Rows(e.RowIndex).Cells(3).Value
 
-            txtGrupo.Text = dtItem.Rows(e.RowIndex).Cells(3).Value
-            lblcodigoGrupo.Text = dtItem.Rows(e.RowIndex).Cells(3).Value
+            'txtGrupo.Text = dtItem.Rows(e.RowIndex).Cells(4).Value
+            lblcodigoGrupo.Text = dtItem.Rows(e.RowIndex).Cells(4).Value
 
-            txtPrecioBase.Text = dtItem.Rows(e.RowIndex).Cells(4).Value
-            txtClasificación.Text = dtItem.Rows(e.RowIndex).Cells(5).Value
-            txtAbreviatura.Text = dtItem.Rows(e.RowIndex).Cells(6).Value
-            txtComentario.Text = dtItem.Rows(e.RowIndex).Cells(7).Value
-            chkEstado.Checked = dtItem.Rows(e.RowIndex).Cells(8).Value
-            txtCodigoSubArea.Text = dtItem.Rows(e.RowIndex).Cells(9).Value
+            txtPrecioBase.Text = dtItem.Rows(e.RowIndex).Cells(5).Value
+            txtClasificación.Text = dtItem.Rows(e.RowIndex).Cells(6).Value
+            txtAbreviatura.Text = dtItem.Rows(e.RowIndex).Cells(7).Value
+            txtComentario.Text = dtItem.Rows(e.RowIndex).Cells(8).Value
+            chkEstado.Checked = dtItem.Rows(e.RowIndex).Cells(9).Value
+            txtCodigoSubArea.Text = dtItem.Rows(e.RowIndex).Cells(10).Value
 
             dtResultados.Rows.Clear()
 
@@ -227,8 +229,10 @@
                 Exit Sub
             End If
 
+
             With Item
                 .Cod_ItemExa = Convert.ToInt64(txtCodExamen.Text)
+                .Cod_Interno = Convert.ToInt32(txtCodInterno.Text)
                 .Cod_Breve = txtCodBreve.Text
                 .Descripcio_n = txtDescripcion.Text
                 .Grup_o = lblcodigoGrupo.Text
@@ -395,4 +399,6 @@
             txtCodigoSubArea.Text = ""
         End If
     End Sub
+
+
 End Class

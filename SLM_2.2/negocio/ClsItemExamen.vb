@@ -3,7 +3,7 @@ Imports System.Data.SqlClient
 Public Class ClsItemExamen
 
     'Variables
-    Dim codItemExa, codigoSubArea As Integer
+    Dim codItemExa, codigoSubArea, codInterno As Integer
     Dim codBreve, descripcion, grupo, clasificacion, abreviatura, comentario As String
     Dim precioBase As Double
     Dim estado As Boolean
@@ -24,6 +24,17 @@ Public Class ClsItemExamen
             codItemExa = value
         End Set
     End Property
+
+    'Codigo Interno
+    Public Property Cod_Interno As Integer
+        Get
+            Return codInterno
+        End Get
+        Set(value As Integer)
+            codInterno = value
+        End Set
+    End Property
+
 
     'Codigo Breve
     Public Property Cod_Breve As String
@@ -129,7 +140,12 @@ Public Class ClsItemExamen
         sqlcom.CommandType = CommandType.StoredProcedure
         sqlcom.CommandText = "E_slmInsertarItemExamen"
 
-        'VARIABLES 
+        'VARIABLES
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codInterno"
+        sqlpar.Value = Cod_Interno
+        sqlcom.Parameters.Add(sqlpar)
+
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codBreve"
         sqlpar.Value = Cod_Breve
@@ -211,6 +227,11 @@ Public Class ClsItemExamen
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codItemExa"
         sqlpar.Value = Cod_ItemExa
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codInterno"
+        sqlpar.Value = Cod_Interno
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
