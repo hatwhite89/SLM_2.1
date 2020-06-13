@@ -10,6 +10,7 @@
 
         Try
             txtCodExamen.Text = ""
+            txtCodInterno.Text = ""
             txtCodBreve.Text = ""
             txtDescripcion.Text = ""
             txtGrupo.Text = ""
