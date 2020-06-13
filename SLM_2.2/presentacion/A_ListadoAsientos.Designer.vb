@@ -27,12 +27,14 @@ Partial Class A_ListadoAsientos
         Me.dtAsientos = New System.Windows.Forms.DataGridView()
         Me.txtCod = New System.Windows.Forms.TextBox()
         Me.lblCod = New System.Windows.Forms.Label()
+        Me.btnIngresarAsiento = New System.Windows.Forms.Button()
         Me.gbxAsientos.SuspendLayout()
         CType(Me.dtAsientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbxAsientos
         '
+        Me.gbxAsientos.Controls.Add(Me.btnIngresarAsiento)
         Me.gbxAsientos.Controls.Add(Me.btnCancelar)
         Me.gbxAsientos.Controls.Add(Me.dtAsientos)
         Me.gbxAsientos.Controls.Add(Me.txtCod)
@@ -90,6 +92,15 @@ Partial Class A_ListadoAsientos
         Me.lblCod.TabIndex = 0
         Me.lblCod.Text = "Nro. Asiento"
         '
+        'btnIngresarAsiento
+        '
+        Me.btnIngresarAsiento.Location = New System.Drawing.Point(557, 26)
+        Me.btnIngresarAsiento.Name = "btnIngresarAsiento"
+        Me.btnIngresarAsiento.Size = New System.Drawing.Size(131, 23)
+        Me.btnIngresarAsiento.TabIndex = 4
+        Me.btnIngresarAsiento.Text = "Ingresar Asiento Manual"
+        Me.btnIngresarAsiento.UseVisualStyleBackColor = True
+        '
         'A_ListadoAsientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -112,4 +123,5 @@ Partial Class A_ListadoAsientos
     Friend WithEvents txtCod As TextBox
     Friend WithEvents lblCod As Label
     Friend WithEvents btnCancelar As Button
+    Friend WithEvents btnIngresarAsiento As Button
 End Class

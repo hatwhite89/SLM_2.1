@@ -3,9 +3,9 @@
 Imports System.Data.SqlClient
 Public Class ClsFacturaCompra
 
-    Dim codFactura, codProveedor As Integer
+    Dim codFactura, codProveedor, codterminopago As Integer
     Dim total As Double
-    Dim nombreProveedor, moneda, terminosPago, nroFactura As String
+    Dim nombreProveedor, moneda, nroFactura, descripcion, estado As String
     Dim fechaFactura, fechaTransaccion, fechaVencimiento As Date
 
     'Constructor
@@ -32,6 +32,19 @@ Public Class ClsFacturaCompra
             codFactura = value
         End Set
     End Property
+
+    'Codigo Termino de Pago
+    Public Property Cod_TerminoPago As Integer
+        Get
+            Return codterminopago
+        End Get
+        Set(value As Integer)
+            codterminopago = value
+        End Set
+    End Property
+
+
+
     'Total
     Public Property Tota_l As Double
         Get
@@ -41,15 +54,7 @@ Public Class ClsFacturaCompra
             total = value
         End Set
     End Property
-    'Terminos de Pago
-    Public Property Terminos_Pago As String
-        Get
-            Return terminosPago
-        End Get
-        Set(value As String)
-            terminosPago = value
-        End Set
-    End Property
+
     'Moneda
     Public Property Moned_a As String
         Get
@@ -104,6 +109,26 @@ Public Class ClsFacturaCompra
             nroFactura = value
         End Set
     End Property
+
+    'descripcion
+    Public Property Descripcion_ As String
+        Get
+            Return descripcion
+        End Get
+        Set(value As String)
+            descripcion = value
+        End Set
+    End Property
+
+    'Estado
+    Public Property Estado_ As String
+        Get
+            Return estado
+        End Get
+        Set(value As String)
+            estado = value
+        End Set
+    End Property
     ':::::::::::::::::::::::::::::::::::::::::::: Funciones de Mantenimiento ::::::::::::::::::::::::::::::::::::::::::::
 
     'Nuevo registro de Factura Compra
@@ -139,8 +164,8 @@ Public Class ClsFacturaCompra
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "terminosPago"
-        sqlpar.Value = Terminos_Pago
+        sqlpar.ParameterName = "CodTerminoPago"
+        sqlpar.Value = Cod_TerminoPago
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -161,6 +186,16 @@ Public Class ClsFacturaCompra
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "nroFactura"
         sqlpar.Value = Nro_Factura
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "descripcion"
+        sqlpar.Value = Descripcion_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado"
+        sqlpar.Value = Estado_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -237,6 +272,21 @@ Public Class ClsFacturaCompra
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "nroFactura"
         sqlpar.Value = Nro_Factura
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "descripcion"
+        sqlpar.Value = Descripcion_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado"
+        sqlpar.Value = Estado_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "CodTerminoPago"
+        sqlpar.Value = Cod_TerminoPago
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

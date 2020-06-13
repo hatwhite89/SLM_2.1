@@ -14,50 +14,59 @@
 
         Try
             alternarColoFilasDatagridview(dtDetalleAsiento)
-            Dim Detalle As New ClsDetalleAsiento
 
-            With Detalle
+            If txtNro.Text = "" Then
 
-                .Cod_Asiento = Convert.ToInt32(lblCodAsiento.Text)
+                MsgBox("El registro de hará bajo el periodo contable vigente.")
 
-                Dim dt As DataTable
-                Dim row As DataRow
+            Else
 
-                dt = .VerDetalleAsiento
+                Dim Detalle As New ClsDetalleAsiento
 
-                For index As Integer = 0 To dt.Rows.Count - 1
-                    row = dt.Rows(index)
+                With Detalle
 
-                    Dim cuenta As New ClsCuenta
-                    Dim data As DataTable
-                    Dim rows As DataRow
+                    .Cod_Asiento = Convert.ToInt32(lblCodAsiento.Text)
 
-                    cuenta.Cuent_a = Convert.ToInt32(row("cuenta"))
+                    Dim dt As DataTable
+                    Dim row As DataRow
 
-                    data = cuenta.Comprobar
-                    rows = data.Rows(0)
+                    dt = .VerDetalleAsiento
 
-                    dtDetalleAsiento.Rows.Add(New String() {(row("cuenta")), CStr(rows("nombre")), CStr(row("debe")), CStr(row("haber"))})
+                    For index As Integer = 0 To dt.Rows.Count - 1
+                        row = dt.Rows(index)
 
+                        Dim cuenta As New ClsCuenta
+                        Dim data As DataTable
+                        Dim rows As DataRow
+
+                        cuenta.Cuent_a = Convert.ToInt32(row("cuenta"))
+
+                        data = cuenta.Comprobar
+                        rows = data.Rows(0)
+
+                        dtDetalleAsiento.Rows.Add(New String() {(row("cuenta")), CStr(rows("nombre")), CStr(row("debe")), CStr(row("haber"))})
+
+                    Next
+
+                End With
+
+                'Suma de columna Debe
+                Dim Total As Single
+                Dim Col As Integer = 2
+                For Each row As DataGridViewRow In dtDetalleAsiento.Rows
+                    Total += Val(row.Cells(2).Value)
                 Next
+                txtTotalDebe.Text = Total.ToString
 
-            End With
+                'Suma de columna Haber
+                Dim Total2 As Single
+                Dim Col2 As Integer = 3
+                For Each row As DataGridViewRow In dtDetalleAsiento.Rows
+                    Total2 += Val(row.Cells(3).Value)
+                Next
+                txtTotalHaber.Text = Total2.ToString
+            End If
 
-            'Suma de columna Debe
-            Dim Total As Single
-            Dim Col As Integer = 2
-            For Each row As DataGridViewRow In dtDetalleAsiento.Rows
-                Total += Val(row.Cells(2).Value)
-            Next
-            txtTotalDebe.Text = Total.ToString
-
-            'Suma de columna Haber
-            Dim Total2 As Single
-            Dim Col2 As Integer = 3
-            For Each row As DataGridViewRow In dtDetalleAsiento.Rows
-                Total2 += Val(row.Cells(3).Value)
-            Next
-            txtTotalHaber.Text = Total2.ToString
 
         Catch ex As Exception
             MsgBox("Error:" + ex.Message)
