@@ -26,10 +26,6 @@
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
             txtnombre.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
 
-            'M_Factura.lblcodeSucursal.Text = lblcode.Text
-            'M_Factura.txtcodigoSucursal.Text = txtcodigo.Text
-            'M_Factura.txtnombreSucursal.Text = txtnombre.Text
-
             btnmodificar.Enabled = True
             btnguardar.Enabled = False
 
@@ -72,6 +68,16 @@
                     M_MaquinasLocales.lblcodeSucursal.Text = lblcode.Text
                     M_MaquinasLocales.txtcodigoSucursal.Text = txtcodigo.Text
                     M_MaquinasLocales.txtnombreSucursal.Text = txtnombre.Text
+                    Me.Close()
+                End If
+            ElseIf (lblform.Text = "E_EspecificarHojaTrabajo") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar la sucursal en la máquina local?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    E_EspecificarHojaTrabajo.lblCodeSucursal.Text = lblcode.Text
+                    E_EspecificarHojaTrabajo.txtSucursal.Text = txtcodigo.Text
+                    E_EspecificarHojaTrabajo.txtDescripcionSucursal.Text = txtnombre.Text
                     Me.Close()
                 End If
             End If
@@ -187,7 +193,6 @@
     End Sub
     Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
         Try
-
             Dim objSuc As New ClsSucursal
             With objSuc
                 .Nombre1 = txtnombreB.Text
@@ -203,7 +208,6 @@
                 lblcantidad.Text = dv.Count
                 dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
             End If
-
         Catch ex As Exception
 
         End Try

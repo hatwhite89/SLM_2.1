@@ -119,6 +119,7 @@ Partial Class M_Factura
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtCodigoBreveMaquina = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.txtNombreRecepcionista = New System.Windows.Forms.TextBox()
         Me.gbxlistadoExamenes.SuspendLayout()
         CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -616,9 +617,10 @@ Partial Class M_Factura
         Me.txtcodigoRecepecionista.Location = New System.Drawing.Point(851, 128)
         Me.txtcodigoRecepecionista.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcodigoRecepecionista.Name = "txtcodigoRecepecionista"
-        Me.txtcodigoRecepecionista.Size = New System.Drawing.Size(281, 22)
+        Me.txtcodigoRecepecionista.Size = New System.Drawing.Size(39, 22)
         Me.txtcodigoRecepecionista.TabIndex = 51
         Me.txtcodigoRecepecionista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtcodigoRecepecionista.Visible = False
         '
         'txtcodigoCajero
         '
@@ -1116,6 +1118,7 @@ Partial Class M_Factura
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.txtNombreRecepcionista)
         Me.GroupBox2.Controls.Add(Me.txtCodigoBreveMaquina)
         Me.GroupBox2.Controls.Add(Me.txtcodigoTerminal)
         Me.GroupBox2.Location = New System.Drawing.Point(21, 81)
@@ -1166,6 +1169,17 @@ Partial Class M_Factura
         Me.GroupBox3.TabIndex = 110
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Detalle de pago"
+        '
+        'txtNombreRecepcionista
+        '
+        Me.txtNombreRecepcionista.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNombreRecepcionista.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombreRecepcionista.Location = New System.Drawing.Point(830, 49)
+        Me.txtNombreRecepcionista.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtNombreRecepcionista.Name = "txtNombreRecepcionista"
+        Me.txtNombreRecepcionista.Size = New System.Drawing.Size(281, 22)
+        Me.txtNombreRecepcionista.TabIndex = 111
+        Me.txtNombreRecepcionista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'M_Factura
         '
@@ -1343,4 +1357,5 @@ Partial Class M_Factura
     Friend WithEvents Subtotal As DataGridViewTextBoxColumn
     Friend WithEvents subArea As DataGridViewTextBoxColumn
     Friend WithEvents codeDetFact As DataGridViewTextBoxColumn
+    Friend WithEvents txtNombreRecepcionista As TextBox
 End Class
