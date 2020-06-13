@@ -262,6 +262,26 @@ Public Class ClsSubArea
             End Using
         End Using
     End Function
+    'Buscar por codigo breve
+    Public Function BuscarSubAreaCodigoBreve() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "E_slmBuscarSubAreaCodigoBreve"
+            cmd.Parameters.Add("@SubArea", SqlDbType.VarChar).Value = Cod_SubArea
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
     Public Function BuscarSubAreaXArea() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection

@@ -3,6 +3,7 @@
 Public Class ClsItemExamenDetalle
     Dim nombre As String
     Dim codigo, codigoItemExamen, codigoUnidad As Integer
+    Dim codigoSubArea As Integer
     'Constructor
     Public Sub New()
 
@@ -31,6 +32,14 @@ Public Class ClsItemExamenDetalle
         End Get
         Set(value As Integer)
             codigoUnidad = value
+        End Set
+    End Property
+    Public Property codigoSubArea_ As Integer
+        Get
+            Return codigoSubArea
+        End Get
+        Set(value As Integer)
+            codigoSubArea = value
         End Set
     End Property
     Public Property Nombre_ As String
@@ -190,7 +199,29 @@ Public Class ClsItemExamenDetalle
         End Using
 
     End Function
+    'Buscar detalle items por subarea
+    Public Function BuscarItemExamenDetalleSubArea() As DataTable
 
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "E_slmBuscarItemExamenDetalleSubArea"
+            cmd.Parameters.Add("@codigoSubArea", SqlDbType.Int).Value = codigoSubArea_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
     Public Function SeleccionarItemExamenDetalle() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection

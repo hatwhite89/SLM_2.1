@@ -516,6 +516,12 @@
     <Compile Include="presentacion\E_BuscarOrdenDeTrabajo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_EspecificarHojaTrabajo.Designer.vb">
+      <DependentUpon>E_EspecificarHojaTrabajo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_EspecificarHojaTrabajo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_frmAgregarProductoOC.Designer.vb">
       <DependentUpon>E_frmAgregarProductoOC.vb</DependentUpon>
     </Compile>
@@ -610,6 +616,12 @@
       <DependentUpon>E_frmUnidadMedida_almacen.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\E_frmUnidadMedida_almacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_HojaTrabajo.Designer.vb">
+      <DependentUpon>E_HojaTrabajo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_HojaTrabajo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_ListarOrdenesDeTrabajo.Designer.vb">
@@ -1286,6 +1298,9 @@
     <EmbeddedResource Include="presentacion\E_BuscarOrdenDeTrabajo.resx">
       <DependentUpon>E_BuscarOrdenDeTrabajo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_EspecificarHojaTrabajo.resx">
+      <DependentUpon>E_EspecificarHojaTrabajo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmAgregarProductoOC.resx">
       <DependentUpon>E_frmAgregarProductoOC.vb</DependentUpon>
     </EmbeddedResource>
@@ -1333,6 +1348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmUnidadMedida_almacen.resx">
       <DependentUpon>E_frmUnidadMedida_almacen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_HojaTrabajo.resx">
+      <DependentUpon>E_HojaTrabajo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_ListarOrdenesDeTrabajo.resx">
       <DependentUpon>E_ListarOrdenesDeTrabajo.vb</DependentUpon>

@@ -7,6 +7,9 @@ Public Class ClsOrdenDeTrabajo
     Dim enUsuario, inUsuario, cod_sede, cod_tecnico, cod_validador, cod_objeto, codigoSubArea As Integer
     Dim pmFecha, npFecha, epFecha, prFecha, coFecha, enFecha, inFecha, fechaEntrega As Date
     Dim enviadaWS, enviadaEmail, cortesia, urgente, entregarMedico, entregarPaciente As Boolean
+
+    'busqueda hoja de trabajo
+    Dim codigoSucursal As Integer
     'Constructor
     Public Sub New()
 
@@ -17,6 +20,14 @@ Public Class ClsOrdenDeTrabajo
         End Get
         Set(value As Integer)
             cod_orden_trabajo = value
+        End Set
+    End Property
+    Public Property codigoSucursal_ As Integer
+        Get
+            Return codigoSucursal
+        End Get
+        Set(value As Integer)
+            codigoSucursal = value
         End Set
     End Property
     Public Property codigoSubArea_ As Integer
@@ -526,6 +537,26 @@ Public Class ClsOrdenDeTrabajo
 
         Return par_sal
 
+    End Function
+    'generar hoja de trabajo por sucursal y subarea
+    Public Function BuscarHojaDeTrabajo() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "E_slmBuscarHojaDeTrabajo"
+            cmd.Parameters.Add("codigoSubArea", SqlDbType.Int).Value = codigoSubArea_
+            cmd.Parameters.Add("codigoSucursal", SqlDbType.Int).Value = codigoSucursal_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
     End Function
     Public Function BuscarOrdenDeTrabajo() As DataTable
         Dim objCon As New ClsConnection

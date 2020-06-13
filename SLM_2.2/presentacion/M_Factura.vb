@@ -156,6 +156,10 @@ Public Class M_Factura
         'obtener maquina local
         buscarMaquinaLocal()
 
+        'recepcionista
+        txtcodigoRecepecionista.Text = Form1.lblUserCod.Text
+        txtNombreRecepcionista.Text = Form1.lblMiUser.Text
+
 
     End Sub
     Private Sub buscarMaquinaLocal()
@@ -1385,11 +1389,13 @@ Public Class M_Factura
             ' Add Table
             ds.Tables.Add("ListaExamenes")
             ' Add Columns
+
             Dim col As DataColumn
             For Each dgvCol As DataGridViewColumn In dgblistadoExamenes.Columns
                 col = New DataColumn(dgvCol.Name)
                 ds.Tables("ListaExamenes").Columns.Add(col)
             Next
+
             'Add Rows from the datagridview
             Dim row As DataRow
             Dim colcount As Integer = dgblistadoExamenes.Columns.Count - 1
