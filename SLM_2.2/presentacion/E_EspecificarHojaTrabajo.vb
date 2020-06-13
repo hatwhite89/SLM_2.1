@@ -82,54 +82,115 @@
 
     Private Sub btnAbrir_Click(sender As Object, e As EventArgs) Handles btnAbrir.Click
         If Trim(txtDescripcionSubArea.Text) <> "" And Trim(txtDescripcionSucursal.Text) <> "" And Trim(txtDescripcionTecnico.Text) = "Correcto" Then
-            Dim objOrdTrab As New ClsOrdenDeTrabajo
-            With objOrdTrab
-                .codigoSucursal_ = lblCodeSucursal.Text
-                .codigoSubArea_ = lblCodeSubArea.Text
-            End With
+
             Try
-                'Dim dv As DataView = objOrdTrab.BuscarHojaDeTrabajo.DefaultView
-                'E_HojaTrabajo.dgvHojaTrab.DataSource = dv
-                'E_HojaTrabajo.dgvHojaTrab.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
                 E_HojaTrabajo.txtsucursal.Text = txtSucursal.Text
                 E_HojaTrabajo.txtSubarea.Text = txtSubArea.Text
                 E_HojaTrabajo.txtArea.Text = lblCodigoGrupo.Text
 
-
-                temp()
-
-
+                GenerarTablaHojaTrabajo()
+                'FALTA EL LLENADO DE LOS DATOS
+                LlenadoDatos()
                 E_HojaTrabajo.ShowDialog()
             Catch ex As Exception
                 MsgBox("Al abrir " & ex.Message, MsgBoxStyle.Critical, "Validación")
             End Try
+        Else
+            MsgBox("Debe ingresar la sucursal y subárea.", MsgBoxStyle.Information)
         End If
     End Sub
+    Private Function CalcularEdad(ByVal fecha As Date) As String
+        Dim yr As Integer = DateDiff(DateInterval.Year, fecha, Now)
+        Dim month As Integer = DateDiff(DateInterval.Month, fecha, Now)
+        Dim day As Integer = DateDiff(DateInterval.Day, fecha, Now)
+        Dim edad As String = ""
 
-    Private Sub temp()
+        If (Now.Month < fecha.Month) Then
+            yr -= 1
+        ElseIf (Now.Month = fecha.Month And Now.Day < fecha.Day) Then
+            yr -= 1
+        End If
+
+        If (yr = 0 And month = 1 And Now.Day < fecha.Day) Then
+            month -= 1
+        End If
+
+        If (yr >= 1) Then
+            edad = yr & "a"
+        ElseIf (yr = 0 And month > 0) Then
+            edad = month & "m"
+        Else
+            edad = day & "d"
+        End If
+
+        'retorna la edad 
+        Return edad
+    End Function
+    Private Sub LlenadoDatos()
+        Try
+
+            Dim edad As String ' edad del paciente
+
+            'orden de trabajo
+            Dim objOrdTrab As New ClsOrdenDeTrabajo
+            Dim dt As New DataTable ' ordenes de trabajo
+            Dim row As DataRow ' fila orden de trabajo
+
+            'detalle orden de trabajo
+            Dim objOrdTrabDet As New ClsOrdenTrabajoDetalle
+            Dim dtDet As New DataTable ' detalle orden de trabajo
+            Dim rowDet As DataRow ' fila detalle orden de trabajo
+
+            'parametros de busqueda
+            With objOrdTrab
+                .codigoSucursal_ = lblCodeSucursal.Text
+                .codigoSubArea_ = lblCodeSubArea.Text
+            End With
+            dt = objOrdTrab.BuscarHojaDeTrabajo
+
+            For index As Integer = 0 To dt.Rows.Count - 1
+                row = dt.Rows(index)
+                edad = CalcularEdad(Convert.ToDateTime(row("fechaNacimiento")))
+                E_HojaTrabajo.dgvHojaTrab.Rows.Add(New String() {CStr(row("cod_orden_trabajo")), CStr(row("paciente")), edad, CStr(row("genero")), CStr(row("medico")), "1", "1", "1", "1", "1"})
+
+                objOrdTrabDet.cod_orden_trabajo_ = Convert.ToInt64(row("cod_orden_trabajo"))
+                dtDet = objOrdTrabDet.BuscarOrdenTrabajoDetalle
+                For index2 As Integer = 0 To dtDet.Rows.Count - 1
+                    rowDet = dtDet.Rows(index2)
+                    'marcar los * 
+
+                Next
+            Next
+
+        Catch ex As Exception
+            MsgBox("llenado de datos. " & ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+    Private Sub GenerarTablaHojaTrabajo()
 
         Dim ds As New DataSet 'Orden de los examenes por grupo o laboratorio
         Try
             ' Add Table
-            ds.Tables.Add("ListaExamenes")
+            ds.Tables.Add("HojaTrabajo")
 
             ' Add Columns
             Dim col As DataColumn
 
             col = New DataColumn("Orden #")
-            ds.Tables("ListaExamenes").Columns.Add(col)
+            ds.Tables("HojaTrabajo").Columns.Add(col)
 
             col = New DataColumn("Paciente")
-            ds.Tables("ListaExamenes").Columns.Add(col)
+            ds.Tables("HojaTrabajo").Columns.Add(col)
 
             col = New DataColumn("Edad")
-            ds.Tables("ListaExamenes").Columns.Add(col)
+            ds.Tables("HojaTrabajo").Columns.Add(col)
 
             col = New DataColumn("Sexo")
-            ds.Tables("ListaExamenes").Columns.Add(col)
+            ds.Tables("HojaTrabajo").Columns.Add(col)
 
             col = New DataColumn("Medico")
-            ds.Tables("ListaExamenes").Columns.Add(col)
+            ds.Tables("HojaTrabajo").Columns.Add(col)
 
             Dim dt As New DataTable
             Dim row As DataRow
@@ -140,22 +201,23 @@
             For index As Integer = 0 To dt.Rows.Count - 1
                 row = dt.Rows(index)
                 col = New DataColumn(CStr(row("nombre")))
-                ds.Tables("ListaExamenes").Columns.Add(col)
+                ds.Tables("HojaTrabajo").Columns.Add(col)
                 'dtResultados.Rows.Add(New String() {CStr(row("codigo")), CStr(row("nombre")), CStr(row("codigoUnidad")), CStr(row("unidad_codigo_breve"))})
             Next
 
             col = New DataColumn("Estado")
-            ds.Tables("ListaExamenes").Columns.Add(col)
+            ds.Tables("HojaTrabajo").Columns.Add(col)
 
-            'transformar de data a data table
-            'dt = ds.Tables(0)
-
+            'le asigno la tabla
             E_HojaTrabajo.dgvHojaTrab.DataSource = ds.Tables(0)
-        Catch ex As Exception
-            MsgBox("metodo temp " & ex.Message, MsgBoxStyle.Critical, "Validación")
 
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Validación")
         End Try
 
     End Sub
 
+    Private Sub E_EspecificarHojaTrabajo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtTecnico.Text = Form1.lblMiUser.Text
+    End Sub
 End Class
