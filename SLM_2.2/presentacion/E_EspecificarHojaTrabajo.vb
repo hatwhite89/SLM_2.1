@@ -151,13 +151,15 @@
             For index As Integer = 0 To dt.Rows.Count - 1
                 row = dt.Rows(index)
                 edad = CalcularEdad(Convert.ToDateTime(row("fechaNacimiento")))
-                E_HojaTrabajo.dgvHojaTrab.Rows.Add(New String() {CStr(row("cod_orden_trabajo")), CStr(row("paciente")), edad, CStr(row("genero")), CStr(row("medico")), "1", "1", "1", "1", "1"})
+
+                ' E_HojaTrabajo.dgvHojaTrab.Rows.Add(New String() {CStr(row("cod_orden_trabajo")), CStr(row("paciente")), edad, CStr(row("genero")), CStr(row("medico")), "", "", "", "", ""})
+
 
                 objOrdTrabDet.cod_orden_trabajo_ = Convert.ToInt64(row("cod_orden_trabajo"))
                 dtDet = objOrdTrabDet.BuscarOrdenTrabajoDetalle
                 For index2 As Integer = 0 To dtDet.Rows.Count - 1
                     rowDet = dtDet.Rows(index2)
-                    'marcar los * 
+                    ' marcar los * 
 
                 Next
             Next
@@ -169,7 +171,7 @@
 
     Private Sub GenerarTablaHojaTrabajo()
 
-        Dim ds As New DataSet 'Orden de los examenes por grupo o laboratorio
+        Dim ds As New DataSet  'Orden de los examenes por grupo o laboratorio
         Try
             ' Add Table
             ds.Tables.Add("HojaTrabajo")
