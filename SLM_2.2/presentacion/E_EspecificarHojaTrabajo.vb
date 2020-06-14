@@ -90,7 +90,7 @@
 
                 GenerarTablaHojaTrabajo()
                 'FALTA EL LLENADO DE LOS DATOS
-                LlenadoDatos()
+                'LlenadoDatos()
                 E_HojaTrabajo.ShowDialog()
             Catch ex As Exception
                 MsgBox("Al abrir " & ex.Message, MsgBoxStyle.Critical, "Validación")
@@ -164,14 +164,16 @@
                 Next
             Next
 
+
+
         Catch ex As Exception
             MsgBox("llenado de datos. " & ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
-    Private Sub GenerarTablaHojaTrabajo()
+    Private Sub GenerarTablaHojaTrabajo1()
 
-        Dim ds As New DataSet  'Orden de los examenes por grupo o laboratorio
+        Dim ds As New DataSet 'Orden de los examenes por grupo o laboratorio
         Try
             ' Add Table
             ds.Tables.Add("HojaTrabajo")
@@ -209,6 +211,111 @@
 
             col = New DataColumn("Estado")
             ds.Tables("HojaTrabajo").Columns.Add(col)
+
+            'le asigno la tabla
+            E_HojaTrabajo.dgvHojaTrab.DataSource = ds.Tables(0)
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Validación")
+        End Try
+
+    End Sub
+    Private Sub GenerarTablaHojaTrabajo()
+
+        Dim ds As New DataSet  'Orden de los examenes por grupo o laboratorio
+        Try
+
+            'LLENADO DE COLUMNAS
+
+            ' Add Table
+            ds.Tables.Add("HojaTrabajo")
+
+            ' Add Columns
+            Dim col As DataColumn
+
+            col = New DataColumn("Orden #")
+            ds.Tables("HojaTrabajo").Columns.Add(col)
+
+            col = New DataColumn("Paciente")
+            ds.Tables("HojaTrabajo").Columns.Add(col)
+
+            col = New DataColumn("Edad")
+            ds.Tables("HojaTrabajo").Columns.Add(col)
+
+            col = New DataColumn("Sexo")
+            ds.Tables("HojaTrabajo").Columns.Add(col)
+
+            col = New DataColumn("Medico")
+            ds.Tables("HojaTrabajo").Columns.Add(col)
+
+            Dim dt As New DataTable
+            Dim row As DataRow
+            Dim objItemDet As New ClsItemExamenDetalle
+            objItemDet.codigoSubArea_ = lblCodeSubArea.Text
+            dt = objItemDet.BuscarItemExamenDetalleSubArea()
+
+            For index As Integer = 0 To dt.Rows.Count - 1
+                row = dt.Rows(index)
+                col = New DataColumn(CStr(row("nombre")))
+                ds.Tables("HojaTrabajo").Columns.Add(col)
+                'dtResultados.Rows.Add(New String() {CStr(row("codigo")), CStr(row("nombre")), CStr(row("codigoUnidad")), CStr(row("unidad_codigo_breve"))})
+            Next
+
+            col = New DataColumn("Estado")
+            ds.Tables("HojaTrabajo").Columns.Add(col)
+            Dim edad As String
+
+
+
+
+            'LLENADO DE FILAS
+
+            'orden de trabajo
+            Dim objOrdTrab As New ClsOrdenDeTrabajo
+            'Dim dt As New DataTable ' ordenes de trabajo
+            Dim rowO As DataRow ' fila orden de trabajo
+
+            'detalle orden de trabajo
+            Dim objOrdTrabDet As New ClsOrdenTrabajoDetalle
+            Dim dtDet As New DataTable ' detalle orden de trabajo
+            Dim rowDet As DataRow ' fila detalle orden de trabajo
+
+            'parametros de busqueda
+            With objOrdTrab
+                .codigoSucursal_ = lblCodeSucursal.Text
+                .codigoSubArea_ = lblCodeSubArea.Text
+            End With
+            dt = objOrdTrab.BuscarHojaDeTrabajo
+
+            For index As Integer = 0 To dt.Rows.Count - 1
+                rowO = dt.Rows(index)
+                edad = CalcularEdad(Convert.ToDateTime(rowO("fechaNacimiento")))
+
+                row = ds.Tables("HojaTrabajo").Rows.Add
+
+                row.Item(0) = CStr(rowO("cod_orden_trabajo"))
+                row.Item(1) = CStr(rowO("paciente"))
+                row.Item(2) = CStr(rowO("genero"))
+                row.Item(3) = CStr(rowO("medico"))
+
+
+                'LLENADO DETALLE ORDEN DE TRABAJO
+                objOrdTrabDet.cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
+                dtDet = objOrdTrabDet.BuscarOrdenTrabajoDetalle
+                For index2 As Integer = 0 To dtDet.Rows.Count - 1
+                    rowDet = dtDet.Rows(index2)
+                    'marcar los * 
+                    If CStr(rowDet("resultado")) = "0" Then
+                        'row.Item(CStr(rowDet("nombre"))) = "*"
+                        'row.Item(row.Table.Columns.IndexOf(CStr(rowDet("nombre")))) = "*"
+                    Else
+                        'row.Item(CStr(rowDet("nombre"))) = CStr(rowDet("resultado"))
+                        'row.Item(row.Table.Columns.IndexOf(CStr(rowDet("nombre")))) = CStr(rowDet("resultado"))
+                    End If
+                Next
+            Next
+
+
 
             'le asigno la tabla
             E_HojaTrabajo.dgvHojaTrab.DataSource = ds.Tables(0)
