@@ -92,6 +92,26 @@
                 'FALTA EL LLENADO DE LOS DATOS
                 'LlenadoDatos()
                 E_HojaTrabajo.ShowDialog()
+
+
+                'Consultando examenes y parametros
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             Catch ex As Exception
                 MsgBox("Al abrir " & ex.Message, MsgBoxStyle.Critical, "Validación")
             End Try
@@ -295,9 +315,9 @@
 
                 row.Item(0) = CStr(rowO("cod_orden_trabajo"))
                 row.Item(1) = CStr(rowO("paciente"))
-                row.Item(2) = CStr(rowO("genero"))
-                row.Item(3) = CStr(rowO("medico"))
-
+                row.Item(2) = edad
+                row.Item(3) = CStr(rowO("genero"))
+                row.Item(4) = CStr(rowO("medico"))
 
                 'LLENADO DETALLE ORDEN DE TRABAJO
                 objOrdTrabDet.cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
