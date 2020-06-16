@@ -181,6 +181,7 @@
         End Try
     End Sub
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
+
         Try
             If txtEmpleado.TextLength = 0 Then
                 txtEmpleado.BackColor = Color.Red

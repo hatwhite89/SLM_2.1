@@ -24,26 +24,26 @@
         End If
     End Sub
 
-    Private Sub txtTecnico_TextChanged(sender As Object, e As EventArgs) Handles txtTecnico.TextChanged
-        If (Trim(txtTecnico.Text) <> "") Then
-            Try
-                With objUser
-                    .Usuario_ = txtTecnico.Text
-                End With
-                Dim dt As New DataTable
-                dt = objUser.LoginPass()
-                Dim row As DataRow = dt.Rows(0)
-                txtDescripcionTecnico.Text = "Correcto"
-                lblCodeTecnico.Text = CStr(row("cod_usuario"))
-            Catch ex As Exception
-                lblCodeTecnico.Text = ""
-                txtDescripcionTecnico.Text = "Incorrecto"
-            End Try
-        Else
-            lblCodeTecnico.Text = ""
-            txtDescripcionTecnico.Text = ""
-        End If
-    End Sub
+    'Private Sub txtTecnico_TextChanged(sender As Object, e As EventArgs)
+    '    If (Trim(txtTecnico.Text) <> "") Then
+    '        Try
+    '            With objUser
+    '                .Usuario_ = txtTecnico.Text
+    '            End With
+    '            Dim dt As New DataTable
+    '            dt = objUser.LoginPass()
+    '            Dim row As DataRow = dt.Rows(0)
+    '            txtDescripcionTecnico.Text = "Correcto"
+    '            lblCodeTecnico.Text = CStr(row("cod_usuario"))
+    '        Catch ex As Exception
+    '            lblCodeTecnico.Text = ""
+    '            txtDescripcionTecnico.Text = "Incorrecto"
+    '        End Try
+    '    Else
+    '        lblCodeTecnico.Text = ""
+    '        txtDescripcionTecnico.Text = ""
+    '    End If
+    'End Sub
 
     Private Sub txtSucursal_TextChanged(sender As Object, e As EventArgs) Handles txtSucursal.TextChanged
         If (Trim(txtSucursal.Text) <> "") Then
@@ -71,7 +71,7 @@
         E_ListarSubAreas.ShowDialog()
     End Sub
 
-    Private Sub btnTecnico_Click(sender As Object, e As EventArgs) Handles btnTecnico.Click
+    Private Sub btnTecnico_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -81,7 +81,8 @@
     End Sub
 
     Private Sub btnAbrir_Click(sender As Object, e As EventArgs) Handles btnAbrir.Click
-        If Trim(txtDescripcionSubArea.Text) <> "" And Trim(txtDescripcionSucursal.Text) <> "" And Trim(txtDescripcionTecnico.Text) = "Correcto" Then
+        'If Trim(txtDescripcionSubArea.Text) <> "" And Trim(txtDescripcionSucursal.Text) <> "" And Trim(txtDescripcionTecnico.Text) = "Correcto" Then
+        If Trim(txtDescripcionSubArea.Text) <> "" And Trim(txtDescripcionSucursal.Text) <> "" Then
 
             Try
                 E_HojaTrabajo.txtsucursal.Text = txtSucursal.Text
@@ -290,6 +291,11 @@
 
             'LLENADO DE FILAS
 
+
+
+            Dim colColl As DataColumnCollection = ds.Tables("HojaTrabajo").Columns
+
+
             'orden de trabajo
             Dim objOrdTrab As New ClsOrdenDeTrabajo
             'Dim dt As New DataTable ' ordenes de trabajo
@@ -326,9 +332,11 @@
                     rowDet = dtDet.Rows(index2)
                     'marcar los * 
                     If CStr(rowDet("resultado")) = "0" Then
+                        row.Item(colColl.IndexOf(CStr(rowDet("nombre")))) = "*"
                         'row.Item(CStr(rowDet("nombre"))) = "*"
                         'row.Item(row.Table.Columns.IndexOf(CStr(rowDet("nombre")))) = "*"
                     Else
+                        row.Item(colColl.IndexOf(CStr(rowDet("nombre")))) = CStr(rowDet("resultado"))
                         'row.Item(CStr(rowDet("nombre"))) = CStr(rowDet("resultado"))
                         'row.Item(row.Table.Columns.IndexOf(CStr(rowDet("nombre")))) = CStr(rowDet("resultado"))
                     End If
@@ -347,6 +355,6 @@
     End Sub
 
     Private Sub E_EspecificarHojaTrabajo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtTecnico.Text = Form1.lblMiUser.Text
+        'txtTecnico.Text = Form1.lblMiUser.Text
     End Sub
 End Class
