@@ -92,6 +92,26 @@
                 'FALTA EL LLENADO DE LOS DATOS
                 'LlenadoDatos()
                 E_HojaTrabajo.ShowDialog()
+
+
+                'Consultando examenes y parametros
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             Catch ex As Exception
                 MsgBox("Al abrir " & ex.Message, MsgBoxStyle.Critical, "Validación")
             End Try
@@ -151,13 +171,15 @@
             For index As Integer = 0 To dt.Rows.Count - 1
                 row = dt.Rows(index)
                 edad = CalcularEdad(Convert.ToDateTime(row("fechaNacimiento")))
-                E_HojaTrabajo.dgvHojaTrab.Rows.Add(New String() {CStr(row("cod_orden_trabajo")), CStr(row("paciente")), edad, CStr(row("genero")), CStr(row("medico")), "1", "1", "1", "1", "1"})
+
+                ' E_HojaTrabajo.dgvHojaTrab.Rows.Add(New String() {CStr(row("cod_orden_trabajo")), CStr(row("paciente")), edad, CStr(row("genero")), CStr(row("medico")), "", "", "", "", ""})
+
 
                 objOrdTrabDet.cod_orden_trabajo_ = Convert.ToInt64(row("cod_orden_trabajo"))
                 dtDet = objOrdTrabDet.BuscarOrdenTrabajoDetalle
                 For index2 As Integer = 0 To dtDet.Rows.Count - 1
                     rowDet = dtDet.Rows(index2)
-                    'marcar los * 
+                    ' marcar los * 
 
                 Next
             Next
@@ -220,7 +242,7 @@
     End Sub
     Private Sub GenerarTablaHojaTrabajo()
 
-        Dim ds As New DataSet 'Orden de los examenes por grupo o laboratorio
+        Dim ds As New DataSet  'Orden de los examenes por grupo o laboratorio
         Try
 
             'LLENADO DE COLUMNAS
@@ -264,7 +286,7 @@
             Dim edad As String
 
 
-            Dim colColl As DataColumnCollection = ds.Tables("HojaTrabajo").Columns
+
 
             'LLENADO DE FILAS
 
@@ -293,8 +315,9 @@
 
                 row.Item(0) = CStr(rowO("cod_orden_trabajo"))
                 row.Item(1) = CStr(rowO("paciente"))
-                row.Item(2) = CStr(rowO("genero"))
-                row.Item(3) = CStr(rowO("medico"))
+                row.Item(2) = edad
+                row.Item(3) = CStr(rowO("genero"))
+                row.Item(4) = CStr(rowO("medico"))
 
                 'LLENADO DETALLE ORDEN DE TRABAJO
                 objOrdTrabDet.cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
@@ -302,15 +325,10 @@
                 For index2 As Integer = 0 To dtDet.Rows.Count - 1
                     rowDet = dtDet.Rows(index2)
                     'marcar los * 
-                    MsgBox(CStr(rowDet("nombre")) & "      " & colColl.IndexOf(CStr(rowDet("nombre"))))
                     If CStr(rowDet("resultado")) = "0" Then
-                        'row.Item(ds.Tables("HojaTrabajo").Columns.IndexOf(CStr(rowDet("nombre")))) = "*"
-                        'row.Item(colColl.IndexOf(CStr(rowDet("nombre")))) = "*"
                         'row.Item(CStr(rowDet("nombre"))) = "*"
                         'row.Item(row.Table.Columns.IndexOf(CStr(rowDet("nombre")))) = "*"
                     Else
-                        'row.Item(ds.Tables("HojaTrabajo").Columns.IndexOf(CStr(rowDet("nombre")))) = CStr(rowDet("resultado"))
-                        'row.Item(colColl.IndexOf(CStr(rowDet("nombre")))) = CStr(rowDet("resultado"))
                         'row.Item(CStr(rowDet("nombre"))) = CStr(rowDet("resultado"))
                         'row.Item(row.Table.Columns.IndexOf(CStr(rowDet("nombre")))) = CStr(rowDet("resultado"))
                     End If
