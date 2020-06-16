@@ -264,7 +264,7 @@
             Dim edad As String
 
 
-
+            Dim colColl As DataColumnCollection = ds.Tables("HojaTrabajo").Columns
 
             'LLENADO DE FILAS
 
@@ -296,17 +296,21 @@
                 row.Item(2) = CStr(rowO("genero"))
                 row.Item(3) = CStr(rowO("medico"))
 
-
                 'LLENADO DETALLE ORDEN DE TRABAJO
                 objOrdTrabDet.cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
                 dtDet = objOrdTrabDet.BuscarOrdenTrabajoDetalle
                 For index2 As Integer = 0 To dtDet.Rows.Count - 1
                     rowDet = dtDet.Rows(index2)
                     'marcar los * 
+                    MsgBox(CStr(rowDet("nombre")) & "      " & colColl.IndexOf(CStr(rowDet("nombre"))))
                     If CStr(rowDet("resultado")) = "0" Then
+                        'row.Item(ds.Tables("HojaTrabajo").Columns.IndexOf(CStr(rowDet("nombre")))) = "*"
+                        'row.Item(colColl.IndexOf(CStr(rowDet("nombre")))) = "*"
                         'row.Item(CStr(rowDet("nombre"))) = "*"
                         'row.Item(row.Table.Columns.IndexOf(CStr(rowDet("nombre")))) = "*"
                     Else
+                        'row.Item(ds.Tables("HojaTrabajo").Columns.IndexOf(CStr(rowDet("nombre")))) = CStr(rowDet("resultado"))
+                        'row.Item(colColl.IndexOf(CStr(rowDet("nombre")))) = CStr(rowDet("resultado"))
                         'row.Item(CStr(rowDet("nombre"))) = CStr(rowDet("resultado"))
                         'row.Item(row.Table.Columns.IndexOf(CStr(rowDet("nombre")))) = CStr(rowDet("resultado"))
                     End If
