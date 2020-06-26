@@ -2390,13 +2390,13 @@ Partial Class Form1
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxMenu)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.PanelFactura)
         Me.Controls.Add(Me.PanelLab)
         Me.Controls.Add(Me.PanelSistema)
         Me.Controls.Add(Me.panelMenu)
         Me.Controls.Add(Me.PanelTalentoHumano)
         Me.Controls.Add(Me.PanelAlmacen)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.PanelFactura)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
