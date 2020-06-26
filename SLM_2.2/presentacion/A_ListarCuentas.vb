@@ -26,26 +26,37 @@
     End Sub
     Private Sub dtCuentas_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtCuentas.CellDoubleClick
         'Seleccionar campo cuenta para formulario forma pago
+        Try
+            If lblForm.Text = "facturaCompra" Then
 
-        If lblForm.Text = "facturaCompra" Then
+                Dim cuenta, nombre As String
 
-            Dim cuenta, nombre As String
+                cuenta = dtCuentas.Rows(e.RowIndex).Cells(0).Value
+                nombre = dtCuentas.Rows(e.RowIndex).Cells(1).Value
 
-            cuenta = dtCuentas.Rows(e.RowIndex).Cells(0).Value
-            nombre = dtCuentas.Rows(e.RowIndex).Cells(1).Value
+                'Asignar busqueda en Datagrid
+                'A_FacturaCompras.dtDetalleFactura.Rows.Remove(A_FacturaCompras.dtDetalleFactura.Rows(e.RowIndex.ToString))
+                A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {cuenta, " ", " ", nombre})
 
-            'Asignar busqueda en Datagrid
-            'A_FacturaCompras.dtDetalleFactura.Rows.Remove(A_FacturaCompras.dtDetalleFactura.Rows(e.RowIndex.ToString))
-            A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {cuenta, " ", " ", nombre})
+            ElseIf lblForm.Text = "asientos" Then
 
-        Else
+                'Llenar campo de asientos contables
+                Dim acuenta, anombre As String
+                acuenta = dtCuentas.Rows(e.RowIndex).Cells(0).Value
+                anombre = dtCuentas.Rows(e.RowIndex).Cells(1).Value
 
-            frmFormaPago.txtCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(0).Value
+                frmAsientos.dtDetalleAsiento.Rows.Add(New String() {acuenta, anombre, 0.0, 0.0})
+            Else
+                frmFormaPago.txtCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(0).Value
 
-        End If
+            End If
 
-        'Cerrar forma al seleccionar
-        Me.Close()
+            'Cerrar forma al seleccionar
+            Me.Close()
+        Catch ex As Exception
+            MsgBox("Seleccion de cuenta. " + ex.Message)
+        End Try
+
 
     End Sub
 End Class

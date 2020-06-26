@@ -161,6 +161,8 @@
     <Compile Include="negocio\clsDetalleOI.vb" />
     <Compile Include="negocio\ClsDetallePago.vb" />
     <Compile Include="negocio\ClsDetalleRecibo.vb" />
+    <Compile Include="negocio\ClsDetalleValorReferencia.vb" />
+    <Compile Include="negocio\ClsDetalleValorRefTxt.vb" />
     <Compile Include="negocio\ClsEmpleados.vb" />
     <Compile Include="negocio\clsEntradaAlmacen.vb" />
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
@@ -200,6 +202,8 @@
     <Compile Include="negocio\ClsUnidadMedidaAlmacen.vb" />
     <Compile Include="negocio\ClsUsuario.vb" />
     <Compile Include="negocio\ClsVacaciones.vb" />
+    <Compile Include="negocio\ClsValoresReferencia.vb" />
+    <Compile Include="negocio\ClsValoresReferenciaTXT.vb" />
     <Compile Include="negocio\ClsVentanasModulos.vb" />
     <Compile Include="negocio\ModulosVarios.vb" />
     <Compile Include="presentacion\1A_PantallaCarga.Designer.vb">
@@ -357,6 +361,12 @@
       <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ListadoFacturaCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ListadoParametros.Designer.vb">
+      <DependentUpon>A_ListadoParametros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListadoParametros.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_ListadoPerfiles.Designer.vb">
@@ -1216,6 +1226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoFacturaCompra.resx">
       <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListadoParametros.resx">
+      <DependentUpon>A_ListadoParametros.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoPerfiles.resx">
       <DependentUpon>A_ListadoPerfiles.vb</DependentUpon>

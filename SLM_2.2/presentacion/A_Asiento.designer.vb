@@ -85,7 +85,7 @@ Partial Class frmAsientos
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFecha.Location = New System.Drawing.Point(246, 20)
         Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(112, 20)
+        Me.dtpFecha.Size = New System.Drawing.Size(131, 20)
         Me.dtpFecha.TabIndex = 4
         '
         'Label2
@@ -107,10 +107,12 @@ Partial Class frmAsientos
         '
         'dtDetalleAsiento
         '
+        Me.dtDetalleAsiento.AllowDrop = True
         Me.dtDetalleAsiento.AllowUserToDeleteRows = False
         Me.dtDetalleAsiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDetalleAsiento.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cuenta, Me.Descripcion, Me.Debe, Me.Haber})
         Me.dtDetalleAsiento.Location = New System.Drawing.Point(6, 19)
+        Me.dtDetalleAsiento.MultiSelect = False
         Me.dtDetalleAsiento.Name = "dtDetalleAsiento"
         Me.dtDetalleAsiento.Size = New System.Drawing.Size(614, 321)
         Me.dtDetalleAsiento.TabIndex = 7

@@ -192,6 +192,8 @@ Partial Class Form1
         Me.lblMiUser = New System.Windows.Forms.Label()
         Me.lblUserCod = New System.Windows.Forms.Label()
         Me.Apariencia = New Sunisoft.IrisSkin.SkinEngine(CType(Me, System.ComponentModel.Component))
+        Me.PictureBox48 = New System.Windows.Forms.PictureBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.gbxMenu.SuspendLayout()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
@@ -273,6 +275,7 @@ Partial Class Form1
         Me.TabControl5.SuspendLayout()
         Me.TabPage10.SuspendLayout()
         Me.TabPage11.SuspendLayout()
+        CType(Me.PictureBox48, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -1319,6 +1322,8 @@ Partial Class Form1
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.PictureBox48)
+        Me.TabPage3.Controls.Add(Me.Button2)
         Me.TabPage3.Controls.Add(Me.PictureBox23)
         Me.TabPage3.Controls.Add(Me.PictureBox22)
         Me.TabPage3.Controls.Add(Me.PictureBox21)
@@ -2351,6 +2356,27 @@ Partial Class Form1
         Me.Apariencia.SkinFile = Nothing
         Me.Apariencia.SkinStreamMain = CType(resources.GetObject("Apariencia.SkinStreamMain"), System.IO.Stream)
         '
+        'PictureBox48
+        '
+        Me.PictureBox48.Image = CType(resources.GetObject("PictureBox48.Image"), System.Drawing.Image)
+        Me.PictureBox48.InitialImage = CType(resources.GetObject("PictureBox48.InitialImage"), System.Drawing.Image)
+        Me.PictureBox48.Location = New System.Drawing.Point(41, 191)
+        Me.PictureBox48.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox48.Name = "PictureBox48"
+        Me.PictureBox48.Size = New System.Drawing.Size(54, 51)
+        Me.PictureBox48.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox48.TabIndex = 16
+        Me.PictureBox48.TabStop = False
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(21, 248)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(99, 23)
+        Me.Button2.TabIndex = 15
+        Me.Button2.Text = "Valores Ref."
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2364,13 +2390,13 @@ Partial Class Form1
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxMenu)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.PanelFactura)
         Me.Controls.Add(Me.PanelLab)
         Me.Controls.Add(Me.PanelSistema)
         Me.Controls.Add(Me.panelMenu)
         Me.Controls.Add(Me.PanelTalentoHumano)
         Me.Controls.Add(Me.PanelAlmacen)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.PanelFactura)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -2460,6 +2486,7 @@ Partial Class Form1
         Me.TabControl5.ResumeLayout(False)
         Me.TabPage10.ResumeLayout(False)
         Me.TabPage11.ResumeLayout(False)
+        CType(Me.PictureBox48, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2634,4 +2661,6 @@ Partial Class Form1
     Friend WithEvents pbxMaquinasLocales As PictureBox
     Friend WithEvents btnMaquinasLocales As Button
     Friend WithEvents btnSolicitudes As Button
+    Friend WithEvents PictureBox48 As PictureBox
+    Friend WithEvents Button2 As Button
 End Class

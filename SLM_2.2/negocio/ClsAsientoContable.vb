@@ -116,6 +116,62 @@ Public Class ClsAsientoContable
 
     End Function
 
+    'Modificar Asiento
+    Public Function ActualizarAsiento() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        'PROCEDIMIENTO ALMACENADO
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "A_slmActualizarAsiento"
+
+        'VARIABLES 
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_Asiento"
+        sqlpar.Value = Cod_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codPeriodo"
+        sqlpar.Value = Cod_Periodo
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "descripcion"
+        sqlpar.Value = Descrip
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "fecha"
+        sqlpar.Value = Fecha_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "campoLlave"
+        sqlpar.Value = Campo_Llave
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
     'Capturar Ultimo Asiento
     Public Function capturarCodAsiento() As DataTable
 

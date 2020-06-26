@@ -3,10 +3,10 @@ Imports System.Data.SqlClient
 
 Public Class ClsVentanasModulos
 
+    'Herencia de campos
+    Inherits ClsFormularios
     'Variables
-    Dim codVentana, codModulo As Integer
-    Dim descripcion As String
-    Dim estado As Boolean
+    Dim codVentana As Integer
 
     'Constructor
     Public Sub New()
@@ -21,37 +21,6 @@ Public Class ClsVentanasModulos
         End Get
         Set(value As Integer)
             codVentana = value
-        End Set
-    End Property
-
-    'Codigo Perfil
-    Public Property Cod_Modulo As Integer
-        Get
-            Return codModulo
-        End Get
-        Set(value As Integer)
-            codModulo = value
-        End Set
-    End Property
-
-
-    'Descripcion
-    Public Property Descripcion_ As String
-        Get
-            Return descripcion
-        End Get
-        Set(value As String)
-            descripcion = value
-        End Set
-    End Property
-
-    'Estado
-    Public Property Estado_ As Boolean
-        Get
-            Return estado
-        End Get
-        Set(value As Boolean)
-            estado = value
         End Set
     End Property
 
@@ -125,7 +94,6 @@ Public Class ClsVentanasModulos
         End Using
 
     End Function
-
 
     'modificar modulos en base de datos
     Public Function modificarEstadoV() As String
