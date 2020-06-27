@@ -652,4 +652,15 @@
     Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
         PanelAlmacen.Visible = False
     End Sub
+
+    Private Sub Button2_Click_2(sender As Object, e As EventArgs) Handles Button2.Click
+        Try
+
+            A_ValoresRefPar.ShowDialog()
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

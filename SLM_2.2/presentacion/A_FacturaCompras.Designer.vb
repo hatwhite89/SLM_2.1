@@ -24,6 +24,9 @@ Partial Class A_FacturaCompras
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_FacturaCompras))
         Me.gbxInfoFact = New System.Windows.Forms.GroupBox()
+        Me.lblCodTerminoPago = New System.Windows.Forms.Label()
+        Me.lblEstado = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txtNroFactura = New System.Windows.Forms.TextBox()
@@ -63,9 +66,6 @@ Partial Class A_FacturaCompras
         Me.btnRegresar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.lblEstado = New System.Windows.Forms.Label()
-        Me.lblCodTerminoPago = New System.Windows.Forms.Label()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,6 +107,33 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.TabIndex = 0
         Me.gbxInfoFact.TabStop = False
         Me.gbxInfoFact.Text = "Información de Factura"
+        '
+        'lblCodTerminoPago
+        '
+        Me.lblCodTerminoPago.AutoSize = True
+        Me.lblCodTerminoPago.Location = New System.Drawing.Point(644, 107)
+        Me.lblCodTerminoPago.Name = "lblCodTerminoPago"
+        Me.lblCodTerminoPago.Size = New System.Drawing.Size(45, 13)
+        Me.lblCodTerminoPago.TabIndex = 27
+        Me.lblCodTerminoPago.Text = "Label15"
+        '
+        'lblEstado
+        '
+        Me.lblEstado.AutoSize = True
+        Me.lblEstado.Location = New System.Drawing.Point(518, 133)
+        Me.lblEstado.Name = "lblEstado"
+        Me.lblEstado.Size = New System.Drawing.Size(16, 13)
+        Me.lblEstado.TabIndex = 26
+        Me.lblEstado.Text = "---"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(469, 133)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(43, 13)
+        Me.Label14.TabIndex = 25
+        Me.Label14.Text = "Estado:"
         '
         'txtDescripcion
         '
@@ -472,33 +499,6 @@ Partial Class A_FacturaCompras
         Me.Label12.Size = New System.Drawing.Size(146, 20)
         Me.Label12.TabIndex = 14
         Me.Label12.Text = "Factura de Compra"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(469, 133)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(43, 13)
-        Me.Label14.TabIndex = 25
-        Me.Label14.Text = "Estado:"
-        '
-        'lblEstado
-        '
-        Me.lblEstado.AutoSize = True
-        Me.lblEstado.Location = New System.Drawing.Point(518, 133)
-        Me.lblEstado.Name = "lblEstado"
-        Me.lblEstado.Size = New System.Drawing.Size(16, 13)
-        Me.lblEstado.TabIndex = 26
-        Me.lblEstado.Text = "---"
-        '
-        'lblCodTerminoPago
-        '
-        Me.lblCodTerminoPago.AutoSize = True
-        Me.lblCodTerminoPago.Location = New System.Drawing.Point(644, 107)
-        Me.lblCodTerminoPago.Name = "lblCodTerminoPago"
-        Me.lblCodTerminoPago.Size = New System.Drawing.Size(45, 13)
-        Me.lblCodTerminoPago.TabIndex = 27
-        Me.lblCodTerminoPago.Text = "Label15"
         '
         'A_FacturaCompras
         '
