@@ -324,6 +324,7 @@
                 row.Item(2) = edad
                 row.Item(3) = CStr(rowO("genero"))
                 row.Item(4) = CStr(rowO("medico"))
+                row.Item(colColl.IndexOf("Estado")) = CStr(rowO("estado"))
 
                 'LLENADO DETALLE ORDEN DE TRABAJO
                 objOrdTrabDet.cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))

@@ -69,10 +69,10 @@
                             .codigoDescuento_ = dgbtabla.Rows(index).Cells(3).Value()
                         End With
                         If objDetPrice.RegistrarNuevoDetalleListaPrecios() = 0 Then
-                            MsgBox("Error al querer insertar el detalle del recibo.")
+                            MsgBox("Error al querer insertar el detalle de la lista de precios.", MsgBoxStyle.Critical)
                         End If
                     Next
-                    MsgBox("Registrado el recibo correctamente.")
+                    MsgBox("Registrada la lista de precios correctamente.", MsgBoxStyle.Information)
                 Else
                     MsgBox("Error al querer ingresar el recibo.", MsgBoxStyle.Critical)
                 End If
@@ -158,9 +158,9 @@
                             End If
                         End If
                     Next
-                    MsgBox("Modificado correctamente.")
+                    MsgBox("Modificado correctamente.", MsgBoxStyle.Information)
                 Else
-                    MsgBox("Error al querer ingresar el recibo.", MsgBoxStyle.Critical)
+                    MsgBox("Error al querer ingresar la lista de precios.", MsgBoxStyle.Critical)
                 End If
 
             Else
@@ -192,6 +192,7 @@
             If e.RowIndex >= 0 Then
                 If e.ColumnIndex = 2 Then
                     E_DetalleExamenes.lblFila.Text = e.RowIndex.ToString
+                    E_DetalleExamenes.lblform.Text = "M_ListaPrecios"
                     E_DetalleExamenes.ShowDialog()
                 ElseIf e.ColumnIndex = 4 Then
                     M_Descuentos.lblform.Text = "M_ListaPrecios"

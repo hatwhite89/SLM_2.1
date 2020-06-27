@@ -170,7 +170,7 @@
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
             rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
             txtcodigoTipo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
-            lblCodePriceList.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+            lblCodePriceList.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
 
             btnmodificar.Enabled = True
             btnguardar.Enabled = False

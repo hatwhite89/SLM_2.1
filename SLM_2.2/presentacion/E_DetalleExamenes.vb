@@ -171,7 +171,6 @@
                 dtResultados.Rows.Add(New String() {CStr(row("codigo")), CStr(row("nombre")), CStr(row("codigoUnidad")), CStr(row("unidad_codigo_breve"))})
             Next
 
-            M_Precio.txtcodigoItem.Text = txtCodExamen.Text
         Catch ex As Exception
 
         End Try
@@ -301,19 +300,29 @@
     Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dtItem.CellMouseDoubleClick
         Try
             Dim n As String = ""
-            Dim temp As String = M_ListaPrecios.dgbtabla.Rows(lblFila.Text).Cells(3).Value()
-            If e.RowIndex >= 0 Then
-                n = MsgBox("¿Desea utilizar el examen que a seleccionado?", MsgBoxStyle.YesNo, "Validación")
-            End If
-            If n = vbYes Then
-                If (M_ListaPrecios.validarItem(dtItem.Rows(e.RowIndex).Cells(0).Value()) = 0) Then
-                    If Convert.ToInt64(lblFila.Text) >= 0 And temp <> "" Then
-                        M_ListaPrecios.dgbtabla.Rows.Remove(M_ListaPrecios.dgbtabla.Rows(lblFila.Text))
+            If (lblform.Text = "M_ListaPrecios") Then
+                Dim temp As String = M_ListaPrecios.dgbtabla.Rows(lblFila.Text).Cells(3).Value()
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el examen seleccionado?", MsgBoxStyle.YesNo, "Validación")
+                End If
+                If n = vbYes Then
+                    If (M_ListaPrecios.validarItem(dtItem.Rows(e.RowIndex).Cells(0).Value()) = 0) Then
+                        If Convert.ToInt64(lblFila.Text) >= 0 And temp <> "" Then
+                            M_ListaPrecios.dgbtabla.Rows.Remove(M_ListaPrecios.dgbtabla.Rows(lblFila.Text))
+                        End If
+                        M_ListaPrecios.dgbtabla.Rows.Insert(lblFila.Text, New String() {"", "", dtItem.Rows(e.RowIndex).Cells(0).Value(), temp})
+                        Me.Close()
+                    Else
+                        MsgBox("Ya a sido agregado anteriormente el examen o grupo de examen.")
                     End If
-                    M_ListaPrecios.dgbtabla.Rows.Insert(lblFila.Text, New String() {"", "", dtItem.Rows(e.RowIndex).Cells(0).Value(), temp})
+                End If
+            ElseIf (lblform.Text = "M_Precio") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el examen seleccionado?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_Precio.txtcodigoItem.Text = txtCodExamen.Text
                     Me.Close()
-                Else
-                    MsgBox("Ya a sido agregado anteriormente el examen o grupo de examen.")
                 End If
             End If
         Catch ex As Exception

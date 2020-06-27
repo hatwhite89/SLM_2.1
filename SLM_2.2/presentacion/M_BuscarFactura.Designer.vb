@@ -23,6 +23,7 @@ Partial Class M_BuscarFactura
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.btnnueva = New System.Windows.Forms.Button()
         Me.lblcantidad = New System.Windows.Forms.Label()
@@ -32,7 +33,6 @@ Partial Class M_BuscarFactura
         Me.lbltipoCta = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnumeroB = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -57,6 +57,15 @@ Partial Class M_BuscarFactura
         Me.gbxbusqueda.TabIndex = 117
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR FACTURA"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(275, 14)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(160, 23)
+        Me.Button1.TabIndex = 121
+        Me.Button1.Text = "Hoja de Trabajo"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'lbltotal
         '
@@ -149,15 +158,6 @@ Partial Class M_BuscarFactura
         Me.lblnumeroB.Size = New System.Drawing.Size(58, 17)
         Me.lblnumeroB.TabIndex = 114
         Me.lblnumeroB.Text = "Número"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(275, 14)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 121
-        Me.Button1.Text = "Apertura"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'M_BuscarFactura
         '
