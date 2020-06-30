@@ -329,7 +329,7 @@
                     End If
                     '.fechaBaja_ = dtpfechaBaja.Text
                     '.fechaAvisoBaja_ = dtpFechaAvisoBaja.Text
-                    MsgBox("paso")
+                    'MsgBox("paso")
                     .motivoBaja_ = rtxtmotivoBaja.Text
                     .codigoPuestoTrab_ = Convert.ToInt64(lblcodePuesto.Text)
                     .codigoDepto_ = Convert.ToInt64(lblcodeDepto.Text)

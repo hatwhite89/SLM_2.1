@@ -79,6 +79,7 @@ Partial Class M_Apertura
         Me.lblcodeCajero.Size = New System.Drawing.Size(16, 17)
         Me.lblcodeCajero.TabIndex = 127
         Me.lblcodeCajero.Text = "1"
+        Me.lblcodeCajero.Visible = False
         '
         'lblcodeMaquinaLocal
         '
@@ -88,6 +89,7 @@ Partial Class M_Apertura
         Me.lblcodeMaquinaLocal.Size = New System.Drawing.Size(67, 17)
         Me.lblcodeMaquinaLocal.TabIndex = 126
         Me.lblcodeMaquinaLocal.Text = "codeEsta"
+        Me.lblcodeMaquinaLocal.Visible = False
         '
         'btnnuevo
         '

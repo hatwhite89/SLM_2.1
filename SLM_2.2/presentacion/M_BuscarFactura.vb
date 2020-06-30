@@ -140,7 +140,4 @@ Public Class M_BuscarFactura
         M_Factura.ShowDialog()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        E_EspecificarHojaTrabajo.ShowDialog()
-    End Sub
 End Class
