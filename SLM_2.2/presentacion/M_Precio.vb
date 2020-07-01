@@ -187,6 +187,7 @@
     End Sub
 
     Private Sub btnbuscarItem_Click(sender As Object, e As EventArgs) Handles btnbuscarItem.Click
+        E_DetalleExamenes.lblform.Text = "M_Precio"
         E_DetalleExamenes.ShowDialog()
     End Sub
 

@@ -32,14 +32,12 @@ Partial Class M_BuscarFactura
         Me.lbltipoCta = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnumeroB = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbxbusqueda
         '
-        Me.gbxbusqueda.Controls.Add(Me.Button1)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.btnnueva)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
@@ -150,15 +148,6 @@ Partial Class M_BuscarFactura
         Me.lblnumeroB.TabIndex = 114
         Me.lblnumeroB.Text = "Número"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(275, 14)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 121
-        Me.Button1.Text = "Apertura"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'M_BuscarFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -188,5 +177,4 @@ Partial Class M_BuscarFactura
     Friend WithEvents txtnombreB As TextBox
     Friend WithEvents lblnumeroB As Label
     Friend WithEvents btnnueva As Button
-    Friend WithEvents Button1 As Button
 End Class

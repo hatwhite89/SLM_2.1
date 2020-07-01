@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class ClsOrdenTrabajoDetalle
-    Dim resultado As Double
+    Dim resultado, nombreItemDetalle As String
     Dim codigo, cod_orden_trabajo, cod_item_examen_detalle As Integer
     'Constructor
     Public Sub New()
@@ -30,12 +30,20 @@ Public Class ClsOrdenTrabajoDetalle
             cod_item_examen_detalle = value
         End Set
     End Property
-    Public Property resultado_ As Double
+    Public Property resultado_ As String
         Get
             Return resultado
         End Get
-        Set(value As Double)
+        Set(value As String)
             resultado = value
+        End Set
+    End Property
+    Public Property nombreItemDetalle_ As String
+        Get
+            Return nombreItemDetalle
+        End Get
+        Set(value As String)
+            nombreItemDetalle = value
         End Set
     End Property
     Public Function RegistrarNuevoDetalleOrdenTrabajo() As String
@@ -103,6 +111,50 @@ Public Class ClsOrdenTrabajoDetalle
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "cod_item_examen_detalle" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = cod_item_examen_detalle_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "resultado" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = resultado_
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+    Public Function ModificarOrdenTrabajoDetalle2() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slmModificarOrdenTrabajoDetalle2"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_orden_trabajo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = cod_orden_trabajo_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nombreDetalleItem" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = nombreItemDetalle_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

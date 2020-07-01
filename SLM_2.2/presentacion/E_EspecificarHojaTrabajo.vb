@@ -263,7 +263,7 @@
             col = New DataColumn("Edad")
             ds.Tables("HojaTrabajo").Columns.Add(col)
 
-            col = New DataColumn("Sexo")
+            col = New DataColumn("Genero")
             ds.Tables("HojaTrabajo").Columns.Add(col)
 
             col = New DataColumn("Medico")
@@ -324,6 +324,7 @@
                 row.Item(2) = edad
                 row.Item(3) = CStr(rowO("genero"))
                 row.Item(4) = CStr(rowO("medico"))
+                row.Item(colColl.IndexOf("Estado")) = CStr(rowO("estado"))
 
                 'LLENADO DETALLE ORDEN DE TRABAJO
                 objOrdTrabDet.cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
@@ -331,7 +332,10 @@
                 For index2 As Integer = 0 To dtDet.Rows.Count - 1
                     rowDet = dtDet.Rows(index2)
                     'marcar los * 
-                    If CStr(rowDet("resultado")) = "0" Then
+
+                    If IsDBNull(rowDet("resultado")) = True Then
+                        row.Item(colColl.IndexOf(CStr(rowDet("nombre")))) = "*"
+                    ElseIf CStr(rowDet("resultado")) = "0" Then
                         row.Item(colColl.IndexOf(CStr(rowDet("nombre")))) = "*"
                         'row.Item(CStr(rowDet("nombre"))) = "*"
                         'row.Item(row.Table.Columns.IndexOf(CStr(rowDet("nombre")))) = "*"

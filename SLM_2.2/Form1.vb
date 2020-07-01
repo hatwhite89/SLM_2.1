@@ -447,7 +447,8 @@
     End Sub
 
     Private Sub btnTrabajo_Click(sender As Object, e As EventArgs) Handles btnTrabajo.Click
-        E_frmUbicacion.Show()
+        'E_frmUbicacion.Show()
+        E_ListarOrdenesDeTrabajo.ShowDialog()
     End Sub
 
     'Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
@@ -662,5 +663,13 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub btnApertura_Click(sender As Object, e As EventArgs) Handles btnApertura.Click
+        M_Apertura.ShowDialog()
+    End Sub
+
+    Private Sub btnHojaTrabajo_Click(sender As Object, e As EventArgs) Handles btnHojaTrabajo.Click
+        E_EspecificarHojaTrabajo.ShowDialog()
     End Sub
 End Class
