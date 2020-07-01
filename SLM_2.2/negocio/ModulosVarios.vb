@@ -309,18 +309,12 @@ Module ModulosVarios
 
                                         Next
 
-
                                         _1A_PantallaCarga.pBarInicio.Value += 20
-
-
-
-
 
                                     End If
                                 ElseIf filas = 1 Then 'Permisos en Contabilidad
                                     If dtPerfil.Rows(filas).Item(2) = True Then
                                         Form1.btnContabilidad.Enabled = True
-
 
                                         With ventanas
                                             .Cod_Modulo = Convert.ToInt32(dtPerfil.Rows(filas).Item(0).ToString)
@@ -414,8 +408,6 @@ Module ModulosVarios
                                             End If 'if conteo
 
                                         Next
-
-
 
                                         _1A_PantallaCarga.pBarInicio.Value += 20
 
@@ -635,7 +627,6 @@ Module ModulosVarios
                                                 End If
                                             End If
                                         Next
-
 
                                     End If
                                     _1A_PantallaCarga.pBarInicio.Value += 15
