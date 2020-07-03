@@ -305,6 +305,22 @@ Module ModulosVarios
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnPacienteF.Enabled = True
                                                 End If
+                                            ElseIf i = 8 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnApertura.Enabled = True
+                                                End If
+                                            ElseIf i = 9 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnCierreCaja.Enabled = True
+                                                End If
+                                            ElseIf i = 10 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnArqueos.Enabled = True
+                                                End If
+                                            ElseIf i = 11 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnDiarioFacturacion.Enabled = True
+                                                End If
                                             End If 'if conteo
 
                                         Next
@@ -464,6 +480,12 @@ Module ModulosVarios
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnConvenio.Enabled = True
                                                 End If
+                                            ElseIf i = 9 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnValoresRef.Enabled = True
+                                                Else
+                                                    Form1.btnValoresRef.Enabled = False
+                                                End If
                                             End If 'if conteo
 
                                         Next
@@ -512,6 +534,22 @@ Module ModulosVarios
                                             ElseIf i = 6 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnEmpleados.Enabled = True
+                                                End If
+                                            ElseIf i = 7 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnProfesion.Enabled = True
+                                                End If
+                                            ElseIf i = 8 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnTipoDeducciones.Enabled = True
+                                                End If
+                                            ElseIf i = 9 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnArea.Enabled = True
+                                                End If
+                                            ElseIf i = 10 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnDepto.Enabled = True
                                                 End If
                                             End If
                                         Next

@@ -483,6 +483,8 @@
         dtLaboratorio.Rows.Add("", "Medicos", False, "")
         dtLaboratorio.Rows.Add("", "Pacientes", False, "")
         dtLaboratorio.Rows.Add("", "Convenios", False, "")
+        dtLaboratorio.Rows.Add("", "Valores de Referencia", False, "")
+
 
 
         'Procesos de Facturacion
@@ -494,7 +496,10 @@
         dtFacturacion.Rows.Add("", "Grupo Items", False, "")
         dtFacturacion.Rows.Add("", "Term. Pagos", False, "")
         dtFacturacion.Rows.Add("", "Pacientes", False, "")
-
+        dtFacturacion.Rows.Add("", "Apertura", False, "")
+        dtFacturacion.Rows.Add("", "Cierre de Caja", False, "")
+        dtFacturacion.Rows.Add("", "Arqueos", False, "")
+        dtFacturacion.Rows.Add("", "Diario Facturación", False, "")
 
         'Procesos de Contabilidad
         dtContabilidad.Rows.Add("", "Precio", False, "")
@@ -531,6 +536,10 @@
         dtTalentoHumano.Rows.Add("", "Permisos", False, "")
         dtTalentoHumano.Rows.Add("", "Vacaciones", False, "")
         dtTalentoHumano.Rows.Add("", "Empleados", False, "")
+        dtTalentoHumano.Rows.Add("", "Profesión", False, "")
+        dtTalentoHumano.Rows.Add("", "Tipo de Deducción", False, "")
+        dtTalentoHumano.Rows.Add("", "Area", False, "")
+        dtTalentoHumano.Rows.Add("", "Departamento", False, "")
 
         'Procesos de Almacen
         dtAlmacen.Rows.Add("", "Almacenes", False, "")

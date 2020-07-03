@@ -23,10 +23,10 @@ Partial Class A_ListadoParametros
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.dtParametros = New System.Windows.Forms.DataGridView()
-        Me.lblFormulario = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.txtCodExamen = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblFormulario = New System.Windows.Forms.Label()
+        Me.dtParametros = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtParametros, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -47,6 +47,32 @@ Partial Class A_ListadoParametros
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Registro de Parámetros"
         '
+        'txtCodExamen
+        '
+        Me.txtCodExamen.Location = New System.Drawing.Point(82, 24)
+        Me.txtCodExamen.MaxLength = 10
+        Me.txtCodExamen.Name = "txtCodExamen"
+        Me.txtCodExamen.Size = New System.Drawing.Size(175, 20)
+        Me.txtCodExamen.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(9, 27)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(70, 13)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Cod. Exámen"
+        '
+        'lblFormulario
+        '
+        Me.lblFormulario.AutoSize = True
+        Me.lblFormulario.Location = New System.Drawing.Point(436, -3)
+        Me.lblFormulario.Name = "lblFormulario"
+        Me.lblFormulario.Size = New System.Drawing.Size(27, 13)
+        Me.lblFormulario.TabIndex = 1
+        Me.lblFormulario.Text = "form"
+        '
         'dtParametros
         '
         Me.dtParametros.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -60,32 +86,6 @@ Partial Class A_ListadoParametros
         Me.dtParametros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtParametros.Size = New System.Drawing.Size(576, 227)
         Me.dtParametros.TabIndex = 0
-        '
-        'lblFormulario
-        '
-        Me.lblFormulario.AutoSize = True
-        Me.lblFormulario.Location = New System.Drawing.Point(436, -3)
-        Me.lblFormulario.Name = "lblFormulario"
-        Me.lblFormulario.Size = New System.Drawing.Size(27, 13)
-        Me.lblFormulario.TabIndex = 1
-        Me.lblFormulario.Text = "form"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(9, 27)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(70, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Cod. Exámen"
-        '
-        'txtCodExamen
-        '
-        Me.txtCodExamen.Location = New System.Drawing.Point(82, 24)
-        Me.txtCodExamen.MaxLength = 10
-        Me.txtCodExamen.Name = "txtCodExamen"
-        Me.txtCodExamen.Size = New System.Drawing.Size(100, 20)
-        Me.txtCodExamen.TabIndex = 3
         '
         'A_ListadoParametros
         '

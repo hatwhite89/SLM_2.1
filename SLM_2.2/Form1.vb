@@ -654,7 +654,7 @@
         PanelAlmacen.Visible = False
     End Sub
 
-    Private Sub Button2_Click_2(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click_2(sender As Object, e As EventArgs) Handles btnValoresRef.Click
         Try
 
             A_ValoresRefPar.ShowDialog()
