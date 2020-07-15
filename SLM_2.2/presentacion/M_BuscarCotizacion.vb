@@ -36,8 +36,9 @@
                 For index As Integer = 0 To dt.Rows.Count - 1
                     row = dt.Rows(index)
                     precio = ((row("subtotal")) / (((row("descuento")) / 100) - 1)) * (-1)
-                    M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codigoExamen")), CStr(row("cantidad")), precio, CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
-                    M_ClienteVentana.dgvtabla.Rows.Add(New String() {CStr(row("codigoExamen")), CStr(row("cantidad")), precio, CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
+                    M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codInterno")), CStr(row("cantidad")), precio, CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal")), CStr(row("codigoSubArea")), 0, CStr(row("codigoExamen"))})
+                    M_Factura.dgbObservaciones.Rows.Add(New String() {CStr(row("codInterno")), ""})
+                    M_ClienteVentana.dgvtabla.Rows.Add(New String() {CStr(row("codInterno")), CStr(row("cantidad")), precio, CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
                 Next
                 txtnombreB.Text = ""
                 txtnumeroB.Text = ""
@@ -47,7 +48,7 @@
 
             End If
         Catch ex As Exception
-            'MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
     Private Sub txtnumeroB_TextChanged(sender As Object, e As EventArgs) Handles txtnumeroB.TextChanged

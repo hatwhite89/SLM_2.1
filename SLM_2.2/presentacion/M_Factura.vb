@@ -161,6 +161,16 @@ Public Class M_Factura
         txtNombreRecepcionista.Text = Form1.lblMiUser.Text
 
 
+        'campos nuevos
+        txtDeposito.Text() = "0"
+        txtCheque.Text() = "0"
+        txtTransferencia.Text() = "0"
+
+        txtDeposito.ReadOnly() = False
+        txtCheque.ReadOnly() = False
+        txtTransferencia.ReadOnly() = False
+
+
     End Sub
     Private Sub buscarMaquinaLocal()
         Try
@@ -221,6 +231,11 @@ Public Class M_Factura
 
         txtEfectivo.ReadOnly = True
         txtTarjeta.ReadOnly = True
+
+        '
+        txtDeposito.ReadOnly = True
+        txtCheque.ReadOnly = True
+        txtTransferencia.ReadOnly = True
     End Sub
     Public Sub HabilitarActualizarFactura()
         cbxentregarMedico.Enabled = True
@@ -233,6 +248,11 @@ Public Class M_Factura
 
         txtEfectivo.ReadOnly = False
         txtTarjeta.ReadOnly = False
+
+
+        txtDeposito.ReadOnly = False
+        txtCheque.ReadOnly = False
+        txtTransferencia.ReadOnly = False
     End Sub
     Public Sub HabilitarCotizacionFactura()
         txtcodigoCliente.ReadOnly = False
@@ -456,7 +476,7 @@ Public Class M_Factura
         End Try
     End Sub
     Private Sub dgblistadoExamenes_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellClick
-        If e.ColumnIndex = 9 And Trim(txtnumeroOficial.Text) = "" Then
+        If e.ColumnIndex = 10 And Trim(txtnumeroOficial.Text) = "" Then
             Try
                 Dim n As String = MsgBox("¿Desea eliminar el examen de la factura?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then
@@ -464,6 +484,7 @@ Public Class M_Factura
                         codigoDetalleFactura.Add(Me.dgblistadoExamenes.Rows(e.RowIndex).Cells(8).Value())
                     End If
                     dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+                    dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(e.RowIndex.ToString))
                     M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(e.RowIndex.ToString))
                     totalFactura()
                 End If
@@ -492,41 +513,179 @@ Public Class M_Factura
         Next
         Return 0
     End Function
+
+    Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
+        If e.ColumnIndex = 0 Then
+            'MsgBox("cambia los datos")
+            Try
+                If (Trim(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()) <> "") Then
+                    Dim objExam As New ClsPrecio
+                    With objExam
+                        .codeIntExam_ = dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()
+                        .codigoListaPrecios_ = lblcodePriceList.Text
+                    End With
+
+                    Dim dt As New DataTable
+                    dt = objExam.BuscarPrecioItemExam()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    'valido que no haya agregado el examen anteriormente
+                    If (validarFactura(objExam.codeIntExam_) = 0) Then
+                        Dim row As DataRow = dt.Rows(0)
+                        dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+                        Dim subtotal As Double = Convert.ToDouble(CStr(row("precio")))
+                        Dim descuento As Double = Convert.ToDouble(CStr(row("porcentaje")))
+                        descuento = subtotal * (descuento / 100)
+                        subtotal -= descuento
+                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0, CStr(row("codigoItem"))})
+                        totalFactura()
+
+                        'observaciones
+                        dgbObservaciones.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codeIntExam_, ""})
+
+
+                        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
+                    Else 'muestro el mensaje de error
+                        MsgBox("El examen ya a sido agregado.", MsgBoxStyle.Information)
+                        dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+
+                        'observaciones
+                        'dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(e.RowIndex.ToString))
+                    End If
+
+                Else
+                    dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+
+                    'observaciones
+                    dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(e.RowIndex.ToString))
+                End If
+            Catch ex As Exception
+                MsgBox("No existe el código del examen", MsgBoxStyle.Critical)
+                Try
+                    dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+
+                    'observaciones
+                    dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(e.RowIndex.ToString))
+                Catch ex2 As Exception
+
+                End Try
+            End Try
+        ElseIf e.ColumnIndex = 1 Then
+            Try
+                Dim code, cant, codeExam, subArea, detFact As Integer
+                Dim precio, subtotal, descuento, porcDesc As Double
+                Dim descrip As String
+                code = Convert.ToInt64(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value())
+                'datos anteriores
+                codeExam = Convert.ToInt64(dgblistadoExamenes.Rows(e.RowIndex).Cells(9).Value())
+                subArea = Convert.ToInt64(dgblistadoExamenes.Rows(e.RowIndex).Cells(7).Value())
+                detFact = Convert.ToInt64(dgblistadoExamenes.Rows(e.RowIndex).Cells(8).Value())
+
+                cant = Convert.ToInt64(dgblistadoExamenes.Rows(e.RowIndex).Cells(1).Value())
+                precio = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(2).Value())
+                descrip = dgblistadoExamenes.Rows(e.RowIndex).Cells(3).Value()
+                porcDesc = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(5).Value())
+                subtotal = precio * cant
+                descuento = subtotal * (porcDesc / 100)
+                subtotal -= descuento
+                dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+                dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), porcDesc, subtotal, subArea, detFact, codeExam})
+
+                M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(e.RowIndex.ToString))
+                M_ClienteVentana.dgvtabla.Rows.Add(New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), porcDesc, subtotal})
+                totalFactura()
+            Catch ex As Exception
+                MsgBox("Debe ingresar la cantidad correcta de examenes.", MsgBoxStyle.Critical)
+                dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+
+
+                'observaciones
+                dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(e.RowIndex.ToString))
+            End Try
+        End If
+    End Sub
     'Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
     '    If e.ColumnIndex = 0 Then
+    '        'MsgBox("cambia los datos")
     '        Try
     '            If (Trim(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()) <> "") Then
-    '                Dim objExam As New ClsExamen
+    '                Dim objExam As New ClsPrecio
     '                With objExam
-    '                    .Codigo1 = dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()
+    '                    .codigoItem_ = dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()
+    '                    .codigoListaPrecios_ = lblcodePriceList.Text
     '                End With
 
     '                Dim dt As New DataTable
-    '                dt = objExam.BuscarExamen()
+    '                dt = objExam.BuscarPrecio()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     '                'valido que no haya agregado el examen anteriormente
-    '                If (validarFactura(objExam.Codigo1) = 0) Then
+    '                If (validarFactura(objExam.codigoItem_) = 0) Then
     '                    Dim row As DataRow = dt.Rows(0)
     '                    dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
-    '                    Dim subtotal As Double = Convert.ToDouble(CStr(row("total")))
-    '                    Dim descuento As Double
-    '                    descuento = subtotal * (0 / 100)
+    '                    Dim subtotal As Double = Convert.ToDouble(CStr(row("precio")))
+    '                    Dim descuento As Double = Convert.ToDouble(CStr(row("porcentaje")))
+    '                    descuento = subtotal * (descuento / 100)
     '                    subtotal -= descuento
-    '                    dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
+    '                    dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0})
     '                    totalFactura()
 
-    '                    M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.Codigo1, "1", CStr(row("total")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), "0", subtotal})
+    '                    'observaciones
+    '                    dgbObservaciones.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codigoItem_, ""})
+
+
+    '                    M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
     '                Else 'muestro el mensaje de error
-    '                    MsgBox("El examen ya a sido agregado.")
+    '                    MsgBox("El examen ya a sido agregado.", MsgBoxStyle.Information)
     '                    dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+
+    '                    'observaciones
+    '                    'dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(e.RowIndex.ToString))
     '                End If
 
     '            Else
     '                dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+
+    '                'observaciones
+    '                dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(e.RowIndex.ToString))
     '            End If
     '        Catch ex As Exception
     '            MsgBox("No existe el código del examen", MsgBoxStyle.Critical)
     '            Try
     '                dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+
+    '                'observaciones
+    '                dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(e.RowIndex.ToString))
     '            Catch ex2 As Exception
 
     '            End Try
@@ -553,130 +712,34 @@ Public Class M_Factura
     '        Catch ex As Exception
     '            MsgBox("Debe ingresar la cantidad correcta de examenes.", MsgBoxStyle.Critical)
     '            dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
+
+
+    '            'observaciones
+    '            dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(e.RowIndex.ToString))
     '        End Try
     '    End If
     'End Sub
-    Private Sub dgblistadoExamenes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellEndEdit
-        If e.ColumnIndex = 0 Then
-            'MsgBox("cambia los datos")
-            Try
-                If (Trim(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()) <> "") Then
-                    Dim objExam As New ClsPrecio
-                    With objExam
-                        .codigoItem_ = dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value()
-                        .codigoListaPrecios_ = lblcodePriceList.Text
-                    End With
-
-                    Dim dt As New DataTable
-                    dt = objExam.BuscarPrecio()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    'valido que no haya agregado el examen anteriormente
-                    If (validarFactura(objExam.codigoItem_) = 0) Then
-                        Dim row As DataRow = dt.Rows(0)
-                        dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
-                        Dim subtotal As Double = Convert.ToDouble(CStr(row("precio")))
-                        Dim descuento As Double = Convert.ToDouble(CStr(row("porcentaje")))
-                        descuento = subtotal * (descuento / 100)
-                        subtotal -= descuento
-                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0})
-                        totalFactura()
-
-                        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
-                    Else 'muestro el mensaje de error
-                        MsgBox("El examen ya a sido agregado.", MsgBoxStyle.Information)
-                        dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
-                    End If
-
-                Else
-                    dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
-                End If
-            Catch ex As Exception
-                MsgBox("No existe el código del examen", MsgBoxStyle.Critical)
-                Try
-                    dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
-                Catch ex2 As Exception
-
-                End Try
-            End Try
-        ElseIf e.ColumnIndex = 1 Then
-            Try
-                Dim code, cant As Integer
-                Dim precio, subtotal, descuento, porcDesc As Double
-                Dim descrip As String
-                code = Convert.ToInt64(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value())
-                cant = Convert.ToInt64(dgblistadoExamenes.Rows(e.RowIndex).Cells(1).Value())
-                precio = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(2).Value())
-                descrip = dgblistadoExamenes.Rows(e.RowIndex).Cells(3).Value()
-                porcDesc = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(5).Value())
-                subtotal = precio * cant
-                descuento = subtotal * (porcDesc / 100)
-                subtotal -= descuento
-                dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
-                dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), porcDesc, subtotal})
-
-                M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(e.RowIndex.ToString))
-                M_ClienteVentana.dgvtabla.Rows.Add(New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), porcDesc, subtotal})
-                totalFactura()
-            Catch ex As Exception
-                MsgBox("Debe ingresar la cantidad correcta de examenes.", MsgBoxStyle.Critical)
-                dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
-            End Try
-        End If
-    End Sub
     Public Sub AgregarExamen(ByVal codigoItem As Integer)
         Dim objExam As New ClsPrecio
         With objExam
-            .codigoItem_ = codigoItem
+            .codeIntExam_ = codigoItem
             .codigoListaPrecios_ = lblcodePriceList.Text
         End With
 
         Dim dt As New DataTable
-        dt = objExam.BuscarPrecio()
+        dt = objExam.BuscarPrecioItemExam()
         Dim row As DataRow = dt.Rows(0)
         Dim subtotal As Double = Convert.ToDouble(CStr(row("precio")))
         Dim descuento As Double = Convert.ToDouble(CStr(row("porcentaje")))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        'calcular descuento
         descuento = subtotal * (descuento / 100)
         subtotal -= descuento
 
-        dgblistadoExamenes.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0})
+        dgblistadoExamenes.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0, CStr(row("codigoItem"))})
+        dgbObservaciones.Rows.Add(New String() {objExam.codeIntExam_, ""})
         totalFactura()
-        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codigoItem_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
+        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
     End Sub
     Public Sub totalFactura()
         Dim total As Double = 0
@@ -774,6 +837,9 @@ Public Class M_Factura
                     .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
                     .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
                     .estado_ = cbxAnular.Checked
+                    .deposito_ = Convert.ToDouble(txtDeposito.Text)
+                    .transferencia_ = Convert.ToDouble(txtTransferencia.Text)
+                    .cheque_ = Convert.ToDouble(txtCheque.Text)
                 End With
 
                 If objFact.RegistrarNuevaFactura() = 1 Then
@@ -788,11 +854,12 @@ Public Class M_Factura
                     For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
                         With objDetalleFact
                             .numeroFactura_ = Convert.ToInt64(txtnumeroFactura.Text)
-                            .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(0).Value())
+                            .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(9).Value())
                             .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
                             .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
                             .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
                             .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+                            .observaciones_ = dgbObservaciones.Rows(index).Cells(1).Value()
                         End With
                         If objDetalleFact.RegistrarNuevoDetalleFactura() = 0 Then
                             MsgBox("Error al querer insertar el detalle de factura.", MsgBoxStyle.Critical)
@@ -896,7 +963,7 @@ Public Class M_Factura
                     For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
                         With objCotFact
                             .numeroCotizacion_ = Convert.ToInt64(txtnumeroFactura.Text)
-                            .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(0).Value())
+                            .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(9).Value())
                             .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
                             .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
                             .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
@@ -979,6 +1046,9 @@ Public Class M_Factura
                         .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
                         .estado_ = cbxAnular.Checked
                         .total_ = Convert.ToDouble(txttotal.Text)
+                        .deposito_ = Convert.ToDouble(txtDeposito.Text)
+                        .transferencia_ = Convert.ToDouble(txtTransferencia.Text)
+                        .cheque_ = Convert.ToDouble(txtCheque.Text)
                     End With
                     'MODIFICO LOS DATOS DE LA FACTURA
                     If objFact.ModificarFactura() = 1 Then
@@ -990,11 +1060,12 @@ Public Class M_Factura
                                     'agrega
                                     With objDetFac
                                         .numeroFactura_ = Convert.ToInt64(txtnumeroFactura.Text)
-                                        .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(0).Value())
+                                        .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(9).Value())
                                         .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
                                         .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
                                         .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
                                         .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+                                        .observaciones_ = dgbObservaciones.Rows(index).Cells(1).Value()
                                     End With
                                     If objDetFac.RegistrarNuevoDetalleFactura() = 0 Then
                                         MsgBox("Error al querer insertar el detalle de factura.", MsgBoxStyle.Critical)
@@ -1004,11 +1075,12 @@ Public Class M_Factura
                                     With objDetFac
                                         .numero_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(8).Value())
                                         .numeroFactura_ = Convert.ToInt64(txtnumeroFactura.Text)
-                                        .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(0).Value())
+                                        .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(9).Value())
                                         .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
                                         .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
                                         .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
                                         .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+                                        .observaciones_ = dgbObservaciones.Rows(index).Cells(1).Value()
                                     End With
                                     If objDetFac.ModificarDetalleFactura() = 0 Then
                                         MsgBox("Error al querer modificar el detalle de factura.", MsgBoxStyle.Critical)
@@ -1221,10 +1293,14 @@ Public Class M_Factura
                     If dgblistadoExamenes.Rows(index).Cells(6).Value() = "0" Then
                         dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(index))
                         M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(index))
+                        'observaciones
+                        dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(index))
                         index -= 1
                     ElseIf dgblistadoExamenes.Rows(index).Cells(0).Value() = lblPromocion.Text Then
                         dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(index))
                         M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(index))
+                        'observaciones
+                        dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(index))
                         index -= 1
                     ElseIf index >= dgblistadoExamenes.Rows.Count - 2 Then
                         Exit For
@@ -1241,7 +1317,9 @@ Public Class M_Factura
     End Sub
     Private Sub txtEfectivo_TextChanged(sender As Object, e As EventArgs) Handles txtEfectivo.TextChanged
         Try
-            txtpagoPaciente.Text = Convert.ToDouble(txtEfectivo.Text) + Convert.ToDouble(txtTarjeta.Text)
+            txtpagoPaciente.Text = Convert.ToDouble(txtEfectivo.Text) + Convert.ToDouble(txtTarjeta.Text) + Convert.ToDouble(txtDeposito.Text) + Convert.ToDouble(txtCheque.Text) + Convert.ToDouble(txtTransferencia.Text)
+
+            'txtpagoPaciente.Text = Convert.ToDouble(txtEfectivo.Text) + Convert.ToDouble(txtTarjeta.Text)
             txtvuelto.Text = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txttotal.Text)
             'M_ClienteVentana.txtvuelto.Text = txtvuelto.Text
         Catch ex As Exception
@@ -1449,7 +1527,7 @@ Public Class M_Factura
                         'MsgBox("i=" & i & "  ,dt.Rows.Count=" & dt.Rows.Count & "  ,j=" & j)
                         'MsgBox("row(subArea)=" & CStr(row("subArea")) & "(son iguales) = rowC(subArea)=" & CStr(rowC("subArea")))
                         If row("subArea") = rowC("subArea") Then
-                            objItemD.codigoItemExamen_ = Convert.ToInt64(rowC("codigo"))
+                            objItemD.codigoItemExamen_ = Convert.ToInt64(rowC("codeItemExam"))
                             dt2 = objItemD.BuscarItemExamenDetalle
                             For x As Integer = 0 To dt2.Rows.Count - 1
                                 rowI = dt2.Rows(x)
@@ -1528,8 +1606,10 @@ Public Class M_Factura
 
     Private Sub txtTarjeta_TextChanged(sender As Object, e As EventArgs) Handles txtTarjeta.TextChanged
         Try
-            txtpagoPaciente.Text = Convert.ToDouble(txtEfectivo.Text) + Convert.ToDouble(txtTarjeta.Text)
+            txtpagoPaciente.Text = Convert.ToDouble(txtEfectivo.Text) + Convert.ToDouble(txtTarjeta.Text) + Convert.ToDouble(txtDeposito.Text) + Convert.ToDouble(txtCheque.Text) + Convert.ToDouble(txtTransferencia.Text)
             txtvuelto.Text = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txttotal.Text)
+            'txtpagoPaciente.Text = Convert.ToDouble(txtEfectivo.Text) + Convert.ToDouble(txtTarjeta.Text)
+            'txtvuelto.Text = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txttotal.Text)
         Catch ex As Exception
         End Try
     End Sub
@@ -1538,6 +1618,30 @@ Public Class M_Factura
         If btnbusquedaExamen.Enabled Then
             M_BuscarExamen.ShowDialog()
         End If
+    End Sub
+
+    Private Sub txtDeposito_TextChanged(sender As Object, e As EventArgs) Handles txtDeposito.TextChanged
+        Try
+            txtpagoPaciente.Text = Convert.ToDouble(txtEfectivo.Text) + Convert.ToDouble(txtTarjeta.Text) + Convert.ToDouble(txtDeposito.Text) + Convert.ToDouble(txtCheque.Text) + Convert.ToDouble(txtTransferencia.Text)
+            txtvuelto.Text = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txttotal.Text)
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtTransferencia_TextChanged(sender As Object, e As EventArgs) Handles txtTransferencia.TextChanged
+        Try
+            txtpagoPaciente.Text = Convert.ToDouble(txtEfectivo.Text) + Convert.ToDouble(txtTarjeta.Text) + Convert.ToDouble(txtDeposito.Text) + Convert.ToDouble(txtCheque.Text) + Convert.ToDouble(txtTransferencia.Text)
+            txtvuelto.Text = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txttotal.Text)
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtCheque_TextChanged(sender As Object, e As EventArgs) Handles txtCheque.TextChanged
+        Try
+            txtpagoPaciente.Text = Convert.ToDouble(txtEfectivo.Text) + Convert.ToDouble(txtTarjeta.Text) + Convert.ToDouble(txtDeposito.Text) + Convert.ToDouble(txtCheque.Text) + Convert.ToDouble(txtTransferencia.Text)
+            txtvuelto.Text = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txttotal.Text)
+        Catch ex As Exception
+        End Try
     End Sub
 
     Private Sub calcularDescuento()

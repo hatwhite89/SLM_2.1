@@ -1,4 +1,6 @@
-﻿Public Class M_Cliente
+﻿Imports System.Data.SqlClient
+
+Public Class M_Cliente
     Private Sub btnbuscarCliente_Click(sender As Object, e As EventArgs) Handles btnbuscarCliente.Click
         If (mtxtidentidadClienteB.MaskCompleted = True) Then
             Try
@@ -701,11 +703,114 @@
         ElseIf (yr = 0 And month > 0) Then
             txtEdad.Text = month & "m"
         Else
-            txtEdad.Text =  day & "d"
+            txtEdad.Text = day & "d"
         End If
     End Sub
 
     Private Sub txtnombre1_TextChanged_1(sender As Object, e As EventArgs) Handles txtnombre1.TextChanged
 
+    End Sub
+    Private Sub cargarVariables(ByVal campoTexto As TextBox)
+        'Dim objCon As New ClsConnection
+        'Dim cn As New SqlConnection
+        'cn = objCon.getConexion
+
+        Dim clsC As New ClsConnection
+        Dim enunciado As SqlCommand
+        Dim respuesta As SqlDataReader
+
+        Try
+            enunciado = New SqlCommand("select nombreCompleto FROM Cliente", clsC.getConexion)
+            respuesta = enunciado.ExecuteReader()
+            While respuesta.Read
+
+                campoTexto.AutoCompleteCustomSource.Add(respuesta.Item("nombreCompleto"))
+
+
+            End While
+            respuesta.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+    'Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
+    '    If (Trim(txtnombreB.Text) <> "") Then
+    '        Try
+    '            'Habilitar()
+    '            Dim genero As String = ""
+    '            Dim objClient As New ClsCliente
+    '            With objClient
+    '                .NombreCompleto1 = sinDobleEspacio(txtnombreB.Text)
+    '            End With
+
+    '            Dim dt As New DataTable
+    '            dt = objClient.BuscarClienteNombre()
+    '            Dim row As DataRow = dt.Rows(0)
+
+    '            txtnombreB.AutoCompleteCustomSource.Add(CStr(row("nombreCompleto")))
+
+    '            'txtcodigo.Text = CStr(row("codigo"))
+    '            'txtscanId.Text = CStr(row("scanId"))
+    '            'mtxtidentidad.Text = CStr(row("identidad"))
+    '            'txtrtn.Text = CStr(row("rtn"))
+    '            'txtnombre1.Text = CStr(row("nombre1"))
+    '            'txtnombre2.Text = CStr(row("nombre2"))
+    '            'txtapellido1.Text = CStr(row("apellido1"))
+    '            'txtapellido2.Text = CStr(row("apellido2"))
+    '            'txtnombreCompleto.Text = CStr(row("nombreCompleto"))
+    '            'dtpfechaNacimiento.Text = CStr(row("fechaNacimiento"))
+    '            'genero = CStr(row("genero"))
+    '            'If (genero = "Masculino") Then
+    '            '    rbtnmasculino.Checked = True
+    '            'Else
+    '            '    rbtnfemenino.Checked = True
+    '            'End If
+    '            'rtxtdireccion.Text = CStr(row("direccion"))
+    '            'txttelefonoCasa.Text = CStr(row("telCasa"))
+    '            'txttelefonoTrabajo.Text = CStr(row("telTrabajo"))
+    '            'txtcelular.Text = CStr(row("celular"))
+    '            'txtcorreo.Text = CStr(row("correo1"))
+    '            'txtcorreo2.Text = CStr(row("correo2"))
+    '            'txtcodigoClasificacion.Text = CStr(row("codigoClasificacion"))
+    '            'lblcodeTerminoPago.Text = CStr(row("codigoTerminoPago"))
+    '            'lblcodeCategoria.Text = CStr(row("codigoCategoria"))
+
+    '            ''buscar el codigoCategoriaCliente y descripcion
+
+    '            'Dim objCat As New ClsCategoria
+    '            'objCat.codigo_ = lblcodeCategoria.Text
+    '            'dt = objCat.BuscarCategoriaNumero()
+    '            'row = dt.Rows(0)
+    '            'txtcodigoCategoria.Text = CStr(row("codigoCategoriaCliente"))
+    '            'txtnombreCategoria.Text = CStr(row("descripcion"))
+
+    '            ''buscar el codigoterminoPago y descripcion
+
+    '            'Dim objTerm As New ClsTerminoPago
+    '            'objTerm.codigo_ = lblcodeTerminoPago.Text
+    '            'dt = objTerm.BuscarTerminoPagoNumero()
+    '            'row = dt.Rows(0)
+    '            'txtcodigoTermino.Text = CStr(row("codigoTerminoPago"))
+    '            'txtnombreTerminos.Text = CStr(row("descripcion"))
+
+    '            ''Habilitar botones
+    '            'gbxinfoCliente.Visible = True
+    '            'btnactualizarCliente.Enabled = True
+    '            'btnguardarCliente.Enabled = False
+    '            'btnseleccionarCliente.Enabled = True
+
+    '        Catch ex As Exception
+    '            MsgBox("ERROR EN LA BUSQUEDA.", MsgBoxStyle.Critical, "Validación")
+
+
+    '        End Try
+    '    Else
+    '        MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+    '    End If
+    'End Sub
+
+    Private Sub M_Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'cargarVariables(txtnombreB)
     End Sub
 End Class

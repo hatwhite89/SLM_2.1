@@ -42,11 +42,6 @@ Partial Class M_Factura
         Me.lblconvenio = New System.Windows.Forms.Label()
         Me.lblpoliza = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.gbxlistadoExamenes = New System.Windows.Forms.GroupBox()
-        Me.lblPromocion = New System.Windows.Forms.Label()
-        Me.btnQuitarPromocion = New System.Windows.Forms.Button()
-        Me.btnPromocion = New System.Windows.Forms.Button()
-        Me.dgblistadoExamenes = New System.Windows.Forms.DataGridView()
         Me.lblpagoPaciente = New System.Windows.Forms.Label()
         Me.lblvuelto = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
@@ -111,6 +106,23 @@ Partial Class M_Factura
         Me.txtNombreRecepcionista = New System.Windows.Forms.TextBox()
         Me.txtCodigoBreveMaquina = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.lblDeposito = New System.Windows.Forms.Label()
+        Me.txtDeposito = New System.Windows.Forms.TextBox()
+        Me.lblTransferencia = New System.Windows.Forms.Label()
+        Me.txtTransferencia = New System.Windows.Forms.TextBox()
+        Me.lblCheque = New System.Windows.Forms.Label()
+        Me.txtCheque = New System.Windows.Forms.TextBox()
+        Me.tbpObservaciones = New System.Windows.Forms.TabPage()
+        Me.tbpExamenes = New System.Windows.Forms.TabPage()
+        Me.btnPromocion = New System.Windows.Forms.Button()
+        Me.btnQuitarPromocion = New System.Windows.Forms.Button()
+        Me.dgblistadoExamenes = New System.Windows.Forms.DataGridView()
+        Me.lblPromocion = New System.Windows.Forms.Label()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.dgbObservaciones = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -120,12 +132,16 @@ Partial Class M_Factura
         Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.subArea = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.codeDetFact = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.gbxlistadoExamenes.SuspendLayout()
-        CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.codeItemExam = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.tbpObservaciones.SuspendLayout()
+        Me.tbpExamenes.SuspendLayout()
+        CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControl1.SuspendLayout()
+        CType(Me.dgbObservaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblcodigo
@@ -325,76 +341,6 @@ Partial Class M_Factura
         Me.Label16.Size = New System.Drawing.Size(63, 17)
         Me.Label16.TabIndex = 33
         Me.Label16.Text = "Terminal"
-        '
-        'gbxlistadoExamenes
-        '
-        Me.gbxlistadoExamenes.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.gbxlistadoExamenes.Controls.Add(Me.lblPromocion)
-        Me.gbxlistadoExamenes.Controls.Add(Me.btnQuitarPromocion)
-        Me.gbxlistadoExamenes.Controls.Add(Me.btnPromocion)
-        Me.gbxlistadoExamenes.Controls.Add(Me.dgblistadoExamenes)
-        Me.gbxlistadoExamenes.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxlistadoExamenes.Location = New System.Drawing.Point(21, 327)
-        Me.gbxlistadoExamenes.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.gbxlistadoExamenes.Name = "gbxlistadoExamenes"
-        Me.gbxlistadoExamenes.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.gbxlistadoExamenes.Size = New System.Drawing.Size(1131, 226)
-        Me.gbxlistadoExamenes.TabIndex = 34
-        Me.gbxlistadoExamenes.TabStop = False
-        Me.gbxlistadoExamenes.Text = "Listado Exámenes"
-        '
-        'lblPromocion
-        '
-        Me.lblPromocion.AutoSize = True
-        Me.lblPromocion.Location = New System.Drawing.Point(504, 18)
-        Me.lblPromocion.Name = "lblPromocion"
-        Me.lblPromocion.Size = New System.Drawing.Size(16, 17)
-        Me.lblPromocion.TabIndex = 105
-        Me.lblPromocion.Text = "0"
-        Me.lblPromocion.Visible = False
-        '
-        'btnQuitarPromocion
-        '
-        Me.btnQuitarPromocion.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnQuitarPromocion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnQuitarPromocion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnQuitarPromocion.ForeColor = System.Drawing.Color.Black
-        Me.btnQuitarPromocion.Location = New System.Drawing.Point(703, 18)
-        Me.btnQuitarPromocion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnQuitarPromocion.Name = "btnQuitarPromocion"
-        Me.btnQuitarPromocion.Size = New System.Drawing.Size(208, 34)
-        Me.btnQuitarPromocion.TabIndex = 104
-        Me.btnQuitarPromocion.Text = "Quitar Promoción"
-        Me.btnQuitarPromocion.UseVisualStyleBackColor = False
-        '
-        'btnPromocion
-        '
-        Me.btnPromocion.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnPromocion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPromocion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPromocion.ForeColor = System.Drawing.Color.Black
-        Me.btnPromocion.Location = New System.Drawing.Point(161, 18)
-        Me.btnPromocion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnPromocion.Name = "btnPromocion"
-        Me.btnPromocion.Size = New System.Drawing.Size(216, 34)
-        Me.btnPromocion.TabIndex = 103
-        Me.btnPromocion.Text = "Agregar Promoción"
-        Me.btnPromocion.UseVisualStyleBackColor = False
-        '
-        'dgblistadoExamenes
-        '
-        Me.dgblistadoExamenes.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgblistadoExamenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgblistadoExamenes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.Cantidad, Me.Precio, Me.Descripcion, Me.FechaEntrega, Me.Descuento, Me.Subtotal, Me.subArea, Me.codeDetFact})
-        Me.dgblistadoExamenes.Location = New System.Drawing.Point(21, 58)
-        Me.dgblistadoExamenes.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.dgblistadoExamenes.Name = "dgblistadoExamenes"
-        Me.dgblistadoExamenes.RowHeadersWidth = 51
-        Me.dgblistadoExamenes.RowTemplate.Height = 24
-        Me.dgblistadoExamenes.Size = New System.Drawing.Size(1103, 158)
-        Me.dgblistadoExamenes.TabIndex = 0
         '
         'lblpagoPaciente
         '
@@ -972,7 +918,7 @@ Partial Class M_Factura
         'txtEfectivo
         '
         Me.txtEfectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEfectivo.Location = New System.Drawing.Point(139, 74)
+        Me.txtEfectivo.Location = New System.Drawing.Point(142, 62)
         Me.txtEfectivo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtEfectivo.MaxLength = 20
         Me.txtEfectivo.Name = "txtEfectivo"
@@ -984,7 +930,7 @@ Partial Class M_Factura
         '
         Me.txtTarjeta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtTarjeta.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTarjeta.Location = New System.Drawing.Point(139, 124)
+        Me.txtTarjeta.Location = New System.Drawing.Point(142, 96)
         Me.txtTarjeta.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTarjeta.MaxLength = 20
         Me.txtTarjeta.Name = "txtTarjeta"
@@ -995,7 +941,7 @@ Partial Class M_Factura
         'lblEfectivo
         '
         Me.lblEfectivo.AutoSize = True
-        Me.lblEfectivo.Location = New System.Drawing.Point(57, 76)
+        Me.lblEfectivo.Location = New System.Drawing.Point(60, 64)
         Me.lblEfectivo.Name = "lblEfectivo"
         Me.lblEfectivo.Size = New System.Drawing.Size(58, 17)
         Me.lblEfectivo.TabIndex = 104
@@ -1004,7 +950,7 @@ Partial Class M_Factura
         'lblTarjeta
         '
         Me.lblTarjeta.AutoSize = True
-        Me.lblTarjeta.Location = New System.Drawing.Point(61, 126)
+        Me.lblTarjeta.Location = New System.Drawing.Point(64, 98)
         Me.lblTarjeta.Name = "lblTarjeta"
         Me.lblTarjeta.Size = New System.Drawing.Size(53, 17)
         Me.lblTarjeta.TabIndex = 105
@@ -1086,6 +1032,12 @@ Partial Class M_Factura
         '
         Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.Controls.Add(Me.lblCheque)
+        Me.GroupBox3.Controls.Add(Me.txtCheque)
+        Me.GroupBox3.Controls.Add(Me.lblTransferencia)
+        Me.GroupBox3.Controls.Add(Me.txtTransferencia)
+        Me.GroupBox3.Controls.Add(Me.lblDeposito)
+        Me.GroupBox3.Controls.Add(Me.txtDeposito)
         Me.GroupBox3.Controls.Add(Me.btnestadoFactura)
         Me.GroupBox3.Controls.Add(Me.cbxAnular)
         Me.GroupBox3.Controls.Add(Me.lblpagoPaciente)
@@ -1107,10 +1059,199 @@ Partial Class M_Factura
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox3.Size = New System.Drawing.Size(1131, 198)
+        Me.GroupBox3.Size = New System.Drawing.Size(1131, 221)
         Me.GroupBox3.TabIndex = 110
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Detalle de pago"
+        '
+        'lblDeposito
+        '
+        Me.lblDeposito.AutoSize = True
+        Me.lblDeposito.Location = New System.Drawing.Point(54, 129)
+        Me.lblDeposito.Name = "lblDeposito"
+        Me.lblDeposito.Size = New System.Drawing.Size(64, 17)
+        Me.lblDeposito.TabIndex = 109
+        Me.lblDeposito.Text = "Depósito"
+        '
+        'txtDeposito
+        '
+        Me.txtDeposito.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtDeposito.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDeposito.Location = New System.Drawing.Point(142, 126)
+        Me.txtDeposito.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtDeposito.MaxLength = 20
+        Me.txtDeposito.Name = "txtDeposito"
+        Me.txtDeposito.Size = New System.Drawing.Size(185, 22)
+        Me.txtDeposito.TabIndex = 108
+        Me.txtDeposito.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblTransferencia
+        '
+        Me.lblTransferencia.AutoSize = True
+        Me.lblTransferencia.Location = New System.Drawing.Point(22, 164)
+        Me.lblTransferencia.Name = "lblTransferencia"
+        Me.lblTransferencia.Size = New System.Drawing.Size(96, 17)
+        Me.lblTransferencia.TabIndex = 111
+        Me.lblTransferencia.Text = "Transferencia"
+        '
+        'txtTransferencia
+        '
+        Me.txtTransferencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtTransferencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTransferencia.Location = New System.Drawing.Point(142, 160)
+        Me.txtTransferencia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtTransferencia.MaxLength = 20
+        Me.txtTransferencia.Name = "txtTransferencia"
+        Me.txtTransferencia.Size = New System.Drawing.Size(185, 22)
+        Me.txtTransferencia.TabIndex = 110
+        Me.txtTransferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblCheque
+        '
+        Me.lblCheque.AutoSize = True
+        Me.lblCheque.Location = New System.Drawing.Point(61, 195)
+        Me.lblCheque.Name = "lblCheque"
+        Me.lblCheque.Size = New System.Drawing.Size(57, 17)
+        Me.lblCheque.TabIndex = 113
+        Me.lblCheque.Text = "Cheque"
+        '
+        'txtCheque
+        '
+        Me.txtCheque.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtCheque.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCheque.Location = New System.Drawing.Point(142, 195)
+        Me.txtCheque.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtCheque.MaxLength = 20
+        Me.txtCheque.Name = "txtCheque"
+        Me.txtCheque.Size = New System.Drawing.Size(185, 22)
+        Me.txtCheque.TabIndex = 112
+        Me.txtCheque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'tbpObservaciones
+        '
+        Me.tbpObservaciones.Controls.Add(Me.dgbObservaciones)
+        Me.tbpObservaciones.Location = New System.Drawing.Point(4, 25)
+        Me.tbpObservaciones.Name = "tbpObservaciones"
+        Me.tbpObservaciones.Padding = New System.Windows.Forms.Padding(3)
+        Me.tbpObservaciones.Size = New System.Drawing.Size(1123, 218)
+        Me.tbpObservaciones.TabIndex = 1
+        Me.tbpObservaciones.Text = "Observaciones"
+        Me.tbpObservaciones.UseVisualStyleBackColor = True
+        '
+        'tbpExamenes
+        '
+        Me.tbpExamenes.Controls.Add(Me.lblPromocion)
+        Me.tbpExamenes.Controls.Add(Me.dgblistadoExamenes)
+        Me.tbpExamenes.Controls.Add(Me.btnQuitarPromocion)
+        Me.tbpExamenes.Controls.Add(Me.btnPromocion)
+        Me.tbpExamenes.Location = New System.Drawing.Point(4, 25)
+        Me.tbpExamenes.Name = "tbpExamenes"
+        Me.tbpExamenes.Padding = New System.Windows.Forms.Padding(3)
+        Me.tbpExamenes.Size = New System.Drawing.Size(1123, 218)
+        Me.tbpExamenes.TabIndex = 0
+        Me.tbpExamenes.Text = "Exámenes"
+        Me.tbpExamenes.UseVisualStyleBackColor = True
+        '
+        'btnPromocion
+        '
+        Me.btnPromocion.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnPromocion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPromocion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPromocion.ForeColor = System.Drawing.Color.Black
+        Me.btnPromocion.Location = New System.Drawing.Point(153, 10)
+        Me.btnPromocion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnPromocion.Name = "btnPromocion"
+        Me.btnPromocion.Size = New System.Drawing.Size(216, 34)
+        Me.btnPromocion.TabIndex = 103
+        Me.btnPromocion.Text = "Agregar Promoción"
+        Me.btnPromocion.UseVisualStyleBackColor = False
+        '
+        'btnQuitarPromocion
+        '
+        Me.btnQuitarPromocion.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnQuitarPromocion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnQuitarPromocion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnQuitarPromocion.ForeColor = System.Drawing.Color.Black
+        Me.btnQuitarPromocion.Location = New System.Drawing.Point(695, 10)
+        Me.btnQuitarPromocion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnQuitarPromocion.Name = "btnQuitarPromocion"
+        Me.btnQuitarPromocion.Size = New System.Drawing.Size(208, 34)
+        Me.btnQuitarPromocion.TabIndex = 104
+        Me.btnQuitarPromocion.Text = "Quitar Promoción"
+        Me.btnQuitarPromocion.UseVisualStyleBackColor = False
+        '
+        'dgblistadoExamenes
+        '
+        Me.dgblistadoExamenes.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgblistadoExamenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgblistadoExamenes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.Cantidad, Me.Precio, Me.Descripcion, Me.FechaEntrega, Me.Descuento, Me.Subtotal, Me.subArea, Me.codeDetFact, Me.codeItemExam})
+        Me.dgblistadoExamenes.Location = New System.Drawing.Point(13, 50)
+        Me.dgblistadoExamenes.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgblistadoExamenes.Name = "dgblistadoExamenes"
+        Me.dgblistadoExamenes.RowHeadersWidth = 51
+        Me.dgblistadoExamenes.RowTemplate.Height = 24
+        Me.dgblistadoExamenes.Size = New System.Drawing.Size(1103, 158)
+        Me.dgblistadoExamenes.TabIndex = 0
+        '
+        'lblPromocion
+        '
+        Me.lblPromocion.AutoSize = True
+        Me.lblPromocion.Location = New System.Drawing.Point(496, 10)
+        Me.lblPromocion.Name = "lblPromocion"
+        Me.lblPromocion.Size = New System.Drawing.Size(16, 17)
+        Me.lblPromocion.TabIndex = 105
+        Me.lblPromocion.Text = "0"
+        Me.lblPromocion.Visible = False
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.tbpExamenes)
+        Me.TabControl1.Controls.Add(Me.tbpObservaciones)
+        Me.TabControl1.Location = New System.Drawing.Point(21, 326)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(1131, 247)
+        Me.TabControl1.TabIndex = 112
+        '
+        'dgbObservaciones
+        '
+        Me.dgbObservaciones.AllowUserToAddRows = False
+        Me.dgbObservaciones.AllowUserToDeleteRows = False
+        Me.dgbObservaciones.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgbObservaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgbObservaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn9})
+        Me.dgbObservaciones.Location = New System.Drawing.Point(10, 30)
+        Me.dgbObservaciones.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgbObservaciones.Name = "dgbObservaciones"
+        Me.dgbObservaciones.RowHeadersWidth = 51
+        Me.dgbObservaciones.RowTemplate.Height = 24
+        Me.dgbObservaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgbObservaciones.Size = New System.Drawing.Size(1103, 158)
+        Me.dgbObservaciones.TabIndex = 1
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Código Examen"
+        Me.DataGridViewTextBoxColumn1.MinimumWidth = 6
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Observación"
+        Me.DataGridViewTextBoxColumn2.MinimumWidth = 6
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.Width = 900
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.HeaderText = "codeDetFact"
+        Me.DataGridViewTextBoxColumn9.MinimumWidth = 6
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.Visible = False
+        Me.DataGridViewTextBoxColumn9.Width = 125
         '
         'codigo
         '
@@ -1182,13 +1323,21 @@ Partial Class M_Factura
         Me.codeDetFact.Visible = False
         Me.codeDetFact.Width = 125
         '
+        'codeItemExam
+        '
+        Me.codeItemExam.HeaderText = "codeItemExam"
+        Me.codeItemExam.MinimumWidth = 6
+        Me.codeItemExam.Name = "codeItemExam"
+        Me.codeItemExam.Width = 125
+        '
         'M_Factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1173, 784)
+        Me.ClientSize = New System.Drawing.Size(1173, 809)
         Me.ControlBox = False
+        Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lblFechaNacimiento)
@@ -1220,7 +1369,6 @@ Partial Class M_Factura
         Me.Controls.Add(Me.txtcodigoCliente)
         Me.Controls.Add(Me.txtnumeroOficial)
         Me.Controls.Add(Me.txtnumeroFactura)
-        Me.Controls.Add(Me.gbxlistadoExamenes)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.lblpoliza)
         Me.Controls.Add(Me.lblconvenio)
@@ -1247,9 +1395,6 @@ Partial Class M_Factura
         Me.Name = "M_Factura"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Factura Laboratorios Médicos"
-        Me.gbxlistadoExamenes.ResumeLayout(False)
-        Me.gbxlistadoExamenes.PerformLayout()
-        CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -1258,6 +1403,12 @@ Partial Class M_Factura
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.tbpObservaciones.ResumeLayout(False)
+        Me.tbpExamenes.ResumeLayout(False)
+        Me.tbpExamenes.PerformLayout()
+        CType(Me.dgblistadoExamenes, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabControl1.ResumeLayout(False)
+        CType(Me.dgbObservaciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1281,8 +1432,6 @@ Partial Class M_Factura
     Friend WithEvents lblconvenio As Label
     Friend WithEvents lblpoliza As Label
     Friend WithEvents Label16 As Label
-    Friend WithEvents gbxlistadoExamenes As GroupBox
-    Friend WithEvents dgblistadoExamenes As DataGridView
     Friend WithEvents lblpagoPaciente As Label
     Friend WithEvents lblvuelto As Label
     Friend WithEvents lbltotal As Label
@@ -1334,9 +1483,6 @@ Partial Class M_Factura
     Friend WithEvents lblcodeTerminoPago As Label
     Friend WithEvents lblcodePriceList As Label
     Friend WithEvents lblFechaNacimiento As Label
-    Friend WithEvents btnQuitarPromocion As Button
-    Friend WithEvents btnPromocion As Button
-    Friend WithEvents lblPromocion As Label
     Friend WithEvents txtEfectivo As TextBox
     Friend WithEvents txtTarjeta As TextBox
     Friend WithEvents lblEfectivo As Label
@@ -1350,6 +1496,23 @@ Partial Class M_Factura
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents txtCodigoBreveMaquina As TextBox
     Friend WithEvents txtNombreRecepcionista As TextBox
+    Friend WithEvents lblCheque As Label
+    Friend WithEvents txtCheque As TextBox
+    Friend WithEvents lblTransferencia As Label
+    Friend WithEvents txtTransferencia As TextBox
+    Friend WithEvents lblDeposito As Label
+    Friend WithEvents txtDeposito As TextBox
+    Friend WithEvents tbpObservaciones As TabPage
+    Friend WithEvents dgbObservaciones As DataGridView
+    Friend WithEvents tbpExamenes As TabPage
+    Friend WithEvents lblPromocion As Label
+    Friend WithEvents dgblistadoExamenes As DataGridView
+    Friend WithEvents btnQuitarPromocion As Button
+    Friend WithEvents btnPromocion As Button
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents codigo As DataGridViewTextBoxColumn
     Friend WithEvents Cantidad As DataGridViewTextBoxColumn
     Friend WithEvents Precio As DataGridViewTextBoxColumn
@@ -1359,4 +1522,5 @@ Partial Class M_Factura
     Friend WithEvents Subtotal As DataGridViewTextBoxColumn
     Friend WithEvents subArea As DataGridViewTextBoxColumn
     Friend WithEvents codeDetFact As DataGridViewTextBoxColumn
+    Friend WithEvents codeItemExam As DataGridViewTextBoxColumn
 End Class

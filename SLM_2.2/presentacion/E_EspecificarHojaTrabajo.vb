@@ -360,5 +360,7 @@
 
     Private Sub E_EspecificarHojaTrabajo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'txtTecnico.Text = Form1.lblMiUser.Text
+        txtSubArea.ResetText()
+        txtSucursal.ResetText()
     End Sub
 End Class

@@ -3,6 +3,7 @@ Public Class ClsDetalleFactura
     Dim numero, numeroFactura, codigoExamen, cantidad, descuento As Integer
     Dim fechaEntrega As Date
     Dim subtotal As Double
+    Dim observaciones As String
     'Constructor
     Public Sub New()
 
@@ -64,6 +65,14 @@ Public Class ClsDetalleFactura
             subtotal = value
         End Set
     End Property
+    Public Property observaciones_ As String
+        Get
+            Return observaciones
+        End Get
+        Set(value As String)
+            observaciones = value
+        End Set
+    End Property
     Public Function RegistrarNuevoDetalleFactura() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -101,6 +110,11 @@ Public Class ClsDetalleFactura
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "subtotal" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = subtotal_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "observaciones" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = observaciones_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -167,6 +181,11 @@ Public Class ClsDetalleFactura
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "observaciones" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = observaciones_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -217,6 +236,25 @@ Public Class ClsDetalleFactura
 
         Return par_sal
 
+    End Function
+    Public Function BuscarDetalleFacturaIngresada() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_slmBuscarDetalleFacturaIngresada"
+            cmd.Parameters.Add("@numeroFactura", SqlDbType.Int).Value = numeroFactura_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
     End Function
     Public Function BuscarDetalleFactura() As DataTable
         Dim objCon As New ClsConnection

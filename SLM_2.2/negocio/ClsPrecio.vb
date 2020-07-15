@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ClsPrecio
-    Dim codigo, codigoItem, codigoListaPrecios As Integer
+    Dim codigo, codigoItem, codigoListaPrecios, codeIntExam As Integer
     Dim precio As Double
     Dim descripcion As String
     'Constructor
@@ -22,6 +22,14 @@ Public Class ClsPrecio
         End Get
         Set(value As Integer)
             codigoListaPrecios = value
+        End Set
+    End Property
+    Public Property codeIntExam_ As Integer
+        Get
+            Return codeIntExam
+        End Get
+        Set(value As Integer)
+            codeIntExam = value
         End Set
     End Property
     Public Property codigoItem_ As Integer
@@ -149,6 +157,27 @@ Public Class ClsPrecio
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "M_slmBuscarPrecio"
             cmd.Parameters.Add("@codigoItem", SqlDbType.Int).Value = codigoItem_
+            cmd.Parameters.Add("@codigoListaPrecios", SqlDbType.Int).Value = codigoListaPrecios_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
+    Public Function BuscarPrecioItemExam() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_slmBuscarPrecioItemExam"
+            cmd.Parameters.Add("@codeIntExam", SqlDbType.Int).Value = codeIntExam_
             cmd.Parameters.Add("@codigoListaPrecios", SqlDbType.Int).Value = codigoListaPrecios_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
