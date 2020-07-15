@@ -113,7 +113,6 @@
             Dim objOrdDet As New ClsOrdenTrabajoDetalle
             objOrdDet.cod_orden_trabajo_ = CStr(row("cod_orden_trabajo"))
             dt = objOrdDet.BuscarOrdenTrabajoDetalle()
-            MsgBox(dt.Rows.Count & CStr(row("cod_orden_trabajo")))
             For index As Integer = 0 To dt.Rows.Count - 1
                 row = dt.Rows(index)
 

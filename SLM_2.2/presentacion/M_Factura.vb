@@ -1502,7 +1502,7 @@ Public Class M_Factura
 
             Dim objItemD As New ClsItemExamenDetalle
             Dim objOrd As New ClsOrdenDeTrabajo
-            For i As Integer = 0 To dt.Rows.Count - 2
+            For i As Integer = 0 To dt.Rows.Count - 1
                 row = dt.Rows(i)
                 'MsgBox(i & " i(ES DISTINTO A 0) row(subArea)=" & CStr(row("subArea")))
                 If CStr(row("subArea")) <> "0" Then
@@ -1522,11 +1522,12 @@ Public Class M_Factura
                         dtO = .CapturarOrdenDeTrabajo()
                     End With
                     rowO = dtO.Rows(0)
-                    For j As Integer = i To dt.Rows.Count - 2
+                    For j As Integer = i To dt.Rows.Count - 1
                         rowC = dt.Rows(j)
                         'MsgBox("i=" & i & "  ,dt.Rows.Count=" & dt.Rows.Count & "  ,j=" & j)
                         'MsgBox("row(subArea)=" & CStr(row("subArea")) & "(son iguales) = rowC(subArea)=" & CStr(rowC("subArea")))
                         If row("subArea") = rowC("subArea") Then
+                            MsgBox(Convert.ToInt64(rowC("codeItemExam")))
                             objItemD.codigoItemExamen_ = Convert.ToInt64(rowC("codeItemExam"))
                             dt2 = objItemD.BuscarItemExamenDetalle
                             For x As Integer = 0 To dt2.Rows.Count - 1
@@ -1542,13 +1543,13 @@ Public Class M_Factura
                                 End If
                             Next
                             'si inserto el ultimo item 
-                            If j = dt.Rows.Count - 3 Then
+                            If j = dt.Rows.Count - 2 Then
                                 MsgBox("Orden de trabajo registrada con éxito.", MsgBoxStyle.Information)
                                 Exit Sub
                             End If
 
                         Else
-                                i = j - 1
+                            i = j - 1
                             Exit For
                         End If
                     Next
