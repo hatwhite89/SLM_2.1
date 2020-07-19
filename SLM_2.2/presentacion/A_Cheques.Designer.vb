@@ -80,15 +80,21 @@ Partial Class A_Cheques
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.lblForm = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.btnModificar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.gbxTipo.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.lblEstado)
         Me.GroupBox1.Controls.Add(Me.rbtnRechazado)
         Me.GroupBox1.Controls.Add(Me.rbtnCancelado)
@@ -107,7 +113,7 @@ Partial Class A_Cheques
         Me.GroupBox1.Controls.Add(Me.txtNroCheque)
         Me.GroupBox1.Controls.Add(Me.txtNro)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 68)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(762, 109)
         Me.GroupBox1.TabIndex = 0
@@ -116,6 +122,7 @@ Partial Class A_Cheques
         '
         'lblEstado
         '
+        Me.lblEstado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblEstado.AutoSize = True
         Me.lblEstado.Location = New System.Drawing.Point(646, 72)
         Me.lblEstado.Name = "lblEstado"
@@ -126,6 +133,7 @@ Partial Class A_Cheques
         '
         'rbtnRechazado
         '
+        Me.rbtnRechazado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.rbtnRechazado.AutoSize = True
         Me.rbtnRechazado.Location = New System.Drawing.Point(635, 47)
         Me.rbtnRechazado.Name = "rbtnRechazado"
@@ -136,6 +144,7 @@ Partial Class A_Cheques
         '
         'rbtnCancelado
         '
+        Me.rbtnCancelado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.rbtnCancelado.AutoSize = True
         Me.rbtnCancelado.Location = New System.Drawing.Point(635, 24)
         Me.rbtnCancelado.Name = "rbtnCancelado"
@@ -146,6 +155,7 @@ Partial Class A_Cheques
         '
         'rbtnAcreditado
         '
+        Me.rbtnAcreditado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.rbtnAcreditado.AutoSize = True
         Me.rbtnAcreditado.Location = New System.Drawing.Point(524, 70)
         Me.rbtnAcreditado.Name = "rbtnAcreditado"
@@ -156,6 +166,7 @@ Partial Class A_Cheques
         '
         'rbtnEmitido
         '
+        Me.rbtnEmitido.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.rbtnEmitido.AutoSize = True
         Me.rbtnEmitido.Location = New System.Drawing.Point(524, 47)
         Me.rbtnEmitido.Name = "rbtnEmitido"
@@ -166,6 +177,7 @@ Partial Class A_Cheques
         '
         'rbtnChequera
         '
+        Me.rbtnChequera.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.rbtnChequera.AutoSize = True
         Me.rbtnChequera.Location = New System.Drawing.Point(524, 24)
         Me.rbtnChequera.Name = "rbtnChequera"
@@ -276,9 +288,12 @@ Partial Class A_Cheques
         '
         'TabControl1
         '
+        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 127)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 183)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(762, 295)
@@ -315,7 +330,7 @@ Partial Class A_Cheques
         Me.TabPage1.Controls.Add(Me.Label6)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(754, 269)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Proveedor"
@@ -323,10 +338,11 @@ Partial Class A_Cheques
         '
         'gbxTipo
         '
+        Me.gbxTipo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbxTipo.Controls.Add(Me.rbtnCheque)
         Me.gbxTipo.Controls.Add(Me.rbtnPagare)
         Me.gbxTipo.Controls.Add(Me.rbtnDiferido)
-        Me.gbxTipo.Location = New System.Drawing.Point(243, 158)
+        Me.gbxTipo.Location = New System.Drawing.Point(530, 158)
         Me.gbxTipo.Name = "gbxTipo"
         Me.gbxTipo.Size = New System.Drawing.Size(200, 95)
         Me.gbxTipo.TabIndex = 28
@@ -431,16 +447,18 @@ Partial Class A_Cheques
         '
         'dtpCancelado
         '
+        Me.dtpCancelado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtpCancelado.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpCancelado.Location = New System.Drawing.Point(345, 129)
+        Me.dtpCancelado.Location = New System.Drawing.Point(632, 129)
         Me.dtpCancelado.Name = "dtpCancelado"
         Me.dtpCancelado.Size = New System.Drawing.Size(98, 20)
         Me.dtpCancelado.TabIndex = 19
         '
         'Label15
         '
+        Me.Label15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(240, 132)
+        Me.Label15.Location = New System.Drawing.Point(527, 132)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(91, 13)
         Me.Label15.TabIndex = 18
@@ -448,16 +466,18 @@ Partial Class A_Cheques
         '
         'dtpEmision
         '
+        Me.dtpEmision.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtpEmision.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpEmision.Location = New System.Drawing.Point(345, 103)
+        Me.dtpEmision.Location = New System.Drawing.Point(632, 103)
         Me.dtpEmision.Name = "dtpEmision"
         Me.dtpEmision.Size = New System.Drawing.Size(98, 20)
         Me.dtpEmision.TabIndex = 17
         '
         'Label14
         '
+        Me.Label14.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(240, 106)
+        Me.Label14.Location = New System.Drawing.Point(527, 106)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(76, 13)
         Me.Label14.TabIndex = 16
@@ -500,10 +520,12 @@ Partial Class A_Cheques
         '
         'txtComentario
         '
+        Me.txtComentario.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtComentario.Location = New System.Drawing.Point(86, 61)
         Me.txtComentario.MaxLength = 500
         Me.txtComentario.Name = "txtComentario"
-        Me.txtComentario.Size = New System.Drawing.Size(601, 20)
+        Me.txtComentario.Size = New System.Drawing.Size(644, 20)
         Me.txtComentario.TabIndex = 11
         '
         'Label11
@@ -517,10 +539,12 @@ Partial Class A_Cheques
         '
         'txtnombreBanco
         '
+        Me.txtnombreBanco.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtnombreBanco.Enabled = False
         Me.txtnombreBanco.Location = New System.Drawing.Point(263, 35)
         Me.txtnombreBanco.Name = "txtnombreBanco"
-        Me.txtnombreBanco.Size = New System.Drawing.Size(424, 20)
+        Me.txtnombreBanco.Size = New System.Drawing.Size(467, 20)
         Me.txtnombreBanco.TabIndex = 9
         '
         'Label10
@@ -551,10 +575,12 @@ Partial Class A_Cheques
         '
         'txtNombreProvee
         '
+        Me.txtNombreProvee.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtNombreProvee.Enabled = False
         Me.txtNombreProvee.Location = New System.Drawing.Point(263, 9)
         Me.txtNombreProvee.Name = "txtNombreProvee"
-        Me.txtNombreProvee.Size = New System.Drawing.Size(424, 20)
+        Me.txtNombreProvee.Size = New System.Drawing.Size(467, 20)
         Me.txtNombreProvee.TabIndex = 3
         '
         'Label7
@@ -589,7 +615,7 @@ Partial Class A_Cheques
         Me.TabPage2.Controls.Add(Me.Label20)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(754, 269)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Voucher"
@@ -614,67 +640,103 @@ Partial Class A_Cheques
         '
         'btnGuardar
         '
+        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(618, 428)
+        Me.btnGuardar.Location = New System.Drawing.Point(600, 16)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(75, 27)
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 22)
         Me.btnGuardar.TabIndex = 2
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'btnCancelar
         '
+        Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCancelar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnCancelar.FlatAppearance.BorderSize = 0
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.ForeColor = System.Drawing.Color.White
-        Me.btnCancelar.Location = New System.Drawing.Point(699, 428)
+        Me.btnCancelar.Location = New System.Drawing.Point(681, 16)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 27)
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 22)
         Me.btnCancelar.TabIndex = 3
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'btnImprimir
         '
+        Me.btnImprimir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnImprimir.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnImprimir.FlatAppearance.BorderSize = 0
         Me.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnImprimir.Location = New System.Drawing.Point(16, 428)
+        Me.btnImprimir.Location = New System.Drawing.Point(397, 16)
         Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(65, 27)
+        Me.btnImprimir.Size = New System.Drawing.Size(93, 22)
         Me.btnImprimir.TabIndex = 4
-        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.Text = "Imprimir Cheque"
         Me.btnImprimir.UseVisualStyleBackColor = False
         Me.btnImprimir.Visible = False
         '
         'lblForm
         '
         Me.lblForm.AutoSize = True
-        Me.lblForm.Location = New System.Drawing.Point(296, 442)
+        Me.lblForm.Location = New System.Drawing.Point(780, 9)
         Me.lblForm.Name = "lblForm"
         Me.lblForm.Size = New System.Drawing.Size(30, 13)
         Me.lblForm.TabIndex = 5
         Me.lblForm.Text = "Form"
         Me.lblForm.Visible = False
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.btnModificar)
+        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.btnCancelar)
+        Me.GroupBox2.Controls.Add(Me.btnGuardar)
+        Me.GroupBox2.Controls.Add(Me.btnImprimir)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(762, 50)
+        Me.GroupBox2.TabIndex = 6
+        Me.GroupBox2.TabStop = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(10, 16)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(239, 24)
+        Me.Label8.TabIndex = 5
+        Me.Label8.Text = "Generación de Cheques"
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnModificar.Location = New System.Drawing.Point(496, 15)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(98, 23)
+        Me.btnModificar.TabIndex = 6
+        Me.btnModificar.Text = "Modificar Estado"
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
         'A_Cheques
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(785, 463)
+        Me.ClientSize = New System.Drawing.Size(785, 487)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.lblForm)
-        Me.Controls.Add(Me.btnImprimir)
-        Me.Controls.Add(Me.btnCancelar)
-        Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "A_Cheques"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cheques"
@@ -687,6 +749,8 @@ Partial Class A_Cheques
         Me.gbxTipo.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -750,4 +814,7 @@ Partial Class A_Cheques
     Friend WithEvents btnCancelar As Button
     Friend WithEvents btnImprimir As Button
     Friend WithEvents lblForm As Label
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents Label8 As Label
 End Class

@@ -22,6 +22,7 @@ Partial Class frmAsientos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAsientos))
         Me.lblNro = New System.Windows.Forms.Label()
         Me.txtNro = New System.Windows.Forms.TextBox()
@@ -109,8 +110,18 @@ Partial Class frmAsientos
         '
         Me.dtDetalleAsiento.AllowDrop = True
         Me.dtDetalleAsiento.AllowUserToDeleteRows = False
+        Me.dtDetalleAsiento.BackgroundColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtDetalleAsiento.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dtDetalleAsiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDetalleAsiento.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cuenta, Me.Descripcion, Me.Debe, Me.Haber})
+        Me.dtDetalleAsiento.GridColor = System.Drawing.SystemColors.Control
         Me.dtDetalleAsiento.Location = New System.Drawing.Point(6, 19)
         Me.dtDetalleAsiento.MultiSelect = False
         Me.dtDetalleAsiento.Name = "dtDetalleAsiento"
