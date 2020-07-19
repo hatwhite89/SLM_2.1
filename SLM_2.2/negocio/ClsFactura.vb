@@ -8,6 +8,8 @@ Public Class ClsFactura
     Dim fechaFactura, fechaVto As Date
     Dim ok, enviarEmail, entregaPaciente, entregaMedico, estado As Boolean
     Dim pagoPaciente, vuelto, total, ingresoEfectivo, ingresoTarjeta As Double
+
+    Dim cheque, transferencia, deposito As Double
     'Constructor
     Public Sub New()
 
@@ -214,6 +216,30 @@ Public Class ClsFactura
             vuelto = value
         End Set
     End Property
+    Public Property cheque_ As Double
+        Get
+            Return cheque
+        End Get
+        Set(value As Double)
+            cheque = value
+        End Set
+    End Property
+    Public Property deposito_ As Double
+        Get
+            Return deposito
+        End Get
+        Set(value As Double)
+            deposito = value
+        End Set
+    End Property
+    Public Property transferencia_ As Double
+        Get
+            Return transferencia
+        End Get
+        Set(value As Double)
+            transferencia = value
+        End Set
+    End Property
     Public Function RegistrarNuevaFactura() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -334,6 +360,21 @@ Public Class ClsFactura
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "deposito" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = deposito_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "transferencia" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = transferencia_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cheque" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = cheque_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -419,6 +460,21 @@ Public Class ClsFactura
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "total" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = total_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "deposito" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = deposito_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "transferencia" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = transferencia_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cheque" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = cheque_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

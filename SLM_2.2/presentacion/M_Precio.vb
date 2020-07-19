@@ -128,6 +128,9 @@
         End If
     End Sub
     Private Sub M_Precio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        seleccionarPrecios()
+    End Sub
+    Private Sub seleccionarPrecios()
         Dim dv As DataView = objPre.ListarPrecios.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
@@ -212,11 +215,15 @@
 
     Private Sub txtCodigoB_TextChanged(sender As Object, e As EventArgs) Handles txtCodigoB.TextChanged
         Try
-            objPre.codigo_ = txtCodigoB.Text
-            Dim dv As DataView = objPre.BuscarPrecioCode.DefaultView
-            dgbtabla.DataSource = dv
-            lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            If Trim(txtCodigoB.Text) <> "" Then
+                objPre.codigo_ = txtCodigoB.Text
+                Dim dv As DataView = objPre.BuscarPrecioCode.DefaultView
+                dgbtabla.DataSource = dv
+                lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            Else
+                seleccionarPrecios()
+            End If
         Catch ex As Exception
 
         End Try

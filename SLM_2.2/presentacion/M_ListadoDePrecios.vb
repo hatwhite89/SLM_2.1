@@ -67,4 +67,9 @@
             seleccionarListaPrecios()
         End If
     End Sub
+
+    Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
+        M_ListaPrecios.limpiar()
+        M_ListaPrecios.ShowDialog()
+    End Sub
 End Class

@@ -2,7 +2,7 @@
 
     Public Sub cargarOrdenTrabajo(ByVal cod_orden_trabajo As Integer)
         Try
-
+            dgvResultados.Rows.Clear()
             'Limpiar campos de fecha y hora
             'dtpPmFecha.Format = DateTimePickerFormat.Custom
             'dtpPmFecha.CustomFormat = " "
@@ -115,7 +115,10 @@
             dt = objOrdDet.BuscarOrdenTrabajoDetalle()
             For index As Integer = 0 To dt.Rows.Count - 1
                 row = dt.Rows(index)
-                If row("resultado") = "0" Then
+
+                If IsDBNull(row("resultado")) = True Then
+                    dgvResultados.Rows.Add(New String() {CStr(row("codigo")), CStr(row("nombre")), "*", CStr(row("codigoUnidad")), "NO INGRESADO"})
+                ElseIf row("resultado") = "0" Then
                     dgvResultados.Rows.Add(New String() {CStr(row("codigo")), CStr(row("nombre")), "*", CStr(row("codigoUnidad")), "NO INGRESADO"})
                 Else
                     dgvResultados.Rows.Add(New String() {CStr(row("codigo")), CStr(row("nombre")), CStr(row("resultado")), CStr(row("codigoUnidad")), "VALIDADO"})
