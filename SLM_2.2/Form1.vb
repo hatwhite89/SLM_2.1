@@ -672,4 +672,12 @@
     Private Sub btnHojaTrabajo_Click(sender As Object, e As EventArgs) Handles btnHojaTrabajo.Click
         E_EspecificarHojaTrabajo.ShowDialog()
     End Sub
+
+    Private Sub btnInformes_Click(sender As Object, e As EventArgs) Handles btnInformes.Click
+        Try
+            A_Informes.Show()
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class
