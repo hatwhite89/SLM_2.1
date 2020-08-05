@@ -372,7 +372,7 @@ Partial Class E_HojaTrabajo
         '
         'txtParametro
         '
-        Me.txtParametro.Location = New System.Drawing.Point(700, 126)
+        Me.txtParametro.Location = New System.Drawing.Point(701, 126)
         Me.txtParametro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtParametro.Name = "txtParametro"
         Me.txtParametro.ReadOnly = True
