@@ -484,6 +484,7 @@
         dtLaboratorio.Rows.Add("", "Pacientes", False, "")
         dtLaboratorio.Rows.Add("", "Convenios", False, "")
         dtLaboratorio.Rows.Add("", "Valores de Referencia", False, "")
+        dtLaboratorio.Rows.Add("", "Informes", False, "")
 
 
 

@@ -119,6 +119,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="InformeOrdenesdeTrabajoPeriodo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InformeOrdenesdeTrabajoPeriodo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -266,6 +272,12 @@
     <Compile Include="presentacion\A_ImportarUserAD.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_Informes.Designer.vb">
+      <DependentUpon>A_Informes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_Informes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListadoAsientos.Designer.vb">
       <DependentUpon>A_ListadoAsientos.vb</DependentUpon>
     </Compile>
@@ -355,6 +367,12 @@
       <DependentUpon>A_ListadoCheques.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ListadoCheques.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ListadoExamenes.Designer.vb">
+      <DependentUpon>A_ListadoExamenes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListadoExamenes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_ListadoFacturaCompra.Designer.vb">
@@ -493,6 +511,12 @@
       <DependentUpon>A_PrintCheque.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_PrintCheque.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_PrintInforme.Designer.vb">
+      <DependentUpon>A_PrintInforme.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_PrintInforme.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_Promociones.Designer.vb">
@@ -1155,6 +1179,10 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InformeOrdenesdeTrabajoPeriodo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformeOrdenesdeTrabajoPeriodo.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -1191,6 +1219,9 @@
     <EmbeddedResource Include="presentacion\A_ImportarUserAD.resx">
       <DependentUpon>A_ImportarUserAD.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_Informes.resx">
+      <DependentUpon>A_Informes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoAsientos.resx">
       <DependentUpon>A_ListadoAsientos.vb</DependentUpon>
     </EmbeddedResource>
@@ -1223,6 +1254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoCheques.resx">
       <DependentUpon>A_ListadoCheques.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListadoExamenes.resx">
+      <DependentUpon>A_ListadoExamenes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoFacturaCompra.resx">
       <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>
@@ -1292,6 +1326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_PrintCheque.resx">
       <DependentUpon>A_PrintCheque.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_PrintInforme.resx">
+      <DependentUpon>A_PrintInforme.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Promociones.resx">
       <DependentUpon>A_Promociones.vb</DependentUpon>
