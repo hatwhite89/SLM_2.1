@@ -22,8 +22,8 @@ Partial Class E_frmSalida
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -87,6 +87,8 @@ Partial Class E_frmSalida
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.txtExistenciaEntrada = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -124,6 +126,8 @@ Partial Class E_frmSalida
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.txtExistenciaEntrada)
+        Me.GroupBox2.Controls.Add(Me.Label26)
         Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Controls.Add(Me.txtCantidadEntregada)
         Me.GroupBox2.Controls.Add(Me.txtEntrega)
@@ -189,7 +193,7 @@ Partial Class E_frmSalida
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(6, 115)
+        Me.Label7.Location = New System.Drawing.Point(8, 115)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(78, 13)
         Me.Label7.TabIndex = 58
@@ -272,9 +276,10 @@ Partial Class E_frmSalida
         '
         'txtCantidad
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(247, 79)
+        Me.txtCantidad.Location = New System.Drawing.Point(274, 86)
         Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(181, 20)
+        Me.txtCantidad.ReadOnly = True
+        Me.txtCantidad.Size = New System.Drawing.Size(154, 20)
         Me.txtCantidad.TabIndex = 54
         '
         'txtAreaSolicitante
@@ -287,7 +292,7 @@ Partial Class E_frmSalida
         '
         'txtLote
         '
-        Me.txtLote.Location = New System.Drawing.Point(62, 79)
+        Me.txtLote.Location = New System.Drawing.Point(11, 86)
         Me.txtLote.Name = "txtLote"
         Me.txtLote.ReadOnly = True
         Me.txtLote.Size = New System.Drawing.Size(124, 20)
@@ -305,7 +310,7 @@ Partial Class E_frmSalida
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 86)
+        Me.Label3.Location = New System.Drawing.Point(8, 70)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(28, 13)
         Me.Label3.TabIndex = 52
@@ -314,16 +319,16 @@ Partial Class E_frmSalida
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(192, 86)
+        Me.Label2.Location = New System.Drawing.Point(271, 72)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 13)
+        Me.Label2.Size = New System.Drawing.Size(96, 13)
         Me.Label2.TabIndex = 51
-        Me.Label2.Text = "Cantidad"
+        Me.Label2.Text = "Cantidad solicitada"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 50)
+        Me.Label1.Location = New System.Drawing.Point(6, 53)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(50, 13)
         Me.Label1.TabIndex = 50
@@ -331,7 +336,7 @@ Partial Class E_frmSalida
         '
         'txtProducto
         '
-        Me.txtProducto.Location = New System.Drawing.Point(62, 43)
+        Me.txtProducto.Location = New System.Drawing.Point(62, 46)
         Me.txtProducto.Name = "txtProducto"
         Me.txtProducto.ReadOnly = True
         Me.txtProducto.Size = New System.Drawing.Size(366, 20)
@@ -389,8 +394,8 @@ Partial Class E_frmSalida
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(9, 32)
         Me.DataGridView1.Name = "DataGridView1"
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.Size = New System.Drawing.Size(896, 168)
         Me.DataGridView1.TabIndex = 0
         '
@@ -544,8 +549,8 @@ Partial Class E_frmSalida
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView3.Location = New System.Drawing.Point(13, 101)
         Me.DataGridView3.Name = "DataGridView3"
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue
-        Me.DataGridView3.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue
+        Me.DataGridView3.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView3.Size = New System.Drawing.Size(901, 197)
         Me.DataGridView3.TabIndex = 12
         '
@@ -688,6 +693,23 @@ Partial Class E_frmSalida
         Me.Label10.TabIndex = 7
         Me.Label10.Text = "Salida del almacen"
         '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(141, 72)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(113, 13)
+        Me.Label26.TabIndex = 63
+        Me.Label26.Text = "Existencia de este lote"
+        '
+        'txtExistenciaEntrada
+        '
+        Me.txtExistenciaEntrada.Location = New System.Drawing.Point(144, 86)
+        Me.txtExistenciaEntrada.Name = "txtExistenciaEntrada"
+        Me.txtExistenciaEntrada.ReadOnly = True
+        Me.txtExistenciaEntrada.Size = New System.Drawing.Size(110, 20)
+        Me.txtExistenciaEntrada.TabIndex = 64
+        '
         'E_frmSalida
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -781,4 +803,6 @@ Partial Class E_frmSalida
     Friend WithEvents Label25 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label10 As Label
+    Friend WithEvents txtExistenciaEntrada As TextBox
+    Friend WithEvents Label26 As Label
 End Class
