@@ -93,6 +93,7 @@
         Return RTrim(texto)
     End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+
         Try
             If rtxtdescripcion.TextLength = 0 Then
                 rtxtdescripcion.BackColor = Color.Red

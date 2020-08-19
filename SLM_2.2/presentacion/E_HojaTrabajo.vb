@@ -39,8 +39,29 @@
                 txtPaciente.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(1).Value()
                 txtParametro.Text = dgvHojaTrab.Columns.Item(e.ColumnIndex).Name
                 txtValorActual.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(e.ColumnIndex).Value()
+
+                'buscar valores referencia 
+                If (Trim(txtParametro.Text) <> "") Then
+                    'Try
+                    '    Dim objCat As New ClsCategoria
+                    '    With objCat
+                    '        .codigoCategoria_ = txtParametro.Text
+                    '    End With
+                    '    Dim dt As New DataTable
+                    '    dt = objCat.BuscarCategoriaCode()
+                    '    Dim row As DataRow = dt.Rows(0)
+                    '    txtnombreCategoria.Text = CStr(row("descripcion"))
+                    '    lblcodeCategoria.Text = CStr(row("codigo"))
+                    '    txtcodigoCategoria.BackColor = Color.White
+                    'Catch ex As Exception
+                    '    txtcodigoCategoria.BackColor = Color.Red
+                    '    lblcodeCategoria.Text = ""
+                    '    txtnombreCategoria.Text = ""
+                    'End Try
+                End If
+
             Else
-                txtOrden.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(0).Value()
+                    txtOrden.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(0).Value()
                 txtPaciente.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(1).Value()
             End If
         Catch ex As Exception

@@ -118,6 +118,7 @@
         cadena = RTrim(texto)
     End Sub
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+
         Try
             If txtEmpleado.TextLength = 0 Then
                 txtEmpleado.BackColor = Color.Red

@@ -30,7 +30,10 @@ Partial Class M_PuestoTrabajo
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
         Me.lbldescripcionB = New System.Windows.Forms.Label()
         Me.gbxsucursal = New System.Windows.Forms.GroupBox()
-        Me.lblform = New System.Windows.Forms.Label()
+        Me.txtnombreDepto = New System.Windows.Forms.TextBox()
+        Me.btnDepto = New System.Windows.Forms.Button()
+        Me.txtcodigoDepto = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.lbldireccion1 = New System.Windows.Forms.Label()
         Me.rtxtdescripcion = New System.Windows.Forms.RichTextBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
@@ -39,10 +42,7 @@ Partial Class M_PuestoTrabajo
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.btnguardar = New System.Windows.Forms.Button()
-        Me.txtnombreDepto = New System.Windows.Forms.TextBox()
-        Me.btnDepto = New System.Windows.Forms.Button()
-        Me.txtcodigoDepto = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxsucursal.SuspendLayout()
@@ -92,7 +92,7 @@ Partial Class M_PuestoTrabajo
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(5, 386)
+        Me.lbltotal.Location = New System.Drawing.Point(6, 386)
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(238, 17)
         Me.lbltotal.TabIndex = 114
@@ -140,15 +140,48 @@ Partial Class M_PuestoTrabajo
         Me.gbxsucursal.TabStop = False
         Me.gbxsucursal.Text = "REGISTRAR PUESTO DE TRABAJO"
         '
-        'lblform
+        'txtnombreDepto
         '
-        Me.lblform.AutoSize = True
-        Me.lblform.Location = New System.Drawing.Point(383, 9)
-        Me.lblform.Name = "lblform"
-        Me.lblform.Size = New System.Drawing.Size(71, 17)
-        Me.lblform.TabIndex = 127
-        Me.lblform.Text = "formulario"
-        Me.lblform.Visible = False
+        Me.txtnombreDepto.Location = New System.Drawing.Point(337, 77)
+        Me.txtnombreDepto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtnombreDepto.Name = "txtnombreDepto"
+        Me.txtnombreDepto.ReadOnly = True
+        Me.txtnombreDepto.Size = New System.Drawing.Size(568, 22)
+        Me.txtnombreDepto.TabIndex = 167
+        '
+        'btnDepto
+        '
+        Me.btnDepto.BackColor = System.Drawing.Color.White
+        Me.btnDepto.BackgroundImage = CType(resources.GetObject("btnDepto.BackgroundImage"), System.Drawing.Image)
+        Me.btnDepto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnDepto.FlatAppearance.BorderSize = 0
+        Me.btnDepto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDepto.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDepto.Location = New System.Drawing.Point(145, 76)
+        Me.btnDepto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnDepto.Name = "btnDepto"
+        Me.btnDepto.Size = New System.Drawing.Size(49, 22)
+        Me.btnDepto.TabIndex = 168
+        Me.btnDepto.Text = "..."
+        Me.btnDepto.UseVisualStyleBackColor = False
+        '
+        'txtcodigoDepto
+        '
+        Me.txtcodigoDepto.Location = New System.Drawing.Point(200, 77)
+        Me.txtcodigoDepto.MaxLength = 20
+        Me.txtcodigoDepto.Name = "txtcodigoDepto"
+        Me.txtcodigoDepto.Size = New System.Drawing.Size(120, 22)
+        Me.txtcodigoDepto.TabIndex = 170
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(22, 79)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(98, 17)
+        Me.Label11.TabIndex = 169
+        Me.Label11.Text = "Departamento"
         '
         'lbldireccion1
         '
@@ -247,48 +280,15 @@ Partial Class M_PuestoTrabajo
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
         '
-        'txtnombreDepto
+        'lblform
         '
-        Me.txtnombreDepto.Location = New System.Drawing.Point(337, 77)
-        Me.txtnombreDepto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtnombreDepto.Name = "txtnombreDepto"
-        Me.txtnombreDepto.ReadOnly = True
-        Me.txtnombreDepto.Size = New System.Drawing.Size(568, 22)
-        Me.txtnombreDepto.TabIndex = 167
-        '
-        'btnDepto
-        '
-        Me.btnDepto.BackColor = System.Drawing.Color.White
-        Me.btnDepto.BackgroundImage = CType(resources.GetObject("btnDepto.BackgroundImage"), System.Drawing.Image)
-        Me.btnDepto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnDepto.FlatAppearance.BorderSize = 0
-        Me.btnDepto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDepto.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDepto.Location = New System.Drawing.Point(145, 76)
-        Me.btnDepto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnDepto.Name = "btnDepto"
-        Me.btnDepto.Size = New System.Drawing.Size(49, 22)
-        Me.btnDepto.TabIndex = 168
-        Me.btnDepto.Text = "..."
-        Me.btnDepto.UseVisualStyleBackColor = False
-        '
-        'txtcodigoDepto
-        '
-        Me.txtcodigoDepto.Location = New System.Drawing.Point(200, 77)
-        Me.txtcodigoDepto.MaxLength = 20
-        Me.txtcodigoDepto.Name = "txtcodigoDepto"
-        Me.txtcodigoDepto.Size = New System.Drawing.Size(120, 22)
-        Me.txtcodigoDepto.TabIndex = 170
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(22, 79)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(98, 17)
-        Me.Label11.TabIndex = 169
-        Me.Label11.Text = "Departamento"
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(383, 9)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(71, 17)
+        Me.lblform.TabIndex = 127
+        Me.lblform.Text = "formulario"
+        Me.lblform.Visible = False
         '
         'M_PuestoTrabajo
         '
