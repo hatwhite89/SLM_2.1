@@ -2643,7 +2643,8 @@ Partial Class Form1
         Me.Apariencia.ResSysMenuMax = ""
         Me.Apariencia.ResSysMenuMin = ""
         Me.Apariencia.SerialNumber = "U4N2UjLguUZs33UR+Vy47JAZ81t2fjIFvut28vc5oHiVeivGb/NZMA=="
-        Me.Apariencia.SkinFile = Nothing
+        Me.Apariencia.SkinFile = "C:\Users\Software 3\Documents\Componentes Graficos Vb2\Componentes Graficos Vb2\S" &
+    "KIN NET 2010 WIN 7\SkinVS.NET\RealOne\RealOne.ssk"
         Me.Apariencia.SkinStreamMain = CType(resources.GetObject("Apariencia.SkinStreamMain"), System.IO.Stream)
         '
         'Form1

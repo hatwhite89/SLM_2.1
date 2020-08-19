@@ -59,6 +59,7 @@
             Dim codSubArea As Integer
             Dim fechadesde, fechahasta As Date
             Dim informe As New ClsOrdenDeTrabajo
+
             'objVistaCheque.SetDatabaseLogon("sa", "Lbm2019")
 
             'codCheque = Convert.ToInt32(txtNro.Text)
@@ -78,7 +79,11 @@
         End Try
     End Sub
 
-    Private Sub A_Informes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+    Private Sub btnEjecutar_Click(sender As Object, e As EventArgs) Handles btnEjecutar.Click
+
+        A_PrintCheque.Show()
 
     End Sub
 End Class
