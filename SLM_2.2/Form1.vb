@@ -680,4 +680,8 @@
 
         End Try
     End Sub
+
+    Private Sub gbxMenu_Enter(sender As Object, e As EventArgs) Handles gbxMenu.Enter
+
+    End Sub
 End Class
