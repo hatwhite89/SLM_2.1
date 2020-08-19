@@ -44,11 +44,11 @@ Partial Class A_Informes
         Me.Label4 = New System.Windows.Forms.Label()
         Me.chkExamenes = New System.Windows.Forms.CheckBox()
         Me.chkPeriodoTiempo = New System.Windows.Forms.CheckBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.btnBuscarSubArea = New System.Windows.Forms.Button()
         Me.txtSubArea = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dtpDesde = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,7 +125,7 @@ Partial Class A_Informes
         Me.GroupBox2.Controls.Add(Me.dtpDesde)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 70)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(654, 226)
+        Me.GroupBox2.Size = New System.Drawing.Size(654, 232)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información de consulta"
@@ -278,15 +278,6 @@ Partial Class A_Informes
         Me.chkPeriodoTiempo.Text = "Periodo de tiempo"
         Me.chkPeriodoTiempo.UseVisualStyleBackColor = True
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(8, 81)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(53, 13)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Filtrar por:"
-        '
         'btnBuscarSubArea
         '
         Me.btnBuscarSubArea.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -321,11 +312,20 @@ Partial Class A_Informes
         Me.dtpDesde.Size = New System.Drawing.Size(100, 20)
         Me.dtpDesde.TabIndex = 1
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(8, 81)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(53, 13)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Filtrar por:"
+        '
         'A_Informes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(677, 303)
+        Me.ClientSize = New System.Drawing.Size(677, 309)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "A_Informes"
@@ -356,7 +356,6 @@ Partial Class A_Informes
     Friend WithEvents Label4 As Label
     Friend WithEvents chkExamenes As CheckBox
     Friend WithEvents chkPeriodoTiempo As CheckBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents btnBuscarSubArea As Button
     Friend WithEvents txtSubArea As TextBox
     Friend WithEvents Label2 As Label
@@ -366,4 +365,5 @@ Partial Class A_Informes
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents lblCodSubArea As Label
     Friend WithEvents lblCodExamen As Label
+    Friend WithEvents Label3 As Label
 End Class

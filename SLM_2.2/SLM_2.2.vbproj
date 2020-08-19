@@ -489,6 +489,12 @@
     <Compile Include="presentacion\A_ListasPrecio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_MuestraPantallaCliente.Designer.vb">
+      <DependentUpon>A_MuestraPantallaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_MuestraPantallaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_Notificacion.Designer.vb">
       <DependentUpon>A_Notificacion.vb</DependentUpon>
     </Compile>
@@ -1315,6 +1321,9 @@
     <EmbeddedResource Include="presentacion\A_ListasPrecio.resx">
       <DependentUpon>A_ListasPrecio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_MuestraPantallaCliente.resx">
+      <DependentUpon>A_MuestraPantallaCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Notificacion.resx">
       <DependentUpon>A_Notificacion.vb</DependentUpon>
     </EmbeddedResource>
@@ -1696,6 +1705,14 @@
     <None Include="Resources\Definite-c47a609e-37f4-4678-9cb8-79a06e5845bb.wav" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
@@ -1707,6 +1724,15 @@
     </COMReference>
     <COMReference Include="UCAddinLib">
       <Guid>{AB54A09E-1604-4438-9AC7-04BE3E6B0320}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
       <VersionMajor>1</VersionMajor>
       <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>
