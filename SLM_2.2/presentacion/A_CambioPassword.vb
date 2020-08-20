@@ -34,7 +34,7 @@
                     .password_ = Encriptar(txtPass.Text)
 
                     If .CambioPass = 1 Then
-                        MsgBox("Se actualizo su contraseña.")
+                        MsgBox("Se actualizo su contraseña. Ingrese su usuario y nueva contraseña para poder ingresar.")
                         Me.Close()
                         M_InicioSesion.Limpiar()
                     End If
