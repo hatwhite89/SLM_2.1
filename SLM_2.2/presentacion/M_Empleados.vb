@@ -20,7 +20,7 @@
             mtxtidentidad.Text = ""
 
             txtseguroSocial.Text = ""
-            txtseguroVida.Text = ""
+            'txtseguroVida.Text = ""
             txtcodigoHorario.Text = ""
             txtbanco.Text = ""
             txtcuentaBancaria.Text = ""
@@ -32,7 +32,7 @@
             lblcodeDepto.Text = ""
             txtdepartamento.Text = ""
             txtsalario.Text = ""
-            cmbxtipoCuenta.SelectedItem = ""
+            'cmbxtipoCuenta.SelectedItem = ""
             cmbxcodigoContrato.SelectedValue = "1"
             cmbxestadoLaboral.SelectedItem = ""
             rtxtdireccion.Text = ""
@@ -265,6 +265,21 @@
 
         End Try
     End Sub
+
+    Public Sub SaveRecord()
+        For Each item As Control In GroupBox1.Controls
+            If String.IsNullOrEmpty(item.Text) Then
+                ''inform the user that all fields should have a value
+                MsgBox("Please fill up all fields............." & item.Name)
+                item.Focus()
+                Exit Sub
+            End If
+        Next
+        If MsgBox("Do you want to save this record?", MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
+            ''save the record
+        End If
+    End Sub
+
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
@@ -272,13 +287,13 @@
                 MsgBox("Debe llenar los campos faltantes.", MsgBoxStyle.Information)
                 Exit Sub
             End If
-            If Trim(txtnombre1.Text) = "" Then
+            If Trim(txtnombre1.Text) <> "" Then
                 sinDobleEspacio(txtnombre1.Text)
             End If
-            If Trim(txtapellido1.Text) = "" Then
+            If Trim(txtapellido1.Text) <> "" Then
                 sinDobleEspacio(txtapellido1.Text)
             End If
-            If Trim(txtapellido2.Text) = "" Then
+            If Trim(txtapellido2.Text) <> "" Then
                 sinDobleEspacio(txtapellido2.Text)
             End If
             'If Trim(txtpagoPaciente.Text) = "" Then
@@ -296,8 +311,21 @@
             End If
             Dim dt As New DataTable
             'Dim row As DataRow
+            Dim band As Boolean = False
+            If Trim(txttelefono.Text) <> "" Or Trim(txtcelular.Text) <> "" Then
+                band = True
+            End If
 
-            If (Trim(txtsalario.Text) <> "" And txtnombreCompleto.Text <> "" And Trim(txtcodigoHorario.Text) <> "" And Trim(txtcodigoFormaPago.Text) <> "") Then
+            Dim band2 As Boolean = False
+            If Trim(txtcelularUrgencias.Text) <> "" Or Trim(txttelUrgencias.Text) <> "" Then
+                band2 = True
+            End If
+
+            If (mtxtidentidad.MaskCompleted And (txtseguroSocial.Text) <> "" And Trim(txtcodigoHorario.Text) <> "" And
+                Trim(txtbanco.Text) <> "" And Trim(txtcodigoFormaPago.Text) <> "" And Trim(lblcodigoArea.Text) <> "" And
+                Trim(lblcodeDepto.Text) <> "" And Trim(lblcodePuesto.Text) <> "" And Trim(txtsalario.Text) <> "" And txtnombreCompleto.Text <> "" And
+                Trim(rtxtdireccion.Text) <> "" And Trim(txtcodigoProfesion.Text) <> "" And band And Trim(txtgrupoSanguineo.Text) <> "" And
+                Trim(txtcontactoUrgencias.Text) <> "" And band2) Then
 
                 Dim objEmp As New ClsEmpleados
                 With objEmp
@@ -311,7 +339,7 @@
                     .nIdentidad_ = mtxtidentidad.Text
 
                     .nSeguroSocial_ = txtseguroSocial.Text
-                    .nSeguroVida_ = txtseguroVida.Text
+                    '.nSeguroVida_ = txtseguroVida.Text
                     .codigoHorario_ = Convert.ToInt64(txtcodigoHorario.Text)
                     .banco_ = txtbanco.Text
                     .cuentaBancaria_ = txtcuentaBancaria.Text
@@ -334,7 +362,7 @@
                     .codigoPuestoTrab_ = Convert.ToInt64(lblcodePuesto.Text)
                     .codigoDepto_ = Convert.ToInt64(lblcodeDepto.Text)
                     .salario_ = Convert.ToDouble(txtsalario.Text)
-                    .tipoCuenta_ = cmbxtipoCuenta.SelectedItem.ToString
+                    '.tipoCuenta_ = cmbxtipoCuenta.SelectedItem.ToString
 
                     '.codigoContrato_ = Convert.ToInt64("1")
                     .codigoContrato_ = Integer.Parse(cmbxcodigoContrato.SelectedValue)
@@ -501,13 +529,13 @@
                 MsgBox("Debe llenar los campos faltantes.", MsgBoxStyle.Information)
                 Exit Sub
             End If
-            If Trim(txtnombre1.Text) = "" Then
+            If Trim(txtnombre1.Text) <> "" Then
                 sinDobleEspacio(txtnombre1.Text)
             End If
-            If Trim(txtapellido1.Text) = "" Then
+            If Trim(txtapellido1.Text) <> "" Then
                 sinDobleEspacio(txtapellido1.Text)
             End If
-            If Trim(txtapellido2.Text) = "" Then
+            If Trim(txtapellido2.Text) <> "" Then
                 sinDobleEspacio(txtapellido2.Text)
             End If
             'If Trim(txtpagoPaciente.Text) = "" Then
@@ -526,7 +554,21 @@
             Dim dt As New DataTable
             'Dim row As DataRow
 
-            If (txtcodigo.Text <> "") Then
+            Dim band As Boolean = False
+            If Trim(txttelefono.Text) <> "" Or Trim(txtcelular.Text) <> "" Then
+                band = True
+            End If
+
+            Dim band2 As Boolean = False
+            If Trim(txtcelularUrgencias.Text) <> "" Or Trim(txttelUrgencias.Text) <> "" Then
+                band2 = True
+            End If
+
+            If (txtcodigo.Text <> "" And mtxtidentidad.MaskCompleted And (txtseguroSocial.Text) <> "" And Trim(txtcodigoHorario.Text) <> "" And
+                Trim(txtbanco.Text) <> "" And Trim(txtcodigoFormaPago.Text) <> "" And Trim(lblcodigoArea.Text) <> "" And
+                Trim(lblcodeDepto.Text) <> "" And Trim(lblcodePuesto.Text) <> "" And Trim(txtsalario.Text) <> "" And txtnombreCompleto.Text <> "" And
+                Trim(rtxtdireccion.Text) <> "" And Trim(txtcodigoProfesion.Text) <> "" And band And Trim(txtgrupoSanguineo.Text) <> "" And
+                Trim(txtcontactoUrgencias.Text) <> "" And band2) Then
 
                 Dim objEmp As New ClsEmpleados
                 With objEmp
@@ -541,7 +583,7 @@
                     .nIdentidad_ = mtxtidentidad.Text
 
                     .nSeguroSocial_ = txtseguroSocial.Text
-                    .nSeguroVida_ = txtseguroVida.Text
+                    '.nSeguroVida_ = txtseguroVida.Text
                     .codigoHorario_ = Convert.ToInt64(txtcodigoHorario.Text)
                     .banco_ = txtbanco.Text
                     .cuentaBancaria_ = txtcuentaBancaria.Text
@@ -563,7 +605,7 @@
                     .codigoPuestoTrab_ = Convert.ToInt64(lblcodePuesto.Text)
                     .codigoDepto_ = Convert.ToInt64(lblcodeDepto.Text)
                     .salario_ = Convert.ToDouble(txtsalario.Text)
-                    .tipoCuenta_ = cmbxtipoCuenta.SelectedItem.ToString
+                    '.tipoCuenta_ = cmbxtipoCuenta.SelectedItem.ToString
 
                     '.codigoContrato_ = Convert.ToInt64("1")
                     .codigoContrato_ = Integer.Parse(cmbxcodigoContrato.SelectedValue)
@@ -596,8 +638,7 @@
                 End With
 
                 If objEmp.ModificarEmpleados() = 1 Then
-
-                    MsgBox("Modificado los datos del empleado correctamente.", MsgBoxStyle.Information)
+                    MsgBox("Actualizado los datos del empleado correctamente.", MsgBoxStyle.Information)
 
                     btnguardar.Enabled = False
                     btnmodificar.Enabled = True
@@ -669,7 +710,6 @@
         pbxEmpleado.Image = Nothing
     End Sub
     Sub SubirImagen() 'Metodo que selecciona imagen
-
         Try
             Me.OpenFileDialog1.ShowDialog()
             If Me.OpenFileDialog1.FileName <> "" Then
@@ -694,7 +734,6 @@
         Catch ex As Exception
             MsgBox("Error al cargar la imagen." + ex.Message)
         End Try
-
     End Sub
     Private Sub btnArea_Click(sender As Object, e As EventArgs) Handles txtArea.Click
         M_Area.lblform.Text = "M_Empleados"
@@ -711,10 +750,14 @@
         If Trim(txtdepartamento.Text) <> "" Then
             M_ListadoPuestoTrabajo.lblform.Text = "M_Empleados"
             M_ListadoPuestoTrabajo.lblcodeDepto.Text = lblcodeDepto.Text
+            M_ListadoPuestoTrabajo.lblBandera.Text = "1"
+            M_ListadoPuestoTrabajo.ShowDialog()
+        ElseIf Trim(txtArea.Text) = "" Then
+            M_ListadoPuestoTrabajo.lblform.Text = "M_Empleados"
+            M_ListadoPuestoTrabajo.lblBandera.Text = "0"
             M_ListadoPuestoTrabajo.ShowDialog()
         End If
     End Sub
-
     Private Sub txtcodigoFormaPago_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoFormaPago.TextChanged
         If (txtcodigoFormaPago.Text <> "") Then
             Try
@@ -741,11 +784,11 @@
     Private Sub cmbxcodigoContrato_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cmbxcodigoContrato.SelectedIndexChanged
         'habilitar el boton para imprimir el carnet en caso que sea permanente
         Try
-            If cmbxcodigoContrato.SelectedValue.ToString = "1" Then
-                btnImprimirCarnet.Enabled = True
-            Else
-                btnImprimirCarnet.Enabled = False
-            End If
+            'If cmbxcodigoContrato.SelectedValue.ToString = "1" Then
+            '    btnImprimirCarnet.Enabled = True
+            'Else
+            '    btnImprimirCarnet.Enabled = False
+            'End If
         Catch ex As Exception
 
         End Try
@@ -761,4 +804,6 @@
 
         End Try
     End Sub
+
+
 End Class

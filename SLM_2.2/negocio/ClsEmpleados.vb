@@ -3,11 +3,11 @@
 Public Class ClsEmpleados
 
     Dim codigo, codigoArea, codigoHorario, codigoFormaPago, codigoPuestoTrab, codigoContrato, codigoProfesion, codigoDepto As Integer
-    Dim nombre1, nombre2, apellido1, apellido2, nombreCompleto, nIdentidad, nSeguroSocial, nSeguroVida, banco, cuentaBancaria As String
+    Dim nombre1, nombre2, apellido1, apellido2, nombreCompleto, nIdentidad, nSeguroSocial, banco, cuentaBancaria As String
     Dim fechaAlta, fechaNacimiento As Date
     Dim fechaBaja, fechaAvisoBaja As System.Nullable(Of Date)
     Dim salario As Double
-    Dim motivoBaja, tipoCuenta, estadoLaboral, direccion1, direccion2, correo1, correo2, telefono, celular, rtn As String
+    Dim motivoBaja, estadoLaboral, direccion1, direccion2, correo1, correo2, telefono, celular, rtn, alergiaAli, alergiaMed, condicionesEspe As String
     Dim lugarNacimiento, grupoSangineo, contactoUrgencias, telUrgencias, celUrgencias, contactoUrgencias2, telUrgencias2, celUrgencias2, imagen, nombreConyugue, nombrePadre, nombreMadre, genero, estadoCivil As String
     'Constructor
     Public Sub New()
@@ -142,12 +142,12 @@ Public Class ClsEmpleados
         End Set
     End Property
 
-    Public Property nSeguroVida_ As String
+    Public Property condicionesEspe_ As String
         Get
-            Return nSeguroVida
+            Return condicionesEspe
         End Get
         Set(value As String)
-            nSeguroVida = value
+            condicionesEspe = value
         End Set
     End Property
 
@@ -196,12 +196,20 @@ Public Class ClsEmpleados
         End Set
     End Property
 
-    Public Property tipoCuenta_ As String
+    Public Property alergiaMed_ As String
         Get
-            Return tipoCuenta
+            Return alergiaMed
         End Get
         Set(value As String)
-            tipoCuenta = value
+            alergiaMed = value
+        End Set
+    End Property
+    Public Property alergiaAli_ As String
+        Get
+            Return alergiaAli
+        End Get
+        Set(value As String)
+            alergiaAli = value
         End Set
     End Property
 
@@ -482,11 +490,6 @@ Public Class ClsEmpleados
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "nSeguroVida" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = nSeguroVida_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoHorario" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = codigoHorario_
         sqlcom.Parameters.Add(sqlpar)
@@ -529,11 +532,6 @@ Public Class ClsEmpleados
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoDepto" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = codigoDepto_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "tipoCuenta" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = tipoCuenta_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -664,6 +662,21 @@ Public Class ClsEmpleados
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salario"
         sqlpar.Value = salario_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "alergiaAli" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = alergiaAli_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "alergiaMed" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = alergiaMed_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "condicionesEspe" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = condicionesEspe_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -745,11 +758,6 @@ Public Class ClsEmpleados
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "nSeguroVida" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = nSeguroVida_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoHorario" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = codigoHorario_
         sqlcom.Parameters.Add(sqlpar)
@@ -792,11 +800,6 @@ Public Class ClsEmpleados
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoDepto" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = codigoDepto_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "tipoCuenta" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = tipoCuenta_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -927,6 +930,21 @@ Public Class ClsEmpleados
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salario"
         sqlpar.Value = salario_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "alergiaAli" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = alergiaAli_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "alergiaMed" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = alergiaMed_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "condicionesEspe" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = condicionesEspe_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

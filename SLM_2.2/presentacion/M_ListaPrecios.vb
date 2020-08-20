@@ -51,6 +51,9 @@
                     .codigoBreve_ = txtcodigoBreve.Text
                     .descripcion_ = txtDescripcion.Text
                     .tipoConvenio_ = rbtnSi.Checked
+                    If rbtnSi.Checked Then
+                        .codigoTerminoPago_ = lblcodeT.Text
+                    End If
                 End With
 
                 If objPriceList.RegistrarNuevaListaPrecios() = 1 Then
@@ -122,6 +125,9 @@
                     .codigoBreve_ = txtcodigoBreve.Text
                     .descripcion_ = txtDescripcion.Text
                     .tipoConvenio_ = rbtnSi.Checked
+                    If rbtnSi.Checked Then
+                        .codigoTerminoPago_ = lblcodeT.Text
+                    End If
                 End With
 
                 If objPriceList.ModificarListaPrecios() = 1 Then
@@ -214,5 +220,98 @@
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
+    End Sub
+
+    Private Sub rbtnSi_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnSi.CheckedChanged
+        'habilito el termino de pago a ingresar
+        Try
+            If rbtnSi.Checked Then
+                lblTerminoPago.Visible = True
+                btnbuscarTermino.Visible = True
+                txtcodigoTermino.Visible = True
+                txtDescripcionTermino.Visible = True
+            Else
+                lblTerminoPago.Visible = False
+                btnbuscarTermino.Visible = False
+                txtcodigoTermino.Visible = False
+                txtDescripcionTermino.Visible = False
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Sub rbtnNo_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnNo.CheckedChanged
+        'habilito el termino de pago a ingresar
+        Try
+            If rbtnSi.Checked Then
+                lblTerminoPago.Visible = True
+                btnbuscarTermino.Visible = True
+                txtcodigoTermino.Visible = True
+                txtDescripcionTermino.Visible = True
+            Else
+                lblTerminoPago.Visible = False
+                btnbuscarTermino.Visible = False
+                txtcodigoTermino.Visible = False
+                txtDescripcionTermino.Visible = False
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnbuscarTermino_Click(sender As Object, e As EventArgs) Handles btnbuscarTermino.Click
+        M_TerminosPago.lblform.Text = "M_ListaPrecios"
+        M_TerminosPago.ShowDialog()
+    End Sub
+
+    Private Sub txtcodigoTermino_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoTermino.TextChanged
+        If (txtcodigoTermino.Text <> "") Then
+            Try
+                Dim objTerm As New ClsTerminoPago
+                With objTerm
+                    .codigoTerminoPago_ = txtcodigoTermino.Text
+                End With
+                Dim dt As New DataTable
+                dt = objTerm.BuscarTerminoPagoCode()
+                Dim row As DataRow = dt.Rows(0)
+                txtDescripcionTermino.Text = CStr(row("descripcion"))
+                lblcodeT.Text = CStr(row("codigo"))
+                txtcodigoTermino.BackColor = Color.White
+            Catch ex As Exception
+                txtcodigoTermino.BackColor = Color.Red
+                txtDescripcionTermino.Text = ""
+                lblcodeT.Text = ""
+            End Try
+        Else
+            txtcodigoTermino.Text = ""
+            txtDescripcionTermino.Text = ""
+            lblcodeT.Text = ""
+            txtcodigoTermino.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub lblcodeT_TextChanged(sender As Object, e As EventArgs) Handles lblcodeT.TextChanged
+        If (lblcodeT.Text <> "") Then
+            Try
+                Dim objTerm As New ClsTerminoPago
+                With objTerm
+                    .codigo_ = lblcodeT.Text
+                End With
+                Dim dt As New DataTable
+                dt = objTerm.BuscarTerminoPagoNumero()
+                Dim row As DataRow = dt.Rows(0)
+                txtDescripcionTermino.Text = CStr(row("descripcion"))
+                txtcodigoTermino.Text = CStr(row("codigoTerminoPago"))
+                txtcodigoTermino.BackColor = Color.White
+            Catch ex As Exception
+                txtcodigoTermino.BackColor = Color.Red
+                txtDescripcionTermino.Text = ""
+                lblcodeT.Text = ""
+            End Try
+        Else
+            txtcodigoTermino.Text = ""
+            txtDescripcionTermino.Text = ""
+            lblcodeT.Text = ""
+            txtcodigoTermino.BackColor = Color.White
+        End If
     End Sub
 End Class

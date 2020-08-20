@@ -152,6 +152,7 @@
     <Compile Include="negocio\ClsAsientoContable.vb" />
     <Compile Include="negocio\ClsBitacora.vb" />
     <Compile Include="negocio\ClsCAI.vb" />
+    <Compile Include="negocio\ClsCapacitaciones.vb" />
     <Compile Include="negocio\ClsCategoriaroducto.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
     <Compile Include="negocio\ClsContratos.vb" />
@@ -160,6 +161,7 @@
     <Compile Include="negocio\ClsDescuentos.vb" />
     <Compile Include="negocio\ClsDetalleAsiento.vb" />
     <Compile Include="negocio\ClsDetalleCAI.vb" />
+    <Compile Include="negocio\ClsDetalleCapacitaciones.vb" />
     <Compile Include="negocio\ClsDetalleContactos.vb" />
     <Compile Include="negocio\ClsDetalleFacturaCompra.vb" />
     <Compile Include="negocio\ClsDetalleListaPrecios.vb" />
@@ -778,6 +780,12 @@
     <Compile Include="presentacion\M_Arqueos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_BuscarCapacitaciones.Designer.vb">
+      <DependentUpon>M_BuscarCapacitaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarCapacitaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_BuscarEmpleados.Designer.vb">
       <DependentUpon>M_BuscarEmpleados.vb</DependentUpon>
     </Compile>
@@ -788,6 +796,12 @@
       <DependentUpon>M_CAI.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_CAI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_Capacitaciones.Designer.vb">
+      <DependentUpon>M_Capacitaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Capacitaciones.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_CierreCaja.vb">
@@ -1459,11 +1473,17 @@
     <EmbeddedResource Include="presentacion\M_Arqueos.resx">
       <DependentUpon>M_Arqueos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_BuscarCapacitaciones.resx">
+      <DependentUpon>M_BuscarCapacitaciones.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_BuscarEmpleados.resx">
       <DependentUpon>M_BuscarEmpleados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_CAI.resx">
       <DependentUpon>M_CAI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Capacitaciones.resx">
+      <DependentUpon>M_Capacitaciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_CierreCaja.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

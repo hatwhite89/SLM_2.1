@@ -37,13 +37,14 @@ Partial Class M_Descuentos
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.txtcodigoBreveB = New System.Windows.Forms.TextBox()
         Me.lblFila = New System.Windows.Forms.Label()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
         Me.lblcomentarioB = New System.Windows.Forms.Label()
-        Me.txtcodigoBreveB = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.gbxclasificacion.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -220,6 +221,7 @@ Partial Class M_Descuentos
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.Controls.Add(Me.Label2)
         Me.gbxbusqueda.Controls.Add(Me.txtcodigoBreveB)
         Me.gbxbusqueda.Controls.Add(Me.lblFila)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
@@ -236,10 +238,19 @@ Partial Class M_Descuentos
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR DESCUENTO"
         '
+        'txtcodigoBreveB
+        '
+        Me.txtcodigoBreveB.Location = New System.Drawing.Point(476, 23)
+        Me.txtcodigoBreveB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcodigoBreveB.MaxLength = 100
+        Me.txtcodigoBreveB.Name = "txtcodigoBreveB"
+        Me.txtcodigoBreveB.Size = New System.Drawing.Size(192, 22)
+        Me.txtcodigoBreveB.TabIndex = 117
+        '
         'lblFila
         '
         Me.lblFila.AutoSize = True
-        Me.lblFila.Location = New System.Drawing.Point(347, 27)
+        Me.lblFila.Location = New System.Drawing.Point(871, 23)
         Me.lblFila.Name = "lblFila"
         Me.lblFila.Size = New System.Drawing.Size(51, 17)
         Me.lblFila.TabIndex = 116
@@ -296,14 +307,15 @@ Partial Class M_Descuentos
         Me.lblcomentarioB.TabIndex = 114
         Me.lblcomentarioB.Text = "Descripción"
         '
-        'txtcodigoBreveB
+        'Label2
         '
-        Me.txtcodigoBreveB.Location = New System.Drawing.Point(495, 22)
-        Me.txtcodigoBreveB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtcodigoBreveB.MaxLength = 100
-        Me.txtcodigoBreveB.Name = "txtcodigoBreveB"
-        Me.txtcodigoBreveB.Size = New System.Drawing.Size(192, 22)
-        Me.txtcodigoBreveB.TabIndex = 117
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(376, 26)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(93, 17)
+        Me.Label2.TabIndex = 136
+        Me.Label2.Text = "Código Breve"
         '
         'M_Descuentos
         '
@@ -349,4 +361,5 @@ Partial Class M_Descuentos
     Friend WithEvents lblFila As Label
     Friend WithEvents lblform As Label
     Friend WithEvents txtcodigoBreveB As TextBox
+    Friend WithEvents Label2 As Label
 End Class

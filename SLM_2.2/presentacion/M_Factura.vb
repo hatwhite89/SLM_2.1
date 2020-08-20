@@ -41,6 +41,7 @@ Public Class M_Factura
                 M_ClienteVentana.txtcorreo2.Text = CStr(row("correo2"))
                 If (row("tipoConvenio")) Then
                     txtcodigoConvenio.Text = CStr(row("descripcionLp"))
+                    lblcodeTerminoPago.Text = CStr(row("terminoListaPrecio"))
                 Else
                     'lblcodePriceList.Text = "0"
                     txtcodigoConvenio.Text = ""
@@ -782,9 +783,8 @@ Public Class M_Factura
                 txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And
                 txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 1) Then
 
-
                 If (cbxok.Checked) Then
-                    If (Convert.ToDouble(txtvuelto.Text) < 0) Then
+                    If (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "") Then
                         MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
                         Exit Sub
                     End If
@@ -1007,7 +1007,7 @@ Public Class M_Factura
                 'si la factura a sido aprobada (OK) y quiere obtener el numero del CAI y no a sido anulada la factura (ANULADA)
                 If (cbxok.Checked And Trim(txtnumeroOficial.Text) = "" And cbxAnular.Checked = False) Then
                     'VALIDACION DE DINERO
-                    If (Convert.ToDouble(txtvuelto.Text) < 0) Then
+                    If (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "") Then
                         MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
                         Exit Sub
                     End If

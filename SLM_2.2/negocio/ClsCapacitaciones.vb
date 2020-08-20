@@ -1,12 +1,14 @@
 ﻿Imports System.Data.SqlClient
-Public Class ClsListaPrecios
-    Dim descripcion, codigoBreve As String
-    Dim codigo, codigoTerminoPago As Integer
-    Dim tipoConvenio As Boolean
+
+Public Class ClsCapacitaciones
+    Dim nombre, cantidadHoras, proveedor As String
+    Dim fecha, desde, hasta As Date
+    Dim codigo As Integer
     'Constructor
     Public Sub New()
 
     End Sub
+
     Public Property codigo_ As Integer
         Get
             Return codigo
@@ -15,68 +17,90 @@ Public Class ClsListaPrecios
             codigo = value
         End Set
     End Property
-    Public Property codigoBreve_ As String
+
+    Public Property Nombre_ As String
         Get
-            Return codigoBreve
+            Return nombre
         End Get
         Set(value As String)
-            codigoBreve = value
+            nombre = value
         End Set
     End Property
-    Public Property descripcion_ As String
+
+    Public Property cantidadHoras_ As String
         Get
-            Return descripcion
+            Return cantidadHoras
         End Get
         Set(value As String)
-            descripcion = value
+            cantidadHoras = value
         End Set
     End Property
-    Public Property tipoConvenio_ As Boolean
+
+    Public Property proveedor_ As String
         Get
-            Return tipoConvenio
+            Return proveedor
         End Get
-        Set(value As Boolean)
-            tipoConvenio = value
+        Set(value As String)
+            proveedor = value
         End Set
     End Property
-    Public Property codigoTerminoPago_ As Integer
+
+    Public Property fecha_ As Date
         Get
-            Return codigoTerminoPago
+            Return fecha
         End Get
-        Set(value As Integer)
-            codigoTerminoPago = value
+        Set(value As Date)
+            fecha = value
         End Set
     End Property
-    Public Function RegistrarNuevaListaPrecios() As String
+
+    Public Property desde_ As Date
+        Get
+            Return desde
+        End Get
+        Set(value As Date)
+            desde = value
+        End Set
+    End Property
+
+    Public Property hasta_ As Date
+        Get
+            Return hasta
+        End Get
+        Set(value As Date)
+            hasta = value
+        End Set
+    End Property
+
+    Public Function RegistrarNuevaCapacitacion() As String
+
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "M_slmInsertarListaPrecios"
+        sqlcom.CommandText = "M_slmInsertarCapacitacion"
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoBreve" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoBreve_
+        sqlpar.ParameterName = "nombre" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Nombre_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "descripcion" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = descripcion_
+        sqlpar.ParameterName = "fecha" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = fecha_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "tipoConvenio" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = tipoConvenio_
+        sqlpar.ParameterName = "cantidadHoras" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = cantidadHoras_
         sqlcom.Parameters.Add(sqlpar)
 
-        If tipoConvenio_ Then
-            sqlpar = New SqlParameter
-            sqlpar.ParameterName = "codigoTerminoPago" 'nombre campo en el procedimiento almacenado @
-            sqlpar.Value = codigoTerminoPago_
-            sqlcom.Parameters.Add(sqlpar)
-        End If
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "proveedor" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = proveedor_
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -97,14 +121,16 @@ Public Class ClsListaPrecios
         Return par_sal
 
     End Function
-    Public Function ModificarListaPrecios() As String
+
+    Public Function ModificarCapacitaciones() As String
+
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "M_slmModificarListaPrecios"
+        sqlcom.CommandText = "M_slmModificarCapacitacion"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
@@ -112,26 +138,24 @@ Public Class ClsListaPrecios
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoBreve" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoBreve_
+        sqlpar.ParameterName = "nombre" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Nombre_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "descripcion" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = descripcion_
+        sqlpar.ParameterName = "fecha" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = fecha_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "tipoConvenio" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = tipoConvenio_
+        sqlpar.ParameterName = "cantidadHoras" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = cantidadHoras_
         sqlcom.Parameters.Add(sqlpar)
 
-        If tipoConvenio_ Then
-            sqlpar = New SqlParameter
-            sqlpar.ParameterName = "codigoTerminoPago" 'nombre campo en el procedimiento almacenado @
-            sqlpar.Value = codigoTerminoPago_
-            sqlcom.Parameters.Add(sqlpar)
-        End If
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "proveedor" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = proveedor_
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -152,7 +176,9 @@ Public Class ClsListaPrecios
         Return par_sal
 
     End Function
-    Public Function BuscarListaPreciosCodigo() As DataTable
+
+    Public Function BuscarCapacitacionPorNombre() As DataTable
+
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -160,19 +186,44 @@ Public Class ClsListaPrecios
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarListaPreciosCodigo"
+            cmd.CommandText = "M_slmBuscarCapacitacionesNombre"
+            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Nombre_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+    Public Function BuscarCapacitacion() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_slmBuscarCapacitacion"
             cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = codigo_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
-                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
         End Using
+
     End Function
-    Public Function BuscarListaPrecios() As DataTable
+
+    Public Function BuscarCapacitacionPorFechas() As DataTable
+
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -180,60 +231,48 @@ Public Class ClsListaPrecios
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarListaPrecios"
-            cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion_
+            cmd.CommandText = "M_slmBuscarCapacitacionPorFechas"
+            cmd.Parameters.Add("@desde", SqlDbType.Date).Value = desde_
+            cmd.Parameters.Add("@hasta", SqlDbType.Date).Value = hasta
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
-                    objCon.cerrarConexion()
                     Return dt
                 End Using
             End Using
         End Using
+
     End Function
-    Public Function BuscarListaPreciosCode() As DataTable
+
+    Public Function CapturarCapacitacion() As DataTable
+
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using cmd As New SqlCommand
-            cmd.Connection = cn
-            cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "M_slmBuscarListaPreciosCode"
-            cmd.Parameters.Add("@codigoBreve", SqlDbType.VarChar).Value = codigoBreve_
-            Using da As New SqlDataAdapter
-                da.SelectCommand = cmd
-                Using dt As New DataTable
-                    da.Fill(dt)
-                    objCon.cerrarConexion()
-                    Return dt
-                End Using
-            End Using
-        End Using
-    End Function
-    Public Function CapturarListaPrecios() As DataTable
-        Dim objCon As New ClsConnection
-        Dim cn As New SqlConnection
-        cn = objCon.getConexion
-
-        Using da As New SqlDataAdapter("M_slmCapturarListaPrecios", cn)
+        Using da As New SqlDataAdapter("M_slmCapturarCapacitacion", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             objCon.cerrarConexion()
             Return dt
         End Using
+
     End Function
-    Public Function SeleccionarListaPrecios() As DataTable
+
+    Public Function SeleccionarCapacitaciones() As DataTable
+
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("M_slmSeleccionarListaPrecios", cn)
+        Using da As New SqlDataAdapter("M_slmSeleccionarCapacitaciones", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             objCon.cerrarConexion()
             Return dt
         End Using
+
     End Function
+
 End Class

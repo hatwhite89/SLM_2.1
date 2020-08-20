@@ -44,7 +44,7 @@ Public Class M_BuscarEmpleados
                 M_Empleados.mtxtidentidad.Text = CStr(row("nIdentidad"))
 
                 M_Empleados.txtseguroSocial.Text = CStr(row("nSeguroSocial"))
-                M_Empleados.txtseguroVida.Text = CStr(row("nSeguroVida"))
+                'M_Empleados.txtseguroVida.Text = CStr(row("nSeguroVida"))
                 M_Empleados.txtcodigoHorario.Text = CStr(row("codigoHorario"))
                 M_Empleados.txtbanco.Text = CStr(row("banco"))
                 M_Empleados.txtcuentaBancaria.Text = CStr(row("cuentaBancaria"))
@@ -68,7 +68,7 @@ Public Class M_BuscarEmpleados
                 M_Empleados.lblcodePuesto.Text = CStr(row("codigoPuestoTrab"))
                 M_Empleados.lblcodeDepto.Text = CStr(row("codigoDepto"))
                 M_Empleados.txtsalario.Text = Convert.ToDecimal(CStr(row("salario"))).ToString("N2")
-                M_Empleados.cmbxtipoCuenta.SelectedItem = CStr(row("tipoCuenta"))
+                'M_Empleados.cmbxtipoCuenta.SelectedItem = CStr(row("tipoCuenta"))
 
                 M_Empleados.llenarContratos()
                 M_Empleados.cmbxcodigoContrato.SelectedValue = CStr(row("codigoContrato"))
@@ -114,6 +114,12 @@ Public Class M_BuscarEmpleados
                     M_Empleados.pbxEmpleado.LoadAsync(row("imagen"))
                 End If
 
+                'datos medicos
+                M_Empleados.rtxtAAlimentos.Text = CStr(row("alergiaAli"))
+                M_Empleados.rtxtAMedicamentos.Text = CStr(row("alergiaMed"))
+                M_Empleados.rtxtCondicionesE.Text = CStr(row("condicionesEspe"))
+
+                'boton de actualizar
                 M_Empleados.btnguardar.Enabled = False
                 M_Empleados.btnmodificar.Enabled = True
                 M_Empleados.lblform.Text = "M_BuscarEmpleados"

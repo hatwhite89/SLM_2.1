@@ -49,10 +49,8 @@ Partial Class M_Empleados
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.cmbxestadoLaboral = New System.Windows.Forms.ComboBox()
         Me.cmbxcodigoContrato = New System.Windows.Forms.ComboBox()
-        Me.cmbxtipoCuenta = New System.Windows.Forms.ComboBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lblcodePuesto = New System.Windows.Forms.Label()
         Me.lblcodeDepto = New System.Windows.Forms.Label()
@@ -80,8 +78,6 @@ Partial Class M_Empleados
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtcodigoHorario = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtseguroVida = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.txtseguroSocial = New System.Windows.Forms.TextBox()
         Me.mtxtidentidad = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -153,6 +149,13 @@ Partial Class M_Empleados
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.pbxEmpleado = New System.Windows.Forms.PictureBox()
         Me.btnBuscarImage = New System.Windows.Forms.Button()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.rtxtCondicionesE = New System.Windows.Forms.RichTextBox()
+        Me.lblCondicionesEspeciales = New System.Windows.Forms.Label()
+        Me.rtxtAMedicamentos = New System.Windows.Forms.RichTextBox()
+        Me.lblAlergiasMedicamentos = New System.Windows.Forms.Label()
+        Me.rtxtAAlimentos = New System.Windows.Forms.RichTextBox()
+        Me.lblAlergiasAlimentos = New System.Windows.Forms.Label()
         Me.ofdImagen = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.gbxobjeto.SuspendLayout()
@@ -170,6 +173,7 @@ Partial Class M_Empleados
         Me.GroupBox4.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.pbxEmpleado, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage5.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbxobjeto
@@ -410,11 +414,13 @@ Partial Class M_Empleados
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Location = New System.Drawing.Point(17, 35)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(933, 358)
         Me.TabControl1.TabIndex = 0
+        Me.TabControl1.TabStop = False
         '
         'TabPage1
         '
@@ -430,8 +436,6 @@ Partial Class M_Empleados
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.txtcodigoHorario)
         Me.TabPage1.Controls.Add(Me.Label3)
-        Me.TabPage1.Controls.Add(Me.txtseguroVida)
-        Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.txtseguroSocial)
         Me.TabPage1.Controls.Add(Me.mtxtidentidad)
         Me.TabPage1.Controls.Add(Me.Label1)
@@ -459,13 +463,11 @@ Partial Class M_Empleados
         '
         Me.GroupBox3.Controls.Add(Me.cmbxestadoLaboral)
         Me.GroupBox3.Controls.Add(Me.cmbxcodigoContrato)
-        Me.GroupBox3.Controls.Add(Me.cmbxtipoCuenta)
         Me.GroupBox3.Controls.Add(Me.Label15)
         Me.GroupBox3.Controls.Add(Me.Label14)
-        Me.GroupBox3.Controls.Add(Me.Label13)
-        Me.GroupBox3.Location = New System.Drawing.Point(339, 207)
+        Me.GroupBox3.Location = New System.Drawing.Point(339, 236)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(567, 106)
+        Me.GroupBox3.Size = New System.Drawing.Size(567, 77)
         Me.GroupBox3.TabIndex = 159
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Información Laboral"
@@ -474,8 +476,8 @@ Partial Class M_Empleados
         '
         Me.cmbxestadoLaboral.DropDownWidth = 180
         Me.cmbxestadoLaboral.FormattingEnabled = True
-        Me.cmbxestadoLaboral.Items.AddRange(New Object() {"Postulante", "Pendiente de Aprobación", "Activo", "Inactivo: Renuncia", "Inactivo: Despido", "Inactivo: Desertor", "Inactivo: Defunción", "Inactivo: Baja Temporal", "Inactivo: Lista No Reintegrables"})
-        Me.cmbxestadoLaboral.Location = New System.Drawing.Point(124, 63)
+        Me.cmbxestadoLaboral.Items.AddRange(New Object() {"Activo", "Inactivo: Renuncia", "Inactivo: Despido", "Inactivo: Desertor", "Inactivo: Defunción", "Inactivo: Baja Temporal", "Inactivo: Lista No Reintegrables"})
+        Me.cmbxestadoLaboral.Location = New System.Drawing.Point(124, 30)
         Me.cmbxestadoLaboral.Name = "cmbxestadoLaboral"
         Me.cmbxestadoLaboral.Size = New System.Drawing.Size(153, 24)
         Me.cmbxestadoLaboral.TabIndex = 164
@@ -489,20 +491,10 @@ Partial Class M_Empleados
         Me.cmbxcodigoContrato.Size = New System.Drawing.Size(153, 24)
         Me.cmbxcodigoContrato.TabIndex = 163
         '
-        'cmbxtipoCuenta
-        '
-        Me.cmbxtipoCuenta.DropDownWidth = 180
-        Me.cmbxtipoCuenta.FormattingEnabled = True
-        Me.cmbxtipoCuenta.Items.AddRange(New Object() {"Cuenta Corriente", "Caja de Ahorro", "Cuenta Especial"})
-        Me.cmbxtipoCuenta.Location = New System.Drawing.Point(124, 30)
-        Me.cmbxtipoCuenta.Name = "cmbxtipoCuenta"
-        Me.cmbxtipoCuenta.Size = New System.Drawing.Size(153, 24)
-        Me.cmbxtipoCuenta.TabIndex = 162
-        '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(8, 69)
+        Me.Label15.Location = New System.Drawing.Point(8, 36)
         Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(104, 17)
@@ -519,16 +511,6 @@ Partial Class M_Empleados
         Me.Label14.TabIndex = 160
         Me.Label14.Text = "Contrato"
         '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(12, 33)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(105, 17)
-        Me.Label13.TabIndex = 159
-        Me.Label13.Text = "Tipo de Cuenta"
-        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.lblcodePuesto)
@@ -542,9 +524,9 @@ Partial Class M_Empleados
         Me.GroupBox2.Controls.Add(Me.txtdepartamento)
         Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Location = New System.Drawing.Point(339, 121)
+        Me.GroupBox2.Location = New System.Drawing.Point(339, 123)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(567, 83)
+        Me.GroupBox2.Size = New System.Drawing.Size(567, 109)
         Me.GroupBox2.TabIndex = 158
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Puesto Laboral"
@@ -552,7 +534,7 @@ Partial Class M_Empleados
         'lblcodePuesto
         '
         Me.lblcodePuesto.AutoSize = True
-        Me.lblcodePuesto.Location = New System.Drawing.Point(30, 44)
+        Me.lblcodePuesto.Location = New System.Drawing.Point(30, 56)
         Me.lblcodePuesto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcodePuesto.Name = "lblcodePuesto"
         Me.lblcodePuesto.Size = New System.Drawing.Size(52, 17)
@@ -563,7 +545,7 @@ Partial Class M_Empleados
         'lblcodeDepto
         '
         Me.lblcodeDepto.AutoSize = True
-        Me.lblcodeDepto.Location = New System.Drawing.Point(322, 10)
+        Me.lblcodeDepto.Location = New System.Drawing.Point(322, 15)
         Me.lblcodeDepto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcodeDepto.Name = "lblcodeDepto"
         Me.lblcodeDepto.Size = New System.Drawing.Size(46, 17)
@@ -573,7 +555,7 @@ Partial Class M_Empleados
         '
         'txtsalario
         '
-        Me.txtsalario.Location = New System.Drawing.Point(391, 53)
+        Me.txtsalario.Location = New System.Drawing.Point(391, 65)
         Me.txtsalario.MaxLength = 200
         Me.txtsalario.Name = "txtsalario"
         Me.txtsalario.Size = New System.Drawing.Size(153, 22)
@@ -583,7 +565,7 @@ Partial Class M_Empleados
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(332, 56)
+        Me.Label33.Location = New System.Drawing.Point(332, 68)
         Me.Label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(52, 17)
@@ -593,7 +575,7 @@ Partial Class M_Empleados
         'lblcodigoArea
         '
         Me.lblcodigoArea.AutoSize = True
-        Me.lblcodigoArea.Location = New System.Drawing.Point(30, 9)
+        Me.lblcodigoArea.Location = New System.Drawing.Point(30, 14)
         Me.lblcodigoArea.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcodigoArea.Name = "lblcodigoArea"
         Me.lblcodigoArea.Size = New System.Drawing.Size(38, 17)
@@ -603,7 +585,7 @@ Partial Class M_Empleados
         '
         'txtPuestoTrabajo
         '
-        Me.txtPuestoTrabajo.Location = New System.Drawing.Point(124, 54)
+        Me.txtPuestoTrabajo.Location = New System.Drawing.Point(124, 66)
         Me.txtPuestoTrabajo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtPuestoTrabajo.Name = "txtPuestoTrabajo"
         Me.txtPuestoTrabajo.ReadOnly = True
@@ -612,7 +594,7 @@ Partial Class M_Empleados
         '
         'txtArea
         '
-        Me.txtArea.Location = New System.Drawing.Point(124, 24)
+        Me.txtArea.Location = New System.Drawing.Point(124, 29)
         Me.txtArea.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtArea.Name = "txtArea"
         Me.txtArea.ReadOnly = True
@@ -622,7 +604,7 @@ Partial Class M_Empleados
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(4, 58)
+        Me.Label10.Location = New System.Drawing.Point(4, 70)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(105, 17)
@@ -631,7 +613,7 @@ Partial Class M_Empleados
         '
         'txtdepartamento
         '
-        Me.txtdepartamento.Location = New System.Drawing.Point(391, 24)
+        Me.txtdepartamento.Location = New System.Drawing.Point(391, 29)
         Me.txtdepartamento.MaxLength = 2000
         Me.txtdepartamento.Name = "txtdepartamento"
         Me.txtdepartamento.ReadOnly = True
@@ -641,7 +623,7 @@ Partial Class M_Empleados
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(286, 24)
+        Me.Label12.Location = New System.Drawing.Point(286, 29)
         Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(98, 17)
@@ -651,7 +633,7 @@ Partial Class M_Empleados
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(11, 27)
+        Me.Label11.Location = New System.Drawing.Point(11, 32)
         Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(100, 17)
@@ -666,7 +648,7 @@ Partial Class M_Empleados
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.dtpFechaAvisoBaja)
         Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Location = New System.Drawing.Point(339, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(339, 15)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(567, 106)
         Me.GroupBox1.TabIndex = 1
@@ -751,7 +733,7 @@ Partial Class M_Empleados
         '
         'txtcuentaBancaria
         '
-        Me.txtcuentaBancaria.Location = New System.Drawing.Point(137, 218)
+        Me.txtcuentaBancaria.Location = New System.Drawing.Point(137, 212)
         Me.txtcuentaBancaria.MaxLength = 20
         Me.txtcuentaBancaria.Name = "txtcuentaBancaria"
         Me.txtcuentaBancaria.Size = New System.Drawing.Size(179, 22)
@@ -760,7 +742,7 @@ Partial Class M_Empleados
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(17, 221)
+        Me.Label5.Location = New System.Drawing.Point(17, 215)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(113, 17)
@@ -769,7 +751,7 @@ Partial Class M_Empleados
         '
         'txtbanco
         '
-        Me.txtbanco.Location = New System.Drawing.Point(137, 188)
+        Me.txtbanco.Location = New System.Drawing.Point(137, 174)
         Me.txtbanco.MaxLength = 50
         Me.txtbanco.Name = "txtbanco"
         Me.txtbanco.Size = New System.Drawing.Size(179, 22)
@@ -778,7 +760,7 @@ Partial Class M_Empleados
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(82, 192)
+        Me.Label4.Location = New System.Drawing.Point(82, 178)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(48, 17)
@@ -787,7 +769,7 @@ Partial Class M_Empleados
         '
         'txtcodigoHorario
         '
-        Me.txtcodigoHorario.Location = New System.Drawing.Point(137, 157)
+        Me.txtcodigoHorario.Location = New System.Drawing.Point(137, 135)
         Me.txtcodigoHorario.MaxLength = 200
         Me.txtcodigoHorario.Name = "txtcodigoHorario"
         Me.txtcodigoHorario.ReadOnly = True
@@ -797,34 +779,16 @@ Partial Class M_Empleados
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(36, 160)
+        Me.Label3.Location = New System.Drawing.Point(36, 138)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(94, 17)
         Me.Label3.TabIndex = 138
         Me.Label3.Text = "Clase Horario"
         '
-        'txtseguroVida
-        '
-        Me.txtseguroVida.Location = New System.Drawing.Point(137, 128)
-        Me.txtseguroVida.MaxLength = 20
-        Me.txtseguroVida.Name = "txtseguroVida"
-        Me.txtseguroVida.Size = New System.Drawing.Size(179, 22)
-        Me.txtseguroVida.TabIndex = 137
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(29, 131)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(101, 17)
-        Me.Label2.TabIndex = 136
-        Me.Label2.Text = "N-Seguro Vida"
-        '
         'txtseguroSocial
         '
-        Me.txtseguroSocial.Location = New System.Drawing.Point(137, 98)
+        Me.txtseguroSocial.Location = New System.Drawing.Point(137, 102)
         Me.txtseguroSocial.MaxLength = 20
         Me.txtseguroSocial.Name = "txtseguroSocial"
         Me.txtseguroSocial.Size = New System.Drawing.Size(179, 22)
@@ -833,7 +797,7 @@ Partial Class M_Empleados
         'mtxtidentidad
         '
         Me.mtxtidentidad.BackColor = System.Drawing.Color.White
-        Me.mtxtidentidad.Location = New System.Drawing.Point(137, 67)
+        Me.mtxtidentidad.Location = New System.Drawing.Point(137, 69)
         Me.mtxtidentidad.Mask = "0000-0000-00000"
         Me.mtxtidentidad.Name = "mtxtidentidad"
         Me.mtxtidentidad.Size = New System.Drawing.Size(179, 22)
@@ -843,7 +807,7 @@ Partial Class M_Empleados
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(19, 101)
+        Me.Label1.Location = New System.Drawing.Point(19, 105)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(111, 17)
@@ -853,7 +817,7 @@ Partial Class M_Empleados
         'lblidentidadCliente
         '
         Me.lblidentidadCliente.AutoSize = True
-        Me.lblidentidadCliente.Location = New System.Drawing.Point(49, 70)
+        Me.lblidentidadCliente.Location = New System.Drawing.Point(49, 72)
         Me.lblidentidadCliente.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblidentidadCliente.Name = "lblidentidadCliente"
         Me.lblidentidadCliente.Size = New System.Drawing.Size(81, 17)
@@ -1591,6 +1555,73 @@ Partial Class M_Empleados
         Me.btnBuscarImage.Text = "Buscar"
         Me.btnBuscarImage.UseVisualStyleBackColor = False
         '
+        'TabPage5
+        '
+        Me.TabPage5.Controls.Add(Me.rtxtCondicionesE)
+        Me.TabPage5.Controls.Add(Me.lblCondicionesEspeciales)
+        Me.TabPage5.Controls.Add(Me.rtxtAMedicamentos)
+        Me.TabPage5.Controls.Add(Me.lblAlergiasMedicamentos)
+        Me.TabPage5.Controls.Add(Me.rtxtAAlimentos)
+        Me.TabPage5.Controls.Add(Me.lblAlergiasAlimentos)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage5.Size = New System.Drawing.Size(925, 329)
+        Me.TabPage5.TabIndex = 5
+        Me.TabPage5.Text = "Datos Médicos"
+        Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'rtxtCondicionesE
+        '
+        Me.rtxtCondicionesE.Location = New System.Drawing.Point(46, 228)
+        Me.rtxtCondicionesE.Name = "rtxtCondicionesE"
+        Me.rtxtCondicionesE.Size = New System.Drawing.Size(833, 61)
+        Me.rtxtCondicionesE.TabIndex = 5
+        Me.rtxtCondicionesE.Text = ""
+        '
+        'lblCondicionesEspeciales
+        '
+        Me.lblCondicionesEspeciales.AutoSize = True
+        Me.lblCondicionesEspeciales.Location = New System.Drawing.Point(43, 208)
+        Me.lblCondicionesEspeciales.Name = "lblCondicionesEspeciales"
+        Me.lblCondicionesEspeciales.Size = New System.Drawing.Size(217, 17)
+        Me.lblCondicionesEspeciales.TabIndex = 4
+        Me.lblCondicionesEspeciales.Text = "Condiciones Especiales de Salud"
+        '
+        'rtxtAMedicamentos
+        '
+        Me.rtxtAMedicamentos.Location = New System.Drawing.Point(46, 144)
+        Me.rtxtAMedicamentos.Name = "rtxtAMedicamentos"
+        Me.rtxtAMedicamentos.Size = New System.Drawing.Size(833, 61)
+        Me.rtxtAMedicamentos.TabIndex = 3
+        Me.rtxtAMedicamentos.Text = ""
+        '
+        'lblAlergiasMedicamentos
+        '
+        Me.lblAlergiasMedicamentos.AutoSize = True
+        Me.lblAlergiasMedicamentos.Location = New System.Drawing.Point(43, 124)
+        Me.lblAlergiasMedicamentos.Name = "lblAlergiasMedicamentos"
+        Me.lblAlergiasMedicamentos.Size = New System.Drawing.Size(166, 17)
+        Me.lblAlergiasMedicamentos.TabIndex = 2
+        Me.lblAlergiasMedicamentos.Text = "Alergias a Médicamentos"
+        '
+        'rtxtAAlimentos
+        '
+        Me.rtxtAAlimentos.Location = New System.Drawing.Point(41, 60)
+        Me.rtxtAAlimentos.Name = "rtxtAAlimentos"
+        Me.rtxtAAlimentos.Size = New System.Drawing.Size(833, 61)
+        Me.rtxtAAlimentos.TabIndex = 1
+        Me.rtxtAAlimentos.Text = ""
+        '
+        'lblAlergiasAlimentos
+        '
+        Me.lblAlergiasAlimentos.AutoSize = True
+        Me.lblAlergiasAlimentos.Location = New System.Drawing.Point(38, 40)
+        Me.lblAlergiasAlimentos.Name = "lblAlergiasAlimentos"
+        Me.lblAlergiasAlimentos.Size = New System.Drawing.Size(136, 17)
+        Me.lblAlergiasAlimentos.TabIndex = 0
+        Me.lblAlergiasAlimentos.Text = "Alergias a Alimentos"
+        '
         'ofdImagen
         '
         Me.ofdImagen.FileName = "OpenFileDialog1"
@@ -1637,6 +1668,8 @@ Partial Class M_Empleados
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.pbxEmpleado, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage5.ResumeLayout(False)
+        Me.TabPage5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1672,10 +1705,8 @@ Partial Class M_Empleados
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents cmbxestadoLaboral As ComboBox
     Friend WithEvents cmbxcodigoContrato As ComboBox
-    Friend WithEvents cmbxtipoCuenta As ComboBox
     Friend WithEvents Label15 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents Label13 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents txtArea As TextBox
     Friend WithEvents Label11 As Label
@@ -1698,8 +1729,6 @@ Partial Class M_Empleados
     Friend WithEvents Label4 As Label
     Friend WithEvents txtcodigoHorario As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtseguroVida As TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents txtnombreMadre As TextBox
     Friend WithEvents Label28 As Label
     Friend WithEvents txtnombrePadre As TextBox
@@ -1773,4 +1802,11 @@ Partial Class M_Empleados
     Friend WithEvents lblcodeDepto As Label
     Friend WithEvents txtnombreFormaPago As TextBox
     Friend WithEvents btnImprimirCarnet As Button
+    Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents rtxtAAlimentos As RichTextBox
+    Friend WithEvents lblAlergiasAlimentos As Label
+    Friend WithEvents rtxtCondicionesE As RichTextBox
+    Friend WithEvents lblCondicionesEspeciales As Label
+    Friend WithEvents rtxtAMedicamentos As RichTextBox
+    Friend WithEvents lblAlergiasMedicamentos As Label
 End Class
