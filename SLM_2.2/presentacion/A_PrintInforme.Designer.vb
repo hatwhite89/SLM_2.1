@@ -28,6 +28,7 @@ Partial Class A_PrintInforme
         'crvInformeOrdenesTrabajo
         '
         Me.crvInformeOrdenesTrabajo.ActiveViewIndex = -1
+        Me.crvInformeOrdenesTrabajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.crvInformeOrdenesTrabajo.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvInformeOrdenesTrabajo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.crvInformeOrdenesTrabajo.Location = New System.Drawing.Point(0, 0)

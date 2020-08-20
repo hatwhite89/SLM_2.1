@@ -1,9 +1,9 @@
 ﻿Public Class A_Informes
+    Dim seleccion As Integer
     Private Sub btnBuscarSubArea_Click(sender As Object, e As EventArgs) Handles btnBuscarSubArea.Click
         Try
             E_ListarSubAreas.lblform.Text = "informe"
             E_ListarSubAreas.ShowDialog()
-
 
         Catch ex As Exception
 
@@ -31,9 +31,7 @@
                 'txtSubArea.Text = row("SubArea")
                 txtNombreSubArea.Text = row("nombre")
 
-
             End If
-
 
         Catch ex As Exception
 
@@ -49,41 +47,135 @@
         End Try
     End Sub
 
-
-
-
     'Función para imprimir informe
     Sub ImprimirInformePeriodo()
-        Try
+        If seleccion = 0 Then
 
-            Dim codSubArea As Integer
-            Dim fechadesde, fechahasta As Date
-            Dim informe As New ClsOrdenDeTrabajo
+            Try
+                Dim codExamen As Integer
+                Dim fecha As DateTime
+                Dim objInformeDiarioExamen As New InformeOrdenesDeTrabajoExamen
 
-            'objVistaCheque.SetDatabaseLogon("sa", "Lbm2019")
+                codExamen = Convert.ToInt32(lblCodExamen.Text)
+                fecha = dtpFecha.Value
 
-            'codCheque = Convert.ToInt32(txtNro.Text)
+                objInformeDiarioExamen.SetParameterValue("@codExamen", codExamen)
+                objInformeDiarioExamen.SetParameterValue("@fecha", fecha)
 
-            'codFactura = Convert.ToInt32(frmPagos.dtDetallePagos.Rows(0).Cells(0).Value)
+                objInformeDiarioExamen.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+                A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiarioExamen
 
-            'objVistaCheque.SetParameterValue("@codCheque", codCheque)
-            'objVistaCheque.SetParameterValue("@codFactura", codFactura)
-            'objVistaCheque.SetParameterValue("numalet", letras)
-            'objVistaCheque.SetParameterValue("Cheque", txtNroCheq.Text)
+            Catch ex As Exception
+                MsgBox("Error: " + ex.Message)
+            End Try
 
-            'objVistaCheque.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
-            'A_PrintCheque.crvImprimirCheque.ReportSource = objVistaCheque
+        ElseIf seleccion = 1 Then
 
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+            Try
+                Dim codSubArea As Integer
+                Dim fechadesde, fechahasta As DateTime
+                Dim objInformeDiario As New InformeOrdenesdeTrabajoPeriodo
+
+                codSubArea = Convert.ToInt32(lblCodSubArea.Text)
+                fechadesde = dtpDesde.Value
+                fechahasta = dtpHasta.Value
+
+                objInformeDiario.SetParameterValue("@codigoSubArea", codSubArea)
+                objInformeDiario.SetParameterValue("@desde", fechadesde)
+                objInformeDiario.SetParameterValue("@hasta", fechahasta)
+
+                objInformeDiario.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+                A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiario
+
+            Catch ex As Exception
+                MsgBox("Error: " + ex.Message)
+            End Try
+        End If
+
+
+
     End Sub
-
-
 
     Private Sub btnEjecutar_Click(sender As Object, e As EventArgs) Handles btnEjecutar.Click
 
-        A_PrintCheque.Show()
+
+        If chkExamenes.Checked = True Then
+
+            seleccion = 0
+
+            If lblCodExamen.Text = "CodExamen" Then
+                MsgBox("Se debe completar la información para generar el informe.")
+            Else
+                A_PrintInforme.Show()
+            End If
+        ElseIf chkPeriodoTiempo.Checked = True Then
+            seleccion = 1
+            If lblCodSubArea.Text = "CodSubArea" Then
+                MsgBox("Se debe completar la información para generar el informe.")
+            Else
+                A_PrintInforme.Show()
+            End If
+
+        End If
+
+
+
+
+
+
+
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Me.Close()
+    End Sub
+
+    Private Sub chkExamenes_CheckedChanged(sender As Object, e As EventArgs) Handles chkExamenes.CheckedChanged
+        If chkExamenes.Checked = True Then
+
+            btnBuscarExamen.Enabled = True
+            txtCodExamen.Enabled = True
+            dtpFecha.Enabled = True
+            chkPeriodoTiempo.Checked = False
+            Limpiar()
+
+        Else
+            btnBuscarExamen.Enabled = False
+            txtCodExamen.Enabled = False
+            dtpFecha.Enabled = False
+            Limpiar()
+        End If
+    End Sub
+
+    Private Sub chkPeriodoTiempo_CheckedChanged(sender As Object, e As EventArgs) Handles chkPeriodoTiempo.CheckedChanged
+        If chkPeriodoTiempo.Checked = True Then
+
+            btnBuscarSubArea.Enabled = True
+            txtSubArea.Enabled = True
+            dtpDesde.Enabled = True
+            dtpHasta.Enabled = True
+            chkExamenes.Checked = False
+            Limpiar()
+
+        Else
+            btnBuscarSubArea.Enabled = False
+            txtSubArea.Enabled = False
+            dtpDesde.Enabled = False
+            dtpHasta.Enabled = False
+            Limpiar()
+        End If
+    End Sub
+
+    Sub Limpiar()
+
+        txtSubArea.Clear()
+        txtNombreSubArea.Clear()
+        txtCodExamen.Clear()
+        txtNombreExamen.Clear()
+        dtpFecha.Value = DateTime.Now
+        dtpDesde.Value = DateTime.Now
+        dtpHasta.Value = DateTime.Now
+
 
     End Sub
 End Class
