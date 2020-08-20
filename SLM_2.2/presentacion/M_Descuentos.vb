@@ -192,14 +192,14 @@
         End If
     End Sub
 
-    'Private Sub txtcodigoBreveB_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoBreveB.TextChanged
-    '    dv.RowFilter = String.Format("codigoBreve Like '%{0}%'", txtcodigoBreveB.Text)
-    '    lblcantidad.Text = dv.Count
+    Private Sub txtcodigoBreveB_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoBreveB.TextChanged
+        dv.RowFilter = String.Format("codigoBreve Like '%{0}%'", txtcodigoBreveB.Text)
+        lblcantidad.Text = dv.Count
 
-    '    If lblcantidad.Text = "0" Then
-    '        MsgBox("No existe el descuento.", MsgBoxStyle.Exclamation)
-    '        txtcodigoBreveB.Text = ""
-    '        SeleccionarDescuentos()
-    '    End If
-    'End Sub
+        If lblcantidad.Text = "0" Then
+            MsgBox("No existe el descuento.", MsgBoxStyle.Exclamation)
+            txtcodigoBreveB.Text = ""
+            SeleccionarDescuentos()
+        End If
+    End Sub
 End Class

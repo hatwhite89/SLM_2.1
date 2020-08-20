@@ -259,8 +259,9 @@ Public Class E_frmOrdenCompra
 
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
 
-        cmbFormaDePago.SelectedValue = DataGridView2.Rows(e.RowIndex).Cells(2).Value
+
         Try
+            cmbFormaDePago.SelectedValue = DataGridView2.Rows(e.RowIndex).Cells(2).Value
             txtCodOC.Text = DataGridView2.Rows(e.RowIndex).Cells(0).Value
             txtCodProveedor.Text = DataGridView2.Rows(e.RowIndex).Cells(2).Value
             txtCondicionEntrega.Text = DataGridView2.Rows(e.RowIndex).Cells(4).Value
@@ -352,6 +353,14 @@ Public Class E_frmOrdenCompra
         Catch ex As Exception
 
         End Try
+
+    End Sub
+
+    Private Sub Label33_Click(sender As Object, e As EventArgs) Handles Label33.Click
+
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
 
     End Sub
 End Class

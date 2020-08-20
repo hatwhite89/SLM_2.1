@@ -23,6 +23,7 @@ Partial Class M_ListadoEmpleados
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.txtCodigoB = New System.Windows.Forms.TextBox()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lblnombreB = New System.Windows.Forms.Label()
@@ -31,13 +32,14 @@ Partial Class M_ListadoEmpleados
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtNombreB = New System.Windows.Forms.TextBox()
         Me.lblCodigoT = New System.Windows.Forms.Label()
-        Me.lblform = New System.Windows.Forms.Label()
+        Me.lblfila = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.Controls.Add(Me.lblfila)
         Me.gbxbusqueda.Controls.Add(Me.lblform)
         Me.gbxbusqueda.Controls.Add(Me.txtCodigoB)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
@@ -55,6 +57,15 @@ Partial Class M_ListadoEmpleados
         Me.gbxbusqueda.TabIndex = 122
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR EMPLEADOS"
+        '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(4, 55)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(52, 17)
+        Me.lblform.TabIndex = 121
+        Me.lblform.Text = "Código"
         '
         'txtCodigoB
         '
@@ -133,14 +144,13 @@ Partial Class M_ListadoEmpleados
         Me.lblCodigoT.TabIndex = 114
         Me.lblCodigoT.Text = "Código"
         '
-        'lblform
+        'lblfila
         '
-        Me.lblform.AutoSize = True
-        Me.lblform.Location = New System.Drawing.Point(4, 55)
-        Me.lblform.Name = "lblform"
-        Me.lblform.Size = New System.Drawing.Size(52, 17)
-        Me.lblform.TabIndex = 121
-        Me.lblform.Text = "Código"
+        Me.lblfila.AutoSize = True
+        Me.lblfila.Location = New System.Drawing.Point(264, -3)
+        Me.lblfila.Name = "lblfila"
+        Me.lblfila.Size = New System.Drawing.Size(0, 17)
+        Me.lblfila.TabIndex = 122
         '
         'M_ListadoEmpleados
         '
@@ -170,4 +180,5 @@ Partial Class M_ListadoEmpleados
     Friend WithEvents lbltotal As Label
     Friend WithEvents txtNombreB As TextBox
     Friend WithEvents lblCodigoT As Label
+    Friend WithEvents lblfila As Label
 End Class

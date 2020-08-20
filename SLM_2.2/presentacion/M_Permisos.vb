@@ -32,6 +32,7 @@
         lblcodeJefeInme.Text = ""
         lblcodeTalentoHumano.Text = ""
         txtEmpleado.Text = ""
+        rbtnNo.Checked = True
 
         dtpEntradaTarde.Enabled = True
         dtpFecha.Enabled = True
@@ -164,6 +165,7 @@
                     .codigoEmpleado_ = lblcodigoEmpleado.Text
                     .codigoJefeInmediato_ = lblcodeJefeInme.Text
                     .codigoTalentoHumano_ = lblcodeTalentoHumano.Text
+                    .goseSueldo_ = rbtnSi.Checked
                 End With
                 If objPerm.RegistrarNuevoPermiso() = 1 Then
                     MsgBox("Registrado el permiso especial correctamente.", MsgBoxStyle.Information)
@@ -229,6 +231,7 @@
                     .codigoEmpleado_ = lblcodigoEmpleado.Text
                     .codigoJefeInmediato_ = lblcodeJefeInme.Text
                     .codigoTalentoHumano_ = lblcodeTalentoHumano.Text
+                    .goseSueldo_ = rbtnSi.Checked
                 End With
 
                 If objPerm.ModificarPermisos() = 1 Then
@@ -275,7 +278,11 @@
                     dtpSalidaTarde.Format = DateTimePickerFormat.Time
                     dtpSalidaTarde.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value().ToString
                 End If
-
+                If Me.dgbtabla.Rows(e.RowIndex).Cells(9).Value() Then
+                    rbtnSi.Checked = True
+                Else
+                    rbtnNo.Checked = True
+                End If
 
                 btnmodificar.Enabled = True
                 btnguardar.Enabled = False

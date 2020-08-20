@@ -1,6 +1,5 @@
 ﻿Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         'Notificación
         'ApruebaS.Show()
 
@@ -679,5 +678,9 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub gbxMenu_Enter(sender As Object, e As EventArgs) Handles gbxMenu.Enter
+
     End Sub
 End Class

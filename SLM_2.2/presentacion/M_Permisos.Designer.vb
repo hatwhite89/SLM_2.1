@@ -55,6 +55,9 @@ Partial Class M_Permisos
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.rbtnNo = New System.Windows.Forms.RadioButton()
+        Me.rbtnSi = New System.Windows.Forms.RadioButton()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxRegistrar.SuspendLayout()
@@ -129,6 +132,9 @@ Partial Class M_Permisos
         '
         'gbxRegistrar
         '
+        Me.gbxRegistrar.Controls.Add(Me.rbtnNo)
+        Me.gbxRegistrar.Controls.Add(Me.rbtnSi)
+        Me.gbxRegistrar.Controls.Add(Me.Label10)
         Me.gbxRegistrar.Controls.Add(Me.lblcodeTalentoHumano)
         Me.gbxRegistrar.Controls.Add(Me.lblcodeJefeInme)
         Me.gbxRegistrar.Controls.Add(Me.lblcodigoEmpleado)
@@ -424,6 +430,37 @@ Partial Class M_Permisos
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Hora de Salida Temprano:"
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(535, 32)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(114, 17)
+        Me.Label10.TabIndex = 163
+        Me.Label10.Text = "Gose de Sueldo:"
+        '
+        'rbtnNo
+        '
+        Me.rbtnNo.AutoSize = True
+        Me.rbtnNo.Location = New System.Drawing.Point(821, 28)
+        Me.rbtnNo.Name = "rbtnNo"
+        Me.rbtnNo.Size = New System.Drawing.Size(47, 21)
+        Me.rbtnNo.TabIndex = 168
+        Me.rbtnNo.TabStop = True
+        Me.rbtnNo.Text = "No"
+        Me.rbtnNo.UseVisualStyleBackColor = True
+        '
+        'rbtnSi
+        '
+        Me.rbtnSi.AutoSize = True
+        Me.rbtnSi.Location = New System.Drawing.Point(667, 28)
+        Me.rbtnSi.Name = "rbtnSi"
+        Me.rbtnSi.Size = New System.Drawing.Size(41, 21)
+        Me.rbtnSi.TabIndex = 167
+        Me.rbtnSi.TabStop = True
+        Me.rbtnSi.Text = "Si"
+        Me.rbtnSi.UseVisualStyleBackColor = True
+        '
         'M_Permisos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -478,4 +515,7 @@ Partial Class M_Permisos
     Friend WithEvents lblcodigoEmpleado As Label
     Friend WithEvents lblcodeTalentoHumano As Label
     Friend WithEvents lblcodeJefeInme As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents rbtnNo As RadioButton
+    Friend WithEvents rbtnSi As RadioButton
 End Class

@@ -1,64 +1,55 @@
-﻿
-Imports System.Data.SqlClient
-Public Class ClsDetalleValorRefTxt
+﻿Imports System.Data.SqlClient
 
-    Inherits ClsValoresReferenciaTXT
-    'Variables
-    Dim cod_DetalleValorReftxt As Integer
-    Dim texto As String
-
-
+Public Class ClsDetalleCapacitaciones
+    Dim codigo, codigoCapacitacion, codigoEmpleado As Integer
     'Constructor
     Public Sub New()
 
     End Sub
-
-    ':::::::::::::::::::::: Metodos SET y GET :::::::::::::::::::::::::::
-    'Codigo valor referencia
-    Public Property Cod_Detalle As Integer
+    Public Property codigo_ As Integer
         Get
-            Return cod_DetalleValorReftxt
+            Return codigo
         End Get
         Set(value As Integer)
-            cod_DetalleValorReftxt = value
+            codigo = value
         End Set
     End Property
 
-    'Codigo valor referencia
-    Public Property Texto_ As String
+    Public Property codigoCapacitacion_ As Integer
         Get
-            Return texto
+            Return codigoCapacitacion
         End Get
-        Set(value As String)
-            texto = value
+        Set(value As Integer)
+            codigoCapacitacion = value
         End Set
     End Property
 
+    Public Property codigoEmpleado_ As Integer
+        Get
+            Return codigoEmpleado
+        End Get
+        Set(value As Integer)
+            codigoEmpleado = value
+        End Set
+    End Property
 
-
-    ':::::::::::::::::::::: Funciones de Mantenimiento ::::::::::::::::::
-
-    'Registrar nuevo valor de referencia en base de datos
-    Public Function registrarDetalleValorReferenciaTXT() As String
+    Public Function RegistrarNuevoDetalleCapacitacion() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
-        'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "A_slmInsertarDetalleValorReferenciatxt"
-
-        'VARIABLES 
+        sqlcom.CommandText = "M_slmInsertarDetalleCapacitacion"
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "texto"
-        sqlpar.Value = Texto_
+        sqlpar.ParameterName = "codigoCapacitacion" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoCapacitacion_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "cod_ValorReferenciaTxt"
-        sqlpar.Value = Cod_TXT
+        sqlpar.ParameterName = "codigoEmpleado" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoEmpleado_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -70,6 +61,7 @@ Public Class ClsDetalleValorRefTxt
 
         Dim con As New ClsConnection
         sqlcom.Connection = con.getConexion
+
         sqlcom.ExecuteNonQuery()
 
         con.cerrarConexion()
@@ -80,29 +72,28 @@ Public Class ClsDetalleValorRefTxt
 
     End Function
 
-
-
-    'Modificar valor de referencia en base de datos
-    Public Function modificarDetalleValorReferenciaTXT() As String
+    Public Function ModificarDetalleCapacitacion() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
-        'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "A_slmActualizarDetalleValorReferenciaTXT"
-
-        'VARIABLES 
+        sqlcom.CommandText = "M_slmModificarDetalleCapacitacion"
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "cod_DetalleValorReftxt"
-        sqlpar.Value = Cod_Detalle
+        sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigo_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "texto"
-        sqlpar.Value = Texto_
+        sqlpar.ParameterName = "codigoCapacitacion" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoCapacitacion_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoEmpleado" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoEmpleado_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -114,6 +105,7 @@ Public Class ClsDetalleValorRefTxt
 
         Dim con As New ClsConnection
         sqlcom.Connection = con.getConexion
+
         sqlcom.ExecuteNonQuery()
 
         con.cerrarConexion()
@@ -124,22 +116,18 @@ Public Class ClsDetalleValorRefTxt
 
     End Function
 
-
-    'eliminar detalle valor de referencia en base de datos
-    Public Function eliminarDetalleValorReferenciaTxt() As String
+    Public Function EliminarDetalleCapacitacion() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
 
-        'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "A_slmEliminarDetalleValorReferenciaTxt"
+        sqlcom.CommandText = "M_slmEliminarDetalleCapacitacion"
 
-        'VARIABLES 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "cod_DetalleValorReftxt"
-        sqlpar.Value = Cod_Detalle
+        sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigo_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -151,6 +139,7 @@ Public Class ClsDetalleValorRefTxt
 
         Dim con As New ClsConnection
         sqlcom.Connection = con.getConexion
+
         sqlcom.ExecuteNonQuery()
 
         con.cerrarConexion()
@@ -160,11 +149,7 @@ Public Class ClsDetalleValorRefTxt
         Return par_sal
 
     End Function
-
-
-    'Listar detalle por codigo de referencia
-
-    Public Function listarDetallesValorestxt() As DataTable
+    Public Function BuscarDetalleCapacitacion() As DataTable
 
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
@@ -173,8 +158,8 @@ Public Class ClsDetalleValorRefTxt
         Using cmd As New SqlCommand
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "A_slmListarDetalleValoresTXT"
-            cmd.Parameters.Add("@cod_ValorReferenciatxt", SqlDbType.Int).Value = Cod_TXT
+            cmd.CommandText = "M_slmBuscarDetalleCapacitacion"
+            cmd.Parameters.Add("@codigoCapacitacion", SqlDbType.Int).Value = codigoCapacitacion_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -186,4 +171,19 @@ Public Class ClsDetalleValorRefTxt
 
     End Function
 
+    Public Function SeleccionarDetalleCapacitacion() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("M_slmSeleccionarDetalleCapacitacion", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
+
+
 End Class
+

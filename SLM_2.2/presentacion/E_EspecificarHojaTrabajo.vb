@@ -290,7 +290,7 @@
 
 
             'LLENADO DE FILAS
-
+            E_HojaTrabajo.ds = ds
 
 
             Dim colColl As DataColumnCollection = ds.Tables("HojaTrabajo").Columns
@@ -320,11 +320,16 @@
                 row = ds.Tables("HojaTrabajo").Rows.Add
 
                 row.Item(0) = CStr(rowO("cod_orden_trabajo"))
-                row.Item(1) = CStr(rowO("paciente"))
+                If rowO("estadoFactura") = "0" Then
+                    row.Item(1) = CStr(rowO("paciente"))
+                    row.Item(colColl.IndexOf("Estado")) = CStr(rowO("estado"))
+                Else
+                    row.Item(1) = CStr(rowO("paciente") & " (ANULADA)")
+                    row.Item(colColl.IndexOf("Estado")) = "ANULADA"
+                End If
                 row.Item(2) = edad
                 row.Item(3) = CStr(rowO("genero"))
                 row.Item(4) = CStr(rowO("medico"))
-                row.Item(colColl.IndexOf("Estado")) = CStr(rowO("estado"))
 
                 'LLENADO DETALLE ORDEN DE TRABAJO
                 objOrdTrabDet.cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))

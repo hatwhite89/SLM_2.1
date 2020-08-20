@@ -186,6 +186,14 @@
         End Try
     End Sub
 
+    Private Sub UI_Card1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub UI_Calendar1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
     Public Sub ActualizarOrdenInterna()
         Dim clsOI As New clsOrdenInterna
 

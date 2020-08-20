@@ -21,15 +21,48 @@
     Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
         Try
             Dim n As String = ""
-            If e.RowIndex >= 0 Then
+            If e.RowIndex >= 0 And lblForm.Text = "Precio" Then
                 n = MsgBox("¿Desea utilizar la lista de precio que a seleccionado?", MsgBoxStyle.YesNo, "Validación")
-            End If
-            If n = vbYes And lblForm.Text = "Precio" Then
-                M_Precio.lblCode.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-                Me.Close()
-            ElseIf n = vbYes And lblForm.Text = "Categoria" Then
-                M_Categoria.lblCodePriceList.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-                Me.Close()
+                If n = vbYes Then
+                    M_Precio.lblCode.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    Me.Close()
+                End If
+            ElseIf e.RowIndex >= 0 And lblForm.Text = "Categoria" Then
+                n = MsgBox("¿Desea utilizar la lista de precio que a seleccionado?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+                    M_Categoria.lblCodePriceList.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    Me.Close()
+                End If
+
+            ElseIf e.RowIndex >= 0 Then
+                n = MsgBox("¿Desea actualizar la lista de precio que a seleccionado?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+                    M_ListaPrecios.txtcodigo.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_ListaPrecios.txtcodigoBreve.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    M_ListaPrecios.txtDescripcion.Text = dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+
+                    If dgbtabla.Rows(e.RowIndex).Cells(3).Value() Then
+                        M_ListaPrecios.lblcodeT.Text = dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+                        M_ListaPrecios.rbtnSi.Checked = True
+                    Else
+                        M_ListaPrecios.rbtnNo.Checked = True
+                    End If
+                    Dim objDetLP As New ClsDetalleListaPrecios
+                    objDetLP.codigoListaPrecios_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    Dim dt As New DataTable
+                    dt = objDetLP.BuscarDetalleListaPrecios
+                    'M_ListaPrecios.dgbtabla.DataSource = dv
+                    'falta esta parte del llenado del datagridview
+                    Dim row As DataRow = dt.Rows(0)
+                    For index As Integer = 0 To dt.Rows.Count - 1
+                        row = dt.Rows(index)
+                        M_ListaPrecios.dgbtabla.Rows.Add(New String() {CStr(row("codigo")), CStr(row("codigoListaPrecios")), CStr(row("codigoGrupoItem")), CStr(row("codigoDescuento")), CStr(row("codigoBreve"))})
+                    Next
+
+                    M_ListaPrecios.btnguardar.Enabled = False
+                    M_ListaPrecios.btnmodificar.Enabled = True
+                    M_ListaPrecios.Show()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
