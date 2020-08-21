@@ -5,7 +5,6 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
         E_SubArea.ShowDialog()
-
     End Sub
 
     Private Sub eg_frmListarSubAreas_Load(sender As Object, e As EventArgs) Handles MyBase.Load

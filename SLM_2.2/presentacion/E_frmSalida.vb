@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class E_frmSalida
-    Private id_almacen, id_departamento_recibe, id_producto, id_detalle_oi As Integer
+    Private id_almacen, id_departamento_recibe, id_producto, id_detalle_oi, id_entrada As Integer
 
     Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
 
@@ -100,6 +100,7 @@ where o.id_departamento=d.codigo and o.id_usuario = u.cod_usuario and o.id_oi='1
         End Try
     End Sub
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        Dim clsE As New ClsSalidaAlmacen
         Try
             id_detalle_oi = Integer.Parse(DataGridView1.Rows(e.RowIndex).Cells(0).Value)
             txtLote.Text = DataGridView1.Rows(e.RowIndex).Cells(1).Value
@@ -108,7 +109,8 @@ where o.id_departamento=d.codigo and o.id_usuario = u.cod_usuario and o.id_oi='1
             txtAlmacenRecibe.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value
             txtAreaSolicitante.Text = DataGridView1.Rows(e.RowIndex).Cells(5).Value
             txtPersonaRecibe.Text = DataGridView1.Rows(e.RowIndex).Cells(6).Value
-
+            'txtExistenciaEntrada.Text = clsE.ExistenciasDeEntrada(DataGridView1.Rows(e.RowIndex).Cells(7).Value.ToString)
+            id_entrada = Integer.Parse(DataGridView1.Rows(e.RowIndex).Cells(7).Value)
         Catch ex As Exception
 
         End Try
@@ -123,12 +125,17 @@ where o.id_departamento=d.codigo and o.id_usuario = u.cod_usuario and o.id_oi='1
             Exit Sub
         End If
 
-        Dim clsS As New ClsSalidaAlmacen
+        'If Integer.Parse(txtCantidadEntregada.Text) > Integer.Parse(txtexistenciaentrada.text) Then
+        '    MsgBox("la cantidad a entregar no puede ser mayor al inventario")
+        '    Exit Sub
+        'End If
+
+        Dim clss As New ClsSalidaAlmacen
         Try
 
 
             With clsS
-                .CantidadProducto = txtCantidad.Text
+                .CantidadProducto = txtCantidadEntregada.Text
                 .Descripcion = RichTextBox1.Text
                 .FechaVencimiento = DateTimePicker2.Value
                 .IdAlmacen = id_almacen
@@ -141,7 +148,7 @@ where o.id_departamento=d.codigo and o.id_usuario = u.cod_usuario and o.id_oi='1
                 .Producto1 = txtProducto.Text
                 .Tipo_movimiento1 = ComboBox1.SelectedItem.ToString
                 .Id_detalle_oi1 = id_detalle_oi
-
+                '.Id_entrada1 = id_entrada
             End With
 
             If clsS.RegistrarSalidaAlmacen() = "1" Then
