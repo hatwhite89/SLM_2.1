@@ -109,7 +109,7 @@ where o.id_departamento=d.codigo and o.id_usuario = u.cod_usuario and o.id_oi='1
             txtAlmacenRecibe.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value
             txtAreaSolicitante.Text = DataGridView1.Rows(e.RowIndex).Cells(5).Value
             txtPersonaRecibe.Text = DataGridView1.Rows(e.RowIndex).Cells(6).Value
-            txtExistenciaEntrada.Text = clsE.ExistenciasDeEntrada(DataGridView1.Rows(e.RowIndex).Cells(7).Value.ToString)
+            'txtExistenciaEntrada.Text = clsE.ExistenciasDeEntrada(DataGridView1.Rows(e.RowIndex).Cells(7).Value.ToString)
             id_entrada = Integer.Parse(DataGridView1.Rows(e.RowIndex).Cells(7).Value)
         Catch ex As Exception
 
@@ -125,10 +125,10 @@ where o.id_departamento=d.codigo and o.id_usuario = u.cod_usuario and o.id_oi='1
             Exit Sub
         End If
 
-        If Integer.Parse(txtCantidadEntregada.Text) > Integer.Parse(txtExistenciaEntrada.Text) Then
-            MsgBox("La cantidad a entregar no puede ser mayor al inventario")
-            Exit Sub
-        End If
+        'If Integer.Parse(txtCantidadEntregada.Text) > Integer.Parse(txtExistenciaEntrada.Text) Then
+        '    MsgBox("La cantidad a entregar no puede ser mayor al inventario")
+        '    Exit Sub
+        'End If
         Dim clsS As New ClsSalidaAlmacen
         Try
 
