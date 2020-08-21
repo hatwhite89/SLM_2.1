@@ -410,5 +410,8 @@
         End If
     End Sub
 
-
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        E_SubArea.lblform.Text = "M_BuscarCapacitaciones"
+        E_SubArea.Show()
+    End Sub
 End Class

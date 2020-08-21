@@ -5,7 +5,7 @@
         M_Capacitaciones.limpiar()
         M_Capacitaciones.ShowDialog()
     End Sub
-    Private Sub SeleccionarCapacitaciones()
+    Public Sub SeleccionarCapacitaciones()
         dv = objCap.SeleccionarCapacitaciones.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
