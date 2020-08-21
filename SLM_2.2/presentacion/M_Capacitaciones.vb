@@ -1,5 +1,5 @@
 ﻿Public Class M_Capacitaciones
-    Dim codigoDetalleCapacitacion As ArrayList
+    Dim codigoDetalleCapacitacion As New ArrayList
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
     End Sub
@@ -128,9 +128,10 @@
             If (Trim(txtCodigo.Text) <> "" And Trim(txtNombre.Text) <> "" And Trim(txtCantidadHoras.Text) <> "" And dgvBeneficiarios.Rows.Count > 1 And Trim(txtProveedor.Text) <> "") Then
 
                 Dim objCap As New ClsCapacitaciones
+                Dim objDetCap As New ClsDetalleCapacitaciones
 
                 With objCap
-                    .codigo_ = txtCodigo.Text
+                    .codigo_ = Convert.ToInt64(txtCodigo.Text)
                     .fecha_ = dtpFecha.Value
                     .Nombre_ = txtNombre.Text
                     .cantidadHoras_ = txtCantidadHoras.Text
@@ -138,8 +139,8 @@
                 End With
 
                 If objCap.ModificarCapacitaciones() = 1 Then
-                    Dim objDetCap As New ClsDetalleCapacitaciones
                     For index As Integer = 0 To codigoDetalleCapacitacion.Count - 1
+                        'ELIMINA LOS DETALLE DE CAPACITACIONES
                         objDetCap.codigo_ = Convert.ToInt64(codigoDetalleCapacitacion(index))
                         If objDetCap.EliminarDetalleCapacitacion() <> 1 Then
                             MsgBox("Error al querer modificar el detalle de capacitación.", MsgBoxStyle.Critical)
@@ -150,7 +151,7 @@
                         If dgvBeneficiarios.Rows(index).Cells(0).Value() = "" Then
                             'agrega
                             With objDetCap
-                                .codigoCapacitacion_ = txtCodigo.Text
+                                .codigoCapacitacion_ = Convert.ToInt64(txtCodigo.Text)
                                 .codigoEmpleado_ = dgvBeneficiarios.Rows(index).Cells(1).Value()
                             End With
                             If objDetCap.RegistrarNuevoDetalleCapacitacion() = 0 Then
@@ -160,7 +161,7 @@
                             'actualiza 
                             With objDetCap
                                 .codigo_ = dgvBeneficiarios.Rows(index).Cells(0).Value()
-                                .codigoCapacitacion_ = txtCodigo.Text
+                                .codigoCapacitacion_ = Convert.ToInt64(txtCodigo.Text)
                                 .codigoEmpleado_ = dgvBeneficiarios.Rows(index).Cells(1).Value()
                             End With
                             If objDetCap.ModificarDetalleCapacitacion() = 0 Then
@@ -172,8 +173,8 @@
                     btnguardar.Enabled = False
                     btnmodificar.Enabled = True
                 End If
-
-                M_BuscarRecibo.seleccionarRecibo()
+                'ACTUALIZAR LISTADO DE CAPACITACIONES
+                M_BuscarCapacitaciones.SeleccionarCapacitaciones()
             End If
 
         Catch ex As Exception

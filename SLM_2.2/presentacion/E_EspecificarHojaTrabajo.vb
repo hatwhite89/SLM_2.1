@@ -290,7 +290,7 @@
 
 
             'LLENADO DE FILAS
-            E_HojaTrabajo.ds = ds
+            'E_HojaTrabajo.ds = ds
 
 
             Dim colColl As DataColumnCollection = ds.Tables("HojaTrabajo").Columns
