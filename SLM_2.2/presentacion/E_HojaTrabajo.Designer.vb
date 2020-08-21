@@ -197,15 +197,19 @@ Partial Class E_HojaTrabajo
         '
         'dgvHojaTrab
         '
+        Me.dgvHojaTrab.AllowUserToAddRows = False
+        Me.dgvHojaTrab.AllowUserToDeleteRows = False
         Me.dgvHojaTrab.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvHojaTrab.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvHojaTrab.BackgroundColor = System.Drawing.Color.White
         Me.dgvHojaTrab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvHojaTrab.GridColor = System.Drawing.Color.White
         Me.dgvHojaTrab.Location = New System.Drawing.Point(15, 254)
         Me.dgvHojaTrab.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgvHojaTrab.Name = "dgvHojaTrab"
+        Me.dgvHojaTrab.RowHeadersVisible = False
         Me.dgvHojaTrab.RowHeadersWidth = 51
         Me.dgvHojaTrab.RowTemplate.Height = 24
         Me.dgvHojaTrab.Size = New System.Drawing.Size(1379, 378)
@@ -517,9 +521,9 @@ Partial Class E_HojaTrabajo
         Me.GroupBox1.Controls.Add(Me.rbtnCortesia)
         Me.GroupBox1.Controls.Add(Me.rbtnNombrePaciente)
         Me.GroupBox1.Location = New System.Drawing.Point(1083, 38)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(311, 95)
         Me.GroupBox1.TabIndex = 48
         Me.GroupBox1.TabStop = False
@@ -535,9 +539,9 @@ Partial Class E_HojaTrabajo
         Me.GroupBox2.Controls.Add(Me.cbxNoProcesado)
         Me.GroupBox2.Controls.Add(Me.cbxPendMuestra)
         Me.GroupBox2.Location = New System.Drawing.Point(15, 84)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(1060, 65)
         Me.GroupBox2.TabIndex = 49
         Me.GroupBox2.TabStop = False
@@ -609,7 +613,6 @@ Partial Class E_HojaTrabajo
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
         Me.MenuStrip1.Size = New System.Drawing.Size(1405, 28)
         Me.MenuStrip1.TabIndex = 50
         Me.MenuStrip1.Text = "MenuStrip1"
@@ -618,7 +621,7 @@ Partial Class E_HojaTrabajo
         '
         Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ValidarDatosToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 26)
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 24)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
         '
         'ValidarDatosToolStripMenuItem
