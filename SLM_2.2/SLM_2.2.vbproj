@@ -12,7 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
@@ -522,6 +522,12 @@
       <DependentUpon>A_PeriodoContable.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_PeriodoContable.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_PlantillasDeResultado.Designer.vb">
+      <DependentUpon>A_PlantillasDeResultado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_PlantillasDeResultado.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_PrintCheque.Designer.vb">
@@ -1359,6 +1365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_PeriodoContable.resx">
       <DependentUpon>A_PeriodoContable.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_PlantillasDeResultado.resx">
+      <DependentUpon>A_PlantillasDeResultado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_PrintCheque.resx">
       <DependentUpon>A_PrintCheque.vb</DependentUpon>
