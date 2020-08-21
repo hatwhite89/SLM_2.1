@@ -5,7 +5,7 @@ Public Class ClsOrdenDeTrabajo
     Dim cod_orden_trabajo, cod_factura, pmUsuario, npUsuario, epUsuario, prUsuario, coUsuario As Integer
     Dim estado, curva, facturaTomaMuestra, tecnicoLab As String
     Dim enUsuario, inUsuario, cod_sede, cod_tecnico, cod_validador, cod_objeto, codigoSubArea As Integer
-    Dim pmFecha, npFecha, epFecha, prFecha, coFecha, enFecha, inFecha, fechaEntrega As Date
+    Dim pmFecha, npFecha, epFecha, prFecha, coFecha, enFecha, inFecha, fechaEntrega, desde, hasta As Date
     Dim enviadaWS, enviadaEmail, cortesia, urgente, entregarMedico, entregarPaciente As Boolean
 
     'busqueda hoja de trabajo
@@ -286,6 +286,26 @@ Public Class ClsOrdenDeTrabajo
             cod_objeto = value
         End Set
     End Property
+
+    '::::::::::::::::::Variables para consulta de informe::::::::::::::
+    Public Property desde_ As Date
+        Get
+            Return desde
+        End Get
+        Set(value As Date)
+            desde = value
+        End Set
+    End Property
+
+    Public Property hasta_ As Date
+        Get
+            Return hasta
+        End Get
+        Set(value As Date)
+            hasta = value
+        End Set
+    End Property
+    '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
     Public Function RegistrarOrdenDeTrabajo() As String
         Dim sqlcom As SqlCommand
@@ -599,4 +619,31 @@ Public Class ClsOrdenDeTrabajo
             Return dt
         End Using
     End Function
+
+
+
+    'Imprimir informe orden de trabajo por periodo
+    Public Function OrdenesTrabajoPeriodo() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmInformeOrdenesTrabajoPeriodo"
+            cmd.Parameters.Add("codigoSubArea", SqlDbType.Int).Value = codigoSubArea_
+            cmd.Parameters.Add("desde", SqlDbType.Date).Value = desde_
+            cmd.Parameters.Add("hasta", SqlDbType.Date).Value = hasta
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
+
 End Class
+
+

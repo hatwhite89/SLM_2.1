@@ -65,6 +65,9 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>índice%281%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -118,6 +121,12 @@
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformeOrdenesdeTrabajoPeriodo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InformeOrdenesdeTrabajoPeriodo.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -266,6 +275,12 @@
     <Compile Include="presentacion\A_ImportarUserAD.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_Informes.Designer.vb">
+      <DependentUpon>A_Informes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_Informes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ListadoAsientos.Designer.vb">
       <DependentUpon>A_ListadoAsientos.vb</DependentUpon>
     </Compile>
@@ -355,6 +370,12 @@
       <DependentUpon>A_ListadoCheques.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ListadoCheques.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ListadoExamenes.Designer.vb">
+      <DependentUpon>A_ListadoExamenes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListadoExamenes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_ListadoFacturaCompra.Designer.vb">
@@ -471,6 +492,12 @@
     <Compile Include="presentacion\A_ListasPrecio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_MuestraPantallaCliente.Designer.vb">
+      <DependentUpon>A_MuestraPantallaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_MuestraPantallaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_Notificacion.Designer.vb">
       <DependentUpon>A_Notificacion.vb</DependentUpon>
     </Compile>
@@ -493,6 +520,12 @@
       <DependentUpon>A_PrintCheque.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_PrintCheque.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_PrintInforme.Designer.vb">
+      <DependentUpon>A_PrintInforme.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_PrintInforme.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_Promociones.Designer.vb">
@@ -1155,6 +1188,10 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InformeOrdenesdeTrabajoPeriodo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformeOrdenesdeTrabajoPeriodo.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -1191,6 +1228,9 @@
     <EmbeddedResource Include="presentacion\A_ImportarUserAD.resx">
       <DependentUpon>A_ImportarUserAD.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_Informes.resx">
+      <DependentUpon>A_Informes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoAsientos.resx">
       <DependentUpon>A_ListadoAsientos.vb</DependentUpon>
     </EmbeddedResource>
@@ -1223,6 +1263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoCheques.resx">
       <DependentUpon>A_ListadoCheques.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListadoExamenes.resx">
+      <DependentUpon>A_ListadoExamenes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoFacturaCompra.resx">
       <DependentUpon>A_ListadoFacturaCompra.vb</DependentUpon>
@@ -1281,6 +1324,9 @@
     <EmbeddedResource Include="presentacion\A_ListasPrecio.resx">
       <DependentUpon>A_ListasPrecio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_MuestraPantallaCliente.resx">
+      <DependentUpon>A_MuestraPantallaCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Notificacion.resx">
       <DependentUpon>A_Notificacion.vb</DependentUpon>
     </EmbeddedResource>
@@ -1292,6 +1338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_PrintCheque.resx">
       <DependentUpon>A_PrintCheque.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_PrintInforme.resx">
+      <DependentUpon>A_PrintInforme.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Promociones.resx">
       <DependentUpon>A_Promociones.vb</DependentUpon>
@@ -1659,6 +1708,14 @@
     <None Include="Resources\Definite-c47a609e-37f4-4678-9cb8-79a06e5845bb.wav" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
@@ -1677,9 +1734,20 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="UIDC.dll" />
+    <Content Include="índice%281%29.ico" />
+    <Content Include="índice.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -332,6 +332,7 @@
             MsgBox("modificar:" + ex.Message)
         End Try
 
+
     End Sub
 
     Private Sub dtDataValoresRef_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDataValoresRef.CellDoubleClick

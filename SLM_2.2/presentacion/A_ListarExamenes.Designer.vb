@@ -26,12 +26,14 @@ Partial Class A_ListarExamenes
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.dtExamenes = New System.Windows.Forms.DataGridView()
         Me.chk = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtExamenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.lblform)
         Me.GroupBox1.Controls.Add(Me.btnAgregar)
         Me.GroupBox1.Controls.Add(Me.dtExamenes)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 12)
@@ -73,6 +75,15 @@ Partial Class A_ListarExamenes
         Me.chk.Name = "chk"
         Me.chk.Width = 50
         '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(222, 18)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(37, 13)
+        Me.lblform.TabIndex = 4
+        Me.lblform.Text = "lblform"
+        '
         'A_ListarExamenes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -83,6 +94,7 @@ Partial Class A_ListarExamenes
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listado de Examenes"
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.dtExamenes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -92,4 +104,5 @@ Partial Class A_ListarExamenes
     Friend WithEvents dtExamenes As DataGridView
     Friend WithEvents chk As DataGridViewCheckBoxColumn
     Friend WithEvents btnAgregar As Button
+    Friend WithEvents lblform As Label
 End Class

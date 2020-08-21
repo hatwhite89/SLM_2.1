@@ -349,4 +349,28 @@ Public Class ClsItemExamen
             End Using
         End Using
     End Function
+
+
+    'Búsqueda Item
+    Public Function BuscarItemExamInterno() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarItemExamenInterno"
+            cmd.Parameters.Add("@codeInterno", SqlDbType.Int).Value = Cod_Interno
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
+
 End Class

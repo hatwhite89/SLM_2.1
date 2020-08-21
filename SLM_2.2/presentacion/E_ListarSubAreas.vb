@@ -45,6 +45,19 @@
                     E_EspecificarHojaTrabajo.lblCodeSubArea.Text = dgbSubAreas.Rows(e.RowIndex).Cells(0).Value()
                     Me.Close()
                 End If
+            ElseIf lblform.Text = "informe" Then
+                Dim n As String = ""
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar la subárea seleccionada?", MsgBoxStyle.YesNo, "Validación")
+                End If
+                If n = vbYes Then
+
+                    A_Informes.lblCodSubArea.Text = dgbSubAreas.Rows(e.RowIndex).Cells(0).Value()
+                    A_Informes.txtSubArea.Text = dgbSubAreas.Rows(e.RowIndex).Cells(1).Value()
+                    A_Informes.txtNombreSubArea.Text = dgbSubAreas.Rows(e.RowIndex).Cells(3).Value()
+
+                    Me.Close()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
