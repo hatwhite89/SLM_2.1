@@ -124,6 +124,20 @@ Public Class M_ListadoEmpleados
                     M_Vacaciones.txtTalentoHumano.Text = CStr(row("nombreCompleto"))
                     Me.Close()
                 End If
+            ElseIf lblform.Text = "M_Capacitaciones" Then
+                Dim n As String = ""
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    If M_Capacitaciones.validarBeneficiarios(dgbtabla.Rows(e.RowIndex).Cells(0).Value()) Then
+                        M_Capacitaciones.dgvBeneficiarios.Rows.Insert(lblfila.Text.ToString, New String() {"", dgbtabla.Rows(e.RowIndex).Cells(0).Value(), dgbtabla.Rows(e.RowIndex).Cells(1).Value(), dgbtabla.Rows(e.RowIndex).Cells(3).Value(), dgbtabla.Rows(e.RowIndex).Cells(4).Value()})
+                        MsgBox("El empleado a sido agregado en la capacitación con éxito.", MsgBoxStyle.Information)
+                        'Me.Close()
+                    Else
+                        MsgBox("El empleado ya a sido agregado en la capacitación.", MsgBoxStyle.Information)
+                    End If
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)

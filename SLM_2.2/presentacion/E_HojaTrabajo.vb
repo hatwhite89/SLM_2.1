@@ -1,8 +1,12 @@
 ﻿Public Class E_HojaTrabajo
+
+    Public ds As New DataSet  'Orden de los examenes por grupo o laboratorio
     Private Sub E_HojaTrabajo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         alternarColoFilasDatagridview(dgvHojaTrab)
         txtHora.Text = Date.Now.ToLongTimeString
         txtFecha.Text = Date.Today
+
+        dgvHojaTrab.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
     End Sub
     Private Sub dgvHojaTrab_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvHojaTrab.CellEndEdit
         'Actualizar el detalle de orden de trabajo 
@@ -61,11 +65,74 @@
                 End If
 
             Else
-                    txtOrden.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(0).Value()
+                txtOrden.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(0).Value()
                 txtPaciente.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(1).Value()
             End If
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub btnActualizarVista_Click(sender As Object, e As EventArgs) Handles btnActualizarVista.Click
+        Dim pendienteMuestra, noProcesado, enProceso, procesado, validado As String
+        If cbxPendMuestra.Checked Then
+            pendienteMuestra = "Pendiente Muestra"
+        Else
+            pendienteMuestra = Nothing
+        End If
+        If cbxNoProcesado.Checked Then
+            noProcesado = "No Procesado"
+        Else
+            noProcesado = Nothing
+        End If
+        If cbxEnProceso.Checked Then
+            enProceso = "En Proceso"
+        Else
+            enProceso = Nothing
+        End If
+        If cbxProcesado.Checked Then
+            procesado = "Procesado"
+        Else
+            procesado = Nothing
+        End If
+        If cbxValidado.Checked Then
+            validado = "Validado"
+        Else
+            validado = Nothing
+        End If
+        Dim objSuc As New ClsOrdenDeTrabajo
+        Dim dv As DataView = objSuc.ActualizarListadoHojaDeTrabajo(pendienteMuestra, noProcesado, enProceso, procesado, validado).DefaultView
+
+    End Sub
+
+    Private Function CalcularEdad(ByVal fecha As Date) As String
+        Dim yr As Integer = DateDiff(DateInterval.Year, fecha, Now)
+        Dim month As Integer = DateDiff(DateInterval.Month, fecha, Now)
+        Dim day As Integer = DateDiff(DateInterval.Day, fecha, Now)
+        Dim edad As String = ""
+
+        If (Now.Month < fecha.Month) Then
+            yr -= 1
+        ElseIf (Now.Month = fecha.Month And Now.Day < fecha.Day) Then
+            yr -= 1
+        End If
+
+        If (yr = 0 And month = 1 And Now.Day < fecha.Day) Then
+            month -= 1
+        End If
+
+        If (yr >= 1) Then
+            edad = yr & "a"
+        ElseIf (yr = 0 And month > 0) Then
+            edad = month & "m"
+        Else
+            edad = day & "d"
+        End If
+
+        'retorna la edad 
+        Return edad
+    End Function
+    Private Sub LlenadoDatos()
+
     End Sub
 End Class
