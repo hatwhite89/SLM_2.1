@@ -75,6 +75,7 @@ Partial Class E_HojaTrabajo
         Me.ValidarDatosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblCodeSubArea = New System.Windows.Forms.Label()
         Me.lblCodeSucursal = New System.Windows.Forms.Label()
+        Me.cbxPlantillas = New UIDC.UI_ComboBox()
         CType(Me.dgvHojaTrab, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -666,12 +667,34 @@ Partial Class E_HojaTrabajo
         Me.lblCodeSucursal.Text = "Sucursal"
         Me.lblCodeSucursal.Visible = False
         '
+        'cbxPlantillas
+        '
+        Me.cbxPlantillas.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbxPlantillas.ArrowColour = System.Drawing.Color.DodgerBlue
+        Me.cbxPlantillas.BackColor = System.Drawing.Color.Transparent
+        Me.cbxPlantillas.BaseColour = System.Drawing.Color.White
+        Me.cbxPlantillas.BorderColour = System.Drawing.Color.Gray
+        Me.cbxPlantillas.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cbxPlantillas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxPlantillas.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cbxPlantillas.FontColour = System.Drawing.Color.Black
+        Me.cbxPlantillas.FormattingEnabled = True
+        Me.cbxPlantillas.LineColour = System.Drawing.Color.DodgerBlue
+        Me.cbxPlantillas.Location = New System.Drawing.Point(928, 113)
+        Me.cbxPlantillas.Name = "cbxPlantillas"
+        Me.cbxPlantillas.Size = New System.Drawing.Size(114, 26)
+        Me.cbxPlantillas.SqaureColour = System.Drawing.Color.Gainsboro
+        Me.cbxPlantillas.SqaureHoverColour = System.Drawing.Color.Gray
+        Me.cbxPlantillas.StartIndex = 0
+        Me.cbxPlantillas.TabIndex = 53
+        '
         'E_HojaTrabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1054, 580)
+        Me.Controls.Add(Me.cbxPlantillas)
         Me.Controls.Add(Me.lblCodeSucursal)
         Me.Controls.Add(Me.lblCodeSubArea)
         Me.Controls.Add(Me.GroupBox2)
@@ -717,6 +740,7 @@ Partial Class E_HojaTrabajo
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "E_HojaTrabajo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Hoja de Trabajo"
         CType(Me.dgvHojaTrab, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
@@ -783,4 +807,5 @@ Partial Class E_HojaTrabajo
     Friend WithEvents ValidarDatosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lblCodeSubArea As Label
     Friend WithEvents lblCodeSucursal As Label
+    Friend WithEvents cbxPlantillas As UIDC.UI_ComboBox
 End Class

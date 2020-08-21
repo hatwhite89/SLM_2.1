@@ -78,7 +78,7 @@ Public Class A_PlantillasDeResultado
             txtDescripcion.Text = row("descripcion")
 
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
     End Sub
