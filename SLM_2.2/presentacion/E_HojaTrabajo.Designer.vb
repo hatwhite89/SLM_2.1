@@ -93,7 +93,7 @@ Partial Class E_HojaTrabajo
         '
         Me.txtNumero.BackColor = System.Drawing.Color.White
         Me.txtNumero.Location = New System.Drawing.Point(39, 39)
-        Me.txtNumero.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtNumero.Margin = New System.Windows.Forms.Padding(2)
         Me.txtNumero.Name = "txtNumero"
         Me.txtNumero.ReadOnly = True
         Me.txtNumero.Size = New System.Drawing.Size(76, 20)
@@ -103,7 +103,7 @@ Partial Class E_HojaTrabajo
         '
         Me.txtArea.BackColor = System.Drawing.Color.White
         Me.txtArea.Location = New System.Drawing.Point(176, 39)
-        Me.txtArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtArea.Margin = New System.Windows.Forms.Padding(2)
         Me.txtArea.Name = "txtArea"
         Me.txtArea.ReadOnly = True
         Me.txtArea.Size = New System.Drawing.Size(76, 20)
@@ -123,7 +123,7 @@ Partial Class E_HojaTrabajo
         '
         Me.txtSubarea.BackColor = System.Drawing.Color.White
         Me.txtSubarea.Location = New System.Drawing.Point(334, 38)
-        Me.txtSubarea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtSubarea.Margin = New System.Windows.Forms.Padding(2)
         Me.txtSubarea.Name = "txtSubarea"
         Me.txtSubarea.ReadOnly = True
         Me.txtSubarea.Size = New System.Drawing.Size(76, 20)
@@ -143,7 +143,7 @@ Partial Class E_HojaTrabajo
         '
         Me.txtsucursal.BackColor = System.Drawing.Color.White
         Me.txtsucursal.Location = New System.Drawing.Point(484, 36)
-        Me.txtsucursal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtsucursal.Margin = New System.Windows.Forms.Padding(2)
         Me.txtsucursal.Name = "txtsucursal"
         Me.txtsucursal.ReadOnly = True
         Me.txtsucursal.Size = New System.Drawing.Size(76, 20)
@@ -163,7 +163,7 @@ Partial Class E_HojaTrabajo
         '
         Me.txtFecha.BackColor = System.Drawing.Color.White
         Me.txtFecha.Location = New System.Drawing.Point(612, 38)
-        Me.txtFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtFecha.Margin = New System.Windows.Forms.Padding(2)
         Me.txtFecha.Name = "txtFecha"
         Me.txtFecha.ReadOnly = True
         Me.txtFecha.Size = New System.Drawing.Size(76, 20)
@@ -183,7 +183,7 @@ Partial Class E_HojaTrabajo
         '
         Me.txtHora.BackColor = System.Drawing.Color.White
         Me.txtHora.Location = New System.Drawing.Point(730, 38)
-        Me.txtHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtHora.Margin = New System.Windows.Forms.Padding(2)
         Me.txtHora.Name = "txtHora"
         Me.txtHora.ReadOnly = True
         Me.txtHora.Size = New System.Drawing.Size(76, 20)
@@ -208,7 +208,7 @@ Partial Class E_HojaTrabajo
         Me.dgvHojaTrab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvHojaTrab.GridColor = System.Drawing.Color.White
         Me.dgvHojaTrab.Location = New System.Drawing.Point(11, 206)
-        Me.dgvHojaTrab.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgvHojaTrab.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvHojaTrab.Name = "dgvHojaTrab"
         Me.dgvHojaTrab.RowHeadersWidth = 51
         Me.dgvHojaTrab.RowTemplate.Height = 24
@@ -220,7 +220,7 @@ Partial Class E_HojaTrabajo
         Me.rbtnUrgentes.AutoSize = True
         Me.rbtnUrgentes.BackColor = System.Drawing.Color.Transparent
         Me.rbtnUrgentes.Location = New System.Drawing.Point(5, 24)
-        Me.rbtnUrgentes.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnUrgentes.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnUrgentes.Name = "rbtnUrgentes"
         Me.rbtnUrgentes.Size = New System.Drawing.Size(106, 17)
         Me.rbtnUrgentes.TabIndex = 19
@@ -233,7 +233,7 @@ Partial Class E_HojaTrabajo
         Me.rbtnCortesia.AutoSize = True
         Me.rbtnCortesia.BackColor = System.Drawing.Color.Transparent
         Me.rbtnCortesia.Location = New System.Drawing.Point(126, 24)
-        Me.rbtnCortesia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnCortesia.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnCortesia.Name = "rbtnCortesia"
         Me.rbtnCortesia.Size = New System.Drawing.Size(101, 17)
         Me.rbtnCortesia.TabIndex = 20
@@ -246,7 +246,7 @@ Partial Class E_HojaTrabajo
         Me.rbtnNombrePaciente.AutoSize = True
         Me.rbtnNombrePaciente.BackColor = System.Drawing.Color.Transparent
         Me.rbtnNombrePaciente.Location = New System.Drawing.Point(5, 46)
-        Me.rbtnNombrePaciente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnNombrePaciente.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnNombrePaciente.Name = "rbtnNombrePaciente"
         Me.rbtnNombrePaciente.Size = New System.Drawing.Size(107, 17)
         Me.rbtnNombrePaciente.TabIndex = 21
@@ -259,7 +259,7 @@ Partial Class E_HojaTrabajo
         Me.rbtnNroOrdTrab.AutoSize = True
         Me.rbtnNroOrdTrab.BackColor = System.Drawing.Color.Transparent
         Me.rbtnNroOrdTrab.Location = New System.Drawing.Point(128, 46)
-        Me.rbtnNroOrdTrab.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnNroOrdTrab.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnNroOrdTrab.Name = "rbtnNroOrdTrab"
         Me.rbtnNroOrdTrab.Size = New System.Drawing.Size(96, 17)
         Me.rbtnNroOrdTrab.TabIndex = 22
@@ -273,7 +273,7 @@ Partial Class E_HojaTrabajo
         Me.btnActualizarVista.BackColor = System.Drawing.Color.White
         Me.btnActualizarVista.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnActualizarVista.Location = New System.Drawing.Point(812, 113)
-        Me.btnActualizarVista.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnActualizarVista.Margin = New System.Windows.Forms.Padding(2)
         Me.btnActualizarVista.Name = "btnActualizarVista"
         Me.btnActualizarVista.Size = New System.Drawing.Size(111, 19)
         Me.btnActualizarVista.TabIndex = 23
@@ -286,7 +286,7 @@ Partial Class E_HojaTrabajo
         Me.btnDetalleResultado.BackColor = System.Drawing.Color.White
         Me.btnDetalleResultado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnDetalleResultado.Location = New System.Drawing.Point(812, 136)
-        Me.btnDetalleResultado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnDetalleResultado.Margin = New System.Windows.Forms.Padding(2)
         Me.btnDetalleResultado.Name = "btnDetalleResultado"
         Me.btnDetalleResultado.Size = New System.Drawing.Size(111, 19)
         Me.btnDetalleResultado.TabIndex = 24
@@ -297,7 +297,7 @@ Partial Class E_HojaTrabajo
         '
         Me.txtOrden.BackColor = System.Drawing.Color.White
         Me.txtOrden.Location = New System.Drawing.Point(80, 133)
-        Me.txtOrden.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtOrden.Margin = New System.Windows.Forms.Padding(2)
         Me.txtOrden.Name = "txtOrden"
         Me.txtOrden.ReadOnly = True
         Me.txtOrden.Size = New System.Drawing.Size(76, 20)
@@ -317,7 +317,7 @@ Partial Class E_HojaTrabajo
         '
         Me.txtPaciente.BackColor = System.Drawing.Color.White
         Me.txtPaciente.Location = New System.Drawing.Point(234, 133)
-        Me.txtPaciente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtPaciente.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPaciente.Name = "txtPaciente"
         Me.txtPaciente.ReadOnly = True
         Me.txtPaciente.Size = New System.Drawing.Size(178, 20)
@@ -337,7 +337,7 @@ Partial Class E_HojaTrabajo
         '
         Me.txtParametro.BackColor = System.Drawing.Color.White
         Me.txtParametro.Location = New System.Drawing.Point(527, 133)
-        Me.txtParametro.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtParametro.Margin = New System.Windows.Forms.Padding(2)
         Me.txtParametro.Name = "txtParametro"
         Me.txtParametro.ReadOnly = True
         Me.txtParametro.Size = New System.Drawing.Size(76, 20)
@@ -359,7 +359,7 @@ Partial Class E_HojaTrabajo
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtValorActual.BackColor = System.Drawing.Color.White
         Me.txtValorActual.Location = New System.Drawing.Point(674, 133)
-        Me.txtValorActual.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtValorActual.Margin = New System.Windows.Forms.Padding(2)
         Me.txtValorActual.Name = "txtValorActual"
         Me.txtValorActual.ReadOnly = True
         Me.txtValorActual.Size = New System.Drawing.Size(101, 20)
@@ -381,7 +381,7 @@ Partial Class E_HojaTrabajo
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtInstrTecnico.BackColor = System.Drawing.Color.White
         Me.txtInstrTecnico.Location = New System.Drawing.Point(527, 159)
-        Me.txtInstrTecnico.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtInstrTecnico.Margin = New System.Windows.Forms.Padding(2)
         Me.txtInstrTecnico.Name = "txtInstrTecnico"
         Me.txtInstrTecnico.ReadOnly = True
         Me.txtInstrTecnico.Size = New System.Drawing.Size(279, 20)
@@ -402,7 +402,7 @@ Partial Class E_HojaTrabajo
         Me.txtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtBuscar.Location = New System.Drawing.Point(527, 182)
-        Me.txtBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(279, 20)
         Me.txtBuscar.TabIndex = 37
@@ -423,7 +423,7 @@ Partial Class E_HojaTrabajo
         Me.btnBuscar.BackColor = System.Drawing.Color.White
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnBuscar.Location = New System.Drawing.Point(812, 183)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(111, 19)
         Me.btnBuscar.TabIndex = 38
@@ -445,7 +445,7 @@ Partial Class E_HojaTrabajo
         '
         Me.txtHora2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtHora2.Location = New System.Drawing.Point(396, 551)
-        Me.txtHora2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtHora2.Margin = New System.Windows.Forms.Padding(2)
         Me.txtHora2.Name = "txtHora2"
         Me.txtHora2.ReadOnly = True
         Me.txtHora2.Size = New System.Drawing.Size(76, 20)
@@ -466,7 +466,7 @@ Partial Class E_HojaTrabajo
         '
         Me.txtFecha2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtFecha2.Location = New System.Drawing.Point(250, 553)
-        Me.txtFecha2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtFecha2.Margin = New System.Windows.Forms.Padding(2)
         Me.txtFecha2.Name = "txtFecha2"
         Me.txtFecha2.ReadOnly = True
         Me.txtFecha2.Size = New System.Drawing.Size(76, 20)
@@ -487,7 +487,7 @@ Partial Class E_HojaTrabajo
         '
         Me.txtValidador.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtValidador.Location = New System.Drawing.Point(101, 552)
-        Me.txtValidador.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtValidador.Margin = New System.Windows.Forms.Padding(2)
         Me.txtValidador.Name = "txtValidador"
         Me.txtValidador.ReadOnly = True
         Me.txtValidador.Size = New System.Drawing.Size(76, 20)
@@ -508,7 +508,7 @@ Partial Class E_HojaTrabajo
         '
         Me.txtValoresRef.BackColor = System.Drawing.Color.White
         Me.txtValoresRef.Location = New System.Drawing.Point(80, 161)
-        Me.txtValoresRef.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtValoresRef.Margin = New System.Windows.Forms.Padding(2)
         Me.txtValoresRef.Name = "txtValoresRef"
         Me.txtValoresRef.ReadOnly = True
         Me.txtValoresRef.Size = New System.Drawing.Size(332, 20)
@@ -633,7 +633,7 @@ Partial Class E_HojaTrabajo
         'ValidarDatosToolStripMenuItem
         '
         Me.ValidarDatosToolStripMenuItem.Name = "ValidarDatosToolStripMenuItem"
-        Me.ValidarDatosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ValidarDatosToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.ValidarDatosToolStripMenuItem.Text = "Validar Datos"
         '
         'E_HojaTrabajo
@@ -683,7 +683,7 @@ Partial Class E_HojaTrabajo
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "E_HojaTrabajo"
         Me.Text = "Hoja de Trabajo"
         CType(Me.dgvHojaTrab, System.ComponentModel.ISupportInitialize).EndInit()
