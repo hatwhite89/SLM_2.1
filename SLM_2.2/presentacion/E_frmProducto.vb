@@ -34,6 +34,7 @@
         txtCantidadMinima.ReadOnly = True
         'botones
         Button1.Enabled = False
+        alternarColoFilasDatagridview(DataGridView1)
     End Sub
     Private Sub cargarData()
         Try

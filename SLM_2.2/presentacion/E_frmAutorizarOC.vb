@@ -3,6 +3,12 @@
     Dim codigo_oc As String
     Private Sub E_frmAutorizarOC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarDGOC()
+        alternarColoFilasDatagridview(DataGridView1)
+        alternarColoFilasDatagridview(DataGridView2)
+        alternarColoFilasDatagridview(DataGridView3)
+        alternarColoFilasDatagridview(DataGridView4)
+        alternarColoFilasDatagridview(DataGridView5)
+        alternarColoFilasDatagridview(DataGridView6)
     End Sub
 
     Private Sub CargarDGOC()

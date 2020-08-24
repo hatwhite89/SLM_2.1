@@ -30,66 +30,66 @@ Partial Class E_frmInventario
         Me.excel = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.btnCargarInventario = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnCargarInventario = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage3.SuspendLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel4.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.Panel5.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'ComboBox1
@@ -142,12 +142,20 @@ Partial Class E_frmInventario
         Me.TabPage1.Text = "Inventario disponible"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'TextBox3
+        'GroupBox2
         '
-        Me.TextBox3.Location = New System.Drawing.Point(554, 13)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox3.TabIndex = 17
+        Me.GroupBox2.Controls.Add(Me.TextBox4)
+        Me.GroupBox2.Controls.Add(Me.TextBox3)
+        Me.GroupBox2.Controls.Add(Me.excel)
+        Me.GroupBox2.Controls.Add(Me.DataGridView1)
+        Me.GroupBox2.Controls.Add(Me.Label9)
+        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 102)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(766, 300)
+        Me.GroupBox2.TabIndex = 21
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Inventario"
         '
         'TextBox4
         '
@@ -156,14 +164,12 @@ Partial Class E_frmInventario
         Me.TextBox4.Size = New System.Drawing.Size(160, 20)
         Me.TextBox4.TabIndex = 16
         '
-        'Label8
+        'TextBox3
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(419, 20)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(103, 13)
-        Me.Label8.TabIndex = 15
-        Me.Label8.Text = "Buscar por producto"
+        Me.TextBox3.Location = New System.Drawing.Point(554, 13)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(160, 20)
+        Me.TextBox3.TabIndex = 17
         '
         'Label9
         '
@@ -174,14 +180,24 @@ Partial Class E_frmInventario
         Me.Label9.TabIndex = 14
         Me.Label9.Text = "Buscar por lote"
         '
-        'btnCargarInventario
+        'Label8
         '
-        Me.btnCargarInventario.Location = New System.Drawing.Point(517, 38)
-        Me.btnCargarInventario.Name = "btnCargarInventario"
-        Me.btnCargarInventario.Size = New System.Drawing.Size(223, 23)
-        Me.btnCargarInventario.TabIndex = 4
-        Me.btnCargarInventario.Text = "Inventario Completo"
-        Me.btnCargarInventario.UseVisualStyleBackColor = True
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(419, 20)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(103, 13)
+        Me.Label8.TabIndex = 15
+        Me.Label8.Text = "Buscar por producto"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Panel3)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 6)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(766, 90)
+        Me.GroupBox1.TabIndex = 20
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Seleccionar  almacén"
         '
         'Panel3
         '
@@ -213,6 +229,15 @@ Partial Class E_frmInventario
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "Cargar Inventario  almacén"
         '
+        'btnCargarInventario
+        '
+        Me.btnCargarInventario.Location = New System.Drawing.Point(517, 38)
+        Me.btnCargarInventario.Name = "btnCargarInventario"
+        Me.btnCargarInventario.Size = New System.Drawing.Size(223, 23)
+        Me.btnCargarInventario.TabIndex = 4
+        Me.btnCargarInventario.Text = "Inventario Completo"
+        Me.btnCargarInventario.UseVisualStyleBackColor = True
+        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.GroupBox4)
@@ -226,37 +251,29 @@ Partial Class E_frmInventario
         Me.TabPage2.Text = "Productos vencidos"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'Label7
+        'GroupBox4
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(118, 10)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(13, 13)
-        Me.Label7.TabIndex = 15
-        Me.Label7.Text = "0"
+        Me.GroupBox4.Controls.Add(Me.Button2)
+        Me.GroupBox4.Controls.Add(Me.Label4)
+        Me.GroupBox4.Controls.Add(Me.DataGridView2)
+        Me.GroupBox4.Controls.Add(Me.TextBox2)
+        Me.GroupBox4.Controls.Add(Me.Label5)
+        Me.GroupBox4.Controls.Add(Me.TextBox1)
+        Me.GroupBox4.Location = New System.Drawing.Point(0, 93)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(770, 300)
+        Me.GroupBox4.TabIndex = 22
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Inventario"
         '
-        'TextBox2
+        'Button2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(549, 18)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox2.TabIndex = 13
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(124, 18)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox1.TabIndex = 12
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(413, 25)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(103, 13)
-        Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Buscar por producto"
+        Me.Button2.Location = New System.Drawing.Point(625, 271)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(133, 23)
+        Me.Button2.TabIndex = 9
+        Me.Button2.Text = "Generar Excel"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -277,174 +294,28 @@ Partial Class E_frmInventario
         Me.DataGridView2.Size = New System.Drawing.Size(766, 221)
         Me.DataGridView2.TabIndex = 8
         '
-        'Button2
+        'TextBox2
         '
-        Me.Button2.Location = New System.Drawing.Point(625, 271)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(133, 23)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "Generar Excel"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.TextBox2.Location = New System.Drawing.Point(549, 18)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(160, 20)
+        Me.TextBox2.TabIndex = 13
         '
-        'Button1
+        'Label5
         '
-        Me.Button1.Location = New System.Drawing.Point(519, 37)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(223, 23)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "Inventario Completo"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(413, 25)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(103, 13)
+        Me.Label5.TabIndex = 11
+        Me.Label5.Text = "Buscar por producto"
         '
-        'Label2
+        'TextBox1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(394, 24)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(132, 13)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Cargar Inventario Almacen"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(519, 10)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(223, 21)
-        Me.ComboBox2.TabIndex = 5
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(3, 10)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(109, 13)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "Valor del inventario: L"
-        '
-        'TabPage3
-        '
-        Me.TabPage3.Controls.Add(Me.GroupBox6)
-        Me.TabPage3.Controls.Add(Me.GroupBox5)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(778, 408)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Sin existencia"
-        Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(585, 22)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox5.TabIndex = 17
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(161, 22)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox6.TabIndex = 16
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(450, 29)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(103, 13)
-        Me.Label10.TabIndex = 15
-        Me.Label10.Text = "Buscar por producto"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(59, 29)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(78, 13)
-        Me.Label11.TabIndex = 14
-        Me.Label11.Text = "Buscar por lote"
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(524, 37)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(223, 23)
-        Me.Button4.TabIndex = 10
-        Me.Button4.Text = "Inventario Completo"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(524, 10)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(223, 21)
-        Me.ComboBox3.TabIndex = 8
-        '
-        'DataGridView3
-        '
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Location = New System.Drawing.Point(9, 48)
-        Me.DataGridView3.Name = "DataGridView3"
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue
-        Me.DataGridView3.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView3.Size = New System.Drawing.Size(750, 217)
-        Me.DataGridView3.TabIndex = 3
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(626, 271)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(133, 23)
-        Me.Button3.TabIndex = 4
-        Me.Button3.Text = "Generar Excel"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Controls.Add(Me.Label13)
-        Me.Panel4.Location = New System.Drawing.Point(8, 13)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(786, 41)
-        Me.Panel4.TabIndex = 5
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(7, 10)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(182, 20)
-        Me.Label13.TabIndex = 8
-        Me.Label13.Text = "Inventario Almacenes"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.Panel3)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 6)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(766, 90)
-        Me.GroupBox1.TabIndex = 20
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Seleccionar  almacén"
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.TextBox4)
-        Me.GroupBox2.Controls.Add(Me.TextBox3)
-        Me.GroupBox2.Controls.Add(Me.excel)
-        Me.GroupBox2.Controls.Add(Me.DataGridView1)
-        Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 102)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(766, 300)
-        Me.GroupBox2.TabIndex = 21
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Inventario"
+        Me.TextBox1.Location = New System.Drawing.Point(124, 18)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(160, 20)
+        Me.TextBox1.TabIndex = 12
         '
         'GroupBox3
         '
@@ -469,6 +340,24 @@ Partial Class E_frmInventario
         Me.Panel5.Size = New System.Drawing.Size(750, 67)
         Me.Panel5.TabIndex = 5
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(3, 10)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(109, 13)
+        Me.Label6.TabIndex = 14
+        Me.Label6.Text = "Valor del inventario: L"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(118, 10)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(13, 13)
+        Me.Label7.TabIndex = 15
+        Me.Label7.Text = "0"
+        '
         'Label15
         '
         Me.Label15.AutoSize = True
@@ -478,20 +367,109 @@ Partial Class E_frmInventario
         Me.Label15.TabIndex = 18
         Me.Label15.Text = "Cargar Inventario  almacén"
         '
-        'GroupBox4
+        'ComboBox2
         '
-        Me.GroupBox4.Controls.Add(Me.Button2)
-        Me.GroupBox4.Controls.Add(Me.Label4)
-        Me.GroupBox4.Controls.Add(Me.DataGridView2)
-        Me.GroupBox4.Controls.Add(Me.TextBox2)
-        Me.GroupBox4.Controls.Add(Me.Label5)
-        Me.GroupBox4.Controls.Add(Me.TextBox1)
-        Me.GroupBox4.Location = New System.Drawing.Point(0, 93)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(770, 300)
-        Me.GroupBox4.TabIndex = 22
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Inventario"
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(519, 10)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(223, 21)
+        Me.ComboBox2.TabIndex = 5
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(519, 37)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(223, 23)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "Inventario Completo"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(394, 24)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(132, 13)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Cargar Inventario Almacen"
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.GroupBox6)
+        Me.TabPage3.Controls.Add(Me.GroupBox5)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(778, 408)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Sin existencia"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.Button3)
+        Me.GroupBox6.Controls.Add(Me.Label11)
+        Me.GroupBox6.Controls.Add(Me.DataGridView3)
+        Me.GroupBox6.Controls.Add(Me.TextBox5)
+        Me.GroupBox6.Controls.Add(Me.Label10)
+        Me.GroupBox6.Controls.Add(Me.TextBox6)
+        Me.GroupBox6.Location = New System.Drawing.Point(3, 102)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(770, 300)
+        Me.GroupBox6.TabIndex = 23
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Inventario"
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(626, 271)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(133, 23)
+        Me.Button3.TabIndex = 4
+        Me.Button3.Text = "Generar Excel"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(59, 29)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(78, 13)
+        Me.Label11.TabIndex = 14
+        Me.Label11.Text = "Buscar por lote"
+        '
+        'DataGridView3
+        '
+        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView3.Location = New System.Drawing.Point(9, 48)
+        Me.DataGridView3.Name = "DataGridView3"
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue
+        Me.DataGridView3.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridView3.Size = New System.Drawing.Size(750, 217)
+        Me.DataGridView3.TabIndex = 3
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(585, 22)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(160, 20)
+        Me.TextBox5.TabIndex = 17
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(450, 29)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(103, 13)
+        Me.Label10.TabIndex = 15
+        Me.Label10.Text = "Buscar por producto"
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(161, 22)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(160, 20)
+        Me.TextBox6.TabIndex = 16
         '
         'GroupBox5
         '
@@ -525,6 +503,14 @@ Partial Class E_frmInventario
         Me.Label14.TabIndex = 14
         Me.Label14.Text = "Valor del inventario: L"
         '
+        'ComboBox3
+        '
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(524, 10)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(223, 21)
+        Me.ComboBox3.TabIndex = 8
+        '
         'Label16
         '
         Me.Label16.AutoSize = True
@@ -543,20 +529,34 @@ Partial Class E_frmInventario
         Me.Label17.TabIndex = 18
         Me.Label17.Text = "Cargar Inventario  almacén"
         '
-        'GroupBox6
+        'Button4
         '
-        Me.GroupBox6.Controls.Add(Me.Button3)
-        Me.GroupBox6.Controls.Add(Me.Label11)
-        Me.GroupBox6.Controls.Add(Me.DataGridView3)
-        Me.GroupBox6.Controls.Add(Me.TextBox5)
-        Me.GroupBox6.Controls.Add(Me.Label10)
-        Me.GroupBox6.Controls.Add(Me.TextBox6)
-        Me.GroupBox6.Location = New System.Drawing.Point(3, 102)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(770, 300)
-        Me.GroupBox6.TabIndex = 23
-        Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Inventario"
+        Me.Button4.Location = New System.Drawing.Point(524, 37)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(223, 23)
+        Me.Button4.TabIndex = 10
+        Me.Button4.Text = "Inventario Completo"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.Label13)
+        Me.Panel4.Location = New System.Drawing.Point(8, 13)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(786, 41)
+        Me.Panel4.TabIndex = 5
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(7, 10)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(182, 20)
+        Me.Label13.TabIndex = 8
+        Me.Label13.Text = "Inventario Almacenes"
         '
         'E_frmInventario
         '
@@ -566,32 +566,32 @@ Partial Class E_frmInventario
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "E_frmInventario"
-        Me.Text = "E_frmInventario"
+        Me.Text = "SLM - Módulo de almacén"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage3.ResumeLayout(False)
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox5.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.GroupBox6.ResumeLayout(False)
-        Me.GroupBox6.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
