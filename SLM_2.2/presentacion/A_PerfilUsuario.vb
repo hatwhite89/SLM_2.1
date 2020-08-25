@@ -185,7 +185,6 @@
     Private Sub A_PerfilUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             alternarColoFilasDatagridview(dtPerfiles)
-
             dtPerfiles.DataSource = perfil.listarPerfiles
 
         Catch ex As Exception

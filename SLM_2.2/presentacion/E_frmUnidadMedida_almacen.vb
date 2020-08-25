@@ -53,7 +53,7 @@
         txtNombre.ReadOnly = True
         'boton
         Button1.Enabled = False
-
+        alternarColoFilasDatagridview(DataGridView1)
 
     End Sub
 

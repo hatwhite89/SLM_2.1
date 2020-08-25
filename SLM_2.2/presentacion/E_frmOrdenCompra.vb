@@ -62,6 +62,15 @@ Public Class E_frmOrdenCompra
     End Sub
 
     Public Sub E_frmOrdenCompra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        alternarColoFilasDatagridview(DataGridView1)
+        alternarColoFilasDatagridview(DataGridView2)
+        alternarColoFilasDatagridview(DataGridView3)
+        alternarColoFilasDatagridview(DataGridView4)
+        alternarColoFilasDatagridview(DataGridView5)
+        alternarColoFilasDatagridview(DataGridView6)
+        alternarColoFilasDatagridview(DataGridView7)
+        alternarColoFilasDatagridview(DataGridView8)
         txtDiasCredito.Text = "0"
 
         Label38.Text = ""

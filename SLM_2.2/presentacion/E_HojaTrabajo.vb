@@ -7,6 +7,23 @@
         txtFecha.Text = Date.Today
 
         dgvHojaTrab.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
+
+
+        'carga de plantillas:::::::::::::::::::::::::::::::::::::::::...
+
+        Dim plantilla As New ClsPlantillaResultado
+
+        Dim dt As New DataTable
+
+        dt = plantilla.listarPlantillas
+
+        cbxPlantillas.DataSource = dt
+        cbxPlantillas.DisplayMember = "simbolo"
+        cbxPlantillas.SelectedIndex = 0
+
+        '...:::::::::::::::::::::::::::::::::::::::::::::::::::::::::...
+
     End Sub
     Private Sub dgvHojaTrab_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvHojaTrab.CellEndEdit
         'Actualizar el detalle de orden de trabajo 
@@ -75,10 +92,12 @@
 
     Private Sub btnActualizarVista_Click(sender As Object, e As EventArgs) Handles btnActualizarVista.Click
         Try
-            If dgvHojaTrab.Rows.Count > 1 Then
-                ds.Tables(0).Rows.Clear()
-            End If
+            'If dgvHojaTrab.Rows.Count > 1 Then
+            ds.Tables(0).Rows.Clear()
+            ' End If
+
             Dim pendienteMuestra, noProcesado, enProceso, procesado, validado As String
+
             If cbxPendMuestra.Checked Then
                 pendienteMuestra = "Pendiente Muestra"
             Else
@@ -111,7 +130,6 @@
 
 
             Dim colColl As DataColumnCollection = ds.Tables("HojaTrabajo").Columns
-
 
             'orden de trabajo
             Dim objOrdTrab As New ClsOrdenDeTrabajo
@@ -324,5 +342,10 @@
     End Function
     Private Sub LlenadoDatos()
 
+
+    End Sub
+
+    Private Sub btnDetalleResultado_Click(sender As Object, e As EventArgs) Handles btnDetalleResultado.Click
+        A_PlantillasDeResultado.Show()
     End Sub
 End Class

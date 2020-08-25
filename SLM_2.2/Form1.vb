@@ -40,7 +40,7 @@
 
     End Sub
     Private Sub btnContabilidad_Click(sender As Object, e As EventArgs) Handles btnContabilidad.Click
-        Panel3.Visible = False
+
         If PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or PanelSistema.Visible = True Or PanelTalentoHumano.Visible = True Then
             PanelSistema.Visible = False
             PanelFactura.Visible = False
@@ -51,13 +51,13 @@
 
         Else
             panelMenu.Visible = True
-            Panel3.Visible = True
-            Label4.Text = "Modulo de contabilidad"
+
+
         End If
 
     End Sub
     Private Sub btnlaboratorio_Click(sender As Object, e As EventArgs) Handles btnlaboratorio.Click
-        Panel3.Visible = False
+
         Try
 
 
@@ -70,8 +70,7 @@
                 PanelTalentoHumano.Visible = False
             Else
                 PanelLab.Visible = True
-                Panel3.Visible = True
-                Label4.Text = "Modulo de laboratorio"
+
             End If
 
 
@@ -91,7 +90,7 @@
 
     End Sub
     Private Sub btnFacturacion_Click(sender As Object, e As EventArgs) Handles btnFacturacion.Click
-        Panel3.Visible = False
+
         Try
 
 
@@ -104,8 +103,7 @@
                 PanelTalentoHumano.Visible = False
             Else
                 PanelFactura.Visible = True
-                Panel3.Visible = True
-                Label4.Text = "Modulo de facturacion"
+
             End If
 
 
@@ -334,7 +332,7 @@
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
         PanelFactura.Visible = False
-        Panel3.Visible = False
+
     End Sub
 
     Private Sub btnPaciente_Click(sender As Object, e As EventArgs) Handles btnPaciente.Click
@@ -364,7 +362,7 @@
         M_Cliente.ShowDialog()
     End Sub
 
-    Private Sub CerrarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarToolStripMenuItem.Click
+    Private Sub CerrarToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
         Me.Close()
         End
@@ -415,7 +413,7 @@
 
     End Sub
 
-    Private Sub AcercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaDeToolStripMenuItem.Click
+    Private Sub AcercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs)
         MsgBox("Version 0.01")
     End Sub
 
@@ -429,7 +427,7 @@
     End Sub
 
     Private Sub btnSistema_Click(sender As Object, e As EventArgs) Handles btnSistema.Click
-        Panel3.Visible = False
+
         If PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelTalentoHumano.Visible = True Then
 
             PanelFactura.Visible = False
@@ -441,8 +439,8 @@
 
         Else
             PanelSistema.Visible = True
-            Panel3.Visible = True
-            Label4.Text = "Modulo de sistema"
+
+
         End If
     End Sub
 
@@ -472,7 +470,7 @@
         End Try
     End Sub
 
-    Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Try
 
 
@@ -496,7 +494,7 @@
     End Sub
 
     Private Sub btnTalentoHumano_Click(sender As Object, e As EventArgs) Handles btnTalentoHumano.Click
-        Panel3.Visible = False
+
         If PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Then
             PanelTalentoHumano.Visible = True
             PanelFactura.Visible = False
@@ -508,8 +506,7 @@
 
         Else
             PanelTalentoHumano.Visible = True
-            Panel3.Visible = True
-            Label4.Text = "Modulo de talento humano"
+
         End If
     End Sub
 
@@ -551,7 +548,7 @@
     End Sub
 
     Private Sub Button22_Click(sender As Object, e As EventArgs) Handles btnAlmacen.Click
-        Panel3.Visible = False
+
         If PanelTalentoHumano.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Then
 
             PanelFactura.Visible = False
@@ -562,8 +559,8 @@
             PanelAlmacen.Visible = True
         Else
             PanelAlmacen.Visible = True
-            Panel3.Visible = True
-            Label4.Text = "Modulo de almacen"
+
+
         End If
     End Sub
 
@@ -695,7 +692,7 @@
         End Try
     End Sub
 
-    Private Sub gbxMenu_Enter(sender As Object, e As EventArgs) Handles gbxMenu.Enter
+    Private Sub gbxMenu_Enter(sender As Object, e As EventArgs)
 
     End Sub
 End Class
