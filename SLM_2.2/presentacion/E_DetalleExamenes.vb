@@ -411,7 +411,9 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        E_SubArea.lblform.Text = "M_BuscarCapacitaciones"
-        E_SubArea.Show()
+        'E_SubArea.lblform.Text = "M_BuscarCapacitaciones"
+        'E_SubArea.Show()
+        M_BuscarCapacitaciones.lblform.Text = "M_BuscarCapacitaciones"
+        M_BuscarCapacitaciones.Show()
     End Sub
 End Class
