@@ -132,7 +132,7 @@ Public Class M_Factura
 
         dtpfechaFactura.Enabled = True
         txtcodigoRecepecionista.ReadOnly = False
-        txtcodigoCajero.ReadOnly = False
+        'txtcodigoCajero.ReadOnly = False
 
         cbxentregarMedico.Enabled = True
         cbxentregarPaciente.Enabled = True
@@ -140,7 +140,7 @@ Public Class M_Factura
 
         dgblistadoExamenes.ReadOnly = False
 
-        cbxok.Enabled = True
+        'cbxok.Enabled = True
 
         btnActualizar.Enabled = False
         btncotizacion.Enabled = True
@@ -160,6 +160,10 @@ Public Class M_Factura
         'recepcionista
         txtcodigoRecepecionista.Text = Form1.lblUserCod.Text
         txtNombreRecepcionista.Text = Form1.lblMiUser.Text
+
+        'cajero
+        txtcodigoCajero.Text = Form1.lblUserCod.Text
+        txtNombreCajero.Text = Form1.lblMiUser.Text
 
 
         'campos nuevos
@@ -219,7 +223,7 @@ Public Class M_Factura
 
         dgblistadoExamenes.ReadOnly = True
 
-        cbxok.Enabled = False
+        'cbxok.Enabled = False
 
         btnActualizar.Enabled = True
         btncotizacion.Enabled = False
@@ -244,7 +248,7 @@ Public Class M_Factura
         cbxenviarCorreo.Enabled = True
 
         dgblistadoExamenes.ReadOnly = False
-        cbxok.Enabled = True
+        'cbxok.Enabled = True
         btnbusquedaExamen.Enabled = True
 
         txtEfectivo.ReadOnly = False
@@ -784,6 +788,7 @@ Public Class M_Factura
                 txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 1) Then
 
                 If (cbxok.Checked) Then
+                    'Si el vuelto es mayor o igual a 0 y el cliente no pertenese a un convenio
                     If (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "") Then
                         MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
                         Exit Sub
@@ -844,7 +849,7 @@ Public Class M_Factura
 
                 If objFact.RegistrarNuevaFactura() = 1 Then
                     deshabilitar()
-                    cbxok.Enabled = True
+                    'cbxok.Enabled = True
 
                     dt = objFact.BuscarFacturaCode()
                     row = dt.Rows(0)
