@@ -66,6 +66,7 @@
         txtNombre.ReadOnly = True
 
         cargarData()
+        alternarColoFilasDatagridview(DataGridView1)
 
     End Sub
 

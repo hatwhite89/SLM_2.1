@@ -261,10 +261,12 @@ Partial Class M_Capacitaciones
         '
         'dgvBeneficiarios
         '
+        Me.dgvBeneficiarios.AllowUserToDeleteRows = False
         Me.dgvBeneficiarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvBeneficiarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.codeEmployee, Me.Empleado, Me.Cargo, Me.Departamento})
         Me.dgvBeneficiarios.Location = New System.Drawing.Point(35, 40)
         Me.dgvBeneficiarios.Name = "dgvBeneficiarios"
+        Me.dgvBeneficiarios.RowHeadersVisible = False
         Me.dgvBeneficiarios.RowHeadersWidth = 51
         Me.dgvBeneficiarios.RowTemplate.Height = 24
         Me.dgvBeneficiarios.Size = New System.Drawing.Size(868, 336)

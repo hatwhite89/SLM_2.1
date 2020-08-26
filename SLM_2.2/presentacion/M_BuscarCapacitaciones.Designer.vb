@@ -169,6 +169,7 @@ Partial Class M_BuscarCapacitaciones
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
+        Me.dgbtabla.RowHeadersVisible = False
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -210,6 +211,7 @@ Partial Class M_BuscarCapacitaciones
         Me.lblform.Size = New System.Drawing.Size(71, 17)
         Me.lblform.TabIndex = 126
         Me.lblform.Text = "formulario"
+        Me.lblform.Visible = False
         '
         'M_BuscarCapacitaciones
         '

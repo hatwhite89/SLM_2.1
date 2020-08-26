@@ -16,6 +16,10 @@
         CargarComboSedes()
         CargarAreas()
         txtSolicitante.Text = nombre_usurio
+        alternarColoFilasDatagridview(DataGridView1)
+        alternarColoFilasDatagridview(DataGridView2)
+        alternarColoFilasDatagridview(DataGridView3)
+        alternarColoFilasDatagridview(DataGridView4)
     End Sub
 
     Private Sub CargarComboSedes()

@@ -23,6 +23,8 @@ Partial Class E_frmUbicacion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -37,8 +39,6 @@ Partial Class E_frmUbicacion
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -57,6 +57,24 @@ Partial Class E_frmUbicacion
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Buscar almacen "
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 16)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(195, 13)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Escriba el nombre del almacen a buscar"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(248, 207)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(176, 13)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "Seleccionar Almacen para modificar"
         '
         'txtBuscar
         '
@@ -188,24 +206,6 @@ Partial Class E_frmUbicacion
         Me.Button6.Text = "Cancelar"
         Me.Button6.UseVisualStyleBackColor = True
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(248, 207)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(176, 13)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "Seleccionar Almacen para modificar"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 16)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(195, 13)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Escriba el nombre del almacen a buscar"
-        '
         'E_frmUbicacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -215,7 +215,7 @@ Partial Class E_frmUbicacion
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Name = "E_frmUbicacion"
-        Me.Text = "E_frmUbicacion"
+        Me.Text = "SLM - Módulo de almacén"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
