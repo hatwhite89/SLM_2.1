@@ -182,9 +182,6 @@
         End If
     End Sub
 
-    Private Sub M_Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
     Private Sub dtpfechaBaja_MouseDown(sender As Object, e As MouseEventArgs) Handles dtpfechaBaja.MouseDown
 
         Select Case e.Button

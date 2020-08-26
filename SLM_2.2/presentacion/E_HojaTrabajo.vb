@@ -1,6 +1,7 @@
 ﻿Public Class E_HojaTrabajo
     'Dim dv As DataView
     Public ds As New DataSet  'Orden de los examenes por grupo o laboratorio
+    Dim celda, fila As Integer 'capturar columna y fila para agregar plantilla
     Private Sub E_HojaTrabajo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         alternarColoFilasDatagridview(dgvHojaTrab)
         txtHora.Text = Date.Now.ToLongTimeString
@@ -60,6 +61,8 @@
                 txtPaciente.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(1).Value()
                 txtParametro.Text = dgvHojaTrab.Columns.Item(e.ColumnIndex).Name
                 txtValorActual.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(e.ColumnIndex).Value()
+                celda = Convert.ToInt32(dgvHojaTrab.CurrentCell.ColumnIndex.ToString)
+                fila = Convert.ToInt32(dgvHojaTrab.CurrentCell.RowIndex.ToString)
 
                 'buscar valores referencia 
                 If (Trim(txtParametro.Text) <> "") Then
@@ -348,4 +351,30 @@
     Private Sub btnDetalleResultado_Click(sender As Object, e As EventArgs) Handles btnDetalleResultado.Click
         A_PlantillasDeResultado.Show()
     End Sub
+
+    Private Sub cbxPlantillas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxPlantillas.SelectedIndexChanged
+
+        Try
+
+            dgvHojaTrab.Rows(fila).Cells(celda).Value = dgvHojaTrab.Rows(fila).Cells(celda).Value + cbxPlantillas.Text
+
+        Catch ex As Exception
+
+        End Try
+
+
+    End Sub
+
+    'Private Sub dgvHojaTrab_CurrentCellChanged(sender As Object, e As EventArgs) Handles dgvHojaTrab.CurrentCellChanged
+    '    Try
+    '        celda = Convert.ToInt32(dgvHojaTrab.CurrentCell.ColumnIndex.ToString)
+    '        fila = Convert.ToInt32(dgvHojaTrab.CurrentCell.RowIndex.ToString)
+
+    '    Catch ex As Exception
+
+    '    End Try
+
+    'End Sub
+
+
 End Class

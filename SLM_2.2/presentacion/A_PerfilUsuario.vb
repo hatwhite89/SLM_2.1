@@ -483,9 +483,7 @@
         dtLaboratorio.Rows.Add("", "Pacientes", False, "")
         dtLaboratorio.Rows.Add("", "Convenios", False, "")
         dtLaboratorio.Rows.Add("", "Valores de Referencia", False, "")
-        'dtLaboratorio.Rows.Add("", "Informes", False, "")
-
-
+        dtLaboratorio.Rows.Add("", "Informes", False, "")
 
         'Procesos de Facturacion
         dtFacturacion.Rows.Add("", "Facturacion", False, "")
@@ -500,6 +498,7 @@
         dtFacturacion.Rows.Add("", "Cierre de Caja", False, "")
         dtFacturacion.Rows.Add("", "Arqueos", False, "")
         dtFacturacion.Rows.Add("", "Diario Facturación", False, "")
+        dtFacturacion.Rows.Add("", "Habilitar OK", False, "")
 
         'Procesos de Contabilidad
         dtContabilidad.Rows.Add("", "Precio", False, "")
@@ -599,57 +598,86 @@
     End Sub
 
     Private Sub dtFacturacion_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtFacturacion.CellContentClick
-        If e.ColumnIndex = 2 Then
-            If dtFacturacion.Rows(e.RowIndex).Cells(2).Value = False Then
-                dtFacturacion.Rows(e.RowIndex).Cells(2).Value = True
-            Else
-                dtFacturacion.Rows(e.RowIndex).Cells(2).Value = False
+        Try
+            If e.ColumnIndex = 2 Then
+                If dtFacturacion.Rows(e.RowIndex).Cells(2).Value = False Then
+                    dtFacturacion.Rows(e.RowIndex).Cells(2).Value = True
+                Else
+                    dtFacturacion.Rows(e.RowIndex).Cells(2).Value = False
+                End If
             End If
-        End If
+        Catch ex As Exception
+
+        End Try
+
+
+
+
 
     End Sub
 
     Private Sub dtLaboratorio_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtLaboratorio.CellContentClick
-        If e.ColumnIndex = 2 Then
-            If dtLaboratorio.Rows(e.RowIndex).Cells(2).Value = False Then
-                dtLaboratorio.Rows(e.RowIndex).Cells(2).Value = True
-            Else
-                dtLaboratorio.Rows(e.RowIndex).Cells(2).Value = False
+
+        Try
+            If e.ColumnIndex = 2 Then
+                If dtLaboratorio.Rows(e.RowIndex).Cells(2).Value = False Then
+                    dtLaboratorio.Rows(e.RowIndex).Cells(2).Value = True
+                Else
+                    dtLaboratorio.Rows(e.RowIndex).Cells(2).Value = False
+                End If
             End If
-        End If
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
     Private Sub dtTalentoHumano_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtTalentoHumano.CellContentClick
-        If e.ColumnIndex = 2 Then
-            If dtTalentoHumano.Rows(e.RowIndex).Cells(2).Value = False Then
-                dtTalentoHumano.Rows(e.RowIndex).Cells(2).Value = True
-            Else
-                dtTalentoHumano.Rows(e.RowIndex).Cells(2).Value = False
+
+        Try
+            If e.ColumnIndex = 2 Then
+                If dtTalentoHumano.Rows(e.RowIndex).Cells(2).Value = False Then
+                    dtTalentoHumano.Rows(e.RowIndex).Cells(2).Value = True
+                Else
+                    dtTalentoHumano.Rows(e.RowIndex).Cells(2).Value = False
+                End If
             End If
-        End If
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
     Private Sub dtSistema_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtSistema.CellContentClick
-        If e.ColumnIndex = 2 Then
-            If dtSistema.Rows(e.RowIndex).Cells(2).Value = False Then
-                dtSistema.Rows(e.RowIndex).Cells(2).Value = True
-            Else
-                dtSistema.Rows(e.RowIndex).Cells(2).Value = False
+        Try
+            If e.ColumnIndex = 2 Then
+                If dtSistema.Rows(e.RowIndex).Cells(2).Value = False Then
+                    dtSistema.Rows(e.RowIndex).Cells(2).Value = True
+                Else
+                    dtSistema.Rows(e.RowIndex).Cells(2).Value = False
+                End If
             End If
-        End If
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
     Private Sub dtAlmacen_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtAlmacen.CellContentClick
-        If e.ColumnIndex = 2 Then
-            If dtAlmacen.Rows(e.RowIndex).Cells(2).Value = False Then
-                dtAlmacen.Rows(e.RowIndex).Cells(2).Value = True
-            Else
-                dtAlmacen.Rows(e.RowIndex).Cells(2).Value = False
+
+        Try
+            If e.ColumnIndex = 2 Then
+                If dtAlmacen.Rows(e.RowIndex).Cells(2).Value = False Then
+                    dtAlmacen.Rows(e.RowIndex).Cells(2).Value = True
+                Else
+                    dtAlmacen.Rows(e.RowIndex).Cells(2).Value = False
+                End If
             End If
-        End If
+        Catch ex As Exception
+
+        End Try
+
+
 
     End Sub
 
