@@ -515,7 +515,7 @@
     End Sub
 
     Private Sub btnPuestoTrabajo_Click(sender As Object, e As EventArgs) Handles btnPuestoTrabajo.Click
-        M_PuestoTrabajo.lblform.Text = "M_PuestoTrabajo"
+
         M_PuestoTrabajo.ShowDialog()
     End Sub
 
