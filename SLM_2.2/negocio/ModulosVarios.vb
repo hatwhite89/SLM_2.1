@@ -321,6 +321,10 @@ Module ModulosVarios
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnDiarioFacturacion.Enabled = True
                                                 End If
+                                            ElseIf i = 12 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    M_Factura.cbxok.Enabled = True
+                                                End If
                                             End If 'if conteo
 
                                         Next
@@ -483,9 +487,12 @@ Module ModulosVarios
                                             ElseIf i = 9 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnValoresRef.Enabled = True
-                                                Else
-                                                    Form1.btnValoresRef.Enabled = False
                                                 End If
+                                            ElseIf i = 10 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnInformes.Enabled = False
+                                                End If
+
                                             End If 'if conteo
 
                                         Next

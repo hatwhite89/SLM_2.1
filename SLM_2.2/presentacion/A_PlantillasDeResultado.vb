@@ -25,7 +25,8 @@ Public Class A_PlantillasDeResultado
                         LimpiarCampos()
                     End If
                 End With
-
+            Else
+                MsgBox("Falta información por completar.")
             End If
 
         Catch ex As Exception
