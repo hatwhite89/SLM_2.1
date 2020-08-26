@@ -760,10 +760,14 @@ Public Class M_Factura
         Try
 
             If Trim(txtcodigoRecepecionista.Text) = "" Then
-                txtcodigoRecepecionista.Text = "1"
+                'recepcionista
+                txtcodigoRecepecionista.Text = Form1.lblUserCod.Text
+                txtNombreRecepcionista.Text = Form1.lblMiUser.Text
             End If
             If Trim(txtcodigoCajero.Text) = "" Then
-                txtcodigoCajero.Text = "1"
+                'cajero
+                txtcodigoCajero.Text = Form1.lblUserCod.Text
+                txtNombreCajero.Text = Form1.lblMiUser.Text
             End If
             If Trim(txtcodigoTerminal.Text) = "" Then
                 buscarMaquinaLocal()
@@ -996,6 +1000,10 @@ Public Class M_Factura
     End Sub
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Try
+            'cajero
+            txtcodigoCajero.Text = Form1.lblUserCod.Text
+            txtNombreCajero.Text = Form1.lblMiUser.Text
+
             Dim dt As New DataTable
             Dim bandera As Integer = 0
             Dim row As DataRow
@@ -1054,6 +1062,7 @@ Public Class M_Factura
                         .deposito_ = Convert.ToDouble(txtDeposito.Text)
                         .transferencia_ = Convert.ToDouble(txtTransferencia.Text)
                         .cheque_ = Convert.ToDouble(txtCheque.Text)
+                        .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
                     End With
                     'MODIFICO LOS DATOS DE LA FACTURA
                     If objFact.ModificarFactura() = 1 Then
@@ -1141,6 +1150,10 @@ Public Class M_Factura
                         .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
                         .estado_ = cbxAnular.Checked
                         .total_ = Convert.ToDouble(txttotal.Text)
+                        .deposito_ = Convert.ToDouble(txtDeposito.Text)
+                        .transferencia_ = Convert.ToDouble(txtTransferencia.Text)
+                        .cheque_ = Convert.ToDouble(txtCheque.Text)
+                        .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
                     End With
                     'MODIFICO LOS DATOS DE LA FACTURA
                     If objFact.ModificarFactura() = 1 Then
