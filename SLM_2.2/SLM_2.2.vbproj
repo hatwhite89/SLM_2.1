@@ -253,6 +253,12 @@
     <Compile Include="presentacion\A_CambioPassword.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_Candidatos.Designer.vb">
+      <DependentUpon>A_Candidatos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_Candidatos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ConfiguracionCorreo.Designer.vb">
       <DependentUpon>A_ConfiguracionCorreo.vb</DependentUpon>
     </Compile>
@@ -1242,6 +1248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_CambioPassword.resx">
       <DependentUpon>A_CambioPassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_Candidatos.resx">
+      <DependentUpon>A_Candidatos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ConfiguracionCorreo.resx">
       <DependentUpon>A_ConfiguracionCorreo.vb</DependentUpon>

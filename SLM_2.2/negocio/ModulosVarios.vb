@@ -490,7 +490,7 @@ Module ModulosVarios
                                                 End If
                                             ElseIf i = 10 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnInformes.Enabled = False
+                                                    Form1.btnInformes.Enabled = True
                                                 End If
 
                                             End If 'if conteo

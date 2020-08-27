@@ -730,5 +730,7 @@ Public Class A_Cheques
         End Try
     End Sub
 
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
 
+    End Sub
 End Class

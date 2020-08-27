@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class A_MuestraPantallaCliente
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class A_MuestraPantallaCliente
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_MuestraPantallaCliente))
@@ -30,6 +30,9 @@ Partial Class A_MuestraPantallaCliente
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.cbxVideos = New System.Windows.Forms.ComboBox()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.dtPacientesEspera, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WMP, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,7 +81,7 @@ Partial Class A_MuestraPantallaCliente
         Me.lblFecha.AutoSize = True
         Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFecha.ForeColor = System.Drawing.SystemColors.MenuText
-        Me.lblFecha.Location = New System.Drawing.Point(612, 73)
+        Me.lblFecha.Location = New System.Drawing.Point(595, 73)
         Me.lblFecha.Name = "lblFecha"
         Me.lblFecha.Size = New System.Drawing.Size(75, 24)
         Me.lblFecha.TabIndex = 4
@@ -98,12 +101,28 @@ Partial Class A_MuestraPantallaCliente
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
+        'cbxVideos
+        '
+        Me.cbxVideos.FormattingEnabled = True
+        Me.cbxVideos.Location = New System.Drawing.Point(349, 12)
+        Me.cbxVideos.Name = "cbxVideos"
+        Me.cbxVideos.Size = New System.Drawing.Size(121, 21)
+        Me.cbxVideos.TabIndex = 6
+        Me.cbxVideos.Visible = False
+        '
+        'Timer2
+        '
+        '
+        'Timer3
+        '
+        '
         'A_MuestraPantallaCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(884, 536)
+        Me.Controls.Add(Me.cbxVideos)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblFecha)
         Me.Controls.Add(Me.lblHora)
@@ -126,4 +145,7 @@ Partial Class A_MuestraPantallaCliente
     Friend WithEvents lblFecha As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents cbxVideos As ComboBox
+    Friend WithEvents Timer2 As Timer
+    Friend WithEvents Timer3 As Timer
 End Class
