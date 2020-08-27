@@ -44,6 +44,16 @@
                     M_Empleados.lblcodeDepto.Text = ""
                     Me.Close()
                 End If
+
+            ElseIf (lblform.Text = "Candidatos") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el área?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    A_Candidatos.lblcodArea.Text = txtcodigo.Text
+                    A_Candidatos.txtArea.Text = txtnombre.Text
+                    Me.Close()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
