@@ -26,10 +26,11 @@ Partial Class M_PuestoTrabajo
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
-        Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
         Me.lbldescripcionB = New System.Windows.Forms.Label()
+        Me.lbltotal = New System.Windows.Forms.Label()
         Me.gbxsucursal = New System.Windows.Forms.GroupBox()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.txtnombreDepto = New System.Windows.Forms.TextBox()
         Me.btnDepto = New System.Windows.Forms.Button()
         Me.txtcodigoDepto = New System.Windows.Forms.TextBox()
@@ -45,7 +46,6 @@ Partial Class M_PuestoTrabajo
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.lblform = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxsucursal.SuspendLayout()
@@ -67,16 +67,16 @@ Partial Class M_PuestoTrabajo
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.gbxbusqueda.Size = New System.Drawing.Size(696, 338)
+        Me.gbxbusqueda.Size = New System.Drawing.Size(702, 338)
         Me.gbxbusqueda.TabIndex = 119
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR PUESTO DE TRABAJO"
         '
         'lblcantidad
         '
-        Me.lblcantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblcantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(663, 67)
+        Me.lblcantidad.Location = New System.Drawing.Point(221, 323)
         Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcantidad.Name = "lblcantidad"
         Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
@@ -87,30 +87,21 @@ Partial Class M_PuestoTrabajo
         '
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
+        Me.dgbtabla.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgbtabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgbtabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.dgbtabla.Location = New System.Drawing.Point(2, 82)
+        Me.dgbtabla.Location = New System.Drawing.Point(0, 48)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(692, 254)
+        Me.dgbtabla.Size = New System.Drawing.Size(698, 273)
         Me.dgbtabla.TabIndex = 22
-        '
-        'lbltotal
-        '
-        Me.lbltotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(446, 67)
-        Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(184, 13)
-        Me.lbltotal.TabIndex = 114
-        Me.lbltotal.Text = "TOTAL DE PUESTOS DE TRABAJO"
         '
         'txtdescripcionB
         '
@@ -131,6 +122,17 @@ Partial Class M_PuestoTrabajo
         Me.lbldescripcionB.TabIndex = 114
         Me.lbldescripcionB.Text = "Descripción"
         '
+        'lbltotal
+        '
+        Me.lbltotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lbltotal.AutoSize = True
+        Me.lbltotal.Location = New System.Drawing.Point(4, 323)
+        Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbltotal.Name = "lbltotal"
+        Me.lbltotal.Size = New System.Drawing.Size(184, 13)
+        Me.lbltotal.TabIndex = 114
+        Me.lbltotal.Text = "TOTAL DE PUESTOS DE TRABAJO"
+        '
         'gbxsucursal
         '
         Me.gbxsucursal.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -149,10 +151,20 @@ Partial Class M_PuestoTrabajo
         Me.gbxsucursal.Name = "gbxsucursal"
         Me.gbxsucursal.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxsucursal.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.gbxsucursal.Size = New System.Drawing.Size(696, 138)
+        Me.gbxsucursal.Size = New System.Drawing.Size(701, 138)
         Me.gbxsucursal.TabIndex = 118
         Me.gbxsucursal.TabStop = False
         Me.gbxsucursal.Text = "REGISTRAR PUESTO DE TRABAJO"
+        '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(294, 99)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(39, 13)
+        Me.lblform.TabIndex = 171
+        Me.lblform.Text = "Label1"
+        Me.lblform.Visible = False
         '
         'txtnombreDepto
         '
@@ -328,16 +340,6 @@ Partial Class M_PuestoTrabajo
         Me.Label4.Size = New System.Drawing.Size(155, 20)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Puesto de Trabajo"
-        '
-        'lblform
-        '
-        Me.lblform.AutoSize = True
-        Me.lblform.Location = New System.Drawing.Point(294, 99)
-        Me.lblform.Name = "lblform"
-        Me.lblform.Size = New System.Drawing.Size(39, 13)
-        Me.lblform.TabIndex = 171
-        Me.lblform.Text = "Label1"
-        Me.lblform.Visible = False
         '
         'M_PuestoTrabajo
         '

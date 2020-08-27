@@ -152,7 +152,7 @@ Partial Class M_Horarios
         Me.gbxRegistrar.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxRegistrar.Name = "gbxRegistrar"
         Me.gbxRegistrar.Padding = New System.Windows.Forms.Padding(2)
-        Me.gbxRegistrar.Size = New System.Drawing.Size(696, 273)
+        Me.gbxRegistrar.Size = New System.Drawing.Size(710, 273)
         Me.gbxRegistrar.TabIndex = 14
         Me.gbxRegistrar.TabStop = False
         Me.gbxRegistrar.Text = "REGISTRAR HORARIO DE TRABAJO"
@@ -171,7 +171,7 @@ Partial Class M_Horarios
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(688, 56)
+        Me.GroupBox1.Size = New System.Drawing.Size(702, 56)
         Me.GroupBox1.TabIndex = 155
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Fin de Semana"
@@ -305,7 +305,7 @@ Partial Class M_Horarios
         Me.gbxDiasSemanales.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxDiasSemanales.Name = "gbxDiasSemanales"
         Me.gbxDiasSemanales.Padding = New System.Windows.Forms.Padding(2)
-        Me.gbxDiasSemanales.Size = New System.Drawing.Size(688, 85)
+        Me.gbxDiasSemanales.Size = New System.Drawing.Size(702, 85)
         Me.gbxDiasSemanales.TabIndex = 147
         Me.gbxDiasSemanales.TabStop = False
         Me.gbxDiasSemanales.Text = "Días Semanales"
@@ -391,7 +391,7 @@ Partial Class M_Horarios
         Me.rtxtObservacion.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtObservacion.MaxLength = 200
         Me.rtxtObservacion.Name = "rtxtObservacion"
-        Me.rtxtObservacion.Size = New System.Drawing.Size(608, 33)
+        Me.rtxtObservacion.Size = New System.Drawing.Size(622, 33)
         Me.rtxtObservacion.TabIndex = 144
         Me.rtxtObservacion.Text = ""
         '
@@ -465,15 +465,16 @@ Partial Class M_Horarios
         Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
-        Me.gbxbusqueda.Size = New System.Drawing.Size(696, 251)
+        Me.gbxbusqueda.Size = New System.Drawing.Size(710, 265)
         Me.gbxbusqueda.TabIndex = 114
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR HORARIO DE TRABAJO"
         '
         'lblcantidad
         '
+        Me.lblcantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(230, 202)
+        Me.lblcantidad.Location = New System.Drawing.Point(222, 250)
         Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcantidad.Name = "lblcantidad"
         Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
@@ -484,21 +485,27 @@ Partial Class M_Horarios
         '
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
+        Me.dgbtabla.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgbtabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(4, 45)
+        Me.dgbtabla.Location = New System.Drawing.Point(8, 41)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(688, 148)
+        Me.dgbtabla.Size = New System.Drawing.Size(698, 207)
         Me.dgbtabla.TabIndex = 22
         '
         'lbltotal
         '
+        Me.lbltotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(13, 202)
+        Me.lbltotal.Location = New System.Drawing.Point(5, 250)
         Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(190, 13)
@@ -511,7 +518,7 @@ Partial Class M_Horarios
         Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
-        Me.txtnombreB.Size = New System.Drawing.Size(633, 20)
+        Me.txtnombreB.Size = New System.Drawing.Size(642, 20)
         Me.txtnombreB.TabIndex = 115
         '
         'lblnombreB

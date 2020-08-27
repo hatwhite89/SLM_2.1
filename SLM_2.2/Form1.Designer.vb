@@ -227,6 +227,8 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox55 = New System.Windows.Forms.PictureBox()
         Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.lblFecha = New System.Windows.Forms.Label()
+        Me.lblHora = New System.Windows.Forms.Label()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -345,9 +347,9 @@ Partial Class Form1
         Me.btnContabilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnContabilidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnContabilidad.ForeColor = System.Drawing.Color.White
-        Me.btnContabilidad.Location = New System.Drawing.Point(7, 256)
+        Me.btnContabilidad.Location = New System.Drawing.Point(0, 254)
         Me.btnContabilidad.Name = "btnContabilidad"
-        Me.btnContabilidad.Size = New System.Drawing.Size(104, 44)
+        Me.btnContabilidad.Size = New System.Drawing.Size(122, 44)
         Me.btnContabilidad.TabIndex = 4
         Me.btnContabilidad.Text = "Contabilidad"
         Me.btnContabilidad.UseVisualStyleBackColor = False
@@ -361,9 +363,9 @@ Partial Class Form1
         Me.btnAlmacen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAlmacen.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAlmacen.ForeColor = System.Drawing.Color.White
-        Me.btnAlmacen.Location = New System.Drawing.Point(7, 210)
+        Me.btnAlmacen.Location = New System.Drawing.Point(0, 209)
         Me.btnAlmacen.Name = "btnAlmacen"
-        Me.btnAlmacen.Size = New System.Drawing.Size(104, 44)
+        Me.btnAlmacen.Size = New System.Drawing.Size(122, 44)
         Me.btnAlmacen.TabIndex = 10
         Me.btnAlmacen.Text = "Almacén"
         Me.btnAlmacen.UseVisualStyleBackColor = False
@@ -377,9 +379,9 @@ Partial Class Form1
         Me.btnTalentoHumano.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTalentoHumano.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTalentoHumano.ForeColor = System.Drawing.Color.White
-        Me.btnTalentoHumano.Location = New System.Drawing.Point(7, 394)
+        Me.btnTalentoHumano.Location = New System.Drawing.Point(0, 389)
         Me.btnTalentoHumano.Name = "btnTalentoHumano"
-        Me.btnTalentoHumano.Size = New System.Drawing.Size(104, 44)
+        Me.btnTalentoHumano.Size = New System.Drawing.Size(122, 44)
         Me.btnTalentoHumano.TabIndex = 9
         Me.btnTalentoHumano.Text = "Talento Humano"
         Me.btnTalentoHumano.UseVisualStyleBackColor = False
@@ -392,9 +394,9 @@ Partial Class Form1
         Me.btnSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSistema.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSistema.ForeColor = System.Drawing.Color.White
-        Me.btnSistema.Location = New System.Drawing.Point(7, 302)
+        Me.btnSistema.Location = New System.Drawing.Point(0, 299)
         Me.btnSistema.Name = "btnSistema"
-        Me.btnSistema.Size = New System.Drawing.Size(104, 44)
+        Me.btnSistema.Size = New System.Drawing.Size(122, 44)
         Me.btnSistema.TabIndex = 8
         Me.btnSistema.Text = "Sistema"
         Me.btnSistema.UseVisualStyleBackColor = False
@@ -429,9 +431,9 @@ Partial Class Form1
         Me.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnFacturacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFacturacion.ForeColor = System.Drawing.Color.White
-        Me.btnFacturacion.Location = New System.Drawing.Point(7, 164)
+        Me.btnFacturacion.Location = New System.Drawing.Point(0, 164)
         Me.btnFacturacion.Name = "btnFacturacion"
-        Me.btnFacturacion.Size = New System.Drawing.Size(104, 44)
+        Me.btnFacturacion.Size = New System.Drawing.Size(122, 44)
         Me.btnFacturacion.TabIndex = 2
         Me.btnFacturacion.Text = "Facturación"
         Me.btnFacturacion.UseVisualStyleBackColor = False
@@ -445,9 +447,9 @@ Partial Class Form1
         Me.btnlaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnlaboratorio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnlaboratorio.ForeColor = System.Drawing.Color.White
-        Me.btnlaboratorio.Location = New System.Drawing.Point(7, 348)
+        Me.btnlaboratorio.Location = New System.Drawing.Point(0, 344)
         Me.btnlaboratorio.Name = "btnlaboratorio"
-        Me.btnlaboratorio.Size = New System.Drawing.Size(104, 44)
+        Me.btnlaboratorio.Size = New System.Drawing.Size(122, 44)
         Me.btnlaboratorio.TabIndex = 1
         Me.btnlaboratorio.Text = "Laboratorio"
         Me.btnlaboratorio.UseVisualStyleBackColor = False
@@ -2886,6 +2888,32 @@ Partial Class Form1
         Me.Panel9.Size = New System.Drawing.Size(708, 12)
         Me.Panel9.TabIndex = 1
         '
+        'lblFecha
+        '
+        Me.lblFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblFecha.AutoSize = True
+        Me.lblFecha.BackColor = System.Drawing.Color.DimGray
+        Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFecha.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblFecha.Location = New System.Drawing.Point(9, 540)
+        Me.lblFecha.Name = "lblFecha"
+        Me.lblFecha.Size = New System.Drawing.Size(45, 13)
+        Me.lblFecha.TabIndex = 57
+        Me.lblFecha.Text = "Label8"
+        '
+        'lblHora
+        '
+        Me.lblHora.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblHora.AutoSize = True
+        Me.lblHora.BackColor = System.Drawing.Color.DimGray
+        Me.lblHora.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHora.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblHora.Location = New System.Drawing.Point(624, 537)
+        Me.lblHora.Name = "lblHora"
+        Me.lblHora.Size = New System.Drawing.Size(45, 13)
+        Me.lblHora.TabIndex = 58
+        Me.lblHora.Text = "Label9"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2893,6 +2921,8 @@ Partial Class Form1
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(708, 557)
+        Me.Controls.Add(Me.lblHora)
+        Me.Controls.Add(Me.lblFecha)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel9)
         Me.Controls.Add(Me.PictureBox55)
@@ -2905,15 +2935,15 @@ Partial Class Form1
         Me.Controls.Add(Me.btnSistema)
         Me.Controls.Add(Me.lblUserCod)
         Me.Controls.Add(Me.lblMiUser)
-        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.btnContabilidad)
+        Me.Controls.Add(Me.PanelFactura)
+        Me.Controls.Add(Me.PanelAlmacen)
         Me.Controls.Add(Me.PanelTalentoHumano)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.panelMenu)
         Me.Controls.Add(Me.PanelSistema)
         Me.Controls.Add(Me.PanelLab)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.PanelFactura)
-        Me.Controls.Add(Me.PanelAlmacen)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -3243,4 +3273,6 @@ Partial Class Form1
     Friend WithEvents PictureBox44 As PictureBox
     Friend WithEvents PictureBox42 As PictureBox
     Friend WithEvents PictureBox38 As PictureBox
+    Friend WithEvents lblFecha As Label
+    Friend WithEvents lblHora As Label
 End Class
