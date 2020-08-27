@@ -160,6 +160,7 @@
     <Compile Include="negocio\ClsAsientoContable.vb" />
     <Compile Include="negocio\ClsBitacora.vb" />
     <Compile Include="negocio\ClsCAI.vb" />
+    <Compile Include="negocio\ClsCandidatos.vb" />
     <Compile Include="negocio\ClsCapacitaciones.vb" />
     <Compile Include="negocio\ClsCategoriaroducto.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
@@ -855,6 +856,12 @@
     <Compile Include="presentacion\M_Departamento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_DiarioFacturacion.Designer.vb">
+      <DependentUpon>M_DiarioFacturacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_DiarioFacturacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_Empleados.Designer.vb">
       <DependentUpon>M_Empleados.vb</DependentUpon>
     </Compile>
@@ -1538,6 +1545,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Departamento.resx">
       <DependentUpon>M_Departamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_DiarioFacturacion.resx">
+      <DependentUpon>M_DiarioFacturacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Empleados.resx">
       <DependentUpon>M_Empleados.vb</DependentUpon>

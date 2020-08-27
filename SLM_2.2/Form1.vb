@@ -37,7 +37,8 @@
         Catch ex As Exception
 
         End Try
-
+        lblHora.Text = DateTime.Now.ToString("hh:mm:ss")
+        lblFecha.Text = DateTime.Now.ToLongDateString()
     End Sub
     Private Sub btnContabilidad_Click(sender As Object, e As EventArgs) Handles btnContabilidad.Click
 
@@ -515,7 +516,7 @@
     End Sub
 
     Private Sub btnPuestoTrabajo_Click(sender As Object, e As EventArgs) Handles btnPuestoTrabajo.Click
-        M_PuestoTrabajo.lblform.Text = "M_PuestoTrabajo"
+
         M_PuestoTrabajo.ShowDialog()
     End Sub
 

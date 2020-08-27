@@ -5,8 +5,8 @@
             Dim dv As DataView = objPuesto.SeleccionarPuestoTrabajo.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+            alternarColoFilasDatagridview(dgbtabla)
             rtxtdescripcion.ReadOnly = True
             txtcodigo.ReadOnly = True
             txtcodigoDepto.ReadOnly = True
@@ -114,7 +114,7 @@
                     Dim dv As DataView = objPuesto.SeleccionarPuestoTrabajo.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
-                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
                     txtcodigo.ReadOnly = True
                     rtxtdescripcion.ReadOnly = True
@@ -155,7 +155,7 @@
                     Dim dv As DataView = objPuesto.SeleccionarPuestoTrabajo.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
-                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
                     txtcodigo.ReadOnly = True
                     rtxtdescripcion.ReadOnly = True
@@ -194,12 +194,12 @@
                 Dim dv As DataView = objPuesto.BuscarPuestoTrabajo.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             Else
                 Dim dv As DataView = objPuesto.SeleccionarPuestoTrabajo.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             End If
 
         Catch ex As Exception
