@@ -478,6 +478,11 @@ Public Class ClsFactura
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoCajero" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoCajero_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -630,6 +635,17 @@ Public Class ClsFactura
                     Return dt
                 End Using
             End Using
+        End Using
+    End Function
+    Public Function SeleccionarDiarioFacturacion() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using da As New SqlDataAdapter("M_slmSeleccionarFacturaDiario", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
         End Using
     End Function
     Public Function SeleccionarFactura() As DataTable

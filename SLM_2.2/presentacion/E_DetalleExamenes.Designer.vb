@@ -63,8 +63,9 @@ Partial Class E_DetalleExamenes
         Me.codigoUnidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.unidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.lblform = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dtItem, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,7 +88,7 @@ Partial Class E_DetalleExamenes
         '
         Me.txtCodExamen.Enabled = False
         Me.txtCodExamen.Location = New System.Drawing.Point(116, 23)
-        Me.txtCodExamen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCodExamen.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCodExamen.Name = "txtCodExamen"
         Me.txtCodExamen.Size = New System.Drawing.Size(132, 22)
         Me.txtCodExamen.TabIndex = 1
@@ -105,7 +106,7 @@ Partial Class E_DetalleExamenes
         'txtCodBreve
         '
         Me.txtCodBreve.Location = New System.Drawing.Point(116, 89)
-        Me.txtCodBreve.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCodBreve.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCodBreve.Name = "txtCodBreve"
         Me.txtCodBreve.Size = New System.Drawing.Size(132, 22)
         Me.txtCodBreve.TabIndex = 3
@@ -123,7 +124,7 @@ Partial Class E_DetalleExamenes
         'txtDescripcion
         '
         Me.txtDescripcion.Location = New System.Drawing.Point(116, 121)
-        Me.txtDescripcion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDescripcion.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(539, 22)
         Me.txtDescripcion.TabIndex = 5
@@ -157,9 +158,9 @@ Partial Class E_DetalleExamenes
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtCodBreve)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 78)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(664, 283)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
@@ -168,7 +169,7 @@ Partial Class E_DetalleExamenes
         'txtCodInterno
         '
         Me.txtCodInterno.Location = New System.Drawing.Point(116, 57)
-        Me.txtCodInterno.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCodInterno.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCodInterno.Name = "txtCodInterno"
         Me.txtCodInterno.Size = New System.Drawing.Size(132, 22)
         Me.txtCodInterno.TabIndex = 25
@@ -197,7 +198,7 @@ Partial Class E_DetalleExamenes
         'txtCodigoSubArea
         '
         Me.txtCodigoSubArea.Location = New System.Drawing.Point(579, 25)
-        Me.txtCodigoSubArea.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCodigoSubArea.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCodigoSubArea.Name = "txtCodigoSubArea"
         Me.txtCodigoSubArea.ReadOnly = True
         Me.txtCodigoSubArea.Size = New System.Drawing.Size(65, 22)
@@ -251,7 +252,7 @@ Partial Class E_DetalleExamenes
         Me.chkEstado.Checked = True
         Me.chkEstado.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkEstado.Location = New System.Drawing.Point(349, 57)
-        Me.chkEstado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkEstado.Margin = New System.Windows.Forms.Padding(4)
         Me.chkEstado.Name = "chkEstado"
         Me.chkEstado.Size = New System.Drawing.Size(112, 21)
         Me.chkEstado.TabIndex = 17
@@ -261,7 +262,7 @@ Partial Class E_DetalleExamenes
         'txtComentario
         '
         Me.txtComentario.Location = New System.Drawing.Point(116, 249)
-        Me.txtComentario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtComentario.Margin = New System.Windows.Forms.Padding(4)
         Me.txtComentario.Name = "txtComentario"
         Me.txtComentario.Size = New System.Drawing.Size(539, 22)
         Me.txtComentario.TabIndex = 16
@@ -279,7 +280,7 @@ Partial Class E_DetalleExamenes
         'txtAbreviatura
         '
         Me.txtAbreviatura.Location = New System.Drawing.Point(116, 217)
-        Me.txtAbreviatura.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtAbreviatura.Margin = New System.Windows.Forms.Padding(4)
         Me.txtAbreviatura.Name = "txtAbreviatura"
         Me.txtAbreviatura.Size = New System.Drawing.Size(539, 22)
         Me.txtAbreviatura.TabIndex = 14
@@ -297,7 +298,7 @@ Partial Class E_DetalleExamenes
         'txtClasificación
         '
         Me.txtClasificación.Location = New System.Drawing.Point(116, 185)
-        Me.txtClasificación.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtClasificación.Margin = New System.Windows.Forms.Padding(4)
         Me.txtClasificación.Name = "txtClasificación"
         Me.txtClasificación.Size = New System.Drawing.Size(132, 22)
         Me.txtClasificación.TabIndex = 12
@@ -315,7 +316,7 @@ Partial Class E_DetalleExamenes
         'txtPrecioBase
         '
         Me.txtPrecioBase.Location = New System.Drawing.Point(116, 153)
-        Me.txtPrecioBase.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPrecioBase.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPrecioBase.Name = "txtPrecioBase"
         Me.txtPrecioBase.Size = New System.Drawing.Size(132, 22)
         Me.txtPrecioBase.TabIndex = 10
@@ -338,7 +339,7 @@ Partial Class E_DetalleExamenes
         Me.btnGrupoExamen.FlatAppearance.BorderSize = 0
         Me.btnGrupoExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGrupoExamen.Location = New System.Drawing.Point(421, 25)
-        Me.btnGrupoExamen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGrupoExamen.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGrupoExamen.Name = "btnGrupoExamen"
         Me.btnGrupoExamen.Size = New System.Drawing.Size(29, 22)
         Me.btnGrupoExamen.TabIndex = 8
@@ -347,7 +348,7 @@ Partial Class E_DetalleExamenes
         'txtGrupo
         '
         Me.txtGrupo.Location = New System.Drawing.Point(349, 23)
-        Me.txtGrupo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtGrupo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtGrupo.Name = "txtGrupo"
         Me.txtGrupo.Size = New System.Drawing.Size(65, 22)
         Me.txtGrupo.TabIndex = 7
@@ -366,9 +367,9 @@ Partial Class E_DetalleExamenes
         '
         Me.GroupBox2.Controls.Add(Me.dtItem)
         Me.GroupBox2.Location = New System.Drawing.Point(688, 15)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(509, 652)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
@@ -384,7 +385,7 @@ Partial Class E_DetalleExamenes
         Me.dtItem.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtItem.GridColor = System.Drawing.Color.White
         Me.dtItem.Location = New System.Drawing.Point(4, 19)
-        Me.dtItem.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtItem.Margin = New System.Windows.Forms.Padding(4)
         Me.dtItem.Name = "dtItem"
         Me.dtItem.ReadOnly = True
         Me.dtItem.RowHeadersWidth = 51
@@ -399,7 +400,7 @@ Partial Class E_DetalleExamenes
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
         Me.btnGuardar.Location = New System.Drawing.Point(553, 17)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(100, 28)
         Me.btnGuardar.TabIndex = 8
@@ -413,7 +414,7 @@ Partial Class E_DetalleExamenes
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
         Me.btnModificar.Location = New System.Drawing.Point(448, 17)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(100, 28)
         Me.btnModificar.TabIndex = 9
@@ -427,7 +428,7 @@ Partial Class E_DetalleExamenes
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.White
         Me.btnCrear.Location = New System.Drawing.Point(343, 17)
-        Me.btnCrear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCrear.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(100, 28)
         Me.btnCrear.TabIndex = 10
@@ -447,9 +448,9 @@ Partial Class E_DetalleExamenes
         '
         Me.GroupBox3.Controls.Add(Me.dtResultados)
         Me.GroupBox3.Location = New System.Drawing.Point(16, 368)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Size = New System.Drawing.Size(664, 299)
         Me.GroupBox3.TabIndex = 12
         Me.GroupBox3.TabStop = False
@@ -460,7 +461,7 @@ Partial Class E_DetalleExamenes
         Me.dtResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtResultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.codigoUnidad, Me.unidad})
         Me.dtResultados.Location = New System.Drawing.Point(8, 23)
-        Me.dtResultados.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtResultados.Margin = New System.Windows.Forms.Padding(4)
         Me.dtResultados.Name = "dtResultados"
         Me.dtResultados.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.dtResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -505,23 +506,12 @@ Partial Class E_DetalleExamenes
         Me.GroupBox4.Controls.Add(Me.btnGuardar)
         Me.GroupBox4.Controls.Add(Me.btnCrear)
         Me.GroupBox4.Location = New System.Drawing.Point(16, 15)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Size = New System.Drawing.Size(664, 55)
         Me.GroupBox4.TabIndex = 13
         Me.GroupBox4.TabStop = False
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(12, 18)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(105, 25)
-        Me.Label12.TabIndex = 11
-        Me.Label12.Text = "Exámenes"
         '
         'lblform
         '
@@ -534,12 +524,38 @@ Partial Class E_DetalleExamenes
         Me.lblform.Text = "form"
         Me.lblform.Visible = False
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(12, 18)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(105, 25)
+        Me.Label12.TabIndex = 11
+        Me.Label12.Text = "Exámenes"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(257, -5)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(100, 28)
+        Me.Button1.TabIndex = 27
+        Me.Button1.Text = "temporal"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'E_DetalleExamenes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1211, 682)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.lblFila)
@@ -547,7 +563,7 @@ Partial Class E_DetalleExamenes
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "E_DetalleExamenes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Detalle Examenes"
@@ -606,4 +622,5 @@ Partial Class E_DetalleExamenes
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents lblform As Label
+    Friend WithEvents Button1 As Button
 End Class

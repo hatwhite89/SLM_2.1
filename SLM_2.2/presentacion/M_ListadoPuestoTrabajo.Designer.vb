@@ -29,12 +29,14 @@ Partial Class M_ListadoPuestoTrabajo
         Me.lbltipoCta = New System.Windows.Forms.Label()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
+        Me.lblBandera = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.Controls.Add(Me.lblBandera)
         Me.gbxbusqueda.Controls.Add(Me.lblcodeDepto)
         Me.gbxbusqueda.Controls.Add(Me.lblform)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
@@ -58,6 +60,7 @@ Partial Class M_ListadoPuestoTrabajo
         Me.lblcodeDepto.Size = New System.Drawing.Size(52, 17)
         Me.lblcodeDepto.TabIndex = 122
         Me.lblcodeDepto.Text = "Código"
+        Me.lblcodeDepto.Visible = False
         '
         'lblform
         '
@@ -111,6 +114,15 @@ Partial Class M_ListadoPuestoTrabajo
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL PUESTOS DE TRABAJO"
         '
+        'lblBandera
+        '
+        Me.lblBandera.AutoSize = True
+        Me.lblBandera.Location = New System.Drawing.Point(663, -3)
+        Me.lblBandera.Name = "lblBandera"
+        Me.lblBandera.Size = New System.Drawing.Size(0, 17)
+        Me.lblBandera.TabIndex = 123
+        Me.lblBandera.Visible = False
+        '
         'M_ListadoPuestoTrabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -136,4 +148,5 @@ Partial Class M_ListadoPuestoTrabajo
     Friend WithEvents lbltipoCta As Label
     Friend WithEvents lblcantidad As Label
     Friend WithEvents lbltotal As Label
+    Friend WithEvents lblBandera As Label
 End Class

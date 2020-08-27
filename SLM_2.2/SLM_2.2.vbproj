@@ -12,7 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
@@ -115,12 +115,17 @@
   <ItemGroup>
     <Compile Include="conexion\Class2.vb" />
     <Compile Include="conexion\ClsConnection.vb" />
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-      <SubType>Form</SubType>
+    <Compile Include="InformeOrdenesDeTrabajoExamen.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InformeOrdenesDeTrabajoExamen.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="InformeOrdenesdeTrabajoPeriodo.vb">
       <AutoGen>True</AutoGen>
@@ -155,6 +160,8 @@
     <Compile Include="negocio\ClsAsientoContable.vb" />
     <Compile Include="negocio\ClsBitacora.vb" />
     <Compile Include="negocio\ClsCAI.vb" />
+    <Compile Include="negocio\ClsCandidatos.vb" />
+    <Compile Include="negocio\ClsCapacitaciones.vb" />
     <Compile Include="negocio\ClsCategoriaroducto.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
     <Compile Include="negocio\ClsContratos.vb" />
@@ -163,6 +170,7 @@
     <Compile Include="negocio\ClsDescuentos.vb" />
     <Compile Include="negocio\ClsDetalleAsiento.vb" />
     <Compile Include="negocio\ClsDetalleCAI.vb" />
+    <Compile Include="negocio\ClsDetalleCapacitaciones.vb" />
     <Compile Include="negocio\ClsDetalleContactos.vb" />
     <Compile Include="negocio\ClsDetalleFacturaCompra.vb" />
     <Compile Include="negocio\ClsDetalleListaPrecios.vb" />
@@ -195,6 +203,7 @@
     <Compile Include="negocio\ClsPerfilesUsuario.vb" />
     <Compile Include="negocio\ClsPeriodoContable.vb" />
     <Compile Include="negocio\ClsPermisos.vb" />
+    <Compile Include="negocio\ClsPlantillaResultado.vb" />
     <Compile Include="negocio\ClsPrecio.vb" />
     <Compile Include="negocio\ClsProducto.vb" />
     <Compile Include="negocio\ClsProfesion.vb" />
@@ -243,6 +252,12 @@
       <DependentUpon>A_CambioPassword.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_CambioPassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_Candidatos.Designer.vb">
+      <DependentUpon>A_Candidatos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_Candidatos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_ConfiguracionCorreo.Designer.vb">
@@ -516,6 +531,12 @@
     <Compile Include="presentacion\A_PeriodoContable.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_PlantillasDeResultado.Designer.vb">
+      <DependentUpon>A_PlantillasDeResultado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_PlantillasDeResultado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_PrintCheque.Designer.vb">
       <DependentUpon>A_PrintCheque.vb</DependentUpon>
     </Compile>
@@ -787,6 +808,12 @@
     <Compile Include="presentacion\M_Arqueos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_BuscarCapacitaciones.Designer.vb">
+      <DependentUpon>M_BuscarCapacitaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_BuscarCapacitaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_BuscarEmpleados.Designer.vb">
       <DependentUpon>M_BuscarEmpleados.vb</DependentUpon>
     </Compile>
@@ -797,6 +824,12 @@
       <DependentUpon>M_CAI.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_CAI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_Capacitaciones.Designer.vb">
+      <DependentUpon>M_Capacitaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_Capacitaciones.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_CierreCaja.vb">
@@ -821,6 +854,12 @@
       <DependentUpon>M_Departamento.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_Departamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_DiarioFacturacion.Designer.vb">
+      <DependentUpon>M_DiarioFacturacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_DiarioFacturacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_Empleados.Designer.vb">
@@ -1188,6 +1227,10 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InformeOrdenesDeTrabajoExamen.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformeOrdenesDeTrabajoExamen.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="InformeOrdenesdeTrabajoPeriodo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>InformeOrdenesdeTrabajoPeriodo.vb</LastGenOutput>
@@ -1212,6 +1255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_CambioPassword.resx">
       <DependentUpon>A_CambioPassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_Candidatos.resx">
+      <DependentUpon>A_Candidatos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ConfiguracionCorreo.resx">
       <DependentUpon>A_ConfiguracionCorreo.vb</DependentUpon>
@@ -1335,6 +1381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_PeriodoContable.resx">
       <DependentUpon>A_PeriodoContable.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_PlantillasDeResultado.resx">
+      <DependentUpon>A_PlantillasDeResultado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_PrintCheque.resx">
       <DependentUpon>A_PrintCheque.vb</DependentUpon>
@@ -1471,11 +1520,17 @@
     <EmbeddedResource Include="presentacion\M_Arqueos.resx">
       <DependentUpon>M_Arqueos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_BuscarCapacitaciones.resx">
+      <DependentUpon>M_BuscarCapacitaciones.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_BuscarEmpleados.resx">
       <DependentUpon>M_BuscarEmpleados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_CAI.resx">
       <DependentUpon>M_CAI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_Capacitaciones.resx">
+      <DependentUpon>M_Capacitaciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_CierreCaja.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1490,6 +1545,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Departamento.resx">
       <DependentUpon>M_Departamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_DiarioFacturacion.resx">
+      <DependentUpon>M_DiarioFacturacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Empleados.resx">
       <DependentUpon>M_Empleados.vb</DependentUpon>

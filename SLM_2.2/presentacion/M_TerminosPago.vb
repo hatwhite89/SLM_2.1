@@ -144,6 +144,16 @@
                     M_Factura.txtdescripcionTermino.Text = rtxtdescripcion.Text
                     Me.Close()
                 End If
+            ElseIf (lblform.Text = "M_ListaPrecios") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el término de pago en la lista de precios?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_ListaPrecios.lblcodeT.Text = lblcode.Text
+                    M_ListaPrecios.txtcodigoTermino.Text = txtcodigo.Text
+                    M_ListaPrecios.txtDescripcionTermino.Text = rtxtdescripcion.Text
+                    Me.Close()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)

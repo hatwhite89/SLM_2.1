@@ -2,6 +2,7 @@
 
 Public Class ClsPermisos
     Dim asunto As String
+    Dim goseSueldo As Boolean
     Dim codigo, codigoEmpleado, codigoJefeInmediato, codigoTalentoHumano, codigoDepto As Integer
     Dim fecha As Date
     Dim entradaTarde, salidaTemprano, salidaTarde As System.Nullable(Of Date)
@@ -90,7 +91,14 @@ Public Class ClsPermisos
             salidaTarde = value
         End Set
     End Property
-
+    Public Property goseSueldo_ As Boolean
+        Get
+            Return goseSueldo
+        End Get
+        Set(value As Boolean)
+            goseSueldo = value
+        End Set
+    End Property
     Public Function RegistrarNuevoPermiso() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -138,6 +146,11 @@ Public Class ClsPermisos
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoTalentoHumano" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = codigoTalentoHumano_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "goseSueldo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = goseSueldo_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -213,6 +226,10 @@ Public Class ClsPermisos
         sqlpar.Value = codigoTalentoHumano_
         sqlcom.Parameters.Add(sqlpar)
 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "goseSueldo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = goseSueldo_
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"

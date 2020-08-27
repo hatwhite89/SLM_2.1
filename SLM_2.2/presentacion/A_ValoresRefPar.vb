@@ -1,6 +1,8 @@
 ﻿Public Class A_ValoresRefPar
 
     Dim tab As String = 0
+    Dim codigoValRef As New ArrayList
+    Dim codigoValRefTxt As New ArrayList
 
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
 
@@ -191,6 +193,26 @@
 
             End If
 
+
+            If dtValoresRef.Columns.Contains("btnEliminar") = False Then
+                Dim btn As New DataGridViewButtonColumn()
+                dtValoresRef.Columns.Add(btn)
+                btn.HeaderText = "Eliminar"
+                btn.Text = "Eliminar"
+                btn.Name = "btnEliminar"
+                btn.UseColumnTextForButtonValue = True
+            End If
+
+
+            If dtDetalleTexto.Columns.Contains("btnEliminar") = False Then
+                Dim btn As New DataGridViewButtonColumn()
+                dtDetalleTexto.Columns.Add(btn)
+                btn.HeaderText = "Eliminar"
+                btn.Text = "Eliminar"
+                btn.Name = "btnEliminar"
+                btn.UseColumnTextForButtonValue = True
+            End If
+
             btnCrear.Enabled = False
             btnModificar.Enabled = False
 
@@ -255,6 +277,14 @@
 
                         Next
 
+
+                        For index As Integer = 0 To codigoValRef.Count - 1
+                            .Cod_ = Convert.ToInt64(codigoValRef(index))
+                            If .eliminarDetalleValorReferencia() <> 1 Then
+                                MsgBox("Error al querer modificar el detalle valor de referencia.", MsgBoxStyle.Critical)
+                            End If
+                        Next
+                        codigoValRef.Clear()
                     End With
 
                     MsgBox("se modifico valor de referencia.")
@@ -306,7 +336,17 @@
                             End If
 
                         Next
+
+
+                        For index As Integer = 0 To codigoValRefTxt.Count - 1
+                            .Cod_Detalle = Convert.ToInt64(codigoValRefTxt(index))
+                            If .eliminarDetalleValorReferenciaTxt() <> 1 Then
+                                MsgBox("Error al querer modificar el detalle valor de referencia de texto.", MsgBoxStyle.Critical)
+                            End If
+                        Next
+                        codigoValRefTxt.Clear()
                     End With
+
 
                     MsgBox("se modifico valor ref txt.")
                     limpiarcampostab1()
@@ -342,7 +382,7 @@
             Dim dtseleccion, dtDetalle As New DataTable
             Dim fila, dfila As DataRow
             Dim vDetalle As New ClsDetalleValorReferencia
-            Dim parametro As New ClsParametroExamen
+            Dim parametro As New ClsItemExamenDetalle
             Dim unidad As New ClsUnidad
 
             dtseleccion = dtDataValoresRef.DataSource
@@ -362,28 +402,20 @@
 
                 For index As Integer = 0 To dtDetalle.Rows.Count - 1
                     dfila = dtDetalle.Rows(index)
-                    dtValoresRef.Rows.Add(New String() {CStr((dfila("cod_DetalleValorRef"))), (dfila("edaden")), dfila("edadhasta"), dfila("edaden"), dfila("valornormal"), dfila("hasta")})
+                    'dtValoresRef.Rows.Add(New String() {CStr((dfila("cod_DetalleValorRef"))), (dfila("edaden")), dfila("edadhasta"), dfila("edaden"), dfila("valornormal"), dfila("hasta")})
+                    dtValoresRef.Rows.Add(New String() {CStr((dfila("cod_DetalleValorRef"))), (dfila("edadde")), dfila("edadhasta"), dfila("edaden"), dfila("valornormal"), dfila("hasta")})
                 Next
 
             End With
 
             'cargar información de parámetro
-            parametro.codigo_ = Convert.ToInt32(lblCodParametro.Text)
-            dtseleccion = parametro.BuscarParametroExamenCode
+            parametro.codigo_ = Convert.ToInt64(lblCodParametro.Text)
+            dtseleccion = parametro.BuscarDetalleExamen
             fila = dtseleccion.Rows(0)
 
-            txtParametro.Text = fila("descripcion")
+            txtParametro.Text = fila("nombre")
             lblCodUnidad.Text = fila("codigoUnidad")
-
-            'cargar unidad
-            unidad.Codigo_ = Convert.ToInt32(lblCodUnidad.Text)
-
-            dtseleccion = unidad.BuscarUnidadCode
-
-            fila = dtseleccion.Rows(0)
-
-            txtUnidad.Text = fila("codigoUnidad")
-
+            txtUnidad.Text = fila("unidad_codigo_breve")
 
             btnCrear.Enabled = True
             btnModificar.Enabled = True
@@ -415,11 +447,19 @@
 
     Sub limpiarcampostab0()
 
-        txtParametro.Clear()
-        txtUnidad.Clear()
-        txtDescripcion.Clear()
-        cbxGenero.Text = ""
-        dtValoresRef.Rows.Clear()
+        Try
+
+            codigoValRef.Clear()
+            codigoValRefTxt.Clear()
+            txtParametro.Clear()
+            txtUnidad.Clear()
+            txtDescripcion.Clear()
+            cbxGenero.Text = ""
+            dtValoresRef.Rows.Clear()
+
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
@@ -620,4 +660,40 @@
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub dtValoresRef_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dtValoresRef.CellClick
+        If e.ColumnIndex = 6 Then
+            Try
+                Dim n As String = MsgBox("¿Desea eliminar el detalle valor de referencia?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+                    If dtValoresRef.Rows(e.RowIndex).Cells(0).Value() <> "" Then
+                        codigoValRef.Add(Me.dtValoresRef.Rows(e.RowIndex).Cells(0).Value())
+                    End If
+                    dtValoresRef.Rows.Remove(dtValoresRef.Rows(e.RowIndex.ToString))
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message, MsgBoxStyle.Critical)
+            End Try
+
+        End If
+    End Sub
+
+
+    Private Sub dtDetalleTexto_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dtDetalleTexto.CellClick
+        If e.ColumnIndex = 2 Then
+            Try
+                Dim n As String = MsgBox("¿Desea eliminar el detalle valor de referencia de texto?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+                    If dtDetalleTexto.Rows(e.RowIndex).Cells(0).Value() <> "" Then
+                        codigoValRefTxt.Add(Me.dtDetalleTexto.Rows(e.RowIndex).Cells(0).Value())
+                    End If
+                    dtDetalleTexto.Rows.Remove(dtDetalleTexto.Rows(e.RowIndex.ToString))
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message, MsgBoxStyle.Critical)
+            End Try
+
+        End If
+    End Sub
+
 End Class

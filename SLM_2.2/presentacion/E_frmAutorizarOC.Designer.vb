@@ -28,6 +28,7 @@ Partial Class E_frmAutorizarOC
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_frmAutorizarOC))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -79,6 +80,7 @@ Partial Class E_frmAutorizarOC
         Me.txtBuscar3 = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -103,13 +105,16 @@ Partial Class E_frmAutorizarOC
         '
         'TabControl1
         '
+        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Location = New System.Drawing.Point(7, 60)
+        Me.TabControl1.Location = New System.Drawing.Point(1, 45)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(992, 482)
+        Me.TabControl1.Size = New System.Drawing.Size(992, 528)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -120,7 +125,7 @@ Partial Class E_frmAutorizarOC
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(984, 456)
+        Me.TabPage1.Size = New System.Drawing.Size(984, 502)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Orden de compra"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -194,8 +199,11 @@ Partial Class E_frmAutorizarOC
         '
         'GroupBox5
         '
+        Me.GroupBox5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox5.Controls.Add(Me.DataGridView5)
-        Me.GroupBox5.Location = New System.Drawing.Point(2, 258)
+        Me.GroupBox5.Location = New System.Drawing.Point(3, 302)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(981, 194)
         Me.GroupBox5.TabIndex = 77
@@ -204,6 +212,11 @@ Partial Class E_frmAutorizarOC
         '
         'DataGridView5
         '
+        Me.DataGridView5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView5.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView5.Location = New System.Drawing.Point(6, 19)
         Me.DataGridView5.Name = "DataGridView5"
@@ -214,6 +227,8 @@ Partial Class E_frmAutorizarOC
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.Button3)
         Me.GroupBox1.Controls.Add(Me.Label33)
         Me.GroupBox1.Controls.Add(Me.DataGridView2)
@@ -221,7 +236,7 @@ Partial Class E_frmAutorizarOC
         Me.GroupBox1.Controls.Add(Me.txtBuscar)
         Me.GroupBox1.Location = New System.Drawing.Point(2, 75)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(981, 181)
+        Me.GroupBox1.Size = New System.Drawing.Size(981, 221)
         Me.GroupBox1.TabIndex = 76
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscador"
@@ -238,7 +253,7 @@ Partial Class E_frmAutorizarOC
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(418, 162)
+        Me.Label33.Location = New System.Drawing.Point(414, 33)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(148, 13)
         Me.Label33.TabIndex = 82
@@ -246,12 +261,16 @@ Partial Class E_frmAutorizarOC
         '
         'DataGridView2
         '
+        Me.DataGridView2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Location = New System.Drawing.Point(1, 32)
         Me.DataGridView2.Name = "DataGridView2"
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue
         Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView2.Size = New System.Drawing.Size(971, 127)
+        Me.DataGridView2.Size = New System.Drawing.Size(971, 170)
         Me.DataGridView2.TabIndex = 64
         '
         'Label15
@@ -277,15 +296,18 @@ Partial Class E_frmAutorizarOC
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(984, 456)
+        Me.TabPage2.Size = New System.Drawing.Size(984, 502)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Ordenes rechazadas"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'GroupBox6
         '
+        Me.GroupBox6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox6.Controls.Add(Me.DataGridView4)
-        Me.GroupBox6.Location = New System.Drawing.Point(7, 254)
+        Me.GroupBox6.Location = New System.Drawing.Point(3, 302)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(981, 194)
         Me.GroupBox6.TabIndex = 80
@@ -294,6 +316,11 @@ Partial Class E_frmAutorizarOC
         '
         'DataGridView4
         '
+        Me.DataGridView4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView4.Location = New System.Drawing.Point(6, 19)
         Me.DataGridView4.Name = "DataGridView4"
@@ -304,6 +331,8 @@ Partial Class E_frmAutorizarOC
         '
         'GroupBox7
         '
+        Me.GroupBox7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox7.Controls.Add(Me.Panel1)
         Me.GroupBox7.Controls.Add(Me.Label4)
         Me.GroupBox7.Controls.Add(Me.DataGridView6)
@@ -311,14 +340,16 @@ Partial Class E_frmAutorizarOC
         Me.GroupBox7.Controls.Add(Me.txtBuscar2)
         Me.GroupBox7.Location = New System.Drawing.Point(3, 6)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(978, 242)
+        Me.GroupBox7.Size = New System.Drawing.Size(978, 290)
         Me.GroupBox7.TabIndex = 79
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Buscador"
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.txtCodOCRechazada)
         Me.Panel1.Controls.Add(Me.Button4)
@@ -392,7 +423,7 @@ Partial Class E_frmAutorizarOC
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(419, 221)
+        Me.Label4.Location = New System.Drawing.Point(531, 64)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(148, 13)
         Me.Label4.TabIndex = 82
@@ -400,12 +431,16 @@ Partial Class E_frmAutorizarOC
         '
         'DataGridView6
         '
+        Me.DataGridView6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView6.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView6.Location = New System.Drawing.Point(3, 83)
         Me.DataGridView6.Name = "DataGridView6"
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue
         Me.DataGridView6.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridView6.Size = New System.Drawing.Size(971, 135)
+        Me.DataGridView6.Size = New System.Drawing.Size(971, 188)
         Me.DataGridView6.TabIndex = 64
         '
         'Label5
@@ -431,33 +466,43 @@ Partial Class E_frmAutorizarOC
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(984, 456)
+        Me.TabPage3.Size = New System.Drawing.Size(984, 502)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Ordenes Autorizadas"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
         'GroupBox4
         '
+        Me.GroupBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox4.Controls.Add(Me.DataGridView3)
-        Me.GroupBox4.Location = New System.Drawing.Point(5, 256)
+        Me.GroupBox4.Location = New System.Drawing.Point(3, 277)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(976, 194)
+        Me.GroupBox4.Size = New System.Drawing.Size(976, 219)
         Me.GroupBox4.TabIndex = 78
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Detalle orden de compra"
         '
         'DataGridView3
         '
+        Me.DataGridView3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView3.GridColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView3.Location = New System.Drawing.Point(6, 19)
         Me.DataGridView3.Name = "DataGridView3"
         DataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue
         Me.DataGridView3.RowsDefaultCellStyle = DataGridViewCellStyle5
-        Me.DataGridView3.Size = New System.Drawing.Size(964, 164)
+        Me.DataGridView3.Size = New System.Drawing.Size(964, 194)
         Me.DataGridView3.TabIndex = 0
         '
         'GroupBox3
         '
+        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.Panel2)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.DataGridView1)
@@ -465,14 +510,16 @@ Partial Class E_frmAutorizarOC
         Me.GroupBox3.Controls.Add(Me.txtBuscar3)
         Me.GroupBox3.Location = New System.Drawing.Point(2, 6)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(978, 245)
+        Me.GroupBox3.Size = New System.Drawing.Size(978, 265)
         Me.GroupBox3.TabIndex = 77
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Buscador"
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel2.Controls.Add(Me.Label12)
         Me.Panel2.Controls.Add(Me.TextBox3)
         Me.Panel2.Controls.Add(Me.Button5)
@@ -546,7 +593,7 @@ Partial Class E_frmAutorizarOC
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(418, 227)
+        Me.Label2.Location = New System.Drawing.Point(518, 65)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(148, 13)
         Me.Label2.TabIndex = 82
@@ -554,12 +601,16 @@ Partial Class E_frmAutorizarOC
         '
         'DataGridView1
         '
+        Me.DataGridView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(2, 84)
         Me.DataGridView1.Name = "DataGridView1"
         DataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle6
-        Me.DataGridView1.Size = New System.Drawing.Size(971, 140)
+        Me.DataGridView1.Size = New System.Drawing.Size(971, 153)
         Me.DataGridView1.TabIndex = 64
         '
         'Label3
@@ -580,31 +631,45 @@ Partial Class E_frmAutorizarOC
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.Panel3.Controls.Add(Me.Label14)
-        Me.Panel3.Location = New System.Drawing.Point(7, 12)
+        Me.Panel3.Location = New System.Drawing.Point(1, 1)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(992, 42)
+        Me.Panel3.Size = New System.Drawing.Size(1008, 42)
         Me.Panel3.TabIndex = 1
         '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(11, 10)
+        Me.Label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label14.Location = New System.Drawing.Point(1, 20)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(277, 20)
         Me.Label14.TabIndex = 11
         Me.Label14.Text = "Autorización de Orden de compra"
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 576)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(1003, 22)
+        Me.StatusStrip1.TabIndex = 2
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'E_frmAutorizarOC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1003, 554)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(1003, 598)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.TabControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "E_frmAutorizarOC"
         Me.Text = "E_frmAutorizarOC"
         Me.TabControl1.ResumeLayout(False)
@@ -635,6 +700,7 @@ Partial Class E_frmAutorizarOC
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -689,4 +755,5 @@ Partial Class E_frmAutorizarOC
     Friend WithEvents Label14 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

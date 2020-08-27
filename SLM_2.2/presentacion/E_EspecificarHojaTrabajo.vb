@@ -88,29 +88,11 @@
                 E_HojaTrabajo.txtsucursal.Text = txtSucursal.Text
                 E_HojaTrabajo.txtSubarea.Text = txtSubArea.Text
                 E_HojaTrabajo.txtArea.Text = lblCodigoGrupo.Text
+                E_HojaTrabajo.lblCodeSucursal.Text = lblCodeSucursal.Text
+                E_HojaTrabajo.lblCodeSubArea.Text = lblCodeSubArea.Text
 
                 GenerarTablaHojaTrabajo()
-                'FALTA EL LLENADO DE LOS DATOS
-                'LlenadoDatos()
                 E_HojaTrabajo.ShowDialog()
-
-
-                'Consultando examenes y parametros
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             Catch ex As Exception
@@ -149,13 +131,22 @@
     End Function
     Private Sub LlenadoDatos()
         Try
+            Dim edad As String
+            Dim ds As New DataSet
+            Dim dt As New DataTable
+            Dim row As DataRow
 
-            Dim edad As String ' edad del paciente
+            'LLENADO DE FILAS
+            E_HojaTrabajo.ds = ds
+
+
+            Dim colColl As DataColumnCollection = ds.Tables("HojaTrabajo").Columns
+
 
             'orden de trabajo
             Dim objOrdTrab As New ClsOrdenDeTrabajo
-            Dim dt As New DataTable ' ordenes de trabajo
-            Dim row As DataRow ' fila orden de trabajo
+            'Dim dt As New DataTable ' ordenes de trabajo
+            Dim rowO As DataRow ' fila orden de trabajo
 
             'detalle orden de trabajo
             Dim objOrdTrabDet As New ClsOrdenTrabajoDetalle
@@ -170,22 +161,46 @@
             dt = objOrdTrab.BuscarHojaDeTrabajo
 
             For index As Integer = 0 To dt.Rows.Count - 1
-                row = dt.Rows(index)
-                edad = CalcularEdad(Convert.ToDateTime(row("fechaNacimiento")))
+                rowO = dt.Rows(index)
+                edad = CalcularEdad(Convert.ToDateTime(rowO("fechaNacimiento")))
 
-                ' E_HojaTrabajo.dgvHojaTrab.Rows.Add(New String() {CStr(row("cod_orden_trabajo")), CStr(row("paciente")), edad, CStr(row("genero")), CStr(row("medico")), "", "", "", "", ""})
+                row = ds.Tables("HojaTrabajo").Rows.Add
 
+                row.Item(0) = CStr(rowO("cod_orden_trabajo"))
+                If rowO("estadoFactura") = "0" Then
+                    row.Item(1) = CStr(rowO("paciente"))
+                    row.Item(colColl.IndexOf("Estado")) = CStr(rowO("estado"))
+                Else
+                    row.Item(1) = CStr(rowO("paciente") & " (ANULADA)")
+                    row.Item(colColl.IndexOf("Estado")) = "ANULADA"
+                End If
+                row.Item(2) = edad
+                row.Item(3) = CStr(rowO("genero"))
+                row.Item(4) = CStr(rowO("medico"))
 
-                objOrdTrabDet.cod_orden_trabajo_ = Convert.ToInt64(row("cod_orden_trabajo"))
+                'LLENADO DETALLE ORDEN DE TRABAJO
+                objOrdTrabDet.cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
                 dtDet = objOrdTrabDet.BuscarOrdenTrabajoDetalle
                 For index2 As Integer = 0 To dtDet.Rows.Count - 1
                     rowDet = dtDet.Rows(index2)
-                    ' marcar los * 
+                    'marcar los * 
 
+                    If IsDBNull(rowDet("resultado")) = True Then
+                        row.Item(colColl.IndexOf(CStr(rowDet("nombre")))) = "*"
+                    ElseIf CStr(rowDet("resultado")) = "0" Then
+                        row.Item(colColl.IndexOf(CStr(rowDet("nombre")))) = "*"
+                        'row.Item(CStr(rowDet("nombre"))) = "*"
+                        'row.Item(row.Table.Columns.IndexOf(CStr(rowDet("nombre")))) = "*"
+                    Else
+                        row.Item(colColl.IndexOf(CStr(rowDet("nombre")))) = CStr(rowDet("resultado"))
+                        'row.Item(CStr(rowDet("nombre"))) = CStr(rowDet("resultado"))
+                        'row.Item(row.Table.Columns.IndexOf(CStr(rowDet("nombre")))) = CStr(rowDet("resultado"))
+                    End If
                 Next
             Next
 
-
+            'le asigno la tabla
+            E_HojaTrabajo.dgvHojaTrab.DataSource = ds.Tables(0)
 
         Catch ex As Exception
             MsgBox("llenado de datos. " & ex.Message, MsgBoxStyle.Critical)
@@ -284,70 +299,9 @@
 
             col = New DataColumn("Estado")
             ds.Tables("HojaTrabajo").Columns.Add(col)
-            Dim edad As String
 
-
-
-
-            'LLENADO DE FILAS
-
-
-
-            Dim colColl As DataColumnCollection = ds.Tables("HojaTrabajo").Columns
-
-
-            'orden de trabajo
-            Dim objOrdTrab As New ClsOrdenDeTrabajo
-            'Dim dt As New DataTable ' ordenes de trabajo
-            Dim rowO As DataRow ' fila orden de trabajo
-
-            'detalle orden de trabajo
-            Dim objOrdTrabDet As New ClsOrdenTrabajoDetalle
-            Dim dtDet As New DataTable ' detalle orden de trabajo
-            Dim rowDet As DataRow ' fila detalle orden de trabajo
-
-            'parametros de busqueda
-            With objOrdTrab
-                .codigoSucursal_ = lblCodeSucursal.Text
-                .codigoSubArea_ = lblCodeSubArea.Text
-            End With
-            dt = objOrdTrab.BuscarHojaDeTrabajo
-
-            For index As Integer = 0 To dt.Rows.Count - 1
-                rowO = dt.Rows(index)
-                edad = CalcularEdad(Convert.ToDateTime(rowO("fechaNacimiento")))
-
-                row = ds.Tables("HojaTrabajo").Rows.Add
-
-                row.Item(0) = CStr(rowO("cod_orden_trabajo"))
-                row.Item(1) = CStr(rowO("paciente"))
-                row.Item(2) = edad
-                row.Item(3) = CStr(rowO("genero"))
-                row.Item(4) = CStr(rowO("medico"))
-                row.Item(colColl.IndexOf("Estado")) = CStr(rowO("estado"))
-
-                'LLENADO DETALLE ORDEN DE TRABAJO
-                objOrdTrabDet.cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
-                dtDet = objOrdTrabDet.BuscarOrdenTrabajoDetalle
-                For index2 As Integer = 0 To dtDet.Rows.Count - 1
-                    rowDet = dtDet.Rows(index2)
-                    'marcar los * 
-
-                    If IsDBNull(rowDet("resultado")) = True Then
-                        row.Item(colColl.IndexOf(CStr(rowDet("nombre")))) = "*"
-                    ElseIf CStr(rowDet("resultado")) = "0" Then
-                        row.Item(colColl.IndexOf(CStr(rowDet("nombre")))) = "*"
-                        'row.Item(CStr(rowDet("nombre"))) = "*"
-                        'row.Item(row.Table.Columns.IndexOf(CStr(rowDet("nombre")))) = "*"
-                    Else
-                        row.Item(colColl.IndexOf(CStr(rowDet("nombre")))) = CStr(rowDet("resultado"))
-                        'row.Item(CStr(rowDet("nombre"))) = CStr(rowDet("resultado"))
-                        'row.Item(row.Table.Columns.IndexOf(CStr(rowDet("nombre")))) = CStr(rowDet("resultado"))
-                    End If
-                Next
-            Next
-
-
+            'Asigna la creacion de la hoja de trabajo al dataset
+            E_HojaTrabajo.ds = ds
 
             'le asigno la tabla
             E_HojaTrabajo.dgvHojaTrab.DataSource = ds.Tables(0)

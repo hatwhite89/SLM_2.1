@@ -5,7 +5,7 @@
             Dim dv As DataView = objProfesion.SeleccionarProfesion.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
             rtxtdescripcion.ReadOnly = True
             txtcodigo.ReadOnly = True
@@ -13,7 +13,7 @@
             btnmodificar.Enabled = False
             btnguardar.Enabled = False
             btnnuevo.Enabled = True
-
+            alternarColoFilasDatagridview(dgbtabla)
         Catch ex As Exception
 
         End Try
@@ -48,6 +48,15 @@
                     'M_Factura.txtcodigoMedico.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
                     M_Empleados.txtcodigoProfesion.Text = txtcodigo.Text
                     M_Empleados.txtdescripcionProfesion.Text = rtxtdescripcion.Text
+                    Me.Close()
+                End If
+            ElseIf (lblform.Text = "Candidatos") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el puesto de trabajo en el candidato?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    A_Candidatos.lblcodProfesion.Text = txtcodigo.Text
+                    A_Candidatos.txtProfesion.Text = rtxtdescripcion.Text
                     Me.Close()
                 End If
             End If
@@ -99,7 +108,7 @@
                     Dim dv As DataView = objProfesion.SeleccionarProfesion.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
-                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
                     txtcodigo.ReadOnly = True
                     rtxtdescripcion.ReadOnly = True
@@ -136,7 +145,7 @@
                     Dim dv As DataView = objProfesion.SeleccionarProfesion.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
-                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
                     txtcodigo.ReadOnly = True
                     rtxtdescripcion.ReadOnly = True
@@ -172,12 +181,12 @@
                 Dim dv As DataView = objProfesion.BuscarProfesion.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             Else
                 Dim dv As DataView = objProfesion.SeleccionarProfesion.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             End If
 
         Catch ex As Exception

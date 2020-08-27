@@ -1,5 +1,4 @@
 ﻿
-
 Imports System.Data.SqlClient
 Public Class ClsDetalleValorRefTxt
 
@@ -125,6 +124,42 @@ Public Class ClsDetalleValorRefTxt
 
     End Function
 
+
+    'eliminar detalle valor de referencia en base de datos
+    Public Function eliminarDetalleValorReferenciaTxt() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        'PROCEDIMIENTO ALMACENADO
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "A_slmEliminarDetalleValorReferenciaTxt"
+
+        'VARIABLES 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_DetalleValorReftxt"
+        sqlpar.Value = Cod_Detalle
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
 
 
     'Listar detalle por codigo de referencia

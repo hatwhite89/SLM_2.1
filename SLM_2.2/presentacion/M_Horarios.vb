@@ -228,6 +228,8 @@
         Me.dgbtabla.Columns("sabado").Visible = False
         Me.dgbtabla.Columns("domingo").Visible = False
         Me.dgbtabla.Columns("observacion").Visible = False
+
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Private Sub seleccionarHorarios()
         Try
@@ -235,7 +237,7 @@
             Dim dv As DataView = objHorario.SeleccionarHorario.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             deshabilitar()
         Catch ex As Exception
 
@@ -250,7 +252,7 @@
             Dim dv As DataView = objHorario.BuscarHorarioNombre.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         Catch ex As Exception
 
         End Try

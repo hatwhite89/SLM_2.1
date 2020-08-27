@@ -97,7 +97,7 @@
         Next
         Return RTrim(texto)
     End Function
-    Public Function validarFactura(ByVal numeroFactura As Integer)
+    Public Function validarFactura(ByVal numeroFactura As Integer) As Integer
         For index As Integer = 0 To dgbtabla.Rows.Count - 2
             If (dgbtabla.Rows(index).Cells(1).Value() = numeroFactura) Then
                 Return 1

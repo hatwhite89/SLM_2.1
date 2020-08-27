@@ -1,6 +1,5 @@
 ﻿Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         'Notificación
         'ApruebaS.Show()
 
@@ -38,7 +37,8 @@
         Catch ex As Exception
 
         End Try
-
+        lblHora.Text = DateTime.Now.ToString("hh:mm:ss")
+        lblFecha.Text = DateTime.Now.ToLongDateString()
     End Sub
     Private Sub btnContabilidad_Click(sender As Object, e As EventArgs) Handles btnContabilidad.Click
 
@@ -52,6 +52,8 @@
 
         Else
             panelMenu.Visible = True
+
+
         End If
 
     End Sub
@@ -102,6 +104,7 @@
                 PanelTalentoHumano.Visible = False
             Else
                 PanelFactura.Visible = True
+
             End If
 
 
@@ -330,6 +333,7 @@
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
         PanelFactura.Visible = False
+
     End Sub
 
     Private Sub btnPaciente_Click(sender As Object, e As EventArgs) Handles btnPaciente.Click
@@ -359,7 +363,7 @@
         M_Cliente.ShowDialog()
     End Sub
 
-    Private Sub CerrarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarToolStripMenuItem.Click
+    Private Sub CerrarToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
         Me.Close()
         End
@@ -376,7 +380,7 @@
 
     Private Sub SLMSportToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
-        Apariencia.SkinFile = "C:\Users\Software 3\Source\Repos\hatwhite89\SLM_2.1\SLM_2.2\Themes\Componentes Graficos Vb2\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\Sports\SportsBlue.ssk"
+        ' Apariencia.SkinFile = "C:\Users\Software 3\Source\Repos\hatwhite89\SLM_2.1\SLM_2.2\Themes\Componentes Graficos Vb2\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\Sports\SportsBlue.ssk"
 
     End Sub
 
@@ -410,7 +414,7 @@
 
     End Sub
 
-    Private Sub AcercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaDeToolStripMenuItem.Click
+    Private Sub AcercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs)
         MsgBox("Version 0.01")
     End Sub
 
@@ -424,6 +428,7 @@
     End Sub
 
     Private Sub btnSistema_Click(sender As Object, e As EventArgs) Handles btnSistema.Click
+
         If PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelTalentoHumano.Visible = True Then
 
             PanelFactura.Visible = False
@@ -435,6 +440,8 @@
 
         Else
             PanelSistema.Visible = True
+
+
         End If
     End Sub
 
@@ -464,7 +471,7 @@
         End Try
     End Sub
 
-    Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Try
 
 
@@ -488,6 +495,7 @@
     End Sub
 
     Private Sub btnTalentoHumano_Click(sender As Object, e As EventArgs) Handles btnTalentoHumano.Click
+
         If PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Then
             PanelTalentoHumano.Visible = True
             PanelFactura.Visible = False
@@ -499,6 +507,7 @@
 
         Else
             PanelTalentoHumano.Visible = True
+
         End If
     End Sub
 
@@ -507,7 +516,7 @@
     End Sub
 
     Private Sub btnPuestoTrabajo_Click(sender As Object, e As EventArgs) Handles btnPuestoTrabajo.Click
-        M_PuestoTrabajo.lblform.Text = "M_PuestoTrabajo"
+
         M_PuestoTrabajo.ShowDialog()
     End Sub
 
@@ -540,6 +549,7 @@
     End Sub
 
     Private Sub Button22_Click(sender As Object, e As EventArgs) Handles btnAlmacen.Click
+
         If PanelTalentoHumano.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Then
 
             PanelFactura.Visible = False
@@ -550,6 +560,8 @@
             PanelAlmacen.Visible = True
         Else
             PanelAlmacen.Visible = True
+
+
         End If
     End Sub
 
@@ -681,7 +693,7 @@
         End Try
     End Sub
 
-    Private Sub gbxMenu_Enter(sender As Object, e As EventArgs) Handles gbxMenu.Enter
+    Private Sub gbxMenu_Enter(sender As Object, e As EventArgs)
 
     End Sub
 End Class

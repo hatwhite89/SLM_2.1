@@ -32,6 +32,7 @@
         lblcodeJefeInme.Text = ""
         lblcodeTalentoHumano.Text = ""
         txtEmpleado.Text = ""
+        rbtnNo.Checked = True
 
         dtpEntradaTarde.Enabled = True
         dtpFecha.Enabled = True
@@ -164,6 +165,7 @@
                     .codigoEmpleado_ = lblcodigoEmpleado.Text
                     .codigoJefeInmediato_ = lblcodeJefeInme.Text
                     .codigoTalentoHumano_ = lblcodeTalentoHumano.Text
+                    .goseSueldo_ = rbtnSi.Checked
                 End With
                 If objPerm.RegistrarNuevoPermiso() = 1 Then
                     MsgBox("Registrado el permiso especial correctamente.", MsgBoxStyle.Information)
@@ -229,6 +231,7 @@
                     .codigoEmpleado_ = lblcodigoEmpleado.Text
                     .codigoJefeInmediato_ = lblcodeJefeInme.Text
                     .codigoTalentoHumano_ = lblcodeTalentoHumano.Text
+                    .goseSueldo_ = rbtnSi.Checked
                 End With
 
                 If objPerm.ModificarPermisos() = 1 Then
@@ -275,7 +278,11 @@
                     dtpSalidaTarde.Format = DateTimePickerFormat.Time
                     dtpSalidaTarde.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value().ToString
                 End If
-
+                If Me.dgbtabla.Rows(e.RowIndex).Cells(9).Value() Then
+                    rbtnSi.Checked = True
+                Else
+                    rbtnNo.Checked = True
+                End If
 
                 btnmodificar.Enabled = True
                 btnguardar.Enabled = False
@@ -310,6 +317,7 @@
     End Sub
     Private Sub M_Permisos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         seleccionarPermisos()
+        alternarColoFilasDatagridview(dgbtabla)
         Me.dgbtabla.Columns("codigoTalentoHumano").Visible = False
         Me.dgbtabla.Columns("codigoJefeInmediato").Visible = False
         'Me.dgbtabla.Columns("miercoles").Visible = False
@@ -325,7 +333,7 @@
             Dim dv As DataView = objPerm.SeleccionarPermisos.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             deshabilitar()
         Catch ex As Exception
 
@@ -340,7 +348,7 @@
             Dim dv As DataView = objPerm.BuscarPermisosNombre.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         Catch ex As Exception
 
         End Try

@@ -715,7 +715,6 @@ Public Class A_Cheques
             'objVistaCheque.SetDatabaseLogon("sa", "Lbm2019")
 
             codCheque = Convert.ToInt32(txtNro.Text)
-
             codFactura = Convert.ToInt32(frmPagos.dtDetallePagos.Rows(0).Cells(0).Value)
 
             objVistaCheque.SetParameterValue("@codCheque", codCheque)
@@ -731,5 +730,7 @@ Public Class A_Cheques
         End Try
     End Sub
 
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
 
+    End Sub
 End Class

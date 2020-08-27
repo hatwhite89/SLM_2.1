@@ -41,6 +41,7 @@ Public Class M_Factura
                 M_ClienteVentana.txtcorreo2.Text = CStr(row("correo2"))
                 If (row("tipoConvenio")) Then
                     txtcodigoConvenio.Text = CStr(row("descripcionLp"))
+                    lblcodeTerminoPago.Text = CStr(row("terminoListaPrecio"))
                 Else
                     'lblcodePriceList.Text = "0"
                     txtcodigoConvenio.Text = ""
@@ -131,7 +132,7 @@ Public Class M_Factura
 
         dtpfechaFactura.Enabled = True
         txtcodigoRecepecionista.ReadOnly = False
-        txtcodigoCajero.ReadOnly = False
+        'txtcodigoCajero.ReadOnly = False
 
         cbxentregarMedico.Enabled = True
         cbxentregarPaciente.Enabled = True
@@ -139,7 +140,7 @@ Public Class M_Factura
 
         dgblistadoExamenes.ReadOnly = False
 
-        cbxok.Enabled = True
+        'cbxok.Enabled = True
 
         btnActualizar.Enabled = False
         btncotizacion.Enabled = True
@@ -159,6 +160,10 @@ Public Class M_Factura
         'recepcionista
         txtcodigoRecepecionista.Text = Form1.lblUserCod.Text
         txtNombreRecepcionista.Text = Form1.lblMiUser.Text
+
+        'cajero
+        txtcodigoCajero.Text = Form1.lblUserCod.Text
+        txtNombreCajero.Text = Form1.lblMiUser.Text
 
 
         'campos nuevos
@@ -218,7 +223,7 @@ Public Class M_Factura
 
         dgblistadoExamenes.ReadOnly = True
 
-        cbxok.Enabled = False
+        'cbxok.Enabled = False
 
         btnActualizar.Enabled = True
         btncotizacion.Enabled = False
@@ -243,7 +248,7 @@ Public Class M_Factura
         cbxenviarCorreo.Enabled = True
 
         dgblistadoExamenes.ReadOnly = False
-        cbxok.Enabled = True
+        'cbxok.Enabled = True
         btnbusquedaExamen.Enabled = True
 
         txtEfectivo.ReadOnly = False
@@ -755,10 +760,14 @@ Public Class M_Factura
         Try
 
             If Trim(txtcodigoRecepecionista.Text) = "" Then
-                txtcodigoRecepecionista.Text = "1"
+                'recepcionista
+                txtcodigoRecepecionista.Text = Form1.lblUserCod.Text
+                txtNombreRecepcionista.Text = Form1.lblMiUser.Text
             End If
             If Trim(txtcodigoCajero.Text) = "" Then
-                txtcodigoCajero.Text = "1"
+                'cajero
+                txtcodigoCajero.Text = Form1.lblUserCod.Text
+                txtNombreCajero.Text = Form1.lblMiUser.Text
             End If
             If Trim(txtcodigoTerminal.Text) = "" Then
                 buscarMaquinaLocal()
@@ -782,9 +791,9 @@ Public Class M_Factura
                 txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And
                 txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 1) Then
 
-
                 If (cbxok.Checked) Then
-                    If (Convert.ToDouble(txtvuelto.Text) < 0) Then
+                    'Si el vuelto es mayor o igual a 0 y el cliente no pertenese a un convenio
+                    If (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "") Then
                         MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
                         Exit Sub
                     End If
@@ -844,7 +853,7 @@ Public Class M_Factura
 
                 If objFact.RegistrarNuevaFactura() = 1 Then
                     deshabilitar()
-                    cbxok.Enabled = True
+                    'cbxok.Enabled = True
 
                     dt = objFact.BuscarFacturaCode()
                     row = dt.Rows(0)
@@ -991,6 +1000,10 @@ Public Class M_Factura
     End Sub
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Try
+            'cajero
+            txtcodigoCajero.Text = Form1.lblUserCod.Text
+            txtNombreCajero.Text = Form1.lblMiUser.Text
+
             Dim dt As New DataTable
             Dim bandera As Integer = 0
             Dim row As DataRow
@@ -1007,7 +1020,7 @@ Public Class M_Factura
                 'si la factura a sido aprobada (OK) y quiere obtener el numero del CAI y no a sido anulada la factura (ANULADA)
                 If (cbxok.Checked And Trim(txtnumeroOficial.Text) = "" And cbxAnular.Checked = False) Then
                     'VALIDACION DE DINERO
-                    If (Convert.ToDouble(txtvuelto.Text) < 0) Then
+                    If (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "") Then
                         MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
                         Exit Sub
                     End If
@@ -1049,6 +1062,7 @@ Public Class M_Factura
                         .deposito_ = Convert.ToDouble(txtDeposito.Text)
                         .transferencia_ = Convert.ToDouble(txtTransferencia.Text)
                         .cheque_ = Convert.ToDouble(txtCheque.Text)
+                        .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
                     End With
                     'MODIFICO LOS DATOS DE LA FACTURA
                     If objFact.ModificarFactura() = 1 Then
@@ -1136,6 +1150,10 @@ Public Class M_Factura
                         .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
                         .estado_ = cbxAnular.Checked
                         .total_ = Convert.ToDouble(txttotal.Text)
+                        .deposito_ = Convert.ToDouble(txtDeposito.Text)
+                        .transferencia_ = Convert.ToDouble(txtTransferencia.Text)
+                        .cheque_ = Convert.ToDouble(txtCheque.Text)
+                        .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
                     End With
                     'MODIFICO LOS DATOS DE LA FACTURA
                     If objFact.ModificarFactura() = 1 Then

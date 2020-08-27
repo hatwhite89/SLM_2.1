@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class ClsListaPrecios
     Dim descripcion, codigoBreve As String
-    Dim codigo As Integer
+    Dim codigo, codigoTerminoPago As Integer
     Dim tipoConvenio As Boolean
     'Constructor
     Public Sub New()
@@ -39,6 +39,14 @@ Public Class ClsListaPrecios
             tipoConvenio = value
         End Set
     End Property
+    Public Property codigoTerminoPago_ As Integer
+        Get
+            Return codigoTerminoPago
+        End Get
+        Set(value As Integer)
+            codigoTerminoPago = value
+        End Set
+    End Property
     Public Function RegistrarNuevaListaPrecios() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -62,6 +70,13 @@ Public Class ClsListaPrecios
         sqlpar.ParameterName = "tipoConvenio" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = tipoConvenio_
         sqlcom.Parameters.Add(sqlpar)
+
+        If tipoConvenio_ Then
+            sqlpar = New SqlParameter
+            sqlpar.ParameterName = "codigoTerminoPago" 'nombre campo en el procedimiento almacenado @
+            sqlpar.Value = codigoTerminoPago_
+            sqlcom.Parameters.Add(sqlpar)
+        End If
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -110,6 +125,13 @@ Public Class ClsListaPrecios
         sqlpar.ParameterName = "tipoConvenio" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = tipoConvenio_
         sqlcom.Parameters.Add(sqlpar)
+
+        If tipoConvenio_ Then
+            sqlpar = New SqlParameter
+            sqlpar.ParameterName = "codigoTerminoPago" 'nombre campo en el procedimiento almacenado @
+            sqlpar.Value = codigoTerminoPago_
+            sqlcom.Parameters.Add(sqlpar)
+        End If
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
