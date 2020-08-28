@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class A_Candidatos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class A_Candidatos
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Candidatos))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblCandidato = New System.Windows.Forms.Label()
         Me.lblcodCargo = New System.Windows.Forms.Label()
@@ -45,6 +46,7 @@ Partial Class A_Candidatos
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
@@ -52,18 +54,23 @@ Partial Class A_Candidatos
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.dtCandidatos = New System.Windows.Forms.DataGridView()
-        Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PorProfesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PorPeríodoDeTiempoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PorPuestoDeTrabajoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.btnBuscarProfesionI = New System.Windows.Forms.Button()
+        Me.txtProfesionI = New System.Windows.Forms.TextBox()
+        Me.btnBuscarCargoI = New System.Windows.Forms.Button()
+        Me.txtCargoI = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.dtpFechaDesde = New System.Windows.Forms.DateTimePicker()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.dtpFechaHasta = New System.Windows.Forms.DateTimePicker()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.dtCandidatos, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -91,7 +98,7 @@ Partial Class A_Candidatos
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 90)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 65)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(795, 234)
         Me.GroupBox1.TabIndex = 0
@@ -103,39 +110,33 @@ Partial Class A_Candidatos
         Me.lblCandidato.AutoSize = True
         Me.lblCandidato.Location = New System.Drawing.Point(696, 64)
         Me.lblCandidato.Name = "lblCandidato"
-        Me.lblCandidato.Size = New System.Drawing.Size(73, 13)
+        Me.lblCandidato.Size = New System.Drawing.Size(0, 13)
         Me.lblCandidato.TabIndex = 23
-        Me.lblCandidato.Text = "codCandidato"
         Me.lblCandidato.Visible = False
         '
         'lblcodCargo
         '
         Me.lblcodCargo.AutoSize = True
-        Me.lblcodCargo.Location = New System.Drawing.Point(602, 100)
+        Me.lblcodCargo.Location = New System.Drawing.Point(696, 81)
         Me.lblcodCargo.Name = "lblcodCargo"
-        Me.lblcodCargo.Size = New System.Drawing.Size(53, 13)
+        Me.lblcodCargo.Size = New System.Drawing.Size(0, 13)
         Me.lblcodCargo.TabIndex = 22
-        Me.lblcodCargo.Text = "codCargo"
-        Me.lblcodCargo.Visible = False
         '
         'lblcodProfesion
         '
         Me.lblcodProfesion.AutoSize = True
         Me.lblcodProfesion.Location = New System.Drawing.Point(602, 81)
         Me.lblcodProfesion.Name = "lblcodProfesion"
-        Me.lblcodProfesion.Size = New System.Drawing.Size(69, 13)
+        Me.lblcodProfesion.Size = New System.Drawing.Size(0, 13)
         Me.lblcodProfesion.TabIndex = 21
-        Me.lblcodProfesion.Text = "codProfesion"
-        Me.lblcodProfesion.Visible = False
         '
         'lblcodArea
         '
         Me.lblcodArea.AutoSize = True
         Me.lblcodArea.Location = New System.Drawing.Point(602, 64)
         Me.lblcodArea.Name = "lblcodArea"
-        Me.lblcodArea.Size = New System.Drawing.Size(47, 13)
+        Me.lblcodArea.Size = New System.Drawing.Size(0, 13)
         Me.lblcodArea.TabIndex = 20
-        Me.lblcodArea.Text = "codArea"
         Me.lblcodArea.Visible = False
         '
         'btnBuscarCargo
@@ -238,16 +239,16 @@ Partial Class A_Candidatos
         '
         Me.txtDescripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtDescripcion.Location = New System.Drawing.Point(10, 127)
+        Me.txtDescripcion.Location = New System.Drawing.Point(10, 113)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(774, 96)
+        Me.txtDescripcion.Size = New System.Drawing.Size(774, 110)
         Me.txtDescripcion.TabIndex = 6
         Me.txtDescripcion.Text = ""
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(8, 111)
+        Me.Label4.Location = New System.Drawing.Point(8, 97)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(136, 13)
         Me.Label4.TabIndex = 6
@@ -300,11 +301,23 @@ Partial Class A_Candidatos
         Me.GroupBox2.Controls.Add(Me.btnGuardar)
         Me.GroupBox2.Controls.Add(Me.btnModificar)
         Me.GroupBox2.Controls.Add(Me.btnNuevo)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 27)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 6)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(795, 57)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnEliminar.Enabled = False
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminar.Location = New System.Drawing.Point(391, 19)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar.TabIndex = 12
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'Label8
         '
@@ -367,10 +380,22 @@ Partial Class A_Candidatos
         Me.GroupBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.Controls.Add(Me.LinkLabel1)
+        Me.GroupBox3.Controls.Add(Me.PictureBox1)
+        Me.GroupBox3.Controls.Add(Me.dtpFechaHasta)
+        Me.GroupBox3.Controls.Add(Me.Label12)
+        Me.GroupBox3.Controls.Add(Me.dtpFechaDesde)
+        Me.GroupBox3.Controls.Add(Me.Label11)
+        Me.GroupBox3.Controls.Add(Me.btnBuscarCargoI)
+        Me.GroupBox3.Controls.Add(Me.txtCargoI)
+        Me.GroupBox3.Controls.Add(Me.Label10)
+        Me.GroupBox3.Controls.Add(Me.btnBuscarProfesionI)
+        Me.GroupBox3.Controls.Add(Me.txtProfesionI)
+        Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.dtCandidatos)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 330)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 305)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(795, 227)
+        Me.GroupBox3.Size = New System.Drawing.Size(795, 290)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Listado de Candidatos"
@@ -379,80 +404,137 @@ Partial Class A_Candidatos
         '
         Me.dtCandidatos.AllowUserToAddRows = False
         Me.dtCandidatos.AllowUserToDeleteRows = False
+        Me.dtCandidatos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtCandidatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dtCandidatos.BackgroundColor = System.Drawing.Color.White
         Me.dtCandidatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtCandidatos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtCandidatos.GridColor = System.Drawing.Color.White
-        Me.dtCandidatos.Location = New System.Drawing.Point(3, 16)
+        Me.dtCandidatos.Location = New System.Drawing.Point(3, 94)
         Me.dtCandidatos.Name = "dtCandidatos"
         Me.dtCandidatos.ReadOnly = True
         Me.dtCandidatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCandidatos.Size = New System.Drawing.Size(789, 208)
+        Me.dtCandidatos.Size = New System.Drawing.Size(789, 188)
         Me.dtCandidatos.TabIndex = 8
         '
-        'btnEliminar
+        'Label9
         '
-        Me.btnEliminar.Enabled = False
-        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.Location = New System.Drawing.Point(391, 19)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
-        Me.btnEliminar.TabIndex = 12
-        Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = True
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(23, 26)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(51, 13)
+        Me.Label9.TabIndex = 9
+        Me.Label9.Text = "Profesión"
         '
-        'MenuStrip1
+        'btnBuscarProfesionI
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(819, 24)
-        Me.MenuStrip1.TabIndex = 3
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.btnBuscarProfesionI.Location = New System.Drawing.Point(210, 22)
+        Me.btnBuscarProfesionI.Name = "btnBuscarProfesionI"
+        Me.btnBuscarProfesionI.Size = New System.Drawing.Size(27, 23)
+        Me.btnBuscarProfesionI.TabIndex = 15
+        Me.btnBuscarProfesionI.Text = "..."
+        Me.btnBuscarProfesionI.UseVisualStyleBackColor = True
         '
-        'ArchivoToolStripMenuItem
+        'txtProfesionI
         '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteToolStripMenuItem})
-        Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
-        Me.ArchivoToolStripMenuItem.Text = "Archivo"
+        Me.txtProfesionI.Enabled = False
+        Me.txtProfesionI.Location = New System.Drawing.Point(80, 23)
+        Me.txtProfesionI.Name = "txtProfesionI"
+        Me.txtProfesionI.Size = New System.Drawing.Size(127, 20)
+        Me.txtProfesionI.TabIndex = 16
         '
-        'ReporteToolStripMenuItem
+        'btnBuscarCargoI
         '
-        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PorProfesiónToolStripMenuItem, Me.PorPeríodoDeTiempoToolStripMenuItem, Me.PorPuestoDeTrabajoToolStripMenuItem})
-        Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
-        Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ReporteToolStripMenuItem.Text = "Reporte"
+        Me.btnBuscarCargoI.Location = New System.Drawing.Point(210, 51)
+        Me.btnBuscarCargoI.Name = "btnBuscarCargoI"
+        Me.btnBuscarCargoI.Size = New System.Drawing.Size(27, 23)
+        Me.btnBuscarCargoI.TabIndex = 18
+        Me.btnBuscarCargoI.Text = "..."
+        Me.btnBuscarCargoI.UseVisualStyleBackColor = True
         '
-        'PorProfesiónToolStripMenuItem
+        'txtCargoI
         '
-        Me.PorProfesiónToolStripMenuItem.Name = "PorProfesiónToolStripMenuItem"
-        Me.PorProfesiónToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
-        Me.PorProfesiónToolStripMenuItem.Text = "Por Profesión"
+        Me.txtCargoI.Enabled = False
+        Me.txtCargoI.Location = New System.Drawing.Point(80, 52)
+        Me.txtCargoI.Name = "txtCargoI"
+        Me.txtCargoI.Size = New System.Drawing.Size(127, 20)
+        Me.txtCargoI.TabIndex = 19
         '
-        'PorPeríodoDeTiempoToolStripMenuItem
+        'Label10
         '
-        Me.PorPeríodoDeTiempoToolStripMenuItem.Name = "PorPeríodoDeTiempoToolStripMenuItem"
-        Me.PorPeríodoDeTiempoToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
-        Me.PorPeríodoDeTiempoToolStripMenuItem.Text = "Por Período de Tiempo"
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(41, 55)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(35, 13)
+        Me.Label10.TabIndex = 17
+        Me.Label10.Text = "Cargo"
         '
-        'PorPuestoDeTrabajoToolStripMenuItem
+        'dtpFechaDesde
         '
-        Me.PorPuestoDeTrabajoToolStripMenuItem.Name = "PorPuestoDeTrabajoToolStripMenuItem"
-        Me.PorPuestoDeTrabajoToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
-        Me.PorPuestoDeTrabajoToolStripMenuItem.Text = "Por Puesto de Trabajo"
+        Me.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaDesde.Location = New System.Drawing.Point(327, 25)
+        Me.dtpFechaDesde.Name = "dtpFechaDesde"
+        Me.dtpFechaDesde.Size = New System.Drawing.Size(132, 20)
+        Me.dtpFechaDesde.TabIndex = 24
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(252, 28)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(71, 13)
+        Me.Label11.TabIndex = 25
+        Me.Label11.Text = "Fecha Desde"
+        '
+        'dtpFechaHasta
+        '
+        Me.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaHasta.Location = New System.Drawing.Point(327, 54)
+        Me.dtpFechaHasta.Name = "dtpFechaHasta"
+        Me.dtpFechaHasta.Size = New System.Drawing.Size(132, 20)
+        Me.dtpFechaHasta.TabIndex = 27
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(252, 57)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(68, 13)
+        Me.Label12.TabIndex = 28
+        Me.Label12.Text = "Fecha Hasta"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(714, 18)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 29
+        Me.PictureBox1.TabStop = False
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.DeepSkyBlue
+        Me.LinkLabel1.Location = New System.Drawing.Point(696, 71)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(83, 13)
+        Me.LinkLabel1.TabIndex = 30
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Generar Informe"
+        Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.DeepSkyBlue
         '
         'A_Candidatos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(819, 569)
+        Me.ClientSize = New System.Drawing.Size(819, 607)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "A_Candidatos"
         Me.Text = "SLM: Módulo de Candidatos"
         Me.GroupBox1.ResumeLayout(False)
@@ -460,11 +542,10 @@ Partial Class A_Candidatos
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         CType(Me.dtCandidatos, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -499,10 +580,16 @@ Partial Class A_Candidatos
     Friend WithEvents txtProfesion As TextBox
     Friend WithEvents lblCandidato As Label
     Friend WithEvents btnEliminar As Button
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ReporteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PorProfesiónToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PorPeríodoDeTiempoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PorPuestoDeTrabajoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents dtpFechaDesde As DateTimePicker
+    Friend WithEvents Label11 As Label
+    Friend WithEvents btnBuscarCargoI As Button
+    Friend WithEvents txtCargoI As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents btnBuscarProfesionI As Button
+    Friend WithEvents txtProfesionI As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents dtpFechaHasta As DateTimePicker
+    Friend WithEvents Label12 As Label
+    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

@@ -203,4 +203,92 @@
 
         End Try
     End Sub
+
+    'Impresión de informes::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+    Sub Informe()
+
+        Try
+            Dim codProfesion, codCargo As Integer
+            Dim fechaDesde, fechaHasta As DateTime
+            Dim objInformeProfesion As New InformeCandidatos
+
+            If lblcodCargo.Text = "" Then
+                codCargo = Nothing
+            Else
+                codCargo = Convert.ToInt32(lblcodCargo.Text)
+            End If
+
+            If lblcodProfesion.Text = "" Then
+                codProfesion = Nothing
+            Else
+
+                codProfesion = Convert.ToInt32(lblcodProfesion.Text)
+
+            End If
+
+            fechaDesde = dtpFechaDesde.Value
+            fechaHasta = dtpFechaHasta.Value
+
+            objInformeProfesion.SetParameterValue("@codigoProfesion", codProfesion)
+            objInformeProfesion.SetParameterValue("@codigoPuestoTrabajo", codCargo)
+            objInformeProfesion.SetParameterValue("@fechaDesde", fechaDesde)
+            objInformeProfesion.SetParameterValue("@fechaHasta", fechaHasta)
+
+            objInformeProfesion.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+            A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeProfesion
+            A_PrintInforme.lblform.Text = "InformePro"
+            A_PrintInforme.Show()
+
+        Catch ex As Exception
+            MsgBox("Error en impresión de informe: " + ex.Message)
+        End Try
+
+    End Sub
+
+    '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+    Private Sub PorProfesiónToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        Try
+            M_Profesion.Show()
+            M_Profesion.lblform.Text = "InformePro"
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnBuscarProfesionI_Click(sender As Object, e As EventArgs) Handles btnBuscarProfesionI.Click
+        Try
+
+            M_Profesion.Show()
+            M_Profesion.lblform.Text = "CandidatosInforme"
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnBuscarCargoI_Click(sender As Object, e As EventArgs) Handles btnBuscarCargoI.Click
+        Try
+
+            M_PuestoTrabajo.Show()
+            M_PuestoTrabajo.lblform.Text = "CandidatosInforme"
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnGenerarInforme_Click(sender As Object, e As EventArgs)
+
+        Informe()
+
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+
+        Informe()
+
+    End Sub
 End Class
