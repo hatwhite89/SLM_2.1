@@ -3,15 +3,14 @@
     Public ds As New DataSet  'Orden de los examenes por grupo o laboratorio
     Dim celda, fila As Integer 'capturar columna y fila para agregar plantilla
     Private Sub E_HojaTrabajo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         alternarColoFilasDatagridview(dgvHojaTrab)
         txtHora.Text = Date.Now.ToLongTimeString
         txtFecha.Text = Date.Today
 
         dgvHojaTrab.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
-
-
-        'carga de plantillas:::::::::::::::::::::::::::::::::::::::::...
+        'CARGA DE PLANTILLAS :::::::::::::::::::::::::::::::::::::::::...
 
         Dim plantilla As New ClsPlantillaResultado
 
@@ -23,7 +22,7 @@
         cbxPlantillas.DisplayMember = "simbolo"
         cbxPlantillas.SelectedIndex = 0
 
-        '...:::::::::::::::::::::::::::::::::::::::::::::::::::::::::...
+        '...::::::::::::::::::::::::::::::::::::::::::::::::::::::::::...
 
     End Sub
     Private Sub dgvHojaTrab_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvHojaTrab.CellEndEdit
@@ -364,17 +363,6 @@
 
 
     End Sub
-
-    'Private Sub dgvHojaTrab_CurrentCellChanged(sender As Object, e As EventArgs) Handles dgvHojaTrab.CurrentCellChanged
-    '    Try
-    '        celda = Convert.ToInt32(dgvHojaTrab.CurrentCell.ColumnIndex.ToString)
-    '        fila = Convert.ToInt32(dgvHojaTrab.CurrentCell.RowIndex.ToString)
-
-    '    Catch ex As Exception
-
-    '    End Try
-
-    'End Sub
 
 
 End Class

@@ -22,6 +22,7 @@ Partial Class M_Permisos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Permisos))
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
@@ -29,6 +30,9 @@ Partial Class M_Permisos
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnombreB = New System.Windows.Forms.Label()
         Me.gbxRegistrar = New System.Windows.Forms.GroupBox()
+        Me.rbtnNo = New System.Windows.Forms.RadioButton()
+        Me.rbtnSi = New System.Windows.Forms.RadioButton()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.lblcodeTalentoHumano = New System.Windows.Forms.Label()
         Me.lblcodeJefeInme = New System.Windows.Forms.Label()
         Me.lblcodigoEmpleado = New System.Windows.Forms.Label()
@@ -55,36 +59,42 @@ Partial Class M_Permisos
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.rbtnNo = New System.Windows.Forms.RadioButton()
-        Me.rbtnSi = New System.Windows.Forms.RadioButton()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxRegistrar.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
-        Me.gbxbusqueda.Location = New System.Drawing.Point(14, 344)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(10, 297)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.gbxbusqueda.Size = New System.Drawing.Size(928, 322)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Size = New System.Drawing.Size(696, 262)
         Me.gbxbusqueda.TabIndex = 116
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR PERMISOS ESPECIALES"
         '
         'lblcantidad
         '
+        Me.lblcantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(307, 289)
+        Me.lblcantidad.Location = New System.Drawing.Point(221, 247)
+        Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
+        Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
         Me.lblcantidad.TabIndex = 115
         Me.lblcantidad.Text = "000"
         '
@@ -92,46 +102,55 @@ Partial Class M_Permisos
         '
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
+        Me.dgbtabla.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgbtabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(5, 57)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgbtabla.Location = New System.Drawing.Point(4, 46)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(917, 215)
+        Me.dgbtabla.Size = New System.Drawing.Size(688, 199)
         Me.dgbtabla.TabIndex = 22
         '
         'lbltotal
         '
+        Me.lbltotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(17, 289)
+        Me.lbltotal.Location = New System.Drawing.Point(4, 247)
+        Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(239, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(187, 13)
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL DE PERMISOS ESPECIALES"
         '
         'txtnombreB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(169, 21)
-        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtnombreB.Location = New System.Drawing.Point(127, 17)
+        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
-        Me.txtnombreB.Size = New System.Drawing.Size(753, 22)
+        Me.txtnombreB.Size = New System.Drawing.Size(566, 20)
         Me.txtnombreB.TabIndex = 115
         '
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(15, 23)
+        Me.lblnombreB.Location = New System.Drawing.Point(11, 19)
+        Me.lblnombreB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblnombreB.Name = "lblnombreB"
-        Me.lblnombreB.Size = New System.Drawing.Size(148, 17)
+        Me.lblnombreB.Size = New System.Drawing.Size(111, 13)
         Me.lblnombreB.TabIndex = 114
         Me.lblnombreB.Text = "Nombre del Empleado"
         '
         'gbxRegistrar
         '
+        Me.gbxRegistrar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbxRegistrar.Controls.Add(Me.rbtnNo)
         Me.gbxRegistrar.Controls.Add(Me.rbtnSi)
         Me.gbxRegistrar.Controls.Add(Me.Label10)
@@ -153,298 +172,26 @@ Partial Class M_Permisos
         Me.gbxRegistrar.Controls.Add(Me.Label4)
         Me.gbxRegistrar.Controls.Add(Me.dtpEntradaTarde)
         Me.gbxRegistrar.Controls.Add(Me.Label3)
-        Me.gbxRegistrar.Controls.Add(Me.btnmodificar)
-        Me.gbxRegistrar.Controls.Add(Me.btnnuevo)
-        Me.gbxRegistrar.Controls.Add(Me.btnguardar)
         Me.gbxRegistrar.Controls.Add(Me.rtxtAsunto)
-        Me.gbxRegistrar.Controls.Add(Me.btncancelar)
         Me.gbxRegistrar.Controls.Add(Me.Label6)
         Me.gbxRegistrar.Controls.Add(Me.Label1)
         Me.gbxRegistrar.Controls.Add(Me.Label2)
-        Me.gbxRegistrar.Location = New System.Drawing.Point(14, 13)
+        Me.gbxRegistrar.Location = New System.Drawing.Point(7, 52)
+        Me.gbxRegistrar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gbxRegistrar.Name = "gbxRegistrar"
-        Me.gbxRegistrar.Size = New System.Drawing.Size(928, 326)
+        Me.gbxRegistrar.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxRegistrar.Size = New System.Drawing.Size(700, 241)
         Me.gbxRegistrar.TabIndex = 115
         Me.gbxRegistrar.TabStop = False
         Me.gbxRegistrar.Text = "REGISTRAR PERMISO ESPECIAL"
         '
-        'lblcodeTalentoHumano
-        '
-        Me.lblcodeTalentoHumano.AutoSize = True
-        Me.lblcodeTalentoHumano.Location = New System.Drawing.Point(559, 230)
-        Me.lblcodeTalentoHumano.Name = "lblcodeTalentoHumano"
-        Me.lblcodeTalentoHumano.Size = New System.Drawing.Size(80, 17)
-        Me.lblcodeTalentoHumano.TabIndex = 162
-        Me.lblcodeTalentoHumano.Text = "codTalHum"
-        Me.lblcodeTalentoHumano.Visible = False
-        '
-        'lblcodeJefeInme
-        '
-        Me.lblcodeJefeInme.AutoSize = True
-        Me.lblcodeJefeInme.Location = New System.Drawing.Point(573, 193)
-        Me.lblcodeJefeInme.Name = "lblcodeJefeInme"
-        Me.lblcodeJefeInme.Size = New System.Drawing.Size(57, 17)
-        Me.lblcodeJefeInme.TabIndex = 161
-        Me.lblcodeJefeInme.Text = "codJeIn"
-        Me.lblcodeJefeInme.Visible = False
-        '
-        'lblcodigoEmpleado
-        '
-        Me.lblcodigoEmpleado.AutoSize = True
-        Me.lblcodigoEmpleado.Location = New System.Drawing.Point(213, 235)
-        Me.lblcodigoEmpleado.Name = "lblcodigoEmpleado"
-        Me.lblcodigoEmpleado.Size = New System.Drawing.Size(59, 17)
-        Me.lblcodigoEmpleado.TabIndex = 160
-        Me.lblcodigoEmpleado.Text = "codEmp"
-        Me.lblcodigoEmpleado.Visible = False
-        '
-        'txtjefeInmediato
-        '
-        Me.txtjefeInmediato.Location = New System.Drawing.Point(669, 205)
-        Me.txtjefeInmediato.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtjefeInmediato.MaxLength = 80
-        Me.txtjefeInmediato.Name = "txtjefeInmediato"
-        Me.txtjefeInmediato.ReadOnly = True
-        Me.txtjefeInmediato.Size = New System.Drawing.Size(200, 22)
-        Me.txtjefeInmediato.TabIndex = 159
-        Me.txtjefeInmediato.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(546, 210)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(104, 17)
-        Me.Label8.TabIndex = 158
-        Me.Label8.Text = "Jefe Inmediato:"
-        '
-        'txtTalentoHumano
-        '
-        Me.txtTalentoHumano.Location = New System.Drawing.Point(669, 242)
-        Me.txtTalentoHumano.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtTalentoHumano.MaxLength = 80
-        Me.txtTalentoHumano.Name = "txtTalentoHumano"
-        Me.txtTalentoHumano.ReadOnly = True
-        Me.txtTalentoHumano.Size = New System.Drawing.Size(200, 22)
-        Me.txtTalentoHumano.TabIndex = 157
-        Me.txtTalentoHumano.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(482, 247)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(168, 17)
-        Me.Label9.TabIndex = 156
-        Me.Label9.Text = "Jefe de Talento Humano:"
-        '
-        'dtpSalidaTemprano
-        '
-        Me.dtpSalidaTemprano.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpSalidaTemprano.Location = New System.Drawing.Point(668, 69)
-        Me.dtpSalidaTemprano.Name = "dtpSalidaTemprano"
-        Me.dtpSalidaTemprano.Size = New System.Drawing.Size(200, 22)
-        Me.dtpSalidaTemprano.TabIndex = 153
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(155, 74)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(51, 17)
-        Me.Label5.TabIndex = 152
-        Me.Label5.Text = "Fecha:"
-        '
-        'dtpSalidaTarde
-        '
-        Me.dtpSalidaTarde.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpSalidaTarde.Location = New System.Drawing.Point(668, 110)
-        Me.dtpSalidaTarde.Name = "dtpSalidaTarde"
-        Me.dtpSalidaTarde.Size = New System.Drawing.Size(200, 22)
-        Me.dtpSalidaTarde.TabIndex = 151
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(501, 110)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(148, 17)
-        Me.Label7.TabIndex = 150
-        Me.Label7.Text = "Hora de Salida Tarde:"
-        '
-        'lblform
-        '
-        Me.lblform.AutoSize = True
-        Me.lblform.Location = New System.Drawing.Point(13, 30)
-        Me.lblform.Name = "lblform"
-        Me.lblform.Size = New System.Drawing.Size(51, 17)
-        Me.lblform.TabIndex = 149
-        Me.lblform.Text = "Label1"
-        Me.lblform.Visible = False
-        '
-        'txtEmpleado
-        '
-        Me.txtEmpleado.Location = New System.Drawing.Point(228, 207)
-        Me.txtEmpleado.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtEmpleado.MaxLength = 80
-        Me.txtEmpleado.Name = "txtEmpleado"
-        Me.txtEmpleado.ReadOnly = True
-        Me.txtEmpleado.Size = New System.Drawing.Size(200, 22)
-        Me.txtEmpleado.TabIndex = 130
-        Me.txtEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txtcodigo
-        '
-        Me.txtcodigo.Location = New System.Drawing.Point(228, 27)
-        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.ReadOnly = True
-        Me.txtcodigo.Size = New System.Drawing.Size(200, 22)
-        Me.txtcodigo.TabIndex = 124
-        Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'dtpFecha
-        '
-        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(228, 69)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(200, 22)
-        Me.dtpFecha.TabIndex = 146
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(54, 212)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(152, 17)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Nombre del Empleado:"
-        '
-        'dtpEntradaTarde
-        '
-        Me.dtpEntradaTarde.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpEntradaTarde.Location = New System.Drawing.Point(228, 110)
-        Me.dtpEntradaTarde.Name = "dtpEntradaTarde"
-        Me.dtpEntradaTarde.Size = New System.Drawing.Size(200, 22)
-        Me.dtpEntradaTarde.TabIndex = 145
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(150, 30)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(56, 17)
-        Me.Label3.TabIndex = 9
-        Me.Label3.Text = "Código:"
-        '
-        'btnmodificar
-        '
-        Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnmodificar.Location = New System.Drawing.Point(228, 278)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnmodificar.Name = "btnmodificar"
-        Me.btnmodificar.Size = New System.Drawing.Size(96, 34)
-        Me.btnmodificar.TabIndex = 143
-        Me.btnmodificar.Text = "Modificar"
-        Me.btnmodificar.UseVisualStyleBackColor = False
-        '
-        'btnnuevo
-        '
-        Me.btnnuevo.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnnuevo.Location = New System.Drawing.Point(16, 278)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(105, 34)
-        Me.btnnuevo.TabIndex = 142
-        Me.btnnuevo.Text = "Nuevo"
-        Me.btnnuevo.UseVisualStyleBackColor = False
-        '
-        'btnguardar
-        '
-        Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnguardar.Location = New System.Drawing.Point(127, 278)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(96, 34)
-        Me.btnguardar.TabIndex = 140
-        Me.btnguardar.Text = "Guardar"
-        Me.btnguardar.UseVisualStyleBackColor = False
-        '
-        'rtxtAsunto
-        '
-        Me.rtxtAsunto.Location = New System.Drawing.Point(228, 148)
-        Me.rtxtAsunto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.rtxtAsunto.MaxLength = 200
-        Me.rtxtAsunto.Name = "rtxtAsunto"
-        Me.rtxtAsunto.Size = New System.Drawing.Size(641, 37)
-        Me.rtxtAsunto.TabIndex = 144
-        Me.rtxtAsunto.Text = ""
-        '
-        'btncancelar
-        '
-        Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(330, 278)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btncancelar.Name = "btncancelar"
-        Me.btncancelar.Size = New System.Drawing.Size(91, 34)
-        Me.btncancelar.TabIndex = 141
-        Me.btncancelar.Text = "Cancelar"
-        Me.btncancelar.UseVisualStyleBackColor = False
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(150, 148)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(56, 17)
-        Me.Label6.TabIndex = 12
-        Me.Label6.Text = "Asunto:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(47, 110)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(159, 17)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Hora de Entrada Tarde:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(474, 74)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(175, 17)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Hora de Salida Temprano:"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(535, 32)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(114, 17)
-        Me.Label10.TabIndex = 163
-        Me.Label10.Text = "Gose de Sueldo:"
-        '
         'rbtnNo
         '
         Me.rbtnNo.AutoSize = True
-        Me.rbtnNo.Location = New System.Drawing.Point(821, 28)
+        Me.rbtnNo.Location = New System.Drawing.Point(616, 23)
+        Me.rbtnNo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbtnNo.Name = "rbtnNo"
-        Me.rbtnNo.Size = New System.Drawing.Size(47, 21)
+        Me.rbtnNo.Size = New System.Drawing.Size(39, 17)
         Me.rbtnNo.TabIndex = 168
         Me.rbtnNo.TabStop = True
         Me.rbtnNo.Text = "No"
@@ -453,32 +200,364 @@ Partial Class M_Permisos
         'rbtnSi
         '
         Me.rbtnSi.AutoSize = True
-        Me.rbtnSi.Location = New System.Drawing.Point(667, 28)
+        Me.rbtnSi.Location = New System.Drawing.Point(500, 23)
+        Me.rbtnSi.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbtnSi.Name = "rbtnSi"
-        Me.rbtnSi.Size = New System.Drawing.Size(41, 21)
+        Me.rbtnSi.Size = New System.Drawing.Size(34, 17)
         Me.rbtnSi.TabIndex = 167
         Me.rbtnSi.TabStop = True
         Me.rbtnSi.Text = "Si"
         Me.rbtnSi.UseVisualStyleBackColor = True
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(401, 26)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(86, 13)
+        Me.Label10.TabIndex = 163
+        Me.Label10.Text = "Gose de Sueldo:"
+        '
+        'lblcodeTalentoHumano
+        '
+        Me.lblcodeTalentoHumano.AutoSize = True
+        Me.lblcodeTalentoHumano.Location = New System.Drawing.Point(419, 187)
+        Me.lblcodeTalentoHumano.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblcodeTalentoHumano.Name = "lblcodeTalentoHumano"
+        Me.lblcodeTalentoHumano.Size = New System.Drawing.Size(62, 13)
+        Me.lblcodeTalentoHumano.TabIndex = 162
+        Me.lblcodeTalentoHumano.Text = "codTalHum"
+        Me.lblcodeTalentoHumano.Visible = False
+        '
+        'lblcodeJefeInme
+        '
+        Me.lblcodeJefeInme.AutoSize = True
+        Me.lblcodeJefeInme.Location = New System.Drawing.Point(430, 157)
+        Me.lblcodeJefeInme.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblcodeJefeInme.Name = "lblcodeJefeInme"
+        Me.lblcodeJefeInme.Size = New System.Drawing.Size(45, 13)
+        Me.lblcodeJefeInme.TabIndex = 161
+        Me.lblcodeJefeInme.Text = "codJeIn"
+        Me.lblcodeJefeInme.Visible = False
+        '
+        'lblcodigoEmpleado
+        '
+        Me.lblcodigoEmpleado.AutoSize = True
+        Me.lblcodigoEmpleado.Location = New System.Drawing.Point(160, 191)
+        Me.lblcodigoEmpleado.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblcodigoEmpleado.Name = "lblcodigoEmpleado"
+        Me.lblcodigoEmpleado.Size = New System.Drawing.Size(46, 13)
+        Me.lblcodigoEmpleado.TabIndex = 160
+        Me.lblcodigoEmpleado.Text = "codEmp"
+        Me.lblcodigoEmpleado.Visible = False
+        '
+        'txtjefeInmediato
+        '
+        Me.txtjefeInmediato.Location = New System.Drawing.Point(502, 167)
+        Me.txtjefeInmediato.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtjefeInmediato.MaxLength = 80
+        Me.txtjefeInmediato.Name = "txtjefeInmediato"
+        Me.txtjefeInmediato.ReadOnly = True
+        Me.txtjefeInmediato.Size = New System.Drawing.Size(151, 20)
+        Me.txtjefeInmediato.TabIndex = 159
+        Me.txtjefeInmediato.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(410, 171)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(79, 13)
+        Me.Label8.TabIndex = 158
+        Me.Label8.Text = "Jefe Inmediato:"
+        '
+        'txtTalentoHumano
+        '
+        Me.txtTalentoHumano.Location = New System.Drawing.Point(502, 197)
+        Me.txtTalentoHumano.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtTalentoHumano.MaxLength = 80
+        Me.txtTalentoHumano.Name = "txtTalentoHumano"
+        Me.txtTalentoHumano.ReadOnly = True
+        Me.txtTalentoHumano.Size = New System.Drawing.Size(151, 20)
+        Me.txtTalentoHumano.TabIndex = 157
+        Me.txtTalentoHumano.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(362, 201)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(127, 13)
+        Me.Label9.TabIndex = 156
+        Me.Label9.Text = "Jefe de Talento Humano:"
+        '
+        'dtpSalidaTemprano
+        '
+        Me.dtpSalidaTemprano.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpSalidaTemprano.Location = New System.Drawing.Point(501, 56)
+        Me.dtpSalidaTemprano.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpSalidaTemprano.Name = "dtpSalidaTemprano"
+        Me.dtpSalidaTemprano.Size = New System.Drawing.Size(151, 20)
+        Me.dtpSalidaTemprano.TabIndex = 153
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(116, 60)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(40, 13)
+        Me.Label5.TabIndex = 152
+        Me.Label5.Text = "Fecha:"
+        '
+        'dtpSalidaTarde
+        '
+        Me.dtpSalidaTarde.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpSalidaTarde.Location = New System.Drawing.Point(501, 89)
+        Me.dtpSalidaTarde.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpSalidaTarde.Name = "dtpSalidaTarde"
+        Me.dtpSalidaTarde.Size = New System.Drawing.Size(151, 20)
+        Me.dtpSalidaTarde.TabIndex = 151
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(376, 89)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(111, 13)
+        Me.Label7.TabIndex = 150
+        Me.Label7.Text = "Hora de Salida Tarde:"
+        '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(10, 24)
+        Me.lblform.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(39, 13)
+        Me.lblform.TabIndex = 149
+        Me.lblform.Text = "Label1"
+        Me.lblform.Visible = False
+        '
+        'txtEmpleado
+        '
+        Me.txtEmpleado.Location = New System.Drawing.Point(171, 168)
+        Me.txtEmpleado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtEmpleado.MaxLength = 80
+        Me.txtEmpleado.Name = "txtEmpleado"
+        Me.txtEmpleado.ReadOnly = True
+        Me.txtEmpleado.Size = New System.Drawing.Size(151, 20)
+        Me.txtEmpleado.TabIndex = 130
+        Me.txtEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtcodigo
+        '
+        Me.txtcodigo.Location = New System.Drawing.Point(171, 22)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.ReadOnly = True
+        Me.txtcodigo.Size = New System.Drawing.Size(151, 20)
+        Me.txtcodigo.TabIndex = 124
+        Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'dtpFecha
+        '
+        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFecha.Location = New System.Drawing.Point(171, 56)
+        Me.dtpFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpFecha.Name = "dtpFecha"
+        Me.dtpFecha.Size = New System.Drawing.Size(151, 20)
+        Me.dtpFecha.TabIndex = 146
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(40, 172)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(114, 13)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Nombre del Empleado:"
+        '
+        'dtpEntradaTarde
+        '
+        Me.dtpEntradaTarde.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpEntradaTarde.Location = New System.Drawing.Point(171, 89)
+        Me.dtpEntradaTarde.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpEntradaTarde.Name = "dtpEntradaTarde"
+        Me.dtpEntradaTarde.Size = New System.Drawing.Size(151, 20)
+        Me.dtpEntradaTarde.TabIndex = 145
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(112, 24)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(43, 13)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "Código:"
+        '
+        'btnmodificar
+        '
+        Me.btnmodificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnmodificar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnmodificar.Location = New System.Drawing.Point(558, 9)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnmodificar.Name = "btnmodificar"
+        Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
+        Me.btnmodificar.TabIndex = 143
+        Me.btnmodificar.Text = "Modificar"
+        Me.btnmodificar.UseVisualStyleBackColor = False
+        '
+        'btnnuevo
+        '
+        Me.btnnuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnnuevo.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnnuevo.Location = New System.Drawing.Point(399, 9)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
+        Me.btnnuevo.TabIndex = 142
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.UseVisualStyleBackColor = False
+        '
+        'btnguardar
+        '
+        Me.btnguardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnguardar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnguardar.Location = New System.Drawing.Point(482, 9)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnguardar.Name = "btnguardar"
+        Me.btnguardar.Size = New System.Drawing.Size(72, 28)
+        Me.btnguardar.TabIndex = 140
+        Me.btnguardar.Text = "Guardar"
+        Me.btnguardar.UseVisualStyleBackColor = False
+        '
+        'rtxtAsunto
+        '
+        Me.rtxtAsunto.Location = New System.Drawing.Point(171, 120)
+        Me.rtxtAsunto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtAsunto.MaxLength = 200
+        Me.rtxtAsunto.Name = "rtxtAsunto"
+        Me.rtxtAsunto.Size = New System.Drawing.Size(482, 31)
+        Me.rtxtAsunto.TabIndex = 144
+        Me.rtxtAsunto.Text = ""
+        '
+        'btncancelar
+        '
+        Me.btncancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btncancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncancelar.Location = New System.Drawing.Point(635, 9)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btncancelar.Name = "btncancelar"
+        Me.btncancelar.Size = New System.Drawing.Size(68, 28)
+        Me.btncancelar.TabIndex = 141
+        Me.btncancelar.Text = "Cancelar"
+        Me.btncancelar.UseVisualStyleBackColor = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(112, 120)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(43, 13)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "Asunto:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(35, 89)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(119, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Hora de Entrada Tarde:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(356, 60)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(131, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Hora de Salida Temprano:"
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 561)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 117
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label11)
+        Me.Panel1.Controls.Add(Me.btnnuevo)
+        Me.Panel1.Controls.Add(Me.btncancelar)
+        Me.Panel1.Controls.Add(Me.btnguardar)
+        Me.Panel1.Controls.Add(Me.btnmodificar)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(718, 42)
+        Me.Panel1.TabIndex = 131
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label11.Location = New System.Drawing.Point(2, 13)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(146, 20)
+        Me.Label11.TabIndex = 9
+        Me.Label11.Text = "Permiso Especial"
+        '
         'M_Permisos
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(957, 678)
+        Me.ClientSize = New System.Drawing.Size(718, 583)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.gbxRegistrar)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "M_Permisos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Permiso Especial"
+        Me.Text = "SLM - "
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbxRegistrar.ResumeLayout(False)
         Me.gbxRegistrar.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -518,4 +597,7 @@ Partial Class M_Permisos
     Friend WithEvents Label10 As Label
     Friend WithEvents rbtnNo As RadioButton
     Friend WithEvents rbtnSi As RadioButton
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label11 As Label
 End Class

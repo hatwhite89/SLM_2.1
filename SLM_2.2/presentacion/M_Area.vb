@@ -10,8 +10,8 @@
         Dim dv As DataView = objArea.SeleccionarArea.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        alternarColoFilasDatagridview(dgbtabla)
         txtnombre.ReadOnly = True
         txtcodigo.ReadOnly = True
 
@@ -42,6 +42,16 @@
                     M_Empleados.txtPuestoTrabajo.Text = ""
                     M_Empleados.txtdepartamento.Text = ""
                     M_Empleados.lblcodeDepto.Text = ""
+                    Me.Close()
+                End If
+
+            ElseIf (lblform.Text = "Candidatos") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el área?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    A_Candidatos.lblcodArea.Text = txtcodigo.Text
+                    A_Candidatos.txtArea.Text = txtnombre.Text
                     Me.Close()
                 End If
             End If
@@ -102,7 +112,7 @@
                     Dim dv As DataView = objArea.SeleccionarArea.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
-                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
                     txtcodigo.ReadOnly = True
                     txtnombre.ReadOnly = True
@@ -139,7 +149,7 @@
                     Dim dv As DataView = objArea.SeleccionarArea.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
-                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
                     txtcodigo.ReadOnly = True
                     txtnombre.ReadOnly = True
@@ -174,12 +184,12 @@
                 Dim dv As DataView = objArea.BuscarAreaNombre.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             Else
                 Dim dv As DataView = objArea.SeleccionarArea.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             End If
         Catch ex As Exception
 

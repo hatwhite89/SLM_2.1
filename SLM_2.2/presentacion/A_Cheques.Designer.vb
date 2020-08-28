@@ -81,8 +81,8 @@ Partial Class A_Cheques
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.lblForm = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.btnModificar = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -706,16 +706,6 @@ Partial Class A_Cheques
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(10, 16)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(239, 24)
-        Me.Label8.TabIndex = 5
-        Me.Label8.Text = "Generación de Cheques"
-        '
         'btnModificar
         '
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -725,6 +715,16 @@ Partial Class A_Cheques
         Me.btnModificar.TabIndex = 6
         Me.btnModificar.Text = "Modificar Estado"
         Me.btnModificar.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(10, 16)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(239, 24)
+        Me.Label8.TabIndex = 5
+        Me.Label8.Text = "Generación de Cheques"
         '
         'A_Cheques
         '

@@ -2,13 +2,14 @@
 Public Class M_BuscarEmpleados
     Private Sub M_BuscarEmpleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SeleccionarEmpleados()
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Public Sub SeleccionarEmpleados()
         Dim objEmp As New ClsEmpleados
         Dim dv As DataView = objEmp.SeleccionarEmpleados.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -137,7 +138,7 @@ Public Class M_BuscarEmpleados
                 Dim dv As DataView = objEmp.BuscarEmpleadosPorCodigo.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             Catch ex As Exception
                 MsgBox("No existe el empleados con el respectivo código.", MsgBoxStyle.Information, "Validación")
             End Try
@@ -153,7 +154,7 @@ Public Class M_BuscarEmpleados
                 Dim dv As DataView = objEmp.BuscarEmpleadosPorNombre.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             Catch ex As Exception
                 MsgBox("No existe la empleado con ese nombre.", MsgBoxStyle.Information, "Validación")
             End Try

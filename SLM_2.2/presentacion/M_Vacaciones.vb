@@ -179,7 +179,7 @@
             Dim dv As DataView = objVac.SeleccionarVacaciones.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         Catch ex As Exception
 
         End Try
@@ -193,7 +193,7 @@
             Dim dv As DataView = objVac.BuscarVacacionesNombre.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         Catch ex As Exception
 
         End Try
@@ -216,6 +216,7 @@
 
     Private Sub M_Vacaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         seleccionarVacaciones()
+        alternarColoFilasDatagridview(dgbtabla)
         Me.dgbtabla.Columns("codigoSupervisor").Visible = False
         Me.dgbtabla.Columns("codigoJefeDepto").Visible = False
         Me.dgbtabla.Columns("codigoTalentoHumano").Visible = False
