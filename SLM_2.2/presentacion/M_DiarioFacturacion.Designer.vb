@@ -23,22 +23,35 @@ Partial Class M_DiarioFacturacion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.lblForm = New System.Windows.Forms.Label()
-        Me.lblcantidad = New System.Windows.Forms.Label()
-        Me.dgbtabla = New System.Windows.Forms.DataGridView()
-        Me.lbltotal = New System.Windows.Forms.Label()
-        Me.txtnumeroB = New System.Windows.Forms.TextBox()
-        Me.lblnombreB = New System.Windows.Forms.Label()
-        Me.txtnombreB = New System.Windows.Forms.TextBox()
-        Me.lblnumeroB = New System.Windows.Forms.Label()
-        Me.lblFecha = New System.Windows.Forms.Label()
-        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.cbxMedico = New System.Windows.Forms.ComboBox()
-        Me.cbxTerminoPago = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.dtpFechaHasta = New System.Windows.Forms.DateTimePicker()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.dtpFechaDesde = New System.Windows.Forms.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtGrupo = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtExamen = New System.Windows.Forms.TextBox()
+        Me.txtUsuario = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.txtDescripcionTermino = New System.Windows.Forms.TextBox()
+        Me.txtNombreMedico = New System.Windows.Forms.TextBox()
         Me.cmbEstado = New System.Windows.Forms.ComboBox()
         Me.lblEsado = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
+        Me.lblFecha = New System.Windows.Forms.Label()
+        Me.txtnumeroB = New System.Windows.Forms.TextBox()
+        Me.lblnombreB = New System.Windows.Forms.Label()
+        Me.lblForm = New System.Windows.Forms.Label()
+        Me.txtnombreB = New System.Windows.Forms.TextBox()
+        Me.lblcantidad = New System.Windows.Forms.Label()
+        Me.lblnumeroB = New System.Windows.Forms.Label()
+        Me.dgbtabla = New System.Windows.Forms.DataGridView()
+        Me.lbltotalFacturas = New System.Windows.Forms.Label()
+        Me.lblTotal = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -48,11 +61,24 @@ Partial Class M_DiarioFacturacion
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.lblTotal)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.dtpFechaHasta)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.dtpFechaDesde)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.txtGrupo)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.txtExamen)
+        Me.GroupBox1.Controls.Add(Me.txtUsuario)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.btnBuscar)
+        Me.GroupBox1.Controls.Add(Me.txtDescripcionTermino)
+        Me.GroupBox1.Controls.Add(Me.txtNombreMedico)
         Me.GroupBox1.Controls.Add(Me.cmbEstado)
         Me.GroupBox1.Controls.Add(Me.lblEsado)
-        Me.GroupBox1.Controls.Add(Me.cbxTerminoPago)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.cbxMedico)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.dtpFecha)
         Me.GroupBox1.Controls.Add(Me.lblFecha)
@@ -63,7 +89,7 @@ Partial Class M_DiarioFacturacion
         Me.GroupBox1.Controls.Add(Me.lblcantidad)
         Me.GroupBox1.Controls.Add(Me.lblnumeroB)
         Me.GroupBox1.Controls.Add(Me.dgbtabla)
-        Me.GroupBox1.Controls.Add(Me.lbltotal)
+        Me.GroupBox1.Controls.Add(Me.lbltotalFacturas)
         Me.GroupBox1.Location = New System.Drawing.Point(26, 24)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(1346, 738)
@@ -71,51 +97,173 @@ Partial Class M_DiarioFacturacion
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Diario de Facturación"
         '
-        'lblForm
+        'dtpFechaHasta
         '
-        Me.lblForm.AutoSize = True
-        Me.lblForm.Location = New System.Drawing.Point(624, 0)
-        Me.lblForm.Name = "lblForm"
-        Me.lblForm.Size = New System.Drawing.Size(50, 17)
-        Me.lblForm.TabIndex = 119
-        Me.lblForm.Text = "lblform"
-        Me.lblForm.Visible = False
+        Me.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaHasta.Location = New System.Drawing.Point(753, 167)
+        Me.dtpFechaHasta.Name = "dtpFechaHasta"
+        Me.dtpFechaHasta.Size = New System.Drawing.Size(279, 22)
+        Me.dtpFechaHasta.TabIndex = 143
         '
-        'lblcantidad
+        'Label7
         '
-        Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(390, 697)
-        Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
-        Me.lblcantidad.TabIndex = 118
-        Me.lblcantidad.Text = "000"
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(659, 168)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(88, 17)
+        Me.Label7.TabIndex = 142
+        Me.Label7.Text = "Fecha Hasta"
         '
-        'dgbtabla
+        'dtpFechaDesde
         '
-        Me.dgbtabla.AllowUserToAddRows = False
-        Me.dgbtabla.AllowUserToDeleteRows = False
-        Me.dgbtabla.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(21, 254)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.dgbtabla.Name = "dgbtabla"
-        Me.dgbtabla.ReadOnly = True
-        Me.dgbtabla.RowHeadersWidth = 51
-        Me.dgbtabla.RowTemplate.Height = 24
-        Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(1303, 426)
-        Me.dgbtabla.TabIndex = 116
+        Me.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaDesde.Location = New System.Drawing.Point(317, 163)
+        Me.dtpFechaDesde.Name = "dtpFechaDesde"
+        Me.dtpFechaDesde.Size = New System.Drawing.Size(279, 22)
+        Me.dtpFechaDesde.TabIndex = 141
         '
-        'lbltotal
+        'Label6
         '
-        Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(60, 697)
-        Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(154, 17)
-        Me.lbltotal.TabIndex = 117
-        Me.lbltotal.Text = "TOTAL DE FACTURAS"
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(219, 167)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(92, 17)
+        Me.Label6.TabIndex = 140
+        Me.Label6.Text = "Fecha Desde"
+        '
+        'txtGrupo
+        '
+        Me.txtGrupo.Location = New System.Drawing.Point(1049, 114)
+        Me.txtGrupo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtGrupo.MaxLength = 20
+        Me.txtGrupo.Name = "txtGrupo"
+        Me.txtGrupo.Size = New System.Drawing.Size(279, 22)
+        Me.txtGrupo.TabIndex = 139
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(940, 116)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(92, 17)
+        Me.Label5.TabIndex = 138
+        Me.Label5.Text = "Nombre Area"
+        '
+        'txtExamen
+        '
+        Me.txtExamen.Location = New System.Drawing.Point(589, 114)
+        Me.txtExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtExamen.MaxLength = 20
+        Me.txtExamen.Name = "txtExamen"
+        Me.txtExamen.Size = New System.Drawing.Size(279, 22)
+        Me.txtExamen.TabIndex = 137
+        '
+        'txtUsuario
+        '
+        Me.txtUsuario.Location = New System.Drawing.Point(92, 114)
+        Me.txtUsuario.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtUsuario.MaxLength = 20
+        Me.txtUsuario.Name = "txtUsuario"
+        Me.txtUsuario.Size = New System.Drawing.Size(279, 22)
+        Me.txtUsuario.TabIndex = 136
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(466, 117)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(112, 17)
+        Me.Label3.TabIndex = 135
+        Me.Label3.Text = "Nombre Examen"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(31, 117)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(57, 17)
+        Me.Label4.TabIndex = 134
+        Me.Label4.Text = "Usuario"
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.Location = New System.Drawing.Point(1174, 163)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscar.TabIndex = 133
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = True
+        '
+        'txtDescripcionTermino
+        '
+        Me.txtDescripcionTermino.Location = New System.Drawing.Point(589, 75)
+        Me.txtDescripcionTermino.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtDescripcionTermino.MaxLength = 20
+        Me.txtDescripcionTermino.Name = "txtDescripcionTermino"
+        Me.txtDescripcionTermino.Size = New System.Drawing.Size(279, 22)
+        Me.txtDescripcionTermino.TabIndex = 132
+        '
+        'txtNombreMedico
+        '
+        Me.txtNombreMedico.Location = New System.Drawing.Point(92, 75)
+        Me.txtNombreMedico.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtNombreMedico.MaxLength = 20
+        Me.txtNombreMedico.Name = "txtNombreMedico"
+        Me.txtNombreMedico.Size = New System.Drawing.Size(279, 22)
+        Me.txtNombreMedico.TabIndex = 131
+        '
+        'cmbEstado
+        '
+        Me.cmbEstado.FormattingEnabled = True
+        Me.cmbEstado.Items.AddRange(New Object() {"Activa", "Anulada"})
+        Me.cmbEstado.Location = New System.Drawing.Point(1049, 73)
+        Me.cmbEstado.Name = "cmbEstado"
+        Me.cmbEstado.Size = New System.Drawing.Size(279, 24)
+        Me.cmbEstado.TabIndex = 130
+        '
+        'lblEsado
+        '
+        Me.lblEsado.AutoSize = True
+        Me.lblEsado.Location = New System.Drawing.Point(988, 80)
+        Me.lblEsado.Name = "lblEsado"
+        Me.lblEsado.Size = New System.Drawing.Size(52, 17)
+        Me.lblEsado.TabIndex = 129
+        Me.lblEsado.Text = "Estado"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(466, 78)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(117, 17)
+        Me.Label2.TabIndex = 127
+        Me.Label2.Text = "Término de Pago"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(31, 78)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(53, 17)
+        Me.Label1.TabIndex = 125
+        Me.Label1.Text = "Médico"
+        '
+        'dtpFecha
+        '
+        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFecha.Location = New System.Drawing.Point(1049, 35)
+        Me.dtpFecha.Name = "dtpFecha"
+        Me.dtpFecha.Size = New System.Drawing.Size(279, 22)
+        Me.dtpFecha.TabIndex = 124
+        '
+        'lblFecha
+        '
+        Me.lblFecha.AutoSize = True
+        Me.lblFecha.Location = New System.Drawing.Point(986, 39)
+        Me.lblFecha.Name = "lblFecha"
+        Me.lblFecha.Size = New System.Drawing.Size(47, 17)
+        Me.lblFecha.TabIndex = 123
+        Me.lblFecha.Text = "Fecha"
         '
         'txtnumeroB
         '
@@ -135,6 +283,16 @@ Partial Class M_DiarioFacturacion
         Me.lblnombreB.TabIndex = 121
         Me.lblnombreB.Text = "Nombre"
         '
+        'lblForm
+        '
+        Me.lblForm.AutoSize = True
+        Me.lblForm.Location = New System.Drawing.Point(624, 0)
+        Me.lblForm.Name = "lblForm"
+        Me.lblForm.Size = New System.Drawing.Size(50, 17)
+        Me.lblForm.TabIndex = 119
+        Me.lblForm.Text = "lblform"
+        Me.lblForm.Visible = False
+        '
         'txtnombreB
         '
         Me.txtnombreB.Location = New System.Drawing.Point(475, 36)
@@ -143,6 +301,15 @@ Partial Class M_DiarioFacturacion
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(469, 22)
         Me.txtnombreB.TabIndex = 120
+        '
+        'lblcantidad
+        '
+        Me.lblcantidad.AutoSize = True
+        Me.lblcantidad.Location = New System.Drawing.Point(390, 697)
+        Me.lblcantidad.Name = "lblcantidad"
+        Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
+        Me.lblcantidad.TabIndex = 118
+        Me.lblcantidad.Text = "000"
         '
         'lblnumeroB
         '
@@ -153,74 +320,50 @@ Partial Class M_DiarioFacturacion
         Me.lblnumeroB.TabIndex = 119
         Me.lblnumeroB.Text = "Número"
         '
-        'lblFecha
+        'dgbtabla
         '
-        Me.lblFecha.AutoSize = True
-        Me.lblFecha.Location = New System.Drawing.Point(986, 39)
-        Me.lblFecha.Name = "lblFecha"
-        Me.lblFecha.Size = New System.Drawing.Size(47, 17)
-        Me.lblFecha.TabIndex = 123
-        Me.lblFecha.Text = "Fecha"
+        Me.dgbtabla.AllowUserToAddRows = False
+        Me.dgbtabla.AllowUserToDeleteRows = False
+        Me.dgbtabla.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgbtabla.Location = New System.Drawing.Point(21, 217)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgbtabla.Name = "dgbtabla"
+        Me.dgbtabla.ReadOnly = True
+        Me.dgbtabla.RowHeadersWidth = 51
+        Me.dgbtabla.RowTemplate.Height = 24
+        Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgbtabla.Size = New System.Drawing.Size(1303, 463)
+        Me.dgbtabla.TabIndex = 116
         '
-        'dtpFecha
+        'lbltotalFacturas
         '
-        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(1049, 35)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(200, 22)
-        Me.dtpFecha.TabIndex = 124
+        Me.lbltotalFacturas.AutoSize = True
+        Me.lbltotalFacturas.Location = New System.Drawing.Point(60, 697)
+        Me.lbltotalFacturas.Name = "lbltotalFacturas"
+        Me.lbltotalFacturas.Size = New System.Drawing.Size(177, 17)
+        Me.lbltotalFacturas.TabIndex = 117
+        Me.lbltotalFacturas.Text = "CANTIDAD DE FACTURAS"
         '
-        'Label1
+        'lblTotal
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(31, 94)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 17)
-        Me.Label1.TabIndex = 125
-        Me.Label1.Text = "Médico"
+        Me.lblTotal.AutoSize = True
+        Me.lblTotal.Location = New System.Drawing.Point(1209, 697)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.Size = New System.Drawing.Size(32, 17)
+        Me.lblTotal.TabIndex = 145
+        Me.lblTotal.Text = "000"
         '
-        'cbxMedico
+        'Label9
         '
-        Me.cbxMedico.FormattingEnabled = True
-        Me.cbxMedico.Location = New System.Drawing.Point(92, 87)
-        Me.cbxMedico.Name = "cbxMedico"
-        Me.cbxMedico.Size = New System.Drawing.Size(279, 24)
-        Me.cbxMedico.TabIndex = 126
-        '
-        'cbxTerminoPago
-        '
-        Me.cbxTerminoPago.FormattingEnabled = True
-        Me.cbxTerminoPago.Location = New System.Drawing.Point(563, 87)
-        Me.cbxTerminoPago.Name = "cbxTerminoPago"
-        Me.cbxTerminoPago.Size = New System.Drawing.Size(279, 24)
-        Me.cbxTerminoPago.TabIndex = 128
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(440, 94)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(117, 17)
-        Me.Label2.TabIndex = 127
-        Me.Label2.Text = "Término de Pago"
-        '
-        'cmbEstado
-        '
-        Me.cmbEstado.FormattingEnabled = True
-        Me.cmbEstado.Items.AddRange(New Object() {"Activa", "Anulada"})
-        Me.cmbEstado.Location = New System.Drawing.Point(970, 87)
-        Me.cmbEstado.Name = "cmbEstado"
-        Me.cmbEstado.Size = New System.Drawing.Size(279, 24)
-        Me.cmbEstado.TabIndex = 130
-        '
-        'lblEsado
-        '
-        Me.lblEsado.AutoSize = True
-        Me.lblEsado.Location = New System.Drawing.Point(909, 94)
-        Me.lblEsado.Name = "lblEsado"
-        Me.lblEsado.Size = New System.Drawing.Size(52, 17)
-        Me.lblEsado.TabIndex = 129
-        Me.lblEsado.Text = "Estado"
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(982, 697)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(58, 17)
+        Me.Label9.TabIndex = 144
+        Me.Label9.Text = "TOTAL "
         '
         'M_DiarioFacturacion
         '
@@ -241,7 +384,7 @@ Partial Class M_DiarioFacturacion
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents lblcantidad As Label
     Friend WithEvents dgbtabla As DataGridView
-    Friend WithEvents lbltotal As Label
+    Friend WithEvents lbltotalFacturas As Label
     Friend WithEvents lblForm As Label
     Friend WithEvents txtnumeroB As TextBox
     Friend WithEvents lblnombreB As Label
@@ -249,10 +392,23 @@ Partial Class M_DiarioFacturacion
     Friend WithEvents lblnumeroB As Label
     Friend WithEvents dtpFecha As DateTimePicker
     Friend WithEvents lblFecha As Label
-    Friend WithEvents cbxMedico As ComboBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents cbxTerminoPago As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents cmbEstado As ComboBox
     Friend WithEvents lblEsado As Label
+    Friend WithEvents txtDescripcionTermino As TextBox
+    Friend WithEvents txtNombreMedico As TextBox
+    Friend WithEvents btnBuscar As Button
+    Friend WithEvents dtpFechaHasta As DateTimePicker
+    Friend WithEvents Label7 As Label
+    Friend WithEvents dtpFechaDesde As DateTimePicker
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtGrupo As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtExamen As TextBox
+    Friend WithEvents txtUsuario As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents lblTotal As Label
+    Friend WithEvents Label9 As Label
 End Class
