@@ -28,7 +28,6 @@ Partial Class Form1
         Me.btnTalentoHumano = New System.Windows.Forms.Button()
         Me.btnSistema = New System.Windows.Forms.Button()
         Me.pbxNoti = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnFacturacion = New System.Windows.Forms.Button()
         Me.btnlaboratorio = New System.Windows.Forms.Button()
         Me.panelMenu = New System.Windows.Forms.Panel()
@@ -223,12 +222,12 @@ Partial Class Form1
         Me.btnCategoria = New System.Windows.Forms.Button()
         Me.lblMiUser = New System.Windows.Forms.Label()
         Me.lblUserCod = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox55 = New System.Windows.Forms.PictureBox()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.lblHora = New System.Windows.Forms.Label()
+        Me.banner = New UIDC.UI_TitleBanner()
+        Me.bntCerrar = New System.Windows.Forms.Button()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -334,7 +333,6 @@ Partial Class Form1
         CType(Me.PictureBox69, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox68, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox67, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -403,24 +401,15 @@ Partial Class Form1
         '
         'pbxNoti
         '
-        Me.pbxNoti.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.pbxNoti.Location = New System.Drawing.Point(47, 441)
+        Me.pbxNoti.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.pbxNoti.Image = CType(resources.GetObject("pbxNoti.Image"), System.Drawing.Image)
+        Me.pbxNoti.Location = New System.Drawing.Point(6, 505)
         Me.pbxNoti.Name = "pbxNoti"
         Me.pbxNoti.Size = New System.Drawing.Size(29, 27)
         Me.pbxNoti.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbxNoti.TabIndex = 7
         Me.pbxNoti.TabStop = False
         Me.pbxNoti.Visible = False
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(27, 474)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "noti"
-        Me.Button1.UseVisualStyleBackColor = True
-        Me.Button1.Visible = False
         '
         'btnFacturacion
         '
@@ -2846,28 +2835,6 @@ Partial Class Form1
         Me.lblUserCod.Text = "UserCode"
         Me.lblUserCod.Visible = False
         '
-        'Panel2
-        '
-        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(708, 59)
-        Me.Panel2.TabIndex = 28
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(3, 25)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(150, 24)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Menu Principal"
-        '
         'PictureBox55
         '
         Me.PictureBox55.Image = CType(resources.GetObject("PictureBox55.Image"), System.Drawing.Image)
@@ -2914,6 +2881,47 @@ Partial Class Form1
         Me.lblHora.TabIndex = 58
         Me.lblHora.Text = "Label9"
         '
+        'banner
+        '
+        Me.banner.Animate = UIDC.UI_TitleBanner.Anim.AnimateON
+        Me.banner.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.banner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.banner.ButtonMenuActive = UIDC.UI_TitleBanner.Active.ActiveOff
+        Me.banner.ButtonsVisible = UIDC.UI_TitleBanner.ButtonVisible.Close_Maximize_Minimize
+        Me.banner.Dock = System.Windows.Forms.DockStyle.Top
+        Me.banner.FlatAppearance.BorderSize = 0
+        Me.banner.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.banner.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.banner.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.banner.Font = New System.Drawing.Font("Roboto Medium", 15.0!)
+        Me.banner.ForeColor = System.Drawing.Color.White
+        Me.banner.Location = New System.Drawing.Point(0, 0)
+        Me.banner.MoveActive = True
+        Me.banner.Name = "banner"
+        Me.banner.Padding = New System.Windows.Forms.Padding(15, 12, 0, 0)
+        Me.banner.ParentControl = Me
+        Me.banner.Size = New System.Drawing.Size(708, 70)
+        Me.banner.TabIndex = 60
+        Me.banner.Text = "Menú Principal"
+        Me.banner.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.banner.TypeWindows = UIDC.UI_TitleBanner.TypeTheme.Material
+        Me.banner.UseVisualStyleBackColor = False
+        '
+        'bntCerrar
+        '
+        Me.bntCerrar.BackColor = System.Drawing.Color.Salmon
+        Me.bntCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.bntCerrar.FlatAppearance.BorderSize = 0
+        Me.bntCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bntCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bntCerrar.ForeColor = System.Drawing.Color.White
+        Me.bntCerrar.Location = New System.Drawing.Point(0, 434)
+        Me.bntCerrar.Name = "bntCerrar"
+        Me.bntCerrar.Size = New System.Drawing.Size(122, 44)
+        Me.bntCerrar.TabIndex = 61
+        Me.bntCerrar.Text = "Salir"
+        Me.bntCerrar.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2921,15 +2929,15 @@ Partial Class Form1
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(708, 557)
+        Me.Controls.Add(Me.bntCerrar)
+        Me.Controls.Add(Me.banner)
         Me.Controls.Add(Me.lblHora)
         Me.Controls.Add(Me.lblFecha)
-        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel9)
         Me.Controls.Add(Me.PictureBox55)
         Me.Controls.Add(Me.pbxNoti)
         Me.Controls.Add(Me.btnAlmacen)
         Me.Controls.Add(Me.btnTalentoHumano)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnlaboratorio)
         Me.Controls.Add(Me.btnFacturacion)
         Me.Controls.Add(Me.btnSistema)
@@ -2945,11 +2953,11 @@ Partial Class Form1
         Me.Controls.Add(Me.PanelLab)
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SLM - Sistema Laboratorios Médicos"
+        Me.Text = "Menú Principal"
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelMenu.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
@@ -3061,8 +3069,6 @@ Partial Class Form1
         CType(Me.PictureBox69, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox68, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox67, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -3096,7 +3102,6 @@ Partial Class Form1
     Friend WithEvents btnFormaPago As Button
     Friend WithEvents btnCAI As Button
     Friend WithEvents TpProcesos As TabPage
-    Friend WithEvents Button1 As Button
     Friend WithEvents btnConsolidar As Button
     Friend WithEvents btnPlanilla As Button
     Friend WithEvents pbxNoti As PictureBox
@@ -3198,8 +3203,6 @@ Partial Class Form1
     Friend WithEvents btnInformes As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox55 As PictureBox
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label1 As Label
@@ -3275,4 +3278,6 @@ Partial Class Form1
     Friend WithEvents PictureBox38 As PictureBox
     Friend WithEvents lblFecha As Label
     Friend WithEvents lblHora As Label
+    Friend WithEvents banner As UIDC.UI_TitleBanner
+    Friend WithEvents bntCerrar As Button
 End Class
