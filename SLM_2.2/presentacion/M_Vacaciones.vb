@@ -63,7 +63,7 @@
 
         Select Case e.Button
             Case Windows.Forms.MouseButtons.Left
-                dtpfecha.Format = DateTimePickerFormat.Time
+                dtpfecha.Format = DateTimePickerFormat.Short
                 dtpfecha.Value = Date.Today
 
             Case Windows.Forms.MouseButtons.Right
