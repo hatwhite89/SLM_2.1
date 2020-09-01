@@ -165,7 +165,7 @@ Partial Class M_InicioSesion
         Me.UI_TitleBanner1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.UI_TitleBanner1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.UI_TitleBanner1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.UI_TitleBanner1.Font = New System.Drawing.Font("Roboto Medium", 15.0!)
+        Me.UI_TitleBanner1.Font = New System.Drawing.Font("Roboto", 15.0!)
         Me.UI_TitleBanner1.ForeColor = System.Drawing.Color.White
         Me.UI_TitleBanner1.Location = New System.Drawing.Point(0, 0)
         Me.UI_TitleBanner1.MoveActive = True

@@ -35,13 +35,16 @@
 
     End Sub
 
-
     Sub Limpiar()
         txtUsuario.Text = "Usuario"
         txtPassword.Text = "Contraseña"
     End Sub
 
     Private Sub M_InicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub UI_TitleBanner1_Click(sender As Object, e As EventArgs) Handles UI_TitleBanner1.Click
 
     End Sub
 End Class
