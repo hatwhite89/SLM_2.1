@@ -23,6 +23,7 @@ Partial Class M_BuscarFactura
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.btnnueva = New System.Windows.Forms.Button()
         Me.lblcantidad = New System.Windows.Forms.Label()
@@ -32,7 +33,6 @@ Partial Class M_BuscarFactura
         Me.lbltipoCta = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnumeroB = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -58,8 +58,18 @@ Partial Class M_BuscarFactura
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR FACTURA"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(275, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 121
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'lbltotal
         '
+        Me.lbltotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lbltotal.AutoSize = True
         Me.lbltotal.Location = New System.Drawing.Point(5, 612)
         Me.lbltotal.Name = "lbltotal"
@@ -69,6 +79,7 @@ Partial Class M_BuscarFactura
         '
         'btnnueva
         '
+        Me.btnnueva.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnnueva.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnnueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -83,6 +94,7 @@ Partial Class M_BuscarFactura
         '
         'lblcantidad
         '
+        Me.lblcantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblcantidad.AutoSize = True
         Me.lblcantidad.Location = New System.Drawing.Point(233, 612)
         Me.lblcantidad.Name = "lblcantidad"
@@ -112,11 +124,15 @@ Partial Class M_BuscarFactura
         '
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
+        Me.dgbtabla.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(8, 84)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
+        Me.dgbtabla.RowHeadersVisible = False
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -149,15 +165,6 @@ Partial Class M_BuscarFactura
         Me.lblnumeroB.Size = New System.Drawing.Size(58, 17)
         Me.lblnumeroB.TabIndex = 114
         Me.lblnumeroB.Text = "Número"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(275, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 121
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'M_BuscarFactura
         '

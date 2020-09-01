@@ -162,4 +162,23 @@
 
         End Try
     End Sub
+
+    Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dtUsuarios.CellMouseDoubleClick
+        Try
+            Dim n As String = ""
+            If (lblForm.Text = "M_DiarioFacturacion") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el usuario en el diario de facturación?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    'M_ListaPrecios.lblcodeT.Text = lblcode.Text
+                    M_DiarioFacturacion.txtUsuario.Text = txtUsuario.Text
+                    Me.Close()
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
 End Class

@@ -1664,6 +1664,40 @@ Public Class M_Factura
         End Try
     End Sub
 
+    Private Sub txtcodigoRecepecionista_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoRecepecionista.TextChanged
+        If (txtcodigoRecepecionista.Text <> "") Then
+            Try
+                Dim objUser As New ClsUsuario
+                With objUser
+                    .Cod = Integer.Parse(txtcodigoRecepecionista.Text)
+                End With
+                Dim dt As New DataTable
+                dt = objUser.BuscarPorCod_Usuario()
+                Dim row As DataRow = dt.Rows(0)
+                txtNombreRecepcionista.Text = CStr(row("usuario"))
+            Catch ex As Exception
+                'MsgBox("No existe el código del médico.", MsgBoxStyle.Critical, "Validación")
+            End Try
+        End If
+    End Sub
+
+    Private Sub txtcodigoCajero_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoCajero.TextChanged
+        If (txtcodigoCajero.Text <> "") Then
+            Try
+                Dim objUser As New ClsUsuario
+                With objUser
+                    .Cod = Integer.Parse(txtcodigoCajero.Text)
+                End With
+                Dim dt As New DataTable
+                dt = objUser.BuscarPorCod_Usuario()
+                Dim row As DataRow = dt.Rows(0)
+                txtNombreCajero.Text = CStr(row("usuario"))
+            Catch ex As Exception
+                'MsgBox("No existe el código del médico.", MsgBoxStyle.Critical, "Validación")
+            End Try
+        End If
+    End Sub
+
     Private Sub calcularDescuento()
         Dim dt As New DataTable
         Dim row As DataRow

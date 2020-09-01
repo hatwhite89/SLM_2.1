@@ -321,4 +321,29 @@ Public Class ClsUsuario
 
     End Function
 
+    'BUSCAR POR COD_USUARIO
+    Public Function BuscarPorCod_Usuario() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarUsuarioCod"
+            cmd.Parameters.Add("@cod_usuario", SqlDbType.Int).Value = Cod
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+
 End Class
