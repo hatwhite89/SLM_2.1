@@ -90,6 +90,14 @@
             dtUsuarios.DataSource = usuario.listarUsuarios
             dtUsuarios.Columns("codPerfil").Visible = False
 
+
+            'bloquear groupbox y campos
+            If lblForm.Text = "M_DiarioFacturacion" Then
+                gbxDatos.Enabled = False
+                btnImportar.Enabled = False
+            End If
+
+
         Catch ex As Exception
 
         End Try
