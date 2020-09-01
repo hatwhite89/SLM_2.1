@@ -659,11 +659,11 @@ Public Class ClsFactura
             Return dt
         End Using
     End Function
-    Public Function BuscarDiarioFacturacion(Optional ByVal numero As Integer = Nothing, Optional ByVal nombreCompleto As String = Nothing,
-                                            Optional ByVal fechaFactura As Date = Nothing, Optional ByVal nombreMedico As String = Nothing,
-                                            Optional ByVal descripcionTermino As String = Nothing, Optional ByVal estado As Boolean = Nothing,
-                                            Optional ByVal usuarioCajero As String = Nothing, Optional ByVal fechaDesde As Date = Nothing,
-                                            Optional ByVal fechaHasta As Date = Nothing, Optional ByVal descripcionExamen As String = Nothing,
+    Public Function BuscarDiarioFacturacion(Optional ByVal numero As System.Nullable(Of Integer) = Nothing, Optional ByVal nombreCompleto As String = Nothing,
+                                            Optional ByVal fechaFactura As System.Nullable(Of Date) = Nothing, Optional ByVal nombreMedico As String = Nothing,
+                                            Optional ByVal descripcionTermino As String = Nothing, Optional ByVal estado As System.Nullable(Of Boolean) = Nothing,
+                                            Optional ByVal usuarioCajero As String = Nothing, Optional ByVal fechaDesde As System.Nullable(Of Date) = Nothing,
+                                            Optional ByVal fechaHasta As System.Nullable(Of Date) = Nothing, Optional ByVal descripcionExamen As String = Nothing,
                                             Optional ByVal descripcionGrupo As String = Nothing) As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection

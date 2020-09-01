@@ -46,20 +46,6 @@
         btnnuevo.Enabled = True
         btntipoPago.Enabled = False
 
-        Try
-            Dim objTipoTerm As New ClsTipoTermino
-            Dim dt As New DataTable
-            dt = objTipoTerm.SeleccionarTipoTermino()
-            Dim cant As Integer = dt.Rows.Count
-            Dim row As DataRow
-            cbxtipoPago.Items.Clear()
-            For index As Integer = 0 To cant - 1
-                row = dt.Rows(index)
-                cbxtipoPago.Items.Add(CStr(row("descripcion")))
-            Next
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical, "Validación")
-        End Try
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
@@ -154,6 +140,15 @@
                     M_ListaPrecios.txtDescripcionTermino.Text = rtxtdescripcion.Text
                     Me.Close()
                 End If
+            ElseIf (lblform.Text = "M_DiarioFacturacion") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el término de pago?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    'M_ListaPrecios.lblcodeT.Text = lblcode.Text
+                    M_DiarioFacturacion.txtDescripcionTermino.Text = rtxtdescripcion.Text
+                    Me.Close()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -165,7 +160,7 @@
         txtdiasNeto.Text() = ""
         txtcodigoCtaContado.Text() = ""
         txtcodigoCtaVentas.Text() = ""
-        cbxtipoPago.SelectedItem = cbxtipoPago.Items(0)
+        llenarTipoTermino()
 
         rtxtdescripcion.ReadOnly = False
         txtdiasNeto.ReadOnly = False
@@ -182,6 +177,28 @@
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
         btnnuevo.Enabled = True
+    End Sub
+    Private Sub llenarTipoTermino()
+        Try
+            cbxtipoPago.Items.Clear()
+            'llenar el combobox tipo termino
+            Dim objTipoTerm As New ClsTipoTermino
+            Dim dt As New DataTable
+            dt = objTipoTerm.SeleccionarTipoTermino()
+            cbxtipoPago.DataSource = dt
+            cbxtipoPago.DisplayMember = "descripcion"
+            cbxtipoPago.ValueMember = "codigo"
+            'dt = objTipoTerm.SeleccionarTipoTermino()
+            'Dim cant As Integer = dt.Rows.Count
+            'Dim row As DataRow
+            'cbxtipoPago.Items.Clear()
+            'For index As Integer = 0 To cant - 1
+            '    row = dt.Rows(index)
+            '    cbxtipoPago.Items.Add(CStr(row("descripcion")))
+            'Next
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Validación")
+        End Try
     End Sub
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
@@ -206,19 +223,19 @@
                 With objTerm
                     .codigoTerminoPago_ = txtcodigo.Text
                     .Descripcion1 = rtxtdescripcion.Text
-                    .codigoTipoTermino1 = Convert.ToInt32(cbxtipoPago.SelectedIndex.ToString) + 1
+                    .codigoTipoTermino1 = Integer.Parse(cbxtipoPago.SelectedValue)
                 End With
 
                 If (txtcodigoCtaContado.Text <> "") Then
-                    objTerm.codigoCtaContado1 = Convert.ToInt32(lblcodeCtaContado.Text)
+                    objTerm.codigoCtaContado1 = Convert.ToInt64(lblcodeCtaContado.Text)
                 ElseIf (txtcodigoCtaVentas.Text <> "") Then
-                    objTerm.codigoCtaVentas1 = Convert.ToInt32(lblcodeCtaVentas.Text)
+                    objTerm.codigoCtaVentas1 = Convert.ToInt64(lblcodeCtaVentas.Text)
                 ElseIf (txtdiasNeto.Text <> "") Then
-                    objTerm.diasNeto1 = Convert.ToInt32(txtdiasNeto.Text)
+                    objTerm.diasNeto1 = Convert.ToInt64(txtdiasNeto.Text)
                 End If
 
                 If objTerm.RegistrarNuevaTerminoPago() = 1 Then
-                    MsgBox("Registrado correctamente.")
+                    MsgBox("Registrado correctamente.", MsgBoxStyle.Information)
 
                     Dim dv As DataView = objTerm.SeleccionarTerminoPago.DefaultView
                     dgbtabla.DataSource = dv
@@ -264,21 +281,21 @@
                     .codigo_ = lblcode.Text
                     .codigoTerminoPago_ = txtcodigo.Text
                     .Descripcion1 = rtxtdescripcion.Text
-                    .codigoTipoTermino1 = Convert.ToInt32(cbxtipoPago.SelectedIndex.ToString) + 1
+                    .codigoTipoTermino1 = Integer.Parse(cbxtipoPago.SelectedValue)
                 End With
 
                 If (txtcodigoCtaContado.Text <> "") Then
-                    objTerm.codigoCtaContado1 = Convert.ToInt32(lblcodeCtaContado.Text)
+                    objTerm.codigoCtaContado1 = Convert.ToInt64(lblcodeCtaContado.Text)
                 End If
                 If (txtcodigoCtaVentas.Text <> "") Then
-                    objTerm.codigoCtaVentas1 = Convert.ToInt32(lblcodeCtaVentas.Text)
+                    objTerm.codigoCtaVentas1 = Convert.ToInt64(lblcodeCtaVentas.Text)
                 End If
                 If (txtdiasNeto.Text <> "") Then
-                    objTerm.diasNeto1 = Convert.ToInt32(txtdiasNeto.Text)
+                    objTerm.diasNeto1 = Convert.ToInt64(txtdiasNeto.Text)
                 End If
 
                 If objTerm.ModificarTerminoPago() = 1 Then
-                    MsgBox("Modificado correctamente.")
+                    MsgBox("Actualizado el registro correctamente.", MsgBoxStyle.Information)
 
                     Dim dv As DataView = objTerm.SeleccionarTerminoPago.DefaultView
                     dgbtabla.DataSource = dv

@@ -217,6 +217,7 @@ Public Class M_BuscarFactura
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        M_DiarioFacturacion.lblForm.Text = "M_DiarioFacturacion"
         M_DiarioFacturacion.ShowDialog()
     End Sub
 End Class

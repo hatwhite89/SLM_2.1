@@ -2,14 +2,14 @@
     Dim objFact As New ClsFactura
     Dim dv As DataView = objFact.SeleccionarDiarioFacturacion.DefaultView
     Private Sub limpiar()
-        txtnumeroB.ResetText()
-        txtnombreB.ResetText()
-        txtNombreMedico.ResetText()
-        txtDescripcionTermino.ResetText()
-        cmbEstado.ResetText()
-        txtUsuario.ResetText()
-        txtExamen.ResetText()
-        txtGrupo.ResetText()
+        txtnumeroB.Clear()
+        txtnombreB.Clear()
+        txtNombreMedico.Clear()
+        txtDescripcionTermino.Clear()
+        cmbEstado.SelectedItem = ""
+        txtUsuario.Clear()
+        txtExamen.Clear()
+        txtGrupo.Clear()
 
         dtpFecha.Format = DateTimePickerFormat.Custom
         dtpFecha.CustomFormat = " "
@@ -66,13 +66,15 @@
             SeleccionarFacturas()
 
             'CAMBIO DE NOMBRE COLUMNAS
-            'dgbtabla.Columns("numero").HeaderText = "Número de Factura"
-            'dgbtabla.Columns("nombreCompleto").HeaderText = "Cliente o Paciente"
-            'dgbtabla.Columns("descripcion").HeaderText = "Término de Pago"
-            'dgbtabla.Columns("total").HeaderText = "Total Factura"
-            'dgbtabla.Columns("usuario").HeaderText = "Usuario"
-            'dgbtabla.Columns("nombre").HeaderText = "Sucursal"
-            'dgbtabla.Columns("fechaFactura").HeaderText = "Fecha Facturación"
+            dgbtabla.Columns("numero").HeaderText = "Número de Factura"
+            dgbtabla.Columns("nombreCompleto").HeaderText = "Cliente o Paciente"
+            dgbtabla.Columns("descripcion").HeaderText = "Término de Pago"
+            dgbtabla.Columns("total").HeaderText = "Total Factura"
+            dgbtabla.Columns("usuario").HeaderText = "Usuario"
+            dgbtabla.Columns("nombre").HeaderText = "Sucursal"
+            dgbtabla.Columns("fechaFactura").HeaderText = "Fecha Facturación"
+
+            'OCULTAR COLUMNAS
             'Me.dgbtabla.Columns("codigoCliente").Visible = False
             'Me.dgbtabla.Columns("codigoTerminoPago").Visible = False
             'Me.dgbtabla.Columns("codigoMedico").Visible = False
@@ -100,39 +102,99 @@
         End Try
     End Sub
     Private Sub SeleccionarFacturas()
+
+        'LLENADO DATAGRIDVIEW 
         dv = objFact.SeleccionarDiarioFacturacion.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
-        'CalcularTotal()
+        CalcularTotal()
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
+            'LIMPIAR Y CERRAR FORMULARIO
             limpiar()
             Me.Close()
         End If
     End Sub
     Private Sub txtnumeroB_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnumeroB.KeyPress
+        'SOLO ACEPTAR NUMEROS
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
             e.Handled = True
         End If
     End Sub
     Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
         Try
-            If lblForm.Text = "M_ListaPrecios" Then
-                'Dim n As String = ""
-                'Dim temp As String = M_ListaPrecios.dgbtabla.Rows(lblFila.Text).Cells(2).Value()
-                'If e.RowIndex >= 0 Then
-                '    n = MsgBox("¿Desea utilizar el examen que a seleccionado?", MsgBoxStyle.YesNo, "Validación")
-                'End If
-                'If n = vbYes Then
-                '    If Convert.ToInt64(lblFila.Text) >= 0 And temp <> "" Then
-                '        M_ListaPrecios.dgbtabla.Rows.Remove(M_ListaPrecios.dgbtabla.Rows(lblFila.Text))
-                '    End If
-                '    M_ListaPrecios.dgbtabla.Rows.Insert(lblFila.Text, New String() {"", "", temp, dgbtabla.Rows(e.RowIndex).Cells(0).Value(), dgbtabla.Rows(e.RowIndex).Cells(1).Value()})
-                '    Me.Close()
-                'End If
+            'MOSTRAR DATOS DE LA FACTURA
+            Dim n As String = ""
+            If lblForm.Text = "M_DiarioFacturacion" Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea ver la factura?", MsgBoxStyle.YesNo, "Validación")
+                End If
+                If n = vbYes Then
+                    M_Factura.limpiar()
+                    'Dim objFact As New ClsFactura
+                    objFact.numero_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+
+                    Dim dt As New DataTable
+                    dt = objFact.BuscarFacturaNumero()
+                    Dim row As DataRow = dt.Rows(0)
+
+                    M_Factura.txtnumeroFactura.Text = CStr(row("numero"))
+                    M_Factura.txtnumeroOficial.Text = CStr(row("numeroOficial"))
+                    M_Factura.dtpfechaFactura.Value = CStr(row("fechaFactura"))
+                    M_Factura.txtcodigoCliente.Text = CStr(row("codigoCliente"))
+                    M_Factura.txtcodigoRecepecionista.Text = CStr(row("codigoRecepcionista"))
+                    M_Factura.txtcodigoMedico.Text = CStr(row("codigoMedico"))
+                    M_Factura.txtcodigoCajero.Text = CStr(row("codigoCajero"))
+                    M_Factura.lblcodeTerminoPago.Text = CStr(row("codigoTerminoPago"))
+                    M_Factura.txtcodigoSede.Text = CStr(row("codigoSede"))
+                    M_Factura.dtpfechaVto.Value = CStr(row("fechaVto"))
+                    M_Factura.lblcodeSucursal.Text = CStr(row("codigoSucursal"))
+
+                    'M_Factura.lblcodePriceList.Text = CStr(row("codigoConvenio"))
+                    M_Factura.txtcodigoConvenio.Text = CStr(row("codigoConvenio"))
+
+                    M_Factura.txtnumeroPoliza.Text = CStr(row("numeroPoliza"))
+                    M_Factura.txtcodigoTerminal.Text = CStr(row("codigoTerminal"))
+                    M_Factura.lblcodeSucursal.Text = CStr(row("codigoSucursal"))
+                    M_Factura.cbxentregarMedico.Checked = CStr(row("entregaMedico"))
+                    M_Factura.cbxentregarPaciente.Checked = CStr(row("entregaPaciente"))
+                    M_Factura.cbxenviarCorreo.Checked = CStr(row("enviarEmail"))
+                    M_Factura.txtpagoPaciente.Text = CStr(row("pagoPaciente"))
+                    M_Factura.txtEfectivo.Text = CStr(row("ingresoEfectivo"))
+                    M_Factura.txtTarjeta.Text = CStr(row("ingresoTarjeta"))
+                    M_Factura.txtvuelto.Text = CStr(row("vuelto"))
+                    M_Factura.txttotal.Text = CStr(row("total"))
+                    M_Factura.cbxok.Checked = CStr(row("ok"))
+                    M_Factura.cbxAnular.Checked = CStr(row("estado"))
+
+                    Dim objDetFact As New ClsDetalleFactura
+                    objDetFact.numeroFactura_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    dt = objDetFact.BuscarDetalleFacturaIngresada()
+                    For index As Integer = 0 To dt.Rows.Count - 1
+                        row = dt.Rows(index)
+                        M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codInterno")), CStr(row("cantidad")), CStr(row("subtotal")), CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal")), CStr(row("subArea")), CStr(row("numero")), CStr(row("codigoExamen"))})
+                        M_ClienteVentana.dgvtabla.Rows.Add(New String() {CStr(row("codInterno")), CStr(row("cantidad")), CStr(row("subtotal")), CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
+
+                        'OBSERVACIONES
+                        M_Factura.dgbObservaciones.Rows.Add(New String() {CStr(row("codInterno")), CStr(row("observaciones"))})
+                    Next
+
+                    M_Factura.deshabilitar()
+                    If (M_Factura.cbxok.Checked = "0") Then
+                        M_Factura.HabilitarActualizarFactura()
+                    Else
+                        M_Factura.btnActualizar.Enabled = True
+                    End If
+                    'Me.Close()
+                    'txtnombreB.Text = ""
+                    'txtnumeroB.Text = ""
+                    'Me.Hide()
+
+                    M_Factura.ShowDialog()
+                End If
             End If
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -239,9 +301,9 @@
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Try
             Dim nombreCompleto = Nothing, nombreMedico = Nothing, descripcionTermino = Nothing, usuarioCajero = Nothing, descripcionExamen = Nothing, descripcionGrupo As String = Nothing
-            Dim numero As Integer = Nothing
-            Dim fechaFactura = Nothing, fechaDesde = Nothing, fechaHasta As Date = Nothing
-            Dim estado As Boolean = Nothing
+            Dim numero As System.Nullable(Of Integer) = Nothing
+            Dim fechaFactura = Nothing, fechaDesde = Nothing, fechaHasta As System.Nullable(Of Date) = Nothing
+            Dim estado As System.Nullable(Of Boolean) = Nothing
 
             If Trim(txtnumeroB.Text) <> "" Then
                 numero = Integer.Parse(txtnumeroB.Text)
@@ -301,14 +363,13 @@
                 descripcionGrupo = Nothing
             End If
 
-            'Dim objFact As New ClsFactura
-            MsgBox(numero & nombreCompleto & fechaFactura & nombreMedico & descripcionTermino & estado & usuarioCajero & "desde" & fechaDesde & "fhasta" & fechaHasta & descripcionExamen & descripcionGrupo)
-            'Dim dv As DataView = objFact.BuscarDiarioFacturacion(numero, nombreCompleto, fechaFactura, nombreMedico, descripcionTermino, estado, usuarioCajero, fechaDesde, fechaHasta, descripcionExamen, descripcionGrupo).DefaultView
+            'MsgBox(numero & nombreCompleto & fechaFactura & nombreMedico & descripcionTermino & estado & usuarioCajero & "desde" & fechaDesde & "fhasta" & fechaHasta & descripcionExamen & descripcionGrupo)
+            'Llenado de la tabla al llamar al procedimiento almacenado
             dv = objFact.BuscarDiarioFacturacion(numero, nombreCompleto, fechaFactura, nombreMedico, descripcionTermino, estado, usuarioCajero, fechaDesde, fechaHasta, descripcionExamen, descripcionGrupo).DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
             dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-            'CalcularTotal()
+            CalcularTotal()
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -321,5 +382,41 @@
             sum = sum + dgbtabla.Rows(i).Cells(3).Value
         Next
         lblTotal.Text = sum.ToString()
+    End Sub
+
+    Private Sub lblTotal_TextChange(sender As Object, e As EventArgs) Handles lblTotal.TextChanged
+        'Mostrar el numero con 2 decimales N2 = 1,000.00   y F2 = 1000.00
+        Try
+            If Trim(lblTotal.Text) <> "" Then
+                lblTotal.Text = Convert.ToDecimal(lblTotal.Text).ToString("N2")
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnMedico_Click(sender As Object, e As EventArgs) Handles btnMedico.Click
+        M_Medico.lblForm.Text = "M_DiarioFacturacion"
+        M_Medico.Show()
+    End Sub
+
+    Private Sub btnTerminoPago_Click(sender As Object, e As EventArgs) Handles btnTerminoPago.Click
+        M_TerminosPago.lblform.Text = "M_DiarioFacturacion"
+        M_TerminosPago.Show()
+    End Sub
+
+    Private Sub btnGrupoExamen_Click(sender As Object, e As EventArgs) Handles btnGrupoExamen.Click
+        E_GrupoExamen.lblform.Text = "M_DiarioFacturacion"
+        E_GrupoExamen.Show()
+    End Sub
+
+    Private Sub btnExamen_Click(sender As Object, e As EventArgs) Handles btnExamen.Click
+        E_DetalleExamenes.lblform.Text = "M_DiarioFacturacion"
+        E_DetalleExamenes.Show()
+    End Sub
+
+    Private Sub btnUsuario_Click(sender As Object, e As EventArgs) Handles btnUsuario.Click
+        E_Usuarios.lblForm.Text = "M_DiarioFacturacion"
+        E_Usuarios.Show()
     End Sub
 End Class

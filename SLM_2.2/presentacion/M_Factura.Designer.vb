@@ -103,6 +103,7 @@ Partial Class M_Factura
         Me.cbxAnular = New System.Windows.Forms.CheckBox()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtNombreCajero = New System.Windows.Forms.TextBox()
         Me.txtNombreRecepcionista = New System.Windows.Forms.TextBox()
         Me.txtCodigoBreveMaquina = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -133,7 +134,6 @@ Partial Class M_Factura
         Me.btnQuitarPromocion = New System.Windows.Forms.Button()
         Me.btnPromocion = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.txtNombreCajero = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -1011,6 +1011,18 @@ Partial Class M_Factura
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detalle Cliente"
         '
+        'txtNombreCajero
+        '
+        Me.txtNombreCajero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNombreCajero.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombreCajero.Location = New System.Drawing.Point(830, 78)
+        Me.txtNombreCajero.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtNombreCajero.Name = "txtNombreCajero"
+        Me.txtNombreCajero.ReadOnly = True
+        Me.txtNombreCajero.Size = New System.Drawing.Size(281, 22)
+        Me.txtNombreCajero.TabIndex = 112
+        Me.txtNombreCajero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'txtNombreRecepcionista
         '
         Me.txtNombreRecepcionista.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
@@ -1335,18 +1347,6 @@ Partial Class M_Factura
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1131, 247)
         Me.TabControl1.TabIndex = 112
-        '
-        'txtNombreCajero
-        '
-        Me.txtNombreCajero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtNombreCajero.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombreCajero.Location = New System.Drawing.Point(830, 78)
-        Me.txtNombreCajero.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtNombreCajero.Name = "txtNombreCajero"
-        Me.txtNombreCajero.ReadOnly = True
-        Me.txtNombreCajero.Size = New System.Drawing.Size(281, 22)
-        Me.txtNombreCajero.TabIndex = 112
-        Me.txtNombreCajero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'M_Factura
         '

@@ -22,7 +22,10 @@ Partial Class M_DiarioFacturacion
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_DiarioFacturacion))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblTotal = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.dtpFechaHasta = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.dtpFechaDesde = New System.Windows.Forms.DateTimePicker()
@@ -50,8 +53,11 @@ Partial Class M_DiarioFacturacion
         Me.lblnumeroB = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotalFacturas = New System.Windows.Forms.Label()
-        Me.lblTotal = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.btnUsuario = New System.Windows.Forms.Button()
+        Me.btnMedico = New System.Windows.Forms.Button()
+        Me.btnTerminoPago = New System.Windows.Forms.Button()
+        Me.btnExamen = New System.Windows.Forms.Button()
+        Me.btnGrupoExamen = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -61,6 +67,11 @@ Partial Class M_DiarioFacturacion
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.btnGrupoExamen)
+        Me.GroupBox1.Controls.Add(Me.btnExamen)
+        Me.GroupBox1.Controls.Add(Me.btnTerminoPago)
+        Me.GroupBox1.Controls.Add(Me.btnMedico)
+        Me.GroupBox1.Controls.Add(Me.btnUsuario)
         Me.GroupBox1.Controls.Add(Me.lblTotal)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.dtpFechaHasta)
@@ -92,10 +103,30 @@ Partial Class M_DiarioFacturacion
         Me.GroupBox1.Controls.Add(Me.lbltotalFacturas)
         Me.GroupBox1.Location = New System.Drawing.Point(26, 24)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1346, 738)
+        Me.GroupBox1.Size = New System.Drawing.Size(1420, 738)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Diario de Facturación"
+        '
+        'lblTotal
+        '
+        Me.lblTotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblTotal.AutoSize = True
+        Me.lblTotal.Location = New System.Drawing.Point(1283, 697)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.Size = New System.Drawing.Size(32, 17)
+        Me.lblTotal.TabIndex = 145
+        Me.lblTotal.Text = "000"
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(1056, 697)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(58, 17)
+        Me.Label9.TabIndex = 144
+        Me.Label9.Text = "TOTAL "
         '
         'dtpFechaHasta
         '
@@ -133,7 +164,8 @@ Partial Class M_DiarioFacturacion
         '
         'txtGrupo
         '
-        Me.txtGrupo.Location = New System.Drawing.Point(1049, 114)
+        Me.txtGrupo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtGrupo.Location = New System.Drawing.Point(1073, 114)
         Me.txtGrupo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtGrupo.MaxLength = 20
         Me.txtGrupo.Name = "txtGrupo"
@@ -142,8 +174,9 @@ Partial Class M_DiarioFacturacion
         '
         'Label5
         '
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(940, 116)
+        Me.Label5.Location = New System.Drawing.Point(964, 116)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(92, 17)
         Me.Label5.TabIndex = 138
@@ -151,7 +184,7 @@ Partial Class M_DiarioFacturacion
         '
         'txtExamen
         '
-        Me.txtExamen.Location = New System.Drawing.Point(589, 114)
+        Me.txtExamen.Location = New System.Drawing.Point(572, 114)
         Me.txtExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtExamen.MaxLength = 20
         Me.txtExamen.Name = "txtExamen"
@@ -170,7 +203,7 @@ Partial Class M_DiarioFacturacion
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(466, 117)
+        Me.Label3.Location = New System.Drawing.Point(449, 117)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(112, 17)
         Me.Label3.TabIndex = 135
@@ -187,16 +220,19 @@ Partial Class M_DiarioFacturacion
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(1174, 163)
+        Me.btnBuscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnBuscar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Location = New System.Drawing.Point(1169, 163)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscar.Size = New System.Drawing.Size(114, 34)
         Me.btnBuscar.TabIndex = 133
         Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = True
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'txtDescripcionTermino
         '
-        Me.txtDescripcionTermino.Location = New System.Drawing.Point(589, 75)
+        Me.txtDescripcionTermino.Location = New System.Drawing.Point(572, 75)
         Me.txtDescripcionTermino.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtDescripcionTermino.MaxLength = 20
         Me.txtDescripcionTermino.Name = "txtDescripcionTermino"
@@ -214,17 +250,19 @@ Partial Class M_DiarioFacturacion
         '
         'cmbEstado
         '
+        Me.cmbEstado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmbEstado.FormattingEnabled = True
         Me.cmbEstado.Items.AddRange(New Object() {"Activa", "Anulada"})
-        Me.cmbEstado.Location = New System.Drawing.Point(1049, 73)
+        Me.cmbEstado.Location = New System.Drawing.Point(1073, 73)
         Me.cmbEstado.Name = "cmbEstado"
         Me.cmbEstado.Size = New System.Drawing.Size(279, 24)
         Me.cmbEstado.TabIndex = 130
         '
         'lblEsado
         '
+        Me.lblEsado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblEsado.AutoSize = True
-        Me.lblEsado.Location = New System.Drawing.Point(988, 80)
+        Me.lblEsado.Location = New System.Drawing.Point(1012, 80)
         Me.lblEsado.Name = "lblEsado"
         Me.lblEsado.Size = New System.Drawing.Size(52, 17)
         Me.lblEsado.TabIndex = 129
@@ -233,7 +271,7 @@ Partial Class M_DiarioFacturacion
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(466, 78)
+        Me.Label2.Location = New System.Drawing.Point(449, 78)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(117, 17)
         Me.Label2.TabIndex = 127
@@ -250,16 +288,18 @@ Partial Class M_DiarioFacturacion
         '
         'dtpFecha
         '
+        Me.dtpFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(1049, 35)
+        Me.dtpFecha.Location = New System.Drawing.Point(1073, 35)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(279, 22)
         Me.dtpFecha.TabIndex = 124
         '
         'lblFecha
         '
+        Me.lblFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblFecha.AutoSize = True
-        Me.lblFecha.Location = New System.Drawing.Point(986, 39)
+        Me.lblFecha.Location = New System.Drawing.Point(1010, 39)
         Me.lblFecha.Name = "lblFecha"
         Me.lblFecha.Size = New System.Drawing.Size(47, 17)
         Me.lblFecha.TabIndex = 123
@@ -304,6 +344,7 @@ Partial Class M_DiarioFacturacion
         '
         'lblcantidad
         '
+        Me.lblcantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblcantidad.AutoSize = True
         Me.lblcantidad.Location = New System.Drawing.Point(390, 697)
         Me.lblcantidad.Name = "lblcantidad"
@@ -332,14 +373,16 @@ Partial Class M_DiarioFacturacion
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
+        Me.dgbtabla.RowHeadersVisible = False
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(1303, 463)
+        Me.dgbtabla.Size = New System.Drawing.Size(1377, 463)
         Me.dgbtabla.TabIndex = 116
         '
         'lbltotalFacturas
         '
+        Me.lbltotalFacturas.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lbltotalFacturas.AutoSize = True
         Me.lbltotalFacturas.Location = New System.Drawing.Point(60, 697)
         Me.lbltotalFacturas.Name = "lbltotalFacturas"
@@ -347,30 +390,93 @@ Partial Class M_DiarioFacturacion
         Me.lbltotalFacturas.TabIndex = 117
         Me.lbltotalFacturas.Text = "CANTIDAD DE FACTURAS"
         '
-        'lblTotal
+        'btnUsuario
         '
-        Me.lblTotal.AutoSize = True
-        Me.lblTotal.Location = New System.Drawing.Point(1209, 697)
-        Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(32, 17)
-        Me.lblTotal.TabIndex = 145
-        Me.lblTotal.Text = "000"
+        Me.btnUsuario.BackColor = System.Drawing.Color.White
+        Me.btnUsuario.BackgroundImage = CType(resources.GetObject("btnUsuario.BackgroundImage"), System.Drawing.Image)
+        Me.btnUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnUsuario.FlatAppearance.BorderSize = 0
+        Me.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUsuario.Location = New System.Drawing.Point(377, 114)
+        Me.btnUsuario.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnUsuario.Name = "btnUsuario"
+        Me.btnUsuario.Size = New System.Drawing.Size(40, 21)
+        Me.btnUsuario.TabIndex = 165
+        Me.btnUsuario.Text = "..."
+        Me.btnUsuario.UseVisualStyleBackColor = False
         '
-        'Label9
+        'btnMedico
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(982, 697)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(58, 17)
-        Me.Label9.TabIndex = 144
-        Me.Label9.Text = "TOTAL "
+        Me.btnMedico.BackColor = System.Drawing.Color.White
+        Me.btnMedico.BackgroundImage = CType(resources.GetObject("btnMedico.BackgroundImage"), System.Drawing.Image)
+        Me.btnMedico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnMedico.FlatAppearance.BorderSize = 0
+        Me.btnMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMedico.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMedico.Location = New System.Drawing.Point(377, 75)
+        Me.btnMedico.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnMedico.Name = "btnMedico"
+        Me.btnMedico.Size = New System.Drawing.Size(40, 21)
+        Me.btnMedico.TabIndex = 166
+        Me.btnMedico.Text = "..."
+        Me.btnMedico.UseVisualStyleBackColor = False
+        '
+        'btnTerminoPago
+        '
+        Me.btnTerminoPago.BackColor = System.Drawing.Color.White
+        Me.btnTerminoPago.BackgroundImage = CType(resources.GetObject("btnTerminoPago.BackgroundImage"), System.Drawing.Image)
+        Me.btnTerminoPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnTerminoPago.FlatAppearance.BorderSize = 0
+        Me.btnTerminoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTerminoPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTerminoPago.Location = New System.Drawing.Point(857, 75)
+        Me.btnTerminoPago.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnTerminoPago.Name = "btnTerminoPago"
+        Me.btnTerminoPago.Size = New System.Drawing.Size(40, 21)
+        Me.btnTerminoPago.TabIndex = 167
+        Me.btnTerminoPago.Text = "..."
+        Me.btnTerminoPago.UseVisualStyleBackColor = False
+        '
+        'btnExamen
+        '
+        Me.btnExamen.BackColor = System.Drawing.Color.White
+        Me.btnExamen.BackgroundImage = CType(resources.GetObject("btnExamen.BackgroundImage"), System.Drawing.Image)
+        Me.btnExamen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnExamen.FlatAppearance.BorderSize = 0
+        Me.btnExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExamen.Location = New System.Drawing.Point(857, 115)
+        Me.btnExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnExamen.Name = "btnExamen"
+        Me.btnExamen.Size = New System.Drawing.Size(40, 21)
+        Me.btnExamen.TabIndex = 168
+        Me.btnExamen.Text = "..."
+        Me.btnExamen.UseVisualStyleBackColor = False
+        '
+        'btnGrupoExamen
+        '
+        Me.btnGrupoExamen.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGrupoExamen.BackColor = System.Drawing.Color.White
+        Me.btnGrupoExamen.BackgroundImage = CType(resources.GetObject("btnGrupoExamen.BackgroundImage"), System.Drawing.Image)
+        Me.btnGrupoExamen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnGrupoExamen.FlatAppearance.BorderSize = 0
+        Me.btnGrupoExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGrupoExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGrupoExamen.Location = New System.Drawing.Point(1358, 113)
+        Me.btnGrupoExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnGrupoExamen.Name = "btnGrupoExamen"
+        Me.btnGrupoExamen.Size = New System.Drawing.Size(40, 21)
+        Me.btnGrupoExamen.TabIndex = 169
+        Me.btnGrupoExamen.Text = "..."
+        Me.btnGrupoExamen.UseVisualStyleBackColor = False
         '
         'M_DiarioFacturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1397, 774)
+        Me.ClientSize = New System.Drawing.Size(1471, 774)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "M_DiarioFacturacion"
         Me.Text = "M_DiarioFacturacion"
@@ -411,4 +517,9 @@ Partial Class M_DiarioFacturacion
     Friend WithEvents Label4 As Label
     Friend WithEvents lblTotal As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents btnExamen As Button
+    Friend WithEvents btnTerminoPago As Button
+    Friend WithEvents btnMedico As Button
+    Friend WithEvents btnUsuario As Button
+    Friend WithEvents btnGrupoExamen As Button
 End Class
