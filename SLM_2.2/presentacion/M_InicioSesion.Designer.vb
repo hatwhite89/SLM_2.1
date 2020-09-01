@@ -31,6 +31,7 @@ Partial Class M_InicioSesion
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnInicioSesion = New System.Windows.Forms.Button()
+        Me.UI_TitleBanner1 = New UIDC.UI_TitleBanner()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,9 +50,10 @@ Partial Class M_InicioSesion
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.btnInicioSesion)
-        Me.Panel1.Location = New System.Drawing.Point(2, -1)
+        Me.Panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Panel1.Location = New System.Drawing.Point(0, 58)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(328, 416)
+        Me.Panel1.Size = New System.Drawing.Size(357, 402)
         Me.Panel1.TabIndex = 135
         '
         'txtPassword
@@ -60,7 +62,7 @@ Partial Class M_InicioSesion
         Me.txtPassword.FocusedColor = "#508ef5"
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.IsEnabled = True
-        Me.txtPassword.Location = New System.Drawing.Point(76, 254)
+        Me.txtPassword.Location = New System.Drawing.Point(88, 254)
         Me.txtPassword.MaxLength = 32767
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(202, 24)
@@ -81,7 +83,7 @@ Partial Class M_InicioSesion
         Me.txtUsuario.FocusedColor = "#508ef5"
         Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.IsEnabled = True
-        Me.txtUsuario.Location = New System.Drawing.Point(76, 191)
+        Me.txtUsuario.Location = New System.Drawing.Point(88, 191)
         Me.txtUsuario.MaxLength = 32767
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(202, 24)
@@ -99,7 +101,7 @@ Partial Class M_InicioSesion
         'PictureBox3
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(45, 249)
+        Me.PictureBox3.Location = New System.Drawing.Point(57, 249)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(28, 29)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -109,7 +111,7 @@ Partial Class M_InicioSesion
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(43, 188)
+        Me.PictureBox2.Location = New System.Drawing.Point(55, 188)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(28, 29)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -119,7 +121,7 @@ Partial Class M_InicioSesion
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(31, 24)
+        Me.PictureBox1.Location = New System.Drawing.Point(43, 35)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(269, 138)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -131,7 +133,7 @@ Partial Class M_InicioSesion
         Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(60, 353)
+        Me.Button1.Location = New System.Drawing.Point(72, 353)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(218, 28)
         Me.Button1.TabIndex = 3
@@ -144,7 +146,7 @@ Partial Class M_InicioSesion
         Me.btnInicioSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnInicioSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnInicioSesion.ForeColor = System.Drawing.Color.White
-        Me.btnInicioSesion.Location = New System.Drawing.Point(60, 320)
+        Me.btnInicioSesion.Location = New System.Drawing.Point(72, 320)
         Me.btnInicioSesion.Margin = New System.Windows.Forms.Padding(2)
         Me.btnInicioSesion.Name = "btnInicioSesion"
         Me.btnInicioSesion.Size = New System.Drawing.Size(218, 28)
@@ -152,14 +154,40 @@ Partial Class M_InicioSesion
         Me.btnInicioSesion.Text = "Iniciar Sesión"
         Me.btnInicioSesion.UseVisualStyleBackColor = False
         '
+        'UI_TitleBanner1
+        '
+        Me.UI_TitleBanner1.Animate = UIDC.UI_TitleBanner.Anim.AnimateON
+        Me.UI_TitleBanner1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.UI_TitleBanner1.ButtonMenuActive = UIDC.UI_TitleBanner.Active.ActiveOff
+        Me.UI_TitleBanner1.ButtonsVisible = UIDC.UI_TitleBanner.ButtonVisible.Close
+        Me.UI_TitleBanner1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.UI_TitleBanner1.FlatAppearance.BorderSize = 0
+        Me.UI_TitleBanner1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.UI_TitleBanner1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.UI_TitleBanner1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.UI_TitleBanner1.Font = New System.Drawing.Font("Roboto Medium", 15.0!)
+        Me.UI_TitleBanner1.ForeColor = System.Drawing.Color.White
+        Me.UI_TitleBanner1.Location = New System.Drawing.Point(0, 0)
+        Me.UI_TitleBanner1.MoveActive = True
+        Me.UI_TitleBanner1.Name = "UI_TitleBanner1"
+        Me.UI_TitleBanner1.Padding = New System.Windows.Forms.Padding(15, 12, 0, 0)
+        Me.UI_TitleBanner1.ParentControl = Me
+        Me.UI_TitleBanner1.Size = New System.Drawing.Size(357, 70)
+        Me.UI_TitleBanner1.TabIndex = 137
+        Me.UI_TitleBanner1.Text = "Login"
+        Me.UI_TitleBanner1.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.UI_TitleBanner1.TypeWindows = UIDC.UI_TitleBanner.TypeTheme.Material
+        Me.UI_TitleBanner1.UseVisualStyleBackColor = False
+        '
         'M_InicioSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(332, 415)
+        Me.ClientSize = New System.Drawing.Size(357, 460)
+        Me.Controls.Add(Me.UI_TitleBanner1)
         Me.Controls.Add(Me.Panel1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -167,7 +195,7 @@ Partial Class M_InicioSesion
         Me.MinimizeBox = False
         Me.Name = "M_InicioSesion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Inicio de sesion"
+        Me.Text = "Login"
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -183,4 +211,5 @@ Partial Class M_InicioSesion
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents txtUsuario As UIDC.UI_MaterialTextBox
     Friend WithEvents txtPassword As UIDC.UI_MaterialTextBox
+    Friend WithEvents UI_TitleBanner1 As UIDC.UI_TitleBanner
 End Class

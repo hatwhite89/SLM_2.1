@@ -398,7 +398,7 @@
         A_Notificacion.Show()
     End Sub
 
-    Private Sub Button1_Click_3(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_3(sender As Object, e As EventArgs)
         AA_Guardado.Show()
     End Sub
 
@@ -694,6 +694,25 @@
     End Sub
 
     Private Sub gbxMenu_Enter(sender As Object, e As EventArgs)
+
+    End Sub
+
+
+
+    Private Sub bntCerrar_Click(sender As Object, e As EventArgs) Handles bntCerrar.Click
+        Try
+
+            Me.Close()
+            End
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Form1_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+
+        End
 
     End Sub
 End Class
