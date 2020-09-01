@@ -179,6 +179,7 @@
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
     Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
         Try
             Dim n As String = ""
