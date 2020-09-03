@@ -107,7 +107,7 @@
         dv = objFact.SeleccionarDiarioFacturacion.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        'dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
         CalcularTotal()
     End Sub
@@ -119,7 +119,7 @@
         End If
     End Sub
     Private Sub txtnumeroB_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnumeroB.KeyPress
-        'SOLO ACEPTAR NUMEROS
+        'SOLO ACEPTA NUMEROS
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
             e.Handled = True
         End If
@@ -368,7 +368,7 @@
             dv = objFact.BuscarDiarioFacturacion(numero, nombreCompleto, fechaFactura, nombreMedico, descripcionTermino, estado, usuarioCajero, fechaDesde, fechaHasta, descripcionExamen, descripcionGrupo).DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            'dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
             CalcularTotal()
 
         Catch ex As Exception
