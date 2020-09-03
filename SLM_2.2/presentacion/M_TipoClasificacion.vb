@@ -40,7 +40,7 @@
                     Dim dv As DataView = objTipoCla.SeleccionarTipoClasificacion.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
-                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
                     rtxtcomentario.ReadOnly = True
 
@@ -78,7 +78,7 @@
                     Dim dv As DataView = objTipoCla.SeleccionarTipoClasificacion.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
-                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
                     rtxtcomentario.ReadOnly = True
 
@@ -110,7 +110,7 @@
         Dim dv As DataView = objTipoCla.SeleccionarTipoClasificacion.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
         rtxtcomentario.ReadOnly = True
         txtcodigo.ReadOnly = True
@@ -154,12 +154,12 @@
             Dim dv As DataView = objTipoCla.BuscarTipoClasificacion.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         Else
             Dim dv As DataView = objTipoCla.SeleccionarTipoClasificacion.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         End If
     End Sub
 End Class

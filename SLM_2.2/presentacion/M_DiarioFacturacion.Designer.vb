@@ -24,6 +24,11 @@ Partial Class M_DiarioFacturacion
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_DiarioFacturacion))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnGrupoExamen = New System.Windows.Forms.Button()
+        Me.btnExamen = New System.Windows.Forms.Button()
+        Me.btnTerminoPago = New System.Windows.Forms.Button()
+        Me.btnMedico = New System.Windows.Forms.Button()
+        Me.btnUsuario = New System.Windows.Forms.Button()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.dtpFechaHasta = New System.Windows.Forms.DateTimePicker()
@@ -53,11 +58,6 @@ Partial Class M_DiarioFacturacion
         Me.lblnumeroB = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotalFacturas = New System.Windows.Forms.Label()
-        Me.btnUsuario = New System.Windows.Forms.Button()
-        Me.btnMedico = New System.Windows.Forms.Button()
-        Me.btnTerminoPago = New System.Windows.Forms.Button()
-        Me.btnExamen = New System.Windows.Forms.Button()
-        Me.btnGrupoExamen = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -101,12 +101,95 @@ Partial Class M_DiarioFacturacion
         Me.GroupBox1.Controls.Add(Me.lblnumeroB)
         Me.GroupBox1.Controls.Add(Me.dgbtabla)
         Me.GroupBox1.Controls.Add(Me.lbltotalFacturas)
-        Me.GroupBox1.Location = New System.Drawing.Point(26, 24)
+        Me.GroupBox1.Location = New System.Drawing.Point(26, 14)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(1420, 738)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Diario de Facturación"
+        '
+        'btnGrupoExamen
+        '
+        Me.btnGrupoExamen.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGrupoExamen.BackColor = System.Drawing.Color.White
+        Me.btnGrupoExamen.BackgroundImage = CType(resources.GetObject("btnGrupoExamen.BackgroundImage"), System.Drawing.Image)
+        Me.btnGrupoExamen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnGrupoExamen.FlatAppearance.BorderSize = 0
+        Me.btnGrupoExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGrupoExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGrupoExamen.Location = New System.Drawing.Point(1358, 113)
+        Me.btnGrupoExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnGrupoExamen.Name = "btnGrupoExamen"
+        Me.btnGrupoExamen.Size = New System.Drawing.Size(40, 21)
+        Me.btnGrupoExamen.TabIndex = 169
+        Me.btnGrupoExamen.Text = "..."
+        Me.btnGrupoExamen.UseVisualStyleBackColor = False
+        '
+        'btnExamen
+        '
+        Me.btnExamen.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnExamen.BackColor = System.Drawing.Color.White
+        Me.btnExamen.BackgroundImage = CType(resources.GetObject("btnExamen.BackgroundImage"), System.Drawing.Image)
+        Me.btnExamen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnExamen.FlatAppearance.BorderSize = 0
+        Me.btnExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExamen.Location = New System.Drawing.Point(857, 115)
+        Me.btnExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnExamen.Name = "btnExamen"
+        Me.btnExamen.Size = New System.Drawing.Size(40, 21)
+        Me.btnExamen.TabIndex = 168
+        Me.btnExamen.Text = "..."
+        Me.btnExamen.UseVisualStyleBackColor = False
+        '
+        'btnTerminoPago
+        '
+        Me.btnTerminoPago.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnTerminoPago.BackColor = System.Drawing.Color.White
+        Me.btnTerminoPago.BackgroundImage = CType(resources.GetObject("btnTerminoPago.BackgroundImage"), System.Drawing.Image)
+        Me.btnTerminoPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnTerminoPago.FlatAppearance.BorderSize = 0
+        Me.btnTerminoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTerminoPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTerminoPago.Location = New System.Drawing.Point(857, 75)
+        Me.btnTerminoPago.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnTerminoPago.Name = "btnTerminoPago"
+        Me.btnTerminoPago.Size = New System.Drawing.Size(40, 21)
+        Me.btnTerminoPago.TabIndex = 167
+        Me.btnTerminoPago.Text = "..."
+        Me.btnTerminoPago.UseVisualStyleBackColor = False
+        '
+        'btnMedico
+        '
+        Me.btnMedico.BackColor = System.Drawing.Color.White
+        Me.btnMedico.BackgroundImage = CType(resources.GetObject("btnMedico.BackgroundImage"), System.Drawing.Image)
+        Me.btnMedico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnMedico.FlatAppearance.BorderSize = 0
+        Me.btnMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMedico.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMedico.Location = New System.Drawing.Point(377, 75)
+        Me.btnMedico.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnMedico.Name = "btnMedico"
+        Me.btnMedico.Size = New System.Drawing.Size(40, 21)
+        Me.btnMedico.TabIndex = 166
+        Me.btnMedico.Text = "..."
+        Me.btnMedico.UseVisualStyleBackColor = False
+        '
+        'btnUsuario
+        '
+        Me.btnUsuario.BackColor = System.Drawing.Color.White
+        Me.btnUsuario.BackgroundImage = CType(resources.GetObject("btnUsuario.BackgroundImage"), System.Drawing.Image)
+        Me.btnUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnUsuario.FlatAppearance.BorderSize = 0
+        Me.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUsuario.Location = New System.Drawing.Point(377, 114)
+        Me.btnUsuario.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnUsuario.Name = "btnUsuario"
+        Me.btnUsuario.Size = New System.Drawing.Size(40, 21)
+        Me.btnUsuario.TabIndex = 165
+        Me.btnUsuario.Text = "..."
+        Me.btnUsuario.UseVisualStyleBackColor = False
         '
         'lblTotal
         '
@@ -184,6 +267,8 @@ Partial Class M_DiarioFacturacion
         '
         'txtExamen
         '
+        Me.txtExamen.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtExamen.Location = New System.Drawing.Point(572, 114)
         Me.txtExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtExamen.MaxLength = 20
@@ -232,6 +317,8 @@ Partial Class M_DiarioFacturacion
         '
         'txtDescripcionTermino
         '
+        Me.txtDescripcionTermino.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtDescripcionTermino.Location = New System.Drawing.Point(572, 75)
         Me.txtDescripcionTermino.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtDescripcionTermino.MaxLength = 20
@@ -335,6 +422,8 @@ Partial Class M_DiarioFacturacion
         '
         'txtnombreB
         '
+        Me.txtnombreB.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtnombreB.Location = New System.Drawing.Point(475, 36)
         Me.txtnombreB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombreB.MaxLength = 80
@@ -368,6 +457,7 @@ Partial Class M_DiarioFacturacion
         Me.dgbtabla.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgbtabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(21, 217)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -389,87 +479,6 @@ Partial Class M_DiarioFacturacion
         Me.lbltotalFacturas.Size = New System.Drawing.Size(177, 17)
         Me.lbltotalFacturas.TabIndex = 117
         Me.lbltotalFacturas.Text = "CANTIDAD DE FACTURAS"
-        '
-        'btnUsuario
-        '
-        Me.btnUsuario.BackColor = System.Drawing.Color.White
-        Me.btnUsuario.BackgroundImage = CType(resources.GetObject("btnUsuario.BackgroundImage"), System.Drawing.Image)
-        Me.btnUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnUsuario.FlatAppearance.BorderSize = 0
-        Me.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUsuario.Location = New System.Drawing.Point(377, 114)
-        Me.btnUsuario.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnUsuario.Name = "btnUsuario"
-        Me.btnUsuario.Size = New System.Drawing.Size(40, 21)
-        Me.btnUsuario.TabIndex = 165
-        Me.btnUsuario.Text = "..."
-        Me.btnUsuario.UseVisualStyleBackColor = False
-        '
-        'btnMedico
-        '
-        Me.btnMedico.BackColor = System.Drawing.Color.White
-        Me.btnMedico.BackgroundImage = CType(resources.GetObject("btnMedico.BackgroundImage"), System.Drawing.Image)
-        Me.btnMedico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnMedico.FlatAppearance.BorderSize = 0
-        Me.btnMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMedico.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMedico.Location = New System.Drawing.Point(377, 75)
-        Me.btnMedico.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnMedico.Name = "btnMedico"
-        Me.btnMedico.Size = New System.Drawing.Size(40, 21)
-        Me.btnMedico.TabIndex = 166
-        Me.btnMedico.Text = "..."
-        Me.btnMedico.UseVisualStyleBackColor = False
-        '
-        'btnTerminoPago
-        '
-        Me.btnTerminoPago.BackColor = System.Drawing.Color.White
-        Me.btnTerminoPago.BackgroundImage = CType(resources.GetObject("btnTerminoPago.BackgroundImage"), System.Drawing.Image)
-        Me.btnTerminoPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnTerminoPago.FlatAppearance.BorderSize = 0
-        Me.btnTerminoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTerminoPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTerminoPago.Location = New System.Drawing.Point(857, 75)
-        Me.btnTerminoPago.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnTerminoPago.Name = "btnTerminoPago"
-        Me.btnTerminoPago.Size = New System.Drawing.Size(40, 21)
-        Me.btnTerminoPago.TabIndex = 167
-        Me.btnTerminoPago.Text = "..."
-        Me.btnTerminoPago.UseVisualStyleBackColor = False
-        '
-        'btnExamen
-        '
-        Me.btnExamen.BackColor = System.Drawing.Color.White
-        Me.btnExamen.BackgroundImage = CType(resources.GetObject("btnExamen.BackgroundImage"), System.Drawing.Image)
-        Me.btnExamen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnExamen.FlatAppearance.BorderSize = 0
-        Me.btnExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExamen.Location = New System.Drawing.Point(857, 115)
-        Me.btnExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnExamen.Name = "btnExamen"
-        Me.btnExamen.Size = New System.Drawing.Size(40, 21)
-        Me.btnExamen.TabIndex = 168
-        Me.btnExamen.Text = "..."
-        Me.btnExamen.UseVisualStyleBackColor = False
-        '
-        'btnGrupoExamen
-        '
-        Me.btnGrupoExamen.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGrupoExamen.BackColor = System.Drawing.Color.White
-        Me.btnGrupoExamen.BackgroundImage = CType(resources.GetObject("btnGrupoExamen.BackgroundImage"), System.Drawing.Image)
-        Me.btnGrupoExamen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnGrupoExamen.FlatAppearance.BorderSize = 0
-        Me.btnGrupoExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGrupoExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGrupoExamen.Location = New System.Drawing.Point(1358, 113)
-        Me.btnGrupoExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnGrupoExamen.Name = "btnGrupoExamen"
-        Me.btnGrupoExamen.Size = New System.Drawing.Size(40, 21)
-        Me.btnGrupoExamen.TabIndex = 169
-        Me.btnGrupoExamen.Text = "..."
-        Me.btnGrupoExamen.UseVisualStyleBackColor = False
         '
         'M_DiarioFacturacion
         '
