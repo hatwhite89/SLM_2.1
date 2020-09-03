@@ -92,6 +92,12 @@
 
             'bloquear groupbox y campos
             If lblForm.Text = "M_DiarioFacturacion" Then
+                Me.Text = "Seleccione un Usuario"
+                btnGuardar.Visible = False
+                btnModificar.Visible = False
+                btnCancelar.Visible = False
+                btnCambio.Visible = False
+                chkHabilitar.Visible = False
                 gbxDatos.Enabled = False
                 btnImportar.Enabled = False
             End If
@@ -185,4 +191,27 @@
         End Try
     End Sub
 
+    Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
+
+        'Busqueda de usuarios por el campo usuario
+
+        Try
+
+            Dim dt As New DataTable
+            Dim user As New ClsUsuario
+            If txtBusqueda.Text = "" Then
+                dtUsuarios.DataSource = user.listarUsuarios
+            Else
+                user.Usuario_ = txtBusqueda.Text
+                dt = user.BuscarPorUsuario
+
+                dtUsuarios.DataSource = dt
+
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 End Class
