@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 Public Class ClsUsuario
 
     'Variables
-    Dim cod_Usuario, codPerfil As Integer
+    Dim cod_Usuario, codPerfil, codEmpleado As Integer
     Dim usuario, password, perfil As String
     Dim estado As Boolean
 
@@ -71,6 +71,16 @@ Public Class ClsUsuario
         End Get
         Set(value As Boolean)
             estado = value
+        End Set
+    End Property
+
+    'Codigo empleados
+    Public Property Cod_Empleado As Integer
+        Get
+            Return codEmpleado
+        End Get
+        Set(value As Integer)
+            codEmpleado = value
         End Set
     End Property
 
