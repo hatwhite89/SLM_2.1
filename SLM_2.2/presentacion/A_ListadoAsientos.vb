@@ -10,9 +10,11 @@
             dtAsientos.Columns("cod_asiento").Visible = False
             dtAsientos.Columns("codPeriodo").Visible = False
             dtAsientos.Columns("fecha").Visible = False
-            dtAsientos.Columns("descripcion").Width = 320
-            dtAsientos.Columns("descripcion").HeaderText = "Descripción"
+
             dtAsientos.Columns("campoLlave").HeaderText = "Transf."
+            dtAsientos.Columns("descripcion").HeaderText = "Descripción"
+            dtAsientos.Columns("descripcion").Width = 320
+
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -35,13 +37,13 @@
                 dtAsientos.Columns("cod_asiento").Visible = False
                 dtAsientos.Columns("codPeriodo").Visible = False
                 dtAsientos.Columns("fecha").Visible = False
+
                 dtAsientos.Columns("descripcion").Width = 320
             Else
 
-
                 Dim campoLlave As Integer = Convert.ToInt32(txtCod.Text)
 
-                asi.Campo_Llave = campoLlave
+                asi.Campo_Llave = Convert.ToInt32(campoLlave)
 
                 dtAsientos.DataSource = asi.buscarAsiento()
 
@@ -93,11 +95,8 @@
             Me.Close()
             frmAsientos.Show()
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
-
-
-
 
     End Sub
 

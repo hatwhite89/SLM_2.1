@@ -715,4 +715,8 @@
         End
 
     End Sub
+
+    Private Sub banner_Click(sender As Object, e As EventArgs) Handles banner.Click
+
+    End Sub
 End Class

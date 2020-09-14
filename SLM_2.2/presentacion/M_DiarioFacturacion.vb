@@ -416,6 +416,7 @@
     End Sub
 
     Private Sub btnUsuario_Click(sender As Object, e As EventArgs) Handles btnUsuario.Click
+
         E_Usuarios.lblForm.Text = "M_DiarioFacturacion"
         E_Usuarios.Show()
     End Sub

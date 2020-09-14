@@ -53,24 +53,24 @@ Partial Class A_Candidatos
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.dtCandidatos = New System.Windows.Forms.DataGridView()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.btnBuscarProfesionI = New System.Windows.Forms.Button()
-        Me.txtProfesionI = New System.Windows.Forms.TextBox()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.dtpFechaHasta = New System.Windows.Forms.DateTimePicker()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.dtpFechaDesde = New System.Windows.Forms.DateTimePicker()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.btnBuscarCargoI = New System.Windows.Forms.Button()
         Me.txtCargoI = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.dtpFechaDesde = New System.Windows.Forms.DateTimePicker()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.dtpFechaHasta = New System.Windows.Forms.DateTimePicker()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.btnBuscarProfesionI = New System.Windows.Forms.Button()
+        Me.txtProfesionI = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.dtCandidatos = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.dtCandidatos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtCandidatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -158,7 +158,7 @@ Partial Class A_Candidatos
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(258, 69)
+        Me.btnBuscar.Location = New System.Drawing.Point(257, 70)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(27, 23)
         Me.btnBuscar.TabIndex = 4
@@ -400,49 +400,61 @@ Partial Class A_Candidatos
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Listado de Candidatos"
         '
-        'dtCandidatos
+        'LinkLabel1
         '
-        Me.dtCandidatos.AllowUserToAddRows = False
-        Me.dtCandidatos.AllowUserToDeleteRows = False
-        Me.dtCandidatos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dtCandidatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dtCandidatos.BackgroundColor = System.Drawing.Color.White
-        Me.dtCandidatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtCandidatos.GridColor = System.Drawing.Color.White
-        Me.dtCandidatos.Location = New System.Drawing.Point(3, 94)
-        Me.dtCandidatos.Name = "dtCandidatos"
-        Me.dtCandidatos.ReadOnly = True
-        Me.dtCandidatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCandidatos.Size = New System.Drawing.Size(789, 188)
-        Me.dtCandidatos.TabIndex = 8
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.DeepSkyBlue
+        Me.LinkLabel1.Location = New System.Drawing.Point(696, 71)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(83, 13)
+        Me.LinkLabel1.TabIndex = 30
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Generar Informe"
+        Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.DeepSkyBlue
         '
-        'Label9
+        'PictureBox1
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(23, 26)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(51, 13)
-        Me.Label9.TabIndex = 9
-        Me.Label9.Text = "Profesión"
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(714, 18)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 29
+        Me.PictureBox1.TabStop = False
         '
-        'btnBuscarProfesionI
+        'dtpFechaHasta
         '
-        Me.btnBuscarProfesionI.Location = New System.Drawing.Point(210, 22)
-        Me.btnBuscarProfesionI.Name = "btnBuscarProfesionI"
-        Me.btnBuscarProfesionI.Size = New System.Drawing.Size(27, 23)
-        Me.btnBuscarProfesionI.TabIndex = 15
-        Me.btnBuscarProfesionI.Text = "..."
-        Me.btnBuscarProfesionI.UseVisualStyleBackColor = True
+        Me.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaHasta.Location = New System.Drawing.Point(327, 54)
+        Me.dtpFechaHasta.Name = "dtpFechaHasta"
+        Me.dtpFechaHasta.Size = New System.Drawing.Size(132, 20)
+        Me.dtpFechaHasta.TabIndex = 27
         '
-        'txtProfesionI
+        'Label12
         '
-        Me.txtProfesionI.Enabled = False
-        Me.txtProfesionI.Location = New System.Drawing.Point(80, 23)
-        Me.txtProfesionI.Name = "txtProfesionI"
-        Me.txtProfesionI.Size = New System.Drawing.Size(127, 20)
-        Me.txtProfesionI.TabIndex = 16
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(252, 57)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(68, 13)
+        Me.Label12.TabIndex = 28
+        Me.Label12.Text = "Fecha Hasta"
+        '
+        'dtpFechaDesde
+        '
+        Me.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaDesde.Location = New System.Drawing.Point(327, 25)
+        Me.dtpFechaDesde.Name = "dtpFechaDesde"
+        Me.dtpFechaDesde.Size = New System.Drawing.Size(132, 20)
+        Me.dtpFechaDesde.TabIndex = 24
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(252, 28)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(71, 13)
+        Me.Label11.TabIndex = 25
+        Me.Label11.Text = "Fecha Desde"
         '
         'btnBuscarCargoI
         '
@@ -470,61 +482,49 @@ Partial Class A_Candidatos
         Me.Label10.TabIndex = 17
         Me.Label10.Text = "Cargo"
         '
-        'dtpFechaDesde
+        'btnBuscarProfesionI
         '
-        Me.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaDesde.Location = New System.Drawing.Point(327, 25)
-        Me.dtpFechaDesde.Name = "dtpFechaDesde"
-        Me.dtpFechaDesde.Size = New System.Drawing.Size(132, 20)
-        Me.dtpFechaDesde.TabIndex = 24
+        Me.btnBuscarProfesionI.Location = New System.Drawing.Point(210, 22)
+        Me.btnBuscarProfesionI.Name = "btnBuscarProfesionI"
+        Me.btnBuscarProfesionI.Size = New System.Drawing.Size(27, 23)
+        Me.btnBuscarProfesionI.TabIndex = 15
+        Me.btnBuscarProfesionI.Text = "..."
+        Me.btnBuscarProfesionI.UseVisualStyleBackColor = True
         '
-        'Label11
+        'txtProfesionI
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(252, 28)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(71, 13)
-        Me.Label11.TabIndex = 25
-        Me.Label11.Text = "Fecha Desde"
+        Me.txtProfesionI.Enabled = False
+        Me.txtProfesionI.Location = New System.Drawing.Point(80, 23)
+        Me.txtProfesionI.Name = "txtProfesionI"
+        Me.txtProfesionI.Size = New System.Drawing.Size(127, 20)
+        Me.txtProfesionI.TabIndex = 16
         '
-        'dtpFechaHasta
+        'Label9
         '
-        Me.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaHasta.Location = New System.Drawing.Point(327, 54)
-        Me.dtpFechaHasta.Name = "dtpFechaHasta"
-        Me.dtpFechaHasta.Size = New System.Drawing.Size(132, 20)
-        Me.dtpFechaHasta.TabIndex = 27
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(23, 26)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(51, 13)
+        Me.Label9.TabIndex = 9
+        Me.Label9.Text = "Profesión"
         '
-        'Label12
+        'dtCandidatos
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(252, 57)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(68, 13)
-        Me.Label12.TabIndex = 28
-        Me.Label12.Text = "Fecha Hasta"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(714, 18)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(50, 50)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 29
-        Me.PictureBox1.TabStop = False
-        '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.DeepSkyBlue
-        Me.LinkLabel1.Location = New System.Drawing.Point(696, 71)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(83, 13)
-        Me.LinkLabel1.TabIndex = 30
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Generar Informe"
-        Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.DeepSkyBlue
+        Me.dtCandidatos.AllowUserToAddRows = False
+        Me.dtCandidatos.AllowUserToDeleteRows = False
+        Me.dtCandidatos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtCandidatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtCandidatos.BackgroundColor = System.Drawing.Color.White
+        Me.dtCandidatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtCandidatos.GridColor = System.Drawing.Color.White
+        Me.dtCandidatos.Location = New System.Drawing.Point(3, 94)
+        Me.dtCandidatos.Name = "dtCandidatos"
+        Me.dtCandidatos.ReadOnly = True
+        Me.dtCandidatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtCandidatos.Size = New System.Drawing.Size(789, 188)
+        Me.dtCandidatos.TabIndex = 8
         '
         'A_Candidatos
         '
@@ -543,8 +543,8 @@ Partial Class A_Candidatos
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.dtCandidatos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtCandidatos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

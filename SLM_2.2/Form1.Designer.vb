@@ -501,9 +501,9 @@ Partial Class Form1
         Me.tcMenu.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tcMenu.Controls.Add(Me.TpMantenimiento)
         Me.tcMenu.Controls.Add(Me.tpPrecios)
         Me.tcMenu.Controls.Add(Me.TpProcesos)
-        Me.tcMenu.Controls.Add(Me.TpMantenimiento)
         Me.tcMenu.Controls.Add(Me.tpCheque)
         Me.tcMenu.Controls.Add(Me.tpPagos)
         Me.tcMenu.Location = New System.Drawing.Point(1, 38)
@@ -2944,14 +2944,14 @@ Partial Class Form1
         Me.Controls.Add(Me.lblUserCod)
         Me.Controls.Add(Me.lblMiUser)
         Me.Controls.Add(Me.btnContabilidad)
-        Me.Controls.Add(Me.PanelFactura)
-        Me.Controls.Add(Me.PanelAlmacen)
-        Me.Controls.Add(Me.PanelTalentoHumano)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.panelMenu)
         Me.Controls.Add(Me.PanelSistema)
         Me.Controls.Add(Me.PanelLab)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.PanelFactura)
+        Me.Controls.Add(Me.PanelAlmacen)
+        Me.Controls.Add(Me.PanelTalentoHumano)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
