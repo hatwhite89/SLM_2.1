@@ -27,10 +27,10 @@
                     M_Precio.lblCode.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
                     Me.Close()
                 End If
-            ElseIf e.RowIndex >= 0 And lblForm.Text = "Categoria" Then
+            ElseIf e.RowIndex >= 0 And lblForm.Text = "TipoClasificacion" Then
                 n = MsgBox("¿Desea utilizar la lista de precio que a seleccionado?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then
-                    M_Categoria.lblCodePriceList.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_TipoClasificacion.lblCodePriceList.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
                     Me.Close()
                 End If
 

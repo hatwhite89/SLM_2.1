@@ -20,29 +20,38 @@
         Try
             Dim n As String = ""
             If e.RowIndex >= 0 Then
-                n = MsgBox("¿Desea crear la factura de la cotización?", MsgBoxStyle.YesNo, "Validación")
+                n = MsgBox("¿Desea ver la cotización?", MsgBoxStyle.YesNo, "Validación")
             End If
             If n = vbYes Then
                 M_Factura.limpiar()
+                M_Factura.banderaTipo = False
+
                 M_Factura.txtcodigoCliente.Text = dgbtabla.Rows(e.RowIndex).Cells(3).Value()
 
                 Dim objCotFact As New ClsCotizacionFactura
                 Dim dt As New DataTable
                 Dim precio As Double = 0
                 objCotFact.numeroCotizacion_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                M_Factura.txtnumeroFactura.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
                 dt = objCotFact.BuscarCotizacionFactura()
                 Dim row As DataRow
                 'dgblistadoExamenes.Rows(Index).Cells(0).Value()
                 For index As Integer = 0 To dt.Rows.Count - 1
                     row = dt.Rows(index)
                     precio = ((row("subtotal")) / (((row("descuento")) / 100) - 1)) * (-1)
-                    M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codInterno")), CStr(row("cantidad")), precio, CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal")), CStr(row("codigoSubArea")), 0, CStr(row("codigoExamen"))})
+                    M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codInterno")), CStr(row("cantidad")), precio, CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal")), CStr(row("codigoSubArea")), CStr(row("numero")), CStr(row("codigoExamen"))})
                     M_Factura.dgbObservaciones.Rows.Add(New String() {CStr(row("codInterno")), ""})
                     M_ClienteVentana.dgvtabla.Rows.Add(New String() {CStr(row("codInterno")), CStr(row("cantidad")), precio, CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
                 Next
                 txtnombreB.Text = ""
                 txtnumeroB.Text = ""
-                Me.Close()
+                'Me.Close()
+
+                M_Factura.deshabilitar()
+                M_Factura.HabilitarCotizacionFactura()
+                M_Factura.btnActualizar.Enabled = True
+                M_Factura.btnguardar.Enabled = False
+
                 M_Factura.totalFactura()
                 M_Factura.ShowDialog()
 
@@ -73,6 +82,8 @@
         M_Factura.limpiar()
         M_Factura.deshabilitar()
         M_Factura.HabilitarCotizacionFactura()
+
+        M_Factura.banderaTipo = False
         M_Factura.ShowDialog()
     End Sub
 

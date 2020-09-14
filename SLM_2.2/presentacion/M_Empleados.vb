@@ -1,5 +1,6 @@
 ﻿Public Class M_Empleados
     Dim Imagen As String
+    Private strAcentos As String = "ÄÅÁÂÀÃäáâàãÉÊËÈéêëèÍÎÏÌíîïìÖÓÔÒÕöóôòõÜÚÛüúûùÇç"
     'Dim img As Image
     'Dim datos As Byte()
     Private Sub btnProfesion_Click(sender As Object, e As EventArgs) Handles btnProfesion.Click
@@ -431,7 +432,10 @@
     End Sub
 
     Private Sub txtnombre1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombre1.KeyPress
-        If Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
+
+        If strAcentos.IndexOf(e.KeyChar) > 0 Then
+            e.Handled = True
+        ElseIf Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
             e.Handled = True
         ElseIf Char.IsControl(e.KeyChar) Then
             e.Handled = False
@@ -450,7 +454,10 @@
         txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
     End Sub
     Private Sub txtnombre2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombre2.KeyPress
-        If Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
+
+        If strAcentos.IndexOf(e.KeyChar) > 0 Then
+            e.Handled = True
+        ElseIf Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
             e.Handled = True
         ElseIf Char.IsControl(e.KeyChar) Then
             e.Handled = False
@@ -470,7 +477,10 @@
     End Sub
 
     Private Sub txtapellido1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtapellido1.KeyPress
-        If Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
+
+        If strAcentos.IndexOf(e.KeyChar) > 0 Then
+            e.Handled = True
+        ElseIf Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
             e.Handled = True
         ElseIf Char.IsControl(e.KeyChar) Then
             e.Handled = False
@@ -489,7 +499,10 @@
         txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
     End Sub
     Private Sub txtapellido2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtapellido2.KeyPress
-        If Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
+
+        If strAcentos.IndexOf(e.KeyChar) > 0 Then
+            e.Handled = True
+        ElseIf Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
             e.Handled = True
         ElseIf Char.IsControl(e.KeyChar) Then
             e.Handled = False

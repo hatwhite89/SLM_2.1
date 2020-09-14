@@ -172,7 +172,7 @@ Public Class M_Cliente
                 numero = 0
             End If
 
-            If (genero <> "" And txtcodigoTermino.Text <> "" And txtcodigoTermino.BackColor = Color.White And txtcodigoCategoria.Text <> "" And txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoClasificacion.Text <> "") Then
+            If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And txtcodigoTermino.BackColor = Color.White And txtcodigoCategoria.Text <> "" And txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoClasificacion.Text <> "") Then
 
                 txtnombreCompleto.Text = sinDobleEspacio(txtnombreCompleto.Text)
 
@@ -343,8 +343,9 @@ Public Class M_Cliente
                 numero = 0
             End If
 
-            If (genero <> "" And txtcodigoTermino.Text <> "" And txtcodigoTermino.BackColor = Color.White And txtcodigoCategoria.Text <> "" And txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoClasificacion.Text <> "") Then
+            If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And txtcodigoTermino.BackColor = Color.White And txtcodigoCategoria.Text <> "" And txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoClasificacion.Text <> "") Then
 
+                rtxtdireccion.Text = sinDobleEspacio(rtxtdireccion.Text)
                 txtnombreCompleto.Text = sinDobleEspacio(txtnombreCompleto.Text)
 
                 Dim objClient As New ClsCliente
@@ -731,9 +732,6 @@ Public Class M_Cliente
         End If
     End Sub
 
-    Private Sub txtnombre1_TextChanged_1(sender As Object, e As EventArgs) Handles txtnombre1.TextChanged
-
-    End Sub
     Private Sub cargarVariables(ByVal campoTexto As TextBox)
         'Dim objCon As New ClsConnection
         'Dim cn As New SqlConnection
@@ -837,4 +835,33 @@ Public Class M_Cliente
     Private Sub M_Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'cargarVariables(txtnombreB)
     End Sub
+
+    Private Sub txtnombreCategoria_TextChanged(sender As Object, e As EventArgs) Handles txtnombreCategoria.TextChanged
+        If (Trim(txtnombreCategoria.Text) <> "") Then
+            cmbxClasificacion.Enabled = True
+            llenarTipoClasificacion()
+        Else
+            cmbxClasificacion.Enabled = False
+            'cmbxClasificacion.Items.Clear()
+        End If
+    End Sub
+
+    Dim objTipoCls As New ClsTipoClasificacion
+    Private Sub llenarTipoClasificacion()
+        Try
+            'MsgBox(lblcodeCategoria.Text)
+            cmbxClasificacion.Items.Clear()
+            'llenar el combobox tipo termino
+            objTipoCls.codigoCategoriaCliente_ = Integer.Parse(lblcodeCategoria.Text)
+            Dim dt As New DataTable
+            dt = objTipoCls.BuscarTipoClasificacionCategoria()
+            cmbxClasificacion.DataSource = dt
+            cmbxClasificacion.DisplayMember = "comentario"
+            cmbxClasificacion.ValueMember = "codigo"
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Validación")
+        End Try
+    End Sub
+
+
 End Class
