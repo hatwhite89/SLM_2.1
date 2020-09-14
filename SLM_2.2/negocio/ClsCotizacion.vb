@@ -145,10 +145,10 @@ Public Class ClsCotizacion
         sqlpar.Value = codigoCliente_
         sqlcom.Parameters.Add(sqlpar)
 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "fecha" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = fecha_
-        sqlcom.Parameters.Add(sqlpar)
+        'sqlpar = New SqlParameter
+        'sqlpar.ParameterName = "fecha" 'nombre campo en el procedimiento almacenado @
+        'sqlpar.Value = fecha_
+        'sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoTerminoPago" 'nombre campo en el procedimiento almacenado @
