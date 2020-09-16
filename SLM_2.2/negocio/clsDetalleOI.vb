@@ -149,7 +149,7 @@ Public Class clsDetalleOI
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select d.id_detalle_oi,p.nombre_producto,d.cantidad_solicitada 
+        Using da As New SqlDataAdapter("select d.id_detalle_oi,p.id_producto,p.nombre_producto,d.cantidad_solicitada 
 from 
 OrdenInterna o, 
 detalleOrdenInterna d, 
@@ -202,5 +202,22 @@ and  o.id_usuario= u.cod_usuario
 
         Return par_sal
 
+    End Function
+
+    Public Function listarInventarioExistencias(ByVal codigo As String) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select e.id_entrada, p.nombre_producto,e.lote,e.existencia,e.fecha_vencimiento,a.nombre_almacen
+from EntradaAlmacen e, ProductoAlmacen p,Almacen a
+where e.id_producto = p.id_producto
+and a.id_almacen =e.id_almacen
+and e.existencia > 0  and p.id_producto ='" + codigo + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
     End Function
 End Class

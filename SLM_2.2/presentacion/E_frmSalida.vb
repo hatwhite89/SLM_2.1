@@ -8,7 +8,10 @@ Public Class E_frmSalida
     End Sub
 
     Private Sub E_frmSalida_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ComboBox1.Items.Add("Salida orden interna")
+
+
+        alternarColoFilasDatagridview(DataGridView1)
+        alternarColoFilasDatagridview(DataGridView2)
     End Sub
     Private Sub CargarDGOCFecha()
         Try
@@ -21,7 +24,7 @@ Public Class E_frmSalida
 
     End Sub
     Private Sub CargarDataOI(ByVal cod)
-        DataGridView1.Columns.Clear()
+
 
         Dim clsDeOC As New clsDetalleOI
         Dim dvOC As DataView = clsDeOC.listarOrdenesInternasConParametro(cod).DefaultView
@@ -76,6 +79,15 @@ Public Class E_frmSalida
         GridAExcel(DataGridView3)
     End Sub
 
+    Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
+        Try
+            txtLote.Text = DataGridView2.Rows(e.RowIndex).Cells(2).Value
+            txtidDetalleEntrada.Text = DataGridView2.Rows(e.RowIndex).Cells(0).Value
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 
     Private Sub cargarVariables()
         Dim clsC As New ClsConnection
@@ -103,7 +115,7 @@ where o.id_departamento=d.codigo and o.id_usuario = u.cod_usuario and o.id_oi='1
         Dim clsE As New ClsSalidaAlmacen
         Try
             id_detalle_oi = Integer.Parse(DataGridView1.Rows(e.RowIndex).Cells(0).Value)
-            txtLote.Text = DataGridView1.Rows(e.RowIndex).Cells(1).Value
+
             txtProducto.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
             txtCantidad.Text = DataGridView1.Rows(e.RowIndex).Cells(3).Value
             txtAlmacenRecibe.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value
@@ -111,10 +123,18 @@ where o.id_departamento=d.codigo and o.id_usuario = u.cod_usuario and o.id_oi='1
             txtPersonaRecibe.Text = DataGridView1.Rows(e.RowIndex).Cells(6).Value
             'txtExistenciaEntrada.Text = clsE.ExistenciasDeEntrada(DataGridView1.Rows(e.RowIndex).Cells(7).Value.ToString)
             id_entrada = Integer.Parse(DataGridView1.Rows(e.RowIndex).Cells(7).Value)
+
+
         Catch ex As Exception
 
         End Try
+        Try
+            Dim clsOCOB As New clsDetalleOI
+            Dim dvOC As DataView = clsOCOB.listarInventarioExistencias(DataGridView1.Rows(e.RowIndex).Cells(1).Value.ToString).DefaultView
+            DataGridView2.DataSource = dvOC
+        Catch ex As Exception
 
+        End Try
 
 
     End Sub
@@ -146,9 +166,9 @@ where o.id_departamento=d.codigo and o.id_usuario = u.cod_usuario and o.id_oi='1
                 .Persona_entrega1 = txtEntrega.Text
                 .Persona_recibe1 = txtPersonaRecibe.Text
                 .Producto1 = txtProducto.Text
-                .Tipo_movimiento1 = ComboBox1.SelectedItem.ToString
+                .Tipo_movimiento1 = "Solicitud Interna"
                 .Id_detalle_oi1 = id_detalle_oi
-                '.Id_entrada1 = id_entrada
+                .Id_entrada1 = txtidDetalleEntrada.Text
             End With
 
             If clsS.RegistrarSalidaAlmacen() = "1" Then

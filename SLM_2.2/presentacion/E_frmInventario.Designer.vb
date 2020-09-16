@@ -22,9 +22,9 @@ Partial Class E_frmInventario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.excel = New System.Windows.Forms.Button()
@@ -73,6 +73,7 @@ Partial Class E_frmInventario
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -102,11 +103,12 @@ Partial Class E_frmInventario
         '
         'DataGridView1
         '
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(6, 36)
         Me.DataGridView1.Name = "DataGridView1"
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridView1.Size = New System.Drawing.Size(752, 229)
         Me.DataGridView1.TabIndex = 1
         '
@@ -124,10 +126,10 @@ Partial Class E_frmInventario
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Location = New System.Drawing.Point(8, 60)
+        Me.TabControl1.Location = New System.Drawing.Point(2, 48)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(786, 434)
+        Me.TabControl1.Size = New System.Drawing.Size(798, 434)
         Me.TabControl1.TabIndex = 4
         '
         'TabPage1
@@ -137,7 +139,7 @@ Partial Class E_frmInventario
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(778, 408)
+        Me.TabPage1.Size = New System.Drawing.Size(790, 408)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Inventario disponible"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -286,11 +288,12 @@ Partial Class E_frmInventario
         '
         'DataGridView2
         '
+        Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Location = New System.Drawing.Point(-8, 44)
         Me.DataGridView2.Name = "DataGridView2"
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue
-        Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.AliceBlue
+        Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridView2.Size = New System.Drawing.Size(766, 221)
         Me.DataGridView2.TabIndex = 8
         '
@@ -400,7 +403,7 @@ Partial Class E_frmInventario
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(778, 408)
+        Me.TabPage3.Size = New System.Drawing.Size(790, 408)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Sin existencia"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -440,11 +443,12 @@ Partial Class E_frmInventario
         '
         'DataGridView3
         '
+        Me.DataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView3.Location = New System.Drawing.Point(9, 48)
         Me.DataGridView3.Name = "DataGridView3"
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue
-        Me.DataGridView3.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue
+        Me.DataGridView3.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DataGridView3.Size = New System.Drawing.Size(750, 217)
         Me.DataGridView3.TabIndex = 3
         '
@@ -540,29 +544,41 @@ Partial Class E_frmInventario
         '
         'Panel4
         '
-        Me.Panel4.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel4.Controls.Add(Me.Label13)
-        Me.Panel4.Location = New System.Drawing.Point(8, 13)
+        Me.Panel4.Location = New System.Drawing.Point(0, 1)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(786, 41)
+        Me.Panel4.Size = New System.Drawing.Size(800, 41)
         Me.Panel4.TabIndex = 5
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label13.Location = New System.Drawing.Point(7, 10)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(182, 20)
         Me.Label13.TabIndex = 8
         Me.Label13.Text = "Inventario Almacenes"
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 491)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(800, 22)
+        Me.StatusStrip1.TabIndex = 6
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'E_frmInventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 498)
+        Me.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ClientSize = New System.Drawing.Size(800, 513)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "E_frmInventario"
@@ -593,6 +609,7 @@ Partial Class E_frmInventario
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -644,4 +661,5 @@ Partial Class E_frmInventario
     Friend WithEvents Label14 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents Label17 As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class
