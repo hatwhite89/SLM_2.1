@@ -203,8 +203,7 @@ Public Class clsEntradaAlmacen
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select e.lote,p.id_producto,p.nombre_producto,e.cantidad,e.precio_unitario,e.fecha_vencimiento, e.id_entrada from EntradaAlmacen e, ProductoAlmacen p
-where e.id_producto = p.id_producto", cn)
+        Using da As New SqlDataAdapter("select  id_producto,nombre_producto,descripcion from ProductoAlmacen", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

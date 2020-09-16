@@ -1,7 +1,7 @@
 ﻿Public Class E_frmUbicacion
     Private Sub E_frmUbicacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Almacen()
-
+        alternarColoFilasDatagridview(DataGridView1)
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)

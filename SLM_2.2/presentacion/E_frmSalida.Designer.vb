@@ -121,7 +121,7 @@ Partial Class E_frmSalida
         Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(927, 441)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Registrar Salida"
@@ -301,9 +301,9 @@ Partial Class E_frmSalida
         '
         'txtCantidad
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(247, 79)
+        Me.txtCantidad.Location = New System.Drawing.Point(296, 79)
         Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(181, 20)
+        Me.txtCantidad.Size = New System.Drawing.Size(132, 20)
         Me.txtCantidad.TabIndex = 54
         '
         'txtAreaSolicitante
@@ -347,9 +347,9 @@ Partial Class E_frmSalida
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(192, 86)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 13)
+        Me.Label2.Size = New System.Drawing.Size(98, 13)
         Me.Label2.TabIndex = 51
-        Me.Label2.Text = "Cantidad"
+        Me.Label2.Text = "Cantidad Solicitada"
         '
         'Label1
         '
@@ -430,7 +430,7 @@ Partial Class E_frmSalida
         Me.TabPage2.Controls.Add(Me.GroupBox4)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(927, 441)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Historial de salidas"

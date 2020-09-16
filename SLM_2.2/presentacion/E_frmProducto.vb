@@ -56,10 +56,11 @@
             'seleccionar datos gridview 
             txtCodigo.Text = DataGridView1.Rows(e.RowIndex).Cells(0).Value
             txtNombre.Text = DataGridView1.Rows(e.RowIndex).Cells(1).Value
-            txtMarca.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
-            txtModelo.Text = DataGridView1.Rows(e.RowIndex).Cells(3).Value
-            txtDescripcion.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value
-            txtCantidadMinima.Text = DataGridView1.Rows(e.RowIndex).Cells(5).Value
+            txtMarca.Text = DataGridView1.Rows(e.RowIndex).Cells(3).Value
+            txtModelo.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value
+            txtDescripcion.Text = DataGridView1.Rows(e.RowIndex).Cells(5).Value
+            txtCantidadMinima.Text = DataGridView1.Rows(e.RowIndex).Cells(6).Value
+            TextBox1.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
 
 
             'botones
@@ -94,13 +95,14 @@
                 .CantidadMinimaProducto = Integer.Parse(txtCantidadMinima.Text)
                 .UnidadMedida = Integer.Parse(cmbUnidadMedida.SelectedValue)
                 .CategoriaProducto = Integer.Parse(cmbCategoria.SelectedValue)
+                .Precio_base1 = TextBox1.Text
             End With
             If clsP.RegistrarProducto() = "1" Then
                 'campos 
                 txtNombre.ReadOnly = True
                 txtModelo.ReadOnly = True
                 txtMarca.ReadOnly = True
-
+                TextBox1.ReadOnly = True
                 txtDescripcion.ReadOnly = True
                 txtCantidadMinima.ReadOnly = True
                 'botones
@@ -121,6 +123,7 @@
                 .CantidadMinimaProducto = Integer.Parse(txtCantidadMinima.Text)
                 .UnidadMedida = Integer.Parse(cmbUnidadMedida.SelectedValue)
                 .CategoriaProducto = Integer.Parse(cmbCategoria.SelectedValue)
+                .Precio_base1 = TextBox1.Text
             End With
             If clsP.ActualizarProducto() = "1" Then
                 MsgBox("Actualizado exitosamente")
@@ -146,7 +149,7 @@
         txtNombre.Text = ""
         txtModelo.Text = ""
         txtMarca.Text = ""
-
+        TextBox1.Text = ""
         txtDescripcion.Text = ""
         txtCantidadMinima.Text = ""
 
@@ -163,13 +166,13 @@
 
         txtDescripcion.ReadOnly = True
         txtCantidadMinima.ReadOnly = True
-
+        TextBox1.ReadOnly = True
         'limpiar
         txtCodigo.Text = ""
         txtNombre.Text = ""
         txtModelo.Text = ""
         txtMarca.Text = ""
-
+        TextBox1.Text = ""
         txtDescripcion.Text = ""
         txtCantidadMinima.Text = ""
     End Sub

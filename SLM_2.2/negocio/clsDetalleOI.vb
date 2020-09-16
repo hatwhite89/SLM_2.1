@@ -94,10 +94,7 @@ Public Class clsDetalleOI
         sqlcom.Parameters.Add(sqlpar)
 
 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "lote"
-        sqlpar.Value = Lote1
-        sqlcom.Parameters.Add(sqlpar)
+
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "producto"
@@ -152,10 +149,18 @@ Public Class clsDetalleOI
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select d.id_detalle_oi,d.lote,p.nombre_producto,d.cantidad_solicitada ,a.nombre_almacen,dep.nombre ,u.usuario, d.id_entrada
-from Departamento dep, OrdenInterna o, detalleOrdenInterna d, ProductoAlmacen p,EntradaAlmacen e,Almacen a, Usuario u
-where d.id_producto = p.id_producto and e.lote=d.lote and d.id_producto =e.id_producto and a.id_almacen = e.id_almacen  and o.id_oi = d.id_oi and dep.codigo=o.id_departamento and  o.id_usuario= u.cod_usuario
+        Using da As New SqlDataAdapter("select d.id_detalle_oi,p.nombre_producto,d.cantidad_solicitada 
+from 
+OrdenInterna o, 
+detalleOrdenInterna d, 
+ProductoAlmacen p,
+Usuario u
+where d.id_producto = p.id_producto 
 
+and d.id_oi = o.id_oi
+
+
+and  o.id_usuario= u.cod_usuario
  and d.estado = 0  and d.id_oi='" + codigo + "'", cn)
             Dim dt As New DataTable
             da.Fill(dt)

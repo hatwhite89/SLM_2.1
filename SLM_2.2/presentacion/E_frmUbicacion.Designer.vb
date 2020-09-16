@@ -22,6 +22,7 @@ Partial Class E_frmUbicacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -39,6 +40,10 @@ Partial Class E_frmUbicacion
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.id_almacen = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_almacen = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -47,6 +52,9 @@ Partial Class E_frmUbicacion
         '
         'GroupBox2
         '
+        Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.txtBuscar)
@@ -69,6 +77,7 @@ Partial Class E_frmUbicacion
         '
         'Label5
         '
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(248, 207)
         Me.Label5.Name = "Label5"
@@ -78,6 +87,8 @@ Partial Class E_frmUbicacion
         '
         'txtBuscar
         '
+        Me.txtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtBuscar.Location = New System.Drawing.Point(201, 12)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(487, 20)
@@ -85,14 +96,30 @@ Partial Class E_frmUbicacion
         '
         'DataGridView1
         '
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 38)
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_almacen, Me.nombre_almacen, Me.descripcion})
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 48)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(682, 166)
+        Me.DataGridView1.Size = New System.Drawing.Size(682, 156)
         Me.DataGridView1.TabIndex = 0
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -169,7 +196,9 @@ Partial Class E_frmUbicacion
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.Button5)
@@ -181,7 +210,9 @@ Partial Class E_frmUbicacion
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(417, 3)
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.Color.White
+        Me.Button4.Location = New System.Drawing.Point(451, 3)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 4
@@ -190,27 +221,62 @@ Partial Class E_frmUbicacion
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(520, 3)
+        Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button5.BackColor = System.Drawing.Color.White
+        Me.Button5.Location = New System.Drawing.Point(532, 3)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
         Me.Button5.TabIndex = 3
         Me.Button5.Text = "Guardar"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.Button5.UseVisualStyleBackColor = False
         '
         'Button6
         '
+        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button6.BackColor = System.Drawing.Color.White
         Me.Button6.Location = New System.Drawing.Point(613, 3)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(75, 23)
         Me.Button6.TabIndex = 5
         Me.Button6.Text = "Cancelar"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.Button6.UseVisualStyleBackColor = False
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 428)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 10, 0)
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 9
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'id_almacen
+        '
+        Me.id_almacen.DataPropertyName = "id_almacen"
+        Me.id_almacen.HeaderText = "ID"
+        Me.id_almacen.Name = "id_almacen"
+        '
+        'nombre_almacen
+        '
+        Me.nombre_almacen.DataPropertyName = "nombre_almacen"
+        Me.nombre_almacen.HeaderText = "ALMACEN"
+        Me.nombre_almacen.Name = "nombre_almacen"
+        '
+        'descripcion
+        '
+        Me.descripcion.DataPropertyName = "descripcion"
+        Me.descripcion.HeaderText = "DESCRIPCION"
+        Me.descripcion.Name = "descripcion"
         '
         'E_frmUbicacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(718, 430)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(718, 450)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
@@ -223,6 +289,7 @@ Partial Class E_frmUbicacion
         Me.GroupBox1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox2 As GroupBox
@@ -242,4 +309,8 @@ Partial Class E_frmUbicacion
     Friend WithEvents Button6 As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents id_almacen As DataGridViewTextBoxColumn
+    Friend WithEvents nombre_almacen As DataGridViewTextBoxColumn
+    Friend WithEvents descripcion As DataGridViewTextBoxColumn
 End Class
