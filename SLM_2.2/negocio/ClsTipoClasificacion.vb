@@ -2,7 +2,7 @@
 
 
 Public Class ClsTipoClasificacion
-    Dim codigo As Integer
+    Dim codigo, codigoCategoriaCliente, codigoListaPrecios As Integer
     Dim comentario As String
     'Constructor
     Public Sub New()
@@ -27,6 +27,22 @@ Public Class ClsTipoClasificacion
         End Set
     End Property
 
+    Public Property codigoListaPrecios_ As Integer
+        Get
+            Return codigoListaPrecios
+        End Get
+        Set(value As Integer)
+            codigoListaPrecios = value
+        End Set
+    End Property
+    Public Property codigoCategoriaCliente_ As Integer
+        Get
+            Return codigoCategoriaCliente
+        End Get
+        Set(value As Integer)
+            codigoCategoriaCliente = value
+        End Set
+    End Property
 
     Public Function RegistrarNuevoTipoClasificacion() As String
         Dim sqlcom As SqlCommand
@@ -42,6 +58,15 @@ Public Class ClsTipoClasificacion
         sqlpar.Value = Comentario1
         sqlcom.Parameters.Add(sqlpar)
 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoCategoriaCliente" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoCategoriaCliente
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoListaPrecios" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoListaPrecios_
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -82,6 +107,15 @@ Public Class ClsTipoClasificacion
         sqlpar.Value = Comentario1
         sqlcom.Parameters.Add(sqlpar)
 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoCategoriaCliente" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoCategoriaCliente
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoListaPrecios" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoListaPrecios_
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -138,6 +172,28 @@ Public Class ClsTipoClasificacion
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "M_slmBuscarTipoClasificacionCode"
             cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Codigo1
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+    Public Function BuscarTipoClasificacionCategoria() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_slmBuscarTipoClasificacionCategoria"
+            cmd.Parameters.Add("@codigoCategoriaCliente", SqlDbType.Int).Value = codigoCategoriaCliente_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable

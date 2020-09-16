@@ -7,6 +7,7 @@ Public Class M_Factura
     Public letras As String
     Dim subtotalF, descuentoF, abonoF, saldoF As Double
     Dim codigoDetalleFactura As New ArrayList
+    Public banderaTipo As Boolean
     Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
         M_ClienteVentana.Close()
         Me.Close()
@@ -69,6 +70,8 @@ Public Class M_Factura
     End Sub
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
         limpiar()
+        banderaTipo = True
+        dgblistadoExamenes.Columns(1).ReadOnly = True
     End Sub
     Public Sub limpiar()
         'limpiar los campos
@@ -96,6 +99,7 @@ Public Class M_Factura
         cbxentregarPaciente.Checked = False
         cbxenviarCorreo.Checked = False
 
+        dgbObservaciones.Rows.Clear()
         dgblistadoExamenes.Rows.Clear()
         M_ClienteVentana.dgvtabla.Rows.Clear()
 
@@ -143,7 +147,7 @@ Public Class M_Factura
         'cbxok.Enabled = True
 
         btnActualizar.Enabled = False
-        btncotizacion.Enabled = True
+        'btncotizacion.Enabled = True
         btnguardar.Enabled = True
 
         btnbusquedaExamen.Enabled = True
@@ -226,7 +230,7 @@ Public Class M_Factura
         'cbxok.Enabled = False
 
         btnActualizar.Enabled = True
-        btncotizacion.Enabled = False
+        'btncotizacion.Enabled = False
         btnguardar.Enabled = False
 
         btnbusquedaExamen.Enabled = False
@@ -261,6 +265,7 @@ Public Class M_Factura
     End Sub
     Public Sub HabilitarCotizacionFactura()
         txtcodigoCliente.ReadOnly = False
+        txtcodigoMedico.ReadOnly = False
         dtpfechaFactura.Enabled = True
         txtcodigoTerminosPago.ReadOnly = False
         txtcodigoRecepecionista.ReadOnly = False
@@ -268,8 +273,9 @@ Public Class M_Factura
         btnbusquedaExamen.Enabled = True
         dgblistadoExamenes.ReadOnly = False
         btnActualizar.Enabled = False
-        btncotizacion.Enabled = True
+        'btncotizacion.Enabled = True
         btnbuscarSucursal.Enabled = True
+        btnbuscarMedico.Enabled = True
 
         btnbuscarCliente.Enabled = True
         btnbuscarTerminosPago.Enabled = True
@@ -419,7 +425,8 @@ Public Class M_Factura
         End If
 
         'SIN TIMER
-        M_ClienteVentana.Show()
+        SegundaPantalla()
+
         If dgblistadoExamenes.Columns.Contains("btnEliminar") = False Then
             Dim btn As New DataGridViewButtonColumn()
             dgblistadoExamenes.Columns.Add(btn)
@@ -429,7 +436,34 @@ Public Class M_Factura
             btn.UseColumnTextForButtonValue = True
         End If
     End Sub
+    Private Sub SegundaPantalla()
 
+        Dim MiposicionX, MiposicionY As Single
+
+        Dim posicion As Point
+        Dim display As New M_ClienteVentana
+
+        For Each scrn As Screen In Screen.AllScreens
+
+            If scrn.Primary = False Then
+                display.Location = posicion
+                display.Width = scrn.WorkingArea.Width
+                display.Height = scrn.WorkingArea.Height
+
+            Else
+                posicion = New Point(scrn.WorkingArea.Width, scrn.Bounds.Y)
+
+            End If
+
+        Next
+
+        MiposicionX = posicion.X
+        MiposicionY = posicion.Y
+        M_ClienteVentana.Show()
+        M_ClienteVentana.Location = New Point(MiposicionX, MiposicionY)
+        M_ClienteVentana.WindowState = FormWindowState.Maximized
+
+    End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         'MsgBox("Entra despues de 3 seg")
         M_ClienteVentana.Show()
@@ -533,22 +567,6 @@ Public Class M_Factura
                     Dim dt As New DataTable
                     dt = objExam.BuscarPrecioItemExam()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     'valido que no haya agregado el examen anteriormente
                     If (validarFactura(objExam.codeIntExam_) = 0) Then
                         Dim row As DataRow = dt.Rows(0)
@@ -637,22 +655,6 @@ Public Class M_Factura
 
     '                Dim dt As New DataTable
     '                dt = objExam.BuscarPrecio()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     '                'valido que no haya agregado el examen anteriormente
     '                If (validarFactura(objExam.codigoItem_) = 0) Then
@@ -758,170 +760,175 @@ Public Class M_Factura
     End Sub
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
+            If banderaTipo Then
 
-            If Trim(txtcodigoRecepecionista.Text) = "" Then
-                'recepcionista
-                txtcodigoRecepecionista.Text = Form1.lblUserCod.Text
-                txtNombreRecepcionista.Text = Form1.lblMiUser.Text
-            End If
-            If Trim(txtcodigoCajero.Text) = "" Then
-                'cajero
-                txtcodigoCajero.Text = Form1.lblUserCod.Text
-                txtNombreCajero.Text = Form1.lblMiUser.Text
-            End If
-            If Trim(txtcodigoTerminal.Text) = "" Then
-                buscarMaquinaLocal()
-            End If
-            If Trim(txtnumeroPoliza.Text) = "" Then
-                txtnumeroPoliza.Text = "1"
-            End If
-            If Trim(txtpagoPaciente.Text) = "" Then
-                txtpagoPaciente.Text = "0"
-            End If
+                If Trim(txtcodigoRecepecionista.Text) = "" Then
+                    'recepcionista
+                    txtcodigoRecepecionista.Text = Form1.lblUserCod.Text
+                    txtNombreRecepcionista.Text = Form1.lblMiUser.Text
+                End If
+                If Trim(txtcodigoCajero.Text) = "" Then
+                    'cajero
+                    txtcodigoCajero.Text = Form1.lblUserCod.Text
+                    txtNombreCajero.Text = Form1.lblMiUser.Text
+                End If
+                If Trim(txtcodigoTerminal.Text) = "" Then
+                    buscarMaquinaLocal()
+                End If
+                If Trim(txtnumeroPoliza.Text) = "" Then
+                    txtnumeroPoliza.Text = "1"
+                End If
+                If Trim(txtpagoPaciente.Text) = "" Then
+                    txtpagoPaciente.Text = "0"
+                End If
 
-            If Trim(txtcodigoTerminal.Text) = "" Then
-                MsgBox("No existe la máquina local.", MsgBoxStyle.Critical)
-                Exit Sub
-            End If
+                If Trim(txtcodigoTerminal.Text) = "" Then
+                    MsgBox("No existe la máquina local.", MsgBoxStyle.Critical)
+                    Exit Sub
+                End If
 
-            Dim dt As New DataTable
-            Dim row As DataRow
+                Dim dt As New DataTable
+                Dim row As DataRow
 
-            If (txtcodigoCliente.Text <> "" And txtcodigoMedico.Text <> "" And txtcodigoTerminosPago.Text <> "" And
-                txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And
-                txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 1) Then
+                If (txtcodigoCliente.Text <> "" And txtcodigoMedico.Text <> "" And txtcodigoTerminosPago.Text <> "" And
+                    txtcodigoSede.Text <> "" And txtcodigoSucursal.Text <> "" And
+                    txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 1) Then
 
-                If (cbxok.Checked) Then
-                    'Si el vuelto es mayor o igual a 0 y el cliente no pertenese a un convenio
-                    If (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "") Then
-                        MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
-                        Exit Sub
-                    End If
-                    Dim objCAI As New ClsCAI
-                    objCAI.codigoMaquinaLocal_ = txtcodigoTerminal.Text
-                    dt = objCAI.BuscarCAI()
-                    If dt.Rows.Count >= 1 Then
-                        row = dt.Rows(0)
-                        txtnumeroOficial.Text = CStr(row("numeroOficial"))
-
-                        Dim objDetCAI As New ClsDetalleCAI
-                        objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
-                        If objDetCAI.ModificarDetalleCAI() <> 1 Then
-                            MsgBox("Error en la actualización del detalle del CAI.", MsgBoxStyle.Critical)
+                    If (cbxok.Checked) Then
+                        'Si el vuelto es mayor o igual a 0 y el cliente no pertenese a un convenio
+                        If (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "") Then
+                            MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
                             Exit Sub
                         End If
-                    Else
-                        MsgBox("No existe un CAI activo." & dt.Rows.Count)
-                    End If
+                        Dim objCAI As New ClsCAI
+                        objCAI.codigoMaquinaLocal_ = txtcodigoTerminal.Text
+                        dt = objCAI.BuscarCAI()
+                        If dt.Rows.Count >= 1 Then
+                            row = dt.Rows(0)
+                            txtnumeroOficial.Text = CStr(row("numeroOficial"))
 
-                End If
-
-                Dim objFact As New ClsFactura
-                With objFact
-                    .numeroOficial_ = txtnumeroOficial.Text
-                    .codigoCliente_ = Convert.ToInt64(txtcodigoCliente.Text)
-                    .codigoRecepcionista_ = Convert.ToInt64(txtcodigoRecepecionista.Text)
-                    .codigoMedico_ = Convert.ToInt64(txtcodigoMedico.Text)
-                    .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
-                    .codigoTerminoPago1 = Convert.ToInt64(lblcodeTerminoPago.Text)
-                    .codigoSede_ = Convert.ToInt64(txtcodigoSede.Text)
-                    .fechaVto_ = dtpfechaVto.Value
-                    .codigoSucursal_ = Convert.ToInt64(lblcodeSucursal.Text)
-
-                    If Trim(txtcodigoConvenio.Text) = "" Or Trim(txtcodigoConvenio.Text) = "0" Then
-                        .codigoConvenio_ = 0
-                    Else
-                        .codigoConvenio_ = Convert.ToInt64(lblcodePriceList.Text)
-                    End If
-
-                    .numeroPoliza_ = txtnumeroPoliza.Text
-                    .codigoTerminal_ = Convert.ToInt64(txtcodigoTerminal.Text)
-                    .entregaMedico_ = cbxentregarMedico.Checked
-                    .entregaPaciente_ = cbxentregarPaciente.Checked
-                    .enviarEmail_ = cbxenviarCorreo.Checked
-                    .pagoPaciente_ = Convert.ToDouble(txtpagoPaciente.Text)
-                    .vuelto_ = Convert.ToDouble(txtvuelto.Text)
-                    .total_ = Convert.ToDouble(txttotal.Text)
-                    .ok_ = cbxok.Checked
-                    .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
-                    .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
-                    .estado_ = cbxAnular.Checked
-                    .deposito_ = Convert.ToDouble(txtDeposito.Text)
-                    .transferencia_ = Convert.ToDouble(txtTransferencia.Text)
-                    .cheque_ = Convert.ToDouble(txtCheque.Text)
-                End With
-
-                If objFact.RegistrarNuevaFactura() = 1 Then
-                    deshabilitar()
-                    'cbxok.Enabled = True
-
-                    dt = objFact.BuscarFacturaCode()
-                    row = dt.Rows(0)
-
-                    txtnumeroFactura.Text = CStr(row("numero"))
-                    Dim objDetalleFact As New ClsDetalleFactura
-                    For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
-                        With objDetalleFact
-                            .numeroFactura_ = Convert.ToInt64(txtnumeroFactura.Text)
-                            .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(9).Value())
-                            .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
-                            .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
-                            .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
-                            .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
-                            .observaciones_ = dgbObservaciones.Rows(index).Cells(1).Value()
-                        End With
-                        If objDetalleFact.RegistrarNuevoDetalleFactura() = 0 Then
-                            MsgBox("Error al querer insertar el detalle de factura.", MsgBoxStyle.Critical)
+                            Dim objDetCAI As New ClsDetalleCAI
+                            objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
+                            If objDetCAI.ModificarDetalleCAI() <> 1 Then
+                                MsgBox("Error en la actualización del detalle del CAI.", MsgBoxStyle.Critical)
+                                Exit Sub
+                            End If
+                        Else
+                            MsgBox("No existe un CAI activo." & dt.Rows.Count)
                         End If
-                    Next
-                    MsgBox("Registrada la factura correctamente.", MsgBoxStyle.Information)
-                    calcularDescuento2(objDetalleFact)
 
-                    If (cbxAnular.Checked = False And Trim(txtnumeroOficial.Text) <> "") Then
-                        MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
-                        letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
-                        Imprimir_Factura()
-                        OrdenDeTrabajo()
-                    Else
-                        HabilitarActualizarFactura()
                     End If
 
+                    Dim objFact As New ClsFactura
+                    With objFact
+                        .numeroOficial_ = txtnumeroOficial.Text
+                        .codigoCliente_ = Convert.ToInt64(txtcodigoCliente.Text)
+                        .codigoRecepcionista_ = Convert.ToInt64(txtcodigoRecepecionista.Text)
+                        .codigoMedico_ = Convert.ToInt64(txtcodigoMedico.Text)
+                        .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
+                        .codigoTerminoPago1 = Convert.ToInt64(lblcodeTerminoPago.Text)
+                        .codigoSede_ = Convert.ToInt64(txtcodigoSede.Text)
+                        .fechaVto_ = dtpfechaVto.Value
+                        .codigoSucursal_ = Convert.ToInt64(lblcodeSucursal.Text)
 
-                    'temporal
-                    'Dim objDetFact As New ClsDetalleFactura
-                    'objDetFact.numeroFactura_ = txtnumeroFactura.Text
-                    'dt = objDetFact.BuscarDetalleFactura()
-                    'For index As Integer = 0 To dt.Rows.Count - 1
-                    '    row = dt.Rows(index)
-                    '    dgblistadoExamenes.Rows(index).Cells(8).Value() = CStr(row("numero"))
-                    'Next
+                        If Trim(txtcodigoConvenio.Text) = "" Or Trim(txtcodigoConvenio.Text) = "0" Then
+                            .codigoConvenio_ = 0
+                        Else
+                            .codigoConvenio_ = Convert.ToInt64(lblcodePriceList.Text)
+                        End If
+
+                        .numeroPoliza_ = txtnumeroPoliza.Text
+                        .codigoTerminal_ = Convert.ToInt64(txtcodigoTerminal.Text)
+                        .entregaMedico_ = cbxentregarMedico.Checked
+                        .entregaPaciente_ = cbxentregarPaciente.Checked
+                        .enviarEmail_ = cbxenviarCorreo.Checked
+                        .pagoPaciente_ = Convert.ToDouble(txtpagoPaciente.Text)
+                        .vuelto_ = Convert.ToDouble(txtvuelto.Text)
+                        .total_ = Convert.ToDouble(txttotal.Text)
+                        .ok_ = cbxok.Checked
+                        .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
+                        .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
+                        .estado_ = cbxAnular.Checked
+                        .deposito_ = Convert.ToDouble(txtDeposito.Text)
+                        .transferencia_ = Convert.ToDouble(txtTransferencia.Text)
+                        .cheque_ = Convert.ToDouble(txtCheque.Text)
+                    End With
+
+                    If objFact.RegistrarNuevaFactura() = 1 Then
+                        deshabilitar()
+                        'cbxok.Enabled = True
+
+                        dt = objFact.BuscarFacturaCode()
+                        row = dt.Rows(0)
+
+                        txtnumeroFactura.Text = CStr(row("numero"))
+                        Dim objDetalleFact As New ClsDetalleFactura
+                        For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
+                            With objDetalleFact
+                                .numeroFactura_ = Convert.ToInt64(txtnumeroFactura.Text)
+                                .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(9).Value())
+                                .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
+                                .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
+                                .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
+                                .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+                                .observaciones_ = dgbObservaciones.Rows(index).Cells(1).Value()
+                            End With
+                            If objDetalleFact.RegistrarNuevoDetalleFactura() = 0 Then
+                                MsgBox("Error al querer insertar el detalle de factura.", MsgBoxStyle.Critical)
+                            End If
+                        Next
+                        MsgBox("Registrada la factura correctamente.", MsgBoxStyle.Information)
+                        calcularDescuento2(objDetalleFact)
+
+                        If (cbxAnular.Checked = False And Trim(txtnumeroOficial.Text) <> "") Then
+                            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
+                            letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
+                            Imprimir_Factura()
+                            OrdenDeTrabajo()
+                        Else
+                            HabilitarActualizarFactura()
+                        End If
+
+
+                        'temporal
+                        'Dim objDetFact As New ClsDetalleFactura
+                        'objDetFact.numeroFactura_ = txtnumeroFactura.Text
+                        'dt = objDetFact.BuscarDetalleFactura()
+                        'For index As Integer = 0 To dt.Rows.Count - 1
+                        '    row = dt.Rows(index)
+                        '    dgblistadoExamenes.Rows(index).Cells(8).Value() = CStr(row("numero"))
+                        'Next
+                    Else
+                        MsgBox("Error al querer registrar la factura.", MsgBoxStyle.Critical)
+                    End If
                 Else
-                    MsgBox("Error al querer registrar la factura.", MsgBoxStyle.Critical)
+                    MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
                 End If
+                M_BuscarFactura.seleccionarFacturas()
+
+                '::::::::::::::::::::::::::::::::::::::::::::: INSERTAR BITACORA ::::::::::::::::::::::
+                Dim Bitacora As New ClsBitacora
+
+                With Bitacora
+                    .usuario_ = txtcodigoCajero.Text
+                    .accion_ = "Creación de Factura."
+                    .fecha_ = dtpfechaFactura.Value()
+                    .registrarBitacora()
+                End With
+                '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+                'PARTIDA CONTABLE
+
+
+
+
+
+                '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
             Else
-                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")
+                AGREGAR_COTIZACION()
             End If
-            M_BuscarFactura.seleccionarFacturas()
-
-            '::::::::::::::::::::::::::::::::::::::::::::: INSERTAR BITACORA ::::::::::::::::::::::
-            Dim Bitacora As New ClsBitacora
-
-            With Bitacora
-                .usuario_ = txtcodigoCajero.Text
-                .accion_ = "Creación de Factura."
-                .fecha_ = dtpfechaFactura.Value()
-                .registrarBitacora()
-            End With
-            '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-            'PARTIDA CONTABLE
-
-
-
-
-
-            '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -942,13 +949,12 @@ Public Class M_Factura
             e.Handled = True
         End If
     End Sub
-    Private Sub btncotizacion_Click(sender As Object, e As EventArgs) Handles btncotizacion.Click
+
+    Private Sub AGREGAR_COTIZACION()
         Try
             If (Trim(txtcodigoCliente.Text) <> "" And Trim(txtcodigoTerminosPago.Text) <> "" And
                 Trim(txtcodigoSucursal.Text) <> "" And txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
-                If Trim(txtcodigoRecepecionista.Text) = "" Then
-                    txtcodigoRecepecionista.Text = "1"
-                End If
+
                 Dim objCotiz As New ClsCotizacion
                 With objCotiz
                     .codigoCliente_ = Convert.ToInt64(txtcodigoCliente.Text)
@@ -967,7 +973,7 @@ Public Class M_Factura
 
                     txtnumeroFactura.Text = CStr(row("numero"))
                     btnguardar.Enabled = False
-                    btncotizacion.Enabled = False
+                    'btncotizacion.Enabled = False
                     Dim objCotFact As New ClsCotizacionFactura
                     For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
                         With objCotFact
@@ -989,6 +995,87 @@ Public Class M_Factura
                     MsgBox("Error al querer registrar la cotización.", MsgBoxStyle.Critical)
                 End If
                 M_BuscarCotizacion.actualizarCotizacion()
+                btnActualizar.Enabled = True
+                btnguardar.Enabled = False
+                Imprimir_Cotizacion()
+            Else
+                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Information, "Validación")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+
+    End Sub
+
+    Private Sub ACTUALIZAR_COTIZACION()
+        Try
+            If (Trim(txtcodigoCliente.Text) <> "" And Trim(txtcodigoTerminosPago.Text) <> "" And
+                Trim(txtcodigoSucursal.Text) <> "" And txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
+                If Trim(txtcodigoRecepecionista.Text) = "" Then
+                    txtcodigoRecepecionista.Text = "1"
+                End If
+                Dim objCotiz As New ClsCotizacion
+                With objCotiz
+                    .numero_ = Integer.Parse(txtnumeroFactura.Text)
+                    .codigoCliente_ = Convert.ToInt64(txtcodigoCliente.Text)
+                    .codigoRecepcionista_ = Convert.ToInt64(txtcodigoRecepecionista.Text)
+                    .codigoTerminoPago_ = Convert.ToInt64(lblcodeTerminoPago.Text)
+                    .codigoSucursal_ = Convert.ToInt64(lblcodeSucursal.Text)
+                    .total_ = Convert.ToDouble(txttotal.Text)
+                End With
+
+                If objCotiz.ModificarCotizacion() = 1 Then
+                    deshabilitar()
+                    btnActualizar.Enabled = True
+                    btnguardar.Enabled = False
+                    Dim objCotFact As New ClsCotizacionFactura
+                    For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
+                        If dgblistadoExamenes.Rows(index).Cells(8).Value() = 0 Then
+                            'agrega
+                            With objCotFact
+                                .numeroCotizacion_ = Convert.ToInt64(txtnumeroFactura.Text)
+                                .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(9).Value())
+                                .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
+                                .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
+                                .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
+                                .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+                            End With
+                            If objCotFact.RegistrarNuevaCotizacionFactura() = 0 Then
+                                MsgBox("Error al querer insertar el detalle de la cotización.", MsgBoxStyle.Critical)
+                            End If
+                        Else
+                            'actualiza los detalles de cotizacion
+                            With objCotFact
+                                .numero_ = Integer.Parse(dgblistadoExamenes.Rows(index).Cells(8).Value())
+                                .numeroCotizacion_ = Convert.ToInt64(txtnumeroFactura.Text)
+                                .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(9).Value())
+                                .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
+                                .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
+                                .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
+                                .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+                            End With
+                            If objCotFact.ModificarCotizacionFactura() = 0 Then
+                                MsgBox("Error al querer actualizar el detalle de la cotización.", MsgBoxStyle.Critical)
+                            End If
+                        End If
+                    Next
+
+                    'eliminar detalle cotizacion
+                    For index As Integer = 0 To codigoDetalleFactura.Count - 1
+                        objCotFact.numero_ = Convert.ToInt64(codigoDetalleFactura(index))
+                        If objCotFact.EliminarDetalleCotizacion() <> 1 Then
+                            MsgBox("Error al querer modificar el detalle de cotización.", MsgBoxStyle.Critical)
+                        End If
+                    Next
+                    codigoDetalleFactura.Clear()
+
+                    MsgBox("Actualizada la cotización correctamente.", MsgBoxStyle.Information)
+                    letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
+
+                Else
+                    MsgBox("Error al querer registrar la cotización.", MsgBoxStyle.Critical)
+                End If
+                M_BuscarCotizacion.actualizarCotizacion()
                 Imprimir_Cotizacion()
             Else
                 MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Information, "Validación")
@@ -1000,184 +1087,190 @@ Public Class M_Factura
     End Sub
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Try
-            'cajero
-            txtcodigoCajero.Text = Form1.lblUserCod.Text
-            txtNombreCajero.Text = Form1.lblMiUser.Text
+            If banderaTipo Then
 
-            Dim dt As New DataTable
-            Dim bandera As Integer = 0
-            Dim row As DataRow
-            Dim objDetFac As New ClsDetalleFactura
+                'cajero
+                txtcodigoCajero.Text = Form1.lblUserCod.Text
+                txtNombreCajero.Text = Form1.lblMiUser.Text
 
-            If Trim(txtnumeroOficial.Text) = "" And cbxAnular.Checked = False Then
-                bandera = 1
-            Else
-                bandera = 0
-            End If
+                Dim dt As New DataTable
+                Dim bandera As Integer = 0
+                Dim row As DataRow
+                Dim objDetFac As New ClsDetalleFactura
 
-            'si la factura YA existe 
-            If (txtpagoPaciente.Text <> "" And Trim(txtnumeroFactura.Text) <> "") Then
-                'si la factura a sido aprobada (OK) y quiere obtener el numero del CAI y no a sido anulada la factura (ANULADA)
-                If (cbxok.Checked And Trim(txtnumeroOficial.Text) = "" And cbxAnular.Checked = False) Then
-                    'VALIDACION DE DINERO
-                    If (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "") Then
-                        MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
-                        Exit Sub
-                    End If
-
-                    Dim objCAI As New ClsCAI
-                    objCAI.codigoMaquinaLocal_ = txtcodigoTerminal.Text
-                    dt = objCAI.BuscarCAI()
-
-                    If dt.Rows.Count >= 1 Then
-                        row = dt.Rows(0)
-                        txtnumeroOficial.Text = CStr(row("numeroOficial"))
-
-                        Dim objDetCAI As New ClsDetalleCAI
-                        objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
-                        If objDetCAI.ModificarDetalleCAI() <> 1 Then
-                            MsgBox("Error en la actualización del detalle del CAI.", MsgBoxStyle.Critical)
-                            Exit Sub
-                        End If
-                    Else
-                        MsgBox("No existe un CAI activo." & dt.Rows.Count)
-                    End If
+                If Trim(txtnumeroOficial.Text) = "" And cbxAnular.Checked = False Then
+                    bandera = 1
+                Else
+                    bandera = 0
                 End If
 
-                If bandera = 1 Then
-                    Dim objFact As New ClsFactura
-                    With objFact
-                        .numero_ = Convert.ToInt64(txtnumeroFactura.Text)
-                        .numeroOficial_ = txtnumeroOficial.Text
-                        .entregaMedico_ = cbxentregarMedico.Checked
-                        .entregaPaciente_ = cbxentregarPaciente.Checked
-                        .enviarEmail_ = cbxenviarCorreo.Checked
-                        .ok_ = cbxok.Checked
-                        .pagoPaciente_ = Convert.ToDouble(txtpagoPaciente.Text)
-                        .vuelto_ = Convert.ToDouble(txtvuelto.Text)
-                        .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
-                        .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
-                        .estado_ = cbxAnular.Checked
-                        .total_ = Convert.ToDouble(txttotal.Text)
-                        .deposito_ = Convert.ToDouble(txtDeposito.Text)
-                        .transferencia_ = Convert.ToDouble(txtTransferencia.Text)
-                        .cheque_ = Convert.ToDouble(txtCheque.Text)
-                        .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
-                    End With
-                    'MODIFICO LOS DATOS DE LA FACTURA
-                    If objFact.ModificarFactura() = 1 Then
+                'si la factura YA existe 
+                If (txtpagoPaciente.Text <> "" And Trim(txtnumeroFactura.Text) <> "") Then
+                    'si la factura a sido aprobada (OK) y quiere obtener el numero del CAI y no a sido anulada la factura (ANULADA)
+                    If (cbxok.Checked And Trim(txtnumeroOficial.Text) = "" And cbxAnular.Checked = False) Then
+                        'VALIDACION DE DINERO
+                        If (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "") Then
+                            MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
+                            Exit Sub
+                        End If
 
-                        'SI LA FACTURA YA TIENE EL (OK) Y NO ESTA ANULADA LA FACTURA (ANULAR)
-                        If (cbxAnular.Checked = False) Then
-                            For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
-                                If dgblistadoExamenes.Rows(index).Cells(8).Value() = 0 Then
-                                    'agrega
-                                    With objDetFac
-                                        .numeroFactura_ = Convert.ToInt64(txtnumeroFactura.Text)
-                                        .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(9).Value())
-                                        .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
-                                        .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
-                                        .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
-                                        .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
-                                        .observaciones_ = dgbObservaciones.Rows(index).Cells(1).Value()
-                                    End With
-                                    If objDetFac.RegistrarNuevoDetalleFactura() = 0 Then
-                                        MsgBox("Error al querer insertar el detalle de factura.", MsgBoxStyle.Critical)
+                        Dim objCAI As New ClsCAI
+                        objCAI.codigoMaquinaLocal_ = txtcodigoTerminal.Text
+                        dt = objCAI.BuscarCAI()
+
+                        If dt.Rows.Count >= 1 Then
+                            row = dt.Rows(0)
+                            txtnumeroOficial.Text = CStr(row("numeroOficial"))
+
+                            Dim objDetCAI As New ClsDetalleCAI
+                            objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
+                            If objDetCAI.ModificarDetalleCAI() <> 1 Then
+                                MsgBox("Error en la actualización del detalle del CAI.", MsgBoxStyle.Critical)
+                                Exit Sub
+                            End If
+                        Else
+                            MsgBox("No existe un CAI activo." & dt.Rows.Count)
+                        End If
+                    End If
+
+                    If bandera = 1 Then
+                        Dim objFact As New ClsFactura
+                        With objFact
+                            .numero_ = Convert.ToInt64(txtnumeroFactura.Text)
+                            .numeroOficial_ = txtnumeroOficial.Text
+                            .entregaMedico_ = cbxentregarMedico.Checked
+                            .entregaPaciente_ = cbxentregarPaciente.Checked
+                            .enviarEmail_ = cbxenviarCorreo.Checked
+                            .ok_ = cbxok.Checked
+                            .pagoPaciente_ = Convert.ToDouble(txtpagoPaciente.Text)
+                            .vuelto_ = Convert.ToDouble(txtvuelto.Text)
+                            .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
+                            .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
+                            .estado_ = cbxAnular.Checked
+                            .total_ = Convert.ToDouble(txttotal.Text)
+                            .deposito_ = Convert.ToDouble(txtDeposito.Text)
+                            .transferencia_ = Convert.ToDouble(txtTransferencia.Text)
+                            .cheque_ = Convert.ToDouble(txtCheque.Text)
+                            .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
+                        End With
+                        'MODIFICO LOS DATOS DE LA FACTURA
+                        If objFact.ModificarFactura() = 1 Then
+
+                            'SI LA FACTURA YA TIENE EL (OK) Y NO ESTA ANULADA LA FACTURA (ANULAR)
+                            If (cbxAnular.Checked = False) Then
+                                For index As Integer = 0 To dgblistadoExamenes.Rows.Count - 2
+                                    If dgblistadoExamenes.Rows(index).Cells(8).Value() = 0 Then
+                                        'agrega
+                                        With objDetFac
+                                            .numeroFactura_ = Convert.ToInt64(txtnumeroFactura.Text)
+                                            .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(9).Value())
+                                            .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
+                                            .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
+                                            .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
+                                            .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+                                            .observaciones_ = dgbObservaciones.Rows(index).Cells(1).Value()
+                                        End With
+                                        If objDetFac.RegistrarNuevoDetalleFactura() = 0 Then
+                                            MsgBox("Error al querer insertar el detalle de factura.", MsgBoxStyle.Critical)
+                                        End If
+                                    Else
+                                        'actualiza los detalles de factura
+                                        With objDetFac
+                                            .numero_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(8).Value())
+                                            .numeroFactura_ = Convert.ToInt64(txtnumeroFactura.Text)
+                                            .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(9).Value())
+                                            .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
+                                            .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
+                                            .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
+                                            .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
+                                            .observaciones_ = dgbObservaciones.Rows(index).Cells(1).Value()
+                                        End With
+                                        If objDetFac.ModificarDetalleFactura() = 0 Then
+                                            MsgBox("Error al querer modificar el detalle de factura.", MsgBoxStyle.Critical)
+                                        End If
                                     End If
-                                Else
-                                    'actualiza los detalles de factura
-                                    With objDetFac
-                                        .numero_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(8).Value())
-                                        .numeroFactura_ = Convert.ToInt64(txtnumeroFactura.Text)
-                                        .codigoExamen_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(9).Value())
-                                        .cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
-                                        .fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
-                                        .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
-                                        .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
-                                        .observaciones_ = dgbObservaciones.Rows(index).Cells(1).Value()
-                                    End With
-                                    If objDetFac.ModificarDetalleFactura() = 0 Then
+                                Next
+
+
+                                For index As Integer = 0 To codigoDetalleFactura.Count - 1
+                                    objDetFac.numero_ = Convert.ToInt64(codigoDetalleFactura(index))
+                                    If objDetFac.EliminarDetalleFactura() <> 1 Then
                                         MsgBox("Error al querer modificar el detalle de factura.", MsgBoxStyle.Critical)
                                     End If
-                                End If
-                            Next
+                                Next
+                                codigoDetalleFactura.Clear()
+                            End If
+                            deshabilitar()
+                            btnActualizar.Enabled = True
+
+                            MsgBox("Actualizada la factura correctamente.", MsgBoxStyle.Information)
+                            calcularDescuento2(objDetFac)
 
 
-                            For index As Integer = 0 To codigoDetalleFactura.Count - 1
-                                objDetFac.numero_ = Convert.ToInt64(codigoDetalleFactura(index))
-                                If objDetFac.EliminarDetalleFactura() <> 1 Then
-                                    MsgBox("Error al querer modificar el detalle de factura.", MsgBoxStyle.Critical)
-                                End If
-                            Next
-                            codigoDetalleFactura.Clear()
-                        End If
-                        deshabilitar()
-                        btnActualizar.Enabled = True
-
-                        MsgBox("Actualizada la factura correctamente.", MsgBoxStyle.Information)
-                        calcularDescuento2(objDetFac)
+                            If (Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False) Then
+                                MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
+                                letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
+                                'calcularDescuento()
+                                'Imprimir_Factura()
+                                Imprimir_Factura()
+                                OrdenDeTrabajo()
+                            Else
+                                HabilitarActualizarFactura()
+                            End If
 
 
-                        If (Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False) Then
-                            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
-                            letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
-                            'calcularDescuento()
-                            'Imprimir_Factura()
-                            Imprimir_Factura()
-                            OrdenDeTrabajo()
                         Else
-                            HabilitarActualizarFactura()
+                            MsgBox("Error al querer actualizar la factura.", MsgBoxStyle.Critical)
                         End If
-
 
                     Else
-                        MsgBox("Error al querer actualizar la factura.", MsgBoxStyle.Critical)
+
+                        Dim objFact As New ClsFactura
+                        With objFact
+                            .numero_ = Convert.ToInt64(txtnumeroFactura.Text)
+                            .numeroOficial_ = txtnumeroOficial.Text
+                            .entregaMedico_ = cbxentregarMedico.Checked
+                            .entregaPaciente_ = cbxentregarPaciente.Checked
+                            .enviarEmail_ = cbxenviarCorreo.Checked
+                            .ok_ = cbxok.Checked
+                            .pagoPaciente_ = Convert.ToDouble(txtpagoPaciente.Text)
+                            .vuelto_ = Convert.ToDouble(txtvuelto.Text)
+                            .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
+                            .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
+                            .estado_ = cbxAnular.Checked
+                            .total_ = Convert.ToDouble(txttotal.Text)
+                            .deposito_ = Convert.ToDouble(txtDeposito.Text)
+                            .transferencia_ = Convert.ToDouble(txtTransferencia.Text)
+                            .cheque_ = Convert.ToDouble(txtCheque.Text)
+                            .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
+                        End With
+                        'MODIFICO LOS DATOS DE LA FACTURA
+                        If objFact.ModificarFactura() = 1 Then
+                            deshabilitar()
+                            btnActualizar.Enabled = True
+
+                            MsgBox("Actualizada la factura correctamente.", MsgBoxStyle.Information)
+                            If (Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False) Then
+                                MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
+                                letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
+                                calcularDescuento()
+                                Imprimir_Factura()
+                            Else
+                                HabilitarActualizarFactura()
+                            End If
+                        Else
+                            MsgBox("Error en la actualización de la factura.", MsgBoxStyle.Critical)
+                        End If
                     End If
 
                 Else
-
-                    Dim objFact As New ClsFactura
-                    With objFact
-                        .numero_ = Convert.ToInt64(txtnumeroFactura.Text)
-                        .numeroOficial_ = txtnumeroOficial.Text
-                        .entregaMedico_ = cbxentregarMedico.Checked
-                        .entregaPaciente_ = cbxentregarPaciente.Checked
-                        .enviarEmail_ = cbxenviarCorreo.Checked
-                        .ok_ = cbxok.Checked
-                        .pagoPaciente_ = Convert.ToDouble(txtpagoPaciente.Text)
-                        .vuelto_ = Convert.ToDouble(txtvuelto.Text)
-                        .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
-                        .ingresoTarjeta_ = Convert.ToDouble(txtTarjeta.Text)
-                        .estado_ = cbxAnular.Checked
-                        .total_ = Convert.ToDouble(txttotal.Text)
-                        .deposito_ = Convert.ToDouble(txtDeposito.Text)
-                        .transferencia_ = Convert.ToDouble(txtTransferencia.Text)
-                        .cheque_ = Convert.ToDouble(txtCheque.Text)
-                        .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
-                    End With
-                    'MODIFICO LOS DATOS DE LA FACTURA
-                    If objFact.ModificarFactura() = 1 Then
-                        deshabilitar()
-                        btnActualizar.Enabled = True
-
-                        MsgBox("Actualizada la factura correctamente.", MsgBoxStyle.Information)
-                        If (Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False) Then
-                            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
-                            letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
-                            calcularDescuento()
-                            Imprimir_Factura()
-                        Else
-                            HabilitarActualizarFactura()
-                        End If
-                    Else
-                        MsgBox("Error en la actualización de la factura.", MsgBoxStyle.Critical)
-                    End If
+                    MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Information, "Validación")
                 End If
+                M_BuscarFactura.seleccionarFacturas()
 
             Else
-                MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Information, "Validación")
+                ACTUALIZAR_COTIZACION()
             End If
-            M_BuscarFactura.seleccionarFacturas()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -1344,51 +1437,6 @@ Public Class M_Factura
         End Try
     End Sub
 
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Try
-            'ORDEN DE TRABAJO
-            OrdenDeTrabajo()
-            'Dim dt As New DataTable
-            'dt = TryCast(dgblistadoExamenes.DataSource, DataTable)
-            'Dim dv As DataView
-            'dt.DefaultView.Sort = "grupo Desc"
-            'MsgBox("\\\\\\\\\\\\\\\\\\\")
-            'dgblistadoExamenes.DataSource = dt
-            'MsgBox("////")
-            'Dim dt As DataTable = dgblistadoExamenes.DataSource
-            'DataGridView1.DataSource = dgblistadoExamenes.DataSource
-            'dgblistadoExamenes.DataSource = dv
-            'MsgBox("FUNCIONA   1")
-            'dv.Sort = "codigo DESC"
-            'DataGridView1.Sort(DataGridView1.Columns(3), ListSortDirection.Ascending)
-            'MsgBox("FUNCIONA        el sort")
-            'dgblistadoExamenes.DataSource = dv
-            'dt
-            'dv = dt.DefaultView
-            'Dim objOrden As New ClsOrdenDeTrabajo
-            'dgblistadoExamenes.Sort(dgblistadoExamenes.Columns(3), ListSortDirection.Ascending)
-            'lblcliente.Text = dv.Count
-            'MsgBox("FUNCIONA 2: " & lblcliente.Text)
-            'For index As Integer = 0 To dv.Count
-            '    'With objOrden
-            '    '.cod_factura_ = Convert.ToInt64(txtnumeroFactura.Text)
-            '    '.cod_objeto_ = Convert.ToInt64(dv(index)(7))
-            '    '.cantidad_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(1).Value())
-            '    '.fechaEntrega_ = dgblistadoExamenes.Rows(index).Cells(4).Value()
-            '    '.descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
-            '    '.subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
-            '    'End With
-            '    'If objOrden.cod_factura_ = 0 Then
-            '    '    MsgBox("Error al querer insertar el detalle de factura.")
-            '    'End If
-            '    MsgBox("FUNCIONA 3")
-            '    MsgBox("GRUPO: " & dv(index)(7))
-            'Next
-        Catch ex As Exception
-            MsgBox("Ejemplo fuera de " & ex.Message)
-        End Try
-    End Sub
     'Private Sub OrdenDeTrabajo()
     '    Dim ds As New DataSet 'Orden de los examenes por grupo o laboratorio
     '    Try
@@ -1546,7 +1594,7 @@ Public Class M_Factura
                         'MsgBox("i=" & i & "  ,dt.Rows.Count=" & dt.Rows.Count & "  ,j=" & j)
                         'MsgBox("row(subArea)=" & CStr(row("subArea")) & "(son iguales) = rowC(subArea)=" & CStr(rowC("subArea")))
                         If row("subArea") = rowC("subArea") Then
-                            MsgBox(Convert.ToInt64(rowC("codeItemExam")))
+                            'MsgBox(Convert.ToInt64(rowC("codeItemExam")))
                             objItemD.codigoItemExamen_ = Convert.ToInt64(rowC("codeItemExam"))
                             dt2 = objItemD.BuscarItemExamenDetalle
                             For x As Integer = 0 To dt2.Rows.Count - 1
@@ -1607,20 +1655,27 @@ Public Class M_Factura
 
     Private Sub txtnumeroOficial_TextChanged(sender As Object, e As EventArgs) Handles txtnumeroOficial.TextChanged
         If (Trim(txtnumeroOficial.Text) <> "") Then
-
+            cbxAnular.Enabled = True
         Else
             cbxAnular.Enabled = False
         End If
     End Sub
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
-        If Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False Then
-            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
-            letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
-            calcularDescuento()
-            Imprimir_Factura()
+        If banderaTipo Then
+            If Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False Then
+                MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
+                letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
+                calcularDescuento()
+                Imprimir_Factura()
+            Else
+                MsgBox("Debe tener el número oficial de la factura y no ser anulada o cancelada.", MsgBoxStyle.Information)
+            End If
         Else
-            MsgBox("Debe tener el número oficial de la factura y no ser anulada o cancelada.", MsgBoxStyle.Information)
+            If Trim(txtnumeroFactura.Text) <> "" Then
+                letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
+                Imprimir_Cotizacion()
+            End If
         End If
     End Sub
 
@@ -1697,6 +1752,15 @@ Public Class M_Factura
             End Try
         End If
     End Sub
+
+    Private Sub btnNuevaCotizacion_Click(sender As Object, e As EventArgs) Handles btnNuevaCotizacion.Click
+        limpiar()
+        btnPromocion.Enabled = False
+        btnQuitarPromocion.Enabled = False
+        banderaTipo = False
+        dgblistadoExamenes.Columns(1).ReadOnly = False
+    End Sub
+
 
     Private Sub calcularDescuento()
         Dim dt As New DataTable

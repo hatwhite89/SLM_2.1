@@ -214,4 +214,20 @@
         End Try
 
     End Sub
+
+    Private Sub btnBuscarEmpleado_Click(sender As Object, e As EventArgs) Handles btnBuscarEmpleado.Click
+        Try
+
+            M_ListadoEmpleados.lblform.Text = "E_Usuarios"
+            M_ListadoEmpleados.ShowDialog()
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnImportar_Click(sender As Object, e As EventArgs) Handles btnImportar.Click
+        A_ImportarUserAD.ShowDialog()
+
+    End Sub
 End Class

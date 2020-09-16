@@ -8,6 +8,8 @@ Imports Microsoft.VisualBasic
 Imports System.Net.Mail
 Imports System.Text
 Imports System.Security.Cryptography
+Imports System.DirectoryServices
+
 
 Module ModulosVarios
 
@@ -323,7 +325,9 @@ Module ModulosVarios
                                                 End If
                                             ElseIf i = 12 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    M_Factura.cbxok.Enabled = True
+                                                    M_Factura.lblokay.Text = "Cajero"
+
+
                                                 End If
                                             End If 'if conteo
 
@@ -742,5 +746,24 @@ Module ModulosVarios
             .AlternatingRowsDefaultCellStyle.BackColor = Color.White
         End With
     End Sub
+
+    ':::::::::::::::::::::::::::::::::::::::::::: ACTIVE DIRECTORY ::::::::::::::::::::::::::::::::::::::::::::
+    'Función para consultar usuarios de Active Directory
+    Sub ImportarUsuariosAD()
+
+        Dim objDirectoryEntry As New DirectoryEntry("LDAP://laboratoriosmedicos.local", "sinergia", "@Tatiana1987")
+        Dim objDirectorySearcher As New DirectorySearcher(objDirectoryEntry)
+        Dim mySearcher As New System.DirectoryServices.DirectorySearcher(objDirectoryEntry)
+
+        Dim result As System.DirectoryServices.SearchResult
+        mySearcher.Filter = "(givenName=*)"
+        For Each result In mySearcher.FindAll()
+            A_ImportarUserAD.dtUsuariosAD.Rows.Add(False, result.GetDirectoryEntry().Properties("givenName").Value, result.GetDirectoryEntry().Properties("SN").Value, result.GetDirectoryEntry().Properties("SAMAccountName").Value)
+        Next
+        MsgBox("Carga de usuarios completada.")
+    End Sub
+    ':::::::::::::::::::::::::::::::::::::::::::: FINAL ACTIVE DIRECTORY ::::::::::::::::::::::::::::::::::::::::::::
+
+
 
 End Module

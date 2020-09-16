@@ -185,6 +185,39 @@ Public Class ClsCotizacionFactura
         Return par_sal
 
     End Function
+    Public Function EliminarDetalleCotizacion() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "M_slmEliminarDetalleCotizacion"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "numero" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = numero_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
     Public Function BuscarCotizacionFactura() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection

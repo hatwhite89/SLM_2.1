@@ -103,6 +103,7 @@ Partial Class M_Cliente
         Me.btnbuscarPorNombre = New System.Windows.Forms.Button()
         Me.lblNombreB = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
+        Me.cmbxClasificacion = New System.Windows.Forms.ComboBox()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxinfoCliente.SuspendLayout()
         Me.gbxgenero.SuspendLayout()
@@ -161,6 +162,7 @@ Partial Class M_Cliente
         '
         'gbxinfoCliente
         '
+        Me.gbxinfoCliente.Controls.Add(Me.cmbxClasificacion)
         Me.gbxinfoCliente.Controls.Add(Me.Label8)
         Me.gbxinfoCliente.Controls.Add(Me.Label7)
         Me.gbxinfoCliente.Controls.Add(Me.Label5)
@@ -999,6 +1001,14 @@ Partial Class M_Cliente
         Me.txtnombreB.Size = New System.Drawing.Size(206, 22)
         Me.txtnombreB.TabIndex = 117
         '
+        'cmbxClasificacion
+        '
+        Me.cmbxClasificacion.FormattingEnabled = True
+        Me.cmbxClasificacion.Location = New System.Drawing.Point(417, 374)
+        Me.cmbxClasificacion.Name = "cmbxClasificacion"
+        Me.cmbxClasificacion.Size = New System.Drawing.Size(121, 24)
+        Me.cmbxClasificacion.TabIndex = 133
+        '
         'M_Cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1111,4 +1121,5 @@ Partial Class M_Cliente
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents cmbxClasificacion As ComboBox
 End Class
