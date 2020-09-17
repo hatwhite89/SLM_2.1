@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 Public Class ClsUsuario
 
     'Variables
-    Dim cod_Usuario, codPerfil As Integer
+    Dim cod_Usuario, codPerfil, codEmpleado As Integer
     Dim usuario, password, perfil As String
     Dim estado As Boolean
 
@@ -71,6 +71,16 @@ Public Class ClsUsuario
         End Get
         Set(value As Boolean)
             estado = value
+        End Set
+    End Property
+
+    'Codigo empleados
+    Public Property Cod_Empleado As Integer
+        Get
+            Return codEmpleado
+        End Get
+        Set(value As Integer)
+            codEmpleado = value
         End Set
     End Property
 
@@ -320,5 +330,54 @@ Public Class ClsUsuario
         Return par_sal
 
     End Function
+
+    'BUSCAR POR COD_USUARIO
+    Public Function BuscarPorCod_Usuario() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarUsuarioCod"
+            cmd.Parameters.Add("@cod_usuario", SqlDbType.Int).Value = Cod
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+    'Buscar por Usuario
+    Public Function BuscarPorUsuario() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarUsuario"
+            cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = Usuario_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
 
 End Class

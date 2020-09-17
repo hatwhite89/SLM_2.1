@@ -27,9 +27,10 @@
 
         ElseIf (lblForm.Text = "Pagos") Then
             'Capturar codigo en textbox de forma pagos
-            frmPagos.txtFormaP.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
-            frmPagos.txtCtaBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(2).Value
-            frmPagos.txtComentario.Text = dtFormasPago.Rows(e.RowIndex).Cells(1).Value
+
+            frmPagos.txtFormaP.Text = dtFormasPago.Rows(e.RowIndex).Cells(1).Value
+            frmPagos.txtCtaBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(4).Value
+            frmPagos.txtComentario.Text = dtFormasPago.Rows(e.RowIndex).Cells(5).Value
             frmPagos.dtDetallePagos.Enabled = True
         ElseIf (lblForm.Text = "M_Empleados") Then
             M_Empleados.txtcodigoFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
@@ -46,4 +47,5 @@
             Me.Close()
         End If
     End Sub
+
 End Class

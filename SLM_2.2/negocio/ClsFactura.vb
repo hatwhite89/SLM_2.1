@@ -659,4 +659,38 @@ Public Class ClsFactura
             Return dt
         End Using
     End Function
+    Public Function BuscarDiarioFacturacion(Optional ByVal numero As System.Nullable(Of Integer) = Nothing, Optional ByVal nombreCompleto As String = Nothing,
+                                            Optional ByVal fechaFactura As System.Nullable(Of Date) = Nothing, Optional ByVal nombreMedico As String = Nothing,
+                                            Optional ByVal descripcionTermino As String = Nothing, Optional ByVal estado As System.Nullable(Of Boolean) = Nothing,
+                                            Optional ByVal usuarioCajero As String = Nothing, Optional ByVal fechaDesde As System.Nullable(Of Date) = Nothing,
+                                            Optional ByVal fechaHasta As System.Nullable(Of Date) = Nothing, Optional ByVal descripcionExamen As String = Nothing,
+                                            Optional ByVal descripcionGrupo As String = Nothing) As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "Z_BuscarDiarioFacturacion"
+            cmd.Parameters.Add("@numero", SqlDbType.Int).Value = numero
+            cmd.Parameters.Add("@nombreCompleto", SqlDbType.VarChar).Value = nombreCompleto
+            cmd.Parameters.Add("@fechaFactura", SqlDbType.Date).Value = fechaFactura
+            cmd.Parameters.Add("@nombreMedico", SqlDbType.VarChar).Value = nombreMedico
+            cmd.Parameters.Add("@descripcionTermino", SqlDbType.VarChar).Value = descripcionTermino
+            cmd.Parameters.Add("@estado", SqlDbType.Bit).Value = estado
+            cmd.Parameters.Add("@usuarioCajero", SqlDbType.VarChar).Value = usuarioCajero
+            cmd.Parameters.Add("@fechaDesde", SqlDbType.Date).Value = fechaDesde
+            cmd.Parameters.Add("@fechaHasta", SqlDbType.Date).Value = fechaHasta
+            cmd.Parameters.Add("@descripcionExamen", SqlDbType.VarChar).Value = descripcionExamen
+            cmd.Parameters.Add("@descripcionGrupo", SqlDbType.VarChar).Value = descripcionGrupo
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
 End Class

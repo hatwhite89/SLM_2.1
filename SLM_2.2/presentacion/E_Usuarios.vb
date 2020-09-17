@@ -90,6 +90,18 @@
             dtUsuarios.DataSource = usuario.listarUsuarios
             dtUsuarios.Columns("codPerfil").Visible = False
 
+            'bloquear groupbox y campos
+            If lblForm.Text = "M_DiarioFacturacion" Then
+                Me.Text = "Seleccione un Usuario"
+                btnGuardar.Visible = False
+                btnModificar.Visible = False
+                btnCancelar.Visible = False
+                btnCambio.Visible = False
+                chkHabilitar.Visible = False
+                gbxDatos.Enabled = False
+                btnImportar.Enabled = False
+            End If
+
         Catch ex As Exception
 
         End Try
@@ -115,8 +127,6 @@
             txtPerfil.Text = row("perfil")
             chkHabilitar.Checked = row("estado")
             lblCodPerfil.Text = row("codPerfil")
-
-
 
         Catch ex As Exception
 
@@ -161,5 +171,63 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dtUsuarios.CellMouseDoubleClick
+        Try
+            Dim n As String = ""
+            If (lblForm.Text = "M_DiarioFacturacion") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el usuario en el diario de facturación?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    'M_ListaPrecios.lblcodeT.Text = lblcode.Text
+                    M_DiarioFacturacion.txtUsuario.Text = txtUsuario.Text
+                    Me.Close()
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+    Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
+
+        'Busqueda de usuarios por el campo usuario
+
+        Try
+
+            Dim dt As New DataTable
+            Dim user As New ClsUsuario
+            If txtBusqueda.Text = "" Then
+                dtUsuarios.DataSource = user.listarUsuarios
+            Else
+                user.Usuario_ = txtBusqueda.Text
+                dt = user.BuscarPorUsuario
+
+                dtUsuarios.DataSource = dt
+
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub btnBuscarEmpleado_Click(sender As Object, e As EventArgs) Handles btnBuscarEmpleado.Click
+        Try
+
+            M_ListadoEmpleados.lblform.Text = "E_Usuarios"
+            M_ListadoEmpleados.ShowDialog()
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnImportar_Click(sender As Object, e As EventArgs) Handles btnImportar.Click
+        A_ImportarUserAD.ShowDialog()
+
     End Sub
 End Class

@@ -28,7 +28,7 @@
         rows = dtExamenes.Rows.Count - 1
 
         For i = 0 To rows
-                If dtExamenes.Rows(i).Cells(0).Value = True Then
+            If dtExamenes.Rows(i).Cells(0).Value = True Then
                 'Agregar colección de exámenes
 
                 If (A_Promociones.validarDetalle(dtExamenes.Rows(i).Cells(1).Value)) = 0 Then
@@ -40,7 +40,7 @@
                 End If
 
             End If
-            Next
+        Next
 
         Me.Close()
 

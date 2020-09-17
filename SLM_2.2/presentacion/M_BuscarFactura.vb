@@ -36,6 +36,8 @@ Public Class M_BuscarFactura
             End If
             If n = vbYes Then
                 M_Factura.limpiar()
+                M_Factura.banderaTipo = True
+
                 Dim objFact As New ClsFactura
                 objFact.numero_ = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
 
@@ -93,7 +95,7 @@ Public Class M_BuscarFactura
                 'Me.Close()
                 txtnombreB.Text = ""
                 txtnumeroB.Text = ""
-                Me.Hide()
+                'Me.Hide()
 
                 M_Factura.ShowDialog()
             End If
@@ -208,15 +210,18 @@ Public Class M_BuscarFactura
         End If
     End Sub
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
-        Me.Close()
+        'Me.Close()
         txtnombreB.Text = ""
         txtnumeroB.Text = ""
         'Me.Hide()
         M_Factura.limpiar()
+        M_Factura.banderaTipo = True
         M_Factura.ShowDialog()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        M_DiarioFacturacion.lblForm.Text = "M_DiarioFacturacion"
         M_DiarioFacturacion.ShowDialog()
     End Sub
+
 End Class

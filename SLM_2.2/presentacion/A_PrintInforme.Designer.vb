@@ -23,6 +23,7 @@ Partial Class A_PrintInforme
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.crvInformeOrdenesTrabajo = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'crvInformeOrdenesTrabajo
@@ -37,17 +38,30 @@ Partial Class A_PrintInforme
         Me.crvInformeOrdenesTrabajo.TabIndex = 0
         Me.crvInformeOrdenesTrabajo.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(132, 195)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(37, 13)
+        Me.lblform.TabIndex = 1
+        Me.lblform.Text = "lblform"
+        Me.lblform.Visible = False
+        '
         'A_PrintInforme
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(885, 544)
+        Me.Controls.Add(Me.lblform)
         Me.Controls.Add(Me.crvInformeOrdenesTrabajo)
         Me.Name = "A_PrintInforme"
         Me.Text = "Informe de Ordenes de Trabajo"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents crvInformeOrdenesTrabajo As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents lblform As Label
 End Class

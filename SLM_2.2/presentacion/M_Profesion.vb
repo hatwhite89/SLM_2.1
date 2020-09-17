@@ -59,6 +59,16 @@
                     A_Candidatos.txtProfesion.Text = rtxtdescripcion.Text
                     Me.Close()
                 End If
+            ElseIf (lblform.Text = "CandidatosInforme") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el puesto de trabajo en el informe?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    A_Candidatos.lblcodProfesion.Text = txtcodigo.Text
+                    A_Candidatos.txtProfesionI.Text = rtxtdescripcion.Text
+
+                    Me.Close()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)

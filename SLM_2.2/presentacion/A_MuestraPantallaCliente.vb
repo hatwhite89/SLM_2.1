@@ -47,7 +47,7 @@
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         Try
-            DURACION = WMP.currentMedia.duration - 2 'DETERMINA LA DURACION DEL ARCHIVO
+            DURACION = WMP.currentMedia.duration - 1 'DETERMINA LA DURACION DEL ARCHIVO
             Timer2.Stop()
             Timer3.Interval = 1000 'EMPIEZA LA CUENTA ATRAS PARA SABER CUANDO ACABA DE REPRODUCIRSE EL ARCHIVO
             Timer3.Start()

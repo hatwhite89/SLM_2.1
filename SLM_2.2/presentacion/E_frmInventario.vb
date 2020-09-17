@@ -8,15 +8,74 @@ Public Class E_frmInventario
             Dim dvOC As DataView = clsA.ListarInventarioAlmacen(ComboBox1.SelectedValue.ToString).DefaultView
 
             DataGridView1.DataSource = dvOC
+            sumarData1()
         Catch ex As Exception
 
         End Try
     End Sub
+    Public Sub sumarData1()
 
+        Dim existencia, Total, precio As Double
+        Dim cantidad As Integer
+        For Each row As DataGridViewRow In Me.DataGridView1.Rows
+            precio = Val(row.Cells(3).Value)
+            existencia = Val(row.Cells(2).Value)
+            Total += precio * existencia
+        Next
+
+        For Each row As DataGridViewRow In Me.DataGridView1.Rows
+
+            cantidad += Val(row.Cells(2).Value)
+        Next
+        Label18.Text = Total.ToString
+
+        Label19.Text = cantidad.ToString
+    End Sub
+
+    Public Sub sumarData2()
+
+        Dim existencia, Total, precio As Double
+        Dim cantidad As Integer
+        For Each row As DataGridViewRow In Me.DataGridView2.Rows
+            precio = Val(row.Cells(3).Value)
+            existencia = Val(row.Cells(2).Value)
+            Total += precio * existencia
+        Next
+
+        For Each row As DataGridViewRow In Me.DataGridView2.Rows
+
+            cantidad += Val(row.Cells(2).Value)
+        Next
+        Label7.Text = Total.ToString
+
+        Label6.Text = cantidad.ToString
+    End Sub
+
+    Public Sub sumarData3()
+
+        Dim existencia, Total, precio As Double
+        Dim cantidad As Integer
+        For Each row As DataGridViewRow In Me.DataGridView3.Rows
+            precio = Val(row.Cells(3).Value)
+            existencia = Val(row.Cells(2).Value)
+            Total += precio * existencia
+        Next
+
+        For Each row As DataGridViewRow In Me.DataGridView3.Rows
+
+            cantidad += Val(row.Cells(2).Value)
+        Next
+        Label16.Text = Total.ToString
+
+        Label14.Text = cantidad.ToString
+    End Sub
     Private Sub E_frmInventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ComboAlmacen()
         ComboAlmacen2()
         ComboAlmacen3()
+        alternarColoFilasDatagridview(DataGridView1)
+        alternarColoFilasDatagridview(DataGridView2)
+        alternarColoFilasDatagridview(DataGridView3)
     End Sub
     Private Sub ComboAlmacen()
         Dim clsD As New ClsAlmacen
@@ -70,12 +129,10 @@ Public Class E_frmInventario
 
             DataGridView2.DataSource = dvOC
 
-            Dim total As Double = 0
-            Dim fila As DataGridViewRow = New DataGridViewRow()
-            For Each fila In DataGridView2.Rows
-                total += Double.Parse(fila.Cells("Column3").Value)
-            Next
-            Label7.Text = total
+
+
+
+            sumarData2()
         Catch ex As Exception
 
         End Try
@@ -88,6 +145,8 @@ Public Class E_frmInventario
             Dim dvOC As DataView = clsA.ListarInventarioAlmacenSinExistencia(ComboBox3.SelectedValue.ToString).DefaultView
 
             DataGridView3.DataSource = dvOC
+
+            sumarData3()
         Catch ex As Exception
 
         End Try
@@ -139,5 +198,45 @@ Public Class E_frmInventario
 
     Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
 
+    End Sub
+
+    Private Sub btnCargarInventario_Click(sender As Object, e As EventArgs) Handles btnCargarInventario.Click
+        'llenar data con inventario completo
+        Dim clsA As New clsInventario
+        Try
+
+            Dim dvOC As DataView = clsA.TotalInventarioAlmacen.DefaultView
+
+            DataGridView1.DataSource = dvOC
+            sumarData1()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim clsA As New clsInventario
+        Try
+
+            Dim dvOC As DataView = clsA.TotalInventarioAlmacenProductoVencido.DefaultView
+
+            DataGridView2.DataSource = dvOC
+            sumarData2()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim clsA As New clsInventario
+        Try
+
+            Dim dvOC As DataView = clsA.TotalInventarioAlmacenSinExistencia.DefaultView
+
+            DataGridView3.DataSource = dvOC
+            sumarData3()
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

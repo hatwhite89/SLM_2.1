@@ -138,6 +138,20 @@ Public Class M_ListadoEmpleados
                         MsgBox("El empleado ya a sido agregado en la capacitación.", MsgBoxStyle.Information)
                     End If
                 End If
+
+                'Capturar nombre y codigo para form usuarios
+            ElseIf lblform.Text = "E_Usuarios" Then
+
+                Dim n As String = ""
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    E_Usuarios.lblCodEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    E_Usuarios.txtNombreEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    Me.Close()
+                End If
+
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)

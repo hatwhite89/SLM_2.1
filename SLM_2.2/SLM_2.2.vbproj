@@ -85,6 +85,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
@@ -120,6 +121,12 @@
     </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformeCandidatos.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InformeCandidatos.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="InformeOrdenesDeTrabajoExamen.vb">
       <AutoGen>True</AutoGen>
@@ -796,6 +803,12 @@
     <Compile Include="presentacion\frmEntrada.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\frmMovimientoAlmacen.Designer.vb">
+      <DependentUpon>frmMovimientoAlmacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\frmMovimientoAlmacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_Area.Designer.vb">
       <DependentUpon>M_Area.vb</DependentUpon>
     </Compile>
@@ -1227,6 +1240,10 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InformeCandidatos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformeCandidatos.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="InformeOrdenesDeTrabajoExamen.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>InformeOrdenesDeTrabajoExamen.vb</LastGenOutput>
@@ -1513,6 +1530,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\frmEntrada.resx">
       <DependentUpon>frmEntrada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\frmMovimientoAlmacen.resx">
+      <DependentUpon>frmMovimientoAlmacen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Area.resx">
       <DependentUpon>M_Area.vb</DependentUpon>

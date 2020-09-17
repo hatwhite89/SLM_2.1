@@ -66,7 +66,7 @@
                 A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiarioExamen
 
             Catch ex As Exception
-                MsgBox("Error: " + ex.Message)
+                MsgBox("Error Informe: " + ex.Message)
             End Try
 
         ElseIf seleccion = 1 Then
@@ -88,7 +88,7 @@
                 A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiario
 
             Catch ex As Exception
-                MsgBox("Error: " + ex.Message)
+                MsgBox("Error Informe: " + ex.Message)
             End Try
         End If
 
@@ -106,6 +106,7 @@
             If lblCodExamen.Text = "CodExamen" Then
                 MsgBox("Se debe completar la información para generar el informe.")
             Else
+                A_PrintInforme.lblform.Text = "Informe"
                 A_PrintInforme.Show()
             End If
         ElseIf chkPeriodoTiempo.Checked = True Then
@@ -113,6 +114,7 @@
             If lblCodSubArea.Text = "CodSubArea" Then
                 MsgBox("Se debe completar la información para generar el informe.")
             Else
+                A_PrintInforme.lblform.Text = "Informe"
                 A_PrintInforme.Show()
             End If
 

@@ -83,9 +83,9 @@ Partial Class E_frmCategoriaProducto
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(23, 62)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(105, 13)
+        Me.Label2.Size = New System.Drawing.Size(108, 13)
         Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Nombre de categoía"
+        Me.Label2.Text = "Nombre de categoría"
         '
         'Label1
         '
@@ -156,6 +156,9 @@ Partial Class E_frmCategoriaProducto
         '
         'DataGridView1
         '
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter

@@ -88,7 +88,6 @@ Partial Class M_Factura
         Me.btnbuscarSucursal = New System.Windows.Forms.Button()
         Me.txtnombreSucursal = New System.Windows.Forms.TextBox()
         Me.txtdescripcionTermino = New System.Windows.Forms.TextBox()
-        Me.btncotizacion = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.lblcodeSucursal = New System.Windows.Forms.Label()
         Me.lblcodeTerminoPago = New System.Windows.Forms.Label()
@@ -99,10 +98,10 @@ Partial Class M_Factura
         Me.lblEfectivo = New System.Windows.Forms.Label()
         Me.lblTarjeta = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.cbxAnular = New System.Windows.Forms.CheckBox()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtNombreCajero = New System.Windows.Forms.TextBox()
         Me.txtNombreRecepcionista = New System.Windows.Forms.TextBox()
         Me.txtCodigoBreveMaquina = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -133,7 +132,8 @@ Partial Class M_Factura
         Me.btnQuitarPromocion = New System.Windows.Forms.Button()
         Me.btnPromocion = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.txtNombreCajero = New System.Windows.Forms.TextBox()
+        Me.btnNuevaCotizacion = New System.Windows.Forms.Button()
+        Me.lblOKAY = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -177,12 +177,12 @@ Partial Class M_Factura
         Me.btnnueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnueva.ForeColor = System.Drawing.Color.Black
-        Me.btnnueva.Location = New System.Drawing.Point(847, 41)
+        Me.btnnueva.Location = New System.Drawing.Point(577, 41)
         Me.btnnueva.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnnueva.Name = "btnnueva"
-        Me.btnnueva.Size = New System.Drawing.Size(83, 34)
+        Me.btnnueva.Size = New System.Drawing.Size(129, 34)
         Me.btnnueva.TabIndex = 15
-        Me.btnnueva.Text = "Nueva"
+        Me.btnnueva.Text = "Nueva Factura"
         Me.btnnueva.UseVisualStyleBackColor = False
         '
         'btnsalir
@@ -191,7 +191,7 @@ Partial Class M_Factura
         Me.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnsalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnsalir.ForeColor = System.Drawing.Color.Black
-        Me.btnsalir.Location = New System.Drawing.Point(947, 41)
+        Me.btnsalir.Location = New System.Drawing.Point(968, 41)
         Me.btnsalir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnsalir.Name = "btnsalir"
         Me.btnsalir.Size = New System.Drawing.Size(89, 34)
@@ -205,7 +205,7 @@ Partial Class M_Factura
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.Color.Black
-        Me.btnguardar.Location = New System.Drawing.Point(1051, 41)
+        Me.btnguardar.Location = New System.Drawing.Point(1063, 41)
         Me.btnguardar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(80, 34)
@@ -440,6 +440,7 @@ Partial Class M_Factura
         'dtpfechaFactura
         '
         Me.dtpfechaFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpfechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfechaFactura.Location = New System.Drawing.Point(851, 101)
         Me.dtpfechaFactura.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dtpfechaFactura.Name = "dtpfechaFactura"
@@ -611,7 +612,7 @@ Partial Class M_Factura
         Me.btnimprimirComprobante.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnimprimirComprobante.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnimprimirComprobante.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnimprimirComprobante.Location = New System.Drawing.Point(811, 63)
+        Me.btnimprimirComprobante.Location = New System.Drawing.Point(811, 82)
         Me.btnimprimirComprobante.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnimprimirComprobante.Name = "btnimprimirComprobante"
         Me.btnimprimirComprobante.Size = New System.Drawing.Size(125, 94)
@@ -626,27 +627,27 @@ Partial Class M_Factura
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1173, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1173, 30)
         Me.MenuStrip1.TabIndex = 76
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ArchivoToolStripMenuItem
         '
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 24)
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 26)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
         '
         'EditarToolStripMenuItem
         '
         Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(62, 24)
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(62, 26)
         Me.EditarToolStripMenuItem.Text = "Editar"
         '
         'RegistroToolStripMenuItem
         '
         Me.RegistroToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarExamenToolStripMenuItem})
         Me.RegistroToolStripMenuItem.Name = "RegistroToolStripMenuItem"
-        Me.RegistroToolStripMenuItem.Size = New System.Drawing.Size(78, 24)
+        Me.RegistroToolStripMenuItem.Size = New System.Drawing.Size(78, 26)
         Me.RegistroToolStripMenuItem.Text = "Registro"
         '
         'BuscarExamenToolStripMenuItem
@@ -659,13 +660,13 @@ Partial Class M_Factura
         'VentanaToolStripMenuItem
         '
         Me.VentanaToolStripMenuItem.Name = "VentanaToolStripMenuItem"
-        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(76, 24)
+        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(76, 26)
         Me.VentanaToolStripMenuItem.Text = "Ventana"
         '
         'InfoToolStripMenuItem
         '
         Me.InfoToolStripMenuItem.Name = "InfoToolStripMenuItem"
-        Me.InfoToolStripMenuItem.Size = New System.Drawing.Size(49, 24)
+        Me.InfoToolStripMenuItem.Size = New System.Drawing.Size(49, 26)
         Me.InfoToolStripMenuItem.Text = "Info"
         '
         'txtnombreSede
@@ -769,7 +770,7 @@ Partial Class M_Factura
         Me.btnentregarExamen.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnentregarExamen.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnentregarExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnentregarExamen.Location = New System.Drawing.Point(941, 63)
+        Me.btnentregarExamen.Location = New System.Drawing.Point(941, 82)
         Me.btnentregarExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnentregarExamen.Name = "btnentregarExamen"
         Me.btnentregarExamen.Size = New System.Drawing.Size(125, 94)
@@ -782,7 +783,7 @@ Partial Class M_Factura
         Me.btnbusquedaExamen.BackColor = System.Drawing.Color.Yellow
         Me.btnbusquedaExamen.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnbusquedaExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbusquedaExamen.Location = New System.Drawing.Point(680, 63)
+        Me.btnbusquedaExamen.Location = New System.Drawing.Point(680, 82)
         Me.btnbusquedaExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnbusquedaExamen.Name = "btnbusquedaExamen"
         Me.btnbusquedaExamen.Size = New System.Drawing.Size(125, 94)
@@ -795,7 +796,7 @@ Partial Class M_Factura
         Me.btnmuestrasPendientes.BackColor = System.Drawing.Color.Yellow
         Me.btnmuestrasPendientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnmuestrasPendientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmuestrasPendientes.Location = New System.Drawing.Point(548, 63)
+        Me.btnmuestrasPendientes.Location = New System.Drawing.Point(548, 82)
         Me.btnmuestrasPendientes.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnmuestrasPendientes.Name = "btnmuestrasPendientes"
         Me.btnmuestrasPendientes.Size = New System.Drawing.Size(125, 94)
@@ -808,7 +809,7 @@ Partial Class M_Factura
         Me.btnestadoFactura.BackColor = System.Drawing.Color.Yellow
         Me.btnestadoFactura.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnestadoFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnestadoFactura.Location = New System.Drawing.Point(417, 63)
+        Me.btnestadoFactura.Location = New System.Drawing.Point(417, 82)
         Me.btnestadoFactura.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnestadoFactura.Name = "btnestadoFactura"
         Me.btnestadoFactura.Size = New System.Drawing.Size(125, 94)
@@ -852,27 +853,13 @@ Partial Class M_Factura
         Me.txtdescripcionTermino.Size = New System.Drawing.Size(312, 22)
         Me.txtdescripcionTermino.TabIndex = 95
         '
-        'btncotizacion
-        '
-        Me.btncotizacion.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btncotizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btncotizacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncotizacion.ForeColor = System.Drawing.Color.Black
-        Me.btncotizacion.Location = New System.Drawing.Point(731, 41)
-        Me.btncotizacion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btncotizacion.Name = "btncotizacion"
-        Me.btncotizacion.Size = New System.Drawing.Size(96, 34)
-        Me.btncotizacion.TabIndex = 96
-        Me.btncotizacion.Text = "Cotización"
-        Me.btncotizacion.UseVisualStyleBackColor = False
-        '
         'btnActualizar
         '
         Me.btnActualizar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnActualizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnActualizar.ForeColor = System.Drawing.Color.Black
-        Me.btnActualizar.Location = New System.Drawing.Point(613, 41)
+        Me.btnActualizar.Location = New System.Drawing.Point(866, 41)
         Me.btnActualizar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(96, 34)
@@ -901,7 +888,7 @@ Partial Class M_Factura
         'lblcodePriceList
         '
         Me.lblcodePriceList.AutoSize = True
-        Me.lblcodePriceList.Location = New System.Drawing.Point(245, 41)
+        Me.lblcodePriceList.Location = New System.Drawing.Point(31, 50)
         Me.lblcodePriceList.Name = "lblcodePriceList"
         Me.lblcodePriceList.Size = New System.Drawing.Size(51, 17)
         Me.lblcodePriceList.TabIndex = 100
@@ -911,7 +898,7 @@ Partial Class M_Factura
         'lblFechaNacimiento
         '
         Me.lblFechaNacimiento.AutoSize = True
-        Me.lblFechaNacimiento.Location = New System.Drawing.Point(419, 41)
+        Me.lblFechaNacimiento.Location = New System.Drawing.Point(110, 50)
         Me.lblFechaNacimiento.Name = "lblFechaNacimiento"
         Me.lblFechaNacimiento.Size = New System.Drawing.Size(51, 17)
         Me.lblFechaNacimiento.TabIndex = 101
@@ -962,17 +949,6 @@ Partial Class M_Factura
         'Timer1
         '
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(103, 34)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 106
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        Me.Button1.Visible = False
-        '
         'cbxAnular
         '
         Me.cbxAnular.AutoSize = True
@@ -986,7 +962,7 @@ Partial Class M_Factura
         '
         'btnImprimir
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(500, 41)
+        Me.btnImprimir.Location = New System.Drawing.Point(472, 41)
         Me.btnImprimir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(99, 34)
@@ -1010,6 +986,18 @@ Partial Class M_Factura
         Me.GroupBox2.TabIndex = 109
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detalle Cliente"
+        '
+        'txtNombreCajero
+        '
+        Me.txtNombreCajero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNombreCajero.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombreCajero.Location = New System.Drawing.Point(830, 78)
+        Me.txtNombreCajero.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtNombreCajero.Name = "txtNombreCajero"
+        Me.txtNombreCajero.ReadOnly = True
+        Me.txtNombreCajero.Size = New System.Drawing.Size(281, 22)
+        Me.txtNombreCajero.TabIndex = 112
+        Me.txtNombreCajero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtNombreRecepcionista
         '
@@ -1154,6 +1142,7 @@ Partial Class M_Factura
         Me.dgbObservaciones.Location = New System.Drawing.Point(10, 30)
         Me.dgbObservaciones.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbObservaciones.Name = "dgbObservaciones"
+        Me.dgbObservaciones.RowHeadersVisible = False
         Me.dgbObservaciones.RowHeadersWidth = 51
         Me.dgbObservaciones.RowTemplate.Height = 24
         Me.dgbObservaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -1162,6 +1151,7 @@ Partial Class M_Factura
         '
         'DataGridViewTextBoxColumn1
         '
+        Me.DataGridViewTextBoxColumn1.FillWeight = 23.80952!
         Me.DataGridViewTextBoxColumn1.HeaderText = "Código Examen"
         Me.DataGridViewTextBoxColumn1.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
@@ -1170,10 +1160,11 @@ Partial Class M_Factura
         '
         'DataGridViewTextBoxColumn2
         '
+        Me.DataGridViewTextBoxColumn2.FillWeight = 176.1905!
         Me.DataGridViewTextBoxColumn2.HeaderText = "Observación"
         Me.DataGridViewTextBoxColumn2.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.Width = 900
+        Me.DataGridViewTextBoxColumn2.Width = 925
         '
         'DataGridViewTextBoxColumn9
         '
@@ -1216,6 +1207,7 @@ Partial Class M_Factura
         Me.dgblistadoExamenes.Location = New System.Drawing.Point(13, 50)
         Me.dgblistadoExamenes.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgblistadoExamenes.Name = "dgblistadoExamenes"
+        Me.dgblistadoExamenes.RowHeadersVisible = False
         Me.dgblistadoExamenes.RowHeadersWidth = 51
         Me.dgblistadoExamenes.RowTemplate.Height = 24
         Me.dgblistadoExamenes.Size = New System.Drawing.Size(1103, 158)
@@ -1223,6 +1215,7 @@ Partial Class M_Factura
         '
         'codigo
         '
+        Me.codigo.FillWeight = 61.71429!
         Me.codigo.HeaderText = "Código"
         Me.codigo.MinimumWidth = 6
         Me.codigo.Name = "codigo"
@@ -1230,6 +1223,7 @@ Partial Class M_Factura
         '
         'Cantidad
         '
+        Me.Cantidad.FillWeight = 78.78874!
         Me.Cantidad.HeaderText = "Cantidad"
         Me.Cantidad.MinimumWidth = 6
         Me.Cantidad.Name = "Cantidad"
@@ -1237,6 +1231,7 @@ Partial Class M_Factura
         '
         'Precio
         '
+        Me.Precio.FillWeight = 70.54861!
         Me.Precio.HeaderText = "Precio"
         Me.Precio.MinimumWidth = 6
         Me.Precio.Name = "Precio"
@@ -1245,14 +1240,16 @@ Partial Class M_Factura
         '
         'Descripcion
         '
+        Me.Descripcion.FillWeight = 110.2328!
         Me.Descripcion.HeaderText = "Descripción"
         Me.Descripcion.MinimumWidth = 100
         Me.Descripcion.Name = "Descripcion"
         Me.Descripcion.ReadOnly = True
-        Me.Descripcion.Width = 220
+        Me.Descripcion.Width = 280
         '
         'FechaEntrega
         '
+        Me.FechaEntrega.FillWeight = 122.8278!
         Me.FechaEntrega.HeaderText = "Fecha Entrega"
         Me.FechaEntrega.MinimumWidth = 6
         Me.FechaEntrega.Name = "FechaEntrega"
@@ -1261,6 +1258,7 @@ Partial Class M_Factura
         '
         'Descuento
         '
+        Me.Descuento.FillWeight = 111.2212!
         Me.Descuento.HeaderText = "Descuento"
         Me.Descuento.MinimumWidth = 6
         Me.Descuento.Name = "Descuento"
@@ -1269,6 +1267,7 @@ Partial Class M_Factura
         '
         'Subtotal
         '
+        Me.Subtotal.FillWeight = 97.66737!
         Me.Subtotal.HeaderText = "Subtotal"
         Me.Subtotal.MinimumWidth = 6
         Me.Subtotal.Name = "Subtotal"
@@ -1293,9 +1292,11 @@ Partial Class M_Factura
         '
         'codeItemExam
         '
+        Me.codeItemExam.FillWeight = 146.9992!
         Me.codeItemExam.HeaderText = "codeItemExam"
         Me.codeItemExam.MinimumWidth = 6
         Me.codeItemExam.Name = "codeItemExam"
+        Me.codeItemExam.Visible = False
         Me.codeItemExam.Width = 125
         '
         'btnQuitarPromocion
@@ -1336,17 +1337,29 @@ Partial Class M_Factura
         Me.TabControl1.Size = New System.Drawing.Size(1131, 247)
         Me.TabControl1.TabIndex = 112
         '
-        'txtNombreCajero
+        'btnNuevaCotizacion
         '
-        Me.txtNombreCajero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtNombreCajero.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombreCajero.Location = New System.Drawing.Point(830, 78)
-        Me.txtNombreCajero.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtNombreCajero.Name = "txtNombreCajero"
-        Me.txtNombreCajero.ReadOnly = True
-        Me.txtNombreCajero.Size = New System.Drawing.Size(281, 22)
-        Me.txtNombreCajero.TabIndex = 112
-        Me.txtNombreCajero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btnNuevaCotizacion.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnNuevaCotizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNuevaCotizacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNuevaCotizacion.ForeColor = System.Drawing.Color.Black
+        Me.btnNuevaCotizacion.Location = New System.Drawing.Point(712, 41)
+        Me.btnNuevaCotizacion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnNuevaCotizacion.Name = "btnNuevaCotizacion"
+        Me.btnNuevaCotizacion.Size = New System.Drawing.Size(148, 34)
+        Me.btnNuevaCotizacion.TabIndex = 113
+        Me.btnNuevaCotizacion.Text = "Nueva Cotización"
+        Me.btnNuevaCotizacion.UseVisualStyleBackColor = False
+        '
+        'lblOKAY
+        '
+        Me.lblOKAY.AutoSize = True
+        Me.lblOKAY.Location = New System.Drawing.Point(186, 50)
+        Me.lblOKAY.Name = "lblOKAY"
+        Me.lblOKAY.Size = New System.Drawing.Size(51, 17)
+        Me.lblOKAY.TabIndex = 114
+        Me.lblOKAY.Text = "Label1"
+        Me.lblOKAY.Visible = False
         '
         'M_Factura
         '
@@ -1355,15 +1368,15 @@ Partial Class M_Factura
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1173, 809)
         Me.ControlBox = False
+        Me.Controls.Add(Me.lblOKAY)
+        Me.Controls.Add(Me.btnNuevaCotizacion)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.btnImprimir)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lblFechaNacimiento)
         Me.Controls.Add(Me.lblcodePriceList)
         Me.Controls.Add(Me.lblcodeTerminoPago)
         Me.Controls.Add(Me.lblcodeSucursal)
         Me.Controls.Add(Me.btnActualizar)
-        Me.Controls.Add(Me.btncotizacion)
         Me.Controls.Add(Me.txtdescripcionTermino)
         Me.Controls.Add(Me.txtnombreSucursal)
         Me.Controls.Add(Me.btnbuscarSucursal)
@@ -1495,7 +1508,6 @@ Partial Class M_Factura
     Friend WithEvents btnbuscarSucursal As Button
     Friend WithEvents txtnombreSucursal As TextBox
     Friend WithEvents txtdescripcionTermino As TextBox
-    Friend WithEvents btncotizacion As Button
     Friend WithEvents btnActualizar As Button
     Friend WithEvents lblcodeSucursal As Label
     Friend WithEvents lblcodeTerminoPago As Label
@@ -1506,7 +1518,6 @@ Partial Class M_Factura
     Friend WithEvents lblEfectivo As Label
     Friend WithEvents lblTarjeta As Label
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents Button1 As Button
     Friend WithEvents cbxAnular As CheckBox
     Friend WithEvents btnImprimir As Button
     Friend WithEvents BuscarExamenToolStripMenuItem As ToolStripMenuItem
@@ -1531,6 +1542,7 @@ Partial Class M_Factura
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents txtNombreCajero As TextBox
     Friend WithEvents codigo As DataGridViewTextBoxColumn
     Friend WithEvents Cantidad As DataGridViewTextBoxColumn
     Friend WithEvents Precio As DataGridViewTextBoxColumn
@@ -1541,5 +1553,6 @@ Partial Class M_Factura
     Friend WithEvents subArea As DataGridViewTextBoxColumn
     Friend WithEvents codeDetFact As DataGridViewTextBoxColumn
     Friend WithEvents codeItemExam As DataGridViewTextBoxColumn
-    Friend WithEvents txtNombreCajero As TextBox
+    Friend WithEvents btnNuevaCotizacion As Button
+    Friend WithEvents lblOKAY As Label
 End Class
