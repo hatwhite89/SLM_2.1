@@ -29,6 +29,8 @@ Partial Class E_frmProducto
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_frmProducto))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.txtCantidadMinima = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -52,10 +54,6 @@ Partial Class E_frmProducto
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.id_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -65,8 +63,10 @@ Partial Class E_frmProducto
         Me.cantidad_minima = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre_unidad_medida = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre_categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,6 +103,24 @@ Partial Class E_frmProducto
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Generales"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox1.Location = New System.Drawing.Point(421, 109)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(240, 20)
+        Me.TextBox1.TabIndex = 29
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(317, 113)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(37, 13)
+        Me.Label10.TabIndex = 28
+        Me.Label10.Text = "Precio"
         '
         'txtCantidadMinima
         '
@@ -355,42 +373,6 @@ Partial Class E_frmProducto
         Me.DataGridView1.Size = New System.Drawing.Size(682, 144)
         Me.DataGridView1.TabIndex = 0
         '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(712, 37)
-        Me.Panel1.TabIndex = 3
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label4.Location = New System.Drawing.Point(3, 8)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(119, 26)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Productos"
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 496)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 10, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(712, 22)
-        Me.StatusStrip1.TabIndex = 4
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
         'id_producto
         '
         Me.id_producto.DataPropertyName = "id_producto"
@@ -445,23 +427,41 @@ Partial Class E_frmProducto
         Me.nombre_categoria.HeaderText = "CATEGORIA"
         Me.nombre_categoria.Name = "nombre_categoria"
         '
-        'TextBox1
+        'Panel1
         '
-        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.Location = New System.Drawing.Point(421, 109)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(240, 20)
-        Me.TextBox1.TabIndex = 29
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.Button3)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(712, 37)
+        Me.Panel1.TabIndex = 3
         '
-        'Label10
+        'Label4
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(317, 113)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(37, 13)
-        Me.Label10.TabIndex = 28
-        Me.Label10.Text = "Precio"
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label4.Location = New System.Drawing.Point(3, 8)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(119, 26)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Productos"
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 496)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 10, 0)
+        Me.StatusStrip1.Size = New System.Drawing.Size(712, 22)
+        Me.StatusStrip1.TabIndex = 4
+        Me.StatusStrip1.Text = "StatusStrip1"
         '
         'E_frmProducto
         '

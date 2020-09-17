@@ -81,7 +81,7 @@
             .LoteProducto = txtLote.Text
             .Descripcion = RichTextBox1.Text
             .IdAlmacen = cmbEntrada.SelectedValue
-            .FechaVencimiento = fecha_vencimiento
+            .FechaVencimiento = DateTimePicker1.Value
         End With
         If clsD.ActualizarDetalleOCEntrada() = "1" Then
 

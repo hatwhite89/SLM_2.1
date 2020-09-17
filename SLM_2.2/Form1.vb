@@ -613,19 +613,19 @@
         End Try
     End Sub
 
-    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
+    Private Sub Button20_Click(sender As Object, e As EventArgs)
         A_Proveedor.Show()
     End Sub
 
-    Private Sub Button22_Click_1(sender As Object, e As EventArgs) Handles btnInventario.Click
+    Private Sub Button22_Click_1(sender As Object, e As EventArgs)
         E_frmInventario.Show()
     End Sub
 
-    Private Sub Button30_Click(sender As Object, e As EventArgs) Handles btnAutorizacion.Click
+    Private Sub Button30_Click(sender As Object, e As EventArgs)
         E_frmAutorizarOC.Show()
     End Sub
 
-    Private Sub Button32_Click(sender As Object, e As EventArgs) Handles btnBI.Click
+    Private Sub Button32_Click(sender As Object, e As EventArgs)
         E_frmBIAlmacen.Show()
     End Sub
 
@@ -658,7 +658,7 @@
         M_MaquinasLocales.ShowDialog()
     End Sub
 
-    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles btnSolicitudes.Click
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs)
         E_frmProcesarSolicitudInterna.ShowDialog()
     End Sub
 
@@ -718,5 +718,29 @@
 
     Private Sub banner_Click(sender As Object, e As EventArgs) Handles banner.Click
 
+    End Sub
+
+    Private Sub btnInventario_Click(sender As Object, e As EventArgs) Handles btnInventario.Click
+        E_frmInventario.Show()
+    End Sub
+
+    Private Sub btnBI_Click(sender As Object, e As EventArgs) Handles btnBI.Click
+        E_frmBIAlmacen.Show()
+    End Sub
+
+    Private Sub btnSolicitudes_Click(sender As Object, e As EventArgs) Handles btnSolicitudes.Click
+        E_frmSolicitudInternaAlmacen.Show()
+    End Sub
+
+    Private Sub btnAutorizacion_Click(sender As Object, e As EventArgs) Handles btnAutorizacion.Click
+        E_frmAutorizarOC.Show()
+    End Sub
+
+    Private Sub btnProveedores_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
+        E_frmProveedorOC.Show()
+    End Sub
+
+    Private Sub Button2_Click_3(sender As Object, e As EventArgs) Handles Button2.Click
+        frmMovimientoAlmacen.Show()
     End Sub
 End Class

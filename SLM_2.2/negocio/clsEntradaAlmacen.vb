@@ -223,4 +223,51 @@ where e.id_producto = p.id_producto and e.fecha_registro between '" + inicio.ToS
             Return dt
         End Using
     End Function
+
+    Public Function TrasladarEntradaAlmacen() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slmMoverInventario"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_entrada"
+        sqlpar.Value = Id_entrada1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nueva_existencia"
+        sqlpar.Value = CantidadProducto
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nuevo_almacen"
+        sqlpar.Value = IdAlmacen
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
 End Class

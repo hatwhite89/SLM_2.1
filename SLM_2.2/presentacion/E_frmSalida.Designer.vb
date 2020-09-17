@@ -22,15 +22,30 @@ Partial Class E_frmSalida
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_frmSalida))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.id_entrada_1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LOTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.existencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_vencimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_almacen = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.txtidDetalleEntrada = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtCantidadEntregada = New System.Windows.Forms.TextBox()
@@ -58,6 +73,10 @@ Partial Class E_frmSalida
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtCodOI = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.id_detalle_oi_2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_producto_2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad_solicitada = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label25 = New System.Windows.Forms.Label()
@@ -87,30 +106,39 @@ Partial Class E_frmSalida
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.TextBox13 = New System.Windows.Forms.TextBox()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.TextBox14 = New System.Windows.Forms.TextBox()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.TextBox16 = New System.Windows.Forms.TextBox()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.TextBox18 = New System.Windows.Forms.TextBox()
+        Me.Label36 = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.id_detalle_oi_2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_producto_2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad_solicitada = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_entrada_1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LOTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.existencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fecha_vencimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre_almacen = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txtidDetalleEntrada = New System.Windows.Forms.TextBox()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.id_producto_9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.producto_9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lote_9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad_entragada_9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_salida = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,9 +147,11 @@ Partial Class E_frmSalida
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        Me.GroupBox7.SuspendLayout()
+        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox6.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -131,6 +161,7 @@ Partial Class E_frmSalida
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Location = New System.Drawing.Point(9, 43)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -149,6 +180,109 @@ Partial Class E_frmSalida
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Registrar Salida"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox5.Controls.Add(Me.Label26)
+        Me.GroupBox5.Controls.Add(Me.Label27)
+        Me.GroupBox5.Controls.Add(Me.TextBox9)
+        Me.GroupBox5.Controls.Add(Me.DataGridView2)
+        Me.GroupBox5.Location = New System.Drawing.Point(513, 219)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(439, 219)
+        Me.GroupBox5.TabIndex = 41
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Existencias en inventario"
+        '
+        'Label26
+        '
+        Me.Label26.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(19, 203)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(109, 13)
+        Me.Label26.TabIndex = 39
+        Me.Label26.Text = "Seleccionar Producto"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(247, 13)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(88, 13)
+        Me.Label27.TabIndex = 38
+        Me.Label27.Text = "No Orden interna"
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Location = New System.Drawing.Point(351, 10)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(79, 20)
+        Me.TextBox9.TabIndex = 10
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_entrada_1, Me.nombre_producto, Me.LOTE, Me.existencia, Me.fecha_vencimiento, Me.nombre_almacen})
+        Me.DataGridView2.Location = New System.Drawing.Point(9, 32)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.RowHeadersWidth = 51
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue
+        Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView2.Size = New System.Drawing.Size(421, 168)
+        Me.DataGridView2.TabIndex = 0
+        '
+        'id_entrada_1
+        '
+        Me.id_entrada_1.DataPropertyName = "id_entrada"
+        Me.id_entrada_1.HeaderText = "IDENTRADA"
+        Me.id_entrada_1.Name = "id_entrada_1"
+        '
+        'nombre_producto
+        '
+        Me.nombre_producto.DataPropertyName = "nombre_producto"
+        Me.nombre_producto.HeaderText = "PRODUCTO"
+        Me.nombre_producto.Name = "nombre_producto"
+        '
+        'LOTE
+        '
+        Me.LOTE.DataPropertyName = "lote"
+        Me.LOTE.HeaderText = "LOTE"
+        Me.LOTE.Name = "LOTE"
+        '
+        'existencia
+        '
+        Me.existencia.DataPropertyName = "existencia"
+        Me.existencia.HeaderText = "EXISTENCIA"
+        Me.existencia.Name = "existencia"
+        '
+        'fecha_vencimiento
+        '
+        Me.fecha_vencimiento.DataPropertyName = "fecha_vencimiento"
+        Me.fecha_vencimiento.HeaderText = "VENCIMIENTO"
+        Me.fecha_vencimiento.Name = "fecha_vencimiento"
+        '
+        'nombre_almacen
+        '
+        Me.nombre_almacen.DataPropertyName = "nombre_almacen"
+        Me.nombre_almacen.HeaderText = "ALMACEN"
+        Me.nombre_almacen.Name = "nombre_almacen"
         '
         'GroupBox2
         '
@@ -185,6 +319,32 @@ Partial Class E_frmSalida
         Me.GroupBox2.TabIndex = 11
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Salidas"
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Location = New System.Drawing.Point(300, 19)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.ReadOnly = True
+        Me.TextBox10.Size = New System.Drawing.Size(155, 20)
+        Me.TextBox10.TabIndex = 65
+        Me.TextBox10.Text = "Solicitud Interna"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(6, 22)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(18, 13)
+        Me.Label28.TabIndex = 64
+        Me.Label28.Text = "ID"
+        '
+        'txtidDetalleEntrada
+        '
+        Me.txtidDetalleEntrada.Location = New System.Drawing.Point(62, 19)
+        Me.txtidDetalleEntrada.Name = "txtidDetalleEntrada"
+        Me.txtidDetalleEntrada.ReadOnly = True
+        Me.txtidDetalleEntrada.Size = New System.Drawing.Size(132, 20)
+        Me.txtidDetalleEntrada.TabIndex = 63
         '
         'Label12
         '
@@ -451,6 +611,30 @@ Partial Class E_frmSalida
         Me.DataGridView1.Size = New System.Drawing.Size(486, 168)
         Me.DataGridView1.TabIndex = 0
         '
+        'id_detalle_oi_2
+        '
+        Me.id_detalle_oi_2.DataPropertyName = "id_detalle_oi"
+        Me.id_detalle_oi_2.HeaderText = "ID"
+        Me.id_detalle_oi_2.Name = "id_detalle_oi_2"
+        '
+        'id_producto_2
+        '
+        Me.id_producto_2.DataPropertyName = "id_producto"
+        Me.id_producto_2.HeaderText = "IDPRODUCTO"
+        Me.id_producto_2.Name = "id_producto_2"
+        '
+        'producto
+        '
+        Me.producto.DataPropertyName = "nombre_producto"
+        Me.producto.HeaderText = "PRODUCTO"
+        Me.producto.Name = "producto"
+        '
+        'cantidad_solicitada
+        '
+        Me.cantidad_solicitada.DataPropertyName = "cantidad_solicitada"
+        Me.cantidad_solicitada.HeaderText = "CANTIDAD SOLICITADA"
+        Me.cantidad_solicitada.Name = "cantidad_solicitada"
+        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.GroupBox1)
@@ -460,7 +644,7 @@ Partial Class E_frmSalida
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(927, 441)
+        Me.TabPage2.Size = New System.Drawing.Size(958, 441)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Historial de salidas"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -484,7 +668,7 @@ Partial Class E_frmSalida
         Me.GroupBox1.Controls.Add(Me.Label18)
         Me.GroupBox1.Location = New System.Drawing.Point(5, 317)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(913, 124)
+        Me.GroupBox1.Size = New System.Drawing.Size(944, 124)
         Me.GroupBox1.TabIndex = 21
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Modificar salida"
@@ -610,7 +794,7 @@ Partial Class E_frmSalida
         Me.DataGridView3.RowHeadersWidth = 51
         DataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue
         Me.DataGridView3.RowsDefaultCellStyle = DataGridViewCellStyle5
-        Me.DataGridView3.Size = New System.Drawing.Size(901, 197)
+        Me.DataGridView3.Size = New System.Drawing.Size(932, 197)
         Me.DataGridView3.TabIndex = 12
         '
         'Panel2
@@ -626,7 +810,7 @@ Partial Class E_frmSalida
         Me.Panel2.Controls.Add(Me.DateTimePicker3)
         Me.Panel2.Location = New System.Drawing.Point(0, 1)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(929, 46)
+        Me.Panel2.Size = New System.Drawing.Size(960, 46)
         Me.Panel2.TabIndex = 11
         '
         'Button3
@@ -692,7 +876,7 @@ Partial Class E_frmSalida
         Me.GroupBox4.Controls.Add(Me.TextBox2)
         Me.GroupBox4.Location = New System.Drawing.Point(7, 59)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(914, 258)
+        Me.GroupBox4.Size = New System.Drawing.Size(945, 258)
         Me.GroupBox4.TabIndex = 45
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Salidas"
@@ -738,6 +922,224 @@ Partial Class E_frmSalida
         Me.TextBox2.Size = New System.Drawing.Size(200, 20)
         Me.TextBox2.TabIndex = 41
         '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.GroupBox7)
+        Me.TabPage3.Controls.Add(Me.GroupBox6)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(958, 441)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Salidas"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'GroupBox7
+        '
+        Me.GroupBox7.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox7.Controls.Add(Me.DataGridView4)
+        Me.GroupBox7.Location = New System.Drawing.Point(6, 174)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(946, 261)
+        Me.GroupBox7.TabIndex = 1
+        Me.GroupBox7.TabStop = False
+        Me.GroupBox7.Text = "Salidas"
+        '
+        'DataGridView4
+        '
+        Me.DataGridView4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView4.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView4.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_producto_9, Me.producto_9, Me.lote_9, Me.cantidad_entragada_9, Me.fecha_salida})
+        Me.DataGridView4.Location = New System.Drawing.Point(6, 33)
+        Me.DataGridView4.Name = "DataGridView4"
+        Me.DataGridView4.Size = New System.Drawing.Size(934, 222)
+        Me.DataGridView4.TabIndex = 0
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox6.Controls.Add(Me.Button5)
+        Me.GroupBox6.Controls.Add(Me.Label29)
+        Me.GroupBox6.Controls.Add(Me.TextBox13)
+        Me.GroupBox6.Controls.Add(Me.TextBox11)
+        Me.GroupBox6.Controls.Add(Me.TextBox12)
+        Me.GroupBox6.Controls.Add(Me.TextBox14)
+        Me.GroupBox6.Controls.Add(Me.Label30)
+        Me.GroupBox6.Controls.Add(Me.Label32)
+        Me.GroupBox6.Controls.Add(Me.Label33)
+        Me.GroupBox6.Controls.Add(Me.TextBox15)
+        Me.GroupBox6.Controls.Add(Me.DateTimePicker4)
+        Me.GroupBox6.Controls.Add(Me.Label34)
+        Me.GroupBox6.Controls.Add(Me.TextBox16)
+        Me.GroupBox6.Controls.Add(Me.Label35)
+        Me.GroupBox6.Controls.Add(Me.TextBox18)
+        Me.GroupBox6.Controls.Add(Me.Label36)
+        Me.GroupBox6.Location = New System.Drawing.Point(6, 6)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(946, 162)
+        Me.GroupBox6.TabIndex = 0
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Salidas"
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(863, 133)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.TabIndex = 90
+        Me.Button5.Text = "Imprimir"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(7, 25)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(72, 13)
+        Me.Label29.TabIndex = 89
+        Me.Label29.Text = "Orden Interna"
+        '
+        'TextBox13
+        '
+        Me.TextBox13.Location = New System.Drawing.Point(85, 19)
+        Me.TextBox13.Name = "TextBox13"
+        Me.TextBox13.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox13.TabIndex = 88
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Location = New System.Drawing.Point(112, 54)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.ReadOnly = True
+        Me.TextBox11.Size = New System.Drawing.Size(155, 20)
+        Me.TextBox11.TabIndex = 87
+        Me.TextBox11.Text = "Solicitud Interna"
+        '
+        'TextBox12
+        '
+        Me.TextBox12.Location = New System.Drawing.Point(290, 22)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.ReadOnly = True
+        Me.TextBox12.Size = New System.Drawing.Size(132, 20)
+        Me.TextBox12.TabIndex = 86
+        '
+        'TextBox14
+        '
+        Me.TextBox14.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox14.Location = New System.Drawing.Point(110, 82)
+        Me.TextBox14.Name = "TextBox14"
+        Me.TextBox14.Size = New System.Drawing.Size(264, 20)
+        Me.TextBox14.TabIndex = 83
+        '
+        'Label30
+        '
+        Me.Label30.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(23, 85)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(74, 13)
+        Me.Label30.TabIndex = 82
+        Me.Label30.Text = "Entregado por"
+        '
+        'Label32
+        '
+        Me.Label32.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(442, 19)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(55, 13)
+        Me.Label32.TabIndex = 79
+        Me.Label32.Text = "Enviado a"
+        '
+        'Label33
+        '
+        Me.Label33.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(576, 57)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(82, 13)
+        Me.Label33.TabIndex = 68
+        Me.Label33.Text = "Fecha de salida"
+        '
+        'TextBox15
+        '
+        Me.TextBox15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox15.Location = New System.Drawing.Point(513, 16)
+        Me.TextBox15.Name = "TextBox15"
+        Me.TextBox15.ReadOnly = True
+        Me.TextBox15.Size = New System.Drawing.Size(264, 20)
+        Me.TextBox15.TabIndex = 78
+        '
+        'DateTimePicker4
+        '
+        Me.DateTimePicker4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DateTimePicker4.Location = New System.Drawing.Point(674, 51)
+        Me.DateTimePicker4.Name = "DateTimePicker4"
+        Me.DateTimePicker4.Size = New System.Drawing.Size(264, 20)
+        Me.DateTimePicker4.TabIndex = 69
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(7, 57)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(99, 13)
+        Me.Label34.TabIndex = 67
+        Me.Label34.Text = "Tipo de movimiento"
+        '
+        'TextBox16
+        '
+        Me.TextBox16.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox16.Location = New System.Drawing.Point(674, 104)
+        Me.TextBox16.Name = "TextBox16"
+        Me.TextBox16.ReadOnly = True
+        Me.TextBox16.Size = New System.Drawing.Size(264, 20)
+        Me.TextBox16.TabIndex = 73
+        '
+        'Label35
+        '
+        Me.Label35.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(577, 81)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(81, 13)
+        Me.Label35.TabIndex = 70
+        Me.Label35.Text = "Area Solicitante"
+        '
+        'TextBox18
+        '
+        Me.TextBox18.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox18.Location = New System.Drawing.Point(674, 78)
+        Me.TextBox18.Name = "TextBox18"
+        Me.TextBox18.ReadOnly = True
+        Me.TextBox18.Size = New System.Drawing.Size(264, 20)
+        Me.TextBox18.TabIndex = 72
+        '
+        'Label36
+        '
+        Me.Label36.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(590, 107)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(71, 13)
+        Me.Label36.TabIndex = 71
+        Me.Label36.Text = "Solicitado por"
+        '
         'Panel1
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -771,158 +1173,35 @@ Partial Class E_frmSalida
         Me.StatusStrip1.TabIndex = 12
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'GroupBox5
+        'id_producto_9
         '
-        Me.GroupBox5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox5.Controls.Add(Me.Label26)
-        Me.GroupBox5.Controls.Add(Me.Label27)
-        Me.GroupBox5.Controls.Add(Me.TextBox9)
-        Me.GroupBox5.Controls.Add(Me.DataGridView2)
-        Me.GroupBox5.Location = New System.Drawing.Point(513, 219)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(439, 219)
-        Me.GroupBox5.TabIndex = 41
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Existencias en inventario"
+        Me.id_producto_9.DataPropertyName = "id_producto"
+        Me.id_producto_9.HeaderText = "IDPRODUCTO"
+        Me.id_producto_9.Name = "id_producto_9"
         '
-        'Label26
+        'producto_9
         '
-        Me.Label26.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(19, 203)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(109, 13)
-        Me.Label26.TabIndex = 39
-        Me.Label26.Text = "Seleccionar Producto"
+        Me.producto_9.DataPropertyName = "producto"
+        Me.producto_9.HeaderText = "PRODUCTO"
+        Me.producto_9.Name = "producto_9"
         '
-        'Label27
+        'lote_9
         '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(247, 13)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(88, 13)
-        Me.Label27.TabIndex = 38
-        Me.Label27.Text = "No Orden interna"
+        Me.lote_9.DataPropertyName = "lote"
+        Me.lote_9.HeaderText = "LOTE"
+        Me.lote_9.Name = "lote_9"
         '
-        'TextBox9
+        'cantidad_entragada_9
         '
-        Me.TextBox9.Location = New System.Drawing.Point(351, 10)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(79, 20)
-        Me.TextBox9.TabIndex = 10
+        Me.cantidad_entragada_9.DataPropertyName = "cantidad_entragada"
+        Me.cantidad_entragada_9.HeaderText = "CANTIDAD ENTREGADA"
+        Me.cantidad_entragada_9.Name = "cantidad_entragada_9"
         '
-        'DataGridView2
+        'fecha_salida
         '
-        Me.DataGridView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_entrada_1, Me.nombre_producto, Me.LOTE, Me.existencia, Me.fecha_vencimiento, Me.nombre_almacen})
-        Me.DataGridView2.Location = New System.Drawing.Point(9, 32)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.RowHeadersWidth = 51
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue
-        Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView2.Size = New System.Drawing.Size(421, 168)
-        Me.DataGridView2.TabIndex = 0
-        '
-        'id_detalle_oi_2
-        '
-        Me.id_detalle_oi_2.DataPropertyName = "id_detalle_oi"
-        Me.id_detalle_oi_2.HeaderText = "ID"
-        Me.id_detalle_oi_2.Name = "id_detalle_oi_2"
-        '
-        'id_producto_2
-        '
-        Me.id_producto_2.DataPropertyName = "id_producto"
-        Me.id_producto_2.HeaderText = "IDPRODUCTO"
-        Me.id_producto_2.Name = "id_producto_2"
-        '
-        'producto
-        '
-        Me.producto.DataPropertyName = "nombre_producto"
-        Me.producto.HeaderText = "PRODUCTO"
-        Me.producto.Name = "producto"
-        '
-        'cantidad_solicitada
-        '
-        Me.cantidad_solicitada.DataPropertyName = "cantidad_solicitada"
-        Me.cantidad_solicitada.HeaderText = "CANTIDAD SOLICITADA"
-        Me.cantidad_solicitada.Name = "cantidad_solicitada"
-        '
-        'id_entrada_1
-        '
-        Me.id_entrada_1.DataPropertyName = "id_entrada"
-        Me.id_entrada_1.HeaderText = "IDENTRADA"
-        Me.id_entrada_1.Name = "id_entrada_1"
-        '
-        'nombre_producto
-        '
-        Me.nombre_producto.DataPropertyName = "nombre_producto"
-        Me.nombre_producto.HeaderText = "PRODUCTO"
-        Me.nombre_producto.Name = "nombre_producto"
-        '
-        'LOTE
-        '
-        Me.LOTE.DataPropertyName = "lote"
-        Me.LOTE.HeaderText = "LOTE"
-        Me.LOTE.Name = "LOTE"
-        '
-        'existencia
-        '
-        Me.existencia.DataPropertyName = "existencia"
-        Me.existencia.HeaderText = "EXISTENCIA"
-        Me.existencia.Name = "existencia"
-        '
-        'fecha_vencimiento
-        '
-        Me.fecha_vencimiento.DataPropertyName = "fecha_vencimiento"
-        Me.fecha_vencimiento.HeaderText = "VENCIMIENTO"
-        Me.fecha_vencimiento.Name = "fecha_vencimiento"
-        '
-        'nombre_almacen
-        '
-        Me.nombre_almacen.DataPropertyName = "nombre_almacen"
-        Me.nombre_almacen.HeaderText = "ALMACEN"
-        Me.nombre_almacen.Name = "nombre_almacen"
-        '
-        'txtidDetalleEntrada
-        '
-        Me.txtidDetalleEntrada.Location = New System.Drawing.Point(62, 19)
-        Me.txtidDetalleEntrada.Name = "txtidDetalleEntrada"
-        Me.txtidDetalleEntrada.ReadOnly = True
-        Me.txtidDetalleEntrada.Size = New System.Drawing.Size(132, 20)
-        Me.txtidDetalleEntrada.TabIndex = 63
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(6, 22)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(18, 13)
-        Me.Label28.TabIndex = 64
-        Me.Label28.Text = "ID"
-        '
-        'TextBox10
-        '
-        Me.TextBox10.Location = New System.Drawing.Point(300, 15)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.ReadOnly = True
-        Me.TextBox10.Size = New System.Drawing.Size(155, 20)
-        Me.TextBox10.TabIndex = 65
-        Me.TextBox10.Text = "Solicitud Interna"
+        Me.fecha_salida.DataPropertyName = "fecha_salida"
+        Me.fecha_salida.HeaderText = "SALIDA"
+        Me.fecha_salida.Name = "fecha_salida"
         '
         'E_frmSalida
         '
@@ -938,6 +1217,9 @@ Partial Class E_frmSalida
         Me.Text = "SLM - Módulo de almacén"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -951,11 +1233,13 @@ Partial Class E_frmSalida
         Me.Panel2.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.GroupBox7.ResumeLayout(False)
+        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1042,4 +1326,29 @@ Partial Class E_frmSalida
     Friend WithEvents Label28 As Label
     Friend WithEvents txtidDetalleEntrada As TextBox
     Friend WithEvents TextBox10 As TextBox
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents GroupBox7 As GroupBox
+    Friend WithEvents DataGridView4 As DataGridView
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents Label29 As Label
+    Friend WithEvents TextBox13 As TextBox
+    Friend WithEvents TextBox11 As TextBox
+    Friend WithEvents TextBox12 As TextBox
+    Friend WithEvents TextBox14 As TextBox
+    Friend WithEvents Label30 As Label
+    Friend WithEvents Label32 As Label
+    Friend WithEvents Label33 As Label
+    Friend WithEvents TextBox15 As TextBox
+    Friend WithEvents DateTimePicker4 As DateTimePicker
+    Friend WithEvents Label34 As Label
+    Friend WithEvents TextBox16 As TextBox
+    Friend WithEvents Label35 As Label
+    Friend WithEvents TextBox18 As TextBox
+    Friend WithEvents Label36 As Label
+    Friend WithEvents Button5 As Button
+    Friend WithEvents id_producto_9 As DataGridViewTextBoxColumn
+    Friend WithEvents producto_9 As DataGridViewTextBoxColumn
+    Friend WithEvents lote_9 As DataGridViewTextBoxColumn
+    Friend WithEvents cantidad_entragada_9 As DataGridViewTextBoxColumn
+    Friend WithEvents fecha_salida As DataGridViewTextBoxColumn
 End Class

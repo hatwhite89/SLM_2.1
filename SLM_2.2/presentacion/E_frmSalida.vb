@@ -12,6 +12,8 @@ Public Class E_frmSalida
 
         alternarColoFilasDatagridview(DataGridView1)
         alternarColoFilasDatagridview(DataGridView2)
+        alternarColoFilasDatagridview(DataGridView3)
+        alternarColoFilasDatagridview(DataGridView4)
     End Sub
     Private Sub CargarDGOCFecha()
         Try
@@ -87,6 +89,16 @@ Public Class E_frmSalida
 
         End Try
 
+    End Sub
+
+    Private Sub GroupBox6_TextChanged(sender As Object, e As EventArgs) Handles GroupBox6.TextChanged
+
+    End Sub
+
+    Private Sub TextBox13_TextChanged(sender As Object, e As EventArgs) Handles TextBox13.TextChanged
+        Dim clsDeOC As New clsDetalleOI
+        Dim dvOC As DataView = clsDeOC.SalidaConDetalle(TextBox13.Text).DefaultView
+        DataGridView4.DataSource = dvOC
     End Sub
 
     Private Sub cargarVariables()

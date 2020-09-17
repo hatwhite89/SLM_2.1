@@ -20,7 +20,7 @@ Public Class E_frmOrdenCompra
                     .ProductoOC = txtProducto.Text
                     .CodigoProducto = Integer.Parse(txtCodigProducto.Text)
                     .Numerolote = ""
-                    .FechaVencimiento = ""
+                    .FechaVencimiento = Date.Today
                     .ISVDetalle = Double.Parse(txtISVProductos.Text)
                     .CantidadDetalle = Double.Parse(txtCantidadProductos.Text)
                     .PrecioUnitario = Double.Parse(txtPrecioUnitarioProductos.Text)
@@ -51,15 +51,15 @@ Public Class E_frmOrdenCompra
 
     Public Sub sumarData()
         Dim Total As Single
-        Dim Col As Integer = Me.DataGridView1.CurrentCell.ColumnIndex
+
         For Each row As DataGridViewRow In Me.DataGridView1.Rows
-            Total += Val(row.Cells(5).Value)
+            Total += Val(row.Cells(3).Value)
         Next
         Label44.Text = Total.ToString
     End Sub
     Public Sub sumarData2()
         Dim Total As Single
-        Dim Col As Integer = Me.DataGridView1.CurrentCell.ColumnIndex
+
         For Each row As DataGridViewRow In Me.DataGridView1.Rows
             Total += Val(row.Cells(4).Value)
         Next

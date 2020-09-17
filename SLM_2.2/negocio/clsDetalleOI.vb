@@ -220,4 +220,18 @@ and e.existencia > 0  and p.id_producto ='" + codigo + "'", cn)
             Return dt
         End Using
     End Function
+
+    Public Function SalidaConDetalle(ByVal codigo As String) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select id_producto,producto,lote,cantidad_entregada,fecha_salida from SalidaAlmacen
+where id_oi ='" + codigo + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 End Class

@@ -23,11 +23,15 @@ Partial Class E_frmUbicacion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_frmUbicacion))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.id_almacen = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_almacen = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -41,9 +45,6 @@ Partial Class E_frmUbicacion
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.id_almacen = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre_almacen = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -64,7 +65,7 @@ Partial Class E_frmUbicacion
         Me.GroupBox2.Size = New System.Drawing.Size(694, 225)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Buscar almacen "
+        Me.GroupBox2.Text = "Buscar Almacén"
         '
         'Label6
         '
@@ -73,7 +74,7 @@ Partial Class E_frmUbicacion
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(195, 13)
         Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Escriba el nombre del almacen a buscar"
+        Me.Label6.Text = "Escriba el nombre del almacén a buscar"
         '
         'Label5
         '
@@ -81,9 +82,9 @@ Partial Class E_frmUbicacion
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(248, 207)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(176, 13)
+        Me.Label5.Size = New System.Drawing.Size(173, 13)
         Me.Label5.TabIndex = 10
-        Me.Label5.Text = "Seleccionar Almacen para modificar"
+        Me.Label5.Text = "SeleccionarAlmacén para modificar"
         '
         'txtBuscar
         '
@@ -116,6 +117,24 @@ Partial Class E_frmUbicacion
         Me.DataGridView1.Size = New System.Drawing.Size(682, 156)
         Me.DataGridView1.TabIndex = 0
         '
+        'id_almacen
+        '
+        Me.id_almacen.DataPropertyName = "id_almacen"
+        Me.id_almacen.HeaderText = "ID"
+        Me.id_almacen.Name = "id_almacen"
+        '
+        'nombre_almacen
+        '
+        Me.nombre_almacen.DataPropertyName = "nombre_almacen"
+        Me.nombre_almacen.HeaderText = "ALMACEN"
+        Me.nombre_almacen.Name = "nombre_almacen"
+        '
+        'descripcion
+        '
+        Me.descripcion.DataPropertyName = "descripcion"
+        Me.descripcion.HeaderText = "DESCRIPCION"
+        Me.descripcion.Name = "descripcion"
+        '
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -132,7 +151,7 @@ Partial Class E_frmUbicacion
         Me.GroupBox1.Size = New System.Drawing.Size(694, 147)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Almacen"
+        Me.GroupBox1.Text = "Almacén"
         '
         'Label4
         '
@@ -149,7 +168,7 @@ Partial Class E_frmUbicacion
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(107, 13)
         Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Descripcion Almacen"
+        Me.Label3.Text = "Descripción Almacén"
         '
         'Label2
         '
@@ -158,7 +177,7 @@ Partial Class E_frmUbicacion
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(88, 13)
         Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Nombre Almacen"
+        Me.Label2.Text = "Nombre Almacén"
         '
         'Label1
         '
@@ -167,7 +186,7 @@ Partial Class E_frmUbicacion
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(84, 13)
         Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Codigo Almacen"
+        Me.Label1.Text = "Código Almacén"
         '
         'txtDescripcion
         '
@@ -223,6 +242,7 @@ Partial Class E_frmUbicacion
         '
         Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button5.BackColor = System.Drawing.Color.White
+        Me.Button5.Enabled = False
         Me.Button5.Location = New System.Drawing.Point(532, 3)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
@@ -252,24 +272,6 @@ Partial Class E_frmUbicacion
         Me.StatusStrip1.TabIndex = 9
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'id_almacen
-        '
-        Me.id_almacen.DataPropertyName = "id_almacen"
-        Me.id_almacen.HeaderText = "ID"
-        Me.id_almacen.Name = "id_almacen"
-        '
-        'nombre_almacen
-        '
-        Me.nombre_almacen.DataPropertyName = "nombre_almacen"
-        Me.nombre_almacen.HeaderText = "ALMACEN"
-        Me.nombre_almacen.Name = "nombre_almacen"
-        '
-        'descripcion
-        '
-        Me.descripcion.DataPropertyName = "descripcion"
-        Me.descripcion.HeaderText = "DESCRIPCION"
-        Me.descripcion.Name = "descripcion"
-        '
         'E_frmUbicacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -280,6 +282,7 @@ Partial Class E_frmUbicacion
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "E_frmUbicacion"
         Me.Text = "SLM - Módulo de almacén"
         Me.GroupBox2.ResumeLayout(False)
