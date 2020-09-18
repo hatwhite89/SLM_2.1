@@ -87,9 +87,9 @@ Partial Class frmFormaPago
         Me.lblCod.AutoSize = True
         Me.lblCod.Location = New System.Drawing.Point(11, 35)
         Me.lblCod.Name = "lblCod"
-        Me.lblCod.Size = New System.Drawing.Size(40, 13)
+        Me.lblCod.Size = New System.Drawing.Size(60, 13)
         Me.lblCod.TabIndex = 1
-        Me.lblCod.Text = "Código"
+        Me.lblCod.Text = "Cód. Breve"
         '
         'lblCuenta
         '
@@ -147,7 +147,6 @@ Partial Class frmFormaPago
         '
         'txtCodigo
         '
-        Me.txtCodigo.Enabled = False
         Me.txtCodigo.Location = New System.Drawing.Point(110, 28)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)

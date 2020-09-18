@@ -105,7 +105,8 @@
 
                 dtPagos.DataSource = pagos.listarSinPago
 
-            Else
+            ElseIf ComboBox1.Text = "Pagados" Then
+
                 dtPagos.DataSource = pagos.listarPagosOk
 
             End If
@@ -116,4 +117,5 @@
 
 
     End Sub
+
 End Class

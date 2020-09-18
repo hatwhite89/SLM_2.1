@@ -49,9 +49,9 @@
     End Sub
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
         Limpiar()
-        btnCrear.Visible = False
-        btnModificar.Visible = False
-        btnGuardar.Visible = True
+        btnCrear.Enabled = False
+        btnModificar.Enabled = False
+        btnGuardar.Enabled = True
     End Sub
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Try
@@ -66,9 +66,9 @@
                 .modificarBanco()
                 Limpiar()
                 dtBancos.DataSource = Banco.listarBancos()
-                btnCrear.Visible = False
-                btnModificar.Visible = False
-                btnGuardar.Visible = True
+                btnCrear.Enabled = False
+                btnModificar.Enabled = False
+                btnGuardar.Enabled = True
             End With
 
         Catch ex As Exception
@@ -88,9 +88,9 @@
             chkEstado.Checked = dtBancos.Rows(e.RowIndex).Cells(3).Value
 
             'Habilitar botones de edicion
-            btnCrear.Visible = True
-            btnModificar.Visible = True
-            btnGuardar.Visible = False
+            btnCrear.Enabled = True
+            btnModificar.Enabled = True
+            btnGuardar.Enabled = False
 
         Catch ex As Exception
 
@@ -147,9 +147,9 @@
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Limpiar()
-        btnCrear.Visible = False
-        btnModificar.Visible = False
-        btnGuardar.Visible = True
+        btnCrear.Enabled = False
+        btnModificar.Enabled = False
+        btnGuardar.Enabled = True
         txtBusquedaBanco.Text = ""
         dtBancos.DataSource = Banco.listarBancos
     End Sub
@@ -203,13 +203,7 @@
         End If
     End Sub
 
-    'Public Sub Limpiar()
-
-    '    txtCodigo.Text = ""
-    '    txtCodBreve.Text = ""
-    '    txtNombreBanco.Text = ""
-    '    chkEstado.Checked = False
-
-    'End Sub
-
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
+    End Sub
 End Class

@@ -42,9 +42,12 @@ Partial Class A_Chequera
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dtChequeras = New System.Windows.Forms.DataGridView()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.gbxInfoChequeras.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtChequeras, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbxInfoChequeras
@@ -54,8 +57,6 @@ Partial Class A_Chequera
         Me.gbxInfoChequeras.Controls.Add(Me.Button1)
         Me.gbxInfoChequeras.Controls.Add(Me.mtxtNumInicio)
         Me.gbxInfoChequeras.Controls.Add(Me.btnBuscar)
-        Me.gbxInfoChequeras.Controls.Add(Me.btnGuardar)
-        Me.gbxInfoChequeras.Controls.Add(Me.btnCrear)
         Me.gbxInfoChequeras.Controls.Add(Me.txtBanco)
         Me.gbxInfoChequeras.Controls.Add(Me.Label5)
         Me.gbxInfoChequeras.Controls.Add(Me.txtCantidad)
@@ -65,9 +66,9 @@ Partial Class A_Chequera
         Me.gbxInfoChequeras.Controls.Add(Me.Label2)
         Me.gbxInfoChequeras.Controls.Add(Me.txtCodChequera)
         Me.gbxInfoChequeras.Controls.Add(Me.Label1)
-        Me.gbxInfoChequeras.Location = New System.Drawing.Point(12, 12)
+        Me.gbxInfoChequeras.Location = New System.Drawing.Point(12, 49)
         Me.gbxInfoChequeras.Name = "gbxInfoChequeras"
-        Me.gbxInfoChequeras.Size = New System.Drawing.Size(694, 150)
+        Me.gbxInfoChequeras.Size = New System.Drawing.Size(694, 112)
         Me.gbxInfoChequeras.TabIndex = 0
         Me.gbxInfoChequeras.TabStop = False
         Me.gbxInfoChequeras.Text = "Información de Chequera"
@@ -131,11 +132,11 @@ Partial Class A_Chequera
         '
         'btnGuardar
         '
-        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnGuardar.BackColor = System.Drawing.Color.White
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(92, 121)
+        Me.btnGuardar.ForeColor = System.Drawing.Color.Black
+        Me.btnGuardar.Location = New System.Drawing.Point(632, 10)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 12
@@ -144,11 +145,11 @@ Partial Class A_Chequera
         '
         'btnCrear
         '
-        Me.btnCrear.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCrear.BackColor = System.Drawing.Color.White
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(11, 121)
+        Me.btnCrear.ForeColor = System.Drawing.Color.Black
+        Me.btnCrear.Location = New System.Drawing.Point(551, 10)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 10
@@ -237,7 +238,7 @@ Partial Class A_Chequera
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.dtChequeras)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 168)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 167)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(694, 236)
         Me.GroupBox1.TabIndex = 1
@@ -259,12 +260,35 @@ Partial Class A_Chequera
         Me.dtChequeras.Size = New System.Drawing.Size(682, 211)
         Me.dtChequeras.TabIndex = 0
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.btnGuardar)
+        Me.Panel1.Controls.Add(Me.btnCrear)
+        Me.Panel1.Location = New System.Drawing.Point(-1, -1)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(722, 44)
+        Me.Panel1.TabIndex = 2
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(13, 10)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(206, 25)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Generar Chequera"
+        '
         'A_Chequera
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(718, 416)
+        Me.ClientSize = New System.Drawing.Size(718, 411)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoChequeras)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -276,6 +300,8 @@ Partial Class A_Chequera
         Me.gbxInfoChequeras.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dtChequeras, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -299,4 +325,6 @@ Partial Class A_Chequera
     Friend WithEvents Button1 As Button
     Friend WithEvents lblCodChequera As Label
     Friend WithEvents lblNombreBanc As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label6 As Label
 End Class

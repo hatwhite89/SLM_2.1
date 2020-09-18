@@ -31,10 +31,6 @@ Partial Class frmAsientos
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtTexto = New System.Windows.Forms.TextBox()
         Me.dtDetalleAsiento = New System.Windows.Forms.DataGridView()
-        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Debe = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Haber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtTotalDebe = New System.Windows.Forms.TextBox()
         Me.txtTotalHaber = New System.Windows.Forms.TextBox()
@@ -44,15 +40,20 @@ Partial Class frmAsientos
         Me.lblForm = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Debe = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Haber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dtDetalleAsiento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblNro
@@ -120,38 +121,13 @@ Partial Class frmAsientos
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dtDetalleAsiento.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dtDetalleAsiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtDetalleAsiento.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cuenta, Me.Descripcion, Me.Debe, Me.Haber})
+        Me.dtDetalleAsiento.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Cuenta, Me.Descripcion, Me.Debe, Me.Haber})
         Me.dtDetalleAsiento.GridColor = System.Drawing.SystemColors.Control
         Me.dtDetalleAsiento.Location = New System.Drawing.Point(6, 19)
         Me.dtDetalleAsiento.MultiSelect = False
         Me.dtDetalleAsiento.Name = "dtDetalleAsiento"
         Me.dtDetalleAsiento.Size = New System.Drawing.Size(614, 321)
         Me.dtDetalleAsiento.TabIndex = 7
-        '
-        'Cuenta
-        '
-        Me.Cuenta.HeaderText = "Cuenta"
-        Me.Cuenta.Name = "Cuenta"
-        Me.Cuenta.ReadOnly = True
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripción"
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
-        Me.Descripcion.Width = 270
-        '
-        'Debe
-        '
-        Me.Debe.HeaderText = "Debe"
-        Me.Debe.Name = "Debe"
-        Me.Debe.ReadOnly = True
-        '
-        'Haber
-        '
-        Me.Haber.HeaderText = "Haber"
-        Me.Haber.Name = "Haber"
-        Me.Haber.ReadOnly = True
         '
         'Label5
         '
@@ -200,11 +176,11 @@ Partial Class frmAsientos
         '
         'btnCerrar
         '
-        Me.btnCerrar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCerrar.BackColor = System.Drawing.Color.White
         Me.btnCerrar.FlatAppearance.BorderSize = 0
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.ForeColor = System.Drawing.Color.White
-        Me.btnCerrar.Location = New System.Drawing.Point(544, 13)
+        Me.btnCerrar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnCerrar.Location = New System.Drawing.Point(572, 10)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
         Me.btnCerrar.TabIndex = 17
@@ -251,24 +227,12 @@ Partial Class frmAsientos
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Descripción"
         '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.Label3)
-        Me.GroupBox3.Controls.Add(Me.btnGuardar)
-        Me.GroupBox3.Controls.Add(Me.btnModificar)
-        Me.GroupBox3.Controls.Add(Me.btnCrear)
-        Me.GroupBox3.Controls.Add(Me.btnCerrar)
-        Me.GroupBox3.Location = New System.Drawing.Point(16, 12)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(628, 43)
-        Me.GroupBox3.TabIndex = 21
-        Me.GroupBox3.TabStop = False
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(6, 12)
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(11, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(171, 24)
         Me.Label3.TabIndex = 3
@@ -276,38 +240,89 @@ Partial Class frmAsientos
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(464, 13)
+        Me.btnGuardar.BackColor = System.Drawing.Color.White
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.Location = New System.Drawing.Point(492, 10)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 2
         Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
+        Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(383, 13)
+        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Location = New System.Drawing.Point(411, 10)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 1
         Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
+        Me.btnModificar.UseVisualStyleBackColor = False
         '
         'btnCrear
         '
-        Me.btnCrear.Location = New System.Drawing.Point(302, 13)
+        Me.btnCrear.BackColor = System.Drawing.Color.White
+        Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCrear.Location = New System.Drawing.Point(330, 10)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 0
         Me.btnCrear.Text = "Crear Nuevo"
-        Me.btnCrear.UseVisualStyleBackColor = True
+        Me.btnCrear.UseVisualStyleBackColor = False
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnGuardar)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.btnModificar)
+        Me.Panel1.Controls.Add(Me.btnCrear)
+        Me.Panel1.Controls.Add(Me.btnCerrar)
+        Me.Panel1.Location = New System.Drawing.Point(1, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(653, 43)
+        Me.Panel1.TabIndex = 22
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "CodDetalle"
+        Me.Column1.Name = "Column1"
+        Me.Column1.Visible = False
+        Me.Column1.Width = 40
+        '
+        'Cuenta
+        '
+        Me.Cuenta.HeaderText = "Cuenta"
+        Me.Cuenta.Name = "Cuenta"
+        Me.Cuenta.ReadOnly = True
+        '
+        'Descripcion
+        '
+        Me.Descripcion.HeaderText = "Descripción"
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.ReadOnly = True
+        Me.Descripcion.Width = 270
+        '
+        'Debe
+        '
+        Me.Debe.HeaderText = "Debe"
+        Me.Debe.Name = "Debe"
+        '
+        'Haber
+        '
+        Me.Haber.HeaderText = "Haber"
+        Me.Haber.Name = "Haber"
         '
         'frmAsientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(652, 516)
-        Me.Controls.Add(Me.GroupBox3)
+        Me.ClientSize = New System.Drawing.Size(653, 519)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lblForm)
@@ -324,8 +339,8 @@ Partial Class frmAsientos
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -342,17 +357,18 @@ Partial Class frmAsientos
     Friend WithEvents txtTotalHaber As TextBox
     Friend WithEvents lblCodAsiento As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents Cuenta As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents Debe As DataGridViewTextBoxColumn
-    Friend WithEvents Haber As DataGridViewTextBoxColumn
     Friend WithEvents btnCerrar As Button
     Friend WithEvents lblForm As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label3 As Label
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnCrear As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Cuenta As DataGridViewTextBoxColumn
+    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents Debe As DataGridViewTextBoxColumn
+    Friend WithEvents Haber As DataGridViewTextBoxColumn
 End Class
