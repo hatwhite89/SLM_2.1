@@ -1,21 +1,21 @@
 ﻿Public Class M_VerPaciente
 
     Public Sub limpiar()
-        txtcorreo.ReadOnly = False
-        txtcorreo2.ReadOnly = False
-        txtscanId.ReadOnly = False
-        txtcelular.ReadOnly = False
-        txtrtn.ReadOnly = False
-        txtnombre1.ReadOnly = False
-        txtnombre2.ReadOnly = False
-        txtapellido1.ReadOnly = False
-        txtapellido2.ReadOnly = False
-        rtxtdireccion.ReadOnly = False
-        txttelefonoCasa.ReadOnly = False
-        txttelefonoTrabajo.ReadOnly = False
-        txtcodigoClasificacion.ReadOnly = False
-        txtscanId.ReadOnly = False
-        txtrtn.ReadOnly = False
+        txtcorreo.ReadOnly = True
+        txtcorreo2.ReadOnly = True
+        txtscanId.ReadOnly = True
+        txtcelular.ReadOnly = True
+        txtrtn.ReadOnly = True
+        txtnombre1.ReadOnly = True
+        txtnombre2.ReadOnly = True
+        txtapellido1.ReadOnly = True
+        txtapellido2.ReadOnly = True
+        rtxtdireccion.ReadOnly = True
+        txttelefonoCasa.ReadOnly = True
+        txttelefonoTrabajo.ReadOnly = True
+        txtcodigoClasificacion.ReadOnly = True
+        txtscanId.ReadOnly = True
+        txtrtn.ReadOnly = True
 
         txtcorreo.Text = ""
         txtcorreo2.Text = ""
@@ -95,6 +95,28 @@
             txtEdad.Text = month & "m"
         Else
             txtEdad.Text = day & "d"
+        End If
+    End Sub
+
+    Private Sub txtcodigoClasificacion_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoClasificacion.TextChanged
+        If (txtcodigoClasificacion.Text <> "") Then
+            Try
+                Dim objTipoCls As New ClsTipoClasificacion
+                objTipoCls.Codigo1 = txtcodigoClasificacion.Text
+
+                Dim dt As New DataTable
+                dt = objTipoCls.BuscarTipoClasificacionCode()
+                Dim row As DataRow = dt.Rows(0)
+                txtnombreClasificacion.Text = CStr(row("comentario"))
+                txtcodigoClasificacion.BackColor = Color.White
+            Catch ex As Exception
+                txtcodigoClasificacion.BackColor = Color.Red
+                txtnombreClasificacion.Text = ""
+            End Try
+        Else
+            txtcodigoClasificacion.Text = ""
+            txtnombreClasificacion.Text = ""
+            txtcodigoClasificacion.BackColor = Color.White
         End If
     End Sub
 End Class

@@ -6,18 +6,24 @@
         End If
     End Sub
     Private Sub M_Area_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'LLENADO TABLA
         Dim objArea As New ClsArea
         Dim dv As DataView = objArea.SeleccionarArea.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         alternarColoFilasDatagridview(dgbtabla)
+
+        'DESHABILITAR LOS BOTONES Y CONTENIDO DEL FORMULARIO
         txtnombre.ReadOnly = True
         txtcodigo.ReadOnly = True
-
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
+
+        'CAMBIO DE NOMBRE COLUMNAS
+        dgbtabla.Columns("codigo").HeaderText = "Código"
+        dgbtabla.Columns("nombre").HeaderText = "Nombre"
     End Sub
     Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
         Try

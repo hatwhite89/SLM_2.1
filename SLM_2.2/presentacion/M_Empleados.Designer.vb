@@ -161,6 +161,10 @@ Partial Class M_Empleados
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtParentesco1 = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txtParentesco2 = New System.Windows.Forms.TextBox()
+        Me.Label34 = New System.Windows.Forms.Label()
         Me.gbxobjeto.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -490,7 +494,7 @@ Partial Class M_Empleados
         '
         Me.cmbxestadoLaboral.DropDownWidth = 180
         Me.cmbxestadoLaboral.FormattingEnabled = True
-        Me.cmbxestadoLaboral.Items.AddRange(New Object() {"Activo", "Inactivo: Renuncia", "Inactivo: Despido", "Inactivo: Desertor", "Inactivo: Defunción", "Inactivo: Baja Temporal", "Inactivo: Lista No Reintegrables"})
+        Me.cmbxestadoLaboral.Items.AddRange(New Object() {"Activo", "Inactivo: Renuncia", "Mutuo Acuerdo", "Inactivo: Despido", "Inactivo: Desertor", "Inactivo: Defunción", "Jubilación"})
         Me.cmbxestadoLaboral.Location = New System.Drawing.Point(124, 30)
         Me.cmbxestadoLaboral.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbxestadoLaboral.Name = "cmbxestadoLaboral"
@@ -1070,7 +1074,7 @@ Partial Class M_Empleados
         Me.gbxestadoCivil.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.gbxestadoCivil.Name = "gbxestadoCivil"
         Me.gbxestadoCivil.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.gbxestadoCivil.Size = New System.Drawing.Size(248, 130)
+        Me.gbxestadoCivil.Size = New System.Drawing.Size(271, 130)
         Me.gbxestadoCivil.TabIndex = 99
         Me.gbxestadoCivil.TabStop = False
         Me.gbxestadoCivil.Text = "Estado Civil"
@@ -1098,25 +1102,25 @@ Partial Class M_Empleados
         'rbtnseparado
         '
         Me.rbtnseparado.AutoSize = True
-        Me.rbtnseparado.Location = New System.Drawing.Point(127, 25)
+        Me.rbtnseparado.Location = New System.Drawing.Point(133, 25)
         Me.rbtnseparado.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rbtnseparado.Name = "rbtnseparado"
-        Me.rbtnseparado.Size = New System.Drawing.Size(91, 21)
+        Me.rbtnseparado.Size = New System.Drawing.Size(109, 21)
         Me.rbtnseparado.TabIndex = 12
         Me.rbtnseparado.TabStop = True
-        Me.rbtnseparado.Text = "Separado"
+        Me.rbtnseparado.Text = "Separado(a)"
         Me.rbtnseparado.UseVisualStyleBackColor = True
         '
         'rbtnconcuvinato
         '
         Me.rbtnconcuvinato.AutoSize = True
-        Me.rbtnconcuvinato.Location = New System.Drawing.Point(127, 49)
+        Me.rbtnconcuvinato.Location = New System.Drawing.Point(133, 49)
         Me.rbtnconcuvinato.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rbtnconcuvinato.Name = "rbtnconcuvinato"
-        Me.rbtnconcuvinato.Size = New System.Drawing.Size(107, 21)
+        Me.rbtnconcuvinato.Size = New System.Drawing.Size(125, 21)
         Me.rbtnconcuvinato.TabIndex = 13
         Me.rbtnconcuvinato.TabStop = True
-        Me.rbtnconcuvinato.Text = "Concuvinato"
+        Me.rbtnconcuvinato.Text = "Concuvinato(a)"
         Me.rbtnconcuvinato.UseVisualStyleBackColor = True
         '
         'rbtnviudo
@@ -1125,10 +1129,10 @@ Partial Class M_Empleados
         Me.rbtnviudo.Location = New System.Drawing.Point(19, 74)
         Me.rbtnviudo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rbtnviudo.Name = "rbtnviudo"
-        Me.rbtnviudo.Size = New System.Drawing.Size(65, 21)
+        Me.rbtnviudo.Size = New System.Drawing.Size(83, 21)
         Me.rbtnviudo.TabIndex = 10
         Me.rbtnviudo.TabStop = True
-        Me.rbtnviudo.Text = "Viudo"
+        Me.rbtnviudo.Text = "Viudo(a)"
         Me.rbtnviudo.UseVisualStyleBackColor = True
         '
         'rbtndivorciado
@@ -1137,10 +1141,10 @@ Partial Class M_Empleados
         Me.rbtndivorciado.Location = New System.Drawing.Point(19, 98)
         Me.rbtndivorciado.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rbtndivorciado.Name = "rbtndivorciado"
-        Me.rbtndivorciado.Size = New System.Drawing.Size(96, 21)
+        Me.rbtndivorciado.Size = New System.Drawing.Size(114, 21)
         Me.rbtndivorciado.TabIndex = 11
         Me.rbtndivorciado.TabStop = True
-        Me.rbtndivorciado.Text = "Divorciado"
+        Me.rbtndivorciado.Text = "Divorciado(a)"
         Me.rbtndivorciado.UseVisualStyleBackColor = True
         '
         'rbtnsoltero
@@ -1149,10 +1153,10 @@ Partial Class M_Empleados
         Me.rbtnsoltero.Location = New System.Drawing.Point(19, 25)
         Me.rbtnsoltero.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rbtnsoltero.Name = "rbtnsoltero"
-        Me.rbtnsoltero.Size = New System.Drawing.Size(74, 21)
+        Me.rbtnsoltero.Size = New System.Drawing.Size(92, 21)
         Me.rbtnsoltero.TabIndex = 8
         Me.rbtnsoltero.TabStop = True
-        Me.rbtnsoltero.Text = "Soltero"
+        Me.rbtnsoltero.Text = "Soltero(a)"
         Me.rbtnsoltero.UseVisualStyleBackColor = True
         '
         'rbtncasado
@@ -1161,10 +1165,10 @@ Partial Class M_Empleados
         Me.rbtncasado.Location = New System.Drawing.Point(19, 49)
         Me.rbtncasado.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rbtncasado.Name = "rbtncasado"
-        Me.rbtncasado.Size = New System.Drawing.Size(77, 21)
+        Me.rbtncasado.Size = New System.Drawing.Size(95, 21)
         Me.rbtncasado.TabIndex = 9
         Me.rbtncasado.TabStop = True
-        Me.rbtncasado.Text = "Casado"
+        Me.rbtncasado.Text = "Casado(a)"
         Me.rbtncasado.UseVisualStyleBackColor = True
         '
         'gbxgenero
@@ -1350,8 +1354,6 @@ Partial Class M_Empleados
         '
         'TabPage4
         '
-        Me.TabPage4.Controls.Add(Me.txtgrupoSanguineo)
-        Me.TabPage4.Controls.Add(Me.Label22)
         Me.TabPage4.Controls.Add(Me.GroupBox5)
         Me.TabPage4.Controls.Add(Me.GroupBox4)
         Me.TabPage4.Location = New System.Drawing.Point(4, 25)
@@ -1364,7 +1366,7 @@ Partial Class M_Empleados
         '
         'txtgrupoSanguineo
         '
-        Me.txtgrupoSanguineo.Location = New System.Drawing.Point(417, 18)
+        Me.txtgrupoSanguineo.Location = New System.Drawing.Point(431, 27)
         Me.txtgrupoSanguineo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtgrupoSanguineo.MaxLength = 20
         Me.txtgrupoSanguineo.Name = "txtgrupoSanguineo"
@@ -1375,7 +1377,7 @@ Partial Class M_Empleados
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(291, 18)
+        Me.Label22.Location = New System.Drawing.Point(305, 27)
         Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(120, 17)
@@ -1384,13 +1386,15 @@ Partial Class M_Empleados
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.txtParentesco2)
+        Me.GroupBox5.Controls.Add(Me.Label34)
         Me.GroupBox5.Controls.Add(Me.Label29)
         Me.GroupBox5.Controls.Add(Me.txttelUrgencias2)
         Me.GroupBox5.Controls.Add(Me.Label30)
         Me.GroupBox5.Controls.Add(Me.txtcontactoUrgencias2)
         Me.GroupBox5.Controls.Add(Me.Label31)
         Me.GroupBox5.Controls.Add(Me.txtcelularUrgencias2)
-        Me.GroupBox5.Location = New System.Drawing.Point(35, 187)
+        Me.GroupBox5.Location = New System.Drawing.Point(35, 170)
         Me.GroupBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -1411,7 +1415,7 @@ Partial Class M_Empleados
         '
         'txttelUrgencias2
         '
-        Me.txttelUrgencias2.Location = New System.Drawing.Point(628, 33)
+        Me.txttelUrgencias2.Location = New System.Drawing.Point(628, 72)
         Me.txttelUrgencias2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txttelUrgencias2.MaxLength = 20
         Me.txttelUrgencias2.Name = "txttelUrgencias2"
@@ -1422,7 +1426,7 @@ Partial Class M_Empleados
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(469, 36)
+        Me.Label30.Location = New System.Drawing.Point(469, 75)
         Me.Label30.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(132, 17)
@@ -1461,13 +1465,15 @@ Partial Class M_Empleados
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.txtParentesco1)
         Me.GroupBox4.Controls.Add(Me.Label23)
+        Me.GroupBox4.Controls.Add(Me.Label13)
         Me.GroupBox4.Controls.Add(Me.txttelUrgencias)
         Me.GroupBox4.Controls.Add(Me.Label24)
         Me.GroupBox4.Controls.Add(Me.txtcontactoUrgencias)
         Me.GroupBox4.Controls.Add(Me.Label25)
         Me.GroupBox4.Controls.Add(Me.txtcelularUrgencias)
-        Me.GroupBox4.Location = New System.Drawing.Point(35, 50)
+        Me.GroupBox4.Location = New System.Drawing.Point(35, 33)
         Me.GroupBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -1488,7 +1494,7 @@ Partial Class M_Empleados
         '
         'txttelUrgencias
         '
-        Me.txttelUrgencias.Location = New System.Drawing.Point(628, 33)
+        Me.txttelUrgencias.Location = New System.Drawing.Point(628, 72)
         Me.txttelUrgencias.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txttelUrgencias.MaxLength = 20
         Me.txttelUrgencias.Name = "txttelUrgencias"
@@ -1499,7 +1505,7 @@ Partial Class M_Empleados
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(469, 36)
+        Me.Label24.Location = New System.Drawing.Point(469, 75)
         Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(132, 17)
@@ -1559,7 +1565,7 @@ Partial Class M_Empleados
         Me.btnImprimirCarnet.FlatAppearance.BorderSize = 0
         Me.btnImprimirCarnet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnImprimirCarnet.Location = New System.Drawing.Point(168, 279)
-        Me.btnImprimirCarnet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnImprimirCarnet.Margin = New System.Windows.Forms.Padding(4)
         Me.btnImprimirCarnet.Name = "btnImprimirCarnet"
         Me.btnImprimirCarnet.Size = New System.Drawing.Size(141, 26)
         Me.btnImprimirCarnet.TabIndex = 34
@@ -1580,7 +1586,7 @@ Partial Class M_Empleados
         '
         Me.txtRuta.Enabled = False
         Me.txtRuta.Location = New System.Drawing.Point(337, 32)
-        Me.txtRuta.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtRuta.Margin = New System.Windows.Forms.Padding(4)
         Me.txtRuta.Name = "txtRuta"
         Me.txtRuta.ReadOnly = True
         Me.txtRuta.Size = New System.Drawing.Size(265, 22)
@@ -1593,7 +1599,7 @@ Partial Class M_Empleados
         Me.btnEliminar.FlatAppearance.BorderSize = 0
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEliminar.Location = New System.Drawing.Point(635, 94)
-        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(79, 26)
         Me.btnEliminar.TabIndex = 31
@@ -1605,7 +1611,7 @@ Partial Class M_Empleados
         Me.pbxEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pbxEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pbxEmpleado.Location = New System.Drawing.Point(337, 78)
-        Me.pbxEmpleado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pbxEmpleado.Margin = New System.Windows.Forms.Padding(4)
         Me.pbxEmpleado.Name = "pbxEmpleado"
         Me.pbxEmpleado.Size = New System.Drawing.Size(265, 227)
         Me.pbxEmpleado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1619,7 +1625,7 @@ Partial Class M_Empleados
         Me.btnBuscarImage.FlatAppearance.BorderSize = 0
         Me.btnBuscarImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscarImage.Location = New System.Drawing.Point(635, 30)
-        Me.btnBuscarImage.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBuscarImage.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBuscarImage.Name = "btnBuscarImage"
         Me.btnBuscarImage.Size = New System.Drawing.Size(79, 26)
         Me.btnBuscarImage.TabIndex = 29
@@ -1628,8 +1634,10 @@ Partial Class M_Empleados
         '
         'TabPage5
         '
+        Me.TabPage5.Controls.Add(Me.txtgrupoSanguineo)
         Me.TabPage5.Controls.Add(Me.rtxtCondicionesE)
         Me.TabPage5.Controls.Add(Me.lblCondicionesEspeciales)
+        Me.TabPage5.Controls.Add(Me.Label22)
         Me.TabPage5.Controls.Add(Me.rtxtAMedicamentos)
         Me.TabPage5.Controls.Add(Me.lblAlergiasMedicamentos)
         Me.TabPage5.Controls.Add(Me.rtxtAAlimentos)
@@ -1645,7 +1653,7 @@ Partial Class M_Empleados
         '
         'rtxtCondicionesE
         '
-        Me.rtxtCondicionesE.Location = New System.Drawing.Point(45, 228)
+        Me.rtxtCondicionesE.Location = New System.Drawing.Point(45, 242)
         Me.rtxtCondicionesE.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rtxtCondicionesE.Name = "rtxtCondicionesE"
         Me.rtxtCondicionesE.Size = New System.Drawing.Size(833, 61)
@@ -1655,7 +1663,7 @@ Partial Class M_Empleados
         'lblCondicionesEspeciales
         '
         Me.lblCondicionesEspeciales.AutoSize = True
-        Me.lblCondicionesEspeciales.Location = New System.Drawing.Point(43, 208)
+        Me.lblCondicionesEspeciales.Location = New System.Drawing.Point(43, 222)
         Me.lblCondicionesEspeciales.Name = "lblCondicionesEspeciales"
         Me.lblCondicionesEspeciales.Size = New System.Drawing.Size(217, 17)
         Me.lblCondicionesEspeciales.TabIndex = 4
@@ -1663,7 +1671,7 @@ Partial Class M_Empleados
         '
         'rtxtAMedicamentos
         '
-        Me.rtxtAMedicamentos.Location = New System.Drawing.Point(45, 144)
+        Me.rtxtAMedicamentos.Location = New System.Drawing.Point(45, 158)
         Me.rtxtAMedicamentos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rtxtAMedicamentos.Name = "rtxtAMedicamentos"
         Me.rtxtAMedicamentos.Size = New System.Drawing.Size(833, 61)
@@ -1673,7 +1681,7 @@ Partial Class M_Empleados
         'lblAlergiasMedicamentos
         '
         Me.lblAlergiasMedicamentos.AutoSize = True
-        Me.lblAlergiasMedicamentos.Location = New System.Drawing.Point(43, 124)
+        Me.lblAlergiasMedicamentos.Location = New System.Drawing.Point(43, 138)
         Me.lblAlergiasMedicamentos.Name = "lblAlergiasMedicamentos"
         Me.lblAlergiasMedicamentos.Size = New System.Drawing.Size(166, 17)
         Me.lblAlergiasMedicamentos.TabIndex = 2
@@ -1681,7 +1689,7 @@ Partial Class M_Empleados
         '
         'rtxtAAlimentos
         '
-        Me.rtxtAAlimentos.Location = New System.Drawing.Point(41, 60)
+        Me.rtxtAAlimentos.Location = New System.Drawing.Point(41, 74)
         Me.rtxtAAlimentos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rtxtAAlimentos.Name = "rtxtAAlimentos"
         Me.rtxtAAlimentos.Size = New System.Drawing.Size(833, 61)
@@ -1691,7 +1699,7 @@ Partial Class M_Empleados
         'lblAlergiasAlimentos
         '
         Me.lblAlergiasAlimentos.AutoSize = True
-        Me.lblAlergiasAlimentos.Location = New System.Drawing.Point(37, 39)
+        Me.lblAlergiasAlimentos.Location = New System.Drawing.Point(37, 53)
         Me.lblAlergiasAlimentos.Name = "lblAlergiasAlimentos"
         Me.lblAlergiasAlimentos.Size = New System.Drawing.Size(136, 17)
         Me.lblAlergiasAlimentos.TabIndex = 0
@@ -1727,7 +1735,7 @@ Partial Class M_Empleados
         Me.Panel1.Controls.Add(Me.btnguardar)
         Me.Panel1.Controls.Add(Me.btnmodificar)
         Me.Panel1.Location = New System.Drawing.Point(1, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(983, 52)
         Me.Panel1.TabIndex = 168
@@ -1743,6 +1751,46 @@ Partial Class M_Empleados
         Me.Label2.Size = New System.Drawing.Size(119, 25)
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Empleados"
+        '
+        'txtParentesco1
+        '
+        Me.txtParentesco1.Location = New System.Drawing.Point(628, 31)
+        Me.txtParentesco1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtParentesco1.MaxLength = 20
+        Me.txtParentesco1.Name = "txtParentesco1"
+        Me.txtParentesco1.Size = New System.Drawing.Size(193, 22)
+        Me.txtParentesco1.TabIndex = 184
+        Me.txtParentesco1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(521, 34)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(80, 17)
+        Me.Label13.TabIndex = 183
+        Me.Label13.Text = "Parentesco"
+        '
+        'txtParentesco2
+        '
+        Me.txtParentesco2.Location = New System.Drawing.Point(628, 33)
+        Me.txtParentesco2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtParentesco2.MaxLength = 20
+        Me.txtParentesco2.Name = "txtParentesco2"
+        Me.txtParentesco2.Size = New System.Drawing.Size(193, 22)
+        Me.txtParentesco2.TabIndex = 186
+        Me.txtParentesco2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(521, 36)
+        Me.Label34.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(80, 17)
+        Me.Label34.TabIndex = 185
+        Me.Label34.Text = "Parentesco"
         '
         'M_Empleados
         '
@@ -1778,7 +1826,6 @@ Partial Class M_Empleados
         Me.gbxgenero.ResumeLayout(False)
         Me.gbxgenero.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
-        Me.TabPage4.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
@@ -1933,4 +1980,8 @@ Partial Class M_Empleados
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
+    Friend WithEvents txtParentesco2 As TextBox
+    Friend WithEvents Label34 As Label
+    Friend WithEvents txtParentesco1 As TextBox
+    Friend WithEvents Label13 As Label
 End Class

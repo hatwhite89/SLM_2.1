@@ -166,7 +166,51 @@
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
+    Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
+        Try
+            Dim n As String = ""
+            If (lbltipo.Text = "Categoria") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el médico en la factura?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_Categoria.txtcodigoTipo.Text = txtcodigo.Text
+                    M_Categoria.txtdescripcionTipo.Text = rtxtcomentario.Text
+                    Me.Close()
+                End If
+            ElseIf (lbltipo.Text = "ClasificacionContacto") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el tipo de clasificación?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_ClasificacionContacto.txtcodigoTipo.Text = txtcodigo.Text
+                    M_ClasificacionContacto.txtcomentarioTipo.Text = rtxtcomentario.Text
+                    Me.Close()
+                End If
+            ElseIf (lbltipo.Text = "ClasificacionItem") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el tipo de clasificación?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    E_ClasificacionItem.txtcodigoTipo.Text = txtcodigo.Text
+                    E_ClasificacionItem.txtcomentarioTipo.Text = rtxtcomentario.Text
+                    Me.Close()
+                End If
+            ElseIf (lbltipo.Text = "M_Cliente") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el tipo de clasificación?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_Cliente.txtcodigoClasificacion.Text = txtcodigo.Text
+                    M_Cliente.txtnombreClasificacion.Text = rtxtcomentario.Text
+                    M_Cliente.lblcodeCategoria.Text = lblcodeCategoria.Text
+                    Me.Close()
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
     Private Sub txtcomentarioB_TextChanged(sender As Object, e As EventArgs) Handles txtcomentarioB.TextChanged
         Dim objTipoCla As New ClsTipoClasificacion
         With objTipoCla

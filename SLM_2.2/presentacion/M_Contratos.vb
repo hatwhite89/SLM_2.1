@@ -1,20 +1,30 @@
 ﻿Public Class M_Contratos
+    Dim objContratos As New ClsContratos
     Private Sub M_Contratos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'ACTUALIZAR LISTADO
+        seleccionarContratos()
+
+        'AGREGARLE COLOR AL DATAGRIDVIEW
+        alternarColoFilasDatagridview(dgbtabla)
+
+        'CAMBIAS NOMBRE COLUMNAS
+        dgbtabla.Columns("codigo").HeaderText = "Código"
+        dgbtabla.Columns("descripcion").HeaderText = "Descripción"
+
+        'DESHABILITAR
+        rtxtdescripcion.ReadOnly = True
+        txtcodigo.ReadOnly = True
+        btnmodificar.Enabled = False
+        btnguardar.Enabled = False
+        btnnuevo.Enabled = True
+    End Sub
+
+    Private Sub seleccionarContratos()
         Try
-            Dim objContratos As New ClsContratos
             Dim dv As DataView = objContratos.SeleccionarContratos.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
             dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
-
-            rtxtdescripcion.ReadOnly = True
-            txtcodigo.ReadOnly = True
-
-            btnmodificar.Enabled = False
-            btnguardar.Enabled = False
-            btnnuevo.Enabled = True
-
-            alternarColoFilasDatagridview(dgbtabla)
         Catch ex As Exception
 
         End Try
@@ -71,7 +81,6 @@
             End If
             If (Trim(rtxtdescripcion.Text) <> "") Then
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
-                Dim objContratos As New ClsContratos
                 With objContratos
                     .Descripcion_ = rtxtdescripcion.Text
                 End With
@@ -144,27 +153,34 @@
         Me.Close()
     End Sub
     Private Sub txtdescripcionB_TextChanged(sender As Object, e As EventArgs) Handles txtdescripcionB.TextChanged
+        'Try
+
+        '    With objContratos
+        '        .Descripcion_ = txtdescripcionB.Text
+        '    End With
+
+        '    If (Trim(txtdescripcionB.Text) <> "") Then
+        '        Dim dv As DataView = objContratos.BuscarContratos.DefaultView
+        '        dgbtabla.DataSource = dv
+        '        lblcantidad.Text = dv.Count
+        '        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        '    Else
+        '        Dim dv As DataView = objContratos.SeleccionarContratos.DefaultView
+        '        dgbtabla.DataSource = dv
+        '        lblcantidad.Text = dv.Count
+        '        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        '    End If
+
+        'Catch ex As Exception
+
+        'End Try
         Try
-
-            Dim objContratos As New ClsContratos
-            With objContratos
-                .Descripcion_ = txtdescripcionB.Text
-            End With
-
-            If (Trim(txtdescripcionB.Text) <> "") Then
-                Dim dv As DataView = objContratos.BuscarContratos.DefaultView
-                dgbtabla.DataSource = dv
-                lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
-            Else
-                Dim dv As DataView = objContratos.SeleccionarContratos.DefaultView
-                dgbtabla.DataSource = dv
-                lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
-            End If
-
+            Dim dv As DataView = dgbtabla.DataSource
+            dv.RowFilter = String.Format("descripcion Like '%{0}%'", txtdescripcionB.Text)
+            lblcantidad.Text = dv.Count
+            dgbtabla.DataSource = dv
         Catch ex As Exception
-
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 

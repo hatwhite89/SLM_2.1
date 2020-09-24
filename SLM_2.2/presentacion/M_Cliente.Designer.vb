@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class M_Cliente
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class M_Cliente
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Cliente))
         Me.mtxtidentidadClienteB = New System.Windows.Forms.MaskedTextBox()
@@ -418,6 +418,7 @@ Partial Class M_Cliente
         Me.txtnombreClasificacion.ReadOnly = True
         Me.txtnombreClasificacion.Size = New System.Drawing.Size(267, 22)
         Me.txtnombreClasificacion.TabIndex = 113
+        Me.txtnombreClasificacion.Visible = False
         '
         'txtnombreConvenio
         '
@@ -475,9 +476,11 @@ Partial Class M_Cliente
         '
         Me.txtcodigoClasificacion.Location = New System.Drawing.Point(212, 355)
         Me.txtcodigoClasificacion.Name = "txtcodigoClasificacion"
+        Me.txtcodigoClasificacion.ReadOnly = True
         Me.txtcodigoClasificacion.Size = New System.Drawing.Size(125, 22)
         Me.txtcodigoClasificacion.TabIndex = 107
         Me.txtcodigoClasificacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtcodigoClasificacion.Visible = False
         '
         'btnterminosPago
         '
@@ -1004,9 +1007,9 @@ Partial Class M_Cliente
         'cmbxClasificacion
         '
         Me.cmbxClasificacion.FormattingEnabled = True
-        Me.cmbxClasificacion.Location = New System.Drawing.Point(417, 374)
+        Me.cmbxClasificacion.Location = New System.Drawing.Point(212, 355)
         Me.cmbxClasificacion.Name = "cmbxClasificacion"
-        Me.cmbxClasificacion.Size = New System.Drawing.Size(121, 24)
+        Me.cmbxClasificacion.Size = New System.Drawing.Size(404, 24)
         Me.cmbxClasificacion.TabIndex = 133
         '
         'M_Cliente

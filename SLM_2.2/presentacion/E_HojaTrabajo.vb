@@ -148,8 +148,8 @@
             objOrdTrab.codigoSucursal_ = Convert.ToInt64(lblCodeSucursal.Text)
             Dim dv As DataView = objOrdTrab.ActualizarListadoHojaDeTrabajo(pendienteMuestra, noProcesado, enProceso, procesado, validado).DefaultView
 
-            dv.RowFilter = String.Format("codigoSucursal Like '%{0}%'", txtsucursal.Text)
-            dv.RowFilter = "codigoSubArea=" & Integer.Parse(lblCodeSubArea.Text)
+            'dv.RowFilter = String.Format("codigoSucursal Like '%{0}%'", txtsucursal.Text)
+            'dv.RowFilter = "codigoSubArea=" & Integer.Parse(lblCodeSubArea.Text)
             dt = dv.ToTable
             For index As Integer = 0 To dt.Rows.Count - 1
                 rowO = dt.Rows(index)

@@ -222,6 +222,7 @@
     <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
     <Compile Include="negocio\ClsTipoDeducciones.vb" />
+    <Compile Include="negocio\ClsTipoPermiso.vb" />
     <Compile Include="negocio\ClsUnidad.vb" />
     <Compile Include="negocio\ClsDetallePromociones.vb" />
     <Compile Include="negocio\ClsUnidadMedidaAlmacen.vb" />
@@ -1049,6 +1050,18 @@
     <Compile Include="presentacion\M_ListadoSede.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_ListadoTipoClasificacion.Designer.vb">
+      <DependentUpon>M_ListadoTipoClasificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ListadoTipoClasificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_ListadoValoresReferencia.Designer.vb">
+      <DependentUpon>M_ListadoValoresReferencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ListadoValoresReferencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_ListaPrecios.Designer.vb">
       <DependentUpon>M_ListaPrecios.vb</DependentUpon>
     </Compile>
@@ -1197,6 +1210,12 @@
       <DependentUpon>A_TipoDeposito.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_TipoDeposito.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\M_TipoPermiso.Designer.vb">
+      <DependentUpon>M_TipoPermiso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_TipoPermiso.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_TipoTermino.Designer.vb">
@@ -1653,6 +1672,12 @@
     <EmbeddedResource Include="presentacion\M_ListadoSede.resx">
       <DependentUpon>M_ListadoSede.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ListadoTipoClasificacion.resx">
+      <DependentUpon>M_ListadoTipoClasificacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ListadoValoresReferencia.resx">
+      <DependentUpon>M_ListadoValoresReferencia.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ListaPrecios.resx">
       <DependentUpon>M_ListaPrecios.vb</DependentUpon>
     </EmbeddedResource>
@@ -1727,6 +1752,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_TipoDeposito.resx">
       <DependentUpon>A_TipoDeposito.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_TipoPermiso.resx">
+      <DependentUpon>M_TipoPermiso.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_TipoTermino.resx">
       <DependentUpon>M_TipoTermino.vb</DependentUpon>

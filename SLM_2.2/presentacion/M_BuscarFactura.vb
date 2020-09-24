@@ -15,7 +15,7 @@ Public Class M_BuscarFactura
         Dim dv As DataView = objFact.SeleccionarFactura.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         '   CAMBIAR EL COLOR DE UN DATA GRID VIEW POR FILA O POR DEFECTO
         'dgbtabla.Rows(0).DefaultCellStyle.BackColor = Color.Green
         'dgbtabla.Rows(1).DefaultCellStyle.BackColor = Color.Green
@@ -185,7 +185,7 @@ Public Class M_BuscarFactura
                 Dim dv As DataView = objFact.BuscarFacturaNumeroF.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             Catch ex As Exception
                 MsgBox("No existe la factura.", MsgBoxStyle.Critical, "Validación")
             End Try
@@ -201,7 +201,7 @@ Public Class M_BuscarFactura
                 Dim dv As DataView = objFact.BuscarFacturaCliente.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             Catch ex As Exception
                 MsgBox("No existe la factura.", MsgBoxStyle.Critical, "Validación")
             End Try

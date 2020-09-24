@@ -1,18 +1,30 @@
 ﻿Public Class M_PuestoTrabajo
     Private Sub M_PuestoTrabajo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            'ACTUALIZAR LISTADO
             Dim objPuesto As New ClsPuestoTrabajo
             Dim dv As DataView = objPuesto.SeleccionarPuestoTrabajo.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
             dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+
+            'AGREGARLE COLOR AL DATAGRIDVIEW
             alternarColoFilasDatagridview(dgbtabla)
+
+            'OCULTAR COLUMNAS
+            Me.dgbtabla.Columns("codigoDepto").Visible = False
+            Me.dgbtabla.Columns("codigoArea").Visible = False
+
+            'CAMBIAS NOMBRE COLUMNAS
+            dgbtabla.Columns("codigo").HeaderText = "Código"
+            dgbtabla.Columns("descripcion").HeaderText = "Descripción"
+
+
+            'DESHABILITAR 
             rtxtdescripcion.ReadOnly = True
             txtcodigo.ReadOnly = True
             txtcodigoDepto.ReadOnly = True
-
             btnDepto.Enabled = False
-
             btnmodificar.Enabled = False
             btnguardar.Enabled = False
             btnnuevo.Enabled = True
@@ -204,27 +216,35 @@
         Me.Close()
     End Sub
     Private Sub txtdescripcionB_TextChanged(sender As Object, e As EventArgs) Handles txtdescripcionB.TextChanged
+        'Try
+
+        '    'Dim objPuesto As New ClsPuestoTrabajo
+        '    'With objPuesto
+        '    '    .Descripcion_ = txtdescripcionB.Text
+        '    'End With
+
+        '    'If (Trim(txtdescripcionB.Text) <> "") Then
+        '    '    Dim dv As DataView = objPuesto.BuscarPuestoTrabajo.DefaultView
+        '    '    dgbtabla.DataSource = dv
+        '    '    lblcantidad.Text = dv.Count
+        '    '    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        '    'Else
+        '    '    Dim dv As DataView = objPuesto.SeleccionarPuestoTrabajo.DefaultView
+        '    '    dgbtabla.DataSource = dv
+        '    '    lblcantidad.Text = dv.Count
+        '    '    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        '    'End If
+        'Catch ex As Exception
+
+        'End Try
+
         Try
-
-            Dim objPuesto As New ClsPuestoTrabajo
-            With objPuesto
-                .Descripcion_ = txtdescripcionB.Text
-            End With
-
-            If (Trim(txtdescripcionB.Text) <> "") Then
-                Dim dv As DataView = objPuesto.BuscarPuestoTrabajo.DefaultView
-                dgbtabla.DataSource = dv
-                lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
-            Else
-                Dim dv As DataView = objPuesto.SeleccionarPuestoTrabajo.DefaultView
-                dgbtabla.DataSource = dv
-                lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
-            End If
-
+            Dim dv As DataView = dgbtabla.DataSource
+            dv.RowFilter = String.Format("descripcion Like '%{0}%'", txtdescripcionB.Text)
+            lblcantidad.Text = dv.Count
+            dgbtabla.DataSource = dv
         Catch ex As Exception
-
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
