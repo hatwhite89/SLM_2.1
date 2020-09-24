@@ -54,21 +54,25 @@
     End Sub
     Private Sub CargarDGOI()
         DataGridView2.Columns.Clear()
+
         Dim clsOI As New clsDetalleOI
-        Dim dv2 As New DataView
-        dv2 = clsOI.listarOrdenesInternasConParametro(txtCodSolicitud.Text).DefaultView
-        DataGridView2.DataSource = dv2
+        Dim dv4 As New DataView
+        dv4 = clsOI.listarOrdenesInternasConParametro(txtCodSolicitud.Text).DefaultView
+        DataGridView2.DataSource = dv4
+
     End Sub
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        txtLote.Text = DataGridView1.Rows(e.RowIndex).Cells(0).Value
-        codigo_producto = Integer.Parse(DataGridView1.Rows(e.RowIndex).Cells(1).Value)
-        txtProducto.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
-        id_entrada = Integer.Parse(DataGridView1.Rows(e.RowIndex).Cells(6).Value)
+        Try
+            codigo_producto = Integer.Parse(DataGridView1.Rows(e.RowIndex).Cells(0).Value)
+            txtProducto.Text = DataGridView1.Rows(e.RowIndex).Cells(1).Value.ToString
+        Catch ex As Exception
+
+        End Try
+
+
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs)
 
-    End Sub
 
     Private Sub CrearOI()
 
@@ -79,26 +83,22 @@
         'limpiar data
 
         txtProducto.Clear()
-        txtLote.Clear()
+
         txtCantidadRequerida.Clear()
 
         DataGridView2.Columns.Clear()
 
     End Sub
-    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
 
-    End Sub
 
     Private Sub txtAgregarInventario_Click(sender As Object, e As EventArgs) Handles txtAgregarInventario.Click
-        Try
-            agregarInventario()
-            Threading.Thread.Sleep(1000)
-            ActualizarOrdenInterna()
-            CargarDGOI()
-            txtCantidadRequerida.Text = "0"
-        Catch ex As Exception
-            MsgBox("Debe seleccionar un producto y asignar una cantidad")
-        End Try
+
+        agregarInventario()
+
+
+
+
+
 
     End Sub
 
@@ -108,26 +108,46 @@
         With clsD
             .Id_producto1 = Integer.Parse(codigo_producto)
             .Producto1 = txtProducto.Text
-            .Lote1 = txtLote.Text
+            .Lote1 = ""
             .Cantidad_solicitada1 = Double.Parse(txtCantidadRequerida.Text)
             .Cantidad_entregada1 = 0
             .Id_oi1 = Integer.Parse(txtCodSolicitud.Text)
-            .Id_entrada1 = id_entrada
+            .Id_entrada1 = "0"
 
         End With
 
         If clsD.RegistrarOrdenInterna = "1" Then
-            DataGridView2.Columns.Clear()
+
+            Dim clsOI As New clsOrdenInterna
+
+            With clsOI
+                .Fecha_entrega1 = DateTimePicker1.Value
+                .Id_departamento1 = Integer.Parse(cmbDepartamento.SelectedValue)
+                .Id_entrega1 = Integer.Parse(cmbSede.SelectedValue)
+                .Id_oi1 = Integer.Parse(txtCodSolicitud.Text)
+                .Id_solicitante1 = Integer.Parse(codigo_usuario)
+                .Estado1 = "creado"
+
+            End With
+
+            If clsOI.ActualizarOrdenInterna = "1" Then
+                DataGridView2.Columns.Clear()
+
+
+                Dim dv4 As New DataView
+                dv4 = clsD.listarOrdenesInternasConParametro(txtCodSolicitud.Text).DefaultView
+                DataGridView2.DataSource = dv4
+                txtCantidadRequerida.Text = "0"
+            End If
+
         End If
     End Sub
 
-    Private Sub cmbDepartamento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbDepartamento.SelectedIndexChanged
-
-    End Sub
 
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
         CrearOI()
         CargarDGOC()
+        txtCantidadRequerida.Text = 1
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -190,30 +210,6 @@
         End Try
     End Sub
 
-    Private Sub UI_Card1_Click(sender As Object, e As EventArgs)
 
-    End Sub
 
-    Private Sub UI_Calendar1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Public Sub ActualizarOrdenInterna()
-        Dim clsOI As New clsOrdenInterna
-
-        With clsOI
-            .Fecha_entrega1 = DateTimePicker1.Value
-            .Id_departamento1 = Integer.Parse(cmbDepartamento.SelectedValue)
-            .Id_entrega1 = Integer.Parse(cmbSede.SelectedValue)
-            .Id_oi1 = Integer.Parse(txtCodSolicitud.Text)
-            .Id_solicitante1 = Integer.Parse(codigo_usuario)
-            .Estado1 = "creado"
-
-        End With
-
-        If clsOI.ActualizarOrdenInterna = "1" Then
-
-        End If
-
-    End Sub
 End Class

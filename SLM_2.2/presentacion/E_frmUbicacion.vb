@@ -1,7 +1,7 @@
 ﻿Public Class E_frmUbicacion
     Private Sub E_frmUbicacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Almacen()
-
+        alternarColoFilasDatagridview(DataGridView1)
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
@@ -56,6 +56,7 @@
 
             txtDescripcion.ReadOnly = False
             txtNombreAlmacen.ReadOnly = False
+            Button5.Enabled = True
         Catch ex As Exception
 
         End Try
@@ -79,5 +80,6 @@
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Limpiar()
+        Button5.Enabled = True
     End Sub
 End Class

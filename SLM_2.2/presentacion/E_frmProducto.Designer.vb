@@ -29,6 +29,8 @@ Partial Class E_frmProducto
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_frmProducto))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.txtCantidadMinima = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -52,6 +54,15 @@ Partial Class E_frmProducto
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.id_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad_minima = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_unidad_medida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
@@ -67,6 +78,8 @@ Partial Class E_frmProducto
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.txtCantidadMinima)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.Label9)
@@ -90,6 +103,24 @@ Partial Class E_frmProducto
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Generales"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox1.Location = New System.Drawing.Point(421, 109)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(240, 20)
+        Me.TextBox1.TabIndex = 29
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(317, 113)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(37, 13)
+        Me.Label10.TabIndex = 28
+        Me.Label10.Text = "Precio"
         '
         'txtCantidadMinima
         '
@@ -182,7 +213,7 @@ Partial Class E_frmProducto
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(317, 119)
+        Me.Label3.Location = New System.Drawing.Point(317, 133)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(109, 13)
         Me.Label3.TabIndex = 8
@@ -210,9 +241,9 @@ Partial Class E_frmProducto
         '
         Me.txtDescripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtDescripcion.Location = New System.Drawing.Point(320, 135)
+        Me.txtDescripcion.Location = New System.Drawing.Point(320, 149)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(368, 76)
+        Me.txtDescripcion.Size = New System.Drawing.Size(368, 62)
         Me.txtDescripcion.TabIndex = 2
         Me.txtDescripcion.Text = ""
         '
@@ -315,6 +346,7 @@ Partial Class E_frmProducto
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_producto, Me.nombre_producto, Me.precio, Me.marca, Me.modelo, Me.descripcion, Me.cantidad_minima, Me.nombre_unidad_medida, Me.nombre_categoria})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSalmon
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -340,6 +372,60 @@ Partial Class E_frmProducto
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.Size = New System.Drawing.Size(682, 144)
         Me.DataGridView1.TabIndex = 0
+        '
+        'id_producto
+        '
+        Me.id_producto.DataPropertyName = "id_producto"
+        Me.id_producto.HeaderText = "ID"
+        Me.id_producto.Name = "id_producto"
+        '
+        'nombre_producto
+        '
+        Me.nombre_producto.DataPropertyName = "nombre_producto"
+        Me.nombre_producto.HeaderText = "PRODUCTO"
+        Me.nombre_producto.Name = "nombre_producto"
+        '
+        'precio
+        '
+        Me.precio.DataPropertyName = "precio"
+        Me.precio.HeaderText = "PRECIO"
+        Me.precio.Name = "precio"
+        '
+        'marca
+        '
+        Me.marca.DataPropertyName = "marca"
+        Me.marca.HeaderText = "MARCA"
+        Me.marca.Name = "marca"
+        '
+        'modelo
+        '
+        Me.modelo.DataPropertyName = "modelo"
+        Me.modelo.HeaderText = "MODELO"
+        Me.modelo.Name = "modelo"
+        '
+        'descripcion
+        '
+        Me.descripcion.DataPropertyName = "descripcion"
+        Me.descripcion.HeaderText = "DESCRIPCION"
+        Me.descripcion.Name = "descripcion"
+        '
+        'cantidad_minima
+        '
+        Me.cantidad_minima.DataPropertyName = "cantidad_minima"
+        Me.cantidad_minima.HeaderText = "MINIMO"
+        Me.cantidad_minima.Name = "cantidad_minima"
+        '
+        'nombre_unidad_medida
+        '
+        Me.nombre_unidad_medida.DataPropertyName = "nombre_unidad_medida"
+        Me.nombre_unidad_medida.HeaderText = "UNIDAD "
+        Me.nombre_unidad_medida.Name = "nombre_unidad_medida"
+        '
+        'nombre_categoria
+        '
+        Me.nombre_categoria.DataPropertyName = "nombre_categoria"
+        Me.nombre_categoria.HeaderText = "CATEGORIA"
+        Me.nombre_categoria.Name = "nombre_categoria"
         '
         'Panel1
         '
@@ -432,4 +518,15 @@ Partial Class E_frmProducto
     Friend WithEvents Label7 As Label
     Friend WithEvents BindingSource1 As BindingSource
     Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents id_producto As DataGridViewTextBoxColumn
+    Friend WithEvents nombre_producto As DataGridViewTextBoxColumn
+    Friend WithEvents precio As DataGridViewTextBoxColumn
+    Friend WithEvents marca As DataGridViewTextBoxColumn
+    Friend WithEvents modelo As DataGridViewTextBoxColumn
+    Friend WithEvents descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents cantidad_minima As DataGridViewTextBoxColumn
+    Friend WithEvents nombre_unidad_medida As DataGridViewTextBoxColumn
+    Friend WithEvents nombre_categoria As DataGridViewTextBoxColumn
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label10 As Label
 End Class
