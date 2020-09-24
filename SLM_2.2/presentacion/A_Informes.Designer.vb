@@ -23,7 +23,6 @@ Partial Class A_Informes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Informes))
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnEjecutar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -48,30 +47,18 @@ Partial Class A_Informes
         Me.txtSubArea = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dtpDesde = New System.Windows.Forms.DateTimePicker()
-        Me.GroupBox1.SuspendLayout()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.btnEjecutar)
-        Me.GroupBox1.Controls.Add(Me.btnCancelar)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(654, 52)
-        Me.GroupBox1.TabIndex = 0
-        Me.GroupBox1.TabStop = False
         '
         'btnEjecutar
         '
         Me.btnEjecutar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnEjecutar.BackColor = System.Drawing.Color.White
         Me.btnEjecutar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnEjecutar.Location = New System.Drawing.Point(492, 19)
+        Me.btnEjecutar.Location = New System.Drawing.Point(475, 13)
         Me.btnEjecutar.Name = "btnEjecutar"
         Me.btnEjecutar.Size = New System.Drawing.Size(75, 23)
         Me.btnEjecutar.TabIndex = 2
@@ -83,7 +70,7 @@ Partial Class A_Informes
         Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCancelar.BackColor = System.Drawing.Color.White
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnCancelar.Location = New System.Drawing.Point(573, 19)
+        Me.btnCancelar.Location = New System.Drawing.Point(556, 13)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 1
@@ -94,7 +81,8 @@ Partial Class A_Informes
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(7, 16)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(13, 10)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(321, 24)
         Me.Label1.TabIndex = 0
@@ -125,9 +113,9 @@ Partial Class A_Informes
         Me.GroupBox2.Controls.Add(Me.txtSubArea)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.dtpDesde)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 70)
+        Me.GroupBox2.Location = New System.Drawing.Point(11, 50)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(654, 179)
+        Me.GroupBox2.Size = New System.Drawing.Size(619, 179)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información de consulta"
@@ -180,14 +168,14 @@ Partial Class A_Informes
         Me.txtNombreSubArea.Enabled = False
         Me.txtNombreSubArea.Location = New System.Drawing.Point(169, 54)
         Me.txtNombreSubArea.Name = "txtNombreSubArea"
-        Me.txtNombreSubArea.Size = New System.Drawing.Size(285, 20)
+        Me.txtNombreSubArea.Size = New System.Drawing.Size(250, 20)
         Me.txtNombreSubArea.TabIndex = 16
         '
         'PictureBox1
         '
         Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(500, 25)
+        Me.PictureBox1.Location = New System.Drawing.Point(465, 25)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(142, 138)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -225,7 +213,7 @@ Partial Class A_Informes
         'btnBuscarExamen
         '
         Me.btnBuscarExamen.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnBuscarExamen.Location = New System.Drawing.Point(460, 82)
+        Me.btnBuscarExamen.Location = New System.Drawing.Point(425, 82)
         Me.btnBuscarExamen.Name = "btnBuscarExamen"
         Me.btnBuscarExamen.Size = New System.Drawing.Size(32, 23)
         Me.btnBuscarExamen.TabIndex = 11
@@ -239,7 +227,7 @@ Partial Class A_Informes
         Me.txtNombreExamen.Enabled = False
         Me.txtNombreExamen.Location = New System.Drawing.Point(169, 84)
         Me.txtNombreExamen.Name = "txtNombreExamen"
-        Me.txtNombreExamen.Size = New System.Drawing.Size(285, 20)
+        Me.txtNombreExamen.Size = New System.Drawing.Size(250, 20)
         Me.txtNombreExamen.TabIndex = 10
         '
         'txtCodExamen
@@ -292,7 +280,7 @@ Partial Class A_Informes
         '
         Me.btnBuscarSubArea.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnBuscarSubArea.Enabled = False
-        Me.btnBuscarSubArea.Location = New System.Drawing.Point(460, 53)
+        Me.btnBuscarSubArea.Location = New System.Drawing.Point(425, 53)
         Me.btnBuscarSubArea.Name = "btnBuscarSubArea"
         Me.btnBuscarSubArea.Size = New System.Drawing.Size(32, 23)
         Me.btnBuscarSubArea.TabIndex = 4
@@ -326,27 +314,38 @@ Partial Class A_Informes
         Me.dtpDesde.Size = New System.Drawing.Size(100, 20)
         Me.dtpDesde.TabIndex = 1
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnEjecutar)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.btnCancelar)
+        Me.Panel1.Location = New System.Drawing.Point(-1, -1)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(646, 45)
+        Me.Panel1.TabIndex = 2
+        '
         'A_Informes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(677, 256)
+        Me.ClientSize = New System.Drawing.Size(642, 238)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Name = "A_Informes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Informes de Ordenes de Trabajo"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnEjecutar As Button
     Friend WithEvents btnCancelar As Button
     Friend WithEvents Label1 As Label
@@ -371,4 +370,5 @@ Partial Class A_Informes
     Friend WithEvents lblCodSubArea As Label
     Friend WithEvents lblCodExamen As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Panel1 As Panel
 End Class

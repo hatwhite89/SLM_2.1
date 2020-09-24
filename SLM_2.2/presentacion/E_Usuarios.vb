@@ -87,6 +87,7 @@
 
         Try
 
+            alternarColoFilasDatagridview(dtUsuarios)
             dtUsuarios.DataSource = usuario.listarUsuarios
             dtUsuarios.Columns("codPerfil").Visible = False
 

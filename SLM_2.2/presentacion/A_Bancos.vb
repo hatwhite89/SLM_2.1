@@ -13,37 +13,42 @@
     ':::::::::::::::::::::::::::::::::::::::::::::::::::
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        If txtCodBreve.Text <> "" And txtNombreBanco.Text <> "" Then
+        Dim n As String = MsgBox("¿Desea guardar el nuevo banco?", MsgBoxStyle.YesNo, "Validación")
+        If n = vbYes Then
 
-            Try
-                'Captura de variables
-                With Banco
-                    .cod_breve = txtCodBreve.Text
-                    .Nombre_Banco = txtNombreBanco.Text
-                    .Estad_o = chkEstado.Checked
-                End With
 
-                'Registro de Banco
-                If Banco.registrarNuevoBanco() = 1 Then
-                    dtBancos.DataSource = Banco.listarBancos()
-                    MsgBox("El registro se guardo exitosamente")
-                    Limpiar()
+            If txtCodBreve.Text <> "" And txtNombreBanco.Text <> "" Then
 
+                Try
+                    'Captura de variables
+                    With Banco
+                        .cod_breve = txtCodBreve.Text
+                        .Nombre_Banco = txtNombreBanco.Text
+                        .Estad_o = chkEstado.Checked
+                    End With
+
+                    'Registro de Banco
+                    If Banco.registrarNuevoBanco() = 1 Then
+                        dtBancos.DataSource = Banco.listarBancos()
+                        MsgBox("El registro se guardo exitosamente")
+                        Limpiar()
+
+                    End If
+
+                Catch ex As Exception
+                    MsgBox("Error al guardar el registro. Detalle: " + ex.Message)
+                End Try
+            Else
+
+                MsgBox("Existen campos vacíos.")
+
+                If txtCodBreve.Text = "" Then
+                    txtCodBreve.BackColor = Color.Red
+                ElseIf txtNombreBanco.Text = "" Then
+                    txtNombreBanco.BackColor = Color.Red
                 End If
 
-            Catch ex As Exception
-                MsgBox("Error al guardar el registro. Detalle: " + ex.Message)
-            End Try
-        Else
-
-            MsgBox("Existen campos vacíos.")
-
-            If txtCodBreve.Text = "" Then
-                txtCodBreve.BackColor = Color.Red
-            ElseIf txtNombreBanco.Text = "" Then
-                txtNombreBanco.BackColor = Color.Red
             End If
-
         End If
 
     End Sub
@@ -55,22 +60,25 @@
     End Sub
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Try
-            'Captura de variables
-            With Banco
-                .Cod = Convert.ToInt32(txtCodigo.Text)
-                .cod_breve = txtCodBreve.Text
-                .Nombre_Banco = txtNombreBanco.Text
-                .Estad_o = chkEstado.Checked
+            Dim n As String = MsgBox("¿Desea modificar el registro de banco?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
 
-                'Modificación de Banco
-                .modificarBanco()
-                Limpiar()
-                dtBancos.DataSource = Banco.listarBancos()
-                btnCrear.Enabled = False
-                btnModificar.Enabled = False
-                btnGuardar.Enabled = True
-            End With
+                'Captura de variables
+                With Banco
+                    .Cod = Convert.ToInt32(txtCodigo.Text)
+                    .cod_breve = txtCodBreve.Text
+                    .Nombre_Banco = txtNombreBanco.Text
+                    .Estad_o = chkEstado.Checked
 
+                    'Modificación de Banco
+                    .modificarBanco()
+                    Limpiar()
+                    dtBancos.DataSource = Banco.listarBancos()
+                    btnCrear.Enabled = False
+                    btnModificar.Enabled = False
+                    btnGuardar.Enabled = True
+                End With
+            End If
         Catch ex As Exception
 
 

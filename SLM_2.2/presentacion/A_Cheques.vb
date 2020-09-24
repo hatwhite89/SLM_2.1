@@ -13,75 +13,77 @@ Public Class A_Cheques
         Dim tipo As String = ""
 
         Try
+            Dim n As String = MsgBox("¿Desea guardar el registro de cheque?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
 
-            If txtMonto.Text <> "" And txtcodProvee.Text <> "" Then
+                If txtMonto.Text <> "" And txtcodProvee.Text <> "" Then
 
-                If rbtnDiferido.Checked = True Then
-                    tipo = "diferido"
-                ElseIf rbtnPagare.Checked = True Then
-                    tipo = "pagare"
-                ElseIf rbtnCheque.Checked = True Then
-                    tipo = "cheque"
+                    If rbtnDiferido.Checked = True Then
+                        tipo = "diferido"
+                    ElseIf rbtnPagare.Checked = True Then
+                        tipo = "pagare"
+                    ElseIf rbtnCheque.Checked = True Then
+                        tipo = "cheque"
+                    End If
+
+                    With cheque
+
+                        .Cod_Cheque = Convert.ToInt32(txtNro.Text)
+                        .Mont_o = Convert.ToDouble(txtMonto.Text)
+                        .Fecha_reg = dtpFechaReg.Value
+                        .Fecha_Vto = dtpFechaVto.Value
+                        .Cod_BreveProvee = txtcodProvee.Text
+                        .Nombre_Proveedor = txtNombreProvee.Text
+                        .Estad_o = "Acreditado"
+                        .Descripcio_n = txtVoucher.Text
+                        .Comentari_o = txtComentario.Text
+                        .Fecha_Acreditacion = dtpAcredita.Value
+                        .Fecha_Rechazo = dtpRechazo.Value
+                        .Fecha_emision = dtpEmision.Value
+                        .Fecha_cancelado = dtpCancelado.Value
+                        .Tip_o = tipo
+
+                        If txtCtaOrigen.Text = "" Then
+                            .cta_Origen = Convert.ToInt32("211100")
+                        Else
+                            .cta_Origen = txtCtaOrigen.Text
+                        End If
+
+                        .cta_Temporal = Convert.ToInt32(txtCtaTemporal.Text)
+                        .cta_Destino = Convert.ToInt32(txtCtaDestino.Text)
+
+                        'Actualizar Cheque
+                        .modificarCheque()
+
+                        If .modificarCheque = 1 Then
+
+                            MsgBox("El cheque se guardo correctamente para su impresión.")
+                            btnImprimir.Visible = True
+
+                            letras = A_Cheques.Numalet.ToCardinal(txtMonto.Text)
+
+                        End If
+
+                        Dim fila As String = frmPagos.lblFila.Text
+
+                        frmPagos.dtDetallePagos.Rows(fila).Cells(5).Value = txtNroCheq.Text
+                        frmPagos.chkPagado.Checked = True
+
+                    End With
+
+                ElseIf txtMonto.Text = "" Then
+
+                    MsgBox("Error al guardar. Uno de los campos requeridos está vacio.")
+                    txtMonto.BackColor = Color.Red
+
+                ElseIf txtcodProvee.Text = "" Then
+
+                    MsgBox("Error al guardar. Uno de los campos requeridos está vacio.")
+                    txtcodProvee.BackColor = Color.Red
+                    txtNombreProvee.BackColor = Color.Red
+
                 End If
-
-                With cheque
-
-                    .Cod_Cheque = Convert.ToInt32(txtNro.Text)
-                    .Mont_o = Convert.ToDouble(txtMonto.Text)
-                    .Fecha_reg = dtpFechaReg.Value
-                    .Fecha_Vto = dtpFechaVto.Value
-                    .Cod_BreveProvee = txtcodProvee.Text
-                    .Nombre_Proveedor = txtNombreProvee.Text
-                    .Estad_o = "Acreditado"
-                    .Descripcio_n = txtVoucher.Text
-                    .Comentari_o = txtComentario.Text
-                    .Fecha_Acreditacion = dtpAcredita.Value
-                    .Fecha_Rechazo = dtpRechazo.Value
-                    .Fecha_emision = dtpEmision.Value
-                    .Fecha_cancelado = dtpCancelado.Value
-                    .Tip_o = tipo
-
-                    If txtCtaOrigen.Text = "" Then
-                        .cta_Origen = Convert.ToInt32("211100")
-                    Else
-                        .cta_Origen = txtCtaOrigen.Text
-                    End If
-
-                    .cta_Temporal = Convert.ToInt32(txtCtaTemporal.Text)
-                    .cta_Destino = Convert.ToInt32(txtCtaDestino.Text)
-
-                    'Actualizar Cheque
-                    .modificarCheque()
-
-                    If .modificarCheque = 1 Then
-
-                        MsgBox("El cheque se guardo correctamente para su impresión.")
-                        btnImprimir.Visible = True
-
-                        letras = A_Cheques.Numalet.ToCardinal(txtMonto.Text)
-
-                    End If
-
-                    Dim fila As String = frmPagos.lblFila.Text
-
-                    frmPagos.dtDetallePagos.Rows(fila).Cells(5).Value = txtNroCheq.Text
-                    frmPagos.chkPagado.Checked = True
-
-                End With
-
-            ElseIf txtMonto.Text = "" Then
-
-                MsgBox("Error al guardar. Uno de los campos requeridos está vacio.")
-                txtMonto.BackColor = Color.Red
-
-            ElseIf txtcodProvee.Text = "" Then
-
-                MsgBox("Error al guardar. Uno de los campos requeridos está vacio.")
-                txtcodProvee.BackColor = Color.Red
-                txtNombreProvee.BackColor = Color.Red
-
             End If
-
         Catch ex As Exception
 
             MsgBox("Error al guardar. Detalle: " + ex.Message)
@@ -267,9 +269,12 @@ Public Class A_Cheques
     End Sub
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
+        Dim n As String = MsgBox("Se mostrara una vista previa del cheque para verificar información antes de imprimir.", MsgBoxStyle.OkCancel, "Validación")
+        If n = vbOK Then
 
+            A_PrintCheque.Show()
 
-        A_PrintCheque.Show()
+        End If
 
 
     End Sub
@@ -731,6 +736,11 @@ Public Class A_Cheques
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        Dim n As String = MsgBox("¿Desea modificar el estado del cheque?", MsgBoxStyle.YesNo, "Validación")
+        If n = vbYes Then
+
+        End If
+
 
     End Sub
 End Class

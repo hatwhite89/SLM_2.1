@@ -61,7 +61,7 @@
     Private Sub A_Cuenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
 
-
+            alternarColoFilasDatagridview(dtCuentas)
             'Listar cuentas al cargar formulario
             dtCuentas.DataSource = Cuenta.listarCuentas
 
@@ -276,6 +276,11 @@
 
         End Try
 
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
 
     End Sub
 End Class

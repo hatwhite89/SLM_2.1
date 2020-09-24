@@ -255,7 +255,18 @@
         End If
     End Sub
 
+    Private Sub btnExportar_Click(sender As Object, e As EventArgs) Handles btnExportar.Click
+
+        Try
+            'Genera excel desde el data Gridview
+            E_frmInventario.GridAExcel(dtDepreciacion)
 
 
 
+        Catch ex As Exception
+
+        End Try
+
+
+    End Sub
 End Class
