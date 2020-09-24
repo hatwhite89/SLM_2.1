@@ -99,32 +99,37 @@
     Private Sub btnEjecutar_Click(sender As Object, e As EventArgs) Handles btnEjecutar.Click
 
 
-        If chkExamenes.Checked = True Then
+        Try
 
-            seleccion = 0
+            Dim n As String = MsgBox("¿Desea ejecutar la consulta?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
+                If chkExamenes.Checked = True Then
 
-            If lblCodExamen.Text = "CodExamen" Then
-                MsgBox("Se debe completar la información para generar el informe.")
-            Else
-                A_PrintInforme.lblform.Text = "Informe"
-                A_PrintInforme.Show()
+                    seleccion = 0
+
+                    If lblCodExamen.Text = "CodExamen" Then
+                        MsgBox("Se debe completar la información para generar el informe.")
+                    Else
+                        A_PrintInforme.lblform.Text = "Informe"
+                        A_PrintInforme.Show()
+                    End If
+                ElseIf chkPeriodoTiempo.Checked = True Then
+                    seleccion = 1
+                    If lblCodSubArea.Text = "CodSubArea" Then
+                        MsgBox("Se debe completar la información para generar el informe.")
+                    Else
+                        A_PrintInforme.lblform.Text = "Informe"
+                        A_PrintInforme.Show()
+                    End If
+
+                End If
+
+
             End If
-        ElseIf chkPeriodoTiempo.Checked = True Then
-            seleccion = 1
-            If lblCodSubArea.Text = "CodSubArea" Then
-                MsgBox("Se debe completar la información para generar el informe.")
-            Else
-                A_PrintInforme.lblform.Text = "Informe"
-                A_PrintInforme.Show()
-            End If
 
-        End If
+        Catch ex As Exception
 
-
-
-
-
-
+        End Try
 
     End Sub
 

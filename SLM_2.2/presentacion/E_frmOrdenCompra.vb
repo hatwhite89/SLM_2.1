@@ -9,7 +9,7 @@ Public Class E_frmOrdenCompra
     Dim objOrd As New ClsProducto
     Dim clsProve As New ClsProveedor
     Dim codigo_globas As String
-    Dim dv As DataView = objOrd.RecuperarProducto2.DefaultView
+    Dim dv As DataView = objOrd.RecuperarProducto3.DefaultView
     Dim dvProveedor As DataView = clsProve.listarProveedoresOC.DefaultView
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -19,8 +19,8 @@ Public Class E_frmOrdenCompra
                 With clsDOC
                     .ProductoOC = txtProducto.Text
                     .CodigoProducto = Integer.Parse(txtCodigProducto.Text)
-                    .Numerolote = txtLoteProducto.Text
-                    .FechaVencimiento = DateTimePicker1.Value
+                    .Numerolote = ""
+                    .FechaVencimiento = Date.Today
                     .ISVDetalle = Double.Parse(txtISVProductos.Text)
                     .CantidadDetalle = Double.Parse(txtCantidadProductos.Text)
                     .PrecioUnitario = Double.Parse(txtPrecioUnitarioProductos.Text)
@@ -45,8 +45,26 @@ Public Class E_frmOrdenCompra
             MsgBox("Debe asignar una orden de compra")
         End If
         CargarDetalleOC(txtCodOC.Text)
+        sumarData()
+        sumarData2()
     End Sub
 
+    Public Sub sumarData()
+        Dim Total As Single
+
+        For Each row As DataGridViewRow In Me.DataGridView1.Rows
+            Total += Val(row.Cells(3).Value)
+        Next
+        Label44.Text = Total.ToString
+    End Sub
+    Public Sub sumarData2()
+        Dim Total As Single
+
+        For Each row As DataGridViewRow In Me.DataGridView1.Rows
+            Total += Val(row.Cells(4).Value)
+        Next
+        Label46.Text = Total.ToString
+    End Sub
     Private Sub BindingNavigatorMovePreviousItem_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -58,14 +76,15 @@ Public Class E_frmOrdenCompra
 
 
         dv.RowFilter = String.Format("CONVERT(nombre_producto, System.String) LIKE '%{0}%'", TextBox10.Text)
-        DataGridView3.DataSource = dv
+        DataGridView9.DataSource = dv
     End Sub
 
     Public Sub E_frmOrdenCompra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        RadioButton2.Checked = False
+        RadioButton1.Checked = False
         alternarColoFilasDatagridview(DataGridView1)
         alternarColoFilasDatagridview(DataGridView2)
-        alternarColoFilasDatagridview(DataGridView3)
+        alternarColoFilasDatagridview(DataGridView9)
         alternarColoFilasDatagridview(DataGridView4)
         alternarColoFilasDatagridview(DataGridView5)
         alternarColoFilasDatagridview(DataGridView6)
@@ -77,12 +96,10 @@ Public Class E_frmOrdenCompra
         Label38.Text = ""
         Dim TableUM As New DataTable
         Dim TableUM2 As New DataTable
-        Dim clsP As New ClsProducto
+
         Dim clsOC As New ClsOrdenDeCompra
 
-        TableUM.Load(clsP.RecuperarProductoOC())
 
-        DataGridView3.DataSource = TableUM
 
         'detalle orden
         txtISVProductos.Text = "0"
@@ -100,13 +117,8 @@ Public Class E_frmOrdenCompra
         Dim dvOC As DataView = clsOCOB.RecuperarOC.DefaultView
         DataGridView2.DataSource = dvOC
     End Sub
-    Private Sub DataGridView3_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellClick
-        Try
-            txtCodigProducto.Text = DataGridView3.Rows(e.RowIndex).Cells(0).Value
-            txtProducto.Text = DataGridView3.Rows(e.RowIndex).Cells(1).Value
-        Catch ex As Exception
+    Private Sub DataGridView3_Click(sender As Object, e As DataGridViewCellEventArgs)
 
-        End Try
 
     End Sub
 
@@ -116,7 +128,7 @@ Public Class E_frmOrdenCompra
         DataGridView1.DataSource = dvOC
     End Sub
 
-    Private Sub TextBox14_TextChanged(sender As Object, e As EventArgs) Handles txtPrecioUnitarioProductos.TextChanged
+    Private Sub TextBox14_TextChanged(sender As Object, e As EventArgs) Handles TextBox4.TextChanged
         Try
             Dim resultado As Double
             resultado = Double.Parse(txtCantidadProductos.Text) * Double.Parse(txtPrecioUnitarioProductos.Text)
@@ -137,6 +149,9 @@ Public Class E_frmOrdenCompra
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        RadioButton1.Checked = True
+        Button3.Enabled = True
+        Button5.Enabled = True
         txtCodOC.Clear()
         txtConsignado.Clear()
         txtAutorizado.Clear()
@@ -150,7 +165,7 @@ Public Class E_frmOrdenCompra
         txtObservaciones.Clear()
         txtProducto.Clear()
         txtCodigProducto.Clear()
-        txtLoteProducto.Clear()
+
         txtISVProductos.Clear()
         txtCantidadProductos.Clear()
         txtPrecioUnitarioProductos.Clear()
@@ -166,8 +181,10 @@ Public Class E_frmOrdenCompra
         txtLugarEntrega.ReadOnly = False
         txtCondicionEntrega.ReadOnly = False
         txtObservaciones.ReadOnly = False
+        Dim clsP As New ClsProducto
+        TableUM.Load(clsP.RecuperarProductoOC2())
 
-
+        DataGridView9.DataSource = TableUM
 
 
 
@@ -183,15 +200,25 @@ Public Class E_frmOrdenCompra
         txtCantidadProductos.Text = "0"
         txtNombreProveedor.Text = nombre_proveedorOC
 
+        Button3.Enabled = True
+        Button5.Enabled = True
+        Button1.Enabled = True
+        btnProveedor.Enabled = True
+        Button2.Enabled = True
     End Sub
     Private Sub ActualizarOC()
         Dim clsOC As New ClsOrdenDeCompra
         Dim estado As Boolean = False
+        If RadioButton1.Checked = True Then
+            estado = False
+        ElseIf RadioButton1.Checked = False Then
+            estado = True
+        End If
         Try
             With clsOC
                 .IdOrdenCompra = Integer.Parse(txtCodOC.Text)
                 .IdFormaPago = cmbFormaDePago.SelectedValue()
-                .FechaElaboracion = DateTimePicker1.Value
+                .FechaElaboracion = ""
                 .Condiciones = txtCondicionEntrega.Text
                 .UsuarioConsignado = txtConsignado.Text
                 .UsuarioSolicito = txtAutorizado.Text
@@ -262,7 +289,7 @@ Public Class E_frmOrdenCompra
 
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs)
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         CargarDGOC()
     End Sub
 
@@ -338,7 +365,7 @@ Public Class E_frmOrdenCompra
 
     End Sub
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+    Private Sub Button10_Click(sender As Object, e As EventArgs)
         MsgBox(RichTextBox1.Text)
     End Sub
 
@@ -346,14 +373,14 @@ Public Class E_frmOrdenCompra
         Dim clsD As New clsDetalleOC
 
         With clsD
-            .IdDetalleOC = codigo_globas
+            .IdDetalleOC = txtCodOC.Text
         End With
 
         If clsD.EliminarDetalleOCEntrada() = "1" Then
             MsgBox("Se elimino fila")
             CargarDetalleOC(txtCodOC.Text)
         End If
-
+        sumarData()
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
@@ -365,11 +392,14 @@ Public Class E_frmOrdenCompra
 
     End Sub
 
-    Private Sub Label33_Click(sender As Object, e As EventArgs) Handles Label33.Click
+    Private Sub DataGridView9_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView9.CellClick
+        Try
+            txtCodigProducto.Text = DataGridView9.Rows(e.RowIndex).Cells(0).Value
+            txtProducto.Text = DataGridView9.Rows(e.RowIndex).Cells(1).Value
+            txtPrecioUnitarioProductos.Text = DataGridView9.Rows(e.RowIndex).Cells(2).Value
+        Catch ex As Exception
 
+        End Try
     End Sub
 
-    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
-
-    End Sub
 End Class

@@ -191,23 +191,13 @@ Partial Class Form1
         Me.Button23 = New System.Windows.Forms.Button()
         Me.TabControl5 = New System.Windows.Forms.TabControl()
         Me.TabPage10 = New System.Windows.Forms.TabPage()
-        Me.PictureBox66 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox65 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox64 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox63 = New System.Windows.Forms.PictureBox()
         Me.PictureBox62 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox61 = New System.Windows.Forms.PictureBox()
         Me.PictureBox60 = New System.Windows.Forms.PictureBox()
         Me.PictureBox59 = New System.Windows.Forms.PictureBox()
         Me.PictureBox58 = New System.Windows.Forms.PictureBox()
         Me.PictureBox57 = New System.Windows.Forms.PictureBox()
         Me.PictureBox56 = New System.Windows.Forms.PictureBox()
-        Me.btnSolicitudes = New System.Windows.Forms.Button()
-        Me.btnBI = New System.Windows.Forms.Button()
         Me.btnFactCompra = New System.Windows.Forms.Button()
-        Me.btnAutorizacion = New System.Windows.Forms.Button()
-        Me.btnInventario = New System.Windows.Forms.Button()
-        Me.btnProveedores = New System.Windows.Forms.Button()
         Me.btnOrdenInterna = New System.Windows.Forms.Button()
         Me.btnEntradas = New System.Windows.Forms.Button()
         Me.btnSalidas = New System.Windows.Forms.Button()
@@ -220,6 +210,21 @@ Partial Class Form1
         Me.btnUnidadMedida = New System.Windows.Forms.Button()
         Me.btnProducto = New System.Windows.Forms.Button()
         Me.btnCategoria = New System.Windows.Forms.Button()
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.PictureBox64 = New System.Windows.Forms.PictureBox()
+        Me.btnBI = New System.Windows.Forms.Button()
+        Me.PictureBox65 = New System.Windows.Forms.PictureBox()
+        Me.btnInventario = New System.Windows.Forms.Button()
+        Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.PictureBox63 = New System.Windows.Forms.PictureBox()
+        Me.btnAutorizacion = New System.Windows.Forms.Button()
+        Me.PictureBox66 = New System.Windows.Forms.PictureBox()
+        Me.btnSolicitudes = New System.Windows.Forms.Button()
+        Me.TabPage12 = New System.Windows.Forms.TabPage()
+        Me.PictureBox53 = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.PictureBox61 = New System.Windows.Forms.PictureBox()
+        Me.btnProveedores = New System.Windows.Forms.Button()
         Me.lblMiUser = New System.Windows.Forms.Label()
         Me.lblUserCod = New System.Windows.Forms.Label()
         Me.PictureBox55 = New System.Windows.Forms.PictureBox()
@@ -228,6 +233,8 @@ Partial Class Form1
         Me.lblHora = New System.Windows.Forms.Label()
         Me.banner = New UIDC.UI_TitleBanner()
         Me.bntCerrar = New System.Windows.Forms.Button()
+        Me.PictureBox54 = New System.Windows.Forms.PictureBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -318,12 +325,7 @@ Partial Class Form1
         Me.Panel4.SuspendLayout()
         Me.TabControl5.SuspendLayout()
         Me.TabPage10.SuspendLayout()
-        CType(Me.PictureBox66, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox65, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox64, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox63, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox62, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox61, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox60, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox59, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox58, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -333,7 +335,17 @@ Partial Class Form1
         CType(Me.PictureBox69, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox68, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox67, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage7.SuspendLayout()
+        CType(Me.PictureBox64, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox65, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage8.SuspendLayout()
+        CType(Me.PictureBox63, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox66, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage12.SuspendLayout()
+        CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox61, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox54, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -2395,6 +2407,9 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl5.Controls.Add(Me.TabPage10)
         Me.TabControl5.Controls.Add(Me.TabPage11)
+        Me.TabControl5.Controls.Add(Me.TabPage7)
+        Me.TabControl5.Controls.Add(Me.TabPage8)
+        Me.TabControl5.Controls.Add(Me.TabPage12)
         Me.TabControl5.Location = New System.Drawing.Point(1, 37)
         Me.TabControl5.Name = "TabControl5"
         Me.TabControl5.SelectedIndex = 0
@@ -2403,23 +2418,13 @@ Partial Class Form1
         '
         'TabPage10
         '
-        Me.TabPage10.Controls.Add(Me.PictureBox66)
-        Me.TabPage10.Controls.Add(Me.PictureBox65)
-        Me.TabPage10.Controls.Add(Me.PictureBox64)
-        Me.TabPage10.Controls.Add(Me.PictureBox63)
         Me.TabPage10.Controls.Add(Me.PictureBox62)
-        Me.TabPage10.Controls.Add(Me.PictureBox61)
         Me.TabPage10.Controls.Add(Me.PictureBox60)
         Me.TabPage10.Controls.Add(Me.PictureBox59)
         Me.TabPage10.Controls.Add(Me.PictureBox58)
         Me.TabPage10.Controls.Add(Me.PictureBox57)
         Me.TabPage10.Controls.Add(Me.PictureBox56)
-        Me.TabPage10.Controls.Add(Me.btnSolicitudes)
-        Me.TabPage10.Controls.Add(Me.btnBI)
         Me.TabPage10.Controls.Add(Me.btnFactCompra)
-        Me.TabPage10.Controls.Add(Me.btnAutorizacion)
-        Me.TabPage10.Controls.Add(Me.btnInventario)
-        Me.TabPage10.Controls.Add(Me.btnProveedores)
         Me.TabPage10.Controls.Add(Me.btnOrdenInterna)
         Me.TabPage10.Controls.Add(Me.btnEntradas)
         Me.TabPage10.Controls.Add(Me.btnSalidas)
@@ -2433,65 +2438,15 @@ Partial Class Form1
         Me.TabPage10.Text = "Almacen"
         Me.TabPage10.UseVisualStyleBackColor = True
         '
-        'PictureBox66
-        '
-        Me.PictureBox66.Image = CType(resources.GetObject("PictureBox66.Image"), System.Drawing.Image)
-        Me.PictureBox66.Location = New System.Drawing.Point(266, 214)
-        Me.PictureBox66.Name = "PictureBox66"
-        Me.PictureBox66.Size = New System.Drawing.Size(77, 50)
-        Me.PictureBox66.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox66.TabIndex = 41
-        Me.PictureBox66.TabStop = False
-        '
-        'PictureBox65
-        '
-        Me.PictureBox65.Image = CType(resources.GetObject("PictureBox65.Image"), System.Drawing.Image)
-        Me.PictureBox65.Location = New System.Drawing.Point(130, 214)
-        Me.PictureBox65.Name = "PictureBox65"
-        Me.PictureBox65.Size = New System.Drawing.Size(77, 50)
-        Me.PictureBox65.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox65.TabIndex = 40
-        Me.PictureBox65.TabStop = False
-        '
-        'PictureBox64
-        '
-        Me.PictureBox64.Image = CType(resources.GetObject("PictureBox64.Image"), System.Drawing.Image)
-        Me.PictureBox64.Location = New System.Drawing.Point(9, 214)
-        Me.PictureBox64.Name = "PictureBox64"
-        Me.PictureBox64.Size = New System.Drawing.Size(77, 50)
-        Me.PictureBox64.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox64.TabIndex = 39
-        Me.PictureBox64.TabStop = False
-        '
-        'PictureBox63
-        '
-        Me.PictureBox63.Image = CType(resources.GetObject("PictureBox63.Image"), System.Drawing.Image)
-        Me.PictureBox63.Location = New System.Drawing.Point(399, 112)
-        Me.PictureBox63.Name = "PictureBox63"
-        Me.PictureBox63.Size = New System.Drawing.Size(77, 50)
-        Me.PictureBox63.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox63.TabIndex = 38
-        Me.PictureBox63.TabStop = False
-        '
         'PictureBox62
         '
         Me.PictureBox62.Image = CType(resources.GetObject("PictureBox62.Image"), System.Drawing.Image)
-        Me.PictureBox62.Location = New System.Drawing.Point(266, 112)
+        Me.PictureBox62.Location = New System.Drawing.Point(130, 112)
         Me.PictureBox62.Name = "PictureBox62"
         Me.PictureBox62.Size = New System.Drawing.Size(77, 50)
         Me.PictureBox62.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox62.TabIndex = 37
         Me.PictureBox62.TabStop = False
-        '
-        'PictureBox61
-        '
-        Me.PictureBox61.Image = CType(resources.GetObject("PictureBox61.Image"), System.Drawing.Image)
-        Me.PictureBox61.Location = New System.Drawing.Point(130, 112)
-        Me.PictureBox61.Name = "PictureBox61"
-        Me.PictureBox61.Size = New System.Drawing.Size(77, 50)
-        Me.PictureBox61.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox61.TabIndex = 36
-        Me.PictureBox61.TabStop = False
         '
         'PictureBox60
         '
@@ -2543,38 +2498,6 @@ Partial Class Form1
         Me.PictureBox56.TabIndex = 31
         Me.PictureBox56.TabStop = False
         '
-        'btnSolicitudes
-        '
-        Me.btnSolicitudes.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btnSolicitudes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnSolicitudes.Enabled = False
-        Me.btnSolicitudes.FlatAppearance.BorderSize = 0
-        Me.btnSolicitudes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSolicitudes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSolicitudes.ForeColor = System.Drawing.Color.White
-        Me.btnSolicitudes.Location = New System.Drawing.Point(266, 263)
-        Me.btnSolicitudes.Name = "btnSolicitudes"
-        Me.btnSolicitudes.Size = New System.Drawing.Size(77, 39)
-        Me.btnSolicitudes.TabIndex = 30
-        Me.btnSolicitudes.Text = "Solicitudes"
-        Me.btnSolicitudes.UseVisualStyleBackColor = False
-        '
-        'btnBI
-        '
-        Me.btnBI.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btnBI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnBI.Enabled = False
-        Me.btnBI.FlatAppearance.BorderSize = 0
-        Me.btnBI.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBI.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBI.ForeColor = System.Drawing.Color.White
-        Me.btnBI.Location = New System.Drawing.Point(9, 263)
-        Me.btnBI.Name = "btnBI"
-        Me.btnBI.Size = New System.Drawing.Size(77, 39)
-        Me.btnBI.TabIndex = 29
-        Me.btnBI.Text = "BI"
-        Me.btnBI.UseVisualStyleBackColor = False
-        '
         'btnFactCompra
         '
         Me.btnFactCompra.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -2591,54 +2514,6 @@ Partial Class Form1
         Me.btnFactCompra.Text = "Factura compras"
         Me.btnFactCompra.UseVisualStyleBackColor = False
         '
-        'btnAutorizacion
-        '
-        Me.btnAutorizacion.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btnAutorizacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnAutorizacion.Enabled = False
-        Me.btnAutorizacion.FlatAppearance.BorderSize = 0
-        Me.btnAutorizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAutorizacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAutorizacion.ForeColor = System.Drawing.Color.White
-        Me.btnAutorizacion.Location = New System.Drawing.Point(399, 164)
-        Me.btnAutorizacion.Name = "btnAutorizacion"
-        Me.btnAutorizacion.Size = New System.Drawing.Size(77, 39)
-        Me.btnAutorizacion.TabIndex = 27
-        Me.btnAutorizacion.Text = "Autorizaciones"
-        Me.btnAutorizacion.UseVisualStyleBackColor = False
-        '
-        'btnInventario
-        '
-        Me.btnInventario.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btnInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnInventario.Enabled = False
-        Me.btnInventario.FlatAppearance.BorderSize = 0
-        Me.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInventario.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnInventario.ForeColor = System.Drawing.Color.White
-        Me.btnInventario.Location = New System.Drawing.Point(130, 263)
-        Me.btnInventario.Name = "btnInventario"
-        Me.btnInventario.Size = New System.Drawing.Size(77, 39)
-        Me.btnInventario.TabIndex = 26
-        Me.btnInventario.Text = "Inventario"
-        Me.btnInventario.UseVisualStyleBackColor = False
-        '
-        'btnProveedores
-        '
-        Me.btnProveedores.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btnProveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnProveedores.Enabled = False
-        Me.btnProveedores.FlatAppearance.BorderSize = 0
-        Me.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnProveedores.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProveedores.ForeColor = System.Drawing.Color.White
-        Me.btnProveedores.Location = New System.Drawing.Point(130, 163)
-        Me.btnProveedores.Name = "btnProveedores"
-        Me.btnProveedores.Size = New System.Drawing.Size(77, 40)
-        Me.btnProveedores.TabIndex = 25
-        Me.btnProveedores.Text = "Proveedores"
-        Me.btnProveedores.UseVisualStyleBackColor = False
-        '
         'btnOrdenInterna
         '
         Me.btnOrdenInterna.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -2648,7 +2523,7 @@ Partial Class Form1
         Me.btnOrdenInterna.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnOrdenInterna.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnOrdenInterna.ForeColor = System.Drawing.Color.White
-        Me.btnOrdenInterna.Location = New System.Drawing.Point(266, 163)
+        Me.btnOrdenInterna.Location = New System.Drawing.Point(130, 163)
         Me.btnOrdenInterna.Name = "btnOrdenInterna"
         Me.btnOrdenInterna.Size = New System.Drawing.Size(77, 39)
         Me.btnOrdenInterna.TabIndex = 24
@@ -2813,6 +2688,205 @@ Partial Class Form1
         Me.btnCategoria.Text = "Categoria "
         Me.btnCategoria.UseVisualStyleBackColor = False
         '
+        'TabPage7
+        '
+        Me.TabPage7.Controls.Add(Me.PictureBox54)
+        Me.TabPage7.Controls.Add(Me.Button2)
+        Me.TabPage7.Controls.Add(Me.PictureBox64)
+        Me.TabPage7.Controls.Add(Me.btnBI)
+        Me.TabPage7.Controls.Add(Me.PictureBox65)
+        Me.TabPage7.Controls.Add(Me.btnInventario)
+        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage7.Name = "TabPage7"
+        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage7.Size = New System.Drawing.Size(575, 398)
+        Me.TabPage7.TabIndex = 2
+        Me.TabPage7.Text = "Inventario"
+        Me.TabPage7.UseVisualStyleBackColor = True
+        '
+        'PictureBox64
+        '
+        Me.PictureBox64.Image = CType(resources.GetObject("PictureBox64.Image"), System.Drawing.Image)
+        Me.PictureBox64.Location = New System.Drawing.Point(107, 10)
+        Me.PictureBox64.Name = "PictureBox64"
+        Me.PictureBox64.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox64.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox64.TabIndex = 44
+        Me.PictureBox64.TabStop = False
+        '
+        'btnBI
+        '
+        Me.btnBI.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnBI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBI.FlatAppearance.BorderSize = 0
+        Me.btnBI.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBI.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBI.ForeColor = System.Drawing.Color.White
+        Me.btnBI.Location = New System.Drawing.Point(107, 59)
+        Me.btnBI.Name = "btnBI"
+        Me.btnBI.Size = New System.Drawing.Size(77, 39)
+        Me.btnBI.TabIndex = 43
+        Me.btnBI.Text = "BI"
+        Me.btnBI.UseVisualStyleBackColor = False
+        '
+        'PictureBox65
+        '
+        Me.PictureBox65.Image = CType(resources.GetObject("PictureBox65.Image"), System.Drawing.Image)
+        Me.PictureBox65.Location = New System.Drawing.Point(7, 10)
+        Me.PictureBox65.Name = "PictureBox65"
+        Me.PictureBox65.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox65.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox65.TabIndex = 42
+        Me.PictureBox65.TabStop = False
+        '
+        'btnInventario
+        '
+        Me.btnInventario.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnInventario.Enabled = False
+        Me.btnInventario.FlatAppearance.BorderSize = 0
+        Me.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnInventario.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInventario.ForeColor = System.Drawing.Color.White
+        Me.btnInventario.Location = New System.Drawing.Point(7, 59)
+        Me.btnInventario.Name = "btnInventario"
+        Me.btnInventario.Size = New System.Drawing.Size(77, 39)
+        Me.btnInventario.TabIndex = 41
+        Me.btnInventario.Text = "Inventario"
+        Me.btnInventario.UseVisualStyleBackColor = False
+        '
+        'TabPage8
+        '
+        Me.TabPage8.Controls.Add(Me.PictureBox63)
+        Me.TabPage8.Controls.Add(Me.btnAutorizacion)
+        Me.TabPage8.Controls.Add(Me.PictureBox66)
+        Me.TabPage8.Controls.Add(Me.btnSolicitudes)
+        Me.TabPage8.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage8.Name = "TabPage8"
+        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage8.Size = New System.Drawing.Size(575, 398)
+        Me.TabPage8.TabIndex = 3
+        Me.TabPage8.Text = "Solicitudes"
+        Me.TabPage8.UseVisualStyleBackColor = True
+        '
+        'PictureBox63
+        '
+        Me.PictureBox63.Image = CType(resources.GetObject("PictureBox63.Image"), System.Drawing.Image)
+        Me.PictureBox63.Location = New System.Drawing.Point(112, 14)
+        Me.PictureBox63.Name = "PictureBox63"
+        Me.PictureBox63.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox63.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox63.TabIndex = 45
+        Me.PictureBox63.TabStop = False
+        '
+        'btnAutorizacion
+        '
+        Me.btnAutorizacion.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnAutorizacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnAutorizacion.Enabled = False
+        Me.btnAutorizacion.FlatAppearance.BorderSize = 0
+        Me.btnAutorizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAutorizacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAutorizacion.ForeColor = System.Drawing.Color.White
+        Me.btnAutorizacion.Location = New System.Drawing.Point(112, 66)
+        Me.btnAutorizacion.Name = "btnAutorizacion"
+        Me.btnAutorizacion.Size = New System.Drawing.Size(77, 39)
+        Me.btnAutorizacion.TabIndex = 44
+        Me.btnAutorizacion.Text = "Autorizaciones"
+        Me.btnAutorizacion.UseVisualStyleBackColor = False
+        '
+        'PictureBox66
+        '
+        Me.PictureBox66.Image = CType(resources.GetObject("PictureBox66.Image"), System.Drawing.Image)
+        Me.PictureBox66.Location = New System.Drawing.Point(6, 14)
+        Me.PictureBox66.Name = "PictureBox66"
+        Me.PictureBox66.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox66.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox66.TabIndex = 43
+        Me.PictureBox66.TabStop = False
+        '
+        'btnSolicitudes
+        '
+        Me.btnSolicitudes.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnSolicitudes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSolicitudes.Enabled = False
+        Me.btnSolicitudes.FlatAppearance.BorderSize = 0
+        Me.btnSolicitudes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSolicitudes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSolicitudes.ForeColor = System.Drawing.Color.White
+        Me.btnSolicitudes.Location = New System.Drawing.Point(6, 63)
+        Me.btnSolicitudes.Name = "btnSolicitudes"
+        Me.btnSolicitudes.Size = New System.Drawing.Size(77, 39)
+        Me.btnSolicitudes.TabIndex = 42
+        Me.btnSolicitudes.Text = "Solicitudes"
+        Me.btnSolicitudes.UseVisualStyleBackColor = False
+        '
+        'TabPage12
+        '
+        Me.TabPage12.Controls.Add(Me.PictureBox53)
+        Me.TabPage12.Controls.Add(Me.Button1)
+        Me.TabPage12.Controls.Add(Me.PictureBox61)
+        Me.TabPage12.Controls.Add(Me.btnProveedores)
+        Me.TabPage12.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage12.Name = "TabPage12"
+        Me.TabPage12.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage12.Size = New System.Drawing.Size(575, 398)
+        Me.TabPage12.TabIndex = 4
+        Me.TabPage12.Text = "Proveedores"
+        Me.TabPage12.UseVisualStyleBackColor = True
+        '
+        'PictureBox53
+        '
+        Me.PictureBox53.Image = CType(resources.GetObject("PictureBox53.Image"), System.Drawing.Image)
+        Me.PictureBox53.Location = New System.Drawing.Point(112, 14)
+        Me.PictureBox53.Name = "PictureBox53"
+        Me.PictureBox53.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox53.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox53.TabIndex = 40
+        Me.PictureBox53.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.Enabled = False
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(112, 65)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(77, 40)
+        Me.Button1.TabIndex = 39
+        Me.Button1.Text = "Evaluacion"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'PictureBox61
+        '
+        Me.PictureBox61.Image = CType(resources.GetObject("PictureBox61.Image"), System.Drawing.Image)
+        Me.PictureBox61.Location = New System.Drawing.Point(7, 14)
+        Me.PictureBox61.Name = "PictureBox61"
+        Me.PictureBox61.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox61.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox61.TabIndex = 38
+        Me.PictureBox61.TabStop = False
+        '
+        'btnProveedores
+        '
+        Me.btnProveedores.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnProveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnProveedores.Enabled = False
+        Me.btnProveedores.FlatAppearance.BorderSize = 0
+        Me.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnProveedores.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnProveedores.ForeColor = System.Drawing.Color.White
+        Me.btnProveedores.Location = New System.Drawing.Point(7, 65)
+        Me.btnProveedores.Name = "btnProveedores"
+        Me.btnProveedores.Size = New System.Drawing.Size(77, 40)
+        Me.btnProveedores.TabIndex = 37
+        Me.btnProveedores.Text = "Proveedores"
+        Me.btnProveedores.UseVisualStyleBackColor = False
+        '
         'lblMiUser
         '
         Me.lblMiUser.AutoSize = True
@@ -2922,6 +2996,31 @@ Partial Class Form1
         Me.bntCerrar.Text = "Salir"
         Me.bntCerrar.UseVisualStyleBackColor = False
         '
+        'PictureBox54
+        '
+        Me.PictureBox54.Image = CType(resources.GetObject("PictureBox54.Image"), System.Drawing.Image)
+        Me.PictureBox54.Location = New System.Drawing.Point(224, 10)
+        Me.PictureBox54.Name = "PictureBox54"
+        Me.PictureBox54.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox54.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox54.TabIndex = 46
+        Me.PictureBox54.TabStop = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(224, 59)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(77, 39)
+        Me.Button2.TabIndex = 45
+        Me.Button2.Text = "Movimientos"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2945,13 +3044,13 @@ Partial Class Form1
         Me.Controls.Add(Me.lblMiUser)
         Me.Controls.Add(Me.btnContabilidad)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Controls.Add(Me.PanelFactura)
         Me.Controls.Add(Me.PanelAlmacen)
         Me.Controls.Add(Me.PanelTalentoHumano)
         Me.Controls.Add(Me.panelMenu)
         Me.Controls.Add(Me.PanelSistema)
         Me.Controls.Add(Me.PanelLab)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.PanelFactura)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -3054,12 +3153,7 @@ Partial Class Form1
         Me.Panel4.PerformLayout()
         Me.TabControl5.ResumeLayout(False)
         Me.TabPage10.ResumeLayout(False)
-        CType(Me.PictureBox66, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox65, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox64, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox63, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox62, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox61, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox60, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox59, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox58, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3069,7 +3163,17 @@ Partial Class Form1
         CType(Me.PictureBox69, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox68, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox67, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage7.ResumeLayout(False)
+        CType(Me.PictureBox64, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox65, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage8.ResumeLayout(False)
+        CType(Me.PictureBox63, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox66, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage12.ResumeLayout(False)
+        CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox61, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox54, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3182,17 +3286,12 @@ Partial Class Form1
     Friend WithEvents btnOrdenInterna As Button
     Friend WithEvents btnEntradas As Button
     Friend WithEvents btnServidorCorreo As Button
-    Friend WithEvents btnInventario As Button
-    Friend WithEvents btnProveedores As Button
-    Friend WithEvents btnAutorizacion As Button
-    Friend WithEvents btnBI As Button
     Friend WithEvents btnFactCompra As Button
     Friend WithEvents btnDepto As Button
     Friend WithEvents btnArea As Button
     Friend WithEvents btnTipoDeducciones As Button
     Friend WithEvents btnProfesion As Button
     Friend WithEvents btnMaquinasLocales As Button
-    Friend WithEvents btnSolicitudes As Button
     Friend WithEvents PictureBox48 As PictureBox
     Friend WithEvents btnValoresRef As Button
     Friend WithEvents btnDiarioFacturacion As Button
@@ -3215,12 +3314,7 @@ Partial Class Form1
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel9 As Panel
-    Friend WithEvents PictureBox66 As PictureBox
-    Friend WithEvents PictureBox65 As PictureBox
-    Friend WithEvents PictureBox64 As PictureBox
-    Friend WithEvents PictureBox63 As PictureBox
     Friend WithEvents PictureBox62 As PictureBox
-    Friend WithEvents PictureBox61 As PictureBox
     Friend WithEvents PictureBox60 As PictureBox
     Friend WithEvents PictureBox59 As PictureBox
     Friend WithEvents PictureBox58 As PictureBox
@@ -3280,4 +3374,21 @@ Partial Class Form1
     Friend WithEvents lblHora As Label
     Friend WithEvents banner As UIDC.UI_TitleBanner
     Friend WithEvents bntCerrar As Button
+    Friend WithEvents TabPage7 As TabPage
+    Friend WithEvents PictureBox64 As PictureBox
+    Friend WithEvents btnBI As Button
+    Friend WithEvents PictureBox65 As PictureBox
+    Friend WithEvents btnInventario As Button
+    Friend WithEvents TabPage8 As TabPage
+    Friend WithEvents PictureBox63 As PictureBox
+    Friend WithEvents btnAutorizacion As Button
+    Friend WithEvents PictureBox66 As PictureBox
+    Friend WithEvents btnSolicitudes As Button
+    Friend WithEvents TabPage12 As TabPage
+    Friend WithEvents PictureBox53 As PictureBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents PictureBox61 As PictureBox
+    Friend WithEvents btnProveedores As Button
+    Friend WithEvents PictureBox54 As PictureBox
+    Friend WithEvents Button2 As Button
 End Class

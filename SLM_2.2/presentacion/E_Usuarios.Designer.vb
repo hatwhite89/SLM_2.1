@@ -83,6 +83,7 @@ Partial Class E_Usuarios
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtUsuarios.BackgroundColor = System.Drawing.Color.White
         Me.dtUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtUsuarios.Location = New System.Drawing.Point(6, 54)
         Me.dtUsuarios.Name = "dtUsuarios"

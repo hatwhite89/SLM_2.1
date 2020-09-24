@@ -90,9 +90,9 @@
             txtClasifica.Text = row("clasificacion")
 
             'Habilitar edicion
-            btnCrear.Visible = True
-            btnModificar.Visible = True
-            btnGuardar.Visible = False
+            btnCrear.Enabled = True
+            btnModificar.Enabled = True
+            btnGuardar.Enabled = False
 
 
         Catch ex As Exception
@@ -103,9 +103,9 @@
 
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
         Limpiar()
-        btnModificar.Visible = False
-        btnGuardar.Visible = True
-        btnCrear.Visible = False
+        btnModificar.Enabled = False
+        btnGuardar.Enabled = True
+        btnCrear.Enabled = False
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
@@ -137,9 +137,9 @@
                 'Limpiar campos
                 Limpiar()
 
-                btnCrear.Visible = False
-                btnModificar.Visible = False
-                btnGuardar.Visible = True
+                btnCrear.Enabled = False
+                btnModificar.Enabled = False
+                btnGuardar.Enabled = True
 
             Else
                 MsgBox("El Tipo de Clasificación no existe o hubo un error al seleccionarla.")
@@ -174,9 +174,9 @@
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
 
         Limpiar()
-        btnCrear.Visible = False
-        btnModificar.Visible = False
-        btnGuardar.Visible = True
+        btnCrear.Enabled = False
+        btnModificar.Enabled = False
+        btnGuardar.Enabled = True
         dtCategorias.DataSource = Categoria.listarCategoriasProveedor
 
     End Sub
@@ -200,8 +200,6 @@
 
         End Try
 
-
-
     End Sub
 
     Private Sub txtCodBreve_TextChanged(sender As Object, e As EventArgs) Handles txtCodBreve.TextChanged
@@ -220,5 +218,10 @@
         If txtClasifica.BackColor = Color.Red Then
             txtClasifica.BackColor = Color.White
         End If
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
+
     End Sub
 End Class

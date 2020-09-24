@@ -2,6 +2,9 @@
 
     Private Sub A_BuscarFormaPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+
+
+            alternarColoFilasDatagridview(dtFormasPago)
             Dim formaPago As New ClsFormaPago
             dtFormasPago.DataSource = formaPago.listarFormaPago
 

@@ -22,19 +22,23 @@ Partial Class E_frmSolicitudInternaAlmacen
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_frmSolicitudInternaAlmacen))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label32 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.id_detalle_oi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad_solicitada = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.UI_LabelMaterial1 = New UIDC.UI_LabelMaterial()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtLote = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtProducto = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -73,6 +77,9 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -110,11 +117,21 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(870, 538)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Crear Solicitud"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Label32
+        '
+        Me.Label32.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(363, 521)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(126, 13)
+        Me.Label32.TabIndex = 9
+        Me.Label32.Text = "Seleccionar fila a eliminar"
         '
         'GroupBox3
         '
@@ -132,16 +149,6 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Detalle solicitud"
         '
-        'Label32
-        '
-        Me.Label32.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(363, 521)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(126, 13)
-        Me.Label32.TabIndex = 9
-        Me.Label32.Text = "Seleccionar fila a eliminar"
-        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -153,7 +160,7 @@ Partial Class E_frmSolicitudInternaAlmacen
         '
         'Button1
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Location = New System.Drawing.Point(668, 11)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(187, 23)
@@ -170,22 +177,63 @@ Partial Class E_frmSolicitudInternaAlmacen
         '
         'DataGridView2
         '
+        Me.DataGridView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_detalle_oi, Me.nombre_producto1, Me.cantidad_solicitada, Me.usuario})
         Me.DataGridView2.Location = New System.Drawing.Point(3, 39)
         Me.DataGridView2.Name = "DataGridView2"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView2.RowHeadersWidth = 51
         Me.DataGridView2.Size = New System.Drawing.Size(853, 142)
         Me.DataGridView2.TabIndex = 0
+        '
+        'id_detalle_oi
+        '
+        Me.id_detalle_oi.DataPropertyName = "id_detalle_oi"
+        Me.id_detalle_oi.HeaderText = "IDDETALLE"
+        Me.id_detalle_oi.Name = "id_detalle_oi"
+        '
+        'nombre_producto1
+        '
+        Me.nombre_producto1.DataPropertyName = "nombre_producto"
+        Me.nombre_producto1.HeaderText = "PRODUCTO"
+        Me.nombre_producto1.Name = "nombre_producto1"
+        '
+        'cantidad_solicitada
+        '
+        Me.cantidad_solicitada.DataPropertyName = "cantidad_solicitada"
+        Me.cantidad_solicitada.HeaderText = "CANTIDAD SOLICITADA"
+        Me.cantidad_solicitada.Name = "cantidad_solicitada"
+        '
+        'usuario
+        '
+        Me.usuario.DataPropertyName = "usuario"
+        Me.usuario.HeaderText = "USUARIO"
+        Me.usuario.Name = "usuario"
         '
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.Controls.Add(Me.UI_LabelMaterial1)
-        Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Controls.Add(Me.txtLote)
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.txtProducto)
         Me.GroupBox2.Controls.Add(Me.Label2)
@@ -200,35 +248,6 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Inventario disponible"
-        '
-        'UI_LabelMaterial1
-        '
-        Me.UI_LabelMaterial1.AutoSize = True
-        Me.UI_LabelMaterial1.BackColor = System.Drawing.Color.Transparent
-        Me.UI_LabelMaterial1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.UI_LabelMaterial1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.UI_LabelMaterial1.Location = New System.Drawing.Point(418, 15)
-        Me.UI_LabelMaterial1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.UI_LabelMaterial1.Name = "UI_LabelMaterial1"
-        Me.UI_LabelMaterial1.Size = New System.Drawing.Size(0, 17)
-        Me.UI_LabelMaterial1.TabIndex = 8
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(3, 29)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(31, 13)
-        Me.Label10.TabIndex = 7
-        Me.Label10.Text = "Lote "
-        '
-        'txtLote
-        '
-        Me.txtLote.Location = New System.Drawing.Point(3, 48)
-        Me.txtLote.Name = "txtLote"
-        Me.txtLote.ReadOnly = True
-        Me.txtLote.Size = New System.Drawing.Size(144, 20)
-        Me.txtLote.TabIndex = 6
         '
         'Label9
         '
@@ -274,7 +293,7 @@ Partial Class E_frmSolicitudInternaAlmacen
         '
         'txtAgregarInventario
         '
-        Me.txtAgregarInventario.Location = New System.Drawing.Point(739, 49)
+        Me.txtAgregarInventario.Location = New System.Drawing.Point(718, 28)
         Me.txtAgregarInventario.Name = "txtAgregarInventario"
         Me.txtAgregarInventario.Size = New System.Drawing.Size(116, 23)
         Me.txtAgregarInventario.TabIndex = 2
@@ -292,7 +311,16 @@ Partial Class E_frmSolicitudInternaAlmacen
         '
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.nombre_producto, Me.descripcion})
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.DataGridView1.Location = New System.Drawing.Point(3, 74)
         Me.DataGridView1.Name = "DataGridView1"
@@ -413,7 +441,7 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.TabPage2.Controls.Add(Me.GroupBox4)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(870, 538)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Mis solicitudes"
@@ -614,6 +642,24 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.StatusStrip1.TabIndex = 10
         Me.StatusStrip1.Text = "StatusStrip1"
         '
+        'ID
+        '
+        Me.ID.DataPropertyName = "id_producto"
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        '
+        'nombre_producto
+        '
+        Me.nombre_producto.DataPropertyName = "nombre_producto"
+        Me.nombre_producto.HeaderText = "PRODUCTO"
+        Me.nombre_producto.Name = "nombre_producto"
+        '
+        'descripcion
+        '
+        Me.descripcion.DataPropertyName = "descripcion"
+        Me.descripcion.HeaderText = "DESCRIPCION"
+        Me.descripcion.Name = "descripcion"
+        '
         'E_frmSolicitudInternaAlmacen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -676,8 +722,6 @@ Partial Class E_frmSolicitudInternaAlmacen
     Friend WithEvents txtSolicitante As TextBox
     Friend WithEvents txtCodSolicitud As TextBox
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents Label10 As Label
-    Friend WithEvents txtLote As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txtProducto As TextBox
     Friend WithEvents Label11 As Label
@@ -702,5 +746,11 @@ Partial Class E_frmSolicitudInternaAlmacen
     Friend WithEvents Label15 As Label
     Friend WithEvents Label32 As Label
     Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents UI_LabelMaterial1 As UIDC.UI_LabelMaterial
+    Friend WithEvents id_detalle_oi As DataGridViewTextBoxColumn
+    Friend WithEvents nombre_producto1 As DataGridViewTextBoxColumn
+    Friend WithEvents cantidad_solicitada As DataGridViewTextBoxColumn
+    Friend WithEvents usuario As DataGridViewTextBoxColumn
+    Friend WithEvents ID As DataGridViewTextBoxColumn
+    Friend WithEvents nombre_producto As DataGridViewTextBoxColumn
+    Friend WithEvents descripcion As DataGridViewTextBoxColumn
 End Class

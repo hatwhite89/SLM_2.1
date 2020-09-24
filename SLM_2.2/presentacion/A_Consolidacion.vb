@@ -52,7 +52,7 @@
                     With depo
 
                         '.Banc_o = txtCodBanco.Text
-                        '  dt = .ConciliacionDeposito
+                        'dt = .ConciliacionDeposito
 
                         If dt.Rows.Count = Nothing Then
                             MsgBox("No existen transferencias del banco seleccionado.")

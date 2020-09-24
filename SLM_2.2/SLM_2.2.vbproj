@@ -804,6 +804,12 @@
     <Compile Include="presentacion\frmEntrada.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\frmMovimientoAlmacen.Designer.vb">
+      <DependentUpon>frmMovimientoAlmacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\frmMovimientoAlmacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_Area.Designer.vb">
       <DependentUpon>M_Area.vb</DependentUpon>
     </Compile>
@@ -1543,6 +1549,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\frmEntrada.resx">
       <DependentUpon>frmEntrada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\frmMovimientoAlmacen.resx">
+      <DependentUpon>frmMovimientoAlmacen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Area.resx">
       <DependentUpon>M_Area.vb</DependentUpon>

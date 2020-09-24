@@ -54,252 +54,257 @@
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        If txtBanco.Text <> "" And txtContado.Text <> "" And txtTipoConta.Text <> "" And txtCajero.Text <> "" And txtBanco.Text <> txtTipoConta.Text Then
+        Dim n As String = MsgBox("¿Desea guardar el depósito?", MsgBoxStyle.YesNo, "Validación")
+        If n = vbYes Then
 
 
-            'Guardar deposito en la base de datos
+            If txtBanco.Text <> "" And txtContado.Text <> "" And txtTipoConta.Text <> "" And txtCajero.Text <> "" And txtBanco.Text <> txtTipoConta.Text Then
 
-            Try
 
-                If lblTipoDeposito.Text = "Tarjeta" Then
+                'Guardar deposito en la base de datos
 
-                    'Campos para tipo de deposito : Tarjeta
-                    With Deposito
-                        .Fech_a = dtpFecha.Value
-                        .CodFP_Banco = Convert.ToInt32(lblCodFPBanco.Text)
-                        .conta_do = Convert.ToDouble(txtContado.Text)
-                        .CodFP_Contado = Convert.ToInt32(lblCodFPContado.Text)
-                        .total_Depositado = Convert.ToDouble(txtTotalDep.Text)
-                        .Mone_da = txtMoneda.Text
-                        .mon_base = Convert.ToInt32(txtMonBase.Text)
-                        .comisi_on = Convert.ToDouble(txtComision.Text)
-                        .Comenta_rio = txtComentario.Text
-                        .Tipo_Deposito = lblTipoDeposito.Text
-                        .cod_Cajero = txtCajero.Text
-                        .registrarDepositos()
+                Try
 
-                    End With
+                    If lblTipoDeposito.Text = "Tarjeta" Then
 
-                    '::::::::::::::::::::::::::::::::  Partida Contable  ::::::::::::::::::::::::::::::::
+                        'Campos para tipo de deposito : Tarjeta
+                        With Deposito
+                            .Fech_a = dtpFecha.Value
+                            .CodFP_Banco = Convert.ToInt32(lblCodFPBanco.Text)
+                            .conta_do = Convert.ToDouble(txtContado.Text)
+                            .CodFP_Contado = Convert.ToInt32(lblCodFPContado.Text)
+                            .total_Depositado = Convert.ToDouble(txtTotalDep.Text)
+                            .Mone_da = txtMoneda.Text
+                            .mon_base = Convert.ToInt32(txtMonBase.Text)
+                            .comisi_on = Convert.ToDouble(txtComision.Text)
+                            .Comenta_rio = txtComentario.Text
+                            .Tipo_Deposito = lblTipoDeposito.Text
+                            .cod_Cajero = txtCajero.Text
+                            .registrarDepositos()
 
-                    Try
+                        End With
 
-                        With asiento
+                        '::::::::::::::::::::::::::::::::  Partida Contable  ::::::::::::::::::::::::::::::::
 
-                            .Cod_Periodo = 1
-                            .Descrip = txtComentario.Text
-                            .Fecha_ = dtpFecha.Value
+                        Try
 
-                            Dim ultimo As DataTable
-                            Dim nro As DataRow
+                            With asiento
 
-                            ultimo = Deposito.listarUltimoDeposito
-                            nro = ultimo.Rows(0)
+                                .Cod_Periodo = 1
+                                .Descrip = txtComentario.Text
+                                .Fecha_ = dtpFecha.Value
 
-                            .Campo_Llave = Convert.ToInt32(nro("codDeposito"))
+                                Dim ultimo As DataTable
+                                Dim nro As DataRow
 
-                            If .registrarAsiento = 1 Then
+                                ultimo = Deposito.listarUltimoDeposito
+                                nro = ultimo.Rows(0)
 
-                                Try
+                                .Campo_Llave = Convert.ToInt32(nro("codDeposito"))
+
+                                If .registrarAsiento = 1 Then
+
+                                    Try
+                                        Dim codasi As DataTable
+                                        Dim cod As DataRow
+                                        With detalleAsiento
+
+                                            codasi = asiento.capturarCodAsiento
+                                            cod = codasi.Rows(0)
+
+                                            .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
+                                            .Debe_ = Convert.ToDouble(txtTotalDep.Text)
+                                            .Haber_ = 0.0
+
+                                            Dim dt As DataTable
+                                            Dim row As DataRow
+                                            buscarCodigo.Cod = txtBanco.Text
+                                            dt = buscarCodigo.infoFormaPago
+                                            row = dt.Rows(0)
+
+                                            .Cuenta_ = Convert.ToInt32(row("cuenta"))
+
+                                            .registrarDetalleAsiento()
+
+                                        End With
+
+                                        'Segunda Partida
+                                        Dim detalleAsiento2 As New ClsDetalleAsiento
+
+                                        With detalleAsiento2
+
+                                            .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
+                                            .Debe_ = 0.0
+                                            .Haber_ = Convert.ToDouble(txtContado.Text)
+
+                                            Dim dt As DataTable
+                                            Dim row As DataRow
+                                            buscarCodigo.Cod = txtTipoConta.Text
+                                            dt = buscarCodigo.infoFormaPago
+                                            row = dt.Rows(0)
+
+                                            .Cuenta_ = Convert.ToInt32(row("cuenta"))
+
+                                            .registrarDetalleAsiento()
+
+                                        End With
+
+                                        'Partida de Comisión
+                                        Dim comision As New ClsDetalleAsiento
+
+                                        With comision
+
+                                            .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
+                                            .Debe_ = Convert.ToDouble(txtComision.Text)
+                                            .Haber_ = 0.0
+                                            .Cuenta_ = 660005
+                                            .registrarDetalleAsiento()
+
+                                        End With
+
+                                    Catch ex As Exception
+                                        MsgBox("Error en detalle de asiento" + ex.Message)
+                                    End Try
+
+                                End If
+
+                            End With
+
+                        Catch ex As Exception
+                            MsgBox("Aqui hay error: " + ex.Message)
+                        End Try 'Partida Contable
+
+                        Limpiar()
+
+                    Else
+                        'Campos para tipo de deposito: Deposito Bancario
+                        With Deposito
+                            .Fech_a = dtpFecha.Value
+                            .CodFP_Banco = Convert.ToInt32(lblCodFPBanco.Text)
+                            .conta_do = Convert.ToDouble(txtContado.Text)
+                            .CodFP_Contado = Convert.ToInt32(lblCodFPContado.Text)
+                            .total_Depositado = Convert.ToDouble(txtContado.Text)
+                            .Mone_da = txtMoneda.Text
+                            .mon_base = Convert.ToInt32(txtMonBase.Text)
+                            .comisi_on = 0.0
+                            .Comenta_rio = txtComentario.Text
+                            .Tipo_Deposito = lblTipoDeposito.Text
+                            .cod_Cajero = txtCajero.Text
+                            .registrarDepositos()
+
+
+                        End With
+
+                        '::::::::::::::::::::::::::::::::  Partida Contable  ::::::::::::::::::::::::::::::::
+
+                        Try
+
+                            With asiento
+
+                                .Cod_Periodo = 1
+                                .Descrip = txtComentario.Text
+                                .Fecha_ = dtpFecha.Value
+
+                                Dim ultimo As DataTable
+                                Dim nro As DataRow
+
+                                ultimo = Deposito.listarUltimoDeposito
+                                nro = ultimo.Rows(0)
+
+                                .Campo_Llave = Convert.ToInt32(nro("codDeposito"))
+
+                                If .registrarAsiento = 1 Then
                                     Dim codasi As DataTable
                                     Dim cod As DataRow
-                                    With detalleAsiento
+                                    Try
 
-                                        codasi = asiento.capturarCodAsiento
-                                        cod = codasi.Rows(0)
+                                        With detalleAsiento
 
-                                        .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
-                                        .Debe_ = Convert.ToDouble(txtTotalDep.Text)
-                                        .Haber_ = 0.0
+                                            codasi = asiento.capturarCodAsiento
+                                            cod = codasi.Rows(0)
 
-                                        Dim dt As DataTable
-                                        Dim row As DataRow
-                                        buscarCodigo.Cod = txtBanco.Text
-                                        dt = buscarCodigo.infoFormaPago
-                                        row = dt.Rows(0)
+                                            .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
+                                            .Debe_ = Convert.ToDouble(txtContado.Text)
+                                            .Haber_ = 0.0
 
-                                        .Cuenta_ = Convert.ToInt32(row("cuenta"))
+                                            Dim dt As DataTable
+                                            Dim row As DataRow
+                                            buscarCodigo.Cod = txtBanco.Text
+                                            dt = buscarCodigo.infoFormaPago
+                                            row = dt.Rows(0)
 
-                                        .registrarDetalleAsiento()
+                                            .Cuenta_ = Convert.ToInt32(row("cuenta"))
 
-                                    End With
+                                            .registrarDetalleAsiento()
 
-                                    'Segunda Partida
-                                    Dim detalleAsiento2 As New ClsDetalleAsiento
+                                        End With
 
-                                    With detalleAsiento2
+                                        'Segunda Partida
+                                        Dim detalleAsiento2 As New ClsDetalleAsiento
 
-                                        .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
-                                        .Debe_ = 0.0
-                                        .Haber_ = Convert.ToDouble(txtContado.Text)
+                                        With detalleAsiento2
 
-                                        Dim dt As DataTable
-                                        Dim row As DataRow
-                                        buscarCodigo.Cod = txtTipoConta.Text
-                                        dt = buscarCodigo.infoFormaPago
-                                        row = dt.Rows(0)
+                                            .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
+                                            .Debe_ = 0.0
+                                            .Haber_ = Convert.ToDouble(txtContado.Text)
 
-                                        .Cuenta_ = Convert.ToInt32(row("cuenta"))
+                                            Dim dt As DataTable
+                                            Dim row As DataRow
+                                            buscarCodigo.Cod = txtTipoConta.Text
+                                            dt = buscarCodigo.infoFormaPago
+                                            row = dt.Rows(0)
 
-                                        .registrarDetalleAsiento()
+                                            .Cuenta_ = Convert.ToInt32(row("cuenta"))
 
-                                    End With
+                                            .registrarDetalleAsiento()
 
-                                    'Partida de Comisión
-                                    Dim comision As New ClsDetalleAsiento
+                                        End With
 
-                                    With comision
+                                    Catch ex As Exception
+                                        MsgBox("Error en detalle de asiento" + ex.Message)
+                                    End Try
 
-                                        .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
-                                        .Debe_ = Convert.ToDouble(txtComision.Text)
-                                        .Haber_ = 0.0
-                                        .Cuenta_ = 660005
-                                        .registrarDetalleAsiento()
+                                End If
 
-                                    End With
+                            End With
 
-                                Catch ex As Exception
-                                    MsgBox("Error en detalle de asiento" + ex.Message)
-                                End Try
+                        Catch ex As Exception
+                            MsgBox("Aqui hay error: " + ex.Message)
+                        End Try 'Partida Contable
 
-                            End If
+                        Limpiar()
 
-                        End With
+                    End If
 
-                    Catch ex As Exception
-                        MsgBox("Aqui hay error: " + ex.Message)
-                    End Try 'Partida Contable
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
 
-                    Limpiar()
+                MsgBox("Se registro un nuevo deposito.")
+                dtDepositos.DataSource = Deposito.listarDepositos
 
-                Else
-                    'Campos para tipo de deposito: Deposito Bancario
-                    With Deposito
-                        .Fech_a = dtpFecha.Value
-                        .CodFP_Banco = Convert.ToInt32(lblCodFPBanco.Text)
-                        .conta_do = Convert.ToDouble(txtContado.Text)
-                        .CodFP_Contado = Convert.ToInt32(lblCodFPContado.Text)
-                        .total_Depositado = Convert.ToDouble(txtContado.Text)
-                        .Mone_da = txtMoneda.Text
-                        .mon_base = Convert.ToInt32(txtMonBase.Text)
-                        .comisi_on = 0.0
-                        .Comenta_rio = txtComentario.Text
-                        .Tipo_Deposito = lblTipoDeposito.Text
-                        .cod_Cajero = txtCajero.Text
-                        .registrarDepositos()
+            Else
 
-
-                    End With
-
-                    '::::::::::::::::::::::::::::::::  Partida Contable  ::::::::::::::::::::::::::::::::
-
-                    Try
-
-                        With asiento
-
-                            .Cod_Periodo = 1
-                            .Descrip = txtComentario.Text
-                            .Fecha_ = dtpFecha.Value
-
-                            Dim ultimo As DataTable
-                            Dim nro As DataRow
-
-                            ultimo = Deposito.listarUltimoDeposito
-                            nro = ultimo.Rows(0)
-
-                            .Campo_Llave = Convert.ToInt32(nro("codDeposito"))
-
-                            If .registrarAsiento = 1 Then
-                                Dim codasi As DataTable
-                                Dim cod As DataRow
-                                Try
-
-                                    With detalleAsiento
-
-                                        codasi = asiento.capturarCodAsiento
-                                        cod = codasi.Rows(0)
-
-                                        .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
-                                        .Debe_ = Convert.ToDouble(txtContado.Text)
-                                        .Haber_ = 0.0
-
-                                        Dim dt As DataTable
-                                        Dim row As DataRow
-                                        buscarCodigo.Cod = txtBanco.Text
-                                        dt = buscarCodigo.infoFormaPago
-                                        row = dt.Rows(0)
-
-                                        .Cuenta_ = Convert.ToInt32(row("cuenta"))
-
-                                        .registrarDetalleAsiento()
-
-                                    End With
-
-                                    'Segunda Partida
-                                    Dim detalleAsiento2 As New ClsDetalleAsiento
-
-                                    With detalleAsiento2
-
-                                        .Cod_Asiento = Convert.ToInt32(cod("cod_asiento"))
-                                        .Debe_ = 0.0
-                                        .Haber_ = Convert.ToDouble(txtContado.Text)
-
-                                        Dim dt As DataTable
-                                        Dim row As DataRow
-                                        buscarCodigo.Cod = txtTipoConta.Text
-                                        dt = buscarCodigo.infoFormaPago
-                                        row = dt.Rows(0)
-
-                                        .Cuenta_ = Convert.ToInt32(row("cuenta"))
-
-                                        .registrarDetalleAsiento()
-
-                                    End With
-
-                                Catch ex As Exception
-                                    MsgBox("Error en detalle de asiento" + ex.Message)
-                                End Try
-
-                            End If
-
-                        End With
-
-                    Catch ex As Exception
-                        MsgBox("Aqui hay error: " + ex.Message)
-                    End Try 'Partida Contable
-
-                    Limpiar()
-
+                If txtBanco.Text = "" Then
+                    MsgBox("Falta información en el formulario.")
+                    txtBanco.BackColor = Color.Red
+                ElseIf txtContado.Text = "" Then
+                    MsgBox("Falta información en el formulario.")
+                    txtContado.BackColor = Color.Red
+                ElseIf txtTipoConta.Text = "" Then
+                    MsgBox("Falta información en el formulario.")
+                    txtTipoConta.BackColor = Color.Red
+                ElseIf txtCajero.Text = "" Then
+                    MsgBox("Falta información en el formulario.")
+                    txtCajero.BackColor = Color.Red
+                ElseIf txtBanco.Text = txtTipoConta.Text Then
+                    MsgBox("Las cuentas seleccionadas no pueden ser iguales.")
+                    txtBanco.BackColor = Color.Red
+                    txtTipoConta.BackColor = Color.Red
                 End If
 
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-
-            MsgBox("Se registro un nuevo deposito.")
-            dtDepositos.DataSource = Deposito.listarDepositos
-
-        Else
-
-            If txtBanco.Text = "" Then
-                MsgBox("Falta información en el formulario.")
-                txtBanco.BackColor = Color.Red
-            ElseIf txtContado.Text = "" Then
-                MsgBox("Falta información en el formulario.")
-                txtContado.BackColor = Color.Red
-            ElseIf txtTipoConta.Text = "" Then
-                MsgBox("Falta información en el formulario.")
-                txtTipoConta.BackColor = Color.Red
-            ElseIf txtCajero.Text = "" Then
-                MsgBox("Falta información en el formulario.")
-                txtCajero.BackColor = Color.Red
-            ElseIf txtBanco.Text = txtTipoConta.Text Then
-                MsgBox("Las cuentas seleccionadas no pueden ser iguales.")
-                txtBanco.BackColor = Color.Red
-                txtTipoConta.BackColor = Color.Red
-            End If
-
-        End If
+            End If 'campos vacios
+        End If 'validacion
 
     End Sub
     Private Sub btnBuscarBanco_Click(sender As Object, e As EventArgs) Handles btnBuscarBanco.Click
@@ -315,7 +320,7 @@
     Private Sub frmDeposito_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try
-
+            alternarColoFilasDatagridview(dtDepositos)
             txtMonBase.Text = "1"
             Dim Deposito As New ClsDeposito
             'Mostrar todos los depositos registrados
@@ -342,9 +347,9 @@
             row = dt.Rows(e.RowIndex)
 
 
-            btnCrearNuevo.Visible = True
-            btnModificar.Visible = True
-            btnGuardar.Visible = False
+            btnCrearNuevo.Enabled = True
+            btnModificar.Enabled = True
+            btnGuardar.Enabled = False
 
             txtNro.Text = row("codDeposito")
             dtpFecha.Value = row("fecha")
@@ -390,28 +395,32 @@
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Try
-            'Enviar datos para modificar depositos
+            Dim n As String = MsgBox("¿Desea modificar el depósito?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
 
-            With Deposito
-                .Cod = Convert.ToInt32(txtNro.Text)
-                .Fech_a = dtpFecha.Value
-                .CodFP_Banco = Convert.ToInt32(lblCodFPBanco.Text)
-                .conta_do = Convert.ToDouble(txtContado.Text)
-                .CodFP_Contado = Convert.ToInt32(lblCodFPContado.Text)
-                .total_Depositado = Convert.ToDouble(txtTotalDep.Text)
-                .Mone_da = txtMoneda.Text
-                .mon_base = Convert.ToInt32(txtMonBase.Text)
-                .comisi_on = Convert.ToDouble(txtComision.Text)
-                .Comenta_rio = txtComentario.Text
-                .Tipo_Deposito = lblTipoDeposito.Text
-                .cod_Cajero = txtCajero.Text
-                If .modificarDepositos() = 1 Then
-                    MsgBox("Se modifico el registro.")
-                    Limpiar()
-                    dtDepositos.DataSource = Deposito.listarDepositos
-                End If
+                'Enviar datos para modificar depositos
 
-            End With
+                With Deposito
+                    .Cod = Convert.ToInt32(txtNro.Text)
+                    .Fech_a = dtpFecha.Value
+                    .CodFP_Banco = Convert.ToInt32(lblCodFPBanco.Text)
+                    .conta_do = Convert.ToDouble(txtContado.Text)
+                    .CodFP_Contado = Convert.ToInt32(lblCodFPContado.Text)
+                    .total_Depositado = Convert.ToDouble(txtTotalDep.Text)
+                    .Mone_da = txtMoneda.Text
+                    .mon_base = Convert.ToInt32(txtMonBase.Text)
+                    .comisi_on = Convert.ToDouble(txtComision.Text)
+                    .Comenta_rio = txtComentario.Text
+                    .Tipo_Deposito = lblTipoDeposito.Text
+                    .cod_Cajero = txtCajero.Text
+                    If .modificarDepositos() = 1 Then
+                        MsgBox("Se modifico el registro.")
+                        Limpiar()
+                        dtDepositos.DataSource = Deposito.listarDepositos
+                    End If
+
+                End With
+            End If 'validacion
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

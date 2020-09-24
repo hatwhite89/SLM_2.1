@@ -23,9 +23,6 @@ Partial Class frmFormaPago
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFormaPago))
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblCod = New System.Windows.Forms.Label()
         Me.lblCuenta = New System.Windows.Forms.Label()
         Me.lblCuentaBanco = New System.Windows.Forms.Label()
@@ -54,42 +51,23 @@ Partial Class frmFormaPago
         Me.lblCodFormaPago = New System.Windows.Forms.Label()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.dtFormasPago = New System.Windows.Forms.DataGridView()
-        Me.MenuStrip1.SuspendLayout()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.gbxInfoFormaPago.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtFormasPago, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(718, 24)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'ArchivoToolStripMenuItem
-        '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem})
-        Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
-        Me.ArchivoToolStripMenuItem.Text = "Archivo"
-        '
-        'SalirToolStripMenuItem
-        '
-        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
-        Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'lblCod
         '
         Me.lblCod.AutoSize = True
         Me.lblCod.Location = New System.Drawing.Point(11, 35)
         Me.lblCod.Name = "lblCod"
-        Me.lblCod.Size = New System.Drawing.Size(40, 13)
+        Me.lblCod.Size = New System.Drawing.Size(60, 13)
         Me.lblCod.TabIndex = 1
-        Me.lblCod.Text = "Código"
+        Me.lblCod.Text = "Cód. Breve"
         '
         'lblCuenta
         '
@@ -147,7 +125,6 @@ Partial Class frmFormaPago
         '
         'txtCodigo
         '
-        Me.txtCodigo.Enabled = False
         Me.txtCodigo.Location = New System.Drawing.Point(110, 28)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
@@ -229,10 +206,11 @@ Partial Class frmFormaPago
         '
         'btnGuardar
         '
-        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnGuardar.BackColor = System.Drawing.Color.White
+        Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(597, 154)
+        Me.btnGuardar.ForeColor = System.Drawing.Color.Black
+        Me.btnGuardar.Location = New System.Drawing.Point(514, 10)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(92, 23)
         Me.btnGuardar.TabIndex = 47
@@ -246,7 +224,6 @@ Partial Class frmFormaPago
         Me.gbxInfoFormaPago.Controls.Add(Me.txtCodigo)
         Me.gbxInfoFormaPago.Controls.Add(Me.lblCod)
         Me.gbxInfoFormaPago.Controls.Add(Me.txtCuenta)
-        Me.gbxInfoFormaPago.Controls.Add(Me.btnGuardar)
         Me.gbxInfoFormaPago.Controls.Add(Me.lblCuenta)
         Me.gbxInfoFormaPago.Controls.Add(Me.txtCtaBanco)
         Me.gbxInfoFormaPago.Controls.Add(Me.txtFormulario)
@@ -260,9 +237,9 @@ Partial Class frmFormaPago
         Me.gbxInfoFormaPago.Controls.Add(Me.txtNombreBanco)
         Me.gbxInfoFormaPago.Controls.Add(Me.lblTipo)
         Me.gbxInfoFormaPago.Controls.Add(Me.lblNombreBanco)
-        Me.gbxInfoFormaPago.Location = New System.Drawing.Point(11, 34)
+        Me.gbxInfoFormaPago.Location = New System.Drawing.Point(12, 51)
         Me.gbxInfoFormaPago.Name = "gbxInfoFormaPago"
-        Me.gbxInfoFormaPago.Size = New System.Drawing.Size(695, 183)
+        Me.gbxInfoFormaPago.Size = New System.Drawing.Size(695, 158)
         Me.gbxInfoFormaPago.TabIndex = 51
         Me.gbxInfoFormaPago.TabStop = False
         Me.gbxInfoFormaPago.Text = "Información Forma de Pago"
@@ -300,11 +277,9 @@ Partial Class frmFormaPago
         Me.GroupBox1.Controls.Add(Me.btnCancelar)
         Me.GroupBox1.Controls.Add(Me.txtBusqueda)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.btnCrear)
         Me.GroupBox1.Controls.Add(Me.lblCodFormaPago)
-        Me.GroupBox1.Controls.Add(Me.btnModificar)
         Me.GroupBox1.Controls.Add(Me.dtFormasPago)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 223)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 215)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(694, 254)
         Me.GroupBox1.TabIndex = 52
@@ -338,17 +313,17 @@ Partial Class frmFormaPago
         '
         'btnCrear
         '
-        Me.btnCrear.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCrear.BackColor = System.Drawing.Color.White
+        Me.btnCrear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(500, 223)
+        Me.btnCrear.ForeColor = System.Drawing.Color.Black
+        Me.btnCrear.Location = New System.Drawing.Point(322, 10)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(90, 23)
         Me.btnCrear.TabIndex = 5
         Me.btnCrear.Text = "Crear Nuevo"
         Me.btnCrear.UseVisualStyleBackColor = False
-        Me.btnCrear.Visible = False
         '
         'lblCodFormaPago
         '
@@ -362,17 +337,17 @@ Partial Class frmFormaPago
         '
         'btnModificar
         '
-        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(596, 223)
+        Me.btnModificar.ForeColor = System.Drawing.Color.Black
+        Me.btnModificar.Location = New System.Drawing.Point(418, 10)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(90, 23)
         Me.btnModificar.TabIndex = 1
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = False
-        Me.btnModificar.Visible = False
         '
         'dtFormasPago
         '
@@ -389,36 +364,68 @@ Partial Class frmFormaPago
         Me.dtFormasPago.Size = New System.Drawing.Size(682, 162)
         Me.dtFormasPago.TabIndex = 0
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnCerrar)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.btnGuardar)
+        Me.Panel1.Controls.Add(Me.btnModificar)
+        Me.Panel1.Controls.Add(Me.btnCrear)
+        Me.Panel1.Location = New System.Drawing.Point(-1, -1)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(724, 46)
+        Me.Panel1.TabIndex = 53
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(8, 10)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(184, 25)
+        Me.Label2.TabIndex = 54
+        Me.Label2.Text = "Formas de Pago"
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.BackColor = System.Drawing.Color.White
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.ForeColor = System.Drawing.Color.Black
+        Me.btnCerrar.Location = New System.Drawing.Point(612, 10)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(92, 23)
+        Me.btnCerrar.TabIndex = 55
+        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
         'frmFormaPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(718, 489)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoFormaPago)
-        Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True
-        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmFormaPago"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mantenimiento Formas de Pago"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.gbxInfoFormaPago.ResumeLayout(False)
         Me.gbxInfoFormaPago.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dtFormasPago, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lblCod As Label
     Friend WithEvents lblCuenta As Label
     Friend WithEvents lblCuentaBanco As Label
@@ -447,4 +454,7 @@ Partial Class frmFormaPago
     Friend WithEvents btnCancelar As Button
     Friend WithEvents txtBusqueda As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnCerrar As Button
+    Friend WithEvents Label2 As Label
 End Class

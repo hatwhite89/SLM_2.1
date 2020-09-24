@@ -103,10 +103,62 @@ Public Class ClsProducto
         End Set
     End Property
 
+    Public Property Precio_base1 As Double
+        Get
+            Return precio_base
+        End Get
+        Set(value As Double)
+            precio_base = value
+        End Set
+    End Property
+
     Public Function RecuperarProductoOC() As SqlDataReader
         Dim sqlcom As SqlCommand
         sqlcom = New SqlCommand
-        sqlcom.CommandText = "select * from ProductoAlmacen"
+        sqlcom.CommandText = "SELECT  p.id_producto
+      ,p.nombre_producto
+	  ,p.precio
+      ,p.marca
+      ,p.modelo
+      ,p.descripcion
+      ,p.cantidad_minima
+      ,u.nombre_unidad_medida
+      ,c.nombre_categoria
+     
+  FROM ProductoAlmacen p, CategoriaProducto c, UnidadMedidaAlmacen u
+  where p.id_categoria = c.id_categoria_producto and p.id_unidad_medida = u.id_unidad_medida"
+        sqlcom.Connection = New ClsConnection().getConexion
+        Return sqlcom.ExecuteReader
+    End Function
+
+    Public Function RecuperarProductoOC1() As SqlDataReader
+        Dim sqlcom As SqlCommand
+        sqlcom = New SqlCommand
+        sqlcom.CommandText = "SELECT  id_producto
+      ,nombre_producto
+	  ,precio
+   
+      ,descripcion
+  
+     
+  FROM ProductoAlmacen"
+        sqlcom.Connection = New ClsConnection().getConexion
+        Return sqlcom.ExecuteReader
+    End Function
+
+    Public Function RecuperarProductoOC2() As SqlDataReader
+        Dim sqlcom As SqlCommand
+        sqlcom = New SqlCommand
+        sqlcom.CommandText = "SELECT  p.id_producto
+      ,p.nombre_producto
+	  ,p.precio
+     
+      ,p.descripcion
+
+
+     
+  FROM ProductoAlmacen p, CategoriaProducto c, UnidadMedidaAlmacen u
+  where p.id_categoria = c.id_categoria_producto and p.id_unidad_medida = u.id_unidad_medida"
         sqlcom.Connection = New ClsConnection().getConexion
         Return sqlcom.ExecuteReader
     End Function
@@ -116,7 +168,18 @@ Public Class ClsProducto
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select * from ProductoAlmacen", cn)
+        Using da As New SqlDataAdapter("SELECT  p.id_producto
+      ,p.nombre_producto
+	  ,p.precio
+      ,p.marca
+      ,p.modelo
+      ,p.descripcion
+      ,p.cantidad_minima
+      ,u.nombre_unidad_medida
+      ,c.nombre_categoria
+     
+  FROM ProductoAlmacen p, CategoriaProducto c, UnidadMedidaAlmacen u
+  where p.id_categoria = c.id_categoria_producto and p.id_unidad_medida = u.id_unidad_medida", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             objCon.cerrarConexion()
@@ -124,7 +187,25 @@ Public Class ClsProducto
         End Using
     End Function
 
+    Public Function RecuperarProducto3() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
 
+        Using da As New SqlDataAdapter("SELECT  id_producto
+      ,nombre_producto
+	  ,precio
+   
+      ,descripcion
+   
+     
+  FROM ProductoAlmacen ", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
     Public Function RegistrarProducto() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -168,6 +249,11 @@ Public Class ClsProducto
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "id_categoria"
         sqlpar.Value = CategoriaProducto
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "precio"
+        sqlpar.Value = Precio_base1
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -238,6 +324,12 @@ Public Class ClsProducto
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "id_categoria"
         sqlpar.Value = CategoriaProducto
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "precio"
+        sqlpar.Value = Precio_base1
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

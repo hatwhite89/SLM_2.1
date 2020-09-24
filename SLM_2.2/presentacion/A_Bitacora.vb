@@ -5,7 +5,7 @@
 
 
         Try
-
+            alternarColoFilasDatagridview(dtBitacora)
             dtBitacora.DataSource = Bitacora.listarBitacora
 
         Catch ex As Exception
