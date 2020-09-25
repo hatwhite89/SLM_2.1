@@ -141,6 +141,7 @@
         btnModificar.Enabled = False
         btnCambio.Visible = False
         txtPass.Enabled = True
+
     End Sub
 
     Private Sub btnCambio_Click(sender As Object, e As EventArgs) Handles btnCambio.Click
@@ -229,6 +230,11 @@
 
     Private Sub btnImportar_Click(sender As Object, e As EventArgs) Handles btnImportar.Click
         A_ImportarUserAD.ShowDialog()
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
 
     End Sub
 End Class

@@ -743,4 +743,22 @@
     Private Sub Button2_Click_3(sender As Object, e As EventArgs) Handles Button2.Click
         frmMovimientoAlmacen.Show()
     End Sub
+
+    Private Sub btnGrupoExamenes_Click(sender As Object, e As EventArgs) Handles btnGrupoExamenes.Click
+        Try
+            E_GrupoExamen.Show()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnSubAreas_Click(sender As Object, e As EventArgs) Handles btnSubAreas.Click
+
+        Try
+            E_SubArea.Show()
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 End Class

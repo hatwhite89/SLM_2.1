@@ -481,9 +481,10 @@
         dtLaboratorio.Rows.Add("", "Sucursal", False, "")
         dtLaboratorio.Rows.Add("", "Medicos", False, "")
         dtLaboratorio.Rows.Add("", "Pacientes", False, "")
-        dtLaboratorio.Rows.Add("", "Convenios", False, "")
+        dtLaboratorio.Rows.Add("", "Subareas", False, "")
         dtLaboratorio.Rows.Add("", "Valores de Referencia", False, "")
         dtLaboratorio.Rows.Add("", "Informes", False, "")
+        dtLaboratorio.Rows.Add("", "Grupo Exámenes", False, "")
 
         'Procesos de Facturacion
         dtFacturacion.Rows.Add("", "Facturacion", False, "")

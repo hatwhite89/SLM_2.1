@@ -486,7 +486,7 @@ Module ModulosVarios
                                                 End If
                                             ElseIf i = 8 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnConvenio.Enabled = True
+                                                    Form1.btnSubAreas.Enabled = True
                                                 End If
                                             ElseIf i = 9 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
@@ -495,6 +495,10 @@ Module ModulosVarios
                                             ElseIf i = 10 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnInformes.Enabled = True
+                                                End If
+                                            ElseIf i = 11 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnGrupoExamenes.Enabled = True
                                                 End If
 
                                             End If 'if conteo
