@@ -87,9 +87,7 @@ Public Class E_frmOrdenCompra
         alternarColoFilasDatagridview(DataGridView9)
         alternarColoFilasDatagridview(DataGridView4)
         alternarColoFilasDatagridview(DataGridView5)
-        alternarColoFilasDatagridview(DataGridView6)
-        alternarColoFilasDatagridview(DataGridView7)
-        alternarColoFilasDatagridview(DataGridView8)
+
         txtDiasCredito.Text = "0"
 
         Label38.Text = ""
@@ -128,7 +126,7 @@ Public Class E_frmOrdenCompra
         DataGridView1.DataSource = dvOC
     End Sub
 
-    Private Sub TextBox14_TextChanged(sender As Object, e As EventArgs) Handles TextBox4.TextChanged
+    Private Sub TextBox14_TextChanged(sender As Object, e As EventArgs)
         Try
             Dim resultado As Double
             resultado = Double.Parse(txtCantidadProductos.Text) * Double.Parse(txtPrecioUnitarioProductos.Text)
@@ -310,7 +308,7 @@ Public Class E_frmOrdenCompra
             Label38.Text = DataGridView2.Rows(e.RowIndex).Cells(13).Value
             Label37.Text = DataGridView2.Rows(e.RowIndex).Cells(3).Value
             txtConsignado.ReadOnly = False
-            txtAutorizado.ReadOnly = False
+
             txtCodProveedor.ReadOnly = False
 
             txtDiasCredito.ReadOnly = False
