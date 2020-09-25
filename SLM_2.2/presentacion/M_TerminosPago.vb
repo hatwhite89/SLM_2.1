@@ -46,6 +46,8 @@
         btnnuevo.Enabled = True
         btntipoPago.Enabled = False
 
+
+        llenarTipoTermino()
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
@@ -53,7 +55,8 @@
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
             rtxtdescripcion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
             Dim temp As Integer = Me.dgbtabla.Rows(e.RowIndex).Cells(6).Value().ToString
-            cbxtipoPago.SelectedIndex = temp - 1
+            cbxtipoPago.SelectedValue = Me.dgbtabla.Rows(e.RowIndex).Cells(6).Value().ToString
+            'cbxtipoPago.SelectedIndex = temp - 1
             If (lblform.Text = "factura") Then
                 M_Factura.lblcodeTerminoPago.Text = lblcode.Text
                 M_Factura.txtcodigoTerminosPago.Text = txtcodigo.Text
@@ -130,6 +133,16 @@
                     M_Factura.txtdescripcionTermino.Text = rtxtdescripcion.Text
                     Me.Close()
                 End If
+            ElseIf (lblform.Text = "cliente") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el término de pago en el cliente?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_Cliente.lblcodeTerminoPago.Text = lblcode.Text
+                    M_Cliente.txtcodigoTermino.Text = txtcodigo.Text
+                    M_Cliente.txtnombreTerminos.Text = rtxtdescripcion.Text
+                    Me.Close()
+                End If
             ElseIf (lblform.Text = "M_ListaPrecios") Then
                 If e.RowIndex >= 0 Then
                     n = MsgBox("¿Desea utilizar el término de pago en la lista de precios?", MsgBoxStyle.YesNo)
@@ -160,6 +173,7 @@
         txtdiasNeto.Text() = ""
         txtcodigoCtaContado.Text() = ""
         txtcodigoCtaVentas.Text() = ""
+        'cbxtipoPago.SelectedValue = 1
         llenarTipoTermino()
 
         rtxtdescripcion.ReadOnly = False
@@ -180,7 +194,6 @@
     End Sub
     Private Sub llenarTipoTermino()
         Try
-            cbxtipoPago.Items.Clear()
             'llenar el combobox tipo termino
             Dim objTipoTerm As New ClsTipoTermino
             Dim dt As New DataTable

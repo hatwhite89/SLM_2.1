@@ -193,7 +193,7 @@
             btnguardar.Enabled = False
 
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
     Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
@@ -219,7 +219,13 @@
         End If
     End Sub
     Private Sub M_Sede_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'ACTUALIZAR LISTADO
         seleccionarHorarios()
+
+        'AGREGARLE COLOR AL DATAGRIDVIEW
+        alternarColoFilasDatagridview(dgbtabla)
+
+        'OCULTAR COLUMNAS
         Me.dgbtabla.Columns("lunes").Visible = False
         Me.dgbtabla.Columns("martes").Visible = False
         Me.dgbtabla.Columns("miercoles").Visible = False
@@ -229,7 +235,16 @@
         Me.dgbtabla.Columns("domingo").Visible = False
         Me.dgbtabla.Columns("observacion").Visible = False
 
-        alternarColoFilasDatagridview(dgbtabla)
+        'CAMBIAS NOMBRE COLUMNAS
+        dgbtabla.Columns("codigo").HeaderText = "Código"
+        dgbtabla.Columns("codigoBreve").HeaderText = "Código Breve"
+        dgbtabla.Columns("nombre").HeaderText = "Nombre"
+        dgbtabla.Columns("entrada").HeaderText = "Entrada Semanal"
+        dgbtabla.Columns("salida").HeaderText = "Salida Semanal"
+        dgbtabla.Columns("entradaFinSemana").HeaderText = "Entrada Fin de Semana"
+        dgbtabla.Columns("salidaFinSemana").HeaderText = "Salida Fin de Semana"
+
+
     End Sub
     Private Sub seleccionarHorarios()
         Try

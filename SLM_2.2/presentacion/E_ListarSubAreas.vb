@@ -9,8 +9,12 @@
 
     Private Sub eg_frmListarSubAreas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'Cargar listado de Subareas
-        dgbSubAreas.DataSource = SubA.listarSubAreas
+        Try
+            'Cargar listado de Subareas
+            dgbSubAreas.DataSource = SubA.listarSubAreas.DefaultView
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
 
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown

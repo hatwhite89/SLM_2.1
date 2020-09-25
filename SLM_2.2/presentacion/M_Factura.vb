@@ -71,7 +71,7 @@ Public Class M_Factura
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
         limpiar()
         banderaTipo = True
-        dgblistadoExamenes.Columns(1).ReadOnly = True
+        'dgblistadoExamenes.Columns(1).ReadOnly = True
     End Sub
     Public Sub limpiar()
         'limpiar los campos
@@ -145,6 +145,11 @@ Public Class M_Factura
         dgblistadoExamenes.ReadOnly = False
 
         'cbxok.Enabled = True
+        If lblOKAY.Text = "Cajero" And Trim(txtnumeroOficial.Text) = "" Then
+            cbxok.Enabled = True
+        Else
+            cbxok.Enabled = False
+        End If
 
         btnActualizar.Enabled = False
         'btncotizacion.Enabled = True
@@ -227,7 +232,7 @@ Public Class M_Factura
 
         dgblistadoExamenes.ReadOnly = True
 
-        'cbxok.Enabled = False
+        cbxok.Enabled = False
 
         btnActualizar.Enabled = True
         'btncotizacion.Enabled = False
@@ -253,6 +258,11 @@ Public Class M_Factura
 
         dgblistadoExamenes.ReadOnly = False
         'cbxok.Enabled = True
+        If lblOKAY.Text = "Cajero" And Trim(txtnumeroOficial.Text) = "" Then
+            cbxok.Enabled = True
+        Else
+            cbxok.Enabled = False
+        End If
         btnbusquedaExamen.Enabled = True
 
         txtEfectivo.ReadOnly = False
@@ -1654,11 +1664,19 @@ Public Class M_Factura
     End Sub
 
     Private Sub txtnumeroOficial_TextChanged(sender As Object, e As EventArgs) Handles txtnumeroOficial.TextChanged
+        'Habilitar la opcion de anular la factura
         If (Trim(txtnumeroOficial.Text) <> "") Then
             cbxAnular.Enabled = True
         Else
             cbxAnular.Enabled = False
         End If
+
+        'Habilitar el check box ok
+        'If lblOKAY.Text = "Cajero" And Trim(txtnumeroOficial.Text) = "" Then
+        '    cbxok.Enabled = True
+        'Else
+        '    cbxok.Enabled = False
+        'End If
     End Sub
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click

@@ -36,8 +36,8 @@ Public Class M_ListadoEmpleados
                     n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
                 End If
                 If n = vbYes Then
-                    M_Permisos.lblcodeTalentoHumano.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-                    M_Permisos.txtTalentoHumano.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    M_Permisos.lblcodeDepto.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_Permisos.txtDepto.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
                     Me.Close()
                 End If
             ElseIf lblform.Text = "M_Permisos_Empleado" Then
@@ -46,24 +46,31 @@ Public Class M_ListadoEmpleados
                     n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
                 End If
                 If n = vbYes Then
+                    'EMPLEADO
                     M_Permisos.lblcodigoEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
                     M_Permisos.txtEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+
+                    'DEPARTAMENTO
+                    M_Permisos.lblcodeDepto.Text = dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+                    M_Permisos.txtDepto.Text = dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+
                     'buscar el jefe inmediato del empleado
                     Dim objEmp As New ClsPermisos
                     With objEmp
-                        .codigoDepto_ = Convert.ToInt64(dgbtabla.Rows(e.RowIndex).Cells(2).Value())
+                        '.codigoDepto_ = Convert.ToInt64(dgbtabla.Rows(e.RowIndex).Cells(2).Value())
                     End With
                     Dim dt As New DataTable
-                    dt = objEmp.BuscarPermisoJefeInmediato()
+                    'dt = objEmp.BuscarPermisoJefeInmediato()
+                    dt = objEmp.BuscarPermisoJefeInmediato(Convert.ToInt64(dgbtabla.Rows(e.RowIndex).Cells(2).Value()))
                     Dim row As DataRow = dt.Rows(0)
                     M_Permisos.lblcodeJefeInme.Text = CStr(row("codigo"))
                     M_Permisos.txtjefeInmediato.Text = CStr(row("nombreCompleto"))
 
                     'buscar el jefe de talento humano
-                    dt = objEmp.BuscarJefeTalentoHumano()
-                    row = dt.Rows(0)
-                    M_Permisos.lblcodeTalentoHumano.Text = CStr(row("codigo"))
-                    M_Permisos.txtTalentoHumano.Text = CStr(row("nombreCompleto"))
+                    'dt = objEmp.BuscarJefeTalentoHumano()
+                    'row = dt.Rows(0)
+                    'M_Permisos.lblcodeDepto.Text = CStr(row("codigo"))
+                    'M_Permisos.txtDepto.Text = CStr(row("nombreCompleto"))
                     Me.Close()
                 End If
             ElseIf lblform.Text = "M_Vacaciones_Depto" Then
@@ -109,10 +116,11 @@ Public Class M_ListadoEmpleados
                     'buscar el jefe inmediato del empleado
                     Dim objEmp As New ClsPermisos
                     With objEmp
-                        .codigoDepto_ = Convert.ToInt64(dgbtabla.Rows(e.RowIndex).Cells(2).Value())
+                        '.codigoDepto_ = Convert.ToInt64(dgbtabla.Rows(e.RowIndex).Cells(2).Value())
                     End With
                     Dim dt As New DataTable
-                    dt = objEmp.BuscarPermisoJefeInmediato()
+                    dt = objEmp.BuscarPermisoJefeInmediato(Convert.ToInt64(dgbtabla.Rows(e.RowIndex).Cells(2).Value()))
+                    'dt = objEmp.BuscarPermisoJefeInmediato()
                     Dim row As DataRow = dt.Rows(0)
                     M_Vacaciones.lblcodeJefeDepto.Text = CStr(row("codigo"))
                     M_Vacaciones.txtJefeDepto.Text = CStr(row("nombreCompleto"))
@@ -132,7 +140,7 @@ Public Class M_ListadoEmpleados
                 If n = vbYes Then
                     If M_Capacitaciones.validarBeneficiarios(dgbtabla.Rows(e.RowIndex).Cells(0).Value()) Then
                         M_Capacitaciones.dgvBeneficiarios.Rows.Insert(lblfila.Text.ToString, New String() {"", dgbtabla.Rows(e.RowIndex).Cells(0).Value(), dgbtabla.Rows(e.RowIndex).Cells(1).Value(), dgbtabla.Rows(e.RowIndex).Cells(3).Value(), dgbtabla.Rows(e.RowIndex).Cells(4).Value()})
-                        MsgBox("El empleado a sido agregado en la capacitación con éxito.", MsgBoxStyle.Information)
+                        'MsgBox("El empleado a sido agregado en la capacitación con éxito.", MsgBoxStyle.Information)
                         'Me.Close()
                     Else
                         MsgBox("El empleado ya a sido agregado en la capacitación.", MsgBoxStyle.Information)

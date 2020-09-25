@@ -14,6 +14,13 @@
 
     Private Sub M_BuscarCapacitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SeleccionarCapacitaciones()
+
+        'CAMBIO DE NOMBRE COLUMNAS
+        dgbtabla.Columns("codigo").HeaderText = "Código"
+        dgbtabla.Columns("fecha").HeaderText = "Fecha Capacitación"
+        dgbtabla.Columns("nombre").HeaderText = "Nombre"
+        dgbtabla.Columns("cantidadHoras").HeaderText = "Cantidad de Horas"
+        dgbtabla.Columns("proveedor").HeaderText = "Proveedor"
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
