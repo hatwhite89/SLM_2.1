@@ -3,6 +3,13 @@ Public Class M_BuscarEmpleados
     Private Sub M_BuscarEmpleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SeleccionarEmpleados()
         alternarColoFilasDatagridview(dgbtabla)
+        'OCULTAR COLUMNAS
+        Me.dgbtabla.Columns("codigoDepto").Visible = False
+
+        'CAMBIO DE NOMBRE COLUMNAS
+        dgbtabla.Columns("codigo").HeaderText = "Código"
+        dgbtabla.Columns("nombreCompleto").HeaderText = "Nombre Empleado"
+        dgbtabla.Columns("PuestoTrabajo").HeaderText = "Puesto de Trabajo"
     End Sub
     Public Sub SeleccionarEmpleados()
         Dim objEmp As New ClsEmpleados
@@ -90,6 +97,8 @@ Public Class M_BuscarEmpleados
                 M_Empleados.txttelUrgencias.Text = CStr(row("telUrgencias"))
                 M_Empleados.txtcelularUrgencias.Text = CStr(row("celUrgencias"))
                 M_Empleados.txtnombreConyugue.Text = CStr(row("nombreConyugue"))
+                M_Empleados.txtParentesco1.Text = CStr(row("parentesco1"))
+                M_Empleados.txtParentesco2.Text = CStr(row("parentesco2"))
 
                 M_Empleados.txtnombrePadre.Text = CStr(row("nombrePadre"))
 

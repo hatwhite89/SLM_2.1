@@ -1,19 +1,30 @@
 ﻿Public Class M_Profesion
+    Dim objProfesion As New ClsProfesion
     Private Sub M_Profesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'ACTUALIZAR LISTADO
+        seleccionarContratos()
+
+        'AGREGARLE COLOR AL DATAGRIDVIEW
+        alternarColoFilasDatagridview(dgbtabla)
+
+        'CAMBIAS NOMBRE COLUMNAS
+        dgbtabla.Columns("codigo").HeaderText = "Código"
+        dgbtabla.Columns("descripcion").HeaderText = "Descripción"
+
+        'DESHABILITAR
+        rtxtdescripcion.ReadOnly = True
+        txtcodigo.ReadOnly = True
+        btnmodificar.Enabled = False
+        btnguardar.Enabled = False
+        btnnuevo.Enabled = True
+    End Sub
+    Private Sub seleccionarContratos()
         Try
-            Dim objProfesion As New ClsProfesion
             Dim dv As DataView = objProfesion.SeleccionarProfesion.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
             dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
-            rtxtdescripcion.ReadOnly = True
-            txtcodigo.ReadOnly = True
-
-            btnmodificar.Enabled = False
-            btnguardar.Enabled = False
-            btnnuevo.Enabled = True
-            alternarColoFilasDatagridview(dgbtabla)
         Catch ex As Exception
 
         End Try
@@ -107,13 +118,12 @@
             End If
             If (Trim(rtxtdescripcion.Text) <> "") Then
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
-                Dim objProfesion As New ClsProfesion
                 With objProfesion
                     .Descripcion_ = rtxtdescripcion.Text
                 End With
 
                 If objProfesion.RegistrarNuevaProfesion() = 1 Then
-                    MsgBox("Registrado correctamente.")
+                    MsgBox("Registrado correctamente.", MsgBoxStyle.Information)
 
                     Dim dv As DataView = objProfesion.SeleccionarProfesion.DefaultView
                     dgbtabla.DataSource = dv
@@ -143,7 +153,6 @@
 
             If (txtcodigo.Text <> "" And Trim(rtxtdescripcion.Text) <> "") Then
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
-                Dim objProfesion As New ClsProfesion
                 With objProfesion
                     .Codigo_ = txtcodigo.Text
                     .Descripcion_ = rtxtdescripcion.Text
@@ -180,27 +189,33 @@
         Me.Close()
     End Sub
     Private Sub txtdescripcionB_TextChanged(sender As Object, e As EventArgs) Handles txtdescripcionB.TextChanged
+        'Try
+        '    With objProfesion
+        '        .Descripcion_ = txtdescripcionB.Text
+        '    End With
+
+        '    If (Trim(txtdescripcionB.Text) <> "") Then
+        '        Dim dv As DataView = objProfesion.BuscarProfesion.DefaultView
+        '        dgbtabla.DataSource = dv
+        '        lblcantidad.Text = dv.Count
+        '        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        '    Else
+        '        Dim dv As DataView = objProfesion.SeleccionarProfesion.DefaultView
+        '        dgbtabla.DataSource = dv
+        '        lblcantidad.Text = dv.Count
+        '        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        '    End If
+
+        'Catch ex As Exception
+
+        'End Try
         Try
-
-            Dim objProfesion As New ClsProfesion
-            With objProfesion
-                .Descripcion_ = txtdescripcionB.Text
-            End With
-
-            If (Trim(txtdescripcionB.Text) <> "") Then
-                Dim dv As DataView = objProfesion.BuscarProfesion.DefaultView
-                dgbtabla.DataSource = dv
-                lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
-            Else
-                Dim dv As DataView = objProfesion.SeleccionarProfesion.DefaultView
-                dgbtabla.DataSource = dv
-                lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
-            End If
-
+            Dim dv As DataView = dgbtabla.DataSource
+            dv.RowFilter = String.Format("descripcion Like '%{0}%'", txtdescripcionB.Text)
+            lblcantidad.Text = dv.Count
+            dgbtabla.DataSource = dv
         Catch ex As Exception
-
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 

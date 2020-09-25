@@ -148,8 +148,8 @@
             objOrdTrab.codigoSucursal_ = Convert.ToInt64(lblCodeSucursal.Text)
             Dim dv As DataView = objOrdTrab.ActualizarListadoHojaDeTrabajo(pendienteMuestra, noProcesado, enProceso, procesado, validado).DefaultView
 
-            dv.RowFilter = String.Format("codigoSucursal Like '%{0}%'", txtsucursal.Text)
-            dv.RowFilter = "codigoSubArea=" & Integer.Parse(lblCodeSubArea.Text)
+            'dv.RowFilter = String.Format("codigoSucursal Like '%{0}%'", txtsucursal.Text)
+            'dv.RowFilter = "codigoSubArea=" & Integer.Parse(lblCodeSubArea.Text)
             dt = dv.ToTable
             For index As Integer = 0 To dt.Rows.Count - 1
                 rowO = dt.Rows(index)
@@ -349,6 +349,13 @@
 
     Private Sub btnDetalleResultado_Click(sender As Object, e As EventArgs) Handles btnDetalleResultado.Click
         A_PlantillasDeResultado.Show()
+    End Sub
+
+    Private Sub btnValoresRef_Click(sender As Object, e As EventArgs) Handles btnValoresRef.Click
+        If txtParametro.Text <> "" Then
+            M_ListadoValoresReferencia.lblcodeCateCli.Text = txtParametro.Text
+            M_ListadoValoresReferencia.ShowDialog()
+        End If
     End Sub
 
     Private Sub cbxPlantillas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxPlantillas.SelectedIndexChanged

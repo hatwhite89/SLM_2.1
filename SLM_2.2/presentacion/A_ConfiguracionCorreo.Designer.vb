@@ -24,6 +24,7 @@ Partial Class A_ConfiguracionCorreo
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ConfiguracionCorreo))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.lblCodigo = New System.Windows.Forms.Label()
         Me.txtCorreoNoti = New System.Windows.Forms.TextBox()
         Me.txtHost = New System.Windows.Forms.TextBox()
@@ -41,13 +42,18 @@ Partial Class A_ConfiguracionCorreo
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.lblCodigo)
         Me.GroupBox1.Controls.Add(Me.txtCorreoNoti)
@@ -63,12 +69,22 @@ Partial Class A_ConfiguracionCorreo
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.btnProbar)
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(10, 53)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(570, 235)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Servidor de Correo"
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.Location = New System.Drawing.Point(332, 66)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(34, 23)
+        Me.Button1.TabIndex = 15
+        Me.Button1.Text = "Ver"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'lblCodigo
         '
@@ -82,6 +98,8 @@ Partial Class A_ConfiguracionCorreo
         '
         'txtCorreoNoti
         '
+        Me.txtCorreoNoti.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtCorreoNoti.Location = New System.Drawing.Point(137, 190)
         Me.txtCorreoNoti.MaxLength = 150
         Me.txtCorreoNoti.Name = "txtCorreoNoti"
@@ -90,6 +108,8 @@ Partial Class A_ConfiguracionCorreo
         '
         'txtHost
         '
+        Me.txtHost.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtHost.Location = New System.Drawing.Point(81, 120)
         Me.txtHost.MaxLength = 150
         Me.txtHost.Name = "txtHost"
@@ -106,6 +126,8 @@ Partial Class A_ConfiguracionCorreo
         '
         'txtPassword
         '
+        Me.txtPassword.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtPassword.Location = New System.Drawing.Point(81, 67)
         Me.txtPassword.MaxLength = 30
         Me.txtPassword.Name = "txtPassword"
@@ -115,6 +137,8 @@ Partial Class A_ConfiguracionCorreo
         '
         'txtCorreoSalida
         '
+        Me.txtCorreoSalida.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtCorreoSalida.Location = New System.Drawing.Point(81, 41)
         Me.txtCorreoSalida.MaxLength = 150
         Me.txtCorreoSalida.Name = "txtCorreoSalida"
@@ -178,6 +202,7 @@ Partial Class A_ConfiguracionCorreo
         '
         'btnProbar
         '
+        Me.btnProbar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnProbar.Location = New System.Drawing.Point(393, 189)
         Me.btnProbar.Name = "btnProbar"
         Me.btnProbar.Size = New System.Drawing.Size(96, 23)
@@ -187,6 +212,7 @@ Partial Class A_ConfiguracionCorreo
         '
         'PictureBox1
         '
+        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(388, 33)
         Me.PictureBox1.Name = "PictureBox1"
@@ -197,48 +223,72 @@ Partial Class A_ConfiguracionCorreo
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(345, 253)
+        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGuardar.BackColor = System.Drawing.Color.White
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.Location = New System.Drawing.Point(529, 10)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 7
         Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
+        Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'btnCerrar
         '
-        Me.btnCerrar.Location = New System.Drawing.Point(507, 253)
+        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrar.BackColor = System.Drawing.Color.White
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Location = New System.Drawing.Point(691, 10)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
         Me.btnCerrar.TabIndex = 9
         Me.btnCerrar.Text = "Cerrar"
-        Me.btnCerrar.UseVisualStyleBackColor = True
+        Me.btnCerrar.UseVisualStyleBackColor = False
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(426, 253)
+        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Location = New System.Drawing.Point(610, 10)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 8
         Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
+        Me.btnModificar.UseVisualStyleBackColor = False
         '
-        'Button1
+        'Panel1
         '
-        Me.Button1.Location = New System.Drawing.Point(332, 66)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(34, 23)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "Ver"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.btnModificar)
+        Me.Panel1.Controls.Add(Me.btnCerrar)
+        Me.Panel1.Controls.Add(Me.btnGuardar)
+        Me.Panel1.Location = New System.Drawing.Point(-183, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(774, 47)
+        Me.Panel1.TabIndex = 10
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(188, 9)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(269, 25)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Configuración de Correo"
         '
         'A_ConfiguracionCorreo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(597, 296)
-        Me.Controls.Add(Me.btnModificar)
-        Me.Controls.Add(Me.btnCerrar)
-        Me.Controls.Add(Me.btnGuardar)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(590, 297)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
         Me.KeyPreview = True
         Me.Name = "A_ConfiguracionCorreo"
@@ -247,6 +297,8 @@ Partial Class A_ConfiguracionCorreo
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -270,4 +322,6 @@ Partial Class A_ConfiguracionCorreo
     Friend WithEvents txtCorreoSalida As TextBox
     Friend WithEvents lblCodigo As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label6 As Label
 End Class

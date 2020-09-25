@@ -1,11 +1,11 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ClsPermisos
-    Dim asunto As String
-    Dim goseSueldo As Boolean
-    Dim codigo, codigoEmpleado, codigoJefeInmediato, codigoTalentoHumano, codigoDepto As Integer
-    Dim fecha As Date
-    Dim entradaTarde, salidaTemprano, salidaTarde As System.Nullable(Of Date)
+    Dim observaciones As String
+    'Dim goseSueldo As Boolean
+    Dim codigo, codigoEmpleado, codigoJefeInmediato, codigoTipoPermiso, totalDias As Integer
+    Dim fechaInicial, fechaFinal As Date
+    Dim entradaTarde, salidaTemprano As System.Nullable(Of Date)
     'Constructor
     Public Sub New()
 
@@ -18,21 +18,29 @@ Public Class ClsPermisos
             codigo = value
         End Set
     End Property
-    Public Property fecha_ As Date
+    Public Property fechaFinal_ As Date
         Get
-            Return fecha
+            Return fechaFinal
         End Get
         Set(value As Date)
-            fecha = value
+            fechaFinal = value
+        End Set
+    End Property
+    Public Property fechaInicial_ As Date
+        Get
+            Return fechaInicial
+        End Get
+        Set(value As Date)
+            fechaInicial = value
         End Set
     End Property
 
-    Public Property asunto_ As String
+    Public Property observaciones_ As String
         Get
-            Return asunto
+            Return observaciones
         End Get
         Set(value As String)
-            asunto = value
+            observaciones = value
         End Set
     End Property
     Public Property codigoEmpleado_ As Integer
@@ -51,20 +59,20 @@ Public Class ClsPermisos
             codigoJefeInmediato = value
         End Set
     End Property
-    Public Property codigoTalentoHumano_ As Integer
+    Public Property codigoTipoPermiso_ As Integer
         Get
-            Return codigoTalentoHumano
+            Return codigoTipoPermiso
         End Get
         Set(value As Integer)
-            codigoTalentoHumano = value
+            codigoTipoPermiso = value
         End Set
     End Property
-    Public Property codigoDepto_ As Integer
+    Public Property totalDias_ As Integer
         Get
-            Return codigoDepto
+            Return totalDias
         End Get
         Set(value As Integer)
-            codigoDepto = value
+            totalDias = value
         End Set
     End Property
     Public Property entradaTarde_ As System.Nullable(Of Date)
@@ -83,22 +91,16 @@ Public Class ClsPermisos
             salidaTemprano = value
         End Set
     End Property
-    Public Property salidaTarde_ As System.Nullable(Of Date)
-        Get
-            Return salidaTarde
-        End Get
-        Set(value As System.Nullable(Of Date))
-            salidaTarde = value
-        End Set
-    End Property
-    Public Property goseSueldo_ As Boolean
-        Get
-            Return goseSueldo
-        End Get
-        Set(value As Boolean)
-            goseSueldo = value
-        End Set
-    End Property
+
+    'Public Property goseSueldo_ As Boolean
+    '    Get
+    '        Return goseSueldo
+    '    End Get
+    '    Set(value As Boolean)
+    '        goseSueldo = value
+    '    End Set
+    'End Property
+
     Public Function RegistrarNuevoPermiso() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -107,31 +109,6 @@ Public Class ClsPermisos
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
         sqlcom.CommandText = "M_slmInsertarPermisos"
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "fecha" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = fecha_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "entradaTarde" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = entradaTarde_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "salidaTarde" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = salidaTarde_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "salidaTemprano" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = salidaTemprano_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "asunto" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = asunto_
-        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoEmpleado" 'nombre campo en el procedimiento almacenado @
@@ -144,13 +121,38 @@ Public Class ClsPermisos
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoTalentoHumano" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoTalentoHumano_
+        sqlpar.ParameterName = "fechaInicial" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = fechaInicial_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "goseSueldo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = goseSueldo_
+        sqlpar.ParameterName = "fechaFinal" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = fechaFinal_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoTipoPermiso" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoTipoPermiso_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "totalDias" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = totalDias_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "entradaTarde" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = entradaTarde_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salidaTemprano" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = salidaTemprano_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "observaciones" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = observaciones_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -187,31 +189,6 @@ Public Class ClsPermisos
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "fecha" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = fecha_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "entradaTarde" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = entradaTarde_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "salidaTarde" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = salidaTarde_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "salidaTemprano" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = salidaTemprano_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "asunto" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = asunto_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoEmpleado" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = codigoEmpleado_
         sqlcom.Parameters.Add(sqlpar)
@@ -222,13 +199,38 @@ Public Class ClsPermisos
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoTalentoHumano" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoTalentoHumano_
+        sqlpar.ParameterName = "fechaInicial" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = fechaInicial_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "goseSueldo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = goseSueldo_
+        sqlpar.ParameterName = "fechaFinal" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = fechaFinal_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoTipoPermiso" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoTipoPermiso_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "totalDias" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = totalDias_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "entradaTarde" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = entradaTarde_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salidaTemprano" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = salidaTemprano_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "observaciones" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = observaciones_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -262,7 +264,7 @@ Public Class ClsPermisos
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "M_slmBuscarPermisosNombre"
-            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = asunto_
+            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = observaciones_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -275,7 +277,7 @@ Public Class ClsPermisos
 
     End Function
 
-    Public Function BuscarPermisoJefeInmediato() As DataTable
+    Public Function BuscarPermisoJefeInmediato(ByVal codigoDepto_ As Integer) As DataTable
 
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection

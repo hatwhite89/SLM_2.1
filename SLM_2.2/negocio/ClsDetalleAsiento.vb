@@ -67,7 +67,7 @@ Public Class ClsDetalleAsiento
 
     ':::::::::::::::::::::: Funciones de Mantenimiento ::::::::::::::::::
 
-    'Registrar Asiento
+    'Registrar detalle siento
     Public Function registrarDetalleAsiento() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -118,6 +118,65 @@ Public Class ClsDetalleAsiento
         Return par_sal
 
     End Function
+
+
+    'Modificar detalle Asiento
+    Public Function modificarDetalleAsiento() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        'PROCEDIMIENTO ALMACENADO
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "A_slmActualizarDetalleAsiento"
+
+        'VARIABLES 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codDetalleAsiento"
+        sqlpar.Value = Cod_Detalle
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codAsiento"
+        sqlpar.Value = Cod_Asiento
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "debe"
+        sqlpar.Value = Debe_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "haber"
+        sqlpar.Value = Haber_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cuenta"
+        sqlpar.Value = Cuenta_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
+
 
 
     'Ver detalle Asiento

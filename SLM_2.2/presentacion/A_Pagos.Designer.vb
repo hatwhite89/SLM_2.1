@@ -44,12 +44,6 @@ Partial Class frmPagos
         Me.lblComentario = New System.Windows.Forms.Label()
         Me.txtComentario = New System.Windows.Forms.TextBox()
         Me.dtDetallePagos = New System.Windows.Forms.DataGridView()
-        Me.NroFac = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Moneda = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ValorPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FORMAP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NroCheque = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnBuscarFormaPago = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -62,10 +56,20 @@ Partial Class frmPagos
         Me.lblTotalSuma = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnRegresar = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.NroFac = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Moneda = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ValorPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FORMAP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NroCheque = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dtDetallePagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxInfo.SuspendLayout()
         Me.gbxDetalle.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -73,7 +77,7 @@ Partial Class frmPagos
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(801, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(799, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -87,7 +91,7 @@ Partial Class frmPagos
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'lblNro
@@ -109,6 +113,7 @@ Partial Class frmPagos
         '
         'lblFechaP
         '
+        Me.lblFechaP.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblFechaP.AutoSize = True
         Me.lblFechaP.Location = New System.Drawing.Point(209, 22)
         Me.lblFechaP.Name = "lblFechaP"
@@ -118,6 +123,7 @@ Partial Class frmPagos
         '
         'dtpFechaP
         '
+        Me.dtpFechaP.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtpFechaP.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaP.Location = New System.Drawing.Point(280, 19)
         Me.dtpFechaP.Name = "dtpFechaP"
@@ -126,6 +132,7 @@ Partial Class frmPagos
         '
         'lblFechaT
         '
+        Me.lblFechaT.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblFechaT.AutoSize = True
         Me.lblFechaT.Location = New System.Drawing.Point(477, 21)
         Me.lblFechaT.Name = "lblFechaT"
@@ -135,6 +142,7 @@ Partial Class frmPagos
         '
         'dtpFechaT
         '
+        Me.dtpFechaT.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtpFechaT.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaT.Location = New System.Drawing.Point(557, 18)
         Me.dtpFechaT.Name = "dtpFechaT"
@@ -175,6 +183,7 @@ Partial Class frmPagos
         '
         'lblCtaBanco
         '
+        Me.lblCtaBanco.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblCtaBanco.AutoSize = True
         Me.lblCtaBanco.Location = New System.Drawing.Point(214, 45)
         Me.lblCtaBanco.Name = "lblCtaBanco"
@@ -184,6 +193,7 @@ Partial Class frmPagos
         '
         'txtCtaBanco
         '
+        Me.txtCtaBanco.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtCtaBanco.Enabled = False
         Me.txtCtaBanco.Location = New System.Drawing.Point(280, 42)
         Me.txtCtaBanco.Name = "txtCtaBanco"
@@ -192,6 +202,7 @@ Partial Class frmPagos
         '
         'chxInfo
         '
+        Me.chxInfo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.chxInfo.AutoSize = True
         Me.chxInfo.Location = New System.Drawing.Point(259, 68)
         Me.chxInfo.Name = "chxInfo"
@@ -202,6 +213,7 @@ Partial Class frmPagos
         '
         'Label2
         '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(490, 45)
         Me.Label2.Name = "Label2"
@@ -211,6 +223,7 @@ Partial Class frmPagos
         '
         'txtCodOrden
         '
+        Me.txtCodOrden.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtCodOrden.Location = New System.Drawing.Point(557, 42)
         Me.txtCodOrden.Name = "txtCodOrden"
         Me.txtCodOrden.Size = New System.Drawing.Size(93, 20)
@@ -227,15 +240,20 @@ Partial Class frmPagos
         '
         'txtComentario
         '
+        Me.txtComentario.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtComentario.Enabled = False
         Me.txtComentario.Location = New System.Drawing.Point(77, 90)
         Me.txtComentario.Name = "txtComentario"
-        Me.txtComentario.Size = New System.Drawing.Size(573, 20)
+        Me.txtComentario.Size = New System.Drawing.Size(690, 20)
         Me.txtComentario.TabIndex = 19
         '
         'dtDetallePagos
         '
         Me.dtDetallePagos.AllowUserToDeleteRows = False
+        Me.dtDetallePagos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtDetallePagos.BackgroundColor = System.Drawing.Color.White
         Me.dtDetallePagos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtDetallePagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -246,43 +264,6 @@ Partial Class frmPagos
         Me.dtDetallePagos.Name = "dtDetallePagos"
         Me.dtDetallePagos.Size = New System.Drawing.Size(765, 209)
         Me.dtDetallePagos.TabIndex = 20
-        '
-        'NroFac
-        '
-        Me.NroFac.HeaderText = "Nro.Fac"
-        Me.NroFac.Name = "NroFac"
-        Me.NroFac.Width = 50
-        '
-        'Proveedor
-        '
-        Me.Proveedor.HeaderText = "Proveedor"
-        Me.Proveedor.Name = "Proveedor"
-        Me.Proveedor.ReadOnly = True
-        Me.Proveedor.Width = 300
-        '
-        'Moneda
-        '
-        Me.Moneda.HeaderText = "Moneda"
-        Me.Moneda.Name = "Moneda"
-        Me.Moneda.ReadOnly = True
-        Me.Moneda.Width = 30
-        '
-        'ValorPago
-        '
-        Me.ValorPago.HeaderText = "Monto"
-        Me.ValorPago.Name = "ValorPago"
-        Me.ValorPago.ReadOnly = True
-        '
-        'FORMAP
-        '
-        Me.FORMAP.HeaderText = "F.P"
-        Me.FORMAP.Name = "FORMAP"
-        Me.FORMAP.Width = 30
-        '
-        'NroCheque
-        '
-        Me.NroCheque.HeaderText = "Nro.Cheque"
-        Me.NroCheque.Name = "NroCheque"
         '
         'btnBuscarFormaPago
         '
@@ -300,11 +281,12 @@ Partial Class frmPagos
         '
         'btnGuardar
         '
-        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGuardar.BackColor = System.Drawing.Color.White
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(710, 430)
+        Me.btnGuardar.ForeColor = System.Drawing.Color.Black
+        Me.btnGuardar.Location = New System.Drawing.Point(630, 10)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 22
@@ -313,34 +295,36 @@ Partial Class frmPagos
         '
         'btnModificar
         '
-        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnModificar.BackColor = System.Drawing.Color.White
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(628, 430)
+        Me.btnModificar.ForeColor = System.Drawing.Color.Black
+        Me.btnModificar.Location = New System.Drawing.Point(548, 10)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 23
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = False
-        Me.btnModificar.Visible = False
         '
         'btnCrear
         '
-        Me.btnCrear.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCrear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCrear.BackColor = System.Drawing.Color.White
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(547, 430)
+        Me.btnCrear.ForeColor = System.Drawing.Color.Black
+        Me.btnCrear.Location = New System.Drawing.Point(467, 10)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 24
         Me.btnCrear.Text = "Crear Nuevo"
         Me.btnCrear.UseVisualStyleBackColor = False
-        Me.btnCrear.Visible = False
         '
         'gbxInfo
         '
+        Me.gbxInfo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbxInfo.Controls.Add(Me.chkPagado)
         Me.gbxInfo.Controls.Add(Me.dtpFechaP)
         Me.gbxInfo.Controls.Add(Me.lblNro)
@@ -360,7 +344,7 @@ Partial Class frmPagos
         Me.gbxInfo.Controls.Add(Me.Label2)
         Me.gbxInfo.Controls.Add(Me.txtCtaBanco)
         Me.gbxInfo.Controls.Add(Me.chxInfo)
-        Me.gbxInfo.Location = New System.Drawing.Point(12, 27)
+        Me.gbxInfo.Location = New System.Drawing.Point(12, 71)
         Me.gbxInfo.Name = "gbxInfo"
         Me.gbxInfo.Size = New System.Drawing.Size(777, 124)
         Me.gbxInfo.TabIndex = 25
@@ -369,6 +353,7 @@ Partial Class frmPagos
         '
         'chkPagado
         '
+        Me.chkPagado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.chkPagado.AutoSize = True
         Me.chkPagado.Enabled = False
         Me.chkPagado.Location = New System.Drawing.Point(660, 18)
@@ -380,12 +365,15 @@ Partial Class frmPagos
         '
         'gbxDetalle
         '
+        Me.gbxDetalle.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbxDetalle.Controls.Add(Me.lblNombreBanco)
         Me.gbxDetalle.Controls.Add(Me.lblFila)
         Me.gbxDetalle.Controls.Add(Me.lblTotalSuma)
         Me.gbxDetalle.Controls.Add(Me.Label4)
         Me.gbxDetalle.Controls.Add(Me.dtDetallePagos)
-        Me.gbxDetalle.Location = New System.Drawing.Point(12, 157)
+        Me.gbxDetalle.Location = New System.Drawing.Point(12, 201)
         Me.gbxDetalle.Name = "gbxDetalle"
         Me.gbxDetalle.Size = New System.Drawing.Size(777, 267)
         Me.gbxDetalle.TabIndex = 26
@@ -414,6 +402,7 @@ Partial Class frmPagos
         '
         'lblTotalSuma
         '
+        Me.lblTotalSuma.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTotalSuma.AutoSize = True
         Me.lblTotalSuma.Location = New System.Drawing.Point(713, 240)
         Me.lblTotalSuma.Name = "lblTotalSuma"
@@ -423,6 +412,7 @@ Partial Class frmPagos
         '
         'Label4
         '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(591, 239)
         Me.Label4.Name = "Label4"
@@ -432,31 +422,111 @@ Partial Class frmPagos
         '
         'btnRegresar
         '
-        Me.btnRegresar.BackColor = System.Drawing.Color.DimGray
+        Me.btnRegresar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnRegresar.BackColor = System.Drawing.Color.White
         Me.btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnRegresar.FlatAppearance.BorderSize = 0
         Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegresar.Location = New System.Drawing.Point(12, 430)
+        Me.btnRegresar.ForeColor = System.Drawing.Color.Black
+        Me.btnRegresar.Location = New System.Drawing.Point(391, 10)
         Me.btnRegresar.Name = "btnRegresar"
         Me.btnRegresar.Size = New System.Drawing.Size(70, 23)
         Me.btnRegresar.TabIndex = 27
         Me.btnRegresar.Text = "Regresar"
         Me.btnRegresar.UseVisualStyleBackColor = False
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.btnRegresar)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.btnGuardar)
+        Me.Panel1.Controls.Add(Me.btnCrear)
+        Me.Panel1.Controls.Add(Me.btnModificar)
+        Me.Panel1.Location = New System.Drawing.Point(-2, 23)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(801, 42)
+        Me.Panel1.TabIndex = 28
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(9, 8)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(158, 25)
+        Me.Label3.TabIndex = 29
+        Me.Label3.Text = "Generar Pago"
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Location = New System.Drawing.Point(711, 10)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(70, 23)
+        Me.Button1.TabIndex = 30
+        Me.Button1.Text = "Cerrar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'NroFac
+        '
+        Me.NroFac.HeaderText = "Nro.Fac"
+        Me.NroFac.Name = "NroFac"
+        Me.NroFac.Width = 50
+        '
+        'Proveedor
+        '
+        Me.Proveedor.HeaderText = "Proveedor"
+        Me.Proveedor.Name = "Proveedor"
+        Me.Proveedor.ReadOnly = True
+        Me.Proveedor.Width = 300
+        '
+        'Moneda
+        '
+        Me.Moneda.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Moneda.HeaderText = "Moneda"
+        Me.Moneda.Name = "Moneda"
+        Me.Moneda.ReadOnly = True
+        '
+        'ValorPago
+        '
+        Me.ValorPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ValorPago.HeaderText = "Monto"
+        Me.ValorPago.Name = "ValorPago"
+        Me.ValorPago.ReadOnly = True
+        '
+        'FORMAP
+        '
+        Me.FORMAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.FORMAP.HeaderText = "F.P"
+        Me.FORMAP.Name = "FORMAP"
+        '
+        'NroCheque
+        '
+        Me.NroCheque.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.NroCheque.HeaderText = "Nro.Cheque"
+        Me.NroCheque.Name = "NroCheque"
+        '
         'frmPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(801, 463)
-        Me.Controls.Add(Me.btnRegresar)
+        Me.ClientSize = New System.Drawing.Size(799, 477)
         Me.Controls.Add(Me.gbxDetalle)
         Me.Controls.Add(Me.gbxInfo)
-        Me.Controls.Add(Me.btnCrear)
-        Me.Controls.Add(Me.btnModificar)
-        Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmPagos"
@@ -469,6 +539,8 @@ Partial Class frmPagos
         Me.gbxInfo.PerformLayout()
         Me.gbxDetalle.ResumeLayout(False)
         Me.gbxDetalle.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -504,13 +576,16 @@ Partial Class frmPagos
     Friend WithEvents btnRegresar As Button
     Friend WithEvents lblTotalSuma As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents chkPagado As CheckBox
+    Friend WithEvents lblFila As Label
+    Friend WithEvents lblNombreBanco As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label3 As Label
     Friend WithEvents NroFac As DataGridViewTextBoxColumn
     Friend WithEvents Proveedor As DataGridViewTextBoxColumn
     Friend WithEvents Moneda As DataGridViewTextBoxColumn
     Friend WithEvents ValorPago As DataGridViewTextBoxColumn
     Friend WithEvents FORMAP As DataGridViewTextBoxColumn
     Friend WithEvents NroCheque As DataGridViewTextBoxColumn
-    Friend WithEvents chkPagado As CheckBox
-    Friend WithEvents lblFila As Label
-    Friend WithEvents lblNombreBanco As Label
 End Class

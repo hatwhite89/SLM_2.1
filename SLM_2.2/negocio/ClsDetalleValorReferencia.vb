@@ -54,14 +54,14 @@ Public Class ClsDetalleValorReferencia
     End Property
 
     'Codigo  edad en
-    Public Property Edad_en As String
-        Get
-            Return edaden
-        End Get
-        Set(value As String)
-            edaden = value
-        End Set
-    End Property
+    'Public Property Edad_en As String
+    '    Get
+    '        Return edaden
+    '    End Get
+    '    Set(value As String)
+    '        edaden = value
+    '    End Set
+    'End Property
 
     'Codigo  valor normal
     Public Property valor_normal As String
@@ -112,10 +112,10 @@ Public Class ClsDetalleValorReferencia
         sqlpar.Value = Edad_hasta
         sqlcom.Parameters.Add(sqlpar)
 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "edaden"
-        sqlpar.Value = Edad_en
-        sqlcom.Parameters.Add(sqlpar)
+        'sqlpar = New SqlParameter
+        'sqlpar.ParameterName = "edaden"
+        'sqlpar.Value = Edad_en
+        'sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "valornormal"
@@ -174,10 +174,10 @@ Public Class ClsDetalleValorReferencia
         sqlpar.Value = Edad_hasta
         sqlcom.Parameters.Add(sqlpar)
 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "edaden"
-        sqlpar.Value = Edad_en
-        sqlcom.Parameters.Add(sqlpar)
+        'sqlpar = New SqlParameter
+        'sqlpar.ParameterName = "edaden"
+        'sqlpar.Value = Edad_en
+        'sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "valornormal"

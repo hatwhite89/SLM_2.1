@@ -74,26 +74,28 @@
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         Try
+            Dim n As String = MsgBox("¿Desea guardar el nuevo candidato?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
 
-            Dim candidato As New ClsCandidatos
+                Dim candidato As New ClsCandidatos
 
-            With candidato
+                With candidato
 
-                .codigoArea_ = Convert.ToInt32(lblcodArea.Text)
-                .codigoPuestoTrabajo_ = Convert.ToInt32(lblcodCargo.Text)
-                .codigoProfesion_ = Convert.ToInt32(lblcodProfesion.Text)
-                .Nombre_ = txtNombre.Text
-                .descripcionExperiencia_ = txtDescripcion.Text
-                .telContacto_ = txtContacto.Text
-                .fechaAplicacion_ = dtpFecha.Value
+                    .codigoArea_ = Convert.ToInt32(lblcodArea.Text)
+                    .codigoPuestoTrabajo_ = Convert.ToInt32(lblcodCargo.Text)
+                    .codigoProfesion_ = Convert.ToInt32(lblcodProfesion.Text)
+                    .Nombre_ = txtNombre.Text
+                    .descripcionExperiencia_ = txtDescripcion.Text
+                    .telContacto_ = txtContacto.Text
+                    .fechaAplicacion_ = dtpFecha.Value
 
-                If .RegistrarNuevoCandidato = 1 Then
-                    MsgBox("Se registro un nuevo candidato.")
-                    cargardata()
-                    limpiar()
-                End If
-            End With
-
+                    If .RegistrarNuevoCandidato = 1 Then
+                        MsgBox("Se registro un nuevo candidato.")
+                        cargardata()
+                        limpiar()
+                    End If
+                End With
+            End If
         Catch ex As Exception
             MsgBox("Error: " + ex.Message)
         End Try
@@ -158,27 +160,29 @@
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
 
         Try
+            Dim n As String = MsgBox("¿Desea modificar el registro de candidato?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
 
-            Dim candidato As New ClsCandidatos
+                Dim candidato As New ClsCandidatos
 
-            With candidato
+                With candidato
 
-                .codigo_ = Convert.ToInt32(lblCandidato.Text)
-                .codigoArea_ = Convert.ToInt32(lblcodArea.Text)
-                .codigoPuestoTrabajo_ = Convert.ToInt32(lblcodCargo.Text)
-                .codigoProfesion_ = Convert.ToInt32(lblcodProfesion.Text)
-                .Nombre_ = txtNombre.Text
-                .descripcionExperiencia_ = txtDescripcion.Text
-                .telContacto_ = txtContacto.Text
-                .fechaAplicacion_ = dtpFecha.Value
+                    .codigo_ = Convert.ToInt32(lblCandidato.Text)
+                    .codigoArea_ = Convert.ToInt32(lblcodArea.Text)
+                    .codigoPuestoTrabajo_ = Convert.ToInt32(lblcodCargo.Text)
+                    .codigoProfesion_ = Convert.ToInt32(lblcodProfesion.Text)
+                    .Nombre_ = txtNombre.Text
+                    .descripcionExperiencia_ = txtDescripcion.Text
+                    .telContacto_ = txtContacto.Text
+                    .fechaAplicacion_ = dtpFecha.Value
 
-                If .ModificarCandidatos = 1 Then
-                    MsgBox("Se modifico el registro.")
-                    cargardata()
-                    limpiar()
-                End If
-            End With
-
+                    If .ModificarCandidatos = 1 Then
+                        MsgBox("Se modifico el registro.")
+                        cargardata()
+                        limpiar()
+                    End If
+                End With
+            End If
         Catch ex As Exception
 
         End Try
@@ -187,18 +191,20 @@
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         Try
+            Dim n As String = MsgBox("¿Desea eliminar el registro?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
 
-            Dim candidato As New ClsCandidatos
+                Dim candidato As New ClsCandidatos
 
-            With candidato
+                With candidato
 
-                .codigo_ = Convert.ToInt32(lblCandidato.Text)
-                .EliminarCandidato()
-                limpiar()
+                    .codigo_ = Convert.ToInt32(lblCandidato.Text)
+                    .EliminarCandidato()
+                    limpiar()
 
-            End With
-            cargardata()
-
+                End With
+                cargardata()
+            End If
         Catch ex As Exception
 
         End Try
@@ -287,8 +293,10 @@
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Dim n As String = MsgBox("¿Desea generar el informe de candidatos?", MsgBoxStyle.YesNo, "Validación")
+        If n = vbYes Then
 
-        Informe()
-
+            Informe()
+        End If
     End Sub
 End Class

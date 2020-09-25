@@ -52,6 +52,9 @@ Public Class M_Cliente
                 txtcodigoCategoria.Text = CStr(row("codigoCategoriaCliente"))
                 txtnombreCategoria.Text = CStr(row("descripcion"))
 
+                'llenar tipo clasificacion
+                cmbxClasificacion.SelectedValue = txtcodigoClasificacion.Text
+
                 'buscar el codigoterminoPago y descripcion
 
                 Dim objTerm As New ClsTerminoPago
@@ -67,6 +70,7 @@ Public Class M_Cliente
                 btnseleccionarCliente.Enabled = True
 
             Catch ex As Exception
+                MsgBox(ex.Message)
                 Dim n As String = MsgBox("No existe el código del cliente. ¿Desea crear un nuevo cliente?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then
                     Dim id As String = mtxtidentidadClienteB.Text
@@ -87,8 +91,10 @@ Public Class M_Cliente
     End Sub
 
     Private Sub btnclasificacion_Click(sender As Object, e As EventArgs) Handles btnclasificacion.Click
-        M_ClasificacionContacto.lblform.Text = "M_Cliente"
-        M_ClasificacionContacto.ShowDialog()
+        'M_ClasificacionContacto.lblform.Text = "M_Cliente"
+        'M_ClasificacionContacto.ShowDialog()
+        M_TipoClasificacion.lbltipo.Text = "M_Cliente"
+        M_TipoClasificacion.ShowDialog()
     End Sub
     Private Sub Habilitar()
         txtcorreo.ReadOnly = False
@@ -147,7 +153,7 @@ Public Class M_Cliente
     End Sub
     Private Sub btnactualizarCliente_Click(sender As Object, e As EventArgs) Handles btnactualizarCliente.Click
         Try
-
+            MsgBox(cmbxClasificacion.SelectedValue)
             Dim genero As String = ""
             If (rbtnmasculino.Checked) Then
                 genero = "Masculino"
@@ -172,7 +178,11 @@ Public Class M_Cliente
                 numero = 0
             End If
 
-            If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And txtcodigoTermino.BackColor = Color.White And txtcodigoCategoria.Text <> "" And txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoClasificacion.Text <> "") Then
+            If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And
+                txtcodigoTermino.BackColor = Color.White And txtnombreCategoria.Text <> "" And
+                txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And
+                Trim(txtapellido1.Text) <> "" And dtpfechaNacimiento.Text <> "" And Trim(cmbxClasificacion.SelectedValue) <> "") Then
+                'If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And txtcodigoTermino.BackColor = Color.White And txtcodigoCategoria.Text <> "" And txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoClasificacion.Text <> "") Then
 
                 txtnombreCompleto.Text = sinDobleEspacio(txtnombreCompleto.Text)
 
@@ -195,7 +205,8 @@ Public Class M_Cliente
                     .Celular1 = txtcelular.Text
                     .Correo_1 = txtcorreo.Text
                     .Correo_2 = txtcorreo2.Text
-                    .CodigoClasificacion1 = Convert.ToInt64(txtcodigoClasificacion.Text)
+                    '.CodigoClasificacion1 = Convert.ToInt64(txtcodigoClasificacion.Text)
+                    .CodigoClasificacion1 = Convert.ToInt64(cmbxClasificacion.SelectedValue)
                     .codigoCategoria1 = Convert.ToInt64(lblcodeCategoria.Text)
                     .codigoTerminoPago1 = Convert.ToInt64(lblcodeTerminoPago.Text)
                 End With
@@ -343,7 +354,12 @@ Public Class M_Cliente
                 numero = 0
             End If
 
-            If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And txtcodigoTermino.BackColor = Color.White And txtcodigoCategoria.Text <> "" And txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoClasificacion.Text <> "") Then
+            If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And
+                txtcodigoTermino.BackColor = Color.White And txtnombreCategoria.Text <> "" And
+                txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And
+                Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And
+                dtpfechaNacimiento.Text <> "" And Trim(cmbxClasificacion.SelectedValue) <> "") Then
+                'If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And txtcodigoTermino.BackColor = Color.White And txtnombreCategoria.Text <> "" And txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoClasificacion.Text <> "") Then
 
                 rtxtdireccion.Text = sinDobleEspacio(rtxtdireccion.Text)
                 txtnombreCompleto.Text = sinDobleEspacio(txtnombreCompleto.Text)
@@ -366,7 +382,8 @@ Public Class M_Cliente
                     .Celular1 = txtcelular.Text
                     .Correo_1 = txtcorreo.Text
                     .Correo_2 = txtcorreo2.Text
-                    .CodigoClasificacion1 = Convert.ToInt64(txtcodigoClasificacion.Text)
+                    .CodigoClasificacion1 = Convert.ToInt64(cmbxClasificacion.SelectedValue)
+                    '.CodigoClasificacion1 = Convert.ToInt64(txtcodigoClasificacion.Text)
                     .codigoCategoria1 = Convert.ToInt64(lblcodeCategoria.Text)
                     .codigoTerminoPago1 = Convert.ToInt64(lblcodeTerminoPago.Text)
                 End With
@@ -465,19 +482,60 @@ Public Class M_Cliente
         M_ClienteVentana.txtnombreTerminos.Text = txtnombreTerminos.Text
         M_ClienteVentana.txtnombreCategoria.Text = txtnombreCategoria.Text
         M_ClienteVentana.txtnombreConvenio.Text = txtnombreConvenio.Text
-        M_ClienteVentana.txttelefonoCasa.Text = txtnombreAseguradora.Text
+        M_ClienteVentana.txttelefonoCasa.Text = txttelefonoCasa.Text
         limpiar()
         Me.Close()
     End Sub
+
+    Private Sub txtcodigoClasificacion_Click(sender As Object, e As EventArgs) Handles txtcodigoClasificacion.Click
+        Try
+            'REVISA QUE SE HAYA SELECCIONADO UNA CATEGORIA
+            If Trim(txtnombreCategoria.Text) <> "" Then
+
+                M_ListadoTipoClasificacion.lblBandera.Text = "1"
+                M_ListadoTipoClasificacion.lblcodeCateCli.Text = lblcodeCategoria.Text
+                M_ListadoTipoClasificacion.lblform.Text = "M_Cliente"
+                M_ListadoTipoClasificacion.ShowDialog()
+
+            Else
+
+                MsgBox("Debe seleccionar una categoria de cliente.", MsgBoxStyle.Exclamation)
+
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    'Private Sub txtcodigoClasificacion_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoClasificacion.TextChanged
+    '    If (txtcodigoClasificacion.Text <> "") Then
+    '        Try
+    '            Dim objClas As New ClsClasificacionContacto
+    '            With objClas
+    '                .Codigo1 = txtcodigoClasificacion.Text
+    '            End With
+    '            Dim dt As New DataTable
+    '            dt = objClas.BuscarClasificacionContactoCode()
+    '            Dim row As DataRow = dt.Rows(0)
+    '            txtnombreClasificacion.Text = CStr(row("comentario"))
+    '            txtcodigoClasificacion.BackColor = Color.White
+    '        Catch ex As Exception
+    '            txtcodigoClasificacion.BackColor = Color.Red
+    '            txtnombreClasificacion.Text = ""
+    '        End Try
+    '    Else
+    '        txtcodigoClasificacion.Text = ""
+    '        txtnombreClasificacion.Text = ""
+    '        txtcodigoClasificacion.BackColor = Color.White
+    '    End If
+    'End Sub
     Private Sub txtcodigoClasificacion_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoClasificacion.TextChanged
         If (txtcodigoClasificacion.Text <> "") Then
             Try
-                Dim objClas As New ClsClasificacionContacto
-                With objClas
-                    .Codigo1 = txtcodigoClasificacion.Text
-                End With
+
+                objTipoCls.Codigo1 = txtcodigoClasificacion.Text
+
                 Dim dt As New DataTable
-                dt = objClas.BuscarClasificacionContactoCode()
+                dt = objTipoCls.BuscarTipoClasificacionCode()
                 Dim row As DataRow = dt.Rows(0)
                 txtnombreClasificacion.Text = CStr(row("comentario"))
                 txtcodigoClasificacion.BackColor = Color.White
@@ -491,6 +549,7 @@ Public Class M_Cliente
             txtcodigoClasificacion.BackColor = Color.White
         End If
     End Sub
+
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
         gbxinfoCliente.Visible = True
@@ -579,6 +638,9 @@ Public Class M_Cliente
                 txtcodigoCategoria.Text = CStr(row("codigoCategoriaCliente"))
                 txtnombreCategoria.Text = CStr(row("descripcion"))
 
+                'llenar tipo clasificacion
+                cmbxClasificacion.SelectedValue = txtcodigoClasificacion.Text
+
                 'buscar el codigoterminoPago y descripcion
 
                 Dim objTerm As New ClsTerminoPago
@@ -595,7 +657,7 @@ Public Class M_Cliente
                 btnseleccionarCliente.Enabled = True
 
             Catch ex As Exception
-                'MsgBox("No existe el código del cliente.", MsgBoxStyle.Critical, "Validación")
+                MsgBox("No existe el código del cliente. " + ex.Message, MsgBoxStyle.Critical, "Validación")
                 Dim n As String = MsgBox("No existe el nombre del paciente. ¿Desea crear un nuevo paciente?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then
                     Dim id As String = mtxtidentidadClienteB.Text
@@ -658,8 +720,8 @@ Public Class M_Cliente
                 Dim dt As New DataTable
                 dt = objCat.BuscarCategoriaCode()
                 Dim row As DataRow = dt.Rows(0)
-                txtnombreCategoria.Text = CStr(row("descripcion"))
                 lblcodeCategoria.Text = CStr(row("codigo"))
+                txtnombreCategoria.Text = CStr(row("descripcion"))
                 txtcodigoCategoria.BackColor = Color.White
             Catch ex As Exception
                 txtcodigoCategoria.BackColor = Color.Red
@@ -847,10 +909,11 @@ Public Class M_Cliente
     End Sub
 
     Dim objTipoCls As New ClsTipoClasificacion
+
+
     Private Sub llenarTipoClasificacion()
         Try
             'MsgBox(lblcodeCategoria.Text)
-            cmbxClasificacion.Items.Clear()
             'llenar el combobox tipo termino
             objTipoCls.codigoCategoriaCliente_ = Integer.Parse(lblcodeCategoria.Text)
             Dim dt As New DataTable
@@ -862,6 +925,5 @@ Public Class M_Cliente
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Validación")
         End Try
     End Sub
-
 
 End Class

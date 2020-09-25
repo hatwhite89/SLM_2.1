@@ -174,7 +174,7 @@ Partial Class A_ValoresRefPar
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.TabPage1.Size = New System.Drawing.Size(745, 719)
+        Me.TabPage1.Size = New System.Drawing.Size(745, 809)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Valores de Referencia Parámetros"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -191,7 +191,7 @@ Partial Class A_ValoresRefPar
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox3.Size = New System.Drawing.Size(727, 356)
+        Me.GroupBox3.Size = New System.Drawing.Size(727, 373)
         Me.GroupBox3.TabIndex = 1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Registros"
@@ -201,7 +201,7 @@ Partial Class A_ValoresRefPar
         Me.txtBusqueda.Location = New System.Drawing.Point(73, 30)
         Me.txtBusqueda.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(241, 22)
+        Me.txtBusqueda.Size = New System.Drawing.Size(636, 22)
         Me.txtBusqueda.TabIndex = 2
         '
         'Label5
@@ -226,7 +226,7 @@ Partial Class A_ValoresRefPar
         Me.dtDataValoresRef.Name = "dtDataValoresRef"
         Me.dtDataValoresRef.RowHeadersWidth = 51
         Me.dtDataValoresRef.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtDataValoresRef.Size = New System.Drawing.Size(699, 284)
+        Me.dtDataValoresRef.Size = New System.Drawing.Size(699, 301)
         Me.dtDataValoresRef.TabIndex = 0
         '
         'GroupBox1
@@ -402,7 +402,7 @@ Partial Class A_ValoresRefPar
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(753, 748)
+        Me.TabControl1.Size = New System.Drawing.Size(753, 838)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage2
@@ -721,6 +721,7 @@ Partial Class A_ValoresRefPar
         Me.Column3.HeaderText = "Edad En"
         Me.Column3.MinimumWidth = 6
         Me.Column3.Name = "Column3"
+        Me.Column3.Visible = False
         '
         'Column4
         '
@@ -740,7 +741,7 @@ Partial Class A_ValoresRefPar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(779, 839)
+        Me.ClientSize = New System.Drawing.Size(779, 840)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.TabControl1)
         Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)

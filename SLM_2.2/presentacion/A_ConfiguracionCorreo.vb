@@ -3,21 +3,24 @@
     Dim servidor As New ClsServidorCorreo
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Try
-            With servidor
+            Dim n As String = MsgBox("¿Desea guardar la información de servidor?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
 
-                .correo_Salida = txtCorreoSalida.Text
-                .Password = txtPassword.Text
-                .Port = Convert.ToInt32(txtPuerto.Text)
-                .Hos_t = txtHost.Text
-                .ssl_ok = chkSSL.Checked
-                .correo_Entrada = txtCorreoNoti.Text
+                With servidor
 
-                If .registrarServidorCorreo = 1 Then
-                    MsgBox("Se ha creado el servidor de correo para notificaciones.")
-                End If
+                    .correo_Salida = txtCorreoSalida.Text
+                    .Password = txtPassword.Text
+                    .Port = Convert.ToInt32(txtPuerto.Text)
+                    .Hos_t = txtHost.Text
+                    .ssl_ok = chkSSL.Checked
+                    .correo_Entrada = txtCorreoNoti.Text
 
-            End With
+                    If .registrarServidorCorreo = 1 Then
+                        MsgBox("Se ha creado el servidor de correo para notificaciones.")
+                    End If
 
+                End With
+            End If
         Catch ex As Exception
             MsgBox("No se pudo guardar el registro." + ex.Message)
         End Try
@@ -56,41 +59,54 @@
     End Sub
 
     Private Sub btnProbar_Click(sender As Object, e As EventArgs) Handles btnProbar.Click
+        Try
 
-        If txtCorreoSalida.Text <> "" And txtPassword.Text <> "" And txtPuerto.Text <> "" And txtHost.Text <> "" And txtCorreoNoti.Text <> "" Then
+            If txtCorreoSalida.Text <> "" And txtPassword.Text <> "" And txtPuerto.Text <> "" And txtHost.Text <> "" And txtCorreoNoti.Text <> "" Then
 
-            enviarMail(txtCorreoSalida.Text, txtPassword.Text, Convert.ToInt32(txtPuerto.Text), chkSSL.Checked, txtHost.Text, txtCorreoNoti.Text, "El correo se configuro exitosamente.")
+                enviarMail(txtCorreoSalida.Text, txtPassword.Text, Convert.ToInt32(txtPuerto.Text), chkSSL.Checked, txtHost.Text, txtCorreoNoti.Text, "El correo se configuro exitosamente.")
+                MsgBox("Se ha enviado un correo de prueba al correo indicado.")
+            Else
+                MsgBox("Debe ingresar la información para poder realizar pruebas de conexión.")
+            End If
 
-        Else
-            MsgBox("Debe ingresar la información para poder realizar pruebas")
-        End If
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        Try
+            Dim n As String = MsgBox("¿Desea modificar la información del servidor?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
 
-        If txtCorreoSalida.Text <> "" And txtPassword.Text <> "" And txtPuerto.Text <> "" And txtHost.Text <> "" And txtCorreoNoti.Text <> "" Then
+                If txtCorreoSalida.Text <> "" And txtPassword.Text <> "" And txtPuerto.Text <> "" And txtHost.Text <> "" And txtCorreoNoti.Text <> "" Then
 
 
-            With servidor
+                    With servidor
 
-                .Cod = Convert.ToInt32(lblCodigo.Text)
-                .correo_Salida = txtCorreoSalida.Text
-                .Password = txtPassword.Text
-                .Port = Convert.ToInt32(txtPuerto.Text)
-                .Hos_t = txtHost.Text
-                .ssl_ok = chkSSL.Checked
-                .correo_Entrada = txtCorreoNoti.Text
+                        .Cod = Convert.ToInt32(lblCodigo.Text)
+                        .correo_Salida = txtCorreoSalida.Text
+                        .Password = txtPassword.Text
+                        .Port = Convert.ToInt32(txtPuerto.Text)
+                        .Hos_t = txtHost.Text
+                        .ssl_ok = chkSSL.Checked
+                        .correo_Entrada = txtCorreoNoti.Text
 
-                If .modificarServidorCorreo = 1 Then
-                    MsgBox("Se ha modificado el servidor de correo para notificaciones.")
+                        If .modificarServidorCorreo = 1 Then
+                            MsgBox("Se ha modificado el servidor de correo para notificaciones.")
+                        End If
+
+                    End With
+
+                Else
+                    MsgBox("No se modificó el servidor, la información está incompleta.")
                 End If
 
-            End With
+            End If
+        Catch ex As Exception
 
-        Else
-            MsgBox("No se modificó el servidor, la información está incompleta.")
-        End If
-
+        End Try
 
     End Sub
 

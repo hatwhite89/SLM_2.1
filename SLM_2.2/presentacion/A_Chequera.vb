@@ -8,82 +8,86 @@
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         'Creacion de nueva chequera y cheques
         Try
-            If txtCtaDestino.Text <> "" And txtCantidad.Text <> "" And txtBanco.Text <> "" And mtxtNumInicio.Text <> "" Then 'if Campos Vacios
+            Dim n As String = MsgBox("¿Desea crear la nueva chequera?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
 
-                Dim dt1, dt2 As New DataTable
 
-                banco.cod_breve = txtBanco.Text
-                cuenta.Cuent_a = Convert.ToInt64(txtCtaDestino.Text)
+                If txtCtaDestino.Text <> "" And txtCantidad.Text <> "" And txtBanco.Text <> "" And mtxtNumInicio.Text <> "" Then 'if Campos Vacios
 
-                dt1 = banco.buscarBancoCod
-                dt2 = cuenta.Comprobar
+                    Dim dt1, dt2 As New DataTable
 
-                If dt1.Rows.Count > 0 And dt2.Rows.Count > 0 Then
+                    banco.cod_breve = txtBanco.Text
+                    cuenta.Cuent_a = Convert.ToInt64(txtCtaDestino.Text)
 
-                    Try
+                    dt1 = banco.buscarBancoCod
+                    dt2 = cuenta.Comprobar
 
-                        With Chequera
+                    If dt1.Rows.Count > 0 And dt2.Rows.Count > 0 Then
 
-                            'Capturar Variables
-                            .Cuenta_Destino = txtCtaDestino.Text
-                            .Numero_Inicio = mtxtNumInicio.Text
-                            .Cuenta_Destino = txtCtaDestino.Text
-                            .Cantida_d = Convert.ToInt32(txtCantidad.Text)
-                            .Banc_o = txtBanco.Text
+                        Try
 
-                            'Registrar Datos
-                            .registrarNuevaChequera()
+                            With Chequera
 
-                            dtChequeras.DataSource = Chequera.listarUltimaChequera
-                            lblCodChequera.Text = dtChequeras.Rows(0).Cells(0).Value
-                            dtChequeras.DataSource = Chequera.listarChequeras
-                        End With
+                                'Capturar Variables
+                                .Cuenta_Destino = txtCtaDestino.Text
+                                .Numero_Inicio = mtxtNumInicio.Text
+                                .Cuenta_Destino = txtCtaDestino.Text
+                                .Cantida_d = Convert.ToInt32(txtCantidad.Text)
+                                .Banc_o = txtBanco.Text
 
-                        'Nuevos Cheques
-                        With Cheques
-                            .Cod_Chequera = Convert.ToInt64(lblCodChequera.Text)
-                            .Numero_Cheque = mtxtNumInicio.Text
-                            .Cod_BreveBanco = txtBanco.Text
-                            .Nombre_Banco = lblNombreBanc.Text
-                            .Estad_o = "Habilitado"
-                            .Moned_a = "Lps"
-                            .Cantida_d = Convert.ToInt64(txtCantidad.Text)
-                            .registrarNuevosCheques()
+                                'Registrar Datos
+                                .registrarNuevaChequera()
 
-                            MessageBox.Show("Se crearon " + txtCantidad.Text + "  registros de cheques.")
-                        End With
+                                dtChequeras.DataSource = Chequera.listarUltimaChequera
+                                lblCodChequera.Text = dtChequeras.Rows(0).Cells(0).Value
+                                dtChequeras.DataSource = Chequera.listarChequeras
+                            End With
 
-                        'Limpiar Campos
-                        Limpiar()
+                            'Nuevos Cheques
+                            With Cheques
+                                .Cod_Chequera = Convert.ToInt64(lblCodChequera.Text)
+                                .Numero_Cheque = mtxtNumInicio.Text
+                                .Cod_BreveBanco = txtBanco.Text
+                                .Nombre_Banco = lblNombreBanc.Text
+                                .Estad_o = "Habilitado"
+                                .Moned_a = "Lps"
+                                .Cantida_d = Convert.ToInt64(txtCantidad.Text)
+                                .registrarNuevosCheques()
 
-                    Catch ex As Exception
+                                MessageBox.Show("Se crearon " + txtCantidad.Text + "  registros de cheques.")
+                            End With
 
-                        MsgBox("Hubo un error al generar la chequera. Detalle: " + ex.Message)
+                            'Limpiar Campos
+                            Limpiar()
 
-                    End Try
+                        Catch ex As Exception
 
-                End If
+                            MsgBox("Hubo un error al generar la chequera. Detalle: " + ex.Message)
 
-            Else ' else campos vacios
+                        End Try
 
-                MsgBox("Faltan campos que llenar.")
+                    End If
 
-                If txtCtaDestino.Text = "" Then
-                    txtCtaDestino.BackColor = Color.Red
+                Else ' else campos vacios
 
-                ElseIf txtCantidad.Text = "" Then
-                    txtCantidad.BackColor = Color.Red
+                    MsgBox("Faltan campos que llenar.")
 
-                ElseIf txtBanco.Text = "" Then
-                    txtBanco.BackColor = Color.Red
+                    If txtCtaDestino.Text = "" Then
+                        txtCtaDestino.BackColor = Color.Red
 
-                ElseIf mtxtNumInicio.Text = "" Then
-                    mtxtNumInicio.BackColor = Color.Red
+                    ElseIf txtCantidad.Text = "" Then
+                        txtCantidad.BackColor = Color.Red
 
-                End If
+                    ElseIf txtBanco.Text = "" Then
+                        txtBanco.BackColor = Color.Red
 
-            End If ' if campos vacios
+                    ElseIf mtxtNumInicio.Text = "" Then
+                        mtxtNumInicio.BackColor = Color.Red
 
+                    End If
+
+                End If ' if campos vacios
+            End If
         Catch ex As Exception
 
         End Try

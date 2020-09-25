@@ -4,6 +4,7 @@ Public Class ClsEmpleados
 
     Dim codigo, codigoArea, codigoHorario, codigoFormaPago, codigoPuestoTrab, codigoContrato, codigoProfesion, codigoDepto As Integer
     Dim nombre1, nombre2, apellido1, apellido2, nombreCompleto, nIdentidad, nSeguroSocial, banco, cuentaBancaria As String
+    Dim parentesco1, parentesco2 As String
     Dim fechaAlta, fechaNacimiento As Date
     Dim fechaBaja, fechaAvisoBaja As System.Nullable(Of Date)
     Dim salario As Double
@@ -79,6 +80,23 @@ Public Class ClsEmpleados
         End Set
     End Property
 
+    Public Property Parentesco1_ As String
+        Get
+            Return parentesco1
+        End Get
+        Set(value As String)
+            parentesco1 = value
+        End Set
+    End Property
+
+    Public Property Parentesco2_ As String
+        Get
+            Return parentesco2
+        End Get
+        Set(value As String)
+            parentesco2 = value
+        End Set
+    End Property
     Public Property Nombre1_ As String
         Get
             Return nombre1
@@ -680,6 +698,16 @@ Public Class ClsEmpleados
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "parentesco1" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Parentesco1_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "parentesco2" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Parentesco2_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -945,6 +973,16 @@ Public Class ClsEmpleados
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "condicionesEspe" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = condicionesEspe_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "parentesco1" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Parentesco1_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "parentesco2" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Parentesco2_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

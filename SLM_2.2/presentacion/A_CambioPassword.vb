@@ -23,25 +23,29 @@
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         Try
+            Dim n As String = MsgBox("¿Desea guardar la nueva contraseña?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
 
-            If txtPass.Text <> "" Then
+                If txtPass.Text <> "" Then
 
-                Dim usuario As New ClsUsuario
+                    Dim usuario As New ClsUsuario
 
-                With usuario
+                    With usuario
 
-                    .Usuario_ = M_InicioSesion.txtusuario.Text
-                    .password_ = Encriptar(txtPass.Text)
+                        .Usuario_ = M_InicioSesion.txtusuario.Text
+                        .password_ = Encriptar(txtPass.Text)
 
-                    If .CambioPass = 1 Then
-                        MsgBox("Se actualizo su contraseña. Ingrese su usuario y nueva contraseña para poder ingresar.")
-                        Me.Close()
-                        M_InicioSesion.Limpiar()
-                    End If
+                        If .CambioPass = 1 Then
+                            MsgBox("Se actualizo su contraseña. Ingrese su usuario y nueva contraseña para poder ingresar.")
+                            Me.Close()
+                            M_InicioSesion.Limpiar()
+                        End If
 
-                End With
+                    End With
 
+                End If
             End If
+
 
         Catch ex As Exception
             MsgBox("Ocurrio un error. " + ex.Message)
@@ -53,5 +57,9 @@
         If (e.KeyCode = Keys.Enter) Then
             btnGuardar.PerformClick()
         End If
+    End Sub
+
+    Private Sub A_CambioPassword_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

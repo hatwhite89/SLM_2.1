@@ -1,19 +1,21 @@
 ﻿Public Class M_Permisos
-
+    Dim objPerm As New ClsPermisos
+    Dim objEmp As New ClsEmpleados
+    Dim objTipoTerm As New ClsTipoPermiso
     Private Sub txtjefeInmediato_TextChanged(sender As Object, e As EventArgs) Handles txtjefeInmediato.Click
-        If dtpFecha.Enabled Then
+        If dtpFechaInicial.Enabled Then
             M_ListadoEmpleados.lblform.Text = "M_Permisos_JefeInmediato"
             M_ListadoEmpleados.ShowDialog()
         End If
     End Sub
-    Private Sub txtTalentoHumano_TextChanged(sender As Object, e As EventArgs) Handles txtTalentoHumano.Click
-        If dtpFecha.Enabled Then
-            M_ListadoEmpleados.lblform.Text = "M_Permisos_TalentoHumano"
-            M_ListadoEmpleados.ShowDialog()
-        End If
+    Private Sub txtTalentoHumano_TextChanged(sender As Object, e As EventArgs) Handles txtDepto.Click
+        'If dtpFecha.Enabled Then
+        '    M_ListadoEmpleados.lblform.Text = "M_Permisos_TalentoHumano"
+        '    M_ListadoEmpleados.ShowDialog()
+        'End If
     End Sub
     Private Sub txtEmpleado_TextChanged(sender As Object, e As EventArgs) Handles txtEmpleado.Click
-        If dtpFecha.Enabled Then
+        If dtpFechaInicial.Enabled Then
             M_ListadoEmpleados.lblform.Text = "M_Permisos_Empleado"
             M_ListadoEmpleados.ShowDialog()
         End If
@@ -22,23 +24,29 @@
 
         txtcodigo.Text = ""
         dtpEntradaTarde.ResetText()
-        dtpFecha.ResetText()
-        dtpSalidaTarde.ResetText()
+        dtpFechaInicial.ResetText()
+        dtpFechaFinal.ResetText()
         dtpSalidaTemprano.ResetText()
-        rtxtAsunto.Text = ""
+        rtxtObservaciones.Text = ""
         txtjefeInmediato.Text = ""
-        txtTalentoHumano.Text = ""
+        txtDepto.Text = ""
         lblcodigoEmpleado.Text = ""
         lblcodeJefeInme.Text = ""
-        lblcodeTalentoHumano.Text = ""
+        lblcodeDepto.Text = ""
         txtEmpleado.Text = ""
-        rbtnNo.Checked = True
+        llenarTipoPermiso()
 
+        txtEmpleado.ReadOnly = True
+        txtDepto.ReadOnly = True
+        txtjefeInmediato.ReadOnly = True
         dtpEntradaTarde.Enabled = True
-        dtpFecha.Enabled = True
-        dtpSalidaTarde.Enabled = True
+        dtpFechaInicial.Enabled = True
+        dtpFechaFinal.Enabled = True
         dtpSalidaTemprano.Enabled = True
-        rtxtAsunto.ReadOnly = False
+        rtxtObservaciones.ReadOnly = False
+
+        btnTipoPermiso.Enabled = True
+        cmbxTipoPermiso.Enabled = True
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
@@ -47,8 +55,8 @@
         dtpEntradaTarde.Format = DateTimePickerFormat.Custom
         dtpEntradaTarde.CustomFormat = " "
 
-        dtpSalidaTarde.Format = DateTimePickerFormat.Custom
-        dtpSalidaTarde.CustomFormat = " "
+        'dtpFechaFinal.Format = DateTimePickerFormat.Custom
+        'dtpFechaFinal.CustomFormat = " "
 
         dtpSalidaTemprano.Format = DateTimePickerFormat.Custom
         dtpSalidaTemprano.CustomFormat = " "
@@ -66,17 +74,17 @@
         End Select
 
     End Sub
-    Private Sub dtpSalidaTarde_MouseDown(sender As Object, e As MouseEventArgs) Handles dtpSalidaTarde.MouseDown
+    Private Sub dtpSalidaTarde_MouseDown(sender As Object, e As MouseEventArgs) Handles dtpFechaFinal.MouseDown
 
-        Select Case e.Button
-            Case Windows.Forms.MouseButtons.Left
-                dtpSalidaTarde.Format = DateTimePickerFormat.Time
-                dtpSalidaTarde.Value = Date.Today
+        'Select Case e.Button
+        '    Case Windows.Forms.MouseButtons.Left
+        '        dtpFechaFinal.Format = DateTimePickerFormat.Time
+        '        dtpFechaFinal.Value = Date.Today
 
-            Case Windows.Forms.MouseButtons.Right
-                dtpSalidaTarde.Format = DateTimePickerFormat.Custom
-                dtpSalidaTarde.CustomFormat = " "
-        End Select
+        '    Case Windows.Forms.MouseButtons.Right
+        '        dtpFechaFinal.Format = DateTimePickerFormat.Custom
+        '        dtpFechaFinal.CustomFormat = " "
+        'End Select
 
     End Sub
     Private Sub dtpfechaBaja_MouseDown(sender As Object, e As MouseEventArgs) Handles dtpSalidaTemprano.MouseDown
@@ -99,10 +107,12 @@
     Private Sub deshabilitar()
 
         dtpEntradaTarde.Enabled = False
-        dtpFecha.Enabled = False
-        dtpSalidaTarde.Enabled = False
+        dtpFechaInicial.Enabled = False
+        dtpFechaFinal.Enabled = False
         dtpSalidaTemprano.Enabled = False
-        rtxtAsunto.ReadOnly = True
+        rtxtObservaciones.ReadOnly = True
+        cmbxTipoPermiso.Enabled = False
+        btnTipoPermiso.Enabled = False
 
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
@@ -131,41 +141,38 @@
             Else
                 txtjefeInmediato.BackColor = Color.White
             End If
-            If txtTalentoHumano.TextLength = 0 Then
-                txtTalentoHumano.BackColor = Color.Red
+            If txtDepto.TextLength = 0 Then
+                txtDepto.BackColor = Color.Red
             Else
-                txtTalentoHumano.BackColor = Color.White
+                txtDepto.BackColor = Color.White
             End If
-            If Trim(rtxtAsunto.Text) = "" Then
-                rtxtAsunto.BackColor = Color.Red
-            Else
-                sinDobleEspacio(rtxtAsunto.Text)
-                rtxtAsunto.BackColor = Color.White
-            End If
-            If (txtEmpleado.BackColor = Color.White And txtjefeInmediato.BackColor = Color.White And txtTalentoHumano.BackColor = Color.White And rtxtAsunto.BackColor = Color.White) Then
-                Dim objPerm As New ClsPermisos
+            'If Trim(rtxtObservaciones.Text) = "" Then
+            '    rtxtObservaciones.BackColor = Color.Red
+            'Else
+            '    sinDobleEspacio(rtxtObservaciones.Text)
+            '    rtxtObservaciones.BackColor = Color.White
+            'End If
+            If (txtEmpleado.BackColor = Color.White And txtjefeInmediato.BackColor = Color.White And txtDepto.BackColor = Color.White) Then
+
                 With objPerm
-                    .fecha_ = dtpFecha.Value
+                    .codigoEmpleado_ = lblcodigoEmpleado.Text
+                    .codigoJefeInmediato_ = lblcodeJefeInme.Text
+                    .fechaInicial_ = dtpFechaInicial.Value
+                    .fechaFinal_ = dtpFechaFinal.Value
+                    .codigoTipoPermiso_ = cmbxTipoPermiso.SelectedValue
+                    .totalDias_ = txtTotalDias.Text
                     If Trim(dtpEntradaTarde.Text) <> "" Then
                         .entradaTarde_ = dtpEntradaTarde.Value
                     Else
                         .entradaTarde_ = Nothing
-                    End If
-                    If Trim(dtpSalidaTarde.Text) <> "" Then
-                        .salidaTarde_ = dtpSalidaTarde.Value
-                    Else
-                        .salidaTarde_ = Nothing
                     End If
                     If Trim(dtpSalidaTemprano.Text) <> "" Then
                         .salidaTemprano_ = dtpSalidaTemprano.Value
                     Else
                         .salidaTemprano_ = Nothing
                     End If
-                    .asunto_ = rtxtAsunto.Text
-                    .codigoEmpleado_ = lblcodigoEmpleado.Text
-                    .codigoJefeInmediato_ = lblcodeJefeInme.Text
-                    .codigoTalentoHumano_ = lblcodeTalentoHumano.Text
-                    .goseSueldo_ = rbtnSi.Checked
+                    .observaciones_ = rtxtObservaciones.Text
+                    '.goseSueldo_ = rbtnSi.Checked
                 End With
                 If objPerm.RegistrarNuevoPermiso() = 1 Then
                     MsgBox("Registrado el permiso especial correctamente.", MsgBoxStyle.Information)
@@ -196,42 +203,39 @@
             Else
                 txtjefeInmediato.BackColor = Color.White
             End If
-            If txtTalentoHumano.TextLength = 0 Then
-                txtTalentoHumano.BackColor = Color.Red
+            If txtDepto.TextLength = 0 Then
+                txtDepto.BackColor = Color.Red
             Else
-                txtTalentoHumano.BackColor = Color.White
+                txtDepto.BackColor = Color.White
             End If
-            If Trim(rtxtAsunto.Text) = "" Then
-                rtxtAsunto.BackColor = Color.Red
-            Else
-                sinDobleEspacio(rtxtAsunto.Text)
-                rtxtAsunto.BackColor = Color.White
-            End If
-            If (txtEmpleado.BackColor = Color.White And txtjefeInmediato.BackColor = Color.White And txtTalentoHumano.BackColor = Color.White And rtxtAsunto.BackColor = Color.White) Then
-                Dim objPerm As New ClsPermisos
+            'If Trim(rtxtObservaciones.Text) = "" Then
+            '    rtxtObservaciones.BackColor = Color.Red
+            'Else
+            '    sinDobleEspacio(rtxtObservaciones.Text)
+            '    rtxtObservaciones.BackColor = Color.White
+            'End If
+            If (txtEmpleado.BackColor = Color.White And txtjefeInmediato.BackColor = Color.White And txtDepto.BackColor = Color.White) Then
+                'Dim objPerm As New ClsPermisos
                 With objPerm
                     .codigo_ = txtcodigo.Text
-                    .fecha_ = dtpFecha.Value
+                    .codigoEmpleado_ = lblcodigoEmpleado.Text
+                    .codigoJefeInmediato_ = lblcodeJefeInme.Text
+                    .fechaInicial_ = dtpFechaInicial.Value
+                    .fechaFinal_ = dtpFechaFinal.Value
+                    .codigoTipoPermiso_ = cmbxTipoPermiso.SelectedValue
+                    .totalDias_ = txtTotalDias.Text
                     If Trim(dtpEntradaTarde.Text) <> "" Then
                         .entradaTarde_ = dtpEntradaTarde.Value
                     Else
                         .entradaTarde_ = Nothing
-                    End If
-                    If Trim(dtpSalidaTarde.Text) <> "" Then
-                        .salidaTarde_ = dtpSalidaTarde.Value
-                    Else
-                        .salidaTarde_ = Nothing
                     End If
                     If Trim(dtpSalidaTemprano.Text) <> "" Then
                         .salidaTemprano_ = dtpSalidaTemprano.Value
                     Else
                         .salidaTemprano_ = Nothing
                     End If
-                    .asunto_ = rtxtAsunto.Text
-                    .codigoEmpleado_ = lblcodigoEmpleado.Text
-                    .codigoJefeInmediato_ = lblcodeJefeInme.Text
-                    .codigoTalentoHumano_ = lblcodeTalentoHumano.Text
-                    .goseSueldo_ = rbtnSi.Checked
+                    .observaciones_ = rtxtObservaciones.Text
+                    '.goseSueldo_ = rbtnSi.Checked
                 End With
 
                 If objPerm.ModificarPermisos() = 1 Then
@@ -260,35 +264,41 @@
                 limpiar()
 
                 txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-                dtpFecha.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
-                rtxtAsunto.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()
-                lblcodigoEmpleado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(6).Value()
-                lblcodeJefeInme.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(7).Value()
-                lblcodeTalentoHumano.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(8).Value()
+                lblcodigoEmpleado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                lblcodeJefeInme.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+                dtpFechaInicial.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+                dtpFechaFinal.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()
+                cmbxTipoPermiso.SelectedValue = Me.dgbtabla.Rows(e.RowIndex).Cells(6).Value()
+                txtTotalDias.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(7).Value()
                 'valida que no sea nulo para poner la hora ingresada.
-                If Trim(Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value().ToString) <> "" Then
+                If Trim(Me.dgbtabla.Rows(e.RowIndex).Cells(8).Value().ToString) <> "" Then
                     dtpEntradaTarde.Format = DateTimePickerFormat.Time
-                    dtpEntradaTarde.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value().ToString
+                    dtpEntradaTarde.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(8).Value().ToString
                 End If
-                If Trim(Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value().ToString) <> "" Then
+                If Trim(Me.dgbtabla.Rows(e.RowIndex).Cells(9).Value().ToString) <> "" Then
                     dtpSalidaTemprano.Format = DateTimePickerFormat.Time
-                    dtpSalidaTemprano.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value().ToString
+                    dtpSalidaTemprano.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(9).Value().ToString
                 End If
-                If Trim(Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value().ToString) <> "" Then
-                    dtpSalidaTarde.Format = DateTimePickerFormat.Time
-                    dtpSalidaTarde.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value().ToString
-                End If
-                If Me.dgbtabla.Rows(e.RowIndex).Cells(9).Value() Then
-                    rbtnSi.Checked = True
-                Else
-                    rbtnNo.Checked = True
-                End If
+                rtxtObservaciones.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(10).Value()
 
                 btnmodificar.Enabled = True
                 btnguardar.Enabled = False
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+    Public Sub llenarTipoPermiso()
+        Try
+            'llenar el combobox tipo permiso
+            Dim dt As New DataTable
+            dt = objTipoTerm.SeleccionarTipoPermiso()
+            'cmbxTipoPermiso.DataSource = New BindingSource(dt, Nothing)
+            cmbxTipoPermiso.DataSource = dt
+            cmbxTipoPermiso.DisplayMember = "nombre"
+            cmbxTipoPermiso.ValueMember = "codigo"
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Validación")
         End Try
     End Sub
     Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
@@ -316,20 +326,32 @@
         End If
     End Sub
     Private Sub M_Permisos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'ACTUALIZAR LISTADO
         seleccionarPermisos()
+
+        'AGREGARLE COLOR AL DATAGRIDVIEW
         alternarColoFilasDatagridview(dgbtabla)
-        Me.dgbtabla.Columns("codigoTalentoHumano").Visible = False
+
+        'OCULTAR COLUMNAS
+        Me.dgbtabla.Columns("codigoEmpleado").Visible = False
         Me.dgbtabla.Columns("codigoJefeInmediato").Visible = False
-        'Me.dgbtabla.Columns("miercoles").Visible = False
-        'Me.dgbtabla.Columns("jueves").Visible = False
-        'Me.dgbtabla.Columns("viernes").Visible = False
-        'Me.dgbtabla.Columns("sabado").Visible = False
-        'Me.dgbtabla.Columns("domingo").Visible = False
+        Me.dgbtabla.Columns("codigoTipoPermiso").Visible = False
+        Me.dgbtabla.Columns("entradaTarde").Visible = False
+        Me.dgbtabla.Columns("salidaTemprano").Visible = False
         'Me.dgbtabla.Columns("observacion").Visible = False
+
+        'CAMBIAS NOMBRE COLUMNAS
+        dgbtabla.Columns("codigo").HeaderText = "Código"
+        dgbtabla.Columns("fechaInicial").HeaderText = "Fecha Inicial"
+        dgbtabla.Columns("fechaFinal").HeaderText = "Fecha Final"
+        dgbtabla.Columns("totalDias").HeaderText = "Total de Días"
+        dgbtabla.Columns("observaciones").HeaderText = "Observaciones"
+
+        'LLENAR COMBO BOX TIPO PERMISO
+        llenarTipoPermiso()
     End Sub
     Private Sub seleccionarPermisos()
         Try
-            Dim objPerm As New ClsPermisos
             Dim dv As DataView = objPerm.SeleccionarPermisos.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
@@ -340,23 +362,30 @@
         End Try
     End Sub
     Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
-        Try
-            Dim objPerm As New ClsPermisos
-            With objPerm
-                .asunto_ = txtnombreB.Text
-            End With
-            Dim dv As DataView = objPerm.BuscarPermisosNombre.DefaultView
-            dgbtabla.DataSource = dv
-            lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
-        Catch ex As Exception
+        'Try
+        '    Dim objPerm As New ClsPermisos
+        '    With objPerm
+        '        .observaciones_ = txtnombreB.Text
+        '    End With
+        '    Dim dv As DataView = objPerm.BuscarPermisosNombre.DefaultView
+        '    dgbtabla.DataSource = dv
+        '    lblcantidad.Text = dv.Count
+        '    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        'Catch ex As Exception
 
+        'End Try
+        Try
+            Dim dv As DataView = dgbtabla.DataSource
+            dv.RowFilter = String.Format("Empleado Like '%{0}%'", txtnombreB.Text)
+            lblcantidad.Text = dv.Count
+            dgbtabla.DataSource = dv
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
     Private Sub lblcodeJefeInme_TextChanged(sender As Object, e As EventArgs) Handles lblcodeJefeInme.TextChanged
         Try
-            Dim objEmp As New ClsEmpleados
             With objEmp
                 .codigo_ = lblcodeJefeInme.Text
             End With
@@ -368,23 +397,22 @@
 
         End Try
     End Sub
-    Private Sub lblcodeTalentoHumano_TextChanged(sender As Object, e As EventArgs) Handles lblcodeTalentoHumano.TextChanged
-        Try
-            Dim objEmp As New ClsEmpleados
-            With objEmp
-                .codigo_ = lblcodeTalentoHumano.Text
-            End With
-            Dim dt As New DataTable
-            dt = objEmp.BuscarEmpleadosPorCodigo()
-            Dim row As DataRow = dt.Rows(0)
-            txtTalentoHumano.Text = CStr(row("nombreCompleto"))
-        Catch ex As Exception
+    Private Sub lblcodeTalentoHumano_TextChanged(sender As Object, e As EventArgs) Handles lblcodeDepto.TextChanged
+        'Try
+        '    Dim objEmp As New ClsEmpleados
+        '    With objEmp
+        '        .codigo_ = lblcodeDepto.Text
+        '    End With
+        '    Dim dt As New DataTable
+        '    dt = objEmp.BuscarEmpleadosPorCodigo()
+        '    Dim row As DataRow = dt.Rows(0)
+        '    txtDepto.Text = CStr(row("nombreCompleto"))
+        'Catch ex As Exception
 
-        End Try
+        'End Try
     End Sub
     Private Sub lblcodigoEmpleado_TextChanged(sender As Object, e As EventArgs) Handles lblcodigoEmpleado.TextChanged
         Try
-            Dim objEmp As New ClsEmpleados
             With objEmp
                 .codigo_ = lblcodigoEmpleado.Text
             End With
@@ -392,6 +420,8 @@
             dt = objEmp.BuscarEmpleadosPorCodigo()
             Dim row As DataRow = dt.Rows(0)
             txtEmpleado.Text = CStr(row("nombreCompleto"))
+            lblcodeDepto.Text = CStr(row("codigoDepto"))
+            txtDepto.Text = CStr(row("Departamento"))
         Catch ex As Exception
 
         End Try
@@ -404,9 +434,9 @@
 
     End Sub
 
-    Private Sub txtTalentoHumano_TextChanged_1(sender As Object, e As EventArgs) Handles txtTalentoHumano.TextChanged
-        If txtTalentoHumano.Text <> "" Then
-            txtTalentoHumano.BackColor = Color.White
+    Private Sub txtTalentoHumano_TextChanged_1(sender As Object, e As EventArgs) Handles txtDepto.TextChanged
+        If txtDepto.Text <> "" Then
+            txtDepto.BackColor = Color.White
         End If
     End Sub
 
@@ -414,5 +444,22 @@
         If txtEmpleado.Text <> "" Then
             txtEmpleado.BackColor = Color.White
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        M_TipoPermiso.ShowDialog()
+    End Sub
+
+    Private Sub dtpFecha_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaInicial.ValueChanged
+        txtTotalDias.Text = DateDiff(DateInterval.Day, dtpFechaInicial.Value, dtpFechaFinal.Value)
+    End Sub
+
+    Private Sub btnTipoPermiso_Click(sender As Object, e As EventArgs) Handles btnTipoPermiso.Click
+        M_TipoPermiso.lblform.Text = "M_Permisos"
+        M_TipoPermiso.Show()
+    End Sub
+
+    Private Sub dtpFechaFinal_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaFinal.ValueChanged
+        txtTotalDias.Text = DateDiff(DateInterval.Day, dtpFechaInicial.Value, dtpFechaFinal.Value)
     End Sub
 End Class

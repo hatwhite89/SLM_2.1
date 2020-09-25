@@ -288,6 +288,9 @@
             If Trim(txtnombre1.Text) <> "" Then
                 sinDobleEspacio(txtnombre1.Text)
             End If
+            If Trim(txtnombre2.Text) <> "" Then
+                sinDobleEspacio(txtnombre2.Text)
+            End If
             If Trim(txtapellido1.Text) <> "" Then
                 sinDobleEspacio(txtapellido1.Text)
             End If
@@ -319,7 +322,7 @@
                 band2 = True
             End If
 
-            If (mtxtidentidad.MaskCompleted And (txtseguroSocial.Text) <> "" And Trim(txtcodigoHorario.Text) <> "" And
+            If (mtxtidentidad.MaskCompleted And Trim(txtcodigoHorario.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtnombre1.Text) <> "" And
                 Trim(txtbanco.Text) <> "" And Trim(txtcodigoFormaPago.Text) <> "" And Trim(lblcodigoArea.Text) <> "" And
                 Trim(lblcodeDepto.Text) <> "" And Trim(lblcodePuesto.Text) <> "" And Trim(txtsalario.Text) <> "" And txtnombreCompleto.Text <> "" And
                 Trim(rtxtdireccion.Text) <> "" And Trim(txtcodigoProfesion.Text) <> "" And band And Trim(txtgrupoSanguineo.Text) <> "" And
@@ -390,6 +393,12 @@
                     .contactoUrgencias2_ = txtcontactoUrgencias2.Text
                     .telUrgencias2_ = txttelUrgencias2.Text
                     .celUrgencias2_ = txtcelularUrgencias2.Text
+                    'Datos Medicos
+                    .alergiaAli_ = rtxtAAlimentos.Text
+                    .alergiaMed_ = rtxtAMedicamentos.Text
+                    .condicionesEspe_ = rtxtCondicionesE.Text
+                    .Parentesco1_ = txtParentesco1.Text
+                    .Parentesco2_ = txtParentesco2.Text
                 End With
 
                 If objEmp.RegistrarNuevoEmpleados() = 1 Then
@@ -542,6 +551,9 @@
             If Trim(txtnombre1.Text) <> "" Then
                 sinDobleEspacio(txtnombre1.Text)
             End If
+            If Trim(txtnombre2.Text) <> "" Then
+                sinDobleEspacio(txtnombre2.Text)
+            End If
             If Trim(txtapellido1.Text) <> "" Then
                 sinDobleEspacio(txtapellido1.Text)
             End If
@@ -574,7 +586,7 @@
                 band2 = True
             End If
 
-            If (txtcodigo.Text <> "" And mtxtidentidad.MaskCompleted And (txtseguroSocial.Text) <> "" And Trim(txtcodigoHorario.Text) <> "" And
+            If (txtcodigo.Text <> "" And mtxtidentidad.MaskCompleted And Trim(txtcodigoHorario.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtnombre1.Text) <> "" And
                 Trim(txtbanco.Text) <> "" And Trim(txtcodigoFormaPago.Text) <> "" And Trim(lblcodigoArea.Text) <> "" And
                 Trim(lblcodeDepto.Text) <> "" And Trim(lblcodePuesto.Text) <> "" And Trim(txtsalario.Text) <> "" And txtnombreCompleto.Text <> "" And
                 Trim(rtxtdireccion.Text) <> "" And Trim(txtcodigoProfesion.Text) <> "" And band And Trim(txtgrupoSanguineo.Text) <> "" And
@@ -645,6 +657,12 @@
                     .contactoUrgencias2_ = txtcontactoUrgencias2.Text
                     .telUrgencias2_ = txttelUrgencias2.Text
                     .celUrgencias2_ = txtcelularUrgencias2.Text
+                    'Datos Medicos
+                    .alergiaAli_ = rtxtAAlimentos.Text
+                    .alergiaMed_ = rtxtAMedicamentos.Text
+                    .condicionesEspe_ = rtxtCondicionesE.Text
+                    .Parentesco1_ = txtParentesco1.Text
+                    .Parentesco2_ = txtParentesco2.Text
                 End With
 
                 If objEmp.ModificarEmpleados() = 1 Then
@@ -815,5 +833,7 @@
         End Try
     End Sub
 
-
+    Private Sub txtnombreCompleto_TextChanged(sender As Object, e As EventArgs) Handles txtnombreCompleto.TextChanged
+        txtnombreCompleto.Text = Replace(txtnombreCompleto.Text, "  ", " ")
+    End Sub
 End Class

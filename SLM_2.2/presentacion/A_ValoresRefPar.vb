@@ -63,7 +63,7 @@
                             .Cod_ValorRef = Convert.ToInt32(lblCodValorRef.Text)
                             .Edad_de = dtValoresRef.Rows(i).Cells(1).Value
                             .Edad_hasta = dtValoresRef.Rows(i).Cells(2).Value
-                            .Edad_en = dtValoresRef.Rows(i).Cells(3).Value
+                            '.Edad_en = dtValoresRef.Rows(i).Cells(3).Value
                             .valor_normal = dtValoresRef.Rows(i).Cells(4).Value
                             .hasta_ = dtValoresRef.Rows(i).Cells(5).Value
                             .registrarNuevoDetalleValorReferencia()
@@ -260,7 +260,7 @@
                                 .Cod_ValorRef = Convert.ToInt32(lblCodValorRef.Text)
                                 .Edad_de = dtValoresRef.Rows(i).Cells(1).Value
                                 .Edad_hasta = dtValoresRef.Rows(i).Cells(2).Value
-                                .Edad_en = dtValoresRef.Rows(i).Cells(3).Value
+                                '.Edad_en = dtValoresRef.Rows(i).Cells(3).Value
                                 .valor_normal = dtValoresRef.Rows(i).Cells(4).Value
                                 .hasta_ = dtValoresRef.Rows(i).Cells(5).Value
                                 .registrarNuevoDetalleValorReferencia()
@@ -269,7 +269,7 @@
                                 .Cod_ = Convert.ToInt32(dtValoresRef.Rows(i).Cells(0).Value)
                                 .Edad_de = dtValoresRef.Rows(i).Cells(1).Value
                                 .Edad_hasta = dtValoresRef.Rows(i).Cells(2).Value
-                                .Edad_en = dtValoresRef.Rows(i).Cells(3).Value
+                                '.Edad_en = dtValoresRef.Rows(i).Cells(3).Value
                                 .valor_normal = dtValoresRef.Rows(i).Cells(4).Value
                                 .hasta_ = dtValoresRef.Rows(i).Cells(5).Value
                                 .modificarDetalleValorReferencia()
@@ -403,7 +403,8 @@
                 For index As Integer = 0 To dtDetalle.Rows.Count - 1
                     dfila = dtDetalle.Rows(index)
                     'dtValoresRef.Rows.Add(New String() {CStr((dfila("cod_DetalleValorRef"))), (dfila("edaden")), dfila("edadhasta"), dfila("edaden"), dfila("valornormal"), dfila("hasta")})
-                    dtValoresRef.Rows.Add(New String() {CStr((dfila("cod_DetalleValorRef"))), (dfila("edadde")), dfila("edadhasta"), dfila("edaden"), dfila("valornormal"), dfila("hasta")})
+                    'dtValoresRef.Rows.Add(New String() {CStr((dfila("cod_DetalleValorRef"))), (dfila("edadde")), dfila("edadhasta"), dfila("edaden"), dfila("valornormal"), dfila("hasta")})
+                    dtValoresRef.Rows.Add(New String() {CStr((dfila("cod_DetalleValorRef"))), (dfila("edadde")), dfila("edadhasta"), 0, dfila("valornormal"), dfila("hasta")})
                 Next
 
             End With

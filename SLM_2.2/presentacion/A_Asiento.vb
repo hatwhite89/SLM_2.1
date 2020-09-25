@@ -1,8 +1,4 @@
 ﻿Public Class frmAsientos
-    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        'Cerrar Ventana de Asientos
-        Me.Close()
-    End Sub
 
     Private Sub frmAsientos_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -15,14 +11,26 @@
         Try
             alternarColoFilasDatagridview(dtDetalleAsiento)
 
+            If dtDetalleAsiento.Columns.Contains("btnEliminar") = False Then
+                Dim btn As New DataGridViewButtonColumn()
+                dtDetalleAsiento.Columns.Add(btn)
+                btn.HeaderText = "Eliminar"
+                btn.Text = "Eliminar"
+                btn.Name = "btnEliminar"
+                btn.UseColumnTextForButtonValue = True
+            End If
+
+            'habilitar celdas para edicion de DEBE y HABER
+            'dtDetalleAsiento.Columns("Debe").ReadOnly = True
+            'dtDetalleAsiento.Columns("Haber").ReadOnly = True
+
+
             If txtNro.Text = "" Then
 
                 MsgBox("El registro de hará bajo el periodo contable vigente.")
                 txtNro.Enabled = True
 
-                'habilitar celdas para edicion de DEBE y HABER
-                dtDetalleAsiento.Columns("Debe").ReadOnly = False
-                dtDetalleAsiento.Columns("Haber").ReadOnly = False
+
 
                 'botones
                 btnCrear.Enabled = False
@@ -30,17 +38,6 @@
                 btnGuardar.Enabled = True
 
 
-
-
-
-                If dtDetalleAsiento.Columns.Contains("btnEliminar") = False Then
-                    Dim btn As New DataGridViewButtonColumn()
-                    dtDetalleAsiento.Columns.Add(btn)
-                    btn.HeaderText = "Eliminar"
-                    btn.Text = "Eliminar"
-                    btn.Name = "btnEliminar"
-                    btn.UseColumnTextForButtonValue = True
-                End If
 
             ElseIf txtNro.Text = lblCodAsiento.Text Then
 
@@ -71,7 +68,7 @@
                         data = cuenta.Comprobar
                         rows = data.Rows(0)
 
-                        dtDetalleAsiento.Rows.Add(New String() {(row("cuenta")), CStr(rows("nombre")), CStr(row("debe")), CStr(row("haber"))})
+                        dtDetalleAsiento.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), CStr(rows("nombre")), CStr(row("debe")), CStr(row("haber"))})
 
                     Next
 
@@ -108,8 +105,7 @@
 
                         data = cuenta.Comprobar
                         rows = data.Rows(0)
-
-                        dtDetalleAsiento.Rows.Add(New String() {(row("cuenta")), CStr(rows("nombre")), CStr(row("debe")), CStr(row("haber"))})
+                        dtDetalleAsiento.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), CStr(rows("nombre")), CStr(row("debe")), CStr(row("haber"))})
 
                     Next
 
@@ -120,24 +116,24 @@
 
 
         Catch ex As Exception
-            'MsgBox("Error:" + ex.Message)
+            '  MsgBox("Error:" + ex.Message)
         End Try
 
 
         Try
             'Suma de columna Debe
             Dim Total As Single
-            Dim Col As Integer = 2
+            'Dim Col As Integer = 2
             For Each row As DataGridViewRow In dtDetalleAsiento.Rows
-                Total += Val(row.Cells(2).Value)
+                Total += Val(row.Cells(3).Value)
             Next
             txtTotalDebe.Text = Total.ToString
 
             'Suma de columna Haber
             Dim Total2 As Single
-            Dim Col2 As Integer = 3
+            'Dim Col2 As Integer = 3
             For Each row As DataGridViewRow In dtDetalleAsiento.Rows
-                Total2 += Val(row.Cells(3).Value)
+                Total2 += Val(row.Cells(4).Value)
             Next
             txtTotalHaber.Text = Total2.ToString
         Catch ex As Exception
@@ -173,65 +169,73 @@
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         Try
-            Dim asiento As New ClsAsientoContable
-            Dim dasiento As New ClsDetalleAsiento
-            Dim dt As New DataTable
-            Dim row As DataRow
 
-            With asiento
-
-                .Cod_Periodo = 1
-                .Descrip = txtTexto.Text
-                .Fecha_ = dtpFecha.Value
-                .Campo_Llave = 0
-
-                If .registrarAsiento() = 1 Then
-                    dt = .capturarCodAsiento()
-                    row = dt.Rows(0)
-
-                    'mostrar informacion de asiento guardado reciente
-                    lblCodAsiento.Text = row("cod_asiento")
-                    txtNro.Text = row("cod_asiento")
-                    txtTexto.Text = row("descripcion")
-                    dtpFecha.Value = row("fecha")
-
-                    'registro de detalle de asiento 
-
-                    With dasiento
-
-                        For i = 0 To dtDetalleAsiento.Rows.Count - 1
-
-                            .Cod_Asiento = Convert.ToInt32(lblCodAsiento.Text)
-                            .Cuenta_ = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(0).Value)
-                            .Debe_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(2).Value)
-                            .Haber_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(3).Value)
-                            .registrarDetalleAsiento()
+            Dim n As String = MsgBox("¿Desea guardar el nuevo asiento?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
 
 
-                        Next
+                Dim asiento As New ClsAsientoContable
+                Dim dasiento As New ClsDetalleAsiento
+                Dim dt As New DataTable
+                Dim row As DataRow
 
-                    End With
+                With asiento
 
-                End If
-
-
-
-
-                Try
                     .Cod_Periodo = 1
                     .Descrip = txtTexto.Text
                     .Fecha_ = dtpFecha.Value
-                    .Campo_Llave = Convert.ToInt32(lblCodAsiento.Text)
-                    .Cod_ = Convert.ToInt32(lblCodAsiento.Text)
+                    .Campo_Llave = 0
 
-                    .ActualizarAsiento()
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
+                    If .registrarAsiento() = 1 Then
+                        dt = .capturarCodAsiento()
+                        row = dt.Rows(0)
 
-                MsgBox("Se registro exitosamente.")
-                Limpiar()
-            End With
+                        'mostrar informacion de asiento guardado reciente
+                        lblCodAsiento.Text = row("cod_asiento")
+                        txtNro.Text = row("cod_asiento")
+                        txtTexto.Text = row("descripcion")
+                        dtpFecha.Value = row("fecha")
+
+                        'registro de detalle de asiento 
+
+                        With dasiento
+
+                            For i = 0 To dtDetalleAsiento.Rows.Count - 1
+
+                                '.Cod_Detalle = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(0).Value)
+                                .Cod_Asiento = Convert.ToInt32(lblCodAsiento.Text)
+                                .Cuenta_ = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(1).Value)
+                                .Debe_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(3).Value)
+                                .Haber_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(4).Value)
+                                .registrarDetalleAsiento()
+
+
+                            Next
+
+                        End With
+
+                    End If
+
+
+
+
+                    Try
+                        .Cod_Periodo = 1
+                        .Descrip = txtTexto.Text
+                        .Fecha_ = dtpFecha.Value
+                        .Campo_Llave = Convert.ToInt32(lblCodAsiento.Text)
+                        .Cod_ = Convert.ToInt32(lblCodAsiento.Text)
+
+                        .ActualizarAsiento()
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
+
+                    MsgBox("Se registro exitosamente.")
+                    Limpiar()
+                End With
+
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -248,7 +252,7 @@
                 A_ListarCuentas.ShowDialog()
 
 
-            ElseIf e.ColumnIndex = 4 Then
+            ElseIf e.ColumnIndex = 5 Then
                 Try
                     Dim n As String = MsgBox("¿Desea eliminar la cuenta del asiento?", MsgBoxStyle.YesNo, "Validación")
                     If n = vbYes Then
@@ -278,7 +282,7 @@
 
         Dim Celda As DataGridViewCell = Me.dtDetalleAsiento.CurrentCell()
 
-        If Celda.ColumnIndex = 2 Then
+        If Celda.ColumnIndex = 3 Then
 
             If e.KeyChar = "."c Then
 
@@ -318,7 +322,7 @@
                 End If
             End If
 
-        ElseIf Celda.ColumnIndex = 3 Then
+        ElseIf Celda.ColumnIndex = 4 Then
 
             If e.KeyChar = "."c Then
 
@@ -362,7 +366,7 @@
     End Sub
 
     Private Sub dtDetalleAsiento_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleAsiento.CellEndEdit
-        If e.ColumnIndex = 2 Then
+        If e.ColumnIndex = 3 Then
 
             'Suma de columna Debe
             Dim Total As Single
@@ -372,7 +376,7 @@
             Next
             txtTotalDebe.Text = Total.ToString
 
-        ElseIf e.ColumnIndex = 3 Then
+        ElseIf e.ColumnIndex = 4 Then
 
             'Suma de columna Haber
             Dim Total2 As Single
@@ -387,5 +391,46 @@
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
 
+
+        Try
+
+            Dim n As String = MsgBox("¿Desea modificar la información del asiento?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
+                'Modificar asiento contable
+                Dim asientom As New ClsAsientoContable
+                Dim asientod As New ClsDetalleAsiento
+
+                With asientom
+
+                    .Cod_ = Convert.ToInt32(lblCodAsiento.Text)
+                    .Cod_Periodo = 1
+                    .Descrip = txtTexto.Text
+                    .Fecha_ = dtpFecha.Value
+                    .Campo_Llave = Convert.ToInt32(txtNro.Text)
+                    .ActualizarAsiento()
+                End With
+
+                With asientod
+
+                    For i = 0 To dtDetalleAsiento.Rows.Count - 1
+
+                        .Cod_Detalle = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(0).Value)
+                        .Cod_Asiento = Convert.ToInt32(lblCodAsiento.Text)
+                        .Cuenta_ = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(1).Value)
+                        .Debe_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(3).Value)
+                        .Haber_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(4).Value)
+
+                        .modificarDetalleAsiento()
+
+                    Next
+
+                End With
+            End If
+
+        Catch ex As Exception
+            MsgBox("Error: " + ex.Message)
+        End Try
+
     End Sub
+
 End Class

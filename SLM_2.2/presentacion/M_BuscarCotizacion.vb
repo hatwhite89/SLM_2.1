@@ -9,7 +9,7 @@
         Dim dv As DataView = objCot.SeleccionarCotizacion.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -68,7 +68,7 @@
                 Dim dv As DataView = objCot.BuscarCotizacion.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             Catch ex As Exception
                 MsgBox("No existe la cotización.", MsgBoxStyle.Critical, "Validación")
             End Try
@@ -95,7 +95,7 @@
                 Dim dv As DataView = objCot.BuscarCotizacionCliente.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             Catch ex As Exception
                 MsgBox("No existe la cotización.", MsgBoxStyle.Critical, "Validación")
             End Try

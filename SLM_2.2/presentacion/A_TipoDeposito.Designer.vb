@@ -33,10 +33,9 @@ Partial Class frmTipoDeposito
         '
         'btnTarjeta
         '
-        Me.btnTarjeta.BackColor = System.Drawing.Color.DimGray
-        Me.btnTarjeta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnTarjeta.BackColor = System.Drawing.Color.White
+        Me.btnTarjeta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnTarjeta.FlatAppearance.BorderSize = 0
-        Me.btnTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTarjeta.Location = New System.Drawing.Point(8, 111)
         Me.btnTarjeta.Name = "btnTarjeta"
         Me.btnTarjeta.Size = New System.Drawing.Size(112, 23)
@@ -46,10 +45,9 @@ Partial Class frmTipoDeposito
         '
         'btnDeposito
         '
-        Me.btnDeposito.BackColor = System.Drawing.Color.DimGray
-        Me.btnDeposito.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnDeposito.BackColor = System.Drawing.Color.White
+        Me.btnDeposito.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnDeposito.FlatAppearance.BorderSize = 0
-        Me.btnDeposito.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDeposito.Location = New System.Drawing.Point(126, 111)
         Me.btnDeposito.Name = "btnDeposito"
         Me.btnDeposito.Size = New System.Drawing.Size(112, 23)

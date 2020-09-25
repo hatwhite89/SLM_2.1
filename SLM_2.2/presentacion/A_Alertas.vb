@@ -7,7 +7,7 @@
         Try
 
             dtNotificaciones.DataSource = misNotificaciones.listarNotifiaciones
-
+            alternarColoFilasDatagridview(dtNotificaciones)
             'TAMAÑO COLUMNAS
 
             dtNotificaciones.Columns("cod_Noti").Visible = False

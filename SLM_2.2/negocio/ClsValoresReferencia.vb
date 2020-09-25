@@ -247,4 +247,26 @@ Public Class ClsValoresReferencia
 
     End Function
 
+    'Buscar valor de referencia
+    Public Function buscarValorReferencia2() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarValorReferencia2"
+            cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = Descripcion_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
 End Class
