@@ -146,13 +146,13 @@
             Else
                 txtDepto.BackColor = Color.White
             End If
-            If Trim(rtxtObservaciones.Text) = "" Then
-                rtxtObservaciones.BackColor = Color.Red
-            Else
-                sinDobleEspacio(rtxtObservaciones.Text)
-                rtxtObservaciones.BackColor = Color.White
-            End If
-            If (txtEmpleado.BackColor = Color.White And txtjefeInmediato.BackColor = Color.White And txtDepto.BackColor = Color.White And rtxtObservaciones.BackColor = Color.White) Then
+            'If Trim(rtxtObservaciones.Text) = "" Then
+            '    rtxtObservaciones.BackColor = Color.Red
+            'Else
+            '    sinDobleEspacio(rtxtObservaciones.Text)
+            '    rtxtObservaciones.BackColor = Color.White
+            'End If
+            If (txtEmpleado.BackColor = Color.White And txtjefeInmediato.BackColor = Color.White And txtDepto.BackColor = Color.White) Then
 
                 With objPerm
                     .codigoEmpleado_ = lblcodigoEmpleado.Text
@@ -208,12 +208,12 @@
             Else
                 txtDepto.BackColor = Color.White
             End If
-            If Trim(rtxtObservaciones.Text) = "" Then
-                rtxtObservaciones.BackColor = Color.Red
-            Else
-                sinDobleEspacio(rtxtObservaciones.Text)
-                rtxtObservaciones.BackColor = Color.White
-            End If
+            'If Trim(rtxtObservaciones.Text) = "" Then
+            '    rtxtObservaciones.BackColor = Color.Red
+            'Else
+            '    sinDobleEspacio(rtxtObservaciones.Text)
+            '    rtxtObservaciones.BackColor = Color.White
+            'End If
             If (txtEmpleado.BackColor = Color.White And txtjefeInmediato.BackColor = Color.White And txtDepto.BackColor = Color.White) Then
                 'Dim objPerm As New ClsPermisos
                 With objPerm

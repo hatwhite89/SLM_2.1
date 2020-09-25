@@ -351,6 +351,13 @@
         A_PlantillasDeResultado.Show()
     End Sub
 
+    Private Sub btnValoresRef_Click(sender As Object, e As EventArgs) Handles btnValoresRef.Click
+        If txtParametro.Text <> "" Then
+            M_ListadoValoresReferencia.lblcodeCateCli.Text = txtParametro.Text
+            M_ListadoValoresReferencia.ShowDialog()
+        End If
+    End Sub
+
     Private Sub cbxPlantillas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxPlantillas.SelectedIndexChanged
 
         Try

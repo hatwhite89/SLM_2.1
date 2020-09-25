@@ -14,14 +14,14 @@ Public Class ClsCategoria
             codigo = value
         End Set
     End Property
-    Public Property codigoListaPrecios_ As Integer
-        Get
-            Return codigoListaPrecios
-        End Get
-        Set(value As Integer)
-            codigoListaPrecios = value
-        End Set
-    End Property
+    'Public Property codigoListaPrecios_ As Integer
+    '    Get
+    '        Return codigoListaPrecios
+    '    End Get
+    '    Set(value As Integer)
+    '        codigoListaPrecios = value
+    '    End Set
+    'End Property
     Public Property codigoCategoria_ As String
         Get
             Return codigoCategoria
@@ -31,14 +31,14 @@ Public Class ClsCategoria
         End Set
     End Property
 
-    Public Property CodigoTipo1 As Integer
-        Get
-            Return codigoTipo
-        End Get
-        Set(value As Integer)
-            codigoTipo = value
-        End Set
-    End Property
+    'Public Property CodigoTipo1 As Integer
+    '    Get
+    '        Return codigoTipo
+    '    End Get
+    '    Set(value As Integer)
+    '        codigoTipo = value
+    '    End Set
+    'End Property
 
     Public Property descripcion1 As String
         Get
@@ -69,15 +69,15 @@ Public Class ClsCategoria
         sqlpar.Value = descripcion1
         sqlcom.Parameters.Add(sqlpar)
 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoTipo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = CodigoTipo1
-        sqlcom.Parameters.Add(sqlpar)
+        'sqlpar = New SqlParameter
+        'sqlpar.ParameterName = "codigoTipo" 'nombre campo en el procedimiento almacenado @
+        'sqlpar.Value = CodigoTipo1
+        'sqlcom.Parameters.Add(sqlpar)
 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoListaPrecios" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoListaPrecios_
-        sqlcom.Parameters.Add(sqlpar)
+        'sqlpar = New SqlParameter
+        'sqlpar.ParameterName = "codigoListaPrecios" 'nombre campo en el procedimiento almacenado @
+        'sqlpar.Value = codigoListaPrecios_
+        'sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -123,15 +123,15 @@ Public Class ClsCategoria
         sqlpar.Value = descripcion1
         sqlcom.Parameters.Add(sqlpar)
 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoTipo" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = CodigoTipo1
-        sqlcom.Parameters.Add(sqlpar)
+        'sqlpar = New SqlParameter
+        'sqlpar.ParameterName = "codigoTipo" 'nombre campo en el procedimiento almacenado @
+        'sqlpar.Value = CodigoTipo1
+        'sqlcom.Parameters.Add(sqlpar)
 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoListaPrecios" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoListaPrecios_
-        sqlcom.Parameters.Add(sqlpar)
+        'sqlpar = New SqlParameter
+        'sqlpar.ParameterName = "codigoListaPrecios" 'nombre campo en el procedimiento almacenado @
+        'sqlpar.Value = codigoListaPrecios_
+        'sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"

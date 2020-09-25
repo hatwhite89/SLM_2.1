@@ -153,7 +153,7 @@ Public Class M_Cliente
     End Sub
     Private Sub btnactualizarCliente_Click(sender As Object, e As EventArgs) Handles btnactualizarCliente.Click
         Try
-
+            MsgBox(cmbxClasificacion.SelectedValue)
             Dim genero As String = ""
             If (rbtnmasculino.Checked) Then
                 genero = "Masculino"
@@ -178,7 +178,10 @@ Public Class M_Cliente
                 numero = 0
             End If
 
-            If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And txtcodigoTermino.BackColor = Color.White And txtnombreCategoria.Text <> "" And txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And Trim(txtapellido1.Text) <> "" And dtpfechaNacimiento.Text <> "") Then
+            If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And
+                txtcodigoTermino.BackColor = Color.White And txtnombreCategoria.Text <> "" And
+                txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And
+                Trim(txtapellido1.Text) <> "" And dtpfechaNacimiento.Text <> "" And Trim(cmbxClasificacion.SelectedValue) <> "") Then
                 'If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And txtcodigoTermino.BackColor = Color.White And txtcodigoCategoria.Text <> "" And txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoClasificacion.Text <> "") Then
 
                 txtnombreCompleto.Text = sinDobleEspacio(txtnombreCompleto.Text)
@@ -351,7 +354,11 @@ Public Class M_Cliente
                 numero = 0
             End If
 
-            If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And txtcodigoTermino.BackColor = Color.White And txtnombreCategoria.Text <> "" And txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And dtpfechaNacimiento.Text <> "") Then
+            If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And
+                txtcodigoTermino.BackColor = Color.White And txtnombreCategoria.Text <> "" And
+                txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And
+                Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And
+                dtpfechaNacimiento.Text <> "" And Trim(cmbxClasificacion.SelectedValue) <> "") Then
                 'If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And txtcodigoTermino.BackColor = Color.White And txtnombreCategoria.Text <> "" And txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoClasificacion.Text <> "") Then
 
                 rtxtdireccion.Text = sinDobleEspacio(rtxtdireccion.Text)
