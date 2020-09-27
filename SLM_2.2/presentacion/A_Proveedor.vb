@@ -297,17 +297,20 @@
 
         Try
 
-            txtCodProveedor.Text = ""
-            txtCodBreve.Text = ""
-            txtNombreProvee.Text = ""
-            txtTelefono.Text = ""
-            txtCodigoTerminoPago.Text = ""
-            txtEmail.Text = ""
-            txtDireccion.Text = ""
-            txtSitioWeb.Text = ""
-            txtCodigoTerminoPago.Text = "CO"
+            txtCodProveedor.Clear()
+            txtCodBreve.Clear()
+            txtNombreProvee.Clear()
+            txtTelefono.Clear()
+            txtCodigoTerminoPago.Clear()
+            txtEmail.Clear()
+            txtDireccion.Clear()
+            txtSitioWeb.Clear()
+            txtCodigoTerminoPago.Clear()
+            txtIdTribu.Clear()
+            txtCuenta.Clear()
             dgvDetalleContactos.Rows.Clear()
             lblCodCuenta.Text = ""
+            cbxCategoria.Text = ""
 
         Catch ex As Exception
 
