@@ -365,6 +365,7 @@ Partial Class A_Proveedor
         '
         'txtCodigoTerminoPago
         '
+        Me.txtCodigoTerminoPago.Enabled = False
         Me.txtCodigoTerminoPago.Location = New System.Drawing.Point(515, 31)
         Me.txtCodigoTerminoPago.MaxLength = 20
         Me.txtCodigoTerminoPago.Name = "txtCodigoTerminoPago"
