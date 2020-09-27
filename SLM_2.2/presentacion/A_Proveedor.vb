@@ -6,8 +6,7 @@
     Private Sub A_Proveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             'lista los proveedores
-            dgvProveedores.DataSource = Proveedor.listarProveedores
-
+            CargarData()
             'estado del formulario
             lblEstado.Text = "Nuevo"
 
@@ -35,24 +34,8 @@
                 cbxCategoria.Items.Add(CStr(row("descripcion")))
             Next
 
-            'Ocultar campos de Datagrid
-            dgvProveedores.Columns("idTributario").Visible = False
-            dgvProveedores.Columns("telefono").Visible = False
-            dgvProveedores.Columns("email").Visible = False
-            dgvProveedores.Columns("direccion").Visible = False
-            dgvProveedores.Columns("sitioweb").Visible = False
-            dgvProveedores.Columns("codCate").Visible = False
-            dgvProveedores.Columns("codTermPago").Visible = False
-
-            'Tamaño de campos
-            dgvProveedores.Columns("codProveedor").Width = 25
-            dgvProveedores.Columns("codProveedor").HeaderText = "Cód"
-
-            dgvProveedores.Columns("codBreve").Width = 50
-            dgvProveedores.Columns("CodBreve").HeaderText = "C.Breve"
-
-            dgvProveedores.Columns("nombreProveedor").Width = 300
-            dgvProveedores.Columns("nombreProveedor").HeaderText = "Nombre"
+            btnNuevo.Enabled = False
+            btnModificar.Enabled = False
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Validación")
@@ -80,67 +63,75 @@
     End Sub
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        'Comprobar si los campos no estan vacios.
-        If txtNombreProvee.Text <> "" And txtCodBreve.Text <> "" And txtCodigoTerminoPago.Text <> "" Then
-            Try
-
-                With Proveedor
-                    ' Capturar variables
-                    .Cod_Breve = txtCodBreve.Text
-                    .Id_Tributario = txtIdTribu.Text
-                    .Nombre_Proveedor = txtNombreProvee.Text
-                    .Telefo_no = txtTelefono.Text
-                    .Emai_l = txtEmail.Text
-                    .Direcci_on = txtDireccion.Text
-                    .Sitio_Web = txtSitioWeb.Text
-                    .Cod_Cate = Convert.ToInt32(cbxCategoria.SelectedIndex.ToString) + 1
-                    .cod_TermPago = Convert.ToInt32(lblCodeTerminoPago.Text)
-
-                    Limpiar()
-                    'Actualizar listado de proveedores
-                    dgvProveedores.DataSource = Proveedor.listarProveedores
-
-                End With
-                ' Registrar proveedor en base de datos
-                If Proveedor.registrarNuevoProveedor() = 1 Then
-                    'deshabilitar()
-                    btnGuardar.Enabled = False
-                    Dim dt As New DataTable
-                    dt = Proveedor.obtenerProveedor()
-                    Dim row As DataRow = dt.Rows(0)
-
-                    txtCodProveedor.Text = CStr(row("codProveedor"))
-                    Dim objDetCont As New ClsDetalleContactos
-                    For index As Integer = 0 To dgvDetalleContactos.Rows.Count - 2
-                        With objDetCont
-                            .codProveedor_ = txtCodProveedor.Text
-                            .nombre_ = dgvDetalleContactos.Rows(index).Cells(1).Value()
-                            .telefono_ = dgvDetalleContactos.Rows(index).Cells(2).Value()
-                            .correo_ = dgvDetalleContactos.Rows(index).Cells(3).Value()
-                        End With
-                        If objDetCont.RegistrarNuevoDetalleContactos() = 0 Then
-                            MsgBox("Error al querer insertar el contacto.")
-                        End If
-                    Next
-                    MsgBox("El registro se ha guardado exitosamente.")
-                Else
-                    MsgBox("Error al querer ingresar el proveedor.", MsgBoxStyle.Critical)
-                End If
-            Catch ex As Exception
-                MessageBox.Show("Error al guardar. Detalle: " + ex.Message)
-            End Try
+        Dim n As String = MsgBox("¿Desea guardar el registro de proveedor?", MsgBoxStyle.YesNo, "Validación")
+        If n = vbYes Then
 
 
-        ElseIf txtNombreProvee.Text = "" Then
-            MsgBox("Existen campos vacíos.")
-            txtNombreProvee.BackColor = Color.Red
-        ElseIf txtCodBreve.Text = "" Then
-            MsgBox("Existen campos vacíos.")
-            txtCodBreve.BackColor = Color.Red
-        ElseIf txtCodigoTerminoPago.Text = "" Then
-            MsgBox("Existen campos vacíos.")
-            txtCodigoTerminoPago.BackColor = color.Red
+            'Comprobar si los campos no estan vacios.
+            If txtNombreProvee.Text <> "" And txtCodBreve.Text <> "" And txtCodigoTerminoPago.Text <> "" Then
+                Try
 
+                    With Proveedor
+                        ' Capturar variables
+                        .Cod_Breve = txtCodBreve.Text
+                        .Id_Tributario = txtIdTribu.Text
+                        .Nombre_Proveedor = txtNombreProvee.Text
+                        .Telefo_no = txtTelefono.Text
+                        .Emai_l = txtEmail.Text
+                        .Direcci_on = txtDireccion.Text
+                        .Sitio_Web = txtSitioWeb.Text
+                        .Cod_Cate = Convert.ToInt32(cbxCategoria.SelectedIndex.ToString) + 1
+                        .cod_TermPago = Convert.ToInt32(lblCodeTerminoPago.Text)
+                        .cod_Cuenta = Convert.ToInt32(lblCodCuenta.Text)
+
+                        'Limpiar campos
+                        Limpiar()
+
+
+                    End With
+                    ' Registrar proveedor en base de datos
+                    If Proveedor.registrarNuevoProveedor() = 1 Then
+                        'deshabilitar()
+                        btnGuardar.Enabled = False
+                        Dim dt As New DataTable
+                        dt = Proveedor.obtenerProveedor()
+                        Dim row As DataRow = dt.Rows(0)
+
+                        txtCodProveedor.Text = CStr(row("codProveedor"))
+                        Dim objDetCont As New ClsDetalleContactos
+                        For index As Integer = 0 To dgvDetalleContactos.Rows.Count - 2
+                            With objDetCont
+                                .codProveedor_ = txtCodProveedor.Text
+                                .nombre_ = dgvDetalleContactos.Rows(index).Cells(1).Value()
+                                .telefono_ = dgvDetalleContactos.Rows(index).Cells(2).Value()
+                                .correo_ = dgvDetalleContactos.Rows(index).Cells(3).Value()
+                            End With
+                            If objDetCont.RegistrarNuevoDetalleContactos() = 0 Then
+                                MsgBox("Error al querer insertar el contacto.")
+                            End If
+                        Next
+                        MsgBox("El registro se ha guardado exitosamente.")
+                        'Actualizar listado de proveedores
+                        CargarData()
+                    Else
+                        MsgBox("Error al querer ingresar el proveedor.", MsgBoxStyle.Critical)
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show("Error al guardar. Detalle: " + ex.Message)
+                End Try
+
+
+            ElseIf txtNombreProvee.Text = "" Then
+                MsgBox("Existen campos vacíos.")
+                txtNombreProvee.BackColor = Color.Red
+            ElseIf txtCodBreve.Text = "" Then
+                MsgBox("Existen campos vacíos.")
+                txtCodBreve.BackColor = Color.Red
+            ElseIf txtCodigoTerminoPago.Text = "" Then
+                MsgBox("Existen campos vacíos.")
+                txtCodigoTerminoPago.BackColor = color.Red
+
+            End If
         End If
     End Sub
 
@@ -158,6 +149,7 @@
             Dim temp As Integer = Me.dgvProveedores.Rows(e.RowIndex).Cells(8).Value().ToString
             cbxCategoria.SelectedIndex = temp - 1
             lblCodeTerminoPago.Text = dgvProveedores.Rows(e.RowIndex).Cells(9).Value
+            lblCodCuenta.Text = dgvProveedores.Rows(e.RowIndex).Cells(10).Value
             'cambio del estado del formulario
             lblEstado.Text = "Modificar"
 
@@ -174,9 +166,9 @@
             Next
 
             'Habilitar botones
-            btnGuardar.Visible = False
-            btnModificar.Visible = True
-            btnNuevo.Visible = True
+            btnGuardar.Enabled = False
+            btnModificar.Enabled = True
+            btnNuevo.Enabled = True
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -201,9 +193,9 @@
                     .Sitio_Web = txtSitioWeb.Text
                     .Cod_Cate = Convert.ToInt32(cbxCategoria.SelectedIndex.ToString) + 1
                     .cod_TermPago = Convert.ToInt32(lblCodeTerminoPago.Text)
+                    .cod_Cuenta = Convert.ToInt32(lblCodCuenta.Text)
                 End With
-                'Actualizar listado de proveedores
-                dgvProveedores.DataSource = Proveedor.listarProveedores
+
                 'Modifica el proveedor
                 If Proveedor.ModificarProveedor() = 1 Then
                     btnGuardar.Enabled = False
@@ -263,7 +255,8 @@
                 txtCodigoTerminoPago.BackColor = color.Red
 
             End If
-
+            'Actualizar listado de proveedores
+            CargarData()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -272,9 +265,9 @@
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Limpiar()
         lblEstado.Text = "Nuevo"
-        btnNuevo.Visible = False
-        btnModificar.Visible = False
-        btnGuardar.Visible = True
+        btnNuevo.Enabled = False
+        btnModificar.Enabled = False
+        btnGuardar.Enabled = True
     End Sub
     Private Sub A_Proveedor_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -304,16 +297,20 @@
 
         Try
 
-            txtCodProveedor.Text = ""
-            txtCodBreve.Text = ""
-            txtNombreProvee.Text = ""
-            txtTelefono.Text = ""
-            txtCodigoTerminoPago.Text = ""
-            txtEmail.Text = ""
-            txtDireccion.Text = ""
-            txtSitioWeb.Text = ""
-            txtCodigoTerminoPago.Text = "CO"
+            txtCodProveedor.Clear()
+            txtCodBreve.Clear()
+            txtNombreProvee.Clear()
+            txtTelefono.Clear()
+            txtCodigoTerminoPago.Clear()
+            txtEmail.Clear()
+            txtDireccion.Clear()
+            txtSitioWeb.Clear()
+            txtCodigoTerminoPago.Clear()
+            txtIdTribu.Clear()
+            txtCuenta.Clear()
             dgvDetalleContactos.Rows.Clear()
+            lblCodCuenta.Text = ""
+            cbxCategoria.Text = ""
 
         Catch ex As Exception
 
@@ -385,5 +382,60 @@
         If txtNombreProvee.BackColor = Color.Red Then
             txtNombreProvee.BackColor = Color.White
         End If
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
+
+    End Sub
+
+    Private Sub btnBuscarCuenta_Click(sender As Object, e As EventArgs) Handles btnBuscarCuenta.Click
+        Try
+
+            A_ListarCuentas.Show()
+            A_ListarCuentas.lblForm.Text = "proveedor"
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
+    Sub CargarData()
+        'Cargar data de proveedores
+        dgvProveedores.DataSource = Proveedor.listarProveedores
+        'Ocultar campos de Datagrid
+        dgvProveedores.Columns("idTributario").Visible = False
+        dgvProveedores.Columns("telefono").Visible = False
+        dgvProveedores.Columns("email").Visible = False
+        dgvProveedores.Columns("direccion").Visible = False
+        dgvProveedores.Columns("sitioweb").Visible = False
+        dgvProveedores.Columns("codCate").Visible = False
+        dgvProveedores.Columns("codTermPago").Visible = False
+        dgvProveedores.Columns("codCuenta").Visible = False
+
+        'Tamaño de campos
+        dgvProveedores.Columns("codProveedor").Width = 25
+        dgvProveedores.Columns("codProveedor").HeaderText = "Cód"
+
+        dgvProveedores.Columns("codBreve").Width = 50
+        dgvProveedores.Columns("CodBreve").HeaderText = "C.Breve"
+
+        dgvProveedores.Columns("nombreProveedor").Width = 300
+        dgvProveedores.Columns("nombreProveedor").HeaderText = "Nombre"
+    End Sub
+
+    Private Sub lblCodCuenta_TextChanged(sender As Object, e As EventArgs) Handles lblCodCuenta.TextChanged
+        Try
+            Dim cuenta As New ClsCuenta
+            With cuenta
+                .Cod_Cuenta = lblCodCuenta.Text
+            End With
+            Dim dt As New DataTable
+            dt = cuenta.BuscarCuentaCode()
+            Dim row As DataRow = dt.Rows(0)
+            txtCuenta.Text = CStr(row("cuenta"))
+        Catch ex As Exception
+        End Try
     End Sub
 End Class

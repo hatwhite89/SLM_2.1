@@ -511,7 +511,7 @@ Partial Class A_FacturaCompras
         Me.btnCerrar.FlatAppearance.BorderSize = 0
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.ForeColor = System.Drawing.Color.Black
-        Me.btnCerrar.Location = New System.Drawing.Point(686, 8)
+        Me.btnCerrar.Location = New System.Drawing.Point(686, 9)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
         Me.btnCerrar.TabIndex = 15
