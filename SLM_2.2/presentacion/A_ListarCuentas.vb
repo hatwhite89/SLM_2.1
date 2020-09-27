@@ -4,8 +4,17 @@
     Dim cuentas As New ClsCuenta
     Private Sub A_ListarCuentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Try
+            dtCuentas.DataSource = cuentas.listarCuentasNombre()
+
+            dtCuentas.Columns("codCuenta").Visible = False
+            dtCuentas.Columns("tipoCuenta").Visible = False
+            dtCuentas.Columns("estado").Visible = False
+        Catch ex As Exception
+
+        End Try
         'Cargar cuentas en DataGrid
-        dtCuentas.DataSource = cuentas.listarCuentasNombre()
+
 
     End Sub
 
@@ -27,32 +36,44 @@
     Private Sub dtCuentas_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtCuentas.CellDoubleClick
         'Seleccionar campo cuenta para formulario forma pago
         Try
+
             If lblForm.Text = "facturaCompra" Then
 
-                Dim cuenta, nombre As String
+                Dim n As String = MsgBox("¿Desea utilizar la cuenta?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+                    Dim cuenta, nombre As String
 
-                cuenta = dtCuentas.Rows(e.RowIndex).Cells(0).Value
-                nombre = dtCuentas.Rows(e.RowIndex).Cells(1).Value
+                    cuenta = dtCuentas.Rows(e.RowIndex).Cells(1).Value
+                    nombre = dtCuentas.Rows(e.RowIndex).Cells(2).Value
 
-                'Asignar busqueda en Datagrid
-                'A_FacturaCompras.dtDetalleFactura.Rows.Remove(A_FacturaCompras.dtDetalleFactura.Rows(e.RowIndex.ToString))
-                A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {cuenta, " ", " ", nombre})
-
+                    'Asignar busqueda en Datagrid
+                    'A_FacturaCompras.dtDetalleFactura.Rows.Remove(A_FacturaCompras.dtDetalleFactura.Rows(e.RowIndex.ToString))
+                    A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {cuenta, " ", " ", nombre})
+                End If
             ElseIf lblForm.Text = "asientos" Then
+                Dim n As String = MsgBox("¿Desea utilizar la cuenta?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+                    'Llenar campo de asientos contables
+                    Dim acuenta, anombre As String
+                    acuenta = dtCuentas.Rows(e.RowIndex).Cells(1).Value
+                    anombre = dtCuentas.Rows(e.RowIndex).Cells(2).Value
 
-                'Llenar campo de asientos contables
-                Dim acuenta, anombre As String
-                acuenta = dtCuentas.Rows(e.RowIndex).Cells(0).Value
-                anombre = dtCuentas.Rows(e.RowIndex).Cells(1).Value
-
-                frmAsientos.dtDetalleAsiento.Rows.Add(New String() {acuenta, anombre, 0.0, 0.0})
+                    frmAsientos.dtDetalleAsiento.Rows.Add(New String() {" ", acuenta, anombre, 0.0, 0.0})
+                End If
+            ElseIf lblForm.Text = "proveedor" Then
+                Dim n As String = MsgBox("¿Desea utilizar la cuenta?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+                    A_Proveedor.lblCodCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(0).Value
+                    A_Proveedor.txtCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(1).Value
+                End If
             Else
-                frmFormaPago.txtCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(0).Value
+                    frmFormaPago.txtCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(0).Value
 
-            End If
+                End If
 
-            'Cerrar forma al seleccionar
-            Me.Close()
+                'Cerrar forma al seleccionar
+                Me.Close()
+
         Catch ex As Exception
             MsgBox("Seleccion de cuenta. " + ex.Message)
         End Try

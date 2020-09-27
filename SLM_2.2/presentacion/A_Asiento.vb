@@ -209,7 +209,6 @@
                                 .Haber_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(4).Value)
                                 .registrarDetalleAsiento()
 
-
                             Next
 
                         End With
@@ -246,7 +245,7 @@
 
         Try
 
-            If e.ColumnIndex = 0 Then
+            If e.ColumnIndex = 1 Then
 
                 A_ListarCuentas.lblForm.Text = "asientos"
                 A_ListarCuentas.ShowDialog()
@@ -265,7 +264,7 @@
             End If
 
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
     End Sub
