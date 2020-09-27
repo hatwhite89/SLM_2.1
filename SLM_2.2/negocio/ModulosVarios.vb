@@ -746,8 +746,9 @@ Module ModulosVarios
 
     Sub alternarColoFilasDatagridview(ByVal dgv As DataGridView)
         With dgv
-            .RowsDefaultCellStyle.BackColor = Color.LightBlue
+            .RowsDefaultCellStyle.BackColor = Color.WhiteSmoke
             .AlternatingRowsDefaultCellStyle.BackColor = Color.White
+            .ColumnHeadersDefaultCellStyle.BackColor = Color.Gainsboro
         End With
     End Sub
 

@@ -6,6 +6,7 @@
 
     Private Sub E_frmEntrada_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         alternarColoFilasDatagridview(DataGridView1)
+        alternarColoFilasDatagridview(DataGridView3)
         ComboAlmacen()
         ComboAlmacen2()
 
@@ -72,16 +73,18 @@
         Dim clsE As New clsEntradaAlmacen
         With clsD
             .IdDetalleOC = Integer.Parse(codigo_detalleoc)
+            .Cantidad_recibida1 = Integer.Parse(txtCantidad.Text)
         End With
 
         With clsE
             .IdProducto = Integer.Parse(txtCodProc.Text)
-            .CantidadProducto = Double.Parse(txtCantidad.Text)
+
             .PrecioUnitario = Double.Parse(txtPrecioUnitario.Text)
             .LoteProducto = txtLote.Text
             .Descripcion = RichTextBox1.Text
             .IdAlmacen = cmbEntrada.SelectedValue
             .FechaVencimiento = DateTimePicker1.Value
+            .CantidadProducto = Integer.Parse(txtCantidad.Text)
         End With
         If clsD.ActualizarDetalleOCEntrada() = "1" Then
 
@@ -132,16 +135,16 @@
         Dim clsOCOB As New clsEntradaAlmacen
         Dim dv As DataView = clsOCOB.ListarEntradaInventarioFecha(DateTimePicker2.Value.Date, DateTimePicker1.Value.Date).DefaultView
 
-        dv.RowFilter = String.Format("CONVERT(lote, System.String) LIKE '%{0}%'", TextBox2.Text)
+        dv.RowFilter = String.Format("CONVERT(lote+nombre_producto+id_producto, System.String) LIKE '%{0}%'", TextBox2.Text)
         DataGridView3.DataSource = dv
 
     End Sub
 
-    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
+    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs)
         Dim clsOCOB As New clsEntradaAlmacen
         Dim dv As DataView = clsOCOB.ListarEntradaInventarioFecha(DateTimePicker2.Value.Date, DateTimePicker1.Value.Date).DefaultView
 
-        dv.RowFilter = String.Format("CONVERT(nombre_producto, System.String) LIKE '%{0}%'", TextBox3.Text)
+
         DataGridView3.DataSource = dv
     End Sub
 

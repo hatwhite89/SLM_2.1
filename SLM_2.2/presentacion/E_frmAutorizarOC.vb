@@ -23,6 +23,8 @@
             codigo_oc = DataGridView2.Rows(e.RowIndex).Cells(0).Value
             txtCodOC.Text = codigo_oc
             CargarDetalleOC(txtCodOC.Text)
+            sumarData()
+            sumarData2()
         Catch ex As Exception
 
         End Try
@@ -145,5 +147,64 @@
         Dim dvOC As DataView = clsOCOB.RecuperarOCAutorizadasUsuario(nombre_usurio, DateTimePicker4.Value, DateTimePicker3.Value).DefaultView
         dvOC.RowFilter = String.Format("CONVERT(id_oc, System.String) LIKE '%{0}%'", txtBuscar3.Text)
         DataGridView1.DataSource = dvOC
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        'anular orden de compra
+        Dim clsOC As New ClsOrdenDeCompra
+        With clsOC
+            .IdOrdenCompra = txtCodOC.Text
+            .Obser_autorizacion1 = RichTextBox1.Text
+            .UsuarioAutorizo = nombre_usurio
+
+        End With
+
+        If clsOC.AnularOC() = "1" Then
+            MsgBox("Usted ha anulado la orden de compra No " + txtCodOC.Text)
+            CargarDGOC()
+            DataGridView5.Columns.Clear()
+        End If
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        'cerrar orden de compra
+        Dim clsOC As New ClsOrdenDeCompra
+        With clsOC
+            .IdOrdenCompra = txtCodOC.Text
+            .Obser_autorizacion1 = RichTextBox1.Text
+            .UsuarioAutorizo = nombre_usurio
+
+        End With
+
+        If clsOC.CerrarOC() = "1" Then
+            MsgBox("Usted ha cerrado la orden de compra No " + txtCodOC.Text)
+            CargarDGOC()
+            DataGridView5.Columns.Clear()
+        End If
+    End Sub
+
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
+    End Sub
+
+    Public Sub sumarData()
+        Dim Total As Single
+
+        For Each row As DataGridViewRow In Me.DataGridView5.Rows
+            Total += Val(row.Cells(4).Value)
+        Next
+        Label44.Text = Total.ToString
+    End Sub
+    Public Sub sumarData2()
+        Dim Total As Single
+
+        For Each row As DataGridViewRow In Me.DataGridView5.Rows
+            Total += Val(row.Cells(5).Value)
+        Next
+        Label46.Text = Total.ToString
+    End Sub
+
+    Private Sub DataGridView5_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView5.CellClick
+
     End Sub
 End Class
