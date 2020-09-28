@@ -5,6 +5,7 @@ Public Class ClsDeposito
     Dim codDeposito, codFPBanco, CodFPContado As Integer
     Dim fecha As Date
     Dim comision, contado, totalDepositado, monBase As Double
+    Dim estado As Boolean
 
     'Constructor
     Public Sub New()
@@ -85,9 +86,6 @@ Public Class ClsDeposito
         End Set
     End Property
 
-
-    'Codigo Forma de Pago
-
     'MonBase
     Public Property mon_base As Double
         Get
@@ -134,7 +132,15 @@ Public Class ClsDeposito
         End Set
     End Property
 
-
+    'Estado
+    Public Property Estado_ As Boolean
+        Get
+            Return estado
+        End Get
+        Set(value As Boolean)
+            estado = value
+        End Set
+    End Property
     '::::::::::::::::::::::::::::: FUNCIONES DE MANTENIMIENTO ::::::::::::::::::::::::::::::
 
     'Listar todos los depositos
@@ -164,6 +170,8 @@ Public Class ClsDeposito
             cmd.CommandText = "A_slmBuscarDeposito"
             cmd.Parameters.Add("@codCajero", SqlDbType.VarChar).Value = cod_Cajero
             cmd.Parameters.Add("@comentario", SqlDbType.VarChar).Value = Comenta_rio
+            cmd.Parameters.Add("@cod", SqlDbType.Int).Value = Cod
+
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -175,30 +183,7 @@ Public Class ClsDeposito
 
     End Function
 
-    'Buscar deposito por tipo del deposito
-    Public Function buscarDepositoXTipoDepo() As DataTable
-
-        Dim objCon As New ClsConnection
-        Dim cn As New SqlConnection
-        cn = objCon.getConexion
-
-        Using cmd As New SqlCommand
-            cmd.Connection = cn
-            cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "A_slmBuscarDepositoXTipoDepo"
-            cmd.Parameters.Add("@tipoDeposito", SqlDbType.VarChar).Value = Tipo_Deposito
-            Using da As New SqlDataAdapter
-                da.SelectCommand = cmd
-                Using dt As New DataTable
-                    da.Fill(dt)
-                    Return dt
-                End Using
-            End Using
-        End Using
-
-    End Function
-
-    'Listar Ultimo
+    'Capturar ultimo insertado
     Public Function listarUltimoDeposito() As DataTable
 
         Dim objCon As New ClsConnection
@@ -279,6 +264,11 @@ Public Class ClsDeposito
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codCajero"
         sqlpar.Value = cod_Cajero
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado"
+        sqlpar.Value = Estado_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -375,6 +365,11 @@ Public Class ClsDeposito
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado"
+        sqlpar.Value = Estado_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -392,5 +387,29 @@ Public Class ClsDeposito
         Return par_sal
 
     End Function
+
+    'Buscar deposito por fecha del deposito
+    Public Function buscarDepoFecha() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarDepositoFecha"
+            cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = fecha
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
 
 End Class

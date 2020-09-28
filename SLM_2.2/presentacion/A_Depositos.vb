@@ -80,6 +80,7 @@
                             .Comenta_rio = txtComentario.Text
                             .Tipo_Deposito = lblTipoDeposito.Text
                             .cod_Cajero = txtCajero.Text
+                            .Estado_ = chkAnular.Checked
                             .registrarDepositos()
 
                         End With
@@ -332,10 +333,6 @@
 
     End Sub
 
-
-
-
-
     Private Sub dtDepositos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDepositos.CellClick
 
         'Mostrar datos seleccionados del datagrid
@@ -375,6 +372,7 @@
             txtComentario.Text = row("comentario")
             lblTipoDeposito.Text = row("tipoDeposito")
             txtCajero.Text = row("codCajero")
+            chkAnular.Checked = row("estado")
         Catch ex As Exception
 
         End Try
@@ -384,7 +382,7 @@
     Private Sub btnCrearNuevo_Click(sender As Object, e As EventArgs) Handles btnCrearNuevo.Click
         Try
             frmTipoDeposito.Show()
-            btnGuardar.Visible = True
+            btnGuardar.Enabled = True
             Me.Close()
         Catch ex As Exception
 
@@ -413,6 +411,7 @@
                     .Comenta_rio = txtComentario.Text
                     .Tipo_Deposito = lblTipoDeposito.Text
                     .cod_Cajero = txtCajero.Text
+                    .Estado_ = chkAnular.Checked
                     If .modificarDepositos() = 1 Then
                         MsgBox("Se modifico el registro.")
                         Limpiar()
@@ -480,6 +479,8 @@
         txtComision.Text = ""
         txtCajero.Text = ""
         txtComentario.Text = ""
+        chkAnular.Checked = False
+
 
         'Color TextBox
         txtBanco.BackColor = Color.White
@@ -541,17 +542,55 @@
 
                 .Comenta_rio = txtBusqueda.Text
                 .cod_Cajero = txtBusqueda.Text
+                .Cod = Convert.ToInt32(txtBusqueda.Text)
                 data = .buscarDepo
                 dtDepositos.DataSource = data
 
+            End With
 
+        Catch ex As Exception
+        End Try
+
+
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Dim n As String = MsgBox("¿Desea cerrar la ventana?", MsgBoxStyle.YesNo, "Validación")
+        If n = vbYes Then
+
+            Me.Close()
+        End If
+
+    End Sub
+
+    Private Sub dtpFechaBuscar_TextChanged(sender As Object, e As EventArgs) Handles dtpFechaBuscar.TextChanged
+
+        Dim depoFecha As New ClsDeposito
+
+        Try
+            Dim dataF As New DataTable
+            With depoFecha
+                .Fech_a = dtpFechaBuscar.Value
+                dataF = .buscarDepoFecha()
+                dtDepositos.DataSource = dataF
             End With
 
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+
         End Try
 
 
+    End Sub
+
+    Private Sub btnCancelar_Click_1(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Try
+
+            'Mostrar todos los depositos registrados
+            dtDepositos.DataSource = Deposito.listarDepositos
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

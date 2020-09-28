@@ -13,7 +13,7 @@
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        If txtNroFactura.Text <> "" And txtCodProveedor.Text <> "" And txtTerminoPago.Text <> "" And txtTotal.Text <> "" And txtTotal.Text = lblTotal.Text Then
+        If txtCodProveedor.Text <> "" And txtTerminoPago.Text <> "" And txtTotal.Text <> "" And txtTotal.Text = lblTotal.Text Then
 
             Try
                 'Registrar nueva factura de compra
@@ -87,9 +87,7 @@
 
             MsgBox("Existen campos vacíos o hubo un error.")
 
-            If txtNroFactura.Text = "" Then
-                txtNroFactura.BackColor = Color.Red
-            ElseIf txtCodProveedor.Text = "" Then
+            If txtCodProveedor.Text = "" Then
                 txtCodProveedor.BackColor = Color.Red
                 txtNombreProveedor.BackColor = Color.Red
             ElseIf txtTerminoPago.Text = "" Then
