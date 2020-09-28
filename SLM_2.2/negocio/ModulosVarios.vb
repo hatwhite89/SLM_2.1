@@ -678,6 +678,12 @@ Module ModulosVarios
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnSolicitudes.Enabled = True
                                                 End If
+                                            ElseIf i = 14 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnEvaluacionP.Enabled = True
+                                                Else
+                                                    Form1.btnEvaluacionP.Enabled = False
+                                                End If
                                             End If
                                         Next
 

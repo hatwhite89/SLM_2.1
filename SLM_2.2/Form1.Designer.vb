@@ -226,7 +226,7 @@ Partial Class Form1
         Me.btnSolicitudes = New System.Windows.Forms.Button()
         Me.TabPage12 = New System.Windows.Forms.TabPage()
         Me.PictureBox53 = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnEvaluacionP = New System.Windows.Forms.Button()
         Me.PictureBox61 = New System.Windows.Forms.PictureBox()
         Me.btnProveedores = New System.Windows.Forms.Button()
         Me.lblMiUser = New System.Windows.Forms.Label()
@@ -2877,7 +2877,7 @@ Partial Class Form1
         'TabPage12
         '
         Me.TabPage12.Controls.Add(Me.PictureBox53)
-        Me.TabPage12.Controls.Add(Me.Button1)
+        Me.TabPage12.Controls.Add(Me.btnEvaluacionP)
         Me.TabPage12.Controls.Add(Me.PictureBox61)
         Me.TabPage12.Controls.Add(Me.btnProveedores)
         Me.TabPage12.Location = New System.Drawing.Point(4, 22)
@@ -2898,21 +2898,21 @@ Partial Class Form1
         Me.PictureBox53.TabIndex = 40
         Me.PictureBox53.TabStop = False
         '
-        'Button1
+        'btnEvaluacionP
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.Enabled = False
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(112, 65)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(77, 40)
-        Me.Button1.TabIndex = 39
-        Me.Button1.Text = "Evaluacion"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnEvaluacionP.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnEvaluacionP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnEvaluacionP.Enabled = False
+        Me.btnEvaluacionP.FlatAppearance.BorderSize = 0
+        Me.btnEvaluacionP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEvaluacionP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEvaluacionP.ForeColor = System.Drawing.Color.White
+        Me.btnEvaluacionP.Location = New System.Drawing.Point(112, 65)
+        Me.btnEvaluacionP.Name = "btnEvaluacionP"
+        Me.btnEvaluacionP.Size = New System.Drawing.Size(77, 40)
+        Me.btnEvaluacionP.TabIndex = 39
+        Me.btnEvaluacionP.Text = "Evaluacion"
+        Me.btnEvaluacionP.UseVisualStyleBackColor = False
         '
         'PictureBox61
         '
@@ -3413,7 +3413,7 @@ Partial Class Form1
     Friend WithEvents btnSolicitudes As Button
     Friend WithEvents TabPage12 As TabPage
     Friend WithEvents PictureBox53 As PictureBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnEvaluacionP As Button
     Friend WithEvents PictureBox61 As PictureBox
     Friend WithEvents btnProveedores As Button
     Friend WithEvents PictureBox54 As PictureBox
