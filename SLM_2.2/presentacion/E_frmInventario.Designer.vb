@@ -38,9 +38,7 @@ Partial Class E_frmInventario
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -54,11 +52,18 @@ Partial Class E_frmInventario
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lote_1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.existencia_1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_unitario_1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_vencimiento_1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -68,35 +73,24 @@ Partial Class E_frmInventario
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.nombre_producto_2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lote_2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.existencias_2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.vence = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.nombre_producto_2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lote_2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.existencias_2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio_2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.vence = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lote_1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.existencia_1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio_unitario_1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fecha_vencimiento_1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -120,7 +114,7 @@ Partial Class E_frmInventario
         '
         Me.ComboBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(517, 10)
+        Me.ComboBox1.Location = New System.Drawing.Point(533, 10)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(223, 21)
         Me.ComboBox1.TabIndex = 0
@@ -138,7 +132,7 @@ Partial Class E_frmInventario
         Me.DataGridView1.Name = "DataGridView1"
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.Size = New System.Drawing.Size(752, 229)
+        Me.DataGridView1.Size = New System.Drawing.Size(762, 229)
         Me.DataGridView1.TabIndex = 1
         '
         'nombre_producto
@@ -175,8 +169,9 @@ Partial Class E_frmInventario
         '
         Me.excel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.excel.BackColor = System.Drawing.Color.Green
+        Me.excel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.excel.ForeColor = System.Drawing.SystemColors.Control
-        Me.excel.Location = New System.Drawing.Point(625, 271)
+        Me.excel.Location = New System.Drawing.Point(635, 271)
         Me.excel.Name = "excel"
         Me.excel.Size = New System.Drawing.Size(133, 23)
         Me.excel.TabIndex = 2
@@ -215,49 +210,31 @@ Partial Class E_frmInventario
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.TextBox4)
-        Me.GroupBox2.Controls.Add(Me.TextBox3)
         Me.GroupBox2.Controls.Add(Me.excel)
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
         Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Location = New System.Drawing.Point(6, 102)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(766, 300)
+        Me.GroupBox2.Size = New System.Drawing.Size(776, 300)
         Me.GroupBox2.TabIndex = 21
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Inventario"
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(130, 13)
+        Me.TextBox4.Location = New System.Drawing.Point(90, 13)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(160, 20)
         Me.TextBox4.TabIndex = 16
         '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(554, 13)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox3.TabIndex = 17
-        '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(28, 20)
+        Me.Label9.Location = New System.Drawing.Point(6, 20)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(78, 13)
         Me.Label9.TabIndex = 14
         Me.Label9.Text = "Buscar por lote"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(419, 20)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(103, 13)
-        Me.Label8.TabIndex = 15
-        Me.Label8.Text = "Buscar por producto"
         '
         'GroupBox1
         '
@@ -266,7 +243,7 @@ Partial Class E_frmInventario
         Me.GroupBox1.Controls.Add(Me.Panel3)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 6)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(766, 90)
+        Me.GroupBox1.Size = New System.Drawing.Size(778, 90)
         Me.GroupBox1.TabIndex = 20
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccionar  almacén"
@@ -275,7 +252,7 @@ Partial Class E_frmInventario
         '
         Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel3.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Panel3.Controls.Add(Me.Label19)
         Me.Panel3.Controls.Add(Me.Label18)
         Me.Panel3.Controls.Add(Me.Label3)
@@ -285,7 +262,7 @@ Partial Class E_frmInventario
         Me.Panel3.Controls.Add(Me.btnCargarInventario)
         Me.Panel3.Location = New System.Drawing.Point(6, 17)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(750, 67)
+        Me.Panel3.Size = New System.Drawing.Size(766, 67)
         Me.Panel3.TabIndex = 5
         '
         'Label19
@@ -293,18 +270,18 @@ Partial Class E_frmInventario
         Me.Label19.AutoSize = True
         Me.Label19.Location = New System.Drawing.Point(124, 37)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(45, 13)
+        Me.Label19.Size = New System.Drawing.Size(13, 13)
         Me.Label19.TabIndex = 22
-        Me.Label19.Text = "Label19"
+        Me.Label19.Text = "0"
         '
         'Label18
         '
         Me.Label18.AutoSize = True
         Me.Label18.Location = New System.Drawing.Point(124, 10)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(45, 13)
+        Me.Label18.Size = New System.Drawing.Size(22, 13)
         Me.Label18.TabIndex = 21
-        Me.Label18.Text = "Label18"
+        Me.Label18.Text = "0.0"
         '
         'Label3
         '
@@ -328,7 +305,7 @@ Partial Class E_frmInventario
         '
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(379, 18)
+        Me.Label1.Location = New System.Drawing.Point(395, 18)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(134, 13)
         Me.Label1.TabIndex = 18
@@ -337,9 +314,10 @@ Partial Class E_frmInventario
         'btnCargarInventario
         '
         Me.btnCargarInventario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCargarInventario.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.btnCargarInventario.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnCargarInventario.Location = New System.Drawing.Point(517, 38)
+        Me.btnCargarInventario.BackColor = System.Drawing.Color.White
+        Me.btnCargarInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCargarInventario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnCargarInventario.Location = New System.Drawing.Point(533, 38)
         Me.btnCargarInventario.Name = "btnCargarInventario"
         Me.btnCargarInventario.Size = New System.Drawing.Size(223, 23)
         Me.btnCargarInventario.TabIndex = 4
@@ -367,12 +345,10 @@ Partial Class E_frmInventario
         Me.GroupBox4.Controls.Add(Me.Button2)
         Me.GroupBox4.Controls.Add(Me.Label4)
         Me.GroupBox4.Controls.Add(Me.DataGridView2)
-        Me.GroupBox4.Controls.Add(Me.TextBox2)
-        Me.GroupBox4.Controls.Add(Me.Label5)
         Me.GroupBox4.Controls.Add(Me.TextBox1)
-        Me.GroupBox4.Location = New System.Drawing.Point(8, 93)
+        Me.GroupBox4.Location = New System.Drawing.Point(6, 102)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(770, 300)
+        Me.GroupBox4.Size = New System.Drawing.Size(776, 300)
         Me.GroupBox4.TabIndex = 22
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Inventario"
@@ -381,8 +357,9 @@ Partial Class E_frmInventario
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.BackColor = System.Drawing.Color.Green
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button2.Location = New System.Drawing.Point(625, 271)
+        Me.Button2.Location = New System.Drawing.Point(631, 271)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(133, 23)
         Me.Button2.TabIndex = 9
@@ -392,7 +369,7 @@ Partial Class E_frmInventario
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(20, 25)
+        Me.Label4.Location = New System.Drawing.Point(6, 18)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(78, 13)
         Me.Label4.TabIndex = 10
@@ -407,32 +384,46 @@ Partial Class E_frmInventario
         Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.producto, Me.lote_1, Me.existencia_1, Me.precio_unitario_1, Me.fecha_vencimiento_1})
-        Me.DataGridView2.Location = New System.Drawing.Point(3, 44)
+        Me.DataGridView2.Location = New System.Drawing.Point(3, 34)
         Me.DataGridView2.Name = "DataGridView2"
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue
         Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView2.Size = New System.Drawing.Size(755, 221)
+        Me.DataGridView2.Size = New System.Drawing.Size(767, 231)
         Me.DataGridView2.TabIndex = 8
         '
-        'TextBox2
+        'producto
         '
-        Me.TextBox2.Location = New System.Drawing.Point(549, 18)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox2.TabIndex = 13
+        Me.producto.DataPropertyName = "nombre_producto"
+        Me.producto.HeaderText = "PRODUCTO"
+        Me.producto.Name = "producto"
         '
-        'Label5
+        'lote_1
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(413, 25)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(103, 13)
-        Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Buscar por producto"
+        Me.lote_1.DataPropertyName = "lote"
+        Me.lote_1.HeaderText = "LOTE"
+        Me.lote_1.Name = "lote_1"
+        '
+        'existencia_1
+        '
+        Me.existencia_1.DataPropertyName = "existencia"
+        Me.existencia_1.HeaderText = "EXISTENCIAS"
+        Me.existencia_1.Name = "existencia_1"
+        '
+        'precio_unitario_1
+        '
+        Me.precio_unitario_1.DataPropertyName = "precio_unitario"
+        Me.precio_unitario_1.HeaderText = "PRECIO UNITARIO"
+        Me.precio_unitario_1.Name = "precio_unitario_1"
+        '
+        'fecha_vencimiento_1
+        '
+        Me.fecha_vencimiento_1.DataPropertyName = "fecha_vencimiento"
+        Me.fecha_vencimiento_1.HeaderText = "VENCIMIENTO"
+        Me.fecha_vencimiento_1.Name = "fecha_vencimiento_1"
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(124, 18)
+        Me.TextBox1.Location = New System.Drawing.Point(101, 11)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(160, 20)
         Me.TextBox1.TabIndex = 12
@@ -442,9 +433,9 @@ Partial Class E_frmInventario
         Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.Panel5)
-        Me.GroupBox3.Location = New System.Drawing.Point(8, 3)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 6)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(770, 90)
+        Me.GroupBox3.Size = New System.Drawing.Size(778, 90)
         Me.GroupBox3.TabIndex = 21
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Seleccionar  almacén"
@@ -453,7 +444,7 @@ Partial Class E_frmInventario
         '
         Me.Panel5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel5.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel5.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Panel5.Controls.Add(Me.Label6)
         Me.Panel5.Controls.Add(Me.Label7)
         Me.Panel5.Controls.Add(Me.Label20)
@@ -463,14 +454,50 @@ Partial Class E_frmInventario
         Me.Panel5.Controls.Add(Me.Button1)
         Me.Panel5.Location = New System.Drawing.Point(6, 17)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(750, 67)
+        Me.Panel5.Size = New System.Drawing.Size(766, 67)
         Me.Panel5.TabIndex = 5
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(124, 37)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(13, 13)
+        Me.Label6.TabIndex = 26
+        Me.Label6.Text = "0"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(124, 10)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(22, 13)
+        Me.Label7.TabIndex = 25
+        Me.Label7.Text = "0.0"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(3, 38)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(120, 13)
+        Me.Label20.TabIndex = 24
+        Me.Label20.Text = "Cantidad de productos: "
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(3, 10)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(109, 13)
+        Me.Label21.TabIndex = 23
+        Me.Label21.Text = "Valor del inventario: L"
         '
         'Label15
         '
         Me.Label15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(379, 18)
+        Me.Label15.Location = New System.Drawing.Point(395, 18)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(134, 13)
         Me.Label15.TabIndex = 18
@@ -480,7 +507,7 @@ Partial Class E_frmInventario
         '
         Me.ComboBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(519, 10)
+        Me.ComboBox2.Location = New System.Drawing.Point(535, 10)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(223, 21)
         Me.ComboBox2.TabIndex = 5
@@ -488,9 +515,10 @@ Partial Class E_frmInventario
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Location = New System.Drawing.Point(519, 37)
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.Location = New System.Drawing.Point(535, 37)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(223, 23)
         Me.Button1.TabIndex = 7
@@ -526,12 +554,10 @@ Partial Class E_frmInventario
         Me.GroupBox6.Controls.Add(Me.Button3)
         Me.GroupBox6.Controls.Add(Me.Label11)
         Me.GroupBox6.Controls.Add(Me.DataGridView3)
-        Me.GroupBox6.Controls.Add(Me.TextBox5)
-        Me.GroupBox6.Controls.Add(Me.Label10)
         Me.GroupBox6.Controls.Add(Me.TextBox6)
         Me.GroupBox6.Location = New System.Drawing.Point(6, 102)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(770, 300)
+        Me.GroupBox6.Size = New System.Drawing.Size(776, 300)
         Me.GroupBox6.TabIndex = 23
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Inventario"
@@ -540,8 +566,9 @@ Partial Class E_frmInventario
         '
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.BackColor = System.Drawing.Color.Green
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button3.Location = New System.Drawing.Point(626, 271)
+        Me.Button3.Location = New System.Drawing.Point(632, 271)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(133, 23)
         Me.Button3.TabIndex = 4
@@ -551,7 +578,7 @@ Partial Class E_frmInventario
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(59, 29)
+        Me.Label11.Location = New System.Drawing.Point(9, 25)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(78, 13)
         Me.Label11.TabIndex = 14
@@ -566,32 +593,46 @@ Partial Class E_frmInventario
         Me.DataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nombre_producto_2, Me.lote_2, Me.existencias_2, Me.precio_2, Me.vence})
-        Me.DataGridView3.Location = New System.Drawing.Point(9, 48)
+        Me.DataGridView3.Location = New System.Drawing.Point(9, 41)
         Me.DataGridView3.Name = "DataGridView3"
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue
         Me.DataGridView3.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView3.Size = New System.Drawing.Size(750, 217)
+        Me.DataGridView3.Size = New System.Drawing.Size(756, 217)
         Me.DataGridView3.TabIndex = 3
         '
-        'TextBox5
+        'nombre_producto_2
         '
-        Me.TextBox5.Location = New System.Drawing.Point(585, 22)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox5.TabIndex = 17
+        Me.nombre_producto_2.DataPropertyName = "nombre_producto"
+        Me.nombre_producto_2.HeaderText = "PRODUCTO"
+        Me.nombre_producto_2.Name = "nombre_producto_2"
         '
-        'Label10
+        'lote_2
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(450, 29)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(103, 13)
-        Me.Label10.TabIndex = 15
-        Me.Label10.Text = "Buscar por producto"
+        Me.lote_2.DataPropertyName = "lote"
+        Me.lote_2.HeaderText = "LOTE"
+        Me.lote_2.Name = "lote_2"
+        '
+        'existencias_2
+        '
+        Me.existencias_2.DataPropertyName = "existencia"
+        Me.existencias_2.HeaderText = "EXISTENCIAS"
+        Me.existencias_2.Name = "existencias_2"
+        '
+        'precio_2
+        '
+        Me.precio_2.DataPropertyName = "precio_unitario"
+        Me.precio_2.HeaderText = "PRECIO UNITARIO"
+        Me.precio_2.Name = "precio_2"
+        '
+        'vence
+        '
+        Me.vence.DataPropertyName = "fecha_vencimiento"
+        Me.vence.HeaderText = "VENCIMIENTO"
+        Me.vence.Name = "vence"
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(161, 22)
+        Me.TextBox6.Location = New System.Drawing.Point(93, 18)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(160, 20)
         Me.TextBox6.TabIndex = 16
@@ -603,7 +644,7 @@ Partial Class E_frmInventario
         Me.GroupBox5.Controls.Add(Me.Panel1)
         Me.GroupBox5.Location = New System.Drawing.Point(6, 6)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(770, 90)
+        Me.GroupBox5.Size = New System.Drawing.Size(778, 90)
         Me.GroupBox5.TabIndex = 22
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Seleccionar  almacén"
@@ -612,7 +653,7 @@ Partial Class E_frmInventario
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel1.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.Label16)
         Me.Panel1.Controls.Add(Me.Label22)
@@ -622,14 +663,50 @@ Partial Class E_frmInventario
         Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Location = New System.Drawing.Point(6, 17)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(754, 67)
+        Me.Panel1.Size = New System.Drawing.Size(766, 67)
         Me.Panel1.TabIndex = 5
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(124, 37)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(13, 13)
+        Me.Label14.TabIndex = 26
+        Me.Label14.Text = "0"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(124, 10)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(22, 13)
+        Me.Label16.TabIndex = 25
+        Me.Label16.Text = "0.0"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(3, 38)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(120, 13)
+        Me.Label22.TabIndex = 24
+        Me.Label22.Text = "Cantidad de productos: "
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(3, 10)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(109, 13)
+        Me.Label23.TabIndex = 23
+        Me.Label23.Text = "Valor del inventario: L"
         '
         'ComboBox3
         '
         Me.ComboBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(528, 10)
+        Me.ComboBox3.Location = New System.Drawing.Point(540, 10)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(223, 21)
         Me.ComboBox3.TabIndex = 8
@@ -638,7 +715,7 @@ Partial Class E_frmInventario
         '
         Me.Label17.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(383, 18)
+        Me.Label17.Location = New System.Drawing.Point(395, 18)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(134, 13)
         Me.Label17.TabIndex = 18
@@ -647,9 +724,10 @@ Partial Class E_frmInventario
         'Button4
         '
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button4.Location = New System.Drawing.Point(528, 37)
+        Me.Button4.BackColor = System.Drawing.Color.White
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button4.Location = New System.Drawing.Point(540, 37)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(223, 23)
         Me.Button4.TabIndex = 10
@@ -687,138 +765,6 @@ Partial Class E_frmInventario
         Me.StatusStrip1.Size = New System.Drawing.Size(800, 22)
         Me.StatusStrip1.TabIndex = 6
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'nombre_producto_2
-        '
-        Me.nombre_producto_2.DataPropertyName = "nombre_producto"
-        Me.nombre_producto_2.HeaderText = "PRODUCTO"
-        Me.nombre_producto_2.Name = "nombre_producto_2"
-        '
-        'lote_2
-        '
-        Me.lote_2.DataPropertyName = "lote"
-        Me.lote_2.HeaderText = "LOTE"
-        Me.lote_2.Name = "lote_2"
-        '
-        'existencias_2
-        '
-        Me.existencias_2.DataPropertyName = "existencia"
-        Me.existencias_2.HeaderText = "EXISTENCIAS"
-        Me.existencias_2.Name = "existencias_2"
-        '
-        'precio_2
-        '
-        Me.precio_2.DataPropertyName = "precio_unitario"
-        Me.precio_2.HeaderText = "PRECIO UNITARIO"
-        Me.precio_2.Name = "precio_2"
-        '
-        'vence
-        '
-        Me.vence.DataPropertyName = "fecha_vencimiento"
-        Me.vence.HeaderText = "VENCIMIENTO"
-        Me.vence.Name = "vence"
-        '
-        'producto
-        '
-        Me.producto.DataPropertyName = "nombre_producto"
-        Me.producto.HeaderText = "PRODUCTO"
-        Me.producto.Name = "producto"
-        '
-        'lote_1
-        '
-        Me.lote_1.DataPropertyName = "lote"
-        Me.lote_1.HeaderText = "LOTE"
-        Me.lote_1.Name = "lote_1"
-        '
-        'existencia_1
-        '
-        Me.existencia_1.DataPropertyName = "existencia"
-        Me.existencia_1.HeaderText = "EXISTENCIAS"
-        Me.existencia_1.Name = "existencia_1"
-        '
-        'precio_unitario_1
-        '
-        Me.precio_unitario_1.DataPropertyName = "precio_unitario"
-        Me.precio_unitario_1.HeaderText = "PRECIO UNITARIO"
-        Me.precio_unitario_1.Name = "precio_unitario_1"
-        '
-        'fecha_vencimiento_1
-        '
-        Me.fecha_vencimiento_1.DataPropertyName = "fecha_vencimiento"
-        Me.fecha_vencimiento_1.HeaderText = "VENCIMIENTO"
-        Me.fecha_vencimiento_1.Name = "fecha_vencimiento_1"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(135, 37)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(39, 13)
-        Me.Label6.TabIndex = 26
-        Me.Label6.Text = "Label6"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(135, 10)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(39, 13)
-        Me.Label7.TabIndex = 25
-        Me.Label7.Text = "Label7"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(14, 38)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(120, 13)
-        Me.Label20.TabIndex = 24
-        Me.Label20.Text = "Cantidad de productos: "
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(14, 10)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(109, 13)
-        Me.Label21.TabIndex = 23
-        Me.Label21.Text = "Valor del inventario: L"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(133, 40)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(45, 13)
-        Me.Label14.TabIndex = 26
-        Me.Label14.Text = "Label14"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(133, 13)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(45, 13)
-        Me.Label16.TabIndex = 25
-        Me.Label16.Text = "Label16"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(12, 41)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(120, 13)
-        Me.Label22.TabIndex = 24
-        Me.Label22.Text = "Cantidad de productos: "
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(12, 13)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(109, 13)
-        Me.Label23.TabIndex = 23
-        Me.Label23.Text = "Valor del inventario: L"
         '
         'E_frmInventario
         '
@@ -879,20 +825,14 @@ Partial Class E_frmInventario
     Friend WithEvents ComboBox3 As ComboBox
     Friend WithEvents DataGridView3 As DataGridView
     Friend WithEvents Button3 As Button
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label12 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox5 As TextBox
     Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label13 As Label

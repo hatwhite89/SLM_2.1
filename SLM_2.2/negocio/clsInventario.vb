@@ -32,6 +32,22 @@ group by a.nombre_almacen", cn)
             Return dt
         End Using
     End Function
+
+    Public Function BIAlmacenCostoInventario() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select COUNT(e.cantidad) as cantidad , a.nombre_almacen,sum(e.cantidad*e.precio_unitario) as costo from  Almacen a, EntradaAlmacen e
+where a.id_almacen =e.id_almacen 
+group by a.nombre_almacen
+order by costo desc", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
     Public Function ListarInventarioAlmacen(ByVal codigo As String) As DataTable
 
         Dim objCon As New ClsConnection
@@ -39,7 +55,7 @@ group by a.nombre_almacen", cn)
         cn = objCon.getConexion
 
         Using da As New SqlDataAdapter("select p.nombre_producto,e.lote,e.existencia,e.precio_unitario,e.fecha_vencimiento from EntradaAlmacen e, ProductoAlmacen p
-where existencia >0 and e.id_producto = p.id_producto and e.id_almacen='" + codigo + "'", cn)
+where existencia > 0 And e.id_producto = p.id_producto And e.id_almacen ='" + codigo + "'", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

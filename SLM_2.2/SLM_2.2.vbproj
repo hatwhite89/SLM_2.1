@@ -804,6 +804,12 @@
     <Compile Include="presentacion\frmEntrada.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\frmEvaluacionProveedores.Designer.vb">
+      <DependentUpon>frmEvaluacionProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\frmEvaluacionProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\frmMovimientoAlmacen.Designer.vb">
       <DependentUpon>frmMovimientoAlmacen.vb</DependentUpon>
     </Compile>

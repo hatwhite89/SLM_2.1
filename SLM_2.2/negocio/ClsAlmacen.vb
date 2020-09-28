@@ -45,12 +45,12 @@ Public Class ClsAlmacen
         sqlcom.CommandText = "E_slmInsertarAlmacen"
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "nombre_almacen" 'nombre campo en el procedimiento almacenado 
+        sqlpar.ParameterName = "nombre_almacen" 'nombre del almacen 
         sqlpar.Value = NombreAlmacen
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "descripcion" 'nombre campo en el procedimiento almacenado 
+        sqlpar.ParameterName = "descripcion" 'descripcion del almacen
         sqlpar.Value = DescripcionAlmacen
         sqlcom.Parameters.Add(sqlpar)
 

@@ -27,6 +27,7 @@ Public Class E_frmOrdenCompra
                     .CostoTotal = Double.Parse(txtCostoTotal.Text)
                     .EstadoOC = False
                     .IdOC = Integer.Parse(txtCodOC.Text)
+                    .Cantidad_recibida1 = Integer.Parse(txtCantidadProductos.Text)
 
                 End With
 
@@ -53,7 +54,7 @@ Public Class E_frmOrdenCompra
         Dim Total As Single
 
         For Each row As DataGridViewRow In Me.DataGridView1.Rows
-            Total += Val(row.Cells(3).Value)
+            Total += Val(row.Cells(5).Value)
         Next
         Label44.Text = Total.ToString
     End Sub
@@ -61,7 +62,7 @@ Public Class E_frmOrdenCompra
         Dim Total As Single
 
         For Each row As DataGridViewRow In Me.DataGridView1.Rows
-            Total += Val(row.Cells(4).Value)
+            Total += Val(row.Cells(3).Value)
         Next
         Label46.Text = Total.ToString
     End Sub
@@ -80,8 +81,7 @@ Public Class E_frmOrdenCompra
     End Sub
 
     Public Sub E_frmOrdenCompra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        RadioButton2.Checked = False
-        RadioButton1.Checked = False
+
         alternarColoFilasDatagridview(DataGridView1)
         alternarColoFilasDatagridview(DataGridView2)
         alternarColoFilasDatagridview(DataGridView9)
@@ -101,7 +101,7 @@ Public Class E_frmOrdenCompra
 
         'detalle orden
         txtISVProductos.Text = "0"
-        txtCantidadProductos.Text = "0"
+        txtCantidadProductos.Text = "1"
         txtPrecioUnitarioProductos.Text = "0"
         txtCantidadProductos.Text = "0"
         txtNombreProveedor.Text = nombre_proveedorOC
@@ -147,9 +147,8 @@ Public Class E_frmOrdenCompra
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        RadioButton1.Checked = True
-        Button3.Enabled = True
-        Button5.Enabled = True
+
+
         txtCodOC.Clear()
         txtConsignado.Clear()
         txtAutorizado.Clear()
@@ -158,7 +157,7 @@ Public Class E_frmOrdenCompra
         txtNombreProveedor.Clear()
         txtDiasCredito.Clear()
         txtNumFactura.Clear()
-        txtLugarEntrega.Clear()
+
         txtCondicionEntrega.Clear()
         txtObservaciones.Clear()
         txtProducto.Clear()
@@ -176,7 +175,7 @@ Public Class E_frmOrdenCompra
 
         txtDiasCredito.ReadOnly = False
         txtNumFactura.ReadOnly = False
-        txtLugarEntrega.ReadOnly = False
+
         txtCondicionEntrega.ReadOnly = False
         txtObservaciones.ReadOnly = False
         Dim clsP As New ClsProducto
@@ -205,27 +204,28 @@ Public Class E_frmOrdenCompra
         Button2.Enabled = True
     End Sub
     Private Sub ActualizarOC()
+
+
+    End Sub
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim clsOC As New ClsOrdenDeCompra
         Dim estado As Boolean = False
-        If RadioButton1.Checked = True Then
-            estado = False
-        ElseIf RadioButton1.Checked = False Then
-            estado = True
-        End If
+
         Try
             With clsOC
                 .IdOrdenCompra = Integer.Parse(txtCodOC.Text)
                 .IdFormaPago = cmbFormaDePago.SelectedValue()
-                .FechaElaboracion = ""
+                .FechaElaboracion = Date.Now
                 .Condiciones = txtCondicionEntrega.Text
                 .UsuarioConsignado = txtConsignado.Text
-                .UsuarioSolicito = txtAutorizado.Text
+                .UsuarioSolicito = ""
                 .UsuarioAutorizo = ""
                 .DepartamentSolicita = Integer.Parse("1")
                 .DepartamentoAutoriza = Integer.Parse("1")
                 .ObservacionesOC = txtObservaciones.Text
                 .EstadoOC = estado
                 .IdProveedor = Integer.Parse(txtCodProveedor.Text)
+
             End With
 
             If clsOC.ActualizarOC() = "1" Then
@@ -237,10 +237,6 @@ Public Class E_frmOrdenCompra
         Catch ex As Exception
             MsgBox("Debe llenar todos los campos obligatorios *")
         End Try
-
-    End Sub
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        ActualizarOC()
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
@@ -292,30 +288,49 @@ Public Class E_frmOrdenCompra
     End Sub
 
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
-
+        Button3.Enabled = True
+        Button5.Enabled = True
+        Button1.Enabled = True
+        btnProveedor.Enabled = True
+        Button2.Enabled = True
 
         Try
-            cmbFormaDePago.SelectedValue = DataGridView2.Rows(e.RowIndex).Cells(2).Value
-            txtCodOC.Text = DataGridView2.Rows(e.RowIndex).Cells(0).Value
-            txtCodProveedor.Text = DataGridView2.Rows(e.RowIndex).Cells(2).Value
-            txtCondicionEntrega.Text = DataGridView2.Rows(e.RowIndex).Cells(4).Value
-            txtObservaciones.Text = DataGridView2.Rows(e.RowIndex).Cells(10).Value
+            LlenarTextbox(DataGridView2.Rows(e.RowIndex).Cells(0).Value)
 
-            txtAutorizado.Text = DataGridView2.Rows(e.RowIndex).Cells(7).Value
-            txt_estado_autorizacion.Text = DataGridView2.Rows(e.RowIndex).Cells(12).Value
-            RichTextBox1.Text = DataGridView2.Rows(e.RowIndex).Cells(14).Value
-            CargarDetalleOC(txtCodOC.Text)
-            Label38.Text = DataGridView2.Rows(e.RowIndex).Cells(13).Value
-            Label37.Text = DataGridView2.Rows(e.RowIndex).Cells(3).Value
+            txtCodOC.Text = DataGridView2.Rows(e.RowIndex).Cells(0).Value
+
+
+            'txtCondicionEntrega.Text = DataGridView2.Rows(e.RowIndex).Cells(4).Value
+            'txtObservaciones.Text = DataGridView2.Rows(e.RowIndex).Cells(10).Value
+
+
+            'txt_estado_autorizacion.Text = DataGridView2.Rows(e.RowIndex).Cells(12).Value
+            'RichTextBox1.Text = DataGridView2.Rows(e.RowIndex).Cells(14).Value
+            'CargarDetalleOC(txtCodOC.Text)
+            'Label38.Text = DataGridView2.Rows(e.RowIndex).Cells(13).Value
+            'Label37.Text = DataGridView2.Rows(e.RowIndex).Cells(3).Value
+
+
             txtConsignado.ReadOnly = False
 
             txtCodProveedor.ReadOnly = False
 
             txtDiasCredito.ReadOnly = False
             txtNumFactura.ReadOnly = False
-            txtLugarEntrega.ReadOnly = False
+
             txtCondicionEntrega.ReadOnly = False
             txtObservaciones.ReadOnly = False
+
+            Dim clsP As New ClsProducto
+            TableUM.Load(clsP.RecuperarProductoOC2())
+
+            DataGridView9.DataSource = TableUM
+
+            CargarDetalleOC(txtCodOC.Text)
+
+            sumarData()
+            sumarData2()
+
         Catch ex As Exception
 
         End Try
@@ -379,6 +394,7 @@ Public Class E_frmOrdenCompra
             CargarDetalleOC(txtCodOC.Text)
         End If
         sumarData()
+        sumarData2()
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
@@ -400,4 +416,30 @@ Public Class E_frmOrdenCompra
         End Try
     End Sub
 
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+
+    End Sub
+
+    Public Sub LlenarTextbox(ByVal codigo As String)
+        Dim clsOCOB As New ClsOrdenDeCompra
+        Dim dvOC As DataView = clsOCOB.RecuperarOCConParametro(codigo).DefaultView
+
+
+
+        DataGridView3.DataSource = dvOC
+
+
+        txtCodProveedor.Text = DataGridView3.Rows.Item(0).Cells(2).Value
+        txtCondicionEntrega.Text = DataGridView3.Rows.Item(0).Cells(4).Value
+        txtConsignado.Text = DataGridView3.Rows.Item(0).Cells(5).Value
+        txtAutorizado.Text = DataGridView3.Rows.Item(0).Cells(7).Value
+        txtObservaciones.Text = DataGridView3.Rows.Item(0).Cells(10).Value
+        txt_estado_autorizacion.Text = DataGridView3.Rows.Item(0).Cells(12).Value
+        RichTextBox1.Text = DataGridView3.Rows.Item(0).Cells(14).Value
+
+
+
+
+
+    End Sub
 End Class

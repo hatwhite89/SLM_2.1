@@ -1,6 +1,9 @@
 ﻿
 Imports Microsoft.Office.Interop
 Public Class E_frmInventario
+    Dim clsA As New clsInventario
+
+
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         Dim clsA As New clsInventario
         Try
@@ -235,6 +238,48 @@ Public Class E_frmInventario
 
             DataGridView3.DataSource = dvOC
             sumarData3()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged
+        Try
+
+
+            Dim dvProveedor As DataView = clsA.ListarInventarioAlmacenSinExistencia(ComboBox3.SelectedValue.ToString).DefaultView
+
+            dvProveedor.RowFilter = String.Format("CONVERT(nombre_producto, System.String) LIKE '%{0}%'", TextBox6.Text)
+            DataGridView3.DataSource = dvProveedor
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        Try
+
+
+            Dim dvProveedo2 As DataView = clsA.ListarInventarioAlmacenProductoVencido(ComboBox2.SelectedValue.ToString).DefaultView
+
+            dvProveedo2.RowFilter = String.Format("CONVERT(nombre_producto, System.String) LIKE '%{0}%'", TextBox1.Text)
+            DataGridView2.DataSource = dvProveedo2
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles TextBox4.TextChanged
+        Try
+
+
+
+            Dim dvProveedo3 As DataView = clsA.ListarInventarioAlmacen(ComboBox1.SelectedValue.ToString).DefaultView
+
+
+            dvProveedo3.RowFilter = String.Format("CONVERT(nombre_producto, System.String) LIKE '%{0}%'", TextBox4.Text)
+            DataGridView1.DataSource = dvProveedo3
         Catch ex As Exception
 
         End Try

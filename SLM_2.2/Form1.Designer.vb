@@ -115,6 +115,10 @@ Partial Class Form1
         Me.Button12 = New System.Windows.Forms.Button()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.PictureBox19 = New System.Windows.Forms.PictureBox()
+        Me.btnSubAreas = New System.Windows.Forms.Button()
+        Me.PictureBox76 = New System.Windows.Forms.PictureBox()
+        Me.btnGrupoExamenes = New System.Windows.Forms.Button()
         Me.PictureBox49 = New System.Windows.Forms.PictureBox()
         Me.btnInformes = New System.Windows.Forms.Button()
         Me.PictureBox48 = New System.Windows.Forms.PictureBox()
@@ -233,10 +237,6 @@ Partial Class Form1
         Me.lblHora = New System.Windows.Forms.Label()
         Me.banner = New UIDC.UI_TitleBanner()
         Me.bntCerrar = New System.Windows.Forms.Button()
-        Me.PictureBox19 = New System.Windows.Forms.PictureBox()
-        Me.btnSubAreas = New System.Windows.Forms.Button()
-        Me.PictureBox76 = New System.Windows.Forms.PictureBox()
-        Me.btnGrupoExamenes = New System.Windows.Forms.Button()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -285,6 +285,8 @@ Partial Class Form1
         Me.Panel8.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox76, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox49, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox48, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox23, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -347,8 +349,6 @@ Partial Class Form1
         CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox61, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox76, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -1542,6 +1542,48 @@ Partial Class Form1
         Me.TabPage3.Text = "Exámenes"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'PictureBox19
+        '
+        Me.PictureBox19.InitialImage = Nothing
+        Me.PictureBox19.Location = New System.Drawing.Point(419, 105)
+        Me.PictureBox19.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox19.Name = "PictureBox19"
+        Me.PictureBox19.Size = New System.Drawing.Size(54, 51)
+        Me.PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox19.TabIndex = 22
+        Me.PictureBox19.TabStop = False
+        '
+        'btnSubAreas
+        '
+        Me.btnSubAreas.Enabled = False
+        Me.btnSubAreas.Location = New System.Drawing.Point(399, 162)
+        Me.btnSubAreas.Name = "btnSubAreas"
+        Me.btnSubAreas.Size = New System.Drawing.Size(99, 23)
+        Me.btnSubAreas.TabIndex = 21
+        Me.btnSubAreas.Text = "SubAreas"
+        Me.btnSubAreas.UseVisualStyleBackColor = True
+        '
+        'PictureBox76
+        '
+        Me.PictureBox76.InitialImage = Nothing
+        Me.PictureBox76.Location = New System.Drawing.Point(294, 105)
+        Me.PictureBox76.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox76.Name = "PictureBox76"
+        Me.PictureBox76.Size = New System.Drawing.Size(54, 51)
+        Me.PictureBox76.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox76.TabIndex = 20
+        Me.PictureBox76.TabStop = False
+        '
+        'btnGrupoExamenes
+        '
+        Me.btnGrupoExamenes.Enabled = False
+        Me.btnGrupoExamenes.Location = New System.Drawing.Point(274, 162)
+        Me.btnGrupoExamenes.Name = "btnGrupoExamenes"
+        Me.btnGrupoExamenes.Size = New System.Drawing.Size(99, 23)
+        Me.btnGrupoExamenes.TabIndex = 19
+        Me.btnGrupoExamenes.Text = "Grupo Exámenes"
+        Me.btnGrupoExamenes.UseVisualStyleBackColor = True
+        '
         'PictureBox49
         '
         Me.PictureBox49.InitialImage = Nothing
@@ -2635,9 +2677,9 @@ Partial Class Form1
         Me.btnUnidadMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUnidadMedida.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUnidadMedida.ForeColor = System.Drawing.Color.White
-        Me.btnUnidadMedida.Location = New System.Drawing.Point(252, 73)
+        Me.btnUnidadMedida.Location = New System.Drawing.Point(266, 74)
         Me.btnUnidadMedida.Name = "btnUnidadMedida"
-        Me.btnUnidadMedida.Size = New System.Drawing.Size(101, 43)
+        Me.btnUnidadMedida.Size = New System.Drawing.Size(77, 48)
         Me.btnUnidadMedida.TabIndex = 22
         Me.btnUnidadMedida.Text = "Unidad Medida"
         Me.btnUnidadMedida.UseVisualStyleBackColor = False
@@ -2651,9 +2693,9 @@ Partial Class Form1
         Me.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnProducto.ForeColor = System.Drawing.Color.White
-        Me.btnProducto.Location = New System.Drawing.Point(23, 73)
+        Me.btnProducto.Location = New System.Drawing.Point(24, 73)
         Me.btnProducto.Name = "btnProducto"
-        Me.btnProducto.Size = New System.Drawing.Size(77, 43)
+        Me.btnProducto.Size = New System.Drawing.Size(77, 49)
         Me.btnProducto.TabIndex = 21
         Me.btnProducto.Text = "Producto"
         Me.btnProducto.UseVisualStyleBackColor = False
@@ -2667,11 +2709,11 @@ Partial Class Form1
         Me.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCategoria.ForeColor = System.Drawing.Color.White
-        Me.btnCategoria.Location = New System.Drawing.Point(147, 73)
+        Me.btnCategoria.Location = New System.Drawing.Point(146, 73)
         Me.btnCategoria.Name = "btnCategoria"
-        Me.btnCategoria.Size = New System.Drawing.Size(77, 43)
+        Me.btnCategoria.Size = New System.Drawing.Size(78, 49)
         Me.btnCategoria.TabIndex = 20
-        Me.btnCategoria.Text = "Categoria "
+        Me.btnCategoria.Text = "Categoría"
         Me.btnCategoria.UseVisualStyleBackColor = False
         '
         'TabPage7
@@ -2825,11 +2867,11 @@ Partial Class Form1
         Me.btnSolicitudes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSolicitudes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSolicitudes.ForeColor = System.Drawing.Color.White
-        Me.btnSolicitudes.Location = New System.Drawing.Point(6, 63)
+        Me.btnSolicitudes.Location = New System.Drawing.Point(7, 63)
         Me.btnSolicitudes.Name = "btnSolicitudes"
-        Me.btnSolicitudes.Size = New System.Drawing.Size(77, 39)
+        Me.btnSolicitudes.Size = New System.Drawing.Size(78, 43)
         Me.btnSolicitudes.TabIndex = 42
-        Me.btnSolicitudes.Text = "Solicitudes"
+        Me.btnSolicitudes.Text = "Administrar Solicitudes"
         Me.btnSolicitudes.UseVisualStyleBackColor = False
         '
         'TabPage12
@@ -3007,48 +3049,6 @@ Partial Class Form1
         Me.bntCerrar.Text = "Salir"
         Me.bntCerrar.UseVisualStyleBackColor = False
         '
-        'PictureBox19
-        '
-        Me.PictureBox19.InitialImage = Nothing
-        Me.PictureBox19.Location = New System.Drawing.Point(419, 105)
-        Me.PictureBox19.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox19.Name = "PictureBox19"
-        Me.PictureBox19.Size = New System.Drawing.Size(54, 51)
-        Me.PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox19.TabIndex = 22
-        Me.PictureBox19.TabStop = False
-        '
-        'btnSubAreas
-        '
-        Me.btnSubAreas.Enabled = False
-        Me.btnSubAreas.Location = New System.Drawing.Point(399, 162)
-        Me.btnSubAreas.Name = "btnSubAreas"
-        Me.btnSubAreas.Size = New System.Drawing.Size(99, 23)
-        Me.btnSubAreas.TabIndex = 21
-        Me.btnSubAreas.Text = "SubAreas"
-        Me.btnSubAreas.UseVisualStyleBackColor = True
-        '
-        'PictureBox76
-        '
-        Me.PictureBox76.InitialImage = Nothing
-        Me.PictureBox76.Location = New System.Drawing.Point(294, 105)
-        Me.PictureBox76.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox76.Name = "PictureBox76"
-        Me.PictureBox76.Size = New System.Drawing.Size(54, 51)
-        Me.PictureBox76.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox76.TabIndex = 20
-        Me.PictureBox76.TabStop = False
-        '
-        'btnGrupoExamenes
-        '
-        Me.btnGrupoExamenes.Enabled = False
-        Me.btnGrupoExamenes.Location = New System.Drawing.Point(274, 162)
-        Me.btnGrupoExamenes.Name = "btnGrupoExamenes"
-        Me.btnGrupoExamenes.Size = New System.Drawing.Size(99, 23)
-        Me.btnGrupoExamenes.TabIndex = 19
-        Me.btnGrupoExamenes.Text = "Grupo Exámenes"
-        Me.btnGrupoExamenes.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3135,6 +3135,8 @@ Partial Class Form1
         Me.Panel8.PerformLayout()
         Me.TabControl2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
+        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox76, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox49, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox48, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox23, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3201,8 +3203,6 @@ Partial Class Form1
         CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox61, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox76, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
