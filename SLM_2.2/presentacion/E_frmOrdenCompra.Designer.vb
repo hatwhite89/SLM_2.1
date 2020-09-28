@@ -26,12 +26,14 @@ Partial Class E_frmOrdenCompra
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_frmOrdenCompra))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -86,6 +88,8 @@ Partial Class E_frmOrdenCompra
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtRTNProveedor = New System.Windows.Forms.TextBox()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.txtEstadoOC = New System.Windows.Forms.TextBox()
+        Me.txtLugarEntrega = New System.Windows.Forms.ComboBox()
         Me.txtConsignado = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtCondicionEntrega = New System.Windows.Forms.RichTextBox()
@@ -115,6 +119,7 @@ Partial Class E_frmOrdenCompra
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.txtAutorizado = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -132,7 +137,6 @@ Partial Class E_frmOrdenCompra
         Me.Label34 = New System.Windows.Forms.Label()
         Me.DataGridView4 = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
         Me.Button7 = New System.Windows.Forms.Button()
@@ -140,9 +144,6 @@ Partial Class E_frmOrdenCompra
         Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.txtLugarEntrega = New System.Windows.Forms.ComboBox()
-        Me.txtEstadoOC = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -158,6 +159,7 @@ Partial Class E_frmOrdenCompra
         Me.TabPage2.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -167,7 +169,6 @@ Partial Class E_frmOrdenCompra
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -186,13 +187,24 @@ Partial Class E_frmOrdenCompra
         Me.Panel1.Size = New System.Drawing.Size(1062, 39)
         Me.Panel1.TabIndex = 0
         '
+        'Button6
+        '
+        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button6.Location = New System.Drawing.Point(691, 7)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 23)
+        Me.Button6.TabIndex = 77
+        Me.Button6.Text = "Imprimir"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'Label40
         '
         Me.Label40.AutoSize = True
-        Me.Label40.ForeColor = System.Drawing.Color.Red
+        Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.ForeColor = System.Drawing.Color.White
         Me.Label40.Location = New System.Drawing.Point(397, 12)
         Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(128, 13)
+        Me.Label40.Size = New System.Drawing.Size(191, 16)
         Me.Label40.TabIndex = 82
         Me.Label40.Text = "* Campos son obligatorios"
         '
@@ -212,6 +224,7 @@ Partial Class E_frmOrdenCompra
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.BackColor = System.Drawing.Color.White
         Me.Button3.Enabled = False
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Location = New System.Drawing.Point(863, 7)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
@@ -223,6 +236,7 @@ Partial Class E_frmOrdenCompra
         '
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button4.BackColor = System.Drawing.Color.White
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.ForeColor = System.Drawing.Color.Black
         Me.Button4.Location = New System.Drawing.Point(782, 7)
         Me.Button4.Name = "Button4"
@@ -236,6 +250,7 @@ Partial Class E_frmOrdenCompra
         Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button5.BackColor = System.Drawing.Color.White
         Me.Button5.Enabled = False
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button5.Location = New System.Drawing.Point(944, 7)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
@@ -277,7 +292,7 @@ Partial Class E_frmOrdenCompra
         Me.GroupBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox3.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox3.Controls.Add(Me.DataGridView1)
         Me.GroupBox3.Controls.Add(Me.Panel5)
         Me.GroupBox3.Location = New System.Drawing.Point(4, 425)
@@ -295,20 +310,29 @@ Partial Class E_frmOrdenCompra
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Bisque
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLight
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_detalle_oc, Me.id_producto1, Me.nombre_producto1, Me.precio_unitario, Me.cantidad, Me.costo_total})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.Location = New System.Drawing.Point(11, 19)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.Size = New System.Drawing.Size(1023, 163)
         Me.DataGridView1.TabIndex = 0
         '
@@ -404,7 +428,7 @@ Partial Class E_frmOrdenCompra
         '
         Me.Button2.BackColor = System.Drawing.Color.OrangeRed
         Me.Button2.Enabled = False
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button2.Location = New System.Drawing.Point(10, 18)
         Me.Button2.Name = "Button2"
@@ -440,7 +464,7 @@ Partial Class E_frmOrdenCompra
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox2.Controls.Add(Me.Label23)
         Me.GroupBox2.Controls.Add(Me.txtCodigProducto)
         Me.GroupBox2.Controls.Add(Me.Label22)
@@ -562,7 +586,7 @@ Partial Class E_frmOrdenCompra
         '
         Me.GroupBox10.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox10.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox10.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox10.Controls.Add(Me.DataGridView9)
         Me.GroupBox10.Controls.Add(Me.Label17)
         Me.GroupBox10.Controls.Add(Me.TextBox10)
@@ -580,16 +604,17 @@ Partial Class E_frmOrdenCompra
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView9.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView9.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView9.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.PeachPuff
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView9.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView9.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_producto, Me.nombre_producto, Me.precio, Me.descripcion})
+        Me.DataGridView9.EnableHeadersVisualStyles = False
         Me.DataGridView9.Location = New System.Drawing.Point(5, 53)
         Me.DataGridView9.Name = "DataGridView9"
         Me.DataGridView9.Size = New System.Drawing.Size(1033, 136)
@@ -666,7 +691,7 @@ Partial Class E_frmOrdenCompra
         '
         Me.GroupBox7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox7.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox7.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox7.Controls.Add(Me.Label9)
         Me.GroupBox7.Controls.Add(Me.txtCodProveedor)
         Me.GroupBox7.Controls.Add(Me.btnProveedor)
@@ -746,7 +771,7 @@ Partial Class E_frmOrdenCompra
         '
         Me.GroupBox8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox8.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox8.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox8.Controls.Add(Me.txtEstadoOC)
         Me.GroupBox8.Controls.Add(Me.txtLugarEntrega)
         Me.GroupBox8.Controls.Add(Me.txtConsignado)
@@ -771,6 +796,22 @@ Partial Class E_frmOrdenCompra
         Me.GroupBox8.Size = New System.Drawing.Size(1037, 94)
         Me.GroupBox8.TabIndex = 75
         Me.GroupBox8.TabStop = False
+        '
+        'txtEstadoOC
+        '
+        Me.txtEstadoOC.Location = New System.Drawing.Point(824, 13)
+        Me.txtEstadoOC.Name = "txtEstadoOC"
+        Me.txtEstadoOC.Size = New System.Drawing.Size(201, 20)
+        Me.txtEstadoOC.TabIndex = 78
+        '
+        'txtLugarEntrega
+        '
+        Me.txtLugarEntrega.FormattingEnabled = True
+        Me.txtLugarEntrega.Items.AddRange(New Object() {"Tepeyac", "Ruben Dario", "City Mall"})
+        Me.txtLugarEntrega.Location = New System.Drawing.Point(824, 67)
+        Me.txtLugarEntrega.Name = "txtLugarEntrega"
+        Me.txtLugarEntrega.Size = New System.Drawing.Size(208, 21)
+        Me.txtLugarEntrega.TabIndex = 77
         '
         'txtConsignado
         '
@@ -937,7 +978,7 @@ Partial Class E_frmOrdenCompra
         '
         Me.GroupBox9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox9.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox9.BackColor = System.Drawing.Color.LightSkyBlue
         Me.GroupBox9.Controls.Add(Me.Button10)
         Me.GroupBox9.Controls.Add(Me.Label38)
         Me.GroupBox9.Controls.Add(Me.Label6)
@@ -1043,7 +1084,7 @@ Partial Class E_frmOrdenCompra
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.DataGridView3)
         Me.GroupBox1.Controls.Add(Me.Label33)
         Me.GroupBox1.Controls.Add(Me.DataGridView2)
@@ -1051,17 +1092,43 @@ Partial Class E_frmOrdenCompra
         Me.GroupBox1.Controls.Add(Me.Panel3)
         Me.GroupBox1.Location = New System.Drawing.Point(3, 6)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1037, 479)
+        Me.GroupBox1.Size = New System.Drawing.Size(1037, 523)
         Me.GroupBox1.TabIndex = 72
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscador"
+        '
+        'DataGridView3
+        '
+        Me.DataGridView3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView3.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.DataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView3.GridColor = System.Drawing.SystemColors.Control
+        Me.DataGridView3.Location = New System.Drawing.Point(8, 279)
+        Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.RowHeadersWidth = 51
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        Me.DataGridView3.RowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.DataGridView3.Size = New System.Drawing.Size(1021, 156)
+        Me.DataGridView3.TabIndex = 84
+        Me.DataGridView3.Visible = False
         '
         'Label33
         '
         Me.Label33.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(433, 458)
+        Me.Label33.Location = New System.Drawing.Point(433, 503)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(148, 13)
         Me.Label33.TabIndex = 82
@@ -1074,22 +1141,22 @@ Partial Class E_frmOrdenCompra
         Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.Control
         Me.DataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSkyBlue
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.GridColor = System.Drawing.SystemColors.Control
         Me.DataGridView2.Location = New System.Drawing.Point(6, 63)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.RowHeadersWidth = 51
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle7
-        Me.DataGridView2.Size = New System.Drawing.Size(1021, 392)
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
+        Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle8
+        Me.DataGridView2.Size = New System.Drawing.Size(1021, 437)
         Me.DataGridView2.TabIndex = 64
         '
         'Label15
@@ -1167,11 +1234,11 @@ Partial Class E_frmOrdenCompra
         '
         Me.GroupBox5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox5.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox5.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox5.Controls.Add(Me.DataGridView5)
         Me.GroupBox5.Location = New System.Drawing.Point(3, 282)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(1043, 340)
+        Me.GroupBox5.Size = New System.Drawing.Size(1043, 374)
         Me.GroupBox5.TabIndex = 73
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Detalle orden de compra"
@@ -1186,14 +1253,14 @@ Partial Class E_frmOrdenCompra
         Me.DataGridView5.Location = New System.Drawing.Point(6, 19)
         Me.DataGridView5.Name = "DataGridView5"
         Me.DataGridView5.RowHeadersWidth = 51
-        Me.DataGridView5.Size = New System.Drawing.Size(1031, 315)
+        Me.DataGridView5.Size = New System.Drawing.Size(1031, 349)
         Me.DataGridView5.TabIndex = 0
         '
         'GroupBox4
         '
         Me.GroupBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox4.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox4.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox4.Controls.Add(Me.Label31)
         Me.GroupBox4.Controls.Add(Me.TextBox2)
         Me.GroupBox4.Controls.Add(Me.Label34)
@@ -1257,16 +1324,6 @@ Partial Class E_frmOrdenCompra
         Me.Panel2.Size = New System.Drawing.Size(1040, 34)
         Me.Panel2.TabIndex = 78
         '
-        'Button6
-        '
-        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button6.Location = New System.Drawing.Point(691, 7)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(75, 23)
-        Me.Button6.TabIndex = 77
-        Me.Button6.Text = "Imprimir"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
         'Label27
         '
         Me.Label27.AutoSize = True
@@ -1320,48 +1377,6 @@ Partial Class E_frmOrdenCompra
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'DataGridView3
-        '
-        Me.DataGridView3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView3.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.DataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.GridColor = System.Drawing.SystemColors.Control
-        Me.DataGridView3.Location = New System.Drawing.Point(8, 279)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.RowHeadersWidth = 51
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        Me.DataGridView3.RowsDefaultCellStyle = DataGridViewCellStyle5
-        Me.DataGridView3.Size = New System.Drawing.Size(1021, 156)
-        Me.DataGridView3.TabIndex = 84
-        Me.DataGridView3.Visible = False
-        '
-        'txtLugarEntrega
-        '
-        Me.txtLugarEntrega.FormattingEnabled = True
-        Me.txtLugarEntrega.Items.AddRange(New Object() {"Tepeyac", "Ruben Dario", "City Mall"})
-        Me.txtLugarEntrega.Location = New System.Drawing.Point(824, 67)
-        Me.txtLugarEntrega.Name = "txtLugarEntrega"
-        Me.txtLugarEntrega.Size = New System.Drawing.Size(208, 21)
-        Me.txtLugarEntrega.TabIndex = 77
-        '
-        'txtEstadoOC
-        '
-        Me.txtEstadoOC.Location = New System.Drawing.Point(824, 13)
-        Me.txtEstadoOC.Name = "txtEstadoOC"
-        Me.txtEstadoOC.Size = New System.Drawing.Size(201, 20)
-        Me.txtEstadoOC.TabIndex = 78
-        '
         'E_frmOrdenCompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1397,6 +1412,7 @@ Partial Class E_frmOrdenCompra
         Me.GroupBox9.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
@@ -1409,7 +1425,6 @@ Partial Class E_frmOrdenCompra
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

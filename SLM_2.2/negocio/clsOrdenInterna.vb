@@ -212,7 +212,7 @@ Public Class clsOrdenInterna
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select *  from OrdenInterna where fecha between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "' and id_usuario='" + user + "'", cn)
+        Using da As New SqlDataAdapter("select o.id_oi,o.fecha,o.fecha_entrega,u.usuario, o.estado  from OrdenInterna o, Usuario u where u.cod_usuario =o.id_usuario and o.fecha between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "' and o.id_usuario='" + user + "'", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

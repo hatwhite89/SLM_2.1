@@ -32,36 +32,47 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'autorizar orden de compra
-        Dim clsOC As New ClsOrdenDeCompra
-        With clsOC
-            .IdOrdenCompra = txtCodOC.Text
-            .Obser_autorizacion1 = RichTextBox1.Text
-            .UsuarioAutorizo = nombre_usurio
+        Try
+            Dim clsOC As New ClsOrdenDeCompra
+            With clsOC
+                .IdOrdenCompra = txtCodOC.Text
+                .Obser_autorizacion1 = RichTextBox1.Text
+                .UsuarioAutorizo = nombre_usurio
 
-        End With
+            End With
 
-        If clsOC.AutorizarOC() = "1" Then
-            MsgBox("Usted ha autorizado la orden de compra No " + txtCodOC.Text)
-            CargarDGOC()
-            DataGridView5.Columns.Clear()
-        End If
+            If clsOC.AutorizarOC() = "1" Then
+                MsgBox("Usted ha autorizado la orden de compra No " + txtCodOC.Text)
+                CargarDGOC()
+                DataGridView5.Columns.Clear()
+            End If
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         'rechazar orden de compra
-        Dim clsOC As New ClsOrdenDeCompra
-        With clsOC
-            .IdOrdenCompra = txtCodOC.Text
-            .Obser_autorizacion1 = RichTextBox1.Text
-            .UsuarioAutorizo = nombre_usurio
+        Try
 
-        End With
 
-        If clsOC.REchazarOC() = "1" Then
-            MsgBox("Usted ha rechazado la orden de compra No " + txtCodOC.Text)
-            CargarDGOC()
-            DataGridView5.Columns.Clear()
-        End If
+            Dim clsOC As New ClsOrdenDeCompra
+            With clsOC
+                .IdOrdenCompra = txtCodOC.Text
+                .Obser_autorizacion1 = RichTextBox1.Text
+                .UsuarioAutorizo = nombre_usurio
+
+            End With
+
+            If clsOC.REchazarOC() = "1" Then
+                MsgBox("Usted ha rechazado la orden de compra No " + txtCodOC.Text)
+                CargarDGOC()
+                DataGridView5.Columns.Clear()
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub CargarDetalleOC(ByVal cod As String)
@@ -111,7 +122,7 @@
 
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs)
         CargarOCAutorizadasPorUser()
     End Sub
 
@@ -151,36 +162,48 @@
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         'anular orden de compra
-        Dim clsOC As New ClsOrdenDeCompra
-        With clsOC
-            .IdOrdenCompra = txtCodOC.Text
-            .Obser_autorizacion1 = RichTextBox1.Text
-            .UsuarioAutorizo = nombre_usurio
+        Try
 
-        End With
 
-        If clsOC.AnularOC() = "1" Then
-            MsgBox("Usted ha anulado la orden de compra No " + txtCodOC.Text)
-            CargarDGOC()
-            DataGridView5.Columns.Clear()
-        End If
+            Dim clsOC As New ClsOrdenDeCompra
+            With clsOC
+                .IdOrdenCompra = txtCodOC.Text
+                .Obser_autorizacion1 = RichTextBox1.Text
+                .UsuarioAutorizo = nombre_usurio
+
+            End With
+
+            If clsOC.AnularOC() = "1" Then
+                MsgBox("Usted ha anulado la orden de compra No " + txtCodOC.Text)
+                CargarDGOC()
+                DataGridView5.Columns.Clear()
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         'cerrar orden de compra
-        Dim clsOC As New ClsOrdenDeCompra
-        With clsOC
-            .IdOrdenCompra = txtCodOC.Text
-            .Obser_autorizacion1 = RichTextBox1.Text
-            .UsuarioAutorizo = nombre_usurio
+        Try
 
-        End With
 
-        If clsOC.CerrarOC() = "1" Then
-            MsgBox("Usted ha cerrado la orden de compra No " + txtCodOC.Text)
-            CargarDGOC()
-            DataGridView5.Columns.Clear()
-        End If
+            Dim clsOC As New ClsOrdenDeCompra
+            With clsOC
+                .IdOrdenCompra = txtCodOC.Text
+                .Obser_autorizacion1 = RichTextBox1.Text
+                .UsuarioAutorizo = nombre_usurio
+
+            End With
+
+            If clsOC.CerrarOC() = "1" Then
+                MsgBox("Usted ha cerrado la orden de compra No " + txtCodOC.Text)
+                CargarDGOC()
+                DataGridView5.Columns.Clear()
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
@@ -193,7 +216,7 @@
         For Each row As DataGridViewRow In Me.DataGridView5.Rows
             Total += Val(row.Cells(4).Value)
         Next
-        Label44.Text = Total.ToString
+        Label46.Text = Total.ToString
     End Sub
     Public Sub sumarData2()
         Dim Total As Single
@@ -201,7 +224,7 @@
         For Each row As DataGridViewRow In Me.DataGridView5.Rows
             Total += Val(row.Cells(5).Value)
         Next
-        Label46.Text = Total.ToString
+        Label44.Text = Total.ToString
     End Sub
 
     Private Sub DataGridView5_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView5.CellClick

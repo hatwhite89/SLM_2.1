@@ -27,6 +27,13 @@ Partial Class E_frmEntrada
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.lote = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_unitario1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_vencimiento2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_entrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -50,23 +57,23 @@ Partial Class E_frmEntrada
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
-        Me.txtLote = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.cmbEntrada = New System.Windows.Forms.ComboBox()
+        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.txtCodProc = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtLote = New System.Windows.Forms.TextBox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.txtPrecioUnitario = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtCantidad = New System.Windows.Forms.TextBox()
+        Me.txtPrecioUnitario = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.txtProducto = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtCantidad = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.cmbEntrada = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -83,13 +90,7 @@ Partial Class E_frmEntrada
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.lote = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre_producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio_unitario1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fecha_vencimiento2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_entrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.TabPage3.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -147,11 +148,54 @@ Partial Class E_frmEntrada
         Me.DataGridView3.Size = New System.Drawing.Size(994, 273)
         Me.DataGridView3.TabIndex = 0
         '
+        'lote
+        '
+        Me.lote.DataPropertyName = "lote"
+        Me.lote.HeaderText = "LOTE"
+        Me.lote.Name = "lote"
+        '
+        'id_producto
+        '
+        Me.id_producto.DataPropertyName = "id_producto"
+        Me.id_producto.HeaderText = "IDPRODUCTO"
+        Me.id_producto.Name = "id_producto"
+        '
+        'nombre_producto1
+        '
+        Me.nombre_producto1.DataPropertyName = "nombre_producto"
+        Me.nombre_producto1.HeaderText = "PRODUCTO"
+        Me.nombre_producto1.Name = "nombre_producto1"
+        '
+        'cantidad1
+        '
+        Me.cantidad1.DataPropertyName = "cantidad"
+        Me.cantidad1.HeaderText = "CANTIDAD"
+        Me.cantidad1.Name = "cantidad1"
+        '
+        'precio_unitario1
+        '
+        Me.precio_unitario1.DataPropertyName = "precio_unitario"
+        Me.precio_unitario1.HeaderText = "PRECIO/U"
+        Me.precio_unitario1.Name = "precio_unitario1"
+        '
+        'fecha_vencimiento2
+        '
+        Me.fecha_vencimiento2.DataPropertyName = "fecha_vencimiento"
+        Me.fecha_vencimiento2.HeaderText = "VENCIMIENTO"
+        Me.fecha_vencimiento2.Name = "fecha_vencimiento2"
+        '
+        'id_entrada
+        '
+        Me.id_entrada.DataPropertyName = "id_entrada"
+        Me.id_entrada.HeaderText = "NUMENTRADA"
+        Me.id_entrada.Name = "id_entrada"
+        '
         'Panel1
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Controls.Add(Me.DateTimePicker2)
@@ -166,6 +210,7 @@ Partial Class E_frmEntrada
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.BackColor = System.Drawing.Color.White
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Location = New System.Drawing.Point(581, 9)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
@@ -211,6 +256,7 @@ Partial Class E_frmEntrada
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.BackColor = System.Drawing.Color.LightSkyBlue
         Me.GroupBox2.Controls.Add(Me.TextBox5)
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.Button4)
@@ -248,12 +294,14 @@ Partial Class E_frmEntrada
         '
         'Button4
         '
+        Me.Button4.BackColor = System.Drawing.Color.White
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Location = New System.Drawing.Point(853, 74)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(148, 23)
         Me.Button4.TabIndex = 19
         Me.Button4.Text = "Modificar Entrada"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'TextBox4
         '
@@ -326,6 +374,7 @@ Partial Class E_frmEntrada
         Me.GroupBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox3.Controls.Add(Me.TextBox2)
         Me.GroupBox3.Location = New System.Drawing.Point(6, 51)
         Me.GroupBox3.Name = "GroupBox3"
@@ -357,6 +406,7 @@ Partial Class E_frmEntrada
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.Button1)
@@ -392,26 +442,25 @@ Partial Class E_frmEntrada
         Me.Label11.TabIndex = 19
         Me.Label11.Text = "Vecha de vencimiento"
         '
-        'DateTimePicker3
-        '
-        Me.DateTimePicker3.Location = New System.Drawing.Point(385, 100)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker3.TabIndex = 18
-        '
-        'txtLote
-        '
-        Me.txtLote.Location = New System.Drawing.Point(193, 99)
-        Me.txtLote.Name = "txtLote"
-        Me.txtLote.Size = New System.Drawing.Size(167, 20)
-        Me.txtLote.TabIndex = 6
-        '
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(193, 19)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(145, 20)
         Me.TextBox1.TabIndex = 1
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button1.Location = New System.Drawing.Point(838, 99)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(128, 23)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Ingresar al almacen"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -422,6 +471,32 @@ Partial Class E_frmEntrada
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Ingrese numero de Orden de compra"
         '
+        'cmbEntrada
+        '
+        Me.cmbEntrada.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmbEntrada.FormattingEnabled = True
+        Me.cmbEntrada.Location = New System.Drawing.Point(606, 100)
+        Me.cmbEntrada.Name = "cmbEntrada"
+        Me.cmbEntrada.Size = New System.Drawing.Size(215, 21)
+        Me.cmbEntrada.TabIndex = 3
+        '
+        'DateTimePicker3
+        '
+        Me.DateTimePicker3.Location = New System.Drawing.Point(385, 100)
+        Me.DateTimePicker3.Name = "DateTimePicker3"
+        Me.DateTimePicker3.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker3.TabIndex = 18
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(603, 84)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(85, 13)
+        Me.Label7.TabIndex = 15
+        Me.Label7.Text = "Almacén destino"
+        '
         'txtCodProc
         '
         Me.txtCodProc.Location = New System.Drawing.Point(10, 58)
@@ -429,15 +504,6 @@ Partial Class E_frmEntrada
         Me.txtCodProc.ReadOnly = True
         Me.txtCodProc.Size = New System.Drawing.Size(151, 20)
         Me.txtCodProc.TabIndex = 9
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(190, 83)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(28, 13)
-        Me.Label5.TabIndex = 13
-        Me.Label5.Text = "Lote"
         '
         'Label6
         '
@@ -448,6 +514,13 @@ Partial Class E_frmEntrada
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Precio Unitario"
         '
+        'txtLote
+        '
+        Me.txtLote.Location = New System.Drawing.Point(193, 99)
+        Me.txtLote.Name = "txtLote"
+        Me.txtLote.Size = New System.Drawing.Size(167, 20)
+        Me.txtLote.TabIndex = 6
+        '
         'RichTextBox1
         '
         Me.RichTextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -457,14 +530,6 @@ Partial Class E_frmEntrada
         Me.RichTextBox1.TabIndex = 16
         Me.RichTextBox1.Text = ""
         '
-        'txtPrecioUnitario
-        '
-        Me.txtPrecioUnitario.Location = New System.Drawing.Point(520, 58)
-        Me.txtPrecioUnitario.Name = "txtPrecioUnitario"
-        Me.txtPrecioUnitario.ReadOnly = True
-        Me.txtPrecioUnitario.Size = New System.Drawing.Size(151, 20)
-        Me.txtPrecioUnitario.TabIndex = 8
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -473,6 +538,30 @@ Partial Class E_frmEntrada
         Me.Label3.Size = New System.Drawing.Size(49, 13)
         Me.Label3.TabIndex = 11
         Me.Label3.Text = "Cantidad"
+        '
+        'txtCantidad
+        '
+        Me.txtCantidad.Location = New System.Drawing.Point(10, 99)
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.Size = New System.Drawing.Size(151, 20)
+        Me.txtCantidad.TabIndex = 5
+        '
+        'txtPrecioUnitario
+        '
+        Me.txtPrecioUnitario.Location = New System.Drawing.Point(520, 58)
+        Me.txtPrecioUnitario.Name = "txtPrecioUnitario"
+        Me.txtPrecioUnitario.ReadOnly = True
+        Me.txtPrecioUnitario.Size = New System.Drawing.Size(151, 20)
+        Me.txtPrecioUnitario.TabIndex = 8
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(190, 83)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(28, 13)
+        Me.Label5.TabIndex = 13
+        Me.Label5.Text = "Lote"
         '
         'txtProducto
         '
@@ -491,23 +580,6 @@ Partial Class E_frmEntrada
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Producto"
         '
-        'txtCantidad
-        '
-        Me.txtCantidad.Location = New System.Drawing.Point(10, 99)
-        Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(151, 20)
-        Me.txtCantidad.TabIndex = 5
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(838, 99)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(128, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Ingresar al almacen"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'Label8
         '
         Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -517,25 +589,6 @@ Partial Class E_frmEntrada
         Me.Label8.Size = New System.Drawing.Size(67, 13)
         Me.Label8.TabIndex = 17
         Me.Label8.Text = "Observación"
-        '
-        'Label7
-        '
-        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(603, 84)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(85, 13)
-        Me.Label7.TabIndex = 15
-        Me.Label7.Text = "Almacén destino"
-        '
-        'cmbEntrada
-        '
-        Me.cmbEntrada.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmbEntrada.FormattingEnabled = True
-        Me.cmbEntrada.Location = New System.Drawing.Point(606, 100)
-        Me.cmbEntrada.Name = "cmbEntrada"
-        Me.cmbEntrada.Size = New System.Drawing.Size(215, 21)
-        Me.cmbEntrada.TabIndex = 3
         '
         'Label4
         '
@@ -551,6 +604,7 @@ Partial Class E_frmEntrada
         Me.GroupBox4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox4.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox4.Controls.Add(Me.Label17)
         Me.GroupBox4.Controls.Add(Me.DataGridView1)
         Me.GroupBox4.Location = New System.Drawing.Point(6, 159)
@@ -690,47 +744,18 @@ Partial Class E_frmEntrada
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'lote
+        'Button3
         '
-        Me.lote.DataPropertyName = "lote"
-        Me.lote.HeaderText = "LOTE"
-        Me.lote.Name = "lote"
-        '
-        'id_producto
-        '
-        Me.id_producto.DataPropertyName = "id_producto"
-        Me.id_producto.HeaderText = "IDPRODUCTO"
-        Me.id_producto.Name = "id_producto"
-        '
-        'nombre_producto1
-        '
-        Me.nombre_producto1.DataPropertyName = "nombre_producto"
-        Me.nombre_producto1.HeaderText = "PRODUCTO"
-        Me.nombre_producto1.Name = "nombre_producto1"
-        '
-        'cantidad1
-        '
-        Me.cantidad1.DataPropertyName = "cantidad"
-        Me.cantidad1.HeaderText = "CANTIDAD"
-        Me.cantidad1.Name = "cantidad1"
-        '
-        'precio_unitario1
-        '
-        Me.precio_unitario1.DataPropertyName = "precio_unitario"
-        Me.precio_unitario1.HeaderText = "PRECIO/U"
-        Me.precio_unitario1.Name = "precio_unitario1"
-        '
-        'fecha_vencimiento2
-        '
-        Me.fecha_vencimiento2.DataPropertyName = "fecha_vencimiento"
-        Me.fecha_vencimiento2.HeaderText = "VENCIMIENTO"
-        Me.fecha_vencimiento2.Name = "fecha_vencimiento2"
-        '
-        'id_entrada
-        '
-        Me.id_entrada.DataPropertyName = "id_entrada"
-        Me.id_entrada.HeaderText = "NUMENTRADA"
-        Me.id_entrada.Name = "id_entrada"
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button3.BackColor = System.Drawing.Color.Green
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.ForeColor = System.Drawing.SystemColors.Control
+        Me.Button3.Location = New System.Drawing.Point(925, 9)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 10
+        Me.Button3.Text = "Excel"
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'E_frmEntrada
         '
@@ -834,4 +859,5 @@ Partial Class E_frmEntrada
     Friend WithEvents precio_unitario1 As DataGridViewTextBoxColumn
     Friend WithEvents fecha_vencimiento2 As DataGridViewTextBoxColumn
     Friend WithEvents id_entrada As DataGridViewTextBoxColumn
+    Friend WithEvents Button3 As Button
 End Class

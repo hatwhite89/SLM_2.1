@@ -748,7 +748,8 @@ Module ModulosVarios
         With dgv
             .RowsDefaultCellStyle.BackColor = Color.WhiteSmoke
             .AlternatingRowsDefaultCellStyle.BackColor = Color.White
-            .ColumnHeadersDefaultCellStyle.BackColor = Color.Gainsboro
+            .ColumnHeadersDefaultCellStyle.BackColor = Color.PeachPuff
+            .EnableHeadersVisualStyles = False
         End With
     End Sub
 

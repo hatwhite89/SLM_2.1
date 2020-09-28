@@ -28,13 +28,18 @@ Partial Class E_frmAutorizarOC
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_frmAutorizarOC))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label43 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -47,6 +52,7 @@ Partial Class E_frmAutorizarOC
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.DataGridView5 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label33 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
@@ -70,23 +76,13 @@ Partial Class E_frmAutorizarOC
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtBuscar3 = New System.Windows.Forms.TextBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.DataGridView9 = New System.Windows.Forms.DataGridView()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -100,6 +96,9 @@ Partial Class E_frmAutorizarOC
         Me.DataGridView7 = New System.Windows.Forms.DataGridView()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.DataGridView10 = New System.Windows.Forms.DataGridView()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -113,18 +112,33 @@ Partial Class E_frmAutorizarOC
         Me.DataGridView8 = New System.Windows.Forms.DataGridView()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView9 = New System.Windows.Forms.DataGridView()
-        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView10 = New System.Windows.Forms.DataGridView()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.Label46 = New System.Windows.Forms.Label()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.id_oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.usuario_consignado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.usuario_autorizo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.autorizacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_autorizacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.observaciones = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_detalle_oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cod_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_unitario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.costo_total = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.Panel6.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -140,22 +154,21 @@ Partial Class E_frmAutorizarOC
         Me.GroupBox4.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
-        Me.TabPage5.SuspendLayout()
-        Me.Panel3.SuspendLayout()
+        Me.GroupBox10.SuspendLayout()
+        CType(Me.DataGridView9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox8.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage5.SuspendLayout()
+        Me.GroupBox11.SuspendLayout()
+        CType(Me.DataGridView10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox9.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.DataGridView8, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox10.SuspendLayout()
-        CType(Me.DataGridView9, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox11.SuspendLayout()
-        CType(Me.DataGridView10, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel6.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -188,10 +201,69 @@ Partial Class E_frmAutorizarOC
         Me.TabPage1.Text = "Orden de compra"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'Panel6
+        '
+        Me.Panel6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel6.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel6.Controls.Add(Me.Label44)
+        Me.Panel6.Controls.Add(Me.Label46)
+        Me.Panel6.Controls.Add(Me.Label25)
+        Me.Panel6.Controls.Add(Me.Label43)
+        Me.Panel6.Location = New System.Drawing.Point(3, 517)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(974, 43)
+        Me.Panel6.TabIndex = 79
+        '
+        'Label44
+        '
+        Me.Label44.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label44.AutoSize = True
+        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.Location = New System.Drawing.Point(871, 27)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(25, 13)
+        Me.Label44.TabIndex = 84
+        Me.Label44.Text = "0.0"
+        '
+        'Label46
+        '
+        Me.Label46.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label46.AutoSize = True
+        Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label46.Location = New System.Drawing.Point(871, 9)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(14, 13)
+        Me.Label46.TabIndex = 85
+        Me.Label46.Text = "0"
+        '
+        'Label25
+        '
+        Me.Label25.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.Location = New System.Drawing.Point(816, 27)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(47, 13)
+        Me.Label25.TabIndex = 83
+        Me.Label25.Text = "TOTAL"
+        '
+        'Label43
+        '
+        Me.Label43.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label43.AutoSize = True
+        Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label43.Location = New System.Drawing.Point(691, 9)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(172, 13)
+        Me.Label43.TabIndex = 82
+        Me.Label43.Text = "CANTIDAD DE PRODUCTOS"
+        '
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.BackColor = System.Drawing.Color.LightSkyBlue
         Me.GroupBox2.Controls.Add(Me.Button7)
         Me.GroupBox2.Controls.Add(Me.Button6)
         Me.GroupBox2.Controls.Add(Me.Label6)
@@ -209,21 +281,25 @@ Partial Class E_frmAutorizarOC
         '
         'Button7
         '
+        Me.Button7.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button7.Location = New System.Drawing.Point(294, 46)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(75, 23)
         Me.Button7.TabIndex = 87
         Me.Button7.Text = "Cerrar"
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.Button7.UseVisualStyleBackColor = False
         '
         'Button6
         '
+        Me.Button6.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button6.Location = New System.Drawing.Point(197, 46)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(75, 23)
         Me.Button6.TabIndex = 86
         Me.Button6.Text = "Anular"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.Button6.UseVisualStyleBackColor = False
         '
         'Label6
         '
@@ -253,21 +329,25 @@ Partial Class E_frmAutorizarOC
         '
         'Button2
         '
+        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Location = New System.Drawing.Point(105, 46)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "Rechazar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Location = New System.Drawing.Point(9, 46)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Autorizar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'RichTextBox1
         '
@@ -284,6 +364,7 @@ Partial Class E_frmAutorizarOC
         Me.GroupBox5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox5.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox5.Controls.Add(Me.DataGridView5)
         Me.GroupBox5.Location = New System.Drawing.Point(3, 302)
         Me.GroupBox5.Name = "GroupBox5"
@@ -300,6 +381,7 @@ Partial Class E_frmAutorizarOC
         Me.DataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView5.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView5.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_detalle_oc, Me.cod_producto, Me.nombre_producto, Me.precio_unitario, Me.cantidad, Me.costo_total})
         Me.DataGridView5.Location = New System.Drawing.Point(6, 19)
         Me.DataGridView5.Name = "DataGridView5"
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
@@ -311,6 +393,7 @@ Partial Class E_frmAutorizarOC
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.Label33)
         Me.GroupBox1.Controls.Add(Me.DataGridView2)
         Me.GroupBox1.Controls.Add(Me.Label15)
@@ -322,6 +405,15 @@ Partial Class E_frmAutorizarOC
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscador"
         '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(532, 16)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(148, 13)
+        Me.Label33.TabIndex = 82
+        Me.Label33.Text = "Seleccionar Orden de compra"
+        '
         'DataGridView2
         '
         Me.DataGridView2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -329,6 +421,7 @@ Partial Class E_frmAutorizarOC
         Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_oc, Me.nombreProveedor, Me.usuario_consignado, Me.usuario_autorizo, Me.autorizacion, Me.fecha_autorizacion, Me.observaciones})
         Me.DataGridView2.Location = New System.Drawing.Point(7, 32)
         Me.DataGridView2.Name = "DataGridView2"
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue
@@ -369,6 +462,7 @@ Partial Class E_frmAutorizarOC
         Me.GroupBox6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox6.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox6.Controls.Add(Me.DataGridView4)
         Me.GroupBox6.Location = New System.Drawing.Point(3, 302)
         Me.GroupBox6.Name = "GroupBox6"
@@ -396,6 +490,7 @@ Partial Class E_frmAutorizarOC
         '
         Me.GroupBox7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox7.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox7.Controls.Add(Me.Panel1)
         Me.GroupBox7.Controls.Add(Me.Label4)
         Me.GroupBox7.Controls.Add(Me.DataGridView6)
@@ -412,7 +507,7 @@ Partial Class E_frmAutorizarOC
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel1.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.txtCodOCRechazada)
         Me.Panel1.Controls.Add(Me.Button4)
@@ -420,7 +515,7 @@ Partial Class E_frmAutorizarOC
         Me.Panel1.Controls.Add(Me.DateTimePicker1)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Location = New System.Drawing.Point(4, 19)
+        Me.Panel1.Location = New System.Drawing.Point(7, 19)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(968, 32)
         Me.Panel1.TabIndex = 83
@@ -485,8 +580,9 @@ Partial Class E_frmAutorizarOC
         '
         'Label4
         '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(531, 64)
+        Me.Label4.Location = New System.Drawing.Point(824, 64)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(148, 13)
         Me.Label4.TabIndex = 82
@@ -539,6 +635,7 @@ Partial Class E_frmAutorizarOC
         Me.GroupBox4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox4.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox4.Controls.Add(Me.DataGridView3)
         Me.GroupBox4.Location = New System.Drawing.Point(3, 277)
         Me.GroupBox4.Name = "GroupBox4"
@@ -567,6 +664,7 @@ Partial Class E_frmAutorizarOC
         '
         Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox3.Controls.Add(Me.Panel2)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.DataGridView1)
@@ -578,81 +676,6 @@ Partial Class E_frmAutorizarOC
         Me.GroupBox3.TabIndex = 77
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Buscador"
-        '
-        'Panel2
-        '
-        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.AliceBlue
-        Me.Panel2.Controls.Add(Me.Label12)
-        Me.Panel2.Controls.Add(Me.TextBox3)
-        Me.Panel2.Controls.Add(Me.Button5)
-        Me.Panel2.Controls.Add(Me.DateTimePicker3)
-        Me.Panel2.Controls.Add(Me.DateTimePicker4)
-        Me.Panel2.Controls.Add(Me.Label9)
-        Me.Panel2.Controls.Add(Me.Label10)
-        Me.Panel2.Location = New System.Drawing.Point(6, 19)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(968, 32)
-        Me.Panel2.TabIndex = 84
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(0, 12)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(39, 13)
-        Me.Label12.TabIndex = 7
-        Me.Label12.Text = "No OC"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(45, 7)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox3.TabIndex = 5
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(768, 5)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 23)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "Buscar"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'DateTimePicker3
-        '
-        Me.DateTimePicker3.Location = New System.Drawing.Point(547, 8)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker3.TabIndex = 3
-        '
-        'DateTimePicker4
-        '
-        Me.DateTimePicker4.Location = New System.Drawing.Point(254, 8)
-        Me.DateTimePicker4.Name = "DateTimePicker4"
-        Me.DateTimePicker4.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker4.TabIndex = 2
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(497, 12)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(35, 13)
-        Me.Label9.TabIndex = 1
-        Me.Label9.Text = "Hasta"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(210, 12)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(38, 13)
-        Me.Label10.TabIndex = 0
-        Me.Label10.Text = "Desde"
         '
         'Label2
         '
@@ -702,51 +725,37 @@ Partial Class E_frmAutorizarOC
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage4.Size = New System.Drawing.Size(984, 567)
         Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "TabPage4"
+        Me.TabPage4.Text = "Ordenes Anuladas"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
-        'TabPage5
+        'GroupBox10
         '
-        Me.TabPage5.Controls.Add(Me.GroupBox11)
-        Me.TabPage5.Controls.Add(Me.GroupBox9)
-        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(984, 502)
-        Me.TabPage5.TabIndex = 4
-        Me.TabPage5.Text = "TabPage5"
-        Me.TabPage5.UseVisualStyleBackColor = True
-        '
-        'Panel3
-        '
-        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.GroupBox10.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Panel3.Controls.Add(Me.Label14)
-        Me.Panel3.Location = New System.Drawing.Point(1, 1)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1008, 42)
-        Me.Panel3.TabIndex = 1
+        Me.GroupBox10.Controls.Add(Me.DataGridView9)
+        Me.GroupBox10.Location = New System.Drawing.Point(1, 277)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Size = New System.Drawing.Size(976, 284)
+        Me.GroupBox10.TabIndex = 79
+        Me.GroupBox10.TabStop = False
+        Me.GroupBox10.Text = "Detalle orden de compra"
         '
-        'Label14
+        'DataGridView9
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label14.Location = New System.Drawing.Point(1, 20)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(277, 20)
-        Me.Label14.TabIndex = 11
-        Me.Label14.Text = "Autorización de Orden de compra"
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 641)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1003, 22)
-        Me.StatusStrip1.TabIndex = 2
-        Me.StatusStrip1.Text = "StatusStrip1"
+        Me.DataGridView9.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView9.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView9.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.DataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView9.GridColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.DataGridView9.Location = New System.Drawing.Point(6, 19)
+        Me.DataGridView9.Name = "DataGridView9"
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue
+        Me.DataGridView9.RowsDefaultCellStyle = DataGridViewCellStyle7
+        Me.DataGridView9.Size = New System.Drawing.Size(964, 259)
+        Me.DataGridView9.TabIndex = 0
         '
         'GroupBox8
         '
@@ -878,6 +887,47 @@ Partial Class E_frmAutorizarOC
         Me.TextBox2.Size = New System.Drawing.Size(167, 20)
         Me.TextBox2.TabIndex = 11
         '
+        'TabPage5
+        '
+        Me.TabPage5.Controls.Add(Me.GroupBox11)
+        Me.TabPage5.Controls.Add(Me.GroupBox9)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage5.Size = New System.Drawing.Size(984, 567)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "Ordenes Cerradas"
+        Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'GroupBox11
+        '
+        Me.GroupBox11.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox11.Controls.Add(Me.DataGridView10)
+        Me.GroupBox11.Location = New System.Drawing.Point(1, 277)
+        Me.GroupBox11.Name = "GroupBox11"
+        Me.GroupBox11.Size = New System.Drawing.Size(980, 219)
+        Me.GroupBox11.TabIndex = 80
+        Me.GroupBox11.TabStop = False
+        Me.GroupBox11.Text = "Detalle orden de compra"
+        '
+        'DataGridView10
+        '
+        Me.DataGridView10.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView10.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView10.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.DataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView10.GridColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.DataGridView10.Location = New System.Drawing.Point(2, 19)
+        Me.DataGridView10.Name = "DataGridView10"
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue
+        Me.DataGridView10.RowsDefaultCellStyle = DataGridViewCellStyle9
+        Me.DataGridView10.Size = New System.Drawing.Size(972, 194)
+        Me.DataGridView10.TabIndex = 0
+        '
         'GroupBox9
         '
         Me.GroupBox9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -1008,130 +1058,189 @@ Partial Class E_frmAutorizarOC
         Me.TextBox5.Size = New System.Drawing.Size(167, 20)
         Me.TextBox5.TabIndex = 11
         '
-        'GroupBox10
+        'Panel3
         '
-        Me.GroupBox10.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox10.Controls.Add(Me.DataGridView9)
-        Me.GroupBox10.Location = New System.Drawing.Point(1, 277)
-        Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Size = New System.Drawing.Size(976, 284)
-        Me.GroupBox10.TabIndex = 79
-        Me.GroupBox10.TabStop = False
-        Me.GroupBox10.Text = "Detalle orden de compra"
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Label14)
+        Me.Panel3.Location = New System.Drawing.Point(1, 1)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1008, 42)
+        Me.Panel3.TabIndex = 1
         '
-        'DataGridView9
+        'Label14
         '
-        Me.DataGridView9.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label14.Location = New System.Drawing.Point(1, 20)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(277, 20)
+        Me.Label14.TabIndex = 11
+        Me.Label14.Text = "Autorización de Orden de compra"
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 641)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(1003, 22)
+        Me.StatusStrip1.TabIndex = 2
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'id_oc
+        '
+        Me.id_oc.DataPropertyName = "id_oc"
+        Me.id_oc.HeaderText = "IDOC"
+        Me.id_oc.Name = "id_oc"
+        '
+        'nombreProveedor
+        '
+        Me.nombreProveedor.DataPropertyName = "nombreProveedor"
+        Me.nombreProveedor.HeaderText = "PROVEEDOR"
+        Me.nombreProveedor.Name = "nombreProveedor"
+        '
+        'usuario_consignado
+        '
+        Me.usuario_consignado.DataPropertyName = "usuario_consignado"
+        Me.usuario_consignado.HeaderText = "USUARIO CONSIGNADO"
+        Me.usuario_consignado.Name = "usuario_consignado"
+        '
+        'usuario_autorizo
+        '
+        Me.usuario_autorizo.DataPropertyName = "usuario_autorizo"
+        Me.usuario_autorizo.HeaderText = "USUARIO AUTORIZO"
+        Me.usuario_autorizo.Name = "usuario_autorizo"
+        '
+        'autorizacion
+        '
+        Me.autorizacion.DataPropertyName = "autorizacion"
+        Me.autorizacion.HeaderText = "ESTADO"
+        Me.autorizacion.Name = "autorizacion"
+        '
+        'fecha_autorizacion
+        '
+        Me.fecha_autorizacion.DataPropertyName = "fecha_autorizacion"
+        Me.fecha_autorizacion.HeaderText = "FECHA AUTORIZADO"
+        Me.fecha_autorizacion.Name = "fecha_autorizacion"
+        '
+        'observaciones
+        '
+        Me.observaciones.DataPropertyName = "observaciones"
+        Me.observaciones.HeaderText = "OBSERVACIONES"
+        Me.observaciones.Name = "observaciones"
+        '
+        'id_detalle_oc
+        '
+        Me.id_detalle_oc.DataPropertyName = "id_detalle_oc"
+        Me.id_detalle_oc.HeaderText = "ID"
+        Me.id_detalle_oc.Name = "id_detalle_oc"
+        '
+        'cod_producto
+        '
+        Me.cod_producto.DataPropertyName = "cod_producto"
+        Me.cod_producto.HeaderText = "IDPRODUCTO"
+        Me.cod_producto.Name = "cod_producto"
+        '
+        'nombre_producto
+        '
+        Me.nombre_producto.DataPropertyName = "nombre_producto"
+        Me.nombre_producto.HeaderText = "PRODUCTO"
+        Me.nombre_producto.Name = "nombre_producto"
+        '
+        'precio_unitario
+        '
+        Me.precio_unitario.DataPropertyName = "precio_unitario"
+        Me.precio_unitario.HeaderText = "PRECIO/U"
+        Me.precio_unitario.Name = "precio_unitario"
+        '
+        'cantidad
+        '
+        Me.cantidad.DataPropertyName = "cantidad"
+        Me.cantidad.HeaderText = "CANTIDAD"
+        Me.cantidad.Name = "cantidad"
+        '
+        'costo_total
+        '
+        Me.costo_total.DataPropertyName = "costo_total"
+        Me.costo_total.HeaderText = "TOTAL"
+        Me.costo_total.Name = "costo_total"
+        '
+        'Panel2
+        '
+        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView9.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView9.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView9.GridColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView9.Location = New System.Drawing.Point(6, 19)
-        Me.DataGridView9.Name = "DataGridView9"
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue
-        Me.DataGridView9.RowsDefaultCellStyle = DataGridViewCellStyle7
-        Me.DataGridView9.Size = New System.Drawing.Size(964, 259)
-        Me.DataGridView9.TabIndex = 0
+        Me.Panel2.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel2.Controls.Add(Me.Label9)
+        Me.Panel2.Controls.Add(Me.TextBox3)
+        Me.Panel2.Controls.Add(Me.Button3)
+        Me.Panel2.Controls.Add(Me.DateTimePicker3)
+        Me.Panel2.Controls.Add(Me.DateTimePicker4)
+        Me.Panel2.Controls.Add(Me.Label10)
+        Me.Panel2.Controls.Add(Me.Label12)
+        Me.Panel2.Location = New System.Drawing.Point(6, 19)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(968, 32)
+        Me.Panel2.TabIndex = 84
         '
-        'GroupBox11
+        'Label9
         '
-        Me.GroupBox11.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox11.Controls.Add(Me.DataGridView10)
-        Me.GroupBox11.Location = New System.Drawing.Point(1, 277)
-        Me.GroupBox11.Name = "GroupBox11"
-        Me.GroupBox11.Size = New System.Drawing.Size(980, 219)
-        Me.GroupBox11.TabIndex = 80
-        Me.GroupBox11.TabStop = False
-        Me.GroupBox11.Text = "Detalle orden de compra"
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(2, 11)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(39, 13)
+        Me.Label9.TabIndex = 6
+        Me.Label9.Text = "No OC"
         '
-        'DataGridView10
+        'TextBox3
         '
-        Me.DataGridView10.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView10.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView10.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView10.GridColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView10.Location = New System.Drawing.Point(2, 19)
-        Me.DataGridView10.Name = "DataGridView10"
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue
-        Me.DataGridView10.RowsDefaultCellStyle = DataGridViewCellStyle9
-        Me.DataGridView10.Size = New System.Drawing.Size(972, 194)
-        Me.DataGridView10.TabIndex = 0
+        Me.TextBox3.Location = New System.Drawing.Point(47, 7)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ReadOnly = True
+        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox3.TabIndex = 5
         '
-        'Label33
+        'Button3
         '
-        Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(532, 16)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(148, 13)
-        Me.Label33.TabIndex = 82
-        Me.Label33.Text = "Seleccionar Orden de compra"
+        Me.Button3.Location = New System.Drawing.Point(791, 5)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 4
+        Me.Button3.Text = "Buscar"
+        Me.Button3.UseVisualStyleBackColor = True
         '
-        'Panel6
+        'DateTimePicker3
         '
-        Me.Panel6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel6.BackColor = System.Drawing.Color.AliceBlue
-        Me.Panel6.Controls.Add(Me.Label44)
-        Me.Panel6.Controls.Add(Me.Label46)
-        Me.Panel6.Controls.Add(Me.Label25)
-        Me.Panel6.Controls.Add(Me.Label43)
-        Me.Panel6.Location = New System.Drawing.Point(11, 517)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(966, 43)
-        Me.Panel6.TabIndex = 79
+        Me.DateTimePicker3.Location = New System.Drawing.Point(553, 7)
+        Me.DateTimePicker3.Name = "DateTimePicker3"
+        Me.DateTimePicker3.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker3.TabIndex = 3
         '
-        'Label44
+        'DateTimePicker4
         '
-        Me.Label44.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(863, 27)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(25, 13)
-        Me.Label44.TabIndex = 84
-        Me.Label44.Text = "0.0"
+        Me.DateTimePicker4.Location = New System.Drawing.Point(260, 7)
+        Me.DateTimePicker4.Name = "DateTimePicker4"
+        Me.DateTimePicker4.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker4.TabIndex = 2
         '
-        'Label46
+        'Label10
         '
-        Me.Label46.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label46.AutoSize = True
-        Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label46.Location = New System.Drawing.Point(863, 9)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(14, 13)
-        Me.Label46.TabIndex = 85
-        Me.Label46.Text = "0"
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(492, 11)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(35, 13)
+        Me.Label10.TabIndex = 1
+        Me.Label10.Text = "Hasta"
         '
-        'Label25
+        'Label12
         '
-        Me.Label25.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(808, 27)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(47, 13)
-        Me.Label25.TabIndex = 83
-        Me.Label25.Text = "TOTAL"
-        '
-        'Label43
-        '
-        Me.Label43.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label43.AutoSize = True
-        Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label43.Location = New System.Drawing.Point(683, 9)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(172, 13)
-        Me.Label43.TabIndex = 82
-        Me.Label43.Text = "CANTIDAD DE PRODUCTOS"
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(195, 11)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(38, 13)
+        Me.Label12.TabIndex = 0
+        Me.Label12.Text = "Desde"
         '
         'E_frmAutorizarOC
         '
@@ -1144,9 +1253,11 @@ Partial Class E_frmAutorizarOC
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "E_frmAutorizarOC"
-        Me.Text = "E_frmAutorizarOC"
+        Me.Text = "SLM - Módulo de almacén"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
@@ -1167,29 +1278,27 @@ Partial Class E_frmAutorizarOC
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
-        Me.TabPage5.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
+        Me.GroupBox10.ResumeLayout(False)
+        CType(Me.DataGridView9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox8.ResumeLayout(False)
         Me.GroupBox8.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage5.ResumeLayout(False)
+        Me.GroupBox11.ResumeLayout(False)
+        CType(Me.DataGridView10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox9.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         CType(Me.DataGridView8, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox10.ResumeLayout(False)
-        CType(Me.DataGridView9, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox11.ResumeLayout(False)
-        CType(Me.DataGridView10, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1233,17 +1342,9 @@ Partial Class E_frmAutorizarOC
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents txtCodOCRechazada As TextBox
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Button5 As Button
-    Friend WithEvents DateTimePicker3 As DateTimePicker
-    Friend WithEvents DateTimePicker4 As DateTimePicker
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label14 As Label
     Friend WithEvents Label11 As Label
-    Friend WithEvents Label12 As Label
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Button7 As Button
     Friend WithEvents Button6 As Button
@@ -1285,4 +1386,25 @@ Partial Class E_frmAutorizarOC
     Friend WithEvents Label46 As Label
     Friend WithEvents Label25 As Label
     Friend WithEvents Label43 As Label
+    Friend WithEvents id_detalle_oc As DataGridViewTextBoxColumn
+    Friend WithEvents cod_producto As DataGridViewTextBoxColumn
+    Friend WithEvents nombre_producto As DataGridViewTextBoxColumn
+    Friend WithEvents precio_unitario As DataGridViewTextBoxColumn
+    Friend WithEvents cantidad As DataGridViewTextBoxColumn
+    Friend WithEvents costo_total As DataGridViewTextBoxColumn
+    Friend WithEvents id_oc As DataGridViewTextBoxColumn
+    Friend WithEvents nombreProveedor As DataGridViewTextBoxColumn
+    Friend WithEvents usuario_consignado As DataGridViewTextBoxColumn
+    Friend WithEvents usuario_autorizo As DataGridViewTextBoxColumn
+    Friend WithEvents autorizacion As DataGridViewTextBoxColumn
+    Friend WithEvents fecha_autorizacion As DataGridViewTextBoxColumn
+    Friend WithEvents observaciones As DataGridViewTextBoxColumn
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label9 As Label
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents DateTimePicker3 As DateTimePicker
+    Friend WithEvents DateTimePicker4 As DateTimePicker
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label12 As Label
 End Class

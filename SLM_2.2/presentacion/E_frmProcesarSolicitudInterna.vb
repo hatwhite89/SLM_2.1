@@ -1,6 +1,10 @@
 ﻿Public Class E_frmProcesarSolicitudInterna
     Private Sub E_frmProcesarSolicitudInterna_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarMisSolicitudes()
+        alternarColoFilasDatagridview(DataGridView1)
+        alternarColoFilasDatagridview(DataGridView2)
+        alternarColoFilasDatagridview(DataGridView3)
+        alternarColoFilasDatagridview(DataGridView4)
     End Sub
 
     Private Sub CargarMisSolicitudes()

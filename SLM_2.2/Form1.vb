@@ -729,7 +729,7 @@
     End Sub
 
     Private Sub btnSolicitudes_Click(sender As Object, e As EventArgs) Handles btnSolicitudes.Click
-        E_frmSolicitudInternaAlmacen.Show()
+        E_frmProcesarSolicitudInterna.Show()
     End Sub
 
     Private Sub btnAutorizacion_Click(sender As Object, e As EventArgs) Handles btnAutorizacion.Click
@@ -737,7 +737,7 @@
     End Sub
 
     Private Sub btnProveedores_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
-        E_frmProveedorOC.Show()
+        A_Proveedor.Show()
     End Sub
 
     Private Sub Button2_Click_3(sender As Object, e As EventArgs) Handles Button2.Click
@@ -760,5 +760,9 @@
 
         End Try
 
+    End Sub
+
+    Private Sub btnFactCompra_Click(sender As Object, e As EventArgs) Handles btnFactCompra.Click
+        A_FacturaCompras.Show()
     End Sub
 End Class
