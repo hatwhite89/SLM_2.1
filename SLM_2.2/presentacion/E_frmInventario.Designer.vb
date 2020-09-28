@@ -114,7 +114,7 @@ Partial Class E_frmInventario
         '
         Me.ComboBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(529, 10)
+        Me.ComboBox1.Location = New System.Drawing.Point(533, 10)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(223, 21)
         Me.ComboBox1.TabIndex = 0
@@ -169,6 +169,7 @@ Partial Class E_frmInventario
         '
         Me.excel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.excel.BackColor = System.Drawing.Color.Green
+        Me.excel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.excel.ForeColor = System.Drawing.SystemColors.Control
         Me.excel.Location = New System.Drawing.Point(635, 271)
         Me.excel.Name = "excel"
@@ -261,7 +262,7 @@ Partial Class E_frmInventario
         Me.Panel3.Controls.Add(Me.btnCargarInventario)
         Me.Panel3.Location = New System.Drawing.Point(6, 17)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(762, 67)
+        Me.Panel3.Size = New System.Drawing.Size(766, 67)
         Me.Panel3.TabIndex = 5
         '
         'Label19
@@ -304,7 +305,7 @@ Partial Class E_frmInventario
         '
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(391, 18)
+        Me.Label1.Location = New System.Drawing.Point(395, 18)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(134, 13)
         Me.Label1.TabIndex = 18
@@ -313,9 +314,10 @@ Partial Class E_frmInventario
         'btnCargarInventario
         '
         Me.btnCargarInventario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCargarInventario.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.btnCargarInventario.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnCargarInventario.Location = New System.Drawing.Point(529, 38)
+        Me.btnCargarInventario.BackColor = System.Drawing.Color.White
+        Me.btnCargarInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCargarInventario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnCargarInventario.Location = New System.Drawing.Point(533, 38)
         Me.btnCargarInventario.Name = "btnCargarInventario"
         Me.btnCargarInventario.Size = New System.Drawing.Size(223, 23)
         Me.btnCargarInventario.TabIndex = 4
@@ -355,6 +357,7 @@ Partial Class E_frmInventario
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.BackColor = System.Drawing.Color.Green
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button2.Location = New System.Drawing.Point(631, 271)
         Me.Button2.Name = "Button2"
@@ -451,7 +454,7 @@ Partial Class E_frmInventario
         Me.Panel5.Controls.Add(Me.Button1)
         Me.Panel5.Location = New System.Drawing.Point(6, 17)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(758, 67)
+        Me.Panel5.Size = New System.Drawing.Size(766, 67)
         Me.Panel5.TabIndex = 5
         '
         'Label6
@@ -494,7 +497,7 @@ Partial Class E_frmInventario
         '
         Me.Label15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(387, 18)
+        Me.Label15.Location = New System.Drawing.Point(395, 18)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(134, 13)
         Me.Label15.TabIndex = 18
@@ -504,7 +507,7 @@ Partial Class E_frmInventario
         '
         Me.ComboBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(527, 10)
+        Me.ComboBox2.Location = New System.Drawing.Point(535, 10)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(223, 21)
         Me.ComboBox2.TabIndex = 5
@@ -512,9 +515,10 @@ Partial Class E_frmInventario
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Location = New System.Drawing.Point(527, 37)
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.Location = New System.Drawing.Point(535, 37)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(223, 23)
         Me.Button1.TabIndex = 7
@@ -562,6 +566,7 @@ Partial Class E_frmInventario
         '
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.BackColor = System.Drawing.Color.Green
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button3.Location = New System.Drawing.Point(632, 271)
         Me.Button3.Name = "Button3"
@@ -658,7 +663,7 @@ Partial Class E_frmInventario
         Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Location = New System.Drawing.Point(6, 17)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(762, 67)
+        Me.Panel1.Size = New System.Drawing.Size(766, 67)
         Me.Panel1.TabIndex = 5
         '
         'Label14
@@ -701,7 +706,7 @@ Partial Class E_frmInventario
         '
         Me.ComboBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(536, 10)
+        Me.ComboBox3.Location = New System.Drawing.Point(540, 10)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(223, 21)
         Me.ComboBox3.TabIndex = 8
@@ -710,7 +715,7 @@ Partial Class E_frmInventario
         '
         Me.Label17.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(391, 18)
+        Me.Label17.Location = New System.Drawing.Point(395, 18)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(134, 13)
         Me.Label17.TabIndex = 18
@@ -719,9 +724,10 @@ Partial Class E_frmInventario
         'Button4
         '
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button4.Location = New System.Drawing.Point(536, 37)
+        Me.Button4.BackColor = System.Drawing.Color.White
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button4.Location = New System.Drawing.Point(540, 37)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(223, 23)
         Me.Button4.TabIndex = 10

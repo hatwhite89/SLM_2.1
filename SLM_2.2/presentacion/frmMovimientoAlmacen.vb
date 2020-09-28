@@ -1,5 +1,6 @@
 ﻿Public Class frmMovimientoAlmacen
     Dim id_entrada_almacen, cantidad_actual As String
+
     Private Sub frmMovimientoAlmacen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ComboAlmacen()
         ComboAlmacen2()
@@ -82,25 +83,34 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim clsI As New clsEntradaAlmacen
+        Try
 
-        With clsI
-            .Id_entrada1 = id_entrada_almacen
-            .CantidadProducto = txtTraslado.Text
-            .IdAlmacen = ComboBox2.SelectedValue()
-        End With
 
-        If Integer.Parse(txtTraslado.Text) < Integer.Parse(cantidad_actual) Then
-            If clsI.TrasladarEntradaAlmacen() = "1" Then
-                MsgBox("Tralado de inventarios completado")
-                cargarData()
-                cargarData2()
+            Dim clsI As New clsEntradaAlmacen
+
+            With clsI
+                .Id_entrada1 = id_entrada_almacen
+                .CantidadProducto = txtTraslado.Text
+                .IdAlmacen = ComboBox2.SelectedValue()
+            End With
+
+            If Integer.Parse(txtTraslado.Text) <= Integer.Parse(cantidad_actual) Then
+                If clsI.TrasladarEntradaAlmacen() = "1" Then
+                    MsgBox("Tralado de inventarios completado")
+                    cargarData()
+                    cargarData2()
+                    txtCodProducto.Text = ""
+                    txtProducto.Text = ""
+                    txtTraslado.Text = ""
+                    txtLote.Text = ""
+                End If
+            Else
+                MsgBox("La cantidad solicitada excede la existencia")
+
             End If
-        Else
-            MsgBox("La cantidad solicitada excede la existencia")
-
-        End If
-
+        Catch ex As Exception
+            MsgBox("Debe seleccionar un producto del almacen de origen")
+        End Try
     End Sub
 
     Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Panel4.Paint
@@ -120,6 +130,24 @@
 
         End Try
 
+    End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+        Dim objOrd As New clsInventario
+
+
+        Dim dv As DataView = objOrd.MovimientoInventarioAlmacen(ComboBox2.SelectedValue.ToString).DefaultView
+        dv.RowFilter = String.Format("CONVERT(nombre_producto+lote, System.String) LIKE '%{0}%'", TextBox2.Text)
+        DataGridView2.DataSource = dv
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        Dim objOrd As New clsInventario
+
+
+        Dim dv As DataView = objOrd.MovimientoInventarioAlmacen(ComboBox1.SelectedValue.ToString).DefaultView
+        dv.RowFilter = String.Format("CONVERT(nombre_producto+lote, System.String) LIKE '%{0}%'", TextBox1.Text)
+        DataGridView1.DataSource = dv
     End Sub
 
     Private Sub cargarData2()

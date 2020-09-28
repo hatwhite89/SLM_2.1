@@ -144,6 +144,12 @@ Partial Class E_frmOrdenCompra
         Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.id_oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.usuario_consignado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.usuario_autorizo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.autorizacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.observaciones = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -1150,6 +1156,7 @@ Partial Class E_frmOrdenCompra
         DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_oc, Me.nombreProveedor, Me.usuario_consignado, Me.usuario_autorizo, Me.autorizacion, Me.observaciones})
         Me.DataGridView2.GridColor = System.Drawing.SystemColors.Control
         Me.DataGridView2.Location = New System.Drawing.Point(6, 63)
         Me.DataGridView2.Name = "DataGridView2"
@@ -1301,6 +1308,7 @@ Partial Class E_frmOrdenCompra
         '
         Me.DataGridView4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView4.BackgroundColor = System.Drawing.SystemColors.Control
         Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView4.Location = New System.Drawing.Point(7, 35)
@@ -1376,6 +1384,42 @@ Partial Class E_frmOrdenCompra
         Me.StatusStrip1.Size = New System.Drawing.Size(1065, 22)
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'id_oc
+        '
+        Me.id_oc.DataPropertyName = "id_oc"
+        Me.id_oc.HeaderText = "ID OC"
+        Me.id_oc.Name = "id_oc"
+        '
+        'nombreProveedor
+        '
+        Me.nombreProveedor.DataPropertyName = "nombreProveedor"
+        Me.nombreProveedor.HeaderText = "PROVEEDOR"
+        Me.nombreProveedor.Name = "nombreProveedor"
+        '
+        'usuario_consignado
+        '
+        Me.usuario_consignado.DataPropertyName = "usuario_consignado"
+        Me.usuario_consignado.HeaderText = "USUARIO CONSIGNADO"
+        Me.usuario_consignado.Name = "usuario_consignado"
+        '
+        'usuario_autorizo
+        '
+        Me.usuario_autorizo.DataPropertyName = "usuario_autorizo"
+        Me.usuario_autorizo.HeaderText = "USUARIO AUTORIZA"
+        Me.usuario_autorizo.Name = "usuario_autorizo"
+        '
+        'autorizacion
+        '
+        Me.autorizacion.DataPropertyName = "autorizacion"
+        Me.autorizacion.HeaderText = "ESTADO"
+        Me.autorizacion.Name = "autorizacion"
+        '
+        'observaciones
+        '
+        Me.observaciones.DataPropertyName = "observaciones"
+        Me.observaciones.HeaderText = "OBSERVACIONES"
+        Me.observaciones.Name = "observaciones"
         '
         'E_frmOrdenCompra
         '
@@ -1542,4 +1586,10 @@ Partial Class E_frmOrdenCompra
     Friend WithEvents DataGridView3 As DataGridView
     Friend WithEvents txtLugarEntrega As ComboBox
     Friend WithEvents txtEstadoOC As TextBox
+    Friend WithEvents id_oc As DataGridViewTextBoxColumn
+    Friend WithEvents nombreProveedor As DataGridViewTextBoxColumn
+    Friend WithEvents usuario_consignado As DataGridViewTextBoxColumn
+    Friend WithEvents usuario_autorizo As DataGridViewTextBoxColumn
+    Friend WithEvents autorizacion As DataGridViewTextBoxColumn
+    Friend WithEvents observaciones As DataGridViewTextBoxColumn
 End Class

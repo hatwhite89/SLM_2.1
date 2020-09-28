@@ -214,7 +214,7 @@ Public Class ClsOrdenDeCompra
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select * from OrdenDeCompra where fecha_elaboracion between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "' ", cn)
+        Using da As New SqlDataAdapter("select oc.id_oc,p.nombreProveedor,oc.usuario_consignado,oc.usuario_autorizo,oc.autorizacion,oc.fecha_autorizacion,oc.observaciones from OrdenDeCompra oc ,Proveedor p where oc.id_proveedor= p.codProveedor and oc.fecha_elaboracion between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "' ", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             objCon.cerrarConexion()
