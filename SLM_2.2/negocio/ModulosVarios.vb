@@ -566,6 +566,26 @@ Module ModulosVarios
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnDepto.Enabled = True
                                                 End If
+                                            ElseIf i = 11 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnCandidatos.Enabled = True
+                                                End If
+                                            ElseIf i = 12 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnCapacitaciones.Enabled = True
+                                                End If
+                                            ElseIf i = 13 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnReporteria.Enabled = True
+                                                End If
+                                            ElseIf i = 14 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnConstanciaPlantillas.Enabled = True
+                                                End If
+                                            ElseIf i = 15 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnTipoPermiso.Enabled = True
+                                                End If
                                             End If
                                         Next
 

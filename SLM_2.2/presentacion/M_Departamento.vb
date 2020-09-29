@@ -1,25 +1,43 @@
 ﻿Public Class M_Departamento
+
+    Dim objDepto As New ClsDepartamento
+
     Private Sub M_Departamento_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             limpiar()
             Me.Close()
         End If
     End Sub
-    Private Sub M_Departamento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim objDepto As New ClsDepartamento
+
+    Private Sub actualizarDepartamento()
         Dim dv As DataView = objDepto.SeleccionarDepartamento.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+    End Sub
+    Private Sub M_Departamento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'ACTUALIZAR LISTADO
+        actualizarDepartamento()
+
+        'AGREGARLE COLOR AL DATAGRIDVIEW
         alternarColoFilasDatagridview(dgbtabla)
+
+        'CAMBIAS NOMBRE COLUMNAS
+        dgbtabla.Columns("codigo").HeaderText = "Código"
+        dgbtabla.Columns("nombre").HeaderText = "Nombre"
+        dgbtabla.Columns("area").HeaderText = "Área"
+
+        'OCULTAR COLUMNAS
+        Me.dgbtabla.Columns("codigoArea").Visible = False
+
+        'DESHABILITAR
+        btnmodificar.Enabled = False
+        btnguardar.Enabled = True
+        btnnuevo.Enabled = True
         txtnombre.ReadOnly = True
         txtcodigo.ReadOnly = True
         txtcodigoArea.ReadOnly = True
         btnArea.Enabled = False
-
-        btnmodificar.Enabled = False
-        btnguardar.Enabled = False
-        btnnuevo.Enabled = True
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -96,7 +114,7 @@
             txtnombre.Text = sinDobleEspacio(txtnombre.Text)
 
             If (Trim(txtnombre.Text) <> "" And Trim(txtcodigoArea.Text) <> "") Then
-                Dim objDepto As New ClsDepartamento
+                'Dim objDepto As New ClsDepartamento
                 With objDepto
                     .Nombre_ = txtnombre.Text
                     .codigoArea_ = txtcodigoArea.Text
@@ -135,7 +153,7 @@
 
             If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "" And Trim(txtcodigoArea.Text) <> "") Then
                 txtnombre.Text = sinDobleEspacio(txtnombre.Text)
-                Dim objDepto As New ClsDepartamento
+                'Dim objDepto As New ClsDepartamento
                 With objDepto
                     .Nombre_ = txtnombre.Text
                     .codigo_ = txtcodigo.Text
@@ -175,27 +193,37 @@
         Me.Close()
     End Sub
     Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtNombreB.TextChanged
+        'Try
+        '    'Dim objDepto As New ClsDepartamento
+        '    With objDepto
+        '        .Nombre_ = txtNombreB.Text
+        '    End With
+
+        '    If (Trim(txtNombreB.Text) <> "") Then
+        '        Dim dv As DataView = objDepto.BuscarDepartamentoNombre.DefaultView
+        '        dgbtabla.DataSource = dv
+        '        lblcantidad.Text = dv.Count
+        '        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        '    Else
+        '        Dim dv As DataView = objDepto.SeleccionarDepartamento.DefaultView
+        '        dgbtabla.DataSource = dv
+        '        lblcantidad.Text = dv.Count
+        '        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        '    End If
+        'Catch ex As Exception
+
+        'End Try
+
         Try
-            Dim objDepto As New ClsDepartamento
-            With objDepto
-                .Nombre_ = txtNombreB.Text
-            End With
-
-            If (Trim(txtNombreB.Text) <> "") Then
-                Dim dv As DataView = objDepto.BuscarDepartamentoNombre.DefaultView
-                dgbtabla.DataSource = dv
-                lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
-            Else
-                Dim dv As DataView = objDepto.SeleccionarDepartamento.DefaultView
-                dgbtabla.DataSource = dv
-                lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
-            End If
+            Dim dv As DataView = dgbtabla.DataSource
+            dv.RowFilter = String.Format("nombre Like '%{0}%'", txtNombreB.Text)
+            lblcantidad.Text = dv.Count
+            dgbtabla.DataSource = dv
         Catch ex As Exception
-
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
     Private Sub txtcodigoArea_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoArea.TextChanged
         txtnombreArea.Text = ""
         If (Trim(txtcodigoArea.Text) <> "") Then
@@ -225,7 +253,4 @@
         M_Area.ShowDialog()
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
 End Class

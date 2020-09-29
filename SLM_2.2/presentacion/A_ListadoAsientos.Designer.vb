@@ -23,17 +23,20 @@ Partial Class A_ListadoAsientos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxAsientos = New System.Windows.Forms.GroupBox()
+        Me.btnIngresarAsiento = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.dtAsientos = New System.Windows.Forms.DataGridView()
         Me.txtCod = New System.Windows.Forms.TextBox()
         Me.lblCod = New System.Windows.Forms.Label()
-        Me.btnIngresarAsiento = New System.Windows.Forms.Button()
         Me.gbxAsientos.SuspendLayout()
         CType(Me.dtAsientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbxAsientos
         '
+        Me.gbxAsientos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbxAsientos.Controls.Add(Me.btnIngresarAsiento)
         Me.gbxAsientos.Controls.Add(Me.btnCancelar)
         Me.gbxAsientos.Controls.Add(Me.dtAsientos)
@@ -41,10 +44,21 @@ Partial Class A_ListadoAsientos
         Me.gbxAsientos.Controls.Add(Me.lblCod)
         Me.gbxAsientos.Location = New System.Drawing.Point(12, 12)
         Me.gbxAsientos.Name = "gbxAsientos"
-        Me.gbxAsientos.Size = New System.Drawing.Size(694, 322)
+        Me.gbxAsientos.Size = New System.Drawing.Size(694, 335)
         Me.gbxAsientos.TabIndex = 0
         Me.gbxAsientos.TabStop = False
         Me.gbxAsientos.Text = "Asientos Contables"
+        '
+        'btnIngresarAsiento
+        '
+        Me.btnIngresarAsiento.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnIngresarAsiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnIngresarAsiento.Location = New System.Drawing.Point(557, 26)
+        Me.btnIngresarAsiento.Name = "btnIngresarAsiento"
+        Me.btnIngresarAsiento.Size = New System.Drawing.Size(131, 23)
+        Me.btnIngresarAsiento.TabIndex = 4
+        Me.btnIngresarAsiento.Text = "Ingresar Asiento Manual"
+        Me.btnIngresarAsiento.UseVisualStyleBackColor = True
         '
         'btnCancelar
         '
@@ -65,6 +79,10 @@ Partial Class A_ListadoAsientos
         '
         Me.dtAsientos.AllowUserToAddRows = False
         Me.dtAsientos.AllowUserToDeleteRows = False
+        Me.dtAsientos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtAsientos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dtAsientos.BackgroundColor = System.Drawing.Color.White
         Me.dtAsientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtAsientos.GridColor = System.Drawing.Color.White
@@ -72,7 +90,7 @@ Partial Class A_ListadoAsientos
         Me.dtAsientos.Name = "dtAsientos"
         Me.dtAsientos.ReadOnly = True
         Me.dtAsientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtAsientos.Size = New System.Drawing.Size(682, 259)
+        Me.dtAsientos.Size = New System.Drawing.Size(682, 272)
         Me.dtAsientos.TabIndex = 2
         '
         'txtCod
@@ -92,22 +110,14 @@ Partial Class A_ListadoAsientos
         Me.lblCod.TabIndex = 0
         Me.lblCod.Text = "Nro. Asiento"
         '
-        'btnIngresarAsiento
-        '
-        Me.btnIngresarAsiento.Location = New System.Drawing.Point(557, 26)
-        Me.btnIngresarAsiento.Name = "btnIngresarAsiento"
-        Me.btnIngresarAsiento.Size = New System.Drawing.Size(131, 23)
-        Me.btnIngresarAsiento.TabIndex = 4
-        Me.btnIngresarAsiento.Text = "Ingresar Asiento Manual"
-        Me.btnIngresarAsiento.UseVisualStyleBackColor = True
-        '
         'A_ListadoAsientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(718, 342)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(718, 355)
         Me.Controls.Add(Me.gbxAsientos)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "A_ListadoAsientos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listado de Asientos"

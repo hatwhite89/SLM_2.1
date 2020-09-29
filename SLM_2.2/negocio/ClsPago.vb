@@ -4,7 +4,7 @@ Public Class ClsPago
 
     'Variables
     Dim codPago As Integer
-    Dim formaPago, referencia, comentario, ctaBanco, codOrden, sumaTotal As String
+    Dim formaPago, referencia, comentario, ctaBanco, sumaTotal As String
     Dim fechaPago, fechaTransferencia As Date
     Dim pagado As Boolean
 
@@ -66,15 +66,7 @@ Public Class ClsPago
         End Set
     End Property
 
-    'Codigo Orden
-    Public Property Cod_Orden As String
-        Get
-            Return codOrden
-        End Get
-        Set(value As String)
-            codOrden = value
-        End Set
-    End Property
+
 
     'Suma Total
     Public Property Suma_Total As String
@@ -163,11 +155,6 @@ Public Class ClsPago
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "pagado"
         sqlpar.Value = Paga_do
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codOrden"
-        sqlpar.Value = Cod_Orden
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -313,11 +300,6 @@ Public Class ClsPago
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "pagado"
         sqlpar.Value = Paga_do
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codOrden"
-        sqlpar.Value = Cod_Orden
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

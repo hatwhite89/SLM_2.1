@@ -170,8 +170,6 @@ Public Class ClsDeposito
             cmd.CommandText = "A_slmBuscarDeposito"
             cmd.Parameters.Add("@codCajero", SqlDbType.VarChar).Value = cod_Cajero
             cmd.Parameters.Add("@comentario", SqlDbType.VarChar).Value = Comenta_rio
-            cmd.Parameters.Add("@cod", SqlDbType.Int).Value = Cod
-
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -411,5 +409,27 @@ Public Class ClsDeposito
 
     End Function
 
+    'Buscar deposito por fecha del deposito
+    Public Function buscarDepoCodigo() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarDepositoCodigo"
+            cmd.Parameters.Add("@cod", SqlDbType.Int).Value = Cod
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
 
 End Class

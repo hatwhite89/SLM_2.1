@@ -542,13 +542,13 @@
 
                 .Comenta_rio = txtBusqueda.Text
                 .cod_Cajero = txtBusqueda.Text
-                .Cod = Convert.ToInt32(txtBusqueda.Text)
                 data = .buscarDepo
                 dtDepositos.DataSource = data
 
             End With
 
         Catch ex As Exception
+            MsgBox(ex.Message)
         End Try
 
 
@@ -577,7 +577,7 @@
 
 
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
 
@@ -593,4 +593,24 @@
 
         End Try
     End Sub
+
+    Private Sub txtBuscaCodigo_TextChanged(sender As Object, e As EventArgs) Handles txtBuscaCodigo.TextChanged
+        Dim depoCod As New ClsDeposito
+
+        Try
+            Dim dataC As New DataTable
+            With depoCod
+                .Cod = Convert.ToInt32(txtBuscaCodigo.Text)
+                dataC = .buscarDepoCodigo()
+                dtDepositos.DataSource = dataC
+            End With
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+
 End Class

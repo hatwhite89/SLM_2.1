@@ -50,14 +50,14 @@ Partial Class E_Usuarios
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxDatos.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -69,9 +69,9 @@ Partial Class E_Usuarios
         Me.GroupBox1.Controls.Add(Me.btnImportar)
         Me.GroupBox1.Controls.Add(Me.txtBusqueda)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 289)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 269)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(526, 314)
+        Me.GroupBox1.Size = New System.Drawing.Size(632, 314)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Usuarios Registrados"
@@ -90,14 +90,14 @@ Partial Class E_Usuarios
         Me.dtUsuarios.Name = "dtUsuarios"
         Me.dtUsuarios.RowHeadersWidth = 51
         Me.dtUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtUsuarios.Size = New System.Drawing.Size(514, 254)
+        Me.dtUsuarios.Size = New System.Drawing.Size(620, 254)
         Me.dtUsuarios.TabIndex = 27
         '
         'btnImportar
         '
         Me.btnImportar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnImportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnImportar.Location = New System.Drawing.Point(393, 25)
+        Me.btnImportar.Location = New System.Drawing.Point(499, 25)
         Me.btnImportar.Name = "btnImportar"
         Me.btnImportar.Size = New System.Drawing.Size(127, 23)
         Me.btnImportar.TabIndex = 10
@@ -124,7 +124,7 @@ Partial Class E_Usuarios
         '
         Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(330, 19)
+        Me.PictureBox1.Location = New System.Drawing.Point(436, 19)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(170, 168)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -145,7 +145,7 @@ Partial Class E_Usuarios
         '
         Me.btnBuscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Location = New System.Drawing.Point(236, 74)
+        Me.btnBuscar.Location = New System.Drawing.Point(342, 74)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(57, 23)
         Me.btnBuscar.TabIndex = 3
@@ -171,7 +171,7 @@ Partial Class E_Usuarios
         Me.txtPerfil.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPerfil.MaxLength = 30
         Me.txtPerfil.Name = "txtPerfil"
-        Me.txtPerfil.Size = New System.Drawing.Size(142, 20)
+        Me.txtPerfil.Size = New System.Drawing.Size(248, 20)
         Me.txtPerfil.TabIndex = 2
         '
         'lblPass
@@ -202,7 +202,7 @@ Partial Class E_Usuarios
         Me.txtPass.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPass.MaxLength = 30
         Me.txtPass.Name = "txtPass"
-        Me.txtPass.Size = New System.Drawing.Size(204, 20)
+        Me.txtPass.Size = New System.Drawing.Size(310, 20)
         Me.txtPass.TabIndex = 1
         '
         'txtUsuario
@@ -213,7 +213,7 @@ Partial Class E_Usuarios
         Me.txtUsuario.Margin = New System.Windows.Forms.Padding(2)
         Me.txtUsuario.MaxLength = 30
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(204, 20)
+        Me.txtUsuario.Size = New System.Drawing.Size(310, 20)
         Me.txtUsuario.TabIndex = 0
         '
         'gbxDatos
@@ -237,9 +237,9 @@ Partial Class E_Usuarios
         Me.gbxDatos.Controls.Add(Me.Label3)
         Me.gbxDatos.Controls.Add(Me.lblPass)
         Me.gbxDatos.Controls.Add(Me.txtPerfil)
-        Me.gbxDatos.Location = New System.Drawing.Point(12, 71)
+        Me.gbxDatos.Location = New System.Drawing.Point(11, 51)
         Me.gbxDatos.Name = "gbxDatos"
-        Me.gbxDatos.Size = New System.Drawing.Size(526, 212)
+        Me.gbxDatos.Size = New System.Drawing.Size(632, 212)
         Me.gbxDatos.TabIndex = 23
         Me.gbxDatos.TabStop = False
         Me.gbxDatos.Text = "Información de Usuario"
@@ -258,7 +258,7 @@ Partial Class E_Usuarios
         '
         Me.btnBuscarEmpleado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnBuscarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarEmpleado.Location = New System.Drawing.Point(236, 48)
+        Me.btnBuscarEmpleado.Location = New System.Drawing.Point(342, 48)
         Me.btnBuscarEmpleado.Name = "btnBuscarEmpleado"
         Me.btnBuscarEmpleado.Size = New System.Drawing.Size(57, 23)
         Me.btnBuscarEmpleado.TabIndex = 30
@@ -274,7 +274,7 @@ Partial Class E_Usuarios
         Me.txtNombreEmpleado.Margin = New System.Windows.Forms.Padding(2)
         Me.txtNombreEmpleado.MaxLength = 30
         Me.txtNombreEmpleado.Name = "txtNombreEmpleado"
-        Me.txtNombreEmpleado.Size = New System.Drawing.Size(142, 20)
+        Me.txtNombreEmpleado.Size = New System.Drawing.Size(248, 20)
         Me.txtNombreEmpleado.TabIndex = 28
         '
         'Label6
@@ -305,7 +305,7 @@ Partial Class E_Usuarios
         Me.txtCodigo.Location = New System.Drawing.Point(89, 25)
         Me.txtCodigo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(204, 20)
+        Me.txtCodigo.Size = New System.Drawing.Size(310, 20)
         Me.txtCodigo.TabIndex = 24
         '
         'Label4
@@ -332,7 +332,7 @@ Partial Class E_Usuarios
         'lblForm
         '
         Me.lblForm.AutoSize = True
-        Me.lblForm.Location = New System.Drawing.Point(165, 23)
+        Me.lblForm.Location = New System.Drawing.Point(163, 10)
         Me.lblForm.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblForm.Name = "lblForm"
         Me.lblForm.Size = New System.Drawing.Size(27, 13)
@@ -343,81 +343,87 @@ Partial Class E_Usuarios
         'btnCancelar
         '
         Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelar.BackColor = System.Drawing.Color.White
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(361, 18)
+        Me.btnCancelar.Location = New System.Drawing.Point(489, 10)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 7
         Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
+        Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'btnModificar
         '
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnModificar.BackColor = System.Drawing.Color.White
         Me.btnModificar.Enabled = False
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Location = New System.Drawing.Point(280, 18)
+        Me.btnModificar.Location = New System.Drawing.Point(408, 10)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 6
         Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
+        Me.btnModificar.UseVisualStyleBackColor = False
         '
         'btnGuardar
         '
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGuardar.BackColor = System.Drawing.Color.White
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(195, 19)
+        Me.btnGuardar.Location = New System.Drawing.Point(328, 10)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 5
         Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
+        Me.btnGuardar.UseVisualStyleBackColor = False
         '
-        'GroupBox2
+        'btnCerrar
         '
-        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.Controls.Add(Me.btnCerrar)
-        Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.btnCancelar)
-        Me.GroupBox2.Controls.Add(Me.btnGuardar)
-        Me.GroupBox2.Controls.Add(Me.btnModificar)
-        Me.GroupBox2.Controls.Add(Me.lblForm)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(526, 53)
-        Me.GroupBox2.TabIndex = 24
-        Me.GroupBox2.TabStop = False
+        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrar.BackColor = System.Drawing.Color.White
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Location = New System.Drawing.Point(570, 10)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCerrar.TabIndex = 28
+        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(10, 16)
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(8, 10)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(105, 25)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Usuarios"
         '
-        'btnCerrar
+        'Panel1
         '
-        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(442, 19)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCerrar.TabIndex = 28
-        Me.btnCerrar.Text = "Cerrar"
-        Me.btnCerrar.UseVisualStyleBackColor = True
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnCerrar)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.btnCancelar)
+        Me.Panel1.Controls.Add(Me.btnModificar)
+        Me.Panel1.Controls.Add(Me.lblForm)
+        Me.Panel1.Controls.Add(Me.btnGuardar)
+        Me.Panel1.Location = New System.Drawing.Point(-1, -1)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(664, 46)
+        Me.Panel1.TabIndex = 25
         '
         'E_Usuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(547, 612)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.ClientSize = New System.Drawing.Size(655, 592)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.gbxDatos)
         Me.Controls.Add(Me.GroupBox1)
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -430,8 +436,8 @@ Partial Class E_Usuarios
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbxDatos.ResumeLayout(False)
         Me.gbxDatos.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -463,7 +469,7 @@ Partial Class E_Usuarios
     Friend WithEvents Label6 As Label
     Friend WithEvents lblCodEmpleado As Label
     Friend WithEvents btnBuscarEmpleado As Button
-    Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnCerrar As Button
+    Friend WithEvents Panel1 As Panel
 End Class

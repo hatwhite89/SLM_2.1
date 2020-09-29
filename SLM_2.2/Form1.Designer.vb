@@ -153,6 +153,16 @@ Partial Class Form1
         Me.btnCerrarTalentoHumano = New System.Windows.Forms.Button()
         Me.TabControl4 = New System.Windows.Forms.TabControl()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
+        Me.btnConstanciaPlantillas = New System.Windows.Forms.Button()
+        Me.PictureBox81 = New System.Windows.Forms.PictureBox()
+        Me.btnReporteria = New System.Windows.Forms.Button()
+        Me.PictureBox80 = New System.Windows.Forms.PictureBox()
+        Me.btnTipoPermiso = New System.Windows.Forms.Button()
+        Me.PictureBox79 = New System.Windows.Forms.PictureBox()
+        Me.btnCapacitaciones = New System.Windows.Forms.Button()
+        Me.PictureBox78 = New System.Windows.Forms.PictureBox()
+        Me.btnCandidatos = New System.Windows.Forms.Button()
+        Me.PictureBox77 = New System.Windows.Forms.PictureBox()
         Me.PictureBox41 = New System.Windows.Forms.PictureBox()
         Me.PictureBox75 = New System.Windows.Forms.PictureBox()
         Me.PictureBox74 = New System.Windows.Forms.PictureBox()
@@ -306,6 +316,11 @@ Partial Class Form1
         Me.Panel5.SuspendLayout()
         Me.TabControl4.SuspendLayout()
         Me.TabPage9.SuspendLayout()
+        CType(Me.PictureBox81, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox80, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox79, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox78, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox77, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox41, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox75, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox74, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1954,6 +1969,16 @@ Partial Class Form1
         '
         'TabPage9
         '
+        Me.TabPage9.Controls.Add(Me.btnConstanciaPlantillas)
+        Me.TabPage9.Controls.Add(Me.PictureBox81)
+        Me.TabPage9.Controls.Add(Me.btnReporteria)
+        Me.TabPage9.Controls.Add(Me.PictureBox80)
+        Me.TabPage9.Controls.Add(Me.btnTipoPermiso)
+        Me.TabPage9.Controls.Add(Me.PictureBox79)
+        Me.TabPage9.Controls.Add(Me.btnCapacitaciones)
+        Me.TabPage9.Controls.Add(Me.PictureBox78)
+        Me.TabPage9.Controls.Add(Me.btnCandidatos)
+        Me.TabPage9.Controls.Add(Me.PictureBox77)
         Me.TabPage9.Controls.Add(Me.PictureBox41)
         Me.TabPage9.Controls.Add(Me.PictureBox75)
         Me.TabPage9.Controls.Add(Me.PictureBox74)
@@ -1983,6 +2008,116 @@ Partial Class Form1
         Me.TabPage9.TabIndex = 0
         Me.TabPage9.Text = "Talento Humano"
         Me.TabPage9.UseVisualStyleBackColor = True
+        '
+        'btnConstanciaPlantillas
+        '
+        Me.btnConstanciaPlantillas.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnConstanciaPlantillas.Enabled = False
+        Me.btnConstanciaPlantillas.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnConstanciaPlantillas.Location = New System.Drawing.Point(468, 80)
+        Me.btnConstanciaPlantillas.Name = "btnConstanciaPlantillas"
+        Me.btnConstanciaPlantillas.Size = New System.Drawing.Size(75, 35)
+        Me.btnConstanciaPlantillas.TabIndex = 62
+        Me.btnConstanciaPlantillas.Text = "Constan. y Plantillas"
+        Me.btnConstanciaPlantillas.UseVisualStyleBackColor = False
+        '
+        'PictureBox81
+        '
+        Me.PictureBox81.Image = CType(resources.GetObject("PictureBox81.Image"), System.Drawing.Image)
+        Me.PictureBox81.Location = New System.Drawing.Point(467, 29)
+        Me.PictureBox81.Name = "PictureBox81"
+        Me.PictureBox81.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox81.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox81.TabIndex = 61
+        Me.PictureBox81.TabStop = False
+        '
+        'btnReporteria
+        '
+        Me.btnReporteria.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnReporteria.Enabled = False
+        Me.btnReporteria.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnReporteria.Location = New System.Drawing.Point(470, 197)
+        Me.btnReporteria.Name = "btnReporteria"
+        Me.btnReporteria.Size = New System.Drawing.Size(75, 35)
+        Me.btnReporteria.TabIndex = 60
+        Me.btnReporteria.Text = "Reportería"
+        Me.btnReporteria.UseVisualStyleBackColor = False
+        '
+        'PictureBox80
+        '
+        Me.PictureBox80.Image = CType(resources.GetObject("PictureBox80.Image"), System.Drawing.Image)
+        Me.PictureBox80.Location = New System.Drawing.Point(469, 146)
+        Me.PictureBox80.Name = "PictureBox80"
+        Me.PictureBox80.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox80.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox80.TabIndex = 59
+        Me.PictureBox80.TabStop = False
+        '
+        'btnTipoPermiso
+        '
+        Me.btnTipoPermiso.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnTipoPermiso.Enabled = False
+        Me.btnTipoPermiso.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnTipoPermiso.Location = New System.Drawing.Point(292, 312)
+        Me.btnTipoPermiso.Name = "btnTipoPermiso"
+        Me.btnTipoPermiso.Size = New System.Drawing.Size(75, 35)
+        Me.btnTipoPermiso.TabIndex = 58
+        Me.btnTipoPermiso.Text = "Tipo Permiso"
+        Me.btnTipoPermiso.UseVisualStyleBackColor = False
+        '
+        'PictureBox79
+        '
+        Me.PictureBox79.Image = CType(resources.GetObject("PictureBox79.Image"), System.Drawing.Image)
+        Me.PictureBox79.Location = New System.Drawing.Point(291, 261)
+        Me.PictureBox79.Name = "PictureBox79"
+        Me.PictureBox79.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox79.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox79.TabIndex = 57
+        Me.PictureBox79.TabStop = False
+        '
+        'btnCapacitaciones
+        '
+        Me.btnCapacitaciones.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnCapacitaciones.Enabled = False
+        Me.btnCapacitaciones.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnCapacitaciones.Location = New System.Drawing.Point(201, 312)
+        Me.btnCapacitaciones.Name = "btnCapacitaciones"
+        Me.btnCapacitaciones.Size = New System.Drawing.Size(75, 35)
+        Me.btnCapacitaciones.TabIndex = 56
+        Me.btnCapacitaciones.Text = "Capacitaciones"
+        Me.btnCapacitaciones.UseVisualStyleBackColor = False
+        '
+        'PictureBox78
+        '
+        Me.PictureBox78.Image = CType(resources.GetObject("PictureBox78.Image"), System.Drawing.Image)
+        Me.PictureBox78.Location = New System.Drawing.Point(200, 261)
+        Me.PictureBox78.Name = "PictureBox78"
+        Me.PictureBox78.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox78.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox78.TabIndex = 55
+        Me.PictureBox78.TabStop = False
+        '
+        'btnCandidatos
+        '
+        Me.btnCandidatos.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnCandidatos.Enabled = False
+        Me.btnCandidatos.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnCandidatos.Location = New System.Drawing.Point(105, 312)
+        Me.btnCandidatos.Name = "btnCandidatos"
+        Me.btnCandidatos.Size = New System.Drawing.Size(75, 35)
+        Me.btnCandidatos.TabIndex = 54
+        Me.btnCandidatos.Text = "Candidatos"
+        Me.btnCandidatos.UseVisualStyleBackColor = False
+        '
+        'PictureBox77
+        '
+        Me.PictureBox77.Image = CType(resources.GetObject("PictureBox77.Image"), System.Drawing.Image)
+        Me.PictureBox77.Location = New System.Drawing.Point(104, 261)
+        Me.PictureBox77.Name = "PictureBox77"
+        Me.PictureBox77.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox77.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox77.TabIndex = 53
+        Me.PictureBox77.TabStop = False
         '
         'PictureBox41
         '
@@ -3158,6 +3293,11 @@ Partial Class Form1
         Me.Panel5.PerformLayout()
         Me.TabControl4.ResumeLayout(False)
         Me.TabPage9.ResumeLayout(False)
+        CType(Me.PictureBox81, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox80, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox79, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox78, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox77, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox41, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox75, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox74, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3422,4 +3562,14 @@ Partial Class Form1
     Friend WithEvents btnSubAreas As Button
     Friend WithEvents PictureBox76 As PictureBox
     Friend WithEvents btnGrupoExamenes As Button
+    Friend WithEvents btnCandidatos As Button
+    Friend WithEvents PictureBox77 As PictureBox
+    Friend WithEvents btnConstanciaPlantillas As Button
+    Friend WithEvents PictureBox81 As PictureBox
+    Friend WithEvents btnReporteria As Button
+    Friend WithEvents PictureBox80 As PictureBox
+    Friend WithEvents btnTipoPermiso As Button
+    Friend WithEvents PictureBox79 As PictureBox
+    Friend WithEvents btnCapacitaciones As Button
+    Friend WithEvents PictureBox78 As PictureBox
 End Class

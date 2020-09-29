@@ -13,6 +13,7 @@ Public Class ClsEmpleados
     'Constructor
     Public Sub New()
 
+
     End Sub
     Public Property codigo_ As Integer
         Get
@@ -1081,6 +1082,27 @@ Public Class ClsEmpleados
             da.Fill(dt)
             objCon.cerrarConexion()
             Return dt
+        End Using
+    End Function
+
+    'Comparar Nombre
+    Public Function CompararNombre() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmCompararNombreEmpleado"
+            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = NombreCompleto_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
         End Using
     End Function
 End Class

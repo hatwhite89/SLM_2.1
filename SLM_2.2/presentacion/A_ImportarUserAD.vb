@@ -19,6 +19,23 @@ Public Class A_ImportarUserAD
             btnCargar.Enabled = False
             btnImportar.Enabled = True
 
+            Dim data As New DataTable
+            Dim row As DataRow
+            Dim users As New ClsUsuario
+            'Eliminar usuarios ingresados
+
+            data = users.listarUsuarios
+
+
+            For mg = 0 To dtUsuariosAD.Rows.Count - 1
+
+                For es = 0 To data.Rows.Count - 1
+
+                Next
+
+            Next
+
+
         Catch ex As Exception
 
         End Try
@@ -35,6 +52,11 @@ Public Class A_ImportarUserAD
         Try
 
             Dim nombre As String
+            Dim empleado As New ClsEmpleados
+            Dim user As New ClsUsuario
+            Dim perfil As New ClsPerfilesUsuario
+            Dim dt As New DataTable
+            Dim row As DataRow
 
             For a = 0 To dtUsuariosAD.Rows.Count - 1
 
@@ -42,13 +64,38 @@ Public Class A_ImportarUserAD
                     'concatenar y capturar nombre de usuarios seleccionados
                     nombre = dtUsuariosAD.Rows(a).Cells(1).Value.ToString + " " + dtUsuariosAD.Rows(a).Cells(2).Value.ToString
                     'consultar existencia de nombre de usuario en base de datos
+                    With empleado
 
-                End If
+                        .NombreCompleto_ = nombre
+                        dt = .CompararNombre()
+                        row = dt.Rows(0)
+                    End With
+
+                    If dt.Rows.Count < 0 Then ' validar que exista empleado
+                        MsgBox("No se encuentro el empleado: " + nombre)
+                    Else
+
+                        dt = perfil.PerfilDefault
+                        row = dt.Rows(0)
+                        With user
+
+                            .Usuario_ = dtUsuariosAD.Rows(a).Cells(3).Value
+                            .password_ = "#changepass#"
+                            .Estad_o = 1
+                            .Cod_Perfil = row("cod")
+                            .perfil_ = row("codBreve")
+                            .registrarNuevoUsuario()
+
+                        End With
+
+                    End If ' validar que exista empleado
+
+                End If 'Agregar filas con check
 
             Next
 
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
     End Sub

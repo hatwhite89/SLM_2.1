@@ -44,6 +44,12 @@ Partial Class frmPagos
         Me.lblComentario = New System.Windows.Forms.Label()
         Me.txtComentario = New System.Windows.Forms.TextBox()
         Me.dtDetallePagos = New System.Windows.Forms.DataGridView()
+        Me.NroFac = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Moneda = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ValorPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FORMAP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NroCheque = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnBuscarFormaPago = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -57,14 +63,8 @@ Partial Class frmPagos
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnRegresar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.NroFac = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Moneda = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ValorPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FORMAP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NroCheque = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dtDetallePagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxInfo.SuspendLayout()
@@ -91,7 +91,7 @@ Partial Class frmPagos
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'lblNro
@@ -242,7 +242,6 @@ Partial Class frmPagos
         '
         Me.txtComentario.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtComentario.Enabled = False
         Me.txtComentario.Location = New System.Drawing.Point(77, 90)
         Me.txtComentario.Name = "txtComentario"
         Me.txtComentario.Size = New System.Drawing.Size(690, 20)
@@ -264,6 +263,45 @@ Partial Class frmPagos
         Me.dtDetallePagos.Name = "dtDetallePagos"
         Me.dtDetallePagos.Size = New System.Drawing.Size(765, 209)
         Me.dtDetallePagos.TabIndex = 20
+        '
+        'NroFac
+        '
+        Me.NroFac.HeaderText = "Nro.Fac"
+        Me.NroFac.Name = "NroFac"
+        Me.NroFac.Width = 50
+        '
+        'Proveedor
+        '
+        Me.Proveedor.HeaderText = "Proveedor"
+        Me.Proveedor.Name = "Proveedor"
+        Me.Proveedor.ReadOnly = True
+        Me.Proveedor.Width = 300
+        '
+        'Moneda
+        '
+        Me.Moneda.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Moneda.HeaderText = "Moneda"
+        Me.Moneda.Name = "Moneda"
+        Me.Moneda.ReadOnly = True
+        '
+        'ValorPago
+        '
+        Me.ValorPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ValorPago.HeaderText = "Monto"
+        Me.ValorPago.Name = "ValorPago"
+        Me.ValorPago.ReadOnly = True
+        '
+        'FORMAP
+        '
+        Me.FORMAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.FORMAP.HeaderText = "F.P"
+        Me.FORMAP.Name = "FORMAP"
+        '
+        'NroCheque
+        '
+        Me.NroCheque.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.NroCheque.HeaderText = "Nro.Cheque"
+        Me.NroCheque.Name = "NroCheque"
         '
         'btnBuscarFormaPago
         '
@@ -451,17 +489,6 @@ Partial Class frmPagos
         Me.Panel1.Size = New System.Drawing.Size(801, 42)
         Me.Panel1.TabIndex = 28
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(9, 8)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(158, 25)
-        Me.Label3.TabIndex = 29
-        Me.Label3.Text = "Generar Pago"
-        '
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -477,44 +504,16 @@ Partial Class frmPagos
         Me.Button1.Text = "Cerrar"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'NroFac
+        'Label3
         '
-        Me.NroFac.HeaderText = "Nro.Fac"
-        Me.NroFac.Name = "NroFac"
-        Me.NroFac.Width = 50
-        '
-        'Proveedor
-        '
-        Me.Proveedor.HeaderText = "Proveedor"
-        Me.Proveedor.Name = "Proveedor"
-        Me.Proveedor.ReadOnly = True
-        Me.Proveedor.Width = 300
-        '
-        'Moneda
-        '
-        Me.Moneda.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Moneda.HeaderText = "Moneda"
-        Me.Moneda.Name = "Moneda"
-        Me.Moneda.ReadOnly = True
-        '
-        'ValorPago
-        '
-        Me.ValorPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ValorPago.HeaderText = "Monto"
-        Me.ValorPago.Name = "ValorPago"
-        Me.ValorPago.ReadOnly = True
-        '
-        'FORMAP
-        '
-        Me.FORMAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.FORMAP.HeaderText = "F.P"
-        Me.FORMAP.Name = "FORMAP"
-        '
-        'NroCheque
-        '
-        Me.NroCheque.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.NroCheque.HeaderText = "Nro.Cheque"
-        Me.NroCheque.Name = "NroCheque"
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(9, 8)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(158, 25)
+        Me.Label3.TabIndex = 29
+        Me.Label3.Text = "Generar Pago"
         '
         'frmPagos
         '
