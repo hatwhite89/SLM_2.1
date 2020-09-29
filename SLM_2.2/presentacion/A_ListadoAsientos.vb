@@ -79,7 +79,6 @@
 
     Private Sub dtAsientos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtAsientos.CellDoubleClick
 
-
         Try
             Dim dt As DataTable
             Dim row As DataRow
@@ -91,6 +90,7 @@
             frmAsientos.dtpFecha.Value = row("fecha")
             frmAsientos.txtTexto.Text = row("descripcion")
             frmAsientos.lblCodAsiento.Text = row("cod_asiento")
+            frmAsientos.chkAnular.Checked = row("estado")
             frmAsientos.lblForm.Text = "Listado"
             Me.Close()
             frmAsientos.Show()

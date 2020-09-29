@@ -35,6 +35,13 @@ Public Class A_ImportarUserAD
         Try
 
             Dim nombre As String
+            Dim empleado As New ClsEmpleados
+            Dim user As New ClsUsuario
+            Dim perfil As New ClsPerfilesUsuario
+            Dim dt As New DataTable
+            Dim row As DataRow
+
+
 
             For a = 0 To dtUsuariosAD.Rows.Count - 1
 
@@ -42,6 +49,26 @@ Public Class A_ImportarUserAD
                     'concatenar y capturar nombre de usuarios seleccionados
                     nombre = dtUsuariosAD.Rows(a).Cells(1).Value.ToString + " " + dtUsuariosAD.Rows(a).Cells(2).Value.ToString
                     'consultar existencia de nombre de usuario en base de datos
+                    With empleado
+
+                        .NombreCompleto_ = nombre
+                        dt = .CompararNombre()
+                        row = dt.Rows(0)
+                    End With
+
+
+
+
+                    With user
+
+                        .Usuario_ = dtUsuariosAD.Rows(a).Cells(3).Value
+                        .password_ = "#changepass#"
+                        .Estad_o = 1
+                        .Cod_Perfil =
+                            .perfil_ =
+
+                    End With
+
 
                 End If
 

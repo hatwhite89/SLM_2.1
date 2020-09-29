@@ -185,6 +185,7 @@
                     .Descrip = txtTexto.Text
                     .Fecha_ = dtpFecha.Value
                     .Campo_Llave = 0
+                    .Estado_ = chkAnular.Checked
 
                     If .registrarAsiento() = 1 Then
                         dt = .capturarCodAsiento()
@@ -195,6 +196,7 @@
                         txtNro.Text = row("cod_asiento")
                         txtTexto.Text = row("descripcion")
                         dtpFecha.Value = row("fecha")
+                        chkAnular.Checked = row("estado")
 
                         'registro de detalle de asiento 
 
@@ -215,15 +217,13 @@
 
                     End If
 
-
-
-
                     Try
                         .Cod_Periodo = 1
                         .Descrip = txtTexto.Text
                         .Fecha_ = dtpFecha.Value
                         .Campo_Llave = Convert.ToInt32(lblCodAsiento.Text)
                         .Cod_ = Convert.ToInt32(lblCodAsiento.Text)
+                        .Estado_ = chkAnular.Checked
 
                         .ActualizarAsiento()
                     Catch ex As Exception
@@ -232,6 +232,7 @@
 
                     MsgBox("Se registro exitosamente.")
                     Limpiar()
+
                 End With
 
             End If
@@ -406,6 +407,7 @@
                     .Descrip = txtTexto.Text
                     .Fecha_ = dtpFecha.Value
                     .Campo_Llave = Convert.ToInt32(txtNro.Text)
+                    .Estado_ = chkAnular.Checked
                     .ActualizarAsiento()
                 End With
 

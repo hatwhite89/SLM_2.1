@@ -70,6 +70,9 @@ Partial Class frmDeposito
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtBuscaCodigo = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxInfoDepo.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -366,6 +369,7 @@ Partial Class frmDeposito
         '
         'chkAnular
         '
+        Me.chkAnular.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.chkAnular.AutoSize = True
         Me.chkAnular.Location = New System.Drawing.Point(396, 208)
         Me.chkAnular.Name = "chkAnular"
@@ -468,6 +472,9 @@ Partial Class frmDeposito
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.txtBuscaCodigo)
+        Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.dtpFechaBuscar)
         Me.GroupBox1.Controls.Add(Me.btnCancelar)
         Me.GroupBox1.Controls.Add(Me.txtBusqueda)
@@ -475,7 +482,7 @@ Partial Class frmDeposito
         Me.GroupBox1.Controls.Add(Me.dtDepositos)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 319)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(694, 262)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 332)
         Me.GroupBox1.TabIndex = 75
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Depositos"
@@ -483,9 +490,9 @@ Partial Class frmDeposito
         'dtpFechaBuscar
         '
         Me.dtpFechaBuscar.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaBuscar.Location = New System.Drawing.Point(401, 19)
+        Me.dtpFechaBuscar.Location = New System.Drawing.Point(371, 40)
         Me.dtpFechaBuscar.Name = "dtpFechaBuscar"
-        Me.dtpFechaBuscar.Size = New System.Drawing.Size(96, 20)
+        Me.dtpFechaBuscar.Size = New System.Drawing.Size(150, 20)
         Me.dtpFechaBuscar.TabIndex = 22
         '
         'btnCancelar
@@ -494,7 +501,7 @@ Partial Class frmDeposito
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCancelar.BackColor = System.Drawing.Color.White
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(613, 18)
+        Me.btnCancelar.Location = New System.Drawing.Point(613, 37)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 21
@@ -503,20 +510,21 @@ Partial Class frmDeposito
         '
         'txtBusqueda
         '
-        Me.txtBusqueda.Location = New System.Drawing.Point(53, 21)
+        Me.txtBusqueda.Location = New System.Drawing.Point(13, 40)
         Me.txtBusqueda.MaxLength = 50
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(111, 20)
+        Me.txtBusqueda.Size = New System.Drawing.Size(150, 20)
         Me.txtBusqueda.TabIndex = 20
+        Me.txtBusqueda.Tag = ""
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 23)
+        Me.Label2.Location = New System.Drawing.Point(10, 24)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(43, 13)
+        Me.Label2.Size = New System.Drawing.Size(153, 13)
         Me.Label2.TabIndex = 19
-        Me.Label2.Text = "Buscar:"
+        Me.Label2.Text = "Buscar (Usuario o Comentario):"
         '
         'dtDepositos
         '
@@ -530,11 +538,11 @@ Partial Class frmDeposito
         Me.dtDepositos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtDepositos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDepositos.GridColor = System.Drawing.Color.White
-        Me.dtDepositos.Location = New System.Drawing.Point(12, 51)
+        Me.dtDepositos.Location = New System.Drawing.Point(12, 66)
         Me.dtDepositos.Name = "dtDepositos"
         Me.dtDepositos.ReadOnly = True
         Me.dtDepositos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtDepositos.Size = New System.Drawing.Size(676, 202)
+        Me.dtDepositos.Size = New System.Drawing.Size(676, 260)
         Me.dtDepositos.TabIndex = 14
         '
         'Panel1
@@ -577,12 +585,39 @@ Partial Class frmDeposito
         Me.Label1.TabIndex = 77
         Me.Label1.Text = "Depositos Bancarios"
         '
+        'txtBuscaCodigo
+        '
+        Me.txtBuscaCodigo.Location = New System.Drawing.Point(193, 40)
+        Me.txtBuscaCodigo.MaxLength = 50
+        Me.txtBuscaCodigo.Name = "txtBuscaCodigo"
+        Me.txtBuscaCodigo.Size = New System.Drawing.Size(150, 20)
+        Me.txtBuscaCodigo.TabIndex = 24
+        Me.txtBuscaCodigo.Tag = ""
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(190, 24)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(102, 13)
+        Me.Label3.TabIndex = 23
+        Me.Label3.Text = "Buscar (Correlativo):"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(368, 23)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(82, 13)
+        Me.Label4.TabIndex = 25
+        Me.Label4.Text = "Buscar (Fecha):"
+        '
         'frmDeposito
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(718, 593)
+        Me.ClientSize = New System.Drawing.Size(718, 663)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoDepo)
         Me.Controls.Add(Me.MenuStrip1)
@@ -653,4 +688,7 @@ Partial Class frmDeposito
     Friend WithEvents chkAnular As CheckBox
     Friend WithEvents btnCerrar As Button
     Friend WithEvents dtpFechaBuscar As DateTimePicker
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtBuscaCodigo As TextBox
+    Friend WithEvents Label3 As Label
 End Class
