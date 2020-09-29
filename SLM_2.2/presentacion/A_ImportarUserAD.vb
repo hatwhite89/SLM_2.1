@@ -56,18 +56,26 @@ Public Class A_ImportarUserAD
                         row = dt.Rows(0)
                     End With
 
+                    If dt.Rows.Count < 0 Then
+                        MsgBox("No se encuentro el empleado: " + nombre)
+                    Else
+
+                        With user
+
+                            .Usuario_ = dtUsuariosAD.Rows(a).Cells(3).Value
+                            .password_ = "#changepass#"
+                            .Estad_o = 1
+                            '.Cod_Perfil =
+                            '    .perfil_ =
+
+
+                        End With
+
+
+                    End If
 
 
 
-                    With user
-
-                        .Usuario_ = dtUsuariosAD.Rows(a).Cells(3).Value
-                        .password_ = "#changepass#"
-                        .Estad_o = 1
-                        .Cod_Perfil =
-                            .perfil_ =
-
-                    End With
 
 
                 End If
