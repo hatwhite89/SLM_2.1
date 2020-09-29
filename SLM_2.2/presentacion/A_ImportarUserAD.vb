@@ -6,10 +6,11 @@ Public Class A_ImportarUserAD
         Me.Close()
     End Sub
 
-
-
     Private Sub A_ImportarUserAD_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         alternarColoFilasDatagridview(dtUsuariosAD)
+        dtUsuariosAD.Rows.Clear()
+        btnCargar.Enabled = True
+        btnImportar.Enabled = False
 
     End Sub
 
@@ -17,24 +18,31 @@ Public Class A_ImportarUserAD
         Try
             ImportarUsuariosAD()
             btnCargar.Enabled = False
+            btnActualizar.Enabled = True
             btnImportar.Enabled = True
 
             Dim data As New DataTable
             Dim row As DataRow
             Dim users As New ClsUsuario
-            'Eliminar usuarios ingresados
 
+            'Eliminar usuarios de AD que estan en SLM
             data = users.listarUsuarios
-
 
             For mg = 0 To dtUsuariosAD.Rows.Count - 1
 
                 For es = 0 To data.Rows.Count - 1
 
+
+                    If dtUsuariosAD.Rows(mg).Cells(3).Value = data.Rows(es).Item(1).ToString Then
+
+                        dtUsuariosAD.Rows.Remove(dtUsuariosAD.Rows(mg))
+
+                    End If
+
+
                 Next
 
             Next
-
 
         Catch ex As Exception
 
@@ -55,8 +63,12 @@ Public Class A_ImportarUserAD
             Dim empleado As New ClsEmpleados
             Dim user As New ClsUsuario
             Dim perfil As New ClsPerfilesUsuario
-            Dim dt As New DataTable
-            Dim row As DataRow
+            Dim dt, dtP As New DataTable
+            Dim row, rowP As DataRow
+
+            dtP = perfil.PerfilDefault
+            rowP = dtP.Rows(0)
+            MsgBox(rowP("cod"))
 
             For a = 0 To dtUsuariosAD.Rows.Count - 1
 
@@ -71,31 +83,24 @@ Public Class A_ImportarUserAD
                         row = dt.Rows(0)
                     End With
 
-                    If dt.Rows.Count < 0 Then ' validar que exista empleado
-                        MsgBox("No se encuentro el empleado: " + nombre)
-                    Else
+                    With user
 
-                        dt = perfil.PerfilDefault
-                        row = dt.Rows(0)
-                        With user
-
-                            .Usuario_ = dtUsuariosAD.Rows(a).Cells(3).Value
-                            .password_ = "#changepass#"
-                            .Estad_o = 1
-                            .Cod_Perfil = row("cod")
-                            .perfil_ = row("codBreve")
-                            .registrarNuevoUsuario()
+                        .Usuario_ = dtUsuariosAD.Rows(a).Cells(3).Value
+                        .password_ = "#changepass#"
+                        .Estad_o = 1
+                        .Cod_Perfil = Convert.ToInt32(rowP("cod"))
+                        .perfil_ = rowP("codBreve")
+                        .Cod_Empleado = Convert.ToInt32(row("codigo"))
+                        .registrarNuevoUsuario()
 
                         End With
-
-                    End If ' validar que exista empleado
 
                 End If 'Agregar filas con check
 
             Next
-
+            MsgBox("Se finalizó la importación.")
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox("No se encontró el empleado en la BD. Detalle de error: " + ex.Message)
         End Try
 
     End Sub
@@ -108,5 +113,41 @@ Public Class A_ImportarUserAD
                 dtUsuariosAD.Rows(e.RowIndex).Cells(0).Value = False
             End If
         End If
+    End Sub
+
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        Try
+
+            dtUsuariosAD.Rows.Clear()
+            ImportarUsuariosAD()
+            btnCargar.Enabled = False
+            btnImportar.Enabled = True
+
+            Dim data As New DataTable
+            Dim row As DataRow
+            Dim users As New ClsUsuario
+
+            'Eliminar usuarios de AD que estan en SLM
+            data = users.listarUsuarios
+
+            For mg = 0 To dtUsuariosAD.Rows.Count - 1
+
+                For es = 0 To data.Rows.Count - 1
+
+
+                    If dtUsuariosAD.Rows(mg).Cells(3).Value = data.Rows(es).Item(1).ToString Then
+
+                        dtUsuariosAD.Rows.Remove(dtUsuariosAD.Rows(mg))
+
+                    End If
+
+
+                Next
+
+            Next
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
