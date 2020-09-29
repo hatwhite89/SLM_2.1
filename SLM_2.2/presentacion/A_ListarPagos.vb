@@ -44,7 +44,6 @@
             frmPagos.txtCtaBanco.Text = row("ctaBanco")
             frmPagos.dtpFechaT.Value = row("fechaTransferencia")
             frmPagos.chkPagado.Checked = row("pagado")
-            frmPagos.txtCodOrden.Text = row("codOrden")
             frmPagos.lblTotalSuma.Text = row("sumaTotal")
 
             'Listar detalle de pago

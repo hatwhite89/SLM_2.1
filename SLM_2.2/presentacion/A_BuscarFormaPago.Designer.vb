@@ -83,12 +83,11 @@ Partial Class A_BuscarFormaPago
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(718, 335)
-        Me.ControlBox = False
         Me.Controls.Add(Me.lblJC)
         Me.Controls.Add(Me.dtFormasPago)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtCodigo)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
         Me.Name = "A_BuscarFormaPago"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

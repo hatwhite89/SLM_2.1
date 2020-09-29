@@ -13,6 +13,7 @@ Public Class ClsEmpleados
     'Constructor
     Public Sub New()
 
+
     End Sub
     Public Property codigo_ As Integer
         Get

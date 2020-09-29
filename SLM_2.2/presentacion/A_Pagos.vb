@@ -172,7 +172,6 @@
                             .Fecha_Pago = dtpFechaP.Value
                             .Referenci_a = txtReferencia.Text
                             .Paga_do = chkPagado.Checked
-                            .Cod_Orden = txtCodOrden.Text
                             .Suma_Total = lblTotalSuma.Text
                             'Ingresar registro en base de datos
                             .registrarNuevoPago()
@@ -417,7 +416,6 @@
                             .Fecha_Pago = dtpFechaP.Value
                             .Referenci_a = txtReferencia.Text
                             .Paga_do = chkPagado.Checked
-                            .Cod_Orden = txtCodOrden.Text
                             .Suma_Total = lblTotalSuma.Text
 
                             'Ingresar registro en base de datos

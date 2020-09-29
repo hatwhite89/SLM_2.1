@@ -5,6 +5,7 @@ Public Class ClsAsientoContable
     Dim cod, codPeriodo, campoLlave As Integer
     Dim descripcion As String
     Dim fecha As Date
+    Dim estado As Boolean
 
     ':::::::::::::::::::::: Constructor ::::::::::::::::::::::
     Public Sub New()
@@ -62,6 +63,15 @@ Public Class ClsAsientoContable
         End Set
     End Property
 
+    'Estado
+    Public Property Estado_ As Boolean
+        Get
+            Return estado
+        End Get
+        Set(value As Boolean)
+            estado = value
+        End Set
+    End Property
     ':::::::::::::::::::::: Funciones de Mantenimiento ::::::::::::::::::
 
     'Registrar Asiento
@@ -95,6 +105,11 @@ Public Class ClsAsientoContable
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "campoLlave"
         sqlpar.Value = Campo_Llave
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado"
+        sqlpar.Value = Estado_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -152,6 +167,11 @@ Public Class ClsAsientoContable
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "campoLlave"
         sqlpar.Value = Campo_Llave
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado"
+        sqlpar.Value = Estado_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
