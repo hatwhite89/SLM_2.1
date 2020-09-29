@@ -125,6 +125,11 @@ Public Class ClsUsuario
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigo"
+        sqlpar.Value = Cod_Empleado
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -183,6 +188,11 @@ Public Class ClsUsuario
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codPerfil"
         sqlpar.Value = Cod_Perfil
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigo"
+        sqlpar.Value = Cod_Empleado
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
