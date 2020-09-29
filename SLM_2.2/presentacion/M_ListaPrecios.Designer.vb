@@ -24,6 +24,11 @@ Partial Class M_ListaPrecios
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_ListaPrecios))
         Me.gbxclasificacion = New System.Windows.Forms.GroupBox()
+        Me.txtPorcentaje = New System.Windows.Forms.TextBox()
+        Me.lblPorcentaje = New System.Windows.Forms.Label()
+        Me.rbtnEfectivoNo = New System.Windows.Forms.RadioButton()
+        Me.rbtnEfectivoSi = New System.Windows.Forms.RadioButton()
+        Me.lblSolicitaEfectivo = New System.Windows.Forms.Label()
         Me.lblcodeT = New System.Windows.Forms.Label()
         Me.btnbuscarTermino = New System.Windows.Forms.Button()
         Me.txtDescripcionTermino = New System.Windows.Forms.TextBox()
@@ -48,11 +53,6 @@ Partial Class M_ListaPrecios
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.btncancelar = New System.Windows.Forms.Button()
-        Me.rbtnEfectivoNo = New System.Windows.Forms.RadioButton()
-        Me.rbtnEfectivoSi = New System.Windows.Forms.RadioButton()
-        Me.lblSolicitaEfectivo = New System.Windows.Forms.Label()
-        Me.txtPorcentaje = New System.Windows.Forms.TextBox()
-        Me.lblPorcentaje = New System.Windows.Forms.Label()
         Me.gbxclasificacion.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -91,6 +91,60 @@ Partial Class M_ListaPrecios
         Me.gbxclasificacion.TabIndex = 119
         Me.gbxclasificacion.TabStop = False
         Me.gbxclasificacion.Text = "REGISTRAR LISTA DE PRECIOS"
+        '
+        'txtPorcentaje
+        '
+        Me.txtPorcentaje.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtPorcentaje.Location = New System.Drawing.Point(524, 164)
+        Me.txtPorcentaje.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtPorcentaje.MaxLength = 20
+        Me.txtPorcentaje.Name = "txtPorcentaje"
+        Me.txtPorcentaje.Size = New System.Drawing.Size(183, 22)
+        Me.txtPorcentaje.TabIndex = 160
+        Me.txtPorcentaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblPorcentaje
+        '
+        Me.lblPorcentaje.AutoSize = True
+        Me.lblPorcentaje.Location = New System.Drawing.Point(429, 164)
+        Me.lblPorcentaje.Name = "lblPorcentaje"
+        Me.lblPorcentaje.Size = New System.Drawing.Size(76, 17)
+        Me.lblPorcentaje.TabIndex = 159
+        Me.lblPorcentaje.Text = "Porcentaje"
+        '
+        'rbtnEfectivoNo
+        '
+        Me.rbtnEfectivoNo.AutoSize = True
+        Me.rbtnEfectivoNo.Checked = True
+        Me.rbtnEfectivoNo.Location = New System.Drawing.Point(292, 162)
+        Me.rbtnEfectivoNo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnEfectivoNo.Name = "rbtnEfectivoNo"
+        Me.rbtnEfectivoNo.Size = New System.Drawing.Size(47, 21)
+        Me.rbtnEfectivoNo.TabIndex = 158
+        Me.rbtnEfectivoNo.TabStop = True
+        Me.rbtnEfectivoNo.Text = "No"
+        Me.rbtnEfectivoNo.UseVisualStyleBackColor = True
+        '
+        'rbtnEfectivoSi
+        '
+        Me.rbtnEfectivoSi.AutoSize = True
+        Me.rbtnEfectivoSi.Location = New System.Drawing.Point(156, 164)
+        Me.rbtnEfectivoSi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnEfectivoSi.Name = "rbtnEfectivoSi"
+        Me.rbtnEfectivoSi.Size = New System.Drawing.Size(41, 21)
+        Me.rbtnEfectivoSi.TabIndex = 157
+        Me.rbtnEfectivoSi.TabStop = True
+        Me.rbtnEfectivoSi.Text = "Si"
+        Me.rbtnEfectivoSi.UseVisualStyleBackColor = True
+        '
+        'lblSolicitaEfectivo
+        '
+        Me.lblSolicitaEfectivo.AutoSize = True
+        Me.lblSolicitaEfectivo.Location = New System.Drawing.Point(30, 164)
+        Me.lblSolicitaEfectivo.Name = "lblSolicitaEfectivo"
+        Me.lblSolicitaEfectivo.Size = New System.Drawing.Size(107, 17)
+        Me.lblSolicitaEfectivo.TabIndex = 156
+        Me.lblSolicitaEfectivo.Text = "Solicita Efectivo"
         '
         'lblcodeT
         '
@@ -351,60 +405,6 @@ Partial Class M_ListaPrecios
         Me.btncancelar.TabIndex = 37
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
-        '
-        'rbtnEfectivoNo
-        '
-        Me.rbtnEfectivoNo.AutoSize = True
-        Me.rbtnEfectivoNo.Checked = True
-        Me.rbtnEfectivoNo.Location = New System.Drawing.Point(292, 162)
-        Me.rbtnEfectivoNo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.rbtnEfectivoNo.Name = "rbtnEfectivoNo"
-        Me.rbtnEfectivoNo.Size = New System.Drawing.Size(47, 21)
-        Me.rbtnEfectivoNo.TabIndex = 158
-        Me.rbtnEfectivoNo.TabStop = True
-        Me.rbtnEfectivoNo.Text = "No"
-        Me.rbtnEfectivoNo.UseVisualStyleBackColor = True
-        '
-        'rbtnEfectivoSi
-        '
-        Me.rbtnEfectivoSi.AutoSize = True
-        Me.rbtnEfectivoSi.Location = New System.Drawing.Point(156, 164)
-        Me.rbtnEfectivoSi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.rbtnEfectivoSi.Name = "rbtnEfectivoSi"
-        Me.rbtnEfectivoSi.Size = New System.Drawing.Size(41, 21)
-        Me.rbtnEfectivoSi.TabIndex = 157
-        Me.rbtnEfectivoSi.TabStop = True
-        Me.rbtnEfectivoSi.Text = "Si"
-        Me.rbtnEfectivoSi.UseVisualStyleBackColor = True
-        '
-        'lblSolicitaEfectivo
-        '
-        Me.lblSolicitaEfectivo.AutoSize = True
-        Me.lblSolicitaEfectivo.Location = New System.Drawing.Point(30, 164)
-        Me.lblSolicitaEfectivo.Name = "lblSolicitaEfectivo"
-        Me.lblSolicitaEfectivo.Size = New System.Drawing.Size(107, 17)
-        Me.lblSolicitaEfectivo.TabIndex = 156
-        Me.lblSolicitaEfectivo.Text = "Solicita Efectivo"
-        '
-        'txtPorcentaje
-        '
-        Me.txtPorcentaje.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtPorcentaje.Location = New System.Drawing.Point(524, 164)
-        Me.txtPorcentaje.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtPorcentaje.MaxLength = 20
-        Me.txtPorcentaje.Name = "txtPorcentaje"
-        Me.txtPorcentaje.Size = New System.Drawing.Size(183, 22)
-        Me.txtPorcentaje.TabIndex = 160
-        Me.txtPorcentaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'lblPorcentaje
-        '
-        Me.lblPorcentaje.AutoSize = True
-        Me.lblPorcentaje.Location = New System.Drawing.Point(429, 164)
-        Me.lblPorcentaje.Name = "lblPorcentaje"
-        Me.lblPorcentaje.Size = New System.Drawing.Size(76, 17)
-        Me.lblPorcentaje.TabIndex = 159
-        Me.lblPorcentaje.Text = "Porcentaje"
         '
         'M_ListaPrecios
         '

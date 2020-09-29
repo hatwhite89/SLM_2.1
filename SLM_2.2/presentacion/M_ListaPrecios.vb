@@ -6,13 +6,18 @@
             txtcodigo.Text = ""
             txtcodigoBreve.Text = ""
             txtDescripcion.Text = ""
-
+            txtcodigoTermino.Clear()
+            txtPorcentaje.Clear()
             rbtnConvenioNo.Checked = True
+            rbtnEfectivoNo.Checked = True
 
             dgbtabla.Rows.Clear()
 
             txtcodigoBreve.ReadOnly = False
             txtDescripcion.ReadOnly = False
+            txtcodigoTermino.ReadOnly = False
+            txtPorcentaje.ReadOnly = False
+
 
             btnmodificar.Enabled = False
             btnguardar.Enabled = True
@@ -230,8 +235,8 @@
                 btnbuscarTermino.Visible = True
                 txtcodigoTermino.Visible = True
                 txtDescripcionTermino.Visible = True
-                lblPorcentaje.Visible = True
-                txtPorcentaje.Visible = True
+                'lblPorcentaje.Visible = True
+                'txtPorcentaje.Visible = True
                 lblSolicitaEfectivo.Visible = True
                 rbtnEfectivoSi.Visible = True
                 rbtnEfectivoNo.Visible = True
@@ -240,8 +245,8 @@
                 btnbuscarTermino.Visible = False
                 txtcodigoTermino.Visible = False
                 txtDescripcionTermino.Visible = False
-                lblPorcentaje.Visible = False
-                txtPorcentaje.Visible = False
+                'lblPorcentaje.Visible = False
+                'txtPorcentaje.Visible = False
                 lblSolicitaEfectivo.Visible = False
                 rbtnEfectivoSi.Visible = False
                 rbtnEfectivoNo.Visible = False
@@ -258,8 +263,8 @@
                 btnbuscarTermino.Visible = True
                 txtcodigoTermino.Visible = True
                 txtDescripcionTermino.Visible = True
-                lblPorcentaje.Visible = True
-                txtPorcentaje.Visible = True
+                'lblPorcentaje.Visible = True
+                'txtPorcentaje.Visible = True
                 lblSolicitaEfectivo.Visible = True
                 rbtnEfectivoSi.Visible = True
                 rbtnEfectivoNo.Visible = True
@@ -268,8 +273,8 @@
                 btnbuscarTermino.Visible = False
                 txtcodigoTermino.Visible = False
                 txtDescripcionTermino.Visible = False
-                lblPorcentaje.Visible = False
-                txtPorcentaje.Visible = False
+                'lblPorcentaje.Visible = False
+                'txtPorcentaje.Visible = False
                 lblSolicitaEfectivo.Visible = False
                 rbtnEfectivoSi.Visible = False
                 rbtnEfectivoNo.Visible = False
@@ -337,6 +342,23 @@
 
     Private Sub rbtnEfectivoSi_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnEfectivoSi.CheckedChanged
         'HABILITAR LA OPCION DE INGRESAR PORCENTAJE
-        'If 
+        If rbtnEfectivoSi.Checked Then
+            lblPorcentaje.Visible = True
+            txtPorcentaje.Visible = True
+        Else
+            lblPorcentaje.Visible = False
+            txtPorcentaje.Visible = False
+        End If
+    End Sub
+
+    Private Sub rbtnEfectivoNo_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnEfectivoNo.CheckedChanged
+        'HABILITAR LA OPCION DE INGRESAR PORCENTAJE
+        If rbtnEfectivoSi.Checked Then
+            lblPorcentaje.Visible = True
+            txtPorcentaje.Visible = True
+        Else
+            lblPorcentaje.Visible = False
+            txtPorcentaje.Visible = False
+        End If
     End Sub
 End Class
