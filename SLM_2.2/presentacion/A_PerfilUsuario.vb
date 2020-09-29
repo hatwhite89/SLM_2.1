@@ -540,6 +540,12 @@
         dtTalentoHumano.Rows.Add("", "Tipo de Deducción", False, "")
         dtTalentoHumano.Rows.Add("", "Area", False, "")
         dtTalentoHumano.Rows.Add("", "Departamento", False, "")
+        dtTalentoHumano.Rows.Add("", "Candidatos", False, "")
+        dtTalentoHumano.Rows.Add("", "Capacitaciones", False, "")
+        dtTalentoHumano.Rows.Add("", "Reportería", False, "")
+        dtTalentoHumano.Rows.Add("", "Constancias y Plantillas", False, "")
+        dtTalentoHumano.Rows.Add("", "Tipo Permiso", False, "")
+
 
         'Procesos de Almacen
         dtAlmacen.Rows.Add("", "Almacenes", False, "")
