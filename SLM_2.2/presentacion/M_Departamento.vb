@@ -1,25 +1,40 @@
 ﻿Public Class M_Departamento
+
+    Dim objDepto As New ClsDepartamento
+
     Private Sub M_Departamento_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             limpiar()
             Me.Close()
         End If
     End Sub
-    Private Sub M_Departamento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim objDepto As New ClsDepartamento
+
+    Private Sub actualizarDepartamento()
         Dim dv As DataView = objDepto.SeleccionarDepartamento.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+    End Sub
+    Private Sub M_Departamento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'ACTUALIZAR LISTADO
+        actualizarDepartamento()
+
+        'AGREGARLE COLOR AL DATAGRIDVIEW
         alternarColoFilasDatagridview(dgbtabla)
+
+        'CAMBIAS NOMBRE COLUMNAS
+        'dgbtabla.Columns("codigoArea").HeaderText = "Código"
+        'dgbtabla.Columns("nombre").HeaderText = "Nombre"
+        'dgbtabla.Columns("goseSueldo").HeaderText = "Gose de Sueldo"
+
+        'DESHABILITAR
+        btnmodificar.Enabled = False
+        btnguardar.Enabled = True
+        btnnuevo.Enabled = True
         txtnombre.ReadOnly = True
         txtcodigo.ReadOnly = True
         txtcodigoArea.ReadOnly = True
         btnArea.Enabled = False
-
-        btnmodificar.Enabled = False
-        btnguardar.Enabled = False
-        btnnuevo.Enabled = True
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -96,7 +111,7 @@
             txtnombre.Text = sinDobleEspacio(txtnombre.Text)
 
             If (Trim(txtnombre.Text) <> "" And Trim(txtcodigoArea.Text) <> "") Then
-                Dim objDepto As New ClsDepartamento
+                'Dim objDepto As New ClsDepartamento
                 With objDepto
                     .Nombre_ = txtnombre.Text
                     .codigoArea_ = txtcodigoArea.Text
@@ -135,7 +150,7 @@
 
             If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "" And Trim(txtcodigoArea.Text) <> "") Then
                 txtnombre.Text = sinDobleEspacio(txtnombre.Text)
-                Dim objDepto As New ClsDepartamento
+                'Dim objDepto As New ClsDepartamento
                 With objDepto
                     .Nombre_ = txtnombre.Text
                     .codigo_ = txtcodigo.Text
@@ -176,7 +191,7 @@
     End Sub
     Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtNombreB.TextChanged
         Try
-            Dim objDepto As New ClsDepartamento
+            'Dim objDepto As New ClsDepartamento
             With objDepto
                 .Nombre_ = txtNombreB.Text
             End With
