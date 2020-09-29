@@ -23,9 +23,12 @@
         alternarColoFilasDatagridview(dgbtabla)
 
         'CAMBIAS NOMBRE COLUMNAS
-        'dgbtabla.Columns("codigoArea").HeaderText = "Código"
-        'dgbtabla.Columns("nombre").HeaderText = "Nombre"
-        'dgbtabla.Columns("goseSueldo").HeaderText = "Gose de Sueldo"
+        dgbtabla.Columns("codigo").HeaderText = "Código"
+        dgbtabla.Columns("nombre").HeaderText = "Nombre"
+        dgbtabla.Columns("area").HeaderText = "Área"
+
+        'OCULTAR COLUMNAS
+        Me.dgbtabla.Columns("codigoArea").Visible = False
 
         'DESHABILITAR
         btnmodificar.Enabled = False
@@ -190,27 +193,37 @@
         Me.Close()
     End Sub
     Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtNombreB.TextChanged
+        'Try
+        '    'Dim objDepto As New ClsDepartamento
+        '    With objDepto
+        '        .Nombre_ = txtNombreB.Text
+        '    End With
+
+        '    If (Trim(txtNombreB.Text) <> "") Then
+        '        Dim dv As DataView = objDepto.BuscarDepartamentoNombre.DefaultView
+        '        dgbtabla.DataSource = dv
+        '        lblcantidad.Text = dv.Count
+        '        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        '    Else
+        '        Dim dv As DataView = objDepto.SeleccionarDepartamento.DefaultView
+        '        dgbtabla.DataSource = dv
+        '        lblcantidad.Text = dv.Count
+        '        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        '    End If
+        'Catch ex As Exception
+
+        'End Try
+
         Try
-            'Dim objDepto As New ClsDepartamento
-            With objDepto
-                .Nombre_ = txtNombreB.Text
-            End With
-
-            If (Trim(txtNombreB.Text) <> "") Then
-                Dim dv As DataView = objDepto.BuscarDepartamentoNombre.DefaultView
-                dgbtabla.DataSource = dv
-                lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
-            Else
-                Dim dv As DataView = objDepto.SeleccionarDepartamento.DefaultView
-                dgbtabla.DataSource = dv
-                lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
-            End If
+            Dim dv As DataView = dgbtabla.DataSource
+            dv.RowFilter = String.Format("nombre Like '%{0}%'", txtNombreB.Text)
+            lblcantidad.Text = dv.Count
+            dgbtabla.DataSource = dv
         Catch ex As Exception
-
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
     Private Sub txtcodigoArea_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoArea.TextChanged
         txtnombreArea.Text = ""
         If (Trim(txtcodigoArea.Text) <> "") Then
@@ -240,7 +253,4 @@
         M_Area.ShowDialog()
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
 End Class
