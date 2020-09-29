@@ -1170,6 +1170,12 @@
     <Compile Include="presentacion\M_Recibo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_ReporteriaTalentoHumano.Designer.vb">
+      <DependentUpon>M_ReporteriaTalentoHumano.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ReporteriaTalentoHumano.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_ReportTipoDePacientes.Designer.vb">
       <DependentUpon>M_ReportTipoDePacientes.vb</DependentUpon>
     </Compile>
@@ -1740,6 +1746,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Recibo.resx">
       <DependentUpon>M_Recibo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ReporteriaTalentoHumano.resx">
+      <DependentUpon>M_ReporteriaTalentoHumano.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ReportTipoDePacientes.resx">
       <DependentUpon>M_ReportTipoDePacientes.vb</DependentUpon>

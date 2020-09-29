@@ -195,6 +195,20 @@ Public Class ClsPerfilesUsuario
         End Using
     End Function
 
+    'Capturar perfil Default
+    'Listar Perfiles 
+    Public Function PerfilDefault() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("A_slmCapturarPerfilDefault", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 
 
 
