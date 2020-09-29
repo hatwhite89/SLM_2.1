@@ -105,7 +105,7 @@
         limpiar()
     End Sub
     Private Sub deshabilitar()
-
+        'Deshabilitar
         dtpEntradaTarde.Enabled = False
         dtpFechaInicial.Enabled = False
         dtpFechaFinal.Enabled = False
