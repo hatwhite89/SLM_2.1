@@ -6,6 +6,7 @@
             Me.Close()
         End If
     End Sub
+
     Private Sub M_TipoPermiso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'ACTUALIZAR LISTADO
         actualizarListadoTipoPermiso()

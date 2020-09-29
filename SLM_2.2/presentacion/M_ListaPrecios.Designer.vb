@@ -29,10 +29,15 @@ Partial Class M_ListaPrecios
         Me.txtDescripcionTermino = New System.Windows.Forms.TextBox()
         Me.txtcodigoTermino = New System.Windows.Forms.TextBox()
         Me.lblTerminoPago = New System.Windows.Forms.Label()
-        Me.rbtnNo = New System.Windows.Forms.RadioButton()
-        Me.rbtnSi = New System.Windows.Forms.RadioButton()
+        Me.rbtnConvenioNo = New System.Windows.Forms.RadioButton()
+        Me.rbtnConvenioSi = New System.Windows.Forms.RadioButton()
         Me.lblTipoConvenio = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codigoListaPrecios = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codigoGrupoItem = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codigoDescuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodigoBreveDescuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.txtcodigoBreve = New System.Windows.Forms.TextBox()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
@@ -43,24 +48,29 @@ Partial Class M_ListaPrecios
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.btncancelar = New System.Windows.Forms.Button()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codigoListaPrecios = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codigoGrupoItem = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codigoDescuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodigoBreveDescuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rbtnEfectivoNo = New System.Windows.Forms.RadioButton()
+        Me.rbtnEfectivoSi = New System.Windows.Forms.RadioButton()
+        Me.lblSolicitaEfectivo = New System.Windows.Forms.Label()
+        Me.txtPorcentaje = New System.Windows.Forms.TextBox()
+        Me.lblPorcentaje = New System.Windows.Forms.Label()
         Me.gbxclasificacion.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbxclasificacion
         '
+        Me.gbxclasificacion.Controls.Add(Me.txtPorcentaje)
+        Me.gbxclasificacion.Controls.Add(Me.lblPorcentaje)
+        Me.gbxclasificacion.Controls.Add(Me.rbtnEfectivoNo)
+        Me.gbxclasificacion.Controls.Add(Me.rbtnEfectivoSi)
+        Me.gbxclasificacion.Controls.Add(Me.lblSolicitaEfectivo)
         Me.gbxclasificacion.Controls.Add(Me.lblcodeT)
         Me.gbxclasificacion.Controls.Add(Me.btnbuscarTermino)
         Me.gbxclasificacion.Controls.Add(Me.txtDescripcionTermino)
         Me.gbxclasificacion.Controls.Add(Me.txtcodigoTermino)
         Me.gbxclasificacion.Controls.Add(Me.lblTerminoPago)
-        Me.gbxclasificacion.Controls.Add(Me.rbtnNo)
-        Me.gbxclasificacion.Controls.Add(Me.rbtnSi)
+        Me.gbxclasificacion.Controls.Add(Me.rbtnConvenioNo)
+        Me.gbxclasificacion.Controls.Add(Me.rbtnConvenioSi)
         Me.gbxclasificacion.Controls.Add(Me.lblTipoConvenio)
         Me.gbxclasificacion.Controls.Add(Me.dgbtabla)
         Me.gbxclasificacion.Controls.Add(Me.txtDescripcion)
@@ -137,30 +147,30 @@ Partial Class M_ListaPrecios
         Me.lblTerminoPago.TabIndex = 151
         Me.lblTerminoPago.Text = "Término Pago"
         '
-        'rbtnNo
+        'rbtnConvenioNo
         '
-        Me.rbtnNo.AutoSize = True
-        Me.rbtnNo.Checked = True
-        Me.rbtnNo.Location = New System.Drawing.Point(291, 116)
-        Me.rbtnNo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.rbtnNo.Name = "rbtnNo"
-        Me.rbtnNo.Size = New System.Drawing.Size(47, 21)
-        Me.rbtnNo.TabIndex = 150
-        Me.rbtnNo.TabStop = True
-        Me.rbtnNo.Text = "No"
-        Me.rbtnNo.UseVisualStyleBackColor = True
+        Me.rbtnConvenioNo.AutoSize = True
+        Me.rbtnConvenioNo.Checked = True
+        Me.rbtnConvenioNo.Location = New System.Drawing.Point(291, 116)
+        Me.rbtnConvenioNo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnConvenioNo.Name = "rbtnConvenioNo"
+        Me.rbtnConvenioNo.Size = New System.Drawing.Size(47, 21)
+        Me.rbtnConvenioNo.TabIndex = 150
+        Me.rbtnConvenioNo.TabStop = True
+        Me.rbtnConvenioNo.Text = "No"
+        Me.rbtnConvenioNo.UseVisualStyleBackColor = True
         '
-        'rbtnSi
+        'rbtnConvenioSi
         '
-        Me.rbtnSi.AutoSize = True
-        Me.rbtnSi.Location = New System.Drawing.Point(155, 118)
-        Me.rbtnSi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.rbtnSi.Name = "rbtnSi"
-        Me.rbtnSi.Size = New System.Drawing.Size(41, 21)
-        Me.rbtnSi.TabIndex = 149
-        Me.rbtnSi.TabStop = True
-        Me.rbtnSi.Text = "Si"
-        Me.rbtnSi.UseVisualStyleBackColor = True
+        Me.rbtnConvenioSi.AutoSize = True
+        Me.rbtnConvenioSi.Location = New System.Drawing.Point(155, 118)
+        Me.rbtnConvenioSi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnConvenioSi.Name = "rbtnConvenioSi"
+        Me.rbtnConvenioSi.Size = New System.Drawing.Size(41, 21)
+        Me.rbtnConvenioSi.TabIndex = 149
+        Me.rbtnConvenioSi.TabStop = True
+        Me.rbtnConvenioSi.Text = "Si"
+        Me.rbtnConvenioSi.UseVisualStyleBackColor = True
         '
         'lblTipoConvenio
         '
@@ -175,14 +185,57 @@ Partial Class M_ListaPrecios
         '
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.codigoListaPrecios, Me.codigoGrupoItem, Me.codigoDescuento, Me.CodigoBreveDescuento})
-        Me.dgbtabla.Location = New System.Drawing.Point(5, 158)
+        Me.dgbtabla.Location = New System.Drawing.Point(5, 204)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
-        Me.dgbtabla.Size = New System.Drawing.Size(917, 357)
+        Me.dgbtabla.Size = New System.Drawing.Size(917, 311)
         Me.dgbtabla.TabIndex = 147
+        '
+        'codigo
+        '
+        Me.codigo.HeaderText = "codigo"
+        Me.codigo.MinimumWidth = 6
+        Me.codigo.Name = "codigo"
+        Me.codigo.ReadOnly = True
+        Me.codigo.Visible = False
+        Me.codigo.Width = 125
+        '
+        'codigoListaPrecios
+        '
+        Me.codigoListaPrecios.HeaderText = "Codigo Lista Precios"
+        Me.codigoListaPrecios.MinimumWidth = 6
+        Me.codigoListaPrecios.Name = "codigoListaPrecios"
+        Me.codigoListaPrecios.ReadOnly = True
+        Me.codigoListaPrecios.Visible = False
+        Me.codigoListaPrecios.Width = 125
+        '
+        'codigoGrupoItem
+        '
+        Me.codigoGrupoItem.HeaderText = "Grupo ó Examen"
+        Me.codigoGrupoItem.MinimumWidth = 6
+        Me.codigoGrupoItem.Name = "codigoGrupoItem"
+        Me.codigoGrupoItem.ReadOnly = True
+        Me.codigoGrupoItem.Width = 125
+        '
+        'codigoDescuento
+        '
+        Me.codigoDescuento.HeaderText = "Codigo Descuento"
+        Me.codigoDescuento.MinimumWidth = 6
+        Me.codigoDescuento.Name = "codigoDescuento"
+        Me.codigoDescuento.ReadOnly = True
+        Me.codigoDescuento.Visible = False
+        Me.codigoDescuento.Width = 125
+        '
+        'CodigoBreveDescuento
+        '
+        Me.CodigoBreveDescuento.HeaderText = "Descuento"
+        Me.CodigoBreveDescuento.MinimumWidth = 6
+        Me.CodigoBreveDescuento.Name = "CodigoBreveDescuento"
+        Me.CodigoBreveDescuento.ReadOnly = True
+        Me.CodigoBreveDescuento.Width = 125
         '
         'txtDescripcion
         '
@@ -299,48 +352,59 @@ Partial Class M_ListaPrecios
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
         '
-        'codigo
+        'rbtnEfectivoNo
         '
-        Me.codigo.HeaderText = "codigo"
-        Me.codigo.MinimumWidth = 6
-        Me.codigo.Name = "codigo"
-        Me.codigo.ReadOnly = True
-        Me.codigo.Visible = False
-        Me.codigo.Width = 125
+        Me.rbtnEfectivoNo.AutoSize = True
+        Me.rbtnEfectivoNo.Checked = True
+        Me.rbtnEfectivoNo.Location = New System.Drawing.Point(292, 162)
+        Me.rbtnEfectivoNo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnEfectivoNo.Name = "rbtnEfectivoNo"
+        Me.rbtnEfectivoNo.Size = New System.Drawing.Size(47, 21)
+        Me.rbtnEfectivoNo.TabIndex = 158
+        Me.rbtnEfectivoNo.TabStop = True
+        Me.rbtnEfectivoNo.Text = "No"
+        Me.rbtnEfectivoNo.UseVisualStyleBackColor = True
         '
-        'codigoListaPrecios
+        'rbtnEfectivoSi
         '
-        Me.codigoListaPrecios.HeaderText = "Codigo Lista Precios"
-        Me.codigoListaPrecios.MinimumWidth = 6
-        Me.codigoListaPrecios.Name = "codigoListaPrecios"
-        Me.codigoListaPrecios.ReadOnly = True
-        Me.codigoListaPrecios.Visible = False
-        Me.codigoListaPrecios.Width = 125
+        Me.rbtnEfectivoSi.AutoSize = True
+        Me.rbtnEfectivoSi.Location = New System.Drawing.Point(156, 164)
+        Me.rbtnEfectivoSi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnEfectivoSi.Name = "rbtnEfectivoSi"
+        Me.rbtnEfectivoSi.Size = New System.Drawing.Size(41, 21)
+        Me.rbtnEfectivoSi.TabIndex = 157
+        Me.rbtnEfectivoSi.TabStop = True
+        Me.rbtnEfectivoSi.Text = "Si"
+        Me.rbtnEfectivoSi.UseVisualStyleBackColor = True
         '
-        'codigoGrupoItem
+        'lblSolicitaEfectivo
         '
-        Me.codigoGrupoItem.HeaderText = "Grupo ó Examen"
-        Me.codigoGrupoItem.MinimumWidth = 6
-        Me.codigoGrupoItem.Name = "codigoGrupoItem"
-        Me.codigoGrupoItem.ReadOnly = True
-        Me.codigoGrupoItem.Width = 125
+        Me.lblSolicitaEfectivo.AutoSize = True
+        Me.lblSolicitaEfectivo.Location = New System.Drawing.Point(30, 164)
+        Me.lblSolicitaEfectivo.Name = "lblSolicitaEfectivo"
+        Me.lblSolicitaEfectivo.Size = New System.Drawing.Size(107, 17)
+        Me.lblSolicitaEfectivo.TabIndex = 156
+        Me.lblSolicitaEfectivo.Text = "Solicita Efectivo"
         '
-        'codigoDescuento
+        'txtPorcentaje
         '
-        Me.codigoDescuento.HeaderText = "Codigo Descuento"
-        Me.codigoDescuento.MinimumWidth = 6
-        Me.codigoDescuento.Name = "codigoDescuento"
-        Me.codigoDescuento.ReadOnly = True
-        Me.codigoDescuento.Visible = False
-        Me.codigoDescuento.Width = 125
+        Me.txtPorcentaje.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtPorcentaje.Location = New System.Drawing.Point(524, 164)
+        Me.txtPorcentaje.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtPorcentaje.MaxLength = 20
+        Me.txtPorcentaje.Name = "txtPorcentaje"
+        Me.txtPorcentaje.Size = New System.Drawing.Size(183, 22)
+        Me.txtPorcentaje.TabIndex = 160
+        Me.txtPorcentaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'CodigoBreveDescuento
+        'lblPorcentaje
         '
-        Me.CodigoBreveDescuento.HeaderText = "Descuento"
-        Me.CodigoBreveDescuento.MinimumWidth = 6
-        Me.CodigoBreveDescuento.Name = "CodigoBreveDescuento"
-        Me.CodigoBreveDescuento.ReadOnly = True
-        Me.CodigoBreveDescuento.Width = 125
+        Me.lblPorcentaje.AutoSize = True
+        Me.lblPorcentaje.Location = New System.Drawing.Point(429, 164)
+        Me.lblPorcentaje.Name = "lblPorcentaje"
+        Me.lblPorcentaje.Size = New System.Drawing.Size(76, 17)
+        Me.lblPorcentaje.TabIndex = 159
+        Me.lblPorcentaje.Text = "Porcentaje"
         '
         'M_ListaPrecios
         '
@@ -373,8 +437,8 @@ Partial Class M_ListaPrecios
     Friend WithEvents txtcodigoBreve As TextBox
     Friend WithEvents txtcodigo As TextBox
     Friend WithEvents dgbtabla As DataGridView
-    Friend WithEvents rbtnNo As RadioButton
-    Friend WithEvents rbtnSi As RadioButton
+    Friend WithEvents rbtnConvenioNo As RadioButton
+    Friend WithEvents rbtnConvenioSi As RadioButton
     Friend WithEvents lblTipoConvenio As Label
     Friend WithEvents txtDescripcionTermino As TextBox
     Friend WithEvents txtcodigoTermino As TextBox
@@ -386,4 +450,9 @@ Partial Class M_ListaPrecios
     Friend WithEvents codigoGrupoItem As DataGridViewTextBoxColumn
     Friend WithEvents codigoDescuento As DataGridViewTextBoxColumn
     Friend WithEvents CodigoBreveDescuento As DataGridViewTextBoxColumn
+    Friend WithEvents txtPorcentaje As TextBox
+    Friend WithEvents lblPorcentaje As Label
+    Friend WithEvents rbtnEfectivoNo As RadioButton
+    Friend WithEvents rbtnEfectivoSi As RadioButton
+    Friend WithEvents lblSolicitaEfectivo As Label
 End Class

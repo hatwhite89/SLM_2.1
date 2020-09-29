@@ -2598,7 +2598,7 @@ Partial Class Form1
         Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage10.Size = New System.Drawing.Size(575, 398)
         Me.TabPage10.TabIndex = 0
-        Me.TabPage10.Text = "Almacen"
+        Me.TabPage10.Text = "Almacén"
         Me.TabPage10.UseVisualStyleBackColor = True
         '
         'PictureBox62

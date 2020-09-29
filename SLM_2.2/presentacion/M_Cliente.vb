@@ -357,8 +357,7 @@ Public Class M_Cliente
             If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And
                 txtcodigoTermino.BackColor = Color.White And txtnombreCategoria.Text <> "" And
                 txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And
-                Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And
-                dtpfechaNacimiento.Text <> "" And Trim(cmbxClasificacion.SelectedValue) <> "") Then
+                Trim(txtapellido1.Text) <> "" And dtpfechaNacimiento.Text <> "" And Trim(cmbxClasificacion.SelectedValue) <> "") Then
                 'If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And txtcodigoTermino.BackColor = Color.White And txtnombreCategoria.Text <> "" And txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtapellido2.Text) <> "" And dtpfechaNacimiento.Text <> "" And txtcodigoClasificacion.Text <> "") Then
 
                 rtxtdireccion.Text = sinDobleEspacio(rtxtdireccion.Text)
@@ -926,4 +925,21 @@ Public Class M_Cliente
         End Try
     End Sub
 
+    Private Sub cmbxClasificacion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbxClasificacion.SelectedValueChanged
+        Try
+            'Seleccionar el termino de pago segun el tipo de clasificacion
+            objTipoCls.Codigo1 = Integer.Parse(cmbxClasificacion.SelectedValue)
+            Dim dt As New DataTable
+            Dim row As DataRow
+            dt = objTipoCls.BuscarTipoClasificacionCode()
+            row = dt.Rows(0)
+            If row("tipoConvenio").ToString Then
+                lblcodeTerminoPago.Text = CStr(row("codigoTerminoPago"))
+            Else
+                txtcodigoTermino.Text = "CO"
+            End If
+        Catch ex As Exception
+            'MsgBox(ex.Message, MsgBoxStyle.Critical, "Validación")
+        End Try
+    End Sub
 End Class

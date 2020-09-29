@@ -452,8 +452,8 @@
 
     Private Sub dtpFecha_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaInicial.TextChanged
         'txtTotalDias.Text = DateDiff(DateInterval.Day, dtpFechaInicial.Value, dtpFechaFinal.Value)
-        Dim difference As TimeSpan = dtpFechaInicial.Value.Subtract(dtpFechaFinal.Value)
-        txtTotalDias.Text = difference.TotalDays
+        Dim difference As TimeSpan = dtpFechaFinal.Value.Subtract(dtpFechaInicial.Value)
+        txtTotalDias.Text = Math.Round(difference.TotalDays, 0)
     End Sub
 
     Private Sub btnTipoPermiso_Click(sender As Object, e As EventArgs) Handles btnTipoPermiso.Click
@@ -462,8 +462,10 @@
     End Sub
 
     Private Sub dtpFechaFinal_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaFinal.TextChanged
-        'txtTotalDias.Text = DateDiff(DateInterval.Day, dtpFechaInicial.Value, dtpFechaFinal.Value)
-        Dim difference As TimeSpan = dtpFechaInicial.Value.Subtract(dtpFechaFinal.Value)
-        txtTotalDias.Text = difference.TotalDays
+        'txtTotalDias.Text = DateDiff(DateInterval.Day, dtpFechaFinal.Value, dtpFechaInicial.Value)
+        Dim difference As TimeSpan = dtpFechaFinal.Value.Subtract(dtpFechaInicial.Value)
+        txtTotalDias.Text = Math.Round(difference.TotalDays, 0)
     End Sub
+
+
 End Class
