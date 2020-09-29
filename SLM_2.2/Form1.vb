@@ -765,4 +765,43 @@
     Private Sub btnFactCompra_Click(sender As Object, e As EventArgs) Handles btnFactCompra.Click
         A_FacturaCompras.Show()
     End Sub
+
+    Private Sub btnCandidatos_Click(sender As Object, e As EventArgs) Handles btnCandidatos.Click
+        Try
+            A_Candidatos.Show()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnCapacitaciones_Click(sender As Object, e As EventArgs) Handles btnCapacitaciones.Click
+        Try
+
+            M_BuscarCapacitaciones.lblform.Text = "M_BuscarCapacitaciones"
+            M_BuscarCapacitaciones.Show()
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnTipoPermiso_Click(sender As Object, e As EventArgs) Handles btnTipoPermiso.Click
+        Try
+            M_TipoPermiso.Show()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnReporteria_Click(sender As Object, e As EventArgs) Handles btnReporteria.Click
+        Try
+            M_ReporteriaTalentoHumano.Show()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnConstanciaPlantillas_Click(sender As Object, e As EventArgs) Handles btnConstanciaPlantillas.Click
+
+    End Sub
 End Class
