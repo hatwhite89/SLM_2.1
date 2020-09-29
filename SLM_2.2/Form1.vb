@@ -765,4 +765,8 @@
     Private Sub btnFactCompra_Click(sender As Object, e As EventArgs) Handles btnFactCompra.Click
         A_FacturaCompras.Show()
     End Sub
+
+    Private Sub btnEvaluacionP_Click(sender As Object, e As EventArgs) Handles btnEvaluacionP.Click
+        frmEvaluacionProveedores.Show()
+    End Sub
 End Class

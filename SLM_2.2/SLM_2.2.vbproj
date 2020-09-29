@@ -190,6 +190,7 @@
     <Compile Include="negocio\ClsEmpleados.vb" />
     <Compile Include="negocio\clsEntradaAlmacen.vb" />
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
+    <Compile Include="negocio\ClsEvaluacionProveedor.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
     <Compile Include="negocio\ClsFormularios.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
@@ -1555,6 +1556,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\frmEntrada.resx">
       <DependentUpon>frmEntrada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\frmEvaluacionProveedores.resx">
+      <DependentUpon>frmEvaluacionProveedores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\frmMovimientoAlmacen.resx">
       <DependentUpon>frmMovimientoAlmacen.vb</DependentUpon>
