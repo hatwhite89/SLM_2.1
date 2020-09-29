@@ -610,10 +610,14 @@ Module ModulosVarios
 
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnUsuarios.Enabled = True
+                                                Else
+                                                    Form1.btnUsuarios.Enabled = False
                                                 End If
                                             ElseIf i = 1 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnPerfiles.Enabled = True
+                                                Else
+                                                    Form1.btnPerfiles.Enabled = False
                                                 End If
 
                                             ElseIf i = 2 Then

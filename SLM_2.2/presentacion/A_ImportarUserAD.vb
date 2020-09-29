@@ -12,7 +12,6 @@ Public Class A_ImportarUserAD
         btnCargar.Enabled = True
         btnImportar.Enabled = False
 
-
     End Sub
 
     Private Sub UI_ButtonMaterial1_Click(sender As Object, e As EventArgs) Handles btnCargar.Click
