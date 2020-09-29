@@ -7,7 +7,7 @@
             txtcodigoBreve.Text = ""
             txtDescripcion.Text = ""
 
-            rbtnNo.Checked = True
+            rbtnConvenioNo.Checked = True
 
             dgbtabla.Rows.Clear()
 
@@ -50,8 +50,8 @@
                 With objPriceList
                     .codigoBreve_ = txtcodigoBreve.Text
                     .descripcion_ = txtDescripcion.Text
-                    .tipoConvenio_ = rbtnSi.Checked
-                    If rbtnSi.Checked Then
+                    .tipoConvenio_ = rbtnConvenioSi.Checked
+                    If rbtnConvenioSi.Checked Then
                         .codigoTerminoPago_ = lblcodeT.Text
                     End If
                 End With
@@ -124,8 +124,8 @@
                     .codigo_ = txtcodigo.Text
                     .codigoBreve_ = txtcodigoBreve.Text
                     .descripcion_ = txtDescripcion.Text
-                    .tipoConvenio_ = rbtnSi.Checked
-                    If rbtnSi.Checked Then
+                    .tipoConvenio_ = rbtnConvenioSi.Checked
+                    If rbtnConvenioSi.Checked Then
                         .codigoTerminoPago_ = lblcodeT.Text
                     End If
                 End With
@@ -222,37 +222,57 @@
         End Try
     End Sub
 
-    Private Sub rbtnSi_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnSi.CheckedChanged
+    Private Sub rbtnSi_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnConvenioSi.CheckedChanged
         'habilito el termino de pago a ingresar
         Try
-            If rbtnSi.Checked Then
+            If rbtnConvenioSi.Checked Then
                 lblTerminoPago.Visible = True
                 btnbuscarTermino.Visible = True
                 txtcodigoTermino.Visible = True
                 txtDescripcionTermino.Visible = True
+                lblPorcentaje.Visible = True
+                txtPorcentaje.Visible = True
+                lblSolicitaEfectivo.Visible = True
+                rbtnEfectivoSi.Visible = True
+                rbtnEfectivoNo.Visible = True
             Else
                 lblTerminoPago.Visible = False
                 btnbuscarTermino.Visible = False
                 txtcodigoTermino.Visible = False
                 txtDescripcionTermino.Visible = False
+                lblPorcentaje.Visible = False
+                txtPorcentaje.Visible = False
+                lblSolicitaEfectivo.Visible = False
+                rbtnEfectivoSi.Visible = False
+                rbtnEfectivoNo.Visible = False
             End If
         Catch ex As Exception
 
         End Try
     End Sub
-    Private Sub rbtnNo_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnNo.CheckedChanged
+    Private Sub rbtnNo_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnConvenioNo.CheckedChanged
         'habilito el termino de pago a ingresar
         Try
-            If rbtnSi.Checked Then
+            If rbtnConvenioSi.Checked Then
                 lblTerminoPago.Visible = True
                 btnbuscarTermino.Visible = True
                 txtcodigoTermino.Visible = True
                 txtDescripcionTermino.Visible = True
+                lblPorcentaje.Visible = True
+                txtPorcentaje.Visible = True
+                lblSolicitaEfectivo.Visible = True
+                rbtnEfectivoSi.Visible = True
+                rbtnEfectivoNo.Visible = True
             Else
                 lblTerminoPago.Visible = False
                 btnbuscarTermino.Visible = False
                 txtcodigoTermino.Visible = False
                 txtDescripcionTermino.Visible = False
+                lblPorcentaje.Visible = False
+                txtPorcentaje.Visible = False
+                lblSolicitaEfectivo.Visible = False
+                rbtnEfectivoSi.Visible = False
+                rbtnEfectivoNo.Visible = False
             End If
         Catch ex As Exception
 
@@ -313,5 +333,10 @@
             lblcodeT.Text = ""
             txtcodigoTermino.BackColor = Color.White
         End If
+    End Sub
+
+    Private Sub rbtnEfectivoSi_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnEfectivoSi.CheckedChanged
+        'HABILITAR LA OPCION DE INGRESAR PORCENTAJE
+        'If 
     End Sub
 End Class

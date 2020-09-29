@@ -43,9 +43,9 @@
 
                     If dgbtabla.Rows(e.RowIndex).Cells(3).Value() Then
                         M_ListaPrecios.lblcodeT.Text = dgbtabla.Rows(e.RowIndex).Cells(4).Value()
-                        M_ListaPrecios.rbtnSi.Checked = True
+                        M_ListaPrecios.rbtnConvenioSi.Checked = True
                     Else
-                        M_ListaPrecios.rbtnNo.Checked = True
+                        M_ListaPrecios.rbtnConvenioNo.Checked = True
                     End If
                     Dim objDetLP As New ClsDetalleListaPrecios
                     objDetLP.codigoListaPrecios_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
