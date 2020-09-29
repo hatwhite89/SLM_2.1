@@ -678,6 +678,12 @@ Module ModulosVarios
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnSolicitudes.Enabled = True
                                                 End If
+                                            ElseIf i = 14 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnEvaluacionP.Enabled = True
+                                                Else
+                                                    Form1.btnEvaluacionP.Enabled = False
+                                                End If
                                             End If
                                         Next
 
@@ -746,8 +752,10 @@ Module ModulosVarios
 
     Sub alternarColoFilasDatagridview(ByVal dgv As DataGridView)
         With dgv
-            .RowsDefaultCellStyle.BackColor = Color.LightBlue
+            .RowsDefaultCellStyle.BackColor = Color.WhiteSmoke
             .AlternatingRowsDefaultCellStyle.BackColor = Color.White
+            .ColumnHeadersDefaultCellStyle.BackColor = Color.PeachPuff
+            .EnableHeadersVisualStyles = False
         End With
     End Sub
 

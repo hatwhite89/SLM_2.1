@@ -556,7 +556,7 @@
         dtAlmacen.Rows.Add("", "Categorias", False, "")
         dtAlmacen.Rows.Add("", "Unidad de Medida", False, "")
         dtAlmacen.Rows.Add("", "Solicitudes", False, "")
-
+        dtAlmacen.Rows.Add("", "Evaluación", False, "")
 
     End Sub
 

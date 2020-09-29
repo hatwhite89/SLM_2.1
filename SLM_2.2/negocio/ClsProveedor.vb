@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class ClsProveedor
 
-    Dim codProveedor, codCate, codTermPago As Integer
+    Dim codProveedor, codCate, codTermPago, codCuenta As Integer
     Dim codBreve, nombreProveedor, telefono, email, direccion, sitioweb, idTributario As String
 
     'Constructor
@@ -39,6 +39,17 @@ Public Class ClsProveedor
             codTermPago = value
         End Set
     End Property
+
+    'Codigo Cuenta
+    Public Property cod_Cuenta As Integer
+        Get
+            Return codCuenta
+        End Get
+        Set(value As Integer)
+            codCuenta = value
+        End Set
+    End Property
+
     'codBreve
     Public Property Cod_Breve As String
         Get
@@ -169,6 +180,11 @@ Public Class ClsProveedor
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codCuenta"
+        sqlpar.Value = cod_Cuenta
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -247,6 +263,11 @@ Public Class ClsProveedor
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codTermPago"
         sqlpar.Value = cod_TermPago
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codCuenta"
+        sqlpar.Value = cod_Cuenta
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

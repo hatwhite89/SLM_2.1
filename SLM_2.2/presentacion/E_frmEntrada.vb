@@ -6,6 +6,7 @@
 
     Private Sub E_frmEntrada_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         alternarColoFilasDatagridview(DataGridView1)
+        alternarColoFilasDatagridview(DataGridView3)
         ComboAlmacen()
         ComboAlmacen2()
 
@@ -68,37 +69,44 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim clsD As New clsDetalleOC
-        Dim clsE As New clsEntradaAlmacen
-        With clsD
-            .IdDetalleOC = Integer.Parse(codigo_detalleoc)
-        End With
+        Try
 
-        With clsE
-            .IdProducto = Integer.Parse(txtCodProc.Text)
-            .CantidadProducto = Double.Parse(txtCantidad.Text)
-            .PrecioUnitario = Double.Parse(txtPrecioUnitario.Text)
-            .LoteProducto = txtLote.Text
-            .Descripcion = RichTextBox1.Text
-            .IdAlmacen = cmbEntrada.SelectedValue
-            .FechaVencimiento = DateTimePicker1.Value
-        End With
-        If clsD.ActualizarDetalleOCEntrada() = "1" Then
 
-            If clsE.RegistrarEntradaAlmacen() = "1" Then
-                MsgBox("Se registro una nueva entrada en el almacen ")
-                txtCodProc.Clear()
-                txtPrecioUnitario.Clear()
-                txtProducto.Clear()
-                txtCantidad.Clear()
-                txtLote.Clear()
-                RichTextBox1.Clear()
+            Dim clsD As New clsDetalleOC
+            Dim clsE As New clsEntradaAlmacen
+            With clsD
+                .IdDetalleOC = Integer.Parse(codigo_detalleoc)
+                .Cantidad_recibida1 = Integer.Parse(txtCantidad.Text)
+            End With
 
+            With clsE
+                .IdProducto = Integer.Parse(txtCodProc.Text)
+
+                .PrecioUnitario = Double.Parse(txtPrecioUnitario.Text)
+                .LoteProducto = txtLote.Text
+                .Descripcion = RichTextBox1.Text
+                .IdAlmacen = cmbEntrada.SelectedValue
+                .FechaVencimiento = DateTimePicker1.Value
+                .CantidadProducto = Integer.Parse(txtCantidad.Text)
+            End With
+            If clsD.ActualizarDetalleOCEntrada() = "1" Then
+
+                If clsE.RegistrarEntradaAlmacen() = "1" Then
+                    MsgBox("Se registro una nueva entrada en el almacen ")
+                    txtCodProc.Clear()
+                    txtPrecioUnitario.Clear()
+                    txtProducto.Clear()
+                    txtCantidad.Clear()
+                    txtLote.Clear()
+                    RichTextBox1.Clear()
+
+                End If
+
+                DetalleOC(TextBox1.Text)
             End If
+        Catch ex As Exception
 
-            DetalleOC(TextBox1.Text)
-        End If
-
+        End Try
     End Sub
 
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs)
@@ -113,7 +121,14 @@
 
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        CargarDGOCFecha()
+        Try
+            Dim clsOCOB As New clsEntradaAlmacen
+            Dim dvOC As DataView = clsOCOB.ListarEntradaInventarioFecha(DateTimePicker2.Value.Date, DateTimePicker1.Value.Date).DefaultView
+            DataGridView3.DataSource = dvOC
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub CargarDGOCFecha()
@@ -132,16 +147,16 @@
         Dim clsOCOB As New clsEntradaAlmacen
         Dim dv As DataView = clsOCOB.ListarEntradaInventarioFecha(DateTimePicker2.Value.Date, DateTimePicker1.Value.Date).DefaultView
 
-        dv.RowFilter = String.Format("CONVERT(lote, System.String) LIKE '%{0}%'", TextBox2.Text)
+        dv.RowFilter = String.Format("CONVERT(lote+nombre_producto+id_producto, System.String) LIKE '%{0}%'", TextBox2.Text)
         DataGridView3.DataSource = dv
 
     End Sub
 
-    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
+    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs)
         Dim clsOCOB As New clsEntradaAlmacen
         Dim dv As DataView = clsOCOB.ListarEntradaInventarioFecha(DateTimePicker2.Value.Date, DateTimePicker1.Value.Date).DefaultView
 
-        dv.RowFilter = String.Format("CONVERT(nombre_producto, System.String) LIKE '%{0}%'", TextBox3.Text)
+
         DataGridView3.DataSource = dv
     End Sub
 
@@ -175,4 +190,40 @@
     Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
 
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        GridAExcel(DataGridView3)
+    End Sub
+    Function GridAExcel(ByVal miDataGridView As DataGridView) As Boolean
+        Dim exApp As New Microsoft.Office.Interop.Excel.Application
+        Dim exLibro As Microsoft.Office.Interop.Excel.Workbook
+        Dim exHoja As Microsoft.Office.Interop.Excel.Worksheet
+        Try
+            exLibro = exApp.Workbooks.Add 'crea el libro de excel 
+            exHoja = exLibro.Worksheets.Add() 'cuenta filas y columnas
+            Dim NCol As Integer = miDataGridView.ColumnCount
+            Dim NRow As Integer = miDataGridView.RowCount
+            For i As Integer = 1 To NCol
+                exHoja.Cells.Item(1, i) = miDataGridView.Columns(i - 1).Name.ToString
+            Next
+            For Fila As Integer = 0 To NRow - 1
+                For Col As Integer = 0 To NCol - 1
+                    exHoja.Cells.Item(Fila + 2, Col + 1) = miDataGridView.Rows(Fila).Cells(Col).Value
+                Next
+            Next
+            exHoja.Rows.Item(1).Font.Bold = 1 'titulo en negritas
+            exHoja.Rows.Item(1).HorizontalAlignment = 3
+            'alineacion al centro
+            exHoja.Columns.AutoFit() 'autoajuste de la columna
+            exHoja.Columns.HorizontalAlignment = 2
+            exApp.Application.Visible = True
+            exHoja = Nothing
+            exLibro = Nothing
+            exApp = Nothing
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al exportar a Excel")
+            Return False
+        End Try
+        Return True
+    End Function
 End Class

@@ -13,7 +13,7 @@ Public Class E_frmSalida
         alternarColoFilasDatagridview(DataGridView1)
         alternarColoFilasDatagridview(DataGridView2)
         alternarColoFilasDatagridview(DataGridView3)
-        alternarColoFilasDatagridview(DataGridView4)
+
     End Sub
     Private Sub CargarDGOCFecha()
         Try
@@ -50,13 +50,13 @@ Public Class E_frmSalida
 
     End Sub
 
-    Private Sub TextBox3_TextChanged_1(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
+    Private Sub TextBox3_TextChanged_1(sender As Object, e As EventArgs)
         Try
             Dim clsOCOB As New ClsSalidaAlmacen
             Dim dvOC As DataView = clsOCOB.ListarSalidaInventarioFecha(DateTimePicker1.Value.Date, DateTimePicker3.Value.Date).DefaultView
 
 
-            dvOC.RowFilter = String.Format("CONVERT(producto, System.String) LIKE '%{0}%'", TextBox3.Text)
+            dvOC.RowFilter = String.Format("CONVERT(producto, System.String) LIKE '%{0}%'", TextBox2.Text)
             DataGridView3.DataSource = dvOC
         Catch ex As Exception
 
@@ -91,15 +91,11 @@ Public Class E_frmSalida
 
     End Sub
 
-    Private Sub GroupBox6_TextChanged(sender As Object, e As EventArgs) Handles GroupBox6.TextChanged
+    Private Sub GroupBox6_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub TextBox13_TextChanged(sender As Object, e As EventArgs) Handles TextBox13.TextChanged
-        Dim clsDeOC As New clsDetalleOI
-        Dim dvOC As DataView = clsDeOC.SalidaConDetalle(TextBox13.Text).DefaultView
-        DataGridView4.DataSource = dvOC
-    End Sub
+
 
     Private Sub cargarVariables()
         Dim clsC As New ClsConnection

@@ -53,19 +53,22 @@ Partial Class frmDeposito
         Me.lblComentario = New System.Windows.Forms.Label()
         Me.txtComentario = New System.Windows.Forms.TextBox()
         Me.gbxInfoDepo = New System.Windows.Forms.GroupBox()
+        Me.chkAnular = New System.Windows.Forms.CheckBox()
         Me.lblCodFPContado = New System.Windows.Forms.Label()
         Me.lblCodFPBanco = New System.Windows.Forms.Label()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnCrearNuevo = New System.Windows.Forms.Button()
         Me.btnBuscarTipoConta = New System.Windows.Forms.Button()
         Me.btnBuscarBanco = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnCrearNuevo = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.dtpFechaBuscar = New System.Windows.Forms.DateTimePicker()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dtDepositos = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.gbxInfoDepo.SuspendLayout()
@@ -123,7 +126,7 @@ Partial Class frmDeposito
         '
         Me.lblFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblFecha.AutoSize = True
-        Me.lblFecha.Location = New System.Drawing.Point(398, 35)
+        Me.lblFecha.Location = New System.Drawing.Point(394, 32)
         Me.lblFecha.Name = "lblFecha"
         Me.lblFecha.Size = New System.Drawing.Size(37, 13)
         Me.lblFecha.TabIndex = 31
@@ -133,7 +136,7 @@ Partial Class frmDeposito
         '
         Me.dtpFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(490, 30)
+        Me.dtpFecha.Location = New System.Drawing.Point(490, 27)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(174, 20)
         Me.dtpFecha.TabIndex = 2
@@ -248,7 +251,7 @@ Partial Class frmDeposito
         '
         Me.lblTDepo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTDepo.AutoSize = True
-        Me.lblTDepo.Location = New System.Drawing.Point(397, 62)
+        Me.lblTDepo.Location = New System.Drawing.Point(393, 54)
         Me.lblTDepo.Name = "lblTDepo"
         Me.lblTDepo.Size = New System.Drawing.Size(88, 13)
         Me.lblTDepo.TabIndex = 48
@@ -258,7 +261,7 @@ Partial Class frmDeposito
         '
         Me.lblTipoDeposito.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTipoDeposito.AutoSize = True
-        Me.lblTipoDeposito.Location = New System.Drawing.Point(493, 63)
+        Me.lblTipoDeposito.Location = New System.Drawing.Point(493, 55)
         Me.lblTipoDeposito.Name = "lblTipoDeposito"
         Me.lblTipoDeposito.Size = New System.Drawing.Size(47, 13)
         Me.lblTipoDeposito.TabIndex = 49
@@ -285,7 +288,7 @@ Partial Class frmDeposito
         '
         Me.lblCajero.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblCajero.AutoSize = True
-        Me.lblCajero.Location = New System.Drawing.Point(398, 89)
+        Me.lblCajero.Location = New System.Drawing.Point(394, 78)
         Me.lblCajero.Name = "lblCajero"
         Me.lblCajero.Size = New System.Drawing.Size(37, 13)
         Me.lblCajero.TabIndex = 70
@@ -294,7 +297,7 @@ Partial Class frmDeposito
         'txtCajero
         '
         Me.txtCajero.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtCajero.Location = New System.Drawing.Point(490, 87)
+        Me.txtCajero.Location = New System.Drawing.Point(490, 76)
         Me.txtCajero.MaxLength = 7
         Me.txtCajero.Name = "txtCajero"
         Me.txtCajero.Size = New System.Drawing.Size(174, 20)
@@ -304,7 +307,7 @@ Partial Class frmDeposito
         '
         Me.lblComentario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblComentario.AutoSize = True
-        Me.lblComentario.Location = New System.Drawing.Point(398, 115)
+        Me.lblComentario.Location = New System.Drawing.Point(394, 109)
         Me.lblComentario.Name = "lblComentario"
         Me.lblComentario.Size = New System.Drawing.Size(60, 13)
         Me.lblComentario.TabIndex = 72
@@ -313,11 +316,11 @@ Partial Class frmDeposito
         'txtComentario
         '
         Me.txtComentario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtComentario.Location = New System.Drawing.Point(395, 132)
+        Me.txtComentario.Location = New System.Drawing.Point(395, 128)
         Me.txtComentario.MaxLength = 100
         Me.txtComentario.Multiline = True
         Me.txtComentario.Name = "txtComentario"
-        Me.txtComentario.Size = New System.Drawing.Size(269, 90)
+        Me.txtComentario.Size = New System.Drawing.Size(269, 68)
         Me.txtComentario.TabIndex = 13
         '
         'gbxInfoDepo
@@ -325,6 +328,7 @@ Partial Class frmDeposito
         Me.gbxInfoDepo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbxInfoDepo.BackColor = System.Drawing.Color.Transparent
+        Me.gbxInfoDepo.Controls.Add(Me.chkAnular)
         Me.gbxInfoDepo.Controls.Add(Me.lblCodFPContado)
         Me.gbxInfoDepo.Controls.Add(Me.lblCodFPBanco)
         Me.gbxInfoDepo.Controls.Add(Me.btnBuscarTipoConta)
@@ -360,10 +364,20 @@ Partial Class frmDeposito
         Me.gbxInfoDepo.TabStop = False
         Me.gbxInfoDepo.Text = "Información de Deposito"
         '
+        'chkAnular
+        '
+        Me.chkAnular.AutoSize = True
+        Me.chkAnular.Location = New System.Drawing.Point(396, 208)
+        Me.chkAnular.Name = "chkAnular"
+        Me.chkAnular.Size = New System.Drawing.Size(101, 17)
+        Me.chkAnular.TabIndex = 82
+        Me.chkAnular.Text = "Anular Depósito"
+        Me.chkAnular.UseVisualStyleBackColor = True
+        '
         'lblCodFPContado
         '
         Me.lblCodFPContado.AutoSize = True
-        Me.lblCodFPContado.Location = New System.Drawing.Point(321, 206)
+        Me.lblCodFPContado.Location = New System.Drawing.Point(282, 206)
         Me.lblCodFPContado.Name = "lblCodFPContado"
         Me.lblCodFPContado.Size = New System.Drawing.Size(68, 13)
         Me.lblCodFPContado.TabIndex = 81
@@ -373,40 +387,12 @@ Partial Class frmDeposito
         'lblCodFPBanco
         '
         Me.lblCodFPBanco.AutoSize = True
-        Me.lblCodFPBanco.Location = New System.Drawing.Point(321, 188)
+        Me.lblCodFPBanco.Location = New System.Drawing.Point(282, 188)
         Me.lblCodFPBanco.Name = "lblCodFPBanco"
         Me.lblCodFPBanco.Size = New System.Drawing.Size(37, 13)
         Me.lblCodFPBanco.TabIndex = 80
         Me.lblCodFPBanco.Text = "banco"
         Me.lblCodFPBanco.Visible = False
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnModificar.BackColor = System.Drawing.Color.White
-        Me.btnModificar.FlatAppearance.BorderSize = 0
-        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.ForeColor = System.Drawing.Color.Black
-        Me.btnModificar.Location = New System.Drawing.Point(551, 10)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
-        Me.btnModificar.TabIndex = 79
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = False
-        '
-        'btnCrearNuevo
-        '
-        Me.btnCrearNuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCrearNuevo.BackColor = System.Drawing.Color.White
-        Me.btnCrearNuevo.FlatAppearance.BorderSize = 0
-        Me.btnCrearNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCrearNuevo.ForeColor = System.Drawing.Color.Black
-        Me.btnCrearNuevo.Location = New System.Drawing.Point(470, 10)
-        Me.btnCrearNuevo.Name = "btnCrearNuevo"
-        Me.btnCrearNuevo.Size = New System.Drawing.Size(75, 23)
-        Me.btnCrearNuevo.TabIndex = 77
-        Me.btnCrearNuevo.Text = "Crear Nuevo"
-        Me.btnCrearNuevo.UseVisualStyleBackColor = False
         '
         'btnBuscarTipoConta
         '
@@ -434,6 +420,34 @@ Partial Class frmDeposito
         Me.btnBuscarBanco.Text = "..."
         Me.btnBuscarBanco.UseVisualStyleBackColor = True
         '
+        'btnModificar
+        '
+        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.FlatAppearance.BorderSize = 0
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.ForeColor = System.Drawing.Color.Black
+        Me.btnModificar.Location = New System.Drawing.Point(465, 10)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar.TabIndex = 79
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
+        '
+        'btnCrearNuevo
+        '
+        Me.btnCrearNuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCrearNuevo.BackColor = System.Drawing.Color.White
+        Me.btnCrearNuevo.FlatAppearance.BorderSize = 0
+        Me.btnCrearNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCrearNuevo.ForeColor = System.Drawing.Color.Black
+        Me.btnCrearNuevo.Location = New System.Drawing.Point(384, 10)
+        Me.btnCrearNuevo.Name = "btnCrearNuevo"
+        Me.btnCrearNuevo.Size = New System.Drawing.Size(75, 23)
+        Me.btnCrearNuevo.TabIndex = 77
+        Me.btnCrearNuevo.Text = "Crear Nuevo"
+        Me.btnCrearNuevo.UseVisualStyleBackColor = False
+        '
         'btnGuardar
         '
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -441,7 +455,7 @@ Partial Class frmDeposito
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnGuardar.Location = New System.Drawing.Point(632, 10)
+        Me.btnGuardar.Location = New System.Drawing.Point(546, 10)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 67
@@ -454,6 +468,7 @@ Partial Class frmDeposito
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.dtpFechaBuscar)
         Me.GroupBox1.Controls.Add(Me.btnCancelar)
         Me.GroupBox1.Controls.Add(Me.txtBusqueda)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -464,6 +479,14 @@ Partial Class frmDeposito
         Me.GroupBox1.TabIndex = 75
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Depositos"
+        '
+        'dtpFechaBuscar
+        '
+        Me.dtpFechaBuscar.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaBuscar.Location = New System.Drawing.Point(401, 19)
+        Me.dtpFechaBuscar.Name = "dtpFechaBuscar"
+        Me.dtpFechaBuscar.Size = New System.Drawing.Size(96, 20)
+        Me.dtpFechaBuscar.TabIndex = 22
         '
         'btnCancelar
         '
@@ -483,7 +506,7 @@ Partial Class frmDeposito
         Me.txtBusqueda.Location = New System.Drawing.Point(53, 21)
         Me.txtBusqueda.MaxLength = 50
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(259, 20)
+        Me.txtBusqueda.Size = New System.Drawing.Size(111, 20)
         Me.txtBusqueda.TabIndex = 20
         '
         'Label2
@@ -519,6 +542,7 @@ Partial Class frmDeposito
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.btnGuardar)
         Me.Panel1.Controls.Add(Me.btnModificar)
@@ -527,6 +551,20 @@ Partial Class frmDeposito
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(725, 46)
         Me.Panel1.TabIndex = 76
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrar.BackColor = System.Drawing.Color.White
+        Me.btnCerrar.FlatAppearance.BorderSize = 0
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnCerrar.Location = New System.Drawing.Point(626, 10)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCerrar.TabIndex = 80
+        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -612,4 +650,7 @@ Partial Class frmDeposito
     Friend WithEvents txtBusqueda As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
+    Friend WithEvents chkAnular As CheckBox
+    Friend WithEvents btnCerrar As Button
+    Friend WithEvents dtpFechaBuscar As DateTimePicker
 End Class

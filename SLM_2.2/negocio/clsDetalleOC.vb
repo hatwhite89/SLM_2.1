@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class clsDetalleOC
-    Dim id, cod_proc, id_oc As Integer
+    Dim id, cod_proc, id_oc, cantidad_recibida As Integer
     Dim producto, num_lote As String
     Dim fecha_vence As Date
     Dim estado As Boolean
@@ -109,6 +109,15 @@ Public Class clsDetalleOC
         End Set
     End Property
 
+    Public Property Cantidad_recibida1 As Integer
+        Get
+            Return cantidad_recibida
+        End Get
+        Set(value As Integer)
+            cantidad_recibida = value
+        End Set
+    End Property
+
     Public Function RegistrarDetalleOC() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -169,6 +178,11 @@ Public Class clsDetalleOC
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cantidad_recibida" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = Cantidad_recibida1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -204,6 +218,10 @@ Public Class clsDetalleOC
         sqlpar.Value = IdDetalleOC
         sqlcom.Parameters.Add(sqlpar)
 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cantidad_recibida" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = Cantidad_recibida1
+        sqlcom.Parameters.Add(sqlpar)
 
 
         sqlpar = New SqlParameter
