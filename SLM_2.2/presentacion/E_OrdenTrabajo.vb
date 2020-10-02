@@ -72,17 +72,16 @@
             dtpNpFecha.Value = CStr(row("npFecha"))
             dtpNpHora.Value = CStr(row("npFecha"))
             lblnpUsuario.Text = CStr(row("npUsuario"))
-            MsgBox("EP")
+
             'En Proceso
             If IsDBNull((row("epUsuario"))) = False Then
-                MsgBox("entra")
                 dtpEpFecha.Format = DateTimePickerFormat.Short
                 dtpEpHora.Format = DateTimePickerFormat.Time
                 dtpEpFecha.Value = CStr(row("epFecha"))
                 dtpEpHora.Value = CStr(row("epFecha"))
                 lblepUsuario.Text = CStr(row("epUsuario"))
             End If
-            MsgBox("PR")
+
             'procesado
             If IsDBNull((row("prUsuario"))) = False Then
                 dtpPrFecha.Format = DateTimePickerFormat.Short
@@ -364,5 +363,9 @@
         Else
             txtinUsuario.Text = ""
         End If
+    End Sub
+
+    Private Sub E_OrdenTrabajo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
