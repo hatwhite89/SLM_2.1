@@ -53,6 +53,7 @@ Partial Class E_Usuarios
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -406,6 +407,7 @@ Partial Class E_Usuarios
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.btnCancelar)
@@ -416,6 +418,15 @@ Partial Class E_Usuarios
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(664, 46)
         Me.Panel1.TabIndex = 25
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(208, 10)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(114, 23)
+        Me.Button1.TabIndex = 32
+        Me.Button1.Text = "Temporal Feriado"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'E_Usuarios
         '
@@ -472,4 +483,5 @@ Partial Class E_Usuarios
     Friend WithEvents Label2 As Label
     Friend WithEvents btnCerrar As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Button1 As Button
 End Class

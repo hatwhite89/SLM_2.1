@@ -698,4 +698,155 @@
     Sub CargarData()
         dtPerfiles.DataSource = perfil.listarPerfiles
     End Sub
+
+    Private Sub chkFacturacion_CheckedChanged(sender As Object, e As EventArgs) Handles chkFacturacion.CheckedChanged
+
+        'Habilitar todos los permisos por check principal
+        If chkFacturacion.Checked = True Then
+
+            For f = 0 To dtFacturacion.Rows.Count - 1
+
+                dtFacturacion.Rows(f).Cells(2).Value = True
+
+            Next
+
+        Else
+            For f = 0 To dtFacturacion.Rows.Count - 1
+
+                dtFacturacion.Rows(f).Cells(2).Value = False
+
+            Next
+
+        End If
+
+    End Sub
+
+    Private Sub chkContabilidad_CheckedChanged(sender As Object, e As EventArgs) Handles chkContabilidad.CheckedChanged
+
+        'Habilitar todos los permisos por check principal
+        If chkContabilidad.Checked = True Then
+
+            For c = 0 To dtContabilidad.Rows.Count - 1
+
+                dtContabilidad.Rows(c).Cells(2).Value = True
+
+            Next
+
+        Else
+            For c = 0 To dtContabilidad.Rows.Count - 1
+
+                dtContabilidad.Rows(c).Cells(2).Value = False
+
+            Next
+
+        End If
+
+    End Sub
+
+    Private Sub chkLaboratorio_CheckedChanged(sender As Object, e As EventArgs) Handles chkLaboratorio.CheckedChanged
+
+        'Habilitar todos los permisos por check principal
+        If chkLaboratorio.Checked = True Then
+
+            For c = 0 To dtLaboratorio.Rows.Count - 1
+
+                dtLaboratorio.Rows(c).Cells(2).Value = True
+
+            Next
+
+        Else
+            For c = 0 To dtLaboratorio.Rows.Count - 1
+
+                dtLaboratorio.Rows(c).Cells(2).Value = False
+
+            Next
+
+        End If
+
+
+
+    End Sub
+
+    Private Sub chkTalentoHumano_CheckedChanged(sender As Object, e As EventArgs) Handles chkTalentoHumano.CheckedChanged
+        'Habilitar todos los permisos por check principal
+        If chkTalentoHumano.Checked = True Then
+
+            For c = 0 To dtTalentoHumano.Rows.Count - 1
+
+                dtTalentoHumano.Rows(c).Cells(2).Value = True
+
+            Next
+
+        Else
+            For c = 0 To dtTalentoHumano.Rows.Count - 1
+
+                dtTalentoHumano.Rows(c).Cells(2).Value = False
+
+            Next
+
+        End If
+    End Sub
+
+    Private Sub chkSistema_CheckedChanged(sender As Object, e As EventArgs) Handles chkSistema.CheckedChanged
+        'Habilitar todos los permisos por check principal
+        If chkSistema.Checked = True Then
+
+            For c = 0 To dtSistema.Rows.Count - 1
+
+                dtSistema.Rows(c).Cells(2).Value = True
+
+            Next
+
+        Else
+            For c = 0 To dtSistema.Rows.Count - 1
+
+                dtSistema.Rows(c).Cells(2).Value = False
+
+            Next
+
+        End If
+    End Sub
+
+    Private Sub chkAlmacen_CheckedChanged(sender As Object, e As EventArgs) Handles chkAlmacen.CheckedChanged
+        'Habilitar todos los permisos por check principal
+        If chkAlmacen.Checked = True Then
+
+            For c = 0 To dtAlmacen.Rows.Count - 1
+
+                dtAlmacen.Rows(c).Cells(2).Value = True
+
+            Next
+
+        Else
+            For c = 0 To dtAlmacen.Rows.Count - 1
+
+                dtAlmacen.Rows(c).Cells(2).Value = False
+
+            Next
+
+        End If
+    End Sub
+
+    Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
+        Try
+            'Busqueda de perfil por codBreve o descripcion
+            Dim buscar As New ClsPerfilesUsuario
+            Dim dt As New DataTable
+
+            With buscar
+
+                .Cod_Breve = txtBusqueda.Text
+                .Descripcion_ = txtBusqueda.Text
+                dt = .buscarPerfilUsuario
+                dtPerfiles.DataSource = dt
+
+            End With
+
+
+        Catch ex As Exception
+
+            MsgBox(ex.Message)
+
+        End Try
+    End Sub
 End Class
