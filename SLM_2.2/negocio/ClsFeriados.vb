@@ -11,6 +11,7 @@ Public Class ClsFeriados
     'Constructor
     Public Sub New()
 
+
     End Sub
 
     ':::::::::::::::::::::: Metodos SET y GET :::::::::::::::::::::::::::
