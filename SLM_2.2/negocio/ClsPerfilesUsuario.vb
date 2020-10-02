@@ -195,8 +195,7 @@ Public Class ClsPerfilesUsuario
         End Using
     End Function
 
-    'Capturar perfil Default
-    'Listar Perfiles 
+    'Capturar perfil por default
     Public Function PerfilDefault() As DataTable
 
         Dim objCon As New ClsConnection
@@ -208,6 +207,30 @@ Public Class ClsPerfilesUsuario
             da.Fill(dt)
             Return dt
         End Using
+    End Function
+
+    'Buscar Perfil de usuario
+    Public Function buscarPerfilUsuario() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarPerfilUsuario"
+            cmd.Parameters.Add("@codBreve", SqlDbType.VarChar).Value = Cod_Breve
+            cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = Descripcion_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
     End Function
 
 

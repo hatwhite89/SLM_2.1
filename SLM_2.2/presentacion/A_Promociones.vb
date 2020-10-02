@@ -248,9 +248,9 @@ Public Class A_Promociones
 
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
 
-        btnModificar.Visible = False
-        btnCrear.Visible = False
-        btnGuardar.Visible = True
+        btnModificar.Enabled = False
+        btnCrear.Enabled = False
+        btnGuardar.Enabled = True
         dtDetallePromo.DataSource = Nothing
         dtDetallePromo.Columns("Cod").Visible = True
         dtDetallePromo.Columns("Descrip").Visible = True

@@ -192,6 +192,7 @@
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
     <Compile Include="negocio\ClsEvaluacionProveedor.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
+    <Compile Include="negocio\ClsFeriados.vb" />
     <Compile Include="negocio\ClsFormularios.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
     <Compile Include="negocio\ClsHorarios.vb" />
@@ -273,6 +274,12 @@
       <DependentUpon>A_ConfiguracionCorreo.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ConfiguracionCorreo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ConfiguracionFeriados.Designer.vb">
+      <DependentUpon>A_ConfiguracionFeriados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ConfiguracionFeriados.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_Consolidacion.Designer.vb">
@@ -1310,6 +1317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ConfiguracionCorreo.resx">
       <DependentUpon>A_ConfiguracionCorreo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ConfiguracionFeriados.resx">
+      <DependentUpon>A_ConfiguracionFeriados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Consolidacion.resx">
       <DependentUpon>A_Consolidacion.vb</DependentUpon>

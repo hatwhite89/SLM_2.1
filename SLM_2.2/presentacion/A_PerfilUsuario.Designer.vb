@@ -86,7 +86,6 @@ Partial Class A_PerfilUsuario
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.gbxPerfil = New System.Windows.Forms.GroupBox()
         Me.pbarCarga = New System.Windows.Forms.ProgressBar()
         Me.btnNuevoPerfil = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -94,6 +93,7 @@ Partial Class A_PerfilUsuario
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.dtPerfiles = New System.Windows.Forms.DataGridView()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxModulos.SuspendLayout()
@@ -110,9 +110,9 @@ Partial Class A_PerfilUsuario
         CType(Me.dtSistema, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage6.SuspendLayout()
         CType(Me.dtAlmacen, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.gbxPerfil.SuspendLayout()
         Me.gbxRegistros.SuspendLayout()
         CType(Me.dtPerfiles, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -126,7 +126,7 @@ Partial Class A_PerfilUsuario
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtCodigo)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 92)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 64)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(502, 159)
         Me.GroupBox1.TabIndex = 0
@@ -218,17 +218,21 @@ Partial Class A_PerfilUsuario
         '
         'gbxModulos
         '
+        Me.gbxModulos.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.gbxModulos.Controls.Add(Me.tcModulos)
         Me.gbxModulos.Enabled = False
-        Me.gbxModulos.Location = New System.Drawing.Point(12, 255)
+        Me.gbxModulos.Location = New System.Drawing.Point(6, 229)
         Me.gbxModulos.Name = "gbxModulos"
-        Me.gbxModulos.Size = New System.Drawing.Size(501, 256)
+        Me.gbxModulos.Size = New System.Drawing.Size(501, 344)
         Me.gbxModulos.TabIndex = 1
         Me.gbxModulos.TabStop = False
         Me.gbxModulos.Text = "Módulos Habilitados"
         '
         'tcModulos
         '
+        Me.tcModulos.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.tcModulos.Controls.Add(Me.TabPage1)
         Me.tcModulos.Controls.Add(Me.TabPage2)
         Me.tcModulos.Controls.Add(Me.TabPage3)
@@ -238,7 +242,7 @@ Partial Class A_PerfilUsuario
         Me.tcModulos.Location = New System.Drawing.Point(11, 19)
         Me.tcModulos.Name = "tcModulos"
         Me.tcModulos.SelectedIndex = 0
-        Me.tcModulos.Size = New System.Drawing.Size(485, 234)
+        Me.tcModulos.Size = New System.Drawing.Size(485, 311)
         Me.tcModulos.TabIndex = 0
         '
         'TabPage1
@@ -249,7 +253,7 @@ Partial Class A_PerfilUsuario
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(477, 208)
+        Me.TabPage1.Size = New System.Drawing.Size(477, 285)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Facturación"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -279,12 +283,15 @@ Partial Class A_PerfilUsuario
         Me.dtFacturacion.AllowDrop = True
         Me.dtFacturacion.AllowUserToAddRows = False
         Me.dtFacturacion.AllowUserToDeleteRows = False
+        Me.dtFacturacion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.dtFacturacion.BackgroundColor = System.Drawing.Color.White
         Me.dtFacturacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtFacturacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cod, Me.Descrip, Me.Estado, Me.CodModulo})
         Me.dtFacturacion.Location = New System.Drawing.Point(4, 34)
         Me.dtFacturacion.Name = "dtFacturacion"
         Me.dtFacturacion.ReadOnly = True
-        Me.dtFacturacion.Size = New System.Drawing.Size(468, 165)
+        Me.dtFacturacion.Size = New System.Drawing.Size(468, 245)
         Me.dtFacturacion.TabIndex = 4
         '
         'Cod
@@ -323,7 +330,7 @@ Partial Class A_PerfilUsuario
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(477, 208)
+        Me.TabPage2.Size = New System.Drawing.Size(477, 285)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Contabilidad"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -342,13 +349,16 @@ Partial Class A_PerfilUsuario
         '
         Me.dtContabilidad.AllowUserToAddRows = False
         Me.dtContabilidad.AllowUserToDeleteRows = False
+        Me.dtContabilidad.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.dtContabilidad.BackgroundColor = System.Drawing.Color.White
         Me.dtContabilidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtContabilidad.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodC, Me.DataGridViewTextBoxColumn2, Me.EstadoC, Me.DataGridViewTextBoxColumn3})
         Me.dtContabilidad.Location = New System.Drawing.Point(4, 34)
         Me.dtContabilidad.Name = "dtContabilidad"
         Me.dtContabilidad.ReadOnly = True
         Me.dtContabilidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtContabilidad.Size = New System.Drawing.Size(468, 165)
+        Me.dtContabilidad.Size = New System.Drawing.Size(468, 245)
         Me.dtContabilidad.TabIndex = 5
         '
         'CodC
@@ -397,7 +407,7 @@ Partial Class A_PerfilUsuario
         Me.TabPage3.Controls.Add(Me.dtLaboratorio)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(477, 208)
+        Me.TabPage3.Size = New System.Drawing.Size(477, 285)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Laboratorio"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -426,12 +436,15 @@ Partial Class A_PerfilUsuario
         '
         Me.dtLaboratorio.AllowUserToAddRows = False
         Me.dtLaboratorio.AllowUserToDeleteRows = False
+        Me.dtLaboratorio.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.dtLaboratorio.BackgroundColor = System.Drawing.Color.White
         Me.dtLaboratorio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtLaboratorio.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodL, Me.Descripc, Me.EstadoL, Me.Column1})
         Me.dtLaboratorio.Location = New System.Drawing.Point(4, 34)
         Me.dtLaboratorio.Name = "dtLaboratorio"
         Me.dtLaboratorio.ReadOnly = True
-        Me.dtLaboratorio.Size = New System.Drawing.Size(468, 165)
+        Me.dtLaboratorio.Size = New System.Drawing.Size(468, 248)
         Me.dtLaboratorio.TabIndex = 4
         '
         'CodL
@@ -469,7 +482,7 @@ Partial Class A_PerfilUsuario
         Me.TabPage4.Controls.Add(Me.dtTalentoHumano)
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(477, 208)
+        Me.TabPage4.Size = New System.Drawing.Size(477, 285)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Talento Humano"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -498,12 +511,15 @@ Partial Class A_PerfilUsuario
         '
         Me.dtTalentoHumano.AllowUserToAddRows = False
         Me.dtTalentoHumano.AllowUserToDeleteRows = False
+        Me.dtTalentoHumano.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.dtTalentoHumano.BackgroundColor = System.Drawing.Color.White
         Me.dtTalentoHumano.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtTalentoHumano.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodT, Me.descripccion, Me.EstadoT, Me.Column4})
         Me.dtTalentoHumano.Location = New System.Drawing.Point(4, 34)
         Me.dtTalentoHumano.Name = "dtTalentoHumano"
         Me.dtTalentoHumano.ReadOnly = True
-        Me.dtTalentoHumano.Size = New System.Drawing.Size(468, 165)
+        Me.dtTalentoHumano.Size = New System.Drawing.Size(468, 248)
         Me.dtTalentoHumano.TabIndex = 4
         '
         'CodT
@@ -543,7 +559,7 @@ Partial Class A_PerfilUsuario
         Me.TabPage5.Controls.Add(Me.dtSistema)
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(477, 208)
+        Me.TabPage5.Size = New System.Drawing.Size(477, 285)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Sistema"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -572,12 +588,15 @@ Partial Class A_PerfilUsuario
         '
         Me.dtSistema.AllowUserToAddRows = False
         Me.dtSistema.AllowUserToDeleteRows = False
+        Me.dtSistema.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.dtSistema.BackgroundColor = System.Drawing.Color.White
         Me.dtSistema.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtSistema.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodS, Me.Column5, Me.EstadoS, Me.Column7})
         Me.dtSistema.Location = New System.Drawing.Point(4, 34)
         Me.dtSistema.Name = "dtSistema"
         Me.dtSistema.ReadOnly = True
-        Me.dtSistema.Size = New System.Drawing.Size(468, 165)
+        Me.dtSistema.Size = New System.Drawing.Size(468, 248)
         Me.dtSistema.TabIndex = 4
         '
         'CodS
@@ -616,7 +635,7 @@ Partial Class A_PerfilUsuario
         Me.TabPage6.Controls.Add(Me.dtAlmacen)
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(477, 208)
+        Me.TabPage6.Size = New System.Drawing.Size(477, 285)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Almacen"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -645,12 +664,15 @@ Partial Class A_PerfilUsuario
         '
         Me.dtAlmacen.AllowUserToAddRows = False
         Me.dtAlmacen.AllowUserToDeleteRows = False
+        Me.dtAlmacen.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.dtAlmacen.BackgroundColor = System.Drawing.Color.White
         Me.dtAlmacen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtAlmacen.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodA, Me.Column9, Me.EstadoE, Me.Column11})
         Me.dtAlmacen.Location = New System.Drawing.Point(4, 34)
         Me.dtAlmacen.Name = "dtAlmacen"
         Me.dtAlmacen.ReadOnly = True
-        Me.dtAlmacen.Size = New System.Drawing.Size(468, 165)
+        Me.dtAlmacen.Size = New System.Drawing.Size(468, 248)
         Me.dtAlmacen.TabIndex = 4
         '
         'CodA
@@ -683,84 +705,89 @@ Partial Class A_PerfilUsuario
         '
         'btnGuardar
         '
+        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGuardar.BackColor = System.Drawing.Color.White
         Me.btnGuardar.Enabled = False
-        Me.btnGuardar.Location = New System.Drawing.Point(258, 15)
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.Location = New System.Drawing.Point(692, 11)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(75, 38)
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 25)
         Me.btnGuardar.TabIndex = 3
         Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
+        Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'btnModificar
         '
+        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnModificar.BackColor = System.Drawing.Color.White
         Me.btnModificar.Enabled = False
-        Me.btnModificar.Location = New System.Drawing.Point(339, 15)
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Location = New System.Drawing.Point(773, 11)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(75, 38)
+        Me.btnModificar.Size = New System.Drawing.Size(75, 25)
         Me.btnModificar.TabIndex = 4
         Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
+        Me.btnModificar.UseVisualStyleBackColor = False
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(420, 15)
+        Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelar.BackColor = System.Drawing.Color.White
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Location = New System.Drawing.Point(854, 11)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 38)
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 25)
         Me.btnCancelar.TabIndex = 5
         Me.btnCancelar.Text = "Cerrar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
-        '
-        'gbxPerfil
-        '
-        Me.gbxPerfil.Controls.Add(Me.pbarCarga)
-        Me.gbxPerfil.Controls.Add(Me.btnNuevoPerfil)
-        Me.gbxPerfil.Controls.Add(Me.Label4)
-        Me.gbxPerfil.Controls.Add(Me.btnGuardar)
-        Me.gbxPerfil.Controls.Add(Me.btnCancelar)
-        Me.gbxPerfil.Controls.Add(Me.btnModificar)
-        Me.gbxPerfil.Location = New System.Drawing.Point(12, 5)
-        Me.gbxPerfil.Name = "gbxPerfil"
-        Me.gbxPerfil.Size = New System.Drawing.Size(502, 81)
-        Me.gbxPerfil.TabIndex = 6
-        Me.gbxPerfil.TabStop = False
+        Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'pbarCarga
         '
-        Me.pbarCarga.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.pbarCarga.Location = New System.Drawing.Point(4, 59)
+        Me.pbarCarga.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pbarCarga.BackColor = System.Drawing.Color.White
+        Me.pbarCarga.ForeColor = System.Drawing.Color.LimeGreen
+        Me.pbarCarga.Location = New System.Drawing.Point(0, 35)
         Me.pbarCarga.Name = "pbarCarga"
-        Me.pbarCarga.Size = New System.Drawing.Size(493, 18)
+        Me.pbarCarga.Size = New System.Drawing.Size(942, 18)
         Me.pbarCarga.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.pbarCarga.TabIndex = 1
         '
         'btnNuevoPerfil
         '
+        Me.btnNuevoPerfil.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnNuevoPerfil.BackColor = System.Drawing.Color.White
         Me.btnNuevoPerfil.Enabled = False
-        Me.btnNuevoPerfil.Location = New System.Drawing.Point(177, 15)
+        Me.btnNuevoPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNuevoPerfil.Location = New System.Drawing.Point(611, 11)
         Me.btnNuevoPerfil.Name = "btnNuevoPerfil"
-        Me.btnNuevoPerfil.Size = New System.Drawing.Size(75, 38)
+        Me.btnNuevoPerfil.Size = New System.Drawing.Size(75, 25)
         Me.btnNuevoPerfil.TabIndex = 7
         Me.btnNuevoPerfil.Text = "Crear Nuevo"
-        Me.btnNuevoPerfil.UseVisualStyleBackColor = True
+        Me.btnNuevoPerfil.UseVisualStyleBackColor = False
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(8, 22)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(10, 10)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(135, 13)
+        Me.Label4.Size = New System.Drawing.Size(304, 25)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Administración de Permisos"
         '
         'gbxRegistros
         '
+        Me.gbxRegistros.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbxRegistros.Controls.Add(Me.txtBusqueda)
         Me.gbxRegistros.Controls.Add(Me.Label5)
         Me.gbxRegistros.Controls.Add(Me.dtPerfiles)
-        Me.gbxRegistros.Location = New System.Drawing.Point(520, 5)
+        Me.gbxRegistros.Location = New System.Drawing.Point(514, 64)
         Me.gbxRegistros.Name = "gbxRegistros"
-        Me.gbxRegistros.Size = New System.Drawing.Size(395, 509)
+        Me.gbxRegistros.Size = New System.Drawing.Size(414, 509)
         Me.gbxRegistros.TabIndex = 7
         Me.gbxRegistros.TabStop = False
         Me.gbxRegistros.Text = "Registros"
@@ -785,23 +812,45 @@ Partial Class A_PerfilUsuario
         '
         Me.dtPerfiles.AllowUserToAddRows = False
         Me.dtPerfiles.AllowUserToDeleteRows = False
+        Me.dtPerfiles.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtPerfiles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtPerfiles.BackgroundColor = System.Drawing.Color.White
         Me.dtPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtPerfiles.Location = New System.Drawing.Point(6, 62)
         Me.dtPerfiles.Name = "dtPerfiles"
         Me.dtPerfiles.ReadOnly = True
         Me.dtPerfiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtPerfiles.Size = New System.Drawing.Size(383, 433)
+        Me.dtPerfiles.Size = New System.Drawing.Size(402, 433)
         Me.dtPerfiles.TabIndex = 0
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.btnNuevoPerfil)
+        Me.Panel1.Controls.Add(Me.btnGuardar)
+        Me.Panel1.Controls.Add(Me.btnModificar)
+        Me.Panel1.Controls.Add(Me.btnCancelar)
+        Me.Panel1.Location = New System.Drawing.Point(-1, -1)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(943, 47)
+        Me.Panel1.TabIndex = 8
         '
         'A_PerfilUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(927, 521)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(940, 578)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.gbxRegistros)
-        Me.Controls.Add(Me.gbxPerfil)
         Me.Controls.Add(Me.gbxModulos)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.pbarCarga)
         Me.KeyPreview = True
         Me.Name = "A_PerfilUsuario"
         Me.Text = "Configuración de Permisos"
@@ -828,11 +877,11 @@ Partial Class A_PerfilUsuario
         Me.TabPage6.ResumeLayout(False)
         Me.TabPage6.PerformLayout()
         CType(Me.dtAlmacen, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.gbxPerfil.ResumeLayout(False)
-        Me.gbxPerfil.PerformLayout()
         Me.gbxRegistros.ResumeLayout(False)
         Me.gbxRegistros.PerformLayout()
         CType(Me.dtPerfiles, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -857,7 +906,6 @@ Partial Class A_PerfilUsuario
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents TabPage5 As TabPage
     Friend WithEvents TabPage6 As TabPage
-    Friend WithEvents gbxPerfil As GroupBox
     Friend WithEvents Label4 As Label
     Friend WithEvents chkFacturacion As CheckBox
     Friend WithEvents dtFacturacion As DataGridView
@@ -908,4 +956,5 @@ Partial Class A_PerfilUsuario
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
     Friend WithEvents EstadoE As DataGridViewCheckBoxColumn
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
+    Friend WithEvents Panel1 As Panel
 End Class

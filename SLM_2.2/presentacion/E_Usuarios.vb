@@ -74,11 +74,12 @@
     ':::::: Función para limpiar campos
     Sub Limpiar()
 
-        txtCodigo.Text = ""
-        txtUsuario.Text = ""
-        txtPass.Text = ""
-        txtPerfil.Text = ""
+        txtCodigo.Clear()
+        txtUsuario.Clear()
+        txtPass.Clear()
+        txtPerfil.Clear()
         lblCodPerfil.Text = ""
+        txtNombreEmpleado.Clear()
         chkHabilitar.Checked = False
 
     End Sub
@@ -128,6 +129,13 @@
             txtPerfil.Text = row("perfil")
             chkHabilitar.Checked = row("estado")
             lblCodPerfil.Text = row("codPerfil")
+
+            'Consultar Nombre de Empleado
+            Dim nombre_empleado As New ClsEmpleados
+            nombre_empleado.codigo_ = Convert.ToInt32(row("codigo"))
+            dt = nombre_empleado.BuscarDatosEmpleadoPorCodigo()
+            row = dt.Rows(0)
+            txtNombreEmpleado.Text = row("nombreCompleto")
 
         Catch ex As Exception
 
@@ -236,5 +244,9 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
 
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        A_ConfiguracionFeriados.Show()
     End Sub
 End Class
