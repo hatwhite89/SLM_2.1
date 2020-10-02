@@ -36,6 +36,7 @@
                         .cod_orden_trabajo_ = dgvHojaTrab.Rows(e.RowIndex).Cells(0).Value()
                         .resultado_ = dgvHojaTrab.Rows(e.RowIndex).Cells(e.ColumnIndex).Value()
                         .nombreItemDetalle_ = dgvHojaTrab.Columns.Item(e.ColumnIndex).Name
+                        .estado_ = "Procesado"
                     End With
                     If objOrdDet.ModificarOrdenTrabajoDetalle2() <> 1 Then
                         'En caso que no exista el detalle de orden de trabajo entonces le asigna un valor nulo o vacio
@@ -356,6 +357,38 @@
             M_ListadoValoresReferencia.lblcodeCateCli.Text = txtParametro.Text
             M_ListadoValoresReferencia.ShowDialog()
         End If
+    End Sub
+
+    Private Sub ValidarDatosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ValidarDatosToolStripMenuItem.Click
+        Try
+
+            'If Trim(txtNombre.Text) <> "" And Trim(txtSubarea.Text) <> "" And txtCodigo.Text <> "" Then
+            'orden de trabajo
+            Dim objOrdTrab As New ClsOrdenDeTrabajo
+            With objOrdTrab
+                .cod_orden_trabajo_ = Integer.Parse(txtOrden.Text)
+                .coUsuario_ = Integer.Parse(Form1.lblUserCod.Text)
+
+                'Procedimiento Ingreso
+                If .ModificarOrdenDeTrabajoEstadoValidado() = 1 Then
+                    MsgBox("Validado correctamente.", MsgBoxStyle.Information)
+                    Dim colColl As DataColumnCollection = ds.Tables("HojaTrabajo").Columns
+                    dgvHojaTrab.Rows(fila).Cells(colColl.IndexOf("Estado")).Value = "Validado"
+
+                Else
+                    MsgBox("Error al momento de actualizar la subárea en el sistema.", MsgBoxStyle.Critical)
+                End If
+
+            End With
+
+            'Else
+            '    MsgBox("Debe llenar los campos necesarios.", MsgBoxStyle.Information)
+            'End If
+
+
+        Catch ex As Exception
+            MessageBox.Show("Error al actualizar. Detalle: " + ex.Message)
+        End Try
     End Sub
 
     Private Sub cbxPlantillas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxPlantillas.SelectedIndexChanged

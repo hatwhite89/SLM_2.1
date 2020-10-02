@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class ClsOrdenTrabajoDetalle
-    Dim resultado, nombreItemDetalle As String
+    Dim resultado, nombreItemDetalle, estado As String
     Dim codigo, cod_orden_trabajo, cod_item_examen_detalle As Integer
     'Constructor
     Public Sub New()
@@ -46,6 +46,14 @@ Public Class ClsOrdenTrabajoDetalle
             nombreItemDetalle = value
         End Set
     End Property
+    Public Property estado_ As String
+        Get
+            Return estado
+        End Get
+        Set(value As String)
+            estado = value
+        End Set
+    End Property
     Public Function RegistrarNuevoDetalleOrdenTrabajo() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -68,6 +76,11 @@ Public Class ClsOrdenTrabajoDetalle
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "resultado" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = resultado_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = estado_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -118,6 +131,10 @@ Public Class ClsOrdenTrabajoDetalle
         sqlpar.Value = resultado_
         sqlcom.Parameters.Add(sqlpar)
 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = estado_
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -162,6 +179,10 @@ Public Class ClsOrdenTrabajoDetalle
         sqlpar.Value = resultado_
         sqlcom.Parameters.Add(sqlpar)
 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = estado_
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"

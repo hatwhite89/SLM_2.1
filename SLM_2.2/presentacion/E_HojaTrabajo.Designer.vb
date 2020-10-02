@@ -524,9 +524,9 @@ Partial Class E_HojaTrabajo
         Me.GroupBox1.Controls.Add(Me.rbtnCortesia)
         Me.GroupBox1.Controls.Add(Me.rbtnNombrePaciente)
         Me.GroupBox1.Location = New System.Drawing.Point(1083, 38)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(311, 95)
         Me.GroupBox1.TabIndex = 48
         Me.GroupBox1.TabStop = False
@@ -542,9 +542,9 @@ Partial Class E_HojaTrabajo
         Me.GroupBox2.Controls.Add(Me.cbxNoProcesado)
         Me.GroupBox2.Controls.Add(Me.cbxPendMuestra)
         Me.GroupBox2.Location = New System.Drawing.Point(15, 84)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(1060, 65)
         Me.GroupBox2.TabIndex = 49
         Me.GroupBox2.TabStop = False
@@ -631,7 +631,7 @@ Partial Class E_HojaTrabajo
         'ValidarDatosToolStripMenuItem
         '
         Me.ValidarDatosToolStripMenuItem.Name = "ValidarDatosToolStripMenuItem"
-        Me.ValidarDatosToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.ValidarDatosToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.ValidarDatosToolStripMenuItem.Text = "Validar Datos"
         '
         'lblCodeSubArea
@@ -668,7 +668,7 @@ Partial Class E_HojaTrabajo
         Me.cbxPlantillas.FormattingEnabled = True
         Me.cbxPlantillas.LineColour = System.Drawing.Color.DodgerBlue
         Me.cbxPlantillas.Location = New System.Drawing.Point(1237, 139)
-        Me.cbxPlantillas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbxPlantillas.Margin = New System.Windows.Forms.Padding(4)
         Me.cbxPlantillas.Name = "cbxPlantillas"
         Me.cbxPlantillas.Size = New System.Drawing.Size(151, 31)
         Me.cbxPlantillas.SqaureColour = System.Drawing.Color.Gainsboro

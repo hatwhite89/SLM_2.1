@@ -120,7 +120,7 @@ Public Class M_Factura
         txtcodigoMedico.ReadOnly = False
         txtcodigoTerminosPago.ReadOnly = False
         dtpfechaVto.Enabled = True
-        txtcodigoConvenio.ReadOnly = False
+        txtcodigoConvenio.ReadOnly = True
         txtnumeroPoliza.ReadOnly = False
 
         btnbuscarCliente.Enabled = True
@@ -579,7 +579,7 @@ Public Class M_Factura
 
                     'valido que no haya agregado el examen anteriormente
                     If (validarFactura(objExam.codeIntExam_) = 0) Then
-                        Dim row As DataRow = dt.Rows(0)
+                        Dim row As DataRow = dt.Rows(dt.Rows.Count - 1)
                         dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
                         Dim subtotal As Double = Convert.ToDouble(CStr(row("precio")))
                         Dim descuento As Double = Convert.ToDouble(CStr(row("porcentaje")))
@@ -824,7 +824,8 @@ Public Class M_Factura
                                 Exit Sub
                             End If
                         Else
-                            MsgBox("No existe un CAI activo." & dt.Rows.Count)
+                            MsgBox("No existe un CAI activo.", MsgBoxStyle.Critical)
+                            Exit Sub
                         End If
 
                     End If
@@ -1139,7 +1140,8 @@ Public Class M_Factura
                                 Exit Sub
                             End If
                         Else
-                            MsgBox("No existe un CAI activo." & dt.Rows.Count)
+                            MsgBox("No existe un CAI activo.", MsgBoxStyle.Critical)
+                            Exit Sub
                         End If
                     End If
 
@@ -1613,6 +1615,7 @@ Public Class M_Factura
                                 With objDetOrd
                                     .cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
                                     .cod_item_examen_detalle_ = rowI("codigo")
+                                    .estado_ = "No Procesado"
                                 End With
                                 If objDetOrd.RegistrarNuevoDetalleOrdenTrabajo = 0 Then
                                     MsgBox("Error en la insercion del detalle orden de trabajo.", MsgBoxStyle.Critical)

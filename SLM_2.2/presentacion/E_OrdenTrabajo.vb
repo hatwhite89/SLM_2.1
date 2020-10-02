@@ -1,4 +1,5 @@
 ﻿Public Class E_OrdenTrabajo
+    Dim objUser As New ClsUsuario
 
     Public Sub cargarOrdenTrabajo(ByVal cod_orden_trabajo As Integer)
         Try
@@ -62,34 +63,63 @@
             txtcodigoCajero.Text = CStr(row("codigoCaja"))
             txtcodigoSucursal.Text = CStr(row("codigoSucursal"))
 
+            'pendiente muestra
             dtpPmFecha.Value = CStr(row("pmFecha"))
             dtpPmHora.Value = CStr(row("pmFecha"))
-            txtpmUsuario.Text = CStr(row("pmUsuario"))
+            lblpmUsuario.Text = CStr(row("pmUsuario"))
 
+            'no procesado
             dtpNpFecha.Value = CStr(row("npFecha"))
             dtpNpHora.Value = CStr(row("npFecha"))
-            txtnpUsuario.Text = CStr(row("npUsuario"))
+            lblnpUsuario.Text = CStr(row("npUsuario"))
+            MsgBox("EP")
+            'En Proceso
+            If IsDBNull((row("epUsuario"))) = False Then
+                MsgBox("entra")
+                dtpEpFecha.Format = DateTimePickerFormat.Short
+                dtpEpHora.Format = DateTimePickerFormat.Time
+                dtpEpFecha.Value = CStr(row("epFecha"))
+                dtpEpHora.Value = CStr(row("epFecha"))
+                lblepUsuario.Text = CStr(row("epUsuario"))
+            End If
+            MsgBox("PR")
+            'procesado
+            If IsDBNull((row("prUsuario"))) = False Then
+                dtpPrFecha.Format = DateTimePickerFormat.Short
+                dtpPrHora.Format = DateTimePickerFormat.Time
+                dtpPrFecha.Value = CStr(row("prFecha"))
+                dtpPrHora.Value = CStr(row("prFecha"))
+                lblprUsuario.Text = CStr(row("prUsuario"))
+            End If
 
-            'dtpEpFecha.Value = CStr(row("epFecha"))
-            'dtpEpHora.Value = CStr(row("epFecha"))
-            'txtepUsuario.Text = CStr(row("epUsuario"))
+            'validado                       
+            If IsDBNull((row("coUsuario"))) = False Then
+                dtpCoFecha.Format = DateTimePickerFormat.Short
+                dtpCoHora.Format = DateTimePickerFormat.Time
+                dtpCoFecha.Value = CStr(row("coFecha"))
+                dtpCoHora.Value = CStr(row("coFecha"))
+                lblcoUsuario.Text = CStr(row("coUsuario"))
+            End If
 
-            'dtpPrFecha.Value = CStr(row("prFecha"))
-            'dtpPrHora.Value = CStr(row("prFecha"))
-            'txtprUsuario.Text = CStr(row("prUsuario"))
+            'entregado
+            If IsDBNull((row("enUsuario"))) = False Then
+                dtpEnFecha.Format = DateTimePickerFormat.Short
+                dtpEnHora.Format = DateTimePickerFormat.Time
+                dtpEnFecha.Value = CStr(row("enFecha"))
+                dtpEnHora.Value = CStr(row("enFecha"))
+                lblenUsuario.Text = CStr(row("enUsuario"))
+            End If
 
-            'dtpCoFecha.Value = CStr(row("coFecha"))
-            'dtpCoHora.Value = CStr(row("coFecha"))
-            'txtcoUsuario.Text = CStr(row("coUsuario"))
+            'invalidado
+            If IsDBNull((row("inUsuario"))) = False Then
+                dtpInFecha.Format = DateTimePickerFormat.Short
+                dtpInHora.Format = DateTimePickerFormat.Time
+                dtpInFecha.Value = CStr(row("inFecha"))
+                dtpInHora.Value = CStr(row("inFecha"))
+                lblinUsuario.Text = CStr(row("inUsuario"))
+            End If
 
-            'dtpEnFecha.Value = CStr(row("enFecha"))
-            'dtpEnHora.Value = CStr(row("enFecha"))
-            'txtenUsuario.Text = CStr(row("enUsuario"))
-
-            'dtpInFecha.Value = CStr(row("inFecha"))
-            'dtpInHora.Value = CStr(row("inFecha"))
-            'txtinUsuario.Text = CStr(row("inUsuario"))
-
+            'estado
             lblEstadoOrden.Text = CStr(row("estado"))
 
             'txtcurva.Text = CStr(row("curva"))
@@ -117,11 +147,11 @@
                 row = dt.Rows(index)
 
                 If IsDBNull(row("resultado")) = True Then
-                    dgvResultados.Rows.Add(New String() {CStr(row("codigo")), CStr(row("nombre")), "*", CStr(row("codigoUnidad")), "NO INGRESADO"})
+                    dgvResultados.Rows.Add(New String() {CStr(row("codigo")), CStr(row("nombre")), "*", CStr(row("codigoUnidad")), CStr(row("estado"))})
                 ElseIf row("resultado") = "0" Then
-                    dgvResultados.Rows.Add(New String() {CStr(row("codigo")), CStr(row("nombre")), "*", CStr(row("codigoUnidad")), "NO INGRESADO"})
+                    dgvResultados.Rows.Add(New String() {CStr(row("codigo")), CStr(row("nombre")), "*", CStr(row("codigoUnidad")), CStr(row("estado"))})
                 Else
-                    dgvResultados.Rows.Add(New String() {CStr(row("codigo")), CStr(row("nombre")), CStr(row("resultado")), CStr(row("codigoUnidad")), "VALIDADO"})
+                    dgvResultados.Rows.Add(New String() {CStr(row("codigo")), CStr(row("nombre")), CStr(row("resultado")), CStr(row("codigoUnidad")), CStr(row("estado"))})
                 End If
             Next
 
@@ -211,4 +241,128 @@
         End If
     End Sub
 
+    Private Sub lblpmUsuario_TextChanged(sender As Object, e As EventArgs) Handles lblpmUsuario.TextChanged
+        If Trim(lblpmUsuario.Text) <> "Label1" Then
+            Try
+
+                With objUser
+                    .Cod = lblpmUsuario.Text
+                End With
+                Dim dt As New DataTable
+                dt = objUser.BuscarPorCod_Usuario()
+                Dim row As DataRow = dt.Rows(0)
+                txtpmUsuario.Text = CStr(row("usuario"))
+            Catch ex As Exception
+                txtpmUsuario.Text = ""
+            End Try
+        Else
+            txtpmUsuario.Text = ""
+        End If
+    End Sub
+    Private Sub lblnpUsuario_TextChanged(sender As Object, e As EventArgs) Handles lblnpUsuario.TextChanged
+        If Trim(lblnpUsuario.Text) <> "Label1" Then
+            Try
+
+                With objUser
+                    .Cod = lblnpUsuario.Text
+                End With
+                Dim dt As New DataTable
+                dt = objUser.BuscarPorCod_Usuario()
+                Dim row As DataRow = dt.Rows(0)
+                txtnpUsuario.Text = CStr(row("usuario"))
+            Catch ex As Exception
+                txtnpUsuario.Text = ""
+            End Try
+        Else
+            txtnpUsuario.Text = ""
+        End If
+    End Sub
+    Private Sub lblepUsuario_TextChanged(sender As Object, e As EventArgs) Handles lblepUsuario.TextChanged
+        If Trim(lblepUsuario.Text) <> "Label1" Then
+            Try
+
+                With objUser
+                    .Cod = lblepUsuario.Text
+                End With
+                Dim dt As New DataTable
+                dt = objUser.BuscarPorCod_Usuario()
+                Dim row As DataRow = dt.Rows(0)
+                txtepUsuario.Text = CStr(row("usuario"))
+            Catch ex As Exception
+                txtepUsuario.Text = ""
+            End Try
+        Else
+            txtepUsuario.Text = ""
+        End If
+    End Sub
+    Private Sub lblprUsuario_TextChanged(sender As Object, e As EventArgs) Handles lblprUsuario.TextChanged
+        If Trim(lblprUsuario.Text) <> "Label1" Then
+            Try
+
+                With objUser
+                    .Cod = lblprUsuario.Text
+                End With
+                Dim dt As New DataTable
+                dt = objUser.BuscarPorCod_Usuario()
+                Dim row As DataRow = dt.Rows(0)
+                txtprUsuario.Text = CStr(row("usuario"))
+            Catch ex As Exception
+                txtprUsuario.Text = ""
+            End Try
+        Else
+            txtprUsuario.Text = ""
+        End If
+    End Sub
+    Private Sub lblcoUsuario_TextChanged(sender As Object, e As EventArgs) Handles lblcoUsuario.TextChanged
+        If Trim(lblcoUsuario.Text) <> "Label1" Then
+            Try
+
+                With objUser
+                    .Cod = lblcoUsuario.Text
+                End With
+                Dim dt As New DataTable
+                dt = objUser.BuscarPorCod_Usuario()
+                Dim row As DataRow = dt.Rows(0)
+                txtcoUsuario.Text = CStr(row("usuario"))
+            Catch ex As Exception
+                txtcoUsuario.Text = ""
+            End Try
+        Else
+            txtcoUsuario.Text = ""
+        End If
+    End Sub
+    Private Sub lblenUsuario_TextChanged(sender As Object, e As EventArgs) Handles lblenUsuario.TextChanged
+        If Trim(lblenUsuario.Text) <> "Label1" Then
+            Try
+                With objUser
+                    .Cod = lblenUsuario.Text
+                End With
+                Dim dt As New DataTable
+                dt = objUser.BuscarPorCod_Usuario()
+                Dim row As DataRow = dt.Rows(0)
+                txtenUsuario.Text = CStr(row("usuario"))
+            Catch ex As Exception
+                txtenUsuario.Text = ""
+            End Try
+        Else
+            txtenUsuario.Text = ""
+        End If
+    End Sub
+    Private Sub lblinUsuario_TextChanged(sender As Object, e As EventArgs) Handles lblinUsuario.TextChanged
+        If Trim(lblinUsuario.Text) <> "Label1" Then
+            Try
+                With objUser
+                    .Cod = lblinUsuario.Text
+                End With
+                Dim dt As New DataTable
+                dt = objUser.BuscarPorCod_Usuario()
+                Dim row As DataRow = dt.Rows(0)
+                txtinUsuario.Text = CStr(row("usuario"))
+            Catch ex As Exception
+                txtinUsuario.Text = ""
+            End Try
+        Else
+            txtinUsuario.Text = ""
+        End If
+    End Sub
 End Class

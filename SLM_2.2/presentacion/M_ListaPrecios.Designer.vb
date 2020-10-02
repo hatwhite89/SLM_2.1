@@ -53,12 +53,15 @@ Partial Class M_ListaPrecios
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.btncancelar = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.gbxclasificacion.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbxclasificacion
         '
+        Me.gbxclasificacion.Controls.Add(Me.Panel1)
         Me.gbxclasificacion.Controls.Add(Me.txtPorcentaje)
         Me.gbxclasificacion.Controls.Add(Me.lblPorcentaje)
         Me.gbxclasificacion.Controls.Add(Me.rbtnEfectivoNo)
@@ -69,8 +72,6 @@ Partial Class M_ListaPrecios
         Me.gbxclasificacion.Controls.Add(Me.txtDescripcionTermino)
         Me.gbxclasificacion.Controls.Add(Me.txtcodigoTermino)
         Me.gbxclasificacion.Controls.Add(Me.lblTerminoPago)
-        Me.gbxclasificacion.Controls.Add(Me.rbtnConvenioNo)
-        Me.gbxclasificacion.Controls.Add(Me.rbtnConvenioSi)
         Me.gbxclasificacion.Controls.Add(Me.lblTipoConvenio)
         Me.gbxclasificacion.Controls.Add(Me.dgbtabla)
         Me.gbxclasificacion.Controls.Add(Me.txtDescripcion)
@@ -205,7 +206,7 @@ Partial Class M_ListaPrecios
         '
         Me.rbtnConvenioNo.AutoSize = True
         Me.rbtnConvenioNo.Checked = True
-        Me.rbtnConvenioNo.Location = New System.Drawing.Point(291, 116)
+        Me.rbtnConvenioNo.Location = New System.Drawing.Point(150, 12)
         Me.rbtnConvenioNo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rbtnConvenioNo.Name = "rbtnConvenioNo"
         Me.rbtnConvenioNo.Size = New System.Drawing.Size(47, 21)
@@ -217,7 +218,7 @@ Partial Class M_ListaPrecios
         'rbtnConvenioSi
         '
         Me.rbtnConvenioSi.AutoSize = True
-        Me.rbtnConvenioSi.Location = New System.Drawing.Point(155, 118)
+        Me.rbtnConvenioSi.Location = New System.Drawing.Point(13, 12)
         Me.rbtnConvenioSi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rbtnConvenioSi.Name = "rbtnConvenioSi"
         Me.rbtnConvenioSi.Size = New System.Drawing.Size(41, 21)
@@ -406,6 +407,15 @@ Partial Class M_ListaPrecios
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.rbtnConvenioSi)
+        Me.Panel1.Controls.Add(Me.rbtnConvenioNo)
+        Me.Panel1.Location = New System.Drawing.Point(142, 102)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(247, 55)
+        Me.Panel1.TabIndex = 161
+        '
         'M_ListaPrecios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -421,6 +431,8 @@ Partial Class M_ListaPrecios
         Me.gbxclasificacion.ResumeLayout(False)
         Me.gbxclasificacion.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -455,4 +467,5 @@ Partial Class M_ListaPrecios
     Friend WithEvents rbtnEfectivoNo As RadioButton
     Friend WithEvents rbtnEfectivoSi As RadioButton
     Friend WithEvents lblSolicitaEfectivo As Label
+    Friend WithEvents Panel1 As Panel
 End Class
