@@ -465,6 +465,7 @@ Partial Class M_Factura
         Me.txtcodigoConvenio.ReadOnly = True
         Me.txtcodigoConvenio.Size = New System.Drawing.Size(276, 22)
         Me.txtcodigoConvenio.TabIndex = 48
+        Me.txtcodigoConvenio.Text = "x`"
         Me.txtcodigoConvenio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcodigoTerminal
@@ -614,7 +615,7 @@ Partial Class M_Factura
         Me.btnimprimirComprobante.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnimprimirComprobante.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnimprimirComprobante.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnimprimirComprobante.Location = New System.Drawing.Point(811, 82)
+        Me.btnimprimirComprobante.Location = New System.Drawing.Point(811, 95)
         Me.btnimprimirComprobante.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnimprimirComprobante.Name = "btnimprimirComprobante"
         Me.btnimprimirComprobante.Size = New System.Drawing.Size(125, 94)
@@ -772,7 +773,7 @@ Partial Class M_Factura
         Me.btnentregarExamen.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnentregarExamen.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnentregarExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnentregarExamen.Location = New System.Drawing.Point(941, 82)
+        Me.btnentregarExamen.Location = New System.Drawing.Point(941, 95)
         Me.btnentregarExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnentregarExamen.Name = "btnentregarExamen"
         Me.btnentregarExamen.Size = New System.Drawing.Size(125, 94)
@@ -785,7 +786,7 @@ Partial Class M_Factura
         Me.btnbusquedaExamen.BackColor = System.Drawing.Color.Yellow
         Me.btnbusquedaExamen.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnbusquedaExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbusquedaExamen.Location = New System.Drawing.Point(680, 82)
+        Me.btnbusquedaExamen.Location = New System.Drawing.Point(680, 95)
         Me.btnbusquedaExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnbusquedaExamen.Name = "btnbusquedaExamen"
         Me.btnbusquedaExamen.Size = New System.Drawing.Size(125, 94)
@@ -798,7 +799,7 @@ Partial Class M_Factura
         Me.btnmuestrasPendientes.BackColor = System.Drawing.Color.Yellow
         Me.btnmuestrasPendientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnmuestrasPendientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmuestrasPendientes.Location = New System.Drawing.Point(548, 82)
+        Me.btnmuestrasPendientes.Location = New System.Drawing.Point(548, 95)
         Me.btnmuestrasPendientes.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnmuestrasPendientes.Name = "btnmuestrasPendientes"
         Me.btnmuestrasPendientes.Size = New System.Drawing.Size(125, 94)
@@ -811,7 +812,7 @@ Partial Class M_Factura
         Me.btnestadoFactura.BackColor = System.Drawing.Color.Yellow
         Me.btnestadoFactura.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnestadoFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnestadoFactura.Location = New System.Drawing.Point(417, 82)
+        Me.btnestadoFactura.Location = New System.Drawing.Point(417, 95)
         Me.btnestadoFactura.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnestadoFactura.Name = "btnestadoFactura"
         Me.btnestadoFactura.Size = New System.Drawing.Size(125, 94)
@@ -1055,7 +1056,7 @@ Partial Class M_Factura
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox3.Size = New System.Drawing.Size(1131, 221)
+        Me.GroupBox3.Size = New System.Drawing.Size(1131, 241)
         Me.GroupBox3.TabIndex = 110
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Detalle de pago"
@@ -1369,7 +1370,7 @@ Partial Class M_Factura
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1173, 809)
+        Me.ClientSize = New System.Drawing.Size(1173, 829)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblOKAY)
         Me.Controls.Add(Me.btnNuevaCotizacion)

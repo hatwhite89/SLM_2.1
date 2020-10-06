@@ -68,6 +68,54 @@ Public Class M_Factura
             M_ClienteVentana.txtcorreo2.Text = ""
         End If
     End Sub
+    Public Sub actualizarDatosCliente()
+        If (txtcodigoCliente.Text <> "") Then
+            Try
+                Dim objClient As New ClsCliente
+                With objClient
+                    .Codigo1 = txtcodigoCliente.Text
+                End With
+                Dim dt As New DataTable
+                dt = objClient.BuscarClienteCode()
+                Dim row As DataRow = dt.Rows(0)
+                txtnombreCliente.Text = CStr(row("nombreCompleto"))
+                lblcodePriceList.Text = CStr(row("codigoListaPrecios"))
+                'MsgBox(CStr(row("codigoListaPrecios")) & "   ------    " & lblcodePriceList.Text)
+                lblFechaNacimiento.Text = CStr(row("fechaNacimiento"))
+                'MsgBox(CStr(row("tipoConvenio")))
+                M_ClienteVentana.txttelefonoCasa.Text = CStr(row("telCasa"))
+                M_ClienteVentana.txttelefonoTrabajo.Text = CStr(row("telTrabajo"))
+                M_ClienteVentana.txtcelular.Text = CStr(row("celular"))
+                M_ClienteVentana.txtcorreo1.Text = CStr(row("correo1"))
+                M_ClienteVentana.txtcorreo2.Text = CStr(row("correo2"))
+                If (row("tipoConvenio")) Then
+                    txtcodigoConvenio.Text = CStr(row("descripcionLp"))
+                    lblcodeTerminoPago.Text = CStr(row("terminoListaPrecio"))
+                Else
+                    'lblcodePriceList.Text = "0"
+                    txtcodigoConvenio.Text = ""
+                End If
+                M_Cliente.lblcodeCategoria.Text = CStr(row("codigoCategoria"))
+                M_ClienteVentana.txtnombreCategoria.Text = M_Cliente.txtnombreCategoria.Text
+                txtcodigoCliente.BackColor = Color.White
+            Catch ex As Exception
+                txtcodigoCliente.BackColor = Color.Red
+                'txtcodigoCliente.Text = ""
+                txtnombreCliente.Text = ""
+            End Try
+        Else
+            lblcodePriceList.Text = "0"
+            txtcodigoConvenio.Text = ""
+            'txtcodigoCliente.Text = ""
+            txtnombreCliente.Text = ""
+            txtcodigoCliente.BackColor = Color.White
+            M_ClienteVentana.txttelefonoCasa.Text = ""
+            M_ClienteVentana.txttelefonoTrabajo.Text = ""
+            M_ClienteVentana.txtcelular.Text = ""
+            M_ClienteVentana.txtcorreo1.Text = ""
+            M_ClienteVentana.txtcorreo2.Text = ""
+        End If
+    End Sub
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
         limpiar()
         banderaTipo = True
@@ -275,7 +323,7 @@ Public Class M_Factura
     End Sub
     Public Sub HabilitarCotizacionFactura()
         txtcodigoCliente.ReadOnly = False
-        txtcodigoMedico.ReadOnly = False
+        txtcodigoMedico.ReadOnly = True
         dtpfechaFactura.Enabled = True
         txtcodigoTerminosPago.ReadOnly = False
         txtcodigoRecepecionista.ReadOnly = False
@@ -285,8 +333,9 @@ Public Class M_Factura
         btnActualizar.Enabled = False
         'btncotizacion.Enabled = True
         btnbuscarSucursal.Enabled = True
-        btnbuscarMedico.Enabled = True
+        btnbuscarMedico.Enabled = False
 
+        btnguardar.Enabled = True
         btnbuscarCliente.Enabled = True
         btnbuscarTerminosPago.Enabled = True
     End Sub
@@ -777,14 +826,14 @@ Public Class M_Factura
                     txtcodigoRecepecionista.Text = Form1.lblUserCod.Text
                     txtNombreRecepcionista.Text = Form1.lblMiUser.Text
                 End If
-                If Trim(txtcodigoCajero.Text) = "" Then
-                    'cajero
-                    txtcodigoCajero.Text = Form1.lblUserCod.Text
-                    txtNombreCajero.Text = Form1.lblMiUser.Text
-                End If
-                If Trim(txtcodigoTerminal.Text) = "" Then
-                    buscarMaquinaLocal()
-                End If
+
+                'cajero
+                txtcodigoCajero.Text = Form1.lblUserCod.Text
+                txtNombreCajero.Text = Form1.lblMiUser.Text
+
+                'maquina local
+                buscarMaquinaLocal()
+
                 If Trim(txtnumeroPoliza.Text) = "" Then
                     txtnumeroPoliza.Text = "1"
                 End If
@@ -963,13 +1012,19 @@ Public Class M_Factura
 
     Private Sub AGREGAR_COTIZACION()
         Try
+
+            'cajero
+            txtcodigoCajero.Text = Form1.lblUserCod.Text
+            txtNombreCajero.Text = Form1.lblMiUser.Text
+
             If (Trim(txtcodigoCliente.Text) <> "" And Trim(txtcodigoTerminosPago.Text) <> "" And
-                Trim(txtcodigoSucursal.Text) <> "" And txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
+                Trim(txtcodigoSucursal.Text) <> "" And txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 1) Then
 
                 Dim objCotiz As New ClsCotizacion
                 With objCotiz
                     .codigoCliente_ = Convert.ToInt64(txtcodigoCliente.Text)
                     .codigoRecepcionista_ = Convert.ToInt64(txtcodigoRecepecionista.Text)
+                    .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
                     .codigoTerminoPago_ = Convert.ToInt64(lblcodeTerminoPago.Text)
                     .codigoSucursal_ = Convert.ToInt64(lblcodeSucursal.Text)
                     .total_ = Convert.ToDouble(txttotal.Text)
@@ -1020,8 +1075,13 @@ Public Class M_Factura
 
     Private Sub ACTUALIZAR_COTIZACION()
         Try
+
+            'cajero
+            txtcodigoCajero.Text = Form1.lblUserCod.Text
+            txtNombreCajero.Text = Form1.lblMiUser.Text
+
             If (Trim(txtcodigoCliente.Text) <> "" And Trim(txtcodigoTerminosPago.Text) <> "" And
-                Trim(txtcodigoSucursal.Text) <> "" And txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 0) Then
+                Trim(txtcodigoSucursal.Text) <> "" And txttotal.Text <> "" And dgblistadoExamenes.Rows.Count > 1) Then
                 If Trim(txtcodigoRecepecionista.Text) = "" Then
                     txtcodigoRecepecionista.Text = "1"
                 End If
@@ -1033,6 +1093,7 @@ Public Class M_Factura
                     .codigoTerminoPago_ = Convert.ToInt64(lblcodeTerminoPago.Text)
                     .codigoSucursal_ = Convert.ToInt64(lblcodeSucursal.Text)
                     .total_ = Convert.ToDouble(txttotal.Text)
+                    .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
                 End With
 
                 If objCotiz.ModificarCotizacion() = 1 Then
@@ -1104,6 +1165,14 @@ Public Class M_Factura
                 txtcodigoCajero.Text = Form1.lblUserCod.Text
                 txtNombreCajero.Text = Form1.lblMiUser.Text
 
+                'maquina local
+                buscarMaquinaLocal()
+
+                If Trim(txtcodigoTerminal.Text) = "" Then
+                    MsgBox("No existe la máquina local.", MsgBoxStyle.Critical)
+                    Exit Sub
+                End If
+
                 Dim dt As New DataTable
                 Dim bandera As Integer = 0
                 Dim row As DataRow
@@ -1164,6 +1233,7 @@ Public Class M_Factura
                             .transferencia_ = Convert.ToDouble(txtTransferencia.Text)
                             .cheque_ = Convert.ToDouble(txtCheque.Text)
                             .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
+                            .codigoTerminal_ = Convert.ToInt64(txtcodigoTerminal.Text)
                         End With
                         'MODIFICO LOS DATOS DE LA FACTURA
                         If objFact.ModificarFactura() = 1 Then
@@ -1255,6 +1325,7 @@ Public Class M_Factura
                             .transferencia_ = Convert.ToDouble(txtTransferencia.Text)
                             .cheque_ = Convert.ToDouble(txtCheque.Text)
                             .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
+                            .codigoTerminal_ = Convert.ToInt64(txtcodigoTerminal.Text)
                         End With
                         'MODIFICO LOS DATOS DE LA FACTURA
                         If objFact.ModificarFactura() = 1 Then
@@ -1377,6 +1448,12 @@ Public Class M_Factura
             objReporte.SetParameterValue("@numero", Convert.ToInt64(txtnumeroFactura.Text))
             objReporte.SetParameterValue("@numeroFactura", Convert.ToInt64(txtnumeroFactura.Text))
             objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
+            If txtcodigoConvenio.Text <> "0" Then
+                objReporte.SetParameterValue("convenio", txtcodigoConvenio.Text)
+            Else
+                objReporte.SetParameterValue("convenio", "")
+            End If
+            objReporte.SetParameterValue("recepcionista", txtNombreRecepcionista.Text)
             objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
             M_ComprobanteEntrega.CrystalReportViewer1.ReportSource = objReporte
             M_ComprobanteEntrega.Show()
@@ -1392,6 +1469,8 @@ Public Class M_Factura
             objReporte.SetParameterValue("@numeroCotizacion", Convert.ToInt64(txtnumeroFactura.Text))
             objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
             objReporte.SetParameterValue("numalet", letras)
+            objReporte.SetParameterValue("cajero", txtNombreCajero.Text)
+            objReporte.SetParameterValue("recepcionista", txtNombreRecepcionista.Text)
             objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
             M_ImprimirCotizacionForm.CrystalReportViewer1.ReportSource = objReporte
             M_ImprimirCotizacionForm.Show()
@@ -1615,7 +1694,7 @@ Public Class M_Factura
                                 With objDetOrd
                                     .cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
                                     .cod_item_examen_detalle_ = rowI("codigo")
-                                    .estado_ = "No Procesado"
+                                    .estado_ = "No Ingresado"
                                 End With
                                 If objDetOrd.RegistrarNuevoDetalleOrdenTrabajo = 0 Then
                                     MsgBox("Error en la insercion del detalle orden de trabajo.", MsgBoxStyle.Critical)
@@ -1638,7 +1717,7 @@ Public Class M_Factura
             Next
 
             'DataGridView1.DataSource = dt
-            MsgBox("Orden de trabajo registrada con éxito.", MsgBoxStyle.Information)
+            'MsgBox("Orden de trabajo registrada con éxito.", MsgBoxStyle.Information)
         Catch ex As Exception
             MsgBox("CRITICAL ERROR : " & ex.Message)
         End Try
@@ -1776,12 +1855,24 @@ Public Class M_Factura
 
     Private Sub btnNuevaCotizacion_Click(sender As Object, e As EventArgs) Handles btnNuevaCotizacion.Click
         limpiar()
+        deshabilitar()
         btnPromocion.Enabled = False
+        txtnumeroPoliza.ReadOnly = True
+        btnbuscarMedico.Enabled = False
+        txtcodigoMedico.ReadOnly = True
+        btnbuscarSede.Enabled = False
+        txtcodigoSede.ReadOnly = True
         btnQuitarPromocion.Enabled = False
         banderaTipo = False
         dgblistadoExamenes.Columns(1).ReadOnly = False
     End Sub
 
+    Private Sub cbxenviarCorreo_CheckedChanged(sender As Object, e As EventArgs) Handles cbxenviarCorreo.CheckedChanged
+        If Trim(M_ClienteVentana.txtcorreo1.Text) = "" And Trim(M_ClienteVentana.txtcorreo2.Text) = "" And cbxenviarCorreo.Checked Then
+            MsgBox("Debe ingresar el correo del cliente o paciente para entregar los resultado por correo electrónico.", MsgBoxStyle.Information, "Validación.")
+            cbxenviarCorreo.Checked = False
+        End If
+    End Sub
 
     Private Sub calcularDescuento()
         Dim dt As New DataTable

@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ClsCotizacion
-    Dim numero, codigoCliente, codigoRecepcionista, codigoTerminoPago, codigoSucursal As Integer
+    Dim numero, codigoCliente, codigoRecepcionista, codigoTerminoPago, codigoSucursal, codigoCajero As Integer
     Dim nombreCliente As String
     Dim fecha As Date
     Dim total As Double
@@ -39,6 +39,14 @@ Public Class ClsCotizacion
         End Get
         Set(value As String)
             nombreCliente = value
+        End Set
+    End Property
+    Public Property codigoCajero_ As Integer
+        Get
+            Return codigoCajero
+        End Get
+        Set(value As Integer)
+            codigoCajero = value
         End Set
     End Property
     Public Property codigoRecepcionista_ As Integer
@@ -108,6 +116,11 @@ Public Class ClsCotizacion
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoCajero" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoCajero_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -168,6 +181,11 @@ Public Class ClsCotizacion
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "total" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = total_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoCajero" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoCajero_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

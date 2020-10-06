@@ -374,7 +374,7 @@
                     MsgBox("Validado correctamente.", MsgBoxStyle.Information)
                     Dim colColl As DataColumnCollection = ds.Tables("HojaTrabajo").Columns
                     dgvHojaTrab.Rows(fila).Cells(colColl.IndexOf("Estado")).Value = "Validado"
-
+                    dgvHojaTrab.Rows.Remove(dgvHojaTrab.Rows(fila))
                 Else
                     MsgBox("Error al momento de actualizar la subárea en el sistema.", MsgBoxStyle.Critical)
                 End If

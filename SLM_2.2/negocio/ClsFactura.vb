@@ -483,6 +483,11 @@ Public Class ClsFactura
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoTerminal" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigoTerminal_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
