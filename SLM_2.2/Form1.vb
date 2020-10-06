@@ -256,7 +256,7 @@
 
         Try
 
-            M_ListaPrecios.Show()
+            M_ListadoDePrecios.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try

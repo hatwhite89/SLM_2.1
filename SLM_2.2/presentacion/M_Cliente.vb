@@ -178,7 +178,7 @@ Public Class M_Cliente
                 numero = 0
             End If
 
-            If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And
+            If (genero <> "" And txtcodigoTermino.Text <> "" And
                 txtcodigoTermino.BackColor = Color.White And txtnombreCategoria.Text <> "" And
                 txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And
                 Trim(txtapellido1.Text) <> "" And dtpfechaNacimiento.Text <> "" And Trim(cmbxClasificacion.SelectedValue) <> "") Then
@@ -354,7 +354,7 @@ Public Class M_Cliente
                 numero = 0
             End If
 
-            If (genero <> "" And Trim(rtxtdireccion.Text) <> "" And txtcodigoTermino.Text <> "" And
+            If (genero <> "" And txtcodigoTermino.Text <> "" And
                 txtcodigoTermino.BackColor = Color.White And txtnombreCategoria.Text <> "" And
                 txtcodigoCategoria.BackColor = Color.White And numero > 0 And Trim(txtnombre1.Text) <> "" And
                 Trim(txtapellido1.Text) <> "" And dtpfechaNacimiento.Text <> "" And Trim(cmbxClasificacion.SelectedValue) <> "") Then

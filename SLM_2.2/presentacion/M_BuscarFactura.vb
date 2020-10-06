@@ -100,7 +100,7 @@ Public Class M_BuscarFactura
                 M_Factura.ShowDialog()
             End If
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 

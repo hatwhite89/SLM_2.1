@@ -29,7 +29,6 @@ Partial Class M_Cliente
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbxinfoCliente = New System.Windows.Forms.GroupBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.cmbxClasificacion = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -162,7 +161,6 @@ Partial Class M_Cliente
         '
         'gbxinfoCliente
         '
-        Me.gbxinfoCliente.Controls.Add(Me.Label9)
         Me.gbxinfoCliente.Controls.Add(Me.cmbxClasificacion)
         Me.gbxinfoCliente.Controls.Add(Me.Label7)
         Me.gbxinfoCliente.Controls.Add(Me.Label5)
@@ -237,17 +235,6 @@ Partial Class M_Cliente
         Me.gbxinfoCliente.TabStop = False
         Me.gbxinfoCliente.Text = "Información de Cliente/Paciente"
         Me.gbxinfoCliente.Visible = False
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.ForeColor = System.Drawing.Color.Red
-        Me.Label9.Location = New System.Drawing.Point(7, 173)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(13, 17)
-        Me.Label9.TabIndex = 134
-        Me.Label9.Text = "*"
         '
         'cmbxClasificacion
         '
@@ -1124,5 +1111,4 @@ Partial Class M_Cliente
     Friend WithEvents Label1 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents cmbxClasificacion As ComboBox
-    Friend WithEvents Label9 As Label
 End Class

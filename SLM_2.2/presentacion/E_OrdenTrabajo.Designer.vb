@@ -124,6 +124,13 @@ Partial Class E_OrdenTrabajo
         Me.dtpInFecha = New System.Windows.Forms.DateTimePicker()
         Me.dtpFechaFactura = New System.Windows.Forms.DateTimePicker()
         Me.dtpHoraFactura = New System.Windows.Forms.DateTimePicker()
+        Me.lblpmUsuario = New System.Windows.Forms.Label()
+        Me.lblnpUsuario = New System.Windows.Forms.Label()
+        Me.lblepUsuario = New System.Windows.Forms.Label()
+        Me.lblprUsuario = New System.Windows.Forms.Label()
+        Me.lblcoUsuario = New System.Windows.Forms.Label()
+        Me.lblenUsuario = New System.Windows.Forms.Label()
+        Me.lblinUsuario = New System.Windows.Forms.Label()
         CType(Me.dgvResultados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -888,6 +895,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.dgvResultados.AllowUserToAddRows = False
         Me.dgvResultados.AllowUserToDeleteRows = False
+        Me.dgvResultados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvResultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.Descripcion, Me.Resultado, Me.Unidad, Me.Estado})
         Me.dgvResultados.Location = New System.Drawing.Point(15, 542)
@@ -905,7 +913,6 @@ Partial Class E_OrdenTrabajo
         Me.codigo.Name = "codigo"
         Me.codigo.ReadOnly = True
         Me.codigo.Visible = False
-        Me.codigo.Width = 125
         '
         'Descripcion
         '
@@ -913,14 +920,12 @@ Partial Class E_OrdenTrabajo
         Me.Descripcion.MinimumWidth = 6
         Me.Descripcion.Name = "Descripcion"
         Me.Descripcion.ReadOnly = True
-        Me.Descripcion.Width = 300
         '
         'Resultado
         '
         Me.Resultado.HeaderText = "Resultado"
         Me.Resultado.MinimumWidth = 6
         Me.Resultado.Name = "Resultado"
-        Me.Resultado.Width = 200
         '
         'Unidad
         '
@@ -928,7 +933,6 @@ Partial Class E_OrdenTrabajo
         Me.Unidad.MinimumWidth = 6
         Me.Unidad.Name = "Unidad"
         Me.Unidad.ReadOnly = True
-        Me.Unidad.Width = 175
         '
         'Estado
         '
@@ -936,7 +940,6 @@ Partial Class E_OrdenTrabajo
         Me.Estado.MinimumWidth = 6
         Me.Estado.Name = "Estado"
         Me.Estado.ReadOnly = True
-        Me.Estado.Width = 300
         '
         'dtpPmFecha
         '
@@ -1082,11 +1085,88 @@ Partial Class E_OrdenTrabajo
         Me.dtpHoraFactura.Size = New System.Drawing.Size(103, 22)
         Me.dtpHoraFactura.TabIndex = 117
         '
+        'lblpmUsuario
+        '
+        Me.lblpmUsuario.AutoSize = True
+        Me.lblpmUsuario.Location = New System.Drawing.Point(1342, 135)
+        Me.lblpmUsuario.Name = "lblpmUsuario"
+        Me.lblpmUsuario.Size = New System.Drawing.Size(51, 17)
+        Me.lblpmUsuario.TabIndex = 118
+        Me.lblpmUsuario.Text = "Label1"
+        Me.lblpmUsuario.Visible = False
+        '
+        'lblnpUsuario
+        '
+        Me.lblnpUsuario.AutoSize = True
+        Me.lblnpUsuario.Location = New System.Drawing.Point(1342, 167)
+        Me.lblnpUsuario.Name = "lblnpUsuario"
+        Me.lblnpUsuario.Size = New System.Drawing.Size(51, 17)
+        Me.lblnpUsuario.TabIndex = 119
+        Me.lblnpUsuario.Text = "Label1"
+        Me.lblnpUsuario.Visible = False
+        '
+        'lblepUsuario
+        '
+        Me.lblepUsuario.AutoSize = True
+        Me.lblepUsuario.Location = New System.Drawing.Point(1342, 194)
+        Me.lblepUsuario.Name = "lblepUsuario"
+        Me.lblepUsuario.Size = New System.Drawing.Size(51, 17)
+        Me.lblepUsuario.TabIndex = 120
+        Me.lblepUsuario.Text = "Label1"
+        Me.lblepUsuario.Visible = False
+        '
+        'lblprUsuario
+        '
+        Me.lblprUsuario.AutoSize = True
+        Me.lblprUsuario.Location = New System.Drawing.Point(1342, 221)
+        Me.lblprUsuario.Name = "lblprUsuario"
+        Me.lblprUsuario.Size = New System.Drawing.Size(51, 17)
+        Me.lblprUsuario.TabIndex = 121
+        Me.lblprUsuario.Text = "Label1"
+        Me.lblprUsuario.Visible = False
+        '
+        'lblcoUsuario
+        '
+        Me.lblcoUsuario.AutoSize = True
+        Me.lblcoUsuario.Location = New System.Drawing.Point(1342, 249)
+        Me.lblcoUsuario.Name = "lblcoUsuario"
+        Me.lblcoUsuario.Size = New System.Drawing.Size(51, 17)
+        Me.lblcoUsuario.TabIndex = 122
+        Me.lblcoUsuario.Text = "Label1"
+        Me.lblcoUsuario.Visible = False
+        '
+        'lblenUsuario
+        '
+        Me.lblenUsuario.AutoSize = True
+        Me.lblenUsuario.Location = New System.Drawing.Point(1342, 279)
+        Me.lblenUsuario.Name = "lblenUsuario"
+        Me.lblenUsuario.Size = New System.Drawing.Size(51, 17)
+        Me.lblenUsuario.TabIndex = 123
+        Me.lblenUsuario.Text = "Label1"
+        Me.lblenUsuario.Visible = False
+        '
+        'lblinUsuario
+        '
+        Me.lblinUsuario.AutoSize = True
+        Me.lblinUsuario.Location = New System.Drawing.Point(1342, 303)
+        Me.lblinUsuario.Name = "lblinUsuario"
+        Me.lblinUsuario.Size = New System.Drawing.Size(51, 17)
+        Me.lblinUsuario.TabIndex = 124
+        Me.lblinUsuario.Text = "Label1"
+        Me.lblinUsuario.Visible = False
+        '
         'E_OrdenTrabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1403, 767)
+        Me.Controls.Add(Me.lblinUsuario)
+        Me.Controls.Add(Me.lblenUsuario)
+        Me.Controls.Add(Me.lblcoUsuario)
+        Me.Controls.Add(Me.lblprUsuario)
+        Me.Controls.Add(Me.lblepUsuario)
+        Me.Controls.Add(Me.lblnpUsuario)
+        Me.Controls.Add(Me.lblpmUsuario)
         Me.Controls.Add(Me.dtpHoraFactura)
         Me.Controls.Add(Me.dtpFechaFactura)
         Me.Controls.Add(Me.dtpInHora)
@@ -1186,6 +1266,7 @@ Partial Class E_OrdenTrabajo
         Me.Controls.Add(Me.lblnumero)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "E_OrdenTrabajo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Orden de Trabajo"
         CType(Me.dgvResultados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -1295,4 +1376,11 @@ Partial Class E_OrdenTrabajo
     Friend WithEvents Resultado As DataGridViewTextBoxColumn
     Friend WithEvents Unidad As DataGridViewTextBoxColumn
     Friend WithEvents Estado As DataGridViewTextBoxColumn
+    Friend WithEvents lblpmUsuario As Label
+    Friend WithEvents lblnpUsuario As Label
+    Friend WithEvents lblepUsuario As Label
+    Friend WithEvents lblprUsuario As Label
+    Friend WithEvents lblcoUsuario As Label
+    Friend WithEvents lblenUsuario As Label
+    Friend WithEvents lblinUsuario As Label
 End Class

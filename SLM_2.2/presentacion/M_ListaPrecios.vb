@@ -134,7 +134,6 @@
                         .codigoTerminoPago_ = lblcodeT.Text
                     End If
                 End With
-
                 If objPriceList.ModificarListaPrecios() = 1 Then
 
                     Dim objDetPrice As New ClsDetalleListaPrecios
@@ -146,7 +145,7 @@
                     Next
                     codigoDetallePriceList.Clear()
                     For index As Integer = 0 To dgbtabla.Rows.Count - 2
-                        If dgbtabla.Rows(index).Cells(0).Value() = 0 Then
+                        If dgbtabla.Rows(index).Cells(0).Value() = "" Then
                             'agrega
                             With objDetPrice
                                 .codigoListaPrecios_ = txtcodigo.Text
@@ -193,7 +192,7 @@
                 btn.Name = "btnEliminar"
                 btn.UseColumnTextForButtonValue = True
             End If
-            btnmodificar.Enabled = False
+            'btnmodificar.Enabled = False
         Catch ex As Exception
 
         End Try
@@ -231,28 +230,32 @@
         'habilito el termino de pago a ingresar
         Try
             If rbtnConvenioSi.Checked Then
+                rbtnConvenioSi.Checked = True
                 lblTerminoPago.Visible = True
                 btnbuscarTermino.Visible = True
                 txtcodigoTermino.Visible = True
                 txtDescripcionTermino.Visible = True
-                'lblPorcentaje.Visible = True
-                'txtPorcentaje.Visible = True
+                lblPorcentaje.Visible = True
+                txtPorcentaje.Visible = True
                 lblSolicitaEfectivo.Visible = True
                 rbtnEfectivoSi.Visible = True
                 rbtnEfectivoNo.Visible = True
-            Else
+                rbtnEfectivoSi.Checked = True
+            ElseIf rbtnConvenioNo.Checked Then
+                rbtnConvenioNo.Checked = True
                 lblTerminoPago.Visible = False
                 btnbuscarTermino.Visible = False
                 txtcodigoTermino.Visible = False
                 txtDescripcionTermino.Visible = False
-                'lblPorcentaje.Visible = False
-                'txtPorcentaje.Visible = False
+                lblPorcentaje.Visible = False
+                txtPorcentaje.Visible = False
                 lblSolicitaEfectivo.Visible = False
                 rbtnEfectivoSi.Visible = False
                 rbtnEfectivoNo.Visible = False
             End If
         Catch ex As Exception
-
+            'Magnolia
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
     Private Sub rbtnNo_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnConvenioNo.CheckedChanged
@@ -263,18 +266,19 @@
                 btnbuscarTermino.Visible = True
                 txtcodigoTermino.Visible = True
                 txtDescripcionTermino.Visible = True
-                'lblPorcentaje.Visible = True
-                'txtPorcentaje.Visible = True
+                lblPorcentaje.Visible = True
+                txtPorcentaje.Visible = True
                 lblSolicitaEfectivo.Visible = True
                 rbtnEfectivoSi.Visible = True
                 rbtnEfectivoNo.Visible = True
-            Else
+                rbtnEfectivoSi.Checked = True
+            ElseIf rbtnConvenioNo.Checked Then
                 lblTerminoPago.Visible = False
                 btnbuscarTermino.Visible = False
                 txtcodigoTermino.Visible = False
                 txtDescripcionTermino.Visible = False
-                'lblPorcentaje.Visible = False
-                'txtPorcentaje.Visible = False
+                lblPorcentaje.Visible = False
+                txtPorcentaje.Visible = False
                 lblSolicitaEfectivo.Visible = False
                 rbtnEfectivoSi.Visible = False
                 rbtnEfectivoNo.Visible = False
@@ -345,7 +349,7 @@
         If rbtnEfectivoSi.Checked Then
             lblPorcentaje.Visible = True
             txtPorcentaje.Visible = True
-        Else
+        ElseIf rbtnEfectivoNo.Checked Then
             lblPorcentaje.Visible = False
             txtPorcentaje.Visible = False
         End If
@@ -356,7 +360,7 @@
         If rbtnEfectivoSi.Checked Then
             lblPorcentaje.Visible = True
             txtPorcentaje.Visible = True
-        Else
+        ElseIf rbtnEfectivoNo.Checked Then
             lblPorcentaje.Visible = False
             txtPorcentaje.Visible = False
         End If
