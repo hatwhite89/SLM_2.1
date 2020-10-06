@@ -500,6 +500,7 @@ Public Class ClsCheques
             da.Fill(dt)
             Return dt
         End Using
+
     End Function
 
     'Consolidacion Cheque

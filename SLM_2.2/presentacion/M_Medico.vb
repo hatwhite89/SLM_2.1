@@ -37,7 +37,7 @@
             Else
                 numero = 0
             End If
-            If (Trim(txtnombreCompleto.Text) <> "" And numero <> 0 And Trim(txtcodigoEspecialidad.Text) <> "" And txtcodigoEspecialidad.BackColor = Color.White) Then
+            If (Trim(txtnombreCompleto.Text) <> "" And Trim(txtcodigoEspecialidad.Text) <> "" And txtcodigoEspecialidad.BackColor = Color.White) Then
                 Dim objMedico As New ClsMedico
                 With objMedico
                     .Nombre_completo1 = txtnombreCompleto.Text
@@ -227,7 +227,7 @@
             Else
                 numero = 0
             End If
-            If (Trim(txtnombreCompleto.Text) <> "" And numero <> 0 And Trim(txtcodigoEspecialidad.Text) <> "" And txtcodigoEspecialidad.BackColor = Color.White) Then
+            If (Trim(txtnombreCompleto.Text) <> "" And Trim(txtcodigoEspecialidad.Text) <> "" And txtcodigoEspecialidad.BackColor = Color.White) Then
                 Dim objMedico As New ClsMedico
                 With objMedico
                     .Nombre_completo1 = txtnombreCompleto.Text

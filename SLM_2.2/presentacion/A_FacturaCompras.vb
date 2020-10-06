@@ -285,12 +285,12 @@
 
             End If
 
-            Dim cmb As New DataGridViewComboBoxColumn()
-            dtDetalleFactura.Columns.Add(cmb)
-            cmb.HeaderText = "Tipo Stock"
-            cmb.Items.Add("Comprado")
-            cmb.Items.Add("Consignado")
-            cmb.Name = "cbx"
+            'Dim cmb As New DataGridViewComboBoxColumn()
+            'dtDetalleFactura.Columns.Add(cmb)
+            'cmb.HeaderText = "Tipo Stock"
+            'cmb.Items.Add("Comprado")
+            'cmb.Items.Add("Consignado")
+            'cmb.Name = "cbx"
 
             If dtDetalleFactura.Columns.Contains("btnEliminar") = False Then
                 Dim btn As New DataGridViewButtonColumn()

@@ -739,6 +739,11 @@ Public Class A_Cheques
         Dim n As String = MsgBox("¿Desea modificar el estado del cheque?", MsgBoxStyle.YesNo, "Validación")
         If n = vbYes Then
 
+
+
+
+
+
         End If
 
 

@@ -72,6 +72,8 @@
             dt2 = formap.ctaBancoXBanco()
             row2 = dt2.Rows(0)
 
+
+
             With A_Cheques
 
                 .txtNro.Text = row("codCheque")

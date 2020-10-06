@@ -547,6 +547,12 @@
     <Compile Include="presentacion\A_PeriodoContable.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_Planilla.Designer.vb">
+      <DependentUpon>A_Planilla.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_Planilla.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_PlantillasDeResultado.Designer.vb">
       <DependentUpon>A_PlantillasDeResultado.vb</DependentUpon>
     </Compile>
@@ -1440,6 +1446,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_PeriodoContable.resx">
       <DependentUpon>A_PeriodoContable.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_Planilla.resx">
+      <DependentUpon>A_Planilla.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_PlantillasDeResultado.resx">
       <DependentUpon>A_PlantillasDeResultado.vb</DependentUpon>

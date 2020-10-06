@@ -137,7 +137,6 @@
         txtComentario.Text = ""
         txtCtaBanco.Text = ""
         txtFormaP.Text = ""
-        txtCodOrden.Text = ""
         dtpFechaP.ResetText()
         dtpFechaT.ResetText()
 
@@ -290,6 +289,7 @@
             'Columna de Cheques
             lblFila.Text = e.RowIndex
             A_ListarChequesHabilitados.Show()
+            A_Cheques.txtcodProvee.Text = lblCodigoProveedor.Text
             lblFila.Text = e.RowIndex
 
         ElseIf e.ColumnIndex = 0 Then
@@ -313,8 +313,6 @@
 
 
             End If
-
-
 
             'bloquear datos si pago ya fue realizado
             If chkPagado.Checked = True Then
@@ -531,4 +529,5 @@
         Me.Close()
 
     End Sub
+
 End Class

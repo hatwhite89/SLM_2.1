@@ -17,7 +17,6 @@
             MsgBox("Error al cargar listado de Pagos. Error: " + ex.Message)
         End Try
 
-
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
