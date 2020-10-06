@@ -201,7 +201,6 @@
             Dim roww As DataRow
             With form
 
-
                 'facturacion
                 .Descripcion_ = "Modulo Facturacion"
                 .Estado_ = chkFacturacion.Checked
@@ -300,7 +299,6 @@
                         .Cod_Modulo = roww("codModulos")
                         .registrarVentana()
 
-
                     End With
                 Next
                 pbarCarga.Value += 3
@@ -331,7 +329,6 @@
             pbarCarga.Value = 0
             limpiar()
             CargarData()
-
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -617,10 +614,6 @@
 
         End Try
 
-
-
-
-
     End Sub
 
     Private Sub dtLaboratorio_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtLaboratorio.CellContentClick
@@ -683,8 +676,6 @@
         Catch ex As Exception
 
         End Try
-
-
 
     End Sub
 
@@ -763,8 +754,6 @@
 
         End If
 
-
-
     End Sub
 
     Private Sub chkTalentoHumano_CheckedChanged(sender As Object, e As EventArgs) Handles chkTalentoHumano.CheckedChanged
@@ -841,7 +830,6 @@
                 dtPerfiles.DataSource = dt
 
             End With
-
 
         Catch ex As Exception
 

@@ -404,6 +404,7 @@ Partial Class A_FacturaCompras
         'dtDetalleFactura
         '
         Me.dtDetalleFactura.AllowUserToDeleteRows = False
+        Me.dtDetalleFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dtDetalleFactura.BackgroundColor = System.Drawing.Color.White
         Me.dtDetalleFactura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical
         Me.dtDetalleFactura.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]

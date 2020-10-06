@@ -39,8 +39,6 @@ Partial Class frmPagos
         Me.lblCtaBanco = New System.Windows.Forms.Label()
         Me.txtCtaBanco = New System.Windows.Forms.TextBox()
         Me.chxInfo = New System.Windows.Forms.CheckBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtCodOrden = New System.Windows.Forms.TextBox()
         Me.lblComentario = New System.Windows.Forms.Label()
         Me.txtComentario = New System.Windows.Forms.TextBox()
         Me.dtDetallePagos = New System.Windows.Forms.DataGridView()
@@ -65,6 +63,7 @@ Partial Class frmPagos
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblCodigoProveedor = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dtDetallePagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxInfo.SuspendLayout()
@@ -211,24 +210,6 @@ Partial Class frmPagos
         Me.chxInfo.Text = "Inf. Prov. en Asiento"
         Me.chxInfo.UseVisualStyleBackColor = True
         '
-        'Label2
-        '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(490, 45)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 13)
-        Me.Label2.TabIndex = 14
-        Me.Label2.Text = "Cod. Orden"
-        '
-        'txtCodOrden
-        '
-        Me.txtCodOrden.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtCodOrden.Location = New System.Drawing.Point(557, 42)
-        Me.txtCodOrden.Name = "txtCodOrden"
-        Me.txtCodOrden.Size = New System.Drawing.Size(93, 20)
-        Me.txtCodOrden.TabIndex = 16
-        '
         'lblComentario
         '
         Me.lblComentario.AutoSize = True
@@ -261,7 +242,7 @@ Partial Class frmPagos
         Me.dtDetallePagos.GridColor = System.Drawing.Color.White
         Me.dtDetallePagos.Location = New System.Drawing.Point(6, 19)
         Me.dtDetallePagos.Name = "dtDetallePagos"
-        Me.dtDetallePagos.Size = New System.Drawing.Size(765, 209)
+        Me.dtDetallePagos.Size = New System.Drawing.Size(765, 208)
         Me.dtDetallePagos.TabIndex = 20
         '
         'NroFac
@@ -363,6 +344,7 @@ Partial Class frmPagos
         '
         Me.gbxInfo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxInfo.Controls.Add(Me.lblCodigoProveedor)
         Me.gbxInfo.Controls.Add(Me.chkPagado)
         Me.gbxInfo.Controls.Add(Me.dtpFechaP)
         Me.gbxInfo.Controls.Add(Me.lblNro)
@@ -376,10 +358,8 @@ Partial Class frmPagos
         Me.gbxInfo.Controls.Add(Me.lblComentario)
         Me.gbxInfo.Controls.Add(Me.txtFormaP)
         Me.gbxInfo.Controls.Add(Me.lblReferencia)
-        Me.gbxInfo.Controls.Add(Me.txtCodOrden)
         Me.gbxInfo.Controls.Add(Me.txtReferencia)
         Me.gbxInfo.Controls.Add(Me.lblCtaBanco)
-        Me.gbxInfo.Controls.Add(Me.Label2)
         Me.gbxInfo.Controls.Add(Me.txtCtaBanco)
         Me.gbxInfo.Controls.Add(Me.chxInfo)
         Me.gbxInfo.Location = New System.Drawing.Point(12, 71)
@@ -413,7 +393,7 @@ Partial Class frmPagos
         Me.gbxDetalle.Controls.Add(Me.dtDetallePagos)
         Me.gbxDetalle.Location = New System.Drawing.Point(12, 201)
         Me.gbxDetalle.Name = "gbxDetalle"
-        Me.gbxDetalle.Size = New System.Drawing.Size(777, 267)
+        Me.gbxDetalle.Size = New System.Drawing.Size(777, 266)
         Me.gbxDetalle.TabIndex = 26
         Me.gbxDetalle.TabStop = False
         Me.gbxDetalle.Text = "Detalle de Pago"
@@ -442,7 +422,7 @@ Partial Class frmPagos
         '
         Me.lblTotalSuma.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTotalSuma.AutoSize = True
-        Me.lblTotalSuma.Location = New System.Drawing.Point(713, 240)
+        Me.lblTotalSuma.Location = New System.Drawing.Point(713, 239)
         Me.lblTotalSuma.Name = "lblTotalSuma"
         Me.lblTotalSuma.Size = New System.Drawing.Size(10, 13)
         Me.lblTotalSuma.TabIndex = 22
@@ -452,7 +432,7 @@ Partial Class frmPagos
         '
         Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(591, 239)
+        Me.Label4.Location = New System.Drawing.Point(591, 238)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(77, 13)
         Me.Label4.TabIndex = 21
@@ -515,12 +495,22 @@ Partial Class frmPagos
         Me.Label3.TabIndex = 29
         Me.Label3.Text = "Generar Pago"
         '
+        'lblCodigoProveedor
+        '
+        Me.lblCodigoProveedor.AutoSize = True
+        Me.lblCodigoProveedor.Location = New System.Drawing.Point(477, 49)
+        Me.lblCodigoProveedor.Name = "lblCodigoProveedor"
+        Me.lblCodigoProveedor.Size = New System.Drawing.Size(75, 13)
+        Me.lblCodigoProveedor.TabIndex = 23
+        Me.lblCodigoProveedor.Text = "CodProveedor"
+        Me.lblCodigoProveedor.Visible = False
+        '
         'frmPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(799, 477)
+        Me.ClientSize = New System.Drawing.Size(799, 476)
         Me.Controls.Add(Me.gbxDetalle)
         Me.Controls.Add(Me.gbxInfo)
         Me.Controls.Add(Me.MenuStrip1)
@@ -561,8 +551,6 @@ Partial Class frmPagos
     Friend WithEvents lblCtaBanco As Label
     Friend WithEvents txtCtaBanco As TextBox
     Friend WithEvents chxInfo As CheckBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents txtCodOrden As TextBox
     Friend WithEvents lblComentario As Label
     Friend WithEvents txtComentario As TextBox
     Friend WithEvents dtDetallePagos As DataGridView
@@ -587,4 +575,5 @@ Partial Class frmPagos
     Friend WithEvents ValorPago As DataGridViewTextBoxColumn
     Friend WithEvents FORMAP As DataGridViewTextBoxColumn
     Friend WithEvents NroCheque As DataGridViewTextBoxColumn
+    Friend WithEvents lblCodigoProveedor As Label
 End Class

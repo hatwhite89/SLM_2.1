@@ -15,20 +15,21 @@
     Private Sub dtFacturasCompra_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtFacturasCompra.CellDoubleClick
         Try
             Dim a As String = frmPagos.lblFila.Text
+            Dim codProveedor As Integer
             Dim moneda, proveedor, nroFact, monto As String
 
             nroFact = dtFacturasCompra.Rows(e.RowIndex).Cells(0).Value
+            codProveedor = dtFacturasCompra.Rows(e.RowIndex).Cells(1).Value
             proveedor = dtFacturasCompra.Rows(e.RowIndex).Cells(2).Value
             moneda = dtFacturasCompra.Rows(e.RowIndex).Cells(4).Value
             monto = dtFacturasCompra.Rows(e.RowIndex).Cells(3).Value
-
 
 
             Dim i, rows As Integer
             rows = dtFacturasCompra.Rows.Count - 2
 
             'Comprobar que la factura no este duplicada.
-
+            frmPagos.lblCodigoProveedor.Text = codProveedor
             If (frmPagos.validarFacturaPago(nroFact) = 0) Then
 
                 frmPagos.dtDetallePagos.Rows.Add(New String() {nroFact, proveedor, moneda, monto, " ", " "})
@@ -36,7 +37,6 @@
             Else
                 MsgBox("La factura ya ha sido agregado.")
             End If
-
 
             Dim Total As Double
             Dim Col As Integer = 3

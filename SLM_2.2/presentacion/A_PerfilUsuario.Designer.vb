@@ -853,6 +853,7 @@ Partial Class A_PerfilUsuario
         Me.Controls.Add(Me.pbarCarga)
         Me.KeyPreview = True
         Me.Name = "A_PerfilUsuario"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Configuración de Permisos"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

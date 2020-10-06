@@ -616,7 +616,7 @@ Partial Class A_Cheques
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(754, 269)
+        Me.TabPage2.Size = New System.Drawing.Size(768, 270)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Voucher"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -696,6 +696,7 @@ Partial Class A_Cheques
         '
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.Black
         Me.btnModificar.Location = New System.Drawing.Point(525, 12)
         Me.btnModificar.Name = "btnModificar"
