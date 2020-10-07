@@ -134,6 +134,10 @@ Partial Class M_Factura
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.btnNuevaCotizacion = New System.Windows.Forms.Button()
         Me.lblOKAY = New System.Windows.Forms.Label()
+        Me.lblSubtotal = New System.Windows.Forms.Label()
+        Me.txtsubtotal = New System.Windows.Forms.TextBox()
+        Me.lblPorcentaje = New System.Windows.Forms.Label()
+        Me.txtPorcentaje = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -1029,6 +1033,10 @@ Partial Class M_Factura
         '
         Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.Controls.Add(Me.txtPorcentaje)
+        Me.GroupBox3.Controls.Add(Me.lblPorcentaje)
+        Me.GroupBox3.Controls.Add(Me.txtsubtotal)
+        Me.GroupBox3.Controls.Add(Me.lblSubtotal)
         Me.GroupBox3.Controls.Add(Me.lblCheque)
         Me.GroupBox3.Controls.Add(Me.txtCheque)
         Me.GroupBox3.Controls.Add(Me.lblTransferencia)
@@ -1365,6 +1373,48 @@ Partial Class M_Factura
         Me.lblOKAY.Text = "Label1"
         Me.lblOKAY.Visible = False
         '
+        'lblSubtotal
+        '
+        Me.lblSubtotal.AutoSize = True
+        Me.lblSubtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSubtotal.Location = New System.Drawing.Point(863, 57)
+        Me.lblSubtotal.Name = "lblSubtotal"
+        Me.lblSubtotal.Size = New System.Drawing.Size(40, 17)
+        Me.lblSubtotal.TabIndex = 114
+        Me.lblSubtotal.Text = "Total"
+        '
+        'txtsubtotal
+        '
+        Me.txtsubtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtsubtotal.Location = New System.Drawing.Point(907, 57)
+        Me.txtsubtotal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtsubtotal.Name = "txtsubtotal"
+        Me.txtsubtotal.ReadOnly = True
+        Me.txtsubtotal.Size = New System.Drawing.Size(143, 22)
+        Me.txtsubtotal.TabIndex = 115
+        Me.txtsubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblPorcentaje
+        '
+        Me.lblPorcentaje.AutoSize = True
+        Me.lblPorcentaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPorcentaje.Location = New System.Drawing.Point(555, 58)
+        Me.lblPorcentaje.Name = "lblPorcentaje"
+        Me.lblPorcentaje.Size = New System.Drawing.Size(130, 17)
+        Me.lblPorcentaje.TabIndex = 116
+        Me.lblPorcentaje.Text = "Porcentaje a Pagar"
+        '
+        'txtPorcentaje
+        '
+        Me.txtPorcentaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPorcentaje.Location = New System.Drawing.Point(691, 57)
+        Me.txtPorcentaje.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtPorcentaje.Name = "txtPorcentaje"
+        Me.txtPorcentaje.ReadOnly = True
+        Me.txtPorcentaje.Size = New System.Drawing.Size(143, 22)
+        Me.txtPorcentaje.TabIndex = 117
+        Me.txtPorcentaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'M_Factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1559,4 +1609,8 @@ Partial Class M_Factura
     Friend WithEvents codeItemExam As DataGridViewTextBoxColumn
     Friend WithEvents btnNuevaCotizacion As Button
     Friend WithEvents lblOKAY As Label
+    Friend WithEvents txtsubtotal As TextBox
+    Friend WithEvents lblSubtotal As Label
+    Friend WithEvents txtPorcentaje As TextBox
+    Friend WithEvents lblPorcentaje As Label
 End Class

@@ -6,7 +6,7 @@
         txtDescripcion.Text = ""
         Me.dgbtabla.Columns("codigo").Visible = False
     End Sub
-    Private Sub seleccionarListaPrecios()
+    Public Sub seleccionarListaPrecios()
         Dim dv As DataView = objListPrice.SeleccionarListaPrecios.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
@@ -41,12 +41,23 @@
                     M_ListaPrecios.txtcodigoBreve.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
                     M_ListaPrecios.txtDescripcion.Text = dgbtabla.Rows(e.RowIndex).Cells(2).Value()
 
+                    'TIPO CONVENIO
                     If dgbtabla.Rows(e.RowIndex).Cells(3).Value() Then
                         M_ListaPrecios.lblcodeT.Text = dgbtabla.Rows(e.RowIndex).Cells(4).Value()
                         M_ListaPrecios.rbtnConvenioSi.Checked = True
                     Else
                         M_ListaPrecios.rbtnConvenioNo.Checked = True
                     End If
+
+                    'SOLICITA PAGO
+                    If dgbtabla.Rows(e.RowIndex).Cells(5).Value() Then
+                        M_ListaPrecios.txtPorcentaje.Text = dgbtabla.Rows(e.RowIndex).Cells(6).Value()
+                        M_ListaPrecios.rbtnPagoSi.Checked = True
+                    Else
+                        M_ListaPrecios.rbtnPagoNo.Checked = True
+                        M_ListaPrecios.txtPorcentaje.Text = ""
+                    End If
+
                     Dim objDetLP As New ClsDetalleListaPrecios
                     objDetLP.codigoListaPrecios_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
                     Dim dt As New DataTable

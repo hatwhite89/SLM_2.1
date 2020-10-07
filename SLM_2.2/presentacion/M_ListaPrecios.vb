@@ -9,7 +9,7 @@
             txtcodigoTermino.Clear()
             txtPorcentaje.Clear()
             rbtnConvenioNo.Checked = True
-            rbtnEfectivoNo.Checked = True
+            rbtnPagoNo.Checked = True
 
             dgbtabla.Rows.Clear()
 
@@ -58,6 +58,15 @@
                     .tipoConvenio_ = rbtnConvenioSi.Checked
                     If rbtnConvenioSi.Checked Then
                         .codigoTerminoPago_ = lblcodeT.Text
+                        If rbtnPagoSi.Checked Then
+                            .solicitaPago_ = rbtnPagoSi.Checked
+                            If Trim(txtPorcentaje.Text) <> "" Then
+                                .porcentaje_ = Integer.Parse(txtPorcentaje.Text)
+                            Else
+                                MsgBox("Debe ingresar el porcentaje a pagar de la factura.", MsgBoxStyle.Information, "Validación.")
+                                Exit Sub
+                            End If
+                        End If
                     End If
                 End With
 
@@ -81,6 +90,7 @@
                         End If
                     Next
                     MsgBox("Registrada la lista de precios correctamente.", MsgBoxStyle.Information)
+                    M_ListadoDePrecios.seleccionarListaPrecios()
                 Else
                     MsgBox("Error al querer ingresar el recibo.", MsgBoxStyle.Critical)
                 End If
@@ -132,6 +142,15 @@
                     .tipoConvenio_ = rbtnConvenioSi.Checked
                     If rbtnConvenioSi.Checked Then
                         .codigoTerminoPago_ = lblcodeT.Text
+                        If rbtnPagoSi.Checked Then
+                            .solicitaPago_ = rbtnPagoSi.Checked
+                            If Trim(txtPorcentaje.Text) <> "" Then
+                                .porcentaje_ = Integer.Parse(txtPorcentaje.Text)
+                            Else
+                                MsgBox("Debe ingresar el porcentaje a pagar de la factura.", MsgBoxStyle.Information, "Validación.")
+                                Exit Sub
+                            End If
+                        End If
                     End If
                 End With
                 If objPriceList.ModificarListaPrecios() = 1 Then
@@ -169,6 +188,7 @@
                         End If
                     Next
                     MsgBox("Modificado correctamente.", MsgBoxStyle.Information)
+                    M_ListadoDePrecios.seleccionarListaPrecios()
                 Else
                     MsgBox("Error al querer ingresar la lista de precios.", MsgBoxStyle.Critical)
                 End If
@@ -238,9 +258,9 @@
                 lblPorcentaje.Visible = True
                 txtPorcentaje.Visible = True
                 lblSolicitaEfectivo.Visible = True
-                rbtnEfectivoSi.Visible = True
-                rbtnEfectivoNo.Visible = True
-                rbtnEfectivoSi.Checked = True
+                rbtnPagoSi.Visible = True
+                rbtnPagoNo.Visible = True
+                rbtnPagoSi.Checked = True
             ElseIf rbtnConvenioNo.Checked Then
                 rbtnConvenioNo.Checked = True
                 lblTerminoPago.Visible = False
@@ -250,8 +270,8 @@
                 lblPorcentaje.Visible = False
                 txtPorcentaje.Visible = False
                 lblSolicitaEfectivo.Visible = False
-                rbtnEfectivoSi.Visible = False
-                rbtnEfectivoNo.Visible = False
+                rbtnPagoSi.Visible = False
+                rbtnPagoNo.Visible = False
             End If
         Catch ex As Exception
             'Magnolia
@@ -269,9 +289,9 @@
                 lblPorcentaje.Visible = True
                 txtPorcentaje.Visible = True
                 lblSolicitaEfectivo.Visible = True
-                rbtnEfectivoSi.Visible = True
-                rbtnEfectivoNo.Visible = True
-                rbtnEfectivoSi.Checked = True
+                rbtnPagoSi.Visible = True
+                rbtnPagoNo.Visible = True
+                rbtnPagoSi.Checked = True
             ElseIf rbtnConvenioNo.Checked Then
                 lblTerminoPago.Visible = False
                 btnbuscarTermino.Visible = False
@@ -280,8 +300,8 @@
                 lblPorcentaje.Visible = False
                 txtPorcentaje.Visible = False
                 lblSolicitaEfectivo.Visible = False
-                rbtnEfectivoSi.Visible = False
-                rbtnEfectivoNo.Visible = False
+                rbtnPagoSi.Visible = False
+                rbtnPagoNo.Visible = False
             End If
         Catch ex As Exception
 
@@ -344,25 +364,31 @@
         End If
     End Sub
 
-    Private Sub rbtnEfectivoSi_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnEfectivoSi.CheckedChanged
+    Private Sub rbtnEfectivoSi_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnPagoSi.CheckedChanged
         'HABILITAR LA OPCION DE INGRESAR PORCENTAJE
-        If rbtnEfectivoSi.Checked Then
+        If rbtnPagoSi.Checked Then
             lblPorcentaje.Visible = True
             txtPorcentaje.Visible = True
-        ElseIf rbtnEfectivoNo.Checked Then
+        ElseIf rbtnPagoNo.Checked Then
             lblPorcentaje.Visible = False
             txtPorcentaje.Visible = False
         End If
     End Sub
 
-    Private Sub rbtnEfectivoNo_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnEfectivoNo.CheckedChanged
+    Private Sub rbtnEfectivoNo_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnPagoNo.CheckedChanged
         'HABILITAR LA OPCION DE INGRESAR PORCENTAJE
-        If rbtnEfectivoSi.Checked Then
+        If rbtnPagoSi.Checked Then
             lblPorcentaje.Visible = True
             txtPorcentaje.Visible = True
-        ElseIf rbtnEfectivoNo.Checked Then
+        ElseIf rbtnPagoNo.Checked Then
             lblPorcentaje.Visible = False
             txtPorcentaje.Visible = False
+        End If
+    End Sub
+    'SOLO NUMEROS
+    Private Sub txtPorcentaje_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPorcentaje.KeyPress
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
         End If
     End Sub
 End Class

@@ -43,13 +43,54 @@ Public Class M_Factura
                 If (row("tipoConvenio")) Then
                     txtcodigoConvenio.Text = CStr(row("descripcionLp"))
                     lblcodeTerminoPago.Text = CStr(row("terminoListaPrecio"))
+
+                    'convenio con pago
+                    If (row("solicitaPago")) Then
+                        'ES TIPO CONVENIO Y SOLICITA PAGO
+                        txtsubtotal.Visible = True
+                        lblSubtotal.Visible = True
+                        txtPorcentaje.Text = CStr(row("porcentaje"))
+                        txtPorcentaje.Visible = True
+                        lblPorcentaje.Visible = True
+                        txtEfectivo.ReadOnly = False
+                        txtTarjeta.ReadOnly = False
+                        txtDeposito.ReadOnly() = False
+                        txtCheque.ReadOnly() = False
+                        txtTransferencia.ReadOnly() = False
+                    Else
+                        'ES TIPO CONVENIO SIN PAGO
+                        txtPorcentaje.Clear()
+                        txtPorcentaje.Visible = False
+                        lblPorcentaje.Visible = False
+                        txtsubtotal.Clear()
+                        txtsubtotal.Visible = False
+                        lblSubtotal.Visible = False
+                        txtEfectivo.ReadOnly = True
+                        txtTarjeta.ReadOnly = True
+                        txtDeposito.ReadOnly() = True
+                        txtCheque.ReadOnly() = True
+                        txtTransferencia.ReadOnly() = True
+                    End If
+
                 Else
-                    'lblcodePriceList.Text = "0"
+                    'NO ES DE TIPO CONVENIO
+                    txtPorcentaje.Clear()
+                    txtsubtotal.Clear()
+                    txtsubtotal.Visible = False
+                    lblSubtotal.Visible = False
+                    txtPorcentaje.Visible = False
+                    lblPorcentaje.Visible = False
+                    txtEfectivo.ReadOnly = False
+                    txtTarjeta.ReadOnly = False
+                    txtDeposito.ReadOnly() = False
+                    txtCheque.ReadOnly() = False
+                    txtTransferencia.ReadOnly() = False
                     txtcodigoConvenio.Text = ""
                 End If
                 M_Cliente.lblcodeCategoria.Text = CStr(row("codigoCategoria"))
                 M_ClienteVentana.txtnombreCategoria.Text = M_Cliente.txtnombreCategoria.Text
                 txtcodigoCliente.BackColor = Color.White
+
             Catch ex As Exception
                 txtcodigoCliente.BackColor = Color.Red
                 'txtcodigoCliente.Text = ""
@@ -208,9 +249,6 @@ Public Class M_Factura
         btnPromocion.Enabled = True
         btnQuitarPromocion.Enabled = True
 
-        txtEfectivo.ReadOnly = False
-        txtTarjeta.ReadOnly = False
-
         'obtener maquina local
         buscarMaquinaLocal()
 
@@ -228,6 +266,9 @@ Public Class M_Factura
         txtCheque.Text() = "0"
         txtTransferencia.Text() = "0"
 
+
+        txtEfectivo.ReadOnly = False
+        txtTarjeta.ReadOnly = False
         txtDeposito.ReadOnly() = False
         txtCheque.ReadOnly() = False
         txtTransferencia.ReadOnly() = False
@@ -538,6 +579,45 @@ Public Class M_Factura
     End Sub
     Private Sub txtconvenio_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoConvenio.TextChanged
         M_ClienteVentana.txtnombreConvenio.Text = txtcodigoConvenio.Text
+        'If Trim(txtcodigoConvenio.Text) = "" Or Trim(txtcodigoConvenio.Text) = "0" Then
+        '    'NO ES DE TIPO CONVENIO
+        '    txtsubtotal.Visible = False
+        '    lblSubtotal.Visible = False
+        '    txtPorcentaje.Visible = False
+        '    lblPorcentaje.Visible = False
+        '    txtPorcentaje.Clear()
+        '    txtsubtotal.Clear()
+        '    txtEfectivo.Enabled = True
+        '    txtTransferencia.Enabled = True
+        '    txtTarjeta.Enabled = True
+        '    txtCheque.Enabled = True
+        '    txtDeposito.Enabled = True
+        'Else
+        '    'ES TIPO CONVENIO Y SOLICITA PAGO
+        '    txtsubtotal.Visible = True
+        '    lblSubtotal.Visible = True
+        '    txtPorcentaje.Text = ""
+        '    txtPorcentaje.Visible = True
+        '    lblPorcentaje.Visible = True
+        '    txtEfectivo.Enabled = True
+        '    txtTransferencia.Enabled = True
+        '    txtTarjeta.Enabled = True
+        '    txtCheque.Enabled = True
+        '    txtDeposito.Enabled = True
+
+        '    'ES TIPO CONVENIO SIN PAGO
+        '    txtPorcentaje.Clear()
+        '    txtPorcentaje.Visible = False
+        '    lblPorcentaje.Visible = False
+        '    txtsubtotal.Clear()
+        '    txtsubtotal.Visible = False
+        '    lblSubtotal.Visible = False
+        '    txtEfectivo.Enabled = False
+        '    txtTransferencia.Enabled = False
+        '    txtTarjeta.Enabled = False
+        '    txtCheque.Enabled = False
+        '    txtDeposito.Enabled = False
+        'End If
     End Sub
     Private Sub txtpagoPaciente_TextChanged(sender As Object, e As EventArgs) Handles txtpagoPaciente.TextChanged
         Try
