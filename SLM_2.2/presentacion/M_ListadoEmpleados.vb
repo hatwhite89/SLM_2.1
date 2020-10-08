@@ -4,6 +4,8 @@ Public Class M_ListadoEmpleados
     Private Sub M_ListadoEmpleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SeleccionarEmpleados()
         Me.dgbtabla.Columns("codigoDepto").Visible = False
+        lblform.Visible = False
+        lblfila.Visible = False
     End Sub
     Public Sub SeleccionarEmpleados()
         Dim objEmp As New ClsEmpleados
@@ -132,6 +134,23 @@ Public Class M_ListadoEmpleados
                     M_Vacaciones.txtTalentoHumano.Text = CStr(row("nombreCompleto"))
                     Me.Close()
                 End If
+            ElseIf lblform.Text = "A_Planilla" Then
+                Dim n As String = ""
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    If A_Planilla.validarEmpleados(dgbtabla.Rows(e.RowIndex).Cells(0).Value()) Then
+                        A_Planilla.dgvEmpleados.Rows.Insert(lblfila.Text.ToString, New String() {"", dgbtabla.Rows(e.RowIndex).Cells(0).Value(), dgbtabla.Rows(e.RowIndex).Cells(1).Value(), dgbtabla.Rows(e.RowIndex).Cells(3).Value(), dgbtabla.Rows(e.RowIndex).Cells(4).Value()})
+                        A_Planilla.lblcantidad.Text = A_Planilla.dgvEmpleados.Rows.Count - 1
+                        'MsgBox("El empleado a sido agregado en la capacitación con éxito.", MsgBoxStyle.Information)
+                        'Me.Close()
+                    Else
+                        MsgBox("El empleado ya a sido agregado en la planilla.", MsgBoxStyle.Information)
+                    End If
+                End If
+
+                'Capturar nombre y codigo para form usuarios
             ElseIf lblform.Text = "M_Capacitaciones" Then
                 Dim n As String = ""
                 If e.RowIndex >= 0 Then

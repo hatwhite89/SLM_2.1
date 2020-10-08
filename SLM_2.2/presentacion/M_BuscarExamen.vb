@@ -7,7 +7,7 @@
 
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
             Me.dgbtabla.Columns("codigo").Visible = False
             Me.dgbtabla.Columns("codigoListaPrecios").Visible = False
@@ -25,7 +25,7 @@
                 Dim dv As DataView = objPrice.BuscarPrecioDescripcion.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             End If
         Catch ex As Exception
 

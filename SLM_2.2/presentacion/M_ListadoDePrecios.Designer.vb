@@ -23,6 +23,7 @@ Partial Class M_ListadoDePrecios
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.btnnueva = New System.Windows.Forms.Button()
         Me.lblForm = New System.Windows.Forms.Label()
         Me.txtCodigoBreve = New System.Windows.Forms.TextBox()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
@@ -32,7 +33,6 @@ Partial Class M_ListadoDePrecios
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.lblCodigoT = New System.Windows.Forms.Label()
-        Me.btnnueva = New System.Windows.Forms.Button()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -58,6 +58,20 @@ Partial Class M_ListadoDePrecios
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR LISTA DE PRECIOS"
         '
+        'btnnueva
+        '
+        Me.btnnueva.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnnueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnnueva.ForeColor = System.Drawing.Color.White
+        Me.btnnueva.Location = New System.Drawing.Point(710, 14)
+        Me.btnnueva.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnnueva.Name = "btnnueva"
+        Me.btnnueva.Size = New System.Drawing.Size(219, 34)
+        Me.btnnueva.TabIndex = 122
+        Me.btnnueva.Text = "Nueva Lista Precios"
+        Me.btnnueva.UseVisualStyleBackColor = False
+        '
         'lblForm
         '
         Me.lblForm.AutoSize = True
@@ -66,6 +80,7 @@ Partial Class M_ListadoDePrecios
         Me.lblForm.Size = New System.Drawing.Size(51, 17)
         Me.lblForm.TabIndex = 121
         Me.lblForm.Text = "Label1"
+        Me.lblForm.Visible = False
         '
         'txtCodigoBreve
         '
@@ -143,20 +158,6 @@ Partial Class M_ListadoDePrecios
         Me.lblCodigoT.Size = New System.Drawing.Size(93, 17)
         Me.lblCodigoT.TabIndex = 114
         Me.lblCodigoT.Text = "Código Breve"
-        '
-        'btnnueva
-        '
-        Me.btnnueva.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnnueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnueva.ForeColor = System.Drawing.Color.White
-        Me.btnnueva.Location = New System.Drawing.Point(710, 14)
-        Me.btnnueva.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnnueva.Name = "btnnueva"
-        Me.btnnueva.Size = New System.Drawing.Size(219, 34)
-        Me.btnnueva.TabIndex = 122
-        Me.btnnueva.Text = "Nueva Lista Precios"
-        Me.btnnueva.UseVisualStyleBackColor = False
         '
         'M_ListadoDePrecios
         '

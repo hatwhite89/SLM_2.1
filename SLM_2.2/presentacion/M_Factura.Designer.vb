@@ -138,6 +138,8 @@ Partial Class M_Factura
         Me.txtsubtotal = New System.Windows.Forms.TextBox()
         Me.lblPorcentaje = New System.Windows.Forms.Label()
         Me.txtPorcentaje = New System.Windows.Forms.TextBox()
+        Me.lblVuelto2 = New System.Windows.Forms.Label()
+        Me.txtvuelto2 = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -1033,6 +1035,8 @@ Partial Class M_Factura
         '
         Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.Controls.Add(Me.lblVuelto2)
+        Me.GroupBox3.Controls.Add(Me.txtvuelto2)
         Me.GroupBox3.Controls.Add(Me.txtPorcentaje)
         Me.GroupBox3.Controls.Add(Me.lblPorcentaje)
         Me.GroupBox3.Controls.Add(Me.txtsubtotal)
@@ -1377,11 +1381,11 @@ Partial Class M_Factura
         '
         Me.lblSubtotal.AutoSize = True
         Me.lblSubtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSubtotal.Location = New System.Drawing.Point(863, 57)
+        Me.lblSubtotal.Location = New System.Drawing.Point(843, 60)
         Me.lblSubtotal.Name = "lblSubtotal"
-        Me.lblSubtotal.Size = New System.Drawing.Size(40, 17)
+        Me.lblSubtotal.Size = New System.Drawing.Size(60, 17)
         Me.lblSubtotal.TabIndex = 114
-        Me.lblSubtotal.Text = "Total"
+        Me.lblSubtotal.Text = "Subtotal"
         '
         'txtsubtotal
         '
@@ -1398,7 +1402,7 @@ Partial Class M_Factura
         '
         Me.lblPorcentaje.AutoSize = True
         Me.lblPorcentaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPorcentaje.Location = New System.Drawing.Point(555, 58)
+        Me.lblPorcentaje.Location = New System.Drawing.Point(555, 60)
         Me.lblPorcentaje.Name = "lblPorcentaje"
         Me.lblPorcentaje.Size = New System.Drawing.Size(130, 17)
         Me.lblPorcentaje.TabIndex = 116
@@ -1414,6 +1418,27 @@ Partial Class M_Factura
         Me.txtPorcentaje.Size = New System.Drawing.Size(143, 22)
         Me.txtPorcentaje.TabIndex = 117
         Me.txtPorcentaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblVuelto2
+        '
+        Me.lblVuelto2.AutoSize = True
+        Me.lblVuelto2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVuelto2.Location = New System.Drawing.Point(351, 63)
+        Me.lblVuelto2.Name = "lblVuelto2"
+        Me.lblVuelto2.Size = New System.Drawing.Size(48, 17)
+        Me.lblVuelto2.TabIndex = 118
+        Me.lblVuelto2.Text = "Vuelto"
+        '
+        'txtvuelto2
+        '
+        Me.txtvuelto2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtvuelto2.Location = New System.Drawing.Point(405, 60)
+        Me.txtvuelto2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtvuelto2.Name = "txtvuelto2"
+        Me.txtvuelto2.ReadOnly = True
+        Me.txtvuelto2.Size = New System.Drawing.Size(143, 22)
+        Me.txtvuelto2.TabIndex = 119
+        Me.txtvuelto2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'M_Factura
         '
@@ -1613,4 +1638,6 @@ Partial Class M_Factura
     Friend WithEvents lblSubtotal As Label
     Friend WithEvents txtPorcentaje As TextBox
     Friend WithEvents lblPorcentaje As Label
+    Friend WithEvents lblVuelto2 As Label
+    Friend WithEvents txtvuelto2 As TextBox
 End Class

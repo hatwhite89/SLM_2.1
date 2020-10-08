@@ -497,6 +497,8 @@
         dtFacturacion.Rows.Add("", "Arqueos", False, "")
         dtFacturacion.Rows.Add("", "Diario Facturación", False, "")
         dtFacturacion.Rows.Add("", "Habilitar OK", False, "")
+        dtFacturacion.Rows.Add("", "Categoría de Cliente", False, "")
+        dtFacturacion.Rows.Add("", "Tipo Clasificación", False, "")
 
         'Procesos de Contabilidad
         dtContabilidad.Rows.Add("", "Precio", False, "")

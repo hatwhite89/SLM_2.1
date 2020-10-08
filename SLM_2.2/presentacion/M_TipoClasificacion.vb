@@ -314,4 +314,9 @@
         M_ListadoDePrecios.lblForm.Text = "TipoClasificacion"
         M_ListadoDePrecios.ShowDialog()
     End Sub
+
+    Private Sub btnCategoriaCliente_Click(sender As Object, e As EventArgs) Handles btnCategoriaCliente.Click
+        M_Categoria.lblform.Text = "TipoClasificacion"
+        M_Categoria.ShowDialog()
+    End Sub
 End Class

@@ -114,6 +114,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CierreCaja.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CierreCaja.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="conexion\Class2.vb" />
     <Compile Include="conexion\ClsConnection.vb" />
     <Compile Include="Form1.Designer.vb">
@@ -184,6 +190,7 @@
     <Compile Include="negocio\clsDetalleOC.vb" />
     <Compile Include="negocio\clsDetalleOI.vb" />
     <Compile Include="negocio\ClsDetallePago.vb" />
+    <Compile Include="negocio\ClsDetallePlanilla.vb" />
     <Compile Include="negocio\ClsDetalleRecibo.vb" />
     <Compile Include="negocio\ClsDetalleValorReferencia.vb" />
     <Compile Include="negocio\ClsDetalleValorRefTxt.vb" />
@@ -212,6 +219,7 @@
     <Compile Include="negocio\ClsPerfilesUsuario.vb" />
     <Compile Include="negocio\ClsPeriodoContable.vb" />
     <Compile Include="negocio\ClsPermisos.vb" />
+    <Compile Include="negocio\ClsPlanilla.vb" />
     <Compile Include="negocio\ClsPlantillaResultado.vb" />
     <Compile Include="negocio\ClsPrecio.vb" />
     <Compile Include="negocio\ClsProducto.vb" />
@@ -256,6 +264,12 @@
       <DependentUpon>A_Bitacora.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_Bitacora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_BuscarPlanilla.Designer.vb">
+      <DependentUpon>A_BuscarPlanilla.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_BuscarPlanilla.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_CambioPassword.Designer.vb">
@@ -1282,6 +1296,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CierreCaja.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CierreCaja.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -1314,6 +1332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Bitacora.resx">
       <DependentUpon>A_Bitacora.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_BuscarPlanilla.resx">
+      <DependentUpon>A_BuscarPlanilla.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_CambioPassword.resx">
       <DependentUpon>A_CambioPassword.vb</DependentUpon>

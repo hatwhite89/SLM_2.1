@@ -329,6 +329,14 @@ Module ModulosVarios
 
 
                                                 End If
+                                            ElseIf i = 13 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnCategoriaCliente.Enabled = True
+                                                End If
+                                            ElseIf i = 14 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnTipoClasificacion.Enabled = True
+                                                End If
                                             End If 'if conteo
 
                                         Next

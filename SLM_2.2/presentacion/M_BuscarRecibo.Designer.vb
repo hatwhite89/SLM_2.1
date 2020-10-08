@@ -45,11 +45,11 @@ Partial Class M_BuscarRecibo
         Me.GroupBox1.Controls.Add(Me.dgbtabla)
         Me.GroupBox1.Controls.Add(Me.txtReferenciaB)
         Me.GroupBox1.Controls.Add(Me.txtNumeroB)
-        Me.GroupBox1.Location = New System.Drawing.Point(11, 11)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox1.Location = New System.Drawing.Point(15, 14)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(696, 512)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(928, 630)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Búsqueda Recibo"
@@ -57,30 +57,27 @@ Partial Class M_BuscarRecibo
         'lblReferencia
         '
         Me.lblReferencia.AutoSize = True
-        Me.lblReferencia.Location = New System.Drawing.Point(231, 27)
-        Me.lblReferencia.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblReferencia.Location = New System.Drawing.Point(308, 33)
         Me.lblReferencia.Name = "lblReferencia"
-        Me.lblReferencia.Size = New System.Drawing.Size(59, 13)
+        Me.lblReferencia.Size = New System.Drawing.Size(77, 17)
         Me.lblReferencia.TabIndex = 123
         Me.lblReferencia.Text = "Referencia"
         '
         'lblNumero
         '
         Me.lblNumero.AutoSize = True
-        Me.lblNumero.Location = New System.Drawing.Point(13, 27)
-        Me.lblNumero.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblNumero.Location = New System.Drawing.Point(17, 33)
         Me.lblNumero.Name = "lblNumero"
-        Me.lblNumero.Size = New System.Drawing.Size(44, 13)
+        Me.lblNumero.Size = New System.Drawing.Size(58, 17)
         Me.lblNumero.TabIndex = 122
         Me.lblNumero.Text = "Número"
         '
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(221, 497)
-        Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblcantidad.Location = New System.Drawing.Point(295, 612)
         Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
+        Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
         Me.lblcantidad.TabIndex = 117
         Me.lblcantidad.Text = "000"
         '
@@ -90,10 +87,10 @@ Partial Class M_BuscarRecibo
         Me.btnnueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnueva.ForeColor = System.Drawing.Color.White
-        Me.btnnueva.Location = New System.Drawing.Point(528, 25)
-        Me.btnnueva.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnnueva.Location = New System.Drawing.Point(704, 31)
+        Me.btnnueva.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnnueva.Name = "btnnueva"
-        Me.btnnueva.Size = New System.Drawing.Size(164, 28)
+        Me.btnnueva.Size = New System.Drawing.Size(219, 34)
         Me.btnnueva.TabIndex = 121
         Me.btnnueva.Text = "Nuevo Recibo"
         Me.btnnueva.UseVisualStyleBackColor = False
@@ -101,10 +98,9 @@ Partial Class M_BuscarRecibo
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(4, 497)
-        Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbltotal.Location = New System.Drawing.Point(5, 612)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(110, 13)
+        Me.lbltotal.Size = New System.Drawing.Size(141, 17)
         Me.lbltotal.TabIndex = 116
         Me.lbltotal.Text = "TOTAL DE RECIBOS"
         '
@@ -113,38 +109,39 @@ Partial Class M_BuscarRecibo
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(4, 71)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgbtabla.Location = New System.Drawing.Point(5, 87)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
-        Me.dgbtabla.Size = New System.Drawing.Size(688, 404)
+        Me.dgbtabla.Size = New System.Drawing.Size(917, 497)
         Me.dgbtabla.TabIndex = 2
         '
         'txtReferenciaB
         '
-        Me.txtReferenciaB.Location = New System.Drawing.Point(294, 25)
-        Me.txtReferenciaB.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtReferenciaB.Location = New System.Drawing.Point(392, 31)
+        Me.txtReferenciaB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtReferenciaB.Name = "txtReferenciaB"
-        Me.txtReferenciaB.Size = New System.Drawing.Size(145, 20)
+        Me.txtReferenciaB.Size = New System.Drawing.Size(192, 22)
         Me.txtReferenciaB.TabIndex = 1
         '
         'txtNumeroB
         '
-        Me.txtNumeroB.Location = New System.Drawing.Point(62, 25)
-        Me.txtNumeroB.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtNumeroB.Location = New System.Drawing.Point(83, 31)
+        Me.txtNumeroB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNumeroB.Name = "txtNumeroB"
-        Me.txtNumeroB.Size = New System.Drawing.Size(145, 20)
+        Me.txtNumeroB.Size = New System.Drawing.Size(192, 22)
         Me.txtNumeroB.TabIndex = 0
         '
         'M_BuscarRecibo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(718, 534)
+        Me.ClientSize = New System.Drawing.Size(957, 657)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "M_BuscarRecibo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Búsqueda de Recibos"

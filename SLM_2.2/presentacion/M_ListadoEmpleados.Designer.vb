@@ -23,6 +23,7 @@ Partial Class M_ListadoEmpleados
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.lblfila = New System.Windows.Forms.Label()
         Me.lblform = New System.Windows.Forms.Label()
         Me.txtCodigoB = New System.Windows.Forms.TextBox()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
@@ -32,7 +33,6 @@ Partial Class M_ListadoEmpleados
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtNombreB = New System.Windows.Forms.TextBox()
         Me.lblCodigoT = New System.Windows.Forms.Label()
-        Me.lblfila = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -58,6 +58,14 @@ Partial Class M_ListadoEmpleados
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR EMPLEADOS"
         '
+        'lblfila
+        '
+        Me.lblfila.AutoSize = True
+        Me.lblfila.Location = New System.Drawing.Point(264, -3)
+        Me.lblfila.Name = "lblfila"
+        Me.lblfila.Size = New System.Drawing.Size(0, 17)
+        Me.lblfila.TabIndex = 122
+        '
         'lblform
         '
         Me.lblform.AutoSize = True
@@ -66,6 +74,7 @@ Partial Class M_ListadoEmpleados
         Me.lblform.Size = New System.Drawing.Size(52, 17)
         Me.lblform.TabIndex = 121
         Me.lblform.Text = "Código"
+        Me.lblform.Visible = False
         '
         'txtCodigoB
         '
@@ -143,14 +152,6 @@ Partial Class M_ListadoEmpleados
         Me.lblCodigoT.Size = New System.Drawing.Size(52, 17)
         Me.lblCodigoT.TabIndex = 114
         Me.lblCodigoT.Text = "Código"
-        '
-        'lblfila
-        '
-        Me.lblfila.AutoSize = True
-        Me.lblfila.Location = New System.Drawing.Point(264, -3)
-        Me.lblfila.Name = "lblfila"
-        Me.lblfila.Size = New System.Drawing.Size(0, 17)
-        Me.lblfila.TabIndex = 122
         '
         'M_ListadoEmpleados
         '
