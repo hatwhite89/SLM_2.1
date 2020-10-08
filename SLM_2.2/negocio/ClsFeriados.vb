@@ -114,7 +114,7 @@ Public Class ClsFeriados
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "A_slmActualizarBanco"
+        sqlcom.CommandText = "A_slmActualizarFeriado"
 
         'VARIABLES 
         sqlpar = New SqlParameter

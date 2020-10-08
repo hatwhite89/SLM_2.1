@@ -30,6 +30,8 @@ Partial Class A_ConfiguracionFeriados
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.cbxDia = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -143,6 +145,8 @@ Partial Class A_ConfiguracionFeriados
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.txtCodigo)
+        Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.cbxDia)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
@@ -166,13 +170,33 @@ Partial Class A_ConfiguracionFeriados
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Feriados"
         '
+        'txtCodigo
+        '
+        Me.txtCodigo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtCodigo.Enabled = False
+        Me.txtCodigo.Location = New System.Drawing.Point(78, 24)
+        Me.txtCodigo.MaxLength = 100
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(136, 20)
+        Me.txtCodigo.TabIndex = 24
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(36, 27)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(35, 13)
+        Me.Label9.TabIndex = 25
+        Me.Label9.Text = "Cód. :"
+        '
         'cbxDia
         '
         Me.cbxDia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxDia.Enabled = False
         Me.cbxDia.FormattingEnabled = True
         Me.cbxDia.Items.AddRange(New Object() {"Sábado", "Domingo"})
-        Me.cbxDia.Location = New System.Drawing.Point(286, 115)
+        Me.cbxDia.Location = New System.Drawing.Point(286, 138)
         Me.cbxDia.Name = "cbxDia"
         Me.cbxDia.Size = New System.Drawing.Size(134, 21)
         Me.cbxDia.TabIndex = 23
@@ -180,7 +204,7 @@ Partial Class A_ConfiguracionFeriados
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(237, 120)
+        Me.Label8.Location = New System.Drawing.Point(237, 143)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(28, 13)
         Me.Label8.TabIndex = 22
@@ -200,7 +224,7 @@ Partial Class A_ConfiguracionFeriados
         'rbtDiaEspecifico
         '
         Me.rbtDiaEspecifico.AutoSize = True
-        Me.rbtDiaEspecifico.Location = New System.Drawing.Point(311, 80)
+        Me.rbtDiaEspecifico.Location = New System.Drawing.Point(311, 103)
         Me.rbtDiaEspecifico.Name = "rbtDiaEspecifico"
         Me.rbtDiaEspecifico.Size = New System.Drawing.Size(97, 17)
         Me.rbtDiaEspecifico.TabIndex = 4
@@ -212,7 +236,7 @@ Partial Class A_ConfiguracionFeriados
         '
         Me.txtCodBreve.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtCodBreve.Location = New System.Drawing.Point(77, 24)
+        Me.txtCodBreve.Location = New System.Drawing.Point(78, 49)
         Me.txtCodBreve.MaxLength = 100
         Me.txtCodBreve.Name = "txtCodBreve"
         Me.txtCodBreve.Size = New System.Drawing.Size(320, 20)
@@ -221,7 +245,7 @@ Partial Class A_ConfiguracionFeriados
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(9, 27)
+        Me.Label6.Location = New System.Drawing.Point(10, 52)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(63, 13)
         Me.Label6.TabIndex = 10
@@ -229,8 +253,9 @@ Partial Class A_ConfiguracionFeriados
         '
         'dtpFecha
         '
+        Me.dtpFecha.Enabled = False
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(286, 146)
+        Me.dtpFecha.Location = New System.Drawing.Point(286, 169)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(134, 20)
         Me.dtpFecha.TabIndex = 14
@@ -238,7 +263,7 @@ Partial Class A_ConfiguracionFeriados
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(237, 149)
+        Me.Label5.Location = New System.Drawing.Point(237, 172)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(40, 13)
         Me.Label5.TabIndex = 8
@@ -248,7 +273,7 @@ Partial Class A_ConfiguracionFeriados
         '
         Me.txtDescripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtDescripcion.Location = New System.Drawing.Point(77, 50)
+        Me.txtDescripcion.Location = New System.Drawing.Point(78, 75)
         Me.txtDescripcion.MaxLength = 150
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(320, 20)
@@ -257,7 +282,7 @@ Partial Class A_ConfiguracionFeriados
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(9, 53)
+        Me.Label4.Location = New System.Drawing.Point(10, 78)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(66, 13)
         Me.Label4.TabIndex = 6
@@ -266,7 +291,7 @@ Partial Class A_ConfiguracionFeriados
         'rbtFecha
         '
         Me.rbtFecha.AutoSize = True
-        Me.rbtFecha.Location = New System.Drawing.Point(196, 80)
+        Me.rbtFecha.Location = New System.Drawing.Point(196, 103)
         Me.rbtFecha.Name = "rbtFecha"
         Me.rbtFecha.Size = New System.Drawing.Size(109, 17)
         Me.rbtFecha.TabIndex = 3
@@ -277,7 +302,7 @@ Partial Class A_ConfiguracionFeriados
         'rbtRango
         '
         Me.rbtRango.AutoSize = True
-        Me.rbtRango.Location = New System.Drawing.Point(80, 80)
+        Me.rbtRango.Location = New System.Drawing.Point(80, 103)
         Me.rbtRango.Name = "rbtRango"
         Me.rbtRango.Size = New System.Drawing.Size(110, 17)
         Me.rbtRango.TabIndex = 2
@@ -287,8 +312,9 @@ Partial Class A_ConfiguracionFeriados
         '
         'dtpHasta
         '
+        Me.dtpHasta.Enabled = False
         Me.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpHasta.Location = New System.Drawing.Point(80, 146)
+        Me.dtpHasta.Location = New System.Drawing.Point(78, 164)
         Me.dtpHasta.Name = "dtpHasta"
         Me.dtpHasta.Size = New System.Drawing.Size(134, 20)
         Me.dtpHasta.TabIndex = 13
@@ -297,7 +323,7 @@ Partial Class A_ConfiguracionFeriados
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(33, 149)
+        Me.Label3.Location = New System.Drawing.Point(31, 167)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(38, 13)
         Me.Label3.TabIndex = 2
@@ -305,8 +331,9 @@ Partial Class A_ConfiguracionFeriados
         '
         'dtpDesde
         '
+        Me.dtpDesde.Enabled = False
         Me.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDesde.Location = New System.Drawing.Point(80, 120)
+        Me.dtpDesde.Location = New System.Drawing.Point(78, 138)
         Me.dtpDesde.Name = "dtpDesde"
         Me.dtpDesde.Size = New System.Drawing.Size(134, 20)
         Me.dtpDesde.TabIndex = 12
@@ -315,7 +342,7 @@ Partial Class A_ConfiguracionFeriados
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(33, 123)
+        Me.Label2.Location = New System.Drawing.Point(31, 141)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(41, 13)
         Me.Label2.TabIndex = 0
@@ -376,6 +403,7 @@ Partial Class A_ConfiguracionFeriados
         Me.dtFeriados.Location = New System.Drawing.Point(12, 48)
         Me.dtFeriados.Name = "dtFeriados"
         Me.dtFeriados.ReadOnly = True
+        Me.dtFeriados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtFeriados.Size = New System.Drawing.Size(652, 188)
         Me.dtFeriados.TabIndex = 0
         '
@@ -459,4 +487,6 @@ Partial Class A_ConfiguracionFeriados
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents cbxDia As ComboBox
     Friend WithEvents Label8 As Label
+    Friend WithEvents txtCodigo As TextBox
+    Friend WithEvents Label9 As Label
 End Class

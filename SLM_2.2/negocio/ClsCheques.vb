@@ -6,7 +6,7 @@ Public Class ClsCheques
     Dim codCheque, codChequera, cantidad, ctaOrigen, ctaTemporal, ctaDestino As Integer
     Dim nroCheque, moneda, codBreveProve, nombreProveedor, codBreveBanco, nombreBanco, descripcion, estado, comentario, tipo As String
     Dim monto As Double
-    Dim fechaReg, fechaVto, fechaAcreditacion, fechaRechazo, fechaEmision, fechaCancelado As Date
+    Dim fechaReg, fechaVto, fechaAcreditacion, fechaRechazo, fechaEmision, fechaCancelado, fechaI, fechaF As Date
 
     'Constructor
     Public Sub New()
@@ -245,6 +245,26 @@ Public Class ClsCheques
         End Get
         Set(value As Integer)
             cantidad = value
+        End Set
+    End Property
+
+
+
+    Public Property Fecha_Inicio As Date
+        Get
+            Return fechaI
+        End Get
+        Set(value As Date)
+            fechaI = value
+        End Set
+    End Property
+
+    Public Property Fecha_Final As Date
+        Get
+            Return fechaF
+        End Get
+        Set(value As Date)
+            fechaF = value
         End Set
     End Property
 
@@ -572,6 +592,29 @@ Public Class ClsCheques
 
         Return par_sal
 
+    End Function
+
+    Public Function InformeCheque() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmInformeCheques"
+            cmd.Parameters.Add("@codBreveBanco", SqlDbType.VarChar).Value = Cod_BreveBanco
+            cmd.Parameters.Add("@fechaDesde", SqlDbType.Date).Value = Fecha_Inicio
+            cmd.Parameters.Add("@fechaHasta", SqlDbType.Date).Value = Fecha_Final
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
     End Function
 
 End Class

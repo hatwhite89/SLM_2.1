@@ -25,27 +25,123 @@ Partial Class A_ListadoCheques
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListadoCheques))
         Me.gbxCheque = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.dtpFin = New System.Windows.Forms.DateTimePicker()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.dtpInicio = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtBanco = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtCheques = New System.Windows.Forms.DataGridView()
         Me.ttBusqueda = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.gbxCheque.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtCheques, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbxCheque
         '
+        Me.gbxCheque.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxCheque.Controls.Add(Me.Button2)
+        Me.gbxCheque.Controls.Add(Me.Button1)
+        Me.gbxCheque.Controls.Add(Me.PictureBox1)
+        Me.gbxCheque.Controls.Add(Me.dtpFin)
+        Me.gbxCheque.Controls.Add(Me.Label4)
+        Me.gbxCheque.Controls.Add(Me.dtpInicio)
+        Me.gbxCheque.Controls.Add(Me.Label3)
+        Me.gbxCheque.Controls.Add(Me.txtBanco)
+        Me.gbxCheque.Controls.Add(Me.Label2)
         Me.gbxCheque.Controls.Add(Me.btnCancelar)
         Me.gbxCheque.Controls.Add(Me.txtBusqueda)
         Me.gbxCheque.Controls.Add(Me.Label1)
         Me.gbxCheque.Controls.Add(Me.dtCheques)
         Me.gbxCheque.Location = New System.Drawing.Point(9, 12)
         Me.gbxCheque.Name = "gbxCheque"
-        Me.gbxCheque.Size = New System.Drawing.Size(697, 334)
+        Me.gbxCheque.Size = New System.Drawing.Size(921, 427)
         Me.gbxCheque.TabIndex = 0
         Me.gbxCheque.TabStop = False
         Me.gbxCheque.Text = "Cheques Generados"
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(701, 39)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(81, 31)
+        Me.Button1.TabIndex = 11
+        Me.Button1.Text = "Generar Vista"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(875, 38)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(40, 32)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 10
+        Me.PictureBox1.TabStop = False
+        '
+        'dtpFin
+        '
+        Me.dtpFin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFin.Location = New System.Drawing.Point(410, 50)
+        Me.dtpFin.Name = "dtpFin"
+        Me.dtpFin.Size = New System.Drawing.Size(97, 20)
+        Me.dtpFin.TabIndex = 9
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(351, 53)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(57, 13)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "Fecha Fin:"
+        '
+        'dtpInicio
+        '
+        Me.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpInicio.Location = New System.Drawing.Point(248, 49)
+        Me.dtpInicio.Name = "dtpInicio"
+        Me.dtpInicio.Size = New System.Drawing.Size(97, 20)
+        Me.dtpInicio.TabIndex = 7
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(179, 52)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(68, 13)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Fecha Inicio:"
+        '
+        'txtBanco
+        '
+        Me.txtBanco.Location = New System.Drawing.Point(52, 49)
+        Me.txtBanco.Name = "txtBanco"
+        Me.txtBanco.Size = New System.Drawing.Size(119, 20)
+        Me.txtBanco.TabIndex = 5
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(9, 52)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(41, 13)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Banco:"
         '
         'btnCancelar
         '
@@ -77,29 +173,44 @@ Partial Class A_ListadoCheques
         '
         'dtCheques
         '
+        Me.dtCheques.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtCheques.BackgroundColor = System.Drawing.Color.White
         Me.dtCheques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtCheques.GridColor = System.Drawing.Color.White
-        Me.dtCheques.Location = New System.Drawing.Point(3, 52)
+        Me.dtCheques.Location = New System.Drawing.Point(3, 76)
         Me.dtCheques.Name = "dtCheques"
         Me.dtCheques.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCheques.Size = New System.Drawing.Size(688, 277)
+        Me.dtCheques.Size = New System.Drawing.Size(912, 345)
         Me.dtCheques.TabIndex = 0
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Location = New System.Drawing.Point(788, 39)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(81, 31)
+        Me.Button2.TabIndex = 12
+        Me.Button2.Text = "Vista General"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'A_ListadoCheques
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(718, 349)
+        Me.ClientSize = New System.Drawing.Size(942, 451)
         Me.Controls.Add(Me.gbxCheque)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
         Me.Name = "A_ListadoCheques"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listado Cheques"
         Me.gbxCheque.ResumeLayout(False)
         Me.gbxCheque.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtCheques, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -111,4 +222,13 @@ Partial Class A_ListadoCheques
     Friend WithEvents Label1 As Label
     Friend WithEvents btnCancelar As Button
     Friend WithEvents ttBusqueda As ToolTip
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents dtpFin As DateTimePicker
+    Friend WithEvents Label4 As Label
+    Friend WithEvents dtpInicio As DateTimePicker
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtBanco As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class
