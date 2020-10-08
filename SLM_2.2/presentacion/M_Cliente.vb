@@ -153,7 +153,7 @@ Public Class M_Cliente
     End Sub
     Private Sub btnactualizarCliente_Click(sender As Object, e As EventArgs) Handles btnactualizarCliente.Click
         Try
-            MsgBox(cmbxClasificacion.SelectedValue)
+            'MsgBox(cmbxClasificacion.SelectedValue)
             Dim genero As String = ""
             If (rbtnmasculino.Checked) Then
                 genero = "Masculino"
@@ -476,12 +476,17 @@ Public Class M_Cliente
     Private Sub btnseleccionarCliente_Click(sender As Object, e As EventArgs) Handles btnseleccionarCliente.Click
         M_Factura.txtcodigoCliente.Text = txtcodigo.Text
         M_Factura.txtnombreCliente.Text = txtnombreCompleto.Text
+        M_Factura.actualizarDatosCliente()
 
         M_ClienteVentana.txtnombreCompleto.Text = UCase(txtnombreCompleto.Text)
         M_ClienteVentana.txtnombreTerminos.Text = txtnombreTerminos.Text
         M_ClienteVentana.txtnombreCategoria.Text = txtnombreCategoria.Text
         M_ClienteVentana.txtnombreConvenio.Text = txtnombreConvenio.Text
+        M_ClienteVentana.txtcorreo1.Text = txtcorreo.Text
+        M_ClienteVentana.txtcorreo2.Text = txtcorreo2.Text
         M_ClienteVentana.txttelefonoCasa.Text = txttelefonoCasa.Text
+        M_ClienteVentana.txttelefonoTrabajo.Text = txttelefonoTrabajo.Text
+        M_ClienteVentana.txtcelular.Text = txtcelular.Text
         limpiar()
         Me.Close()
     End Sub

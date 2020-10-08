@@ -3,6 +3,8 @@ Public Class ClsListaPrecios
     Dim descripcion, codigoBreve As String
     Dim codigo, codigoTerminoPago As Integer
     Dim tipoConvenio As Boolean
+    Dim porcentaje As System.Nullable(Of Integer)
+    Dim solicitaPago As System.Nullable(Of Boolean)
     'Constructor
     Public Sub New()
 
@@ -47,6 +49,22 @@ Public Class ClsListaPrecios
             codigoTerminoPago = value
         End Set
     End Property
+    Public Property solicitaPago_ As System.Nullable(Of Boolean)
+        Get
+            Return solicitaPago
+        End Get
+        Set(value As System.Nullable(Of Boolean))
+            solicitaPago = value
+        End Set
+    End Property
+    Public Property porcentaje_ As System.Nullable(Of Integer)
+        Get
+            Return porcentaje
+        End Get
+        Set(value As System.Nullable(Of Integer))
+            porcentaje = value
+        End Set
+    End Property
     Public Function RegistrarNuevaListaPrecios() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -71,11 +89,27 @@ Public Class ClsListaPrecios
         sqlpar.Value = tipoConvenio_
         sqlcom.Parameters.Add(sqlpar)
 
+        'TIPO CONVENIO
         If tipoConvenio_ Then
+
             sqlpar = New SqlParameter
             sqlpar.ParameterName = "codigoTerminoPago" 'nombre campo en el procedimiento almacenado @
             sqlpar.Value = codigoTerminoPago_
             sqlcom.Parameters.Add(sqlpar)
+
+            'SOLICITA PAGO
+            If solicitaPago_ Then
+
+                sqlpar = New SqlParameter
+                sqlpar.ParameterName = "solicitaPago" 'nombre campo en el procedimiento almacenado @
+                sqlpar.Value = solicitaPago_
+                sqlcom.Parameters.Add(sqlpar)
+
+                sqlpar = New SqlParameter
+                sqlpar.ParameterName = "porcentaje" 'nombre campo en el procedimiento almacenado @
+                sqlpar.Value = porcentaje_
+                sqlcom.Parameters.Add(sqlpar)
+            End If
         End If
 
         sqlpar = New SqlParameter
@@ -126,11 +160,27 @@ Public Class ClsListaPrecios
         sqlpar.Value = tipoConvenio_
         sqlcom.Parameters.Add(sqlpar)
 
+        'TIPO CONVENIO
         If tipoConvenio_ Then
+
             sqlpar = New SqlParameter
             sqlpar.ParameterName = "codigoTerminoPago" 'nombre campo en el procedimiento almacenado @
             sqlpar.Value = codigoTerminoPago_
             sqlcom.Parameters.Add(sqlpar)
+
+            'SOLICITA PAGO
+            If solicitaPago_ Then
+
+                sqlpar = New SqlParameter
+                sqlpar.ParameterName = "solicitaPago" 'nombre campo en el procedimiento almacenado @
+                sqlpar.Value = solicitaPago_
+                sqlcom.Parameters.Add(sqlpar)
+
+                sqlpar = New SqlParameter
+                sqlpar.ParameterName = "porcentaje" 'nombre campo en el procedimiento almacenado @
+                sqlpar.Value = porcentaje_
+                sqlcom.Parameters.Add(sqlpar)
+            End If
         End If
 
         sqlpar = New SqlParameter

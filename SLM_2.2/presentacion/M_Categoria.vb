@@ -163,6 +163,16 @@
                     M_Cliente.txtnombreCategoria.Text = rtxtdescripcion.Text
                     Me.Close()
                 End If
+            ElseIf (lblform.Text = "TipoClasificacion") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar la categoría de cliente?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_TipoClasificacion.lblcodeCategoria.Text = lblcode.Text
+                    M_TipoClasificacion.txtcodigoCategoriaCliente.Text = txtcodigo.Text
+                    M_TipoClasificacion.txtNombreCategoria.Text = rtxtdescripcion.Text
+                    Me.Close()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)

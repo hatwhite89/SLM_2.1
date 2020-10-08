@@ -22,6 +22,7 @@ Partial Class M_CAI
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_CAI))
         Me.lblCAI = New System.Windows.Forms.Label()
         Me.lbldesde = New System.Windows.Forms.Label()
         Me.lblhasta = New System.Windows.Forms.Label()
@@ -222,6 +223,7 @@ Partial Class M_CAI
         'btnbuscarMaquinaLocal
         '
         Me.btnbuscarMaquinaLocal.BackColor = System.Drawing.Color.White
+        Me.btnbuscarMaquinaLocal.BackgroundImage = CType(resources.GetObject("btnbuscarMaquinaLocal.BackgroundImage"), System.Drawing.Image)
         Me.btnbuscarMaquinaLocal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnbuscarMaquinaLocal.FlatAppearance.BorderSize = 0
         Me.btnbuscarMaquinaLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -266,9 +268,9 @@ Partial Class M_CAI
         Me.GroupBox1.Controls.Add(Me.lblhasta)
         Me.GroupBox1.Controls.Add(Me.btncancelar)
         Me.GroupBox1.Location = New System.Drawing.Point(5, 9)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(937, 265)
         Me.GroupBox1.TabIndex = 129
         Me.GroupBox1.TabStop = False
@@ -302,7 +304,7 @@ Partial Class M_CAI
         '
         Me.chkEstado.AutoSize = True
         Me.chkEstado.Location = New System.Drawing.Point(468, 178)
-        Me.chkEstado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkEstado.Margin = New System.Windows.Forms.Padding(4)
         Me.chkEstado.Name = "chkEstado"
         Me.chkEstado.Size = New System.Drawing.Size(151, 21)
         Me.chkEstado.TabIndex = 125

@@ -361,33 +361,27 @@
 
     Private Sub ValidarDatosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ValidarDatosToolStripMenuItem.Click
         Try
+            Dim n As String = MsgBox("¿Desea validar la orden de trabajo?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
+                Dim objOrdTrab As New ClsOrdenDeTrabajo
+                With objOrdTrab
+                    .cod_orden_trabajo_ = Integer.Parse(txtOrden.Text)
+                    .coUsuario_ = Integer.Parse(Form1.lblUserCod.Text)
 
-            'If Trim(txtNombre.Text) <> "" And Trim(txtSubarea.Text) <> "" And txtCodigo.Text <> "" Then
-            'orden de trabajo
-            Dim objOrdTrab As New ClsOrdenDeTrabajo
-            With objOrdTrab
-                .cod_orden_trabajo_ = Integer.Parse(txtOrden.Text)
-                .coUsuario_ = Integer.Parse(Form1.lblUserCod.Text)
+                    'Procedimiento actualizar orden de trabajo
+                    If .ModificarOrdenDeTrabajoEstadoValidado() = 1 Then
+                        MsgBox("Validado correctamente.", MsgBoxStyle.Information)
+                        Dim colColl As DataColumnCollection = ds.Tables("HojaTrabajo").Columns
+                        dgvHojaTrab.Rows(fila).Cells(colColl.IndexOf("Estado")).Value = "Validado"
+                        dgvHojaTrab.Rows.Remove(dgvHojaTrab.Rows(fila))
+                    Else
+                        MsgBox("Error al momento de validar la orden de trabajo.", MsgBoxStyle.Critical, "Validación.")
+                    End If
 
-                'Procedimiento Ingreso
-                If .ModificarOrdenDeTrabajoEstadoValidado() = 1 Then
-                    MsgBox("Validado correctamente.", MsgBoxStyle.Information)
-                    Dim colColl As DataColumnCollection = ds.Tables("HojaTrabajo").Columns
-                    dgvHojaTrab.Rows(fila).Cells(colColl.IndexOf("Estado")).Value = "Validado"
-
-                Else
-                    MsgBox("Error al momento de actualizar la subárea en el sistema.", MsgBoxStyle.Critical)
-                End If
-
-            End With
-
-            'Else
-            '    MsgBox("Debe llenar los campos necesarios.", MsgBoxStyle.Information)
-            'End If
-
-
+                End With
+            End If
         Catch ex As Exception
-            MessageBox.Show("Error al actualizar. Detalle: " + ex.Message)
+            MsgBox("Error al validar: " + ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 

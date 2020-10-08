@@ -58,7 +58,7 @@ Public Class M_BuscarFactura
                 M_Factura.lblcodeSucursal.Text = CStr(row("codigoSucursal"))
 
                 'M_Factura.lblcodePriceList.Text = CStr(row("codigoConvenio"))
-                M_Factura.txtcodigoConvenio.Text = CStr(row("codigoConvenio"))
+                'M_Factura.txtcodigoConvenio.Text = CStr(row("codigoConvenio"))
 
                 M_Factura.txtnumeroPoliza.Text = CStr(row("numeroPoliza"))
                 M_Factura.txtcodigoTerminal.Text = CStr(row("codigoTerminal"))
@@ -220,8 +220,10 @@ Public Class M_BuscarFactura
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        M_DiarioFacturacion.lblForm.Text = "M_DiarioFacturacion"
-        M_DiarioFacturacion.ShowDialog()
+        'M_DiarioFacturacion.lblForm.Text = "M_DiarioFacturacion"
+        'M_DiarioFacturacion.ShowDialog()        
+        A_BuscarPlanilla.lblform.Text = "A_BuscarPlanilla"
+        A_BuscarPlanilla.ShowDialog()
     End Sub
 
 End Class

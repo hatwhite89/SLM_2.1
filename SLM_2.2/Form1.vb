@@ -804,4 +804,22 @@
     Private Sub btnConstanciaPlantillas_Click(sender As Object, e As EventArgs) Handles btnConstanciaPlantillas.Click
 
     End Sub
+
+    Private Sub btnCategoriaCliente_Click(sender As Object, e As EventArgs) Handles btnCategoriaCliente.Click
+        Try
+            M_Categoria.lblform.Text = "Form1"
+            M_Categoria.ShowDialog()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnTipoClasificacion_Click(sender As Object, e As EventArgs) Handles btnTipoClasificacion.Click
+        Try
+            M_TipoClasificacion.lbltipo.Text = "Form1"
+            M_TipoClasificacion.ShowDialog()
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

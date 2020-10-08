@@ -3,6 +3,10 @@
         actualizarCotizacion()
         txtnombreB.Text = ""
         txtnumeroB.Text = ""
+        'ocultar columnas
+        Me.dgbtabla.Columns("codigoRecepcionista").Visible = False
+        Me.dgbtabla.Columns("codigoSucursal").Visible = False
+        Me.dgbtabla.Columns("codigoTerminoPago").Visible = False
     End Sub
     Public Sub actualizarCotizacion()
         Dim objCot As New ClsCotizacion
@@ -33,6 +37,11 @@
                 Dim precio As Double = 0
                 objCotFact.numeroCotizacion_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
                 M_Factura.txtnumeroFactura.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                M_Factura.dtpfechaFactura.Value = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                M_Factura.txtcodigoCajero.Text = dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+                M_Factura.txtcodigoRecepecionista.Text = dgbtabla.Rows(e.RowIndex).Cells(6).Value()
+                M_Factura.lblcodeSucursal.Text = dgbtabla.Rows(e.RowIndex).Cells(7).Value()
+                M_Factura.lblcodeTerminoPago.Text = dgbtabla.Rows(e.RowIndex).Cells(8).Value()
                 dt = objCotFact.BuscarCotizacionFactura()
                 Dim row As DataRow
                 'dgblistadoExamenes.Rows(Index).Cells(0).Value()

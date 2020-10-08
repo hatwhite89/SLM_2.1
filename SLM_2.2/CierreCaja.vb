@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class M_ImprimirCotizacion
+Public Class CierreCaja
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class M_ImprimirCotizacion
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "M_ImprimirCotizacion.rpt"
+            Return "CierreCaja.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class M_ImprimirCotizacion
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "SLM_2._2.M_ImprimirCotizacion.rpt"
+            Return "SLM_2._2.CierreCaja.rpt"
         End Get
         Set
             'Do nothing
@@ -91,58 +91,10 @@ Public Class M_ImprimirCotizacion
             Return Me.ReportDefinition.Sections(4)
         End Get
     End Property
-    
-    <Browsable(false),  _
-     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_numero() As CrystalDecisions.[Shared].IParameterField
-        Get
-            Return Me.DataDefinition.ParameterFields(0)
-        End Get
-    End Property
-    
-    <Browsable(false),  _
-     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_numeroCotizacion() As CrystalDecisions.[Shared].IParameterField
-        Get
-            Return Me.DataDefinition.ParameterFields(1)
-        End Get
-    End Property
-    
-    <Browsable(false),  _
-     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_fechaNacimiento() As CrystalDecisions.[Shared].IParameterField
-        Get
-            Return Me.DataDefinition.ParameterFields(2)
-        End Get
-    End Property
-    
-    <Browsable(false),  _
-     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_numalet() As CrystalDecisions.[Shared].IParameterField
-        Get
-            Return Me.DataDefinition.ParameterFields(3)
-        End Get
-    End Property
-    
-    <Browsable(false),  _
-     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_cajero() As CrystalDecisions.[Shared].IParameterField
-        Get
-            Return Me.DataDefinition.ParameterFields(4)
-        End Get
-    End Property
-    
-    <Browsable(false),  _
-     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_recepcionista() As CrystalDecisions.[Shared].IParameterField
-        Get
-            Return Me.DataDefinition.ParameterFields(5)
-        End Get
-    End Property
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedM_ImprimirCotizacion
+Public Class CachedCierreCaja
     Inherits Component
     Implements ICachedReport
     
@@ -184,7 +136,7 @@ Public Class CachedM_ImprimirCotizacion
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As M_ImprimirCotizacion = New M_ImprimirCotizacion()
+        Dim rpt As CierreCaja = New CierreCaja()
         rpt.Site = Me.Site
         Return rpt
     End Function

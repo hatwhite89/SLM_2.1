@@ -3,7 +3,7 @@
         If (txtcodigoMaquina.Text <> "") Then
             Try
                 'Dim t, t2, t3, t4, t5 As Double
-                Dim efectivo, tarjeta, vuelto, total, fondo As Double
+                Dim efectivo, tarjeta, vuelto, total, fondo, cheque, transferencia, deposito As Double
                 Dim objTerm As New ClsArqueos
                 With objTerm
                     .codigoMaquinaLocal_ = txtcodigoMaquina.Text
@@ -22,6 +22,24 @@
                     tarjeta = Convert.ToDouble(row("tarjeta"))
                 Else
                     tarjeta = 0
+                End If
+
+                If IsDBNull(row("cheque")) = False Then
+                    cheque = Convert.ToDouble(row("cheque"))
+                Else
+                    cheque = 0
+                End If
+
+                If IsDBNull(row("transferencia")) = False Then
+                    transferencia = Convert.ToDouble(row("transferencia"))
+                Else
+                    transferencia = 0
+                End If
+
+                If IsDBNull(row("deposito")) = False Then
+                    deposito = Convert.ToDouble(row("deposito"))
+                Else
+                    deposito = 0
                 End If
 
                 If IsDBNull(row("vuelto")) = False Then
@@ -43,6 +61,7 @@
                 End If
 
                 MsgBox("Efectivo facturado: " & efectivo - vuelto & ", Tarjeta: " & tarjeta & ", Total facturado: " & total & ", Fondo Aperturado: " & fondo & ", Total Efectivo en Caja: " & ((efectivo - vuelto) + fondo))
+                'MsgBox("Efectivo facturado: " & efectivo - vuelto & ", Tarjeta: " & tarjeta & ", Total facturado: " & total & ", Fondo Aperturado: " & fondo & ", Total Efectivo en Caja: " & ((efectivo - vuelto) + fondo))
                 'MsgBox("Efectivo facturado: " & t - t3 & ", Tarjeta: " & t2 & ", Total facturado: " & t4 & ", Fondo Aperturado: " & t5 & ", Total Efectivo en Caja: " & ((t - t3) + t5))
 
             Catch ex As Exception

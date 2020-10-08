@@ -134,6 +134,12 @@ Partial Class M_Factura
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.btnNuevaCotizacion = New System.Windows.Forms.Button()
         Me.lblOKAY = New System.Windows.Forms.Label()
+        Me.lblSubtotal = New System.Windows.Forms.Label()
+        Me.txtsubtotal = New System.Windows.Forms.TextBox()
+        Me.lblPorcentaje = New System.Windows.Forms.Label()
+        Me.txtPorcentaje = New System.Windows.Forms.TextBox()
+        Me.lblVuelto2 = New System.Windows.Forms.Label()
+        Me.txtvuelto2 = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -465,6 +471,7 @@ Partial Class M_Factura
         Me.txtcodigoConvenio.ReadOnly = True
         Me.txtcodigoConvenio.Size = New System.Drawing.Size(276, 22)
         Me.txtcodigoConvenio.TabIndex = 48
+        Me.txtcodigoConvenio.Text = "x`"
         Me.txtcodigoConvenio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcodigoTerminal
@@ -614,7 +621,7 @@ Partial Class M_Factura
         Me.btnimprimirComprobante.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnimprimirComprobante.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnimprimirComprobante.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnimprimirComprobante.Location = New System.Drawing.Point(811, 82)
+        Me.btnimprimirComprobante.Location = New System.Drawing.Point(811, 95)
         Me.btnimprimirComprobante.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnimprimirComprobante.Name = "btnimprimirComprobante"
         Me.btnimprimirComprobante.Size = New System.Drawing.Size(125, 94)
@@ -772,7 +779,7 @@ Partial Class M_Factura
         Me.btnentregarExamen.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnentregarExamen.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnentregarExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnentregarExamen.Location = New System.Drawing.Point(941, 82)
+        Me.btnentregarExamen.Location = New System.Drawing.Point(941, 95)
         Me.btnentregarExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnentregarExamen.Name = "btnentregarExamen"
         Me.btnentregarExamen.Size = New System.Drawing.Size(125, 94)
@@ -785,7 +792,7 @@ Partial Class M_Factura
         Me.btnbusquedaExamen.BackColor = System.Drawing.Color.Yellow
         Me.btnbusquedaExamen.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnbusquedaExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbusquedaExamen.Location = New System.Drawing.Point(680, 82)
+        Me.btnbusquedaExamen.Location = New System.Drawing.Point(680, 95)
         Me.btnbusquedaExamen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnbusquedaExamen.Name = "btnbusquedaExamen"
         Me.btnbusquedaExamen.Size = New System.Drawing.Size(125, 94)
@@ -798,7 +805,7 @@ Partial Class M_Factura
         Me.btnmuestrasPendientes.BackColor = System.Drawing.Color.Yellow
         Me.btnmuestrasPendientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnmuestrasPendientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmuestrasPendientes.Location = New System.Drawing.Point(548, 82)
+        Me.btnmuestrasPendientes.Location = New System.Drawing.Point(548, 95)
         Me.btnmuestrasPendientes.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnmuestrasPendientes.Name = "btnmuestrasPendientes"
         Me.btnmuestrasPendientes.Size = New System.Drawing.Size(125, 94)
@@ -811,7 +818,7 @@ Partial Class M_Factura
         Me.btnestadoFactura.BackColor = System.Drawing.Color.Yellow
         Me.btnestadoFactura.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnestadoFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnestadoFactura.Location = New System.Drawing.Point(417, 82)
+        Me.btnestadoFactura.Location = New System.Drawing.Point(417, 95)
         Me.btnestadoFactura.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnestadoFactura.Name = "btnestadoFactura"
         Me.btnestadoFactura.Size = New System.Drawing.Size(125, 94)
@@ -1028,6 +1035,12 @@ Partial Class M_Factura
         '
         Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.Controls.Add(Me.lblVuelto2)
+        Me.GroupBox3.Controls.Add(Me.txtvuelto2)
+        Me.GroupBox3.Controls.Add(Me.txtPorcentaje)
+        Me.GroupBox3.Controls.Add(Me.lblPorcentaje)
+        Me.GroupBox3.Controls.Add(Me.txtsubtotal)
+        Me.GroupBox3.Controls.Add(Me.lblSubtotal)
         Me.GroupBox3.Controls.Add(Me.lblCheque)
         Me.GroupBox3.Controls.Add(Me.txtCheque)
         Me.GroupBox3.Controls.Add(Me.lblTransferencia)
@@ -1055,7 +1068,7 @@ Partial Class M_Factura
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox3.Size = New System.Drawing.Size(1131, 221)
+        Me.GroupBox3.Size = New System.Drawing.Size(1131, 241)
         Me.GroupBox3.TabIndex = 110
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Detalle de pago"
@@ -1364,12 +1377,75 @@ Partial Class M_Factura
         Me.lblOKAY.Text = "Label1"
         Me.lblOKAY.Visible = False
         '
+        'lblSubtotal
+        '
+        Me.lblSubtotal.AutoSize = True
+        Me.lblSubtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSubtotal.Location = New System.Drawing.Point(843, 60)
+        Me.lblSubtotal.Name = "lblSubtotal"
+        Me.lblSubtotal.Size = New System.Drawing.Size(60, 17)
+        Me.lblSubtotal.TabIndex = 114
+        Me.lblSubtotal.Text = "Subtotal"
+        '
+        'txtsubtotal
+        '
+        Me.txtsubtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtsubtotal.Location = New System.Drawing.Point(907, 57)
+        Me.txtsubtotal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtsubtotal.Name = "txtsubtotal"
+        Me.txtsubtotal.ReadOnly = True
+        Me.txtsubtotal.Size = New System.Drawing.Size(143, 22)
+        Me.txtsubtotal.TabIndex = 115
+        Me.txtsubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblPorcentaje
+        '
+        Me.lblPorcentaje.AutoSize = True
+        Me.lblPorcentaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPorcentaje.Location = New System.Drawing.Point(555, 60)
+        Me.lblPorcentaje.Name = "lblPorcentaje"
+        Me.lblPorcentaje.Size = New System.Drawing.Size(130, 17)
+        Me.lblPorcentaje.TabIndex = 116
+        Me.lblPorcentaje.Text = "Porcentaje a Pagar"
+        '
+        'txtPorcentaje
+        '
+        Me.txtPorcentaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPorcentaje.Location = New System.Drawing.Point(691, 57)
+        Me.txtPorcentaje.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtPorcentaje.Name = "txtPorcentaje"
+        Me.txtPorcentaje.ReadOnly = True
+        Me.txtPorcentaje.Size = New System.Drawing.Size(143, 22)
+        Me.txtPorcentaje.TabIndex = 117
+        Me.txtPorcentaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblVuelto2
+        '
+        Me.lblVuelto2.AutoSize = True
+        Me.lblVuelto2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVuelto2.Location = New System.Drawing.Point(351, 63)
+        Me.lblVuelto2.Name = "lblVuelto2"
+        Me.lblVuelto2.Size = New System.Drawing.Size(48, 17)
+        Me.lblVuelto2.TabIndex = 118
+        Me.lblVuelto2.Text = "Vuelto"
+        '
+        'txtvuelto2
+        '
+        Me.txtvuelto2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtvuelto2.Location = New System.Drawing.Point(405, 60)
+        Me.txtvuelto2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtvuelto2.Name = "txtvuelto2"
+        Me.txtvuelto2.ReadOnly = True
+        Me.txtvuelto2.Size = New System.Drawing.Size(143, 22)
+        Me.txtvuelto2.TabIndex = 119
+        Me.txtvuelto2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'M_Factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1173, 809)
+        Me.ClientSize = New System.Drawing.Size(1173, 829)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblOKAY)
         Me.Controls.Add(Me.btnNuevaCotizacion)
@@ -1558,4 +1634,10 @@ Partial Class M_Factura
     Friend WithEvents codeItemExam As DataGridViewTextBoxColumn
     Friend WithEvents btnNuevaCotizacion As Button
     Friend WithEvents lblOKAY As Label
+    Friend WithEvents txtsubtotal As TextBox
+    Friend WithEvents lblSubtotal As Label
+    Friend WithEvents txtPorcentaje As TextBox
+    Friend WithEvents lblPorcentaje As Label
+    Friend WithEvents lblVuelto2 As Label
+    Friend WithEvents txtvuelto2 As TextBox
 End Class

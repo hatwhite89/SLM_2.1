@@ -221,6 +221,7 @@ Partial Class M_BuscarCapacitaciones
         Me.ClientSize = New System.Drawing.Size(957, 667)
         Me.Controls.Add(Me.lblform)
         Me.Controls.Add(Me.gbxbusqueda)
+        Me.KeyPreview = True
         Me.Name = "M_BuscarCapacitaciones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Búsqueda de Capacitaciones"
