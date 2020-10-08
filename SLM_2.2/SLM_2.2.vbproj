@@ -270,6 +270,12 @@
     <Compile Include="presentacion\A_Candidatos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_CentrodeCosto.Designer.vb">
+      <DependentUpon>A_CentrodeCosto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_CentrodeCosto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_ConfiguracionCorreo.Designer.vb">
       <DependentUpon>A_ConfiguracionCorreo.vb</DependentUpon>
     </Compile>
@@ -286,6 +292,12 @@
       <DependentUpon>A_Consolidacion.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_Consolidacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_CuentasPorCobrar.Designer.vb">
+      <DependentUpon>A_CuentasPorCobrar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_CuentasPorCobrar.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_Depreciacion.Designer.vb">
@@ -1321,6 +1333,9 @@
     <EmbeddedResource Include="presentacion\A_Candidatos.resx">
       <DependentUpon>A_Candidatos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_CentrodeCosto.resx">
+      <DependentUpon>A_CentrodeCosto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ConfiguracionCorreo.resx">
       <DependentUpon>A_ConfiguracionCorreo.vb</DependentUpon>
     </EmbeddedResource>
@@ -1329,6 +1344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Consolidacion.resx">
       <DependentUpon>A_Consolidacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_CuentasPorCobrar.resx">
+      <DependentUpon>A_CuentasPorCobrar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Depreciacion.resx">
       <DependentUpon>A_Depreciacion.vb</DependentUpon>

@@ -129,7 +129,6 @@ Partial Class A_Cheques
         Me.lblEstado.Size = New System.Drawing.Size(40, 13)
         Me.lblEstado.TabIndex = 17
         Me.lblEstado.Text = "Estado"
-        Me.lblEstado.Visible = False
         '
         'rbtnRechazado
         '

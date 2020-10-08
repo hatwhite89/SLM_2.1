@@ -7,7 +7,7 @@ Public Class A_ConfiguracionFeriados
             btnGuardar.Enabled = True
 
 
-
+            cargardata()
 
         Catch ex As Exception
 
@@ -22,8 +22,13 @@ Public Class A_ConfiguracionFeriados
 
             Dim feriado As New ClsFeriados
 
+            Dim fechaInicio As Date = dtpDesde.Value
+            Dim fechaFin As Date = dtpHasta.Value
+            Dim fechaControl As Date = fechaInicio
+            Dim fechasEntreSemana As New List(Of Date)
 
-            If rbtFecha.Checked = True Then
+
+            If rbtFecha.Checked = True Then 'Fecha Especifica
 
                 With feriado
 
@@ -37,13 +42,9 @@ Public Class A_ConfiguracionFeriados
 
                 End With
 
-            ElseIf rbtRango.Checked = True Then
+            ElseIf rbtRango.Checked = True Then 'Rango de fechas
 
-                Dim fechaInicio As Date = dtpDesde.Value
-                Dim fechaFin As Date = dtpHasta.Value
-                'Declaración de variables que necesitamos para el algoritmo'
-                Dim fechaControl As Date = fechaInicio
-                Dim fechasEntreSemana As New List(Of Date)
+
                 'Bucle que recorre fechas'
                 Do While (fechaControl <= fechaFin)
                     'Comprobamos que la fecha actual sea un día entre semana'
@@ -63,17 +64,53 @@ Public Class A_ConfiguracionFeriados
 
                 Loop
 
-                 MsgBox("Se registraron las fechas")
+                MsgBox("Se registraron las fechas")
+
+
+            ElseIf rbtDiaEspecifico.Checked = True Then
+
+                'Bucle que recorre fechas'
+                Do While (fechaControl <= fechaFin)
+                    'Comprobamos que la fecha actual sea un día entre semana'
+
+                    If cbxDia.Text = "Domingo" Then
+
+                        If fechaControl.DayOfWeek = DayOfWeek.Sunday Then
+                            MsgBox(fechaControl)
+                            fechasEntreSemana.Add(fechaControl)
+
+                        End If
+
+                        fechaControl = fechaControl.AddDays(1)
+
+                    ElseIf cbxDia.Text = "Sábado" Then
+
+                        If fechaControl.DayOfWeek = DayOfWeek.Saturday Then
+                            'MsgBox(fechaControl) Imprime fechas
+                            fechasEntreSemana.Add(fechaControl)
+
+                        End If
+
+                        fechaControl = fechaControl.AddDays(1)
+                        With feriado
+
+                            .CodBreve_ = txtCodBreve.Text
+                            .Descrip_ = txtDescripcion.Text
+                            .Fecha_ = fechaControl
+                            .registrarNuevoFeriado()
+
+                        End With
+
+
+                    End If
+
+                Loop
+                MsgBox("Se registraron las fechas para el día indicado.")
 
             End If
 
-
-
-
-
-
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
     End Sub
 
@@ -100,5 +137,32 @@ Public Class A_ConfiguracionFeriados
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
+    End Sub
+
+    Sub cargardata()
+
+        Dim feriado As New ClsFeriados
+
+        Dim dt As DataTable
+        Dim row As DataRow
+        Dim a As Integer = 0
+
+        dt = feriado.listarFeriados
+
+        For a = 0 To dt.Rows.Count - 1
+
+            row = dt.rows(a)
+
+
+
+
+        Next
+
+
+
+
+
+
+
     End Sub
 End Class

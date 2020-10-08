@@ -129,7 +129,7 @@ Public Class A_Cheques
         ElseIf lblEstado.Text = "Cancelado" Then
             rbtnCancelado.Checked = True
         ElseIf lblEstado.Text = "Rechazado" Then
-            rbtnAcreditado.Checked = True
+            rbtnRechazado.Checked = True
         End If
 
     End Sub
@@ -143,7 +143,7 @@ Public Class A_Cheques
 
         If lblForm.Text = "ChequeSeleccionado" Then
 
-            btnGuardar.Visible = False
+            btnGuardar.Enabled = False
 
         Else
 
@@ -737,15 +737,57 @@ Public Class A_Cheques
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim n As String = MsgBox("¿Desea modificar el estado del cheque?", MsgBoxStyle.YesNo, "Validación")
+
         If n = vbYes Then
+            Try
+                With cheque
 
+                    .Cod_Cheque = Convert.ToInt32(txtNro.Text)
+                    .Estad_o = lblEstado.Text
+                    .Comentari_o = txtComentario.Text
+                    If .modificarEstadoCheque() = 1 Then
+                        MsgBox("Se modificó el estado del cheque a: " + lblEstado.Text)
+                    End If
 
-
-
+                End With
+            Catch ex As Exception
+                MsgBox("Hubo un error. Detalle: " + ex.Message)
+            End Try
 
 
         End If
 
+    End Sub
 
+    Private Sub rbtnEmitido_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnEmitido.CheckedChanged
+        If rbtnEmitido.Checked = True Then
+            lblEstado.Text = "Emitido"
+        End If
+    End Sub
+
+    Private Sub rbtnAcreditado_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnAcreditado.CheckedChanged
+        If rbtnAcreditado.Checked = True Then
+            lblEstado.Text = "Acreditado"
+        End If
+    End Sub
+
+    Private Sub rbtnCancelado_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnCancelado.CheckedChanged
+        If rbtnCancelado.Checked = True Then
+            lblEstado.Text = "Cancelado"
+        End If
+    End Sub
+
+
+
+    Private Sub rbtnChequera_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnChequera.CheckedChanged
+        If rbtnChequera.Checked = True Then
+            lblEstado.Text = "Habilitado"
+        End If
+    End Sub
+
+    Private Sub rbtnRechazado_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnRechazado.CheckedChanged
+        If rbtnRechazado.Checked = True Then
+            lblEstado.Text = "Rechazado"
+        End If
     End Sub
 End Class

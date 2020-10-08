@@ -157,5 +157,19 @@ Public Class ClsFeriados
 
     End Function
 
+    'Listar feriados
+    Public Function listarFeriados() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("A_slmListarFeriados", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
 
 End Class

@@ -68,37 +68,71 @@
             dt = dtCheques.DataSource
             row = dt.Rows(e.RowIndex)
 
-            formap.Ban_co = row("nombreBanco")
-            dt2 = formap.ctaBancoXBanco()
-            row2 = dt2.Rows(0)
+            If dt.Rows(e.RowIndex).Item(7).ToString <> "" Then
+
+                formap.Ban_co = row("nombreBanco")
+                dt2 = formap.ctaBancoXBanco()
+                row2 = dt2.Rows(0)
+
+                With A_Cheques
+
+                    .txtNro.Text = row("codCheque")
+                    .txtNroCheq.Text = row("nroCheque")
+                    .txtMonto.Text = row("monto")
+                    .dtpFechaReg.Value = row("fechaReg")
+                    .dtpFechaVto.Value = row("fechaVto")
+                    .txtMoneda.Text = row("moneda")
+                    .lblEstado.Text = row("estado")
+                    .txtcodProvee.Text = row("codBreveProveedor")
+                    .txtNombreProvee.Text = row("nombreProveedor")
+                    .txtBanco.Text = row("codBreveBanco")
+                    .txtNroCtaBanco.Text = row2("nroCtaBanco")
+                    .txtnombreBanco.Text = row("nombreBanco")
+                    .dtpAcredita.Value = row("fechaacreditacion")
+                    .dtpRechazo.Value = row("fechaRechazo")
+                    .dtpEmision.Value = row("fechaEmision")
+                    .dtpCancelado.Value = row("fechaCancelado")
+                    .txtCtaOrigen.Text = row("ctaOrigen")
+                    .txtCtaDestino.Text = row("ctaDestino")
+                    .txtCtaTemporal.Text = row("ctaTemporal")
+                    .lblForm.Text = "ChequeSeleccionado"
+                    .Show()
+
+                End With
+
+            Else
+
+
+                With A_Cheques
+
+                    .txtNro.Text = row("codCheque")
+                    .txtNroCheq.Text = row("nroCheque")
+                    '.txtMonto.Text = row("monto")
+                    '.dtpFechaReg.Value = row("fechaReg")
+                    '.dtpFechaVto.Value = row("fechaVto")
+                    '.txtMoneda.Text = row("moneda")
+                    .lblEstado.Text = row("estado")
+                    '.txtcodProvee.Text = row("codBreveProveedor")
+                    '.txtNombreProvee.Text = row("nombreProveedor")
+                    .txtBanco.Text = row("codBreveBanco")
+                    '.txtNroCtaBanco.Text = row2("nroCtaBanco")
+                    .txtnombreBanco.Text = row("nombreBanco")
+                    '.dtpAcredita.Value = row("fechaacreditacion")
+                    '.dtpRechazo.Value = row("fechaRechazo")
+                    '.dtpEmision.Value = row("fechaEmision")
+                    '.dtpCancelado.Value = row("fechaCancelado")
+                    '.txtCtaOrigen.Text = row("ctaOrigen")
+                    '.txtCtaDestino.Text = row("ctaDestino")
+                    '.txtCtaTemporal.Text = row("ctaTemporal")
+                    .lblForm.Text = "ChequeSeleccionado"
+                    .Show()
+
+                End With
+
+            End If
 
 
 
-            With A_Cheques
-
-                .txtNro.Text = row("codCheque")
-                .txtNroCheq.Text = row("nroCheque")
-                .txtMonto.Text = row("monto")
-                .dtpFechaReg.Value = row("fechaReg")
-                .dtpFechaVto.Value = row("fechaVto")
-                .txtMoneda.Text = row("moneda")
-                .lblEstado.Text = row("estado")
-                .txtcodProvee.Text = row("codBreveProveedor")
-                .txtNombreProvee.Text = row("nombreProveedor")
-                .txtBanco.Text = row("codBreveBanco")
-                .txtNroCtaBanco.Text = row2("nroCtaBanco")
-                .txtnombreBanco.Text = row("nombreBanco")
-                .dtpAcredita.Value = row("fechaacreditacion")
-                .dtpRechazo.Value = row("fechaRechazo")
-                .dtpEmision.Value = row("fechaEmision")
-                .dtpCancelado.Value = row("fechaCancelado")
-                .txtCtaOrigen.Text = row("ctaOrigen")
-                .txtCtaDestino.Text = row("ctaDestino")
-                .txtCtaTemporal.Text = row("ctaTemporal")
-                .lblForm.Text = "ChequeSeleccionado"
-                .Show()
-
-            End With
 
         Catch ex As Exception
             MsgBox("Error al seleccionar. Detalle: " + ex.Message)
