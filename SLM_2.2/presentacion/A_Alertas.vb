@@ -15,6 +15,7 @@
             dtNotificaciones.Columns("descripcion").Width = "320"
             dtNotificaciones.Columns("estado").Width = "50"
 
+
         Catch ex As Exception
 
         End Try
