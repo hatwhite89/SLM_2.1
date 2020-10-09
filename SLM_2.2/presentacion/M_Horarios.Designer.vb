@@ -64,6 +64,7 @@ Partial Class M_Horarios
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.gbxRegistrar.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.gbxDiasSemanales.SuspendLayout()
@@ -456,6 +457,7 @@ Partial Class M_Horarios
         Me.gbxbusqueda.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxbusqueda.Controls.Add(Me.Button4)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
@@ -518,7 +520,7 @@ Partial Class M_Horarios
         Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
-        Me.txtnombreB.Size = New System.Drawing.Size(642, 20)
+        Me.txtnombreB.Size = New System.Drawing.Size(560, 20)
         Me.txtnombreB.TabIndex = 115
         '
         'lblnombreB
@@ -565,6 +567,19 @@ Partial Class M_Horarios
         Me.Label4.Size = New System.Drawing.Size(167, 20)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Horarios de Trabajo"
+        '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.Color.Green
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button4.Location = New System.Drawing.Point(630, 15)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 117
+        Me.Button4.Text = "Excel"
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'M_Horarios
         '
@@ -639,4 +654,5 @@ Partial Class M_Horarios
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label4 As Label
+    Friend WithEvents Button4 As Button
 End Class
