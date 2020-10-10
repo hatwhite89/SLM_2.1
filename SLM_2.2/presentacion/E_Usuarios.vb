@@ -118,6 +118,7 @@
             btnModificar.Enabled = True
             btnCambio.Visible = True
 
+            Limpiar()
             Dim dt As New DataTable
             dt = dtUsuarios.DataSource
             Dim row As DataRow = dt.Rows(e.RowIndex)

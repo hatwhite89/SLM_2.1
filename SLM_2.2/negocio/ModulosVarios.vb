@@ -635,6 +635,13 @@ Module ModulosVarios
                                                     Form1.btnServidorCorreo.Enabled = False
                                                 End If
 
+                                            ElseIf i = 3 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.btnFeriados.Enabled = True
+                                                Else
+                                                    Form1.btnFeriados.Enabled = False
+                                                End If
+
                                             End If
                                         Next
 

@@ -50,8 +50,6 @@ Partial Class A_ConfiguracionFeriados
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.txtBusqueda = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.dtFeriados = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -363,8 +361,6 @@ Partial Class A_ConfiguracionFeriados
         Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.Controls.Add(Me.txtBusqueda)
-        Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.dtFeriados)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 262)
         Me.GroupBox2.Name = "GroupBox2"
@@ -372,22 +368,6 @@ Partial Class A_ConfiguracionFeriados
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Listado de Registros"
-        '
-        'txtBusqueda
-        '
-        Me.txtBusqueda.Location = New System.Drawing.Point(129, 22)
-        Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(217, 20)
-        Me.txtBusqueda.TabIndex = 16
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(15, 25)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(108, 13)
-        Me.Label7.TabIndex = 1
-        Me.Label7.Text = "Buscar (Descripción):"
         '
         'dtFeriados
         '
@@ -400,11 +380,11 @@ Partial Class A_ConfiguracionFeriados
         Me.dtFeriados.BackgroundColor = System.Drawing.Color.White
         Me.dtFeriados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtFeriados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
-        Me.dtFeriados.Location = New System.Drawing.Point(12, 48)
+        Me.dtFeriados.Location = New System.Drawing.Point(12, 19)
         Me.dtFeriados.Name = "dtFeriados"
         Me.dtFeriados.ReadOnly = True
         Me.dtFeriados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtFeriados.Size = New System.Drawing.Size(652, 188)
+        Me.dtFeriados.Size = New System.Drawing.Size(652, 217)
         Me.dtFeriados.TabIndex = 0
         '
         'Column1
@@ -449,7 +429,6 @@ Partial Class A_ConfiguracionFeriados
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         CType(Me.dtFeriados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -478,8 +457,6 @@ Partial Class A_ConfiguracionFeriados
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents rbtDiaEspecifico As RadioButton
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents txtBusqueda As TextBox
-    Friend WithEvents Label7 As Label
     Friend WithEvents dtFeriados As DataGridView
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
