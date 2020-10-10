@@ -42,6 +42,7 @@ Partial Class M_Profesion
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxsucursal.SuspendLayout()
@@ -53,6 +54,7 @@ Partial Class M_Profesion
         Me.gbxbusqueda.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxbusqueda.Controls.Add(Me.Button4)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
@@ -117,7 +119,7 @@ Partial Class M_Profesion
         Me.txtdescripcionB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtdescripcionB.MaxLength = 80
         Me.txtdescripcionB.Name = "txtdescripcionB"
-        Me.txtdescripcionB.Size = New System.Drawing.Size(612, 20)
+        Me.txtdescripcionB.Size = New System.Drawing.Size(517, 20)
         Me.txtdescripcionB.TabIndex = 115
         '
         'lbldescripcionB
@@ -293,6 +295,19 @@ Partial Class M_Profesion
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Profesión"
         '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.Color.Green
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button4.Location = New System.Drawing.Point(616, 21)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 118
+        Me.Button4.Text = "Excel"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
         'M_Profesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -340,4 +355,5 @@ Partial Class M_Profesion
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label4 As Label
+    Friend WithEvents Button4 As Button
 End Class

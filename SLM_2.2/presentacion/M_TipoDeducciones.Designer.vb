@@ -44,6 +44,7 @@ Partial Class M_TipoDeducciones
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxcaja.SuspendLayout()
@@ -66,15 +67,16 @@ Partial Class M_TipoDeducciones
         Me.gbxbusqueda.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxbusqueda.Controls.Add(Me.Button4)
         Me.gbxbusqueda.Controls.Add(Me.txtNombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Location = New System.Drawing.Point(10, 181)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Size = New System.Drawing.Size(696, 342)
         Me.gbxbusqueda.TabIndex = 129
         Me.gbxbusqueda.TabStop = False
@@ -83,10 +85,10 @@ Partial Class M_TipoDeducciones
         'txtNombreB
         '
         Me.txtNombreB.Location = New System.Drawing.Point(61, 22)
-        Me.txtNombreB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtNombreB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtNombreB.MaxLength = 200
         Me.txtNombreB.Name = "txtNombreB"
-        Me.txtNombreB.Size = New System.Drawing.Size(627, 20)
+        Me.txtNombreB.Size = New System.Drawing.Size(539, 20)
         Me.txtNombreB.TabIndex = 118
         '
         'lblnombreB
@@ -120,7 +122,7 @@ Partial Class M_TipoDeducciones
         Me.dgbtabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(4, 54)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
@@ -152,9 +154,9 @@ Partial Class M_TipoDeducciones
         Me.gbxcaja.Controls.Add(Me.lblcodigo)
         Me.gbxcaja.Controls.Add(Me.txtcodigo)
         Me.gbxcaja.Location = New System.Drawing.Point(10, 46)
-        Me.gbxcaja.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxcaja.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxcaja.Name = "gbxcaja"
-        Me.gbxcaja.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxcaja.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxcaja.Size = New System.Drawing.Size(696, 122)
         Me.gbxcaja.TabIndex = 128
         Me.gbxcaja.TabStop = False
@@ -163,7 +165,7 @@ Partial Class M_TipoDeducciones
         'txttotal
         '
         Me.txttotal.Location = New System.Drawing.Point(48, 49)
-        Me.txttotal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txttotal.Margin = New System.Windows.Forms.Padding(2)
         Me.txttotal.MaxLength = 20
         Me.txttotal.Name = "txttotal"
         Me.txttotal.Size = New System.Drawing.Size(131, 20)
@@ -191,7 +193,7 @@ Partial Class M_TipoDeducciones
         'txtnombre
         '
         Me.txtnombre.Location = New System.Drawing.Point(242, 15)
-        Me.txtnombre.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombre.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombre.MaxLength = 150
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(446, 20)
@@ -211,7 +213,7 @@ Partial Class M_TipoDeducciones
         '
         Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigo.Location = New System.Drawing.Point(47, 15)
-        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.ReadOnly = True
@@ -226,7 +228,7 @@ Partial Class M_TipoDeducciones
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnmodificar.Location = New System.Drawing.Point(568, 5)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
         Me.btnmodificar.TabIndex = 111
@@ -240,7 +242,7 @@ Partial Class M_TipoDeducciones
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btncancelar.Location = New System.Drawing.Point(644, 5)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(68, 28)
         Me.btncancelar.TabIndex = 37
@@ -254,7 +256,7 @@ Partial Class M_TipoDeducciones
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnnuevo.Location = New System.Drawing.Point(409, 5)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
         Me.btnnuevo.TabIndex = 110
@@ -268,7 +270,7 @@ Partial Class M_TipoDeducciones
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnguardar.Location = New System.Drawing.Point(492, 5)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(72, 28)
         Me.btnguardar.TabIndex = 108
@@ -310,6 +312,19 @@ Partial Class M_TipoDeducciones
         Me.StatusStrip1.TabIndex = 168
         Me.StatusStrip1.Text = "StatusStrip1"
         '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.Color.Green
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button4.Location = New System.Drawing.Point(616, 22)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 119
+        Me.Button4.Text = "Excel"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
         'M_TipoDeducciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -322,7 +337,7 @@ Partial Class M_TipoDeducciones
         Me.Controls.Add(Me.gbxcaja)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_TipoDeducciones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SLM - "
@@ -359,4 +374,5 @@ Partial Class M_TipoDeducciones
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents Button4 As Button
 End Class
