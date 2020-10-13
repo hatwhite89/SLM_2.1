@@ -37,11 +37,13 @@
         Try
             Dim dt As New DataTable
             Dim row As DataRow
+            lblform.Text = "A_BuscarPlanilla"
             If lblform.Text = "A_BuscarPlanilla" Then
                 Dim n As String = ""
                 'Dim temp As String = M_ListaPrecios.dgbtabla.Rows(lblFila.Text).Cells(2).Value()
                 If e.RowIndex >= 0 Then
-                    n = MsgBox("¿Desea actualizar la capacitación que a seleccionado?", MsgBoxStyle.YesNo)
+                    n = MsgBox("¿Desea ver la planilla seleccionada?", MsgBoxStyle.YesNo)
+
                 End If
                 If n = vbYes Then
                     'Llenado campos de capacitacion
@@ -62,7 +64,7 @@
                 A_Planilla.ShowDialog()
             End If
         Catch ex As Exception
-            'MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 End Class
