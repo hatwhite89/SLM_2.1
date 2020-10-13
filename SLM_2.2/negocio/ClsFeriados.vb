@@ -114,7 +114,7 @@ Public Class ClsFeriados
         'PROCEDIMIENTO ALMACENADO
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "A_slmActualizarBanco"
+        sqlcom.CommandText = "A_slmActualizarFeriado"
 
         'VARIABLES 
         sqlpar = New SqlParameter
@@ -155,6 +155,20 @@ Public Class ClsFeriados
 
         Return par_sal
 
+    End Function
+
+    'Listar feriados
+    Public Function listarFeriados() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("A_slmListarFeriados", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
     End Function
 
 

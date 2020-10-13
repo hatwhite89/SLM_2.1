@@ -526,6 +526,8 @@
         dtSistema.Rows.Add("", "Usuarios", False, "")
         dtSistema.Rows.Add("", "Permisos de usuario", False, "")
         dtSistema.Rows.Add("", "Servidor de Correo", False, "")
+        dtSistema.Rows.Add("", "Conf. de Feriados", False, "")
+
 
         'Procesos de Talento Humano
         dtTalentoHumano.Rows.Add("", "Puestos de Trabajo", False, "")

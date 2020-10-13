@@ -822,4 +822,16 @@
 
         End Try
     End Sub
+
+    Private Sub btnPlanilla_Click(sender As Object, e As EventArgs) Handles btnPlanilla.Click
+        Try
+            A_BuscarPlanilla.Show()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnFeriados_Click(sender As Object, e As EventArgs) Handles btnFeriados.Click
+        A_ConfiguracionFeriados.Show()
+    End Sub
 End Class

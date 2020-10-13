@@ -58,17 +58,18 @@ Partial Class M_Vacaciones
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnmodificar = New System.Windows.Forms.Button()
-        Me.btnnuevo = New System.Windows.Forms.Button()
-        Me.btnguardar = New System.Windows.Forms.Button()
         Me.rtxtObservaciones = New System.Windows.Forms.RichTextBox()
-        Me.btncancelar = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnmodificar = New System.Windows.Forms.Button()
+        Me.btnnuevo = New System.Windows.Forms.Button()
+        Me.btnguardar = New System.Windows.Forms.Button()
+        Me.btncancelar = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxRegistrar.SuspendLayout()
@@ -80,15 +81,16 @@ Partial Class M_Vacaciones
         Me.gbxbusqueda.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxbusqueda.Controls.Add(Me.Button4)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
         Me.gbxbusqueda.Location = New System.Drawing.Point(10, 312)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Size = New System.Drawing.Size(708, 262)
         Me.gbxbusqueda.TabIndex = 118
         Me.gbxbusqueda.TabStop = False
@@ -115,7 +117,7 @@ Partial Class M_Vacaciones
         Me.dgbtabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(4, 46)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
@@ -138,10 +140,10 @@ Partial Class M_Vacaciones
         'txtnombreB
         '
         Me.txtnombreB.Location = New System.Drawing.Point(127, 17)
-        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
-        Me.txtnombreB.Size = New System.Drawing.Size(566, 20)
+        Me.txtnombreB.Size = New System.Drawing.Size(492, 20)
         Me.txtnombreB.TabIndex = 115
         '
         'lblnombreB
@@ -191,9 +193,9 @@ Partial Class M_Vacaciones
         Me.gbxRegistrar.Controls.Add(Me.Label1)
         Me.gbxRegistrar.Controls.Add(Me.Label2)
         Me.gbxRegistrar.Location = New System.Drawing.Point(6, 43)
-        Me.gbxRegistrar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxRegistrar.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxRegistrar.Name = "gbxRegistrar"
-        Me.gbxRegistrar.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxRegistrar.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxRegistrar.Size = New System.Drawing.Size(712, 265)
         Me.gbxRegistrar.TabIndex = 117
         Me.gbxRegistrar.TabStop = False
@@ -223,7 +225,7 @@ Partial Class M_Vacaciones
         'rtxtcubrira
         '
         Me.rtxtcubrira.Location = New System.Drawing.Point(110, 137)
-        Me.rtxtcubrira.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtcubrira.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtcubrira.MaxLength = 200
         Me.rtxtcubrira.Name = "rtxtcubrira"
         Me.rtxtcubrira.Size = New System.Drawing.Size(208, 52)
@@ -265,7 +267,7 @@ Partial Class M_Vacaciones
         'txtJefeDepto
         '
         Me.txtJefeDepto.Location = New System.Drawing.Point(502, 203)
-        Me.txtJefeDepto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtJefeDepto.Margin = New System.Windows.Forms.Padding(2)
         Me.txtJefeDepto.MaxLength = 80
         Me.txtJefeDepto.Name = "txtJefeDepto"
         Me.txtJefeDepto.ReadOnly = True
@@ -286,7 +288,7 @@ Partial Class M_Vacaciones
         'txtTalentoHumano
         '
         Me.txtTalentoHumano.Location = New System.Drawing.Point(502, 231)
-        Me.txtTalentoHumano.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtTalentoHumano.Margin = New System.Windows.Forms.Padding(2)
         Me.txtTalentoHumano.MaxLength = 80
         Me.txtTalentoHumano.Name = "txtTalentoHumano"
         Me.txtTalentoHumano.ReadOnly = True
@@ -308,7 +310,7 @@ Partial Class M_Vacaciones
         '
         Me.dtpfecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfecha.Location = New System.Drawing.Point(521, 98)
-        Me.dtpfecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpfecha.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpfecha.Name = "dtpfecha"
         Me.dtpfecha.Size = New System.Drawing.Size(133, 20)
         Me.dtpfecha.TabIndex = 167
@@ -317,7 +319,7 @@ Partial Class M_Vacaciones
         '
         Me.rbtnNo.AutoSize = True
         Me.rbtnNo.Location = New System.Drawing.Point(430, 99)
-        Me.rbtnNo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnNo.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnNo.Name = "rbtnNo"
         Me.rbtnNo.Size = New System.Drawing.Size(39, 17)
         Me.rbtnNo.TabIndex = 166
@@ -340,7 +342,7 @@ Partial Class M_Vacaciones
         '
         Me.rbtnSi.AutoSize = True
         Me.rbtnSi.Location = New System.Drawing.Point(394, 99)
-        Me.rbtnSi.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnSi.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnSi.Name = "rbtnSi"
         Me.rbtnSi.Size = New System.Drawing.Size(34, 17)
         Me.rbtnSi.TabIndex = 165
@@ -351,7 +353,7 @@ Partial Class M_Vacaciones
         'rtxtMotivoInasistencia
         '
         Me.rtxtMotivoInasistencia.Location = New System.Drawing.Point(502, 48)
-        Me.rtxtMotivoInasistencia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtMotivoInasistencia.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtMotivoInasistencia.MaxLength = 200
         Me.rtxtMotivoInasistencia.Name = "rtxtMotivoInasistencia"
         Me.rtxtMotivoInasistencia.Size = New System.Drawing.Size(151, 31)
@@ -362,7 +364,7 @@ Partial Class M_Vacaciones
         '
         Me.dtpFechaInasistencia.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaInasistencia.Location = New System.Drawing.Point(166, 60)
-        Me.dtpFechaInasistencia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpFechaInasistencia.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpFechaInasistencia.Name = "dtpFechaInasistencia"
         Me.dtpFechaInasistencia.Size = New System.Drawing.Size(151, 20)
         Me.dtpFechaInasistencia.TabIndex = 163
@@ -381,7 +383,7 @@ Partial Class M_Vacaciones
         'txtFirmaEmpleado
         '
         Me.txtFirmaEmpleado.Location = New System.Drawing.Point(502, 146)
-        Me.txtFirmaEmpleado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtFirmaEmpleado.Margin = New System.Windows.Forms.Padding(2)
         Me.txtFirmaEmpleado.MaxLength = 80
         Me.txtFirmaEmpleado.Name = "txtFirmaEmpleado"
         Me.txtFirmaEmpleado.ReadOnly = True
@@ -402,7 +404,7 @@ Partial Class M_Vacaciones
         'txtSupervisor
         '
         Me.txtSupervisor.Location = New System.Drawing.Point(502, 176)
-        Me.txtSupervisor.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtSupervisor.Margin = New System.Windows.Forms.Padding(2)
         Me.txtSupervisor.MaxLength = 80
         Me.txtSupervisor.Name = "txtSupervisor"
         Me.txtSupervisor.ReadOnly = True
@@ -454,7 +456,7 @@ Partial Class M_Vacaciones
         'txtEmpleado
         '
         Me.txtEmpleado.Location = New System.Drawing.Point(503, 20)
-        Me.txtEmpleado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtEmpleado.Margin = New System.Windows.Forms.Padding(2)
         Me.txtEmpleado.MaxLength = 80
         Me.txtEmpleado.Name = "txtEmpleado"
         Me.txtEmpleado.ReadOnly = True
@@ -465,7 +467,7 @@ Partial Class M_Vacaciones
         'txtcodigo
         '
         Me.txtcodigo.Location = New System.Drawing.Point(166, 22)
-        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.ReadOnly = True
         Me.txtcodigo.Size = New System.Drawing.Size(151, 20)
@@ -492,72 +494,15 @@ Partial Class M_Vacaciones
         Me.Label3.TabIndex = 9
         Me.Label3.Text = "Código:"
         '
-        'btnmodificar
-        '
-        Me.btnmodificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnmodificar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnmodificar.Enabled = False
-        Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnmodificar.Location = New System.Drawing.Point(577, 10)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnmodificar.Name = "btnmodificar"
-        Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
-        Me.btnmodificar.TabIndex = 143
-        Me.btnmodificar.Text = "Modificar"
-        Me.btnmodificar.UseVisualStyleBackColor = False
-        '
-        'btnnuevo
-        '
-        Me.btnnuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnnuevo.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnnuevo.Location = New System.Drawing.Point(418, 10)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
-        Me.btnnuevo.TabIndex = 142
-        Me.btnnuevo.Text = "Nuevo"
-        Me.btnnuevo.UseVisualStyleBackColor = False
-        '
-        'btnguardar
-        '
-        Me.btnguardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnguardar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnguardar.Location = New System.Drawing.Point(501, 10)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(72, 28)
-        Me.btnguardar.TabIndex = 140
-        Me.btnguardar.Text = "Guardar"
-        Me.btnguardar.UseVisualStyleBackColor = False
-        '
         'rtxtObservaciones
         '
         Me.rtxtObservaciones.Location = New System.Drawing.Point(109, 203)
-        Me.rtxtObservaciones.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtObservaciones.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtObservaciones.MaxLength = 200
         Me.rtxtObservaciones.Name = "rtxtObservaciones"
         Me.rtxtObservaciones.Size = New System.Drawing.Size(208, 48)
         Me.rtxtObservaciones.TabIndex = 144
         Me.rtxtObservaciones.Text = ""
-        '
-        'btncancelar
-        '
-        Me.btncancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btncancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(654, 10)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btncancelar.Name = "btncancelar"
-        Me.btncancelar.Size = New System.Drawing.Size(68, 28)
-        Me.btncancelar.TabIndex = 141
-        Me.btncancelar.Text = "Cancelar"
-        Me.btncancelar.UseVisualStyleBackColor = False
         '
         'Label6
         '
@@ -588,6 +533,63 @@ Partial Class M_Vacaciones
         Me.Label2.Size = New System.Drawing.Size(116, 13)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Motivo de Inasistencia:"
+        '
+        'btnmodificar
+        '
+        Me.btnmodificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnmodificar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnmodificar.Enabled = False
+        Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnmodificar.Location = New System.Drawing.Point(577, 10)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnmodificar.Name = "btnmodificar"
+        Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
+        Me.btnmodificar.TabIndex = 143
+        Me.btnmodificar.Text = "Modificar"
+        Me.btnmodificar.UseVisualStyleBackColor = False
+        '
+        'btnnuevo
+        '
+        Me.btnnuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnnuevo.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnnuevo.Location = New System.Drawing.Point(418, 10)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
+        Me.btnnuevo.TabIndex = 142
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.UseVisualStyleBackColor = False
+        '
+        'btnguardar
+        '
+        Me.btnguardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnguardar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnguardar.Location = New System.Drawing.Point(501, 10)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnguardar.Name = "btnguardar"
+        Me.btnguardar.Size = New System.Drawing.Size(72, 28)
+        Me.btnguardar.TabIndex = 140
+        Me.btnguardar.Text = "Guardar"
+        Me.btnguardar.UseVisualStyleBackColor = False
+        '
+        'btncancelar
+        '
+        Me.btncancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btncancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncancelar.Location = New System.Drawing.Point(654, 10)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btncancelar.Name = "btncancelar"
+        Me.btncancelar.Size = New System.Drawing.Size(68, 28)
+        Me.btncancelar.TabIndex = 141
+        Me.btncancelar.Text = "Cancelar"
+        Me.btncancelar.UseVisualStyleBackColor = False
         '
         'StatusStrip1
         '
@@ -624,6 +626,19 @@ Partial Class M_Vacaciones
         Me.Label11.TabIndex = 9
         Me.Label11.Text = "Vacaciones"
         '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.Color.Green
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button4.Location = New System.Drawing.Point(629, 15)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 120
+        Me.Button4.Text = "Excel"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
         'M_Vacaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -636,7 +651,7 @@ Partial Class M_Vacaciones
         Me.Controls.Add(Me.gbxRegistrar)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_Vacaciones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SLM -"
@@ -698,4 +713,5 @@ Partial Class M_Vacaciones
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label11 As Label
+    Friend WithEvents Button4 As Button
 End Class

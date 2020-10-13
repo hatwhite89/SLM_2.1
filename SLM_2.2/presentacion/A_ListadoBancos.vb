@@ -12,6 +12,9 @@
         If lblFormBanco.Text = "1" Then 'Campo Banco en Mantenimiento de Forma Pago
 
             frmFormaPago.txtBanco.Text = dtBancos.Rows(e.RowIndex).Cells(1).Value
+        ElseIf lblFormBanco.Text = "2" Then
+
+            A_ListadoCheques.txtBanco.Text = dtBancos.Rows(e.RowIndex).Cells(0).Value
 
         Else
 
