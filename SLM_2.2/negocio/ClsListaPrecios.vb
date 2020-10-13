@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class ClsListaPrecios
-    Dim descripcion, codigoBreve As String
+    Dim descripcion, codigoBreve, rtn As String
     Dim codigo, codigoTerminoPago As Integer
     Dim tipoConvenio As Boolean
     Dim porcentaje As System.Nullable(Of Integer)
@@ -23,6 +23,14 @@ Public Class ClsListaPrecios
         End Get
         Set(value As String)
             codigoBreve = value
+        End Set
+    End Property
+    Public Property rtn_ As String
+        Get
+            Return rtn
+        End Get
+        Set(value As String)
+            rtn = value
         End Set
     End Property
     Public Property descripcion_ As String
@@ -110,6 +118,12 @@ Public Class ClsListaPrecios
                 sqlpar.Value = porcentaje_
                 sqlcom.Parameters.Add(sqlpar)
             End If
+
+            sqlpar = New SqlParameter
+            sqlpar.ParameterName = "rtn" 'nombre campo en el procedimiento almacenado @
+            sqlpar.Value = rtn_
+            sqlcom.Parameters.Add(sqlpar)
+
         End If
 
         sqlpar = New SqlParameter
@@ -181,6 +195,12 @@ Public Class ClsListaPrecios
                 sqlpar.Value = porcentaje_
                 sqlcom.Parameters.Add(sqlpar)
             End If
+
+            sqlpar = New SqlParameter
+            sqlpar.ParameterName = "rtn" 'nombre campo en el procedimiento almacenado @
+            sqlpar.Value = rtn_
+            sqlcom.Parameters.Add(sqlpar)
+
         End If
 
         sqlpar = New SqlParameter

@@ -54,6 +54,8 @@ Partial Class M_ListaPrecios
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.btncancelar = New System.Windows.Forms.Button()
+        Me.txtrtn = New System.Windows.Forms.TextBox()
+        Me.lblrtn = New System.Windows.Forms.Label()
         Me.gbxclasificacion.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,6 +63,8 @@ Partial Class M_ListaPrecios
         '
         'gbxclasificacion
         '
+        Me.gbxclasificacion.Controls.Add(Me.txtrtn)
+        Me.gbxclasificacion.Controls.Add(Me.lblrtn)
         Me.gbxclasificacion.Controls.Add(Me.Panel1)
         Me.gbxclasificacion.Controls.Add(Me.txtPorcentaje)
         Me.gbxclasificacion.Controls.Add(Me.lblPorcentaje)
@@ -130,7 +134,7 @@ Partial Class M_ListaPrecios
         'txtPorcentaje
         '
         Me.txtPorcentaje.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtPorcentaje.Location = New System.Drawing.Point(524, 164)
+        Me.txtPorcentaje.Location = New System.Drawing.Point(156, 216)
         Me.txtPorcentaje.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtPorcentaje.MaxLength = 20
         Me.txtPorcentaje.Name = "txtPorcentaje"
@@ -141,7 +145,7 @@ Partial Class M_ListaPrecios
         'lblPorcentaje
         '
         Me.lblPorcentaje.AutoSize = True
-        Me.lblPorcentaje.Location = New System.Drawing.Point(429, 164)
+        Me.lblPorcentaje.Location = New System.Drawing.Point(61, 216)
         Me.lblPorcentaje.Name = "lblPorcentaje"
         Me.lblPorcentaje.Size = New System.Drawing.Size(76, 17)
         Me.lblPorcentaje.TabIndex = 159
@@ -151,7 +155,7 @@ Partial Class M_ListaPrecios
         '
         Me.rbtnPagoNo.AutoSize = True
         Me.rbtnPagoNo.Checked = True
-        Me.rbtnPagoNo.Location = New System.Drawing.Point(292, 162)
+        Me.rbtnPagoNo.Location = New System.Drawing.Point(669, 173)
         Me.rbtnPagoNo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rbtnPagoNo.Name = "rbtnPagoNo"
         Me.rbtnPagoNo.Size = New System.Drawing.Size(47, 21)
@@ -163,7 +167,7 @@ Partial Class M_ListaPrecios
         'rbtnPagoSi
         '
         Me.rbtnPagoSi.AutoSize = True
-        Me.rbtnPagoSi.Location = New System.Drawing.Point(156, 164)
+        Me.rbtnPagoSi.Location = New System.Drawing.Point(533, 175)
         Me.rbtnPagoSi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rbtnPagoSi.Name = "rbtnPagoSi"
         Me.rbtnPagoSi.Size = New System.Drawing.Size(41, 21)
@@ -175,7 +179,7 @@ Partial Class M_ListaPrecios
         'lblSolicitaEfectivo
         '
         Me.lblSolicitaEfectivo.AutoSize = True
-        Me.lblSolicitaEfectivo.Location = New System.Drawing.Point(46, 164)
+        Me.lblSolicitaEfectivo.Location = New System.Drawing.Point(423, 175)
         Me.lblSolicitaEfectivo.Name = "lblSolicitaEfectivo"
         Me.lblSolicitaEfectivo.Size = New System.Drawing.Size(90, 17)
         Me.lblSolicitaEfectivo.TabIndex = 156
@@ -249,13 +253,13 @@ Partial Class M_ListaPrecios
         '
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.codigoListaPrecios, Me.codigoGrupoItem, Me.codigoDescuento, Me.CodigoBreveDescuento})
-        Me.dgbtabla.Location = New System.Drawing.Point(5, 204)
+        Me.dgbtabla.Location = New System.Drawing.Point(5, 252)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
-        Me.dgbtabla.Size = New System.Drawing.Size(917, 311)
+        Me.dgbtabla.Size = New System.Drawing.Size(917, 263)
         Me.dgbtabla.TabIndex = 147
         '
         'codigo
@@ -416,6 +420,25 @@ Partial Class M_ListaPrecios
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
         '
+        'txtrtn
+        '
+        Me.txtrtn.Location = New System.Drawing.Point(156, 175)
+        Me.txtrtn.MaxLength = 20
+        Me.txtrtn.Name = "txtrtn"
+        Me.txtrtn.Size = New System.Drawing.Size(183, 22)
+        Me.txtrtn.TabIndex = 163
+        Me.txtrtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblrtn
+        '
+        Me.lblrtn.AutoSize = True
+        Me.lblrtn.Location = New System.Drawing.Point(99, 175)
+        Me.lblrtn.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblrtn.Name = "lblrtn"
+        Me.lblrtn.Size = New System.Drawing.Size(37, 17)
+        Me.lblrtn.TabIndex = 162
+        Me.lblrtn.Text = "RTN"
+        '
         'M_ListaPrecios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -468,4 +491,6 @@ Partial Class M_ListaPrecios
     Friend WithEvents rbtnPagoSi As RadioButton
     Friend WithEvents lblSolicitaEfectivo As Label
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents txtrtn As TextBox
+    Friend WithEvents lblrtn As Label
 End Class
