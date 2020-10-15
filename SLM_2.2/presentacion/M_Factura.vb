@@ -43,6 +43,7 @@ Public Class M_Factura
                 If (row("tipoConvenio")) Then
                     txtcodigoConvenio.Text = CStr(row("descripcionLp"))
                     lblcodeTerminoPago.Text = CStr(row("terminoListaPrecio"))
+                    lblRTN.Text = CStr(row("rtnConvenio"))
 
                     'convenio con pago
                     If (row("solicitaPago")) Then
@@ -82,6 +83,7 @@ Public Class M_Factura
 
                 Else
                     'NO ES DE TIPO CONVENIO
+                    lblRTN.Text = CStr(row("rtn"))
                     txtvuelto.Visible = True
                     lblvuelto.Visible = True
                     lblVuelto2.Visible = False
@@ -146,7 +148,9 @@ Public Class M_Factura
                 If (row("tipoConvenio")) Then
                     txtcodigoConvenio.Text = CStr(row("descripcionLp"))
                     lblcodeTerminoPago.Text = CStr(row("terminoListaPrecio"))
+                    lblRTN.Text = CStr(row("rtnConvenio"))
                 Else
+                    lblRTN.Text = CStr(row("rtn"))
                     'lblcodePriceList.Text = "0"
                     txtcodigoConvenio.Text = ""
                 End If
@@ -968,10 +972,10 @@ Public Class M_Factura
 
                     If (cbxok.Checked) Then
                         'Si el vuelto es menor a 0 y el cliente no pertenese a un convenio
-                        If (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "0" And txtvuelto.Visible) Then
+                        If (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "0" And txtvuelto.Visible And Trim(txtcodigoTerminosPago.Text) = "CO") Then
                             MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
                             Exit Sub
-                        ElseIf (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "" And txtvuelto.Visible) Then
+                        ElseIf (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "" And txtvuelto.Visible And Trim(txtcodigoTerminosPago.Text) = "CO") Then
                             MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
                             Exit Sub
                         ElseIf (Convert.ToDouble(txtvuelto2.Text) < 0 And Trim(txtcodigoConvenio.Text) <> "" And txtvuelto2.Visible) Then
@@ -1316,10 +1320,10 @@ Public Class M_Factura
                     If (cbxok.Checked And Trim(txtnumeroOficial.Text) = "" And cbxAnular.Checked = False) Then
                         'VALIDACION DE DINERO
                         'Si el vuelto es menor a 0 y el cliente no pertenese a un convenio
-                        If (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "0" And txtvuelto.Visible) Then
+                        If (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "0" And txtvuelto.Visible And Trim(txtcodigoTerminosPago.Text) = "CO") Then
                             MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
                             Exit Sub
-                        ElseIf (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "" And txtvuelto.Visible) Then
+                        ElseIf (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "" And txtvuelto.Visible And trim(txtcodigoTerminosPago.Text) = "CO") Then
                             MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
                             Exit Sub
                         ElseIf (Convert.ToDouble(txtvuelto2.Text) < 0 And Trim(txtcodigoConvenio.Text) <> "" And txtvuelto2.Visible) Then
@@ -1585,6 +1589,15 @@ Public Class M_Factura
             objReporte.SetParameterValue("abono", abonoF)
             objReporte.SetParameterValue("Cajero", txtNombreCajero.Text)
             objReporte.SetParameterValue("Recepcionista", txtNombreRecepcionista.Text)
+            If Trim(txtcodigoConvenio.Text) = "" Or Trim(txtcodigoConvenio.Text) = "0" Then
+                'No es convenio
+                objReporte.SetParameterValue("Cliente", txtnombreCliente.Text)
+                objReporte.SetParameterValue("RTN", lblRTN.Text)
+            Else
+                'Es convenio
+                objReporte.SetParameterValue("Cliente", txtcodigoConvenio.Text)
+                objReporte.SetParameterValue("RTN", lblRTN.Text)
+            End If
             objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
             M_ImprimirFacturaReport.CrystalReportViewer1.ReportSource = objReporte
             'M_ImprimirFacturaReport.CrystalReportViewer1.Refresh()

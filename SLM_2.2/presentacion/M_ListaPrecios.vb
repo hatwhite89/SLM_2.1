@@ -7,6 +7,7 @@
             txtcodigoBreve.Text = ""
             txtDescripcion.Text = ""
             txtcodigoTermino.Clear()
+            txtrtn.Clear()
             txtPorcentaje.Clear()
             rbtnConvenioNo.Checked = True
             rbtnPagoNo.Checked = True
@@ -58,16 +59,22 @@
                     .tipoConvenio_ = rbtnConvenioSi.Checked
                     If rbtnConvenioSi.Checked Then
                         .codigoTerminoPago_ = lblcodeT.Text
+                        If Trim(txtrtn.Text) <> "" Then
+                            .rtn_ = txtrtn.Text
+                        Else
+                            MsgBox("Debe ingresar el rtn.", MsgBoxStyle.Information, "Validación.")
+                            Exit Sub
+                        End If
                         If rbtnPagoSi.Checked Then
-                            .solicitaPago_ = rbtnPagoSi.Checked
-                            If Trim(txtPorcentaje.Text) <> "" Then
-                                .porcentaje_ = Integer.Parse(txtPorcentaje.Text)
-                            Else
-                                MsgBox("Debe ingresar el porcentaje a pagar de la factura.", MsgBoxStyle.Information, "Validación.")
-                                Exit Sub
+                                .solicitaPago_ = rbtnPagoSi.Checked
+                                If Trim(txtPorcentaje.Text) <> "" Then
+                                    .porcentaje_ = Integer.Parse(txtPorcentaje.Text)
+                                Else
+                                    MsgBox("Debe ingresar el porcentaje a pagar de la factura.", MsgBoxStyle.Information, "Validación.")
+                                    Exit Sub
+                                End If
                             End If
                         End If
-                    End If
                 End With
 
                 If objPriceList.RegistrarNuevaListaPrecios() = 1 Then
@@ -142,6 +149,12 @@
                     .tipoConvenio_ = rbtnConvenioSi.Checked
                     If rbtnConvenioSi.Checked Then
                         .codigoTerminoPago_ = lblcodeT.Text
+                        If Trim(txtrtn.Text) <> "" Then
+                            .rtn_ = txtrtn.Text
+                        Else
+                            MsgBox("Debe ingresar el rtn.", MsgBoxStyle.Information, "Validación.")
+                            Exit Sub
+                        End If
                         If rbtnPagoSi.Checked Then
                             .solicitaPago_ = rbtnPagoSi.Checked
                             If Trim(txtPorcentaje.Text) <> "" Then
@@ -250,6 +263,8 @@
         'habilito el termino de pago a ingresar
         Try
             If rbtnConvenioSi.Checked Then
+                lblrtn.Visible = True
+                txtrtn.Visible = True
                 rbtnConvenioSi.Checked = True
                 lblTerminoPago.Visible = True
                 btnbuscarTermino.Visible = True
@@ -262,6 +277,8 @@
                 rbtnPagoNo.Visible = True
                 rbtnPagoSi.Checked = True
             ElseIf rbtnConvenioNo.Checked Then
+                lblrtn.Visible = False
+                txtrtn.Visible = False
                 rbtnConvenioNo.Checked = True
                 lblTerminoPago.Visible = False
                 btnbuscarTermino.Visible = False
@@ -282,6 +299,8 @@
         'habilito el termino de pago a ingresar
         Try
             If rbtnConvenioSi.Checked Then
+                lblrtn.Visible = True
+                txtrtn.Visible = True
                 lblTerminoPago.Visible = True
                 btnbuscarTermino.Visible = True
                 txtcodigoTermino.Visible = True
@@ -293,6 +312,8 @@
                 rbtnPagoNo.Visible = True
                 rbtnPagoSi.Checked = True
             ElseIf rbtnConvenioNo.Checked Then
+                lblrtn.Visible = False
+                txtrtn.Visible = False
                 lblTerminoPago.Visible = False
                 btnbuscarTermino.Visible = False
                 txtcodigoTermino.Visible = False
