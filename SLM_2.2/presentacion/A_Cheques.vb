@@ -32,8 +32,7 @@ Public Class A_Cheques
                         .Mont_o = Convert.ToDouble(txtMonto.Text)
                         .Fecha_reg = dtpFechaReg.Value
                         .Fecha_Vto = dtpFechaVto.Value
-                        .Cod_BreveProvee = txtcodProvee.Text
-                        .Nombre_Proveedor = txtNombreProvee.Text
+                        .Cod_Proveedor = Convert.ToInt32(lblCodProveedor.Text)
                         .Estad_o = "Acreditado"
                         .Descripcio_n = txtVoucher.Text
                         .Comentari_o = txtComentario.Text
@@ -66,7 +65,7 @@ Public Class A_Cheques
 
                         Dim fila As String = frmPagos.lblFila.Text
 
-                        frmPagos.dtDetallePagos.Rows(fila).Cells(5).Value = txtNroCheq.Text
+                        frmPagos.dtDetallePagos.Rows(fila).Cells(5).Value = txtNro.Text
                         frmPagos.chkPagado.Checked = True
 
                     End With
@@ -144,6 +143,15 @@ Public Class A_Cheques
         If lblForm.Text = "ChequeSeleccionado" Then
 
             btnGuardar.Enabled = False
+
+            Dim prov As New ClsProveedor
+            Dim dtpro As New DataTable
+            Dim rowpro As DataRow
+            dtpro = prov.listarProveedoresOC2(lblCodProveedor.Text)
+            rowpro = dtpro.Rows(0)
+            txtcodProvee.Text = rowpro("codBreve")
+            txtNombreProvee.Text = rowpro("nombreProveedor")
+
 
         Else
 
@@ -656,17 +664,17 @@ Public Class A_Cheques
         txtMonto.BackColor = Color.White
 
         Try
-            Dim monto, montocheque As Double
+            'Dim monto, montocheque As Double
 
-            monto = Convert.ToDouble(frmPagos.lblTotalSuma.Text)
-            montocheque = Convert.ToDouble(txtMonto.Text)
+            'monto = Convert.ToDouble(frmPagos.lblTotalSuma.Text)
+            'montocheque = Convert.ToDouble(txtMonto.Text)
 
-            If montocheque > monto Then
+            'If montocheque > monto Then
 
-                MsgBox("El monto del cheque sobrepasa el pago.")
-                txtMonto.Text = ""
+            '    MsgBox("El monto del cheque sobrepasa el pago.")
+            '    txtMonto.Text = ""
 
-            End If
+            'End If
 
         Catch ex As Exception
 
@@ -676,31 +684,31 @@ Public Class A_Cheques
 
     Private Sub txtcodProvee_TextChanged(sender As Object, e As EventArgs) Handles txtcodProvee.TextChanged
 
-        'Cambio de color
-        txtcodProvee.BackColor = Color.White
-        If txtcodProvee.Text = "" Then
+        ''Cambio de color
+        'txtcodProvee.BackColor = Color.White
+        'If txtcodProvee.Text = "" Then
 
-            txtNombreProvee.Text = ""
+        '    txtNombreProvee.Text = ""
 
-        Else
-            Try
-                'Busqueda de proveedor
-                Dim proveedor As New ClsProveedor
-                Dim dt As DataTable
-                Dim row As DataRow
+        'Else
+        '    Try
+        '        'Busqueda de proveedor
+        '        Dim proveedor As New ClsProveedor
+        '        Dim dt As DataTable
+        '        Dim row As DataRow
 
-                proveedor.Cod_Proveedor = Convert.ToInt32(txtcodProvee.Text)
+        '        proveedor.Cod_Proveedor = Convert.ToInt32(txtcodProvee.Text)
 
-                dt = proveedor.capturarNombreProveedor()
-                row = dt.Rows(0)
+        '        dt = proveedor.capturarNombreProveedor()
+        '        row = dt.Rows(0)
 
-                txtNombreProvee.Text = row("nombreProveedor")
+        '        txtNombreProvee.Text = row("nombreProveedor")
 
-            Catch ex As Exception
+        '    Catch ex As Exception
 
-            End Try
+        '    End Try
 
-        End If
+        'End If
 
     End Sub
 

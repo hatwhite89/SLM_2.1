@@ -24,7 +24,6 @@
             moneda = dtFacturasCompra.Rows(e.RowIndex).Cells(4).Value
             monto = dtFacturasCompra.Rows(e.RowIndex).Cells(3).Value
 
-
             Dim i, rows As Integer
             rows = dtFacturasCompra.Rows.Count - 2
 

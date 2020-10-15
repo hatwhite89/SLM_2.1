@@ -31,6 +31,7 @@
                     .Descripcion_ = txtDescripcion.Text
                     .Estado_ = "Ingresada"
                     .Nro_Factura = txtNroFactura.Text
+                    .Pendiente_ = txtTotal.Text
 
                 End With
 
@@ -205,6 +206,7 @@
                 .Tota_l = txtTotal.Text
                 .Descripcion_ = txtDescripcion.Text
                 .Estado_ = lblEstado.Text
+                .Pendiente_ = lblSaldoPend.Text
                 'registro de  factura compra
                 .modificarFacturaCompra()
 

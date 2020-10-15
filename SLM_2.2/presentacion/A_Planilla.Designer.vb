@@ -37,14 +37,16 @@ Partial Class A_Planilla
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dgvEmpleados = New System.Windows.Forms.DataGridView()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codeEmployee = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Empleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Departamento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codeEmployee = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Identidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NoCuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Empleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Salario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -56,6 +58,7 @@ Partial Class A_Planilla
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Controls.Add(Me.btnModificar)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -215,48 +218,17 @@ Partial Class A_Planilla
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvEmpleados.BackgroundColor = System.Drawing.Color.White
         Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEmpleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.codeEmployee, Me.Empleado, Me.Cargo, Me.Departamento})
+        Me.dgvEmpleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.codeEmployee, Me.Identidad, Me.NoCuenta, Me.Empleado, Me.Salario})
         Me.dgvEmpleados.Location = New System.Drawing.Point(12, 18)
-        Me.dgvEmpleados.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgvEmpleados.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvEmpleados.Name = "dgvEmpleados"
         Me.dgvEmpleados.RowHeadersVisible = False
         Me.dgvEmpleados.RowHeadersWidth = 51
         Me.dgvEmpleados.RowTemplate.Height = 24
         Me.dgvEmpleados.Size = New System.Drawing.Size(720, 301)
         Me.dgvEmpleados.TabIndex = 120
-        '
-        'codigo
-        '
-        Me.codigo.HeaderText = "codigo"
-        Me.codigo.MinimumWidth = 6
-        Me.codigo.Name = "codigo"
-        Me.codigo.Visible = False
-        '
-        'codeEmployee
-        '
-        Me.codeEmployee.HeaderText = "codeEmployee"
-        Me.codeEmployee.MinimumWidth = 6
-        Me.codeEmployee.Name = "codeEmployee"
-        Me.codeEmployee.Visible = False
-        '
-        'Empleado
-        '
-        Me.Empleado.HeaderText = "Empleado"
-        Me.Empleado.MinimumWidth = 6
-        Me.Empleado.Name = "Empleado"
-        '
-        'Cargo
-        '
-        Me.Cargo.HeaderText = "Cargo"
-        Me.Cargo.MinimumWidth = 6
-        Me.Cargo.Name = "Cargo"
-        '
-        'Departamento
-        '
-        Me.Departamento.HeaderText = "Departamento"
-        Me.Departamento.MinimumWidth = 6
-        Me.Departamento.Name = "Departamento"
         '
         'lblcantidad
         '
@@ -290,6 +262,53 @@ Partial Class A_Planilla
         Me.Panel2.Size = New System.Drawing.Size(769, 35)
         Me.Panel2.TabIndex = 3
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.LimeGreen
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(352, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Exp. Excel"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'codigo
+        '
+        Me.codigo.HeaderText = "codigo"
+        Me.codigo.MinimumWidth = 6
+        Me.codigo.Name = "codigo"
+        Me.codigo.Visible = False
+        '
+        'codeEmployee
+        '
+        Me.codeEmployee.HeaderText = "codeEmployee"
+        Me.codeEmployee.MinimumWidth = 6
+        Me.codeEmployee.Name = "codeEmployee"
+        Me.codeEmployee.Visible = False
+        '
+        'Identidad
+        '
+        Me.Identidad.HeaderText = "ID"
+        Me.Identidad.Name = "Identidad"
+        '
+        'NoCuenta
+        '
+        Me.NoCuenta.HeaderText = "No. Cuenta"
+        Me.NoCuenta.Name = "NoCuenta"
+        '
+        'Empleado
+        '
+        Me.Empleado.HeaderText = "Empleado"
+        Me.Empleado.MinimumWidth = 6
+        Me.Empleado.Name = "Empleado"
+        '
+        'Salario
+        '
+        Me.Salario.HeaderText = "Salario"
+        Me.Salario.Name = "Salario"
+        '
         'A_Planilla
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -302,7 +321,7 @@ Partial Class A_Planilla
         Me.Controls.Add(Me.Panel1)
         Me.KeyPreview = True
         Me.Name = "A_Planilla"
-        Me.Text = "Planilla"
+        Me.Text = "SLM - Planilla"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -332,9 +351,11 @@ Partial Class A_Planilla
     Friend WithEvents lblcantidad As Label
     Friend WithEvents lbltotal As Label
     Friend WithEvents dgvEmpleados As DataGridView
+    Friend WithEvents Button1 As Button
     Friend WithEvents codigo As DataGridViewTextBoxColumn
     Friend WithEvents codeEmployee As DataGridViewTextBoxColumn
+    Friend WithEvents Identidad As DataGridViewTextBoxColumn
+    Friend WithEvents NoCuenta As DataGridViewTextBoxColumn
     Friend WithEvents Empleado As DataGridViewTextBoxColumn
-    Friend WithEvents Cargo As DataGridViewTextBoxColumn
-    Friend WithEvents Departamento As DataGridViewTextBoxColumn
+    Friend WithEvents Salario As DataGridViewTextBoxColumn
 End Class

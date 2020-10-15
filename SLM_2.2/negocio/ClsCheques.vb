@@ -3,8 +3,8 @@ Imports System.Data.SqlClient
 Public Class ClsCheques
 
     'Variables de Cheque
-    Dim codCheque, codChequera, cantidad, ctaOrigen, ctaTemporal, ctaDestino As Integer
-    Dim nroCheque, moneda, codBreveProve, nombreProveedor, codBreveBanco, nombreBanco, descripcion, estado, comentario, tipo As String
+    Dim codCheque, codChequera, codProveedor, cantidad, ctaOrigen, ctaTemporal, ctaDestino As Integer
+    Dim nroCheque, moneda, codBreveBanco, nombreBanco, descripcion, estado, comentario, tipo As String
     Dim monto As Double
     Dim fechaReg, fechaVto, fechaAcreditacion, fechaRechazo, fechaEmision, fechaCancelado, fechaI, fechaF As Date
 
@@ -54,6 +54,16 @@ Public Class ClsCheques
         End Get
         Set(value As Integer)
             codCheque = value
+        End Set
+    End Property
+
+    'Codigo de proveedor
+    Public Property Cod_Proveedor As Integer
+        Get
+            Return codProveedor
+        End Get
+        Set(value As Integer)
+            codProveedor = value
         End Set
     End Property
 
@@ -127,26 +137,6 @@ Public Class ClsCheques
         End Set
     End Property
 
-
-    'Nombre de Proveedor
-    Public Property Nombre_Proveedor As String
-        Get
-            Return nombreProveedor
-        End Get
-        Set(value As String)
-            nombreProveedor = value
-        End Set
-    End Property
-
-    'Codigo breve de Proveedor
-    Public Property Cod_BreveProvee As String
-        Get
-            Return codBreveProve
-        End Get
-        Set(value As String)
-            codBreveProve = value
-        End Set
-    End Property
 
     'Moneda
     Public Property Moned_a As String
@@ -345,7 +335,6 @@ Public Class ClsCheques
     'Modificar Cheque para pago
     Public Function modificarCheque() As String
 
-
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
         Dim par_sal As Integer
@@ -362,6 +351,11 @@ Public Class ClsCheques
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codProveedor"
+        sqlpar.Value = Cod_Proveedor
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "monto"
         sqlpar.Value = Mont_o
         sqlcom.Parameters.Add(sqlpar)
@@ -374,16 +368,6 @@ Public Class ClsCheques
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "fechaVto"
         sqlpar.Value = Fecha_Vto
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codBreveProveedor"
-        sqlpar.Value = Cod_BreveProvee
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "nombreProveedor"
-        sqlpar.Value = Nombre_Proveedor
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -496,7 +480,7 @@ Public Class ClsCheques
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "A_slmBuscarCheques"
             cmd.Parameters.Add("@nroCheque", SqlDbType.VarChar).Value = Numero_Cheque
-            cmd.Parameters.Add("@nombreProveedor", SqlDbType.VarChar).Value = Nombre_Proveedor
+            cmd.Parameters.Add("@codProveedor", SqlDbType.Int).Value = Cod_Proveedor
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -617,4 +601,26 @@ Public Class ClsCheques
         End Using
     End Function
 
+    'BuscarChequeXCodigo
+    Public Function BuscarChequeXCodigo() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarChequeXCodigo"
+            cmd.Parameters.Add("@codCheque", SqlDbType.Int).Value = Cod_Cheque
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
 End Class

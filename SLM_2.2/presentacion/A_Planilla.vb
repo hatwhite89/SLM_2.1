@@ -35,16 +35,17 @@
         Try
             Dim n As String
             If e.RowIndex >= 0 Then
+
                 If e.ColumnIndex = 2 Then
                     M_ListadoEmpleados.lblform.Text = "A_Planilla"
                     M_ListadoEmpleados.lblfila.Text = e.RowIndex
                     M_ListadoEmpleados.Show()
-                ElseIf e.ColumnIndex = 5 And Me.dgvEmpleados.Rows(e.RowIndex).Cells(0).Value() = "" Then
+                ElseIf e.ColumnIndex = 6 And Me.dgvEmpleados.Rows(e.RowIndex).Cells(0).Value() = "" Then
                     n = MsgBox("¿Desea eliminar el empleado de la planilla?", MsgBoxStyle.YesNo, "Validación")
                     If n = vbYes Then
                         dgvEmpleados.Rows.Remove(dgvEmpleados.Rows(e.RowIndex.ToString))
                     End If
-                ElseIf e.ColumnIndex = 5 And Me.dgvEmpleados.Rows(e.RowIndex).Cells(0).Value() <> "" Then
+                ElseIf e.ColumnIndex = 6 And Me.dgvEmpleados.Rows(e.RowIndex).Cells(0).Value() <> "" Then
                     n = MsgBox("¿Desea eliminar el empleado de la planilla?", MsgBoxStyle.YesNo, "Validación")
                     If n = vbYes Then
                         codigoDetallePlanilla.Add(Me.dgvEmpleados.Rows(e.RowIndex).Cells(0).Value())
@@ -80,6 +81,7 @@
         Try
             sinDobleEspacio(txtDescripcion.Text)
             sinDobleEspacio(txtCodigoBreve.Text)
+
             If (Trim(txtDescripcion.Text) <> "" And Trim(txtCodigoBreve.Text) <> "" And dgvEmpleados.Rows.Count > 1) Then
 
                 With objPlan
@@ -186,5 +188,13 @@
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         limpiar()
         Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+            E_frmInventario.GridAExcel(dgvEmpleados)
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

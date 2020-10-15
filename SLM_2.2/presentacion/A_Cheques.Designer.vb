@@ -83,6 +83,7 @@ Partial Class A_Cheques
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblCodProveedor = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -300,6 +301,7 @@ Partial Class A_Cheques
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.lblCodProveedor)
         Me.TabPage1.Controls.Add(Me.gbxTipo)
         Me.TabPage1.Controls.Add(Me.txtCtaDestino)
         Me.TabPage1.Controls.Add(Me.Label19)
@@ -730,6 +732,15 @@ Partial Class A_Cheques
         Me.Panel1.Size = New System.Drawing.Size(811, 50)
         Me.Panel1.TabIndex = 7
         '
+        'lblCodProveedor
+        '
+        Me.lblCodProveedor.AutoSize = True
+        Me.lblCodProveedor.Location = New System.Drawing.Point(290, 136)
+        Me.lblCodProveedor.Name = "lblCodProveedor"
+        Me.lblCodProveedor.Size = New System.Drawing.Size(84, 13)
+        Me.lblCodProveedor.TabIndex = 29
+        Me.lblCodProveedor.Text = "lblcodProveedor"
+        '
         'A_Cheques
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -821,4 +832,5 @@ Partial Class A_Cheques
     Friend WithEvents btnModificar As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents lblCodProveedor As Label
 End Class

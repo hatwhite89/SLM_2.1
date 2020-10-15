@@ -35,6 +35,7 @@
             A_FacturaCompras.txtNroFactura.Text = row("nroFactura")
             A_FacturaCompras.lblTotal.Text = row("total")
             A_FacturaCompras.lblEstado.Text = row("estado")
+            A_FacturaCompras.lblSaldoPend.Text = row("pendiente")
 
 
             'Mostrar detalle de factura

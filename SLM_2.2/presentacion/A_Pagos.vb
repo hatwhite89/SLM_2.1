@@ -34,28 +34,41 @@
         'Bloqueo de Celdas 
         dtDetallePagos.Columns(1).ReadOnly = True
         dtDetallePagos.Columns(2).ReadOnly = True
-        dtDetallePagos.Columns(3).ReadOnly = True
+        'dtDetallePagos.Columns(3).ReadOnly = False
 
         Try
-            Dim dt As New DataTable
-            With factuCompra
-                .Cod_Factura = dtDetallePagos.Rows(e.RowIndex).Cells(0).Value
-                dt = .comprobarFactura() 'Comprobar existencia de factura compra
 
-                If dt.Rows.Count < 0 Then 'Si la factura existe, llenar campos
+            If e.ColumnIndex = 3 Then
+                lblTotalSuma.Text = 0.0
+                For a = 0 To dtDetallePagos.Rows.Count - 1
 
-                    Dim row As DataRow = dt.Rows(0)
-                    dtDetallePagos.Rows(e.RowIndex).Cells(1).Value = row("nombreProveedor")
-                    dtDetallePagos.Rows(e.RowIndex).Cells(2).Value = row("moneda")
-                    dtDetallePagos.Rows(e.RowIndex).Cells(3).Value = row("total")
+                    lblTotalSuma.Text = Convert.ToDouble(dtDetallePagos.Rows(a).Cells(3).Value) + Convert.ToDouble(lblTotalSuma.Text)
+                Next
 
-                    'Sumar totales de factura
 
-                    lblTotalSuma.Text = dtDetallePagos.Rows(e.RowIndex).Cells(3).Value
+            Else
+                Dim dt As New DataTable
+                With factuCompra
+                    .Cod_Factura = dtDetallePagos.Rows(e.RowIndex).Cells(0).Value
+                    dt = .comprobarFactura() 'Comprobar existencia de factura compra
 
-                End If
+                    If dt.Rows.Count < 0 Then 'Si la factura existe, llenar campos
 
-            End With
+                        Dim row As DataRow = dt.Rows(0)
+                        dtDetallePagos.Rows(e.RowIndex).Cells(1).Value = row("nombreProveedor")
+                        dtDetallePagos.Rows(e.RowIndex).Cells(2).Value = row("moneda")
+                        dtDetallePagos.Rows(e.RowIndex).Cells(3).Value = row("total")
+
+                        'Sumar totales de factura
+
+                        lblTotalSuma.Text = dtDetallePagos.Rows(e.RowIndex).Cells(3).Value
+
+                    End If
+
+                End With
+
+            End If
+
         Catch ex As Exception
             MsgBox("La factura de compra no existe o hubo un error. Verifique el código.")
         End Try
@@ -66,7 +79,7 @@
         'Bloqueo de edicion de celdas
         dtDetallePagos.Columns(1).ReadOnly = True
         dtDetallePagos.Columns(2).ReadOnly = True
-        dtDetallePagos.Columns(3).ReadOnly = True
+        'dtDetallePagos.Columns(3).ReadOnly = True
 
         If e.ColumnIndex = 6 Then
             Try
@@ -143,11 +156,40 @@
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-
+        If dtDetallePagos.Rows(0).Cells(5).Value <> "" Then
+            chkPagado.Checked = True
+        End If
         Try
             Dim n As String = MsgBox("¿Desea guardar el pago?", MsgBoxStyle.YesNo, "Validación")
             If n = vbYes Then
 
+                'Actualizar pendiente de Factura de Compra..............
+                Dim codfactura As Integer
+                Dim resultadof, pendiente, montoc As Double
+                Dim factura As New ClsFacturaCompra
+                Dim dtP As New DataTable
+                Dim rowf As DataRow
+                'MsgBox("Se crearon variables")
+
+                codfactura = dtDetallePagos.Rows(0).Cells(0).Value
+                'MsgBox("Se capturo codigo de fact")
+
+                factura.Cod_Factura = Convert.ToInt32(codfactura)
+                dtP = factura.comprobarFactura
+                rowf = dtP.Rows(0)
+                'MsgBox("Busco la factura")
+
+                montoc = Convert.ToDouble(lblTotalSuma.Text)
+                pendiente = Convert.ToDouble(rowf("pendiente"))
+                resultadof = pendiente - montoc
+                'MsgBox("Ya resto " + resultadof.ToString)
+
+                factura.Cod_Factura = Convert.ToInt32(codfactura)
+                factura.Pendiente_ = Convert.ToDouble(resultadof)
+                factura.SaldoPendiente()
+                'MsgBox("Ya actualizo")
+
+                '.........................................................
 
                 'Ingresar un nuevo pago
                 If txtFormaP.Text <> "" Then
@@ -270,7 +312,7 @@
                 A_ListarPagos.ShowDialog()
             End If 'validacion
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
     End Sub
@@ -284,17 +326,93 @@
             lblFila.Text = e.RowIndex
             A_ListarFormasPagoPF.ShowDialog()
 
+
         ElseIf e.ColumnIndex = 5 Then
 
-            'Columna de Cheques
-            lblFila.Text = e.RowIndex
-            A_ListarChequesHabilitados.Show()
-            A_Cheques.txtcodProvee.Text = lblCodigoProveedor.Text
-            lblFila.Text = e.RowIndex
+            Try
+
+                If IsDBNull(dtDetallePagos.Rows(e.RowIndex).Cells(5).Value) = False Then
+                    'Columna de Cheques
+                    lblFila.Text = e.RowIndex
+                    A_ListarChequesHabilitados.Show()
+
+                    Dim prov As New ClsProveedor
+                    Dim dtpro As New DataTable
+                    Dim rowpro As DataRow
+                    dtpro = prov.listarProveedoresOC2(lblCodigoProveedor.Text)
+                    rowpro = dtpro.Rows(0)
+                    A_Cheques.txtcodProvee.Text = rowpro("codBreve")
+                    A_Cheques.txtNombreProvee.Text = rowpro("nombreProveedor")
+                    A_Cheques.lblCodProveedor.Text = lblCodigoProveedor.Text
+
+                    lblFila.Text = e.RowIndex
+
+                Else
+
+                    Try
+                        Dim nroCheque As Integer
+                        Dim cheque As New ClsCheques
+                        Dim dt As New DataTable
+                        Dim row As DataRow
+                        nroCheque = Convert.ToInt32(dtDetallePagos.Rows(e.RowIndex).Cells(5).Value.ToString)
+
+                        cheque.Cod_Cheque = nroCheque
+
+                        dt = cheque.BuscarChequeXCodigo()
+
+                        If dt.Rows.Count = 0 Then
+                            MsgBox("El numero pertenece a un pago por transferencia.")
+                        Else
+                            row = dt.Rows(0)
+
+                            'llenar campos de formulario con data de cheque
+                            With A_Cheques
+
+                                .txtNro.Text = row("codCheque")
+                                .txtNroCheq.Text = row("nroCheque")
+                                .txtMonto.Text = row("monto")
+                                .dtpFechaReg.Value = row("fechaReg")
+                                .dtpFechaVto.Value = row("fechaVto")
+                                .txtMoneda.Text = row("moneda")
+                                .lblEstado.Text = row("estado")
+                                .txtcodProvee.Text = row("codBreveProveedor")
+                                .txtNombreProvee.Text = row("nombreProveedor")
+                                .txtBanco.Text = row("codBreveBanco")
+                                '.txtNroCtaBanco.Text = row2("nroCtaBanco")
+                                .txtnombreBanco.Text = row("nombreBanco")
+                                .dtpAcredita.Value = row("fechaacreditacion")
+                                .dtpRechazo.Value = row("fechaRechazo")
+                                .dtpEmision.Value = row("fechaEmision")
+                                .dtpCancelado.Value = row("fechaCancelado")
+                                .txtCtaOrigen.Text = row("ctaOrigen")
+                                .txtCtaDestino.Text = row("ctaDestino")
+                                .txtCtaTemporal.Text = row("ctaTemporal")
+                                .lblForm.Text = "ChequeSeleccionado"
+                                .Show()
+
+                            End With
+                        End If
+
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
+
+
+
+
+
+                End If
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+
+
 
         ElseIf e.ColumnIndex = 0 Then
 
-            A_ListarFacCompraPagos.Show()
+                A_ListarFacCompraPagos.Show()
             lblFila.Text = e.RowIndex
 
         End If
@@ -320,7 +438,7 @@
                 dtDetallePagos.Columns(0).ReadOnly = True
                 dtDetallePagos.Columns(1).ReadOnly = True
                 dtDetallePagos.Columns(2).ReadOnly = True
-                dtDetallePagos.Columns(3).ReadOnly = True
+                'dtDetallePagos.Columns(3).ReadOnly = True
                 dtDetallePagos.Columns(4).ReadOnly = True
 
                 btnModificar.Enabled = False
@@ -530,4 +648,20 @@
 
     End Sub
 
+
+
+    Private Sub frmPagos_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+
+        If dtDetallePagos.Rows(0).Cells(5).Value <> "" Then
+
+
+            If MessageBox.Show("El Pago tiene un cheque vinculado, se guardara automaticamente ¿Seguro que desea cerrar el formulario?", "Cerrar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+                e.Cancel = True
+            End If
+
+
+
+        End If
+
+    End Sub
 End Class
