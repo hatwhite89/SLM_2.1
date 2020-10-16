@@ -53,7 +53,6 @@
         DataGridView1.DataSource = dv2
     End Sub
     Private Sub CargarDGOI()
-        DataGridView2.Columns.Clear()
 
         Dim clsOI As New clsDetalleOI
         Dim dv4 As New DataView
@@ -148,6 +147,7 @@
         CrearOI()
         CargarDGOC()
         txtCantidadRequerida.Text = 1
+        Button4.Enabled = True
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -237,6 +237,19 @@
         End Try
         Return True
     End Function
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim cls As New clsOrdenInterna
+
+        With cls
+            .Id_oi1 = txtCodSolicitud.Text
+        End With
+        If cls.ActualizarEstadoOrdenInterna() = "1" Then
+            MsgBox("Se ha enviado la solicitud al almacen")
+        End If
+        Button4.Enabled = False
+    End Sub
+
     Private Sub DataGridView3_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellClick
         Try
             cargarDetalleSolicitudes(DataGridView3.Rows(e.RowIndex).Cells(0).Value.ToString)

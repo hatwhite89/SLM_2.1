@@ -33,7 +33,6 @@ Partial Class E_frmOrdenCompra
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_frmOrdenCompra))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -150,6 +149,8 @@ Partial Class E_frmOrdenCompra
         Me.usuario_autorizo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.autorizacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.observaciones = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_autorizacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -192,16 +193,6 @@ Partial Class E_frmOrdenCompra
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1062, 39)
         Me.Panel1.TabIndex = 0
-        '
-        'Button6
-        '
-        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button6.Location = New System.Drawing.Point(691, 7)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(75, 23)
-        Me.Button6.TabIndex = 77
-        Me.Button6.Text = "Imprimir"
-        Me.Button6.UseVisualStyleBackColor = True
         '
         'Label40
         '
@@ -470,7 +461,7 @@ Partial Class E_frmOrdenCompra
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox2.BackColor = System.Drawing.Color.LightSkyBlue
         Me.GroupBox2.Controls.Add(Me.Label23)
         Me.GroupBox2.Controls.Add(Me.txtCodigProducto)
         Me.GroupBox2.Controls.Add(Me.Label22)
@@ -653,8 +644,8 @@ Partial Class E_frmOrdenCompra
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.Label17.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label17.BackColor = System.Drawing.Color.AliceBlue
+        Me.Label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label17.Location = New System.Drawing.Point(10, 25)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(55, 13)
@@ -672,7 +663,7 @@ Partial Class E_frmOrdenCompra
         '
         Me.Panel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel4.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel4.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel4.Controls.Add(Me.Button1)
         Me.Panel4.Location = New System.Drawing.Point(5, 15)
         Me.Panel4.Name = "Panel4"
@@ -682,7 +673,7 @@ Partial Class E_frmOrdenCompra
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.BackColor = System.Drawing.Color.LightSalmon
         Me.Button1.Enabled = False
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.ForeColor = System.Drawing.Color.Black
@@ -697,7 +688,7 @@ Partial Class E_frmOrdenCompra
         '
         Me.GroupBox7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox7.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox7.BackColor = System.Drawing.Color.LightSkyBlue
         Me.GroupBox7.Controls.Add(Me.Label9)
         Me.GroupBox7.Controls.Add(Me.txtCodProveedor)
         Me.GroupBox7.Controls.Add(Me.btnProveedor)
@@ -731,13 +722,14 @@ Partial Class E_frmOrdenCompra
         '
         'btnProveedor
         '
+        Me.btnProveedor.BackColor = System.Drawing.Color.LightSalmon
         Me.btnProveedor.Enabled = False
         Me.btnProveedor.Location = New System.Drawing.Point(8, 15)
         Me.btnProveedor.Name = "btnProveedor"
         Me.btnProveedor.Size = New System.Drawing.Size(68, 23)
         Me.btnProveedor.TabIndex = 70
         Me.btnProveedor.Text = "Proveedor"
-        Me.btnProveedor.UseVisualStyleBackColor = True
+        Me.btnProveedor.UseVisualStyleBackColor = False
         '
         'Label3
         '
@@ -777,7 +769,7 @@ Partial Class E_frmOrdenCompra
         '
         Me.GroupBox8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox8.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox8.BackColor = System.Drawing.Color.LightSkyBlue
         Me.GroupBox8.Controls.Add(Me.txtEstadoOC)
         Me.GroupBox8.Controls.Add(Me.txtLugarEntrega)
         Me.GroupBox8.Controls.Add(Me.txtConsignado)
@@ -1149,14 +1141,14 @@ Partial Class E_frmOrdenCompra
         Me.DataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSkyBlue
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_oc, Me.nombreProveedor, Me.usuario_consignado, Me.usuario_autorizo, Me.autorizacion, Me.observaciones})
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_oc, Me.nombreProveedor, Me.usuario_consignado, Me.usuario_autorizo, Me.autorizacion, Me.observaciones, Me.fecha_autorizacion})
         Me.DataGridView2.GridColor = System.Drawing.SystemColors.Control
         Me.DataGridView2.Location = New System.Drawing.Point(6, 63)
         Me.DataGridView2.Name = "DataGridView2"
@@ -1421,6 +1413,22 @@ Partial Class E_frmOrdenCompra
         Me.observaciones.HeaderText = "OBSERVACIONES"
         Me.observaciones.Name = "observaciones"
         '
+        'fecha_autorizacion
+        '
+        Me.fecha_autorizacion.DataPropertyName = "fecha_autorizacion"
+        Me.fecha_autorizacion.HeaderText = "FECHA"
+        Me.fecha_autorizacion.Name = "fecha_autorizacion"
+        '
+        'Button6
+        '
+        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button6.Location = New System.Drawing.Point(691, 7)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 23)
+        Me.Button6.TabIndex = 77
+        Me.Button6.Text = "Imprimir"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'E_frmOrdenCompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1514,7 +1522,6 @@ Partial Class E_frmOrdenCompra
     Friend WithEvents DateTimePicker3 As DateTimePicker
     Friend WithEvents GroupBox7 As GroupBox
     Friend WithEvents GroupBox8 As GroupBox
-    Friend WithEvents Button6 As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label37 As Label
     Friend WithEvents GroupBox5 As GroupBox
@@ -1586,10 +1593,12 @@ Partial Class E_frmOrdenCompra
     Friend WithEvents DataGridView3 As DataGridView
     Friend WithEvents txtLugarEntrega As ComboBox
     Friend WithEvents txtEstadoOC As TextBox
+    Friend WithEvents Button6 As Button
     Friend WithEvents id_oc As DataGridViewTextBoxColumn
     Friend WithEvents nombreProveedor As DataGridViewTextBoxColumn
     Friend WithEvents usuario_consignado As DataGridViewTextBoxColumn
     Friend WithEvents usuario_autorizo As DataGridViewTextBoxColumn
     Friend WithEvents autorizacion As DataGridViewTextBoxColumn
     Friend WithEvents observaciones As DataGridViewTextBoxColumn
+    Friend WithEvents fecha_autorizacion As DataGridViewTextBoxColumn
 End Class

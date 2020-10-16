@@ -834,4 +834,8 @@
     Private Sub btnFeriados_Click(sender As Object, e As EventArgs) Handles btnFeriados.Click
         A_ConfiguracionFeriados.Show()
     End Sub
+
+    Private Sub btnEvaluacionP_Click(sender As Object, e As EventArgs) Handles btnEvaluacionP.Click
+        frmEvaluacionProveedores.Show()
+    End Sub
 End Class

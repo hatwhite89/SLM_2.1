@@ -14,6 +14,7 @@ Public Class E_frmSalida
         alternarColoFilasDatagridview(DataGridView2)
         alternarColoFilasDatagridview(DataGridView3)
 
+
     End Sub
     Private Sub CargarDGOCFecha()
         Try
