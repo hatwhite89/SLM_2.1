@@ -254,7 +254,7 @@ Partial Class A_CentrodeCosto
         '
         'txtCodigoBreve
         '
-        Me.txtCodigoBreve.Location = New System.Drawing.Point(284, 32)
+        Me.txtCodigoBreve.Location = New System.Drawing.Point(374, 32)
         Me.txtCodigoBreve.Name = "txtCodigoBreve"
         Me.txtCodigoBreve.Size = New System.Drawing.Size(126, 20)
         Me.txtCodigoBreve.TabIndex = 3
@@ -262,7 +262,7 @@ Partial Class A_CentrodeCosto
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(218, 35)
+        Me.Label3.Location = New System.Drawing.Point(308, 35)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(60, 13)
         Me.Label3.TabIndex = 2

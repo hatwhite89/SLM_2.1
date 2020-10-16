@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 Public Class ClsFacturaCompra
 
     Dim codFactura, codProveedor, codterminopago As Integer
-    Dim total As Double
+    Dim total, pendiente As Double
     Dim nombreProveedor, moneda, nroFactura, descripcion, estado As String
     Dim fechaFactura, fechaTransaccion, fechaVencimiento As Date
 
@@ -129,6 +129,18 @@ Public Class ClsFacturaCompra
             estado = value
         End Set
     End Property
+
+
+    'Pendiente
+    Public Property Pendiente_ As Double
+        Get
+            Return pendiente
+        End Get
+        Set(value As Double)
+            pendiente = value
+        End Set
+    End Property
+
     ':::::::::::::::::::::::::::::::::::::::::::: Funciones de Mantenimiento ::::::::::::::::::::::::::::::::::::::::::::
 
     'Nuevo registro de Factura Compra
@@ -196,6 +208,11 @@ Public Class ClsFacturaCompra
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "estado"
         sqlpar.Value = Estado_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "pendiente"
+        sqlpar.Value = Pendiente_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -287,6 +304,11 @@ Public Class ClsFacturaCompra
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "CodTerminoPago"
         sqlpar.Value = Cod_TerminoPago
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "pendiente"
+        sqlpar.Value = Pendiente_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -396,6 +418,31 @@ Public Class ClsFacturaCompra
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "A_slmBuscarFacturaCompraNroFactura"
             cmd.Parameters.Add("@nroFactura", SqlDbType.VarChar).Value = Nro_Factura
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+    'Actualizar Pendiente
+    Public Function SaldoPendiente() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmActualizarFacturaCompraPendiente"
+            cmd.Parameters.Add("@codFactura", SqlDbType.Int).Value = Cod_Factura
+            cmd.Parameters.Add("@pendiente", SqlDbType.Float).Value = Pendiente_
+            cmd.Parameters.Add("@salida", SqlDbType.VarChar).Value = ""
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable

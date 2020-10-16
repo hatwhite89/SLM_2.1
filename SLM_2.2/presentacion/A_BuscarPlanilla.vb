@@ -56,7 +56,7 @@
                     For index As Integer = 0 To dt.Rows.Count - 1
                         'Llenado beneficiarios
                         row = dt.Rows(index)
-                        A_Planilla.dgvEmpleados.Rows.Add(New String() {CStr(row("codDetPlanilla")), CStr(row("codEmpleado")), CStr(row("nombreCompleto")), CStr(row("puestoTrabajo")), CStr(row("Departamento"))})
+                        A_Planilla.dgvEmpleados.Rows.Add(New String() {CStr(row("codDetPlanilla")), CStr(row("codEmpleado")), CStr(row("nIdentidad")), CStr(row("cuentaBancaria")), CStr(row("nombreCompleto")), CStr(row("salario"))})
                     Next
                 End If
                 A_Planilla.btnGuardar.Enabled = False

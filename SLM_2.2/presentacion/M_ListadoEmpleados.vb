@@ -140,8 +140,19 @@ Public Class M_ListadoEmpleados
                     n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
                 End If
                 If n = vbYes Then
+
                     If A_Planilla.validarEmpleados(dgbtabla.Rows(e.RowIndex).Cells(0).Value()) Then
-                        A_Planilla.dgvEmpleados.Rows.Insert(lblfila.Text.ToString, New String() {"", dgbtabla.Rows(e.RowIndex).Cells(0).Value(), dgbtabla.Rows(e.RowIndex).Cells(1).Value(), dgbtabla.Rows(e.RowIndex).Cells(3).Value(), dgbtabla.Rows(e.RowIndex).Cells(4).Value()})
+
+                        Dim objEmp As New ClsEmpleados
+                        objEmp.codigo_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+
+                        Dim dt As New DataTable
+                        dt = objEmp.BuscarDatosEmpleadoPorCodigo()
+                        Dim row As DataRow = dt.Rows(0)
+
+                        A_Planilla.dgvEmpleados.Rows.Insert(lblfila.Text.ToString, New String() {"", CStr(row("codigo")), row("nIdentidad"), row("cuentaBancaria"), row("nombreCompleto"), row("salario")})
+
+                        'A_Planilla.dgvEmpleados.Rows.Insert(lblfila.Text.ToString, New String() {"", dgbtabla.Rows(e.RowIndex).Cells(0).Value(), dgbtabla.Rows(e.RowIndex).Cells(1).Value(), dgbtabla.Rows(e.RowIndex).Cells(3).Value(), dgbtabla.Rows(e.RowIndex).Cells(4).Value()})
                         A_Planilla.lblcantidad.Text = A_Planilla.dgvEmpleados.Rows.Count - 1
                         'MsgBox("El empleado a sido agregado en la capacitación con éxito.", MsgBoxStyle.Information)
                         'Me.Close()

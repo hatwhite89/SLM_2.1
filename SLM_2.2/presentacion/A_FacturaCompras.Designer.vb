@@ -67,6 +67,8 @@ Partial Class A_FacturaCompras
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.lblSaldoPend = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,6 +77,8 @@ Partial Class A_FacturaCompras
         '
         'gbxInfoFact
         '
+        Me.gbxInfoFact.Controls.Add(Me.lblSaldoPend)
+        Me.gbxInfoFact.Controls.Add(Me.Label16)
         Me.gbxInfoFact.Controls.Add(Me.lblCodTerminoPago)
         Me.gbxInfoFact.Controls.Add(Me.lblEstado)
         Me.gbxInfoFact.Controls.Add(Me.Label14)
@@ -121,7 +125,7 @@ Partial Class A_FacturaCompras
         'lblEstado
         '
         Me.lblEstado.AutoSize = True
-        Me.lblEstado.Location = New System.Drawing.Point(518, 133)
+        Me.lblEstado.Location = New System.Drawing.Point(543, 133)
         Me.lblEstado.Name = "lblEstado"
         Me.lblEstado.Size = New System.Drawing.Size(16, 13)
         Me.lblEstado.TabIndex = 26
@@ -130,7 +134,7 @@ Partial Class A_FacturaCompras
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(469, 133)
+        Me.Label14.Location = New System.Drawing.Point(494, 133)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(43, 13)
         Me.Label14.TabIndex = 25
@@ -519,6 +523,24 @@ Partial Class A_FacturaCompras
         Me.btnCerrar.Text = "Cerrar"
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
+        'lblSaldoPend
+        '
+        Me.lblSaldoPend.AutoSize = True
+        Me.lblSaldoPend.Location = New System.Drawing.Point(543, 110)
+        Me.lblSaldoPend.Name = "lblSaldoPend"
+        Me.lblSaldoPend.Size = New System.Drawing.Size(16, 13)
+        Me.lblSaldoPend.TabIndex = 29
+        Me.lblSaldoPend.Text = "---"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(469, 110)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(68, 13)
+        Me.Label16.TabIndex = 28
+        Me.Label16.Text = "Saldo Pend.:"
+        '
         'A_FacturaCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -591,4 +613,6 @@ Partial Class A_FacturaCompras
     Friend WithEvents lblCodTerminoPago As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnCerrar As Button
+    Friend WithEvents lblSaldoPend As Label
+    Friend WithEvents Label16 As Label
 End Class

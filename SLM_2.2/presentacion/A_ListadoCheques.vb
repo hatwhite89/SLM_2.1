@@ -1,4 +1,6 @@
-﻿Public Class A_ListadoCheques
+﻿Imports CrystalDecisions.CrystalReports.ViewerObjectModel
+
+Public Class A_ListadoCheques
 
     Dim cheque As New ClsCheques
     Private Sub A_ListadoCheques_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -6,6 +8,15 @@
         Try
 
             dtCheques.DataSource = cheque.listarCheques
+
+            For a = 0 To dtCheques.Rows.Count - 1
+
+                If dtCheques.Rows(a).Cells(9).Value = "Rechazado" Then
+                    dtCheques.Rows(a).DefaultCellStyle.Font = New Font(Font.Name, Font.Size, FontStyle.Strikeout)
+                    dtCheques.Rows(a).DefaultCellStyle.ForeColor = Color.Red
+                End If
+
+            Next
 
             dtpInicio.Format = DateTimePickerFormat.Custom
             dtpInicio.CustomFormat = " "
@@ -38,7 +49,7 @@
             With cheque
 
                 .Numero_Cheque = txtBusqueda.Text
-                .Nombre_Proveedor = txtBusqueda.Text
+                .Cod_Proveedor = txtBusqueda.Text
 
                 Dato = cheque.buscarCheques
                 dtCheques.DataSource = Dato
