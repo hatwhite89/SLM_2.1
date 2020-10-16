@@ -1,4 +1,5 @@
 ﻿Public Class M_ListaPrecios
+
     Dim codigoDetallePriceList As ArrayList = New ArrayList()
 
     Public Sub limpiar()
@@ -66,15 +67,15 @@
                             Exit Sub
                         End If
                         If rbtnPagoSi.Checked Then
-                                .solicitaPago_ = rbtnPagoSi.Checked
-                                If Trim(txtPorcentaje.Text) <> "" Then
-                                    .porcentaje_ = Integer.Parse(txtPorcentaje.Text)
-                                Else
-                                    MsgBox("Debe ingresar el porcentaje a pagar de la factura.", MsgBoxStyle.Information, "Validación.")
-                                    Exit Sub
-                                End If
+                            .solicitaPago_ = rbtnPagoSi.Checked
+                            If Trim(txtPorcentaje.Text) <> "" Then
+                                .porcentaje_ = Integer.Parse(txtPorcentaje.Text)
+                            Else
+                                MsgBox("Debe ingresar el porcentaje a pagar de la factura.", MsgBoxStyle.Information, "Validación.")
+                                Exit Sub
                             End If
                         End If
+                    End If
                 End With
 
                 If objPriceList.RegistrarNuevaListaPrecios() = 1 Then

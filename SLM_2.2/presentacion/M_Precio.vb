@@ -131,6 +131,7 @@
         seleccionarPrecios()
     End Sub
     Private Sub seleccionarPrecios()
+
         Dim dv As DataView = objPre.ListarPrecios.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
@@ -138,6 +139,7 @@
         'Me.Width = 687
         'Me.Height = 725
         deshabilitar()
+
     End Sub
 
     Private Sub txtcodigoItem_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoItem.TextChanged
