@@ -637,27 +637,27 @@ Partial Class M_Factura
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1173, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1173, 28)
         Me.MenuStrip1.TabIndex = 76
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ArchivoToolStripMenuItem
         '
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 26)
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 24)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
         '
         'EditarToolStripMenuItem
         '
         Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(62, 26)
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(62, 24)
         Me.EditarToolStripMenuItem.Text = "Editar"
         '
         'RegistroToolStripMenuItem
         '
         Me.RegistroToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarExamenToolStripMenuItem})
         Me.RegistroToolStripMenuItem.Name = "RegistroToolStripMenuItem"
-        Me.RegistroToolStripMenuItem.Size = New System.Drawing.Size(78, 26)
+        Me.RegistroToolStripMenuItem.Size = New System.Drawing.Size(78, 24)
         Me.RegistroToolStripMenuItem.Text = "Registro"
         '
         'BuscarExamenToolStripMenuItem
@@ -670,13 +670,13 @@ Partial Class M_Factura
         'VentanaToolStripMenuItem
         '
         Me.VentanaToolStripMenuItem.Name = "VentanaToolStripMenuItem"
-        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(76, 26)
+        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(76, 24)
         Me.VentanaToolStripMenuItem.Text = "Ventana"
         '
         'InfoToolStripMenuItem
         '
         Me.InfoToolStripMenuItem.Name = "InfoToolStripMenuItem"
-        Me.InfoToolStripMenuItem.Size = New System.Drawing.Size(49, 26)
+        Me.InfoToolStripMenuItem.Size = New System.Drawing.Size(49, 24)
         Me.InfoToolStripMenuItem.Text = "Info"
         '
         'txtnombreSede
@@ -1449,6 +1449,7 @@ Partial Class M_Factura
         Me.lblRTN.Size = New System.Drawing.Size(46, 17)
         Me.lblRTN.TabIndex = 115
         Me.lblRTN.Text = "label1"
+        Me.lblRTN.Visible = False
         '
         'M_Factura
         '

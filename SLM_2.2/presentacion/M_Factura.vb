@@ -8,6 +8,7 @@ Public Class M_Factura
     Dim subtotalF, descuentoF, abonoF, saldoF As Double
     Dim codigoDetalleFactura As New ArrayList
     Public banderaTipo As Boolean
+    Dim objFeriado As New ClsFeriados
     Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
         M_ClienteVentana.Close()
         Me.Close()
@@ -751,14 +752,20 @@ Public Class M_Factura
                         Dim descuento As Double = Convert.ToDouble(CStr(row("porcentaje")))
                         descuento = subtotal * (descuento / 100)
                         subtotal -= descuento
-                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0, CStr(row("codigoItem"))})
+
+                        'buscar feriados
+                        Dim dtFeriados As New DataTable
+                        Dim cantDias As Integer = 0
+                        dtFeriados = objFeriado.BuscarFeriadosRangoFecha(Date.Parse(dtpfechaFactura.Value), Date.Parse(dtpfechaFactura.Value.Date.AddDays(7)))
+                        cantDias = dtFeriados.Rows.Count + 7
+                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(cantDias), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0, CStr(row("codigoItem"))})
                         totalFactura()
 
                         'observaciones
                         dgbObservaciones.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codeIntExam_, ""})
 
 
-                        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
+                        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(cantDias), CStr(row("porcentaje")), (subtotal)})
                     Else 'muestro el mensaje de error
                         MsgBox("El examen ya a sido agregado.", MsgBoxStyle.Information)
                         dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
@@ -919,10 +926,17 @@ Public Class M_Factura
         descuento = subtotal * (descuento / 100)
         subtotal -= descuento
 
-        dgblistadoExamenes.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0, CStr(row("codigoItem"))})
+        'buscar feriados
+        Dim dtFeriados As New DataTable
+        Dim cantDias As Integer = 0
+        dtFeriados = objFeriado.BuscarFeriadosRangoFecha(Date.Parse(dtpfechaFactura.Value), Date.Parse(dtpfechaFactura.Value.Date.AddDays(7)))
+        cantDias = dtFeriados.Rows.Count + 7
+
+
+        dgblistadoExamenes.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(cantDias), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0, CStr(row("codigoItem"))})
         dgbObservaciones.Rows.Add(New String() {objExam.codeIntExam_, ""})
         totalFactura()
-        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(7), CStr(row("porcentaje")), (subtotal)})
+        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(cantDias), CStr(row("porcentaje")), (subtotal)})
     End Sub
     Public Sub totalFactura()
         Dim total As Double = 0

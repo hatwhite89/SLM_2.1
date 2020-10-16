@@ -170,6 +170,29 @@ Public Class ClsFeriados
             Return dt
         End Using
     End Function
+    'Buscar feriados por rango de fechas
+    Public Function BuscarFeriadosRangoFecha(ByVal fechaInicial As Date, ByVal fechaFinal As Date) As DataTable
 
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
 
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarFeriadosRangoFecha"
+            cmd.Parameters.Add("@fechaInicial", SqlDbType.Date).Value = fechaInicial
+            cmd.Parameters.Add("@fechaFinal", SqlDbType.Date).Value = fechaFinal
+
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
 End Class
