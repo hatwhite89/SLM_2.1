@@ -80,6 +80,7 @@
             'Me.dgbtabla.Columns("codigoMedico").Visible = False
             'Me.dgbtabla.Columns("codigoCajero").Visible = False
 
+
             ''llenar el combobox medico
             'Dim objMed As New ClsMedico
             'Dim dt As New DataTable

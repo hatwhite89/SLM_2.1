@@ -12,6 +12,7 @@
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
+
         Me.dgbtabla.Columns("codigo").Visible = False
 
         rtxtdescripcion.ReadOnly = True
