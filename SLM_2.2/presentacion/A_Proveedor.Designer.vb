@@ -66,14 +66,23 @@ Partial Class A_Proveedor
         Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.dgvProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxInformacion.SuspendLayout()
         Me.gbxListado.SuspendLayout()
         Me.gbxContactos.SuspendLayout()
         CType(Me.dgvDetalleContactos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblCodeProveedor
@@ -81,9 +90,9 @@ Partial Class A_Proveedor
         Me.lblCodeProveedor.AutoSize = True
         Me.lblCodeProveedor.Location = New System.Drawing.Point(10, 34)
         Me.lblCodeProveedor.Name = "lblCodeProveedor"
-        Me.lblCodeProveedor.Size = New System.Drawing.Size(81, 13)
+        Me.lblCodeProveedor.Size = New System.Drawing.Size(92, 13)
         Me.lblCodeProveedor.TabIndex = 0
-        Me.lblCodeProveedor.Text = "Cód. Proveedor"
+        Me.lblCodeProveedor.Text = "Código Proveedor"
         '
         'txtCodProveedor
         '
@@ -191,16 +200,19 @@ Partial Class A_Proveedor
         Me.dgvProveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProveedores.GridColor = System.Drawing.Color.White
-        Me.dgvProveedores.Location = New System.Drawing.Point(9, 54)
+        Me.dgvProveedores.Location = New System.Drawing.Point(13, 59)
         Me.dgvProveedores.Name = "dgvProveedores"
         Me.dgvProveedores.ReadOnly = True
         Me.dgvProveedores.RowHeadersWidth = 51
         Me.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvProveedores.Size = New System.Drawing.Size(387, 370)
+        Me.dgvProveedores.Size = New System.Drawing.Size(727, 188)
         Me.dgvProveedores.TabIndex = 12
         '
         'gbxInformacion
         '
+        Me.gbxInformacion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxInformacion.BackColor = System.Drawing.Color.LightSkyBlue
         Me.gbxInformacion.Controls.Add(Me.lblCodCuenta)
         Me.gbxInformacion.Controls.Add(Me.btnBuscarCuenta)
         Me.gbxInformacion.Controls.Add(Me.txtCuenta)
@@ -228,9 +240,9 @@ Partial Class A_Proveedor
         Me.gbxInformacion.Controls.Add(Me.lblTelefonoProv)
         Me.gbxInformacion.Controls.Add(Me.txtNombreProvee)
         Me.gbxInformacion.Controls.Add(Me.lblNombreProv)
-        Me.gbxInformacion.Location = New System.Drawing.Point(12, 52)
+        Me.gbxInformacion.Location = New System.Drawing.Point(6, 6)
         Me.gbxInformacion.Name = "gbxInformacion"
-        Me.gbxInformacion.Size = New System.Drawing.Size(672, 175)
+        Me.gbxInformacion.Size = New System.Drawing.Size(747, 175)
         Me.gbxInformacion.TabIndex = 13
         Me.gbxInformacion.TabStop = False
         Me.gbxInformacion.Text = "Información de Proveedor"
@@ -310,9 +322,9 @@ Partial Class A_Proveedor
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(224, 32)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(60, 13)
+        Me.Label9.Size = New System.Drawing.Size(71, 13)
         Me.Label9.TabIndex = 26
-        Me.Label9.Text = "Cód. Breve"
+        Me.Label9.Text = "Código Breve"
         '
         'lblCodeTerminoPago
         '
@@ -350,9 +362,9 @@ Partial Class A_Proveedor
         Me.lblIdTrib.AutoSize = True
         Me.lblIdTrib.Location = New System.Drawing.Point(13, 139)
         Me.lblIdTrib.Name = "lblIdTrib"
-        Me.lblIdTrib.Size = New System.Drawing.Size(66, 13)
+        Me.lblIdTrib.Size = New System.Drawing.Size(65, 13)
         Me.lblIdTrib.TabIndex = 22
-        Me.lblIdTrib.Text = "Id. Tributario"
+        Me.lblIdTrib.Text = "ID Tributario"
         '
         'lblCategoriaProv
         '
@@ -388,7 +400,7 @@ Partial Class A_Proveedor
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.Black
-        Me.btnGuardar.Location = New System.Drawing.Point(863, 12)
+        Me.btnGuardar.Location = New System.Drawing.Point(618, 12)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 14
@@ -402,7 +414,7 @@ Partial Class A_Proveedor
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.Black
-        Me.btnModificar.Location = New System.Drawing.Point(943, 12)
+        Me.btnModificar.Location = New System.Drawing.Point(698, 12)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 13
@@ -416,11 +428,11 @@ Partial Class A_Proveedor
         Me.btnNuevo.FlatAppearance.BorderSize = 0
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNuevo.ForeColor = System.Drawing.Color.Black
-        Me.btnNuevo.Location = New System.Drawing.Point(784, 12)
+        Me.btnNuevo.Location = New System.Drawing.Point(539, 12)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
         Me.btnNuevo.TabIndex = 12
-        Me.btnNuevo.Text = "Crear Nuevo"
+        Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = False
         '
         'gbxListado
@@ -428,13 +440,14 @@ Partial Class A_Proveedor
         Me.gbxListado.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxListado.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxListado.Controls.Add(Me.btnLimpiarBusqueda)
         Me.gbxListado.Controls.Add(Me.txtNombreBusqueda)
         Me.gbxListado.Controls.Add(Me.lblBuscarProv)
         Me.gbxListado.Controls.Add(Me.dgvProveedores)
-        Me.gbxListado.Location = New System.Drawing.Point(690, 52)
+        Me.gbxListado.Location = New System.Drawing.Point(6, 187)
         Me.gbxListado.Name = "gbxListado"
-        Me.gbxListado.Size = New System.Drawing.Size(407, 430)
+        Me.gbxListado.Size = New System.Drawing.Size(747, 253)
         Me.gbxListado.TabIndex = 14
         Me.gbxListado.TabStop = False
         Me.gbxListado.Text = "Proveedores Registrados"
@@ -471,27 +484,31 @@ Partial Class A_Proveedor
         '
         'gbxContactos
         '
-        Me.gbxContactos.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.gbxContactos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbxContactos.Controls.Add(Me.dgvDetalleContactos)
-        Me.gbxContactos.Location = New System.Drawing.Point(12, 233)
+        Me.gbxContactos.Location = New System.Drawing.Point(6, 45)
         Me.gbxContactos.Name = "gbxContactos"
-        Me.gbxContactos.Size = New System.Drawing.Size(672, 249)
+        Me.gbxContactos.Size = New System.Drawing.Size(747, 385)
         Me.gbxContactos.TabIndex = 15
         Me.gbxContactos.TabStop = False
         Me.gbxContactos.Text = "Contactos Principales"
         '
         'dgvDetalleContactos
         '
+        Me.dgvDetalleContactos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvDetalleContactos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvDetalleContactos.BackgroundColor = System.Drawing.Color.White
         Me.dgvDetalleContactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvDetalleContactos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.Nombre, Me.Telefono, Me.Correo})
-        Me.dgvDetalleContactos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvDetalleContactos.GridColor = System.Drawing.Color.White
         Me.dgvDetalleContactos.Location = New System.Drawing.Point(3, 16)
         Me.dgvDetalleContactos.Name = "dgvDetalleContactos"
         Me.dgvDetalleContactos.RowHeadersWidth = 51
-        Me.dgvDetalleContactos.Size = New System.Drawing.Size(666, 230)
+        Me.dgvDetalleContactos.Size = New System.Drawing.Size(738, 363)
         Me.dgvDetalleContactos.TabIndex = 0
         '
         'codigo
@@ -499,7 +516,6 @@ Partial Class A_Proveedor
         Me.codigo.HeaderText = "Codigo"
         Me.codigo.MinimumWidth = 6
         Me.codigo.Name = "codigo"
-        Me.codigo.Width = 125
         '
         'Nombre
         '
@@ -507,7 +523,6 @@ Partial Class A_Proveedor
         Me.Nombre.MaxInputLength = 100
         Me.Nombre.MinimumWidth = 6
         Me.Nombre.Name = "Nombre"
-        Me.Nombre.Width = 240
         '
         'Telefono
         '
@@ -515,7 +530,6 @@ Partial Class A_Proveedor
         Me.Telefono.MaxInputLength = 40
         Me.Telefono.MinimumWidth = 6
         Me.Telefono.Name = "Telefono"
-        Me.Telefono.Width = 115
         '
         'Correo
         '
@@ -523,36 +537,20 @@ Partial Class A_Proveedor
         Me.Correo.MaxInputLength = 80
         Me.Correo.MinimumWidth = 6
         Me.Correo.Name = "Correo"
-        Me.Correo.Width = 150
         '
         'Panel1
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.btnModificar)
         Me.Panel1.Controls.Add(Me.btnNuevo)
         Me.Panel1.Controls.Add(Me.btnGuardar)
         Me.Panel1.Location = New System.Drawing.Point(-1, -1)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1109, 47)
+        Me.Panel1.Size = New System.Drawing.Size(788, 47)
         Me.Panel1.TabIndex = 16
-        '
-        'btnCerrar
-        '
-        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCerrar.BackColor = System.Drawing.Color.White
-        Me.btnCerrar.FlatAppearance.BorderSize = 0
-        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.ForeColor = System.Drawing.Color.Black
-        Me.btnCerrar.Location = New System.Drawing.Point(1022, 12)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCerrar.TabIndex = 15
-        Me.btnCerrar.Text = "Cerrar"
-        Me.btnCerrar.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -566,17 +564,89 @@ Partial Class A_Proveedor
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Proveedores"
         '
+        'TabControl1
+        '
+        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Location = New System.Drawing.Point(6, 52)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(767, 473)
+        Me.TabControl1.TabIndex = 17
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.gbxInformacion)
+        Me.TabPage1.Controls.Add(Me.gbxListado)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(759, 447)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Proveedores"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.Label4)
+        Me.TabPage2.Controls.Add(Me.Label3)
+        Me.TabPage2.Controls.Add(Me.TextBox2)
+        Me.TabPage2.Controls.Add(Me.TextBox1)
+        Me.TabPage2.Controls.Add(Me.gbxContactos)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(759, 447)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Contactos"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(153, 19)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(594, 20)
+        Me.TextBox1.TabIndex = 16
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(9, 19)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.TabIndex = 17
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 3)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(92, 13)
+        Me.Label3.TabIndex = 18
+        Me.Label3.Text = "Código Proveedor"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(150, 3)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(96, 13)
+        Me.Label4.TabIndex = 19
+        Me.Label4.Text = "Nombre Proveedor"
+        '
         'A_Proveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1106, 494)
+        Me.ClientSize = New System.Drawing.Size(785, 527)
+        Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.gbxContactos)
-        Me.Controls.Add(Me.gbxListado)
-        Me.Controls.Add(Me.gbxInformacion)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "A_Proveedor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -590,6 +660,10 @@ Partial Class A_Proveedor
         CType(Me.dgvDetalleContactos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -633,10 +707,16 @@ Partial Class A_Proveedor
     Friend WithEvents Correo As DataGridViewTextBoxColumn
     Friend WithEvents lblEstado As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnCerrar As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents btnBuscarCuenta As Button
     Friend WithEvents txtCuenta As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents lblCodCuenta As Label
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
 End Class

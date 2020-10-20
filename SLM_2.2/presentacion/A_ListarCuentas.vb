@@ -5,6 +5,7 @@
     Private Sub A_ListarCuentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try
+            alternarColoFilasDatagridview(dtCuentas)
             dtCuentas.DataSource = cuentas.listarCuentasNombre()
 
             dtCuentas.Columns("codCuenta").Visible = False

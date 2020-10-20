@@ -191,6 +191,8 @@ Partial Class Form1
         Me.btnPuestoTrabajo = New System.Windows.Forms.Button()
         Me.TabControl3 = New System.Windows.Forms.TabControl()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.PictureBox82 = New System.Windows.Forms.PictureBox()
+        Me.btnFeriados = New System.Windows.Forms.Button()
         Me.PictureBox44 = New System.Windows.Forms.PictureBox()
         Me.PictureBox42 = New System.Windows.Forms.PictureBox()
         Me.PictureBox38 = New System.Windows.Forms.PictureBox()
@@ -251,8 +253,6 @@ Partial Class Form1
         Me.lblHora = New System.Windows.Forms.Label()
         Me.banner = New UIDC.UI_TitleBanner()
         Me.bntCerrar = New System.Windows.Forms.Button()
-        Me.PictureBox82 = New System.Windows.Forms.PictureBox()
-        Me.btnFeriados = New System.Windows.Forms.Button()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -342,6 +342,7 @@ Partial Class Form1
         CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl3.SuspendLayout()
         Me.TabPage6.SuspendLayout()
+        CType(Me.PictureBox82, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox44, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox42, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -372,7 +373,6 @@ Partial Class Form1
         CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox61, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox82, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -572,7 +572,7 @@ Partial Class Form1
         Me.TpMantenimiento.Controls.Add(Me.btnFormaPago)
         Me.TpMantenimiento.Location = New System.Drawing.Point(4, 22)
         Me.TpMantenimiento.Name = "TpMantenimiento"
-        Me.TpMantenimiento.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TpMantenimiento.Padding = New System.Windows.Forms.Padding(3)
         Me.TpMantenimiento.Size = New System.Drawing.Size(576, 456)
         Me.TpMantenimiento.TabIndex = 2
         Me.TpMantenimiento.Text = "Mantenimiento"
@@ -986,7 +986,7 @@ Partial Class Form1
         Me.tpCheque.Controls.Add(Me.btnDepoBanc)
         Me.tpCheque.Location = New System.Drawing.Point(4, 22)
         Me.tpCheque.Name = "tpCheque"
-        Me.tpCheque.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tpCheque.Padding = New System.Windows.Forms.Padding(3)
         Me.tpCheque.Size = New System.Drawing.Size(576, 456)
         Me.tpCheque.TabIndex = 0
         Me.tpCheque.Text = "Cheque"
@@ -1075,7 +1075,7 @@ Partial Class Form1
         Me.tpPagos.Controls.Add(Me.btnPagos)
         Me.tpPagos.Location = New System.Drawing.Point(4, 22)
         Me.tpPagos.Name = "tpPagos"
-        Me.tpPagos.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tpPagos.Padding = New System.Windows.Forms.Padding(3)
         Me.tpPagos.Size = New System.Drawing.Size(576, 456)
         Me.tpPagos.TabIndex = 1
         Me.tpPagos.Text = "Pagos"
@@ -1189,7 +1189,7 @@ Partial Class Form1
         Me.TabPage1.Controls.Add(Me.btnFactura)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(574, 459)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Facturación"
@@ -1619,7 +1619,7 @@ Partial Class Form1
         '
         Me.PictureBox19.InitialImage = Nothing
         Me.PictureBox19.Location = New System.Drawing.Point(419, 105)
-        Me.PictureBox19.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox19.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox19.Name = "PictureBox19"
         Me.PictureBox19.Size = New System.Drawing.Size(54, 51)
         Me.PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1640,7 +1640,7 @@ Partial Class Form1
         '
         Me.PictureBox76.InitialImage = Nothing
         Me.PictureBox76.Location = New System.Drawing.Point(294, 105)
-        Me.PictureBox76.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox76.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox76.Name = "PictureBox76"
         Me.PictureBox76.Size = New System.Drawing.Size(54, 51)
         Me.PictureBox76.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1661,7 +1661,7 @@ Partial Class Form1
         '
         Me.PictureBox49.InitialImage = Nothing
         Me.PictureBox49.Location = New System.Drawing.Point(419, 11)
-        Me.PictureBox49.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox49.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox49.Name = "PictureBox49"
         Me.PictureBox49.Size = New System.Drawing.Size(54, 51)
         Me.PictureBox49.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1682,7 +1682,7 @@ Partial Class Form1
         '
         Me.PictureBox48.InitialImage = Nothing
         Me.PictureBox48.Location = New System.Drawing.Point(294, 11)
-        Me.PictureBox48.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox48.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox48.Name = "PictureBox48"
         Me.PictureBox48.Size = New System.Drawing.Size(54, 51)
         Me.PictureBox48.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1703,7 +1703,7 @@ Partial Class Form1
         '
         Me.PictureBox23.InitialImage = Nothing
         Me.PictureBox23.Location = New System.Drawing.Point(146, 12)
-        Me.PictureBox23.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox23.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox23.Name = "PictureBox23"
         Me.PictureBox23.Size = New System.Drawing.Size(100, 51)
         Me.PictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1714,7 +1714,7 @@ Partial Class Form1
         '
         Me.PictureBox22.InitialImage = Nothing
         Me.PictureBox22.Location = New System.Drawing.Point(146, 105)
-        Me.PictureBox22.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox22.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox22.Name = "PictureBox22"
         Me.PictureBox22.Size = New System.Drawing.Size(100, 51)
         Me.PictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1725,7 +1725,7 @@ Partial Class Form1
         '
         Me.PictureBox21.InitialImage = Nothing
         Me.PictureBox21.Location = New System.Drawing.Point(20, 105)
-        Me.PictureBox21.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox21.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox21.Name = "PictureBox21"
         Me.PictureBox21.Size = New System.Drawing.Size(100, 51)
         Me.PictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1736,7 +1736,7 @@ Partial Class Form1
         '
         Me.PictureBox20.InitialImage = Nothing
         Me.PictureBox20.Location = New System.Drawing.Point(20, 12)
-        Me.PictureBox20.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox20.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox20.Name = "PictureBox20"
         Me.PictureBox20.Size = New System.Drawing.Size(100, 51)
         Me.PictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1796,7 +1796,7 @@ Partial Class Form1
         '
         Me.PictureBox25.InitialImage = Nothing
         Me.PictureBox25.Location = New System.Drawing.Point(110, 12)
-        Me.PictureBox25.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox25.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox25.Name = "PictureBox25"
         Me.PictureBox25.Size = New System.Drawing.Size(87, 54)
         Me.PictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1807,7 +1807,7 @@ Partial Class Form1
         '
         Me.PictureBox24.InitialImage = Nothing
         Me.PictureBox24.Location = New System.Drawing.Point(15, 12)
-        Me.PictureBox24.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox24.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox24.Name = "PictureBox24"
         Me.PictureBox24.Size = New System.Drawing.Size(87, 54)
         Me.PictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1847,7 +1847,7 @@ Partial Class Form1
         '
         Me.PictureBox26.InitialImage = Nothing
         Me.PictureBox26.Location = New System.Drawing.Point(15, 12)
-        Me.PictureBox26.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox26.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox26.Name = "PictureBox26"
         Me.PictureBox26.Size = New System.Drawing.Size(87, 53)
         Me.PictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1869,7 +1869,7 @@ Partial Class Form1
         Me.TabPage2.Controls.Add(Me.btnPaciente)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(572, 456)
         Me.TabPage2.TabIndex = 0
         Me.TabPage2.Text = "Clientes"
@@ -1879,7 +1879,7 @@ Partial Class Form1
         '
         Me.PictureBox18.InitialImage = Nothing
         Me.PictureBox18.Location = New System.Drawing.Point(19, 9)
-        Me.PictureBox18.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox18.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox18.Name = "PictureBox18"
         Me.PictureBox18.Size = New System.Drawing.Size(59, 52)
         Me.PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1955,7 +1955,7 @@ Partial Class Form1
         Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Panel1.Location = New System.Drawing.Point(146, 125)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(529, 409)
         Me.Panel1.TabIndex = 10
@@ -2061,7 +2061,7 @@ Partial Class Form1
         Me.TabPage9.Controls.Add(Me.btnPuestoTrabajo)
         Me.TabPage9.Location = New System.Drawing.Point(4, 22)
         Me.TabPage9.Name = "TabPage9"
-        Me.TabPage9.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage9.Size = New System.Drawing.Size(576, 457)
         Me.TabPage9.TabIndex = 0
         Me.TabPage9.Text = "Talento Humano"
@@ -2448,6 +2448,28 @@ Partial Class Form1
         Me.TabPage6.Text = "Configuración de Sistema"
         Me.TabPage6.UseVisualStyleBackColor = True
         '
+        'PictureBox82
+        '
+        Me.PictureBox82.Image = CType(resources.GetObject("PictureBox82.Image"), System.Drawing.Image)
+        Me.PictureBox82.Location = New System.Drawing.Point(170, 128)
+        Me.PictureBox82.Name = "PictureBox82"
+        Me.PictureBox82.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox82.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox82.TabIndex = 48
+        Me.PictureBox82.TabStop = False
+        '
+        'btnFeriados
+        '
+        Me.btnFeriados.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnFeriados.Enabled = False
+        Me.btnFeriados.ForeColor = System.Drawing.Color.White
+        Me.btnFeriados.Location = New System.Drawing.Point(154, 184)
+        Me.btnFeriados.Name = "btnFeriados"
+        Me.btnFeriados.Size = New System.Drawing.Size(108, 41)
+        Me.btnFeriados.TabIndex = 47
+        Me.btnFeriados.Text = "Configuración de Feriados"
+        Me.btnFeriados.UseVisualStyleBackColor = False
+        '
         'PictureBox44
         '
         Me.PictureBox44.Image = CType(resources.GetObject("PictureBox44.Image"), System.Drawing.Image)
@@ -2544,7 +2566,7 @@ Partial Class Form1
         Me.PanelSistema.Controls.Add(Me.Panel7)
         Me.PanelSistema.Controls.Add(Me.TabControl3)
         Me.PanelSistema.Location = New System.Drawing.Point(123, 59)
-        Me.PanelSistema.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PanelSistema.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelSistema.Name = "PanelSistema"
         Me.PanelSistema.Size = New System.Drawing.Size(582, 534)
         Me.PanelSistema.TabIndex = 23
@@ -2658,7 +2680,7 @@ Partial Class Form1
         Me.TabPage10.Controls.Add(Me.btnAlmacenes)
         Me.TabPage10.Location = New System.Drawing.Point(4, 22)
         Me.TabPage10.Name = "TabPage10"
-        Me.TabPage10.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage10.Size = New System.Drawing.Size(575, 457)
         Me.TabPage10.TabIndex = 0
         Me.TabPage10.Text = "Almacén"
@@ -2830,7 +2852,7 @@ Partial Class Form1
         Me.TabPage11.Controls.Add(Me.btnCategoria)
         Me.TabPage11.Location = New System.Drawing.Point(4, 22)
         Me.TabPage11.Name = "TabPage11"
-        Me.TabPage11.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage11.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage11.Size = New System.Drawing.Size(575, 457)
         Me.TabPage11.TabIndex = 1
         Me.TabPage11.Text = "Producto"
@@ -2924,7 +2946,7 @@ Partial Class Form1
         Me.TabPage7.Controls.Add(Me.btnInventario)
         Me.TabPage7.Location = New System.Drawing.Point(4, 22)
         Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage7.Size = New System.Drawing.Size(575, 457)
         Me.TabPage7.TabIndex = 2
         Me.TabPage7.Text = "Inventario"
@@ -3014,7 +3036,7 @@ Partial Class Form1
         Me.TabPage8.Controls.Add(Me.btnSolicitudes)
         Me.TabPage8.Location = New System.Drawing.Point(4, 22)
         Me.TabPage8.Name = "TabPage8"
-        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage8.Size = New System.Drawing.Size(575, 457)
         Me.TabPage8.TabIndex = 3
         Me.TabPage8.Text = "Solicitudes"
@@ -3080,7 +3102,7 @@ Partial Class Form1
         Me.TabPage12.Controls.Add(Me.btnProveedores)
         Me.TabPage12.Location = New System.Drawing.Point(4, 22)
         Me.TabPage12.Name = "TabPage12"
-        Me.TabPage12.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage12.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage12.Size = New System.Drawing.Size(575, 457)
         Me.TabPage12.TabIndex = 4
         Me.TabPage12.Text = "Proveedores"
@@ -3208,7 +3230,7 @@ Partial Class Form1
         '
         'banner
         '
-        Me.banner.Animate = UIDC.UI_TitleBanner.Anim.AnimateON
+        Me.banner.Animate = UIDC.UI_TitleBanner.Anim.AnimateOFF
         Me.banner.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.banner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.banner.ButtonMenuActive = UIDC.UI_TitleBanner.Active.ActiveOff
@@ -3223,9 +3245,9 @@ Partial Class Form1
         Me.banner.Location = New System.Drawing.Point(0, 0)
         Me.banner.MoveActive = True
         Me.banner.Name = "banner"
-        Me.banner.Padding = New System.Windows.Forms.Padding(11, 10, 0, 0)
+        Me.banner.Padding = New System.Windows.Forms.Padding(15, 12, 0, 0)
         Me.banner.ParentControl = Me
-        Me.banner.Size = New System.Drawing.Size(708, 57)
+        Me.banner.Size = New System.Drawing.Size(708, 70)
         Me.banner.TabIndex = 60
         Me.banner.Text = "Menú Principal"
         Me.banner.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -3246,28 +3268,6 @@ Partial Class Form1
         Me.bntCerrar.TabIndex = 61
         Me.bntCerrar.Text = "Salir"
         Me.bntCerrar.UseVisualStyleBackColor = False
-        '
-        'PictureBox82
-        '
-        Me.PictureBox82.Image = CType(resources.GetObject("PictureBox82.Image"), System.Drawing.Image)
-        Me.PictureBox82.Location = New System.Drawing.Point(170, 128)
-        Me.PictureBox82.Name = "PictureBox82"
-        Me.PictureBox82.Size = New System.Drawing.Size(77, 50)
-        Me.PictureBox82.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox82.TabIndex = 48
-        Me.PictureBox82.TabStop = False
-        '
-        'btnFeriados
-        '
-        Me.btnFeriados.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btnFeriados.Enabled = False
-        Me.btnFeriados.ForeColor = System.Drawing.Color.White
-        Me.btnFeriados.Location = New System.Drawing.Point(154, 184)
-        Me.btnFeriados.Name = "btnFeriados"
-        Me.btnFeriados.Size = New System.Drawing.Size(108, 41)
-        Me.btnFeriados.TabIndex = 47
-        Me.btnFeriados.Text = "Configuración de Feriados"
-        Me.btnFeriados.UseVisualStyleBackColor = False
         '
         'Form1
         '
@@ -3399,6 +3399,7 @@ Partial Class Form1
         CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl3.ResumeLayout(False)
         Me.TabPage6.ResumeLayout(False)
+        CType(Me.PictureBox82, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox44, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox42, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3431,7 +3432,6 @@ Partial Class Form1
         CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox61, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox82, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

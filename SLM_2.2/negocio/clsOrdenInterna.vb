@@ -224,7 +224,8 @@ Public Class clsOrdenInterna
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select * from OrdenInterna where estado <> 'cerrado'", cn)
+        Using da As New SqlDataAdapter("select o.id_oi,u.usuario,d.nombre,o.fecha,o.fecha_entrega,o.estado from OrdenInterna o, Usuario u,Departamento d
+where o.id_usuario =u.cod_usuario and o.id_departamento = d.codigo and o.estado <> 'cerrado'", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -236,7 +237,23 @@ Public Class clsOrdenInterna
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select *  from DetalleOrdenInterna where id_oi = '" + id + "'", cn)
+        Using da As New SqlDataAdapter("select id_oi, producto,id_producto,cantidad_solicitada,cantidad_recibida from DetalleOrdenInterna where id_oi = '" + id + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+
+
+    Public Function SolicitudesFechaCerradas(ByVal inicio As Date, ByVal fin As Date) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select o.id_oi,u.usuario,d.nombre,o.fecha,o.fecha_entrega,o.estado from OrdenInterna o, Usuario u,Departamento d
+where o.id_usuario =u.cod_usuario and o.id_departamento = d.codigo and o.estado = 'cerrado'", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -250,19 +267,13 @@ Public Class clsOrdenInterna
 
         sqlcom = New SqlCommand
         sqlcom.CommandType = CommandType.StoredProcedure
-        sqlcom.CommandText = "E_slmActualizarOIEstado"
+        sqlcom.CommandText = "E_slmActualizarEstadoOrdenInterna"
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "id_oi"
         sqlpar.Value = Id_oi1
         sqlcom.Parameters.Add(sqlpar)
 
-
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "estado"
-        sqlpar.Value = Estado1
-        sqlcom.Parameters.Add(sqlpar)
 
 
         sqlpar = New SqlParameter
@@ -285,16 +296,42 @@ Public Class clsOrdenInterna
 
     End Function
 
-    Public Function SolicitudesFechaCerradas(ByVal inicio As Date, ByVal fin As Date) As DataTable
+    Public Function ActualizarEstado2OrdenInterna() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
 
-        Dim objCon As New ClsConnection
-        Dim cn As New SqlConnection
-        cn = objCon.getConexion
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slmActualizarOIEstado"
 
-        Using da As New SqlDataAdapter("select * from OrdenInterna where estado = 'cerrado'", cn)
-            Dim dt As New DataTable
-            da.Fill(dt)
-            Return dt
-        End Using
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_oi"
+        sqlpar.Value = Id_oi1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado"
+        sqlpar.Value = Estado1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
     End Function
 End Class
