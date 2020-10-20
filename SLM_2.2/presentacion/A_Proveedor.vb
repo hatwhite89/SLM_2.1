@@ -4,6 +4,8 @@
     Dim codigoDetalleContacto As ArrayList = New ArrayList()
 
     Private Sub A_Proveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        alternarColoFilasDatagridview(dgvProveedores)
+        alternarColoFilasDatagridview(dgvDetalleContactos)
         Try
             'lista los proveedores
             CargarData()
@@ -43,6 +45,7 @@
     End Sub
     Private Sub dgvDetalleContactos_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvDetalleContactos.CellClick
         Try
+
 
             If e.ColumnIndex = 4 And dgvDetalleContactos.Rows(e.RowIndex).Cells(1).Value <> "" Then
                 Dim n As String = MsgBox("¿Desea eliminar el contacto?", MsgBoxStyle.YesNo, "Validación")
@@ -138,6 +141,8 @@
     Private Sub dtProveedores_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProveedores.CellClick
 
         Try
+            TextBox1.Text = dgvProveedores.Rows(e.RowIndex).Cells(3).Value
+            TextBox2.Text = dgvProveedores.Rows(e.RowIndex).Cells(0).Value
             txtCodProveedor.Text = dgvProveedores.Rows(e.RowIndex).Cells(0).Value
             txtCodBreve.Text = dgvProveedores.Rows(e.RowIndex).Cells(1).Value
             txtIdTribu.Text = dgvProveedores.Rows(e.RowIndex).Cells(2).Value
@@ -155,7 +160,7 @@
 
             'Búsqueda y llenado del detalle contacto
             Dim objDetCont As New ClsDetalleContactos
-            objDetCont.codProveedor_ = txtCodProveedor.Text
+            objDetCont.codProveedor_ = TextBox2.Text
             Dim dt As New DataTable
             dt = objDetCont.BuscarDetalleContactos()
             Dim row As DataRow
@@ -384,7 +389,7 @@
         End If
     End Sub
 
-    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs)
         Me.Close()
 
     End Sub
@@ -436,6 +441,39 @@
             Dim row As DataRow = dt.Rows(0)
             txtCuenta.Text = CStr(row("cuenta"))
         Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub dgvDetalleContactos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDetalleContactos.CellContentClick
+
+    End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+
+        Try
+
+            'cambio del estado del formulario
+            lblEstado.Text = "Modificar"
+
+            'Búsqueda y llenado del detalle contacto
+            Dim objDetCont As New ClsDetalleContactos
+            objDetCont.codProveedor_ = TextBox2.Text
+            Dim dt As New DataTable
+            dt = objDetCont.BuscarDetalleContactos()
+            Dim row As DataRow
+            dgvDetalleContactos.Rows.Clear()
+            For index As Integer = 0 To dt.Rows.Count - 1
+                row = dt.Rows(index)
+                dgvDetalleContactos.Rows.Add(New String() {CStr(row("codigo")), CStr(row("nombre")), CStr(row("telefono")), CStr(row("correo"))})
+            Next
+
+            'Habilitar botones
+            btnGuardar.Enabled = False
+            btnModificar.Enabled = True
+            btnNuevo.Enabled = True
+
+        Catch ex As Exception
+
         End Try
     End Sub
 End Class

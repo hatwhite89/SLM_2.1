@@ -8,13 +8,14 @@
         Me.dgbtabla.Columns("codigoCtaContado").Visible = False
         Me.dgbtabla.Columns("codigoCtaVentas").Visible = False
         Me.dgbtabla.Columns("codigoTipoTermino").Visible = False
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Private Sub seleccionarTerminoPago()
         Dim objTerm As New ClsTerminoPago
         Dim dv As DataView = objTerm.SeleccionarTerminoPago.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -45,7 +46,7 @@
                 Dim dv As DataView = objTerm.BuscarTerminoPago.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
             Catch ex As Exception
                 MsgBox(ex.Message, MsgBoxStyle.Critical, "Validación")
             End Try
@@ -62,7 +63,7 @@
                 Dim dv As DataView = objTerm.BuscarTerminoPagoCode.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
             Catch ex As Exception
                 MsgBox(ex.Message, MsgBoxStyle.Critical, "Validación")
             End Try

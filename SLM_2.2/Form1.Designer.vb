@@ -3230,7 +3230,7 @@ Partial Class Form1
         '
         'banner
         '
-        Me.banner.Animate = UIDC.UI_TitleBanner.Anim.AnimateON
+        Me.banner.Animate = UIDC.UI_TitleBanner.Anim.AnimateOFF
         Me.banner.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.banner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.banner.ButtonMenuActive = UIDC.UI_TitleBanner.Active.ActiveOff
@@ -3243,7 +3243,7 @@ Partial Class Form1
         Me.banner.Font = New System.Drawing.Font("Roboto Medium", 15.0!)
         Me.banner.ForeColor = System.Drawing.Color.White
         Me.banner.Location = New System.Drawing.Point(0, 0)
-        Me.banner.MoveActive = False
+        Me.banner.MoveActive = True
         Me.banner.Name = "banner"
         Me.banner.Padding = New System.Windows.Forms.Padding(15, 12, 0, 0)
         Me.banner.ParentControl = Me
