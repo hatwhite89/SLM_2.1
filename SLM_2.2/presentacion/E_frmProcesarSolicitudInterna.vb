@@ -48,6 +48,7 @@
 
     Private Sub DataGridView3_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellClick
         Try
+            codigo_orden_interna = DataGridView3.Rows(e.RowIndex).Cells(0).Value
             cargarDetalleSolicitudes(DataGridView3.Rows(e.RowIndex).Cells(0).Value)
 
             TextBox1.Text = DataGridView3.Rows(e.RowIndex).Cells(0).Value
@@ -96,13 +97,16 @@
 
     End Sub
     Private Sub CargarDGOCFecha()
+
+        Dim clsOCOB As New clsOrdenInterna
         Try
-            Dim clsOCOB As New clsOrdenInterna
-            Dim dvOC As DataView = clsOCOB.SolicitudesFechaCerradas(DateTimePicker1.Value.Date, DateTimePicker3.Value.Date).DefaultView
+            Dim dvOC As DataView = clsOCOB.SolicitudesFechaCerradas2(DateTimePicker1.Value.Date, DateTimePicker3.Value.Date).DefaultView
             DataGridView2.DataSource = dvOC
         Catch ex As Exception
 
         End Try
+
+
 
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -112,6 +116,7 @@
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
         Try
             cargarDetalleSolicitudes2(DataGridView2.Rows(e.RowIndex).Cells(0).Value)
+            codigo_orden_interna = DataGridView2.Rows(e.RowIndex).Cells(0).Value
         Catch ex As Exception
 
         End Try
@@ -130,4 +135,11 @@
 
     End Sub
 
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        reporteSolicitudInterna.Show()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        reporteSolicitudInterna.Show()
+    End Sub
 End Class

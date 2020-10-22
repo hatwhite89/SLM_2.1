@@ -29,7 +29,7 @@ Partial Class E_frmProducto
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_frmProducto))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtPrecioProducto = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtCantidadMinima = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -80,7 +80,7 @@ Partial Class E_frmProducto
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtPrecioProducto)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.txtCantidadMinima)
         Me.GroupBox1.Controls.Add(Me.Label12)
@@ -106,14 +106,15 @@ Partial Class E_frmProducto
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Generales"
         '
-        'TextBox1
+        'txtPrecioProducto
         '
-        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.txtPrecioProducto.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.Location = New System.Drawing.Point(421, 109)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(240, 20)
-        Me.TextBox1.TabIndex = 29
+        Me.txtPrecioProducto.Location = New System.Drawing.Point(421, 109)
+        Me.txtPrecioProducto.Name = "txtPrecioProducto"
+        Me.txtPrecioProducto.ReadOnly = True
+        Me.txtPrecioProducto.Size = New System.Drawing.Size(240, 20)
+        Me.txtPrecioProducto.TabIndex = 29
         '
         'Label10
         '
@@ -130,6 +131,7 @@ Partial Class E_frmProducto
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtCantidadMinima.Location = New System.Drawing.Point(421, 82)
         Me.txtCantidadMinima.Name = "txtCantidadMinima"
+        Me.txtCantidadMinima.ReadOnly = True
         Me.txtCantidadMinima.Size = New System.Drawing.Size(240, 20)
         Me.txtCantidadMinima.TabIndex = 27
         '
@@ -155,6 +157,7 @@ Partial Class E_frmProducto
         '
         Me.txtModelo.Location = New System.Drawing.Point(27, 166)
         Me.txtModelo.Name = "txtModelo"
+        Me.txtModelo.ReadOnly = True
         Me.txtModelo.Size = New System.Drawing.Size(251, 20)
         Me.txtModelo.TabIndex = 20
         '
@@ -171,6 +174,7 @@ Partial Class E_frmProducto
         '
         Me.txtMarca.Location = New System.Drawing.Point(27, 126)
         Me.txtMarca.Name = "txtMarca"
+        Me.txtMarca.ReadOnly = True
         Me.txtMarca.Size = New System.Drawing.Size(251, 20)
         Me.txtMarca.TabIndex = 18
         '
@@ -261,6 +265,7 @@ Partial Class E_frmProducto
         '
         Me.txtNombre.Location = New System.Drawing.Point(27, 86)
         Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.ReadOnly = True
         Me.txtNombre.Size = New System.Drawing.Size(251, 20)
         Me.txtNombre.TabIndex = 0
         '
@@ -343,7 +348,7 @@ Partial Class E_frmProducto
         '
         Me.txtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtBuscar.Location = New System.Drawing.Point(212, 28)
+        Me.txtBuscar.Location = New System.Drawing.Point(239, 23)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(248, 20)
         Me.txtBuscar.TabIndex = 1
@@ -546,7 +551,7 @@ Partial Class E_frmProducto
     Friend WithEvents cantidad_minima As DataGridViewTextBoxColumn
     Friend WithEvents nombre_unidad_medida As DataGridViewTextBoxColumn
     Friend WithEvents nombre_categoria As DataGridViewTextBoxColumn
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtPrecioProducto As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Button4 As Button
 End Class
