@@ -79,6 +79,45 @@ Public Class E_frmInventario
         alternarColoFilasDatagridview(DataGridView1)
         alternarColoFilasDatagridview(DataGridView2)
         alternarColoFilasDatagridview(DataGridView3)
+        Dim clsA As New clsInventario
+        Try
+
+            Dim dvOC As DataView = clsA.ListarInventarioAlmacenProductoVencido(ComboBox2.SelectedValue.ToString).DefaultView
+
+            DataGridView2.DataSource = dvOC
+
+
+
+
+            sumarData2()
+        Catch ex As Exception
+
+        End Try
+
+
+        Try
+
+            Dim dvOC As DataView = clsA.ListarInventarioAlmacenProductoVencido(ComboBox3.SelectedValue.ToString).DefaultView
+
+            DataGridView3.DataSource = dvOC
+
+
+
+
+            sumarData3()
+        Catch ex As Exception
+
+        End Try
+
+        Try
+
+            Dim dvOC As DataView = clsA.ListarInventarioAlmacen(ComboBox1.SelectedValue.ToString).DefaultView
+
+            DataGridView1.DataSource = dvOC
+            sumarData1()
+        Catch ex As Exception
+
+        End Try
     End Sub
     Private Sub ComboAlmacen()
         Dim clsD As New ClsAlmacen
@@ -249,7 +288,7 @@ Public Class E_frmInventario
 
             Dim dvProveedor As DataView = clsA.ListarInventarioAlmacenSinExistencia(ComboBox3.SelectedValue.ToString).DefaultView
 
-            dvProveedor.RowFilter = String.Format("CONVERT(nombre_producto, System.String) LIKE '%{0}%'", TextBox6.Text)
+            dvProveedor.RowFilter = String.Format("CONVERT(nombre_producto+lote, System.String) LIKE '%{0}%'", TextBox6.Text)
             DataGridView3.DataSource = dvProveedor
         Catch ex As Exception
 
@@ -262,7 +301,7 @@ Public Class E_frmInventario
 
             Dim dvProveedo2 As DataView = clsA.ListarInventarioAlmacenProductoVencido(ComboBox2.SelectedValue.ToString).DefaultView
 
-            dvProveedo2.RowFilter = String.Format("CONVERT(nombre_producto, System.String) LIKE '%{0}%'", TextBox1.Text)
+            dvProveedo2.RowFilter = String.Format("CONVERT(nombre_producto+lote, System.String) LIKE '%{0}%'", TextBox1.Text)
             DataGridView2.DataSource = dvProveedo2
         Catch ex As Exception
 
@@ -278,7 +317,7 @@ Public Class E_frmInventario
             Dim dvProveedo3 As DataView = clsA.ListarInventarioAlmacen(ComboBox1.SelectedValue.ToString).DefaultView
 
 
-            dvProveedo3.RowFilter = String.Format("CONVERT(nombre_producto, System.String) LIKE '%{0}%'", TextBox4.Text)
+            dvProveedo3.RowFilter = String.Format("CONVERT(nombre_producto+lote, System.String) LIKE '%{0}%'", TextBox4.Text)
             DataGridView1.DataSource = dvProveedo3
         Catch ex As Exception
 

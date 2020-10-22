@@ -46,7 +46,7 @@ Partial Class E_frmReporteOC
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "SLM_2._2.Report1.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(57, 89)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.ServerReport.BearerToken = Nothing
+        'Me.ReportViewer1.ServerReport.BearerToken = Nothing
         Me.ReportViewer1.Size = New System.Drawing.Size(396, 246)
         Me.ReportViewer1.TabIndex = 2
         '

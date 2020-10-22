@@ -144,7 +144,7 @@ Partial Class A_ListarCuentas
         Me.ClientSize = New System.Drawing.Size(718, 407)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_ListarCuentas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

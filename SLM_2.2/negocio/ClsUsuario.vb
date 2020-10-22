@@ -389,5 +389,18 @@ Public Class ClsUsuario
 
     End Function
 
+    Public Function RecuperarUsuariosGlobales() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select e.nombreCompleto, d.nombre, d.codigo from Usuario u, Empleados e, Departamento d
+where u.cod_usuario = e.codigo And e.codigoDepto = d.codigo And u.cod_usuario ='" + codigo_usuario + "' ", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
 
 End Class

@@ -260,6 +260,20 @@ where o.id_usuario =u.cod_usuario and o.id_departamento = d.codigo and o.estado 
         End Using
     End Function
 
+    Public Function SolicitudesFechaCerradas2(ByVal inicio As Date, ByVal fin As Date) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select o.id_oi,u.usuario,d.nombre,o.fecha,o.fecha_entrega,o.estado from OrdenInterna o, Usuario u,Departamento d
+where o.id_usuario =u.cod_usuario and o.id_departamento = d.codigo and o.estado = 'Cerrado' and fecha_cerro between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
     Public Function ActualizarEstadoOrdenInterna() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter

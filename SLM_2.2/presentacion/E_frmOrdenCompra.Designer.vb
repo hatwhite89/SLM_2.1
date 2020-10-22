@@ -33,6 +33,7 @@ Partial Class E_frmOrdenCompra
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_frmOrdenCompra))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -121,6 +122,13 @@ Partial Class E_frmOrdenCompra
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.id_oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.usuario_consignado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.usuario_autorizo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.autorizacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.observaciones = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_autorizacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label25 = New System.Windows.Forms.Label()
@@ -143,14 +151,6 @@ Partial Class E_frmOrdenCompra
         Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.id_oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.usuario_consignado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.usuario_autorizo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.autorizacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.observaciones = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fecha_autorizacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -193,6 +193,16 @@ Partial Class E_frmOrdenCompra
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1062, 39)
         Me.Panel1.TabIndex = 0
+        '
+        'Button6
+        '
+        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button6.Location = New System.Drawing.Point(691, 7)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 23)
+        Me.Button6.TabIndex = 77
+        Me.Button6.Text = "Imprimir"
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'Label40
         '
@@ -1158,6 +1168,48 @@ Partial Class E_frmOrdenCompra
         Me.DataGridView2.Size = New System.Drawing.Size(1021, 437)
         Me.DataGridView2.TabIndex = 64
         '
+        'id_oc
+        '
+        Me.id_oc.DataPropertyName = "id_oc"
+        Me.id_oc.HeaderText = "ID OC"
+        Me.id_oc.Name = "id_oc"
+        '
+        'nombreProveedor
+        '
+        Me.nombreProveedor.DataPropertyName = "nombreProveedor"
+        Me.nombreProveedor.HeaderText = "PROVEEDOR"
+        Me.nombreProveedor.Name = "nombreProveedor"
+        '
+        'usuario_consignado
+        '
+        Me.usuario_consignado.DataPropertyName = "usuario_consignado"
+        Me.usuario_consignado.HeaderText = "USUARIO CONSIGNADO"
+        Me.usuario_consignado.Name = "usuario_consignado"
+        '
+        'usuario_autorizo
+        '
+        Me.usuario_autorizo.DataPropertyName = "usuario_autorizo"
+        Me.usuario_autorizo.HeaderText = "USUARIO AUTORIZA"
+        Me.usuario_autorizo.Name = "usuario_autorizo"
+        '
+        'autorizacion
+        '
+        Me.autorizacion.DataPropertyName = "autorizacion"
+        Me.autorizacion.HeaderText = "ESTADO"
+        Me.autorizacion.Name = "autorizacion"
+        '
+        'observaciones
+        '
+        Me.observaciones.DataPropertyName = "observaciones"
+        Me.observaciones.HeaderText = "OBSERVACIONES"
+        Me.observaciones.Name = "observaciones"
+        '
+        'fecha_autorizacion
+        '
+        Me.fecha_autorizacion.DataPropertyName = "fecha_autorizacion"
+        Me.fecha_autorizacion.HeaderText = "FECHA"
+        Me.fecha_autorizacion.Name = "fecha_autorizacion"
+        '
         'Label15
         '
         Me.Label15.AutoSize = True
@@ -1376,58 +1428,6 @@ Partial Class E_frmOrdenCompra
         Me.StatusStrip1.Size = New System.Drawing.Size(1065, 22)
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'id_oc
-        '
-        Me.id_oc.DataPropertyName = "id_oc"
-        Me.id_oc.HeaderText = "ID OC"
-        Me.id_oc.Name = "id_oc"
-        '
-        'nombreProveedor
-        '
-        Me.nombreProveedor.DataPropertyName = "nombreProveedor"
-        Me.nombreProveedor.HeaderText = "PROVEEDOR"
-        Me.nombreProveedor.Name = "nombreProveedor"
-        '
-        'usuario_consignado
-        '
-        Me.usuario_consignado.DataPropertyName = "usuario_consignado"
-        Me.usuario_consignado.HeaderText = "USUARIO CONSIGNADO"
-        Me.usuario_consignado.Name = "usuario_consignado"
-        '
-        'usuario_autorizo
-        '
-        Me.usuario_autorizo.DataPropertyName = "usuario_autorizo"
-        Me.usuario_autorizo.HeaderText = "USUARIO AUTORIZA"
-        Me.usuario_autorizo.Name = "usuario_autorizo"
-        '
-        'autorizacion
-        '
-        Me.autorizacion.DataPropertyName = "autorizacion"
-        Me.autorizacion.HeaderText = "ESTADO"
-        Me.autorizacion.Name = "autorizacion"
-        '
-        'observaciones
-        '
-        Me.observaciones.DataPropertyName = "observaciones"
-        Me.observaciones.HeaderText = "OBSERVACIONES"
-        Me.observaciones.Name = "observaciones"
-        '
-        'fecha_autorizacion
-        '
-        Me.fecha_autorizacion.DataPropertyName = "fecha_autorizacion"
-        Me.fecha_autorizacion.HeaderText = "FECHA"
-        Me.fecha_autorizacion.Name = "fecha_autorizacion"
-        '
-        'Button6
-        '
-        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button6.Location = New System.Drawing.Point(691, 7)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(75, 23)
-        Me.Button6.TabIndex = 77
-        Me.Button6.Text = "Imprimir"
-        Me.Button6.UseVisualStyleBackColor = True
         '
         'E_frmOrdenCompra
         '
