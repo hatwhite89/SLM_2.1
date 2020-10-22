@@ -43,8 +43,6 @@ Public Class ClsFacturaCompra
         End Set
     End Property
 
-
-
     'Total
     Public Property Tota_l As Double
         Get
