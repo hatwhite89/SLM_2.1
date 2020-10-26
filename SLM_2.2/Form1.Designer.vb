@@ -209,6 +209,8 @@ Partial Class Form1
         Me.Button23 = New System.Windows.Forms.Button()
         Me.TabControl5 = New System.Windows.Forms.TabControl()
         Me.TabPage10 = New System.Windows.Forms.TabPage()
+        Me.PictureBox84 = New System.Windows.Forms.PictureBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.PictureBox83 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox62 = New System.Windows.Forms.PictureBox()
@@ -255,8 +257,6 @@ Partial Class Form1
         Me.lblHora = New System.Windows.Forms.Label()
         Me.banner = New UIDC.UI_TitleBanner()
         Me.bntCerrar = New System.Windows.Forms.Button()
-        Me.PictureBox84 = New System.Windows.Forms.PictureBox()
-        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -356,6 +356,7 @@ Partial Class Form1
         Me.Panel4.SuspendLayout()
         Me.TabControl5.SuspendLayout()
         Me.TabPage10.SuspendLayout()
+        CType(Me.PictureBox84, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox83, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox62, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox60, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -378,7 +379,6 @@ Partial Class Form1
         CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox61, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox84, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -2696,6 +2696,31 @@ Partial Class Form1
         Me.TabPage10.Text = "Almacén"
         Me.TabPage10.UseVisualStyleBackColor = True
         '
+        'PictureBox84
+        '
+        Me.PictureBox84.Image = CType(resources.GetObject("PictureBox84.Image"), System.Drawing.Image)
+        Me.PictureBox84.Location = New System.Drawing.Point(396, 112)
+        Me.PictureBox84.Name = "PictureBox84"
+        Me.PictureBox84.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox84.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox84.TabIndex = 41
+        Me.PictureBox84.TabStop = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(396, 163)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(77, 62)
+        Me.Button3.TabIndex = 40
+        Me.Button3.Text = "Adiministrar Solicitud Requisicion"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
         'PictureBox83
         '
         Me.PictureBox83.Image = CType(resources.GetObject("PictureBox83.Image"), System.Drawing.Image)
@@ -3275,7 +3300,7 @@ Partial Class Form1
         Me.banner.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.banner.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.banner.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.banner.Font = New System.Drawing.Font("Roboto Medium", 15.0!)
+        Me.banner.Font = New System.Drawing.Font("Roboto", 15.0!)
         Me.banner.ForeColor = System.Drawing.Color.White
         Me.banner.Location = New System.Drawing.Point(0, 0)
         Me.banner.MoveActive = True
@@ -3304,31 +3329,6 @@ Partial Class Form1
         Me.bntCerrar.Text = "Salir"
         Me.bntCerrar.UseVisualStyleBackColor = False
         '
-        'PictureBox84
-        '
-        Me.PictureBox84.Image = CType(resources.GetObject("PictureBox84.Image"), System.Drawing.Image)
-        Me.PictureBox84.Location = New System.Drawing.Point(396, 112)
-        Me.PictureBox84.Name = "PictureBox84"
-        Me.PictureBox84.Size = New System.Drawing.Size(77, 50)
-        Me.PictureBox84.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox84.TabIndex = 41
-        Me.PictureBox84.TabStop = False
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(396, 163)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(77, 62)
-        Me.Button3.TabIndex = 40
-        Me.Button3.Text = "Adiministrar Solicitud Requisicion"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3352,20 +3352,19 @@ Partial Class Form1
         Me.Controls.Add(Me.lblMiUser)
         Me.Controls.Add(Me.btnContabilidad)
         Me.Controls.Add(Me.StatusStrip1)
+        Me.Controls.Add(Me.PanelFactura)
         Me.Controls.Add(Me.PanelAlmacen)
         Me.Controls.Add(Me.PanelTalentoHumano)
         Me.Controls.Add(Me.panelMenu)
         Me.Controls.Add(Me.PanelSistema)
         Me.Controls.Add(Me.PanelLab)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.PanelFactura)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Menú Principal"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelMenu.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
@@ -3471,6 +3470,7 @@ Partial Class Form1
         Me.Panel4.PerformLayout()
         Me.TabControl5.ResumeLayout(False)
         Me.TabPage10.ResumeLayout(False)
+        CType(Me.PictureBox84, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox83, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox62, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox60, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3493,7 +3493,6 @@ Partial Class Form1
         CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox61, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox84, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

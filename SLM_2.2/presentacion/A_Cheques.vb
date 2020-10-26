@@ -3,8 +3,6 @@ Imports System.Text
 Imports System.Globalization
 Public Class A_Cheques
 
-
-
     'Objeto Cheques
     Dim cheque As New ClsCheques
     Dim formap As New ClsFormaPago

@@ -186,8 +186,24 @@
 
                 factura.Cod_Factura = Convert.ToInt32(codfactura)
                 factura.Pendiente_ = Convert.ToDouble(resultadof)
+
+                'cambio de estado
+                'If resultadof = 0 Then
+                '    factura.Estado_ = "pagada"
+                'Else
+                '    factura.Estado_ = "pendiente"
+                'End If
+
+
                 factura.SaldoPendiente()
                 'MsgBox("Ya actualizo")
+
+
+
+
+
+
+
 
                 '.........................................................
 
