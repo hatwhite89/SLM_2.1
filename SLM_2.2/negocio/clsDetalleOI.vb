@@ -149,7 +149,7 @@ Public Class clsDetalleOI
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select d.id_detalle_oi,p.id_producto,p.nombre_producto,d.cantidad_solicitada 
+        Using da As New SqlDataAdapter("select d.id_detalle_oi,p.id_producto,p.nombre_producto,d.cantidad_solicitada ,d.cantidad_recibida
 from 
 OrdenInterna o, 
 detalleOrdenInterna d, 

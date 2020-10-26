@@ -261,4 +261,19 @@ where fecha_salida between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.To
         sqlcom.Connection = New ClsConnection().getConexion
         Return sqlcom.ExecuteScalar
     End Function
+
+    Public Function RecuperarDatosOrdenInterna(ByVal inicio As String) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select e.nombreCompleto,u.usuario,d.nombre from OrdenInterna o, Usuario u,Empleados e, Departamento d
+where o.id_usuario =u.cod_usuario and u.codigo = e.codigo and o.id_departamento = d.codigo
+and o.id_oi ='" + inicio + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 End Class

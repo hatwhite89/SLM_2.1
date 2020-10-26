@@ -8,7 +8,7 @@ Public Class E_frmSalida
     End Sub
 
     Private Sub E_frmSalida_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        txtEntrega.Text = nombre_usurio
 
         alternarColoFilasDatagridview(DataGridView1)
         alternarColoFilasDatagridview(DataGridView2)
@@ -32,6 +32,22 @@ Public Class E_frmSalida
         Dim clsDeOC As New clsDetalleOI
         Dim dvOC As DataView = clsDeOC.listarOrdenesInternasConParametro(cod).DefaultView
         DataGridView1.DataSource = dvOC
+
+        Try
+            Dim objP As New ClsSalidaAlmacen
+
+            Dim dt As New DataTable
+            dt = objP.RecuperarDatosOrdenInterna(txtCodOI.Text)
+            Dim row As DataRow = dt.Rows(0)
+            txtAreaSolicitante.Text = CStr(row("nombre"))
+            txtPersonaRecibe.Text = CStr(row("nombreCompleto"))
+            txtAlmacenRecibe.Text = CStr(row("usuario"))
+
+
+        Catch ex As Exception
+
+
+        End Try
     End Sub
 
     Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles txtCodOI.TextChanged
@@ -47,7 +63,16 @@ Public Class E_frmSalida
     End Sub
 
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+        Try
+            Dim clsOCOB As New ClsSalidaAlmacen
+            Dim dvOC As DataView = clsOCOB.ListarSalidaInventarioFecha(DateTimePicker1.Value.Date, DateTimePicker3.Value.Date).DefaultView
 
+
+            dvOC.RowFilter = String.Format("CONVERT(producto, System.String) LIKE '%{0}%'", TextBox2.Text)
+            DataGridView3.DataSource = dvOC
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
@@ -182,12 +207,18 @@ where o.id_departamento=d.codigo and o.id_usuario = u.cod_usuario and o.id_oi='1
 
             If clsS.RegistrarSalidaAlmacen() = "1" Then
                 MsgBox("salida registrada exitosamente")
+                txtCantidadEntregada.Text = ""
             End If
 
             CargarDataOI(txtCodOI.Text)
+            Dim clsOCOB As New clsDetalleOI
+            Dim dvOC As DataView = clsOCOB.listarInventarioExistencias(-1).DefaultView
+            DataGridView2.DataSource = dvOC
         Catch ex As Exception
 
         End Try
+
+
     End Sub
 
     Function GridAExcel(ByVal miDataGridView As DataGridView) As Boolean

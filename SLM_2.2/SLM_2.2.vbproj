@@ -1343,6 +1343,12 @@
     <Compile Include="presentacion\prueba.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\reporteOrdenCompra.Designer.vb">
+      <DependentUpon>reporteOrdenCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporteOrdenCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\reporteRequisicion.Designer.vb">
       <DependentUpon>reporteRequisicion.vb</DependentUpon>
     </Compile>
@@ -1354,6 +1360,12 @@
     </Compile>
     <Compile Include="Reportes\reporteSolicitudInterna.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt_ordenCompra.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ordenCompra.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rpt_solicitudInterna.vb">
       <AutoGen>True</AutoGen>
@@ -1940,11 +1952,18 @@
       <DependentUpon>prueba.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\reporteOrdenCompra.resx">
+      <DependentUpon>reporteOrdenCompra.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reporteRequisicion.resx">
       <DependentUpon>reporteRequisicion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reporteSolicitudInterna.resx">
       <DependentUpon>reporteSolicitudInterna.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_ordenCompra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ordenCompra.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpt_solicitudInterna.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

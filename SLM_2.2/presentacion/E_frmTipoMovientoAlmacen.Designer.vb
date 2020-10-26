@@ -152,7 +152,7 @@ Partial Class E_frmTipoMovientoAlmacen
         'Button3
         '
         Me.Button3.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button3.Location = New System.Drawing.Point(613, 3)
+        Me.Button3.Location = New System.Drawing.Point(625, 3)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 5
@@ -162,7 +162,7 @@ Partial Class E_frmTipoMovientoAlmacen
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button2.Location = New System.Drawing.Point(516, 3)
+        Me.Button2.Location = New System.Drawing.Point(544, 3)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 4
@@ -172,7 +172,7 @@ Partial Class E_frmTipoMovientoAlmacen
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Location = New System.Drawing.Point(409, 3)
+        Me.Button1.Location = New System.Drawing.Point(453, 3)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 3
