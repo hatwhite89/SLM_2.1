@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class clsEntradaAlmacen
-    Dim id_producto, id_almacen, id_entrada As Integer
+    Dim id_producto, id_almacen, id_entrada, id_oc As Integer
     Dim cantidad, precio As Double
     Dim lote, descrip As String
     Dim fecha_vence As Date
@@ -78,6 +78,15 @@ Public Class clsEntradaAlmacen
         End Set
     End Property
 
+    Public Property Id_oc1 As Integer
+        Get
+            Return id_oc
+        End Get
+        Set(value As Integer)
+            id_oc = value
+        End Set
+    End Property
+
     Public Function RegistrarEntradaAlmacen() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -123,6 +132,11 @@ Public Class clsEntradaAlmacen
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_oc"
+        sqlpar.Value = Id_oc1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -161,6 +175,11 @@ Public Class clsEntradaAlmacen
         sqlpar.Value = CantidadProducto
         sqlcom.Parameters.Add(sqlpar)
 
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "fecha_vencimiento"
+        sqlpar.Value = FechaVencimiento
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "lote"
@@ -216,7 +235,7 @@ Public Class clsEntradaAlmacen
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select e.lote,p.id_producto,p.nombre_producto,e.cantidad,e.precio_unitario,e.fecha_vencimiento, e.id_entrada from EntradaAlmacen e, ProductoAlmacen p
+        Using da As New SqlDataAdapter("select e.lote,p.id_producto,p.nombre_producto,e.cantidad,e.precio_unitario,e.fecha_vencimiento, e.id_entrada,e.id_oc from EntradaAlmacen e, ProductoAlmacen p
 where e.id_producto = p.id_producto and e.fecha_registro between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "'", cn)
             Dim dt As New DataTable
             da.Fill(dt)

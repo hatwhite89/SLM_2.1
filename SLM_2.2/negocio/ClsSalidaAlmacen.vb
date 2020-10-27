@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ClsSalidaAlmacen
-    Dim id_producto, id_oi, id_detalle_oi, id_entrada As Integer
+    Dim id_producto, id_oi, id_detalle_oi, id_entrada, id_entrada_almacen As Integer
     Dim cantidad As Double
     Dim lote, descrip, tipo_movimiento, producto, persona_recibe, id_almacen, persona_entrega, id_departamento As String
     Dim fecha_vence As Date
@@ -134,6 +134,15 @@ Public Class ClsSalidaAlmacen
         End Get
         Set(value As Integer)
             id_entrada = value
+        End Set
+    End Property
+
+    Public Property Id_entrada_almacen1 As Integer
+        Get
+            Return id_entrada_almacen
+        End Get
+        Set(value As Integer)
+            id_entrada_almacen = value
         End Set
     End Property
 
@@ -275,5 +284,67 @@ and o.id_oi ='" + inicio + "'", cn)
             da.Fill(dt)
             Return dt
         End Using
+    End Function
+
+    Public Function RegistrarSalidaAlmacen2() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slm_OtrasSalidas"
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_entrada"
+        sqlpar.Value = Id_entrada_almacen1
+        sqlcom.Parameters.Add(sqlpar)
+
+
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cantidad"
+        sqlpar.Value = CantidadProducto
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "usuario"
+        sqlpar.Value = Persona_recibe1
+        sqlcom.Parameters.Add(sqlpar)
+
+
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "observaciones"
+        sqlpar.Value = Descripcion
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "tipomovimiento"
+        sqlpar.Value = Tipo_movimiento1
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
     End Function
 End Class

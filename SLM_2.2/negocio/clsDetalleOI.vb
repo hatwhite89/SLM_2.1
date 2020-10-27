@@ -234,4 +234,21 @@ where id_oi ='" + codigo + "'", cn)
             Return dt
         End Using
     End Function
+
+    Public Function CargarInventario() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select e.id_entrada, p.nombre_producto,e.lote,e.existencia,e.fecha_vencimiento,a.nombre_almacen
+from EntradaAlmacen e, ProductoAlmacen p,Almacen a
+where e.id_producto = p.id_producto
+and a.id_almacen =e.id_almacen
+and e.existencia > 0 ", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 End Class
