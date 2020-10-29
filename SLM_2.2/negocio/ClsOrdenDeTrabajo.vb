@@ -352,6 +352,26 @@ Public Class ClsOrdenDeTrabajo
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_sede" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cod_sede_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "entregarMedico" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = entregarMedico_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "entregarPaciente" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = entregarPaciente_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "enviadaEmail" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = enviadaEmail_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -501,6 +521,83 @@ Public Class ClsOrdenDeTrabajo
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "enUsuario" 'nombre campo en el procedimiento almacenado 
         sqlpar.Value = enUsuario_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+    Public Function ModificarOrdenDeTrabajoEstadoPendienteMuestra() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slmModificarOrdenDeTrabajoEstadoPendienteMuestra"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_orden_trabajo" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cod_orden_trabajo_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "pmUsuario" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = pmUsuario_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
+    Public Function ModificarOrdenDeTrabajoEstadoNoProcesado() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slmModificarOrdenDeTrabajoEstadoNoProcesado"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_orden_trabajo" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cod_orden_trabajo_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "npUsuario" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = npUsuario_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

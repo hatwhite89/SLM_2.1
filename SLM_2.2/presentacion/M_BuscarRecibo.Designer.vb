@@ -31,12 +31,20 @@ Partial Class M_BuscarRecibo
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.txtReferenciaB = New System.Windows.Forms.TextBox()
         Me.txtNumeroB = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.lblReferencia)
         Me.GroupBox1.Controls.Add(Me.lblNumero)
         Me.GroupBox1.Controls.Add(Me.lblcantidad)
@@ -133,6 +141,42 @@ Partial Class M_BuscarRecibo
         Me.txtNumeroB.Size = New System.Drawing.Size(192, 22)
         Me.txtNumeroB.TabIndex = 0
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(31, 59)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(44, 17)
+        Me.Label1.TabIndex = 124
+        Me.Label1.Text = "Suma"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(327, 59)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(92, 17)
+        Me.Label2.TabIndex = 125
+        Me.Label2.Text = "Fecha Desde"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(501, 59)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(88, 17)
+        Me.Label3.TabIndex = 126
+        Me.Label3.Text = "Fecha Hasta"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(178, 59)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(80, 17)
+        Me.Label4.TabIndex = 123
+        Me.Label4.Text = "Comentario"
+        '
         'M_BuscarRecibo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -161,4 +205,8 @@ Partial Class M_BuscarRecibo
     Friend WithEvents lblNumero As Label
     Friend WithEvents lblcantidad As Label
     Friend WithEvents lbltotal As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
 End Class
