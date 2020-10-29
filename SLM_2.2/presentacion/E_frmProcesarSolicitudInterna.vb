@@ -48,16 +48,17 @@
 
     Private Sub DataGridView3_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellClick
         Try
+            codigo_orden_interna = DataGridView3.Rows(e.RowIndex).Cells(0).Value
             cargarDetalleSolicitudes(DataGridView3.Rows(e.RowIndex).Cells(0).Value)
 
             TextBox1.Text = DataGridView3.Rows(e.RowIndex).Cells(0).Value
 
-            If DataGridView3.Rows(e.RowIndex).Cells(6).Value.ToString = "creado" Then
+            If DataGridView3.Rows(e.RowIndex).Cells(5).Value.ToString = "creado" Then
                 RadioButton1.Checked = True
                 RadioButton2.Checked = False
                 RadioButton3.Checked = False
             End If
-            If DataGridView3.Rows(e.RowIndex).Cells(6).Value.ToString = "Procesado" Then
+            If DataGridView3.Rows(e.RowIndex).Cells(5).Value.ToString = "Procesado" Then
                 RadioButton1.Checked = False
                 RadioButton2.Checked = True
                 RadioButton3.Checked = False
@@ -84,7 +85,7 @@
                 .Id_oi1 = TextBox1.Text
                 .Estado1 = estado
             End With
-            If clsOI.ActualizarEstadoOrdenInterna() = "1" Then
+            If clsOI.ActualizarEstado2OrdenInterna() = "1" Then
                 MsgBox("Se actualizo el estado a " + estado)
                 DataGridView3.Columns.Clear()
                 CargarMisSolicitudes()
@@ -96,13 +97,16 @@
 
     End Sub
     Private Sub CargarDGOCFecha()
+
+        Dim clsOCOB As New clsOrdenInterna
         Try
-            Dim clsOCOB As New clsOrdenInterna
-            Dim dvOC As DataView = clsOCOB.SolicitudesFechaCerradas(DateTimePicker1.Value.Date, DateTimePicker3.Value.Date).DefaultView
+            Dim dvOC As DataView = clsOCOB.SolicitudesFechaCerradas2(DateTimePicker1.Value.Date, DateTimePicker3.Value.Date).DefaultView
             DataGridView2.DataSource = dvOC
         Catch ex As Exception
 
         End Try
+
+
 
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -110,7 +114,13 @@
     End Sub
 
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
-        cargarDetalleSolicitudes2(DataGridView2.Rows(e.RowIndex).Cells(0).Value)
+        Try
+            cargarDetalleSolicitudes2(DataGridView2.Rows(e.RowIndex).Cells(0).Value)
+            codigo_orden_interna = DataGridView2.Rows(e.RowIndex).Cells(0).Value
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
@@ -123,5 +133,13 @@
 
     Private Sub GroupBox5_Enter(sender As Object, e As EventArgs) Handles GroupBox5.Enter
 
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        reporteSolicitudInterna.Show()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        reporteSolicitudInterna.Show()
     End Sub
 End Class

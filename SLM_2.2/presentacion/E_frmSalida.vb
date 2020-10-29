@@ -8,11 +8,32 @@ Public Class E_frmSalida
     End Sub
 
     Private Sub E_frmSalida_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        txtEntrega.Text = nombre_usurio
 
         alternarColoFilasDatagridview(DataGridView1)
         alternarColoFilasDatagridview(DataGridView2)
         alternarColoFilasDatagridview(DataGridView3)
+        alternarColoFilasDatagridview(DataGridView4)
+        Try
+            Dim clsDeOC As New clsDetalleOI
+            Dim dvOC As DataView = clsDeOC.CargarInventario().DefaultView
+            DataGridView4.DataSource = dvOC
+        Catch ex As Exception
+
+        End Try
+
+        'CARGAR EL COMBO DE TIPO DE MOVIMIENTO
+        Dim clsD As New clsTipoMovimiento
+
+        Dim ds As New DataTable
+
+
+        ds.Load(clsD.RecuperarMovimientos())
+
+        ComboBox1.DataSource = ds
+        ComboBox1.DisplayMember = "nombre"
+        ComboBox1.ValueMember = "id_tipo_movimiento"
+
 
     End Sub
     Private Sub CargarDGOCFecha()
@@ -27,10 +48,32 @@ Public Class E_frmSalida
     End Sub
     Private Sub CargarDataOI(ByVal cod)
 
+        Try
+            Dim clsDeOC As New clsDetalleOI
+            Dim dvOC As DataView = clsDeOC.listarOrdenesInternasConParametro(cod).DefaultView
+            DataGridView1.DataSource = dvOC
+        Catch ex As Exception
 
-        Dim clsDeOC As New clsDetalleOI
-        Dim dvOC As DataView = clsDeOC.listarOrdenesInternasConParametro(cod).DefaultView
-        DataGridView1.DataSource = dvOC
+        End Try
+
+
+
+
+        Try
+            Dim objP As New ClsSalidaAlmacen
+
+            Dim dt As New DataTable
+            dt = objP.RecuperarDatosOrdenInterna(txtCodOI.Text)
+            Dim row As DataRow = dt.Rows(0)
+            txtAreaSolicitante.Text = CStr(row("nombre"))
+            txtPersonaRecibe.Text = CStr(row("nombreCompleto"))
+            txtAlmacenRecibe.Text = CStr(row("usuario"))
+
+
+        Catch ex As Exception
+
+
+        End Try
     End Sub
 
     Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles txtCodOI.TextChanged
@@ -46,7 +89,16 @@ Public Class E_frmSalida
     End Sub
 
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+        Try
+            Dim clsOCOB As New ClsSalidaAlmacen
+            Dim dvOC As DataView = clsOCOB.ListarSalidaInventarioFecha(DateTimePicker1.Value.Date, DateTimePicker3.Value.Date).DefaultView
 
+
+            dvOC.RowFilter = String.Format("CONVERT(producto, System.String) LIKE '%{0}%'", TextBox2.Text)
+            DataGridView3.DataSource = dvOC
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
@@ -95,7 +147,64 @@ Public Class E_frmSalida
 
     End Sub
 
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        Try
+            Dim clsDeOC As New clsDetalleOI
+            Dim dvOC As DataView = clsDeOC.CargarInventario().DefaultView
 
+
+            dvOC.RowFilter = String.Format("CONVERT(nombre_producto+lote+nombre_almacen, System.String) LIKE '%{0}%'", txtBuscar.Text)
+            DataGridView4.DataSource = dvOC
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub DataGridView4_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView4.CellClick
+        Try
+            TextBox11.Text = DataGridView4.Rows(e.RowIndex).Cells(0).Value
+            TextBox3.Text = DataGridView4.Rows(e.RowIndex).Cells(1).Value
+            TextBox9.Text = DataGridView4.Rows(e.RowIndex).Cells(5).Value
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        'Registras otras salidas del almacen
+        Dim cls As New ClsSalidaAlmacen
+
+        With cls
+            .Id_entrada_almacen1 = TextBox11.Text
+            .CantidadProducto = TextBox12.Text
+            .Persona_recibe1 = nombre_usurio
+            .Descripcion = RichTextBox2.Text
+            .Tipo_movimiento1 = ComboBox1.SelectedValue
+        End With
+        If cls.RegistrarSalidaAlmacen2() = "1" Then
+            MsgBox("Se registro una nueva salida del almacen")
+            Try
+                Dim clsDeOC As New clsDetalleOI
+                Dim dvOC As DataView = clsDeOC.CargarInventario().DefaultView
+                DataGridView4.DataSource = dvOC
+            Catch ex As Exception
+
+            End Try
+        End If
+
+        Try
+            TextBox11.Text = ""
+            TextBox3.Text = ""
+            TextBox9.Text = ""
+            TextBox12.Text = ""
+
+        Catch ex As Exception
+
+        End Try
+
+
+    End Sub
 
     Private Sub cargarVariables()
         Dim clsC As New ClsConnection
@@ -181,12 +290,18 @@ where o.id_departamento=d.codigo and o.id_usuario = u.cod_usuario and o.id_oi='1
 
             If clsS.RegistrarSalidaAlmacen() = "1" Then
                 MsgBox("salida registrada exitosamente")
+                txtCantidadEntregada.Text = ""
             End If
 
             CargarDataOI(txtCodOI.Text)
+            Dim clsOCOB As New clsDetalleOI
+            Dim dvOC As DataView = clsOCOB.listarInventarioExistencias(-1).DefaultView
+            DataGridView2.DataSource = dvOC
         Catch ex As Exception
 
         End Try
+
+
     End Sub
 
     Function GridAExcel(ByVal miDataGridView As DataGridView) As Boolean

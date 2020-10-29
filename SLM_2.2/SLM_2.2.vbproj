@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80A97C69-33C1-4D76-A4FF-61E3B54BEE03}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SLM_2._2.My.MyApplication</StartupObject>
+    <StartupObject>SLM_2._2.M_InicioSesion</StartupObject>
     <RootNamespace>SLM_2._2</RootNamespace>
     <AssemblyName>0</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -81,6 +81,30 @@
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\..\..\..\Downloads\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Design.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebDesign.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -173,6 +197,7 @@
     <Compile Include="negocio\ClsAsientoContable.vb" />
     <Compile Include="negocio\ClsBitacora.vb" />
     <Compile Include="negocio\ClsCAI.vb" />
+    <Compile Include="negocio\clsCalificicacionProveedores.vb" />
     <Compile Include="negocio\ClsCandidatos.vb" />
     <Compile Include="negocio\ClsCapacitaciones.vb" />
     <Compile Include="negocio\ClsCategoriaroducto.vb" />
@@ -227,11 +252,13 @@
     <Compile Include="negocio\ClsPromociones.vb" />
     <Compile Include="negocio\ClsPuestoTrabajo.vb" />
     <Compile Include="negocio\ClsRecibo.vb" />
+    <Compile Include="negocio\ClsRequisicion.vb" />
     <Compile Include="negocio\ClsSalidaAlmacen.vb" />
     <Compile Include="negocio\ClsServidorCorreo.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
     <Compile Include="negocio\ClsTipoDeducciones.vb" />
+    <Compile Include="negocio\clsTipoMovimiento.vb" />
     <Compile Include="negocio\ClsTipoPermiso.vb" />
     <Compile Include="negocio\ClsUnidad.vb" />
     <Compile Include="negocio\ClsDetallePromociones.vb" />
@@ -706,6 +733,12 @@
     <Compile Include="presentacion\E_frmProveedorOC.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frmReporteOC.Designer.vb">
+      <DependentUpon>E_frmReporteOC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmReporteOC.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_frmSalida.Designer.vb">
       <DependentUpon>E_frmSalida.vb</DependentUpon>
     </Compile>
@@ -844,6 +877,12 @@
     <Compile Include="presentacion\A_FormaPago.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\frmAdministrarRequisiciones.Designer.vb">
+      <DependentUpon>frmAdministrarRequisiciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\frmAdministrarRequisiciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\frmEntrada.Designer.vb">
       <DependentUpon>frmEntrada.vb</DependentUpon>
     </Compile>
@@ -860,6 +899,12 @@
       <DependentUpon>frmMovimientoAlmacen.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\frmMovimientoAlmacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\frmSolicitudNuevoProducto.Designer.vb">
+      <DependentUpon>frmSolicitudNuevoProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\frmSolicitudNuevoProducto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_Area.Designer.vb">
@@ -1306,6 +1351,51 @@
     <Compile Include="presentacion\prueba.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\reporteOrdenCompra.Designer.vb">
+      <DependentUpon>reporteOrdenCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporteOrdenCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\reporteRequisicion.Designer.vb">
+      <DependentUpon>reporteRequisicion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporteRequisicion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\reporteSolicitudInterna.Designer.vb">
+      <DependentUpon>reporteSolicitudInterna.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporteSolicitudInterna.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt_ordenCompra.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ordenCompra.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt_solicitudInterna.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_solicitudInterna.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rpt_Requisicion.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Requisicion.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="slm_testDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>slm_testDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="slm_testDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>slm_testDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="VistaCheque.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1562,6 +1652,9 @@
     <EmbeddedResource Include="presentacion\E_frmProveedorOC.resx">
       <DependentUpon>E_frmProveedorOC.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmReporteOC.resx">
+      <DependentUpon>E_frmReporteOC.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmSalida.resx">
       <DependentUpon>E_frmSalida.vb</DependentUpon>
     </EmbeddedResource>
@@ -1628,6 +1721,9 @@
     <EmbeddedResource Include="presentacion\Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\frmAdministrarRequisiciones.resx">
+      <DependentUpon>frmAdministrarRequisiciones.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\frmEntrada.resx">
       <DependentUpon>frmEntrada.vb</DependentUpon>
     </EmbeddedResource>
@@ -1636,6 +1732,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\frmMovimientoAlmacen.resx">
       <DependentUpon>frmMovimientoAlmacen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\frmSolicitudNuevoProducto.resx">
+      <DependentUpon>frmSolicitudNuevoProducto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Area.resx">
       <DependentUpon>M_Area.vb</DependentUpon>
@@ -1864,6 +1963,28 @@
     <EmbeddedResource Include="presentacion\prueba.resx">
       <DependentUpon>prueba.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\reporteOrdenCompra.resx">
+      <DependentUpon>reporteOrdenCompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporteRequisicion.resx">
+      <DependentUpon>reporteRequisicion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporteSolicitudInterna.resx">
+      <DependentUpon>reporteSolicitudInterna.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_ordenCompra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ordenCompra.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_solicitudInterna.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_solicitudInterna.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rpt_Requisicion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Requisicion.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="VistaCheque.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>VistaCheque.vb</LastGenOutput>
@@ -1880,6 +2001,28 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="slm_testDataSet.xsc">
+      <DependentUpon>slm_testDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="slm_testDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>slm_testDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="slm_testDataSet.xss">
+      <DependentUpon>slm_testDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="slm_testDataSet1.xsc">
+      <DependentUpon>slm_testDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="slm_testDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>slm_testDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="slm_testDataSet1.xss">
+      <DependentUpon>slm_testDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -1938,6 +2081,20 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="UIDC.dll" />
     <Content Include="índice%281%29.ico" />
     <Content Include="índice.ico" />

@@ -13,6 +13,7 @@
 
     Private Sub E_frmSolicitudInternaAlmacen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtCantidadRequerida.Text = "0"
+        CargarDatosGlobales()
         CargarComboSedes()
         CargarAreas()
         txtSolicitante.Text = nombre_usurio
@@ -20,6 +21,7 @@
         alternarColoFilasDatagridview(DataGridView2)
         alternarColoFilasDatagridview(DataGridView3)
         alternarColoFilasDatagridview(DataGridView4)
+        cmbDepartamento.Text = departamento_global
     End Sub
 
     Private Sub CargarComboSedes()
@@ -29,9 +31,6 @@
 
         ds.Load(clsD.RecuperarSedeOrdenIntera)
 
-        cmbSede.DataSource = ds
-        cmbSede.DisplayMember = "nombre"
-        cmbSede.ValueMember = "codigo"
     End Sub
 
     Private Sub CargarAreas()
@@ -41,9 +40,7 @@
 
         ds.Load(clsD.RecuperarAreaOrdenInterna)
 
-        cmbDepartamento.DataSource = ds
-        cmbDepartamento.DisplayMember = "nombre"
-        cmbDepartamento.ValueMember = "codigo"
+
     End Sub
 
     Private Sub CargarDGOC()
@@ -53,7 +50,6 @@
         DataGridView1.DataSource = dv2
     End Sub
     Private Sub CargarDGOI()
-        DataGridView2.Columns.Clear()
 
         Dim clsOI As New clsDetalleOI
         Dim dv4 As New DataView
@@ -122,8 +118,8 @@
 
             With clsOI
                 .Fecha_entrega1 = DateTimePicker1.Value
-                .Id_departamento1 = Integer.Parse(cmbDepartamento.SelectedValue)
-                .Id_entrega1 = Integer.Parse(cmbSede.SelectedValue)
+                .Id_departamento1 = id_departamento_global
+                .Id_entrega1 = "0"
                 .Id_oi1 = Integer.Parse(txtCodSolicitud.Text)
                 .Id_solicitante1 = Integer.Parse(codigo_usuario)
                 .Estado1 = "creado"
@@ -131,13 +127,13 @@
             End With
 
             If clsOI.ActualizarOrdenInterna = "1" Then
-                DataGridView2.Columns.Clear()
+
 
 
                 Dim dv4 As New DataView
                 dv4 = clsD.listarOrdenesInternasConParametro(txtCodSolicitud.Text).DefaultView
                 DataGridView2.DataSource = dv4
-                txtCantidadRequerida.Text = "0"
+                txtCantidadRequerida.Text = "1"
             End If
 
         End If
@@ -145,9 +141,21 @@
 
 
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+
+
+
         CrearOI()
         CargarDGOC()
-        txtCantidadRequerida.Text = 1
+        txtCantidadRequerida.Text = "1"
+        txtProducto.Text = ""
+        Button4.Enabled = True
+        txtAgregarInventario.Enabled = True
+        Dim clsD As New clsDetalleOI
+        Dim dv4 As New DataView
+        dv4 = clsD.listarOrdenesInternasConParametro(txtCodSolicitud.Text).DefaultView
+        DataGridView2.DataSource = dv4
+        txtCantidadRequerida.Text = "1"
+
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -237,6 +245,20 @@
         End Try
         Return True
     End Function
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim cls As New clsOrdenInterna
+
+        With cls
+            .Id_oi1 = txtCodSolicitud.Text
+        End With
+        If cls.ActualizarEstadoOrdenInterna() = "1" Then
+            MsgBox("Se ha enviado la solicitud al almacen")
+        End If
+        Button4.Enabled = False
+        txtAgregarInventario.Enabled = False
+    End Sub
+
     Private Sub DataGridView3_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellClick
         Try
             cargarDetalleSolicitudes(DataGridView3.Rows(e.RowIndex).Cells(0).Value.ToString)

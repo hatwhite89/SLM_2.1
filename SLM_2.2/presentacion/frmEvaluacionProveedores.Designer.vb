@@ -25,39 +25,48 @@ Partial Class frmEvaluacionProveedores
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEvaluacionProveedores))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.e5 = New System.Windows.Forms.RadioButton()
-        Me.e3 = New System.Windows.Forms.RadioButton()
-        Me.e4 = New System.Windows.Forms.RadioButton()
-        Me.e2 = New System.Windows.Forms.RadioButton()
-        Me.e1 = New System.Windows.Forms.RadioButton()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.d5 = New System.Windows.Forms.RadioButton()
-        Me.d3 = New System.Windows.Forms.RadioButton()
-        Me.d4 = New System.Windows.Forms.RadioButton()
-        Me.d2 = New System.Windows.Forms.RadioButton()
-        Me.d1 = New System.Windows.Forms.RadioButton()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.c5 = New System.Windows.Forms.RadioButton()
-        Me.c3 = New System.Windows.Forms.RadioButton()
-        Me.c4 = New System.Windows.Forms.RadioButton()
-        Me.c2 = New System.Windows.Forms.RadioButton()
-        Me.c1 = New System.Windows.Forms.RadioButton()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.b5 = New System.Windows.Forms.RadioButton()
-        Me.b3 = New System.Windows.Forms.RadioButton()
-        Me.b4 = New System.Windows.Forms.RadioButton()
-        Me.b2 = New System.Windows.Forms.RadioButton()
-        Me.b1 = New System.Windows.Forms.RadioButton()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.a5 = New System.Windows.Forms.RadioButton()
-        Me.a3 = New System.Windows.Forms.RadioButton()
-        Me.a4 = New System.Windows.Forms.RadioButton()
-        Me.a2 = New System.Windows.Forms.RadioButton()
-        Me.a1 = New System.Windows.Forms.RadioButton()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -65,24 +74,8 @@ Partial Class frmEvaluacionProveedores
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.encuesta1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.encuesta3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -90,21 +83,56 @@ Partial Class frmEvaluacionProveedores
         Me.encuesta5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.encuesta2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.promedio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtcal1 = New System.Windows.Forms.ComboBox()
+        Me.txtcal2 = New System.Windows.Forms.ComboBox()
+        Me.txtcal3 = New System.Windows.Forms.ComboBox()
+        Me.txtcal4 = New System.Windows.Forms.ComboBox()
+        Me.txtcal5 = New System.Windows.Forms.ComboBox()
+        Me.txtcal6 = New System.Windows.Forms.ComboBox()
+        Me.txtcal7 = New System.Windows.Forms.ComboBox()
+        Me.txtcal8 = New System.Windows.Forms.ComboBox()
+        Me.txtcal9 = New System.Windows.Forms.ComboBox()
+        Me.txtcal10 = New System.Windows.Forms.ComboBox()
+        Me.txtcal11 = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.Panel16.SuspendLayout()
+        Me.Panel14.SuspendLayout()
+        Me.Panel13.SuspendLayout()
+        Me.Panel12.SuspendLayout()
+        Me.Panel15.SuspendLayout()
+        Me.Panel10.SuspendLayout()
+        Me.Panel9.SuspendLayout()
+        Me.Panel8.SuspendLayout()
+        Me.Panel7.SuspendLayout()
+        Me.Panel11.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        Me.Panel6.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -117,26 +145,115 @@ Partial Class frmEvaluacionProveedores
         Me.TabControl1.Location = New System.Drawing.Point(12, 48)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(776, 474)
+        Me.TabControl1.Size = New System.Drawing.Size(776, 614)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Controls.Add(Me.GroupBox5)
-        Me.TabPage1.Controls.Add(Me.GroupBox4)
         Me.TabPage1.Controls.Add(Me.GroupBox3)
-        Me.TabPage1.Controls.Add(Me.GroupBox2)
+        Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.TextBox2)
         Me.TabPage1.Controls.Add(Me.Panel2)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(768, 448)
+        Me.TabPage1.Size = New System.Drawing.Size(768, 588)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Evaluar"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox3.Controls.Add(Me.Label37)
+        Me.GroupBox3.Controls.Add(Me.Label36)
+        Me.GroupBox3.Controls.Add(Me.Label19)
+        Me.GroupBox3.Controls.Add(Me.Label18)
+        Me.GroupBox3.Controls.Add(Me.Label17)
+        Me.GroupBox3.Controls.Add(Me.Label16)
+        Me.GroupBox3.Controls.Add(Me.Label15)
+        Me.GroupBox3.Controls.Add(Me.Label14)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 97)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(753, 84)
+        Me.GroupBox3.TabIndex = 11
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "CRITERIO DE CALIFICACIÓN"
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(678, 15)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(13, 13)
+        Me.Label37.TabIndex = 7
+        Me.Label37.Text = "0"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(517, 16)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(140, 13)
+        Me.Label36.TabIndex = 6
+        Me.Label36.Text = "PORCENTAJE  OBTENIDO"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(164, 68)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(38, 13)
+        Me.Label19.TabIndex = 5
+        Me.Label19.Text = "6 A 10"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(164, 42)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(32, 13)
+        Me.Label18.TabIndex = 4
+        Me.Label18.Text = "1 A 5"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(164, 16)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(13, 13)
+        Me.Label17.TabIndex = 3
+        Me.Label17.Text = "0"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(16, 42)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(99, 13)
+        Me.Label16.TabIndex = 2
+        Me.Label16.Text = "CUMPLE PARCIAL"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(16, 16)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(70, 13)
+        Me.Label15.TabIndex = 1
+        Me.Label15.Text = "NO CUMPLE"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(16, 68)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(111, 13)
+        Me.Label14.TabIndex = 0
+        Me.Label14.Text = "CUMPLE CON TODO"
         '
         'Label1
         '
@@ -148,345 +265,311 @@ Partial Class frmEvaluacionProveedores
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Ingrese Orden de compra"
         '
-        'GroupBox5
-        '
-        Me.GroupBox5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox5.Controls.Add(Me.e5)
-        Me.GroupBox5.Controls.Add(Me.e3)
-        Me.GroupBox5.Controls.Add(Me.e4)
-        Me.GroupBox5.Controls.Add(Me.e2)
-        Me.GroupBox5.Controls.Add(Me.e1)
-        Me.GroupBox5.Location = New System.Drawing.Point(22, 364)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(740, 61)
-        Me.GroupBox5.TabIndex = 8
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Competividad precios"
-        '
-        'e5
-        '
-        Me.e5.AutoSize = True
-        Me.e5.Location = New System.Drawing.Point(504, 19)
-        Me.e5.Name = "e5"
-        Me.e5.Size = New System.Drawing.Size(98, 17)
-        Me.e5.TabIndex = 9
-        Me.e5.Text = "Muy Satisfecho"
-        Me.e5.UseVisualStyleBackColor = True
-        '
-        'e3
-        '
-        Me.e3.AutoSize = True
-        Me.e3.Checked = True
-        Me.e3.Location = New System.Drawing.Point(282, 19)
-        Me.e3.Name = "e3"
-        Me.e3.Size = New System.Drawing.Size(59, 17)
-        Me.e3.TabIndex = 8
-        Me.e3.TabStop = True
-        Me.e3.Text = "Neutral"
-        Me.e3.UseVisualStyleBackColor = True
-        '
-        'e4
-        '
-        Me.e4.AutoSize = True
-        Me.e4.Location = New System.Drawing.Point(382, 19)
-        Me.e4.Name = "e4"
-        Me.e4.Size = New System.Drawing.Size(75, 17)
-        Me.e4.TabIndex = 7
-        Me.e4.Text = "Satisfecho"
-        Me.e4.UseVisualStyleBackColor = True
-        '
-        'e2
-        '
-        Me.e2.AutoSize = True
-        Me.e2.Location = New System.Drawing.Point(148, 19)
-        Me.e2.Name = "e2"
-        Me.e2.Size = New System.Drawing.Size(82, 17)
-        Me.e2.TabIndex = 6
-        Me.e2.Text = "Insatisfecho"
-        Me.e2.UseVisualStyleBackColor = True
-        '
-        'e1
-        '
-        Me.e1.AutoSize = True
-        Me.e1.Location = New System.Drawing.Point(21, 19)
-        Me.e1.Name = "e1"
-        Me.e1.Size = New System.Drawing.Size(104, 17)
-        Me.e1.TabIndex = 5
-        Me.e1.Text = "Muy insatisfecho"
-        Me.e1.UseVisualStyleBackColor = True
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox4.Controls.Add(Me.d5)
-        Me.GroupBox4.Controls.Add(Me.d3)
-        Me.GroupBox4.Controls.Add(Me.d4)
-        Me.GroupBox4.Controls.Add(Me.d2)
-        Me.GroupBox4.Controls.Add(Me.d1)
-        Me.GroupBox4.Location = New System.Drawing.Point(22, 297)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(740, 61)
-        Me.GroupBox4.TabIndex = 7
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Fiabilidad de informacion"
-        '
-        'd5
-        '
-        Me.d5.AutoSize = True
-        Me.d5.Location = New System.Drawing.Point(504, 19)
-        Me.d5.Name = "d5"
-        Me.d5.Size = New System.Drawing.Size(98, 17)
-        Me.d5.TabIndex = 9
-        Me.d5.Text = "Muy Satisfecho"
-        Me.d5.UseVisualStyleBackColor = True
-        '
-        'd3
-        '
-        Me.d3.AutoSize = True
-        Me.d3.Checked = True
-        Me.d3.Location = New System.Drawing.Point(282, 19)
-        Me.d3.Name = "d3"
-        Me.d3.Size = New System.Drawing.Size(59, 17)
-        Me.d3.TabIndex = 8
-        Me.d3.TabStop = True
-        Me.d3.Text = "Neutral"
-        Me.d3.UseVisualStyleBackColor = True
-        '
-        'd4
-        '
-        Me.d4.AutoSize = True
-        Me.d4.Location = New System.Drawing.Point(382, 19)
-        Me.d4.Name = "d4"
-        Me.d4.Size = New System.Drawing.Size(75, 17)
-        Me.d4.TabIndex = 7
-        Me.d4.Text = "Satisfecho"
-        Me.d4.UseVisualStyleBackColor = True
-        '
-        'd2
-        '
-        Me.d2.AutoSize = True
-        Me.d2.Location = New System.Drawing.Point(148, 19)
-        Me.d2.Name = "d2"
-        Me.d2.Size = New System.Drawing.Size(82, 17)
-        Me.d2.TabIndex = 6
-        Me.d2.Text = "Insatisfecho"
-        Me.d2.UseVisualStyleBackColor = True
-        '
-        'd1
-        '
-        Me.d1.AutoSize = True
-        Me.d1.Location = New System.Drawing.Point(21, 19)
-        Me.d1.Name = "d1"
-        Me.d1.Size = New System.Drawing.Size(104, 17)
-        Me.d1.TabIndex = 5
-        Me.d1.Text = "Muy insatisfecho"
-        Me.d1.UseVisualStyleBackColor = True
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox3.Controls.Add(Me.c5)
-        Me.GroupBox3.Controls.Add(Me.c3)
-        Me.GroupBox3.Controls.Add(Me.c4)
-        Me.GroupBox3.Controls.Add(Me.c2)
-        Me.GroupBox3.Controls.Add(Me.c1)
-        Me.GroupBox3.Location = New System.Drawing.Point(22, 230)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(740, 61)
-        Me.GroupBox3.TabIndex = 6
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Flexibilidad proveedor"
-        '
-        'c5
-        '
-        Me.c5.AutoSize = True
-        Me.c5.Location = New System.Drawing.Point(504, 19)
-        Me.c5.Name = "c5"
-        Me.c5.Size = New System.Drawing.Size(98, 17)
-        Me.c5.TabIndex = 9
-        Me.c5.Text = "Muy Satisfecho"
-        Me.c5.UseVisualStyleBackColor = True
-        '
-        'c3
-        '
-        Me.c3.AutoSize = True
-        Me.c3.Checked = True
-        Me.c3.Location = New System.Drawing.Point(282, 19)
-        Me.c3.Name = "c3"
-        Me.c3.Size = New System.Drawing.Size(59, 17)
-        Me.c3.TabIndex = 8
-        Me.c3.TabStop = True
-        Me.c3.Text = "Neutral"
-        Me.c3.UseVisualStyleBackColor = True
-        '
-        'c4
-        '
-        Me.c4.AutoSize = True
-        Me.c4.Location = New System.Drawing.Point(382, 19)
-        Me.c4.Name = "c4"
-        Me.c4.Size = New System.Drawing.Size(75, 17)
-        Me.c4.TabIndex = 7
-        Me.c4.Text = "Satisfecho"
-        Me.c4.UseVisualStyleBackColor = True
-        '
-        'c2
-        '
-        Me.c2.AutoSize = True
-        Me.c2.Location = New System.Drawing.Point(148, 19)
-        Me.c2.Name = "c2"
-        Me.c2.Size = New System.Drawing.Size(82, 17)
-        Me.c2.TabIndex = 6
-        Me.c2.Text = "Insatisfecho"
-        Me.c2.UseVisualStyleBackColor = True
-        '
-        'c1
-        '
-        Me.c1.AutoSize = True
-        Me.c1.Location = New System.Drawing.Point(21, 19)
-        Me.c1.Name = "c1"
-        Me.c1.Size = New System.Drawing.Size(104, 17)
-        Me.c1.TabIndex = 5
-        Me.c1.Text = "Muy insatisfecho"
-        Me.c1.UseVisualStyleBackColor = True
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.Controls.Add(Me.b5)
-        Me.GroupBox2.Controls.Add(Me.b3)
-        Me.GroupBox2.Controls.Add(Me.b4)
-        Me.GroupBox2.Controls.Add(Me.b2)
-        Me.GroupBox2.Controls.Add(Me.b1)
-        Me.GroupBox2.Location = New System.Drawing.Point(22, 163)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(740, 61)
-        Me.GroupBox2.TabIndex = 5
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Fiabilidad del plazo de entrega"
-        '
-        'b5
-        '
-        Me.b5.AutoSize = True
-        Me.b5.Location = New System.Drawing.Point(504, 19)
-        Me.b5.Name = "b5"
-        Me.b5.Size = New System.Drawing.Size(98, 17)
-        Me.b5.TabIndex = 9
-        Me.b5.Text = "Muy Satisfecho"
-        Me.b5.UseVisualStyleBackColor = True
-        '
-        'b3
-        '
-        Me.b3.AutoSize = True
-        Me.b3.Checked = True
-        Me.b3.Location = New System.Drawing.Point(282, 19)
-        Me.b3.Name = "b3"
-        Me.b3.Size = New System.Drawing.Size(59, 17)
-        Me.b3.TabIndex = 8
-        Me.b3.TabStop = True
-        Me.b3.Text = "Neutral"
-        Me.b3.UseVisualStyleBackColor = True
-        '
-        'b4
-        '
-        Me.b4.AutoSize = True
-        Me.b4.Location = New System.Drawing.Point(382, 19)
-        Me.b4.Name = "b4"
-        Me.b4.Size = New System.Drawing.Size(75, 17)
-        Me.b4.TabIndex = 7
-        Me.b4.Text = "Satisfecho"
-        Me.b4.UseVisualStyleBackColor = True
-        '
-        'b2
-        '
-        Me.b2.AutoSize = True
-        Me.b2.Location = New System.Drawing.Point(148, 19)
-        Me.b2.Name = "b2"
-        Me.b2.Size = New System.Drawing.Size(82, 17)
-        Me.b2.TabIndex = 6
-        Me.b2.Text = "Insatisfecho"
-        Me.b2.UseVisualStyleBackColor = True
-        '
-        'b1
-        '
-        Me.b1.AutoSize = True
-        Me.b1.Location = New System.Drawing.Point(21, 19)
-        Me.b1.Name = "b1"
-        Me.b1.Size = New System.Drawing.Size(104, 17)
-        Me.b1.TabIndex = 5
-        Me.b1.Text = "Muy insatisfecho"
-        Me.b1.UseVisualStyleBackColor = True
-        '
         'GroupBox1
         '
-        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.a5)
-        Me.GroupBox1.Controls.Add(Me.a3)
-        Me.GroupBox1.Controls.Add(Me.a4)
-        Me.GroupBox1.Controls.Add(Me.a2)
-        Me.GroupBox1.Controls.Add(Me.a1)
-        Me.GroupBox1.Location = New System.Drawing.Point(22, 96)
+        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox1.Controls.Add(Me.Label34)
+        Me.GroupBox1.Controls.Add(Me.Label33)
+        Me.GroupBox1.Controls.Add(Me.Panel16)
+        Me.GroupBox1.Controls.Add(Me.Panel14)
+        Me.GroupBox1.Controls.Add(Me.Panel13)
+        Me.GroupBox1.Controls.Add(Me.Panel12)
+        Me.GroupBox1.Controls.Add(Me.Panel10)
+        Me.GroupBox1.Controls.Add(Me.Panel9)
+        Me.GroupBox1.Controls.Add(Me.Panel8)
+        Me.GroupBox1.Controls.Add(Me.Panel7)
+        Me.GroupBox1.Controls.Add(Me.Label30)
+        Me.GroupBox1.Controls.Add(Me.Label20)
+        Me.GroupBox1.Controls.Add(Me.Panel11)
+        Me.GroupBox1.Controls.Add(Me.Panel5)
+        Me.GroupBox1.Controls.Add(Me.Panel6)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 187)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(740, 61)
+        Me.GroupBox1.Size = New System.Drawing.Size(753, 395)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Calidad Suministros"
+        Me.GroupBox1.Text = "CRITERIOS A EVALUAR"
         '
-        'a5
+        'Label34
         '
-        Me.a5.AutoSize = True
-        Me.a5.Location = New System.Drawing.Point(504, 22)
-        Me.a5.Name = "a5"
-        Me.a5.Size = New System.Drawing.Size(98, 17)
-        Me.a5.TabIndex = 4
-        Me.a5.Text = "Muy Satisfecho"
-        Me.a5.UseVisualStyleBackColor = True
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(675, 16)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(52, 13)
+        Me.Label34.TabIndex = 19
+        Me.Label34.Text = "PUNTOS"
         '
-        'a3
+        'Label33
         '
-        Me.a3.AutoSize = True
-        Me.a3.Checked = True
-        Me.a3.Location = New System.Drawing.Point(282, 22)
-        Me.a3.Name = "a3"
-        Me.a3.Size = New System.Drawing.Size(59, 17)
-        Me.a3.TabIndex = 3
-        Me.a3.TabStop = True
-        Me.a3.Text = "Neutral"
-        Me.a3.UseVisualStyleBackColor = True
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(87, 20)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(133, 13)
+        Me.Label33.TabIndex = 18
+        Me.Label33.Text = "CAPACIDAD COMERCIAL"
         '
-        'a4
+        'Panel16
         '
-        Me.a4.AutoSize = True
-        Me.a4.Location = New System.Drawing.Point(382, 22)
-        Me.a4.Name = "a4"
-        Me.a4.Size = New System.Drawing.Size(75, 17)
-        Me.a4.TabIndex = 2
-        Me.a4.Text = "Satisfecho"
-        Me.a4.UseVisualStyleBackColor = True
+        Me.Panel16.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel16.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel16.Controls.Add(Me.txtcal9)
+        Me.Panel16.Controls.Add(Me.Label32)
+        Me.Panel16.Location = New System.Drawing.Point(7, 291)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Size = New System.Drawing.Size(740, 31)
+        Me.Panel16.TabIndex = 15
         '
-        'a2
+        'Label32
         '
-        Me.a2.AutoSize = True
-        Me.a2.Location = New System.Drawing.Point(148, 22)
-        Me.a2.Name = "a2"
-        Me.a2.Size = New System.Drawing.Size(82, 17)
-        Me.a2.TabIndex = 1
-        Me.a2.Text = "Insatisfecho"
-        Me.a2.UseVisualStyleBackColor = True
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(9, 12)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(259, 13)
+        Me.Label32.TabIndex = 6
+        Me.Label32.Text = "EL PERSONAL MUESTRA BUENOS Y PRINCIPIOS"
         '
-        'a1
+        'Panel14
         '
-        Me.a1.AutoSize = True
-        Me.a1.Location = New System.Drawing.Point(21, 22)
-        Me.a1.Name = "a1"
-        Me.a1.Size = New System.Drawing.Size(104, 17)
-        Me.a1.TabIndex = 0
-        Me.a1.Text = "Muy insatisfecho"
-        Me.a1.UseVisualStyleBackColor = True
+        Me.Panel14.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel14.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel14.Controls.Add(Me.txtcal11)
+        Me.Panel14.Controls.Add(Me.Label31)
+        Me.Panel14.Location = New System.Drawing.Point(7, 355)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(740, 34)
+        Me.Panel14.TabIndex = 17
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(9, 17)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(333, 13)
+        Me.Label31.TabIndex = 11
+        Me.Label31.Text = "MANTINE PERSONAL CON BUEN ASPECTO FISICICO E HIGIENE"
+        '
+        'Panel13
+        '
+        Me.Panel13.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel13.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel13.Controls.Add(Me.txtcal10)
+        Me.Panel13.Controls.Add(Me.Label29)
+        Me.Panel13.Location = New System.Drawing.Point(7, 323)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(740, 31)
+        Me.Panel13.TabIndex = 15
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(6, 13)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(621, 13)
+        Me.Label29.TabIndex = 9
+        Me.Label29.Text = "EL PERSONAL ULTILIZA LENGUAJE CLARO AL MOMENTO DE INDICAR ALGUNA OBSERVACIÓN DURA" &
+    "NTE EL SERVICIO"
+        '
+        'Panel12
+        '
+        Me.Panel12.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel12.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel12.Controls.Add(Me.txtcal8)
+        Me.Panel12.Controls.Add(Me.Panel15)
+        Me.Panel12.Controls.Add(Me.Label27)
+        Me.Panel12.Location = New System.Drawing.Point(7, 257)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(740, 34)
+        Me.Panel12.TabIndex = 16
+        '
+        'Panel15
+        '
+        Me.Panel15.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel15.Controls.Add(Me.Label28)
+        Me.Panel15.Location = New System.Drawing.Point(0, 32)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(740, 34)
+        Me.Panel15.TabIndex = 16
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(9, 17)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(515, 13)
+        Me.Label28.TabIndex = 5
+        Me.Label28.Text = "ORDENAN Y LIMPIAN EL ÁREA DE TRABAJO DURANTE Y DESPUES DE PRESTAR SUS SERVICIOS "
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(9, 16)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(316, 13)
+        Me.Label27.TabIndex = 7
+        Me.Label27.Text = "IDENTIFICAN SU PERSONAL CON UNIFORMES Y/O CARNET"
+        '
+        'Panel10
+        '
+        Me.Panel10.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel10.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel10.Controls.Add(Me.txtcal7)
+        Me.Panel10.Controls.Add(Me.Label26)
+        Me.Panel10.Location = New System.Drawing.Point(7, 229)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(740, 31)
+        Me.Panel10.TabIndex = 14
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(9, 12)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(492, 13)
+        Me.Label26.TabIndex = 6
+        Me.Label26.Text = "COMUNICAN LOS  HALLAZGOS DE FUTUROS PROBLEMAS COMO INICIATIVA DE PREVENCIÓN"
+        '
+        'Panel9
+        '
+        Me.Panel9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel9.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel9.Controls.Add(Me.txtcal6)
+        Me.Panel9.Controls.Add(Me.Label25)
+        Me.Panel9.Location = New System.Drawing.Point(7, 196)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(740, 34)
+        Me.Panel9.TabIndex = 15
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(9, 17)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(515, 13)
+        Me.Label25.TabIndex = 5
+        Me.Label25.Text = "ORDENAN Y LIMPIAN EL ÁREA DE TRABAJO DURANTE Y DESPUES DE PRESTAR SUS SERVICIOS "
+        '
+        'Panel8
+        '
+        Me.Panel8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel8.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel8.Controls.Add(Me.txtcal5)
+        Me.Panel8.Controls.Add(Me.Label24)
+        Me.Panel8.Location = New System.Drawing.Point(7, 165)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(740, 31)
+        Me.Panel8.TabIndex = 13
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(9, 13)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(531, 13)
+        Me.Label24.TabIndex = 4
+        Me.Label24.Text = "MANTIENEN SU EQUIPO Y HERRAMIENTAS EN BUENAS CONDICIONES PARA REALIZAR EL SERVICI" &
+    "O"
+        '
+        'Panel7
+        '
+        Me.Panel7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel7.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel7.Controls.Add(Me.txtcal4)
+        Me.Panel7.Controls.Add(Me.Label23)
+        Me.Panel7.Location = New System.Drawing.Point(7, 133)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(740, 34)
+        Me.Panel7.TabIndex = 14
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(9, 16)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(464, 13)
+        Me.Label23.TabIndex = 3
+        Me.Label23.Text = "CUMPLEN CON LOS PROTOCOLOS DE BIOSEGURIDAD Y USO DE PRODUCTOS TÓXICOS"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(28, 364)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(0, 13)
+        Me.Label30.TabIndex = 10
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(16, 49)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(494, 13)
+        Me.Label20.TabIndex = 0
+        Me.Label20.Text = "CUMPLE CON LAS FECHAS DE PRESTACIÓN DE SERVICIOS ESTABLECIDOS EN EL CONTRATO"
+        '
+        'Panel11
+        '
+        Me.Panel11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel11.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel11.Controls.Add(Me.txtcal2)
+        Me.Panel11.Controls.Add(Me.Label21)
+        Me.Panel11.Location = New System.Drawing.Point(7, 68)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(740, 34)
+        Me.Panel11.TabIndex = 13
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(6, 15)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(652, 13)
+        Me.Label21.TabIndex = 1
+        Me.Label21.Text = "CUENTAN CON EL PERSONAL CALIFICADO PARA EL DESEMPEÑO DE LAS ACTIVIDADES PARA LAS " &
+    "QUE FUERON TRATADOS"
+        '
+        'Panel5
+        '
+        Me.Panel5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel5.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel5.Controls.Add(Me.txtcal1)
+        Me.Panel5.Location = New System.Drawing.Point(7, 37)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(740, 31)
+        Me.Panel5.TabIndex = 12
+        '
+        'Panel6
+        '
+        Me.Panel6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel6.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel6.Controls.Add(Me.txtcal3)
+        Me.Panel6.Controls.Add(Me.Label22)
+        Me.Panel6.Location = New System.Drawing.Point(7, 102)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(740, 31)
+        Me.Panel6.TabIndex = 13
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(9, 13)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(449, 13)
+        Me.Label22.TabIndex = 2
+        Me.Label22.Text = "CUMPLEN CON LOS TIEMPOS ESTABLECIDOS PARA LA ENTREGA DE LOS SERVICIOS"
         '
         'TextBox2
         '
@@ -501,6 +584,7 @@ Partial Class frmEvaluacionProveedores
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel2.Controls.Add(Me.Label35)
         Me.Panel2.Controls.Add(Me.Button2)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.Label3)
@@ -510,13 +594,32 @@ Partial Class frmEvaluacionProveedores
         Me.Panel2.Controls.Add(Me.TextBox1)
         Me.Panel2.Location = New System.Drawing.Point(6, 6)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(756, 84)
+        Me.Panel2.Size = New System.Drawing.Size(756, 85)
         Me.Panel2.TabIndex = 10
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(517, 36)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(85, 13)
+        Me.Label35.TabIndex = 6
+        Me.Label35.Text = "Área que evalua"
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.White
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Location = New System.Drawing.Point(262, 7)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 5
+        Me.Button2.Text = "Buscar"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.Enabled = False
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Location = New System.Drawing.Point(678, 6)
         Me.Button1.Name = "Button1"
@@ -573,73 +676,10 @@ Partial Class frmEvaluacionProveedores
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(768, 448)
+        Me.TabPage2.Size = New System.Drawing.Size(768, 588)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Evaluaciones"
         Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'Panel3
-        '
-        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.Panel3.Controls.Add(Me.Label13)
-        Me.Panel3.Controls.Add(Me.TextBox7)
-        Me.Panel3.Controls.Add(Me.TextBox6)
-        Me.Panel3.Controls.Add(Me.Panel4)
-        Me.Panel3.Controls.Add(Me.Label11)
-        Me.Panel3.Controls.Add(Me.Label9)
-        Me.Panel3.Controls.Add(Me.Label8)
-        Me.Panel3.Controls.Add(Me.Label7)
-        Me.Panel3.Controls.Add(Me.Label6)
-        Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Location = New System.Drawing.Point(6, 6)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(756, 104)
-        Me.Panel3.TabIndex = 0
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 525)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(800, 22)
-        Me.StatusStrip1.TabIndex = 1
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Label10)
-        Me.Panel1.Location = New System.Drawing.Point(0, -2)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(800, 44)
-        Me.Panel1.TabIndex = 2
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label10.Location = New System.Drawing.Point(3, 11)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(225, 20)
-        Me.Label10.TabIndex = 8
-        Me.Label10.Text = "Evaluación de proveedores"
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(262, 7)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 5
-        Me.Button2.Text = "Buscar"
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'GroupBox6
         '
@@ -667,115 +707,6 @@ Partial Class frmEvaluacionProveedores
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(741, 289)
         Me.DataGridView1.TabIndex = 0
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(17, 17)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(56, 13)
-        Me.Label4.TabIndex = 1
-        Me.Label4.Text = "Proveedor"
-        '
-        'Label5
-        '
-        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(435, 10)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(222, 20)
-        Me.Label5.TabIndex = 2
-        Me.Label5.Text = "Promedio de calificaciones"
-        '
-        'Label6
-        '
-        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(532, 35)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(57, 15)
-        Me.Label6.TabIndex = 3
-        Me.Label6.Text = "Escalas"
-        '
-        'Label7
-        '
-        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(532, 51)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(96, 13)
-        Me.Label7.TabIndex = 4
-        Me.Label7.Text = "75 - 100 Excelente"
-        '
-        'Label8
-        '
-        Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(532, 64)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(96, 13)
-        Me.Label8.TabIndex = 5
-        Me.Label8.Text = "50 - 75 Muy bueno"
-        '
-        'Label9
-        '
-        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(532, 77)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(74, 13)
-        Me.Label9.TabIndex = 6
-        Me.Label9.Text = "25 - 50 Bueno"
-        '
-        'Label11
-        '
-        Me.Label11.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(532, 89)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(66, 13)
-        Me.Label11.TabIndex = 7
-        Me.Label11.Text = "0   - 25 Malo"
-        '
-        'Panel4
-        '
-        Me.Panel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel4.BackColor = System.Drawing.Color.White
-        Me.Panel4.Controls.Add(Me.Label12)
-        Me.Panel4.Location = New System.Drawing.Point(677, 17)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(59, 53)
-        Me.Panel4.TabIndex = 8
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(19, 18)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(19, 20)
-        Me.Label12.TabIndex = 9
-        Me.Label12.Text = "0"
-        '
-        'TextBox6
-        '
-        Me.TextBox6.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.TextBox6.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.TextBox6.Location = New System.Drawing.Point(20, 37)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(235, 20)
-        Me.TextBox6.TabIndex = 10
-        '
-        'TextBox7
-        '
-        Me.TextBox7.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.TextBox7.Location = New System.Drawing.Point(261, 37)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.ReadOnly = True
-        Me.TextBox7.Size = New System.Drawing.Size(109, 20)
-        Me.TextBox7.TabIndex = 11
         '
         'encuesta1
         '
@@ -819,6 +750,27 @@ Partial Class frmEvaluacionProveedores
         Me.promedio.HeaderText = "Calificacion"
         Me.promedio.Name = "promedio"
         '
+        'Panel3
+        '
+        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel3.Controls.Add(Me.Label13)
+        Me.Panel3.Controls.Add(Me.TextBox7)
+        Me.Panel3.Controls.Add(Me.TextBox6)
+        Me.Panel3.Controls.Add(Me.Panel4)
+        Me.Panel3.Controls.Add(Me.Label11)
+        Me.Panel3.Controls.Add(Me.Label9)
+        Me.Panel3.Controls.Add(Me.Label8)
+        Me.Panel3.Controls.Add(Me.Label7)
+        Me.Panel3.Controls.Add(Me.Label6)
+        Me.Panel3.Controls.Add(Me.Label5)
+        Me.Panel3.Controls.Add(Me.Label4)
+        Me.Panel3.Location = New System.Drawing.Point(6, 6)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(756, 104)
+        Me.Panel3.TabIndex = 0
+        '
         'Label13
         '
         Me.Label13.AutoSize = True
@@ -828,12 +780,262 @@ Partial Class frmEvaluacionProveedores
         Me.Label13.TabIndex = 12
         Me.Label13.Text = "Cod Proveedor"
         '
+        'TextBox7
+        '
+        Me.TextBox7.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.TextBox7.Location = New System.Drawing.Point(261, 37)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.ReadOnly = True
+        Me.TextBox7.Size = New System.Drawing.Size(109, 20)
+        Me.TextBox7.TabIndex = 11
+        '
+        'TextBox6
+        '
+        Me.TextBox6.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.TextBox6.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.TextBox6.Location = New System.Drawing.Point(20, 37)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(235, 20)
+        Me.TextBox6.TabIndex = 10
+        '
+        'Panel4
+        '
+        Me.Panel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel4.BackColor = System.Drawing.Color.White
+        Me.Panel4.Controls.Add(Me.Label12)
+        Me.Panel4.Location = New System.Drawing.Point(677, 17)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(59, 53)
+        Me.Panel4.TabIndex = 8
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(19, 18)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(19, 20)
+        Me.Label12.TabIndex = 9
+        Me.Label12.Text = "0"
+        '
+        'Label11
+        '
+        Me.Label11.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(532, 89)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(66, 13)
+        Me.Label11.TabIndex = 7
+        Me.Label11.Text = "0   - 25 Malo"
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(532, 77)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(74, 13)
+        Me.Label9.TabIndex = 6
+        Me.Label9.Text = "25 - 50 Bueno"
+        '
+        'Label8
+        '
+        Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(532, 64)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(96, 13)
+        Me.Label8.TabIndex = 5
+        Me.Label8.Text = "50 - 75 Muy bueno"
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(532, 51)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(96, 13)
+        Me.Label7.TabIndex = 4
+        Me.Label7.Text = "75 - 100 Excelente"
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(532, 35)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(57, 15)
+        Me.Label6.TabIndex = 3
+        Me.Label6.Text = "Escalas"
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(435, 10)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(222, 20)
+        Me.Label5.TabIndex = 2
+        Me.Label5.Text = "Promedio de calificaciones"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(17, 17)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(56, 13)
+        Me.Label4.TabIndex = 1
+        Me.Label4.Text = "Proveedor"
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 665)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(800, 22)
+        Me.StatusStrip1.TabIndex = 1
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label10)
+        Me.Panel1.Location = New System.Drawing.Point(0, -2)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(800, 44)
+        Me.Panel1.TabIndex = 2
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label10.Location = New System.Drawing.Point(3, 11)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(225, 20)
+        Me.Label10.TabIndex = 8
+        Me.Label10.Text = "Evaluación de proveedores"
+        '
+        'txtcal1
+        '
+        Me.txtcal1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtcal1.FormattingEnabled = True
+        Me.txtcal1.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.txtcal1.Location = New System.Drawing.Point(664, 4)
+        Me.txtcal1.Name = "txtcal1"
+        Me.txtcal1.Size = New System.Drawing.Size(73, 21)
+        Me.txtcal1.TabIndex = 5
+        '
+        'txtcal2
+        '
+        Me.txtcal2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtcal2.FormattingEnabled = True
+        Me.txtcal2.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.txtcal2.Location = New System.Drawing.Point(664, 7)
+        Me.txtcal2.Name = "txtcal2"
+        Me.txtcal2.Size = New System.Drawing.Size(73, 21)
+        Me.txtcal2.TabIndex = 6
+        '
+        'txtcal3
+        '
+        Me.txtcal3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtcal3.FormattingEnabled = True
+        Me.txtcal3.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.txtcal3.Location = New System.Drawing.Point(664, 6)
+        Me.txtcal3.Name = "txtcal3"
+        Me.txtcal3.Size = New System.Drawing.Size(73, 21)
+        Me.txtcal3.TabIndex = 6
+        '
+        'txtcal4
+        '
+        Me.txtcal4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtcal4.FormattingEnabled = True
+        Me.txtcal4.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.txtcal4.Location = New System.Drawing.Point(664, 10)
+        Me.txtcal4.Name = "txtcal4"
+        Me.txtcal4.Size = New System.Drawing.Size(73, 21)
+        Me.txtcal4.TabIndex = 7
+        '
+        'txtcal5
+        '
+        Me.txtcal5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtcal5.FormattingEnabled = True
+        Me.txtcal5.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.txtcal5.Location = New System.Drawing.Point(664, 7)
+        Me.txtcal5.Name = "txtcal5"
+        Me.txtcal5.Size = New System.Drawing.Size(73, 21)
+        Me.txtcal5.TabIndex = 8
+        '
+        'txtcal6
+        '
+        Me.txtcal6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtcal6.FormattingEnabled = True
+        Me.txtcal6.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.txtcal6.Location = New System.Drawing.Point(664, 9)
+        Me.txtcal6.Name = "txtcal6"
+        Me.txtcal6.Size = New System.Drawing.Size(73, 21)
+        Me.txtcal6.TabIndex = 9
+        '
+        'txtcal7
+        '
+        Me.txtcal7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtcal7.FormattingEnabled = True
+        Me.txtcal7.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.txtcal7.Location = New System.Drawing.Point(664, 4)
+        Me.txtcal7.Name = "txtcal7"
+        Me.txtcal7.Size = New System.Drawing.Size(73, 21)
+        Me.txtcal7.TabIndex = 10
+        '
+        'txtcal8
+        '
+        Me.txtcal8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtcal8.FormattingEnabled = True
+        Me.txtcal8.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.txtcal8.Location = New System.Drawing.Point(664, 9)
+        Me.txtcal8.Name = "txtcal8"
+        Me.txtcal8.Size = New System.Drawing.Size(73, 21)
+        Me.txtcal8.TabIndex = 11
+        '
+        'txtcal9
+        '
+        Me.txtcal9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtcal9.FormattingEnabled = True
+        Me.txtcal9.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.txtcal9.Location = New System.Drawing.Point(664, 6)
+        Me.txtcal9.Name = "txtcal9"
+        Me.txtcal9.Size = New System.Drawing.Size(73, 21)
+        Me.txtcal9.TabIndex = 17
+        '
+        'txtcal10
+        '
+        Me.txtcal10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtcal10.FormattingEnabled = True
+        Me.txtcal10.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.txtcal10.Location = New System.Drawing.Point(664, 6)
+        Me.txtcal10.Name = "txtcal10"
+        Me.txtcal10.Size = New System.Drawing.Size(73, 21)
+        Me.txtcal10.TabIndex = 18
+        '
+        'txtcal11
+        '
+        Me.txtcal11.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtcal11.FormattingEnabled = True
+        Me.txtcal11.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.txtcal11.Location = New System.Drawing.Point(664, 9)
+        Me.txtcal11.Name = "txtcal11"
+        Me.txtcal11.Size = New System.Drawing.Size(73, 21)
+        Me.txtcal11.TabIndex = 19
+        '
         'frmEvaluacionProveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(800, 547)
+        Me.ClientSize = New System.Drawing.Size(800, 687)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.TabControl1)
@@ -843,27 +1045,44 @@ Partial Class frmEvaluacionProveedores
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.Panel16.ResumeLayout(False)
+        Me.Panel16.PerformLayout()
+        Me.Panel14.ResumeLayout(False)
+        Me.Panel14.PerformLayout()
+        Me.Panel13.ResumeLayout(False)
+        Me.Panel13.PerformLayout()
+        Me.Panel12.ResumeLayout(False)
+        Me.Panel12.PerformLayout()
+        Me.Panel15.ResumeLayout(False)
+        Me.Panel15.PerformLayout()
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel10.PerformLayout()
+        Me.Panel9.ResumeLayout(False)
+        Me.Panel9.PerformLayout()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
+        Me.Panel11.ResumeLayout(False)
+        Me.Panel11.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -874,41 +1093,12 @@ Partial Class frmEvaluacionProveedores
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents GroupBox5 As GroupBox
-    Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents a2 As RadioButton
-    Friend WithEvents a1 As RadioButton
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents e5 As RadioButton
-    Friend WithEvents e3 As RadioButton
-    Friend WithEvents e4 As RadioButton
-    Friend WithEvents e2 As RadioButton
-    Friend WithEvents e1 As RadioButton
-    Friend WithEvents d5 As RadioButton
-    Friend WithEvents d3 As RadioButton
-    Friend WithEvents d4 As RadioButton
-    Friend WithEvents d2 As RadioButton
-    Friend WithEvents d1 As RadioButton
-    Friend WithEvents c5 As RadioButton
-    Friend WithEvents c3 As RadioButton
-    Friend WithEvents c4 As RadioButton
-    Friend WithEvents c2 As RadioButton
-    Friend WithEvents c1 As RadioButton
-    Friend WithEvents b5 As RadioButton
-    Friend WithEvents b3 As RadioButton
-    Friend WithEvents b4 As RadioButton
-    Friend WithEvents b2 As RadioButton
-    Friend WithEvents b1 As RadioButton
-    Friend WithEvents a5 As RadioButton
-    Friend WithEvents a3 As RadioButton
-    Friend WithEvents a4 As RadioButton
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Button1 As Button
@@ -937,4 +1127,52 @@ Partial Class frmEvaluacionProveedores
     Friend WithEvents encuesta2 As DataGridViewTextBoxColumn
     Friend WithEvents promedio As DataGridViewTextBoxColumn
     Friend WithEvents Label13 As Label
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Label37 As Label
+    Friend WithEvents Label36 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label34 As Label
+    Friend WithEvents Label33 As Label
+    Friend WithEvents Panel16 As Panel
+    Friend WithEvents Label32 As Label
+    Friend WithEvents Panel14 As Panel
+    Friend WithEvents Label31 As Label
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Panel15 As Panel
+    Friend WithEvents Label28 As Label
+    Friend WithEvents Label27 As Label
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Label25 As Label
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Label30 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Panel11 As Panel
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label35 As Label
+    Friend WithEvents txtcal1 As ComboBox
+    Friend WithEvents txtcal2 As ComboBox
+    Friend WithEvents txtcal9 As ComboBox
+    Friend WithEvents txtcal11 As ComboBox
+    Friend WithEvents txtcal10 As ComboBox
+    Friend WithEvents txtcal8 As ComboBox
+    Friend WithEvents txtcal7 As ComboBox
+    Friend WithEvents txtcal6 As ComboBox
+    Friend WithEvents txtcal5 As ComboBox
+    Friend WithEvents txtcal4 As ComboBox
+    Friend WithEvents txtcal3 As ComboBox
 End Class

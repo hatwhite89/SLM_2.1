@@ -5,6 +5,7 @@ Public Class E_frmOrdenCompra
     Public enunciado As SqlCommand
     Public respuesta As SqlDataReader
     Public adaptador As SqlDataAdapter
+    Public id_forma_pago As Integer
     Dim TableUM As New DataTable
     Dim objOrd As New ClsProducto
     Dim clsProve As New ClsProveedor
@@ -107,7 +108,7 @@ Public Class E_frmOrdenCompra
         txtNombreProveedor.Text = nombre_proveedorOC
 
         CargarDGOC()
-
+        autoCompletarTexbox(txtNombreProveedor)
 
     End Sub
     Private Sub CargarDGOC()
@@ -147,7 +148,7 @@ Public Class E_frmOrdenCompra
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-
+        txtNombreProveedor.Enabled = True
 
         txtCodOC.Clear()
         txtConsignado.Clear()
@@ -200,8 +201,10 @@ Public Class E_frmOrdenCompra
         Button3.Enabled = True
         Button5.Enabled = True
         Button1.Enabled = True
-        btnProveedor.Enabled = True
+
         Button2.Enabled = True
+
+        txtConsignado.Text = nombre_usurio
     End Sub
     Private Sub ActualizarOC()
 
@@ -214,7 +217,7 @@ Public Class E_frmOrdenCompra
         Try
             With clsOC
                 .IdOrdenCompra = Integer.Parse(txtCodOC.Text)
-                .IdFormaPago = cmbFormaDePago.SelectedValue()
+                .IdFormaPago = id_forma_pago
                 .FechaElaboracion = Date.Now
                 .Condiciones = txtCondicionEntrega.Text
                 .UsuarioConsignado = txtConsignado.Text
@@ -249,55 +252,32 @@ Public Class E_frmOrdenCompra
 
 
 
-    Private Sub btnProveedor_Click(sender As Object, e As EventArgs) Handles btnProveedor.Click
+    Private Sub btnProveedor_Click(sender As Object, e As EventArgs)
         E_frmProveedorOC.Show()
     End Sub
 
     Private Sub txtCodProveedor_TextChanged(sender As Object, e As EventArgs) Handles txtCodProveedor.TextChanged
-        Try
-            Dim objP As New ClsProveedor
-            With objP
-                .Cod_Proveedor = txtCodProveedor.Text
-            End With
-            Dim dt As New DataTable
-            dt = objP.listarProveedoresOC2(txtCodProveedor.Text)
-            Dim row As DataRow = dt.Rows(0)
-            txtNombreProveedor.Text = CStr(row("nombreProveedor"))
-            txtRTNProveedor.Text = CStr(row("idTributario"))
-            txtNombreProveedor.BackColor = Color.White
-        Catch ex As Exception
-            txtNombreProveedor.BackColor = Color.Red
-            txtNombreProveedor.Text = ""
-            txtRTNProveedor.Text = ""
-
-        End Try
-    End Sub
-
-    Private Sub cmbFormaDePago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbFormaDePago.SelectedIndexChanged
-        If cmbFormaDePago.SelectedItem() = "Credito" Then
-            txtDiasCredito.ReadOnly = False
-        ElseIf cmbFormaDePago.SelectedItem() = "Contado" Then
-            txtDiasCredito.ReadOnly = True
-            txtDiasCredito.Text = "0"
-        End If
 
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        CargarDGOC()
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
         Button3.Enabled = True
         Button5.Enabled = True
         Button1.Enabled = True
-        btnProveedor.Enabled = True
+
         Button2.Enabled = True
 
         Try
+            codigo_oc = DataGridView2.Rows(e.RowIndex).Cells(0).Value
+            txtCodOC.Text = DataGridView2.Rows(e.RowIndex).Cells(0).Value
             LlenarTextbox(DataGridView2.Rows(e.RowIndex).Cells(0).Value)
 
-            txtCodOC.Text = DataGridView2.Rows(e.RowIndex).Cells(0).Value
+            txtNombreProveedor.Text = DataGridView2.Rows(e.RowIndex).Cells(1).Value
 
 
             'txtCondicionEntrega.Text = DataGridView2.Rows(e.RowIndex).Cells(4).Value
@@ -351,7 +331,7 @@ Public Class E_frmOrdenCompra
 
     Private Sub DataGridView4_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView4.CellClick
         Try
-            Dim codigo_oc As String
+
             codigo_oc = DataGridView4.Rows(e.RowIndex).Cells(0).Value
             CargarDetalleOC2(codigo_oc)
         Catch ex As Exception
@@ -386,7 +366,7 @@ Public Class E_frmOrdenCompra
         Dim clsD As New clsDetalleOC
 
         With clsD
-            .IdDetalleOC = txtCodOC.Text
+            .IdDetalleOC = codigo_globas
         End With
 
         If clsD.EliminarDetalleOCEntrada() = "1" Then
@@ -441,5 +421,51 @@ Public Class E_frmOrdenCompra
 
 
 
+    End Sub
+
+    Sub autoCompletarTexbox(ByVal campoTexto As TextBox)
+        Dim clsC As New ClsConnection
+        Try
+            enunciado = New SqlCommand("select * from Proveedor", clsC.getConexion)
+            respuesta = enunciado.ExecuteReader()
+            While respuesta.Read
+                campoTexto.AutoCompleteCustomSource.Add(respuesta.Item("nombreProveedor"))
+
+
+            End While
+            respuesta.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub txtNombreProveedor_TextChanged(sender As Object, e As EventArgs) Handles txtNombreProveedor.TextChanged
+        Try
+            Dim objP As New ClsProveedor
+
+            Dim dt As New DataTable
+            dt = objP.listarProveedoresOC2(txtNombreProveedor.Text)
+            Dim row As DataRow = dt.Rows(0)
+            txtCodProveedor.Text = CStr(row("codProveedor"))
+            txtRTNProveedor.Text = CStr(row("idTributario"))
+            txtDiasCredito.Text = CStr(row("diasNeto"))
+            cmbFormaDePago.Text = CStr(row("descripcion"))
+            id_forma_pago = CStr(row("codTermPago"))
+
+        Catch ex As Exception
+
+            txtNombreProveedor.Text = ""
+            txtRTNProveedor.Text = ""
+
+        End Try
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        reporteOrdenCompra.Show()
+    End Sub
+
+    Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
+        reporteOrdenCompra.Show()
     End Sub
 End Class

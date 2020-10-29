@@ -62,7 +62,7 @@
             txtModelo.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value
             txtDescripcion.Text = DataGridView1.Rows(e.RowIndex).Cells(5).Value
             txtCantidadMinima.Text = DataGridView1.Rows(e.RowIndex).Cells(6).Value
-            TextBox1.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
+            txtPrecioProducto.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
 
 
             'botones
@@ -73,7 +73,7 @@
             txtNombre.ReadOnly = False
             txtModelo.ReadOnly = False
             txtMarca.ReadOnly = False
-
+            txtPrecioProducto.ReadOnly = False
             txtDescripcion.ReadOnly = False
             txtCantidadMinima.ReadOnly = False
         Catch ex As Exception
@@ -97,14 +97,14 @@
                 .CantidadMinimaProducto = Integer.Parse(txtCantidadMinima.Text)
                 .UnidadMedida = Integer.Parse(cmbUnidadMedida.SelectedValue)
                 .CategoriaProducto = Integer.Parse(cmbCategoria.SelectedValue)
-                .Precio_base1 = TextBox1.Text
+                .Precio_base1 = txtPrecioProducto.Text
             End With
             If clsP.RegistrarProducto() = "1" Then
                 'campos 
                 txtNombre.ReadOnly = True
                 txtModelo.ReadOnly = True
                 txtMarca.ReadOnly = True
-                TextBox1.ReadOnly = True
+                txtPrecioProducto.ReadOnly = True
                 txtDescripcion.ReadOnly = True
                 txtCantidadMinima.ReadOnly = True
                 'botones
@@ -125,7 +125,7 @@
                 .CantidadMinimaProducto = Integer.Parse(txtCantidadMinima.Text)
                 .UnidadMedida = Integer.Parse(cmbUnidadMedida.SelectedValue)
                 .CategoriaProducto = Integer.Parse(cmbCategoria.SelectedValue)
-                .Precio_base1 = TextBox1.Text
+                .Precio_base1 = txtPrecioProducto.Text
             End With
             If clsP.ActualizarProducto() = "1" Then
                 MsgBox("Actualizado exitosamente")
@@ -145,13 +145,13 @@
 
         txtDescripcion.ReadOnly = False
         txtCantidadMinima.ReadOnly = False
-
+        txtPrecioProducto.ReadOnly = False
         'limpiar
         txtCodigo.Text = ""
         txtNombre.Text = ""
         txtModelo.Text = ""
         txtMarca.Text = ""
-        TextBox1.Text = ""
+        txtPrecioProducto.Text = ""
         txtDescripcion.Text = ""
         txtCantidadMinima.Text = ""
 
@@ -168,13 +168,13 @@
 
         txtDescripcion.ReadOnly = True
         txtCantidadMinima.ReadOnly = True
-        TextBox1.ReadOnly = True
+        txtPrecioProducto.ReadOnly = True
         'limpiar
         txtCodigo.Text = ""
         txtNombre.Text = ""
         txtModelo.Text = ""
         txtMarca.Text = ""
-        TextBox1.Text = ""
+        txtPrecioProducto.Text = ""
         txtDescripcion.Text = ""
         txtCantidadMinima.Text = ""
     End Sub
@@ -193,7 +193,8 @@
 
         Dim dv As DataView = objOrd.RecuperarProducto2.DefaultView
 
-        dv.RowFilter = String.Format("CONVERT(nombre_producto, System.String) LIKE '%{0}%'", txtBuscar.Text)
+        dv.RowFilter = String.Format("CONVERT(nombre_producto+marca+modelo, System.String) LIKE '%{0}%'", txtBuscar.Text)
+
         DataGridView1.DataSource = dv
 
 

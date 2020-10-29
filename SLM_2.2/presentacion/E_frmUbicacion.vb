@@ -119,4 +119,14 @@
         Return True
     End Function
 
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        txtCodAlmacen.Text = ""
+        txtDescripcion.Text = ""
+        txtNombreAlmacen.Text = ""
+        txtCodAlmacen.ReadOnly = True
+        txtDescripcion.ReadOnly = True
+        txtNombreAlmacen.ReadOnly = True
+        Button5.Enabled = False
+
+    End Sub
 End Class

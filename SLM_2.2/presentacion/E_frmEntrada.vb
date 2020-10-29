@@ -81,7 +81,7 @@
 
             With clsE
                 .IdProducto = Integer.Parse(txtCodProc.Text)
-
+                .Id_oc1 = Integer.Parse(TextBox1.Text)
                 .PrecioUnitario = Double.Parse(txtPrecioUnitario.Text)
                 .LoteProducto = txtLote.Text
                 .Descripcion = RichTextBox1.Text
@@ -168,6 +168,7 @@
             .CantidadProducto = TextBox8.Text
             .LoteProducto = TextBox7.Text
             .Id_entrada1 = TextBox5.Text
+            .FechaVencimiento = DateTimePicker4.Value.Date
         End With
         If clsE.ActualizarEntradaAlmacen() = "1" Then
             MsgBox("Actualizado exitosamente")
@@ -182,6 +183,7 @@
             TextBox6.Text = DataGridView3.Rows(e.RowIndex).Cells(2).Value
             TextBox7.Text = DataGridView3.Rows(e.RowIndex).Cells(0).Value
             TextBox8.Text = DataGridView3.Rows(e.RowIndex).Cells(3).Value
+            DateTimePicker4.Value = Date.Parse(DataGridView3.Rows(e.RowIndex).Cells(5).Value)
         Catch ex As Exception
 
         End Try
