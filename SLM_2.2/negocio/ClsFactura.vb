@@ -7,7 +7,7 @@ Public Class ClsFactura
     Dim codigoSucursal, codigoConvenio, codigoTerminal As Integer
     Dim fechaFactura, fechaVto As Date
     Dim ok, enviarEmail, entregaPaciente, entregaMedico, estado As Boolean
-    Dim pagoPaciente, vuelto, total, ingresoEfectivo, ingresoTarjeta As Double
+    Dim pagoPaciente, vuelto, total, ingresoEfectivo, ingresoTarjeta, saldoPendiente As Double
 
     Dim cheque, transferencia, deposito As Double
     'Constructor
@@ -44,6 +44,14 @@ Public Class ClsFactura
         End Get
         Set(value As String)
             nombreCliente = value
+        End Set
+    End Property
+    Public Property saldoPendiente_ As Double
+        Get
+            Return saldoPendiente
+        End Get
+        Set(value As Double)
+            saldoPendiente = value
         End Set
     End Property
     Public Property codigoTerminoPago1 As Integer
@@ -375,6 +383,11 @@ Public Class ClsFactura
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "saldoPendiente" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = saldoPendiente_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -485,6 +498,11 @@ Public Class ClsFactura
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codigoTerminal" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = codigoTerminal_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "saldoPendiente" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = saldoPendiente_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

@@ -85,8 +85,8 @@
         If Trim(txtDescripcionSubArea.Text) <> "" And Trim(txtDescripcionSucursal.Text) <> "" Then
 
             Try
-                E_HojaTrabajo.txtsucursal.Text = txtSucursal.Text
-                E_HojaTrabajo.txtSubarea.Text = txtSubArea.Text
+                E_HojaTrabajo.txtsucursal.Text = txtDescripcionSucursal.Text
+                E_HojaTrabajo.txtSubarea.Text = txtDescripcionSubArea.Text
                 E_HojaTrabajo.txtArea.Text = lblCodigoGrupo.Text
                 E_HojaTrabajo.lblCodeSucursal.Text = lblCodeSucursal.Text
                 E_HojaTrabajo.lblCodeSubArea.Text = lblCodeSubArea.Text
@@ -246,6 +246,7 @@
             Next
 
             col = New DataColumn("Estado")
+            'col.ReadOnly = True
             ds.Tables("HojaTrabajo").Columns.Add(col)
 
             'le asigno la tabla
@@ -298,6 +299,7 @@
             Next
 
             col = New DataColumn("Estado")
+            'col.ReadOnly = True
             ds.Tables("HojaTrabajo").Columns.Add(col)
 
             'Asigna la creacion de la hoja de trabajo al dataset

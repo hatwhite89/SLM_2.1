@@ -60,7 +60,7 @@
             txtcodigoPaciente.Text = CStr(row("codigoCliente"))
             dtpFechaFactura.Value = CStr(row("fechaFactura"))
             dtpHoraFactura.Value = CStr(row("fechaFactura"))
-            txtcodigoCajero.Text = CStr(row("codigoCaja"))
+            lblcodigoCajero.Text = CStr(row("codigoCajero"))
             txtcodigoSucursal.Text = CStr(row("codigoSucursal"))
 
             'pendiente muestra
@@ -122,7 +122,7 @@
             lblEstadoOrden.Text = CStr(row("estado"))
 
             'txtcurva.Text = CStr(row("curva"))
-            'txtsede.Text = CStr(row("cod_sede"))
+            txtsede.Text = CStr(row("cod_sede"))
             'txtcodigoTecnico.Text = CStr(row("cod_tecnico"))
             'txtcodigoValidador.Text = CStr(row("cod_validador"))
             'txtcodigoObjeto.Text = CStr(row("cod_objeto"))
@@ -137,6 +137,8 @@
             cbxentregaPaciente.Checked = row("entregarPaciente")
             txtcodigoArea.Text = CStr(row("cod_grupo"))
             txtcodigoSubArea.Text = CStr(row("codigoSubArea"))
+            txtcodigoMedico.Text = CStr(row("codigoMedico"))
+            txtnombreMedico.Text = CStr(row("medico"))
 
 
             Dim objOrdDet As New ClsOrdenTrabajoDetalle
@@ -294,6 +296,24 @@
             txtepUsuario.Text = ""
         End If
     End Sub
+    Private Sub lblcodigoCajero_TextChanged(sender As Object, e As EventArgs) Handles lblcodigoCajero.TextChanged
+        If Trim(lblcodigoCajero.Text) <> "Label1" Then
+            Try
+
+                With objUser
+                    .Cod = lblcodigoCajero.Text
+                End With
+                Dim dt As New DataTable
+                dt = objUser.BuscarPorCod_Usuario()
+                Dim row As DataRow = dt.Rows(0)
+                txtcodigoCajero.Text = CStr(row("usuario"))
+            Catch ex As Exception
+                txtprUsuario.Text = ""
+            End Try
+        Else
+            txtprUsuario.Text = ""
+        End If
+    End Sub
     Private Sub lblprUsuario_TextChanged(sender As Object, e As EventArgs) Handles lblprUsuario.TextChanged
         If Trim(lblprUsuario.Text) <> "Label1" Then
             Try
@@ -323,6 +343,7 @@
                 dt = objUser.BuscarPorCod_Usuario()
                 Dim row As DataRow = dt.Rows(0)
                 txtcoUsuario.Text = CStr(row("usuario"))
+                txtnombreValidador.Text = txtcoUsuario.Text
             Catch ex As Exception
                 txtcoUsuario.Text = ""
             End Try
@@ -367,5 +388,131 @@
 
     Private Sub E_OrdenTrabajo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub txtcoUsuario_TextChanged(sender As Object, e As EventArgs) Handles txtcoUsuario.TextChanged
+        txtcodigoValidador.Text = lblcoUsuario.Text
+        txtnombreValidador.Text = txtnombreValidador.Text
+        txtcodigoObjeto.Text = txtnombreValidador.Text
+    End Sub
+
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        Try
+            Dim n As String = MsgBox("¿Desea actualizar el estado de la orden de trabajo?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
+                Dim objOrd As New ClsOrdenDeTrabajo
+                objOrd.cod_orden_trabajo_ = Integer.Parse(txtnumero.Text)
+                If (rbtnEnProceso.Checked) Then
+                    'EN PROCESO EP
+                    objOrd.epUsuario_ = Integer.Parse(Form1.lblUserCod.Text)
+                    If objOrd.ModificarOrdenDeTrabajoEstadoEnProceso() = 1 Then
+                        dtpEpFecha.Format = DateTimePickerFormat.Short
+                        dtpEpHora.Format = DateTimePickerFormat.Time
+                        dtpEpFecha.Value = Date.Now
+                        dtpEpHora.Value = Date.Now
+                        lblepUsuario.Text = Form1.lblUserCod.Text
+                        MsgBox("Actualizado correctamente.", MsgBoxStyle.Information, "Validación.")
+                    End If
+                ElseIf (rbtnProcesado.Checked) Then
+                    'PROCESADO PR
+                    objOrd.prUsuario_ = Integer.Parse(Form1.lblUserCod.Text)
+                    If objOrd.ModificarOrdenDeTrabajoEstadoProcesado() = 1 Then
+                        dtpPrFecha.Format = DateTimePickerFormat.Short
+                        dtpPrHora.Format = DateTimePickerFormat.Time
+                        dtpPrFecha.Value = Date.Now
+                        dtpPrHora.Value = Date.Now
+                        lblprUsuario.Text = Form1.lblUserCod.Text
+                        MsgBox("Actualizado correctamente.", MsgBoxStyle.Information, "Validación.")
+                    End If
+                ElseIf (rbtnpendienteMuestra.Checked) Then
+                    'PENDIENTE MUESTRA PM
+                    objOrd.pmUsuario_ = Integer.Parse(Form1.lblUserCod.Text)
+                    If objOrd.ModificarOrdenDeTrabajoEstadoPendienteMuestra() = 1 Then
+                        dtpPmFecha.Format = DateTimePickerFormat.Short
+                        dtpPmHora.Format = DateTimePickerFormat.Time
+                        dtpPmFecha.Value = Date.Now
+                        dtpPmHora.Value = Date.Now
+                        lblpmUsuario.Text = Form1.lblUserCod.Text
+                        MsgBox("Actualizado correctamente.", MsgBoxStyle.Information, "Validación.")
+                    End If
+                ElseIf (rbtnNoProcesado.Checked) Then
+                    'NO PROCESADO NP
+                    objOrd.npUsuario_ = Integer.Parse(Form1.lblUserCod.Text)
+                    If objOrd.ModificarOrdenDeTrabajoEstadoNoProcesado() = 1 Then
+                        dtpNpFecha.Format = DateTimePickerFormat.Short
+                        dtpNpHora.Format = DateTimePickerFormat.Time
+                        dtpNpFecha.Value = Date.Now
+                        dtpNpHora.Value = Date.Now
+                        lblnpUsuario.Text = Form1.lblUserCod.Text
+                        MsgBox("Actualizado correctamente.", MsgBoxStyle.Information, "Validación.")
+                    End If
+                ElseIf (rbtnValidado.Checked) Then
+                    'VALIDADO CO
+                    objOrd.coUsuario_ = Integer.Parse(Form1.lblUserCod.Text)
+                    If objOrd.ModificarOrdenDeTrabajoEstadoValidado() = 1 Then
+                        dtpCoFecha.Format = DateTimePickerFormat.Short
+                        dtpCoHora.Format = DateTimePickerFormat.Time
+                        dtpCoFecha.Value = Date.Now
+                        dtpCoHora.Value = Date.Now
+                        lblcoUsuario.Text = Form1.lblUserCod.Text
+                        MsgBox("Actualizado correctamente.", MsgBoxStyle.Information, "Validación.")
+                    End If
+                ElseIf (rbtnEntregado.Checked) Then
+                    'ENTREGADO EN
+                    objOrd.enUsuario_ = Integer.Parse(Form1.lblUserCod.Text)
+                    If objOrd.ModificarOrdenDeTrabajoEstadoEntregado() = 1 Then
+                        dtpEnFecha.Format = DateTimePickerFormat.Short
+                        dtpEnHora.Format = DateTimePickerFormat.Time
+                        dtpEnFecha.Value = Date.Now
+                        dtpEnHora.Value = Date.Now
+                        lblenUsuario.Text = Form1.lblUserCod.Text
+                        MsgBox("Actualizado correctamente.", MsgBoxStyle.Information, "Validación.")
+                    End If
+                ElseIf (rbtnInvalidado.Checked) Then
+                    'INVALIDADO IN
+                    objOrd.inUsuario_ = Integer.Parse(Form1.lblUserCod.Text)
+                    If objOrd.ModificarOrdenDeTrabajoEstadoInvalidado() = 1 Then
+                        dtpInFecha.Format = DateTimePickerFormat.Short
+                        dtpInHora.Format = DateTimePickerFormat.Time
+                        dtpInFecha.Value = Date.Now
+                        dtpInHora.Value = Date.Now
+                        lblinUsuario.Text = Form1.lblUserCod.Text
+                        MsgBox("Actualizado correctamente.", MsgBoxStyle.Information, "Validación.")
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+    Private Sub txtsede_TextChanged(sender As Object, e As EventArgs) Handles txtsede.TextChanged
+        If (txtsede.Text <> "") Then
+            Try
+                Dim objSede As New ClsSede
+                With objSede
+                    .Codigo1 = txtsede.Text
+                End With
+                Dim dt As New DataTable
+                dt = objSede.BuscarSedeCode()
+                Dim row As DataRow = dt.Rows(0)
+                txtnombreSede.Text = CStr(row("nombre"))
+                txtsede.BackColor = Color.White
+            Catch ex As Exception
+                txtsede.BackColor = Color.Red
+                txtnombreSede.Text = ""
+                ' MsgBox("No existe el código de la sede.", MsgBoxStyle.Critical, "Validación")
+            End Try
+        Else
+            txtsede.Text = ""
+            txtnombreSede.Text = ""
+            txtsede.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
     End Sub
 End Class

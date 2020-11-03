@@ -649,6 +649,12 @@
     <Compile Include="presentacion\A_ValoresRefPar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\Cry_Arqueo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cry_Arqueo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="presentacion\E_BuscarOrdenDeTrabajo.Designer.vb">
       <DependentUpon>E_BuscarOrdenDeTrabajo.vb</DependentUpon>
     </Compile>
@@ -1620,6 +1626,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ValoresRefPar.resx">
       <DependentUpon>A_ValoresRefPar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Cry_Arqueo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Cry_Arqueo.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_BuscarOrdenDeTrabajo.resx">
       <DependentUpon>E_BuscarOrdenDeTrabajo.vb</DependentUpon>

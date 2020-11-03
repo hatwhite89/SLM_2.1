@@ -44,8 +44,10 @@
                     'TIPO CONVENIO
                     If dgbtabla.Rows(e.RowIndex).Cells(3).Value() Then
                         M_ListaPrecios.lblcodeT.Text = dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+                        M_ListaPrecios.txtrtn.Text = dgbtabla.Rows(e.RowIndex).Cells(7).Value()
                         M_ListaPrecios.rbtnConvenioSi.Checked = True
                     Else
+                        M_ListaPrecios.txtrtn.Clear()
                         M_ListaPrecios.rbtnConvenioNo.Checked = True
                     End If
 

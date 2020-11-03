@@ -33,12 +33,16 @@ Partial Class M_BuscarFactura
         Me.lbltipoCta = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnumeroB = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.Controls.Add(Me.Button3)
+        Me.gbxbusqueda.Controls.Add(Me.Button2)
         Me.gbxbusqueda.Controls.Add(Me.Button1)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.btnnueva)
@@ -166,6 +170,24 @@ Partial Class M_BuscarFactura
         Me.lblnumeroB.TabIndex = 114
         Me.lblnumeroB.Text = "Número"
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(408, 3)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(124, 23)
+        Me.Button2.TabIndex = 122
+        Me.Button2.Text = "Cierre Caja"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(150, 14)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 123
+        Me.Button3.Text = "Arqueo"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'M_BuscarFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -196,4 +218,6 @@ Partial Class M_BuscarFactura
     Friend WithEvents lblnumeroB As Label
     Friend WithEvents btnnueva As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class
