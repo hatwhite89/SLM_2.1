@@ -1,5 +1,9 @@
 ﻿Public Class frmSolicitudNuevoProducto
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If txtDescripcion.Text = "" Then
+            MsgBox("La descripcion no puede quedar en vacia")
+            Exit Sub
+        End If
         Dim clsR As New ClsRequisicion
         Dim tipo_compra As String = ""
         If RadioButton1.Checked = True Then

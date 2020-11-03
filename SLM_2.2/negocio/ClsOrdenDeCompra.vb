@@ -187,7 +187,7 @@ Public Class ClsOrdenDeCompra
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select * from OrdenDeCompra where autorizacion = 'Rechazada' and usuario_autorizo ='" + usuario + "' and fecha_elaboracion between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "'", cn)
+        Using da As New SqlDataAdapter("select oc.id_oc,p.nombreProveedor,oc.usuario_consignado,oc.usuario_autorizo,oc.autorizacion,oc.fecha_autorizacion,oc.observaciones from OrdenDeCompra oc ,Proveedor p where oc.id_proveedor= p.codProveedor and oc.autorizacion ='Rechazada'  and oc.usuario_autorizo ='" + usuario + "' and oc.fecha_elaboracion between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "'", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             objCon.cerrarConexion()
@@ -424,15 +424,7 @@ Public Class ClsOrdenDeCompra
         sqlpar.Value = IdOrdenCompra
         sqlcom.Parameters.Add(sqlpar)
 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "usuario_autorizo" 'nombre campo en el procedimiento almacenado 
-        sqlpar.Value = UsuarioAutorizo
-        sqlcom.Parameters.Add(sqlpar)
 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "observaciones_autorizacion" 'nombre campo en el procedimiento almacenado 
-        sqlpar.Value = Obser_autorizacion1
-        sqlcom.Parameters.Add(sqlpar)
 
 
 
@@ -471,15 +463,42 @@ Public Class ClsOrdenDeCompra
         sqlpar.Value = IdOrdenCompra
         sqlcom.Parameters.Add(sqlpar)
 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "usuario_autorizo" 'nombre campo en el procedimiento almacenado 
-        sqlpar.Value = UsuarioAutorizo
-        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "observaciones_autorizacion" 'nombre campo en el procedimiento almacenado 
-        sqlpar.Value = Obser_autorizacion1
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+    Public Function AbrirOC() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slm_AbrirOC"
+
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_oc" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = IdOrdenCompra
+        sqlcom.Parameters.Add(sqlpar)
+
 
 
 
@@ -503,4 +522,55 @@ Public Class ClsOrdenDeCompra
 
     End Function
 
+    Public Function RecuperarOCAnuladas(ByVal usuario As String, ByVal inicio As Date, ByVal fin As Date) As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select oc.id_oc,p.nombreProveedor,oc.usuario_consignado,oc.usuario_autorizo,oc.autorizacion,oc.fecha_autorizacion,oc.observaciones from OrdenDeCompra oc ,Proveedor p where oc.id_proveedor= p.codProveedor and oc.autorizacion ='Anulada'  and oc.usuario_autorizo ='" + usuario + "' and oc.fecha_elaboracion between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
+
+    Public Function RecuperarOAutorizo(ByVal usuario As String, ByVal inicio As Date, ByVal fin As Date) As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select oc.id_oc,p.nombreProveedor,oc.usuario_consignado,oc.usuario_autorizo,oc.estado_final,oc.fecha_autorizacion,oc.observaciones from OrdenDeCompra oc ,Proveedor p where oc.id_proveedor= p.codProveedor and oc.estado_final ='Autorizada'  and oc.usuario_autorizo ='" + usuario + "' and oc.fecha_elaboracion between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
+
+    Public Function RecuperarOCCerrada(ByVal usuario As String, ByVal inicio As Date, ByVal fin As Date) As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select oc.id_oc,p.nombreProveedor,oc.usuario_consignado,oc.usuario_autorizo,oc.autorizacion,oc.fecha_autorizacion,oc.observaciones from OrdenDeCompra oc ,Proveedor p where oc.id_proveedor= p.codProveedor and oc.autorizacion ='Cerrada'  and oc.usuario_autorizo ='" + usuario + "' and oc.fecha_elaboracion between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
+
+    Public Function RecuperarOCAbierta(ByVal usuario As String, ByVal inicio As Date, ByVal fin As Date) As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select oc.id_oc,p.nombreProveedor,oc.usuario_consignado,oc.usuario_autorizo,oc.autorizacion,oc.fecha_autorizacion,oc.observaciones from OrdenDeCompra oc ,Proveedor p where oc.id_proveedor= p.codProveedor and oc.autorizacion ='Abierta' and oc.fecha_elaboracion between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
 End Class

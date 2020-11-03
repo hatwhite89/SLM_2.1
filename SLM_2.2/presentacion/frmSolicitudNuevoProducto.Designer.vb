@@ -27,11 +27,11 @@ Partial Class frmSolicitudNuevoProducto
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.txtCodUsuario = New System.Windows.Forms.TextBox()
-        Me.txtCodRequsicion = New System.Windows.Forms.TextBox()
         Me.txtDescripcion = New System.Windows.Forms.RichTextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
@@ -40,7 +40,6 @@ Partial Class frmSolicitudNuevoProducto
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -68,17 +67,16 @@ Partial Class frmSolicitudNuevoProducto
         Me.fecha_solicitud = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -122,14 +120,12 @@ Partial Class frmSolicitudNuevoProducto
         Me.TabPage1.Controls.Add(Me.Panel3)
         Me.TabPage1.Controls.Add(Me.DateTimePicker1)
         Me.TabPage1.Controls.Add(Me.txtCodUsuario)
-        Me.TabPage1.Controls.Add(Me.txtCodRequsicion)
         Me.TabPage1.Controls.Add(Me.txtDescripcion)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.Label5)
         Me.TabPage1.Controls.Add(Me.Label7)
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.Label3)
-        Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -137,6 +133,18 @@ Partial Class frmSolicitudNuevoProducto
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Requisición"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Panel3
+        '
+        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel3.Controls.Add(Me.Button1)
+        Me.Panel3.Controls.Add(Me.Button2)
+        Me.Panel3.Location = New System.Drawing.Point(7, 303)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(792, 43)
+        Me.Panel3.TabIndex = 13
         '
         'Button1
         '
@@ -152,7 +160,7 @@ Partial Class frmSolicitudNuevoProducto
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackColor = System.Drawing.Color.White
+        Me.Button2.BackColor = System.Drawing.Color.SandyBrown
         Me.Button2.Enabled = False
         Me.Button2.Location = New System.Drawing.Point(700, 10)
         Me.Button2.Name = "Button2"
@@ -164,32 +172,24 @@ Partial Class frmSolicitudNuevoProducto
         'DateTimePicker1
         '
         Me.DateTimePicker1.Enabled = False
-        Me.DateTimePicker1.Location = New System.Drawing.Point(198, 34)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(7, 34)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 11
         '
         'txtCodUsuario
         '
-        Me.txtCodUsuario.Location = New System.Drawing.Point(420, 34)
+        Me.txtCodUsuario.Location = New System.Drawing.Point(256, 34)
         Me.txtCodUsuario.Name = "txtCodUsuario"
         Me.txtCodUsuario.ReadOnly = True
         Me.txtCodUsuario.Size = New System.Drawing.Size(145, 20)
         Me.txtCodUsuario.TabIndex = 10
         '
-        'txtCodRequsicion
-        '
-        Me.txtCodRequsicion.Location = New System.Drawing.Point(7, 34)
-        Me.txtCodRequsicion.Name = "txtCodRequsicion"
-        Me.txtCodRequsicion.ReadOnly = True
-        Me.txtCodRequsicion.Size = New System.Drawing.Size(118, 20)
-        Me.txtCodRequsicion.TabIndex = 9
-        '
         'txtDescripcion
         '
         Me.txtDescripcion.Location = New System.Drawing.Point(7, 145)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(792, 141)
+        Me.txtDescripcion.Size = New System.Drawing.Size(792, 152)
         Me.txtDescripcion.TabIndex = 8
         Me.txtDescripcion.Text = ""
         '
@@ -197,9 +197,9 @@ Partial Class frmSolicitudNuevoProducto
         '
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 60)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 60)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(798, 49)
+        Me.GroupBox1.Size = New System.Drawing.Size(793, 49)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Tipo de Compra"
@@ -246,7 +246,7 @@ Partial Class frmSolicitudNuevoProducto
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(417, 18)
+        Me.Label4.Location = New System.Drawing.Point(253, 18)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(148, 13)
         Me.Label4.TabIndex = 2
@@ -255,20 +255,11 @@ Partial Class frmSolicitudNuevoProducto
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(195, 18)
+        Me.Label3.Location = New System.Drawing.Point(7, 13)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(110, 13)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Fecha de Requisición"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(8, 18)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(117, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Número de Requisición"
         '
         'TabPage2
         '
@@ -317,7 +308,7 @@ Partial Class frmSolicitudNuevoProducto
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(256, 33)
+        Me.Label13.Location = New System.Drawing.Point(257, 32)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(45, 13)
         Me.Label13.TabIndex = 12
@@ -353,7 +344,7 @@ Partial Class frmSolicitudNuevoProducto
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(158, 33)
+        Me.Label9.Location = New System.Drawing.Point(158, 32)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(100, 13)
         Me.Label9.TabIndex = 8
@@ -440,7 +431,7 @@ Partial Class frmSolicitudNuevoProducto
         '
         'Button7
         '
-        Me.Button7.BackColor = System.Drawing.Color.White
+        Me.Button7.BackColor = System.Drawing.Color.Gold
         Me.Button7.Location = New System.Drawing.Point(527, 5)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(75, 23)
@@ -531,18 +522,6 @@ Partial Class frmSolicitudNuevoProducto
         Me.StatusStrip1.TabIndex = 125
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'Panel3
-        '
-        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.AliceBlue
-        Me.Panel3.Controls.Add(Me.Button1)
-        Me.Panel3.Controls.Add(Me.Button2)
-        Me.Panel3.Location = New System.Drawing.Point(10, 303)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(794, 43)
-        Me.Panel3.TabIndex = 13
-        '
         'frmSolicitudNuevoProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -560,6 +539,7 @@ Partial Class frmSolicitudNuevoProducto
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
@@ -569,7 +549,6 @@ Partial Class frmSolicitudNuevoProducto
         Me.Panel2.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -583,7 +562,6 @@ Partial Class frmSolicitudNuevoProducto
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents txtCodUsuario As TextBox
-    Friend WithEvents txtCodRequsicion As TextBox
     Friend WithEvents txtDescripcion As RichTextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents RadioButton2 As RadioButton
@@ -592,7 +570,6 @@ Partial Class frmSolicitudNuevoProducto
     Friend WithEvents Label7 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents GroupBox2 As GroupBox
