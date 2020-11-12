@@ -471,11 +471,9 @@ Public Class ClsEvaluacionProveedor
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select e.id_oc,sum(e.a1+e.a2+e.a3+e.a4+e.a5)as encuesta1, sum(e.b1+e.b2+e.b3+e.b4+e.b5)as encuesta2,sum(e.c1+e.c2+e.c3+e.c4+e.c5)as encuesta3,sum(e.d1+e.d2+e.d3+e.d4+e.d5)as encuesta4,sum(e.e1+e.e2+e.e3+e.e4+e.e5)as encuesta5,
-(cast(sum(e.a1+e.a2+e.a3+e.a4+e.a5)+sum(e.b1+e.b2+e.b3+e.b4+e.b5)+sum(e.c1+e.c2+e.c3+e.c4+e.c5)+sum(e.d1+e.d2+e.d3+e.d4+e.d5)+sum(e.e1+e.e2+e.e3+e.e4+e.e5) as float)/25)*100 as promedio from EvaluacionProveedor e, OrdenDeCompra o
-where   e.id_oc =o.id_oc and
-o.id_proveedor =
-'" + cod + "' group by e.id_oc", cn)
+        Using da As New SqlDataAdapter("select (sum(c.nota)/count(*)) as calificacion,d.nombre,p.nombreProveedor,c.id_oc from DetalleTablaDeCalificacionServicio c, Proveedor p, Departamento d
+where nota >0 and p.codProveedor = c.id_proveedor and c.id_departamento = d.codigo and p.codProveedor ='" + cod + "'
+group by d.nombre,p.nombreProveedor,c.id_oc", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

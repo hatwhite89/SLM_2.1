@@ -30,12 +30,15 @@ Partial Class E_frmSolicitudInternaAlmacen
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_frmSolicitudInternaAlmacen))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Label32 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.id_detalle_oi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDPRODUCTO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad_solicitada = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtProducto = New System.Windows.Forms.TextBox()
@@ -49,6 +52,7 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.nombre_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cmbDepartamento = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -59,15 +63,6 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.DataGridView4 = New System.Windows.Forms.DataGridView()
-        Me.id_detalle_oi1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lote1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad_solicitada1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad_recibida = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_OI1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.estado1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_entrada1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -88,11 +83,17 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.cmbDepartamento = New System.Windows.Forms.TextBox()
-        Me.id_detalle_oi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IDPRODUCTO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre_producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad_solicitada = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_detalle_oi1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lote1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad_solicitada1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad_recibida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estado1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_OI1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_entrada1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -124,7 +125,6 @@ Partial Class E_frmSolicitudInternaAlmacen
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.Label32)
         Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
@@ -136,29 +136,20 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.TabPage1.Text = "Crear Solicitud"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'Label32
-        '
-        Me.Label32.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(363, 521)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(126, 13)
-        Me.Label32.TabIndex = 9
-        Me.Label32.Text = "Seleccionar fila a eliminar"
-        '
         'GroupBox3
         '
         Me.GroupBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Controls.Add(Me.Label11)
         Me.GroupBox3.Controls.Add(Me.Button1)
         Me.GroupBox3.Controls.Add(Me.TextBox1)
         Me.GroupBox3.Controls.Add(Me.DataGridView2)
         Me.GroupBox3.Location = New System.Drawing.Point(6, 322)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(859, 196)
+        Me.GroupBox3.Size = New System.Drawing.Size(859, 210)
         Me.GroupBox3.TabIndex = 7
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Detalle solicitud"
@@ -178,7 +169,7 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.Button1.BackColor = System.Drawing.Color.OrangeRed
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.Location = New System.Drawing.Point(695, 11)
+        Me.Button1.Location = New System.Drawing.Point(713, 10)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(139, 23)
         Me.Button1.TabIndex = 8
@@ -220,14 +211,39 @@ Partial Class E_frmSolicitudInternaAlmacen
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView2.RowHeadersWidth = 51
-        Me.DataGridView2.Size = New System.Drawing.Size(853, 154)
+        Me.DataGridView2.Size = New System.Drawing.Size(853, 165)
         Me.DataGridView2.TabIndex = 0
+        '
+        'id_detalle_oi
+        '
+        Me.id_detalle_oi.DataPropertyName = "id_detalle_oi"
+        Me.id_detalle_oi.HeaderText = "IDDETALLE"
+        Me.id_detalle_oi.Name = "id_detalle_oi"
+        '
+        'IDPRODUCTO
+        '
+        Me.IDPRODUCTO.DataPropertyName = "id_producto"
+        Me.IDPRODUCTO.HeaderText = "ID PRODUCTO"
+        Me.IDPRODUCTO.Name = "IDPRODUCTO"
+        '
+        'nombre_producto1
+        '
+        Me.nombre_producto1.DataPropertyName = "nombre_producto"
+        Me.nombre_producto1.HeaderText = "PRODUCTO"
+        Me.nombre_producto1.Name = "nombre_producto1"
+        '
+        'cantidad_solicitada
+        '
+        Me.cantidad_solicitada.DataPropertyName = "cantidad_solicitada"
+        Me.cantidad_solicitada.HeaderText = "CANTIDAD SOLICITADA"
+        Me.cantidad_solicitada.Name = "cantidad_solicitada"
         '
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.txtProducto)
         Me.GroupBox2.Controls.Add(Me.Label2)
@@ -287,11 +303,11 @@ Partial Class E_frmSolicitudInternaAlmacen
         '
         'txtAgregarInventario
         '
-        Me.txtAgregarInventario.BackColor = System.Drawing.Color.DodgerBlue
+        Me.txtAgregarInventario.BackColor = System.Drawing.Color.SandyBrown
         Me.txtAgregarInventario.Enabled = False
         Me.txtAgregarInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.txtAgregarInventario.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.txtAgregarInventario.Location = New System.Drawing.Point(697, 32)
+        Me.txtAgregarInventario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.txtAgregarInventario.Location = New System.Drawing.Point(739, 32)
         Me.txtAgregarInventario.Name = "txtAgregarInventario"
         Me.txtAgregarInventario.Size = New System.Drawing.Size(116, 23)
         Me.txtAgregarInventario.TabIndex = 2
@@ -320,10 +336,10 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.nombre_producto, Me.descripcion})
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 61)
+        Me.DataGridView1.Location = New System.Drawing.Point(3, 75)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.Size = New System.Drawing.Size(852, 183)
+        Me.DataGridView1.Size = New System.Drawing.Size(852, 169)
         Me.DataGridView1.TabIndex = 0
         '
         'ID
@@ -363,6 +379,14 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Crear solicitud interna"
+        '
+        'cmbDepartamento
+        '
+        Me.cmbDepartamento.Location = New System.Drawing.Point(290, 30)
+        Me.cmbDepartamento.Name = "cmbDepartamento"
+        Me.cmbDepartamento.ReadOnly = True
+        Me.cmbDepartamento.Size = New System.Drawing.Size(260, 20)
+        Me.cmbDepartamento.TabIndex = 8
         '
         'Label7
         '
@@ -466,66 +490,12 @@ Partial Class E_frmSolicitudInternaAlmacen
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView4.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_detalle_oi1, Me.id_producto1, Me.lote1, Me.producto1, Me.cantidad_solicitada1, Me.cantidad_recibida, Me.ID_OI1, Me.estado1, Me.id_entrada1})
+        Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_detalle_oi1, Me.id_producto1, Me.producto1, Me.lote1, Me.cantidad_solicitada1, Me.cantidad_recibida, Me.estado1, Me.ID_OI1, Me.id_entrada1})
         Me.DataGridView4.Location = New System.Drawing.Point(6, 14)
         Me.DataGridView4.Name = "DataGridView4"
         Me.DataGridView4.RowHeadersWidth = 51
         Me.DataGridView4.Size = New System.Drawing.Size(849, 193)
         Me.DataGridView4.TabIndex = 6
-        '
-        'id_detalle_oi1
-        '
-        Me.id_detalle_oi1.DataPropertyName = "id_detalle_oi"
-        Me.id_detalle_oi1.HeaderText = "ID"
-        Me.id_detalle_oi1.Name = "id_detalle_oi1"
-        '
-        'id_producto1
-        '
-        Me.id_producto1.DataPropertyName = "id_producto"
-        Me.id_producto1.HeaderText = "IDPRODUCTO"
-        Me.id_producto1.Name = "id_producto1"
-        '
-        'lote1
-        '
-        Me.lote1.DataPropertyName = "lote"
-        Me.lote1.HeaderText = "LOTE"
-        Me.lote1.Name = "lote1"
-        '
-        'producto1
-        '
-        Me.producto1.DataPropertyName = "producto"
-        Me.producto1.HeaderText = "PRODUCTO"
-        Me.producto1.Name = "producto1"
-        '
-        'cantidad_solicitada1
-        '
-        Me.cantidad_solicitada1.DataPropertyName = "cantidad_solicitada"
-        Me.cantidad_solicitada1.HeaderText = "CANTIDAD SOLICITADA"
-        Me.cantidad_solicitada1.Name = "cantidad_solicitada1"
-        '
-        'cantidad_recibida
-        '
-        Me.cantidad_recibida.DataPropertyName = "cantidad_recibida"
-        Me.cantidad_recibida.HeaderText = "CANTIDAD RECIBIDA"
-        Me.cantidad_recibida.Name = "cantidad_recibida"
-        '
-        'ID_OI1
-        '
-        Me.ID_OI1.DataPropertyName = "id_oi"
-        Me.ID_OI1.HeaderText = "NUM ORDEN INTERNA"
-        Me.ID_OI1.Name = "ID_OI1"
-        '
-        'estado1
-        '
-        Me.estado1.DataPropertyName = "estado"
-        Me.estado1.HeaderText = "ESTADO"
-        Me.estado1.Name = "estado1"
-        '
-        'id_entrada1
-        '
-        Me.id_entrada1.DataPropertyName = "id_entrada"
-        Me.id_entrada1.HeaderText = "ID ENTRADA"
-        Me.id_entrada1.Name = "id_entrada1"
         '
         'Panel2
         '
@@ -558,9 +528,9 @@ Partial Class E_frmSolicitudInternaAlmacen
         '
         'Button5
         '
-        Me.Button5.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button5.BackColor = System.Drawing.Color.Gold
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Location = New System.Drawing.Point(587, 8)
+        Me.Button5.Location = New System.Drawing.Point(585, 10)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
         Me.Button5.TabIndex = 7
@@ -616,11 +586,11 @@ Partial Class E_frmSolicitudInternaAlmacen
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(354, 241)
+        Me.Label15.Location = New System.Drawing.Point(343, 16)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(141, 13)
+        Me.Label15.Size = New System.Drawing.Size(232, 13)
         Me.Label15.TabIndex = 0
-        Me.Label15.Text = "Seleccionar Solicitud interna"
+        Me.Label15.Text = "Seleccionar Solicitud interna para cargar detalle"
         '
         'DataGridView3
         '
@@ -638,7 +608,7 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_oi, Me.fecha, Me.fecha_entrega, Me.id_usuario, Me.estado})
-        Me.DataGridView3.Location = New System.Drawing.Point(6, 19)
+        Me.DataGridView3.Location = New System.Drawing.Point(6, 39)
         Me.DataGridView3.Name = "DataGridView3"
         Me.DataGridView3.RowHeadersWidth = 51
         Me.DataGridView3.Size = New System.Drawing.Size(849, 217)
@@ -734,37 +704,77 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.StatusStrip1.TabIndex = 10
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'cmbDepartamento
+        'id_detalle_oi1
         '
-        Me.cmbDepartamento.Location = New System.Drawing.Point(290, 30)
-        Me.cmbDepartamento.Name = "cmbDepartamento"
-        Me.cmbDepartamento.ReadOnly = True
-        Me.cmbDepartamento.Size = New System.Drawing.Size(260, 20)
-        Me.cmbDepartamento.TabIndex = 8
+        Me.id_detalle_oi1.DataPropertyName = "id_detalle_oi"
+        Me.id_detalle_oi1.HeaderText = "ID"
+        Me.id_detalle_oi1.Name = "id_detalle_oi1"
         '
-        'id_detalle_oi
+        'id_producto1
         '
-        Me.id_detalle_oi.DataPropertyName = "id_detalle_oi"
-        Me.id_detalle_oi.HeaderText = "IDDETALLE"
-        Me.id_detalle_oi.Name = "id_detalle_oi"
+        Me.id_producto1.DataPropertyName = "id_producto"
+        Me.id_producto1.HeaderText = "IDPRODUCTO"
+        Me.id_producto1.Name = "id_producto1"
         '
-        'IDPRODUCTO
+        'producto1
         '
-        Me.IDPRODUCTO.DataPropertyName = "id_producto"
-        Me.IDPRODUCTO.HeaderText = "ID PRODUCTO"
-        Me.IDPRODUCTO.Name = "IDPRODUCTO"
+        Me.producto1.DataPropertyName = "producto"
+        Me.producto1.HeaderText = "PRODUCTO"
+        Me.producto1.Name = "producto1"
         '
-        'nombre_producto1
+        'lote1
         '
-        Me.nombre_producto1.DataPropertyName = "nombre_producto"
-        Me.nombre_producto1.HeaderText = "PRODUCTO"
-        Me.nombre_producto1.Name = "nombre_producto1"
+        Me.lote1.DataPropertyName = "lote"
+        Me.lote1.HeaderText = "LOTE"
+        Me.lote1.Name = "lote1"
         '
-        'cantidad_solicitada
+        'cantidad_solicitada1
         '
-        Me.cantidad_solicitada.DataPropertyName = "cantidad_solicitada"
-        Me.cantidad_solicitada.HeaderText = "CANTIDAD SOLICITADA"
-        Me.cantidad_solicitada.Name = "cantidad_solicitada"
+        Me.cantidad_solicitada1.DataPropertyName = "cantidad_solicitada"
+        Me.cantidad_solicitada1.HeaderText = "CANTIDAD SOLICITADA"
+        Me.cantidad_solicitada1.Name = "cantidad_solicitada1"
+        '
+        'cantidad_recibida
+        '
+        Me.cantidad_recibida.DataPropertyName = "cantidad_recibida"
+        Me.cantidad_recibida.HeaderText = "CANTIDAD RECIBIDA"
+        Me.cantidad_recibida.Name = "cantidad_recibida"
+        '
+        'estado1
+        '
+        Me.estado1.DataPropertyName = "estado"
+        Me.estado1.HeaderText = "ESTADO"
+        Me.estado1.Name = "estado1"
+        '
+        'ID_OI1
+        '
+        Me.ID_OI1.DataPropertyName = "id_oi"
+        Me.ID_OI1.HeaderText = "NUM ORDEN INTERNA"
+        Me.ID_OI1.Name = "ID_OI1"
+        '
+        'id_entrada1
+        '
+        Me.id_entrada1.DataPropertyName = "id_entrada"
+        Me.id_entrada1.HeaderText = "ID ENTRADA"
+        Me.id_entrada1.Name = "id_entrada1"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(421, 16)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(188, 13)
+        Me.Label8.TabIndex = 9
+        Me.Label8.Text = "Seleccionar fila para quitar el producto"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(327, 57)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(202, 13)
+        Me.Label10.TabIndex = 6
+        Me.Label10.Text = "Seleccionar fila para agregar un producto"
         '
         'E_frmSolicitudInternaAlmacen
         '
@@ -781,7 +791,6 @@ Partial Class E_frmSolicitudInternaAlmacen
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -845,20 +854,10 @@ Partial Class E_frmSolicitudInternaAlmacen
     Friend WithEvents DataGridView4 As DataGridView
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Label15 As Label
-    Friend WithEvents Label32 As Label
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ID As DataGridViewTextBoxColumn
     Friend WithEvents nombre_producto As DataGridViewTextBoxColumn
     Friend WithEvents descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents id_detalle_oi1 As DataGridViewTextBoxColumn
-    Friend WithEvents id_producto1 As DataGridViewTextBoxColumn
-    Friend WithEvents lote1 As DataGridViewTextBoxColumn
-    Friend WithEvents producto1 As DataGridViewTextBoxColumn
-    Friend WithEvents cantidad_solicitada1 As DataGridViewTextBoxColumn
-    Friend WithEvents cantidad_recibida As DataGridViewTextBoxColumn
-    Friend WithEvents ID_OI1 As DataGridViewTextBoxColumn
-    Friend WithEvents estado1 As DataGridViewTextBoxColumn
-    Friend WithEvents id_entrada1 As DataGridViewTextBoxColumn
     Friend WithEvents id_oi As DataGridViewTextBoxColumn
     Friend WithEvents fecha As DataGridViewTextBoxColumn
     Friend WithEvents fecha_entrega As DataGridViewTextBoxColumn
@@ -870,4 +869,15 @@ Partial Class E_frmSolicitudInternaAlmacen
     Friend WithEvents IDPRODUCTO As DataGridViewTextBoxColumn
     Friend WithEvents nombre_producto1 As DataGridViewTextBoxColumn
     Friend WithEvents cantidad_solicitada As DataGridViewTextBoxColumn
+    Friend WithEvents id_detalle_oi1 As DataGridViewTextBoxColumn
+    Friend WithEvents id_producto1 As DataGridViewTextBoxColumn
+    Friend WithEvents producto1 As DataGridViewTextBoxColumn
+    Friend WithEvents lote1 As DataGridViewTextBoxColumn
+    Friend WithEvents cantidad_solicitada1 As DataGridViewTextBoxColumn
+    Friend WithEvents cantidad_recibida As DataGridViewTextBoxColumn
+    Friend WithEvents estado1 As DataGridViewTextBoxColumn
+    Friend WithEvents ID_OI1 As DataGridViewTextBoxColumn
+    Friend WithEvents id_entrada1 As DataGridViewTextBoxColumn
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label10 As Label
 End Class

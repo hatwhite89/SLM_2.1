@@ -33,6 +33,7 @@ Partial Class E_frmProcesarSolicitudInterna
         Me.cantidad_1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cantidad_2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
@@ -65,6 +66,7 @@ Partial Class E_frmProcesarSolicitudInterna
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -73,8 +75,7 @@ Partial Class E_frmProcesarSolicitudInterna
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -185,7 +186,6 @@ Partial Class E_frmProcesarSolicitudInterna
         Me.GroupBox4.Controls.Add(Me.Label2)
         Me.GroupBox4.Controls.Add(Me.GroupBox1)
         Me.GroupBox4.Controls.Add(Me.TextBox1)
-        Me.GroupBox4.Controls.Add(Me.Label15)
         Me.GroupBox4.Controls.Add(Me.DataGridView3)
         Me.GroupBox4.Location = New System.Drawing.Point(14, 11)
         Me.GroupBox4.Name = "GroupBox4"
@@ -193,6 +193,17 @@ Partial Class E_frmProcesarSolicitudInterna
         Me.GroupBox4.TabIndex = 12
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Solicitudes"
+        '
+        'Button3
+        '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button3.BackColor = System.Drawing.Color.Yellow
+        Me.Button3.Location = New System.Drawing.Point(729, 9)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(149, 40)
+        Me.Button3.TabIndex = 18
+        Me.Button3.Text = "Imprimir Orden Interna"
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Label2
         '
@@ -212,6 +223,7 @@ Partial Class E_frmProcesarSolicitudInterna
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
+        Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 53)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(877, 53)
@@ -233,10 +245,10 @@ Partial Class E_frmProcesarSolicitudInterna
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.BackColor = System.Drawing.Color.Orange
         Me.Button1.Location = New System.Drawing.Point(770, 14)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(101, 33)
         Me.Button1.TabIndex = 14
         Me.Button1.Text = "Guardar"
         Me.Button1.UseVisualStyleBackColor = False
@@ -274,11 +286,11 @@ Partial Class E_frmProcesarSolicitudInterna
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(367, 280)
+        Me.Label15.Location = New System.Drawing.Point(344, 34)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(141, 13)
+        Me.Label15.Size = New System.Drawing.Size(243, 13)
         Me.Label15.TabIndex = 0
-        Me.Label15.Text = "Seleccionar Solicitud interna"
+        Me.Label15.Text = "Seleccionar Solicitud interna para cargar el detalle" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'DataGridView3
         '
@@ -291,7 +303,7 @@ Partial Class E_frmProcesarSolicitudInterna
         Me.DataGridView3.Location = New System.Drawing.Point(6, 112)
         Me.DataGridView3.Name = "DataGridView3"
         Me.DataGridView3.RowHeadersWidth = 51
-        Me.DataGridView3.Size = New System.Drawing.Size(875, 165)
+        Me.DataGridView3.Size = New System.Drawing.Size(875, 178)
         Me.DataGridView3.TabIndex = 11
         '
         'id_oi
@@ -407,6 +419,7 @@ Partial Class E_frmProcesarSolicitudInterna
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.DataGridView2)
         Me.GroupBox2.Location = New System.Drawing.Point(6, 55)
         Me.GroupBox2.Name = "GroupBox2"
@@ -423,10 +436,10 @@ Partial Class E_frmProcesarSolicitudInterna
         Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
-        Me.DataGridView2.Location = New System.Drawing.Point(9, 19)
+        Me.DataGridView2.Location = New System.Drawing.Point(9, 32)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.RowHeadersWidth = 51
-        Me.DataGridView2.Size = New System.Drawing.Size(875, 207)
+        Me.DataGridView2.Size = New System.Drawing.Size(875, 194)
         Me.DataGridView2.TabIndex = 12
         '
         'DataGridViewTextBoxColumn1
@@ -481,9 +494,20 @@ Partial Class E_frmProcesarSolicitudInterna
         Me.Panel2.Size = New System.Drawing.Size(905, 46)
         Me.Panel2.TabIndex = 12
         '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.Color.Yellow
+        Me.Button2.Location = New System.Drawing.Point(741, 3)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(149, 40)
+        Me.Button2.TabIndex = 16
+        Me.Button2.Text = "Imprimir Orden Interna"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'Button4
         '
-        Me.Button4.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button4.BackColor = System.Drawing.Color.Gold
         Me.Button4.Location = New System.Drawing.Point(604, 11)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
@@ -556,27 +580,14 @@ Partial Class E_frmProcesarSolicitudInterna
         Me.StatusStrip1.TabIndex = 11
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'Button2
+        'Label1
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(741, 3)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(149, 40)
-        Me.Button2.TabIndex = 16
-        Me.Button2.Text = "Imprimir Orden Interna"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.BackColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(729, 9)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(149, 40)
-        Me.Button3.TabIndex = 18
-        Me.Button3.Text = "Imprimir Orden Interna"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(317, 16)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(243, 13)
+        Me.Label1.TabIndex = 13
+        Me.Label1.Text = "Seleccionar Solicitud interna para cargar el detalle" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'E_frmProcesarSolicitudInterna
         '
@@ -603,6 +614,7 @@ Partial Class E_frmProcesarSolicitudInterna
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
@@ -665,4 +677,5 @@ Partial Class E_frmProcesarSolicitudInterna
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents Label1 As Label
 End Class

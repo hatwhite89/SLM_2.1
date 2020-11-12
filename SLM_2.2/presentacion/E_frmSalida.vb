@@ -9,7 +9,7 @@ Public Class E_frmSalida
 
     Private Sub E_frmSalida_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtEntrega.Text = nombre_usurio
-
+        Label33.Text = ""
         alternarColoFilasDatagridview(DataGridView1)
         alternarColoFilasDatagridview(DataGridView2)
         alternarColoFilasDatagridview(DataGridView3)
@@ -78,8 +78,19 @@ Public Class E_frmSalida
 
     Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles txtCodOI.TextChanged
         CargarDataOI(txtCodOI.Text)
+        sumarDataExistencia()
     End Sub
+    Public Sub sumarDataExistencia()
+        Dim Total As Single
 
+        For Each row As DataGridViewRow In Me.DataGridView1.Rows
+            Total += Val(row.Cells(4).Value)
+        Next
+        If Total > 0 Then
+            Label33.Text = "Esta orden interna tiene items por entregar"
+        End If
+
+    End Sub
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
     End Sub
@@ -203,6 +214,10 @@ Public Class E_frmSalida
 
         End Try
 
+
+    End Sub
+
+    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
 
     End Sub
 

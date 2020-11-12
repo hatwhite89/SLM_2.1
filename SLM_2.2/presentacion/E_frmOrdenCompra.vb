@@ -63,7 +63,7 @@ Public Class E_frmOrdenCompra
         Dim Total As Single
 
         For Each row As DataGridViewRow In Me.DataGridView1.Rows
-            Total += Val(row.Cells(3).Value)
+            Total += Val(row.Cells(4).Value)
         Next
         Label46.Text = Total.ToString
     End Sub
@@ -206,10 +206,7 @@ Public Class E_frmOrdenCompra
 
         txtConsignado.Text = nombre_usurio
     End Sub
-    Private Sub ActualizarOC()
 
-
-    End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim clsOC As New ClsOrdenDeCompra
         Dim estado As Boolean = False
@@ -276,7 +273,7 @@ Public Class E_frmOrdenCompra
             codigo_oc = DataGridView2.Rows(e.RowIndex).Cells(0).Value
             txtCodOC.Text = DataGridView2.Rows(e.RowIndex).Cells(0).Value
             LlenarTextbox(DataGridView2.Rows(e.RowIndex).Cells(0).Value)
-
+            txtEstadoOC.Text = DataGridView2.Rows(e.RowIndex).Cells(4).Value
             txtNombreProveedor.Text = DataGridView2.Rows(e.RowIndex).Cells(1).Value
 
 
@@ -315,6 +312,11 @@ Public Class E_frmOrdenCompra
 
         End Try
 
+        If txtEstadoOC.Text = "Cerrado" Then
+            Button1.Enabled = False
+            Button3.Enabled = False
+
+        End If
 
     End Sub
 
@@ -467,5 +469,14 @@ Public Class E_frmOrdenCompra
 
     Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
         reporteOrdenCompra.Show()
+    End Sub
+
+    Private Sub txtCodOC_TextChanged(sender As Object, e As EventArgs) Handles txtCodOC.TextChanged
+        CargarDetalleOC(txtCodOC.Text)
+
+        If txtEstadoOC.Text = "Cerrado" Then
+            Button1.Enabled = False
+            Button3.Enabled = False
+        End If
     End Sub
 End Class

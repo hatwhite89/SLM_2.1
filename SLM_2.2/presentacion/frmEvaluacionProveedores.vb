@@ -25,14 +25,15 @@ Public Class frmEvaluacionProveedores
             .Id101 = txtcal10.Text
             .Id111 = txtcal11.Text
             .Id_oc1 = TextBox1.Text
-            .Id_proveedor1 = "1"
+            .Id_proveedor1 = cod_proveedor
             .Id_usuario1 = codigo_usuario
-            .Id_departamento2 = "1"
+            .Id_departamento2 = ComboBox1.SelectedValue
 
 
         End With
         If cls.RegistraCalificacion() = "1" Then
             MsgBox("Registrado exitosamente")
+            Button1.Enabled = False
         End If
     End Sub
     Public Sub Promediar()
@@ -92,6 +93,9 @@ Public Class frmEvaluacionProveedores
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        TextBox2.Text = ""
+        TextBox3.Text = ""
+        Button1.Enabled = False
         Try
             Dim objP As New ClsEvaluacionProveedor
             With objP
@@ -101,14 +105,15 @@ Public Class frmEvaluacionProveedores
             dt = objP.validarOrdenCompra(TextBox1.Text)
             Dim row As DataRow = dt.Rows(0)
 
-            TextBox4.Text = CStr(row("id_oc"))
+            TextBox3.Text = CStr(row("id_oc"))
+
 
         Catch ex As Exception
-            TextBox4.Text = ""
+            TextBox3.Text = ""
 
         End Try
 
-        If TextBox4.Text = "" Then
+        If TextBox3.Text = "" Then
             Try
                 Dim objP As New ClsEvaluacionProveedor
                 With objP
@@ -157,6 +162,17 @@ Public Class frmEvaluacionProveedores
     Private Sub frmEvaluacionProveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         alternarColoFilasDatagridview(DataGridView1)
         autoCompletarTexbox(TextBox6)
+
+        Dim clsD As New ClsDepartamento
+
+        Dim ds As New DataTable
+
+
+        ds.Load(clsD.RecuperarDepartamentos)
+
+        ComboBox1.DataSource = ds
+        ComboBox1.DisplayMember = "nombre"
+        ComboBox1.ValueMember = "codigo"
     End Sub
     Sub abrir()
         Try
@@ -199,4 +215,7 @@ Public Class frmEvaluacionProveedores
         End Try
     End Sub
 
+    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
+
+    End Sub
 End Class

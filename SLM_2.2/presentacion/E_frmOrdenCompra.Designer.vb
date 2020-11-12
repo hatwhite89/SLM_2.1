@@ -99,7 +99,6 @@ Partial Class E_frmOrdenCompra
         Me.Label16 = New System.Windows.Forms.Label()
         Me.txtDiasCredito = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.txtNumFactura = New System.Windows.Forms.TextBox()
@@ -118,7 +117,6 @@ Partial Class E_frmOrdenCompra
         Me.txtAutorizado = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.Label33 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.id_oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -127,26 +125,25 @@ Partial Class E_frmOrdenCompra
         Me.autorizacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.observaciones = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fecha_autorizacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button8 = New System.Windows.Forms.Button()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.DataGridView5 = New System.Windows.Forms.DataGridView()
+        Me.id_detalle_oc1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cod_producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_producto11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_unitario12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.costo_total2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.DataGridView4 = New System.Windows.Forms.DataGridView()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.id_ocW = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreProveedor1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.usuario_consignado1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -154,13 +151,16 @@ Partial Class E_frmOrdenCompra
         Me.autorizacion1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fecha_autorizacion1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.observaciones1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_detalle_oc1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cod_producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre_producto11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio_unitario12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.costo_total2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -170,6 +170,7 @@ Partial Class E_frmOrdenCompra
         Me.GroupBox10.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView9, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -185,6 +186,7 @@ Partial Class E_frmOrdenCompra
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -381,12 +383,9 @@ Partial Class E_frmOrdenCompra
         Me.Panel5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel5.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.Panel5.Controls.Add(Me.Label44)
-        Me.Panel5.Controls.Add(Me.Label46)
-        Me.Panel5.Controls.Add(Me.Label24)
         Me.Panel5.Controls.Add(Me.Button2)
         Me.Panel5.Controls.Add(Me.Label32)
-        Me.Panel5.Controls.Add(Me.Label43)
+        Me.Panel5.Controls.Add(Me.Panel6)
         Me.Panel5.Location = New System.Drawing.Point(10, 238)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1026, 46)
@@ -396,11 +395,11 @@ Partial Class E_frmOrdenCompra
         '
         Me.Label44.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label44.ForeColor = System.Drawing.Color.White
-        Me.Label44.Location = New System.Drawing.Point(943, 27)
+        Me.Label44.Location = New System.Drawing.Point(259, 22)
         Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(25, 13)
+        Me.Label44.Size = New System.Drawing.Size(28, 16)
         Me.Label44.TabIndex = 80
         Me.Label44.Text = "0.0"
         '
@@ -408,11 +407,11 @@ Partial Class E_frmOrdenCompra
         '
         Me.Label46.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label46.AutoSize = True
-        Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label46.ForeColor = System.Drawing.Color.White
-        Me.Label46.Location = New System.Drawing.Point(943, 9)
+        Me.Label46.Location = New System.Drawing.Point(259, 6)
         Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(14, 13)
+        Me.Label46.Size = New System.Drawing.Size(16, 16)
         Me.Label46.TabIndex = 81
         Me.Label46.Text = "0"
         '
@@ -420,11 +419,11 @@ Partial Class E_frmOrdenCompra
         '
         Me.Label24.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label24.AutoSize = True
-        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.White
-        Me.Label24.Location = New System.Drawing.Point(888, 27)
+        Me.Label24.Location = New System.Drawing.Point(192, 22)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(51, 13)
+        Me.Label24.Size = New System.Drawing.Size(61, 16)
         Me.Label24.TabIndex = 79
         Me.Label24.Text = "TOTAL:"
         '
@@ -456,11 +455,11 @@ Partial Class E_frmOrdenCompra
         '
         Me.Label43.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label43.AutoSize = True
-        Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label43.ForeColor = System.Drawing.Color.White
-        Me.Label43.Location = New System.Drawing.Point(763, 9)
+        Me.Label43.Location = New System.Drawing.Point(40, 3)
         Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(176, 13)
+        Me.Label43.Size = New System.Drawing.Size(213, 16)
         Me.Label43.TabIndex = 78
         Me.Label43.Text = "CANTIDAD DE PRODUCTOS:"
         '
@@ -471,8 +470,6 @@ Partial Class E_frmOrdenCompra
         Me.GroupBox10.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox10.Controls.Add(Me.GroupBox2)
         Me.GroupBox10.Controls.Add(Me.DataGridView9)
-        Me.GroupBox10.Controls.Add(Me.Label17)
-        Me.GroupBox10.Controls.Add(Me.TextBox10)
         Me.GroupBox10.Controls.Add(Me.Panel4)
         Me.GroupBox10.Location = New System.Drawing.Point(3, 165)
         Me.GroupBox10.Name = "GroupBox10"
@@ -666,17 +663,17 @@ Partial Class E_frmOrdenCompra
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.BackColor = System.Drawing.Color.AliceBlue
+        Me.Label17.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label17.Location = New System.Drawing.Point(10, 25)
+        Me.Label17.Location = New System.Drawing.Point(12, 13)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(55, 13)
+        Me.Label17.Size = New System.Drawing.Size(85, 13)
         Me.Label17.TabIndex = 12
-        Me.Label17.Text = "Busqueda"
+        Me.Label17.Text = "Buscar producto"
         '
         'TextBox10
         '
-        Me.TextBox10.Location = New System.Drawing.Point(69, 22)
+        Me.TextBox10.Location = New System.Drawing.Point(103, 10)
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(230, 20)
         Me.TextBox10.TabIndex = 11
@@ -686,6 +683,8 @@ Partial Class E_frmOrdenCompra
         Me.Panel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel4.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel4.Controls.Add(Me.Label17)
+        Me.Panel4.Controls.Add(Me.TextBox10)
         Me.Panel4.Location = New System.Drawing.Point(5, 15)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(637, 32)
@@ -780,7 +779,6 @@ Partial Class E_frmOrdenCompra
         Me.GroupBox8.Controls.Add(Me.Label16)
         Me.GroupBox8.Controls.Add(Me.txtDiasCredito)
         Me.GroupBox8.Controls.Add(Me.Label10)
-        Me.GroupBox8.Controls.Add(Me.Label13)
         Me.GroupBox8.Controls.Add(Me.Label5)
         Me.GroupBox8.Controls.Add(Me.Label26)
         Me.GroupBox8.Controls.Add(Me.txtNumFactura)
@@ -829,7 +827,7 @@ Partial Class E_frmOrdenCompra
         '
         'txtConsignado
         '
-        Me.txtConsignado.Location = New System.Drawing.Point(78, 66)
+        Me.txtConsignado.Location = New System.Drawing.Point(81, 64)
         Me.txtConsignado.Name = "txtConsignado"
         Me.txtConsignado.ReadOnly = True
         Me.txtConsignado.Size = New System.Drawing.Size(100, 20)
@@ -872,9 +870,8 @@ Partial Class E_frmOrdenCompra
         '
         'txtCodOC
         '
-        Me.txtCodOC.Location = New System.Drawing.Point(78, 35)
+        Me.txtCodOC.Location = New System.Drawing.Point(81, 12)
         Me.txtCodOC.Name = "txtCodOC"
-        Me.txtCodOC.ReadOnly = True
         Me.txtCodOC.Size = New System.Drawing.Size(100, 20)
         Me.txtCodOC.TabIndex = 44
         '
@@ -897,20 +894,11 @@ Partial Class E_frmOrdenCompra
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(5, 40)
+        Me.Label10.Location = New System.Drawing.Point(8, 17)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(59, 13)
         Me.Label10.TabIndex = 43
         Me.Label10.Text = "No de O/C"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(6, 12)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(96, 13)
-        Me.Label13.TabIndex = 46
-        Me.Label13.Text = "Fecha de creación"
         '
         'Label5
         '
@@ -932,16 +920,16 @@ Partial Class E_frmOrdenCompra
         '
         'txtNumFactura
         '
-        Me.txtNumFactura.Location = New System.Drawing.Point(258, 9)
+        Me.txtNumFactura.Location = New System.Drawing.Point(81, 38)
         Me.txtNumFactura.Name = "txtNumFactura"
         Me.txtNumFactura.ReadOnly = True
-        Me.txtNumFactura.Size = New System.Drawing.Size(98, 20)
+        Me.txtNumFactura.Size = New System.Drawing.Size(100, 20)
         Me.txtNumFactura.TabIndex = 50
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(184, 13)
+        Me.Label8.Location = New System.Drawing.Point(2, 45)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(72, 13)
         Me.Label8.TabIndex = 49
@@ -1079,6 +1067,7 @@ Partial Class E_frmOrdenCompra
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.DataGridView3)
+        Me.GroupBox1.Controls.Add(Me.Label33)
         Me.GroupBox1.Controls.Add(Me.DataGridView2)
         Me.GroupBox1.Controls.Add(Me.Panel3)
         Me.GroupBox1.Location = New System.Drawing.Point(3, 6)
@@ -1113,17 +1102,6 @@ Partial Class E_frmOrdenCompra
         Me.DataGridView3.Size = New System.Drawing.Size(1021, 156)
         Me.DataGridView3.TabIndex = 84
         Me.DataGridView3.Visible = False
-        '
-        'Label33
-        '
-        Me.Label33.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(520, 21)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(148, 13)
-        Me.Label33.TabIndex = 82
-        Me.Label33.Text = "Seleccionar Orden de compra"
         '
         'DataGridView2
         '
@@ -1194,23 +1172,12 @@ Partial Class E_frmOrdenCompra
         Me.fecha_autorizacion.HeaderText = "FECHA"
         Me.fecha_autorizacion.Name = "fecha_autorizacion"
         '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.Label15.Location = New System.Drawing.Point(3, 14)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(321, 13)
-        Me.Label15.TabIndex = 12
-        Me.Label15.Text = "Ingrese el código de la orden de compra  para realizar la busqueda"
-        '
         'Panel3
         '
         Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Panel3.Controls.Add(Me.Button8)
-        Me.Panel3.Controls.Add(Me.Label33)
         Me.Panel3.Controls.Add(Me.Label15)
         Me.Panel3.Controls.Add(Me.txtBuscar)
         Me.Panel3.Location = New System.Drawing.Point(6, 14)
@@ -1221,7 +1188,7 @@ Partial Class E_frmOrdenCompra
         'Button8
         '
         Me.Button8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button8.BackColor = System.Drawing.Color.White
+        Me.Button8.BackColor = System.Drawing.Color.Gold
         Me.Button8.Location = New System.Drawing.Point(946, 11)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(75, 23)
@@ -1229,11 +1196,33 @@ Partial Class E_frmOrdenCompra
         Me.Button8.Text = "Imprimir"
         Me.Button8.UseVisualStyleBackColor = False
         '
+        'Label33
+        '
+        Me.Label33.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.Location = New System.Drawing.Point(470, 63)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(175, 13)
+        Me.Label33.TabIndex = 82
+        Me.Label33.Text = "Seleccionar Orden de compra"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Label15.Location = New System.Drawing.Point(3, 14)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(85, 13)
+        Me.Label15.TabIndex = 12
+        Me.Label15.Text = "Filtrar por No OC"
+        '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(349, 11)
+        Me.txtBuscar.Location = New System.Drawing.Point(94, 11)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(134, 20)
+        Me.txtBuscar.Size = New System.Drawing.Size(274, 20)
         Me.txtBuscar.TabIndex = 11
         '
         'TabPage3
@@ -1278,6 +1267,42 @@ Partial Class E_frmOrdenCompra
         Me.DataGridView5.Size = New System.Drawing.Size(1028, 337)
         Me.DataGridView5.TabIndex = 0
         '
+        'id_detalle_oc1
+        '
+        Me.id_detalle_oc1.DataPropertyName = "id_detalle_oc"
+        Me.id_detalle_oc1.HeaderText = "ID "
+        Me.id_detalle_oc1.Name = "id_detalle_oc1"
+        '
+        'cod_producto1
+        '
+        Me.cod_producto1.DataPropertyName = "cod_producto"
+        Me.cod_producto1.HeaderText = "ID PRODUCTO"
+        Me.cod_producto1.Name = "cod_producto1"
+        '
+        'nombre_producto11
+        '
+        Me.nombre_producto11.DataPropertyName = "nombre_producto"
+        Me.nombre_producto11.HeaderText = "PRODUCTO"
+        Me.nombre_producto11.Name = "nombre_producto11"
+        '
+        'precio_unitario12
+        '
+        Me.precio_unitario12.DataPropertyName = "precio_unitario"
+        Me.precio_unitario12.HeaderText = "PRECIO UNITARIO"
+        Me.precio_unitario12.Name = "precio_unitario12"
+        '
+        'cantidad12
+        '
+        Me.cantidad12.DataPropertyName = "cantidad"
+        Me.cantidad12.HeaderText = "CANTIDAD"
+        Me.cantidad12.Name = "cantidad12"
+        '
+        'costo_total2
+        '
+        Me.costo_total2.DataPropertyName = "costo_total"
+        Me.costo_total2.HeaderText = "TOTAL"
+        Me.costo_total2.Name = "costo_total2"
+        '
         'GroupBox4
         '
         Me.GroupBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -1299,9 +1324,9 @@ Partial Class E_frmOrdenCompra
         Me.Label31.AutoSize = True
         Me.Label31.Location = New System.Drawing.Point(6, 16)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(93, 13)
+        Me.Label31.Size = New System.Drawing.Size(85, 13)
         Me.Label31.TabIndex = 7
-        Me.Label31.Text = "Buscar por No OC"
+        Me.Label31.Text = "Filtrar por No OC"
         '
         'TextBox2
         '
@@ -1313,9 +1338,10 @@ Partial Class E_frmOrdenCompra
         'Label34
         '
         Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label34.Location = New System.Drawing.Point(401, 16)
         Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(146, 13)
+        Me.Label34.Size = New System.Drawing.Size(173, 13)
         Me.Label34.TabIndex = 5
         Me.Label34.Text = "Seleccionar orden de compra"
         '
@@ -1332,75 +1358,6 @@ Partial Class E_frmOrdenCompra
         Me.DataGridView4.RowHeadersWidth = 51
         Me.DataGridView4.Size = New System.Drawing.Size(1030, 177)
         Me.DataGridView4.TabIndex = 0
-        '
-        'Panel2
-        '
-        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.Panel2.Controls.Add(Me.Button6)
-        Me.Panel2.Controls.Add(Me.Label27)
-        Me.Panel2.Controls.Add(Me.DateTimePicker3)
-        Me.Panel2.Controls.Add(Me.Button7)
-        Me.Panel2.Controls.Add(Me.Label28)
-        Me.Panel2.Controls.Add(Me.DateTimePicker4)
-        Me.Panel2.Location = New System.Drawing.Point(6, 3)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1040, 34)
-        Me.Panel2.TabIndex = 78
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(6, 15)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(38, 13)
-        Me.Label27.TabIndex = 75
-        Me.Label27.Text = "Desde"
-        '
-        'DateTimePicker3
-        '
-        Me.DateTimePicker3.Location = New System.Drawing.Point(50, 8)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker3.TabIndex = 73
-        '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.Color.White
-        Me.Button7.Location = New System.Drawing.Point(526, 4)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(75, 23)
-        Me.Button7.TabIndex = 1
-        Me.Button7.Text = "Buscar"
-        Me.Button7.UseVisualStyleBackColor = False
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(256, 14)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(35, 13)
-        Me.Label28.TabIndex = 76
-        Me.Label28.Text = "Hasta"
-        '
-        'DateTimePicker4
-        '
-        Me.DateTimePicker4.Location = New System.Drawing.Point(297, 7)
-        Me.DateTimePicker4.Name = "DateTimePicker4"
-        Me.DateTimePicker4.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker4.TabIndex = 74
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 738)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 10, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(1065, 22)
-        Me.StatusStrip1.TabIndex = 2
-        Me.StatusStrip1.Text = "StatusStrip1"
         '
         'id_ocW
         '
@@ -1444,52 +1401,98 @@ Partial Class E_frmOrdenCompra
         Me.observaciones1.HeaderText = "OBSERVACIONES"
         Me.observaciones1.Name = "observaciones1"
         '
-        'id_detalle_oc1
+        'Panel2
         '
-        Me.id_detalle_oc1.DataPropertyName = "id_detalle_oc"
-        Me.id_detalle_oc1.HeaderText = "ID "
-        Me.id_detalle_oc1.Name = "id_detalle_oc1"
-        '
-        'cod_producto1
-        '
-        Me.cod_producto1.DataPropertyName = "cod_producto"
-        Me.cod_producto1.HeaderText = "ID PRODUCTO"
-        Me.cod_producto1.Name = "cod_producto1"
-        '
-        'nombre_producto11
-        '
-        Me.nombre_producto11.DataPropertyName = "nombre_producto"
-        Me.nombre_producto11.HeaderText = "PRODUCTO"
-        Me.nombre_producto11.Name = "nombre_producto11"
-        '
-        'precio_unitario12
-        '
-        Me.precio_unitario12.DataPropertyName = "precio_unitario"
-        Me.precio_unitario12.HeaderText = "PRECIO UNITARIO"
-        Me.precio_unitario12.Name = "precio_unitario12"
-        '
-        'cantidad12
-        '
-        Me.cantidad12.DataPropertyName = "cantidad"
-        Me.cantidad12.HeaderText = "CANTIDAD"
-        Me.cantidad12.Name = "cantidad12"
-        '
-        'costo_total2
-        '
-        Me.costo_total2.DataPropertyName = "costo_total"
-        Me.costo_total2.HeaderText = "TOTAL"
-        Me.costo_total2.Name = "costo_total2"
+        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel2.Controls.Add(Me.Button6)
+        Me.Panel2.Controls.Add(Me.Label27)
+        Me.Panel2.Controls.Add(Me.DateTimePicker3)
+        Me.Panel2.Controls.Add(Me.Button7)
+        Me.Panel2.Controls.Add(Me.Label28)
+        Me.Panel2.Controls.Add(Me.DateTimePicker4)
+        Me.Panel2.Location = New System.Drawing.Point(6, 3)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1040, 34)
+        Me.Panel2.TabIndex = 78
         '
         'Button6
         '
         Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button6.BackColor = System.Drawing.Color.White
+        Me.Button6.BackColor = System.Drawing.Color.Yellow
         Me.Button6.Location = New System.Drawing.Point(959, 4)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(75, 23)
         Me.Button6.TabIndex = 77
         Me.Button6.Text = "Imprimir"
         Me.Button6.UseVisualStyleBackColor = False
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(6, 15)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(38, 13)
+        Me.Label27.TabIndex = 75
+        Me.Label27.Text = "Desde"
+        '
+        'DateTimePicker3
+        '
+        Me.DateTimePicker3.Location = New System.Drawing.Point(50, 8)
+        Me.DateTimePicker3.Name = "DateTimePicker3"
+        Me.DateTimePicker3.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker3.TabIndex = 73
+        '
+        'Button7
+        '
+        Me.Button7.BackColor = System.Drawing.Color.Gold
+        Me.Button7.Location = New System.Drawing.Point(526, 4)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(75, 23)
+        Me.Button7.TabIndex = 1
+        Me.Button7.Text = "Buscar"
+        Me.Button7.UseVisualStyleBackColor = False
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(256, 14)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(35, 13)
+        Me.Label28.TabIndex = 76
+        Me.Label28.Text = "Hasta"
+        '
+        'DateTimePicker4
+        '
+        Me.DateTimePicker4.Location = New System.Drawing.Point(297, 7)
+        Me.DateTimePicker4.Name = "DateTimePicker4"
+        Me.DateTimePicker4.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker4.TabIndex = 74
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 738)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 10, 0)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1065, 22)
+        Me.StatusStrip1.TabIndex = 2
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'Panel6
+        '
+        Me.Panel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel6.BackColor = System.Drawing.Color.SandyBrown
+        Me.Panel6.Controls.Add(Me.Label44)
+        Me.Panel6.Controls.Add(Me.Label43)
+        Me.Panel6.Controls.Add(Me.Label46)
+        Me.Panel6.Controls.Add(Me.Label24)
+        Me.Panel6.Location = New System.Drawing.Point(684, 3)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(337, 40)
+        Me.Panel6.TabIndex = 82
         '
         'E_frmOrdenCompra
         '
@@ -1512,10 +1515,11 @@ Partial Class E_frmOrdenCompra
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.GroupBox10.ResumeLayout(False)
-        Me.GroupBox10.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.DataGridView9, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
         Me.GroupBox8.ResumeLayout(False)
@@ -1524,6 +1528,7 @@ Partial Class E_frmOrdenCompra
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox9.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
@@ -1537,6 +1542,8 @@ Partial Class E_frmOrdenCompra
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1549,7 +1556,6 @@ Partial Class E_frmOrdenCompra
     Friend WithEvents Label1 As Label
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents txtNombreProveedor As TextBox
-    Friend WithEvents Label13 As Label
     Friend WithEvents txtCodOC As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
@@ -1671,4 +1677,5 @@ Partial Class E_frmOrdenCompra
     Friend WithEvents fecha_autorizacion1 As DataGridViewTextBoxColumn
     Friend WithEvents observaciones1 As DataGridViewTextBoxColumn
     Friend WithEvents Button6 As Button
+    Friend WithEvents Panel6 As Panel
 End Class

@@ -106,9 +106,9 @@ Partial Class E_frmUbicacion
         '
         Me.txtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtBuscar.Location = New System.Drawing.Point(201, 12)
+        Me.txtBuscar.Location = New System.Drawing.Point(219, 12)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(377, 20)
+        Me.txtBuscar.Size = New System.Drawing.Size(359, 20)
         Me.txtBuscar.TabIndex = 1
         '
         'DataGridView1

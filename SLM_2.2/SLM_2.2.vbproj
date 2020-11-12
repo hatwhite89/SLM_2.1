@@ -735,6 +735,12 @@
     <Compile Include="presentacion\E_frmProveedorOC.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frmReactivo.Designer.vb">
+      <DependentUpon>E_frmReactivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmReactivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_frmReporteOC.Designer.vb">
       <DependentUpon>E_frmReporteOC.vb</DependentUpon>
     </Compile>
@@ -895,6 +901,18 @@
       <DependentUpon>frmEvaluacionProveedores.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\frmEvaluacionProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\frmEvaluacionProveedorNormal.Designer.vb">
+      <DependentUpon>frmEvaluacionProveedorNormal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\frmEvaluacionProveedorNormal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\frmEvaluarProveedorVerificarReactivo.Designer.vb">
+      <DependentUpon>frmEvaluarProveedorVerificarReactivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\frmEvaluarProveedorVerificarReactivo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\frmMovimientoAlmacen.Designer.vb">
@@ -1732,6 +1750,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\frmEvaluacionProveedores.resx">
       <DependentUpon>frmEvaluacionProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\frmEvaluarProveedorVerificarReactivo.resx">
+      <DependentUpon>frmEvaluarProveedorVerificarReactivo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\frmMovimientoAlmacen.resx">
       <DependentUpon>frmMovimientoAlmacen.vb</DependentUpon>
