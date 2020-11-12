@@ -384,7 +384,7 @@ Public Class ClsProveedor
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select * from Proveedor where codProveedor='" + cod + "'", cn)
+        Using da As New SqlDataAdapter("select top 1 * from Proveedor  p, TerminoPago t where p.codTermPago =t.codigo and p.nombreProveedor like '%" + cod + "%'", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

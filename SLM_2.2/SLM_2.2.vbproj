@@ -74,7 +74,8 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="IrisSkin2">
+    <Reference Include="IrisSkin2, Version=2006.3.22.45, Culture=neutral, PublicKeyToken=f4d76dd8d689a256, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Documents\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\IrisSkin2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -120,8 +121,9 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="UIDC">
-      <HintPath>..\..\..\..\..\Downloads\UI_DesignControls\UIDC.dll</HintPath>
+    <Reference Include="UIDC, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\UIDC.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -197,6 +199,7 @@
     <Compile Include="negocio\ClsAsientoContable.vb" />
     <Compile Include="negocio\ClsBitacora.vb" />
     <Compile Include="negocio\ClsCAI.vb" />
+    <Compile Include="negocio\clsCalificicacionProveedores.vb" />
     <Compile Include="negocio\ClsCandidatos.vb" />
     <Compile Include="negocio\ClsCapacitaciones.vb" />
     <Compile Include="negocio\ClsCategoriaroducto.vb" />
@@ -257,6 +260,7 @@
     <Compile Include="negocio\ClsSubArea.vb" />
     <Compile Include="negocio\ClsTerminoPago.vb" />
     <Compile Include="negocio\ClsTipoDeducciones.vb" />
+    <Compile Include="negocio\clsTipoMovimiento.vb" />
     <Compile Include="negocio\ClsTipoPermiso.vb" />
     <Compile Include="negocio\ClsUnidad.vb" />
     <Compile Include="negocio\ClsDetallePromociones.vb" />
@@ -604,12 +608,6 @@
     <Compile Include="presentacion\A_Planilla.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\A_PlanillaCalculo.Designer.vb">
-      <DependentUpon>A_PlanillaCalculo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\A_PlanillaCalculo.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="presentacion\A_PlantillasDeResultado.Designer.vb">
       <DependentUpon>A_PlantillasDeResultado.vb</DependentUpon>
     </Compile>
@@ -653,11 +651,11 @@
     <Compile Include="presentacion\A_ValoresRefPar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\A_VistaPlanillaExcel.Designer.vb">
-      <DependentUpon>A_VistaPlanillaExcel.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\A_VistaPlanillaExcel.vb">
-      <SubType>Form</SubType>
+    <Compile Include="presentacion\Cry_Arqueo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cry_Arqueo.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="presentacion\E_BuscarOrdenDeTrabajo.Designer.vb">
       <DependentUpon>E_BuscarOrdenDeTrabajo.vb</DependentUpon>
@@ -735,6 +733,12 @@
       <DependentUpon>E_frmProveedorOC.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\E_frmProveedorOC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmReactivo.Designer.vb">
+      <DependentUpon>E_frmReactivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmReactivo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_frmReporteOC.Designer.vb">
@@ -897,6 +901,18 @@
       <DependentUpon>frmEvaluacionProveedores.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\frmEvaluacionProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\frmEvaluacionProveedorNormal.Designer.vb">
+      <DependentUpon>frmEvaluacionProveedorNormal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\frmEvaluacionProveedorNormal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\frmEvaluarProveedorVerificarReactivo.Designer.vb">
+      <DependentUpon>frmEvaluarProveedorVerificarReactivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\frmEvaluarProveedorVerificarReactivo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\frmMovimientoAlmacen.Designer.vb">
@@ -1355,6 +1371,12 @@
     <Compile Include="presentacion\prueba.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\reporteOrdenCompra.Designer.vb">
+      <DependentUpon>reporteOrdenCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporteOrdenCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\reporteRequisicion.Designer.vb">
       <DependentUpon>reporteRequisicion.vb</DependentUpon>
     </Compile>
@@ -1367,6 +1389,12 @@
     <Compile Include="Reportes\reporteSolicitudInterna.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\rpt_ordenCompra.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ordenCompra.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\rpt_solicitudInterna.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1377,6 +1405,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_Requisicion.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="slm_testDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -1577,9 +1606,6 @@
     <EmbeddedResource Include="presentacion\A_Planilla.resx">
       <DependentUpon>A_Planilla.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\A_PlanillaCalculo.resx">
-      <DependentUpon>A_PlanillaCalculo.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_PlantillasDeResultado.resx">
       <DependentUpon>A_PlantillasDeResultado.vb</DependentUpon>
     </EmbeddedResource>
@@ -1604,8 +1630,9 @@
     <EmbeddedResource Include="presentacion\A_ValoresRefPar.resx">
       <DependentUpon>A_ValoresRefPar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\A_VistaPlanillaExcel.resx">
-      <DependentUpon>A_VistaPlanillaExcel.vb</DependentUpon>
+    <EmbeddedResource Include="presentacion\Cry_Arqueo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Cry_Arqueo.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_BuscarOrdenDeTrabajo.resx">
       <DependentUpon>E_BuscarOrdenDeTrabajo.vb</DependentUpon>
@@ -1723,6 +1750,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\frmEvaluacionProveedores.resx">
       <DependentUpon>frmEvaluacionProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\frmEvaluarProveedorVerificarReactivo.resx">
+      <DependentUpon>frmEvaluarProveedorVerificarReactivo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\frmMovimientoAlmacen.resx">
       <DependentUpon>frmMovimientoAlmacen.vb</DependentUpon>
@@ -1958,11 +1988,18 @@
       <DependentUpon>prueba.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\reporteOrdenCompra.resx">
+      <DependentUpon>reporteOrdenCompra.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reporteRequisicion.resx">
       <DependentUpon>reporteRequisicion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reporteSolicitudInterna.resx">
       <DependentUpon>reporteSolicitudInterna.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_ordenCompra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ordenCompra.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpt_solicitudInterna.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

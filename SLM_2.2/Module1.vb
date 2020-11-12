@@ -7,6 +7,8 @@
     Public nombre_completo As String
     Public departamento_global As String
     Public id_departamento_global As String
+    Public cod_proveedor As String
+    Public codigo_oc As String
 
     Public Sub CargarDatosGlobales()
         Try

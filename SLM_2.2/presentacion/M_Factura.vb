@@ -322,14 +322,12 @@ Public Class M_Factura
         End Try
     End Sub
     Public Sub deshabilitar()
-        txtcodigoCliente.ReadOnly = True
         txtcodigoMedico.ReadOnly = True
         txtcodigoTerminosPago.ReadOnly = True
         dtpfechaVto.Enabled = False
         txtcodigoConvenio.ReadOnly = True
         txtnumeroPoliza.ReadOnly = True
 
-        btnbuscarCliente.Enabled = False
         btnbuscarMedico.Enabled = False
         btnbuscarTerminosPago.Enabled = False
 
@@ -348,7 +346,6 @@ Public Class M_Factura
         cbxentregarPaciente.Enabled = False
         cbxenviarCorreo.Enabled = False
 
-        dgblistadoExamenes.ReadOnly = True
 
         cbxok.Enabled = False
 
@@ -356,6 +353,9 @@ Public Class M_Factura
         'btncotizacion.Enabled = False
         btnguardar.Enabled = False
 
+        txtcodigoCliente.ReadOnly = True
+        btnbuscarCliente.Enabled = False
+        dgblistadoExamenes.ReadOnly = True
         btnbusquedaExamen.Enabled = False
 
         btnPromocion.Enabled = False
@@ -948,6 +948,19 @@ Public Class M_Factura
     Private Sub btnbusquedaExamen_Click(sender As Object, e As EventArgs) Handles btnbusquedaExamen.Click
         M_BuscarExamen.ShowDialog()
     End Sub
+
+    Private Sub calcularSaldoPendiente()
+        If Convert.ToDouble(txtpagoPaciente.Text) > Convert.ToDouble(txttotal.Text) Then
+            abonoF = Convert.ToDouble(txttotal.Text)
+            saldoF = 0
+        ElseIf txtvuelto.Visible = False Then
+            abonoF = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txtvuelto2.Text)
+            saldoF = Convert.ToDouble(txttotal.Text) - abonoF
+        Else
+            abonoF = Convert.ToDouble(txtpagoPaciente.Text)
+            saldoF = Convert.ToDouble(txttotal.Text) - abonoF
+        End If
+    End Sub
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
             If banderaTipo Then
@@ -1016,7 +1029,7 @@ Public Class M_Factura
                         End If
 
                     End If
-
+                    calcularSaldoPendiente()
                     Dim objFact As New ClsFactura
                     With objFact
                         .numeroOficial_ = txtnumeroOficial.Text
@@ -1041,11 +1054,13 @@ Public Class M_Factura
                         .entregaPaciente_ = cbxentregarPaciente.Checked
                         .enviarEmail_ = cbxenviarCorreo.Checked
                         .pagoPaciente_ = Convert.ToDouble(txtpagoPaciente.Text)
-                        If txtvuelto.Visible Then
+                        If txtvuelto.Visible And Convert.ToDouble(txtvuelto.Text) >= 0 Then
                             .vuelto_ = Convert.ToDouble(txtvuelto.Text)
-                        ElseIf txtvuelto2.Visible Then
+                        ElseIf txtvuelto2.Visible And Convert.ToDouble(txtvuelto2.Text) >= 0 Then
                             .vuelto_ = Convert.ToDouble(txtvuelto2.Text)
                         ElseIf txtvuelto.Visible = False And txtvuelto2.Visible = False Then
+                            .vuelto_ = 0
+                        ElseIf Convert.ToDouble(txtpagoPaciente.Text) <= Convert.ToDouble(txttotal.Text) Then
                             .vuelto_ = 0
                         End If
                         .total_ = Convert.ToDouble(txttotal.Text)
@@ -1056,6 +1071,7 @@ Public Class M_Factura
                         .deposito_ = Convert.ToDouble(txtDeposito.Text)
                         .transferencia_ = Convert.ToDouble(txtTransferencia.Text)
                         .cheque_ = Convert.ToDouble(txtCheque.Text)
+                        .saldoPendiente_ = saldoF
                     End With
 
                     If objFact.RegistrarNuevaFactura() = 1 Then
@@ -1365,6 +1381,7 @@ Public Class M_Factura
                             Exit Sub
                         End If
                     End If
+                    calcularSaldoPendiente()
 
                     If bandera = 1 Then
                         Dim objFact As New ClsFactura
@@ -1376,11 +1393,13 @@ Public Class M_Factura
                             .enviarEmail_ = cbxenviarCorreo.Checked
                             .ok_ = cbxok.Checked
                             .pagoPaciente_ = Convert.ToDouble(txtpagoPaciente.Text)
-                            If txtvuelto.Visible Then
+                            If txtvuelto.Visible And Convert.ToDouble(txtvuelto.Text) >= 0 Then
                                 .vuelto_ = Convert.ToDouble(txtvuelto.Text)
-                            ElseIf txtvuelto2.Visible Then
+                            ElseIf txtvuelto2.Visible And Convert.ToDouble(txtvuelto2.Text) >= 0 Then
                                 .vuelto_ = Convert.ToDouble(txtvuelto2.Text)
                             ElseIf txtvuelto.Visible = False And txtvuelto2.Visible = False Then
+                                .vuelto_ = 0
+                            ElseIf Convert.ToDouble(txtpagoPaciente.Text) <= Convert.ToDouble(txttotal.Text) Then
                                 .vuelto_ = 0
                             End If
                             .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
@@ -1392,6 +1411,7 @@ Public Class M_Factura
                             .cheque_ = Convert.ToDouble(txtCheque.Text)
                             .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
                             .codigoTerminal_ = Convert.ToInt64(txtcodigoTerminal.Text)
+                            .saldoPendiente_ = saldoF
                         End With
                         'MODIFICO LOS DATOS DE LA FACTURA
                         If objFact.ModificarFactura() = 1 Then
@@ -1463,7 +1483,7 @@ Public Class M_Factura
                         End If
 
                     Else
-
+                        calcularSaldoPendiente()
                         Dim objFact As New ClsFactura
                         With objFact
                             .numero_ = Convert.ToInt64(txtnumeroFactura.Text)
@@ -1478,11 +1498,13 @@ Public Class M_Factura
                             'Else
                             '    .vuelto_ = Convert.ToDouble(txtvuelto2.Text)
                             'End If
-                            If txtvuelto.Visible Then
+                            If txtvuelto.Visible And Convert.ToDouble(txtvuelto.Text) >= 0 Then
                                 .vuelto_ = Convert.ToDouble(txtvuelto.Text)
-                            ElseIf txtvuelto2.Visible Then
+                            ElseIf txtvuelto2.Visible And Convert.ToDouble(txtvuelto2.Text) >= 0 Then
                                 .vuelto_ = Convert.ToDouble(txtvuelto2.Text)
                             ElseIf txtvuelto.Visible = False And txtvuelto2.Visible = False Then
+                                .vuelto_ = 0
+                            ElseIf Convert.ToDouble(txtpagoPaciente.Text) <= Convert.ToDouble(txttotal.Text) Then
                                 .vuelto_ = 0
                             End If
                             .ingresoEfectivo_ = Convert.ToDouble(txtEfectivo.Text)
@@ -1494,6 +1516,7 @@ Public Class M_Factura
                             .cheque_ = Convert.ToDouble(txtCheque.Text)
                             .codigoCajero_ = Convert.ToInt64(txtcodigoCajero.Text)
                             .codigoTerminal_ = Convert.ToInt64(txtcodigoTerminal.Text)
+                            .saldoPendiente_ = saldoF
                         End With
                         'MODIFICO LOS DATOS DE LA FACTURA
                         If objFact.ModificarFactura() = 1 Then
@@ -1852,6 +1875,10 @@ Public Class M_Factura
                         .npUsuario_ = txtcodigoCajero.Text
                         .codigoSubArea_ = Convert.ToInt64(row("subArea"))
                         .estado_ = "No Procesado"
+                        .entregarPaciente_ = cbxentregarPaciente.Checked
+                        .entregarMedico_ = cbxentregarMedico.Checked
+                        .enviadaEmail_ = cbxenviarCorreo.Checked
+                        .cod_sede_ = Integer.Parse(txtcodigoSede.Text)
                         If .RegistrarOrdenDeTrabajo() = 0 Then
                             MsgBox("Error al querer insertar la orden de trabajo.", MsgBoxStyle.Critical)
                             Exit Sub
@@ -2043,6 +2070,14 @@ Public Class M_Factura
         txtcodigoSede.ReadOnly = True
         btnQuitarPromocion.Enabled = False
         banderaTipo = False
+
+        btnguardar.Enabled = True
+
+        txtcodigoCliente.ReadOnly = False
+        btnbuscarCliente.Enabled = True
+        dgblistadoExamenes.ReadOnly = False
+        btnbusquedaExamen.Enabled = True
+
         dgblistadoExamenes.Columns(1).ReadOnly = False
     End Sub
 

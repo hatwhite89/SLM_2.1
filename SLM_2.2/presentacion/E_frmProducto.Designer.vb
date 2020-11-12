@@ -276,7 +276,7 @@ Partial Class E_frmProducto
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Location = New System.Drawing.Point(634, 8)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.Size = New System.Drawing.Size(72, 23)
         Me.Button3.TabIndex = 5
         Me.Button3.Text = "Cancelar"
         Me.Button3.UseVisualStyleBackColor = False

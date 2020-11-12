@@ -10,6 +10,9 @@
         alternarColoFilasDatagridview(DataGridView1)
         alternarColoFilasDatagridview(DataGridView2)
 
+        Label12.Text = ""
+        Label13.Text = ""
+
     End Sub
 
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick

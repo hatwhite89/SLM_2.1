@@ -15,11 +15,11 @@ Public Class A_PlantillasDeResultado
 
         Try
 
-            If txtSimbolo.Text <> "" And txtDescripcion.Text <> "" Then
+            If txtSimbolo.Text <> "" And rtxtDescripcion.Text <> "" Then
 
                 With plantilla
                     .simbolo_ = txtSimbolo.Text
-                    .descripcion_ = txtDescripcion.Text
+                    .descripcion_ = rtxtDescripcion.Text
                     If .registrarNuevaPlantilla() = 1 Then
                         ListarPlantillas()
                         LimpiarCampos()
@@ -39,12 +39,12 @@ Public Class A_PlantillasDeResultado
 
         Try
 
-            If txtSimbolo.Text <> "" And txtDescripcion.Text <> "" And txtCodigo.Text <> "" Then
+            If txtSimbolo.Text <> "" And rtxtDescripcion.Text <> "" And txtCodigo.Text <> "" Then
 
                 With plantilla
                     .Cod = Convert.ToInt32(txtCodigo.Text)
                     .simbolo_ = txtSimbolo.Text
-                    .descripcion_ = txtDescripcion.Text
+                    .descripcion_ = rtxtDescripcion.Text
                     If .modificarPlantilla() = 1 Then
                         ListarPlantillas()
                         LimpiarCampos()
@@ -76,7 +76,7 @@ Public Class A_PlantillasDeResultado
 
             txtCodigo.Text = row("cod_Plantilla")
             txtSimbolo.Text = row("simbolo")
-            txtDescripcion.Text = row("descripcion")
+            rtxtDescripcion.Text = row("descripcion")
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -100,11 +100,17 @@ Public Class A_PlantillasDeResultado
 
         txtCodigo.Clear()
         txtSimbolo.Clear()
-        txtDescripcion.Clear()
+        rtxtDescripcion.Clear()
+        btnModificar.Enabled = False
+        btnGuardar.Enabled = True
 
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
+    End Sub
+
+    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        LimpiarCampos()
     End Sub
 End Class

@@ -55,7 +55,7 @@
 
     Private Sub dgvHojaTrab_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvHojaTrab.CellClick
         Try
-            If e.ColumnIndex > 4 Then
+            If e.ColumnIndex > 4 And e.RowIndex >= 0 Then
                 'Mostrar valores de la fila seleccionada
                 txtOrden.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(0).Value()
                 txtPaciente.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(1).Value()
@@ -66,22 +66,15 @@
 
                 'buscar valores referencia 
                 If (Trim(txtParametro.Text) <> "") Then
-                    'Try
-                    '    Dim objCat As New ClsCategoria
-                    '    With objCat
-                    '        .codigoCategoria_ = txtParametro.Text
-                    '    End With
-                    '    Dim dt As New DataTable
-                    '    dt = objCat.BuscarCategoriaCode()
-                    '    Dim row As DataRow = dt.Rows(0)
-                    '    txtnombreCategoria.Text = CStr(row("descripcion"))
-                    '    lblcodeCategoria.Text = CStr(row("codigo"))
-                    '    txtcodigoCategoria.BackColor = Color.White
-                    'Catch ex As Exception
-                    '    txtcodigoCategoria.BackColor = Color.Red
-                    '    lblcodeCategoria.Text = ""
-                    '    txtnombreCategoria.Text = ""
-                    'End Try
+                    Try
+                        Dim objCat As New ClsValoresReferencia
+                        Dim dt As New DataTable
+                        dt = objCat.buscarValorReferenciaParametro(txtParametro.Text)
+                        Dim row As DataRow = dt.Rows(0)
+                        txtValoresRef.Text = CStr(row("ValoresReferencia"))
+                    Catch ex As Exception
+                        txtValoresRef.Text = ""
+                    End Try
                 End If
 
             Else
@@ -89,7 +82,7 @@
                 txtPaciente.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(1).Value()
             End If
         Catch ex As Exception
-
+            'MsgBox(ex.Message)
         End Try
     End Sub
 
@@ -186,7 +179,8 @@
                     End If
                 Next
             Next
-
+            'dgvHojaTrab.Columns(colColl.IndexOf("Estado")).ReadOnly = True
+            ds.Tables(0).Columns(colColl.IndexOf("Estado")).ReadOnly = True
             'le asigno la tabla
             dgvHojaTrab.DataSource = ds.Tables(0)
 
@@ -205,6 +199,13 @@
         End Try
 
     End Sub
+
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
+    End Sub
+
     'Private Sub btnActualizarVista_Click(sender As Object, e As EventArgs) Handles btnActualizarVista.Click
     '    Try
     '        If dgvHojaTrab.Rows.Count > 1 Then
@@ -363,25 +364,74 @@
         Try
             Dim n As String = MsgBox("¿Desea validar la orden de trabajo?", MsgBoxStyle.YesNo, "Validación")
             If n = vbYes Then
-                Dim objOrdTrab As New ClsOrdenDeTrabajo
-                With objOrdTrab
-                    .cod_orden_trabajo_ = Integer.Parse(txtOrden.Text)
-                    .coUsuario_ = Integer.Parse(Form1.lblUserCod.Text)
+                Dim colColl As DataColumnCollection = ds.Tables("HojaTrabajo").Columns
+                If dgvHojaTrab.Rows(fila).Cells(colColl.IndexOf("Estado")).Value <> "Validado" Then
+                    'Valida que todos los parametros esten llenos
+                    Dim objOrdTrabDet As New ClsOrdenTrabajoDetalle
+                    Dim dtDet As New DataTable
+                    Dim count As Integer = 0
 
-                    'Procedimiento actualizar orden de trabajo
-                    If .ModificarOrdenDeTrabajoEstadoValidado() = 1 Then
-                        MsgBox("Validado correctamente.", MsgBoxStyle.Information)
-                        Dim colColl As DataColumnCollection = ds.Tables("HojaTrabajo").Columns
-                        dgvHojaTrab.Rows(fila).Cells(colColl.IndexOf("Estado")).Value = "Validado"
-                        dgvHojaTrab.Rows.Remove(dgvHojaTrab.Rows(fila))
-                    Else
-                        MsgBox("Error al momento de validar la orden de trabajo.", MsgBoxStyle.Critical, "Validación.")
+                    objOrdTrabDet.cod_orden_trabajo_ = Integer.Parse(txtOrden.Text)
+                    dtDet = objOrdTrabDet.BuscarOrdenTrabajoDetalle
+
+                    For index = 5 To dgvHojaTrab.Columns.Count - 2
+                        If Trim(dgvHojaTrab.Rows(fila).Cells(index).Value.ToString) = "*" Then
+                            MsgBox("Debe ingresar todos los resultados para validar la orden de trabajo. 1", MsgBoxStyle.Exclamation, "Validación.")
+                            Exit Sub
+                        ElseIf Trim(dgvHojaTrab.Rows(fila).Cells(index).Value.ToString) <> "" Then
+                            count += 1
+                        End If
+                    Next
+                    If count <> dtDet.Rows.Count Then
+                        'MsgBox(count)
+                        'MsgBox(dtDet.Rows.Count)
+                        MsgBox("Debe ingresar todos los resultados para validar la orden de trabajo. 2", MsgBoxStyle.Exclamation, "Validación.")
+                        Exit Sub
                     End If
 
-                End With
+                    'Valida la orden de trabajo
+                    Dim objOrdTrab As New ClsOrdenDeTrabajo
+                    With objOrdTrab
+                        .cod_orden_trabajo_ = Integer.Parse(txtOrden.Text)
+                        .coUsuario_ = Integer.Parse(Form1.lblUserCod.Text)
+
+                        'Procedimiento actualizar orden de trabajo
+                        If .ModificarOrdenDeTrabajoEstadoValidado() = 1 Then
+                            MsgBox("Validado correctamente.", MsgBoxStyle.Information)
+                            'dgvHojaTrab.Rows(fila).Cells(colColl.IndexOf("Estado")).Value = "Validado"
+                            dgvHojaTrab.Rows.Remove(dgvHojaTrab.Rows(fila))
+                        Else
+                            MsgBox("Error al momento de validar la orden de trabajo.", MsgBoxStyle.Critical, "Validación.")
+                        End If
+
+                    End With
+                Else
+                    'Muestra un mensaje de validacion
+                    MsgBox("La orden de trabajo ya a sido validada.", MsgBoxStyle.Exclamation, "Validación.")
+                End If
             End If
         Catch ex As Exception
             MsgBox("Error al validar: " + ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Try
+            If Trim(txtBuscar.Text) <> "" Then
+
+                alternarColoFilasDatagridview(dgvHojaTrab)
+
+                For index = 0 To dgvHojaTrab.Rows.Count - 1
+                    If dgvHojaTrab.Rows(index).Cells(1).Value.ToString.Contains(txtBuscar.Text) Then
+                        dgvHojaTrab.Rows(index).DefaultCellStyle.BackColor = Color.Red
+                    Else
+                        dgvHojaTrab.Rows(index).DefaultCellStyle.BackColor = Color.White
+                    End If
+                Next
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
         End Try
     End Sub
 

@@ -28,11 +28,32 @@ Partial Class frmAdministrarRequisiciones
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtDepartamento = New System.Windows.Forms.TextBox()
+        Me.txtPuesto = New System.Windows.Forms.TextBox()
+        Me.txtCodRequi = New System.Windows.Forms.TextBox()
+        Me.txtFecha = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.txtCodUsuario = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.descripcion1 = New System.Windows.Forms.RichTextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.comentario1 = New System.Windows.Forms.RichTextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -58,38 +79,18 @@ Partial Class frmAdministrarRequisiciones
         Me.tipo_compra = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fecha_solicitud = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.descripcion1 = New System.Windows.Forms.RichTextBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.comentario1 = New System.Windows.Forms.RichTextBox()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.txtFecha = New System.Windows.Forms.TextBox()
-        Me.txtCodRequi = New System.Windows.Forms.TextBox()
-        Me.txtPuesto = New System.Windows.Forms.TextBox()
-        Me.txtDepartamento = New System.Windows.Forms.TextBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -152,6 +153,114 @@ Partial Class frmAdministrarRequisiciones
         Me.TabPage1.Text = "Requisición"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'GroupBox4
+        '
+        Me.GroupBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox4.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox4.Controls.Add(Me.Panel3)
+        Me.GroupBox4.Controls.Add(Me.txtDepartamento)
+        Me.GroupBox4.Controls.Add(Me.txtPuesto)
+        Me.GroupBox4.Controls.Add(Me.txtCodRequi)
+        Me.GroupBox4.Controls.Add(Me.txtFecha)
+        Me.GroupBox4.Controls.Add(Me.Label15)
+        Me.GroupBox4.Controls.Add(Me.Label7)
+        Me.GroupBox4.Controls.Add(Me.txtCodUsuario)
+        Me.GroupBox4.Controls.Add(Me.Label17)
+        Me.GroupBox4.Controls.Add(Me.Label4)
+        Me.GroupBox4.Controls.Add(Me.Label3)
+        Me.GroupBox4.Controls.Add(Me.Label1)
+        Me.GroupBox4.Controls.Add(Me.descripcion1)
+        Me.GroupBox4.Controls.Add(Me.Label20)
+        Me.GroupBox4.Controls.Add(Me.comentario1)
+        Me.GroupBox4.Location = New System.Drawing.Point(6, 6)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(805, 214)
+        Me.GroupBox4.TabIndex = 81
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Detalle"
+        '
+        'Panel3
+        '
+        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel3.Controls.Add(Me.Button2)
+        Me.Panel3.Controls.Add(Me.Button1)
+        Me.Panel3.Location = New System.Drawing.Point(13, 172)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(786, 36)
+        Me.Panel3.TabIndex = 20
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.IndianRed
+        Me.Button2.Location = New System.Drawing.Point(105, 4)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "Rechazar"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button1.Location = New System.Drawing.Point(13, 4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Aprobar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'txtDepartamento
+        '
+        Me.txtDepartamento.Location = New System.Drawing.Point(648, 32)
+        Me.txtDepartamento.Name = "txtDepartamento"
+        Me.txtDepartamento.ReadOnly = True
+        Me.txtDepartamento.Size = New System.Drawing.Size(151, 20)
+        Me.txtDepartamento.TabIndex = 19
+        '
+        'txtPuesto
+        '
+        Me.txtPuesto.Location = New System.Drawing.Point(511, 32)
+        Me.txtPuesto.Name = "txtPuesto"
+        Me.txtPuesto.ReadOnly = True
+        Me.txtPuesto.Size = New System.Drawing.Size(111, 20)
+        Me.txtPuesto.TabIndex = 18
+        '
+        'txtCodRequi
+        '
+        Me.txtCodRequi.Location = New System.Drawing.Point(10, 32)
+        Me.txtCodRequi.Name = "txtCodRequi"
+        Me.txtCodRequi.Size = New System.Drawing.Size(145, 20)
+        Me.txtCodRequi.TabIndex = 17
+        '
+        'txtFecha
+        '
+        Me.txtFecha.Location = New System.Drawing.Point(185, 32)
+        Me.txtFecha.Name = "txtFecha"
+        Me.txtFecha.ReadOnly = True
+        Me.txtFecha.Size = New System.Drawing.Size(145, 20)
+        Me.txtFecha.TabIndex = 15
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(645, 16)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(74, 13)
+        Me.Label15.TabIndex = 14
+        Me.Label15.Text = "Departamento"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(534, 16)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(40, 13)
+        Me.Label7.TabIndex = 13
+        Me.Label7.Text = "Puesto"
+        '
         'txtCodUsuario
         '
         Me.txtCodUsuario.Location = New System.Drawing.Point(350, 32)
@@ -160,13 +269,14 @@ Partial Class frmAdministrarRequisiciones
         Me.txtCodUsuario.Size = New System.Drawing.Size(145, 20)
         Me.txtCodUsuario.TabIndex = 10
         '
-        'Label5
+        'Label17
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(15, 66)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(0, 13)
-        Me.Label5.TabIndex = 6
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(10, 58)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(116, 13)
+        Me.Label17.TabIndex = 10
+        Me.Label17.Text = "Comentario Autorizador"
         '
         'Label4
         '
@@ -195,6 +305,103 @@ Partial Class frmAdministrarRequisiciones
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Número de Requisición"
         '
+        'descripcion1
+        '
+        Me.descripcion1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.descripcion1.Location = New System.Drawing.Point(387, 74)
+        Me.descripcion1.Name = "descripcion1"
+        Me.descripcion1.Size = New System.Drawing.Size(412, 91)
+        Me.descripcion1.TabIndex = 7
+        Me.descripcion1.Text = ""
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(393, 60)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(128, 13)
+        Me.Label20.TabIndex = 6
+        Me.Label20.Text = "Descripción de la Compra"
+        '
+        'comentario1
+        '
+        Me.comentario1.Location = New System.Drawing.Point(9, 74)
+        Me.comentario1.Name = "comentario1"
+        Me.comentario1.Size = New System.Drawing.Size(360, 91)
+        Me.comentario1.TabIndex = 0
+        Me.comentario1.Text = ""
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.DataGridView2)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 226)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(805, 230)
+        Me.GroupBox1.TabIndex = 11
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Requisiciones por aprobar"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(265, 11)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(224, 13)
+        Me.Label10.TabIndex = 2
+        Me.Label10.Text = "Seleccionar una fila para cargar la  requisicion"
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
+        Me.DataGridView2.Location = New System.Drawing.Point(7, 30)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.Size = New System.Drawing.Size(792, 194)
+        Me.DataGridView2.TabIndex = 1
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "cod_requisicion"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ID REQUISICION"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "tipo_compra"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "TIPO DE COMPRA"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "fecha_solicitud"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "FECHA DE SOLICITUD"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "descripcion"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "DESCRIPCION"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(15, 66)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(0, 13)
+        Me.Label5.TabIndex = 6
+        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.GroupBox3)
@@ -205,7 +412,7 @@ Partial Class frmAdministrarRequisiciones
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(818, 462)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Mis Requisiciones"
+        Me.TabPage2.Text = "Mis Requisiciones Aprobadas"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'GroupBox3
@@ -327,7 +534,7 @@ Partial Class frmAdministrarRequisiciones
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.Color.White
+        Me.Button3.BackColor = System.Drawing.Color.Yellow
         Me.Button3.Location = New System.Drawing.Point(629, 5)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
@@ -353,7 +560,7 @@ Partial Class frmAdministrarRequisiciones
         '
         'Button7
         '
-        Me.Button7.BackColor = System.Drawing.Color.White
+        Me.Button7.BackColor = System.Drawing.Color.Gold
         Me.Button7.Location = New System.Drawing.Point(527, 5)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(75, 23)
@@ -433,202 +640,6 @@ Partial Class frmAdministrarRequisiciones
         Me.descripcion.HeaderText = "DESCRIPCION"
         Me.descripcion.Name = "descripcion"
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
-        Me.GroupBox1.Controls.Add(Me.DataGridView2)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 226)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(805, 230)
-        Me.GroupBox1.TabIndex = 11
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Requisiciones por aprobar"
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox4.BackColor = System.Drawing.Color.AliceBlue
-        Me.GroupBox4.Controls.Add(Me.Panel3)
-        Me.GroupBox4.Controls.Add(Me.txtDepartamento)
-        Me.GroupBox4.Controls.Add(Me.txtPuesto)
-        Me.GroupBox4.Controls.Add(Me.txtCodRequi)
-        Me.GroupBox4.Controls.Add(Me.txtFecha)
-        Me.GroupBox4.Controls.Add(Me.Label15)
-        Me.GroupBox4.Controls.Add(Me.Label7)
-        Me.GroupBox4.Controls.Add(Me.txtCodUsuario)
-        Me.GroupBox4.Controls.Add(Me.Label17)
-        Me.GroupBox4.Controls.Add(Me.Label4)
-        Me.GroupBox4.Controls.Add(Me.Label3)
-        Me.GroupBox4.Controls.Add(Me.Label1)
-        Me.GroupBox4.Controls.Add(Me.descripcion1)
-        Me.GroupBox4.Controls.Add(Me.Label20)
-        Me.GroupBox4.Controls.Add(Me.comentario1)
-        Me.GroupBox4.Location = New System.Drawing.Point(6, 6)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(805, 214)
-        Me.GroupBox4.TabIndex = 81
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Detalle"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(534, 16)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(40, 13)
-        Me.Label7.TabIndex = 13
-        Me.Label7.Text = "Puesto"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(10, 58)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(116, 13)
-        Me.Label17.TabIndex = 10
-        Me.Label17.Text = "Comentario Autorizador"
-        '
-        'descripcion1
-        '
-        Me.descripcion1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.descripcion1.Location = New System.Drawing.Point(387, 74)
-        Me.descripcion1.Name = "descripcion1"
-        Me.descripcion1.Size = New System.Drawing.Size(394, 91)
-        Me.descripcion1.TabIndex = 7
-        Me.descripcion1.Text = ""
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(393, 60)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(128, 13)
-        Me.Label20.TabIndex = 6
-        Me.Label20.Text = "Descripción de la Compra"
-        '
-        'comentario1
-        '
-        Me.comentario1.Location = New System.Drawing.Point(9, 74)
-        Me.comentario1.Name = "comentario1"
-        Me.comentario1.Size = New System.Drawing.Size(360, 91)
-        Me.comentario1.TabIndex = 0
-        Me.comentario1.Text = ""
-        '
-        'DataGridView2
-        '
-        Me.DataGridView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
-        Me.DataGridView2.Location = New System.Drawing.Point(7, 14)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(792, 210)
-        Me.DataGridView2.TabIndex = 1
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(645, 16)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(74, 13)
-        Me.Label15.TabIndex = 14
-        Me.Label15.Text = "Departamento"
-        '
-        'txtFecha
-        '
-        Me.txtFecha.Location = New System.Drawing.Point(185, 32)
-        Me.txtFecha.Name = "txtFecha"
-        Me.txtFecha.ReadOnly = True
-        Me.txtFecha.Size = New System.Drawing.Size(145, 20)
-        Me.txtFecha.TabIndex = 15
-        '
-        'txtCodRequi
-        '
-        Me.txtCodRequi.Location = New System.Drawing.Point(10, 32)
-        Me.txtCodRequi.Name = "txtCodRequi"
-        Me.txtCodRequi.Size = New System.Drawing.Size(145, 20)
-        Me.txtCodRequi.TabIndex = 17
-        '
-        'txtPuesto
-        '
-        Me.txtPuesto.Location = New System.Drawing.Point(511, 32)
-        Me.txtPuesto.Name = "txtPuesto"
-        Me.txtPuesto.ReadOnly = True
-        Me.txtPuesto.Size = New System.Drawing.Size(111, 20)
-        Me.txtPuesto.TabIndex = 18
-        '
-        'txtDepartamento
-        '
-        Me.txtDepartamento.Location = New System.Drawing.Point(648, 32)
-        Me.txtDepartamento.Name = "txtDepartamento"
-        Me.txtDepartamento.ReadOnly = True
-        Me.txtDepartamento.Size = New System.Drawing.Size(111, 20)
-        Me.txtDepartamento.TabIndex = 19
-        '
-        'Panel3
-        '
-        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.Controls.Add(Me.Button2)
-        Me.Panel3.Controls.Add(Me.Button1)
-        Me.Panel3.Location = New System.Drawing.Point(13, 172)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(768, 36)
-        Me.Panel3.TabIndex = 20
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button1.Location = New System.Drawing.Point(13, 4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Aprobar"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.Red
-        Me.Button2.Location = New System.Drawing.Point(105, 4)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Rechazar"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "cod_requisicion"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "ID REQUISICION"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "tipo_compra"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "TIPO DE COMPRA"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "fecha_solicitud"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "FECHA DE SOLICITUD"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "descripcion"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "DESCRIPCION"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
         'frmAdministrarRequisiciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -646,6 +657,12 @@ Partial Class frmAdministrarRequisiciones
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
@@ -653,11 +670,6 @@ Partial Class frmAdministrarRequisiciones
         Me.Panel2.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -718,4 +730,5 @@ Partial Class frmAdministrarRequisiciones
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents Label10 As Label
 End Class

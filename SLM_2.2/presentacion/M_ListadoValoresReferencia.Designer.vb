@@ -50,7 +50,7 @@ Partial Class M_ListadoValoresReferencia
         Me.gbxbusqueda.Size = New System.Drawing.Size(935, 598)
         Me.gbxbusqueda.TabIndex = 125
         Me.gbxbusqueda.TabStop = False
-        Me.gbxbusqueda.Text = "BUSCAR TIPO DE CLASIFICACION"
+        Me.gbxbusqueda.Text = "Valores de Referencia"
         '
         'lblBandera
         '
@@ -108,7 +108,7 @@ Partial Class M_ListadoValoresReferencia
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(337, 565)
+        Me.lblcantidad.Location = New System.Drawing.Point(189, 565)
         Me.lblcantidad.Name = "lblcantidad"
         Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
         Me.lblcantidad.TabIndex = 115
@@ -119,9 +119,9 @@ Partial Class M_ListadoValoresReferencia
         Me.lbltotal.AutoSize = True
         Me.lbltotal.Location = New System.Drawing.Point(20, 565)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(226, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(54, 17)
         Me.lbltotal.TabIndex = 114
-        Me.lbltotal.Text = "TOTAL TIPOS DE CLASIFICACION"
+        Me.lbltotal.Text = "TOTAL"
         '
         'M_ListadoValoresReferencia
         '

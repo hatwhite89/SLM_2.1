@@ -27,11 +27,11 @@ Partial Class frmSolicitudNuevoProducto
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.txtCodUsuario = New System.Windows.Forms.TextBox()
-        Me.txtCodRequsicion = New System.Windows.Forms.TextBox()
         Me.txtDescripcion = New System.Windows.Forms.RichTextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
@@ -40,7 +40,6 @@ Partial Class frmSolicitudNuevoProducto
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -55,7 +54,6 @@ Partial Class frmSolicitudNuevoProducto
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
         Me.Button7 = New System.Windows.Forms.Button()
@@ -72,6 +70,7 @@ Partial Class frmSolicitudNuevoProducto
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -118,18 +117,15 @@ Partial Class frmSolicitudNuevoProducto
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.Button1)
-        Me.TabPage1.Controls.Add(Me.Button2)
+        Me.TabPage1.Controls.Add(Me.Panel3)
         Me.TabPage1.Controls.Add(Me.DateTimePicker1)
         Me.TabPage1.Controls.Add(Me.txtCodUsuario)
-        Me.TabPage1.Controls.Add(Me.txtCodRequsicion)
         Me.TabPage1.Controls.Add(Me.txtDescripcion)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.Label5)
         Me.TabPage1.Controls.Add(Me.Label7)
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.Label3)
-        Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -138,54 +134,62 @@ Partial Class frmSolicitudNuevoProducto
         Me.TabPage1.Text = "Requisición"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'Panel3
+        '
+        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel3.Controls.Add(Me.Button1)
+        Me.Panel3.Controls.Add(Me.Button2)
+        Me.Panel3.Location = New System.Drawing.Point(7, 303)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(792, 43)
+        Me.Panel3.TabIndex = 13
+        '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(641, 313)
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(610, 10)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Nuevo"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Button2
         '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.Color.SandyBrown
         Me.Button2.Enabled = False
-        Me.Button2.Location = New System.Drawing.Point(722, 313)
+        Me.Button2.Location = New System.Drawing.Point(700, 10)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 12
         Me.Button2.Text = "Enviar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'DateTimePicker1
         '
         Me.DateTimePicker1.Enabled = False
-        Me.DateTimePicker1.Location = New System.Drawing.Point(198, 34)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(7, 34)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 11
         '
         'txtCodUsuario
         '
-        Me.txtCodUsuario.Location = New System.Drawing.Point(472, 34)
+        Me.txtCodUsuario.Location = New System.Drawing.Point(256, 34)
         Me.txtCodUsuario.Name = "txtCodUsuario"
         Me.txtCodUsuario.ReadOnly = True
         Me.txtCodUsuario.Size = New System.Drawing.Size(145, 20)
         Me.txtCodUsuario.TabIndex = 10
         '
-        'txtCodRequsicion
-        '
-        Me.txtCodRequsicion.Location = New System.Drawing.Point(7, 34)
-        Me.txtCodRequsicion.Name = "txtCodRequsicion"
-        Me.txtCodRequsicion.ReadOnly = True
-        Me.txtCodRequsicion.Size = New System.Drawing.Size(118, 20)
-        Me.txtCodRequsicion.TabIndex = 9
-        '
         'txtDescripcion
         '
         Me.txtDescripcion.Location = New System.Drawing.Point(7, 145)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(792, 141)
+        Me.txtDescripcion.Size = New System.Drawing.Size(792, 152)
         Me.txtDescripcion.TabIndex = 8
         Me.txtDescripcion.Text = ""
         '
@@ -193,9 +197,9 @@ Partial Class frmSolicitudNuevoProducto
         '
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 60)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 60)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(798, 49)
+        Me.GroupBox1.Size = New System.Drawing.Size(793, 49)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Tipo de Compra"
@@ -242,7 +246,7 @@ Partial Class frmSolicitudNuevoProducto
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(469, 18)
+        Me.Label4.Location = New System.Drawing.Point(253, 18)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(148, 13)
         Me.Label4.TabIndex = 2
@@ -251,20 +255,11 @@ Partial Class frmSolicitudNuevoProducto
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(195, 18)
+        Me.Label3.Location = New System.Drawing.Point(7, 13)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(110, 13)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Fecha de Requisición"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(8, 18)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(117, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Número de Requisición"
         '
         'TabPage2
         '
@@ -281,6 +276,9 @@ Partial Class frmSolicitudNuevoProducto
         '
         'GroupBox3
         '
+        Me.GroupBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.Label14)
         Me.GroupBox3.Controls.Add(Me.Label13)
         Me.GroupBox3.Controls.Add(Me.Label12)
@@ -310,7 +308,7 @@ Partial Class frmSolicitudNuevoProducto
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(288, 16)
+        Me.Label13.Location = New System.Drawing.Point(257, 32)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(45, 13)
         Me.Label13.TabIndex = 12
@@ -346,11 +344,11 @@ Partial Class frmSolicitudNuevoProducto
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(242, 16)
+        Me.Label9.Location = New System.Drawing.Point(158, 32)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(40, 13)
+        Me.Label9.Size = New System.Drawing.Size(100, 13)
         Me.Label9.TabIndex = 8
-        Me.Label9.Text = "Fecha:"
+        Me.Label9.Text = "Fecha autorización:"
         '
         'RichTextBox2
         '
@@ -392,7 +390,6 @@ Partial Class frmSolicitudNuevoProducto
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Panel2.Controls.Add(Me.Button4)
-        Me.Panel2.Controls.Add(Me.Button3)
         Me.Panel2.Controls.Add(Me.Label27)
         Me.Panel2.Controls.Add(Me.DateTimePicker3)
         Me.Panel2.Controls.Add(Me.Button7)
@@ -416,16 +413,6 @@ Partial Class frmSolicitudNuevoProducto
         Me.Button4.Text = "Excel"
         Me.Button4.UseVisualStyleBackColor = False
         '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(626, 4)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 77
-        Me.Button3.Text = "Imprimir"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
         'Label27
         '
         Me.Label27.AutoSize = True
@@ -444,7 +431,7 @@ Partial Class frmSolicitudNuevoProducto
         '
         'Button7
         '
-        Me.Button7.BackColor = System.Drawing.Color.White
+        Me.Button7.BackColor = System.Drawing.Color.Gold
         Me.Button7.Location = New System.Drawing.Point(527, 5)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(75, 23)
@@ -552,6 +539,7 @@ Partial Class frmSolicitudNuevoProducto
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
@@ -574,7 +562,6 @@ Partial Class frmSolicitudNuevoProducto
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents txtCodUsuario As TextBox
-    Friend WithEvents txtCodRequsicion As TextBox
     Friend WithEvents txtDescripcion As RichTextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents RadioButton2 As RadioButton
@@ -583,7 +570,6 @@ Partial Class frmSolicitudNuevoProducto
     Friend WithEvents Label7 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents GroupBox2 As GroupBox
@@ -594,7 +580,6 @@ Partial Class frmSolicitudNuevoProducto
     Friend WithEvents Label28 As Label
     Friend WithEvents DateTimePicker4 As DateTimePicker
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button3 As Button
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
@@ -612,4 +597,5 @@ Partial Class frmSolicitudNuevoProducto
     Friend WithEvents Label14 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents Panel3 As Panel
 End Class

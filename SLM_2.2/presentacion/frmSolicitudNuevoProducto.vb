@@ -1,5 +1,9 @@
 ﻿Public Class frmSolicitudNuevoProducto
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If txtDescripcion.Text = "" Then
+            MsgBox("La descripcion no puede quedar en vacia")
+            Exit Sub
+        End If
         Dim clsR As New ClsRequisicion
         Dim tipo_compra As String = ""
         If RadioButton1.Checked = True Then
@@ -17,6 +21,8 @@
         If clsR.RegistrarRequisicion() = "1" Then
             MsgBox("Se ha enviado la solicitud de requisicion")
             Button2.Enabled = False
+            txtDescripcion.Text = ""
+            RadioButton2.Checked = True
         End If
 
     End Sub
@@ -39,6 +45,10 @@
 
     Private Sub frmSolicitudNuevoProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         alternarColoFilasDatagridview(DataGridView1)
+        txtCodUsuario.Text = nombre_usurio
+        Label13.Text = ""
+        Label12.Text = ""
+        Label14.Text = ""
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
@@ -97,7 +107,7 @@
         Return True
     End Function
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         reporteRequisicion.Show()
     End Sub
 End Class

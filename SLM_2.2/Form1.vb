@@ -716,7 +716,7 @@
 
     End Sub
 
-    Private Sub banner_Click(sender As Object, e As EventArgs) Handles banner.Click
+    Private Sub banner_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -845,5 +845,17 @@
 
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
         frmAdministrarRequisiciones.Show()
+    End Sub
+
+    Private Sub Button4_Click_1(sender As Object, e As EventArgs) Handles Button4.Click
+        E_frmTipoMovientoAlmacen.Show()
+    End Sub
+
+    Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Button5.Click
+        frmEvaluarProveedorVerificarReactivo.Show()
+    End Sub
+
+    Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
+        frmEvaluacionProveedorNormal.Show()
     End Sub
 End Class

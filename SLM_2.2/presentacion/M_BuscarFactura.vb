@@ -220,10 +220,50 @@ Public Class M_BuscarFactura
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        'M_DiarioFacturacion.lblForm.Text = "M_DiarioFacturacion"
-        'M_DiarioFacturacion.ShowDialog()        
-        A_BuscarPlanilla.lblform.Text = "A_BuscarPlanilla"
-        A_BuscarPlanilla.ShowDialog()
+        M_DiarioFacturacion.lblForm.Text = "M_DiarioFacturacion"
+        M_DiarioFacturacion.ShowDialog()
+        'A_BuscarPlanilla.lblform.Text = "A_BuscarPlanilla"
+        'A_BuscarPlanilla.ShowDialog()
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        'Cierre de caja
+        Try
+            'MsgBox(Form1.lblMiUser.Text)
+            Dim objReporte As New CierreCaja
+            objReporte.SetParameterValue("Cajero", Form1.lblMiUser.Text)
+            objReporte.SetParameterValue("@codigoCajero", Convert.ToInt64(Form1.lblUserCod.Text))
+            objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+            M_ImprimirCotizacionForm.CrystalReportViewer1.ReportSource = objReporte
+            M_ImprimirCotizacionForm.Show()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        'Arqueo
+        Try
+            'Busca la maquina local
+            Dim objMaq As New ClsMaquinasLocales
+            With objMaq
+                .descripcion_ = System.Environment.MachineName
+            End With
+            Dim dt As New DataTable
+            dt = objMaq.BuscarMaquinasLocalesDesc()
+            Dim row As DataRow = dt.Rows(0)
+            'MsgBox(CStr(row("codigoMaquinasLocales")))
+            'Genera el reporte
+            Dim objReporte As New Cry_Arqueo
+            objReporte.SetParameterValue("@codigoMaquinaLocal", CStr(row("codigo")))
+            objReporte.SetParameterValue("Sucursal", CStr(row("Sucursal")))
+            objReporte.SetParameterValue("MaquinaLocal", CStr(row("codigoMaquinasLocales")))
+            objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+            M_ImprimirCotizacionForm.CrystalReportViewer1.ReportSource = objReporte
+            M_ImprimirCotizacionForm.Show()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
 End Class

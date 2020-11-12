@@ -6,201 +6,82 @@ Public Class frmEvaluacionProveedores
     Public respuesta As SqlDataReader
     Public adaptador As SqlDataAdapter
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim aencuesta1, aencuesta2, aencuesta3, aencuentas4, aencuesta5 As Integer
-        Dim bencuesta1, bencuesta2, bencuesta3, bencuentas4, bencuesta5 As Integer
-        Dim cencuesta1, cencuesta2, cencuesta3, cencuentas4, cencuesta5 As Integer
-        Dim dencuesta1, dencuesta2, dencuesta3, dencuentas4, dencuesta5 As Integer
-        Dim eencuesta1, eencuesta2, eencuesta3, eencuentas4, eencuesta5 As Integer
-
-        'estos son los a
-        If a1.Checked = True Then
-            aencuesta1 = 1
-        Else
-            aencuesta1 = 0
+        If txtcal1.Text = "" Or txtcal2.Text = "" Or txtcal3.Text = "" Or txtcal4.Text = "" Or txtcal5.Text = "" Or txtcal6.Text = "" Or txtcal7.Text = "" Or txtcal8.Text = "" Or txtcal9.Text = "" Or txtcal10.Text = "" Or txtcal11.Text = "" Then
+            MsgBox("Debe agregar todas las calificaciones")
+            Exit Sub
         End If
-
-        If a2.Checked = True Then
-            aencuesta2 = 2
-        Else
-            aencuesta2 = 0
-        End If
-        If a3.Checked = True Then
-            aencuesta3 = 3
-        Else
-            aencuesta3 = 0
-        End If
-        If a4.Checked = True Then
-            aencuentas4 = 4
-        Else
-            aencuentas4 = 0
-        End If
-        If a5.Checked = True Then
-            aencuesta5 = 5
-        Else
-            aencuesta5 = 0
-        End If
-
-        'estos son los b
-
-        If b1.Checked = True Then
-            bencuesta1 = 1
-        Else
-            bencuesta1 = 0
-        End If
-
-        If b2.Checked = True Then
-            bencuesta2 = 2
-        Else
-            bencuesta2 = 0
-        End If
-        If b3.Checked = True Then
-            bencuesta3 = 3
-        Else
-            bencuesta3 = 0
-        End If
-        If b4.Checked = True Then
-            bencuentas4 = 4
-        Else
-            bencuentas4 = 0
-        End If
-        If b5.Checked = True Then
-            bencuesta5 = 5
-        Else
-            bencuesta5 = 0
-        End If
-        'estos son los c
-
-        If c1.Checked = True Then
-            cencuesta1 = 1
-        Else
-            cencuesta1 = 0
-        End If
-
-        If c2.Checked = True Then
-            cencuesta2 = 2
-        Else
-            cencuesta2 = 0
-        End If
-        If c3.Checked = True Then
-            cencuesta3 = 3
-        Else
-            cencuesta3 = 0
-        End If
-        If c4.Checked = True Then
-            cencuentas4 = 4
-        Else
-            cencuentas4 = 0
-        End If
-        If c5.Checked = True Then
-            cencuesta5 = 5
-        Else
-            cencuesta5 = 0
-        End If
-        'estos son los d
-
-
-        If d1.Checked = True Then
-            dencuesta1 = 1
-        Else
-            dencuesta1 = 0
-        End If
-
-        If d2.Checked = True Then
-            dencuesta2 = 2
-        Else
-            dencuesta2 = 0
-        End If
-        If d3.Checked = True Then
-            dencuesta3 = 3
-        Else
-            dencuesta3 = 0
-        End If
-        If d4.Checked = True Then
-            dencuentas4 = 4
-        Else
-            dencuentas4 = 0
-        End If
-        If d5.Checked = True Then
-            dencuesta5 = 5
-        Else
-            dencuesta5 = 0
-        End If
-        'estos son los 3
-
-        If e1.Checked = True Then
-            eencuesta1 = 1
-        Else
-            eencuesta1 = 0
-        End If
-
-        If e2.Checked = True Then
-            eencuesta2 = 2
-        Else
-            eencuesta2 = 0
-        End If
-        If e3.Checked = True Then
-            eencuesta3 = 3
-        Else
-            eencuesta3 = 0
-        End If
-        If e4.Checked = True Then
-            eencuentas4 = 4
-        Else
-            eencuentas4 = 0
-        End If
-        If e5.Checked = True Then
-            eencuesta5 = 5
-        Else
-            eencuesta5 = 0
-        End If
-
-        Dim clsE As New ClsEvaluacionProveedor
-
-        With clsE
+        Promediar()
+        Dim cls As New clsCalificicacionProveedores
+        With cls
+            .Id12 = txtcal1.Text
+            .Id21 = txtcal2.Text
+            .Id31 = txtcal3.Text
+            .Id41 = txtcal4.Text
+            .Id51 = txtcal5.Text
+            .Id61 = txtcal6.Text
+            .Id71 = txtcal7.Text
+            .Id81 = txtcal8.Text
+            .Id91 = txtcal9.Text
+            .Id101 = txtcal10.Text
+            .Id111 = txtcal11.Text
             .Id_oc1 = TextBox1.Text
-            .Aencuesta11 = aencuesta1
-            .Aencuesta21 = aencuesta2
-            .Aencuesta31 = aencuesta3
-            .Aencuentas41 = aencuentas4
-            .Aencuesta51 = aencuesta5
-
-            .Bencuesta11 = bencuesta1
-            .Bencuesta21 = bencuesta2
-            .Bencuesta31 = bencuesta3
-            .Bencuentas41 = bencuentas4
-            .Bencuesta51 = bencuesta5
-
-            .Cencuesta11 = cencuesta1
-            .Cencuesta21 = cencuesta2
-            .Cencuesta31 = cencuesta3
-            .Cencuentas41 = cencuentas4
-            .Cencuesta51 = cencuesta5
-
-            .Dencuesta11 = dencuesta1
-            .Dencuesta21 = dencuesta2
-            .Dencuesta31 = dencuesta3
-            .Dencuentas41 = dencuentas4
-            .Dencuesta51 = dencuesta5
-
-            .Eencuesta11 = eencuesta1
-            .Eencuesta21 = eencuesta2
-            .Eencuesta31 = eencuesta3
-            .Eencuentas41 = eencuentas4
-            .Eencuesta51 = eencuesta5
+            .Id_proveedor1 = cod_proveedor
+            .Id_usuario1 = codigo_usuario
+            .Id_departamento2 = ComboBox1.SelectedValue
 
 
         End With
-
-        If clsE.RegistrarEvaluacion() = "1" Then
+        If cls.RegistraCalificacion() = "1" Then
             MsgBox("Registrado exitosamente")
-            a3.Checked = True
-            b3.Checked = True
-            c3.Checked = True
-            d3.Checked = True
-            e3.Checked = True
             Button1.Enabled = False
-
         End If
+    End Sub
+    Public Sub Promediar()
+        Dim contador As Integer
+        Dim denominador As Integer
+
+        If txtcal1.Text <> "0" Then
+            contador = contador + 100
+        End If
+        If txtcal2.Text <> "0" Then
+            contador = contador + 100
+        End If
+        If txtcal3.Text <> "0" Then
+            contador = contador + 100
+        End If
+        If txtcal4.Text <> "0" Then
+            contador = contador + 100
+        End If
+        If txtcal5.Text <> "0" Then
+            contador = contador + 100
+        End If
+        If txtcal6.Text <> "0" Then
+            contador = contador + 100
+        End If
+        If txtcal7.Text <> "0" Then
+            contador = contador + 100
+        End If
+        If txtcal8.Text <> "0" Then
+            contador = contador + 100
+        End If
+        If txtcal9.Text <> "0" Then
+            contador = contador + 100
+        End If
+        If txtcal10.Text <> "0" Then
+            contador = contador + 100
+        End If
+        If txtcal11.Text <> "0" Then
+            contador = contador + 100
+        End If
+
+        Try
+            Dim nota As Double
+            nota = ((Integer.Parse(txtcal1.Text) + Integer.Parse(txtcal2.Text) + Integer.Parse(txtcal3.Text) + Integer.Parse(txtcal4.Text) + Integer.Parse(txtcal5.Text) + Integer.Parse(txtcal6.Text) + Integer.Parse(txtcal7.Text) + Integer.Parse(txtcal8.Text) + Integer.Parse(txtcal9.Text) + Integer.Parse(txtcal10.Text) + Integer.Parse(txtcal11.Text)) / contador) * 100
+            Label37.Text = nota
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
@@ -212,6 +93,9 @@ Public Class frmEvaluacionProveedores
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        TextBox2.Text = ""
+        TextBox3.Text = ""
+        Button1.Enabled = False
         Try
             Dim objP As New ClsEvaluacionProveedor
             With objP
@@ -221,14 +105,15 @@ Public Class frmEvaluacionProveedores
             dt = objP.validarOrdenCompra(TextBox1.Text)
             Dim row As DataRow = dt.Rows(0)
 
-            TextBox4.Text = CStr(row("id_oc"))
+            TextBox3.Text = CStr(row("id_oc"))
+
 
         Catch ex As Exception
-            TextBox4.Text = ""
+            TextBox3.Text = ""
 
         End Try
 
-        If TextBox4.Text = "" Then
+        If TextBox3.Text = "" Then
             Try
                 Dim objP As New ClsEvaluacionProveedor
                 With objP
@@ -241,11 +126,6 @@ Public Class frmEvaluacionProveedores
                 TextBox2.Text = CStr(row("nombreProveedor"))
 
                 Button1.Enabled = True
-                a3.Checked = True
-                b3.Checked = True
-                c3.Checked = True
-                d3.Checked = True
-                e3.Checked = True
 
 
             Catch ex As Exception
@@ -282,6 +162,17 @@ Public Class frmEvaluacionProveedores
     Private Sub frmEvaluacionProveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         alternarColoFilasDatagridview(DataGridView1)
         autoCompletarTexbox(TextBox6)
+
+        Dim clsD As New ClsDepartamento
+
+        Dim ds As New DataTable
+
+
+        ds.Load(clsD.RecuperarDepartamentos)
+
+        ComboBox1.DataSource = ds
+        ComboBox1.DisplayMember = "nombre"
+        ComboBox1.ValueMember = "codigo"
     End Sub
     Sub abrir()
         Try
@@ -322,5 +213,9 @@ Public Class frmEvaluacionProveedores
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
+
     End Sub
 End Class
