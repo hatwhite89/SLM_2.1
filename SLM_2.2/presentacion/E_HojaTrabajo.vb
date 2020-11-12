@@ -55,7 +55,7 @@
 
     Private Sub dgvHojaTrab_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvHojaTrab.CellClick
         Try
-            If e.ColumnIndex > 4 Then
+            If e.ColumnIndex > 4 And e.RowIndex >= 0 Then
                 'Mostrar valores de la fila seleccionada
                 txtOrden.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(0).Value()
                 txtPaciente.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(1).Value()
@@ -66,22 +66,15 @@
 
                 'buscar valores referencia 
                 If (Trim(txtParametro.Text) <> "") Then
-                    'Try
-                    '    Dim objCat As New ClsCategoria
-                    '    With objCat
-                    '        .codigoCategoria_ = txtParametro.Text
-                    '    End With
-                    '    Dim dt As New DataTable
-                    '    dt = objCat.BuscarCategoriaCode()
-                    '    Dim row As DataRow = dt.Rows(0)
-                    '    txtnombreCategoria.Text = CStr(row("descripcion"))
-                    '    lblcodeCategoria.Text = CStr(row("codigo"))
-                    '    txtcodigoCategoria.BackColor = Color.White
-                    'Catch ex As Exception
-                    '    txtcodigoCategoria.BackColor = Color.Red
-                    '    lblcodeCategoria.Text = ""
-                    '    txtnombreCategoria.Text = ""
-                    'End Try
+                    Try
+                        Dim objCat As New ClsValoresReferencia
+                        Dim dt As New DataTable
+                        dt = objCat.buscarValorReferenciaParametro(txtParametro.Text)
+                        Dim row As DataRow = dt.Rows(0)
+                        txtValoresRef.Text = CStr(row("ValoresReferencia"))
+                    Catch ex As Exception
+                        txtValoresRef.Text = ""
+                    End Try
                 End If
 
             Else
@@ -89,7 +82,7 @@
                 txtPaciente.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(1).Value()
             End If
         Catch ex As Exception
-
+            'MsgBox(ex.Message)
         End Try
     End Sub
 
