@@ -23,6 +23,7 @@ Partial Class A_Planilla
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -40,13 +41,13 @@ Partial Class A_Planilla
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.codeEmployee = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Identidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NoCuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Empleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Salario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Adelanto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -68,6 +69,18 @@ Partial Class A_Planilla
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(766, 46)
         Me.Panel1.TabIndex = 0
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.LimeGreen
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(352, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Exp. Excel"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'btnCerrar
         '
@@ -220,7 +233,7 @@ Partial Class A_Planilla
         Me.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvEmpleados.BackgroundColor = System.Drawing.Color.White
         Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEmpleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.codeEmployee, Me.Identidad, Me.NoCuenta, Me.Empleado, Me.Salario})
+        Me.dgvEmpleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.codeEmployee, Me.Identidad, Me.NoCuenta, Me.Empleado, Me.Salario, Me.Adelanto})
         Me.dgvEmpleados.Location = New System.Drawing.Point(12, 18)
         Me.dgvEmpleados.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvEmpleados.Name = "dgvEmpleados"
@@ -262,18 +275,6 @@ Partial Class A_Planilla
         Me.Panel2.Size = New System.Drawing.Size(769, 35)
         Me.Panel2.TabIndex = 3
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.LimeGreen
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(352, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Exp. Excel"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'codigo
         '
         Me.codigo.HeaderText = "codigo"
@@ -308,6 +309,11 @@ Partial Class A_Planilla
         '
         Me.Salario.HeaderText = "Salario"
         Me.Salario.Name = "Salario"
+        '
+        'Adelanto
+        '
+        Me.Adelanto.HeaderText = "Adelanto 30%"
+        Me.Adelanto.Name = "Adelanto"
         '
         'A_Planilla
         '
@@ -358,4 +364,5 @@ Partial Class A_Planilla
     Friend WithEvents NoCuenta As DataGridViewTextBoxColumn
     Friend WithEvents Empleado As DataGridViewTextBoxColumn
     Friend WithEvents Salario As DataGridViewTextBoxColumn
+    Friend WithEvents Adelanto As DataGridViewTextBoxColumn
 End Class

@@ -8,12 +8,8 @@
 
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnCrearFactura.Click
-        Me.Close()
-        A_FacturaCompras.Show()
-    End Sub
 
-    Private Sub dtFacturasCompra_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtFacturasCompra.CellClick
+    Private Sub dtFacturasCompra_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtFacturasCompra.CellDoubleClick
 
         Try
 
@@ -48,7 +44,7 @@
 
             For index As Integer = 0 To dtFac.Rows.Count - 1
                 row = dtFac.Rows(index)
-                A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {(row("cuenta")), CStr(row("area")), CStr(row("sede")), CStr(row("descripcion")), CStr(row("monto")), CStr(row("tipoStock"))})
+                A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), CStr(row("area")), CStr(row("sede")), CStr(row("descripcion")), CStr(row("monto")), CStr(row("tipoStock"))})
             Next
 
             Me.Close()
@@ -98,4 +94,37 @@
         End If
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnCrearNueva.Click
+        Me.Close()
+        A_FacturaCompras.Show()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+            Dim estado, estado2, estado3 As String
+            Dim fechaDesde, fechaHasta As Date
+            Dim factu As New ClsFacturaCompra
+
+            fechaDesde = dtpDesde.Value
+            fechaHasta = dtpHasta.Value
+
+            If chkIngresada.Checked = True Then
+                estado = "Ingresada"
+            End If
+
+            If chkPendientes.Checked = True Then
+                estado2 = "Pendiente"
+            End If
+
+            If chkPagadas.Checked = True Then
+                estado3 = "Pagada"
+            End If
+
+            dtFacturasCompra.DataSource = factu.ReporteFacturasCompraEstado(estado, estado2, estado3, fechaDesde, fechaHasta)
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 End Class

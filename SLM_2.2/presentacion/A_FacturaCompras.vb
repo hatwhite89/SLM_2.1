@@ -54,12 +54,12 @@
 
                             'Insertar detalle de compra
                             DetalleFacCompra.Cod_Factura = Convert.ToInt32(txtCodFactura.Text)
-                            DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(0).Value())
-                            DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(1).Value
-                            DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(2).Value
-                            DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(3).Value()
-                            DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(4).Value()))
-                            DetalleFacCompra.Tipo_Stock = dtDetalleFactura.Rows(fila).Cells(5).Value()
+                            DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(1).Value())
+                            DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(2).Value
+                            DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(3).Value
+                            DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(4).Value()
+                            DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(5).Value()))
+                            DetalleFacCompra.Tipo_Stock = dtDetalleFactura.Rows(fila).Cells(6).Value()
 
                             'Funcion de registro de detalle
                             DetalleFacCompra.registrarDetalleFactura()
@@ -70,8 +70,6 @@
 
                     Next
 
-                    Me.Close()
-                    A_ListadoFacturaCompra.Show()
 
                 Else ' else detalle de factura
                     MsgBox("Falta detalle de Factura. No se guardo la factura")
@@ -83,6 +81,9 @@
             End Try
             MessageBox.Show("La factura se registro exitosamente.")
             Limpiar()
+
+            Me.Close()
+            A_ListadoFacturaCompra.Show()
 
         Else 'if campos vacios
 
@@ -114,7 +115,7 @@
 
     Public Function validarDetalle(ByVal codigo As Integer)
         For index As Integer = 0 To dtDetalleFactura.Rows.Count - 2
-            If (dtDetalleFactura.Rows(index).Cells(0).Value().ToString = codigo) Then
+            If (dtDetalleFactura.Rows(index).Cells(1).Value().ToString = codigo) Then
                 Return 1
             End If
         Next
@@ -164,17 +165,17 @@
         lblFila.Text = e.RowIndex
 
         'Listar objetos en Datagrid
-        If e.ColumnIndex = 1 Then
+        If e.ColumnIndex = 2 Then
 
             A_ListarObjetos.Show()
             A_ListarObjetos.lblForm.Text = "area"
 
-        ElseIf e.ColumnIndex = 2 Then
+        ElseIf e.ColumnIndex = 3 Then
 
             A_ListarObjetos.Show()
             A_ListarObjetos.lblForm.Text = "sede"
 
-        ElseIf e.ColumnIndex = 0 Then
+        ElseIf e.ColumnIndex = 1 Then
 
             A_ListarCuentas.Show()
             A_ListarCuentas.lblForm.Text = "facturaCompra"
@@ -207,6 +208,7 @@
                 .Descripcion_ = txtDescripcion.Text
                 .Estado_ = lblEstado.Text
                 .Pendiente_ = lblSaldoPend.Text
+                .Nro_Factura = txtNroFactura.Text
                 'registro de  factura compra
                 .modificarFacturaCompra()
 
@@ -377,7 +379,7 @@
     Private Sub dtDetalleFactura_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellEndEdit
 
 
-        If e.ColumnIndex = 0 Then
+        If e.ColumnIndex = 1 Then
 
 
             Try
@@ -405,10 +407,10 @@
 
             End Try
 
-        ElseIf e.ColumnIndex = 4 Then
+        ElseIf e.ColumnIndex = 5 Then
 
             Dim Total As Double
-            Dim Col As Integer = 4
+            Dim Col As Integer = 5
             For Each row As DataGridViewRow In dtDetalleFactura.Rows
                 Total += Convert.ToDouble(row.Cells(Col).Value)
             Next
@@ -423,7 +425,7 @@
 
     Private Sub dtDetalleFactura_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dtDetalleFactura.CellMouseClick
 
-        If e.ColumnIndex = 1 Then
+        If e.ColumnIndex = 2 Then
 
             Try
 
@@ -448,7 +450,7 @@
     End Sub
 
     Private Sub dtDetalleFactura_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellClick
-        If e.ColumnIndex = 6 Then
+        If e.ColumnIndex = 7 Then
             Try
                 Dim n As String = MsgBox("¿Desea eliminar la cuenta de la factura?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then

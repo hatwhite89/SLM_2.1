@@ -62,71 +62,64 @@ Partial Class E_DetalleExamenes
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.codigoUnidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.unidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.lblform = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dtItem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         CType(Me.dtResultados, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox4.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(15, 27)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(11, 22)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(21, 17)
+        Me.Label1.Size = New System.Drawing.Size(18, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "ID"
         '
         'txtCodExamen
         '
         Me.txtCodExamen.Enabled = False
-        Me.txtCodExamen.Location = New System.Drawing.Point(116, 23)
-        Me.txtCodExamen.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCodExamen.Location = New System.Drawing.Point(87, 19)
         Me.txtCodExamen.Name = "txtCodExamen"
-        Me.txtCodExamen.Size = New System.Drawing.Size(132, 22)
+        Me.txtCodExamen.Size = New System.Drawing.Size(100, 20)
         Me.txtCodExamen.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(15, 92)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(11, 75)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(78, 17)
+        Me.Label2.Size = New System.Drawing.Size(60, 13)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Cód. Breve"
         '
         'txtCodBreve
         '
-        Me.txtCodBreve.Location = New System.Drawing.Point(116, 89)
-        Me.txtCodBreve.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCodBreve.Location = New System.Drawing.Point(87, 72)
         Me.txtCodBreve.Name = "txtCodBreve"
-        Me.txtCodBreve.Size = New System.Drawing.Size(132, 22)
+        Me.txtCodBreve.Size = New System.Drawing.Size(100, 20)
         Me.txtCodBreve.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(15, 126)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(11, 102)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(82, 17)
+        Me.Label3.Size = New System.Drawing.Size(63, 13)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Descripcion"
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(116, 121)
-        Me.txtDescripcion.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtDescripcion.Location = New System.Drawing.Point(87, 98)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(539, 22)
+        Me.txtDescripcion.Size = New System.Drawing.Size(405, 20)
         Me.txtDescripcion.TabIndex = 5
         '
         'GroupBox1
@@ -157,70 +150,62 @@ Partial Class E_DetalleExamenes
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtCodBreve)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 78)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 63)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(664, 283)
+        Me.GroupBox1.Size = New System.Drawing.Size(498, 230)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Exámenes"
         '
         'txtCodInterno
         '
-        Me.txtCodInterno.Location = New System.Drawing.Point(116, 57)
-        Me.txtCodInterno.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCodInterno.Location = New System.Drawing.Point(87, 46)
         Me.txtCodInterno.Name = "txtCodInterno"
-        Me.txtCodInterno.Size = New System.Drawing.Size(132, 22)
+        Me.txtCodInterno.Size = New System.Drawing.Size(100, 20)
         Me.txtCodInterno.TabIndex = 25
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(15, 60)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Location = New System.Drawing.Point(11, 49)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(91, 17)
+        Me.Label11.Size = New System.Drawing.Size(70, 13)
         Me.Label11.TabIndex = 24
         Me.Label11.Text = "Cód. Exámen"
         '
         'lblcodeSubGrupo
         '
         Me.lblcodeSubGrupo.AutoSize = True
-        Me.lblcodeSubGrupo.Location = New System.Drawing.Point(525, 92)
-        Me.lblcodeSubGrupo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcodeSubGrupo.Location = New System.Drawing.Point(394, 75)
         Me.lblcodeSubGrupo.Name = "lblcodeSubGrupo"
-        Me.lblcodeSubGrupo.Size = New System.Drawing.Size(62, 17)
+        Me.lblcodeSubGrupo.Size = New System.Drawing.Size(47, 13)
         Me.lblcodeSubGrupo.TabIndex = 23
         Me.lblcodeSubGrupo.Text = "Subárea"
         Me.lblcodeSubGrupo.Visible = False
         '
         'txtCodigoSubArea
         '
-        Me.txtCodigoSubArea.Location = New System.Drawing.Point(579, 25)
-        Me.txtCodigoSubArea.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCodigoSubArea.Location = New System.Drawing.Point(434, 20)
         Me.txtCodigoSubArea.Name = "txtCodigoSubArea"
         Me.txtCodigoSubArea.ReadOnly = True
-        Me.txtCodigoSubArea.Size = New System.Drawing.Size(65, 22)
+        Me.txtCodigoSubArea.Size = New System.Drawing.Size(50, 20)
         Me.txtCodigoSubArea.TabIndex = 22
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(513, 28)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label10.Location = New System.Drawing.Point(385, 23)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(62, 17)
+        Me.Label10.Size = New System.Drawing.Size(47, 13)
         Me.Label10.TabIndex = 21
         Me.Label10.Text = "Subárea"
         '
         'lblcodigoGrupo
         '
         Me.lblcodigoGrupo.AutoSize = True
-        Me.lblcodigoGrupo.Location = New System.Drawing.Point(284, 57)
-        Me.lblcodigoGrupo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcodigoGrupo.Location = New System.Drawing.Point(213, 46)
         Me.lblcodigoGrupo.Name = "lblcodigoGrupo"
-        Me.lblcodigoGrupo.Size = New System.Drawing.Size(38, 17)
+        Me.lblcodigoGrupo.Size = New System.Drawing.Size(29, 13)
         Me.lblcodigoGrupo.TabIndex = 20
         Me.lblcodigoGrupo.Text = "label"
         Me.lblcodigoGrupo.Visible = False
@@ -229,20 +214,18 @@ Partial Class E_DetalleExamenes
         '
         Me.lblEstado.AutoSize = True
         Me.lblEstado.ForeColor = System.Drawing.Color.Red
-        Me.lblEstado.Location = New System.Drawing.Point(576, 57)
-        Me.lblEstado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblEstado.Location = New System.Drawing.Point(432, 46)
         Me.lblEstado.Name = "lblEstado"
-        Me.lblEstado.Size = New System.Drawing.Size(56, 17)
+        Me.lblEstado.Size = New System.Drawing.Size(45, 13)
         Me.lblEstado.TabIndex = 19
         Me.lblEstado.Text = "Inactivo"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(515, 57)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(386, 46)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(52, 17)
+        Me.Label9.Size = New System.Drawing.Size(40, 13)
         Me.Label9.TabIndex = 18
         Me.Label9.Text = "Estado"
         '
@@ -251,83 +234,74 @@ Partial Class E_DetalleExamenes
         Me.chkEstado.AutoSize = True
         Me.chkEstado.Checked = True
         Me.chkEstado.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkEstado.Location = New System.Drawing.Point(349, 57)
-        Me.chkEstado.Margin = New System.Windows.Forms.Padding(4)
+        Me.chkEstado.Location = New System.Drawing.Point(262, 46)
         Me.chkEstado.Name = "chkEstado"
-        Me.chkEstado.Size = New System.Drawing.Size(112, 21)
+        Me.chkEstado.Size = New System.Drawing.Size(87, 17)
         Me.chkEstado.TabIndex = 17
         Me.chkEstado.Text = "Habilitar Item"
         Me.chkEstado.UseVisualStyleBackColor = True
         '
         'txtComentario
         '
-        Me.txtComentario.Location = New System.Drawing.Point(116, 249)
-        Me.txtComentario.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtComentario.Location = New System.Drawing.Point(87, 202)
         Me.txtComentario.Name = "txtComentario"
-        Me.txtComentario.Size = New System.Drawing.Size(539, 22)
+        Me.txtComentario.Size = New System.Drawing.Size(405, 20)
         Me.txtComentario.TabIndex = 16
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(15, 252)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Location = New System.Drawing.Point(11, 205)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(80, 17)
+        Me.Label8.Size = New System.Drawing.Size(60, 13)
         Me.Label8.TabIndex = 15
         Me.Label8.Text = "Comentario"
         '
         'txtAbreviatura
         '
-        Me.txtAbreviatura.Location = New System.Drawing.Point(116, 217)
-        Me.txtAbreviatura.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtAbreviatura.Location = New System.Drawing.Point(87, 176)
         Me.txtAbreviatura.Name = "txtAbreviatura"
-        Me.txtAbreviatura.Size = New System.Drawing.Size(539, 22)
+        Me.txtAbreviatura.Size = New System.Drawing.Size(405, 20)
         Me.txtAbreviatura.TabIndex = 14
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(15, 220)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(11, 179)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(81, 17)
+        Me.Label7.Size = New System.Drawing.Size(61, 13)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Abreviatura"
         '
         'txtClasificación
         '
-        Me.txtClasificación.Location = New System.Drawing.Point(116, 185)
-        Me.txtClasificación.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtClasificación.Location = New System.Drawing.Point(87, 150)
         Me.txtClasificación.Name = "txtClasificación"
-        Me.txtClasificación.Size = New System.Drawing.Size(132, 22)
+        Me.txtClasificación.Size = New System.Drawing.Size(100, 20)
         Me.txtClasificación.TabIndex = 12
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(15, 188)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(11, 153)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(86, 17)
+        Me.Label6.Size = New System.Drawing.Size(66, 13)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Clasificación"
         '
         'txtPrecioBase
         '
-        Me.txtPrecioBase.Location = New System.Drawing.Point(116, 153)
-        Me.txtPrecioBase.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPrecioBase.Location = New System.Drawing.Point(87, 124)
         Me.txtPrecioBase.Name = "txtPrecioBase"
-        Me.txtPrecioBase.Size = New System.Drawing.Size(132, 22)
+        Me.txtPrecioBase.Size = New System.Drawing.Size(100, 20)
         Me.txtPrecioBase.TabIndex = 10
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(15, 156)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(11, 127)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(84, 17)
+        Me.Label5.Size = New System.Drawing.Size(64, 13)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Precio Base"
         '
@@ -338,39 +312,37 @@ Partial Class E_DetalleExamenes
         Me.btnGrupoExamen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnGrupoExamen.FlatAppearance.BorderSize = 0
         Me.btnGrupoExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGrupoExamen.Location = New System.Drawing.Point(421, 25)
-        Me.btnGrupoExamen.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnGrupoExamen.Location = New System.Drawing.Point(316, 20)
         Me.btnGrupoExamen.Name = "btnGrupoExamen"
-        Me.btnGrupoExamen.Size = New System.Drawing.Size(29, 22)
+        Me.btnGrupoExamen.Size = New System.Drawing.Size(22, 18)
         Me.btnGrupoExamen.TabIndex = 8
         Me.btnGrupoExamen.UseVisualStyleBackColor = False
         '
         'txtGrupo
         '
-        Me.txtGrupo.Location = New System.Drawing.Point(349, 23)
-        Me.txtGrupo.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtGrupo.Location = New System.Drawing.Point(262, 19)
         Me.txtGrupo.Name = "txtGrupo"
-        Me.txtGrupo.Size = New System.Drawing.Size(65, 22)
+        Me.txtGrupo.Size = New System.Drawing.Size(50, 20)
         Me.txtGrupo.TabIndex = 7
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(293, 27)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(220, 22)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(48, 17)
+        Me.Label4.Size = New System.Drawing.Size(36, 13)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Grupo"
         '
         'GroupBox2
         '
+        Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.dtItem)
-        Me.GroupBox2.Location = New System.Drawing.Point(688, 15)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox2.Location = New System.Drawing.Point(516, 63)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox2.Size = New System.Drawing.Size(509, 652)
+        Me.GroupBox2.Size = New System.Drawing.Size(382, 530)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Listado de Exámenes"
@@ -379,58 +351,59 @@ Partial Class E_DetalleExamenes
         '
         Me.dtItem.AllowUserToAddRows = False
         Me.dtItem.AllowUserToDeleteRows = False
+        Me.dtItem.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtItem.BackgroundColor = System.Drawing.Color.White
         Me.dtItem.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtItem.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtItem.GridColor = System.Drawing.Color.White
-        Me.dtItem.Location = New System.Drawing.Point(4, 19)
-        Me.dtItem.Margin = New System.Windows.Forms.Padding(4)
+        Me.dtItem.Location = New System.Drawing.Point(3, 14)
         Me.dtItem.Name = "dtItem"
         Me.dtItem.ReadOnly = True
         Me.dtItem.RowHeadersWidth = 51
         Me.dtItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtItem.Size = New System.Drawing.Size(501, 629)
+        Me.dtItem.Size = New System.Drawing.Size(376, 513)
         Me.dtItem.TabIndex = 0
         '
         'btnGuardar
         '
-        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGuardar.BackColor = System.Drawing.Color.White
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(553, 17)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnGuardar.ForeColor = System.Drawing.Color.Black
+        Me.btnGuardar.Location = New System.Drawing.Point(822, 11)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(100, 28)
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 8
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'btnModificar
         '
-        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnModificar.BackColor = System.Drawing.Color.White
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(448, 17)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnModificar.ForeColor = System.Drawing.Color.Black
+        Me.btnModificar.Location = New System.Drawing.Point(741, 11)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(100, 28)
+        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 9
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = False
         '
         'btnCrear
         '
-        Me.btnCrear.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCrear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCrear.BackColor = System.Drawing.Color.White
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCrear.ForeColor = System.Drawing.Color.White
-        Me.btnCrear.Location = New System.Drawing.Point(343, 17)
-        Me.btnCrear.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCrear.ForeColor = System.Drawing.Color.Black
+        Me.btnCrear.Location = New System.Drawing.Point(660, 11)
         Me.btnCrear.Name = "btnCrear"
-        Me.btnCrear.Size = New System.Drawing.Size(100, 28)
+        Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 10
         Me.btnCrear.Text = "Crear Nuevo"
         Me.btnCrear.UseVisualStyleBackColor = False
@@ -438,34 +411,37 @@ Partial Class E_DetalleExamenes
         'lblFila
         '
         Me.lblFila.AutoSize = True
-        Me.lblFila.Location = New System.Drawing.Point(613, 663)
+        Me.lblFila.Location = New System.Drawing.Point(460, 539)
+        Me.lblFila.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblFila.Name = "lblFila"
-        Me.lblFila.Size = New System.Drawing.Size(59, 17)
+        Me.lblFila.Size = New System.Drawing.Size(45, 13)
         Me.lblFila.TabIndex = 11
         Me.lblFila.Text = "Label10"
         '
         'GroupBox3
         '
+        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.dtResultados)
-        Me.GroupBox3.Location = New System.Drawing.Point(16, 368)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 299)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox3.Size = New System.Drawing.Size(664, 299)
+        Me.GroupBox3.Size = New System.Drawing.Size(498, 243)
         Me.GroupBox3.TabIndex = 12
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Descripción de Resultados"
         '
         'dtResultados
         '
+        Me.dtResultados.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.dtResultados.BackgroundColor = System.Drawing.Color.White
         Me.dtResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtResultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.codigoUnidad, Me.unidad})
-        Me.dtResultados.Location = New System.Drawing.Point(8, 23)
-        Me.dtResultados.Margin = New System.Windows.Forms.Padding(4)
+        Me.dtResultados.Location = New System.Drawing.Point(6, 19)
         Me.dtResultados.Name = "dtResultados"
         Me.dtResultados.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.dtResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtResultados.Size = New System.Drawing.Size(648, 268)
+        Me.dtResultados.Size = New System.Drawing.Size(486, 218)
         Me.dtResultados.TabIndex = 0
         '
         'codigo
@@ -498,28 +474,12 @@ Partial Class E_DetalleExamenes
         Me.unidad.Name = "unidad"
         Me.unidad.Width = 125
         '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.lblform)
-        Me.GroupBox4.Controls.Add(Me.Label12)
-        Me.GroupBox4.Controls.Add(Me.btnModificar)
-        Me.GroupBox4.Controls.Add(Me.btnGuardar)
-        Me.GroupBox4.Controls.Add(Me.btnCrear)
-        Me.GroupBox4.Location = New System.Drawing.Point(16, 15)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox4.Size = New System.Drawing.Size(664, 55)
-        Me.GroupBox4.TabIndex = 13
-        Me.GroupBox4.TabStop = False
-        '
         'lblform
         '
         Me.lblform.AutoSize = True
-        Me.lblform.Location = New System.Drawing.Point(198, 23)
-        Me.lblform.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblform.Location = New System.Drawing.Point(182, 21)
         Me.lblform.Name = "lblform"
-        Me.lblform.Size = New System.Drawing.Size(36, 17)
+        Me.lblform.Size = New System.Drawing.Size(27, 13)
         Me.lblform.TabIndex = 26
         Me.lblform.Text = "form"
         Me.lblform.Visible = False
@@ -527,43 +487,42 @@ Partial Class E_DetalleExamenes
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(12, 18)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(19, 12)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(105, 25)
+        Me.Label12.Size = New System.Drawing.Size(113, 25)
         Me.Label12.TabIndex = 11
         Me.Label12.Text = "Exámenes"
         '
-        'Button1
+        'Panel1
         '
-        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(257, -5)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 28)
-        Me.Button1.TabIndex = 27
-        Me.Button1.Text = "temporal"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label12)
+        Me.Panel1.Controls.Add(Me.lblform)
+        Me.Panel1.Controls.Add(Me.btnModificar)
+        Me.Panel1.Controls.Add(Me.btnGuardar)
+        Me.Panel1.Controls.Add(Me.btnCrear)
+        Me.Panel1.Location = New System.Drawing.Point(-1, -1)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(915, 46)
+        Me.Panel1.TabIndex = 27
         '
         'E_DetalleExamenes
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1211, 682)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.GroupBox4)
+        Me.ClientSize = New System.Drawing.Size(907, 554)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.lblFila)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "E_DetalleExamenes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Detalle Examenes"
@@ -573,8 +532,8 @@ Partial Class E_DetalleExamenes
         CType(Me.dtItem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.dtResultados, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -613,7 +572,6 @@ Partial Class E_DetalleExamenes
     Friend WithEvents nombre As DataGridViewTextBoxColumn
     Friend WithEvents codigoUnidad As DataGridViewTextBoxColumn
     Friend WithEvents unidad As DataGridViewTextBoxColumn
-    Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents lblcodigoGrupo As Label
     Friend WithEvents txtCodigoSubArea As TextBox
     Friend WithEvents Label10 As Label
@@ -622,5 +580,5 @@ Partial Class E_DetalleExamenes
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents lblform As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Panel1 As Panel
 End Class

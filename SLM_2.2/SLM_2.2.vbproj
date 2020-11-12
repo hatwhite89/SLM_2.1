@@ -604,6 +604,12 @@
     <Compile Include="presentacion\A_Planilla.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_PlanillaCalculo.Designer.vb">
+      <DependentUpon>A_PlanillaCalculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_PlanillaCalculo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_PlantillasDeResultado.Designer.vb">
       <DependentUpon>A_PlantillasDeResultado.vb</DependentUpon>
     </Compile>
@@ -645,6 +651,12 @@
       <DependentUpon>A_ValoresRefPar.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ValoresRefPar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_VistaPlanillaExcel.Designer.vb">
+      <DependentUpon>A_VistaPlanillaExcel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_VistaPlanillaExcel.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_BuscarOrdenDeTrabajo.Designer.vb">
@@ -1565,6 +1577,9 @@
     <EmbeddedResource Include="presentacion\A_Planilla.resx">
       <DependentUpon>A_Planilla.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_PlanillaCalculo.resx">
+      <DependentUpon>A_PlanillaCalculo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_PlantillasDeResultado.resx">
       <DependentUpon>A_PlantillasDeResultado.vb</DependentUpon>
     </EmbeddedResource>
@@ -1588,6 +1603,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ValoresRefPar.resx">
       <DependentUpon>A_ValoresRefPar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_VistaPlanillaExcel.resx">
+      <DependentUpon>A_VistaPlanillaExcel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_BuscarOrdenDeTrabajo.resx">
       <DependentUpon>E_BuscarOrdenDeTrabajo.vb</DependentUpon>
