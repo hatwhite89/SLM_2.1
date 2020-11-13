@@ -3,26 +3,31 @@
     Public ds As New DataSet  'Orden de los examenes por grupo o laboratorio
     Dim celda, fila As Integer 'capturar columna y fila para agregar plantilla
     Private Sub E_HojaTrabajo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
 
-        alternarColoFilasDatagridview(dgvHojaTrab)
-        txtHora.Text = Date.Now.ToLongTimeString
-        txtFecha.Text = Date.Today
+            alternarColoFilasDatagridview(dgvHojaTrab)
+            txtHora.Text = Date.Now.ToLongTimeString
+            txtFecha.Text = Date.Today
 
-        dgvHojaTrab.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvHojaTrab.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
-        'CARGA DE PLANTILLAS :::::::::::::::::::::::::::::::::::::::::...
+            'CARGA DE PLANTILLAS :::::::::::::::::::::::::::::::::::::::::...
 
-        Dim plantilla As New ClsPlantillaResultado
+            Dim plantilla As New ClsPlantillaResultado
 
-        Dim dt As New DataTable
+            Dim dt As New DataTable
 
-        dt = plantilla.listarPlantillas
+            dt = plantilla.BuscarPlantillaXSubarea(Integer.Parse(lblCodeSubArea.Text))
 
-        cbxPlantillas.DataSource = dt
-        cbxPlantillas.DisplayMember = "simbolo"
-        cbxPlantillas.SelectedIndex = 0
+            cbxPlantillas.DataSource = dt
+            cbxPlantillas.DisplayMember = "simbolo"
+            cbxPlantillas.SelectedIndex = 0
 
-        '...::::::::::::::::::::::::::::::::::::::::::::::::::::::::::...
+            '...::::::::::::::::::::::::::::::::::::::::::::::::::::::::::...
+
+        Catch ex As Exception
+
+        End Try
 
     End Sub
     Private Sub dgvHojaTrab_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvHojaTrab.CellEndEdit
@@ -423,7 +428,7 @@
 
                 For index = 0 To dgvHojaTrab.Rows.Count - 1
                     If dgvHojaTrab.Rows(index).Cells(1).Value.ToString.Contains(txtBuscar.Text) Then
-                        dgvHojaTrab.Rows(index).DefaultCellStyle.BackColor = Color.Red
+                        dgvHojaTrab.Rows(index).DefaultCellStyle.BackColor = Color.DeepSkyBlue
                     Else
                         dgvHojaTrab.Rows(index).DefaultCellStyle.BackColor = Color.White
                     End If
@@ -439,7 +444,7 @@
 
         Try
 
-            dgvHojaTrab.Rows(fila).Cells(celda).Value = dgvHojaTrab.Rows(fila).Cells(celda).Value + cbxPlantillas.Text
+            dgvHojaTrab.Rows(fila).Cells(celda).Value = dgvHojaTrab.Rows(fila).Cells(celda).Value + "," + cbxPlantillas.Text
 
         Catch ex As Exception
 

@@ -29,6 +29,7 @@ Partial Class E_GrupoExamen
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.gbxcaja = New System.Windows.Forms.GroupBox()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.lblcode = New System.Windows.Forms.Label()
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
@@ -38,7 +39,6 @@ Partial Class E_GrupoExamen
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
-        Me.lblform = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxcaja.SuspendLayout()
@@ -131,6 +131,16 @@ Partial Class E_GrupoExamen
         Me.gbxcaja.TabIndex = 120
         Me.gbxcaja.TabStop = False
         Me.gbxcaja.Text = "REGISTRAR GRUPO"
+        '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(469, 80)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(51, 17)
+        Me.lblform.TabIndex = 125
+        Me.lblform.Text = "Label1"
+        Me.lblform.Visible = False
         '
         'lblcode
         '
@@ -233,15 +243,6 @@ Partial Class E_GrupoExamen
         Me.btnguardar.TabIndex = 108
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
-        '
-        'lblform
-        '
-        Me.lblform.AutoSize = True
-        Me.lblform.Location = New System.Drawing.Point(469, 80)
-        Me.lblform.Name = "lblform"
-        Me.lblform.Size = New System.Drawing.Size(51, 17)
-        Me.lblform.TabIndex = 125
-        Me.lblform.Text = "Label1"
         '
         'E_GrupoExamen
         '

@@ -2,7 +2,7 @@
 Imports System.Data.SqlClient
 Public Class ClsPlantillaResultado
 
-    Dim codPlantilla As Integer
+    Dim codPlantilla, codGrupoExamen As Integer
     Dim simbolo, descripcion As String
 
 
@@ -41,6 +41,15 @@ Public Class ClsPlantillaResultado
             descripcion = value
         End Set
     End Property
+    'Codigo Area o Grupo Examen
+    Public Property codGrupoExamen_ As Integer
+        Get
+            Return codGrupoExamen
+        End Get
+        Set(value As Integer)
+            codGrupoExamen = value
+        End Set
+    End Property
 
     ':::::::::::::::::::::: Funciones de Mantenimiento ::::::::::::::::::
 
@@ -64,6 +73,11 @@ Public Class ClsPlantillaResultado
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "descripcion"
         sqlpar.Value = descripcion_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codGrupoExamen"
+        sqlpar.Value = codGrupoExamen_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -128,6 +142,11 @@ Public Class ClsPlantillaResultado
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codGrupoExamen"
+        sqlpar.Value = codGrupoExamen_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -149,6 +168,74 @@ Public Class ClsPlantillaResultado
 
 
 
+    Public Function BuscarPlantillaXCodigo() As DataTable
 
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarPlantillaXCodigo"
+            cmd.Parameters.Add("@codPlantilla", SqlDbType.Int).Value = Cod
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+    Public Function BuscarPlantillaXSubarea(ByVal codigoSubArea As Integer) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarPlantillaXSubarea"
+            cmd.Parameters.Add("@codigoSubArea", SqlDbType.Int).Value = codigoSubArea
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+    Public Function BuscarPlantillaXSimboloYSubarea(ByVal codigoSubArea As Integer) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarPlantillaXSimboloYSubarea"
+            cmd.Parameters.Add("@simbolo", SqlDbType.VarChar).Value = simbolo_
+            cmd.Parameters.Add("@codigoSubArea", SqlDbType.Int).Value = codigoSubArea
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
 
 End Class

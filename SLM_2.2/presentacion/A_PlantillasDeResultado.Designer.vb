@@ -22,6 +22,7 @@ Partial Class A_PlantillasDeResultado
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_PlantillasDeResultado))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
@@ -29,7 +30,12 @@ Partial Class A_PlantillasDeResultado
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnBuscarArea = New System.Windows.Forms.Button()
+        Me.rtxtDescripcion = New System.Windows.Forms.RichTextBox()
+        Me.txtNombreArea = New System.Windows.Forms.TextBox()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
+        Me.txtCodigoArea = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtSimbolo = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -37,7 +43,6 @@ Partial Class A_PlantillasDeResultado
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.dtPlantillas = New System.Windows.Forms.DataGridView()
-        Me.rtxtDescripcion = New System.Windows.Forms.RichTextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -54,9 +59,9 @@ Partial Class A_PlantillasDeResultado
         Me.GroupBox1.Controls.Add(Me.btnModificar)
         Me.GroupBox1.Controls.Add(Me.btnNuevo)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 11)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(799, 66)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -67,7 +72,7 @@ Partial Class A_PlantillasDeResultado
         Me.btnCerrar.BackColor = System.Drawing.Color.White
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnCerrar.Location = New System.Drawing.Point(681, 22)
-        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(100, 28)
         Me.btnCerrar.TabIndex = 4
@@ -80,7 +85,7 @@ Partial Class A_PlantillasDeResultado
         Me.btnGuardar.BackColor = System.Drawing.Color.White
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnGuardar.Location = New System.Drawing.Point(573, 22)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(100, 28)
         Me.btnGuardar.TabIndex = 3
@@ -104,7 +109,7 @@ Partial Class A_PlantillasDeResultado
         Me.btnModificar.BackColor = System.Drawing.Color.White
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnModificar.Location = New System.Drawing.Point(465, 22)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(100, 28)
         Me.btnModificar.TabIndex = 2
@@ -117,7 +122,7 @@ Partial Class A_PlantillasDeResultado
         Me.btnNuevo.BackColor = System.Drawing.Color.White
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnNuevo.Location = New System.Drawing.Point(357, 22)
-        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(100, 28)
         Me.btnNuevo.TabIndex = 1
@@ -128,37 +133,98 @@ Partial Class A_PlantillasDeResultado
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.btnBuscarArea)
         Me.GroupBox2.Controls.Add(Me.rtxtDescripcion)
+        Me.GroupBox2.Controls.Add(Me.txtNombreArea)
         Me.GroupBox2.Controls.Add(Me.txtDescripcion)
+        Me.GroupBox2.Controls.Add(Me.txtCodigoArea)
+        Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.txtSimbolo)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.txtCodigo)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Location = New System.Drawing.Point(16, 89)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(797, 183)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información de Plantilla"
         '
+        'btnBuscarArea
+        '
+        Me.btnBuscarArea.BackColor = System.Drawing.Color.White
+        Me.btnBuscarArea.BackgroundImage = CType(resources.GetObject("btnBuscarArea.BackgroundImage"), System.Drawing.Image)
+        Me.btnBuscarArea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBuscarArea.FlatAppearance.BorderSize = 0
+        Me.btnBuscarArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarArea.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarArea.Location = New System.Drawing.Point(125, 59)
+        Me.btnBuscarArea.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnBuscarArea.Name = "btnBuscarArea"
+        Me.btnBuscarArea.Size = New System.Drawing.Size(49, 22)
+        Me.btnBuscarArea.TabIndex = 84
+        Me.btnBuscarArea.Text = "..."
+        Me.btnBuscarArea.UseVisualStyleBackColor = False
+        '
+        'rtxtDescripcion
+        '
+        Me.rtxtDescripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.rtxtDescripcion.Location = New System.Drawing.Point(123, 91)
+        Me.rtxtDescripcion.Name = "rtxtDescripcion"
+        Me.rtxtDescripcion.Size = New System.Drawing.Size(651, 75)
+        Me.rtxtDescripcion.TabIndex = 6
+        Me.rtxtDescripcion.Text = ""
+        '
+        'txtNombreArea
+        '
+        Me.txtNombreArea.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombreArea.Location = New System.Drawing.Point(319, 59)
+        Me.txtNombreArea.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtNombreArea.Name = "txtNombreArea"
+        Me.txtNombreArea.ReadOnly = True
+        Me.txtNombreArea.Size = New System.Drawing.Size(455, 22)
+        Me.txtNombreArea.TabIndex = 83
+        '
         'txtDescripcion
         '
         Me.txtDescripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtDescripcion.Location = New System.Drawing.Point(31, 91)
-        Me.txtDescripcion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDescripcion.Location = New System.Drawing.Point(131, 91)
+        Me.txtDescripcion.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDescripcion.MaxLength = 300
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(749, 22)
+        Me.txtDescripcion.Size = New System.Drawing.Size(623, 22)
         Me.txtDescripcion.TabIndex = 5
+        '
+        'txtCodigoArea
+        '
+        Me.txtCodigoArea.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigoArea.Location = New System.Drawing.Point(180, 59)
+        Me.txtCodigoArea.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtCodigoArea.MaxLength = 20
+        Me.txtCodigoArea.Name = "txtCodigoArea"
+        Me.txtCodigoArea.Size = New System.Drawing.Size(133, 22)
+        Me.txtCodigoArea.TabIndex = 82
+        Me.txtCodigoArea.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(70, 59)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(38, 17)
+        Me.Label9.TabIndex = 81
+        Me.Label9.Text = "Área"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(27, 71)
+        Me.Label4.Location = New System.Drawing.Point(27, 91)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(82, 17)
@@ -167,8 +233,8 @@ Partial Class A_PlantillasDeResultado
         '
         'txtSimbolo
         '
-        Me.txtSimbolo.Location = New System.Drawing.Point(542, 34)
-        Me.txtSimbolo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSimbolo.Location = New System.Drawing.Point(542, 24)
+        Me.txtSimbolo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtSimbolo.MaxLength = 10
         Me.txtSimbolo.Name = "txtSimbolo"
         Me.txtSimbolo.Size = New System.Drawing.Size(232, 22)
@@ -177,7 +243,7 @@ Partial Class A_PlantillasDeResultado
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(473, 38)
+        Me.Label3.Location = New System.Drawing.Point(473, 28)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(58, 17)
@@ -187,16 +253,17 @@ Partial Class A_PlantillasDeResultado
         'txtCodigo
         '
         Me.txtCodigo.Enabled = False
-        Me.txtCodigo.Location = New System.Drawing.Point(73, 34)
-        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCodigo.Location = New System.Drawing.Point(122, 24)
+        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(173, 22)
+        Me.txtCodigo.ReadOnly = True
+        Me.txtCodigo.Size = New System.Drawing.Size(191, 22)
         Me.txtCodigo.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(27, 38)
+        Me.Label2.Location = New System.Drawing.Point(76, 28)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(37, 17)
@@ -210,9 +277,9 @@ Partial Class A_PlantillasDeResultado
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.dtPlantillas)
         Me.GroupBox3.Location = New System.Drawing.Point(16, 280)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Size = New System.Drawing.Size(799, 243)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
@@ -231,7 +298,7 @@ Partial Class A_PlantillasDeResultado
         Me.dtPlantillas.ColumnHeadersHeight = 29
         Me.dtPlantillas.GridColor = System.Drawing.Color.White
         Me.dtPlantillas.Location = New System.Drawing.Point(15, 23)
-        Me.dtPlantillas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtPlantillas.Margin = New System.Windows.Forms.Padding(4)
         Me.dtPlantillas.MultiSelect = False
         Me.dtPlantillas.Name = "dtPlantillas"
         Me.dtPlantillas.ReadOnly = True
@@ -240,14 +307,6 @@ Partial Class A_PlantillasDeResultado
         Me.dtPlantillas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtPlantillas.Size = New System.Drawing.Size(767, 208)
         Me.dtPlantillas.TabIndex = 0
-        '
-        'rtxtDescripcion
-        '
-        Me.rtxtDescripcion.Location = New System.Drawing.Point(15, 91)
-        Me.rtxtDescripcion.Name = "rtxtDescripcion"
-        Me.rtxtDescripcion.Size = New System.Drawing.Size(765, 75)
-        Me.rtxtDescripcion.TabIndex = 6
-        Me.rtxtDescripcion.Text = ""
         '
         'A_PlantillasDeResultado
         '
@@ -258,7 +317,7 @@ Partial Class A_PlantillasDeResultado
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "A_PlantillasDeResultado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SLM: Módulo de Registro de Plantillas"
@@ -288,4 +347,8 @@ Partial Class A_PlantillasDeResultado
     Friend WithEvents dtPlantillas As DataGridView
     Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents rtxtDescripcion As RichTextBox
+    Friend WithEvents btnBuscarArea As Button
+    Friend WithEvents txtNombreArea As TextBox
+    Friend WithEvents txtCodigoArea As TextBox
+    Friend WithEvents Label9 As Label
 End Class
