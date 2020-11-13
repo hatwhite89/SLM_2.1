@@ -191,6 +191,7 @@ Public Class ClsPlantillaResultado
 
     End Function
 
+
     Public Function BuscarPlantillaXSubarea(ByVal codigoSubArea As Integer) As DataTable
 
         Dim objCon As New ClsConnection
