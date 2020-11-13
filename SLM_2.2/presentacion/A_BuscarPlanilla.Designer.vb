@@ -31,6 +31,7 @@ Partial Class A_BuscarPlanilla
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltipoCta = New System.Windows.Forms.Label()
         Me.txtDescripcionB = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -51,6 +52,7 @@ Partial Class A_BuscarPlanilla
         Me.gbxbusqueda.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxbusqueda.Controls.Add(Me.Button1)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.btnnueva)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
@@ -59,10 +61,10 @@ Partial Class A_BuscarPlanilla
         Me.gbxbusqueda.Controls.Add(Me.lbltipoCta)
         Me.gbxbusqueda.Controls.Add(Me.txtDescripcionB)
         Me.gbxbusqueda.Location = New System.Drawing.Point(10, 12)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.gbxbusqueda.Size = New System.Drawing.Size(698, 521)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
+        Me.gbxbusqueda.Size = New System.Drawing.Size(799, 521)
         Me.gbxbusqueda.TabIndex = 127
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "Buscar Planilla"
@@ -85,10 +87,10 @@ Partial Class A_BuscarPlanilla
         Me.btnnueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnueva.ForeColor = System.Drawing.Color.White
-        Me.btnnueva.Location = New System.Drawing.Point(530, 14)
-        Me.btnnueva.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnueva.Location = New System.Drawing.Point(679, 14)
+        Me.btnnueva.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnueva.Name = "btnnueva"
-        Me.btnnueva.Size = New System.Drawing.Size(164, 28)
+        Me.btnnueva.Size = New System.Drawing.Size(116, 28)
         Me.btnnueva.TabIndex = 120
         Me.btnnueva.Text = "Nueva Planilla"
         Me.btnnueva.UseVisualStyleBackColor = False
@@ -125,14 +127,14 @@ Partial Class A_BuscarPlanilla
         Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(6, 57)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersVisible = False
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(688, 422)
+        Me.dgbtabla.Size = New System.Drawing.Size(789, 422)
         Me.dgbtabla.TabIndex = 119
         '
         'lbltipoCta
@@ -148,22 +150,37 @@ Partial Class A_BuscarPlanilla
         'txtDescripcionB
         '
         Me.txtDescripcionB.Location = New System.Drawing.Point(78, 22)
-        Me.txtDescripcionB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtDescripcionB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtDescripcionB.MaxLength = 80
         Me.txtDescripcionB.Name = "txtDescripcionB"
         Me.txtDescripcionB.Size = New System.Drawing.Size(372, 20)
         Me.txtDescripcionB.TabIndex = 115
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(559, 14)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(116, 28)
+        Me.Button1.TabIndex = 121
+        Me.Button1.Text = "Cálculo de Planilla"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'A_BuscarPlanilla
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(718, 542)
+        Me.ClientSize = New System.Drawing.Size(819, 542)
         Me.Controls.Add(Me.lblform)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "A_BuscarPlanilla"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listado de Planillas"
@@ -184,4 +201,5 @@ Partial Class A_BuscarPlanilla
     Friend WithEvents dgbtabla As DataGridView
     Friend WithEvents lbltipoCta As Label
     Friend WithEvents txtDescripcionB As TextBox
+    Friend WithEvents Button1 As Button
 End Class

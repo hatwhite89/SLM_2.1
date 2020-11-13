@@ -5,7 +5,7 @@
 
         Try
             'Cargar Facturas de Compra
-            dtFacturasCompra.DataSource = FactCompra.listarFacturaCompra
+            dtFacturasCompra.DataSource = FactCompra.listarFacturaCompraParaPago
 
         Catch ex As Exception
 
@@ -22,7 +22,7 @@
             codProveedor = dtFacturasCompra.Rows(e.RowIndex).Cells(1).Value
             proveedor = dtFacturasCompra.Rows(e.RowIndex).Cells(2).Value
             moneda = dtFacturasCompra.Rows(e.RowIndex).Cells(4).Value
-            monto = dtFacturasCompra.Rows(e.RowIndex).Cells(3).Value
+            monto = dtFacturasCompra.Rows(e.RowIndex).Cells(12).Value
 
             Dim i, rows As Integer
             rows = dtFacturasCompra.Rows.Count - 2

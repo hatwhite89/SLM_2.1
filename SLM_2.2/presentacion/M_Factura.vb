@@ -1451,7 +1451,6 @@ Public Class M_Factura
                                     End If
                                 Next
 
-
                                 For index As Integer = 0 To codigoDetalleFactura.Count - 1
                                     objDetFac.numero_ = Convert.ToInt64(codigoDetalleFactura(index))
                                     If objDetFac.EliminarDetalleFactura() <> 1 Then
