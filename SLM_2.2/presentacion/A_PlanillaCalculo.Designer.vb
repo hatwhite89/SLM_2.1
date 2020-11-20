@@ -38,24 +38,25 @@ Partial Class A_PlanillaCalculo
         Me.btnCargar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnExportarExcel = New System.Windows.Forms.Button()
+        Me.Empleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SueldoBase = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.T_Extra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DiasFaltados = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalDev = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IHSS = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RetISR = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Embargos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Prest_Cofinter = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AdelantoSueldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrestamoRAP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RetOptica = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RetPrestamo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImpVecinal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RAPVolunt = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RetRAP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SueldoNeto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dtData, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -161,7 +162,7 @@ Partial Class A_PlanillaCalculo
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtData.BackgroundColor = System.Drawing.Color.White
         Me.dtData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtData.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.IHSS, Me.Column7, Me.Column8, Me.Column9, Me.Column10, Me.Column11, Me.Column12, Me.Column13, Me.Column14, Me.Column15, Me.Column16, Me.Column17, Me.Column18})
+        Me.dtData.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Empleado, Me.SueldoBase, Me.T_Extra, Me.DiasFaltados, Me.TotalDev, Me.IHSS, Me.RetISR, Me.Embargos, Me.Prest_Cofinter, Me.AdelantoSueldo, Me.PrestamoRAP, Me.RetOptica, Me.RetPrestamo, Me.ImpVecinal, Me.RAPVolunt, Me.RetRAP, Me.SueldoNeto, Me.CodEmpleado})
         Me.dtData.Location = New System.Drawing.Point(6, 19)
         Me.dtData.Name = "dtData"
         Me.dtData.Size = New System.Drawing.Size(807, 348)
@@ -172,6 +173,7 @@ Partial Class A_PlanillaCalculo
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnExportarExcel)
         Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Controls.Add(Me.btnGenerar)
         Me.Panel1.Controls.Add(Me.btnCargar)
@@ -210,7 +212,7 @@ Partial Class A_PlanillaCalculo
         Me.btnCargar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCargar.BackColor = System.Drawing.Color.White
         Me.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCargar.Location = New System.Drawing.Point(545, 10)
+        Me.btnCargar.Location = New System.Drawing.Point(444, 10)
         Me.btnCargar.Name = "btnCargar"
         Me.btnCargar.Size = New System.Drawing.Size(93, 23)
         Me.btnCargar.TabIndex = 1
@@ -238,100 +240,112 @@ Partial Class A_PlanillaCalculo
         Me.Panel2.Size = New System.Drawing.Size(848, 25)
         Me.Panel2.TabIndex = 3
         '
-        'Column1
+        'btnExportarExcel
         '
-        Me.Column1.HeaderText = "Nombre"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
+        Me.btnExportarExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnExportarExcel.BackColor = System.Drawing.Color.White
+        Me.btnExportarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExportarExcel.Location = New System.Drawing.Point(543, 10)
+        Me.btnExportarExcel.Name = "btnExportarExcel"
+        Me.btnExportarExcel.Size = New System.Drawing.Size(93, 23)
+        Me.btnExportarExcel.TabIndex = 4
+        Me.btnExportarExcel.Text = "Exportar Excel"
+        Me.btnExportarExcel.UseVisualStyleBackColor = False
         '
-        'Column2
+        'Empleado
         '
-        Me.Column2.HeaderText = "Sueldo Base"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
+        Me.Empleado.HeaderText = "Nombre"
+        Me.Empleado.Name = "Empleado"
+        Me.Empleado.ReadOnly = True
         '
-        'Column3
+        'SueldoBase
         '
-        Me.Column3.HeaderText = "T. Extra"
-        Me.Column3.Name = "Column3"
+        Me.SueldoBase.HeaderText = "Sueldo Base"
+        Me.SueldoBase.Name = "SueldoBase"
+        Me.SueldoBase.ReadOnly = True
         '
-        'Column4
+        'T_Extra
         '
-        Me.Column4.HeaderText = "Días Faltados"
-        Me.Column4.Name = "Column4"
+        Me.T_Extra.HeaderText = "T. Extra"
+        Me.T_Extra.Name = "T_Extra"
         '
-        'Column5
+        'DiasFaltados
         '
-        Me.Column5.HeaderText = "Total Devengado"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
+        Me.DiasFaltados.HeaderText = "Días Faltados"
+        Me.DiasFaltados.Name = "DiasFaltados"
+        '
+        'TotalDev
+        '
+        Me.TotalDev.HeaderText = "Total Devengado"
+        Me.TotalDev.Name = "TotalDev"
+        Me.TotalDev.ReadOnly = True
         '
         'IHSS
         '
         Me.IHSS.HeaderText = "I.H.S.S."
         Me.IHSS.Name = "IHSS"
         '
-        'Column7
+        'RetISR
         '
-        Me.Column7.HeaderText = "Retención ISR"
-        Me.Column7.Name = "Column7"
+        Me.RetISR.HeaderText = "Retención ISR"
+        Me.RetISR.Name = "RetISR"
         '
-        'Column8
+        'Embargos
         '
-        Me.Column8.HeaderText = "Embargos"
-        Me.Column8.Name = "Column8"
+        Me.Embargos.HeaderText = "Embargos"
+        Me.Embargos.Name = "Embargos"
         '
-        'Column9
+        'Prest_Cofinter
         '
-        Me.Column9.HeaderText = "Prest. Cofinter"
-        Me.Column9.Name = "Column9"
+        Me.Prest_Cofinter.HeaderText = "Prest. Cofinter"
+        Me.Prest_Cofinter.Name = "Prest_Cofinter"
         '
-        'Column10
+        'AdelantoSueldo
         '
-        Me.Column10.HeaderText = "Adelantos Sueldo"
-        Me.Column10.Name = "Column10"
+        Me.AdelantoSueldo.HeaderText = "Adelantos Sueldo"
+        Me.AdelantoSueldo.Name = "AdelantoSueldo"
         '
-        'Column11
+        'PrestamoRAP
         '
-        Me.Column11.HeaderText = "Prestamo RAP"
-        Me.Column11.Name = "Column11"
+        Me.PrestamoRAP.HeaderText = "Prestamo RAP"
+        Me.PrestamoRAP.Name = "PrestamoRAP"
         '
-        'Column12
+        'RetOptica
         '
-        Me.Column12.HeaderText = "Retención Optica"
-        Me.Column12.Name = "Column12"
+        Me.RetOptica.HeaderText = "Retención Optica"
+        Me.RetOptica.Name = "RetOptica"
         '
-        'Column13
+        'RetPrestamo
         '
-        Me.Column13.HeaderText = "Ret. Prestamo"
-        Me.Column13.Name = "Column13"
+        Me.RetPrestamo.HeaderText = "Ret. Prestamo"
+        Me.RetPrestamo.Name = "RetPrestamo"
         '
-        'Column14
+        'ImpVecinal
         '
-        Me.Column14.HeaderText = "Imp. Vecinal"
-        Me.Column14.Name = "Column14"
+        Me.ImpVecinal.HeaderText = "Imp. Vecinal"
+        Me.ImpVecinal.Name = "ImpVecinal"
         '
-        'Column15
+        'RAPVolunt
         '
-        Me.Column15.HeaderText = "RAP Volunt."
-        Me.Column15.Name = "Column15"
+        Me.RAPVolunt.HeaderText = "RAP Volunt."
+        Me.RAPVolunt.Name = "RAPVolunt"
         '
-        'Column16
+        'RetRAP
         '
-        Me.Column16.HeaderText = "Ret. RAP"
-        Me.Column16.Name = "Column16"
+        Me.RetRAP.HeaderText = "Ret. RAP"
+        Me.RetRAP.Name = "RetRAP"
         '
-        'Column17
+        'SueldoNeto
         '
-        Me.Column17.HeaderText = "Sueldo Neto"
-        Me.Column17.Name = "Column17"
-        Me.Column17.ReadOnly = True
+        Me.SueldoNeto.HeaderText = "Sueldo Neto"
+        Me.SueldoNeto.Name = "SueldoNeto"
+        Me.SueldoNeto.ReadOnly = True
         '
-        'Column18
+        'CodEmpleado
         '
-        Me.Column18.HeaderText = "CodEmpleado"
-        Me.Column18.Name = "Column18"
-        Me.Column18.Visible = False
+        Me.CodEmpleado.HeaderText = "CodEmpleado"
+        Me.CodEmpleado.Name = "CodEmpleado"
+        Me.CodEmpleado.Visible = False
         '
         'A_PlanillaCalculo
         '
@@ -373,22 +387,23 @@ Partial Class A_PlanillaCalculo
     Friend WithEvents Label2 As Label
     Friend WithEvents txtIHSS As TextBox
     Friend WithEvents chkDiasFaltados As CheckBox
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents btnExportarExcel As Button
+    Friend WithEvents Empleado As DataGridViewTextBoxColumn
+    Friend WithEvents SueldoBase As DataGridViewTextBoxColumn
+    Friend WithEvents T_Extra As DataGridViewTextBoxColumn
+    Friend WithEvents DiasFaltados As DataGridViewTextBoxColumn
+    Friend WithEvents TotalDev As DataGridViewTextBoxColumn
     Friend WithEvents IHSS As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As DataGridViewTextBoxColumn
-    Friend WithEvents Column10 As DataGridViewTextBoxColumn
-    Friend WithEvents Column11 As DataGridViewTextBoxColumn
-    Friend WithEvents Column12 As DataGridViewTextBoxColumn
-    Friend WithEvents Column13 As DataGridViewTextBoxColumn
-    Friend WithEvents Column14 As DataGridViewTextBoxColumn
-    Friend WithEvents Column15 As DataGridViewTextBoxColumn
-    Friend WithEvents Column16 As DataGridViewTextBoxColumn
-    Friend WithEvents Column17 As DataGridViewTextBoxColumn
-    Friend WithEvents Column18 As DataGridViewTextBoxColumn
+    Friend WithEvents RetISR As DataGridViewTextBoxColumn
+    Friend WithEvents Embargos As DataGridViewTextBoxColumn
+    Friend WithEvents Prest_Cofinter As DataGridViewTextBoxColumn
+    Friend WithEvents AdelantoSueldo As DataGridViewTextBoxColumn
+    Friend WithEvents PrestamoRAP As DataGridViewTextBoxColumn
+    Friend WithEvents RetOptica As DataGridViewTextBoxColumn
+    Friend WithEvents RetPrestamo As DataGridViewTextBoxColumn
+    Friend WithEvents ImpVecinal As DataGridViewTextBoxColumn
+    Friend WithEvents RAPVolunt As DataGridViewTextBoxColumn
+    Friend WithEvents RetRAP As DataGridViewTextBoxColumn
+    Friend WithEvents SueldoNeto As DataGridViewTextBoxColumn
+    Friend WithEvents CodEmpleado As DataGridViewTextBoxColumn
 End Class

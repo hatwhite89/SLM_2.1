@@ -88,6 +88,8 @@
                             A_PlanillaCalculo.dtData.Rows.Add(New String() {CStr(row("nombreCompleto")), CStr(row("salario")), "0", "0", CStr(row("salario")), "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", CStr(row("salario")), CStr(row("codEmpleado"))})
                         Next
 
+                        'Totalizar
+                        TotalSalarios()
                     End If
                 Else
                     If e.RowIndex >= 0 Then
@@ -106,7 +108,7 @@
                             row = dt.Rows(index)
                             A_PlanillaCalculo.dtData.Rows.Add(New String() {CStr(row("nombreCompleto")), CStr(row("salario")), "0", "0", CStr(row("salario")), "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", CStr(row("salario")), CStr(row("codEmpleado"))})
                         Next
-
+                        TotalSalarios()
                     End If
                 End If
 
@@ -125,5 +127,26 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Sub TotalSalarios()
+        Dim totalSalario As Double
+        A_PlanillaCalculo.dtData.Rows.Add("TOTALES:", "0", "", "", "0", "", "", "", "", "", "", "", "", "", "", "", "0", "")
+
+        For j = 0 To A_PlanillaCalculo.dtData.Rows.Count - 2
+
+            totalSalario = Convert.ToDouble(A_PlanillaCalculo.dtData.Rows(j).Cells(1).Value) + totalSalario
+
+        Next
+
+        A_PlanillaCalculo.dtData.Rows(A_PlanillaCalculo.dtData.Rows.Count - 1).Cells(1).Value = Math.Round(totalSalario, 2)
+        A_PlanillaCalculo.dtData.Rows(A_PlanillaCalculo.dtData.Rows.Count - 1).Cells(4).Value = Math.Round(totalSalario, 2)
+        A_PlanillaCalculo.dtData.Rows(A_PlanillaCalculo.dtData.Rows.Count - 1).Cells(16).Value = Math.Round(totalSalario, 2)
+
+        Dim style As New DataGridViewCellStyle
+        style.Font = New Font("Arial", 9, FontStyle.Bold)
+        A_PlanillaCalculo.dtData.Rows(A_PlanillaCalculo.dtData.Rows.Count - 1).DefaultCellStyle = style
+        A_PlanillaCalculo.dtData.Rows(A_PlanillaCalculo.dtData.Rows.Count - 1).ReadOnly = True
+
     End Sub
 End Class
