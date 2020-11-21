@@ -9,6 +9,26 @@
         alternarColoFilasDatagridview(DataGridView3)
         ComboAlmacen()
         ComboAlmacen2()
+        Label22.Text = ""
+
+    End Sub
+    Public Sub sumarData()
+        Dim Total As Integer = 0
+
+        Try
+            For Each row As DataGridViewRow In Me.DataGridView1.Rows
+                Total += Integer.Parse(row.Cells(6).Value)
+
+            Next
+        Catch ex As Exception
+
+        End Try
+
+        If Total > 0 Then
+            Label22.Text = "*Tiene productos pendientes de ser recibidos en esta orden"
+        Else
+            Label22.Text = "*No tiene productos pendientes en esta orden de compra"
+        End If
 
     End Sub
     Private Sub cargarInventario()
@@ -48,6 +68,7 @@
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
         DetalleOC(TextBox1.Text)
+        sumarData()
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick

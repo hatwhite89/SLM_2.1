@@ -55,7 +55,7 @@ Public Class E_frmOrdenCompra
         Dim Total As Single
 
         For Each row As DataGridViewRow In Me.DataGridView1.Rows
-            Total += Val(row.Cells(5).Value)
+            Total += Val(row.Cells(6).Value)
         Next
         Label44.Text = Total.ToString
     End Sub
@@ -104,7 +104,7 @@ Public Class E_frmOrdenCompra
         txtISVProductos.Text = "0"
         txtCantidadProductos.Text = "1"
         txtPrecioUnitarioProductos.Text = "0"
-        txtCantidadProductos.Text = "0"
+
         txtNombreProveedor.Text = nombre_proveedorOC
 
         CargarDGOC()
@@ -225,6 +225,7 @@ Public Class E_frmOrdenCompra
                 .ObservacionesOC = txtObservaciones.Text
                 .EstadoOC = estado
                 .IdProveedor = Integer.Parse(txtCodProveedor.Text)
+                .Id_factura_compra1 = Integer.Parse(txtNumFactura.Text)
 
             End With
 
@@ -275,6 +276,7 @@ Public Class E_frmOrdenCompra
             LlenarTextbox(DataGridView2.Rows(e.RowIndex).Cells(0).Value)
             txtEstadoOC.Text = DataGridView2.Rows(e.RowIndex).Cells(4).Value
             txtNombreProveedor.Text = DataGridView2.Rows(e.RowIndex).Cells(1).Value
+            txtNumFactura.Text = DataGridView2.Rows(e.RowIndex).Cells(7).Value
 
 
             'txtCondicionEntrega.Text = DataGridView2.Rows(e.RowIndex).Cells(4).Value
@@ -478,5 +480,9 @@ Public Class E_frmOrdenCompra
             Button1.Enabled = False
             Button3.Enabled = False
         End If
+    End Sub
+
+    Private Sub btnLimpiarBusqueda_Click(sender As Object, e As EventArgs) Handles btnLimpiarBusqueda.Click
+        txtNombreProveedor.Clear()
     End Sub
 End Class

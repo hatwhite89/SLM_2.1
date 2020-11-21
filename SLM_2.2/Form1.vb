@@ -763,7 +763,7 @@
     End Sub
 
     Private Sub btnFactCompra_Click(sender As Object, e As EventArgs) Handles btnFactCompra.Click
-        A_FacturaCompras.Show()
+        A_ListadoFacturaCompra.Show()
     End Sub
 
     Private Sub btnCandidatos_Click(sender As Object, e As EventArgs) Handles btnCandidatos.Click

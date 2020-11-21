@@ -148,6 +148,7 @@ Public Class E_frmSalida
         Try
             txtLote.Text = DataGridView2.Rows(e.RowIndex).Cells(2).Value
             txtidDetalleEntrada.Text = DataGridView2.Rows(e.RowIndex).Cells(0).Value
+            txtProducto.Text = DataGridView2.Rows(e.RowIndex).Cells(1).Value
         Catch ex As Exception
 
         End Try
@@ -248,7 +249,7 @@ where o.id_departamento=d.codigo and o.id_usuario = u.cod_usuario and o.id_oi='1
         Try
             id_detalle_oi = Integer.Parse(DataGridView1.Rows(e.RowIndex).Cells(0).Value)
 
-            txtProducto.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
+            'txtProducto.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
             txtCantidad.Text = DataGridView1.Rows(e.RowIndex).Cells(3).Value
             txtAlmacenRecibe.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value
             txtAreaSolicitante.Text = DataGridView1.Rows(e.RowIndex).Cells(5).Value

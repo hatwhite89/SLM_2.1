@@ -177,7 +177,6 @@ Partial Class frmEvaluacionProveedores
         '
         Me.TabPage1.BackColor = System.Drawing.Color.White
         Me.TabPage1.Controls.Add(Me.GroupBox3)
-        Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.TextBox2)
         Me.TabPage1.Controls.Add(Me.Panel2)
@@ -328,8 +327,8 @@ Partial Class frmEvaluacionProveedores
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.Label1.Location = New System.Drawing.Point(19, 22)
+        Me.Label1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label1.Location = New System.Drawing.Point(13, 17)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(127, 13)
         Me.Label1.TabIndex = 9
@@ -784,8 +783,9 @@ Partial Class frmEvaluacionProveedores
         '
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel2.Controls.Add(Me.Label49)
+        Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.TextBox4)
         Me.Panel2.Controls.Add(Me.ComboBox1)
         Me.Panel2.Controls.Add(Me.Label35)
@@ -973,7 +973,7 @@ Partial Class frmEvaluacionProveedores
         '
         Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel3.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel3.Controls.Add(Me.Button5)
         Me.Panel3.Controls.Add(Me.Label51)
         Me.Panel3.Controls.Add(Me.Label50)
@@ -1131,7 +1131,7 @@ Partial Class frmEvaluacionProveedores
         Me.TableLayoutPanel3.ColumnCount = 3
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.58823!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.41177!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.Label45, 2, 3)
         Me.TableLayoutPanel3.Controls.Add(Me.Label47, 2, 4)
         Me.TableLayoutPanel3.Controls.Add(Me.Label43, 2, 2)
@@ -1161,7 +1161,7 @@ Partial Class frmEvaluacionProveedores
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(290, 39)
+        Me.Label45.Location = New System.Drawing.Point(289, 39)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(27, 13)
         Me.Label45.TabIndex = 20
@@ -1170,7 +1170,7 @@ Partial Class frmEvaluacionProveedores
         'Label47
         '
         Me.Label47.AutoSize = True
-        Me.Label47.Location = New System.Drawing.Point(290, 52)
+        Me.Label47.Location = New System.Drawing.Point(289, 52)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(21, 13)
         Me.Label47.TabIndex = 22
@@ -1179,7 +1179,7 @@ Partial Class frmEvaluacionProveedores
         'Label43
         '
         Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(290, 26)
+        Me.Label43.Location = New System.Drawing.Point(289, 26)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(27, 13)
         Me.Label43.TabIndex = 22
@@ -1188,7 +1188,7 @@ Partial Class frmEvaluacionProveedores
         'Label46
         '
         Me.Label46.AutoSize = True
-        Me.Label46.Location = New System.Drawing.Point(206, 52)
+        Me.Label46.Location = New System.Drawing.Point(205, 52)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(27, 13)
         Me.Label46.TabIndex = 21
@@ -1197,7 +1197,7 @@ Partial Class frmEvaluacionProveedores
         'Label39
         '
         Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(290, 0)
+        Me.Label39.Location = New System.Drawing.Point(289, 0)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(49, 13)
         Me.Label39.TabIndex = 21
@@ -1206,7 +1206,7 @@ Partial Class frmEvaluacionProveedores
         'Label42
         '
         Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(206, 26)
+        Me.Label42.Location = New System.Drawing.Point(205, 26)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(27, 13)
         Me.Label42.TabIndex = 21
@@ -1215,7 +1215,7 @@ Partial Class frmEvaluacionProveedores
         'Label44
         '
         Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(206, 39)
+        Me.Label44.Location = New System.Drawing.Point(205, 39)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(27, 13)
         Me.Label44.TabIndex = 19
@@ -1233,7 +1233,7 @@ Partial Class frmEvaluacionProveedores
         'Label41
         '
         Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(290, 13)
+        Me.Label41.Location = New System.Drawing.Point(289, 13)
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(27, 13)
         Me.Label41.TabIndex = 20
@@ -1242,7 +1242,7 @@ Partial Class frmEvaluacionProveedores
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(206, 0)
+        Me.Label11.Location = New System.Drawing.Point(205, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(49, 13)
         Me.Label11.TabIndex = 20
@@ -1251,7 +1251,7 @@ Partial Class frmEvaluacionProveedores
         'Label40
         '
         Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(206, 13)
+        Me.Label40.Location = New System.Drawing.Point(205, 13)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(33, 13)
         Me.Label40.TabIndex = 19

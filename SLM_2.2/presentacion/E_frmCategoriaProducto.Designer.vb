@@ -57,16 +57,16 @@ Partial Class E_frmCategoriaProducto
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtDescripcion)
         Me.GroupBox1.Controls.Add(Me.txtCodigo)
         Me.GroupBox1.Controls.Add(Me.txtNombre)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 43)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 43)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(694, 135)
+        Me.GroupBox1.Size = New System.Drawing.Size(700, 135)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Generales"
@@ -104,7 +104,7 @@ Partial Class E_frmCategoriaProducto
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtDescripcion.Location = New System.Drawing.Point(306, 39)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(382, 60)
+        Me.txtDescripcion.Size = New System.Drawing.Size(388, 60)
         Me.txtDescripcion.TabIndex = 2
         Me.txtDescripcion.Text = ""
         '
@@ -133,9 +133,9 @@ Partial Class E_frmCategoriaProducto
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.txtBuscar)
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 184)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 184)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(694, 203)
+        Me.GroupBox2.Size = New System.Drawing.Size(700, 203)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Buscador"
@@ -146,7 +146,7 @@ Partial Class E_frmCategoriaProducto
         Me.Button1.BackColor = System.Drawing.Color.Green
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button1.Location = New System.Drawing.Point(613, 15)
+        Me.Button1.Location = New System.Drawing.Point(619, 15)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 10
@@ -166,9 +166,9 @@ Partial Class E_frmCategoriaProducto
         '
         Me.txtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtBuscar.Location = New System.Drawing.Point(215, 15)
+        Me.txtBuscar.Location = New System.Drawing.Point(231, 15)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(362, 20)
+        Me.txtBuscar.Size = New System.Drawing.Size(352, 20)
         Me.txtBuscar.TabIndex = 1
         '
         'DataGridView1
@@ -203,7 +203,7 @@ Partial Class E_frmCategoriaProducto
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView1.Size = New System.Drawing.Size(682, 146)
+        Me.DataGridView1.Size = New System.Drawing.Size(688, 146)
         Me.DataGridView1.TabIndex = 0
         '
         'id__categoria_producto
@@ -231,7 +231,7 @@ Partial Class E_frmCategoriaProducto
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.Button5)
@@ -255,7 +255,7 @@ Partial Class E_frmCategoriaProducto
         'Button4
         '
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.BackColor = System.Drawing.Color.White
+        Me.Button4.BackColor = System.Drawing.Color.LawnGreen
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Location = New System.Drawing.Point(533, 8)
         Me.Button4.Name = "Button4"
@@ -279,7 +279,7 @@ Partial Class E_frmCategoriaProducto
         'Button6
         '
         Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button6.BackColor = System.Drawing.Color.White
+        Me.Button6.BackColor = System.Drawing.Color.LightSalmon
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button6.Location = New System.Drawing.Point(614, 8)
         Me.Button6.Name = "Button6"
@@ -290,7 +290,7 @@ Partial Class E_frmCategoriaProducto
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 390)
         Me.StatusStrip1.Name = "StatusStrip1"

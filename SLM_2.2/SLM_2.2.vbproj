@@ -1715,6 +1715,9 @@
     <EmbeddedResource Include="presentacion\E_frmUnidadMedida_almacen.resx">
       <DependentUpon>E_frmUnidadMedida_almacen.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frm_BIProveedores.resx">
+      <DependentUpon>E_frm_BIProveedores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_HojaTrabajo.resx">
       <DependentUpon>E_HojaTrabajo.vb</DependentUpon>
     </EmbeddedResource>

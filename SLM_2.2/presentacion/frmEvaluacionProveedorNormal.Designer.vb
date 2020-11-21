@@ -26,27 +26,33 @@ Partial Class frmEvaluacionProveedorNormal
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Label31 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.txtcal13 = New System.Windows.Forms.ComboBox()
         Me.txtcal12 = New System.Windows.Forms.ComboBox()
-        Me.txtcal11 = New System.Windows.Forms.ComboBox()
         Me.txtcal10 = New System.Windows.Forms.ComboBox()
-        Me.txtcal9 = New System.Windows.Forms.ComboBox()
         Me.txtcal8 = New System.Windows.Forms.ComboBox()
-        Me.txtcal7 = New System.Windows.Forms.ComboBox()
         Me.txtcal6 = New System.Windows.Forms.ComboBox()
+        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.txtcal5 = New System.Windows.Forms.ComboBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.txtcal7 = New System.Windows.Forms.ComboBox()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.txtcal9 = New System.Windows.Forms.ComboBox()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.txtcal11 = New System.Windows.Forms.ComboBox()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.txtcal13 = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.txtcal4 = New System.Windows.Forms.ComboBox()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -54,6 +60,7 @@ Partial Class frmEvaluacionProveedorNormal
         Me.txtcal3 = New System.Windows.Forms.ComboBox()
         Me.txtcal2 = New System.Windows.Forms.ComboBox()
         Me.txtcal1 = New System.Windows.Forms.ComboBox()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -109,25 +116,8 @@ Partial Class frmEvaluacionProveedorNormal
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.Cachedrpt_solicitudInterna1 = New SLM_2._2.Cachedrpt_solicitudInterna()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Panel11 = New System.Windows.Forms.Panel()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.departamento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
@@ -144,10 +134,26 @@ Partial Class frmEvaluacionProveedorNormal
         Me.Label59 = New System.Windows.Forms.Label()
         Me.Label60 = New System.Windows.Forms.Label()
         Me.Label61 = New System.Windows.Forms.Label()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.departamento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Cachedrpt_solicitudInterna1 = New SLM_2._2.Cachedrpt_solicitudInterna()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        Me.Panel7.SuspendLayout()
+        Me.Panel8.SuspendLayout()
+        Me.Panel9.SuspendLayout()
+        Me.Panel10.SuspendLayout()
+        Me.Panel11.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.Panel6.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -159,17 +165,11 @@ Partial Class frmEvaluacionProveedorNormal
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.Panel6.SuspendLayout()
-        Me.Panel7.SuspendLayout()
-        Me.Panel8.SuspendLayout()
-        Me.Panel9.SuspendLayout()
-        Me.Panel10.SuspendLayout()
-        Me.Panel11.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -226,16 +226,6 @@ Partial Class frmEvaluacionProveedorNormal
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "ATENCIÓN AL CLIENTE"
         '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Label31.Location = New System.Drawing.Point(3, 7)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(426, 13)
-        Me.Label31.TabIndex = 24
-        Me.Label31.Text = "OFRECEN VARIEDAD DE PRODUCTOS Y/O EQUIPOS EN SU OFERTA COMERCIAL"
-        '
         'Label30
         '
         Me.Label30.AutoSize = True
@@ -245,16 +235,6 @@ Partial Class frmEvaluacionProveedorNormal
         Me.Label30.TabIndex = 23
         Me.Label30.Text = "HAY GARANTIA EN LOS PRODUCTOS Y/O EQUIPO QUE OFRECEN"
         '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Label29.Location = New System.Drawing.Point(3, 12)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(218, 13)
-        Me.Label29.TabIndex = 22
-        Me.Label29.Text = "ENTREGAN PEDIDOS EN SU TOTALIDAD"
-        '
         'Label28
         '
         Me.Label28.AutoSize = True
@@ -263,16 +243,6 @@ Partial Class frmEvaluacionProveedorNormal
         Me.Label28.Size = New System.Drawing.Size(187, 13)
         Me.Label28.TabIndex = 21
         Me.Label28.Text = "PUNTUALIDAD EN LAS ENTREGAS"
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Label27.Location = New System.Drawing.Point(2, 11)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(219, 13)
-        Me.Label27.TabIndex = 20
-        Me.Label27.Text = "ACEPTAN TODAS LAS FORMAS DE PAGO"
         '
         'Label26
         '
@@ -302,26 +272,6 @@ Partial Class frmEvaluacionProveedorNormal
         Me.Label24.TabIndex = 17
         Me.Label24.Text = "LOS PRECIOS VARÍAN SIN PREVIO AVISO"
         '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Label23.Location = New System.Drawing.Point(3, 5)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(288, 13)
-        Me.Label23.TabIndex = 16
-        Me.Label23.Text = "CALIDAD DEL PRODUCTO (Equipo, Reactivo y/o Insumo)"
-        '
-        'txtcal13
-        '
-        Me.txtcal13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtcal13.FormattingEnabled = True
-        Me.txtcal13.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        Me.txtcal13.Location = New System.Drawing.Point(780, 4)
-        Me.txtcal13.Name = "txtcal13"
-        Me.txtcal13.Size = New System.Drawing.Size(73, 21)
-        Me.txtcal13.TabIndex = 15
-        '
         'txtcal12
         '
         Me.txtcal12.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -331,16 +281,6 @@ Partial Class frmEvaluacionProveedorNormal
         Me.txtcal12.Name = "txtcal12"
         Me.txtcal12.Size = New System.Drawing.Size(73, 21)
         Me.txtcal12.TabIndex = 14
-        '
-        'txtcal11
-        '
-        Me.txtcal11.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtcal11.FormattingEnabled = True
-        Me.txtcal11.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        Me.txtcal11.Location = New System.Drawing.Point(781, 4)
-        Me.txtcal11.Name = "txtcal11"
-        Me.txtcal11.Size = New System.Drawing.Size(73, 21)
-        Me.txtcal11.TabIndex = 13
         '
         'txtcal10
         '
@@ -352,16 +292,6 @@ Partial Class frmEvaluacionProveedorNormal
         Me.txtcal10.Size = New System.Drawing.Size(73, 21)
         Me.txtcal10.TabIndex = 12
         '
-        'txtcal9
-        '
-        Me.txtcal9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtcal9.FormattingEnabled = True
-        Me.txtcal9.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        Me.txtcal9.Location = New System.Drawing.Point(779, 3)
-        Me.txtcal9.Name = "txtcal9"
-        Me.txtcal9.Size = New System.Drawing.Size(73, 21)
-        Me.txtcal9.TabIndex = 11
-        '
         'txtcal8
         '
         Me.txtcal8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -371,16 +301,6 @@ Partial Class frmEvaluacionProveedorNormal
         Me.txtcal8.Name = "txtcal8"
         Me.txtcal8.Size = New System.Drawing.Size(73, 21)
         Me.txtcal8.TabIndex = 10
-        '
-        'txtcal7
-        '
-        Me.txtcal7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtcal7.FormattingEnabled = True
-        Me.txtcal7.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        Me.txtcal7.Location = New System.Drawing.Point(779, 3)
-        Me.txtcal7.Name = "txtcal7"
-        Me.txtcal7.Size = New System.Drawing.Size(73, 21)
-        Me.txtcal7.TabIndex = 9
         '
         'txtcal6
         '
@@ -392,6 +312,18 @@ Partial Class frmEvaluacionProveedorNormal
         Me.txtcal6.Size = New System.Drawing.Size(73, 21)
         Me.txtcal6.TabIndex = 8
         '
+        'Panel7
+        '
+        Me.Panel7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel7.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel7.Controls.Add(Me.txtcal5)
+        Me.Panel7.Controls.Add(Me.Label23)
+        Me.Panel7.Location = New System.Drawing.Point(6, 19)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(853, 26)
+        Me.Panel7.TabIndex = 25
+        '
         'txtcal5
         '
         Me.txtcal5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -401,6 +333,133 @@ Partial Class frmEvaluacionProveedorNormal
         Me.txtcal5.Name = "txtcal5"
         Me.txtcal5.Size = New System.Drawing.Size(73, 21)
         Me.txtcal5.TabIndex = 7
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label23.Location = New System.Drawing.Point(3, 5)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(288, 13)
+        Me.Label23.TabIndex = 16
+        Me.Label23.Text = "CALIDAD DEL PRODUCTO (Equipo, Reactivo y/o Insumo)"
+        '
+        'Panel8
+        '
+        Me.Panel8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel8.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel8.Controls.Add(Me.txtcal7)
+        Me.Panel8.Location = New System.Drawing.Point(9, 70)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(853, 30)
+        Me.Panel8.TabIndex = 26
+        '
+        'txtcal7
+        '
+        Me.txtcal7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtcal7.FormattingEnabled = True
+        Me.txtcal7.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.txtcal7.Location = New System.Drawing.Point(779, 3)
+        Me.txtcal7.Name = "txtcal7"
+        Me.txtcal7.Size = New System.Drawing.Size(73, 21)
+        Me.txtcal7.TabIndex = 9
+        '
+        'Panel9
+        '
+        Me.Panel9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel9.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel9.Controls.Add(Me.txtcal9)
+        Me.Panel9.Controls.Add(Me.Label27)
+        Me.Panel9.Location = New System.Drawing.Point(10, 124)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(853, 29)
+        Me.Panel9.TabIndex = 27
+        '
+        'txtcal9
+        '
+        Me.txtcal9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtcal9.FormattingEnabled = True
+        Me.txtcal9.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.txtcal9.Location = New System.Drawing.Point(779, 3)
+        Me.txtcal9.Name = "txtcal9"
+        Me.txtcal9.Size = New System.Drawing.Size(73, 21)
+        Me.txtcal9.TabIndex = 11
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label27.Location = New System.Drawing.Point(2, 11)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(219, 13)
+        Me.Label27.TabIndex = 20
+        Me.Label27.Text = "ACEPTAN TODAS LAS FORMAS DE PAGO"
+        '
+        'Panel10
+        '
+        Me.Panel10.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel10.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel10.Controls.Add(Me.txtcal11)
+        Me.Panel10.Controls.Add(Me.Label29)
+        Me.Panel10.Location = New System.Drawing.Point(8, 178)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(853, 28)
+        Me.Panel10.TabIndex = 28
+        '
+        'txtcal11
+        '
+        Me.txtcal11.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtcal11.FormattingEnabled = True
+        Me.txtcal11.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.txtcal11.Location = New System.Drawing.Point(781, 4)
+        Me.txtcal11.Name = "txtcal11"
+        Me.txtcal11.Size = New System.Drawing.Size(73, 21)
+        Me.txtcal11.TabIndex = 13
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label29.Location = New System.Drawing.Point(3, 12)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(218, 13)
+        Me.Label29.TabIndex = 22
+        Me.Label29.Text = "ENTREGAN PEDIDOS EN SU TOTALIDAD"
+        '
+        'Panel11
+        '
+        Me.Panel11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel11.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel11.Controls.Add(Me.Label31)
+        Me.Panel11.Controls.Add(Me.txtcal13)
+        Me.Panel11.Location = New System.Drawing.Point(8, 231)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(853, 30)
+        Me.Panel11.TabIndex = 29
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label31.Location = New System.Drawing.Point(3, 7)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(426, 13)
+        Me.Label31.TabIndex = 24
+        Me.Label31.Text = "OFRECEN VARIEDAD DE PRODUCTOS Y/O EQUIPOS EN SU OFERTA COMERCIAL"
+        '
+        'txtcal13
+        '
+        Me.txtcal13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtcal13.FormattingEnabled = True
+        Me.txtcal13.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.txtcal13.Location = New System.Drawing.Point(780, 4)
+        Me.txtcal13.Name = "txtcal13"
+        Me.txtcal13.Size = New System.Drawing.Size(73, 21)
+        Me.txtcal13.TabIndex = 15
         '
         'GroupBox2
         '
@@ -415,16 +474,6 @@ Partial Class frmEvaluacionProveedorNormal
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "SISTEMA DE CALIDAD"
         '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Label10.Location = New System.Drawing.Point(4, 6)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(221, 13)
-        Me.Label10.TabIndex = 7
-        Me.Label10.Text = "CUENTAN CON UN SISTEMA DE CALIDAD"
-        '
         'txtcal4
         '
         Me.txtcal4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -434,6 +483,27 @@ Partial Class frmEvaluacionProveedorNormal
         Me.txtcal4.Name = "txtcal4"
         Me.txtcal4.Size = New System.Drawing.Size(73, 21)
         Me.txtcal4.TabIndex = 6
+        '
+        'Panel6
+        '
+        Me.Panel6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel6.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel6.Controls.Add(Me.Label10)
+        Me.Panel6.Location = New System.Drawing.Point(9, 14)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(853, 30)
+        Me.Panel6.TabIndex = 13
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label10.Location = New System.Drawing.Point(4, 6)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(221, 13)
+        Me.Label10.TabIndex = 7
+        Me.Label10.Text = "CUENTAN CON UN SISTEMA DE CALIDAD"
         '
         'GroupBox1
         '
@@ -511,6 +581,16 @@ Partial Class frmEvaluacionProveedorNormal
         Me.txtcal1.Name = "txtcal1"
         Me.txtcal1.Size = New System.Drawing.Size(73, 21)
         Me.txtcal1.TabIndex = 6
+        '
+        'Panel5
+        '
+        Me.Panel5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel5.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel5.Location = New System.Drawing.Point(9, 43)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(853, 30)
+        Me.Panel5.TabIndex = 12
         '
         'GroupBox3
         '
@@ -653,7 +733,7 @@ Partial Class frmEvaluacionProveedorNormal
         '
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel2.Controls.Add(Me.TextBox1)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.Label49)
@@ -820,7 +900,7 @@ Partial Class frmEvaluacionProveedorNormal
         '
         Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel3.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel3.Controls.Add(Me.Button2)
         Me.Panel3.Controls.Add(Me.Button5)
         Me.Panel3.Controls.Add(Me.Button3)
@@ -954,7 +1034,7 @@ Partial Class frmEvaluacionProveedorNormal
         Me.TableLayoutPanel3.ColumnCount = 3
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.58823!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.41177!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.Label45, 2, 3)
         Me.TableLayoutPanel3.Controls.Add(Me.Label47, 2, 4)
         Me.TableLayoutPanel3.Controls.Add(Me.Label43, 2, 2)
@@ -984,7 +1064,7 @@ Partial Class frmEvaluacionProveedorNormal
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(298, 39)
+        Me.Label45.Location = New System.Drawing.Point(297, 39)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(27, 13)
         Me.Label45.TabIndex = 20
@@ -993,7 +1073,7 @@ Partial Class frmEvaluacionProveedorNormal
         'Label47
         '
         Me.Label47.AutoSize = True
-        Me.Label47.Location = New System.Drawing.Point(298, 52)
+        Me.Label47.Location = New System.Drawing.Point(297, 52)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(21, 13)
         Me.Label47.TabIndex = 22
@@ -1002,7 +1082,7 @@ Partial Class frmEvaluacionProveedorNormal
         'Label43
         '
         Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(298, 26)
+        Me.Label43.Location = New System.Drawing.Point(297, 26)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(27, 13)
         Me.Label43.TabIndex = 22
@@ -1020,7 +1100,7 @@ Partial Class frmEvaluacionProveedorNormal
         'Label39
         '
         Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(298, 0)
+        Me.Label39.Location = New System.Drawing.Point(297, 0)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(49, 13)
         Me.Label39.TabIndex = 21
@@ -1056,7 +1136,7 @@ Partial Class frmEvaluacionProveedorNormal
         'Label41
         '
         Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(298, 13)
+        Me.Label41.Location = New System.Drawing.Point(297, 13)
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(27, 13)
         Me.Label41.TabIndex = 20
@@ -1116,117 +1196,6 @@ Partial Class frmEvaluacionProveedorNormal
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "PROVEEDOR APROBADO TIPO A"
         '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 683)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(918, 22)
-        Me.StatusStrip1.TabIndex = 2
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Label32)
-        Me.Panel1.Location = New System.Drawing.Point(0, 1)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(918, 44)
-        Me.Panel1.TabIndex = 3
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label32.Location = New System.Drawing.Point(3, 11)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(225, 20)
-        Me.Label32.TabIndex = 8
-        Me.Label32.Text = "Evaluación de proveedores"
-        '
-        'Panel5
-        '
-        Me.Panel5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel5.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel5.Location = New System.Drawing.Point(9, 43)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(853, 30)
-        Me.Panel5.TabIndex = 12
-        '
-        'Panel6
-        '
-        Me.Panel6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel6.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel6.Controls.Add(Me.Label10)
-        Me.Panel6.Location = New System.Drawing.Point(9, 14)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(853, 30)
-        Me.Panel6.TabIndex = 13
-        '
-        'Panel7
-        '
-        Me.Panel7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel7.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel7.Controls.Add(Me.txtcal5)
-        Me.Panel7.Controls.Add(Me.Label23)
-        Me.Panel7.Location = New System.Drawing.Point(6, 19)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(853, 26)
-        Me.Panel7.TabIndex = 25
-        '
-        'Panel8
-        '
-        Me.Panel8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel8.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel8.Controls.Add(Me.txtcal7)
-        Me.Panel8.Location = New System.Drawing.Point(9, 70)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(853, 30)
-        Me.Panel8.TabIndex = 26
-        '
-        'Panel9
-        '
-        Me.Panel9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel9.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel9.Controls.Add(Me.txtcal9)
-        Me.Panel9.Controls.Add(Me.Label27)
-        Me.Panel9.Location = New System.Drawing.Point(10, 124)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(853, 29)
-        Me.Panel9.TabIndex = 27
-        '
-        'Panel10
-        '
-        Me.Panel10.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel10.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel10.Controls.Add(Me.txtcal11)
-        Me.Panel10.Controls.Add(Me.Label29)
-        Me.Panel10.Location = New System.Drawing.Point(8, 178)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(853, 28)
-        Me.Panel10.TabIndex = 28
-        '
-        'Panel11
-        '
-        Me.Panel11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel11.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel11.Controls.Add(Me.Label31)
-        Me.Panel11.Controls.Add(Me.txtcal13)
-        Me.Panel11.Location = New System.Drawing.Point(8, 231)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(853, 30)
-        Me.Panel11.TabIndex = 29
-        '
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.GroupBox5)
@@ -1243,7 +1212,7 @@ Partial Class frmEvaluacionProveedorNormal
         Me.GroupBox5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox5.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox5.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox5.Controls.Add(Me.TableLayoutPanel2)
         Me.GroupBox5.Controls.Add(Me.Button7)
         Me.GroupBox5.Controls.Add(Me.Button6)
@@ -1255,62 +1224,6 @@ Partial Class frmEvaluacionProveedorNormal
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Calificaciones"
         '
-        'Button6
-        '
-        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button6.BackColor = System.Drawing.Color.Green
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button6.Location = New System.Drawing.Point(790, 19)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(75, 23)
-        Me.Button6.TabIndex = 12
-        Me.Button6.Text = "Excel"
-        Me.Button6.UseVisualStyleBackColor = False
-        '
-        'DataGridView2
-        '
-        Me.DataGridView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.departamento, Me.DataGridViewTextBoxColumn2})
-        Me.DataGridView2.Location = New System.Drawing.Point(6, 134)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(859, 450)
-        Me.DataGridView2.TabIndex = 0
-        '
-        'Button7
-        '
-        Me.Button7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button7.BackColor = System.Drawing.Color.White
-        Me.Button7.Location = New System.Drawing.Point(635, 19)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(115, 23)
-        Me.Button7.TabIndex = 13
-        Me.Button7.Text = "Cargar Datos"
-        Me.Button7.UseVisualStyleBackColor = False
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "nombreProveedor"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "PROVEEDOR"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'departamento
-        '
-        Me.departamento.DataPropertyName = "nombre"
-        Me.departamento.HeaderText = "DEPARTAMENTO EVALUO"
-        Me.departamento.Name = "departamento"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "promedio"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "CALIFICACIÓN"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
         'TableLayoutPanel2
         '
         Me.TableLayoutPanel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -1319,7 +1232,7 @@ Partial Class frmEvaluacionProveedorNormal
         Me.TableLayoutPanel2.ColumnCount = 3
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.58823!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.41177!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.Label3, 2, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.Label33, 2, 4)
         Me.TableLayoutPanel2.Controls.Add(Me.Label34, 2, 2)
@@ -1349,7 +1262,7 @@ Partial Class frmEvaluacionProveedorNormal
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(298, 39)
+        Me.Label3.Location = New System.Drawing.Point(297, 39)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(27, 13)
         Me.Label3.TabIndex = 20
@@ -1358,7 +1271,7 @@ Partial Class frmEvaluacionProveedorNormal
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(298, 52)
+        Me.Label33.Location = New System.Drawing.Point(297, 52)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(21, 13)
         Me.Label33.TabIndex = 22
@@ -1367,7 +1280,7 @@ Partial Class frmEvaluacionProveedorNormal
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(298, 26)
+        Me.Label34.Location = New System.Drawing.Point(297, 26)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(27, 13)
         Me.Label34.TabIndex = 22
@@ -1385,7 +1298,7 @@ Partial Class frmEvaluacionProveedorNormal
         'Label51
         '
         Me.Label51.AutoSize = True
-        Me.Label51.Location = New System.Drawing.Point(298, 0)
+        Me.Label51.Location = New System.Drawing.Point(297, 0)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(49, 13)
         Me.Label51.TabIndex = 21
@@ -1421,7 +1334,7 @@ Partial Class frmEvaluacionProveedorNormal
         'Label55
         '
         Me.Label55.AutoSize = True
-        Me.Label55.Location = New System.Drawing.Point(298, 13)
+        Me.Label55.Location = New System.Drawing.Point(297, 13)
         Me.Label55.Name = "Label55"
         Me.Label55.Size = New System.Drawing.Size(27, 13)
         Me.Label55.TabIndex = 20
@@ -1481,6 +1394,93 @@ Partial Class frmEvaluacionProveedorNormal
         Me.Label61.TabIndex = 14
         Me.Label61.Text = "PROVEEDOR APROBADO TIPO A"
         '
+        'Button7
+        '
+        Me.Button7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button7.BackColor = System.Drawing.Color.White
+        Me.Button7.Location = New System.Drawing.Point(635, 19)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(115, 23)
+        Me.Button7.TabIndex = 13
+        Me.Button7.Text = "Cargar Datos"
+        Me.Button7.UseVisualStyleBackColor = False
+        '
+        'Button6
+        '
+        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button6.BackColor = System.Drawing.Color.Green
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button6.Location = New System.Drawing.Point(790, 19)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 23)
+        Me.Button6.TabIndex = 12
+        Me.Button6.Text = "Excel"
+        Me.Button6.UseVisualStyleBackColor = False
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.departamento, Me.DataGridViewTextBoxColumn2})
+        Me.DataGridView2.Location = New System.Drawing.Point(6, 134)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.Size = New System.Drawing.Size(859, 450)
+        Me.DataGridView2.TabIndex = 0
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "nombreProveedor"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "PROVEEDOR"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'departamento
+        '
+        Me.departamento.DataPropertyName = "nombre"
+        Me.departamento.HeaderText = "DEPARTAMENTO EVALUO"
+        Me.departamento.Name = "departamento"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "promedio"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "CALIFICACIÓN"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 683)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(918, 22)
+        Me.StatusStrip1.TabIndex = 2
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label32)
+        Me.Panel1.Location = New System.Drawing.Point(0, 1)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(918, 44)
+        Me.Panel1.TabIndex = 3
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label32.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label32.Location = New System.Drawing.Point(3, 11)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(225, 20)
+        Me.Label32.TabIndex = 8
+        Me.Label32.Text = "Evaluación de proveedores"
+        '
         'frmEvaluacionProveedorNormal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1497,7 +1497,18 @@ Partial Class frmEvaluacionProveedorNormal
         Me.TabPage1.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel9.ResumeLayout(False)
+        Me.Panel9.PerformLayout()
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel10.PerformLayout()
+        Me.Panel11.ResumeLayout(False)
+        Me.Panel11.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -1516,24 +1527,13 @@ Partial Class frmEvaluacionProveedorNormal
         Me.Panel4.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
-        Me.Panel8.ResumeLayout(False)
-        Me.Panel9.ResumeLayout(False)
-        Me.Panel9.PerformLayout()
-        Me.Panel10.ResumeLayout(False)
-        Me.Panel10.PerformLayout()
-        Me.Panel11.ResumeLayout(False)
-        Me.Panel11.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
