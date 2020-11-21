@@ -3,26 +3,31 @@
     Public ds As New DataSet  'Orden de los examenes por grupo o laboratorio
     Dim celda, fila As Integer 'capturar columna y fila para agregar plantilla
     Private Sub E_HojaTrabajo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
 
-        alternarColoFilasDatagridview(dgvHojaTrab)
-        txtHora.Text = Date.Now.ToLongTimeString
-        txtFecha.Text = Date.Today
+            alternarColoFilasDatagridview(dgvHojaTrab)
+            txtHora.Text = Date.Now.ToLongTimeString
+            txtFecha.Text = Date.Today
 
-        dgvHojaTrab.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvHojaTrab.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
-        'CARGA DE PLANTILLAS :::::::::::::::::::::::::::::::::::::::::...
+            'CARGA DE PLANTILLAS :::::::::::::::::::::::::::::::::::::::::...
 
-        Dim plantilla As New ClsPlantillaResultado
+            Dim plantilla As New ClsPlantillaResultado
 
-        Dim dt As New DataTable
+            Dim dt As New DataTable
 
-        dt = plantilla.listarPlantillas
+            dt = plantilla.BuscarPlantillaXSubarea(Integer.Parse(lblCodeSubArea.Text))
 
-        cbxPlantillas.DataSource = dt
-        cbxPlantillas.DisplayMember = "simbolo"
-        cbxPlantillas.SelectedIndex = 0
+            cbxPlantillas.DataSource = dt
+            cbxPlantillas.DisplayMember = "simbolo"
+            cbxPlantillas.SelectedIndex = 0
 
-        '...::::::::::::::::::::::::::::::::::::::::::::::::::::::::::...
+            '...::::::::::::::::::::::::::::::::::::::::::::::::::::::::::...
+
+        Catch ex As Exception
+
+        End Try
 
     End Sub
     Private Sub dgvHojaTrab_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvHojaTrab.CellEndEdit
@@ -55,7 +60,7 @@
 
     Private Sub dgvHojaTrab_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvHojaTrab.CellClick
         Try
-            If e.ColumnIndex > 4 Then
+            If e.ColumnIndex > 4 And e.RowIndex >= 0 Then
                 'Mostrar valores de la fila seleccionada
                 txtOrden.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(0).Value()
                 txtPaciente.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(1).Value()
@@ -66,22 +71,15 @@
 
                 'buscar valores referencia 
                 If (Trim(txtParametro.Text) <> "") Then
-                    'Try
-                    '    Dim objCat As New ClsCategoria
-                    '    With objCat
-                    '        .codigoCategoria_ = txtParametro.Text
-                    '    End With
-                    '    Dim dt As New DataTable
-                    '    dt = objCat.BuscarCategoriaCode()
-                    '    Dim row As DataRow = dt.Rows(0)
-                    '    txtnombreCategoria.Text = CStr(row("descripcion"))
-                    '    lblcodeCategoria.Text = CStr(row("codigo"))
-                    '    txtcodigoCategoria.BackColor = Color.White
-                    'Catch ex As Exception
-                    '    txtcodigoCategoria.BackColor = Color.Red
-                    '    lblcodeCategoria.Text = ""
-                    '    txtnombreCategoria.Text = ""
-                    'End Try
+                    Try
+                        Dim objCat As New ClsValoresReferencia
+                        Dim dt As New DataTable
+                        dt = objCat.buscarValorReferenciaParametro(txtParametro.Text)
+                        Dim row As DataRow = dt.Rows(0)
+                        txtValoresRef.Text = CStr(row("ValoresReferencia"))
+                    Catch ex As Exception
+                        txtValoresRef.Text = ""
+                    End Try
                 End If
 
             Else
@@ -89,7 +87,7 @@
                 txtPaciente.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(1).Value()
             End If
         Catch ex As Exception
-
+            'MsgBox(ex.Message)
         End Try
     End Sub
 
@@ -430,7 +428,7 @@
 
                 For index = 0 To dgvHojaTrab.Rows.Count - 1
                     If dgvHojaTrab.Rows(index).Cells(1).Value.ToString.Contains(txtBuscar.Text) Then
-                        dgvHojaTrab.Rows(index).DefaultCellStyle.BackColor = Color.Red
+                        dgvHojaTrab.Rows(index).DefaultCellStyle.BackColor = Color.DeepSkyBlue
                     Else
                         dgvHojaTrab.Rows(index).DefaultCellStyle.BackColor = Color.White
                     End If
@@ -446,7 +444,7 @@
 
         Try
 
-            dgvHojaTrab.Rows(fila).Cells(celda).Value = dgvHojaTrab.Rows(fila).Cells(celda).Value + cbxPlantillas.Text
+            dgvHojaTrab.Rows(fila).Cells(celda).Value = dgvHojaTrab.Rows(fila).Cells(celda).Value + "," + cbxPlantillas.Text
 
         Catch ex As Exception
 

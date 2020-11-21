@@ -54,6 +54,14 @@
                     M_DiarioFacturacion.txtGrupo.Text = txtnombre.Text
                     Me.Close()
                 End If
+            ElseIf (lblForm.Text = "A_PlantillasDeResultado") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el área en la plantilla de resultado?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    A_PlantillasDeResultado.txtCodigoArea.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value
+                    Me.Close()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)

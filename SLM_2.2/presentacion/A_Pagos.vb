@@ -57,7 +57,7 @@
                         Dim row As DataRow = dt.Rows(0)
                         dtDetallePagos.Rows(e.RowIndex).Cells(1).Value = row("nombreProveedor")
                         dtDetallePagos.Rows(e.RowIndex).Cells(2).Value = row("moneda")
-                        dtDetallePagos.Rows(e.RowIndex).Cells(3).Value = row("total")
+                        dtDetallePagos.Rows(e.RowIndex).Cells(3).Value = row("pendiente")
 
                         'Sumar totales de factura
 
@@ -188,22 +188,14 @@
                 factura.Pendiente_ = Convert.ToDouble(resultadof)
 
                 'cambio de estado
-                'If resultadof = 0 Then
-                '    factura.Estado_ = "pagada"
-                'Else
-                '    factura.Estado_ = "pendiente"
-                'End If
-
+                If resultadof = 0 Then
+                    factura.Estado_ = "Pagada"
+                Else
+                    factura.Estado_ = "Pendiente"
+                End If
 
                 factura.SaldoPendiente()
                 'MsgBox("Ya actualizo")
-
-
-
-
-
-
-
 
                 '.........................................................
 

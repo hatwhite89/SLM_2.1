@@ -52,7 +52,7 @@
             End If
             If (Trim(txtPrecioBase.Text) = "") Then
                 txtPrecioBase.Text = "0"
-                Exit Sub
+                'Exit Sub
             End If
 
             With Item
@@ -140,9 +140,9 @@
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtItem.CellClick
         Try
-            btnCrear.Visible = True
-            btnModificar.Visible = True
-            btnGuardar.Visible = False
+            btnCrear.Enabled = True
+            btnModificar.Enabled = True
+            btnGuardar.Enabled = False
 
             txtCodExamen.Text = dtItem.Rows(e.RowIndex).Cells(0).Value
             txtCodInterno.Text = dtItem.Rows(e.RowIndex).Cells(1).Value
@@ -192,8 +192,8 @@
                 btn.UseColumnTextForButtonValue = True
             End If
 
-            btnCrear.Visible = False
-            btnModificar.Visible = False
+            btnCrear.Enabled = False
+            btnModificar.Enabled = False
 
         Catch ex As Exception
 
@@ -346,9 +346,9 @@
 
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
         Limpiar()
-        btnCrear.Visible = False
-        btnModificar.Visible = False
-        btnGuardar.Visible = True
+        btnCrear.Enabled = False
+        btnModificar.Enabled = False
+        btnGuardar.Enabled = True
     End Sub
 
     Private Sub txtSubArea_CLICK(sender As Object, e As EventArgs) Handles txtCodigoSubArea.Click
@@ -419,7 +419,7 @@
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         'E_SubArea.lblform.Text = "M_BuscarCapacitaciones"
         'E_SubArea.Show()
         M_BuscarCapacitaciones.lblform.Text = "M_BuscarCapacitaciones"

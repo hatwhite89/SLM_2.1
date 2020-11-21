@@ -209,13 +209,13 @@ Partial Class E_HojaTrabajo
         Me.dgvHojaTrab.BackgroundColor = System.Drawing.Color.White
         Me.dgvHojaTrab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvHojaTrab.GridColor = System.Drawing.Color.White
-        Me.dgvHojaTrab.Location = New System.Drawing.Point(15, 254)
+        Me.dgvHojaTrab.Location = New System.Drawing.Point(15, 295)
         Me.dgvHojaTrab.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgvHojaTrab.Name = "dgvHojaTrab"
         Me.dgvHojaTrab.RowHeadersVisible = False
         Me.dgvHojaTrab.RowHeadersWidth = 51
         Me.dgvHojaTrab.RowTemplate.Height = 24
-        Me.dgvHojaTrab.Size = New System.Drawing.Size(1420, 391)
+        Me.dgvHojaTrab.Size = New System.Drawing.Size(1420, 350)
         Me.dgvHojaTrab.TabIndex = 12
         '
         'rbtnUrgentes
@@ -379,7 +379,7 @@ Partial Class E_HojaTrabajo
         Me.txtInstrTecnico.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtInstrTecnico.BackColor = System.Drawing.Color.White
-        Me.txtInstrTecnico.Location = New System.Drawing.Point(703, 196)
+        Me.txtInstrTecnico.Location = New System.Drawing.Point(703, 233)
         Me.txtInstrTecnico.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtInstrTecnico.Name = "txtInstrTecnico"
         Me.txtInstrTecnico.ReadOnly = True
@@ -389,7 +389,7 @@ Partial Class E_HojaTrabajo
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(604, 198)
+        Me.Label13.Location = New System.Drawing.Point(604, 235)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(93, 17)
         Me.Label13.TabIndex = 34
@@ -399,7 +399,7 @@ Partial Class E_HojaTrabajo
         '
         Me.txtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtBuscar.Location = New System.Drawing.Point(703, 224)
+        Me.txtBuscar.Location = New System.Drawing.Point(703, 261)
         Me.txtBuscar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(405, 22)
@@ -408,7 +408,7 @@ Partial Class E_HojaTrabajo
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(645, 228)
+        Me.Label14.Location = New System.Drawing.Point(645, 265)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(52, 17)
         Me.Label14.TabIndex = 36
@@ -419,7 +419,7 @@ Partial Class E_HojaTrabajo
         Me.btnBuscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnBuscar.BackColor = System.Drawing.Color.White
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnBuscar.Location = New System.Drawing.Point(1131, 222)
+        Me.btnBuscar.Location = New System.Drawing.Point(1131, 259)
         Me.btnBuscar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(148, 23)
@@ -499,12 +499,14 @@ Partial Class E_HojaTrabajo
         '
         'txtValoresRef
         '
+        Me.txtValoresRef.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtValoresRef.BackColor = System.Drawing.Color.White
         Me.txtValoresRef.Location = New System.Drawing.Point(107, 198)
         Me.txtValoresRef.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtValoresRef.Name = "txtValoresRef"
         Me.txtValoresRef.ReadOnly = True
-        Me.txtValoresRef.Size = New System.Drawing.Size(441, 22)
+        Me.txtValoresRef.Size = New System.Drawing.Size(1001, 22)
         Me.txtValoresRef.TabIndex = 47
         '
         'Label19
@@ -617,7 +619,7 @@ Partial Class E_HojaTrabajo
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1447, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1447, 30)
         Me.MenuStrip1.TabIndex = 50
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -625,7 +627,7 @@ Partial Class E_HojaTrabajo
         '
         Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ValidarDatosToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 24)
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 26)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
         '
         'ValidarDatosToolStripMenuItem
@@ -679,13 +681,14 @@ Partial Class E_HojaTrabajo
         '
         'btnValoresRef
         '
+        Me.btnValoresRef.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnValoresRef.BackColor = System.Drawing.Color.White
         Me.btnValoresRef.BackgroundImage = CType(resources.GetObject("btnValoresRef.BackgroundImage"), System.Drawing.Image)
         Me.btnValoresRef.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnValoresRef.FlatAppearance.BorderSize = 0
         Me.btnValoresRef.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnValoresRef.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnValoresRef.Location = New System.Drawing.Point(555, 199)
+        Me.btnValoresRef.Location = New System.Drawing.Point(1130, 202)
         Me.btnValoresRef.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnValoresRef.Name = "btnValoresRef"
         Me.btnValoresRef.Size = New System.Drawing.Size(44, 18)

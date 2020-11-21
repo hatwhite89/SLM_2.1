@@ -440,6 +440,7 @@ Public Class ClsFacturaCompra
             cmd.CommandText = "A_slmActualizarFacturaCompraPendiente"
             cmd.Parameters.Add("@codFactura", SqlDbType.Int).Value = Cod_Factura
             cmd.Parameters.Add("@pendiente", SqlDbType.Float).Value = Pendiente_
+            cmd.Parameters.Add("@estado", SqlDbType.VarChar).Value = Estado_
             cmd.Parameters.Add("@salida", SqlDbType.VarChar).Value = ""
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
@@ -451,6 +452,49 @@ Public Class ClsFacturaCompra
         End Using
 
     End Function
+
+    'listar facturas para pagos
+    Public Function listarFacturaCompraParaPago() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("A_slmListarFacturasCompraParaPago", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+    'Reporte de facturas
+    Public Function ReporteFacturasCompraEstado(estado As String, estado2 As String, estado3 As String, fechaDesde As Date, fechaHasta As Date) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_ReporteFacturasCompraEstado"
+            cmd.Parameters.Add("@estado1", SqlDbType.VarChar).Value = estado
+            cmd.Parameters.Add("@estado2", SqlDbType.VarChar).Value = estado2
+            cmd.Parameters.Add("@estado3", SqlDbType.VarChar).Value = estado3
+            cmd.Parameters.Add("@fechaDesde", SqlDbType.Date).Value = fechaDesde
+            cmd.Parameters.Add("@fechaHasta", SqlDbType.Date).Value = fechaHasta
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+
 
 
 End Class

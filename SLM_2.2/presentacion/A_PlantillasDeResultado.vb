@@ -15,18 +15,22 @@ Public Class A_PlantillasDeResultado
 
         Try
 
-            If txtSimbolo.Text <> "" And txtDescripcion.Text <> "" Then
+            If txtSimbolo.Text <> "" And rtxtDescripcion.Text <> "" And (txtCodigoArea.Text) <> "" Then
 
                 With plantilla
                     .simbolo_ = txtSimbolo.Text
-                    .descripcion_ = txtDescripcion.Text
+                    .descripcion_ = rtxtDescripcion.Text
+                    .codGrupoExamen_ = Convert.ToInt64(txtCodigoArea.Text)
                     If .registrarNuevaPlantilla() = 1 Then
                         ListarPlantillas()
                         LimpiarCampos()
+                    Else
+                        MsgBox("Error al guardar la plantilla de resultado.", MsgBoxStyle.Critical, "Validación.")
                     End If
                 End With
+                MsgBox("Registrado correctamente.", MsgBoxStyle.Information, "Validación.")
             Else
-                MsgBox("Falta información por completar.")
+                MsgBox("Debe llenar los campos necesarios para guardar la plantilla de resultado.", MsgBoxStyle.Exclamation, "Validación.")
             End If
 
         Catch ex As Exception
@@ -39,21 +43,26 @@ Public Class A_PlantillasDeResultado
 
         Try
 
-            If txtSimbolo.Text <> "" And txtDescripcion.Text <> "" And txtCodigo.Text <> "" Then
+            If txtSimbolo.Text <> "" And rtxtDescripcion.Text <> "" And txtCodigo.Text <> "" And (txtCodigoArea.Text) <> "" Then
 
                 With plantilla
-                    .Cod = Convert.ToInt32(txtCodigo.Text)
+                    .Cod = Convert.ToInt64(txtCodigo.Text)
+                    .codGrupoExamen_ = Convert.ToInt64(txtCodigoArea.Text)
                     .simbolo_ = txtSimbolo.Text
-                    .descripcion_ = txtDescripcion.Text
+                    .descripcion_ = rtxtDescripcion.Text
                     If .modificarPlantilla() = 1 Then
                         ListarPlantillas()
                         LimpiarCampos()
                         btnNuevo.Enabled = False
                         btnModificar.Enabled = False
                         btnGuardar.Enabled = True
+                    Else
+                        MsgBox("Error al actualizar la plantilla de resultado.", MsgBoxStyle.Critical, "Validación.")
                     End If
                 End With
-
+                MsgBox("Actualizado correctamente.", MsgBoxStyle.Information, "Validación.")
+            Else
+                MsgBox("Debe llenar los campos necesarios para actualizar la plantilla de resultado.", MsgBoxStyle.Exclamation, "Validación.")
             End If
 
         Catch ex As Exception
@@ -76,7 +85,8 @@ Public Class A_PlantillasDeResultado
 
             txtCodigo.Text = row("cod_Plantilla")
             txtSimbolo.Text = row("simbolo")
-            txtDescripcion.Text = row("descripcion")
+            rtxtDescripcion.Text = row("descripcion")
+            txtCodigoArea.Text = row("codGrupoExamen")
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -100,11 +110,57 @@ Public Class A_PlantillasDeResultado
 
         txtCodigo.Clear()
         txtSimbolo.Clear()
-        txtDescripcion.Clear()
+        rtxtDescripcion.Clear()
+        txtCodigoArea.Clear()
+        btnModificar.Enabled = False
+        btnGuardar.Enabled = True
 
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
+    End Sub
+
+    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        LimpiarCampos()
+    End Sub
+
+    Private Sub txtCodigoArea_TextChanged(sender As Object, e As EventArgs) Handles txtCodigoArea.TextChanged
+        If (txtCodigoArea.Text <> "") Then
+            Try
+                Dim objGrpE As New ClsGrupoExamen
+                With objGrpE
+                    .codigo_ = txtCodigoArea.Text
+                End With
+                Dim dt As New DataTable
+                dt = objGrpE.BuscarGrupoExamenCodigo()
+                Dim row As DataRow = dt.Rows(0)
+                txtNombreArea.Text = CStr(row("nombre"))
+                txtCodigoArea.BackColor = Color.White
+            Catch ex As Exception
+                txtCodigoArea.BackColor = Color.Red
+                txtNombreArea.Text = ""
+                ' MsgBox("No existe el código de la sede.", MsgBoxStyle.Critical, "Validación")
+            End Try
+        Else
+            txtCodigoArea.Text = ""
+            txtNombreArea.Text = ""
+            txtCodigoArea.BackColor = Color.White
+        End If
+    End Sub
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
+    End Sub
+    Private Sub txtCodigoArea_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCodigoArea.KeyPress
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub btnBuscarArea_Click(sender As Object, e As EventArgs) Handles btnBuscarArea.Click
+        E_GrupoExamen.lblform.Text = "A_PlantillasDeResultado"
+        E_GrupoExamen.ShowDialog()
     End Sub
 End Class

@@ -10,6 +10,7 @@
             alternarColoFilasDatagridview(dtNotificaciones)
             'TAMAÑO COLUMNAS
 
+
             dtNotificaciones.Columns("cod_Noti").Visible = False
             dtNotificaciones.Columns("nombreAlerta").Width = "120"
             dtNotificaciones.Columns("descripcion").Width = "320"
