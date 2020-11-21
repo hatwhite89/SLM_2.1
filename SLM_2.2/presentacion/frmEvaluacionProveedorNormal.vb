@@ -36,11 +36,26 @@ Public Class frmEvaluacionProveedorNormal
             MsgBox("Registrado exitosamente")
             Button1.Enabled = False
         End If
+
+        Label37.Text = Format(((Integer.Parse(txtcal1.Text) + Integer.Parse(txtcal2.Text) + Integer.Parse(txtcal3.Text) + Integer.Parse(txtcal4.Text) + Integer.Parse(txtcal5.Text) + Integer.Parse(txtcal6.Text) + Integer.Parse(txtcal7.Text) + Integer.Parse(txtcal8.Text) + Integer.Parse(txtcal9.Text) + Integer.Parse(txtcal10.Text) + Integer.Parse(txtcal11.Text) + Integer.Parse(txtcal12.Text) + Integer.Parse(txtcal13.Text)) / 130) * 100, "0.00")
     End Sub
 
     Private Sub frmEvaluacionProveedorNormal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         autoCompletarTexbox(TextBox2)
         autoCompletarTexbox(TextBox6)
+        alternarColoFilasDatagridview(DataGridView1)
+        alternarColoFilasDatagridview(DataGridView2)
+
+        Dim clsD As New ClsDepartamento
+
+        Dim ds As New DataTable
+
+
+        ds.Load(clsD.RecuperarDepartamentos)
+
+        ComboBox1.DataSource = ds
+        ComboBox1.DisplayMember = "nombre"
+        ComboBox1.ValueMember = "codigo"
     End Sub
     Sub autoCompletarTexbox(ByVal campoTexto As TextBox)
         Dim clsC As New ClsConnection
@@ -114,8 +129,8 @@ Public Class frmEvaluacionProveedorNormal
 
         Next
 
-        resultado = (calificacion / (cantidad - 1))
-        Label12.Text = Format(resultado * 10, "0.00")
+        resultado = (calificacion / 130)
+        Label12.Text = Format(resultado * 100, "0.00")
 
 
     End Sub
@@ -176,5 +191,44 @@ Public Class frmEvaluacionProveedorNormal
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         TextBox6.Clear()
         TextBox7.Clear()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Try
+            Dim cls As New clsCalificicacionProveedores
+            With cls
+                .Id_proveedor1 = Integer.Parse(TextBox7.Text)
+            End With
+
+
+            If cls.EliminarCalificacionProveedor = "1" Then
+
+                MsgBox("Eliminado Exitosamente")
+                TextBox6.Clear()
+                TextBox7.Clear()
+                DataGridView1.Rows.Clear()
+            End If
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Try
+            Dim clsOCOB As New clsCalificicacionProveedores
+            Dim dvOC As DataView = clsOCOB.ListarProveedoresCalificados.DefaultView
+            DataGridView2.DataSource = dvOC
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        importarExcel(DataGridView2)
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        importarExcel(DataGridView1)
     End Sub
 End Class

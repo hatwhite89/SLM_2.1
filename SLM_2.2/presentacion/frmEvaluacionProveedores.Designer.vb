@@ -93,7 +93,12 @@ Partial Class frmEvaluacionProveedores
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.calificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.Label51 = New System.Windows.Forms.Label()
         Me.Label50 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -126,11 +131,6 @@ Partial Class frmEvaluacionProveedores
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.id_oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.calificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -175,6 +175,7 @@ Partial Class frmEvaluacionProveedores
         '
         'TabPage1
         '
+        Me.TabPage1.BackColor = System.Drawing.Color.White
         Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
@@ -186,7 +187,6 @@ Partial Class frmEvaluacionProveedores
         Me.TabPage1.Size = New System.Drawing.Size(878, 627)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Evaluar proveedor del servicio"
-        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -356,7 +356,7 @@ Partial Class frmEvaluacionProveedores
         Me.GroupBox1.Controls.Add(Me.TableLayoutPanel2)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 187)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(863, 419)
+        Me.GroupBox1.Size = New System.Drawing.Size(863, 434)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "CRITERIOS A EVALUAR"
@@ -893,6 +893,7 @@ Partial Class frmEvaluacionProveedores
         '
         'TabPage2
         '
+        Me.TabPage2.BackColor = System.Drawing.Color.White
         Me.TabPage2.Controls.Add(Me.GroupBox6)
         Me.TabPage2.Controls.Add(Me.Panel3)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
@@ -901,7 +902,6 @@ Partial Class frmEvaluacionProveedores
         Me.TabPage2.Size = New System.Drawing.Size(878, 627)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Evaluaciones"
-        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'GroupBox6
         '
@@ -945,6 +945,30 @@ Partial Class frmEvaluacionProveedores
         Me.DataGridView1.Size = New System.Drawing.Size(851, 396)
         Me.DataGridView1.TabIndex = 0
         '
+        'calificacion
+        '
+        Me.calificacion.DataPropertyName = "calificacion"
+        Me.calificacion.HeaderText = "CALIFICACION"
+        Me.calificacion.Name = "calificacion"
+        '
+        'nombre
+        '
+        Me.nombre.DataPropertyName = "nombre"
+        Me.nombre.HeaderText = "DEPARTAMENTO"
+        Me.nombre.Name = "nombre"
+        '
+        'nombreProveedor
+        '
+        Me.nombreProveedor.DataPropertyName = "nombreProveedor"
+        Me.nombreProveedor.HeaderText = "PROVEEDOR"
+        Me.nombreProveedor.Name = "nombreProveedor"
+        '
+        'id_oc
+        '
+        Me.id_oc.DataPropertyName = "id_oc"
+        Me.id_oc.HeaderText = "ORDEN DE COMPRA"
+        Me.id_oc.Name = "id_oc"
+        '
         'Panel3
         '
         Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -968,6 +992,16 @@ Partial Class frmEvaluacionProveedores
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(866, 153)
         Me.Panel3.TabIndex = 0
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.White
+        Me.Button5.Location = New System.Drawing.Point(20, 37)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(18, 20)
+        Me.Button5.TabIndex = 25
+        Me.Button5.Text = "x"
+        Me.Button5.UseVisualStyleBackColor = False
         '
         'Label51
         '
@@ -1013,6 +1047,7 @@ Partial Class frmEvaluacionProveedores
         '
         'Label48
         '
+        Me.Label48.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label48.AutoSize = True
         Me.Label48.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label48.ForeColor = System.Drawing.SystemColors.ButtonHighlight
@@ -1096,7 +1131,7 @@ Partial Class frmEvaluacionProveedores
         Me.TableLayoutPanel3.ColumnCount = 3
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.58823!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.41177!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 78.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.Label45, 2, 3)
         Me.TableLayoutPanel3.Controls.Add(Me.Label47, 2, 4)
         Me.TableLayoutPanel3.Controls.Add(Me.Label43, 2, 2)
@@ -1126,7 +1161,7 @@ Partial Class frmEvaluacionProveedores
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(291, 39)
+        Me.Label45.Location = New System.Drawing.Point(290, 39)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(27, 13)
         Me.Label45.TabIndex = 20
@@ -1135,7 +1170,7 @@ Partial Class frmEvaluacionProveedores
         'Label47
         '
         Me.Label47.AutoSize = True
-        Me.Label47.Location = New System.Drawing.Point(291, 52)
+        Me.Label47.Location = New System.Drawing.Point(290, 52)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(21, 13)
         Me.Label47.TabIndex = 22
@@ -1144,7 +1179,7 @@ Partial Class frmEvaluacionProveedores
         'Label43
         '
         Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(291, 26)
+        Me.Label43.Location = New System.Drawing.Point(290, 26)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(27, 13)
         Me.Label43.TabIndex = 22
@@ -1162,7 +1197,7 @@ Partial Class frmEvaluacionProveedores
         'Label39
         '
         Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(291, 0)
+        Me.Label39.Location = New System.Drawing.Point(290, 0)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(49, 13)
         Me.Label39.TabIndex = 21
@@ -1198,7 +1233,7 @@ Partial Class frmEvaluacionProveedores
         'Label41
         '
         Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(291, 13)
+        Me.Label41.Location = New System.Drawing.Point(290, 13)
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(27, 13)
         Me.Label41.TabIndex = 20
@@ -1288,40 +1323,6 @@ Partial Class frmEvaluacionProveedores
         Me.Label10.Size = New System.Drawing.Size(225, 20)
         Me.Label10.TabIndex = 8
         Me.Label10.Text = "Evaluación de proveedores"
-        '
-        'id_oc
-        '
-        Me.id_oc.DataPropertyName = "id_oc"
-        Me.id_oc.HeaderText = "ORDEN DE COMPRA"
-        Me.id_oc.Name = "id_oc"
-        '
-        'nombreProveedor
-        '
-        Me.nombreProveedor.DataPropertyName = "nombreProveedor"
-        Me.nombreProveedor.HeaderText = "PROVEEDOR"
-        Me.nombreProveedor.Name = "nombreProveedor"
-        '
-        'nombre
-        '
-        Me.nombre.DataPropertyName = "nombre"
-        Me.nombre.HeaderText = "DEPARTAMENTO"
-        Me.nombre.Name = "nombre"
-        '
-        'calificacion
-        '
-        Me.calificacion.DataPropertyName = "calificacion"
-        Me.calificacion.HeaderText = "CALIFICACION"
-        Me.calificacion.Name = "calificacion"
-        '
-        'Button5
-        '
-        Me.Button5.BackColor = System.Drawing.Color.White
-        Me.Button5.Location = New System.Drawing.Point(20, 37)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(18, 20)
-        Me.Button5.TabIndex = 25
-        Me.Button5.Text = "x"
-        Me.Button5.UseVisualStyleBackColor = False
         '
         'frmEvaluacionProveedores
         '

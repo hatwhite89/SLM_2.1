@@ -375,4 +375,53 @@ Public Class clsCalificicacionProveedores
         Return par_sal
 
     End Function
+
+    Public Function EliminarCalificacionProveedor() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slm_EliminarCalificacionProveedorNormal"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_proveedor"
+        sqlpar.Value = Id_proveedor1
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
+    Public Function ListarProveedoresCalificados() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select p.nombreProveedor, (cast(((c.cal1+c.cal2+c.cal3+c.cal4+c.cal5+c.cal6+c.cal7+c.cal8+c.cal9+c.cal10+c.cal11+c.cal12+c.cal3)) as float )/130 * 100 ) as promedio,d.nombre from calificacionProveedorNormal c, Proveedor p, Departamento d
+where c.id_proveedor = p.codProveedor and c.id_departamento_califica = d.codigo ", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 End Class

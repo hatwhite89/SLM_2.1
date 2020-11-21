@@ -858,4 +858,8 @@
     Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
         frmEvaluacionProveedorNormal.Show()
     End Sub
+
+    Private Sub Button7_Click_1(sender As Object, e As EventArgs) Handles Button7.Click
+        E_frm_BIProveedores.Show()
+    End Sub
 End Class
