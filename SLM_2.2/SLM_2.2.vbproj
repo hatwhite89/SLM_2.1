@@ -1748,6 +1748,9 @@
     <EmbeddedResource Include="presentacion\frmEvaluacionProveedores.resx">
       <DependentUpon>frmEvaluacionProveedores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\frmEvaluacionProveedorNormal.resx">
+      <DependentUpon>frmEvaluacionProveedorNormal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\frmEvaluarProveedorVerificarReactivo.resx">
       <DependentUpon>frmEvaluarProveedorVerificarReactivo.vb</DependentUpon>
     </EmbeddedResource>
