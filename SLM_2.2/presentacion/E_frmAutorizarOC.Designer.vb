@@ -284,6 +284,7 @@ Partial Class E_frmAutorizarOC
         '
         'TabPage1
         '
+        Me.TabPage1.BackColor = System.Drawing.Color.White
         Me.TabPage1.Controls.Add(Me.Panel6)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.GroupBox5)
@@ -294,7 +295,6 @@ Partial Class E_frmAutorizarOC
         Me.TabPage1.Size = New System.Drawing.Size(984, 567)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Orden de compra"
-        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'Panel6
         '
@@ -542,9 +542,10 @@ Partial Class E_frmAutorizarOC
         'Label33
         '
         Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label33.Location = New System.Drawing.Point(563, 13)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(290, 13)
+        Me.Label33.Size = New System.Drawing.Size(351, 13)
         Me.Label33.TabIndex = 82
         Me.Label33.Text = "Seleccionar fila para cargar el detalle de la orden de compra"
         '
@@ -623,6 +624,7 @@ Partial Class E_frmAutorizarOC
         '
         'TabPage2
         '
+        Me.TabPage2.BackColor = System.Drawing.Color.White
         Me.TabPage2.Controls.Add(Me.GroupBox6)
         Me.TabPage2.Controls.Add(Me.GroupBox7)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
@@ -631,7 +633,6 @@ Partial Class E_frmAutorizarOC
         Me.TabPage2.Size = New System.Drawing.Size(984, 567)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Ordenes rechazadas"
-        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'GroupBox6
         '
@@ -719,9 +720,10 @@ Partial Class E_frmAutorizarOC
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(346, 64)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(290, 13)
+        Me.Label4.Size = New System.Drawing.Size(351, 13)
         Me.Label4.TabIndex = 83
         Me.Label4.Text = "Seleccionar fila para cargar el detalle de la orden de compra"
         '
@@ -729,7 +731,7 @@ Partial Class E_frmAutorizarOC
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.txtCodOCRechazada)
         Me.Panel1.Controls.Add(Me.Button4)
@@ -876,6 +878,7 @@ Partial Class E_frmAutorizarOC
         '
         'TabPage3
         '
+        Me.TabPage3.BackColor = System.Drawing.Color.White
         Me.TabPage3.Controls.Add(Me.GroupBox4)
         Me.TabPage3.Controls.Add(Me.GroupBox3)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
@@ -884,7 +887,6 @@ Partial Class E_frmAutorizarOC
         Me.TabPage3.Size = New System.Drawing.Size(984, 567)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Ordenes Autorizadas"
-        Me.TabPage3.UseVisualStyleBackColor = True
         '
         'GroupBox4
         '
@@ -983,9 +985,10 @@ Partial Class E_frmAutorizarOC
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(288, 61)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(290, 13)
+        Me.Label2.Size = New System.Drawing.Size(351, 13)
         Me.Label2.TabIndex = 84
         Me.Label2.Text = "Seleccionar fila para cargar el detalle de la orden de compra"
         '
@@ -993,7 +996,7 @@ Partial Class E_frmAutorizarOC
         '
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel2.Controls.Add(Me.Label9)
         Me.Panel2.Controls.Add(Me.txtCodOCAutorizadas)
         Me.Panel2.Controls.Add(Me.Button3)
@@ -1139,6 +1142,7 @@ Partial Class E_frmAutorizarOC
         '
         'TabPage4
         '
+        Me.TabPage4.BackColor = System.Drawing.Color.White
         Me.TabPage4.Controls.Add(Me.GroupBox10)
         Me.TabPage4.Controls.Add(Me.GroupBox8)
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
@@ -1147,7 +1151,6 @@ Partial Class E_frmAutorizarOC
         Me.TabPage4.Size = New System.Drawing.Size(984, 567)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Ordenes Anuladas"
-        Me.TabPage4.UseVisualStyleBackColor = True
         '
         'GroupBox10
         '
@@ -1236,9 +1239,10 @@ Partial Class E_frmAutorizarOC
         'Label18
         '
         Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.Location = New System.Drawing.Point(330, 61)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(290, 13)
+        Me.Label18.Size = New System.Drawing.Size(351, 13)
         Me.Label18.TabIndex = 85
         Me.Label18.Text = "Seleccionar fila para cargar el detalle de la orden de compra"
         '
@@ -1255,7 +1259,7 @@ Partial Class E_frmAutorizarOC
         '
         Me.Panel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel4.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel4.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel4.Controls.Add(Me.Label13)
         Me.Panel4.Controls.Add(Me.txtCodOCAnuladas)
         Me.Panel4.Controls.Add(Me.Button8)
@@ -1393,6 +1397,7 @@ Partial Class E_frmAutorizarOC
         '
         'TabPage5
         '
+        Me.TabPage5.BackColor = System.Drawing.Color.White
         Me.TabPage5.Controls.Add(Me.GroupBox11)
         Me.TabPage5.Controls.Add(Me.GroupBox9)
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
@@ -1401,7 +1406,6 @@ Partial Class E_frmAutorizarOC
         Me.TabPage5.Size = New System.Drawing.Size(984, 567)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Ordenes Cerradas"
-        Me.TabPage5.UseVisualStyleBackColor = True
         '
         'GroupBox11
         '
@@ -1490,9 +1494,10 @@ Partial Class E_frmAutorizarOC
         'Label23
         '
         Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.Location = New System.Drawing.Point(343, 61)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(290, 13)
+        Me.Label23.Size = New System.Drawing.Size(351, 13)
         Me.Label23.TabIndex = 85
         Me.Label23.Text = "Seleccionar fila para cargar el detalle de la orden de compra"
         '
@@ -1509,7 +1514,7 @@ Partial Class E_frmAutorizarOC
         '
         Me.Panel5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel5.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel5.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel5.Controls.Add(Me.Button5)
         Me.Panel5.Controls.Add(Me.Label20)
         Me.Panel5.Controls.Add(Me.txtCodOCCerradas)
@@ -1659,6 +1664,7 @@ Partial Class E_frmAutorizarOC
         '
         'TabPage6
         '
+        Me.TabPage6.BackColor = System.Drawing.Color.White
         Me.TabPage6.Controls.Add(Me.GroupBox13)
         Me.TabPage6.Controls.Add(Me.GroupBox12)
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
@@ -1667,7 +1673,6 @@ Partial Class E_frmAutorizarOC
         Me.TabPage6.Size = New System.Drawing.Size(984, 567)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Ordenes Abiertas"
-        Me.TabPage6.UseVisualStyleBackColor = True
         '
         'GroupBox13
         '
@@ -1756,9 +1761,10 @@ Partial Class E_frmAutorizarOC
         'Label27
         '
         Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label27.Location = New System.Drawing.Point(343, 61)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(290, 13)
+        Me.Label27.Size = New System.Drawing.Size(351, 13)
         Me.Label27.TabIndex = 85
         Me.Label27.Text = "Seleccionar fila para cargar el detalle de la orden de compra"
         '
@@ -1775,7 +1781,7 @@ Partial Class E_frmAutorizarOC
         '
         Me.Panel7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel7.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel7.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel7.Controls.Add(Me.Button10)
         Me.Panel7.Controls.Add(Me.Button7)
         Me.Panel7.Controls.Add(Me.Label29)
@@ -1939,7 +1945,7 @@ Partial Class E_frmAutorizarOC
         '
         Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel3.Controls.Add(Me.Label14)
         Me.Panel3.Location = New System.Drawing.Point(1, 1)
         Me.Panel3.Name = "Panel3"

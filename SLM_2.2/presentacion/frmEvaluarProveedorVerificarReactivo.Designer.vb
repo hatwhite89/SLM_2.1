@@ -96,7 +96,7 @@ Partial Class frmEvaluarProveedorVerificarReactivo
         '
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel2.Controls.Add(Me.TextBox3)
         Me.Panel2.Controls.Add(Me.Label12)
         Me.Panel2.Controls.Add(Me.Label3)
@@ -148,7 +148,7 @@ Partial Class frmEvaluarProveedorVerificarReactivo
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Label1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label1.Location = New System.Drawing.Point(13, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(127, 13)
@@ -455,7 +455,7 @@ Partial Class frmEvaluarProveedorVerificarReactivo
         'Button3
         '
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.BackColor = System.Drawing.Color.SandyBrown
+        Me.Button3.BackColor = System.Drawing.Color.LawnGreen
         Me.Button3.Location = New System.Drawing.Point(725, 92)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(80, 28)
@@ -528,7 +528,7 @@ Partial Class frmEvaluarProveedorVerificarReactivo
         Me.Panel6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel6.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel6.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel6.Controls.Add(Me.Button3)
         Me.Panel6.Controls.Add(Me.Label11)
         Me.Panel6.Controls.Add(Me.RichTextBox1)
@@ -638,7 +638,7 @@ Partial Class frmEvaluarProveedorVerificarReactivo
         '
         Me.Panel8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel8.Controls.Add(Me.Label14)
         Me.Panel8.Location = New System.Drawing.Point(2, 0)
         Me.Panel8.Name = "Panel8"

@@ -45,8 +45,9 @@ Partial Class A_CategoriaProveedor
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dtCategorias = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.gbxInfo.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtCategorias, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -244,7 +245,7 @@ Partial Class A_CategoriaProveedor
         Me.GroupBox1.Controls.Add(Me.dtCategorias)
         Me.GroupBox1.Location = New System.Drawing.Point(4, 172)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(702, 261)
+        Me.GroupBox1.Size = New System.Drawing.Size(702, 242)
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Categorias de Proveedor"
@@ -290,14 +291,14 @@ Partial Class A_CategoriaProveedor
         Me.dtCategorias.Name = "dtCategorias"
         Me.dtCategorias.ReadOnly = True
         Me.dtCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCategorias.Size = New System.Drawing.Size(690, 207)
+        Me.dtCategorias.Size = New System.Drawing.Size(690, 188)
         Me.dtCategorias.TabIndex = 0
         '
         'Panel1
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.btnGuardar)
@@ -307,17 +308,6 @@ Partial Class A_CategoriaProveedor
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(722, 46)
         Me.Panel1.TabIndex = 10
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(10, 10)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(287, 25)
-        Me.Label7.TabIndex = 0
-        Me.Label7.Text = "Categoría de Proveedores"
         '
         'btnCerrar
         '
@@ -333,12 +323,33 @@ Partial Class A_CategoriaProveedor
         Me.btnCerrar.Text = "Cerrar"
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(10, 10)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(287, 25)
+        Me.Label7.TabIndex = 0
+        Me.Label7.Text = "Categoría de Proveedores"
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 420)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 11
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_CategoriaProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(718, 442)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfo)
@@ -355,6 +366,7 @@ Partial Class A_CategoriaProveedor
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -382,4 +394,5 @@ Partial Class A_CategoriaProveedor
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnCerrar As Button
     Friend WithEvents Label7 As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

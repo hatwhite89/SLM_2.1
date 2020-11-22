@@ -36,7 +36,6 @@ Partial Class frmEvaluacionProveedores
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.Label36 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.txtcal9 = New System.Windows.Forms.ComboBox()
@@ -80,6 +79,7 @@ Partial Class frmEvaluacionProveedores
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label49 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label35 = New System.Windows.Forms.Label()
@@ -323,16 +323,6 @@ Partial Class frmEvaluacionProveedores
         Me.Label36.Size = New System.Drawing.Size(154, 15)
         Me.Label36.TabIndex = 6
         Me.Label36.Text = "PORCENTAJE  OBTENIDO"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label1.Location = New System.Drawing.Point(13, 17)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(127, 13)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Ingrese Orden de compra"
         '
         'GroupBox1
         '
@@ -735,7 +725,7 @@ Partial Class frmEvaluacionProveedores
         '
         Me.TableLayoutPanel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel2.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.TableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.TableLayoutPanel2.ColumnCount = 2
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113.0!))
@@ -809,6 +799,16 @@ Partial Class frmEvaluacionProveedores
         Me.Label49.TabIndex = 9
         Me.Label49.Text = "Estado"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label1.Location = New System.Drawing.Point(13, 17)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(127, 13)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "Ingrese Orden de compra"
+        '
         'TextBox4
         '
         Me.TextBox4.Location = New System.Drawing.Point(520, 9)
@@ -848,7 +848,7 @@ Partial Class frmEvaluacionProveedores
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.SandyBrown
+        Me.Button1.BackColor = System.Drawing.Color.LawnGreen
         Me.Button1.Enabled = False
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Location = New System.Drawing.Point(788, 6)
@@ -1131,7 +1131,7 @@ Partial Class frmEvaluacionProveedores
         Me.TableLayoutPanel3.ColumnCount = 3
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.58823!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.41177!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.Label45, 2, 3)
         Me.TableLayoutPanel3.Controls.Add(Me.Label47, 2, 4)
         Me.TableLayoutPanel3.Controls.Add(Me.Label43, 2, 2)
@@ -1161,7 +1161,7 @@ Partial Class frmEvaluacionProveedores
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(289, 39)
+        Me.Label45.Location = New System.Drawing.Point(288, 39)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(27, 13)
         Me.Label45.TabIndex = 20
@@ -1170,7 +1170,7 @@ Partial Class frmEvaluacionProveedores
         'Label47
         '
         Me.Label47.AutoSize = True
-        Me.Label47.Location = New System.Drawing.Point(289, 52)
+        Me.Label47.Location = New System.Drawing.Point(288, 52)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(21, 13)
         Me.Label47.TabIndex = 22
@@ -1179,7 +1179,7 @@ Partial Class frmEvaluacionProveedores
         'Label43
         '
         Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(289, 26)
+        Me.Label43.Location = New System.Drawing.Point(288, 26)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(27, 13)
         Me.Label43.TabIndex = 22
@@ -1188,7 +1188,7 @@ Partial Class frmEvaluacionProveedores
         'Label46
         '
         Me.Label46.AutoSize = True
-        Me.Label46.Location = New System.Drawing.Point(205, 52)
+        Me.Label46.Location = New System.Drawing.Point(204, 52)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(27, 13)
         Me.Label46.TabIndex = 21
@@ -1197,7 +1197,7 @@ Partial Class frmEvaluacionProveedores
         'Label39
         '
         Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(289, 0)
+        Me.Label39.Location = New System.Drawing.Point(288, 0)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(49, 13)
         Me.Label39.TabIndex = 21
@@ -1206,7 +1206,7 @@ Partial Class frmEvaluacionProveedores
         'Label42
         '
         Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(205, 26)
+        Me.Label42.Location = New System.Drawing.Point(204, 26)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(27, 13)
         Me.Label42.TabIndex = 21
@@ -1215,7 +1215,7 @@ Partial Class frmEvaluacionProveedores
         'Label44
         '
         Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(205, 39)
+        Me.Label44.Location = New System.Drawing.Point(204, 39)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(27, 13)
         Me.Label44.TabIndex = 19
@@ -1233,7 +1233,7 @@ Partial Class frmEvaluacionProveedores
         'Label41
         '
         Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(289, 13)
+        Me.Label41.Location = New System.Drawing.Point(288, 13)
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(27, 13)
         Me.Label41.TabIndex = 20
@@ -1242,7 +1242,7 @@ Partial Class frmEvaluacionProveedores
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(205, 0)
+        Me.Label11.Location = New System.Drawing.Point(204, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(49, 13)
         Me.Label11.TabIndex = 20
@@ -1251,7 +1251,7 @@ Partial Class frmEvaluacionProveedores
         'Label40
         '
         Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(205, 13)
+        Me.Label40.Location = New System.Drawing.Point(204, 13)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(33, 13)
         Me.Label40.TabIndex = 19
@@ -1306,7 +1306,7 @@ Partial Class frmEvaluacionProveedores
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Location = New System.Drawing.Point(0, -2)
         Me.Panel1.Name = "Panel1"

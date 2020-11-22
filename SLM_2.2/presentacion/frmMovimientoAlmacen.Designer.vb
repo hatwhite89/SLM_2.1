@@ -27,6 +27,7 @@ Partial Class frmMovimientoAlmacen
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.id_entrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -38,6 +39,7 @@ Partial Class frmMovimientoAlmacen
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.id_entrada_1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -60,8 +62,6 @@ Partial Class frmMovimientoAlmacen
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.BindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel4.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,7 +76,7 @@ Partial Class frmMovimientoAlmacen
         '
         Me.Panel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel4.Controls.Add(Me.Label13)
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
@@ -113,6 +113,15 @@ Partial Class frmMovimientoAlmacen
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Almacén origen"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(460, 33)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(181, 13)
+        Me.Label9.TabIndex = 5
+        Me.Label9.Text = "Seleccionar fila para cargar producto"
         '
         'DataGridView1
         '
@@ -208,6 +217,15 @@ Partial Class frmMovimientoAlmacen
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Almacén destino"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(198, 16)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(209, 13)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Seleccione almacen para cargar inventario"
+        '
         'DataGridView2
         '
         Me.DataGridView2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
@@ -279,7 +297,7 @@ Partial Class frmMovimientoAlmacen
         '
         Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox3.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.GroupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox3.Controls.Add(Me.Button1)
         Me.GroupBox3.Controls.Add(Me.txtTraslado)
         Me.GroupBox3.Controls.Add(Me.txtLote)
@@ -378,30 +396,12 @@ Partial Class frmMovimientoAlmacen
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 573)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(1043, 22)
         Me.StatusStrip1.TabIndex = 10
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(460, 33)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(181, 13)
-        Me.Label9.TabIndex = 5
-        Me.Label9.Text = "Seleccionar fila para cargar producto"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(198, 16)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(209, 13)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Seleccione almacen para cargar inventario"
         '
         'frmMovimientoAlmacen
         '

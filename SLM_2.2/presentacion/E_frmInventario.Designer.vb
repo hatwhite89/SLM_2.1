@@ -194,6 +194,7 @@ Partial Class E_frmInventario
         '
         'TabPage1
         '
+        Me.TabPage1.BackColor = System.Drawing.Color.White
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
@@ -202,7 +203,6 @@ Partial Class E_frmInventario
         Me.TabPage1.Size = New System.Drawing.Size(790, 408)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Inventario disponible"
-        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -305,7 +305,7 @@ Partial Class E_frmInventario
         '
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(395, 18)
+        Me.Label1.Location = New System.Drawing.Point(389, 15)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(134, 13)
         Me.Label1.TabIndex = 18
@@ -314,7 +314,7 @@ Partial Class E_frmInventario
         'btnCargarInventario
         '
         Me.btnCargarInventario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCargarInventario.BackColor = System.Drawing.Color.White
+        Me.btnCargarInventario.BackColor = System.Drawing.Color.Yellow
         Me.btnCargarInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCargarInventario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.btnCargarInventario.Location = New System.Drawing.Point(533, 38)
@@ -326,6 +326,7 @@ Partial Class E_frmInventario
         '
         'TabPage2
         '
+        Me.TabPage2.BackColor = System.Drawing.Color.White
         Me.TabPage2.Controls.Add(Me.GroupBox4)
         Me.TabPage2.Controls.Add(Me.GroupBox3)
         Me.TabPage2.Controls.Add(Me.Label2)
@@ -335,7 +336,6 @@ Partial Class E_frmInventario
         Me.TabPage2.Size = New System.Drawing.Size(790, 408)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Productos vencidos"
-        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'GroupBox4
         '
@@ -515,7 +515,7 @@ Partial Class E_frmInventario
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.BackColor = System.Drawing.Color.Yellow
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Button1.Location = New System.Drawing.Point(535, 37)
@@ -536,6 +536,7 @@ Partial Class E_frmInventario
         '
         'TabPage3
         '
+        Me.TabPage3.BackColor = System.Drawing.Color.White
         Me.TabPage3.Controls.Add(Me.GroupBox6)
         Me.TabPage3.Controls.Add(Me.GroupBox5)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
@@ -544,7 +545,6 @@ Partial Class E_frmInventario
         Me.TabPage3.Size = New System.Drawing.Size(790, 408)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Sin existencia"
-        Me.TabPage3.UseVisualStyleBackColor = True
         '
         'GroupBox6
         '
@@ -724,7 +724,7 @@ Partial Class E_frmInventario
         'Button4
         '
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.BackColor = System.Drawing.Color.White
+        Me.Button4.BackColor = System.Drawing.Color.Yellow
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Button4.Location = New System.Drawing.Point(540, 37)
@@ -738,7 +738,7 @@ Partial Class E_frmInventario
         '
         Me.Panel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel4.Controls.Add(Me.Label13)
         Me.Panel4.Location = New System.Drawing.Point(0, 1)
@@ -759,7 +759,7 @@ Partial Class E_frmInventario
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 491)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(800, 22)
