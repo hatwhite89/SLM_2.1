@@ -63,9 +63,9 @@ Partial Class E_frmUbicacion
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.txtBuscar)
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 203)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 191)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(694, 225)
+        Me.GroupBox2.Size = New System.Drawing.Size(707, 234)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Buscar Almacén"
@@ -76,7 +76,7 @@ Partial Class E_frmUbicacion
         Me.Button1.BackColor = System.Drawing.Color.Green
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Location = New System.Drawing.Point(595, 12)
+        Me.Button1.Location = New System.Drawing.Point(608, 12)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(93, 23)
         Me.Button1.TabIndex = 12
@@ -96,7 +96,7 @@ Partial Class E_frmUbicacion
         '
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(248, 207)
+        Me.Label5.Location = New System.Drawing.Point(248, 216)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(173, 13)
         Me.Label5.TabIndex = 10
@@ -108,7 +108,7 @@ Partial Class E_frmUbicacion
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtBuscar.Location = New System.Drawing.Point(219, 12)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(359, 20)
+        Me.txtBuscar.Size = New System.Drawing.Size(372, 20)
         Me.txtBuscar.TabIndex = 1
         '
         'DataGridView1
@@ -131,7 +131,7 @@ Partial Class E_frmUbicacion
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.Location = New System.Drawing.Point(6, 48)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(682, 156)
+        Me.DataGridView1.Size = New System.Drawing.Size(695, 165)
         Me.DataGridView1.TabIndex = 0
         '
         'id_almacen
@@ -156,7 +156,7 @@ Partial Class E_frmUbicacion
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -164,9 +164,9 @@ Partial Class E_frmUbicacion
         Me.GroupBox1.Controls.Add(Me.txtDescripcion)
         Me.GroupBox1.Controls.Add(Me.txtCodAlmacen)
         Me.GroupBox1.Controls.Add(Me.txtNombreAlmacen)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 56)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 44)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(694, 141)
+        Me.GroupBox1.Size = New System.Drawing.Size(707, 141)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Almacén"
@@ -235,14 +235,14 @@ Partial Class E_frmUbicacion
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.Button5)
         Me.Panel1.Controls.Add(Me.Button6)
-        Me.Panel1.Location = New System.Drawing.Point(12, 12)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(694, 38)
+        Me.Panel1.Size = New System.Drawing.Size(718, 38)
         Me.Panel1.TabIndex = 8
         '
         'Button4
@@ -250,7 +250,7 @@ Partial Class E_frmUbicacion
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button4.BackColor = System.Drawing.Color.White
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Location = New System.Drawing.Point(451, 3)
+        Me.Button4.Location = New System.Drawing.Point(475, 3)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 4
@@ -260,10 +260,10 @@ Partial Class E_frmUbicacion
         'Button5
         '
         Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button5.BackColor = System.Drawing.Color.White
+        Me.Button5.BackColor = System.Drawing.Color.LawnGreen
         Me.Button5.Enabled = False
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Location = New System.Drawing.Point(532, 3)
+        Me.Button5.Location = New System.Drawing.Point(556, 3)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
         Me.Button5.TabIndex = 3
@@ -273,9 +273,9 @@ Partial Class E_frmUbicacion
         'Button6
         '
         Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button6.BackColor = System.Drawing.Color.White
+        Me.Button6.BackColor = System.Drawing.Color.LightSalmon
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Location = New System.Drawing.Point(613, 3)
+        Me.Button6.Location = New System.Drawing.Point(637, 3)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(75, 23)
         Me.Button6.TabIndex = 5
@@ -284,7 +284,7 @@ Partial Class E_frmUbicacion
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 428)
         Me.StatusStrip1.Name = "StatusStrip1"

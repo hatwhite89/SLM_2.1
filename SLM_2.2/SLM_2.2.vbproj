@@ -789,6 +789,12 @@
     <Compile Include="presentacion\E_frmUnidadMedida_almacen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frm_BIProveedores.Designer.vb">
+      <DependentUpon>E_frm_BIProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frm_BIProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_HojaTrabajo.Designer.vb">
       <DependentUpon>E_HojaTrabajo.vb</DependentUpon>
     </Compile>
@@ -1709,6 +1715,9 @@
     <EmbeddedResource Include="presentacion\E_frmUnidadMedida_almacen.resx">
       <DependentUpon>E_frmUnidadMedida_almacen.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frm_BIProveedores.resx">
+      <DependentUpon>E_frm_BIProveedores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_HojaTrabajo.resx">
       <DependentUpon>E_HojaTrabajo.vb</DependentUpon>
     </EmbeddedResource>
@@ -1768,6 +1777,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\frmEvaluacionProveedores.resx">
       <DependentUpon>frmEvaluacionProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\frmEvaluacionProveedorNormal.resx">
+      <DependentUpon>frmEvaluacionProveedorNormal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\frmEvaluarProveedorVerificarReactivo.resx">
       <DependentUpon>frmEvaluarProveedorVerificarReactivo.vb</DependentUpon>

@@ -6,7 +6,7 @@ Public Class ClsEvaluacionProveedor
     Dim cencuesta1, cencuesta2, cencuesta3, cencuentas4, cencuesta5 As Integer
     Dim dencuesta1, dencuesta2, dencuesta3, dencuentas4, dencuesta5 As Integer
     Dim eencuesta1, eencuesta2, eencuesta3, eencuentas4, eencuesta5 As Integer
-    Dim id_oc As Integer
+    Dim id_oc, id_proveedor As Integer
 
     'constructor
     Public Sub New()
@@ -247,6 +247,15 @@ Public Class ClsEvaluacionProveedor
         End Set
     End Property
 
+    Public Property Id_proveedor1 As Integer
+        Get
+            Return id_proveedor
+        End Get
+        Set(value As Integer)
+            id_proveedor = value
+        End Set
+    End Property
+
     Public Function RegistrarEvaluacion() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -424,7 +433,20 @@ Public Class ClsEvaluacionProveedor
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select p.nombreProveedor from OrdenDeCompra o, Proveedor p where o.id_proveedor = p.codProveedor and o.id_oc ='" + cod + "'", cn)
+        Using da As New SqlDataAdapter("select p.nombreProveedor,p.codProveedor from OrdenDeCompra o, Proveedor p where o.id_proveedor = p.codProveedor and o.id_oc ='" + cod + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+    Public Function listarProveedoresEvaluacionNormal(ByVal cod As String) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select * from calificacionProveedorNormal where id_proveedor ='" + cod + "'", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -437,7 +459,7 @@ Public Class ClsEvaluacionProveedor
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select * from EvaluacionProveedor where id_oc ='" + cod + "'", cn)
+        Using da As New SqlDataAdapter("select top 1 * from DetalleTablaDeCalificacionServicio where id_oc ='" + cod + "'", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -460,19 +482,19 @@ Public Class ClsEvaluacionProveedor
     Public Function RecuperarCodigoProveedor2(ByVal cod As String) As String
         Dim sqlcom As SqlCommand
         sqlcom = New SqlCommand
-        sqlcom.CommandText = "select  codProveedor from Proveedor where nombreProveedor like '%" + cod + "'"
+        sqlcom.CommandText = "select top 1  codProveedor from Proveedor where nombreProveedor like '%" + cod + "'"
         sqlcom.Connection = New ClsConnection().getConexion
         Return sqlcom.ExecuteScalar
     End Function
 
-    Public Function calcularEvaluacion(ByVal cod As String) As DataTable
+    Public Function calcularEvaluacion(ByVal cod As String, ByVal inicio As Date, ByVal fin As Date) As DataTable
 
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select (sum(c.nota)/count(*)) as calificacion,d.nombre,p.nombreProveedor,c.id_oc from DetalleTablaDeCalificacionServicio c, Proveedor p, Departamento d
-where nota >0 and p.codProveedor = c.id_proveedor and c.id_departamento = d.codigo and p.codProveedor ='" + cod + "'
+        Using da As New SqlDataAdapter("select (sum(c.nota)/count(*))*10 as calificacion,d.nombre,p.nombreProveedor,c.id_oc from DetalleTablaDeCalificacionServicio c, Proveedor p, Departamento d
+where nota >0 and p.codProveedor = c.id_proveedor and c.id_departamento = d.codigo and p.codProveedor ='" + cod + "' and fecha between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "'
 group by d.nombre,p.nombreProveedor,c.id_oc", cn)
             Dim dt As New DataTable
             da.Fill(dt)
@@ -480,4 +502,16 @@ group by d.nombre,p.nombreProveedor,c.id_oc", cn)
         End Using
     End Function
 
+    Public Function listarProveedoresOC2EvaluacionReacitvos(ByVal cod As String) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select p.nombreProveedor,o.fecha_elaboracion from OrdenDeCompra o, Proveedor p where o.id_proveedor = p.codProveedor and o.id_oc ='" + cod + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 End Class

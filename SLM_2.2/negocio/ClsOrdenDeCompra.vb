@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ClsOrdenDeCompra
-    Dim id, id_forma_pago, id_proveedor As Integer
+    Dim id, id_forma_pago, id_proveedor, id_factura_compra As Integer
 
     Dim fecha_elaboracion As Date
 
@@ -134,6 +134,15 @@ Public Class ClsOrdenDeCompra
         End Set
     End Property
 
+    Public Property Id_factura_compra1 As Integer
+        Get
+            Return id_factura_compra
+        End Get
+        Set(value As Integer)
+            id_factura_compra = value
+        End Set
+    End Property
+
     Public Function CrearrOrdenDeCompra() As Integer
         Dim sqlcom As SqlCommand
         sqlcom = New SqlCommand
@@ -148,7 +157,7 @@ Public Class ClsOrdenDeCompra
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select oc.id_oc,p.nombreProveedor,oc.usuario_consignado,oc.usuario_autorizo,oc.autorizacion,oc.fecha_autorizacion,oc.observaciones from OrdenDeCompra oc ,Proveedor p where oc.id_proveedor= p.codProveedor and oc.autorizacion <> 'Anulada' and oc.autorizacion <> 'Cerrada'", cn)
+        Using da As New SqlDataAdapter("select oc.id_oc,p.nombreProveedor,oc.usuario_consignado,oc.usuario_autorizo,oc.autorizacion,oc.fecha_autorizacion,oc.observaciones,oc.id_factura_compra from OrdenDeCompra oc ,Proveedor p where oc.id_proveedor= p.codProveedor and oc.autorizacion <> 'Anulada' and oc.autorizacion <> 'Cerrada'", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             objCon.cerrarConexion()
@@ -285,6 +294,11 @@ Public Class ClsOrdenDeCompra
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "observaciones" 'nombre campo en el procedimiento almacenado 
         sqlpar.Value = ObservacionesOC
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "factura" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = Id_factura_compra1
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

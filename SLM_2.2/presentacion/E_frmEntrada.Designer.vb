@@ -96,6 +96,7 @@ Partial Class E_frmEntrada
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.TabPage3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -111,6 +112,7 @@ Partial Class E_frmEntrada
         '
         'TabPage3
         '
+        Me.TabPage3.BackColor = System.Drawing.Color.White
         Me.TabPage3.Controls.Add(Me.Label15)
         Me.TabPage3.Controls.Add(Me.Panel1)
         Me.TabPage3.Controls.Add(Me.GroupBox2)
@@ -121,7 +123,6 @@ Partial Class E_frmEntrada
         Me.TabPage3.Size = New System.Drawing.Size(1018, 476)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Historial Entradas"
-        Me.TabPage3.UseVisualStyleBackColor = True
         '
         'Label15
         '
@@ -137,7 +138,7 @@ Partial Class E_frmEntrada
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Label13)
@@ -209,7 +210,7 @@ Partial Class E_frmEntrada
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox2.Controls.Add(Me.DateTimePicker4)
         Me.GroupBox2.Controls.Add(Me.Label16)
         Me.GroupBox2.Controls.Add(Me.TextBox5)
@@ -266,7 +267,7 @@ Partial Class E_frmEntrada
         'Button4
         '
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.BackColor = System.Drawing.Color.SandyBrown
+        Me.Button4.BackColor = System.Drawing.Color.LawnGreen
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Location = New System.Drawing.Point(853, 58)
         Me.Button4.Name = "Button4"
@@ -360,9 +361,10 @@ Partial Class E_frmEntrada
         'Label12
         '
         Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.Location = New System.Drawing.Point(344, 19)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(295, 13)
+        Me.Label12.Size = New System.Drawing.Size(357, 13)
         Me.Label12.TabIndex = 7
         Me.Label12.Text = "Seleccionar fila  para cargar el detalle de la Orden de compra"
         '
@@ -443,6 +445,7 @@ Partial Class E_frmEntrada
         '
         'TabPage1
         '
+        Me.TabPage1.BackColor = System.Drawing.Color.White
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.GroupBox4)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
@@ -451,13 +454,13 @@ Partial Class E_frmEntrada
         Me.TabPage1.Size = New System.Drawing.Size(1018, 476)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Registrar Entrada"
-        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.Label22)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.Button1)
@@ -503,7 +506,7 @@ Partial Class E_frmEntrada
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.SandyBrown
+        Me.Button1.BackColor = System.Drawing.Color.LawnGreen
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Button1.Location = New System.Drawing.Point(861, 101)
@@ -668,9 +671,10 @@ Partial Class E_frmEntrada
         'Label34
         '
         Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label34.Location = New System.Drawing.Point(382, 16)
         Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(295, 13)
+        Me.Label34.Size = New System.Drawing.Size(357, 13)
         Me.Label34.TabIndex = 6
         Me.Label34.Text = "Seleccionar fila  para cargar el detalle de la Orden de compra"
         '
@@ -773,7 +777,7 @@ Partial Class E_frmEntrada
         '
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Label10)
         Me.Panel2.Location = New System.Drawing.Point(2, 2)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
@@ -795,7 +799,7 @@ Partial Class E_frmEntrada
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 545)
         Me.StatusStrip1.Name = "StatusStrip1"
@@ -803,6 +807,17 @@ Partial Class E_frmEntrada
         Me.StatusStrip1.Size = New System.Drawing.Size(1026, 22)
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label22.Location = New System.Drawing.Point(366, 16)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(52, 13)
+        Me.Label22.TabIndex = 20
+        Me.Label22.Text = "Label22"
         '
         'E_frmEntrada
         '
@@ -912,4 +927,5 @@ Partial Class E_frmEntrada
     Friend WithEvents precio_unitario1 As DataGridViewTextBoxColumn
     Friend WithEvents fecha_vencimiento2 As DataGridViewTextBoxColumn
     Friend WithEvents id_entrada As DataGridViewTextBoxColumn
+    Friend WithEvents Label22 As Label
 End Class

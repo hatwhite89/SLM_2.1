@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class clsCalificicacionProveedores
-    Dim id1, id2, id3, id4, id5, id6, id7, id8, id9, id10, id11, id_proveedor, id_oc, id_departamento, id_usuario As Integer
+    Dim id1, id2, id3, id4, id5, id6, id7, id8, id9, id10, id11, id12c, id13c, id_proveedor, id_oc, id_departamento, id_usuario As Integer
     Public Sub New()
 
     End Sub
@@ -144,6 +144,24 @@ Public Class clsCalificicacionProveedores
         End Set
     End Property
 
+    Public Property Id12c1 As Integer
+        Get
+            Return id12c
+        End Get
+        Set(value As Integer)
+            id12c = value
+        End Set
+    End Property
+
+    Public Property Id13c1 As Integer
+        Get
+            Return id13c
+        End Get
+        Set(value As Integer)
+            id13c = value
+        End Set
+    End Property
+
     Public Function RegistraCalificacion() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -247,5 +265,163 @@ Public Class clsCalificicacionProveedores
 
         Return par_sal
 
+    End Function
+    Public Function RegistraCalificacionProveedor() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slm_InsertarCalificacionProveedorNormal"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cal1" 'nombre del almacen 
+        sqlpar.Value = Id12
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cal2" 'nombre del almacen 
+        sqlpar.Value = Id21
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cal3" 'nombre del almacen 
+        sqlpar.Value = Id31
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cal4" 'nombre del almacen 
+        sqlpar.Value = Id41
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cal5" 'nombre del almacen 
+        sqlpar.Value = Id51
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cal6" 'nombre del almacen 
+        sqlpar.Value = Id61
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cal7" 'nombre del almacen 
+        sqlpar.Value = Id71
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cal8" 'nombre del almacen 
+        sqlpar.Value = Id81
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cal9" 'nombre del almacen 
+        sqlpar.Value = Id91
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cal10" 'nombre del almacen 
+        sqlpar.Value = Id101
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cal11" 'nombre del almacen 
+        sqlpar.Value = Id111
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_proveedor" 'nombre del almacen 
+        sqlpar.Value = Id_proveedor1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cal12" 'nombre del almacen 
+        sqlpar.Value = Id12c1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cal13" 'nombre del almacen 
+        sqlpar.Value = Id13c1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_usuario" 'nombre del almacen 
+        sqlpar.Value = Id_usuario1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_departamento_califica" 'nombre del almacen 
+        sqlpar.Value = Id_departamento2
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
+    Public Function EliminarCalificacionProveedor() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slm_EliminarCalificacionProveedorNormal"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_proveedor"
+        sqlpar.Value = Id_proveedor1
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
+    Public Function ListarProveedoresCalificados() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select p.nombreProveedor, (cast(((c.cal1+c.cal2+c.cal3+c.cal4+c.cal5+c.cal6+c.cal7+c.cal8+c.cal9+c.cal10+c.cal11+c.cal12+c.cal3)) as float )/130 * 100 ) as promedio,d.nombre from calificacionProveedorNormal c, Proveedor p, Departamento d
+where c.id_proveedor = p.codProveedor and c.id_departamento_califica = d.codigo ", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
     End Function
 End Class

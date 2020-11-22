@@ -38,10 +38,11 @@ Partial Class E_frmAutorizarOC
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
         Me.Label43 = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -73,6 +74,12 @@ Partial Class E_frmAutorizarOC
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.DataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.Column41 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column42 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column44 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column45 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column46 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -96,6 +103,12 @@ Partial Class E_frmAutorizarOC
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.Column47 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column48 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column49 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column50 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column51 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column52 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -108,11 +121,24 @@ Partial Class E_frmAutorizarOC
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtBuscar3 = New System.Windows.Forms.TextBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
         Me.DataGridView9 = New System.Windows.Forms.DataGridView()
+        Me.Column29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column32 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column33 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column34 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -136,6 +162,12 @@ Partial Class E_frmAutorizarOC
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.GroupBox11 = New System.Windows.Forms.GroupBox()
         Me.DataGridView10 = New System.Windows.Forms.DataGridView()
+        Me.Column35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column36 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column37 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column38 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column39 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column40 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
@@ -160,10 +192,18 @@ Partial Class E_frmAutorizarOC
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.GroupBox13 = New System.Windows.Forms.GroupBox()
         Me.DataGridView12 = New System.Windows.Forms.DataGridView()
+        Me.Column53 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column54 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column55 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column56 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column57 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column58 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.txtCodOCAbierta = New System.Windows.Forms.TextBox()
         Me.Button11 = New System.Windows.Forms.Button()
@@ -183,49 +223,10 @@ Partial Class E_frmAutorizarOC
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Column29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column32 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column33 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column34 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column41 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column42 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column44 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column45 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column46 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column47 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column48 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column49 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column50 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column51 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column52 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column36 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column37 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column38 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column39 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column40 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column53 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column54 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column55 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column56 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column57 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column58 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Panel8 = New System.Windows.Forms.Panel()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel6.SuspendLayout()
+        Me.Panel8.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -262,7 +263,6 @@ Partial Class E_frmAutorizarOC
         Me.Panel7.SuspendLayout()
         CType(Me.DataGridView11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
-        Me.Panel8.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -300,36 +300,26 @@ Partial Class E_frmAutorizarOC
         '
         Me.Panel6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel6.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel6.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel6.Controls.Add(Me.Panel8)
         Me.Panel6.Location = New System.Drawing.Point(3, 517)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(974, 50)
         Me.Panel6.TabIndex = 79
         '
-        'Label44
+        'Panel8
         '
-        Me.Label44.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label44.Location = New System.Drawing.Point(248, 24)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(25, 13)
-        Me.Label44.TabIndex = 84
-        Me.Label44.Text = "0.0"
-        '
-        'Label46
-        '
-        Me.Label46.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label46.AutoSize = True
-        Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label46.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label46.Location = New System.Drawing.Point(259, 6)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(14, 13)
-        Me.Label46.TabIndex = 85
-        Me.Label46.Text = "0"
+        Me.Panel8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel8.BackColor = System.Drawing.Color.Orange
+        Me.Panel8.Controls.Add(Me.Label25)
+        Me.Panel8.Controls.Add(Me.Label44)
+        Me.Panel8.Controls.Add(Me.Label43)
+        Me.Panel8.Controls.Add(Me.Label46)
+        Me.Panel8.Location = New System.Drawing.Point(679, 3)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(292, 44)
+        Me.Panel8.TabIndex = 86
         '
         'Label25
         '
@@ -343,6 +333,18 @@ Partial Class E_frmAutorizarOC
         Me.Label25.TabIndex = 83
         Me.Label25.Text = "TOTAL"
         '
+        'Label44
+        '
+        Me.Label44.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label44.AutoSize = True
+        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label44.Location = New System.Drawing.Point(248, 24)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(25, 13)
+        Me.Label44.TabIndex = 84
+        Me.Label44.Text = "0.0"
+        '
         'Label43
         '
         Me.Label43.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -355,11 +357,23 @@ Partial Class E_frmAutorizarOC
         Me.Label43.TabIndex = 82
         Me.Label43.Text = "CANTIDAD DE PRODUCTOS"
         '
+        'Label46
+        '
+        Me.Label46.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label46.AutoSize = True
+        Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label46.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label46.Location = New System.Drawing.Point(259, 6)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(14, 13)
+        Me.Label46.TabIndex = 85
+        Me.Label46.Text = "0"
+        '
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox2.Controls.Add(Me.Button6)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.txtCodOC)
@@ -649,6 +663,42 @@ Partial Class E_frmAutorizarOC
         Me.DataGridView4.Size = New System.Drawing.Size(969, 234)
         Me.DataGridView4.TabIndex = 0
         '
+        'Column41
+        '
+        Me.Column41.DataPropertyName = "id_detalle_oc"
+        Me.Column41.HeaderText = "ID"
+        Me.Column41.Name = "Column41"
+        '
+        'Column42
+        '
+        Me.Column42.DataPropertyName = "cod_producto"
+        Me.Column42.HeaderText = "ID PRODUCTO"
+        Me.Column42.Name = "Column42"
+        '
+        'Column43
+        '
+        Me.Column43.DataPropertyName = "nombre_producto"
+        Me.Column43.HeaderText = "PRODUCTO"
+        Me.Column43.Name = "Column43"
+        '
+        'Column44
+        '
+        Me.Column44.DataPropertyName = "precio_unitario"
+        Me.Column44.HeaderText = "PRECIO UNITARIO"
+        Me.Column44.Name = "Column44"
+        '
+        'Column45
+        '
+        Me.Column45.DataPropertyName = "cantidad"
+        Me.Column45.HeaderText = "CANTIDAD"
+        Me.Column45.Name = "Column45"
+        '
+        'Column46
+        '
+        Me.Column46.DataPropertyName = "costo_total"
+        Me.Column46.HeaderText = "COSTO TOTAL"
+        Me.Column46.Name = "Column46"
+        '
         'GroupBox7
         '
         Me.GroupBox7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -867,6 +917,42 @@ Partial Class E_frmAutorizarOC
         Me.DataGridView3.Size = New System.Drawing.Size(964, 259)
         Me.DataGridView3.TabIndex = 0
         '
+        'Column47
+        '
+        Me.Column47.DataPropertyName = "id_detalle_oc"
+        Me.Column47.HeaderText = "ID"
+        Me.Column47.Name = "Column47"
+        '
+        'Column48
+        '
+        Me.Column48.DataPropertyName = "cod_producto"
+        Me.Column48.HeaderText = "ID PRODUCTO"
+        Me.Column48.Name = "Column48"
+        '
+        'Column49
+        '
+        Me.Column49.DataPropertyName = "nombre_producto"
+        Me.Column49.HeaderText = "PRODUCTO"
+        Me.Column49.Name = "Column49"
+        '
+        'Column50
+        '
+        Me.Column50.DataPropertyName = "precio_unitario"
+        Me.Column50.HeaderText = "PRECIO UNITARIO"
+        Me.Column50.Name = "Column50"
+        '
+        'Column51
+        '
+        Me.Column51.DataPropertyName = "cantidad"
+        Me.Column51.HeaderText = "CANTIDAD"
+        Me.Column51.Name = "Column51"
+        '
+        'Column52
+        '
+        Me.Column52.DataPropertyName = "costo_total"
+        Me.Column52.HeaderText = "COSTO TOTAL"
+        Me.Column52.Name = "Column52"
+        '
         'GroupBox3
         '
         Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -994,6 +1080,48 @@ Partial Class E_frmAutorizarOC
         Me.DataGridView1.Size = New System.Drawing.Size(971, 175)
         Me.DataGridView1.TabIndex = 64
         '
+        'Column5
+        '
+        Me.Column5.DataPropertyName = "id_oc"
+        Me.Column5.HeaderText = "ID OC"
+        Me.Column5.Name = "Column5"
+        '
+        'Column8
+        '
+        Me.Column8.DataPropertyName = "nombreProveedor"
+        Me.Column8.HeaderText = "PROVEEDOR"
+        Me.Column8.Name = "Column8"
+        '
+        'Column9
+        '
+        Me.Column9.DataPropertyName = "usuario_consignado"
+        Me.Column9.HeaderText = "USUARIO CONSIGNADO"
+        Me.Column9.Name = "Column9"
+        '
+        'Column10
+        '
+        Me.Column10.DataPropertyName = "usuario_autorizo"
+        Me.Column10.HeaderText = "USUARIO AUTORIZO"
+        Me.Column10.Name = "Column10"
+        '
+        'Column11
+        '
+        Me.Column11.DataPropertyName = "estado_final"
+        Me.Column11.HeaderText = "ESTADO"
+        Me.Column11.Name = "Column11"
+        '
+        'Column12
+        '
+        Me.Column12.DataPropertyName = "fecha_autorizacion"
+        Me.Column12.HeaderText = "FECHA AUTORIZACION"
+        Me.Column12.Name = "Column12"
+        '
+        'Column13
+        '
+        Me.Column13.DataPropertyName = "observaciones"
+        Me.Column13.HeaderText = "OBSERVACIONES"
+        Me.Column13.Name = "Column13"
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -1051,6 +1179,42 @@ Partial Class E_frmAutorizarOC
         Me.DataGridView9.RowsDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridView9.Size = New System.Drawing.Size(964, 259)
         Me.DataGridView9.TabIndex = 0
+        '
+        'Column29
+        '
+        Me.Column29.DataPropertyName = "id_detalle_oc"
+        Me.Column29.HeaderText = "ID"
+        Me.Column29.Name = "Column29"
+        '
+        'Column30
+        '
+        Me.Column30.DataPropertyName = "cod_producto"
+        Me.Column30.HeaderText = "ID PRODUCTO"
+        Me.Column30.Name = "Column30"
+        '
+        'Column31
+        '
+        Me.Column31.DataPropertyName = "nombre_producto"
+        Me.Column31.HeaderText = "PRODUCTO"
+        Me.Column31.Name = "Column31"
+        '
+        'Column32
+        '
+        Me.Column32.DataPropertyName = "precio_unitario"
+        Me.Column32.HeaderText = "PRECIO UNITARIO"
+        Me.Column32.Name = "Column32"
+        '
+        'Column33
+        '
+        Me.Column33.DataPropertyName = "cantidad"
+        Me.Column33.HeaderText = "CANTIDAD"
+        Me.Column33.Name = "Column33"
+        '
+        'Column34
+        '
+        Me.Column34.DataPropertyName = "costo_total"
+        Me.Column34.HeaderText = "COSTO TOTAL"
+        Me.Column34.Name = "Column34"
         '
         'GroupBox8
         '
@@ -1269,6 +1433,42 @@ Partial Class E_frmAutorizarOC
         Me.DataGridView10.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DataGridView10.Size = New System.Drawing.Size(972, 259)
         Me.DataGridView10.TabIndex = 0
+        '
+        'Column35
+        '
+        Me.Column35.DataPropertyName = "id_detalle_oc"
+        Me.Column35.HeaderText = "ID"
+        Me.Column35.Name = "Column35"
+        '
+        'Column36
+        '
+        Me.Column36.DataPropertyName = "cod_producto"
+        Me.Column36.HeaderText = "ID PRODUCTO"
+        Me.Column36.Name = "Column36"
+        '
+        'Column37
+        '
+        Me.Column37.DataPropertyName = "nombre_producto"
+        Me.Column37.HeaderText = "PRODUCTO"
+        Me.Column37.Name = "Column37"
+        '
+        'Column38
+        '
+        Me.Column38.DataPropertyName = "precio_unitario"
+        Me.Column38.HeaderText = "PRECIO UNITARIO"
+        Me.Column38.Name = "Column38"
+        '
+        'Column39
+        '
+        Me.Column39.DataPropertyName = "cantidad"
+        Me.Column39.HeaderText = "CANTIDAD"
+        Me.Column39.Name = "Column39"
+        '
+        'Column40
+        '
+        Me.Column40.DataPropertyName = "costo_total"
+        Me.Column40.HeaderText = "COSTO TOTAL"
+        Me.Column40.Name = "Column40"
         '
         'GroupBox9
         '
@@ -1500,6 +1700,42 @@ Partial Class E_frmAutorizarOC
         Me.DataGridView12.Size = New System.Drawing.Size(972, 259)
         Me.DataGridView12.TabIndex = 0
         '
+        'Column53
+        '
+        Me.Column53.DataPropertyName = "id_detale_oc"
+        Me.Column53.HeaderText = "ID"
+        Me.Column53.Name = "Column53"
+        '
+        'Column54
+        '
+        Me.Column54.DataPropertyName = "cod_producto"
+        Me.Column54.HeaderText = "ID PRODUCTO"
+        Me.Column54.Name = "Column54"
+        '
+        'Column55
+        '
+        Me.Column55.DataPropertyName = "nombre_producto"
+        Me.Column55.HeaderText = "PRODUCTO"
+        Me.Column55.Name = "Column55"
+        '
+        'Column56
+        '
+        Me.Column56.DataPropertyName = "precio_unitario"
+        Me.Column56.HeaderText = "PRECIO UNITARIO"
+        Me.Column56.Name = "Column56"
+        '
+        'Column57
+        '
+        Me.Column57.DataPropertyName = "cantidad"
+        Me.Column57.HeaderText = "CANTIDAD"
+        Me.Column57.Name = "Column57"
+        '
+        'Column58
+        '
+        Me.Column58.DataPropertyName = "costo_total"
+        Me.Column58.HeaderText = "COSTO TOTAL"
+        Me.Column58.Name = "Column58"
+        '
         'GroupBox12
         '
         Me.GroupBox12.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -1553,6 +1789,28 @@ Partial Class E_frmAutorizarOC
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(968, 32)
         Me.Panel7.TabIndex = 84
+        '
+        'Button10
+        '
+        Me.Button10.BackColor = System.Drawing.Color.SandyBrown
+        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button10.Location = New System.Drawing.Point(881, 5)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(75, 23)
+        Me.Button10.TabIndex = 87
+        Me.Button10.Text = "Anular"
+        Me.Button10.UseVisualStyleBackColor = False
+        '
+        'Button7
+        '
+        Me.Button7.BackColor = System.Drawing.Color.IndianRed
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button7.Location = New System.Drawing.Point(800, 5)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(75, 23)
+        Me.Button7.TabIndex = 88
+        Me.Button7.Text = "Cerrar"
+        Me.Button7.UseVisualStyleBackColor = False
         '
         'Label29
         '
@@ -1708,264 +1966,6 @@ Partial Class E_frmAutorizarOC
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.Color.IndianRed
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Location = New System.Drawing.Point(800, 5)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(75, 23)
-        Me.Button7.TabIndex = 88
-        Me.Button7.Text = "Cerrar"
-        Me.Button7.UseVisualStyleBackColor = False
-        '
-        'Column29
-        '
-        Me.Column29.DataPropertyName = "id_detalle_oc"
-        Me.Column29.HeaderText = "ID"
-        Me.Column29.Name = "Column29"
-        '
-        'Column30
-        '
-        Me.Column30.DataPropertyName = "cod_producto"
-        Me.Column30.HeaderText = "ID PRODUCTO"
-        Me.Column30.Name = "Column30"
-        '
-        'Column31
-        '
-        Me.Column31.DataPropertyName = "nombre_producto"
-        Me.Column31.HeaderText = "PRODUCTO"
-        Me.Column31.Name = "Column31"
-        '
-        'Column32
-        '
-        Me.Column32.DataPropertyName = "precio_unitario"
-        Me.Column32.HeaderText = "PRECIO UNITARIO"
-        Me.Column32.Name = "Column32"
-        '
-        'Column33
-        '
-        Me.Column33.DataPropertyName = "cantidad"
-        Me.Column33.HeaderText = "CANTIDAD"
-        Me.Column33.Name = "Column33"
-        '
-        'Column34
-        '
-        Me.Column34.DataPropertyName = "costo_total"
-        Me.Column34.HeaderText = "COSTO TOTAL"
-        Me.Column34.Name = "Column34"
-        '
-        'Column41
-        '
-        Me.Column41.DataPropertyName = "id_detalle_oc"
-        Me.Column41.HeaderText = "ID"
-        Me.Column41.Name = "Column41"
-        '
-        'Column42
-        '
-        Me.Column42.DataPropertyName = "cod_producto"
-        Me.Column42.HeaderText = "ID PRODUCTO"
-        Me.Column42.Name = "Column42"
-        '
-        'Column43
-        '
-        Me.Column43.DataPropertyName = "nombre_producto"
-        Me.Column43.HeaderText = "PRODUCTO"
-        Me.Column43.Name = "Column43"
-        '
-        'Column44
-        '
-        Me.Column44.DataPropertyName = "precio_unitario"
-        Me.Column44.HeaderText = "PRECIO UNITARIO"
-        Me.Column44.Name = "Column44"
-        '
-        'Column45
-        '
-        Me.Column45.DataPropertyName = "cantidad"
-        Me.Column45.HeaderText = "CANTIDAD"
-        Me.Column45.Name = "Column45"
-        '
-        'Column46
-        '
-        Me.Column46.DataPropertyName = "costo_total"
-        Me.Column46.HeaderText = "COSTO TOTAL"
-        Me.Column46.Name = "Column46"
-        '
-        'Column47
-        '
-        Me.Column47.DataPropertyName = "id_detalle_oc"
-        Me.Column47.HeaderText = "ID"
-        Me.Column47.Name = "Column47"
-        '
-        'Column48
-        '
-        Me.Column48.DataPropertyName = "cod_producto"
-        Me.Column48.HeaderText = "ID PRODUCTO"
-        Me.Column48.Name = "Column48"
-        '
-        'Column49
-        '
-        Me.Column49.DataPropertyName = "nombre_producto"
-        Me.Column49.HeaderText = "PRODUCTO"
-        Me.Column49.Name = "Column49"
-        '
-        'Column50
-        '
-        Me.Column50.DataPropertyName = "precio_unitario"
-        Me.Column50.HeaderText = "PRECIO UNITARIO"
-        Me.Column50.Name = "Column50"
-        '
-        'Column51
-        '
-        Me.Column51.DataPropertyName = "cantidad"
-        Me.Column51.HeaderText = "CANTIDAD"
-        Me.Column51.Name = "Column51"
-        '
-        'Column52
-        '
-        Me.Column52.DataPropertyName = "costo_total"
-        Me.Column52.HeaderText = "COSTO TOTAL"
-        Me.Column52.Name = "Column52"
-        '
-        'Column35
-        '
-        Me.Column35.DataPropertyName = "id_detalle_oc"
-        Me.Column35.HeaderText = "ID"
-        Me.Column35.Name = "Column35"
-        '
-        'Column36
-        '
-        Me.Column36.DataPropertyName = "cod_producto"
-        Me.Column36.HeaderText = "ID PRODUCTO"
-        Me.Column36.Name = "Column36"
-        '
-        'Column37
-        '
-        Me.Column37.DataPropertyName = "nombre_producto"
-        Me.Column37.HeaderText = "PRODUCTO"
-        Me.Column37.Name = "Column37"
-        '
-        'Column38
-        '
-        Me.Column38.DataPropertyName = "precio_unitario"
-        Me.Column38.HeaderText = "PRECIO UNITARIO"
-        Me.Column38.Name = "Column38"
-        '
-        'Column39
-        '
-        Me.Column39.DataPropertyName = "cantidad"
-        Me.Column39.HeaderText = "CANTIDAD"
-        Me.Column39.Name = "Column39"
-        '
-        'Column40
-        '
-        Me.Column40.DataPropertyName = "costo_total"
-        Me.Column40.HeaderText = "COSTO TOTAL"
-        Me.Column40.Name = "Column40"
-        '
-        'Column5
-        '
-        Me.Column5.DataPropertyName = "id_oc"
-        Me.Column5.HeaderText = "ID OC"
-        Me.Column5.Name = "Column5"
-        '
-        'Column8
-        '
-        Me.Column8.DataPropertyName = "nombreProveedor"
-        Me.Column8.HeaderText = "PROVEEDOR"
-        Me.Column8.Name = "Column8"
-        '
-        'Column9
-        '
-        Me.Column9.DataPropertyName = "usuario_consignado"
-        Me.Column9.HeaderText = "USUARIO CONSIGNADO"
-        Me.Column9.Name = "Column9"
-        '
-        'Column10
-        '
-        Me.Column10.DataPropertyName = "usuario_autorizo"
-        Me.Column10.HeaderText = "USUARIO AUTORIZO"
-        Me.Column10.Name = "Column10"
-        '
-        'Column11
-        '
-        Me.Column11.DataPropertyName = "estado_final"
-        Me.Column11.HeaderText = "ESTADO"
-        Me.Column11.Name = "Column11"
-        '
-        'Column12
-        '
-        Me.Column12.DataPropertyName = "fecha_autorizacion"
-        Me.Column12.HeaderText = "FECHA AUTORIZACION"
-        Me.Column12.Name = "Column12"
-        '
-        'Column13
-        '
-        Me.Column13.DataPropertyName = "observaciones"
-        Me.Column13.HeaderText = "OBSERVACIONES"
-        Me.Column13.Name = "Column13"
-        '
-        'Column53
-        '
-        Me.Column53.DataPropertyName = "id_detale_oc"
-        Me.Column53.HeaderText = "ID"
-        Me.Column53.Name = "Column53"
-        '
-        'Column54
-        '
-        Me.Column54.DataPropertyName = "cod_producto"
-        Me.Column54.HeaderText = "ID PRODUCTO"
-        Me.Column54.Name = "Column54"
-        '
-        'Column55
-        '
-        Me.Column55.DataPropertyName = "nombre_producto"
-        Me.Column55.HeaderText = "PRODUCTO"
-        Me.Column55.Name = "Column55"
-        '
-        'Column56
-        '
-        Me.Column56.DataPropertyName = "precio_unitario"
-        Me.Column56.HeaderText = "PRECIO UNITARIO"
-        Me.Column56.Name = "Column56"
-        '
-        'Column57
-        '
-        Me.Column57.DataPropertyName = "cantidad"
-        Me.Column57.HeaderText = "CANTIDAD"
-        Me.Column57.Name = "Column57"
-        '
-        'Column58
-        '
-        Me.Column58.DataPropertyName = "costo_total"
-        Me.Column58.HeaderText = "COSTO TOTAL"
-        Me.Column58.Name = "Column58"
-        '
-        'Button10
-        '
-        Me.Button10.BackColor = System.Drawing.Color.SandyBrown
-        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button10.Location = New System.Drawing.Point(881, 5)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(75, 23)
-        Me.Button10.TabIndex = 87
-        Me.Button10.Text = "Anular"
-        Me.Button10.UseVisualStyleBackColor = False
-        '
-        'Panel8
-        '
-        Me.Panel8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel8.BackColor = System.Drawing.Color.Orange
-        Me.Panel8.Controls.Add(Me.Label25)
-        Me.Panel8.Controls.Add(Me.Label44)
-        Me.Panel8.Controls.Add(Me.Label43)
-        Me.Panel8.Controls.Add(Me.Label46)
-        Me.Panel8.Location = New System.Drawing.Point(679, 3)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(292, 44)
-        Me.Panel8.TabIndex = 86
-        '
         'E_frmAutorizarOC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1981,6 +1981,8 @@ Partial Class E_frmAutorizarOC
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
@@ -2030,8 +2032,6 @@ Partial Class E_frmAutorizarOC
         CType(Me.DataGridView11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        Me.Panel8.ResumeLayout(False)
-        Me.Panel8.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
