@@ -35,32 +35,36 @@ Partial Class E_EspecificarHojaTrabajo
         Me.txtDescripcionSubArea = New System.Windows.Forms.TextBox()
         Me.txtDescripcionSucursal = New System.Windows.Forms.TextBox()
         Me.lblCodigoGrupo = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(56, 71)
+        Me.Label1.Location = New System.Drawing.Point(42, 58)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(62, 17)
+        Me.Label1.Size = New System.Drawing.Size(47, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Subárea"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(56, 122)
+        Me.Label3.Location = New System.Drawing.Point(42, 99)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(63, 17)
+        Me.Label3.Size = New System.Drawing.Size(48, 13)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Sucursal"
         '
         'lblCodeSubArea
         '
         Me.lblCodeSubArea.AutoSize = True
-        Me.lblCodeSubArea.Location = New System.Drawing.Point(68, 54)
+        Me.lblCodeSubArea.Location = New System.Drawing.Point(51, 44)
+        Me.lblCodeSubArea.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCodeSubArea.Name = "lblCodeSubArea"
-        Me.lblCodeSubArea.Size = New System.Drawing.Size(51, 17)
+        Me.lblCodeSubArea.Size = New System.Drawing.Size(39, 13)
         Me.lblCodeSubArea.TabIndex = 3
         Me.lblCodeSubArea.Text = "Label4"
         Me.lblCodeSubArea.Visible = False
@@ -68,9 +72,10 @@ Partial Class E_EspecificarHojaTrabajo
         'lblCodeSucursal
         '
         Me.lblCodeSucursal.AutoSize = True
-        Me.lblCodeSucursal.Location = New System.Drawing.Point(63, 105)
+        Me.lblCodeSucursal.Location = New System.Drawing.Point(47, 85)
+        Me.lblCodeSucursal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCodeSucursal.Name = "lblCodeSucursal"
-        Me.lblCodeSucursal.Size = New System.Drawing.Size(51, 17)
+        Me.lblCodeSucursal.Size = New System.Drawing.Size(39, 13)
         Me.lblCodeSucursal.TabIndex = 5
         Me.lblCodeSucursal.Text = "Label6"
         Me.lblCodeSucursal.Visible = False
@@ -83,10 +88,10 @@ Partial Class E_EspecificarHojaTrabajo
         Me.btnSubarea.FlatAppearance.BorderSize = 0
         Me.btnSubarea.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubarea.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSubarea.Location = New System.Drawing.Point(140, 68)
-        Me.btnSubarea.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSubarea.Location = New System.Drawing.Point(105, 55)
+        Me.btnSubarea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnSubarea.Name = "btnSubarea"
-        Me.btnSubarea.Size = New System.Drawing.Size(49, 22)
+        Me.btnSubarea.Size = New System.Drawing.Size(37, 18)
         Me.btnSubarea.TabIndex = 118
         Me.btnSubarea.Text = "..."
         Me.btnSubarea.UseVisualStyleBackColor = False
@@ -99,31 +104,31 @@ Partial Class E_EspecificarHojaTrabajo
         Me.btnSucursal.FlatAppearance.BorderSize = 0
         Me.btnSucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSucursal.Location = New System.Drawing.Point(140, 117)
-        Me.btnSucursal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSucursal.Location = New System.Drawing.Point(105, 95)
+        Me.btnSucursal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnSucursal.Name = "btnSucursal"
-        Me.btnSucursal.Size = New System.Drawing.Size(49, 22)
+        Me.btnSucursal.Size = New System.Drawing.Size(37, 18)
         Me.btnSucursal.TabIndex = 120
         Me.btnSucursal.Text = "..."
         Me.btnSucursal.UseVisualStyleBackColor = False
         '
         'txtSubArea
         '
-        Me.txtSubArea.Location = New System.Drawing.Point(195, 66)
-        Me.txtSubArea.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtSubArea.Location = New System.Drawing.Point(146, 54)
+        Me.txtSubArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtSubArea.MaxLength = 20
         Me.txtSubArea.Name = "txtSubArea"
-        Me.txtSubArea.Size = New System.Drawing.Size(117, 22)
+        Me.txtSubArea.Size = New System.Drawing.Size(89, 20)
         Me.txtSubArea.TabIndex = 121
         Me.txtSubArea.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtSucursal
         '
-        Me.txtSucursal.Location = New System.Drawing.Point(195, 117)
-        Me.txtSucursal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtSucursal.Location = New System.Drawing.Point(146, 95)
+        Me.txtSucursal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtSucursal.MaxLength = 20
         Me.txtSucursal.Name = "txtSucursal"
-        Me.txtSucursal.Size = New System.Drawing.Size(117, 22)
+        Me.txtSucursal.Size = New System.Drawing.Size(89, 20)
         Me.txtSucursal.TabIndex = 123
         Me.txtSucursal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -133,48 +138,59 @@ Partial Class E_EspecificarHojaTrabajo
         Me.btnAbrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAbrir.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAbrir.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnAbrir.Location = New System.Drawing.Point(263, 176)
-        Me.btnAbrir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAbrir.Location = New System.Drawing.Point(197, 143)
+        Me.btnAbrir.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnAbrir.Name = "btnAbrir"
-        Me.btnAbrir.Size = New System.Drawing.Size(105, 34)
+        Me.btnAbrir.Size = New System.Drawing.Size(79, 28)
         Me.btnAbrir.TabIndex = 130
         Me.btnAbrir.Text = "Abrir"
         Me.btnAbrir.UseVisualStyleBackColor = False
         '
         'txtDescripcionSubArea
         '
-        Me.txtDescripcionSubArea.Location = New System.Drawing.Point(318, 66)
-        Me.txtDescripcionSubArea.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtDescripcionSubArea.Location = New System.Drawing.Point(238, 54)
+        Me.txtDescripcionSubArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtDescripcionSubArea.Name = "txtDescripcionSubArea"
         Me.txtDescripcionSubArea.ReadOnly = True
-        Me.txtDescripcionSubArea.Size = New System.Drawing.Size(228, 22)
+        Me.txtDescripcionSubArea.Size = New System.Drawing.Size(172, 20)
         Me.txtDescripcionSubArea.TabIndex = 133
         '
         'txtDescripcionSucursal
         '
-        Me.txtDescripcionSucursal.Location = New System.Drawing.Point(318, 117)
-        Me.txtDescripcionSucursal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtDescripcionSucursal.Location = New System.Drawing.Point(238, 95)
+        Me.txtDescripcionSucursal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtDescripcionSucursal.Name = "txtDescripcionSucursal"
         Me.txtDescripcionSucursal.ReadOnly = True
-        Me.txtDescripcionSucursal.Size = New System.Drawing.Size(228, 22)
+        Me.txtDescripcionSucursal.Size = New System.Drawing.Size(172, 20)
         Me.txtDescripcionSucursal.TabIndex = 135
         '
         'lblCodigoGrupo
         '
         Me.lblCodigoGrupo.AutoSize = True
-        Me.lblCodigoGrupo.Location = New System.Drawing.Point(63, 33)
+        Me.lblCodigoGrupo.Location = New System.Drawing.Point(47, 27)
+        Me.lblCodigoGrupo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCodigoGrupo.Name = "lblCodigoGrupo"
-        Me.lblCodigoGrupo.Size = New System.Drawing.Size(51, 17)
+        Me.lblCodigoGrupo.Size = New System.Drawing.Size(39, 13)
         Me.lblCodigoGrupo.TabIndex = 136
         Me.lblCodigoGrupo.Text = "Label7"
         Me.lblCodigoGrupo.Visible = False
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 189)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(466, 22)
+        Me.StatusStrip1.TabIndex = 137
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'E_EspecificarHojaTrabajo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(621, 260)
+        Me.ClientSize = New System.Drawing.Size(466, 211)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.lblCodigoGrupo)
         Me.Controls.Add(Me.txtDescripcionSucursal)
         Me.Controls.Add(Me.txtDescripcionSubArea)
@@ -187,6 +203,8 @@ Partial Class E_EspecificarHojaTrabajo
         Me.Controls.Add(Me.lblCodeSubArea)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "E_EspecificarHojaTrabajo"
         Me.Text = "Especificación Hoja de Trabajo"
         Me.ResumeLayout(False)
@@ -206,4 +224,5 @@ Partial Class E_EspecificarHojaTrabajo
     Friend WithEvents txtDescripcionSubArea As TextBox
     Friend WithEvents txtDescripcionSucursal As TextBox
     Friend WithEvents lblCodigoGrupo As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

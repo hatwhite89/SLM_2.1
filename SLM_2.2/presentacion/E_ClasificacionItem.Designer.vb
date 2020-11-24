@@ -50,6 +50,7 @@ Partial Class E_ClasificacionItem
         '
         'gbxclasificacion
         '
+        Me.gbxclasificacion.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.gbxclasificacion.Controls.Add(Me.lblcode)
         Me.gbxclasificacion.Controls.Add(Me.txtcomentarioTipo)
         Me.gbxclasificacion.Controls.Add(Me.rtxtNombre)
@@ -64,9 +65,9 @@ Partial Class E_ClasificacionItem
         Me.gbxclasificacion.Controls.Add(Me.lblNombre)
         Me.gbxclasificacion.Controls.Add(Me.txtcodigo)
         Me.gbxclasificacion.Location = New System.Drawing.Point(4, 11)
-        Me.gbxclasificacion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxclasificacion.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxclasificacion.Name = "gbxclasificacion"
-        Me.gbxclasificacion.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxclasificacion.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxclasificacion.Size = New System.Drawing.Size(703, 135)
         Me.gbxclasificacion.TabIndex = 117
         Me.gbxclasificacion.TabStop = False
@@ -85,7 +86,7 @@ Partial Class E_ClasificacionItem
         'txtcomentarioTipo
         '
         Me.txtcomentarioTipo.Location = New System.Drawing.Point(175, 51)
-        Me.txtcomentarioTipo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcomentarioTipo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcomentarioTipo.Name = "txtcomentarioTipo"
         Me.txtcomentarioTipo.ReadOnly = True
         Me.txtcomentarioTipo.Size = New System.Drawing.Size(128, 20)
@@ -94,7 +95,7 @@ Partial Class E_ClasificacionItem
         'rtxtNombre
         '
         Me.rtxtNombre.Location = New System.Drawing.Point(375, 17)
-        Me.rtxtNombre.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtNombre.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtNombre.MaxLength = 100
         Me.rtxtNombre.Name = "rtxtNombre"
         Me.rtxtNombre.Size = New System.Drawing.Size(324, 68)
@@ -108,7 +109,7 @@ Partial Class E_ClasificacionItem
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.Color.Black
         Me.btnmodificar.Location = New System.Drawing.Point(177, 100)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
         Me.btnmodificar.TabIndex = 114
@@ -122,7 +123,7 @@ Partial Class E_ClasificacionItem
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.Color.Black
         Me.btnnuevo.Location = New System.Drawing.Point(18, 100)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
         Me.btnnuevo.TabIndex = 113
@@ -136,7 +137,7 @@ Partial Class E_ClasificacionItem
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.Color.Black
         Me.btnguardar.Location = New System.Drawing.Point(101, 100)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(72, 28)
         Me.btnguardar.TabIndex = 112
@@ -170,7 +171,7 @@ Partial Class E_ClasificacionItem
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.Color.Black
         Me.btncancelar.Location = New System.Drawing.Point(253, 100)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(68, 28)
         Me.btncancelar.TabIndex = 37
@@ -186,7 +187,7 @@ Partial Class E_ClasificacionItem
         Me.btnbuscarTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarTipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnbuscarTipo.Location = New System.Drawing.Point(64, 51)
-        Me.btnbuscarTipo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnbuscarTipo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnbuscarTipo.Name = "btnbuscarTipo"
         Me.btnbuscarTipo.Size = New System.Drawing.Size(37, 18)
         Me.btnbuscarTipo.TabIndex = 108
@@ -196,7 +197,7 @@ Partial Class E_ClasificacionItem
         'txtcodigoTipo
         '
         Me.txtcodigoTipo.Location = New System.Drawing.Point(105, 51)
-        Me.txtcodigoTipo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoTipo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoTipo.MaxLength = 20
         Me.txtcodigoTipo.Name = "txtcodigoTipo"
         Me.txtcodigoTipo.Size = New System.Drawing.Size(67, 20)
@@ -215,7 +216,7 @@ Partial Class E_ClasificacionItem
         'txtcodigo
         '
         Me.txtcodigo.Location = New System.Drawing.Point(64, 13)
-        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(138, 20)
@@ -224,15 +225,16 @@ Partial Class E_ClasificacionItem
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtNombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblNombreB)
         Me.gbxbusqueda.Location = New System.Drawing.Point(4, 150)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Size = New System.Drawing.Size(703, 344)
         Me.gbxbusqueda.TabIndex = 116
         Me.gbxbusqueda.TabStop = False
@@ -252,9 +254,10 @@ Partial Class E_ClasificacionItem
         '
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
+        Me.dgbtabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(4, 47)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
@@ -276,7 +279,7 @@ Partial Class E_ClasificacionItem
         'txtNombreB
         '
         Me.txtNombreB.Location = New System.Drawing.Point(79, 23)
-        Me.txtNombreB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtNombreB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtNombreB.MaxLength = 100
         Me.txtNombreB.Name = "txtNombreB"
         Me.txtNombreB.Size = New System.Drawing.Size(620, 20)
@@ -301,7 +304,7 @@ Partial Class E_ClasificacionItem
         Me.Controls.Add(Me.gbxclasificacion)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "E_ClasificacionItem"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clasificación Item"
