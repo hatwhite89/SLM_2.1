@@ -2,8 +2,9 @@
     Private Sub A_Candidatos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try
-
+            alternarColoFilasDatagridview(dtCandidatos)
             cargardata()
+
 
         Catch ex As Exception
 
@@ -298,5 +299,54 @@
 
             Informe()
         End If
+    End Sub
+
+    Private Sub dtCandidatos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtCandidatos.CellClick
+        Try
+            Dim area As New ClsArea
+            Dim profesion As New ClsProfesion
+            Dim cargo As New ClsPuestoTrabajo
+
+            Dim dt As New DataTable
+            Dim row As DataRow
+
+            dt = dtCandidatos.DataSource
+            row = dt.Rows(e.RowIndex)
+
+            lblCandidato.Text = row("codigo")
+            lblcodArea.Text = row("codigoArea")
+            lblcodCargo.Text = row("codigoPuestoTrabajo")
+            txtDescripcion.Text = row("descripcionExperiencia")
+            txtContacto.Text = row("telContacto")
+            lblcodProfesion.Text = row("codigoProfesion")
+            dtpFecha.Value = row("fechaAplicacion")
+            txtNombre.Text = row("nombre")
+
+            'buscar area
+            area.codigo_ = Convert.ToInt32(lblcodArea.Text)
+            dt = area.BuscarArea
+            row = dt.Rows(0)
+            txtArea.Text = row("nombre")
+
+            'buscar profesion
+            profesion.Codigo_ = Convert.ToInt32(lblcodProfesion.Text)
+            dt = profesion.BuscarProfesionCode
+            row = dt.Rows(0)
+            txtProfesion.Text = row("descripcion")
+
+            'buscar cargo
+            cargo.Codigo_ = Convert.ToInt32(lblcodCargo.Text)
+            dt = cargo.BuscarPuestoTrabajoCode
+            row = dt.Rows(0)
+            txtCargo.Text = row("descripcion")
+
+            btnNuevo.Enabled = True
+            btnModificar.Enabled = True
+            btnEliminar.Enabled = True
+            btnGuardar.Enabled = False
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

@@ -25,6 +25,7 @@ Partial Class M_BuscarCapacitaciones
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_BuscarCapacitaciones))
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.dtpHasta = New System.Windows.Forms.DateTimePicker()
         Me.dtpDesde = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -38,10 +39,11 @@ Partial Class M_BuscarCapacitaciones
         Me.lbltipoCta = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnumeroB = New System.Windows.Forms.Label()
-        Me.lblform = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -49,8 +51,12 @@ Partial Class M_BuscarCapacitaciones
         '
         'gbxbusqueda
         '
-        Me.gbxbusqueda.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.gbxbusqueda.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxbusqueda.BackColor = System.Drawing.Color.AliceBlue
+        Me.gbxbusqueda.Controls.Add(Me.Button4)
+        Me.gbxbusqueda.Controls.Add(Me.Label3)
         Me.gbxbusqueda.Controls.Add(Me.btnBuscar)
         Me.gbxbusqueda.Controls.Add(Me.lblform)
         Me.gbxbusqueda.Controls.Add(Me.dtpHasta)
@@ -67,9 +73,9 @@ Partial Class M_BuscarCapacitaciones
         Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnumeroB)
         Me.gbxbusqueda.Location = New System.Drawing.Point(10, 44)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Size = New System.Drawing.Size(698, 539)
         Me.gbxbusqueda.TabIndex = 118
         Me.gbxbusqueda.TabStop = False
@@ -77,19 +83,31 @@ Partial Class M_BuscarCapacitaciones
         '
         'btnBuscar
         '
+        Me.btnBuscar.BackColor = System.Drawing.Color.Yellow
         Me.btnBuscar.Location = New System.Drawing.Point(353, 18)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(63, 28)
         Me.btnBuscar.TabIndex = 125
         Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = True
+        Me.btnBuscar.UseVisualStyleBackColor = False
+        '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(310, 6)
+        Me.lblform.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(52, 13)
+        Me.lblform.TabIndex = 126
+        Me.lblform.Text = "formulario"
+        Me.lblform.Visible = False
         '
         'dtpHasta
         '
         Me.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpHasta.Location = New System.Drawing.Point(224, 21)
-        Me.dtpHasta.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpHasta.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpHasta.Name = "dtpHasta"
         Me.dtpHasta.Size = New System.Drawing.Size(98, 20)
         Me.dtpHasta.TabIndex = 124
@@ -98,7 +116,7 @@ Partial Class M_BuscarCapacitaciones
         '
         Me.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpDesde.Location = New System.Drawing.Point(70, 21)
-        Me.dtpDesde.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpDesde.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpDesde.Name = "dtpDesde"
         Me.dtpDesde.Size = New System.Drawing.Size(98, 20)
         Me.dtpDesde.TabIndex = 123
@@ -127,7 +145,7 @@ Partial Class M_BuscarCapacitaciones
         '
         Me.lbltotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(4, 524)
+        Me.lbltotal.Location = New System.Drawing.Point(4, 517)
         Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(155, 13)
@@ -136,12 +154,13 @@ Partial Class M_BuscarCapacitaciones
         '
         'btnnueva
         '
+        Me.btnnueva.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnnueva.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnnueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnueva.ForeColor = System.Drawing.Color.White
         Me.btnnueva.Location = New System.Drawing.Point(530, 11)
-        Me.btnnueva.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnueva.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnueva.Name = "btnnueva"
         Me.btnnueva.Size = New System.Drawing.Size(164, 28)
         Me.btnnueva.TabIndex = 120
@@ -152,7 +171,7 @@ Partial Class M_BuscarCapacitaciones
         '
         Me.lblcantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(175, 524)
+        Me.lblcantidad.Location = New System.Drawing.Point(175, 517)
         Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcantidad.Name = "lblcantidad"
         Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
@@ -162,7 +181,7 @@ Partial Class M_BuscarCapacitaciones
         'txtProveedorB
         '
         Me.txtProveedorB.Location = New System.Drawing.Point(442, 69)
-        Me.txtProveedorB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtProveedorB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtProveedorB.MaxLength = 20
         Me.txtProveedorB.Name = "txtProveedorB"
         Me.txtProveedorB.Size = New System.Drawing.Size(210, 20)
@@ -189,15 +208,15 @@ Partial Class M_BuscarCapacitaciones
         Me.dgbtabla.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgbtabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(6, 105)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Location = New System.Drawing.Point(6, 123)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersVisible = False
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(688, 392)
+        Me.dgbtabla.Size = New System.Drawing.Size(688, 388)
         Me.dgbtabla.TabIndex = 119
         '
         'lbltipoCta
@@ -213,7 +232,7 @@ Partial Class M_BuscarCapacitaciones
         'txtnombreB
         '
         Me.txtnombreB.Location = New System.Drawing.Point(92, 69)
-        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(210, 20)
@@ -229,22 +248,11 @@ Partial Class M_BuscarCapacitaciones
         Me.lblnumeroB.TabIndex = 114
         Me.lblnumeroB.Text = "Proveedor"
         '
-        'lblform
-        '
-        Me.lblform.AutoSize = True
-        Me.lblform.Location = New System.Drawing.Point(310, 6)
-        Me.lblform.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblform.Name = "lblform"
-        Me.lblform.Size = New System.Drawing.Size(52, 13)
-        Me.lblform.TabIndex = 126
-        Me.lblform.Text = "formulario"
-        Me.lblform.Visible = False
-        '
         'Panel1
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Location = New System.Drawing.Point(0, -3)
         Me.Panel1.Name = "Panel1"
@@ -264,12 +272,35 @@ Partial Class M_BuscarCapacitaciones
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 585)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
         Me.StatusStrip1.TabIndex = 139
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(195, 103)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(327, 13)
+        Me.Label3.TabIndex = 127
+        Me.Label3.Text = "Seleccione la fila y haga doble click para abrir el detalle"
+        '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.Color.Green
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button4.Location = New System.Drawing.Point(618, 95)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 128
+        Me.Button4.Text = "Excel"
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'M_BuscarCapacitaciones
         '
@@ -282,7 +313,7 @@ Partial Class M_BuscarCapacitaciones
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_BuscarCapacitaciones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SLM -"
@@ -315,4 +346,6 @@ Partial Class M_BuscarCapacitaciones
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label11 As Label
     Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Button4 As Button
 End Class

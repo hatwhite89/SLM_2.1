@@ -24,6 +24,7 @@ Partial Class M_Contratos
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Contratos))
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
@@ -41,7 +42,7 @@ Partial Class M_Contratos
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxsucursal.SuspendLayout()
@@ -53,6 +54,8 @@ Partial Class M_Contratos
         Me.gbxbusqueda.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxbusqueda.BackColor = System.Drawing.Color.AliceBlue
+        Me.gbxbusqueda.Controls.Add(Me.Label6)
         Me.gbxbusqueda.Controls.Add(Me.Button4)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
@@ -69,11 +72,24 @@ Partial Class M_Contratos
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR CONTRATO"
         '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.Color.Green
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button4.Location = New System.Drawing.Point(624, 22)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 118
+        Me.Button4.Text = "Excel"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
         'lblcantidad
         '
         Me.lblcantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(222, 343)
+        Me.lblcantidad.Location = New System.Drawing.Point(222, 337)
         Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcantidad.Name = "lblcantidad"
         Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
@@ -90,21 +106,21 @@ Partial Class M_Contratos
         Me.dgbtabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgbtabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(8, 48)
+        Me.dgbtabla.Location = New System.Drawing.Point(8, 72)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(688, 293)
+        Me.dgbtabla.Size = New System.Drawing.Size(688, 259)
         Me.dgbtabla.TabIndex = 22
         '
         'lbltotal
         '
         Me.lbltotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(5, 343)
+        Me.lbltotal.Location = New System.Drawing.Point(5, 337)
         Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(130, 13)
@@ -136,6 +152,7 @@ Partial Class M_Contratos
         '
         Me.gbxsucursal.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxsucursal.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.gbxsucursal.Controls.Add(Me.lbldireccion1)
         Me.gbxsucursal.Controls.Add(Me.rtxtdescripcion)
         Me.gbxsucursal.Controls.Add(Me.lblcodigo)
@@ -195,7 +212,7 @@ Partial Class M_Contratos
         'btnmodificar
         '
         Me.btnmodificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnmodificar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnmodificar.BackColor = System.Drawing.Color.Yellow
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.Color.Black
         Me.btnmodificar.Location = New System.Drawing.Point(571, 8)
@@ -209,7 +226,7 @@ Partial Class M_Contratos
         'btncancelar
         '
         Me.btncancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btncancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btncancelar.BackColor = System.Drawing.Color.LightSalmon
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.Color.Black
         Me.btncancelar.Location = New System.Drawing.Point(647, 8)
@@ -237,7 +254,7 @@ Partial Class M_Contratos
         'btnguardar
         '
         Me.btnguardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnguardar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnguardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.Color.Black
         Me.btnguardar.Location = New System.Drawing.Point(495, 8)
@@ -250,7 +267,7 @@ Partial Class M_Contratos
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 522)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
@@ -261,7 +278,7 @@ Partial Class M_Contratos
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.btnnuevo)
         Me.Panel1.Controls.Add(Me.btnmodificar)
@@ -283,18 +300,15 @@ Partial Class M_Contratos
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Mantenimiento Contratos"
         '
-        'Button4
+        'Label6
         '
-        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.BackColor = System.Drawing.Color.Green
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button4.Location = New System.Drawing.Point(624, 22)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 118
-        Me.Button4.Text = "Excel"
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(222, 50)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(272, 13)
+        Me.Label6.TabIndex = 119
+        Me.Label6.Text = "Seleccione una fila para cargar la información "
         '
         'M_Contratos
         '
@@ -343,4 +357,5 @@ Partial Class M_Contratos
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents Button4 As Button
+    Friend WithEvents Label6 As Label
 End Class
