@@ -44,6 +44,7 @@ Partial Class A_ConfiguracionCorreo
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -54,6 +55,7 @@ Partial Class A_ConfiguracionCorreo
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.lblCodigo)
         Me.GroupBox1.Controls.Add(Me.txtCorreoNoti)
@@ -71,7 +73,7 @@ Partial Class A_ConfiguracionCorreo
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.Location = New System.Drawing.Point(10, 53)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(570, 235)
+        Me.GroupBox1.Size = New System.Drawing.Size(564, 241)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Servidor de Correo"
@@ -79,12 +81,13 @@ Partial Class A_ConfiguracionCorreo
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(332, 66)
+        Me.Button1.BackColor = System.Drawing.Color.Yellow
+        Me.Button1.Location = New System.Drawing.Point(326, 66)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(34, 23)
         Me.Button1.TabIndex = 15
         Me.Button1.Text = "Ver"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'lblCodigo
         '
@@ -103,7 +106,7 @@ Partial Class A_ConfiguracionCorreo
         Me.txtCorreoNoti.Location = New System.Drawing.Point(137, 190)
         Me.txtCorreoNoti.MaxLength = 150
         Me.txtCorreoNoti.Name = "txtCorreoNoti"
-        Me.txtCorreoNoti.Size = New System.Drawing.Size(246, 20)
+        Me.txtCorreoNoti.Size = New System.Drawing.Size(240, 20)
         Me.txtCorreoNoti.TabIndex = 5
         '
         'txtHost
@@ -113,7 +116,7 @@ Partial Class A_ConfiguracionCorreo
         Me.txtHost.Location = New System.Drawing.Point(81, 120)
         Me.txtHost.MaxLength = 150
         Me.txtHost.Name = "txtHost"
-        Me.txtHost.Size = New System.Drawing.Size(246, 20)
+        Me.txtHost.Size = New System.Drawing.Size(240, 20)
         Me.txtHost.TabIndex = 3
         '
         'txtPuerto
@@ -132,7 +135,7 @@ Partial Class A_ConfiguracionCorreo
         Me.txtPassword.MaxLength = 30
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(246, 20)
+        Me.txtPassword.Size = New System.Drawing.Size(240, 20)
         Me.txtPassword.TabIndex = 1
         '
         'txtCorreoSalida
@@ -142,7 +145,7 @@ Partial Class A_ConfiguracionCorreo
         Me.txtCorreoSalida.Location = New System.Drawing.Point(81, 41)
         Me.txtCorreoSalida.MaxLength = 150
         Me.txtCorreoSalida.Name = "txtCorreoSalida"
-        Me.txtCorreoSalida.Size = New System.Drawing.Size(246, 20)
+        Me.txtCorreoSalida.Size = New System.Drawing.Size(240, 20)
         Me.txtCorreoSalida.TabIndex = 0
         '
         'chkSSL
@@ -203,18 +206,19 @@ Partial Class A_ConfiguracionCorreo
         'btnProbar
         '
         Me.btnProbar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnProbar.Location = New System.Drawing.Point(393, 189)
+        Me.btnProbar.BackColor = System.Drawing.Color.Yellow
+        Me.btnProbar.Location = New System.Drawing.Point(387, 189)
         Me.btnProbar.Name = "btnProbar"
-        Me.btnProbar.Size = New System.Drawing.Size(96, 23)
+        Me.btnProbar.Size = New System.Drawing.Size(139, 23)
         Me.btnProbar.TabIndex = 6
         Me.btnProbar.Text = "Probar Conexión"
-        Me.btnProbar.UseVisualStyleBackColor = True
+        Me.btnProbar.UseVisualStyleBackColor = False
         '
         'PictureBox1
         '
         Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(388, 33)
+        Me.PictureBox1.Location = New System.Drawing.Point(382, 33)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(144, 139)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -224,9 +228,9 @@ Partial Class A_ConfiguracionCorreo
         'btnGuardar
         '
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGuardar.BackColor = System.Drawing.Color.White
+        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(529, 10)
+        Me.btnGuardar.Location = New System.Drawing.Point(523, 10)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 7
@@ -236,9 +240,9 @@ Partial Class A_ConfiguracionCorreo
         'btnCerrar
         '
         Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCerrar.BackColor = System.Drawing.Color.White
+        Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(691, 10)
+        Me.btnCerrar.Location = New System.Drawing.Point(685, 10)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
         Me.btnCerrar.TabIndex = 9
@@ -248,9 +252,9 @@ Partial Class A_ConfiguracionCorreo
         'btnModificar
         '
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Location = New System.Drawing.Point(610, 10)
+        Me.btnModificar.Location = New System.Drawing.Point(604, 10)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 8
@@ -261,14 +265,14 @@ Partial Class A_ConfiguracionCorreo
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.btnModificar)
         Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Controls.Add(Me.btnGuardar)
         Me.Panel1.Location = New System.Drawing.Point(-183, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(774, 47)
+        Me.Panel1.Size = New System.Drawing.Size(768, 47)
         Me.Panel1.TabIndex = 10
         '
         'Label6
@@ -282,14 +286,25 @@ Partial Class A_ConfiguracionCorreo
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Configuración de Correo"
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 302)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(584, 22)
+        Me.StatusStrip1.TabIndex = 11
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_ConfiguracionCorreo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(590, 297)
+        Me.ClientSize = New System.Drawing.Size(584, 324)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "A_ConfiguracionCorreo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -300,6 +315,7 @@ Partial Class A_ConfiguracionCorreo
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -324,4 +340,5 @@ Partial Class A_ConfiguracionCorreo
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label6 As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

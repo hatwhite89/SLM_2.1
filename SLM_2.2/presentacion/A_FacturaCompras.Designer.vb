@@ -58,6 +58,12 @@ Partial Class A_FacturaCompras
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dtDetalleFactura = New System.Windows.Forms.DataGridView()
+        Me.codDetalle = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.area = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Sede = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnRegresar = New System.Windows.Forms.Button()
@@ -65,12 +71,6 @@ Partial Class A_FacturaCompras
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.codDetalle = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.area = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Sede = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,6 +81,7 @@ Partial Class A_FacturaCompras
         '
         Me.gbxInfoFact.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxInfoFact.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.gbxInfoFact.Controls.Add(Me.lblSaldoPend)
         Me.gbxInfoFact.Controls.Add(Me.Label16)
         Me.gbxInfoFact.Controls.Add(Me.lblCodTerminoPago)
@@ -411,7 +412,7 @@ Partial Class A_FacturaCompras
         'btnModificar
         '
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.Enabled = False
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -426,7 +427,7 @@ Partial Class A_FacturaCompras
         'btnGuardar
         '
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGuardar.BackColor = System.Drawing.Color.White
+        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.Black
@@ -442,6 +443,7 @@ Partial Class A_FacturaCompras
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.dtDetalleFactura)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 236)
         Me.GroupBox1.Name = "GroupBox1"
@@ -468,6 +470,43 @@ Partial Class A_FacturaCompras
         Me.dtDetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.dtDetalleFactura.Size = New System.Drawing.Size(739, 288)
         Me.dtDetalleFactura.TabIndex = 10
+        '
+        'codDetalle
+        '
+        Me.codDetalle.HeaderText = "codDetalle"
+        Me.codDetalle.Name = "codDetalle"
+        Me.codDetalle.ReadOnly = True
+        '
+        'Cuenta
+        '
+        Me.Cuenta.HeaderText = "Cuenta"
+        Me.Cuenta.MaxInputLength = 10
+        Me.Cuenta.Name = "Cuenta"
+        '
+        'area
+        '
+        Me.area.HeaderText = "Area"
+        Me.area.MaxInputLength = 10
+        Me.area.Name = "area"
+        '
+        'Sede
+        '
+        Me.Sede.HeaderText = "Sede"
+        Me.Sede.MaxInputLength = 10
+        Me.Sede.Name = "Sede"
+        '
+        'Descripción
+        '
+        Me.Descripción.HeaderText = "Descripción"
+        Me.Descripción.MaxInputLength = 200
+        Me.Descripción.Name = "Descripción"
+        Me.Descripción.ReadOnly = True
+        '
+        'Monto
+        '
+        Me.Monto.HeaderText = "Monto"
+        Me.Monto.MaxInputLength = 10
+        Me.Monto.Name = "Monto"
         '
         'lblTotal
         '
@@ -519,7 +558,7 @@ Partial Class A_FacturaCompras
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Controls.Add(Me.btnGuardar)
         Me.Panel1.Controls.Add(Me.btnCrear)
@@ -534,7 +573,7 @@ Partial Class A_FacturaCompras
         'btnCerrar
         '
         Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCerrar.BackColor = System.Drawing.Color.White
+        Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCerrar.FlatAppearance.BorderSize = 0
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.ForeColor = System.Drawing.Color.Black
@@ -549,48 +588,11 @@ Partial Class A_FacturaCompras
         '
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel2.Location = New System.Drawing.Point(-1, 570)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(770, 22)
         Me.Panel2.TabIndex = 17
-        '
-        'codDetalle
-        '
-        Me.codDetalle.HeaderText = "codDetalle"
-        Me.codDetalle.Name = "codDetalle"
-        Me.codDetalle.ReadOnly = True
-        '
-        'Cuenta
-        '
-        Me.Cuenta.HeaderText = "Cuenta"
-        Me.Cuenta.MaxInputLength = 10
-        Me.Cuenta.Name = "Cuenta"
-        '
-        'area
-        '
-        Me.area.HeaderText = "Area"
-        Me.area.MaxInputLength = 10
-        Me.area.Name = "area"
-        '
-        'Sede
-        '
-        Me.Sede.HeaderText = "Sede"
-        Me.Sede.MaxInputLength = 10
-        Me.Sede.Name = "Sede"
-        '
-        'Descripción
-        '
-        Me.Descripción.HeaderText = "Descripción"
-        Me.Descripción.MaxInputLength = 200
-        Me.Descripción.Name = "Descripción"
-        Me.Descripción.ReadOnly = True
-        '
-        'Monto
-        '
-        Me.Monto.HeaderText = "Monto"
-        Me.Monto.MaxInputLength = 10
-        Me.Monto.Name = "Monto"
         '
         'A_FacturaCompras
         '
@@ -604,6 +606,7 @@ Partial Class A_FacturaCompras
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoFact)
         Me.Controls.Add(Me.Panel2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "A_FacturaCompras"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -11,4 +11,8 @@
 
         End Try
     End Sub
+
+    Private Sub A_VistaPlanillaExcel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        alternarColoFilasDatagridview(dtPlanilla)
+    End Sub
 End Class

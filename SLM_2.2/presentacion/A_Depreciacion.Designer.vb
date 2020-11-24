@@ -24,12 +24,9 @@ Partial Class A_Depreciacion
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Depreciacion))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnLimpiar = New System.Windows.Forms.Button()
-        Me.btnCalcular = New System.Windows.Forms.Button()
         Me.txtSede = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtTipo = New System.Windows.Forms.TextBox()
@@ -50,6 +47,10 @@ Partial Class A_Depreciacion
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtCosto = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnLimpiar = New System.Windows.Forms.Button()
+        Me.btnCalcular = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dtDepreciacion = New System.Windows.Forms.DataGridView()
         Me.fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -57,18 +58,20 @@ Partial Class A_Depreciacion
         Me.DepreciacionAcumulada = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ValorAnual = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnExportar = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dtDepreciacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Button1)
@@ -99,16 +102,15 @@ Partial Class A_Depreciacion
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Activo"
         '
-        'btnModificar
+        'PictureBox1
         '
-        Me.btnModificar.BackColor = System.Drawing.Color.White
-        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Location = New System.Drawing.Point(721, 10)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(90, 28)
-        Me.btnModificar.TabIndex = 11
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = False
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(190, 333)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(235, 138)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 31
+        Me.PictureBox1.TabStop = False
         '
         'Label5
         '
@@ -128,39 +130,6 @@ Partial Class A_Depreciacion
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "..."
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.BackColor = System.Drawing.Color.White
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(627, 10)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(90, 28)
-        Me.btnGuardar.TabIndex = 10
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = False
-        '
-        'btnLimpiar
-        '
-        Me.btnLimpiar.BackColor = System.Drawing.Color.White
-        Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLimpiar.Location = New System.Drawing.Point(817, 10)
-        Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(90, 28)
-        Me.btnLimpiar.TabIndex = 12
-        Me.btnLimpiar.Text = "Cancelar"
-        Me.btnLimpiar.UseVisualStyleBackColor = False
-        '
-        'btnCalcular
-        '
-        Me.btnCalcular.BackColor = System.Drawing.Color.White
-        Me.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCalcular.Location = New System.Drawing.Point(435, 10)
-        Me.btnCalcular.Name = "btnCalcular"
-        Me.btnCalcular.Size = New System.Drawing.Size(90, 28)
-        Me.btnCalcular.TabIndex = 9
-        Me.btnCalcular.Text = "Calcular"
-        Me.btnCalcular.UseVisualStyleBackColor = False
         '
         'txtSede
         '
@@ -342,8 +311,55 @@ Partial Class A_Depreciacion
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Costo:"
         '
+        'btnModificar
+        '
+        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Location = New System.Drawing.Point(721, 10)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(90, 28)
+        Me.btnModificar.TabIndex = 11
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.Location = New System.Drawing.Point(627, 10)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(90, 28)
+        Me.btnGuardar.TabIndex = 10
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = False
+        '
+        'btnLimpiar
+        '
+        Me.btnLimpiar.BackColor = System.Drawing.Color.LightSalmon
+        Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLimpiar.Location = New System.Drawing.Point(817, 10)
+        Me.btnLimpiar.Name = "btnLimpiar"
+        Me.btnLimpiar.Size = New System.Drawing.Size(90, 28)
+        Me.btnLimpiar.TabIndex = 12
+        Me.btnLimpiar.Text = "Cancelar"
+        Me.btnLimpiar.UseVisualStyleBackColor = False
+        '
+        'btnCalcular
+        '
+        Me.btnCalcular.BackColor = System.Drawing.Color.White
+        Me.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalcular.Location = New System.Drawing.Point(435, 10)
+        Me.btnCalcular.Name = "btnCalcular"
+        Me.btnCalcular.Size = New System.Drawing.Size(90, 28)
+        Me.btnCalcular.TabIndex = 9
+        Me.btnCalcular.Text = "Calcular"
+        Me.btnCalcular.UseVisualStyleBackColor = False
+        '
         'GroupBox2
         '
+        Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.dtDepreciacion)
         Me.GroupBox2.Location = New System.Drawing.Point(449, 57)
         Me.GroupBox2.Name = "GroupBox2"
@@ -355,6 +371,7 @@ Partial Class A_Depreciacion
         'dtDepreciacion
         '
         Me.dtDepreciacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtDepreciacion.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.dtDepreciacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDepreciacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fecha, Me.Depre, Me.DepreciacionAcumulada, Me.ValorAnual})
         Me.dtDepreciacion.Dock = System.Windows.Forms.DockStyle.Fill
@@ -386,7 +403,7 @@ Partial Class A_Depreciacion
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnExportar)
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.btnModificar)
@@ -397,6 +414,17 @@ Partial Class A_Depreciacion
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1052, 52)
         Me.Panel1.TabIndex = 13
+        '
+        'btnExportar
+        '
+        Me.btnExportar.BackColor = System.Drawing.Color.White
+        Me.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExportar.Location = New System.Drawing.Point(531, 10)
+        Me.btnExportar.Name = "btnExportar"
+        Me.btnExportar.Size = New System.Drawing.Size(90, 28)
+        Me.btnExportar.TabIndex = 15
+        Me.btnExportar.Text = "Exportar Excel"
+        Me.btnExportar.UseVisualStyleBackColor = False
         '
         'Label10
         '
@@ -410,47 +438,38 @@ Partial Class A_Depreciacion
         Me.Label10.TabIndex = 14
         Me.Label10.Text = "Depreciación de Activos"
         '
-        'PictureBox1
+        'StatusStrip1
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(190, 333)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(235, 138)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 31
-        Me.PictureBox1.TabStop = False
-        '
-        'btnExportar
-        '
-        Me.btnExportar.BackColor = System.Drawing.Color.White
-        Me.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExportar.Location = New System.Drawing.Point(531, 10)
-        Me.btnExportar.Name = "btnExportar"
-        Me.btnExportar.Size = New System.Drawing.Size(90, 28)
-        Me.btnExportar.TabIndex = 15
-        Me.btnExportar.Text = "Exportar Excel"
-        Me.btnExportar.UseVisualStyleBackColor = False
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 537)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(917, 22)
+        Me.StatusStrip1.TabIndex = 14
+        Me.StatusStrip1.Text = "StatusStrip1"
         '
         'A_Depreciacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(917, 546)
+        Me.ClientSize = New System.Drawing.Size(917, 559)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "A_Depreciacion"
         Me.Text = "Depreciación de Activo"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.dtDepreciacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -491,4 +510,5 @@ Partial Class A_Depreciacion
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnExportar As Button
     Friend WithEvents Label10 As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

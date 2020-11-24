@@ -1,9 +1,32 @@
-﻿Public Class E_frmUbicacion
+﻿Imports System.Data.SqlClient
+
+Public Class E_frmUbicacion
+    Public conexiones As SqlConnection
+    Public enunciado As SqlCommand
+    Public respuesta As SqlDataReader
+    Public adaptador As SqlDataAdapter
     Private Sub E_frmUbicacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Almacen()
         alternarColoFilasDatagridview(DataGridView1)
+        autoCompletarTexbox(TextBox1)
     End Sub
+    Sub autoCompletarTexbox(ByVal campoTexto As TextBox)
+        Dim clsC As New ClsConnection
+        Try
+            enunciado = New SqlCommand("select  p.nombreCompleto,u.usuario from usuario u, empleados p
+where u.codigo =p.codigo", clsC.getConexion)
+            respuesta = enunciado.ExecuteReader()
+            While respuesta.Read
+                campoTexto.AutoCompleteCustomSource.Add(respuesta.Item("nombreCompleto"))
 
+
+            End While
+            respuesta.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -23,6 +46,8 @@
                 .IdAlmacen = Integer.Parse(txtCodAlmacen.Text)
                 .NombreAlmacen = txtNombreAlmacen.Text
                 .DescripcionAlmacen = txtDescripcion.Text
+                .Nombre_encargado1 = TextBox1.Text
+                .Usuario1 = TextBox2.Text
 
             End With
             If clsA.ActualizarAlmacen = "1" Then
@@ -35,7 +60,8 @@
 
                 .NombreAlmacen = txtNombreAlmacen.Text
                 .DescripcionAlmacen = txtDescripcion.Text
-
+                .Nombre_encargado1 = TextBox1.Text
+                .Usuario1 = TextBox2.Text
             End With
             If clsA.RegistrarAlmacen() = "1" Then
                 MsgBox("Registrado Exitosamente")
@@ -56,6 +82,7 @@
 
             txtDescripcion.ReadOnly = False
             txtNombreAlmacen.ReadOnly = False
+            TextBox1.ReadOnly = False
             Button5.Enabled = True
         Catch ex As Exception
 
@@ -76,6 +103,9 @@
         txtDescripcion.Clear()
         txtDescripcion.ReadOnly = False
         txtNombreAlmacen.ReadOnly = False
+        TextBox1.ReadOnly = False
+        TextBox1.Clear()
+        TextBox2.Clear()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -128,5 +158,19 @@
         txtNombreAlmacen.ReadOnly = True
         Button5.Enabled = False
 
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        Dim clsC As New ClsConnection
+        Try
+            enunciado = New SqlCommand("select u.usuario from usuario u, empleados p
+where u.codigo =p.codigo and p.nombreCompleto like '%" + TextBox1.Text + "%'", clsC.getConexion)
+            'respuesta = enunciado.ExecuteScalar
+            TextBox2.Text = enunciado.ExecuteScalar
+            respuesta.Close()
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

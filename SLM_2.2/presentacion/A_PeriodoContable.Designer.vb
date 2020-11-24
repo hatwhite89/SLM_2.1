@@ -22,6 +22,7 @@ Partial Class A_PeriodoContable
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_PeriodoContable))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -47,6 +48,9 @@ Partial Class A_PeriodoContable
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox1.Controls.Add(Me.btnCrear)
         Me.GroupBox1.Controls.Add(Me.btnModificar)
         Me.GroupBox1.Controls.Add(Me.chkEstado)
@@ -69,10 +73,10 @@ Partial Class A_PeriodoContable
         '
         'btnCrear
         '
-        Me.btnCrear.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCrear.BackColor = System.Drawing.Color.White
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCrear.ForeColor = System.Drawing.Color.White
+        Me.btnCrear.ForeColor = System.Drawing.Color.Black
         Me.btnCrear.Location = New System.Drawing.Point(318, 109)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(88, 23)
@@ -83,12 +87,13 @@ Partial Class A_PeriodoContable
         '
         'btnModificar
         '
+        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.Location = New System.Drawing.Point(412, 109)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(88, 23)
         Me.btnModificar.TabIndex = 6
         Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
+        Me.btnModificar.UseVisualStyleBackColor = False
         Me.btnModificar.Visible = False
         '
         'chkEstado
@@ -120,10 +125,10 @@ Partial Class A_PeriodoContable
         '
         'btnCerrar
         '
-        Me.btnCerrar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCerrar.FlatAppearance.BorderSize = 0
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.ForeColor = System.Drawing.Color.White
+        Me.btnCerrar.ForeColor = System.Drawing.Color.Black
         Me.btnCerrar.Location = New System.Drawing.Point(600, 109)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(88, 23)
@@ -133,10 +138,10 @@ Partial Class A_PeriodoContable
         '
         'btnGuardar
         '
-        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.ForeColor = System.Drawing.Color.White
+        Me.btnGuardar.ForeColor = System.Drawing.Color.Black
         Me.btnGuardar.Location = New System.Drawing.Point(506, 109)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(88, 23)
@@ -197,6 +202,10 @@ Partial Class A_PeriodoContable
         '
         'gbxRegistros
         '
+        Me.gbxRegistros.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxRegistros.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxRegistros.Controls.Add(Me.dtPeriodos)
         Me.gbxRegistros.Controls.Add(Me.txtBusqueda)
         Me.gbxRegistros.Controls.Add(Me.Label5)
@@ -209,6 +218,10 @@ Partial Class A_PeriodoContable
         '
         'dtPeriodos
         '
+        Me.dtPeriodos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtPeriodos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dtPeriodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtPeriodos.Location = New System.Drawing.Point(6, 49)
         Me.dtPeriodos.MultiSelect = False
@@ -241,6 +254,7 @@ Partial Class A_PeriodoContable
         Me.ClientSize = New System.Drawing.Size(718, 468)
         Me.Controls.Add(Me.gbxRegistros)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_PeriodoContable"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Periodo Contable"

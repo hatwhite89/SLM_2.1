@@ -26,12 +26,13 @@ Partial Class A_ListarCuentas
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblForm = New System.Windows.Forms.Label()
         Me.dtCuentas = New System.Windows.Forms.DataGridView()
+        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -42,13 +43,14 @@ Partial Class A_ListarCuentas
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.lblForm)
         Me.GroupBox1.Controls.Add(Me.dtCuentas)
         Me.GroupBox1.Controls.Add(Me.txtBusqueda)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 53)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(694, 353)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 342)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccione una Cuenta"
@@ -80,8 +82,22 @@ Partial Class A_ListarCuentas
         Me.dtCuentas.Name = "dtCuentas"
         Me.dtCuentas.ReadOnly = True
         Me.dtCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCuentas.Size = New System.Drawing.Size(682, 297)
+        Me.dtCuentas.Size = New System.Drawing.Size(682, 286)
         Me.dtCuentas.TabIndex = 3
+        '
+        'nombre
+        '
+        Me.nombre.DataPropertyName = "nombre"
+        Me.nombre.HeaderText = "NOMBRE DE CUENTA"
+        Me.nombre.Name = "nombre"
+        Me.nombre.ReadOnly = True
+        '
+        'cuenta
+        '
+        Me.cuenta.DataPropertyName = "cuenta"
+        Me.cuenta.HeaderText = "NUMERO DE CUENTA"
+        Me.cuenta.Name = "cuenta"
+        Me.cuenta.ReadOnly = True
         '
         'txtBusqueda
         '
@@ -103,7 +119,7 @@ Partial Class A_ListarCuentas
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
@@ -122,26 +138,22 @@ Partial Class A_ListarCuentas
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Listado de Cuentas"
         '
-        'nombre
+        'StatusStrip1
         '
-        Me.nombre.DataPropertyName = "nombre"
-        Me.nombre.HeaderText = "NOMBRE DE CUENTA"
-        Me.nombre.Name = "nombre"
-        Me.nombre.ReadOnly = True
-        '
-        'cuenta
-        '
-        Me.cuenta.DataPropertyName = "cuenta"
-        Me.cuenta.HeaderText = "NUMERO DE CUENTA"
-        Me.cuenta.Name = "cuenta"
-        Me.cuenta.ReadOnly = True
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 400)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 123
+        Me.StatusStrip1.Text = "StatusStrip1"
         '
         'A_ListarCuentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(718, 407)
+        Me.ClientSize = New System.Drawing.Size(718, 422)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -155,6 +167,7 @@ Partial Class A_ListarCuentas
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -167,4 +180,5 @@ Partial Class A_ListarCuentas
     Friend WithEvents Label2 As Label
     Friend WithEvents nombre As DataGridViewTextBoxColumn
     Friend WithEvents cuenta As DataGridViewTextBoxColumn
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

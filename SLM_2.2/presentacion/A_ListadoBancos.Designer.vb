@@ -22,8 +22,10 @@ Partial Class A_ListadoBancos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListadoBancos))
         Me.dtBancos = New System.Windows.Forms.DataGridView()
         Me.lblFormBanco = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         CType(Me.dtBancos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -40,7 +42,7 @@ Partial Class A_ListadoBancos
         Me.dtBancos.ReadOnly = True
         Me.dtBancos.RowHeadersVisible = False
         Me.dtBancos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtBancos.Size = New System.Drawing.Size(694, 264)
+        Me.dtBancos.Size = New System.Drawing.Size(694, 244)
         Me.dtBancos.TabIndex = 3
         '
         'lblFormBanco
@@ -53,15 +55,26 @@ Partial Class A_ListadoBancos
         Me.lblFormBanco.Text = "LblF"
         Me.lblFormBanco.Visible = False
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 276)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 5
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_ListadoBancos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(718, 298)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.lblFormBanco)
         Me.Controls.Add(Me.dtBancos)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_ListadoBancos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Seleccione un banco"
@@ -72,4 +85,5 @@ Partial Class A_ListadoBancos
     End Sub
     Friend WithEvents dtBancos As DataGridView
     Friend WithEvents lblFormBanco As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

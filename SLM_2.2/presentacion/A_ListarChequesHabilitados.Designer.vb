@@ -22,14 +22,19 @@ Partial Class A_ListarChequesHabilitados
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListarChequesHabilitados))
         Me.gbxCheque = New System.Windows.Forms.GroupBox()
         Me.dtCheques = New System.Windows.Forms.DataGridView()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.gbxCheque.SuspendLayout()
         CType(Me.dtCheques, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbxCheque
         '
+        Me.gbxCheque.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxCheque.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxCheque.Controls.Add(Me.dtCheques)
         Me.gbxCheque.Location = New System.Drawing.Point(7, 12)
         Me.gbxCheque.Name = "gbxCheque"
@@ -40,6 +45,8 @@ Partial Class A_ListarChequesHabilitados
         '
         'dtCheques
         '
+        Me.dtCheques.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtCheques.BackgroundColor = System.Drawing.Color.White
         Me.dtCheques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtCheques.GridColor = System.Drawing.Color.White
@@ -49,22 +56,36 @@ Partial Class A_ListarChequesHabilitados
         Me.dtCheques.Size = New System.Drawing.Size(687, 264)
         Me.dtCheques.TabIndex = 0
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 306)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 1
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_ListarChequesHabilitados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(718, 313)
+        Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ClientSize = New System.Drawing.Size(718, 328)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxCheque)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_ListarChequesHabilitados"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cheques Disponibles"
         Me.gbxCheque.ResumeLayout(False)
         CType(Me.dtCheques, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents gbxCheque As GroupBox
     Friend WithEvents dtCheques As DataGridView
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

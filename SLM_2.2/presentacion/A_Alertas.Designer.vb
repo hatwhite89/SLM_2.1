@@ -74,7 +74,7 @@ Partial Class A_Alertas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(584, 284)
+        Me.ClientSize = New System.Drawing.Size(585, 298)
         Me.Controls.Add(Me.btnVerificado)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.GroupBox1)

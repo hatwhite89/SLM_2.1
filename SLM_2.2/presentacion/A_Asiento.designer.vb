@@ -51,6 +51,7 @@ Partial Class frmAsientos
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         CType(Me.dtDetalleAsiento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -132,7 +133,7 @@ Partial Class frmAsientos
         Me.dtDetalleAsiento.Location = New System.Drawing.Point(6, 19)
         Me.dtDetalleAsiento.MultiSelect = False
         Me.dtDetalleAsiento.Name = "dtDetalleAsiento"
-        Me.dtDetalleAsiento.Size = New System.Drawing.Size(637, 326)
+        Me.dtDetalleAsiento.Size = New System.Drawing.Size(637, 313)
         Me.dtDetalleAsiento.TabIndex = 7
         '
         'Column1
@@ -169,7 +170,7 @@ Partial Class frmAsientos
         '
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(402, 352)
+        Me.Label5.Location = New System.Drawing.Point(402, 339)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(31, 13)
         Me.Label5.TabIndex = 12
@@ -179,7 +180,7 @@ Partial Class frmAsientos
         '
         Me.txtTotalDebe.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtTotalDebe.Enabled = False
-        Me.txtTotalDebe.Location = New System.Drawing.Point(442, 349)
+        Me.txtTotalDebe.Location = New System.Drawing.Point(442, 336)
         Me.txtTotalDebe.Name = "txtTotalDebe"
         Me.txtTotalDebe.Size = New System.Drawing.Size(101, 20)
         Me.txtTotalDebe.TabIndex = 13
@@ -188,7 +189,7 @@ Partial Class frmAsientos
         '
         Me.txtTotalHaber.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtTotalHaber.Enabled = False
-        Me.txtTotalHaber.Location = New System.Drawing.Point(549, 349)
+        Me.txtTotalHaber.Location = New System.Drawing.Point(549, 336)
         Me.txtTotalHaber.Name = "txtTotalHaber"
         Me.txtTotalHaber.Size = New System.Drawing.Size(93, 20)
         Me.txtTotalHaber.TabIndex = 14
@@ -216,7 +217,7 @@ Partial Class frmAsientos
         'btnCerrar
         '
         Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCerrar.BackColor = System.Drawing.Color.White
+        Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCerrar.FlatAppearance.BorderSize = 0
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.ForeColor = System.Drawing.SystemColors.ControlText
@@ -242,13 +243,14 @@ Partial Class frmAsientos
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.dtDetalleAsiento)
         Me.GroupBox1.Controls.Add(Me.txtTotalHaber)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.txtTotalDebe)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 140)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(651, 375)
+        Me.GroupBox1.Size = New System.Drawing.Size(651, 362)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalle de Asiento"
@@ -257,6 +259,7 @@ Partial Class frmAsientos
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox2.Controls.Add(Me.chkAnular)
         Me.GroupBox2.Controls.Add(Me.txtNro)
         Me.GroupBox2.Controls.Add(Me.lblNro)
@@ -297,7 +300,7 @@ Partial Class frmAsientos
         'btnGuardar
         '
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGuardar.BackColor = System.Drawing.Color.White
+        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.Location = New System.Drawing.Point(510, 10)
         Me.btnGuardar.Name = "btnGuardar"
@@ -334,7 +337,7 @@ Partial Class frmAsientos
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnGuardar)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.btnModificar)
@@ -345,12 +348,22 @@ Partial Class frmAsientos
         Me.Panel1.Size = New System.Drawing.Size(676, 43)
         Me.Panel1.TabIndex = 22
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 518)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(676, 22)
+        Me.StatusStrip1.TabIndex = 23
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'frmAsientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(676, 524)
+        Me.ClientSize = New System.Drawing.Size(676, 540)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -398,4 +411,5 @@ Partial Class frmAsientos
     Friend WithEvents Debe As DataGridViewTextBoxColumn
     Friend WithEvents Haber As DataGridViewTextBoxColumn
     Friend WithEvents chkAnular As CheckBox
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

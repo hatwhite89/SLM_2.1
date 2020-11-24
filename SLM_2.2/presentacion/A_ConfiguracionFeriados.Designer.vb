@@ -48,13 +48,13 @@ Partial Class A_ConfiguracionFeriados
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dtpDesde = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dtFeriados = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,7 +66,7 @@ Partial Class A_ConfiguracionFeriados
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Controls.Add(Me.btnModificar)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -80,7 +80,7 @@ Partial Class A_ConfiguracionFeriados
         'btnCerrar
         '
         Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCerrar.BackColor = System.Drawing.Color.White
+        Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.Location = New System.Drawing.Point(610, 9)
         Me.btnCerrar.Name = "btnCerrar"
@@ -92,7 +92,7 @@ Partial Class A_ConfiguracionFeriados
         'btnModificar
         '
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.Enabled = False
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.Location = New System.Drawing.Point(529, 9)
@@ -116,7 +116,7 @@ Partial Class A_ConfiguracionFeriados
         'btnGuardar
         '
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGuardar.BackColor = System.Drawing.Color.White
+        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.Enabled = False
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.Location = New System.Drawing.Point(448, 9)
@@ -143,6 +143,7 @@ Partial Class A_ConfiguracionFeriados
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox1.Controls.Add(Me.txtCodigo)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.cbxDia)
@@ -346,25 +347,16 @@ Partial Class A_ConfiguracionFeriados
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Desde:"
         '
-        'Panel2
-        '
-        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Panel2.Location = New System.Drawing.Point(-1, 510)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(699, 43)
-        Me.Panel2.TabIndex = 5
-        '
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox2.Controls.Add(Me.dtFeriados)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 262)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(670, 242)
+        Me.GroupBox2.Size = New System.Drawing.Size(670, 229)
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Listado de Registros"
@@ -384,7 +376,7 @@ Partial Class A_ConfiguracionFeriados
         Me.dtFeriados.Name = "dtFeriados"
         Me.dtFeriados.ReadOnly = True
         Me.dtFeriados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtFeriados.Size = New System.Drawing.Size(652, 217)
+        Me.dtFeriados.Size = New System.Drawing.Size(652, 204)
         Me.dtFeriados.TabIndex = 0
         '
         'Column1
@@ -411,16 +403,26 @@ Partial Class A_ConfiguracionFeriados
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 500)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(694, 22)
+        Me.StatusStrip1.TabIndex = 7
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_ConfiguracionFeriados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(694, 522)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_ConfiguracionFeriados"
         Me.Text = "Configuración de Feriados"
         Me.Panel1.ResumeLayout(False)
@@ -431,6 +433,7 @@ Partial Class A_ConfiguracionFeriados
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.dtFeriados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -453,7 +456,6 @@ Partial Class A_ConfiguracionFeriados
     Friend WithEvents Label3 As Label
     Friend WithEvents dtpDesde As DateTimePicker
     Friend WithEvents Label2 As Label
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents rbtDiaEspecifico As RadioButton
     Friend WithEvents GroupBox2 As GroupBox
@@ -466,4 +468,5 @@ Partial Class A_ConfiguracionFeriados
     Friend WithEvents Label8 As Label
     Friend WithEvents txtCodigo As TextBox
     Friend WithEvents Label9 As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class
