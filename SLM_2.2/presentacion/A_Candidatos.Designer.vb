@@ -66,6 +66,7 @@ Partial Class A_Candidatos
         Me.Label9 = New System.Windows.Forms.Label()
         Me.dtCandidatos = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,6 +78,7 @@ Partial Class A_Candidatos
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox1.Controls.Add(Me.lblCandidato)
         Me.GroupBox1.Controls.Add(Me.lblcodCargo)
         Me.GroupBox1.Controls.Add(Me.lblcodProfesion)
@@ -293,7 +295,7 @@ Partial Class A_Candidatos
         '
         'btnEliminar
         '
-        Me.btnEliminar.BackColor = System.Drawing.Color.White
+        Me.btnEliminar.BackColor = System.Drawing.Color.OrangeRed
         Me.btnEliminar.Enabled = False
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEliminar.Location = New System.Drawing.Point(486, 11)
@@ -316,7 +318,7 @@ Partial Class A_Candidatos
         '
         'btnCerrar
         '
-        Me.btnCerrar.BackColor = System.Drawing.Color.White
+        Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.Location = New System.Drawing.Point(731, 11)
         Me.btnCerrar.Name = "btnCerrar"
@@ -327,7 +329,7 @@ Partial Class A_Candidatos
         '
         'btnGuardar
         '
-        Me.btnGuardar.BackColor = System.Drawing.Color.White
+        Me.btnGuardar.BackColor = System.Drawing.Color.GreenYellow
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.Location = New System.Drawing.Point(650, 11)
         Me.btnGuardar.Name = "btnGuardar"
@@ -338,7 +340,7 @@ Partial Class A_Candidatos
         '
         'btnModificar
         '
-        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.Enabled = False
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.Location = New System.Drawing.Point(569, 11)
@@ -365,6 +367,7 @@ Partial Class A_Candidatos
         Me.GroupBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox3.Controls.Add(Me.LinkLabel1)
         Me.GroupBox3.Controls.Add(Me.PictureBox1)
         Me.GroupBox3.Controls.Add(Me.dtpFechaHasta)
@@ -380,7 +383,7 @@ Partial Class A_Candidatos
         Me.GroupBox3.Controls.Add(Me.dtCandidatos)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 305)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(795, 290)
+        Me.GroupBox3.Size = New System.Drawing.Size(795, 294)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Listado de Candidatos"
@@ -508,14 +511,14 @@ Partial Class A_Candidatos
         Me.dtCandidatos.Name = "dtCandidatos"
         Me.dtCandidatos.ReadOnly = True
         Me.dtCandidatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCandidatos.Size = New System.Drawing.Size(789, 188)
+        Me.dtCandidatos.Size = New System.Drawing.Size(789, 192)
         Me.dtCandidatos.TabIndex = 8
         '
         'Panel1
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.btnEliminar)
         Me.Panel1.Controls.Add(Me.btnCerrar)
@@ -527,15 +530,26 @@ Partial Class A_Candidatos
         Me.Panel1.Size = New System.Drawing.Size(820, 49)
         Me.Panel1.TabIndex = 3
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 602)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(819, 22)
+        Me.StatusStrip1.TabIndex = 4
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_Candidatos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(819, 607)
+        Me.ClientSize = New System.Drawing.Size(819, 624)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_Candidatos"
         Me.Text = "SLM: Módulo de Candidatos"
         Me.GroupBox1.ResumeLayout(False)
@@ -547,6 +561,7 @@ Partial Class A_Candidatos
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -593,4 +608,5 @@ Partial Class A_Candidatos
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

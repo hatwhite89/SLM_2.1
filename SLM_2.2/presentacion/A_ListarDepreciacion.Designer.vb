@@ -22,20 +22,23 @@ Partial Class A_ListarDepreciacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListarDepreciacion))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dtDepreciacion = New System.Windows.Forms.DataGridView()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDepreciacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.dtDepreciacion)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(577, 400)
+        Me.GroupBox1.Size = New System.Drawing.Size(577, 372)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Registros de Depreciación"
@@ -44,18 +47,19 @@ Partial Class A_ListarDepreciacion
         '
         Me.dtDepreciacion.AllowUserToAddRows = False
         Me.dtDepreciacion.AllowUserToDeleteRows = False
+        Me.dtDepreciacion.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dtDepreciacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDepreciacion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtDepreciacion.Location = New System.Drawing.Point(3, 16)
         Me.dtDepreciacion.Name = "dtDepreciacion"
         Me.dtDepreciacion.ReadOnly = True
         Me.dtDepreciacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtDepreciacion.Size = New System.Drawing.Size(571, 381)
+        Me.dtDepreciacion.Size = New System.Drawing.Size(571, 353)
         Me.dtDepreciacion.TabIndex = 0
         '
         'btnCerrar
         '
-        Me.btnCerrar.Location = New System.Drawing.Point(514, 418)
+        Me.btnCerrar.Location = New System.Drawing.Point(511, 390)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
         Me.btnCerrar.TabIndex = 1
@@ -64,26 +68,39 @@ Partial Class A_ListarDepreciacion
         '
         'btnCrear
         '
-        Me.btnCrear.Location = New System.Drawing.Point(433, 418)
+        Me.btnCrear.Location = New System.Drawing.Point(433, 390)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 2
         Me.btnCrear.Text = "Crear"
         Me.btnCrear.UseVisualStyleBackColor = True
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 415)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(601, 22)
+        Me.StatusStrip1.TabIndex = 3
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_ListarDepreciacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(601, 450)
+        Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ClientSize = New System.Drawing.Size(601, 437)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.btnCrear)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_ListarDepreciacion"
         Me.Text = "A_ListarDepreciacion"
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dtDepreciacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -91,4 +108,5 @@ Partial Class A_ListarDepreciacion
     Friend WithEvents dtDepreciacion As DataGridView
     Friend WithEvents btnCerrar As Button
     Friend WithEvents btnCrear As Button
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

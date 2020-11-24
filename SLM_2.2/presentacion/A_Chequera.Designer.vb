@@ -44,6 +44,7 @@ Partial Class A_Chequera
         Me.dtChequeras = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.gbxInfoChequeras.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtChequeras, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,6 +53,9 @@ Partial Class A_Chequera
         '
         'gbxInfoChequeras
         '
+        Me.gbxInfoChequeras.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxInfoChequeras.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.gbxInfoChequeras.Controls.Add(Me.lblCodChequera)
         Me.gbxInfoChequeras.Controls.Add(Me.lblNombreBanc)
         Me.gbxInfoChequeras.Controls.Add(Me.Button1)
@@ -210,7 +214,7 @@ Partial Class A_Chequera
         '
         'btnGuardar
         '
-        Me.btnGuardar.BackColor = System.Drawing.Color.White
+        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.Black
@@ -237,10 +241,13 @@ Partial Class A_Chequera
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.dtChequeras)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 167)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(694, 236)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 220)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Chequeras"
@@ -249,6 +256,8 @@ Partial Class A_Chequera
         '
         Me.dtChequeras.AllowUserToAddRows = False
         Me.dtChequeras.AllowUserToDeleteRows = False
+        Me.dtChequeras.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtChequeras.BackgroundColor = System.Drawing.Color.White
         Me.dtChequeras.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtChequeras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -257,12 +266,14 @@ Partial Class A_Chequera
         Me.dtChequeras.Name = "dtChequeras"
         Me.dtChequeras.ReadOnly = True
         Me.dtChequeras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtChequeras.Size = New System.Drawing.Size(682, 211)
+        Me.dtChequeras.Size = New System.Drawing.Size(682, 195)
         Me.dtChequeras.TabIndex = 0
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.btnGuardar)
         Me.Panel1.Controls.Add(Me.btnCrear)
@@ -282,19 +293,32 @@ Partial Class A_Chequera
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Generar Chequera"
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 389)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 3
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_Chequera
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoValidate = System.Windows.Forms.AutoValidate.Disable
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(718, 411)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoChequeras)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.KeyPreview = True
         Me.Name = "A_Chequera"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Chequera"
         Me.gbxInfoChequeras.ResumeLayout(False)
         Me.gbxInfoChequeras.PerformLayout()
@@ -303,6 +327,7 @@ Partial Class A_Chequera
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -327,4 +352,5 @@ Partial Class A_Chequera
     Friend WithEvents lblNombreBanc As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label6 As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

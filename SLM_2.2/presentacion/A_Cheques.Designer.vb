@@ -22,6 +22,7 @@ Partial Class A_Cheques
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Cheques))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblEstado = New System.Windows.Forms.Label()
         Me.rbtnRechazado = New System.Windows.Forms.RadioButton()
@@ -43,6 +44,7 @@ Partial Class A_Cheques
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.lblCodProveedor = New System.Windows.Forms.Label()
         Me.gbxTipo = New System.Windows.Forms.GroupBox()
         Me.rbtnCheque = New System.Windows.Forms.RadioButton()
         Me.rbtnPagare = New System.Windows.Forms.RadioButton()
@@ -83,7 +85,7 @@ Partial Class A_Cheques
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblCodProveedor = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -96,6 +98,7 @@ Partial Class A_Cheques
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox1.Controls.Add(Me.lblEstado)
         Me.GroupBox1.Controls.Add(Me.rbtnRechazado)
         Me.GroupBox1.Controls.Add(Me.rbtnCancelado)
@@ -296,7 +299,7 @@ Partial Class A_Cheques
         Me.TabControl1.Location = New System.Drawing.Point(12, 183)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(776, 296)
+        Me.TabControl1.Size = New System.Drawing.Size(776, 290)
         Me.TabControl1.TabIndex = 1
         '
         'TabPage1
@@ -332,10 +335,19 @@ Partial Class A_Cheques
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(768, 270)
+        Me.TabPage1.Size = New System.Drawing.Size(768, 264)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Proveedor"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'lblCodProveedor
+        '
+        Me.lblCodProveedor.AutoSize = True
+        Me.lblCodProveedor.Location = New System.Drawing.Point(290, 136)
+        Me.lblCodProveedor.Name = "lblCodProveedor"
+        Me.lblCodProveedor.Size = New System.Drawing.Size(84, 13)
+        Me.lblCodProveedor.TabIndex = 29
+        Me.lblCodProveedor.Text = "lblcodProveedor"
         '
         'gbxTipo
         '
@@ -617,7 +629,7 @@ Partial Class A_Cheques
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(768, 270)
+        Me.TabPage2.Size = New System.Drawing.Size(768, 264)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Voucher"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -627,7 +639,7 @@ Partial Class A_Cheques
         Me.txtVoucher.Location = New System.Drawing.Point(14, 31)
         Me.txtVoucher.Multiline = True
         Me.txtVoucher.Name = "txtVoucher"
-        Me.txtVoucher.Size = New System.Drawing.Size(723, 70)
+        Me.txtVoucher.Size = New System.Drawing.Size(748, 227)
         Me.txtVoucher.TabIndex = 1
         '
         'Label20
@@ -642,7 +654,7 @@ Partial Class A_Cheques
         'btnGuardar
         '
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGuardar.BackColor = System.Drawing.Color.White
+        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.Black
@@ -656,7 +668,7 @@ Partial Class A_Cheques
         'btnCancelar
         '
         Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCancelar.BackColor = System.Drawing.Color.White
+        Me.btnCancelar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCancelar.FlatAppearance.BorderSize = 0
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.ForeColor = System.Drawing.Color.Black
@@ -696,7 +708,7 @@ Partial Class A_Cheques
         'btnModificar
         '
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.Black
         Me.btnModificar.Location = New System.Drawing.Point(525, 12)
@@ -721,7 +733,7 @@ Partial Class A_Cheques
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnModificar)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.btnCancelar)
@@ -732,26 +744,28 @@ Partial Class A_Cheques
         Me.Panel1.Size = New System.Drawing.Size(811, 50)
         Me.Panel1.TabIndex = 7
         '
-        'lblCodProveedor
+        'StatusStrip1
         '
-        Me.lblCodProveedor.AutoSize = True
-        Me.lblCodProveedor.Location = New System.Drawing.Point(290, 136)
-        Me.lblCodProveedor.Name = "lblCodProveedor"
-        Me.lblCodProveedor.Size = New System.Drawing.Size(84, 13)
-        Me.lblCodProveedor.TabIndex = 29
-        Me.lblCodProveedor.Text = "lblcodProveedor"
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 476)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(799, 22)
+        Me.StatusStrip1.TabIndex = 8
+        Me.StatusStrip1.Text = "StatusStrip1"
         '
         'A_Cheques
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(799, 487)
+        Me.ClientSize = New System.Drawing.Size(799, 498)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lblForm)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_Cheques"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cheques"
@@ -833,4 +847,5 @@ Partial Class A_Cheques
     Friend WithEvents Label8 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lblCodProveedor As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

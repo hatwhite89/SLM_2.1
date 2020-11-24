@@ -45,15 +45,16 @@ Partial Class E_AreaLaboratorio
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
         Me.gbxbusqueda.Location = New System.Drawing.Point(11, 143)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Size = New System.Drawing.Size(696, 351)
         Me.gbxbusqueda.TabIndex = 115
         Me.gbxbusqueda.TabStop = False
@@ -73,9 +74,10 @@ Partial Class E_AreaLaboratorio
         '
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
+        Me.dgbtabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(4, 41)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
@@ -97,7 +99,7 @@ Partial Class E_AreaLaboratorio
         'txtnombreB
         '
         Me.txtnombreB.Location = New System.Drawing.Point(58, 17)
-        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(634, 20)
         Me.txtnombreB.TabIndex = 115
@@ -114,6 +116,7 @@ Partial Class E_AreaLaboratorio
         '
         'gbxArea
         '
+        Me.gbxArea.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.gbxArea.Controls.Add(Me.lblcode)
         Me.gbxArea.Controls.Add(Me.btnmodificar)
         Me.gbxArea.Controls.Add(Me.btncancelar)
@@ -124,9 +127,9 @@ Partial Class E_AreaLaboratorio
         Me.gbxArea.Controls.Add(Me.txtnombre)
         Me.gbxArea.Controls.Add(Me.btnguardar)
         Me.gbxArea.Location = New System.Drawing.Point(11, 11)
-        Me.gbxArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxArea.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxArea.Name = "gbxArea"
-        Me.gbxArea.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxArea.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxArea.Size = New System.Drawing.Size(696, 128)
         Me.gbxArea.TabIndex = 114
         Me.gbxArea.TabStop = False
@@ -149,7 +152,7 @@ Partial Class E_AreaLaboratorio
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnmodificar.Location = New System.Drawing.Point(168, 96)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
         Me.btnmodificar.TabIndex = 111
@@ -163,7 +166,7 @@ Partial Class E_AreaLaboratorio
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btncancelar.Location = New System.Drawing.Point(244, 96)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(68, 28)
         Me.btncancelar.TabIndex = 37
@@ -187,7 +190,7 @@ Partial Class E_AreaLaboratorio
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnnuevo.Location = New System.Drawing.Point(4, 96)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
         Me.btnnuevo.TabIndex = 110
@@ -197,7 +200,7 @@ Partial Class E_AreaLaboratorio
         'txtarea
         '
         Me.txtarea.Location = New System.Drawing.Point(58, 22)
-        Me.txtarea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtarea.Margin = New System.Windows.Forms.Padding(2)
         Me.txtarea.Name = "txtarea"
         Me.txtarea.Size = New System.Drawing.Size(118, 20)
         Me.txtarea.TabIndex = 40
@@ -216,7 +219,7 @@ Partial Class E_AreaLaboratorio
         'txtnombre
         '
         Me.txtnombre.Location = New System.Drawing.Point(260, 22)
-        Me.txtnombre.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombre.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(432, 20)
         Me.txtnombre.TabIndex = 38
@@ -229,7 +232,7 @@ Partial Class E_AreaLaboratorio
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnguardar.Location = New System.Drawing.Point(91, 96)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(72, 28)
         Me.btnguardar.TabIndex = 108
@@ -245,7 +248,7 @@ Partial Class E_AreaLaboratorio
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.gbxArea)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "E_AreaLaboratorio"
         Me.Text = "Área Laboratorio"
         Me.gbxbusqueda.ResumeLayout(False)

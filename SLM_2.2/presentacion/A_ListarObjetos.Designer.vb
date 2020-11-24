@@ -22,11 +22,13 @@ Partial Class A_ListarObjetos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListarObjetos))
         Me.dtObjetos = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblForm = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         CType(Me.dtObjetos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -45,6 +47,7 @@ Partial Class A_ListarObjetos
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.txtBusqueda)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.dtObjetos)
@@ -81,14 +84,26 @@ Partial Class A_ListarObjetos
         Me.lblForm.Text = "Nombre_Formulario"
         Me.lblForm.Visible = False
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 382)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 3
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_ListarObjetos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(718, 382)
+        Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ClientSize = New System.Drawing.Size(718, 404)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.lblForm)
         Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_ListarObjetos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Objetos"
@@ -105,4 +120,5 @@ Partial Class A_ListarObjetos
     Friend WithEvents txtBusqueda As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents lblForm As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

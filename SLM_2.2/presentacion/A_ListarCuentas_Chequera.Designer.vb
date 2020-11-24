@@ -27,6 +27,7 @@ Partial Class A_ListarCuentas_Chequera
         Me.txtCuentaBusqueda = New System.Windows.Forms.TextBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.dtCuentas = New System.Windows.Forms.DataGridView()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         CType(Me.dtCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -70,8 +71,17 @@ Partial Class A_ListarCuentas_Chequera
         Me.dtCuentas.Name = "dtCuentas"
         Me.dtCuentas.RowHeadersVisible = False
         Me.dtCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCuentas.Size = New System.Drawing.Size(694, 389)
+        Me.dtCuentas.Size = New System.Drawing.Size(694, 363)
         Me.dtCuentas.TabIndex = 3
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 425)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 4
+        Me.StatusStrip1.Text = "StatusStrip1"
         '
         'A_ListarCuentas_Chequera
         '
@@ -80,11 +90,13 @@ Partial Class A_ListarCuentas_Chequera
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(718, 447)
         Me.ControlBox = False
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.dtCuentas)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.txtCuentaBusqueda)
         Me.Controls.Add(Me.Label1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_ListarCuentas_Chequera"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Seleccione una Cuenta"
@@ -98,4 +110,5 @@ Partial Class A_ListarCuentas_Chequera
     Friend WithEvents txtCuentaBusqueda As TextBox
     Friend WithEvents btnCancelar As Button
     Friend WithEvents dtCuentas As DataGridView
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

@@ -48,6 +48,7 @@ Partial Class A_Informes
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dtpDesde = New System.Windows.Forms.DateTimePicker()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -56,7 +57,7 @@ Partial Class A_Informes
         'btnEjecutar
         '
         Me.btnEjecutar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnEjecutar.BackColor = System.Drawing.Color.White
+        Me.btnEjecutar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnEjecutar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnEjecutar.Location = New System.Drawing.Point(475, 13)
         Me.btnEjecutar.Name = "btnEjecutar"
@@ -68,7 +69,7 @@ Partial Class A_Informes
         'btnCancelar
         '
         Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCancelar.BackColor = System.Drawing.Color.White
+        Me.btnCancelar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnCancelar.Location = New System.Drawing.Point(556, 13)
         Me.btnCancelar.Name = "btnCancelar"
@@ -80,11 +81,11 @@ Partial Class A_Informes
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(13, 10)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(321, 24)
+        Me.Label1.Size = New System.Drawing.Size(361, 24)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Generar Vista de Ordenes de Trabajo"
         '
@@ -93,6 +94,7 @@ Partial Class A_Informes
         Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox2.Controls.Add(Me.lblCodExamen)
         Me.GroupBox2.Controls.Add(Me.lblCodSubArea)
         Me.GroupBox2.Controls.Add(Me.Label7)
@@ -115,7 +117,7 @@ Partial Class A_Informes
         Me.GroupBox2.Controls.Add(Me.dtpDesde)
         Me.GroupBox2.Location = New System.Drawing.Point(11, 50)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(619, 179)
+        Me.GroupBox2.Size = New System.Drawing.Size(619, 186)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información de consulta"
@@ -318,7 +320,7 @@ Partial Class A_Informes
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnEjecutar)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.btnCancelar)
@@ -327,14 +329,25 @@ Partial Class A_Informes
         Me.Panel1.Size = New System.Drawing.Size(646, 45)
         Me.Panel1.TabIndex = 2
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 244)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(642, 22)
+        Me.StatusStrip1.TabIndex = 3
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_Informes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(642, 238)
+        Me.ClientSize = New System.Drawing.Size(642, 266)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_Informes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Informes de Ordenes de Trabajo"
@@ -344,6 +357,7 @@ Partial Class A_Informes
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnEjecutar As Button
@@ -371,4 +385,5 @@ Partial Class A_Informes
     Friend WithEvents lblCodExamen As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

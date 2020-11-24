@@ -22,6 +22,7 @@ Partial Class A_ListasPrecio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListasPrecio))
         Me.dtExcel = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblCantidadR = New System.Windows.Forms.Label()
@@ -29,12 +30,18 @@ Partial Class A_ListasPrecio
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.dtExcel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'dtExcel
         '
+        Me.dtExcel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtExcel.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dtExcel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtExcel.Location = New System.Drawing.Point(12, 87)
         Me.dtExcel.Name = "dtExcel"
@@ -44,7 +51,7 @@ Partial Class A_ListasPrecio
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 546)
+        Me.Label1.Location = New System.Drawing.Point(3, 10)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(114, 13)
         Me.Label1.TabIndex = 5
@@ -53,7 +60,7 @@ Partial Class A_ListasPrecio
         'lblCantidadR
         '
         Me.lblCantidadR.AutoSize = True
-        Me.lblCantidadR.Location = New System.Drawing.Point(132, 546)
+        Me.lblCantidadR.Location = New System.Drawing.Point(123, 10)
         Me.lblCantidadR.Name = "lblCantidadR"
         Me.lblCantidadR.Size = New System.Drawing.Size(10, 13)
         Me.lblCantidadR.TabIndex = 6
@@ -62,6 +69,7 @@ Partial Class A_ListasPrecio
         'GroupBox1
         '
         Me.GroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox1.Controls.Add(Me.btnCancelar)
         Me.GroupBox1.Controls.Add(Me.btnModificar)
         Me.GroupBox1.Controls.Add(Me.btnGuardar)
@@ -74,7 +82,7 @@ Partial Class A_ListasPrecio
         '
         'btnCancelar
         '
-        Me.btnCancelar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCancelar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCancelar.FlatAppearance.BorderSize = 0
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.ForeColor = System.Drawing.Color.White
@@ -87,7 +95,7 @@ Partial Class A_ListasPrecio
         '
         'btnModificar
         '
-        Me.btnModificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnModificar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.White
@@ -100,7 +108,7 @@ Partial Class A_ListasPrecio
         '
         'btnGuardar
         '
-        Me.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnGuardar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
@@ -111,6 +119,18 @@ Partial Class A_ListasPrecio
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.lblCantidadR)
+        Me.Panel1.Location = New System.Drawing.Point(12, 536)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(702, 34)
+        Me.Panel1.TabIndex = 8
+        '
         'A_ListasPrecio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -118,17 +138,18 @@ Partial Class A_ListasPrecio
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(718, 571)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.lblCantidadR)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dtExcel)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_ListasPrecio"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Importar Precios"
         CType(Me.dtExcel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents dtExcel As DataGridView
@@ -138,4 +159,5 @@ Partial Class A_ListasPrecio
     Friend WithEvents btnCancelar As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnGuardar As Button
+    Friend WithEvents Panel1 As Panel
 End Class

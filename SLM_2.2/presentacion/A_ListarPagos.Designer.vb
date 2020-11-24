@@ -22,6 +22,7 @@ Partial Class A_ListarPagos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListarPagos))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -29,12 +30,17 @@ Partial Class A_ListarPagos
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtPagos = New System.Windows.Forms.DataGridView()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtPagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.btnCancelarBusqueda)
@@ -100,6 +106,9 @@ Partial Class A_ListarPagos
         '
         Me.dtPagos.AllowUserToAddRows = False
         Me.dtPagos.AllowUserToDeleteRows = False
+        Me.dtPagos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtPagos.BackgroundColor = System.Drawing.Color.White
         Me.dtPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtPagos.GridColor = System.Drawing.Color.White
@@ -110,13 +119,25 @@ Partial Class A_ListarPagos
         Me.dtPagos.Size = New System.Drawing.Size(685, 287)
         Me.dtPagos.TabIndex = 0
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 359)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 1
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_ListarPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(718, 368)
+        Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ClientSize = New System.Drawing.Size(718, 381)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_ListarPagos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listado de Pagos"
@@ -124,6 +145,7 @@ Partial Class A_ListarPagos
         Me.GroupBox1.PerformLayout()
         CType(Me.dtPagos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -134,4 +156,5 @@ Partial Class A_ListarPagos
     Friend WithEvents btnCancelarBusqueda As Button
     Friend WithEvents txtBusqueda As TextBox
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

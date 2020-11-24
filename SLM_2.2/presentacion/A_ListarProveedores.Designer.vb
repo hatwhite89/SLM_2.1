@@ -22,17 +22,23 @@ Partial Class A_ListarProveedores
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListarProveedores))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblForm = New System.Windows.Forms.Label()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtProveedor = New System.Windows.Forms.DataGridView()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.lblForm)
         Me.GroupBox1.Controls.Add(Me.txtBusqueda)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -73,6 +79,9 @@ Partial Class A_ListarProveedores
         '
         Me.dtProveedor.AllowUserToAddRows = False
         Me.dtProveedor.AllowUserToDeleteRows = False
+        Me.dtProveedor.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtProveedor.BackgroundColor = System.Drawing.Color.White
         Me.dtProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtProveedor.GridColor = System.Drawing.Color.White
@@ -83,13 +92,25 @@ Partial Class A_ListarProveedores
         Me.dtProveedor.Size = New System.Drawing.Size(688, 281)
         Me.dtProveedor.TabIndex = 0
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 349)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 1
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_ListarProveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(718, 356)
+        Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ClientSize = New System.Drawing.Size(718, 371)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_ListarProveedores"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Proveedores"
@@ -97,6 +118,7 @@ Partial Class A_ListarProveedores
         Me.GroupBox1.PerformLayout()
         CType(Me.dtProveedor, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -105,4 +127,5 @@ Partial Class A_ListarProveedores
     Friend WithEvents txtBusqueda As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents lblForm As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

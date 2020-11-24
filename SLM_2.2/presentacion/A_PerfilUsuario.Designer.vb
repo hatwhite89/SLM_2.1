@@ -117,6 +117,7 @@ Partial Class A_PerfilUsuario
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox1.Controls.Add(Me.btnCrearPerfil)
         Me.GroupBox1.Controls.Add(Me.chkHabilitar)
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
@@ -220,6 +221,7 @@ Partial Class A_PerfilUsuario
         '
         Me.gbxModulos.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.gbxModulos.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxModulos.Controls.Add(Me.tcModulos)
         Me.gbxModulos.Enabled = False
         Me.gbxModulos.Location = New System.Drawing.Point(6, 229)
@@ -706,7 +708,7 @@ Partial Class A_PerfilUsuario
         'btnGuardar
         '
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGuardar.BackColor = System.Drawing.Color.White
+        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.Enabled = False
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.Location = New System.Drawing.Point(692, 11)
@@ -719,7 +721,7 @@ Partial Class A_PerfilUsuario
         'btnModificar
         '
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.Enabled = False
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.Location = New System.Drawing.Point(773, 11)
@@ -732,7 +734,7 @@ Partial Class A_PerfilUsuario
         'btnCancelar
         '
         Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCancelar.BackColor = System.Drawing.Color.White
+        Me.btnCancelar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Location = New System.Drawing.Point(854, 11)
         Me.btnCancelar.Name = "btnCancelar"
@@ -782,6 +784,7 @@ Partial Class A_PerfilUsuario
         Me.gbxRegistros.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxRegistros.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxRegistros.Controls.Add(Me.txtBusqueda)
         Me.gbxRegistros.Controls.Add(Me.Label5)
         Me.gbxRegistros.Controls.Add(Me.dtPerfiles)
@@ -829,7 +832,7 @@ Partial Class A_PerfilUsuario
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.btnNuevoPerfil)
         Me.Panel1.Controls.Add(Me.btnGuardar)
@@ -851,6 +854,7 @@ Partial Class A_PerfilUsuario
         Me.Controls.Add(Me.gbxModulos)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.pbarCarga)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "A_PerfilUsuario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

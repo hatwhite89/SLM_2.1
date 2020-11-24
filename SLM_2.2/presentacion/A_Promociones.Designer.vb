@@ -22,12 +22,9 @@ Partial Class A_Promociones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Promociones))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtRuta = New System.Windows.Forms.TextBox()
-        Me.btnCancelarRegistro = New System.Windows.Forms.Button()
-        Me.btnCrear = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.pbxPromo = New System.Windows.Forms.PictureBox()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
@@ -42,6 +39,10 @@ Partial Class A_Promociones
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtCod = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnCancelarRegistro = New System.Windows.Forms.Button()
+        Me.btnCrear = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.dtDetallePromo = New System.Windows.Forms.DataGridView()
@@ -51,6 +52,7 @@ Partial Class A_Promociones
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1.SuspendLayout()
         CType(Me.pbxPromo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -62,6 +64,7 @@ Partial Class A_Promociones
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox1.Controls.Add(Me.txtRuta)
         Me.GroupBox1.Controls.Add(Me.btnEliminar)
         Me.GroupBox1.Controls.Add(Me.pbxPromo)
@@ -79,7 +82,7 @@ Partial Class A_Promociones
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(9, 54)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(352, 386)
+        Me.GroupBox1.Size = New System.Drawing.Size(352, 391)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Promoción"
@@ -92,64 +95,9 @@ Partial Class A_Promociones
         Me.txtRuta.Size = New System.Drawing.Size(200, 20)
         Me.txtRuta.TabIndex = 28
         '
-        'btnCancelarRegistro
-        '
-        Me.btnCancelarRegistro.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCancelarRegistro.BackColor = System.Drawing.Color.White
-        Me.btnCancelarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelarRegistro.ForeColor = System.Drawing.Color.Black
-        Me.btnCancelarRegistro.Location = New System.Drawing.Point(727, 11)
-        Me.btnCancelarRegistro.Name = "btnCancelarRegistro"
-        Me.btnCancelarRegistro.Size = New System.Drawing.Size(81, 23)
-        Me.btnCancelarRegistro.TabIndex = 27
-        Me.btnCancelarRegistro.Text = "Cancelar"
-        Me.btnCancelarRegistro.UseVisualStyleBackColor = False
-        '
-        'btnCrear
-        '
-        Me.btnCrear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCrear.BackColor = System.Drawing.Color.White
-        Me.btnCrear.FlatAppearance.BorderSize = 0
-        Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCrear.ForeColor = System.Drawing.Color.Black
-        Me.btnCrear.Location = New System.Drawing.Point(466, 11)
-        Me.btnCrear.Name = "btnCrear"
-        Me.btnCrear.Size = New System.Drawing.Size(81, 23)
-        Me.btnCrear.TabIndex = 2
-        Me.btnCrear.Text = "Crear Nuevo"
-        Me.btnCrear.UseVisualStyleBackColor = False
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnModificar.BackColor = System.Drawing.Color.White
-        Me.btnModificar.FlatAppearance.BorderSize = 0
-        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.ForeColor = System.Drawing.Color.Black
-        Me.btnModificar.Location = New System.Drawing.Point(640, 11)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(81, 23)
-        Me.btnModificar.TabIndex = 3
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = False
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGuardar.BackColor = System.Drawing.Color.White
-        Me.btnGuardar.FlatAppearance.BorderSize = 0
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.ForeColor = System.Drawing.Color.Black
-        Me.btnGuardar.Location = New System.Drawing.Point(553, 11)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(81, 23)
-        Me.btnGuardar.TabIndex = 4
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = False
-        '
         'btnEliminar
         '
-        Me.btnEliminar.BackColor = System.Drawing.Color.DimGray
+        Me.btnEliminar.BackColor = System.Drawing.Color.Yellow
         Me.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnEliminar.FlatAppearance.BorderSize = 0
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -189,7 +137,7 @@ Partial Class A_Promociones
         '
         'btnBuscarImage
         '
-        Me.btnBuscarImage.BackColor = System.Drawing.Color.DimGray
+        Me.btnBuscarImage.BackColor = System.Drawing.Color.Yellow
         Me.btnBuscarImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscarImage.FlatAppearance.BorderSize = 0
         Me.btnBuscarImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -275,16 +223,72 @@ Partial Class A_Promociones
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Cod. Promo"
         '
+        'btnCancelarRegistro
+        '
+        Me.btnCancelarRegistro.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelarRegistro.BackColor = System.Drawing.Color.LightSalmon
+        Me.btnCancelarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelarRegistro.ForeColor = System.Drawing.Color.Black
+        Me.btnCancelarRegistro.Location = New System.Drawing.Point(727, 11)
+        Me.btnCancelarRegistro.Name = "btnCancelarRegistro"
+        Me.btnCancelarRegistro.Size = New System.Drawing.Size(81, 23)
+        Me.btnCancelarRegistro.TabIndex = 27
+        Me.btnCancelarRegistro.Text = "Cancelar"
+        Me.btnCancelarRegistro.UseVisualStyleBackColor = False
+        '
+        'btnCrear
+        '
+        Me.btnCrear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCrear.BackColor = System.Drawing.Color.White
+        Me.btnCrear.FlatAppearance.BorderSize = 0
+        Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCrear.ForeColor = System.Drawing.Color.Black
+        Me.btnCrear.Location = New System.Drawing.Point(466, 11)
+        Me.btnCrear.Name = "btnCrear"
+        Me.btnCrear.Size = New System.Drawing.Size(81, 23)
+        Me.btnCrear.TabIndex = 2
+        Me.btnCrear.Text = "Crear Nuevo"
+        Me.btnCrear.UseVisualStyleBackColor = False
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
+        Me.btnModificar.FlatAppearance.BorderSize = 0
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.ForeColor = System.Drawing.Color.Black
+        Me.btnModificar.Location = New System.Drawing.Point(640, 11)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(81, 23)
+        Me.btnModificar.TabIndex = 3
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
+        Me.btnGuardar.FlatAppearance.BorderSize = 0
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.ForeColor = System.Drawing.Color.Black
+        Me.btnGuardar.Location = New System.Drawing.Point(553, 11)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(81, 23)
+        Me.btnGuardar.TabIndex = 4
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = False
+        '
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox2.Controls.Add(Me.btnAgregar)
         Me.GroupBox2.Controls.Add(Me.dtDetallePromo)
         Me.GroupBox2.Location = New System.Drawing.Point(367, 55)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(440, 385)
+        Me.GroupBox2.Size = New System.Drawing.Size(440, 390)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detalle de Promoción"
@@ -296,7 +300,7 @@ Partial Class A_Promociones
         Me.btnAgregar.FlatAppearance.BorderSize = 0
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.ForeColor = System.Drawing.Color.White
-        Me.btnAgregar.Location = New System.Drawing.Point(359, 355)
+        Me.btnAgregar.Location = New System.Drawing.Point(359, 360)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
         Me.btnAgregar.TabIndex = 27
@@ -310,12 +314,13 @@ Partial Class A_Promociones
         Me.dtDetallePromo.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtDetallePromo.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dtDetallePromo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDetallePromo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cod, Me.Descrip})
         Me.dtDetallePromo.Location = New System.Drawing.Point(6, 19)
         Me.dtDetallePromo.Name = "dtDetallePromo"
         Me.dtDetallePromo.ReadOnly = True
-        Me.dtDetallePromo.Size = New System.Drawing.Size(428, 330)
+        Me.dtDetallePromo.Size = New System.Drawing.Size(428, 335)
         Me.dtDetallePromo.TabIndex = 0
         '
         'Cod
@@ -343,7 +348,7 @@ Partial Class A_Promociones
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.btnCancelarRegistro)
         Me.Panel1.Controls.Add(Me.btnGuardar)
@@ -365,16 +370,27 @@ Partial Class A_Promociones
         Me.Label7.TabIndex = 3
         Me.Label7.Text = "Promociones"
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 445)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(819, 22)
+        Me.StatusStrip1.TabIndex = 3
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_Promociones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(819, 448)
+        Me.ClientSize = New System.Drawing.Size(819, 467)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "A_Promociones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -387,6 +403,7 @@ Partial Class A_Promociones
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -419,4 +436,5 @@ Partial Class A_Promociones
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label7 As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

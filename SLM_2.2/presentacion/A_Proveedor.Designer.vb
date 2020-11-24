@@ -411,7 +411,7 @@ Partial Class A_Proveedor
         'btnModificar
         '
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.Black

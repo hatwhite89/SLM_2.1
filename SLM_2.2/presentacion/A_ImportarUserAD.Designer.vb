@@ -22,6 +22,7 @@ Partial Class A_ImportarUserAD
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ImportarUserAD))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dtUsuariosAD = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
@@ -34,6 +35,7 @@ Partial Class A_ImportarUserAD
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnActualizar = New UIDC.UI_ButtonMaterial()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dtUsuariosAD, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -44,10 +46,11 @@ Partial Class A_ImportarUserAD
         Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox2.Controls.Add(Me.dtUsuariosAD)
-        Me.GroupBox2.Location = New System.Drawing.Point(9, 55)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 55)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(704, 430)
+        Me.GroupBox2.Size = New System.Drawing.Size(704, 436)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Listado de Usuarios de AD"
@@ -63,7 +66,7 @@ Partial Class A_ImportarUserAD
         Me.dtUsuariosAD.Location = New System.Drawing.Point(3, 16)
         Me.dtUsuariosAD.Name = "dtUsuariosAD"
         Me.dtUsuariosAD.ReadOnly = True
-        Me.dtUsuariosAD.Size = New System.Drawing.Size(698, 411)
+        Me.dtUsuariosAD.Size = New System.Drawing.Size(698, 417)
         Me.dtUsuariosAD.TabIndex = 0
         '
         'Column1
@@ -158,7 +161,7 @@ Partial Class A_ImportarUserAD
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnActualizar)
         Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -185,14 +188,25 @@ Partial Class A_ImportarUserAD
         Me.btnActualizar.UIFontColor = "#000000"
         Me.btnActualizar.UseVisualStyleBackColor = False
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 500)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(722, 22)
+        Me.StatusStrip1.TabIndex = 14
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_ImportarUserAD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(722, 495)
+        Me.ClientSize = New System.Drawing.Size(722, 522)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_ImportarUserAD"
         Me.Text = "Importar Usuarios de AD"
         Me.GroupBox2.ResumeLayout(False)
@@ -200,6 +214,7 @@ Partial Class A_ImportarUserAD
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox2 As GroupBox
@@ -214,4 +229,5 @@ Partial Class A_ImportarUserAD
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnActualizar As UIDC.UI_ButtonMaterial
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

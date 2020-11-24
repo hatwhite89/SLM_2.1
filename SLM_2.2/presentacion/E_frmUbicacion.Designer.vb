@@ -30,9 +30,6 @@ Partial Class E_frmUbicacion
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.id_almacen = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre_almacen = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -46,6 +43,16 @@ Partial Class E_frmUbicacion
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.id_almacen = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_almacen = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.USUARIO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.engargado2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -127,36 +134,22 @@ Partial Class E_frmUbicacion
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_almacen, Me.nombre_almacen, Me.descripcion})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_almacen, Me.nombre_almacen, Me.descripcion, Me.USUARIO, Me.engargado2})
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.Location = New System.Drawing.Point(6, 48)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(695, 165)
         Me.DataGridView1.TabIndex = 0
         '
-        'id_almacen
-        '
-        Me.id_almacen.DataPropertyName = "id_almacen"
-        Me.id_almacen.HeaderText = "ID"
-        Me.id_almacen.Name = "id_almacen"
-        '
-        'nombre_almacen
-        '
-        Me.nombre_almacen.DataPropertyName = "nombre_almacen"
-        Me.nombre_almacen.HeaderText = "ALMACEN"
-        Me.nombre_almacen.Name = "nombre_almacen"
-        '
-        'descripcion
-        '
-        Me.descripcion.DataPropertyName = "descripcion"
-        Me.descripcion.HeaderText = "DESCRIPCION"
-        Me.descripcion.Name = "descripcion"
-        '
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -211,7 +204,7 @@ Partial Class E_frmUbicacion
         Me.txtDescripcion.Location = New System.Drawing.Point(320, 39)
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.ReadOnly = True
-        Me.txtDescripcion.Size = New System.Drawing.Size(368, 60)
+        Me.txtDescripcion.Size = New System.Drawing.Size(380, 60)
         Me.txtDescripcion.TabIndex = 2
         Me.txtDescripcion.Text = ""
         '
@@ -237,6 +230,7 @@ Partial Class E_frmUbicacion
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.Button5)
         Me.Panel1.Controls.Add(Me.Button6)
@@ -293,6 +287,83 @@ Partial Class E_frmUbicacion
         Me.StatusStrip1.TabIndex = 9
         Me.StatusStrip1.Text = "StatusStrip1"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(23, 115)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(103, 13)
+        Me.Label7.TabIndex = 10
+        Me.Label7.Text = "Encargado Almacén"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.TextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.TextBox1.Location = New System.Drawing.Point(132, 108)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(273, 20)
+        Me.TextBox1.TabIndex = 11
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(411, 115)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(158, 13)
+        Me.Label8.TabIndex = 12
+        Me.Label8.Text = "Usuario del encargado Almacén"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(575, 108)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(125, 20)
+        Me.TextBox2.TabIndex = 13
+        '
+        'id_almacen
+        '
+        Me.id_almacen.DataPropertyName = "id_almacen"
+        Me.id_almacen.HeaderText = "ID"
+        Me.id_almacen.Name = "id_almacen"
+        '
+        'nombre_almacen
+        '
+        Me.nombre_almacen.DataPropertyName = "nombre_almacen"
+        Me.nombre_almacen.HeaderText = "ALMACEN"
+        Me.nombre_almacen.Name = "nombre_almacen"
+        '
+        'descripcion
+        '
+        Me.descripcion.DataPropertyName = "descripcion"
+        Me.descripcion.HeaderText = "DESCRIPCION"
+        Me.descripcion.Name = "descripcion"
+        '
+        'USUARIO
+        '
+        Me.USUARIO.DataPropertyName = "usuario"
+        Me.USUARIO.HeaderText = "USUARIO"
+        Me.USUARIO.Name = "USUARIO"
+        '
+        'engargado2
+        '
+        Me.engargado2.DataPropertyName = "nombre_encargado"
+        Me.engargado2.HeaderText = "ENCARGADO"
+        Me.engargado2.Name = "engargado2"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label14.Location = New System.Drawing.Point(3, 8)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(105, 26)
+        Me.Label14.TabIndex = 11
+        Me.Label14.Text = "Almacén"
+        '
         'E_frmUbicacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -312,6 +383,7 @@ Partial Class E_frmUbicacion
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -334,8 +406,15 @@ Partial Class E_frmUbicacion
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents Button1 As Button
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label7 As Label
     Friend WithEvents id_almacen As DataGridViewTextBoxColumn
     Friend WithEvents nombre_almacen As DataGridViewTextBoxColumn
     Friend WithEvents descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As Button
+    Friend WithEvents USUARIO As DataGridViewTextBoxColumn
+    Friend WithEvents engargado2 As DataGridViewTextBoxColumn
+    Friend WithEvents Label14 As Label
 End Class

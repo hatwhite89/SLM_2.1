@@ -25,6 +25,7 @@ Partial Class A_ListadoCheques
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListadoCheques))
         Me.gbxCheque = New System.Windows.Forms.GroupBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.dtpFin = New System.Windows.Forms.DateTimePicker()
@@ -38,7 +39,7 @@ Partial Class A_ListadoCheques
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtCheques = New System.Windows.Forms.DataGridView()
         Me.ttBusqueda = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.gbxCheque.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtCheques, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,16 +65,27 @@ Partial Class A_ListadoCheques
         Me.gbxCheque.Controls.Add(Me.dtCheques)
         Me.gbxCheque.Location = New System.Drawing.Point(9, 12)
         Me.gbxCheque.Name = "gbxCheque"
-        Me.gbxCheque.Size = New System.Drawing.Size(921, 427)
+        Me.gbxCheque.Size = New System.Drawing.Size(921, 407)
         Me.gbxCheque.TabIndex = 0
         Me.gbxCheque.TabStop = False
         Me.gbxCheque.Text = "Cheques Generados"
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Location = New System.Drawing.Point(724, 38)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(81, 31)
+        Me.Button2.TabIndex = 12
+        Me.Button2.Text = "Vista General"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(701, 39)
+        Me.Button1.Location = New System.Drawing.Point(637, 38)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(81, 31)
         Me.Button1.TabIndex = 11
@@ -86,9 +98,9 @@ Partial Class A_ListadoCheques
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(875, 38)
+        Me.PictureBox1.Location = New System.Drawing.Point(826, 38)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(40, 32)
+        Me.PictureBox1.Size = New System.Drawing.Size(89, 32)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 10
         Me.PictureBox1.TabStop = False
@@ -182,19 +194,17 @@ Partial Class A_ListadoCheques
         Me.dtCheques.Location = New System.Drawing.Point(3, 76)
         Me.dtCheques.Name = "dtCheques"
         Me.dtCheques.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCheques.Size = New System.Drawing.Size(912, 345)
+        Me.dtCheques.Size = New System.Drawing.Size(912, 325)
         Me.dtCheques.TabIndex = 0
         '
-        'Button2
+        'StatusStrip1
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(788, 39)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(81, 31)
-        Me.Button2.TabIndex = 12
-        Me.Button2.Text = "Vista General"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 429)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(942, 22)
+        Me.StatusStrip1.TabIndex = 1
+        Me.StatusStrip1.Text = "StatusStrip1"
         '
         'A_ListadoCheques
         '
@@ -202,8 +212,10 @@ Partial Class A_ListadoCheques
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(942, 451)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxCheque)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "A_ListadoCheques"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -213,6 +225,7 @@ Partial Class A_ListadoCheques
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtCheques, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -231,4 +244,5 @@ Partial Class A_ListadoCheques
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

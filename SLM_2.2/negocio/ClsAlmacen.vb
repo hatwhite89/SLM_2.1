@@ -2,7 +2,7 @@
 
 Public Class ClsAlmacen
     Dim id As Integer
-    Dim nombre, descripcion As String
+    Dim nombre, descripcion, usuario, nombre_encargado As String
     'constructor
     Public Sub New()
 
@@ -35,6 +35,24 @@ Public Class ClsAlmacen
         End Set
     End Property
 
+    Public Property Nombre_encargado1 As String
+        Get
+            Return nombre_encargado
+        End Get
+        Set(value As String)
+            nombre_encargado = value
+        End Set
+    End Property
+
+    Public Property Usuario1 As String
+        Get
+            Return usuario
+        End Get
+        Set(value As String)
+            usuario = value
+        End Set
+    End Property
+
     Public Function RegistrarAlmacen() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -47,6 +65,16 @@ Public Class ClsAlmacen
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "nombre_almacen" 'nombre del almacen 
         sqlpar.Value = NombreAlmacen
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nombre_usuario" 'nombre del almacen 
+        sqlpar.Value = Nombre_encargado1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "usuario" 'nombre del almacen 
+        sqlpar.Value = Usuario1
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -91,6 +119,15 @@ Public Class ClsAlmacen
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "nombre_almacen" 'nombre campo en el procedimiento almacenado 
         sqlpar.Value = NombreAlmacen
+        sqlcom.Parameters.Add(sqlpar)
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nombre_usuario" 'nombre del almacen 
+        sqlpar.Value = Nombre_encargado1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "usuario" 'nombre del almacen 
+        sqlpar.Value = Usuario1
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

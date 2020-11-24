@@ -22,6 +22,7 @@ Partial Class A_Cuenta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Cuenta))
         Me.lblCuenta = New System.Windows.Forms.Label()
         Me.txtCuenta = New System.Windows.Forms.TextBox()
         Me.lblNombre = New System.Windows.Forms.Label()
@@ -43,8 +44,9 @@ Partial Class A_Cuenta
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtCuentas = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.gbxCuenta.SuspendLayout()
         Me.gbxCuentas.SuspendLayout()
         CType(Me.dtCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,6 +91,7 @@ Partial Class A_Cuenta
         '
         Me.gbxCuenta.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxCuenta.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.gbxCuenta.Controls.Add(Me.lblTipoDetalle)
         Me.gbxCuenta.Controls.Add(Me.lblTipo)
         Me.gbxCuenta.Controls.Add(Me.cbxTipoCuenta)
@@ -182,7 +185,7 @@ Partial Class A_Cuenta
         'btnModificar
         '
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.Black
@@ -197,7 +200,7 @@ Partial Class A_Cuenta
         'btnGuardar
         '
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGuardar.BackColor = System.Drawing.Color.White
+        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.Black
@@ -222,13 +225,14 @@ Partial Class A_Cuenta
         '
         Me.gbxCuentas.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxCuentas.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxCuentas.Controls.Add(Me.btnCancelar)
         Me.gbxCuentas.Controls.Add(Me.txtBusqueda)
         Me.gbxCuentas.Controls.Add(Me.Label1)
         Me.gbxCuentas.Controls.Add(Me.dtCuentas)
         Me.gbxCuentas.Location = New System.Drawing.Point(8, 176)
         Me.gbxCuentas.Name = "gbxCuentas"
-        Me.gbxCuentas.Size = New System.Drawing.Size(670, 271)
+        Me.gbxCuentas.Size = New System.Drawing.Size(670, 253)
         Me.gbxCuentas.TabIndex = 7
         Me.gbxCuentas.TabStop = False
         Me.gbxCuentas.Text = "Listado de Cuentas"
@@ -236,12 +240,13 @@ Partial Class A_Cuenta
         'btnCancelar
         '
         Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCancelar.Location = New System.Drawing.Point(578, 23)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(86, 23)
         Me.btnCancelar.TabIndex = 3
         Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
+        Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'txtBusqueda
         '
@@ -277,14 +282,14 @@ Partial Class A_Cuenta
         Me.dtCuentas.ReadOnly = True
         Me.dtCuentas.RowHeadersVisible = False
         Me.dtCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtCuentas.Size = New System.Drawing.Size(658, 210)
+        Me.dtCuentas.Size = New System.Drawing.Size(658, 192)
         Me.dtCuentas.TabIndex = 0
         '
         'Panel1
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.btnNuevo)
@@ -294,6 +299,20 @@ Partial Class A_Cuenta
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(692, 50)
         Me.Panel1.TabIndex = 16
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.LightSalmon
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Location = New System.Drawing.Point(605, 11)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 18
+        Me.Button1.Text = "Cerrar"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label2
         '
@@ -306,19 +325,14 @@ Partial Class A_Cuenta
         Me.Label2.TabIndex = 17
         Me.Label2.Text = "Catálogo Contable"
         '
-        'Button1
+        'StatusStrip1
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(605, 11)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 18
-        Me.Button1.Text = "Cerrar"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 432)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(690, 22)
+        Me.StatusStrip1.TabIndex = 17
+        Me.StatusStrip1.Text = "StatusStrip1"
         '
         'A_Cuenta
         '
@@ -326,10 +340,12 @@ Partial Class A_Cuenta
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(690, 454)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lblCodCuenta)
         Me.Controls.Add(Me.gbxCuentas)
         Me.Controls.Add(Me.gbxCuenta)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "A_Cuenta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -369,4 +385,5 @@ Partial Class A_Cuenta
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

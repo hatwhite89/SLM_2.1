@@ -42,6 +42,7 @@ Partial Class E_AccesoLaboratorio
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtusuarioB = New System.Windows.Forms.TextBox()
         Me.lblcodigoB = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.gbxobjeto.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,6 +50,7 @@ Partial Class E_AccesoLaboratorio
         '
         'gbxobjeto
         '
+        Me.gbxobjeto.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.gbxobjeto.Controls.Add(Me.lblcode)
         Me.gbxobjeto.Controls.Add(Me.cbxValidar)
         Me.gbxobjeto.Controls.Add(Me.cbxConfirmar)
@@ -63,9 +65,9 @@ Partial Class E_AccesoLaboratorio
         Me.gbxobjeto.Controls.Add(Me.lblnombre)
         Me.gbxobjeto.Controls.Add(Me.txtusuario)
         Me.gbxobjeto.Location = New System.Drawing.Point(11, 11)
-        Me.gbxobjeto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxobjeto.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxobjeto.Name = "gbxobjeto"
-        Me.gbxobjeto.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxobjeto.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxobjeto.Size = New System.Drawing.Size(696, 157)
         Me.gbxobjeto.TabIndex = 119
         Me.gbxobjeto.TabStop = False
@@ -85,7 +87,7 @@ Partial Class E_AccesoLaboratorio
         '
         Me.cbxValidar.AutoSize = True
         Me.cbxValidar.Location = New System.Drawing.Point(224, 79)
-        Me.cbxValidar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbxValidar.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxValidar.Name = "cbxValidar"
         Me.cbxValidar.Size = New System.Drawing.Size(146, 17)
         Me.cbxValidar.TabIndex = 121
@@ -96,7 +98,7 @@ Partial Class E_AccesoLaboratorio
         '
         Me.cbxConfirmar.AutoSize = True
         Me.cbxConfirmar.Location = New System.Drawing.Point(224, 57)
-        Me.cbxConfirmar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbxConfirmar.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxConfirmar.Name = "cbxConfirmar"
         Me.cbxConfirmar.Size = New System.Drawing.Size(158, 17)
         Me.cbxConfirmar.TabIndex = 120
@@ -107,7 +109,7 @@ Partial Class E_AccesoLaboratorio
         '
         Me.cbxObjetar.AutoSize = True
         Me.cbxObjetar.Location = New System.Drawing.Point(68, 79)
-        Me.cbxObjetar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbxObjetar.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxObjetar.Name = "cbxObjetar"
         Me.cbxObjetar.Size = New System.Drawing.Size(148, 17)
         Me.cbxObjetar.TabIndex = 119
@@ -118,7 +120,7 @@ Partial Class E_AccesoLaboratorio
         '
         Me.cbxIngresar.AutoSize = True
         Me.cbxIngresar.Location = New System.Drawing.Point(68, 57)
-        Me.cbxIngresar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbxIngresar.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxIngresar.Name = "cbxIngresar"
         Me.cbxIngresar.Size = New System.Drawing.Size(152, 17)
         Me.cbxIngresar.TabIndex = 118
@@ -128,7 +130,7 @@ Partial Class E_AccesoLaboratorio
         'txtnombre
         '
         Me.txtnombre.Location = New System.Drawing.Point(286, 19)
-        Me.txtnombre.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombre.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(258, 20)
         Me.txtnombre.TabIndex = 117
@@ -141,7 +143,7 @@ Partial Class E_AccesoLaboratorio
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.Color.Black
         Me.btnmodificar.Location = New System.Drawing.Point(163, 121)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
         Me.btnmodificar.TabIndex = 114
@@ -155,7 +157,7 @@ Partial Class E_AccesoLaboratorio
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.Color.Black
         Me.btnnuevo.Location = New System.Drawing.Point(4, 121)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
         Me.btnnuevo.TabIndex = 113
@@ -169,7 +171,7 @@ Partial Class E_AccesoLaboratorio
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.Color.Black
         Me.btnguardar.Location = New System.Drawing.Point(87, 121)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(72, 28)
         Me.btnguardar.TabIndex = 112
@@ -193,7 +195,7 @@ Partial Class E_AccesoLaboratorio
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.Color.Black
         Me.btncancelar.Location = New System.Drawing.Point(239, 121)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(68, 28)
         Me.btncancelar.TabIndex = 37
@@ -213,7 +215,7 @@ Partial Class E_AccesoLaboratorio
         'txtusuario
         '
         Me.txtusuario.Location = New System.Drawing.Point(68, 22)
-        Me.txtusuario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtusuario.Margin = New System.Windows.Forms.Padding(2)
         Me.txtusuario.Name = "txtusuario"
         Me.txtusuario.Size = New System.Drawing.Size(138, 20)
         Me.txtusuario.TabIndex = 40
@@ -221,15 +223,16 @@ Partial Class E_AccesoLaboratorio
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtusuarioB)
         Me.gbxbusqueda.Controls.Add(Me.lblcodigoB)
         Me.gbxbusqueda.Location = New System.Drawing.Point(11, 172)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Size = New System.Drawing.Size(696, 322)
         Me.gbxbusqueda.TabIndex = 118
         Me.gbxbusqueda.TabStop = False
@@ -249,9 +252,10 @@ Partial Class E_AccesoLaboratorio
         '
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
+        Me.dgbtabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(7, 41)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
@@ -273,7 +277,7 @@ Partial Class E_AccesoLaboratorio
         'txtusuarioB
         '
         Me.txtusuarioB.Location = New System.Drawing.Point(61, 17)
-        Me.txtusuarioB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtusuarioB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtusuarioB.Name = "txtusuarioB"
         Me.txtusuarioB.Size = New System.Drawing.Size(631, 20)
         Me.txtusuarioB.TabIndex = 115
@@ -288,16 +292,26 @@ Partial Class E_AccesoLaboratorio
         Me.lblcodigoB.TabIndex = 114
         Me.lblcodigoB.Text = "Usuario"
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 498)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 120
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'E_AccesoLaboratorio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(718, 505)
+        Me.ClientSize = New System.Drawing.Size(718, 520)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxobjeto)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "E_AccesoLaboratorio"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Acceso Laboratorio"
@@ -307,6 +321,7 @@ Partial Class E_AccesoLaboratorio
         Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -330,4 +345,5 @@ Partial Class E_AccesoLaboratorio
     Friend WithEvents txtusuarioB As TextBox
     Friend WithEvents lblcodigoB As Label
     Friend WithEvents lblcode As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class
