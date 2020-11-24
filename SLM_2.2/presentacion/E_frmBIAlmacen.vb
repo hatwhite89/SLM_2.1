@@ -44,6 +44,8 @@
 
         End Try
 
+        alternarColoFilasDatagridview(DataGridView1)
+        alternarColoFilasDatagridview(DataGridView2)
     End Sub
     Private Sub ComboAlmacen()
         Dim clsD As New ClsAlmacen
