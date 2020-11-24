@@ -379,17 +379,17 @@ Partial Class E_HojaTrabajo
         Me.txtInstrTecnico.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtInstrTecnico.BackColor = System.Drawing.Color.White
-        Me.txtInstrTecnico.Location = New System.Drawing.Point(703, 233)
+        Me.txtInstrTecnico.Location = New System.Drawing.Point(107, 233)
         Me.txtInstrTecnico.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtInstrTecnico.Name = "txtInstrTecnico"
         Me.txtInstrTecnico.ReadOnly = True
-        Me.txtInstrTecnico.Size = New System.Drawing.Size(405, 22)
+        Me.txtInstrTecnico.Size = New System.Drawing.Size(1001, 22)
         Me.txtInstrTecnico.TabIndex = 35
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(604, 235)
+        Me.Label13.Location = New System.Drawing.Point(6, 233)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(93, 17)
         Me.Label13.TabIndex = 34
@@ -619,7 +619,7 @@ Partial Class E_HojaTrabajo
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1447, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1447, 28)
         Me.MenuStrip1.TabIndex = 50
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -627,7 +627,7 @@ Partial Class E_HojaTrabajo
         '
         Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ValidarDatosToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 26)
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 24)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
         '
         'ValidarDatosToolStripMenuItem
@@ -640,7 +640,7 @@ Partial Class E_HojaTrabajo
         'lblCodeSubArea
         '
         Me.lblCodeSubArea.AutoSize = True
-        Me.lblCodeSubArea.Location = New System.Drawing.Point(103, 229)
+        Me.lblCodeSubArea.Location = New System.Drawing.Point(104, 265)
         Me.lblCodeSubArea.Name = "lblCodeSubArea"
         Me.lblCodeSubArea.Size = New System.Drawing.Size(62, 17)
         Me.lblCodeSubArea.TabIndex = 51
@@ -650,7 +650,7 @@ Partial Class E_HojaTrabajo
         'lblCodeSucursal
         '
         Me.lblCodeSucursal.AutoSize = True
-        Me.lblCodeSucursal.Location = New System.Drawing.Point(231, 228)
+        Me.lblCodeSucursal.Location = New System.Drawing.Point(232, 265)
         Me.lblCodeSucursal.Name = "lblCodeSucursal"
         Me.lblCodeSucursal.Size = New System.Drawing.Size(63, 17)
         Me.lblCodeSucursal.TabIndex = 52

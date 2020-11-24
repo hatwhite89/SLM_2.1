@@ -66,8 +66,8 @@
                 txtPaciente.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(1).Value()
                 txtParametro.Text = dgvHojaTrab.Columns.Item(e.ColumnIndex).Name
                 txtValorActual.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(e.ColumnIndex).Value()
-                celda = Convert.ToInt32(dgvHojaTrab.CurrentCell.ColumnIndex.ToString)
-                fila = Convert.ToInt32(dgvHojaTrab.CurrentCell.RowIndex.ToString)
+                celda = Convert.ToInt64(dgvHojaTrab.CurrentCell.ColumnIndex.ToString)
+                fila = Convert.ToInt64(dgvHojaTrab.CurrentCell.RowIndex.ToString)
 
                 'buscar valores referencia 
                 If (Trim(txtParametro.Text) <> "") Then
@@ -82,9 +82,13 @@
                     End Try
                 End If
 
+                'buscar observaciones hoja de trabajo
+                BuscarObservacionesHojaTrabajo()
             Else
                 txtOrden.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(0).Value()
                 txtPaciente.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(1).Value()
+                txtInstrTecnico.Text = ""
+                txtValoresRef.Text = ""
             End If
         Catch ex As Exception
             'MsgBox(ex.Message)
@@ -354,6 +358,23 @@
 
     End Sub
 
+    Private Sub BuscarObservacionesHojaTrabajo()
+        If (Trim(txtParametro.Text) <> "") Then
+            Try
+                Dim objSede As New ClsOrdenDeTrabajo
+                With objSede
+                    .cod_orden_trabajo_ = txtOrden.Text
+                End With
+                Dim dt As New DataTable
+                dt = objSede.BuscarObservacionesHojaDeTrabajo(txtParametro.Text)
+                Dim row As DataRow = dt.Rows(0)
+                txtInstrTecnico.Text = CStr(row("observaciones"))
+            Catch ex As Exception
+                txtInstrTecnico.Text = ""
+            End Try
+        End If
+    End Sub
+
     Private Sub btnDetalleResultado_Click(sender As Object, e As EventArgs) Handles btnDetalleResultado.Click
         A_PlantillasDeResultado.Show()
     End Sub
@@ -438,6 +459,10 @@
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub txtParametro_TextChanged(sender As Object, e As EventArgs) Handles txtParametro.TextChanged
+
     End Sub
 
     Private Sub cbxPlantillas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxPlantillas.SelectedIndexChanged

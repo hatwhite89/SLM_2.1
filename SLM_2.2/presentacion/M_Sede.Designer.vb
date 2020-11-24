@@ -47,11 +47,13 @@ Partial Class M_Sede
         Me.lbldireccion3 = New System.Windows.Forms.Label()
         Me.rtxtdireccion1 = New System.Windows.Forms.RichTextBox()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.btnExcel = New System.Windows.Forms.Button()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnombreB = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,6 +61,10 @@ Partial Class M_Sede
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.lblform)
         Me.GroupBox1.Controls.Add(Me.btnmodificar)
         Me.GroupBox1.Controls.Add(Me.btnnuevo)
@@ -169,6 +175,8 @@ Partial Class M_Sede
         '
         'txttelefono
         '
+        Me.txttelefono.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txttelefono.Location = New System.Drawing.Point(656, 138)
         Me.txttelefono.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txttelefono.MaxLength = 20
@@ -209,6 +217,8 @@ Partial Class M_Sede
         '
         'txtcontacto
         '
+        Me.txtcontacto.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtcontacto.Location = New System.Drawing.Point(656, 49)
         Me.txtcontacto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcontacto.MaxLength = 80
@@ -219,6 +229,8 @@ Partial Class M_Sede
         '
         'txtcorreo
         '
+        Me.txtcorreo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtcorreo.Location = New System.Drawing.Point(656, 95)
         Me.txtcorreo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcorreo.MaxLength = 80
@@ -339,6 +351,10 @@ Partial Class M_Sede
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxbusqueda.Controls.Add(Me.btnExcel)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
@@ -353,8 +369,24 @@ Partial Class M_Sede
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR SEDE"
         '
+        'btnExcel
+        '
+        Me.btnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnExcel.BackColor = System.Drawing.Color.Green
+        Me.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExcel.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnExcel.Location = New System.Drawing.Point(791, 17)
+        Me.btnExcel.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnExcel.Name = "btnExcel"
+        Me.btnExcel.Size = New System.Drawing.Size(100, 28)
+        Me.btnExcel.TabIndex = 117
+        Me.btnExcel.Text = "Excel"
+        Me.btnExcel.UseVisualStyleBackColor = False
+        '
         'lblcantidad
         '
+        Me.lblcantidad.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblcantidad.AutoSize = True
         Me.lblcantidad.Location = New System.Drawing.Point(307, 289)
         Me.lblcantidad.Name = "lblcantidad"
@@ -366,6 +398,10 @@ Partial Class M_Sede
         '
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
+        Me.dgbtabla.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgbtabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(5, 57)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -379,6 +415,7 @@ Partial Class M_Sede
         '
         'lbltotal
         '
+        Me.lbltotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lbltotal.AutoSize = True
         Me.lbltotal.Location = New System.Drawing.Point(17, 289)
         Me.lbltotal.Name = "lbltotal"
@@ -388,21 +425,32 @@ Partial Class M_Sede
         '
         'txtnombreB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(79, 21)
+        Me.txtnombreB.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtnombreB.Location = New System.Drawing.Point(103, 21)
         Me.txtnombreB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
-        Me.txtnombreB.Size = New System.Drawing.Size(843, 22)
+        Me.txtnombreB.Size = New System.Drawing.Size(649, 22)
         Me.txtnombreB.TabIndex = 115
         '
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(15, 23)
+        Me.lblnombreB.Location = New System.Drawing.Point(26, 23)
         Me.lblnombreB.Name = "lblnombreB"
         Me.lblnombreB.Size = New System.Drawing.Size(58, 17)
         Me.lblnombreB.TabIndex = 114
         Me.lblnombreB.Text = "Nombre"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(600, 270)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 141
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'M_Sede
         '
@@ -455,4 +503,6 @@ Partial Class M_Sede
     Friend WithEvents txtnombreB As TextBox
     Friend WithEvents lblnombreB As Label
     Friend WithEvents lblform As Label
+    Friend WithEvents btnExcel As Button
+    Friend WithEvents Button1 As Button
 End Class

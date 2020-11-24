@@ -1907,14 +1907,18 @@ Public Class M_Factura
                                     Exit Sub
                                 End If
                             Next
+                            'Si la cantidad es mayor que 1
+                            If (Convert.ToInt64(rowC("Cantidad")) > 1) Then
+                                CantidadMayorQueUno(Convert.ToInt64(rowC("Cantidad")), Convert.ToInt64(rowC("subArea")), Convert.ToInt64(rowC("codeItemExam")))
+                            End If
                             'si inserto el ultimo item 
                             If j = dt.Rows.Count - 2 Then
-                                MsgBox("Orden de trabajo registrada con éxito.", MsgBoxStyle.Information)
-                                Exit Sub
-                            End If
+                                    MsgBox("Orden de trabajo registrada con éxito.", MsgBoxStyle.Information)
+                                    Exit Sub
+                                End If
 
-                        Else
-                            i = j - 1
+                            Else
+                                i = j - 1
                             Exit For
                         End If
                     Next
@@ -1927,6 +1931,60 @@ Public Class M_Factura
         Catch ex As Exception
             MsgBox("CRITICAL ERROR : " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub CantidadMayorQueUno(ByVal cantidad As Integer, ByVal codigoSubArea As Integer, ByVal codItemExa As Integer)
+
+        Dim rowI As DataRow 'fila item detalle
+        Dim rowO As DataRow 'fila orden de trabajo
+
+        Dim dt2 As New DataTable 'lista el detalle de los items
+        Dim dtO As New DataTable 'obtiene el codigo de la orden de trabajo
+
+        Dim objItemD As New ClsItemExamenDetalle
+        Dim objOrd As New ClsOrdenDeTrabajo
+
+        'Dim codOrdenTrabajo As Integer = 0
+
+        For index = 1 To cantidad - 1
+
+            With objOrd
+                .cod_factura_ = Convert.ToInt64(txtnumeroFactura.Text)
+                .pmFecha_ = dtpfechaFactura.Value
+                .pmUsuario_ = txtcodigoCajero.Text
+                .npFecha_ = dtpfechaFactura.Value
+                .npUsuario_ = txtcodigoCajero.Text
+                .codigoSubArea_ = codigoSubArea
+                .estado_ = "No Procesado"
+                .entregarPaciente_ = cbxentregarPaciente.Checked
+                .entregarMedico_ = cbxentregarMedico.Checked
+                .enviadaEmail_ = cbxenviarCorreo.Checked
+                .cod_sede_ = Integer.Parse(txtcodigoSede.Text)
+                If .RegistrarOrdenDeTrabajo() = 0 Then
+                    MsgBox("Error al querer insertar la orden de trabajo.", MsgBoxStyle.Critical)
+                    Exit Sub
+                End If
+                'codOrdenTrabajo = .RegistrarOrdenDeTrabajo2()
+                dtO = .CapturarOrdenDeTrabajo()
+            End With
+            rowO = dtO.Rows(0)
+            objItemD.codigoItemExamen_ = codItemExa
+            dt2 = objItemD.BuscarItemExamenDetalle
+            For x As Integer = 0 To dt2.Rows.Count - 1
+                rowI = dt2.Rows(x)
+                Dim objDetOrd As New ClsOrdenTrabajoDetalle
+                With objDetOrd
+                    .cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
+                    .cod_item_examen_detalle_ = rowI("codigo")
+                    .estado_ = "No Ingresado"
+                End With
+                If objDetOrd.RegistrarNuevoDetalleOrdenTrabajo = 0 Then
+                    MsgBox("Error en la insercion del detalle orden de trabajo.", MsgBoxStyle.Critical)
+                    Exit Sub
+                End If
+            Next
+        Next
+
     End Sub
 
     Private Sub ejemplo()
