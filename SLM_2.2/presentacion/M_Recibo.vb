@@ -34,7 +34,6 @@
     Public Sub limpiar()
 
         Try
-
             txtnumero.Text = ""
             dtpFechaTrans.Value = Date.Now
             rtxtReferencia.Text = ""
