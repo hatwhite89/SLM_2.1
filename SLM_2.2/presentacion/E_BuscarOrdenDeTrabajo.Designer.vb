@@ -22,6 +22,7 @@ Partial Class E_BuscarOrdenDeTrabajo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_BuscarOrdenDeTrabajo))
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.txtnumeroB = New System.Windows.Forms.TextBox()
@@ -59,6 +60,7 @@ Partial Class E_BuscarOrdenDeTrabajo
         '
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
+        Me.dgbtabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(4, 65)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
@@ -145,6 +147,7 @@ Partial Class E_BuscarOrdenDeTrabajo
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(718, 538)
         Me.Controls.Add(Me.gbxbusqueda)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "E_BuscarOrdenDeTrabajo"
         Me.Text = "E_BuscarOrdenDeTrabajo"

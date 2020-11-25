@@ -68,6 +68,7 @@ Partial Class E_frmProducto
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -311,6 +312,7 @@ Partial Class E_frmProducto
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.Button4)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.txtBuscar)
@@ -382,7 +384,7 @@ Partial Class E_frmProducto
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.Black
-        Me.DataGridView1.Location = New System.Drawing.Point(7, 55)
+        Me.DataGridView1.Location = New System.Drawing.Point(7, 65)
         Me.DataGridView1.Name = "DataGridView1"
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
@@ -395,7 +397,7 @@ Partial Class E_frmProducto
         Me.DataGridView1.RowHeadersWidth = 51
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridView1.Size = New System.Drawing.Size(682, 144)
+        Me.DataGridView1.Size = New System.Drawing.Size(682, 134)
         Me.DataGridView1.TabIndex = 0
         '
         'id_producto
@@ -488,6 +490,16 @@ Partial Class E_frmProducto
         Me.StatusStrip1.TabIndex = 4
         Me.StatusStrip1.Text = "StatusStrip1"
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(215, 48)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(272, 13)
+        Me.Label11.TabIndex = 122
+        Me.Label11.Text = "Seleccione una fila para cargar la información "
+        '
         'E_frmProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -554,4 +566,5 @@ Partial Class E_frmProducto
     Friend WithEvents txtPrecioProducto As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Button4 As Button
+    Friend WithEvents Label11 As Label
 End Class

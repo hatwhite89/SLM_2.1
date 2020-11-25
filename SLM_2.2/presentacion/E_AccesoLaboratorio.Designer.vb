@@ -22,6 +22,7 @@ Partial Class E_AccesoLaboratorio
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_AccesoLaboratorio))
         Me.gbxobjeto = New System.Windows.Forms.GroupBox()
         Me.lblcode = New System.Windows.Forms.Label()
         Me.cbxValidar = New System.Windows.Forms.CheckBox()
@@ -43,9 +44,12 @@ Partial Class E_AccesoLaboratorio
         Me.txtusuarioB = New System.Windows.Forms.TextBox()
         Me.lblcodigoB = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.gbxobjeto.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbxobjeto
@@ -57,18 +61,14 @@ Partial Class E_AccesoLaboratorio
         Me.gbxobjeto.Controls.Add(Me.cbxObjetar)
         Me.gbxobjeto.Controls.Add(Me.cbxIngresar)
         Me.gbxobjeto.Controls.Add(Me.txtnombre)
-        Me.gbxobjeto.Controls.Add(Me.btnmodificar)
-        Me.gbxobjeto.Controls.Add(Me.btnnuevo)
-        Me.gbxobjeto.Controls.Add(Me.btnguardar)
         Me.gbxobjeto.Controls.Add(Me.lblcodigo)
-        Me.gbxobjeto.Controls.Add(Me.btncancelar)
         Me.gbxobjeto.Controls.Add(Me.lblnombre)
         Me.gbxobjeto.Controls.Add(Me.txtusuario)
-        Me.gbxobjeto.Location = New System.Drawing.Point(11, 11)
+        Me.gbxobjeto.Location = New System.Drawing.Point(11, 43)
         Me.gbxobjeto.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxobjeto.Name = "gbxobjeto"
         Me.gbxobjeto.Padding = New System.Windows.Forms.Padding(2)
-        Me.gbxobjeto.Size = New System.Drawing.Size(696, 157)
+        Me.gbxobjeto.Size = New System.Drawing.Size(696, 125)
         Me.gbxobjeto.TabIndex = 119
         Me.gbxobjeto.TabStop = False
         Me.gbxobjeto.Text = "REGISTRAR ACCESO LABORATORIO"
@@ -138,11 +138,11 @@ Partial Class E_AccesoLaboratorio
         '
         'btnmodificar
         '
-        Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnmodificar.BackColor = System.Drawing.Color.Yellow
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.Color.Black
-        Me.btnmodificar.Location = New System.Drawing.Point(163, 121)
+        Me.btnmodificar.Location = New System.Drawing.Point(562, 8)
         Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
@@ -152,11 +152,11 @@ Partial Class E_AccesoLaboratorio
         '
         'btnnuevo
         '
-        Me.btnnuevo.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnnuevo.BackColor = System.Drawing.Color.White
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.Color.Black
-        Me.btnnuevo.Location = New System.Drawing.Point(4, 121)
+        Me.btnnuevo.Location = New System.Drawing.Point(403, 8)
         Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
@@ -166,11 +166,11 @@ Partial Class E_AccesoLaboratorio
         '
         'btnguardar
         '
-        Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnguardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.Color.Black
-        Me.btnguardar.Location = New System.Drawing.Point(87, 121)
+        Me.btnguardar.Location = New System.Drawing.Point(486, 8)
         Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(72, 28)
@@ -190,11 +190,11 @@ Partial Class E_AccesoLaboratorio
         '
         'btncancelar
         '
-        Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btncancelar.BackColor = System.Drawing.Color.LightSalmon
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.Color.Black
-        Me.btncancelar.Location = New System.Drawing.Point(239, 121)
+        Me.btncancelar.Location = New System.Drawing.Point(638, 8)
         Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(68, 28)
@@ -301,15 +301,43 @@ Partial Class E_AccesoLaboratorio
         Me.StatusStrip1.TabIndex = 120
         Me.StatusStrip1.Text = "StatusStrip1"
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.btnnuevo)
+        Me.Panel1.Controls.Add(Me.btnguardar)
+        Me.Panel1.Controls.Add(Me.btncancelar)
+        Me.Panel1.Controls.Add(Me.btnmodificar)
+        Me.Panel1.Location = New System.Drawing.Point(0, -2)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(718, 40)
+        Me.Panel1.TabIndex = 121
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label5.Location = New System.Drawing.Point(7, 11)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(159, 20)
+        Me.Label5.TabIndex = 6
+        Me.Label5.Text = "Acceso laboratorio"
+        '
         'E_AccesoLaboratorio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(718, 520)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxobjeto)
         Me.Controls.Add(Me.gbxbusqueda)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "E_AccesoLaboratorio"
@@ -320,6 +348,8 @@ Partial Class E_AccesoLaboratorio
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -346,4 +376,6 @@ Partial Class E_AccesoLaboratorio
     Friend WithEvents lblcodigoB As Label
     Friend WithEvents lblcode As Label
     Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label5 As Label
 End Class

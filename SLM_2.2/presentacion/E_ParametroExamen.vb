@@ -19,6 +19,7 @@
             btn.Name = "btnEliminar"
             btn.UseColumnTextForButtonValue = True
         End If
+        alternarColoFilasDatagridview(dgbtabla)
 
     End Sub
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
