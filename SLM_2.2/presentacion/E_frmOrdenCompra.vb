@@ -52,12 +52,17 @@ Public Class E_frmOrdenCompra
     End Sub
 
     Public Sub sumarData()
-        Dim Total As Single
+        Try
+            Dim Total As Single
 
-        For Each row As DataGridViewRow In Me.DataGridView1.Rows
-            Total += Val(row.Cells(6).Value)
-        Next
-        Label44.Text = Total.ToString
+            For Each row As DataGridViewRow In Me.DataGridView1.Rows
+                Total += Val(row.Cells(6).Value)
+            Next
+            Label44.Text = Total.ToString
+        Catch ex As Exception
+
+        End Try
+
     End Sub
     Public Sub sumarData2()
         Dim Total As Single

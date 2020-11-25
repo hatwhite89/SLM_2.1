@@ -47,6 +47,7 @@ Partial Class E_frmUnidadMedida_almacen
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,6 +166,7 @@ Partial Class E_frmUnidadMedida_almacen
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.Button4)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.txtBuscar)
@@ -225,7 +227,7 @@ Partial Class E_frmUnidadMedida_almacen
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_unidad_medida, Me.nombre_unidad_medida, Me.descripcion})
         Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 53)
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 65)
         Me.DataGridView1.Name = "DataGridView1"
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
@@ -237,7 +239,7 @@ Partial Class E_frmUnidadMedida_almacen
         Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView1.Size = New System.Drawing.Size(686, 164)
+        Me.DataGridView1.Size = New System.Drawing.Size(686, 152)
         Me.DataGridView1.TabIndex = 0
         '
         'id_unidad_medida
@@ -292,6 +294,16 @@ Partial Class E_frmUnidadMedida_almacen
         Me.StatusStrip1.TabIndex = 4
         Me.StatusStrip1.Text = "StatusStrip1"
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(220, 47)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(272, 13)
+        Me.Label10.TabIndex = 122
+        Me.Label10.Text = "Seleccione una fila para cargar la información "
+        '
         'E_frmUnidadMedida_almacen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -338,4 +350,5 @@ Partial Class E_frmUnidadMedida_almacen
     Friend WithEvents descripcion As DataGridViewTextBoxColumn
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Button4 As Button
+    Friend WithEvents Label10 As Label
 End Class

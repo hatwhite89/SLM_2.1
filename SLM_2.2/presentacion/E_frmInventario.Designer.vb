@@ -114,7 +114,7 @@ Partial Class E_frmInventario
         '
         Me.ComboBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(533, 10)
+        Me.ComboBox1.Location = New System.Drawing.Point(540, 10)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(223, 21)
         Me.ComboBox1.TabIndex = 0
@@ -128,11 +128,11 @@ Partial Class E_frmInventario
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nombre_producto, Me.lote, Me.existencia, Me.precio, Me.fecha_vencimiento})
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 36)
+        Me.DataGridView1.Location = New System.Drawing.Point(3, 42)
         Me.DataGridView1.Name = "DataGridView1"
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.Size = New System.Drawing.Size(762, 229)
+        Me.DataGridView1.Size = New System.Drawing.Size(767, 255)
         Me.DataGridView1.TabIndex = 1
         '
         'nombre_producto
@@ -167,11 +167,11 @@ Partial Class E_frmInventario
         '
         'excel
         '
-        Me.excel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.excel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.excel.BackColor = System.Drawing.Color.Green
         Me.excel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.excel.ForeColor = System.Drawing.SystemColors.Control
-        Me.excel.Location = New System.Drawing.Point(635, 271)
+        Me.excel.Location = New System.Drawing.Point(639, 13)
         Me.excel.Name = "excel"
         Me.excel.Size = New System.Drawing.Size(133, 23)
         Me.excel.TabIndex = 2
@@ -209,6 +209,7 @@ Partial Class E_frmInventario
         Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox2.Controls.Add(Me.TextBox4)
         Me.GroupBox2.Controls.Add(Me.excel)
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
@@ -222,7 +223,7 @@ Partial Class E_frmInventario
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(90, 13)
+        Me.TextBox4.Location = New System.Drawing.Point(90, 10)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(160, 20)
         Me.TextBox4.TabIndex = 16
@@ -230,7 +231,7 @@ Partial Class E_frmInventario
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(6, 20)
+        Me.Label9.Location = New System.Drawing.Point(6, 13)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(78, 13)
         Me.Label9.TabIndex = 14
@@ -305,7 +306,7 @@ Partial Class E_frmInventario
         '
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(389, 15)
+        Me.Label1.Location = New System.Drawing.Point(389, 18)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(134, 13)
         Me.Label1.TabIndex = 18
@@ -317,7 +318,7 @@ Partial Class E_frmInventario
         Me.btnCargarInventario.BackColor = System.Drawing.Color.Yellow
         Me.btnCargarInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCargarInventario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnCargarInventario.Location = New System.Drawing.Point(533, 38)
+        Me.btnCargarInventario.Location = New System.Drawing.Point(541, 38)
         Me.btnCargarInventario.Name = "btnCargarInventario"
         Me.btnCargarInventario.Size = New System.Drawing.Size(223, 23)
         Me.btnCargarInventario.TabIndex = 4
@@ -342,6 +343,7 @@ Partial Class E_frmInventario
         Me.GroupBox4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox4.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox4.Controls.Add(Me.Button2)
         Me.GroupBox4.Controls.Add(Me.Label4)
         Me.GroupBox4.Controls.Add(Me.DataGridView2)
@@ -355,11 +357,11 @@ Partial Class E_frmInventario
         '
         'Button2
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.BackColor = System.Drawing.Color.Green
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button2.Location = New System.Drawing.Point(631, 271)
+        Me.Button2.Location = New System.Drawing.Point(639, 13)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(133, 23)
         Me.Button2.TabIndex = 9
@@ -369,7 +371,7 @@ Partial Class E_frmInventario
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 18)
+        Me.Label4.Location = New System.Drawing.Point(6, 13)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(78, 13)
         Me.Label4.TabIndex = 10
@@ -384,11 +386,11 @@ Partial Class E_frmInventario
         Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.producto, Me.lote_1, Me.existencia_1, Me.precio_unitario_1, Me.fecha_vencimiento_1})
-        Me.DataGridView2.Location = New System.Drawing.Point(3, 34)
+        Me.DataGridView2.Location = New System.Drawing.Point(3, 42)
         Me.DataGridView2.Name = "DataGridView2"
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue
         Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView2.Size = New System.Drawing.Size(767, 231)
+        Me.DataGridView2.Size = New System.Drawing.Size(769, 252)
         Me.DataGridView2.TabIndex = 8
         '
         'producto
@@ -423,7 +425,7 @@ Partial Class E_frmInventario
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(101, 11)
+        Me.TextBox1.Location = New System.Drawing.Point(90, 10)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(160, 20)
         Me.TextBox1.TabIndex = 12
@@ -497,7 +499,7 @@ Partial Class E_frmInventario
         '
         Me.Label15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(395, 18)
+        Me.Label15.Location = New System.Drawing.Point(382, 18)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(134, 13)
         Me.Label15.TabIndex = 18
@@ -507,7 +509,7 @@ Partial Class E_frmInventario
         '
         Me.ComboBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(535, 10)
+        Me.ComboBox2.Location = New System.Drawing.Point(540, 10)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(223, 21)
         Me.ComboBox2.TabIndex = 5
@@ -518,7 +520,7 @@ Partial Class E_frmInventario
         Me.Button1.BackColor = System.Drawing.Color.Yellow
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Location = New System.Drawing.Point(535, 37)
+        Me.Button1.Location = New System.Drawing.Point(540, 37)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(223, 23)
         Me.Button1.TabIndex = 7
@@ -551,6 +553,7 @@ Partial Class E_frmInventario
         Me.GroupBox6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox6.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox6.Controls.Add(Me.Button3)
         Me.GroupBox6.Controls.Add(Me.Label11)
         Me.GroupBox6.Controls.Add(Me.DataGridView3)
@@ -564,11 +567,11 @@ Partial Class E_frmInventario
         '
         'Button3
         '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.BackColor = System.Drawing.Color.Green
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button3.Location = New System.Drawing.Point(632, 271)
+        Me.Button3.Location = New System.Drawing.Point(639, 13)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(133, 23)
         Me.Button3.TabIndex = 4
@@ -578,7 +581,7 @@ Partial Class E_frmInventario
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(9, 25)
+        Me.Label11.Location = New System.Drawing.Point(6, 12)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(78, 13)
         Me.Label11.TabIndex = 14
@@ -593,11 +596,11 @@ Partial Class E_frmInventario
         Me.DataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nombre_producto_2, Me.lote_2, Me.existencias_2, Me.precio_2, Me.vence})
-        Me.DataGridView3.Location = New System.Drawing.Point(9, 41)
+        Me.DataGridView3.Location = New System.Drawing.Point(3, 42)
         Me.DataGridView3.Name = "DataGridView3"
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue
         Me.DataGridView3.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView3.Size = New System.Drawing.Size(756, 217)
+        Me.DataGridView3.Size = New System.Drawing.Size(769, 253)
         Me.DataGridView3.TabIndex = 3
         '
         'nombre_producto_2
@@ -632,7 +635,7 @@ Partial Class E_frmInventario
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(93, 18)
+        Me.TextBox6.Location = New System.Drawing.Point(90, 9)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(160, 20)
         Me.TextBox6.TabIndex = 16
@@ -715,7 +718,7 @@ Partial Class E_frmInventario
         '
         Me.Label17.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(395, 18)
+        Me.Label17.Location = New System.Drawing.Point(382, 18)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(134, 13)
         Me.Label17.TabIndex = 18

@@ -45,6 +45,7 @@ Partial Class E_frmTipoMovientoAlmacen
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -57,6 +58,7 @@ Partial Class E_frmTipoMovientoAlmacen
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.Button4)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.txtBuscar)
@@ -107,10 +109,10 @@ Partial Class E_frmTipoMovientoAlmacen
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_tipo_movimiento, Me.nombre, Me.descripcion})
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 37)
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 53)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.Size = New System.Drawing.Size(685, 182)
+        Me.DataGridView1.Size = New System.Drawing.Size(685, 166)
         Me.DataGridView1.TabIndex = 0
         '
         'id_tipo_movimiento
@@ -281,6 +283,16 @@ Partial Class E_frmTipoMovientoAlmacen
         Me.StatusStrip1.TabIndex = 7
         Me.StatusStrip1.Text = "StatusStrip1"
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(209, 36)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(272, 13)
+        Me.Label10.TabIndex = 122
+        Me.Label10.Text = "Seleccione una fila para cargar la información "
+        '
         'E_frmTipoMovientoAlmacen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -327,4 +339,5 @@ Partial Class E_frmTipoMovientoAlmacen
     Friend WithEvents id_tipo_movimiento As DataGridViewTextBoxColumn
     Friend WithEvents nombre As DataGridViewTextBoxColumn
     Friend WithEvents descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents Label10 As Label
 End Class

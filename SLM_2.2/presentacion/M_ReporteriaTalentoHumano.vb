@@ -176,4 +176,8 @@
             CrystalReportViewer1.ReportSource = objReporte
         End If
     End Sub
+
+    Private Sub M_ReporteriaTalentoHumano_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

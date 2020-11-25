@@ -49,13 +49,14 @@
         Me.dgbtabla.Columns("secImpresion").Visible = False
         Me.dgbtabla.Columns("noSolicitarSucursal").Visible = False
         Me.dgbtabla.Columns("formularioConsolidado").Visible = False
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Private Sub seleccionarSubAreas()
         Try
             Dim dv As DataView = SubA.listarSubAreas.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
         Catch ex As Exception
 
         End Try
@@ -200,12 +201,16 @@
                 Dim dv As DataView = SubA.BuscarSubAreaNombre.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
             Else
                 seleccionarSubAreas()
             End If
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        GridAExcel_global(dgbtabla)
     End Sub
 End Class
