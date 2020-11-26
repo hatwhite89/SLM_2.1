@@ -22,6 +22,7 @@ Partial Class A_Planilla
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Planilla))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
@@ -38,9 +39,6 @@ Partial Class A_Planilla
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dgvEmpleados = New System.Windows.Forms.DataGridView()
-        Me.lblcantidad = New System.Windows.Forms.Label()
-        Me.lbltotal = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.codeEmployee = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Identidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -48,6 +46,9 @@ Partial Class A_Planilla
         Me.Empleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Salario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Adelanto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lblcantidad = New System.Windows.Forms.Label()
+        Me.lbltotal = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -58,8 +59,7 @@ Partial Class A_Planilla
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Controls.Add(Me.btnModificar)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -72,10 +72,10 @@ Partial Class A_Planilla
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.LimeGreen
+        Me.Button1.BackColor = System.Drawing.Color.Green
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(352, 12)
+        Me.Button1.Location = New System.Drawing.Point(657, 8)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 5
@@ -85,7 +85,7 @@ Partial Class A_Planilla
         'btnCerrar
         '
         Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCerrar.BackColor = System.Drawing.Color.White
+        Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.Location = New System.Drawing.Point(676, 13)
         Me.btnCerrar.Name = "btnCerrar"
@@ -97,7 +97,7 @@ Partial Class A_Planilla
         'btnModificar
         '
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.Location = New System.Drawing.Point(595, 13)
         Me.btnModificar.Name = "btnModificar"
@@ -120,7 +120,7 @@ Partial Class A_Planilla
         'btnGuardar
         '
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGuardar.BackColor = System.Drawing.Color.White
+        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.Location = New System.Drawing.Point(514, 13)
         Me.btnGuardar.Name = "btnGuardar"
@@ -145,6 +145,7 @@ Partial Class A_Planilla
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox1.Controls.Add(Me.txtDescripcion)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtCodigoBreve)
@@ -214,6 +215,8 @@ Partial Class A_Planilla
         Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.dgvEmpleados)
         Me.GroupBox2.Controls.Add(Me.lblcantidad)
         Me.GroupBox2.Controls.Add(Me.lbltotal)
@@ -234,46 +237,14 @@ Partial Class A_Planilla
         Me.dgvEmpleados.BackgroundColor = System.Drawing.Color.White
         Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvEmpleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.codeEmployee, Me.Identidad, Me.NoCuenta, Me.Empleado, Me.Salario, Me.Adelanto})
-        Me.dgvEmpleados.Location = New System.Drawing.Point(12, 18)
+        Me.dgvEmpleados.Location = New System.Drawing.Point(12, 36)
         Me.dgvEmpleados.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvEmpleados.Name = "dgvEmpleados"
         Me.dgvEmpleados.RowHeadersVisible = False
         Me.dgvEmpleados.RowHeadersWidth = 51
         Me.dgvEmpleados.RowTemplate.Height = 24
-        Me.dgvEmpleados.Size = New System.Drawing.Size(720, 301)
+        Me.dgvEmpleados.Size = New System.Drawing.Size(720, 283)
         Me.dgvEmpleados.TabIndex = 120
-        '
-        'lblcantidad
-        '
-        Me.lblcantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(250, 331)
-        Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
-        Me.lblcantidad.TabIndex = 119
-        Me.lblcantidad.Text = "000"
-        '
-        'lbltotal
-        '
-        Me.lbltotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(50, 331)
-        Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(129, 13)
-        Me.lbltotal.TabIndex = 118
-        Me.lbltotal.Text = "TOTAL DE EMPLEADOS"
-        '
-        'Panel2
-        '
-        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Panel2.Location = New System.Drawing.Point(-3, 527)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(769, 35)
-        Me.Panel2.TabIndex = 3
         '
         'codigo
         '
@@ -315,6 +286,38 @@ Partial Class A_Planilla
         Me.Adelanto.HeaderText = "Adelanto 30%"
         Me.Adelanto.Name = "Adelanto"
         '
+        'lblcantidad
+        '
+        Me.lblcantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblcantidad.AutoSize = True
+        Me.lblcantidad.Location = New System.Drawing.Point(250, 331)
+        Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblcantidad.Name = "lblcantidad"
+        Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
+        Me.lblcantidad.TabIndex = 119
+        Me.lblcantidad.Text = "000"
+        '
+        'lbltotal
+        '
+        Me.lbltotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lbltotal.AutoSize = True
+        Me.lbltotal.Location = New System.Drawing.Point(50, 331)
+        Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbltotal.Name = "lbltotal"
+        Me.lbltotal.Size = New System.Drawing.Size(129, 13)
+        Me.lbltotal.TabIndex = 118
+        Me.lbltotal.Text = "TOTAL DE EMPLEADOS"
+        '
+        'Panel2
+        '
+        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Panel2.Location = New System.Drawing.Point(-3, 527)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(769, 35)
+        Me.Panel2.TabIndex = 3
+        '
         'A_Planilla
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -325,6 +328,7 @@ Partial Class A_Planilla
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "A_Planilla"
         Me.Text = "SLM - Planilla"

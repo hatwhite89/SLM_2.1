@@ -5,13 +5,14 @@
         seleccionarOrdenesTrabajo()
         txtCodigoB.Text = ""
         txtDescripcionB.Text = ""
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
 
     Private Sub seleccionarOrdenesTrabajo()
         dv = objOrd.SeleccionarOrdenDeTrabajo.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
     End Sub
 
     Private Sub txtCodigoB_TextChanged(sender As Object, e As EventArgs) Handles txtCodigoB.TextChanged
@@ -19,7 +20,7 @@
             'dv.RowFilter = String.Format("cod_orden_trabajo Like '%{" & txtCodigoB.Text & "}%'")
             dv.RowFilter = String.Format("CONVERT(cod_orden_trabajo, System.String) LIKE '%{0}%'", txtCodigoB.Text)
             lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
 
             If lblcantidad.Text = "0" Then
                 MsgBox("No existe la orden de trabajo.", MsgBoxStyle.Exclamation)
@@ -36,7 +37,7 @@
         If Trim(txtDescripcionB.Text) <> "" Then
             dv.RowFilter = String.Format("nombreCompleto Like '%{0}%'", txtDescripcionB.Text)
             lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
 
             If lblcantidad.Text = "0" Then
                 MsgBox("No existe la orden de trabajo.", MsgBoxStyle.Exclamation)

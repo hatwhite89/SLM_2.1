@@ -70,10 +70,11 @@ Partial Class A_Proveedor
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         CType(Me.dgvProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxInformacion.SuspendLayout()
         Me.gbxListado.SuspendLayout()
@@ -205,14 +206,14 @@ Partial Class A_Proveedor
         Me.dgvProveedores.ReadOnly = True
         Me.dgvProveedores.RowHeadersWidth = 51
         Me.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvProveedores.Size = New System.Drawing.Size(727, 188)
+        Me.dgvProveedores.Size = New System.Drawing.Size(727, 164)
         Me.dgvProveedores.TabIndex = 12
         '
         'gbxInformacion
         '
         Me.gbxInformacion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.gbxInformacion.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.gbxInformacion.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.gbxInformacion.Controls.Add(Me.lblCodCuenta)
         Me.gbxInformacion.Controls.Add(Me.btnBuscarCuenta)
         Me.gbxInformacion.Controls.Add(Me.txtCuenta)
@@ -396,7 +397,7 @@ Partial Class A_Proveedor
         'btnGuardar
         '
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGuardar.BackColor = System.Drawing.Color.White
+        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.Black
@@ -410,7 +411,7 @@ Partial Class A_Proveedor
         'btnModificar
         '
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.Black
@@ -447,7 +448,7 @@ Partial Class A_Proveedor
         Me.gbxListado.Controls.Add(Me.dgvProveedores)
         Me.gbxListado.Location = New System.Drawing.Point(6, 187)
         Me.gbxListado.Name = "gbxListado"
-        Me.gbxListado.Size = New System.Drawing.Size(747, 253)
+        Me.gbxListado.Size = New System.Drawing.Size(747, 229)
         Me.gbxListado.TabIndex = 14
         Me.gbxListado.TabStop = False
         Me.gbxListado.Text = "Proveedores Registrados"
@@ -487,10 +488,11 @@ Partial Class A_Proveedor
         Me.gbxContactos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxContactos.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxContactos.Controls.Add(Me.dgvDetalleContactos)
         Me.gbxContactos.Location = New System.Drawing.Point(6, 45)
         Me.gbxContactos.Name = "gbxContactos"
-        Me.gbxContactos.Size = New System.Drawing.Size(747, 385)
+        Me.gbxContactos.Size = New System.Drawing.Size(747, 360)
         Me.gbxContactos.TabIndex = 15
         Me.gbxContactos.TabStop = False
         Me.gbxContactos.Text = "Contactos Principales"
@@ -508,7 +510,7 @@ Partial Class A_Proveedor
         Me.dgvDetalleContactos.Location = New System.Drawing.Point(3, 16)
         Me.dgvDetalleContactos.Name = "dgvDetalleContactos"
         Me.dgvDetalleContactos.RowHeadersWidth = 51
-        Me.dgvDetalleContactos.Size = New System.Drawing.Size(738, 363)
+        Me.dgvDetalleContactos.Size = New System.Drawing.Size(738, 338)
         Me.dgvDetalleContactos.TabIndex = 0
         '
         'codigo
@@ -542,7 +544,7 @@ Partial Class A_Proveedor
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.btnModificar)
         Me.Panel1.Controls.Add(Me.btnNuevo)
@@ -574,23 +576,24 @@ Partial Class A_Proveedor
         Me.TabControl1.Location = New System.Drawing.Point(6, 52)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(767, 473)
+        Me.TabControl1.Size = New System.Drawing.Size(767, 448)
         Me.TabControl1.TabIndex = 17
         '
         'TabPage1
         '
+        Me.TabPage1.BackColor = System.Drawing.Color.White
         Me.TabPage1.Controls.Add(Me.gbxInformacion)
         Me.TabPage1.Controls.Add(Me.gbxListado)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(759, 447)
+        Me.TabPage1.Size = New System.Drawing.Size(759, 422)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Proveedores"
-        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
+        Me.TabPage2.BackColor = System.Drawing.Color.White
         Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Controls.Add(Me.Label3)
         Me.TabPage2.Controls.Add(Me.TextBox2)
@@ -599,34 +602,9 @@ Partial Class A_Proveedor
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(759, 447)
+        Me.TabPage2.Size = New System.Drawing.Size(759, 422)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Contactos"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(153, 19)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(594, 20)
-        Me.TextBox1.TabIndex = 16
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(9, 19)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 17
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 3)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(92, 13)
-        Me.Label3.TabIndex = 18
-        Me.Label3.Text = "Código Proveedor"
         '
         'Label4
         '
@@ -637,12 +615,46 @@ Partial Class A_Proveedor
         Me.Label4.TabIndex = 19
         Me.Label4.Text = "Nombre Proveedor"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 3)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(92, 13)
+        Me.Label3.TabIndex = 18
+        Me.Label3.Text = "Código Proveedor"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(9, 19)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.TabIndex = 17
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(153, 19)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(594, 20)
+        Me.TextBox1.TabIndex = 16
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 505)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(785, 22)
+        Me.StatusStrip1.TabIndex = 18
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_Proveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(785, 527)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -665,6 +677,7 @@ Partial Class A_Proveedor
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -719,4 +732,5 @@ Partial Class A_Proveedor
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

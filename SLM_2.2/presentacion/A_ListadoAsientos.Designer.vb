@@ -22,14 +22,19 @@ Partial Class A_ListadoAsientos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListadoAsientos))
         Me.gbxAsientos = New System.Windows.Forms.GroupBox()
         Me.btnIngresarAsiento = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.dtAsientos = New System.Windows.Forms.DataGridView()
         Me.txtCod = New System.Windows.Forms.TextBox()
         Me.lblCod = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.gbxAsientos.SuspendLayout()
         CType(Me.dtAsientos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbxAsientos
@@ -37,14 +42,15 @@ Partial Class A_ListadoAsientos
         Me.gbxAsientos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxAsientos.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxAsientos.Controls.Add(Me.btnIngresarAsiento)
         Me.gbxAsientos.Controls.Add(Me.btnCancelar)
         Me.gbxAsientos.Controls.Add(Me.dtAsientos)
         Me.gbxAsientos.Controls.Add(Me.txtCod)
         Me.gbxAsientos.Controls.Add(Me.lblCod)
-        Me.gbxAsientos.Location = New System.Drawing.Point(12, 12)
+        Me.gbxAsientos.Location = New System.Drawing.Point(12, 43)
         Me.gbxAsientos.Name = "gbxAsientos"
-        Me.gbxAsientos.Size = New System.Drawing.Size(694, 335)
+        Me.gbxAsientos.Size = New System.Drawing.Size(694, 283)
         Me.gbxAsientos.TabIndex = 0
         Me.gbxAsientos.TabStop = False
         Me.gbxAsientos.Text = "Asientos Contables"
@@ -52,13 +58,14 @@ Partial Class A_ListadoAsientos
         'btnIngresarAsiento
         '
         Me.btnIngresarAsiento.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnIngresarAsiento.BackColor = System.Drawing.Color.Yellow
         Me.btnIngresarAsiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnIngresarAsiento.Location = New System.Drawing.Point(557, 26)
         Me.btnIngresarAsiento.Name = "btnIngresarAsiento"
         Me.btnIngresarAsiento.Size = New System.Drawing.Size(131, 23)
         Me.btnIngresarAsiento.TabIndex = 4
         Me.btnIngresarAsiento.Text = "Ingresar Asiento Manual"
-        Me.btnIngresarAsiento.UseVisualStyleBackColor = True
+        Me.btnIngresarAsiento.UseVisualStyleBackColor = False
         '
         'btnCancelar
         '
@@ -90,7 +97,7 @@ Partial Class A_ListadoAsientos
         Me.dtAsientos.Name = "dtAsientos"
         Me.dtAsientos.ReadOnly = True
         Me.dtAsientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtAsientos.Size = New System.Drawing.Size(682, 272)
+        Me.dtAsientos.Size = New System.Drawing.Size(682, 220)
         Me.dtAsientos.TabIndex = 2
         '
         'txtCod
@@ -110,21 +117,58 @@ Partial Class A_ListadoAsientos
         Me.lblCod.TabIndex = 0
         Me.lblCod.Text = "Nro. Asiento"
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 333)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 1
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(0, 1)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(718, 36)
+        Me.Panel1.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(3, 8)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(90, 24)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Asientos"
+        '
         'A_ListadoAsientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(718, 355)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxAsientos)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_ListadoAsientos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listado de Asientos"
         Me.gbxAsientos.ResumeLayout(False)
         Me.gbxAsientos.PerformLayout()
         CType(Me.dtAsientos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -134,4 +178,7 @@ Partial Class A_ListadoAsientos
     Friend WithEvents lblCod As Label
     Friend WithEvents btnCancelar As Button
     Friend WithEvents btnIngresarAsiento As Button
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label1 As Label
 End Class

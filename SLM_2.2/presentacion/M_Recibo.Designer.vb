@@ -55,6 +55,8 @@ Partial Class M_Recibo
         Me.mRec = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.valorRecibido = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblEstado = New System.Windows.Forms.Label()
+        Me.rtxtObservaciones = New System.Windows.Forms.RichTextBox()
+        Me.lblObservaciones = New System.Windows.Forms.Label()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -88,7 +90,7 @@ Partial Class M_Recibo
         'lblFormaP
         '
         Me.lblFormaP.AutoSize = True
-        Me.lblFormaP.Location = New System.Drawing.Point(18, 84)
+        Me.lblFormaP.Location = New System.Drawing.Point(18, 74)
         Me.lblFormaP.Name = "lblFormaP"
         Me.lblFormaP.Size = New System.Drawing.Size(105, 17)
         Me.lblFormaP.TabIndex = 3
@@ -126,7 +128,7 @@ Partial Class M_Recibo
         'txtcodigoFormaPago
         '
         Me.txtcodigoFormaPago.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtcodigoFormaPago.Location = New System.Drawing.Point(180, 82)
+        Me.txtcodigoFormaPago.Location = New System.Drawing.Point(180, 72)
         Me.txtcodigoFormaPago.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcodigoFormaPago.MaxLength = 20
         Me.txtcodigoFormaPago.Name = "txtcodigoFormaPago"
@@ -138,7 +140,7 @@ Partial Class M_Recibo
         '
         Me.cbxInfoClte.AutoSize = True
         Me.cbxInfoClte.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cbxInfoClte.Location = New System.Drawing.Point(133, 133)
+        Me.cbxInfoClte.Location = New System.Drawing.Point(635, 166)
         Me.cbxInfoClte.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbxInfoClte.Name = "cbxInfoClte"
         Me.cbxInfoClte.Size = New System.Drawing.Size(212, 21)
@@ -149,7 +151,7 @@ Partial Class M_Recibo
         'cbxOk
         '
         Me.cbxOk.AutoSize = True
-        Me.cbxOk.Location = New System.Drawing.Point(380, 133)
+        Me.cbxOk.Location = New System.Drawing.Point(882, 166)
         Me.cbxOk.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbxOk.Name = "cbxOk"
         Me.cbxOk.Size = New System.Drawing.Size(48, 21)
@@ -261,7 +263,7 @@ Partial Class M_Recibo
         Me.btnbuscarFormaPago.FlatAppearance.BorderSize = 0
         Me.btnbuscarFormaPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarFormaPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscarFormaPago.Location = New System.Drawing.Point(134, 82)
+        Me.btnbuscarFormaPago.Location = New System.Drawing.Point(134, 72)
         Me.btnbuscarFormaPago.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnbuscarFormaPago.Name = "btnbuscarFormaPago"
         Me.btnbuscarFormaPago.Size = New System.Drawing.Size(28, 22)
@@ -271,7 +273,7 @@ Partial Class M_Recibo
         '
         'txtnombreFormaPago
         '
-        Me.txtnombreFormaPago.Location = New System.Drawing.Point(277, 83)
+        Me.txtnombreFormaPago.Location = New System.Drawing.Point(277, 73)
         Me.txtnombreFormaPago.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombreFormaPago.Name = "txtnombreFormaPago"
         Me.txtnombreFormaPago.ReadOnly = True
@@ -291,13 +293,13 @@ Partial Class M_Recibo
         '
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nroFactura, Me.cliente, Me.texto, Me.FechaPago, Me.mBanco, Me.MontoBanco, Me.mRec, Me.valorRecibido})
-        Me.dgbtabla.Location = New System.Drawing.Point(11, 170)
+        Me.dgbtabla.Location = New System.Drawing.Point(11, 224)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
-        Me.dgbtabla.Size = New System.Drawing.Size(934, 311)
+        Me.dgbtabla.Size = New System.Drawing.Size(934, 257)
         Me.dgbtabla.TabIndex = 146
         '
         'codigo
@@ -381,12 +383,33 @@ Partial Class M_Recibo
         Me.lblEstado.TabIndex = 147
         Me.lblEstado.Visible = False
         '
+        'rtxtObservaciones
+        '
+        Me.rtxtObservaciones.Location = New System.Drawing.Point(135, 117)
+        Me.rtxtObservaciones.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rtxtObservaciones.MaxLength = 100
+        Me.rtxtObservaciones.Name = "rtxtObservaciones"
+        Me.rtxtObservaciones.Size = New System.Drawing.Size(463, 89)
+        Me.rtxtObservaciones.TabIndex = 149
+        Me.rtxtObservaciones.Text = ""
+        '
+        'lblObservaciones
+        '
+        Me.lblObservaciones.AutoSize = True
+        Me.lblObservaciones.Location = New System.Drawing.Point(17, 117)
+        Me.lblObservaciones.Name = "lblObservaciones"
+        Me.lblObservaciones.Size = New System.Drawing.Size(103, 17)
+        Me.lblObservaciones.TabIndex = 148
+        Me.lblObservaciones.Text = "Observaciones"
+        '
         'M_Recibo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(957, 597)
+        Me.Controls.Add(Me.rtxtObservaciones)
+        Me.Controls.Add(Me.lblObservaciones)
         Me.Controls.Add(Me.lblEstado)
         Me.Controls.Add(Me.dgbtabla)
         Me.Controls.Add(Me.lblcodeFormaPago)
@@ -453,4 +476,6 @@ Partial Class M_Recibo
     Friend WithEvents mRec As DataGridViewTextBoxColumn
     Friend WithEvents valorRecibido As DataGridViewTextBoxColumn
     Friend WithEvents lblEstado As Label
+    Friend WithEvents rtxtObservaciones As RichTextBox
+    Friend WithEvents lblObservaciones As Label
 End Class

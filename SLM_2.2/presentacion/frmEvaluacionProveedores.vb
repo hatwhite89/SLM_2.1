@@ -77,24 +77,20 @@ Public Class frmEvaluacionProveedores
         Try
             Dim nota As Double
             nota = ((Integer.Parse(txtcal1.Text) + Integer.Parse(txtcal2.Text) + Integer.Parse(txtcal3.Text) + Integer.Parse(txtcal4.Text) + Integer.Parse(txtcal5.Text) + Integer.Parse(txtcal6.Text) + Integer.Parse(txtcal7.Text) + Integer.Parse(txtcal8.Text) + Integer.Parse(txtcal9.Text) + Integer.Parse(txtcal10.Text) + Integer.Parse(txtcal11.Text)) / contador) * 100
-            Label37.Text = nota
+            Label37.Text = Format(nota, "0.00")
         Catch ex As Exception
 
         End Try
 
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
-    End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-
-    End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         TextBox2.Text = ""
         TextBox3.Text = ""
+        TextBox4.Text = ""
         Button1.Enabled = False
         Try
             Dim objP As New ClsEvaluacionProveedor
@@ -105,15 +101,13 @@ Public Class frmEvaluacionProveedores
             dt = objP.validarOrdenCompra(TextBox1.Text)
             Dim row As DataRow = dt.Rows(0)
 
-            TextBox3.Text = CStr(row("id_oc"))
-
+            TextBox4.Text = CStr(row("estado"))
+            MsgBox("Esta Orden de compra ya se encuentra calificada")
 
         Catch ex As Exception
-            TextBox3.Text = ""
 
-        End Try
+            TextBox4.Text = ""
 
-        If TextBox3.Text = "" Then
             Try
                 Dim objP As New ClsEvaluacionProveedor
                 With objP
@@ -124,23 +118,23 @@ Public Class frmEvaluacionProveedores
                 Dim row As DataRow = dt.Rows(0)
 
                 TextBox2.Text = CStr(row("nombreProveedor"))
-
+                cod_proveedor = CStr(row("codProveedor"))
                 Button1.Enabled = True
-
-
-            Catch ex As Exception
-
-
+                MsgBox("Puede calificar esta orden de compra")
+                TextBox4.Text = "Sin calificar"
+            Catch ex2 As Exception
+                MsgBox("No existe esta orden de compra")
+                TextBox4.Text = "No existe"
             End Try
-        Else
-            MsgBox("Esta Orden de compra ya se encuentra calificada")
-        End If
-    End Sub
 
-    Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs)
+
+
+        End Try
 
 
     End Sub
+
+
 
 
     Public Sub sumarData()
@@ -174,16 +168,7 @@ Public Class frmEvaluacionProveedores
         ComboBox1.DisplayMember = "nombre"
         ComboBox1.ValueMember = "codigo"
     End Sub
-    Sub abrir()
-        Try
-            conexiones = New SqlConnection("Data Source=10.172.3.10; Initial Catalog=slm_test; Min Pool Size=0; Max Pool Size=1024; Pooling=true; User Id=sa; Password=Lbm2019")
-            conexiones.Open()
-            MsgBox("Conexion exitosa", MsgBoxStyle.Information, "Se ha conectado correctamente") '
-        Catch ex As Exception
-            MsgBox("Error al realizar la conexion" & ex.Message, MsgBoxStyle.Critical, "Error de conexion")
-            conexiones.Close() 'Cierra la conexion'
-        End Try
-    End Sub
+
 
     Sub autoCompletarTexbox(ByVal campoTexto As TextBox)
         Dim clsC As New ClsConnection
@@ -205,17 +190,78 @@ Public Class frmEvaluacionProveedores
         Dim cls As New ClsEvaluacionProveedor
         TextBox7.Text = cls.RecuperarCodigoProveedor2(TextBox6.Text)
 
-        Try
-            Dim clsDeOC As New ClsEvaluacionProveedor
-            Dim dvOC As DataView = clsDeOC.calcularEvaluacion(TextBox7.Text).DefaultView
-            DataGridView1.DataSource = dvOC
-            sumarData()
-        Catch ex As Exception
 
-        End Try
     End Sub
 
     Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
 
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Try
+            Dim clsDeOC As New ClsEvaluacionProveedor
+            Dim dvOC As DataView = clsDeOC.calcularEvaluacion(TextBox7.Text, DateTimePicker1.Value, DateTimePicker2.Value).DefaultView
+            DataGridView1.DataSource = dvOC
+
+            sumarData2()
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Public Sub sumarData2()
+
+        Dim calificacion, resultado As Double
+        Dim cantidad As Integer = 0
+        For Each row As DataGridViewRow In Me.DataGridView1.Rows
+            calificacion += Val(row.Cells(0).Value)
+            cantidad += 1
+
+        Next
+
+        resultado = (calificacion / (cantidad - 1))
+        Label12.Text = Format(resultado, "0.00")
+
+
+    End Sub
+    Function GridAExcel(ByVal miDataGridView As DataGridView) As Boolean
+        Dim exApp As New Microsoft.Office.Interop.Excel.Application
+        Dim exLibro As Microsoft.Office.Interop.Excel.Workbook
+        Dim exHoja As Microsoft.Office.Interop.Excel.Worksheet
+        Try
+            exLibro = exApp.Workbooks.Add 'crea el libro de excel 
+            exHoja = exLibro.Worksheets.Add() 'cuenta filas y columnas
+            Dim NCol As Integer = miDataGridView.ColumnCount
+            Dim NRow As Integer = miDataGridView.RowCount
+            For i As Integer = 1 To NCol
+                exHoja.Cells.Item(1, i) = miDataGridView.Columns(i - 1).Name.ToString
+            Next
+            For Fila As Integer = 0 To NRow - 1
+                For Col As Integer = 0 To NCol - 1
+                    exHoja.Cells.Item(Fila + 2, Col + 1) = miDataGridView.Rows(Fila).Cells(Col).Value
+                Next
+            Next
+            exHoja.Rows.Item(1).Font.Bold = 1 'titulo en negritas
+            exHoja.Rows.Item(1).HorizontalAlignment = 3
+            'alineacion al centro
+            exHoja.Columns.AutoFit() 'autoajuste de la columna
+            exHoja.Columns.HorizontalAlignment = 2
+            exApp.Application.Visible = True
+            exHoja = Nothing
+            exLibro = Nothing
+            exApp = Nothing
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al exportar a Excel")
+            Return False
+        End Try
+        Return True
+    End Function
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        GridAExcel(DataGridView1)
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        TextBox6.Clear()
     End Sub
 End Class

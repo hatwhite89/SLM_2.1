@@ -95,7 +95,7 @@ Partial Class frmAdministrarRequisiciones
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 546)
         Me.StatusStrip1.Name = "StatusStrip1"
@@ -108,7 +108,7 @@ Partial Class frmAdministrarRequisiciones
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Location = New System.Drawing.Point(0, 1)
         Me.Panel1.Name = "Panel1"
@@ -142,6 +142,7 @@ Partial Class frmAdministrarRequisiciones
         '
         'TabPage1
         '
+        Me.TabPage1.BackColor = System.Drawing.Color.White
         Me.TabPage1.Controls.Add(Me.GroupBox4)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.Label5)
@@ -151,13 +152,12 @@ Partial Class frmAdministrarRequisiciones
         Me.TabPage1.Size = New System.Drawing.Size(818, 462)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Requisición"
-        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'GroupBox4
         '
         Me.GroupBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox4.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox4.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox4.Controls.Add(Me.Panel3)
         Me.GroupBox4.Controls.Add(Me.txtDepartamento)
         Me.GroupBox4.Controls.Add(Me.txtPuesto)
@@ -184,7 +184,7 @@ Partial Class frmAdministrarRequisiciones
         '
         Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.Controls.Add(Me.Button2)
         Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Location = New System.Drawing.Point(13, 172)
@@ -350,9 +350,10 @@ Partial Class frmAdministrarRequisiciones
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(265, 11)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(224, 13)
+        Me.Label10.Size = New System.Drawing.Size(272, 13)
         Me.Label10.TabIndex = 2
         Me.Label10.Text = "Seleccionar una fila para cargar la  requisicion"
         '
@@ -404,6 +405,7 @@ Partial Class frmAdministrarRequisiciones
         '
         'TabPage2
         '
+        Me.TabPage2.BackColor = System.Drawing.Color.White
         Me.TabPage2.Controls.Add(Me.GroupBox3)
         Me.TabPage2.Controls.Add(Me.Panel2)
         Me.TabPage2.Controls.Add(Me.GroupBox2)
@@ -413,10 +415,13 @@ Partial Class frmAdministrarRequisiciones
         Me.TabPage2.Size = New System.Drawing.Size(818, 462)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Mis Requisiciones Aprobadas"
-        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
+        Me.GroupBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox3.Controls.Add(Me.Label13)
         Me.GroupBox3.Controls.Add(Me.Label12)
         Me.GroupBox3.Controls.Add(Me.Label11)
@@ -427,7 +432,7 @@ Partial Class frmAdministrarRequisiciones
         Me.GroupBox3.Controls.Add(Me.RichTextBox1)
         Me.GroupBox3.Location = New System.Drawing.Point(6, 290)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(796, 166)
+        Me.GroupBox3.Size = New System.Drawing.Size(806, 166)
         Me.GroupBox3.TabIndex = 80
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Detalle"
@@ -506,7 +511,7 @@ Partial Class frmAdministrarRequisiciones
         '
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel2.Controls.Add(Me.Button4)
         Me.Panel2.Controls.Add(Me.Button3)
         Me.Panel2.Controls.Add(Me.Label27)

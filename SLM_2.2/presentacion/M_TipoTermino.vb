@@ -46,6 +46,7 @@
     Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
         limpiar()
     End Sub
+
     Private Function sinDobleEspacio(ByVal cadena As String) As String
         Dim texto As String = ""
         Dim testArray() As String = Split(cadena)

@@ -22,15 +22,18 @@ Partial Class A_ListarFormasPagoPF
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListarFormasPagoPF))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dtFormasPago = New System.Windows.Forms.DataGridView()
         Me.lblForm = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtFormasPago, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.dtFormasPago)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
@@ -63,14 +66,26 @@ Partial Class A_ListarFormasPagoPF
         Me.lblForm.TabIndex = 57
         Me.lblForm.Visible = False
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 351)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 58
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_ListarFormasPagoPF
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(718, 358)
+        Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ClientSize = New System.Drawing.Size(718, 373)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.lblForm)
         Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "A_ListarFormasPagoPF"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -85,4 +100,5 @@ Partial Class A_ListarFormasPagoPF
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents dtFormasPago As DataGridView
     Friend WithEvents lblForm As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

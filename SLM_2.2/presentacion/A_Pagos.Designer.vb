@@ -42,6 +42,12 @@ Partial Class frmPagos
         Me.lblComentario = New System.Windows.Forms.Label()
         Me.txtComentario = New System.Windows.Forms.TextBox()
         Me.dtDetallePagos = New System.Windows.Forms.DataGridView()
+        Me.NroFac = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Moneda = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ValorPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FORMAP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NroCheque = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnBuscarFormaPago = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -58,12 +64,6 @@ Partial Class frmPagos
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.NroFac = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Moneda = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ValorPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FORMAP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NroCheque = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dtDetallePagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxInfo.SuspendLayout()
@@ -244,6 +244,44 @@ Partial Class frmPagos
         Me.dtDetallePagos.Size = New System.Drawing.Size(816, 208)
         Me.dtDetallePagos.TabIndex = 20
         '
+        'NroFac
+        '
+        Me.NroFac.HeaderText = "Nro.Fac"
+        Me.NroFac.Name = "NroFac"
+        Me.NroFac.Width = 50
+        '
+        'Proveedor
+        '
+        Me.Proveedor.HeaderText = "Proveedor"
+        Me.Proveedor.Name = "Proveedor"
+        Me.Proveedor.ReadOnly = True
+        Me.Proveedor.Width = 300
+        '
+        'Moneda
+        '
+        Me.Moneda.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Moneda.HeaderText = "Moneda"
+        Me.Moneda.Name = "Moneda"
+        Me.Moneda.ReadOnly = True
+        '
+        'ValorPago
+        '
+        Me.ValorPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ValorPago.HeaderText = "Monto"
+        Me.ValorPago.Name = "ValorPago"
+        '
+        'FORMAP
+        '
+        Me.FORMAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.FORMAP.HeaderText = "F.P"
+        Me.FORMAP.Name = "FORMAP"
+        '
+        'NroCheque
+        '
+        Me.NroCheque.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.NroCheque.HeaderText = "Cheque/Transf."
+        Me.NroCheque.Name = "NroCheque"
+        '
         'btnBuscarFormaPago
         '
         Me.btnBuscarFormaPago.BackColor = System.Drawing.Color.Transparent
@@ -261,7 +299,7 @@ Partial Class frmPagos
         'btnGuardar
         '
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGuardar.BackColor = System.Drawing.Color.White
+        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.Black
@@ -275,7 +313,7 @@ Partial Class frmPagos
         'btnModificar
         '
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.Black
@@ -304,6 +342,7 @@ Partial Class frmPagos
         '
         Me.gbxInfo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxInfo.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.gbxInfo.Controls.Add(Me.lblCodigoProveedor)
         Me.gbxInfo.Controls.Add(Me.chkPagado)
         Me.gbxInfo.Controls.Add(Me.dtpFechaP)
@@ -356,6 +395,7 @@ Partial Class frmPagos
         Me.gbxDetalle.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxDetalle.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxDetalle.Controls.Add(Me.lblNombreBanco)
         Me.gbxDetalle.Controls.Add(Me.lblFila)
         Me.gbxDetalle.Controls.Add(Me.lblTotalSuma)
@@ -411,7 +451,7 @@ Partial Class frmPagos
         'btnRegresar
         '
         Me.btnRegresar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRegresar.BackColor = System.Drawing.Color.White
+        Me.btnRegresar.BackColor = System.Drawing.Color.Plum
         Me.btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnRegresar.FlatAppearance.BorderSize = 0
         Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -427,7 +467,7 @@ Partial Class frmPagos
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.btnRegresar)
         Me.Panel1.Controls.Add(Me.Label3)
@@ -442,7 +482,7 @@ Partial Class frmPagos
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.BackColor = System.Drawing.Color.LightSalmon
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -465,44 +505,6 @@ Partial Class frmPagos
         Me.Label3.TabIndex = 29
         Me.Label3.Text = "Generar Pago"
         '
-        'NroFac
-        '
-        Me.NroFac.HeaderText = "Nro.Fac"
-        Me.NroFac.Name = "NroFac"
-        Me.NroFac.Width = 50
-        '
-        'Proveedor
-        '
-        Me.Proveedor.HeaderText = "Proveedor"
-        Me.Proveedor.Name = "Proveedor"
-        Me.Proveedor.ReadOnly = True
-        Me.Proveedor.Width = 300
-        '
-        'Moneda
-        '
-        Me.Moneda.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Moneda.HeaderText = "Moneda"
-        Me.Moneda.Name = "Moneda"
-        Me.Moneda.ReadOnly = True
-        '
-        'ValorPago
-        '
-        Me.ValorPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ValorPago.HeaderText = "Monto"
-        Me.ValorPago.Name = "ValorPago"
-        '
-        'FORMAP
-        '
-        Me.FORMAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.FORMAP.HeaderText = "F.P"
-        Me.FORMAP.Name = "FORMAP"
-        '
-        'NroCheque
-        '
-        Me.NroCheque.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.NroCheque.HeaderText = "Cheque/Transf."
-        Me.NroCheque.Name = "NroCheque"
-        '
         'frmPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -514,6 +516,7 @@ Partial Class frmPagos
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmPagos"

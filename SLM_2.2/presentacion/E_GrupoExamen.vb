@@ -9,7 +9,7 @@
         Dim dv As DataView = objGrpE.SeleccionarGrupoExamen.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
 
         txtnombre.ReadOnly = True
         txtcodigo.ReadOnly = True
@@ -17,6 +17,7 @@
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
@@ -114,7 +115,7 @@
                     Dim dv As DataView = objGrpE.SeleccionarGrupoExamen.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
-                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
 
                     txtcodigo.ReadOnly = True
                     txtnombre.ReadOnly = True
@@ -152,7 +153,7 @@
                     Dim dv As DataView = objGrpE.SeleccionarGrupoExamen.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
-                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
 
                     txtcodigo.ReadOnly = True
                     txtnombre.ReadOnly = True
@@ -187,12 +188,12 @@
                 Dim dv As DataView = objGrpE.BuscarGrupoExamen.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
             Else
                 Dim dv As DataView = objGrpE.SeleccionarGrupoExamen.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+
             End If
         Catch ex As Exception
 

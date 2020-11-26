@@ -307,6 +307,89 @@ Public Class ClsOrdenDeTrabajo
     End Property
     '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+    Public Function RegistrarOrdenDeTrabajo2() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slmInsertarOrdenDeTrabajo2"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_factura" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cod_factura_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "pmFecha" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = pmFecha_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "pmUsuario" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = pmUsuario_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "npFecha" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = pmFecha_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "npUsuario" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = pmUsuario_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigoSubArea" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = codigoSubArea_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = estado_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_sede" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cod_sede_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "entregarMedico" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = entregarMedico_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "entregarPaciente" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = entregarPaciente_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "enviadaEmail" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = enviadaEmail_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
     Public Function RegistrarOrdenDeTrabajo() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -934,6 +1017,25 @@ Public Class ClsOrdenDeTrabajo
         End Using
     End Function
 
+    Public Function BuscarObservacionesHojaDeTrabajo(ByVal nombre As String) As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "E_slmBuscarObservacionesHojaTrabajo"
+            cmd.Parameters.Add("cod_orden_trabajo", SqlDbType.Int).Value = cod_orden_trabajo_
+            cmd.Parameters.Add("nombre", SqlDbType.VarChar).Value = nombre
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
 
 
     'Imprimir informe orden de trabajo por periodo

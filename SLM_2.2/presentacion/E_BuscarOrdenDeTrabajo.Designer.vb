@@ -22,6 +22,7 @@ Partial Class E_BuscarOrdenDeTrabajo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_BuscarOrdenDeTrabajo))
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.txtnumeroB = New System.Windows.Forms.TextBox()
@@ -37,6 +38,7 @@ Partial Class E_BuscarOrdenDeTrabajo
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.txtnumeroB)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
@@ -46,9 +48,9 @@ Partial Class E_BuscarOrdenDeTrabajo
         Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnumeroB)
         Me.gbxbusqueda.Location = New System.Drawing.Point(11, 11)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Size = New System.Drawing.Size(696, 521)
         Me.gbxbusqueda.TabIndex = 117
         Me.gbxbusqueda.TabStop = False
@@ -58,9 +60,10 @@ Partial Class E_BuscarOrdenDeTrabajo
         '
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
+        Me.dgbtabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(4, 65)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
@@ -72,7 +75,7 @@ Partial Class E_BuscarOrdenDeTrabajo
         'txtnumeroB
         '
         Me.txtnumeroB.Location = New System.Drawing.Point(58, 25)
-        Me.txtnumeroB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnumeroB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnumeroB.MaxLength = 20
         Me.txtnumeroB.Name = "txtnumeroB"
         Me.txtnumeroB.Size = New System.Drawing.Size(145, 20)
@@ -121,7 +124,7 @@ Partial Class E_BuscarOrdenDeTrabajo
         'txtnombreB
         '
         Me.txtnombreB.Location = New System.Drawing.Point(284, 25)
-        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(408, 20)
@@ -141,9 +144,11 @@ Partial Class E_BuscarOrdenDeTrabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(718, 538)
         Me.Controls.Add(Me.gbxbusqueda)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "E_BuscarOrdenDeTrabajo"
         Me.Text = "E_BuscarOrdenDeTrabajo"
         Me.gbxbusqueda.ResumeLayout(False)

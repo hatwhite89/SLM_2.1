@@ -387,7 +387,7 @@
     End Sub
 
     Private Sub E_OrdenTrabajo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        alternarColoFilasDatagridview(dgvResultados)
     End Sub
 
     Private Sub txtcoUsuario_TextChanged(sender As Object, e As EventArgs) Handles txtcoUsuario.TextChanged

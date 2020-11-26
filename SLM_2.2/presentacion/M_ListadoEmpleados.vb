@@ -189,6 +189,18 @@ Public Class M_ListadoEmpleados
                     E_Usuarios.txtNombreEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
                     Me.Close()
                 End If
+            ElseIf lblform.Text = "M_ReporteriaTalentoHumano" Then
+                'Capturar nombre y codigo para Formulario Reporteria Talento Humano
+
+                Dim n As String = ""
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_ReporteriaTalentoHumano.lblcodeEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    M_ReporteriaTalentoHumano.txtnombreEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    Me.Close()
+                End If
 
             End If
         Catch ex As Exception

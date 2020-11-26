@@ -2,7 +2,7 @@
 
 Public Class ClsRecibo
     Dim numero, codigoFormaPago As Integer
-    Dim referencia, moneda As String
+    Dim referencia, moneda, observaciones As String
     Dim infoClte, ok As Boolean
     Dim fechaTrans As Date
     Dim depositado As Double
@@ -40,6 +40,14 @@ Public Class ClsRecibo
         End Get
         Set(value As Integer)
             codigoFormaPago = value
+        End Set
+    End Property
+    Public Property observaciones_ As String
+        Get
+            Return observaciones
+        End Get
+        Set(value As String)
+            observaciones = value
         End Set
     End Property
     Public Property referencia_ As String
@@ -119,6 +127,11 @@ Public Class ClsRecibo
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "observaciones" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = observaciones_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -185,6 +198,11 @@ Public Class ClsRecibo
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "depositado" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = depositado_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "observaciones" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = observaciones_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

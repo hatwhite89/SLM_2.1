@@ -34,7 +34,6 @@
     Public Sub limpiar()
 
         Try
-
             txtnumero.Text = ""
             dtpFechaTrans.Value = Date.Now
             rtxtReferencia.Text = ""
@@ -45,6 +44,7 @@
             cbxOk.Checked = False
             txtMoneda.Text = "LPS"
             txtDepositado.Text = "0"
+            rtxtObservaciones.Clear()
 
             dgbtabla.Rows.Clear()
 
@@ -54,6 +54,7 @@
             cbxInfoClte.Enabled = True
             cbxOk.Enabled = True
             txtMoneda.ReadOnly = False
+            rtxtObservaciones.ReadOnly = False
 
             btnbuscarFormaPago.Enabled = True
             btnmodificar.Enabled = False
@@ -73,6 +74,7 @@
         cbxInfoClte.Enabled = False
         cbxOk.Enabled = False
         txtMoneda.ReadOnly = True
+        rtxtObservaciones.ReadOnly = True
 
         btnbuscarFormaPago.Enabled = False
         btnmodificar.Enabled = False
@@ -125,6 +127,7 @@
                     .infoClte_ = cbxInfoClte.Checked
                     .ok_ = cbxOk.Checked
                     .moneda_ = txtMoneda.Text
+                    .observaciones_ = rtxtObservaciones.Text
                     .depositado_ = Convert.ToDouble(txtDepositado.Text)
                 End With
 
@@ -174,6 +177,7 @@
                     .infoClte_ = cbxInfoClte.Checked
                     .ok_ = cbxOk.Checked
                     .moneda_ = txtMoneda.Text
+                    .observaciones_ = rtxtObservaciones.Text
                     .depositado_ = Convert.ToDouble(txtDepositado.Text)
                 End With
 

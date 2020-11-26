@@ -24,6 +24,7 @@ Partial Class M_PuestoTrabajo
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_PuestoTrabajo))
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.txtdescripcionB = New System.Windows.Forms.TextBox()
@@ -46,7 +47,7 @@ Partial Class M_PuestoTrabajo
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxsucursal.SuspendLayout()
@@ -58,6 +59,8 @@ Partial Class M_PuestoTrabajo
         Me.gbxbusqueda.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxbusqueda.BackColor = System.Drawing.Color.AliceBlue
+        Me.gbxbusqueda.Controls.Add(Me.Label6)
         Me.gbxbusqueda.Controls.Add(Me.Button4)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
@@ -65,20 +68,33 @@ Partial Class M_PuestoTrabajo
         Me.gbxbusqueda.Controls.Add(Me.lbldescripcionB)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Location = New System.Drawing.Point(10, 199)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.gbxbusqueda.Size = New System.Drawing.Size(702, 338)
         Me.gbxbusqueda.TabIndex = 119
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR PUESTO DE TRABAJO"
         '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.Color.Green
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button4.Location = New System.Drawing.Point(621, 22)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 116
+        Me.Button4.Text = "Excel"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
         'lblcantidad
         '
         Me.lblcantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(221, 323)
+        Me.lblcantidad.Location = New System.Drawing.Point(221, 317)
         Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcantidad.Name = "lblcantidad"
         Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
@@ -95,20 +111,20 @@ Partial Class M_PuestoTrabajo
         Me.dgbtabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgbtabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(0, 48)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Location = New System.Drawing.Point(0, 68)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(698, 273)
+        Me.dgbtabla.Size = New System.Drawing.Size(698, 242)
         Me.dgbtabla.TabIndex = 22
         '
         'txtdescripcionB
         '
         Me.txtdescripcionB.Location = New System.Drawing.Point(80, 24)
-        Me.txtdescripcionB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtdescripcionB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtdescripcionB.MaxLength = 80
         Me.txtdescripcionB.Name = "txtdescripcionB"
         Me.txtdescripcionB.Size = New System.Drawing.Size(520, 20)
@@ -128,7 +144,7 @@ Partial Class M_PuestoTrabajo
         '
         Me.lbltotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(4, 323)
+        Me.lbltotal.Location = New System.Drawing.Point(4, 317)
         Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(184, 13)
@@ -139,6 +155,7 @@ Partial Class M_PuestoTrabajo
         '
         Me.gbxsucursal.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxsucursal.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.gbxsucursal.Controls.Add(Me.lblform)
         Me.gbxsucursal.Controls.Add(Me.txtnombreDepto)
         Me.gbxsucursal.Controls.Add(Me.btnDepto)
@@ -149,9 +166,9 @@ Partial Class M_PuestoTrabajo
         Me.gbxsucursal.Controls.Add(Me.lblcodigo)
         Me.gbxsucursal.Controls.Add(Me.txtcodigo)
         Me.gbxsucursal.Location = New System.Drawing.Point(11, 57)
-        Me.gbxsucursal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxsucursal.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxsucursal.Name = "gbxsucursal"
-        Me.gbxsucursal.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxsucursal.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxsucursal.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.gbxsucursal.Size = New System.Drawing.Size(701, 138)
         Me.gbxsucursal.TabIndex = 118
@@ -171,7 +188,7 @@ Partial Class M_PuestoTrabajo
         'txtnombreDepto
         '
         Me.txtnombreDepto.Location = New System.Drawing.Point(253, 63)
-        Me.txtnombreDepto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreDepto.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreDepto.Name = "txtnombreDepto"
         Me.txtnombreDepto.ReadOnly = True
         Me.txtnombreDepto.Size = New System.Drawing.Size(427, 20)
@@ -186,7 +203,7 @@ Partial Class M_PuestoTrabajo
         Me.btnDepto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDepto.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDepto.Location = New System.Drawing.Point(128, 63)
-        Me.btnDepto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnDepto.Margin = New System.Windows.Forms.Padding(2)
         Me.btnDepto.Name = "btnDepto"
         Me.btnDepto.Size = New System.Drawing.Size(18, 18)
         Me.btnDepto.TabIndex = 168
@@ -196,7 +213,7 @@ Partial Class M_PuestoTrabajo
         'txtcodigoDepto
         '
         Me.txtcodigoDepto.Location = New System.Drawing.Point(150, 63)
-        Me.txtcodigoDepto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoDepto.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoDepto.MaxLength = 20
         Me.txtcodigoDepto.Name = "txtcodigoDepto"
         Me.txtcodigoDepto.Size = New System.Drawing.Size(91, 20)
@@ -224,7 +241,7 @@ Partial Class M_PuestoTrabajo
         'rtxtdescripcion
         '
         Me.rtxtdescripcion.Location = New System.Drawing.Point(362, 17)
-        Me.rtxtdescripcion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtdescripcion.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtdescripcion.MaxLength = 80
         Me.rtxtdescripcion.Name = "rtxtdescripcion"
         Me.rtxtdescripcion.Size = New System.Drawing.Size(318, 36)
@@ -245,7 +262,7 @@ Partial Class M_PuestoTrabajo
         '
         Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigo.Location = New System.Drawing.Point(104, 20)
-        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.ReadOnly = True
@@ -256,11 +273,11 @@ Partial Class M_PuestoTrabajo
         'btnmodificar
         '
         Me.btnmodificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnmodificar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnmodificar.BackColor = System.Drawing.Color.Yellow
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.Color.Black
         Me.btnmodificar.Location = New System.Drawing.Point(568, 10)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
         Me.btnmodificar.TabIndex = 111
@@ -270,11 +287,11 @@ Partial Class M_PuestoTrabajo
         'btncancelar
         '
         Me.btncancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btncancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btncancelar.BackColor = System.Drawing.Color.LightSalmon
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.Color.Black
         Me.btncancelar.Location = New System.Drawing.Point(644, 10)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(68, 28)
         Me.btncancelar.TabIndex = 37
@@ -288,7 +305,7 @@ Partial Class M_PuestoTrabajo
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.Color.Black
         Me.btnnuevo.Location = New System.Drawing.Point(409, 10)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
         Me.btnnuevo.TabIndex = 110
@@ -298,11 +315,11 @@ Partial Class M_PuestoTrabajo
         'btnguardar
         '
         Me.btnguardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnguardar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnguardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.Color.Black
         Me.btnguardar.Location = New System.Drawing.Point(492, 10)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(72, 28)
         Me.btnguardar.TabIndex = 108
@@ -311,7 +328,7 @@ Partial Class M_PuestoTrabajo
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 539)
         Me.StatusStrip1.Name = "StatusStrip1"
@@ -323,7 +340,7 @@ Partial Class M_PuestoTrabajo
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.btnnuevo)
         Me.Panel1.Controls.Add(Me.btnguardar)
@@ -345,18 +362,15 @@ Partial Class M_PuestoTrabajo
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Puesto de Trabajo"
         '
-        'Button4
+        'Label6
         '
-        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.BackColor = System.Drawing.Color.Green
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button4.Location = New System.Drawing.Point(621, 22)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 116
-        Me.Button4.Text = "Excel"
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(221, 50)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(272, 13)
+        Me.Label6.TabIndex = 119
+        Me.Label6.Text = "Seleccione una fila para cargar la información "
         '
         'M_PuestoTrabajo
         '
@@ -370,7 +384,7 @@ Partial Class M_PuestoTrabajo
         Me.Controls.Add(Me.gbxsucursal)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_PuestoTrabajo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SLM - "
@@ -410,4 +424,5 @@ Partial Class M_PuestoTrabajo
     Friend WithEvents Label4 As Label
     Friend WithEvents lblform As Label
     Friend WithEvents Button4 As Button
+    Friend WithEvents Label6 As Label
 End Class

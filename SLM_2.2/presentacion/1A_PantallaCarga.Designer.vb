@@ -40,7 +40,7 @@ Partial Class _1A_PantallaCarga
         '
         Me.lblCarga.AutoSize = True
         Me.lblCarga.BackColor = System.Drawing.Color.Transparent
-        Me.lblCarga.Location = New System.Drawing.Point(12, 332)
+        Me.lblCarga.Location = New System.Drawing.Point(12, 322)
         Me.lblCarga.Name = "lblCarga"
         Me.lblCarga.Size = New System.Drawing.Size(207, 13)
         Me.lblCarga.TabIndex = 1

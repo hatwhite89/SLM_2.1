@@ -22,7 +22,9 @@ Partial Class A_ListadoFacturaCompra
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListadoFacturaCompra))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnCrearNueva = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dtpHasta = New System.Windows.Forms.DateTimePicker()
@@ -35,9 +37,11 @@ Partial Class A_ListadoFacturaCompra
         Me.dtFacturasCompra = New System.Windows.Forms.DataGridView()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnCrearNueva = New System.Windows.Forms.Button()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtFacturasCompra, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -45,33 +49,39 @@ Partial Class A_ListadoFacturaCompra
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.btnCrearNueva)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.dtpHasta)
         Me.GroupBox1.Controls.Add(Me.dtpDesde)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.chkPagadas)
-        Me.GroupBox1.Controls.Add(Me.chkPendientes)
-        Me.GroupBox1.Controls.Add(Me.chkIngresada)
-        Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.dtFacturasCompra)
-        Me.GroupBox1.Controls.Add(Me.txtBusqueda)
-        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.Panel1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(773, 457)
+        Me.GroupBox1.Size = New System.Drawing.Size(773, 443)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Facturas de Compra"
         '
+        'btnCrearNueva
+        '
+        Me.btnCrearNueva.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCrearNueva.BackColor = System.Drawing.Color.White
+        Me.btnCrearNueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCrearNueva.ForeColor = System.Drawing.Color.Black
+        Me.btnCrearNueva.Location = New System.Drawing.Point(639, 9)
+        Me.btnCrearNueva.Name = "btnCrearNueva"
+        Me.btnCrearNueva.Size = New System.Drawing.Size(119, 23)
+        Me.btnCrearNueva.TabIndex = 14
+        Me.btnCrearNueva.Text = "Nueva Factura"
+        Me.btnCrearNueva.UseVisualStyleBackColor = False
+        '
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.BackColor = System.Drawing.Color.Yellow
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(648, 45)
+        Me.Button1.Location = New System.Drawing.Point(639, 45)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(119, 23)
         Me.Button1.TabIndex = 7
@@ -81,7 +91,7 @@ Partial Class A_ListadoFacturaCompra
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(437, 53)
+        Me.Label4.Location = New System.Drawing.Point(437, 54)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(10, 13)
         Me.Label4.TabIndex = 13
@@ -106,7 +116,7 @@ Partial Class A_ListadoFacturaCompra
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(222, 51)
+        Me.Label3.Location = New System.Drawing.Point(215, 39)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(96, 13)
         Me.Label3.TabIndex = 10
@@ -115,7 +125,7 @@ Partial Class A_ListadoFacturaCompra
         'chkPagadas
         '
         Me.chkPagadas.AutoSize = True
-        Me.chkPagadas.Location = New System.Drawing.Point(493, 25)
+        Me.chkPagadas.Location = New System.Drawing.Point(486, 7)
         Me.chkPagadas.Name = "chkPagadas"
         Me.chkPagadas.Size = New System.Drawing.Size(68, 17)
         Me.chkPagadas.TabIndex = 3
@@ -125,7 +135,7 @@ Partial Class A_ListadoFacturaCompra
         'chkPendientes
         '
         Me.chkPendientes.AutoSize = True
-        Me.chkPendientes.Location = New System.Drawing.Point(408, 25)
+        Me.chkPendientes.Location = New System.Drawing.Point(401, 8)
         Me.chkPendientes.Name = "chkPendientes"
         Me.chkPendientes.Size = New System.Drawing.Size(79, 17)
         Me.chkPendientes.TabIndex = 2
@@ -135,7 +145,7 @@ Partial Class A_ListadoFacturaCompra
         'chkIngresada
         '
         Me.chkIngresada.AutoSize = True
-        Me.chkIngresada.Location = New System.Drawing.Point(324, 24)
+        Me.chkIngresada.Location = New System.Drawing.Point(317, 7)
         Me.chkIngresada.Name = "chkIngresada"
         Me.chkIngresada.Size = New System.Drawing.Size(78, 17)
         Me.chkIngresada.TabIndex = 1
@@ -145,7 +155,7 @@ Partial Class A_ListadoFacturaCompra
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(275, 25)
+        Me.Label2.Location = New System.Drawing.Point(268, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 13)
         Me.Label2.TabIndex = 6
@@ -162,16 +172,16 @@ Partial Class A_ListadoFacturaCompra
         Me.dtFacturasCompra.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtFacturasCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtFacturasCompra.GridColor = System.Drawing.Color.White
-        Me.dtFacturasCompra.Location = New System.Drawing.Point(6, 76)
+        Me.dtFacturasCompra.Location = New System.Drawing.Point(6, 94)
         Me.dtFacturasCompra.Name = "dtFacturasCompra"
         Me.dtFacturasCompra.ReadOnly = True
         Me.dtFacturasCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtFacturasCompra.Size = New System.Drawing.Size(761, 375)
+        Me.dtFacturasCompra.Size = New System.Drawing.Size(761, 343)
         Me.dtFacturasCompra.TabIndex = 0
         '
         'txtBusqueda
         '
-        Me.txtBusqueda.Location = New System.Drawing.Point(107, 23)
+        Me.txtBusqueda.Location = New System.Drawing.Point(113, 6)
         Me.txtBusqueda.Name = "txtBusqueda"
         Me.txtBusqueda.Size = New System.Drawing.Size(130, 20)
         Me.txtBusqueda.TabIndex = 0
@@ -180,24 +190,37 @@ Partial Class A_ListadoFacturaCompra
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 26)
+        Me.Label1.Location = New System.Drawing.Point(8, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(99, 13)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Nombre Proveedor:"
         '
-        'btnCrearNueva
+        'StatusStrip1
         '
-        Me.btnCrearNueva.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCrearNueva.BackColor = System.Drawing.Color.White
-        Me.btnCrearNueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCrearNueva.ForeColor = System.Drawing.Color.Black
-        Me.btnCrearNueva.Location = New System.Drawing.Point(648, 17)
-        Me.btnCrearNueva.Name = "btnCrearNueva"
-        Me.btnCrearNueva.Size = New System.Drawing.Size(119, 23)
-        Me.btnCrearNueva.TabIndex = 14
-        Me.btnCrearNueva.Text = "Nueva Factura"
-        Me.btnCrearNueva.UseVisualStyleBackColor = False
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 459)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(797, 22)
+        Me.StatusStrip1.TabIndex = 1
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.btnCrearNueva)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.txtBusqueda)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.chkPagadas)
+        Me.Panel1.Controls.Add(Me.chkIngresada)
+        Me.Panel1.Controls.Add(Me.chkPendientes)
+        Me.Panel1.Location = New System.Drawing.Point(7, 17)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(761, 71)
+        Me.Panel1.TabIndex = 15
         '
         'A_ListadoFacturaCompra
         '
@@ -205,7 +228,9 @@ Partial Class A_ListadoFacturaCompra
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(797, 481)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "A_ListadoFacturaCompra"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -213,7 +238,10 @@ Partial Class A_ListadoFacturaCompra
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dtFacturasCompra, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -231,4 +259,6 @@ Partial Class A_ListadoFacturaCompra
     Friend WithEvents chkIngresada As CheckBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnCrearNueva As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class
