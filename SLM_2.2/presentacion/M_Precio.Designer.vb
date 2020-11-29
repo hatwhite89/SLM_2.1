@@ -48,13 +48,19 @@ Partial Class M_Precio
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtCodigoB = New System.Windows.Forms.TextBox()
         Me.lblcodigoB = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.gbxPrecio.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbxPrecio
         '
+        Me.gbxPrecio.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxPrecio.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.gbxPrecio.Controls.Add(Me.lblCode)
         Me.gbxPrecio.Controls.Add(Me.txtdescripcionListaPrecios)
         Me.gbxPrecio.Controls.Add(Me.txtdescripcionItem)
@@ -67,16 +73,12 @@ Partial Class M_Precio
         Me.gbxPrecio.Controls.Add(Me.lblPrecio)
         Me.gbxPrecio.Controls.Add(Me.lblListaPrecios)
         Me.gbxPrecio.Controls.Add(Me.lblItem)
-        Me.gbxPrecio.Controls.Add(Me.btnmodificar)
-        Me.gbxPrecio.Controls.Add(Me.btnnuevo)
-        Me.gbxPrecio.Controls.Add(Me.btnguardar)
         Me.gbxPrecio.Controls.Add(Me.lblcodigo)
-        Me.gbxPrecio.Controls.Add(Me.btncancelar)
-        Me.gbxPrecio.Location = New System.Drawing.Point(11, 10)
+        Me.gbxPrecio.Location = New System.Drawing.Point(11, 51)
         Me.gbxPrecio.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxPrecio.Name = "gbxPrecio"
         Me.gbxPrecio.Padding = New System.Windows.Forms.Padding(2)
-        Me.gbxPrecio.Size = New System.Drawing.Size(696, 170)
+        Me.gbxPrecio.Size = New System.Drawing.Size(696, 129)
         Me.gbxPrecio.TabIndex = 119
         Me.gbxPrecio.TabStop = False
         Me.gbxPrecio.Text = "REGISTRAR PRECIO"
@@ -210,11 +212,11 @@ Partial Class M_Precio
         '
         'btnmodificar
         '
-        Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnmodificar.BackColor = System.Drawing.Color.Yellow
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.Color.Black
-        Me.btnmodificar.Location = New System.Drawing.Point(167, 138)
+        Me.btnmodificar.Location = New System.Drawing.Point(564, 11)
         Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
@@ -224,11 +226,11 @@ Partial Class M_Precio
         '
         'btnnuevo
         '
-        Me.btnnuevo.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnnuevo.BackColor = System.Drawing.Color.White
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.Color.Black
-        Me.btnnuevo.Location = New System.Drawing.Point(8, 138)
+        Me.btnnuevo.Location = New System.Drawing.Point(405, 11)
         Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
@@ -238,11 +240,11 @@ Partial Class M_Precio
         '
         'btnguardar
         '
-        Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnguardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.Color.Black
-        Me.btnguardar.Location = New System.Drawing.Point(91, 138)
+        Me.btnguardar.Location = New System.Drawing.Point(488, 11)
         Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(72, 28)
@@ -262,11 +264,11 @@ Partial Class M_Precio
         '
         'btncancelar
         '
-        Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btncancelar.BackColor = System.Drawing.Color.LightSalmon
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.Color.Black
-        Me.btncancelar.Location = New System.Drawing.Point(243, 138)
+        Me.btncancelar.Location = New System.Drawing.Point(640, 11)
         Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(68, 28)
@@ -276,6 +278,10 @@ Partial Class M_Precio
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxbusqueda.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxbusqueda.Controls.Add(Me.btnImportar)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
@@ -286,7 +292,7 @@ Partial Class M_Precio
         Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
-        Me.gbxbusqueda.Size = New System.Drawing.Size(696, 310)
+        Me.gbxbusqueda.Size = New System.Drawing.Size(696, 297)
         Me.gbxbusqueda.TabIndex = 118
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR PRECIO"
@@ -318,6 +324,10 @@ Partial Class M_Precio
         '
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
+        Me.dgbtabla.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(4, 54)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
@@ -326,7 +336,7 @@ Partial Class M_Precio
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(688, 217)
+        Me.dgbtabla.Size = New System.Drawing.Size(688, 204)
         Me.dgbtabla.TabIndex = 22
         '
         'lbltotal
@@ -358,14 +368,40 @@ Partial Class M_Precio
         Me.lblcodigoB.TabIndex = 114
         Me.lblcodigoB.Text = "Código"
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 483)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(715, 22)
+        Me.StatusStrip1.TabIndex = 120
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnnuevo)
+        Me.Panel1.Controls.Add(Me.btncancelar)
+        Me.Panel1.Controls.Add(Me.btnguardar)
+        Me.Panel1.Controls.Add(Me.btnmodificar)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(715, 46)
+        Me.Panel1.TabIndex = 121
+        '
         'M_Precio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(715, 505)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxPrecio)
         Me.Controls.Add(Me.gbxbusqueda)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_Precio"
@@ -376,7 +412,9 @@ Partial Class M_Precio
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -405,4 +443,6 @@ Partial Class M_Precio
     Friend WithEvents txtdescripcionItem As TextBox
     Friend WithEvents lblCode As Label
     Friend WithEvents btnImportar As Button
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents Panel1 As Panel
 End Class

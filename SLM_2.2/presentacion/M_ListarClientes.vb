@@ -19,6 +19,7 @@
         Me.dgbtabla.Columns("codigoCategoria").Visible = False
         Me.dgbtabla.Columns("codigoTerminoPago").Visible = False
         Me.dgbtabla.Columns("genero").Visible = False
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Private Sub SeleccionarClientes()
         Dim objCli As New ClsCliente

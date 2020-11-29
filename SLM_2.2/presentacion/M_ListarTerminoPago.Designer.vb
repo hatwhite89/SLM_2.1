@@ -26,6 +26,8 @@ Partial Class M_ListarTerminoPago
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
         Me.txtCodigoB = New System.Windows.Forms.TextBox()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
+        Me.codigoTerminoPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblnombreB = New System.Windows.Forms.Label()
         Me.lbltipoCta = New System.Windows.Forms.Label()
         Me.lblcantidad = New System.Windows.Forms.Label()
@@ -34,8 +36,7 @@ Partial Class M_ListarTerminoPago
         Me.lblCodigoT = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.codigoTerminoPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -46,6 +47,7 @@ Partial Class M_ListarTerminoPago
         Me.gbxbusqueda.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxbusqueda.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxbusqueda.Controls.Add(Me.txtCodigoB)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
@@ -54,7 +56,7 @@ Partial Class M_ListarTerminoPago
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtDescripcionB)
         Me.gbxbusqueda.Controls.Add(Me.lblCodigoT)
-        Me.gbxbusqueda.Location = New System.Drawing.Point(6, 74)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(6, 52)
         Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
         Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
@@ -89,8 +91,22 @@ Partial Class M_ListarTerminoPago
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(692, 344)
+        Me.dgbtabla.Size = New System.Drawing.Size(689, 344)
         Me.dgbtabla.TabIndex = 119
+        '
+        'codigoTerminoPago
+        '
+        Me.codigoTerminoPago.DataPropertyName = "codigoTerminoPago"
+        Me.codigoTerminoPago.HeaderText = "CODIGO"
+        Me.codigoTerminoPago.Name = "codigoTerminoPago"
+        Me.codigoTerminoPago.ReadOnly = True
+        '
+        'descripcion
+        '
+        Me.descripcion.DataPropertyName = "descripcion"
+        Me.descripcion.HeaderText = "DESCRIPCION"
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.ReadOnly = True
         '
         'lblnombreB
         '
@@ -155,7 +171,7 @@ Partial Class M_ListarTerminoPago
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(-3, 0)
         Me.Panel1.Name = "Panel1"
@@ -174,19 +190,14 @@ Partial Class M_ListarTerminoPago
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Términos de Pago"
         '
-        'codigoTerminoPago
+        'StatusStrip1
         '
-        Me.codigoTerminoPago.DataPropertyName = "codigoTerminoPago"
-        Me.codigoTerminoPago.HeaderText = "CODIGO"
-        Me.codigoTerminoPago.Name = "codigoTerminoPago"
-        Me.codigoTerminoPago.ReadOnly = True
-        '
-        'descripcion
-        '
-        Me.descripcion.DataPropertyName = "descripcion"
-        Me.descripcion.HeaderText = "DESCRIPCION"
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.ReadOnly = True
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 484)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 122
+        Me.StatusStrip1.Text = "StatusStrip1"
         '
         'M_ListarTerminoPago
         '
@@ -194,6 +205,7 @@ Partial Class M_ListarTerminoPago
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(718, 506)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -207,6 +219,7 @@ Partial Class M_ListarTerminoPago
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -223,4 +236,5 @@ Partial Class M_ListarTerminoPago
     Friend WithEvents Label1 As Label
     Friend WithEvents codigoTerminoPago As DataGridViewTextBoxColumn
     Friend WithEvents descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

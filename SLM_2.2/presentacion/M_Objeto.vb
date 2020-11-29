@@ -13,6 +13,7 @@
         btnnuevo.Enabled = True
 
         dgbtabla.Columns("codigo").Visible = False
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         Me.Close()

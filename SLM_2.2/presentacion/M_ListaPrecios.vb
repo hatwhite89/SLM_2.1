@@ -230,6 +230,7 @@
         Catch ex As Exception
 
         End Try
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Private Sub dgbtabla_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try

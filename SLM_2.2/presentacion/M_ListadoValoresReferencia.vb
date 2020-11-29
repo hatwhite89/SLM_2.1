@@ -22,6 +22,7 @@
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
 
     Private Sub seleccionarValoresReferenciaPorDescripcion()
