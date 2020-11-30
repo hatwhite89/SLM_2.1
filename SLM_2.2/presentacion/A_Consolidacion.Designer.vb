@@ -22,6 +22,7 @@ Partial Class A_Consolidacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Consolidacion))
         Me.dtTransferencia = New System.Windows.Forms.DataGridView()
         Me.gbxTransferencias = New System.Windows.Forms.GroupBox()
         Me.cbxTransferencia = New System.Windows.Forms.ComboBox()
@@ -47,6 +48,7 @@ Partial Class A_Consolidacion
         '
         Me.dtTransferencia.AllowUserToAddRows = False
         Me.dtTransferencia.AllowUserToDeleteRows = False
+        Me.dtTransferencia.BackgroundColor = System.Drawing.Color.White
         Me.dtTransferencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtTransferencia.Location = New System.Drawing.Point(6, 83)
         Me.dtTransferencia.MultiSelect = False
@@ -58,6 +60,7 @@ Partial Class A_Consolidacion
         '
         'gbxTransferencias
         '
+        Me.gbxTransferencias.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxTransferencias.Controls.Add(Me.cbxTransferencia)
         Me.gbxTransferencias.Controls.Add(Me.txtCodBanco)
         Me.gbxTransferencias.Controls.Add(Me.btnLimpiar)
@@ -146,6 +149,7 @@ Partial Class A_Consolidacion
         '
         'gbxConsolidacion
         '
+        Me.gbxConsolidacion.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxConsolidacion.Controls.Add(Me.btnLimpiarExcel)
         Me.gbxConsolidacion.Controls.Add(Me.btnProcesar)
         Me.gbxConsolidacion.Controls.Add(Me.dtExcel)
@@ -179,6 +183,7 @@ Partial Class A_Consolidacion
         '
         Me.dtExcel.AllowUserToAddRows = False
         Me.dtExcel.AllowUserToDeleteRows = False
+        Me.dtExcel.BackgroundColor = System.Drawing.Color.White
         Me.dtExcel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtExcel.Location = New System.Drawing.Point(6, 83)
         Me.dtExcel.MultiSelect = False
@@ -201,9 +206,11 @@ Partial Class A_Consolidacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(977, 568)
         Me.Controls.Add(Me.gbxConsolidacion)
         Me.Controls.Add(Me.gbxTransferencias)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_Consolidacion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Consolidación"

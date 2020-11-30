@@ -50,6 +50,7 @@ Partial Class A_ListadoCheques
         Me.gbxCheque.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxCheque.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxCheque.Controls.Add(Me.Button2)
         Me.gbxCheque.Controls.Add(Me.Button1)
         Me.gbxCheque.Controls.Add(Me.PictureBox1)
@@ -73,24 +74,26 @@ Partial Class A_ListadoCheques
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.Color.Yellow
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Location = New System.Drawing.Point(724, 38)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(81, 31)
         Me.Button2.TabIndex = 12
         Me.Button2.Text = "Vista General"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.LawnGreen
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Location = New System.Drawing.Point(637, 38)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(81, 31)
         Me.Button1.TabIndex = 11
         Me.Button1.Text = "Generar Vista"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'PictureBox1
         '
@@ -188,6 +191,8 @@ Partial Class A_ListadoCheques
         Me.dtCheques.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtCheques.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtCheques.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtCheques.BackgroundColor = System.Drawing.Color.White
         Me.dtCheques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtCheques.GridColor = System.Drawing.Color.White

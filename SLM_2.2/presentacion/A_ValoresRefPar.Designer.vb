@@ -99,12 +99,13 @@ Partial Class A_ValoresRefPar
         'btnCrear
         '
         Me.btnCrear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCrear.BackColor = System.Drawing.Color.White
         Me.btnCrear.Location = New System.Drawing.Point(258, 15)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 0
         Me.btnCrear.Text = "Crear Nuevo"
-        Me.btnCrear.UseVisualStyleBackColor = True
+        Me.btnCrear.UseVisualStyleBackColor = False
         '
         'btnGuardar
         '
@@ -172,7 +173,7 @@ Partial Class A_ValoresRefPar
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(557, 583)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Valores de Referencia Parámetros"
@@ -215,6 +216,8 @@ Partial Class A_ValoresRefPar
         Me.dtDataValoresRef.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtDataValoresRef.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtDataValoresRef.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtDataValoresRef.BackgroundColor = System.Drawing.Color.White
         Me.dtDataValoresRef.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDataValoresRef.Location = New System.Drawing.Point(9, 52)
@@ -293,6 +296,8 @@ Partial Class A_ValoresRefPar
         Me.dtValoresRef.AllowUserToDeleteRows = False
         Me.dtValoresRef.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtValoresRef.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtValoresRef.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtValoresRef.BackgroundColor = System.Drawing.Color.White
         Me.dtValoresRef.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtValoresRef.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column8, Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
@@ -309,7 +314,6 @@ Partial Class A_ValoresRefPar
         Me.Column8.MinimumWidth = 6
         Me.Column8.Name = "Column8"
         Me.Column8.Visible = False
-        Me.Column8.Width = 125
         '
         'Column1
         '
@@ -435,7 +439,7 @@ Partial Class A_ValoresRefPar
         Me.TabPage2.Controls.Add(Me.GroupBox4)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(557, 583)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Valores de Referencia Texto"
@@ -479,6 +483,8 @@ Partial Class A_ValoresRefPar
         Me.dtDataValorRefTexto.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtDataValorRefTexto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtDataValorRefTexto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtDataValorRefTexto.BackgroundColor = System.Drawing.Color.White
         Me.dtDataValorRefTexto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDataValorRefTexto.Location = New System.Drawing.Point(9, 52)
@@ -532,6 +538,8 @@ Partial Class A_ValoresRefPar
         '
         Me.dtDetalleTexto.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtDetalleTexto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtDetalleTexto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtDetalleTexto.BackgroundColor = System.Drawing.Color.White
         Me.dtDetalleTexto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDetalleTexto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column6, Me.Column7})

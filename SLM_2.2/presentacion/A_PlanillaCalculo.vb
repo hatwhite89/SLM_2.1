@@ -393,4 +393,8 @@
 
         End Try
     End Sub
+
+    Private Sub A_PlanillaCalculo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        alternarColoFilasDatagridview(dtData)
+    End Sub
 End Class

@@ -46,6 +46,7 @@
         Try
 
             dtPeriodos.DataSource = periodo.listarPeriodos
+            alternarColoFilasDatagridview(dtPeriodos)
 
         Catch ex As Exception
 

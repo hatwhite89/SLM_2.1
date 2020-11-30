@@ -360,6 +360,7 @@ Partial Class A_Depreciacion
         Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox2.Controls.Add(Me.dtDepreciacion)
         Me.GroupBox2.Location = New System.Drawing.Point(449, 57)
         Me.GroupBox2.Name = "GroupBox2"

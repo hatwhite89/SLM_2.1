@@ -2,7 +2,7 @@
 
     Dim FactCompra As New ClsFacturaCompra
     Private Sub A_ListarFacCompraPagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        alternarColoFilasDatagridview(dtFacturasCompra)
         Try
             'Cargar Facturas de Compra
             dtFacturasCompra.DataSource = FactCompra.listarFacturaCompraParaPago

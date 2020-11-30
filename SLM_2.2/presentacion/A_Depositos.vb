@@ -6,13 +6,13 @@
     Dim detalleAsiento As New ClsDetalleAsiento
     Dim periodo As New ClsPeriodoContable
 
-    Private Sub CerrarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CerrarToolStripMenuItem1.Click
+    Private Sub CerrarToolStripMenuItem1_Click(sender As Object, e As EventArgs) 
 
         Me.Close()
 
     End Sub
 
-    Private Sub ListarDepositosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarDepositosToolStripMenuItem.Click
+    Private Sub ListarDepositosToolStripMenuItem_Click(sender As Object, e As EventArgs) 
 
         If txtNro.Text = "" Then
 

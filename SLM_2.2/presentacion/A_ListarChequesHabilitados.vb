@@ -2,6 +2,7 @@
     Dim cheque As New ClsCheques
     Private Sub A_ListarChequesHabilitados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Cargar cheques habilitados
+        alternarColoFilasDatagridview(dtCheques)
         Dim fila As String = frmPagos.lblFila.Text
         Dim dato As String
         dato = frmPagos.txtFormaP.Text

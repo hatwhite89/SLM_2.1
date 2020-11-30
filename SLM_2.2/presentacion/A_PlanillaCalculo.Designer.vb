@@ -32,6 +32,7 @@ Partial Class A_PlanillaCalculo
         Me.txtCodPlanilla = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnExportarExcel = New System.Windows.Forms.Button()
         Me.dtData = New System.Windows.Forms.DataGridView()
         Me.Empleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SueldoBase = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -52,7 +53,6 @@ Partial Class A_PlanillaCalculo
         Me.SueldoNeto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CodEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnExportarExcel = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnGenerar = New System.Windows.Forms.Button()
         Me.btnCargar = New System.Windows.Forms.Button()
@@ -156,6 +156,19 @@ Partial Class A_PlanillaCalculo
         Me.GroupBox2.Size = New System.Drawing.Size(819, 373)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
+        '
+        'btnExportarExcel
+        '
+        Me.btnExportarExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnExportarExcel.BackColor = System.Drawing.Color.Green
+        Me.btnExportarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExportarExcel.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnExportarExcel.Location = New System.Drawing.Point(720, 9)
+        Me.btnExportarExcel.Name = "btnExportarExcel"
+        Me.btnExportarExcel.Size = New System.Drawing.Size(93, 23)
+        Me.btnExportarExcel.TabIndex = 4
+        Me.btnExportarExcel.Text = "Exportar Excel"
+        Me.btnExportarExcel.UseVisualStyleBackColor = False
         '
         'dtData
         '
@@ -280,19 +293,6 @@ Partial Class A_PlanillaCalculo
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(848, 47)
         Me.Panel1.TabIndex = 2
-        '
-        'btnExportarExcel
-        '
-        Me.btnExportarExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnExportarExcel.BackColor = System.Drawing.Color.Green
-        Me.btnExportarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExportarExcel.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnExportarExcel.Location = New System.Drawing.Point(720, 9)
-        Me.btnExportarExcel.Name = "btnExportarExcel"
-        Me.btnExportarExcel.Size = New System.Drawing.Size(93, 23)
-        Me.btnExportarExcel.TabIndex = 4
-        Me.btnExportarExcel.Text = "Exportar Excel"
-        Me.btnExportarExcel.UseVisualStyleBackColor = False
         '
         'btnCerrar
         '

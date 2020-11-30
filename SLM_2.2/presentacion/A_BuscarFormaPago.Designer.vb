@@ -22,10 +22,12 @@ Partial Class A_BuscarFormaPago
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_BuscarFormaPago))
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtFormasPago = New System.Windows.Forms.DataGridView()
         Me.lblJC = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         CType(Me.dtFormasPago, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -52,8 +54,12 @@ Partial Class A_BuscarFormaPago
         Me.dtFormasPago.AllowUserToDeleteRows = False
         Me.dtFormasPago.AllowUserToResizeColumns = False
         Me.dtFormasPago.AllowUserToResizeRows = False
+        Me.dtFormasPago.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtFormasPago.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.dtFormasPago.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
+        Me.dtFormasPago.BackgroundColor = System.Drawing.Color.White
         Me.dtFormasPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtFormasPago.Location = New System.Drawing.Point(12, 37)
         Me.dtFormasPago.MultiSelect = False
@@ -78,16 +84,28 @@ Partial Class A_BuscarFormaPago
         Me.lblJC.Text = "form"
         Me.lblJC.Visible = False
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 340)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 5
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'A_BuscarFormaPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(718, 335)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(718, 362)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.lblJC)
         Me.Controls.Add(Me.dtFormasPago)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtCodigo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "A_BuscarFormaPago"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -102,4 +120,5 @@ Partial Class A_BuscarFormaPago
     Friend WithEvents Label1 As Label
     Friend WithEvents dtFormasPago As DataGridView
     Friend WithEvents lblJC As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

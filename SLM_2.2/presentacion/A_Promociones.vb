@@ -243,7 +243,7 @@ Public Class A_Promociones
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
+        alternarColoFilasDatagridview(dtDetallePromo)
     End Sub
 
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click

@@ -2,7 +2,7 @@
 
     Dim terminop As New ClsTerminoPago
     Private Sub A_ListarTerminoPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        alternarColoFilasDatagridview(dtTerminoPago)
         'Listar terminos de pago
         dtTerminoPago.DataSource = terminop.listarCodDescripTerminoPago
 

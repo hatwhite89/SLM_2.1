@@ -10,6 +10,7 @@
 
     Private Sub A_ListarPagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Cargar listado de pagos
+        alternarColoFilasDatagridview(dtPagos)
         Try
             dtPagos.DataSource = pagos.listarSinPago
 

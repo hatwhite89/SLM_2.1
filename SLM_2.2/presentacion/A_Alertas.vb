@@ -3,7 +3,7 @@
     Dim misNotificaciones As New ClsNotificaciones
 
     Private Sub A_Alertas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        alternarColoFilasDatagridview(dtNotificaciones)
         Try
 
             dtNotificaciones.DataSource = misNotificaciones.listarNotifiaciones

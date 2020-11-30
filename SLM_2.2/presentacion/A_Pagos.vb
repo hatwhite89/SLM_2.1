@@ -5,7 +5,7 @@
     Dim pagos As New ClsPago
     Dim detallePago As New ClsDetallePago
 
-    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
         'Cerrar Ventana Pagos
         Me.Close()
@@ -472,7 +472,7 @@
         Catch ex As Exception
 
         End Try
-
+        alternarColoFilasDatagridview(dtDetallePagos)
 
     End Sub
 

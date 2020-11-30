@@ -23,9 +23,6 @@ Partial Class frmPagos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPagos))
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblNro = New System.Windows.Forms.Label()
         Me.txtNro = New System.Windows.Forms.TextBox()
         Me.lblFechaP = New System.Windows.Forms.Label()
@@ -64,34 +61,11 @@ Partial Class frmPagos
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.MenuStrip1.SuspendLayout()
         CType(Me.dtDetallePagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxInfo.SuspendLayout()
         Me.gbxDetalle.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(850, 24)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'ArchivoToolStripMenuItem
-        '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem})
-        Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(63, 20)
-        Me.ArchivoToolStripMenuItem.Text = "Archivo "
-        '
-        'SalirToolStripMenuItem
-        '
-        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
-        Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'lblNro
         '
@@ -234,6 +208,8 @@ Partial Class frmPagos
         Me.dtDetallePagos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtDetallePagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtDetallePagos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtDetallePagos.BackgroundColor = System.Drawing.Color.White
         Me.dtDetallePagos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtDetallePagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -241,21 +217,19 @@ Partial Class frmPagos
         Me.dtDetallePagos.GridColor = System.Drawing.Color.White
         Me.dtDetallePagos.Location = New System.Drawing.Point(6, 19)
         Me.dtDetallePagos.Name = "dtDetallePagos"
-        Me.dtDetallePagos.Size = New System.Drawing.Size(816, 208)
+        Me.dtDetallePagos.Size = New System.Drawing.Size(816, 230)
         Me.dtDetallePagos.TabIndex = 20
         '
         'NroFac
         '
         Me.NroFac.HeaderText = "Nro.Fac"
         Me.NroFac.Name = "NroFac"
-        Me.NroFac.Width = 50
         '
         'Proveedor
         '
         Me.Proveedor.HeaderText = "Proveedor"
         Me.Proveedor.Name = "Proveedor"
         Me.Proveedor.ReadOnly = True
-        Me.Proveedor.Width = 300
         '
         'Moneda
         '
@@ -361,7 +335,7 @@ Partial Class frmPagos
         Me.gbxInfo.Controls.Add(Me.lblCtaBanco)
         Me.gbxInfo.Controls.Add(Me.txtCtaBanco)
         Me.gbxInfo.Controls.Add(Me.chxInfo)
-        Me.gbxInfo.Location = New System.Drawing.Point(12, 71)
+        Me.gbxInfo.Location = New System.Drawing.Point(6, 49)
         Me.gbxInfo.Name = "gbxInfo"
         Me.gbxInfo.Size = New System.Drawing.Size(828, 124)
         Me.gbxInfo.TabIndex = 25
@@ -401,9 +375,9 @@ Partial Class frmPagos
         Me.gbxDetalle.Controls.Add(Me.lblTotalSuma)
         Me.gbxDetalle.Controls.Add(Me.Label4)
         Me.gbxDetalle.Controls.Add(Me.dtDetallePagos)
-        Me.gbxDetalle.Location = New System.Drawing.Point(12, 201)
+        Me.gbxDetalle.Location = New System.Drawing.Point(12, 179)
         Me.gbxDetalle.Name = "gbxDetalle"
-        Me.gbxDetalle.Size = New System.Drawing.Size(828, 266)
+        Me.gbxDetalle.Size = New System.Drawing.Size(828, 288)
         Me.gbxDetalle.TabIndex = 26
         Me.gbxDetalle.TabStop = False
         Me.gbxDetalle.Text = "Detalle de Pago"
@@ -432,7 +406,7 @@ Partial Class frmPagos
         '
         Me.lblTotalSuma.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTotalSuma.AutoSize = True
-        Me.lblTotalSuma.Location = New System.Drawing.Point(764, 239)
+        Me.lblTotalSuma.Location = New System.Drawing.Point(764, 261)
         Me.lblTotalSuma.Name = "lblTotalSuma"
         Me.lblTotalSuma.Size = New System.Drawing.Size(10, 13)
         Me.lblTotalSuma.TabIndex = 22
@@ -442,7 +416,7 @@ Partial Class frmPagos
         '
         Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(642, 238)
+        Me.Label4.Location = New System.Drawing.Point(642, 260)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(77, 13)
         Me.Label4.TabIndex = 21
@@ -474,7 +448,7 @@ Partial Class frmPagos
         Me.Panel1.Controls.Add(Me.btnGuardar)
         Me.Panel1.Controls.Add(Me.btnCrear)
         Me.Panel1.Controls.Add(Me.btnModificar)
-        Me.Panel1.Location = New System.Drawing.Point(-2, 23)
+        Me.Panel1.Location = New System.Drawing.Point(-2, 1)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(852, 42)
         Me.Panel1.TabIndex = 28
@@ -513,17 +487,13 @@ Partial Class frmPagos
         Me.ClientSize = New System.Drawing.Size(850, 476)
         Me.Controls.Add(Me.gbxDetalle)
         Me.Controls.Add(Me.gbxInfo)
-        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmPagos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pagos"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         CType(Me.dtDetallePagos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbxInfo.ResumeLayout(False)
         Me.gbxInfo.PerformLayout()
@@ -532,13 +502,8 @@ Partial Class frmPagos
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lblNro As Label
     Friend WithEvents txtNro As TextBox
     Friend WithEvents lblFechaP As Label

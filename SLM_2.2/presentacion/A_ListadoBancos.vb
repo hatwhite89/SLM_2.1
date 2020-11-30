@@ -5,6 +5,7 @@
     Private Sub A_ListadoBancos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Listar Bancos 
         dtBancos.DataSource = Banco.listarBancosNombreCod
+        alternarColoFilasDatagridview(dtBancos)
     End Sub
 
     Private Sub dtBancos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtBancos.CellDoubleClick

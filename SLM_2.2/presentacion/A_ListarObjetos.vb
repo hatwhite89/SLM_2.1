@@ -2,7 +2,7 @@
 
     Dim objeto As New ClsObjeto
     Private Sub A_ListarObjetos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        alternarColoFilasDatagridview(dtObjetos)
         dtObjetos.DataSource = objeto.listarNombreObjeto
 
     End Sub
