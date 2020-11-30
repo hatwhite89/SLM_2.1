@@ -22,6 +22,7 @@ Partial Class M_ReporteriaTalentoHumano
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_ReporteriaTalentoHumano))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnGenerar = New System.Windows.Forms.Button()
@@ -52,7 +53,7 @@ Partial Class M_ReporteriaTalentoHumano
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Controls.Add(Me.btnGenerar)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -64,7 +65,7 @@ Partial Class M_ReporteriaTalentoHumano
         'btnCerrar
         '
         Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCerrar.BackColor = System.Drawing.Color.White
+        Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.Location = New System.Drawing.Point(714, 14)
         Me.btnCerrar.Name = "btnCerrar"
@@ -76,7 +77,7 @@ Partial Class M_ReporteriaTalentoHumano
         'btnGenerar
         '
         Me.btnGenerar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGenerar.BackColor = System.Drawing.Color.White
+        Me.btnGenerar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGenerar.Location = New System.Drawing.Point(637, 14)
         Me.btnGenerar.Name = "btnGenerar"
@@ -98,6 +99,7 @@ Partial Class M_ReporteriaTalentoHumano
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.cmbxReporte)
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
         Me.GroupBox1.Location = New System.Drawing.Point(11, 61)
@@ -112,7 +114,7 @@ Partial Class M_ReporteriaTalentoHumano
         Me.cmbxReporte.FormattingEnabled = True
         Me.cmbxReporte.Items.AddRange(New Object() {"Reporte Personal Activo", "Reporte Personal Inactivo", "Reporte Capacitaciones ", "Reporte Permisos", "Reporte Horarios de Trabajo"})
         Me.cmbxReporte.Location = New System.Drawing.Point(17, 38)
-        Me.cmbxReporte.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbxReporte.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbxReporte.Name = "cmbxReporte"
         Me.cmbxReporte.Size = New System.Drawing.Size(222, 21)
         Me.cmbxReporte.TabIndex = 1
@@ -132,6 +134,7 @@ Partial Class M_ReporteriaTalentoHumano
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox2.Controls.Add(Me.cmbxHorario)
         Me.GroupBox2.Controls.Add(Me.lblHorario)
         Me.GroupBox2.Controls.Add(Me.txtnombreEmpleado)
@@ -152,7 +155,7 @@ Partial Class M_ReporteriaTalentoHumano
         '
         Me.cmbxHorario.FormattingEnabled = True
         Me.cmbxHorario.Location = New System.Drawing.Point(88, 110)
-        Me.cmbxHorario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbxHorario.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbxHorario.Name = "cmbxHorario"
         Me.cmbxHorario.Size = New System.Drawing.Size(151, 21)
         Me.cmbxHorario.TabIndex = 8
@@ -172,7 +175,7 @@ Partial Class M_ReporteriaTalentoHumano
         'txtnombreEmpleado
         '
         Me.txtnombreEmpleado.Location = New System.Drawing.Point(88, 46)
-        Me.txtnombreEmpleado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreEmpleado.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreEmpleado.Name = "txtnombreEmpleado"
         Me.txtnombreEmpleado.ReadOnly = True
         Me.txtnombreEmpleado.Size = New System.Drawing.Size(151, 20)
@@ -205,7 +208,7 @@ Partial Class M_ReporteriaTalentoHumano
         '
         Me.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaFinal.Location = New System.Drawing.Point(88, 137)
-        Me.dtpFechaFinal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpFechaFinal.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpFechaFinal.Name = "dtpFechaFinal"
         Me.dtpFechaFinal.Size = New System.Drawing.Size(162, 20)
         Me.dtpFechaFinal.TabIndex = 3
@@ -226,7 +229,7 @@ Partial Class M_ReporteriaTalentoHumano
         '
         Me.dtpFechaInicial.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaInicial.Location = New System.Drawing.Point(88, 87)
-        Me.dtpFechaInicial.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpFechaInicial.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpFechaInicial.Name = "dtpFechaInicial"
         Me.dtpFechaInicial.Size = New System.Drawing.Size(162, 20)
         Me.dtpFechaInicial.TabIndex = 1
@@ -248,6 +251,7 @@ Partial Class M_ReporteriaTalentoHumano
         Me.GroupBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.BackColor = System.Drawing.Color.White
         Me.GroupBox3.Controls.Add(Me.CrystalReportViewer1)
         Me.GroupBox3.Location = New System.Drawing.Point(270, 61)
         Me.GroupBox3.Name = "GroupBox3"
@@ -280,8 +284,9 @@ Partial Class M_ReporteriaTalentoHumano
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "M_ReporteriaTalentoHumano"
-        Me.Text = "M_ReporteriaTalentoHumano"
+        Me.Text = "Reporteria Talento Humano"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)

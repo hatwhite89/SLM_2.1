@@ -289,5 +289,6 @@
         Catch ex As Exception
 
         End Try
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
 End Class

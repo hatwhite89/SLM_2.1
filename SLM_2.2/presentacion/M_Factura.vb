@@ -547,6 +547,8 @@ Public Class M_Factura
         'Timer1.Interval = 3000
         'Timer1.Start()
         'MsgBox(My.Computer.Name.ToString)
+        alternarColoFilasDatagridview(dgblistadoExamenes)
+        alternarColoFilasDatagridview(dgbObservaciones)
         If (Trim(txtnumeroOficial.Text) <> "") Then
             cbxAnular.Enabled = True
         Else
@@ -591,6 +593,8 @@ Public Class M_Factura
         M_ClienteVentana.Show()
         M_ClienteVentana.Location = New Point(MiposicionX, MiposicionY)
         M_ClienteVentana.WindowState = FormWindowState.Maximized
+        M_BuscarFactura.Close()
+        Form1.WindowState = FormWindowState.Minimized
 
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -2053,7 +2057,7 @@ Public Class M_Factura
         End Try
     End Sub
 
-    Private Sub BuscarExamenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscarExamenToolStripMenuItem.Click
+    Private Sub BuscarExamenToolStripMenuItem_Click(sender As Object, e As EventArgs)
         If btnbusquedaExamen.Enabled Then
             M_BuscarExamen.ShowDialog()
         End If
@@ -2143,6 +2147,16 @@ Public Class M_Factura
         If Trim(M_ClienteVentana.txtcorreo1.Text) = "" And Trim(M_ClienteVentana.txtcorreo2.Text) = "" And cbxenviarCorreo.Checked Then
             MsgBox("Debe ingresar el correo del cliente o paciente para entregar los resultado por correo electrónico.", MsgBoxStyle.Information, "Validación.")
             cbxenviarCorreo.Checked = False
+        End If
+    End Sub
+
+    Private Sub RegistroToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If btnbusquedaExamen.Enabled Then
+            M_BuscarExamen.ShowDialog()
         End If
     End Sub
 

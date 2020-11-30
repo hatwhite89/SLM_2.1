@@ -6,6 +6,7 @@ Public Class M_ListadoEmpleados
         Me.dgbtabla.Columns("codigoDepto").Visible = False
         lblform.Visible = False
         lblfila.Visible = False
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Public Sub SeleccionarEmpleados()
         Dim objEmp As New ClsEmpleados

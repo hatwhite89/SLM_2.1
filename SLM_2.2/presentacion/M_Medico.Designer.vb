@@ -42,6 +42,7 @@ Partial Class M_Medico
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.gbxmedico = New System.Windows.Forms.GroupBox()
+        Me.lblForm = New System.Windows.Forms.Label()
         Me.txtnombreEspecialidad = New System.Windows.Forms.TextBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
@@ -50,109 +51,106 @@ Partial Class M_Medico
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnombre = New System.Windows.Forms.Label()
-        Me.lblForm = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.gbxmedico.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(145, 36)
-        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcodigo.Location = New System.Drawing.Point(109, 29)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(179, 22)
+        Me.txtcodigo.Size = New System.Drawing.Size(135, 20)
         Me.txtcodigo.TabIndex = 88
         Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(85, 36)
-        Me.lblcodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcodigo.Location = New System.Drawing.Point(64, 29)
         Me.lblcodigo.Name = "lblcodigo"
-        Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodigo.Size = New System.Drawing.Size(40, 13)
         Me.lblcodigo.TabIndex = 87
         Me.lblcodigo.Text = "Código"
         '
         'txtcelular
         '
-        Me.txtcelular.Location = New System.Drawing.Point(403, 122)
-        Me.txtcelular.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcelular.Location = New System.Drawing.Point(302, 99)
+        Me.txtcelular.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcelular.MaxLength = 20
         Me.txtcelular.Name = "txtcelular"
-        Me.txtcelular.Size = New System.Drawing.Size(179, 22)
+        Me.txtcelular.Size = New System.Drawing.Size(135, 20)
         Me.txtcelular.TabIndex = 92
         Me.txtcelular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblcelular
         '
         Me.lblcelular.AutoSize = True
-        Me.lblcelular.Location = New System.Drawing.Point(343, 126)
-        Me.lblcelular.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcelular.Location = New System.Drawing.Point(257, 102)
         Me.lblcelular.Name = "lblcelular"
-        Me.lblcelular.Size = New System.Drawing.Size(52, 17)
+        Me.lblcelular.Size = New System.Drawing.Size(39, 13)
         Me.lblcelular.TabIndex = 91
         Me.lblcelular.Text = "Celular"
         '
         'txttelefono
         '
-        Me.txttelefono.Location = New System.Drawing.Point(403, 94)
-        Me.txttelefono.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txttelefono.Location = New System.Drawing.Point(302, 76)
+        Me.txttelefono.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txttelefono.MaxLength = 20
         Me.txttelefono.Name = "txttelefono"
-        Me.txttelefono.Size = New System.Drawing.Size(179, 22)
+        Me.txttelefono.Size = New System.Drawing.Size(135, 20)
         Me.txttelefono.TabIndex = 90
         Me.txttelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lbltelefono
         '
         Me.lbltelefono.AutoSize = True
-        Me.lbltelefono.Location = New System.Drawing.Point(331, 97)
-        Me.lbltelefono.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbltelefono.Location = New System.Drawing.Point(248, 79)
         Me.lbltelefono.Name = "lbltelefono"
-        Me.lbltelefono.Size = New System.Drawing.Size(64, 17)
+        Me.lbltelefono.Size = New System.Drawing.Size(49, 13)
         Me.lbltelefono.TabIndex = 89
         Me.lbltelefono.Text = "Teléfono"
         '
         'txtcorreo
         '
-        Me.txtcorreo.Location = New System.Drawing.Point(144, 92)
-        Me.txtcorreo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcorreo.Location = New System.Drawing.Point(108, 75)
+        Me.txtcorreo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcorreo.MaxLength = 50
         Me.txtcorreo.Name = "txtcorreo"
-        Me.txtcorreo.Size = New System.Drawing.Size(179, 22)
+        Me.txtcorreo.Size = New System.Drawing.Size(135, 20)
         Me.txtcorreo.TabIndex = 94
         Me.txtcorreo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblcorreo
         '
         Me.lblcorreo.AutoSize = True
-        Me.lblcorreo.Location = New System.Drawing.Point(85, 92)
-        Me.lblcorreo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcorreo.Location = New System.Drawing.Point(64, 75)
         Me.lblcorreo.Name = "lblcorreo"
-        Me.lblcorreo.Size = New System.Drawing.Size(51, 17)
+        Me.lblcorreo.Size = New System.Drawing.Size(38, 13)
         Me.lblcorreo.TabIndex = 93
         Me.lblcorreo.Text = "Correo"
         '
         'txtcorreo2
         '
-        Me.txtcorreo2.Location = New System.Drawing.Point(145, 121)
-        Me.txtcorreo2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcorreo2.Location = New System.Drawing.Point(109, 98)
+        Me.txtcorreo2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcorreo2.MaxLength = 50
         Me.txtcorreo2.Name = "txtcorreo2"
-        Me.txtcorreo2.Size = New System.Drawing.Size(179, 22)
+        Me.txtcorreo2.Size = New System.Drawing.Size(135, 20)
         Me.txtcorreo2.TabIndex = 96
         Me.txtcorreo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblcorreo2
         '
         Me.lblcorreo2.AutoSize = True
-        Me.lblcorreo2.Location = New System.Drawing.Point(75, 123)
-        Me.lblcorreo2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblcorreo2.Location = New System.Drawing.Point(56, 100)
         Me.lblcorreo2.Name = "lblcorreo2"
-        Me.lblcorreo2.Size = New System.Drawing.Size(63, 17)
+        Me.lblcorreo2.Size = New System.Drawing.Size(47, 13)
         Me.lblcorreo2.TabIndex = 95
         Me.lblcorreo2.Text = "Correo 2"
         '
@@ -164,107 +162,107 @@ Partial Class M_Medico
         Me.btnbuscarEspecialidad.FlatAppearance.BorderSize = 0
         Me.btnbuscarEspecialidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarEspecialidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscarEspecialidad.Location = New System.Drawing.Point(143, 148)
-        Me.btnbuscarEspecialidad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnbuscarEspecialidad.Location = New System.Drawing.Point(107, 120)
+        Me.btnbuscarEspecialidad.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnbuscarEspecialidad.Name = "btnbuscarEspecialidad"
-        Me.btnbuscarEspecialidad.Size = New System.Drawing.Size(49, 22)
+        Me.btnbuscarEspecialidad.Size = New System.Drawing.Size(37, 18)
         Me.btnbuscarEspecialidad.TabIndex = 105
         Me.btnbuscarEspecialidad.Text = "..."
         Me.btnbuscarEspecialidad.UseVisualStyleBackColor = False
         '
         'txtcodigoEspecialidad
         '
-        Me.txtcodigoEspecialidad.Location = New System.Drawing.Point(199, 150)
-        Me.txtcodigoEspecialidad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcodigoEspecialidad.Location = New System.Drawing.Point(149, 122)
+        Me.txtcodigoEspecialidad.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcodigoEspecialidad.MaxLength = 20
         Me.txtcodigoEspecialidad.Name = "txtcodigoEspecialidad"
-        Me.txtcodigoEspecialidad.Size = New System.Drawing.Size(125, 22)
+        Me.txtcodigoEspecialidad.Size = New System.Drawing.Size(95, 20)
         Me.txtcodigoEspecialidad.TabIndex = 104
         Me.txtcodigoEspecialidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblespecialidad
         '
         Me.lblespecialidad.AutoSize = True
-        Me.lblespecialidad.Location = New System.Drawing.Point(48, 151)
-        Me.lblespecialidad.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblespecialidad.Location = New System.Drawing.Point(36, 123)
         Me.lblespecialidad.Name = "lblespecialidad"
-        Me.lblespecialidad.Size = New System.Drawing.Size(88, 17)
+        Me.lblespecialidad.Size = New System.Drawing.Size(67, 13)
         Me.lblespecialidad.TabIndex = 103
         Me.lblespecialidad.Text = "Especialidad"
         '
         'txtnombreCompleto
         '
-        Me.txtnombreCompleto.Location = New System.Drawing.Point(145, 64)
-        Me.txtnombreCompleto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtnombreCompleto.Location = New System.Drawing.Point(109, 52)
+        Me.txtnombreCompleto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnombreCompleto.MaxLength = 100
         Me.txtnombreCompleto.Name = "txtnombreCompleto"
-        Me.txtnombreCompleto.Size = New System.Drawing.Size(435, 22)
+        Me.txtnombreCompleto.Size = New System.Drawing.Size(327, 20)
         Me.txtnombreCompleto.TabIndex = 107
         Me.txtnombreCompleto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblnombreCompleto
         '
         Me.lblnombreCompleto.AutoSize = True
-        Me.lblnombreCompleto.Location = New System.Drawing.Point(17, 66)
-        Me.lblnombreCompleto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblnombreCompleto.Location = New System.Drawing.Point(13, 54)
         Me.lblnombreCompleto.Name = "lblnombreCompleto"
-        Me.lblnombreCompleto.Size = New System.Drawing.Size(121, 17)
+        Me.lblnombreCompleto.Size = New System.Drawing.Size(91, 13)
         Me.lblnombreCompleto.TabIndex = 106
         Me.lblnombreCompleto.Text = "Nombre Completo"
         '
         'btncancelar
         '
-        Me.btncancelar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btncancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btncancelar.BackColor = System.Drawing.Color.LightSalmon
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(333, 206)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btncancelar.Location = New System.Drawing.Point(638, 12)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btncancelar.Name = "btncancelar"
-        Me.btncancelar.Size = New System.Drawing.Size(91, 34)
+        Me.btncancelar.Size = New System.Drawing.Size(68, 28)
         Me.btncancelar.TabIndex = 109
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
         '
         'btnguardar
         '
-        Me.btnguardar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnguardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnguardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnguardar.Location = New System.Drawing.Point(132, 206)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnguardar.Location = New System.Drawing.Point(487, 12)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(96, 34)
+        Me.btnguardar.Size = New System.Drawing.Size(72, 28)
         Me.btnguardar.TabIndex = 108
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
         '
         'btnnuevo
         '
-        Me.btnnuevo.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnnuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnnuevo.BackColor = System.Drawing.Color.White
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnnuevo.Location = New System.Drawing.Point(21, 206)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnnuevo.Location = New System.Drawing.Point(404, 12)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(105, 34)
+        Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
         Me.btnnuevo.TabIndex = 110
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.UseVisualStyleBackColor = False
         '
         'gbxmedico
         '
+        Me.gbxmedico.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxmedico.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.gbxmedico.Controls.Add(Me.lblForm)
         Me.gbxmedico.Controls.Add(Me.txtnombreEspecialidad)
-        Me.gbxmedico.Controls.Add(Me.btnmodificar)
         Me.gbxmedico.Controls.Add(Me.lblcodigo)
-        Me.gbxmedico.Controls.Add(Me.btnnuevo)
         Me.gbxmedico.Controls.Add(Me.txtcodigo)
-        Me.gbxmedico.Controls.Add(Me.btncancelar)
         Me.gbxmedico.Controls.Add(Me.lbltelefono)
-        Me.gbxmedico.Controls.Add(Me.btnguardar)
         Me.gbxmedico.Controls.Add(Me.txttelefono)
         Me.gbxmedico.Controls.Add(Me.txtnombreCompleto)
         Me.gbxmedico.Controls.Add(Me.lblcelular)
@@ -277,50 +275,66 @@ Partial Class M_Medico
         Me.gbxmedico.Controls.Add(Me.lblespecialidad)
         Me.gbxmedico.Controls.Add(Me.lblcorreo)
         Me.gbxmedico.Controls.Add(Me.txtcorreo)
-        Me.gbxmedico.Location = New System.Drawing.Point(23, 22)
-        Me.gbxmedico.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.gbxmedico.Location = New System.Drawing.Point(17, 53)
+        Me.gbxmedico.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gbxmedico.Name = "gbxmedico"
-        Me.gbxmedico.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.gbxmedico.Size = New System.Drawing.Size(920, 260)
+        Me.gbxmedico.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxmedico.Size = New System.Drawing.Size(690, 177)
         Me.gbxmedico.TabIndex = 111
         Me.gbxmedico.TabStop = False
         Me.gbxmedico.Text = "REGISTRAR MÉDICO"
         '
+        'lblForm
+        '
+        Me.lblForm.AutoSize = True
+        Me.lblForm.Location = New System.Drawing.Point(302, 7)
+        Me.lblForm.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblForm.Name = "lblForm"
+        Me.lblForm.Size = New System.Drawing.Size(27, 13)
+        Me.lblForm.TabIndex = 115
+        Me.lblForm.Text = "form"
+        Me.lblForm.Visible = False
+        '
         'txtnombreEspecialidad
         '
-        Me.txtnombreEspecialidad.Location = New System.Drawing.Point(333, 150)
-        Me.txtnombreEspecialidad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtnombreEspecialidad.Location = New System.Drawing.Point(250, 122)
+        Me.txtnombreEspecialidad.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnombreEspecialidad.Name = "txtnombreEspecialidad"
         Me.txtnombreEspecialidad.ReadOnly = True
-        Me.txtnombreEspecialidad.Size = New System.Drawing.Size(247, 22)
+        Me.txtnombreEspecialidad.Size = New System.Drawing.Size(186, 20)
         Me.txtnombreEspecialidad.TabIndex = 114
         '
         'btnmodificar
         '
-        Me.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnmodificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnmodificar.BackColor = System.Drawing.Color.Yellow
         Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnmodificar.Location = New System.Drawing.Point(233, 206)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnmodificar.Location = New System.Drawing.Point(563, 12)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnmodificar.Name = "btnmodificar"
-        Me.btnmodificar.Size = New System.Drawing.Size(96, 34)
+        Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
         Me.btnmodificar.TabIndex = 111
         Me.btnmodificar.Text = "Modificar"
         Me.btnmodificar.UseVisualStyleBackColor = False
         '
         'gbxbusqueda
         '
+        Me.gbxbusqueda.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxbusqueda.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnombre)
-        Me.gbxbusqueda.Location = New System.Drawing.Point(23, 288)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(17, 234)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.gbxbusqueda.Size = New System.Drawing.Size(920, 302)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Size = New System.Drawing.Size(690, 245)
         Me.gbxbusqueda.TabIndex = 112
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR MÉDICO"
@@ -328,9 +342,10 @@ Partial Class M_Medico
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(172, 272)
+        Me.lblcantidad.Location = New System.Drawing.Point(129, 221)
+        Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
+        Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
         Me.lblcantidad.TabIndex = 115
         Me.lblcantidad.Text = "000"
         '
@@ -338,64 +353,83 @@ Partial Class M_Medico
         '
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
+        Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(5, 57)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgbtabla.Location = New System.Drawing.Point(4, 46)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(909, 213)
+        Me.dgbtabla.Size = New System.Drawing.Size(678, 173)
         Me.dgbtabla.TabIndex = 22
         '
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(17, 272)
+        Me.lbltotal.Location = New System.Drawing.Point(13, 221)
+        Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(143, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(112, 13)
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL DE MÉDICOS"
         '
         'txtnombreB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(69, 27)
-        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtnombreB.Location = New System.Drawing.Point(52, 22)
+        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnombreB.MaxLength = 100
         Me.txtnombreB.Name = "txtnombreB"
-        Me.txtnombreB.Size = New System.Drawing.Size(844, 22)
+        Me.txtnombreB.Size = New System.Drawing.Size(634, 20)
         Me.txtnombreB.TabIndex = 115
         '
         'lblnombre
         '
         Me.lblnombre.AutoSize = True
-        Me.lblnombre.Location = New System.Drawing.Point(5, 30)
+        Me.lblnombre.Location = New System.Drawing.Point(4, 24)
+        Me.lblnombre.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblnombre.Name = "lblnombre"
-        Me.lblnombre.Size = New System.Drawing.Size(58, 17)
+        Me.lblnombre.Size = New System.Drawing.Size(44, 13)
         Me.lblnombre.TabIndex = 114
         Me.lblnombre.Text = "Nombre"
         '
-        'lblForm
+        'StatusStrip1
         '
-        Me.lblForm.AutoSize = True
-        Me.lblForm.Location = New System.Drawing.Point(403, 9)
-        Me.lblForm.Name = "lblForm"
-        Me.lblForm.Size = New System.Drawing.Size(36, 17)
-        Me.lblForm.TabIndex = 115
-        Me.lblForm.Text = "form"
-        Me.lblForm.Visible = False
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 483)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.TabIndex = 113
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnnuevo)
+        Me.Panel1.Controls.Add(Me.btnguardar)
+        Me.Panel1.Controls.Add(Me.btncancelar)
+        Me.Panel1.Controls.Add(Me.btnmodificar)
+        Me.Panel1.Location = New System.Drawing.Point(0, -1)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(718, 49)
+        Me.Panel1.TabIndex = 116
         '
         'M_Medico
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(957, 622)
+        Me.ClientSize = New System.Drawing.Size(718, 505)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.gbxmedico)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "M_Medico"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Médico"
@@ -404,7 +438,9 @@ Partial Class M_Medico
         Me.gbxbusqueda.ResumeLayout(False)
         Me.gbxbusqueda.PerformLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -436,4 +472,6 @@ Partial Class M_Medico
     Friend WithEvents dgbtabla As DataGridView
     Friend WithEvents txtnombreEspecialidad As TextBox
     Friend WithEvents lblForm As Label
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents Panel1 As Panel
 End Class

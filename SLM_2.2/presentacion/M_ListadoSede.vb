@@ -11,6 +11,7 @@
         Me.dgbtabla.Columns("contacto").Visible = False
         Me.dgbtabla.Columns("correo").Visible = False
         Me.dgbtabla.Columns("telefono").Visible = False
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Private Sub seleccionarSede()
         Dim dv As DataView = objSede.SeleccionarSede.DefaultView
