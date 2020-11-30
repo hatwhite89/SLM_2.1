@@ -37,6 +37,7 @@
         End Try
     End Sub
     Private Sub limpiar()
+
         txtcodigo.Text() = ""
         txtnombre.Text() = ""
         txtnombreB.Text() = ""
