@@ -1131,7 +1131,7 @@ Partial Class frmEvaluacionProveedores
         Me.TableLayoutPanel3.ColumnCount = 3
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.58823!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.41177!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.Label45, 2, 3)
         Me.TableLayoutPanel3.Controls.Add(Me.Label47, 2, 4)
         Me.TableLayoutPanel3.Controls.Add(Me.Label43, 2, 2)
@@ -1161,7 +1161,7 @@ Partial Class frmEvaluacionProveedores
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(288, 39)
+        Me.Label45.Location = New System.Drawing.Point(287, 39)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(27, 13)
         Me.Label45.TabIndex = 20
@@ -1170,7 +1170,7 @@ Partial Class frmEvaluacionProveedores
         'Label47
         '
         Me.Label47.AutoSize = True
-        Me.Label47.Location = New System.Drawing.Point(288, 52)
+        Me.Label47.Location = New System.Drawing.Point(287, 52)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(21, 13)
         Me.Label47.TabIndex = 22
@@ -1179,7 +1179,7 @@ Partial Class frmEvaluacionProveedores
         'Label43
         '
         Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(288, 26)
+        Me.Label43.Location = New System.Drawing.Point(287, 26)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(27, 13)
         Me.Label43.TabIndex = 22
@@ -1197,7 +1197,7 @@ Partial Class frmEvaluacionProveedores
         'Label39
         '
         Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(288, 0)
+        Me.Label39.Location = New System.Drawing.Point(287, 0)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(49, 13)
         Me.Label39.TabIndex = 21
@@ -1233,7 +1233,7 @@ Partial Class frmEvaluacionProveedores
         'Label41
         '
         Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(288, 13)
+        Me.Label41.Location = New System.Drawing.Point(287, 13)
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(27, 13)
         Me.Label41.TabIndex = 20
@@ -1295,7 +1295,7 @@ Partial Class frmEvaluacionProveedores
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 704)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(910, 22)
