@@ -191,6 +191,8 @@
             ds.Tables(0).Columns(colColl.IndexOf("Estado")).ReadOnly = True
             'le asigno la tabla
             dgvHojaTrab.DataSource = ds.Tables(0)
+            dgvHojaTrab.Columns(0).Frozen = True
+            dgvHojaTrab.Columns(1).Frozen = True
 
             If rbtnNombrePaciente.Checked Then
                 dgvHojaTrab.Sort(dgvHojaTrab.Columns(1), System.ComponentModel.ListSortDirection.Ascending)

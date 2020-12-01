@@ -9,8 +9,10 @@ Public Class M_BuscarFactura
         dv.Sort = "FechaFactura Desc"
         'dgbtabla.DataSource = dv
         'dgbtabla.Sort(dgbtabla.Columns(3), ListSortDirection.Ascending)
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Public Sub seleccionarFacturas()
+        alternarColoFilasDatagridview(dgbtabla)
         Dim objFact As New ClsFactura
         Dim dv As DataView = objFact.SeleccionarFactura.DefaultView
         dgbtabla.DataSource = dv
@@ -97,7 +99,10 @@ Public Class M_BuscarFactura
                 txtnumeroB.Text = ""
                 'Me.Hide()
 
-                M_Factura.ShowDialog()
+                M_Factura.Show()
+                Me.Close()
+                Form1.WindowState = FormWindowState.Minimized
+
             End If
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -216,7 +221,7 @@ Public Class M_BuscarFactura
         'Me.Hide()
         M_Factura.limpiar()
         M_Factura.banderaTipo = True
-        M_Factura.ShowDialog()
+        M_Factura.Show()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

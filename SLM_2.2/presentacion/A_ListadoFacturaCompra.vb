@@ -59,7 +59,7 @@
             MessageBox.Show(ex.Message)
 
         End Try
-
+        alternarColoFilasDatagridview(dtFacturasCompra)
     End Sub
 
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged

@@ -88,6 +88,7 @@ Partial Class A_PeriodoContable
         'btnModificar
         '
         Me.btnModificar.BackColor = System.Drawing.Color.Yellow
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.Location = New System.Drawing.Point(412, 109)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(88, 23)
@@ -221,6 +222,8 @@ Partial Class A_PeriodoContable
         Me.dtPeriodos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtPeriodos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtPeriodos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtPeriodos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dtPeriodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtPeriodos.Location = New System.Drawing.Point(6, 49)

@@ -5,7 +5,7 @@
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-
+        alternarColoFilasDatagridview(dgbtabla)
         Me.dgbtabla.Columns("codCuenta").Visible = False
     End Sub
 

@@ -24,21 +24,21 @@ Partial Class A_ListadoFacturaCompra
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListadoFacturaCompra))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnCrearNueva = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dtpHasta = New System.Windows.Forms.DateTimePicker()
         Me.dtpDesde = New System.Windows.Forms.DateTimePicker()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.chkPagadas = New System.Windows.Forms.CheckBox()
-        Me.chkPendientes = New System.Windows.Forms.CheckBox()
-        Me.chkIngresada = New System.Windows.Forms.CheckBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.dtFacturasCompra = New System.Windows.Forms.DataGridView()
-        Me.txtBusqueda = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnCrearNueva = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtBusqueda = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.chkPagadas = New System.Windows.Forms.CheckBox()
+        Me.chkIngresada = New System.Windows.Forms.CheckBox()
+        Me.chkPendientes = New System.Windows.Forms.CheckBox()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtFacturasCompra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -61,6 +61,68 @@ Partial Class A_ListadoFacturaCompra
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Facturas de Compra"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(437, 54)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(10, 13)
+        Me.Label4.TabIndex = 13
+        Me.Label4.Text = "-"
+        '
+        'dtpHasta
+        '
+        Me.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpHasta.Location = New System.Drawing.Point(457, 50)
+        Me.dtpHasta.Name = "dtpHasta"
+        Me.dtpHasta.Size = New System.Drawing.Size(98, 20)
+        Me.dtpHasta.TabIndex = 5
+        '
+        'dtpDesde
+        '
+        Me.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDesde.Location = New System.Drawing.Point(324, 50)
+        Me.dtpDesde.Name = "dtpDesde"
+        Me.dtpDesde.Size = New System.Drawing.Size(98, 20)
+        Me.dtpDesde.TabIndex = 4
+        '
+        'dtFacturasCompra
+        '
+        Me.dtFacturasCompra.AllowUserToAddRows = False
+        Me.dtFacturasCompra.AllowUserToDeleteRows = False
+        Me.dtFacturasCompra.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtFacturasCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtFacturasCompra.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dtFacturasCompra.BackgroundColor = System.Drawing.Color.White
+        Me.dtFacturasCompra.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.dtFacturasCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtFacturasCompra.GridColor = System.Drawing.Color.White
+        Me.dtFacturasCompra.Location = New System.Drawing.Point(6, 94)
+        Me.dtFacturasCompra.Name = "dtFacturasCompra"
+        Me.dtFacturasCompra.ReadOnly = True
+        Me.dtFacturasCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtFacturasCompra.Size = New System.Drawing.Size(761, 343)
+        Me.dtFacturasCompra.TabIndex = 0
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.btnCrearNueva)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.txtBusqueda)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.chkPagadas)
+        Me.Panel1.Controls.Add(Me.chkIngresada)
+        Me.Panel1.Controls.Add(Me.chkPendientes)
+        Me.Panel1.Location = New System.Drawing.Point(7, 17)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(761, 71)
+        Me.Panel1.TabIndex = 15
         '
         'btnCrearNueva
         '
@@ -88,30 +150,22 @@ Partial Class A_ListadoFacturaCompra
         Me.Button1.Text = "Buscar"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'Label4
+        'txtBusqueda
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(437, 54)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(10, 13)
-        Me.Label4.TabIndex = 13
-        Me.Label4.Text = "-"
+        Me.txtBusqueda.Location = New System.Drawing.Point(113, 6)
+        Me.txtBusqueda.Name = "txtBusqueda"
+        Me.txtBusqueda.Size = New System.Drawing.Size(130, 20)
+        Me.txtBusqueda.TabIndex = 0
+        Me.txtBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'dtpHasta
+        'Label2
         '
-        Me.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpHasta.Location = New System.Drawing.Point(457, 50)
-        Me.dtpHasta.Name = "dtpHasta"
-        Me.dtpHasta.Size = New System.Drawing.Size(98, 20)
-        Me.dtpHasta.TabIndex = 5
-        '
-        'dtpDesde
-        '
-        Me.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDesde.Location = New System.Drawing.Point(324, 50)
-        Me.dtpDesde.Name = "dtpDesde"
-        Me.dtpDesde.Size = New System.Drawing.Size(98, 20)
-        Me.dtpDesde.TabIndex = 4
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(268, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(43, 13)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Estado:"
         '
         'Label3
         '
@@ -121,6 +175,15 @@ Partial Class A_ListadoFacturaCompra
         Me.Label3.Size = New System.Drawing.Size(96, 13)
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "Período de Fecha:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(8, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(99, 13)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Nombre Proveedor:"
         '
         'chkPagadas
         '
@@ -132,16 +195,6 @@ Partial Class A_ListadoFacturaCompra
         Me.chkPagadas.Text = "Pagadas"
         Me.chkPagadas.UseVisualStyleBackColor = True
         '
-        'chkPendientes
-        '
-        Me.chkPendientes.AutoSize = True
-        Me.chkPendientes.Location = New System.Drawing.Point(401, 8)
-        Me.chkPendientes.Name = "chkPendientes"
-        Me.chkPendientes.Size = New System.Drawing.Size(79, 17)
-        Me.chkPendientes.TabIndex = 2
-        Me.chkPendientes.Text = "Pendientes"
-        Me.chkPendientes.UseVisualStyleBackColor = True
-        '
         'chkIngresada
         '
         Me.chkIngresada.AutoSize = True
@@ -152,49 +205,15 @@ Partial Class A_ListadoFacturaCompra
         Me.chkIngresada.Text = "Ingresadas"
         Me.chkIngresada.UseVisualStyleBackColor = True
         '
-        'Label2
+        'chkPendientes
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(268, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(43, 13)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Estado:"
-        '
-        'dtFacturasCompra
-        '
-        Me.dtFacturasCompra.AllowUserToAddRows = False
-        Me.dtFacturasCompra.AllowUserToDeleteRows = False
-        Me.dtFacturasCompra.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dtFacturasCompra.BackgroundColor = System.Drawing.Color.White
-        Me.dtFacturasCompra.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.dtFacturasCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtFacturasCompra.GridColor = System.Drawing.Color.White
-        Me.dtFacturasCompra.Location = New System.Drawing.Point(6, 94)
-        Me.dtFacturasCompra.Name = "dtFacturasCompra"
-        Me.dtFacturasCompra.ReadOnly = True
-        Me.dtFacturasCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtFacturasCompra.Size = New System.Drawing.Size(761, 343)
-        Me.dtFacturasCompra.TabIndex = 0
-        '
-        'txtBusqueda
-        '
-        Me.txtBusqueda.Location = New System.Drawing.Point(113, 6)
-        Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(130, 20)
-        Me.txtBusqueda.TabIndex = 0
-        Me.txtBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(8, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(99, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Nombre Proveedor:"
+        Me.chkPendientes.AutoSize = True
+        Me.chkPendientes.Location = New System.Drawing.Point(401, 8)
+        Me.chkPendientes.Name = "chkPendientes"
+        Me.chkPendientes.Size = New System.Drawing.Size(79, 17)
+        Me.chkPendientes.TabIndex = 2
+        Me.chkPendientes.Text = "Pendientes"
+        Me.chkPendientes.UseVisualStyleBackColor = True
         '
         'StatusStrip1
         '
@@ -204,23 +223,6 @@ Partial Class A_ListadoFacturaCompra
         Me.StatusStrip1.Size = New System.Drawing.Size(797, 22)
         Me.StatusStrip1.TabIndex = 1
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Controls.Add(Me.btnCrearNueva)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.txtBusqueda)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.chkPagadas)
-        Me.Panel1.Controls.Add(Me.chkIngresada)
-        Me.Panel1.Controls.Add(Me.chkPendientes)
-        Me.Panel1.Location = New System.Drawing.Point(7, 17)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(761, 71)
-        Me.Panel1.TabIndex = 15
         '
         'A_ListadoFacturaCompra
         '

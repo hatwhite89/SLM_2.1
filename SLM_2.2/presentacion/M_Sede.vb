@@ -239,6 +239,7 @@
         lblcantidad.Text = dv.Count
         'dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
         deshabilitar()
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
 
     Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged

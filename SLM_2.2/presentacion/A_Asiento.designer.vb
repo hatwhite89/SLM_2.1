@@ -118,6 +118,8 @@ Partial Class frmAsientos
         Me.dtDetalleAsiento.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtDetalleAsiento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtDetalleAsiento.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtDetalleAsiento.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
@@ -141,7 +143,6 @@ Partial Class frmAsientos
         Me.Column1.HeaderText = "CodDetalle"
         Me.Column1.Name = "Column1"
         Me.Column1.Visible = False
-        Me.Column1.Width = 40
         '
         'Cuenta
         '
@@ -154,7 +155,6 @@ Partial Class frmAsientos
         Me.Descripcion.HeaderText = "Descripción"
         Me.Descripcion.Name = "Descripcion"
         Me.Descripcion.ReadOnly = True
-        Me.Descripcion.Width = 270
         '
         'Debe
         '

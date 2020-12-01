@@ -5,6 +5,7 @@
         'Listar cuentas activas
         Try
             dtCuentas.DataSource = Cuenta.listarCuentasActivas
+            alternarColoFilasDatagridview(dtCuentas)
         Catch ex As Exception
 
         End Try

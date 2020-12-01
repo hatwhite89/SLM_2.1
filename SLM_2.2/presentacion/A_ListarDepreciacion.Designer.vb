@@ -34,6 +34,9 @@ Partial Class A_ListarDepreciacion
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.dtDepreciacion)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
@@ -47,9 +50,13 @@ Partial Class A_ListarDepreciacion
         '
         Me.dtDepreciacion.AllowUserToAddRows = False
         Me.dtDepreciacion.AllowUserToDeleteRows = False
+        Me.dtDepreciacion.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtDepreciacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtDepreciacion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtDepreciacion.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dtDepreciacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtDepreciacion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtDepreciacion.Location = New System.Drawing.Point(3, 16)
         Me.dtDepreciacion.Name = "dtDepreciacion"
         Me.dtDepreciacion.ReadOnly = True
@@ -59,21 +66,23 @@ Partial Class A_ListarDepreciacion
         '
         'btnCerrar
         '
+        Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCerrar.Location = New System.Drawing.Point(511, 390)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
         Me.btnCerrar.TabIndex = 1
         Me.btnCerrar.Text = "Cerrar"
-        Me.btnCerrar.UseVisualStyleBackColor = True
+        Me.btnCerrar.UseVisualStyleBackColor = False
         '
         'btnCrear
         '
+        Me.btnCrear.BackColor = System.Drawing.Color.LawnGreen
         Me.btnCrear.Location = New System.Drawing.Point(433, 390)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 2
         Me.btnCrear.Text = "Crear"
-        Me.btnCrear.UseVisualStyleBackColor = True
+        Me.btnCrear.UseVisualStyleBackColor = False
         '
         'StatusStrip1
         '

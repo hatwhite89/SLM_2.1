@@ -4,7 +4,7 @@ Public Class A_ListadoCheques
 
     Dim cheque As New ClsCheques
     Private Sub A_ListadoCheques_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        alternarColoFilasDatagridview(dtCheques)
         Try
 
             dtCheques.DataSource = cheque.listarCheques

@@ -20,6 +20,7 @@
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
@@ -37,6 +38,7 @@
         End Try
     End Sub
     Private Sub limpiar()
+
         txtcodigo.Text() = ""
         txtnombre.Text() = ""
         txtnombreB.Text() = ""

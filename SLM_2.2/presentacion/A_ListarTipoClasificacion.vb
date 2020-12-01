@@ -1,7 +1,7 @@
 ﻿Public Class A_ListarTipoClasificacion
     Dim Clasific As New ClsTipoClasificacion
     Private Sub A_ListarTipoClasificacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        alternarColoFilasDatagridview(dtTipoClasific)
         'Listar en datagrid
         dtTipoClasific.DataSource = Clasific.SeleccionarTipoClasificacion
 

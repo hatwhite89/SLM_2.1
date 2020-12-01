@@ -3,7 +3,7 @@
     Dim item As New ClsItemExamen
     Dim fila As DataRow
     Private Sub A_ListarExamenes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        alternarColoFilasDatagridview(dtExamenes)
         dtExamenes.DataSource = item.listarItemExamen
 
         'Columnas ocultas

@@ -2,7 +2,7 @@
     'Objeto Proveedor
     Dim proveedor As New ClsProveedor
     Private Sub A_ListarProveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        alternarColoFilasDatagridview(dtProveedor)
         'Cargar data en datagrid
         dtProveedor.DataSource = proveedor.listarProveedores
 

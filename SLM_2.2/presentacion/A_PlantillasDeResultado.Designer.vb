@@ -157,7 +157,7 @@ Partial Class A_PlantillasDeResultado
         Me.btnBuscarArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscarArea.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscarArea.Location = New System.Drawing.Point(94, 48)
-        Me.btnBuscarArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuscarArea.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuscarArea.Name = "btnBuscarArea"
         Me.btnBuscarArea.Size = New System.Drawing.Size(37, 18)
         Me.btnBuscarArea.TabIndex = 84
@@ -169,7 +169,7 @@ Partial Class A_PlantillasDeResultado
         Me.rtxtDescripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.rtxtDescripcion.Location = New System.Drawing.Point(92, 74)
-        Me.rtxtDescripcion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtDescripcion.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtDescripcion.Name = "rtxtDescripcion"
         Me.rtxtDescripcion.Size = New System.Drawing.Size(489, 62)
         Me.rtxtDescripcion.TabIndex = 6
@@ -179,7 +179,7 @@ Partial Class A_PlantillasDeResultado
         '
         Me.txtNombreArea.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombreArea.Location = New System.Drawing.Point(239, 48)
-        Me.txtNombreArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtNombreArea.Margin = New System.Windows.Forms.Padding(2)
         Me.txtNombreArea.Name = "txtNombreArea"
         Me.txtNombreArea.ReadOnly = True
         Me.txtNombreArea.Size = New System.Drawing.Size(342, 19)
@@ -199,7 +199,7 @@ Partial Class A_PlantillasDeResultado
         '
         Me.txtCodigoArea.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodigoArea.Location = New System.Drawing.Point(135, 48)
-        Me.txtCodigoArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtCodigoArea.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCodigoArea.MaxLength = 20
         Me.txtCodigoArea.Name = "txtCodigoArea"
         Me.txtCodigoArea.Size = New System.Drawing.Size(101, 19)
@@ -283,6 +283,7 @@ Partial Class A_PlantillasDeResultado
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtPlantillas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtPlantillas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtPlantillas.BackgroundColor = System.Drawing.Color.White
         Me.dtPlantillas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtPlantillas.ColumnHeadersHeight = 29

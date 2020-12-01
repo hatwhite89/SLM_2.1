@@ -1734,6 +1734,9 @@
     <EmbeddedResource Include="presentacion\E_frmProveedorOC.resx">
       <DependentUpon>E_frmProveedorOC.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmReactivo.resx">
+      <DependentUpon>E_frmReactivo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmReporteOC.resx">
       <DependentUpon>E_frmReporteOC.vb</DependentUpon>
     </EmbeddedResource>

@@ -2,7 +2,7 @@
     'Objeto Categoria
     Dim Cate As New ClsCategoriaProveedor
     Private Sub A_ListarCategoriasProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        alternarColoFilasDatagridview(dtCategorias)
         'Cargar Categorias
         dtCategorias.DataSource = Cate.listarNombreDescripCategoriasProveedor()
 

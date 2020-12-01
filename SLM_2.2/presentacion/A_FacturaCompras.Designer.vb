@@ -64,13 +64,13 @@ Partial Class A_FacturaCompras
         Me.Sede = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lblTotal = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.btnRegresar = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lblTotal = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -445,10 +445,12 @@ Partial Class A_FacturaCompras
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox1.Controls.Add(Me.lblTotal)
+        Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.dtDetalleFactura)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 236)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(748, 308)
+        Me.GroupBox1.Size = New System.Drawing.Size(748, 328)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalle de Factura"
@@ -460,6 +462,7 @@ Partial Class A_FacturaCompras
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtDetalleFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtDetalleFactura.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtDetalleFactura.BackgroundColor = System.Drawing.Color.White
         Me.dtDetalleFactura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical
         Me.dtDetalleFactura.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -469,7 +472,7 @@ Partial Class A_FacturaCompras
         Me.dtDetalleFactura.Location = New System.Drawing.Point(4, 15)
         Me.dtDetalleFactura.Name = "dtDetalleFactura"
         Me.dtDetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.dtDetalleFactura.Size = New System.Drawing.Size(739, 288)
+        Me.dtDetalleFactura.Size = New System.Drawing.Size(739, 277)
         Me.dtDetalleFactura.TabIndex = 10
         '
         'codDetalle
@@ -508,27 +511,6 @@ Partial Class A_FacturaCompras
         Me.Monto.HeaderText = "Monto"
         Me.Monto.MaxInputLength = 10
         Me.Monto.Name = "Monto"
-        '
-        'lblTotal
-        '
-        Me.lblTotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblTotal.AutoSize = True
-        Me.lblTotal.Location = New System.Drawing.Point(633, 549)
-        Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(22, 13)
-        Me.lblTotal.TabIndex = 12
-        Me.lblTotal.Text = "0.0"
-        '
-        'Label11
-        '
-        Me.Label11.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Location = New System.Drawing.Point(539, 549)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(88, 13)
-        Me.Label11.TabIndex = 11
-        Me.Label11.Text = "Total de Factura:"
         '
         'btnRegresar
         '
@@ -595,6 +577,27 @@ Partial Class A_FacturaCompras
         Me.Panel2.Size = New System.Drawing.Size(770, 22)
         Me.Panel2.TabIndex = 17
         '
+        'lblTotal
+        '
+        Me.lblTotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblTotal.AutoSize = True
+        Me.lblTotal.Location = New System.Drawing.Point(109, 306)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.Size = New System.Drawing.Size(22, 13)
+        Me.lblTotal.TabIndex = 14
+        Me.lblTotal.Text = "0.0"
+        '
+        'Label11
+        '
+        Me.Label11.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Location = New System.Drawing.Point(15, 306)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(88, 13)
+        Me.Label11.TabIndex = 13
+        Me.Label11.Text = "Total de Factura:"
+        '
         'A_FacturaCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -602,8 +605,6 @@ Partial Class A_FacturaCompras
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(766, 583)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.lblTotal)
-        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoFact)
         Me.Controls.Add(Me.Panel2)
@@ -615,11 +616,11 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.ResumeLayout(False)
         Me.gbxInfoFact.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -652,8 +653,6 @@ Partial Class A_FacturaCompras
     Friend WithEvents lblFila As Label
     Friend WithEvents txtNroFactura As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents lblTotal As Label
-    Friend WithEvents Label11 As Label
     Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
@@ -671,4 +670,6 @@ Partial Class A_FacturaCompras
     Friend WithEvents Sede As DataGridViewTextBoxColumn
     Friend WithEvents Descripción As DataGridViewTextBoxColumn
     Friend WithEvents Monto As DataGridViewTextBoxColumn
+    Friend WithEvents lblTotal As Label
+    Friend WithEvents Label11 As Label
 End Class

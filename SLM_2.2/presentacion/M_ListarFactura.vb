@@ -1,6 +1,7 @@
 ﻿Public Class M_ListarFactura
     Private Sub M_ListarFactura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         seleccionarFacturas()
+        alternarColoFilasDatagridview(dgbtabla)
         txtnombreB.Text = ""
         txtnumeroB.Text = ""
         Me.dgbtabla.Columns("codigo").Visible = False
@@ -11,6 +12,7 @@
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then

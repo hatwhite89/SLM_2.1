@@ -1,6 +1,6 @@
 ﻿Public Class A_ListadoPerfiles
     Private Sub A_ListadoPerfiles_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        alternarColoFilasDatagridview(dtPerfiles)
         Try
             Dim perfil As New ClsPerfilesUsuario
             dtPerfiles.DataSource = perfil.listarPerfilesHabilitados

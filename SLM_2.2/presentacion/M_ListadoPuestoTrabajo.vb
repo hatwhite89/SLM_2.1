@@ -11,6 +11,7 @@
             Me.dgbtabla.Columns("codigoDepto").Visible = False
             Me.dgbtabla.Columns("codigoArea").Visible = False
         End If
+        alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Private Sub seleccionarPuestoTrabajoPorDepto()
         objPuesto.codigoDepto_ = Convert.ToInt64(lblcodeDepto.Text)

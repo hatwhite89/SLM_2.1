@@ -4,6 +4,7 @@
         'Cargar data formas de pago
         dtFormasPago.DataSource = forma.listarFormaPago
         Me.dtFormasPago.Columns("codFormaPago").Visible = False
+        alternarColoFilasDatagridview(dtFormasPago)
     End Sub
 
     Private Sub dtFormasPago_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dtFormasPago.CellMouseDoubleClick

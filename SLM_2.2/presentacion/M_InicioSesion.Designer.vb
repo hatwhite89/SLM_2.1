@@ -101,9 +101,9 @@ Partial Class M_InicioSesion
         'PictureBox3
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(57, 249)
+        Me.PictureBox3.Location = New System.Drawing.Point(43, 237)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(28, 29)
+        Me.PictureBox3.Size = New System.Drawing.Size(42, 41)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 130
         Me.PictureBox3.TabStop = False
@@ -111,9 +111,9 @@ Partial Class M_InicioSesion
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(55, 188)
+        Me.PictureBox2.Location = New System.Drawing.Point(43, 179)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(28, 29)
+        Me.PictureBox2.Size = New System.Drawing.Size(40, 38)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 129
         Me.PictureBox2.TabStop = False
@@ -130,8 +130,9 @@ Partial Class M_InicioSesion
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button1.BackColor = System.Drawing.Color.OrangeRed
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(72, 353)
         Me.Button1.Name = "Button1"
@@ -142,9 +143,9 @@ Partial Class M_InicioSesion
         '
         'btnInicioSesion
         '
-        Me.btnInicioSesion.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnInicioSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.btnInicioSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInicioSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInicioSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnInicioSesion.ForeColor = System.Drawing.Color.White
         Me.btnInicioSesion.Location = New System.Drawing.Point(72, 320)
         Me.btnInicioSesion.Margin = New System.Windows.Forms.Padding(2)
@@ -157,15 +158,15 @@ Partial Class M_InicioSesion
         'UI_TitleBanner1
         '
         Me.UI_TitleBanner1.Animate = UIDC.UI_TitleBanner.Anim.AnimateON
-        Me.UI_TitleBanner1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.UI_TitleBanner1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.UI_TitleBanner1.ButtonMenuActive = UIDC.UI_TitleBanner.Active.ActiveOff
         Me.UI_TitleBanner1.ButtonsVisible = UIDC.UI_TitleBanner.ButtonVisible.Close
         Me.UI_TitleBanner1.Dock = System.Windows.Forms.DockStyle.Top
         Me.UI_TitleBanner1.FlatAppearance.BorderSize = 0
-        Me.UI_TitleBanner1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.UI_TitleBanner1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.UI_TitleBanner1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.UI_TitleBanner1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.UI_TitleBanner1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.UI_TitleBanner1.Font = New System.Drawing.Font("Roboto", 15.0!)
+        Me.UI_TitleBanner1.Font = New System.Drawing.Font("Roboto Medium", 15.0!)
         Me.UI_TitleBanner1.ForeColor = System.Drawing.Color.White
         Me.UI_TitleBanner1.Location = New System.Drawing.Point(0, 0)
         Me.UI_TitleBanner1.MoveActive = True
@@ -183,7 +184,7 @@ Partial Class M_InicioSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.Red
         Me.ClientSize = New System.Drawing.Size(357, 460)
         Me.Controls.Add(Me.UI_TitleBanner1)
         Me.Controls.Add(Me.Panel1)

@@ -27,7 +27,7 @@
         Catch ex As Exception
 
         End Try
-
+        alternarColoFilasDatagridview(dgvExamenes)
     End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
