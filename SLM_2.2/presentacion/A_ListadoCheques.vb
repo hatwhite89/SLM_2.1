@@ -4,14 +4,15 @@ Public Class A_ListadoCheques
 
     Dim cheque As New ClsCheques
     Private Sub A_ListadoCheques_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        alternarColoFilasDatagridview(dtCheques)
+
+
         Try
 
             dtCheques.DataSource = cheque.listarCheques
 
             For a = 0 To dtCheques.Rows.Count - 1
 
-                If dtCheques.Rows(a).Cells(7).Value = "Rechazado" Then
+                If dtCheques.Rows(a).Cells(7).Value = "Rechazado" Or dtCheques.Rows(a).Cells(7).Value = "Cancelado" Then
                     dtCheques.Rows(a).DefaultCellStyle.Font = New Font(Font.Name, Font.Size, FontStyle.Strikeout)
                     dtCheques.Rows(a).DefaultCellStyle.ForeColor = Color.Red
                 End If
@@ -35,6 +36,7 @@ Public Class A_ListadoCheques
         Try
             txtBusqueda.Text = ""
             dtCheques.DataSource = cheque.listarCheques
+            TacharCanceladoRechazado()
         Catch ex As Exception
 
         End Try
@@ -225,11 +227,11 @@ Public Class A_ListadoCheques
         Dim busca As New ClsCheques
 
         With busca
-            '.Cod_BreveBanco = txtBanco.Text
+            .cod_Banco = Convert.ToInt32(txtCodBanco.Text)
             .Fecha_Inicio = dtpInicio.Value
             .Fecha_Final = dtpFin.Value
 
-            '  dtCheques.DataSource = .InformeCheque
+            dtCheques.DataSource = .InformeCheque
 
         End With
 
@@ -251,6 +253,17 @@ Public Class A_ListadoCheques
         Catch ex As Exception
             MsgBox("Hubo un error al intentar listar los cheques. Detalle: " + ex.Message)
         End Try
+    End Sub
+
+    Sub TacharCanceladoRechazado()
+        For a = 0 To dtCheques.Rows.Count - 1
+
+            If dtCheques.Rows(a).Cells(7).Value = "Rechazado" Or dtCheques.Rows(a).Cells(7).Value = "Cancelado" Then
+                dtCheques.Rows(a).DefaultCellStyle.Font = New Font(Font.Name, Font.Size, FontStyle.Strikeout)
+                dtCheques.Rows(a).DefaultCellStyle.ForeColor = Color.Red
+            End If
+
+        Next
     End Sub
 
 End Class
