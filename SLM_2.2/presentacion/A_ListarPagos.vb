@@ -36,11 +36,11 @@
             Dim row As DataRow = dt.Rows(e.RowIndex)
 
             frmPagos.txtNro.Text = row("codPago")
-            frmPagos.txtFormaP.Text = row("formapago")
+            frmPagos.lblCodFormaPago.Text = row("codformapago")
             frmPagos.txtReferencia.Text = row("referencia")
             frmPagos.txtComentario.Text = row("comentario")
             frmPagos.dtpFechaP.Value = row("fechaPago")
-            frmPagos.txtCtaBanco.Text = row("ctaBanco")
+            'frmPagos.txtCtaBanco.Text = row("ctaBanco")
             frmPagos.dtpFechaT.Value = row("fechaTransferencia")
             frmPagos.chkPagado.Checked = row("pagado")
             frmPagos.lblTotalSuma.Text = row("sumaTotal")
@@ -57,7 +57,7 @@
 
             For Index As Integer = 0 To dtpago.Rows.Count - 1
                 Dim row2 As DataRow = dtpago.Rows(Index)
-                frmPagos.dtDetallePagos.Rows.Add(New String() {(row2("codproveedor")), CStr(row2("nombreproveedor")), CStr(row2("moneda")), CStr(row2("monto")), CStr(row2("formapago")), CStr(row2("nrocheque"))})
+                frmPagos.dtDetallePagos.Rows.Add(New String() {(row2("codFactura")), CStr(row2("nombreproveedor")), CStr(row2("moneda")), CStr(row2("monto")), CStr(row2("formapago")), CStr(row2("nrocheque"))})
             Next
 
             frmPagos.Show()

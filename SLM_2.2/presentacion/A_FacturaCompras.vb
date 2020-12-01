@@ -49,8 +49,8 @@
                     txtCodFactura.Text = CStr(row("codFactura"))
 
                     For fila = 0 To dtDetalleFactura.Rows.Count - 2
-
-                        If (A_Promociones.validarDetalle(dtDetalleFactura.Rows(fila).Cells(0).Value)) = 0 Then
+                        MsgBox(fila)
+                        If (A_Promociones.validarDetalle(dtDetalleFactura.Rows(fila).Cells(1).Value)) = 0 Then
 
                             'Insertar detalle de compra
                             DetalleFacCompra.Cod_Factura = Convert.ToInt32(txtCodFactura.Text)
@@ -75,11 +75,11 @@
                     MsgBox("Falta detalle de Factura. No se guardo la factura")
 
                 End If ' if detalle de factura
-
+                MessageBox.Show("La factura se registro exitosamente.")
             Catch ex As Exception
                 MessageBox.Show("Error al guardar la factura de compra. Detalles: " + ex.Message)
             End Try
-            MessageBox.Show("La factura se registro exitosamente.")
+
             Limpiar()
 
             Me.Close()
@@ -275,6 +275,12 @@
         Try
             'colores datagrid
             alternarColoFilasDatagridview(dtDetalleFactura)
+
+            'bloquear si fue pagada
+            If lblEstado.Text = "Pagada" Then
+                btnModificar.Enabled = False
+                btnGuardar.Enabled = False
+            End If
 
 
             'Cargar termino de pago

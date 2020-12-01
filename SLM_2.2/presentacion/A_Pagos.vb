@@ -5,6 +5,7 @@
     Dim pagos As New ClsPago
     Dim detallePago As New ClsDetallePago
 
+
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
 
         'Cerrar Ventana Pagos
@@ -27,7 +28,6 @@
         'Mostrar formas de pago
         A_ListarFormasPagoPF.lblForm.Text = "Pagos"
         A_ListarFormasPagoPF.ShowDialog()
-
     End Sub
 
     Private Sub dtDetallePagos_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetallePagos.CellEndEdit
@@ -159,9 +159,10 @@
         If dtDetallePagos.Rows(0).Cells(5).Value <> "" Then
             chkPagado.Checked = True
         End If
+
         Try
             Dim n As String = MsgBox("¿Desea guardar el pago?", MsgBoxStyle.YesNo, "Validación")
-            If n = vbYes Then
+            If n = vbYes Then 'validacion
 
                 'Actualizar pendiente de Factura de Compra..............
                 Dim codfactura As Integer
@@ -195,130 +196,63 @@
                 End If
 
                 factura.SaldoPendiente()
-                'MsgBox("Ya actualizo")
+                MsgBox("Ya actualizo")
 
                 '.........................................................
 
                 'Ingresar un nuevo pago
                 If txtFormaP.Text <> "" Then
 
-                    dtDetallePagos.Enabled = True
-                    Dim ObjFpago As New ClsFormaPago
-                    Dim dt As DataTable
-                    ObjFpago.Cod = txtFormaP.Text
+                    Dim codigoPago As String
+                    With pagos
 
-                    dt = ObjFpago.buscarCodigoFormaPago()
+                        'Variables de Pago
+                        .codForma_Pago = Convert.ToInt32(lblCodFormaPago.Text)
+                        .Comentari_o = txtComentario.Text
+                        .Fecha_transfer = dtpFechaT.Value
+                        .Fecha_Pago = dtpFechaP.Value
+                        .Referenci_a = txtReferencia.Text
+                        .Paga_do = chkPagado.Checked
+                        .Suma_Total = lblTotalSuma.Text
+                        'Ingresar registro en base de datos
+                        codigoPago = .registrarNuevoPago()
 
-                    If dt.Rows.Count > 0 Then ' Conteo de filas
+                    End With
+                    MsgBox(codigoPago)
 
-                        With pagos
+                    'Ingresar detalle de pago
+                    For a = 0 To dtDetallePagos.Rows.Count - 2
+                        With detallePago
 
-                            'Variables
-                            .Forma_Pago = txtFormaP.Text
-                            .Cuenta_Banco = txtCtaBanco.Text
-                            .Comentari_o = txtComentario.Text
-                            .Fecha_transfer = dtpFechaT.Value
-                            .Fecha_Pago = dtpFechaP.Value
-                            .Referenci_a = txtReferencia.Text
-                            .Paga_do = chkPagado.Checked
-                            .Suma_Total = lblTotalSuma.Text
-                            'Ingresar registro en base de datos
-                            .registrarNuevoPago()
+                            .Cod_Pago = Convert.ToInt32(codigoPago)
+                            .Cod_Factura = Convert.ToInt32(dtDetallePagos.Rows(a).Cells(0).Value)
+
+                            If dtDetallePagos.Rows(a).Cells(4).Value = "" Then
+                                .Forma_Pago = "-"
+                            Else
+                                .Forma_Pago = dtDetallePagos.Rows(a).Cells(4).Value.ToString
+
+                            End If
+
+                            If dtDetallePagos.Rows(a).Cells(5).Value = "" Then
+
+                                .Nro_Cheque = "-"
+
+                            Else
+                                .Nro_Cheque = dtDetallePagos.Rows(a).Cells(5).Value.ToString
+
+                            End If
+
+                            .Monto_ = Convert.ToDouble(dtDetallePagos.Rows(a).Cells(3).Value.ToString)
+
+                            .registrarDetallePago()
 
                         End With
+                    Next
 
-                        'Registro Detalle de Pago
-                        Dim dt2 As DataTable
-                        'Capturar codigo del pago guardado
-                        dt2 = pagos.capturarUltimoPago
-
-                        Dim row As DataRow = dt2.Rows(0)
-                        txtNro.Text = CStr(row("codPago"))
-
-                    End If 'If conteo de filas
-
-                    If dtDetallePagos.Rows.Count > 1 Then
-
-                        'Recorrer filas para ingreso de detalle de factura
-                        For fila = 0 To dtDetallePagos.Rows.Count - 2
-                            Try
-
-                                'Insertar detalle de pago
-                                detallePago.Cod_Pago = Convert.ToInt32(txtNro.Text)
-
-                                Try
-                                    Dim a As Integer
-                                    a = Convert.ToInt32(dtDetallePagos.Rows(fila).Cells(0).Value)
-
-                                    If dtDetallePagos.Rows(fila).Cells(0).Value <> "" Then
-
-                                        detallePago.Cod_Factura = a
-
-                                    Else
-
-                                        detallePago.Cod_Factura = Convert.ToInt32(dtDetallePagos.Rows(fila - 1).Cells(0).Value)
-
-                                    End If
-
-                                Catch ex As Exception
-
-                                End Try
-
-                                Try
-                                    If dtDetallePagos.Rows(fila).Cells(4).Value = "" Then
-                                        detallePago.Forma_Pago = "-"
-                                    Else
-                                        detallePago.Forma_Pago = dtDetallePagos.Rows(fila).Cells(4).Value.ToString
-
-                                    End If
-
-                                Catch ex As Exception
-                                    MsgBox("formapago")
-                                End Try
-
-                                Try
-                                    If dtDetallePagos.Rows(fila).Cells(5).Value = "" Then
-
-                                        detallePago.Nro_Cheque = "-"
-
-                                    Else
-                                        detallePago.Nro_Cheque = dtDetallePagos.Rows(fila).Cells(5).Value.ToString
-
-                                    End If
-
-                                Catch ex As Exception
-                                    MsgBox("es el numero de cheque")
-                                End Try
-
-                                Try
-                                    detallePago.Monto_ = Convert.ToDouble(dtDetallePagos.Rows(fila).Cells(3).Value.ToString)
-
-                                Catch ex As Exception
-                                    MsgBox("es el monto")
-                                End Try
-
-                                'Funcion de registro de detalle
-                                detallePago.registrarDetallePago()
-
-                            Catch ex As Exception
-                                MsgBox("Error en detalle." + ex.Message)
-                            End Try
-
-                        Next
-
-                    Else
-                        MsgBox("No existe un detalle de pago.")
-                    End If
-
-                Else
-
-                    txtFormaP.BackColor = Color.Red
-
-                End If 'Verificar que campo txtFormaPago no este vacio.
-
-                Me.Close()
-                A_ListarPagos.ShowDialog()
+                End If 'ingresar nuevo pago
             End If 'validacion
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -336,74 +270,66 @@
 
 
         ElseIf e.ColumnIndex = 5 Then
+            Dim data As String = dtDetallePagos.Rows(e.RowIndex).Cells(5).Value
+            MsgBox("data" = data)
 
             Try
-
-                If IsDBNull(dtDetallePagos.Rows(e.RowIndex).Cells(5).Value) = False Then
+                If data <> "False" Then
                     'Columna de Cheques
+
                     lblFila.Text = e.RowIndex
                     A_ListarChequesHabilitados.Show()
 
-                    Dim prov As New ClsProveedor
-                    Dim dtpro As New DataTable
-                    Dim rowpro As DataRow
-                    dtpro = prov.listarProveedoresOC2(lblCodigoProveedor.Text)
-                    rowpro = dtpro.Rows(0)
-                    A_Cheques.txtcodProvee.Text = rowpro("codBreve")
-                    A_Cheques.txtNombreProvee.Text = rowpro("nombreProveedor")
-                    A_Cheques.lblCodProveedor.Text = lblCodigoProveedor.Text
+                    '
+                    'Else
 
-                    lblFila.Text = e.RowIndex
+                    '    Try
+                    '        Dim nroCheque As Integer
+                    '        Dim cheque As New ClsCheques
+                    '        Dim dt As New DataTable
+                    '        Dim row As DataRow
+                    '        nroCheque = Convert.ToInt32(dtDetallePagos.Rows(e.RowIndex).Cells(5).Value.ToString)
 
-                Else
+                    '        cheque.Cod_Cheque = nroCheque
 
-                    Try
-                        Dim nroCheque As Integer
-                        Dim cheque As New ClsCheques
-                        Dim dt As New DataTable
-                        Dim row As DataRow
-                        nroCheque = Convert.ToInt32(dtDetallePagos.Rows(e.RowIndex).Cells(5).Value.ToString)
+                    '        dt = cheque.BuscarChequeXCodigo()
 
-                        cheque.Cod_Cheque = nroCheque
+                    '        If dt.Rows.Count = 0 Then
+                    '            MsgBox("El numero pertenece a un pago por transferencia.")
+                    '        Else
+                    '            row = dt.Rows(0)
 
-                        dt = cheque.BuscarChequeXCodigo()
+                    '            'llenar campos de formulario con data de cheque
+                    '            With A_Cheques
 
-                        If dt.Rows.Count = 0 Then
-                            MsgBox("El numero pertenece a un pago por transferencia.")
-                        Else
-                            row = dt.Rows(0)
+                    '                .txtNro.Text = row("codCheque")
+                    '                .txtNroCheq.Text = row("nroCheque")
+                    '                .txtMonto.Text = row("monto")
+                    '                .dtpFechaReg.Value = row("fechaReg")
+                    '                .dtpFechaVto.Value = row("fechaVto")
+                    '                .txtMoneda.Text = row("moneda")
+                    '                .lblEstado.Text = row("estado")
+                    '                .txtcodProvee.Text = row("codBreveProveedor")
+                    '                .txtNombreProvee.Text = row("nombreProveedor")
+                    '                .txtBanco.Text = row("codBreveBanco")
+                    '                '.txtNroCtaBanco.Text = row2("nroCtaBanco")
+                    '                .txtnombreBanco.Text = row("nombreBanco")
+                    '                .dtpAcredita.Value = row("fechaacreditacion")
+                    '                .dtpRechazo.Value = row("fechaRechazo")
+                    '                .dtpEmision.Value = row("fechaEmision")
+                    '                .dtpCancelado.Value = row("fechaCancelado")
+                    '                .txtCtaOrigen.Text = row("ctaOrigen")
+                    '                .txtCtaDestino.Text = row("ctaDestino")
+                    '                .txtCtaTemporal.Text = row("ctaTemporal")
+                    '                .lblForm.Text = "ChequeSeleccionado"
+                    '                .Show()
 
-                            'llenar campos de formulario con data de cheque
-                            With A_Cheques
+                    '            End With
+                    '        End If
 
-                                .txtNro.Text = row("codCheque")
-                                .txtNroCheq.Text = row("nroCheque")
-                                .txtMonto.Text = row("monto")
-                                .dtpFechaReg.Value = row("fechaReg")
-                                .dtpFechaVto.Value = row("fechaVto")
-                                .txtMoneda.Text = row("moneda")
-                                .lblEstado.Text = row("estado")
-                                .txtcodProvee.Text = row("codBreveProveedor")
-                                .txtNombreProvee.Text = row("nombreProveedor")
-                                .txtBanco.Text = row("codBreveBanco")
-                                '.txtNroCtaBanco.Text = row2("nroCtaBanco")
-                                .txtnombreBanco.Text = row("nombreBanco")
-                                .dtpAcredita.Value = row("fechaacreditacion")
-                                .dtpRechazo.Value = row("fechaRechazo")
-                                .dtpEmision.Value = row("fechaEmision")
-                                .dtpCancelado.Value = row("fechaCancelado")
-                                .txtCtaOrigen.Text = row("ctaOrigen")
-                                .txtCtaDestino.Text = row("ctaDestino")
-                                .txtCtaTemporal.Text = row("ctaTemporal")
-                                .lblForm.Text = "ChequeSeleccionado"
-                                .Show()
-
-                            End With
-                        End If
-
-                    Catch ex As Exception
-                        MsgBox(ex.Message)
-                    End Try
+                    '    Catch ex As Exception
+                    '        MsgBox("aqui perrin" + ex.Message)
+                    '    End Try
 
 
 
@@ -412,7 +338,7 @@
                 End If
 
             Catch ex As Exception
-                MsgBox(ex.Message)
+                MsgBox("aqui es" + ex.Message)
             End Try
 
 
@@ -515,121 +441,13 @@
 
         Try
             Dim n As String = MsgBox("¿Desea modificar el pago?", MsgBoxStyle.YesNo, "Validación")
-            If n = vbYes Then
+            If n = vbYes Then 'validacion
 
-                'Ingresar un nuevo pago
-                If txtFormaP.Text <> "" Then
 
-                    dtDetallePagos.Enabled = True
-                    Dim ObjFpago As New ClsFormaPago
-                    Dim dt As DataTable
-                    ObjFpago.Cod = txtFormaP.Text
 
-                    dt = ObjFpago.buscarCodigoFormaPago()
 
-                    If dt.Rows.Count > 0 Then ' Conteo de filas
 
-                        With pagos
 
-                            'Variables
-                            .Cod_Pago = Convert.ToInt32(txtNro.Text)
-                            .Forma_Pago = txtFormaP.Text
-                            .Cuenta_Banco = txtCtaBanco.Text
-                            .Comentari_o = txtComentario.Text
-                            .Fecha_transfer = dtpFechaT.Value
-                            .Fecha_Pago = dtpFechaP.Value
-                            .Referenci_a = txtReferencia.Text
-                            .Paga_do = chkPagado.Checked
-                            .Suma_Total = lblTotalSuma.Text
-
-                            'Ingresar registro en base de datos
-                            .modificarPago()
-
-                        End With
-
-                    End If 'If conteo de filas
-
-                    If dtDetallePagos.Rows.Count > 1 Then
-
-                        'Recorrer filas para ingreso de detalle de factura
-                        For fila = 0 To dtDetallePagos.Rows.Count - 2
-                            Try
-
-                                'Insertar detalle de pago
-                                detallePago.Cod_Pago = Convert.ToInt32(txtNro.Text)
-
-                                Try
-                                    Dim a As Integer
-                                    a = Convert.ToInt32(dtDetallePagos.Rows(fila).Cells(0).Value)
-
-                                    If dtDetallePagos.Rows(fila).Cells(0).Value <> "" Then
-
-                                        detallePago.Cod_Factura = a
-
-                                    Else
-
-                                        detallePago.Cod_Factura = Convert.ToInt32(dtDetallePagos.Rows(fila - 1).Cells(0).Value)
-
-                                    End If
-
-                                Catch ex As Exception
-
-                                End Try
-
-                                Try
-                                    If dtDetallePagos.Rows(fila).Cells(4).Value = "" Then
-                                        detallePago.Forma_Pago = "-"
-                                    Else
-                                        detallePago.Forma_Pago = dtDetallePagos.Rows(fila).Cells(4).Value.ToString
-
-                                    End If
-
-                                Catch ex As Exception
-                                    MsgBox("formapago")
-                                End Try
-
-                                Try
-                                    If dtDetallePagos.Rows(fila).Cells(5).Value = "" Then
-
-                                        detallePago.Nro_Cheque = "-"
-
-                                    Else
-                                        detallePago.Nro_Cheque = dtDetallePagos.Rows(fila).Cells(5).Value.ToString
-
-                                    End If
-
-                                Catch ex As Exception
-                                    MsgBox("es el numero de cheque")
-                                End Try
-
-                                Try
-                                    detallePago.Monto_ = Convert.ToDouble(dtDetallePagos.Rows(fila).Cells(3).Value.ToString)
-
-                                Catch ex As Exception
-                                    MsgBox("es el monto")
-                                End Try
-
-                                'Funcion de registro de detalle
-                                detallePago.modificarDetallePago()
-
-                            Catch ex As Exception
-                                MsgBox("Error en detalle." + ex.Message)
-                            End Try
-
-                        Next
-
-                    Else
-                        MsgBox("No existe un detalle de pago.")
-                    End If
-
-                Else
-
-                    txtFormaP.BackColor = Color.Red
-
-                End If 'Verificar que campo txtFormaPago no este vacio.
-
-                Me.Close()
-                A_ListarPagos.ShowDialog()
 
             End If ' validacion
         Catch ex As Exception

@@ -11,7 +11,7 @@ Public Class A_ListadoCheques
 
             For a = 0 To dtCheques.Rows.Count - 1
 
-                If dtCheques.Rows(a).Cells(9).Value = "Rechazado" Then
+                If dtCheques.Rows(a).Cells(7).Value = "Rechazado" Then
                     dtCheques.Rows(a).DefaultCellStyle.Font = New Font(Font.Name, Font.Size, FontStyle.Strikeout)
                     dtCheques.Rows(a).DefaultCellStyle.ForeColor = Color.Red
                 End If
@@ -49,7 +49,6 @@ Public Class A_ListadoCheques
             With cheque
 
                 .Numero_Cheque = txtBusqueda.Text
-                .Cod_Proveedor = txtBusqueda.Text
 
                 Dato = cheque.buscarCheques
                 dtCheques.DataSource = Dato
@@ -69,7 +68,7 @@ Public Class A_ListadoCheques
     End Sub
 
     Private Sub txtBusqueda_MouseHover(sender As Object, e As EventArgs) Handles txtBusqueda.MouseHover
-        ttBusqueda.SetToolTip(txtBusqueda, "Ingrese el Nro.Cheque o Nombre de Proveedor")
+        ttBusqueda.SetToolTip(txtBusqueda, "Ingrese el Nro. de Cheque")
         ttBusqueda.ToolTipTitle = "Búsqueda"
         ttBusqueda.ToolTipIcon = ToolTipIcon.Info
     End Sub
@@ -78,19 +77,41 @@ Public Class A_ListadoCheques
 
         Try
 
-            Dim dt, dt2 As DataTable
-            Dim row, row2 As DataRow
-            Dim formap As New ClsFormaPago
-
+            Dim dt As DataTable
+            Dim row As DataRow
             dt = dtCheques.DataSource
             row = dt.Rows(e.RowIndex)
 
-            If dt.Rows(e.RowIndex).Item(7).ToString <> "" Then
+            If row("monto").ToString = "" Then ' si el cheque no ha sido usado
 
-                formap.Ban_co = row("nombreBanco")
-                dt2 = formap.ctaBancoXBanco()
-                row2 = dt2.Rows(0)
+                With A_Cheques
 
+                    .txtNro.Text = row("codCheque")
+                    .txtNroCheq.Text = row("nroCheque")
+                    '.txtMonto.Text = row("monto")
+                    '.dtpFechaReg.Value = row("fechaReg")
+                    '.dtpFechaVto.Value = row("fechaVto")
+                    .txtMoneda.Text = row("moneda")
+                    .lblEstado.Text = row("estado")
+                    '.txtcodProvee.Text = row("codBreveProveedor")
+                    '.txtNombreProvee.Text = row("nombreProveedor")
+                    '.txtBanco.Text = row("codBreveBanco")
+                    '.txtNroCtaBanco.Text = row2("nroCtaBanco")
+                    '.txtnombreBanco.Text = row("nombreBanco")
+                    '.dtpAcredita.Value = row("fechaacreditacion")
+                    '.dtpRechazo.Value = row("fechaRechazo")
+                    '.dtpEmision.Value = row("fechaEmision")
+                    '.dtpCancelado.Value = row("fechaCancelado")
+                    '.txtCtaOrigen.Text = row("ctaOrigen")
+                    '.txtCtaDestino.Text = row("ctaDestino")
+                    '.txtCtaTemporal.Text = row("ctaTemporal")
+                    '.lblForm.Text = "ChequeSeleccionado"
+                    .Show()
+
+                End With
+
+
+            Else ' Si el cheque ha sido usado
                 With A_Cheques
 
                     .txtNro.Text = row("codCheque")
@@ -100,11 +121,11 @@ Public Class A_ListadoCheques
                     .dtpFechaVto.Value = row("fechaVto")
                     .txtMoneda.Text = row("moneda")
                     .lblEstado.Text = row("estado")
-                    .txtcodProvee.Text = row("codBreveProveedor")
-                    .txtNombreProvee.Text = row("nombreProveedor")
-                    .txtBanco.Text = row("codBreveBanco")
-                    .txtNroCtaBanco.Text = row2("nroCtaBanco")
-                    .txtnombreBanco.Text = row("nombreBanco")
+                    .lblCodProveedor.Text = row("codProveedor")
+                    '.txtNombreProvee.Text = row("nombreProveedor")
+                    '.txtBanco.Text = row("codBreveBanco")
+                    '.txtNroCtaBanco.Text = row2("nroCtaBanco")
+                    '.txtnombreBanco.Text = row("nombreBanco")
                     .dtpAcredita.Value = row("fechaacreditacion")
                     .dtpRechazo.Value = row("fechaRechazo")
                     .dtpEmision.Value = row("fechaEmision")
@@ -117,34 +138,6 @@ Public Class A_ListadoCheques
 
                 End With
 
-            Else
-
-
-                With A_Cheques
-
-                    .txtNro.Text = row("codCheque")
-                    .txtNroCheq.Text = row("nroCheque")
-                    '.txtMonto.Text = row("monto")
-                    '.dtpFechaReg.Value = row("fechaReg")
-                    '.dtpFechaVto.Value = row("fechaVto")
-                    '.txtMoneda.Text = row("moneda")
-                    .lblEstado.Text = row("estado")
-                    '.txtcodProvee.Text = row("codBreveProveedor")
-                    '.txtNombreProvee.Text = row("nombreProveedor")
-                    .txtBanco.Text = row("codBreveBanco")
-                    '.txtNroCtaBanco.Text = row2("nroCtaBanco")
-                    .txtnombreBanco.Text = row("nombreBanco")
-                    '.dtpAcredita.Value = row("fechaacreditacion")
-                    '.dtpRechazo.Value = row("fechaRechazo")
-                    '.dtpEmision.Value = row("fechaEmision")
-                    '.dtpCancelado.Value = row("fechaCancelado")
-                    '.txtCtaOrigen.Text = row("ctaOrigen")
-                    '.txtCtaDestino.Text = row("ctaDestino")
-                    '.txtCtaTemporal.Text = row("ctaTemporal")
-                    .lblForm.Text = "ChequeSeleccionado"
-                    .Show()
-
-                End With
 
             End If
 
@@ -182,7 +175,7 @@ Public Class A_ListadoCheques
         End Select
     End Sub
 
-    Private Sub txtBanco_DoubleClick(sender As Object, e As EventArgs) Handles txtBanco.DoubleClick
+    Private Sub txtBanco_DoubleClick(sender As Object, e As EventArgs) Handles txtCodBanco.DoubleClick
 
         Try
             A_ListadoBancos.lblFormBanco.Text = "2"
@@ -232,11 +225,11 @@ Public Class A_ListadoCheques
         Dim busca As New ClsCheques
 
         With busca
-            .Cod_BreveBanco = txtBanco.Text
+            '.Cod_BreveBanco = txtBanco.Text
             .Fecha_Inicio = dtpInicio.Value
             .Fecha_Final = dtpFin.Value
 
-            dtCheques.DataSource = .InformeCheque
+            '  dtCheques.DataSource = .InformeCheque
 
         End With
 
@@ -259,4 +252,5 @@ Public Class A_ListadoCheques
             MsgBox("Hubo un error al intentar listar los cheques. Detalle: " + ex.Message)
         End Try
     End Sub
+
 End Class

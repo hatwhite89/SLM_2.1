@@ -3,8 +3,8 @@ Imports System.Data.SqlClient
 Public Class ClsPago
 
     'Variables
-    Dim codPago As Integer
-    Dim formaPago, referencia, comentario, ctaBanco, sumaTotal As String
+    Dim codPago, codformapago As Integer
+    Dim referencia, comentario, sumaTotal As String
     Dim fechaPago, fechaTransferencia As Date
     Dim pagado As Boolean
 
@@ -27,12 +27,12 @@ Public Class ClsPago
     End Property
 
     'Forma de Pago
-    Public Property Forma_Pago As String
+    Public Property codForma_Pago As Integer
         Get
-            Return formaPago
+            Return codformapago
         End Get
-        Set(value As String)
-            formaPago = value
+        Set(value As Integer)
+            codformapago = value
         End Set
     End Property
 
@@ -55,17 +55,6 @@ Public Class ClsPago
             comentario = value
         End Set
     End Property
-
-    'Cuenta de Banco
-    Public Property Cuenta_Banco As String
-        Get
-            Return ctaBanco
-        End Get
-        Set(value As String)
-            ctaBanco = value
-        End Set
-    End Property
-
 
 
     'Suma Total
@@ -123,8 +112,8 @@ Public Class ClsPago
 
         'VARIABLES 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "formaPago"
-        sqlpar.Value = Forma_Pago
+        sqlpar.ParameterName = "codformaPago"
+        sqlpar.Value = codForma_Pago
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -143,11 +132,6 @@ Public Class ClsPago
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "ctaBanco"
-        sqlpar.Value = Cuenta_Banco
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
         sqlpar.ParameterName = "fechaTransferencia"
         sqlpar.Value = Fecha_transfer
         sqlcom.Parameters.Add(sqlpar)
@@ -163,7 +147,7 @@ Public Class ClsPago
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "salida"
+        sqlpar.ParameterName = "ID"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
 
@@ -176,7 +160,7 @@ Public Class ClsPago
 
         con.cerrarConexion()
 
-        par_sal = sqlcom.Parameters("salida").Value
+        par_sal = sqlcom.Parameters("ID").Value
 
         Return par_sal
 
@@ -195,23 +179,6 @@ Public Class ClsPago
             Return dt
         End Using
     End Function
-
-    'Capturar Codigo de ultimo pago guardado
-    Public Function capturarUltimoPago() As DataTable
-
-        Dim objCon As New ClsConnection
-        Dim cn As New SqlConnection
-        cn = objCon.getConexion
-
-        Using da As New SqlDataAdapter("A_slmCapturarCodPago", cn)
-            Dim dt As New DataTable
-            da.Fill(dt)
-            Return dt
-        End Using
-
-
-    End Function
-
 
     'Buscar pago por codigo
     Public Function buscarPago() As DataTable
@@ -235,7 +202,6 @@ Public Class ClsPago
         End Using
 
     End Function
-
 
     Public Function listarSinPago() As DataTable
 
@@ -269,7 +235,7 @@ Public Class ClsPago
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "formaPago"
-        sqlpar.Value = Forma_Pago
+        sqlpar.Value = codForma_Pago
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -285,11 +251,6 @@ Public Class ClsPago
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "fechaPago"
         sqlpar.Value = Fecha_Pago
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "ctaBanco"
-        sqlpar.Value = Cuenta_Banco
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

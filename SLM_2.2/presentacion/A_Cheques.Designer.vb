@@ -67,8 +67,6 @@ Partial Class A_Cheques
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtComentario = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtnombreBanco = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.txtBanco = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtNombreProvee = New System.Windows.Forms.TextBox()
@@ -324,8 +322,6 @@ Partial Class A_Cheques
         Me.TabPage1.Controls.Add(Me.Label12)
         Me.TabPage1.Controls.Add(Me.txtComentario)
         Me.TabPage1.Controls.Add(Me.Label11)
-        Me.TabPage1.Controls.Add(Me.txtnombreBanco)
-        Me.TabPage1.Controls.Add(Me.Label10)
         Me.TabPage1.Controls.Add(Me.txtBanco)
         Me.TabPage1.Controls.Add(Me.Label9)
         Me.TabPage1.Controls.Add(Me.txtNombreProvee)
@@ -550,31 +546,12 @@ Partial Class A_Cheques
         Me.Label11.TabIndex = 10
         Me.Label11.Text = "Comentario"
         '
-        'txtnombreBanco
-        '
-        Me.txtnombreBanco.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtnombreBanco.Enabled = False
-        Me.txtnombreBanco.Location = New System.Drawing.Point(263, 35)
-        Me.txtnombreBanco.Name = "txtnombreBanco"
-        Me.txtnombreBanco.Size = New System.Drawing.Size(481, 20)
-        Me.txtnombreBanco.TabIndex = 9
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(201, 38)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(44, 13)
-        Me.Label10.TabIndex = 8
-        Me.Label10.Text = "Nombre"
-        '
         'txtBanco
         '
         Me.txtBanco.Enabled = False
         Me.txtBanco.Location = New System.Drawing.Point(86, 35)
         Me.txtBanco.Name = "txtBanco"
-        Me.txtBanco.Size = New System.Drawing.Size(100, 20)
+        Me.txtBanco.Size = New System.Drawing.Size(658, 20)
         Me.txtBanco.TabIndex = 7
         '
         'Label9
@@ -687,7 +664,7 @@ Partial Class A_Cheques
         Me.btnImprimir.FlatAppearance.BorderSize = 0
         Me.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnImprimir.ForeColor = System.Drawing.Color.Black
-        Me.btnImprimir.Location = New System.Drawing.Point(426, 13)
+        Me.btnImprimir.Location = New System.Drawing.Point(421, 13)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(93, 22)
         Me.btnImprimir.TabIndex = 4
@@ -711,9 +688,9 @@ Partial Class A_Cheques
         Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.Black
-        Me.btnModificar.Location = New System.Drawing.Point(525, 12)
+        Me.btnModificar.Location = New System.Drawing.Point(520, 12)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(98, 23)
+        Me.btnModificar.Size = New System.Drawing.Size(103, 23)
         Me.btnModificar.TabIndex = 6
         Me.btnModificar.Text = "Modificar Estado"
         Me.btnModificar.UseVisualStyleBackColor = False
@@ -800,8 +777,6 @@ Partial Class A_Cheques
     Friend WithEvents Label1 As Label
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents txtnombreBanco As TextBox
-    Friend WithEvents Label10 As Label
     Friend WithEvents txtBanco As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txtNombreProvee As TextBox

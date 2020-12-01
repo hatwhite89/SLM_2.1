@@ -390,4 +390,17 @@ Public Class ClsProveedor
             Return dt
         End Using
     End Function
+
+    Public Function listarProveedoresJC(ByVal cod As String) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select * from Proveedor  where codProveedor =" + cod, cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 End Class

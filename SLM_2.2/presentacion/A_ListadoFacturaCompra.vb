@@ -48,10 +48,11 @@
             Next
 
             Me.Close()
-            A_FacturaCompras.Show()
             A_FacturaCompras.btnGuardar.Enabled = False
             A_FacturaCompras.btnModificar.Enabled = True
             A_FacturaCompras.btnCrear.Enabled = True
+            A_FacturaCompras.Show()
+
 
         Catch ex As Exception
 
