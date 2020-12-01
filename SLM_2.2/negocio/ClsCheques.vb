@@ -1,10 +1,11 @@
 ﻿
 Imports System.Data.SqlClient
 Public Class ClsCheques
-
+    'Herencia de campos
+    Inherits ClsChequera
     'Variables de Cheque
-    Dim codCheque, codChequera, codProveedor, cantidad, ctaOrigen, ctaTemporal, ctaDestino As Integer
-    Dim nroCheque, moneda, codBreveBanco, nombreBanco, descripcion, estado, comentario, tipo As String
+    Dim codCheque, codProveedor, ctaOrigen, ctaTemporal, ctaDestino As Integer
+    Dim nroCheque, moneda, descripcion, estado, comentario, tipo As String
     Dim monto As Double
     Dim fechaReg, fechaVto, fechaAcreditacion, fechaRechazo, fechaEmision, fechaCancelado, fechaI, fechaF As Date
 
@@ -14,7 +15,6 @@ Public Class ClsCheques
     End Sub
 
     ':::::::::::::::::::::::::::::::::::::::::::: Metodos SET y GET :::::::::::::::::::::::::::::::::::::::::::::::::
-
 
     'Cuenta Origen
     Public Property cta_Origen As Integer
@@ -67,15 +67,7 @@ Public Class ClsCheques
         End Set
     End Property
 
-    'Codigo de Chequera
-    Public Property Cod_Chequera As Integer
-        Get
-            Return codChequera
-        End Get
-        Set(value As Integer)
-            codChequera = value
-        End Set
-    End Property
+
 
     'Tipo
     Public Property Tip_o As String
@@ -116,27 +108,6 @@ Public Class ClsCheques
             descripcion = value
         End Set
     End Property
-
-    'Nombre de Banco
-    Public Property Nombre_Banco As String
-        Get
-            Return nombreBanco
-        End Get
-        Set(value As String)
-            nombreBanco = value
-        End Set
-    End Property
-
-    'Codigo Breve Banco
-    Public Property Cod_BreveBanco As String
-        Get
-            Return codBreveBanco
-        End Get
-        Set(value As String)
-            codBreveBanco = value
-        End Set
-    End Property
-
 
     'Moneda
     Public Property Moned_a As String
@@ -228,18 +199,6 @@ Public Class ClsCheques
         End Set
     End Property
 
-    'Cantidad
-    Public Property Cantida_d As Integer
-        Get
-            Return cantidad
-        End Get
-        Set(value As Integer)
-            cantidad = value
-        End Set
-    End Property
-
-
-
     Public Property Fecha_Inicio As Date
         Get
             Return fechaI
@@ -284,11 +243,6 @@ Public Class ClsCheques
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codBreveBanco"
-        sqlpar.Value = Cod_BreveBanco
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
         sqlpar.ParameterName = "estado"
         sqlpar.Value = Estad_o
         sqlcom.Parameters.Add(sqlpar)
@@ -296,11 +250,6 @@ Public Class ClsCheques
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "moneda"
         sqlpar.Value = Moned_a
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "nombreBanco"
-        sqlpar.Value = Nombre_Banco
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -446,7 +395,7 @@ Public Class ClsCheques
     End Function
 
     'Listar cheques disponibles
-    Public Function listarChequesDisponibles() As DataTable
+    Public Function listarChequesDisponibles(nombre As String) As DataTable
 
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
@@ -456,7 +405,7 @@ Public Class ClsCheques
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "A_slmListarChequesHabilitados"
-            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Cod_BreveBanco
+            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = nombre
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -480,7 +429,6 @@ Public Class ClsCheques
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "A_slmBuscarCheques"
             cmd.Parameters.Add("@nroCheque", SqlDbType.VarChar).Value = Numero_Cheque
-            cmd.Parameters.Add("@codProveedor", SqlDbType.Int).Value = Cod_Proveedor
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
@@ -508,26 +456,26 @@ Public Class ClsCheques
     End Function
 
     'Consolidacion Cheque
-    Public Function ConsolidarCheque() As DataTable
+    'Public Function ConsolidarCheque() As DataTable
 
-        Dim objCon As New ClsConnection
-        Dim cn As New SqlConnection
-        cn = objCon.getConexion
+    '    Dim objCon As New ClsConnection
+    '    Dim cn As New SqlConnection
+    '    cn = objCon.getConexion
 
-        Using cmd As New SqlCommand
-            cmd.Connection = cn
-            cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "A_slmConsolidacionCheque"
-            cmd.Parameters.Add("@nombreBanco", SqlDbType.VarChar).Value = Nombre_Banco
-            Using da As New SqlDataAdapter
-                da.SelectCommand = cmd
-                Using dt As New DataTable
-                    da.Fill(dt)
-                    Return dt
-                End Using
-            End Using
-        End Using
-    End Function
+    '    Using cmd As New SqlCommand
+    '        cmd.Connection = cn
+    '        cmd.CommandType = CommandType.StoredProcedure
+    '        cmd.CommandText = "A_slmConsolidacionCheque"
+    '        cmd.Parameters.Add("@nombreBanco", SqlDbType.VarChar).Value = Nombre_Banco
+    '        Using da As New SqlDataAdapter
+    '            da.SelectCommand = cmd
+    '            Using dt As New DataTable
+    '                da.Fill(dt)
+    '                Return dt
+    '            End Using
+    '        End Using
+    '    End Using
+    'End Function
 
     'Modificar Estado de Cheque
     Public Function modificarEstadoCheque() As String
@@ -588,7 +536,7 @@ Public Class ClsCheques
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "A_slmInformeCheques"
-            cmd.Parameters.Add("@codBreveBanco", SqlDbType.VarChar).Value = Cod_BreveBanco
+            cmd.Parameters.Add("@codBanco", SqlDbType.VarChar).Value = Cod_Banco
             cmd.Parameters.Add("@fechaDesde", SqlDbType.Date).Value = Fecha_Inicio
             cmd.Parameters.Add("@fechaHasta", SqlDbType.Date).Value = Fecha_Final
             Using da As New SqlDataAdapter

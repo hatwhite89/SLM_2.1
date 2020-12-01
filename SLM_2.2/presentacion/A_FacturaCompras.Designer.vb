@@ -146,6 +146,7 @@ Partial Class A_FacturaCompras
         Me.lblCodTerminoPago.Size = New System.Drawing.Size(45, 13)
         Me.lblCodTerminoPago.TabIndex = 27
         Me.lblCodTerminoPago.Text = "Label15"
+        Me.lblCodTerminoPago.Visible = False
         '
         'lblEstado
         '

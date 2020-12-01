@@ -8,88 +8,61 @@
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         'Creacion de nueva chequera y cheques
         Try
-            Dim n As String = MsgBox("¿Desea crear la nueva chequera?", MsgBoxStyle.YesNo, "Validación")
-            If n = vbYes Then
+            If txtCtaDestino.Text <> "" And txtCantidad.Text <> "" And txtBanco.Text <> "" And mtxtNumInicio.Text <> "" Then 'if Campos Vacios
+
+                Dim n As String = MsgBox("¿Desea crear la nueva chequera?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+
+                    Dim chequera As New ClsChequera
+                    Dim codigoChequera As String
+
+                    'Crear Chequera
+                    With chequera
+                        .cod_Cuenta = Convert.ToInt32(lblCodCuenta.Text)
+                        .Numero_Inicio = mtxtNumInicio.Text
+                        .Cantida_d = Convert.ToInt32(txtCantidad.Text)
+                        .cod_Banco = Convert.ToInt32(lblCodBanco.Text)
+                        codigoChequera = .registrarNuevaChequera
+                    End With
+
+                    'Insertar cantidad de cheques de la chequera
+                    Dim cheque As New ClsCheques
+
+                    With cheque
+                        .Cod_Chequera = Convert.ToInt32(codigoChequera)
+                        .Numero_Cheque = mtxtNumInicio.Text
+                        .Cantida_d = Convert.ToInt32(txtCantidad.Text)
+                        .Estad_o = "Habilitado"
+                        .Moned_a = "Lps"
+                        .registrarNuevosCheques()
+                    End With
+
+                    Limpiar()
+                    dtChequeras.DataSource = chequera.listarChequera
+                End If ' if Validacion de creación
 
 
-                If txtCtaDestino.Text <> "" And txtCantidad.Text <> "" And txtBanco.Text <> "" And mtxtNumInicio.Text <> "" Then 'if Campos Vacios
+            Else ' else campos vacios
 
-                    Dim dt1, dt2 As New DataTable
+                MsgBox("Faltan campos que llenar.")
 
-                    banco.cod_breve = txtBanco.Text
-                    cuenta.Cuent_a = Convert.ToInt64(txtCtaDestino.Text)
+                If txtCtaDestino.Text = "" Then
+                    txtCtaDestino.BackColor = Color.Red
 
-                    dt1 = banco.buscarBancoCod
-                    dt2 = cuenta.Comprobar
+                ElseIf txtCantidad.Text = "" Then
+                    txtCantidad.BackColor = Color.Red
 
-                    If dt1.Rows.Count > 0 And dt2.Rows.Count > 0 Then
+                ElseIf txtBanco.Text = "" Then
+                    txtBanco.BackColor = Color.Red
 
-                        Try
+                ElseIf mtxtNumInicio.Text = "" Then
+                    mtxtNumInicio.BackColor = Color.Red
 
-                            With Chequera
+                End If
 
-                                'Capturar Variables
-                                .Cuenta_Destino = txtCtaDestino.Text
-                                .Numero_Inicio = mtxtNumInicio.Text
-                                .Cuenta_Destino = txtCtaDestino.Text
-                                .Cantida_d = Convert.ToInt32(txtCantidad.Text)
-                                .Banc_o = txtBanco.Text
-
-                                'Registrar Datos
-                                .registrarNuevaChequera()
-
-                                dtChequeras.DataSource = Chequera.listarUltimaChequera
-                                lblCodChequera.Text = dtChequeras.Rows(0).Cells(0).Value
-                                dtChequeras.DataSource = Chequera.listarChequeras
-                            End With
-
-                            'Nuevos Cheques
-                            With Cheques
-                                .Cod_Chequera = Convert.ToInt64(lblCodChequera.Text)
-                                .Numero_Cheque = mtxtNumInicio.Text
-                                .Cod_BreveBanco = txtBanco.Text
-                                .Nombre_Banco = lblNombreBanc.Text
-                                .Estad_o = "Habilitado"
-                                .Moned_a = "Lps"
-                                .Cantida_d = Convert.ToInt64(txtCantidad.Text)
-                                .registrarNuevosCheques()
-
-                                MessageBox.Show("Se crearon " + txtCantidad.Text + "  registros de cheques.")
-                            End With
-
-                            'Limpiar Campos
-                            Limpiar()
-
-                        Catch ex As Exception
-
-                            MsgBox("Hubo un error al generar la chequera. Detalle: " + ex.Message)
-
-                        End Try
-
-                    End If
-
-                Else ' else campos vacios
-
-                    MsgBox("Faltan campos que llenar.")
-
-                    If txtCtaDestino.Text = "" Then
-                        txtCtaDestino.BackColor = Color.Red
-
-                    ElseIf txtCantidad.Text = "" Then
-                        txtCantidad.BackColor = Color.Red
-
-                    ElseIf txtBanco.Text = "" Then
-                        txtBanco.BackColor = Color.Red
-
-                    ElseIf mtxtNumInicio.Text = "" Then
-                        mtxtNumInicio.BackColor = Color.Red
-
-                    End If
-
-                End If ' if campos vacios
             End If
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
     End Sub
@@ -97,7 +70,7 @@
     Private Sub A_Chequera_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             'Listar contactos
-            dtChequeras.DataSource = Chequera.listarChequeras
+            dtChequeras.DataSource = Chequera.listarChequera
         Catch ex As Exception
 
         End Try
@@ -105,10 +78,9 @@
 
     End Sub
 
-    Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
+    Private Sub btnCrear_Click(sender As Object, e As EventArgs)
 
         Limpiar()
-        btnCrear.Visible = False
         btnGuardar.Visible = True
 
     End Sub
@@ -120,6 +92,8 @@
         txtBanco.Text = ""
         txtCantidad.Text = ""
         mtxtNumInicio.Text = "00000000"
+        lblCodBanco.Text = ""
+        lblCodCuenta.Text = ""
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
@@ -187,31 +161,6 @@
 
     End Sub
 
-    Private Sub dtChequeras_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtChequeras.CellClick
-        'Muestra información de chequera en los textbox
-        Try
-
-            Dim dt As DataTable
-            Dim rows As DataRow
-
-            dt = dtChequeras.DataSource
-            rows = dt.Rows(e.RowIndex)
-
-            txtCodChequera.Text = rows("codChequera")
-            txtCtaDestino.Text = rows("ctaDestino")
-            mtxtNumInicio.Text = rows("nroInicio")
-            txtCantidad.Text = rows("cantidad")
-            txtBanco.Text = rows("banco")
-
-            'Ocultar botones
-            btnGuardar.Visible = False
-            btnCrear.Visible = True
-
-        Catch ex As Exception
-            MsgBox("No se selecciono una fila o hubo un error al seleccionar.")
-        End Try
-
-    End Sub
 
     Private Sub txtCtaDestino_TextChanged(sender As Object, e As EventArgs) Handles txtCtaDestino.TextChanged
 

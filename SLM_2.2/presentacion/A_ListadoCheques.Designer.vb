@@ -32,7 +32,7 @@ Partial Class A_ListadoCheques
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dtpInicio = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtBanco = New System.Windows.Forms.TextBox()
+        Me.txtCodBanco = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
@@ -40,6 +40,7 @@ Partial Class A_ListadoCheques
         Me.dtCheques = New System.Windows.Forms.DataGridView()
         Me.ttBusqueda = New System.Windows.Forms.ToolTip(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.txtCodBreve = New System.Windows.Forms.TextBox()
         Me.gbxCheque.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtCheques, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,7 +51,7 @@ Partial Class A_ListadoCheques
         Me.gbxCheque.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.gbxCheque.BackColor = System.Drawing.Color.AliceBlue
+        Me.gbxCheque.Controls.Add(Me.txtCodBreve)
         Me.gbxCheque.Controls.Add(Me.Button2)
         Me.gbxCheque.Controls.Add(Me.Button1)
         Me.gbxCheque.Controls.Add(Me.PictureBox1)
@@ -58,7 +59,7 @@ Partial Class A_ListadoCheques
         Me.gbxCheque.Controls.Add(Me.Label4)
         Me.gbxCheque.Controls.Add(Me.dtpInicio)
         Me.gbxCheque.Controls.Add(Me.Label3)
-        Me.gbxCheque.Controls.Add(Me.txtBanco)
+        Me.gbxCheque.Controls.Add(Me.txtCodBanco)
         Me.gbxCheque.Controls.Add(Me.Label2)
         Me.gbxCheque.Controls.Add(Me.btnCancelar)
         Me.gbxCheque.Controls.Add(Me.txtBusqueda)
@@ -74,26 +75,24 @@ Partial Class A_ListadoCheques
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackColor = System.Drawing.Color.Yellow
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(724, 38)
+        Me.Button2.Location = New System.Drawing.Point(780, 38)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(81, 31)
         Me.Button2.TabIndex = 12
         Me.Button2.Text = "Vista General"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.LawnGreen
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(637, 38)
+        Me.Button1.Location = New System.Drawing.Point(693, 38)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(81, 31)
         Me.Button1.TabIndex = 11
         Me.Button1.Text = "Generar Vista"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
@@ -101,9 +100,9 @@ Partial Class A_ListadoCheques
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(826, 38)
+        Me.PictureBox1.Location = New System.Drawing.Point(867, 38)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(89, 32)
+        Me.PictureBox1.Size = New System.Drawing.Size(48, 32)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 10
         Me.PictureBox1.TabStop = False
@@ -142,12 +141,12 @@ Partial Class A_ListadoCheques
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Fecha Inicio:"
         '
-        'txtBanco
+        'txtCodBanco
         '
-        Me.txtBanco.Location = New System.Drawing.Point(52, 49)
-        Me.txtBanco.Name = "txtBanco"
-        Me.txtBanco.Size = New System.Drawing.Size(119, 20)
-        Me.txtBanco.TabIndex = 5
+        Me.txtCodBanco.Location = New System.Drawing.Point(52, 49)
+        Me.txtCodBanco.Name = "txtCodBanco"
+        Me.txtCodBanco.Size = New System.Drawing.Size(36, 20)
+        Me.txtCodBanco.TabIndex = 5
         '
         'Label2
         '
@@ -191,8 +190,6 @@ Partial Class A_ListadoCheques
         Me.dtCheques.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dtCheques.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dtCheques.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtCheques.BackgroundColor = System.Drawing.Color.White
         Me.dtCheques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtCheques.GridColor = System.Drawing.Color.White
@@ -210,6 +207,13 @@ Partial Class A_ListadoCheques
         Me.StatusStrip1.Size = New System.Drawing.Size(942, 22)
         Me.StatusStrip1.TabIndex = 1
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'txtCodBreve
+        '
+        Me.txtCodBreve.Location = New System.Drawing.Point(92, 49)
+        Me.txtCodBreve.Name = "txtCodBreve"
+        Me.txtCodBreve.Size = New System.Drawing.Size(79, 20)
+        Me.txtCodBreve.TabIndex = 13
         '
         'A_ListadoCheques
         '
@@ -245,9 +249,10 @@ Partial Class A_ListadoCheques
     Friend WithEvents Label4 As Label
     Friend WithEvents dtpInicio As DateTimePicker
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtBanco As TextBox
+    Friend WithEvents txtCodBanco As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents txtCodBreve As TextBox
 End Class

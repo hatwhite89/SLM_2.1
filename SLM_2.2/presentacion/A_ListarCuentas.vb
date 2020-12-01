@@ -49,7 +49,7 @@
 
                     'Asignar busqueda en Datagrid
                     'A_FacturaCompras.dtDetalleFactura.Rows.Remove(A_FacturaCompras.dtDetalleFactura.Rows(e.RowIndex.ToString))
-                    A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {cuenta, " ", " ", nombre})
+                    A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {"", cuenta, "", "", nombre})
                 End If
             ElseIf lblForm.Text = "asientos" Then
                 Dim n As String = MsgBox("¿Desea utilizar la cuenta?", MsgBoxStyle.YesNo, "Validación")
@@ -68,9 +68,9 @@
                     A_Proveedor.txtCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(1).Value
                 End If
             Else
-                    frmFormaPago.txtCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(0).Value
+                frmFormaPago.txtCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(1).Value
 
-                End If
+            End If
 
                 'Cerrar forma al seleccionar
                 Me.Close()

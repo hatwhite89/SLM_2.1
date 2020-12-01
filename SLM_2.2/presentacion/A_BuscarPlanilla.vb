@@ -85,7 +85,7 @@
                         For index As Integer = 0 To dt.Rows.Count - 1
                             'Llenado beneficiarios
                             row = dt.Rows(index)
-                            A_PlanillaCalculo.dtData.Rows.Add(New String() {CStr(row("nombreCompleto")), CStr(row("salario")), "0", "0", CStr(row("salario")), "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", CStr(row("salario")), CStr(row("codEmpleado"))})
+                            A_PlanillaCalculo.dtData.Rows.Add(New String() {CStr(row("nombreCompleto")), CStr(row("salario")), "0", "0", "0", CStr(row("salario")), "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", CStr(row("salario")), CStr(row("codEmpleado"))})
                         Next
 
                         'Totalizar
@@ -106,7 +106,7 @@
                         For index As Integer = 0 To dt.Rows.Count - 1
                             'Llenado beneficiarios
                             row = dt.Rows(index)
-                            A_PlanillaCalculo.dtData.Rows.Add(New String() {CStr(row("nombreCompleto")), CStr(row("salario")), "0", "0", CStr(row("salario")), "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", CStr(row("salario")), CStr(row("codEmpleado"))})
+                            A_PlanillaCalculo.dtData.Rows.Add(New String() {CStr(row("nombreCompleto")), CStr(row("salario")), "0", "0", "0", CStr(row("salario")), "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", CStr(row("salario")), CStr(row("codEmpleado"))})
                         Next
                         TotalSalarios()
                     End If
@@ -131,7 +131,7 @@
 
     Sub TotalSalarios()
         Dim totalSalario As Double
-        A_PlanillaCalculo.dtData.Rows.Add("TOTALES:", "0", "", "", "0", "", "", "", "", "", "", "", "", "", "", "", "0", "")
+        A_PlanillaCalculo.dtData.Rows.Add("TOTALES:", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0")
 
         For j = 0 To A_PlanillaCalculo.dtData.Rows.Count - 2
 
@@ -140,8 +140,8 @@
         Next
 
         A_PlanillaCalculo.dtData.Rows(A_PlanillaCalculo.dtData.Rows.Count - 1).Cells(1).Value = Math.Round(totalSalario, 2)
-        A_PlanillaCalculo.dtData.Rows(A_PlanillaCalculo.dtData.Rows.Count - 1).Cells(4).Value = Math.Round(totalSalario, 2)
-        A_PlanillaCalculo.dtData.Rows(A_PlanillaCalculo.dtData.Rows.Count - 1).Cells(16).Value = Math.Round(totalSalario, 2)
+        A_PlanillaCalculo.dtData.Rows(A_PlanillaCalculo.dtData.Rows.Count - 1).Cells(5).Value = Math.Round(totalSalario, 2)
+        A_PlanillaCalculo.dtData.Rows(A_PlanillaCalculo.dtData.Rows.Count - 1).Cells(17).Value = Math.Round(totalSalario, 2)
 
         Dim style As New DataGridViewCellStyle
         style.Font = New Font("Arial", 9, FontStyle.Bold)

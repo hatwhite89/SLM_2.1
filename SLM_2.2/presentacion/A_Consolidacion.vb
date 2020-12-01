@@ -38,8 +38,8 @@
 
                     With cheque
 
-                        .Nombre_Banco = txtBanco.Text
-                        dt = .ConsolidarCheque
+                        '.Nombre_Banco = txtBanco.Text
+                        'dt = .ConsolidarCheque
 
                         dtTransferencia.DataSource = dt
 
@@ -54,7 +54,7 @@
                         '.Banc_o = txtCodBanco.Text
                         'dt = .ConciliacionDeposito
 
-                        If dt.Rows.Count = Nothing Then
+                        If dt.Rows.Count < 0 Then
                             MsgBox("No existen transferencias del banco seleccionado.")
                         Else
                             dtTransferencia.DataSource = dt
