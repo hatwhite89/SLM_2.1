@@ -4,14 +4,15 @@
 
         importarExcel(dtExcel)
 
+
     End Sub
 
     Private Sub btnBanco_Click(sender As Object, e As EventArgs) Handles btnBanco.Click
 
         Try
 
-            A_BuscarFormaPago.Show()
-            A_BuscarFormaPago.lblJC.Text = "3"
+            A_ListadoBancos.Show()
+            A_ListadoBancos.lblFormBanco.Text = "3"
 
         Catch ex As Exception
 
@@ -38,10 +39,20 @@
 
                     With cheque
 
-                        '.Nombre_Banco = txtBanco.Text
-                        'dt = .ConsolidarCheque
-
+                        .cod_Banco = Convert.ToInt32(txtCodBanco.Text)
+                        dt = .ConsolidarCheque(dtpDesde.Value, dtpHasta.Value)
                         dtTransferencia.DataSource = dt
+
+                        dtTransferencia.Columns("codCheque").Visible = False
+                        dtTransferencia.Columns("codChequera").Visible = False
+                        dtTransferencia.Columns("moneda").Visible = False
+                        dtTransferencia.Columns("tipo").Visible = False
+                        dtTransferencia.Columns("ctaOrigen").Visible = False
+                        dtTransferencia.Columns("ctaTemporal").Visible = False
+                        dtTransferencia.Columns("ctaDestino").Visible = False
+                        dtTransferencia.Columns("codProveedor").Visible = False
+
+                        dtTransferencia.Columns("nroCheque").Frozen = True
 
                     End With
 
@@ -132,32 +143,69 @@
 
         Try
 
-            Dim j = 0, c As Integer 'variables contador
+            Dim check2 As String
 
-            For j = 0 To dtTransferencia.Rows.Count  'for transferencias
+            For j = 0 To dtExcel.Rows.Count - 1 'for excel
 
-                Try
+                check2 = dtExcel.Rows(j).Cells(0).Value
 
-                    For c = 0 To dtExcel.Rows.Count   'for excel
+                If check2 = "True" Then ' si la transferencia tiene check
 
-                        If dtTransferencia.Rows(j).Cells(5).Value = dtExcel.Rows(c).Cells(2).Value Then
+                    dtExcel.Rows.Remove(dtExcel.Rows(j))
 
-                            'dtTransferencia.Rows(j).DefaultCellStyle.BackColor = Color.PaleGreen
-                            dtExcel.Rows.Remove(dtExcel.Rows(c))
-                            dtTransferencia.Rows.Remove(dtTransferencia.Rows(j))
+                End If
 
-                            Exit For 'si encuentra igualdad detener for y seguir al siguiente
+            Next
 
-                        End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
-                    Next 'For Excel
+    End Sub
 
-                Catch ex As Exception
+    Private Sub A_Consolidacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-                End Try
+    End Sub
 
-            Next 'For transferencias
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
+    End Sub
 
+    Private Sub dtTransferencia_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtTransferencia.CellContentClick
+        If e.ColumnIndex = 0 Then
+            If dtTransferencia.Rows(e.RowIndex).Cells(0).Value = False Then
+                dtTransferencia.Rows(e.RowIndex).Cells(0).Value = True
+            Else
+                dtTransferencia.Rows(e.RowIndex).Cells(0).Value = False
+            End If
+        End If
+    End Sub
+
+    Private Sub dtExcel_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtExcel.CellContentClick
+        If e.ColumnIndex = 0 Then
+            If dtExcel.Rows(e.RowIndex).Cells(0).Value = False Then
+                dtExcel.Rows(e.RowIndex).Cells(0).Value = True
+            Else
+                dtExcel.Rows(e.RowIndex).Cells(0).Value = False
+            End If
+        End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        Try
+            Dim check As String
+            For i = 0 To dtTransferencia.Rows.Count 'for transferencias
+
+                check = dtTransferencia.Rows(i).Cells(0).Value
+
+                If check = "True" Then ' si la transferencia tiene check
+
+                    dtTransferencia.Rows.Remove(dtTransferencia.Rows(i))
+
+                End If
+
+            Next
         Catch ex As Exception
 
         End Try
