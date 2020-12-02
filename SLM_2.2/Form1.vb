@@ -862,4 +862,51 @@
     Private Sub Button7_Click_1(sender As Object, e As EventArgs) Handles Button7.Click
         E_frm_BIProveedores.Show()
     End Sub
+
+    Private Sub btnCierreCaja_Click(sender As Object, e As EventArgs) Handles btnCierreCaja.Click
+        'Cierre de caja
+        Try
+            'MsgBox(Form1.lblMiUser.Text)
+            Dim objReporte As New CierreCaja
+            objReporte.SetParameterValue("Cajero", lblMiUser.Text)
+            objReporte.SetParameterValue("@codigoCajero", Convert.ToInt64(lblUserCod.Text))
+            objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+            M_ImprimirCotizacionForm.CrystalReportViewer1.ReportSource = objReporte
+            M_ImprimirCotizacionForm.Show()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnArqueos_Click(sender As Object, e As EventArgs) Handles btnArqueos.Click
+        'Arqueo
+        Try
+            'Busca la maquina local
+            Dim objMaq As New ClsMaquinasLocales
+            With objMaq
+                .descripcion_ = System.Environment.MachineName
+            End With
+            Dim dt As New DataTable
+            dt = objMaq.BuscarMaquinasLocalesDesc()
+            Dim row As DataRow = dt.Rows(0)
+            'MsgBox(CStr(row("codigoMaquinasLocales")))
+            'Genera el reporte
+            Dim objReporte As New Cry_Arqueo
+            objReporte.SetParameterValue("@codigoMaquinaLocal", CStr(row("codigo")))
+            objReporte.SetParameterValue("Sucursal", CStr(row("Sucursal")))
+            objReporte.SetParameterValue("MaquinaLocal", CStr(row("codigoMaquinasLocales")))
+            objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+            M_ImprimirCotizacionForm.CrystalReportViewer1.ReportSource = objReporte
+            M_ImprimirCotizacionForm.Show()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub btnDiarioFacturacion_Click(sender As Object, e As EventArgs) Handles btnDiarioFacturacion.Click
+        M_DiarioFacturacion.lblForm.Text = "M_DiarioFacturacion"
+        M_DiarioFacturacion.ShowDialog()
+
+    End Sub
 End Class

@@ -45,6 +45,7 @@
             txtMoneda.Text = "LPS"
             txtDepositado.Text = "0"
             rtxtObservaciones.Clear()
+            lblEstado.Text = "Nuevo"
 
             dgbtabla.Rows.Clear()
 
@@ -146,10 +147,11 @@
                             .numeroFactura_ = dgbtabla.Rows(index).Cells(1).Value()
                         End With
                         If objDetRbo.RegistrarNuevoDetalleRecibo() = 0 Then
-                            MsgBox("Error al querer insertar el detalle del recibo.")
+                            MsgBox("Error al querer insertar el detalle del recibo.", MsgBoxStyle.Critical)
                         End If
                     Next
-                    MsgBox("Registrado el recibo correctamente.")
+                    MsgBox("Registrado el recibo correctamente.", MsgBoxStyle.Information)
+                    M_BuscarRecibo.seleccionarRecibo()
                 Else
                     MsgBox("Error al querer ingresar el recibo.", MsgBoxStyle.Critical)
                 End If
@@ -198,7 +200,7 @@
                                 .numeroFactura_ = dgbtabla.Rows(index).Cells(1).Value()
                             End With
                             If objDetRbo.RegistrarNuevoDetalleRecibo() = 0 Then
-                                MsgBox("Error al querer insertar el detalle del recibo.")
+                                MsgBox("Error al querer insertar el detalle del recibo.", MsgBoxStyle.Critical)
                             End If
                         Else
 
@@ -209,12 +211,12 @@
                                 .numeroFactura_ = dgbtabla.Rows(index).Cells(1).Value()
                             End With
                             If objDetRbo.ModificarDetalleRecibo() = 0 Then
-                                MsgBox("Error al querer modificar el recibo.")
+                                MsgBox("Error al querer modificar el recibo.", MsgBoxStyle.Critical)
                             End If
                         End If
                     Next
-                    MsgBox("Modificado correctamente.")
-                    btnmodificar.Enabled = False
+                    MsgBox("Modificado correctamente.", MsgBoxStyle.Information)
+                    'btnmodificar.Enabled = False
                 End If
 
                 If (cbxOk.Checked) Then
