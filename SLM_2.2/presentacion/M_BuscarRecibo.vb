@@ -1,6 +1,25 @@
 ﻿Public Class M_BuscarRecibo
     Private Sub M_BuscarRecibo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'ACTUALIZAR LISTADO
         seleccionarRecibo()
+
+        'AGREGARLE COLOR AL DATAGRIDVIEW
+        alternarColoFilasDatagridview(dgbtabla)
+
+        'OCULTAR COLUMNAS
+        Me.dgbtabla.Columns("codigoFormaPago").Visible = False
+        Me.dgbtabla.Columns("infoClte").Visible = False
+
+        'CAMBIAS NOMBRE COLUMNAS
+        dgbtabla.Columns("numero").HeaderText = "Número"
+        dgbtabla.Columns("fechaTrans").HeaderText = "Fecha Trans"
+        dgbtabla.Columns("referencia").HeaderText = "Referencia"
+        dgbtabla.Columns("ok").HeaderText = "OK"
+        dgbtabla.Columns("moneda").HeaderText = "Moneda"
+        dgbtabla.Columns("depositado").HeaderText = "Depositado"
+        dgbtabla.Columns("observaciones").HeaderText = "Observaciones"
+        dgbtabla.Columns("formaPago").HeaderText = "Forma Pago"
+
     End Sub
     Public Sub seleccionarRecibo()
         Dim objRbo As New ClsRecibo
@@ -9,8 +28,6 @@
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
-        Me.dgbtabla.Columns("codigoFormaPago").Visible = False
-        Me.dgbtabla.Columns("infoClte").Visible = False
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -27,13 +44,14 @@
             If n = vbYes Then
 
                 M_Recibo.txtnumero.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-                M_Recibo.cbxOk.Checked = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
-                M_Recibo.dtpFechaTrans.Value = dgbtabla.Rows(e.RowIndex).Cells(2).Value()
-                M_Recibo.rtxtReferencia.Text = dgbtabla.Rows(e.RowIndex).Cells(3).Value()
-                M_Recibo.lblcodeFormaPago.Text = dgbtabla.Rows(e.RowIndex).Cells(4).Value()
-                M_Recibo.cbxInfoClte.Checked = dgbtabla.Rows(e.RowIndex).Cells(6).Value()
+                M_Recibo.dtpFechaTrans.Value = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                M_Recibo.rtxtReferencia.Text = dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+                M_Recibo.lblcodeFormaPago.Text = dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+                M_Recibo.cbxInfoClte.Checked = dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+                M_Recibo.cbxOk.Checked = dgbtabla.Rows(e.RowIndex).Cells(5).Value()
+                M_Recibo.txtMoneda.Text = dgbtabla.Rows(e.RowIndex).Cells(6).Value()
                 M_Recibo.txtDepositado.Text = dgbtabla.Rows(e.RowIndex).Cells(7).Value()
-                M_Recibo.txtMoneda.Text = dgbtabla.Rows(e.RowIndex).Cells(8).Value()
+                M_Recibo.rtxtObservaciones.Text = dgbtabla.Rows(e.RowIndex).Cells(8).Value()
 
                 Dim objDetRbo As New ClsDetalleRecibo
                 objDetRbo.codigoRecibo_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
