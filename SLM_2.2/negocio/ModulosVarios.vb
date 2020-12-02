@@ -325,7 +325,7 @@ Module ModulosVarios
                                                 End If
                                             ElseIf i = 12 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    M_Factura.lblOKAY.Text = "Cajero"
+                                                    Form1.lblCajero.Text = "Cajero"
                                                 End If
                                             ElseIf i = 13 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
