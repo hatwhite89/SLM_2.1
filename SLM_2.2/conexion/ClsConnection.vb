@@ -3,6 +3,7 @@
 Public Class ClsConnection
     'esta clase sirve para abrir una conexxion en la base de datos 
 
+
     Private sqlcon As SqlConnection
     Public str_con As String
     'String Conexion
