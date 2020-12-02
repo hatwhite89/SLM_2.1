@@ -456,26 +456,29 @@ Public Class ClsCheques
     End Function
 
     'Consolidacion Cheque
-    'Public Function ConsolidarCheque() As DataTable
+    Public Function ConsolidarCheque(fechaDesde As Date, fechaHasta As Date) As DataTable
 
-    '    Dim objCon As New ClsConnection
-    '    Dim cn As New SqlConnection
-    '    cn = objCon.getConexion
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
 
-    '    Using cmd As New SqlCommand
-    '        cmd.Connection = cn
-    '        cmd.CommandType = CommandType.StoredProcedure
-    '        cmd.CommandText = "A_slmConsolidacionCheque"
-    '        cmd.Parameters.Add("@nombreBanco", SqlDbType.VarChar).Value = Nombre_Banco
-    '        Using da As New SqlDataAdapter
-    '            da.SelectCommand = cmd
-    '            Using dt As New DataTable
-    '                da.Fill(dt)
-    '                Return dt
-    '            End Using
-    '        End Using
-    '    End Using
-    'End Function
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmConsolidacionCheque"
+            cmd.Parameters.Add("@codBanco", SqlDbType.VarChar).Value = cod_Banco
+            cmd.Parameters.Add("@fechaDesde", SqlDbType.Date).Value = fechaDesde
+            cmd.Parameters.Add("@fechaHasta", SqlDbType.Date).Value = fechaHasta
+
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
 
     'Modificar Estado de Cheque
     Public Function modificarEstadoCheque() As String
@@ -526,6 +529,7 @@ Public Class ClsCheques
 
     End Function
 
+    'informe de cheques
     Public Function InformeCheque() As DataTable
 
         Dim objCon As New ClsConnection

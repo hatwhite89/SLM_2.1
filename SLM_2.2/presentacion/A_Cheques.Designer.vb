@@ -516,7 +516,7 @@ Partial Class A_Cheques
         Me.dtpAcredita.Name = "dtpAcredita"
         Me.dtpAcredita.Size = New System.Drawing.Size(98, 20)
         Me.dtpAcredita.TabIndex = 13
-        Me.dtpAcredita.Value = New Date(2019, 12, 11, 10, 21, 36, 0)
+        Me.dtpAcredita.Value = New Date(2020, 12, 2, 0, 0, 0, 0)
         '
         'Label12
         '
