@@ -124,6 +124,10 @@
 
             dtBancos.Columns("nombreBanco").Width = 170
 
+            'botones
+            btnCrear.Enabled = False
+            btnModificar.Enabled = False
+            btnGuardar.Enabled = True
 
         Catch ex As Exception
             MsgBox("Hubo un error al consultar los bancos. " + ex.Message)

@@ -13,6 +13,12 @@
             'Listar categorias de proveedor
             dtCategorias.DataSource = Categoria.listarCategoriasProveedor
 
+
+            'BOTONES
+            btnCrear.Enabled = False
+            btnModificar.Enabled = False
+            btnGuardar.Enabled = True
+
         Catch ex As Exception
 
         End Try

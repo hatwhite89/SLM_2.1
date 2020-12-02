@@ -5,19 +5,11 @@ Public Class A_ListadoCheques
     Dim cheque As New ClsCheques
     Private Sub A_ListadoCheques_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
         Try
 
             dtCheques.DataSource = cheque.listarCheques
 
-            For a = 0 To dtCheques.Rows.Count - 1
-
-                If dtCheques.Rows(a).Cells(7).Value = "Rechazado" Or dtCheques.Rows(a).Cells(7).Value = "Cancelado" Then
-                    dtCheques.Rows(a).DefaultCellStyle.Font = New Font(Font.Name, Font.Size, FontStyle.Strikeout)
-                    dtCheques.Rows(a).DefaultCellStyle.ForeColor = Color.Red
-                End If
-
-            Next
+            TacharCanceladoRechazado()
 
             dtpInicio.Format = DateTimePickerFormat.Custom
             dtpInicio.CustomFormat = " "
@@ -186,7 +178,6 @@ Public Class A_ListadoCheques
 
         End Try
 
-
     End Sub
 
     Function GridAExcel(ByVal miDataGridView As DataGridView) As Boolean
@@ -234,8 +225,6 @@ Public Class A_ListadoCheques
             dtCheques.DataSource = .InformeCheque
 
         End With
-
-
 
     End Sub
 

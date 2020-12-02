@@ -3,8 +3,8 @@
     Dim periodo As New ClsPeriodoContable
 
     Sub Limpiar()
-        txtCod.Text = ""
-        txtDescripcion.Text = ""
+        txtCod.Clear()
+        txtDescripcion.Clear()
         dtpFinal.ResetText()
         dtpInicio.ResetText()
         chkEstado.Checked = False
@@ -48,6 +48,11 @@
             dtPeriodos.DataSource = periodo.listarPeriodos
             alternarColoFilasDatagridview(dtPeriodos)
 
+            'Botones
+            btnCrear.Enabled = False
+            btnModificar.Enabled = False
+            btnGuardar.Enabled = True
+
         Catch ex As Exception
 
         End Try
@@ -77,9 +82,10 @@
 
                     End If
 
-                    btnCrear.Visible = False
-                    btnModificar.Visible = False
-                    btnGuardar.Visible = True
+                    'Botones
+                    btnCrear.Enabled = False
+                    btnModificar.Enabled = False
+                    btnGuardar.Enabled = True
                 End With
 
             End If
@@ -97,9 +103,7 @@
             dt = dtPeriodos.DataSource
             Dim row As DataRow = dt.Rows(e.RowIndex)
 
-            btnGuardar.Visible = False
-            btnModificar.Visible = True
-            btnCrear.Visible = True
+
 
             txtCod.Text = row("codPeriodo")
             txtDescripcion.Text = row("descripcion")
@@ -107,17 +111,25 @@
             dtpFinal.Value = row("fecha_f")
             chkEstado.Checked = row("estado")
 
-
+            'Botones
+            btnCrear.Enabled = True
+            btnModificar.Enabled = True
+            btnGuardar.Enabled = False
 
 
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
     End Sub
 
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
-        btnGuardar.Visible = True
-        btnModificar.Visible = False
-        btnCrear.Visible = False
+        btnGuardar.Enabled = True
+        btnModificar.Enabled = False
+        btnCrear.Enabled = False
+        Limpiar()
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
     End Sub
 End Class

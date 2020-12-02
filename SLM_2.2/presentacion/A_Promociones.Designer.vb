@@ -233,7 +233,7 @@ Partial Class A_Promociones
         Me.btnCancelarRegistro.Name = "btnCancelarRegistro"
         Me.btnCancelarRegistro.Size = New System.Drawing.Size(81, 23)
         Me.btnCancelarRegistro.TabIndex = 27
-        Me.btnCancelarRegistro.Text = "Cancelar"
+        Me.btnCancelarRegistro.Text = "Cerrar"
         Me.btnCancelarRegistro.UseVisualStyleBackColor = False
         '
         'btnCrear
