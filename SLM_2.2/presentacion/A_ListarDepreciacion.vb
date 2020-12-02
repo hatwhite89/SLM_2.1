@@ -23,6 +23,7 @@
         Catch ex As Exception
             MsgBox("Error al cargar listado de Activos en Depreciación. Error: " + ex.Message)
         End Try
+        alternarColoFilasDatagridview(dtDepreciacion)
     End Sub
 
     Private Sub dtDepreciacion_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDepreciacion.CellDoubleClick

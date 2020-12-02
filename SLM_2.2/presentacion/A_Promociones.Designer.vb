@@ -233,7 +233,7 @@ Partial Class A_Promociones
         Me.btnCancelarRegistro.Name = "btnCancelarRegistro"
         Me.btnCancelarRegistro.Size = New System.Drawing.Size(81, 23)
         Me.btnCancelarRegistro.TabIndex = 27
-        Me.btnCancelarRegistro.Text = "Cancelar"
+        Me.btnCancelarRegistro.Text = "Cerrar"
         Me.btnCancelarRegistro.UseVisualStyleBackColor = False
         '
         'btnCrear
@@ -314,6 +314,8 @@ Partial Class A_Promociones
         Me.dtDetallePromo.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtDetallePromo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtDetallePromo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtDetallePromo.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dtDetallePromo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDetallePromo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cod, Me.Descrip})
@@ -334,7 +336,6 @@ Partial Class A_Promociones
         Me.Descrip.HeaderText = "Descripcion"
         Me.Descrip.Name = "Descrip"
         Me.Descrip.ReadOnly = True
-        Me.Descrip.Width = 400
         '
         'ofdImagen
         '

@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80A97C69-33C1-4D76-A4FF-61E3B54BEE03}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SLM_2._2.M_InicioSesion</StartupObject>
+    <StartupObject>SLM_2._2.Resultados</StartupObject>
     <RootNamespace>SLM_2._2</RootNamespace>
     <AssemblyName>0</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -235,6 +235,7 @@
     <Compile Include="negocio\ClsItemExamenDetalle.vb" />
     <Compile Include="negocio\ClsListaPrecios.vb" />
     <Compile Include="negocio\ClsMaquinasLocales.vb" />
+    <Compile Include="negocio\ClsMensajes.vb" />
     <Compile Include="negocio\ClsNotificaciones.vb" />
     <Compile Include="negocio\ClsOrdenDeCompra.vb" />
     <Compile Include="negocio\ClsOrdenDeTrabajo.vb" />
@@ -255,6 +256,7 @@
     <Compile Include="negocio\ClsPuestoTrabajo.vb" />
     <Compile Include="negocio\ClsRecibo.vb" />
     <Compile Include="negocio\ClsRequisicion.vb" />
+    <Compile Include="negocio\ClsResultados.vb" />
     <Compile Include="negocio\ClsSalidaAlmacen.vb" />
     <Compile Include="negocio\ClsServidorCorreo.vb" />
     <Compile Include="negocio\ClsSubArea.vb" />
@@ -700,6 +702,12 @@
     <Compile Include="presentacion\E_frmBIAlmacen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frmBIClientes.Designer.vb">
+      <DependentUpon>E_frmBIClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmBIClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_frmCategoriaProducto.Designer.vb">
       <DependentUpon>E_frmCategoriaProducto.vb</DependentUpon>
     </Compile>
@@ -760,6 +768,12 @@
     <Compile Include="presentacion\E_frmReporteOC.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frmResultados.Designer.vb">
+      <DependentUpon>E_frmResultados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmResultados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_frmSalida.Designer.vb">
       <DependentUpon>E_frmSalida.vb</DependentUpon>
     </Compile>
@@ -790,10 +804,22 @@
     <Compile Include="presentacion\E_frmUnidadMedida_almacen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frmUsuariosAlmacen.Designer.vb">
+      <DependentUpon>E_frmUsuariosAlmacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmUsuariosAlmacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_frm_BIProveedores.Designer.vb">
       <DependentUpon>E_frm_BIProveedores.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\E_frm_BIProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frm_Mensajes.Designer.vb">
+      <DependentUpon>E_frm_Mensajes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frm_Mensajes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_HojaTrabajo.Designer.vb">
@@ -1472,6 +1498,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>slm_testDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="slm_testDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>slm_testDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="VistaCheque.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1740,6 +1771,9 @@
     <EmbeddedResource Include="presentacion\E_frmReporteOC.resx">
       <DependentUpon>E_frmReporteOC.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmResultados.resx">
+      <DependentUpon>E_frmResultados.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmSalida.resx">
       <DependentUpon>E_frmSalida.vb</DependentUpon>
     </EmbeddedResource>
@@ -1755,8 +1789,14 @@
     <EmbeddedResource Include="presentacion\E_frmUnidadMedida_almacen.resx">
       <DependentUpon>E_frmUnidadMedida_almacen.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmUsuariosAlmacen.resx">
+      <DependentUpon>E_frmUsuariosAlmacen.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frm_BIProveedores.resx">
       <DependentUpon>E_frm_BIProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frm_Mensajes.resx">
+      <DependentUpon>E_frm_Mensajes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_HojaTrabajo.resx">
       <DependentUpon>E_HojaTrabajo.vb</DependentUpon>
@@ -2140,6 +2180,17 @@
     </None>
     <None Include="slm_testDataSet1.xss">
       <DependentUpon>slm_testDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="slm_testDataSet2.xsc">
+      <DependentUpon>slm_testDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="slm_testDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>slm_testDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="slm_testDataSet2.xss">
+      <DependentUpon>slm_testDataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

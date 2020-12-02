@@ -33,6 +33,9 @@ Partial Class A_Alertas
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.dtNotificaciones)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
@@ -44,8 +47,11 @@ Partial Class A_Alertas
         'dtNotificaciones
         '
         Me.dtNotificaciones.AllowUserToAddRows = False
+        Me.dtNotificaciones.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtNotificaciones.BackgroundColor = System.Drawing.Color.White
         Me.dtNotificaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtNotificaciones.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtNotificaciones.Location = New System.Drawing.Point(3, 16)
         Me.dtNotificaciones.Name = "dtNotificaciones"
         Me.dtNotificaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -74,6 +80,7 @@ Partial Class A_Alertas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(585, 298)
         Me.Controls.Add(Me.btnVerificado)
         Me.Controls.Add(Me.btnCerrar)

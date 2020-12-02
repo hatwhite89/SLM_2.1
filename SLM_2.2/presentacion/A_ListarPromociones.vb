@@ -48,9 +48,9 @@
 
             With A_Promociones
 
-                .btnCrear.Visible = True
-                .btnModificar.Visible = True
-                .btnGuardar.Visible = False
+                .btnCrear.Enabled = True
+                .btnModificar.Enabled = True
+                .btnGuardar.Enabled = False
 
             End With
 
@@ -76,9 +76,9 @@
             With A_Promociones
 
                 .Show()
-                .btnGuardar.Visible = True
-                .btnCrear.Visible = False
-                .btnModificar.Visible = False
+                .btnGuardar.Enabled = True
+                .btnCrear.Enabled = False
+                .btnModificar.Enabled = False
 
             End With
 

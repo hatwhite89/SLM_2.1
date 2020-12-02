@@ -2,7 +2,7 @@
 
     Dim cai As New ClsCAI
     Private Sub A_ListarCAI_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        alternarColoFilasDatagridview(dtCAIS)
         Try
 
             dtCAIS.DataSource = cai.listarCAI

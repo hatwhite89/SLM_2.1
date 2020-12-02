@@ -30,6 +30,7 @@
             btn.UseColumnTextForButtonValue = True
         End If
         lblcantidad.Text = dgvEmpleados.Rows.Count - 1
+        alternarColoFilasDatagridview(dgvEmpleados)
     End Sub
     Private Sub dgvEmpleados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmpleados.CellClick
         Try

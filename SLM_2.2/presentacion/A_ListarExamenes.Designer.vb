@@ -72,6 +72,11 @@ Partial Class A_ListarExamenes
         '
         Me.dtExamenes.AllowUserToAddRows = False
         Me.dtExamenes.AllowUserToDeleteRows = False
+        Me.dtExamenes.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtExamenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtExamenes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtExamenes.BackgroundColor = System.Drawing.Color.White
         Me.dtExamenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtExamenes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.chk})
@@ -85,7 +90,6 @@ Partial Class A_ListarExamenes
         '
         Me.chk.HeaderText = "Agregar"
         Me.chk.Name = "chk"
-        Me.chk.Width = 50
         '
         'StatusStrip1
         '

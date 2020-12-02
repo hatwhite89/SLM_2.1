@@ -24,10 +24,6 @@ Partial Class frmDeposito
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDeposito))
         Me.lblNro = New System.Windows.Forms.Label()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListarDepositosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CerrarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.txtNro = New System.Windows.Forms.TextBox()
         Me.lblFecha = New System.Windows.Forms.Label()
@@ -74,7 +70,6 @@ Partial Class frmDeposito
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.MenuStrip1.SuspendLayout()
         Me.gbxInfoDepo.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDepositos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,36 +84,6 @@ Partial Class frmDeposito
         Me.lblNro.Size = New System.Drawing.Size(27, 13)
         Me.lblNro.TabIndex = 1
         Me.lblNro.Text = "Nro."
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(718, 24)
-        Me.MenuStrip1.TabIndex = 29
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'ArchivoToolStripMenuItem
-        '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListarDepositosToolStripMenuItem, Me.CerrarToolStripMenuItem1})
-        Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
-        Me.ArchivoToolStripMenuItem.Text = "Archivo"
-        '
-        'ListarDepositosToolStripMenuItem
-        '
-        Me.ListarDepositosToolStripMenuItem.Name = "ListarDepositosToolStripMenuItem"
-        Me.ListarDepositosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ListarDepositosToolStripMenuItem.Text = "Asiento"
-        '
-        'CerrarToolStripMenuItem1
-        '
-        Me.CerrarToolStripMenuItem1.Name = "CerrarToolStripMenuItem1"
-        Me.CerrarToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.CerrarToolStripMenuItem1.Text = "Cerrar"
         '
         'txtNro
         '
@@ -363,7 +328,7 @@ Partial Class frmDeposito
         Me.gbxInfoDepo.Controls.Add(Me.txtMoneda)
         Me.gbxInfoDepo.Controls.Add(Me.lblMonBase)
         Me.gbxInfoDepo.Controls.Add(Me.txtMonBase)
-        Me.gbxInfoDepo.Location = New System.Drawing.Point(12, 75)
+        Me.gbxInfoDepo.Location = New System.Drawing.Point(12, 51)
         Me.gbxInfoDepo.Name = "gbxInfoDepo"
         Me.gbxInfoDepo.Size = New System.Drawing.Size(694, 238)
         Me.gbxInfoDepo.TabIndex = 74
@@ -483,9 +448,9 @@ Partial Class frmDeposito
         Me.GroupBox1.Controls.Add(Me.txtBusqueda)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.dtDepositos)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 319)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 295)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(694, 315)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 339)
         Me.GroupBox1.TabIndex = 75
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Depositos"
@@ -573,7 +538,7 @@ Partial Class frmDeposito
         Me.dtDepositos.ReadOnly = True
         Me.dtDepositos.RowHeadersWidth = 51
         Me.dtDepositos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtDepositos.Size = New System.Drawing.Size(676, 243)
+        Me.dtDepositos.Size = New System.Drawing.Size(676, 267)
         Me.dtDepositos.TabIndex = 14
         '
         'Panel1
@@ -586,7 +551,7 @@ Partial Class frmDeposito
         Me.Panel1.Controls.Add(Me.btnGuardar)
         Me.Panel1.Controls.Add(Me.btnModificar)
         Me.Panel1.Controls.Add(Me.btnCrearNuevo)
-        Me.Panel1.Location = New System.Drawing.Point(-1, 23)
+        Me.Panel1.Location = New System.Drawing.Point(0, -1)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(725, 46)
         Me.Panel1.TabIndex = 76
@@ -634,17 +599,13 @@ Partial Class frmDeposito
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoDepo)
-        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmDeposito"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Deposito Bancario"
         Me.TransparencyKey = System.Drawing.Color.Fuchsia
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.gbxInfoDepo.ResumeLayout(False)
         Me.gbxInfoDepo.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -657,10 +618,6 @@ Partial Class frmDeposito
 
     End Sub
     Friend WithEvents lblNro As Label
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListarDepositosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CerrarToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents txtNro As TextBox
     Friend WithEvents lblFecha As Label

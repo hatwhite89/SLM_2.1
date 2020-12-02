@@ -83,7 +83,10 @@
             dtCuentas.Columns("estado").Width = 70
             dtCuentas.Columns("estado").HeaderText = "Habilitado"
 
-
+            'botones
+            btnNuevo.Enabled = False
+            btnModificar.Enabled = False
+            btnGuardar.Enabled = True
 
         Catch ex As Exception
             MsgBox("Error al cargar las cuentas." + ex.Message)
@@ -119,27 +122,21 @@
         'Eliminar espacios 
         Tipo()
         'Habilitar edicion
-        btnModificar.Visible = True
-        btnNuevo.Visible = True
-        btnGuardar.Visible = False
-
-
+        btnModificar.Enabled = True
+        btnNuevo.Enabled = True
+        btnGuardar.Enabled = False
 
     End Sub
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        Limpiar()
-        btnGuardar.Visible = True
-        btnModificar.Visible = False
-        btnNuevo.Visible = False
 
+        Limpiar()
+        btnGuardar.Enabled = True
+        btnModificar.Enabled = False
+        btnNuevo.Enabled = False
 
         Me.Close()
         Dim nuevo As New A_Cuenta
         nuevo.Show()
-
-
-
-
 
     End Sub
 

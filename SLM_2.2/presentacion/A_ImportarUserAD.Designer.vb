@@ -59,10 +59,14 @@ Partial Class A_ImportarUserAD
         '
         Me.dtUsuariosAD.AllowUserToAddRows = False
         Me.dtUsuariosAD.AllowUserToDeleteRows = False
+        Me.dtUsuariosAD.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtUsuariosAD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtUsuariosAD.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtUsuariosAD.BackgroundColor = System.Drawing.Color.White
         Me.dtUsuariosAD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtUsuariosAD.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column3, Me.Column2, Me.Column4})
-        Me.dtUsuariosAD.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtUsuariosAD.Location = New System.Drawing.Point(3, 16)
         Me.dtUsuariosAD.Name = "dtUsuariosAD"
         Me.dtUsuariosAD.ReadOnly = True
@@ -74,7 +78,6 @@ Partial Class A_ImportarUserAD
         Me.Column1.HeaderText = "Agregar"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
-        Me.Column1.Width = 70
         '
         'Column3
         '
