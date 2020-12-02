@@ -8,4 +8,12 @@ Public Class ClsResultados
         sqlcom.Connection = New ClsConnection().getConexion
         Return sqlcom.ExecuteReader
     End Function
+
+    Public Function RecuperarListadoFacturasPorID(ByVal identidad) As SqlDataReader
+        Dim sqlcom As SqlCommand
+        sqlcom = New SqlCommand
+        sqlcom.CommandText = "exec E_slmReporteResultadoID " + "'" + identidad + "'" + ""
+        sqlcom.Connection = New ClsConnection().getConexion
+        Return sqlcom.ExecuteReader
+    End Function
 End Class

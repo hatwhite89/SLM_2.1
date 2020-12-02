@@ -822,6 +822,12 @@
     <Compile Include="presentacion\E_frm_Mensajes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frm_ResultadoIndividual.Designer.vb">
+      <DependentUpon>E_frm_ResultadoIndividual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frm_ResultadoIndividual.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_HojaTrabajo.Designer.vb">
       <DependentUpon>E_HojaTrabajo.vb</DependentUpon>
     </Compile>
@@ -1452,6 +1458,12 @@
     <Compile Include="presentacion\prueba.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\E_ReporteResultadoIndividual.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>E_ReporteResultadoIndividual.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\reporteOrdenCompra.Designer.vb">
       <DependentUpon>reporteOrdenCompra.vb</DependentUpon>
     </Compile>
@@ -1798,6 +1810,9 @@
     <EmbeddedResource Include="presentacion\E_frm_Mensajes.resx">
       <DependentUpon>E_frm_Mensajes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frm_ResultadoIndividual.resx">
+      <DependentUpon>E_frm_ResultadoIndividual.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_HojaTrabajo.resx">
       <DependentUpon>E_HojaTrabajo.vb</DependentUpon>
     </EmbeddedResource>
@@ -2122,6 +2137,10 @@
       <DependentUpon>prueba.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\E_ReporteResultadoIndividual.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>E_ReporteResultadoIndividual.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reporteOrdenCompra.resx">
       <DependentUpon>reporteOrdenCompra.vb</DependentUpon>
     </EmbeddedResource>

@@ -33,21 +33,25 @@ Partial Class Resultados
         Me.Slm_testDataSet2 = New SLM_2._2.slm_testDataSet2()
         Me.MslmReporteEncabecadoResultadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.M_slmReporteEncabecadoResultadoTableAdapter = New SLM_2._2.slm_testDataSet2TableAdapters.M_slmReporteEncabecadoResultadoTableAdapter()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.MaskedTextBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,12 +59,13 @@ Partial Class Resultados
         CType(Me.SlmtestDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Slm_testDataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MslmReporteEncabecadoResultadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -103,6 +108,8 @@ Partial Class Resultados
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(6, 32)
@@ -134,17 +141,10 @@ Partial Class Resultados
         '
         Me.M_slmReporteEncabecadoResultadoTableAdapter.ClearBeforeFill = True
         '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(139, 14)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 4
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(9, 17)
+        Me.Label2.Location = New System.Drawing.Point(7, 17)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(109, 13)
         Me.Label2.TabIndex = 6
@@ -153,7 +153,7 @@ Partial Class Resultados
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Yellow
-        Me.Button1.Location = New System.Drawing.Point(274, 11)
+        Me.Button1.Location = New System.Drawing.Point(272, 11)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 7
@@ -164,7 +164,7 @@ Partial Class Resultados
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(332, 16)
+        Me.Label3.Location = New System.Drawing.Point(310, 14)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(190, 13)
         Me.Label3.TabIndex = 1
@@ -196,6 +196,8 @@ Partial Class Resultados
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Button5)
+        Me.TabPage1.Controls.Add(Me.Button4)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Button1)
@@ -205,27 +207,28 @@ Partial Class Resultados
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(791, 378)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "TabPage1"
+        Me.TabPage1.Text = "Resultados "
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.TextBox1)
+        Me.TabPage2.Controls.Add(Me.Button3)
         Me.TabPage2.Controls.Add(Me.GroupBox2)
         Me.TabPage2.Controls.Add(Me.Button2)
         Me.TabPage2.Controls.Add(Me.Label1)
-        Me.TabPage2.Controls.Add(Me.TextBox1)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(791, 378)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "TabPage2"
+        Me.TabPage2.Text = "Historial Paciente"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.Color.Yellow
-        Me.Button2.Location = New System.Drawing.Point(289, 9)
+        Me.Button2.Location = New System.Drawing.Point(281, 13)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 11
@@ -235,18 +238,11 @@ Partial Class Resultados
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(17, 14)
+        Me.Label1.Location = New System.Drawing.Point(9, 18)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(119, 13)
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "Busqueda por identidad"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(152, 11)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 9
         '
         'GroupBox2
         '
@@ -256,9 +252,9 @@ Partial Class Resultados
         Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.DataGridView2)
-        Me.GroupBox2.Location = New System.Drawing.Point(7, 58)
+        Me.GroupBox2.Location = New System.Drawing.Point(7, 38)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(777, 314)
+        Me.GroupBox2.Size = New System.Drawing.Size(777, 337)
         Me.GroupBox2.TabIndex = 12
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Listado de resultados"
@@ -267,7 +263,7 @@ Partial Class Resultados
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(332, 16)
+        Me.Label5.Location = New System.Drawing.Point(301, 14)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(190, 13)
         Me.Label5.TabIndex = 1
@@ -278,12 +274,65 @@ Partial Class Resultados
         Me.DataGridView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Location = New System.Drawing.Point(6, 32)
         Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(766, 276)
+        Me.DataGridView2.Size = New System.Drawing.Size(766, 299)
         Me.DataGridView2.TabIndex = 0
+        '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.Color.Green
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button4.Location = New System.Drawing.Point(708, 11)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 8
+        Me.Button4.Text = "Excel"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button3.BackColor = System.Drawing.Color.Green
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button3.Location = New System.Drawing.Point(708, 9)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 13
+        Me.Button3.Text = "Excel"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.Yellow
+        Me.Button5.Location = New System.Drawing.Point(627, 11)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.TabIndex = 9
+        Me.Button5.Text = "Imprimir"
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(137, 14)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.TabIndex = 4
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(134, 13)
+        Me.TextBox1.Mask = "0000-0000-00000"
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(141, 20)
+        Me.TextBox1.TabIndex = 14
         '
         'Resultados
         '
@@ -306,7 +355,6 @@ Partial Class Resultados
         CType(Me.SlmtestDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Slm_testDataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MslmReporteEncabecadoResultadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -315,6 +363,8 @@ Partial Class Resultados
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -331,7 +381,6 @@ Partial Class Resultados
     Friend WithEvents Slm_testDataSet2 As slm_testDataSet2
     Friend WithEvents MslmReporteEncabecadoResultadoBindingSource As BindingSource
     Friend WithEvents M_slmReporteEncabecadoResultadoTableAdapter As slm_testDataSet2TableAdapters.M_slmReporteEncabecadoResultadoTableAdapter
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents BindingSource1 As BindingSource
@@ -343,5 +392,10 @@ Partial Class Resultados
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents Button2 As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents BindingSource2 As BindingSource
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As MaskedTextBox
 End Class
