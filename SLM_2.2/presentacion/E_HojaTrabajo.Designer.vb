@@ -412,16 +412,16 @@ Partial Class E_HojaTrabajo
         '
         Me.txtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtBuscar.Location = New System.Drawing.Point(679, 126)
+        Me.txtBuscar.Location = New System.Drawing.Point(429, 126)
         Me.txtBuscar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(387, 22)
+        Me.txtBuscar.Size = New System.Drawing.Size(471, 22)
         Me.txtBuscar.TabIndex = 37
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(620, 134)
+        Me.Label14.Location = New System.Drawing.Point(366, 129)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(52, 17)
         Me.Label14.TabIndex = 36
@@ -432,7 +432,7 @@ Partial Class E_HojaTrabajo
         Me.btnBuscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnBuscar.BackColor = System.Drawing.Color.Yellow
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnBuscar.Location = New System.Drawing.Point(4, 258)
+        Me.btnBuscar.Location = New System.Drawing.Point(920, 119)
         Me.btnBuscar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(148, 36)
@@ -519,7 +519,7 @@ Partial Class E_HojaTrabajo
         Me.txtValoresRef.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtValoresRef.Name = "txtValoresRef"
         Me.txtValoresRef.ReadOnly = True
-        Me.txtValoresRef.Size = New System.Drawing.Size(959, 22)
+        Me.txtValoresRef.Size = New System.Drawing.Size(920, 22)
         Me.txtValoresRef.TabIndex = 47
         '
         'Label19
@@ -655,7 +655,7 @@ Partial Class E_HojaTrabajo
         'lblCodeSubArea
         '
         Me.lblCodeSubArea.AutoSize = True
-        Me.lblCodeSubArea.Location = New System.Drawing.Point(81, 134)
+        Me.lblCodeSubArea.Location = New System.Drawing.Point(18, 134)
         Me.lblCodeSubArea.Name = "lblCodeSubArea"
         Me.lblCodeSubArea.Size = New System.Drawing.Size(62, 17)
         Me.lblCodeSubArea.TabIndex = 51
@@ -665,7 +665,7 @@ Partial Class E_HojaTrabajo
         'lblCodeSucursal
         '
         Me.lblCodeSucursal.AutoSize = True
-        Me.lblCodeSucursal.Location = New System.Drawing.Point(209, 134)
+        Me.lblCodeSucursal.Location = New System.Drawing.Point(104, 134)
         Me.lblCodeSucursal.Name = "lblCodeSucursal"
         Me.lblCodeSucursal.Size = New System.Drawing.Size(63, 17)
         Me.lblCodeSucursal.TabIndex = 52
@@ -703,10 +703,10 @@ Partial Class E_HojaTrabajo
         Me.btnValoresRef.FlatAppearance.BorderSize = 0
         Me.btnValoresRef.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnValoresRef.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnValoresRef.Location = New System.Drawing.Point(168, 273)
+        Me.btnValoresRef.Location = New System.Drawing.Point(1035, 44)
         Me.btnValoresRef.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnValoresRef.Name = "btnValoresRef"
-        Me.btnValoresRef.Size = New System.Drawing.Size(44, 36)
+        Me.btnValoresRef.Size = New System.Drawing.Size(33, 28)
         Me.btnValoresRef.TabIndex = 147
         Me.btnValoresRef.Text = "..."
         Me.btnValoresRef.UseVisualStyleBackColor = False
@@ -742,7 +742,9 @@ Partial Class E_HojaTrabajo
         Me.Panel2.BackColor = System.Drawing.SystemColors.HighlightText
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Label13)
+        Me.Panel2.Controls.Add(Me.btnBuscar)
         Me.Panel2.Controls.Add(Me.Label19)
+        Me.Panel2.Controls.Add(Me.btnValoresRef)
         Me.Panel2.Controls.Add(Me.lblCodeSubArea)
         Me.Panel2.Controls.Add(Me.lblCodeSucursal)
         Me.Panel2.Controls.Add(Me.txtValoresRef)
@@ -814,8 +816,6 @@ Partial Class E_HojaTrabajo
         Me.Panel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel4.Controls.Add(Me.Button1)
-        Me.Panel4.Controls.Add(Me.btnBuscar)
-        Me.Panel4.Controls.Add(Me.btnValoresRef)
         Me.Panel4.Controls.Add(Me.btnDetalleResultado)
         Me.Panel4.Controls.Add(Me.btnActualizarVista)
         Me.Panel4.Location = New System.Drawing.Point(1124, 33)

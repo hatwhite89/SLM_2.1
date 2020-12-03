@@ -221,6 +221,11 @@
         End Try
 
     End Sub
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
+    End Sub
 
     Private Sub btnBuscarParametro_Click(sender As Object, e As EventArgs) Handles btnBuscarParametro.Click
         A_ListadoParametros.ShowDialog()
@@ -554,7 +559,7 @@
             Dim dtseleccion, dtDetalle As New DataTable
             Dim fila, dfila As DataRow
             Dim vDetalle As New ClsDetalleValorRefTxt
-            Dim parametro As New ClsParametroExamen
+            Dim parametro As New ClsItemExamenDetalle
             Dim unidad As New ClsUnidad
 
             dtseleccion = dtDataValorRefTexto.DataSource
@@ -584,20 +589,20 @@
 
             'cargar información de parámetro
             parametro.codigo_ = Convert.ToInt32(lblCodParametro.Text)
-            dtseleccion = parametro.BuscarParametroExamenCode
+            dtseleccion = parametro.BuscarDetalleExamen
             fila = dtseleccion.Rows(0)
 
-            txtParametro2.Text = fila("descripcion")
+            txtParametro2.Text = fila("nombre")
             lblCodUnidad.Text = fila("codigoUnidad")
 
             'cargar unidad
-            unidad.Codigo_ = Convert.ToInt32(lblCodUnidad.Text)
+            'unidad.Codigo_ = Convert.ToInt32(lblCodUnidad.Text)
 
-            dtseleccion = unidad.BuscarUnidadCode
+            'dtseleccion = unidad.BuscarUnidadCode
 
-            fila = dtseleccion.Rows(0)
+            'fila = dtseleccion.Rows(0)
 
-            txtunidad2.Text = fila("codigoUnidad")
+            txtunidad2.Text = fila("unidad_codigo_breve")
 
             btnCrear.Enabled = True
             btnModificar.Enabled = True

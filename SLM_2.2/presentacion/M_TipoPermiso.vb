@@ -42,7 +42,16 @@
                     M_Permisos.cmbxTipoPermiso.SelectedValue = txtcodigo.Text
                     Me.Close()
                 End If
-            End If
+            ElseIf (lblform.Text = "M_TerminoPago") Then
+                If e.RowIndex >= 0 Then
+                        n = MsgBox("¿Desea utilizar el tipo de permiso?", MsgBoxStyle.YesNo)
+                    End If
+                    If n = vbYes Then
+                        M_Permisos.llenarTipoPermiso()
+                        M_Permisos.cmbxTipoPermiso.SelectedValue = txtcodigo.Text
+                        Me.Close()
+                    End If
+                End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -107,7 +116,7 @@
 
                 If objTipoPermiso.RegistrarNuevaTipoPermiso() = 1 Then
                     MsgBox("Registrado correctamente.", MsgBoxStyle.Information)
-
+                    M_Permisos.llenarTipoPermiso()
                     actualizarListadoTipoPermiso()
 
                     txtnombre.ReadOnly = True
@@ -129,6 +138,24 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+    'Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
+    '    Try
+    '        Dim n As String = ""
+    '        If (lblform.Text = "M_TerminosPago") Then
+    '            If e.RowIndex >= 0 Then
+    '                n = MsgBox("¿Desea utilizar el tipo de término de pago?", MsgBoxStyle.YesNo)
+    '            End If
+    '            If n = vbYes Then
+    '                'M_Factura.txtcodigoMedico.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+    '                M_TerminosPago.cbxtipoPago.SelectedValue = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+    '                Me.Close()
+    '            End If
+    '        End If
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message, MsgBoxStyle.Critical)
+    '    End Try
+    'End Sub
+
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
@@ -143,6 +170,7 @@
 
                 If objTipoPermiso.ModificarTipoPermiso() = 1 Then
                     MsgBox("Modificado correctamente.", MsgBoxStyle.Information)
+                    M_Permisos.llenarTipoPermiso()
 
                     actualizarListadoTipoPermiso()
 

@@ -42,7 +42,7 @@
                         .nombreItemDetalle_ = dgvHojaTrab.Columns.Item(e.ColumnIndex).Name
                         .estado_ = "Procesado"
                     End With
-                    If objOrdDet.ModificarOrdenTrabajoDetalle2() <> 1 Then
+                    If objOrdDet.ModificarOrdenTrabajoDetalleTecnico() <> 1 Then
                         'En caso que no exista el detalle de orden de trabajo entonces le asigna un valor nulo o vacio
                         dgvHojaTrab.Rows(e.RowIndex).Cells(e.ColumnIndex).Value() = ""
                     End If
@@ -153,6 +153,8 @@
             'dv.RowFilter = String.Format("codigoSucursal Like '%{0}%'", txtsucursal.Text)
             'dv.RowFilter = "codigoSubArea=" & Integer.Parse(lblCodeSubArea.Text)
             dt = dv.ToTable
+
+            'ds.Tables(0).Columns(colColl.IndexOf("Estado")).ReadOnly = False
             For index As Integer = 0 To dt.Rows.Count - 1
                 rowO = dt.Rows(index)
                 edad = CalcularEdad(Convert.ToDateTime(rowO("fechaNacimiento")))
@@ -188,7 +190,7 @@
                 Next
             Next
             'dgvHojaTrab.Columns(colColl.IndexOf("Estado")).ReadOnly = True
-            ds.Tables(0).Columns(colColl.IndexOf("Estado")).ReadOnly = True
+            'ds.Tables(0).Columns(colColl.IndexOf("Estado")).ReadOnly = True
             'le asigno la tabla
             dgvHojaTrab.DataSource = ds.Tables(0)
             dgvHojaTrab.Columns(0).Frozen = True
@@ -382,8 +384,10 @@
 
     Private Sub btnValoresRef_Click(sender As Object, e As EventArgs) Handles btnValoresRef.Click
         If txtParametro.Text <> "" Then
-            M_ListadoValoresReferencia.lblcodeCateCli.Text = txtParametro.Text
-            M_ListadoValoresReferencia.ShowDialog()
+            'M_ListadoValoresReferencia.lblcodeCateCli.Text = txtParametro.Text
+            'M_ListadoValoresReferencia.ShowDialog()
+            M_ListadoValoresRefTxt.lblParamtro.Text = txtParametro.Text
+            M_ListadoValoresRefTxt.ShowDialog()
         End If
     End Sub
 

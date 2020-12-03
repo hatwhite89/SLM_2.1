@@ -253,7 +253,7 @@ Public Class M_Factura
         dgblistadoExamenes.ReadOnly = False
 
         'cbxok.Enabled = True
-        If lblOKAY.Text = "Cajero" And Trim(txtnumeroOficial.Text) = "" Then
+        If Form1.lblCajero.Text = "Cajero" And Trim(txtnumeroOficial.Text) = "" Then
             cbxok.Enabled = True
         Else
             cbxok.Enabled = False
@@ -376,7 +376,7 @@ Public Class M_Factura
 
         dgblistadoExamenes.ReadOnly = False
         'cbxok.Enabled = True
-        If lblOKAY.Text = "Cajero" And Trim(txtnumeroOficial.Text) = "" Then
+        If Form1.lblCajero.Text = "Cajero" And Trim(txtnumeroOficial.Text) = "" Then
             cbxok.Enabled = True
         Else
             cbxok.Enabled = False

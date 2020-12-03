@@ -18,6 +18,23 @@
             Me.Close()
         End If
     End Sub
+    Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
+        Try
+            Dim n As String = ""
+            If (lblform.Text = "M_TerminosPago") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el tipo de término?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_TerminosPago.llenarTipoTermino()
+                    M_TerminosPago.cbxtipoPago.SelectedValue = txtcodigo.Text
+                    Me.Close()
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
@@ -68,7 +85,8 @@
                 End With
 
                 If objTipo.RegistrarNuevoTipoTermino() = 1 Then
-                    MsgBox("Registrado correctamente.")
+                    MsgBox("Registrado correctamente.", MsgBoxStyle.Information)
+                    M_TerminosPago.llenarTipoTermino()
 
                     Dim dv As DataView = objTipo.SeleccionarTipoTermino.DefaultView
                     dgbtabla.DataSource = dv
@@ -105,8 +123,8 @@
                 End With
 
                 If objTipo.ModificarTipoTermino() = 1 Then
-                    MsgBox("Modificado correctamente.")
-
+                    MsgBox("Modificado correctamente.", MsgBoxStyle.Information)
+                    M_TerminosPago.llenarTipoTermino()
                     Dim dv As DataView = objTipo.SeleccionarTipoTermino.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count

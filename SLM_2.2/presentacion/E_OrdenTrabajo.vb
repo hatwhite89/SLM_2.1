@@ -118,6 +118,12 @@
                 lblinUsuario.Text = CStr(row("inUsuario"))
             End If
 
+
+            'tecnico
+            If IsDBNull((row("cod_tecnico"))) = False Then
+                txtcodigoTecnico.Text = CStr(row("cod_tecnico"))
+            End If
+
             'estado
             lblEstadoOrden.Text = CStr(row("estado"))
 
@@ -513,6 +519,25 @@
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
+        End If
+    End Sub
+
+    Private Sub txtcodigoTecnico_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoTecnico.TextChanged
+        If Trim(txtcodigoTecnico.Text) <> "" Then
+            Try
+
+                With objUser
+                    .Cod = txtcodigoTecnico.Text
+                End With
+                Dim dt As New DataTable
+                dt = objUser.BuscarPorCod_Usuario()
+                Dim row As DataRow = dt.Rows(0)
+                txtnombreTecnico.Text = CStr(row("usuario"))
+            Catch ex As Exception
+                txtnombreTecnico.Text = ""
+            End Try
+        Else
+            txtnombreTecnico.Text = ""
         End If
     End Sub
 End Class

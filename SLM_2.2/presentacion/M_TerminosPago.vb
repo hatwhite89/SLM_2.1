@@ -1,5 +1,6 @@
 ﻿Public Class M_TerminosPago
     Private Sub btntipoPago_Click(sender As Object, e As EventArgs) Handles btntipoPago.Click
+        M_TipoTermino.lblform.Text = "M_TerminosPago"
         M_TipoTermino.ShowDialog()
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
@@ -193,7 +194,7 @@
         btnguardar.Enabled = True
         btnnuevo.Enabled = True
     End Sub
-    Private Sub llenarTipoTermino()
+    Public Sub llenarTipoTermino()
         Try
             'llenar el combobox tipo termino
             Dim objTipoTerm As New ClsTipoTermino
@@ -230,7 +231,7 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
 
-            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtdescripcion.Text) <> "" And txtcodigoCtaVentas.BackColor = Color.White And txtcodigoCtaContado.BackColor = Color.White) Then
+            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtdescripcion.Text) <> "" And txtcodigoCtaVentas.Text <> "" Or txtcodigoCtaContado.Text <> "") Then
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
                 txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
                 Dim objTerm As New ClsTerminoPago
@@ -286,7 +287,7 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtdescripcion.Text) <> "" And txtcodigoCtaVentas.BackColor = Color.White And txtcodigoCtaContado.BackColor = Color.White) Then
+            If (Trim(txtcodigo.Text) <> "" And Trim(rtxtdescripcion.Text) <> "" And txtcodigoCtaVentas.Text <> "" Or txtcodigoCtaContado.Text <> "") Then
 
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
 

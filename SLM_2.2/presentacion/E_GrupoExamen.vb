@@ -110,7 +110,7 @@
                 End With
 
                 If objGrpE.RegistrarNuevaGrupoExamen() = 1 Then
-                    MsgBox("Registrado correctamente.")
+                    MsgBox("Registrado correctamente.", MsgBoxStyle.Information)
 
                     Dim dv As DataView = objGrpE.SeleccionarGrupoExamen.DefaultView
                     dgbtabla.DataSource = dv
@@ -148,7 +148,7 @@
                     .codigo_ = lblcode.Text
                 End With
                 If objGrpE.ModificarGrupoExamen() = 1 Then
-                    MsgBox("Modificado correctamente.")
+                    MsgBox("Modificado correctamente.", MsgBoxStyle.Information)
 
                     Dim dv As DataView = objGrpE.SeleccionarGrupoExamen.DefaultView
                     dgbtabla.DataSource = dv
