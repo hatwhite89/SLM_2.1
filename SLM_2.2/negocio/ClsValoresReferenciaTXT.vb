@@ -240,7 +240,50 @@ Public Class ClsValoresReferenciaTXT
 
     End Function
 
+    'Buscar valor de referencia
+    Public Function buscarValorReferenciaTxtParamtro(ByVal nombreParametro As String) As DataTable
 
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarValorReferenciaTxtNombreP"
+            cmd.Parameters.Add("@nombreParametro", SqlDbType.VarChar).Value = nombreParametro
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+    'Buscar valor de referencia
+    Public Function buscarValorReferenciaTXT2() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarValorReferenciaTxt2"
+            cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = Descripcion_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
 
 
 
