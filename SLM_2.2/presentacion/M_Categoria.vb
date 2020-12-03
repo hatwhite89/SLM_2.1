@@ -127,7 +127,7 @@
                 End With
 
                 If objCategoria.ModificarCategoria() = 1 Then
-                    MsgBox("Modificado correctamente.")
+                    MsgBox("Modificado correctamente.", MsgBoxStyle.Information)
 
                     actualizarCategoria()
 

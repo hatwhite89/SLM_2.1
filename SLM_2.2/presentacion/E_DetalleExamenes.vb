@@ -6,6 +6,13 @@
     'Arreglo de codigos a eliminar
     Dim codigoItemDetalle As ArrayList = New ArrayList()
 
+    Private Sub E_DetalleExamenes_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Limpiar()
+            Me.Close()
+        End If
+    End Sub
+
     Sub Limpiar()
 
         Try

@@ -3,6 +3,8 @@
         txtcodigo.Text() = ""
         txtcomentarioB.Text() = ""
         rtxtcomentario.Text() = ""
+        txtcodigoListaPrecios.ResetText()
+        txtcodigoCategoriaCliente.ResetText()
         lblcodeCategoria.ResetText()
         lblCodePriceList.ResetText()
 
@@ -157,11 +159,18 @@
                 E_ClasificacionItem.txtcomentarioTipo.Text = rtxtcomentario.Text
             End If
 
+            txtcomentarioB.ReadOnly = False
+            rtxtcomentario.ReadOnly = False
+            txtcodigo.ReadOnly = True
+            txtcodigoCategoriaCliente.ReadOnly = False
+            txtcodigoListaPrecios.ReadOnly = False
+            btnCategoriaCliente.Enabled = True
+            btnBuscarListaPrecios.Enabled = True
             btnmodificar.Enabled = True
             btnguardar.Enabled = False
 
-            rtxtcomentario.ReadOnly = False
-            txtcodigo.ReadOnly = True
+            'rtxtcomentario.ReadOnly = False
+            'txtcodigo.ReadOnly = True
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -267,7 +276,7 @@
         Catch ex As Exception
             'MsgBox("No existe el código del término de pago.", MsgBoxStyle.Critical, "Validación")
             txtNombreCategoria.ResetText()
-            txtcodigoCategoriaCliente.ResetText()
+            'txtcodigoCategoriaCliente.ResetText()
         End Try
     End Sub
     Private Sub txtcodigoListaPrecios_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoListaPrecios.TextChanged
@@ -289,7 +298,7 @@
                 lblCodePriceList.Text = ""
             End Try
         Else
-            txtcodigoListaPrecios.Text = ""
+            'txtcodigoListaPrecios.Text = ""
             txtdescripcionListaPrecios.Text = ""
             lblCodePriceList.Text = ""
             txtcodigoListaPrecios.BackColor = Color.White
@@ -306,7 +315,7 @@
             txtdescripcionListaPrecios.Text = CStr(row("descripcion"))
         Catch ex As Exception
             txtdescripcionListaPrecios.ResetText()
-            txtcodigoListaPrecios.ResetText()
+            'txtcodigoListaPrecios.ResetText()
         End Try
     End Sub
 

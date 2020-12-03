@@ -1049,7 +1049,7 @@ Partial Class M_Factura
         Me.Panel2.Controls.Add(Me.txtpagoPaciente)
         Me.Panel2.Controls.Add(Me.lblVuelto2)
         Me.Panel2.Location = New System.Drawing.Point(348, 17)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(939, 123)
         Me.Panel2.TabIndex = 120
@@ -1132,7 +1132,7 @@ Partial Class M_Factura
         Me.Panel3.Controls.Add(Me.lblTransferencia)
         Me.Panel3.Controls.Add(Me.cbxok)
         Me.Panel3.Location = New System.Drawing.Point(12, 17)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(328, 201)
         Me.Panel3.TabIndex = 121
@@ -1439,6 +1439,7 @@ Partial Class M_Factura
         Me.lblOKAY.Size = New System.Drawing.Size(51, 17)
         Me.lblOKAY.TabIndex = 114
         Me.lblOKAY.Text = "Label1"
+        Me.lblOKAY.Visible = False
         '
         'lblRTN
         '
@@ -1486,7 +1487,7 @@ Partial Class M_Factura
         Me.Panel1.Controls.Add(Me.btnImprimir)
         Me.Panel1.Controls.Add(Me.btnNuevaCotizacion)
         Me.Panel1.Location = New System.Drawing.Point(0, 1)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1335, 49)
         Me.Panel1.TabIndex = 113
