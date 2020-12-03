@@ -2,6 +2,7 @@
     'Objetos de Clase
     Dim FacCompra As New ClsFacturaCompra
     Dim DetalleFacCompra As New ClsDetalleFacturaCompra
+    Dim codigoDetalleFacturaCompra As New ArrayList
     Private Sub A_FacturaCompras_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
 
         'Presionar ESC para cerrar ventana
@@ -163,6 +164,7 @@
 
         'Capturar numero de fila seleccionada
         lblFila.Text = e.RowIndex
+
 
         'Listar objetos en Datagrid
         If e.ColumnIndex = 2 Then
@@ -399,8 +401,8 @@
                 data = cuenta.Comprobar
                 rows = data.Rows(0)
 
-                dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
-                dtDetalleFactura.Rows.Add(New String() {cuenta.Cuent_a, "", "", rows("nombre")})
+                'dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
+                dtDetalleFactura.Rows.Insert(e.RowIndex.ToString, New String() {"0", cuenta.Cuent_a, "", "", rows("nombre"), ""})
 
             Catch ex As Exception
 
@@ -445,7 +447,7 @@
                 rows = data.Rows(0)
 
                 dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
-                dtDetalleFactura.Rows.Add(New String() {cuenta.Cuent_a, "", "", rows("nombre")})
+                dtDetalleFactura.Rows.Insert(e.RowIndex.ToString, New String() {"0", cuenta.Cuent_a, "", "", rows("nombre")})
 
             Catch ex As Exception
 
@@ -456,10 +458,17 @@
     End Sub
 
     Private Sub dtDetalleFactura_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellClick
-        If e.ColumnIndex = 7 Then
+        If e.ColumnIndex = 6 Then
             Try
                 Dim n As String = MsgBox("¿Desea eliminar la cuenta de la factura?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then
+
+                    If dtDetalleFactura.Rows(e.RowIndex).Cells(0).Value() <> "0" Then
+
+                        codigoDetalleFacturaCompra.Add(Me.dtDetalleFactura.Rows(e.RowIndex).Cells(0).Value())
+
+                    End If
+
                     dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
 
                 End If
@@ -490,4 +499,5 @@
         Me.Close()
 
     End Sub
+
 End Class
