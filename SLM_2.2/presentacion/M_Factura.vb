@@ -966,6 +966,7 @@ Public Class M_Factura
         End If
     End Sub
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+
         Try
             If banderaTipo Then
 
