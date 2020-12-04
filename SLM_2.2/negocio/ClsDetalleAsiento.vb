@@ -5,6 +5,7 @@ Public Class ClsDetalleAsiento
 
     Dim codDetalle, codAsiento, cuenta As Integer
     Dim debe, haber As Double
+    Dim origen As String
 
 
     ':::::::::::::::::::::: Constructor ::::::::::::::::::::::
@@ -60,6 +61,16 @@ Public Class ClsDetalleAsiento
         End Get
         Set(value As Double)
             haber = value
+        End Set
+    End Property
+
+    'Origen
+    Public Property Origen_ As String
+        Get
+            Return origen
+        End Get
+        Set(value As String)
+            origen = value
         End Set
     End Property
 
@@ -155,6 +166,11 @@ Public Class ClsDetalleAsiento
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "cuenta"
         sqlpar.Value = Cuenta_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "origen"
+        sqlpar.Value = Origen_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

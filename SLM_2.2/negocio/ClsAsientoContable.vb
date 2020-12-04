@@ -3,7 +3,7 @@ Imports System.Data.SqlClient
 Public Class ClsAsientoContable
 
     Dim cod, codPeriodo, campoLlave As Integer
-    Dim descripcion As String
+    Dim descripcion, origen As String
     Dim fecha As Date
     Dim estado As Boolean
 
@@ -72,6 +72,16 @@ Public Class ClsAsientoContable
             estado = value
         End Set
     End Property
+
+    'Descripcion
+    Public Property Origen_ As String
+        Get
+            Return origen
+        End Get
+        Set(value As String)
+            origen = value
+        End Set
+    End Property
     ':::::::::::::::::::::: Funciones de Mantenimiento ::::::::::::::::::
 
     'Registrar Asiento
@@ -113,8 +123,13 @@ Public Class ClsAsientoContable
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "salida"
-        sqlpar.Value = ""
+        sqlpar.ParameterName = "origen"
+        sqlpar.Value = Origen_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "ID"
+        sqlpar.Value = 0
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar.Direction = ParameterDirection.Output
@@ -124,9 +139,7 @@ Public Class ClsAsientoContable
         sqlcom.ExecuteNonQuery()
 
         con.cerrarConexion()
-
-        par_sal = sqlcom.Parameters("salida").Value
-
+        par_sal = sqlcom.Parameters("ID").Value
         Return par_sal
 
     End Function
@@ -175,6 +188,11 @@ Public Class ClsAsientoContable
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "origen"
+        sqlpar.Value = Origen_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -192,6 +210,7 @@ Public Class ClsAsientoContable
         Return par_sal
 
     End Function
+
     'Capturar Ultimo Asiento
     Public Function capturarCodAsiento() As DataTable
 

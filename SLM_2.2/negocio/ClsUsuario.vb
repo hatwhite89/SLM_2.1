@@ -402,5 +402,17 @@ where u.cod_usuario = e.codigo And e.codigoDepto = d.codigo And u.cod_usuario ='
             Return dt
         End Using
     End Function
+    Public Function RecuperarUsuariosFirmaDigital(ByVal codigo As String) As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
 
+        Using da As New SqlDataAdapter("select e.nombreCompleto,u.cod_usuario, d.nombre,p.descripcion from Usuario u, Empleados e, Departamento d,PuestoTrabajo p
+where u.cod_usuario = e.codigo And e.codigoDepto = d.codigo and p.codigo = e.codigoPuestoTrab And u.usuario  like '%" + codigo + "%' ", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
 End Class

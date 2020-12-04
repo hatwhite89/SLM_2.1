@@ -218,7 +218,7 @@
                         codigoPago = .registrarNuevoPago()
 
                     End With
-                    MsgBox(codigoPago)
+                    'MsgBox(codigoPago)
 
                     'Ingresar detalle de pago
                     For a = 0 To dtDetallePagos.Rows.Count - 2
@@ -250,7 +250,10 @@
                         End With
                     Next
 
+                    MsgBox("Se registro un nuevo pago.")
+
                 End If 'ingresar nuevo pago
+
             End If 'validacion
 
         Catch ex As Exception

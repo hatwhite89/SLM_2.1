@@ -1,16 +1,15 @@
 ﻿Public Class A_Consolidacion
 
     Private Sub btnImportar_Click(sender As Object, e As EventArgs) Handles btnImportar.Click
-
+        ' Importar excel, se debe enviar hoja que se desea importar al datagrid
         importarExcel(dtExcel)
-
 
     End Sub
 
     Private Sub btnBanco_Click(sender As Object, e As EventArgs) Handles btnBanco.Click
 
         Try
-
+            'Captura banco para filtro de transferencias
             A_ListadoBancos.Show()
             A_ListadoBancos.lblFormBanco.Text = "3"
 
@@ -33,8 +32,9 @@
                 Dim a As String = Trim(cbxTransferencia.Text)
 
                 'Consulta de transferencias
-                If a = "Cheques" Then
+                If a = "Cheques" Then ' Si selecciona cheque
 
+                    dtTransferencia.DataSource = Nothing
                     Dim cheque As New ClsCheques
 
                     With cheque
@@ -56,14 +56,14 @@
 
                     End With
 
-                ElseIf a = "Depositos" Then
+                ElseIf a = "Depositos Bancarios" Then ' Si selecciona Depositos
 
+                    dtTransferencia.DataSource = Nothing
                     Dim depo As New ClsDeposito
 
                     With depo
 
-                        '.Banc_o = txtCodBanco.Text
-                        'dt = .ConciliacionDeposito
+                        dt = depo.ConsolidarDepositos(txtBanco.Text, dtpDesde.Value, dtpHasta.Value)
 
                         If dt.Rows.Count < 0 Then
                             MsgBox("No existen transferencias del banco seleccionado.")
@@ -71,14 +71,14 @@
                             dtTransferencia.DataSource = dt
 
                             'ocultar columnas
-                            dtTransferencia.Columns("banco").Visible = False
-                            dtTransferencia.Columns("contado").Visible = False
-                            dtTransferencia.Columns("TipoContado").Visible = False
+                            dtTransferencia.Columns("codDeposito").Visible = False
+                            dtTransferencia.Columns("codFPBanco").Visible = False
+                            dtTransferencia.Columns("codFPContado").Visible = False
                             dtTransferencia.Columns("moneda").Visible = False
                             dtTransferencia.Columns("monBase").Visible = False
                             dtTransferencia.Columns("tipoDeposito").Visible = False
-                            dtTransferencia.Columns("codCajero").Visible = False
-                            dtTransferencia.Columns("codFormaPago").Visible = False
+                            'dtTransferencia.Columns("codCajero").Visible = False
+                            'dtTransferencia.Columns("codFormaPago").Visible = False
 
                         End If
 
@@ -102,7 +102,7 @@
             End If 'final consulta de transferencia
 
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
     End Sub
@@ -119,6 +119,7 @@
         txtBanco.Text = ""
         cbxTransferencia.Text = ""
         dtTransferencia.DataSource = Nothing
+        dtExcel.DataSource = Nothing
 
     End Sub
 
@@ -145,7 +146,7 @@
 
             Dim check2 As String
 
-            For j = 0 To dtExcel.Rows.Count - 1 'for excel
+            For j = 0 To dtExcel.Rows.Count 'for excel
 
                 check2 = dtExcel.Rows(j).Cells(0).Value
 
@@ -158,14 +159,11 @@
             Next
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+
         End Try
 
     End Sub
 
-    Private Sub A_Consolidacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
