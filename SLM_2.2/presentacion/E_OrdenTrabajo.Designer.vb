@@ -207,7 +207,7 @@ Partial Class E_OrdenTrabajo
         'lblCodigo
         '
         Me.lblCodigo.AutoSize = True
-        Me.lblCodigo.Location = New System.Drawing.Point(33, 25)
+        Me.lblCodigo.Location = New System.Drawing.Point(31, 6)
         Me.lblCodigo.Name = "lblCodigo"
         Me.lblCodigo.Size = New System.Drawing.Size(52, 17)
         Me.lblCodigo.TabIndex = 7
@@ -216,7 +216,7 @@ Partial Class E_OrdenTrabajo
         'lblEdad
         '
         Me.lblEdad.AutoSize = True
-        Me.lblEdad.Location = New System.Drawing.Point(41, 58)
+        Me.lblEdad.Location = New System.Drawing.Point(40, 40)
         Me.lblEdad.Name = "lblEdad"
         Me.lblEdad.Size = New System.Drawing.Size(41, 17)
         Me.lblEdad.TabIndex = 8
@@ -261,7 +261,7 @@ Partial Class E_OrdenTrabajo
         'lblGenero
         '
         Me.lblGenero.AutoSize = True
-        Me.lblGenero.Location = New System.Drawing.Point(29, 87)
+        Me.lblGenero.Location = New System.Drawing.Point(26, 69)
         Me.lblGenero.Name = "lblGenero"
         Me.lblGenero.Size = New System.Drawing.Size(56, 17)
         Me.lblGenero.TabIndex = 13
@@ -270,7 +270,7 @@ Partial Class E_OrdenTrabajo
         'lblMedico
         '
         Me.lblMedico.AutoSize = True
-        Me.lblMedico.Location = New System.Drawing.Point(32, 117)
+        Me.lblMedico.Location = New System.Drawing.Point(28, 99)
         Me.lblMedico.Name = "lblMedico"
         Me.lblMedico.Size = New System.Drawing.Size(53, 17)
         Me.lblMedico.TabIndex = 14
@@ -485,7 +485,7 @@ Partial Class E_OrdenTrabajo
         '
         'txtnombreSede
         '
-        Me.txtnombreSede.Location = New System.Drawing.Point(201, 212)
+        Me.txtnombreSede.Location = New System.Drawing.Point(201, 202)
         Me.txtnombreSede.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombreSede.Name = "txtnombreSede"
         Me.txtnombreSede.ReadOnly = True
@@ -530,7 +530,7 @@ Partial Class E_OrdenTrabajo
         '
         'txtcodigoObjeto
         '
-        Me.txtcodigoObjeto.Location = New System.Drawing.Point(199, 377)
+        Me.txtcodigoObjeto.Location = New System.Drawing.Point(199, 381)
         Me.txtcodigoObjeto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcodigoObjeto.Name = "txtcodigoObjeto"
         Me.txtcodigoObjeto.Size = New System.Drawing.Size(167, 22)
@@ -539,7 +539,7 @@ Partial Class E_OrdenTrabajo
         '
         'txtfacturaTomaMuestra
         '
-        Me.txtfacturaTomaMuestra.Location = New System.Drawing.Point(199, 304)
+        Me.txtfacturaTomaMuestra.Location = New System.Drawing.Point(199, 307)
         Me.txtfacturaTomaMuestra.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtfacturaTomaMuestra.Name = "txtfacturaTomaMuestra"
         Me.txtfacturaTomaMuestra.Size = New System.Drawing.Size(259, 22)
@@ -548,7 +548,7 @@ Partial Class E_OrdenTrabajo
         '
         'txttecnicoLab
         '
-        Me.txttecnicoLab.Location = New System.Drawing.Point(199, 341)
+        Me.txttecnicoLab.Location = New System.Drawing.Point(199, 345)
         Me.txttecnicoLab.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txttecnicoLab.Name = "txttecnicoLab"
         Me.txttecnicoLab.Size = New System.Drawing.Size(260, 22)
@@ -691,7 +691,7 @@ Partial Class E_OrdenTrabajo
         'lblTelefono
         '
         Me.lblTelefono.AutoSize = True
-        Me.lblTelefono.Location = New System.Drawing.Point(227, 54)
+        Me.lblTelefono.Location = New System.Drawing.Point(222, 36)
         Me.lblTelefono.Name = "lblTelefono"
         Me.lblTelefono.Size = New System.Drawing.Size(64, 17)
         Me.lblTelefono.TabIndex = 82
@@ -700,7 +700,7 @@ Partial Class E_OrdenTrabajo
         'lblEmail
         '
         Me.lblEmail.AutoSize = True
-        Me.lblEmail.Location = New System.Drawing.Point(249, 87)
+        Me.lblEmail.Location = New System.Drawing.Point(241, 69)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(42, 17)
         Me.lblEmail.TabIndex = 83
@@ -709,7 +709,7 @@ Partial Class E_OrdenTrabajo
         'btnverGrafica
         '
         Me.btnverGrafica.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnverGrafica.Location = New System.Drawing.Point(221, 276)
+        Me.btnverGrafica.Location = New System.Drawing.Point(230, 158)
         Me.btnverGrafica.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnverGrafica.Name = "btnverGrafica"
         Me.btnverGrafica.Size = New System.Drawing.Size(215, 34)
@@ -804,7 +804,7 @@ Partial Class E_OrdenTrabajo
         'cbxWs
         '
         Me.cbxWs.AutoSize = True
-        Me.cbxWs.Location = New System.Drawing.Point(203, 425)
+        Me.cbxWs.Location = New System.Drawing.Point(256, 418)
         Me.cbxWs.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbxWs.Name = "cbxWs"
         Me.cbxWs.Size = New System.Drawing.Size(107, 21)
@@ -815,7 +815,7 @@ Partial Class E_OrdenTrabajo
         'cbxEmail
         '
         Me.cbxEmail.AutoSize = True
-        Me.cbxEmail.Location = New System.Drawing.Point(23, 425)
+        Me.cbxEmail.Location = New System.Drawing.Point(76, 418)
         Me.cbxEmail.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbxEmail.Name = "cbxEmail"
         Me.cbxEmail.Size = New System.Drawing.Size(119, 21)
@@ -1160,9 +1160,9 @@ Partial Class E_OrdenTrabajo
         Me.GroupBox1.Controls.Add(Me.Panel3)
         Me.GroupBox1.Controls.Add(Me.Panel4)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 2)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(1376, 559)
         Me.GroupBox1.TabIndex = 127
         Me.GroupBox1.TabStop = False
@@ -1187,7 +1187,7 @@ Partial Class E_OrdenTrabajo
         Me.Panel1.Controls.Add(Me.txtcodigoArea)
         Me.Panel1.Controls.Add(Me.txtcodigoSubArea)
         Me.Panel1.Location = New System.Drawing.Point(8, 23)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1360, 73)
         Me.Panel1.TabIndex = 127
@@ -1212,7 +1212,7 @@ Partial Class E_OrdenTrabajo
         Me.Panel2.Controls.Add(Me.txtcodigoObjeto)
         Me.Panel2.Controls.Add(Me.txtnombreSede)
         Me.Panel2.Location = New System.Drawing.Point(8, 112)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(485, 452)
         Me.Panel2.TabIndex = 128
@@ -1225,7 +1225,7 @@ Partial Class E_OrdenTrabajo
         Me.Panel3.Controls.Add(Me.btnActualizar)
         Me.Panel3.Controls.Add(Me.lblcodigoCajero)
         Me.Panel3.Location = New System.Drawing.Point(501, 100)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(869, 294)
         Me.Panel3.TabIndex = 129
@@ -1244,7 +1244,7 @@ Partial Class E_OrdenTrabajo
         Me.Panel4.Controls.Add(Me.lblfechaEntrega)
         Me.Panel4.Controls.Add(Me.dtpFechaEntrega)
         Me.Panel4.Location = New System.Drawing.Point(499, 401)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(869, 150)
         Me.Panel4.TabIndex = 138
@@ -1339,7 +1339,7 @@ Partial Class E_OrdenTrabajo
         Me.Panel6.Controls.Add(Me.Label1)
         Me.Panel6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel6.Location = New System.Drawing.Point(16, 561)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(1376, 229)
         Me.Panel6.TabIndex = 129

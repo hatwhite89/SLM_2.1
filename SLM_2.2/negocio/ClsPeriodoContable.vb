@@ -208,5 +208,19 @@ Public Class ClsPeriodoContable
         End Using
     End Function
 
+    'Capturar periodo contable activo
+    Public Function periodoContableActivo() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("A_slmPeriodoContableActivo", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
 
 End Class

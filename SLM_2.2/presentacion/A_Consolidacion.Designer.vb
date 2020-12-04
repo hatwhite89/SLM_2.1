@@ -121,7 +121,7 @@ Partial Class A_Consolidacion
         'cbxTransferencia
         '
         Me.cbxTransferencia.FormattingEnabled = True
-        Me.cbxTransferencia.Items.AddRange(New Object() {"Depositos", "Cheques"})
+        Me.cbxTransferencia.Items.AddRange(New Object() {"Depositos Bancarios", "Cheques"})
         Me.cbxTransferencia.Location = New System.Drawing.Point(107, 19)
         Me.cbxTransferencia.Name = "cbxTransferencia"
         Me.cbxTransferencia.Size = New System.Drawing.Size(176, 21)
@@ -137,6 +137,7 @@ Partial Class A_Consolidacion
         '
         'btnLimpiar
         '
+        Me.btnLimpiar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnLimpiar.BackColor = System.Drawing.Color.Salmon
         Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLimpiar.Location = New System.Drawing.Point(799, 9)
@@ -148,6 +149,7 @@ Partial Class A_Consolidacion
         '
         'btnConsultar
         '
+        Me.btnConsultar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnConsultar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnConsultar.Location = New System.Drawing.Point(718, 9)
@@ -290,6 +292,8 @@ Partial Class A_Consolidacion
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.dtpHasta)
@@ -345,6 +349,7 @@ Partial Class A_Consolidacion
         '
         'PictureBox1
         '
+        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(877, 17)
         Me.PictureBox1.Name = "PictureBox1"

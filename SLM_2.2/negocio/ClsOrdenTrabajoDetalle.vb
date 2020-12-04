@@ -155,6 +155,59 @@ Public Class ClsOrdenTrabajoDetalle
         Return par_sal
 
     End Function
+    Public Function ModificarOrdenTrabajoDetalleTecnico() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slmModificarOrdenTrabajoDetalleTecnico"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_orden_trabajo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = cod_orden_trabajo_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nombreDetalleItem" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = nombreItemDetalle_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "resultado" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = resultado_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "estado" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = estado_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "usuario" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Integer.Parse(Form1.lblUserCod.Text)
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
     Public Function ModificarOrdenTrabajoDetalle2() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter

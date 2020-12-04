@@ -22,7 +22,7 @@
 
         ElseIf lblFormBanco.Text = "3" Then
             A_Consolidacion.txtCodBanco.Text = dtBancos.Rows(e.RowIndex).Cells(0).Value
-            A_Consolidacion.txtBanco.Text = dtBancos.Rows(e.RowIndex).Cells(1).Value
+            A_Consolidacion.txtBanco.Text = dtBancos.Rows(e.RowIndex).Cells(2).Value
 
         Else
 
