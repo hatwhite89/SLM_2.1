@@ -499,7 +499,7 @@
                 Dim data As DataTable
                 Dim rows As DataRow
 
-                cuenta.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(e.RowIndex).Cells(0).Value)
+                cuenta.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(e.RowIndex).Cells(1).Value)
 
                 data = cuenta.Comprobar
                 rows = data.Rows(0)
