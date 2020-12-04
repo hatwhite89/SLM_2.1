@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80A97C69-33C1-4D76-A4FF-61E3B54BEE03}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SLM_2._2.M_InicioSesion</StartupObject>
+    <StartupObject>SLM_2._2.E_frmFirmaDigital</StartupObject>
     <RootNamespace>SLM_2._2</RootNamespace>
     <AssemblyName>0</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -227,6 +227,7 @@
     <Compile Include="negocio\ClsEvaluacionProveedor.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
     <Compile Include="negocio\ClsFeriados.vb" />
+    <Compile Include="negocio\ClsFirmaDigital.vb" />
     <Compile Include="negocio\ClsFormularios.vb" />
     <Compile Include="negocio\ClsGrupoExamen.vb" />
     <Compile Include="negocio\ClsHorarios.vb" />
@@ -718,6 +719,12 @@
       <DependentUpon>E_frmEntrada.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\E_frmEntrada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmFirmaDigital.Designer.vb">
+      <DependentUpon>E_frmFirmaDigital.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmFirmaDigital.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_frmInventario.Designer.vb">
@@ -1758,6 +1765,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmEntrada.resx">
       <DependentUpon>E_frmEntrada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmFirmaDigital.resx">
+      <DependentUpon>E_frmFirmaDigital.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmInventario.resx">
       <DependentUpon>E_frmInventario.vb</DependentUpon>
