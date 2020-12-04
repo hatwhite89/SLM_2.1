@@ -482,7 +482,7 @@ Partial Class M_Factura
         'txtcodigoTerminal
         '
         Me.txtcodigoTerminal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcodigoTerminal.Location = New System.Drawing.Point(1055, 181)
+        Me.txtcodigoTerminal.Location = New System.Drawing.Point(1053, 187)
         Me.txtcodigoTerminal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcodigoTerminal.Name = "txtcodigoTerminal"
         Me.txtcodigoTerminal.ReadOnly = True
