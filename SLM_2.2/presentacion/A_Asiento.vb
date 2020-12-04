@@ -176,68 +176,84 @@
 
                 Dim asiento As New ClsAsientoContable
                 Dim dasiento As New ClsDetalleAsiento
+                Dim periodoContable As New ClsPeriodoContable
                 Dim dt As New DataTable
                 Dim row As DataRow
+                Dim codigoAsient As String
+                Dim codPeriodo As String
 
+
+                MsgBox("1")
+                Dim dtp As New DataTable
+                Dim rowp As DataRow
+                dtp = periodoContable.periodoContableActivo()
+                rowp = dtp.Rows(0)
+
+                MsgBox("2")
+                codPeriodo = rowp("codPeriodo").ToString
+
+
+                MsgBox("3")
                 With asiento
-
-                    .Cod_Periodo = 1
+                    MsgBox("4")
+                    .Cod_Periodo = Convert.ToInt32(codPeriodo)
                     .Descrip = txtTexto.Text
                     .Fecha_ = dtpFecha.Value
                     .Campo_Llave = 0
                     .Estado_ = chkAnular.Checked
+                    .Origen_ = "manual"
 
-                    If .registrarAsiento() = 1 Then
-                        dt = .capturarCodAsiento()
-                        row = dt.Rows(0)
+                    MsgBox("5")
 
-                        'mostrar informacion de asiento guardado reciente
-                        lblCodAsiento.Text = row("cod_asiento")
-                        txtNro.Text = row("cod_asiento")
-                        txtTexto.Text = row("descripcion")
-                        dtpFecha.Value = row("fecha")
-                        chkAnular.Checked = row("estado")
+                    codigoAsient = .registrarAsiento()
+                    lblCodAsiento.Text = codigoAsient
 
-                        'registro de detalle de asiento 
+                    'If codigoAsiento > 0 Then
 
-                        With dasiento
+                    'MsgBox(codigoAsiento)
+                    'registro de detalle de asiento 
 
-                            For i = 0 To dtDetalleAsiento.Rows.Count - 1
+                    'With dasiento
 
-                                '.Cod_Detalle = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(0).Value)
-                                .Cod_Asiento = Convert.ToInt32(lblCodAsiento.Text)
-                                .Cuenta_ = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(1).Value)
-                                .Debe_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(3).Value)
-                                .Haber_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(4).Value)
-                                .registrarDetalleAsiento()
+                    '    For i = 0 To dtDetalleAsiento.Rows.Count - 1
 
-                            Next
+                    '        '.Cod_Detalle = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(0).Value)
+                    '        .Cod_Asiento = Convert.ToInt32(lblCodAsiento.Text)
+                    '        .Cuenta_ = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(1).Value)
+                    '        .Debe_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(3).Value)
+                    '        .Haber_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(4).Value)
+                    '        .registrarDetalleAsiento()
 
-                        End With
+                    '    Next
 
-                    End If
+                    'End With
+
+                    'End If
 
                     Try
-                        .Cod_Periodo = 1
+
+                        .Cod_Periodo = Convert.ToInt32(codPeriodo)
                         .Descrip = txtTexto.Text
                         .Fecha_ = dtpFecha.Value
                         .Campo_Llave = Convert.ToInt32(lblCodAsiento.Text)
                         .Cod_ = Convert.ToInt32(lblCodAsiento.Text)
                         .Estado_ = chkAnular.Checked
+                        .Origen_ = "manual"
 
                         .ActualizarAsiento()
+
+
                     Catch ex As Exception
-                        MsgBox(ex.Message)
+                        MsgBox("modificacion " + ex.Message)
                     End Try
 
-                    MsgBox("Se registro exitosamente.")
+                    MsgBox("Se registro el asiento contable manual.")
                     Limpiar()
-
                 End With
 
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox("Aqui si es :" + ex.Message)
         End Try
 
     End Sub

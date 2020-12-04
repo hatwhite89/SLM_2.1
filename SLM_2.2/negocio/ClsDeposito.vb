@@ -44,8 +44,6 @@ Public Class ClsDeposito
         End Set
     End Property
 
-
-
     'Codigo de Cajero
     Public Property cod_Cajero As String
         Get
@@ -430,6 +428,31 @@ Public Class ClsDeposito
             End Using
         End Using
 
+    End Function
+
+    'Consolidacion de depositos
+    Public Function ConsolidarDepositos(banco As String, fechaDesde As Date, fechaHasta As Date) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmConsolidacionDepositos"
+            cmd.Parameters.Add("@banco", SqlDbType.VarChar).Value = banco
+            cmd.Parameters.Add("@fechaDesde", SqlDbType.Date).Value = fechaDesde
+            cmd.Parameters.Add("@fechaHasta", SqlDbType.Date).Value = fechaHasta
+
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
     End Function
 
 End Class
