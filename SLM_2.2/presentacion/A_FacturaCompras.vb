@@ -14,98 +14,172 @@
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        If txtCodProveedor.Text <> "" And txtTerminoPago.Text <> "" And txtTotal.Text <> "" And txtTotal.Text = lblTotal.Text Then
 
-            Try
-                'Registrar nueva factura de compra
-                With FacCompra
+        Dim n As String = MsgBox("¿Desea guardar la Factura de Compra?", MsgBoxStyle.YesNo, "Validación")
+        If n = vbYes Then
 
-                    'variables
-                    .Cod_Proveedor = txtCodProveedor.Text
-                    .Nombre_Proveedor = txtNombreProveedor.Text
-                    .Fecha_Factura = dtpFechaFactura.Value
-                    .Fecha_Transaccion = dtpTransaccion.Value
-                    .Fecha_Vencimiento = dtpVencimiento.Value
-                    .Moned_a = txtMoneda.Text
-                    .Cod_TerminoPago = Convert.ToInt32(lblCodTerminoPago.Text)
-                    .Tota_l = txtTotal.Text
-                    .Descripcion_ = txtDescripcion.Text
-                    .Estado_ = "Ingresada"
-                    .Nro_Factura = txtNroFactura.Text
-                    .Pendiente_ = txtTotal.Text
+            If txtCodProveedor.Text <> "" And txtTerminoPago.Text <> "" And txtTotal.Text <> "" And txtTotal.Text = lblTotal.Text Then
 
-                End With
+                Try
+                    'Registrar nueva factura de compra
+                    With FacCompra
 
-                'Registro de detalle de factura
-                If dtDetalleFactura.Rows.Count > 1 Then 'if detalle de factura
+                        'variables
+                        .Cod_Proveedor = txtCodProveedor.Text
+                        .Nombre_Proveedor = txtNombreProveedor.Text
+                        .Fecha_Factura = dtpFechaFactura.Value
+                        .Fecha_Transaccion = dtpTransaccion.Value
+                        .Fecha_Vencimiento = dtpVencimiento.Value
+                        .Moned_a = txtMoneda.Text
+                        .Cod_TerminoPago = Convert.ToInt32(lblCodTerminoPago.Text)
+                        .Tota_l = txtTotal.Text
+                        .Descripcion_ = txtDescripcion.Text
+                        .Estado_ = "Ingresada"
+                        .Nro_Factura = txtNroFactura.Text
+                        .Pendiente_ = txtTotal.Text
 
-                    Dim fila As Integer
-                    'Registro de factura en BD
-                    FacCompra.registrarNuevaFacturaCompra()
-                    Dim dt As New DataTable
-                    'Capturar código de la factura recien guardada
-                    dt = FacCompra.capturarCodFacturaCompra
-                    Dim row As DataRow = dt.Rows(0)
-                    'Mostrar codigo en textbox 
-                    txtCodFactura.Text = CStr(row("codFactura"))
+                    End With
 
-                    For fila = 0 To dtDetalleFactura.Rows.Count - 2
-                        MsgBox(fila)
-                        If (A_Promociones.validarDetalle(dtDetalleFactura.Rows(fila).Cells(1).Value)) = 0 Then
+                    'Registro de detalle de factura
+                    If dtDetalleFactura.Rows.Count > 1 Then 'if detalle de factura
 
-                            'Insertar detalle de compra
-                            DetalleFacCompra.Cod_Factura = Convert.ToInt32(txtCodFactura.Text)
-                            DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(1).Value())
-                            DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(2).Value
-                            DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(3).Value
-                            DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(4).Value()
-                            DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(5).Value()))
-                            DetalleFacCompra.Tipo_Stock = dtDetalleFactura.Rows(fila).Cells(6).Value()
+                        Dim fila As Integer
+                        'Registro de factura en BD
+                        FacCompra.registrarNuevaFacturaCompra()
+                        Dim dt As New DataTable
+                        'Capturar código de la factura recien guardada
+                        dt = FacCompra.capturarCodFacturaCompra
+                        Dim row As DataRow = dt.Rows(0)
+                        'Mostrar codigo en textbox 
+                        txtCodFactura.Text = CStr(row("codFactura"))
 
-                            'Funcion de registro de detalle
-                            DetalleFacCompra.registrarDetalleFactura()
+                        For fila = 0 To dtDetalleFactura.Rows.Count - 2
+                            MsgBox(fila)
+                            If (A_Promociones.validarDetalle(dtDetalleFactura.Rows(fila).Cells(1).Value)) = 0 Then
 
-                        Else
-                            MsgBox("Error. El código esta duplicado.")
-                        End If
+                                'Insertar detalle de compra
+                                DetalleFacCompra.Cod_Factura = Convert.ToInt32(txtCodFactura.Text)
+                                DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(1).Value())
+                                DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(2).Value
+                                DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(3).Value
+                                DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(4).Value()
+                                DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(5).Value()))
+                                DetalleFacCompra.Tipo_Stock = dtDetalleFactura.Rows(fila).Cells(6).Value()
+
+                                'Funcion de registro de detalle
+                                DetalleFacCompra.registrarDetalleFactura()
+
+                            Else
+                                MsgBox("Error. El código esta duplicado.")
+                            End If
+
+                        Next
+
+
+                    Else ' else detalle de factura
+                        MsgBox("Falta detalle de Factura. No se guardo la factura")
+
+                    End If ' if detalle de factura
+
+
+
+                    ':::::::::::::::ASIENTO CONTABLE DE FACTURA DE COMPRA
+
+                    Dim asiento As New ClsAsientoContable
+                    Dim detalleasiento As New ClsDetalleAsiento
+                    Dim periodocontable As New ClsPeriodoContable
+                    Dim proveedor As New ClsProveedor
+                    Dim codigoAsiento As String
+
+                    'Capturando periodo contable
+                    Dim codPeriodo As String
+
+                    Dim dtp As New DataTable
+                    Dim rowp As DataRow
+                    dtp = periodocontable.periodoContableActivo()
+                    rowp = dtp.Rows(0)
+                    codPeriodo = rowp("codPeriodo").ToString
+
+                    'capturando cuenta de proveedor
+                    Dim dtpro As New DataTable
+                    Dim rowpro As DataRow
+
+                    proveedor.Cod_Proveedor = Integer.Parse(txtCodProveedor.Text)
+                    dtpro = proveedor.cuentaProveedor()
+                    rowpro = dtpro.rows(0)
+
+                    'Insertando Asiento
+
+                    With asiento
+
+                        .Cod_Periodo = Convert.ToInt32(codPeriodo)
+                        .Descrip = txtDescripcion.Text
+                        .Fecha_ = dtpFechaFactura.Value
+                        .Campo_Llave = 0
+                        .Estado_ = 0
+                        .Origen_ = "FacturaCompra"
+                        codigoAsiento = .registrarAsiento
+                    End With
+
+                    With detalleasiento
+                        .Cod_Asiento = Convert.ToInt32(codigoAsiento)
+                        .Cuenta_ = rowpro("cuenta")
+                        .Debe_ = 0
+                        .Haber_ = Convert.ToDouble(txtTotal.Text)
+                        .Origen_ = "FacturaCompra"
+                        .registrarDetalleAsiento()
+
+                    End With
+
+
+                    For i = 0 To dtDetalleFactura.Rows.Count - 1
+                        With detalleasiento
+                            .Cod_Asiento = Convert.ToInt32(codigoAsiento)
+                            .Cuenta_ = dtDetalleFactura.Rows(i).Cells(1).Value
+                            .Debe_ = Convert.ToDouble(dtDetalleFactura.Rows(i).Cells(5).Value)
+                            .Haber_ = 0
+                            .Origen_ = "FacturaCompra"
+                            .registrarDetalleAsiento()
+
+                        End With
 
                     Next
 
+                    ':::::::::::::::::FIN ASIENTO CONTABLE
 
-                Else ' else detalle de factura
-                    MsgBox("Falta detalle de Factura. No se guardo la factura")
 
-                End If ' if detalle de factura
-                MessageBox.Show("La factura se registro exitosamente.")
-            Catch ex As Exception
-                MessageBox.Show("Error al guardar la factura de compra. Detalles: " + ex.Message)
-            End Try
 
-            Limpiar()
+                    MessageBox.Show("La factura se registro exitosamente.")
+                Catch ex As Exception
+                    MessageBox.Show("Error al guardar la factura de compra. Detalles: " + ex.Message)
+                End Try
 
-            Me.Close()
-            A_ListadoFacturaCompra.Show()
+                Limpiar()
 
-        Else 'if campos vacios
+                Me.Close()
+                A_ListadoFacturaCompra.Show()
 
-            MsgBox("Existen campos vacíos o hubo un error.")
+            Else 'if campos vacios
 
-            If txtCodProveedor.Text = "" Then
-                txtCodProveedor.BackColor = Color.Red
-                txtNombreProveedor.BackColor = Color.Red
-            ElseIf txtTerminoPago.Text = "" Then
-                txtTerminoPago.BackColor = Color.Red
-            ElseIf txtTotal.Text = "" Then
-                txtTotal.BackColor = Color.Red
-            ElseIf txtMoneda.Text = "" Then
-                txtMoneda.BackColor = Color.Red
-            ElseIf txtTotal.Text <> lblTotal.Text Then
-                MsgBox("Los totales no coinciden.Revise el detalle de Factura de Compra.")
-                txtTotal.BackColor = Color.Yellow
-                lblTotal.BackColor = Color.Yellow
-            End If
+                MsgBox("Existen campos vacíos o hubo un error.")
 
-        End If 'if campos vacios
+                If txtCodProveedor.Text = "" Then
+                    txtCodProveedor.BackColor = Color.Red
+                    txtNombreProveedor.BackColor = Color.Red
+                ElseIf txtTerminoPago.Text = "" Then
+                    txtTerminoPago.BackColor = Color.Red
+                ElseIf txtTotal.Text = "" Then
+                    txtTotal.BackColor = Color.Red
+                ElseIf txtMoneda.Text = "" Then
+                    txtMoneda.BackColor = Color.Red
+                ElseIf txtTotal.Text <> lblTotal.Text Then
+                    MsgBox("Los totales no coinciden.Revise el detalle de Factura de Compra.")
+                    txtTotal.BackColor = Color.Yellow
+                    lblTotal.BackColor = Color.Yellow
+                End If
+
+            End If 'if campos vacios
+        End If 'desea guardar
 
     End Sub
 
@@ -194,124 +268,94 @@
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
 
         Try
-            'Registrar nueva factura de compra
-            With FacCompra
-                MsgBox("Variables")
-                'variables
-                .Cod_Factura = txtCodFactura.Text
-                .Cod_Proveedor = txtCodProveedor.Text
-                .Nombre_Proveedor = txtNombreProveedor.Text
-                .Fecha_Factura = dtpFechaFactura.Value
-                .Fecha_Transaccion = dtpTransaccion.Value
-                .Fecha_Vencimiento = dtpVencimiento.Value
-                .Moned_a = txtMoneda.Text
-                .Cod_TerminoPago = Convert.ToInt32(lblCodTerminoPago.Text)
-                .Tota_l = txtTotal.Text
-                .Descripcion_ = txtDescripcion.Text
-                .Estado_ = lblEstado.Text
-                .Pendiente_ = lblSaldoPend.Text
-                .Nro_Factura = txtNroFactura.Text
-                'registro de  factura compra
-                '.modificarFacturaCompra()
-                MsgBox("fin variables")
+
+            Dim n As String = MsgBox("¿Desea modificar la Factura de Compra?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
 
 
-                'Recorrer filas para ingreso de detalle de factura
-                'For fila = 0 To dtDetalleFactura.Rows.Count - 2
+                'Registrar nueva factura de compra
+                With FacCompra
+                    MsgBox("Variables")
+                    'variables
+                    .Cod_Factura = txtCodFactura.Text
+                    .Cod_Proveedor = txtCodProveedor.Text
+                    .Nombre_Proveedor = txtNombreProveedor.Text
+                    .Fecha_Factura = dtpFechaFactura.Value
+                    .Fecha_Transaccion = dtpTransaccion.Value
+                    .Fecha_Vencimiento = dtpVencimiento.Value
+                    .Moned_a = txtMoneda.Text
+                    .Cod_TerminoPago = Convert.ToInt32(lblCodTerminoPago.Text)
+                    .Tota_l = txtTotal.Text
+                    .Descripcion_ = txtDescripcion.Text
+                    .Estado_ = lblEstado.Text
+                    .Pendiente_ = lblSaldoPend.Text
+                    .Nro_Factura = txtNroFactura.Text
 
-                '    'Insertar detalle de compra
-                '    DetalleFacCompra.Cod_Factura = Convert.ToInt32(txtCodFactura.Text)
-                '    DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(0).Value())
-                '    DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(3).Value()
-                '    DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(4).Value()))
-                '    Dim stock As String = dtDetalleFactura.Rows(fila).Cells(4).Value()
-                '    DetalleFacCompra.Tipo_Stock = stock
-                '    DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(1).Value()
-                '    DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(2).Value()
+                    If .modificarFacturaCompra() = 1 Then
 
-                '    'Funcion de registro de detalle
-                '    DetalleFacCompra.registrarDetalleFactura()
+                        'registro o actualizacion detalle de factura
 
-                'Next
+                        For fila As Integer = 0 To dtDetalleFactura.Rows.Count - 2
+                            If dtDetalleFactura.Rows(fila).Cells(0).Value() = 0 Then
+                                'agrega
 
+                                With DetalleFacCompra
 
-                'CORRECCION DE MODIFICACION
-                MsgBox("ifModificar")
-                If .modificarFacturaCompra() = 1 Then
+                                    DetalleFacCompra.Cod_Factura = Convert.ToInt32(txtCodFactura.Text)
+                                    DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(1).Value())
+                                    DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(4).Value()
+                                    DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(5).Value()))
+                                    Dim stock As String = dtDetalleFactura.Rows(fila).Cells(4).Value()
+                                    DetalleFacCompra.Tipo_Stock = stock
+                                    DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(2).Value()
+                                    DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(3).Value()
+                                End With
 
-                    ''Registro de detalle de factura
-                    'Dim dt As New DataTable
-                    ''Capturar código de la factura creada
-                    'dt = FacCompra.capturarCodFacturaCompra
-                    'Dim row As DataRow = dt.Rows(0)
-                    ''Mostrar codigo en textbox 
-                    'txtCodFactura.Text = CStr(row("codFactura"))
-                    'Dim fila As Integer
+                                If DetalleFacCompra.registrarDetalleFactura() = 0 Then
+                                    MsgBox("Error al querer insertar el detalle de factura.", MsgBoxStyle.Critical)
+                                End If
+                                MsgBox("fin agrega")
+                            Else
+                                'actualiza los detalles de factura
 
-                    'SI LA FACTURA YA TIENE EL (OK) Y NO ESTA ANULADA LA FACTURA (ANULAR)
-                    MsgBox("for modificar detalle")
-                    For fila As Integer = 0 To dtDetalleFactura.Rows.Count - 2
-                        If dtDetalleFactura.Rows(fila).Cells(0).Value() = 0 Then
-                            'agrega
-                            MsgBox("agrega")
-                            With DetalleFacCompra
+                                With DetalleFacCompra
 
-                                DetalleFacCompra.Cod_Factura = Convert.ToInt32(txtCodFactura.Text)
-                                DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(1).Value())
-                                DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(4).Value()
-                                DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(5).Value()))
-                                Dim stock As String = dtDetalleFactura.Rows(fila).Cells(4).Value()
-                                DetalleFacCompra.Tipo_Stock = stock
-                                DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(2).Value()
-                                DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(3).Value()
-                            End With
+                                    DetalleFacCompra.Cod = Integer.Parse(dtDetalleFactura.Rows(fila).Cells(0).Value())
+                                    DetalleFacCompra.Cod_Factura = Convert.ToInt32(txtCodFactura.Text)
+                                    DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(1).Value())
+                                    DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(4).Value()
+                                    DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(5).Value()))
+                                    Dim stock As String = dtDetalleFactura.Rows(fila).Cells(4).Value()
+                                    DetalleFacCompra.Tipo_Stock = stock
+                                    DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(2).Value()
+                                    DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(3).Value()
+                                End With
 
-                            If DetalleFacCompra.registrarDetalleFactura() = 0 Then
-                                MsgBox("Error al querer insertar el detalle de factura.", MsgBoxStyle.Critical)
+                                If DetalleFacCompra.modificarDetalleFactura() = 0 Then
+                                    MsgBox("Error al querer modificar el detalle de factura.", MsgBoxStyle.Critical)
+                                End If
+
                             End If
-                            MsgBox("fin agrega")
-                        Else
-                            'actualiza los detalles de factura
-                            MsgBox("actualizar")
-                            With DetalleFacCompra
+                        Next
 
-                                DetalleFacCompra.Cod = Integer.Parse(dtDetalleFactura.Rows(fila).Cells(0).Value())
-                                DetalleFacCompra.Cod_Factura = Convert.ToInt32(txtCodFactura.Text)
-                                DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(1).Value())
-                                DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(4).Value()
-                                DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(5).Value()))
-                                Dim stock As String = dtDetalleFactura.Rows(fila).Cells(4).Value()
-                                DetalleFacCompra.Tipo_Stock = stock
-                                DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(2).Value()
-                                DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(3).Value()
-                            End With
-
-                            If DetalleFacCompra.modificarDetalleFactura() = 0 Then
+                        For index As Integer = 0 To codigoDetalleFacturaCompra.Count - 1
+                            DetalleFacCompra.Cod = Convert.ToInt64(codigoDetalleFacturaCompra(index))
+                            If DetalleFacCompra.EliminarDetalleFacturaCompra() <> 1 Then
                                 MsgBox("Error al querer modificar el detalle de factura.", MsgBoxStyle.Critical)
                             End If
-                            MsgBox("fin actualizar")
-                        End If
-                    Next
+                        Next
 
-                    For index As Integer = 0 To codigoDetalleFacturaCompra.Count - 1
-                        DetalleFacCompra.Cod = Convert.ToInt64(codigoDetalleFacturaCompra(index))
-                        If DetalleFacCompra.EliminarDetalleFacturaCompra() <> 1 Then
-                            MsgBox("Error al querer modificar el detalle de factura.", MsgBoxStyle.Critical)
-                        End If
-                    Next
-                    MsgBox("limpiar arreglo")
-                    codigoDetalleFacturaCompra.Clear()
+                        codigoDetalleFacturaCompra.Clear()
 
-                    'MsgBox("Actualizada la factura correctamente.", MsgBoxStyle.Information)
+                        MessageBox.Show("La factura se modifico exitosamente.")
 
-                    MessageBox.Show("La factura se modifico exitosamente.")
+                        Limpiar()
+                    End If
+                End With
 
-                    Limpiar()
-                End If
-            End With
-
-            'Cerrar Formulario de creacion de facturas
-            Me.Close()
+                'Cerrar Formulario de creacion de facturas
+                Me.Close()
+            End If
 
         Catch ex As Exception
             MessageBox.Show("Error al guardar la factura de compra. Detalles: " + ex.Message)

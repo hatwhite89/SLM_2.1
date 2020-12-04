@@ -31,11 +31,6 @@ Partial Class frmAsientos
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtTexto = New System.Windows.Forms.TextBox()
         Me.dtDetalleAsiento = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Debe = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Haber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtTotalDebe = New System.Windows.Forms.TextBox()
         Me.txtTotalHaber = New System.Windows.Forms.TextBox()
@@ -52,6 +47,11 @@ Partial Class frmAsientos
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Debe = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Haber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dtDetalleAsiento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -86,6 +86,7 @@ Partial Class frmAsientos
         '
         'dtpFecha
         '
+        Me.dtpFecha.Enabled = False
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFecha.Location = New System.Drawing.Point(246, 20)
         Me.dtpFecha.Name = "dtpFecha"
@@ -138,34 +139,6 @@ Partial Class frmAsientos
         Me.dtDetalleAsiento.Size = New System.Drawing.Size(637, 313)
         Me.dtDetalleAsiento.TabIndex = 7
         '
-        'Column1
-        '
-        Me.Column1.HeaderText = "CodDetalle"
-        Me.Column1.Name = "Column1"
-        Me.Column1.Visible = False
-        '
-        'Cuenta
-        '
-        Me.Cuenta.HeaderText = "Cuenta"
-        Me.Cuenta.Name = "Cuenta"
-        Me.Cuenta.ReadOnly = True
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripción"
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
-        '
-        'Debe
-        '
-        Me.Debe.HeaderText = "Debe"
-        Me.Debe.Name = "Debe"
-        '
-        'Haber
-        '
-        Me.Haber.HeaderText = "Haber"
-        Me.Haber.Name = "Haber"
-        '
         'Label5
         '
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -197,7 +170,7 @@ Partial Class frmAsientos
         'lblCodAsiento
         '
         Me.lblCodAsiento.AutoSize = True
-        Me.lblCodAsiento.Location = New System.Drawing.Point(608, 26)
+        Me.lblCodAsiento.Location = New System.Drawing.Point(577, 21)
         Me.lblCodAsiento.Name = "lblCodAsiento"
         Me.lblCodAsiento.Size = New System.Drawing.Size(10, 13)
         Me.lblCodAsiento.TabIndex = 15
@@ -207,7 +180,7 @@ Partial Class frmAsientos
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(544, 26)
+        Me.Label4.Location = New System.Drawing.Point(505, 21)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(65, 13)
         Me.Label4.TabIndex = 16
@@ -357,6 +330,33 @@ Partial Class frmAsientos
         Me.StatusStrip1.TabIndex = 23
         Me.StatusStrip1.Text = "StatusStrip1"
         '
+        'Column1
+        '
+        Me.Column1.HeaderText = "CodDetalle"
+        Me.Column1.Name = "Column1"
+        '
+        'Cuenta
+        '
+        Me.Cuenta.HeaderText = "Cuenta"
+        Me.Cuenta.Name = "Cuenta"
+        Me.Cuenta.ReadOnly = True
+        '
+        'Descripcion
+        '
+        Me.Descripcion.HeaderText = "Descripción"
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.ReadOnly = True
+        '
+        'Debe
+        '
+        Me.Debe.HeaderText = "Debe"
+        Me.Debe.Name = "Debe"
+        '
+        'Haber
+        '
+        Me.Haber.HeaderText = "Haber"
+        Me.Haber.Name = "Haber"
+        '
         'frmAsientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -405,11 +405,11 @@ Partial Class frmAsientos
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnCrear As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents chkAnular As CheckBox
+    Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Cuenta As DataGridViewTextBoxColumn
     Friend WithEvents Descripcion As DataGridViewTextBoxColumn
     Friend WithEvents Debe As DataGridViewTextBoxColumn
     Friend WithEvents Haber As DataGridViewTextBoxColumn
-    Friend WithEvents chkAnular As CheckBox
-    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

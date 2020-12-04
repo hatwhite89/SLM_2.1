@@ -287,4 +287,7 @@ Public Class ClsAsientoContable
 
     End Function
 
+
+
+
 End Class
