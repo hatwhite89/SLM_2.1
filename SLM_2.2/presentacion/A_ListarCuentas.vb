@@ -59,7 +59,7 @@
                     acuenta = dtCuentas.Rows(e.RowIndex).Cells(1).Value
                     anombre = dtCuentas.Rows(e.RowIndex).Cells(2).Value
 
-                    frmAsientos.dtDetalleAsiento.Rows.Add(New String() {" ", acuenta, anombre, 0.0, 0.0})
+                    frmAsientos.dtDetalleAsiento.Rows.Add(New String() {"0", acuenta, anombre, 0.0, 0.0})
                 End If
             ElseIf lblForm.Text = "proveedor" Then
                 Dim n As String = MsgBox("¿Desea utilizar la cuenta?", MsgBoxStyle.YesNo, "Validación")

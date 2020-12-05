@@ -966,6 +966,7 @@ Public Class M_Factura
         End If
     End Sub
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+
         Try
             If banderaTipo Then
 
@@ -1323,6 +1324,7 @@ Public Class M_Factura
     End Sub
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Try
+            'BANDERA
             If banderaTipo Then
 
                 'cajero
@@ -1357,7 +1359,7 @@ Public Class M_Factura
                         If (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "0" And txtvuelto.Visible And Trim(txtcodigoTerminosPago.Text) = "CO") Then
                             MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
                             Exit Sub
-                        ElseIf (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "" And txtvuelto.Visible And trim(txtcodigoTerminosPago.Text) = "CO") Then
+                        ElseIf (Convert.ToDouble(txtvuelto.Text) < 0 And Trim(txtcodigoConvenio.Text) = "" And txtvuelto.Visible And Trim(txtcodigoTerminosPago.Text) = "CO") Then
                             MsgBox("Debe registrar el pago de los examenes antes de guardar la factura.", MsgBoxStyle.Information)
                             Exit Sub
                         ElseIf (Convert.ToDouble(txtvuelto2.Text) < 0 And Trim(txtcodigoConvenio.Text) <> "" And txtvuelto2.Visible) Then

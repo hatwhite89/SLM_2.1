@@ -403,4 +403,30 @@ Public Class ClsProveedor
             Return dt
         End Using
     End Function
+
+
+    'Capturar nombre de proveedor por codigo
+    Public Function cuentaProveedor() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmCuentaProveedores"
+            cmd.Parameters.Add("@codProveedor", SqlDbType.Int).Value = Cod_Proveedor
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+
 End Class
