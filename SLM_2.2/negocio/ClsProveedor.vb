@@ -416,7 +416,7 @@ Public Class ClsProveedor
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "A_slmCuentaProveedores"
-            cmd.Parameters.Add("@codProveedor", SqlDbType.Int).Value = Cod_Proveedor
+            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Cod_Proveedor
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable

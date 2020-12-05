@@ -10,6 +10,7 @@
             Me.Close()
         End If
 
+
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -107,7 +108,7 @@
                     proveedor.Cod_Proveedor = Integer.Parse(txtCodProveedor.Text)
                     dtpro = proveedor.cuentaProveedor()
                     rowpro = dtpro.rows(0)
-
+                    'MsgBox("El proveedor:" + rowpro("codCuenta"))
                     'Insertando Asiento
 
                     With asiento

@@ -92,6 +92,7 @@
             frmAsientos.lblCodAsiento.Text = row("cod_asiento")
             frmAsientos.chkAnular.Checked = row("estado")
             frmAsientos.lblForm.Text = "Listado"
+            frmAsientos.lblOrigen.Text = row("Origen")
             Me.Close()
             frmAsientos.Show()
         Catch ex As Exception
