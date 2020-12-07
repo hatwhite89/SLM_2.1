@@ -174,8 +174,8 @@ Public Class ClsDetallePago
 
         'VARIABLES 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codPago"
-        sqlpar.Value = Cod_Pago
+        sqlpar.ParameterName = "codDetalle"
+        sqlpar.Value = Cod_Detalle
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -219,6 +219,39 @@ Public Class ClsDetallePago
     End Function
 
 
+    'Eliminar detalle asiento
+    Public Function EliminarDetallePago() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
 
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "A_slmEliminarDetallePago"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = Cod_Detalle
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
 
 End Class

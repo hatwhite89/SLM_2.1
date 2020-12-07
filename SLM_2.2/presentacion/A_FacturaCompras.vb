@@ -10,12 +10,11 @@
             Me.Close()
         End If
 
-
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-
+        Dim codigoFacturaCompra As String
         Dim n As String = MsgBox("¿Desea guardar la Factura de Compra?", MsgBoxStyle.YesNo, "Validación")
         If n = vbYes Then
 
@@ -46,26 +45,21 @@
 
                         Dim fila As Integer
                         'Registro de factura en BD
-                        FacCompra.registrarNuevaFacturaCompra()
-                        Dim dt As New DataTable
-                        'Capturar código de la factura recien guardada
-                        dt = FacCompra.capturarCodFacturaCompra
-                        Dim row As DataRow = dt.Rows(0)
-                        'Mostrar codigo en textbox 
-                        txtCodFactura.Text = CStr(row("codFactura"))
+                        'MsgBox("antes de guardar factura")
+                        codigoFacturaCompra = FacCompra.registrarNuevaFacturaCompra()
 
+                        ' MsgBox("codigo: " + codigoFacturaCompra)
                         For fila = 0 To dtDetalleFactura.Rows.Count - 2
-                            MsgBox(fila)
+                            'MsgBox(fila)
                             If (A_Promociones.validarDetalle(dtDetalleFactura.Rows(fila).Cells(1).Value)) = 0 Then
 
                                 'Insertar detalle de compra
-                                DetalleFacCompra.Cod_Factura = Convert.ToInt32(txtCodFactura.Text)
+                                DetalleFacCompra.Cod_Factura = Convert.ToInt32(codigoFacturaCompra)
                                 DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(1).Value())
                                 DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(2).Value
                                 DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(3).Value
                                 DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(4).Value()
                                 DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(5).Value()))
-                                DetalleFacCompra.Tipo_Stock = dtDetalleFactura.Rows(fila).Cells(6).Value()
 
                                 'Funcion de registro de detalle
                                 DetalleFacCompra.registrarDetalleFactura()
@@ -81,8 +75,6 @@
                         MsgBox("Falta detalle de Factura. No se guardo la factura")
 
                     End If ' if detalle de factura
-
-
 
                     ':::::::::::::::ASIENTO CONTABLE DE FACTURA DE COMPRA
 
@@ -276,7 +268,7 @@
 
                 'Registrar nueva factura de compra
                 With FacCompra
-                    MsgBox("Variables")
+                    'MsgBox("Variables")
                     'variables
                     .Cod_Factura = txtCodFactura.Text
                     .Cod_Proveedor = txtCodProveedor.Text
@@ -306,8 +298,6 @@
                                     DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(1).Value())
                                     DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(4).Value()
                                     DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(5).Value()))
-                                    Dim stock As String = dtDetalleFactura.Rows(fila).Cells(4).Value()
-                                    DetalleFacCompra.Tipo_Stock = stock
                                     DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(2).Value()
                                     DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(3).Value()
                                 End With
@@ -326,8 +316,6 @@
                                     DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(1).Value())
                                     DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(4).Value()
                                     DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(5).Value()))
-                                    Dim stock As String = dtDetalleFactura.Rows(fila).Cells(4).Value()
-                                    DetalleFacCompra.Tipo_Stock = stock
                                     DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(2).Value()
                                     DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(3).Value()
                                 End With
@@ -405,13 +393,6 @@
                 txtTerminoPago.Text = row("descripcion")
 
             End If
-
-            'Dim cmb As New DataGridViewComboBoxColumn()
-            'dtDetalleFactura.Columns.Add(cmb)
-            'cmb.HeaderText = "Tipo Stock"
-            'cmb.Items.Add("Comprado")
-            'cmb.Items.Add("Consignado")
-            'cmb.Name = "cbx"
 
             If dtDetalleFactura.Columns.Contains("btnEliminar") = False Then
                 Dim btn As New DataGridViewButtonColumn()
