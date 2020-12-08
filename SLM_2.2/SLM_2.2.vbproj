@@ -2288,6 +2288,40 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\examenes-62.png" />
+    <None Include="Resources\examenes-63.png" />
+    <None Include="Resources\examenes-64.png" />
+    <None Include="Resources\examenes-68.png" />
+    <None Include="Resources\examenes-67.png" />
+    <None Include="Resources\examenes-66.png" />
+    <None Include="Resources\examenes-69.png" />
+    <None Include="Resources\examenes-65.png" />
+    <None Include="Resources\iconos sistema-72.png" />
+    <None Include="Resources\iconos sistema-73.png" />
+    <None Include="Resources\configuracion de sistema-92.png" />
+    <None Include="Resources\examenes-61.png" />
+    <None Include="Resources\examenes-621.png" />
+    <None Include="Resources\examenes-631.png" />
+    <None Include="Resources\examenes-611.png" />
+    <None Include="Resources\examenes-622.png" />
+    <None Include="Resources\examenes-632.png" />
+    <None Include="Resources\examenes-641.png" />
+    <None Include="Resources\examenes-681.png" />
+    <None Include="Resources\examenes-671.png" />
+    <None Include="Resources\examenes-661.png" />
+    <None Include="Resources\examenes-651.png" />
+    <None Include="Resources\iconos sistema-721.png" />
+    <None Include="Resources\iconos sistema-731.png" />
+    <None Include="Resources\iconos sistema-71.png" />
+    <None Include="Resources\iconos sistema-70.png" />
+    <None Include="Resources\inventario-16.png" />
+    <None Include="Resources\inventario-17.png" />
+    <None Include="Resources\inventario-171.png" />
+    <None Include="Resources\inventario-18.png" />
+    <None Include="Resources\solicitudes-19.png" />
+    <None Include="Resources\solicitudes-20.png" />
+    <None Include="Resources\solicitudes-201.png" />
+    <None Include="Resources\configuracion de sistema-921.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
