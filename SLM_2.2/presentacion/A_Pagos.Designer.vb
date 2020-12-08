@@ -47,6 +47,7 @@ Partial Class frmPagos
         Me.ValorPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FORMAP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NroCheque = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codDetallePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnBuscarFormaPago = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -226,7 +227,7 @@ Partial Class frmPagos
         Me.dtDetallePagos.BackgroundColor = System.Drawing.Color.White
         Me.dtDetallePagos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtDetallePagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtDetallePagos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NroFac, Me.Proveedor, Me.Moneda, Me.ValorPago, Me.FORMAP, Me.NroCheque})
+        Me.dtDetallePagos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NroFac, Me.Proveedor, Me.Moneda, Me.ValorPago, Me.FORMAP, Me.NroCheque, Me.codDetallePago})
         Me.dtDetallePagos.GridColor = System.Drawing.Color.White
         Me.dtDetallePagos.Location = New System.Drawing.Point(6, 19)
         Me.dtDetallePagos.Name = "dtDetallePagos"
@@ -271,6 +272,11 @@ Partial Class frmPagos
         Me.NroCheque.HeaderText = "Cheque/Transf."
         Me.NroCheque.Name = "NroCheque"
         '
+        'codDetallePago
+        '
+        Me.codDetallePago.HeaderText = "codDetalle"
+        Me.codDetallePago.Name = "codDetallePago"
+        '
         'btnBuscarFormaPago
         '
         Me.btnBuscarFormaPago.BackColor = System.Drawing.Color.Transparent
@@ -292,7 +298,7 @@ Partial Class frmPagos
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.Black
-        Me.btnGuardar.Location = New System.Drawing.Point(699, 10)
+        Me.btnGuardar.Location = New System.Drawing.Point(701, 10)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 22
@@ -306,7 +312,7 @@ Partial Class frmPagos
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.Black
-        Me.btnModificar.Location = New System.Drawing.Point(617, 10)
+        Me.btnModificar.Location = New System.Drawing.Point(622, 10)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 23
@@ -320,7 +326,7 @@ Partial Class frmPagos
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.Black
-        Me.btnCrear.Location = New System.Drawing.Point(536, 10)
+        Me.btnCrear.Location = New System.Drawing.Point(543, 10)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 24
@@ -365,6 +371,7 @@ Partial Class frmPagos
         Me.lblCodFormaPago.Size = New System.Drawing.Size(90, 13)
         Me.lblCodFormaPago.TabIndex = 24
         Me.lblCodFormaPago.Text = "lblCodFormaPago"
+        Me.lblCodFormaPago.Visible = False
         '
         'lblCodigoProveedor
         '
@@ -374,6 +381,7 @@ Partial Class frmPagos
         Me.lblCodigoProveedor.Size = New System.Drawing.Size(75, 13)
         Me.lblCodigoProveedor.TabIndex = 23
         Me.lblCodigoProveedor.Text = "CodProveedor"
+        Me.lblCodigoProveedor.Visible = False
         '
         'chkPagado
         '
@@ -413,6 +421,7 @@ Partial Class frmPagos
         Me.lblNombreBanco.Size = New System.Drawing.Size(66, 13)
         Me.lblNombreBanco.TabIndex = 24
         Me.lblNombreBanco.Text = "NameBanco"
+        Me.lblNombreBanco.Visible = False
         '
         'lblFila
         '
@@ -422,6 +431,7 @@ Partial Class frmPagos
         Me.lblFila.Size = New System.Drawing.Size(39, 13)
         Me.lblFila.TabIndex = 23
         Me.lblFila.Text = "Label3"
+        Me.lblFila.Visible = False
         '
         'lblTotalSuma
         '
@@ -451,7 +461,7 @@ Partial Class frmPagos
         Me.btnRegresar.FlatAppearance.BorderSize = 0
         Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegresar.ForeColor = System.Drawing.Color.Black
-        Me.btnRegresar.Location = New System.Drawing.Point(460, 10)
+        Me.btnRegresar.Location = New System.Drawing.Point(469, 10)
         Me.btnRegresar.Name = "btnRegresar"
         Me.btnRegresar.Size = New System.Drawing.Size(70, 23)
         Me.btnRegresar.TabIndex = 27
@@ -565,11 +575,12 @@ Partial Class frmPagos
     Friend WithEvents Button1 As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents lblCodigoProveedor As Label
+    Friend WithEvents lblCodFormaPago As Label
     Friend WithEvents NroFac As DataGridViewTextBoxColumn
     Friend WithEvents Proveedor As DataGridViewTextBoxColumn
     Friend WithEvents Moneda As DataGridViewTextBoxColumn
     Friend WithEvents ValorPago As DataGridViewTextBoxColumn
     Friend WithEvents FORMAP As DataGridViewTextBoxColumn
     Friend WithEvents NroCheque As DataGridViewTextBoxColumn
-    Friend WithEvents lblCodFormaPago As Label
+    Friend WithEvents codDetallePago As DataGridViewTextBoxColumn
 End Class

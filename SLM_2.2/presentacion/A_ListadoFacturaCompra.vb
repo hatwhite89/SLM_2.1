@@ -44,7 +44,7 @@
 
             For index As Integer = 0 To dtFac.Rows.Count - 1
                 row = dtFac.Rows(index)
-                A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), CStr(row("area")), CStr(row("sede")), CStr(row("descripcion")), CStr(row("monto")), CStr(row("tipoStock"))})
+                A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), CStr(row("area")), CStr(row("sede")), CStr(row("descripcion")), CStr(row("monto"))})
             Next
 
             Me.Close()

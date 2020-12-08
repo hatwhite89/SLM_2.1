@@ -209,6 +209,7 @@ Public Class ClsDetalleAsiento
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "A_slmVerDetalleAsiento"
             cmd.Parameters.Add("@cod_Asiento", SqlDbType.VarChar).Value = Cod_Asiento
+            cmd.Parameters.Add("@origen", SqlDbType.VarChar).Value = Origen_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable

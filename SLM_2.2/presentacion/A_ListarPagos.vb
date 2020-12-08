@@ -41,10 +41,21 @@
             frmPagos.txtReferencia.Text = row("referencia")
             frmPagos.txtComentario.Text = row("comentario")
             frmPagos.dtpFechaP.Value = row("fechaPago")
-            'frmPagos.txtCtaBanco.Text = row("ctaBanco")
             frmPagos.dtpFechaT.Value = row("fechaTransferencia")
             frmPagos.chkPagado.Checked = row("pagado")
             frmPagos.lblTotalSuma.Text = row("sumaTotal")
+
+            'data formapago
+            Dim dtfp As New DataTable
+            Dim rowfp As DataRow
+            Dim formapago As New ClsFormaPago
+
+            formapago.Codigo_FormaPago = Integer.Parse(row("codformapago"))
+            dtfp = formapago.BusquedaFormaPago
+            rowfp = dtfp.Rows(0)
+            frmPagos.txtFormaP.Text = rowfp("codigo")
+            frmPagos.txtCtaBanco.Text = rowfp("nroCtaBanco")
+            frmPagos.lblNombreBanco.Text = rowfp("banco")
 
             'Listar detalle de pago
             frmPagos.dtDetallePagos.Enabled = True
@@ -58,7 +69,7 @@
 
             For Index As Integer = 0 To dtpago.Rows.Count - 1
                 Dim row2 As DataRow = dtpago.Rows(Index)
-                frmPagos.dtDetallePagos.Rows.Add(New String() {(row2("codFactura")), CStr(row2("nombreproveedor")), CStr(row2("moneda")), CStr(row2("monto")), CStr(row2("formapago")), CStr(row2("nrocheque"))})
+                frmPagos.dtDetallePagos.Rows.Add(New String() {(row2("codFactura")), CStr(row2("nombreproveedor")), CStr(row2("moneda")), CStr(row2("monto")), CStr(row2("formapago")), CStr(row2("nrocheque")), CStr(row2("codDetalle"))})
             Next
 
             frmPagos.Show()

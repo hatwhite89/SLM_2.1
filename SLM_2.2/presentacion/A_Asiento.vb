@@ -41,6 +41,7 @@
                 With Detalle
 
                     .Cod_Asiento = Convert.ToInt32(lblCodAsiento.Text)
+                    .Origen_ = lblOrigen.Text
 
                     Dim dt As DataTable
                     Dim row As DataRow
@@ -76,6 +77,7 @@
                 With Detalle
 
                     .Cod_Asiento = Convert.ToInt32(lblCodAsiento.Text)
+                    .Origen_ = lblOrigen.Text
 
                     Dim dt As DataTable
                     Dim row As DataRow
@@ -104,7 +106,7 @@
 
 
         Catch ex As Exception
-            '  MsgBox("Error:" + ex.Message)
+            MsgBox("Error:" + ex.Message)
         End Try
 
 
