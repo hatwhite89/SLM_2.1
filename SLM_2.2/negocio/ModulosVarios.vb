@@ -276,52 +276,52 @@ Module ModulosVarios
                                             If i = 0 Then 'if conteo
 
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnFactura.Enabled = True
+                                                    Form1.PictureBox31.Enabled = True
                                                 End If
                                             ElseIf i = 1 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnCotizar.Enabled = True
+                                                    Form1.PictureBox30.Enabled = True
                                                 End If
 
                                             ElseIf i = 2 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnRecibos.Enabled = True
+                                                    Form1.PictureBox29.Enabled = True
                                                 End If
                                             ElseIf i = 3 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnContactos.Enabled = True
+                                                    Form1.PictureBox46.Enabled = True
                                                 End If
                                             ElseIf i = 4 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnItem.Enabled = True
+                                                    Form1.PictureBox34.Enabled = True
                                                 End If
                                             ElseIf i = 5 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnGrupo.Enabled = True
+                                                    Form1.PictureBox33.Enabled = True
                                                 End If
                                             ElseIf i = 6 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnTermino.Enabled = True
+                                                    Form1.PictureBox52.Enabled = True
                                                 End If
                                             ElseIf i = 7 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnPacienteF.Enabled = True
+                                                    Form1.PictureBox51.Enabled = True
                                                 End If
                                             ElseIf i = 8 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnApertura.Enabled = True
+                                                    Form1.PictureBox28.Enabled = True
                                                 End If
                                             ElseIf i = 9 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnCierreCaja.Enabled = True
+                                                    Form1.PictureBox27.Enabled = True
                                                 End If
                                             ElseIf i = 10 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnArqueos.Enabled = True
+                                                    Form1.PictureBox32.Enabled = True
                                                 End If
                                             ElseIf i = 11 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnDiarioFacturacion.Enabled = True
+                                                    Form1.PictureBox47.Enabled = True
                                                 End If
                                             ElseIf i = 12 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
@@ -329,11 +329,11 @@ Module ModulosVarios
                                                 End If
                                             ElseIf i = 13 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnCategoriaCliente.Enabled = True
+                                                    Form1.pbxCategoriaCliente.Enabled = True
                                                 End If
                                             ElseIf i = 14 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnTipoClasificacion.Enabled = True
+                                                    Form1.pbxTipoClasificacion.Enabled = True
                                                 End If
                                             End If 'if conteo
 
@@ -713,7 +713,7 @@ Module ModulosVarios
                                                 End If
                                             ElseIf i = 13 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnSolicitudes.Enabled = True
+                                                    Form1.PictureBox66.Enabled = True
                                                 End If
                                             ElseIf i = 14 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
