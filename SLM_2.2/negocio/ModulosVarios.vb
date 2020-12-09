@@ -9,7 +9,7 @@ Imports System.Net.Mail
 Imports System.Text
 Imports System.Security.Cryptography
 Imports System.DirectoryServices
-
+Imports System.Data.SqlClient
 
 Module ModulosVarios
 
@@ -738,7 +738,7 @@ Module ModulosVarios
 
                     End With
 
-                    M_InicioSesion.txtusuario.Text = ""
+                    M_InicioSesion.txtUsuario.Text = ""
                     M_InicioSesion.txtPassword.Text = ""
                     M_InicioSesion.Hide()
 
@@ -814,6 +814,36 @@ Module ModulosVarios
     End Sub
     ':::::::::::::::::::::::::::::::::::::::::::: FINAL ACTIVE DIRECTORY ::::::::::::::::::::::::::::::::::::::::::::
 
+
+
+
+
+
+
+
+    '::::::::::::::: INGRESOS :::::::::::::
+    Public Function VistaDeIngresos(fechaDesde As Date, fechaHasta As Date) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "MM_slmCapturarIngresosPorFecha"
+            cmd.Parameters.Add("@fechaDesde", SqlDbType.Date).Value = fechaDesde
+            cmd.Parameters.Add("@fechaHasta", SqlDbType.Date).Value = fechaHasta
+
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
 
 
 End Module
