@@ -40,6 +40,7 @@
     End Sub
 
     Private Sub MM_VistaIngresos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         alternarColoFilasDatagridview(dgvIngresos)
 
     End Sub

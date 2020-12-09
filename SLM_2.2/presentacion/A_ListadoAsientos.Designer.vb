@@ -32,6 +32,7 @@ Partial Class A_ListadoAsientos
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.gbxAsientos.SuspendLayout()
         CType(Me.dtAsientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -43,6 +44,7 @@ Partial Class A_ListadoAsientos
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbxAsientos.BackColor = System.Drawing.Color.AliceBlue
+        Me.gbxAsientos.Controls.Add(Me.Button1)
         Me.gbxAsientos.Controls.Add(Me.btnIngresarAsiento)
         Me.gbxAsientos.Controls.Add(Me.btnCancelar)
         Me.gbxAsientos.Controls.Add(Me.dtAsientos)
@@ -149,6 +151,19 @@ Partial Class A_ListadoAsientos
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Asientos"
         '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.Green
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button1.Location = New System.Drawing.Point(420, 26)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(131, 23)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Ingresar Asiento Manual"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'A_ListadoAsientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -182,4 +197,5 @@ Partial Class A_ListadoAsientos
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
+    Friend WithEvents Button1 As Button
 End Class
