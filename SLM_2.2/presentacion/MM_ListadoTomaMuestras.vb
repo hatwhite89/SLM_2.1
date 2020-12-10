@@ -22,7 +22,7 @@
         Dim dv As DataView = objToma.ListarTomaMuestras.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -69,7 +69,6 @@
                 Dim dv As DataView = objToma.BuscarTomaDeMuestrasCodigo.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
             Catch ex As Exception
                 MsgBox("No existe la toma de muestra.", MsgBoxStyle.Critical, "Validación")
             End Try
@@ -84,7 +83,6 @@
                 Dim dv As DataView = objToma.BuscarTomaMuestraDescrip.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
             Catch ex As Exception
                 MsgBox("No existe la toma de muestra.", MsgBoxStyle.Critical, "Validación")
             End Try
