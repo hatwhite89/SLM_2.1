@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MM_TomaDeMuestras
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class MM_TomaDeMuestras
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MM_TomaDeMuestras))
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -161,34 +161,30 @@ Partial Class MM_TomaDeMuestras
         '
         'lblcodexamen
         '
-        Me.lblcodexamen.AutoSize = True
-        Me.lblcodexamen.Location = New System.Drawing.Point(416, 17)
-        Me.lblcodexamen.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblcodexamen.Name = "lblcodexamen"
-        Me.lblcodexamen.Size = New System.Drawing.Size(94, 17)
-        Me.lblcodexamen.TabIndex = 9
-        Me.lblcodexamen.Text = "lblcodexamen"
-        Me.lblcodexamen.Visible = False
+        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(560, 11)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(81, 81)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'lblform
         '
-        Me.lblform.AutoSize = True
-        Me.lblform.Location = New System.Drawing.Point(631, 100)
-        Me.lblform.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblform.Name = "lblform"
-        Me.lblform.Size = New System.Drawing.Size(50, 17)
-        Me.lblform.TabIndex = 8
-        Me.lblform.Text = "lblform"
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(22, 34)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(29, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Cód."
         '
         'txtExamen
         '
-        Me.txtExamen.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtExamen.Location = New System.Drawing.Point(420, 37)
-        Me.txtExamen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtExamen.Name = "txtExamen"
-        Me.txtExamen.Size = New System.Drawing.Size(263, 22)
-        Me.txtExamen.TabIndex = 7
+        Me.txtCodigo.Location = New System.Drawing.Point(91, 31)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
+        Me.txtCodigo.TabIndex = 2
         '
         'txtDescripcion
         '
@@ -230,33 +226,30 @@ Partial Class MM_TomaDeMuestras
         '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(121, 38)
-        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(132, 22)
-        Me.txtCodigo.TabIndex = 2
+        Me.txtDescripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtDescripcion.Location = New System.Drawing.Point(91, 57)
+        Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.Size = New System.Drawing.Size(422, 20)
+        Me.txtDescripcion.TabIndex = 6
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(29, 42)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(37, 17)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Cód."
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(22, 60)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(63, 13)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "Descripción"
         '
         'PictureBox1
         '
-        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(747, 14)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(108, 100)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.txtExamen.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtExamen.Location = New System.Drawing.Point(315, 30)
+        Me.txtExamen.Name = "txtExamen"
+        Me.txtExamen.Size = New System.Drawing.Size(198, 20)
+        Me.txtExamen.TabIndex = 7
         '
         'GroupBox2
         '
@@ -300,12 +293,21 @@ Partial Class MM_TomaDeMuestras
         Me.enunciado.MinimumWidth = 6
         Me.enunciado.Name = "enunciado"
         '
-        'Estado
+        'SI
         '
-        Me.Estado.HeaderText = "Si/No"
-        Me.Estado.Items.AddRange(New Object() {"Si", "No"})
-        Me.Estado.MinimumWidth = 6
-        Me.Estado.Name = "Estado"
+        Me.SI.FillWeight = 34.78343!
+        Me.SI.HeaderText = "SI"
+        Me.SI.Name = "SI"
+        Me.SI.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SI.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
+        'NO
+        '
+        Me.NO.FillWeight = 39.29848!
+        Me.NO.HeaderText = "NO"
+        Me.NO.Name = "NO"
+        Me.NO.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.NO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
         'Nota
         '
@@ -313,6 +315,25 @@ Partial Class MM_TomaDeMuestras
         Me.Nota.HeaderText = "Nota"
         Me.Nota.MinimumWidth = 6
         Me.Nota.Name = "Nota"
+        '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(473, 81)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(37, 13)
+        Me.lblform.TabIndex = 8
+        Me.lblform.Text = "lblform"
+        '
+        'lblcodexamen
+        '
+        Me.lblcodexamen.AutoSize = True
+        Me.lblcodexamen.Location = New System.Drawing.Point(312, 14)
+        Me.lblcodexamen.Name = "lblcodexamen"
+        Me.lblcodexamen.Size = New System.Drawing.Size(72, 13)
+        Me.lblcodexamen.TabIndex = 9
+        Me.lblcodexamen.Text = "lblcodexamen"
+        Me.lblcodexamen.Visible = False
         '
         'MM_TomaDeMuestras
         '
@@ -353,9 +374,7 @@ Partial Class MM_TomaDeMuestras
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents dgvPreguntas As DataGridView
-    Friend WithEvents lblform As Label
-    Friend WithEvents lblcodexamen As Label
+    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Cod As DataGridViewTextBoxColumn
     Friend WithEvents enunciado As DataGridViewTextBoxColumn
     Friend WithEvents Estado As DataGridViewComboBoxColumn
