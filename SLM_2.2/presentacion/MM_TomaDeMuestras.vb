@@ -38,6 +38,14 @@
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
 
+
+
+
+
+
+
+
+
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
@@ -68,11 +76,12 @@
                 With objPreguntas
                     .codMuestra_ = Integer.Parse(codigoTomaMuestra)
                     .enunciado_ = dgvPreguntas.Rows(index).Cells(1).Value()
-                    If dgvPreguntas.Rows(index).Cells(2).Value().ToString = "Si" Then
-                        .estado_ = True
-                    Else
-                        .estado_ = False
-                    End If
+                    .estado_ = 0
+                    'If dgvPreguntas.Rows(index).Cells(2).Value().ToString = "Si" Then
+                    '    .estado_ = True
+                    'Else
+                    '    .estado_ = False
+                    'End If
                     .nota_ = dgvPreguntas.Rows(index).Cells(3).Value()
                 End With
                 If objPreguntas.RegistrarNuevaPreguntaMuestra() = 0 Then

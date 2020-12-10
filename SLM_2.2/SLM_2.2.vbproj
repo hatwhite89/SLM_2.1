@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80A97C69-33C1-4D76-A4FF-61E3B54BEE03}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SLM_2._2.MM_TomaDeMuestras</StartupObject>
+    <StartupObject>SLM_2._2.M_InicioSesion</StartupObject>
     <RootNamespace>SLM_2._2</RootNamespace>
     <AssemblyName>0</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -994,6 +994,12 @@
     <Compile Include="presentacion\MM_Conserje.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\MM_CuestionarioMuestras.Designer.vb">
+      <DependentUpon>MM_CuestionarioMuestras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\MM_CuestionarioMuestras.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\MM_TomaDeMuestras.Designer.vb">
       <DependentUpon>MM_TomaDeMuestras.vb</DependentUpon>
     </Compile>
@@ -1924,6 +1930,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\MM_Conserje.resx">
       <DependentUpon>MM_Conserje.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\MM_CuestionarioMuestras.resx">
+      <DependentUpon>MM_CuestionarioMuestras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\MM_TomaDeMuestras.resx">
       <DependentUpon>MM_TomaDeMuestras.vb</DependentUpon>
