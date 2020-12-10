@@ -991,7 +991,7 @@ Public Class M_Factura
                 End If
 
                 If Trim(txtcodigoTerminal.Text) = "" Then
-                    MsgBox("No existe la máquina local.", MsgBoxStyle.Critical)
+                    MsgBox("No existe la máquina local.", MsgBoxStyle.Critical, "Validación.")
                     Exit Sub
                 End If
 
@@ -1025,11 +1025,11 @@ Public Class M_Factura
                             Dim objDetCAI As New ClsDetalleCAI
                             objDetCAI.Codigo_ = Convert.ToInt64(CStr(row("codigoDetCAI")))
                             If objDetCAI.ModificarDetalleCAI() <> 1 Then
-                                MsgBox("Error en la actualización del detalle del CAI.", MsgBoxStyle.Critical)
+                                MsgBox("Error en la actualización del detalle del CAI.", MsgBoxStyle.Critical, "Validación.")
                                 Exit Sub
                             End If
                         Else
-                            MsgBox("No existe un CAI activo.", MsgBoxStyle.Critical)
+                            MsgBox("No existe un CAI activo.", MsgBoxStyle.Critical, "Validación.")
                             Exit Sub
                         End If
 
@@ -1102,11 +1102,11 @@ Public Class M_Factura
                                 MsgBox("Error al querer insertar el detalle de factura.", MsgBoxStyle.Critical)
                             End If
                         Next
-                        MsgBox("Registrada la factura correctamente.", MsgBoxStyle.Information)
+                        MsgBox("Registrada la factura correctamente.", MsgBoxStyle.Information, "Validación.")
                         calcularDescuento2(objDetalleFact)
 
                         If (cbxAnular.Checked = False And Trim(txtnumeroOficial.Text) <> "") Then
-                            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
+                            MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information, "Validación.")
                             letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
                             Imprimir_Factura()
                             OrdenDeTrabajo()
@@ -1124,7 +1124,7 @@ Public Class M_Factura
                         '    dgblistadoExamenes.Rows(index).Cells(8).Value() = CStr(row("numero"))
                         'Next
                     Else
-                        MsgBox("Error al querer registrar la factura.", MsgBoxStyle.Critical)
+                        MsgBox("Error al querer registrar la factura.", MsgBoxStyle.Critical, "Validación.")
                     End If
                 Else
                     MsgBox("Debe ingresar los campos necesarios.", MsgBoxStyle.Critical, "Validación")

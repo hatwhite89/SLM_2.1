@@ -136,6 +136,7 @@
     End Sub
 
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
+
         Try
             If (txtcodigo.Text <> "" And Trim(txtEmpleado.Text) <> "" And Trim(txtTalentoHumano.Text) <> "" And Trim(txtJefeDepto.Text) <> "" And Trim(txtSupervisor.Text) <> "" And Trim(rtxtMotivoInasistencia.Text) <> "") Then
                 Dim objVac As New ClsVacaciones
