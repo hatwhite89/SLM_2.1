@@ -252,6 +252,7 @@
     <Compile Include="negocio\ClsPlanilla.vb" />
     <Compile Include="negocio\ClsPlantillaResultado.vb" />
     <Compile Include="negocio\ClsPrecio.vb" />
+    <Compile Include="negocio\ClsPreguntasMuestra.vb" />
     <Compile Include="negocio\ClsProducto.vb" />
     <Compile Include="negocio\ClsProfesion.vb" />
     <Compile Include="negocio\ClsPromociones.vb" />
