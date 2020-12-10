@@ -4,7 +4,7 @@ Public Class ClsDetalleFacturaCompra
 
     'Variables 
     Dim codDetalle, cuenta, codFactura As Integer
-    Dim area, sede, descripcion, tipoStock As String
+    Dim area, sede, descripcion As String
     Dim monto As Double
 
     'Constructor
@@ -20,16 +20,6 @@ Public Class ClsDetalleFacturaCompra
         End Get
         Set(value As Double)
             monto = value
-        End Set
-    End Property
-
-    'Tipo de Stock
-    Public Property Tipo_Stock As String
-        Get
-            Return tipoStock
-        End Get
-        Set(value As String)
-            tipoStock = value
         End Set
     End Property
 
@@ -133,11 +123,6 @@ Public Class ClsDetalleFacturaCompra
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "tipoStock"
-        sqlpar.Value = Tipo_Stock
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
         sqlpar.ParameterName = "codFactura"
         sqlpar.Value = Cod_Factura
         sqlcom.Parameters.Add(sqlpar)
@@ -201,11 +186,6 @@ Public Class ClsDetalleFacturaCompra
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "monto"
         sqlpar.Value = Mont_o
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "tipoStock"
-        sqlpar.Value = Tipo_Stock
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

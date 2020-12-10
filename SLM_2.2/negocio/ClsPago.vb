@@ -147,8 +147,8 @@ Public Class ClsPago
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "ID"
-        sqlpar.Value = ""
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = 0
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar.Direction = ParameterDirection.Output
@@ -160,7 +160,7 @@ Public Class ClsPago
 
         con.cerrarConexion()
 
-        par_sal = sqlcom.Parameters("ID").Value
+        par_sal = sqlcom.Parameters("salida").Value
 
         Return par_sal
 
@@ -234,7 +234,7 @@ Public Class ClsPago
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "formaPago"
+        sqlpar.ParameterName = "codformaPago"
         sqlpar.Value = codForma_Pago
         sqlcom.Parameters.Add(sqlpar)
 

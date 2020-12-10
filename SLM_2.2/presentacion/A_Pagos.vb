@@ -4,7 +4,7 @@
     Dim factuCompra As New ClsFacturaCompra
     Dim pagos As New ClsPago
     Dim detallePago As New ClsDetallePago
-
+    Dim codigoDetallePago As New ArrayList
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
 
@@ -39,29 +39,37 @@
         Try
 
             If e.ColumnIndex = 3 Then
+
                 lblTotalSuma.Text = 0.0
                 For a = 0 To dtDetallePagos.Rows.Count - 1
-
                     lblTotalSuma.Text = Convert.ToDouble(dtDetallePagos.Rows(a).Cells(3).Value) + Convert.ToDouble(lblTotalSuma.Text)
                 Next
 
+            ElseIf e.ColumnIndex = 0 Then
 
-            Else
                 Dim dt As New DataTable
                 With factuCompra
                     .Cod_Factura = dtDetallePagos.Rows(e.RowIndex).Cells(0).Value
                     dt = .comprobarFactura() 'Comprobar existencia de factura compra
 
-                    If dt.Rows.Count < 0 Then 'Si la factura existe, llenar campos
+                    If dt.Rows.Count > 0 Then 'Si la factura existe, llenar campos
 
                         Dim row As DataRow = dt.Rows(0)
-                        dtDetallePagos.Rows(e.RowIndex).Cells(1).Value = row("nombreProveedor")
-                        dtDetallePagos.Rows(e.RowIndex).Cells(2).Value = row("moneda")
-                        dtDetallePagos.Rows(e.RowIndex).Cells(3).Value = row("pendiente")
+                        If row("estado") = "Pagada" Then
+                            'Si la factura fue pagada, no agregar al pago
+                            dtDetallePagos.Rows.Remove(dtDetallePagos.Rows(e.RowIndex.ToString))
+                            MsgBox("La factura ya fue pagada, no se agregara al pago.")
 
-                        'Sumar totales de factura
+                        Else
 
-                        lblTotalSuma.Text = dtDetallePagos.Rows(e.RowIndex).Cells(3).Value
+                            dtDetallePagos.Rows.Remove(dtDetallePagos.Rows(e.RowIndex.ToString))
+                            dtDetallePagos.Rows.Insert(e.RowIndex.ToString, New String() {row("codfactura"), row("nombreProveedor"), row("moneda"), row("pendiente"), "", "", "0"})
+
+                            'Sumar totales de factura
+                            lblTotalSuma.Text = dtDetallePagos.Rows(e.RowIndex).Cells(3).Value
+
+
+                        End If
 
                     End If
 
@@ -81,10 +89,16 @@
         dtDetallePagos.Columns(2).ReadOnly = True
         'dtDetallePagos.Columns(3).ReadOnly = True
 
-        If e.ColumnIndex = 6 Then
+        If e.ColumnIndex = 7 Then
             Try
                 Dim n As String = MsgBox("¿Desea eliminar la factura?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then
+                    If dtDetallePagos.Rows(e.RowIndex).Cells(6).Value() <> "0" Then
+
+                        codigoDetallePago.Add(Me.dtDetallePagos.Rows(e.RowIndex).Cells(6).Value())
+
+                    End If
+
                     dtDetallePagos.Rows.Remove(dtDetallePagos.Rows(e.RowIndex.ToString))
 
                 End If
@@ -164,42 +178,6 @@
             Dim n As String = MsgBox("¿Desea guardar el pago?", MsgBoxStyle.YesNo, "Validación")
             If n = vbYes Then 'validacion
 
-                'Actualizar pendiente de Factura de Compra..............
-                Dim codfactura As Integer
-                Dim resultadof, pendiente, montoc As Double
-                Dim factura As New ClsFacturaCompra
-                Dim dtP As New DataTable
-                Dim rowf As DataRow
-                'MsgBox("Se crearon variables")
-
-                codfactura = dtDetallePagos.Rows(0).Cells(0).Value
-                'MsgBox("Se capturo codigo de fact")
-
-                factura.Cod_Factura = Convert.ToInt32(codfactura)
-                dtP = factura.comprobarFactura
-                rowf = dtP.Rows(0)
-                'MsgBox("Busco la factura")
-
-                montoc = Convert.ToDouble(lblTotalSuma.Text)
-                pendiente = Convert.ToDouble(rowf("pendiente"))
-                resultadof = pendiente - montoc
-                'MsgBox("Ya resto " + resultadof.ToString)
-
-                factura.Cod_Factura = Convert.ToInt32(codfactura)
-                factura.Pendiente_ = Convert.ToDouble(resultadof)
-
-                'cambio de estado
-                If resultadof = 0 Then
-                    factura.Estado_ = "Pagada"
-                Else
-                    factura.Estado_ = "Pendiente"
-                End If
-
-                factura.SaldoPendiente()
-                MsgBox("Ya actualizo")
-
-                '.........................................................
-
                 'Ingresar un nuevo pago
                 If txtFormaP.Text <> "" Then
 
@@ -215,10 +193,11 @@
                         .Paga_do = chkPagado.Checked
                         .Suma_Total = lblTotalSuma.Text
                         'Ingresar registro en base de datos
+                        'MsgBox("antes")
                         codigoPago = .registrarNuevoPago()
-
+                        'MsgBox("despues")
                     End With
-                    'MsgBox(codigoPago)
+                    ' MsgBox(codigoPago)
 
                     'Ingresar detalle de pago
                     For a = 0 To dtDetallePagos.Rows.Count - 2
@@ -250,6 +229,43 @@
                         End With
                     Next
 
+                    ':::::::::ACTUALIZAR PENDIENTE DE FACTURA DE COMPRA::::::::::::::::
+                    Dim codfactura As Integer
+                    Dim resultadof, pendiente, montoc As Double
+                    Dim factura As New ClsFacturaCompra
+                    Dim dtP As New DataTable
+                    Dim rowf As DataRow
+                    'MsgBox("Se crearon variables")
+
+                    codfactura = dtDetallePagos.Rows(0).Cells(0).Value
+                    'MsgBox("Se capturo codigo de fact")
+
+                    factura.Cod_Factura = Convert.ToInt32(codfactura)
+                    dtP = factura.comprobarFactura
+                    rowf = dtP.Rows(0)
+                    'MsgBox("Busco la factura")
+
+                    montoc = Convert.ToDouble(lblTotalSuma.Text)
+                    pendiente = Convert.ToDouble(rowf("pendiente"))
+                    resultadof = pendiente - montoc
+                    'MsgBox("Ya resto " + resultadof.ToString)
+
+                    factura.Cod_Factura = Convert.ToInt32(codfactura)
+                    factura.Pendiente_ = Convert.ToDouble(resultadof)
+
+                    'cambio de estado
+                    If resultadof = 0 Then
+                        factura.Estado_ = "Pagada"
+                    Else
+                        factura.Estado_ = "Pendiente"
+                    End If
+
+                    factura.SaldoPendiente()
+                    ' MsgBox("Ya actualizo")
+
+
+                    '.........................................................
+
                     MsgBox("Se registro un nuevo pago.")
 
                 End If 'ingresar nuevo pago
@@ -274,7 +290,7 @@
 
         ElseIf e.ColumnIndex = 5 Then
             Dim data As String = dtDetallePagos.Rows(e.RowIndex).Cells(5).Value
-            MsgBox("data" = data)
+            'MsgBox("data" = data)
 
             Try
                 If data <> "False" Then
@@ -344,9 +360,6 @@
                 MsgBox("aqui es" + ex.Message)
             End Try
 
-
-
-
         ElseIf e.ColumnIndex = 0 Then
 
                 A_ListarFacCompraPagos.Show()
@@ -395,8 +408,6 @@
             End If
 
             suma()
-
-
 
         Catch ex As Exception
 
@@ -447,19 +458,119 @@
             If n = vbYes Then 'validacion
 
 
+                'actualizar datos de pago
+                With pagos
+
+                    'Variables de Pago
+                    .Cod_Pago = Integer.Parse(txtNro.Text)
+                    .codForma_Pago = Convert.ToInt32(lblCodFormaPago.Text)
+                    .Comentari_o = txtComentario.Text
+                    .Fecha_transfer = dtpFechaT.Value
+                    .Fecha_Pago = dtpFechaP.Value
+                    .Referenci_a = txtReferencia.Text
+                    .Paga_do = chkPagado.Checked
+                    .Suma_Total = lblTotalSuma.Text
+
+                    'realizar modificacion y comprobacion de guardado para modificar detalle
+                    If .modificarPago = 1 Then
+
+
+                        'modificar detalle de pago
+                        For i As Integer = 0 To dtDetallePagos.Rows.Count - 2
+                            If dtDetallePagos.Rows(i).Cells(6).Value() = 0 Then
+                                'agrega
+                                With detallePago
+
+                                    .Cod_Pago = Convert.ToInt32(txtNro.Text)
+                                    .Cod_Factura = Convert.ToInt32(dtDetallePagos.Rows(i).Cells(0).Value)
+
+                                    If dtDetallePagos.Rows(i).Cells(4).Value = "" Then
+                                        .Forma_Pago = "-"
+                                    Else
+                                        .Forma_Pago = dtDetallePagos.Rows(i).Cells(4).Value.ToString
+
+                                    End If
+
+                                    If dtDetallePagos.Rows(i).Cells(5).Value = "" Then
+
+                                        .Nro_Cheque = "-"
+
+                                    Else
+                                        .Nro_Cheque = dtDetallePagos.Rows(i).Cells(5).Value.ToString
+
+                                    End If
+
+                                    .Monto_ = Convert.ToDouble(dtDetallePagos.Rows(i).Cells(3).Value.ToString)
+
+                                End With
+
+                                If detallePago.registrarDetallePago = 0 Then
+                                    MsgBox("Error al querer insertar el detalle de factura.", MsgBoxStyle.Critical)
+                                End If
+                                'MsgBox("fin agrega")
+                            Else
+                                'actualiza los detalles de asiento
+
+                                With detallePago
+
+                                    With detallePago
+
+                                        .Cod_Detalle = Convert.ToInt32(dtDetallePagos.Rows(i).Cells(6).Value)
+                                        '.Cod_Pago = Convert.ToInt32(txtNro.Text)
+                                        .Cod_Factura = Convert.ToInt32(dtDetallePagos.Rows(i).Cells(0).Value)
+
+                                        If dtDetallePagos.Rows(i).Cells(4).Value = "" Then
+                                            .Forma_Pago = "-"
+                                        Else
+                                            .Forma_Pago = dtDetallePagos.Rows(i).Cells(4).Value.ToString
+
+                                        End If
+
+                                        If dtDetallePagos.Rows(i).Cells(5).Value = "" Then
+
+                                            .Nro_Cheque = "-"
+
+                                        Else
+                                            .Nro_Cheque = dtDetallePagos.Rows(i).Cells(5).Value.ToString
+
+                                        End If
+
+                                        .Monto_ = Convert.ToDouble(dtDetallePagos.Rows(i).Cells(3).Value.ToString)
+
+                                    End With
+
+                                End With
+
+                                If detallePago.modificarDetallePago() = 0 Then
+                                    MsgBox("Error al querer modificar el detalle de factura.", MsgBoxStyle.Critical)
+                                End If
+
+                            End If
+                        Next
+
+                    End If
+
+                End With
 
 
 
+                For index As Integer = 0 To codigoDetallePago.Count - 1
+                    detallePago.Cod_Detalle = Convert.ToInt64(codigoDetallePago(index))
+                    If detallePago.EliminarDetallePago() <> 1 Then
+                        MsgBox("Error al querer modificar el detalle de factura.", MsgBoxStyle.Critical)
+                    End If
+                Next
 
+                codigoDetallePago.Clear()
+
+                MessageBox.Show("El pago de modificó exitosamente.")
+                Me.Close()
+                A_ListarPagos.Show()
 
             End If ' validacion
         Catch ex As Exception
             MsgBox("Error. " + ex.Message)
         End Try
-
-
-
-
 
     End Sub
 
@@ -477,8 +588,6 @@
 
     End Sub
 
-
-
     Private Sub frmPagos_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
 
         If dtDetallePagos.Rows(0).Cells(5).Value <> "" Then
@@ -487,8 +596,6 @@
             If MessageBox.Show("El Pago tiene un cheque vinculado, se guardara automaticamente ¿Seguro que desea cerrar el formulario?", "Cerrar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
                 e.Cancel = True
             End If
-
-
 
         End If
 

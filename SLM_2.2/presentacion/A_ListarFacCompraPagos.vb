@@ -31,7 +31,7 @@
             frmPagos.lblCodigoProveedor.Text = codProveedor
             If (frmPagos.validarFacturaPago(nroFact) = 0) Then
 
-                frmPagos.dtDetallePagos.Rows.Add(New String() {nroFact, proveedor, moneda, monto, " ", " "})
+                frmPagos.dtDetallePagos.Rows.Add(New String() {nroFact, proveedor, moneda, monto, " ", " ", "0"})
                 Me.Close()
             Else
                 MsgBox("La factura ya ha sido agregado.")
@@ -48,8 +48,6 @@
             MsgBox("Error: " + ex.Message)
         End Try
 
-
-
     End Sub
 
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
@@ -60,7 +58,6 @@
             dtFacturasCompra.DataSource = .BuscarFacturaXNro
 
         End With
-
 
     End Sub
 End Class

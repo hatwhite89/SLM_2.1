@@ -438,7 +438,7 @@ Public Class ClsFormaPago
 
     End Function
 
-    'Capturar informacion de forma de pago por banco
+    'Capturar informacion de forma de pago por codigo numerico
     Public Function ctaBancoXBanco() As DataTable
 
         Dim objCon As New ClsConnection
@@ -460,5 +460,28 @@ Public Class ClsFormaPago
         End Using
 
     End Function
+
+    Public Function BusquedaFormaPago() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarFormaPagoxCod"
+            cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Codigo_FormaPago
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
 
 End Class

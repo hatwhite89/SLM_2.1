@@ -130,27 +130,27 @@ Partial Class M_InicioSesion
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.OrangeRed
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(227, Byte), Integer))
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(72, 353)
+        Me.Button1.Location = New System.Drawing.Point(72, 348)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(218, 28)
+        Me.Button1.Size = New System.Drawing.Size(218, 33)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "Cerrar"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'btnInicioSesion
         '
-        Me.btnInicioSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.btnInicioSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(227, Byte), Integer))
         Me.btnInicioSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInicioSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInicioSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnInicioSesion.ForeColor = System.Drawing.Color.White
-        Me.btnInicioSesion.Location = New System.Drawing.Point(72, 320)
+        Me.btnInicioSesion.Location = New System.Drawing.Point(72, 307)
         Me.btnInicioSesion.Margin = New System.Windows.Forms.Padding(2)
         Me.btnInicioSesion.Name = "btnInicioSesion"
-        Me.btnInicioSesion.Size = New System.Drawing.Size(218, 28)
+        Me.btnInicioSesion.Size = New System.Drawing.Size(218, 36)
         Me.btnInicioSesion.TabIndex = 2
         Me.btnInicioSesion.Text = "Iniciar Sesión"
         Me.btnInicioSesion.UseVisualStyleBackColor = False
@@ -158,13 +158,13 @@ Partial Class M_InicioSesion
         'UI_TitleBanner1
         '
         Me.UI_TitleBanner1.Animate = UIDC.UI_TitleBanner.Anim.AnimateON
-        Me.UI_TitleBanner1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.UI_TitleBanner1.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(227, Byte), Integer))
         Me.UI_TitleBanner1.ButtonMenuActive = UIDC.UI_TitleBanner.Active.ActiveOff
         Me.UI_TitleBanner1.ButtonsVisible = UIDC.UI_TitleBanner.ButtonVisible.Close
         Me.UI_TitleBanner1.Dock = System.Windows.Forms.DockStyle.Top
         Me.UI_TitleBanner1.FlatAppearance.BorderSize = 0
-        Me.UI_TitleBanner1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.UI_TitleBanner1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.UI_TitleBanner1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(227, Byte), Integer))
+        Me.UI_TitleBanner1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(227, Byte), Integer))
         Me.UI_TitleBanner1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.UI_TitleBanner1.Font = New System.Drawing.Font("Roboto Medium", 15.0!)
         Me.UI_TitleBanner1.ForeColor = System.Drawing.Color.White
@@ -175,7 +175,7 @@ Partial Class M_InicioSesion
         Me.UI_TitleBanner1.ParentControl = Me
         Me.UI_TitleBanner1.Size = New System.Drawing.Size(357, 70)
         Me.UI_TitleBanner1.TabIndex = 137
-        Me.UI_TitleBanner1.Text = "Login"
+        Me.UI_TitleBanner1.Text = "Iniciar sesión"
         Me.UI_TitleBanner1.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.UI_TitleBanner1.TypeWindows = UIDC.UI_TitleBanner.TypeTheme.Material
         Me.UI_TitleBanner1.UseVisualStyleBackColor = False
@@ -184,7 +184,7 @@ Partial Class M_InicioSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Red
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(357, 460)
         Me.Controls.Add(Me.UI_TitleBanner1)
         Me.Controls.Add(Me.Panel1)
@@ -196,7 +196,7 @@ Partial Class M_InicioSesion
         Me.MinimizeBox = False
         Me.Name = "M_InicioSesion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Login"
+        Me.Text = "Iniciar sesión"
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()

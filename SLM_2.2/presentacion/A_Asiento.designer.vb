@@ -52,6 +52,7 @@ Partial Class frmAsientos
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.lblOrigen = New System.Windows.Forms.Label()
         CType(Me.dtDetalleAsiento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -86,6 +87,7 @@ Partial Class frmAsientos
         '
         'dtpFecha
         '
+        Me.dtpFecha.Enabled = False
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFecha.Location = New System.Drawing.Point(246, 20)
         Me.dtpFecha.Name = "dtpFecha"
@@ -108,7 +110,7 @@ Partial Class frmAsientos
         Me.txtTexto.Location = New System.Drawing.Point(50, 45)
         Me.txtTexto.MaxLength = 200
         Me.txtTexto.Name = "txtTexto"
-        Me.txtTexto.Size = New System.Drawing.Size(595, 20)
+        Me.txtTexto.Size = New System.Drawing.Size(597, 20)
         Me.txtTexto.TabIndex = 6
         '
         'dtDetalleAsiento
@@ -135,14 +137,13 @@ Partial Class frmAsientos
         Me.dtDetalleAsiento.Location = New System.Drawing.Point(6, 19)
         Me.dtDetalleAsiento.MultiSelect = False
         Me.dtDetalleAsiento.Name = "dtDetalleAsiento"
-        Me.dtDetalleAsiento.Size = New System.Drawing.Size(637, 313)
+        Me.dtDetalleAsiento.Size = New System.Drawing.Size(639, 313)
         Me.dtDetalleAsiento.TabIndex = 7
         '
         'Column1
         '
         Me.Column1.HeaderText = "CodDetalle"
         Me.Column1.Name = "Column1"
-        Me.Column1.Visible = False
         '
         'Cuenta
         '
@@ -170,7 +171,7 @@ Partial Class frmAsientos
         '
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(402, 339)
+        Me.Label5.Location = New System.Drawing.Point(404, 339)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(31, 13)
         Me.Label5.TabIndex = 12
@@ -180,7 +181,7 @@ Partial Class frmAsientos
         '
         Me.txtTotalDebe.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtTotalDebe.Enabled = False
-        Me.txtTotalDebe.Location = New System.Drawing.Point(442, 336)
+        Me.txtTotalDebe.Location = New System.Drawing.Point(444, 336)
         Me.txtTotalDebe.Name = "txtTotalDebe"
         Me.txtTotalDebe.Size = New System.Drawing.Size(101, 20)
         Me.txtTotalDebe.TabIndex = 13
@@ -189,7 +190,7 @@ Partial Class frmAsientos
         '
         Me.txtTotalHaber.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtTotalHaber.Enabled = False
-        Me.txtTotalHaber.Location = New System.Drawing.Point(549, 336)
+        Me.txtTotalHaber.Location = New System.Drawing.Point(551, 336)
         Me.txtTotalHaber.Name = "txtTotalHaber"
         Me.txtTotalHaber.Size = New System.Drawing.Size(93, 20)
         Me.txtTotalHaber.TabIndex = 14
@@ -197,7 +198,7 @@ Partial Class frmAsientos
         'lblCodAsiento
         '
         Me.lblCodAsiento.AutoSize = True
-        Me.lblCodAsiento.Location = New System.Drawing.Point(608, 26)
+        Me.lblCodAsiento.Location = New System.Drawing.Point(577, 21)
         Me.lblCodAsiento.Name = "lblCodAsiento"
         Me.lblCodAsiento.Size = New System.Drawing.Size(10, 13)
         Me.lblCodAsiento.TabIndex = 15
@@ -207,7 +208,7 @@ Partial Class frmAsientos
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(544, 26)
+        Me.Label4.Location = New System.Drawing.Point(505, 21)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(65, 13)
         Me.Label4.TabIndex = 16
@@ -221,7 +222,7 @@ Partial Class frmAsientos
         Me.btnCerrar.FlatAppearance.BorderSize = 0
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnCerrar.Location = New System.Drawing.Point(590, 10)
+        Me.btnCerrar.Location = New System.Drawing.Point(592, 10)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
         Me.btnCerrar.TabIndex = 17
@@ -250,7 +251,7 @@ Partial Class frmAsientos
         Me.GroupBox1.Controls.Add(Me.txtTotalDebe)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 140)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(651, 362)
+        Me.GroupBox1.Size = New System.Drawing.Size(653, 362)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalle de Asiento"
@@ -260,6 +261,7 @@ Partial Class frmAsientos
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox2.Controls.Add(Me.lblOrigen)
         Me.GroupBox2.Controls.Add(Me.chkAnular)
         Me.GroupBox2.Controls.Add(Me.txtNro)
         Me.GroupBox2.Controls.Add(Me.lblNro)
@@ -271,7 +273,7 @@ Partial Class frmAsientos
         Me.GroupBox2.Controls.Add(Me.txtTexto)
         Me.GroupBox2.Location = New System.Drawing.Point(16, 61)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(651, 73)
+        Me.GroupBox2.Size = New System.Drawing.Size(653, 73)
         Me.GroupBox2.TabIndex = 20
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Descripción"
@@ -302,7 +304,7 @@ Partial Class frmAsientos
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(510, 10)
+        Me.btnGuardar.Location = New System.Drawing.Point(512, 10)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 2
@@ -314,7 +316,7 @@ Partial Class frmAsientos
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Location = New System.Drawing.Point(429, 10)
+        Me.btnModificar.Location = New System.Drawing.Point(431, 10)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 1
@@ -326,7 +328,7 @@ Partial Class frmAsientos
         Me.btnCrear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCrear.BackColor = System.Drawing.Color.White
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCrear.Location = New System.Drawing.Point(348, 10)
+        Me.btnCrear.Location = New System.Drawing.Point(350, 10)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 0
@@ -345,7 +347,7 @@ Partial Class frmAsientos
         Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Location = New System.Drawing.Point(1, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(676, 43)
+        Me.Panel1.Size = New System.Drawing.Size(678, 43)
         Me.Panel1.TabIndex = 22
         '
         'StatusStrip1
@@ -353,16 +355,25 @@ Partial Class frmAsientos
         Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 518)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(676, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(678, 22)
         Me.StatusStrip1.TabIndex = 23
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'lblOrigen
+        '
+        Me.lblOrigen.AutoSize = True
+        Me.lblOrigen.Location = New System.Drawing.Point(611, 21)
+        Me.lblOrigen.Name = "lblOrigen"
+        Me.lblOrigen.Size = New System.Drawing.Size(36, 13)
+        Me.lblOrigen.TabIndex = 18
+        Me.lblOrigen.Text = "origen"
         '
         'frmAsientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(676, 540)
+        Me.ClientSize = New System.Drawing.Size(678, 540)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)
@@ -405,11 +416,12 @@ Partial Class frmAsientos
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnCrear As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents chkAnular As CheckBox
+    Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Cuenta As DataGridViewTextBoxColumn
     Friend WithEvents Descripcion As DataGridViewTextBoxColumn
     Friend WithEvents Debe As DataGridViewTextBoxColumn
     Friend WithEvents Haber As DataGridViewTextBoxColumn
-    Friend WithEvents chkAnular As CheckBox
-    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents lblOrigen As Label
 End Class

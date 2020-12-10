@@ -1,5 +1,5 @@
 ﻿Public Class frmAsientos
-
+    Dim codigoDetalle As New ArrayList
     Private Sub frmAsientos_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If (e.KeyCode = Keys.Escape) Then
             Me.Close()
@@ -20,24 +20,15 @@
                 btn.UseColumnTextForButtonValue = True
             End If
 
-            'habilitar celdas para edicion de DEBE y HABER
-            'dtDetalleAsiento.Columns("Debe").ReadOnly = True
-            'dtDetalleAsiento.Columns("Haber").ReadOnly = True
-
-
             If txtNro.Text = "" Then
 
                 MsgBox("El registro de hará bajo el periodo contable vigente.")
                 txtNro.Enabled = True
 
-
-
                 'botones
                 btnCrear.Enabled = False
                 btnModificar.Enabled = False
                 btnGuardar.Enabled = True
-
-
 
             ElseIf txtNro.Text = lblCodAsiento.Text Then
 
@@ -50,6 +41,7 @@
                 With Detalle
 
                     .Cod_Asiento = Convert.ToInt32(lblCodAsiento.Text)
+                    .Origen_ = lblOrigen.Text
 
                     Dim dt As DataTable
                     Dim row As DataRow
@@ -74,9 +66,6 @@
 
                 End With
 
-
-
-
             Else
                 btnCrear.Enabled = False
                 btnModificar.Enabled = False
@@ -88,6 +77,7 @@
                 With Detalle
 
                     .Cod_Asiento = Convert.ToInt32(lblCodAsiento.Text)
+                    .Origen_ = lblOrigen.Text
 
                     Dim dt As DataTable
                     Dim row As DataRow
@@ -116,13 +106,13 @@
 
 
         Catch ex As Exception
-            '  MsgBox("Error:" + ex.Message)
+            MsgBox("Error:" + ex.Message)
         End Try
 
 
         Try
             'Suma de columna Debe
-            Dim Total As Single
+            Dim Total As Double
             'Dim Col As Integer = 2
             For Each row As DataGridViewRow In dtDetalleAsiento.Rows
                 Total += Val(row.Cells(3).Value)
@@ -130,14 +120,14 @@
             txtTotalDebe.Text = Total.ToString
 
             'Suma de columna Haber
-            Dim Total2 As Single
+            Dim Total2 As Double
             'Dim Col2 As Integer = 3
             For Each row As DataGridViewRow In dtDetalleAsiento.Rows
                 Total2 += Val(row.Cells(4).Value)
             Next
             txtTotalHaber.Text = Total2.ToString
         Catch ex As Exception
-            MsgBox("suma" + ex.Message)
+            MsgBox("Error al sumar debe o haber." + ex.Message)
         End Try
 
     End Sub
@@ -183,19 +173,15 @@
                 Dim codPeriodo As String
 
 
-                MsgBox("1")
                 Dim dtp As New DataTable
                 Dim rowp As DataRow
                 dtp = periodoContable.periodoContableActivo()
                 rowp = dtp.Rows(0)
 
-                MsgBox("2")
                 codPeriodo = rowp("codPeriodo").ToString
 
 
-                MsgBox("3")
                 With asiento
-                    MsgBox("4")
                     .Cod_Periodo = Convert.ToInt32(codPeriodo)
                     .Descrip = txtTexto.Text
                     .Fecha_ = dtpFecha.Value
@@ -203,35 +189,32 @@
                     .Estado_ = chkAnular.Checked
                     .Origen_ = "manual"
 
-                    MsgBox("5")
-
                     codigoAsient = .registrarAsiento()
                     lblCodAsiento.Text = codigoAsient
 
-                    'If codigoAsiento > 0 Then
+                    If codigoAsient > 0 Then
 
-                    'MsgBox(codigoAsiento)
-                    'registro de detalle de asiento 
+                        'registro de detalle de asiento 
 
-                    'With dasiento
+                        With dasiento
 
-                    '    For i = 0 To dtDetalleAsiento.Rows.Count - 1
+                            For i = 0 To dtDetalleAsiento.Rows.Count - 2
 
-                    '        '.Cod_Detalle = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(0).Value)
-                    '        .Cod_Asiento = Convert.ToInt32(lblCodAsiento.Text)
-                    '        .Cuenta_ = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(1).Value)
-                    '        .Debe_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(3).Value)
-                    '        .Haber_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(4).Value)
-                    '        .registrarDetalleAsiento()
+                                '.Cod_Detalle = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(0).Value)
+                                .Cod_Asiento = Convert.ToInt32(lblCodAsiento.Text)
+                                .Cuenta_ = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(1).Value)
+                                .Debe_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(3).Value)
+                                .Haber_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(4).Value)
+                                .Origen_ = "manual"
+                                .registrarDetalleAsiento()
 
-                    '    Next
+                            Next
 
-                    'End With
+                        End With
 
-                    'End If
+                    End If
 
                     Try
-
                         .Cod_Periodo = Convert.ToInt32(codPeriodo)
                         .Descrip = txtTexto.Text
                         .Fecha_ = dtpFecha.Value
@@ -242,18 +225,17 @@
 
                         .ActualizarAsiento()
 
-
+                        MsgBox("Se registro el asiento contable manual.")
+                        Limpiar()
                     Catch ex As Exception
-                        MsgBox("modificacion " + ex.Message)
+                        'MsgBox("modificacion " + ex.Message)
                     End Try
 
-                    MsgBox("Se registro el asiento contable manual.")
-                    Limpiar()
                 End With
 
             End If
         Catch ex As Exception
-            MsgBox("Aqui si es :" + ex.Message)
+            MsgBox("Error al registrar nuevo asiento :" + ex.Message)
         End Try
 
     End Sub
@@ -267,17 +249,6 @@
                 A_ListarCuentas.lblForm.Text = "asientos"
                 A_ListarCuentas.ShowDialog()
 
-
-            ElseIf e.ColumnIndex = 5 Then
-                Try
-                    Dim n As String = MsgBox("¿Desea eliminar la cuenta del asiento?", MsgBoxStyle.YesNo, "Validación")
-                    If n = vbYes Then
-                        dtDetalleAsiento.Rows.Remove(dtDetalleAsiento.Rows(e.RowIndex.ToString))
-
-                    End If
-                Catch ex As Exception
-                    MsgBox(ex.Message, MsgBoxStyle.Critical)
-                End Try
             End If
 
         Catch ex As Exception
@@ -385,20 +356,20 @@
         If e.ColumnIndex = 3 Then
 
             'Suma de columna Debe
-            Dim Total As Single
-            Dim Col As Integer = 2
+            Dim Total As Double
+            Dim Col As Integer = 3
             For Each row As DataGridViewRow In dtDetalleAsiento.Rows
-                Total += Val(row.Cells(2).Value)
+                Total += Val(row.Cells(3).Value)
             Next
             txtTotalDebe.Text = Total.ToString
 
         ElseIf e.ColumnIndex = 4 Then
 
             'Suma de columna Haber
-            Dim Total2 As Single
-            Dim Col2 As Integer = 3
+            Dim Total2 As Double
+            Dim Col2 As Integer = 4
             For Each row As DataGridViewRow In dtDetalleAsiento.Rows
-                Total2 += Val(row.Cells(3).Value)
+                Total2 += Val(row.Cells(4).Value)
             Next
             txtTotalHaber.Text = Total2
 
@@ -424,25 +395,65 @@
                     .Fecha_ = dtpFecha.Value
                     .Campo_Llave = Convert.ToInt32(txtNro.Text)
                     .Estado_ = chkAnular.Checked
+                    .Origen_ = "manual"
                     .ActualizarAsiento()
-                End With
 
-                With asientod
+                    If .ActualizarAsiento() = 1 Then
 
-                    For i = 0 To dtDetalleAsiento.Rows.Count - 1
+                        'registro o actualizacion detalle de factura
 
-                        .Cod_Detalle = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(0).Value)
-                        .Cod_Asiento = Convert.ToInt32(lblCodAsiento.Text)
-                        .Cuenta_ = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(1).Value)
-                        .Debe_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(3).Value)
-                        .Haber_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(4).Value)
+                        For i As Integer = 0 To dtDetalleAsiento.Rows.Count - 2
+                            If dtDetalleAsiento.Rows(i).Cells(0).Value() = 0 Then
+                                'agrega
+                                With asientod
+                                    '.Cod_Detalle = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(0).Value)
+                                    .Cod_Asiento = Convert.ToInt32(lblCodAsiento.Text)
+                                    .Cuenta_ = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(1).Value)
+                                    .Debe_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(3).Value)
+                                    .Haber_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(4).Value)
+                                    .Origen_ = "manual"
+                                End With
 
-                        .modificarDetalleAsiento()
+                                If asientod.registrarDetalleAsiento() = 0 Then
+                                    MsgBox("Error al querer insertar el detalle de factura.", MsgBoxStyle.Critical)
+                                End If
+                                MsgBox("fin agrega")
+                            Else
+                                'actualiza los detalles de asiento
 
-                    Next
+                                With asientod
+                                    .Cod_Detalle = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(0).Value)
+                                    .Cod_Asiento = Convert.ToInt32(lblCodAsiento.Text)
+                                    .Cuenta_ = Convert.ToInt32(dtDetalleAsiento.Rows(i).Cells(1).Value)
+                                    .Debe_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(3).Value)
+                                    .Haber_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(4).Value)
+                                    .Origen_ = "manual"
+                                End With
 
-                End With
-            End If
+                                If asientod.modificarDetalleAsiento() = 0 Then
+                                    MsgBox("Error al querer modificar el detalle de factura.", MsgBoxStyle.Critical)
+                                End If
+
+                            End If
+                        Next
+
+                        For index As Integer = 0 To codigoDetalle.Count - 1
+                            asientod.Cod_Detalle = Convert.ToInt64(codigoDetalle(index))
+                            If asientod.EliminarDetalleAsiento() <> 1 Then
+                                MsgBox("Error al querer modificar el detalle de factura.", MsgBoxStyle.Critical)
+                            End If
+                        Next
+
+                        codigoDetalle.Clear()
+
+                        MessageBox.Show("La factura se modifico exitosamente.")
+                        Me.Close()
+                        A_ListadoAsientos.Show()
+
+                    End If
+                End With 'FactCompra
+
+            End If 'desea guardar
 
         Catch ex As Exception
             MsgBox("Error: " + ex.Message)
@@ -450,4 +461,24 @@
 
     End Sub
 
+    Private Sub dtDetalleAsiento_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleAsiento.CellClick
+        If e.ColumnIndex = 5 Then
+            Try
+                Dim n As String = MsgBox("¿Desea eliminar la cuenta del asiento?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+
+                    If dtDetalleAsiento.Rows(e.RowIndex).Cells(0).Value() <> "0" Then
+
+                        codigoDetalle.Add(Me.dtDetalleAsiento.Rows(e.RowIndex).Cells(0).Value())
+
+                    End If
+
+                    dtDetalleAsiento.Rows.Remove(dtDetalleAsiento.Rows(e.RowIndex.ToString))
+
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message, MsgBoxStyle.Critical)
+            End Try
+        End If
+    End Sub
 End Class
