@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80A97C69-33C1-4D76-A4FF-61E3B54BEE03}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SLM_2._2.M_InicioSesion</StartupObject>
+    <StartupObject>SLM_2._2.MM_TomaDeMuestras</StartupObject>
     <RootNamespace>SLM_2._2</RootNamespace>
     <AssemblyName>0</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -267,6 +267,7 @@
     <Compile Include="negocio\ClsTipoDeducciones.vb" />
     <Compile Include="negocio\clsTipoMovimiento.vb" />
     <Compile Include="negocio\ClsTipoPermiso.vb" />
+    <Compile Include="negocio\ClsTomaDeMuestras.vb" />
     <Compile Include="negocio\ClsTrasladosAlmacen.vb" />
     <Compile Include="negocio\ClsUnidad.vb" />
     <Compile Include="negocio\ClsDetallePromociones.vb" />
@@ -991,6 +992,12 @@
       <DependentUpon>MM_Conserje.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\MM_Conserje.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\MM_TomaDeMuestras.Designer.vb">
+      <DependentUpon>MM_TomaDeMuestras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\MM_TomaDeMuestras.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\MM_VistaIngresos.Designer.vb">
@@ -1917,6 +1924,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\MM_Conserje.resx">
       <DependentUpon>MM_Conserje.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\MM_TomaDeMuestras.resx">
+      <DependentUpon>MM_TomaDeMuestras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\MM_VistaIngresos.resx">
       <DependentUpon>MM_VistaIngresos.vb</DependentUpon>
