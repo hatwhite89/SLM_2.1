@@ -340,6 +340,16 @@
                     M_DiarioFacturacion.txtExamen.Text = txtDescripcion.Text
                     Me.Close()
                 End If
+            ElseIf (lblform.Text = "MM_TomaDeMuestras") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el examen en la toma de muestra?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    MM_TomaDeMuestras.lblcodexamen.Text = txtCodExamen.Text
+                    MM_TomaDeMuestras.txtCodExamen.Text = txtCodInterno.Text
+                    MM_TomaDeMuestras.txtExamen.Text = txtDescripcion.Text
+                    Me.Close()
+                End If
             End If
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
