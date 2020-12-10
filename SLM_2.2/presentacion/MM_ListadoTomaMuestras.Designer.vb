@@ -23,7 +23,7 @@ Partial Class MM_ListadoTomaMuestras
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.lblReferencia = New System.Windows.Forms.Label()
+        Me.lblDescripcion = New System.Windows.Forms.Label()
         Me.lblNumero = New System.Windows.Forms.Label()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.btnnueva = New System.Windows.Forms.Button()
@@ -41,7 +41,7 @@ Partial Class MM_ListadoTomaMuestras
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
-        Me.GroupBox1.Controls.Add(Me.lblReferencia)
+        Me.GroupBox1.Controls.Add(Me.lblDescripcion)
         Me.GroupBox1.Controls.Add(Me.lblNumero)
         Me.GroupBox1.Controls.Add(Me.lblcantidad)
         Me.GroupBox1.Controls.Add(Me.btnnueva)
@@ -58,23 +58,23 @@ Partial Class MM_ListadoTomaMuestras
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Búsqueda Toma de Muestras"
         '
-        'lblReferencia
+        'lblDescripcion
         '
-        Me.lblReferencia.AutoSize = True
-        Me.lblReferencia.Location = New System.Drawing.Point(308, 33)
-        Me.lblReferencia.Name = "lblReferencia"
-        Me.lblReferencia.Size = New System.Drawing.Size(77, 17)
-        Me.lblReferencia.TabIndex = 123
-        Me.lblReferencia.Text = "Referencia"
+        Me.lblDescripcion.AutoSize = True
+        Me.lblDescripcion.Location = New System.Drawing.Point(308, 33)
+        Me.lblDescripcion.Name = "lblDescripcion"
+        Me.lblDescripcion.Size = New System.Drawing.Size(82, 17)
+        Me.lblDescripcion.TabIndex = 123
+        Me.lblDescripcion.Text = "Descripción"
         '
         'lblNumero
         '
         Me.lblNumero.AutoSize = True
         Me.lblNumero.Location = New System.Drawing.Point(17, 33)
         Me.lblNumero.Name = "lblNumero"
-        Me.lblNumero.Size = New System.Drawing.Size(58, 17)
+        Me.lblNumero.Size = New System.Drawing.Size(52, 17)
         Me.lblNumero.TabIndex = 122
-        Me.lblNumero.Text = "Número"
+        Me.lblNumero.Text = "Código"
         '
         'lblcantidad
         '
@@ -160,7 +160,7 @@ Partial Class MM_ListadoTomaMuestras
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents lblReferencia As Label
+    Friend WithEvents lblDescripcion As Label
     Friend WithEvents lblNumero As Label
     Friend WithEvents lblcantidad As Label
     Friend WithEvents btnnueva As Button

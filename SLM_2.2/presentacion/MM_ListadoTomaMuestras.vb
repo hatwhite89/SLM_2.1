@@ -37,6 +37,7 @@
                 n = MsgBox("¿Desea ver la toma de muestra?", MsgBoxStyle.YesNo, "Validación")
             End If
             If n = vbYes Then
+                MM_TomaDeMuestras.limpiar()
 
                 MM_TomaDeMuestras.txtCodigo.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
                 MM_TomaDeMuestras.lblcodexamen.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()

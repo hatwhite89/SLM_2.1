@@ -191,6 +191,7 @@ Partial Class MM_TomaDeMuestras
         Me.lblform.Size = New System.Drawing.Size(50, 17)
         Me.lblform.TabIndex = 8
         Me.lblform.Text = "lblform"
+        Me.lblform.Visible = False
         '
         'txtExamen
         '
