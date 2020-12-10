@@ -1000,6 +1000,12 @@
     <Compile Include="presentacion\MM_CuestionarioMuestras.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\MM_ListadoTomaMuestras.Designer.vb">
+      <DependentUpon>MM_ListadoTomaMuestras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\MM_ListadoTomaMuestras.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\MM_TomaDeMuestras.Designer.vb">
       <DependentUpon>MM_TomaDeMuestras.vb</DependentUpon>
     </Compile>
@@ -1933,6 +1939,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\MM_CuestionarioMuestras.resx">
       <DependentUpon>MM_CuestionarioMuestras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\MM_ListadoTomaMuestras.resx">
+      <DependentUpon>MM_ListadoTomaMuestras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\MM_TomaDeMuestras.resx">
       <DependentUpon>MM_TomaDeMuestras.vb</DependentUpon>
