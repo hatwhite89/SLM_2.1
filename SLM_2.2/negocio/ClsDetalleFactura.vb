@@ -275,6 +275,7 @@ Public Class ClsDetalleFactura
             End Using
         End Using
     End Function
+
     Public Function SeleccionarDetalleFactura() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
