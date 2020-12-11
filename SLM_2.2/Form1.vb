@@ -1233,4 +1233,20 @@
     Private Sub PictureBox38_Click_2(sender As Object, e As EventArgs) Handles PictureBox38.Click
 
     End Sub
+
+    Private Sub btnTrabajo_Click(sender As Object, e As EventArgs) Handles btnTrabajo.Click
+
+    End Sub
+
+    Private Sub PictureBox23_Click(sender As Object, e As EventArgs) Handles PictureBox23.Click
+        E_ListarOrdenesDeTrabajo.Show()
+    End Sub
+
+    Private Sub PictureBox24_Click(sender As Object, e As EventArgs) Handles PictureBox24.Click
+
+    End Sub
+
+    Private Sub PictureBox25_Click(sender As Object, e As EventArgs) Handles PictureBox25.Click
+
+    End Sub
 End Class

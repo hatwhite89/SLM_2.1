@@ -108,10 +108,6 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox55 = New System.Windows.Forms.PictureBox()
         Me.pbxNoti = New System.Windows.Forms.PictureBox()
-        Me.btnFeriados = New System.Windows.Forms.PictureBox()
-        Me.btnUsuarios = New System.Windows.Forms.PictureBox()
-        Me.btnPerfiles = New System.Windows.Forms.PictureBox()
-        Me.btnServidorCorreo = New System.Windows.Forms.PictureBox()
         Me.PictureBox19 = New System.Windows.Forms.PictureBox()
         Me.PictureBox76 = New System.Windows.Forms.PictureBox()
         Me.PictureBox49 = New System.Windows.Forms.PictureBox()
@@ -197,6 +193,10 @@ Partial Class Form1
         Me.btnDepoBanc = New System.Windows.Forms.PictureBox()
         Me.btnPagos = New System.Windows.Forms.PictureBox()
         Me.btnFacturaCompra = New System.Windows.Forms.PictureBox()
+        Me.btnFeriados = New System.Windows.Forms.PictureBox()
+        Me.btnUsuarios = New System.Windows.Forms.PictureBox()
+        Me.btnPerfiles = New System.Windows.Forms.PictureBox()
+        Me.btnServidorCorreo = New System.Windows.Forms.PictureBox()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.tcMenu.SuspendLayout()
@@ -235,10 +235,6 @@ Partial Class Form1
         Me.Panel9.SuspendLayout()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnFeriados, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnPerfiles, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnServidorCorreo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox76, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox49, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -324,6 +320,10 @@ Partial Class Form1
         CType(Me.btnDepoBanc, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnPagos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnFacturaCompra, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnFeriados, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnPerfiles, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnServidorCorreo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -837,7 +837,7 @@ Partial Class Form1
         '
         'btnSucursal
         '
-        Me.btnSucursal.Location = New System.Drawing.Point(147, 271)
+        Me.btnSucursal.Location = New System.Drawing.Point(120, 160)
         Me.btnSucursal.Name = "btnSucursal"
         Me.btnSucursal.Size = New System.Drawing.Size(87, 23)
         Me.btnSucursal.TabIndex = 11
@@ -846,7 +846,7 @@ Partial Class Form1
         '
         'btnSede
         '
-        Me.btnSede.Location = New System.Drawing.Point(51, 271)
+        Me.btnSede.Location = New System.Drawing.Point(14, 160)
         Me.btnSede.Name = "btnSede"
         Me.btnSede.Size = New System.Drawing.Size(87, 23)
         Me.btnSede.TabIndex = 10
@@ -1466,48 +1466,9 @@ Partial Class Form1
         Me.pbxNoti.TabStop = False
         Me.pbxNoti.Visible = False
         '
-        'btnFeriados
-        '
-        Me.btnFeriados.Image = Global.SLM_2._2.My.Resources.Resources.configuracion_de_sistema_931
-        Me.btnFeriados.Location = New System.Drawing.Point(419, 25)
-        Me.btnFeriados.Name = "btnFeriados"
-        Me.btnFeriados.Size = New System.Drawing.Size(101, 115)
-        Me.btnFeriados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnFeriados.TabIndex = 48
-        Me.btnFeriados.TabStop = False
-        '
-        'btnUsuarios
-        '
-        Me.btnUsuarios.Image = Global.SLM_2._2.My.Resources.Resources.configuracion_de_sistema_90
-        Me.btnUsuarios.Location = New System.Drawing.Point(13, 25)
-        Me.btnUsuarios.Name = "btnUsuarios"
-        Me.btnUsuarios.Size = New System.Drawing.Size(101, 115)
-        Me.btnUsuarios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnUsuarios.TabIndex = 46
-        Me.btnUsuarios.TabStop = False
-        '
-        'btnPerfiles
-        '
-        Me.btnPerfiles.Image = Global.SLM_2._2.My.Resources.Resources.configuracion_de_sistema_91
-        Me.btnPerfiles.Location = New System.Drawing.Point(150, 25)
-        Me.btnPerfiles.Name = "btnPerfiles"
-        Me.btnPerfiles.Size = New System.Drawing.Size(101, 115)
-        Me.btnPerfiles.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnPerfiles.TabIndex = 45
-        Me.btnPerfiles.TabStop = False
-        '
-        'btnServidorCorreo
-        '
-        Me.btnServidorCorreo.Image = Global.SLM_2._2.My.Resources.Resources.configuracion_de_sistema_93
-        Me.btnServidorCorreo.Location = New System.Drawing.Point(281, 25)
-        Me.btnServidorCorreo.Name = "btnServidorCorreo"
-        Me.btnServidorCorreo.Size = New System.Drawing.Size(101, 115)
-        Me.btnServidorCorreo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnServidorCorreo.TabIndex = 44
-        Me.btnServidorCorreo.TabStop = False
-        '
         'PictureBox19
         '
+        Me.PictureBox19.Image = Global.SLM_2._2.My.Resources.Resources.examenes_65
         Me.PictureBox19.InitialImage = Nothing
         Me.PictureBox19.Location = New System.Drawing.Point(399, 162)
         Me.PictureBox19.Margin = New System.Windows.Forms.Padding(2)
@@ -1519,6 +1480,7 @@ Partial Class Form1
         '
         'PictureBox76
         '
+        Me.PictureBox76.Image = Global.SLM_2._2.My.Resources.Resources.examenes_66
         Me.PictureBox76.InitialImage = Nothing
         Me.PictureBox76.Location = New System.Drawing.Point(281, 162)
         Me.PictureBox76.Margin = New System.Windows.Forms.Padding(2)
@@ -1530,6 +1492,7 @@ Partial Class Form1
         '
         'PictureBox49
         '
+        Me.PictureBox49.Image = Global.SLM_2._2.My.Resources.Resources.examenes_64
         Me.PictureBox49.InitialImage = Nothing
         Me.PictureBox49.Location = New System.Drawing.Point(396, 13)
         Me.PictureBox49.Margin = New System.Windows.Forms.Padding(2)
@@ -1541,6 +1504,7 @@ Partial Class Form1
         '
         'PictureBox48
         '
+        Me.PictureBox48.Image = Global.SLM_2._2.My.Resources.Resources.examenes_63
         Me.PictureBox48.InitialImage = Nothing
         Me.PictureBox48.Location = New System.Drawing.Point(279, 12)
         Me.PictureBox48.Margin = New System.Windows.Forms.Padding(2)
@@ -1552,6 +1516,7 @@ Partial Class Form1
         '
         'PictureBox23
         '
+        Me.PictureBox23.Image = Global.SLM_2._2.My.Resources.Resources.examenes_62
         Me.PictureBox23.InitialImage = Nothing
         Me.PictureBox23.Location = New System.Drawing.Point(150, 13)
         Me.PictureBox23.Margin = New System.Windows.Forms.Padding(2)
@@ -1563,6 +1528,7 @@ Partial Class Form1
         '
         'PictureBox22
         '
+        Me.PictureBox22.Image = Global.SLM_2._2.My.Resources.Resources.examenes_67
         Me.PictureBox22.InitialImage = Nothing
         Me.PictureBox22.Location = New System.Drawing.Point(150, 162)
         Me.PictureBox22.Margin = New System.Windows.Forms.Padding(2)
@@ -1574,6 +1540,7 @@ Partial Class Form1
         '
         'PictureBox21
         '
+        Me.PictureBox21.Image = Global.SLM_2._2.My.Resources.Resources.examenes_68
         Me.PictureBox21.InitialImage = Nothing
         Me.PictureBox21.Location = New System.Drawing.Point(23, 162)
         Me.PictureBox21.Margin = New System.Windows.Forms.Padding(2)
@@ -1585,6 +1552,7 @@ Partial Class Form1
         '
         'PictureBox20
         '
+        Me.PictureBox20.Image = Global.SLM_2._2.My.Resources.Resources.examenes_61
         Me.PictureBox20.InitialImage = Nothing
         Me.PictureBox20.Location = New System.Drawing.Point(23, 13)
         Me.PictureBox20.Margin = New System.Windows.Forms.Padding(2)
@@ -1596,6 +1564,7 @@ Partial Class Form1
         '
         'PictureBox25
         '
+        Me.PictureBox25.Image = Global.SLM_2._2.My.Resources.Resources.iconos_sistema_732
         Me.PictureBox25.InitialImage = Nothing
         Me.PictureBox25.Location = New System.Drawing.Point(119, 9)
         Me.PictureBox25.Margin = New System.Windows.Forms.Padding(2)
@@ -1607,6 +1576,7 @@ Partial Class Form1
         '
         'PictureBox24
         '
+        Me.PictureBox24.Image = Global.SLM_2._2.My.Resources.Resources.iconos_sistema_722
         Me.PictureBox24.InitialImage = Nothing
         Me.PictureBox24.Location = New System.Drawing.Point(13, 9)
         Me.PictureBox24.Margin = New System.Windows.Forms.Padding(2)
@@ -1618,6 +1588,7 @@ Partial Class Form1
         '
         'PictureBox26
         '
+        Me.PictureBox26.Image = Global.SLM_2._2.My.Resources.Resources.iconos_sistema_711
         Me.PictureBox26.InitialImage = Nothing
         Me.PictureBox26.Location = New System.Drawing.Point(22, 9)
         Me.PictureBox26.Margin = New System.Windows.Forms.Padding(2)
@@ -1629,6 +1600,7 @@ Partial Class Form1
         '
         'PictureBox18
         '
+        Me.PictureBox18.Image = Global.SLM_2._2.My.Resources.Resources.iconos_sistema_701
         Me.PictureBox18.InitialImage = Nothing
         Me.PictureBox18.Location = New System.Drawing.Point(30, 19)
         Me.PictureBox18.Margin = New System.Windows.Forms.Padding(2)
@@ -2343,6 +2315,46 @@ Partial Class Form1
         Me.btnFacturaCompra.TabIndex = 44
         Me.btnFacturaCompra.TabStop = False
         '
+        'btnFeriados
+        '
+        Me.btnFeriados.Image = Global.SLM_2._2.My.Resources.Resources.configuracion_de_sistema_931
+        Me.btnFeriados.Location = New System.Drawing.Point(419, 25)
+        Me.btnFeriados.Name = "btnFeriados"
+        Me.btnFeriados.Size = New System.Drawing.Size(101, 115)
+        Me.btnFeriados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnFeriados.TabIndex = 48
+        Me.btnFeriados.TabStop = False
+        '
+        'btnUsuarios
+        '
+        Me.btnUsuarios.Image = Global.SLM_2._2.My.Resources.Resources.configuracion_de_sistema_90
+        Me.btnUsuarios.Location = New System.Drawing.Point(13, 25)
+        Me.btnUsuarios.Name = "btnUsuarios"
+        Me.btnUsuarios.Size = New System.Drawing.Size(101, 115)
+        Me.btnUsuarios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnUsuarios.TabIndex = 46
+        Me.btnUsuarios.TabStop = False
+        '
+        'btnPerfiles
+        '
+        Me.btnPerfiles.Image = Global.SLM_2._2.My.Resources.Resources.configuracion_de_sistema_91
+        Me.btnPerfiles.Location = New System.Drawing.Point(150, 25)
+        Me.btnPerfiles.Name = "btnPerfiles"
+        Me.btnPerfiles.Size = New System.Drawing.Size(101, 115)
+        Me.btnPerfiles.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnPerfiles.TabIndex = 45
+        Me.btnPerfiles.TabStop = False
+        '
+        'btnServidorCorreo
+        '
+        Me.btnServidorCorreo.Image = Global.SLM_2._2.My.Resources.Resources.configuracion_de_sistema_93
+        Me.btnServidorCorreo.Location = New System.Drawing.Point(281, 25)
+        Me.btnServidorCorreo.Name = "btnServidorCorreo"
+        Me.btnServidorCorreo.Size = New System.Drawing.Size(101, 115)
+        Me.btnServidorCorreo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnServidorCorreo.TabIndex = 44
+        Me.btnServidorCorreo.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2422,10 +2434,6 @@ Partial Class Form1
         Me.Panel9.PerformLayout()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnFeriados, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnPerfiles, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnServidorCorreo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox76, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox49, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2511,6 +2519,10 @@ Partial Class Form1
         CType(Me.btnDepoBanc, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnPagos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnFacturaCompra, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnFeriados, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnPerfiles, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnServidorCorreo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
