@@ -108,42 +108,6 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox55 = New System.Windows.Forms.PictureBox()
         Me.pbxNoti = New System.Windows.Forms.PictureBox()
-        Me.btnConstanciaPlantillas = New System.Windows.Forms.PictureBox()
-        Me.btnReporteria = New System.Windows.Forms.PictureBox()
-        Me.btnTipoPermiso = New System.Windows.Forms.PictureBox()
-        Me.btnCapacitaciones = New System.Windows.Forms.PictureBox()
-        Me.btnCandidatos = New System.Windows.Forms.PictureBox()
-        Me.btnDepto = New System.Windows.Forms.PictureBox()
-        Me.btnPuestoTrabajo = New System.Windows.Forms.PictureBox()
-        Me.btnHorarios = New System.Windows.Forms.PictureBox()
-        Me.btnContratos = New System.Windows.Forms.PictureBox()
-        Me.btnProfesion = New System.Windows.Forms.PictureBox()
-        Me.btnTipoDeducciones = New System.Windows.Forms.PictureBox()
-        Me.btnArea = New System.Windows.Forms.PictureBox()
-        Me.btnVacaciones = New System.Windows.Forms.PictureBox()
-        Me.btnPermisos = New System.Windows.Forms.PictureBox()
-        Me.btnSucursales = New System.Windows.Forms.PictureBox()
-        Me.btnEmpleados = New System.Windows.Forms.PictureBox()
-        Me.btnPeriodoContable = New System.Windows.Forms.PictureBox()
-        Me.btnAsientos = New System.Windows.Forms.PictureBox()
-        Me.btnCategoriaProveedor = New System.Windows.Forms.PictureBox()
-        Me.btnProveedor = New System.Windows.Forms.PictureBox()
-        Me.btnFormaPago = New System.Windows.Forms.PictureBox()
-        Me.btnCAI = New System.Windows.Forms.PictureBox()
-        Me.btnBancos = New System.Windows.Forms.PictureBox()
-        Me.btnCuentas = New System.Windows.Forms.PictureBox()
-        Me.btnPrecio = New System.Windows.Forms.PictureBox()
-        Me.btnListaPrecio = New System.Windows.Forms.PictureBox()
-        Me.btnDescuento = New System.Windows.Forms.PictureBox()
-        Me.btnPromociones = New System.Windows.Forms.PictureBox()
-        Me.PictureBox37 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox36 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnCheques = New System.Windows.Forms.PictureBox()
-        Me.btnChequera = New System.Windows.Forms.PictureBox()
-        Me.btnDepoBanc = New System.Windows.Forms.PictureBox()
-        Me.btnPagos = New System.Windows.Forms.PictureBox()
-        Me.btnFacturaCompra = New System.Windows.Forms.PictureBox()
         Me.btnFeriados = New System.Windows.Forms.PictureBox()
         Me.btnUsuarios = New System.Windows.Forms.PictureBox()
         Me.btnPerfiles = New System.Windows.Forms.PictureBox()
@@ -197,6 +161,42 @@ Partial Class Form1
         Me.PictureBox86 = New System.Windows.Forms.PictureBox()
         Me.PictureBox53 = New System.Windows.Forms.PictureBox()
         Me.PictureBox61 = New System.Windows.Forms.PictureBox()
+        Me.btnConstanciaPlantillas = New System.Windows.Forms.PictureBox()
+        Me.btnReporteria = New System.Windows.Forms.PictureBox()
+        Me.btnTipoPermiso = New System.Windows.Forms.PictureBox()
+        Me.btnCapacitaciones = New System.Windows.Forms.PictureBox()
+        Me.btnCandidatos = New System.Windows.Forms.PictureBox()
+        Me.btnDepto = New System.Windows.Forms.PictureBox()
+        Me.btnPuestoTrabajo = New System.Windows.Forms.PictureBox()
+        Me.btnHorarios = New System.Windows.Forms.PictureBox()
+        Me.btnContratos = New System.Windows.Forms.PictureBox()
+        Me.btnProfesion = New System.Windows.Forms.PictureBox()
+        Me.btnTipoDeducciones = New System.Windows.Forms.PictureBox()
+        Me.btnArea = New System.Windows.Forms.PictureBox()
+        Me.btnVacaciones = New System.Windows.Forms.PictureBox()
+        Me.btnPermisos = New System.Windows.Forms.PictureBox()
+        Me.btnSucursales = New System.Windows.Forms.PictureBox()
+        Me.btnEmpleados = New System.Windows.Forms.PictureBox()
+        Me.btnPeriodoContable = New System.Windows.Forms.PictureBox()
+        Me.btnAsientos = New System.Windows.Forms.PictureBox()
+        Me.btnCategoriaProveedor = New System.Windows.Forms.PictureBox()
+        Me.btnProveedor = New System.Windows.Forms.PictureBox()
+        Me.btnFormaPago = New System.Windows.Forms.PictureBox()
+        Me.btnCAI = New System.Windows.Forms.PictureBox()
+        Me.btnBancos = New System.Windows.Forms.PictureBox()
+        Me.btnCuentas = New System.Windows.Forms.PictureBox()
+        Me.btnPrecio = New System.Windows.Forms.PictureBox()
+        Me.btnListaPrecio = New System.Windows.Forms.PictureBox()
+        Me.btnDescuento = New System.Windows.Forms.PictureBox()
+        Me.btnPromociones = New System.Windows.Forms.PictureBox()
+        Me.PictureBox37 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox36 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnCheques = New System.Windows.Forms.PictureBox()
+        Me.btnChequera = New System.Windows.Forms.PictureBox()
+        Me.btnDepoBanc = New System.Windows.Forms.PictureBox()
+        Me.btnPagos = New System.Windows.Forms.PictureBox()
+        Me.btnFacturaCompra = New System.Windows.Forms.PictureBox()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.tcMenu.SuspendLayout()
@@ -235,42 +235,6 @@ Partial Class Form1
         Me.Panel9.SuspendLayout()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnConstanciaPlantillas, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnReporteria, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnTipoPermiso, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnCapacitaciones, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnCandidatos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnDepto, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnPuestoTrabajo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnHorarios, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnContratos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnProfesion, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnTipoDeducciones, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnArea, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnVacaciones, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnPermisos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnSucursales, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnPeriodoContable, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnAsientos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnCategoriaProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnFormaPago, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnCAI, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnBancos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnListaPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnDescuento, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnPromociones, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnCheques, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnChequera, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnDepoBanc, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnPagos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnFacturaCompra, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnFeriados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnPerfiles, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -324,6 +288,42 @@ Partial Class Form1
         CType(Me.PictureBox86, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox61, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnConstanciaPlantillas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnReporteria, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnTipoPermiso, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnCapacitaciones, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnCandidatos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnDepto, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnPuestoTrabajo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnHorarios, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnContratos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnProfesion, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnTipoDeducciones, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnArea, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnVacaciones, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnPermisos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnSucursales, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnPeriodoContable, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnAsientos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnCategoriaProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnFormaPago, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnCAI, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnBancos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnListaPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnDescuento, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnPromociones, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnCheques, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnChequera, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnDepoBanc, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnPagos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnFacturaCompra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -1466,348 +1466,9 @@ Partial Class Form1
         Me.pbxNoti.TabStop = False
         Me.pbxNoti.Visible = False
         '
-        'btnConstanciaPlantillas
-        '
-        Me.btnConstanciaPlantillas.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_79
-        Me.btnConstanciaPlantillas.Location = New System.Drawing.Point(481, 30)
-        Me.btnConstanciaPlantillas.Name = "btnConstanciaPlantillas"
-        Me.btnConstanciaPlantillas.Size = New System.Drawing.Size(85, 111)
-        Me.btnConstanciaPlantillas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnConstanciaPlantillas.TabIndex = 61
-        Me.btnConstanciaPlantillas.TabStop = False
-        '
-        'btnReporteria
-        '
-        Me.btnReporteria.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_85
-        Me.btnReporteria.Location = New System.Drawing.Point(481, 151)
-        Me.btnReporteria.Name = "btnReporteria"
-        Me.btnReporteria.Size = New System.Drawing.Size(85, 109)
-        Me.btnReporteria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnReporteria.TabIndex = 59
-        Me.btnReporteria.TabStop = False
-        '
-        'btnTipoPermiso
-        '
-        Me.btnTipoPermiso.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_89
-        Me.btnTipoPermiso.Location = New System.Drawing.Point(296, 272)
-        Me.btnTipoPermiso.Name = "btnTipoPermiso"
-        Me.btnTipoPermiso.Size = New System.Drawing.Size(88, 109)
-        Me.btnTipoPermiso.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnTipoPermiso.TabIndex = 57
-        Me.btnTipoPermiso.TabStop = False
-        '
-        'btnCapacitaciones
-        '
-        Me.btnCapacitaciones.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_88
-        Me.btnCapacitaciones.Location = New System.Drawing.Point(201, 272)
-        Me.btnCapacitaciones.Name = "btnCapacitaciones"
-        Me.btnCapacitaciones.Size = New System.Drawing.Size(86, 109)
-        Me.btnCapacitaciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnCapacitaciones.TabIndex = 55
-        Me.btnCapacitaciones.TabStop = False
-        '
-        'btnCandidatos
-        '
-        Me.btnCandidatos.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_87
-        Me.btnCandidatos.Location = New System.Drawing.Point(109, 272)
-        Me.btnCandidatos.Name = "btnCandidatos"
-        Me.btnCandidatos.Size = New System.Drawing.Size(86, 109)
-        Me.btnCandidatos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnCandidatos.TabIndex = 53
-        Me.btnCandidatos.TabStop = False
-        '
-        'btnDepto
-        '
-        Me.btnDepto.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_84
-        Me.btnDepto.Location = New System.Drawing.Point(388, 151)
-        Me.btnDepto.Name = "btnDepto"
-        Me.btnDepto.Size = New System.Drawing.Size(86, 109)
-        Me.btnDepto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnDepto.TabIndex = 52
-        Me.btnDepto.TabStop = False
-        '
-        'btnPuestoTrabajo
-        '
-        Me.btnPuestoTrabajo.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_74
-        Me.btnPuestoTrabajo.Location = New System.Drawing.Point(16, 30)
-        Me.btnPuestoTrabajo.Name = "btnPuestoTrabajo"
-        Me.btnPuestoTrabajo.Size = New System.Drawing.Size(87, 110)
-        Me.btnPuestoTrabajo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnPuestoTrabajo.TabIndex = 51
-        Me.btnPuestoTrabajo.TabStop = False
-        '
-        'btnHorarios
-        '
-        Me.btnHorarios.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_75
-        Me.btnHorarios.Location = New System.Drawing.Point(109, 30)
-        Me.btnHorarios.Name = "btnHorarios"
-        Me.btnHorarios.Size = New System.Drawing.Size(86, 110)
-        Me.btnHorarios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnHorarios.TabIndex = 50
-        Me.btnHorarios.TabStop = False
-        '
-        'btnContratos
-        '
-        Me.btnContratos.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_76
-        Me.btnContratos.Location = New System.Drawing.Point(201, 30)
-        Me.btnContratos.Name = "btnContratos"
-        Me.btnContratos.Size = New System.Drawing.Size(86, 110)
-        Me.btnContratos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnContratos.TabIndex = 49
-        Me.btnContratos.TabStop = False
-        '
-        'btnProfesion
-        '
-        Me.btnProfesion.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_77
-        Me.btnProfesion.Location = New System.Drawing.Point(294, 30)
-        Me.btnProfesion.Name = "btnProfesion"
-        Me.btnProfesion.Size = New System.Drawing.Size(88, 110)
-        Me.btnProfesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnProfesion.TabIndex = 48
-        Me.btnProfesion.TabStop = False
-        '
-        'btnTipoDeducciones
-        '
-        Me.btnTipoDeducciones.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_78
-        Me.btnTipoDeducciones.Location = New System.Drawing.Point(388, 30)
-        Me.btnTipoDeducciones.Name = "btnTipoDeducciones"
-        Me.btnTipoDeducciones.Size = New System.Drawing.Size(86, 110)
-        Me.btnTipoDeducciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnTipoDeducciones.TabIndex = 47
-        Me.btnTipoDeducciones.TabStop = False
-        '
-        'btnArea
-        '
-        Me.btnArea.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_83
-        Me.btnArea.Location = New System.Drawing.Point(296, 152)
-        Me.btnArea.Name = "btnArea"
-        Me.btnArea.Size = New System.Drawing.Size(88, 108)
-        Me.btnArea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnArea.TabIndex = 46
-        Me.btnArea.TabStop = False
-        '
-        'btnVacaciones
-        '
-        Me.btnVacaciones.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_82
-        Me.btnVacaciones.Location = New System.Drawing.Point(201, 152)
-        Me.btnVacaciones.Name = "btnVacaciones"
-        Me.btnVacaciones.Size = New System.Drawing.Size(86, 108)
-        Me.btnVacaciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnVacaciones.TabIndex = 45
-        Me.btnVacaciones.TabStop = False
-        '
-        'btnPermisos
-        '
-        Me.btnPermisos.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_81
-        Me.btnPermisos.Location = New System.Drawing.Point(108, 152)
-        Me.btnPermisos.Name = "btnPermisos"
-        Me.btnPermisos.Size = New System.Drawing.Size(87, 108)
-        Me.btnPermisos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnPermisos.TabIndex = 44
-        Me.btnPermisos.TabStop = False
-        '
-        'btnSucursales
-        '
-        Me.btnSucursales.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_80
-        Me.btnSucursales.Location = New System.Drawing.Point(15, 152)
-        Me.btnSucursales.Name = "btnSucursales"
-        Me.btnSucursales.Size = New System.Drawing.Size(88, 108)
-        Me.btnSucursales.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnSucursales.TabIndex = 43
-        Me.btnSucursales.TabStop = False
-        '
-        'btnEmpleados
-        '
-        Me.btnEmpleados.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_86
-        Me.btnEmpleados.Location = New System.Drawing.Point(16, 272)
-        Me.btnEmpleados.Name = "btnEmpleados"
-        Me.btnEmpleados.Size = New System.Drawing.Size(86, 109)
-        Me.btnEmpleados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnEmpleados.TabIndex = 42
-        Me.btnEmpleados.TabStop = False
-        '
-        'btnPeriodoContable
-        '
-        Me.btnPeriodoContable.Location = New System.Drawing.Point(144, 160)
-        Me.btnPeriodoContable.Name = "btnPeriodoContable"
-        Me.btnPeriodoContable.Size = New System.Drawing.Size(92, 110)
-        Me.btnPeriodoContable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnPeriodoContable.TabIndex = 50
-        Me.btnPeriodoContable.TabStop = False
-        '
-        'btnAsientos
-        '
-        Me.btnAsientos.Location = New System.Drawing.Point(144, 29)
-        Me.btnAsientos.Name = "btnAsientos"
-        Me.btnAsientos.Size = New System.Drawing.Size(92, 110)
-        Me.btnAsientos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnAsientos.TabIndex = 49
-        Me.btnAsientos.TabStop = False
-        '
-        'btnCategoriaProveedor
-        '
-        Me.btnCategoriaProveedor.Location = New System.Drawing.Point(277, 29)
-        Me.btnCategoriaProveedor.Name = "btnCategoriaProveedor"
-        Me.btnCategoriaProveedor.Size = New System.Drawing.Size(92, 110)
-        Me.btnCategoriaProveedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnCategoriaProveedor.TabIndex = 48
-        Me.btnCategoriaProveedor.TabStop = False
-        '
-        'btnProveedor
-        '
-        Me.btnProveedor.Location = New System.Drawing.Point(395, 29)
-        Me.btnProveedor.Name = "btnProveedor"
-        Me.btnProveedor.Size = New System.Drawing.Size(91, 110)
-        Me.btnProveedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnProveedor.TabIndex = 47
-        Me.btnProveedor.TabStop = False
-        '
-        'btnFormaPago
-        '
-        Me.btnFormaPago.Location = New System.Drawing.Point(277, 160)
-        Me.btnFormaPago.Name = "btnFormaPago"
-        Me.btnFormaPago.Size = New System.Drawing.Size(92, 110)
-        Me.btnFormaPago.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnFormaPago.TabIndex = 46
-        Me.btnFormaPago.TabStop = False
-        '
-        'btnCAI
-        '
-        Me.btnCAI.Location = New System.Drawing.Point(24, 163)
-        Me.btnCAI.Name = "btnCAI"
-        Me.btnCAI.Size = New System.Drawing.Size(92, 110)
-        Me.btnCAI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnCAI.TabIndex = 45
-        Me.btnCAI.TabStop = False
-        '
-        'btnBancos
-        '
-        Me.btnBancos.Location = New System.Drawing.Point(395, 160)
-        Me.btnBancos.Name = "btnBancos"
-        Me.btnBancos.Size = New System.Drawing.Size(92, 110)
-        Me.btnBancos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnBancos.TabIndex = 44
-        Me.btnBancos.TabStop = False
-        '
-        'btnCuentas
-        '
-        Me.btnCuentas.Location = New System.Drawing.Point(24, 29)
-        Me.btnCuentas.Name = "btnCuentas"
-        Me.btnCuentas.Size = New System.Drawing.Size(92, 110)
-        Me.btnCuentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnCuentas.TabIndex = 43
-        Me.btnCuentas.TabStop = False
-        '
-        'btnPrecio
-        '
-        Me.btnPrecio.Location = New System.Drawing.Point(7, 24)
-        Me.btnPrecio.Name = "btnPrecio"
-        Me.btnPrecio.Size = New System.Drawing.Size(93, 115)
-        Me.btnPrecio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnPrecio.TabIndex = 46
-        Me.btnPrecio.TabStop = False
-        '
-        'btnListaPrecio
-        '
-        Me.btnListaPrecio.Location = New System.Drawing.Point(126, 24)
-        Me.btnListaPrecio.Name = "btnListaPrecio"
-        Me.btnListaPrecio.Size = New System.Drawing.Size(95, 115)
-        Me.btnListaPrecio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnListaPrecio.TabIndex = 45
-        Me.btnListaPrecio.TabStop = False
-        '
-        'btnDescuento
-        '
-        Me.btnDescuento.Location = New System.Drawing.Point(247, 24)
-        Me.btnDescuento.Name = "btnDescuento"
-        Me.btnDescuento.Size = New System.Drawing.Size(95, 115)
-        Me.btnDescuento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnDescuento.TabIndex = 44
-        Me.btnDescuento.TabStop = False
-        '
-        'btnPromociones
-        '
-        Me.btnPromociones.Location = New System.Drawing.Point(365, 25)
-        Me.btnPromociones.Name = "btnPromociones"
-        Me.btnPromociones.Size = New System.Drawing.Size(95, 115)
-        Me.btnPromociones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnPromociones.TabIndex = 43
-        Me.btnPromociones.TabStop = False
-        '
-        'PictureBox37
-        '
-        Me.PictureBox37.Location = New System.Drawing.Point(291, 8)
-        Me.PictureBox37.Name = "PictureBox37"
-        Me.PictureBox37.Size = New System.Drawing.Size(77, 50)
-        Me.PictureBox37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox37.TabIndex = 45
-        Me.PictureBox37.TabStop = False
-        '
-        'PictureBox36
-        '
-        Me.PictureBox36.Location = New System.Drawing.Point(146, 12)
-        Me.PictureBox36.Name = "PictureBox36"
-        Me.PictureBox36.Size = New System.Drawing.Size(77, 50)
-        Me.PictureBox36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox36.TabIndex = 44
-        Me.PictureBox36.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(8, 13)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(77, 50)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 43
-        Me.PictureBox1.TabStop = False
-        '
-        'btnCheques
-        '
-        Me.btnCheques.Location = New System.Drawing.Point(24, 34)
-        Me.btnCheques.Name = "btnCheques"
-        Me.btnCheques.Size = New System.Drawing.Size(92, 106)
-        Me.btnCheques.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnCheques.TabIndex = 46
-        Me.btnCheques.TabStop = False
-        '
-        'btnChequera
-        '
-        Me.btnChequera.Location = New System.Drawing.Point(148, 34)
-        Me.btnChequera.Name = "btnChequera"
-        Me.btnChequera.Size = New System.Drawing.Size(93, 106)
-        Me.btnChequera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnChequera.TabIndex = 45
-        Me.btnChequera.TabStop = False
-        '
-        'btnDepoBanc
-        '
-        Me.btnDepoBanc.Location = New System.Drawing.Point(270, 33)
-        Me.btnDepoBanc.Name = "btnDepoBanc"
-        Me.btnDepoBanc.Size = New System.Drawing.Size(93, 106)
-        Me.btnDepoBanc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnDepoBanc.TabIndex = 44
-        Me.btnDepoBanc.TabStop = False
-        '
-        'btnPagos
-        '
-        Me.btnPagos.Location = New System.Drawing.Point(21, 29)
-        Me.btnPagos.Name = "btnPagos"
-        Me.btnPagos.Size = New System.Drawing.Size(93, 110)
-        Me.btnPagos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnPagos.TabIndex = 45
-        Me.btnPagos.TabStop = False
-        '
-        'btnFacturaCompra
-        '
-        Me.btnFacturaCompra.Location = New System.Drawing.Point(160, 29)
-        Me.btnFacturaCompra.Name = "btnFacturaCompra"
-        Me.btnFacturaCompra.Size = New System.Drawing.Size(91, 110)
-        Me.btnFacturaCompra.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnFacturaCompra.TabIndex = 44
-        Me.btnFacturaCompra.TabStop = False
-        '
         'btnFeriados
         '
+        Me.btnFeriados.Image = Global.SLM_2._2.My.Resources.Resources.configuracion_de_sistema_931
         Me.btnFeriados.Location = New System.Drawing.Point(419, 25)
         Me.btnFeriados.Name = "btnFeriados"
         Me.btnFeriados.Size = New System.Drawing.Size(101, 115)
@@ -1817,6 +1478,7 @@ Partial Class Form1
         '
         'btnUsuarios
         '
+        Me.btnUsuarios.Image = Global.SLM_2._2.My.Resources.Resources.configuracion_de_sistema_90
         Me.btnUsuarios.Location = New System.Drawing.Point(13, 25)
         Me.btnUsuarios.Name = "btnUsuarios"
         Me.btnUsuarios.Size = New System.Drawing.Size(101, 115)
@@ -1826,6 +1488,7 @@ Partial Class Form1
         '
         'btnPerfiles
         '
+        Me.btnPerfiles.Image = Global.SLM_2._2.My.Resources.Resources.configuracion_de_sistema_91
         Me.btnPerfiles.Location = New System.Drawing.Point(150, 25)
         Me.btnPerfiles.Name = "btnPerfiles"
         Me.btnPerfiles.Size = New System.Drawing.Size(101, 115)
@@ -1835,6 +1498,7 @@ Partial Class Form1
         '
         'btnServidorCorreo
         '
+        Me.btnServidorCorreo.Image = Global.SLM_2._2.My.Resources.Resources.configuracion_de_sistema_93
         Me.btnServidorCorreo.Location = New System.Drawing.Point(281, 25)
         Me.btnServidorCorreo.Name = "btnServidorCorreo"
         Me.btnServidorCorreo.Size = New System.Drawing.Size(101, 115)
@@ -2319,6 +1983,366 @@ Partial Class Form1
         Me.PictureBox61.TabIndex = 38
         Me.PictureBox61.TabStop = False
         '
+        'btnConstanciaPlantillas
+        '
+        Me.btnConstanciaPlantillas.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_79
+        Me.btnConstanciaPlantillas.Location = New System.Drawing.Point(481, 30)
+        Me.btnConstanciaPlantillas.Name = "btnConstanciaPlantillas"
+        Me.btnConstanciaPlantillas.Size = New System.Drawing.Size(85, 111)
+        Me.btnConstanciaPlantillas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnConstanciaPlantillas.TabIndex = 61
+        Me.btnConstanciaPlantillas.TabStop = False
+        '
+        'btnReporteria
+        '
+        Me.btnReporteria.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_85
+        Me.btnReporteria.Location = New System.Drawing.Point(481, 151)
+        Me.btnReporteria.Name = "btnReporteria"
+        Me.btnReporteria.Size = New System.Drawing.Size(85, 109)
+        Me.btnReporteria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnReporteria.TabIndex = 59
+        Me.btnReporteria.TabStop = False
+        '
+        'btnTipoPermiso
+        '
+        Me.btnTipoPermiso.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_89
+        Me.btnTipoPermiso.Location = New System.Drawing.Point(296, 272)
+        Me.btnTipoPermiso.Name = "btnTipoPermiso"
+        Me.btnTipoPermiso.Size = New System.Drawing.Size(88, 109)
+        Me.btnTipoPermiso.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnTipoPermiso.TabIndex = 57
+        Me.btnTipoPermiso.TabStop = False
+        '
+        'btnCapacitaciones
+        '
+        Me.btnCapacitaciones.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_88
+        Me.btnCapacitaciones.Location = New System.Drawing.Point(201, 272)
+        Me.btnCapacitaciones.Name = "btnCapacitaciones"
+        Me.btnCapacitaciones.Size = New System.Drawing.Size(86, 109)
+        Me.btnCapacitaciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnCapacitaciones.TabIndex = 55
+        Me.btnCapacitaciones.TabStop = False
+        '
+        'btnCandidatos
+        '
+        Me.btnCandidatos.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_87
+        Me.btnCandidatos.Location = New System.Drawing.Point(109, 272)
+        Me.btnCandidatos.Name = "btnCandidatos"
+        Me.btnCandidatos.Size = New System.Drawing.Size(86, 109)
+        Me.btnCandidatos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnCandidatos.TabIndex = 53
+        Me.btnCandidatos.TabStop = False
+        '
+        'btnDepto
+        '
+        Me.btnDepto.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_84
+        Me.btnDepto.Location = New System.Drawing.Point(388, 151)
+        Me.btnDepto.Name = "btnDepto"
+        Me.btnDepto.Size = New System.Drawing.Size(86, 109)
+        Me.btnDepto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnDepto.TabIndex = 52
+        Me.btnDepto.TabStop = False
+        '
+        'btnPuestoTrabajo
+        '
+        Me.btnPuestoTrabajo.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_74
+        Me.btnPuestoTrabajo.Location = New System.Drawing.Point(16, 30)
+        Me.btnPuestoTrabajo.Name = "btnPuestoTrabajo"
+        Me.btnPuestoTrabajo.Size = New System.Drawing.Size(87, 110)
+        Me.btnPuestoTrabajo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnPuestoTrabajo.TabIndex = 51
+        Me.btnPuestoTrabajo.TabStop = False
+        '
+        'btnHorarios
+        '
+        Me.btnHorarios.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_75
+        Me.btnHorarios.Location = New System.Drawing.Point(109, 30)
+        Me.btnHorarios.Name = "btnHorarios"
+        Me.btnHorarios.Size = New System.Drawing.Size(86, 110)
+        Me.btnHorarios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnHorarios.TabIndex = 50
+        Me.btnHorarios.TabStop = False
+        '
+        'btnContratos
+        '
+        Me.btnContratos.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_76
+        Me.btnContratos.Location = New System.Drawing.Point(201, 30)
+        Me.btnContratos.Name = "btnContratos"
+        Me.btnContratos.Size = New System.Drawing.Size(86, 110)
+        Me.btnContratos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnContratos.TabIndex = 49
+        Me.btnContratos.TabStop = False
+        '
+        'btnProfesion
+        '
+        Me.btnProfesion.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_77
+        Me.btnProfesion.Location = New System.Drawing.Point(294, 30)
+        Me.btnProfesion.Name = "btnProfesion"
+        Me.btnProfesion.Size = New System.Drawing.Size(88, 110)
+        Me.btnProfesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnProfesion.TabIndex = 48
+        Me.btnProfesion.TabStop = False
+        '
+        'btnTipoDeducciones
+        '
+        Me.btnTipoDeducciones.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_78
+        Me.btnTipoDeducciones.Location = New System.Drawing.Point(388, 30)
+        Me.btnTipoDeducciones.Name = "btnTipoDeducciones"
+        Me.btnTipoDeducciones.Size = New System.Drawing.Size(86, 110)
+        Me.btnTipoDeducciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnTipoDeducciones.TabIndex = 47
+        Me.btnTipoDeducciones.TabStop = False
+        '
+        'btnArea
+        '
+        Me.btnArea.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_83
+        Me.btnArea.Location = New System.Drawing.Point(296, 152)
+        Me.btnArea.Name = "btnArea"
+        Me.btnArea.Size = New System.Drawing.Size(88, 108)
+        Me.btnArea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnArea.TabIndex = 46
+        Me.btnArea.TabStop = False
+        '
+        'btnVacaciones
+        '
+        Me.btnVacaciones.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_82
+        Me.btnVacaciones.Location = New System.Drawing.Point(201, 152)
+        Me.btnVacaciones.Name = "btnVacaciones"
+        Me.btnVacaciones.Size = New System.Drawing.Size(86, 108)
+        Me.btnVacaciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnVacaciones.TabIndex = 45
+        Me.btnVacaciones.TabStop = False
+        '
+        'btnPermisos
+        '
+        Me.btnPermisos.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_81
+        Me.btnPermisos.Location = New System.Drawing.Point(108, 152)
+        Me.btnPermisos.Name = "btnPermisos"
+        Me.btnPermisos.Size = New System.Drawing.Size(87, 108)
+        Me.btnPermisos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnPermisos.TabIndex = 44
+        Me.btnPermisos.TabStop = False
+        '
+        'btnSucursales
+        '
+        Me.btnSucursales.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_80
+        Me.btnSucursales.Location = New System.Drawing.Point(15, 152)
+        Me.btnSucursales.Name = "btnSucursales"
+        Me.btnSucursales.Size = New System.Drawing.Size(88, 108)
+        Me.btnSucursales.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnSucursales.TabIndex = 43
+        Me.btnSucursales.TabStop = False
+        '
+        'btnEmpleados
+        '
+        Me.btnEmpleados.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_86
+        Me.btnEmpleados.Location = New System.Drawing.Point(16, 272)
+        Me.btnEmpleados.Name = "btnEmpleados"
+        Me.btnEmpleados.Size = New System.Drawing.Size(86, 109)
+        Me.btnEmpleados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnEmpleados.TabIndex = 42
+        Me.btnEmpleados.TabStop = False
+        '
+        'btnPeriodoContable
+        '
+        Me.btnPeriodoContable.Image = Global.SLM_2._2.My.Resources.Resources.mantenimiento_26
+        Me.btnPeriodoContable.Location = New System.Drawing.Point(144, 160)
+        Me.btnPeriodoContable.Name = "btnPeriodoContable"
+        Me.btnPeriodoContable.Size = New System.Drawing.Size(92, 110)
+        Me.btnPeriodoContable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnPeriodoContable.TabIndex = 50
+        Me.btnPeriodoContable.TabStop = False
+        '
+        'btnAsientos
+        '
+        Me.btnAsientos.Image = Global.SLM_2._2.My.Resources.Resources.mantenimiento_24
+        Me.btnAsientos.Location = New System.Drawing.Point(144, 29)
+        Me.btnAsientos.Name = "btnAsientos"
+        Me.btnAsientos.Size = New System.Drawing.Size(92, 110)
+        Me.btnAsientos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnAsientos.TabIndex = 49
+        Me.btnAsientos.TabStop = False
+        '
+        'btnCategoriaProveedor
+        '
+        Me.btnCategoriaProveedor.Image = Global.SLM_2._2.My.Resources.Resources.mantenimiento_25
+        Me.btnCategoriaProveedor.Location = New System.Drawing.Point(277, 29)
+        Me.btnCategoriaProveedor.Name = "btnCategoriaProveedor"
+        Me.btnCategoriaProveedor.Size = New System.Drawing.Size(92, 110)
+        Me.btnCategoriaProveedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnCategoriaProveedor.TabIndex = 48
+        Me.btnCategoriaProveedor.TabStop = False
+        '
+        'btnProveedor
+        '
+        Me.btnProveedor.Image = Global.SLM_2._2.My.Resources.Resources.mantenimiento_28
+        Me.btnProveedor.Location = New System.Drawing.Point(395, 29)
+        Me.btnProveedor.Name = "btnProveedor"
+        Me.btnProveedor.Size = New System.Drawing.Size(91, 110)
+        Me.btnProveedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnProveedor.TabIndex = 47
+        Me.btnProveedor.TabStop = False
+        '
+        'btnFormaPago
+        '
+        Me.btnFormaPago.Image = Global.SLM_2._2.My.Resources.Resources.mantenimiento_29
+        Me.btnFormaPago.Location = New System.Drawing.Point(277, 160)
+        Me.btnFormaPago.Name = "btnFormaPago"
+        Me.btnFormaPago.Size = New System.Drawing.Size(92, 110)
+        Me.btnFormaPago.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnFormaPago.TabIndex = 46
+        Me.btnFormaPago.TabStop = False
+        '
+        'btnCAI
+        '
+        Me.btnCAI.Image = Global.SLM_2._2.My.Resources.Resources.mantenimiento_30
+        Me.btnCAI.Location = New System.Drawing.Point(24, 163)
+        Me.btnCAI.Name = "btnCAI"
+        Me.btnCAI.Size = New System.Drawing.Size(92, 110)
+        Me.btnCAI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnCAI.TabIndex = 45
+        Me.btnCAI.TabStop = False
+        '
+        'btnBancos
+        '
+        Me.btnBancos.Image = Global.SLM_2._2.My.Resources.Resources.mantenimiento_27
+        Me.btnBancos.Location = New System.Drawing.Point(395, 160)
+        Me.btnBancos.Name = "btnBancos"
+        Me.btnBancos.Size = New System.Drawing.Size(92, 110)
+        Me.btnBancos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnBancos.TabIndex = 44
+        Me.btnBancos.TabStop = False
+        '
+        'btnCuentas
+        '
+        Me.btnCuentas.Image = Global.SLM_2._2.My.Resources.Resources.mantenimiento_23
+        Me.btnCuentas.Location = New System.Drawing.Point(24, 29)
+        Me.btnCuentas.Name = "btnCuentas"
+        Me.btnCuentas.Size = New System.Drawing.Size(92, 110)
+        Me.btnCuentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnCuentas.TabIndex = 43
+        Me.btnCuentas.TabStop = False
+        '
+        'btnPrecio
+        '
+        Me.btnPrecio.Image = Global.SLM_2._2.My.Resources.Resources.precios_y_descuentos_31
+        Me.btnPrecio.Location = New System.Drawing.Point(7, 24)
+        Me.btnPrecio.Name = "btnPrecio"
+        Me.btnPrecio.Size = New System.Drawing.Size(93, 115)
+        Me.btnPrecio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnPrecio.TabIndex = 46
+        Me.btnPrecio.TabStop = False
+        '
+        'btnListaPrecio
+        '
+        Me.btnListaPrecio.Image = Global.SLM_2._2.My.Resources.Resources.precios_y_descuentos_32
+        Me.btnListaPrecio.Location = New System.Drawing.Point(126, 24)
+        Me.btnListaPrecio.Name = "btnListaPrecio"
+        Me.btnListaPrecio.Size = New System.Drawing.Size(95, 115)
+        Me.btnListaPrecio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnListaPrecio.TabIndex = 45
+        Me.btnListaPrecio.TabStop = False
+        '
+        'btnDescuento
+        '
+        Me.btnDescuento.Image = Global.SLM_2._2.My.Resources.Resources.precios_y_descuentos_33
+        Me.btnDescuento.Location = New System.Drawing.Point(247, 24)
+        Me.btnDescuento.Name = "btnDescuento"
+        Me.btnDescuento.Size = New System.Drawing.Size(95, 115)
+        Me.btnDescuento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnDescuento.TabIndex = 44
+        Me.btnDescuento.TabStop = False
+        '
+        'btnPromociones
+        '
+        Me.btnPromociones.Image = Global.SLM_2._2.My.Resources.Resources.precios_y_descuentos_34
+        Me.btnPromociones.Location = New System.Drawing.Point(365, 25)
+        Me.btnPromociones.Name = "btnPromociones"
+        Me.btnPromociones.Size = New System.Drawing.Size(95, 115)
+        Me.btnPromociones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnPromociones.TabIndex = 43
+        Me.btnPromociones.TabStop = False
+        '
+        'PictureBox37
+        '
+        Me.PictureBox37.BackColor = System.Drawing.Color.White
+        Me.PictureBox37.Location = New System.Drawing.Point(291, 8)
+        Me.PictureBox37.Name = "PictureBox37"
+        Me.PictureBox37.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox37.TabIndex = 45
+        Me.PictureBox37.TabStop = False
+        '
+        'PictureBox36
+        '
+        Me.PictureBox36.BackColor = System.Drawing.Color.White
+        Me.PictureBox36.Location = New System.Drawing.Point(146, 12)
+        Me.PictureBox36.Name = "PictureBox36"
+        Me.PictureBox36.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox36.TabIndex = 44
+        Me.PictureBox36.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.White
+        Me.PictureBox1.Location = New System.Drawing.Point(8, 13)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 43
+        Me.PictureBox1.TabStop = False
+        '
+        'btnCheques
+        '
+        Me.btnCheques.Image = Global.SLM_2._2.My.Resources.Resources.cheque_39
+        Me.btnCheques.Location = New System.Drawing.Point(24, 34)
+        Me.btnCheques.Name = "btnCheques"
+        Me.btnCheques.Size = New System.Drawing.Size(92, 106)
+        Me.btnCheques.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnCheques.TabIndex = 46
+        Me.btnCheques.TabStop = False
+        '
+        'btnChequera
+        '
+        Me.btnChequera.Image = Global.SLM_2._2.My.Resources.Resources.cheque_38
+        Me.btnChequera.Location = New System.Drawing.Point(148, 34)
+        Me.btnChequera.Name = "btnChequera"
+        Me.btnChequera.Size = New System.Drawing.Size(93, 106)
+        Me.btnChequera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnChequera.TabIndex = 45
+        Me.btnChequera.TabStop = False
+        '
+        'btnDepoBanc
+        '
+        Me.btnDepoBanc.Image = Global.SLM_2._2.My.Resources.Resources.cheque_40
+        Me.btnDepoBanc.Location = New System.Drawing.Point(270, 33)
+        Me.btnDepoBanc.Name = "btnDepoBanc"
+        Me.btnDepoBanc.Size = New System.Drawing.Size(93, 106)
+        Me.btnDepoBanc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnDepoBanc.TabIndex = 44
+        Me.btnDepoBanc.TabStop = False
+        '
+        'btnPagos
+        '
+        Me.btnPagos.Image = Global.SLM_2._2.My.Resources.Resources.pagos_42
+        Me.btnPagos.Location = New System.Drawing.Point(21, 29)
+        Me.btnPagos.Name = "btnPagos"
+        Me.btnPagos.Size = New System.Drawing.Size(93, 110)
+        Me.btnPagos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnPagos.TabIndex = 45
+        Me.btnPagos.TabStop = False
+        '
+        'btnFacturaCompra
+        '
+        Me.btnFacturaCompra.Image = Global.SLM_2._2.My.Resources.Resources.pagos_41
+        Me.btnFacturaCompra.Location = New System.Drawing.Point(160, 29)
+        Me.btnFacturaCompra.Name = "btnFacturaCompra"
+        Me.btnFacturaCompra.Size = New System.Drawing.Size(91, 110)
+        Me.btnFacturaCompra.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnFacturaCompra.TabIndex = 44
+        Me.btnFacturaCompra.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2341,13 +2365,13 @@ Partial Class Form1
         Me.Controls.Add(Me.lblMiUser)
         Me.Controls.Add(Me.btnContabilidad)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Controls.Add(Me.PanelTalentoHumano)
-        Me.Controls.Add(Me.panelMenu)
-        Me.Controls.Add(Me.PanelSistema)
         Me.Controls.Add(Me.PanelLab)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PanelFactura)
         Me.Controls.Add(Me.PanelAlmacen)
+        Me.Controls.Add(Me.PanelTalentoHumano)
+        Me.Controls.Add(Me.panelMenu)
+        Me.Controls.Add(Me.PanelSistema)
         Me.DoubleBuffered = True
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -2398,42 +2422,6 @@ Partial Class Form1
         Me.Panel9.PerformLayout()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnConstanciaPlantillas, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnReporteria, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnTipoPermiso, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnCapacitaciones, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnCandidatos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnDepto, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnPuestoTrabajo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnHorarios, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnContratos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnProfesion, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnTipoDeducciones, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnArea, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnVacaciones, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnPermisos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnSucursales, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnPeriodoContable, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnAsientos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnCategoriaProveedor, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnProveedor, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnFormaPago, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnCAI, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnBancos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnCuentas, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnPrecio, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnListaPrecio, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnDescuento, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnPromociones, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnCheques, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnChequera, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnDepoBanc, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnPagos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnFacturaCompra, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnFeriados, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnPerfiles, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2487,6 +2475,42 @@ Partial Class Form1
         CType(Me.PictureBox86, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox61, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnConstanciaPlantillas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnReporteria, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnTipoPermiso, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnCapacitaciones, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnCandidatos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnDepto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnPuestoTrabajo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnHorarios, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnContratos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnProfesion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnTipoDeducciones, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnArea, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnVacaciones, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnPermisos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnSucursales, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnPeriodoContable, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnAsientos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnCategoriaProveedor, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnProveedor, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnFormaPago, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnCAI, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnBancos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnCuentas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnPrecio, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnListaPrecio, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnDescuento, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnPromociones, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnCheques, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnChequera, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnDepoBanc, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnPagos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnFacturaCompra, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

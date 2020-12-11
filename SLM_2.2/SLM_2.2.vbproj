@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80A97C69-33C1-4D76-A4FF-61E3B54BEE03}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SLM_2._2.MM_ListadoTomaMuestras</StartupObject>
+    <StartupObject>SLM_2._2.M_InicioSesion</StartupObject>
     <RootNamespace>SLM_2._2</RootNamespace>
     <AssemblyName>0</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -2393,6 +2393,27 @@
     <None Include="Resources\talento humano-87.png" />
     <None Include="Resources\talento humano-88.png" />
     <None Include="Resources\talento humano-89.png" />
+    <None Include="Resources\mantenimiento-23.png" />
+    <None Include="Resources\mantenimiento-24.png" />
+    <None Include="Resources\mantenimiento-25.png" />
+    <None Include="Resources\mantenimiento-28.png" />
+    <None Include="Resources\mantenimiento-30.png" />
+    <None Include="Resources\mantenimiento-26.png" />
+    <None Include="Resources\mantenimiento-29.png" />
+    <None Include="Resources\mantenimiento-27.png" />
+    <None Include="Resources\precios y descuentos-31.png" />
+    <None Include="Resources\precios y descuentos-32.png" />
+    <None Include="Resources\precios y descuentos-33.png" />
+    <None Include="Resources\precios y descuentos-34.png" />
+    <None Include="Resources\cheque-39.png" />
+    <None Include="Resources\cheque-38.png" />
+    <None Include="Resources\cheque-40.png" />
+    <None Include="Resources\pagos-42.png" />
+    <None Include="Resources\pagos-41.png" />
+    <None Include="Resources\configuracion de sistema-90.png" />
+    <None Include="Resources\configuracion de sistema-91.png" />
+    <None Include="Resources\configuracion de sistema-93.png" />
+    <None Include="Resources\configuracion de sistema-931.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
