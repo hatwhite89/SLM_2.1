@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80A97C69-33C1-4D76-A4FF-61E3B54BEE03}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SLM_2._2.M_InicioSesion</StartupObject>
+    <StartupObject>SLM_2._2.A_InformeAsientos</StartupObject>
     <RootNamespace>SLM_2._2</RootNamespace>
     <AssemblyName>0</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -366,6 +366,12 @@
       <DependentUpon>A_ImportarUserAD.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_ImportarUserAD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_InformeAsientos.Designer.vb">
+      <DependentUpon>A_InformeAsientos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_InformeAsientos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_Informes.Designer.vb">
@@ -1632,6 +1638,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ImportarUserAD.resx">
       <DependentUpon>A_ImportarUserAD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_InformeAsientos.resx">
+      <DependentUpon>A_InformeAsientos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Informes.resx">
       <DependentUpon>A_Informes.vb</DependentUpon>
