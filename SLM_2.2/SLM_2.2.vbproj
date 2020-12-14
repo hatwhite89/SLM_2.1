@@ -2418,6 +2418,16 @@
     <None Include="Resources\iconos sistema-701.png" />
     <None Include="Resources\iconos sistema-722.png" />
     <None Include="Resources\iconos sistema-732.png" />
+    <None Include="Resources\iconos sistema-723.png" />
+    <None Include="Resources\iconos sistema-724.png" />
+    <None Include="Resources\facturacion-43.png" />
+    <None Include="Resources\facturacion-44.png" />
+    <None Include="Resources\facturacion-45.png" />
+    <None Include="Resources\facturacion-46.png" />
+    <None Include="Resources\facturacion-451.png" />
+    <None Include="Resources\facturacion-441.png" />
+    <None Include="Resources\facturacion-48.png" />
+    <None Include="Resources\facturacion-47.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
