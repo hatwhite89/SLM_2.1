@@ -207,6 +207,7 @@ Partial Class frmFormaPago
         '
         'btnGuardar
         '
+        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -278,7 +279,8 @@ Partial Class frmFormaPago
         '
         'GroupBox1
         '
-        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.btnCancelar)
@@ -295,6 +297,7 @@ Partial Class frmFormaPago
         '
         'btnCancelar
         '
+        Me.btnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCancelar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCancelar.Location = New System.Drawing.Point(596, 23)
         Me.btnCancelar.Name = "btnCancelar"
@@ -322,7 +325,7 @@ Partial Class frmFormaPago
         'lblCodFormaPago
         '
         Me.lblCodFormaPago.AutoSize = True
-        Me.lblCodFormaPago.Location = New System.Drawing.Point(409, 228)
+        Me.lblCodFormaPago.Location = New System.Drawing.Point(390, 28)
         Me.lblCodFormaPago.Name = "lblCodFormaPago"
         Me.lblCodFormaPago.Size = New System.Drawing.Size(39, 13)
         Me.lblCodFormaPago.TabIndex = 4
@@ -333,7 +336,8 @@ Partial Class frmFormaPago
         '
         Me.dtFormasPago.AllowUserToAddRows = False
         Me.dtFormasPago.AllowUserToDeleteRows = False
-        Me.dtFormasPago.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.dtFormasPago.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtFormasPago.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dtFormasPago.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
@@ -345,11 +349,12 @@ Partial Class frmFormaPago
         Me.dtFormasPago.Name = "dtFormasPago"
         Me.dtFormasPago.ReadOnly = True
         Me.dtFormasPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtFormasPago.Size = New System.Drawing.Size(682, 162)
+        Me.dtFormasPago.Size = New System.Drawing.Size(682, 193)
         Me.dtFormasPago.TabIndex = 0
         '
         'btnCrear
         '
+        Me.btnCrear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCrear.BackColor = System.Drawing.Color.White
         Me.btnCrear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnCrear.FlatAppearance.BorderSize = 0
@@ -364,6 +369,7 @@ Partial Class frmFormaPago
         '
         'btnModificar
         '
+        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnModificar.FlatAppearance.BorderSize = 0
@@ -378,6 +384,8 @@ Partial Class frmFormaPago
         '
         'Panel1
         '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -391,6 +399,7 @@ Partial Class frmFormaPago
         '
         'btnCerrar
         '
+        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat

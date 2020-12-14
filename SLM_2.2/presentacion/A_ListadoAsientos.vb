@@ -125,4 +125,8 @@
         Me.Close()
         MM_VistaIngresos.Show()
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        A_InformeAsientos.ShowDialog()
+    End Sub
 End Class

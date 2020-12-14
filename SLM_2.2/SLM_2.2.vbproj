@@ -368,6 +368,12 @@
     <Compile Include="presentacion\A_ImportarUserAD.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_InformeAsientos.Designer.vb">
+      <DependentUpon>A_InformeAsientos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_InformeAsientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_Informes.Designer.vb">
       <DependentUpon>A_Informes.vb</DependentUpon>
     </Compile>
@@ -1638,6 +1644,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ImportarUserAD.resx">
       <DependentUpon>A_ImportarUserAD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_InformeAsientos.resx">
+      <DependentUpon>A_InformeAsientos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Informes.resx">
       <DependentUpon>A_Informes.vb</DependentUpon>

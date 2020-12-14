@@ -287,7 +287,28 @@ Public Class ClsAsientoContable
 
     End Function
 
+    Public Function InformeDeAsientos(fechaDesde As Date, fechaHasta As Date) As DataTable
 
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmInformeDeAsientos"
+            cmd.Parameters.Add("@fechaDesde", SqlDbType.Date).Value = fechaDesde
+            cmd.Parameters.Add("@fechaHasta", SqlDbType.Date).Value = fechaHasta
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
 
 
 End Class
