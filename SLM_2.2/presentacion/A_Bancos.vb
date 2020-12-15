@@ -113,6 +113,7 @@
 
             lblEstado.Text = "Inactiva"
             lblEstado.ForeColor = Color.Red
+
         End If
     End Sub
 
