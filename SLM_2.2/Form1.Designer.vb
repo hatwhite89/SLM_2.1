@@ -846,7 +846,7 @@ Partial Class Form1
         '
         Me.pbxTipoClasificacion.BackColor = System.Drawing.Color.Transparent
         Me.pbxTipoClasificacion.Image = Global.SLM_2._2.My.Resources.Resources.facturacion_57
-        Me.pbxTipoClasificacion.Location = New System.Drawing.Point(401, 279)
+        Me.pbxTipoClasificacion.Location = New System.Drawing.Point(412, 274)
         Me.pbxTipoClasificacion.Name = "pbxTipoClasificacion"
         Me.pbxTipoClasificacion.Size = New System.Drawing.Size(86, 120)
         Me.pbxTipoClasificacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -857,7 +857,7 @@ Partial Class Form1
         '
         Me.pbxCategoriaCliente.BackColor = System.Drawing.Color.Transparent
         Me.pbxCategoriaCliente.Image = Global.SLM_2._2.My.Resources.Resources.facturacion_48
-        Me.pbxCategoriaCliente.Location = New System.Drawing.Point(401, 148)
+        Me.pbxCategoriaCliente.Location = New System.Drawing.Point(413, 148)
         Me.pbxCategoriaCliente.Name = "pbxCategoriaCliente"
         Me.pbxCategoriaCliente.Size = New System.Drawing.Size(85, 120)
         Me.pbxCategoriaCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -1000,7 +1000,7 @@ Partial Class Form1
         '
         Me.PictureBox27.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox27.Image = Global.SLM_2._2.My.Resources.Resources.facturacion_47
-        Me.PictureBox27.Location = New System.Drawing.Point(401, 22)
+        Me.PictureBox27.Location = New System.Drawing.Point(413, 22)
         Me.PictureBox27.Name = "PictureBox27"
         Me.PictureBox27.Size = New System.Drawing.Size(86, 120)
         Me.PictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
