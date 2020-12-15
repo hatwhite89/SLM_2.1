@@ -1262,4 +1262,8 @@
     Private Sub PictureBox26_Click(sender As Object, e As EventArgs)
         M_Medico.ShowDialog()
     End Sub
+
+    Private Sub btnMedico2_Click(sender As Object, e As EventArgs) Handles btnMedico2.Click
+        M_Medico.ShowDialog()
+    End Sub
 End Class

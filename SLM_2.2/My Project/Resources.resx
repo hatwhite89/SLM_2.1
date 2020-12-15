@@ -187,6 +187,12 @@
   <data name="facturacion-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\facturacion-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="facturacion-56" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturacion-56.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="facturacion-49" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturacion-491.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconos sistema-701" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconos sistema-701.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -244,6 +250,9 @@
   <data name="inventario-17" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventario-17.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="facturacion-53" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturacion-53.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconos sistema-72" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconos sistema-72.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -264,6 +273,9 @@
   </data>
   <data name="facturacion-43" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\facturacion-43.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="talento humano-76" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\talento humano-76.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="talento humano-77" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\talento humano-77.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -334,6 +346,9 @@
   <data name="precios y descuentos-33" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\precios y descuentos-33.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="facturacion-51" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturacion-51.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="talento humano-86" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\talento humano-86.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -361,8 +376,17 @@
   <data name="almacen-05" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\almacen-05.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="facturacion-54" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturacion-54.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pagos-42" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pagos-42.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="facturacion-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturacion-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconos sistema-725" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconos sistema-725.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="inventario-171" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventario-171.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -379,8 +403,8 @@
   <data name="iconos sistema-711" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconos sistema-711.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="talento humano-76" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\talento humano-76.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="facturacion-55" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturacion-55.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconos sistema-724" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconos sistema-724.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -397,7 +421,7 @@
   <data name="facturacion-46" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\facturacion-46.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconos sistema-725" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconos sistema-725.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="facturacion-57" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturacion-57.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

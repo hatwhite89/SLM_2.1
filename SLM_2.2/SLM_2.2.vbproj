@@ -2438,6 +2438,15 @@
     <None Include="Resources\facturacion-48.png" />
     <None Include="Resources\facturacion-47.png" />
     <None Include="Resources\iconos sistema-725.png" />
+    <Content Include="Resources\facturacion-49.png" />
+    <None Include="Resources\facturacion-491.png" />
+    <None Include="Resources\facturacion-50.png" />
+    <None Include="Resources\facturacion-51.png" />
+    <None Include="Resources\facturacion-53.png" />
+    <None Include="Resources\facturacion-54.png" />
+    <None Include="Resources\facturacion-55.png" />
+    <None Include="Resources\facturacion-56.png" />
+    <None Include="Resources\facturacion-57.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
