@@ -24,6 +24,7 @@ Partial Class A_Chequera
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Chequera))
         Me.gbxInfoChequeras = New System.Windows.Forms.GroupBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblCodBanco = New System.Windows.Forms.Label()
         Me.lblCodCuenta = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -45,6 +46,7 @@ Partial Class A_Chequera
         Me.Label6 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.gbxInfoChequeras.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtChequeras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -55,6 +57,7 @@ Partial Class A_Chequera
         Me.gbxInfoChequeras.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbxInfoChequeras.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.gbxInfoChequeras.Controls.Add(Me.PictureBox1)
         Me.gbxInfoChequeras.Controls.Add(Me.lblCodBanco)
         Me.gbxInfoChequeras.Controls.Add(Me.lblCodCuenta)
         Me.gbxInfoChequeras.Controls.Add(Me.Button1)
@@ -76,6 +79,17 @@ Partial Class A_Chequera
         Me.gbxInfoChequeras.TabStop = False
         Me.gbxInfoChequeras.Text = "Información de Chequera"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(591, 11)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(88, 87)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 18
+        Me.PictureBox1.TabStop = False
+        '
         'lblCodBanco
         '
         Me.lblCodBanco.AutoSize = True
@@ -84,6 +98,7 @@ Partial Class A_Chequera
         Me.lblCodBanco.Size = New System.Drawing.Size(67, 13)
         Me.lblCodBanco.TabIndex = 17
         Me.lblCodBanco.Text = "lblCodBanco"
+        Me.lblCodBanco.Visible = False
         '
         'lblCodCuenta
         '
@@ -93,6 +108,7 @@ Partial Class A_Chequera
         Me.lblCodCuenta.Size = New System.Drawing.Size(70, 13)
         Me.lblCodCuenta.TabIndex = 16
         Me.lblCodCuenta.Text = "lblCodCuenta"
+        Me.lblCodCuenta.Visible = False
         '
         'Button1
         '
@@ -144,9 +160,9 @@ Partial Class A_Chequera
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(171, 56)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(38, 13)
+        Me.Label5.Size = New System.Drawing.Size(42, 13)
         Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Banco"
+        Me.Label5.Text = "Banco*"
         '
         'txtCantidad
         '
@@ -161,18 +177,18 @@ Partial Class A_Chequera
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(171, 31)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 13)
+        Me.Label4.Size = New System.Drawing.Size(53, 13)
         Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Cantidad"
+        Me.Label4.Text = "Cantidad*"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(6, 82)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(72, 13)
+        Me.Label3.Size = New System.Drawing.Size(76, 13)
         Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Numero Inicio"
+        Me.Label3.Text = "Numero Inicio*"
         '
         'txtCtaDestino
         '
@@ -187,9 +203,9 @@ Partial Class A_Chequera
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(6, 55)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(80, 13)
+        Me.Label2.Size = New System.Drawing.Size(84, 13)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Cuenta Destino"
+        Me.Label2.Text = "Cuenta Destino*"
         '
         'txtCodChequera
         '
@@ -211,6 +227,7 @@ Partial Class A_Chequera
         '
         'btnGuardar
         '
+        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -304,6 +321,7 @@ Partial Class A_Chequera
         Me.Text = "Chequera"
         Me.gbxInfoChequeras.ResumeLayout(False)
         Me.gbxInfoChequeras.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dtChequeras, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
@@ -334,4 +352,5 @@ Partial Class A_Chequera
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents lblCodBanco As Label
     Friend WithEvents lblCodCuenta As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

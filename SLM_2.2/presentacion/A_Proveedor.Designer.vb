@@ -66,6 +66,7 @@ Partial Class A_Proveedor
         Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -75,7 +76,6 @@ Partial Class A_Proveedor
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.dgvProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxInformacion.SuspendLayout()
         Me.gbxListado.SuspendLayout()
@@ -110,8 +110,8 @@ Partial Class A_Proveedor
         Me.txtSitioWeb.Location = New System.Drawing.Point(515, 83)
         Me.txtSitioWeb.MaxLength = 100
         Me.txtSitioWeb.Name = "txtSitioWeb"
-        Me.txtSitioWeb.Size = New System.Drawing.Size(144, 20)
-        Me.txtSitioWeb.TabIndex = 7
+        Me.txtSitioWeb.Size = New System.Drawing.Size(146, 20)
+        Me.txtSitioWeb.TabIndex = 8
         '
         'lblSitioWeb
         '
@@ -128,7 +128,7 @@ Partial Class A_Proveedor
         Me.txtDireccion.MaxLength = 200
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(282, 20)
-        Me.txtDireccion.TabIndex = 8
+        Me.txtDireccion.TabIndex = 3
         '
         'lblDireccion
         '
@@ -145,7 +145,7 @@ Partial Class A_Proveedor
         Me.txtEmail.MaxLength = 100
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(282, 20)
-        Me.txtEmail.TabIndex = 3
+        Me.txtEmail.TabIndex = 2
         '
         'lblCorreo
         '
@@ -161,8 +161,8 @@ Partial Class A_Proveedor
         Me.txtTelefono.Location = New System.Drawing.Point(515, 58)
         Me.txtTelefono.MaxLength = 20
         Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(100, 20)
-        Me.txtTelefono.TabIndex = 5
+        Me.txtTelefono.Size = New System.Drawing.Size(146, 20)
+        Me.txtTelefono.TabIndex = 7
         '
         'lblTelefonoProv
         '
@@ -179,16 +179,16 @@ Partial Class A_Proveedor
         Me.txtNombreProvee.MaxLength = 50
         Me.txtNombreProvee.Name = "txtNombreProvee"
         Me.txtNombreProvee.Size = New System.Drawing.Size(282, 20)
-        Me.txtNombreProvee.TabIndex = 2
+        Me.txtNombreProvee.TabIndex = 1
         '
         'lblNombreProv
         '
         Me.lblNombreProv.AutoSize = True
         Me.lblNombreProv.Location = New System.Drawing.Point(10, 60)
         Me.lblNombreProv.Name = "lblNombreProv"
-        Me.lblNombreProv.Size = New System.Drawing.Size(96, 13)
+        Me.lblNombreProv.Size = New System.Drawing.Size(100, 13)
         Me.lblNombreProv.TabIndex = 10
-        Me.lblNombreProv.Text = "Nombre Proveedor"
+        Me.lblNombreProv.Text = "Nombre Proveedor*"
         '
         'dgvProveedores
         '
@@ -267,10 +267,10 @@ Partial Class A_Proveedor
         Me.btnBuscarCuenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscarCuenta.FlatAppearance.BorderSize = 0
         Me.btnBuscarCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarCuenta.Location = New System.Drawing.Point(638, 112)
+        Me.btnBuscarCuenta.Location = New System.Drawing.Point(667, 113)
         Me.btnBuscarCuenta.Name = "btnBuscarCuenta"
         Me.btnBuscarCuenta.Size = New System.Drawing.Size(20, 17)
-        Me.btnBuscarCuenta.TabIndex = 32
+        Me.btnBuscarCuenta.TabIndex = 9
         Me.btnBuscarCuenta.UseVisualStyleBackColor = False
         '
         'txtCuenta
@@ -279,7 +279,7 @@ Partial Class A_Proveedor
         Me.txtCuenta.Location = New System.Drawing.Point(515, 111)
         Me.txtCuenta.MaxLength = 20
         Me.txtCuenta.Name = "txtCuenta"
-        Me.txtCuenta.Size = New System.Drawing.Size(118, 20)
+        Me.txtCuenta.Size = New System.Drawing.Size(146, 20)
         Me.txtCuenta.TabIndex = 30
         '
         'Label2
@@ -287,9 +287,9 @@ Partial Class A_Proveedor
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(461, 114)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(41, 13)
+        Me.Label2.Size = New System.Drawing.Size(45, 13)
         Me.Label2.TabIndex = 31
-        Me.Label2.Text = "Cuenta"
+        Me.Label2.Text = "Cuenta*"
         '
         'lblEstado
         '
@@ -309,7 +309,7 @@ Partial Class A_Proveedor
         Me.cbxCategoria.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxCategoria.Name = "cbxCategoria"
         Me.cbxCategoria.Size = New System.Drawing.Size(99, 21)
-        Me.cbxCategoria.TabIndex = 28
+        Me.cbxCategoria.TabIndex = 5
         '
         'txtCodBreve
         '
@@ -317,17 +317,17 @@ Partial Class A_Proveedor
         Me.txtCodBreve.MaxLength = 50
         Me.txtCodBreve.Name = "txtCodBreve"
         Me.txtCodBreve.Size = New System.Drawing.Size(100, 20)
-        Me.txtCodBreve.TabIndex = 27
+        Me.txtCodBreve.TabIndex = 0
         Me.txtCodBreve.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(224, 32)
+        Me.Label9.Location = New System.Drawing.Point(230, 35)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(71, 13)
+        Me.Label9.Size = New System.Drawing.Size(61, 13)
         Me.Label9.TabIndex = 26
-        Me.Label9.Text = "Código Breve"
+        Me.Label9.Text = "Cód Breve*"
         '
         'lblCodeTerminoPago
         '
@@ -346,10 +346,10 @@ Partial Class A_Proveedor
         Me.btnBuscarTerminoPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscarTerminoPago.FlatAppearance.BorderSize = 0
         Me.btnBuscarTerminoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarTerminoPago.Location = New System.Drawing.Point(638, 32)
+        Me.btnBuscarTerminoPago.Location = New System.Drawing.Point(667, 33)
         Me.btnBuscarTerminoPago.Name = "btnBuscarTerminoPago"
         Me.btnBuscarTerminoPago.Size = New System.Drawing.Size(20, 17)
-        Me.btnBuscarTerminoPago.TabIndex = 24
+        Me.btnBuscarTerminoPago.TabIndex = 6
         Me.btnBuscarTerminoPago.UseVisualStyleBackColor = False
         '
         'txtIdTribu
@@ -358,7 +358,7 @@ Partial Class A_Proveedor
         Me.txtIdTribu.MaxLength = 20
         Me.txtIdTribu.Name = "txtIdTribu"
         Me.txtIdTribu.Size = New System.Drawing.Size(114, 20)
-        Me.txtIdTribu.TabIndex = 23
+        Me.txtIdTribu.TabIndex = 4
         '
         'lblIdTrib
         '
@@ -374,9 +374,9 @@ Partial Class A_Proveedor
         Me.lblCategoriaProv.AutoSize = True
         Me.lblCategoriaProv.Location = New System.Drawing.Point(231, 139)
         Me.lblCategoriaProv.Name = "lblCategoriaProv"
-        Me.lblCategoriaProv.Size = New System.Drawing.Size(52, 13)
+        Me.lblCategoriaProv.Size = New System.Drawing.Size(58, 13)
         Me.lblCategoriaProv.TabIndex = 19
-        Me.lblCategoriaProv.Text = "Categoria"
+        Me.lblCategoriaProv.Text = "Categoría*"
         '
         'txtCodigoTerminoPago
         '
@@ -384,17 +384,17 @@ Partial Class A_Proveedor
         Me.txtCodigoTerminoPago.Location = New System.Drawing.Point(515, 31)
         Me.txtCodigoTerminoPago.MaxLength = 20
         Me.txtCodigoTerminoPago.Name = "txtCodigoTerminoPago"
-        Me.txtCodigoTerminoPago.Size = New System.Drawing.Size(118, 20)
-        Me.txtCodigoTerminoPago.TabIndex = 4
+        Me.txtCodigoTerminoPago.Size = New System.Drawing.Size(146, 20)
+        Me.txtCodigoTerminoPago.TabIndex = 6
         '
         'lblTerminoPago
         '
         Me.lblTerminoPago.AutoSize = True
         Me.lblTerminoPago.Location = New System.Drawing.Point(414, 34)
         Me.lblTerminoPago.Name = "lblTerminoPago"
-        Me.lblTerminoPago.Size = New System.Drawing.Size(88, 13)
+        Me.lblTerminoPago.Size = New System.Drawing.Size(92, 13)
         Me.lblTerminoPago.TabIndex = 15
-        Me.lblTerminoPago.Text = "Término de Pago"
+        Me.lblTerminoPago.Text = "Término de Pago*"
         '
         'btnGuardar
         '
@@ -407,7 +407,7 @@ Partial Class A_Proveedor
         Me.btnGuardar.Location = New System.Drawing.Point(536, 10)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
-        Me.btnGuardar.TabIndex = 14
+        Me.btnGuardar.TabIndex = 10
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
@@ -560,6 +560,20 @@ Partial Class A_Proveedor
         Me.Panel1.Size = New System.Drawing.Size(788, 47)
         Me.Panel1.TabIndex = 16
         '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.LightSalmon
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Location = New System.Drawing.Point(695, 10)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 15
+        Me.Button1.Text = "Cerrar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -653,20 +667,6 @@ Partial Class A_Proveedor
         Me.StatusStrip1.Size = New System.Drawing.Size(785, 22)
         Me.StatusStrip1.TabIndex = 18
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.LightSalmon
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(695, 10)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "Cerrar"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'A_Proveedor
         '

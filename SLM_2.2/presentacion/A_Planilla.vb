@@ -41,12 +41,12 @@
                     M_ListadoEmpleados.lblform.Text = "A_Planilla"
                     M_ListadoEmpleados.lblfila.Text = e.RowIndex
                     M_ListadoEmpleados.Show()
-                ElseIf e.ColumnIndex = 6 And Me.dgvEmpleados.Rows(e.RowIndex).Cells(0).Value() = "" Then
+                ElseIf e.ColumnIndex = 7 And Me.dgvEmpleados.Rows(e.RowIndex).Cells(0).Value() = "" Then
                     n = MsgBox("¿Desea eliminar el empleado de la planilla?", MsgBoxStyle.YesNo, "Validación")
                     If n = vbYes Then
                         dgvEmpleados.Rows.Remove(dgvEmpleados.Rows(e.RowIndex.ToString))
                     End If
-                ElseIf e.ColumnIndex = 6 And Me.dgvEmpleados.Rows(e.RowIndex).Cells(0).Value() <> "" Then
+                ElseIf e.ColumnIndex = 7 And Me.dgvEmpleados.Rows(e.RowIndex).Cells(0).Value() <> "" Then
                     n = MsgBox("¿Desea eliminar el empleado de la planilla?", MsgBoxStyle.YesNo, "Validación")
                     If n = vbYes Then
                         codigoDetallePlanilla.Add(Me.dgvEmpleados.Rows(e.RowIndex).Cells(0).Value())

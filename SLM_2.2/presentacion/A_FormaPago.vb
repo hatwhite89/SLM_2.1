@@ -9,7 +9,7 @@ Public Class frmFormaPago
             If n = vbYes Then
 
 
-                If txtCuenta.Text <> "" And txtNombreBanco.Text <> "" And txtBanco.Text <> "" Then
+                If txtCodigo.Text <> "" And txtCuenta.Text <> "" And txtNombreBanco.Text <> "" And txtBanco.Text <> "" Then
 
                     'Comprobar que la cuenta existe
                     Dim dtC As New DataTable

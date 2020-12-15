@@ -66,18 +66,18 @@ Partial Class frmFormaPago
         Me.lblCod.AutoSize = True
         Me.lblCod.Location = New System.Drawing.Point(11, 35)
         Me.lblCod.Name = "lblCod"
-        Me.lblCod.Size = New System.Drawing.Size(60, 13)
+        Me.lblCod.Size = New System.Drawing.Size(64, 13)
         Me.lblCod.TabIndex = 1
-        Me.lblCod.Text = "Cód. Breve"
+        Me.lblCod.Text = "Cód. Breve*"
         '
         'lblCuenta
         '
         Me.lblCuenta.AutoSize = True
         Me.lblCuenta.Location = New System.Drawing.Point(10, 59)
         Me.lblCuenta.Name = "lblCuenta"
-        Me.lblCuenta.Size = New System.Drawing.Size(41, 13)
+        Me.lblCuenta.Size = New System.Drawing.Size(45, 13)
         Me.lblCuenta.TabIndex = 2
-        Me.lblCuenta.Text = "Cuenta"
+        Me.lblCuenta.Text = "Cuenta*"
         '
         'lblCuentaBanco
         '
@@ -102,9 +102,9 @@ Partial Class frmFormaPago
         Me.lblNombreBanco.AutoSize = True
         Me.lblNombreBanco.Location = New System.Drawing.Point(10, 107)
         Me.lblNombreBanco.Name = "lblNombreBanco"
-        Me.lblNombreBanco.Size = New System.Drawing.Size(78, 13)
+        Me.lblNombreBanco.Size = New System.Drawing.Size(82, 13)
         Me.lblNombreBanco.TabIndex = 6
-        Me.lblNombreBanco.Text = "Nombre Banco"
+        Me.lblNombreBanco.Text = "Nombre Banco*"
         '
         'lblFormulario
         '
@@ -192,9 +192,9 @@ Partial Class frmFormaPago
         Me.lblBanco.AutoSize = True
         Me.lblBanco.Location = New System.Drawing.Point(401, 34)
         Me.lblBanco.Name = "lblBanco"
-        Me.lblBanco.Size = New System.Drawing.Size(38, 13)
+        Me.lblBanco.Size = New System.Drawing.Size(42, 13)
         Me.lblBanco.TabIndex = 29
-        Me.lblBanco.Text = "Banco"
+        Me.lblBanco.Text = "Banco*"
         '
         'txtBanco
         '

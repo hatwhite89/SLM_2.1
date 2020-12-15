@@ -762,11 +762,20 @@
     End Sub
 
     Private Sub PictureBox30_Click_1(sender As Object, e As EventArgs) Handles PictureBox30.Click
-        M_BuscarRecibo.ShowDialog()
+        Try
+
+            M_BuscarCotizacion.ShowDialog()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub PictureBox29_Click(sender As Object, e As EventArgs) Handles PictureBox29.Click
-        M_BuscarCotizacion.ShowDialog()
+        Try
+            M_BuscarRecibo.ShowDialog()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub PictureBox28_Click(sender As Object, e As EventArgs) Handles PictureBox28.Click
@@ -1130,7 +1139,8 @@
 
     Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles btnPagos.Click
         Try
-            A_ListarPagos.Show()
+            A_ListadoFacturaCompra.Show()
+
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
@@ -1138,8 +1148,8 @@
 
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles btnFacturaCompra.Click
         Try
+            A_ListarPagos.Show()
 
-            A_ListadoFacturaCompra.Show()
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try

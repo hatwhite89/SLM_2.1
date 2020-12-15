@@ -24,16 +24,16 @@ Partial Class A_ListadoAsientos
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListadoAsientos))
         Me.gbxAsientos = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.btnIngresarAsiento = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.dtAsientos = New System.Windows.Forms.DataGridView()
         Me.txtCod = New System.Windows.Forms.TextBox()
         Me.lblCod = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnIngresarAsiento = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.gbxAsientos.SuspendLayout()
         CType(Me.dtAsientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -55,31 +55,6 @@ Partial Class A_ListadoAsientos
         Me.gbxAsientos.TabIndex = 0
         Me.gbxAsientos.TabStop = False
         Me.gbxAsientos.Text = "Asientos Contables"
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.Green
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.Location = New System.Drawing.Point(408, 8)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(80, 23)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Ingresos"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'btnIngresarAsiento
-        '
-        Me.btnIngresarAsiento.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnIngresarAsiento.BackColor = System.Drawing.Color.Yellow
-        Me.btnIngresarAsiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnIngresarAsiento.Location = New System.Drawing.Point(575, 8)
-        Me.btnIngresarAsiento.Name = "btnIngresarAsiento"
-        Me.btnIngresarAsiento.Size = New System.Drawing.Size(131, 23)
-        Me.btnIngresarAsiento.TabIndex = 4
-        Me.btnIngresarAsiento.Text = "Ingresar Asiento Manual"
-        Me.btnIngresarAsiento.UseVisualStyleBackColor = False
         '
         'btnCancelar
         '
@@ -132,6 +107,31 @@ Partial Class A_ListadoAsientos
         Me.lblCod.TabIndex = 0
         Me.lblCod.Text = "Nro. Asiento"
         '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.Green
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button1.Location = New System.Drawing.Point(408, 8)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(80, 23)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Ingresos"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'btnIngresarAsiento
+        '
+        Me.btnIngresarAsiento.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnIngresarAsiento.BackColor = System.Drawing.Color.Yellow
+        Me.btnIngresarAsiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnIngresarAsiento.Location = New System.Drawing.Point(575, 8)
+        Me.btnIngresarAsiento.Name = "btnIngresarAsiento"
+        Me.btnIngresarAsiento.Size = New System.Drawing.Size(131, 23)
+        Me.btnIngresarAsiento.TabIndex = 4
+        Me.btnIngresarAsiento.Text = "Ingresar Asiento Manual"
+        Me.btnIngresarAsiento.UseVisualStyleBackColor = False
+        '
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
@@ -155,6 +155,18 @@ Partial Class A_ListadoAsientos
         Me.Panel1.Size = New System.Drawing.Size(718, 36)
         Me.Panel1.TabIndex = 3
         '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.Color.Honeydew
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Location = New System.Drawing.Point(494, 8)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "Informe"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -165,17 +177,6 @@ Partial Class A_ListadoAsientos
         Me.Label1.Size = New System.Drawing.Size(90, 24)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Asientos"
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.Honeydew
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(494, 8)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Informe"
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'A_ListadoAsientos
         '
