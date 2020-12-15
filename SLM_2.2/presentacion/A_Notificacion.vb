@@ -37,10 +37,27 @@ Public Class A_Notificacion
 
             End If
 
-            'ENVIO DE CORREO CON ALERTA
-            'enviarMail()
+            '::::::::::::::::::::::::::ENVIO DE CORREO CON ALERTA
 
+            Dim notificar As New ClsServidorCorreo
+            Dim dt As New DataTable
+            Dim row As DataRow
+
+            dt = notificar.verServidor
+            row = dt.Rows(0)
+            Dim correoSalida As String = row("correoSalida")
+            Dim pass As String = row("pass")
+            Dim puerto As Integer = Integer.Parse(row("puerto"))
+            Dim sslOK As Boolean = row("sslOK")
+            Dim host As String = row("host")
+            Dim correoNoti As String = row("correoEntrada")
+            Dim texto As String = lblMensajeDias.Text + " , " + lblMensajeDias.Text
+
+
+            enviarMail(correoSalida, pass, puerto, sslOK, host, correoNoti, texto)
+            'Mostrar ventana de alerta
             Form1.pbxNoti.Visible = True
+            '::::::::::::::::::::::::::::::::FIN DE ALERTA POR CORREO
 
             'INSERTAR ALERTA EN BD
             Dim nombre, descripcion As String
@@ -60,7 +77,7 @@ Public Class A_Notificacion
             End With
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox("Hubo un error al notificar evento de SLM. Detalle: " + ex.Message)
         End Try
 
     End Sub
