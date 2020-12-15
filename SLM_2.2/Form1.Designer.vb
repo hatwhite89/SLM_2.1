@@ -2362,6 +2362,7 @@ Partial Class Form1
         Me.Controls.Add(Me.PanelLab)
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Menú Principal"
