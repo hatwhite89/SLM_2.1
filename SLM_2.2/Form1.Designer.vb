@@ -429,7 +429,7 @@ Partial Class Form1
         Me.panelMenu.Controls.Add(Me.tcMenu)
         Me.panelMenu.Location = New System.Drawing.Point(123, 59)
         Me.panelMenu.Name = "panelMenu"
-        Me.panelMenu.Size = New System.Drawing.Size(584, 536)
+        Me.panelMenu.Size = New System.Drawing.Size(584, 549)
         Me.panelMenu.TabIndex = 4
         Me.panelMenu.Visible = False
         '
@@ -484,7 +484,7 @@ Partial Class Form1
         Me.tcMenu.Location = New System.Drawing.Point(1, 38)
         Me.tcMenu.Name = "tcMenu"
         Me.tcMenu.SelectedIndex = 0
-        Me.tcMenu.Size = New System.Drawing.Size(586, 482)
+        Me.tcMenu.Size = New System.Drawing.Size(586, 495)
         Me.tcMenu.TabIndex = 6
         '
         'TpMantenimiento
@@ -501,12 +501,13 @@ Partial Class Form1
         Me.TpMantenimiento.Location = New System.Drawing.Point(4, 22)
         Me.TpMantenimiento.Name = "TpMantenimiento"
         Me.TpMantenimiento.Padding = New System.Windows.Forms.Padding(3)
-        Me.TpMantenimiento.Size = New System.Drawing.Size(578, 456)
+        Me.TpMantenimiento.Size = New System.Drawing.Size(578, 469)
         Me.TpMantenimiento.TabIndex = 2
         Me.TpMantenimiento.Text = "Mantenimiento"
         '
         'btnPeriodoContable
         '
+        Me.btnPeriodoContable.Image = Global.SLM_2._2.My.Resources.Resources.mantenimiento_26
         Me.btnPeriodoContable.Location = New System.Drawing.Point(144, 160)
         Me.btnPeriodoContable.Name = "btnPeriodoContable"
         Me.btnPeriodoContable.Size = New System.Drawing.Size(92, 110)
@@ -516,6 +517,7 @@ Partial Class Form1
         '
         'btnAsientos
         '
+        Me.btnAsientos.Image = Global.SLM_2._2.My.Resources.Resources.mantenimiento_24
         Me.btnAsientos.Location = New System.Drawing.Point(144, 29)
         Me.btnAsientos.Name = "btnAsientos"
         Me.btnAsientos.Size = New System.Drawing.Size(92, 110)
@@ -525,6 +527,7 @@ Partial Class Form1
         '
         'btnCategoriaProveedor
         '
+        Me.btnCategoriaProveedor.Image = Global.SLM_2._2.My.Resources.Resources.mantenimiento_25
         Me.btnCategoriaProveedor.Location = New System.Drawing.Point(277, 29)
         Me.btnCategoriaProveedor.Name = "btnCategoriaProveedor"
         Me.btnCategoriaProveedor.Size = New System.Drawing.Size(92, 110)
@@ -534,6 +537,7 @@ Partial Class Form1
         '
         'btnProveedor
         '
+        Me.btnProveedor.Image = Global.SLM_2._2.My.Resources.Resources.mantenimiento_28
         Me.btnProveedor.Location = New System.Drawing.Point(395, 29)
         Me.btnProveedor.Name = "btnProveedor"
         Me.btnProveedor.Size = New System.Drawing.Size(91, 110)
@@ -543,6 +547,7 @@ Partial Class Form1
         '
         'btnFormaPago
         '
+        Me.btnFormaPago.Image = Global.SLM_2._2.My.Resources.Resources.mantenimiento_29
         Me.btnFormaPago.Location = New System.Drawing.Point(277, 160)
         Me.btnFormaPago.Name = "btnFormaPago"
         Me.btnFormaPago.Size = New System.Drawing.Size(92, 110)
@@ -552,6 +557,7 @@ Partial Class Form1
         '
         'btnCAI
         '
+        Me.btnCAI.Image = Global.SLM_2._2.My.Resources.Resources.mantenimiento_30
         Me.btnCAI.Location = New System.Drawing.Point(24, 163)
         Me.btnCAI.Name = "btnCAI"
         Me.btnCAI.Size = New System.Drawing.Size(92, 110)
@@ -561,6 +567,7 @@ Partial Class Form1
         '
         'btnBancos
         '
+        Me.btnBancos.Image = Global.SLM_2._2.My.Resources.Resources.mantenimiento_27
         Me.btnBancos.Location = New System.Drawing.Point(395, 160)
         Me.btnBancos.Name = "btnBancos"
         Me.btnBancos.Size = New System.Drawing.Size(92, 110)
@@ -570,6 +577,7 @@ Partial Class Form1
         '
         'btnCuentas
         '
+        Me.btnCuentas.Image = Global.SLM_2._2.My.Resources.Resources.mantenimiento_23
         Me.btnCuentas.Location = New System.Drawing.Point(24, 29)
         Me.btnCuentas.Name = "btnCuentas"
         Me.btnCuentas.Size = New System.Drawing.Size(92, 110)
@@ -586,12 +594,13 @@ Partial Class Form1
         Me.tpPrecios.Controls.Add(Me.btnPromociones)
         Me.tpPrecios.Location = New System.Drawing.Point(4, 22)
         Me.tpPrecios.Name = "tpPrecios"
-        Me.tpPrecios.Size = New System.Drawing.Size(578, 456)
+        Me.tpPrecios.Size = New System.Drawing.Size(578, 469)
         Me.tpPrecios.TabIndex = 3
         Me.tpPrecios.Text = "Precios y Descuentos"
         '
         'btnPrecio
         '
+        Me.btnPrecio.Image = Global.SLM_2._2.My.Resources.Resources.precios_y_descuentos_31
         Me.btnPrecio.Location = New System.Drawing.Point(7, 24)
         Me.btnPrecio.Name = "btnPrecio"
         Me.btnPrecio.Size = New System.Drawing.Size(93, 115)
@@ -601,6 +610,7 @@ Partial Class Form1
         '
         'btnListaPrecio
         '
+        Me.btnListaPrecio.Image = Global.SLM_2._2.My.Resources.Resources.precios_y_descuentos_32
         Me.btnListaPrecio.Location = New System.Drawing.Point(126, 24)
         Me.btnListaPrecio.Name = "btnListaPrecio"
         Me.btnListaPrecio.Size = New System.Drawing.Size(95, 115)
@@ -610,6 +620,7 @@ Partial Class Form1
         '
         'btnDescuento
         '
+        Me.btnDescuento.Image = Global.SLM_2._2.My.Resources.Resources.precios_y_descuentos_33
         Me.btnDescuento.Location = New System.Drawing.Point(247, 24)
         Me.btnDescuento.Name = "btnDescuento"
         Me.btnDescuento.Size = New System.Drawing.Size(95, 115)
@@ -619,6 +630,7 @@ Partial Class Form1
         '
         'btnPromociones
         '
+        Me.btnPromociones.Image = Global.SLM_2._2.My.Resources.Resources.precios_y_descuentos_34
         Me.btnPromociones.Location = New System.Drawing.Point(365, 25)
         Me.btnPromociones.Name = "btnPromociones"
         Me.btnPromociones.Size = New System.Drawing.Size(95, 115)
@@ -637,7 +649,7 @@ Partial Class Form1
         Me.TpProcesos.Controls.Add(Me.btnConsolidar)
         Me.TpProcesos.Location = New System.Drawing.Point(4, 22)
         Me.TpProcesos.Name = "TpProcesos"
-        Me.TpProcesos.Size = New System.Drawing.Size(578, 456)
+        Me.TpProcesos.Size = New System.Drawing.Size(578, 469)
         Me.TpProcesos.TabIndex = 4
         Me.TpProcesos.Text = "Procesos"
         '
@@ -716,12 +728,13 @@ Partial Class Form1
         Me.tpCheque.Location = New System.Drawing.Point(4, 22)
         Me.tpCheque.Name = "tpCheque"
         Me.tpCheque.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpCheque.Size = New System.Drawing.Size(578, 456)
+        Me.tpCheque.Size = New System.Drawing.Size(578, 469)
         Me.tpCheque.TabIndex = 0
         Me.tpCheque.Text = "Cheque"
         '
         'btnCheques
         '
+        Me.btnCheques.Image = Global.SLM_2._2.My.Resources.Resources.cheque_39
         Me.btnCheques.Location = New System.Drawing.Point(24, 34)
         Me.btnCheques.Name = "btnCheques"
         Me.btnCheques.Size = New System.Drawing.Size(92, 106)
@@ -731,6 +744,7 @@ Partial Class Form1
         '
         'btnChequera
         '
+        Me.btnChequera.Image = Global.SLM_2._2.My.Resources.Resources.cheque_38
         Me.btnChequera.Location = New System.Drawing.Point(148, 34)
         Me.btnChequera.Name = "btnChequera"
         Me.btnChequera.Size = New System.Drawing.Size(93, 106)
@@ -740,6 +754,7 @@ Partial Class Form1
         '
         'btnDepoBanc
         '
+        Me.btnDepoBanc.Image = Global.SLM_2._2.My.Resources.Resources.cheque_40
         Me.btnDepoBanc.Location = New System.Drawing.Point(270, 33)
         Me.btnDepoBanc.Name = "btnDepoBanc"
         Me.btnDepoBanc.Size = New System.Drawing.Size(93, 106)
@@ -755,12 +770,13 @@ Partial Class Form1
         Me.tpPagos.Location = New System.Drawing.Point(4, 22)
         Me.tpPagos.Name = "tpPagos"
         Me.tpPagos.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpPagos.Size = New System.Drawing.Size(578, 456)
+        Me.tpPagos.Size = New System.Drawing.Size(578, 469)
         Me.tpPagos.TabIndex = 1
         Me.tpPagos.Text = "Pagos"
         '
         'btnPagos
         '
+        Me.btnPagos.Image = Global.SLM_2._2.My.Resources.Resources.pagos_41
         Me.btnPagos.Location = New System.Drawing.Point(21, 29)
         Me.btnPagos.Name = "btnPagos"
         Me.btnPagos.Size = New System.Drawing.Size(93, 110)
@@ -770,6 +786,7 @@ Partial Class Form1
         '
         'btnFacturaCompra
         '
+        Me.btnFacturaCompra.Image = Global.SLM_2._2.My.Resources.Resources.pagos_42
         Me.btnFacturaCompra.Location = New System.Drawing.Point(160, 29)
         Me.btnFacturaCompra.Name = "btnFacturaCompra"
         Me.btnFacturaCompra.Size = New System.Drawing.Size(91, 110)
@@ -781,7 +798,7 @@ Partial Class Form1
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 587)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 600)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 10, 0)
         Me.StatusStrip1.Size = New System.Drawing.Size(710, 22)
@@ -797,7 +814,7 @@ Partial Class Form1
         Me.TabControl1.Location = New System.Drawing.Point(1, 35)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(584, 485)
+        Me.TabControl1.Size = New System.Drawing.Size(584, 498)
         Me.TabControl1.TabIndex = 6
         '
         'TabPage1
@@ -821,7 +838,7 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(576, 459)
+        Me.TabPage1.Size = New System.Drawing.Size(576, 472)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Facturación"
         '
@@ -985,7 +1002,7 @@ Partial Class Form1
         Me.PanelLab.Controls.Add(Me.TabControl2)
         Me.PanelLab.Location = New System.Drawing.Point(123, 59)
         Me.PanelLab.Name = "PanelLab"
-        Me.PanelLab.Size = New System.Drawing.Size(582, 536)
+        Me.PanelLab.Size = New System.Drawing.Size(582, 549)
         Me.PanelLab.TabIndex = 8
         Me.PanelLab.Visible = False
         '
@@ -1039,7 +1056,7 @@ Partial Class Form1
         Me.TabControl2.Location = New System.Drawing.Point(1, 38)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(582, 482)
+        Me.TabControl2.Size = New System.Drawing.Size(582, 495)
         Me.TabControl2.TabIndex = 6
         '
         'TabPage3
@@ -1063,7 +1080,7 @@ Partial Class Form1
         Me.TabPage3.Controls.Add(Me.btnExamen)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(574, 456)
+        Me.TabPage3.Size = New System.Drawing.Size(574, 469)
         Me.TabPage3.TabIndex = 1
         Me.TabPage3.Text = "Exámenes"
         '
@@ -1340,7 +1357,7 @@ Partial Class Form1
         Me.PanelFactura.Controls.Add(Me.TabControl1)
         Me.PanelFactura.Location = New System.Drawing.Point(122, 59)
         Me.PanelFactura.Name = "PanelFactura"
-        Me.PanelFactura.Size = New System.Drawing.Size(585, 534)
+        Me.PanelFactura.Size = New System.Drawing.Size(585, 547)
         Me.PanelFactura.TabIndex = 7
         Me.PanelFactura.Visible = False
         '
@@ -1378,7 +1395,7 @@ Partial Class Form1
         Me.PanelTalentoHumano.Controls.Add(Me.TabControl4)
         Me.PanelTalentoHumano.Location = New System.Drawing.Point(122, 59)
         Me.PanelTalentoHumano.Name = "PanelTalentoHumano"
-        Me.PanelTalentoHumano.Size = New System.Drawing.Size(585, 536)
+        Me.PanelTalentoHumano.Size = New System.Drawing.Size(585, 549)
         Me.PanelTalentoHumano.TabIndex = 8
         Me.PanelTalentoHumano.Visible = False
         '
@@ -1429,7 +1446,7 @@ Partial Class Form1
         Me.TabControl4.Location = New System.Drawing.Point(0, 37)
         Me.TabControl4.Name = "TabControl4"
         Me.TabControl4.SelectedIndex = 0
-        Me.TabControl4.Size = New System.Drawing.Size(586, 483)
+        Me.TabControl4.Size = New System.Drawing.Size(586, 496)
         Me.TabControl4.TabIndex = 6
         '
         'TabPage9
@@ -1455,12 +1472,13 @@ Partial Class Form1
         Me.TabPage9.Location = New System.Drawing.Point(4, 22)
         Me.TabPage9.Name = "TabPage9"
         Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage9.Size = New System.Drawing.Size(578, 457)
+        Me.TabPage9.Size = New System.Drawing.Size(578, 470)
         Me.TabPage9.TabIndex = 0
         Me.TabPage9.Text = "Talento Humano"
         '
         'btnConstanciaPlantillas
         '
+        Me.btnConstanciaPlantillas.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_79
         Me.btnConstanciaPlantillas.Location = New System.Drawing.Point(481, 30)
         Me.btnConstanciaPlantillas.Name = "btnConstanciaPlantillas"
         Me.btnConstanciaPlantillas.Size = New System.Drawing.Size(85, 111)
@@ -1470,6 +1488,7 @@ Partial Class Form1
         '
         'btnReporteria
         '
+        Me.btnReporteria.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_85
         Me.btnReporteria.Location = New System.Drawing.Point(481, 151)
         Me.btnReporteria.Name = "btnReporteria"
         Me.btnReporteria.Size = New System.Drawing.Size(85, 109)
@@ -1479,6 +1498,7 @@ Partial Class Form1
         '
         'btnTipoPermiso
         '
+        Me.btnTipoPermiso.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_89
         Me.btnTipoPermiso.Location = New System.Drawing.Point(296, 272)
         Me.btnTipoPermiso.Name = "btnTipoPermiso"
         Me.btnTipoPermiso.Size = New System.Drawing.Size(88, 109)
@@ -1488,6 +1508,7 @@ Partial Class Form1
         '
         'btnCapacitaciones
         '
+        Me.btnCapacitaciones.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_88
         Me.btnCapacitaciones.Location = New System.Drawing.Point(201, 272)
         Me.btnCapacitaciones.Name = "btnCapacitaciones"
         Me.btnCapacitaciones.Size = New System.Drawing.Size(86, 109)
@@ -1497,6 +1518,7 @@ Partial Class Form1
         '
         'btnCandidatos
         '
+        Me.btnCandidatos.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_87
         Me.btnCandidatos.Location = New System.Drawing.Point(109, 272)
         Me.btnCandidatos.Name = "btnCandidatos"
         Me.btnCandidatos.Size = New System.Drawing.Size(86, 109)
@@ -1506,6 +1528,7 @@ Partial Class Form1
         '
         'btnDepto
         '
+        Me.btnDepto.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_84
         Me.btnDepto.Location = New System.Drawing.Point(388, 151)
         Me.btnDepto.Name = "btnDepto"
         Me.btnDepto.Size = New System.Drawing.Size(86, 109)
@@ -1515,6 +1538,7 @@ Partial Class Form1
         '
         'btnPuestoTrabajo
         '
+        Me.btnPuestoTrabajo.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_74
         Me.btnPuestoTrabajo.Location = New System.Drawing.Point(16, 30)
         Me.btnPuestoTrabajo.Name = "btnPuestoTrabajo"
         Me.btnPuestoTrabajo.Size = New System.Drawing.Size(87, 110)
@@ -1534,6 +1558,7 @@ Partial Class Form1
         '
         'btnHorarios
         '
+        Me.btnHorarios.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_75
         Me.btnHorarios.Location = New System.Drawing.Point(109, 30)
         Me.btnHorarios.Name = "btnHorarios"
         Me.btnHorarios.Size = New System.Drawing.Size(86, 110)
@@ -1543,6 +1568,7 @@ Partial Class Form1
         '
         'btnContratos
         '
+        Me.btnContratos.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_76
         Me.btnContratos.Location = New System.Drawing.Point(201, 30)
         Me.btnContratos.Name = "btnContratos"
         Me.btnContratos.Size = New System.Drawing.Size(86, 110)
@@ -1552,6 +1578,7 @@ Partial Class Form1
         '
         'btnProfesion
         '
+        Me.btnProfesion.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_77
         Me.btnProfesion.Location = New System.Drawing.Point(294, 30)
         Me.btnProfesion.Name = "btnProfesion"
         Me.btnProfesion.Size = New System.Drawing.Size(88, 110)
@@ -1561,6 +1588,7 @@ Partial Class Form1
         '
         'btnTipoDeducciones
         '
+        Me.btnTipoDeducciones.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_78
         Me.btnTipoDeducciones.Location = New System.Drawing.Point(388, 30)
         Me.btnTipoDeducciones.Name = "btnTipoDeducciones"
         Me.btnTipoDeducciones.Size = New System.Drawing.Size(86, 110)
@@ -1570,6 +1598,7 @@ Partial Class Form1
         '
         'btnArea
         '
+        Me.btnArea.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_83
         Me.btnArea.Location = New System.Drawing.Point(296, 152)
         Me.btnArea.Name = "btnArea"
         Me.btnArea.Size = New System.Drawing.Size(88, 108)
@@ -1579,6 +1608,7 @@ Partial Class Form1
         '
         'btnVacaciones
         '
+        Me.btnVacaciones.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_82
         Me.btnVacaciones.Location = New System.Drawing.Point(201, 152)
         Me.btnVacaciones.Name = "btnVacaciones"
         Me.btnVacaciones.Size = New System.Drawing.Size(86, 108)
@@ -1588,6 +1618,7 @@ Partial Class Form1
         '
         'btnPermisos
         '
+        Me.btnPermisos.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_81
         Me.btnPermisos.Location = New System.Drawing.Point(108, 152)
         Me.btnPermisos.Name = "btnPermisos"
         Me.btnPermisos.Size = New System.Drawing.Size(87, 108)
@@ -1597,6 +1628,7 @@ Partial Class Form1
         '
         'btnSucursales
         '
+        Me.btnSucursales.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_80
         Me.btnSucursales.Location = New System.Drawing.Point(15, 152)
         Me.btnSucursales.Name = "btnSucursales"
         Me.btnSucursales.Size = New System.Drawing.Size(88, 108)
@@ -1606,6 +1638,7 @@ Partial Class Form1
         '
         'btnEmpleados
         '
+        Me.btnEmpleados.Image = Global.SLM_2._2.My.Resources.Resources.talento_humano_86
         Me.btnEmpleados.Location = New System.Drawing.Point(16, 272)
         Me.btnEmpleados.Name = "btnEmpleados"
         Me.btnEmpleados.Size = New System.Drawing.Size(86, 109)
@@ -1622,7 +1655,7 @@ Partial Class Form1
         Me.TabControl3.Location = New System.Drawing.Point(1, 37)
         Me.TabControl3.Name = "TabControl3"
         Me.TabControl3.SelectedIndex = 0
-        Me.TabControl3.Size = New System.Drawing.Size(586, 483)
+        Me.TabControl3.Size = New System.Drawing.Size(586, 496)
         Me.TabControl3.TabIndex = 7
         '
         'TabPage6
@@ -1634,7 +1667,7 @@ Partial Class Form1
         Me.TabPage6.Controls.Add(Me.btnServidorCorreo)
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(578, 457)
+        Me.TabPage6.Size = New System.Drawing.Size(578, 470)
         Me.TabPage6.TabIndex = 3
         Me.TabPage6.Text = "Configuración de Sistema"
         '
@@ -1700,7 +1733,7 @@ Partial Class Form1
         Me.PanelSistema.Location = New System.Drawing.Point(123, 59)
         Me.PanelSistema.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelSistema.Name = "PanelSistema"
-        Me.PanelSistema.Size = New System.Drawing.Size(584, 534)
+        Me.PanelSistema.Size = New System.Drawing.Size(584, 547)
         Me.PanelSistema.TabIndex = 23
         Me.PanelSistema.Visible = False
         '
@@ -1738,7 +1771,7 @@ Partial Class Form1
         Me.PanelAlmacen.Controls.Add(Me.TabControl5)
         Me.PanelAlmacen.Location = New System.Drawing.Point(123, 59)
         Me.PanelAlmacen.Name = "PanelAlmacen"
-        Me.PanelAlmacen.Size = New System.Drawing.Size(584, 536)
+        Me.PanelAlmacen.Size = New System.Drawing.Size(584, 549)
         Me.PanelAlmacen.TabIndex = 24
         Me.PanelAlmacen.Visible = False
         '
@@ -1793,7 +1826,7 @@ Partial Class Form1
         Me.TabControl5.Location = New System.Drawing.Point(1, 37)
         Me.TabControl5.Name = "TabControl5"
         Me.TabControl5.SelectedIndex = 0
-        Me.TabControl5.Size = New System.Drawing.Size(585, 483)
+        Me.TabControl5.Size = New System.Drawing.Size(585, 496)
         Me.TabControl5.TabIndex = 6
         '
         'TabPage10
@@ -1811,7 +1844,7 @@ Partial Class Form1
         Me.TabPage10.Location = New System.Drawing.Point(4, 22)
         Me.TabPage10.Name = "TabPage10"
         Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage10.Size = New System.Drawing.Size(577, 457)
+        Me.TabPage10.Size = New System.Drawing.Size(577, 470)
         Me.TabPage10.TabIndex = 0
         Me.TabPage10.Text = "Almacén"
         '
@@ -2191,7 +2224,7 @@ Partial Class Form1
         Me.lblFecha.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFecha.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblFecha.Location = New System.Drawing.Point(9, 599)
+        Me.lblFecha.Location = New System.Drawing.Point(41, 605)
         Me.lblFecha.Name = "lblFecha"
         Me.lblFecha.Size = New System.Drawing.Size(45, 13)
         Me.lblFecha.TabIndex = 57
@@ -2204,7 +2237,7 @@ Partial Class Form1
         Me.lblHora.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.lblHora.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHora.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblHora.Location = New System.Drawing.Point(626, 596)
+        Me.lblHora.Location = New System.Drawing.Point(626, 605)
         Me.lblHora.Name = "lblHora"
         Me.lblHora.Size = New System.Drawing.Size(45, 13)
         Me.lblHora.TabIndex = 58
@@ -2243,7 +2276,7 @@ Partial Class Form1
         Me.Panel1.Location = New System.Drawing.Point(131, 125)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(546, 409)
+        Me.Panel1.Size = New System.Drawing.Size(546, 422)
         Me.Panel1.TabIndex = 10
         '
         'PictureBox55
@@ -2259,7 +2292,7 @@ Partial Class Form1
         'pbxNoti
         '
         Me.pbxNoti.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.pbxNoti.Location = New System.Drawing.Point(6, 564)
+        Me.pbxNoti.Location = New System.Drawing.Point(6, 577)
         Me.pbxNoti.Name = "pbxNoti"
         Me.pbxNoti.Size = New System.Drawing.Size(29, 27)
         Me.pbxNoti.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2273,7 +2306,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(710, 609)
+        Me.ClientSize = New System.Drawing.Size(710, 622)
         Me.Controls.Add(Me.lblCajero)
         Me.Controls.Add(Me.bntCerrar)
         Me.Controls.Add(Me.lblHora)
@@ -2289,13 +2322,13 @@ Partial Class Form1
         Me.Controls.Add(Me.lblMiUser)
         Me.Controls.Add(Me.btnContabilidad)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Controls.Add(Me.PanelFactura)
-        Me.Controls.Add(Me.PanelAlmacen)
-        Me.Controls.Add(Me.PanelTalentoHumano)
         Me.Controls.Add(Me.panelMenu)
         Me.Controls.Add(Me.PanelSistema)
         Me.Controls.Add(Me.PanelLab)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.PanelFactura)
+        Me.Controls.Add(Me.PanelAlmacen)
+        Me.Controls.Add(Me.PanelTalentoHumano)
         Me.DoubleBuffered = True
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
