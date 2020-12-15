@@ -594,12 +594,13 @@ Partial Class Form1
         Me.tpPrecios.Controls.Add(Me.btnPromociones)
         Me.tpPrecios.Location = New System.Drawing.Point(4, 22)
         Me.tpPrecios.Name = "tpPrecios"
-        Me.tpPrecios.Size = New System.Drawing.Size(578, 456)
+        Me.tpPrecios.Size = New System.Drawing.Size(578, 469)
         Me.tpPrecios.TabIndex = 3
         Me.tpPrecios.Text = "Precios y Descuentos"
         '
         'btnPrecio
         '
+        Me.btnPrecio.Image = Global.SLM_2._2.My.Resources.Resources.precios_y_descuentos_31
         Me.btnPrecio.Location = New System.Drawing.Point(7, 24)
         Me.btnPrecio.Name = "btnPrecio"
         Me.btnPrecio.Size = New System.Drawing.Size(93, 115)
@@ -609,6 +610,7 @@ Partial Class Form1
         '
         'btnListaPrecio
         '
+        Me.btnListaPrecio.Image = Global.SLM_2._2.My.Resources.Resources.precios_y_descuentos_32
         Me.btnListaPrecio.Location = New System.Drawing.Point(126, 24)
         Me.btnListaPrecio.Name = "btnListaPrecio"
         Me.btnListaPrecio.Size = New System.Drawing.Size(95, 115)
@@ -618,6 +620,7 @@ Partial Class Form1
         '
         'btnDescuento
         '
+        Me.btnDescuento.Image = Global.SLM_2._2.My.Resources.Resources.precios_y_descuentos_33
         Me.btnDescuento.Location = New System.Drawing.Point(247, 24)
         Me.btnDescuento.Name = "btnDescuento"
         Me.btnDescuento.Size = New System.Drawing.Size(95, 115)
@@ -627,6 +630,7 @@ Partial Class Form1
         '
         'btnPromociones
         '
+        Me.btnPromociones.Image = Global.SLM_2._2.My.Resources.Resources.precios_y_descuentos_34
         Me.btnPromociones.Location = New System.Drawing.Point(365, 25)
         Me.btnPromociones.Name = "btnPromociones"
         Me.btnPromociones.Size = New System.Drawing.Size(95, 115)
@@ -645,7 +649,7 @@ Partial Class Form1
         Me.TpProcesos.Controls.Add(Me.btnConsolidar)
         Me.TpProcesos.Location = New System.Drawing.Point(4, 22)
         Me.TpProcesos.Name = "TpProcesos"
-        Me.TpProcesos.Size = New System.Drawing.Size(578, 456)
+        Me.TpProcesos.Size = New System.Drawing.Size(578, 469)
         Me.TpProcesos.TabIndex = 4
         Me.TpProcesos.Text = "Procesos"
         '
@@ -724,12 +728,13 @@ Partial Class Form1
         Me.tpCheque.Location = New System.Drawing.Point(4, 22)
         Me.tpCheque.Name = "tpCheque"
         Me.tpCheque.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpCheque.Size = New System.Drawing.Size(578, 456)
+        Me.tpCheque.Size = New System.Drawing.Size(578, 469)
         Me.tpCheque.TabIndex = 0
         Me.tpCheque.Text = "Cheque"
         '
         'btnCheques
         '
+        Me.btnCheques.Image = Global.SLM_2._2.My.Resources.Resources.cheque_39
         Me.btnCheques.Location = New System.Drawing.Point(24, 34)
         Me.btnCheques.Name = "btnCheques"
         Me.btnCheques.Size = New System.Drawing.Size(92, 106)
@@ -739,6 +744,7 @@ Partial Class Form1
         '
         'btnChequera
         '
+        Me.btnChequera.Image = Global.SLM_2._2.My.Resources.Resources.cheque_38
         Me.btnChequera.Location = New System.Drawing.Point(148, 34)
         Me.btnChequera.Name = "btnChequera"
         Me.btnChequera.Size = New System.Drawing.Size(93, 106)
@@ -748,6 +754,7 @@ Partial Class Form1
         '
         'btnDepoBanc
         '
+        Me.btnDepoBanc.Image = Global.SLM_2._2.My.Resources.Resources.cheque_40
         Me.btnDepoBanc.Location = New System.Drawing.Point(270, 33)
         Me.btnDepoBanc.Name = "btnDepoBanc"
         Me.btnDepoBanc.Size = New System.Drawing.Size(93, 106)
@@ -763,12 +770,13 @@ Partial Class Form1
         Me.tpPagos.Location = New System.Drawing.Point(4, 22)
         Me.tpPagos.Name = "tpPagos"
         Me.tpPagos.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpPagos.Size = New System.Drawing.Size(578, 456)
+        Me.tpPagos.Size = New System.Drawing.Size(578, 469)
         Me.tpPagos.TabIndex = 1
         Me.tpPagos.Text = "Pagos"
         '
         'btnPagos
         '
+        Me.btnPagos.Image = Global.SLM_2._2.My.Resources.Resources.pagos_41
         Me.btnPagos.Location = New System.Drawing.Point(21, 29)
         Me.btnPagos.Name = "btnPagos"
         Me.btnPagos.Size = New System.Drawing.Size(93, 110)
@@ -778,6 +786,7 @@ Partial Class Form1
         '
         'btnFacturaCompra
         '
+        Me.btnFacturaCompra.Image = Global.SLM_2._2.My.Resources.Resources.pagos_42
         Me.btnFacturaCompra.Location = New System.Drawing.Point(160, 29)
         Me.btnFacturaCompra.Name = "btnFacturaCompra"
         Me.btnFacturaCompra.Size = New System.Drawing.Size(91, 110)
