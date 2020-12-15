@@ -2297,6 +2297,7 @@ Partial Class Form1
         Me.lblCajero.Size = New System.Drawing.Size(59, 13)
         Me.lblCajero.TabIndex = 62
         Me.lblCajero.Text = "labelCajero"
+        Me.lblCajero.Visible = False
         '
         'Panel1
         '
