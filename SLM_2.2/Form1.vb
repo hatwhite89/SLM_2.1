@@ -260,7 +260,7 @@
 
     End Sub
 
-    Private Sub btnPaciente_Click(sender As Object, e As EventArgs) Handles btnPaciente.Click
+    Private Sub btnPaciente_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -268,18 +268,16 @@
 
     End Sub
 
-    Private Sub btnMedico_Click(sender As Object, e As EventArgs) Handles btnMedico.Click
+    Private Sub btnMedico_Click(sender As Object, e As EventArgs)
         M_Medico.ShowDialog()
     End Sub
 
-    Private Sub btnSede_Click(sender As Object, e As EventArgs) Handles btnSede.Click
-        M_Sede.lblform.Text = "Sede"
-        M_Sede.ShowDialog()
+    Private Sub btnSede_Click(sender As Object, e As EventArgs)
+
     End Sub
 
-    Private Sub btnSucursal_Click(sender As Object, e As EventArgs) Handles btnSucursal.Click
-        M_Sucursal.lblform.Text = "Sucursal"
-        M_Sucursal.ShowDialog()
+    Private Sub btnSucursal_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub Button13_Click(sender As Object, e As EventArgs)
@@ -1225,7 +1223,7 @@
         End Try
     End Sub
 
-    Private Sub PictureBox18_Click(sender As Object, e As EventArgs) Handles PictureBox18.Click
+    Private Sub PictureBox18_Click(sender As Object, e As EventArgs) Handles btnPaciente.Click, btnPaciente2.Click
         M_ListarClientes.lblForm.Text = "VerPaciente"
         M_ListarClientes.ShowDialog()
     End Sub
@@ -1242,11 +1240,26 @@
         E_ListarOrdenesDeTrabajo.Show()
     End Sub
 
-    Private Sub PictureBox24_Click(sender As Object, e As EventArgs) Handles PictureBox24.Click
+    Private Sub PictureBox24_Click(sender As Object, e As EventArgs)
+        M_Sede.lblform.Text = "Sede"
+        M_Sede.ShowDialog()
+    End Sub
+
+    Private Sub PictureBox25_Click(sender As Object, e As EventArgs) Handles btnSucursal.Click
+        M_Sucursal.lblform.Text = "Sucursal"
+        M_Sucursal.ShowDialog()
+    End Sub
+
+    Private Sub PictureBox2_Click_1(sender As Object, e As EventArgs) Handles btnSede2.Click
+        M_Sucursal.lblform.Text = "Sede"
+        M_Sede.ShowDialog()
+    End Sub
+
+    Private Sub PictureBox25_Click_1(sender As Object, e As EventArgs) Handles btnSucursal.Click
 
     End Sub
 
-    Private Sub PictureBox25_Click(sender As Object, e As EventArgs) Handles PictureBox25.Click
-
+    Private Sub PictureBox26_Click(sender As Object, e As EventArgs)
+        M_Medico.ShowDialog()
     End Sub
 End Class
