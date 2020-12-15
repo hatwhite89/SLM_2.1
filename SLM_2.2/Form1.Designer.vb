@@ -1271,7 +1271,7 @@ Partial Class Form1
         Me.TabPage4.Controls.Add(Me.btnSucursal)
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(164, 469)
+        Me.TabPage4.Size = New System.Drawing.Size(574, 469)
         Me.TabPage4.TabIndex = 2
         Me.TabPage4.Text = "Sedes"
         '
@@ -1305,7 +1305,7 @@ Partial Class Form1
         Me.TabPage5.Controls.Add(Me.btnMedico2)
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(164, 469)
+        Me.TabPage5.Size = New System.Drawing.Size(574, 469)
         Me.TabPage5.TabIndex = 3
         Me.TabPage5.Text = "Médicos"
         '
@@ -1327,7 +1327,7 @@ Partial Class Form1
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(164, 469)
+        Me.TabPage2.Size = New System.Drawing.Size(574, 469)
         Me.TabPage2.TabIndex = 0
         Me.TabPage2.Text = "Clientes"
         '
@@ -2280,6 +2280,7 @@ Partial Class Form1
         Me.lblCajero.Size = New System.Drawing.Size(59, 13)
         Me.lblCajero.TabIndex = 62
         Me.lblCajero.Text = "labelCajero"
+        Me.lblCajero.Visible = False
         '
         'Panel1
         '
