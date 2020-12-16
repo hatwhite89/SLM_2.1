@@ -2,9 +2,13 @@
 
     Dim FacCompra As New ClsFacturaCompra
     Private Sub A_ListadoFacturaCompra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            'Cargar Facturas de Compra
+            dtFacturasCompra.DataSource = FacCompra.listarFacturaCompra
+            alternarColoFilasDatagridview(dtFacturasCompra)
+        Catch ex As Exception
 
-        'Cargar Facturas de Compra
-        dtFacturasCompra.DataSource = FacCompra.listarFacturaCompra
+        End Try
 
     End Sub
 
@@ -127,5 +131,18 @@
 
         End Try
 
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
+
+    End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+        Try
+            E_frmInventario.GridAExcel(dtFacturasCompra)
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

@@ -139,47 +139,50 @@ Public Class A_Cheques
 
     End Sub
     Private Sub A_Cheques_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            If lblForm.Text = "ChequeSeleccionado" Then
 
-        If lblForm.Text = "ChequeSeleccionado" Then
+                btnGuardar.Enabled = False
 
-            btnGuardar.Enabled = False
+                Dim prov As New ClsProveedor
+                Dim dtpro As New DataTable
+                Dim rowpro As DataRow
+                dtpro = prov.listarProveedoresJC(lblCodProveedor.Text)
+                rowpro = dtpro.Rows(0)
+                txtcodProvee.Text = rowpro("codBreve")
+                txtNombreProvee.Text = rowpro("nombreProveedor")
 
-            Dim prov As New ClsProveedor
-            Dim dtpro As New DataTable
-            Dim rowpro As DataRow
-            dtpro = prov.listarProveedoresOC2(lblCodProveedor.Text)
-            rowpro = dtpro.Rows(0)
-            txtcodProvee.Text = rowpro("codBreve")
-            txtNombreProvee.Text = rowpro("nombreProveedor")
+            Else
 
+                formap.Cod = frmPagos.txtFormaP.Text
+                Dim dt As New DataTable
+                dt = formap.infoFormaPago()
+                Dim row As DataRow = dt.Rows(0)
+                txtCtaDestino.Text = row("cuenta")
 
-        Else
+                'Limpiar campos de fecha
+                dtpAcredita.Format = DateTimePickerFormat.Custom
+                dtpAcredita.CustomFormat = " "
 
-            formap.Cod = frmPagos.txtFormaP.Text
-            Dim dt As New DataTable
-            dt = formap.infoFormaPago()
-            Dim row As DataRow = dt.Rows(0)
-            txtCtaDestino.Text = row("cuenta")
+                dtpEmision.Format = DateTimePickerFormat.Custom
+                dtpEmision.CustomFormat = " "
 
-            'Limpiar campos de fecha
-            dtpAcredita.Format = DateTimePickerFormat.Custom
-            dtpAcredita.CustomFormat = " "
+                dtpRechazo.Format = DateTimePickerFormat.Custom
+                dtpRechazo.CustomFormat = " "
 
-            dtpEmision.Format = DateTimePickerFormat.Custom
-            dtpEmision.CustomFormat = " "
+                dtpCancelado.Format = DateTimePickerFormat.Custom
+                dtpCancelado.CustomFormat = " "
 
-            dtpRechazo.Format = DateTimePickerFormat.Custom
-            dtpRechazo.CustomFormat = " "
+                dtpFechaReg.Format = DateTimePickerFormat.Custom
+                dtpFechaReg.CustomFormat = " "
 
-            dtpCancelado.Format = DateTimePickerFormat.Custom
-            dtpCancelado.CustomFormat = " "
+                dtpFechaVto.Format = DateTimePickerFormat.Custom
+                dtpFechaVto.CustomFormat = " "
+            End If
 
-            dtpFechaReg.Format = DateTimePickerFormat.Custom
-            dtpFechaReg.CustomFormat = " "
-
-            dtpFechaVto.Format = DateTimePickerFormat.Custom
-            dtpFechaVto.CustomFormat = " "
-        End If
+        Catch ex As Exception
+            MsgBox("Error al consultar el cheque. Detalle: " + ex.Message)
+        End Try
 
     End Sub
 
@@ -755,6 +758,8 @@ Public Class A_Cheques
                     .Comentari_o = txtComentario.Text
                     If .modificarEstadoCheque() = 1 Then
                         MsgBox("Se modificó el estado del cheque a: " + lblEstado.Text)
+                        Me.Close()
+                        A_ListadoCheques.Show()
                     End If
 
                 End With

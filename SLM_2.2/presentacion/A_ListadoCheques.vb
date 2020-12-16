@@ -134,7 +134,7 @@ Public Class A_ListadoCheques
 
 
             End If
-
+            Me.Close()
         Catch ex As Exception
             MsgBox("Error al seleccionar. Detalle: " + ex.Message)
         End Try

@@ -108,7 +108,7 @@
                         .Cod_Periodo = Convert.ToInt32(codPeriodo)
                         .Descrip = txtDescripcion.Text
                         .Fecha_ = dtpFechaFactura.Value
-                        .Campo_Llave = 0
+                        .Campo_Llave = codigoFacturaCompra
                         .Estado_ = 0
                         .Origen_ = "FacturaCompra"
                         codigoAsiento = .registrarAsiento
