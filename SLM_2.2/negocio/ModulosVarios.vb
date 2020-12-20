@@ -476,7 +476,7 @@ Module ModulosVarios
                                                 End If
                                             ElseIf i = 4 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnSede.Enabled = True
+                                                    Form1.btnSede2.Enabled = True
                                                 End If
                                             ElseIf i = 5 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
@@ -484,11 +484,11 @@ Module ModulosVarios
                                                 End If
                                             ElseIf i = 6 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnMedico.Enabled = True
+                                                    Form1.btnMedico2.Enabled = True
                                                 End If
                                             ElseIf i = 7 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
-                                                    Form1.btnPaciente.Enabled = True
+                                                    Form1.btnPaciente2.Enabled = True
                                                 End If
                                             ElseIf i = 8 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then

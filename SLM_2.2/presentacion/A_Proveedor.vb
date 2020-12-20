@@ -73,7 +73,7 @@
 
 
             'Comprobar si los campos no estan vacios.
-            If txtNombreProvee.Text <> "" And txtCodBreve.Text <> "" And txtCodigoTerminoPago.Text <> "" Then
+            If txtNombreProvee.Text <> "" And txtCodBreve.Text <> "" And txtCodigoTerminoPago.Text <> "" And txtCuenta.Text <> "" Then
                 Try
 
                     With Proveedor

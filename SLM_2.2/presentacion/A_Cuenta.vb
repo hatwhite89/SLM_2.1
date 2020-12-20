@@ -30,7 +30,7 @@
                 dtCuentas.DataSource = Cuenta.listarCuentas
 
             Catch ex As Exception
-                MessageBox.Show("Error: " + ex.Message)
+                MessageBox.Show("Error al registrar, la cuenta ya existe o hubo un error al ingresar. Detalle: " + ex.Message)
             End Try
 
         ElseIf txtCuenta.Text = "" Then

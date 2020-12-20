@@ -202,7 +202,7 @@ Public Class ClsPerfilesUsuario
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("A_slmCapturarPerfilDefault", cn)
+        Using da As New SqlDataAdapter(" ", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt

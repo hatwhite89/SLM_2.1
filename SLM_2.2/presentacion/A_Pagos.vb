@@ -64,7 +64,7 @@
 
                             dtDetallePagos.Rows.Remove(dtDetallePagos.Rows(e.RowIndex.ToString))
                             dtDetallePagos.Rows.Insert(e.RowIndex.ToString, New String() {row("codfactura"), row("nombreProveedor"), row("moneda"), row("pendiente"), "", "", "0"})
-
+                            lblCodigoProveedor.Text = row("codProveedor")
                             'Sumar totales de factura
                             lblTotalSuma.Text = dtDetallePagos.Rows(e.RowIndex).Cells(3).Value
 
@@ -74,7 +74,8 @@
                     End If
 
                 End With
-
+            ElseIf e.ColumnIndex = 5 Then
+                chkPagado.Checked = True
             End If
 
         Catch ex As Exception
@@ -373,12 +374,11 @@
 
 
         Try
-
+            alternarColoFilasDatagridview(dtDetallePagos)
             If txtNro.Text <> "" Then
                 btnModificar.Enabled = True
                 btnCrear.Enabled = True
                 btnGuardar.Enabled = False
-
 
             End If
 

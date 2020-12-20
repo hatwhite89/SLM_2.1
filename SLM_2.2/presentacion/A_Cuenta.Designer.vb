@@ -58,9 +58,9 @@ Partial Class A_Cuenta
         Me.lblCuenta.AutoSize = True
         Me.lblCuenta.Location = New System.Drawing.Point(7, 32)
         Me.lblCuenta.Name = "lblCuenta"
-        Me.lblCuenta.Size = New System.Drawing.Size(41, 13)
+        Me.lblCuenta.Size = New System.Drawing.Size(45, 13)
         Me.lblCuenta.TabIndex = 0
-        Me.lblCuenta.Text = "Cuenta"
+        Me.lblCuenta.Text = "Cuenta*"
         '
         'txtCuenta
         '
@@ -75,9 +75,9 @@ Partial Class A_Cuenta
         Me.lblNombre.AutoSize = True
         Me.lblNombre.Location = New System.Drawing.Point(7, 57)
         Me.lblNombre.Name = "lblNombre"
-        Me.lblNombre.Size = New System.Drawing.Size(44, 13)
+        Me.lblNombre.Size = New System.Drawing.Size(48, 13)
         Me.lblNombre.TabIndex = 2
-        Me.lblNombre.Text = "Nombre"
+        Me.lblNombre.Text = "Nombre*"
         '
         'txtNombre
         '
@@ -124,9 +124,9 @@ Partial Class A_Cuenta
         Me.lblTipo.AutoSize = True
         Me.lblTipo.Location = New System.Drawing.Point(7, 83)
         Me.lblTipo.Name = "lblTipo"
-        Me.lblTipo.Size = New System.Drawing.Size(28, 13)
+        Me.lblTipo.Size = New System.Drawing.Size(32, 13)
         Me.lblTipo.TabIndex = 11
-        Me.lblTipo.Text = "Tipo"
+        Me.lblTipo.Text = "Tipo*"
         '
         'cbxTipoCuenta
         '
@@ -224,7 +224,8 @@ Partial Class A_Cuenta
         '
         'gbxCuentas
         '
-        Me.gbxCuentas.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.gbxCuentas.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbxCuentas.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxCuentas.Controls.Add(Me.btnCancelar)

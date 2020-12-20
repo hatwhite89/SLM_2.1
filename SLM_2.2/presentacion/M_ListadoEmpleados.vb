@@ -150,8 +150,13 @@ Public Class M_ListadoEmpleados
                         Dim dt As New DataTable
                         dt = objEmp.BuscarDatosEmpleadoPorCodigo()
                         Dim row As DataRow = dt.Rows(0)
+                        Dim porcentaje As Single
 
-                        A_Planilla.dgvEmpleados.Rows.Insert(lblfila.Text.ToString, New String() {"", CStr(row("codigo")), row("nIdentidad"), row("cuentaBancaria"), row("nombreCompleto"), row("salario")})
+                        porcentaje = Single.Parse(row("salario")) * 0.3
+
+
+
+                        A_Planilla.dgvEmpleados.Rows.Insert(lblfila.Text.ToString, New String() {"", CStr(row("codigo")), row("nIdentidad"), row("cuentaBancaria"), row("nombreCompleto"), row("salario"), porcentaje})
 
                         'A_Planilla.dgvEmpleados.Rows.Insert(lblfila.Text.ToString, New String() {"", dgbtabla.Rows(e.RowIndex).Cells(0).Value(), dgbtabla.Rows(e.RowIndex).Cells(1).Value(), dgbtabla.Rows(e.RowIndex).Cells(3).Value(), dgbtabla.Rows(e.RowIndex).Cells(4).Value()})
                         A_Planilla.lblcantidad.Text = A_Planilla.dgvEmpleados.Rows.Count - 1

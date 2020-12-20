@@ -73,32 +73,54 @@ Public Class A_ImportarUserAD
             For a = 0 To dtUsuariosAD.Rows.Count - 1
 
                 If dtUsuariosAD.Rows(a).Cells(0).Value = True Then
-                    'concatenar y capturar nombre de usuarios seleccionados
-                    nombre = dtUsuariosAD.Rows(a).Cells(1).Value.ToString + " " + dtUsuariosAD.Rows(a).Cells(2).Value.ToString
-                    'consultar existencia de nombre de usuario en base de datos
-                    With empleado
+
+                    nombre = dtUsuariosAD.Rows(a).Cells(1).Value + " " + dtUsuariosAD.Rows(a).Cells(2).Value
+
+                    With empleado 'with empleado
 
                         .NombreCompleto_ = nombre
                         dt = .CompararNombre()
                         row = dt.Rows(0)
-                    End With
+                    End With 'with empleado fin
 
-                    With user
+                    If row("codigo") > 0 Then ' validacion de existencia
+                        With user
 
-                        .Usuario_ = dtUsuariosAD.Rows(a).Cells(3).Value
-                        .password_ = "#changepass#"
-                        .Estad_o = 1
-                        .Cod_Perfil = Convert.ToInt32(rowP("cod"))
-                        .perfil_ = rowP("codBreve")
-                        .Cod_Empleado = Convert.ToInt32(row("codigo"))
-                        .registrarNuevoUsuario()
+                            .Usuario_ = dtUsuariosAD.Rows(a).Cells(3).Value
+                            .password_ = "#changepass#"
+                            .Estad_o = 1
+                            .Cod_Perfil = Convert.ToInt32(rowP("cod"))
+                            .perfil_ = rowP("codBreve")
+                            .Cod_Empleado = Convert.ToInt32(row("codigo"))
+                            .registrarNuevoUsuario()
 
                         End With
 
-                End If 'Agregar filas con check
+                    Else
+                        With user
+
+
+
+                            .Usuario_ = dtUsuariosAD.Rows(a).Cells(3).Value
+                            .password_ = "#changepass#"
+                            .Estad_o = 1
+                            .Cod_Perfil = Convert.ToInt32(rowP("cod"))
+                            .perfil_ = rowP("codBreve")
+                            .Cod_Empleado = 0
+                            .registrarNuevoUsuario()
+
+                        End With
+
+
+
+                    End If
+                End If
 
             Next
             MsgBox("Se finalizó la importación.")
+            Dim userAD As New ClsUsuario
+            E_Usuarios.dtUsuarios.DataSource = user.listarUsuarios
+            E_Usuarios.dtUsuarios.Columns("codPerfil").Visible = False
         Catch ex As Exception
             MsgBox("No se encontró el empleado en la BD. Detalle de error: " + ex.Message)
         End Try

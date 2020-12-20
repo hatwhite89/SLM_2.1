@@ -210,4 +210,9 @@
 
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        E_frmInventario.GridAExcel(dtTransferencia)
+        E_frmInventario.GridAExcel(dtExcel)
+
+    End Sub
 End Class

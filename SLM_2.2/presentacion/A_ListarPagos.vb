@@ -67,6 +67,18 @@
 
             dtpago = dpago.listarDetallePago
 
+            'informacion de proveedor de factura
+            Dim rowprove As DataRow = dtpago.Rows(0)
+            Dim facturacompra As New ClsFacturaCompra
+
+            facturacompra.Cod_Factura = Integer.Parse(rowprove("codFactura"))
+
+            Dim dtfact As New DataTable
+            dtfact = facturacompra.comprobarFactura()
+            rowprove = dtfact.Rows(0)
+
+            frmPagos.lblCodigoProveedor.Text = rowprove("codProveedor").ToString
+
             For Index As Integer = 0 To dtpago.Rows.Count - 1
                 Dim row2 As DataRow = dtpago.Rows(Index)
                 frmPagos.dtDetallePagos.Rows.Add(New String() {(row2("codFactura")), CStr(row2("nombreproveedor")), CStr(row2("moneda")), CStr(row2("monto")), CStr(row2("formapago")), CStr(row2("nrocheque")), CStr(row2("codDetalle"))})

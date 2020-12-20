@@ -60,17 +60,17 @@ Partial Class A_FacturaCompras
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.dtDetalleFactura = New System.Windows.Forms.DataGridView()
+        Me.btnRegresar = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.codDetalle = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.area = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Sede = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnRegresar = New System.Windows.Forms.Button()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -301,9 +301,9 @@ Partial Class A_FacturaCompras
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(198, 78)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(93, 13)
+        Me.Label6.Size = New System.Drawing.Size(97, 13)
         Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Términos de Pago"
+        Me.Label6.Text = "Términos de Pago*"
         '
         'dtpFechaFactura
         '
@@ -357,9 +357,9 @@ Partial Class A_FacturaCompras
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(198, 104)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(31, 13)
+        Me.Label3.Size = New System.Drawing.Size(35, 13)
         Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Total"
+        Me.Label3.Text = "Total*"
         '
         'txtCodProveedor
         '
@@ -374,9 +374,9 @@ Partial Class A_FacturaCompras
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(6, 54)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(56, 13)
+        Me.Label2.Size = New System.Drawing.Size(60, 13)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Proveedor"
+        Me.Label2.Text = "Proveedor*"
         '
         'txtCodFactura
         '
@@ -459,9 +459,10 @@ Partial Class A_FacturaCompras
         '
         Me.lblTotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTotal.AutoSize = True
-        Me.lblTotal.Location = New System.Drawing.Point(109, 306)
+        Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotal.Location = New System.Drawing.Point(695, 303)
         Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(22, 13)
+        Me.lblTotal.Size = New System.Drawing.Size(25, 13)
         Me.lblTotal.TabIndex = 14
         Me.lblTotal.Text = "0.0"
         '
@@ -470,9 +471,10 @@ Partial Class A_FacturaCompras
         Me.Label11.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Location = New System.Drawing.Point(15, 306)
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(515, 303)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(88, 13)
+        Me.Label11.Size = New System.Drawing.Size(105, 13)
         Me.Label11.TabIndex = 13
         Me.Label11.Text = "Total de Factura:"
         '
@@ -495,43 +497,6 @@ Partial Class A_FacturaCompras
         Me.dtDetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.dtDetalleFactura.Size = New System.Drawing.Size(739, 277)
         Me.dtDetalleFactura.TabIndex = 10
-        '
-        'codDetalle
-        '
-        Me.codDetalle.HeaderText = "codDetalle"
-        Me.codDetalle.Name = "codDetalle"
-        Me.codDetalle.ReadOnly = True
-        '
-        'Cuenta
-        '
-        Me.Cuenta.HeaderText = "Cuenta"
-        Me.Cuenta.MaxInputLength = 10
-        Me.Cuenta.Name = "Cuenta"
-        '
-        'area
-        '
-        Me.area.HeaderText = "Area"
-        Me.area.MaxInputLength = 10
-        Me.area.Name = "area"
-        '
-        'Sede
-        '
-        Me.Sede.HeaderText = "Sede"
-        Me.Sede.MaxInputLength = 10
-        Me.Sede.Name = "Sede"
-        '
-        'Descripción
-        '
-        Me.Descripción.HeaderText = "Descripción"
-        Me.Descripción.MaxInputLength = 200
-        Me.Descripción.Name = "Descripción"
-        Me.Descripción.ReadOnly = True
-        '
-        'Monto
-        '
-        Me.Monto.HeaderText = "Monto"
-        Me.Monto.MaxInputLength = 10
-        Me.Monto.Name = "Monto"
         '
         'btnRegresar
         '
@@ -597,6 +562,44 @@ Partial Class A_FacturaCompras
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(770, 22)
         Me.Panel2.TabIndex = 17
+        '
+        'codDetalle
+        '
+        Me.codDetalle.HeaderText = "codDetalle"
+        Me.codDetalle.Name = "codDetalle"
+        Me.codDetalle.ReadOnly = True
+        Me.codDetalle.Visible = False
+        '
+        'Cuenta
+        '
+        Me.Cuenta.HeaderText = "Cuenta"
+        Me.Cuenta.MaxInputLength = 10
+        Me.Cuenta.Name = "Cuenta"
+        '
+        'area
+        '
+        Me.area.HeaderText = "Area"
+        Me.area.MaxInputLength = 10
+        Me.area.Name = "area"
+        '
+        'Sede
+        '
+        Me.Sede.HeaderText = "Sede"
+        Me.Sede.MaxInputLength = 10
+        Me.Sede.Name = "Sede"
+        '
+        'Descripción
+        '
+        Me.Descripción.HeaderText = "Descripción"
+        Me.Descripción.MaxInputLength = 200
+        Me.Descripción.Name = "Descripción"
+        Me.Descripción.ReadOnly = True
+        '
+        'Monto
+        '
+        Me.Monto.HeaderText = "Monto"
+        Me.Monto.MaxInputLength = 10
+        Me.Monto.Name = "Monto"
         '
         'A_FacturaCompras
         '
@@ -664,12 +667,12 @@ Partial Class A_FacturaCompras
     Friend WithEvents lblSaldoPend As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents lblTotal As Label
+    Friend WithEvents Label11 As Label
     Friend WithEvents codDetalle As DataGridViewTextBoxColumn
     Friend WithEvents Cuenta As DataGridViewTextBoxColumn
     Friend WithEvents area As DataGridViewTextBoxColumn
     Friend WithEvents Sede As DataGridViewTextBoxColumn
     Friend WithEvents Descripción As DataGridViewTextBoxColumn
     Friend WithEvents Monto As DataGridViewTextBoxColumn
-    Friend WithEvents lblTotal As Label
-    Friend WithEvents Label11 As Label
 End Class

@@ -23,7 +23,7 @@
             If txtNro.Text = "" Then
 
                 MsgBox("El registro de hará bajo el periodo contable vigente.")
-                txtNro.Enabled = True
+                txtNro.Enabled = False
 
                 'botones
                 btnCrear.Enabled = False
@@ -106,7 +106,7 @@
 
 
         Catch ex As Exception
-            MsgBox("Error:" + ex.Message)
+            'MsgBox("Error:" + ex.Message)
         End Try
 
 

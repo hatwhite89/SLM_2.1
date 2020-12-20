@@ -369,6 +369,12 @@
     <Compile Include="presentacion\A_ImportarUserAD.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\A_InformeAsientos.Designer.vb">
+      <DependentUpon>A_InformeAsientos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_InformeAsientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\A_Informes.Designer.vb">
       <DependentUpon>A_Informes.vb</DependentUpon>
     </Compile>
@@ -1646,6 +1652,9 @@
     <EmbeddedResource Include="presentacion\A_ImportarUserAD.resx">
       <DependentUpon>A_ImportarUserAD.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_InformeAsientos.resx">
+      <DependentUpon>A_InformeAsientos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Informes.resx">
       <DependentUpon>A_Informes.vb</DependentUpon>
     </EmbeddedResource>
@@ -2381,6 +2390,74 @@
     <None Include="Resources\solicitudes-20.png" />
     <None Include="Resources\solicitudes-201.png" />
     <None Include="Resources\configuracion de sistema-921.png" />
+    <None Include="Resources\almacen-01.png" />
+    <None Include="Resources\almacen-04.png" />
+    <None Include="Resources\almacen-05.png" />
+    <None Include="Resources\almacen-06.png" />
+    <None Include="Resources\productos-13.png" />
+    <None Include="Resources\productos-14.png" />
+    <None Include="Resources\productos-15.png" />
+    <None Include="Resources\talento humano-74.png" />
+    <None Include="Resources\talento humano-75.png" />
+    <None Include="Resources\talento humano-76.png" />
+    <None Include="Resources\talento humano-77.png" />
+    <None Include="Resources\talento humano-78.png" />
+    <None Include="Resources\talento humano-79.png" />
+    <None Include="Resources\talento humano-80.png" />
+    <None Include="Resources\talento humano-81.png" />
+    <None Include="Resources\talento humano-82.png" />
+    <None Include="Resources\talento humano-83.png" />
+    <None Include="Resources\talento humano-84.png" />
+    <None Include="Resources\talento humano-85.png" />
+    <None Include="Resources\talento humano-86.png" />
+    <None Include="Resources\talento humano-87.png" />
+    <None Include="Resources\talento humano-88.png" />
+    <None Include="Resources\talento humano-89.png" />
+    <None Include="Resources\mantenimiento-23.png" />
+    <None Include="Resources\mantenimiento-24.png" />
+    <None Include="Resources\mantenimiento-25.png" />
+    <None Include="Resources\mantenimiento-28.png" />
+    <None Include="Resources\mantenimiento-30.png" />
+    <None Include="Resources\mantenimiento-26.png" />
+    <None Include="Resources\mantenimiento-29.png" />
+    <None Include="Resources\mantenimiento-27.png" />
+    <None Include="Resources\precios y descuentos-31.png" />
+    <None Include="Resources\precios y descuentos-32.png" />
+    <None Include="Resources\precios y descuentos-33.png" />
+    <None Include="Resources\precios y descuentos-34.png" />
+    <None Include="Resources\cheque-39.png" />
+    <None Include="Resources\cheque-38.png" />
+    <None Include="Resources\cheque-40.png" />
+    <None Include="Resources\pagos-42.png" />
+    <None Include="Resources\pagos-41.png" />
+    <None Include="Resources\configuracion de sistema-90.png" />
+    <None Include="Resources\configuracion de sistema-91.png" />
+    <None Include="Resources\configuracion de sistema-93.png" />
+    <None Include="Resources\configuracion de sistema-931.png" />
+    <None Include="Resources\iconos sistema-711.png" />
+    <None Include="Resources\iconos sistema-701.png" />
+    <None Include="Resources\iconos sistema-722.png" />
+    <None Include="Resources\iconos sistema-732.png" />
+    <None Include="Resources\iconos sistema-723.png" />
+    <None Include="Resources\iconos sistema-724.png" />
+    <None Include="Resources\facturacion-43.png" />
+    <None Include="Resources\facturacion-44.png" />
+    <None Include="Resources\facturacion-45.png" />
+    <None Include="Resources\facturacion-46.png" />
+    <None Include="Resources\facturacion-451.png" />
+    <None Include="Resources\facturacion-441.png" />
+    <None Include="Resources\facturacion-48.png" />
+    <None Include="Resources\facturacion-47.png" />
+    <None Include="Resources\iconos sistema-725.png" />
+    <Content Include="Resources\facturacion-49.png" />
+    <None Include="Resources\facturacion-491.png" />
+    <None Include="Resources\facturacion-50.png" />
+    <None Include="Resources\facturacion-51.png" />
+    <None Include="Resources\facturacion-53.png" />
+    <None Include="Resources\facturacion-54.png" />
+    <None Include="Resources\facturacion-55.png" />
+    <None Include="Resources\facturacion-56.png" />
+    <None Include="Resources\facturacion-57.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

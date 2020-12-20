@@ -31,11 +31,6 @@ Partial Class frmAsientos
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtTexto = New System.Windows.Forms.TextBox()
         Me.dtDetalleAsiento = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Debe = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Haber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtTotalDebe = New System.Windows.Forms.TextBox()
         Me.txtTotalHaber = New System.Windows.Forms.TextBox()
@@ -45,6 +40,7 @@ Partial Class frmAsientos
         Me.lblForm = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.lblOrigen = New System.Windows.Forms.Label()
         Me.chkAnular = New System.Windows.Forms.CheckBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
@@ -52,7 +48,11 @@ Partial Class frmAsientos
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.lblOrigen = New System.Windows.Forms.Label()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Debe = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Haber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dtDetalleAsiento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -139,33 +139,6 @@ Partial Class frmAsientos
         Me.dtDetalleAsiento.Name = "dtDetalleAsiento"
         Me.dtDetalleAsiento.Size = New System.Drawing.Size(639, 313)
         Me.dtDetalleAsiento.TabIndex = 7
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "CodDetalle"
-        Me.Column1.Name = "Column1"
-        '
-        'Cuenta
-        '
-        Me.Cuenta.HeaderText = "Cuenta"
-        Me.Cuenta.Name = "Cuenta"
-        Me.Cuenta.ReadOnly = True
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripción"
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
-        '
-        'Debe
-        '
-        Me.Debe.HeaderText = "Debe"
-        Me.Debe.Name = "Debe"
-        '
-        'Haber
-        '
-        Me.Haber.HeaderText = "Haber"
-        Me.Haber.Name = "Haber"
         '
         'Label5
         '
@@ -278,6 +251,16 @@ Partial Class frmAsientos
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Descripción"
         '
+        'lblOrigen
+        '
+        Me.lblOrigen.AutoSize = True
+        Me.lblOrigen.Location = New System.Drawing.Point(611, 21)
+        Me.lblOrigen.Name = "lblOrigen"
+        Me.lblOrigen.Size = New System.Drawing.Size(36, 13)
+        Me.lblOrigen.TabIndex = 18
+        Me.lblOrigen.Text = "origen"
+        Me.lblOrigen.Visible = False
+        '
         'chkAnular
         '
         Me.chkAnular.AutoSize = True
@@ -359,14 +342,33 @@ Partial Class frmAsientos
         Me.StatusStrip1.TabIndex = 23
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'lblOrigen
+        'Column1
         '
-        Me.lblOrigen.AutoSize = True
-        Me.lblOrigen.Location = New System.Drawing.Point(611, 21)
-        Me.lblOrigen.Name = "lblOrigen"
-        Me.lblOrigen.Size = New System.Drawing.Size(36, 13)
-        Me.lblOrigen.TabIndex = 18
-        Me.lblOrigen.Text = "origen"
+        Me.Column1.HeaderText = "CodDetalle"
+        Me.Column1.Name = "Column1"
+        Me.Column1.Visible = False
+        '
+        'Cuenta
+        '
+        Me.Cuenta.HeaderText = "Cuenta"
+        Me.Cuenta.Name = "Cuenta"
+        Me.Cuenta.ReadOnly = True
+        '
+        'Descripcion
+        '
+        Me.Descripcion.HeaderText = "Descripción"
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.ReadOnly = True
+        '
+        'Debe
+        '
+        Me.Debe.HeaderText = "Debe"
+        Me.Debe.Name = "Debe"
+        '
+        'Haber
+        '
+        Me.Haber.HeaderText = "Haber"
+        Me.Haber.Name = "Haber"
         '
         'frmAsientos
         '
@@ -418,10 +420,10 @@ Partial Class frmAsientos
     Friend WithEvents Panel1 As Panel
     Friend WithEvents chkAnular As CheckBox
     Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents lblOrigen As Label
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Cuenta As DataGridViewTextBoxColumn
     Friend WithEvents Descripcion As DataGridViewTextBoxColumn
     Friend WithEvents Debe As DataGridViewTextBoxColumn
     Friend WithEvents Haber As DataGridViewTextBoxColumn
-    Friend WithEvents lblOrigen As Label
 End Class
