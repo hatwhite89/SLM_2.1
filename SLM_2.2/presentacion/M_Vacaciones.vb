@@ -1,18 +1,28 @@
 ﻿Public Class M_Vacaciones
 
-    Private Sub txtJefeDepto_Click(sender As Object, e As EventArgs) Handles txtJefeDepto.Click
+    Private Sub dtpFecha_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaInicial.TextChanged
+        'txtTotalDias.Text = DateDiff(DateInterval.Day, dtpFechaInicial.Value, dtpFechaFinal.Value)
+        Dim difference As TimeSpan = dtpFechaFinal.Value.Subtract(dtpFechaInicial.Value)
+        txtTotalDias.Text = Math.Round(difference.TotalDays, 0)
+    End Sub
+    Private Sub dtpFechaFinal_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaFinal.TextChanged
+        'txtTotalDias.Text = DateDiff(DateInterval.Day, dtpFechaFinal.Value, dtpFechaInicial.Value)
+        Dim difference As TimeSpan = dtpFechaFinal.Value.Subtract(dtpFechaInicial.Value)
+        txtTotalDias.Text = Math.Round(difference.TotalDays, 0)
+    End Sub
+    Private Sub txtJefeDepto_Click(sender As Object, e As EventArgs)
         If lblEstado.Text <> "Deshabilitado" Then
             M_ListadoEmpleados.lblform.Text = "M_Vacaciones_Depto"
             M_ListadoEmpleados.ShowDialog()
         End If
     End Sub
-    Private Sub txtTalentoHumano_Click(sender As Object, e As EventArgs) Handles txtTalentoHumano.Click
+    Private Sub txtTalentoHumano_Click(sender As Object, e As EventArgs)
         If lblEstado.Text <> "Deshabilitado" Then
             M_ListadoEmpleados.lblform.Text = "M_Vacaciones_Humano"
             M_ListadoEmpleados.ShowDialog()
         End If
     End Sub
-    Private Sub txtSupervisor_Click(sender As Object, e As EventArgs) Handles txtSupervisor.Click
+    Private Sub txtSupervisor_Click(sender As Object, e As EventArgs)
         If lblEstado.Text <> "Deshabilitado" Then
             M_ListadoEmpleados.lblform.Text = "M_Vacaciones_Supervisor"
             M_ListadoEmpleados.ShowDialog()
@@ -28,27 +38,30 @@
         lblEstado.Text = ""
         txtcodigo.Text = ""
         txtEmpleado.Text = ""
-        dtpFechaInasistencia.ResetText()
+        dtpFechaInicial.ResetText()
+        dtpFechaFinal.ResetText()
         rbtnNo.Checked = True
-        rtxtMotivoInasistencia.Text = ""
+        'rtxtMotivoInasistencia.Text = ""
         rtxtcubrira.Text = ""
         rtxtObservaciones.Text = ""
-        txtFirmaEmpleado.Text = ""
-        txtSupervisor.Text = ""
-        txtJefeDepto.Text = ""
-        txtTalentoHumano.Text = ""
+        txtTotalDias.Text = "0"
+        'txtFirmaEmpleado.Text = ""
+        'txtSupervisor.Text = ""
+        'txtJefeDepto.Text = ""
+        'txtTalentoHumano.Text = ""
         lblcodeEmpleado.Text = ""
-        lblcodeSupervisor.Text = ""
-        lblcodeJefeDepto.Text = ""
-        lblcodeSupervisor.Text = ""
+        'lblcodeSupervisor.Text = ""
+        'lblcodeJefeDepto.Text = ""
+        'lblcodeSupervisor.Text = ""
 
         txtnombreB.Text = ""
 
-        dtpFechaInasistencia.Enabled = True
+        dtpFechaInicial.Enabled = True
+        dtpFechaFinal.Enabled = True
         dtpfecha.Enabled = True
         rbtnNo.Enabled = True
         rbtnSi.Enabled = True
-        rtxtMotivoInasistencia.ReadOnly = False
+        'rtxtMotivoInasistencia.ReadOnly = False
         rtxtcubrira.ReadOnly = False
         rtxtObservaciones.ReadOnly = False
 
@@ -99,12 +112,13 @@
     End Sub
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
-            If (Trim(txtEmpleado.Text) <> "" And Trim(txtTalentoHumano.Text) <> "" And Trim(txtJefeDepto.Text) <> "" And Trim(txtSupervisor.Text) <> "" And Trim(rtxtMotivoInasistencia.Text) <> "") Then
+            If (Trim(txtEmpleado.Text) <> "" And Trim(dtpFechaInicial.Text) <> "" And Trim(dtpFechaFinal.Text) <> "" And Trim(txtTotalDias.Text) <> "") Then
                 Dim objVac As New ClsVacaciones
                 With objVac
                     .codigoEmpleado_ = lblcodeEmpleado.Text
-                    .fechaInasistencia_ = dtpFechaInasistencia.Value
-                    .motivoInasistencia_ = rtxtMotivoInasistencia.Text
+                    .fechaInicial_ = dtpFechaInicial.Value
+                    .fechaFinal_ = dtpFechaFinal.Value
+                    .totalDias_ = Integer.Parse(txtTotalDias.Text)
                     .notifico_ = rbtnSi.Checked
                     'validacion fecha nula 
                     If Trim(dtpfecha.Text) <> "" Then
@@ -114,9 +128,6 @@
                     End If
                     .cubrira_ = rtxtcubrira.Text
                     .observaciones_ = rtxtObservaciones.Text
-                    .codigoSupervisor_ = lblcodeSupervisor.Text
-                    .codigoJefeDepto_ = lblcodeJefeDepto.Text
-                    .codigoTalentoHumano_ = lblcodeTalHum.Text
                 End With
                 If objVac.RegistrarNuevoVacaciones() = 1 Then
                     MsgBox("Registrado correctamente.", MsgBoxStyle.Information)
@@ -139,13 +150,14 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
 
         Try
-            If (txtcodigo.Text <> "" And Trim(txtEmpleado.Text) <> "" And Trim(txtTalentoHumano.Text) <> "" And Trim(txtJefeDepto.Text) <> "" And Trim(txtSupervisor.Text) <> "" And Trim(rtxtMotivoInasistencia.Text) <> "") Then
+            If (txtcodigo.Text <> "" And Trim(txtEmpleado.Text) <> "" And Trim(dtpFechaInicial.Text) <> "" And Trim(dtpFechaFinal.Text) <> "" And Trim(txtTotalDias.Text) <> "") Then
                 Dim objVac As New ClsVacaciones
                 With objVac
                     .codigo_ = txtcodigo.Text
                     .codigoEmpleado_ = lblcodeEmpleado.Text
-                    .fechaInasistencia_ = dtpFechaInasistencia.Value
-                    .motivoInasistencia_ = rtxtMotivoInasistencia.Text
+                    .fechaInicial_ = dtpFechaInicial.Value
+                    .fechaFinal_ = dtpFechaFinal.Value
+                    .totalDias_ = Integer.Parse(txtTotalDias.Text)
                     .notifico_ = rbtnSi.Checked
                     'validacion fecha nula 
                     If Trim(dtpfecha.Text) <> "" Then
@@ -155,9 +167,6 @@
                     End If
                     .cubrira_ = rtxtcubrira.Text
                     .observaciones_ = rtxtObservaciones.Text
-                    .codigoSupervisor_ = lblcodeSupervisor.Text
-                    .codigoJefeDepto_ = lblcodeJefeDepto.Text
-                    .codigoTalentoHumano_ = lblcodeTalHum.Text
                 End With
                 If objVac.ModificarVacaciones() = 1 Then
                     MsgBox("Actualizado correctamente.", MsgBoxStyle.Information)
@@ -203,11 +212,11 @@
     Private Sub deshabilitar()
 
         lblEstado.Text = "Deshabilitado"
-        dtpFechaInasistencia.Enabled = False
+        dtpFechaInicial.Enabled = False
+        dtpFechaFinal.Enabled = False
         dtpfecha.Enabled = False
         rbtnNo.Enabled = False
         rbtnSi.Enabled = False
-        rtxtMotivoInasistencia.ReadOnly = True
         rtxtcubrira.ReadOnly = True
         rtxtObservaciones.ReadOnly = True
 
@@ -219,24 +228,9 @@
     Private Sub M_Vacaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         seleccionarVacaciones()
         alternarColoFilasDatagridview(dgbtabla)
-        Me.dgbtabla.Columns("codigoSupervisor").Visible = False
-        Me.dgbtabla.Columns("codigoJefeDepto").Visible = False
-        Me.dgbtabla.Columns("codigoTalentoHumano").Visible = False
-    End Sub
-
-    Private Sub lblcodeTalHum_TextChanged(sender As Object, e As EventArgs) Handles lblcodeTalHum.TextChanged
-        Try
-            Dim objEmp As New ClsEmpleados
-            With objEmp
-                .codigo_ = lblcodeTalHum.Text
-            End With
-            Dim dt As New DataTable
-            dt = objEmp.BuscarEmpleadosPorCodigo()
-            Dim row As DataRow = dt.Rows(0)
-            txtTalentoHumano.Text = CStr(row("nombreCompleto"))
-        Catch ex As Exception
-
-        End Try
+        'Me.dgbtabla.Columns("codigoSupervisor").Visible = False
+        'Me.dgbtabla.Columns("codigoJefeDepto").Visible = False
+        'Me.dgbtabla.Columns("codigoTalentoHumano").Visible = False
     End Sub
     Private Sub lblcodeEmpleado_TextChanged(sender As Object, e As EventArgs) Handles lblcodeEmpleado.TextChanged
         Try
@@ -248,38 +242,14 @@
             dt = objEmp.BuscarEmpleadosPorCodigo()
             Dim row As DataRow = dt.Rows(0)
             txtEmpleado.Text = CStr(row("nombreCompleto"))
-            txtFirmaEmpleado.Text = CStr(row("nombreCompleto"))
         Catch ex As Exception
 
         End Try
     End Sub
-    Private Sub lblcodeSupervisor_TextChanged(sender As Object, e As EventArgs) Handles lblcodeSupervisor.TextChanged
-        Try
-            Dim objEmp As New ClsEmpleados
-            With objEmp
-                .codigo_ = lblcodeSupervisor.Text
-            End With
-            Dim dt As New DataTable
-            dt = objEmp.BuscarEmpleadosPorCodigo()
-            Dim row As DataRow = dt.Rows(0)
-            txtSupervisor.Text = CStr(row("nombreCompleto"))
-        Catch ex As Exception
-
-        End Try
-    End Sub
-    Private Sub lblcodeJefeDepto_TextChanged(sender As Object, e As EventArgs) Handles lblcodeJefeDepto.TextChanged
-        Try
-            Dim objEmp As New ClsEmpleados
-            With objEmp
-                .codigo_ = lblcodeJefeDepto.Text
-            End With
-            Dim dt As New DataTable
-            dt = objEmp.BuscarEmpleadosPorCodigo()
-            Dim row As DataRow = dt.Rows(0)
-            txtJefeDepto.Text = CStr(row("nombreCompleto"))
-        Catch ex As Exception
-
-        End Try
+    Private Sub txtTotalDias_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTotalDias.KeyPress
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
+        End If
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
@@ -288,17 +258,18 @@
 
                 txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
                 lblcodeEmpleado.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
-                dtpFechaInasistencia.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
-                rtxtMotivoInasistencia.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
-                If Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value() Then
+                dtpFechaInicial.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+                dtpFechaFinal.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+                txtTotalDias.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+                If Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value() Then
                     rbtnSi.Checked = True
                 Else
                     rbtnNo.Checked = True
                 End If
                 'valida que no sea nulo para poner la hora ingresada.
-                If Trim(Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value().ToString) <> "" Then
+                If Trim(Me.dgbtabla.Rows(e.RowIndex).Cells(6).Value().ToString) <> "" Then
                     dtpfecha.Format = DateTimePickerFormat.Short
-                    dtpfecha.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value().ToString
+                    dtpfecha.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(6).Value().ToString
                 End If
                 'If IsDBNull(Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()) = False Then
                 '    dtpfecha.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()
@@ -306,20 +277,8 @@
                 '    dtpfecha.Format = DateTimePickerFormat.Custom
                 '    dtpfecha.CustomFormat = " "
                 'End If
-                rtxtcubrira.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(6).Value()
-                rtxtObservaciones.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(7).Value()
-                lblcodeSupervisor.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(8).Value()
-                lblcodeJefeDepto.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(9).Value()
-                lblcodeTalHum.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(10).Value()
-
-                Dim objEmp As New ClsEmpleados
-                With objEmp
-                    .codigo_ = lblcodeTalHum.Text
-                End With
-                Dim dt As New DataTable
-                dt = objEmp.BuscarEmpleadosPorCodigo()
-                Dim row As DataRow = dt.Rows(0)
-                txtTalentoHumano.Text = CStr(row("nombreCompleto"))
+                rtxtcubrira.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(7).Value()
+                rtxtObservaciones.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(8).Value()
 
                 btnmodificar.Enabled = True
                 btnguardar.Enabled = False
@@ -365,4 +324,5 @@
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         GridAExcel(dgbtabla)
     End Sub
+
 End Class

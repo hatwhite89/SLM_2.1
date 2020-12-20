@@ -8,40 +8,44 @@
     End Sub
 
     Private Sub dtFormasPago_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dtFormasPago.CellMouseDoubleClick
+        Try
 
 
+            'Recibe los campos para el formulario M_Recibo
+            If (lblForm.Text = "M_Recibo") Then
 
-        'Recibe los campos para el formulario M_Recibo
-        If (lblForm.Text = "M_Recibo") Then
+                M_Recibo.lblcodeFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
+                M_Recibo.txtcodigoFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(1).Value
+                M_Recibo.txtnombreFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(5).Value
 
-            M_Recibo.lblcodeFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
-            M_Recibo.txtcodigoFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(1).Value
-            M_Recibo.txtnombreFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(5).Value
+            ElseIf (lblForm.Text = "DetallePagoFormaPagos") Then
+                Dim fp, fila As String
+                'Seleccionar forma de pago en Detalle Pago
+                fp = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
+                fila = frmPagos.lblFila.Text
 
-        ElseIf (lblForm.Text = "DetallePagoFormaPagos") Then
-            Dim fp, fila As String
-            'Seleccionar forma de pago en Detalle Pago
-            fp = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
-            fila = frmPagos.lblFila.Text
+                frmPagos.dtDetallePagos.Rows(fila).Cells(4).Value = fp
 
-            frmPagos.dtDetallePagos.Rows(fila).Cells(4).Value = fp
-
-        ElseIf (lblForm.Text = "Pagos") Then
-            'Capturar codigo en textbox de forma pagos
-            frmPagos.lblCodFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
-            frmPagos.txtFormaP.Text = dtFormasPago.Rows(e.RowIndex).Cells(1).Value
-            frmPagos.txtCtaBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(4).Value
-            frmPagos.txtComentario.Text = dtFormasPago.Rows(e.RowIndex).Cells(5).Value
-            frmPagos.lblNombreBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(8).Value
+            ElseIf (lblForm.Text = "Pagos") Then
+                'Capturar codigo en textbox de forma pagos
+                frmPagos.lblCodFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
+                frmPagos.txtFormaP.Text = dtFormasPago.Rows(e.RowIndex).Cells(1).Value
+                frmPagos.txtCtaBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(4).Value
+                frmPagos.txtComentario.Text = dtFormasPago.Rows(e.RowIndex).Cells(5).Value
+                frmPagos.lblNombreBanco.Text = dtFormasPago.Rows(e.RowIndex).Cells(8).Value
 
 
-            frmPagos.dtDetallePagos.Enabled = True
-        ElseIf (lblForm.Text = "M_Empleados") Then
-            M_Empleados.txtcodigoFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
-            M_Empleados.txtnombreFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(5).Value
-        End If
+                frmPagos.dtDetallePagos.Enabled = True
+            ElseIf (lblForm.Text = "M_Empleados") Then
+                M_Empleados.txtcodigoFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(0).Value
+                M_Empleados.txtnombreFormaPago.Text = dtFormasPago.Rows(e.RowIndex).Cells(5).Value
+            End If
 
-        Me.Close()
+            Me.Close()
+
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 

@@ -1110,6 +1110,7 @@ Public Class M_Factura
                             letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
                             Imprimir_Factura()
                             OrdenDeTrabajo()
+                            colaPacientes()
                         Else
                             HabilitarActualizarFactura()
                         End If
@@ -1132,14 +1133,14 @@ Public Class M_Factura
                 M_BuscarFactura.seleccionarFacturas()
 
                 '::::::::::::::::::::::::::::::::::::::::::::: INSERTAR BITACORA ::::::::::::::::::::::
-                Dim Bitacora As New ClsBitacora
+                'Dim Bitacora As New ClsBitacora
 
-                With Bitacora
-                    .usuario_ = txtcodigoCajero.Text
-                    .accion_ = "Creación de Factura."
-                    .fecha_ = dtpfechaFactura.Value()
-                    .registrarBitacora()
-                End With
+                'With Bitacora
+                '    .usuario_ = txtcodigoCajero.Text
+                '    .accion_ = "Creación de Factura."
+                '    .fecha_ = dtpfechaFactura.Value()
+                '    .registrarBitacora()
+                'End With
                 '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
                 'PARTIDA CONTABLE
@@ -1157,6 +1158,40 @@ Public Class M_Factura
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+    Private Sub colaPacientes()
+        Try
+            Dim fechaNacimiento As Date = Date.Parse(lblFechaNacimiento.Text)
+            Dim prioridad As Boolean = False
+
+            Dim yr As Integer = DateDiff(DateInterval.Year, fechaNacimiento, Now)
+
+            If (Now.Month < fechaNacimiento.Month) Then
+                yr -= 1
+            ElseIf (Now.Month = fechaNacimiento.Month And Now.Day < fechaNacimiento.Day) Then
+                yr -= 1
+            End If
+            'si es mayor que 60 años
+            If yr >= 60 Then
+                prioridad = True
+            End If
+
+            Dim colaP As New ClsColaPacientes
+
+            With colaP
+                .numeroFactura_ = Integer.Parse(txtnumeroFactura.Text)
+                .prioridad_ = prioridad
+                .estadoEnCola_ = 0
+
+                If .RegistrarNuevaColaPacientes() Then
+                    MsgBox("Ingresado a la cola correctamente.", MsgBoxStyle.Information)
+                Else
+                    MsgBox("Error al ingresar.", MsgBoxStyle.Critical)
+                End If
+            End With
+        Catch ex As Exception
+            MsgBox("Error. Cola: ", ex.Message)
         End Try
     End Sub
     Private Sub txtcodigoCliente_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoCliente.KeyPress

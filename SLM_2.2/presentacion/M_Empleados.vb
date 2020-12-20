@@ -50,10 +50,12 @@
             'caso de emergencias
             txtgrupoSanguineo.Text = ""
             txtcontactoUrgencias.Text = ""
+            txtParentesco1.ResetText()
             txttelUrgencias.Text = ""
             txtcelularUrgencias.Text = ""
 
             txtcontactoUrgencias2.Text = ""
+            txtParentesco2.ResetText()
             txttelUrgencias2.Text = ""
             txtcelularUrgencias2.Text = ""
 
@@ -323,7 +325,7 @@
             End If
 
             If (mtxtidentidad.MaskCompleted And Trim(txtcodigoHorario.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtnombre1.Text) <> "" And
-                Trim(txtbanco.Text) <> "" And Trim(txtcodigoFormaPago.Text) <> "" And Trim(lblcodigoArea.Text) <> "" And
+                Trim(txtbanco.Text) <> "" And Trim(lblcodigoArea.Text) <> "" And
                 Trim(lblcodeDepto.Text) <> "" And Trim(lblcodePuesto.Text) <> "" And Trim(txtsalario.Text) <> "" And txtnombreCompleto.Text <> "" And
                 Trim(rtxtdireccion.Text) <> "" And Trim(txtcodigoProfesion.Text) <> "" And band And Trim(txtgrupoSanguineo.Text) <> "" And
                 Trim(txtcontactoUrgencias.Text) <> "" And band2) Then
@@ -344,7 +346,7 @@
                     .codigoHorario_ = Convert.ToInt64(txtcodigoHorario.Text)
                     .banco_ = txtbanco.Text
                     .cuentaBancaria_ = txtcuentaBancaria.Text
-                    .codigoFormaPago_ = Convert.ToInt64(txtcodigoFormaPago.Text)
+                    '.codigoFormaPago_ = Convert.ToInt64(txtcodigoFormaPago.Text)
                     'MsgBox("antes de la valicacion fecha baja")
                     If Trim(dtpfechaBaja.Text) <> "" Then
                         .fechaBaja_ = dtpfechaBaja.Value
@@ -587,7 +589,7 @@
             End If
 
             If (txtcodigo.Text <> "" And mtxtidentidad.MaskCompleted And Trim(txtcodigoHorario.Text) <> "" And Trim(txtapellido1.Text) <> "" And Trim(txtnombre1.Text) <> "" And
-                Trim(txtbanco.Text) <> "" And Trim(txtcodigoFormaPago.Text) <> "" And Trim(lblcodigoArea.Text) <> "" And
+                Trim(txtbanco.Text) <> "" And Trim(lblcodigoArea.Text) <> "" And
                 Trim(lblcodeDepto.Text) <> "" And Trim(lblcodePuesto.Text) <> "" And Trim(txtsalario.Text) <> "" And txtnombreCompleto.Text <> "" And
                 Trim(rtxtdireccion.Text) <> "" And Trim(txtcodigoProfesion.Text) <> "" And band And Trim(txtgrupoSanguineo.Text) <> "" And
                 Trim(txtcontactoUrgencias.Text) <> "" And band2) Then
@@ -609,7 +611,7 @@
                     .codigoHorario_ = Convert.ToInt64(txtcodigoHorario.Text)
                     .banco_ = txtbanco.Text
                     .cuentaBancaria_ = txtcuentaBancaria.Text
-                    .codigoFormaPago_ = Convert.ToInt64(txtcodigoFormaPago.Text)
+                    '.codigoFormaPago_ = Convert.ToInt64(txtcodigoFormaPago.Text)
                     'MsgBox("antes de la valicacion fecha baja")
                     If Trim(dtpfechaBaja.Text) <> "" Then
                         .fechaBaja_ = dtpfechaBaja.Value

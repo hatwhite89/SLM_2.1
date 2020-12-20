@@ -56,7 +56,7 @@ Public Class M_BuscarEmpleados
                 M_Empleados.txtcodigoHorario.Text = CStr(row("codigoHorario"))
                 M_Empleados.txtbanco.Text = CStr(row("banco"))
                 M_Empleados.txtcuentaBancaria.Text = CStr(row("cuentaBancaria"))
-                M_Empleados.txtcodigoFormaPago.Text = CStr(row("codigoFormaPago"))
+                'M_Empleados.txtcodigoFormaPago.Text = CStr(row("codigoFormaPago"))
 
                 If IsDBNull(row("fechaBaja")) = False Then
                     M_Empleados.dtpfechaBaja.Text = CStr(row("fechaBaja"))

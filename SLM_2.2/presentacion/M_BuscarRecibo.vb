@@ -60,7 +60,7 @@
                 Dim row As DataRow
                 For index As Integer = 0 To dt.Rows.Count - 1
                     row = dt.Rows(index)
-                    M_Recibo.dgbtabla.Rows.Add(New String() {CStr(row("codigo")), CStr(row("Nro_Factura")), CStr(row("Cliente")), CStr(row("Texto")), CStr(row("Fecha_Pago")), CStr(row("M_Banco")), CStr(row("Monto_Banco")), CStr(row("M_Rec")), CStr(row("ValorRecibido"))})
+                    M_Recibo.dgbtabla.Rows.Add(New String() {CStr(row("codigo")), CStr(row("Nro_Factura")), CStr(row("Cliente")), CStr(row("Texto")), CStr(row("Fecha_Pago")), CStr(row("M_Banco")), CStr(row("Monto_Banco")), CStr(row("M_Rec")), CStr(row("totalRecibo")), CStr(row("ValorRecibido"))})
                 Next
 
                 M_Recibo.btnguardar.Enabled = False
