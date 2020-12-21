@@ -9,9 +9,10 @@
             WMP.stretchToFit = True 'ADAPTA LA IMAGEN EL ARCHIVO AL TAMAÑO DE LA PANTALLA
             WMP.uiMode = "NONE" 'PARA QUE NO SE PUEDAN HACER CAMBIOS EN LA BARRA DE TIEMPO
 
-            alternarColoFilasDatagridview(dtPacientesEspera)
+            alternarColoFilasDatagridview(dgvPacientesEspera)
 
             Timer1.Enabled = True
+            TimerCola.Enabled = True
 
             ARCHIVOS = My.Computer.FileSystem.GetFiles("C:\Program Files (x86)\Laboratorios Medicos\Sistema De Laboratorios Medicos\PROMOCIONALES")
 
@@ -51,6 +52,30 @@
             Timer2.Stop()
             Timer3.Interval = 1000 'EMPIEZA LA CUENTA ATRAS PARA SABER CUANDO ACABA DE REPRODUCIRSE EL ARCHIVO
             Timer3.Start()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Public Sub listarColaPacientes()
+        Dim objFact As New ClsColaPacientes
+        Dim dv As DataView = objFact.ListarColaPacientes.DefaultView
+        dgvPacientesEspera.DataSource = dv
+        dgvPacientesEspera.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+    End Sub
+    Private Sub TimerCola_Tick(sender As Object, e As EventArgs) Handles TimerCola.Tick
+        Try
+            TimerCola.Interval = 6000
+            TimerCola.Start()
+            listarColaPacientes()
+
+            'OCULTAR COLUMNAS
+            Me.dgvPacientesEspera.Columns("codigo").Visible = False
+            Me.dgvPacientesEspera.Columns("prioridad").Visible = False
+            Me.dgvPacientesEspera.Columns("estadoEnCola").Visible = False
+
+            'CAMBIAS NOMBRE COLUMNAS
+            dgvPacientesEspera.Columns("numeroFactura").HeaderText = "Número Factura"
+            dgvPacientesEspera.Columns("nombreCompleto").HeaderText = "Paciente o Cliente"
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

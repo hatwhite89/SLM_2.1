@@ -215,6 +215,15 @@
                     M_Cliente.lblcodeCategoria.Text = lblcodeCategoria.Text
                     Me.Close()
                 End If
+            ElseIf (lbltipo.Text = "M_DiarioFacturacion") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el tipo de clasificación?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_DiarioFacturacion.lblcodigoTipoClasif.Text = txtcodigo.Text
+                    M_DiarioFacturacion.txtnombreClasificacion.Text = rtxtcomentario.Text
+                    Me.Close()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)

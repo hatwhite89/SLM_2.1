@@ -2,6 +2,7 @@
 
 Public Class ClsDetalleRecibo
     Dim codigo, codigoRecibo, numeroFactura As Integer
+    Dim totalRecibo As Double
     'Constructor
     Public Sub New()
 
@@ -20,6 +21,14 @@ Public Class ClsDetalleRecibo
         End Get
         Set(value As Integer)
             codigoRecibo = value
+        End Set
+    End Property
+    Public Property totalRecibo_ As Double
+        Get
+            Return totalRecibo
+        End Get
+        Set(value As Double)
+            totalRecibo = value
         End Set
     End Property
     Public Property numeroFactura_ As Integer
@@ -47,6 +56,11 @@ Public Class ClsDetalleRecibo
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "numeroFactura" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = numeroFactura_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "totalRecibo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = totalRecibo_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -90,6 +104,11 @@ Public Class ClsDetalleRecibo
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "numeroFactura" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = numeroFactura_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "totalRecibo" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = totalRecibo_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

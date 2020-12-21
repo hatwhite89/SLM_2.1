@@ -224,6 +224,26 @@ Public Class ClsRecibo
         Return par_sal
 
     End Function
+    Public Function BuscarReciboNumImprimir() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_slmBuscarReciboNumImprimir"
+            cmd.Parameters.Add("@numero", SqlDbType.Int).Value = numero_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
     Public Function BuscarReciboNum() As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection

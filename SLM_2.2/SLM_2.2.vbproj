@@ -204,6 +204,7 @@
     <Compile Include="negocio\ClsCapacitaciones.vb" />
     <Compile Include="negocio\ClsCategoriaroducto.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
+    <Compile Include="negocio\ClsColaPacientes.vb" />
     <Compile Include="negocio\ClsConserje.vb" />
     <Compile Include="negocio\ClsContratos.vb" />
     <Compile Include="negocio\ClsDepartamento.vb" />
@@ -680,6 +681,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Cry_Arqueo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="presentacion\Cry_Recibo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cry_Recibo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="presentacion\E_BuscarOrdenDeTrabajo.Designer.vb">
@@ -1792,6 +1799,10 @@
     <EmbeddedResource Include="presentacion\Cry_Arqueo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Cry_Arqueo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Cry_Recibo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Cry_Recibo.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_BuscarOrdenDeTrabajo.resx">
       <DependentUpon>E_BuscarOrdenDeTrabajo.vb</DependentUpon>

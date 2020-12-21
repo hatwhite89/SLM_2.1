@@ -28,7 +28,7 @@
             End If
             If n = vbYes Then
                 If M_Recibo.validarFactura(Convert.ToInt64(dgbtabla.Rows(e.RowIndex).Cells(1).Value())) = 0 And dgbtabla.Rows(e.RowIndex).Cells(2).Value() = True Then
-                    M_Recibo.dgbtabla.Rows.Add(New String() {"0", dgbtabla.Rows(e.RowIndex).Cells(1).Value(), dgbtabla.Rows(e.RowIndex).Cells(5).Value(), dgbtabla.Rows(e.RowIndex).Cells(6).Value(), dgbtabla.Rows(e.RowIndex).Cells(3).Value(), "LPS", dgbtabla.Rows(e.RowIndex).Cells(7).Value(), "LPS", dgbtabla.Rows(e.RowIndex).Cells(7).Value()})
+                    M_Recibo.dgbtabla.Rows.Add(New String() {"0", dgbtabla.Rows(e.RowIndex).Cells(1).Value(), dgbtabla.Rows(e.RowIndex).Cells(5).Value(), dgbtabla.Rows(e.RowIndex).Cells(6).Value(), dgbtabla.Rows(e.RowIndex).Cells(3).Value(), "LPS", dgbtabla.Rows(e.RowIndex).Cells(7).Value(), "LPS", dgbtabla.Rows(e.RowIndex).Cells(8).Value(), dgbtabla.Rows(e.RowIndex).Cells(8).Value()})
                     M_Recibo.calcularTotal()
                 ElseIf dgbtabla.Rows(e.RowIndex).Cells(2).Value() = False Then
                     MsgBox("La factura debe ser aprobada.", MsgBoxStyle.Critical)

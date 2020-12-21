@@ -24,6 +24,7 @@ Partial Class M_Permisos
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Permisos))
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
@@ -65,7 +66,6 @@ Partial Class M_Permisos
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxRegistrar.SuspendLayout()
@@ -85,14 +85,25 @@ Partial Class M_Permisos
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtnombreB)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
-        Me.gbxbusqueda.Location = New System.Drawing.Point(10, 297)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(13, 366)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
-        Me.gbxbusqueda.Size = New System.Drawing.Size(696, 262)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.gbxbusqueda.Size = New System.Drawing.Size(928, 322)
         Me.gbxbusqueda.TabIndex = 116
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR PERMISOS ESPECIALES"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(295, 50)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(348, 17)
+        Me.Label12.TabIndex = 120
+        Me.Label12.Text = "Seleccione una fila para cargar la información "
         '
         'Button4
         '
@@ -100,9 +111,10 @@ Partial Class M_Permisos
         Me.Button4.BackColor = System.Drawing.Color.Green
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button4.Location = New System.Drawing.Point(616, 14)
+        Me.Button4.Location = New System.Drawing.Point(821, 17)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(4)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.Size = New System.Drawing.Size(100, 28)
         Me.Button4.TabIndex = 119
         Me.Button4.Text = "Excel"
         Me.Button4.UseVisualStyleBackColor = False
@@ -111,10 +123,9 @@ Partial Class M_Permisos
         '
         Me.lblcantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(221, 241)
-        Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblcantidad.Location = New System.Drawing.Point(295, 297)
         Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
+        Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
         Me.lblcantidad.TabIndex = 115
         Me.lblcantidad.Text = "000"
         '
@@ -127,44 +138,42 @@ Partial Class M_Permisos
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgbtabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(4, 57)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgbtabla.Location = New System.Drawing.Point(5, 70)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersVisible = False
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(688, 177)
+        Me.dgbtabla.Size = New System.Drawing.Size(917, 218)
         Me.dgbtabla.TabIndex = 22
         '
         'lbltotal
         '
         Me.lbltotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(4, 241)
-        Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbltotal.Location = New System.Drawing.Point(5, 297)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(187, 13)
+        Me.lbltotal.Size = New System.Drawing.Size(239, 17)
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL DE PERMISOS ESPECIALES"
         '
         'txtnombreB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(127, 17)
-        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtnombreB.Location = New System.Drawing.Point(169, 21)
+        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
-        Me.txtnombreB.Size = New System.Drawing.Size(430, 20)
+        Me.txtnombreB.Size = New System.Drawing.Size(572, 22)
         Me.txtnombreB.TabIndex = 115
         '
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(11, 19)
-        Me.lblnombreB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblnombreB.Location = New System.Drawing.Point(15, 23)
         Me.lblnombreB.Name = "lblnombreB"
-        Me.lblnombreB.Size = New System.Drawing.Size(111, 13)
+        Me.lblnombreB.Size = New System.Drawing.Size(148, 17)
         Me.lblnombreB.TabIndex = 114
         Me.lblnombreB.Text = "Nombre del Empleado"
         '
@@ -200,32 +209,31 @@ Partial Class M_Permisos
         Me.gbxRegistrar.Controls.Add(Me.Label6)
         Me.gbxRegistrar.Controls.Add(Me.Label1)
         Me.gbxRegistrar.Controls.Add(Me.Label2)
-        Me.gbxRegistrar.Location = New System.Drawing.Point(7, 52)
-        Me.gbxRegistrar.Margin = New System.Windows.Forms.Padding(2)
+        Me.gbxRegistrar.Location = New System.Drawing.Point(9, 64)
+        Me.gbxRegistrar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.gbxRegistrar.Name = "gbxRegistrar"
-        Me.gbxRegistrar.Padding = New System.Windows.Forms.Padding(2)
-        Me.gbxRegistrar.Size = New System.Drawing.Size(700, 241)
+        Me.gbxRegistrar.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.gbxRegistrar.Size = New System.Drawing.Size(933, 297)
         Me.gbxRegistrar.TabIndex = 115
         Me.gbxRegistrar.TabStop = False
         Me.gbxRegistrar.Text = "REGISTRAR PERMISO ESPECIAL"
         '
         'txtTotalDias
         '
-        Me.txtTotalDias.Location = New System.Drawing.Point(500, 116)
-        Me.txtTotalDias.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtTotalDias.Location = New System.Drawing.Point(667, 143)
+        Me.txtTotalDias.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTotalDias.Name = "txtTotalDias"
         Me.txtTotalDias.ReadOnly = True
-        Me.txtTotalDias.Size = New System.Drawing.Size(151, 20)
+        Me.txtTotalDias.Size = New System.Drawing.Size(200, 22)
         Me.txtTotalDias.TabIndex = 171
         Me.txtTotalDias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(412, 119)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Location = New System.Drawing.Point(549, 146)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(75, 13)
+        Me.Label10.Size = New System.Drawing.Size(96, 17)
         Me.Label10.TabIndex = 170
         Me.Label10.Text = "Total de Días:"
         '
@@ -237,10 +245,10 @@ Partial Class M_Permisos
         Me.btnTipoPermiso.FlatAppearance.BorderSize = 0
         Me.btnTipoPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTipoPermiso.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTipoPermiso.Location = New System.Drawing.Point(283, 116)
-        Me.btnTipoPermiso.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnTipoPermiso.Location = New System.Drawing.Point(377, 143)
+        Me.btnTipoPermiso.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnTipoPermiso.Name = "btnTipoPermiso"
-        Me.btnTipoPermiso.Size = New System.Drawing.Size(37, 18)
+        Me.btnTipoPermiso.Size = New System.Drawing.Size(49, 22)
         Me.btnTipoPermiso.TabIndex = 146
         Me.btnTipoPermiso.Text = "..."
         Me.btnTipoPermiso.UseVisualStyleBackColor = False
@@ -249,28 +257,28 @@ Partial Class M_Permisos
         '
         Me.cmbxTipoPermiso.DropDownWidth = 170
         Me.cmbxTipoPermiso.FormattingEnabled = True
-        Me.cmbxTipoPermiso.Location = New System.Drawing.Point(170, 116)
-        Me.cmbxTipoPermiso.Margin = New System.Windows.Forms.Padding(2)
+        Me.cmbxTipoPermiso.Location = New System.Drawing.Point(227, 143)
+        Me.cmbxTipoPermiso.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbxTipoPermiso.Name = "cmbxTipoPermiso"
-        Me.cmbxTipoPermiso.Size = New System.Drawing.Size(110, 21)
+        Me.cmbxTipoPermiso.Size = New System.Drawing.Size(145, 24)
         Me.cmbxTipoPermiso.TabIndex = 145
         '
         'lbltipo
         '
         Me.lbltipo.AutoSize = True
-        Me.lbltipo.Location = New System.Drawing.Point(66, 116)
+        Me.lbltipo.Location = New System.Drawing.Point(88, 143)
+        Me.lbltipo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbltipo.Name = "lbltipo"
-        Me.lbltipo.Size = New System.Drawing.Size(86, 13)
+        Me.lbltipo.Size = New System.Drawing.Size(115, 17)
         Me.lbltipo.TabIndex = 144
         Me.lbltipo.Text = "Tipo de Permiso:"
         '
         'lblcodeDepto
         '
         Me.lblcodeDepto.AutoSize = True
-        Me.lblcodeDepto.Location = New System.Drawing.Point(88, 43)
-        Me.lblcodeDepto.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblcodeDepto.Location = New System.Drawing.Point(117, 53)
         Me.lblcodeDepto.Name = "lblcodeDepto"
-        Me.lblcodeDepto.Size = New System.Drawing.Size(62, 13)
+        Me.lblcodeDepto.Size = New System.Drawing.Size(80, 17)
         Me.lblcodeDepto.TabIndex = 162
         Me.lblcodeDepto.Text = "codTalHum"
         Me.lblcodeDepto.Visible = False
@@ -278,10 +286,9 @@ Partial Class M_Permisos
         'lblcodeJefeInme
         '
         Me.lblcodeJefeInme.AutoSize = True
-        Me.lblcodeJefeInme.Location = New System.Drawing.Point(428, 42)
-        Me.lblcodeJefeInme.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblcodeJefeInme.Location = New System.Drawing.Point(571, 52)
         Me.lblcodeJefeInme.Name = "lblcodeJefeInme"
-        Me.lblcodeJefeInme.Size = New System.Drawing.Size(45, 13)
+        Me.lblcodeJefeInme.Size = New System.Drawing.Size(57, 17)
         Me.lblcodeJefeInme.TabIndex = 161
         Me.lblcodeJefeInme.Text = "codJeIn"
         Me.lblcodeJefeInme.Visible = False
@@ -289,201 +296,192 @@ Partial Class M_Permisos
         'lblcodigoEmpleado
         '
         Me.lblcodigoEmpleado.AutoSize = True
-        Me.lblcodigoEmpleado.Location = New System.Drawing.Point(410, 11)
-        Me.lblcodigoEmpleado.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblcodigoEmpleado.Location = New System.Drawing.Point(547, 14)
         Me.lblcodigoEmpleado.Name = "lblcodigoEmpleado"
-        Me.lblcodigoEmpleado.Size = New System.Drawing.Size(46, 13)
+        Me.lblcodigoEmpleado.Size = New System.Drawing.Size(59, 17)
         Me.lblcodigoEmpleado.TabIndex = 160
         Me.lblcodigoEmpleado.Text = "codEmp"
         Me.lblcodigoEmpleado.Visible = False
         '
         'txtjefeInmediato
         '
-        Me.txtjefeInmediato.Location = New System.Drawing.Point(500, 53)
-        Me.txtjefeInmediato.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtjefeInmediato.Location = New System.Drawing.Point(667, 65)
+        Me.txtjefeInmediato.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtjefeInmediato.MaxLength = 80
         Me.txtjefeInmediato.Name = "txtjefeInmediato"
         Me.txtjefeInmediato.ReadOnly = True
-        Me.txtjefeInmediato.Size = New System.Drawing.Size(151, 20)
+        Me.txtjefeInmediato.Size = New System.Drawing.Size(200, 22)
         Me.txtjefeInmediato.TabIndex = 159
         Me.txtjefeInmediato.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(406, 57)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Location = New System.Drawing.Point(541, 70)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(79, 13)
+        Me.Label8.Size = New System.Drawing.Size(104, 17)
         Me.Label8.TabIndex = 158
         Me.Label8.Text = "Jefe Inmediato:"
         '
         'txtDepto
         '
-        Me.txtDepto.Location = New System.Drawing.Point(171, 53)
-        Me.txtDepto.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtDepto.Location = New System.Drawing.Point(228, 65)
+        Me.txtDepto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtDepto.MaxLength = 80
         Me.txtDepto.Name = "txtDepto"
         Me.txtDepto.ReadOnly = True
-        Me.txtDepto.Size = New System.Drawing.Size(151, 20)
+        Me.txtDepto.Size = New System.Drawing.Size(200, 22)
         Me.txtDepto.TabIndex = 157
         Me.txtDepto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(80, 55)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Location = New System.Drawing.Point(107, 68)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(77, 13)
+        Me.Label9.Size = New System.Drawing.Size(102, 17)
         Me.Label9.TabIndex = 156
         Me.Label9.Text = "Departamento:"
         '
         'dtpSalidaTemprano
         '
         Me.dtpSalidaTemprano.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpSalidaTemprano.Location = New System.Drawing.Point(500, 148)
-        Me.dtpSalidaTemprano.Margin = New System.Windows.Forms.Padding(2)
+        Me.dtpSalidaTemprano.Location = New System.Drawing.Point(667, 182)
+        Me.dtpSalidaTemprano.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dtpSalidaTemprano.Name = "dtpSalidaTemprano"
-        Me.dtpSalidaTemprano.Size = New System.Drawing.Size(151, 20)
+        Me.dtpSalidaTemprano.ShowUpDown = True
+        Me.dtpSalidaTemprano.Size = New System.Drawing.Size(200, 22)
         Me.dtpSalidaTemprano.TabIndex = 153
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(86, 89)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Location = New System.Drawing.Point(115, 110)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(70, 13)
+        Me.Label5.Size = New System.Drawing.Size(90, 17)
         Me.Label5.TabIndex = 152
         Me.Label5.Text = "Fecha Inicial:"
         '
         'dtpFechaFinal
         '
         Me.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaFinal.Location = New System.Drawing.Point(500, 84)
-        Me.dtpFechaFinal.Margin = New System.Windows.Forms.Padding(2)
+        Me.dtpFechaFinal.Location = New System.Drawing.Point(667, 103)
+        Me.dtpFechaFinal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dtpFechaFinal.Name = "dtpFechaFinal"
-        Me.dtpFechaFinal.Size = New System.Drawing.Size(151, 20)
+        Me.dtpFechaFinal.Size = New System.Drawing.Size(200, 22)
         Me.dtpFechaFinal.TabIndex = 151
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(420, 86)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Location = New System.Drawing.Point(560, 106)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(65, 13)
+        Me.Label7.Size = New System.Drawing.Size(85, 17)
         Me.Label7.TabIndex = 150
         Me.Label7.Text = "Fecha Final:"
         '
         'lblform
         '
         Me.lblform.AutoSize = True
-        Me.lblform.Location = New System.Drawing.Point(10, 24)
-        Me.lblform.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblform.Location = New System.Drawing.Point(13, 30)
         Me.lblform.Name = "lblform"
-        Me.lblform.Size = New System.Drawing.Size(39, 13)
+        Me.lblform.Size = New System.Drawing.Size(51, 17)
         Me.lblform.TabIndex = 149
         Me.lblform.Text = "Label1"
         Me.lblform.Visible = False
         '
         'txtEmpleado
         '
-        Me.txtEmpleado.Location = New System.Drawing.Point(501, 20)
-        Me.txtEmpleado.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtEmpleado.Location = New System.Drawing.Point(668, 25)
+        Me.txtEmpleado.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtEmpleado.MaxLength = 80
         Me.txtEmpleado.Name = "txtEmpleado"
         Me.txtEmpleado.ReadOnly = True
-        Me.txtEmpleado.Size = New System.Drawing.Size(151, 20)
+        Me.txtEmpleado.Size = New System.Drawing.Size(200, 22)
         Me.txtEmpleado.TabIndex = 130
         Me.txtEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(171, 22)
-        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtcodigo.Location = New System.Drawing.Point(228, 27)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.ReadOnly = True
-        Me.txtcodigo.Size = New System.Drawing.Size(151, 20)
+        Me.txtcodigo.Size = New System.Drawing.Size(200, 22)
         Me.txtcodigo.TabIndex = 124
         Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'dtpFechaInicial
         '
         Me.dtpFechaInicial.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaInicial.Location = New System.Drawing.Point(171, 84)
-        Me.dtpFechaInicial.Margin = New System.Windows.Forms.Padding(2)
+        Me.dtpFechaInicial.Location = New System.Drawing.Point(228, 103)
+        Me.dtpFechaInicial.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dtpFechaInicial.Name = "dtpFechaInicial"
-        Me.dtpFechaInicial.Size = New System.Drawing.Size(151, 20)
+        Me.dtpFechaInicial.Size = New System.Drawing.Size(200, 22)
         Me.dtpFechaInicial.TabIndex = 146
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(370, 24)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Location = New System.Drawing.Point(493, 30)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(114, 13)
+        Me.Label4.Size = New System.Drawing.Size(152, 17)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Nombre del Empleado:"
         '
         'dtpEntradaTarde
         '
         Me.dtpEntradaTarde.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpEntradaTarde.Location = New System.Drawing.Point(170, 152)
-        Me.dtpEntradaTarde.Margin = New System.Windows.Forms.Padding(2)
+        Me.dtpEntradaTarde.Location = New System.Drawing.Point(227, 187)
+        Me.dtpEntradaTarde.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dtpEntradaTarde.Name = "dtpEntradaTarde"
-        Me.dtpEntradaTarde.Size = New System.Drawing.Size(151, 20)
+        Me.dtpEntradaTarde.ShowUpDown = True
+        Me.dtpEntradaTarde.Size = New System.Drawing.Size(200, 22)
         Me.dtpEntradaTarde.TabIndex = 145
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(112, 24)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Location = New System.Drawing.Point(149, 30)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(43, 13)
+        Me.Label3.Size = New System.Drawing.Size(56, 17)
         Me.Label3.TabIndex = 9
         Me.Label3.Text = "Código:"
         '
         'rtxtObservaciones
         '
-        Me.rtxtObservaciones.Location = New System.Drawing.Point(170, 188)
-        Me.rtxtObservaciones.Margin = New System.Windows.Forms.Padding(2)
+        Me.rtxtObservaciones.Location = New System.Drawing.Point(227, 231)
+        Me.rtxtObservaciones.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rtxtObservaciones.MaxLength = 200
         Me.rtxtObservaciones.Name = "rtxtObservaciones"
-        Me.rtxtObservaciones.Size = New System.Drawing.Size(482, 31)
+        Me.rtxtObservaciones.Size = New System.Drawing.Size(641, 37)
         Me.rtxtObservaciones.TabIndex = 144
         Me.rtxtObservaciones.Text = ""
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(72, 188)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Location = New System.Drawing.Point(96, 231)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(81, 13)
+        Me.Label6.Size = New System.Drawing.Size(107, 17)
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "Observaciones:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(34, 152)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(45, 187)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(119, 13)
+        Me.Label1.Size = New System.Drawing.Size(159, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Hora de Entrada Tarde:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(352, 152)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Location = New System.Drawing.Point(469, 187)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(131, 13)
+        Me.Label2.Size = New System.Drawing.Size(175, 17)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Hora de Salida Temprano:"
         '
@@ -493,10 +491,10 @@ Partial Class M_Permisos
         Me.btnmodificar.BackColor = System.Drawing.Color.Yellow
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnmodificar.Location = New System.Drawing.Point(558, 9)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnmodificar.Location = New System.Drawing.Point(744, 11)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnmodificar.Name = "btnmodificar"
-        Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
+        Me.btnmodificar.Size = New System.Drawing.Size(96, 34)
         Me.btnmodificar.TabIndex = 143
         Me.btnmodificar.Text = "Modificar"
         Me.btnmodificar.UseVisualStyleBackColor = False
@@ -507,10 +505,10 @@ Partial Class M_Permisos
         Me.btnnuevo.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnnuevo.Location = New System.Drawing.Point(399, 9)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnnuevo.Location = New System.Drawing.Point(532, 11)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
+        Me.btnnuevo.Size = New System.Drawing.Size(105, 34)
         Me.btnnuevo.TabIndex = 142
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.UseVisualStyleBackColor = False
@@ -521,10 +519,10 @@ Partial Class M_Permisos
         Me.btnguardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnguardar.Location = New System.Drawing.Point(482, 9)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnguardar.Location = New System.Drawing.Point(643, 11)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(72, 28)
+        Me.btnguardar.Size = New System.Drawing.Size(96, 34)
         Me.btnguardar.TabIndex = 140
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
@@ -535,10 +533,10 @@ Partial Class M_Permisos
         Me.btncancelar.BackColor = System.Drawing.Color.LightSalmon
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(635, 9)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btncancelar.Location = New System.Drawing.Point(847, 11)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btncancelar.Name = "btncancelar"
-        Me.btncancelar.Size = New System.Drawing.Size(68, 28)
+        Me.btncancelar.Size = New System.Drawing.Size(91, 34)
         Me.btncancelar.TabIndex = 141
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
@@ -547,9 +545,10 @@ Partial Class M_Permisos
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 561)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 696)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
+        Me.StatusStrip1.Size = New System.Drawing.Size(957, 22)
         Me.StatusStrip1.TabIndex = 117
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -564,8 +563,9 @@ Partial Class M_Permisos
         Me.Panel1.Controls.Add(Me.btnguardar)
         Me.Panel1.Controls.Add(Me.btnmodificar)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(718, 42)
+        Me.Panel1.Size = New System.Drawing.Size(957, 52)
         Me.Panel1.TabIndex = 131
         '
         'Label11
@@ -573,35 +573,26 @@ Partial Class M_Permisos
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label11.Location = New System.Drawing.Point(2, 13)
+        Me.Label11.Location = New System.Drawing.Point(3, 16)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(146, 20)
+        Me.Label11.Size = New System.Drawing.Size(178, 25)
         Me.Label11.TabIndex = 9
         Me.Label11.Text = "Permiso Especial"
         '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(221, 41)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(272, 13)
-        Me.Label12.TabIndex = 120
-        Me.Label12.Text = "Seleccione una fila para cargar la información "
-        '
         'M_Permisos
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(718, 583)
+        Me.ClientSize = New System.Drawing.Size(957, 718)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Controls.Add(Me.gbxRegistrar)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "M_Permisos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SLM - "

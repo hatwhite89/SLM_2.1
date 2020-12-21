@@ -113,7 +113,7 @@
 
             txtnombre.Text = sinDobleEspacio(txtnombre.Text)
 
-            If (Trim(txtnombre.Text) <> "" And Trim(txtcodigoArea.Text) <> "") Then
+            If (Trim(txtnombre.Text) <> "" And Trim(txtnombreArea.Text) <> "") Then
                 'Dim objDepto As New ClsDepartamento
                 With objDepto
                     .Nombre_ = txtnombre.Text
@@ -121,7 +121,7 @@
                 End With
 
                 If objDepto.RegistrarNuevaDepartamento() = 1 Then
-                    MsgBox("Registrado el departamento correctamente.")
+                    MsgBox("Registrado el departamento correctamente.", MsgBoxStyle.Information)
 
                     Dim dv As DataView = objDepto.SeleccionarDepartamento.DefaultView
                     dgbtabla.DataSource = dv
@@ -151,7 +151,7 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "" And Trim(txtcodigoArea.Text) <> "") Then
+            If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "" And Trim(txtnombreArea.Text) <> "") Then
                 txtnombre.Text = sinDobleEspacio(txtnombre.Text)
                 'Dim objDepto As New ClsDepartamento
                 With objDepto
@@ -161,7 +161,7 @@
                 End With
 
                 If objDepto.ModificarDepartamento() = 1 Then
-                    MsgBox("Modificado el departamento correctamente.")
+                    MsgBox("Modificado el departamento correctamente.", MsgBoxStyle.Information)
 
                     Dim dv As DataView = objDepto.SeleccionarDepartamento.DefaultView
                     dgbtabla.DataSource = dv

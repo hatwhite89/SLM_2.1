@@ -133,7 +133,7 @@
             Else
                 rtxtdescripcion.BackColor = Color.White
             End If
-            If (Trim(rtxtdescripcion.Text) <> "" And Trim(txtcodigoDepto.Text) <> "") Then
+            If (Trim(rtxtdescripcion.Text) <> "" And Trim(txtnombreDepto.Text) <> "") Then
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
                 Dim objPuesto As New ClsPuestoTrabajo
                 With objPuesto
@@ -142,7 +142,7 @@
                 End With
 
                 If objPuesto.RegistrarNuevoPuestoTrabajo() = 1 Then
-                    MsgBox("Registrado correctamente.")
+                    MsgBox("Registrado correctamente.", MsgBoxStyle.Information, "Validación.")
 
                     Dim dv As DataView = objPuesto.SeleccionarPuestoTrabajo.DefaultView
                     dgbtabla.DataSource = dv
@@ -173,7 +173,7 @@
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
 
-            If (txtcodigo.Text <> "" And Trim(rtxtdescripcion.Text) <> "" And Trim(txtcodigoDepto.Text) <> "") Then
+            If (txtcodigo.Text <> "" And Trim(rtxtdescripcion.Text) <> "" And Trim(txtnombreDepto.Text) <> "") Then
                 rtxtdescripcion.Text = sinDobleEspacio(rtxtdescripcion.Text)
                 Dim objPuesto As New ClsPuestoTrabajo
                 With objPuesto
@@ -183,7 +183,7 @@
                 End With
 
                 If objPuesto.ModificarPuestoTrabajo() = 1 Then
-                    MsgBox("Modificado correctamente.")
+                    MsgBox("Modificado correctamente.", MsgBoxStyle.Information, "Validación.")
 
                     Dim dv As DataView = objPuesto.SeleccionarPuestoTrabajo.DefaultView
                     dgbtabla.DataSource = dv

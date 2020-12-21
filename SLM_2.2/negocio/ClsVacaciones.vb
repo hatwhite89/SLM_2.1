@@ -1,9 +1,9 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ClsVacaciones
-    Dim codigo, codigoEmpleado, codigoSupervisor, codigoJefeDepto, codigoTalentoHumano As Integer
-    Dim motivoInasistencia, cubrira, observaciones, nombre As String
-    Dim fechaInasistencia As Date
+    Dim codigo, codigoEmpleado, totalDias As Integer
+    Dim cubrira, observaciones, nombre As String
+    Dim fechaInicial, fechaFinal As Date
     Dim fecha As System.Nullable(Of Date)
     Dim notifico As Boolean
     'Constructor
@@ -18,12 +18,20 @@ Public Class ClsVacaciones
             codigo = value
         End Set
     End Property
-    Public Property fechaInasistencia_ As Date
+    Public Property fechaFinal_ As Date
         Get
-            Return fechaInasistencia
+            Return fechaFinal
         End Get
         Set(value As Date)
-            fechaInasistencia = value
+            fechaFinal = value
+        End Set
+    End Property
+    Public Property fechaInicial_ As Date
+        Get
+            Return fechaInicial
+        End Get
+        Set(value As Date)
+            fechaInicial = value
         End Set
     End Property
     Public Property notifico_ As Boolean
@@ -34,12 +42,12 @@ Public Class ClsVacaciones
             notifico = value
         End Set
     End Property
-    Public Property codigoJefeDepto_ As Integer
+    Public Property totalDias_ As Integer
         Get
-            Return codigoJefeDepto
+            Return totalDias
         End Get
         Set(value As Integer)
-            codigoJefeDepto = value
+            totalDias = value
         End Set
     End Property
     Public Property fecha_ As System.Nullable(Of Date)
@@ -75,36 +83,12 @@ Public Class ClsVacaciones
             observaciones = value
         End Set
     End Property
-    Public Property motivoInasistencia_ As String
-        Get
-            Return motivoInasistencia
-        End Get
-        Set(value As String)
-            motivoInasistencia = value
-        End Set
-    End Property
     Public Property codigoEmpleado_ As Integer
         Get
             Return codigoEmpleado
         End Get
         Set(value As Integer)
             codigoEmpleado = value
-        End Set
-    End Property
-    Public Property codigoSupervisor_ As Integer
-        Get
-            Return codigoSupervisor
-        End Get
-        Set(value As Integer)
-            codigoSupervisor = value
-        End Set
-    End Property
-    Public Property codigoTalentoHumano_ As Integer
-        Get
-            Return codigoTalentoHumano
-        End Get
-        Set(value As Integer)
-            codigoTalentoHumano = value
         End Set
     End Property
 
@@ -124,13 +108,18 @@ Public Class ClsVacaciones
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "fechaInasistencia" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = fechaInasistencia_
+        sqlpar.ParameterName = "fechaInicial" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = fechaInicial_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "motivoInasistencia" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = motivoInasistencia_
+        sqlpar.ParameterName = "fechaFinal" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = fechaFinal_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "totalDias" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = totalDias_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -151,21 +140,6 @@ Public Class ClsVacaciones
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "observaciones" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = observaciones_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoSupervisor" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoSupervisor_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoJefeDepto" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoJefeDepto_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoTalentoHumano" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoTalentoHumano_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -207,13 +181,18 @@ Public Class ClsVacaciones
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "fechaInasistencia" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = fechaInasistencia_
+        sqlpar.ParameterName = "fechaInicial" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = fechaInicial_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "motivoInasistencia" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = motivoInasistencia_
+        sqlpar.ParameterName = "fechaFinal" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = fechaFinal_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "totalDias" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = totalDias_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -236,20 +215,6 @@ Public Class ClsVacaciones
         sqlpar.Value = observaciones_
         sqlcom.Parameters.Add(sqlpar)
 
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoSupervisor" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoSupervisor_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoJefeDepto" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoJefeDepto_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
-        sqlpar.ParameterName = "codigoTalentoHumano" 'nombre campo en el procedimiento almacenado @
-        sqlpar.Value = codigoTalentoHumano_
-        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"

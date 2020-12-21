@@ -56,9 +56,10 @@ Public Class M_BuscarEmpleados
                 M_Empleados.txtcodigoHorario.Text = CStr(row("codigoHorario"))
                 M_Empleados.txtbanco.Text = CStr(row("banco"))
                 M_Empleados.txtcuentaBancaria.Text = CStr(row("cuentaBancaria"))
-                M_Empleados.txtcodigoFormaPago.Text = CStr(row("codigoFormaPago"))
+                'M_Empleados.txtcodigoFormaPago.Text = CStr(row("codigoFormaPago"))
 
                 If IsDBNull(row("fechaBaja")) = False Then
+                    M_Empleados.dtpfechaBaja.Format = DateTimePickerFormat.Short
                     M_Empleados.dtpfechaBaja.Text = CStr(row("fechaBaja"))
                 Else
                     M_Empleados.dtpfechaBaja.Format = DateTimePickerFormat.Custom
@@ -66,15 +67,16 @@ Public Class M_BuscarEmpleados
                 End If
 
                 If IsDBNull(row("fechaAvisoBaja")) = False Then
-                    M_Empleados.dtpFechaAvisoBaja.Text = CStr(row("fechaAvisoBaja"))
+                    M_Empleados.dtpFechaAvisoBaja.Format = DateTimePickerFormat.Short
+                    M_Empleados.dtpFechaAvisoBaja.Value = Date.Parse(row("fechaAvisoBaja"))
                 Else
                     M_Empleados.dtpFechaAvisoBaja.Format = DateTimePickerFormat.Custom
                     M_Empleados.dtpFechaAvisoBaja.CustomFormat = " "
                 End If
 
                 M_Empleados.rtxtmotivoBaja.Text = CStr(row("motivoBaja"))
-                M_Empleados.lblcodePuesto.Text = CStr(row("codigoPuestoTrab"))
                 M_Empleados.lblcodeDepto.Text = CStr(row("codigoDepto"))
+                M_Empleados.lblcodePuesto.Text = CStr(row("codigoPuestoTrab"))
                 M_Empleados.txtsalario.Text = Convert.ToDecimal(CStr(row("salario"))).ToString("N2")
                 'M_Empleados.cmbxtipoCuenta.SelectedItem = CStr(row("tipoCuenta"))
 
