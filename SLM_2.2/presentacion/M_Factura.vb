@@ -319,6 +319,7 @@ Public Class M_Factura
         Catch ex As Exception
             txtcodigoSucursal.Text = ""
             txtcodigoTerminal.Text = ""
+            MsgBox("No existe la máquina local.", MsgBoxStyle.Critical)
         End Try
     End Sub
     Public Sub deshabilitar()
@@ -547,54 +548,62 @@ Public Class M_Factura
         'Timer1.Interval = 3000
         'Timer1.Start()
         'MsgBox(My.Computer.Name.ToString)
-        alternarColoFilasDatagridview(dgblistadoExamenes)
-        alternarColoFilasDatagridview(dgbObservaciones)
-        If (Trim(txtnumeroOficial.Text) <> "") Then
-            cbxAnular.Enabled = True
-        Else
-            cbxAnular.Enabled = False
-        End If
-
-        'SIN TIMER
-        SegundaPantalla()
-
-        If dgblistadoExamenes.Columns.Contains("btnEliminar") = False Then
-            Dim btn As New DataGridViewButtonColumn()
-            dgblistadoExamenes.Columns.Add(btn)
-            btn.HeaderText = "Eliminar"
-            btn.Text = "Eliminar"
-            btn.Name = "btnEliminar"
-            btn.UseColumnTextForButtonValue = True
-        End If
-    End Sub
-    Private Sub SegundaPantalla()
-
-        Dim MiposicionX, MiposicionY As Single
-
-        Dim posicion As Point
-        Dim display As New M_ClienteVentana
-
-        For Each scrn As Screen In Screen.AllScreens
-
-            If scrn.Primary = False Then
-                display.Location = posicion
-                display.Width = scrn.WorkingArea.Width
-                display.Height = scrn.WorkingArea.Height
-
+        Try
+            alternarColoFilasDatagridview(dgblistadoExamenes)
+            alternarColoFilasDatagridview(dgbObservaciones)
+            If (Trim(txtnumeroOficial.Text) <> "") Then
+                cbxAnular.Enabled = True
             Else
-                posicion = New Point(scrn.WorkingArea.Width, scrn.Bounds.Y)
-
+                cbxAnular.Enabled = False
             End If
 
-        Next
+            'SIN TIMER
+            SegundaPantalla()
 
-        MiposicionX = posicion.X
-        MiposicionY = posicion.Y
-        M_ClienteVentana.Show()
-        M_ClienteVentana.Location = New Point(MiposicionX, MiposicionY)
-        M_ClienteVentana.WindowState = FormWindowState.Maximized
-        M_BuscarFactura.Close()
-        Form1.WindowState = FormWindowState.Minimized
+            If dgblistadoExamenes.Columns.Contains("btnEliminar") = False Then
+                Dim btn As New DataGridViewButtonColumn()
+                dgblistadoExamenes.Columns.Add(btn)
+                btn.HeaderText = "Eliminar"
+                btn.Text = "Eliminar"
+                btn.Name = "btnEliminar"
+                btn.UseColumnTextForButtonValue = True
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Sub SegundaPantalla()
+        Try
+            Dim MiposicionX, MiposicionY As Single
+
+            Dim posicion As Point
+            Dim display As New M_ClienteVentana
+
+            For Each scrn As Screen In Screen.AllScreens
+
+                If scrn.Primary = False Then
+                    display.Location = posicion
+                    display.Width = scrn.WorkingArea.Width
+                    display.Height = scrn.WorkingArea.Height
+
+                Else
+                    posicion = New Point(scrn.WorkingArea.Width, scrn.Bounds.Y)
+
+                End If
+
+            Next
+
+            MiposicionX = posicion.X
+            MiposicionY = posicion.Y
+            M_ClienteVentana.Show()
+            M_ClienteVentana.Location = New Point(MiposicionX, MiposicionY)
+            M_ClienteVentana.WindowState = FormWindowState.Maximized
+            M_BuscarFactura.Close()
+            Form1.WindowState = FormWindowState.Minimized
+
+        Catch ex As Exception
+
+        End Try
 
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -914,33 +923,38 @@ Public Class M_Factura
     '    End If
     'End Sub
     Public Sub AgregarExamen(ByVal codigoItem As Integer)
-        Dim objExam As New ClsPrecio
-        With objExam
-            .codeIntExam_ = codigoItem
-            .codigoListaPrecios_ = lblcodePriceList.Text
-        End With
+        Try
+            Dim objExam As New ClsPrecio
+            With objExam
+                .codeIntExam_ = codigoItem
+                .codigoListaPrecios_ = lblcodePriceList.Text
+            End With
 
-        Dim dt As New DataTable
-        dt = objExam.BuscarPrecioItemExam()
-        Dim row As DataRow = dt.Rows(0)
-        Dim subtotal As Double = Convert.ToDouble(CStr(row("precio")))
-        Dim descuento As Double = Convert.ToDouble(CStr(row("porcentaje")))
+            Dim dt As New DataTable
+            dt = objExam.BuscarPrecioItemExam()
+            Dim row As DataRow = dt.Rows(0)
+            Dim subtotal As Double = Convert.ToDouble(CStr(row("precio")))
+            Dim descuento As Double = Convert.ToDouble(CStr(row("porcentaje")))
 
-        'calcular descuento
-        descuento = subtotal * (descuento / 100)
-        subtotal -= descuento
+            'calcular descuento
+            descuento = subtotal * (descuento / 100)
+            subtotal -= descuento
 
-        'buscar feriados
-        Dim dtFeriados As New DataTable
-        Dim cantDias As Integer = 0
-        dtFeriados = objFeriado.BuscarFeriadosRangoFecha(Date.Parse(dtpfechaFactura.Value), Date.Parse(dtpfechaFactura.Value.Date.AddDays(7)))
-        cantDias = dtFeriados.Rows.Count + 7
+            'buscar feriados
+            Dim dtFeriados As New DataTable
+            Dim cantDias As Integer = 0
+            dtFeriados = objFeriado.BuscarFeriadosRangoFecha(Date.Parse(dtpfechaFactura.Value), Date.Parse(dtpfechaFactura.Value.Date.AddDays(7)))
+            cantDias = dtFeriados.Rows.Count + 7
 
 
-        dgblistadoExamenes.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(cantDias), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0, CStr(row("codigoItem"))})
-        dgbObservaciones.Rows.Add(New String() {objExam.codeIntExam_, ""})
-        totalFactura()
-        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(cantDias), CStr(row("porcentaje")), (subtotal)})
+            dgblistadoExamenes.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(cantDias), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0, CStr(row("codigoItem"))})
+            dgbObservaciones.Rows.Add(New String() {objExam.codeIntExam_, ""})
+            totalFactura()
+            M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(cantDias), CStr(row("porcentaje")), (subtotal)})
+
+        Catch ex As Exception
+
+        End Try
     End Sub
     Public Sub totalFactura()
         Dim total As Double = 0
@@ -954,16 +968,20 @@ Public Class M_Factura
     End Sub
 
     Private Sub calcularSaldoPendiente()
-        If Convert.ToDouble(txtpagoPaciente.Text) > Convert.ToDouble(txttotal.Text) Then
-            abonoF = Convert.ToDouble(txttotal.Text)
-            saldoF = 0
-        ElseIf txtvuelto.Visible = False Then
-            abonoF = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txtvuelto2.Text)
-            saldoF = Convert.ToDouble(txttotal.Text) - abonoF
-        Else
-            abonoF = Convert.ToDouble(txtpagoPaciente.Text)
-            saldoF = Convert.ToDouble(txttotal.Text) - abonoF
-        End If
+        Try
+            If Convert.ToDouble(txtpagoPaciente.Text) > Convert.ToDouble(txttotal.Text) Then
+                abonoF = Convert.ToDouble(txttotal.Text)
+                saldoF = 0
+            ElseIf txtvuelto.Visible = False Then
+                abonoF = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txtvuelto2.Text)
+                saldoF = Convert.ToDouble(txttotal.Text) - abonoF
+            Else
+                abonoF = Convert.ToDouble(txtpagoPaciente.Text)
+                saldoF = Convert.ToDouble(txttotal.Text) - abonoF
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
 
@@ -1652,81 +1670,101 @@ Public Class M_Factura
         End If
     End Sub
     Private Sub Imprimir_Factura()
-        If (Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False) Then
-            'le asigno un valor a los parametros del procedimiento almacenado
-            Dim objReporte As New M_ImprimirFactura
+        Try
+            If (Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False) Then
+                'le asigno un valor a los parametros del procedimiento almacenado
+                Dim objReporte As New M_ImprimirFactura
 
-            objReporte.SetParameterValue("@numero", Convert.ToInt64(txtnumeroFactura.Text))
-            objReporte.SetParameterValue("@numeroFactura", Convert.ToInt64(txtnumeroFactura.Text))
-            objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
-            objReporte.SetParameterValue("numalet", letras)
-            objReporte.SetParameterValue("subtotal", subtotalF)
-            objReporte.SetParameterValue("descuento", descuentoF)
-            objReporte.SetParameterValue("saldo", saldoF)
-            objReporte.SetParameterValue("abono", abonoF)
-            objReporte.SetParameterValue("Cajero", txtNombreCajero.Text)
-            objReporte.SetParameterValue("Recepcionista", txtNombreRecepcionista.Text)
-            If Trim(txtcodigoConvenio.Text) = "" Or Trim(txtcodigoConvenio.Text) = "0" Then
-                'No es convenio
-                objReporte.SetParameterValue("Cliente", txtnombreCliente.Text)
-                objReporte.SetParameterValue("RTN", lblRTN.Text)
+                objReporte.SetParameterValue("@numero", Convert.ToInt64(txtnumeroFactura.Text))
+                objReporte.SetParameterValue("@numeroFactura", Convert.ToInt64(txtnumeroFactura.Text))
+                objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
+                objReporte.SetParameterValue("numalet", letras)
+                objReporte.SetParameterValue("subtotal", subtotalF)
+                objReporte.SetParameterValue("descuento", descuentoF)
+                objReporte.SetParameterValue("saldo", saldoF)
+                objReporte.SetParameterValue("abono", abonoF)
+                objReporte.SetParameterValue("Cajero", txtNombreCajero.Text)
+                objReporte.SetParameterValue("Recepcionista", txtNombreRecepcionista.Text)
+                If Trim(txtcodigoConvenio.Text) = "" Or Trim(txtcodigoConvenio.Text) = "0" Then
+                    'No es convenio
+                    objReporte.SetParameterValue("Cliente", txtnombreCliente.Text)
+                    objReporte.SetParameterValue("RTN", lblRTN.Text)
+                Else
+                    'Es convenio
+                    objReporte.SetParameterValue("Cliente", txtcodigoConvenio.Text)
+                    objReporte.SetParameterValue("RTN", lblRTN.Text)
+                End If
+                objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+                M_ImprimirFacturaReport.CrystalReportViewer1.ReportSource = objReporte
+                'M_ImprimirFacturaReport.CrystalReportViewer1.Refresh()
+                M_ImprimirFacturaReport.Show()
             Else
-                'Es convenio
-                objReporte.SetParameterValue("Cliente", txtcodigoConvenio.Text)
-                objReporte.SetParameterValue("RTN", lblRTN.Text)
+                MsgBox("Debe estar creada o guardada la factura para poder imprimirla.", MsgBoxStyle.Critical)
             End If
-            objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
-            M_ImprimirFacturaReport.CrystalReportViewer1.ReportSource = objReporte
-            'M_ImprimirFacturaReport.CrystalReportViewer1.Refresh()
-            M_ImprimirFacturaReport.Show()
-        Else
-            MsgBox("Debe estar creada o guardada la factura para poder imprimirla.", MsgBoxStyle.Critical)
-        End If
+
+        Catch ex As Exception
+
+        End Try
     End Sub
     Private Sub btnimprimirComprobante_Click(sender As Object, e As EventArgs) Handles btnimprimirComprobante.Click
-        If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
-            'le asigno un valor a los parametros del procedimiento almacenado
-            Dim objReporte As New M_CryComprobanteEntrega
+        Try
+            If (Trim(txtnumeroFactura.Text) <> "" And cbxok.Checked) Then
+                'le asigno un valor a los parametros del procedimiento almacenado
+                Dim objReporte As New M_CryComprobanteEntrega
 
-            objReporte.SetParameterValue("@numero", Convert.ToInt64(txtnumeroFactura.Text))
-            objReporte.SetParameterValue("@numeroFactura", Convert.ToInt64(txtnumeroFactura.Text))
-            objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
-            If txtcodigoConvenio.Text <> "0" Then
-                objReporte.SetParameterValue("convenio", txtcodigoConvenio.Text)
+                objReporte.SetParameterValue("@numero", Convert.ToInt64(txtnumeroFactura.Text))
+                objReporte.SetParameterValue("@numeroFactura", Convert.ToInt64(txtnumeroFactura.Text))
+                objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
+                If txtcodigoConvenio.Text <> "0" Then
+                    objReporte.SetParameterValue("convenio", txtcodigoConvenio.Text)
+                Else
+                    objReporte.SetParameterValue("convenio", "")
+                End If
+                objReporte.SetParameterValue("recepcionista", txtNombreRecepcionista.Text)
+                objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+                M_ComprobanteEntrega.CrystalReportViewer1.ReportSource = objReporte
+                M_ComprobanteEntrega.Show()
             Else
-                objReporte.SetParameterValue("convenio", "")
+                MsgBox("Debe estar creada o guardada la factura para poder imprimir el comprobante de entrega.", MsgBoxStyle.Critical)
             End If
-            objReporte.SetParameterValue("recepcionista", txtNombreRecepcionista.Text)
-            objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
-            M_ComprobanteEntrega.CrystalReportViewer1.ReportSource = objReporte
-            M_ComprobanteEntrega.Show()
-        Else
-            MsgBox("Debe estar creada o guardada la factura para poder imprimir el comprobante de entrega.", MsgBoxStyle.Critical)
-        End If
+
+        Catch ex As Exception
+
+        End Try
     End Sub
     Private Sub Imprimir_Cotizacion()
-        If (Trim(txtnumeroFactura.Text) <> "") Then
-            'le asigno un valor a los parametros del procedimiento almacenado
-            Dim objReporte As New M_ImprimirCotizacion
-            objReporte.SetParameterValue("@numero", Convert.ToInt64(txtnumeroFactura.Text))
-            objReporte.SetParameterValue("@numeroCotizacion", Convert.ToInt64(txtnumeroFactura.Text))
-            objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
-            objReporte.SetParameterValue("numalet", letras)
-            objReporte.SetParameterValue("cajero", txtNombreCajero.Text)
-            objReporte.SetParameterValue("recepcionista", txtNombreRecepcionista.Text)
-            objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
-            M_ImprimirCotizacionForm.CrystalReportViewer1.ReportSource = objReporte
-            M_ImprimirCotizacionForm.Show()
-        Else
-            MsgBox("Debe estar creada o guardada la cotización para poder imprimirla.", MsgBoxStyle.Critical)
-        End If
+        Try
+            If (Trim(txtnumeroFactura.Text) <> "") Then
+                'le asigno un valor a los parametros del procedimiento almacenado
+                Dim objReporte As New M_ImprimirCotizacion
+                objReporte.SetParameterValue("@numero", Convert.ToInt64(txtnumeroFactura.Text))
+                objReporte.SetParameterValue("@numeroCotizacion", Convert.ToInt64(txtnumeroFactura.Text))
+                objReporte.SetParameterValue("@fechaNacimiento", Convert.ToDateTime(lblFechaNacimiento.Text))
+                objReporte.SetParameterValue("numalet", letras)
+                objReporte.SetParameterValue("cajero", txtNombreCajero.Text)
+                objReporte.SetParameterValue("recepcionista", txtNombreRecepcionista.Text)
+                objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+                M_ImprimirCotizacionForm.CrystalReportViewer1.ReportSource = objReporte
+                M_ImprimirCotizacionForm.Show()
+            Else
+                MsgBox("Debe estar creada o guardada la cotización para poder imprimirla.", MsgBoxStyle.Critical)
+            End If
+
+        Catch ex As Exception
+
+        End Try
     End Sub
     Private Sub Imprimir_TipoDePacientes()
-        'le asigno un valor a los parametros del procedimiento almacenado
-        Dim objReporte As New M_CryTiposDePacientes
-        objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
-        M_ReportTipoDePacientes.CrystalReportViewer1.ReportSource = objReporte
-        M_ReportTipoDePacientes.Show()
+        Try
+            'le asigno un valor a los parametros del procedimiento almacenado
+            Dim objReporte As New M_CryTiposDePacientes
+            objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+            M_ReportTipoDePacientes.CrystalReportViewer1.ReportSource = objReporte
+            M_ReportTipoDePacientes.Show()
+
+        Catch ex As Exception
+
+        End Try
     End Sub
     Private Sub btnPromocion_Click(sender As Object, e As EventArgs) Handles btnPromocion.Click
         M_ListadoPromociones.ShowDialog()
@@ -1976,55 +2014,60 @@ Public Class M_Factura
 
     Private Sub CantidadMayorQueUno(ByVal cantidad As Integer, ByVal codigoSubArea As Integer, ByVal codItemExa As Integer)
 
-        Dim rowI As DataRow 'fila item detalle
-        Dim rowO As DataRow 'fila orden de trabajo
+        Try
 
-        Dim dt2 As New DataTable 'lista el detalle de los items
-        Dim dtO As New DataTable 'obtiene el codigo de la orden de trabajo
+            Dim rowI As DataRow 'fila item detalle
+            Dim rowO As DataRow 'fila orden de trabajo
 
-        Dim objItemD As New ClsItemExamenDetalle
-        Dim objOrd As New ClsOrdenDeTrabajo
+            Dim dt2 As New DataTable 'lista el detalle de los items
+            Dim dtO As New DataTable 'obtiene el codigo de la orden de trabajo
 
-        'Dim codOrdenTrabajo As Integer = 0
+            Dim objItemD As New ClsItemExamenDetalle
+            Dim objOrd As New ClsOrdenDeTrabajo
 
-        For index = 1 To cantidad - 1
+            'Dim codOrdenTrabajo As Integer = 0
 
-            With objOrd
-                .cod_factura_ = Convert.ToInt64(txtnumeroFactura.Text)
-                .pmFecha_ = dtpfechaFactura.Value
-                .pmUsuario_ = txtcodigoCajero.Text
-                .npFecha_ = dtpfechaFactura.Value
-                .npUsuario_ = txtcodigoCajero.Text
-                .codigoSubArea_ = codigoSubArea
-                .estado_ = "No Procesado"
-                .entregarPaciente_ = cbxentregarPaciente.Checked
-                .entregarMedico_ = cbxentregarMedico.Checked
-                .enviadaEmail_ = cbxenviarCorreo.Checked
-                .cod_sede_ = Integer.Parse(txtcodigoSede.Text)
-                If .RegistrarOrdenDeTrabajo() = 0 Then
-                    MsgBox("Error al querer insertar la orden de trabajo.", MsgBoxStyle.Critical)
-                    Exit Sub
-                End If
-                'codOrdenTrabajo = .RegistrarOrdenDeTrabajo2()
-                dtO = .CapturarOrdenDeTrabajo()
-            End With
-            rowO = dtO.Rows(0)
-            objItemD.codigoItemExamen_ = codItemExa
-            dt2 = objItemD.BuscarItemExamenDetalle
-            For x As Integer = 0 To dt2.Rows.Count - 1
-                rowI = dt2.Rows(x)
-                Dim objDetOrd As New ClsOrdenTrabajoDetalle
-                With objDetOrd
-                    .cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
-                    .cod_item_examen_detalle_ = rowI("codigo")
-                    .estado_ = "No Ingresado"
+            For index = 1 To cantidad - 1
+
+                With objOrd
+                    .cod_factura_ = Convert.ToInt64(txtnumeroFactura.Text)
+                    .pmFecha_ = dtpfechaFactura.Value
+                    .pmUsuario_ = txtcodigoCajero.Text
+                    .npFecha_ = dtpfechaFactura.Value
+                    .npUsuario_ = txtcodigoCajero.Text
+                    .codigoSubArea_ = codigoSubArea
+                    .estado_ = "No Procesado"
+                    .entregarPaciente_ = cbxentregarPaciente.Checked
+                    .entregarMedico_ = cbxentregarMedico.Checked
+                    .enviadaEmail_ = cbxenviarCorreo.Checked
+                    .cod_sede_ = Integer.Parse(txtcodigoSede.Text)
+                    If .RegistrarOrdenDeTrabajo() = 0 Then
+                        MsgBox("Error al querer insertar la orden de trabajo.", MsgBoxStyle.Critical)
+                        Exit Sub
+                    End If
+                    'codOrdenTrabajo = .RegistrarOrdenDeTrabajo2()
+                    dtO = .CapturarOrdenDeTrabajo()
                 End With
-                If objDetOrd.RegistrarNuevoDetalleOrdenTrabajo = 0 Then
-                    MsgBox("Error en la insercion del detalle orden de trabajo.", MsgBoxStyle.Critical)
-                    Exit Sub
-                End If
+                rowO = dtO.Rows(0)
+                objItemD.codigoItemExamen_ = codItemExa
+                dt2 = objItemD.BuscarItemExamenDetalle
+                For x As Integer = 0 To dt2.Rows.Count - 1
+                    rowI = dt2.Rows(x)
+                    Dim objDetOrd As New ClsOrdenTrabajoDetalle
+                    With objDetOrd
+                        .cod_orden_trabajo_ = Convert.ToInt64(rowO("cod_orden_trabajo"))
+                        .cod_item_examen_detalle_ = rowI("codigo")
+                        .estado_ = "No Ingresado"
+                    End With
+                    If objDetOrd.RegistrarNuevoDetalleOrdenTrabajo = 0 Then
+                        MsgBox("Error en la insercion del detalle orden de trabajo.", MsgBoxStyle.Critical)
+                        Exit Sub
+                    End If
+                Next
             Next
-        Next
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
@@ -2067,21 +2110,26 @@ Public Class M_Factura
     End Sub
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
-        If banderaTipo Then
-            If Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False Then
-                MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
-                letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
-                calcularDescuento()
-                Imprimir_Factura()
+        Try
+            If banderaTipo Then
+                If Trim(txtnumeroOficial.Text) <> "" And cbxAnular.Checked = False Then
+                    MsgBox("Imprimiendo la factura.", MsgBoxStyle.Information)
+                    letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
+                    calcularDescuento()
+                    Imprimir_Factura()
+                Else
+                    MsgBox("Debe tener el número oficial de la factura y no ser anulada o cancelada.", MsgBoxStyle.Information)
+                End If
             Else
-                MsgBox("Debe tener el número oficial de la factura y no ser anulada o cancelada.", MsgBoxStyle.Information)
+                If Trim(txtnumeroFactura.Text) <> "" Then
+                    letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
+                    Imprimir_Cotizacion()
+                End If
             End If
-        Else
-            If Trim(txtnumeroFactura.Text) <> "" Then
-                letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
-                Imprimir_Cotizacion()
-            End If
-        End If
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub txtTarjeta_TextChanged(sender As Object, e As EventArgs) Handles txtTarjeta.TextChanged
@@ -2198,64 +2246,74 @@ Public Class M_Factura
     End Sub
 
     Private Sub calcularDescuento()
-        Dim dt As New DataTable
-        Dim row As DataRow
-        Dim objDetFact As New ClsDetalleFactura
-        objDetFact.numeroFactura_ = txtnumeroFactura.Text
-        dt = objDetFact.BuscarDetalleFactura()
+        Try
+            Dim dt As New DataTable
+            Dim row As DataRow
+            Dim objDetFact As New ClsDetalleFactura
+            objDetFact.numeroFactura_ = txtnumeroFactura.Text
+            dt = objDetFact.BuscarDetalleFactura()
 
-        subtotalF = 0
-        descuentoF = 0
-        abonoF = 0
-        saldoF = 0
-
-        For index As Integer = 0 To dt.Rows.Count - 1
-            row = dt.Rows(index)
-            subtotalF += Convert.ToDouble(row("precio"))
-        Next
-        descuentoF = subtotalF - Convert.ToDouble(txttotal.Text)
-
-        If Convert.ToDouble(txtpagoPaciente.Text) > Convert.ToDouble(txttotal.Text) Then
-            abonoF = Convert.ToDouble(txttotal.Text)
+            subtotalF = 0
+            descuentoF = 0
+            abonoF = 0
             saldoF = 0
-        ElseIf txtvuelto.Visible = False Then
-            abonoF = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txtvuelto2.Text)
-            saldoF = Convert.ToDouble(txttotal.Text) - abonoF
-        Else
-            abonoF = Convert.ToDouble(txtpagoPaciente.Text)
-            saldoF = Convert.ToDouble(txttotal.Text) - abonoF
-        End If
+
+            For index As Integer = 0 To dt.Rows.Count - 1
+                row = dt.Rows(index)
+                subtotalF += Convert.ToDouble(row("precio"))
+            Next
+            descuentoF = subtotalF - Convert.ToDouble(txttotal.Text)
+
+            If Convert.ToDouble(txtpagoPaciente.Text) > Convert.ToDouble(txttotal.Text) Then
+                abonoF = Convert.ToDouble(txttotal.Text)
+                saldoF = 0
+            ElseIf txtvuelto.Visible = False Then
+                abonoF = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txtvuelto2.Text)
+                saldoF = Convert.ToDouble(txttotal.Text) - abonoF
+            Else
+                abonoF = Convert.ToDouble(txtpagoPaciente.Text)
+                saldoF = Convert.ToDouble(txttotal.Text) - abonoF
+            End If
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub calcularDescuento2(ByRef objDetFact As ClsDetalleFactura)
-        Dim dt As New DataTable
-        Dim row As DataRow
-        'Dim objDetFact As New ClsDetalleFactura
-        objDetFact.numeroFactura_ = txtnumeroFactura.Text
-        dt = objDetFact.BuscarDetalleFactura()
+        Try
+            Dim dt As New DataTable
+            Dim row As DataRow
+            'Dim objDetFact As New ClsDetalleFactura
+            objDetFact.numeroFactura_ = txtnumeroFactura.Text
+            dt = objDetFact.BuscarDetalleFactura()
 
-        subtotalF = 0
-        descuentoF = 0
-        abonoF = 0
-        saldoF = 0
-
-        For index As Integer = 0 To dt.Rows.Count - 1
-            row = dt.Rows(index)
-            subtotalF += Convert.ToDouble(row("precio"))
-            dgblistadoExamenes.Rows(index).Cells(8).Value() = CStr(row("numero"))
-        Next
-        descuentoF = subtotalF - Convert.ToDouble(txttotal.Text)
-
-        If Convert.ToDouble(txtpagoPaciente.Text) > Convert.ToDouble(txttotal.Text) Then
-            abonoF = Convert.ToDouble(txttotal.Text)
+            subtotalF = 0
+            descuentoF = 0
+            abonoF = 0
             saldoF = 0
-        ElseIf txtvuelto.Visible = False Then
-            abonoF = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txtvuelto2.Text)
-            saldoF = Convert.ToDouble(txttotal.Text) - abonoF
-        Else
-            abonoF = Convert.ToDouble(txtpagoPaciente.Text)
-            saldoF = Convert.ToDouble(txttotal.Text) - abonoF
-        End If
+
+            For index As Integer = 0 To dt.Rows.Count - 1
+                row = dt.Rows(index)
+                subtotalF += Convert.ToDouble(row("precio"))
+                dgblistadoExamenes.Rows(index).Cells(8).Value() = CStr(row("numero"))
+            Next
+            descuentoF = subtotalF - Convert.ToDouble(txttotal.Text)
+
+            If Convert.ToDouble(txtpagoPaciente.Text) > Convert.ToDouble(txttotal.Text) Then
+                abonoF = Convert.ToDouble(txttotal.Text)
+                saldoF = 0
+            ElseIf txtvuelto.Visible = False Then
+                abonoF = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txtvuelto2.Text)
+                saldoF = Convert.ToDouble(txttotal.Text) - abonoF
+            Else
+                abonoF = Convert.ToDouble(txtpagoPaciente.Text)
+                saldoF = Convert.ToDouble(txttotal.Text) - abonoF
+            End If
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     'Convertir numeros a letras para impresión de cheque
