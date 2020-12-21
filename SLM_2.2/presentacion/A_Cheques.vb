@@ -102,7 +102,7 @@ Public Class A_Cheques
 
             montop = montop - monto
 
-            frmPagos.dtDetallePagos.Rows.Add(frmPagos.dtDetallePagos.Rows(0).Cells(0).Value, frmPagos.dtDetallePagos.Rows(0).Cells(1).Value, frmPagos.dtDetallePagos.Rows(0).Cells(2).Value, montop, " ", " ")
+            frmPagos.dtDetallePagos.Rows.Add(frmPagos.dtDetallePagos.Rows(0).Cells(0).Value, frmPagos.dtDetallePagos.Rows(0).Cells(1).Value, frmPagos.dtDetallePagos.Rows(0).Cells(2).Value, montop, " ", " ", "0")
 
             resultado = Convert.ToDouble(frmPagos.dtDetallePagos.Rows(0).Cells(3).Value) - montop
 

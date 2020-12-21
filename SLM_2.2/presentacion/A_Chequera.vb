@@ -14,15 +14,17 @@
                 If n = vbYes Then
 
                     Dim chequera As New ClsChequera
-                    Dim codigoChequera As String
+                    Dim codigoChequera As Integer
 
                     'Crear Chequera
                     With chequera
-                        .cod_Cuenta = Convert.ToInt32(lblCodCuenta.Text)
+                        .cod_Cuenta = Integer.Parse(lblCodCuenta.Text)
                         .Numero_Inicio = mtxtNumInicio.Text
                         .Cantida_d = Convert.ToInt32(txtCantidad.Text)
                         .cod_Banco = Convert.ToInt32(lblCodBanco.Text)
-                        codigoChequera = .registrarNuevaChequera
+                        'MsgBox("1")
+                        codigoChequera = Integer.Parse(.registrarNuevaChequera)
+                        'MsgBox(codigoChequera)
                     End With
 
                     'Insertar cantidad de cheques de la chequera
@@ -37,8 +39,10 @@
                         .registrarNuevosCheques()
                     End With
 
+
                     Limpiar()
                     dtChequeras.DataSource = chequera.listarChequera
+                    MsgBox("Se ingreso una nueva chequera.")
                 End If ' if Validacion de creación
 
 

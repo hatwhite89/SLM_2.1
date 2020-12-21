@@ -226,7 +226,7 @@
                                 .Origen_ = "DepositoBancario"
                                 .Campo_Llave = Convert.ToInt32(nro("codDeposito"))
                                 codigoAsiento = .registrarAsiento()
-                                MsgBox("este es el codigo" + codigoAsiento)
+                                'MsgBox("este es el codigo" + codigoAsiento)
 
                                 If codigoAsiento > 0 Then
 
@@ -234,21 +234,21 @@
 
                                         With detalleAsiento
 
-                                            MsgBox("1")
+                                            'MsgBox("1")
                                             .Cod_Asiento = Convert.ToInt64(codigoAsiento)
                                             .Debe_ = Convert.ToDouble(txtContado.Text)
                                             .Haber_ = 0.0
                                             .Origen_ = "DepositoBancario"
 
-                                            MsgBox("2")
+                                            'MsgBox("2")
                                             Dim dt As DataTable
                                             Dim row As DataRow
                                             buscarCodigo.Cod = txtBanco.Text
                                             dt = buscarCodigo.infoFormaPago
                                             row = dt.Rows(0)
-                                            MsgBox("3")
+                                            'MsgBox("3")
                                             .Cuenta_ = Convert.ToInt32(row("cuenta"))
-                                            MsgBox("4")
+                                            'MsgBox("4")
 
                                             .registrarDetalleAsiento()
 
@@ -486,10 +486,10 @@
         dtpFecha.ResetText()
         txtBanco.Text = ""
         txtContado.Text = ""
-        txtTipoConta.Text = ""
+        'txtTipoConta.Text = ""
         txtTotalDep.Text = ""
-        txtMoneda.Text = ""
-        txtMonBase.Text = ""
+        'txtMoneda.Text = ""
+        'txtMonBase.Text = ""
         txtComision.Text = ""
         txtCajero.Text = ""
         txtComentario.Text = ""
@@ -625,6 +625,5 @@
         End Try
 
     End Sub
-
 
 End Class

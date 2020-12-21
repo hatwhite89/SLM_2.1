@@ -29,6 +29,8 @@ Partial Class A_ListarFacCompraPagos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtFacturasCompra = New System.Windows.Forms.DataGridView()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.txtCorrelativo = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtFacturasCompra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -39,33 +41,35 @@ Partial Class A_ListarFacCompraPagos
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox1.Controls.Add(Me.txtCorrelativo)
+        Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.btnCancelar)
         Me.GroupBox1.Controls.Add(Me.txtBusqueda)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.dtFacturasCompra)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(706, 322)
+        Me.GroupBox1.Size = New System.Drawing.Size(706, 403)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Facturas de Compra"
         '
         'btnCancelar
         '
-        Me.btnCancelar.BackColor = System.Drawing.Color.Transparent
-        Me.btnCancelar.BackgroundImage = CType(resources.GetObject("btnCancelar.BackgroundImage"), System.Drawing.Image)
+        Me.btnCancelar.BackColor = System.Drawing.Color.Coral
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCancelar.FlatAppearance.BorderSize = 0
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Location = New System.Drawing.Point(321, 27)
+        Me.btnCancelar.Location = New System.Drawing.Point(618, 30)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(20, 18)
+        Me.btnCancelar.Size = New System.Drawing.Size(80, 26)
         Me.btnCancelar.TabIndex = 3
+        Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'txtBusqueda
         '
-        Me.txtBusqueda.Location = New System.Drawing.Point(78, 27)
+        Me.txtBusqueda.Location = New System.Drawing.Point(9, 36)
         Me.txtBusqueda.MaxLength = 30
         Me.txtBusqueda.Name = "txtBusqueda"
         Me.txtBusqueda.Size = New System.Drawing.Size(237, 20)
@@ -74,7 +78,7 @@ Partial Class A_ListarFacCompraPagos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 30)
+        Me.Label1.Location = New System.Drawing.Point(12, 20)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(66, 13)
         Me.Label1.TabIndex = 1
@@ -90,27 +94,44 @@ Partial Class A_ListarFacCompraPagos
         Me.dtFacturasCompra.BackgroundColor = System.Drawing.Color.White
         Me.dtFacturasCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtFacturasCompra.GridColor = System.Drawing.Color.White
-        Me.dtFacturasCompra.Location = New System.Drawing.Point(6, 54)
+        Me.dtFacturasCompra.Location = New System.Drawing.Point(6, 72)
         Me.dtFacturasCompra.Name = "dtFacturasCompra"
         Me.dtFacturasCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtFacturasCompra.Size = New System.Drawing.Size(692, 263)
+        Me.dtFacturasCompra.Size = New System.Drawing.Size(692, 326)
         Me.dtFacturasCompra.TabIndex = 0
         '
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 340)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 421)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
         Me.StatusStrip1.TabIndex = 1
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'txtCorrelativo
+        '
+        Me.txtCorrelativo.Location = New System.Drawing.Point(260, 36)
+        Me.txtCorrelativo.MaxLength = 30
+        Me.txtCorrelativo.Name = "txtCorrelativo"
+        Me.txtCorrelativo.Size = New System.Drawing.Size(237, 20)
+        Me.txtCorrelativo.TabIndex = 5
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(263, 20)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(57, 13)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Correlativo"
         '
         'A_ListarFacCompraPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(718, 362)
+        Me.ClientSize = New System.Drawing.Size(718, 443)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -132,4 +153,6 @@ Partial Class A_ListarFacCompraPagos
     Friend WithEvents Label1 As Label
     Friend WithEvents btnCancelar As Button
     Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents txtCorrelativo As TextBox
+    Friend WithEvents Label2 As Label
 End Class
