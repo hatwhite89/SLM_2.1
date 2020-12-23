@@ -1239,7 +1239,7 @@
     End Sub
 
     Private Sub PictureBox38_Click_2(sender As Object, e As EventArgs) Handles PictureBox38.Click
-
+        frmSolicitudNuevoProducto.Show()
     End Sub
 
     Private Sub btnTrabajo_Click(sender As Object, e As EventArgs) Handles btnTrabajo.Click
@@ -1275,5 +1275,13 @@
 
     Private Sub btnMedico2_Click(sender As Object, e As EventArgs) Handles btnMedico2.Click
         M_Medico.ShowDialog()
+    End Sub
+
+    Private Sub btnProducto_Click(sender As Object, e As EventArgs) Handles btnProducto.Click
+        E_frmProducto.Show()
+    End Sub
+
+    Private Sub btnUnidadMedida_Click(sender As Object, e As EventArgs) Handles btnUnidadMedida.Click
+        E_frmUnidadMedida_almacen.Show()
     End Sub
 End Class
