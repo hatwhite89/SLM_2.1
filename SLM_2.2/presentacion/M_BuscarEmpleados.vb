@@ -51,6 +51,7 @@ Public Class M_BuscarEmpleados
                 M_Empleados.dtpfechaAlta.Text = CStr(row("fechaAlta"))
                 M_Empleados.mtxtidentidad.Text = CStr(row("nIdentidad"))
 
+
                 M_Empleados.txtseguroSocial.Text = CStr(row("nSeguroSocial"))
                 'M_Empleados.txtseguroVida.Text = CStr(row("nSeguroVida"))
                 M_Empleados.txtcodigoHorario.Text = CStr(row("codigoHorario"))
