@@ -122,4 +122,10 @@
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         GridAExcel(dgbtabla)
     End Sub
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            'limpiar()
+            Me.Close()
+        End If
+    End Sub
 End Class

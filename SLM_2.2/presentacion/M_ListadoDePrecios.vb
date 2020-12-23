@@ -60,6 +60,8 @@
                         M_ListaPrecios.rbtnPagoNo.Checked = True
                         M_ListaPrecios.txtPorcentaje.Text = ""
                     End If
+                    'limpiar el data grid view
+                    M_ListaPrecios.dgbtabla.Rows.Clear()
 
                     Dim objDetLP As New ClsDetalleListaPrecios
                     objDetLP.codigoListaPrecios_ = dgbtabla.Rows(e.RowIndex).Cells(0).Value()

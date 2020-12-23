@@ -180,4 +180,13 @@
     Private Sub M_ReporteriaTalentoHumano_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
+    End Sub
+
+    'Private Sub Button4_Click(sender As Object, e As EventArgs)
+    '    M_Horarios.GridAExcel(DataGridView1)
+    'End Sub
 End Class

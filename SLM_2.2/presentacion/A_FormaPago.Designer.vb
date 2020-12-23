@@ -75,9 +75,9 @@ Partial Class frmFormaPago
         Me.lblCuenta.AutoSize = True
         Me.lblCuenta.Location = New System.Drawing.Point(10, 59)
         Me.lblCuenta.Name = "lblCuenta"
-        Me.lblCuenta.Size = New System.Drawing.Size(45, 13)
+        Me.lblCuenta.Size = New System.Drawing.Size(65, 13)
         Me.lblCuenta.TabIndex = 2
-        Me.lblCuenta.Text = "Cuenta*"
+        Me.lblCuenta.Text = "Cta Asiento*"
         '
         'lblCuentaBanco
         '
@@ -100,16 +100,16 @@ Partial Class frmFormaPago
         'lblNombreBanco
         '
         Me.lblNombreBanco.AutoSize = True
-        Me.lblNombreBanco.Location = New System.Drawing.Point(10, 107)
+        Me.lblNombreBanco.Location = New System.Drawing.Point(9, 104)
         Me.lblNombreBanco.Name = "lblNombreBanco"
-        Me.lblNombreBanco.Size = New System.Drawing.Size(82, 13)
+        Me.lblNombreBanco.Size = New System.Drawing.Size(108, 13)
         Me.lblNombreBanco.TabIndex = 6
-        Me.lblNombreBanco.Text = "Nombre Banco*"
+        Me.lblNombreBanco.Text = "Nombre Forma Pago*"
         '
         'lblFormulario
         '
         Me.lblFormulario.AutoSize = True
-        Me.lblFormulario.Location = New System.Drawing.Point(10, 133)
+        Me.lblFormulario.Location = New System.Drawing.Point(10, 130)
         Me.lblFormulario.Name = "lblFormulario"
         Me.lblFormulario.Size = New System.Drawing.Size(55, 13)
         Me.lblFormulario.TabIndex = 7
@@ -126,7 +126,7 @@ Partial Class frmFormaPago
         '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(110, 28)
+        Me.txtCodigo.Location = New System.Drawing.Point(122, 28)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
         Me.txtCodigo.TabIndex = 10
@@ -139,7 +139,7 @@ Partial Class frmFormaPago
         Me.txtCuenta.Enabled = False
         Me.txtCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCuenta.ForeColor = System.Drawing.Color.Black
-        Me.txtCuenta.Location = New System.Drawing.Point(110, 52)
+        Me.txtCuenta.Location = New System.Drawing.Point(122, 52)
         Me.txtCuenta.Name = "txtCuenta"
         Me.txtCuenta.Size = New System.Drawing.Size(97, 20)
         Me.txtCuenta.TabIndex = 11
@@ -156,7 +156,7 @@ Partial Class frmFormaPago
         '
         'txtCtaBanco
         '
-        Me.txtCtaBanco.Location = New System.Drawing.Point(110, 76)
+        Me.txtCtaBanco.Location = New System.Drawing.Point(122, 76)
         Me.txtCtaBanco.MaxLength = 50
         Me.txtCtaBanco.Name = "txtCtaBanco"
         Me.txtCtaBanco.Size = New System.Drawing.Size(239, 20)
@@ -165,7 +165,7 @@ Partial Class frmFormaPago
         '
         'txtNombreBanco
         '
-        Me.txtNombreBanco.Location = New System.Drawing.Point(110, 100)
+        Me.txtNombreBanco.Location = New System.Drawing.Point(122, 100)
         Me.txtNombreBanco.MaxLength = 100
         Me.txtNombreBanco.Name = "txtNombreBanco"
         Me.txtNombreBanco.Size = New System.Drawing.Size(239, 20)
@@ -173,7 +173,7 @@ Partial Class frmFormaPago
         '
         'txtFormulario
         '
-        Me.txtFormulario.Location = New System.Drawing.Point(110, 126)
+        Me.txtFormulario.Location = New System.Drawing.Point(122, 126)
         Me.txtFormulario.MaxLength = 150
         Me.txtFormulario.Name = "txtFormulario"
         Me.txtFormulario.Size = New System.Drawing.Size(239, 20)
@@ -270,7 +270,7 @@ Partial Class frmFormaPago
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(213, 53)
+        Me.Button1.Location = New System.Drawing.Point(225, 53)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(20, 19)
         Me.Button1.TabIndex = 55

@@ -9,6 +9,7 @@ Public Class M_BuscarFactura
         dv.Sort = "FechaFactura Desc"
         'dgbtabla.DataSource = dv
         'dgbtabla.Sort(dgbtabla.Columns(3), ListSortDirection.Ascending)
+        Me.dgbtabla.Columns("Subtotal").Visible = False
         alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Public Sub seleccionarFacturas()
@@ -270,5 +271,9 @@ Public Class M_BuscarFactura
             MsgBox(ex.Message)
         End Try
 
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        A_MuestraPantallaCliente.Show()
     End Sub
 End Class

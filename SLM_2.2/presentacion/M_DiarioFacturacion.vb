@@ -303,6 +303,7 @@
         Try
             Dim nombreCompleto = Nothing, nombreMedico = Nothing, descripcionTermino = Nothing, usuarioCajero = Nothing, descripcionExamen = Nothing, descripcionGrupo As String = Nothing
             Dim numero As System.Nullable(Of Integer) = Nothing
+            Dim codigoTipoClas As System.Nullable(Of Integer) = Nothing
             Dim fechaFactura = Nothing, fechaDesde = Nothing, fechaHasta As System.Nullable(Of Date) = Nothing
             Dim estado As System.Nullable(Of Boolean) = Nothing
 
@@ -363,10 +364,15 @@
             Else
                 descripcionGrupo = Nothing
             End If
+            If Trim(txtnombreClasificacion.Text) <> "" Then
+                codigoTipoClas = lblcodigoTipoClasif.Text
+            Else
+                codigoTipoClas = Nothing
+            End If
 
             'MsgBox(numero & nombreCompleto & fechaFactura & nombreMedico & descripcionTermino & estado & usuarioCajero & "desde" & fechaDesde & "fhasta" & fechaHasta & descripcionExamen & descripcionGrupo)
             'Llenado de la tabla al llamar al procedimiento almacenado
-            dv = objFact.BuscarDiarioFacturacion(numero, nombreCompleto, fechaFactura, nombreMedico, descripcionTermino, estado, usuarioCajero, fechaDesde, fechaHasta, descripcionExamen, descripcionGrupo).DefaultView
+            dv = objFact.BuscarDiarioFacturacion(numero, nombreCompleto, fechaFactura, nombreMedico, descripcionTermino, estado, usuarioCajero, fechaDesde, fechaHasta, descripcionExamen, descripcionGrupo, codigoTipoClas).DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
             'dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -420,5 +426,14 @@
 
         E_Usuarios.lblForm.Text = "M_DiarioFacturacion"
         E_Usuarios.Show()
+    End Sub
+
+    Private Sub btnTipoClasificacion_Click(sender As Object, e As EventArgs) Handles btnTipoClasificacion.Click
+        M_TipoClasificacion.lbltipo.Text = "M_DiarioFacturacion"
+        M_TipoClasificacion.Show()
+    End Sub
+
+    Private Sub btnExcel_Click(sender As Object, e As EventArgs) Handles btnExcel.Click
+        M_Contratos.GridAExcel(dgbtabla)
     End Sub
 End Class

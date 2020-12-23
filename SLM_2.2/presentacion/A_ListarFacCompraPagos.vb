@@ -2,14 +2,16 @@
 
     Dim FactCompra As New ClsFacturaCompra
     Private Sub A_ListarFacCompraPagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        alternarColoFilasDatagridview(dtFacturasCompra)
+
         Try
+            alternarColoFilasDatagridview(dtFacturasCompra)
             'Cargar Facturas de Compra
             dtFacturasCompra.DataSource = FactCompra.listarFacturaCompraParaPago
 
         Catch ex As Exception
 
         End Try
+
     End Sub
 
     Private Sub dtFacturasCompra_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtFacturasCompra.CellDoubleClick
@@ -51,13 +53,31 @@
     End Sub
 
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
+        Try
+            With FactCompra
+                .Nro_Factura = txtBusqueda.Text
 
-        With FactCompra
-            .Nro_Factura = txtBusqueda.Text
+                dtFacturasCompra.DataSource = .BuscarFacturaXNro
 
-            dtFacturasCompra.DataSource = .BuscarFacturaXNro
+            End With
+        Catch ex As Exception
 
-        End With
+        End Try
 
+    End Sub
+
+    Private Sub txtCorrelativo_TextChanged(sender As Object, e As EventArgs) Handles txtCorrelativo.TextChanged
+        Try
+
+            With FactCompra
+                .Cod_Factura = Integer.Parse(txtCorrelativo.Text)
+
+                dtFacturasCompra.DataSource = .comprobarFactura
+
+            End With
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
