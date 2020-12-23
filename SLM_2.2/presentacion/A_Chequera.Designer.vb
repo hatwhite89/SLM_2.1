@@ -98,7 +98,6 @@ Partial Class A_Chequera
         Me.lblCodBanco.Size = New System.Drawing.Size(67, 13)
         Me.lblCodBanco.TabIndex = 17
         Me.lblCodBanco.Text = "lblCodBanco"
-        Me.lblCodBanco.Visible = False
         '
         'lblCodCuenta
         '
@@ -108,7 +107,6 @@ Partial Class A_Chequera
         Me.lblCodCuenta.Size = New System.Drawing.Size(70, 13)
         Me.lblCodCuenta.TabIndex = 16
         Me.lblCodCuenta.Text = "lblCodCuenta"
-        Me.lblCodCuenta.Visible = False
         '
         'Button1
         '

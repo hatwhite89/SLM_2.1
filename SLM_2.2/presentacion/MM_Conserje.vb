@@ -19,31 +19,34 @@
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Try
 
-            'registro de conserjes
+            Dim n As String = MsgBox("¿Desea guardar la tarea de conserje?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
 
-            With conserje
+                'registro de conserjes
 
-                .Cod_Empleado = Integer.Parse(txtCodEmpleado.Text)
-                .ruta_Origen = txtrutaOrigen.Text
-                .ruta_Destino = txtrutaDestino.Text
-                .Observaciones_ = txtObservaciones.Text
-                .Estado_ = "En Proceso"
+                With conserje
 
-                .fecha_Salida = dtpFechaSalida.Value
-                .hora_Salida = dtpHoraSalida.Value
+                    .Cod_Empleado = Integer.Parse(txtCodEmpleado.Text)
+                    .ruta_Origen = txtrutaOrigen.Text
+                    .ruta_Destino = txtrutaDestino.Text
+                    .Observaciones_ = txtObservaciones.Text
+                    .Estado_ = "En Proceso"
 
-                .fecha_Entrega = dtpFechaEntrega.Value
-                .hora_Entrega = dtpHoraEntrega.Value
+                    .fecha_Salida = dtpFechaSalida.Value
+                    .hora_Salida = dtpHoraSalida.Value
 
-                If .registrarNuevoConserje = 1 Then
-                    MsgBox("Se registró exitosamente.")
-                    limpiar()
-                    dgvData.DataSource = .listarConserjes
+                    .fecha_Entrega = dtpFechaEntrega.Value
+                    .hora_Entrega = dtpHoraEntrega.Value
 
-                End If
+                    If .registrarNuevoConserje = 1 Then
+                        MsgBox("Se registró exitosamente.")
+                        limpiar()
+                        dgvData.DataSource = .listarConserjes
 
-            End With
+                    End If
 
+                End With
+            End If
         Catch ex As Exception
 
             MsgBox("Hubo un error al registrar. " + ex.Message)
@@ -72,31 +75,33 @@
 
         Try
 
-            'registro de conserjes
+            Dim n As String = MsgBox("¿Desea modificar la tarea de conserje?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
 
-            With conserje
-                .Cod_Conserje = Integer.Parse(txtCod.Text)
-                .Cod_Empleado = Integer.Parse(txtCodEmpleado.Text)
-                .ruta_Origen = txtrutaOrigen.Text
-                .ruta_Destino = txtrutaDestino.Text
-                .Observaciones_ = txtObservaciones.Text
-                .Estado_ = "Entregado"
 
-                .fecha_Salida = dtpFechaSalida.Value
-                .hora_Salida = dtpHoraSalida.Value
+                With conserje
+                    .Cod_Conserje = Integer.Parse(txtCod.Text)
+                    .Cod_Empleado = Integer.Parse(txtCodEmpleado.Text)
+                    .ruta_Origen = txtrutaOrigen.Text
+                    .ruta_Destino = txtrutaDestino.Text
+                    .Observaciones_ = txtObservaciones.Text
+                    .Estado_ = "Entregado"
 
-                .fecha_Entrega = dtpFechaEntrega.Value
-                .hora_Entrega = dtpHoraEntrega.Value
+                    .fecha_Salida = dtpFechaSalida.Value
+                    .hora_Salida = dtpHoraSalida.Value
 
-                If .modificarConserje = 1 Then
-                    MsgBox("Se modificó exitosamente.")
-                    limpiar()
-                    dgvData.DataSource = .listarConserjes
+                    .fecha_Entrega = dtpFechaEntrega.Value
+                    .hora_Entrega = dtpHoraEntrega.Value
 
-                End If
+                    If .modificarConserje = 1 Then
+                        MsgBox("Se modificó exitosamente.")
+                        limpiar()
+                        dgvData.DataSource = .listarConserjes
 
-            End With
+                    End If
 
+                End With
+            End If
         Catch ex As Exception
 
             MsgBox("Hubo un error al modificar. " + ex.Message)

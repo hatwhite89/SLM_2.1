@@ -12,6 +12,20 @@
             If (dato <> "") Then
 
                 dtCheques.DataSource = cheque.listarChequesDisponibles(frmPagos.lblNombreBanco.Text)
+                dtCheques.Columns("codCheque").Visible = False
+                dtCheques.Columns("codChequera").Visible = False
+                dtCheques.Columns("monto").Visible = False
+                dtCheques.Columns("moneda").Visible = False
+                dtCheques.Columns("fechaReg").Visible = False
+                dtCheques.Columns("fechaVto").Visible = False
+                dtCheques.Columns("fechaAcreditacion").Visible = False
+                dtCheques.Columns("fechaRechazo").Visible = False
+                dtCheques.Columns("fechaCancelado").Visible = False
+                dtCheques.Columns("tipo").Visible = False
+                dtCheques.Columns("ctaOrigen").Visible = False
+                dtCheques.Columns("ctaTemporal").Visible = False
+                dtCheques.Columns("ctaDestino").Visible = False
+                dtCheques.Columns("codProveedor").Visible = False
 
             Else
 

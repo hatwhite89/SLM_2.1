@@ -100,7 +100,7 @@ Public Class ClsChequera
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "ID"
-        sqlpar.Value = ""
+        sqlpar.Value = 0
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar.Direction = ParameterDirection.Output
