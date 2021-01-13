@@ -65,6 +65,7 @@ Partial Class E_DetalleExamenes
         Me.lblform = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dtItem, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -503,6 +504,7 @@ Partial Class E_DetalleExamenes
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.lblform)
         Me.Panel1.Controls.Add(Me.btnModificar)
@@ -512,6 +514,17 @@ Partial Class E_DetalleExamenes
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(915, 46)
         Me.Panel1.TabIndex = 27
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(579, 11)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 27
+        Me.Button1.Text = "Unidades"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'E_DetalleExamenes
         '
@@ -584,4 +597,5 @@ Partial Class E_DetalleExamenes
     Friend WithEvents Label12 As Label
     Friend WithEvents lblform As Label
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Button1 As Button
 End Class

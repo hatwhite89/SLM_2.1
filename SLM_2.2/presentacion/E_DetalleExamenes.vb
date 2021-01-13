@@ -88,11 +88,16 @@
             txtCodExamen.Text = CStr(row("codItemExa"))
 
             Dim objItemDet As New ClsItemExamenDetalle
+
+            'se puede guardar si esta vacio.
+
             For index As Integer = 0 To dtResultados.Rows.Count - 2
                 With objItemDet
+
                     .codigoItemExamen_ = Convert.ToInt64(txtCodExamen.Text)
                     .Nombre_ = dtResultados.Rows(index).Cells(1).Value()
                     .codigoUnidad_ = dtResultados.Rows(index).Cells(2).Value()
+
                 End With
                 If objItemDet.RegistrarNuevoItemExamenDetalle() = 0 Then
                     MsgBox("Error al querer insertar el posible resultado.")
@@ -108,7 +113,6 @@
             MessageBox.Show("Error al guardar." + ex.Message)
 
         End Try
-
 
     End Sub
     Private Sub dtResultados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtResultados.CellClick
@@ -441,5 +445,13 @@
         'E_SubArea.Show()
         M_BuscarCapacitaciones.lblform.Text = "M_BuscarCapacitaciones"
         M_BuscarCapacitaciones.Show()
+    End Sub
+
+    Private Sub dtResultados_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles dtResultados.CellContentClick
+
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        E_Unidad.Show()
     End Sub
 End Class

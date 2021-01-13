@@ -28,9 +28,6 @@ Partial Class E_SubArea
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblform = New System.Windows.Forms.Label()
         Me.cmbxCodigoArea = New System.Windows.Forms.ComboBox()
-        Me.btnCrearNuevo = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.chkConsolidado = New System.Windows.Forms.CheckBox()
@@ -42,17 +39,20 @@ Partial Class E_SubArea
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnCrearNuevo = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.lblcantidad = New System.Windows.Forms.Label()
+        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnombreB = New System.Windows.Forms.Label()
-        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,52 +116,10 @@ Partial Class E_SubArea
         Me.cmbxCodigoArea.DropDownWidth = 180
         Me.cmbxCodigoArea.FormattingEnabled = True
         Me.cmbxCodigoArea.Location = New System.Drawing.Point(276, 22)
-        Me.cmbxCodigoArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbxCodigoArea.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbxCodigoArea.Name = "cmbxCodigoArea"
         Me.cmbxCodigoArea.Size = New System.Drawing.Size(100, 21)
         Me.cmbxCodigoArea.TabIndex = 164
-        '
-        'btnCrearNuevo
-        '
-        Me.btnCrearNuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCrearNuevo.BackColor = System.Drawing.Color.White
-        Me.btnCrearNuevo.FlatAppearance.BorderSize = 0
-        Me.btnCrearNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCrearNuevo.ForeColor = System.Drawing.Color.Black
-        Me.btnCrearNuevo.Location = New System.Drawing.Point(469, 13)
-        Me.btnCrearNuevo.Name = "btnCrearNuevo"
-        Me.btnCrearNuevo.Size = New System.Drawing.Size(75, 23)
-        Me.btnCrearNuevo.TabIndex = 16
-        Me.btnCrearNuevo.Text = "Crear Nuevo"
-        Me.btnCrearNuevo.UseVisualStyleBackColor = False
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
-        Me.btnModificar.FlatAppearance.BorderSize = 0
-        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.ForeColor = System.Drawing.Color.Black
-        Me.btnModificar.Location = New System.Drawing.Point(550, 13)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
-        Me.btnModificar.TabIndex = 15
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = False
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
-        Me.btnGuardar.FlatAppearance.BorderSize = 0
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.ForeColor = System.Drawing.Color.Black
-        Me.btnGuardar.Location = New System.Drawing.Point(631, 13)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
-        Me.btnGuardar.TabIndex = 14
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'txtCodigo
         '
@@ -258,6 +216,48 @@ Partial Class E_SubArea
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Area"
         '
+        'btnCrearNuevo
+        '
+        Me.btnCrearNuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCrearNuevo.BackColor = System.Drawing.Color.White
+        Me.btnCrearNuevo.FlatAppearance.BorderSize = 0
+        Me.btnCrearNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCrearNuevo.ForeColor = System.Drawing.Color.Black
+        Me.btnCrearNuevo.Location = New System.Drawing.Point(469, 13)
+        Me.btnCrearNuevo.Name = "btnCrearNuevo"
+        Me.btnCrearNuevo.Size = New System.Drawing.Size(75, 23)
+        Me.btnCrearNuevo.TabIndex = 16
+        Me.btnCrearNuevo.Text = "Crear Nuevo"
+        Me.btnCrearNuevo.UseVisualStyleBackColor = False
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
+        Me.btnModificar.FlatAppearance.BorderSize = 0
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.ForeColor = System.Drawing.Color.Black
+        Me.btnModificar.Location = New System.Drawing.Point(550, 13)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar.TabIndex = 15
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
+        Me.btnGuardar.FlatAppearance.BorderSize = 0
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.ForeColor = System.Drawing.Color.Black
+        Me.btnGuardar.Location = New System.Drawing.Point(631, 13)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.TabIndex = 14
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = False
+        '
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -278,6 +278,19 @@ Partial Class E_SubArea
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detalle Parametros"
         '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.Green
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button1.Location = New System.Drawing.Point(605, 17)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 121
+        Me.Button1.Text = "Excel"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
@@ -287,6 +300,21 @@ Partial Class E_SubArea
         Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
         Me.lblcantidad.TabIndex = 119
         Me.lblcantidad.Text = "000"
+        '
+        'btnRegresar
+        '
+        Me.btnRegresar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnRegresar.BackColor = System.Drawing.Color.Transparent
+        Me.btnRegresar.BackgroundImage = CType(resources.GetObject("btnRegresar.BackgroundImage"), System.Drawing.Image)
+        Me.btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnRegresar.FlatAppearance.BorderSize = 0
+        Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegresar.Location = New System.Drawing.Point(21, 358)
+        Me.btnRegresar.Name = "btnRegresar"
+        Me.btnRegresar.Size = New System.Drawing.Size(33, 37)
+        Me.btnRegresar.TabIndex = 15
+        Me.btnRegresar.UseVisualStyleBackColor = False
         '
         'dgbtabla
         '
@@ -300,7 +328,7 @@ Partial Class E_SubArea
         Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(10, 48)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
@@ -322,7 +350,7 @@ Partial Class E_SubArea
         'txtnombreB
         '
         Me.txtnombreB.Location = New System.Drawing.Point(134, 19)
-        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(447, 20)
@@ -337,19 +365,6 @@ Partial Class E_SubArea
         Me.lblnombreB.Size = New System.Drawing.Size(87, 13)
         Me.lblnombreB.TabIndex = 118
         Me.lblnombreB.Text = "Nombre Subárea"
-        '
-        'btnRegresar
-        '
-        Me.btnRegresar.BackColor = System.Drawing.Color.Transparent
-        Me.btnRegresar.BackgroundImage = CType(resources.GetObject("btnRegresar.BackgroundImage"), System.Drawing.Image)
-        Me.btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnRegresar.FlatAppearance.BorderSize = 0
-        Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegresar.Location = New System.Drawing.Point(21, 358)
-        Me.btnRegresar.Name = "btnRegresar"
-        Me.btnRegresar.Size = New System.Drawing.Size(33, 37)
-        Me.btnRegresar.TabIndex = 15
-        Me.btnRegresar.UseVisualStyleBackColor = False
         '
         'Panel1
         '
@@ -384,19 +399,6 @@ Partial Class E_SubArea
         Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
         Me.StatusStrip1.TabIndex = 124
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.Green
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button1.Location = New System.Drawing.Point(605, 17)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 121
-        Me.Button1.Text = "Excel"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'E_SubArea
         '

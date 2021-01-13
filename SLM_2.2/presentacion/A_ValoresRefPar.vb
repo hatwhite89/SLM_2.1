@@ -7,6 +7,7 @@
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
 
         Try
+
             If TabControl1.SelectedIndex = 1 Then
                 tab = 1
                 ' MessageBox.Show("Me seleccionaron " + tab)
@@ -22,6 +23,7 @@
                 btnModificar.Enabled = False
                 btnGuardar.Enabled = True
             End If
+
         Catch ex As Exception
             MsgBox("error en seleccion de tab")
         End Try
@@ -154,6 +156,10 @@
             Cargardatavalorref()
             Cargardatavalorreftxt()
 
+            'Limpiar campos al cargar
+            limpiarcampostab0()
+            limpiarcampostab1()
+
             If dtDataValoresRef.Columns.Contains("cod_ValorReferencia") = True And dtDataValorRefTexto.Columns.Contains("cod_ValorReferenciatxt") = True Then
 
                 'columnas valor de referencia
@@ -228,7 +234,9 @@
     End Sub
 
     Private Sub btnBuscarParametro_Click(sender As Object, e As EventArgs) Handles btnBuscarParametro.Click
+        A_ListadoParametros.lblFormulario.Text = "valorRef"
         A_ListadoParametros.ShowDialog()
+        'Modificar txt del llamado al formulario
 
         If txtParametro.BackColor = Color.Red Then
             txtParametro.BackColor = Color.White

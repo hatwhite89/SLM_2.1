@@ -802,7 +802,7 @@
     End Sub
 
     Private Sub PictureBox34_Click(sender As Object, e As EventArgs) Handles PictureBox34.Click
-        E_DetalleExamenes.ShowDialog()
+        E_DetalleExamenes.Show()
     End Sub
 
     Private Sub PictureBox33_Click(sender As Object, e As EventArgs) Handles PictureBox33.Click
