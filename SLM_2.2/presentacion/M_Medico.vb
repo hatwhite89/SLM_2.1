@@ -121,7 +121,7 @@
             e.Handled = False
         End If
 
-        txtnombreCompleto.Select(txtnombreCompleto.Text.Length, 0)
+        'txtnombreCompleto.Select(txtnombreCompleto.Text.Length, 0)
     End Sub
     Private Sub txtcodigoEspecialidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoEspecialidad.KeyPress
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then

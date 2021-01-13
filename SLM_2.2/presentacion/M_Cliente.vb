@@ -250,7 +250,7 @@ Public Class M_Cliente
         Else
             e.Handled = False
         End If
-        txtnombre1.Select(txtnombre1.Text.Length, 0)
+        'txtnombre1.Select(txtnombre1.Text.Length, 0)
     End Sub
     'Private Sub sinCaracteresYSimbolos(sender As Object, e As KeyPressEventArgs) Handles txtnombre2.KeyPress
     '    If Char.IsPunctuation(e.KeyChar) Or Char.IsDigit(e.KeyChar) Then
@@ -284,7 +284,7 @@ Public Class M_Cliente
         Else
             e.Handled = False
         End If
-        txtnombre2.Select(txtnombre2.Text.Length, 0)
+        'txtnombre2.Select(txtnombre2.Text.Length, 0)
     End Sub
 
     Private Sub txtapellido1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtapellido1.KeyPress
@@ -303,7 +303,7 @@ Public Class M_Cliente
         Else
             e.Handled = False
         End If
-        txtapellido1.Select(txtapellido1.Text.Length, 0)
+        'txtapellido1.Select(txtapellido1.Text.Length, 0)
     End Sub
     Private Sub txtapellido2_TextChanged(sender As Object, e As EventArgs) Handles txtapellido2.TextChanged
         txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
@@ -324,7 +324,7 @@ Public Class M_Cliente
         Else
             e.Handled = False
         End If
-        txtapellido2.Select(txtapellido2.Text.Length, 0)
+        'txtapellido2.Select(txtapellido2.Text.Length, 0)
     End Sub
     Private Sub btnguardarCliente_Click(sender As Object, e As EventArgs) Handles btnguardarCliente.Click
         Try

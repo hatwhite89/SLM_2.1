@@ -285,6 +285,7 @@
             col = New DataColumn("Medico")
             ds.Tables("HojaTrabajo").Columns.Add(col)
 
+            MsgBox("asigno la  parametros")
             Dim dt As New DataTable
             Dim row As DataRow
             Dim objItemDet As New ClsItemExamenDetalle
@@ -298,13 +299,14 @@
                 'dtResultados.Rows.Add(New String() {CStr(row("codigo")), CStr(row("nombre")), CStr(row("codigoUnidad")), CStr(row("unidad_codigo_breve"))})
             Next
 
+            MsgBox("asigno la estado")
             col = New DataColumn("Estado")
             'col.ReadOnly = True
             ds.Tables("HojaTrabajo").Columns.Add(col)
 
             'Asigna la creacion de la hoja de trabajo al dataset
             E_HojaTrabajo.ds = ds
-
+            MsgBox("asigno la tabla")
             'le asigno la tabla
             E_HojaTrabajo.dgvHojaTrab.DataSource = ds.Tables(0)
 
