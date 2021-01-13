@@ -28,14 +28,15 @@ Partial Class E_Unidad
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtFactorCantidad = New System.Windows.Forms.TextBox()
         Me.rtxtcomentario = New System.Windows.Forms.RichTextBox()
+        Me.lblcodigo = New System.Windows.Forms.Label()
+        Me.lblcomentario = New System.Windows.Forms.Label()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
-        Me.lblcodigo = New System.Windows.Forms.Label()
         Me.btncancelar = New System.Windows.Forms.Button()
-        Me.lblcomentario = New System.Windows.Forms.Label()
-        Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
@@ -44,7 +45,6 @@ Partial Class E_Unidad
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.gbxtipoObjeto.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -112,6 +112,37 @@ Partial Class E_Unidad
         Me.rtxtcomentario.TabIndex = 115
         Me.rtxtcomentario.Text = ""
         '
+        'lblcodigo
+        '
+        Me.lblcodigo.AutoSize = True
+        Me.lblcodigo.Location = New System.Drawing.Point(4, 15)
+        Me.lblcodigo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblcodigo.Name = "lblcodigo"
+        Me.lblcodigo.Size = New System.Drawing.Size(40, 13)
+        Me.lblcodigo.TabIndex = 41
+        Me.lblcodigo.Text = "Código"
+        '
+        'lblcomentario
+        '
+        Me.lblcomentario.AutoSize = True
+        Me.lblcomentario.Location = New System.Drawing.Point(287, 15)
+        Me.lblcomentario.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblcomentario.Name = "lblcomentario"
+        Me.lblcomentario.Size = New System.Drawing.Size(60, 13)
+        Me.lblcomentario.TabIndex = 39
+        Me.lblcomentario.Text = "Comentario"
+        '
+        'txtcodigo
+        '
+        Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtcodigo.Location = New System.Drawing.Point(48, 13)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtcodigo.MaxLength = 20
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(184, 20)
+        Me.txtcodigo.TabIndex = 40
+        Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'btnmodificar
         '
         Me.btnmodificar.BackColor = System.Drawing.Color.Yellow
@@ -154,16 +185,6 @@ Partial Class E_Unidad
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
         '
-        'lblcodigo
-        '
-        Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(4, 15)
-        Me.lblcodigo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblcodigo.Name = "lblcodigo"
-        Me.lblcodigo.Size = New System.Drawing.Size(40, 13)
-        Me.lblcodigo.TabIndex = 41
-        Me.lblcodigo.Text = "Código"
-        '
         'btncancelar
         '
         Me.btncancelar.BackColor = System.Drawing.Color.LightSalmon
@@ -177,27 +198,6 @@ Partial Class E_Unidad
         Me.btncancelar.TabIndex = 37
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
-        '
-        'lblcomentario
-        '
-        Me.lblcomentario.AutoSize = True
-        Me.lblcomentario.Location = New System.Drawing.Point(287, 15)
-        Me.lblcomentario.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblcomentario.Name = "lblcomentario"
-        Me.lblcomentario.Size = New System.Drawing.Size(60, 13)
-        Me.lblcomentario.TabIndex = 39
-        Me.lblcomentario.Text = "Comentario"
-        '
-        'txtcodigo
-        '
-        Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtcodigo.Location = New System.Drawing.Point(52, 13)
-        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtcodigo.MaxLength = 20
-        Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(180, 20)
-        Me.txtcodigo.TabIndex = 40
-        Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'gbxbusqueda
         '
@@ -219,6 +219,19 @@ Partial Class E_Unidad
         Me.gbxbusqueda.TabIndex = 118
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR UNIDAD"
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.Green
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button1.Location = New System.Drawing.Point(616, 18)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 116
+        Me.Button1.Text = "Excel"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'lblcantidad
         '
@@ -313,19 +326,6 @@ Partial Class E_Unidad
         Me.Label5.Size = New System.Drawing.Size(66, 20)
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "Unidad"
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.Green
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button1.Location = New System.Drawing.Point(616, 18)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 116
-        Me.Button1.Text = "Excel"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'E_Unidad
         '

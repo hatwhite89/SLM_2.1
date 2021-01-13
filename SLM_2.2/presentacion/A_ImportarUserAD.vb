@@ -75,12 +75,13 @@ Public Class A_ImportarUserAD
                 If dtUsuariosAD.Rows(a).Cells(0).Value = True Then
 
                     nombre = dtUsuariosAD.Rows(a).Cells(1).Value + " " + dtUsuariosAD.Rows(a).Cells(2).Value
-
+                    MsgBox(nombre)
                     With empleado 'with empleado
 
                         .NombreCompleto_ = nombre
                         dt = .CompararNombre()
                         row = dt.Rows(0)
+
                     End With 'with empleado fin
 
                     If row("codigo") > 0 Then ' validacion de existencia
@@ -99,8 +100,6 @@ Public Class A_ImportarUserAD
                     Else
                         With user
 
-
-
                             .Usuario_ = dtUsuariosAD.Rows(a).Cells(3).Value
                             .password_ = "#changepass#"
                             .Estad_o = 1
@@ -110,8 +109,6 @@ Public Class A_ImportarUserAD
                             .registrarNuevoUsuario()
 
                         End With
-
-
 
                     End If
                 End If

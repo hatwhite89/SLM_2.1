@@ -818,9 +818,6 @@ Module ModulosVarios
 
 
 
-
-
-
     '::::::::::::::: INGRESOS :::::::::::::
     Public Function VistaDeIngresos(fechaDesde As Date, fechaHasta As Date) As DataTable
 

@@ -73,6 +73,7 @@
                 numero += 1
                 rtxtdireccion4.Text = sinDobleEspacio(rtxtdireccion4.Text)
             End If
+
             If (numero > 0 And Trim(txtnombre.Text) <> "") Then
                 Dim objSede As New ClsSede
                 With objSede

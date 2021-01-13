@@ -51,7 +51,7 @@
                 Me.Close()
 
 
-            Else
+            ElseIf lblFormulario.Text = "valorRef" Then
 
                 Dim dt, dtunidad As New DataTable
                 Dim unidad As New ClsUnidad

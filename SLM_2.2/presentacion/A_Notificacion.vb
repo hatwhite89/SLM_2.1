@@ -57,7 +57,7 @@ Public Class A_Notificacion
             enviarMail(correoSalida, pass, puerto, sslOK, host, correoNoti, texto)
             'Mostrar ventana de alerta
             Form1.pbxNoti.Visible = True
-            '::::::::::::::::::::::::::::::::FIN DE ALERTA POR CORREO
+            ':::::::::::::::::::::::::::::::FIN DE ALERTA POR CORREO
 
             'INSERTAR ALERTA EN BD
             Dim nombre, descripcion As String
