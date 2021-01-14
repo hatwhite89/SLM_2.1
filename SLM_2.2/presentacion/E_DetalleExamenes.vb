@@ -300,7 +300,7 @@
             For index As Integer = 0 To dtResultados.Rows.Count - 2
                 If dtResultados.Rows(index).Cells(0).Value() = "" Then
                     'agrega
-                    MsgBox(dtResultados.Rows(index).Cells(1).Value())
+                    'MsgBox(dtResultados.Rows(index).Cells(1).Value())
                     With objItemDet
                         .codigoItemExamen_ = Convert.ToInt64(txtCodExamen.Text)
                         .Nombre_ = dtResultados.Rows(index).Cells(1).Value()
@@ -317,7 +317,7 @@
                         .Nombre_ = dtResultados.Rows(index).Cells(1).Value()
                         .codigoUnidad_ = dtResultados.Rows(index).Cells(2).Value()
                     End With
-                    MsgBox(dtResultados.Rows(index).Cells(1).Value())
+                    'MsgBox(dtResultados.Rows(index).Cells(1).Value())
                     If objItemDet.ModificarItemExamenDetalle() = 0 Then
                         MsgBox("Error al querer insertar el posible resultado.")
                     End If
@@ -364,7 +364,7 @@
                     M_Precio.txtcodigoItem.Text = txtCodExamen.Text
                     Me.Close()
                 End If
-            ElseIf (lblForm.Text = "M_DiarioFacturacion") Then
+            ElseIf (lblform.Text = "M_DiarioFacturacion") Then
                 If e.RowIndex >= 0 Then
                     n = MsgBox("¿Desea utilizar el examen en el diario de facturación?", MsgBoxStyle.YesNo)
                 End If
@@ -480,7 +480,7 @@
 
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) 
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         E_Unidad.Show()
     End Sub
 End Class

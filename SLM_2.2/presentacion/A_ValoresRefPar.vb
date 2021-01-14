@@ -199,6 +199,7 @@
 
             End If
 
+            Me.dtDataValorRefTexto.Columns("edaden").Visible = False
 
             If dtValoresRef.Columns.Contains("btnEliminar") = False Then
                 Dim btn As New DataGridViewButtonColumn()

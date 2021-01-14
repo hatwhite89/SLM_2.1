@@ -101,7 +101,7 @@ Partial Class A_ValoresRefPar
         Me.btnCrear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCrear.BackColor = System.Drawing.Color.White
         Me.btnCrear.Location = New System.Drawing.Point(344, 18)
-        Me.btnCrear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCrear.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(100, 28)
         Me.btnCrear.TabIndex = 0
@@ -113,7 +113,7 @@ Partial Class A_ValoresRefPar
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.Location = New System.Drawing.Point(560, 18)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(100, 28)
         Me.btnGuardar.TabIndex = 1
@@ -125,7 +125,7 @@ Partial Class A_ValoresRefPar
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.Location = New System.Drawing.Point(452, 18)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(100, 28)
         Me.btnModificar.TabIndex = 2
@@ -137,7 +137,7 @@ Partial Class A_ValoresRefPar
         Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCerrar.Location = New System.Drawing.Point(668, 18)
-        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(100, 28)
         Me.btnCerrar.TabIndex = 3
@@ -155,9 +155,9 @@ Partial Class A_ValoresRefPar
         Me.GroupBox2.Controls.Add(Me.btnGuardar)
         Me.GroupBox2.Controls.Add(Me.btnCrear)
         Me.GroupBox2.Location = New System.Drawing.Point(0, 1)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(781, 60)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
@@ -179,9 +179,9 @@ Partial Class A_ValoresRefPar
         Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Size = New System.Drawing.Size(745, 721)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Valores de Referencia Parámetros"
@@ -197,9 +197,9 @@ Partial Class A_ValoresRefPar
         Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Controls.Add(Me.dtDataValoresRef)
         Me.GroupBox3.Location = New System.Drawing.Point(8, 353)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Size = New System.Drawing.Size(727, 357)
         Me.GroupBox3.TabIndex = 1
         Me.GroupBox3.TabStop = False
@@ -208,7 +208,7 @@ Partial Class A_ValoresRefPar
         'txtBusqueda
         '
         Me.txtBusqueda.Location = New System.Drawing.Point(73, 30)
-        Me.txtBusqueda.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtBusqueda.Margin = New System.Windows.Forms.Padding(4)
         Me.txtBusqueda.Name = "txtBusqueda"
         Me.txtBusqueda.Size = New System.Drawing.Size(636, 22)
         Me.txtBusqueda.TabIndex = 2
@@ -233,7 +233,7 @@ Partial Class A_ValoresRefPar
         Me.dtDataValoresRef.BackgroundColor = System.Drawing.Color.White
         Me.dtDataValoresRef.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDataValoresRef.Location = New System.Drawing.Point(12, 64)
-        Me.dtDataValoresRef.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtDataValoresRef.Margin = New System.Windows.Forms.Padding(4)
         Me.dtDataValoresRef.Name = "dtDataValoresRef"
         Me.dtDataValoresRef.RowHeadersWidth = 51
         Me.dtDataValoresRef.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -259,9 +259,9 @@ Partial Class A_ValoresRefPar
         Me.GroupBox1.Controls.Add(Me.txtParametro)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 7)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(727, 338)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -270,7 +270,7 @@ Partial Class A_ValoresRefPar
         'btnBuscarParametro
         '
         Me.btnBuscarParametro.Location = New System.Drawing.Point(231, 26)
-        Me.btnBuscarParametro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBuscarParametro.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBuscarParametro.Name = "btnBuscarParametro"
         Me.btnBuscarParametro.Size = New System.Drawing.Size(36, 28)
         Me.btnBuscarParametro.TabIndex = 12
@@ -322,7 +322,7 @@ Partial Class A_ValoresRefPar
         Me.dtValoresRef.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column8, Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
         Me.dtValoresRef.GridColor = System.Drawing.Color.White
         Me.dtValoresRef.Location = New System.Drawing.Point(12, 140)
-        Me.dtValoresRef.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtValoresRef.Margin = New System.Windows.Forms.Padding(4)
         Me.dtValoresRef.Name = "dtValoresRef"
         Me.dtValoresRef.RowHeadersWidth = 51
         Me.dtValoresRef.Size = New System.Drawing.Size(699, 191)
@@ -376,7 +376,7 @@ Partial Class A_ValoresRefPar
         Me.cbxGenero.FormattingEnabled = True
         Me.cbxGenero.Items.AddRange(New Object() {"Ninguno", "M", "F"})
         Me.cbxGenero.Location = New System.Drawing.Point(89, 96)
-        Me.cbxGenero.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbxGenero.Margin = New System.Windows.Forms.Padding(4)
         Me.cbxGenero.Name = "cbxGenero"
         Me.cbxGenero.Size = New System.Drawing.Size(160, 24)
         Me.cbxGenero.TabIndex = 7
@@ -394,7 +394,7 @@ Partial Class A_ValoresRefPar
         'txtDescripcion
         '
         Me.txtDescripcion.Location = New System.Drawing.Point(89, 60)
-        Me.txtDescripcion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDescripcion.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDescripcion.MaxLength = 151
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(620, 22)
@@ -414,7 +414,7 @@ Partial Class A_ValoresRefPar
         '
         Me.txtUnidad.Enabled = False
         Me.txtUnidad.Location = New System.Drawing.Point(361, 28)
-        Me.txtUnidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUnidad.Margin = New System.Windows.Forms.Padding(4)
         Me.txtUnidad.Name = "txtUnidad"
         Me.txtUnidad.Size = New System.Drawing.Size(132, 22)
         Me.txtUnidad.TabIndex = 3
@@ -433,7 +433,7 @@ Partial Class A_ValoresRefPar
         '
         Me.txtParametro.Enabled = False
         Me.txtParametro.Location = New System.Drawing.Point(89, 28)
-        Me.txtParametro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtParametro.Margin = New System.Windows.Forms.Padding(4)
         Me.txtParametro.Name = "txtParametro"
         Me.txtParametro.Size = New System.Drawing.Size(132, 22)
         Me.txtParametro.TabIndex = 1
@@ -456,7 +456,7 @@ Partial Class A_ValoresRefPar
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Location = New System.Drawing.Point(15, 69)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(753, 750)
@@ -467,9 +467,9 @@ Partial Class A_ValoresRefPar
         Me.TabPage2.Controls.Add(Me.GroupBox5)
         Me.TabPage2.Controls.Add(Me.GroupBox4)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Size = New System.Drawing.Size(745, 721)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Valores de Referencia Texto"
@@ -485,9 +485,9 @@ Partial Class A_ValoresRefPar
         Me.GroupBox5.Controls.Add(Me.Label14)
         Me.GroupBox5.Controls.Add(Me.dtDataValorRefTexto)
         Me.GroupBox5.Location = New System.Drawing.Point(8, 373)
-        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox5.Size = New System.Drawing.Size(727, 337)
         Me.GroupBox5.TabIndex = 2
         Me.GroupBox5.TabStop = False
@@ -496,7 +496,7 @@ Partial Class A_ValoresRefPar
         'txtBuscarTXT
         '
         Me.txtBuscarTXT.Location = New System.Drawing.Point(73, 30)
-        Me.txtBuscarTXT.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtBuscarTXT.Margin = New System.Windows.Forms.Padding(4)
         Me.txtBuscarTXT.MaxLength = 149
         Me.txtBuscarTXT.Name = "txtBuscarTXT"
         Me.txtBuscarTXT.Size = New System.Drawing.Size(241, 22)
@@ -522,7 +522,7 @@ Partial Class A_ValoresRefPar
         Me.dtDataValorRefTexto.BackgroundColor = System.Drawing.Color.White
         Me.dtDataValorRefTexto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDataValorRefTexto.Location = New System.Drawing.Point(12, 64)
-        Me.dtDataValorRefTexto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtDataValorRefTexto.Margin = New System.Windows.Forms.Padding(4)
         Me.dtDataValorRefTexto.MultiSelect = False
         Me.dtDataValorRefTexto.Name = "dtDataValorRefTexto"
         Me.dtDataValorRefTexto.RowHeadersWidth = 51
@@ -554,9 +554,9 @@ Partial Class A_ValoresRefPar
         Me.GroupBox4.Controls.Add(Me.txtCod)
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Location = New System.Drawing.Point(8, 7)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Size = New System.Drawing.Size(727, 358)
         Me.GroupBox4.TabIndex = 0
         Me.GroupBox4.TabStop = False
@@ -565,7 +565,7 @@ Partial Class A_ValoresRefPar
         'btnBuscarParametro2
         '
         Me.btnBuscarParametro2.Location = New System.Drawing.Point(473, 26)
-        Me.btnBuscarParametro2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBuscarParametro2.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBuscarParametro2.Name = "btnBuscarParametro2"
         Me.btnBuscarParametro2.Size = New System.Drawing.Size(37, 28)
         Me.btnBuscarParametro2.TabIndex = 17
@@ -582,7 +582,7 @@ Partial Class A_ValoresRefPar
         Me.dtDetalleTexto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtDetalleTexto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column6, Me.Column7})
         Me.dtDetalleTexto.Location = New System.Drawing.Point(8, 158)
-        Me.dtDetalleTexto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtDetalleTexto.Margin = New System.Windows.Forms.Padding(4)
         Me.dtDetalleTexto.Name = "dtDetalleTexto"
         Me.dtDetalleTexto.RowHeadersWidth = 51
         Me.dtDetalleTexto.Size = New System.Drawing.Size(711, 185)
@@ -608,7 +608,7 @@ Partial Class A_ValoresRefPar
         Me.cbxGenero2.FormattingEnabled = True
         Me.cbxGenero2.Items.AddRange(New Object() {"Ninguno", "M", "F"})
         Me.cbxGenero2.Location = New System.Drawing.Point(109, 124)
-        Me.cbxGenero2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbxGenero2.Margin = New System.Windows.Forms.Padding(4)
         Me.cbxGenero2.Name = "cbxGenero2"
         Me.cbxGenero2.Size = New System.Drawing.Size(160, 24)
         Me.cbxGenero2.TabIndex = 15
@@ -626,11 +626,13 @@ Partial Class A_ValoresRefPar
         'txtEdaden
         '
         Me.txtEdaden.Location = New System.Drawing.Point(620, 92)
-        Me.txtEdaden.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtEdaden.Margin = New System.Windows.Forms.Padding(4)
         Me.txtEdaden.MaxLength = 9
         Me.txtEdaden.Name = "txtEdaden"
         Me.txtEdaden.Size = New System.Drawing.Size(97, 22)
         Me.txtEdaden.TabIndex = 13
+        Me.txtEdaden.Text = "0"
+        Me.txtEdaden.Visible = False
         '
         'Label12
         '
@@ -641,11 +643,12 @@ Partial Class A_ValoresRefPar
         Me.Label12.Size = New System.Drawing.Size(62, 17)
         Me.Label12.TabIndex = 12
         Me.Label12.Text = "Edad En"
+        Me.Label12.Visible = False
         '
         'txtEdadhasta
         '
         Me.txtEdadhasta.Location = New System.Drawing.Point(368, 92)
-        Me.txtEdadhasta.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtEdadhasta.Margin = New System.Windows.Forms.Padding(4)
         Me.txtEdadhasta.MaxLength = 4
         Me.txtEdadhasta.Name = "txtEdadhasta"
         Me.txtEdadhasta.Size = New System.Drawing.Size(99, 22)
@@ -664,7 +667,7 @@ Partial Class A_ValoresRefPar
         'txtEdadde
         '
         Me.txtEdadde.Location = New System.Drawing.Point(109, 92)
-        Me.txtEdadde.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtEdadde.Margin = New System.Windows.Forms.Padding(4)
         Me.txtEdadde.MaxLength = 4
         Me.txtEdadde.Name = "txtEdadde"
         Me.txtEdadde.Size = New System.Drawing.Size(91, 22)
@@ -683,7 +686,7 @@ Partial Class A_ValoresRefPar
         'txtDescripcion2
         '
         Me.txtDescripcion2.Location = New System.Drawing.Point(109, 60)
-        Me.txtDescripcion2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDescripcion2.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDescripcion2.MaxLength = 149
         Me.txtDescripcion2.Name = "txtDescripcion2"
         Me.txtDescripcion2.Size = New System.Drawing.Size(608, 22)
@@ -703,7 +706,7 @@ Partial Class A_ValoresRefPar
         '
         Me.txtunidad2.Enabled = False
         Me.txtunidad2.Location = New System.Drawing.Point(617, 28)
-        Me.txtunidad2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtunidad2.Margin = New System.Windows.Forms.Padding(4)
         Me.txtunidad2.Name = "txtunidad2"
         Me.txtunidad2.Size = New System.Drawing.Size(100, 22)
         Me.txtunidad2.TabIndex = 5
@@ -722,7 +725,7 @@ Partial Class A_ValoresRefPar
         '
         Me.txtParametro2.Enabled = False
         Me.txtParametro2.Location = New System.Drawing.Point(335, 28)
-        Me.txtParametro2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtParametro2.Margin = New System.Windows.Forms.Padding(4)
         Me.txtParametro2.Name = "txtParametro2"
         Me.txtParametro2.Size = New System.Drawing.Size(132, 22)
         Me.txtParametro2.TabIndex = 3
@@ -741,7 +744,7 @@ Partial Class A_ValoresRefPar
         '
         Me.txtCod.Enabled = False
         Me.txtCod.Location = New System.Drawing.Point(109, 28)
-        Me.txtCod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCod.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCod.Name = "txtCod"
         Me.txtCod.Size = New System.Drawing.Size(132, 22)
         Me.txtCod.TabIndex = 1
@@ -778,7 +781,7 @@ Partial Class A_ValoresRefPar
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "A_ValoresRefPar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Valores de Referencia Parámetro"
