@@ -190,10 +190,11 @@ Partial Class Form1
         Me.lblHora = New System.Windows.Forms.Label()
         Me.bntCerrar = New System.Windows.Forms.Button()
         Me.lblCajero = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox55 = New System.Windows.Forms.PictureBox()
         Me.pbxNoti = New System.Windows.Forms.PictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pbxItemExamen = New System.Windows.Forms.PictureBox()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.tcMenu.SuspendLayout()
@@ -321,6 +322,7 @@ Partial Class Form1
         Me.Panel9.SuspendLayout()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxItemExamen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -589,6 +591,7 @@ Partial Class Form1
         'tpPrecios
         '
         Me.tpPrecios.BackColor = System.Drawing.Color.AliceBlue
+        Me.tpPrecios.Controls.Add(Me.pbxItemExamen)
         Me.tpPrecios.Controls.Add(Me.btnPrecio)
         Me.tpPrecios.Controls.Add(Me.btnListaPrecio)
         Me.tpPrecios.Controls.Add(Me.btnDescuento)
@@ -815,7 +818,7 @@ Partial Class Form1
         Me.TabControl1.Location = New System.Drawing.Point(1, 35)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(584, 498)
+        Me.TabControl1.Size = New System.Drawing.Size(583, 498)
         Me.TabControl1.TabIndex = 6
         '
         'TabPage1
@@ -839,7 +842,7 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(576, 472)
+        Me.TabPage1.Size = New System.Drawing.Size(575, 472)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Facturación"
         '
@@ -1368,7 +1371,7 @@ Partial Class Form1
         Me.Button11.FlatAppearance.BorderSize = 0
         Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button11.ForeColor = System.Drawing.Color.White
-        Me.Button11.Location = New System.Drawing.Point(524, 8)
+        Me.Button11.Location = New System.Drawing.Point(523, 8)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(55, 26)
         Me.Button11.TabIndex = 5
@@ -1383,9 +1386,9 @@ Partial Class Form1
         Me.PanelFactura.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.PanelFactura.Controls.Add(Me.Panel3)
         Me.PanelFactura.Controls.Add(Me.TabControl1)
-        Me.PanelFactura.Location = New System.Drawing.Point(122, 59)
+        Me.PanelFactura.Location = New System.Drawing.Point(123, 59)
         Me.PanelFactura.Name = "PanelFactura"
-        Me.PanelFactura.Size = New System.Drawing.Size(585, 547)
+        Me.PanelFactura.Size = New System.Drawing.Size(584, 547)
         Me.PanelFactura.TabIndex = 7
         Me.PanelFactura.Visible = False
         '
@@ -1399,7 +1402,7 @@ Partial Class Form1
         Me.Panel3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Panel3.Location = New System.Drawing.Point(1, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(584, 37)
+        Me.Panel3.Size = New System.Drawing.Size(583, 37)
         Me.Panel3.TabIndex = 10
         '
         'Label4
@@ -1421,9 +1424,9 @@ Partial Class Form1
         Me.PanelTalentoHumano.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.PanelTalentoHumano.Controls.Add(Me.Panel5)
         Me.PanelTalentoHumano.Controls.Add(Me.TabControl4)
-        Me.PanelTalentoHumano.Location = New System.Drawing.Point(122, 59)
+        Me.PanelTalentoHumano.Location = New System.Drawing.Point(123, 59)
         Me.PanelTalentoHumano.Name = "PanelTalentoHumano"
-        Me.PanelTalentoHumano.Size = New System.Drawing.Size(585, 549)
+        Me.PanelTalentoHumano.Size = New System.Drawing.Size(584, 549)
         Me.PanelTalentoHumano.TabIndex = 8
         Me.PanelTalentoHumano.Visible = False
         '
@@ -1437,7 +1440,7 @@ Partial Class Form1
         Me.Panel5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(584, 37)
+        Me.Panel5.Size = New System.Drawing.Size(583, 37)
         Me.Panel5.TabIndex = 11
         '
         'Label3
@@ -1458,7 +1461,7 @@ Partial Class Form1
         Me.btnCerrarTalentoHumano.FlatAppearance.BorderSize = 0
         Me.btnCerrarTalentoHumano.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrarTalentoHumano.ForeColor = System.Drawing.Color.White
-        Me.btnCerrarTalentoHumano.Location = New System.Drawing.Point(527, 9)
+        Me.btnCerrarTalentoHumano.Location = New System.Drawing.Point(526, 9)
         Me.btnCerrarTalentoHumano.Name = "btnCerrarTalentoHumano"
         Me.btnCerrarTalentoHumano.Size = New System.Drawing.Size(55, 26)
         Me.btnCerrarTalentoHumano.TabIndex = 5
@@ -1474,7 +1477,7 @@ Partial Class Form1
         Me.TabControl4.Location = New System.Drawing.Point(0, 37)
         Me.TabControl4.Name = "TabControl4"
         Me.TabControl4.SelectedIndex = 0
-        Me.TabControl4.Size = New System.Drawing.Size(586, 496)
+        Me.TabControl4.Size = New System.Drawing.Size(585, 496)
         Me.TabControl4.TabIndex = 6
         '
         'TabPage9
@@ -1500,7 +1503,7 @@ Partial Class Form1
         Me.TabPage9.Location = New System.Drawing.Point(4, 22)
         Me.TabPage9.Name = "TabPage9"
         Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage9.Size = New System.Drawing.Size(578, 470)
+        Me.TabPage9.Size = New System.Drawing.Size(577, 470)
         Me.TabPage9.TabIndex = 0
         Me.TabPage9.Text = "Talento Humano"
         '
@@ -2320,18 +2323,6 @@ Partial Class Form1
         Me.lblCajero.Text = "labelCajero"
         Me.lblCajero.Visible = False
         '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Panel1.Location = New System.Drawing.Point(131, 125)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(546, 422)
-        Me.Panel1.TabIndex = 10
-        '
         'PictureBox55
         '
         Me.PictureBox55.Image = CType(resources.GetObject("PictureBox55.Image"), System.Drawing.Image)
@@ -2367,6 +2358,28 @@ Partial Class Form1
         Me.Button2.TabIndex = 63
         Me.Button2.Text = "Cerrar Sesión"
         Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Panel1.Location = New System.Drawing.Point(131, 125)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(546, 422)
+        Me.Panel1.TabIndex = 10
+        '
+        'pbxItemExamen
+        '
+        Me.pbxItemExamen.Image = Global.SLM_2._2.My.Resources.Resources.examenes_61
+        Me.pbxItemExamen.Location = New System.Drawing.Point(9, 150)
+        Me.pbxItemExamen.Name = "pbxItemExamen"
+        Me.pbxItemExamen.Size = New System.Drawing.Size(93, 115)
+        Me.pbxItemExamen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbxItemExamen.TabIndex = 47
+        Me.pbxItemExamen.TabStop = False
         '
         'Form1
         '
@@ -2538,6 +2551,7 @@ Partial Class Form1
         Me.Panel9.PerformLayout()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxItemExamen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2581,7 +2595,6 @@ Partial Class Form1
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents btnPaciente As Button
     Friend WithEvents PanelFactura As Panel
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents btnSistema As Button
     Friend WithEvents btnDepreciacion As Button
     Friend WithEvents btnTalentoHumano As Button
@@ -2719,4 +2732,6 @@ Partial Class Form1
     Friend WithEvents btnMedico2 As PictureBox
     Friend WithEvents btnPaciente2 As PictureBox
     Friend WithEvents Button2 As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents pbxItemExamen As PictureBox
 End Class

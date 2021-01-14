@@ -603,7 +603,7 @@
         End Try
     End Sub
 
-    Private Sub Form1_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+    Private Sub Form1_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
 
         End
 
@@ -1290,6 +1290,14 @@
 
             M_InicioSesion.Show()
             Me.Hide()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub pbxItemExamen_Click(sender As Object, e As EventArgs) Handles pbxItemExamen.Click
+        Try
+            E_DetalleExamenes.Show()
         Catch ex As Exception
 
         End Try
