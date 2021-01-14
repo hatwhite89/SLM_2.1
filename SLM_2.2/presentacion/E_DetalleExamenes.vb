@@ -37,10 +37,10 @@
 
         Try
             'Ingreso de nuevo registro
-            If (dtResultados.Rows.Count <= 1) Then
-                MsgBox("Debe ingresar un resultado de examen por lo menos.")
-                Exit Sub
-            End If
+            'If (dtResultados.Rows.Count <= 1) Then
+            '    MsgBox("Debe ingresar un resultado de examen por lo menos.")
+            '    Exit Sub
+            'End If
             If (Trim(txtCodBreve.Text) = "") Then
                 MsgBox("Debe ingresar el código breve.")
                 Exit Sub
@@ -49,10 +49,10 @@
                 MsgBox("Debe ingresar o seleccionar el grupo de examen.")
                 Exit Sub
             End If
-            If (Trim(txtCodigoSubArea.Text) = "") Then
-                MsgBox("Debe seleccionar la subárea que pertenece el item.")
-                Exit Sub
-            End If
+            'If (Trim(txtCodigoSubArea.Text) = "") Then
+            '    MsgBox("Debe seleccionar la subárea que pertenece el item.")
+            '    Exit Sub
+            'End If
             If (Trim(txtDescripcion.Text) = "") Then
                 MsgBox("Debe ingresar una descripción del item facturable.")
                 Exit Sub
@@ -72,7 +72,13 @@
                 .Abreviatur_a = txtAbreviatura.Text
                 .Comentari_o = txtComentario.Text
                 .Estad_o = chkEstado.Checked
-                .codigoSubArea_ = txtCodigoSubArea.Text
+
+                If Trim(txtCodigoSubArea.Text) = "" Then
+                    .codigoSubArea_ = 0
+                Else
+                    .codigoSubArea_ = txtCodigoSubArea.Text
+
+                End If
 
                 If .registrarNuevoItemExamen() = 0 Then
                     MsgBox("Error al querer insertar el item.")
@@ -219,8 +225,6 @@
                 btn.UseColumnTextForButtonValue = True
             End If
 
-
-
             btnCrear.Enabled = False
             btnModificar.Enabled = False
 
@@ -233,10 +237,10 @@
 
         Try
             'Modificacion de nuevo registro
-            If (dtResultados.Rows.Count <= 1) Then
-                MsgBox("Debe ingresar un resultado de examen por lo menos.")
-                Exit Sub
-            End If
+            'If (dtResultados.Rows.Count <= 1) Then
+            '    MsgBox("Debe ingresar un resultado de examen por lo menos.")
+            '    Exit Sub
+            'End If
             If (Trim(txtCodBreve.Text) = "") Then
                 MsgBox("Debe ingresar el código breve.")
                 Exit Sub
@@ -245,10 +249,10 @@
                 MsgBox("Debe ingresar o seleccionar el grupo de examen.")
                 Exit Sub
             End If
-            If (Trim(txtCodigoSubArea.Text) = "") Then
-                MsgBox("Debe seleccionar la subárea que pertenece el item.")
-                Exit Sub
-            End If
+            'If (Trim(txtCodigoSubArea.Text) = "") Then
+            '    MsgBox("Debe seleccionar la subárea que pertenece el item.")
+            '    Exit Sub
+            'End If
             If (Trim(txtDescripcion.Text) = "") Then
                 MsgBox("Debe ingresar una descripción del item facturable.")
                 Exit Sub
@@ -270,8 +274,13 @@
                 .Abreviatur_a = txtAbreviatura.Text
                 .Comentari_o = txtComentario.Text
                 .Estad_o = chkEstado.Checked
-                .codigoSubArea_ = txtCodigoSubArea.Text
 
+                If Trim(txtCodigoSubArea.Text) = "" Then
+                    .codigoSubArea_ = 0
+                Else
+                    .codigoSubArea_ = txtCodigoSubArea.Text
+
+                End If
                 If .modificarItemExamen() = 0 Then
                     MsgBox("Error al querer actualizar el item.")
                     Exit Sub
