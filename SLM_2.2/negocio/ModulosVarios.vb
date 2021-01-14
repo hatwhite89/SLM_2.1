@@ -435,6 +435,13 @@ Module ModulosVarios
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnPagos.Enabled = True
                                                 End If
+                                            ElseIf i = 20 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    Form1.pbxItemExamen.Enabled = True
+                                                Else
+                                                    Form1.pbxItemExamen.Enabled = False
+
+                                                End If
                                             End If 'if conteo
 
                                         Next

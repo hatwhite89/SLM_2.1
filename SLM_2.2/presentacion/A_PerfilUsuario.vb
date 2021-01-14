@@ -527,6 +527,7 @@
         dtContabilidad.Rows.Add("", "Depositos", False, "")
         dtContabilidad.Rows.Add("", "Factura Compras", False, "")
         dtContabilidad.Rows.Add("", "Pagos", False, "")
+        dtContabilidad.Rows.Add("", "Item Exámenes", False, "")
 
         'Procesos de Sistema
         dtSistema.Rows.Add("", "Usuarios", False, "")
