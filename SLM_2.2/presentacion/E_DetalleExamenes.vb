@@ -129,12 +129,12 @@
                     E_ListarUnidades.lblbandera.Text = 0
                     E_ListarUnidades.lblcodeItemExamenDet.Text = Me.dtResultados.Rows(e.RowIndex).Cells(0).Value().ToString()
                     E_ListarUnidades.Show()
-                ElseIf e.ColumnIndex = 4 And Me.dtResultados.Rows(e.RowIndex).Cells(0).Value() = "" Then
+                ElseIf e.ColumnIndex = 5 And Me.dtResultados.Rows(e.RowIndex).Cells(0).Value() = "" Then
                     Dim n As String = MsgBox("¿Desea eliminar el resultado del examen?", MsgBoxStyle.YesNo, "Validación")
                     If n = vbYes Then
                         dtResultados.Rows.Remove(dtResultados.Rows(e.RowIndex.ToString))
                     End If
-                ElseIf e.ColumnIndex = 4 And Me.dtResultados.Rows(e.RowIndex).Cells(0).Value() <> "" Then
+                ElseIf e.ColumnIndex = 5 And Me.dtResultados.Rows(e.RowIndex).Cells(0).Value() <> "" Then
                     Dim n As String = MsgBox("¿Desea eliminar el resultado del examen?", MsgBoxStyle.YesNo, "Validación")
                     If n = vbYes Then
                         codigoItemDetalle.Add(Me.dtResultados.Rows(e.RowIndex).Cells(0).Value())
@@ -201,6 +201,15 @@
             dtItem.DataSource = Item.listarItemExamen
 
             'agregar boton
+            If dtResultados.Columns.Contains("btnValorRef") = False Then
+                Dim btn As New DataGridViewButtonColumn()
+                dtResultados.Columns.Add(btn)
+                btn.HeaderText = "V. Ref"
+                btn.Text = "Valor Ref."
+                btn.Name = "btnValor"
+                btn.UseColumnTextForButtonValue = True
+            End If
+
             If dtResultados.Columns.Contains("btnEliminar") = False Then
                 Dim btn As New DataGridViewButtonColumn()
                 dtResultados.Columns.Add(btn)
@@ -209,6 +218,8 @@
                 btn.Name = "btnEliminar"
                 btn.UseColumnTextForButtonValue = True
             End If
+
+
 
             btnCrear.Enabled = False
             btnModificar.Enabled = False

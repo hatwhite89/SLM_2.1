@@ -183,7 +183,6 @@
         dtpDesde.Value = DateTime.Now
         dtpHasta.Value = DateTime.Now
 
-
     End Sub
 
     Private Sub A_Informes_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
