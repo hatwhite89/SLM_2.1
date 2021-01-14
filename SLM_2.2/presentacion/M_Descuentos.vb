@@ -30,7 +30,7 @@
         dv = objDesc.SeleccionarDescuento.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
     End Sub
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         limpiar()
@@ -68,12 +68,12 @@
                 End With
 
                 If objDesc.RegistrarNuevoDescuento() = 1 Then
-                    MsgBox("Registrado correctamente.")
+                    MsgBox("Registrado correctamente.", MsgBoxStyle.Information)
 
                     dv = objDesc.SeleccionarDescuento.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
-                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
                     limpiar()
                 Else
@@ -105,12 +105,12 @@
                 End With
 
                 If objDesc.ModificarDescuento() = 1 Then
-                    MsgBox("Modificado correctamente.")
+                    MsgBox("Modificado correctamente.", MsgBoxStyle.Information)
 
                     dv = objDesc.SeleccionarDescuento.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
-                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
                     limpiar()
                 Else

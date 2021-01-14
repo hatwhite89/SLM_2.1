@@ -29,7 +29,7 @@
         Dim dv As DataView = objCategoria.SeleccionarCategoria.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -237,12 +237,12 @@
                 Dim dv As DataView = objCategoria.BuscarCategoria.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             Else
                 Dim dv As DataView = objCategoria.SeleccionarCategoria.DefaultView
                 dgbtabla.DataSource = dv
                 lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
             End If
 
         Catch ex As Exception

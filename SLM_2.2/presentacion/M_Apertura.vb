@@ -33,7 +33,7 @@
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         If Trim(txtFondo.Text) <> "" And Trim(lblcodeMaquinaLocal.Text) <> "" Then
             Try
-                Dim fecha As Date = txtHora.Text + txtFecha.Text
+                Dim fecha As Date = txtHora.Text + " " + txtFecha.Text
                 Dim objAper As New ClsApertura
                 With objAper
                     .codigoMaquinaLocal_ = lblcodeMaquinaLocal.Text

@@ -139,6 +139,9 @@
         'Me.Width = 687
         'Me.Height = 725
         deshabilitar()
+        alternarColoFilasDatagridview(dgbtabla)
+
+        Me.dgbtabla.Columns("codigoListaPrecios").Visible = False
 
     End Sub
 
