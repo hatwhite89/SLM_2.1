@@ -57,6 +57,15 @@ Partial Class M_Sede
         Me.lblnombreB = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label62 = New System.Windows.Forms.Label()
+        Me.Label61 = New System.Windows.Forms.Label()
+        Me.Label60 = New System.Windows.Forms.Label()
+        Me.Label59 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,6 +78,15 @@ Partial Class M_Sede
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.Label62)
+        Me.GroupBox1.Controls.Add(Me.Label61)
+        Me.GroupBox1.Controls.Add(Me.Label60)
+        Me.GroupBox1.Controls.Add(Me.Label59)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.lblform)
         Me.GroupBox1.Controls.Add(Me.lbldireccion4)
@@ -100,7 +118,7 @@ Partial Class M_Sede
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(679, 245)
+        Me.Button1.Location = New System.Drawing.Point(679, 263)
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
@@ -112,7 +130,7 @@ Partial Class M_Sede
         'lblform
         '
         Me.lblform.AutoSize = True
-        Me.lblform.Location = New System.Drawing.Point(365, 22)
+        Me.lblform.Location = New System.Drawing.Point(365, 37)
         Me.lblform.Name = "lblform"
         Me.lblform.Size = New System.Drawing.Size(51, 17)
         Me.lblform.TabIndex = 140
@@ -122,7 +140,7 @@ Partial Class M_Sede
         'lbldireccion4
         '
         Me.lbldireccion4.AutoSize = True
-        Me.lbldireccion4.Location = New System.Drawing.Point(47, 219)
+        Me.lbldireccion4.Location = New System.Drawing.Point(47, 237)
         Me.lbldireccion4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbldireccion4.Name = "lbldireccion4"
         Me.lbldireccion4.Size = New System.Drawing.Size(79, 17)
@@ -133,7 +151,7 @@ Partial Class M_Sede
         '
         Me.txttelefono.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txttelefono.Location = New System.Drawing.Point(656, 138)
+        Me.txttelefono.Location = New System.Drawing.Point(656, 156)
         Me.txttelefono.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txttelefono.MaxLength = 20
         Me.txttelefono.Name = "txttelefono"
@@ -144,7 +162,7 @@ Partial Class M_Sede
         'lbltelefono
         '
         Me.lbltelefono.AutoSize = True
-        Me.lbltelefono.Location = New System.Drawing.Point(584, 142)
+        Me.lbltelefono.Location = New System.Drawing.Point(584, 160)
         Me.lbltelefono.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbltelefono.Name = "lbltelefono"
         Me.lbltelefono.Size = New System.Drawing.Size(64, 17)
@@ -154,7 +172,7 @@ Partial Class M_Sede
         'lblcorreo
         '
         Me.lblcorreo.AutoSize = True
-        Me.lblcorreo.Location = New System.Drawing.Point(597, 97)
+        Me.lblcorreo.Location = New System.Drawing.Point(597, 115)
         Me.lblcorreo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcorreo.Name = "lblcorreo"
         Me.lblcorreo.Size = New System.Drawing.Size(51, 17)
@@ -164,7 +182,7 @@ Partial Class M_Sede
         'lblcontacto
         '
         Me.lblcontacto.AutoSize = True
-        Me.lblcontacto.Location = New System.Drawing.Point(584, 52)
+        Me.lblcontacto.Location = New System.Drawing.Point(584, 70)
         Me.lblcontacto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcontacto.Name = "lblcontacto"
         Me.lblcontacto.Size = New System.Drawing.Size(64, 17)
@@ -175,7 +193,7 @@ Partial Class M_Sede
         '
         Me.txtcontacto.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtcontacto.Location = New System.Drawing.Point(656, 49)
+        Me.txtcontacto.Location = New System.Drawing.Point(656, 67)
         Me.txtcontacto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcontacto.MaxLength = 80
         Me.txtcontacto.Name = "txtcontacto"
@@ -187,7 +205,7 @@ Partial Class M_Sede
         '
         Me.txtcorreo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtcorreo.Location = New System.Drawing.Point(656, 95)
+        Me.txtcorreo.Location = New System.Drawing.Point(656, 113)
         Me.txtcorreo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcorreo.MaxLength = 80
         Me.txtcorreo.Name = "txtcorreo"
@@ -197,7 +215,7 @@ Partial Class M_Sede
         '
         'rtxtdireccion4
         '
-        Me.rtxtdireccion4.Location = New System.Drawing.Point(133, 210)
+        Me.rtxtdireccion4.Location = New System.Drawing.Point(133, 228)
         Me.rtxtdireccion4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rtxtdireccion4.MaxLength = 200
         Me.rtxtdireccion4.Name = "rtxtdireccion4"
@@ -207,7 +225,7 @@ Partial Class M_Sede
         '
         'rtxtdireccion3
         '
-        Me.rtxtdireccion3.Location = New System.Drawing.Point(133, 167)
+        Me.rtxtdireccion3.Location = New System.Drawing.Point(133, 185)
         Me.rtxtdireccion3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rtxtdireccion3.MaxLength = 200
         Me.rtxtdireccion3.Name = "rtxtdireccion3"
@@ -217,7 +235,7 @@ Partial Class M_Sede
         '
         'rtxtdireccion2
         '
-        Me.rtxtdireccion2.Location = New System.Drawing.Point(133, 124)
+        Me.rtxtdireccion2.Location = New System.Drawing.Point(133, 142)
         Me.rtxtdireccion2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rtxtdireccion2.MaxLength = 200
         Me.rtxtdireccion2.Name = "rtxtdireccion2"
@@ -228,7 +246,7 @@ Partial Class M_Sede
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(75, 28)
+        Me.lblcodigo.Location = New System.Drawing.Point(75, 43)
         Me.lblcodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcodigo.Name = "lblcodigo"
         Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
@@ -238,7 +256,7 @@ Partial Class M_Sede
         'lblnombre
         '
         Me.lblnombre.AutoSize = True
-        Me.lblnombre.Location = New System.Drawing.Point(68, 53)
+        Me.lblnombre.Location = New System.Drawing.Point(68, 71)
         Me.lblnombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblnombre.Name = "lblnombre"
         Me.lblnombre.Size = New System.Drawing.Size(58, 17)
@@ -247,7 +265,7 @@ Partial Class M_Sede
         '
         'txtnombre
         '
-        Me.txtnombre.Location = New System.Drawing.Point(133, 53)
+        Me.txtnombre.Location = New System.Drawing.Point(133, 71)
         Me.txtnombre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombre.MaxLength = 80
         Me.txtnombre.Name = "txtnombre"
@@ -257,7 +275,7 @@ Partial Class M_Sede
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(133, 25)
+        Me.txtcodigo.Location = New System.Drawing.Point(133, 40)
         Me.txtcodigo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.ReadOnly = True
@@ -268,7 +286,7 @@ Partial Class M_Sede
         'lbldireccion1
         '
         Me.lbldireccion1.AutoSize = True
-        Me.lbldireccion1.Location = New System.Drawing.Point(47, 89)
+        Me.lbldireccion1.Location = New System.Drawing.Point(47, 107)
         Me.lbldireccion1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbldireccion1.Name = "lbldireccion1"
         Me.lbldireccion1.Size = New System.Drawing.Size(79, 17)
@@ -278,7 +296,7 @@ Partial Class M_Sede
         'lbldireccion2
         '
         Me.lbldireccion2.AutoSize = True
-        Me.lbldireccion2.Location = New System.Drawing.Point(47, 130)
+        Me.lbldireccion2.Location = New System.Drawing.Point(47, 148)
         Me.lbldireccion2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbldireccion2.Name = "lbldireccion2"
         Me.lbldireccion2.Size = New System.Drawing.Size(79, 17)
@@ -288,7 +306,7 @@ Partial Class M_Sede
         'lbldireccion3
         '
         Me.lbldireccion3.AutoSize = True
-        Me.lbldireccion3.Location = New System.Drawing.Point(47, 174)
+        Me.lbldireccion3.Location = New System.Drawing.Point(47, 192)
         Me.lbldireccion3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbldireccion3.Name = "lbldireccion3"
         Me.lbldireccion3.Size = New System.Drawing.Size(79, 17)
@@ -297,7 +315,7 @@ Partial Class M_Sede
         '
         'rtxtdireccion1
         '
-        Me.rtxtdireccion1.Location = New System.Drawing.Point(133, 81)
+        Me.rtxtdireccion1.Location = New System.Drawing.Point(133, 99)
         Me.rtxtdireccion1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rtxtdireccion1.MaxLength = 200
         Me.rtxtdireccion1.Name = "rtxtdireccion1"
@@ -389,7 +407,7 @@ Partial Class M_Sede
         Me.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExcel.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnExcel.Location = New System.Drawing.Point(791, 17)
-        Me.btnExcel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnExcel.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExcel.Name = "btnExcel"
         Me.btnExcel.Size = New System.Drawing.Size(100, 28)
         Me.btnExcel.TabIndex = 117
@@ -478,10 +496,107 @@ Partial Class M_Sede
         Me.Panel1.Controls.Add(Me.btnmodificar)
         Me.Panel1.Controls.Add(Me.btncancelar)
         Me.Panel1.Location = New System.Drawing.Point(0, -6)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(957, 68)
         Me.Panel1.TabIndex = 115
+        '
+        'Label62
+        '
+        Me.Label62.AutoSize = True
+        Me.Label62.Location = New System.Drawing.Point(674, 28)
+        Me.Label62.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label62.Name = "Label62"
+        Me.Label62.Size = New System.Drawing.Size(204, 17)
+        Me.Label62.TabIndex = 213
+        Me.Label62.Text = "Debe llenar uno de los campos"
+        '
+        'Label61
+        '
+        Me.Label61.AutoSize = True
+        Me.Label61.Location = New System.Drawing.Point(473, 28)
+        Me.Label61.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label61.Name = "Label61"
+        Me.Label61.Size = New System.Drawing.Size(136, 17)
+        Me.Label61.TabIndex = 212
+        Me.Label61.Text = "Campos obligatorios"
+        '
+        'Label60
+        '
+        Me.Label60.AutoSize = True
+        Me.Label60.ForeColor = System.Drawing.Color.Red
+        Me.Label60.Location = New System.Drawing.Point(455, 30)
+        Me.Label60.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label60.Name = "Label60"
+        Me.Label60.Size = New System.Drawing.Size(13, 17)
+        Me.Label60.TabIndex = 211
+        Me.Label60.Text = "*"
+        '
+        'Label59
+        '
+        Me.Label59.AutoSize = True
+        Me.Label59.ForeColor = System.Drawing.Color.Red
+        Me.Label59.Location = New System.Drawing.Point(643, 28)
+        Me.Label59.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label59.Name = "Label59"
+        Me.Label59.Size = New System.Drawing.Size(23, 17)
+        Me.Label59.TabIndex = 210
+        Me.Label59.Text = "(*)"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.Red
+        Me.Label1.Location = New System.Drawing.Point(47, 71)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(13, 17)
+        Me.Label1.TabIndex = 214
+        Me.Label1.Text = "*"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.Color.Red
+        Me.Label2.Location = New System.Drawing.Point(16, 107)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(23, 17)
+        Me.Label2.TabIndex = 215
+        Me.Label2.Text = "(*)"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(16, 148)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(23, 17)
+        Me.Label3.TabIndex = 216
+        Me.Label3.Text = "(*)"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.Color.Red
+        Me.Label4.Location = New System.Drawing.Point(16, 192)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(23, 17)
+        Me.Label4.TabIndex = 217
+        Me.Label4.Text = "(*)"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.Color.Red
+        Me.Label5.Location = New System.Drawing.Point(16, 237)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(23, 17)
+        Me.Label5.TabIndex = 218
+        Me.Label5.Text = "(*)"
         '
         'M_Sede
         '
@@ -543,4 +658,13 @@ Partial Class M_Sede
     Friend WithEvents Button1 As Button
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label62 As Label
+    Friend WithEvents Label61 As Label
+    Friend WithEvents Label60 As Label
+    Friend WithEvents Label59 As Label
 End Class

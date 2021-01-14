@@ -45,6 +45,9 @@ Partial Class E_Unidad
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label60 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.gbxtipoObjeto.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,6 +59,9 @@ Partial Class E_Unidad
         Me.gbxtipoObjeto.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbxtipoObjeto.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.gbxtipoObjeto.Controls.Add(Me.Label3)
+        Me.gbxtipoObjeto.Controls.Add(Me.Label2)
+        Me.gbxtipoObjeto.Controls.Add(Me.Label60)
         Me.gbxtipoObjeto.Controls.Add(Me.lblcode)
         Me.gbxtipoObjeto.Controls.Add(Me.Label1)
         Me.gbxtipoObjeto.Controls.Add(Me.txtFactorCantidad)
@@ -75,7 +81,7 @@ Partial Class E_Unidad
         'lblcode
         '
         Me.lblcode.AutoSize = True
-        Me.lblcode.Location = New System.Drawing.Point(285, 18)
+        Me.lblcode.Location = New System.Drawing.Point(310, 19)
         Me.lblcode.Name = "lblcode"
         Me.lblcode.Size = New System.Drawing.Size(0, 17)
         Me.lblcode.TabIndex = 118
@@ -84,7 +90,7 @@ Partial Class E_Unidad
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(5, 65)
+        Me.Label1.Location = New System.Drawing.Point(30, 66)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(108, 17)
         Me.Label1.TabIndex = 117
@@ -92,7 +98,7 @@ Partial Class E_Unidad
         '
         'txtFactorCantidad
         '
-        Me.txtFactorCantidad.Location = New System.Drawing.Point(125, 63)
+        Me.txtFactorCantidad.Location = New System.Drawing.Point(150, 64)
         Me.txtFactorCantidad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtFactorCantidad.MaxLength = 20
         Me.txtFactorCantidad.Name = "txtFactorCantidad"
@@ -113,7 +119,7 @@ Partial Class E_Unidad
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(5, 18)
+        Me.lblcodigo.Location = New System.Drawing.Point(30, 19)
         Me.lblcodigo.Name = "lblcodigo"
         Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
         Me.lblcodigo.TabIndex = 41
@@ -131,7 +137,7 @@ Partial Class E_Unidad
         'txtcodigo
         '
         Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtcodigo.Location = New System.Drawing.Point(64, 16)
+        Me.txtcodigo.Location = New System.Drawing.Point(89, 17)
         Me.txtcodigo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
@@ -223,7 +229,7 @@ Partial Class E_Unidad
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Button1.Location = New System.Drawing.Point(821, 22)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 28)
         Me.Button1.TabIndex = 116
@@ -308,7 +314,7 @@ Partial Class E_Unidad
         Me.Panel1.Controls.Add(Me.btnguardar)
         Me.Panel1.Controls.Add(Me.btnmodificar)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(957, 46)
         Me.Panel1.TabIndex = 121
@@ -324,6 +330,39 @@ Partial Class E_Unidad
         Me.Label5.Size = New System.Drawing.Size(80, 25)
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "Unidad"
+        '
+        'Label60
+        '
+        Me.Label60.AutoSize = True
+        Me.Label60.ForeColor = System.Drawing.Color.Red
+        Me.Label60.Location = New System.Drawing.Point(363, 17)
+        Me.Label60.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label60.Name = "Label60"
+        Me.Label60.Size = New System.Drawing.Size(13, 17)
+        Me.Label60.TabIndex = 213
+        Me.Label60.Text = "*"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.Color.Red
+        Me.Label2.Location = New System.Drawing.Point(10, 66)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(13, 17)
+        Me.Label2.TabIndex = 214
+        Me.Label2.Text = "*"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(10, 19)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(13, 17)
+        Me.Label3.TabIndex = 215
+        Me.Label3.Text = "*"
         '
         'E_Unidad
         '
@@ -375,4 +414,7 @@ Partial Class E_Unidad
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label60 As Label
 End Class

@@ -24,6 +24,11 @@ Partial Class M_DiarioFacturacion
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_DiarioFacturacion))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnExcel = New System.Windows.Forms.Button()
+        Me.lblcodigoTipoClasif = New System.Windows.Forms.Label()
+        Me.btnTipoClasificacion = New System.Windows.Forms.Button()
+        Me.txtnombreClasificacion = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.btnGrupoExamen = New System.Windows.Forms.Button()
         Me.btnExamen = New System.Windows.Forms.Button()
         Me.btnTerminoPago = New System.Windows.Forms.Button()
@@ -59,11 +64,6 @@ Partial Class M_DiarioFacturacion
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotalFacturas = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.btnTipoClasificacion = New System.Windows.Forms.Button()
-        Me.txtnombreClasificacion = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.lblcodigoTipoClasif = New System.Windows.Forms.Label()
-        Me.btnExcel = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -121,6 +121,64 @@ Partial Class M_DiarioFacturacion
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Diario de Facturación"
+        '
+        'btnExcel
+        '
+        Me.btnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnExcel.BackColor = System.Drawing.Color.Green
+        Me.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExcel.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnExcel.Location = New System.Drawing.Point(1077, 199)
+        Me.btnExcel.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnExcel.Name = "btnExcel"
+        Me.btnExcel.Size = New System.Drawing.Size(115, 34)
+        Me.btnExcel.TabIndex = 174
+        Me.btnExcel.Text = "Generar Excel"
+        Me.btnExcel.UseVisualStyleBackColor = False
+        '
+        'lblcodigoTipoClasif
+        '
+        Me.lblcodigoTipoClasif.AutoSize = True
+        Me.lblcodigoTipoClasif.Location = New System.Drawing.Point(229, 179)
+        Me.lblcodigoTipoClasif.Name = "lblcodigoTipoClasif"
+        Me.lblcodigoTipoClasif.Size = New System.Drawing.Size(0, 17)
+        Me.lblcodigoTipoClasif.TabIndex = 173
+        Me.lblcodigoTipoClasif.Visible = False
+        '
+        'btnTipoClasificacion
+        '
+        Me.btnTipoClasificacion.BackColor = System.Drawing.Color.White
+        Me.btnTipoClasificacion.BackgroundImage = CType(resources.GetObject("btnTipoClasificacion.BackgroundImage"), System.Drawing.Image)
+        Me.btnTipoClasificacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnTipoClasificacion.FlatAppearance.BorderSize = 0
+        Me.btnTipoClasificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTipoClasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTipoClasificacion.Location = New System.Drawing.Point(377, 155)
+        Me.btnTipoClasificacion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnTipoClasificacion.Name = "btnTipoClasificacion"
+        Me.btnTipoClasificacion.Size = New System.Drawing.Size(40, 21)
+        Me.btnTipoClasificacion.TabIndex = 172
+        Me.btnTipoClasificacion.Text = "..."
+        Me.btnTipoClasificacion.UseVisualStyleBackColor = False
+        '
+        'txtnombreClasificacion
+        '
+        Me.txtnombreClasificacion.Location = New System.Drawing.Point(155, 155)
+        Me.txtnombreClasificacion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtnombreClasificacion.MaxLength = 20
+        Me.txtnombreClasificacion.Name = "txtnombreClasificacion"
+        Me.txtnombreClasificacion.ReadOnly = True
+        Me.txtnombreClasificacion.Size = New System.Drawing.Size(216, 22)
+        Me.txtnombreClasificacion.TabIndex = 171
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(31, 158)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(118, 17)
+        Me.Label8.TabIndex = 170
+        Me.Label8.Text = "Tipo Clasificación"
         '
         'btnGrupoExamen
         '
@@ -511,64 +569,6 @@ Partial Class M_DiarioFacturacion
         Me.StatusStrip1.TabIndex = 1
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'btnTipoClasificacion
-        '
-        Me.btnTipoClasificacion.BackColor = System.Drawing.Color.White
-        Me.btnTipoClasificacion.BackgroundImage = CType(resources.GetObject("btnTipoClasificacion.BackgroundImage"), System.Drawing.Image)
-        Me.btnTipoClasificacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnTipoClasificacion.FlatAppearance.BorderSize = 0
-        Me.btnTipoClasificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTipoClasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTipoClasificacion.Location = New System.Drawing.Point(377, 155)
-        Me.btnTipoClasificacion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnTipoClasificacion.Name = "btnTipoClasificacion"
-        Me.btnTipoClasificacion.Size = New System.Drawing.Size(40, 21)
-        Me.btnTipoClasificacion.TabIndex = 172
-        Me.btnTipoClasificacion.Text = "..."
-        Me.btnTipoClasificacion.UseVisualStyleBackColor = False
-        '
-        'txtnombreClasificacion
-        '
-        Me.txtnombreClasificacion.Location = New System.Drawing.Point(155, 155)
-        Me.txtnombreClasificacion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtnombreClasificacion.MaxLength = 20
-        Me.txtnombreClasificacion.Name = "txtnombreClasificacion"
-        Me.txtnombreClasificacion.ReadOnly = True
-        Me.txtnombreClasificacion.Size = New System.Drawing.Size(216, 22)
-        Me.txtnombreClasificacion.TabIndex = 171
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(31, 158)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(118, 17)
-        Me.Label8.TabIndex = 170
-        Me.Label8.Text = "Tipo Clasificación"
-        '
-        'lblcodigoTipoClasif
-        '
-        Me.lblcodigoTipoClasif.AutoSize = True
-        Me.lblcodigoTipoClasif.Location = New System.Drawing.Point(229, 179)
-        Me.lblcodigoTipoClasif.Name = "lblcodigoTipoClasif"
-        Me.lblcodigoTipoClasif.Size = New System.Drawing.Size(0, 17)
-        Me.lblcodigoTipoClasif.TabIndex = 173
-        Me.lblcodigoTipoClasif.Visible = False
-        '
-        'btnExcel
-        '
-        Me.btnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnExcel.BackColor = System.Drawing.Color.Green
-        Me.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExcel.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnExcel.Location = New System.Drawing.Point(1077, 199)
-        Me.btnExcel.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnExcel.Name = "btnExcel"
-        Me.btnExcel.Size = New System.Drawing.Size(115, 34)
-        Me.btnExcel.TabIndex = 174
-        Me.btnExcel.Text = "Generar Excel"
-        Me.btnExcel.UseVisualStyleBackColor = False
-        '
         'M_DiarioFacturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -578,6 +578,7 @@ Partial Class M_DiarioFacturacion
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "M_DiarioFacturacion"
         Me.Text = "M_DiarioFacturacion"

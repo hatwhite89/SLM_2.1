@@ -49,6 +49,15 @@ Partial Class M_CAI
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label61 = New System.Windows.Forms.Label()
+        Me.Label60 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -56,7 +65,7 @@ Partial Class M_CAI
         'lblCAI
         '
         Me.lblCAI.AutoSize = True
-        Me.lblCAI.Location = New System.Drawing.Point(93, 36)
+        Me.lblCAI.Location = New System.Drawing.Point(111, 36)
         Me.lblCAI.Name = "lblCAI"
         Me.lblCAI.Size = New System.Drawing.Size(33, 17)
         Me.lblCAI.TabIndex = 0
@@ -65,7 +74,7 @@ Partial Class M_CAI
         'lbldesde
         '
         Me.lbldesde.AutoSize = True
-        Me.lbldesde.Location = New System.Drawing.Point(60, 98)
+        Me.lbldesde.Location = New System.Drawing.Point(78, 98)
         Me.lbldesde.Name = "lbldesde"
         Me.lbldesde.Size = New System.Drawing.Size(53, 17)
         Me.lbldesde.TabIndex = 1
@@ -74,7 +83,7 @@ Partial Class M_CAI
         'lblhasta
         '
         Me.lblhasta.AutoSize = True
-        Me.lblhasta.Location = New System.Drawing.Point(415, 107)
+        Me.lblhasta.Location = New System.Drawing.Point(433, 107)
         Me.lblhasta.Name = "lblhasta"
         Me.lblhasta.Size = New System.Drawing.Size(49, 17)
         Me.lblhasta.TabIndex = 2
@@ -83,7 +92,7 @@ Partial Class M_CAI
         'lblDesdeF
         '
         Me.lblDesdeF.AutoSize = True
-        Me.lblDesdeF.Location = New System.Drawing.Point(25, 64)
+        Me.lblDesdeF.Location = New System.Drawing.Point(43, 64)
         Me.lblDesdeF.Name = "lblDesdeF"
         Me.lblDesdeF.Size = New System.Drawing.Size(96, 17)
         Me.lblDesdeF.TabIndex = 3
@@ -136,7 +145,7 @@ Partial Class M_CAI
         '
         'mtxtCAI
         '
-        Me.mtxtCAI.Location = New System.Drawing.Point(135, 27)
+        Me.mtxtCAI.Location = New System.Drawing.Point(153, 27)
         Me.mtxtCAI.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.mtxtCAI.Mask = "AAAAAA-AAAAAA-AAAAAA-AAAAAA-AAAAAA-AA"
         Me.mtxtCAI.Name = "mtxtCAI"
@@ -147,7 +156,7 @@ Partial Class M_CAI
         'lblhastaF
         '
         Me.lblhastaF.AutoSize = True
-        Me.lblhastaF.Location = New System.Drawing.Point(365, 65)
+        Me.lblhastaF.Location = New System.Drawing.Point(383, 65)
         Me.lblhastaF.Name = "lblhastaF"
         Me.lblhastaF.Size = New System.Drawing.Size(92, 17)
         Me.lblhastaF.TabIndex = 117
@@ -156,7 +165,7 @@ Partial Class M_CAI
         'lblserie
         '
         Me.lblserie.AutoSize = True
-        Me.lblserie.Location = New System.Drawing.Point(415, 143)
+        Me.lblserie.Location = New System.Drawing.Point(433, 143)
         Me.lblserie.Name = "lblserie"
         Me.lblserie.Size = New System.Drawing.Size(45, 17)
         Me.lblserie.TabIndex = 118
@@ -165,7 +174,7 @@ Partial Class M_CAI
         'lblmaquinaLocal
         '
         Me.lblmaquinaLocal.AutoSize = True
-        Me.lblmaquinaLocal.Location = New System.Drawing.Point(17, 139)
+        Me.lblmaquinaLocal.Location = New System.Drawing.Point(35, 139)
         Me.lblmaquinaLocal.Name = "lblmaquinaLocal"
         Me.lblmaquinaLocal.Size = New System.Drawing.Size(104, 17)
         Me.lblmaquinaLocal.TabIndex = 119
@@ -174,7 +183,7 @@ Partial Class M_CAI
         'dtpDesdeFecha
         '
         Me.dtpDesdeFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDesdeFecha.Location = New System.Drawing.Point(137, 57)
+        Me.dtpDesdeFecha.Location = New System.Drawing.Point(155, 57)
         Me.dtpDesdeFecha.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dtpDesdeFecha.Name = "dtpDesdeFecha"
         Me.dtpDesdeFecha.Size = New System.Drawing.Size(200, 22)
@@ -183,7 +192,7 @@ Partial Class M_CAI
         'dtpHastaFecha
         '
         Me.dtpHastaFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpHastaFecha.Location = New System.Drawing.Point(469, 64)
+        Me.dtpHastaFecha.Location = New System.Drawing.Point(487, 64)
         Me.dtpHastaFecha.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dtpHastaFecha.Name = "dtpHastaFecha"
         Me.dtpHastaFecha.Size = New System.Drawing.Size(200, 22)
@@ -191,7 +200,7 @@ Partial Class M_CAI
         '
         'mtxtserie
         '
-        Me.mtxtserie.Location = New System.Drawing.Point(467, 139)
+        Me.mtxtserie.Location = New System.Drawing.Point(485, 139)
         Me.mtxtserie.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.mtxtserie.Mask = "000-000-00-"
         Me.mtxtserie.Name = "mtxtserie"
@@ -201,7 +210,7 @@ Partial Class M_CAI
         '
         'mtxtdesde
         '
-        Me.mtxtdesde.Location = New System.Drawing.Point(135, 98)
+        Me.mtxtdesde.Location = New System.Drawing.Point(153, 98)
         Me.mtxtdesde.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.mtxtdesde.Mask = "00000000"
         Me.mtxtdesde.Name = "mtxtdesde"
@@ -211,7 +220,7 @@ Partial Class M_CAI
         '
         'mtxthasta
         '
-        Me.mtxthasta.Location = New System.Drawing.Point(468, 103)
+        Me.mtxthasta.Location = New System.Drawing.Point(486, 103)
         Me.mtxthasta.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.mtxthasta.Mask = "00000000"
         Me.mtxthasta.Name = "mtxthasta"
@@ -221,7 +230,7 @@ Partial Class M_CAI
         '
         'txtdescripcionMaquina
         '
-        Me.txtdescripcionMaquina.Location = New System.Drawing.Point(171, 171)
+        Me.txtdescripcionMaquina.Location = New System.Drawing.Point(189, 171)
         Me.txtdescripcionMaquina.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtdescripcionMaquina.Name = "txtdescripcionMaquina"
         Me.txtdescripcionMaquina.ReadOnly = True
@@ -236,7 +245,7 @@ Partial Class M_CAI
         Me.btnbuscarMaquinaLocal.FlatAppearance.BorderSize = 0
         Me.btnbuscarMaquinaLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarMaquinaLocal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscarMaquinaLocal.Location = New System.Drawing.Point(125, 171)
+        Me.btnbuscarMaquinaLocal.Location = New System.Drawing.Point(143, 171)
         Me.btnbuscarMaquinaLocal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnbuscarMaquinaLocal.Name = "btnbuscarMaquinaLocal"
         Me.btnbuscarMaquinaLocal.Size = New System.Drawing.Size(29, 22)
@@ -246,7 +255,7 @@ Partial Class M_CAI
         '
         'txtcodigoMaquina
         '
-        Me.txtcodigoMaquina.Location = New System.Drawing.Point(136, 134)
+        Me.txtcodigoMaquina.Location = New System.Drawing.Point(154, 134)
         Me.txtcodigoMaquina.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcodigoMaquina.MaxLength = 20
         Me.txtcodigoMaquina.Name = "txtcodigoMaquina"
@@ -269,6 +278,15 @@ Partial Class M_CAI
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.Label61)
+        Me.GroupBox1.Controls.Add(Me.Label60)
         Me.GroupBox1.Controls.Add(Me.lblCodigo)
         Me.GroupBox1.Controls.Add(Me.btnbuscarMaquinaLocal)
         Me.GroupBox1.Controls.Add(Me.txtdescripcionMaquina)
@@ -288,9 +306,9 @@ Partial Class M_CAI
         Me.GroupBox1.Controls.Add(Me.mtxthasta)
         Me.GroupBox1.Controls.Add(Me.lblhasta)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 57)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(928, 288)
         Me.GroupBox1.TabIndex = 129
         Me.GroupBox1.TabStop = False
@@ -299,7 +317,7 @@ Partial Class M_CAI
         'lblCodigo
         '
         Me.lblCodigo.AutoSize = True
-        Me.lblCodigo.Location = New System.Drawing.Point(25, 36)
+        Me.lblCodigo.Location = New System.Drawing.Point(43, 36)
         Me.lblCodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCodigo.Name = "lblCodigo"
         Me.lblCodigo.Size = New System.Drawing.Size(50, 17)
@@ -310,8 +328,8 @@ Partial Class M_CAI
         'chkEstado
         '
         Me.chkEstado.AutoSize = True
-        Me.chkEstado.Location = New System.Drawing.Point(468, 178)
-        Me.chkEstado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkEstado.Location = New System.Drawing.Point(486, 178)
+        Me.chkEstado.Margin = New System.Windows.Forms.Padding(4)
         Me.chkEstado.Name = "chkEstado"
         Me.chkEstado.Size = New System.Drawing.Size(151, 21)
         Me.chkEstado.TabIndex = 125
@@ -354,10 +372,108 @@ Partial Class M_CAI
         Me.Panel1.Controls.Add(Me.btncancelar)
         Me.Panel1.Controls.Add(Me.btnModificar)
         Me.Panel1.Location = New System.Drawing.Point(0, 1)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(960, 48)
         Me.Panel1.TabIndex = 132
+        '
+        'Label61
+        '
+        Me.Label61.AutoSize = True
+        Me.Label61.Location = New System.Drawing.Point(765, 36)
+        Me.Label61.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label61.Name = "Label61"
+        Me.Label61.Size = New System.Drawing.Size(136, 17)
+        Me.Label61.TabIndex = 212
+        Me.Label61.Text = "Campos obligatorios"
+        '
+        'Label60
+        '
+        Me.Label60.AutoSize = True
+        Me.Label60.ForeColor = System.Drawing.Color.Red
+        Me.Label60.Location = New System.Drawing.Point(747, 38)
+        Me.Label60.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label60.Name = "Label60"
+        Me.Label60.Size = New System.Drawing.Size(13, 17)
+        Me.Label60.TabIndex = 211
+        Me.Label60.Text = "*"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.Red
+        Me.Label1.Location = New System.Drawing.Point(413, 144)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(13, 17)
+        Me.Label1.TabIndex = 214
+        Me.Label1.Text = "*"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.Color.Red
+        Me.Label2.Location = New System.Drawing.Point(413, 108)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(13, 17)
+        Me.Label2.TabIndex = 215
+        Me.Label2.Text = "*"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(363, 69)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(13, 17)
+        Me.Label3.TabIndex = 216
+        Me.Label3.Text = "*"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.Color.Red
+        Me.Label4.Location = New System.Drawing.Point(15, 139)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(13, 17)
+        Me.Label4.TabIndex = 217
+        Me.Label4.Text = "*"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.Color.Red
+        Me.Label5.Location = New System.Drawing.Point(58, 98)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(13, 17)
+        Me.Label5.TabIndex = 218
+        Me.Label5.Text = "*"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.Color.Red
+        Me.Label6.Location = New System.Drawing.Point(27, 65)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(13, 17)
+        Me.Label6.TabIndex = 219
+        Me.Label6.Text = "*"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(91, 36)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(13, 17)
+        Me.Label7.TabIndex = 220
+        Me.Label7.Text = "*"
         '
         'M_CAI
         '
@@ -408,4 +524,13 @@ Partial Class M_CAI
     Friend WithEvents lblCodigo As Label
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label61 As Label
+    Friend WithEvents Label60 As Label
 End Class
