@@ -171,11 +171,6 @@ Public Class ClsUsuario
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
-        sqlpar.ParameterName = "pass"
-        sqlpar.Value = password_
-        sqlcom.Parameters.Add(sqlpar)
-
-        sqlpar = New SqlParameter
         sqlpar.ParameterName = "perfil"
         sqlpar.Value = perfil_
         sqlcom.Parameters.Add(sqlpar)

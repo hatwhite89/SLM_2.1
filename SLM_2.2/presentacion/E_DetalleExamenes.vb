@@ -37,10 +37,10 @@
 
         Try
             'Ingreso de nuevo registro
-            If (dtResultados.Rows.Count <= 1) Then
-                MsgBox("Debe ingresar un resultado de examen por lo menos.")
-                Exit Sub
-            End If
+            'If (dtResultados.Rows.Count <= 1) Then
+            '    MsgBox("Debe ingresar un resultado de examen por lo menos.")
+            '    Exit Sub
+            'End If
             If (Trim(txtCodBreve.Text) = "") Then
                 MsgBox("Debe ingresar el código breve.")
                 Exit Sub
@@ -49,10 +49,10 @@
                 MsgBox("Debe ingresar o seleccionar el grupo de examen.")
                 Exit Sub
             End If
-            If (Trim(txtCodigoSubArea.Text) = "") Then
-                MsgBox("Debe seleccionar la subárea que pertenece el item.")
-                Exit Sub
-            End If
+            'If (Trim(txtCodigoSubArea.Text) = "") Then
+            '    MsgBox("Debe seleccionar la subárea que pertenece el item.")
+            '    Exit Sub
+            'End If
             If (Trim(txtDescripcion.Text) = "") Then
                 MsgBox("Debe ingresar una descripción del item facturable.")
                 Exit Sub
@@ -72,7 +72,13 @@
                 .Abreviatur_a = txtAbreviatura.Text
                 .Comentari_o = txtComentario.Text
                 .Estad_o = chkEstado.Checked
-                .codigoSubArea_ = txtCodigoSubArea.Text
+
+                If Trim(txtCodigoSubArea.Text) = "" Then
+                    .codigoSubArea_ = 0
+                Else
+                    .codigoSubArea_ = txtCodigoSubArea.Text
+
+                End If
 
                 If .registrarNuevoItemExamen() = 0 Then
                     MsgBox("Error al querer insertar el item.")
@@ -129,12 +135,12 @@
                     E_ListarUnidades.lblbandera.Text = 0
                     E_ListarUnidades.lblcodeItemExamenDet.Text = Me.dtResultados.Rows(e.RowIndex).Cells(0).Value().ToString()
                     E_ListarUnidades.Show()
-                ElseIf e.ColumnIndex = 4 And Me.dtResultados.Rows(e.RowIndex).Cells(0).Value() = "" Then
+                ElseIf e.ColumnIndex = 5 And Me.dtResultados.Rows(e.RowIndex).Cells(0).Value() = "" Then
                     Dim n As String = MsgBox("¿Desea eliminar el resultado del examen?", MsgBoxStyle.YesNo, "Validación")
                     If n = vbYes Then
                         dtResultados.Rows.Remove(dtResultados.Rows(e.RowIndex.ToString))
                     End If
-                ElseIf e.ColumnIndex = 4 And Me.dtResultados.Rows(e.RowIndex).Cells(0).Value() <> "" Then
+                ElseIf e.ColumnIndex = 5 And Me.dtResultados.Rows(e.RowIndex).Cells(0).Value() <> "" Then
                     Dim n As String = MsgBox("¿Desea eliminar el resultado del examen?", MsgBoxStyle.YesNo, "Validación")
                     If n = vbYes Then
                         codigoItemDetalle.Add(Me.dtResultados.Rows(e.RowIndex).Cells(0).Value())
@@ -201,6 +207,15 @@
             dtItem.DataSource = Item.listarItemExamen
 
             'agregar boton
+            If dtResultados.Columns.Contains("btnValorRef") = False Then
+                Dim btn As New DataGridViewButtonColumn()
+                dtResultados.Columns.Add(btn)
+                btn.HeaderText = "V. Ref"
+                btn.Text = "Valor Ref."
+                btn.Name = "btnValor"
+                btn.UseColumnTextForButtonValue = True
+            End If
+
             If dtResultados.Columns.Contains("btnEliminar") = False Then
                 Dim btn As New DataGridViewButtonColumn()
                 dtResultados.Columns.Add(btn)
@@ -222,10 +237,10 @@
 
         Try
             'Modificacion de nuevo registro
-            If (dtResultados.Rows.Count <= 1) Then
-                MsgBox("Debe ingresar un resultado de examen por lo menos.")
-                Exit Sub
-            End If
+            'If (dtResultados.Rows.Count <= 1) Then
+            '    MsgBox("Debe ingresar un resultado de examen por lo menos.")
+            '    Exit Sub
+            'End If
             If (Trim(txtCodBreve.Text) = "") Then
                 MsgBox("Debe ingresar el código breve.")
                 Exit Sub
@@ -234,10 +249,10 @@
                 MsgBox("Debe ingresar o seleccionar el grupo de examen.")
                 Exit Sub
             End If
-            If (Trim(txtCodigoSubArea.Text) = "") Then
-                MsgBox("Debe seleccionar la subárea que pertenece el item.")
-                Exit Sub
-            End If
+            'If (Trim(txtCodigoSubArea.Text) = "") Then
+            '    MsgBox("Debe seleccionar la subárea que pertenece el item.")
+            '    Exit Sub
+            'End If
             If (Trim(txtDescripcion.Text) = "") Then
                 MsgBox("Debe ingresar una descripción del item facturable.")
                 Exit Sub
@@ -259,8 +274,13 @@
                 .Abreviatur_a = txtAbreviatura.Text
                 .Comentari_o = txtComentario.Text
                 .Estad_o = chkEstado.Checked
-                .codigoSubArea_ = txtCodigoSubArea.Text
 
+                If Trim(txtCodigoSubArea.Text) = "" Then
+                    .codigoSubArea_ = 0
+                Else
+                    .codigoSubArea_ = txtCodigoSubArea.Text
+
+                End If
                 If .modificarItemExamen() = 0 Then
                     MsgBox("Error al querer actualizar el item.")
                     Exit Sub
@@ -460,7 +480,7 @@
 
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) 
         E_Unidad.Show()
     End Sub
 End Class

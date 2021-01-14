@@ -10,10 +10,14 @@
                 With usuario
 
                     .Usuario_ = txtUsuario.Text
-                    .password_ = Encriptar(txtPass.Text)
+
+                    '.password_ = Encriptar(txtPass.Text)
+                    .password_ = "#changepass#"
                     .perfil_ = txtPerfil.Text
                     .Estad_o = chkHabilitar.Checked
                     .Cod_Perfil = Convert.ToInt32(lblCodPerfil.Text)
+                    .Cod_Empleado = Integer.Parse(lblCodEmpleado.Text)
+
                     If .registrarNuevoUsuario = 1 Then
                         MsgBox("El registro se ha guardado correctamente.")
                         Limpiar()
@@ -21,11 +25,13 @@
                     End If
 
                 End With
-
-            ElseIf txtUsuario.Text = "" Then
-                txtUsuario.BackColor = Color.Red
-            ElseIf txtPerfil.TextAlign = "" Then
+            ElseIf txtPerfil.Text = "" Then
+                MsgBox("Se debe asignar un perfil de permisos al usuario.")
                 txtPerfil.BackColor = Color.Red
+            ElseIf txtUsuario.Text = "" Then
+                MsgBox("Se debe ingresar un nombre de usuario.")
+                txtUsuario.BackColor = Color.Red
+
             End If
 
         Catch ex As Exception
@@ -47,6 +53,7 @@
                     .perfil_ = txtPerfil.Text
                     .Estad_o = chkHabilitar.Checked
                     .Cod_Perfil = Convert.ToInt32(lblCodPerfil.Text)
+                    .Cod_Empleado = Integer.Parse(lblCodEmpleado.Text)
 
                     If .ModificarUsuario = 1 Then
                         MsgBox("El registro se ha modificado correctamente.")
@@ -59,11 +66,9 @@
                 End With
 
             ElseIf txtUsuario.Text = "" Then
-
                 txtUsuario.BackColor = Color.Red
             ElseIf txtPerfil.TextAlign = "" Then
                 txtPerfil.BackColor = Color.Red
-
             End If
 
         Catch ex As Exception
@@ -81,6 +86,11 @@
         lblCodPerfil.Text = ""
         txtNombreEmpleado.Clear()
         chkHabilitar.Checked = False
+        lblCodEmpleado.Text = 0
+
+        If txtUsuario.BackColor = Color.Red Then
+            txtUsuario.BackColor = Color.White
+        End If
 
     End Sub
 
@@ -125,21 +135,36 @@
             txtPass.PasswordChar = "*"
             txtCodigo.Text = row("cod_usuario")
             txtUsuario.Text = row("usuario")
-            txtPass.Enabled = False
-            txtPass.Text = Desencriptar(row("pass"))
+
+            If row("pass") = "#changepass#" Then
+                txtPass.Enabled = False
+                txtPass.Text = row("pass")
+
+            Else
+
+                txtPass.Enabled = False
+                txtPass.Text = Desencriptar(row("pass"))
+
+            End If
+
             txtPerfil.Text = row("perfil")
             chkHabilitar.Checked = row("estado")
             lblCodPerfil.Text = row("codPerfil")
-
+            lblCodEmpleado.Text = row("codigo")
             'Consultar Nombre de Empleado
-            Dim nombre_empleado As New ClsEmpleados
-            nombre_empleado.codigo_ = Convert.ToInt32(row("codigo"))
-            dt = nombre_empleado.BuscarDatosEmpleadoPorCodigo()
-            row = dt.Rows(0)
-            txtNombreEmpleado.Text = row("nombreCompleto")
+
+            If lblCodEmpleado.Text > 0 Then
+
+                Dim nombre_empleado As New ClsEmpleados
+                nombre_empleado.codigo_ = Convert.ToInt32(row("codigo"))
+                dt = nombre_empleado.BuscarDatosEmpleadoPorCodigo()
+                row = dt.Rows(0)
+                txtNombreEmpleado.Text = row("nombreCompleto")
+
+            End If
 
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
     End Sub
@@ -249,6 +274,53 @@
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         A_ConfiguracionFeriados.Show()
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+        Try
+
+            If txtPass.PasswordChar = "*" Then
+
+                txtPass.PasswordChar = ""
+
+            Else
+
+                txtPass.PasswordChar = "*"
+
+            End If
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub txtUsuario_TextChanged(sender As Object, e As EventArgs) Handles txtUsuario.TextChanged
+        Try
+
+            If txtUsuario.BackColor = Color.Red Then
+                txtUsuario.BackColor = Color.White
+            End If
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub txtPerfil_TextChanged(sender As Object, e As EventArgs) Handles txtPerfil.TextChanged
+
+
+        Try
+
+            If txtPerfil.BackColor = Color.Red Then
+                txtPerfil.BackColor = Color.White
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
 End Class

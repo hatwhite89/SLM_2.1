@@ -38,6 +38,10 @@ Partial Class E_Usuarios
         Me.txtPass = New System.Windows.Forms.TextBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.gbxDatos = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label61 = New System.Windows.Forms.Label()
+        Me.Label60 = New System.Windows.Forms.Label()
         Me.lblCodEmpleado = New System.Windows.Forms.Label()
         Me.btnBuscarEmpleado = New System.Windows.Forms.Button()
         Me.txtNombreEmpleado = New System.Windows.Forms.TextBox()
@@ -125,9 +129,9 @@ Partial Class E_Usuarios
         '
         Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(436, 19)
+        Me.PictureBox1.Location = New System.Drawing.Point(457, 19)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(170, 168)
+        Me.PictureBox1.Size = New System.Drawing.Size(141, 139)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 22
         Me.PictureBox1.TabStop = False
@@ -199,10 +203,12 @@ Partial Class E_Usuarios
         '
         Me.txtPass.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtPass.Enabled = False
         Me.txtPass.Location = New System.Drawing.Point(89, 125)
         Me.txtPass.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPass.MaxLength = 30
         Me.txtPass.Name = "txtPass"
+        Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPass.Size = New System.Drawing.Size(310, 20)
         Me.txtPass.TabIndex = 1
         '
@@ -221,6 +227,10 @@ Partial Class E_Usuarios
         '
         Me.gbxDatos.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gbxDatos.Controls.Add(Me.Label8)
+        Me.gbxDatos.Controls.Add(Me.Label7)
+        Me.gbxDatos.Controls.Add(Me.Label61)
+        Me.gbxDatos.Controls.Add(Me.Label60)
         Me.gbxDatos.Controls.Add(Me.lblCodEmpleado)
         Me.gbxDatos.Controls.Add(Me.btnBuscarEmpleado)
         Me.gbxDatos.Controls.Add(Me.txtNombreEmpleado)
@@ -245,14 +255,53 @@ Partial Class E_Usuarios
         Me.gbxDatos.TabStop = False
         Me.gbxDatos.Text = "Información de Usuario"
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(13, 105)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(11, 13)
+        Me.Label8.TabIndex = 212
+        Me.Label8.Text = "*"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(20, 78)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(11, 13)
+        Me.Label7.TabIndex = 211
+        Me.Label7.Text = "*"
+        '
+        'Label61
+        '
+        Me.Label61.AutoSize = True
+        Me.Label61.Location = New System.Drawing.Point(485, 167)
+        Me.Label61.Name = "Label61"
+        Me.Label61.Size = New System.Drawing.Size(101, 13)
+        Me.Label61.TabIndex = 210
+        Me.Label61.Text = "Campos obligatorios"
+        '
+        'Label60
+        '
+        Me.Label60.AutoSize = True
+        Me.Label60.ForeColor = System.Drawing.Color.Red
+        Me.Label60.Location = New System.Drawing.Point(472, 169)
+        Me.Label60.Name = "Label60"
+        Me.Label60.Size = New System.Drawing.Size(11, 13)
+        Me.Label60.TabIndex = 209
+        Me.Label60.Text = "*"
+        '
         'lblCodEmpleado
         '
         Me.lblCodEmpleado.AutoSize = True
-        Me.lblCodEmpleado.Location = New System.Drawing.Point(374, 191)
+        Me.lblCodEmpleado.Location = New System.Drawing.Point(309, 183)
         Me.lblCodEmpleado.Name = "lblCodEmpleado"
-        Me.lblCodEmpleado.Size = New System.Drawing.Size(90, 13)
+        Me.lblCodEmpleado.Size = New System.Drawing.Size(13, 13)
         Me.lblCodEmpleado.TabIndex = 31
-        Me.lblCodEmpleado.Text = "Codigo Empleado"
+        Me.lblCodEmpleado.Text = "0"
         Me.lblCodEmpleado.Visible = False
         '
         'btnBuscarEmpleado
@@ -291,7 +340,7 @@ Partial Class E_Usuarios
         'lblCodPerfil
         '
         Me.lblCodPerfil.AutoSize = True
-        Me.lblCodPerfil.Location = New System.Drawing.Point(12, 180)
+        Me.lblCodPerfil.Location = New System.Drawing.Point(309, 167)
         Me.lblCodPerfil.Name = "lblCodPerfil"
         Me.lblCodPerfil.Size = New System.Drawing.Size(66, 13)
         Me.lblCodPerfil.TabIndex = 26
@@ -423,7 +472,7 @@ Partial Class E_Usuarios
         '
         Me.Button1.Location = New System.Drawing.Point(208, 10)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(114, 23)
+        Me.Button1.Size = New System.Drawing.Size(97, 23)
         Me.Button1.TabIndex = 32
         Me.Button1.Text = "Temporal Feriado"
         Me.Button1.UseVisualStyleBackColor = True
@@ -484,4 +533,8 @@ Partial Class E_Usuarios
     Friend WithEvents btnCerrar As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label61 As Label
+    Friend WithEvents Label60 As Label
 End Class
