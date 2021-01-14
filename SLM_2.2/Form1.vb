@@ -1284,4 +1284,14 @@
     Private Sub btnUnidadMedida_Click(sender As Object, e As EventArgs) Handles btnUnidadMedida.Click
         E_frmUnidadMedida_almacen.Show()
     End Sub
+
+    Private Sub Button2_Click_4(sender As Object, e As EventArgs) Handles Button2.Click
+        Try
+
+            M_InicioSesion.Show()
+            Me.Hide()
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

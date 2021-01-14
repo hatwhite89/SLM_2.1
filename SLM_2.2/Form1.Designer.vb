@@ -193,6 +193,7 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox55 = New System.Windows.Forms.PictureBox()
         Me.pbxNoti = New System.Windows.Forms.PictureBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.tcMenu.SuspendLayout()
@@ -2302,7 +2303,7 @@ Partial Class Form1
         Me.bntCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.bntCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bntCerrar.ForeColor = System.Drawing.Color.White
-        Me.bntCerrar.Location = New System.Drawing.Point(0, 421)
+        Me.bntCerrar.Location = New System.Drawing.Point(-1, 471)
         Me.bntCerrar.Name = "bntCerrar"
         Me.bntCerrar.Size = New System.Drawing.Size(122, 44)
         Me.bntCerrar.TabIndex = 61
@@ -2312,7 +2313,7 @@ Partial Class Form1
         'lblCajero
         '
         Me.lblCajero.AutoSize = True
-        Me.lblCajero.Location = New System.Drawing.Point(28, 549)
+        Me.lblCajero.Location = New System.Drawing.Point(57, 549)
         Me.lblCajero.Name = "lblCajero"
         Me.lblCajero.Size = New System.Drawing.Size(59, 13)
         Me.lblCajero.TabIndex = 62
@@ -2352,6 +2353,21 @@ Partial Class Form1
         Me.pbxNoti.TabStop = False
         Me.pbxNoti.Visible = False
         '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(0, 421)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(122, 44)
+        Me.Button2.TabIndex = 63
+        Me.Button2.Text = "Cerrar Sesión"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2359,6 +2375,7 @@ Partial Class Form1
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(710, 622)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.lblCajero)
         Me.Controls.Add(Me.bntCerrar)
         Me.Controls.Add(Me.lblHora)
@@ -2701,4 +2718,5 @@ Partial Class Form1
     Friend WithEvents btnSede2 As PictureBox
     Friend WithEvents btnMedico2 As PictureBox
     Friend WithEvents btnPaciente2 As PictureBox
+    Friend WithEvents Button2 As Button
 End Class
