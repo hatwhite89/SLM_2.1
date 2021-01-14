@@ -94,6 +94,10 @@ Partial Class A_PerfilUsuario
         Me.Label5 = New System.Windows.Forms.Label()
         Me.dtPerfiles = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label61 = New System.Windows.Forms.Label()
+        Me.Label60 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxModulos.SuspendLayout()
@@ -118,6 +122,10 @@ Partial Class A_PerfilUsuario
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.Label61)
+        Me.GroupBox1.Controls.Add(Me.Label60)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.btnCrearPerfil)
         Me.GroupBox1.Controls.Add(Me.chkHabilitar)
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
@@ -156,9 +164,9 @@ Partial Class A_PerfilUsuario
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(386, 19)
+        Me.PictureBox1.Location = New System.Drawing.Point(390, 19)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 102)
+        Me.PictureBox1.Size = New System.Drawing.Size(91, 87)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
@@ -843,6 +851,45 @@ Partial Class A_PerfilUsuario
         Me.Panel1.Size = New System.Drawing.Size(943, 47)
         Me.Panel1.TabIndex = 8
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(7, 63)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(11, 13)
+        Me.Label7.TabIndex = 212
+        Me.Label7.Text = "*"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.Color.Red
+        Me.Label6.Location = New System.Drawing.Point(8, 89)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(11, 13)
+        Me.Label6.TabIndex = 213
+        Me.Label6.Text = "*"
+        '
+        'Label61
+        '
+        Me.Label61.AutoSize = True
+        Me.Label61.Location = New System.Drawing.Point(386, 111)
+        Me.Label61.Name = "Label61"
+        Me.Label61.Size = New System.Drawing.Size(101, 13)
+        Me.Label61.TabIndex = 215
+        Me.Label61.Text = "Campos obligatorios"
+        '
+        'Label60
+        '
+        Me.Label60.AutoSize = True
+        Me.Label60.ForeColor = System.Drawing.Color.Red
+        Me.Label60.Location = New System.Drawing.Point(375, 111)
+        Me.Label60.Name = "Label60"
+        Me.Label60.Size = New System.Drawing.Size(11, 13)
+        Me.Label60.TabIndex = 214
+        Me.Label60.Text = "*"
+        '
         'A_PerfilUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -962,4 +1009,8 @@ Partial Class A_PerfilUsuario
     Friend WithEvents EstadoE As DataGridViewCheckBoxColumn
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label61 As Label
+    Friend WithEvents Label60 As Label
 End Class
