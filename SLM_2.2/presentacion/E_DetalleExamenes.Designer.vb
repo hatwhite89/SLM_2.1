@@ -403,7 +403,7 @@ Partial Class E_DetalleExamenes
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.Black
-        Me.btnCrear.Location = New System.Drawing.Point(660, 11)
+        Me.btnCrear.Location = New System.Drawing.Point(659, 11)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 10
