@@ -59,12 +59,10 @@ Public Class A_ImportarUserAD
 
         Try
 
-            Dim nombre As String
-            Dim empleado As New ClsEmpleados
             Dim user As New ClsUsuario
             Dim perfil As New ClsPerfilesUsuario
             Dim dt, dtP As New DataTable
-            Dim row, rowP As DataRow
+            Dim rowP As DataRow
 
             dtP = perfil.PerfilDefault
             rowP = dtP.Rows(0)
@@ -74,43 +72,16 @@ Public Class A_ImportarUserAD
 
                 If dtUsuariosAD.Rows(a).Cells(0).Value = True Then
 
-                    nombre = dtUsuariosAD.Rows(a).Cells(1).Value + " " + dtUsuariosAD.Rows(a).Cells(2).Value
-                    MsgBox(nombre)
-                    With empleado 'with empleado
+                    With user
+                        .Usuario_ = dtUsuariosAD.Rows(a).Cells(3).Value
+                        .password_ = "#changepass#"
+                        .Estad_o = 0
+                        .Cod_Perfil = Convert.ToInt32(rowP("cod"))
+                        .perfil_ = rowP("codBreve")
+                        .Cod_Empleado = 0
+                        .registrarNuevoUsuario()
+                    End With
 
-                        .NombreCompleto_ = nombre
-                        dt = .CompararNombre()
-                        row = dt.Rows(0)
-
-                    End With 'with empleado fin
-
-                    If row("codigo") > 0 Then ' validacion de existencia
-                        With user
-
-                            .Usuario_ = dtUsuariosAD.Rows(a).Cells(3).Value
-                            .password_ = "#changepass#"
-                            .Estad_o = 1
-                            .Cod_Perfil = Convert.ToInt32(rowP("cod"))
-                            .perfil_ = rowP("codBreve")
-                            .Cod_Empleado = Convert.ToInt32(row("codigo"))
-                            .registrarNuevoUsuario()
-
-                        End With
-
-                    Else
-                        With user
-
-                            .Usuario_ = dtUsuariosAD.Rows(a).Cells(3).Value
-                            .password_ = "#changepass#"
-                            .Estad_o = 1
-                            .Cod_Perfil = Convert.ToInt32(rowP("cod"))
-                            .perfil_ = rowP("codBreve")
-                            .Cod_Empleado = 0
-                            .registrarNuevoUsuario()
-
-                        End With
-
-                    End If
                 End If
 
             Next
@@ -119,7 +90,7 @@ Public Class A_ImportarUserAD
             E_Usuarios.dtUsuarios.DataSource = user.listarUsuarios
             E_Usuarios.dtUsuarios.Columns("codPerfil").Visible = False
         Catch ex As Exception
-            MsgBox("No se encontró el empleado en la BD. Detalle de error: " + ex.Message)
+            MsgBox("Detalle:" + ex.Message)
         End Try
 
     End Sub
