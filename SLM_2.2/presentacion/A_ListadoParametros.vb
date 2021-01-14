@@ -95,11 +95,18 @@
 
     Private Sub txtCodExamen_TextChanged(sender As Object, e As EventArgs) Handles txtCodExamen.TextChanged
         Try
+            If Trim(txtCodExamen.Text) <> "" Then
+                Dim buscar As New ClsItemExamenDetalle
 
-            Dim buscar As New ClsItemExamenDetalle
+                buscar.codigoItemExamen_ = Convert.ToInt32(txtCodExamen.Text)
+                dtParametros.DataSource = buscar.BuscarItemExamenDetalle
+            Else
+                Dim buscar As New ClsItemExamenDetalle
 
-            buscar.codigoItemExamen_ = Convert.ToInt32(txtCodExamen.Text)
-            dtParametros.DataSource = buscar.BuscarItemExamenDetalle
+                'buscar.codigoItemExamen_ = Convert.ToInt32(txtCodExamen.Text)
+                dtParametros.DataSource = buscar.SeleccionarItemExamenDetalle
+
+            End If
 
         Catch ex As Exception
 
