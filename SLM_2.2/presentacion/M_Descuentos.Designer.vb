@@ -48,6 +48,9 @@ Partial Class M_Descuentos
         Me.lblcomentarioB = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label60 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.gbxclasificacion.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,6 +60,9 @@ Partial Class M_Descuentos
         'gbxclasificacion
         '
         Me.gbxclasificacion.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.gbxclasificacion.Controls.Add(Me.Label4)
+        Me.gbxclasificacion.Controls.Add(Me.Label3)
+        Me.gbxclasificacion.Controls.Add(Me.Label60)
         Me.gbxclasificacion.Controls.Add(Me.lblform)
         Me.gbxclasificacion.Controls.Add(Me.txtPorcentaje)
         Me.gbxclasificacion.Controls.Add(Me.txtDescripcion)
@@ -87,7 +93,7 @@ Partial Class M_Descuentos
         '
         'txtPorcentaje
         '
-        Me.txtPorcentaje.Location = New System.Drawing.Point(123, 118)
+        Me.txtPorcentaje.Location = New System.Drawing.Point(141, 118)
         Me.txtPorcentaje.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtPorcentaje.MaxLength = 20
         Me.txtPorcentaje.Name = "txtPorcentaje"
@@ -107,7 +113,7 @@ Partial Class M_Descuentos
         'txtcodigoBreve
         '
         Me.txtcodigoBreve.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtcodigoBreve.Location = New System.Drawing.Point(123, 73)
+        Me.txtcodigoBreve.Location = New System.Drawing.Point(141, 73)
         Me.txtcodigoBreve.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcodigoBreve.MaxLength = 20
         Me.txtcodigoBreve.Name = "txtcodigoBreve"
@@ -117,7 +123,7 @@ Partial Class M_Descuentos
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(124, 26)
+        Me.txtcodigo.Location = New System.Drawing.Point(142, 26)
         Me.txtcodigo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
@@ -139,7 +145,7 @@ Partial Class M_Descuentos
         'lbltipo
         '
         Me.lbltipo.AutoSize = True
-        Me.lbltipo.Location = New System.Drawing.Point(28, 118)
+        Me.lbltipo.Location = New System.Drawing.Point(46, 118)
         Me.lbltipo.Name = "lbltipo"
         Me.lbltipo.Size = New System.Drawing.Size(76, 17)
         Me.lbltipo.TabIndex = 130
@@ -148,7 +154,7 @@ Partial Class M_Descuentos
         'lbldescripcion
         '
         Me.lbldescripcion.AutoSize = True
-        Me.lbldescripcion.Location = New System.Drawing.Point(11, 76)
+        Me.lbldescripcion.Location = New System.Drawing.Point(29, 76)
         Me.lbldescripcion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbldescripcion.Name = "lbldescripcion"
         Me.lbldescripcion.Size = New System.Drawing.Size(93, 17)
@@ -158,7 +164,7 @@ Partial Class M_Descuentos
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(53, 28)
+        Me.lblcodigo.Location = New System.Drawing.Point(71, 28)
         Me.lblcodigo.Name = "lblcodigo"
         Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
         Me.lblcodigo.TabIndex = 41
@@ -357,6 +363,39 @@ Partial Class M_Descuentos
         Me.Panel1.Size = New System.Drawing.Size(957, 63)
         Me.Panel1.TabIndex = 123
         '
+        'Label60
+        '
+        Me.Label60.AutoSize = True
+        Me.Label60.ForeColor = System.Drawing.Color.Red
+        Me.Label60.Location = New System.Drawing.Point(435, 33)
+        Me.Label60.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label60.Name = "Label60"
+        Me.Label60.Size = New System.Drawing.Size(13, 17)
+        Me.Label60.TabIndex = 213
+        Me.Label60.Text = "*"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(8, 78)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(13, 17)
+        Me.Label3.TabIndex = 214
+        Me.Label3.Text = "*"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.Color.Red
+        Me.Label4.Location = New System.Drawing.Point(26, 121)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(13, 17)
+        Me.Label4.TabIndex = 215
+        Me.Label4.Text = "*"
+        '
         'M_Descuentos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -409,4 +448,7 @@ Partial Class M_Descuentos
     Friend WithEvents Label2 As Label
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label60 As Label
 End Class

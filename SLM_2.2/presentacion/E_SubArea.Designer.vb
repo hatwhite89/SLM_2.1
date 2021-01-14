@@ -53,6 +53,9 @@ Partial Class E_SubArea
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Label60 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,7 +75,7 @@ Partial Class E_SubArea
         'txtSubArea
         '
         Me.txtSubArea.Location = New System.Drawing.Point(641, 26)
-        Me.txtSubArea.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSubArea.Margin = New System.Windows.Forms.Padding(4)
         Me.txtSubArea.Name = "txtSubArea"
         Me.txtSubArea.Size = New System.Drawing.Size(132, 22)
         Me.txtSubArea.TabIndex = 1
@@ -82,6 +85,9 @@ Partial Class E_SubArea
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.Label60)
         Me.GroupBox1.Controls.Add(Me.lblform)
         Me.GroupBox1.Controls.Add(Me.cmbxCodigoArea)
         Me.GroupBox1.Controls.Add(Me.txtCodigo)
@@ -98,9 +104,9 @@ Partial Class E_SubArea
         Me.GroupBox1.Controls.Add(Me.txtSubArea)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 62)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(925, 181)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
@@ -130,7 +136,7 @@ Partial Class E_SubArea
         '
         Me.txtCodigo.Enabled = False
         Me.txtCodigo.Location = New System.Drawing.Point(119, 27)
-        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.ReadOnly = True
         Me.txtCodigo.Size = New System.Drawing.Size(132, 22)
@@ -150,7 +156,7 @@ Partial Class E_SubArea
         '
         Me.chkConsolidado.AutoSize = True
         Me.chkConsolidado.Location = New System.Drawing.Point(277, 133)
-        Me.chkConsolidado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkConsolidado.Margin = New System.Windows.Forms.Padding(4)
         Me.chkConsolidado.Name = "chkConsolidado"
         Me.chkConsolidado.Size = New System.Drawing.Size(179, 21)
         Me.chkConsolidado.TabIndex = 11
@@ -161,7 +167,7 @@ Partial Class E_SubArea
         '
         Me.chkNoSolitar.AutoSize = True
         Me.chkNoSolitar.Location = New System.Drawing.Point(277, 105)
-        Me.chkNoSolitar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkNoSolitar.Margin = New System.Windows.Forms.Padding(4)
         Me.chkNoSolitar.Name = "chkNoSolitar"
         Me.chkNoSolitar.Size = New System.Drawing.Size(267, 21)
         Me.chkNoSolitar.TabIndex = 10
@@ -171,7 +177,7 @@ Partial Class E_SubArea
         'txtSecImpre
         '
         Me.txtSecImpre.Location = New System.Drawing.Point(119, 134)
-        Me.txtSecImpre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSecImpre.Margin = New System.Windows.Forms.Padding(4)
         Me.txtSecImpre.Name = "txtSecImpre"
         Me.txtSecImpre.Size = New System.Drawing.Size(132, 22)
         Me.txtSecImpre.TabIndex = 9
@@ -189,7 +195,7 @@ Partial Class E_SubArea
         'txtFormulario
         '
         Me.txtFormulario.Location = New System.Drawing.Point(119, 102)
-        Me.txtFormulario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtFormulario.Margin = New System.Windows.Forms.Padding(4)
         Me.txtFormulario.Name = "txtFormulario"
         Me.txtFormulario.Size = New System.Drawing.Size(132, 22)
         Me.txtFormulario.TabIndex = 7
@@ -207,7 +213,7 @@ Partial Class E_SubArea
         'txtNombre
         '
         Me.txtNombre.Location = New System.Drawing.Point(119, 64)
-        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(381, 22)
         Me.txtNombre.TabIndex = 5
@@ -240,7 +246,7 @@ Partial Class E_SubArea
         Me.btnCrearNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrearNuevo.ForeColor = System.Drawing.Color.Black
         Me.btnCrearNuevo.Location = New System.Drawing.Point(625, 16)
-        Me.btnCrearNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCrearNuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCrearNuevo.Name = "btnCrearNuevo"
         Me.btnCrearNuevo.Size = New System.Drawing.Size(100, 28)
         Me.btnCrearNuevo.TabIndex = 16
@@ -255,7 +261,7 @@ Partial Class E_SubArea
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.Black
         Me.btnModificar.Location = New System.Drawing.Point(733, 16)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(100, 28)
         Me.btnModificar.TabIndex = 15
@@ -270,7 +276,7 @@ Partial Class E_SubArea
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.Black
         Me.btnGuardar.Location = New System.Drawing.Point(841, 16)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(100, 28)
         Me.btnGuardar.TabIndex = 14
@@ -291,9 +297,9 @@ Partial Class E_SubArea
         Me.GroupBox2.Controls.Add(Me.txtnombreB)
         Me.GroupBox2.Controls.Add(Me.lblnombreB)
         Me.GroupBox2.Location = New System.Drawing.Point(16, 250)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(925, 489)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
@@ -306,7 +312,7 @@ Partial Class E_SubArea
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Button1.Location = New System.Drawing.Point(807, 21)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 28)
         Me.Button1.TabIndex = 121
@@ -332,7 +338,7 @@ Partial Class E_SubArea
         Me.btnRegresar.FlatAppearance.BorderSize = 0
         Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegresar.Location = New System.Drawing.Point(28, 441)
-        Me.btnRegresar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnRegresar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnRegresar.Name = "btnRegresar"
         Me.btnRegresar.Size = New System.Drawing.Size(44, 46)
         Me.btnRegresar.TabIndex = 15
@@ -396,7 +402,7 @@ Partial Class E_SubArea
         Me.Panel1.Controls.Add(Me.btnGuardar)
         Me.Panel1.Controls.Add(Me.btnModificar)
         Me.Panel1.Location = New System.Drawing.Point(0, -1)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(956, 55)
         Me.Panel1.TabIndex = 123
@@ -424,6 +430,39 @@ Partial Class E_SubArea
         Me.StatusStrip1.TabIndex = 124
         Me.StatusStrip1.Text = "StatusStrip1"
         '
+        'Label60
+        '
+        Me.Label60.AutoSize = True
+        Me.Label60.ForeColor = System.Drawing.Color.Red
+        Me.Label60.Location = New System.Drawing.Point(299, 31)
+        Me.Label60.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label60.Name = "Label60"
+        Me.Label60.Size = New System.Drawing.Size(13, 17)
+        Me.Label60.TabIndex = 213
+        Me.Label60.Text = "*"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(548, 30)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(13, 17)
+        Me.Label8.TabIndex = 214
+        Me.Label8.Text = "*"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.ForeColor = System.Drawing.Color.Red
+        Me.Label9.Location = New System.Drawing.Point(32, 67)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(13, 17)
+        Me.Label9.TabIndex = 215
+        Me.Label9.Text = "*"
+        '
         'E_SubArea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -437,7 +476,7 @@ Partial Class E_SubArea
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "E_SubArea"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mantenimiento Subárea"
@@ -483,4 +522,7 @@ Partial Class E_SubArea
     Friend WithEvents Label7 As Label
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label60 As Label
 End Class
