@@ -56,7 +56,7 @@
                 MM_TomaDeMuestras.btnModificar.Enabled = True
                 MM_TomaDeMuestras.lblEstado.Text = "Modificar"
 
-                MM_TomaDeMuestras.ShowDialog()
+                MM_TomaDeMuestras.Show()
             End If
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -93,7 +93,7 @@
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
         'Me.Close
         MM_TomaDeMuestras.limpiar()
-        MM_TomaDeMuestras.ShowDialog()
+        MM_TomaDeMuestras.Show()
     End Sub
 
 End Class

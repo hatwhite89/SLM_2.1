@@ -776,7 +776,7 @@ Module ModulosVarios
             row = dt.Rows(0)
 
             If row("pass") = "#changepass#" Then
-                A_CambioPassword.ShowDialog()
+                A_CambioPassword.Show()
             End If
 
         Catch ex As Exception

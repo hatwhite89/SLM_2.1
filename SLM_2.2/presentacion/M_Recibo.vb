@@ -8,7 +8,7 @@ Public Class M_Recibo
     Dim codigoDetalleRecibo As ArrayList = New ArrayList()
     Private Sub btnbuscarUnidad_Click(sender As Object, e As EventArgs) Handles btnbuscarFormaPago.Click
         A_ListarFormasPagoPF.lblForm.Text = "M_Recibo"
-        A_ListarFormasPagoPF.ShowDialog()
+        A_ListarFormasPagoPF.Show()
     End Sub
 
     Private Sub txtcodigoFormaPago_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoFormaPago.TextChanged
@@ -285,7 +285,7 @@ Public Class M_Recibo
         Try
             If e.RowIndex >= 0 Then
                 If e.ColumnIndex = 1 And lblEstado.Text <> "OK" Then
-                    M_ListarFactura.ShowDialog()
+                    M_ListarFactura.Show()
                 ElseIf e.ColumnIndex = 10 And lblEstado.Text = "Nuevo" Then
                     Dim n As String = MsgBox("¿Desea eliminar la factura del recibo?", MsgBoxStyle.YesNo, "Validación")
                     If n = vbYes Then

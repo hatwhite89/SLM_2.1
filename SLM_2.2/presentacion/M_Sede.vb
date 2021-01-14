@@ -293,6 +293,6 @@
     End Function
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        M_Factura.ShowDialog()
+        M_Factura.Show()
     End Sub
 End Class

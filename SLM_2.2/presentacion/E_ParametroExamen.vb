@@ -61,7 +61,7 @@
     End Sub
 
     Private Sub btnbuscarUnidad_Click(sender As Object, e As EventArgs) Handles btnbuscarUnidad.Click
-        E_Unidad.ShowDialog()
+        E_Unidad.Show()
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then

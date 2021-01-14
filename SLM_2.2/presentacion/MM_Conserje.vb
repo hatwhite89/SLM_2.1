@@ -154,7 +154,7 @@
     Private Sub txtCodEmpleado_DoubleClick(sender As Object, e As EventArgs) Handles txtCodEmpleado.DoubleClick
         Try
             M_ListadoEmpleados.lblform.Text = "MM_Conserje"
-            M_ListadoEmpleados.ShowDialog()
+            M_ListadoEmpleados.Show()
         Catch ex As Exception
 
         End Try

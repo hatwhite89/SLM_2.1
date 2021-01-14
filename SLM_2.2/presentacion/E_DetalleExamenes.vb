@@ -118,10 +118,17 @@
     Private Sub dtResultados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtResultados.CellClick
         Try
             If e.RowIndex >= 0 Then
-                If e.ColumnIndex = 3 Then
+                If e.ColumnIndex = 3 And Me.dtResultados.Rows(e.RowIndex).Cells(0).Value() = "" Then
                     E_ListarUnidades.lblFila.Text = e.RowIndex
                     E_ListarUnidades.lblNombre.Text = Me.dtResultados.Rows(e.RowIndex).Cells(1).Value().ToString()
-                    E_ListarUnidades.ShowDialog()
+                    E_ListarUnidades.lblbandera.Text = 1
+                    E_ListarUnidades.Show()
+                ElseIf e.ColumnIndex = 3 And Me.dtResultados.Rows(e.RowIndex).Cells(0).Value() <> "" Then
+                    E_ListarUnidades.lblFila.Text = e.RowIndex
+                    E_ListarUnidades.lblNombre.Text = Me.dtResultados.Rows(e.RowIndex).Cells(1).Value().ToString()
+                    E_ListarUnidades.lblbandera.Text = 0
+                    E_ListarUnidades.lblcodeItemExamenDet.Text = Me.dtResultados.Rows(e.RowIndex).Cells(0).Value().ToString()
+                    E_ListarUnidades.Show()
                 ElseIf e.ColumnIndex = 4 And Me.dtResultados.Rows(e.RowIndex).Cells(0).Value() = "" Then
                     Dim n As String = MsgBox("¿Desea eliminar el resultado del examen?", MsgBoxStyle.YesNo, "Validación")
                     If n = vbYes Then
@@ -273,6 +280,7 @@
             For index As Integer = 0 To dtResultados.Rows.Count - 2
                 If dtResultados.Rows(index).Cells(0).Value() = "" Then
                     'agrega
+                    MsgBox(dtResultados.Rows(index).Cells(1).Value())
                     With objItemDet
                         .codigoItemExamen_ = Convert.ToInt64(txtCodExamen.Text)
                         .Nombre_ = dtResultados.Rows(index).Cells(1).Value()
@@ -289,6 +297,7 @@
                         .Nombre_ = dtResultados.Rows(index).Cells(1).Value()
                         .codigoUnidad_ = dtResultados.Rows(index).Cells(2).Value()
                     End With
+                    MsgBox(dtResultados.Rows(index).Cells(1).Value())
                     If objItemDet.ModificarItemExamenDetalle() = 0 Then
                         MsgBox("Error al querer insertar el posible resultado.")
                     End If
@@ -312,7 +321,7 @@
         Try
             Dim n As String = ""
             If (lblform.Text = "M_ListaPrecios") Then
-                Dim temp As String = M_ListaPrecios.dgbtabla.Rows(lblFila.Text).Cells(3).Value()
+                Dim temp As String = M_ListaPrecios.dgbtabla.Rows(lblFila.Text).Cells(4).Value()
                 If e.RowIndex >= 0 Then
                     n = MsgBox("¿Desea utilizar el examen seleccionado?", MsgBoxStyle.YesNo, "Validación")
                 End If
@@ -321,7 +330,7 @@
                         If Convert.ToInt64(lblFila.Text) >= 0 And temp <> "" Then
                             M_ListaPrecios.dgbtabla.Rows.Remove(M_ListaPrecios.dgbtabla.Rows(lblFila.Text))
                         End If
-                        M_ListaPrecios.dgbtabla.Rows.Insert(lblFila.Text, New String() {"", "", dtItem.Rows(e.RowIndex).Cells(0).Value(), temp})
+                        M_ListaPrecios.dgbtabla.Rows.Insert(lblFila.Text, New String() {"", "", dtItem.Rows(e.RowIndex).Cells(0).Value(), dtItem.Rows(e.RowIndex).Cells(3).Value(), temp})
                         Me.Close()
                     Else
                         MsgBox("Ya a sido agregado anteriormente el examen o grupo de examen.")
@@ -378,7 +387,7 @@
             If Trim(lblcodigoGrupo.Text) <> "" And Trim(lblcodigoGrupo.Text) <> "label" Then
                 E_ListarSubAreasXArea.lblcodeArea.Text = lblcodigoGrupo.Text
                 E_ListarSubAreasXArea.lblform.Text = "E_DetalleExamenes"
-                E_ListarSubAreasXArea.ShowDialog()
+                E_ListarSubAreasXArea.Show()
             Else
                 MsgBox("Debe seleccionar el grupo de examen.", MsgBoxStyle.Information)
             End If

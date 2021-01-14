@@ -193,12 +193,12 @@
 
     Private Sub btnbuscarItem_Click(sender As Object, e As EventArgs) Handles btnbuscarItem.Click
         E_DetalleExamenes.lblform.Text = "M_Precio"
-        E_DetalleExamenes.ShowDialog()
+        E_DetalleExamenes.Show()
     End Sub
 
     Private Sub btnBuscarListaPrecios_Click(sender As Object, e As EventArgs) Handles btnBuscarListaPrecios.Click
         M_ListadoDePrecios.lblForm.Text = "Precio"
-        M_ListadoDePrecios.ShowDialog()
+        M_ListadoDePrecios.Show()
     End Sub
 
     Private Sub lblCode_TextChanged(sender As Object, e As EventArgs) Handles lblCode.TextChanged

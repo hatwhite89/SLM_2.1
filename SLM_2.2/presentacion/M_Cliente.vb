@@ -92,9 +92,9 @@ Public Class M_Cliente
 
     Private Sub btnclasificacion_Click(sender As Object, e As EventArgs) Handles btnclasificacion.Click
         'M_ClasificacionContacto.lblform.Text = "M_Cliente"
-        'M_ClasificacionContacto.ShowDialog()
+        'M_ClasificacionContacto.show()
         M_TipoClasificacion.lbltipo.Text = "M_Cliente"
-        M_TipoClasificacion.ShowDialog()
+        M_TipoClasificacion.Show()
     End Sub
     Private Sub Habilitar()
         txtcorreo.ReadOnly = False
@@ -499,7 +499,7 @@ Public Class M_Cliente
                 M_ListadoTipoClasificacion.lblBandera.Text = "1"
                 M_ListadoTipoClasificacion.lblcodeCateCli.Text = lblcodeCategoria.Text
                 M_ListadoTipoClasificacion.lblform.Text = "M_Cliente"
-                M_ListadoTipoClasificacion.ShowDialog()
+                M_ListadoTipoClasificacion.Show()
 
             Else
 
@@ -683,11 +683,11 @@ Public Class M_Cliente
     End Sub
     Private Sub btncategoria_Click(sender As Object, e As EventArgs) Handles btncategoria.Click
         M_Categoria.lblform.Text = "M_Cliente"
-        M_Categoria.ShowDialog()
+        M_Categoria.Show()
     End Sub
     Private Sub btnterminosPago_Click(sender As Object, e As EventArgs) Handles btnterminosPago.Click
         M_TerminosPago.lblform.Text = "cliente"
-        M_TerminosPago.ShowDialog()
+        M_TerminosPago.Show()
     End Sub
     Private Sub txtcodigoTermino_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoTermino.TextChanged
         If (txtcodigoTermino.Text <> "") Then

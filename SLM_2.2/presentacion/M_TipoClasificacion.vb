@@ -330,11 +330,11 @@
 
     Private Sub btnBuscarListaPrecios_Click(sender As Object, e As EventArgs) Handles btnBuscarListaPrecios.Click
         M_ListadoDePrecios.lblForm.Text = "TipoClasificacion"
-        M_ListadoDePrecios.ShowDialog()
+        M_ListadoDePrecios.Show()
     End Sub
 
     Private Sub btnCategoriaCliente_Click(sender As Object, e As EventArgs) Handles btnCategoriaCliente.Click
         M_Categoria.lblform.Text = "TipoClasificacion"
-        M_Categoria.ShowDialog()
+        M_Categoria.Show()
     End Sub
 End Class

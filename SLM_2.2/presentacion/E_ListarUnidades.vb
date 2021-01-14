@@ -6,7 +6,7 @@
         Me.dgbtabla.Columns("codigo").Visible = False
         Me.dgbtabla.Columns("factorCantidad").Visible = False
     End Sub
-    Private Sub seleccionarUnidades()
+    Public Sub seleccionarUnidades()
         Dim objUnit As New ClsUnidad
         Dim dv As DataView = objUnit.SeleccionarUnidad.DefaultView
         dgbtabla.DataSource = dv
@@ -25,9 +25,13 @@
             If e.RowIndex >= 0 Then
                 n = MsgBox("¿Desea utilizar la unidad seleccionada?", MsgBoxStyle.YesNo, "Validación")
             End If
-            If n = vbYes Then
+            If n = vbYes And lblbandera.Text = 1 Then
                 E_DetalleExamenes.dtResultados.Rows.Remove(E_DetalleExamenes.dtResultados.Rows(Convert.ToInt64(lblFila.Text)))
                 E_DetalleExamenes.dtResultados.Rows.Insert(Convert.ToInt64(lblFila.Text), New String() {"", lblNombre.Text, dgbtabla.Rows(e.RowIndex).Cells(0).Value(), dgbtabla.Rows(e.RowIndex).Cells(1).Value()})
+                Me.Close()
+            ElseIf n = vbYes And lblbandera.Text = 0 Then
+                E_DetalleExamenes.dtResultados.Rows.Remove(E_DetalleExamenes.dtResultados.Rows(Convert.ToInt64(lblFila.Text)))
+                E_DetalleExamenes.dtResultados.Rows.Insert(Convert.ToInt64(lblFila.Text), New String() {lblcodeItemExamenDet.Text, lblNombre.Text, dgbtabla.Rows(e.RowIndex).Cells(0).Value(), dgbtabla.Rows(e.RowIndex).Cells(1).Value()})
                 Me.Close()
             End If
         Catch ex As Exception
@@ -71,5 +75,9 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         GridAExcel_global(dgbtabla)
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        E_Unidad.Show()
     End Sub
 End Class

@@ -5,7 +5,7 @@
         Me.Close()
     End Sub
     Private Sub btnbuscarEspecialidad_Click(sender As Object, e As EventArgs) Handles btnbuscarEspecialidad.Click
-        M_Especialidad.ShowDialog()
+        M_Especialidad.Show()
     End Sub
     Private Function sinDobleEspacio(ByVal cadena As String) As String
         Dim texto As String = ""

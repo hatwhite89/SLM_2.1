@@ -123,7 +123,7 @@
 
     Private Sub txtnombreEmpleado_TextChanged(sender As Object, e As EventArgs) Handles txtnombreEmpleado.Click
         M_ListadoEmpleados.lblform.Text = "M_ReporteriaTalentoHumano"
-        M_ListadoEmpleados.ShowDialog()
+        M_ListadoEmpleados.Show()
     End Sub
 
     Private Sub btnGenerar_Click(sender As Object, e As EventArgs) Handles btnGenerar.Click

@@ -46,8 +46,8 @@
                 End With
 
                 If objUnidad.RegistrarNuevaUnidad() = 1 Then
-                    MsgBox("Registrado correctamente.")
-
+                    MsgBox("Registrado correctamente.", MsgBoxStyle.Information)
+                    E_ListarUnidades.seleccionarUnidades()
                     Dim dv As DataView = objUnidad.SeleccionarUnidad.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
@@ -84,7 +84,8 @@
                 End With
 
                 If objUnidad.ModificarUnidad() = 1 Then
-                    MsgBox("Modificado correctamente.")
+                    MsgBox("Modificado correctamente.", MsgBoxStyle.Information)
+                    E_ListarUnidades.seleccionarUnidades()
 
                     Dim dv As DataView = objUnidad.SeleccionarUnidad.DefaultView
                     dgbtabla.DataSource = dv

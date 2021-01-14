@@ -3,7 +3,7 @@
     Dim dv As DataView = objCap.SeleccionarCapacitaciones.DefaultView
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
         M_Capacitaciones.limpiar()
-        M_Capacitaciones.ShowDialog()
+        M_Capacitaciones.Show()
     End Sub
     Public Sub SeleccionarCapacitaciones()
         dv = objCap.SeleccionarCapacitaciones.DefaultView
@@ -81,7 +81,7 @@
                 End If
                 M_Capacitaciones.btnguardar.Enabled = False
                 M_Capacitaciones.btnmodificar.Enabled = True
-                M_Capacitaciones.ShowDialog()
+                M_Capacitaciones.Show()
             End If
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)

@@ -177,7 +177,7 @@ Public Class M_BuscarFactura
     '            txtnumeroB.Text = ""
     '            Me.Hide()
 
-    '            M_Factura.ShowDialog()
+    '            M_Factura.show()
     '        End If
     '    Catch ex As Exception
     '        'MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -227,9 +227,9 @@ Public Class M_BuscarFactura
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         M_DiarioFacturacion.lblForm.Text = "M_DiarioFacturacion"
-        M_DiarioFacturacion.ShowDialog()
+        M_DiarioFacturacion.Show()
         'A_BuscarPlanilla.lblform.Text = "A_BuscarPlanilla"
-        'A_BuscarPlanilla.ShowDialog()
+        'A_BuscarPlanilla.show()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

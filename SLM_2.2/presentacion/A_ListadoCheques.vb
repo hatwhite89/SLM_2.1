@@ -173,7 +173,7 @@ Public Class A_ListadoCheques
 
         Try
             A_ListadoBancos.lblFormBanco.Text = "2"
-            A_ListadoBancos.ShowDialog()
+            A_ListadoBancos.Show()
         Catch ex As Exception
 
         End Try

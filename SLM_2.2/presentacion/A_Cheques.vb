@@ -114,7 +114,7 @@ Public Class A_Cheques
     End Sub
     Private Sub txtcodProvee_DoubleClick(sender As Object, e As EventArgs) Handles txtcodProvee.DoubleClick
 
-        A_ListarProveedores.ShowDialog()
+        A_ListarProveedores.Show()
 
     End Sub
     Private Sub lblEstado_TextChanged(sender As Object, e As EventArgs) Handles lblEstado.TextChanged

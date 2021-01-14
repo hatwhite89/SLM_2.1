@@ -178,7 +178,7 @@
 
     Private Sub btnBuscarTerminoPago_Click(sender As Object, e As EventArgs) Handles btnBuscarTerminoPago.Click
         'Abrir busqueda de termino de pago
-        A_ListarTerminoPago.ShowDialog()
+        A_ListarTerminoPago.Show()
     End Sub
 
     Public Function validarDetalle(ByVal codigo As Integer)
@@ -255,7 +255,7 @@
 
     Private Sub btnRegresar_Click(sender As Object, e As EventArgs) Handles btnRegresar.Click
         Me.Close()
-        A_ListadoFacturaCompra.ShowDialog()
+        A_ListadoFacturaCompra.Show()
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
@@ -351,7 +351,7 @@
         End Try
 
         Me.Close()
-        A_ListadoFacturaCompra.ShowDialog()
+        A_ListadoFacturaCompra.Show()
 
     End Sub
 

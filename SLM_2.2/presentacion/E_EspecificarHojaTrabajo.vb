@@ -13,6 +13,7 @@
                 Dim row As DataRow = dt.Rows(0)
                 lblCodigoGrupo.Text = CStr(row("codigoArea"))
                 txtDescripcionSubArea.Text = CStr(row("nombre"))
+                E_HojaTrabajo.txtArea.Text = CStr(row("nombreGrupo"))
                 lblCodeSubArea.Text = CStr(row("codSubArea"))
             Catch ex As Exception
                 lblCodeSubArea.Text = ""
@@ -68,7 +69,7 @@
 
     Private Sub btnSubarea_Click(sender As Object, e As EventArgs) Handles btnSubarea.Click
         E_ListarSubAreas.lblform.Text = "E_EspecificarHojaTrabajo"
-        E_ListarSubAreas.ShowDialog()
+        E_ListarSubAreas.Show()
     End Sub
 
     Private Sub btnTecnico_Click(sender As Object, e As EventArgs)
@@ -77,7 +78,7 @@
 
     Private Sub btnSucursal_Click(sender As Object, e As EventArgs) Handles btnSucursal.Click
         M_Sucursal.lblform.Text = "E_EspecificarHojaTrabajo"
-        M_Sucursal.ShowDialog()
+        M_Sucursal.Show()
     End Sub
 
     Private Sub btnAbrir_Click(sender As Object, e As EventArgs) Handles btnAbrir.Click
@@ -87,12 +88,12 @@
             Try
                 E_HojaTrabajo.txtsucursal.Text = txtDescripcionSucursal.Text
                 E_HojaTrabajo.txtSubarea.Text = txtDescripcionSubArea.Text
-                E_HojaTrabajo.txtArea.Text = lblCodigoGrupo.Text
+                'E_HojaTrabajo.txtArea.Text = lblCodigoGrupo.Text
                 E_HojaTrabajo.lblCodeSucursal.Text = lblCodeSucursal.Text
                 E_HojaTrabajo.lblCodeSubArea.Text = lblCodeSubArea.Text
 
                 GenerarTablaHojaTrabajo()
-                E_HojaTrabajo.ShowDialog()
+                E_HojaTrabajo.Show()
 
 
             Catch ex As Exception
@@ -285,7 +286,7 @@
             col = New DataColumn("Medico")
             ds.Tables("HojaTrabajo").Columns.Add(col)
 
-            MsgBox("asigno la  parametros")
+            'MsgBox("asigno la  parametros")
             Dim dt As New DataTable
             Dim row As DataRow
             Dim objItemDet As New ClsItemExamenDetalle
@@ -299,14 +300,14 @@
                 'dtResultados.Rows.Add(New String() {CStr(row("codigo")), CStr(row("nombre")), CStr(row("codigoUnidad")), CStr(row("unidad_codigo_breve"))})
             Next
 
-            MsgBox("asigno la estado")
+            'MsgBox("asigno la estado")
             col = New DataColumn("Estado")
             'col.ReadOnly = True
             ds.Tables("HojaTrabajo").Columns.Add(col)
 
             'Asigna la creacion de la hoja de trabajo al dataset
             E_HojaTrabajo.ds = ds
-            MsgBox("asigno la tabla")
+            'MsgBox("asigno la tabla")
             'le asigno la tabla
             E_HojaTrabajo.dgvHojaTrab.DataSource = ds.Tables(0)
 
@@ -320,5 +321,14 @@
         'txtTecnico.Text = Form1.lblMiUser.Text
         txtSubArea.ResetText()
         txtSucursal.ResetText()
+    End Sub
+
+    Private Sub A_Promociones_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+
+        'Presionar ESC para cerrar ventana
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
+
     End Sub
 End Class

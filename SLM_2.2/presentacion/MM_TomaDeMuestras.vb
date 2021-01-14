@@ -29,7 +29,7 @@
     Private Sub txtCodExamen_DoubleClick(sender As Object, e As EventArgs) Handles txtCodExamen.DoubleClick
         Try
             E_DetalleExamenes.lblform.Text = "MM_TomaDeMuestras"
-            E_DetalleExamenes.ShowDialog()
+            E_DetalleExamenes.Show()
         Catch ex As Exception
 
         End Try

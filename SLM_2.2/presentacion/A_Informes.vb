@@ -3,7 +3,7 @@
     Private Sub btnBuscarSubArea_Click(sender As Object, e As EventArgs) Handles btnBuscarSubArea.Click
         Try
             E_ListarSubAreas.lblform.Text = "informe"
-            E_ListarSubAreas.ShowDialog()
+            E_ListarSubAreas.Show()
 
         Catch ex As Exception
 
@@ -41,7 +41,7 @@
 
     Private Sub btnBuscarExamen_Click(sender As Object, e As EventArgs) Handles btnBuscarExamen.Click
         Try
-            A_ListadoExamenes.ShowDialog()
+            A_ListadoExamenes.Show()
         Catch ex As Exception
 
         End Try

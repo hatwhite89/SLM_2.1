@@ -161,6 +161,6 @@ Public Class A_PlantillasDeResultado
 
     Private Sub btnBuscarArea_Click(sender As Object, e As EventArgs) Handles btnBuscarArea.Click
         E_GrupoExamen.lblform.Text = "A_PlantillasDeResultado"
-        E_GrupoExamen.ShowDialog()
+        E_GrupoExamen.Show()
     End Sub
 End Class

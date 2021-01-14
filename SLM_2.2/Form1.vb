@@ -108,7 +108,7 @@
             End If
 
 
-            'M_MenuFacturacion.ShowDialog()
+            'M_MenuFacturacion.show()
 
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
@@ -248,7 +248,7 @@
     End Sub
 
     Private Sub btnPacientes_Click(sender As Object, e As EventArgs)
-        M_Cliente.ShowDialog()
+        M_Cliente.Show()
     End Sub
 
     Private Sub btnTermino_Click(sender As Object, e As EventArgs)
@@ -269,7 +269,7 @@
     End Sub
 
     Private Sub btnMedico_Click(sender As Object, e As EventArgs)
-        M_Medico.ShowDialog()
+        M_Medico.Show()
     End Sub
 
     Private Sub btnSede_Click(sender As Object, e As EventArgs)
@@ -442,17 +442,17 @@
 
     Private Sub btnSucursales_Click(sender As Object, e As EventArgs)
         M_Sucursal.lblform.Text = "M_Sucursal"
-        M_Sucursal.ShowDialog()
+        M_Sucursal.Show()
     End Sub
 
     Private Sub btnPermisos_Click(sender As Object, e As EventArgs)
         M_Permisos.lblform.Text = "M_Permisos"
-        M_Permisos.ShowDialog()
+        M_Permisos.Show()
     End Sub
 
     Private Sub btnVacaciones_Click(sender As Object, e As EventArgs)
         M_Vacaciones.lblform.Text = "M_Vacaciones"
-        M_Vacaciones.ShowDialog()
+        M_Vacaciones.Show()
     End Sub
 
     Private Sub btnEmpleados_Click(sender As Object, e As EventArgs)
@@ -550,12 +550,12 @@
 
     Private Sub btnArea_Click(sender As Object, e As EventArgs)
         M_Area.lblform.Text = "M_Area"
-        M_Area.ShowDialog()
+        M_Area.Show()
     End Sub
 
     Private Sub btnDepto_Click(sender As Object, e As EventArgs)
         M_Departamento.lblform.Text = "M_Departamento"
-        M_Departamento.ShowDialog()
+        M_Departamento.Show()
     End Sub
 
     Private Sub btnMaquinasLocales_Click(sender As Object, e As EventArgs)
@@ -563,7 +563,7 @@
     End Sub
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs)
-        E_frmProcesarSolicitudInterna.ShowDialog()
+        E_frmProcesarSolicitudInterna.Show()
     End Sub
 
     Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
@@ -749,11 +749,11 @@
 
     Private Sub PictureBox31_Click(sender As Object, e As EventArgs) Handles PictureBox31.Click
         Try
-            M_BuscarFactura.ShowDialog()
+            M_BuscarFactura.Show()
 
         Catch ex As Exception
             M_BuscarFactura.Close()
-            M_BuscarFactura.ShowDialog()
+            M_BuscarFactura.Show()
         End Try
     End Sub
 
@@ -764,7 +764,7 @@
     Private Sub PictureBox30_Click_1(sender As Object, e As EventArgs) Handles PictureBox30.Click
         Try
 
-            M_BuscarCotizacion.ShowDialog()
+            M_BuscarCotizacion.Show()
         Catch ex As Exception
 
         End Try
@@ -772,14 +772,14 @@
 
     Private Sub PictureBox29_Click(sender As Object, e As EventArgs) Handles PictureBox29.Click
         Try
-            M_BuscarRecibo.ShowDialog()
+            M_BuscarRecibo.Show()
         Catch ex As Exception
 
         End Try
     End Sub
 
     Private Sub PictureBox28_Click(sender As Object, e As EventArgs) Handles PictureBox28.Click
-        M_Apertura.ShowDialog()
+        M_Apertura.Show()
     End Sub
 
     Private Sub PictureBox27_Click(sender As Object, e As EventArgs) Handles PictureBox27.Click
@@ -798,7 +798,7 @@
     End Sub
 
     Private Sub PictureBox46_Click(sender As Object, e As EventArgs) Handles PictureBox46.Click
-        A_Proveedor.ShowDialog()
+        A_Proveedor.Show()
     End Sub
 
     Private Sub PictureBox34_Click(sender As Object, e As EventArgs) Handles PictureBox34.Click
@@ -806,7 +806,7 @@
     End Sub
 
     Private Sub PictureBox33_Click(sender As Object, e As EventArgs) Handles PictureBox33.Click
-        E_GrupoExamen.ShowDialog()
+        E_GrupoExamen.Show()
     End Sub
 
     Private Sub PictureBox32_Click(sender As Object, e As EventArgs) Handles PictureBox32.Click
@@ -837,64 +837,64 @@
     Private Sub pbxCategoriaCliente_Click(sender As Object, e As EventArgs) Handles pbxCategoriaCliente.Click
         Try
             M_Categoria.lblform.Text = "Form1"
-            M_Categoria.ShowDialog()
+            M_Categoria.Show()
         Catch ex As Exception
 
         End Try
     End Sub
 
     Private Sub PictureBox52_Click(sender As Object, e As EventArgs) Handles PictureBox52.Click
-        M_TerminosPago.ShowDialog()
+        M_TerminosPago.Show()
     End Sub
 
     Private Sub PictureBox51_Click(sender As Object, e As EventArgs) Handles PictureBox51.Click
-        M_Cliente.ShowDialog()
+        M_Cliente.Show()
     End Sub
 
     Private Sub PictureBox50_Click(sender As Object, e As EventArgs) Handles PictureBox50.Click
         M_MaquinasLocales.lblform.Text = "Form1"
-        M_MaquinasLocales.ShowDialog()
+        M_MaquinasLocales.Show()
     End Sub
 
     Private Sub PictureBox47_Click(sender As Object, e As EventArgs) Handles PictureBox47.Click
         M_DiarioFacturacion.lblForm.Text = "M_DiarioFacturacion"
-        M_DiarioFacturacion.ShowDialog()
+        M_DiarioFacturacion.Show()
     End Sub
 
     Private Sub pbxTipoClasificacion_Click(sender As Object, e As EventArgs) Handles pbxTipoClasificacion.Click
         Try
             M_TipoClasificacion.lbltipo.Text = "Form1"
-            M_TipoClasificacion.ShowDialog()
+            M_TipoClasificacion.Show()
         Catch ex As Exception
 
         End Try
     End Sub
 
     Private Sub PictureBox75_Click(sender As Object, e As EventArgs) Handles btnPuestoTrabajo.Click
-        M_PuestoTrabajo.ShowDialog()
+        M_PuestoTrabajo.Show()
     End Sub
 
     Private Sub PictureBox74_Click(sender As Object, e As EventArgs) Handles btnHorarios.Click
         M_Horarios.lblform.Text = "M_Horarios"
-        M_Horarios.ShowDialog()
+        M_Horarios.Show()
     End Sub
 
     Private Sub PictureBox73_Click(sender As Object, e As EventArgs) Handles btnContratos.Click
-        M_Contratos.ShowDialog()
+        M_Contratos.Show()
     End Sub
 
     Private Sub PictureBox72_Click(sender As Object, e As EventArgs) Handles btnProfesion.Click
         M_Profesion.lblform.Text = "M_Profesion"
-        M_Profesion.ShowDialog()
+        M_Profesion.Show()
     End Sub
 
     Private Sub PictureBox71_Click(sender As Object, e As EventArgs) Handles btnTipoDeducciones.Click
         M_TipoDeducciones.lblform.Text = "M_TipoDeducciones"
-        M_TipoDeducciones.ShowDialog()
+        M_TipoDeducciones.Show()
     End Sub
 
     Private Sub PictureBox39_Click(sender As Object, e As EventArgs) Handles btnEmpleados.Click
-        M_BuscarEmpleados.ShowDialog()
+        M_BuscarEmpleados.Show()
     End Sub
 
     Private Sub PictureBox77_Click(sender As Object, e As EventArgs) Handles btnCandidatos.Click
@@ -934,22 +934,22 @@
 
     Private Sub btnSucursales_Click_1(sender As Object, e As EventArgs) Handles btnSucursales.Click
         M_Sucursal.lblform.Text = "M_Sucursal"
-        M_Sucursal.ShowDialog()
+        M_Sucursal.Show()
     End Sub
 
     Private Sub btnPermisos_Click_1(sender As Object, e As EventArgs) Handles btnPermisos.Click
         M_Permisos.lblform.Text = "M_Permisos"
-        M_Permisos.ShowDialog()
+        M_Permisos.Show()
     End Sub
 
     Private Sub btnVacaciones_Click_1(sender As Object, e As EventArgs) Handles btnVacaciones.Click
         M_Vacaciones.lblform.Text = "M_Vacaciones"
-        M_Vacaciones.ShowDialog()
+        M_Vacaciones.Show()
     End Sub
 
     Private Sub btnArea_Click_1(sender As Object, e As EventArgs) Handles btnArea.Click
         M_Area.lblform.Text = "M_Area"
-        M_Area.ShowDialog()
+        M_Area.Show()
     End Sub
 
     Private Sub PictureBox44_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
@@ -1184,7 +1184,7 @@
     End Sub
 
     Private Sub PictureBox21_Click(sender As Object, e As EventArgs) Handles PictureBox21.Click
-        E_EspecificarHojaTrabajo.ShowDialog()
+        E_EspecificarHojaTrabajo.Show()
     End Sub
 
     Private Sub btnEntrega_Click(sender As Object, e As EventArgs) Handles btnEntrega.Click
@@ -1209,7 +1209,7 @@
     End Sub
 
     Private Sub PictureBox20_Click(sender As Object, e As EventArgs) Handles PictureBox20.Click
-        E_DetalleExamenes.ShowDialog()
+        E_DetalleExamenes.Show()
     End Sub
 
 
@@ -1217,7 +1217,7 @@
     Private Sub PictureBox48_Click(sender As Object, e As EventArgs) Handles PictureBox48.Click
         Try
 
-            A_ValoresRefPar.ShowDialog()
+            A_ValoresRefPar.Show()
 
 
         Catch ex As Exception
@@ -1235,7 +1235,7 @@
 
     Private Sub PictureBox18_Click(sender As Object, e As EventArgs) Handles btnPaciente.Click, btnPaciente2.Click
         M_ListarClientes.lblForm.Text = "VerPaciente"
-        M_ListarClientes.ShowDialog()
+        M_ListarClientes.Show()
     End Sub
 
     Private Sub PictureBox38_Click_2(sender As Object, e As EventArgs) Handles PictureBox38.Click
@@ -1252,17 +1252,17 @@
 
     Private Sub PictureBox24_Click(sender As Object, e As EventArgs)
         M_Sede.lblform.Text = "Sede"
-        M_Sede.ShowDialog()
+        M_Sede.Show()
     End Sub
 
     Private Sub PictureBox25_Click(sender As Object, e As EventArgs) Handles btnSucursal.Click
         M_Sucursal.lblform.Text = "Sucursal"
-        M_Sucursal.ShowDialog()
+        M_Sucursal.Show()
     End Sub
 
     Private Sub PictureBox2_Click_1(sender As Object, e As EventArgs) Handles btnSede2.Click
         M_Sucursal.lblform.Text = "Sede"
-        M_Sede.ShowDialog()
+        M_Sede.Show()
     End Sub
 
     Private Sub PictureBox25_Click_1(sender As Object, e As EventArgs) Handles btnSucursal.Click
@@ -1270,11 +1270,11 @@
     End Sub
 
     Private Sub PictureBox26_Click(sender As Object, e As EventArgs)
-        M_Medico.ShowDialog()
+        M_Medico.Show()
     End Sub
 
     Private Sub btnMedico2_Click(sender As Object, e As EventArgs) Handles btnMedico2.Click
-        M_Medico.ShowDialog()
+        M_Medico.Show()
     End Sub
 
     Private Sub btnProducto_Click(sender As Object, e As EventArgs) Handles btnProducto.Click

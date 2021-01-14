@@ -174,7 +174,7 @@
     End Sub
 
     Private Sub btnBuscarClas_Click(sender As Object, e As EventArgs) Handles btnBuscarClas.Click
-        A_ListarTipoClasificacion.ShowDialog()
+        A_ListarTipoClasificacion.Show()
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click

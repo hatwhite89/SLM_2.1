@@ -1,7 +1,7 @@
 ﻿Public Class M_TerminosPago
     Private Sub btntipoPago_Click(sender As Object, e As EventArgs) Handles btntipoPago.Click
         M_TipoTermino.lblform.Text = "M_TerminosPago"
-        M_TipoTermino.ShowDialog()
+        M_TipoTermino.Show()
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -336,12 +336,12 @@
     Private Sub btnctaContado_Click(sender As Object, e As EventArgs) Handles btnctaContado.Click
         'Asignar valor a label para diferenciar campo a llenar.
         M_BuscarCuenta.lbltipoCta.Text = "Contado"
-        M_BuscarCuenta.ShowDialog()
+        M_BuscarCuenta.Show()
     End Sub
     Private Sub btnctaVentas_Click(sender As Object, e As EventArgs) Handles btnctaVentas.Click
         'Asignar valor a label para diferenciar campo a llenar.
         M_BuscarCuenta.lbltipoCta.Text = "Ventas"
-        M_BuscarCuenta.ShowDialog()
+        M_BuscarCuenta.Show()
     End Sub
     Private Sub txtcodigoCtaContado_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoCtaContado.TextChanged
         If (Trim(txtcodigoCtaContado.Text) <> "") Then

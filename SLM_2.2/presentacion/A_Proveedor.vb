@@ -326,7 +326,7 @@
     End Sub
 
     Private Sub btnBuscarCate_Click(sender As Object, e As EventArgs)
-        A_ListarCategoriasProveedor.ShowDialog()
+        A_ListarCategoriasProveedor.Show()
     End Sub
 
     Private Sub txtCodigoTerminoPago_TextChanged(sender As Object, e As EventArgs) Handles txtCodigoTerminoPago.TextChanged
@@ -375,7 +375,7 @@
         End Try
     End Sub
     Private Sub btnBuscarTerminoPago_Click(sender As Object, e As EventArgs) Handles btnBuscarTerminoPago.Click
-        M_ListarTerminoPago.ShowDialog()
+        M_ListarTerminoPago.Show()
     End Sub
 
 

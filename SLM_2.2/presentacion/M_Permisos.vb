@@ -5,19 +5,19 @@
     Private Sub txtjefeInmediato_TextChanged(sender As Object, e As EventArgs) Handles txtjefeInmediato.Click
         If dtpFechaInicial.Enabled Then
             M_ListadoEmpleados.lblform.Text = "M_Permisos_JefeInmediato"
-            M_ListadoEmpleados.ShowDialog()
+            M_ListadoEmpleados.Show()
         End If
     End Sub
     Private Sub txtTalentoHumano_TextChanged(sender As Object, e As EventArgs) Handles txtDepto.Click
         'If dtpFecha.Enabled Then
         '    M_ListadoEmpleados.lblform.Text = "M_Permisos_TalentoHumano"
-        '    M_ListadoEmpleados.ShowDialog()
+        '    M_ListadoEmpleados.show()
         'End If
     End Sub
     Private Sub txtEmpleado_TextChanged(sender As Object, e As EventArgs) Handles txtEmpleado.Click
         If dtpFechaInicial.Enabled Then
             M_ListadoEmpleados.lblform.Text = "M_Permisos_Empleado"
-            M_ListadoEmpleados.ShowDialog()
+            M_ListadoEmpleados.Show()
         End If
     End Sub
     Private Sub limpiar()
@@ -447,7 +447,7 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
-        M_TipoPermiso.ShowDialog()
+        M_TipoPermiso.Show()
     End Sub
 
     Private Sub dtpFecha_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaInicial.TextChanged

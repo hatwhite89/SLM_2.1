@@ -177,7 +177,7 @@
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Try
 
-            A_ListadoPerfiles.ShowDialog()
+            A_ListadoPerfiles.Show()
 
         Catch ex As Exception
 
@@ -230,7 +230,7 @@
         Try
 
             M_ListadoEmpleados.lblform.Text = "E_Usuarios"
-            M_ListadoEmpleados.ShowDialog()
+            M_ListadoEmpleados.Show()
 
         Catch ex As Exception
 
@@ -238,7 +238,7 @@
     End Sub
 
     Private Sub btnImportar_Click(sender As Object, e As EventArgs) Handles btnImportar.Click
-        A_ImportarUserAD.ShowDialog()
+        A_ImportarUserAD.Show()
 
     End Sub
 

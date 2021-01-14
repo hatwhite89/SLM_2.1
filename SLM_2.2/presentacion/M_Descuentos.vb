@@ -166,6 +166,7 @@
             If lblform.Text = "M_ListaPrecios" Then
                 Dim n As String = ""
                 Dim temp As String = M_ListaPrecios.dgbtabla.Rows(lblFila.Text).Cells(2).Value()
+                Dim temp2 As String = M_ListaPrecios.dgbtabla.Rows(lblFila.Text).Cells(3).Value()
                 If e.RowIndex >= 0 Then
                     n = MsgBox("¿Desea utilizar el examen que a seleccionado?", MsgBoxStyle.YesNo, "Validación")
                 End If
@@ -173,7 +174,7 @@
                     If Convert.ToInt64(lblFila.Text) >= 0 And temp <> "" Then
                         M_ListaPrecios.dgbtabla.Rows.Remove(M_ListaPrecios.dgbtabla.Rows(lblFila.Text))
                     End If
-                    M_ListaPrecios.dgbtabla.Rows.Insert(lblFila.Text, New String() {"", "", temp, dgbtabla.Rows(e.RowIndex).Cells(0).Value(), dgbtabla.Rows(e.RowIndex).Cells(1).Value()})
+                    M_ListaPrecios.dgbtabla.Rows.Insert(lblFila.Text, New String() {"", "", temp, temp2, dgbtabla.Rows(e.RowIndex).Cells(0).Value(), dgbtabla.Rows(e.RowIndex).Cells(1).Value()})
                     Me.Close()
                 End If
             End If
