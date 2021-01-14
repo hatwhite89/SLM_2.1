@@ -5,7 +5,7 @@
     'Dim datos As Byte()
     Private Sub btnProfesion_Click(sender As Object, e As EventArgs) Handles btnProfesion.Click
         M_Profesion.lblform.Text = "Empleados"
-        M_Profesion.ShowDialog()
+        M_Profesion.Show()
     End Sub
     Public Sub limpiar()
         Try
@@ -459,7 +459,7 @@
         Else
             e.Handled = False
         End If
-        txtnombre1.Select(txtnombre1.Text.Length, 0)
+        'txtnombre1.Select(txtnombre1.Text.Length, 0)
     End Sub
     Private Sub txtnombre2_TextChanged_1(sender As Object, e As EventArgs) Handles txtnombre2.TextChanged
         txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
@@ -481,7 +481,7 @@
         Else
             e.Handled = False
         End If
-        txtnombre2.Select(txtnombre2.Text.Length, 0)
+        'txtnombre2.Select(txtnombre2.Text.Length, 0)
     End Sub
     Private Sub txtapellido1_TextChanged_1(sender As Object, e As EventArgs) Handles txtapellido1.TextChanged
         txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
@@ -504,7 +504,7 @@
         Else
             e.Handled = False
         End If
-        txtapellido1.Select(txtapellido1.Text.Length, 0)
+        'txtapellido1.Select(txtapellido1.Text.Length, 0)
     End Sub
     Private Sub txtapellido2_TextChanged(sender As Object, e As EventArgs) Handles txtapellido2.TextChanged
         txtnombreCompleto.Text = txtnombre1.Text + " " + txtnombre2.Text + " " + txtapellido1.Text + " " + txtapellido2.Text
@@ -526,7 +526,7 @@
         Else
             e.Handled = False
         End If
-        txtapellido2.Select(txtapellido2.Text.Length, 0)
+        'txtapellido2.Select(txtapellido2.Text.Length, 0)
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If (e.KeyCode = Keys.Escape) Then
@@ -721,16 +721,16 @@
     End Sub
     Private Sub txtcodigoHorario_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoHorario.Click
         M_Horarios.lblform.Text = "M_Empleados"
-        M_Horarios.ShowDialog()
+        M_Horarios.Show()
     End Sub
 
     Private Sub txtcodigoFormaPago_Click(sender As Object, e As EventArgs) Handles txtcodigoFormaPago.Click
         A_ListarFormasPagoPF.lblForm.Text = "M_Empleados"
-        A_ListarFormasPagoPF.ShowDialog()
+        A_ListarFormasPagoPF.Show()
     End Sub
 
     Private Sub cmbxcodigoContrato_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbxcodigoContrato.Click
-        'M_Contratos.ShowDialog()
+        'M_Contratos.show()
     End Sub
     Private Sub btnBuscarImage_Click(sender As Object, e As EventArgs) Handles btnBuscarImage.Click
         SubirImagen()
@@ -767,13 +767,13 @@
     End Sub
     Private Sub btnArea_Click(sender As Object, e As EventArgs) Handles txtArea.Click
         M_Area.lblform.Text = "M_Empleados"
-        M_Area.ShowDialog()
+        M_Area.Show()
     End Sub
     Private Sub txtdepartamento_click(sender As Object, e As EventArgs) Handles txtdepartamento.Click
         If Trim(txtArea.Text) <> "" Then
             M_ListadoDepartamentos.lblform.Text = "M_Empleados"
             M_ListadoDepartamentos.lblcodeArea.Text = lblcodigoArea.Text
-            M_ListadoDepartamentos.ShowDialog()
+            M_ListadoDepartamentos.Show()
         End If
     End Sub
     Private Sub txtPuestoTrabajo_click(sender As Object, e As EventArgs) Handles txtPuestoTrabajo.Click
@@ -781,11 +781,11 @@
             M_ListadoPuestoTrabajo.lblform.Text = "M_Empleados"
             M_ListadoPuestoTrabajo.lblcodeDepto.Text = lblcodeDepto.Text
             M_ListadoPuestoTrabajo.lblBandera.Text = "1"
-            M_ListadoPuestoTrabajo.ShowDialog()
+            M_ListadoPuestoTrabajo.Show()
         ElseIf Trim(txtArea.Text) = "" Then
             M_ListadoPuestoTrabajo.lblform.Text = "M_Empleados"
             M_ListadoPuestoTrabajo.lblBandera.Text = "0"
-            M_ListadoPuestoTrabajo.ShowDialog()
+            M_ListadoPuestoTrabajo.Show()
         End If
     End Sub
     Private Sub txtcodigoFormaPago_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoFormaPago.TextChanged

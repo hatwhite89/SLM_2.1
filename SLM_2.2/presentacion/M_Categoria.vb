@@ -1,7 +1,7 @@
 ﻿Public Class M_Categoria
     Dim objCategoria As New ClsCategoria
     Private Sub btnbuscarTipo_Click(sender As Object, e As EventArgs)
-        M_TipoClasificacion.ShowDialog()
+        M_TipoClasificacion.Show()
     End Sub
     Private Sub M_Categoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'ACTUALIZAR LISTADO
@@ -225,7 +225,7 @@
     End Sub
     Private Sub btnbuscarTipo_Click_1(sender As Object, e As EventArgs) Handles btnbuscarTipo.Click
         M_TipoClasificacion.lbltipo.Text = "Categoria"
-        M_TipoClasificacion.ShowDialog()
+        M_TipoClasificacion.Show()
     End Sub
 
     Private Sub txtdescripcionB_TextChanged(sender As Object, e As EventArgs) Handles txtdescripcionB.TextChanged
@@ -291,6 +291,6 @@
 
     Private Sub btnBuscarListaPrecios_Click(sender As Object, e As EventArgs) Handles btnBuscarListaPrecios.Click
         M_ListadoDePrecios.lblForm.Text = "Categoria"
-        M_ListadoDePrecios.ShowDialog()
+        M_ListadoDePrecios.Show()
     End Sub
 End Class

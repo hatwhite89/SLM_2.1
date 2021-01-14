@@ -247,7 +247,7 @@
             If e.ColumnIndex = 1 Then
 
                 A_ListarCuentas.lblForm.Text = "asientos"
-                A_ListarCuentas.ShowDialog()
+                A_ListarCuentas.Show()
 
             End If
 

@@ -162,7 +162,7 @@
         End Try
     End Sub
     Private Sub btnbuscarTipo_Click(sender As Object, e As EventArgs) Handles btnbuscarTipo.Click
-        M_TipoObjeto.ShowDialog()
+        M_TipoObjeto.Show()
     End Sub
 
     Private Sub txtcodigoTipo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoTipo.TextChanged

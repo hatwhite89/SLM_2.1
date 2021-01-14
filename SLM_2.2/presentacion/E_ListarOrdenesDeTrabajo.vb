@@ -63,7 +63,7 @@
             End If
             If n = vbYes Then
                 E_OrdenTrabajo.cargarOrdenTrabajo(Convert.ToInt64(dgbtabla.Rows(e.RowIndex).Cells(0).Value()))
-                E_OrdenTrabajo.ShowDialog()
+                E_OrdenTrabajo.Show()
                 'Me.Close()
             End If
         Catch ex As Exception

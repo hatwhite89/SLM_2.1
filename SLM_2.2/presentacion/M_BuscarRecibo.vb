@@ -73,7 +73,7 @@
                     M_Recibo.btnmodificar.Enabled = True
                 End If
 
-                M_Recibo.ShowDialog()
+                M_Recibo.Show()
             End If
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -115,7 +115,7 @@
         'Me.Close
         M_Recibo.lblEstado.Text = "Nuevo"
         M_Recibo.limpiar()
-        M_Recibo.ShowDialog()
+        M_Recibo.Show()
     End Sub
 
 End Class

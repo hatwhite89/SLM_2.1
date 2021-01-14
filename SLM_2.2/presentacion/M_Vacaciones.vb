@@ -13,25 +13,25 @@
     Private Sub txtJefeDepto_Click(sender As Object, e As EventArgs)
         If lblEstado.Text <> "Deshabilitado" Then
             M_ListadoEmpleados.lblform.Text = "M_Vacaciones_Depto"
-            M_ListadoEmpleados.ShowDialog()
+            M_ListadoEmpleados.Show()
         End If
     End Sub
     Private Sub txtTalentoHumano_Click(sender As Object, e As EventArgs)
         If lblEstado.Text <> "Deshabilitado" Then
             M_ListadoEmpleados.lblform.Text = "M_Vacaciones_Humano"
-            M_ListadoEmpleados.ShowDialog()
+            M_ListadoEmpleados.Show()
         End If
     End Sub
     Private Sub txtSupervisor_Click(sender As Object, e As EventArgs)
         If lblEstado.Text <> "Deshabilitado" Then
             M_ListadoEmpleados.lblform.Text = "M_Vacaciones_Supervisor"
-            M_ListadoEmpleados.ShowDialog()
+            M_ListadoEmpleados.Show()
         End If
     End Sub
     Private Sub txtEmpleado_Click(sender As Object, e As EventArgs) Handles txtEmpleado.Click
         If lblEstado.Text <> "Deshabilitado" Then
             M_ListadoEmpleados.lblform.Text = "M_Vacaciones_Empleado"
-            M_ListadoEmpleados.ShowDialog()
+            M_ListadoEmpleados.Show()
         End If
     End Sub
     Private Sub limpiar()

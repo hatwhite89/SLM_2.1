@@ -250,7 +250,7 @@
 
     Private Sub btnArea_Click(sender As Object, e As EventArgs) Handles btnArea.Click
         M_Area.lblform.Text = "M_Departamento"
-        M_Area.ShowDialog()
+        M_Area.Show()
     End Sub
 
     Function GridAExcel(ByVal miDataGridView As DataGridView) As Boolean

@@ -385,9 +385,9 @@
     Private Sub btnValoresRef_Click(sender As Object, e As EventArgs) Handles btnValoresRef.Click
         If txtParametro.Text <> "" Then
             'M_ListadoValoresReferencia.lblcodeCateCli.Text = txtParametro.Text
-            'M_ListadoValoresReferencia.ShowDialog()
+            'M_ListadoValoresReferencia.show()
             M_ListadoValoresRefTxt.lblParamtro.Text = txtParametro.Text
-            M_ListadoValoresRefTxt.ShowDialog()
+            M_ListadoValoresRefTxt.Show()
         End If
     End Sub
 

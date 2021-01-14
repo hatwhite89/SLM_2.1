@@ -54,7 +54,7 @@
 
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
         Me.Hide()
-        M_Medico.ShowDialog()
+        M_Medico.Show()
         Me.Close()
     End Sub
 End Class

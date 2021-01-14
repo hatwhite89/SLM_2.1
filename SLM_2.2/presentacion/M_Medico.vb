@@ -5,7 +5,7 @@
         Me.Close()
     End Sub
     Private Sub btnbuscarEspecialidad_Click(sender As Object, e As EventArgs) Handles btnbuscarEspecialidad.Click
-        M_Especialidad.ShowDialog()
+        M_Especialidad.Show()
     End Sub
     Private Function sinDobleEspacio(ByVal cadena As String) As String
         Dim texto As String = ""
@@ -121,7 +121,7 @@
             e.Handled = False
         End If
 
-        txtnombreCompleto.Select(txtnombreCompleto.Text.Length, 0)
+        'txtnombreCompleto.Select(txtnombreCompleto.Text.Length, 0)
     End Sub
     Private Sub txtcodigoEspecialidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoEspecialidad.KeyPress
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then

@@ -1,7 +1,7 @@
 ﻿Public Class M_ClasificacionContacto
     Private Sub btnbuscarTipo_Click(sender As Object, e As EventArgs) Handles btnbuscarTipo.Click
         M_TipoClasificacion.lbltipo.Text = "ClasificacionContacto"
-        M_TipoClasificacion.ShowDialog()
+        M_TipoClasificacion.Show()
     End Sub
     Private Sub M_ClasificacionContacto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objClas As New ClsClasificacionContacto

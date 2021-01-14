@@ -23,6 +23,11 @@
         End If
 
     End Sub
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
+    End Sub
 
     Private Sub dtParametros_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtParametros.CellDoubleClick
 

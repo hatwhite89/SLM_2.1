@@ -121,7 +121,7 @@
             objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
 
             M_ComprobanteEntrega.CrystalReportViewer1.ReportSource = objReporte
-            M_ComprobanteEntrega.ShowDialog()
+            M_ComprobanteEntrega.Show()
 
         Catch ex As Exception
 

@@ -258,7 +258,7 @@
 
     Private Sub btnDepto_Click(sender As Object, e As EventArgs) Handles btnDepto.Click
         M_Departamento.lblform.Text = "M_PuestoTrabajo"
-        M_Departamento.ShowDialog()
+        M_Departamento.Show()
     End Sub
 
     Private Sub txtcodigoDepto_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoDepto.TextChanged

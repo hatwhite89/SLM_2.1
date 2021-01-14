@@ -4,7 +4,7 @@
     Dim SubA As New ClsSubArea
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
-        E_SubArea.ShowDialog()
+        E_SubArea.Show()
     End Sub
 
     Private Sub eg_frmListarSubAreas_Load(sender As Object, e As EventArgs) Handles MyBase.Load

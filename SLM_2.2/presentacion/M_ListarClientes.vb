@@ -74,7 +74,7 @@
                     M_Cliente.rbtnfemenino.Checked = False
                 End If
                 M_Cliente.gbxinfoCliente.Visible = True
-                M_Cliente.ShowDialog()
+                M_Cliente.Show()
             ElseIf n = vbYes And lblForm.Text = "VerPaciente" Then
                 M_VerPaciente.limpiar()
                 'conseguir la edad del paciente
@@ -113,7 +113,7 @@
                     M_VerPaciente.rbtnfemenino.Checked = False
                 End If
                 M_VerPaciente.gbxinfoCliente.Visible = True
-                M_VerPaciente.ShowDialog()
+                M_VerPaciente.Show()
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)

@@ -27,7 +27,7 @@
 
         'Mostrar formas de pago
         A_ListarFormasPagoPF.lblForm.Text = "Pagos"
-        A_ListarFormasPagoPF.ShowDialog()
+        A_ListarFormasPagoPF.Show()
     End Sub
 
     Private Sub dtDetallePagos_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetallePagos.CellEndEdit
@@ -286,7 +286,7 @@
             'Columna de Forma de Pago
             A_ListarFormasPagoPF.lblForm.Text = "DetallePagoFormaPagos"
             lblFila.Text = e.RowIndex
-            A_ListarFormasPagoPF.ShowDialog()
+            A_ListarFormasPagoPF.Show()
 
 
         ElseIf e.ColumnIndex = 5 Then
@@ -448,7 +448,7 @@
 
     Private Sub btnRegresar_Click(sender As Object, e As EventArgs) Handles btnRegresar.Click
         Me.Close()
-        A_ListarPagos.ShowDialog()
+        A_ListarPagos.Show()
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click

@@ -23,6 +23,7 @@
         btnGuardar.Enabled = True
         btnModificar.Enabled = False
     End Sub
+
     Private Sub deshabilitar()
         txtNombre.ReadOnly = True
         txtFormulario.ReadOnly = True
@@ -49,6 +50,7 @@
         Me.dgbtabla.Columns("secImpresion").Visible = False
         Me.dgbtabla.Columns("noSolicitarSucursal").Visible = False
         Me.dgbtabla.Columns("formularioConsolidado").Visible = False
+        Me.dgbtabla.Columns("codigoArea").Visible = False
         alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Private Sub seleccionarSubAreas()

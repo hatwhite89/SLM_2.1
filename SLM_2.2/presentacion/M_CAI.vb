@@ -150,7 +150,7 @@
     End Sub
     Private Sub btnbuscarMaquinaLocal_Click(sender As Object, e As EventArgs) Handles btnbuscarMaquinaLocal.Click
         M_MaquinasLocales.lblform.Text = "M_CAI"
-        M_MaquinasLocales.ShowDialog()
+        M_MaquinasLocales.Show()
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click

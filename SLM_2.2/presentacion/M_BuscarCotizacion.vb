@@ -63,7 +63,7 @@
                 M_Factura.btnguardar.Enabled = False
 
                 M_Factura.totalFactura()
-                M_Factura.ShowDialog()
+                M_Factura.Show()
 
             End If
         Catch ex As Exception
@@ -94,7 +94,7 @@
         M_Factura.HabilitarCotizacionFactura()
 
         M_Factura.banderaTipo = False
-        M_Factura.ShowDialog()
+        M_Factura.Show()
     End Sub
 
     Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged

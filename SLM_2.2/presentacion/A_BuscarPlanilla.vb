@@ -4,7 +4,7 @@
     Dim dv As DataView = objPlan.SeleccionarPlanilla.DefaultView
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
         A_Planilla.limpiar()
-        A_Planilla.ShowDialog()
+        A_Planilla.Show()
     End Sub
     Public Sub seleccionarPlanilla()
         dv = objPlan.SeleccionarPlanilla.DefaultView
@@ -64,7 +64,7 @@
                 End If
                 A_Planilla.btnGuardar.Enabled = False
                 A_Planilla.btnModificar.Enabled = True
-                A_Planilla.ShowDialog()
+                A_Planilla.Show()
 
             ElseIf lblform.Text = "A_PlanillaCalculo" Then 'Inicio condicion Planilla Calculo
 

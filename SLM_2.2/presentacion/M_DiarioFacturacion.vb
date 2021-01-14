@@ -194,7 +194,7 @@
                     'txtnumeroB.Text = ""
                     'Me.Hide()
 
-                    M_Factura.ShowDialog()
+                    M_Factura.Show()
                 End If
             End If
         Catch ex As Exception

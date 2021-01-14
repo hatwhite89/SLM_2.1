@@ -235,7 +235,7 @@
 
     Private Sub btnBuscarParametro_Click(sender As Object, e As EventArgs) Handles btnBuscarParametro.Click
         A_ListadoParametros.lblFormulario.Text = "valorRef"
-        A_ListadoParametros.ShowDialog()
+        A_ListadoParametros.Show()
         'Modificar txt del llamado al formulario
 
         If txtParametro.BackColor = Color.Red Then
@@ -551,7 +551,7 @@
 
     Private Sub btnBuscarParametro2_Click(sender As Object, e As EventArgs) Handles btnBuscarParametro2.Click
         A_ListadoParametros.lblFormulario.Text = "valortxt"
-        A_ListadoParametros.ShowDialog()
+        A_ListadoParametros.Show()
 
         If txtParametro2.BackColor = Color.Red Then
             txtParametro2.BackColor = Color.White

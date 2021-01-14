@@ -72,7 +72,7 @@
                     Dim row As DataRow = dt.Rows(0)
                     For index As Integer = 0 To dt.Rows.Count - 1
                         row = dt.Rows(index)
-                        M_ListaPrecios.dgbtabla.Rows.Add(New String() {CStr(row("codigo")), CStr(row("codigoListaPrecios")), CStr(row("codigoGrupoItem")), CStr(row("codigoDescuento")), CStr(row("codigoBreve"))})
+                        M_ListaPrecios.dgbtabla.Rows.Add(New String() {CStr(row("codigo")), CStr(row("codigoListaPrecios")), CStr(row("codigoGrupoItem")), CStr(row("nombreItem")), CStr(row("codigoDescuento")), CStr(row("codigoBreve"))})
                     Next
 
                     M_ListaPrecios.btnguardar.Enabled = False
@@ -119,6 +119,6 @@
 
     Private Sub btnnueva_Click(sender As Object, e As EventArgs) Handles btnnueva.Click
         M_ListaPrecios.limpiar()
-        M_ListaPrecios.ShowDialog()
+        M_ListaPrecios.Show()
     End Sub
 End Class

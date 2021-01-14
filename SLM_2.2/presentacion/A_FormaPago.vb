@@ -281,7 +281,7 @@ Public Class frmFormaPago
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        A_ListarCuentas.ShowDialog()
+        A_ListarCuentas.Show()
     End Sub
 
     Sub Limpiar()
@@ -306,7 +306,7 @@ Public Class frmFormaPago
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnBuscarBanco.Click
         A_ListadoBancos.lblFormBanco.Text = "1"
-        A_ListadoBancos.ShowDialog()
+        A_ListadoBancos.Show()
     End Sub
 
     Private Sub txtCodigo_TextChanged(sender As Object, e As EventArgs) Handles txtCodigo.TextChanged

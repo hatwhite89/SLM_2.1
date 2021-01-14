@@ -15,11 +15,11 @@ Public Class M_Factura
         M_BuscarFactura.Visible = True
     End Sub
     Private Sub btnbuscarMedico_Click(sender As Object, e As EventArgs) Handles btnbuscarMedico.Click
-        M_ListarMedicos.ShowDialog()
+        M_ListarMedicos.Show()
     End Sub
     Private Sub btnbuscarCliente_Click(sender As Object, e As EventArgs) Handles btnbuscarCliente.Click
         M_Cliente.limpiar()
-        M_Cliente.ShowDialog()
+        M_Cliente.Show()
     End Sub
     Private Sub txtcodigoCliente_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoCliente.TextChanged
         If (txtcodigoCliente.Text <> "") Then
@@ -482,7 +482,7 @@ Public Class M_Factura
     End Sub
     Private Sub btnbuscarSede_Click(sender As Object, e As EventArgs) Handles btnbuscarSede.Click
         M_Sede.lblform.Text = "factura"
-        M_Sede.ShowDialog()
+        M_Sede.Show()
     End Sub
     Private Sub txtcodigoSucursal_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoSucursal.TextChanged
         If (txtcodigoSucursal.Text <> "") Then
@@ -511,7 +511,7 @@ Public Class M_Factura
     End Sub
     Private Sub btnbuscarSucursal_Click(sender As Object, e As EventArgs) Handles btnbuscarSucursal.Click
         M_Sucursal.lblform.Text = "factura"
-        M_Sucursal.ShowDialog()
+        M_Sucursal.Show()
     End Sub
     Private Sub txtcodigoTerminosPago_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoTerminosPago.TextChanged
         If (txtcodigoTerminosPago.Text <> "") Then
@@ -541,7 +541,7 @@ Public Class M_Factura
     End Sub
     Private Sub btnterminosPago_Click(sender As Object, e As EventArgs) Handles btnbuscarTerminosPago.Click
         M_TerminosPago.lblform.Text = "factura"
-        M_TerminosPago.ShowDialog()
+        M_TerminosPago.Show()
     End Sub
     Private Sub M_Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'CON TIMER
@@ -964,7 +964,7 @@ Public Class M_Factura
         txttotal.Text = Math.Ceiling(total)
     End Sub
     Private Sub btnbusquedaExamen_Click(sender As Object, e As EventArgs) Handles btnbusquedaExamen.Click
-        M_BuscarExamen.ShowDialog()
+        M_BuscarExamen.Show()
     End Sub
 
     Private Sub calcularSaldoPendiente()
@@ -1767,7 +1767,7 @@ Public Class M_Factura
         End Try
     End Sub
     Private Sub btnPromocion_Click(sender As Object, e As EventArgs) Handles btnPromocion.Click
-        M_ListadoPromociones.ShowDialog()
+        M_ListadoPromociones.Show()
     End Sub
     Private Sub btnQuitarPromocion_Click(sender As Object, e As EventArgs) Handles btnQuitarPromocion.Click
         Try
@@ -2144,7 +2144,7 @@ Public Class M_Factura
 
     Private Sub BuscarExamenToolStripMenuItem_Click(sender As Object, e As EventArgs)
         If btnbusquedaExamen.Enabled Then
-            M_BuscarExamen.ShowDialog()
+            M_BuscarExamen.Show()
         End If
     End Sub
 
@@ -2241,7 +2241,7 @@ Public Class M_Factura
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If btnbusquedaExamen.Enabled Then
-            M_BuscarExamen.ShowDialog()
+            M_BuscarExamen.Show()
         End If
     End Sub
 

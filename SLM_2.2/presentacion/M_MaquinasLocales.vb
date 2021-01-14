@@ -243,7 +243,7 @@
     End Sub
     Private Sub btnSucursal_Click(sender As Object, e As EventArgs) Handles btnSucursal.Click
         M_Sucursal.lblform.Text = "M_MaquinasLocales"
-        M_Sucursal.ShowDialog()
+        M_Sucursal.Show()
     End Sub
 
 End Class

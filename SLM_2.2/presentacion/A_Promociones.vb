@@ -191,7 +191,7 @@ Public Class A_Promociones
         txtPrecio.BackColor = Color.White
     End Sub
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        A_ListarExamenes.ShowDialog()
+        A_ListarExamenes.Show()
     End Sub
 
     Sub LimpiarForma()
