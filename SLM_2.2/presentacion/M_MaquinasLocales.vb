@@ -10,9 +10,10 @@
         Dim dv As DataView = objMaqLoc.SeleccionarMaquinasLocales.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
-        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
         Me.dgbtabla.Columns("codigo").Visible = False
+        Me.dgbtabla.Columns("codigoSucursal").Visible = False
 
         rtxtdescripcion.ReadOnly = True
         txtcodigo.ReadOnly = True
@@ -110,7 +111,7 @@
                     Dim dv As DataView = objMaqLoc.SeleccionarMaquinasLocales.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
-                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
                     txtcodigo.ReadOnly = True
                     rtxtdescripcion.ReadOnly = True
@@ -152,7 +153,7 @@
                     Dim dv As DataView = objMaqLoc.SeleccionarMaquinasLocales.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
-                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+                    dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
 
                     txtcodigo.ReadOnly = True
                     rtxtdescripcion.ReadOnly = True
@@ -185,7 +186,7 @@
             Dim dv As DataView = objMaqLoc.BuscarMaquinasLocalesDesc.DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
-            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
         Catch ex As Exception
             MsgBox("No existe la máquina local.", MsgBoxStyle.Critical, "Validación")
         End Try
