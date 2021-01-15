@@ -102,6 +102,7 @@
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
     Private Sub SeleccionarFacturas()
 
         'LLENADO DATAGRIDVIEW 
