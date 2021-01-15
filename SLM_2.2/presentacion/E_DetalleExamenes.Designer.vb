@@ -65,6 +65,10 @@ Partial Class E_DetalleExamenes
         Me.lblform = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dtItem, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,6 +129,10 @@ Partial Class E_DetalleExamenes
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.Label17)
+        Me.GroupBox1.Controls.Add(Me.Label15)
+        Me.GroupBox1.Controls.Add(Me.Label14)
+        Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.txtCodInterno)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.lblcodeSubGrupo)
@@ -513,6 +521,46 @@ Partial Class E_DetalleExamenes
         Me.Panel1.Size = New System.Drawing.Size(915, 46)
         Me.Panel1.TabIndex = 27
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.ForeColor = System.Drawing.Color.Red
+        Me.Label13.Location = New System.Drawing.Point(2, 75)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(11, 13)
+        Me.Label13.TabIndex = 213
+        Me.Label13.Text = "*"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.ForeColor = System.Drawing.Color.Red
+        Me.Label14.Location = New System.Drawing.Point(211, 21)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(11, 13)
+        Me.Label14.TabIndex = 214
+        Me.Label14.Text = "*"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.ForeColor = System.Drawing.Color.Red
+        Me.Label15.Location = New System.Drawing.Point(2, 102)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(11, 13)
+        Me.Label15.TabIndex = 215
+        Me.Label15.Text = "*"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.ForeColor = System.Drawing.Color.Red
+        Me.Label17.Location = New System.Drawing.Point(2, 49)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(11, 13)
+        Me.Label17.TabIndex = 217
+        Me.Label17.Text = "*"
+        '
         'E_DetalleExamenes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -584,4 +632,8 @@ Partial Class E_DetalleExamenes
     Friend WithEvents nombre As DataGridViewTextBoxColumn
     Friend WithEvents codigoUnidad As DataGridViewTextBoxColumn
     Friend WithEvents unidad As DataGridViewTextBoxColumn
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label17 As Label
 End Class

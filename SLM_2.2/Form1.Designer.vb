@@ -44,6 +44,7 @@ Partial Class Form1
         Me.btnBancos = New System.Windows.Forms.PictureBox()
         Me.btnCuentas = New System.Windows.Forms.PictureBox()
         Me.tpPrecios = New System.Windows.Forms.TabPage()
+        Me.pbxItemExamen = New System.Windows.Forms.PictureBox()
         Me.btnPrecio = New System.Windows.Forms.PictureBox()
         Me.btnListaPrecio = New System.Windows.Forms.PictureBox()
         Me.btnDescuento = New System.Windows.Forms.PictureBox()
@@ -192,9 +193,7 @@ Partial Class Form1
         Me.lblCajero = New System.Windows.Forms.Label()
         Me.PictureBox55 = New System.Windows.Forms.PictureBox()
         Me.pbxNoti = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.pbxItemExamen = New System.Windows.Forms.PictureBox()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.tcMenu.SuspendLayout()
@@ -208,6 +207,7 @@ Partial Class Form1
         CType(Me.btnBancos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpPrecios.SuspendLayout()
+        CType(Me.pbxItemExamen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnListaPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnDescuento, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -322,7 +322,6 @@ Partial Class Form1
         Me.Panel9.SuspendLayout()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxItemExamen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -601,6 +600,16 @@ Partial Class Form1
         Me.tpPrecios.Size = New System.Drawing.Size(578, 469)
         Me.tpPrecios.TabIndex = 3
         Me.tpPrecios.Text = "Precios y Descuentos"
+        '
+        'pbxItemExamen
+        '
+        Me.pbxItemExamen.Image = Global.SLM_2._2.My.Resources.Resources.examenes_61
+        Me.pbxItemExamen.Location = New System.Drawing.Point(9, 150)
+        Me.pbxItemExamen.Name = "pbxItemExamen"
+        Me.pbxItemExamen.Size = New System.Drawing.Size(93, 115)
+        Me.pbxItemExamen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbxItemExamen.TabIndex = 47
+        Me.pbxItemExamen.TabStop = False
         '
         'btnPrecio
         '
@@ -2306,7 +2315,7 @@ Partial Class Form1
         Me.bntCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.bntCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bntCerrar.ForeColor = System.Drawing.Color.White
-        Me.bntCerrar.Location = New System.Drawing.Point(-1, 471)
+        Me.bntCerrar.Location = New System.Drawing.Point(-1, 421)
         Me.bntCerrar.Name = "bntCerrar"
         Me.bntCerrar.Size = New System.Drawing.Size(122, 44)
         Me.bntCerrar.TabIndex = 61
@@ -2344,21 +2353,6 @@ Partial Class Form1
         Me.pbxNoti.TabStop = False
         Me.pbxNoti.Visible = False
         '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(0, 421)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(122, 44)
-        Me.Button2.TabIndex = 63
-        Me.Button2.Text = "Cerrar Sesión"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
         'Panel1
         '
         Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -2371,16 +2365,6 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(546, 422)
         Me.Panel1.TabIndex = 10
         '
-        'pbxItemExamen
-        '
-        Me.pbxItemExamen.Image = Global.SLM_2._2.My.Resources.Resources.examenes_61
-        Me.pbxItemExamen.Location = New System.Drawing.Point(9, 150)
-        Me.pbxItemExamen.Name = "pbxItemExamen"
-        Me.pbxItemExamen.Size = New System.Drawing.Size(93, 115)
-        Me.pbxItemExamen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbxItemExamen.TabIndex = 47
-        Me.pbxItemExamen.TabStop = False
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2388,7 +2372,6 @@ Partial Class Form1
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(710, 622)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.lblCajero)
         Me.Controls.Add(Me.bntCerrar)
         Me.Controls.Add(Me.lblHora)
@@ -2430,6 +2413,7 @@ Partial Class Form1
         CType(Me.btnBancos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCuentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpPrecios.ResumeLayout(False)
+        CType(Me.pbxItemExamen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnPrecio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnListaPrecio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnDescuento, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2551,7 +2535,6 @@ Partial Class Form1
         Me.Panel9.PerformLayout()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxItemExamen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2731,7 +2714,6 @@ Partial Class Form1
     Friend WithEvents btnSede2 As PictureBox
     Friend WithEvents btnMedico2 As PictureBox
     Friend WithEvents btnPaciente2 As PictureBox
-    Friend WithEvents Button2 As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents pbxItemExamen As PictureBox
 End Class

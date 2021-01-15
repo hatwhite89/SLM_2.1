@@ -1,7 +1,6 @@
 ﻿Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Notificación
-        'ApruebaS.Show()
+
 
         Dim cai As New ClsCAI
         Dim numfact, dias As DataTable
@@ -1285,7 +1284,7 @@
         E_frmUnidadMedida_almacen.Show()
     End Sub
 
-    Private Sub Button2_Click_4(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click_4(sender As Object, e As EventArgs) 
         Try
 
             M_InicioSesion.Show()

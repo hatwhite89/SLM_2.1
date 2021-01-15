@@ -57,6 +57,12 @@
                 MsgBox("Debe ingresar una descripción del item facturable.")
                 Exit Sub
             End If
+
+            If (Trim(txtCodInterno.Text) = "") Then
+                MsgBox("Debe ingresar el código inteno para identificar el exámen.")
+                Exit Sub
+            End If
+
             If (Trim(txtPrecioBase.Text) = "") Then
                 txtPrecioBase.Text = "0"
                 'Exit Sub

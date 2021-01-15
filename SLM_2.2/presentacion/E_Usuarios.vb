@@ -114,6 +114,27 @@
                 btnImportar.Enabled = False
             End If
 
+            If dtUsuarios.Columns.Contains("cod_Usuario") = True Then
+
+                dtUsuarios.Columns("codigo").Visible = False
+
+                dtUsuarios.Columns("cod_Usuario").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                dtUsuarios.Columns("cod_Usuario").HeaderText = "Código"
+
+                dtUsuarios.Columns("usuario").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                dtUsuarios.Columns("usuario").HeaderText = "Nombre de Usuario"
+
+                dtUsuarios.Columns("pass").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                dtUsuarios.Columns("pass").HeaderText = "Password"
+
+                dtUsuarios.Columns("perfil").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                dtUsuarios.Columns("perfil").HeaderText = "Perfil de Usuario"
+
+                dtUsuarios.Columns("estado").Visible = False
+                dtUsuarios.Columns("codPerfil").Visible = False
+
+            End If
+
         Catch ex As Exception
 
         End Try
@@ -272,7 +293,7 @@
 
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         A_ConfiguracionFeriados.Show()
 
     End Sub
@@ -322,5 +343,11 @@
         End Try
 
 
+    End Sub
+
+    Private Sub E_Usuarios_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
     End Sub
 End Class
