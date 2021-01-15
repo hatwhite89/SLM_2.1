@@ -119,6 +119,7 @@
     End Sub
 
     Private Sub A_Bancos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         'Listar Bancos registrados
 
         Try
