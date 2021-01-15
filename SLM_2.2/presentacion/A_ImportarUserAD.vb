@@ -66,7 +66,7 @@ Public Class A_ImportarUserAD
 
             dtP = perfil.PerfilDefault
             rowP = dtP.Rows(0)
-            MsgBox(rowP("cod"))
+            'MsgBox(rowP("cod"))
 
             For a = 0 To dtUsuariosAD.Rows.Count - 1
 
