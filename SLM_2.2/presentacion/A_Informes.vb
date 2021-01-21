@@ -65,7 +65,7 @@
                 objInformeDiarioExamen.SetParameterValue("@codExamen", codExamen)
                 objInformeDiarioExamen.SetParameterValue("@fecha", fecha)
 
-                objInformeDiarioExamen.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
+                ' objInformeDiarioExamen.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
 
                 A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiarioExamen
 
@@ -88,7 +88,7 @@
                 objInformeDiario.SetParameterValue("@desde", fechadesde)
                 objInformeDiario.SetParameterValue("@hasta", fechahasta)
 
-                objInformeDiario.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
+                'objInformeDiario.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
                 A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiario
 
             Catch ex As Exception
