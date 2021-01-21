@@ -56,16 +56,16 @@
                 Dim fecha As DateTime
                 Dim objInformeDiarioExamen As New InformeOrdenesDeTrabajoExamen
 
+
+
+
                 codExamen = Convert.ToInt32(lblCodExamen.Text)
                 fecha = dtpFecha.Value
 
                 objInformeDiarioExamen.SetParameterValue("@codExamen", codExamen)
                 objInformeDiarioExamen.SetParameterValue("@fecha", fecha)
 
-
-                objInformeDiarioExamen.DataSourceConnections.Item(0).SetConnection("10.172.3.10", "slm_test", True)
-                objInformeDiarioExamen.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
-
+                objInformeDiarioExamen.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
 
                 A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiarioExamen
 
@@ -88,7 +88,7 @@
                 objInformeDiario.SetParameterValue("@desde", fechadesde)
                 objInformeDiario.SetParameterValue("@hasta", fechahasta)
 
-                objInformeDiario.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+                objInformeDiario.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
                 A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiario
 
             Catch ex As Exception
