@@ -1,24 +1,30 @@
 ﻿Imports CrystalDecisions.Shared
+Imports CrystalDecisions.ReportSource
+Imports CrystalDecisions.CrystalReports.Engine
 
 Public Class A_PrintInforme
 
     Private Sub A_PrintInforme_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Try
 
-        If lblform.Text = "Informe" Then
 
-            A_Informes.ImprimirInformePeriodo()
+            If lblform.Text = "Informe" Then
 
-        ElseIf lblform.Text = "InformePro" Then
+                A_Informes.ImprimirInformePeriodo()
+                configureCrystalReports()
+            ElseIf lblform.Text = "InformePro" Then
 
-            A_Candidatos.Informe()
+                A_Candidatos.Informe()
+                configureCrystalReports()
+            End If
 
-        End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
-        configureCrystalReports()
 
     End Sub
-
 
     Private Sub configureCrystalReports()
         Try
@@ -27,8 +33,8 @@ Public Class A_PrintInforme
             myConnectionInfo.DatabaseName = "slm_test"
             myConnectionInfo.UserID = "sa"
             myConnectionInfo.Password = "Lbm2019"
-            myConnectionInfo.Type = ConnectionInfoType.Unknown  'Importante agregar este Type
-            myConnectionInfo.IntegratedSecurity = False
+            myConnectionInfo.Type = ConnectionInfoType.Query  'Importante agregar este Type
+            myConnectionInfo.IntegratedSecurity = True
             setDBLOGONforREPORT(myConnectionInfo)
         Catch ex As Exception
 
@@ -36,11 +42,15 @@ Public Class A_PrintInforme
     End Sub
 
     Private Sub setDBLOGONforREPORT(ByVal myconnectioninfo As ConnectionInfo)
+
         Dim mytableloginfos As New TableLogOnInfos()
 
         mytableloginfos = crvInformeOrdenesTrabajo.LogOnInfo
-        For Each myTableLogOnInfo As TableLogOnInfo In mytableloginfos
-            myTableLogOnInfo.ConnectionInfo = myconnectioninfo
+
+        For Each myTableLogOnInfot As TableLogOnInfo In mytableloginfos
+
+            myTableLogOnInfot.ConnectionInfo = myconnectioninfo
+
         Next
 
     End Sub
