@@ -33,8 +33,8 @@ Public Class A_PrintInforme
             myConnectionInfo.DatabaseName = "slm_test"
             myConnectionInfo.UserID = "sa"
             myConnectionInfo.Password = "Lbm2019"
-            myConnectionInfo.Type = ConnectionInfoType.Query  'Importante agregar este Type
-            myConnectionInfo.IntegratedSecurity = True
+            myConnectionInfo.Type = ConnectionInfoType.MetaData      'Importante agregar este Type
+            myConnectionInfo.IntegratedSecurity = False
             setDBLOGONforREPORT(myConnectionInfo)
         Catch ex As Exception
 
