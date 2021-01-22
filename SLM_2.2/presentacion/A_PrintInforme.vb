@@ -12,11 +12,11 @@ Public Class A_PrintInforme
             If lblform.Text = "Informe" Then
 
                 A_Informes.ImprimirInformePeriodo()
-                configureCrystalReports()
+                ' configureCrystalReports()
             ElseIf lblform.Text = "InformePro" Then
 
                 A_Candidatos.Informe()
-                configureCrystalReports()
+                ' configureCrystalReports()
             End If
 
         Catch ex As Exception
@@ -52,6 +52,8 @@ Public Class A_PrintInforme
             myTableLogOnInfot.ConnectionInfo = myconnectioninfo
 
         Next
+
+
 
     End Sub
 

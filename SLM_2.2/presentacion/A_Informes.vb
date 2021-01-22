@@ -71,7 +71,7 @@ Public Class A_Informes
                 objInformeDiarioExamen.SetParameterValue("@fecha", fecha)
 
                 A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiarioExamen
-
+                objInformeDiarioExamen.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
             Catch ex As Exception
                 MsgBox("Error Informe: " + ex.Message)
             End Try
@@ -92,6 +92,7 @@ Public Class A_Informes
                 objInformeDiario.SetParameterValue("@hasta", fechahasta)
 
                 A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiario
+                objInformeDiario.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
 
             Catch ex As Exception
                 MsgBox("Error Informe: " + ex.Message)
