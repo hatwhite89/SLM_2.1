@@ -31,7 +31,7 @@ Public Class A_PrintInforme
     Private Sub AccesoCrystal()
         Try
             Dim myConnectionInfo As ConnectionInfo = New ConnectionInfo()
-            myConnectionInfo.ServerName = "10.172.3.10"
+            myConnectionInfo.ServerName = "SRV-SQL-LM"
             myConnectionInfo.DatabaseName = "slm_test"
             myConnectionInfo.UserID = "sa"
             myConnectionInfo.Password = "Lbm2019"

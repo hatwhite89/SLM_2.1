@@ -69,7 +69,7 @@ Public Class A_Informes
                 objInformeDiarioExamen.SetParameterValue("@fecha", fecha)
 
                 'objInformeDiarioExamen.DataSourceConnections.Item(0).SetConnection("10.172.3.10", "slm_test", False)
-                'objInformeDiarioExamen.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+                objInformeDiarioExamen.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
                 A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiarioExamen
 
             Catch ex As Exception
