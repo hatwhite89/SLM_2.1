@@ -10,13 +10,13 @@ Public Class A_PrintInforme
 
 
             If lblform.Text = "Informe" Then
-
+                'AccesoCrystal()
                 A_Informes.ImprimirInformePeriodo()
-                AccesoCrystal()
-            ElseIf lblform.Text = "InformePro" Then
 
+            ElseIf lblform.Text = "InformePro" Then
+                ' AccesoCrystal()
                 A_Candidatos.Informe()
-                AccesoCrystal()
+
             End If
 
         Catch ex As Exception
