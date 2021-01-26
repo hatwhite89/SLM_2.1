@@ -68,8 +68,10 @@ Public Class A_Informes
                 objInformeDiarioExamen.SetParameterValue("@codExamen", codExamen)
                 objInformeDiarioExamen.SetParameterValue("@fecha", fecha)
 
-                'objInformeDiarioExamen.DataSourceConnections.Item(0).SetConnection("10.172.3.10", "slm_test", False)
-                objInformeDiarioExamen.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+                'objInformeDiarioExamen.DataSourceConnections.Item(0).SetConnection("SRV-SQL-LM", "slm_test", False)
+                'objInformeDiarioExamen.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+
+                objInformeDiarioExamen.SetDatabaseLogon("sa", "Lbm2019", "SRV-SQL-LM", "slm_test")
                 A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiarioExamen
 
             Catch ex As Exception
@@ -91,7 +93,7 @@ Public Class A_Informes
                 objInformeDiario.SetParameterValue("@desde", fechadesde)
                 objInformeDiario.SetParameterValue("@hasta", fechahasta)
 
-                objInformeDiario.DataSourceConnections.Item(1).SetLogon("sa", "Lbm2019")
+                objInformeDiario.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
                 A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiario
 
             Catch ex As Exception

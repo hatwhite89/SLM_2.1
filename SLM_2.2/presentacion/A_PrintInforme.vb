@@ -19,7 +19,7 @@ Public Class A_PrintInforme
 
             End If
 
-            AccesoCrystal()
+            ' AccesoCrystal()
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -34,7 +34,7 @@ Public Class A_PrintInforme
             myConnectionInfo.DatabaseName = "slm_test"
             myConnectionInfo.UserID = "sa"
             myConnectionInfo.Password = "Lbm2019"
-            myConnectionInfo.Type = ConnectionInfoType.SQL       'Importante agregar este Type
+            myConnectionInfo.Type = ConnectionInfoType.CRQE       'Importante agregar este Type
             myConnectionInfo.IntegratedSecurity = False
             setDBLOGONforREPORT(myConnectionInfo)
         Catch ex As Exception
