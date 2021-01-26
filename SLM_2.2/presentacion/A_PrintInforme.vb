@@ -25,7 +25,6 @@ Public Class A_PrintInforme
             MsgBox(ex.Message)
         End Try
 
-
     End Sub
 
     Private Sub AccesoCrystal()

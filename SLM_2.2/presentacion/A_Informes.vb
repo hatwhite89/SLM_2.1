@@ -83,8 +83,6 @@ Public Class A_Informes
                 Dim fechadesde, fechahasta As DateTime
                 Dim objInformeDiario As New InformeOrdenesdeTrabajoPeriodo
 
-                ' objInformeDiario.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
-
                 codSubArea = Convert.ToInt32(lblCodSubArea.Text)
                 fechadesde = dtpDesde.Value
                 fechahasta = dtpHasta.Value
@@ -93,7 +91,7 @@ Public Class A_Informes
                 objInformeDiario.SetParameterValue("@desde", fechadesde)
                 objInformeDiario.SetParameterValue("@hasta", fechahasta)
 
-
+                objInformeDiario.DataSourceConnections.Item(1).SetLogon("sa", "Lbm2019")
                 A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiario
 
             Catch ex As Exception
