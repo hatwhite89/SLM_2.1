@@ -12,11 +12,11 @@ Public Class A_PrintInforme
             If lblform.Text = "Informe" Then
 
                 A_Informes.ImprimirInformePeriodo()
-                configureCrystalReports()
+                AccesoCrystal()
             ElseIf lblform.Text = "InformePro" Then
 
                 A_Candidatos.Informe()
-                configureCrystalReports()
+                AccesoCrystal()
             End If
 
         Catch ex As Exception
@@ -26,16 +26,17 @@ Public Class A_PrintInforme
 
     End Sub
 
-    Private Sub configureCrystalReports()
+    Private Sub AccesoCrystal()
         Try
             Dim myConnectionInfo As ConnectionInfo = New ConnectionInfo()
             myConnectionInfo.ServerName = "10.172.3.10"
             myConnectionInfo.DatabaseName = "slm_test"
             myConnectionInfo.UserID = "sa"
             myConnectionInfo.Password = "Lbm2019"
-            myConnectionInfo.Type = ConnectionInfoType.MetaData      'Importante agregar este Type
+            myConnectionInfo.Type = ConnectionInfoType.Unknown       'Importante agregar este Type
             myConnectionInfo.IntegratedSecurity = False
             setDBLOGONforREPORT(myConnectionInfo)
+            crvInformeOrdenesTrabajo.Refresh()
         Catch ex As Exception
 
         End Try

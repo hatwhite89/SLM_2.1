@@ -23,6 +23,7 @@ Partial Class A_PrintInforme
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.crvInformeOrdenesTrabajo = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.InformeOrdenesDeTrabajoExamen1 = New SLM_2._2.InformeOrdenesDeTrabajoExamen()
         Me.lblform = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -64,4 +65,5 @@ Partial Class A_PrintInforme
 
     Friend WithEvents crvInformeOrdenesTrabajo As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents lblform As Label
+    Friend WithEvents InformeOrdenesDeTrabajoExamen1 As InformeOrdenesDeTrabajoExamen
 End Class
