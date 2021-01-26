@@ -60,14 +60,16 @@ Public Class A_Informes
                 Dim codExamen As Integer
                 Dim fecha As DateTime
                 Dim objInformeDiarioExamen As New InformeOrdenesDeTrabajoExamen
-                objInformeDiarioExamen.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
+
+                ' objInformeDiarioExamen.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
                 codExamen = Convert.ToInt32(lblCodExamen.Text)
                 fecha = dtpFecha.Value
 
                 objInformeDiarioExamen.SetParameterValue("@codExamen", codExamen)
                 objInformeDiarioExamen.SetParameterValue("@fecha", fecha)
 
-
+                objInformeDiarioExamen.DataSourceConnections.Item(0).SetConnection("10.172.3.10", "slm_test", False)
+                objInformeDiarioExamen.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
                 A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiarioExamen
 
             Catch ex As Exception
@@ -81,7 +83,7 @@ Public Class A_Informes
                 Dim fechadesde, fechahasta As DateTime
                 Dim objInformeDiario As New InformeOrdenesdeTrabajoPeriodo
 
-                objInformeDiario.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
+                ' objInformeDiario.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
 
                 codSubArea = Convert.ToInt32(lblCodSubArea.Text)
                 fechadesde = dtpDesde.Value
@@ -90,6 +92,7 @@ Public Class A_Informes
                 objInformeDiario.SetParameterValue("@codigoSubArea", codSubArea)
                 objInformeDiario.SetParameterValue("@desde", fechadesde)
                 objInformeDiario.SetParameterValue("@hasta", fechahasta)
+
 
                 A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiario
 

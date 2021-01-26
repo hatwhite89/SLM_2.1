@@ -14,7 +14,7 @@ Public Class A_PrintInforme
                 A_Informes.ImprimirInformePeriodo()
 
             ElseIf lblform.Text = "InformePro" Then
-                ' AccesoCrystal()
+                'AccesoCrystal()
                 A_Candidatos.Informe()
 
             End If
@@ -33,10 +33,9 @@ Public Class A_PrintInforme
             myConnectionInfo.DatabaseName = "slm_test"
             myConnectionInfo.UserID = "sa"
             myConnectionInfo.Password = "Lbm2019"
-            myConnectionInfo.Type = ConnectionInfoType.Unknown       'Importante agregar este Type
+            myConnectionInfo.Type = ConnectionInfoType.SQL       'Importante agregar este Type
             myConnectionInfo.IntegratedSecurity = False
             setDBLOGONforREPORT(myConnectionInfo)
-            crvInformeOrdenesTrabajo.Refresh()
         Catch ex As Exception
 
         End Try
