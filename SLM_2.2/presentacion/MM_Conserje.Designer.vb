@@ -58,6 +58,8 @@ Partial Class MM_Conserje
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.dgvData = New System.Windows.Forms.DataGridView()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -69,9 +71,9 @@ Partial Class MM_Conserje
         '
         'GroupBox2
         '
-        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Controls.Add(Me.txtCodEmpleado)
         Me.GroupBox2.Controls.Add(Me.txtObservaciones)
         Me.GroupBox2.Controls.Add(Me.Label11)
@@ -84,34 +86,32 @@ Partial Class MM_Conserje
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.txtCod)
         Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Location = New System.Drawing.Point(16, 49)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 50)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(518, 309)
+        Me.GroupBox2.Size = New System.Drawing.Size(483, 497)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información"
         '
         'txtCodEmpleado
         '
-        Me.txtCodEmpleado.Location = New System.Drawing.Point(211, 20)
+        Me.txtCodEmpleado.Location = New System.Drawing.Point(62, 47)
         Me.txtCodEmpleado.Name = "txtCodEmpleado"
         Me.txtCodEmpleado.Size = New System.Drawing.Size(37, 20)
         Me.txtCodEmpleado.TabIndex = 15
         '
         'txtObservaciones
         '
-        Me.txtObservaciones.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtObservaciones.Location = New System.Drawing.Point(8, 246)
+        Me.txtObservaciones.Location = New System.Drawing.Point(6, 293)
         Me.txtObservaciones.Multiline = True
         Me.txtObservaciones.Name = "txtObservaciones"
-        Me.txtObservaciones.Size = New System.Drawing.Size(495, 49)
+        Me.txtObservaciones.Size = New System.Drawing.Size(459, 80)
         Me.txtObservaciones.TabIndex = 14
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(6, 230)
+        Me.Label11.Location = New System.Drawing.Point(10, 277)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(78, 13)
         Me.Label11.TabIndex = 13
@@ -119,9 +119,8 @@ Partial Class MM_Conserje
         '
         'lblEstado
         '
-        Me.lblEstado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblEstado.AutoSize = True
-        Me.lblEstado.Location = New System.Drawing.Point(444, 230)
+        Me.lblEstado.Location = New System.Drawing.Point(331, 24)
         Me.lblEstado.Name = "lblEstado"
         Me.lblEstado.Size = New System.Drawing.Size(16, 13)
         Me.lblEstado.TabIndex = 12
@@ -129,9 +128,8 @@ Partial Class MM_Conserje
         '
         'Label10
         '
-        Me.Label10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(349, 229)
+        Me.Label10.Location = New System.Drawing.Point(236, 23)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(43, 13)
         Me.Label10.TabIndex = 11
@@ -139,12 +137,11 @@ Partial Class MM_Conserje
         '
         'GroupBox1
         '
-        Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.dtpHoraEntrega)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.dtpFechaEntrega)
         Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Location = New System.Drawing.Point(277, 130)
+        Me.GroupBox1.Location = New System.Drawing.Point(239, 182)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(226, 81)
         Me.GroupBox1.TabIndex = 10
@@ -192,7 +189,7 @@ Partial Class MM_Conserje
         Me.GroupBox4.Controls.Add(Me.Label7)
         Me.GroupBox4.Controls.Add(Me.dtpFechaSalida)
         Me.GroupBox4.Controls.Add(Me.Label6)
-        Me.GroupBox4.Location = New System.Drawing.Point(8, 130)
+        Me.GroupBox4.Location = New System.Drawing.Point(7, 182)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(226, 81)
         Me.GroupBox4.TabIndex = 9
@@ -236,32 +233,28 @@ Partial Class MM_Conserje
         '
         'GroupBox3
         '
-        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.txtrutaDestino)
         Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Controls.Add(Me.txtrutaOrigen)
         Me.GroupBox3.Controls.Add(Me.Label4)
-        Me.GroupBox3.Location = New System.Drawing.Point(8, 54)
+        Me.GroupBox3.Location = New System.Drawing.Point(8, 73)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(495, 70)
+        Me.GroupBox3.Size = New System.Drawing.Size(457, 93)
         Me.GroupBox3.TabIndex = 1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Ruta"
         '
         'txtrutaDestino
         '
-        Me.txtrutaDestino.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtrutaDestino.Location = New System.Drawing.Point(297, 28)
+        Me.txtrutaDestino.Location = New System.Drawing.Point(55, 54)
         Me.txtrutaDestino.Name = "txtrutaDestino"
-        Me.txtrutaDestino.Size = New System.Drawing.Size(192, 20)
+        Me.txtrutaDestino.Size = New System.Drawing.Size(386, 20)
         Me.txtrutaDestino.TabIndex = 8
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(251, 31)
+        Me.Label5.Location = New System.Drawing.Point(9, 57)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(43, 13)
         Me.Label5.TabIndex = 7
@@ -271,7 +264,7 @@ Partial Class MM_Conserje
         '
         Me.txtrutaOrigen.Location = New System.Drawing.Point(55, 28)
         Me.txtrutaOrigen.Name = "txtrutaOrigen"
-        Me.txtrutaOrigen.Size = New System.Drawing.Size(190, 20)
+        Me.txtrutaOrigen.Size = New System.Drawing.Size(386, 20)
         Me.txtrutaOrigen.TabIndex = 6
         '
         'Label4
@@ -285,18 +278,16 @@ Partial Class MM_Conserje
         '
         'txtNombreEmpleado
         '
-        Me.txtNombreEmpleado.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtNombreEmpleado.Enabled = False
-        Me.txtNombreEmpleado.Location = New System.Drawing.Point(251, 20)
+        Me.txtNombreEmpleado.Location = New System.Drawing.Point(102, 47)
         Me.txtNombreEmpleado.Name = "txtNombreEmpleado"
-        Me.txtNombreEmpleado.Size = New System.Drawing.Size(252, 20)
+        Me.txtNombreEmpleado.Size = New System.Drawing.Size(310, 20)
         Me.txtNombreEmpleado.TabIndex = 3
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(159, 23)
+        Me.Label2.Location = New System.Drawing.Point(10, 50)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(54, 13)
         Me.Label2.TabIndex = 2
@@ -305,7 +296,7 @@ Partial Class MM_Conserje
         'txtCod
         '
         Me.txtCod.Enabled = False
-        Me.txtCod.Location = New System.Drawing.Point(53, 20)
+        Me.txtCod.Location = New System.Drawing.Point(62, 20)
         Me.txtCod.Name = "txtCod"
         Me.txtCod.Size = New System.Drawing.Size(100, 20)
         Me.txtCod.TabIndex = 1
@@ -331,7 +322,7 @@ Partial Class MM_Conserje
         Me.Panel1.Controls.Add(Me.btnCerrar)
         Me.Panel1.Location = New System.Drawing.Point(1, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(549, 43)
+        Me.Panel1.Size = New System.Drawing.Size(1013, 43)
         Me.Panel1.TabIndex = 23
         '
         'btnGuardar
@@ -339,7 +330,7 @@ Partial Class MM_Conserje
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(383, 10)
+        Me.btnGuardar.Location = New System.Drawing.Point(847, 10)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 2
@@ -363,7 +354,7 @@ Partial Class MM_Conserje
         Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.Enabled = False
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Location = New System.Drawing.Point(302, 10)
+        Me.btnModificar.Location = New System.Drawing.Point(766, 10)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 1
@@ -375,7 +366,7 @@ Partial Class MM_Conserje
         Me.btnCrear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCrear.BackColor = System.Drawing.Color.White
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCrear.Location = New System.Drawing.Point(217, 10)
+        Me.btnCrear.Location = New System.Drawing.Point(681, 10)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(79, 23)
         Me.btnCrear.TabIndex = 0
@@ -389,7 +380,7 @@ Partial Class MM_Conserje
         Me.btnCerrar.FlatAppearance.BorderSize = 0
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnCerrar.Location = New System.Drawing.Point(463, 10)
+        Me.btnCerrar.Location = New System.Drawing.Point(927, 10)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
         Me.btnCerrar.TabIndex = 17
@@ -406,9 +397,9 @@ Partial Class MM_Conserje
         Me.GroupBox5.Controls.Add(Me.txtBuscar)
         Me.GroupBox5.Controls.Add(Me.Label12)
         Me.GroupBox5.Controls.Add(Me.dgvData)
-        Me.GroupBox5.Location = New System.Drawing.Point(16, 364)
+        Me.GroupBox5.Location = New System.Drawing.Point(495, 50)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(518, 230)
+        Me.GroupBox5.Size = New System.Drawing.Size(508, 497)
         Me.GroupBox5.TabIndex = 24
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Registros"
@@ -419,7 +410,7 @@ Partial Class MM_Conserje
         Me.Button2.BackColor = System.Drawing.Color.Green
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button2.Location = New System.Drawing.Point(447, 18)
+        Me.Button2.Location = New System.Drawing.Point(433, 15)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(65, 23)
         Me.Button2.TabIndex = 4
@@ -436,7 +427,7 @@ Partial Class MM_Conserje
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(10, 20)
+        Me.Label12.Location = New System.Drawing.Point(10, 21)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(43, 13)
         Me.Label12.TabIndex = 1
@@ -452,25 +443,42 @@ Partial Class MM_Conserje
         Me.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvData.BackgroundColor = System.Drawing.Color.White
         Me.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvData.Location = New System.Drawing.Point(6, 47)
+        Me.dgvData.Location = New System.Drawing.Point(6, 73)
         Me.dgvData.Name = "dgvData"
         Me.dgvData.ReadOnly = True
         Me.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvData.Size = New System.Drawing.Size(506, 177)
+        Me.dgvData.Size = New System.Drawing.Size(496, 418)
         Me.dgvData.TabIndex = 0
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(6, 396)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(459, 80)
+        Me.TextBox1.TabIndex = 17
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(10, 380)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(117, 13)
+        Me.Label13.TabIndex = 16
+        Me.Label13.Text = "Contenido de paquetes"
         '
         'MM_Conserje
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(548, 604)
+        Me.ClientSize = New System.Drawing.Size(1012, 559)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Name = "MM_Conserje"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Gestionar Conserjes"
+        Me.Text = "Gestionar tareas de Conserjes"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -523,4 +531,6 @@ Partial Class MM_Conserje
     Friend WithEvents Button2 As Button
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label12 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label13 As Label
 End Class

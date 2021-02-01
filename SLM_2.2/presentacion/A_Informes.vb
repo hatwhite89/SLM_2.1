@@ -1,4 +1,9 @@
-﻿Public Class A_Informes
+﻿
+Imports CrystalDecisions.Shared
+Imports CrystalDecisions.ReportSource
+Imports CrystalDecisions.CrystalReports.Engine
+
+Public Class A_Informes
     Dim seleccion As Integer
     Private Sub btnBuscarSubArea_Click(sender As Object, e As EventArgs) Handles btnBuscarSubArea.Click
         Try
@@ -56,13 +61,18 @@
                 Dim fecha As DateTime
                 Dim objInformeDiarioExamen As New InformeOrdenesDeTrabajoExamen
 
+                ' objInformeDiarioExamen.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
                 codExamen = Convert.ToInt32(lblCodExamen.Text)
                 fecha = dtpFecha.Value
 
                 objInformeDiarioExamen.SetParameterValue("@codExamen", codExamen)
                 objInformeDiarioExamen.SetParameterValue("@fecha", fecha)
 
-                objInformeDiarioExamen.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+                'objInformeDiarioExamen.DataSourceConnections.Item(0).SetConnection("SRV-SQL-LM", "slm_test", False)
+                'objInformeDiarioExamen.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+
+                objInformeDiarioExamen.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
+
                 A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiarioExamen
 
             Catch ex As Exception
@@ -84,7 +94,7 @@
                 objInformeDiario.SetParameterValue("@desde", fechadesde)
                 objInformeDiario.SetParameterValue("@hasta", fechahasta)
 
-                objInformeDiario.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+                objInformeDiario.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
                 A_PrintInforme.crvInformeOrdenesTrabajo.ReportSource = objInformeDiario
 
             Catch ex As Exception
@@ -190,4 +200,8 @@
             Me.Close()
         End If
     End Sub
+
+
+
+
 End Class
