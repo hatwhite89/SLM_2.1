@@ -7,7 +7,7 @@ Public Class reporteRequisicion
 
 
         RptDocument.SetParameterValue("@cod_requisicion", codigo_requisicion)
-        RptDocument.SetDatabaseLogon("sa", "Lbm2019")
+        RptDocument.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
         CrystalReportViewer1.ReportSource = RptDocument
 
     End Sub

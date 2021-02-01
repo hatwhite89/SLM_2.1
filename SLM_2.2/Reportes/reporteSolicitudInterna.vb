@@ -5,7 +5,9 @@
 
 
             RptDocument.SetParameterValue("@id_oi", codigo_orden_interna)
-            RptDocument.SetDatabaseLogon("sa", "Lbm2019")
+            RptDocument.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
+
+
             CrystalReportViewer1.ReportSource = RptDocument
         Catch ex As Exception
 
