@@ -38,6 +38,9 @@ Partial Class reporteOrdenCompra
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(800, 450)
         Me.CrystalReportViewer1.TabIndex = 0
         '
+        'rpt_ordenCompra1
+        '
+        '
         'reporteOrdenCompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)

@@ -7,4 +7,8 @@
         RptDocument.SetDatabaseLogon("sa", "Lbm2019")
         CrystalReportViewer1.ReportSource = RptDocument
     End Sub
+
+    Private Sub rpt_ordenCompra1_InitReport(sender As Object, e As EventArgs) Handles rpt_ordenCompra1.InitReport
+
+    End Sub
 End Class
