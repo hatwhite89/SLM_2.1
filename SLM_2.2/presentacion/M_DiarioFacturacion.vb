@@ -97,6 +97,7 @@
             'cbxTerminoPago.DataSource = dt2
             'cbxTerminoPago.DisplayMember = "descripcion"
             'cbxTerminoPago.ValueMember = "codigo"
+
             limpiar()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
