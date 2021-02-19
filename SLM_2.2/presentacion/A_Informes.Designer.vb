@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class A_Informes
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class A_Informes
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Informes))
         Me.btnEjecutar = New System.Windows.Forms.Button()
@@ -262,7 +262,7 @@ Partial Class A_Informes
         'chkPeriodoTiempo
         '
         Me.chkPeriodoTiempo.AutoSize = True
-        Me.chkPeriodoTiempo.Location = New System.Drawing.Point(185, 20)
+        Me.chkPeriodoTiempo.Location = New System.Drawing.Point(186, 20)
         Me.chkPeriodoTiempo.Name = "chkPeriodoTiempo"
         Me.chkPeriodoTiempo.Size = New System.Drawing.Size(169, 17)
         Me.chkPeriodoTiempo.TabIndex = 6
