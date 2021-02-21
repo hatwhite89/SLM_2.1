@@ -14,6 +14,67 @@ Public Class E_frmOrdenCompra
     Dim dvProveedor As DataView = clsProve.listarProveedoresOC.DefaultView
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim Msg, Style, Title, Help, Ctxt, Response, MyString
+        Msg = "Esta a punto de modificar la orden, ¿Está seguro de que desea continuar"    ' Define message.
+        Style = vbYesNo + vbCritical + vbDefaultButton2    ' Define buttons.
+        Title = "Agregar nuevo producto"    ' Define title.
+
+
+        If txtEstadoOC.Text = "Abierta" Then
+
+
+            ' Display message.
+            Response = MsgBox(Msg, Style, Title)
+            If Response = vbYes Then    ' User chose Yes.
+                MyString = "Si"    ' Perform some action.
+                If txtCodOC.Text <> "" Then
+                    Dim clsDOC As New clsDetalleOC
+                    Try
+                        With clsDOC
+                            .ProductoOC = txtProducto.Text
+                            .CodigoProducto = Integer.Parse(txtCodigProducto.Text)
+                            .Numerolote = ""
+                            .FechaVencimiento = Date.Today
+                            .ISVDetalle = "0"
+                            .CantidadDetalle = Double.Parse(txtCantidadProductos.Text)
+                            .PrecioUnitario = Double.Parse(txtPrecioUnitarioProductos.Text)
+                            .CostoTotal = Double.Parse(txtCostoTotal.Text)
+                            .EstadoOC = False
+                            .IdOC = Integer.Parse(txtCodOC.Text)
+                            .Cantidad_recibida1 = Integer.Parse(txtCantidadProductos.Text)
+
+                        End With
+
+                        If clsDOC.RegistrarDetalleOC() = "1" Then
+                            MsgBox("Registrado Exitosamente ")
+                            txtCantidadProductos.Text = "0"
+                            txtPrecioUnitarioProductos.Text = "0"
+                            txtISVProductos.Text = "0"
+                            txtCostoTotal.Text = "0"
+                            CargarDetalleOC(txtCodOC.Text)
+                            sumarData()
+                            sumarData2()
+                            Exit Sub
+                        End If
+                    Catch ex As Exception
+                        MsgBox("Debe llenar todos los campos obligatorios *")
+                        Exit Sub
+                    End Try
+                    Exit Sub
+                ElseIf txtCodOC.Text = "" Then
+                    MsgBox("Debe asignar una orden de compra")
+                    Exit Sub
+                End If
+                CargarDetalleOC(txtCodOC.Text)
+                sumarData()
+                sumarData2()
+                Exit Sub
+            Else    ' User chose No.
+                MyString = "No"    ' Perform some action.
+                Exit Sub
+            End If
+        End If
+
         If txtCodOC.Text <> "" Then
             Dim clsDOC As New clsDetalleOC
             Try
@@ -22,7 +83,7 @@ Public Class E_frmOrdenCompra
                     .CodigoProducto = Integer.Parse(txtCodigProducto.Text)
                     .Numerolote = ""
                     .FechaVencimiento = Date.Today
-                    .ISVDetalle = Double.Parse(txtISVProductos.Text)
+                    .ISVDetalle = "0"
                     .CantidadDetalle = Double.Parse(txtCantidadProductos.Text)
                     .PrecioUnitario = Double.Parse(txtPrecioUnitarioProductos.Text)
                     .CostoTotal = Double.Parse(txtCostoTotal.Text)
@@ -87,7 +148,7 @@ Public Class E_frmOrdenCompra
     End Sub
 
     Public Sub E_frmOrdenCompra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        txtNumFactura.Text = "0"
         alternarColoFilasDatagridview(DataGridView1)
         alternarColoFilasDatagridview(DataGridView2)
         alternarColoFilasDatagridview(DataGridView9)
@@ -162,7 +223,7 @@ Public Class E_frmOrdenCompra
         txtRTNProveedor.Clear()
         txtNombreProveedor.Clear()
         txtDiasCredito.Clear()
-        txtNumFactura.Clear()
+        txtNumFactura.Text = "0"
 
         txtCondicionEntrega.Clear()
         txtObservaciones.Clear()
@@ -425,6 +486,7 @@ Public Class E_frmOrdenCompra
         txtObservaciones.Text = DataGridView3.Rows.Item(0).Cells(10).Value
         txt_estado_autorizacion.Text = DataGridView3.Rows.Item(0).Cells(12).Value
         RichTextBox1.Text = DataGridView3.Rows.Item(0).Cells(14).Value
+        DateTimePicker1.Value = DataGridView3.Rows.Item(0).Cells(3).Value
 
 
 
@@ -471,7 +533,6 @@ Public Class E_frmOrdenCompra
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        reporteOrdenCompra.Show()
     End Sub
 
     Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
@@ -481,7 +542,13 @@ Public Class E_frmOrdenCompra
     Private Sub txtCodOC_TextChanged(sender As Object, e As EventArgs) Handles txtCodOC.TextChanged
         CargarDetalleOC(txtCodOC.Text)
 
-        If txtEstadoOC.Text = "Cerrado" Then
+        If txtEstadoOC.Text = "Cerrado" Or txtEstadoOC.Text = "Pendiente" Then
+            Button1.Enabled = False
+            Button3.Enabled = False
+
+        End If
+
+        If txtEstadoOC.Text = "Pendiente" Then
             Button1.Enabled = False
             Button3.Enabled = False
         End If
@@ -489,5 +556,27 @@ Public Class E_frmOrdenCompra
 
     Private Sub btnLimpiarBusqueda_Click(sender As Object, e As EventArgs) Handles btnLimpiarBusqueda.Click
         txtNombreProveedor.Clear()
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        reporteOrdenCompra.Show()
+    End Sub
+
+    Private Sub txtEstadoOC_TextChanged(sender As Object, e As EventArgs) Handles txtEstadoOC.TextChanged
+        If txtEstadoOC.Text = "Cerrado" Or txtEstadoOC.Text = "Pendiente" Then
+            Button1.Enabled = False
+            Button3.Enabled = False
+
+        End If
+
+        If txtEstadoOC.Text = "Pendiente" Then
+            Button1.Enabled = False
+            Button3.Enabled = False
+        End If
+
+        If txtEstadoOC.Text = "Rechazada" Then
+            Button1.Enabled = False
+            Button3.Enabled = False
+        End If
     End Sub
 End Class
