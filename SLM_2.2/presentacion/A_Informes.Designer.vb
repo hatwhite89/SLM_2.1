@@ -262,7 +262,7 @@ Partial Class A_Informes
         'chkPeriodoTiempo
         '
         Me.chkPeriodoTiempo.AutoSize = True
-        Me.chkPeriodoTiempo.Location = New System.Drawing.Point(185, 20)
+        Me.chkPeriodoTiempo.Location = New System.Drawing.Point(186, 20)
         Me.chkPeriodoTiempo.Name = "chkPeriodoTiempo"
         Me.chkPeriodoTiempo.Size = New System.Drawing.Size(169, 17)
         Me.chkPeriodoTiempo.TabIndex = 6
