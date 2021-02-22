@@ -1,7 +1,8 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ClsConnection
-    'esta clase sirve para abrir una conexxion en la base de datos 
+    'esta clase sirve para abrir una conexxion en la base de datos de slm
+
 
 
     Private sqlcon As SqlConnection

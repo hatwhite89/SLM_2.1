@@ -85,54 +85,66 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim clsP As New ClsProducto
+        If validarGuardar() = 1 Then
 
-        If txtCodigo.Text = "" Then
-            With clsP
+            If txtCodigo.Text = "" Then
+                Try
+                    With clsP
 
-                .NombreProducto = txtNombre.Text
-                .MarcaProducto = txtMarca.Text
-                .ModeloProducto = txtModelo.Text
-                .DescripcionProducto = txtDescripcion.Text
-                .ExistenciaProducto = "0"
-                .CantidadMinimaProducto = Integer.Parse(txtCantidadMinima.Text)
-                .UnidadMedida = Integer.Parse(cmbUnidadMedida.SelectedValue)
-                .CategoriaProducto = Integer.Parse(cmbCategoria.SelectedValue)
-                .Precio_base1 = txtPrecioProducto.Text
-            End With
-            If clsP.RegistrarProducto() = "1" Then
-                'campos 
-                txtNombre.ReadOnly = True
-                txtModelo.ReadOnly = True
-                txtMarca.ReadOnly = True
-                txtPrecioProducto.ReadOnly = True
-                txtDescripcion.ReadOnly = True
-                txtCantidadMinima.ReadOnly = True
-                'botones
-                Button1.Enabled = False
-                MsgBox("Registrado exitosamente")
-                cargarData()
+                        .NombreProducto = txtNombre.Text
+                        .MarcaProducto = txtMarca.Text
+                        .ModeloProducto = txtModelo.Text
+                        .DescripcionProducto = txtDescripcion.Text
+                        .ExistenciaProducto = "0"
+                        .CantidadMinimaProducto = Integer.Parse(txtCantidadMinima.Text)
+                        .UnidadMedida = Integer.Parse(cmbUnidadMedida.SelectedValue)
+                        .CategoriaProducto = Integer.Parse(cmbCategoria.SelectedValue)
+                        .Precio_base1 = txtPrecioProducto.Text
+                    End With
+                Catch ex As Exception
+                    MsgBox(mensaje_error_actualizacion)
+                    Exit Sub
+                End Try
 
-            End If
+                Try
+                    If clsP.RegistrarProducto() = "1" Then
+                        'campos 
+                        txtNombre.ReadOnly = True
+                        txtModelo.ReadOnly = True
+                        txtMarca.ReadOnly = True
+                        txtPrecioProducto.ReadOnly = True
+                        txtDescripcion.ReadOnly = True
+                        txtCantidadMinima.ReadOnly = True
+                        'botones
+                        Button1.Enabled = False
+                        MsgBox(mensaje_registro)
+                        cargarData()
 
-        ElseIf txtCodigo.Text <> "" Then
-            With clsP
-                .IdProducto = Integer.Parse(txtCodigo.Text)
-                .NombreProducto = txtNombre.Text
-                .MarcaProducto = txtMarca.Text
-                .ModeloProducto = txtModelo.Text
-                .DescripcionProducto = txtDescripcion.Text
-                .ExistenciaProducto = "0"
-                .CantidadMinimaProducto = Integer.Parse(txtCantidadMinima.Text)
-                .UnidadMedida = Integer.Parse(cmbUnidadMedida.SelectedValue)
-                .CategoriaProducto = Integer.Parse(cmbCategoria.SelectedValue)
-                .Precio_base1 = txtPrecioProducto.Text
-            End With
-            If clsP.ActualizarProducto() = "1" Then
-                MsgBox("Actualizado exitosamente")
-                cargarData()
+                    End If
+                Catch ex As Exception
+                    MsgBox(mensaje_error_registro)
+                End Try
+
+
+            ElseIf txtCodigo.Text <> "" Then
+                With clsP
+                    .IdProducto = Integer.Parse(txtCodigo.Text)
+                    .NombreProducto = txtNombre.Text
+                    .MarcaProducto = txtMarca.Text
+                    .ModeloProducto = txtModelo.Text
+                    .DescripcionProducto = txtDescripcion.Text
+                    .ExistenciaProducto = "0"
+                    .CantidadMinimaProducto = Integer.Parse(txtCantidadMinima.Text)
+                    .UnidadMedida = Integer.Parse(cmbUnidadMedida.SelectedValue)
+                    .CategoriaProducto = Integer.Parse(cmbCategoria.SelectedValue)
+                    .Precio_base1 = txtPrecioProducto.Text
+                End With
+                If clsP.ActualizarProducto() = "1" Then
+                    MsgBox(mensaje_actualizacion)
+                    cargarData()
+                End If
             End If
         End If
-
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
