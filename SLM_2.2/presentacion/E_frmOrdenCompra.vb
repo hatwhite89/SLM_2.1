@@ -69,6 +69,7 @@ Public Class E_frmOrdenCompra
                 sumarData()
                 sumarData2()
                 Exit Sub
+
             Else    ' User chose No.
                 MyString = "No"    ' Perform some action.
                 Exit Sub

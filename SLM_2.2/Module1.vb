@@ -10,6 +10,12 @@
     Public cod_proveedor As String
     Public codigo_oc As String
     Public id_resultado As String
+    Public mensaje_error_registro As String = "No se puede realizar el registros,campos vacios."
+    Public mensaje_error_actualizacion As String = "No se pueden actualizar los datos, consulte al administrador del sistema."
+    Public mensaje_error_dar_baja As String = "No se puede dar de baja , consulte al administrador del sistema"
+    Public mensaje_registro As String = "Registrado exitosamente."
+    Public mensaje_actualizacion As String = "Registros actualizados exitosamente."
+    Public mensaje_dar_baja As String = "Se ha dado de baja exitosamente."
 
     Public Sub CargarDatosGlobales()
         Try
@@ -58,5 +64,27 @@
             Return False
         End Try
         Return True
+    End Function
+
+    Public Function validarGuardar()
+        Dim Msg, Style, Title, Help, Ctxt, Response, MyString
+        Msg = "Esta a punto de guardar , desea continuar?"    ' Define message.
+        Style = vbYesNo + vbCritical + vbDefaultButton2    ' Define buttons.
+        Title = "Agregar nuevo producto"    ' Define title.
+
+
+
+
+
+        ' Display message.
+        Response = MsgBox(Msg, Style, Title)
+        If Response = vbYes Then    ' User chose Yes.
+            MyString = "Si"    ' Perform some action.
+            Return 1
+        Else    ' User chose No.
+            MyString = "No"    ' Perform some action.
+            Exit Function
+            Return 0
+        End If
     End Function
 End Module

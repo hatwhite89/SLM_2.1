@@ -295,7 +295,7 @@ Partial Class E_frmOrdenCompra
         Me.TabControl1.Location = New System.Drawing.Point(2, 46)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1055, 688)
+        Me.TabControl1.Size = New System.Drawing.Size(1055, 677)
         Me.TabControl1.TabIndex = 1
         '
         'TabPage1
@@ -308,7 +308,7 @@ Partial Class E_frmOrdenCompra
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1047, 662)
+        Me.TabPage1.Size = New System.Drawing.Size(1047, 651)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Crear Orden de compra"
         '
@@ -322,7 +322,7 @@ Partial Class E_frmOrdenCompra
         Me.GroupBox3.Controls.Add(Me.Panel5)
         Me.GroupBox3.Location = New System.Drawing.Point(3, 369)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(1041, 287)
+        Me.GroupBox3.Size = New System.Drawing.Size(1041, 276)
         Me.GroupBox3.TabIndex = 80
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Detalle Orden de compra"
@@ -358,7 +358,7 @@ Partial Class E_frmOrdenCompra
         Me.DataGridView1.RowHeadersWidth = 51
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView1.Size = New System.Drawing.Size(1025, 216)
+        Me.DataGridView1.Size = New System.Drawing.Size(1025, 205)
         Me.DataGridView1.TabIndex = 0
         '
         'id_detalle_oc
@@ -405,7 +405,7 @@ Partial Class E_frmOrdenCompra
         Me.Panel5.Controls.Add(Me.Button2)
         Me.Panel5.Controls.Add(Me.Label32)
         Me.Panel5.Controls.Add(Me.Panel6)
-        Me.Panel5.Location = New System.Drawing.Point(10, 238)
+        Me.Panel5.Location = New System.Drawing.Point(10, 227)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1026, 46)
         Me.Panel5.TabIndex = 82
@@ -1556,7 +1556,7 @@ Partial Class E_frmOrdenCompra
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 738)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 727)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 10, 0)
         Me.StatusStrip1.Size = New System.Drawing.Size(1065, 22)
@@ -1568,7 +1568,7 @@ Partial Class E_frmOrdenCompra
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1065, 760)
+        Me.ClientSize = New System.Drawing.Size(1065, 749)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Panel1)
