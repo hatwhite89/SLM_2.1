@@ -68,6 +68,8 @@
                 celda = Convert.ToInt64(dgvHojaTrab.CurrentCell.ColumnIndex.ToString)
                 fila = Convert.ToInt64(dgvHojaTrab.CurrentCell.RowIndex.ToString)
 
+
+
                 'buscar valores referencia 
                 If (Trim(txtParametro.Text) <> "") Then
                     Try
@@ -379,7 +381,14 @@
     End Sub
 
     Private Sub btnDetalleResultado_Click(sender As Object, e As EventArgs) Handles btnDetalleResultado.Click
-        A_PlantillasDeResultado.Show()
+        Try
+
+
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub btnValoresRef_Click(sender As Object, e As EventArgs) Handles btnValoresRef.Click

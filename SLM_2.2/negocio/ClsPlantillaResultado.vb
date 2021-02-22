@@ -239,4 +239,30 @@ Public Class ClsPlantillaResultado
 
     End Function
 
+
+    Public Function BuscarPlantillaXSimbolo(ByVal simbolo As String) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarPlantillaXSimbolo"
+            cmd.Parameters.Add("@simbolo", SqlDbType.VarChar).Value = simbolo_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
+
+
 End Class

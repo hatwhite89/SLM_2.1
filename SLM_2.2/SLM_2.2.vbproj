@@ -237,6 +237,7 @@
     <Compile Include="negocio\ClsContratos.vb" />
     <Compile Include="negocio\ClsDepartamento.vb" />
     <Compile Include="negocio\ClsDepreciacion.vb" />
+    <Compile Include="negocio\ClsDescripcionResultado.vb" />
     <Compile Include="negocio\ClsDescuentos.vb" />
     <Compile Include="negocio\ClsDetalleAsiento.vb" />
     <Compile Include="negocio\ClsDetalleCAI.vb" />
@@ -1027,6 +1028,12 @@
       <DependentUpon>frmSolicitudNuevoProducto.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\frmSolicitudNuevoProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\HT_DescripcionResultado.Designer.vb">
+      <DependentUpon>HT_DescripcionResultado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\HT_DescripcionResultado.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\MM_Conserje.Designer.vb">
@@ -1981,6 +1988,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\frmSolicitudNuevoProducto.resx">
       <DependentUpon>frmSolicitudNuevoProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\HT_DescripcionResultado.resx">
+      <DependentUpon>HT_DescripcionResultado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\MM_Conserje.resx">
       <DependentUpon>MM_Conserje.vb</DependentUpon>
