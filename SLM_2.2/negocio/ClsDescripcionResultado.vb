@@ -157,4 +157,26 @@ Public Class ClsDescripcionResultado
     End Function
 
 
+    Public Function buscarDescripcionResultado() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "A_slmBuscarDescripcionResultado"
+            cmd.Parameters.Add("@cod_orden_trabajo", SqlDbType.Int).Value = Codigo_OTrabajo
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+
 End Class

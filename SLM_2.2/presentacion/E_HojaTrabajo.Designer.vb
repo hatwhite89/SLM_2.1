@@ -84,9 +84,9 @@ Partial Class E_HojaTrabajo
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.lblcodDescrip = New System.Windows.Forms.Label()
+        Me.btnValidarResultado = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.lblFilaSeleccionada = New System.Windows.Forms.Label()
         CType(Me.dgvHojaTrab, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -824,8 +824,8 @@ Partial Class E_HojaTrabajo
         '
         Me.Panel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Controls.Add(Me.lblFilaSeleccionada)
-        Me.Panel4.Controls.Add(Me.Button1)
+        Me.Panel4.Controls.Add(Me.lblcodDescrip)
+        Me.Panel4.Controls.Add(Me.btnValidarResultado)
         Me.Panel4.Controls.Add(Me.btnDetalleResultado)
         Me.Panel4.Controls.Add(Me.cbxPlantillas)
         Me.Panel4.Controls.Add(Me.btnActualizarVista)
@@ -834,18 +834,28 @@ Partial Class E_HojaTrabajo
         Me.Panel4.Size = New System.Drawing.Size(234, 259)
         Me.Panel4.TabIndex = 153
         '
-        'Button1
+        'lblcodDescrip
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.Yellow
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(3, 170)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(111, 29)
-        Me.Button1.TabIndex = 148
-        Me.Button1.Text = "Validar Resultado"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.lblcodDescrip.AutoSize = True
+        Me.lblcodDescrip.Location = New System.Drawing.Point(3, 238)
+        Me.lblcodDescrip.Name = "lblcodDescrip"
+        Me.lblcodDescrip.Size = New System.Drawing.Size(123, 13)
+        Me.lblcodDescrip.TabIndex = 149
+        Me.lblcodDescrip.Text = "codigoResultadoDescrip"
+        Me.lblcodDescrip.Visible = False
+        '
+        'btnValidarResultado
+        '
+        Me.btnValidarResultado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnValidarResultado.BackColor = System.Drawing.Color.Yellow
+        Me.btnValidarResultado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnValidarResultado.Location = New System.Drawing.Point(3, 170)
+        Me.btnValidarResultado.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnValidarResultado.Name = "btnValidarResultado"
+        Me.btnValidarResultado.Size = New System.Drawing.Size(111, 29)
+        Me.btnValidarResultado.TabIndex = 148
+        Me.btnValidarResultado.Text = "Validar Resultado"
+        Me.btnValidarResultado.UseVisualStyleBackColor = False
         '
         'Label7
         '
@@ -855,15 +865,6 @@ Partial Class E_HojaTrabajo
         Me.Label7.Size = New System.Drawing.Size(181, 13)
         Me.Label7.TabIndex = 154
         Me.Label7.Text = "Seleccionar fila para cargar el detalle"
-        '
-        'lblFilaSeleccionada
-        '
-        Me.lblFilaSeleccionada.AutoSize = True
-        Me.lblFilaSeleccionada.Location = New System.Drawing.Point(143, 127)
-        Me.lblFilaSeleccionada.Name = "lblFilaSeleccionada"
-        Me.lblFilaSeleccionada.Size = New System.Drawing.Size(85, 13)
-        Me.lblFilaSeleccionada.TabIndex = 149
-        Me.lblFilaSeleccionada.Text = "filaSeleccionada"
         '
         'E_HojaTrabajo
         '
@@ -968,7 +969,7 @@ Partial Class E_HojaTrabajo
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnValidarResultado As Button
     Friend WithEvents Label7 As Label
-    Friend WithEvents lblFilaSeleccionada As Label
+    Friend WithEvents lblcodDescrip As Label
 End Class

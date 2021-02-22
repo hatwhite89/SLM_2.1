@@ -250,7 +250,7 @@ Public Class ClsPlantillaResultado
             cmd.Connection = cn
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "A_slmBuscarPlantillaXSimbolo"
-            cmd.Parameters.Add("@simbolo", SqlDbType.VarChar).Value = simbolo_
+            cmd.Parameters.Add("@simbolo", SqlDbType.VarChar).Value = simbolo
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable

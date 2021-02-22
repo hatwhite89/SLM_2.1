@@ -546,49 +546,81 @@ Module ModulosVarios
                                             ElseIf i = 1 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnTrabajo.Enabled = True
+                                                Else
+                                                    Form1.btnTrabajo.Enabled = False
                                                 End If
 
                                             ElseIf i = 2 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnHojaTrabajo.Enabled = True
+                                                Else
+                                                    Form1.btnHojaTrabajo.Enabled = False
                                                 End If
                                             ElseIf i = 3 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnEntrega.Enabled = True
+                                                Else
+                                                    Form1.btnEntrega.Enabled = False
                                                 End If
                                             ElseIf i = 4 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnSede2.Enabled = True
+                                                Else
+                                                    Form1.btnSede2.Enabled = False
                                                 End If
                                             ElseIf i = 5 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnSucursal.Enabled = True
+                                                Else
+                                                    Form1.btnSucursal.Enabled = False
                                                 End If
                                             ElseIf i = 6 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnMedico2.Enabled = True
+                                                Else
+                                                    Form1.btnMedico2.Enabled = False
                                                 End If
                                             ElseIf i = 7 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnPaciente2.Enabled = True
+                                                Else
+                                                    Form1.btnPaciente2.Enabled = False
                                                 End If
                                             ElseIf i = 8 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnSubAreas.Enabled = True
+                                                Else
+                                                    Form1.btnSubAreas.Enabled = False
                                                 End If
                                             ElseIf i = 9 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnValoresRef.Enabled = True
+                                                Else
+                                                    Form1.btnValoresRef.Enabled = False
                                                 End If
                                             ElseIf i = 10 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnInformes.Enabled = True
+                                                Else
+                                                    Form1.btnInformes.Enabled = False
                                                 End If
                                             ElseIf i = 11 Then
                                                 If dtVentanas.Rows(i).Item(2) = True Then
                                                     Form1.btnGrupoExamenes.Enabled = True
+                                                Else
+                                                    Form1.btnGrupoExamenes.Enabled = False
                                                 End If
 
+                                            ElseIf i = 12 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+                                                    E_HojaTrabajo.btnValidarResultado.Enabled = True
+                                                Else
+                                                    E_HojaTrabajo.btnValidarResultado.Enabled = False
+                                                End If
+                                            ElseIf i = 13 Then
+                                                If dtVentanas.Rows(i).Item(2) = True Then
+
+                                                End If
                                             End If 'if conteo
 
                                         Next
