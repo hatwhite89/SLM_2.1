@@ -87,6 +87,8 @@ Partial Class E_HojaTrabajo
         Me.lblcodDescrip = New System.Windows.Forms.Label()
         Me.btnValidarResultado = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.PlantillasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MantenimientoDePlantillasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvHojaTrab, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -644,7 +646,7 @@ Partial Class E_HojaTrabajo
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.PlantillasToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
@@ -866,6 +868,19 @@ Partial Class E_HojaTrabajo
         Me.Label7.TabIndex = 154
         Me.Label7.Text = "Seleccionar fila para cargar el detalle"
         '
+        'PlantillasToolStripMenuItem
+        '
+        Me.PlantillasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MantenimientoDePlantillasToolStripMenuItem})
+        Me.PlantillasToolStripMenuItem.Name = "PlantillasToolStripMenuItem"
+        Me.PlantillasToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
+        Me.PlantillasToolStripMenuItem.Text = "Plantillas"
+        '
+        'MantenimientoDePlantillasToolStripMenuItem
+        '
+        Me.MantenimientoDePlantillasToolStripMenuItem.Name = "MantenimientoDePlantillasToolStripMenuItem"
+        Me.MantenimientoDePlantillasToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
+        Me.MantenimientoDePlantillasToolStripMenuItem.Text = "Mantenimiento de Plantillas"
+        '
         'E_HojaTrabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -972,4 +987,6 @@ Partial Class E_HojaTrabajo
     Friend WithEvents btnValidarResultado As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents lblcodDescrip As Label
+    Friend WithEvents PlantillasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MantenimientoDePlantillasToolStripMenuItem As ToolStripMenuItem
 End Class

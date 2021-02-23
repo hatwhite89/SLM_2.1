@@ -619,6 +619,17 @@
         End Try
     End Sub
 
+    Private Sub MantenimientoDePlantillasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MantenimientoDePlantillasToolStripMenuItem.Click
+        Try
+            A_PlantillasDeResultado.Show()
+            A_PlantillasDeResultado.BringToFront()
+            A_PlantillasDeResultado.WindowState = WindowState.Normal
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
     Private Sub cbxPlantillas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxPlantillas.SelectedIndexChanged
 
         Try
