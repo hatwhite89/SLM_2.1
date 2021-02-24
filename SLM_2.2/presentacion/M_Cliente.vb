@@ -1025,7 +1025,7 @@ Public Class M_Cliente
             'txtcodigo.ReadOnly = True
             'txtnombreCompleto.ReadOnly = False
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -1048,17 +1048,21 @@ Public Class M_Cliente
 
     Private Sub ocultarColumnas()
         'OCULTAR COLUMNAS
-        Me.dgbtabla.Columns("scanId").Visible = False
-        Me.dgbtabla.Columns("rtn").Visible = False
-        Me.dgbtabla.Columns("correo1").Visible = False
-        Me.dgbtabla.Columns("correo2").Visible = False
-        Me.dgbtabla.Columns("direccion").Visible = False
-        Me.dgbtabla.Columns("telCasa").Visible = False
-        Me.dgbtabla.Columns("telTrabajo").Visible = False
-        Me.dgbtabla.Columns("celular").Visible = False
-        Me.dgbtabla.Columns("codigoClasificacion").Visible = False
-        Me.dgbtabla.Columns("codigoTerminoPago").Visible = False
-        Me.dgbtabla.Columns("codigoCategoria").Visible = False
+        Try
+            Me.dgbtabla.Columns("scanId").Visible = False
+            Me.dgbtabla.Columns("rtn").Visible = False
+            Me.dgbtabla.Columns("correo1").Visible = False
+            Me.dgbtabla.Columns("correo2").Visible = False
+            Me.dgbtabla.Columns("direccion").Visible = False
+            Me.dgbtabla.Columns("telCasa").Visible = False
+            Me.dgbtabla.Columns("telTrabajo").Visible = False
+            Me.dgbtabla.Columns("celular").Visible = False
+            Me.dgbtabla.Columns("codigoClasificacion").Visible = False
+            Me.dgbtabla.Columns("codigoTerminoPago").Visible = False
+            Me.dgbtabla.Columns("codigoCategoria").Visible = False
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
