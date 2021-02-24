@@ -581,6 +581,7 @@ Partial Class M_DiarioFacturacion
         Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "M_DiarioFacturacion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "M_DiarioFacturacion"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

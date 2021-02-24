@@ -27,6 +27,11 @@ Partial Class M_Cliente
         Me.btnbuscarCliente = New System.Windows.Forms.Button()
         Me.lblidCliente = New System.Windows.Forms.Label()
         Me.gbxinfoCliente = New System.Windows.Forms.GroupBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.cmbxClasificacion = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -108,15 +113,13 @@ Partial Class M_Cliente
         Me.Label61 = New System.Windows.Forms.Label()
         Me.Label60 = New System.Windows.Forms.Label()
         Me.Label59 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.dgbtabla = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.gbxinfoCliente.SuspendLayout()
         Me.gbxgenero.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'mtxtidentidadClienteB
@@ -138,7 +141,7 @@ Partial Class M_Cliente
         Me.btnbuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnbuscarCliente.Location = New System.Drawing.Point(328, 26)
-        Me.btnbuscarCliente.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnbuscarCliente.Margin = New System.Windows.Forms.Padding(4)
         Me.btnbuscarCliente.Name = "btnbuscarCliente"
         Me.btnbuscarCliente.Size = New System.Drawing.Size(45, 32)
         Me.btnbuscarCliente.TabIndex = 17
@@ -225,7 +228,7 @@ Partial Class M_Cliente
         Me.gbxinfoCliente.Controls.Add(Me.lblnombre2)
         Me.gbxinfoCliente.Controls.Add(Me.lblapellido1)
         Me.gbxinfoCliente.Controls.Add(Me.lblnombre1)
-        Me.gbxinfoCliente.Location = New System.Drawing.Point(15, 145)
+        Me.gbxinfoCliente.Location = New System.Drawing.Point(13, 287)
         Me.gbxinfoCliente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.gbxinfoCliente.Name = "gbxinfoCliente"
         Me.gbxinfoCliente.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -234,6 +237,61 @@ Partial Class M_Cliente
         Me.gbxinfoCliente.TabStop = False
         Me.gbxinfoCliente.Text = "Información de Cliente/Paciente"
         Me.gbxinfoCliente.Visible = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.ForeColor = System.Drawing.Color.Red
+        Me.Label12.Location = New System.Drawing.Point(642, 309)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(23, 17)
+        Me.Label12.TabIndex = 215
+        Me.Label12.Text = "(*)"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.ForeColor = System.Drawing.Color.Red
+        Me.Label11.Location = New System.Drawing.Point(648, 281)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(23, 17)
+        Me.Label11.TabIndex = 214
+        Me.Label11.Text = "(*)"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.ForeColor = System.Drawing.Color.Red
+        Me.Label10.Location = New System.Drawing.Point(709, 252)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(23, 17)
+        Me.Label10.TabIndex = 213
+        Me.Label10.Text = "(*)"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.ForeColor = System.Drawing.Color.Red
+        Me.Label9.Location = New System.Drawing.Point(648, 225)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(23, 17)
+        Me.Label9.TabIndex = 212
+        Me.Label9.Text = "(*)"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(664, 194)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(23, 17)
+        Me.Label8.TabIndex = 211
+        Me.Label8.Text = "(*)"
         '
         'cmbxClasificacion
         '
@@ -1016,7 +1074,7 @@ Partial Class M_Cliente
         Me.btnbuscarPorNombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarPorNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnbuscarPorNombre.Location = New System.Drawing.Point(705, 26)
-        Me.btnbuscarPorNombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnbuscarPorNombre.Margin = New System.Windows.Forms.Padding(4)
         Me.btnbuscarPorNombre.Name = "btnbuscarPorNombre"
         Me.btnbuscarPorNombre.Size = New System.Drawing.Size(45, 32)
         Me.btnbuscarPorNombre.TabIndex = 118
@@ -1055,16 +1113,16 @@ Partial Class M_Cliente
         Me.Panel1.Controls.Add(Me.lblNombreB)
         Me.Panel1.Controls.Add(Me.btnbuscarCliente)
         Me.Panel1.Location = New System.Drawing.Point(15, 75)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1025, 64)
+        Me.Panel1.Size = New System.Drawing.Size(1025, 206)
         Me.Panel1.TabIndex = 120
         '
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 545)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 691)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
         Me.StatusStrip1.Size = New System.Drawing.Size(1056, 22)
@@ -1076,6 +1134,7 @@ Partial Class M_Cliente
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.Label62)
         Me.Panel2.Controls.Add(Me.btnnuevo)
         Me.Panel2.Controls.Add(Me.Label61)
@@ -1085,7 +1144,7 @@ Partial Class M_Cliente
         Me.Panel2.Controls.Add(Me.btnguardarCliente)
         Me.Panel2.Controls.Add(Me.btnseleccionarCliente)
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1056, 68)
         Me.Panel2.TabIndex = 122
@@ -1132,67 +1191,40 @@ Partial Class M_Cliente
         Me.Label59.TabIndex = 210
         Me.Label59.Text = "(*)"
         '
-        'Label8
+        'dgbtabla
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(664, 194)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(23, 17)
-        Me.Label8.TabIndex = 211
-        Me.Label8.Text = "(*)"
+        Me.dgbtabla.AllowUserToAddRows = False
+        Me.dgbtabla.AllowUserToDeleteRows = False
+        Me.dgbtabla.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
+        Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgbtabla.Location = New System.Drawing.Point(43, 144)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgbtabla.Name = "dgbtabla"
+        Me.dgbtabla.ReadOnly = True
+        Me.dgbtabla.RowHeadersWidth = 51
+        Me.dgbtabla.RowTemplate.Height = 24
+        Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgbtabla.Size = New System.Drawing.Size(967, 119)
+        Me.dgbtabla.TabIndex = 123
         '
-        'Label9
+        'Button1
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.ForeColor = System.Drawing.Color.Red
-        Me.Label9.Location = New System.Drawing.Point(648, 225)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(23, 17)
-        Me.Label9.TabIndex = 212
-        Me.Label9.Text = "(*)"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.ForeColor = System.Drawing.Color.Red
-        Me.Label10.Location = New System.Drawing.Point(709, 252)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(23, 17)
-        Me.Label10.TabIndex = 213
-        Me.Label10.Text = "(*)"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.ForeColor = System.Drawing.Color.Red
-        Me.Label11.Location = New System.Drawing.Point(648, 281)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(23, 17)
-        Me.Label11.TabIndex = 214
-        Me.Label11.Text = "(*)"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.ForeColor = System.Drawing.Color.Red
-        Me.Label12.Location = New System.Drawing.Point(642, 309)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(23, 17)
-        Me.Label12.TabIndex = 215
-        Me.Label12.Text = "(*)"
+        Me.Button1.Location = New System.Drawing.Point(334, 28)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 214
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'M_Cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1056, 567)
+        Me.ClientSize = New System.Drawing.Size(1056, 713)
+        Me.Controls.Add(Me.dgbtabla)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxinfoCliente)
@@ -1212,6 +1244,7 @@ Partial Class M_Cliente
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1307,4 +1340,6 @@ Partial Class M_Cliente
     Friend WithEvents Label61 As Label
     Friend WithEvents Label60 As Label
     Friend WithEvents Label59 As Label
+    Friend WithEvents dgbtabla As DataGridView
+    Friend WithEvents Button1 As Button
 End Class

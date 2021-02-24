@@ -42,10 +42,25 @@ Partial Class M_Medico
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.gbxmedico = New System.Windows.Forms.GroupBox()
+        Me.txtnombreEspecialidad2 = New System.Windows.Forms.TextBox()
+        Me.btnbuscarEspecialidad2 = New System.Windows.Forms.Button()
+        Me.txtcodigoEspecialidad2 = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label62 = New System.Windows.Forms.Label()
+        Me.Label61 = New System.Windows.Forms.Label()
+        Me.Label60 = New System.Windows.Forms.Label()
+        Me.Label59 = New System.Windows.Forms.Label()
         Me.lblForm = New System.Windows.Forms.Label()
         Me.txtnombreEspecialidad = New System.Windows.Forms.TextBox()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.txtNombreEspecialidadB = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotal = New System.Windows.Forms.Label()
@@ -53,16 +68,6 @@ Partial Class M_Medico
         Me.lblnombre = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label62 = New System.Windows.Forms.Label()
-        Me.Label61 = New System.Windows.Forms.Label()
-        Me.Label60 = New System.Windows.Forms.Label()
-        Me.Label59 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.gbxmedico.SuspendLayout()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,7 +76,7 @@ Partial Class M_Medico
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(157, 36)
+        Me.txtcodigo.Location = New System.Drawing.Point(176, 34)
         Me.txtcodigo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
@@ -82,7 +87,7 @@ Partial Class M_Medico
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
-        Me.lblcodigo.Location = New System.Drawing.Point(97, 36)
+        Me.lblcodigo.Location = New System.Drawing.Point(116, 34)
         Me.lblcodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcodigo.Name = "lblcodigo"
         Me.lblcodigo.Size = New System.Drawing.Size(52, 17)
@@ -91,7 +96,7 @@ Partial Class M_Medico
         '
         'txtcelular
         '
-        Me.txtcelular.Location = New System.Drawing.Point(446, 122)
+        Me.txtcelular.Location = New System.Drawing.Point(465, 120)
         Me.txtcelular.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcelular.MaxLength = 20
         Me.txtcelular.Name = "txtcelular"
@@ -102,7 +107,7 @@ Partial Class M_Medico
         'lblcelular
         '
         Me.lblcelular.AutoSize = True
-        Me.lblcelular.Location = New System.Drawing.Point(386, 126)
+        Me.lblcelular.Location = New System.Drawing.Point(405, 124)
         Me.lblcelular.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcelular.Name = "lblcelular"
         Me.lblcelular.Size = New System.Drawing.Size(52, 17)
@@ -111,7 +116,7 @@ Partial Class M_Medico
         '
         'txttelefono
         '
-        Me.txttelefono.Location = New System.Drawing.Point(446, 94)
+        Me.txttelefono.Location = New System.Drawing.Point(465, 92)
         Me.txttelefono.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txttelefono.MaxLength = 20
         Me.txttelefono.Name = "txttelefono"
@@ -122,7 +127,7 @@ Partial Class M_Medico
         'lbltelefono
         '
         Me.lbltelefono.AutoSize = True
-        Me.lbltelefono.Location = New System.Drawing.Point(374, 97)
+        Me.lbltelefono.Location = New System.Drawing.Point(393, 95)
         Me.lbltelefono.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbltelefono.Name = "lbltelefono"
         Me.lbltelefono.Size = New System.Drawing.Size(64, 17)
@@ -131,7 +136,7 @@ Partial Class M_Medico
         '
         'txtcorreo
         '
-        Me.txtcorreo.Location = New System.Drawing.Point(156, 92)
+        Me.txtcorreo.Location = New System.Drawing.Point(175, 90)
         Me.txtcorreo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcorreo.MaxLength = 50
         Me.txtcorreo.Name = "txtcorreo"
@@ -142,7 +147,7 @@ Partial Class M_Medico
         'lblcorreo
         '
         Me.lblcorreo.AutoSize = True
-        Me.lblcorreo.Location = New System.Drawing.Point(97, 92)
+        Me.lblcorreo.Location = New System.Drawing.Point(116, 90)
         Me.lblcorreo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcorreo.Name = "lblcorreo"
         Me.lblcorreo.Size = New System.Drawing.Size(51, 17)
@@ -151,7 +156,7 @@ Partial Class M_Medico
         '
         'txtcorreo2
         '
-        Me.txtcorreo2.Location = New System.Drawing.Point(157, 121)
+        Me.txtcorreo2.Location = New System.Drawing.Point(176, 119)
         Me.txtcorreo2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcorreo2.MaxLength = 50
         Me.txtcorreo2.Name = "txtcorreo2"
@@ -162,7 +167,7 @@ Partial Class M_Medico
         'lblcorreo2
         '
         Me.lblcorreo2.AutoSize = True
-        Me.lblcorreo2.Location = New System.Drawing.Point(87, 123)
+        Me.lblcorreo2.Location = New System.Drawing.Point(106, 121)
         Me.lblcorreo2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblcorreo2.Name = "lblcorreo2"
         Me.lblcorreo2.Size = New System.Drawing.Size(63, 17)
@@ -177,7 +182,7 @@ Partial Class M_Medico
         Me.btnbuscarEspecialidad.FlatAppearance.BorderSize = 0
         Me.btnbuscarEspecialidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarEspecialidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscarEspecialidad.Location = New System.Drawing.Point(155, 148)
+        Me.btnbuscarEspecialidad.Location = New System.Drawing.Point(174, 147)
         Me.btnbuscarEspecialidad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnbuscarEspecialidad.Name = "btnbuscarEspecialidad"
         Me.btnbuscarEspecialidad.Size = New System.Drawing.Size(49, 22)
@@ -187,7 +192,7 @@ Partial Class M_Medico
         '
         'txtcodigoEspecialidad
         '
-        Me.txtcodigoEspecialidad.Location = New System.Drawing.Point(211, 150)
+        Me.txtcodigoEspecialidad.Location = New System.Drawing.Point(230, 148)
         Me.txtcodigoEspecialidad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcodigoEspecialidad.MaxLength = 20
         Me.txtcodigoEspecialidad.Name = "txtcodigoEspecialidad"
@@ -198,7 +203,7 @@ Partial Class M_Medico
         'lblespecialidad
         '
         Me.lblespecialidad.AutoSize = True
-        Me.lblespecialidad.Location = New System.Drawing.Point(60, 151)
+        Me.lblespecialidad.Location = New System.Drawing.Point(79, 149)
         Me.lblespecialidad.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblespecialidad.Name = "lblespecialidad"
         Me.lblespecialidad.Size = New System.Drawing.Size(88, 17)
@@ -207,7 +212,7 @@ Partial Class M_Medico
         '
         'txtnombreCompleto
         '
-        Me.txtnombreCompleto.Location = New System.Drawing.Point(157, 64)
+        Me.txtnombreCompleto.Location = New System.Drawing.Point(176, 62)
         Me.txtnombreCompleto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombreCompleto.MaxLength = 100
         Me.txtnombreCompleto.Name = "txtnombreCompleto"
@@ -218,7 +223,7 @@ Partial Class M_Medico
         'lblnombreCompleto
         '
         Me.lblnombreCompleto.AutoSize = True
-        Me.lblnombreCompleto.Location = New System.Drawing.Point(29, 66)
+        Me.lblnombreCompleto.Location = New System.Drawing.Point(48, 64)
         Me.lblnombreCompleto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblnombreCompleto.Name = "lblnombreCompleto"
         Me.lblnombreCompleto.Size = New System.Drawing.Size(121, 17)
@@ -275,11 +280,14 @@ Partial Class M_Medico
         Me.gbxmedico.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbxmedico.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.gbxmedico.Controls.Add(Me.txtnombreEspecialidad2)
+        Me.gbxmedico.Controls.Add(Me.btnbuscarEspecialidad2)
+        Me.gbxmedico.Controls.Add(Me.txtcodigoEspecialidad2)
+        Me.gbxmedico.Controls.Add(Me.Label7)
         Me.gbxmedico.Controls.Add(Me.Label6)
         Me.gbxmedico.Controls.Add(Me.Label5)
         Me.gbxmedico.Controls.Add(Me.Label4)
         Me.gbxmedico.Controls.Add(Me.Label3)
-        Me.gbxmedico.Controls.Add(Me.Label2)
         Me.gbxmedico.Controls.Add(Me.Label1)
         Me.gbxmedico.Controls.Add(Me.Label62)
         Me.gbxmedico.Controls.Add(Me.Label61)
@@ -311,6 +319,148 @@ Partial Class M_Medico
         Me.gbxmedico.TabStop = False
         Me.gbxmedico.Text = "REGISTRAR MÉDICO"
         '
+        'txtnombreEspecialidad2
+        '
+        Me.txtnombreEspecialidad2.Location = New System.Drawing.Point(364, 177)
+        Me.txtnombreEspecialidad2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtnombreEspecialidad2.Name = "txtnombreEspecialidad2"
+        Me.txtnombreEspecialidad2.ReadOnly = True
+        Me.txtnombreEspecialidad2.Size = New System.Drawing.Size(280, 22)
+        Me.txtnombreEspecialidad2.TabIndex = 223
+        '
+        'btnbuscarEspecialidad2
+        '
+        Me.btnbuscarEspecialidad2.BackColor = System.Drawing.Color.White
+        Me.btnbuscarEspecialidad2.BackgroundImage = CType(resources.GetObject("btnbuscarEspecialidad2.BackgroundImage"), System.Drawing.Image)
+        Me.btnbuscarEspecialidad2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnbuscarEspecialidad2.FlatAppearance.BorderSize = 0
+        Me.btnbuscarEspecialidad2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnbuscarEspecialidad2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnbuscarEspecialidad2.Location = New System.Drawing.Point(174, 176)
+        Me.btnbuscarEspecialidad2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnbuscarEspecialidad2.Name = "btnbuscarEspecialidad2"
+        Me.btnbuscarEspecialidad2.Size = New System.Drawing.Size(49, 22)
+        Me.btnbuscarEspecialidad2.TabIndex = 222
+        Me.btnbuscarEspecialidad2.Text = "..."
+        Me.btnbuscarEspecialidad2.UseVisualStyleBackColor = False
+        '
+        'txtcodigoEspecialidad2
+        '
+        Me.txtcodigoEspecialidad2.Location = New System.Drawing.Point(230, 177)
+        Me.txtcodigoEspecialidad2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcodigoEspecialidad2.MaxLength = 20
+        Me.txtcodigoEspecialidad2.Name = "txtcodigoEspecialidad2"
+        Me.txtcodigoEspecialidad2.Size = New System.Drawing.Size(125, 22)
+        Me.txtcodigoEspecialidad2.TabIndex = 221
+        Me.txtcodigoEspecialidad2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(18, 178)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(149, 17)
+        Me.Label7.TabIndex = 220
+        Me.Label7.Text = "Segunda Especialidad"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.Color.Red
+        Me.Label6.Location = New System.Drawing.Point(79, 121)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(23, 17)
+        Me.Label6.TabIndex = 219
+        Me.Label6.Text = "(*)"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.Color.Red
+        Me.Label5.Location = New System.Drawing.Point(85, 90)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(23, 17)
+        Me.Label5.TabIndex = 218
+        Me.Label5.Text = "(*)"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.Color.Red
+        Me.Label4.Location = New System.Drawing.Point(374, 122)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(23, 17)
+        Me.Label4.TabIndex = 217
+        Me.Label4.Text = "(*)"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(362, 95)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(23, 17)
+        Me.Label3.TabIndex = 216
+        Me.Label3.Text = "(*)"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.Red
+        Me.Label1.Location = New System.Drawing.Point(27, 65)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(13, 17)
+        Me.Label1.TabIndex = 214
+        Me.Label1.Text = "*"
+        '
+        'Label62
+        '
+        Me.Label62.AutoSize = True
+        Me.Label62.Location = New System.Drawing.Point(690, 113)
+        Me.Label62.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label62.Name = "Label62"
+        Me.Label62.Size = New System.Drawing.Size(204, 17)
+        Me.Label62.TabIndex = 213
+        Me.Label62.Text = "Debe llenar uno de los campos"
+        '
+        'Label61
+        '
+        Me.Label61.AutoSize = True
+        Me.Label61.Location = New System.Drawing.Point(690, 76)
+        Me.Label61.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label61.Name = "Label61"
+        Me.Label61.Size = New System.Drawing.Size(136, 17)
+        Me.Label61.TabIndex = 212
+        Me.Label61.Text = "Campos obligatorios"
+        '
+        'Label60
+        '
+        Me.Label60.AutoSize = True
+        Me.Label60.ForeColor = System.Drawing.Color.Red
+        Me.Label60.Location = New System.Drawing.Point(672, 78)
+        Me.Label60.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label60.Name = "Label60"
+        Me.Label60.Size = New System.Drawing.Size(13, 17)
+        Me.Label60.TabIndex = 211
+        Me.Label60.Text = "*"
+        '
+        'Label59
+        '
+        Me.Label59.AutoSize = True
+        Me.Label59.ForeColor = System.Drawing.Color.Red
+        Me.Label59.Location = New System.Drawing.Point(669, 113)
+        Me.Label59.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label59.Name = "Label59"
+        Me.Label59.Size = New System.Drawing.Size(23, 17)
+        Me.Label59.TabIndex = 210
+        Me.Label59.Text = "(*)"
+        '
         'lblForm
         '
         Me.lblForm.AutoSize = True
@@ -323,7 +473,7 @@ Partial Class M_Medico
         '
         'txtnombreEspecialidad
         '
-        Me.txtnombreEspecialidad.Location = New System.Drawing.Point(345, 150)
+        Me.txtnombreEspecialidad.Location = New System.Drawing.Point(364, 148)
         Me.txtnombreEspecialidad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombreEspecialidad.Name = "txtnombreEspecialidad"
         Me.txtnombreEspecialidad.ReadOnly = True
@@ -351,6 +501,8 @@ Partial Class M_Medico
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbxbusqueda.BackColor = System.Drawing.Color.AliceBlue
+        Me.gbxbusqueda.Controls.Add(Me.txtNombreEspecialidadB)
+        Me.gbxbusqueda.Controls.Add(Me.Label2)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
@@ -365,10 +517,30 @@ Partial Class M_Medico
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR MÉDICO"
         '
+        'txtNombreEspecialidadB
+        '
+        Me.txtNombreEspecialidadB.Location = New System.Drawing.Point(573, 27)
+        Me.txtNombreEspecialidadB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtNombreEspecialidadB.MaxLength = 100
+        Me.txtNombreEspecialidadB.Name = "txtNombreEspecialidadB"
+        Me.txtNombreEspecialidadB.Size = New System.Drawing.Size(334, 22)
+        Me.txtNombreEspecialidadB.TabIndex = 117
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(478, 30)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(88, 17)
+        Me.Label2.TabIndex = 116
+        Me.Label2.Text = "Especialidad"
+        '
         'lblcantidad
         '
+        Me.lblcantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(172, 272)
+        Me.lblcantidad.Location = New System.Drawing.Point(176, 270)
         Me.lblcantidad.Name = "lblcantidad"
         Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
         Me.lblcantidad.TabIndex = 115
@@ -378,6 +550,9 @@ Partial Class M_Medico
         '
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
+        Me.dgbtabla.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(5, 57)
@@ -387,13 +562,14 @@ Partial Class M_Medico
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(904, 213)
+        Me.dgbtabla.Size = New System.Drawing.Size(904, 200)
         Me.dgbtabla.TabIndex = 22
         '
         'lbltotal
         '
+        Me.lbltotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(17, 272)
+        Me.lbltotal.Location = New System.Drawing.Point(21, 270)
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(143, 17)
         Me.lbltotal.TabIndex = 114
@@ -405,7 +581,7 @@ Partial Class M_Medico
         Me.txtnombreB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombreB.MaxLength = 100
         Me.txtnombreB.Name = "txtnombreB"
-        Me.txtnombreB.Size = New System.Drawing.Size(844, 22)
+        Me.txtnombreB.Size = New System.Drawing.Size(342, 22)
         Me.txtnombreB.TabIndex = 115
         '
         'lblnombre
@@ -438,118 +614,10 @@ Partial Class M_Medico
         Me.Panel1.Controls.Add(Me.btncancelar)
         Me.Panel1.Controls.Add(Me.btnmodificar)
         Me.Panel1.Location = New System.Drawing.Point(0, -1)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(957, 60)
         Me.Panel1.TabIndex = 116
-        '
-        'Label62
-        '
-        Me.Label62.AutoSize = True
-        Me.Label62.Location = New System.Drawing.Point(671, 115)
-        Me.Label62.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label62.Name = "Label62"
-        Me.Label62.Size = New System.Drawing.Size(204, 17)
-        Me.Label62.TabIndex = 213
-        Me.Label62.Text = "Debe llenar uno de los campos"
-        '
-        'Label61
-        '
-        Me.Label61.AutoSize = True
-        Me.Label61.Location = New System.Drawing.Point(671, 78)
-        Me.Label61.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(136, 17)
-        Me.Label61.TabIndex = 212
-        Me.Label61.Text = "Campos obligatorios"
-        '
-        'Label60
-        '
-        Me.Label60.AutoSize = True
-        Me.Label60.ForeColor = System.Drawing.Color.Red
-        Me.Label60.Location = New System.Drawing.Point(653, 80)
-        Me.Label60.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label60.Name = "Label60"
-        Me.Label60.Size = New System.Drawing.Size(13, 17)
-        Me.Label60.TabIndex = 211
-        Me.Label60.Text = "*"
-        '
-        'Label59
-        '
-        Me.Label59.AutoSize = True
-        Me.Label59.ForeColor = System.Drawing.Color.Red
-        Me.Label59.Location = New System.Drawing.Point(650, 115)
-        Me.Label59.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label59.Name = "Label59"
-        Me.Label59.Size = New System.Drawing.Size(23, 17)
-        Me.Label59.TabIndex = 210
-        Me.Label59.Text = "(*)"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.Color.Red
-        Me.Label1.Location = New System.Drawing.Point(8, 67)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(13, 17)
-        Me.Label1.TabIndex = 214
-        Me.Label1.Text = "*"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(39, 153)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(13, 17)
-        Me.Label2.TabIndex = 215
-        Me.Label2.Text = "*"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(343, 97)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(23, 17)
-        Me.Label3.TabIndex = 216
-        Me.Label3.Text = "(*)"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.ForeColor = System.Drawing.Color.Red
-        Me.Label4.Location = New System.Drawing.Point(355, 124)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(23, 17)
-        Me.Label4.TabIndex = 217
-        Me.Label4.Text = "(*)"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.ForeColor = System.Drawing.Color.Red
-        Me.Label5.Location = New System.Drawing.Point(66, 92)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(23, 17)
-        Me.Label5.TabIndex = 218
-        Me.Label5.Text = "(*)"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.ForeColor = System.Drawing.Color.Red
-        Me.Label6.Location = New System.Drawing.Point(60, 123)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(23, 17)
-        Me.Label6.TabIndex = 219
-        Me.Label6.Text = "(*)"
         '
         'M_Medico
         '
@@ -612,10 +680,15 @@ Partial Class M_Medico
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label62 As Label
     Friend WithEvents Label61 As Label
     Friend WithEvents Label60 As Label
     Friend WithEvents Label59 As Label
+    Friend WithEvents txtnombreEspecialidad2 As TextBox
+    Friend WithEvents btnbuscarEspecialidad2 As Button
+    Friend WithEvents txtcodigoEspecialidad2 As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtNombreEspecialidadB As TextBox
+    Friend WithEvents Label2 As Label
 End Class
