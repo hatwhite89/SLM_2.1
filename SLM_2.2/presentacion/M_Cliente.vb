@@ -1029,22 +1029,22 @@ Public Class M_Cliente
         End Try
     End Sub
 
-    Private Sub mtxtidentidadClienteB_MaskInputRejected(sender As Object, e As EventArgs) Handles mtxtidentidadClienteB.TextChanged
-        Try
-            If mtxtidentidadClienteB.Text.Equals(String.Empty) Then
-                dgbtabla.DataSource = Nothing
-            ElseIf trim(mtxtidentidadClienteB.Text) <> "    -    -     " Then
-                objCli.Identidad1 = mtxtidentidadClienteB.Text
-                Dim dv As DataView = objCli.BuscarCliente.DefaultView
-                dgbtabla.DataSource = dv
-                ocultarColumnas()
-                'lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-            End If
-        Catch ex As Exception
-            'MsgBox(ex.Message)
-        End Try
-    End Sub
+    'Private Sub mtxtidentidadClienteB_MaskInputRejected(sender As Object, e As EventArgs) Handles mtxtidentidadClienteB.TextChanged
+    '    Try
+    '        If mtxtidentidadClienteB.Text.Equals(String.Empty) Then
+    '            dgbtabla.DataSource = Nothing
+    '        ElseIf Trim(mtxtidentidadClienteB.Text) <> "    -    -     " Then
+    '            objCli.Identidad1 = mtxtidentidadClienteB.Text
+    '            Dim dv As DataView = objCli.BuscarCliente.DefaultView
+    '            dgbtabla.DataSource = dv
+    '            ocultarColumnas()
+    '            'lblcantidad.Text = dv.Count
+    '            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+    '        End If
+    '    Catch ex As Exception
+    '        'MsgBox(ex.Message)
+    '    End Try
+    'End Sub
 
     Private Sub ocultarColumnas()
         'OCULTAR COLUMNAS
