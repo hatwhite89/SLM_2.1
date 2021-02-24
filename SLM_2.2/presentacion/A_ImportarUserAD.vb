@@ -32,13 +32,11 @@ Public Class A_ImportarUserAD
 
                 For es = 0 To data.Rows.Count - 1
 
-
                     If dtUsuariosAD.Rows(mg).Cells(3).Value = data.Rows(es).Item(1).ToString Then
 
                         dtUsuariosAD.Rows.Remove(dtUsuariosAD.Rows(mg))
 
                     End If
-
 
                 Next
 

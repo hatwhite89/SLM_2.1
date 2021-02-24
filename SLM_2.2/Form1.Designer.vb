@@ -194,6 +194,9 @@ Partial Class Form1
         Me.PictureBox55 = New System.Windows.Forms.PictureBox()
         Me.pbxNoti = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnConserjes = New System.Windows.Forms.Button()
+        Me.btnTomaDeMuestra = New System.Windows.Forms.Button()
+        Me.btnCerrarSesion = New System.Windows.Forms.LinkLabel()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.tcMenu.SuspendLayout()
@@ -333,7 +336,7 @@ Partial Class Form1
         Me.btnContabilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnContabilidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnContabilidad.ForeColor = System.Drawing.Color.White
-        Me.btnContabilidad.Location = New System.Drawing.Point(-1, 221)
+        Me.btnContabilidad.Location = New System.Drawing.Point(-1, 214)
         Me.btnContabilidad.Name = "btnContabilidad"
         Me.btnContabilidad.Size = New System.Drawing.Size(122, 44)
         Me.btnContabilidad.TabIndex = 4
@@ -349,7 +352,7 @@ Partial Class Form1
         Me.btnAlmacen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAlmacen.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAlmacen.ForeColor = System.Drawing.Color.White
-        Me.btnAlmacen.Location = New System.Drawing.Point(-1, 171)
+        Me.btnAlmacen.Location = New System.Drawing.Point(-1, 164)
         Me.btnAlmacen.Name = "btnAlmacen"
         Me.btnAlmacen.Size = New System.Drawing.Size(122, 44)
         Me.btnAlmacen.TabIndex = 10
@@ -365,7 +368,7 @@ Partial Class Form1
         Me.btnTalentoHumano.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTalentoHumano.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTalentoHumano.ForeColor = System.Drawing.Color.White
-        Me.btnTalentoHumano.Location = New System.Drawing.Point(0, 371)
+        Me.btnTalentoHumano.Location = New System.Drawing.Point(0, 364)
         Me.btnTalentoHumano.Name = "btnTalentoHumano"
         Me.btnTalentoHumano.Size = New System.Drawing.Size(122, 44)
         Me.btnTalentoHumano.TabIndex = 9
@@ -381,7 +384,7 @@ Partial Class Form1
         Me.btnSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSistema.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSistema.ForeColor = System.Drawing.Color.White
-        Me.btnSistema.Location = New System.Drawing.Point(0, 271)
+        Me.btnSistema.Location = New System.Drawing.Point(0, 264)
         Me.btnSistema.Name = "btnSistema"
         Me.btnSistema.Size = New System.Drawing.Size(122, 44)
         Me.btnSistema.TabIndex = 8
@@ -397,7 +400,7 @@ Partial Class Form1
         Me.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnFacturacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFacturacion.ForeColor = System.Drawing.Color.White
-        Me.btnFacturacion.Location = New System.Drawing.Point(0, 121)
+        Me.btnFacturacion.Location = New System.Drawing.Point(0, 114)
         Me.btnFacturacion.Name = "btnFacturacion"
         Me.btnFacturacion.Size = New System.Drawing.Size(122, 44)
         Me.btnFacturacion.TabIndex = 2
@@ -413,7 +416,7 @@ Partial Class Form1
         Me.btnlaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnlaboratorio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnlaboratorio.ForeColor = System.Drawing.Color.White
-        Me.btnlaboratorio.Location = New System.Drawing.Point(0, 321)
+        Me.btnlaboratorio.Location = New System.Drawing.Point(0, 314)
         Me.btnlaboratorio.Name = "btnlaboratorio"
         Me.btnlaboratorio.Size = New System.Drawing.Size(122, 44)
         Me.btnlaboratorio.TabIndex = 1
@@ -2253,7 +2256,7 @@ Partial Class Form1
         Me.lblMiUser.BackColor = System.Drawing.Color.Transparent
         Me.lblMiUser.Font = New System.Drawing.Font("Segoe UI Symbol", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMiUser.ForeColor = System.Drawing.Color.Black
-        Me.lblMiUser.Location = New System.Drawing.Point(41, 96)
+        Me.lblMiUser.Location = New System.Drawing.Point(37, 65)
         Me.lblMiUser.Name = "lblMiUser"
         Me.lblMiUser.Size = New System.Drawing.Size(46, 13)
         Me.lblMiUser.TabIndex = 26
@@ -2315,7 +2318,7 @@ Partial Class Form1
         Me.bntCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.bntCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bntCerrar.ForeColor = System.Drawing.Color.White
-        Me.bntCerrar.Location = New System.Drawing.Point(-1, 421)
+        Me.bntCerrar.Location = New System.Drawing.Point(-1, 512)
         Me.bntCerrar.Name = "bntCerrar"
         Me.bntCerrar.Size = New System.Drawing.Size(122, 44)
         Me.bntCerrar.TabIndex = 61
@@ -2325,7 +2328,7 @@ Partial Class Form1
         'lblCajero
         '
         Me.lblCajero.AutoSize = True
-        Me.lblCajero.Location = New System.Drawing.Point(57, 549)
+        Me.lblCajero.Location = New System.Drawing.Point(57, 577)
         Me.lblCajero.Name = "lblCajero"
         Me.lblCajero.Size = New System.Drawing.Size(59, 13)
         Me.lblCajero.TabIndex = 62
@@ -2335,7 +2338,7 @@ Partial Class Form1
         'PictureBox55
         '
         Me.PictureBox55.Image = CType(resources.GetObject("PictureBox55.Image"), System.Drawing.Image)
-        Me.PictureBox55.Location = New System.Drawing.Point(0, 68)
+        Me.PictureBox55.Location = New System.Drawing.Point(0, 62)
         Me.PictureBox55.Name = "PictureBox55"
         Me.PictureBox55.Size = New System.Drawing.Size(35, 50)
         Me.PictureBox55.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -2365,6 +2368,48 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(546, 422)
         Me.Panel1.TabIndex = 10
         '
+        'btnConserjes
+        '
+        Me.btnConserjes.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.btnConserjes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnConserjes.Enabled = False
+        Me.btnConserjes.FlatAppearance.BorderSize = 0
+        Me.btnConserjes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnConserjes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConserjes.ForeColor = System.Drawing.Color.White
+        Me.btnConserjes.Location = New System.Drawing.Point(0, 413)
+        Me.btnConserjes.Name = "btnConserjes"
+        Me.btnConserjes.Size = New System.Drawing.Size(122, 44)
+        Me.btnConserjes.TabIndex = 63
+        Me.btnConserjes.Text = "Conserjería"
+        Me.btnConserjes.UseVisualStyleBackColor = False
+        '
+        'btnTomaDeMuestra
+        '
+        Me.btnTomaDeMuestra.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.btnTomaDeMuestra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnTomaDeMuestra.Enabled = False
+        Me.btnTomaDeMuestra.FlatAppearance.BorderSize = 0
+        Me.btnTomaDeMuestra.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTomaDeMuestra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTomaDeMuestra.ForeColor = System.Drawing.Color.White
+        Me.btnTomaDeMuestra.Location = New System.Drawing.Point(0, 463)
+        Me.btnTomaDeMuestra.Name = "btnTomaDeMuestra"
+        Me.btnTomaDeMuestra.Size = New System.Drawing.Size(122, 44)
+        Me.btnTomaDeMuestra.TabIndex = 64
+        Me.btnTomaDeMuestra.Text = "Toma de Muestras"
+        Me.btnTomaDeMuestra.UseVisualStyleBackColor = False
+        '
+        'btnCerrarSesion
+        '
+        Me.btnCerrarSesion.AutoSize = True
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(38, 96)
+        Me.btnCerrarSesion.Name = "btnCerrarSesion"
+        Me.btnCerrarSesion.Size = New System.Drawing.Size(70, 13)
+        Me.btnCerrarSesion.TabIndex = 9
+        Me.btnCerrarSesion.TabStop = True
+        Me.btnCerrarSesion.Text = "Cerrar Sesión"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2372,6 +2417,9 @@ Partial Class Form1
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(710, 622)
+        Me.Controls.Add(Me.btnCerrarSesion)
+        Me.Controls.Add(Me.btnTomaDeMuestra)
+        Me.Controls.Add(Me.btnConserjes)
         Me.Controls.Add(Me.lblCajero)
         Me.Controls.Add(Me.bntCerrar)
         Me.Controls.Add(Me.lblHora)
@@ -2716,4 +2764,7 @@ Partial Class Form1
     Friend WithEvents btnPaciente2 As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents pbxItemExamen As PictureBox
+    Friend WithEvents btnConserjes As Button
+    Friend WithEvents btnTomaDeMuestra As Button
+    Friend WithEvents btnCerrarSesion As LinkLabel
 End Class

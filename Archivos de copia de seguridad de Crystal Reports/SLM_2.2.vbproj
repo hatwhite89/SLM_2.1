@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80A97C69-33C1-4D76-A4FF-61E3B54BEE03}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SLM_2._2.M_InicioSesion</StartupObject>
+    <StartupObject>SLM_2._2.E_frmFirmaDigital</StartupObject>
     <RootNamespace>SLM_2._2</RootNamespace>
     <AssemblyName>0</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -84,7 +84,8 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CRVsPackageLib, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+    <Reference Include="CRVsPackageLib, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CRVsPackageLib.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
@@ -212,31 +213,24 @@
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Common.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
-      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Design.DLL</HintPath>
-      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
-      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WebDesign, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebDesign.DLL</HintPath>
-      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebForms.DLL</HintPath>
-      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
-      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
@@ -374,7 +368,6 @@
     <Compile Include="negocio\ClsDetalleValorRefTxt.vb" />
     <Compile Include="negocio\ClsEmpleados.vb" />
     <Compile Include="negocio\clsEntradaAlmacen.vb" />
-    <Compile Include="negocio\ClsEspecialidad2.vb" />
     <Compile Include="negocio\ClsEstacionTrabajo.vb" />
     <Compile Include="negocio\ClsEvaluacionProveedor.vb" />
     <Compile Include="negocio\ClsFacturaCompra.vb" />
@@ -1205,12 +1198,6 @@
     <Compile Include="presentacion\M_BuscarCapacitaciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\M_BuscarClientes.Designer.vb">
-      <DependentUpon>M_BuscarClientes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_BuscarClientes.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="presentacion\M_BuscarEmpleados.Designer.vb">
       <DependentUpon>M_BuscarEmpleados.vb</DependentUpon>
     </Compile>
@@ -1299,12 +1286,6 @@
       <DependentUpon>M_Empleados.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\M_Empleados.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="presentacion\M_Especialidad2.Designer.vb">
-      <DependentUpon>M_Especialidad2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\M_Especialidad2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\M_Horarios.Designer.vb">
@@ -2149,9 +2130,6 @@
     <EmbeddedResource Include="presentacion\M_BuscarCapacitaciones.resx">
       <DependentUpon>M_BuscarCapacitaciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_BuscarClientes.resx">
-      <DependentUpon>M_BuscarClientes.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_BuscarEmpleados.resx">
       <DependentUpon>M_BuscarEmpleados.vb</DependentUpon>
     </EmbeddedResource>
@@ -2204,9 +2182,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Empleados.resx">
       <DependentUpon>M_Empleados.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\M_Especialidad2.resx">
-      <DependentUpon>M_Especialidad2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Horarios.resx">
       <DependentUpon>M_Horarios.vb</DependentUpon>

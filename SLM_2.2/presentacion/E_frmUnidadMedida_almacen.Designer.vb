@@ -37,6 +37,7 @@ Partial Class E_frmUnidadMedida_almacen
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
@@ -47,7 +48,7 @@ Partial Class E_frmUnidadMedida_almacen
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -178,6 +179,16 @@ Partial Class E_frmUnidadMedida_almacen
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Buscador"
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(220, 47)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(272, 13)
+        Me.Label10.TabIndex = 122
+        Me.Label10.Text = "Seleccione una fila para cargar la información "
+        '
         'Button4
         '
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -265,6 +276,7 @@ Partial Class E_frmUnidadMedida_almacen
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Button5)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Button2)
@@ -294,15 +306,16 @@ Partial Class E_frmUnidadMedida_almacen
         Me.StatusStrip1.TabIndex = 4
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'Label10
+        'Button5
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(220, 47)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(272, 13)
-        Me.Label10.TabIndex = 122
-        Me.Label10.Text = "Seleccione una fila para cargar la información "
+        Me.Button5.BackColor = System.Drawing.Color.LightCoral
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Location = New System.Drawing.Point(355, 10)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.TabIndex = 10
+        Me.Button5.Text = "Dar Baja"
+        Me.Button5.UseVisualStyleBackColor = False
         '
         'E_frmUnidadMedida_almacen
         '
@@ -351,4 +364,5 @@ Partial Class E_frmUnidadMedida_almacen
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Button4 As Button
     Friend WithEvents Label10 As Label
+    Friend WithEvents Button5 As Button
 End Class

@@ -141,6 +141,39 @@
                     E_ListarUnidades.lblbandera.Text = 0
                     E_ListarUnidades.lblcodeItemExamenDet.Text = Me.dtResultados.Rows(e.RowIndex).Cells(0).Value().ToString()
                     E_ListarUnidades.Show()
+
+                ElseIf e.ColumnIndex = 4 Then
+
+                    'Variable
+                    'Dim codigo As String = dtResultados.Rows(e.RowIndex).Cells(0).Value().ToString()
+
+                    If dtResultados.Rows(e.RowIndex).Cells(0).Value().ToString() = "" Then
+                        MsgBox("Se debe guardar el registro para agregar los Valores de Referencia.")
+                    Else
+
+                        Dim parametro As New ClsItemExamenDetalle
+                        Dim dtseleccion As New DataTable
+                        Dim fila As DataRow
+                        MsgBox("1")
+
+                        parametro.codigo_ = Integer.Parse(dtResultados.Rows(e.RowIndex).Cells(0).Value().ToString())
+                        MsgBox("Codigo " + dtResultados.Rows(e.RowIndex).Cells(0).Value().ToString())
+                        dtseleccion = parametro.BuscarDetalleExamen
+                        fila = dtseleccion.Rows(0)
+
+                        MsgBox(fila("nombre"))
+
+
+                        A_ValoresRefPar.Show()
+                        A_ValoresRefPar.BringToFront()
+                        A_ValoresRefPar.WindowState = WindowState.Normal
+
+                        A_ValoresRefPar.txtParametro.Text = fila("nombre")
+                        A_ValoresRefPar.lblCodUnidad.Text = fila("codigoUnidad")
+                        A_ValoresRefPar.txtUnidad.Text = fila("unidad_codigo_breve")
+                    End If
+
+
                 ElseIf e.ColumnIndex = 5 And Me.dtResultados.Rows(e.RowIndex).Cells(0).Value() = "" Then
                     Dim n As String = MsgBox("¿Desea eliminar el resultado del examen?", MsgBoxStyle.YesNo, "Validación")
                     If n = vbYes Then

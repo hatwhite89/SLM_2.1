@@ -838,4 +838,8 @@
     Private Sub txtnombreCompleto_TextChanged(sender As Object, e As EventArgs) Handles txtnombreCompleto.TextChanged
         txtnombreCompleto.Text = Replace(txtnombreCompleto.Text, "  ", " ")
     End Sub
+
+    Private Sub M_Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

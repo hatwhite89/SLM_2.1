@@ -321,6 +321,8 @@
         Try
 
             A_Consolidacion.Show()
+            A_Consolidacion.BringToFront()
+            A_Consolidacion.WindowState = FormWindowState.Normal
 
         Catch ex As Exception
             MsgBox("Error al abrir el formulario. Error: " + ex.Message)
@@ -334,6 +336,9 @@
 
     Private Sub PictureBox38_Click(sender As Object, e As EventArgs) Handles pbxNoti.Click
         A_Alertas.Show()
+        A_Alertas.BringToFront()
+        A_Alertas.WindowState = FormWindowState.Normal
+
     End Sub
 
 
@@ -377,6 +382,8 @@
     Private Sub Button21_Click(sender As Object, e As EventArgs) Handles btnDepreciacion.Click
         Try
             A_ListarDepreciacion.Show()
+            A_ListarDepreciacion.BringToFront()
+            A_ListarDepreciacion.WindowState = FormWindowState.Normal
         Catch ex As Exception
 
         End Try
@@ -489,10 +496,14 @@
 
     Private Sub Button24_Click(sender As Object, e As EventArgs) Handles btnAlmacenes.Click
         E_frmUbicacion.Show()
+        E_frmUbicacion.BringToFront()
+        E_frmUbicacion.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub Button25_Click(sender As Object, e As EventArgs) Handles btnOrdeCompra.Click
         E_frmOrdenCompra.Show()
+        E_frmOrdenCompra.BringToFront()
+        E_frmOrdenCompra.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub btnPerfiles_Click(sender As Object, e As EventArgs)
@@ -501,14 +512,20 @@
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles btnEntradas.Click
         E_frmEntrada.Show()
+        E_frmEntrada.BringToFront()
+        E_frmEntrada.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub Button26_Click(sender As Object, e As EventArgs) Handles btnSalidas.Click
         E_frmSalida.Show()
+        E_frmSalida.BringToFront()
+        E_frmSalida.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub Button19_Click(sender As Object, e As EventArgs) Handles btnOrdenInterna.Click
         E_frmSolicitudInternaAlmacen.Show()
+        E_frmSolicitudInternaAlmacen.BringToFront()
+        E_frmSolicitudInternaAlmacen.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub TabPage3_Click(sender As Object, e As EventArgs) Handles TabPage3.Click
@@ -630,6 +647,8 @@
 
     Private Sub btnProveedores_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
         A_Proveedor.Show()
+        A_Proveedor.BringToFront()
+        A_Proveedor.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub Button2_Click_3(sender As Object, e As EventArgs)
@@ -647,6 +666,8 @@
 
     Private Sub btnFactCompra_Click(sender As Object, e As EventArgs) Handles btnFactCompra.Click
         A_ListadoFacturaCompra.Show()
+        A_ListadoFacturaCompra.BringToFront()
+        A_ListadoFacturaCompra.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub btnCandidatos_Click(sender As Object, e As EventArgs)
@@ -684,6 +705,8 @@
     Private Sub btnPlanilla_Click(sender As Object, e As EventArgs) Handles btnPlanilla.Click
         Try
             A_BuscarPlanilla.Show()
+            A_BuscarPlanilla.BringToFront()
+            A_BuscarPlanilla.WindowState = FormWindowState.Normal
         Catch ex As Exception
 
         End Try
@@ -695,10 +718,14 @@
 
     Private Sub btnEvaluacionP_Click(sender As Object, e As EventArgs) Handles btnEvaluacionP.Click
         frmEvaluacionProveedores.Show()
+        frmEvaluacionProveedores.BringToFront()
+        frmEvaluacionProveedores.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub Button1_Click_4(sender As Object, e As EventArgs) Handles Button1.Click
         frmSolicitudNuevoProducto.Show()
+        frmSolicitudNuevoProducto.BringToFront()
+        frmSolicitudNuevoProducto.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub Button3_Click_1(sender As Object, e As EventArgs)
@@ -711,14 +738,20 @@
 
     Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Button5.Click
         frmEvaluarProveedorVerificarReactivo.Show()
+        frmEvaluarProveedorVerificarReactivo.BringToFront()
+        frmEvaluarProveedorVerificarReactivo.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
         frmEvaluacionProveedorNormal.Show()
+        frmEvaluacionProveedorNormal.BringToFront()
+        frmEvaluacionProveedorNormal.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub Button7_Click_1(sender As Object, e As EventArgs) Handles Button7.Click
         E_frm_BIProveedores.Show()
+        E_frm_BIProveedores.BringToFront()
+        E_frm_BIProveedores.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub btnCierreCaja_Click(sender As Object, e As EventArgs)
@@ -749,6 +782,8 @@
     Private Sub PictureBox31_Click(sender As Object, e As EventArgs) Handles PictureBox31.Click
         Try
             M_BuscarFactura.Show()
+            M_BuscarFactura.BringToFront()
+            M_BuscarFactura.WindowState = FormWindowState.Normal
 
         Catch ex As Exception
             M_BuscarFactura.Close()
@@ -764,6 +799,8 @@
         Try
 
             M_BuscarCotizacion.Show()
+            M_BuscarCotizacion.BringToFront()
+            M_BuscarCotizacion.WindowState = FormWindowState.Normal
         Catch ex As Exception
 
         End Try
@@ -772,6 +809,8 @@
     Private Sub PictureBox29_Click(sender As Object, e As EventArgs) Handles PictureBox29.Click
         Try
             M_BuscarRecibo.Show()
+            M_BuscarRecibo.BringToFront()
+            M_BuscarRecibo.WindowState = FormWindowState.Normal
         Catch ex As Exception
 
         End Try
@@ -779,6 +818,8 @@
 
     Private Sub PictureBox28_Click(sender As Object, e As EventArgs) Handles PictureBox28.Click
         M_Apertura.Show()
+        M_Apertura.BringToFront()
+        M_Apertura.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox27_Click(sender As Object, e As EventArgs) Handles PictureBox27.Click
@@ -791,6 +832,8 @@
             objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
             M_ImprimirCotizacionForm.CrystalReportViewer1.ReportSource = objReporte
             M_ImprimirCotizacionForm.Show()
+            M_ImprimirCotizacionForm.BringToFront()
+            M_ImprimirCotizacionForm.WindowState = FormWindowState.Normal
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -798,14 +841,20 @@
 
     Private Sub PictureBox46_Click(sender As Object, e As EventArgs) Handles PictureBox46.Click
         A_Proveedor.Show()
+        A_Proveedor.BringToFront()
+        A_Proveedor.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox34_Click(sender As Object, e As EventArgs) Handles PictureBox34.Click
         E_DetalleExamenes.Show()
+        E_DetalleExamenes.BringToFront()
+        E_DetalleExamenes.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox33_Click(sender As Object, e As EventArgs) Handles PictureBox33.Click
         E_GrupoExamen.Show()
+        E_GrupoExamen.BringToFront()
+        E_GrupoExamen.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox32_Click(sender As Object, e As EventArgs) Handles PictureBox32.Click
@@ -828,6 +877,8 @@
             objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
             M_ImprimirCotizacionForm.CrystalReportViewer1.ReportSource = objReporte
             M_ImprimirCotizacionForm.Show()
+            M_ImprimirCotizacionForm.BringToFront()
+            M_ImprimirCotizacionForm.WindowState = FormWindowState.Normal
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -837,6 +888,8 @@
         Try
             M_Categoria.lblform.Text = "Form1"
             M_Categoria.Show()
+            M_Categoria.BringToFront()
+            M_Categoria.WindowState = FormWindowState.Normal
         Catch ex As Exception
 
         End Try
@@ -844,26 +897,36 @@
 
     Private Sub PictureBox52_Click(sender As Object, e As EventArgs) Handles PictureBox52.Click
         M_TerminosPago.Show()
+        M_TerminosPago.BringToFront()
+        M_TerminosPago.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox51_Click(sender As Object, e As EventArgs) Handles PictureBox51.Click
         M_Cliente.Show()
+        M_Cliente.BringToFront()
+        M_Cliente.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox50_Click(sender As Object, e As EventArgs) Handles PictureBox50.Click
         M_MaquinasLocales.lblform.Text = "Form1"
         M_MaquinasLocales.Show()
+        M_MaquinasLocales.BringToFront()
+        M_MaquinasLocales.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox47_Click(sender As Object, e As EventArgs) Handles PictureBox47.Click
         M_DiarioFacturacion.lblForm.Text = "M_DiarioFacturacion"
         M_DiarioFacturacion.Show()
+        M_DiarioFacturacion.BringToFront()
+        M_DiarioFacturacion.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub pbxTipoClasificacion_Click(sender As Object, e As EventArgs) Handles pbxTipoClasificacion.Click
         Try
             M_TipoClasificacion.lbltipo.Text = "Form1"
             M_TipoClasificacion.Show()
+            M_TipoClasificacion.BringToFront()
+            M_TipoClasificacion.WindowState = FormWindowState.Normal
         Catch ex As Exception
 
         End Try
@@ -871,34 +934,48 @@
 
     Private Sub PictureBox75_Click(sender As Object, e As EventArgs) Handles btnPuestoTrabajo.Click
         M_PuestoTrabajo.Show()
+        M_PuestoTrabajo.BringToFront()
+        M_PuestoTrabajo.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox74_Click(sender As Object, e As EventArgs) Handles btnHorarios.Click
         M_Horarios.lblform.Text = "M_Horarios"
         M_Horarios.Show()
+        M_Horarios.BringToFront()
+        M_Horarios.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox73_Click(sender As Object, e As EventArgs) Handles btnContratos.Click
         M_Contratos.Show()
+        M_Contratos.BringToFront()
+        M_Contratos.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox72_Click(sender As Object, e As EventArgs) Handles btnProfesion.Click
         M_Profesion.lblform.Text = "M_Profesion"
         M_Profesion.Show()
+        M_Profesion.BringToFront()
+        M_Profesion.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox71_Click(sender As Object, e As EventArgs) Handles btnTipoDeducciones.Click
         M_TipoDeducciones.lblform.Text = "M_TipoDeducciones"
         M_TipoDeducciones.Show()
+        M_TipoDeducciones.BringToFront()
+        M_TipoDeducciones.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox39_Click(sender As Object, e As EventArgs) Handles btnEmpleados.Click
         M_BuscarEmpleados.Show()
+        M_BuscarEmpleados.BringToFront()
+        M_BuscarEmpleados.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox77_Click(sender As Object, e As EventArgs) Handles btnCandidatos.Click
         Try
             A_Candidatos.Show()
+            A_Candidatos.BringToFront()
+            A_Candidatos.WindowState = FormWindowState.Normal
         Catch ex As Exception
 
         End Try
@@ -909,6 +986,8 @@
 
             M_BuscarCapacitaciones.lblform.Text = "M_BuscarCapacitaciones"
             M_BuscarCapacitaciones.Show()
+            M_BuscarCapacitaciones.BringToFront()
+            M_BuscarCapacitaciones.WindowState = FormWindowState.Normal
 
         Catch ex As Exception
 
@@ -925,43 +1004,61 @@
 
     Private Sub btnReporteria_Click_1(sender As Object, e As EventArgs) Handles btnReporteria.Click
         M_ReporteriaTalentoHumano.Show()
+        M_ReporteriaTalentoHumano.BringToFront()
+        M_ReporteriaTalentoHumano.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub btnDepto_Click_1(sender As Object, e As EventArgs) Handles btnDepto.Click
         M_Departamento.Show()
+        M_Departamento.BringToFront()
+        M_Departamento.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub btnSucursales_Click_1(sender As Object, e As EventArgs) Handles btnSucursales.Click
         M_Sucursal.lblform.Text = "M_Sucursal"
         M_Sucursal.Show()
+        M_Sucursal.BringToFront()
+        M_Sucursal.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub btnPermisos_Click_1(sender As Object, e As EventArgs) Handles btnPermisos.Click
         M_Permisos.lblform.Text = "M_Permisos"
         M_Permisos.Show()
+        M_Permisos.BringToFront()
+        M_Permisos.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub btnVacaciones_Click_1(sender As Object, e As EventArgs) Handles btnVacaciones.Click
         M_Vacaciones.lblform.Text = "M_Vacaciones"
         M_Vacaciones.Show()
+        M_Vacaciones.BringToFront()
+        M_Vacaciones.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub btnArea_Click_1(sender As Object, e As EventArgs) Handles btnArea.Click
         M_Area.lblform.Text = "M_Area"
         M_Area.Show()
+        M_Area.BringToFront()
+        M_Area.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox44_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
         E_Usuarios.Show()
+        E_Usuarios.BringToFront()
+        E_Usuarios.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox42_Click(sender As Object, e As EventArgs) Handles btnPerfiles.Click
         A_PerfilUsuario.Show()
+        A_PerfilUsuario.BringToFront()
+        A_PerfilUsuario.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox38_Click_1(sender As Object, e As EventArgs) Handles btnServidorCorreo.Click
         Try
             A_ConfiguracionCorreo.Show()
+            A_ConfiguracionCorreo.BringToFront()
+            A_ConfiguracionCorreo.WindowState = FormWindowState.Normal
         Catch ex As Exception
 
         End Try
@@ -975,10 +1072,14 @@
 
     Private Sub PictureBox85_Click(sender As Object, e As EventArgs) Handles PictureBox85.Click
         E_frmTipoMovientoAlmacen.Show()
+        E_frmTipoMovientoAlmacen.BringToFront()
+        E_frmTipoMovientoAlmacen.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox84_Click(sender As Object, e As EventArgs) Handles PictureBox84.Click
         frmAdministrarRequisiciones.Show()
+        frmAdministrarRequisiciones.BringToFront()
+        frmAdministrarRequisiciones.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub btnAlmacenes_MouseHover(sender As Object, e As EventArgs) Handles btnAlmacenes.MouseHover
@@ -987,6 +1088,8 @@
 
     Private Sub btnCategoria_Click(sender As Object, e As EventArgs) Handles btnCategoria.Click
         E_frmCategoriaProducto.Show()
+        E_frmCategoriaProducto.BringToFront()
+        E_frmCategoriaProducto.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox65_Click(sender As Object, e As EventArgs)
@@ -995,18 +1098,26 @@
 
     Private Sub PictureBox64_Click(sender As Object, e As EventArgs) Handles btnBI.Click
         E_frmBIAlmacen.Show()
+        E_frmBIAlmacen.BringToFront()
+        E_frmBIAlmacen.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox54_Click(sender As Object, e As EventArgs) Handles PictureBox54.Click
         frmMovimientoAlmacen.Show()
+        frmMovimientoAlmacen.BringToFront()
+        frmMovimientoAlmacen.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox64_Click_1(sender As Object, e As EventArgs) Handles btnBI.Click
         E_frmBIAlmacen.Show()
+        E_frmBIAlmacen.BringToFront()
+        E_frmBIAlmacen.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub btnInventario_Click_1(sender As Object, e As EventArgs) Handles btnInventario.Click
         E_frmInventario.Show()
+        E_frmInventario.BringToFront()
+        E_frmInventario.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox63_Click(sender As Object, e As EventArgs)
@@ -1019,16 +1130,22 @@
 
     Private Sub PictureBox66_Click_1(sender As Object, e As EventArgs) Handles PictureBox66.Click
         E_frmProcesarSolicitudInterna.Show()
+        E_frmProcesarSolicitudInterna.BringToFront()
+        E_frmProcesarSolicitudInterna.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox63_Click_1(sender As Object, e As EventArgs) Handles btnAutorizacion.Click
         E_frmAutorizarOC.Show()
+        E_frmAutorizarOC.BringToFront()
+        E_frmAutorizarOC.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox11_Click(sender As Object, e As EventArgs) Handles btnCuentas.Click
         Try
 
             A_Cuenta.Show()
+            A_Cuenta.BringToFront()
+            A_Cuenta.WindowState = FormWindowState.Normal
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
@@ -1037,6 +1154,8 @@
     Private Sub PictureBox17_Click(sender As Object, e As EventArgs) Handles btnAsientos.Click
         Try
             A_ListadoAsientos.Show()
+            A_ListadoAsientos.BringToFront()
+            A_ListadoAsientos.WindowState = FormWindowState.Normal
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
@@ -1046,7 +1165,8 @@
         Try
 
             A_CategoriaProveedor.Show()
-
+            A_CategoriaProveedor.BringToFront()
+            A_CategoriaProveedor.WindowState = FormWindowState.Normal
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
@@ -1056,6 +1176,8 @@
         Try
 
             A_Proveedor.Show()
+            A_Proveedor.BringToFront()
+            A_Proveedor.WindowState = FormWindowState.Normal
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
@@ -1067,6 +1189,8 @@
         Try
 
             frmFormaPago.Show()
+            frmFormaPago.BringToFront()
+            frmFormaPago.WindowState = FormWindowState.Normal
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
@@ -1076,6 +1200,8 @@
         Try
 
             A_ListarCAI.Show()
+            A_ListarCAI.BringToFront()
+            A_ListarCAI.WindowState = FormWindowState.Normal
 
         Catch ex As Exception
 
@@ -1086,6 +1212,8 @@
         Try
 
             A_PeriodoContable.Show()
+            A_PeriodoContable.BringToFront()
+            A_PeriodoContable.WindowState = FormWindowState.Normal
         Catch ex As Exception
 
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
@@ -1096,6 +1224,8 @@
         Try
 
             A_Bancos.Show()
+            A_Bancos.BringToFront()
+            A_Bancos.WindowState = FormWindowState.Normal
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
@@ -1105,6 +1235,8 @@
         Try
 
             M_Precio.Show()
+            M_Precio.BringToFront()
+            M_Precio.WindowState = FormWindowState.Normal
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
@@ -1114,6 +1246,8 @@
         Try
 
             M_ListadoDePrecios.Show()
+            M_ListadoDePrecios.BringToFront()
+            M_ListadoDePrecios.WindowState = FormWindowState.Normal
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
@@ -1122,6 +1256,8 @@
     Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles btnDescuento.Click
         Try
             M_Descuentos.Show()
+            M_Descuentos.BringToFront()
+            M_Descuentos.WindowState = FormWindowState.Normal
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
@@ -1131,6 +1267,8 @@
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles btnPromociones.Click
         Try
             A_ListarPromociones.Show()
+            A_ListarPromociones.BringToFront()
+            A_ListarPromociones.WindowState = FormWindowState.Normal
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
@@ -1139,6 +1277,8 @@
     Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles btnPagos.Click
         Try
             A_ListadoFacturaCompra.Show()
+            A_ListadoFacturaCompra.BringToFront()
+            A_ListadoFacturaCompra.WindowState = FormWindowState.Normal
 
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
@@ -1148,6 +1288,8 @@
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles btnFacturaCompra.Click
         Try
             A_ListarPagos.Show()
+            A_ListarPagos.BringToFront()
+            A_ListarPagos.WindowState = FormWindowState.Normal
 
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
@@ -1157,6 +1299,8 @@
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles btnChequera.Click
         Try
             A_Chequera.Show()
+            A_Chequera.BringToFront()
+            A_Chequera.WindowState = FormWindowState.Normal
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
@@ -1165,6 +1309,8 @@
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles btnCheques.Click
         Try
             A_ListadoCheques.Show()
+            A_ListadoCheques.BringToFront()
+            A_ListadoCheques.WindowState = FormWindowState.Normal
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
@@ -1173,6 +1319,8 @@
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles btnDepoBanc.Click
         Try
             frmTipoDeposito.Show()
+            frmTipoDeposito.BringToFront()
+            frmTipoDeposito.WindowState = FormWindowState.Normal
         Catch ex As Exception
             MsgBox("Error al abrir el formulario.Detalles: " + ex.Message)
         End Try
@@ -1180,10 +1328,15 @@
 
     Private Sub PictureBox82_Click(sender As Object, e As EventArgs) Handles btnFeriados.Click
         A_ConfiguracionFeriados.Show()
+        A_ConfiguracionFeriados.BringToFront()
+        A_ConfiguracionFeriados.WindowState = FormWindowState.Normal
+
     End Sub
 
     Private Sub PictureBox21_Click(sender As Object, e As EventArgs) Handles PictureBox21.Click
         E_EspecificarHojaTrabajo.Show()
+        E_EspecificarHojaTrabajo.BringToFront()
+        E_EspecificarHojaTrabajo.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub btnEntrega_Click(sender As Object, e As EventArgs) Handles btnEntrega.Click
@@ -1193,6 +1346,8 @@
     Private Sub PictureBox76_Click(sender As Object, e As EventArgs) Handles PictureBox76.Click
         Try
             E_GrupoExamen.Show()
+            E_GrupoExamen.BringToFront()
+            E_GrupoExamen.WindowState = FormWindowState.Normal
         Catch ex As Exception
 
         End Try
@@ -1201,6 +1356,8 @@
     Private Sub PictureBox19_Click(sender As Object, e As EventArgs) Handles PictureBox19.Click
         Try
             E_SubArea.Show()
+            E_SubArea.BringToFront()
+            E_SubArea.WindowState = FormWindowState.Normal
         Catch ex As Exception
 
         End Try
@@ -1209,6 +1366,8 @@
 
     Private Sub PictureBox20_Click(sender As Object, e As EventArgs) Handles PictureBox20.Click
         E_DetalleExamenes.Show()
+        E_DetalleExamenes.BringToFront()
+        E_DetalleExamenes.WindowState = FormWindowState.Normal
     End Sub
 
 
@@ -1217,7 +1376,8 @@
         Try
 
             A_ValoresRefPar.Show()
-
+            A_ValoresRefPar.BringToFront()
+            A_ValoresRefPar.WindowState = FormWindowState.Normal
 
         Catch ex As Exception
 
@@ -1227,6 +1387,8 @@
     Private Sub PictureBox49_Click(sender As Object, e As EventArgs) Handles PictureBox49.Click
         Try
             A_Informes.Show()
+            A_Informes.BringToFront()
+            A_Informes.WindowState = FormWindowState.Normal
         Catch ex As Exception
 
         End Try
@@ -1235,10 +1397,16 @@
     Private Sub PictureBox18_Click(sender As Object, e As EventArgs) Handles btnPaciente.Click, btnPaciente2.Click
         M_ListarClientes.lblForm.Text = "VerPaciente"
         M_ListarClientes.Show()
+        M_ListarClientes.BringToFront()
+        M_ListarClientes.WindowState = FormWindowState.Normal
+
     End Sub
 
     Private Sub PictureBox38_Click_2(sender As Object, e As EventArgs) Handles PictureBox38.Click
         frmSolicitudNuevoProducto.Show()
+        frmSolicitudNuevoProducto.BringToFront()
+        frmSolicitudNuevoProducto.WindowState = FormWindowState.Normal
+
     End Sub
 
     Private Sub btnTrabajo_Click(sender As Object, e As EventArgs) Handles btnTrabajo.Click
@@ -1247,6 +1415,8 @@
 
     Private Sub PictureBox23_Click(sender As Object, e As EventArgs) Handles PictureBox23.Click
         E_ListarOrdenesDeTrabajo.Show()
+        E_ListarOrdenesDeTrabajo.BringToFront()
+        E_ListarOrdenesDeTrabajo.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox24_Click(sender As Object, e As EventArgs)
@@ -1257,11 +1427,23 @@
     Private Sub PictureBox25_Click(sender As Object, e As EventArgs) Handles btnSucursal.Click
         M_Sucursal.lblform.Text = "Sucursal"
         M_Sucursal.Show()
+        M_Sucursal.BringToFront()
+        M_Sucursal.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub PictureBox2_Click_1(sender As Object, e As EventArgs) Handles btnSede2.Click
-        M_Sucursal.lblform.Text = "Sede"
-        M_Sede.Show()
+
+
+        Try
+            M_Sucursal.lblform.Text = "Sede"
+            M_Sede.Show()
+            M_Sede.BringToFront()
+            M_Sede.WindowState = FormWindowState.Normal
+        Catch ex As Exception
+
+        End Try
+
+
     End Sub
 
     Private Sub PictureBox25_Click_1(sender As Object, e As EventArgs) Handles btnSucursal.Click
@@ -1273,15 +1455,38 @@
     End Sub
 
     Private Sub btnMedico2_Click(sender As Object, e As EventArgs) Handles btnMedico2.Click
-        M_Medico.Show()
+
+        Try
+            M_Medico.Show()
+            M_Medico.BringToFront()
+            M_Medico.WindowState = FormWindowState.Normal
+
+        Catch ex As Exception
+
+        End Try
+
+
     End Sub
 
     Private Sub btnProducto_Click(sender As Object, e As EventArgs) Handles btnProducto.Click
-        E_frmProducto.Show()
+
+
+        Try
+
+            E_frmProducto.Show()
+            E_frmProducto.BringToFront()
+            E_frmProducto.WindowState = FormWindowState.Normal
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub btnUnidadMedida_Click(sender As Object, e As EventArgs) Handles btnUnidadMedida.Click
         E_frmUnidadMedida_almacen.Show()
+        E_frmUnidadMedida_almacen.BringToFront()
+        E_frmUnidadMedida_almacen.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub Button2_Click_4(sender As Object, e As EventArgs) 
@@ -1297,6 +1502,31 @@
     Private Sub pbxItemExamen_Click(sender As Object, e As EventArgs) Handles pbxItemExamen.Click
         Try
             E_DetalleExamenes.Show()
+            E_DetalleExamenes.BringToFront()
+            E_DetalleExamenes.WindowState = FormWindowState.Normal
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnCerrarSesion_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles btnCerrarSesion.LinkClicked
+        Try
+            If PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or PanelSistema.Visible = True Or PanelTalentoHumano.Visible = True Then
+                PanelSistema.Visible = False
+                PanelFactura.Visible = False
+                PanelLab.Visible = False
+                PanelAlmacen.Visible = False
+                PanelTalentoHumano.Visible = False
+                panelMenu.Visible = True
+
+            Else
+                panelMenu.Visible = True
+
+
+            End If
+            Me.Hide()
+            M_InicioSesion.Show()
+
         Catch ex As Exception
 
         End Try

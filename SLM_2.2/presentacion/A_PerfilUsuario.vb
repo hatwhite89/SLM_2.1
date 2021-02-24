@@ -488,6 +488,8 @@
         dtLaboratorio.Rows.Add("", "Valores de Referencia", False, "")
         dtLaboratorio.Rows.Add("", "Informes", False, "")
         dtLaboratorio.Rows.Add("", "Grupo Exámenes", False, "")
+        dtLaboratorio.Rows.Add("", "Validar Resultados", False, "")
+        dtLaboratorio.Rows.Add("", "Ingresar Resultados", False, "")
 
         'Procesos de Facturacion
         dtFacturacion.Rows.Add("", "Facturacion", False, "")

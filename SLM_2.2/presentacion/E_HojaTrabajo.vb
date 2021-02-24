@@ -68,6 +68,30 @@
                 celda = Convert.ToInt64(dgvHojaTrab.CurrentCell.ColumnIndex.ToString)
                 fila = Convert.ToInt64(dgvHojaTrab.CurrentCell.RowIndex.ToString)
 
+                'Buscar Descripcion de Resultado::::::::::::::::::::::::::::::::::::::::::::::
+
+                Dim plantillaResult As New ClsDescripcionResultado
+                Dim dtPlantillasResult As New DataTable
+                Dim rowPlantillasResult As DataRow
+
+                With plantillaResult
+                    .Codigo_OTrabajo = txtOrden.Text
+                    dtPlantillasResult = .buscarDescripcionResultado
+                    rowPlantillasResult = dtPlantillasResult.Rows(0)
+
+
+                    If dtPlantillasResult.Rows.Count <= 0 Then
+
+                        lblcodDescrip.Text = "codigoResultadoDescrip"
+                    Else
+                        lblcodDescrip.Text = rowPlantillasResult("cod_orden_trabajo")
+                    End If
+
+
+                End With
+
+                ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
                 'buscar valores referencia 
                 If (Trim(txtParametro.Text) <> "") Then
                     Try
@@ -83,6 +107,9 @@
 
                 'buscar observaciones hoja de trabajo
                 BuscarObservacionesHojaTrabajo()
+
+
+
             Else
                 txtOrden.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(0).Value()
                 txtPaciente.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(1).Value()
@@ -379,7 +406,74 @@
     End Sub
 
     Private Sub btnDetalleResultado_Click(sender As Object, e As EventArgs) Handles btnDetalleResultado.Click
-        A_PlantillasDeResultado.Show()
+        Try
+
+            If lblcodDescrip.Text <> txtOrden.Text Then
+
+                Dim campo As String
+                Dim miseparador() As String
+                Dim simbolo As String
+                Dim plantillatexto As New ClsPlantillaResultado
+                Dim dtPlantillas As New DataTable
+                Dim rowPlantillas As DataRow
+
+                celda = Convert.ToInt64(dgvHojaTrab.CurrentCell.ColumnIndex.ToString)
+                fila = Convert.ToInt64(dgvHojaTrab.CurrentCell.RowIndex.ToString)
+                campo = dgvHojaTrab.Rows(fila).Cells(celda).Value
+
+                HT_DescripcionResultado.txtOrdenTrabajo.Text = dgvHojaTrab.Rows(fila).Cells(0).Value
+
+                miseparador = Split(campo, ",")
+
+                For i = 0 To UBound(miseparador)
+
+                    simbolo = miseparador(i).ToString
+                    dtPlantillas = plantillatexto.BuscarPlantillaXSimbolo(simbolo)
+
+                    If dtPlantillas.Rows.Count <> Nothing Then
+
+                        rowPlantillas = dtPlantillas.Rows(0)
+                        'HT_DescripcionResultado.rtxtPlantillas.Text = HT_DescripcionResultado.rtxtPlantillas.Text + System.Environment.NewLine + rowPlantillas("simbolo") + rowPlantillas("descripcion")
+                        HT_DescripcionResultado.rtxtPlantillas.Text = HT_DescripcionResultado.rtxtPlantillas.Text + System.Environment.NewLine + rowPlantillas("descripcion")
+
+                    End If
+
+                Next i
+                HT_DescripcionResultado.Show()
+                HT_DescripcionResultado.BringToFront()
+                HT_DescripcionResultado.WindowState = WindowState.Normal
+
+            Else
+
+                Dim MisResultados As New ClsDescripcionResultado
+                Dim dtResultado As New DataTable
+                Dim rowResultado As DataRow
+
+                With MisResultados
+
+                    .Codigo_OTrabajo = Integer.Parse(lblcodDescrip.Text)
+                    dtResultado = .buscarDescripcionResultado
+
+                    If dtResultado.Rows.Count <> 0 Then
+                        rowResultado = dtResultado.Rows(0)
+                    End If
+
+                End With
+
+                HT_DescripcionResultado.txtCodigo.Text = rowResultado("codDescripcionResultado")
+                HT_DescripcionResultado.txtOrdenTrabajo.Text = rowResultado("cod_orden_trabajo")
+                HT_DescripcionResultado.rtxtPlantillas.Text = rowResultado("detalleResultado")
+                HT_DescripcionResultado.rtxtDescripcion.Text = rowResultado("descripcionResultado")
+
+                HT_DescripcionResultado.Show()
+                HT_DescripcionResultado.BringToFront()
+                HT_DescripcionResultado.WindowState = WindowState.Normal
+
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub btnValoresRef_Click(sender As Object, e As EventArgs) Handles btnValoresRef.Click
@@ -470,7 +564,7 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnValidarResultado.Click
         Try
             Dim n As String = MsgBox("¿Desea validar la orden de trabajo?", MsgBoxStyle.YesNo, "Validación")
             If n = vbYes Then
@@ -522,6 +616,17 @@
             End If
         Catch ex As Exception
             MsgBox("Error al validar: " + ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+    Private Sub MantenimientoDePlantillasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MantenimientoDePlantillasToolStripMenuItem.Click
+        Try
+            A_PlantillasDeResultado.Show()
+            A_PlantillasDeResultado.BringToFront()
+            A_PlantillasDeResultado.WindowState = WindowState.Normal
+
+        Catch ex As Exception
+
         End Try
     End Sub
 
