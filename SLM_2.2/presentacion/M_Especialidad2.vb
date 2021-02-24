@@ -1,4 +1,5 @@
-﻿Public Class M_Especialidad
+﻿Public Class M_Especialidad2
+    Dim objEspecialidad As New ClsEspecialidad2
     Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         Me.Close()
     End Sub
@@ -16,15 +17,14 @@
         Try
             txtnombre.Text = sinDobleEspacio(txtnombre.Text)
             If (Trim(txtnombre.Text) <> "") Then
-                Dim objEspecialidad As New ClsEspecialidad
                 With objEspecialidad
                     .Nombre1 = txtnombre.Text
                 End With
 
-                If objEspecialidad.RegistrarNuevaEspecialidad() = 1 Then
+                If objEspecialidad.RegistrarNuevaEspecialidad2() = 1 Then
                     MsgBox("Registrado correctamente.", MsgBoxStyle.Information)
 
-                    Dim dv As DataView = objEspecialidad.SeleccionarEspecialidad.DefaultView
+                    Dim dv As DataView = objEspecialidad.SeleccionarEspecialidad2.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
@@ -51,16 +51,15 @@
             txtnombre.Text = sinDobleEspacio(txtnombre.Text)
 
             If (Trim(txtnombre.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
-                Dim objEspecialidad As New ClsEspecialidad
                 With objEspecialidad
                     .Nombre1 = txtnombre.Text
                     .Codigo1 = txtcodigo.Text
                 End With
 
-                If objEspecialidad.ModificarEspecialidad() = 1 Then
+                If objEspecialidad.ModificarEspecialidad2() = 1 Then
                     MsgBox("Modificado correctamente.", MsgBoxStyle.Information)
 
-                    Dim dv As DataView = objEspecialidad.SeleccionarEspecialidad.DefaultView
+                    Dim dv As DataView = objEspecialidad.SeleccionarEspecialidad2.DefaultView
                     dgbtabla.DataSource = dv
                     lblcantidad.Text = dv.Count
                     dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
@@ -101,26 +100,28 @@
         End If
     End Sub
     Private Sub M_CrearEspecialidad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'LLENAR LA TABLA
-        Dim objEsp As New ClsEspecialidad
-        Dim dv As DataView = objEsp.SeleccionarEspecialidad.DefaultView
+        'ACTUALIZAR LISTADO
+        Dim dv As DataView = objEspecialidad.SeleccionarEspecialidad2.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+
+        'AGREGARLE COLOR AL DATAGRIDVIEW
+        alternarColoFilasDatagridview(dgbtabla)
+
+        'OCULTAR COLUMNAS
 
         'CAMBIAS NOMBRE COLUMNAS
         dgbtabla.Columns("codigo").HeaderText = "Código"
         dgbtabla.Columns("nombre").HeaderText = "Nombre"
 
-        'DESHABILITAR
+        'Deshabilitar
         txtnombre.ReadOnly = True
         txtcodigo.ReadOnly = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
 
-        'AGREGARLE COLOR AL DATAGRIDVIEW
-        alternarColoFilasDatagridview(dgbtabla)
     End Sub
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
@@ -142,11 +143,11 @@
         Try
             Dim n As String = ""
             If e.RowIndex >= 0 Then
-                n = MsgBox("¿Desea seleccionar la especialidad médica?", MsgBoxStyle.YesNo, "Validación")
+                n = MsgBox("¿Desea seleccionar la segunda especialidad médica?", MsgBoxStyle.YesNo, "Validación")
             End If
             If n = vbYes Then
-                M_Medico.txtcodigoEspecialidad.Text = txtcodigo.Text
-                M_Medico.txtnombreEspecialidad.Text = txtnombre.Text
+                M_Medico.txtcodigoEspecialidad2.Text = txtcodigo.Text
+                M_Medico.txtnombreEspecialidad2.Text = txtnombre.Text
                 limpiar()
                 Me.Close()
             End If
@@ -154,11 +155,11 @@
         End Try
     End Sub
     Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
-        Dim objEsp As New ClsEspecialidad
-        With objEsp
+        'Dim objEsp As New ClsEspecialidad
+        With objEspecialidad
             .Nombre1 = txtnombreB.Text
         End With
-        Dim dv As DataView = objEsp.BuscarEspecialidad.DefaultView
+        Dim dv As DataView = objEspecialidad.BuscarEspecialidad2.DefaultView
         dgbtabla.DataSource = dv
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill

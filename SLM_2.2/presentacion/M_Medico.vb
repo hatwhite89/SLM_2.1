@@ -4,6 +4,9 @@
         limpiar()
         Me.Close()
     End Sub
+    Private Sub btnbuscarEspecialidad2_Click(sender As Object, e As EventArgs) Handles btnbuscarEspecialidad2.Click
+        M_Especialidad2.Show()
+    End Sub
     Private Sub btnbuscarEspecialidad_Click(sender As Object, e As EventArgs) Handles btnbuscarEspecialidad.Click
         M_Especialidad.Show()
     End Sub
@@ -38,7 +41,7 @@
             Else
                 numero = 0
             End If
-            If (Trim(txtnombreCompleto.Text) <> "" And Trim(txtcodigoEspecialidad.Text) <> "" And txtcodigoEspecialidad.BackColor = Color.White) Then
+            If (Trim(txtnombreCompleto.Text) <> "" And numero > 0) Then
                 Dim objMedico As New ClsMedico
                 With objMedico
                     .Nombre_completo1 = txtnombreCompleto.Text
@@ -46,11 +49,16 @@
                     .Correo21 = txtcorreo2.Text
                     .Telefono1 = txttelefono.Text
                     .Celular1 = txtcelular.Text
-                    .Codigo_especialidad1 = txtcodigoEspecialidad.Text
+                    If Trim(txtcodigoEspecialidad.Text) <> "" And txtcodigoEspecialidad.BackColor = Color.White Then
+                        .Codigo_especialidad1 = txtcodigoEspecialidad.Text
+                    End If
+                    If Trim(txtcodigoEspecialidad2.Text) <> "" And txtcodigoEspecialidad2.BackColor = Color.White Then
+                        .codigo_especialidad2_ = txtcodigoEspecialidad2.Text
+                    End If
                 End With
 
                 If objMedico.RegistrarNuevoMedico() = 1 Then
-                    MsgBox("Registrado correctamente.")
+                    MsgBox("Registrado correctamente.", MsgBoxStyle.Information)
 
                     Dim dv As DataView = objMedico.SeleccionarMedico.DefaultView
                     dgbtabla.DataSource = dv
@@ -62,6 +70,7 @@
                     txttelefono.ReadOnly = True
                     txtcelular.ReadOnly = True
                     txtcodigoEspecialidad.ReadOnly = True
+                    txtcodigoEspecialidad2.ReadOnly = True
                     txtcodigo.ReadOnly = True
                     txtnombreCompleto.ReadOnly = True
                     btnmodificar.Enabled = False
@@ -88,19 +97,23 @@
         txttelefono.Text() = ""
         txtcelular.Text() = ""
         txtcodigoEspecialidad.Text() = ""
+        txtcodigoEspecialidad2.Text() = ""
         txtcodigo.Text() = ""
         txtnombreCompleto.Text() = ""
         txtnombreEspecialidad.Text() = ""
+        txtnombreEspecialidad2.Text() = ""
 
         txtcorreo.ReadOnly = False
         txtcorreo2.ReadOnly = False
         txttelefono.ReadOnly = False
         txtcelular.ReadOnly = False
         txtcodigoEspecialidad.ReadOnly = False
+        txtcodigoEspecialidad2.ReadOnly = False
         txtcodigo.ReadOnly = True
         txtnombreCompleto.ReadOnly = False
 
         btnbuscarEspecialidad.Enabled = True
+        btnbuscarEspecialidad2.Enabled = True
         btnmodificar.Enabled = False
         btnguardar.Enabled = True
         btnnuevo.Enabled = True
@@ -123,6 +136,11 @@
 
         'txtnombreCompleto.Select(txtnombreCompleto.Text.Length, 0)
     End Sub
+    Private Sub txtcodigoEspecialidad2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoEspecialidad2.KeyPress
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
     Private Sub txtcodigoEspecialidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoEspecialidad.KeyPress
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
             e.Handled = True
@@ -141,15 +159,30 @@
         lblcantidad.Text = dv.Count
         dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
 
+        'OCULTAR COLUMNAS
+        Me.dgbtabla.Columns("codigo_especialidad").Visible = False
+        Me.dgbtabla.Columns("codigo_especialidad2").Visible = False
+        'Me.dgbtabla.Columns("observacion").Visible = False
+
+        'CAMBIAS NOMBRE COLUMNAS
+        dgbtabla.Columns("codigo").HeaderText = "Código"
+        dgbtabla.Columns("nombre_completo").HeaderText = "Nombre Completo"
+        dgbtabla.Columns("correo").HeaderText = "Correo"
+        dgbtabla.Columns("correo2").HeaderText = "Correo 2"
+        dgbtabla.Columns("telefono").HeaderText = "Teléfono"
+        dgbtabla.Columns("celular").HeaderText = "Celular"
+
         txtcorreo.ReadOnly = True
         txtcorreo2.ReadOnly = True
         txttelefono.ReadOnly = True
         txtcelular.ReadOnly = True
         txtcodigoEspecialidad.ReadOnly = True
+        txtcodigoEspecialidad2.ReadOnly = True
         txtcodigo.ReadOnly = True
         txtnombreCompleto.ReadOnly = True
 
         btnbuscarEspecialidad.Enabled = False
+        btnbuscarEspecialidad2.Enabled = False
         btnmodificar.Enabled = False
         btnguardar.Enabled = False
         btnnuevo.Enabled = True
@@ -157,27 +190,39 @@
 
     Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
         Try
+            limpiar()
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
-            txtcodigoEspecialidad.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            If Trim(Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value().ToString) <> "0" Then
+                txtcodigoEspecialidad.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            Else
+                txtcodigoEspecialidad.Text = ""
+            End If
             txtnombreCompleto.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
             txtcorreo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
             txtcorreo2.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
             txttelefono.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()
             txtcelular.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(6).Value()
+            If Trim(Me.dgbtabla.Rows(e.RowIndex).Cells(7).Value().ToString) <> "0" Then
+                txtcodigoEspecialidad2.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(7).Value()
+            Else
+                txtcodigoEspecialidad2.Text = ""
+            End If
 
             btnmodificar.Enabled = True
             btnguardar.Enabled = False
             btnbuscarEspecialidad.Enabled = True
+            btnbuscarEspecialidad2.Enabled = True
 
             txtcorreo.ReadOnly = False
             txtcorreo2.ReadOnly = False
             txttelefono.ReadOnly = False
             txtcelular.ReadOnly = False
             txtcodigoEspecialidad.ReadOnly = False
+            txtcodigoEspecialidad2.ReadOnly = False
             txtcodigo.ReadOnly = True
             txtnombreCompleto.ReadOnly = False
         Catch ex As Exception
-            'MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -228,7 +273,7 @@
             Else
                 numero = 0
             End If
-            If (Trim(txtnombreCompleto.Text) <> "" And Trim(txtcodigoEspecialidad.Text) <> "" And txtcodigoEspecialidad.BackColor = Color.White) Then
+            If (Trim(txtnombreCompleto.Text) <> "" And Trim(txtcodigo.Text) <> "") Then
                 Dim objMedico As New ClsMedico
                 With objMedico
                     .Nombre_completo1 = txtnombreCompleto.Text
@@ -236,12 +281,18 @@
                     .Correo21 = txtcorreo2.Text
                     .Telefono1 = txttelefono.Text
                     .Celular1 = txtcelular.Text
-                    .Codigo_especialidad1 = txtcodigoEspecialidad.Text
+                    If Trim(txtcodigoEspecialidad.Text) <> "" And txtcodigoEspecialidad.BackColor = Color.White Then
+                        .Codigo_especialidad1 = txtcodigoEspecialidad.Text
+                    End If
+                    If Trim(txtcodigoEspecialidad2.Text) <> "" And txtcodigoEspecialidad2.BackColor = Color.White Then
+                        .codigo_especialidad2_ = txtcodigoEspecialidad2.Text
+                        MsgBox("entra y pone el valor necesario")
+                    End If
                     .Codigo1 = txtcodigo.Text
                 End With
 
                 If objMedico.ModificarMedico() = 1 Then
-                    MsgBox("Modificado correctamente.")
+                    MsgBox("Modificado correctamente.", MsgBoxStyle.Information)
 
                     Dim dv As DataView = objMedico.SeleccionarMedico.DefaultView
                     dgbtabla.DataSource = dv
@@ -253,10 +304,12 @@
                     txttelefono.ReadOnly = True
                     txtcelular.ReadOnly = True
                     txtcodigoEspecialidad.ReadOnly = True
+                    txtcodigoEspecialidad2.ReadOnly = True
                     txtcodigo.ReadOnly = True
                     txtnombreCompleto.ReadOnly = True
 
                     btnbuscarEspecialidad.Enabled = False
+                    btnbuscarEspecialidad2.Enabled = False
                     btnmodificar.Enabled = False
                     btnguardar.Enabled = False
                     btnnuevo.Enabled = True
@@ -271,6 +324,29 @@
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
+    End Sub
+    Private Sub txtcodigoEspecialidad2_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoEspecialidad2.TextChanged
+        If (txtcodigoEspecialidad2.Text <> "") Then
+            Try
+                Dim objEsp As New ClsEspecialidad2
+                With objEsp
+                    .Codigo1 = txtcodigoEspecialidad2.Text
+                End With
+                Dim dt As New DataTable
+                dt = objEsp.BuscarEspecialidad2Code()
+                Dim row As DataRow = dt.Rows(0)
+                txtnombreEspecialidad2.Text = CStr(row("nombre"))
+                txtcodigoEspecialidad2.BackColor = Color.White
+            Catch ex As Exception
+                txtcodigoEspecialidad2.BackColor = Color.Red
+                txtnombreEspecialidad2.Text = ""
+                'MsgBox("No existe ese código de especialidad.", MsgBoxStyle.Critical, "Validación")
+            End Try
+        Else
+            txtcodigoEspecialidad2.Text = ""
+            txtnombreEspecialidad2.Text = ""
+            txtcodigoEspecialidad2.BackColor = Color.White
+        End If
     End Sub
     Private Sub txtcodigoEspecialidad_TextChanged(sender As Object, e As EventArgs) Handles txtcodigoEspecialidad.TextChanged
         If (txtcodigoEspecialidad.Text <> "") Then
@@ -296,6 +372,16 @@
         End If
     End Sub
 
+    Private Sub txtNombreEspecialidadB_TextChanged(sender As Object, e As EventArgs) Handles txtNombreEspecialidadB.TextChanged
+        Dim objMed As New ClsMedico
+        With objMed
+            .Nombre_completo1 = txtNombreEspecialidadB.Text
+        End With
+        Dim dv As DataView = objMed.BuscarMedicoEspecialidad.DefaultView
+        dgbtabla.DataSource = dv
+        lblcantidad.Text = dv.Count
+        dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+    End Sub
     Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
         Dim objMed As New ClsMedico
         With objMed

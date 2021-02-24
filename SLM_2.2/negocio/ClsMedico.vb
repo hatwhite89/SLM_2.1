@@ -2,7 +2,7 @@
 
 Public Class ClsMedico
 
-    Dim codigo, codigo_especialidad As Integer
+    Dim codigo, codigo_especialidad, codigo_especialidad2 As Integer
     Dim nombre_completo, correo, correo2, telefono, celular As String
     'Constructor
     Public Sub New()
@@ -25,6 +25,14 @@ Public Class ClsMedico
         End Get
         Set(value As Integer)
             codigo_especialidad = value
+        End Set
+    End Property
+    Public Property codigo_especialidad2_ As Integer
+        Get
+            Return codigo_especialidad2
+        End Get
+        Set(value As Integer)
+            codigo_especialidad2 = value
         End Set
     End Property
 
@@ -87,18 +95,15 @@ Public Class ClsMedico
         sqlpar.Value = Codigo_especialidad1
         sqlcom.Parameters.Add(sqlpar)
 
-
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "nombre_completo" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = Nombre_completo1
         sqlcom.Parameters.Add(sqlpar)
 
-
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "correo" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = Correo1
         sqlcom.Parameters.Add(sqlpar)
-
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "correo2" 'nombre campo en el procedimiento almacenado @
@@ -110,10 +115,14 @@ Public Class ClsMedico
         sqlpar.Value = Telefono1
         sqlcom.Parameters.Add(sqlpar)
 
-
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "celular" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = Celular1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigo_especialidad2" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigo_especialidad2_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -180,6 +189,10 @@ Public Class ClsMedico
         sqlpar.Value = Celular1
         sqlcom.Parameters.Add(sqlpar)
 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codigo_especialidad2" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codigo_especialidad2_
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -202,6 +215,28 @@ Public Class ClsMedico
     End Function
 
 
+    Public Function BuscarMedicoEspecialidad() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_slmBuscarMedicoEspecialidad"
+            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Nombre_completo1
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
     Public Function BuscarMedico() As DataTable
 
         Dim objCon As New ClsConnection

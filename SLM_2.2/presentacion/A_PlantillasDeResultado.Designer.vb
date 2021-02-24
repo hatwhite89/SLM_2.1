@@ -61,9 +61,9 @@ Partial Class A_PlantillasDeResultado
         Me.GroupBox1.Controls.Add(Me.btnModificar)
         Me.GroupBox1.Controls.Add(Me.btnNuevo)
         Me.GroupBox1.Location = New System.Drawing.Point(-1, 1)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(829, 66)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -74,7 +74,7 @@ Partial Class A_PlantillasDeResultado
         Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnCerrar.Location = New System.Drawing.Point(712, 22)
-        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(100, 28)
         Me.btnCerrar.TabIndex = 4
@@ -87,7 +87,7 @@ Partial Class A_PlantillasDeResultado
         Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnGuardar.Location = New System.Drawing.Point(604, 22)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(100, 28)
         Me.btnGuardar.TabIndex = 3
@@ -112,7 +112,7 @@ Partial Class A_PlantillasDeResultado
         Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnModificar.Location = New System.Drawing.Point(496, 22)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(100, 28)
         Me.btnModificar.TabIndex = 2
@@ -125,7 +125,7 @@ Partial Class A_PlantillasDeResultado
         Me.btnNuevo.BackColor = System.Drawing.Color.White
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnNuevo.Location = New System.Drawing.Point(388, 22)
-        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(100, 28)
         Me.btnNuevo.TabIndex = 1
@@ -149,9 +149,9 @@ Partial Class A_PlantillasDeResultado
         Me.GroupBox2.Controls.Add(Me.txtCodigo)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Location = New System.Drawing.Point(16, 89)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(797, 183)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
@@ -199,7 +199,7 @@ Partial Class A_PlantillasDeResultado
         Me.txtDescripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtDescripcion.Location = New System.Drawing.Point(131, 91)
-        Me.txtDescripcion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDescripcion.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDescripcion.MaxLength = 300
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(623, 22)
@@ -239,7 +239,7 @@ Partial Class A_PlantillasDeResultado
         'txtSimbolo
         '
         Me.txtSimbolo.Location = New System.Drawing.Point(541, 25)
-        Me.txtSimbolo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSimbolo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtSimbolo.MaxLength = 10
         Me.txtSimbolo.Name = "txtSimbolo"
         Me.txtSimbolo.Size = New System.Drawing.Size(232, 22)
@@ -259,7 +259,7 @@ Partial Class A_PlantillasDeResultado
         '
         Me.txtCodigo.Enabled = False
         Me.txtCodigo.Location = New System.Drawing.Point(123, 25)
-        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.ReadOnly = True
         Me.txtCodigo.Size = New System.Drawing.Size(191, 22)
@@ -283,9 +283,9 @@ Partial Class A_PlantillasDeResultado
         Me.GroupBox3.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox3.Controls.Add(Me.dtPlantillas)
         Me.GroupBox3.Location = New System.Drawing.Point(16, 281)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Size = New System.Drawing.Size(799, 244)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
@@ -305,7 +305,7 @@ Partial Class A_PlantillasDeResultado
         Me.dtPlantillas.ColumnHeadersHeight = 29
         Me.dtPlantillas.GridColor = System.Drawing.Color.White
         Me.dtPlantillas.Location = New System.Drawing.Point(15, 23)
-        Me.dtPlantillas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtPlantillas.Margin = New System.Windows.Forms.Padding(4)
         Me.dtPlantillas.MultiSelect = False
         Me.dtPlantillas.Name = "dtPlantillas"
         Me.dtPlantillas.ReadOnly = True
@@ -338,7 +338,7 @@ Partial Class A_PlantillasDeResultado
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "A_PlantillasDeResultado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SLM: Módulo de Registro de Plantillas"
