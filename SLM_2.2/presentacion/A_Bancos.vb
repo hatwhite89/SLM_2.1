@@ -112,6 +112,7 @@
         Else
 
 
+
             lblEstado.Text = "Inactiva"
             lblEstado.ForeColor = Color.Red
 

@@ -30,6 +30,11 @@ Partial Class E_DetalleExamenes
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.chkEtiqueta = New System.Windows.Forms.CheckBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.txtCodInterno = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.lblcodeSubGrupo = New System.Windows.Forms.Label()
@@ -65,10 +70,7 @@ Partial Class E_DetalleExamenes
         Me.lblform = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dtItem, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -129,6 +131,7 @@ Partial Class E_DetalleExamenes
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.chkEtiqueta)
         Me.GroupBox1.Controls.Add(Me.Label17)
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.Label14)
@@ -166,6 +169,58 @@ Partial Class E_DetalleExamenes
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Exámenes"
         '
+        'chkEtiqueta
+        '
+        Me.chkEtiqueta.AutoSize = True
+        Me.chkEtiqueta.Checked = True
+        Me.chkEtiqueta.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkEtiqueta.Location = New System.Drawing.Point(262, 64)
+        Me.chkEtiqueta.Name = "chkEtiqueta"
+        Me.chkEtiqueta.Size = New System.Drawing.Size(103, 17)
+        Me.chkEtiqueta.TabIndex = 218
+        Me.chkEtiqueta.Text = "Imprimir Etiqueta"
+        Me.chkEtiqueta.UseVisualStyleBackColor = True
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.ForeColor = System.Drawing.Color.Red
+        Me.Label17.Location = New System.Drawing.Point(2, 49)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(11, 13)
+        Me.Label17.TabIndex = 217
+        Me.Label17.Text = "*"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.ForeColor = System.Drawing.Color.Red
+        Me.Label15.Location = New System.Drawing.Point(2, 102)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(11, 13)
+        Me.Label15.TabIndex = 215
+        Me.Label15.Text = "*"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.ForeColor = System.Drawing.Color.Red
+        Me.Label14.Location = New System.Drawing.Point(211, 21)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(11, 13)
+        Me.Label14.TabIndex = 214
+        Me.Label14.Text = "*"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.ForeColor = System.Drawing.Color.Red
+        Me.Label13.Location = New System.Drawing.Point(2, 75)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(11, 13)
+        Me.Label13.TabIndex = 213
+        Me.Label13.Text = "*"
+        '
         'txtCodInterno
         '
         Me.txtCodInterno.Location = New System.Drawing.Point(87, 46)
@@ -185,7 +240,7 @@ Partial Class E_DetalleExamenes
         'lblcodeSubGrupo
         '
         Me.lblcodeSubGrupo.AutoSize = True
-        Me.lblcodeSubGrupo.Location = New System.Drawing.Point(394, 75)
+        Me.lblcodeSubGrupo.Location = New System.Drawing.Point(437, 150)
         Me.lblcodeSubGrupo.Name = "lblcodeSubGrupo"
         Me.lblcodeSubGrupo.Size = New System.Drawing.Size(47, 13)
         Me.lblcodeSubGrupo.TabIndex = 23
@@ -511,6 +566,7 @@ Partial Class E_DetalleExamenes
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.lblform)
         Me.Panel1.Controls.Add(Me.btnModificar)
@@ -521,45 +577,19 @@ Partial Class E_DetalleExamenes
         Me.Panel1.Size = New System.Drawing.Size(915, 46)
         Me.Panel1.TabIndex = 27
         '
-        'Label13
+        'Button1
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.ForeColor = System.Drawing.Color.Red
-        Me.Label13.Location = New System.Drawing.Point(2, 75)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(11, 13)
-        Me.Label13.TabIndex = 213
-        Me.Label13.Text = "*"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.ForeColor = System.Drawing.Color.Red
-        Me.Label14.Location = New System.Drawing.Point(211, 21)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(11, 13)
-        Me.Label14.TabIndex = 214
-        Me.Label14.Text = "*"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.ForeColor = System.Drawing.Color.Red
-        Me.Label15.Location = New System.Drawing.Point(2, 102)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(11, 13)
-        Me.Label15.TabIndex = 215
-        Me.Label15.Text = "*"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.ForeColor = System.Drawing.Color.Red
-        Me.Label17.Location = New System.Drawing.Point(2, 49)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(11, 13)
-        Me.Label17.TabIndex = 217
-        Me.Label17.Text = "*"
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Location = New System.Drawing.Point(578, 11)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 27
+        Me.Button1.Text = "Excel"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'E_DetalleExamenes
         '
@@ -636,4 +666,6 @@ Partial Class E_DetalleExamenes
     Friend WithEvents Label14 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label17 As Label
+    Friend WithEvents chkEtiqueta As CheckBox
+    Friend WithEvents Button1 As Button
 End Class

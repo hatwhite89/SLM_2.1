@@ -581,4 +581,40 @@ Public Class ClsCliente
             Return dt
         End Using
     End Function
+
+
+    Public Function BuscarClienteInfo(Optional ByVal codigo As System.Nullable(Of Integer) = Nothing, Optional ByVal identidad As String = Nothing,
+                                            Optional ByVal rtn As String = Nothing, Optional ByVal nombre1 As String = Nothing,
+                                            Optional ByVal nombre2 As String = Nothing, Optional ByVal apellido1 As String = Nothing,
+                                            Optional ByVal apellido2 As String = Nothing, Optional ByVal genero As String = Nothing,
+                                            Optional ByVal clasificacion As String = Nothing, Optional ByVal categoria As String = Nothing,
+                                            Optional ByVal termino As String = Nothing) As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_BuscarClienteInfo"
+            cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = codigo
+            cmd.Parameters.Add("@identidad", SqlDbType.VarChar).Value = identidad
+            cmd.Parameters.Add("@rtn", SqlDbType.VarChar).Value = rtn
+            cmd.Parameters.Add("@nombre1", SqlDbType.VarChar).Value = nombre1
+            cmd.Parameters.Add("@nombre2", SqlDbType.VarChar).Value = nombre2
+            cmd.Parameters.Add("@apellido1", SqlDbType.VarChar).Value = apellido1
+            cmd.Parameters.Add("@apellido2", SqlDbType.VarChar).Value = apellido2
+            cmd.Parameters.Add("@genero", SqlDbType.VarChar).Value = genero
+            cmd.Parameters.Add("@clasificacion", SqlDbType.VarChar).Value = clasificacion
+            cmd.Parameters.Add("@categoria", SqlDbType.VarChar).Value = categoria
+            cmd.Parameters.Add("@termino", SqlDbType.VarChar).Value = termino
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    objCon.cerrarConexion()
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
 End Class

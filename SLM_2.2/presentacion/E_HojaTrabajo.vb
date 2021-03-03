@@ -9,7 +9,6 @@
             txtHora.Text = Date.Now.ToLongTimeString
             txtFecha.Text = Date.Today
 
-
             'CARGA DE PLANTILLAS :::::::::::::::::::::::::::::::::::::::::...
 
             Dim plantilla As New ClsPlantillaResultado
@@ -79,14 +78,12 @@
                     dtPlantillasResult = .buscarDescripcionResultado
                     rowPlantillasResult = dtPlantillasResult.Rows(0)
 
-
                     If dtPlantillasResult.Rows.Count <= 0 Then
 
                         lblcodDescrip.Text = "codigoResultadoDescrip"
                     Else
                         lblcodDescrip.Text = rowPlantillasResult("cod_orden_trabajo")
                     End If
-
 
                 End With
 
@@ -107,8 +104,6 @@
 
                 'buscar observaciones hoja de trabajo
                 BuscarObservacionesHojaTrabajo()
-
-
 
             Else
                 txtOrden.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(0).Value()
@@ -616,6 +611,17 @@
             End If
         Catch ex As Exception
             MsgBox("Error al validar: " + ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+    Private Sub MantenimientoDePlantillasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MantenimientoDePlantillasToolStripMenuItem.Click
+        Try
+            A_PlantillasDeResultado.Show()
+            A_PlantillasDeResultado.BringToFront()
+            A_PlantillasDeResultado.WindowState = WindowState.Normal
+
+        Catch ex As Exception
+
         End Try
     End Sub
 

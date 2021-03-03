@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class M_Cliente
+    Dim objCli As New ClsCliente
     Private Sub btnbuscarCliente_Click(sender As Object, e As EventArgs) Handles btnbuscarCliente.Click
         If (mtxtidentidadClienteB.MaskCompleted = True) Then
             Try
@@ -564,9 +565,23 @@ Public Class M_Cliente
         btnseleccionarCliente.Enabled = False
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
-        If (e.KeyCode = Keys.Escape) Then
-            Me.Close()
-        End If
+
+        Try
+
+            If (e.KeyCode = Keys.Escape) Then
+                Me.Close()
+
+            ElseIf (e.KeyData = Keys.Control + Keys.B) Then
+                M_BuscarClientes.lblForm.Text() = "Prueba"
+                M_BuscarClientes.Show()
+                M_BuscarClientes.BringToFront()
+                M_BuscarClientes.WindowState = WindowState.Normal
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
     Private Sub btnpaciente_Click(sender As Object, e As EventArgs) Handles btnpaciente.Click
         Dim n As String = MsgBox("¿Desea crear un nuevo paciente?", MsgBoxStyle.YesNo, "Validación")
@@ -900,6 +915,11 @@ Public Class M_Cliente
 
     Private Sub M_Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'cargarVariables(txtnombreB)
+        alternarColoFilasDatagridview(dgbtabla)
+        'Dim dv As DataView = objCli.SeleccionarClientes.DefaultView
+        'dgbtabla.DataSource = dv
+        ''lblcantidad.Text = dv.Count
+        'dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
     End Sub
 
     Private Sub txtnombreCategoria_TextChanged(sender As Object, e As EventArgs) Handles txtnombreCategoria.TextChanged
@@ -946,5 +966,138 @@ Public Class M_Cliente
         Catch ex As Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical, "Validación")
         End Try
+    End Sub
+
+    Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
+        Try
+            If Trim(txtnombreB.Text) <> "" Then
+                objCli.NombreCompleto1 = txtnombreB.Text
+                Dim dv As DataView = objCli.BuscarClienteNombre.DefaultView
+                dgbtabla.DataSource = dv
+                ocultarColumnas()
+                'lblcantidad.Text = dv.Count
+                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+            Else
+                dgbtabla.DataSource = Nothing
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
+        Try
+            Habilitar()
+
+            btnseleccionarCliente.Enabled = False
+            gbxinfoCliente.Visible = True
+
+            txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+            txtscanId.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            'If Trim(Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value().ToString) <> "0" Then
+            '    txtcodigoEspecialidad.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+            'Else
+            '    txtcodigoEspecialidad.Text = ""
+            'End If
+            mtxtidentidad.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+            txtrtn.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+            txtnombre1.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+            txtnombre2.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()
+            txtapellido1.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(6).Value()
+            txtapellido2.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(7).Value()
+            dtpfechaNacimiento.Value = Convert.ToDateTime(Me.dgbtabla.Rows(e.RowIndex).Cells(9).Value())
+            If Trim(Me.dgbtabla.Rows(e.RowIndex).Cells(10).Value().ToString) = "Masculino" Then
+                rbtnmasculino.Checked = True
+            Else
+                rbtnfemenino.Checked = True
+            End If
+            rtxtdireccion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(11).Value()
+            txttelefonoCasa.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(12).Value()
+            txttelefonoTrabajo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(13).Value()
+            txtcelular.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(14).Value()
+            txtcorreo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(15).Value()
+            txtcorreo2.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(16).Value()
+            lblcodeCategoria.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(18).Value()
+            lblcodeTerminoPago.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(19).Value()
+            cmbxClasificacion.SelectedValue = Me.dgbtabla.Rows(e.RowIndex).Cells(17).Value()
+            'If Trim(Me.dgbtabla.Rows(e.RowIndex).Cells(7).Value().ToString) <> "0" Then
+            '    txtcodigoEspecialidad2.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(7).Value()
+            'Else
+            '    txtcodigoEspecialidad2.Text = ""
+            'End If
+
+            'btnmodificar.Enabled = True
+            'btnguardar.Enabled = False
+            'btnbuscarEspecialidad.Enabled = True
+            'btnbuscarEspecialidad2.Enabled = True
+
+            'txtcorreo.ReadOnly = False
+            'txtcorreo2.ReadOnly = False
+            'txttelefono.ReadOnly = False
+            'txtcelular.ReadOnly = False
+            'txtcodigoEspecialidad.ReadOnly = False
+            'txtcodigoEspecialidad2.ReadOnly = False
+            'txtcodigo.ReadOnly = True
+            'txtnombreCompleto.ReadOnly = False
+        Catch ex As Exception
+            'MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+    'Private Sub mtxtidentidadClienteB_MaskInputRejected(sender As Object, e As EventArgs) Handles mtxtidentidadClienteB.TextChanged
+    '    Try
+    '        If mtxtidentidadClienteB.Text.Equals(String.Empty) Then
+    '            dgbtabla.DataSource = Nothing
+    '        ElseIf Trim(mtxtidentidadClienteB.Text) <> "    -    -     " Then
+    '            objCli.Identidad1 = mtxtidentidadClienteB.Text
+    '            Dim dv As DataView = objCli.BuscarCliente.DefaultView
+    '            dgbtabla.DataSource = dv
+    '            ocultarColumnas()
+    '            'lblcantidad.Text = dv.Count
+    '            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+    '        End If
+    '    Catch ex As Exception
+    '        'MsgBox(ex.Message)
+    '    End Try
+    'End Sub
+
+    Private Sub ocultarColumnas()
+        'OCULTAR COLUMNAS
+        Try
+            Me.dgbtabla.Columns("scanId").Visible = False
+            Me.dgbtabla.Columns("rtn").Visible = False
+            Me.dgbtabla.Columns("correo1").Visible = False
+            Me.dgbtabla.Columns("correo2").Visible = False
+            Me.dgbtabla.Columns("direccion").Visible = False
+            Me.dgbtabla.Columns("telCasa").Visible = False
+            Me.dgbtabla.Columns("telTrabajo").Visible = False
+            Me.dgbtabla.Columns("celular").Visible = False
+            Me.dgbtabla.Columns("codigoClasificacion").Visible = False
+            Me.dgbtabla.Columns("codigoTerminoPago").Visible = False
+            Me.dgbtabla.Columns("codigoCategoria").Visible = False
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub CerrarEscToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarEscToolStripMenuItem.Click
+        Try
+            Me.Close()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub BúsquedaAvanzadaCrtlBToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BúsquedaAvanzadaCrtlBToolStripMenuItem.Click
+
+        Try
+            M_BuscarClientes.lblForm.Text() = "Prueba"
+            M_BuscarClientes.Show()
+            M_BuscarClientes.BringToFront()
+            M_BuscarClientes.WindowState = WindowState.Normal
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 End Class
