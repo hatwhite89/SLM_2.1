@@ -60,6 +60,6 @@ order by h.hora"
         DataGridView1.Columns(3).Visible = False
         DataGridView1.Columns(4).Visible = False
 
-        ListView1.DataBindings()
+
     End Sub
 End Class
