@@ -295,6 +295,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="conexion\Class2.vb" />
+    <Compile Include="conexion\ClsConexionLabs.vb" />
     <Compile Include="conexion\ClsConnection.vb" />
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -429,6 +430,7 @@
     <Compile Include="negocio\ClsValoresReferenciaTXT.vb" />
     <Compile Include="negocio\ClsVentanasModulos.vb" />
     <Compile Include="negocio\ModulosVarios.vb" />
+    <Compile Include="negocio\pplabs\ClsCitologia.vb" />
     <Compile Include="presentacion\1A_PantallaCarga.Designer.vb">
       <DependentUpon>1A_PantallaCarga.vb</DependentUpon>
     </Compile>
@@ -1691,6 +1693,24 @@
     <Compile Include="presentacion\M_VerPaciente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\pplabs\Citologia.Designer.vb">
+      <DependentUpon>Citologia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\pplabs\Citologia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\pplabs\Listado_Citologia.Designer.vb">
+      <DependentUpon>Listado_Citologia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\pplabs\Listado_Citologia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\pplabs\MenuPrincipal.Designer.vb">
+      <DependentUpon>MenuPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\pplabs\MenuPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\prueba.Designer.vb">
       <DependentUpon>prueba.vb</DependentUpon>
     </Compile>
@@ -2422,6 +2442,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_VerPaciente.resx">
       <DependentUpon>M_VerPaciente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\pplabs\Citologia.resx">
+      <DependentUpon>Citologia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\pplabs\Listado_Citologia.resx">
+      <DependentUpon>Listado_Citologia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\pplabs\MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\prueba.resx">
       <DependentUpon>prueba.vb</DependentUpon>
