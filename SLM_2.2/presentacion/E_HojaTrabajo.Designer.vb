@@ -459,7 +459,7 @@ Partial Class E_HojaTrabajo
         '
         Me.Label15.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(20, 9)
+        Me.Label15.Location = New System.Drawing.Point(20, 4)
         Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(349, 13)
@@ -469,7 +469,7 @@ Partial Class E_HojaTrabajo
         'txtHora2
         '
         Me.txtHora2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.txtHora2.Location = New System.Drawing.Point(389, 33)
+        Me.txtHora2.Location = New System.Drawing.Point(389, 23)
         Me.txtHora2.Margin = New System.Windows.Forms.Padding(2)
         Me.txtHora2.Name = "txtHora2"
         Me.txtHora2.ReadOnly = True
@@ -480,7 +480,7 @@ Partial Class E_HojaTrabajo
         '
         Me.Label16.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(355, 38)
+        Me.Label16.Location = New System.Drawing.Point(355, 28)
         Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(30, 13)
@@ -490,7 +490,7 @@ Partial Class E_HojaTrabajo
         'txtFecha2
         '
         Me.txtFecha2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.txtFecha2.Location = New System.Drawing.Point(243, 33)
+        Me.txtFecha2.Location = New System.Drawing.Point(243, 23)
         Me.txtFecha2.Margin = New System.Windows.Forms.Padding(2)
         Me.txtFecha2.Name = "txtFecha2"
         Me.txtFecha2.ReadOnly = True
@@ -501,7 +501,7 @@ Partial Class E_HojaTrabajo
         '
         Me.Label17.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(202, 38)
+        Me.Label17.Location = New System.Drawing.Point(202, 28)
         Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(37, 13)
@@ -511,7 +511,7 @@ Partial Class E_HojaTrabajo
         'txtValidador
         '
         Me.txtValidador.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.txtValidador.Location = New System.Drawing.Point(94, 33)
+        Me.txtValidador.Location = New System.Drawing.Point(94, 23)
         Me.txtValidador.Margin = New System.Windows.Forms.Padding(2)
         Me.txtValidador.Name = "txtValidador"
         Me.txtValidador.ReadOnly = True
@@ -522,7 +522,7 @@ Partial Class E_HojaTrabajo
         '
         Me.Label18.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(20, 38)
+        Me.Label18.Location = New System.Drawing.Point(20, 28)
         Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(70, 13)
@@ -792,9 +792,9 @@ Partial Class E_HojaTrabajo
         Me.Panel3.Controls.Add(Me.Label17)
         Me.Panel3.Controls.Add(Me.Label16)
         Me.Panel3.Controls.Add(Me.Label15)
-        Me.Panel3.Location = New System.Drawing.Point(9, 533)
+        Me.Panel3.Location = New System.Drawing.Point(11, 533)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1128, 56)
+        Me.Panel3.Size = New System.Drawing.Size(1065, 51)
         Me.Panel3.TabIndex = 150
         '
         'StatusStrip1

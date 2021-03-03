@@ -1,8 +1,8 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class E_frmSalida
-    Private id_almacen, id_departamento_recibe, id_producto, id_detalle_oi, id_entrada As Integer
-
+    Private id_almacen, id_departamento_recibe, id_producto, id_detalle_oi, id_entrada, existenciaentrada As Integer
+    Private almacen_nombres As String
     Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
 
     End Sub
@@ -81,14 +81,22 @@ Public Class E_frmSalida
         sumarDataExistencia()
     End Sub
     Public Sub sumarDataExistencia()
-        Dim Total As Single
+        Dim Total, Total_recibido As Single
+        Try
+            For Each row As DataGridViewRow In Me.DataGridView1.Rows
+                Total += Val(row.Cells(4).Value)
+                Total_recibido += Val(row.Cells(3).Value)
 
-        For Each row As DataGridViewRow In Me.DataGridView1.Rows
-            Total += Val(row.Cells(4).Value)
-        Next
-        If Total > 0 Then
-            Label33.Text = "Esta orden interna tiene items por entregar"
-        End If
+            Next
+            If Total <> Total_recibido Then
+
+                Label33.Text = "Esta orden interna tiene items por entregar"
+
+            End If
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
@@ -146,9 +154,12 @@ Public Class E_frmSalida
 
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
         Try
+
             txtLote.Text = DataGridView2.Rows(e.RowIndex).Cells(2).Value
             txtidDetalleEntrada.Text = DataGridView2.Rows(e.RowIndex).Cells(0).Value
             txtProducto.Text = DataGridView2.Rows(e.RowIndex).Cells(1).Value
+            existenciaentrada = DataGridView2.Rows(e.RowIndex).Cells(3).Value
+            almacen_nombres = DataGridView2.Rows(e.RowIndex).Cells(5).Value
         Catch ex As Exception
 
         End Try
@@ -177,7 +188,7 @@ Public Class E_frmSalida
             TextBox11.Text = DataGridView4.Rows(e.RowIndex).Cells(0).Value
             TextBox3.Text = DataGridView4.Rows(e.RowIndex).Cells(1).Value
             TextBox9.Text = DataGridView4.Rows(e.RowIndex).Cells(5).Value
-
+            TextBox13.Text = DataGridView4.Rows(e.RowIndex).Cells(3).Value
         Catch ex As Exception
 
         End Try
@@ -185,37 +196,63 @@ Public Class E_frmSalida
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         'Registras otras salidas del almacen
-        Dim cls As New ClsSalidaAlmacen
 
-        With cls
-            .Id_entrada_almacen1 = TextBox11.Text
-            .CantidadProducto = TextBox12.Text
-            .Persona_recibe1 = nombre_usurio
-            .Descripcion = RichTextBox2.Text
-            .Tipo_movimiento1 = ComboBox1.SelectedValue
-        End With
-        If cls.RegistrarSalidaAlmacen2() = "1" Then
-            MsgBox("Se registro una nueva salida del almacen")
+        If validarGuardar("Registrar Salida") = "1" Then
+
+
+            Dim cls As New ClsSalidaAlmacen
+            If Integer.Parse(TextBox13.Text) < Integer.Parse(TextBox12.Text) Then
+                MsgBox("La cantidad que esta ingresando es mayor que la cantidad que se encuentra en existencia")
+                Exit Sub
+            End If
+            With cls
+                .Id_entrada_almacen1 = TextBox11.Text
+                .CantidadProducto = TextBox12.Text
+                .Persona_recibe1 = nombre_usurio
+                .Descripcion = RichTextBox2.Text
+                .Tipo_movimiento1 = ComboBox1.SelectedValue
+            End With
+            If cls.RegistrarSalidaAlmacen2() = "1" Then
+                MsgBox(mensaje_registro)
+                Try
+                    Dim clsDeOC As New clsDetalleOI
+                    Dim dvOC As DataView = clsDeOC.CargarInventario().DefaultView
+                    DataGridView4.DataSource = dvOC
+                Catch ex As Exception
+
+                End Try
+            End If
+
             Try
-                Dim clsDeOC As New clsDetalleOI
-                Dim dvOC As DataView = clsDeOC.CargarInventario().DefaultView
-                DataGridView4.DataSource = dvOC
+                TextBox11.Text = ""
+                TextBox3.Text = ""
+                TextBox9.Text = ""
+                TextBox12.Text = ""
+
             Catch ex As Exception
 
             End Try
         End If
 
-        Try
-            TextBox11.Text = ""
-            TextBox3.Text = ""
-            TextBox9.Text = ""
-            TextBox12.Text = ""
+    End Sub
 
-        Catch ex As Exception
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        If validarGuardar("Anular Salida") = "1" Then
+            Dim clsS As New ClsSalidaAlmacen
+            Try
+                With clsS
+                    .Id_salida1 = TextBox1.Text
+                End With
 
-        End Try
+                If clsS.RegistrarDevolucionEntrada() = "1" Then
+                    MsgBox(mensaje_registro)
+                    CargarDGOCFecha()
+                End If
+            Catch ex As Exception
+                MsgBox("No se ha seleccionado ninguna salida")
+            End Try
 
-
+        End If
     End Sub
 
     Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
@@ -249,14 +286,16 @@ where o.id_departamento=d.codigo and o.id_usuario = u.cod_usuario and o.id_oi='1
         Try
             id_detalle_oi = Integer.Parse(DataGridView1.Rows(e.RowIndex).Cells(0).Value)
 
-            'txtProducto.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
+            id_producto = DataGridView1.Rows(e.RowIndex).Cells(1).Value
             txtCantidad.Text = DataGridView1.Rows(e.RowIndex).Cells(3).Value
-            txtAlmacenRecibe.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value
-            txtAreaSolicitante.Text = DataGridView1.Rows(e.RowIndex).Cells(5).Value
-            txtPersonaRecibe.Text = DataGridView1.Rows(e.RowIndex).Cells(6).Value
-            'txtExistenciaEntrada.Text = clsE.ExistenciasDeEntrada(DataGridView1.Rows(e.RowIndex).Cells(7).Value.ToString)
-            id_entrada = Integer.Parse(DataGridView1.Rows(e.RowIndex).Cells(7).Value)
+            'txtAlmacenRecibe.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value
 
+
+            If DataGridView1.Rows(e.RowIndex).Cells(3).Value <= DataGridView1.Rows(e.RowIndex).Cells(4).Value Then
+                Button1.Enabled = False
+            Else
+                Button1.Enabled = True
+            End If
 
         Catch ex As Exception
 
@@ -273,50 +312,58 @@ where o.id_departamento=d.codigo and o.id_usuario = u.cod_usuario and o.id_oi='1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If txtCantidadEntregada.Text = "" Then
-            MsgBox("Debe ingresar la cantidad a entregar")
-            Exit Sub
-        End If
-
-        'If Integer.Parse(txtCantidadEntregada.Text) > Integer.Parse(txtexistenciaentrada.text) Then
-        '    MsgBox("la cantidad a entregar no puede ser mayor al inventario")
-        '    Exit Sub
-        'End If
-
-        Dim clss As New ClsSalidaAlmacen
-        Try
+        If validarGuardar("Registrar Salida") = "1" Then
 
 
-            With clsS
-                .CantidadProducto = txtCantidadEntregada.Text
-                .Descripcion = RichTextBox1.Text
-                .FechaVencimiento = DateTimePicker2.Value
-                .IdAlmacen = id_almacen
-                .IdProducto = id_producto
-                .Id_departamento1 = id_departamento_recibe
-                .Id_oi1 = txtCodOI.Text
-                .LoteProducto = txtLote.Text
-                .Persona_entrega1 = txtEntrega.Text
-                .Persona_recibe1 = txtPersonaRecibe.Text
-                .Producto1 = txtProducto.Text
-                .Tipo_movimiento1 = "Solicitud Interna"
-                .Id_detalle_oi1 = id_detalle_oi
-                .Id_entrada1 = txtidDetalleEntrada.Text
-            End With
-
-            If clsS.RegistrarSalidaAlmacen() = "1" Then
-                MsgBox("salida registrada exitosamente")
-                txtCantidadEntregada.Text = ""
+            If txtCantidadEntregada.Text = "" Then
+                MsgBox("Debe ingresar la cantidad a entregar")
+                Exit Sub
             End If
 
-            CargarDataOI(txtCodOI.Text)
-            Dim clsOCOB As New clsDetalleOI
-            Dim dvOC As DataView = clsOCOB.listarInventarioExistencias(-1).DefaultView
-            DataGridView2.DataSource = dvOC
-        Catch ex As Exception
+            If Integer.Parse(txtCantidadEntregada.Text) > Integer.Parse(txtCantidad.Text) Then
+                MsgBox("La cantidad a entregar no puede ser mayor que la cantidad solicitada")
+                Exit Sub
+            End If
 
-        End Try
+            If Integer.Parse(txtCantidadEntregada.Text) > Integer.Parse(existenciaentrada) Then
+                MsgBox("la cantidad a entregar no puede ser mayor al inventario")
+                Exit Sub
+            End If
 
+            Dim clss As New ClsSalidaAlmacen
+            Try
+
+
+                With clss
+                    .CantidadProducto = txtCantidadEntregada.Text
+                    .Descripcion = RichTextBox1.Text
+                    .FechaVencimiento = DateTimePicker2.Value
+                    .IdAlmacen = almacen_nombres
+                    .IdProducto = id_producto
+                    .Id_departamento1 = id_departamento_recibe
+                    .Id_oi1 = txtCodOI.Text
+                    .LoteProducto = txtLote.Text
+                    .Persona_entrega1 = txtEntrega.Text
+                    .Persona_recibe1 = txtPersonaRecibe.Text
+                    .Producto1 = txtProducto.Text
+                    .Tipo_movimiento1 = "Solicitud Interna"
+                    .Id_detalle_oi1 = id_detalle_oi
+                    .Id_entrada1 = txtidDetalleEntrada.Text
+                End With
+
+                If clss.RegistrarSalidaAlmacen() = "1" Then
+                    MsgBox(mensaje_registro)
+                    txtCantidadEntregada.Text = ""
+                End If
+
+                CargarDataOI(txtCodOI.Text)
+                Dim clsOCOB As New clsDetalleOI
+                Dim dvOC As DataView = clsOCOB.listarInventarioExistencias(-1).DefaultView
+                DataGridView2.DataSource = dvOC
+            Catch ex As Exception
+                MsgBox("No hay productos en el inventario")
+            End Try
+        End If
 
     End Sub
 

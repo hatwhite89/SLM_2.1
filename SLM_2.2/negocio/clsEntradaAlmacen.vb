@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class clsEntradaAlmacen
-    Dim id_producto, id_almacen, id_entrada, id_oc, id_almacen_viejo, id_traslado As Integer
+    Dim id_producto, id_almacen, id_entrada, id_oc, id_almacen_viejo, id_traslado, id_detalle_oc As Integer
     Dim cantidad, precio As Double
     Dim lote, descrip As String
     Dim fecha_vence As Date
@@ -105,6 +105,15 @@ Public Class clsEntradaAlmacen
         End Set
     End Property
 
+    Public Property Id_detalle_oc1 As Integer
+        Get
+            Return id_detalle_oc
+        End Get
+        Set(value As Integer)
+            id_detalle_oc = value
+        End Set
+    End Property
+
     Public Function RegistrarEntradaAlmacen() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -155,6 +164,11 @@ Public Class clsEntradaAlmacen
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_detalle_oc"
+        sqlpar.Value = Id_detalle_oc1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -188,6 +202,15 @@ Public Class clsEntradaAlmacen
         sqlpar.Value = Id_entrada1
         sqlcom.Parameters.Add(sqlpar)
 
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "orden_compra"
+        sqlpar.Value = Id_oc1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "detalle_oc"
+        sqlpar.Value = Id_detalle_oc1
+        sqlcom.Parameters.Add(sqlpar)
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "cantidad"
         sqlpar.Value = CantidadProducto
@@ -253,7 +276,7 @@ Public Class clsEntradaAlmacen
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select e.lote,p.id_producto,p.nombre_producto,e.cantidad,e.precio_unitario,e.fecha_vencimiento, e.id_entrada,e.id_oc from EntradaAlmacen e, ProductoAlmacen p
+        Using da As New SqlDataAdapter("select e.lote,p.id_producto,p.nombre_producto,e.cantidad,e.precio_unitario,e.fecha_vencimiento, e.id_entrada,e.id_oc,e.id_detalle_oc from EntradaAlmacen e, ProductoAlmacen p
 where e.id_producto = p.id_producto and e.fecha_registro between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "'", cn)
             Dim dt As New DataTable
             da.Fill(dt)

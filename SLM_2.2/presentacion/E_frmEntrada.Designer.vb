@@ -58,9 +58,11 @@ Partial Class E_frmEntrada
         Me.precio_unitario1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fecha_vencimiento2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_entrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDDETALLEOC = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -96,7 +98,6 @@ Partial Class E_frmEntrada
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Label22 = New System.Windows.Forms.Label()
         Me.TabPage3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -377,7 +378,7 @@ Partial Class E_frmEntrada
         Me.DataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_oc, Me.lote, Me.id_producto, Me.nombre_producto1, Me.cantidad1, Me.precio_unitario1, Me.fecha_vencimiento2, Me.id_entrada})
+        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_oc, Me.lote, Me.id_producto, Me.nombre_producto1, Me.cantidad1, Me.precio_unitario1, Me.fecha_vencimiento2, Me.id_entrada, Me.IDDETALLEOC})
         Me.DataGridView3.GridColor = System.Drawing.Color.WhiteSmoke
         Me.DataGridView3.Location = New System.Drawing.Point(6, 38)
         Me.DataGridView3.Name = "DataGridView3"
@@ -436,6 +437,12 @@ Partial Class E_frmEntrada
         Me.id_entrada.HeaderText = "NUMENTRADA"
         Me.id_entrada.Name = "id_entrada"
         '
+        'IDDETALLEOC
+        '
+        Me.IDDETALLEOC.DataPropertyName = "id_detalle_oc"
+        Me.IDDETALLEOC.HeaderText = "IDDETALLEOC"
+        Me.IDDETALLEOC.Name = "IDDETALLEOC"
+        '
         'TextBox2
         '
         Me.TextBox2.Location = New System.Drawing.Point(97, 12)
@@ -486,6 +493,17 @@ Partial Class E_frmEntrada
         Me.GroupBox1.TabIndex = 18
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Ingresar productos al almacén"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label22.Location = New System.Drawing.Point(344, 16)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(52, 13)
+        Me.Label22.TabIndex = 20
+        Me.Label22.Text = "Label22"
         '
         'Label11
         '
@@ -808,17 +826,6 @@ Partial Class E_frmEntrada
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label22.Location = New System.Drawing.Point(366, 16)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(52, 13)
-        Me.Label22.TabIndex = 20
-        Me.Label22.Text = "Label22"
-        '
         'E_frmEntrada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -919,6 +926,7 @@ Partial Class E_frmEntrada
     Friend WithEvents costo_total As DataGridViewTextBoxColumn
     Friend WithEvents DateTimePicker4 As DateTimePicker
     Friend WithEvents Label16 As Label
+    Friend WithEvents Label22 As Label
     Friend WithEvents id_oc As DataGridViewTextBoxColumn
     Friend WithEvents lote As DataGridViewTextBoxColumn
     Friend WithEvents id_producto As DataGridViewTextBoxColumn
@@ -927,5 +935,5 @@ Partial Class E_frmEntrada
     Friend WithEvents precio_unitario1 As DataGridViewTextBoxColumn
     Friend WithEvents fecha_vencimiento2 As DataGridViewTextBoxColumn
     Friend WithEvents id_entrada As DataGridViewTextBoxColumn
-    Friend WithEvents Label22 As Label
+    Friend WithEvents IDDETALLEOC As DataGridViewTextBoxColumn
 End Class

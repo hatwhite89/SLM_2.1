@@ -1,6 +1,8 @@
 ﻿Public Class frmSolicitudNuevoProducto
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        If txtDescripcion.Text = "" Then
+        If validarGuardar("Enviar Requisicion") = "1" Then
+
+            If txtDescripcion.Text = "" Then
             MsgBox("La descripcion no puede quedar en vacia")
             Exit Sub
         End If
@@ -25,6 +27,7 @@
             RadioButton2.Checked = True
         End If
 
+        End If
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click

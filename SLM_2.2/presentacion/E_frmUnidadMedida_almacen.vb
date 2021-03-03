@@ -1,36 +1,41 @@
 ﻿Public Class E_frmUnidadMedida_almacen
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim clsUM As New ClsUnidadMedidaAlmacen
-
-
-        If txtCodigo.Text = "" Then
-            With clsUM
-
-                .NombreUnidadMedida = txtNombre.Text
-                .DescripcionUnidadMedida = txtDescripcion.Text
-            End With
-            If clsUM.RegistrarUnidadMedida() = "1" Then
-                MsgBox("Registrado exitosamente")
-                cargarData()
-                Button1.Enabled = False
-                txtDescripcion.ReadOnly = True
-                txtNombre.ReadOnly = True
-
-            End If
-        ElseIf txtCodigo.Text <> "" Then
-            With clsUM
-                .IdUnidadMedida = Integer.Parse(txtCodigo.Text)
-                .NombreUnidadMedida = txtNombre.Text
-                .DescripcionUnidadMedida = txtDescripcion.Text
-            End With
-            If clsUM.ActualizarUnidadMedida() = "1" Then
-
-                MsgBox("Actualizado exitosamente")
-                cargarData()
-            End If
+        If Campo_requerido(txtNombre, Label2) = 1 Then
             Exit Sub
         End If
 
+        If validarGuardar("Unidad Producto") = 1 Then
+
+
+            If txtCodigo.Text = "" Then
+                With clsUM
+
+                    .NombreUnidadMedida = txtNombre.Text
+                    .DescripcionUnidadMedida = txtDescripcion.Text
+                End With
+                If clsUM.RegistrarUnidadMedida() = "1" Then
+                    MsgBox("Registrado exitosamente")
+                    cargarData()
+                    Button1.Enabled = False
+                    txtDescripcion.ReadOnly = True
+                    txtNombre.ReadOnly = True
+
+                End If
+            ElseIf txtCodigo.Text <> "" Then
+                With clsUM
+                    .IdUnidadMedida = Integer.Parse(txtCodigo.Text)
+                    .NombreUnidadMedida = txtNombre.Text
+                    .DescripcionUnidadMedida = txtDescripcion.Text
+                End With
+                If clsUM.ActualizarUnidadMedida() = "1" Then
+
+                    MsgBox("Actualizado exitosamente")
+                    cargarData()
+                End If
+                Exit Sub
+            End If
+        End If
     End Sub
     Private Sub cargarData()
         Try
@@ -135,4 +140,22 @@
         End Try
         Return True
     End Function
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        If validarGuardar("Unidad de medida") = "1" Then
+            Try
+                Dim clsU As New ClsUnidadMedidaAlmacen
+                With clsU
+                    .IdUnidadMedida = txtCodigo.Text
+                End With
+
+                If clsU.BajarUnidadMedida = "1" Then
+                    MsgBox(mensaje_dar_baja)
+                    cargarData()
+                End If
+            Catch ex As Exception
+                MsgBox("No ha seleccionado ninguna fila")
+            End Try
+        End If
+    End Sub
 End Class

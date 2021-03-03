@@ -66,11 +66,11 @@
         Return True
     End Function
 
-    Public Function validarGuardar()
+    Public Function validarGuardar(ByVal titulo As String)
         Dim Msg, Style, Title, Help, Ctxt, Response, MyString
         Msg = "Esta a punto de guardar , desea continuar?"    ' Define message.
         Style = vbYesNo + vbCritical + vbDefaultButton2    ' Define buttons.
-        Title = "Agregar nuevo producto"    ' Define title.
+        Title = titulo ' Define title.
 
 
 
@@ -86,5 +86,18 @@
             Exit Function
             Return 0
         End If
+    End Function
+    Public Function Campo_requerido(ByVal camporequerido As TextBox, ByVal nombre As Label)
+
+
+
+        If camporequerido.Text = "" Then
+            MsgBox("El campo " + nombre.Text + " esta vacio")
+            Return 1
+            Exit Function
+        End If
+        Return 0
+
+
     End Function
 End Module

@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80A97C69-33C1-4D76-A4FF-61E3B54BEE03}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SLM_2._2.M_InicioSesion</StartupObject>
+    <StartupObject>SLM_2._2.E_frmCurva</StartupObject>
     <RootNamespace>SLM_2._2</RootNamespace>
-    <AssemblyName>0</AssemblyName>
+    <AssemblyName>SLM</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -39,7 +39,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>0.xml</DocumentationFile>
+    <DocumentationFile>SLM.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -50,7 +50,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>0.xml</DocumentationFile>
+    <DocumentationFile>SLM.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -69,7 +69,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>índice%281%29.ico</ApplicationIcon>
+    <ApplicationIcon>logo sistema-100.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>DF6EF32004368A22682E7F2DE420325D147357BA</ManifestCertificateThumbprint>
@@ -883,6 +883,12 @@
     <Compile Include="presentacion\E_frmCategoriaProducto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frmCurva.Designer.vb">
+      <DependentUpon>E_frmCurva.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmCurva.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_frmEntrada.Designer.vb">
       <DependentUpon>E_frmEntrada.vb</DependentUpon>
     </Compile>
@@ -893,6 +899,12 @@
       <DependentUpon>E_frmFirmaDigital.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\E_frmFirmaDigital.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmGraficaEstatica.Designer.vb">
+      <DependentUpon>E_frmGraficaEstatica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmGraficaEstatica.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_frmInventario.Designer.vb">
@@ -1762,6 +1774,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>slm_testDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="slm_testDataSet3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>slm_testDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="VistaCheque.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2007,14 +2024,23 @@
     <EmbeddedResource Include="presentacion\E_frmBIAlmacen.resx">
       <DependentUpon>E_frmBIAlmacen.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmBIClientes.resx">
+      <DependentUpon>E_frmBIClientes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmCategoriaProducto.resx">
       <DependentUpon>E_frmCategoriaProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmCurva.resx">
+      <DependentUpon>E_frmCurva.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmEntrada.resx">
       <DependentUpon>E_frmEntrada.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmFirmaDigital.resx">
       <DependentUpon>E_frmFirmaDigital.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmGraficaEstatica.resx">
+      <DependentUpon>E_frmGraficaEstatica.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmInventario.resx">
       <DependentUpon>E_frmInventario.vb</DependentUpon>
@@ -2506,6 +2532,17 @@
     <None Include="slm_testDataSet2.xss">
       <DependentUpon>slm_testDataSet2.xsd</DependentUpon>
     </None>
+    <None Include="slm_testDataSet3.xsc">
+      <DependentUpon>slm_testDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="slm_testDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>slm_testDataSet3.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="slm_testDataSet3.xss">
+      <DependentUpon>slm_testDataSet3.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -2679,6 +2716,7 @@
     <None Include="Resources\almacen-061.png" />
     <None Include="Resources\almacen-081.png" />
     <None Include="Resources\almacen-071.png" />
+    <Content Include="logo sistema-100.ico" />
     <Content Include="Resources\facturacion-49.png" />
     <None Include="Resources\facturacion-491.png" />
     <None Include="Resources\facturacion-50.png" />

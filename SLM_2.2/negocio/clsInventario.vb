@@ -33,6 +33,18 @@ group by a.nombre_almacen", cn)
         End Using
     End Function
 
+    Public Function DatosGrafica(ByVal id_orden As String) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select * from datosgrafica where id_orden ='" + id_orden + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
     Public Function BIAlmacenCostoInventario() As DataTable
 
         Dim objCon As New ClsConnection

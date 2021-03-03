@@ -40,37 +40,40 @@ where u.codigo =p.codigo", clsC.getConexion)
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Dim clsA As New ClsAlmacen
 
+        If validarGuardar("Almacen") = "1" Then
 
-        If txtCodAlmacen.Text <> "" Then
-            With clsA
-                .IdAlmacen = Integer.Parse(txtCodAlmacen.Text)
-                .NombreAlmacen = txtNombreAlmacen.Text
-                .DescripcionAlmacen = txtDescripcion.Text
-                .Nombre_encargado1 = TextBox1.Text
-                .Usuario1 = TextBox2.Text
 
-            End With
-            If clsA.ActualizarAlmacen = "1" Then
-                MsgBox("Actualizado exitosamente")
-                Almacen()
-                Exit Sub
+
+            If txtCodAlmacen.Text <> "" Then
+                With clsA
+                    .IdAlmacen = Integer.Parse(txtCodAlmacen.Text)
+                    .NombreAlmacen = txtNombreAlmacen.Text
+                    .DescripcionAlmacen = txtDescripcion.Text
+                    .Nombre_encargado1 = TextBox1.Text
+                    .Usuario1 = TextBox2.Text
+
+                End With
+                If clsA.ActualizarAlmacen = "1" Then
+                    MsgBox(mensaje_actualizacion)
+                    Almacen()
+                    Exit Sub
+                End If
+            ElseIf txtCodAlmacen.Text = "" Then
+                With clsA
+
+                    .NombreAlmacen = txtNombreAlmacen.Text
+                    .DescripcionAlmacen = txtDescripcion.Text
+                    .Nombre_encargado1 = TextBox1.Text
+                    .Usuario1 = TextBox2.Text
+                End With
+                If clsA.RegistrarAlmacen() = "1" Then
+                    MsgBox(mensaje_registro)
+                    Almacen()
+                    Exit Sub
+                End If
+
             End If
-        ElseIf txtCodAlmacen.Text = "" Then
-            With clsA
-
-                .NombreAlmacen = txtNombreAlmacen.Text
-                .DescripcionAlmacen = txtDescripcion.Text
-                .Nombre_encargado1 = TextBox1.Text
-                .Usuario1 = TextBox2.Text
-            End With
-            If clsA.RegistrarAlmacen() = "1" Then
-                MsgBox("Registrado Exitosamente")
-                Almacen()
-                Exit Sub
-            End If
-
         End If
-
 
     End Sub
 
@@ -172,5 +175,24 @@ where u.codigo =p.codigo and p.nombreCompleto like '%" + TextBox1.Text + "%'", c
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If validarGuardar("Almacen") = "1" Then
+
+            Try
+                Dim clsU As New ClsAlmacen
+                With clsU
+                    .IdAlmacen = txtCodAlmacen.Text
+                End With
+                If clsU.BajarAlmacen = "1" Then
+                    MsgBox(mensaje_dar_baja)
+                    Almacen()
+                End If
+            Catch ex As Exception
+                MsgBox("No ha seleccionado ninguna fila")
+            End Try
+
+        End If
     End Sub
 End Class

@@ -288,7 +288,7 @@ Public Class clsDetalleOC
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select  id_detalle_oc,cod_producto,nombre_producto,precio_unitario,cantidad,costo_total from DetalleOrdenCompra where id_oc ='" + cod + "'", cn)
+        Using da As New SqlDataAdapter("select  id_detalle_oc,cod_producto,nombre_producto,precio_unitario,cantidad_recibida,costo_total from DetalleOrdenCompra where id_oc ='" + cod + "'", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
