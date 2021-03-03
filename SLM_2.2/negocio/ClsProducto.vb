@@ -126,7 +126,7 @@ Public Class ClsProducto
       ,c.nombre_categoria
      
   FROM ProductoAlmacen p, CategoriaProducto c, UnidadMedidaAlmacen u
-  where p.id_categoria = c.id_categoria_producto and p.id_unidad_medida = u.id_unidad_medida"
+  where p.id_categoria = c.id_categoria_producto and p.id_unidad_medida = u.id_unidad_medida and p.estado <> 1"
         sqlcom.Connection = New ClsConnection().getConexion
         Return sqlcom.ExecuteReader
     End Function
@@ -158,7 +158,7 @@ Public Class ClsProducto
 
      
   FROM ProductoAlmacen p, CategoriaProducto c, UnidadMedidaAlmacen u
-  where p.id_categoria = c.id_categoria_producto and p.id_unidad_medida = u.id_unidad_medida"
+  where p.id_categoria = c.id_categoria_producto and p.id_unidad_medida = u.id_unidad_medida and p.estado <> 1"
         sqlcom.Connection = New ClsConnection().getConexion
         Return sqlcom.ExecuteReader
     End Function
@@ -179,7 +179,7 @@ Public Class ClsProducto
       ,c.nombre_categoria
      
   FROM ProductoAlmacen p, CategoriaProducto c, UnidadMedidaAlmacen u
-  where p.id_categoria = c.id_categoria_producto and p.id_unidad_medida = u.id_unidad_medida", cn)
+  where p.id_categoria = c.id_categoria_producto and p.id_unidad_medida = u.id_unidad_medida and p.estado <>1", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             objCon.cerrarConexion()
@@ -331,6 +331,42 @@ Public Class ClsProducto
         sqlpar.ParameterName = "precio"
         sqlpar.Value = Precio_base1
         sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
+
+    Public Function BajarProducto() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slm_DarBajaProducto"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_producto"
+        sqlpar.Value = IdProducto
+        sqlcom.Parameters.Add(sqlpar)
+
+
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"

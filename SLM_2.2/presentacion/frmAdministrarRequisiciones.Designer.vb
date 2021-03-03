@@ -66,7 +66,6 @@ Partial Class frmAdministrarRequisiciones
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
         Me.Button7 = New System.Windows.Forms.Button()
@@ -513,7 +512,6 @@ Partial Class frmAdministrarRequisiciones
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel2.Controls.Add(Me.Button4)
-        Me.Panel2.Controls.Add(Me.Button3)
         Me.Panel2.Controls.Add(Me.Label27)
         Me.Panel2.Controls.Add(Me.DateTimePicker3)
         Me.Panel2.Controls.Add(Me.Button7)
@@ -536,16 +534,6 @@ Partial Class frmAdministrarRequisiciones
         Me.Button4.TabIndex = 11
         Me.Button4.Text = "Excel"
         Me.Button4.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.Yellow
-        Me.Button3.Location = New System.Drawing.Point(629, 5)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 77
-        Me.Button3.Text = "Imprimir"
-        Me.Button3.UseVisualStyleBackColor = False
         '
         'Label27
         '
@@ -702,7 +690,6 @@ Partial Class frmAdministrarRequisiciones
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
     Friend WithEvents Label27 As Label
     Friend WithEvents DateTimePicker3 As DateTimePicker
     Friend WithEvents Button7 As Button

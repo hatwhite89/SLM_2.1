@@ -85,8 +85,12 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim clsP As New ClsProducto
-        If validarGuardar() = 1 Then
-
+        'validar campos vacios
+        If Campo_requerido(txtNombre, Label2) = 1 Then
+            Exit Sub
+        End If
+        If validarGuardar("Producto") = 1 Then
+            'registar producto
             If txtCodigo.Text = "" Then
                 Try
                     With clsP
@@ -105,7 +109,7 @@
                     MsgBox(mensaje_error_actualizacion)
                     Exit Sub
                 End Try
-
+                'actualizar producto
                 Try
                     If clsP.RegistrarProducto() = "1" Then
                         'campos 
@@ -148,6 +152,7 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        'limpiar despues de registar
         'botones
         Button1.Enabled = True
         'campos 
@@ -255,4 +260,22 @@
         End Try
         Return True
     End Function
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Dim clsP As New ClsProducto
+        With clsP
+            .IdProducto = txtCodigo.Text
+        End With
+        If validarGuardar("Producto") = 1 Then
+            Try
+                If clsP.BajarProducto = "1" Then
+                    MsgBox(mensaje_dar_baja)
+                    cargarData()
+                End If
+            Catch ex As Exception
+                MsgBox("No ha seleccionado ninguna fila")
+            End Try
+
+        End If
+    End Sub
 End Class

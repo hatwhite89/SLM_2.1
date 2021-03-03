@@ -66,10 +66,10 @@ Partial Class E_frmProducto
         Me.nombre_unidad_medida = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre_categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -320,7 +320,7 @@ Partial Class E_frmProducto
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
         Me.GroupBox2.Location = New System.Drawing.Point(8, 281)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(694, 206)
+        Me.GroupBox2.Size = New System.Drawing.Size(694, 219)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Buscador"
@@ -329,7 +329,7 @@ Partial Class E_frmProducto
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(215, 48)
+        Me.Label11.Location = New System.Drawing.Point(236, 46)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(272, 13)
         Me.Label11.TabIndex = 122
@@ -395,7 +395,7 @@ Partial Class E_frmProducto
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.Black
-        Me.DataGridView1.Location = New System.Drawing.Point(7, 65)
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 73)
         Me.DataGridView1.Name = "DataGridView1"
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
@@ -408,7 +408,7 @@ Partial Class E_frmProducto
         Me.DataGridView1.RowHeadersWidth = 51
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridView1.Size = New System.Drawing.Size(682, 134)
+        Me.DataGridView1.Size = New System.Drawing.Size(682, 140)
         Me.DataGridView1.TabIndex = 0
         '
         'id_producto
@@ -480,6 +480,18 @@ Partial Class E_frmProducto
         Me.Panel1.Size = New System.Drawing.Size(712, 37)
         Me.Panel1.TabIndex = 3
         '
+        'Button5
+        '
+        Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button5.BackColor = System.Drawing.Color.LightCoral
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Location = New System.Drawing.Point(391, 8)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.TabIndex = 7
+        Me.Button5.Text = "Dar Baja"
+        Me.Button5.UseVisualStyleBackColor = False
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -495,30 +507,19 @@ Partial Class E_frmProducto
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 496)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 503)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 10, 0)
         Me.StatusStrip1.Size = New System.Drawing.Size(712, 22)
         Me.StatusStrip1.TabIndex = 4
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'Button5
-        '
-        Me.Button5.BackColor = System.Drawing.Color.LightCoral
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Location = New System.Drawing.Point(391, 8)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 23)
-        Me.Button5.TabIndex = 7
-        Me.Button5.Text = "Dar Baja"
-        Me.Button5.UseVisualStyleBackColor = False
-        '
         'E_frmProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(712, 518)
+        Me.ClientSize = New System.Drawing.Size(712, 525)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)
