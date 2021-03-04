@@ -5,7 +5,9 @@ Public Class E_frmCurva
     Dim sCommand As SqlCommand
     Dim sAdapter As SqlDataAdapter
     Dim sBuilder As SqlCommandBuilder
+    Public respuesta As SqlDataReader
     Dim sDs As DataSet
+    Public enunciado As SqlCommand
     Dim sTable As DataTable
     Private Sub E_frmCurva_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim cnn3 As New SqlConnection
@@ -33,18 +35,31 @@ order by h.hora"
 
         Chart1.DataSource = ds.Tables("tblTagInfo")
         Dim Series1 As Series = Chart1.Series("Series1")
-        Series1.Name = "Examen 2"
+
 
         Chart1.Series(Series1.Name).XValueMember = "hora"
         Chart1.Series(Series1.Name).YValueMembers = "resultado"
 
         Dim Series2 As Series = Chart1.Series("Series2")
-        Series2.Name = "Examen 1"
+
         Chart1.Series(Series2.Name).XValueMember = "hora"
         Chart1.Series(Series2.Name).YValueMembers = "resultado"
 
+        Chart1.ChartAreas(0).AxisX.Title = "Hora"
+        Chart1.ChartAreas(0).AxisY.Title = "Glicemia"
 
+        Chart1.Series("Series1").BorderDashStyle = DataVisualization.Charting.ChartDashStyle.Dash
+        Chart1.Series("Series1").BorderWidth = 2
+        Chart1.Series("Series2").BorderWidth = 2
+        Chart1.Series("Series1").Color = Color.OrangeRed
 
+        chart1.Series("Series1").MarkerStyle = MarkerStyle.Diamond
+        Chart1.Series("Series1").MarkerColor = Color.Black
+        Chart1.Series("Series1").MarkerBorderColor = Color.Black
+        Chart1.Series("Series1").MarkerSize = 7
+
+        Chart1.Series("Series1").IsVisibleInLegend = True
+        'Chart1.Series(0).Points(0).AxisLabel.ToString()
         alternarColoFilasDatagridview(DataGridView1)
         cargarDataTolerancia()
     End Sub
@@ -60,6 +75,27 @@ order by h.hora"
         DataGridView1.Columns(3).Visible = False
         DataGridView1.Columns(4).Visible = False
 
+        Dim clsC As New ClsConnection
+        Try
+            enunciado = New SqlCommand("select  ot.cod_orden_trabajo,f.numero,s.nombre,c.nombreCompleto as 
+paciente,c.genero,c.fechaNacimiento,m.nombre_completo as medico
+from OrdenDeTrabajo ot, Factura f,cliente c,Sede s,Medico m
+where ot.cod_factura = f.numero and f.codigoCliente =c.codigo and s.codigo =ot.cod_sede and m.codigo = f.codigoMedico
+and ot.cod_orden_trabajo =1203", clsC.getConexion)
+            respuesta = enunciado.ExecuteReader()
+            While respuesta.Read
+                TextBox1.Text = respuesta.Item("cod_orden_trabajo")
+                TextBox2.Text = respuesta.Item("paciente")
+                TextBox3.Text = respuesta.Item("medico")
+                TextBox4.Text = respuesta.Item("nombre")
+                TextBox5.Text = respuesta.Item("genero")
+                TextBox6.Text = DateDiff("yyyy", CDate(respuesta.Item("fechaNacimiento")), Date.Now)
 
+            End While
+            respuesta.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
     End Sub
 End Class
