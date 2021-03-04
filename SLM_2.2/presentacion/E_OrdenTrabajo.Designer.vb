@@ -363,7 +363,7 @@ Partial Class E_OrdenTrabajo
         'txtnumero
         '
         Me.txtnumero.Location = New System.Drawing.Point(83, 41)
-        Me.txtnumero.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnumero.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnumero.Name = "txtnumero"
         Me.txtnumero.Size = New System.Drawing.Size(126, 20)
         Me.txtnumero.TabIndex = 24
@@ -372,7 +372,7 @@ Partial Class E_OrdenTrabajo
         'txtcodigoArea
         '
         Me.txtcodigoArea.Location = New System.Drawing.Point(246, 9)
-        Me.txtcodigoArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoArea.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoArea.Name = "txtcodigoArea"
         Me.txtcodigoArea.Size = New System.Drawing.Size(97, 20)
         Me.txtcodigoArea.TabIndex = 25
@@ -381,7 +381,7 @@ Partial Class E_OrdenTrabajo
         'txtnumeroFactura
         '
         Me.txtnumeroFactura.Location = New System.Drawing.Point(463, 9)
-        Me.txtnumeroFactura.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnumeroFactura.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnumeroFactura.Name = "txtnumeroFactura"
         Me.txtnumeroFactura.Size = New System.Drawing.Size(126, 20)
         Me.txtnumeroFactura.TabIndex = 26
@@ -390,7 +390,7 @@ Partial Class E_OrdenTrabajo
         'txtcodigoCajero
         '
         Me.txtcodigoCajero.Location = New System.Drawing.Point(683, 6)
-        Me.txtcodigoCajero.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoCajero.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoCajero.Name = "txtcodigoCajero"
         Me.txtcodigoCajero.Size = New System.Drawing.Size(93, 20)
         Me.txtcodigoCajero.TabIndex = 27
@@ -399,7 +399,7 @@ Partial Class E_OrdenTrabajo
         'txtcodigoSubArea
         '
         Me.txtcodigoSubArea.Location = New System.Drawing.Point(246, 35)
-        Me.txtcodigoSubArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoSubArea.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoSubArea.Name = "txtcodigoSubArea"
         Me.txtcodigoSubArea.Size = New System.Drawing.Size(97, 20)
         Me.txtcodigoSubArea.TabIndex = 30
@@ -408,7 +408,7 @@ Partial Class E_OrdenTrabajo
         'txtcodigoSucursal
         '
         Me.txtcodigoSucursal.Location = New System.Drawing.Point(463, 33)
-        Me.txtcodigoSucursal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoSucursal.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoSucursal.Name = "txtcodigoSucursal"
         Me.txtcodigoSucursal.Size = New System.Drawing.Size(126, 20)
         Me.txtcodigoSucursal.TabIndex = 31
@@ -417,7 +417,7 @@ Partial Class E_OrdenTrabajo
         'txtcodigoPaciente
         '
         Me.txtcodigoPaciente.Location = New System.Drawing.Point(71, 94)
-        Me.txtcodigoPaciente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoPaciente.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoPaciente.Name = "txtcodigoPaciente"
         Me.txtcodigoPaciente.Size = New System.Drawing.Size(79, 20)
         Me.txtcodigoPaciente.TabIndex = 32
@@ -426,7 +426,7 @@ Partial Class E_OrdenTrabajo
         'txtnombrePaciente
         '
         Me.txtnombrePaciente.Location = New System.Drawing.Point(158, 94)
-        Me.txtnombrePaciente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombrePaciente.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombrePaciente.Name = "txtnombrePaciente"
         Me.txtnombrePaciente.ReadOnly = True
         Me.txtnombrePaciente.Size = New System.Drawing.Size(192, 20)
@@ -435,7 +435,7 @@ Partial Class E_OrdenTrabajo
         'txtedad
         '
         Me.txtedad.Location = New System.Drawing.Point(71, 121)
-        Me.txtedad.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtedad.Margin = New System.Windows.Forms.Padding(2)
         Me.txtedad.Name = "txtedad"
         Me.txtedad.Size = New System.Drawing.Size(79, 20)
         Me.txtedad.TabIndex = 34
@@ -444,7 +444,7 @@ Partial Class E_OrdenTrabajo
         'txttelefono
         '
         Me.txttelefono.Location = New System.Drawing.Point(223, 118)
-        Me.txttelefono.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txttelefono.Margin = New System.Windows.Forms.Padding(2)
         Me.txttelefono.Name = "txttelefono"
         Me.txttelefono.Size = New System.Drawing.Size(126, 20)
         Me.txttelefono.TabIndex = 35
@@ -453,7 +453,7 @@ Partial Class E_OrdenTrabajo
         'txtgenero
         '
         Me.txtgenero.Location = New System.Drawing.Point(71, 145)
-        Me.txtgenero.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtgenero.Margin = New System.Windows.Forms.Padding(2)
         Me.txtgenero.Name = "txtgenero"
         Me.txtgenero.Size = New System.Drawing.Size(79, 20)
         Me.txtgenero.TabIndex = 36
@@ -462,7 +462,7 @@ Partial Class E_OrdenTrabajo
         'txtemail
         '
         Me.txtemail.Location = New System.Drawing.Point(223, 145)
-        Me.txtemail.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtemail.Margin = New System.Windows.Forms.Padding(2)
         Me.txtemail.Name = "txtemail"
         Me.txtemail.Size = New System.Drawing.Size(126, 20)
         Me.txtemail.TabIndex = 37
@@ -471,7 +471,7 @@ Partial Class E_OrdenTrabajo
         'txtcodigoMedico
         '
         Me.txtcodigoMedico.Location = New System.Drawing.Point(71, 169)
-        Me.txtcodigoMedico.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoMedico.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoMedico.Name = "txtcodigoMedico"
         Me.txtcodigoMedico.Size = New System.Drawing.Size(79, 20)
         Me.txtcodigoMedico.TabIndex = 38
@@ -480,7 +480,7 @@ Partial Class E_OrdenTrabajo
         'txtnombreMedico
         '
         Me.txtnombreMedico.Location = New System.Drawing.Point(157, 168)
-        Me.txtnombreMedico.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreMedico.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreMedico.Name = "txtnombreMedico"
         Me.txtnombreMedico.ReadOnly = True
         Me.txtnombreMedico.Size = New System.Drawing.Size(192, 20)
@@ -489,7 +489,7 @@ Partial Class E_OrdenTrabajo
         'txtcurva
         '
         Me.txtcurva.Location = New System.Drawing.Point(83, 230)
-        Me.txtcurva.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcurva.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcurva.Name = "txtcurva"
         Me.txtcurva.Size = New System.Drawing.Size(79, 20)
         Me.txtcurva.TabIndex = 40
@@ -498,7 +498,7 @@ Partial Class E_OrdenTrabajo
         'txtsede
         '
         Me.txtsede.Location = New System.Drawing.Point(83, 255)
-        Me.txtsede.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtsede.Margin = New System.Windows.Forms.Padding(2)
         Me.txtsede.Name = "txtsede"
         Me.txtsede.Size = New System.Drawing.Size(79, 20)
         Me.txtsede.TabIndex = 41
@@ -507,7 +507,7 @@ Partial Class E_OrdenTrabajo
         'txtnombreSede
         '
         Me.txtnombreSede.Location = New System.Drawing.Point(151, 164)
-        Me.txtnombreSede.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreSede.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreSede.Name = "txtnombreSede"
         Me.txtnombreSede.ReadOnly = True
         Me.txtnombreSede.Size = New System.Drawing.Size(192, 20)
@@ -516,7 +516,7 @@ Partial Class E_OrdenTrabajo
         'txtcodigoTecnico
         '
         Me.txtcodigoTecnico.Location = New System.Drawing.Point(83, 280)
-        Me.txtcodigoTecnico.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoTecnico.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoTecnico.Name = "txtcodigoTecnico"
         Me.txtcodigoTecnico.Size = New System.Drawing.Size(79, 20)
         Me.txtcodigoTecnico.TabIndex = 43
@@ -525,7 +525,7 @@ Partial Class E_OrdenTrabajo
         'txtnombreTecnico
         '
         Me.txtnombreTecnico.Location = New System.Drawing.Point(169, 281)
-        Me.txtnombreTecnico.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreTecnico.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreTecnico.Name = "txtnombreTecnico"
         Me.txtnombreTecnico.ReadOnly = True
         Me.txtnombreTecnico.Size = New System.Drawing.Size(192, 20)
@@ -534,7 +534,7 @@ Partial Class E_OrdenTrabajo
         'txtcodigoValidador
         '
         Me.txtcodigoValidador.Location = New System.Drawing.Point(83, 305)
-        Me.txtcodigoValidador.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoValidador.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoValidador.Name = "txtcodigoValidador"
         Me.txtcodigoValidador.Size = New System.Drawing.Size(79, 20)
         Me.txtcodigoValidador.TabIndex = 45
@@ -543,7 +543,7 @@ Partial Class E_OrdenTrabajo
         'txtnombreValidador
         '
         Me.txtnombreValidador.Location = New System.Drawing.Point(169, 306)
-        Me.txtnombreValidador.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreValidador.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreValidador.Name = "txtnombreValidador"
         Me.txtnombreValidador.ReadOnly = True
         Me.txtnombreValidador.Size = New System.Drawing.Size(192, 20)
@@ -552,7 +552,7 @@ Partial Class E_OrdenTrabajo
         'txtcodigoObjeto
         '
         Me.txtcodigoObjeto.Location = New System.Drawing.Point(149, 310)
-        Me.txtcodigoObjeto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoObjeto.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoObjeto.Name = "txtcodigoObjeto"
         Me.txtcodigoObjeto.Size = New System.Drawing.Size(126, 20)
         Me.txtcodigoObjeto.TabIndex = 47
@@ -561,7 +561,7 @@ Partial Class E_OrdenTrabajo
         'txtfacturaTomaMuestra
         '
         Me.txtfacturaTomaMuestra.Location = New System.Drawing.Point(149, 249)
-        Me.txtfacturaTomaMuestra.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtfacturaTomaMuestra.Margin = New System.Windows.Forms.Padding(2)
         Me.txtfacturaTomaMuestra.Name = "txtfacturaTomaMuestra"
         Me.txtfacturaTomaMuestra.Size = New System.Drawing.Size(195, 20)
         Me.txtfacturaTomaMuestra.TabIndex = 48
@@ -570,7 +570,7 @@ Partial Class E_OrdenTrabajo
         'txttecnicoLab
         '
         Me.txttecnicoLab.Location = New System.Drawing.Point(149, 280)
-        Me.txttecnicoLab.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txttecnicoLab.Margin = New System.Windows.Forms.Padding(2)
         Me.txttecnicoLab.Name = "txttecnicoLab"
         Me.txttecnicoLab.Size = New System.Drawing.Size(196, 20)
         Me.txttecnicoLab.TabIndex = 49
@@ -579,7 +579,7 @@ Partial Class E_OrdenTrabajo
         'txtpmUsuario
         '
         Me.txtpmUsuario.Location = New System.Drawing.Point(899, 129)
-        Me.txtpmUsuario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtpmUsuario.Margin = New System.Windows.Forms.Padding(2)
         Me.txtpmUsuario.Name = "txtpmUsuario"
         Me.txtpmUsuario.ReadOnly = True
         Me.txtpmUsuario.Size = New System.Drawing.Size(102, 20)
@@ -589,7 +589,7 @@ Partial Class E_OrdenTrabajo
         'txtnpUsuario
         '
         Me.txtnpUsuario.Location = New System.Drawing.Point(899, 152)
-        Me.txtnpUsuario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnpUsuario.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnpUsuario.Name = "txtnpUsuario"
         Me.txtnpUsuario.ReadOnly = True
         Me.txtnpUsuario.Size = New System.Drawing.Size(102, 20)
@@ -599,7 +599,7 @@ Partial Class E_OrdenTrabajo
         'txtepUsuario
         '
         Me.txtepUsuario.Location = New System.Drawing.Point(899, 175)
-        Me.txtepUsuario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtepUsuario.Margin = New System.Windows.Forms.Padding(2)
         Me.txtepUsuario.Name = "txtepUsuario"
         Me.txtepUsuario.ReadOnly = True
         Me.txtepUsuario.Size = New System.Drawing.Size(102, 20)
@@ -609,7 +609,7 @@ Partial Class E_OrdenTrabajo
         'txtprUsuario
         '
         Me.txtprUsuario.Location = New System.Drawing.Point(899, 197)
-        Me.txtprUsuario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtprUsuario.Margin = New System.Windows.Forms.Padding(2)
         Me.txtprUsuario.Name = "txtprUsuario"
         Me.txtprUsuario.ReadOnly = True
         Me.txtprUsuario.Size = New System.Drawing.Size(102, 20)
@@ -619,7 +619,7 @@ Partial Class E_OrdenTrabajo
         'txtcoUsuario
         '
         Me.txtcoUsuario.Location = New System.Drawing.Point(899, 220)
-        Me.txtcoUsuario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcoUsuario.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcoUsuario.Name = "txtcoUsuario"
         Me.txtcoUsuario.ReadOnly = True
         Me.txtcoUsuario.Size = New System.Drawing.Size(102, 20)
@@ -629,7 +629,7 @@ Partial Class E_OrdenTrabajo
         'txtenUsuario
         '
         Me.txtenUsuario.Location = New System.Drawing.Point(899, 243)
-        Me.txtenUsuario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtenUsuario.Margin = New System.Windows.Forms.Padding(2)
         Me.txtenUsuario.Name = "txtenUsuario"
         Me.txtenUsuario.ReadOnly = True
         Me.txtenUsuario.Size = New System.Drawing.Size(102, 20)
@@ -639,7 +639,7 @@ Partial Class E_OrdenTrabajo
         'txtinUsuario
         '
         Me.txtinUsuario.Location = New System.Drawing.Point(899, 266)
-        Me.txtinUsuario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtinUsuario.Margin = New System.Windows.Forms.Padding(2)
         Me.txtinUsuario.Name = "txtinUsuario"
         Me.txtinUsuario.ReadOnly = True
         Me.txtinUsuario.Size = New System.Drawing.Size(102, 20)
@@ -740,7 +740,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.btnverGrafica.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btnverGrafica.Location = New System.Drawing.Point(172, 128)
-        Me.btnverGrafica.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnverGrafica.Margin = New System.Windows.Forms.Padding(2)
         Me.btnverGrafica.Name = "btnverGrafica"
         Me.btnverGrafica.Size = New System.Drawing.Size(161, 28)
         Me.btnverGrafica.TabIndex = 84
@@ -751,7 +751,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.rbtnpendienteMuestra.AutoSize = True
         Me.rbtnpendienteMuestra.Location = New System.Drawing.Point(476, 128)
-        Me.rbtnpendienteMuestra.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnpendienteMuestra.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnpendienteMuestra.Name = "rbtnpendienteMuestra"
         Me.rbtnpendienteMuestra.Size = New System.Drawing.Size(114, 17)
         Me.rbtnpendienteMuestra.TabIndex = 85
@@ -763,7 +763,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.rbtnNoProcesado.AutoSize = True
         Me.rbtnNoProcesado.Location = New System.Drawing.Point(476, 150)
-        Me.rbtnNoProcesado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnNoProcesado.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnNoProcesado.Name = "rbtnNoProcesado"
         Me.rbtnNoProcesado.Size = New System.Drawing.Size(93, 17)
         Me.rbtnNoProcesado.TabIndex = 86
@@ -775,7 +775,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.rbtnEnProceso.AutoSize = True
         Me.rbtnEnProceso.Location = New System.Drawing.Point(476, 172)
-        Me.rbtnEnProceso.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnEnProceso.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnEnProceso.Name = "rbtnEnProceso"
         Me.rbtnEnProceso.Size = New System.Drawing.Size(80, 17)
         Me.rbtnEnProceso.TabIndex = 87
@@ -787,7 +787,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.rbtnProcesado.AutoSize = True
         Me.rbtnProcesado.Location = New System.Drawing.Point(476, 198)
-        Me.rbtnProcesado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnProcesado.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnProcesado.Name = "rbtnProcesado"
         Me.rbtnProcesado.Size = New System.Drawing.Size(76, 17)
         Me.rbtnProcesado.TabIndex = 88
@@ -799,7 +799,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.rbtnValidado.AutoSize = True
         Me.rbtnValidado.Location = New System.Drawing.Point(476, 221)
-        Me.rbtnValidado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnValidado.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnValidado.Name = "rbtnValidado"
         Me.rbtnValidado.Size = New System.Drawing.Size(66, 17)
         Me.rbtnValidado.TabIndex = 89
@@ -811,7 +811,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.rbtnEntregado.AutoSize = True
         Me.rbtnEntregado.Location = New System.Drawing.Point(476, 243)
-        Me.rbtnEntregado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnEntregado.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnEntregado.Name = "rbtnEntregado"
         Me.rbtnEntregado.Size = New System.Drawing.Size(74, 17)
         Me.rbtnEntregado.TabIndex = 90
@@ -823,7 +823,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.rbtnInvalidado.AutoSize = True
         Me.rbtnInvalidado.Location = New System.Drawing.Point(476, 266)
-        Me.rbtnInvalidado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnInvalidado.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnInvalidado.Name = "rbtnInvalidado"
         Me.rbtnInvalidado.Size = New System.Drawing.Size(74, 17)
         Me.rbtnInvalidado.TabIndex = 91
@@ -835,7 +835,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.cbxWs.AutoSize = True
         Me.cbxWs.Location = New System.Drawing.Point(192, 340)
-        Me.cbxWs.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbxWs.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxWs.Name = "cbxWs"
         Me.cbxWs.Size = New System.Drawing.Size(86, 17)
         Me.cbxWs.TabIndex = 92
@@ -846,7 +846,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.cbxEmail.AutoSize = True
         Me.cbxEmail.Location = New System.Drawing.Point(57, 340)
-        Me.cbxEmail.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbxEmail.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxEmail.Name = "cbxEmail"
         Me.cbxEmail.Size = New System.Drawing.Size(93, 17)
         Me.cbxEmail.TabIndex = 93
@@ -878,7 +878,7 @@ Partial Class E_OrdenTrabajo
         Me.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvResultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.Descripcion, Me.Resultado, Me.Unidad, Me.Estado})
         Me.dgvResultados.Location = New System.Drawing.Point(14, 473)
-        Me.dgvResultados.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgvResultados.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvResultados.Name = "dgvResultados"
         Me.dgvResultados.RowHeadersWidth = 51
         Me.dgvResultados.RowTemplate.Height = 24
@@ -925,7 +925,7 @@ Partial Class E_OrdenTrabajo
         Me.dtpPmFecha.Enabled = False
         Me.dtpPmFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpPmFecha.Location = New System.Drawing.Point(662, 128)
-        Me.dtpPmFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpPmFecha.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpPmFecha.Name = "dtpPmFecha"
         Me.dtpPmFecha.Size = New System.Drawing.Size(102, 20)
         Me.dtpPmFecha.TabIndex = 102
@@ -935,7 +935,7 @@ Partial Class E_OrdenTrabajo
         Me.dtpPmHora.Enabled = False
         Me.dtpPmHora.Format = System.Windows.Forms.DateTimePickerFormat.Time
         Me.dtpPmHora.Location = New System.Drawing.Point(781, 128)
-        Me.dtpPmHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpPmHora.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpPmHora.Name = "dtpPmHora"
         Me.dtpPmHora.Size = New System.Drawing.Size(102, 20)
         Me.dtpPmHora.TabIndex = 103
@@ -945,7 +945,7 @@ Partial Class E_OrdenTrabajo
         Me.dtpNpHora.Enabled = False
         Me.dtpNpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time
         Me.dtpNpHora.Location = New System.Drawing.Point(781, 150)
-        Me.dtpNpHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpNpHora.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpNpHora.Name = "dtpNpHora"
         Me.dtpNpHora.Size = New System.Drawing.Size(102, 20)
         Me.dtpNpHora.TabIndex = 105
@@ -955,7 +955,7 @@ Partial Class E_OrdenTrabajo
         Me.dtpNpFecha.Enabled = False
         Me.dtpNpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpNpFecha.Location = New System.Drawing.Point(662, 150)
-        Me.dtpNpFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpNpFecha.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpNpFecha.Name = "dtpNpFecha"
         Me.dtpNpFecha.Size = New System.Drawing.Size(102, 20)
         Me.dtpNpFecha.TabIndex = 104
@@ -965,7 +965,7 @@ Partial Class E_OrdenTrabajo
         Me.dtpEpHora.Enabled = False
         Me.dtpEpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time
         Me.dtpEpHora.Location = New System.Drawing.Point(781, 175)
-        Me.dtpEpHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpEpHora.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpEpHora.Name = "dtpEpHora"
         Me.dtpEpHora.Size = New System.Drawing.Size(102, 20)
         Me.dtpEpHora.TabIndex = 107
@@ -975,7 +975,7 @@ Partial Class E_OrdenTrabajo
         Me.dtpEpFecha.Enabled = False
         Me.dtpEpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpEpFecha.Location = New System.Drawing.Point(662, 175)
-        Me.dtpEpFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpEpFecha.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpEpFecha.Name = "dtpEpFecha"
         Me.dtpEpFecha.Size = New System.Drawing.Size(102, 20)
         Me.dtpEpFecha.TabIndex = 106
@@ -985,7 +985,7 @@ Partial Class E_OrdenTrabajo
         Me.dtpPrHora.Enabled = False
         Me.dtpPrHora.Format = System.Windows.Forms.DateTimePickerFormat.Time
         Me.dtpPrHora.Location = New System.Drawing.Point(781, 197)
-        Me.dtpPrHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpPrHora.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpPrHora.Name = "dtpPrHora"
         Me.dtpPrHora.Size = New System.Drawing.Size(102, 20)
         Me.dtpPrHora.TabIndex = 109
@@ -995,7 +995,7 @@ Partial Class E_OrdenTrabajo
         Me.dtpPrFecha.Enabled = False
         Me.dtpPrFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpPrFecha.Location = New System.Drawing.Point(662, 197)
-        Me.dtpPrFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpPrFecha.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpPrFecha.Name = "dtpPrFecha"
         Me.dtpPrFecha.Size = New System.Drawing.Size(102, 20)
         Me.dtpPrFecha.TabIndex = 108
@@ -1005,7 +1005,7 @@ Partial Class E_OrdenTrabajo
         Me.dtpCoHora.Enabled = False
         Me.dtpCoHora.Format = System.Windows.Forms.DateTimePickerFormat.Time
         Me.dtpCoHora.Location = New System.Drawing.Point(781, 221)
-        Me.dtpCoHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpCoHora.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpCoHora.Name = "dtpCoHora"
         Me.dtpCoHora.Size = New System.Drawing.Size(102, 20)
         Me.dtpCoHora.TabIndex = 111
@@ -1015,7 +1015,7 @@ Partial Class E_OrdenTrabajo
         Me.dtpCoFecha.Enabled = False
         Me.dtpCoFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpCoFecha.Location = New System.Drawing.Point(662, 221)
-        Me.dtpCoFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpCoFecha.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpCoFecha.Name = "dtpCoFecha"
         Me.dtpCoFecha.Size = New System.Drawing.Size(102, 20)
         Me.dtpCoFecha.TabIndex = 110
@@ -1025,7 +1025,7 @@ Partial Class E_OrdenTrabajo
         Me.dtpEnHora.Enabled = False
         Me.dtpEnHora.Format = System.Windows.Forms.DateTimePickerFormat.Time
         Me.dtpEnHora.Location = New System.Drawing.Point(781, 243)
-        Me.dtpEnHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpEnHora.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpEnHora.Name = "dtpEnHora"
         Me.dtpEnHora.Size = New System.Drawing.Size(102, 20)
         Me.dtpEnHora.TabIndex = 113
@@ -1035,7 +1035,7 @@ Partial Class E_OrdenTrabajo
         Me.dtpEnFecha.Enabled = False
         Me.dtpEnFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpEnFecha.Location = New System.Drawing.Point(662, 243)
-        Me.dtpEnFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpEnFecha.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpEnFecha.Name = "dtpEnFecha"
         Me.dtpEnFecha.Size = New System.Drawing.Size(102, 20)
         Me.dtpEnFecha.TabIndex = 112
@@ -1045,7 +1045,7 @@ Partial Class E_OrdenTrabajo
         Me.dtpInHora.Enabled = False
         Me.dtpInHora.Format = System.Windows.Forms.DateTimePickerFormat.Time
         Me.dtpInHora.Location = New System.Drawing.Point(781, 266)
-        Me.dtpInHora.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpInHora.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpInHora.Name = "dtpInHora"
         Me.dtpInHora.Size = New System.Drawing.Size(102, 20)
         Me.dtpInHora.TabIndex = 115
@@ -1055,7 +1055,7 @@ Partial Class E_OrdenTrabajo
         Me.dtpInFecha.Enabled = False
         Me.dtpInFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpInFecha.Location = New System.Drawing.Point(662, 266)
-        Me.dtpInFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpInFecha.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpInFecha.Name = "dtpInFecha"
         Me.dtpInFecha.Size = New System.Drawing.Size(102, 20)
         Me.dtpInFecha.TabIndex = 114
@@ -1064,7 +1064,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.dtpFechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaFactura.Location = New System.Drawing.Point(787, 6)
-        Me.dtpFechaFactura.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpFechaFactura.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpFechaFactura.Name = "dtpFechaFactura"
         Me.dtpFechaFactura.Size = New System.Drawing.Size(91, 20)
         Me.dtpFechaFactura.TabIndex = 116
@@ -1073,7 +1073,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.dtpHoraFactura.Format = System.Windows.Forms.DateTimePickerFormat.Time
         Me.dtpHoraFactura.Location = New System.Drawing.Point(887, 6)
-        Me.dtpHoraFactura.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpHoraFactura.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpHoraFactura.Name = "dtpHoraFactura"
         Me.dtpHoraFactura.Size = New System.Drawing.Size(107, 20)
         Me.dtpHoraFactura.TabIndex = 117
@@ -1163,7 +1163,7 @@ Partial Class E_OrdenTrabajo
         Me.btnActualizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnActualizar.ForeColor = System.Drawing.Color.White
         Me.btnActualizar.Location = New System.Drawing.Point(486, 207)
-        Me.btnActualizar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnActualizar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(164, 28)
         Me.btnActualizar.TabIndex = 125
@@ -1307,7 +1307,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.cbxurgente.AutoSize = True
         Me.cbxurgente.Location = New System.Drawing.Point(41, 58)
-        Me.cbxurgente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbxurgente.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxurgente.Name = "cbxurgente"
         Me.cbxurgente.Size = New System.Drawing.Size(64, 17)
         Me.cbxurgente.TabIndex = 133
@@ -1318,7 +1318,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.cbxcortesia.AutoSize = True
         Me.cbxcortesia.Location = New System.Drawing.Point(41, 37)
-        Me.cbxcortesia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbxcortesia.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxcortesia.Name = "cbxcortesia"
         Me.cbxcortesia.Size = New System.Drawing.Size(66, 17)
         Me.cbxcortesia.TabIndex = 132
@@ -1329,7 +1329,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.cbxentregaPaciente.AutoSize = True
         Me.cbxentregaPaciente.Location = New System.Drawing.Point(395, 58)
-        Me.cbxentregaPaciente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbxentregaPaciente.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxentregaPaciente.Name = "cbxentregaPaciente"
         Me.cbxentregaPaciente.Size = New System.Drawing.Size(120, 17)
         Me.cbxentregaPaciente.TabIndex = 135
@@ -1340,7 +1340,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.cbxentregaMedico.AutoSize = True
         Me.cbxentregaMedico.Location = New System.Drawing.Point(395, 37)
-        Me.cbxentregaMedico.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbxentregaMedico.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxentregaMedico.Name = "cbxentregaMedico"
         Me.cbxentregaMedico.Size = New System.Drawing.Size(113, 17)
         Me.cbxentregaMedico.TabIndex = 134
@@ -1361,7 +1361,7 @@ Partial Class E_OrdenTrabajo
         '
         Me.dtpFechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaEntrega.Location = New System.Drawing.Point(153, 9)
-        Me.dtpFechaEntrega.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpFechaEntrega.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpFechaEntrega.Name = "dtpFechaEntrega"
         Me.dtpFechaEntrega.Size = New System.Drawing.Size(115, 20)
         Me.dtpFechaEntrega.TabIndex = 137
@@ -1463,7 +1463,7 @@ Partial Class E_OrdenTrabajo
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "E_OrdenTrabajo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Orden de Trabajo"

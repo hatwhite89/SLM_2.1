@@ -540,4 +540,8 @@
             txtnombreTecnico.Text = ""
         End If
     End Sub
+
+    Private Sub btnverGrafica_Click(sender As Object, e As EventArgs) Handles btnverGrafica.Click
+        E_frmCurva.Show()
+    End Sub
 End Class
