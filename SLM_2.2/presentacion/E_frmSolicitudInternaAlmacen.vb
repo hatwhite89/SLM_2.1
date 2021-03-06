@@ -100,43 +100,49 @@
 
     Private Sub agregarInventario()
         Dim clsD As New clsDetalleOI
-
-        With clsD
-            .Id_producto1 = Integer.Parse(codigo_producto)
-            .Producto1 = txtProducto.Text
-            .Lote1 = ""
-            .Cantidad_solicitada1 = Double.Parse(txtCantidadRequerida.Text)
-            .Cantidad_entregada1 = 0
-            .Id_oi1 = Integer.Parse(txtCodSolicitud.Text)
-            .Id_entrada1 = "0"
-
-        End With
-
-        If clsD.RegistrarOrdenInterna = "1" Then
-
-            Dim clsOI As New clsOrdenInterna
-
-            With clsOI
-                .Fecha_entrega1 = DateTimePicker1.Value
-                .Id_departamento1 = id_departamento_global
-                .Id_entrega1 = "0"
+        Try
+            With clsD
+                .Id_producto1 = Integer.Parse(codigo_producto)
+                .Producto1 = txtProducto.Text
+                .Lote1 = ""
+                .Cantidad_solicitada1 = Double.Parse(txtCantidadRequerida.Text)
+                .Cantidad_entregada1 = 0
                 .Id_oi1 = Integer.Parse(txtCodSolicitud.Text)
-                .Id_solicitante1 = Integer.Parse(codigo_usuario)
-                .Estado1 = "creado"
+                .Id_entrada1 = "0"
 
             End With
+            If clsD.RegistrarOrdenInterna = "1" Then
 
-            If clsOI.ActualizarOrdenInterna = "1" Then
+                Dim clsOI As New clsOrdenInterna
+
+                With clsOI
+                    .Fecha_entrega1 = DateTimePicker1.Value
+                    .Id_departamento1 = id_departamento_global
+                    .Id_entrega1 = "0"
+                    .Id_oi1 = Integer.Parse(txtCodSolicitud.Text)
+                    .Id_solicitante1 = Integer.Parse(codigo_usuario)
+                    .Estado1 = "creado"
+
+                End With
+
+                If clsOI.ActualizarOrdenInterna = "1" Then
 
 
 
-                Dim dv4 As New DataView
-                dv4 = clsD.listarOrdenesInternasConParametro(txtCodSolicitud.Text).DefaultView
-                DataGridView2.DataSource = dv4
-                txtCantidadRequerida.Text = "1"
+                    Dim dv4 As New DataView
+                    dv4 = clsD.listarOrdenesInternasConParametro(txtCodSolicitud.Text).DefaultView
+                    DataGridView2.DataSource = dv4
+                    txtCantidadRequerida.Text = "1"
+                    MsgBox(mensaje_registro)
+                End If
+
             End If
+        Catch ex As Exception
 
-        End If
+        End Try
+
+
+
     End Sub
 
 
@@ -249,14 +255,19 @@
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Dim cls As New clsOrdenInterna
 
-        With cls
-            .Id_oi1 = txtCodSolicitud.Text
-        End With
-        If cls.ActualizarEstadoOrdenInterna() = "1" Then
-            MsgBox("Se ha enviado la solicitud al almacen")
+        If validarGuardar("Enviar solicitud") = "1" Then
+
+
+            With cls
+                .Id_oi1 = txtCodSolicitud.Text
+            End With
+            If cls.ActualizarEstadoOrdenInterna() = "1" Then
+                MsgBox("Se ha enviado la solicitud al almacen")
+            End If
+            Button4.Enabled = False
+            txtAgregarInventario.Enabled = False
+
         End If
-        Button4.Enabled = False
-        txtAgregarInventario.Enabled = False
     End Sub
 
     Private Sub DataGridView3_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellClick

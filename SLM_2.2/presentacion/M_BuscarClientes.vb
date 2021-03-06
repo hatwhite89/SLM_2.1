@@ -109,4 +109,15 @@
         M_Categoria.lblform.Text = "M_BuscarClientes"
         M_Categoria.Show()
     End Sub
+
+    Private Sub M_BuscarClientes_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Try
+            If (e.KeyCode = Keys.Escape) Then
+                Me.Close()
+            End If
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

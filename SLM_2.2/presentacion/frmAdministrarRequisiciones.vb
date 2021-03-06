@@ -47,29 +47,36 @@
         descripcion1.Text = ""
         txtFecha.Text = ""
         txtCodUsuario.Text = ""
+        comentario1.Clear()
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim clsR As New ClsRequisicion
         If comentario1.Text = "" Then
             MsgBox("Debe asignar un comentario para poder aprobar o rechazar")
             Exit Sub
         End If
-        With clsR
-            .Cod_requi1 = txtCodRequi.Text
-            .Comentario_rechazo1 = comentario1.Text
-            .Usuario_aprobo1 = codigo_usuario
-        End With
+        Dim clsR As New ClsRequisicion
+        If validarGuardar("Esta seguro que desea aprobar la requisicion " + txtCodRequi.Text + "?") = "1" Then
 
-        If clsR.AprobarRequisicion() = "1" Then
-            MsgBox("Usted acaba de aprobar la requisicion " + txtCodRequi.Text)
-            Try
-                Dim clsOCOB As New ClsRequisicion
-                Dim dvOC As DataView = clsOCOB.RecuperarRequisicion().DefaultView
-                DataGridView2.DataSource = dvOC
-                limpiarData()
-            Catch ex As Exception
 
-            End Try
+
+            With clsR
+                .Cod_requi1 = txtCodRequi.Text
+                .Comentario_rechazo1 = comentario1.Text
+                .Usuario_aprobo1 = codigo_usuario
+            End With
+
+            If clsR.AprobarRequisicion() = "1" Then
+                MsgBox("Usted acaba de aprobar la requisicion " + txtCodRequi.Text)
+                Try
+                    Dim clsOCOB As New ClsRequisicion
+                    Dim dvOC As DataView = clsOCOB.RecuperarRequisicion().DefaultView
+                    DataGridView2.DataSource = dvOC
+                    limpiarData()
+                Catch ex As Exception
+
+                End Try
+            End If
+
         End If
     End Sub
 
@@ -78,24 +85,34 @@
             MsgBox("Debe asignar un comentario para poder aprobar o rechazar")
             Exit Sub
         End If
-        Dim clsR As New ClsRequisicion
-        With clsR
-            .Cod_requi1 = txtCodRequi.Text
-            .Comentario_rechazo1 = comentario1.Text
-            .Usuario_aprobo1 = codigo_usuario
-        End With
+        If validarGuardar("Esta seguro que desea rechazar la requisicion " + txtCodRequi.Text + "?") = "1" Then
 
-        If clsR.RechazarRequisicion() = "1" Then
-            MsgBox("Usted acaba de rechazar la requisicion " + txtCodRequi.Text)
+
             Try
-                Dim clsOCOB As New ClsRequisicion
-                Dim dvOC As DataView = clsOCOB.RecuperarRequisicion().DefaultView
-                DataGridView2.DataSource = dvOC
-                limpiarData()
-            Catch ex As Exception
+                Dim clsR As New ClsRequisicion
+                With clsR
+                    .Cod_requi1 = txtCodRequi.Text
+                    .Comentario_rechazo1 = comentario1.Text
+                    .Usuario_aprobo1 = codigo_usuario
+                End With
 
+                If clsR.RechazarRequisicion() = "1" Then
+                    MsgBox("Usted acaba de rechazar la requisicion " + txtCodRequi.Text)
+                    Try
+                        Dim clsOCOB As New ClsRequisicion
+                        Dim dvOC As DataView = clsOCOB.RecuperarRequisicion().DefaultView
+                        DataGridView2.DataSource = dvOC
+                        limpiarData()
+                    Catch ex As Exception
+
+                    End Try
+                End If
+            Catch ex As Exception
+                MsgBox("Debe seleccionar una requisicion")
             End Try
         End If
+
+
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -145,8 +162,8 @@
         Return True
     End Function
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        reporteRequisicion.Show()
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick

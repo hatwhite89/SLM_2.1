@@ -30,6 +30,7 @@ Partial Class E_DetalleExamenes
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.chkEtiqueta = New System.Windows.Forms.CheckBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -69,7 +70,7 @@ Partial Class E_DetalleExamenes
         Me.lblform = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.chkEtiqueta = New System.Windows.Forms.CheckBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dtItem, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -167,6 +168,18 @@ Partial Class E_DetalleExamenes
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Exámenes"
+        '
+        'chkEtiqueta
+        '
+        Me.chkEtiqueta.AutoSize = True
+        Me.chkEtiqueta.Checked = True
+        Me.chkEtiqueta.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkEtiqueta.Location = New System.Drawing.Point(262, 64)
+        Me.chkEtiqueta.Name = "chkEtiqueta"
+        Me.chkEtiqueta.Size = New System.Drawing.Size(103, 17)
+        Me.chkEtiqueta.TabIndex = 218
+        Me.chkEtiqueta.Text = "Imprimir Etiqueta"
+        Me.chkEtiqueta.UseVisualStyleBackColor = True
         '
         'Label17
         '
@@ -553,6 +566,7 @@ Partial Class E_DetalleExamenes
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.lblform)
         Me.Panel1.Controls.Add(Me.btnModificar)
@@ -563,17 +577,19 @@ Partial Class E_DetalleExamenes
         Me.Panel1.Size = New System.Drawing.Size(915, 46)
         Me.Panel1.TabIndex = 27
         '
-        'chkEtiqueta
+        'Button1
         '
-        Me.chkEtiqueta.AutoSize = True
-        Me.chkEtiqueta.Checked = True
-        Me.chkEtiqueta.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkEtiqueta.Location = New System.Drawing.Point(262, 64)
-        Me.chkEtiqueta.Name = "chkEtiqueta"
-        Me.chkEtiqueta.Size = New System.Drawing.Size(103, 17)
-        Me.chkEtiqueta.TabIndex = 218
-        Me.chkEtiqueta.Text = "Imprimir Etiqueta"
-        Me.chkEtiqueta.UseVisualStyleBackColor = True
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Location = New System.Drawing.Point(578, 11)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 27
+        Me.Button1.Text = "Excel"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'E_DetalleExamenes
         '
@@ -651,4 +667,5 @@ Partial Class E_DetalleExamenes
     Friend WithEvents Label15 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents chkEtiqueta As CheckBox
+    Friend WithEvents Button1 As Button
 End Class

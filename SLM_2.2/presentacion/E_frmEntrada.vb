@@ -1,6 +1,9 @@
 ﻿Public Class E_frmEntrada
     Private codigo_detalleoc As String
     Private fecha_vencimiento As Date
+    Private id_oc_modificar As Integer
+    Dim txtCantidadSolicita As Integer
+    Private id_detalle_ov_v As Integer
 
 
 
@@ -79,9 +82,15 @@
             txtLote.Text = DataGridView1.Rows(e.RowIndex).Cells(3).Value
 
             txtPrecioUnitario.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value
-
+            id_detalle_ov_v = codigo_detalleoc
             txtCantidad.Text = DataGridView1.Rows(e.RowIndex).Cells(5).Value
+            txtCantidadSolicita = DataGridView1.Rows(e.RowIndex).Cells(6).Value
+            If Integer.Parse(txtCantidad.Text) <= 0 Then
 
+                Button1.Enabled = False
+            Else
+                Button1.Enabled = True
+            End If
 
         Catch ex As Exception
 
@@ -90,44 +99,54 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Try
+        If validarGuardar("Entrada almacen") = "1" Then
 
 
-            Dim clsD As New clsDetalleOC
-            Dim clsE As New clsEntradaAlmacen
-            With clsD
-                .IdDetalleOC = Integer.Parse(codigo_detalleoc)
-                .Cantidad_recibida1 = Integer.Parse(txtCantidad.Text)
-            End With
+            Try
 
-            With clsE
-                .IdProducto = Integer.Parse(txtCodProc.Text)
-                .Id_oc1 = Integer.Parse(TextBox1.Text)
-                .PrecioUnitario = Double.Parse(txtPrecioUnitario.Text)
-                .LoteProducto = txtLote.Text
-                .Descripcion = RichTextBox1.Text
-                .IdAlmacen = cmbEntrada.SelectedValue
-                .FechaVencimiento = DateTimePicker1.Value
-                .CantidadProducto = Integer.Parse(txtCantidad.Text)
-            End With
-            If clsD.ActualizarDetalleOCEntrada() = "1" Then
+                If txtCantidadSolicita < Integer.Parse(txtCantidad.Text) Then
+                    MsgBox("No puede ingresar una cantidad mayor a lo esperado")
+                    Exit Sub
+                End If
+                Dim clsD As New clsDetalleOC
+                Dim clsE As New clsEntradaAlmacen
+                With clsD
+                    .IdDetalleOC = Integer.Parse(codigo_detalleoc)
+                    .Cantidad_recibida1 = Integer.Parse(txtCantidad.Text)
+                End With
 
-                If clsE.RegistrarEntradaAlmacen() = "1" Then
-                    MsgBox("Se registro una nueva entrada en el almacen ")
-                    txtCodProc.Clear()
-                    txtPrecioUnitario.Clear()
-                    txtProducto.Clear()
-                    txtCantidad.Clear()
-                    txtLote.Clear()
-                    RichTextBox1.Clear()
+                With clsE
+                    .IdProducto = Integer.Parse(txtCodProc.Text)
+                    .Id_oc1 = Integer.Parse(TextBox1.Text)
+                    .PrecioUnitario = Double.Parse(txtPrecioUnitario.Text)
+                    .LoteProducto = txtLote.Text
+                    .Descripcion = RichTextBox1.Text
+                    .IdAlmacen = cmbEntrada.SelectedValue
+                    .FechaVencimiento = DateTimePicker1.Value
+                    .CantidadProducto = Integer.Parse(txtCantidad.Text)
+                    .Id_detalle_oc1 = id_detalle_ov_v
+                End With
+                If clsD.ActualizarDetalleOCEntrada() = "1" Then
+
+                    If clsE.RegistrarEntradaAlmacen() = "1" Then
+                        MsgBox(mensaje_registro)
+                        txtCodProc.Clear()
+                        txtPrecioUnitario.Clear()
+                        txtProducto.Clear()
+                        txtCantidad.Clear()
+                        txtLote.Clear()
+                        RichTextBox1.Clear()
+
+                    End If
+
+                    DetalleOC(TextBox1.Text)
+
 
                 End If
+            Catch ex As Exception
 
-                DetalleOC(TextBox1.Text)
-            End If
-        Catch ex As Exception
-
-        End Try
+            End Try
+        End If
     End Sub
 
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs)
@@ -184,30 +203,54 @@
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         'modificar entradas 
         Dim clsE As New clsEntradaAlmacen
+        If validarGuardar("Modificar entrada") = "1" Then
 
-        With clsE
-            .CantidadProducto = TextBox8.Text
-            .LoteProducto = TextBox7.Text
-            .Id_entrada1 = TextBox5.Text
-            .FechaVencimiento = DateTimePicker4.Value.Date
-        End With
-        If clsE.ActualizarEntradaAlmacen() = "1" Then
-            MsgBox("Actualizado exitosamente")
-            CargarDGOCFecha()
+
+            If TextBox8.Text = "" Then
+                MsgBox("Debe agregar una cantidad")
+                Exit Sub
+            End If
+            With clsE
+                .CantidadProducto = TextBox8.Text
+                .LoteProducto = TextBox7.Text
+                .Id_entrada1 = TextBox5.Text
+                .FechaVencimiento = DateTimePicker4.Value.Date
+                .Id_oc1 = id_oc_modificar
+                .Id_detalle_oc1 = id_detalle_ov_v
+            End With
+            If clsE.ActualizarEntradaAlmacen() = "1" Then
+                MsgBox(mensaje_actualizacion)
+                CargarDGOCFecha()
+                Exit Sub
+            End If
+
+            If clsE.ActualizarEntradaAlmacen() = "2" Then
+                MsgBox("La cantidad que desea ingresar supera el limite permitido en la orden de compra")
+                Exit Sub
+            End If
+
+            If clsE.ActualizarEntradaAlmacen() = "3" Then
+                MsgBox("No se ha realizado ninguna accion, verifique los valores que esta ingresando")
+                Exit Sub
+            End If
+
         End If
     End Sub
 
     Private Sub DataGridView3_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellClick
         Try
+            id_oc_modificar = DataGridView3.Rows(e.RowIndex).Cells(7).Value
             TextBox4.Text = DataGridView3.Rows(e.RowIndex).Cells(1).Value
-            TextBox5.Text = DataGridView3.Rows(e.RowIndex).Cells(6).Value
             TextBox6.Text = DataGridView3.Rows(e.RowIndex).Cells(2).Value
-            TextBox7.Text = DataGridView3.Rows(e.RowIndex).Cells(0).Value
             TextBox8.Text = DataGridView3.Rows(e.RowIndex).Cells(3).Value
+            TextBox5.Text = DataGridView3.Rows(e.RowIndex).Cells(6).Value
             DateTimePicker4.Value = Date.Parse(DataGridView3.Rows(e.RowIndex).Cells(5).Value)
+            id_detalle_ov_v = DataGridView3.Rows(e.RowIndex).Cells(8).Value
         Catch ex As Exception
 
         End Try
+
+
     End Sub
 
     Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
@@ -249,4 +292,8 @@
         End Try
         Return True
     End Function
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
 End Class

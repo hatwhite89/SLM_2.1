@@ -12,41 +12,58 @@
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
         Dim clsCP As New ClsCategoriaroducto
+        'validar campos vacios
+        If Campo_requerido(txtNombre, Label2) = 1 Then
+            Exit Sub
+        End If
+        'validar los datos antes de guardar
+        If validarGuardar("Categoria de producto") = 1 Then
 
 
-        If txtCodigo.Text = "" Then
-            With clsCP
+            'registar nueva categoria
+            If txtCodigo.Text = "" Then
+                Try
+                    With clsCP
 
-                .NombreCategoriaProducto = txtNombre.Text
-                .DescripcionCategoriaProducto = txtDescripcion.Text
-            End With
+                        .NombreCategoriaProducto = txtNombre.Text
+                        .DescripcionCategoriaProducto = txtDescripcion.Text
+                    End With
 
-            If clsCP.RegistrarCategoriaProducto() = "1" Then
-                Button4.Enabled = False
-                txtDescripcion.ReadOnly = True
-                txtNombre.ReadOnly = True
-                MsgBox("Registrado exitosamente")
-                cargarData()
+                    If clsCP.RegistrarCategoriaProducto() = "1" Then
+                        Button4.Enabled = False
+                        txtDescripcion.ReadOnly = True
+                        txtNombre.ReadOnly = True
+                        MsgBox(mensaje_registro)
+                        cargarData()
 
-            End If
-        ElseIf txtCodigo.Text <> "" Then
-            With clsCP
-                .IdCategoriaProducto = Integer.Parse(txtCodigo.Text)
-                .NombreCategoriaProducto = txtNombre.Text
-                .DescripcionCategoriaProducto = txtDescripcion.Text
-            End With
+                    End If
+                Catch ex As Exception
+                    MsgBox(mensaje_error_registro)
+                End Try
+                'actualizar categoria
+            ElseIf txtCodigo.Text <> "" Then
+                Try
+                    With clsCP
+                        .IdCategoriaProducto = Integer.Parse(txtCodigo.Text)
+                        .NombreCategoriaProducto = txtNombre.Text
+                        .DescripcionCategoriaProducto = txtDescripcion.Text
+                    End With
 
-            If clsCP.ActualizarCategoriaProducto() = "1" Then
-                Button4.Enabled = False
-                txtDescripcion.ReadOnly = True
-                txtNombre.ReadOnly = True
-                MsgBox("Registrado exitosamente")
-                cargarData()
+                    If clsCP.ActualizarCategoriaProducto() = "1" Then
+                        Button4.Enabled = False
+                        txtDescripcion.ReadOnly = True
+                        txtNombre.ReadOnly = True
+                        MsgBox(mensaje_actualizacion)
+                        cargarData()
 
-                Exit Sub
+                        Exit Sub
+                    End If
+                Catch ex As Exception
+                    MsgBox(mensaje_error_actualizacion)
+                End Try
+
             End If
         End If
-
     End Sub
     Private Sub cargarData()
         Try
@@ -169,5 +186,24 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         GridAExcel(DataGridView1)
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If validarGuardar("Bajar Categoria de producto") = 1 Then
+
+
+            Try
+                Dim clsC As New ClsCategoriaroducto
+                With clsC
+                    .IdCategoriaProducto = txtCodigo.Text
+                End With
+                If clsC.BajarCategoriaProducto = 1 Then
+                    MsgBox(mensaje_dar_baja)
+                    cargarData()
+                End If
+            Catch ex As Exception
+                MsgBox("No ha seleccionado ninguna fila")
+            End Try
+        End If
     End Sub
 End Class

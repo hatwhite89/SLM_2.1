@@ -118,7 +118,7 @@ Public Class E_frmOrdenCompra
             Dim Total As Single
 
             For Each row As DataGridViewRow In Me.DataGridView1.Rows
-                Total += Val(row.Cells(6).Value)
+                Total += Val(row.Cells(5).Value)
             Next
             Label44.Text = Total.ToString
         Catch ex As Exception
@@ -180,7 +180,7 @@ Public Class E_frmOrdenCompra
     End Sub
     Private Sub CargarDGOC()
         Dim clsOCOB As New ClsOrdenDeCompra
-        Dim dvOC As DataView = clsOCOB.RecuperarOC.DefaultView
+        Dim dvOC As DataView = clsOCOB.RecuperarOCAbierta.DefaultView
         DataGridView2.DataSource = dvOC
     End Sub
     Private Sub DataGridView3_Click(sender As Object, e As DataGridViewCellEventArgs)

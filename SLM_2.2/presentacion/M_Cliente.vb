@@ -565,9 +565,23 @@ Public Class M_Cliente
         btnseleccionarCliente.Enabled = False
     End Sub
     Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
-        If (e.KeyCode = Keys.Escape) Then
-            Me.Close()
-        End If
+
+        Try
+
+            If (e.KeyCode = Keys.Escape) Then
+                Me.Close()
+
+            ElseIf (e.KeyData = Keys.Control + Keys.B) Then
+                M_BuscarClientes.lblForm.Text() = "Prueba"
+                M_BuscarClientes.Show()
+                M_BuscarClientes.BringToFront()
+                M_BuscarClientes.WindowState = WindowState.Normal
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
     Private Sub btnpaciente_Click(sender As Object, e As EventArgs) Handles btnpaciente.Click
         Dim n As String = MsgBox("¿Desea crear un nuevo paciente?", MsgBoxStyle.YesNo, "Validación")
@@ -1029,22 +1043,22 @@ Public Class M_Cliente
         End Try
     End Sub
 
-    Private Sub mtxtidentidadClienteB_MaskInputRejected(sender As Object, e As EventArgs) Handles mtxtidentidadClienteB.TextChanged
-        Try
-            If mtxtidentidadClienteB.Text.Equals(String.Empty) Then
-                dgbtabla.DataSource = Nothing
-            ElseIf trim(mtxtidentidadClienteB.Text) <> "    -    -     " Then
-                objCli.Identidad1 = mtxtidentidadClienteB.Text
-                Dim dv As DataView = objCli.BuscarCliente.DefaultView
-                dgbtabla.DataSource = dv
-                ocultarColumnas()
-                'lblcantidad.Text = dv.Count
-                dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
-            End If
-        Catch ex As Exception
-            'MsgBox(ex.Message)
-        End Try
-    End Sub
+    'Private Sub mtxtidentidadClienteB_MaskInputRejected(sender As Object, e As EventArgs) Handles mtxtidentidadClienteB.TextChanged
+    '    Try
+    '        If mtxtidentidadClienteB.Text.Equals(String.Empty) Then
+    '            dgbtabla.DataSource = Nothing
+    '        ElseIf Trim(mtxtidentidadClienteB.Text) <> "    -    -     " Then
+    '            objCli.Identidad1 = mtxtidentidadClienteB.Text
+    '            Dim dv As DataView = objCli.BuscarCliente.DefaultView
+    '            dgbtabla.DataSource = dv
+    '            ocultarColumnas()
+    '            'lblcantidad.Text = dv.Count
+    '            dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
+    '        End If
+    '    Catch ex As Exception
+    '        'MsgBox(ex.Message)
+    '    End Try
+    'End Sub
 
     Private Sub ocultarColumnas()
         'OCULTAR COLUMNAS
@@ -1065,8 +1079,25 @@ Public Class M_Cliente
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        M_BuscarClientes.lblForm.Text() = "Prueba"
-        M_BuscarClientes.Show()
+    Private Sub CerrarEscToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarEscToolStripMenuItem.Click
+        Try
+            Me.Close()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub BúsquedaAvanzadaCrtlBToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BúsquedaAvanzadaCrtlBToolStripMenuItem.Click
+
+        Try
+            M_BuscarClientes.lblForm.Text() = "Prueba"
+            M_BuscarClientes.Show()
+            M_BuscarClientes.BringToFront()
+            M_BuscarClientes.WindowState = WindowState.Normal
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 End Class

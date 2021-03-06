@@ -162,7 +162,7 @@ Public Class ClsAlmacen
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select * from Almacen", cn)
+        Using da As New SqlDataAdapter("select id_almacen,nombre_almacen,descripcion,nombre_encargado,usuario from Almacen where estado <>1", cn)
             Dim dt As New DataTable
             da.Fill(dt)
             Return dt
@@ -171,8 +171,43 @@ Public Class ClsAlmacen
     Public Function RecuperarAlmacenes() As SqlDataReader
         Dim sqlcom As SqlCommand
         sqlcom = New SqlCommand
-        sqlcom.CommandText = "select * from Almacen"
+        sqlcom.CommandText = "select id_almacen,nombre_almacen,descripcion,nombre_encargado,usuario from Almacen where estado <>1"
         sqlcom.Connection = New ClsConnection().getConexion
         Return sqlcom.ExecuteReader
+    End Function
+
+    Public Function BajarAlmacen() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slm_DarBajaAlmacen"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "id_almacen" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = IdAlmacen
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
     End Function
 End Class

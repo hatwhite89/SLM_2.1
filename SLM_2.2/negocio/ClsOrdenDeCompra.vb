@@ -164,6 +164,18 @@ Public Class ClsOrdenDeCompra
             Return dt
         End Using
     End Function
+    Public Function RecuperarOCAbierta() As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select oc.id_oc,p.nombreProveedor,oc.usuario_consignado,oc.usuario_autorizo,oc.autorizacion,oc.fecha_autorizacion,oc.observaciones,oc.id_factura_compra from OrdenDeCompra oc ,Proveedor p where oc.id_proveedor= p.codProveedor and oc.autorizacion <> 'Anulada' and oc.autorizacion <> 'Cerrada' and oc.autorizacion <> 'Rechazada'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            objCon.cerrarConexion()
+            Return dt
+        End Using
+    End Function
 
     Public Function RecuperarOCConParametro(ByVal codigo As String) As DataTable
         Dim objCon As New ClsConnection
