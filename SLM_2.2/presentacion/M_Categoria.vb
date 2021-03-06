@@ -152,6 +152,7 @@
     End Sub
     Private Sub dgbtabla_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgbtabla.CellMouseDoubleClick
         Try
+
             Dim n As String = ""
             If (lblform.Text = "M_Cliente") Then
                 If e.RowIndex >= 0 Then
