@@ -16,6 +16,7 @@
     Public mensaje_registro As String = "Registrado exitosamente."
     Public mensaje_actualizacion As String = "Registros actualizados exitosamente."
     Public mensaje_dar_baja As String = "Se ha dado de baja exitosamente."
+    Public id_examen_curva As String
 
     Public Sub CargarDatosGlobales()
         Try
