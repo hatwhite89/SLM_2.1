@@ -477,10 +477,4 @@ Public Class ClsCitologia
 
     End Function
 
-
-
-
-
-
-
 End Class
