@@ -76,9 +76,15 @@ Public Class E_frmGraficaEstatica
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        sAdapter.Update(sTable)
-        DataGridView1.[ReadOnly] = False
-        save_btn.Enabled = True
+        Try
+            sAdapter.Update(sTable)
+            DataGridView1.[ReadOnly] = False
+            save_btn.Enabled = True
+            CargarData()
+        Catch ex As Exception
+
+        End Try
+
         'new_btn.Enabled = True
         'delete_btn.Enabled = True
     End Sub
@@ -146,6 +152,7 @@ Public Class E_frmGraficaEstatica
         Chart1.Titles.Add("FRAGILIDAD OSMOTICA")
         Chart1.ChartAreas(0).AxisX.Title = "% NaCL"
         Chart1.ChartAreas(0).AxisY.Title = "% HEMOLISIS"
+        DataGridView1.Columns(0).Visible = False
 
     End Sub
 

@@ -44,7 +44,10 @@
     End Sub
 
     Private Sub DataGridView2_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellDoubleClick
+
         id_resultado = Integer.Parse(DataGridView2.Rows(e.RowIndex).Cells(6).Value)
-        E_frm_ResultadoIndividual.Show()
+            E_frm_ResultadoIndividual.Show()
+
+
     End Sub
 End Class

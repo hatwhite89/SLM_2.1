@@ -540,4 +540,30 @@
             txtnombreTecnico.Text = ""
         End If
     End Sub
+
+    Private Sub btnverGrafica_Click(sender As Object, e As EventArgs) Handles btnverGrafica.Click
+        'recuperar examen de insulina
+        Dim clsR As New ClsResultados
+        With clsR
+            .Id_orden1 = txtnumero.Text
+        End With
+        'validar si el examen es graficable
+        Try
+            If clsR.RecuperarExamenGraficable() = "1" Then
+                'mostrar mensaje de que el examen no es graficable
+
+                id_examen_curva = txtnumero.Text
+                E_frmCurva.Show()
+            ElseIf clsR.RecuperarExamenGraficable() = "0" Then
+                MsgBox("Este examen no es graficable")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+        'recuperar examen de glucosa
+
+
+
+    End Sub
 End Class
