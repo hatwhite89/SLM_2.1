@@ -60,6 +60,9 @@
                     A_Candidatos.txtArea.Text = txtnombre.Text
                     Me.Close()
                 End If
+
+
+
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)

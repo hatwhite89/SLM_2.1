@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80A97C69-33C1-4D76-A4FF-61E3B54BEE03}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SLM_2._2.M_InicioSesion</StartupObject>
+    <StartupObject>SLM_2._2.A_CentrodeCosto</StartupObject>
     <RootNamespace>SLM_2._2</RootNamespace>
     <AssemblyName>SLM</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -352,6 +352,7 @@
     <Compile Include="negocio\ClsCandidatos.vb" />
     <Compile Include="negocio\ClsCapacitaciones.vb" />
     <Compile Include="negocio\ClsCategoriaroducto.vb" />
+    <Compile Include="negocio\ClsCentroCostos.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
     <Compile Include="negocio\ClsColaPacientes.vb" />
     <Compile Include="negocio\ClsConserje.vb" />
@@ -616,6 +617,12 @@
       <DependentUpon>A_Depositos.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_Depositos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ListadoCentroCosto.Designer.vb">
+      <DependentUpon>A_ListadoCentroCosto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListadoCentroCosto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_ListadoCheques.Designer.vb">
@@ -1892,6 +1899,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Depositos.resx">
       <DependentUpon>A_Depositos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListadoCentroCosto.resx">
+      <DependentUpon>A_ListadoCentroCosto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoCheques.resx">
       <DependentUpon>A_ListadoCheques.vb</DependentUpon>
