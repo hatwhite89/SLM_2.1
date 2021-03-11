@@ -964,7 +964,9 @@ Public Class M_Factura
         txttotal.Text = Math.Ceiling(total)
     End Sub
     Private Sub btnbusquedaExamen_Click(sender As Object, e As EventArgs) Handles btnbusquedaExamen.Click
-        M_BuscarExamen.Show()
+        If btnbusquedaExamen.Enabled Then
+            M_BuscarExamen.Show()
+        End If
     End Sub
 
     Private Sub calcularSaldoPendiente()
