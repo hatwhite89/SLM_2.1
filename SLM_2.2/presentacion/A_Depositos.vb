@@ -438,8 +438,6 @@
             MsgBox(ex.Message)
         End Try
 
-
-
     End Sub
 
     Private Sub txtContado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtContado.KeyPress
