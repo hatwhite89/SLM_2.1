@@ -578,13 +578,13 @@ Partial Class A_FacturaCompras
         '
         'area
         '
-        Me.area.HeaderText = "Area"
+        Me.area.HeaderText = "Centro de Costo"
         Me.area.MaxInputLength = 10
         Me.area.Name = "area"
         '
         'Sede
         '
-        Me.Sede.HeaderText = "Sede"
+        Me.Sede.HeaderText = "Sucursal"
         Me.Sede.MaxInputLength = 10
         Me.Sede.Name = "Sede"
         '

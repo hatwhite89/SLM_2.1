@@ -24,34 +24,34 @@ Partial Class A_CentrodeCosto
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_CentrodeCosto))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.lblCodCuenta = New System.Windows.Forms.Label()
-        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtValor = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.txtDescripcionCuenta = New System.Windows.Forms.TextBox()
-        Me.txtCuenta = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtDescripcion = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtCodigoBreve = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtCodigo = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnCrear = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtCodBreve = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.lblcodArea = New System.Windows.Forms.Label()
+        Me.txtNombreArea = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtId = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.dgvCentroCosto = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvCentroCosto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -59,39 +59,40 @@ Partial Class A_CentrodeCosto
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Button4)
-        Me.Panel1.Controls.Add(Me.Button3)
+        Me.Panel1.Controls.Add(Me.btnCerrar)
+        Me.Panel1.Controls.Add(Me.btnModificar)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.btnGuardar)
+        Me.Panel1.Controls.Add(Me.btnCrear)
         Me.Panel1.Location = New System.Drawing.Point(-1, -1)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(751, 45)
+        Me.Panel1.Size = New System.Drawing.Size(623, 45)
         Me.Panel1.TabIndex = 0
         '
-        'Button4
+        'btnCerrar
         '
-        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.BackColor = System.Drawing.Color.LightSalmon
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Location = New System.Drawing.Point(660, 10)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 4
-        Me.Button4.Text = "Cerrar"
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Location = New System.Drawing.Point(532, 10)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCerrar.TabIndex = 4
+        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = False
         '
-        'Button3
+        'btnModificar
         '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.BackColor = System.Drawing.Color.Yellow
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Location = New System.Drawing.Point(579, 10)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Modificar"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnModificar.BackColor = System.Drawing.Color.Yellow
+        Me.btnModificar.Enabled = False
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Location = New System.Drawing.Point(451, 10)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar.TabIndex = 3
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -104,260 +105,257 @@ Partial Class A_CentrodeCosto
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Centro de Costos"
         '
-        'Button2
+        'btnGuardar
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackColor = System.Drawing.Color.LawnGreen
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(498, 10)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Guardar"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
+        Me.btnGuardar.Enabled = False
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.Location = New System.Drawing.Point(370, 10)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.TabIndex = 2
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btnCrear
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(417, 10)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Crear"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnCrear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCrear.BackColor = System.Drawing.Color.White
+        Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCrear.Location = New System.Drawing.Point(290, 10)
+        Me.btnCrear.Name = "btnCrear"
+        Me.btnCrear.Size = New System.Drawing.Size(74, 23)
+        Me.btnCrear.TabIndex = 1
+        Me.btnCrear.Text = "Crear"
+        Me.btnCrear.UseVisualStyleBackColor = False
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 530)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(618, 22)
+        Me.StatusStrip1.TabIndex = 4
+        Me.StatusStrip1.Text = "StatusStrip1"
         '
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.GroupBox1.Controls.Add(Me.lblCodCuenta)
-        Me.GroupBox1.Controls.Add(Me.dtpFecha)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.txtValor)
+        Me.GroupBox1.Controls.Add(Me.txtCodBreve)
         Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.Button5)
-        Me.GroupBox1.Controls.Add(Me.txtDescripcionCuenta)
-        Me.GroupBox1.Controls.Add(Me.txtCuenta)
+        Me.GroupBox1.Controls.Add(Me.btnBuscar)
+        Me.GroupBox1.Controls.Add(Me.lblcodArea)
+        Me.GroupBox1.Controls.Add(Me.txtNombreArea)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.txtDescripcion)
+        Me.GroupBox1.Controls.Add(Me.txtNombre)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.txtCodigoBreve)
+        Me.GroupBox1.Controls.Add(Me.txtId)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.txtCodigo)
-        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Enabled = False
         Me.GroupBox1.Location = New System.Drawing.Point(12, 50)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(722, 167)
-        Me.GroupBox1.TabIndex = 2
+        Me.GroupBox1.Size = New System.Drawing.Size(594, 136)
+        Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Centro de Costo"
         '
-        'lblCodCuenta
+        'txtCodBreve
         '
-        Me.lblCodCuenta.AutoSize = True
-        Me.lblCodCuenta.Location = New System.Drawing.Point(416, 87)
-        Me.lblCodCuenta.Name = "lblCodCuenta"
-        Me.lblCodCuenta.Size = New System.Drawing.Size(41, 13)
-        Me.lblCodCuenta.TabIndex = 14
-        Me.lblCodCuenta.Text = "Cuenta"
-        '
-        'dtpFecha
-        '
-        Me.dtpFecha.Location = New System.Drawing.Point(100, 136)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(200, 20)
-        Me.dtpFecha.TabIndex = 13
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(54, 139)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(37, 13)
-        Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Fecha"
-        '
-        'txtValor
-        '
-        Me.txtValor.Location = New System.Drawing.Point(100, 110)
-        Me.txtValor.Name = "txtValor"
-        Me.txtValor.Size = New System.Drawing.Size(100, 20)
-        Me.txtValor.TabIndex = 11
+        Me.txtCodBreve.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtCodBreve.Location = New System.Drawing.Point(315, 23)
+        Me.txtCodBreve.Name = "txtCodBreve"
+        Me.txtCodBreve.Size = New System.Drawing.Size(116, 20)
+        Me.txtCodBreve.TabIndex = 9
         '
         'Label6
         '
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(54, 113)
+        Me.Label6.Location = New System.Drawing.Point(251, 26)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(31, 13)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Valor"
+        Me.Label6.Size = New System.Drawing.Size(60, 13)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "Cod. Breve"
         '
-        'Button5
+        'btnBuscar
         '
-        Me.Button5.Location = New System.Drawing.Point(364, 82)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(46, 23)
-        Me.Button5.TabIndex = 9
-        Me.Button5.Text = "..."
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btnBuscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnBuscar.Location = New System.Drawing.Point(436, 75)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(29, 20)
+        Me.btnBuscar.TabIndex = 7
+        Me.btnBuscar.Text = "..."
+        Me.btnBuscar.UseVisualStyleBackColor = True
         '
-        'txtDescripcionCuenta
+        'lblcodArea
         '
-        Me.txtDescripcionCuenta.Location = New System.Drawing.Point(161, 84)
-        Me.txtDescripcionCuenta.Name = "txtDescripcionCuenta"
-        Me.txtDescripcionCuenta.Size = New System.Drawing.Size(196, 20)
-        Me.txtDescripcionCuenta.TabIndex = 8
+        Me.lblcodArea.AutoSize = True
+        Me.lblcodArea.Enabled = False
+        Me.lblcodArea.Location = New System.Drawing.Point(122, 98)
+        Me.lblcodArea.Name = "lblcodArea"
+        Me.lblcodArea.Size = New System.Drawing.Size(47, 13)
+        Me.lblcodArea.TabIndex = 6
+        Me.lblcodArea.Text = "codArea"
         '
-        'txtCuenta
+        'txtNombreArea
         '
-        Me.txtCuenta.Location = New System.Drawing.Point(100, 84)
-        Me.txtCuenta.Name = "txtCuenta"
-        Me.txtCuenta.Size = New System.Drawing.Size(55, 20)
-        Me.txtCuenta.TabIndex = 7
+        Me.txtNombreArea.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtNombreArea.Location = New System.Drawing.Point(125, 75)
+        Me.txtNombreArea.Name = "txtNombreArea"
+        Me.txtNombreArea.Size = New System.Drawing.Size(307, 20)
+        Me.txtNombreArea.TabIndex = 5
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(44, 87)
+        Me.Label5.Location = New System.Drawing.Point(90, 78)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(41, 13)
-        Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Cuenta"
+        Me.Label5.Size = New System.Drawing.Size(29, 13)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "Area"
         '
-        'txtDescripcion
+        'txtNombre
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(100, 58)
-        Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(400, 20)
-        Me.txtDescripcion.TabIndex = 5
+        Me.txtNombre.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtNombre.Location = New System.Drawing.Point(125, 49)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(307, 20)
+        Me.txtNombre.TabIndex = 3
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(22, 61)
+        Me.Label4.Location = New System.Drawing.Point(75, 52)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(63, 13)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Descripción"
+        Me.Label4.Size = New System.Drawing.Size(44, 13)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Nombre"
         '
-        'txtCodigoBreve
+        'txtId
         '
-        Me.txtCodigoBreve.Location = New System.Drawing.Point(374, 32)
-        Me.txtCodigoBreve.Name = "txtCodigoBreve"
-        Me.txtCodigoBreve.Size = New System.Drawing.Size(126, 20)
-        Me.txtCodigoBreve.TabIndex = 3
+        Me.txtId.Enabled = False
+        Me.txtId.Location = New System.Drawing.Point(125, 23)
+        Me.txtId.Name = "txtId"
+        Me.txtId.Size = New System.Drawing.Size(100, 20)
+        Me.txtId.TabIndex = 1
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(308, 35)
+        Me.Label3.Location = New System.Drawing.Point(21, 26)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(60, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Cód. Breve"
-        '
-        'txtCodigo
-        '
-        Me.txtCodigo.Location = New System.Drawing.Point(100, 32)
-        Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
-        Me.txtCodigo.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(56, 32)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(29, 13)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Cód."
+        Me.Label3.Size = New System.Drawing.Size(98, 13)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Id. Centro de Costo"
         '
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
-        Me.GroupBox2.Controls.Add(Me.DataGridView1)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 223)
+        Me.GroupBox2.Controls.Add(Me.dgvCentroCosto)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 192)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(722, 269)
-        Me.GroupBox2.TabIndex = 3
+        Me.GroupBox2.Size = New System.Drawing.Size(594, 326)
+        Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Listado de Centros de Costo"
+        Me.GroupBox2.Text = "Registros"
         '
-        'DataGridView1
+        'dgvCentroCosto
         '
-        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.dgvCentroCosto.AllowUserToAddRows = False
+        Me.dgvCentroCosto.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 19)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(710, 244)
-        Me.DataGridView1.TabIndex = 0
+        Me.dgvCentroCosto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvCentroCosto.BackgroundColor = System.Drawing.Color.White
+        Me.dgvCentroCosto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCentroCosto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column5, Me.Column2, Me.Column3, Me.Column4})
+        Me.dgvCentroCosto.Location = New System.Drawing.Point(6, 19)
+        Me.dgvCentroCosto.Name = "dgvCentroCosto"
+        Me.dgvCentroCosto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvCentroCosto.Size = New System.Drawing.Size(579, 301)
+        Me.dgvCentroCosto.TabIndex = 0
         '
-        'StatusStrip1
+        'Column1
         '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 496)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(746, 22)
-        Me.StatusStrip1.TabIndex = 4
-        Me.StatusStrip1.Text = "StatusStrip1"
+        Me.Column1.HeaderText = "codigo"
+        Me.Column1.Name = "Column1"
+        Me.Column1.Visible = False
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Cod. Breve"
+        Me.Column5.Name = "Column5"
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Nombre"
+        Me.Column2.Name = "Column2"
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Area"
+        Me.Column3.Name = "Column3"
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "AreaLabCodigo"
+        Me.Column4.Name = "Column4"
+        Me.Column4.Visible = False
         '
         'A_CentrodeCosto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(746, 518)
-        Me.Controls.Add(Me.StatusStrip1)
+        Me.ClientSize = New System.Drawing.Size(618, 552)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_CentrodeCosto"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Centros de Costo"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvCentroCosto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnCerrar As Button
+    Friend WithEvents btnModificar As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents txtCodigoBreve As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents txtCodigo As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents dtpFecha As DateTimePicker
-    Friend WithEvents Label7 As Label
-    Friend WithEvents txtValor As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Button5 As Button
-    Friend WithEvents txtDescripcionCuenta As TextBox
-    Friend WithEvents txtCuenta As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents txtDescripcion As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents lblCodCuenta As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnCrear As Button
     Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents btnBuscar As Button
+    Friend WithEvents lblcodArea As Label
+    Friend WithEvents txtNombreArea As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtNombre As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtId As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents dgvCentroCosto As DataGridView
+    Friend WithEvents txtCodBreve As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
 End Class

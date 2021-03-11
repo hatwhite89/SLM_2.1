@@ -277,6 +277,7 @@
     <Compile Include="negocio\ClsCandidatos.vb" />
     <Compile Include="negocio\ClsCapacitaciones.vb" />
     <Compile Include="negocio\ClsCategoriaroducto.vb" />
+    <Compile Include="negocio\ClsCentroCostos.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
     <Compile Include="negocio\ClsColaPacientes.vb" />
     <Compile Include="negocio\ClsConserje.vb" />
@@ -541,6 +542,12 @@
       <DependentUpon>A_Depositos.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\A_Depositos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\A_ListadoCentroCosto.Designer.vb">
+      <DependentUpon>A_ListadoCentroCosto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\A_ListadoCentroCosto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\A_ListadoCheques.Designer.vb">
@@ -1811,6 +1818,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_Depositos.resx">
       <DependentUpon>A_Depositos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\A_ListadoCentroCosto.resx">
+      <DependentUpon>A_ListadoCentroCosto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\A_ListadoCheques.resx">
       <DependentUpon>A_ListadoCheques.vb</DependentUpon>
