@@ -23,6 +23,7 @@ Partial Class Citologia
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtMedico = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -43,6 +44,7 @@ Partial Class Citologia
         Me.txtIdCito = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.btnBuscarCito = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -52,7 +54,12 @@ Partial Class Citologia
         Me.chkIndice = New System.Windows.Forms.CheckBox()
         Me.chkCancer = New System.Windows.Forms.CheckBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.lblfirma2 = New System.Windows.Forms.Label()
+        Me.lblfirma1 = New System.Windows.Forms.Label()
+        Me.lblididentifica = New System.Windows.Forms.Label()
+        Me.txtOtros2 = New System.Windows.Forms.TextBox()
         Me.dtpFechaMuestra2 = New System.Windows.Forms.DateTimePicker()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.dtpFechaMuestra = New System.Windows.Forms.DateTimePicker()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -60,7 +67,7 @@ Partial Class Citologia
         Me.Label20 = New System.Windows.Forms.Label()
         Me.cbxFirma1 = New System.Windows.Forms.ComboBox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.chkSinNota = New System.Windows.Forms.CheckBox()
         Me.cbxIdentificador = New System.Windows.Forms.ComboBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.txtAborto = New System.Windows.Forms.TextBox()
@@ -75,9 +82,6 @@ Partial Class Citologia
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txtDiagnostico = New System.Windows.Forms.RichTextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.txtOtros2 = New System.Windows.Forms.TextBox()
-        Me.Label23 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -114,6 +118,20 @@ Partial Class Citologia
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Factura"
+        '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Arial Rounded MT Bold", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.White
+        Me.Button4.Location = New System.Drawing.Point(430, 139)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(86, 23)
+        Me.Button4.TabIndex = 19
+        Me.Button4.Text = "Editar Factura"
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Button1
         '
@@ -296,6 +314,7 @@ Partial Class Citologia
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.LightGray
+        Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.btnBuscarCito)
         Me.Panel1.Controls.Add(Me.btnGuardar)
         Me.Panel1.Controls.Add(Me.Label10)
@@ -303,6 +322,20 @@ Partial Class Citologia
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(637, 54)
         Me.Panel1.TabIndex = 1
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(466, 10)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(81, 34)
+        Me.Button2.TabIndex = 5
+        Me.Button2.Text = "Actualizar"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'btnBuscarCito
         '
@@ -325,7 +358,7 @@ Partial Class Citologia
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(479, 10)
+        Me.btnGuardar.Location = New System.Drawing.Point(390, 10)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(70, 34)
         Me.btnGuardar.TabIndex = 3
@@ -399,6 +432,9 @@ Partial Class Citologia
         Me.GroupBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.Controls.Add(Me.lblfirma2)
+        Me.GroupBox3.Controls.Add(Me.lblfirma1)
+        Me.GroupBox3.Controls.Add(Me.lblididentifica)
         Me.GroupBox3.Controls.Add(Me.txtOtros2)
         Me.GroupBox3.Controls.Add(Me.dtpFechaMuestra2)
         Me.GroupBox3.Controls.Add(Me.Label23)
@@ -409,7 +445,7 @@ Partial Class Citologia
         Me.GroupBox3.Controls.Add(Me.Label20)
         Me.GroupBox3.Controls.Add(Me.cbxFirma1)
         Me.GroupBox3.Controls.Add(Me.Label19)
-        Me.GroupBox3.Controls.Add(Me.CheckBox3)
+        Me.GroupBox3.Controls.Add(Me.chkSinNota)
         Me.GroupBox3.Controls.Add(Me.cbxIdentificador)
         Me.GroupBox3.Controls.Add(Me.Label18)
         Me.GroupBox3.Controls.Add(Me.txtAborto)
@@ -430,6 +466,42 @@ Partial Class Citologia
         Me.GroupBox3.TabIndex = 21
         Me.GroupBox3.TabStop = False
         '
+        'lblfirma2
+        '
+        Me.lblfirma2.AutoSize = True
+        Me.lblfirma2.Location = New System.Drawing.Point(181, 210)
+        Me.lblfirma2.Name = "lblfirma2"
+        Me.lblfirma2.Size = New System.Drawing.Size(35, 13)
+        Me.lblfirma2.TabIndex = 41
+        Me.lblfirma2.Text = "firma2"
+        '
+        'lblfirma1
+        '
+        Me.lblfirma1.AutoSize = True
+        Me.lblfirma1.Location = New System.Drawing.Point(181, 198)
+        Me.lblfirma1.Name = "lblfirma1"
+        Me.lblfirma1.Size = New System.Drawing.Size(35, 13)
+        Me.lblfirma1.TabIndex = 40
+        Me.lblfirma1.Text = "firma1"
+        '
+        'lblididentifica
+        '
+        Me.lblididentifica.AutoSize = True
+        Me.lblididentifica.Location = New System.Drawing.Point(181, 185)
+        Me.lblididentifica.Name = "lblididentifica"
+        Me.lblididentifica.Size = New System.Drawing.Size(51, 13)
+        Me.lblididentifica.TabIndex = 39
+        Me.lblididentifica.Text = "codIdenti"
+        '
+        'txtOtros2
+        '
+        Me.txtOtros2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtOtros2.Location = New System.Drawing.Point(18, 252)
+        Me.txtOtros2.Name = "txtOtros2"
+        Me.txtOtros2.Size = New System.Drawing.Size(569, 20)
+        Me.txtOtros2.TabIndex = 22
+        '
         'dtpFechaMuestra2
         '
         Me.dtpFechaMuestra2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -438,6 +510,15 @@ Partial Class Citologia
         Me.dtpFechaMuestra2.Name = "dtpFechaMuestra2"
         Me.dtpFechaMuestra2.Size = New System.Drawing.Size(167, 20)
         Me.dtpFechaMuestra2.TabIndex = 38
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(21, 236)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(32, 13)
+        Me.Label23.TabIndex = 21
+        Me.Label23.Text = "Otros"
         '
         'Label22
         '
@@ -506,15 +587,15 @@ Partial Class Citologia
         Me.Label19.TabIndex = 31
         Me.Label19.Text = "Firma 1"
         '
-        'CheckBox3
+        'chkSinNota
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(18, 201)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(110, 17)
-        Me.CheckBox3.TabIndex = 30
-        Me.CheckBox3.Text = "Sin nota Citología"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.chkSinNota.AutoSize = True
+        Me.chkSinNota.Location = New System.Drawing.Point(18, 201)
+        Me.chkSinNota.Name = "chkSinNota"
+        Me.chkSinNota.Size = New System.Drawing.Size(110, 17)
+        Me.chkSinNota.TabIndex = 30
+        Me.chkSinNota.Text = "Sin nota Citología"
+        Me.chkSinNota.UseVisualStyleBackColor = True
         '
         'cbxIdentificador
         '
@@ -640,38 +721,6 @@ Partial Class Citologia
         Me.Label12.TabIndex = 19
         Me.Label12.Text = "Diagnóstico"
         '
-        'Button4
-        '
-        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Arial Rounded MT Bold", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Location = New System.Drawing.Point(430, 139)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(86, 23)
-        Me.Button4.TabIndex = 19
-        Me.Button4.Text = "Editar Factura"
-        Me.Button4.UseVisualStyleBackColor = False
-        '
-        'txtOtros2
-        '
-        Me.txtOtros2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtOtros2.Location = New System.Drawing.Point(18, 252)
-        Me.txtOtros2.Name = "txtOtros2"
-        Me.txtOtros2.Size = New System.Drawing.Size(569, 20)
-        Me.txtOtros2.TabIndex = 22
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(21, 236)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(32, 13)
-        Me.Label23.TabIndex = 21
-        Me.Label23.Text = "Otros"
-        '
         'Citologia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -734,7 +783,7 @@ Partial Class Citologia
     Friend WithEvents Label20 As Label
     Friend WithEvents cbxFirma1 As ComboBox
     Friend WithEvents Label19 As Label
-    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents chkSinNota As CheckBox
     Friend WithEvents cbxIdentificador As ComboBox
     Friend WithEvents Label18 As Label
     Friend WithEvents txtAborto As TextBox
@@ -752,4 +801,8 @@ Partial Class Citologia
     Friend WithEvents Button4 As Button
     Friend WithEvents txtOtros2 As TextBox
     Friend WithEvents Label23 As Label
+    Friend WithEvents lblididentifica As Label
+    Friend WithEvents lblfirma2 As Label
+    Friend WithEvents lblfirma1 As Label
+    Friend WithEvents Button2 As Button
 End Class

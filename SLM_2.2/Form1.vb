@@ -1003,7 +1003,6 @@
     End Sub
 
     Private Sub btnReporteria_Click_1(sender As Object, e As EventArgs) Handles btnReporteria.Click
-        M_ReporteriaTalentoHumano.Show()
         M_ReporteriaTalentoHumano.BringToFront()
         M_ReporteriaTalentoHumano.WindowState = FormWindowState.Normal
     End Sub
@@ -1530,5 +1529,9 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub PictureBox22_Click(sender As Object, e As EventArgs) Handles PictureBox22.Click
+        Resultados.Show()
     End Sub
 End Class

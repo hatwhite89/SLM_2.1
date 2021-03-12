@@ -27,6 +27,7 @@ Partial Class E_frmCurva
         Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Horas")
         Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("mg /dL")
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_frmCurva))
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -64,6 +65,7 @@ Partial Class E_frmCurva
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -226,6 +228,7 @@ Partial Class E_frmCurva
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Controls.Add(Me.TextBox7)
         Me.Panel3.Controls.Add(Me.TextBox6)
         Me.Panel3.Controls.Add(Me.TextBox5)
@@ -247,7 +250,7 @@ Partial Class E_frmCurva
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(656, 40)
+        Me.TextBox7.Location = New System.Drawing.Point(447, 48)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.ReadOnly = True
         Me.TextBox7.Size = New System.Drawing.Size(100, 20)
@@ -312,7 +315,7 @@ Partial Class E_frmCurva
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(577, 47)
+        Me.Label6.Location = New System.Drawing.Point(368, 55)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(65, 13)
         Me.Label6.TabIndex = 5
@@ -446,6 +449,17 @@ Partial Class E_frmCurva
         Me.Panel5.Size = New System.Drawing.Size(244, 110)
         Me.Panel5.TabIndex = 14
         '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.Yellow
+        Me.Button1.Location = New System.Drawing.Point(656, 46)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(100, 23)
+        Me.Button1.TabIndex = 14
+        Me.Button1.Text = "Buscar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'E_frmCurva
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -458,6 +472,7 @@ Partial Class E_frmCurva
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Chart1)
         Me.Controls.Add(Me.Panel4)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "E_frmCurva"
         Me.Text = "Curva de tolerancia"
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -513,4 +528,5 @@ Partial Class E_frmCurva
     Friend WithEvents Label16 As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel5 As Panel
+    Friend WithEvents Button1 As Button
 End Class

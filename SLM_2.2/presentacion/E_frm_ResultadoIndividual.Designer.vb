@@ -29,7 +29,7 @@ Partial Class E_frm_ResultadoIndividual
         '
         'CrystalReportViewer1
         '
-        Me.CrystalReportViewer1.ActiveViewIndex = -1
+        Me.CrystalReportViewer1.ActiveViewIndex = 0
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -38,6 +38,11 @@ Partial Class E_frm_ResultadoIndividual
         Me.CrystalReportViewer1.ReportSource = Me.E_ReporteResultadoIndividual1
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(800, 450)
         Me.CrystalReportViewer1.TabIndex = 0
+        '
+        'E_ReporteResultadoIndividual1
+        '
+        Me.E_ReporteResultadoIndividual1.FileName = "rassdk://C:\Users\malva\AppData\Local\Temp\temp_b935bf4f-28f2-4f2b-b4d2-d1ee7c02c" &
+    "2aa.rpt"
         '
         'E_frm_ResultadoIndividual
         '

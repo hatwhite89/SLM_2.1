@@ -76,7 +76,7 @@
 
                     End If ' if detalle de factura
 
-                    ':::::::::::::::ASIENTO CONTABLE DE FACTURA DE COMPRA
+                    '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::ASIENTO CONTABLE DE FACTURA DE COMPRA
 
                     Dim asiento As New ClsAsientoContable
                     Dim detalleasiento As New ClsDetalleAsiento
@@ -139,8 +139,6 @@
                     Next
 
                     ':::::::::::::::::FIN ASIENTO CONTABLE
-
-
 
                     MessageBox.Show("La factura se registro exitosamente.")
                 Catch ex As Exception

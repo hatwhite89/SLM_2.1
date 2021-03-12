@@ -10,6 +10,17 @@ Public Class E_frmCurva
     Public enunciado As SqlCommand
     Dim sTable As DataTable
     Private Sub E_frmCurva_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TextBox1.Text = id_examen_curva
+        alternarColoFilasDatagridview(DataGridView1)
+        cargarDataTolerancia()
+        generarGrafica()
+    End Sub
+
+    Public Sub cargarDataGlucosa()
+
+    End Sub
+    Public Sub generarGrafica()
+
         Dim cnn3 As New SqlConnection
         Dim cmd3 As New SqlCommand
         Dim clsC As New ClsConnection
@@ -20,7 +31,7 @@ Public Class E_frmCurva
 SUBSTRING (ot.resultado, 0, Len(ot.resultado) - 1 ) as resultado  from OrdenTrabajoDetalle ot, ItemExamenDetalle i,Item_Examenes ie,HorasParametros h
 where ot.cod_item_examen_detalle = i.codigo and ie.codItemExa = i.codigoItemExamen
 and i.codigo = h.id_parametro
-and ot.cod_orden_trabajo =1203 
+and ot.cod_orden_trabajo ='" + TextBox1.Text + "' 
 order by h.hora"
         Dim oData As New SqlDataAdapter(tblFields, cnn3)
         Dim ds As New DataSet
@@ -53,19 +64,24 @@ order by h.hora"
         Chart1.Series("Series2").BorderWidth = 2
         Chart1.Series("Series1").Color = Color.OrangeRed
 
-        chart1.Series("Series1").MarkerStyle = MarkerStyle.Diamond
+        Chart1.Series("Series1").MarkerStyle = MarkerStyle.Diamond
         Chart1.Series("Series1").MarkerColor = Color.Black
         Chart1.Series("Series1").MarkerBorderColor = Color.Black
         Chart1.Series("Series1").MarkerSize = 7
 
         Chart1.Series("Series1").IsVisibleInLegend = True
         'Chart1.Series(0).Points(0).AxisLabel.ToString()
-        alternarColoFilasDatagridview(DataGridView1)
-        cargarDataTolerancia()
     End Sub
+
     Private Sub cargarDataTolerancia()
         Dim clsOCOB As New ClsResultados
-        Dim dv As DataView = clsOCOB.RecuperarToleranciaInsulina().DefaultView
+        Dim dv As DataView
+        Try
+            dv = clsOCOB.RecuperarToleranciaInsulina(TextBox1.Text).DefaultView
+        Catch ex As Exception
+
+        End Try
+
 
         'dv.RowFilter = String.Format("CONVERT(lote+nombre_producto+id_producto, System.String) LIKE '%{0}%'", TextBox2.Text)
         DataGridView1.DataSource = dv
@@ -81,7 +97,7 @@ order by h.hora"
 paciente,c.genero,c.fechaNacimiento,m.nombre_completo as medico
 from OrdenDeTrabajo ot, Factura f,cliente c,Sede s,Medico m
 where ot.cod_factura = f.numero and f.codigoCliente =c.codigo and s.codigo =ot.cod_sede and m.codigo = f.codigoMedico
-and ot.cod_orden_trabajo =1203", clsC.getConexion)
+and ot.cod_orden_trabajo ='" + TextBox1.Text + "'", clsC.getConexion)
             respuesta = enunciado.ExecuteReader()
             While respuesta.Read
                 TextBox1.Text = respuesta.Item("cod_orden_trabajo")
@@ -97,5 +113,10 @@ and ot.cod_orden_trabajo =1203", clsC.getConexion)
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+
     End Sub
 End Class
