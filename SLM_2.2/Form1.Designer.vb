@@ -862,7 +862,7 @@ Partial Class Form1
         '
         Me.pbxTipoClasificacion.BackColor = System.Drawing.Color.Transparent
         Me.pbxTipoClasificacion.Image = Global.SLM_2._2.My.Resources.Resources.facturacion_57
-        Me.pbxTipoClasificacion.Location = New System.Drawing.Point(412, 274)
+        Me.pbxTipoClasificacion.Location = New System.Drawing.Point(413, 279)
         Me.pbxTipoClasificacion.Name = "pbxTipoClasificacion"
         Me.pbxTipoClasificacion.Size = New System.Drawing.Size(86, 120)
         Me.pbxTipoClasificacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom

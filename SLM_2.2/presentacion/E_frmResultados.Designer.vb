@@ -52,6 +52,7 @@ Partial Class Resultados
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.BindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -242,6 +243,7 @@ Partial Class Resultados
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Button6)
         Me.TabPage2.Controls.Add(Me.TextBox1)
         Me.TabPage2.Controls.Add(Me.Button3)
         Me.TabPage2.Controls.Add(Me.GroupBox2)
@@ -334,6 +336,15 @@ Partial Class Resultados
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "Busqueda por identidad"
         '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(463, 10)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 23)
+        Me.Button6.TabIndex = 15
+        Me.Button6.Text = "Button6"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'Resultados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -398,4 +409,5 @@ Partial Class Resultados
     Friend WithEvents Button5 As Button
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As MaskedTextBox
+    Friend WithEvents Button6 As Button
 End Class

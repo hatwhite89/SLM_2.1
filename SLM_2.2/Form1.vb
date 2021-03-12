@@ -1530,4 +1530,8 @@
 
         End Try
     End Sub
+
+    Private Sub PictureBox22_Click(sender As Object, e As EventArgs) Handles PictureBox22.Click
+        Resultados.Show()
+    End Sub
 End Class

@@ -1,4 +1,7 @@
-﻿Public Class Resultados
+﻿Imports CrystalDecisions.CrystalReports.Engine
+Imports CrystalDecisions.Shared
+
+Public Class Resultados
     Dim numeroFactura As Integer
     Private Sub E_frmResultados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         alternarColoFilasDatagridview(DataGridView1)
@@ -46,8 +49,15 @@
     Private Sub DataGridView2_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellDoubleClick
 
         id_resultado = Integer.Parse(DataGridView2.Rows(e.RowIndex).Cells(6).Value)
-            E_frm_ResultadoIndividual.Show()
+        E_frm_ResultadoIndividual.Show()
 
+
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Dim Report As CrystalDecisions.CrystalReports.Engine.ReportDocument = New CrystalDecisions.CrystalReports.Engine.ReportDocument
+        Report.Load(System.AppDomain.CurrentDomain.BaseDirectory() & "E_ReporteResultadoIndividual.rpt")
+        Report.ExportToDisk(ExportFormatType.PortableDocFormat, "resultado.pdf")
 
     End Sub
 End Class
