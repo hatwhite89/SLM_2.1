@@ -24,13 +24,13 @@ Partial Class A_ListarFacCompraPagos
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListarFacCompraPagos))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtCorrelativo = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtFacturasCompra = New System.Windows.Forms.DataGridView()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.txtCorrelativo = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtFacturasCompra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -53,6 +53,23 @@ Partial Class A_ListarFacCompraPagos
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Facturas de Compra"
+        '
+        'txtCorrelativo
+        '
+        Me.txtCorrelativo.Location = New System.Drawing.Point(260, 36)
+        Me.txtCorrelativo.MaxLength = 30
+        Me.txtCorrelativo.Name = "txtCorrelativo"
+        Me.txtCorrelativo.Size = New System.Drawing.Size(237, 20)
+        Me.txtCorrelativo.TabIndex = 5
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(263, 20)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(57, 13)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Correlativo"
         '
         'btnCancelar
         '
@@ -108,23 +125,6 @@ Partial Class A_ListarFacCompraPagos
         Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
         Me.StatusStrip1.TabIndex = 1
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'txtCorrelativo
-        '
-        Me.txtCorrelativo.Location = New System.Drawing.Point(260, 36)
-        Me.txtCorrelativo.MaxLength = 30
-        Me.txtCorrelativo.Name = "txtCorrelativo"
-        Me.txtCorrelativo.Size = New System.Drawing.Size(237, 20)
-        Me.txtCorrelativo.TabIndex = 5
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(263, 20)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 13)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Correlativo"
         '
         'A_ListarFacCompraPagos
         '

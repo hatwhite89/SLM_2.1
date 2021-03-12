@@ -24,10 +24,10 @@ Partial Class A_ListadoFacturaCompra
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListadoFacturaCompra))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.dtFacturasCompra = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dtpHasta = New System.Windows.Forms.DateTimePicker()
         Me.dtpDesde = New System.Windows.Forms.DateTimePicker()
-        Me.dtFacturasCompra = New System.Windows.Forms.DataGridView()
         Me.btnCrearNueva = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
@@ -39,11 +39,11 @@ Partial Class A_ListadoFacturaCompra
         Me.chkPendientes = New System.Windows.Forms.CheckBox()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtFacturasCompra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -64,6 +64,26 @@ Partial Class A_ListadoFacturaCompra
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Registros"
+        '
+        'dtFacturasCompra
+        '
+        Me.dtFacturasCompra.AllowUserToAddRows = False
+        Me.dtFacturasCompra.AllowUserToDeleteRows = False
+        Me.dtFacturasCompra.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtFacturasCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dtFacturasCompra.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dtFacturasCompra.BackgroundColor = System.Drawing.Color.White
+        Me.dtFacturasCompra.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.dtFacturasCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtFacturasCompra.GridColor = System.Drawing.Color.White
+        Me.dtFacturasCompra.Location = New System.Drawing.Point(6, 19)
+        Me.dtFacturasCompra.Name = "dtFacturasCompra"
+        Me.dtFacturasCompra.ReadOnly = True
+        Me.dtFacturasCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtFacturasCompra.Size = New System.Drawing.Size(772, 260)
+        Me.dtFacturasCompra.TabIndex = 0
         '
         'Label4
         '
@@ -89,26 +109,6 @@ Partial Class A_ListadoFacturaCompra
         Me.dtpDesde.Name = "dtpDesde"
         Me.dtpDesde.Size = New System.Drawing.Size(98, 20)
         Me.dtpDesde.TabIndex = 4
-        '
-        'dtFacturasCompra
-        '
-        Me.dtFacturasCompra.AllowUserToAddRows = False
-        Me.dtFacturasCompra.AllowUserToDeleteRows = False
-        Me.dtFacturasCompra.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dtFacturasCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dtFacturasCompra.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.dtFacturasCompra.BackgroundColor = System.Drawing.Color.White
-        Me.dtFacturasCompra.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.dtFacturasCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtFacturasCompra.GridColor = System.Drawing.Color.White
-        Me.dtFacturasCompra.Location = New System.Drawing.Point(6, 19)
-        Me.dtFacturasCompra.Name = "dtFacturasCompra"
-        Me.dtFacturasCompra.ReadOnly = True
-        Me.dtFacturasCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtFacturasCompra.Size = New System.Drawing.Size(772, 260)
-        Me.dtFacturasCompra.TabIndex = 0
         '
         'btnCrearNueva
         '
@@ -225,6 +225,19 @@ Partial Class A_ListadoFacturaCompra
         Me.Panel2.Size = New System.Drawing.Size(808, 43)
         Me.Panel2.TabIndex = 23
         '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.Color.Green
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button2.Location = New System.Drawing.Point(443, 10)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 18
+        Me.Button2.Text = "Exportar"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -283,19 +296,6 @@ Partial Class A_ListadoFacturaCompra
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 14
         Me.PictureBox1.TabStop = False
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackColor = System.Drawing.Color.Green
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button2.Location = New System.Drawing.Point(443, 10)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 18
-        Me.Button2.Text = "Exportar"
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'A_ListadoFacturaCompra
         '

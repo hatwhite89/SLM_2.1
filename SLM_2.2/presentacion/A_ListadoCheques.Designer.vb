@@ -25,6 +25,7 @@ Partial Class A_ListadoCheques
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListadoCheques))
         Me.gbxCheque = New System.Windows.Forms.GroupBox()
+        Me.txtCodBreve = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -40,7 +41,6 @@ Partial Class A_ListadoCheques
         Me.dtCheques = New System.Windows.Forms.DataGridView()
         Me.ttBusqueda = New System.Windows.Forms.ToolTip(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.txtCodBreve = New System.Windows.Forms.TextBox()
         Me.gbxCheque.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtCheques, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +71,13 @@ Partial Class A_ListadoCheques
         Me.gbxCheque.TabIndex = 0
         Me.gbxCheque.TabStop = False
         Me.gbxCheque.Text = "Cheques Generados"
+        '
+        'txtCodBreve
+        '
+        Me.txtCodBreve.Location = New System.Drawing.Point(92, 49)
+        Me.txtCodBreve.Name = "txtCodBreve"
+        Me.txtCodBreve.Size = New System.Drawing.Size(79, 20)
+        Me.txtCodBreve.TabIndex = 13
         '
         'Button2
         '
@@ -207,13 +214,6 @@ Partial Class A_ListadoCheques
         Me.StatusStrip1.Size = New System.Drawing.Size(942, 22)
         Me.StatusStrip1.TabIndex = 1
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'txtCodBreve
-        '
-        Me.txtCodBreve.Location = New System.Drawing.Point(92, 49)
-        Me.txtCodBreve.Name = "txtCodBreve"
-        Me.txtCodBreve.Size = New System.Drawing.Size(79, 20)
-        Me.txtCodBreve.TabIndex = 13
         '
         'A_ListadoCheques
         '

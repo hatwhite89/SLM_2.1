@@ -34,12 +34,6 @@ Partial Class A_PlanillaCalculo
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnExportarExcel = New System.Windows.Forms.Button()
         Me.dtData = New System.Windows.Forms.DataGridView()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.btnGenerar = New System.Windows.Forms.Button()
-        Me.btnCargar = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Empleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SueldoBase = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Adicional = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -59,6 +53,12 @@ Partial Class A_PlanillaCalculo
         Me.RetRAP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SueldoNeto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CodEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.btnGenerar = New System.Windows.Forms.Button()
+        Me.btnCargar = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dtData, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -186,77 +186,6 @@ Partial Class A_PlanillaCalculo
         Me.dtData.Size = New System.Drawing.Size(807, 332)
         Me.dtData.TabIndex = 0
         '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.btnCerrar)
-        Me.Panel1.Controls.Add(Me.btnGenerar)
-        Me.Panel1.Controls.Add(Me.btnCargar)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(-1, -1)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(848, 47)
-        Me.Panel1.TabIndex = 2
-        '
-        'btnCerrar
-        '
-        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
-        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(739, 10)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(93, 23)
-        Me.btnCerrar.TabIndex = 3
-        Me.btnCerrar.Text = "Cerrar"
-        Me.btnCerrar.UseVisualStyleBackColor = False
-        '
-        'btnGenerar
-        '
-        Me.btnGenerar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGenerar.BackColor = System.Drawing.Color.Yellow
-        Me.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGenerar.Location = New System.Drawing.Point(642, 10)
-        Me.btnGenerar.Name = "btnGenerar"
-        Me.btnGenerar.Size = New System.Drawing.Size(93, 23)
-        Me.btnGenerar.TabIndex = 2
-        Me.btnGenerar.Text = "Generar Vista"
-        Me.btnGenerar.UseVisualStyleBackColor = False
-        '
-        'btnCargar
-        '
-        Me.btnCargar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCargar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCargar.Location = New System.Drawing.Point(543, 10)
-        Me.btnCargar.Name = "btnCargar"
-        Me.btnCargar.Size = New System.Drawing.Size(93, 23)
-        Me.btnCargar.TabIndex = 1
-        Me.btnCargar.Text = "Cargar Planilla"
-        Me.btnCargar.UseVisualStyleBackColor = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(14, 10)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(190, 25)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Cálculo de Planilla"
-        '
-        'Panel2
-        '
-        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.Panel2.Location = New System.Drawing.Point(-1, 516)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(848, 25)
-        Me.Panel2.TabIndex = 3
-        '
         'Empleado
         '
         Me.Empleado.Frozen = True
@@ -357,6 +286,77 @@ Partial Class A_PlanillaCalculo
         Me.CodEmpleado.HeaderText = "CodEmpleado"
         Me.CodEmpleado.Name = "CodEmpleado"
         Me.CodEmpleado.Visible = False
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnCerrar)
+        Me.Panel1.Controls.Add(Me.btnGenerar)
+        Me.Panel1.Controls.Add(Me.btnCargar)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(-1, -1)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(848, 47)
+        Me.Panel1.TabIndex = 2
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Location = New System.Drawing.Point(739, 10)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(93, 23)
+        Me.btnCerrar.TabIndex = 3
+        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
+        'btnGenerar
+        '
+        Me.btnGenerar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGenerar.BackColor = System.Drawing.Color.Yellow
+        Me.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGenerar.Location = New System.Drawing.Point(642, 10)
+        Me.btnGenerar.Name = "btnGenerar"
+        Me.btnGenerar.Size = New System.Drawing.Size(93, 23)
+        Me.btnGenerar.TabIndex = 2
+        Me.btnGenerar.Text = "Generar Vista"
+        Me.btnGenerar.UseVisualStyleBackColor = False
+        '
+        'btnCargar
+        '
+        Me.btnCargar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCargar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCargar.Location = New System.Drawing.Point(543, 10)
+        Me.btnCargar.Name = "btnCargar"
+        Me.btnCargar.Size = New System.Drawing.Size(93, 23)
+        Me.btnCargar.TabIndex = 1
+        Me.btnCargar.Text = "Cargar Planilla"
+        Me.btnCargar.UseVisualStyleBackColor = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(14, 10)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(190, 25)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Cálculo de Planilla"
+        '
+        'Panel2
+        '
+        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Panel2.Location = New System.Drawing.Point(-1, 516)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(848, 25)
+        Me.Panel2.TabIndex = 3
         '
         'A_PlanillaCalculo
         '

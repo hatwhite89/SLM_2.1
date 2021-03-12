@@ -43,6 +43,12 @@ Partial Class E_frmOrdenCompra
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.id_detalle_oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_unitario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.costo_total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label32 = New System.Windows.Forms.Label()
@@ -161,12 +167,6 @@ Partial Class E_frmOrdenCompra
         Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.id_detalle_oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre_producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio_unitario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.costo_total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -360,6 +360,42 @@ Partial Class E_frmOrdenCompra
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.Size = New System.Drawing.Size(1025, 205)
         Me.DataGridView1.TabIndex = 0
+        '
+        'id_detalle_oc
+        '
+        Me.id_detalle_oc.DataPropertyName = "id_detalle_oc"
+        Me.id_detalle_oc.HeaderText = "IDOC"
+        Me.id_detalle_oc.Name = "id_detalle_oc"
+        '
+        'id_producto1
+        '
+        Me.id_producto1.DataPropertyName = "cod_producto"
+        Me.id_producto1.HeaderText = "IDPRODUCTO"
+        Me.id_producto1.Name = "id_producto1"
+        '
+        'nombre_producto1
+        '
+        Me.nombre_producto1.DataPropertyName = "nombre_producto"
+        Me.nombre_producto1.HeaderText = "PRODUCTO"
+        Me.nombre_producto1.Name = "nombre_producto1"
+        '
+        'precio_unitario
+        '
+        Me.precio_unitario.DataPropertyName = "precio_unitario"
+        Me.precio_unitario.HeaderText = "PRECIO"
+        Me.precio_unitario.Name = "precio_unitario"
+        '
+        'cantidad
+        '
+        Me.cantidad.DataPropertyName = "cantidad_recibida"
+        Me.cantidad.HeaderText = "CANTIDAD"
+        Me.cantidad.Name = "cantidad"
+        '
+        'costo_total
+        '
+        Me.costo_total.DataPropertyName = "costo_total"
+        Me.costo_total.HeaderText = "TOTAL"
+        Me.costo_total.Name = "costo_total"
         '
         'Panel5
         '
@@ -1526,42 +1562,6 @@ Partial Class E_frmOrdenCompra
         Me.StatusStrip1.Size = New System.Drawing.Size(1065, 22)
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'id_detalle_oc
-        '
-        Me.id_detalle_oc.DataPropertyName = "id_detalle_oc"
-        Me.id_detalle_oc.HeaderText = "IDOC"
-        Me.id_detalle_oc.Name = "id_detalle_oc"
-        '
-        'id_producto1
-        '
-        Me.id_producto1.DataPropertyName = "cod_producto"
-        Me.id_producto1.HeaderText = "IDPRODUCTO"
-        Me.id_producto1.Name = "id_producto1"
-        '
-        'nombre_producto1
-        '
-        Me.nombre_producto1.DataPropertyName = "nombre_producto"
-        Me.nombre_producto1.HeaderText = "PRODUCTO"
-        Me.nombre_producto1.Name = "nombre_producto1"
-        '
-        'precio_unitario
-        '
-        Me.precio_unitario.DataPropertyName = "precio_unitario"
-        Me.precio_unitario.HeaderText = "PRECIO"
-        Me.precio_unitario.Name = "precio_unitario"
-        '
-        'cantidad
-        '
-        Me.cantidad.DataPropertyName = "cantidad_recibida"
-        Me.cantidad.HeaderText = "CANTIDAD"
-        Me.cantidad.Name = "cantidad"
-        '
-        'costo_total
-        '
-        Me.costo_total.DataPropertyName = "costo_total"
-        Me.costo_total.HeaderText = "TOTAL"
-        Me.costo_total.Name = "costo_total"
         '
         'E_frmOrdenCompra
         '
