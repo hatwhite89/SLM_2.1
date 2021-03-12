@@ -270,6 +270,30 @@ Public Class ClsValoresReferencia
 
     End Function
     'Buscar valor de referencia DEL PARAMETROS
+    Public Function buscarValorReferenciaHojaTrabajo(ByVal nombreParametro_ As String, ByVal cod_orden_trabajo_ As Integer, ByVal genero_ As Char) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "M_slmBuscarValoresReferenciaHojaTrabajo"
+            cmd.Parameters.Add("@nombreParametro", SqlDbType.VarChar).Value = nombreParametro_
+            cmd.Parameters.Add("@cod_orden_trabajo", SqlDbType.Int).Value = cod_orden_trabajo_
+            cmd.Parameters.Add("@genero", SqlDbType.Char).Value = genero_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
+    'Buscar valor de referencia DEL PARAMETROS
     Public Function buscarValorReferenciaParametro(ByVal nombreParametro_ As String) As DataTable
 
         Dim objCon As New ClsConnection

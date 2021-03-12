@@ -1212,6 +1212,31 @@ Public Class M_Factura
             MsgBox("Error. Cola: ", ex.Message)
         End Try
     End Sub
+    Private Sub txtEfectivo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtEfectivo.KeyPress
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub txtTransferencia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTransferencia.KeyPress
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub txtCheque_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCheque.KeyPress
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub txtTarjeta_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTarjeta.KeyPress
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub txtDeposito_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDeposito.KeyPress
+        If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
     Private Sub txtcodigoCliente_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigoCliente.KeyPress
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
             e.Handled = True
@@ -2262,17 +2287,19 @@ Public Class M_Factura
                 row = dt.Rows(index)
                 subtotalF += Convert.ToDouble(row("precio"))
             Next
-            descuentoF = subtotalF - Convert.ToDouble(txttotal.Text)
+
+            subtotalF = Math.Ceiling(subtotalF)
+            descuentoF = Math.Ceiling(subtotalF - Convert.ToDouble(txttotal.Text))
 
             If Convert.ToDouble(txtpagoPaciente.Text) > Convert.ToDouble(txttotal.Text) Then
                 abonoF = Convert.ToDouble(txttotal.Text)
                 saldoF = 0
             ElseIf txtvuelto.Visible = False Then
                 abonoF = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txtvuelto2.Text)
-                saldoF = Convert.ToDouble(txttotal.Text) - abonoF
+                saldoF = Math.Ceiling(Convert.ToDouble(txttotal.Text) - abonoF)
             Else
                 abonoF = Convert.ToDouble(txtpagoPaciente.Text)
-                saldoF = Convert.ToDouble(txttotal.Text) - abonoF
+                saldoF = Math.Ceiling(Convert.ToDouble(txttotal.Text) - abonoF)
             End If
 
         Catch ex As Exception
@@ -2298,17 +2325,19 @@ Public Class M_Factura
                 subtotalF += Convert.ToDouble(row("precio"))
                 dgblistadoExamenes.Rows(index).Cells(8).Value() = CStr(row("numero"))
             Next
-            descuentoF = subtotalF - Convert.ToDouble(txttotal.Text)
+
+            subtotalF = Math.Ceiling(subtotalF)
+            descuentoF = Math.Ceiling(subtotalF - Convert.ToDouble(txttotal.Text))
 
             If Convert.ToDouble(txtpagoPaciente.Text) > Convert.ToDouble(txttotal.Text) Then
                 abonoF = Convert.ToDouble(txttotal.Text)
                 saldoF = 0
             ElseIf txtvuelto.Visible = False Then
                 abonoF = Convert.ToDouble(txtpagoPaciente.Text) - Convert.ToDouble(txtvuelto2.Text)
-                saldoF = Convert.ToDouble(txttotal.Text) - abonoF
+                saldoF = Math.Ceiling(Convert.ToDouble(txttotal.Text) - abonoF)
             Else
                 abonoF = Convert.ToDouble(txtpagoPaciente.Text)
-                saldoF = Convert.ToDouble(txttotal.Text) - abonoF
+                saldoF = Math.Ceiling(Convert.ToDouble(txttotal.Text) - abonoF)
             End If
 
         Catch ex As Exception
