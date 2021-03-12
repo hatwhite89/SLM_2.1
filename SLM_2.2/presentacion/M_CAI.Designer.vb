@@ -44,20 +44,20 @@ Partial Class M_CAI
         Me.txtcodigoMaquina = New System.Windows.Forms.TextBox()
         Me.lblCodeMaquinaLocal = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label61 = New System.Windows.Forms.Label()
+        Me.Label60 = New System.Windows.Forms.Label()
         Me.lblCodigo = New System.Windows.Forms.Label()
         Me.chkEstado = New System.Windows.Forms.CheckBox()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label61 = New System.Windows.Forms.Label()
-        Me.Label60 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -65,36 +65,40 @@ Partial Class M_CAI
         'lblCAI
         '
         Me.lblCAI.AutoSize = True
-        Me.lblCAI.Location = New System.Drawing.Point(111, 36)
+        Me.lblCAI.Location = New System.Drawing.Point(83, 29)
+        Me.lblCAI.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCAI.Name = "lblCAI"
-        Me.lblCAI.Size = New System.Drawing.Size(33, 17)
+        Me.lblCAI.Size = New System.Drawing.Size(27, 13)
         Me.lblCAI.TabIndex = 0
         Me.lblCAI.Text = "CAI:"
         '
         'lbldesde
         '
         Me.lbldesde.AutoSize = True
-        Me.lbldesde.Location = New System.Drawing.Point(78, 98)
+        Me.lbldesde.Location = New System.Drawing.Point(58, 80)
+        Me.lbldesde.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbldesde.Name = "lbldesde"
-        Me.lbldesde.Size = New System.Drawing.Size(53, 17)
+        Me.lbldesde.Size = New System.Drawing.Size(41, 13)
         Me.lbldesde.TabIndex = 1
         Me.lbldesde.Text = "Desde:"
         '
         'lblhasta
         '
         Me.lblhasta.AutoSize = True
-        Me.lblhasta.Location = New System.Drawing.Point(433, 107)
+        Me.lblhasta.Location = New System.Drawing.Point(325, 87)
+        Me.lblhasta.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblhasta.Name = "lblhasta"
-        Me.lblhasta.Size = New System.Drawing.Size(49, 17)
+        Me.lblhasta.Size = New System.Drawing.Size(38, 13)
         Me.lblhasta.TabIndex = 2
         Me.lblhasta.Text = "Hasta:"
         '
         'lblDesdeF
         '
         Me.lblDesdeF.AutoSize = True
-        Me.lblDesdeF.Location = New System.Drawing.Point(43, 64)
+        Me.lblDesdeF.Location = New System.Drawing.Point(32, 52)
+        Me.lblDesdeF.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblDesdeF.Name = "lblDesdeF"
-        Me.lblDesdeF.Size = New System.Drawing.Size(96, 17)
+        Me.lblDesdeF.Size = New System.Drawing.Size(74, 13)
         Me.lblDesdeF.TabIndex = 3
         Me.lblDesdeF.Text = "Desde Fecha:"
         '
@@ -105,10 +109,10 @@ Partial Class M_CAI
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(861, 7)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btncancelar.Location = New System.Drawing.Point(646, 6)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btncancelar.Name = "btncancelar"
-        Me.btncancelar.Size = New System.Drawing.Size(91, 34)
+        Me.btncancelar.Size = New System.Drawing.Size(68, 28)
         Me.btncancelar.TabIndex = 112
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = False
@@ -120,10 +124,10 @@ Partial Class M_CAI
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnnuevo.Location = New System.Drawing.Point(501, 7)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnnuevo.Location = New System.Drawing.Point(376, 6)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(105, 34)
+        Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
         Me.btnnuevo.TabIndex = 114
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.UseVisualStyleBackColor = False
@@ -135,106 +139,109 @@ Partial Class M_CAI
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnguardar.Location = New System.Drawing.Point(612, 7)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnguardar.Location = New System.Drawing.Point(459, 6)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(96, 34)
+        Me.btnguardar.Size = New System.Drawing.Size(72, 28)
         Me.btnguardar.TabIndex = 113
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = False
         '
         'mtxtCAI
         '
-        Me.mtxtCAI.Location = New System.Drawing.Point(153, 27)
-        Me.mtxtCAI.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.mtxtCAI.Location = New System.Drawing.Point(115, 22)
+        Me.mtxtCAI.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.mtxtCAI.Mask = "AAAAAA-AAAAAA-AAAAAA-AAAAAA-AAAAAA-AA"
         Me.mtxtCAI.Name = "mtxtCAI"
-        Me.mtxtCAI.Size = New System.Drawing.Size(532, 22)
+        Me.mtxtCAI.Size = New System.Drawing.Size(400, 20)
         Me.mtxtCAI.TabIndex = 116
         Me.mtxtCAI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblhastaF
         '
         Me.lblhastaF.AutoSize = True
-        Me.lblhastaF.Location = New System.Drawing.Point(383, 65)
+        Me.lblhastaF.Location = New System.Drawing.Point(287, 53)
+        Me.lblhastaF.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblhastaF.Name = "lblhastaF"
-        Me.lblhastaF.Size = New System.Drawing.Size(92, 17)
+        Me.lblhastaF.Size = New System.Drawing.Size(71, 13)
         Me.lblhastaF.TabIndex = 117
         Me.lblhastaF.Text = "Hasta Fecha:"
         '
         'lblserie
         '
         Me.lblserie.AutoSize = True
-        Me.lblserie.Location = New System.Drawing.Point(433, 143)
+        Me.lblserie.Location = New System.Drawing.Point(325, 116)
+        Me.lblserie.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblserie.Name = "lblserie"
-        Me.lblserie.Size = New System.Drawing.Size(45, 17)
+        Me.lblserie.Size = New System.Drawing.Size(34, 13)
         Me.lblserie.TabIndex = 118
         Me.lblserie.Text = "Serie:"
         '
         'lblmaquinaLocal
         '
         Me.lblmaquinaLocal.AutoSize = True
-        Me.lblmaquinaLocal.Location = New System.Drawing.Point(35, 139)
+        Me.lblmaquinaLocal.Location = New System.Drawing.Point(26, 113)
+        Me.lblmaquinaLocal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblmaquinaLocal.Name = "lblmaquinaLocal"
-        Me.lblmaquinaLocal.Size = New System.Drawing.Size(104, 17)
+        Me.lblmaquinaLocal.Size = New System.Drawing.Size(80, 13)
         Me.lblmaquinaLocal.TabIndex = 119
         Me.lblmaquinaLocal.Text = "Máquina Local:"
         '
         'dtpDesdeFecha
         '
         Me.dtpDesdeFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDesdeFecha.Location = New System.Drawing.Point(155, 57)
-        Me.dtpDesdeFecha.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dtpDesdeFecha.Location = New System.Drawing.Point(116, 46)
+        Me.dtpDesdeFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dtpDesdeFecha.Name = "dtpDesdeFecha"
-        Me.dtpDesdeFecha.Size = New System.Drawing.Size(200, 22)
+        Me.dtpDesdeFecha.Size = New System.Drawing.Size(151, 20)
         Me.dtpDesdeFecha.TabIndex = 120
         '
         'dtpHastaFecha
         '
         Me.dtpHastaFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpHastaFecha.Location = New System.Drawing.Point(487, 64)
-        Me.dtpHastaFecha.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dtpHastaFecha.Location = New System.Drawing.Point(365, 52)
+        Me.dtpHastaFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dtpHastaFecha.Name = "dtpHastaFecha"
-        Me.dtpHastaFecha.Size = New System.Drawing.Size(200, 22)
+        Me.dtpHastaFecha.Size = New System.Drawing.Size(151, 20)
         Me.dtpHastaFecha.TabIndex = 121
         '
         'mtxtserie
         '
-        Me.mtxtserie.Location = New System.Drawing.Point(485, 139)
-        Me.mtxtserie.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.mtxtserie.Location = New System.Drawing.Point(364, 113)
+        Me.mtxtserie.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.mtxtserie.Mask = "000-000-00-"
         Me.mtxtserie.Name = "mtxtserie"
-        Me.mtxtserie.Size = New System.Drawing.Size(201, 22)
+        Me.mtxtserie.Size = New System.Drawing.Size(152, 20)
         Me.mtxtserie.TabIndex = 122
         Me.mtxtserie.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'mtxtdesde
         '
-        Me.mtxtdesde.Location = New System.Drawing.Point(153, 98)
-        Me.mtxtdesde.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.mtxtdesde.Location = New System.Drawing.Point(115, 80)
+        Me.mtxtdesde.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.mtxtdesde.Mask = "00000000"
         Me.mtxtdesde.Name = "mtxtdesde"
-        Me.mtxtdesde.Size = New System.Drawing.Size(201, 22)
+        Me.mtxtdesde.Size = New System.Drawing.Size(152, 20)
         Me.mtxtdesde.TabIndex = 123
         Me.mtxtdesde.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'mtxthasta
         '
-        Me.mtxthasta.Location = New System.Drawing.Point(486, 103)
-        Me.mtxthasta.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.mtxthasta.Location = New System.Drawing.Point(364, 84)
+        Me.mtxthasta.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.mtxthasta.Mask = "00000000"
         Me.mtxthasta.Name = "mtxthasta"
-        Me.mtxthasta.Size = New System.Drawing.Size(200, 22)
+        Me.mtxthasta.Size = New System.Drawing.Size(151, 20)
         Me.mtxthasta.TabIndex = 124
         Me.mtxthasta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtdescripcionMaquina
         '
-        Me.txtdescripcionMaquina.Location = New System.Drawing.Point(189, 171)
-        Me.txtdescripcionMaquina.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtdescripcionMaquina.Location = New System.Drawing.Point(142, 139)
+        Me.txtdescripcionMaquina.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtdescripcionMaquina.Name = "txtdescripcionMaquina"
         Me.txtdescripcionMaquina.ReadOnly = True
-        Me.txtdescripcionMaquina.Size = New System.Drawing.Size(167, 22)
+        Me.txtdescripcionMaquina.Size = New System.Drawing.Size(126, 20)
         Me.txtdescripcionMaquina.TabIndex = 127
         '
         'btnbuscarMaquinaLocal
@@ -245,30 +252,31 @@ Partial Class M_CAI
         Me.btnbuscarMaquinaLocal.FlatAppearance.BorderSize = 0
         Me.btnbuscarMaquinaLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarMaquinaLocal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbuscarMaquinaLocal.Location = New System.Drawing.Point(143, 171)
-        Me.btnbuscarMaquinaLocal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnbuscarMaquinaLocal.Location = New System.Drawing.Point(107, 139)
+        Me.btnbuscarMaquinaLocal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnbuscarMaquinaLocal.Name = "btnbuscarMaquinaLocal"
-        Me.btnbuscarMaquinaLocal.Size = New System.Drawing.Size(29, 22)
+        Me.btnbuscarMaquinaLocal.Size = New System.Drawing.Size(22, 18)
         Me.btnbuscarMaquinaLocal.TabIndex = 126
         Me.btnbuscarMaquinaLocal.Text = "..."
         Me.btnbuscarMaquinaLocal.UseVisualStyleBackColor = False
         '
         'txtcodigoMaquina
         '
-        Me.txtcodigoMaquina.Location = New System.Drawing.Point(154, 134)
-        Me.txtcodigoMaquina.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcodigoMaquina.Location = New System.Drawing.Point(116, 109)
+        Me.txtcodigoMaquina.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcodigoMaquina.MaxLength = 20
         Me.txtcodigoMaquina.Name = "txtcodigoMaquina"
-        Me.txtcodigoMaquina.Size = New System.Drawing.Size(201, 22)
+        Me.txtcodigoMaquina.Size = New System.Drawing.Size(152, 20)
         Me.txtcodigoMaquina.TabIndex = 125
         Me.txtcodigoMaquina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblCodeMaquinaLocal
         '
         Me.lblCodeMaquinaLocal.AutoSize = True
-        Me.lblCodeMaquinaLocal.Location = New System.Drawing.Point(43, 206)
+        Me.lblCodeMaquinaLocal.Location = New System.Drawing.Point(32, 167)
+        Me.lblCodeMaquinaLocal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCodeMaquinaLocal.Name = "lblCodeMaquinaLocal"
-        Me.lblCodeMaquinaLocal.Size = New System.Drawing.Size(0, 17)
+        Me.lblCodeMaquinaLocal.Size = New System.Drawing.Size(0, 13)
         Me.lblCodeMaquinaLocal.TabIndex = 128
         Me.lblCodeMaquinaLocal.Visible = False
         '
@@ -305,22 +313,108 @@ Partial Class M_CAI
         Me.GroupBox1.Controls.Add(Me.mtxtdesde)
         Me.GroupBox1.Controls.Add(Me.mtxthasta)
         Me.GroupBox1.Controls.Add(Me.lblhasta)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 57)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 46)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(928, 288)
+        Me.GroupBox1.Size = New System.Drawing.Size(696, 234)
         Me.GroupBox1.TabIndex = 129
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "CAI"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(68, 29)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(11, 13)
+        Me.Label7.TabIndex = 220
+        Me.Label7.Text = "*"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.Color.Red
+        Me.Label6.Location = New System.Drawing.Point(20, 53)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(11, 13)
+        Me.Label6.TabIndex = 219
+        Me.Label6.Text = "*"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.Color.Red
+        Me.Label5.Location = New System.Drawing.Point(44, 80)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(11, 13)
+        Me.Label5.TabIndex = 218
+        Me.Label5.Text = "*"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.Color.Red
+        Me.Label4.Location = New System.Drawing.Point(11, 113)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(11, 13)
+        Me.Label4.TabIndex = 217
+        Me.Label4.Text = "*"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(272, 56)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(11, 13)
+        Me.Label3.TabIndex = 216
+        Me.Label3.Text = "*"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.Color.Red
+        Me.Label2.Location = New System.Drawing.Point(310, 88)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(11, 13)
+        Me.Label2.TabIndex = 215
+        Me.Label2.Text = "*"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.Red
+        Me.Label1.Location = New System.Drawing.Point(310, 117)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(11, 13)
+        Me.Label1.TabIndex = 214
+        Me.Label1.Text = "*"
+        '
+        'Label61
+        '
+        Me.Label61.AutoSize = True
+        Me.Label61.Location = New System.Drawing.Point(574, 29)
+        Me.Label61.Name = "Label61"
+        Me.Label61.Size = New System.Drawing.Size(101, 13)
+        Me.Label61.TabIndex = 212
+        Me.Label61.Text = "Campos obligatorios"
+        '
+        'Label60
+        '
+        Me.Label60.AutoSize = True
+        Me.Label60.ForeColor = System.Drawing.Color.Red
+        Me.Label60.Location = New System.Drawing.Point(560, 31)
+        Me.Label60.Name = "Label60"
+        Me.Label60.Size = New System.Drawing.Size(11, 13)
+        Me.Label60.TabIndex = 211
+        Me.Label60.Text = "*"
+        '
         'lblCodigo
         '
         Me.lblCodigo.AutoSize = True
-        Me.lblCodigo.Location = New System.Drawing.Point(43, 36)
-        Me.lblCodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCodigo.Location = New System.Drawing.Point(32, 29)
         Me.lblCodigo.Name = "lblCodigo"
-        Me.lblCodigo.Size = New System.Drawing.Size(50, 17)
+        Me.lblCodigo.Size = New System.Drawing.Size(39, 13)
         Me.lblCodigo.TabIndex = 131
         Me.lblCodigo.Text = "codigo"
         Me.lblCodigo.Visible = False
@@ -328,10 +422,9 @@ Partial Class M_CAI
         'chkEstado
         '
         Me.chkEstado.AutoSize = True
-        Me.chkEstado.Location = New System.Drawing.Point(486, 178)
-        Me.chkEstado.Margin = New System.Windows.Forms.Padding(4)
+        Me.chkEstado.Location = New System.Drawing.Point(364, 145)
         Me.chkEstado.Name = "chkEstado"
-        Me.chkEstado.Size = New System.Drawing.Size(151, 21)
+        Me.chkEstado.Size = New System.Drawing.Size(118, 17)
         Me.chkEstado.TabIndex = 125
         Me.chkEstado.Text = "Activar Facturación"
         Me.chkEstado.UseVisualStyleBackColor = True
@@ -343,10 +436,10 @@ Partial Class M_CAI
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnModificar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnModificar.Location = New System.Drawing.Point(713, 7)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnModificar.Location = New System.Drawing.Point(535, 6)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(143, 34)
+        Me.btnModificar.Size = New System.Drawing.Size(107, 28)
         Me.btnModificar.TabIndex = 130
         Me.btnModificar.Text = "Modificar Estado"
         Me.btnModificar.UseVisualStyleBackColor = False
@@ -355,10 +448,9 @@ Partial Class M_CAI
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 353)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 283)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(960, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(720, 22)
         Me.StatusStrip1.TabIndex = 130
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -372,122 +464,23 @@ Partial Class M_CAI
         Me.Panel1.Controls.Add(Me.btncancelar)
         Me.Panel1.Controls.Add(Me.btnModificar)
         Me.Panel1.Location = New System.Drawing.Point(0, 1)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(960, 48)
+        Me.Panel1.Size = New System.Drawing.Size(720, 39)
         Me.Panel1.TabIndex = 132
-        '
-        'Label61
-        '
-        Me.Label61.AutoSize = True
-        Me.Label61.Location = New System.Drawing.Point(765, 36)
-        Me.Label61.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(136, 17)
-        Me.Label61.TabIndex = 212
-        Me.Label61.Text = "Campos obligatorios"
-        '
-        'Label60
-        '
-        Me.Label60.AutoSize = True
-        Me.Label60.ForeColor = System.Drawing.Color.Red
-        Me.Label60.Location = New System.Drawing.Point(747, 38)
-        Me.Label60.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label60.Name = "Label60"
-        Me.Label60.Size = New System.Drawing.Size(13, 17)
-        Me.Label60.TabIndex = 211
-        Me.Label60.Text = "*"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.Color.Red
-        Me.Label1.Location = New System.Drawing.Point(413, 144)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(13, 17)
-        Me.Label1.TabIndex = 214
-        Me.Label1.Text = "*"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(413, 108)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(13, 17)
-        Me.Label2.TabIndex = 215
-        Me.Label2.Text = "*"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(363, 69)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(13, 17)
-        Me.Label3.TabIndex = 216
-        Me.Label3.Text = "*"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.ForeColor = System.Drawing.Color.Red
-        Me.Label4.Location = New System.Drawing.Point(15, 139)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(13, 17)
-        Me.Label4.TabIndex = 217
-        Me.Label4.Text = "*"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.ForeColor = System.Drawing.Color.Red
-        Me.Label5.Location = New System.Drawing.Point(58, 98)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(13, 17)
-        Me.Label5.TabIndex = 218
-        Me.Label5.Text = "*"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.ForeColor = System.Drawing.Color.Red
-        Me.Label6.Location = New System.Drawing.Point(27, 65)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(13, 17)
-        Me.Label6.TabIndex = 219
-        Me.Label6.Text = "*"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.ForeColor = System.Drawing.Color.Red
-        Me.Label7.Location = New System.Drawing.Point(91, 36)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(13, 17)
-        Me.Label7.TabIndex = 220
-        Me.Label7.Text = "*"
         '
         'M_CAI
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(960, 375)
+        Me.ClientSize = New System.Drawing.Size(720, 305)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.lblCodeMaquinaLocal)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "M_CAI"
         Me.Text = "CAI"
         Me.GroupBox1.ResumeLayout(False)

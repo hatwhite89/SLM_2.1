@@ -475,6 +475,7 @@ Partial Class E_Usuarios
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.gbxDatos)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "E_Usuarios"

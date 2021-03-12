@@ -60,9 +60,9 @@ Partial Class M_BuscarRecibo
         Me.GroupBox1.Controls.Add(Me.txtReferenciaB)
         Me.GroupBox1.Controls.Add(Me.txtNumeroB)
         Me.GroupBox1.Location = New System.Drawing.Point(11, 11)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(696, 499)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -145,7 +145,7 @@ Partial Class M_BuscarRecibo
         Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnueva.ForeColor = System.Drawing.Color.White
         Me.btnnueva.Location = New System.Drawing.Point(528, 25)
-        Me.btnnueva.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnueva.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnueva.Name = "btnnueva"
         Me.btnnueva.Size = New System.Drawing.Size(164, 28)
         Me.btnnueva.TabIndex = 121
@@ -172,7 +172,7 @@ Partial Class M_BuscarRecibo
         Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(4, 71)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
@@ -182,7 +182,7 @@ Partial Class M_BuscarRecibo
         'txtReferenciaB
         '
         Me.txtReferenciaB.Location = New System.Drawing.Point(294, 25)
-        Me.txtReferenciaB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtReferenciaB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtReferenciaB.Name = "txtReferenciaB"
         Me.txtReferenciaB.Size = New System.Drawing.Size(145, 20)
         Me.txtReferenciaB.TabIndex = 1
@@ -190,7 +190,7 @@ Partial Class M_BuscarRecibo
         'txtNumeroB
         '
         Me.txtNumeroB.Location = New System.Drawing.Point(62, 25)
-        Me.txtNumeroB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtNumeroB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtNumeroB.Name = "txtNumeroB"
         Me.txtNumeroB.Size = New System.Drawing.Size(145, 20)
         Me.txtNumeroB.TabIndex = 0
@@ -214,7 +214,7 @@ Partial Class M_BuscarRecibo
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_BuscarRecibo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Búsqueda de Recibos"

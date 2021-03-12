@@ -29,16 +29,16 @@ Partial Class M_Objeto
         Me.cbxcerrado = New System.Windows.Forms.CheckBox()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.txtcomentarioTipo = New System.Windows.Forms.TextBox()
-        Me.btnmodificar = New System.Windows.Forms.Button()
-        Me.btnnuevo = New System.Windows.Forms.Button()
-        Me.btnguardar = New System.Windows.Forms.Button()
         Me.lblcodigo = New System.Windows.Forms.Label()
         Me.lbltipo = New System.Windows.Forms.Label()
-        Me.btncancelar = New System.Windows.Forms.Button()
         Me.btnbuscarTipo = New System.Windows.Forms.Button()
         Me.txtcodigoTipo = New System.Windows.Forms.TextBox()
         Me.lblnombre = New System.Windows.Forms.Label()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
+        Me.btnmodificar = New System.Windows.Forms.Button()
+        Me.btnnuevo = New System.Windows.Forms.Button()
+        Me.btnguardar = New System.Windows.Forms.Button()
+        Me.btncancelar = New System.Windows.Forms.Button()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
@@ -126,51 +126,6 @@ Partial Class M_Objeto
         Me.txtcomentarioTipo.Size = New System.Drawing.Size(128, 20)
         Me.txtcomentarioTipo.TabIndex = 116
         '
-        'btnmodificar
-        '
-        Me.btnmodificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnmodificar.BackColor = System.Drawing.Color.Yellow
-        Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnmodificar.Location = New System.Drawing.Point(560, 15)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnmodificar.Name = "btnmodificar"
-        Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
-        Me.btnmodificar.TabIndex = 114
-        Me.btnmodificar.Text = "Modificar"
-        Me.btnmodificar.UseVisualStyleBackColor = False
-        '
-        'btnnuevo
-        '
-        Me.btnnuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnnuevo.BackColor = System.Drawing.Color.White
-        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnnuevo.Location = New System.Drawing.Point(401, 15)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
-        Me.btnnuevo.TabIndex = 113
-        Me.btnnuevo.Text = "Nuevo"
-        Me.btnnuevo.UseVisualStyleBackColor = False
-        '
-        'btnguardar
-        '
-        Me.btnguardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnguardar.BackColor = System.Drawing.Color.LawnGreen
-        Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnguardar.Location = New System.Drawing.Point(484, 15)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(72, 28)
-        Me.btnguardar.TabIndex = 112
-        Me.btnguardar.Text = "Guardar"
-        Me.btnguardar.UseVisualStyleBackColor = False
-        '
         'lblcodigo
         '
         Me.lblcodigo.AutoSize = True
@@ -190,21 +145,6 @@ Partial Class M_Objeto
         Me.lbltipo.Size = New System.Drawing.Size(28, 13)
         Me.lbltipo.TabIndex = 109
         Me.lbltipo.Text = "Tipo"
-        '
-        'btncancelar
-        '
-        Me.btncancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btncancelar.BackColor = System.Drawing.Color.LightSalmon
-        Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btncancelar.Location = New System.Drawing.Point(636, 15)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
-        Me.btncancelar.Name = "btncancelar"
-        Me.btncancelar.Size = New System.Drawing.Size(68, 28)
-        Me.btncancelar.TabIndex = 37
-        Me.btncancelar.Text = "Cancelar"
-        Me.btncancelar.UseVisualStyleBackColor = False
         '
         'btnbuscarTipo
         '
@@ -252,6 +192,66 @@ Partial Class M_Objeto
         Me.txtcodigo.Size = New System.Drawing.Size(138, 20)
         Me.txtcodigo.TabIndex = 40
         Me.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnmodificar
+        '
+        Me.btnmodificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnmodificar.BackColor = System.Drawing.Color.Yellow
+        Me.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnmodificar.Location = New System.Drawing.Point(560, 15)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnmodificar.Name = "btnmodificar"
+        Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
+        Me.btnmodificar.TabIndex = 114
+        Me.btnmodificar.Text = "Modificar"
+        Me.btnmodificar.UseVisualStyleBackColor = False
+        '
+        'btnnuevo
+        '
+        Me.btnnuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnnuevo.BackColor = System.Drawing.Color.White
+        Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnnuevo.Location = New System.Drawing.Point(401, 15)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnnuevo.Name = "btnnuevo"
+        Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
+        Me.btnnuevo.TabIndex = 113
+        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.UseVisualStyleBackColor = False
+        '
+        'btnguardar
+        '
+        Me.btnguardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnguardar.BackColor = System.Drawing.Color.LawnGreen
+        Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnguardar.Location = New System.Drawing.Point(484, 15)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnguardar.Name = "btnguardar"
+        Me.btnguardar.Size = New System.Drawing.Size(72, 28)
+        Me.btnguardar.TabIndex = 112
+        Me.btnguardar.Text = "Guardar"
+        Me.btnguardar.UseVisualStyleBackColor = False
+        '
+        'btncancelar
+        '
+        Me.btncancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btncancelar.BackColor = System.Drawing.Color.LightSalmon
+        Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btncancelar.Location = New System.Drawing.Point(636, 15)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btncancelar.Name = "btncancelar"
+        Me.btncancelar.Size = New System.Drawing.Size(68, 28)
+        Me.btncancelar.TabIndex = 37
+        Me.btncancelar.Text = "Cancelar"
+        Me.btncancelar.UseVisualStyleBackColor = False
         '
         'gbxbusqueda
         '

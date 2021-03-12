@@ -24,6 +24,7 @@ Partial Class M_Contratos
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Contratos))
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
@@ -42,7 +43,6 @@ Partial Class M_Contratos
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxsucursal.SuspendLayout()
@@ -71,6 +71,16 @@ Partial Class M_Contratos
         Me.gbxbusqueda.TabIndex = 121
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR CONTRATO"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(222, 50)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(272, 13)
+        Me.Label6.TabIndex = 119
+        Me.Label6.Text = "Seleccione una fila para cargar la información "
         '
         'Button4
         '
@@ -299,16 +309,6 @@ Partial Class M_Contratos
         Me.Label4.Size = New System.Drawing.Size(211, 20)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Mantenimiento Contratos"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(222, 50)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(272, 13)
-        Me.Label6.TabIndex = 119
-        Me.Label6.Text = "Seleccione una fila para cargar la información "
         '
         'M_Contratos
         '

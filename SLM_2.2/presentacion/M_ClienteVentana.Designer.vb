@@ -23,9 +23,9 @@ Partial Class M_ClienteVentana
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_ClienteVentana))
         Me.txtnombreCompleto = New System.Windows.Forms.TextBox()
         Me.lblnombre = New System.Windows.Forms.Label()
@@ -75,7 +75,7 @@ Partial Class M_ClienteVentana
         'txtnombreCompleto
         '
         Me.txtnombreCompleto.Location = New System.Drawing.Point(116, 15)
-        Me.txtnombreCompleto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreCompleto.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreCompleto.Name = "txtnombreCompleto"
         Me.txtnombreCompleto.ReadOnly = True
         Me.txtnombreCompleto.Size = New System.Drawing.Size(594, 20)
@@ -94,7 +94,7 @@ Partial Class M_ClienteVentana
         'txtnombreTerminos
         '
         Me.txtnombreTerminos.Location = New System.Drawing.Point(116, 64)
-        Me.txtnombreTerminos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreTerminos.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreTerminos.Name = "txtnombreTerminos"
         Me.txtnombreTerminos.ReadOnly = True
         Me.txtnombreTerminos.Size = New System.Drawing.Size(204, 20)
@@ -114,7 +114,7 @@ Partial Class M_ClienteVentana
         'txtnombreCategoria
         '
         Me.txtnombreCategoria.Location = New System.Drawing.Point(116, 40)
-        Me.txtnombreCategoria.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreCategoria.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreCategoria.Name = "txtnombreCategoria"
         Me.txtnombreCategoria.ReadOnly = True
         Me.txtnombreCategoria.Size = New System.Drawing.Size(204, 20)
@@ -133,7 +133,7 @@ Partial Class M_ClienteVentana
         'txtnombreConvenio
         '
         Me.txtnombreConvenio.Location = New System.Drawing.Point(116, 89)
-        Me.txtnombreConvenio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreConvenio.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreConvenio.Name = "txtnombreConvenio"
         Me.txtnombreConvenio.ReadOnly = True
         Me.txtnombreConvenio.Size = New System.Drawing.Size(204, 20)
@@ -152,7 +152,7 @@ Partial Class M_ClienteVentana
         'txttelefonoCasa
         '
         Me.txttelefonoCasa.Location = New System.Drawing.Point(507, 64)
-        Me.txttelefonoCasa.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txttelefonoCasa.Margin = New System.Windows.Forms.Padding(2)
         Me.txttelefonoCasa.Name = "txttelefonoCasa"
         Me.txttelefonoCasa.ReadOnly = True
         Me.txttelefonoCasa.Size = New System.Drawing.Size(203, 20)
@@ -172,7 +172,7 @@ Partial Class M_ClienteVentana
         '
         Me.txttotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txttotal.Location = New System.Drawing.Point(470, 16)
-        Me.txttotal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txttotal.Margin = New System.Windows.Forms.Padding(2)
         Me.txttotal.Name = "txttotal"
         Me.txttotal.ReadOnly = True
         Me.txttotal.Size = New System.Drawing.Size(206, 22)
@@ -183,7 +183,7 @@ Partial Class M_ClienteVentana
         '
         Me.txtpagoPaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtpagoPaciente.Location = New System.Drawing.Point(470, 41)
-        Me.txtpagoPaciente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtpagoPaciente.Margin = New System.Windows.Forms.Padding(2)
         Me.txtpagoPaciente.Name = "txtpagoPaciente"
         Me.txtpagoPaciente.ReadOnly = True
         Me.txtpagoPaciente.Size = New System.Drawing.Size(206, 22)
@@ -196,7 +196,7 @@ Partial Class M_ClienteVentana
         Me.txtvuelto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtvuelto.ForeColor = System.Drawing.Color.OrangeRed
         Me.txtvuelto.Location = New System.Drawing.Point(470, 66)
-        Me.txtvuelto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtvuelto.Margin = New System.Windows.Forms.Padding(2)
         Me.txtvuelto.Name = "txtvuelto"
         Me.txtvuelto.ReadOnly = True
         Me.txtvuelto.Size = New System.Drawing.Size(206, 22)
@@ -246,37 +246,37 @@ Partial Class M_ClienteVentana
         Me.dgvtabla.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvtabla.BackgroundColor = System.Drawing.Color.White
         Me.dgvtabla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvtabla.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvtabla.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.Cantidad, Me.Precio, Me.Descripcion, Me.FechaEntrega, Me.Descuento, Me.Subtotal})
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvtabla.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvtabla.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvtabla.GridColor = System.Drawing.Color.White
         Me.dgvtabla.Location = New System.Drawing.Point(23, 280)
-        Me.dgvtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgvtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvtabla.Name = "dgvtabla"
         Me.dgvtabla.ReadOnly = True
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvtabla.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvtabla.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvtabla.RowHeadersVisible = False
         Me.dgvtabla.RowHeadersWidth = 51
         Me.dgvtabla.RowTemplate.Height = 24
@@ -349,7 +349,7 @@ Partial Class M_ClienteVentana
         'txttelefonoTrabajo
         '
         Me.txttelefonoTrabajo.Location = New System.Drawing.Point(506, 89)
-        Me.txttelefonoTrabajo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txttelefonoTrabajo.Margin = New System.Windows.Forms.Padding(2)
         Me.txttelefonoTrabajo.Name = "txttelefonoTrabajo"
         Me.txttelefonoTrabajo.ReadOnly = True
         Me.txttelefonoTrabajo.Size = New System.Drawing.Size(204, 20)
@@ -368,7 +368,7 @@ Partial Class M_ClienteVentana
         'txtcorreo2
         '
         Me.txtcorreo2.Location = New System.Drawing.Point(506, 41)
-        Me.txtcorreo2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcorreo2.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcorreo2.Name = "txtcorreo2"
         Me.txtcorreo2.ReadOnly = True
         Me.txtcorreo2.Size = New System.Drawing.Size(204, 20)
@@ -387,7 +387,7 @@ Partial Class M_ClienteVentana
         'txtcorreo1
         '
         Me.txtcorreo1.Location = New System.Drawing.Point(116, 114)
-        Me.txtcorreo1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcorreo1.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcorreo1.Name = "txtcorreo1"
         Me.txtcorreo1.ReadOnly = True
         Me.txtcorreo1.Size = New System.Drawing.Size(204, 20)
@@ -406,7 +406,7 @@ Partial Class M_ClienteVentana
         'txtcelular
         '
         Me.txtcelular.Location = New System.Drawing.Point(507, 114)
-        Me.txtcelular.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcelular.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcelular.Name = "txtcelular"
         Me.txtcelular.ReadOnly = True
         Me.txtcelular.Size = New System.Drawing.Size(203, 20)
@@ -427,7 +427,7 @@ Partial Class M_ClienteVentana
         Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Panel1.Location = New System.Drawing.Point(264, 29)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(194, 84)
         Me.Panel1.TabIndex = 146
@@ -444,9 +444,9 @@ Partial Class M_ClienteVentana
         Me.GroupBox1.Controls.Add(Me.txtvuelto)
         Me.GroupBox1.Controls.Add(Me.txtpagoPaciente)
         Me.GroupBox1.Location = New System.Drawing.Point(23, 554)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(715, 96)
         Me.GroupBox1.TabIndex = 147
         Me.GroupBox1.TabStop = False
@@ -474,9 +474,9 @@ Partial Class M_ClienteVentana
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.txttelefonoCasa)
         Me.GroupBox2.Location = New System.Drawing.Point(23, 120)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Size = New System.Drawing.Size(715, 148)
         Me.GroupBox2.TabIndex = 148
         Me.GroupBox2.TabStop = False
@@ -514,8 +514,9 @@ Partial Class M_ClienteVentana
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pbxImagenes)
         Me.Controls.Add(Me.dgvtabla)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_ClienteVentana"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Laboratorios Médicos"

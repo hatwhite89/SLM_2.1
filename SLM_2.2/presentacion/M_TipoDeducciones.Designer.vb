@@ -25,6 +25,7 @@ Partial Class M_TipoDeducciones
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_TipoDeducciones))
         Me.lblform = New System.Windows.Forms.Label()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.txtNombreB = New System.Windows.Forms.TextBox()
         Me.lblnombreB = New System.Windows.Forms.Label()
@@ -45,7 +46,6 @@ Partial Class M_TipoDeducciones
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxcaja.SuspendLayout()
@@ -84,6 +84,16 @@ Partial Class M_TipoDeducciones
         Me.gbxbusqueda.TabIndex = 129
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR TIPO DE DEDUCCIONES"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(206, 50)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(272, 13)
+        Me.Label6.TabIndex = 120
+        Me.Label6.Text = "Seleccione una fila para cargar la información "
         '
         'Button4
         '
@@ -328,16 +338,6 @@ Partial Class M_TipoDeducciones
         Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
         Me.StatusStrip1.TabIndex = 168
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(206, 50)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(272, 13)
-        Me.Label6.TabIndex = 120
-        Me.Label6.Text = "Seleccione una fila para cargar la información "
         '
         'M_TipoDeducciones
         '

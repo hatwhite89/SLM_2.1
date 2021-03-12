@@ -56,9 +56,9 @@ Partial Class M_ListadoDePrecios
         Me.gbxbusqueda.Controls.Add(Me.txtDescripcion)
         Me.gbxbusqueda.Controls.Add(Me.lblCodigoT)
         Me.gbxbusqueda.Location = New System.Drawing.Point(6, 10)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Size = New System.Drawing.Size(701, 486)
         Me.gbxbusqueda.TabIndex = 122
         Me.gbxbusqueda.TabStop = False
@@ -71,7 +71,7 @@ Partial Class M_ListadoDePrecios
         Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnueva.ForeColor = System.Drawing.Color.White
         Me.btnnueva.Location = New System.Drawing.Point(532, 11)
-        Me.btnnueva.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnueva.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnueva.Name = "btnnueva"
         Me.btnnueva.Size = New System.Drawing.Size(164, 28)
         Me.btnnueva.TabIndex = 122
@@ -92,7 +92,7 @@ Partial Class M_ListadoDePrecios
         'txtCodigoBreve
         '
         Me.txtCodigoBreve.Location = New System.Drawing.Point(80, 44)
-        Me.txtCodigoBreve.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtCodigoBreve.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCodigoBreve.Name = "txtCodigoBreve"
         Me.txtCodigoBreve.Size = New System.Drawing.Size(105, 20)
         Me.txtCodigoBreve.TabIndex = 120
@@ -107,7 +107,7 @@ Partial Class M_ListadoDePrecios
         Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(4, 75)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
@@ -159,7 +159,7 @@ Partial Class M_ListadoDePrecios
         'txtDescripcion
         '
         Me.txtDescripcion.Location = New System.Drawing.Point(260, 44)
-        Me.txtDescripcion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtDescripcion.Margin = New System.Windows.Forms.Padding(2)
         Me.txtDescripcion.MaxLength = 80
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(437, 20)
@@ -194,7 +194,7 @@ Partial Class M_ListadoDePrecios
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_ListadoDePrecios"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listado De Precios"

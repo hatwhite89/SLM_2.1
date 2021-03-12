@@ -50,9 +50,9 @@ Partial Class M_ListarMedicos
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Controls.Add(Me.txtNombreB)
         Me.gbxbusqueda.Location = New System.Drawing.Point(11, 9)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Size = New System.Drawing.Size(696, 457)
         Me.gbxbusqueda.TabIndex = 120
         Me.gbxbusqueda.TabStop = False
@@ -65,7 +65,7 @@ Partial Class M_ListarMedicos
         Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnueva.ForeColor = System.Drawing.Color.White
         Me.btnnueva.Location = New System.Drawing.Point(520, 17)
-        Me.btnnueva.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnueva.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnueva.Name = "btnnueva"
         Me.btnnueva.Size = New System.Drawing.Size(164, 28)
         Me.btnnueva.TabIndex = 121
@@ -82,7 +82,7 @@ Partial Class M_ListarMedicos
         Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(4, 64)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
@@ -134,7 +134,7 @@ Partial Class M_ListarMedicos
         'txtNombreB
         '
         Me.txtNombreB.Location = New System.Drawing.Point(60, 23)
-        Me.txtNombreB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtNombreB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtNombreB.MaxLength = 80
         Me.txtNombreB.Name = "txtNombreB"
         Me.txtNombreB.Size = New System.Drawing.Size(436, 20)
@@ -159,7 +159,7 @@ Partial Class M_ListarMedicos
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_ListarMedicos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Médicos"

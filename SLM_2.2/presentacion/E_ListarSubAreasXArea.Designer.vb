@@ -22,6 +22,7 @@ Partial Class E_ListarSubAreasXArea
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_ListarSubAreasXArea))
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
         Me.lblcodeArea = New System.Windows.Forms.Label()
         Me.lblform = New System.Windows.Forms.Label()
@@ -41,11 +42,11 @@ Partial Class E_ListarSubAreasXArea
         Me.gbxbusqueda.Controls.Add(Me.lbltipoCta)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
-        Me.gbxbusqueda.Location = New System.Drawing.Point(11, 12)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(8, 10)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.gbxbusqueda.Size = New System.Drawing.Size(935, 598)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Size = New System.Drawing.Size(701, 486)
         Me.gbxbusqueda.TabIndex = 123
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR SUBÁREA"
@@ -53,9 +54,10 @@ Partial Class E_ListarSubAreasXArea
         'lblcodeArea
         '
         Me.lblcodeArea.AutoSize = True
-        Me.lblcodeArea.Location = New System.Drawing.Point(550, 0)
+        Me.lblcodeArea.Location = New System.Drawing.Point(412, 0)
+        Me.lblcodeArea.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcodeArea.Name = "lblcodeArea"
-        Me.lblcodeArea.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodeArea.Size = New System.Drawing.Size(40, 13)
         Me.lblcodeArea.TabIndex = 122
         Me.lblcodeArea.Text = "Código"
         Me.lblcodeArea.Visible = False
@@ -63,9 +65,10 @@ Partial Class E_ListarSubAreasXArea
         'lblform
         '
         Me.lblform.AutoSize = True
-        Me.lblform.Location = New System.Drawing.Point(393, 0)
+        Me.lblform.Location = New System.Drawing.Point(295, 0)
+        Me.lblform.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblform.Name = "lblform"
-        Me.lblform.Size = New System.Drawing.Size(71, 17)
+        Me.lblform.Size = New System.Drawing.Size(52, 13)
         Me.lblform.TabIndex = 121
         Me.lblform.Text = "formulario"
         Me.lblform.Visible = False
@@ -75,51 +78,56 @@ Partial Class E_ListarSubAreasXArea
         Me.dgbtabla.AllowUserToAddRows = False
         Me.dgbtabla.AllowUserToDeleteRows = False
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(7, 33)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgbtabla.Location = New System.Drawing.Point(5, 27)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(923, 513)
+        Me.dgbtabla.Size = New System.Drawing.Size(692, 417)
         Me.dgbtabla.TabIndex = 119
         '
         'lbltipoCta
         '
         Me.lbltipoCta.AutoSize = True
-        Me.lbltipoCta.Location = New System.Drawing.Point(285, 182)
+        Me.lbltipoCta.Location = New System.Drawing.Point(214, 148)
+        Me.lbltipoCta.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbltipoCta.Name = "lbltipoCta"
-        Me.lbltipoCta.Size = New System.Drawing.Size(0, 17)
+        Me.lbltipoCta.Size = New System.Drawing.Size(0, 13)
         Me.lbltipoCta.TabIndex = 116
         Me.lbltipoCta.Visible = False
         '
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(337, 565)
+        Me.lblcantidad.Location = New System.Drawing.Point(253, 459)
+        Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
+        Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
         Me.lblcantidad.TabIndex = 115
         Me.lblcantidad.Text = "000"
         '
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(20, 565)
+        Me.lbltotal.Location = New System.Drawing.Point(15, 459)
+        Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(155, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(121, 13)
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL DE SUBÁREAS"
         '
         'E_ListarSubAreasXArea
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(957, 623)
+        Me.ClientSize = New System.Drawing.Size(718, 506)
         Me.Controls.Add(Me.gbxbusqueda)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "E_ListarSubAreasXArea"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "E_ListarSubAreasXArea"
