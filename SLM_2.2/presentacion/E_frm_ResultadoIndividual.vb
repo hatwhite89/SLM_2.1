@@ -11,7 +11,7 @@ Public Class E_frm_ResultadoIndividual
         RptDocument.SetDatabaseLogon("sa", "Lbm2019")
         CrystalReportViewer1.ReportSource = RptDocument
         RptDocument.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Path.Combine(Application.StartupPath, "Resultados\resultado.pdf"))
-        enviarMailResultado("sinergia@laboratoriosmedicos.hn", "Lmsinergia2020", "587", True, "mail.laboratoriosmedicos.hn", "erickgallardo89@yahoo.com", "Resultados")
+        'enviarMailResultado("sinergia@laboratoriosmedicos.hn", "Lmsinergia2020", "587", True, "mail.laboratoriosmedicos.hn", "erickgallardo89@yahoo.com", "Resultados")
 
 
     End Sub
