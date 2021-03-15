@@ -42,16 +42,34 @@
             Dim DetalleFac As New ClsDetalleFacturaCompra
             Dim dtFac As New DataTable
 
+            'consulta centro de costo
+            Dim ccosto As New ClsCentroCostos
+            Dim dtcc As New DataTable
+            Dim rowcc As DataRow
+
+            Dim sucursal As New ClsSucursal
+            Dim dtsu As New DataTable
+            Dim rowsu As DataRow
+
             DetalleFac.Cod_Factura = row("codFactura")
 
             dtFac = DetalleFac.listarDetallesFacturaCompra()
 
             For index As Integer = 0 To dtFac.Rows.Count - 1
                 row = dtFac.Rows(index)
-                A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), CStr(row("area")), CStr(row("sede")), CStr(row("descripcion")), CStr(row("monto"))})
+
+                ccosto.ID = Integer.Parse(row("area"))
+                dtcc = ccosto.BuscarCentroCostoCodigo
+                rowcc = dtcc.Rows(0)
+
+                sucursal.codigo_ = Integer.Parse(row("sede"))
+                dtsu = sucursal.BuscarSucursalNumero
+                rowsu = dtsu.Rows(0)
+
+                A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), rowcc("codBreve"), rowsu("codigoSucursal"), CStr(row("descripcion")), CStr(row("monto"))})
             Next
 
-            Me.Close()
+            Me.Hide()
             A_FacturaCompras.btnGuardar.Enabled = False
             A_FacturaCompras.btnModificar.Enabled = True
             A_FacturaCompras.btnCrear.Enabled = True
@@ -100,7 +118,7 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnCrearNueva.Click
-        Me.Close()
+        Me.Hide()
         A_FacturaCompras.Show()
     End Sub
 

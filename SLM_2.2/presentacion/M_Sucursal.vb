@@ -80,6 +80,22 @@
                     E_EspecificarHojaTrabajo.txtDescripcionSucursal.Text = txtnombre.Text
                     Me.Close()
                 End If
+
+            ElseIf (lblform.Text = "A_FacturaCompras") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar la sucursal en la Factura de Compra?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+
+                    With A_FacturaCompras
+
+                        .dtDetalleFactura.Rows(Convert.ToInt32(A_FacturaCompras.lblFila.Text)).Cells(7).Value = lblcode.Text
+                        .dtDetalleFactura.Rows(Convert.ToInt32(A_FacturaCompras.lblFila.Text)).Cells(3).Value = txtcodigo.Text
+
+                    End With
+                    Me.Close()
+                End If
+
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)

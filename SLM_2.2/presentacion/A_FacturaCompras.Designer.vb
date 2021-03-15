@@ -24,6 +24,7 @@ Partial Class A_FacturaCompras
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_FacturaCompras))
         Me.gbxInfoFact = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.lblSaldoPend = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.lblCodTerminoPago = New System.Windows.Forms.Label()
@@ -60,17 +61,19 @@ Partial Class A_FacturaCompras
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.dtDetalleFactura = New System.Windows.Forms.DataGridView()
+        Me.btnRegresar = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.codDetalle = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.area = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Sede = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnRegresar = New System.Windows.Forms.Button()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,6 +85,7 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbxInfoFact.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.gbxInfoFact.Controls.Add(Me.Button1)
         Me.gbxInfoFact.Controls.Add(Me.lblSaldoPend)
         Me.gbxInfoFact.Controls.Add(Me.Label16)
         Me.gbxInfoFact.Controls.Add(Me.lblCodTerminoPago)
@@ -113,16 +117,25 @@ Partial Class A_FacturaCompras
         Me.gbxInfoFact.Controls.Add(Me.Label1)
         Me.gbxInfoFact.Location = New System.Drawing.Point(7, 50)
         Me.gbxInfoFact.Name = "gbxInfoFact"
-        Me.gbxInfoFact.Size = New System.Drawing.Size(748, 182)
+        Me.gbxInfoFact.Size = New System.Drawing.Size(719, 182)
         Me.gbxInfoFact.TabIndex = 0
         Me.gbxInfoFact.TabStop = False
         Me.gbxInfoFact.Text = "Información de Factura"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(170, 51)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(24, 20)
+        Me.Button1.TabIndex = 30
+        Me.Button1.Text = "..."
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'lblSaldoPend
         '
         Me.lblSaldoPend.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblSaldoPend.AutoSize = True
-        Me.lblSaldoPend.Location = New System.Drawing.Point(543, 110)
+        Me.lblSaldoPend.Location = New System.Drawing.Point(514, 110)
         Me.lblSaldoPend.Name = "lblSaldoPend"
         Me.lblSaldoPend.Size = New System.Drawing.Size(16, 13)
         Me.lblSaldoPend.TabIndex = 29
@@ -132,7 +145,7 @@ Partial Class A_FacturaCompras
         '
         Me.Label16.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(469, 110)
+        Me.Label16.Location = New System.Drawing.Point(440, 110)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(68, 13)
         Me.Label16.TabIndex = 28
@@ -152,7 +165,7 @@ Partial Class A_FacturaCompras
         '
         Me.lblEstado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblEstado.AutoSize = True
-        Me.lblEstado.Location = New System.Drawing.Point(543, 133)
+        Me.lblEstado.Location = New System.Drawing.Point(514, 133)
         Me.lblEstado.Name = "lblEstado"
         Me.lblEstado.Size = New System.Drawing.Size(16, 13)
         Me.lblEstado.TabIndex = 26
@@ -162,7 +175,7 @@ Partial Class A_FacturaCompras
         '
         Me.Label14.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(494, 133)
+        Me.Label14.Location = New System.Drawing.Point(465, 133)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(43, 13)
         Me.Label14.TabIndex = 25
@@ -174,7 +187,7 @@ Partial Class A_FacturaCompras
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtDescripcion.Location = New System.Drawing.Point(109, 155)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(634, 20)
+        Me.txtDescripcion.Size = New System.Drawing.Size(605, 20)
         Me.txtDescripcion.TabIndex = 24
         '
         'Label13
@@ -193,7 +206,7 @@ Partial Class A_FacturaCompras
         Me.txtNroFactura.Location = New System.Drawing.Point(306, 25)
         Me.txtNroFactura.MaxLength = 100
         Me.txtNroFactura.Name = "txtNroFactura"
-        Me.txtNroFactura.Size = New System.Drawing.Size(436, 20)
+        Me.txtNroFactura.Size = New System.Drawing.Size(407, 20)
         Me.txtNroFactura.TabIndex = 1
         Me.txtNroFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -224,7 +237,7 @@ Partial Class A_FacturaCompras
         Me.btnBuscarTerminoPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscarTerminoPago.FlatAppearance.BorderSize = 0
         Me.btnBuscarTerminoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarTerminoPago.Location = New System.Drawing.Point(432, 78)
+        Me.btnBuscarTerminoPago.Location = New System.Drawing.Point(403, 78)
         Me.btnBuscarTerminoPago.Name = "btnBuscarTerminoPago"
         Me.btnBuscarTerminoPago.Size = New System.Drawing.Size(21, 20)
         Me.btnBuscarTerminoPago.TabIndex = 7
@@ -238,7 +251,7 @@ Partial Class A_FacturaCompras
         Me.txtMoneda.Location = New System.Drawing.Point(306, 130)
         Me.txtMoneda.MaxLength = 10
         Me.txtMoneda.Name = "txtMoneda"
-        Me.txtMoneda.Size = New System.Drawing.Size(120, 20)
+        Me.txtMoneda.Size = New System.Drawing.Size(91, 20)
         Me.txtMoneda.TabIndex = 9
         Me.txtMoneda.Text = "Lps"
         '
@@ -293,7 +306,7 @@ Partial Class A_FacturaCompras
         Me.txtTerminoPago.Location = New System.Drawing.Point(306, 78)
         Me.txtTerminoPago.MaxLength = 10
         Me.txtTerminoPago.Name = "txtTerminoPago"
-        Me.txtTerminoPago.Size = New System.Drawing.Size(120, 20)
+        Me.txtTerminoPago.Size = New System.Drawing.Size(91, 20)
         Me.txtTerminoPago.TabIndex = 6
         '
         'Label6
@@ -330,7 +343,7 @@ Partial Class A_FacturaCompras
         Me.txtNombreProveedor.Location = New System.Drawing.Point(306, 51)
         Me.txtNombreProveedor.MaxLength = 150
         Me.txtNombreProveedor.Name = "txtNombreProveedor"
-        Me.txtNombreProveedor.Size = New System.Drawing.Size(436, 20)
+        Me.txtNombreProveedor.Size = New System.Drawing.Size(407, 20)
         Me.txtNombreProveedor.TabIndex = 2
         '
         'Label4
@@ -349,7 +362,7 @@ Partial Class A_FacturaCompras
         Me.txtTotal.Location = New System.Drawing.Point(306, 104)
         Me.txtTotal.MaxLength = 10
         Me.txtTotal.Name = "txtTotal"
-        Me.txtTotal.Size = New System.Drawing.Size(120, 20)
+        Me.txtTotal.Size = New System.Drawing.Size(91, 20)
         Me.txtTotal.TabIndex = 8
         '
         'Label3
@@ -366,7 +379,7 @@ Partial Class A_FacturaCompras
         Me.txtCodProveedor.Location = New System.Drawing.Point(109, 51)
         Me.txtCodProveedor.MaxLength = 5
         Me.txtCodProveedor.Name = "txtCodProveedor"
-        Me.txtCodProveedor.Size = New System.Drawing.Size(84, 20)
+        Me.txtCodProveedor.Size = New System.Drawing.Size(63, 20)
         Me.txtCodProveedor.TabIndex = 2
         '
         'Label2
@@ -403,7 +416,7 @@ Partial Class A_FacturaCompras
         Me.btnCrear.FlatAppearance.BorderSize = 0
         Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCrear.ForeColor = System.Drawing.Color.Black
-        Me.btnCrear.Location = New System.Drawing.Point(455, 9)
+        Me.btnCrear.Location = New System.Drawing.Point(426, 9)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(75, 23)
         Me.btnCrear.TabIndex = 12
@@ -418,7 +431,7 @@ Partial Class A_FacturaCompras
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnModificar.ForeColor = System.Drawing.Color.Black
-        Me.btnModificar.Location = New System.Drawing.Point(532, 9)
+        Me.btnModificar.Location = New System.Drawing.Point(503, 9)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 13
@@ -432,7 +445,7 @@ Partial Class A_FacturaCompras
         Me.btnGuardar.FlatAppearance.BorderSize = 0
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.ForeColor = System.Drawing.Color.Black
-        Me.btnGuardar.Location = New System.Drawing.Point(609, 9)
+        Me.btnGuardar.Location = New System.Drawing.Point(580, 9)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 11
@@ -450,7 +463,7 @@ Partial Class A_FacturaCompras
         Me.GroupBox1.Controls.Add(Me.dtDetalleFactura)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 236)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(748, 328)
+        Me.GroupBox1.Size = New System.Drawing.Size(719, 391)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalle de Factura"
@@ -460,7 +473,7 @@ Partial Class A_FacturaCompras
         Me.lblTotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTotal.AutoSize = True
         Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotal.Location = New System.Drawing.Point(695, 303)
+        Me.lblTotal.Location = New System.Drawing.Point(666, 366)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(25, 13)
         Me.lblTotal.TabIndex = 14
@@ -472,7 +485,7 @@ Partial Class A_FacturaCompras
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(515, 303)
+        Me.Label11.Location = New System.Drawing.Point(486, 366)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(105, 13)
         Me.Label11.TabIndex = 13
@@ -490,13 +503,78 @@ Partial Class A_FacturaCompras
         Me.dtDetalleFactura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical
         Me.dtDetalleFactura.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtDetalleFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codDetalle, Me.Cuenta, Me.area, Me.Sede, Me.Descripción, Me.Monto})
+        Me.dtDetalleFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codDetalle, Me.Cuenta, Me.area, Me.Sede, Me.Descripción, Me.Monto, Me.Column1, Me.Column2})
         Me.dtDetalleFactura.GridColor = System.Drawing.Color.White
         Me.dtDetalleFactura.Location = New System.Drawing.Point(4, 15)
         Me.dtDetalleFactura.Name = "dtDetalleFactura"
         Me.dtDetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.dtDetalleFactura.Size = New System.Drawing.Size(739, 277)
+        Me.dtDetalleFactura.Size = New System.Drawing.Size(710, 340)
         Me.dtDetalleFactura.TabIndex = 10
+        '
+        'btnRegresar
+        '
+        Me.btnRegresar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnRegresar.BackColor = System.Drawing.Color.White
+        Me.btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnRegresar.FlatAppearance.BorderSize = 0
+        Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegresar.Location = New System.Drawing.Point(349, 9)
+        Me.btnRegresar.Name = "btnRegresar"
+        Me.btnRegresar.Size = New System.Drawing.Size(75, 23)
+        Me.btnRegresar.TabIndex = 14
+        Me.btnRegresar.Text = "Listado"
+        Me.btnRegresar.UseVisualStyleBackColor = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(13, 8)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(213, 25)
+        Me.Label12.TabIndex = 14
+        Me.Label12.Text = "Factura de Compra"
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnCerrar)
+        Me.Panel1.Controls.Add(Me.btnGuardar)
+        Me.Panel1.Controls.Add(Me.btnCrear)
+        Me.Panel1.Controls.Add(Me.btnRegresar)
+        Me.Panel1.Controls.Add(Me.Label12)
+        Me.Panel1.Controls.Add(Me.btnModificar)
+        Me.Panel1.Location = New System.Drawing.Point(-6, 1)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(746, 43)
+        Me.Panel1.TabIndex = 16
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
+        Me.btnCerrar.FlatAppearance.BorderSize = 0
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.ForeColor = System.Drawing.Color.Black
+        Me.btnCerrar.Location = New System.Drawing.Point(657, 9)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCerrar.TabIndex = 15
+        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
+        'Panel2
+        '
+        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Panel2.Location = New System.Drawing.Point(-1, 633)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(741, 22)
+        Me.Panel2.TabIndex = 17
         '
         'codDetalle
         '
@@ -536,77 +614,24 @@ Partial Class A_FacturaCompras
         Me.Monto.MaxInputLength = 10
         Me.Monto.Name = "Monto"
         '
-        'btnRegresar
+        'Column1
         '
-        Me.btnRegresar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRegresar.BackColor = System.Drawing.Color.White
-        Me.btnRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnRegresar.FlatAppearance.BorderSize = 0
-        Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegresar.Location = New System.Drawing.Point(378, 9)
-        Me.btnRegresar.Name = "btnRegresar"
-        Me.btnRegresar.Size = New System.Drawing.Size(75, 23)
-        Me.btnRegresar.TabIndex = 14
-        Me.btnRegresar.Text = "Listado"
-        Me.btnRegresar.UseVisualStyleBackColor = False
+        Me.Column1.HeaderText = "codigo_centrocosto"
+        Me.Column1.Name = "Column1"
+        Me.Column1.Visible = False
         '
-        'Label12
+        'Column2
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(13, 8)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(213, 25)
-        Me.Label12.TabIndex = 14
-        Me.Label12.Text = "Factura de Compra"
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.btnCerrar)
-        Me.Panel1.Controls.Add(Me.btnGuardar)
-        Me.Panel1.Controls.Add(Me.btnCrear)
-        Me.Panel1.Controls.Add(Me.btnRegresar)
-        Me.Panel1.Controls.Add(Me.Label12)
-        Me.Panel1.Controls.Add(Me.btnModificar)
-        Me.Panel1.Location = New System.Drawing.Point(-6, 1)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(775, 43)
-        Me.Panel1.TabIndex = 16
-        '
-        'btnCerrar
-        '
-        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
-        Me.btnCerrar.FlatAppearance.BorderSize = 0
-        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.ForeColor = System.Drawing.Color.Black
-        Me.btnCerrar.Location = New System.Drawing.Point(686, 9)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCerrar.TabIndex = 15
-        Me.btnCerrar.Text = "Cerrar"
-        Me.btnCerrar.UseVisualStyleBackColor = False
-        '
-        'Panel2
-        '
-        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.Panel2.Location = New System.Drawing.Point(-1, 570)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(770, 22)
-        Me.Panel2.TabIndex = 17
+        Me.Column2.HeaderText = "codigosucursal"
+        Me.Column2.Name = "Column2"
+        Me.Column2.Visible = False
         '
         'A_FacturaCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(766, 583)
+        Me.ClientSize = New System.Drawing.Size(737, 646)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoFact)
@@ -669,10 +694,13 @@ Partial Class A_FacturaCompras
     Friend WithEvents Panel2 As Panel
     Friend WithEvents lblTotal As Label
     Friend WithEvents Label11 As Label
+    Friend WithEvents Button1 As Button
     Friend WithEvents codDetalle As DataGridViewTextBoxColumn
     Friend WithEvents Cuenta As DataGridViewTextBoxColumn
     Friend WithEvents area As DataGridViewTextBoxColumn
     Friend WithEvents Sede As DataGridViewTextBoxColumn
     Friend WithEvents Descripción As DataGridViewTextBoxColumn
     Friend WithEvents Monto As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
 End Class

@@ -132,6 +132,7 @@
             Dim objReporte As New M_CryReportePersonalActivo
             objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
             CrystalReportViewer1.ReportSource = objReporte
+
         ElseIf cmbxReporte.SelectedIndex = 1 Then
             'Reporte Personal Inactivo
             Dim objReporte As New M_CryReportePersonalInactivo

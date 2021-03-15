@@ -163,7 +163,7 @@ Module ModulosVarios
             Smtp_Server.Send(e_mail)
 
             'omitir mensaje
-            MsgBox("Mail Sent")
+            'MsgBox("Mail Sent")
 
         Catch ex As Exception
             MsgBox("No se envío el correo. " + ex.Message)
