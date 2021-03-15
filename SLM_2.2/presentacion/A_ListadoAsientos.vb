@@ -121,12 +121,45 @@
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Close()
-        MM_VistaIngresos.Show()
+
+    Private Sub MantenimientoCCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MantenimientoCCToolStripMenuItem.Click
+        Try
+
+            A_CentrodeCosto.Show()
+            A_CentrodeCosto.BringToFront()
+            A_CentrodeCosto.WindowState = WindowState.Normal
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        A_InformeAsientos.Show()
+    Private Sub ReporteCCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteCCToolStripMenuItem.Click
+        Try
+
+            reporteCentroCostos.Show()
+            reporteCentroCostos.BringToFront()
+            reporteCentroCostos.WindowState = WindowState.Normal
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub IngresosPorAreaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IngresosPorAreaToolStripMenuItem.Click
+        Try
+            Me.Close()
+            MM_VistaIngresos.Show()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub InformeAsientosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformeAsientosToolStripMenuItem.Click
+        Try
+            A_InformeAsientos.Show()
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

@@ -28,15 +28,20 @@ Partial Class A_ListadoAsientos
         Me.dtAsientos = New System.Windows.Forms.DataGridView()
         Me.txtCod = New System.Windows.Forms.TextBox()
         Me.lblCod = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnIngresarAsiento = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MantenimientoCCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteCCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IngresosPorAreaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InformeAsientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbxAsientos.SuspendLayout()
         CType(Me.dtAsientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbxAsientos
@@ -49,9 +54,9 @@ Partial Class A_ListadoAsientos
         Me.gbxAsientos.Controls.Add(Me.dtAsientos)
         Me.gbxAsientos.Controls.Add(Me.txtCod)
         Me.gbxAsientos.Controls.Add(Me.lblCod)
-        Me.gbxAsientos.Location = New System.Drawing.Point(12, 43)
+        Me.gbxAsientos.Location = New System.Drawing.Point(12, 66)
         Me.gbxAsientos.Name = "gbxAsientos"
-        Me.gbxAsientos.Size = New System.Drawing.Size(694, 283)
+        Me.gbxAsientos.Size = New System.Drawing.Size(694, 364)
         Me.gbxAsientos.TabIndex = 0
         Me.gbxAsientos.TabStop = False
         Me.gbxAsientos.Text = "Asientos Contables"
@@ -87,7 +92,7 @@ Partial Class A_ListadoAsientos
         Me.dtAsientos.Name = "dtAsientos"
         Me.dtAsientos.ReadOnly = True
         Me.dtAsientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtAsientos.Size = New System.Drawing.Size(682, 220)
+        Me.dtAsientos.Size = New System.Drawing.Size(682, 301)
         Me.dtAsientos.TabIndex = 2
         '
         'txtCod
@@ -107,19 +112,6 @@ Partial Class A_ListadoAsientos
         Me.lblCod.TabIndex = 0
         Me.lblCod.Text = "Nro. Asiento"
         '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.Green
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.Location = New System.Drawing.Point(408, 8)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(80, 23)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Ingresos"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'btnIngresarAsiento
         '
         Me.btnIngresarAsiento.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -135,7 +127,7 @@ Partial Class A_ListadoAsientos
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 333)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 437)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
         Me.StatusStrip1.TabIndex = 1
@@ -147,25 +139,11 @@ Partial Class A_ListadoAsientos
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnIngresarAsiento)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(0, 1)
+        Me.Panel1.Location = New System.Drawing.Point(0, 24)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(718, 36)
         Me.Panel1.TabIndex = 3
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackColor = System.Drawing.Color.Honeydew
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(494, 8)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Informe"
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -178,14 +156,55 @@ Partial Class A_ListadoAsientos
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Asientos"
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(718, 24)
+        Me.MenuStrip1.TabIndex = 4
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'MenuToolStripMenuItem
+        '
+        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MantenimientoCCToolStripMenuItem, Me.ReporteCCToolStripMenuItem, Me.IngresosPorAreaToolStripMenuItem, Me.InformeAsientosToolStripMenuItem})
+        Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
+        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
+        Me.MenuToolStripMenuItem.Text = "Menú"
+        '
+        'MantenimientoCCToolStripMenuItem
+        '
+        Me.MantenimientoCCToolStripMenuItem.Name = "MantenimientoCCToolStripMenuItem"
+        Me.MantenimientoCCToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MantenimientoCCToolStripMenuItem.Text = "Mantenimiento CC"
+        '
+        'ReporteCCToolStripMenuItem
+        '
+        Me.ReporteCCToolStripMenuItem.Name = "ReporteCCToolStripMenuItem"
+        Me.ReporteCCToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReporteCCToolStripMenuItem.Text = "Reporte CC"
+        '
+        'IngresosPorAreaToolStripMenuItem
+        '
+        Me.IngresosPorAreaToolStripMenuItem.Name = "IngresosPorAreaToolStripMenuItem"
+        Me.IngresosPorAreaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.IngresosPorAreaToolStripMenuItem.Text = "Ingresos por Area"
+        '
+        'InformeAsientosToolStripMenuItem
+        '
+        Me.InformeAsientosToolStripMenuItem.Name = "InformeAsientosToolStripMenuItem"
+        Me.InformeAsientosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InformeAsientosToolStripMenuItem.Text = "Informe Asientos"
+        '
         'A_ListadoAsientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(718, 355)
+        Me.ClientSize = New System.Drawing.Size(718, 459)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusStrip1)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.gbxAsientos)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -197,6 +216,8 @@ Partial Class A_ListadoAsientos
         CType(Me.dtAsientos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -211,6 +232,10 @@ Partial Class A_ListadoAsientos
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MantenimientoCCToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReporteCCToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents IngresosPorAreaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents InformeAsientosToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -22,7 +22,6 @@ Partial Class A_ListadoCentroCosto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_ListadoCentroCosto))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgvListado = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -34,13 +33,16 @@ Partial Class A_ListadoCentroCosto
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.dgvListado)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(464, 426)
+        Me.GroupBox1.Size = New System.Drawing.Size(426, 487)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Seleccione una opcion con doble clic"
+        Me.GroupBox1.Text = "Seleccione una opción con doble clic"
         '
         'dgvListado
         '
@@ -52,7 +54,8 @@ Partial Class A_ListadoCentroCosto
         Me.dgvListado.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvListado.Location = New System.Drawing.Point(3, 16)
         Me.dgvListado.Name = "dgvListado"
-        Me.dgvListado.Size = New System.Drawing.Size(458, 407)
+        Me.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvListado.Size = New System.Drawing.Size(420, 468)
         Me.dgvListado.TabIndex = 0
         '
         'Column1
@@ -74,11 +77,12 @@ Partial Class A_ListadoCentroCosto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(488, 450)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(447, 508)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.KeyPreview = True
         Me.Name = "A_ListadoCentroCosto"
-        Me.Text = "A_ListadoCentroCosto"
+        Me.Text = "Listado de Centro de Costo"
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -277,6 +277,7 @@
     <Compile Include="negocio\ClsCandidatos.vb" />
     <Compile Include="negocio\ClsCapacitaciones.vb" />
     <Compile Include="negocio\ClsCategoriaroducto.vb" />
+    <Compile Include="negocio\ClsCentoCostos_Asientos.vb" />
     <Compile Include="negocio\ClsCentroCostos.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
     <Compile Include="negocio\ClsColaPacientes.vb" />
@@ -825,12 +826,6 @@
       <DependentUpon>E_frmEntrada.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\E_frmEntrada.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="presentacion\E_frmEntregaResultados.Designer.vb">
-      <DependentUpon>E_frmEntregaResultados.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\E_frmEntregaResultados.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_frmFirmaDigital.Designer.vb">
@@ -1655,11 +1650,11 @@
     <Compile Include="presentacion\prueba.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\ReporteExamenesCompletos.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReporteExamenesCompletos.rpt</DependentUpon>
-      <SubType>Component</SubType>
+    <Compile Include="Reportes\reporteCentroCostos.Designer.vb">
+      <DependentUpon>reporteCentroCostos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporteCentroCostos.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\reporteOrdenCompra.Designer.vb">
       <DependentUpon>reporteOrdenCompra.vb</DependentUpon>
@@ -1678,6 +1673,12 @@
     </Compile>
     <Compile Include="Reportes\reporteSolicitudInterna.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt_centrodecostos.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_centrodecostos.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rpt_ordenCompra.vb">
       <AutoGen>True</AutoGen>
@@ -1976,9 +1977,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmEntrada.resx">
       <DependentUpon>E_frmEntrada.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\E_frmEntregaResultados.resx">
-      <DependentUpon>E_frmEntregaResultados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmFirmaDigital.resx">
       <DependentUpon>E_frmFirmaDigital.vb</DependentUpon>
@@ -2404,9 +2402,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>E_ReporteResultadoIndividual.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteExamenesCompletos.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ReporteExamenesCompletos.vb</LastGenOutput>
+    <EmbeddedResource Include="Reportes\reporteCentroCostos.resx">
+      <DependentUpon>reporteCentroCostos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reporteOrdenCompra.resx">
       <DependentUpon>reporteOrdenCompra.vb</DependentUpon>
@@ -2416,6 +2413,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reporteSolicitudInterna.resx">
       <DependentUpon>reporteSolicitudInterna.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_centrodecostos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_centrodecostos.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpt_ordenCompra.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
