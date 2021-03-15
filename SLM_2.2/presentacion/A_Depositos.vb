@@ -12,43 +12,9 @@
 
     End Sub
 
-    Private Sub ListarDepositosToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub ListarDepositosToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
-        If txtNro.Text = "" Then
 
-            MsgBox("Debe seleccionar una transacción para ver un asiento contable.")
-
-        Else
-
-            Try
-                With asiento
-
-                    .Campo_Llave = Convert.ToInt32(txtNro.Text)
-
-                    Dim dtA As DataTable
-                    Dim rows As DataRow
-
-                    dtA = .VerAsiento
-                    rows = dtA.Rows(0)
-
-                    'Asignando valores a forma Asiento
-
-                    With frmAsientos
-
-                        .txtNro.Text = rows("campoLlave")
-                        .txtTexto.Text = rows("descripcion")
-                        .dtpFecha.Value = rows("fecha")
-                        .lblCodAsiento.Text = rows("cod_asiento")
-
-                        .Show()
-                    End With
-
-                End With
-            Catch ex As Exception
-                MsgBox("No se registro asiento de la transaccion o ocurrio un error. Detalle: " + ex.Message)
-            End Try
-
-        End If
 
     End Sub
 
@@ -339,54 +305,27 @@
             txtMonBase.Text = "1"
             Dim Deposito As New ClsDeposito
             'Mostrar todos los depositos registrados
+
             dtDepositos.DataSource = Deposito.listarDepositos
 
-        Catch ex As Exception
+            If dtDepositos.Columns.Contains("codDeposito") = True Then
 
-        End Try
+                dtDepositos.Columns("codDeposito").HeaderText = "Cod."
+                dtDepositos.Columns("fecha").HeaderText = "Fecha"
+                dtDepositos.Columns("codFPBanco").Visible = False
+                dtDepositos.Columns("contado").HeaderText = "Contado"
+                dtDepositos.Columns("codFPContado").Visible = False
+                dtDepositos.Columns("totalDeposito").HeaderText = "Total Deposito"
+                dtDepositos.Columns("moneda").Visible = False
+                dtDepositos.Columns("monBase").Visible = False
+                dtDepositos.Columns("comision").HeaderText = "Comi."
+                dtDepositos.Columns("comentario").HeaderText = "Comentario"
+                dtDepositos.Columns("tipoDeposito").HeaderText = "Tipo Depos."
+                dtDepositos.Columns("codCajero").HeaderText = "Cajero"
+                dtDepositos.Columns("estado").HeaderText = "Estado"
 
-    End Sub
+            End If
 
-    Private Sub dtDepositos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDepositos.CellClick
-
-        'Mostrar datos seleccionados del datagrid
-        Try
-
-            Dim dt, dt2 As New DataTable
-            dt = dtDepositos.DataSource
-            Dim row, row2 As DataRow
-            row = dt.Rows(e.RowIndex)
-
-
-            btnCrearNuevo.Enabled = True
-            btnModificar.Enabled = True
-            btnGuardar.Enabled = False
-
-            txtNro.Text = row("codDeposito")
-            dtpFecha.Value = row("fecha")
-
-            lblCodFPBanco.Text = row("codFPBanco")
-            buscarCodigo.Codigo_FormaPago = Convert.ToInt32(lblCodFPBanco.Text)
-            dt2 = buscarCodigo.buscarFormaPago()
-            row2 = dt2.Rows(0)
-            txtBanco.Text = row2("codigo")
-
-            txtContado.Text = row("contado")
-
-            lblCodFPContado.Text = row("codFPContado")
-            buscarCodigo.Codigo_FormaPago = Convert.ToInt32(lblCodFPContado.Text)
-            dt2 = buscarCodigo.buscarFormaPago()
-            row2 = dt2.Rows(0)
-            txtTipoConta.Text = row2("codigo")
-
-            txtTotalDep.Text = row("totalDeposito")
-            txtMoneda.Text = row("moneda")
-            txtMonBase.Text = row("monBase")
-            txtComision.Text = row("comision")
-            txtComentario.Text = row("comentario")
-            lblTipoDeposito.Text = row("tipoDeposito")
-            txtCajero.Text = row("codCajero")
-            chkAnular.Checked = row("estado")
         Catch ex As Exception
 
         End Try
@@ -460,7 +399,7 @@
 
     Private Sub txtComision_TextChanged(sender As Object, e As EventArgs) Handles txtComision.TextChanged
         Try
-            txtTotalDep.Text = Convert.ToDouble(txtContado.Text) - Convert.ToDouble(txtComision.Text)
+            txtTotalDep.Text = Double.Parse(txtContado.Text) - Double.Parse(txtComision.Text)
         Catch ex As Exception
 
         End Try
@@ -535,10 +474,6 @@
         End If
     End Sub
 
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs)
-
-
-    End Sub
 
     Private Sub txtCajero_TextChanged(sender As Object, e As EventArgs) Handles txtCajero.TextChanged
         If txtCajero.BackColor = Color.Red Then
@@ -549,13 +484,33 @@
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
 
         Try
-            Dim data As New DataTable
+            'Busqueda por usuario o comentario
+
+
             With Deposito
 
                 .Comenta_rio = txtBusqueda.Text
                 .cod_Cajero = txtBusqueda.Text
-                data = .buscarDepo
-                dtDepositos.DataSource = data
+                dtDepositos.DataSource = .buscarDepo
+
+                If dtDepositos.Columns.Contains("codDeposito") = True Then
+
+                    dtDepositos.Columns("codDeposito").HeaderText = "Cod."
+                    dtDepositos.Columns("fecha").HeaderText = "Fecha"
+                    dtDepositos.Columns("codFPBanco").Visible = False
+                    dtDepositos.Columns("contado").HeaderText = "Contado"
+                    dtDepositos.Columns("codFPContado").Visible = False
+                    dtDepositos.Columns("totalDeposito").HeaderText = "Total Deposito"
+                    dtDepositos.Columns("moneda").Visible = False
+                    dtDepositos.Columns("monBase").Visible = False
+                    dtDepositos.Columns("comision").HeaderText = "Comi."
+                    dtDepositos.Columns("comentario").HeaderText = "Comentario"
+                    dtDepositos.Columns("tipoDeposito").HeaderText = "Tipo Depos."
+                    dtDepositos.Columns("codCajero").HeaderText = "Cajero"
+                    dtDepositos.Columns("estado").HeaderText = "Estado"
+
+                End If
+
 
             End With
 
@@ -583,8 +538,24 @@
             Dim dataF As New DataTable
             With depoFecha
                 .Fech_a = dtpFechaBuscar.Value
-                dataF = .buscarDepoFecha()
-                dtDepositos.DataSource = dataF
+                dtDepositos.DataSource = .buscarDepoFecha()
+                If dtDepositos.Columns.Contains("codDeposito") = True Then
+
+                    dtDepositos.Columns("codDeposito").HeaderText = "Cod."
+                    dtDepositos.Columns("fecha").HeaderText = "Fecha"
+                    dtDepositos.Columns("codFPBanco").Visible = False
+                    dtDepositos.Columns("contado").HeaderText = "Contado"
+                    dtDepositos.Columns("codFPContado").Visible = False
+                    dtDepositos.Columns("totalDeposito").HeaderText = "Total Deposito"
+                    dtDepositos.Columns("moneda").Visible = False
+                    dtDepositos.Columns("monBase").Visible = False
+                    dtDepositos.Columns("comision").HeaderText = "Comi."
+                    dtDepositos.Columns("comentario").HeaderText = "Comentario"
+                    dtDepositos.Columns("tipoDeposito").HeaderText = "Tipo Depos."
+                    dtDepositos.Columns("codCajero").HeaderText = "Cajero"
+                    dtDepositos.Columns("estado").HeaderText = "Estado"
+
+                End If
             End With
 
 
@@ -600,6 +571,23 @@
 
             'Mostrar todos los depositos registrados
             dtDepositos.DataSource = Deposito.listarDepositos
+            If dtDepositos.Columns.Contains("codDeposito") = True Then
+
+                dtDepositos.Columns("codDeposito").HeaderText = "Cod."
+                dtDepositos.Columns("fecha").HeaderText = "Fecha"
+                dtDepositos.Columns("codFPBanco").Visible = False
+                dtDepositos.Columns("contado").HeaderText = "Contado"
+                dtDepositos.Columns("codFPContado").Visible = False
+                dtDepositos.Columns("totalDeposito").HeaderText = "Total Deposito"
+                dtDepositos.Columns("moneda").Visible = False
+                dtDepositos.Columns("monBase").Visible = False
+                dtDepositos.Columns("comision").HeaderText = "Comi."
+                dtDepositos.Columns("comentario").HeaderText = "Comentario"
+                dtDepositos.Columns("tipoDeposito").HeaderText = "Tipo Depos."
+                dtDepositos.Columns("codCajero").HeaderText = "Cajero"
+                dtDepositos.Columns("estado").HeaderText = "Estado"
+
+            End If
 
         Catch ex As Exception
 
@@ -613,8 +601,27 @@
             Dim dataC As New DataTable
             With depoCod
                 .Cod = Convert.ToInt32(txtBuscaCodigo.Text)
-                dataC = .buscarDepoCodigo()
-                dtDepositos.DataSource = dataC
+                dtDepositos.DataSource = .buscarDepoCodigo()
+
+                If dtDepositos.Columns.Contains("codDeposito") = True Then
+
+                    dtDepositos.Columns("codDeposito").HeaderText = "Cod."
+                    dtDepositos.Columns("fecha").HeaderText = "Fecha"
+                    dtDepositos.Columns("codFPBanco").Visible = False
+                    dtDepositos.Columns("contado").HeaderText = "Contado"
+                    dtDepositos.Columns("codFPContado").Visible = False
+                    dtDepositos.Columns("totalDeposito").HeaderText = "Total Deposito"
+                    dtDepositos.Columns("moneda").Visible = False
+                    dtDepositos.Columns("monBase").Visible = False
+                    dtDepositos.Columns("comision").HeaderText = "Comi."
+                    dtDepositos.Columns("comentario").HeaderText = "Comentario"
+                    dtDepositos.Columns("tipoDeposito").HeaderText = "Tipo Depos."
+                    dtDepositos.Columns("codCajero").HeaderText = "Cajero"
+                    dtDepositos.Columns("estado").HeaderText = "Estado"
+
+                End If
+
+
             End With
 
 
@@ -624,4 +631,93 @@
 
     End Sub
 
+    Private Sub dtDepositos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDepositos.CellDoubleClick
+
+
+        'Mostrar datos seleccionados del datagrid
+        Try
+
+            Dim dt2 As New DataTable
+            Dim row2 As DataRow
+
+            btnCrearNuevo.Enabled = True
+            btnModificar.Enabled = True
+            btnGuardar.Enabled = False
+
+            txtNro.Text = dtDepositos.Rows(e.RowIndex).Cells(0).Value
+            dtpFecha.Value = dtDepositos.Rows(e.RowIndex).Cells(1).Value
+
+            lblCodFPBanco.Text = dtDepositos.Rows(e.RowIndex).Cells(2).Value
+            buscarCodigo.Codigo_FormaPago = Integer.Parse(lblCodFPBanco.Text)
+            dt2 = buscarCodigo.buscarFormaPago()
+            row2 = dt2.Rows(0)
+            txtBanco.Text = row2("codigo")
+
+            txtContado.Text = dtDepositos.Rows(e.RowIndex).Cells(3).Value
+
+            lblCodFPContado.Text = dtDepositos.Rows(e.RowIndex).Cells(4).Value
+            buscarCodigo.Codigo_FormaPago = Integer.Parse(lblCodFPContado.Text)
+            dt2 = buscarCodigo.buscarFormaPago()
+            row2 = dt2.Rows(0)
+            txtTipoConta.Text = row2("codigo")
+
+            txtTotalDep.Text = dtDepositos.Rows(e.RowIndex).Cells(5).Value
+            txtMoneda.Text = dtDepositos.Rows(e.RowIndex).Cells(6).Value
+            txtMonBase.Text = dtDepositos.Rows(e.RowIndex).Cells(7).Value
+            txtComision.Text = dtDepositos.Rows(e.RowIndex).Cells(8).Value
+            txtComentario.Text = dtDepositos.Rows(e.RowIndex).Cells(9).Value
+            lblTipoDeposito.Text = dtDepositos.Rows(e.RowIndex).Cells(10).Value
+            txtCajero.Text = dtDepositos.Rows(e.RowIndex).Cells(11).Value
+            chkAnular.Checked = dtDepositos.Rows(e.RowIndex).Cells(12).Value
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+
+
+
+
+
+
+
+    End Sub
+
+    Private Sub AsientoToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        If txtNro.Text = "" Then
+
+            MsgBox("Debe seleccionar una transacción para ver un asiento contable.")
+
+        Else
+
+            Try
+                With asiento
+
+                    .Campo_Llave = Convert.ToInt32(txtNro.Text)
+
+                    Dim dtA As DataTable
+                    Dim rows As DataRow
+
+                    dtA = .VerAsiento
+                    rows = dtA.Rows(0)
+
+                    'Asignando valores a forma Asiento
+
+                    With frmAsientos
+
+                        .txtNro.Text = rows("campoLlave")
+                        .txtTexto.Text = rows("descripcion")
+                        .dtpFecha.Value = rows("fecha")
+                        .lblCodAsiento.Text = rows("cod_asiento")
+
+                        .Show()
+                    End With
+
+                End With
+            Catch ex As Exception
+                MsgBox("No se registro asiento de la transaccion o ocurrio un error. Detalle: " + ex.Message)
+            End Try
+
+        End If
+    End Sub
 End Class

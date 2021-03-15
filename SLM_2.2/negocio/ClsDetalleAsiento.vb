@@ -118,7 +118,7 @@ Public Class ClsDetalleAsiento
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
-        sqlpar.Value = ""
+        sqlpar.Value = 0
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar.Direction = ParameterDirection.Output

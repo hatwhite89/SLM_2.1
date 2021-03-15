@@ -56,8 +56,8 @@
                                 'Insertar detalle de compra
                                 DetalleFacCompra.Cod_Factura = Convert.ToInt32(codigoFacturaCompra)
                                 DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(1).Value())
-                                DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(2).Value
-                                DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(3).Value
+                                DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(6).ToString
+                                DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(7).ToString
                                 DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(4).Value()
                                 DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(5).Value()))
 
@@ -101,7 +101,7 @@
                     dtpro = proveedor.cuentaProveedor()
                     rowpro = dtpro.rows(0)
                     'MsgBox("El proveedor:" + rowpro("codCuenta"))
-                    'Insertando Asiento
+                    '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: INSERTAR ASIENTO
 
                     With asiento
 
@@ -124,6 +124,11 @@
 
                     End With
 
+                    'DETALLE DE ASIENTO
+
+                    'capturar codigo para centro de costo
+                    Dim codigodetalle As Integer
+                    Dim objasiento_cc As New ClsCentoCostos_Asientos
 
                     For i = 0 To dtDetalleFactura.Rows.Count - 1
                         With detalleasiento
@@ -132,7 +137,18 @@
                             .Debe_ = Convert.ToDouble(dtDetalleFactura.Rows(i).Cells(5).Value)
                             .Haber_ = 0
                             .Origen_ = "FacturaCompra"
-                            .registrarDetalleAsiento()
+
+                            codigodetalle = .registrarDetalleAsiento()
+
+                        End With
+
+                        'centro de costo
+                        With objasiento_cc
+
+                            .id_asientos_ = Integer.Parse(codigoAsiento)
+                            .id_detalleasiento_ = Integer.Parse(codigodetalle)
+                            .idcentrocostos_ = Integer.Parse(dtDetalleFactura.Rows(i).Cells(6).Value)
+                            .REGISTRO_ASIENTO_CC()
 
                         End With
 
@@ -230,17 +246,19 @@
         'Capturar numero de fila seleccionada
         lblFila.Text = e.RowIndex
 
-
         'Listar objetos en Datagrid
         If e.ColumnIndex = 2 Then
 
-            A_ListarObjetos.Show()
-            A_ListarObjetos.lblForm.Text = "area"
+            A_ListadoCentroCosto.Show()
+            A_ListadoCentroCosto.BringToFront()
+
 
         ElseIf e.ColumnIndex = 3 Then
 
-            A_ListarObjetos.Show()
-            A_ListarObjetos.lblForm.Text = "sede"
+            M_Sucursal.lblform.Text = "A_FacturaCompras"
+            M_Sucursal.Show()
+            M_Sucursal.BringToFront()
+
 
         ElseIf e.ColumnIndex = 1 Then
 
@@ -296,8 +314,8 @@
                                     DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(1).Value())
                                     DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(4).Value()
                                     DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(5).Value()))
-                                    DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(2).Value()
-                                    DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(3).Value()
+                                    DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(6).Value()
+                                    DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(7).Value()
                                 End With
 
                                 If DetalleFacCompra.registrarDetalleFactura() = 0 Then
@@ -314,8 +332,8 @@
                                     DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(1).Value())
                                     DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(4).Value()
                                     DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(5).Value()))
-                                    DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(2).Value()
-                                    DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(3).Value()
+                                    DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(6).Value()
+                                    DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(7).Value()
                                 End With
 
                                 If DetalleFacCompra.modificarDetalleFactura() = 0 Then
@@ -540,7 +558,7 @@
     End Sub
 
     Private Sub dtDetalleFactura_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleFactura.CellClick
-        If e.ColumnIndex = 6 Then
+        If e.ColumnIndex = 8 Then
             Try
                 Dim n As String = MsgBox("¿Desea eliminar la cuenta de la factura?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then
@@ -582,4 +600,12 @@
 
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        With A_ListarProveedores
+
+            .Show()
+            .lblForm.Text = "facturaCompra"
+
+        End With
+    End Sub
 End Class

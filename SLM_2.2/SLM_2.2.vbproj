@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80A97C69-33C1-4D76-A4FF-61E3B54BEE03}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SLM_2._2.Resultados</StartupObject>
+    <StartupObject>SLM_2._2.M_InicioSesion</StartupObject>
     <RootNamespace>SLM_2._2</RootNamespace>
     <AssemblyName>SLM</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -277,6 +277,7 @@
     <Compile Include="negocio\ClsCandidatos.vb" />
     <Compile Include="negocio\ClsCapacitaciones.vb" />
     <Compile Include="negocio\ClsCategoriaroducto.vb" />
+    <Compile Include="negocio\ClsCentoCostos_Asientos.vb" />
     <Compile Include="negocio\ClsCentroCostos.vb" />
     <Compile Include="negocio\ClsClasificacionItem.vb" />
     <Compile Include="negocio\ClsColaPacientes.vb" />
@@ -1649,6 +1650,12 @@
     <Compile Include="presentacion\prueba.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\reporteCentroCostos.Designer.vb">
+      <DependentUpon>reporteCentroCostos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporteCentroCostos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\reporteOrdenCompra.Designer.vb">
       <DependentUpon>reporteOrdenCompra.vb</DependentUpon>
     </Compile>
@@ -1666,6 +1673,12 @@
     </Compile>
     <Compile Include="Reportes\reporteSolicitudInterna.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt_centrodecostos.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_centrodecostos.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rpt_ordenCompra.vb">
       <AutoGen>True</AutoGen>
@@ -2389,6 +2402,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>E_ReporteResultadoIndividual.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporteCentroCostos.resx">
+      <DependentUpon>reporteCentroCostos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reporteOrdenCompra.resx">
       <DependentUpon>reporteOrdenCompra.vb</DependentUpon>
     </EmbeddedResource>
@@ -2397,6 +2413,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reporteSolicitudInterna.resx">
       <DependentUpon>reporteSolicitudInterna.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_centrodecostos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_centrodecostos.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpt_ordenCompra.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

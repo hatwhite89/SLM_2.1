@@ -450,7 +450,7 @@ Partial Class frmDeposito
         Me.GroupBox1.Controls.Add(Me.dtDepositos)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 295)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(694, 339)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 342)
         Me.GroupBox1.TabIndex = 75
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Depositos"
@@ -537,7 +537,7 @@ Partial Class frmDeposito
         Me.dtDepositos.ReadOnly = True
         Me.dtDepositos.RowHeadersWidth = 51
         Me.dtDepositos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtDepositos.Size = New System.Drawing.Size(676, 267)
+        Me.dtDepositos.Size = New System.Drawing.Size(676, 270)
         Me.dtDepositos.TabIndex = 14
         '
         'Panel1
@@ -583,7 +583,7 @@ Partial Class frmDeposito
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 636)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 639)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
         Me.StatusStrip1.TabIndex = 77
@@ -594,7 +594,7 @@ Partial Class frmDeposito
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(718, 658)
+        Me.ClientSize = New System.Drawing.Size(718, 661)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbxInfoDepo)
