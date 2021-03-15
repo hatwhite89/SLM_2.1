@@ -22,6 +22,7 @@ Partial Class MM_ListadoTomaMuestras
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MM_ListadoTomaMuestras))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblDescripcion = New System.Windows.Forms.Label()
         Me.lblNumero = New System.Windows.Forms.Label()
@@ -49,11 +50,11 @@ Partial Class MM_ListadoTomaMuestras
         Me.GroupBox1.Controls.Add(Me.dgbtabla)
         Me.GroupBox1.Controls.Add(Me.txtDescripcionB)
         Me.GroupBox1.Controls.Add(Me.txtCodMuestraB)
-        Me.GroupBox1.Location = New System.Drawing.Point(14, 21)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox1.Location = New System.Drawing.Point(10, 17)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(928, 614)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(696, 499)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Búsqueda Toma de Muestras"
@@ -61,27 +62,30 @@ Partial Class MM_ListadoTomaMuestras
         'lblDescripcion
         '
         Me.lblDescripcion.AutoSize = True
-        Me.lblDescripcion.Location = New System.Drawing.Point(308, 33)
+        Me.lblDescripcion.Location = New System.Drawing.Point(231, 27)
+        Me.lblDescripcion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblDescripcion.Name = "lblDescripcion"
-        Me.lblDescripcion.Size = New System.Drawing.Size(82, 17)
+        Me.lblDescripcion.Size = New System.Drawing.Size(63, 13)
         Me.lblDescripcion.TabIndex = 123
         Me.lblDescripcion.Text = "Descripción"
         '
         'lblNumero
         '
         Me.lblNumero.AutoSize = True
-        Me.lblNumero.Location = New System.Drawing.Point(17, 33)
+        Me.lblNumero.Location = New System.Drawing.Point(13, 27)
+        Me.lblNumero.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblNumero.Name = "lblNumero"
-        Me.lblNumero.Size = New System.Drawing.Size(52, 17)
+        Me.lblNumero.Size = New System.Drawing.Size(40, 13)
         Me.lblNumero.TabIndex = 122
         Me.lblNumero.Text = "Código"
         '
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(295, 587)
+        Me.lblcantidad.Location = New System.Drawing.Point(221, 477)
+        Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
+        Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
         Me.lblcantidad.TabIndex = 117
         Me.lblcantidad.Text = "000"
         '
@@ -91,10 +95,10 @@ Partial Class MM_ListadoTomaMuestras
         Me.btnnueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnueva.ForeColor = System.Drawing.Color.White
-        Me.btnnueva.Location = New System.Drawing.Point(703, 24)
-        Me.btnnueva.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnnueva.Location = New System.Drawing.Point(527, 20)
+        Me.btnnueva.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnnueva.Name = "btnnueva"
-        Me.btnnueva.Size = New System.Drawing.Size(219, 34)
+        Me.btnnueva.Size = New System.Drawing.Size(164, 28)
         Me.btnnueva.TabIndex = 121
         Me.btnnueva.Text = "Nueva Toma Muestra"
         Me.btnnueva.UseVisualStyleBackColor = False
@@ -102,9 +106,10 @@ Partial Class MM_ListadoTomaMuestras
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(5, 587)
+        Me.lbltotal.Location = New System.Drawing.Point(4, 477)
+        Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(141, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(110, 13)
         Me.lbltotal.TabIndex = 116
         Me.lbltotal.Text = "TOTAL DE RECIBOS"
         '
@@ -118,38 +123,40 @@ Partial Class MM_ListadoTomaMuestras
         Me.dgbtabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(5, 70)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgbtabla.Location = New System.Drawing.Point(4, 57)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
-        Me.dgbtabla.Size = New System.Drawing.Size(917, 498)
+        Me.dgbtabla.Size = New System.Drawing.Size(688, 405)
         Me.dgbtabla.TabIndex = 2
         '
         'txtDescripcionB
         '
-        Me.txtDescripcionB.Location = New System.Drawing.Point(392, 31)
-        Me.txtDescripcionB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtDescripcionB.Location = New System.Drawing.Point(294, 25)
+        Me.txtDescripcionB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtDescripcionB.Name = "txtDescripcionB"
-        Me.txtDescripcionB.Size = New System.Drawing.Size(295, 22)
+        Me.txtDescripcionB.Size = New System.Drawing.Size(222, 20)
         Me.txtDescripcionB.TabIndex = 1
         '
         'txtCodMuestraB
         '
-        Me.txtCodMuestraB.Location = New System.Drawing.Point(83, 31)
-        Me.txtCodMuestraB.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtCodMuestraB.Location = New System.Drawing.Point(62, 25)
+        Me.txtCodMuestraB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtCodMuestraB.Name = "txtCodMuestraB"
-        Me.txtCodMuestraB.Size = New System.Drawing.Size(192, 22)
+        Me.txtCodMuestraB.Size = New System.Drawing.Size(145, 20)
         Me.txtCodMuestraB.TabIndex = 0
         '
         'MM_ListadoTomaMuestras
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(957, 657)
+        Me.ClientSize = New System.Drawing.Size(718, 534)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "MM_ListadoTomaMuestras"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listado Toma de Muestras"

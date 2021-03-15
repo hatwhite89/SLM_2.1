@@ -31,6 +31,13 @@ Partial Class E_frmFirmaDigital
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.txtCodUsuario = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.cod_usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_completo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.puesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.abreviatura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.imagen = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_firma = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -46,13 +53,6 @@ Partial Class E_frmFirmaDigital
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.cod_usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre_usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre_completo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.puesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.abreviatura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.imagen = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fecha_firma = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -131,6 +131,49 @@ Partial Class E_frmFirmaDigital
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(765, 195)
         Me.DataGridView1.TabIndex = 6
+        '
+        'cod_usuario
+        '
+        Me.cod_usuario.DataPropertyName = "cod_usuario"
+        Me.cod_usuario.HeaderText = "ID USUARIO"
+        Me.cod_usuario.Name = "cod_usuario"
+        '
+        'nombre_usuario
+        '
+        Me.nombre_usuario.DataPropertyName = "nombre_usuario"
+        Me.nombre_usuario.HeaderText = "USUARIO"
+        Me.nombre_usuario.Name = "nombre_usuario"
+        '
+        'nombre_completo
+        '
+        Me.nombre_completo.DataPropertyName = "nombre_completo"
+        Me.nombre_completo.HeaderText = "NOMBRE COMPLETO"
+        Me.nombre_completo.Name = "nombre_completo"
+        '
+        'puesto
+        '
+        Me.puesto.DataPropertyName = "puesto"
+        Me.puesto.HeaderText = "PUESTO"
+        Me.puesto.Name = "puesto"
+        '
+        'abreviatura
+        '
+        Me.abreviatura.DataPropertyName = "abreviatura"
+        Me.abreviatura.HeaderText = "ABREVIATURA"
+        Me.abreviatura.Name = "abreviatura"
+        '
+        'imagen
+        '
+        Me.imagen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.imagen.DataPropertyName = "imagen"
+        Me.imagen.HeaderText = "IMAGEN"
+        Me.imagen.Name = "imagen"
+        '
+        'fecha_firma
+        '
+        Me.fecha_firma.DataPropertyName = "fecha_firma"
+        Me.fecha_firma.HeaderText = "FECHA CREACION"
+        Me.fecha_firma.Name = "fecha_firma"
         '
         'StatusStrip1
         '
@@ -283,49 +326,6 @@ Partial Class E_frmFirmaDigital
         Me.Label1.Size = New System.Drawing.Size(65, 13)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Cod Usuario"
-        '
-        'cod_usuario
-        '
-        Me.cod_usuario.DataPropertyName = "cod_usuario"
-        Me.cod_usuario.HeaderText = "ID USUARIO"
-        Me.cod_usuario.Name = "cod_usuario"
-        '
-        'nombre_usuario
-        '
-        Me.nombre_usuario.DataPropertyName = "nombre_usuario"
-        Me.nombre_usuario.HeaderText = "USUARIO"
-        Me.nombre_usuario.Name = "nombre_usuario"
-        '
-        'nombre_completo
-        '
-        Me.nombre_completo.DataPropertyName = "nombre_completo"
-        Me.nombre_completo.HeaderText = "NOMBRE COMPLETO"
-        Me.nombre_completo.Name = "nombre_completo"
-        '
-        'puesto
-        '
-        Me.puesto.DataPropertyName = "puesto"
-        Me.puesto.HeaderText = "PUESTO"
-        Me.puesto.Name = "puesto"
-        '
-        'abreviatura
-        '
-        Me.abreviatura.DataPropertyName = "abreviatura"
-        Me.abreviatura.HeaderText = "ABREVIATURA"
-        Me.abreviatura.Name = "abreviatura"
-        '
-        'imagen
-        '
-        Me.imagen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.imagen.DataPropertyName = "imagen"
-        Me.imagen.HeaderText = "IMAGEN"
-        Me.imagen.Name = "imagen"
-        '
-        'fecha_firma
-        '
-        Me.fecha_firma.DataPropertyName = "fecha_firma"
-        Me.fecha_firma.HeaderText = "FECHA CREACION"
-        Me.fecha_firma.Name = "fecha_firma"
         '
         'E_frmFirmaDigital
         '

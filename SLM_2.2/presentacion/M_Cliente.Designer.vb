@@ -111,9 +111,9 @@ Partial Class M_Cliente
         Me.lblNombreB = New System.Windows.Forms.Label()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -122,8 +122,8 @@ Partial Class M_Cliente
         Me.gbxinfoCliente.SuspendLayout()
         Me.gbxgenero.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -1206,6 +1206,24 @@ Partial Class M_Cliente
         Me.Panel1.Size = New System.Drawing.Size(773, 152)
         Me.Panel1.TabIndex = 120
         '
+        'dgbtabla
+        '
+        Me.dgbtabla.AllowUserToAddRows = False
+        Me.dgbtabla.AllowUserToDeleteRows = False
+        Me.dgbtabla.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
+        Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgbtabla.Location = New System.Drawing.Point(4, 49)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgbtabla.Name = "dgbtabla"
+        Me.dgbtabla.ReadOnly = True
+        Me.dgbtabla.RowHeadersWidth = 51
+        Me.dgbtabla.RowTemplate.Height = 24
+        Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgbtabla.Size = New System.Drawing.Size(765, 97)
+        Me.dgbtabla.TabIndex = 123
+        '
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
@@ -1230,24 +1248,6 @@ Partial Class M_Cliente
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(796, 55)
         Me.Panel2.TabIndex = 122
-        '
-        'dgbtabla
-        '
-        Me.dgbtabla.AllowUserToAddRows = False
-        Me.dgbtabla.AllowUserToDeleteRows = False
-        Me.dgbtabla.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
-        Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(4, 49)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
-        Me.dgbtabla.Name = "dgbtabla"
-        Me.dgbtabla.ReadOnly = True
-        Me.dgbtabla.RowHeadersWidth = 51
-        Me.dgbtabla.RowTemplate.Height = 24
-        Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(765, 97)
-        Me.dgbtabla.TabIndex = 123
         '
         'Label13
         '
@@ -1316,9 +1316,9 @@ Partial Class M_Cliente
         Me.gbxgenero.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)

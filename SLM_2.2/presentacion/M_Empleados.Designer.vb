@@ -238,9 +238,9 @@ Partial Class M_Empleados
         Me.gbxobjeto.Controls.Add(Me.lblcodigo)
         Me.gbxobjeto.Controls.Add(Me.txtcodigo)
         Me.gbxobjeto.Location = New System.Drawing.Point(4, 47)
-        Me.gbxobjeto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxobjeto.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxobjeto.Name = "gbxobjeto"
-        Me.gbxobjeto.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxobjeto.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxobjeto.Size = New System.Drawing.Size(730, 137)
         Me.gbxobjeto.TabIndex = 119
         Me.gbxobjeto.TabStop = False
@@ -317,7 +317,7 @@ Partial Class M_Empleados
         'txtnombre2
         '
         Me.txtnombre2.Location = New System.Drawing.Point(353, 66)
-        Me.txtnombre2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombre2.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombre2.MaxLength = 50
         Me.txtnombre2.Name = "txtnombre2"
         Me.txtnombre2.Size = New System.Drawing.Size(135, 20)
@@ -326,7 +326,7 @@ Partial Class M_Empleados
         'txtapellido1
         '
         Me.txtapellido1.Location = New System.Drawing.Point(141, 89)
-        Me.txtapellido1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtapellido1.Margin = New System.Windows.Forms.Padding(2)
         Me.txtapellido1.MaxLength = 50
         Me.txtapellido1.Name = "txtapellido1"
         Me.txtapellido1.Size = New System.Drawing.Size(135, 20)
@@ -335,7 +335,7 @@ Partial Class M_Empleados
         'txtapellido2
         '
         Me.txtapellido2.Location = New System.Drawing.Point(353, 89)
-        Me.txtapellido2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtapellido2.Margin = New System.Windows.Forms.Padding(2)
         Me.txtapellido2.MaxLength = 50
         Me.txtapellido2.Name = "txtapellido2"
         Me.txtapellido2.Size = New System.Drawing.Size(135, 20)
@@ -371,7 +371,7 @@ Partial Class M_Empleados
         'txtnombre1
         '
         Me.txtnombre1.Location = New System.Drawing.Point(142, 66)
-        Me.txtnombre1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombre1.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombre1.MaxLength = 50
         Me.txtnombre1.Name = "txtnombre1"
         Me.txtnombre1.Size = New System.Drawing.Size(135, 20)
@@ -389,7 +389,7 @@ Partial Class M_Empleados
         'txtnombreCompleto
         '
         Me.txtnombreCompleto.Location = New System.Drawing.Point(141, 41)
-        Me.txtnombreCompleto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreCompleto.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreCompleto.MaxLength = 200
         Me.txtnombreCompleto.Name = "txtnombreCompleto"
         Me.txtnombreCompleto.ReadOnly = True
@@ -430,7 +430,7 @@ Partial Class M_Empleados
         '
         Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigo.Location = New System.Drawing.Point(141, 15)
-        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.ReadOnly = True
@@ -446,7 +446,7 @@ Partial Class M_Empleados
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnmodificar.Location = New System.Drawing.Point(587, 10)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
         Me.btnmodificar.TabIndex = 114
@@ -460,7 +460,7 @@ Partial Class M_Empleados
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnnuevo.Location = New System.Drawing.Point(428, 10)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
         Me.btnnuevo.TabIndex = 113
@@ -474,7 +474,7 @@ Partial Class M_Empleados
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnguardar.Location = New System.Drawing.Point(511, 10)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(72, 28)
         Me.btnguardar.TabIndex = 112
@@ -488,7 +488,7 @@ Partial Class M_Empleados
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btncancelar.Location = New System.Drawing.Point(663, 10)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(68, 28)
         Me.btncancelar.TabIndex = 37
@@ -503,9 +503,9 @@ Partial Class M_Empleados
         Me.gbxbusqueda.BackColor = System.Drawing.Color.AliceBlue
         Me.gbxbusqueda.Controls.Add(Me.TabControl1)
         Me.gbxbusqueda.Location = New System.Drawing.Point(4, 188)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Size = New System.Drawing.Size(730, 330)
         Me.gbxbusqueda.TabIndex = 118
         Me.gbxbusqueda.TabStop = False
@@ -521,7 +521,7 @@ Partial Class M_Empleados
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Location = New System.Drawing.Point(4, 17)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(715, 302)
@@ -554,9 +554,9 @@ Partial Class M_Empleados
         Me.TabPage1.Controls.Add(Me.dtpfechaAlta)
         Me.TabPage1.Controls.Add(Me.lblfechaNacimiento)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage1.Size = New System.Drawing.Size(707, 276)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Laboral"
@@ -604,7 +604,7 @@ Partial Class M_Empleados
         'txtnombreFormaPago
         '
         Me.txtnombreFormaPago.Location = New System.Drawing.Point(151, 202)
-        Me.txtnombreFormaPago.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreFormaPago.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreFormaPago.MaxLength = 20
         Me.txtnombreFormaPago.Name = "txtnombreFormaPago"
         Me.txtnombreFormaPago.ReadOnly = True
@@ -622,9 +622,9 @@ Partial Class M_Empleados
         Me.GroupBox3.Controls.Add(Me.Label15)
         Me.GroupBox3.Controls.Add(Me.Label14)
         Me.GroupBox3.Location = New System.Drawing.Point(266, 192)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox3.Size = New System.Drawing.Size(425, 63)
         Me.GroupBox3.TabIndex = 159
         Me.GroupBox3.TabStop = False
@@ -656,7 +656,7 @@ Partial Class M_Empleados
         Me.cmbxestadoLaboral.FormattingEnabled = True
         Me.cmbxestadoLaboral.Items.AddRange(New Object() {"Activo", "Inactivo: Renuncia", "Mutuo Acuerdo", "Inactivo: Despido", "Inactivo: Desertor", "Inactivo: Defunción", "Jubilación"})
         Me.cmbxestadoLaboral.Location = New System.Drawing.Point(97, 24)
-        Me.cmbxestadoLaboral.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbxestadoLaboral.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbxestadoLaboral.Name = "cmbxestadoLaboral"
         Me.cmbxestadoLaboral.Size = New System.Drawing.Size(116, 21)
         Me.cmbxestadoLaboral.TabIndex = 164
@@ -666,7 +666,7 @@ Partial Class M_Empleados
         Me.cmbxcodigoContrato.DropDownWidth = 180
         Me.cmbxcodigoContrato.FormattingEnabled = True
         Me.cmbxcodigoContrato.Location = New System.Drawing.Point(293, 24)
-        Me.cmbxcodigoContrato.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbxcodigoContrato.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbxcodigoContrato.Name = "cmbxcodigoContrato"
         Me.cmbxcodigoContrato.Size = New System.Drawing.Size(116, 21)
         Me.cmbxcodigoContrato.TabIndex = 163
@@ -708,9 +708,9 @@ Partial Class M_Empleados
         Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Location = New System.Drawing.Point(266, 100)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Size = New System.Drawing.Size(425, 89)
         Me.GroupBox2.TabIndex = 158
         Me.GroupBox2.TabStop = False
@@ -779,7 +779,7 @@ Partial Class M_Empleados
         'txtsalario
         '
         Me.txtsalario.Location = New System.Drawing.Point(297, 53)
-        Me.txtsalario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtsalario.Margin = New System.Windows.Forms.Padding(2)
         Me.txtsalario.MaxLength = 200
         Me.txtsalario.Name = "txtsalario"
         Me.txtsalario.Size = New System.Drawing.Size(116, 20)
@@ -808,7 +808,7 @@ Partial Class M_Empleados
         'txtPuestoTrabajo
         '
         Me.txtPuestoTrabajo.Location = New System.Drawing.Point(97, 54)
-        Me.txtPuestoTrabajo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtPuestoTrabajo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPuestoTrabajo.Name = "txtPuestoTrabajo"
         Me.txtPuestoTrabajo.ReadOnly = True
         Me.txtPuestoTrabajo.Size = New System.Drawing.Size(116, 20)
@@ -817,7 +817,7 @@ Partial Class M_Empleados
         'txtArea
         '
         Me.txtArea.Location = New System.Drawing.Point(97, 24)
-        Me.txtArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtArea.Margin = New System.Windows.Forms.Padding(2)
         Me.txtArea.Name = "txtArea"
         Me.txtArea.ReadOnly = True
         Me.txtArea.Size = New System.Drawing.Size(116, 20)
@@ -835,7 +835,7 @@ Partial Class M_Empleados
         'txtdepartamento
         '
         Me.txtdepartamento.Location = New System.Drawing.Point(297, 24)
-        Me.txtdepartamento.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtdepartamento.Margin = New System.Windows.Forms.Padding(2)
         Me.txtdepartamento.MaxLength = 2000
         Me.txtdepartamento.Name = "txtdepartamento"
         Me.txtdepartamento.ReadOnly = True
@@ -870,9 +870,9 @@ Partial Class M_Empleados
         Me.GroupBox1.Controls.Add(Me.dtpFechaAvisoBaja)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Location = New System.Drawing.Point(266, 12)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(425, 86)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
@@ -881,7 +881,7 @@ Partial Class M_Empleados
         'rtxtmotivoBaja
         '
         Me.rtxtmotivoBaja.Location = New System.Drawing.Point(87, 43)
-        Me.rtxtmotivoBaja.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtmotivoBaja.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtmotivoBaja.MaxLength = 200
         Me.rtxtmotivoBaja.Name = "rtxtmotivoBaja"
         Me.rtxtmotivoBaja.Size = New System.Drawing.Size(316, 36)
@@ -893,7 +893,7 @@ Partial Class M_Empleados
         Me.dtpfechaBaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpfechaBaja.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfechaBaja.Location = New System.Drawing.Point(87, 15)
-        Me.dtpfechaBaja.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpfechaBaja.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpfechaBaja.Name = "dtpfechaBaja"
         Me.dtpfechaBaja.Size = New System.Drawing.Size(87, 19)
         Me.dtpfechaBaja.TabIndex = 147
@@ -921,7 +921,7 @@ Partial Class M_Empleados
         Me.dtpFechaAvisoBaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpFechaAvisoBaja.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaAvisoBaja.Location = New System.Drawing.Point(316, 15)
-        Me.dtpFechaAvisoBaja.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpFechaAvisoBaja.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpFechaAvisoBaja.Name = "dtpFechaAvisoBaja"
         Me.dtpFechaAvisoBaja.Size = New System.Drawing.Size(87, 19)
         Me.dtpFechaAvisoBaja.TabIndex = 149
@@ -938,7 +938,7 @@ Partial Class M_Empleados
         'txtcodigoFormaPago
         '
         Me.txtcodigoFormaPago.Location = New System.Drawing.Point(115, 202)
-        Me.txtcodigoFormaPago.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoFormaPago.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoFormaPago.MaxLength = 200
         Me.txtcodigoFormaPago.Name = "txtcodigoFormaPago"
         Me.txtcodigoFormaPago.ReadOnly = True
@@ -959,7 +959,7 @@ Partial Class M_Empleados
         'txtcuentaBancaria
         '
         Me.txtcuentaBancaria.Location = New System.Drawing.Point(115, 172)
-        Me.txtcuentaBancaria.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcuentaBancaria.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcuentaBancaria.MaxLength = 20
         Me.txtcuentaBancaria.Name = "txtcuentaBancaria"
         Me.txtcuentaBancaria.Size = New System.Drawing.Size(135, 20)
@@ -977,7 +977,7 @@ Partial Class M_Empleados
         'txtbanco
         '
         Me.txtbanco.Location = New System.Drawing.Point(115, 141)
-        Me.txtbanco.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtbanco.Margin = New System.Windows.Forms.Padding(2)
         Me.txtbanco.MaxLength = 50
         Me.txtbanco.Name = "txtbanco"
         Me.txtbanco.Size = New System.Drawing.Size(135, 20)
@@ -995,7 +995,7 @@ Partial Class M_Empleados
         'txtcodigoHorario
         '
         Me.txtcodigoHorario.Location = New System.Drawing.Point(115, 110)
-        Me.txtcodigoHorario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoHorario.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoHorario.MaxLength = 200
         Me.txtcodigoHorario.Name = "txtcodigoHorario"
         Me.txtcodigoHorario.ReadOnly = True
@@ -1014,7 +1014,7 @@ Partial Class M_Empleados
         'txtseguroSocial
         '
         Me.txtseguroSocial.Location = New System.Drawing.Point(115, 83)
-        Me.txtseguroSocial.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtseguroSocial.Margin = New System.Windows.Forms.Padding(2)
         Me.txtseguroSocial.MaxLength = 20
         Me.txtseguroSocial.Name = "txtseguroSocial"
         Me.txtseguroSocial.Size = New System.Drawing.Size(135, 20)
@@ -1024,7 +1024,7 @@ Partial Class M_Empleados
         '
         Me.mtxtidentidad.BackColor = System.Drawing.Color.White
         Me.mtxtidentidad.Location = New System.Drawing.Point(115, 56)
-        Me.mtxtidentidad.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.mtxtidentidad.Margin = New System.Windows.Forms.Padding(2)
         Me.mtxtidentidad.Mask = "0000-0000-00000"
         Me.mtxtidentidad.Name = "mtxtidentidad"
         Me.mtxtidentidad.Size = New System.Drawing.Size(135, 20)
@@ -1054,7 +1054,7 @@ Partial Class M_Empleados
         Me.dtpfechaAlta.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpfechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfechaAlta.Location = New System.Drawing.Point(115, 29)
-        Me.dtpfechaAlta.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpfechaAlta.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpfechaAlta.Name = "dtpfechaAlta"
         Me.dtpfechaAlta.Size = New System.Drawing.Size(135, 19)
         Me.dtpfechaAlta.TabIndex = 101
@@ -1107,9 +1107,9 @@ Partial Class M_Empleados
         Me.TabPage3.Controls.Add(Me.dtpfechaNacimiento)
         Me.TabPage3.Controls.Add(Me.Label19)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage3.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage3.Size = New System.Drawing.Size(707, 276)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Personal"
@@ -1167,7 +1167,7 @@ Partial Class M_Empleados
         'txtRTN
         '
         Me.txtRTN.Location = New System.Drawing.Point(116, 106)
-        Me.txtRTN.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtRTN.Margin = New System.Windows.Forms.Padding(2)
         Me.txtRTN.MaxLength = 20
         Me.txtRTN.Name = "txtRTN"
         Me.txtRTN.Size = New System.Drawing.Size(193, 20)
@@ -1186,7 +1186,7 @@ Partial Class M_Empleados
         'txtcelular
         '
         Me.txtcelular.Location = New System.Drawing.Point(479, 80)
-        Me.txtcelular.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcelular.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcelular.MaxLength = 20
         Me.txtcelular.Name = "txtcelular"
         Me.txtcelular.Size = New System.Drawing.Size(212, 20)
@@ -1205,7 +1205,7 @@ Partial Class M_Empleados
         'txttelefono
         '
         Me.txttelefono.Location = New System.Drawing.Point(116, 78)
-        Me.txttelefono.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txttelefono.Margin = New System.Windows.Forms.Padding(2)
         Me.txttelefono.MaxLength = 20
         Me.txttelefono.Name = "txttelefono"
         Me.txttelefono.Size = New System.Drawing.Size(193, 20)
@@ -1224,7 +1224,7 @@ Partial Class M_Empleados
         'txtcorreo2
         '
         Me.txtcorreo2.Location = New System.Drawing.Point(479, 49)
-        Me.txtcorreo2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcorreo2.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcorreo2.MaxLength = 50
         Me.txtcorreo2.Name = "txtcorreo2"
         Me.txtcorreo2.Size = New System.Drawing.Size(212, 20)
@@ -1234,7 +1234,7 @@ Partial Class M_Empleados
         'txtcorreo
         '
         Me.txtcorreo.Location = New System.Drawing.Point(116, 50)
-        Me.txtcorreo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcorreo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcorreo.MaxLength = 50
         Me.txtcorreo.Name = "txtcorreo"
         Me.txtcorreo.Size = New System.Drawing.Size(193, 20)
@@ -1262,7 +1262,7 @@ Partial Class M_Empleados
         'rtxtdireccion2
         '
         Me.rtxtdireccion2.Location = New System.Drawing.Point(478, 7)
-        Me.rtxtdireccion2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtdireccion2.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtdireccion2.MaxLength = 50
         Me.rtxtdireccion2.Name = "rtxtdireccion2"
         Me.rtxtdireccion2.Size = New System.Drawing.Size(213, 36)
@@ -1281,7 +1281,7 @@ Partial Class M_Empleados
         'rtxtdireccion
         '
         Me.rtxtdireccion.Location = New System.Drawing.Point(116, 7)
-        Me.rtxtdireccion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtdireccion.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtdireccion.MaxLength = 50
         Me.rtxtdireccion.Name = "rtxtdireccion"
         Me.rtxtdireccion.Size = New System.Drawing.Size(193, 36)
@@ -1310,9 +1310,9 @@ Partial Class M_Empleados
         Me.gbxestadoCivil.Controls.Add(Me.rbtnsoltero)
         Me.gbxestadoCivil.Controls.Add(Me.rbtncasado)
         Me.gbxestadoCivil.Location = New System.Drawing.Point(488, 149)
-        Me.gbxestadoCivil.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxestadoCivil.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxestadoCivil.Name = "gbxestadoCivil"
-        Me.gbxestadoCivil.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxestadoCivil.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxestadoCivil.Size = New System.Drawing.Size(203, 109)
         Me.gbxestadoCivil.TabIndex = 99
         Me.gbxestadoCivil.TabStop = False
@@ -1354,7 +1354,7 @@ Partial Class M_Empleados
         '
         Me.rbtnseparado.AutoSize = True
         Me.rbtnseparado.Location = New System.Drawing.Point(100, 20)
-        Me.rbtnseparado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnseparado.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnseparado.Name = "rbtnseparado"
         Me.rbtnseparado.Size = New System.Drawing.Size(83, 17)
         Me.rbtnseparado.TabIndex = 12
@@ -1366,7 +1366,7 @@ Partial Class M_Empleados
         '
         Me.rbtnconcuvinato.AutoSize = True
         Me.rbtnconcuvinato.Location = New System.Drawing.Point(100, 40)
-        Me.rbtnconcuvinato.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnconcuvinato.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnconcuvinato.Name = "rbtnconcuvinato"
         Me.rbtnconcuvinato.Size = New System.Drawing.Size(97, 17)
         Me.rbtnconcuvinato.TabIndex = 13
@@ -1378,7 +1378,7 @@ Partial Class M_Empleados
         '
         Me.rbtnviudo.AutoSize = True
         Me.rbtnviudo.Location = New System.Drawing.Point(14, 60)
-        Me.rbtnviudo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnviudo.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnviudo.Name = "rbtnviudo"
         Me.rbtnviudo.Size = New System.Drawing.Size(64, 17)
         Me.rbtnviudo.TabIndex = 10
@@ -1390,7 +1390,7 @@ Partial Class M_Empleados
         '
         Me.rbtndivorciado.AutoSize = True
         Me.rbtndivorciado.Location = New System.Drawing.Point(14, 80)
-        Me.rbtndivorciado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtndivorciado.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtndivorciado.Name = "rbtndivorciado"
         Me.rbtndivorciado.Size = New System.Drawing.Size(88, 17)
         Me.rbtndivorciado.TabIndex = 11
@@ -1402,7 +1402,7 @@ Partial Class M_Empleados
         '
         Me.rbtnsoltero.AutoSize = True
         Me.rbtnsoltero.Location = New System.Drawing.Point(14, 20)
-        Me.rbtnsoltero.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnsoltero.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnsoltero.Name = "rbtnsoltero"
         Me.rbtnsoltero.Size = New System.Drawing.Size(70, 17)
         Me.rbtnsoltero.TabIndex = 8
@@ -1414,7 +1414,7 @@ Partial Class M_Empleados
         '
         Me.rbtncasado.AutoSize = True
         Me.rbtncasado.Location = New System.Drawing.Point(14, 40)
-        Me.rbtncasado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtncasado.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtncasado.Name = "rbtncasado"
         Me.rbtncasado.Size = New System.Drawing.Size(73, 17)
         Me.rbtncasado.TabIndex = 9
@@ -1429,9 +1429,9 @@ Partial Class M_Empleados
         Me.gbxgenero.Controls.Add(Me.rbtnmasculino)
         Me.gbxgenero.Controls.Add(Me.rbtnfemenino)
         Me.gbxgenero.Location = New System.Drawing.Point(331, 167)
-        Me.gbxgenero.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxgenero.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxgenero.Name = "gbxgenero"
-        Me.gbxgenero.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxgenero.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxgenero.Size = New System.Drawing.Size(145, 60)
         Me.gbxgenero.TabIndex = 185
         Me.gbxgenero.TabStop = False
@@ -1451,7 +1451,7 @@ Partial Class M_Empleados
         '
         Me.rbtnmasculino.AutoSize = True
         Me.rbtnmasculino.Location = New System.Drawing.Point(31, 17)
-        Me.rbtnmasculino.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnmasculino.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnmasculino.Name = "rbtnmasculino"
         Me.rbtnmasculino.Size = New System.Drawing.Size(73, 17)
         Me.rbtnmasculino.TabIndex = 8
@@ -1463,7 +1463,7 @@ Partial Class M_Empleados
         '
         Me.rbtnfemenino.AutoSize = True
         Me.rbtnfemenino.Location = New System.Drawing.Point(31, 38)
-        Me.rbtnfemenino.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rbtnfemenino.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnfemenino.Name = "rbtnfemenino"
         Me.rbtnfemenino.Size = New System.Drawing.Size(71, 17)
         Me.rbtnfemenino.TabIndex = 9
@@ -1474,7 +1474,7 @@ Partial Class M_Empleados
         'txtnombreMadre
         '
         Me.txtnombreMadre.Location = New System.Drawing.Point(118, 238)
-        Me.txtnombreMadre.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreMadre.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreMadre.MaxLength = 50
         Me.txtnombreMadre.Name = "txtnombreMadre"
         Me.txtnombreMadre.Size = New System.Drawing.Size(193, 20)
@@ -1493,7 +1493,7 @@ Partial Class M_Empleados
         'txtnombrePadre
         '
         Me.txtnombrePadre.Location = New System.Drawing.Point(118, 214)
-        Me.txtnombrePadre.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombrePadre.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombrePadre.MaxLength = 50
         Me.txtnombrePadre.Name = "txtnombrePadre"
         Me.txtnombrePadre.Size = New System.Drawing.Size(193, 20)
@@ -1512,7 +1512,7 @@ Partial Class M_Empleados
         'txtnombreConyugue
         '
         Me.txtnombreConyugue.Location = New System.Drawing.Point(118, 188)
-        Me.txtnombreConyugue.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreConyugue.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreConyugue.MaxLength = 50
         Me.txtnombreConyugue.Name = "txtnombreConyugue"
         Me.txtnombreConyugue.Size = New System.Drawing.Size(193, 20)
@@ -1531,7 +1531,7 @@ Partial Class M_Empleados
         'txtdescripcionProfesion
         '
         Me.txtdescripcionProfesion.Location = New System.Drawing.Point(203, 162)
-        Me.txtdescripcionProfesion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtdescripcionProfesion.Margin = New System.Windows.Forms.Padding(2)
         Me.txtdescripcionProfesion.Name = "txtdescripcionProfesion"
         Me.txtdescripcionProfesion.ReadOnly = True
         Me.txtdescripcionProfesion.Size = New System.Drawing.Size(107, 20)
@@ -1546,7 +1546,7 @@ Partial Class M_Empleados
         Me.btnProfesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnProfesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnProfesion.Location = New System.Drawing.Point(120, 162)
-        Me.btnProfesion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnProfesion.Margin = New System.Windows.Forms.Padding(2)
         Me.btnProfesion.Name = "btnProfesion"
         Me.btnProfesion.Size = New System.Drawing.Size(30, 17)
         Me.btnProfesion.TabIndex = 164
@@ -1556,7 +1556,7 @@ Partial Class M_Empleados
         'txtcodigoProfesion
         '
         Me.txtcodigoProfesion.Location = New System.Drawing.Point(154, 162)
-        Me.txtcodigoProfesion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoProfesion.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoProfesion.MaxLength = 20
         Me.txtcodigoProfesion.Name = "txtcodigoProfesion"
         Me.txtcodigoProfesion.Size = New System.Drawing.Size(45, 20)
@@ -1574,7 +1574,7 @@ Partial Class M_Empleados
         'rtxtlugarNacimiento
         '
         Me.rtxtlugarNacimiento.Location = New System.Drawing.Point(479, 107)
-        Me.rtxtlugarNacimiento.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtlugarNacimiento.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtlugarNacimiento.MaxLength = 100
         Me.rtxtlugarNacimiento.Name = "rtxtlugarNacimiento"
         Me.rtxtlugarNacimiento.Size = New System.Drawing.Size(212, 36)
@@ -1595,7 +1595,7 @@ Partial Class M_Empleados
         Me.dtpfechaNacimiento.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpfechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfechaNacimiento.Location = New System.Drawing.Point(116, 133)
-        Me.dtpfechaNacimiento.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpfechaNacimiento.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpfechaNacimiento.Name = "dtpfechaNacimiento"
         Me.dtpfechaNacimiento.Size = New System.Drawing.Size(193, 19)
         Me.dtpfechaNacimiento.TabIndex = 101
@@ -1615,7 +1615,7 @@ Partial Class M_Empleados
         Me.TabPage4.Controls.Add(Me.GroupBox5)
         Me.TabPage4.Controls.Add(Me.GroupBox4)
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage4.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Size = New System.Drawing.Size(707, 276)
         Me.TabPage4.TabIndex = 3
@@ -1633,9 +1633,9 @@ Partial Class M_Empleados
         Me.GroupBox5.Controls.Add(Me.Label31)
         Me.GroupBox5.Controls.Add(Me.txtcelularUrgencias2)
         Me.GroupBox5.Location = New System.Drawing.Point(26, 138)
-        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox5.Size = New System.Drawing.Size(646, 124)
         Me.GroupBox5.TabIndex = 184
         Me.GroupBox5.TabStop = False
@@ -1644,7 +1644,7 @@ Partial Class M_Empleados
         'txtParentesco2
         '
         Me.txtParentesco2.Location = New System.Drawing.Point(471, 27)
-        Me.txtParentesco2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtParentesco2.Margin = New System.Windows.Forms.Padding(2)
         Me.txtParentesco2.MaxLength = 20
         Me.txtParentesco2.Name = "txtParentesco2"
         Me.txtParentesco2.Size = New System.Drawing.Size(146, 20)
@@ -1672,7 +1672,7 @@ Partial Class M_Empleados
         'txttelUrgencias2
         '
         Me.txttelUrgencias2.Location = New System.Drawing.Point(471, 58)
-        Me.txttelUrgencias2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txttelUrgencias2.Margin = New System.Windows.Forms.Padding(2)
         Me.txttelUrgencias2.MaxLength = 20
         Me.txttelUrgencias2.Name = "txttelUrgencias2"
         Me.txttelUrgencias2.Size = New System.Drawing.Size(146, 20)
@@ -1691,7 +1691,7 @@ Partial Class M_Empleados
         'txtcontactoUrgencias2
         '
         Me.txtcontactoUrgencias2.Location = New System.Drawing.Point(137, 27)
-        Me.txtcontactoUrgencias2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcontactoUrgencias2.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcontactoUrgencias2.MaxLength = 50
         Me.txtcontactoUrgencias2.Name = "txtcontactoUrgencias2"
         Me.txtcontactoUrgencias2.Size = New System.Drawing.Size(146, 20)
@@ -1710,7 +1710,7 @@ Partial Class M_Empleados
         'txtcelularUrgencias2
         '
         Me.txtcelularUrgencias2.Location = New System.Drawing.Point(137, 61)
-        Me.txtcelularUrgencias2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcelularUrgencias2.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcelularUrgencias2.MaxLength = 20
         Me.txtcelularUrgencias2.Name = "txtcelularUrgencias2"
         Me.txtcelularUrgencias2.Size = New System.Drawing.Size(146, 20)
@@ -1733,9 +1733,9 @@ Partial Class M_Empleados
         Me.GroupBox4.Controls.Add(Me.Label25)
         Me.GroupBox4.Controls.Add(Me.txtcelularUrgencias)
         Me.GroupBox4.Location = New System.Drawing.Point(26, 27)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Size = New System.Drawing.Size(646, 95)
         Me.GroupBox4.TabIndex = 183
         Me.GroupBox4.TabStop = False
@@ -1784,7 +1784,7 @@ Partial Class M_Empleados
         'txtParentesco1
         '
         Me.txtParentesco1.Location = New System.Drawing.Point(471, 25)
-        Me.txtParentesco1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtParentesco1.Margin = New System.Windows.Forms.Padding(2)
         Me.txtParentesco1.MaxLength = 20
         Me.txtParentesco1.Name = "txtParentesco1"
         Me.txtParentesco1.Size = New System.Drawing.Size(146, 20)
@@ -1812,7 +1812,7 @@ Partial Class M_Empleados
         'txttelUrgencias
         '
         Me.txttelUrgencias.Location = New System.Drawing.Point(471, 58)
-        Me.txttelUrgencias.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txttelUrgencias.Margin = New System.Windows.Forms.Padding(2)
         Me.txttelUrgencias.MaxLength = 20
         Me.txttelUrgencias.Name = "txttelUrgencias"
         Me.txttelUrgencias.Size = New System.Drawing.Size(146, 20)
@@ -1831,7 +1831,7 @@ Partial Class M_Empleados
         'txtcontactoUrgencias
         '
         Me.txtcontactoUrgencias.Location = New System.Drawing.Point(137, 27)
-        Me.txtcontactoUrgencias.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcontactoUrgencias.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcontactoUrgencias.MaxLength = 50
         Me.txtcontactoUrgencias.Name = "txtcontactoUrgencias"
         Me.txtcontactoUrgencias.Size = New System.Drawing.Size(146, 20)
@@ -1850,7 +1850,7 @@ Partial Class M_Empleados
         'txtcelularUrgencias
         '
         Me.txtcelularUrgencias.Location = New System.Drawing.Point(137, 61)
-        Me.txtcelularUrgencias.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcelularUrgencias.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcelularUrgencias.MaxLength = 20
         Me.txtcelularUrgencias.Name = "txtcelularUrgencias"
         Me.txtcelularUrgencias.Size = New System.Drawing.Size(146, 20)
@@ -1867,7 +1867,7 @@ Partial Class M_Empleados
         Me.TabPage2.Controls.Add(Me.pbxEmpleado)
         Me.TabPage2.Controls.Add(Me.btnBuscarImage)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Size = New System.Drawing.Size(707, 276)
         Me.TabPage2.TabIndex = 4
@@ -1954,9 +1954,9 @@ Partial Class M_Empleados
         Me.TabPage5.Controls.Add(Me.rtxtAAlimentos)
         Me.TabPage5.Controls.Add(Me.lblAlergiasAlimentos)
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage5.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage5.Size = New System.Drawing.Size(707, 276)
         Me.TabPage5.TabIndex = 5
         Me.TabPage5.Text = "Datos Médicos"
@@ -1974,7 +1974,7 @@ Partial Class M_Empleados
         'txtgrupoSanguineo
         '
         Me.txtgrupoSanguineo.Location = New System.Drawing.Point(323, 22)
-        Me.txtgrupoSanguineo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtgrupoSanguineo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtgrupoSanguineo.MaxLength = 20
         Me.txtgrupoSanguineo.Name = "txtgrupoSanguineo"
         Me.txtgrupoSanguineo.Size = New System.Drawing.Size(164, 20)
@@ -1984,7 +1984,7 @@ Partial Class M_Empleados
         'rtxtCondicionesE
         '
         Me.rtxtCondicionesE.Location = New System.Drawing.Point(34, 197)
-        Me.rtxtCondicionesE.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtCondicionesE.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtCondicionesE.Name = "rtxtCondicionesE"
         Me.rtxtCondicionesE.Size = New System.Drawing.Size(626, 50)
         Me.rtxtCondicionesE.TabIndex = 5
@@ -2012,7 +2012,7 @@ Partial Class M_Empleados
         'rtxtAMedicamentos
         '
         Me.rtxtAMedicamentos.Location = New System.Drawing.Point(34, 128)
-        Me.rtxtAMedicamentos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtAMedicamentos.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtAMedicamentos.Name = "rtxtAMedicamentos"
         Me.rtxtAMedicamentos.Size = New System.Drawing.Size(626, 50)
         Me.rtxtAMedicamentos.TabIndex = 3
@@ -2031,7 +2031,7 @@ Partial Class M_Empleados
         'rtxtAAlimentos
         '
         Me.rtxtAAlimentos.Location = New System.Drawing.Point(31, 60)
-        Me.rtxtAAlimentos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtAAlimentos.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtAAlimentos.Name = "rtxtAAlimentos"
         Me.rtxtAAlimentos.Size = New System.Drawing.Size(626, 50)
         Me.rtxtAAlimentos.TabIndex = 1
@@ -2103,7 +2103,7 @@ Partial Class M_Empleados
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_Empleados"
         Me.Text = "SLM - "
         Me.gbxobjeto.ResumeLayout(False)

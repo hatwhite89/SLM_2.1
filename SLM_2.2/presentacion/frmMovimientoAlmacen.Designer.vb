@@ -65,16 +65,15 @@ Partial Class frmMovimientoAlmacen
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.excel = New System.Windows.Forms.Button()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
-        Me.excel = New System.Windows.Forms.Button()
+        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -82,6 +81,7 @@ Partial Class frmMovimientoAlmacen
         Me.fecha_envio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ALMACEN = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -91,11 +91,6 @@ Partial Class frmMovimientoAlmacen
         Me.Label11 = New System.Windows.Forms.Label()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.DataGridView4 = New System.Windows.Forms.DataGridView()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.DataGridView5 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -103,7 +98,12 @@ Partial Class frmMovimientoAlmacen
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.DataGridView5 = New System.Windows.Forms.DataGridView()
         Me.id_traslado2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_producto2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -127,10 +127,10 @@ Partial Class frmMovimientoAlmacen
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -510,17 +510,6 @@ Partial Class frmMovimientoAlmacen
         Me.TabPage2.Text = "Mis Traslados"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'TabPage3
-        '
-        Me.TabPage3.Controls.Add(Me.GroupBox5)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1035, 497)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Recibir "
-        Me.TabPage3.UseVisualStyleBackColor = True
-        '
         'GroupBox4
         '
         Me.GroupBox4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -535,20 +524,6 @@ Partial Class frmMovimientoAlmacen
         Me.GroupBox4.TabIndex = 8
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Movimientos realizados entre Almacén "
-        '
-        'DataGridView3
-        '
-        Me.DataGridView3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn4, Me.estado, Me.fecha_envio, Me.ALMACEN, Me.usuario})
-        Me.DataGridView3.Location = New System.Drawing.Point(9, 81)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(1006, 398)
-        Me.DataGridView3.TabIndex = 4
         '
         'Panel1
         '
@@ -565,6 +540,19 @@ Partial Class frmMovimientoAlmacen
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1006, 55)
         Me.Panel1.TabIndex = 5
+        '
+        'excel
+        '
+        Me.excel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.excel.BackColor = System.Drawing.Color.Green
+        Me.excel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.excel.ForeColor = System.Drawing.SystemColors.Control
+        Me.excel.Location = New System.Drawing.Point(870, 23)
+        Me.excel.Name = "excel"
+        Me.excel.Size = New System.Drawing.Size(133, 23)
+        Me.excel.TabIndex = 82
+        Me.excel.Text = "Generar Excel"
+        Me.excel.UseVisualStyleBackColor = False
         '
         'Label27
         '
@@ -608,18 +596,19 @@ Partial Class frmMovimientoAlmacen
         Me.DateTimePicker4.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker4.TabIndex = 79
         '
-        'excel
+        'DataGridView3
         '
-        Me.excel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.excel.BackColor = System.Drawing.Color.Green
-        Me.excel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.excel.ForeColor = System.Drawing.SystemColors.Control
-        Me.excel.Location = New System.Drawing.Point(870, 23)
-        Me.excel.Name = "excel"
-        Me.excel.Size = New System.Drawing.Size(133, 23)
-        Me.excel.TabIndex = 82
-        Me.excel.Text = "Generar Excel"
-        Me.excel.UseVisualStyleBackColor = False
+        Me.DataGridView3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn4, Me.estado, Me.fecha_envio, Me.ALMACEN, Me.usuario})
+        Me.DataGridView3.Location = New System.Drawing.Point(9, 81)
+        Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.Size = New System.Drawing.Size(1006, 398)
+        Me.DataGridView3.TabIndex = 4
         '
         'DataGridViewTextBoxColumn3
         '
@@ -662,6 +651,17 @@ Partial Class frmMovimientoAlmacen
         Me.usuario.DataPropertyName = "usuario"
         Me.usuario.HeaderText = "ENCARGADO ALMACEN RECEPTOR"
         Me.usuario.Name = "usuario"
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.GroupBox5)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(1035, 497)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Recibir "
+        Me.TabPage3.UseVisualStyleBackColor = True
         '
         'GroupBox5
         '
@@ -763,68 +763,6 @@ Partial Class frmMovimientoAlmacen
         Me.DataGridView4.Size = New System.Drawing.Size(1006, 398)
         Me.DataGridView4.TabIndex = 4
         '
-        'TabPage4
-        '
-        Me.TabPage4.Controls.Add(Me.GroupBox6)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(1035, 497)
-        Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "TabPage4"
-        Me.TabPage4.UseVisualStyleBackColor = True
-        '
-        'GroupBox6
-        '
-        Me.GroupBox6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox6.BackColor = System.Drawing.Color.AliceBlue
-        Me.GroupBox6.Controls.Add(Me.Panel3)
-        Me.GroupBox6.Controls.Add(Me.DataGridView5)
-        Me.GroupBox6.Location = New System.Drawing.Point(7, 6)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(1021, 485)
-        Me.GroupBox6.TabIndex = 9
-        Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Movimientos realizados entre Almacén "
-        '
-        'Panel3
-        '
-        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel3.Controls.Add(Me.TextBox3)
-        Me.Panel3.Controls.Add(Me.Button5)
-        Me.Panel3.Location = New System.Drawing.Point(9, 20)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1006, 55)
-        Me.Panel3.TabIndex = 5
-        '
-        'Button5
-        '
-        Me.Button5.BackColor = System.Drawing.Color.LawnGreen
-        Me.Button5.Location = New System.Drawing.Point(886, 29)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(117, 23)
-        Me.Button5.TabIndex = 77
-        Me.Button5.Text = "Recibir"
-        Me.Button5.UseVisualStyleBackColor = False
-        '
-        'DataGridView5
-        '
-        Me.DataGridView5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView5.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView5.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_traslado2, Me.DataGridViewTextBoxColumn15, Me.id_producto2, Me.DataGridViewTextBoxColumn11, Me.precios, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn16, Me.ID_OCI, Me.DataGridViewTextBoxColumn17, Me.id_almcane})
-        Me.DataGridView5.Location = New System.Drawing.Point(9, 81)
-        Me.DataGridView5.Name = "DataGridView5"
-        Me.DataGridView5.Size = New System.Drawing.Size(1006, 398)
-        Me.DataGridView5.TabIndex = 4
-        '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "nombre_producto"
@@ -867,12 +805,74 @@ Partial Class frmMovimientoAlmacen
         Me.DataGridViewTextBoxColumn10.HeaderText = "ENCARGADO ALMACEN EMISOR"
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
         '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.GroupBox6)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(1035, 497)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "TabPage4"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox6.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox6.Controls.Add(Me.Panel3)
+        Me.GroupBox6.Controls.Add(Me.DataGridView5)
+        Me.GroupBox6.Location = New System.Drawing.Point(7, 6)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(1021, 485)
+        Me.GroupBox6.TabIndex = 9
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Movimientos realizados entre Almacén "
+        '
+        'Panel3
+        '
+        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel3.Controls.Add(Me.TextBox3)
+        Me.Panel3.Controls.Add(Me.Button5)
+        Me.Panel3.Location = New System.Drawing.Point(9, 20)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1006, 55)
+        Me.Panel3.TabIndex = 5
+        '
         'TextBox3
         '
         Me.TextBox3.Location = New System.Drawing.Point(15, 29)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(174, 20)
         Me.TextBox3.TabIndex = 78
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.LawnGreen
+        Me.Button5.Location = New System.Drawing.Point(886, 29)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(117, 23)
+        Me.Button5.TabIndex = 77
+        Me.Button5.Text = "Recibir"
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'DataGridView5
+        '
+        Me.DataGridView5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView5.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView5.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_traslado2, Me.DataGridViewTextBoxColumn15, Me.id_producto2, Me.DataGridViewTextBoxColumn11, Me.precios, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn16, Me.ID_OCI, Me.DataGridViewTextBoxColumn17, Me.id_almcane})
+        Me.DataGridView5.Location = New System.Drawing.Point(9, 81)
+        Me.DataGridView5.Name = "DataGridView5"
+        Me.DataGridView5.Size = New System.Drawing.Size(1006, 398)
+        Me.DataGridView5.TabIndex = 4
         '
         'id_traslado2
         '
@@ -973,11 +973,11 @@ Partial Class frmMovimientoAlmacen
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
-        Me.TabPage3.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage3.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()

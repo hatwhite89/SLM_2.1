@@ -67,6 +67,24 @@
                 celda = Convert.ToInt64(dgvHojaTrab.CurrentCell.ColumnIndex.ToString)
                 fila = Convert.ToInt64(dgvHojaTrab.CurrentCell.RowIndex.ToString)
 
+
+
+                'buscar valores referencia 
+                If (Trim(txtParametro.Text) <> "") Then
+                    Try
+                        Dim objCat As New ClsValoresReferencia
+                        Dim dt As New DataTable
+                        dt = objCat.buscarValorReferenciaHojaTrabajo(txtParametro.Text, Integer.Parse(txtOrden.Text), dgvHojaTrab.Rows(e.RowIndex).Cells(3).Value().ToString.First)
+                        Dim row As DataRow = dt.Rows(0)
+                        txtValoresRef.Text = CStr(row("valoresReferencia"))
+                    Catch ex As Exception
+                        txtValoresRef.Text = ""
+                    End Try
+                End If
+
+                'buscar observaciones hoja de trabajo
+                BuscarObservacionesHojaTrabajo()
+
                 'Buscar Descripcion de Resultado::::::::::::::::::::::::::::::::::::::::::::::
 
                 Dim plantillaResult As New ClsDescripcionResultado
@@ -90,20 +108,18 @@
                 ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
                 'buscar valores referencia 
-                If (Trim(txtParametro.Text) <> "") Then
-                    Try
-                        Dim objCat As New ClsValoresReferencia
-                        Dim dt As New DataTable
-                        dt = objCat.buscarValorReferenciaParametro(txtParametro.Text)
-                        Dim row As DataRow = dt.Rows(0)
-                        txtValoresRef.Text = CStr(row("ValoresReferencia"))
-                    Catch ex As Exception
-                        txtValoresRef.Text = ""
-                    End Try
-                End If
+                'If (Trim(txtParametro.Text) <> "") Then
+                '    Try
+                '        Dim objCat As New ClsValoresReferencia
+                '        Dim dt As New DataTable
+                '        dt = objCat.buscarValorReferenciaParametro(txtParametro.Text)
+                '        Dim row As DataRow = dt.Rows(0)
+                '        txtValoresRef.Text = CStr(row("ValoresReferencia"))
+                '    Catch ex As Exception
+                '        txtValoresRef.Text = ""
+                '    End Try
+                'End If
 
-                'buscar observaciones hoja de trabajo
-                BuscarObservacionesHojaTrabajo()
 
             Else
                 txtOrden.Text = dgvHojaTrab.Rows(e.RowIndex).Cells(0).Value()
@@ -622,6 +638,22 @@
 
         Catch ex As Exception
 
+        End Try
+    End Sub
+
+    Private Sub OrdenDeTrabajoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrdenDeTrabajoToolStripMenuItem.Click
+        Try
+            Dim n As String = ""
+            If Integer.Parse(txtOrden.Text) >= 0 Then
+                n = MsgBox("¿Desea ver la orden de trabajo?", MsgBoxStyle.YesNo, "Validación")
+            End If
+            If n = vbYes Then
+                E_OrdenTrabajo.cargarOrdenTrabajo(Integer.Parse(txtOrden.Text))
+                E_OrdenTrabajo.Show()
+                'Me.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 

@@ -76,7 +76,7 @@ Partial Class M_TerminosPago
         '
         Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigo.Location = New System.Drawing.Point(105, 16)
-        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(135, 20)
@@ -95,7 +95,7 @@ Partial Class M_TerminosPago
         'txtdiasNeto
         '
         Me.txtdiasNeto.Location = New System.Drawing.Point(105, 74)
-        Me.txtdiasNeto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtdiasNeto.Margin = New System.Windows.Forms.Padding(2)
         Me.txtdiasNeto.MaxLength = 20
         Me.txtdiasNeto.Name = "txtdiasNeto"
         Me.txtdiasNeto.Size = New System.Drawing.Size(135, 20)
@@ -143,7 +143,7 @@ Partial Class M_TerminosPago
         Me.cbxtipoPago.DropDownWidth = 170
         Me.cbxtipoPago.FormattingEnabled = True
         Me.cbxtipoPago.Location = New System.Drawing.Point(105, 45)
-        Me.cbxtipoPago.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbxtipoPago.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxtipoPago.Name = "cbxtipoPago"
         Me.cbxtipoPago.Size = New System.Drawing.Size(100, 21)
         Me.cbxtipoPago.TabIndex = 113
@@ -157,7 +157,7 @@ Partial Class M_TerminosPago
         Me.btnctaContado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnctaContado.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnctaContado.Location = New System.Drawing.Point(103, 107)
-        Me.btnctaContado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnctaContado.Margin = New System.Windows.Forms.Padding(2)
         Me.btnctaContado.Name = "btnctaContado"
         Me.btnctaContado.Size = New System.Drawing.Size(37, 18)
         Me.btnctaContado.TabIndex = 117
@@ -167,7 +167,7 @@ Partial Class M_TerminosPago
         'txtcodigoCtaContado
         '
         Me.txtcodigoCtaContado.Location = New System.Drawing.Point(146, 107)
-        Me.txtcodigoCtaContado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoCtaContado.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoCtaContado.MaxLength = 20
         Me.txtcodigoCtaContado.Name = "txtcodigoCtaContado"
         Me.txtcodigoCtaContado.Size = New System.Drawing.Size(89, 20)
@@ -183,7 +183,7 @@ Partial Class M_TerminosPago
         Me.btnctaVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnctaVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnctaVentas.Location = New System.Drawing.Point(103, 129)
-        Me.btnctaVentas.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnctaVentas.Margin = New System.Windows.Forms.Padding(2)
         Me.btnctaVentas.Name = "btnctaVentas"
         Me.btnctaVentas.Size = New System.Drawing.Size(37, 18)
         Me.btnctaVentas.TabIndex = 121
@@ -193,7 +193,7 @@ Partial Class M_TerminosPago
         'txtcodigoCtaVentas
         '
         Me.txtcodigoCtaVentas.Location = New System.Drawing.Point(146, 129)
-        Me.txtcodigoCtaVentas.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoCtaVentas.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoCtaVentas.MaxLength = 20
         Me.txtcodigoCtaVentas.Name = "txtcodigoCtaVentas"
         Me.txtcodigoCtaVentas.Size = New System.Drawing.Size(89, 20)
@@ -203,7 +203,7 @@ Partial Class M_TerminosPago
         'rtxtdescripcion
         '
         Me.rtxtdescripcion.Location = New System.Drawing.Point(374, 17)
-        Me.rtxtdescripcion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtdescripcion.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtdescripcion.MaxLength = 80
         Me.rtxtdescripcion.Name = "rtxtdescripcion"
         Me.rtxtdescripcion.Size = New System.Drawing.Size(318, 77)
@@ -236,9 +236,9 @@ Partial Class M_TerminosPago
         Me.gbxterminosPago.Controls.Add(Me.lbltipo)
         Me.gbxterminosPago.Controls.Add(Me.lblctaVentas)
         Me.gbxterminosPago.Location = New System.Drawing.Point(11, 46)
-        Me.gbxterminosPago.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxterminosPago.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxterminosPago.Name = "gbxterminosPago"
-        Me.gbxterminosPago.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxterminosPago.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxterminosPago.Size = New System.Drawing.Size(696, 154)
         Me.gbxterminosPago.TabIndex = 126
         Me.gbxterminosPago.TabStop = False
@@ -277,7 +277,7 @@ Partial Class M_TerminosPago
         'txtnombreCtaVentas
         '
         Me.txtnombreCtaVentas.Location = New System.Drawing.Point(245, 129)
-        Me.txtnombreCtaVentas.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreCtaVentas.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreCtaVentas.Name = "txtnombreCtaVentas"
         Me.txtnombreCtaVentas.ReadOnly = True
         Me.txtnombreCtaVentas.Size = New System.Drawing.Size(172, 20)
@@ -286,7 +286,7 @@ Partial Class M_TerminosPago
         'txtnombreCtaContado
         '
         Me.txtnombreCtaContado.Location = New System.Drawing.Point(245, 108)
-        Me.txtnombreCtaContado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreCtaContado.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreCtaContado.Name = "txtnombreCtaContado"
         Me.txtnombreCtaContado.ReadOnly = True
         Me.txtnombreCtaContado.Size = New System.Drawing.Size(172, 20)
@@ -301,7 +301,7 @@ Partial Class M_TerminosPago
         Me.btntipoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btntipoPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btntipoPago.Location = New System.Drawing.Point(207, 45)
-        Me.btntipoPago.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btntipoPago.Margin = New System.Windows.Forms.Padding(2)
         Me.btntipoPago.Name = "btntipoPago"
         Me.btntipoPago.Size = New System.Drawing.Size(37, 18)
         Me.btntipoPago.TabIndex = 131
@@ -316,7 +316,7 @@ Partial Class M_TerminosPago
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnmodificar.Location = New System.Drawing.Point(560, 8)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
         Me.btnmodificar.TabIndex = 130
@@ -331,7 +331,7 @@ Partial Class M_TerminosPago
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btncancelar.Location = New System.Drawing.Point(636, 8)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(68, 28)
         Me.btncancelar.TabIndex = 127
@@ -346,7 +346,7 @@ Partial Class M_TerminosPago
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnnuevo.Location = New System.Drawing.Point(401, 8)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
         Me.btnnuevo.TabIndex = 129
@@ -361,7 +361,7 @@ Partial Class M_TerminosPago
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnguardar.Location = New System.Drawing.Point(484, 8)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(72, 28)
         Me.btnguardar.TabIndex = 128
@@ -381,9 +381,9 @@ Partial Class M_TerminosPago
         Me.gbxbusqueda.Controls.Add(Me.txtdescripcionB)
         Me.gbxbusqueda.Controls.Add(Me.lblnombreB)
         Me.gbxbusqueda.Location = New System.Drawing.Point(11, 204)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Size = New System.Drawing.Size(696, 277)
         Me.gbxbusqueda.TabIndex = 127
         Me.gbxbusqueda.TabStop = False
@@ -419,7 +419,7 @@ Partial Class M_TerminosPago
         Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(8, 42)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
@@ -441,7 +441,7 @@ Partial Class M_TerminosPago
         'txtdescripcionB
         '
         Me.txtdescripcionB.Location = New System.Drawing.Point(74, 18)
-        Me.txtdescripcionB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtdescripcionB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtdescripcionB.MaxLength = 80
         Me.txtdescripcionB.Name = "txtdescripcionB"
         Me.txtdescripcionB.Size = New System.Drawing.Size(618, 20)
@@ -492,7 +492,7 @@ Partial Class M_TerminosPago
         Me.Controls.Add(Me.gbxterminosPago)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_TerminosPago"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Términos de Pago"

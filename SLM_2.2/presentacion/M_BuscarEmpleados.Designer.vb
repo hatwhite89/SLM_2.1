@@ -24,6 +24,7 @@ Partial Class M_BuscarEmpleados
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_BuscarEmpleados))
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.lblcantidad = New System.Windows.Forms.Label()
@@ -37,7 +38,6 @@ Partial Class M_BuscarEmpleados
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -67,6 +67,19 @@ Partial Class M_BuscarEmpleados
         Me.gbxbusqueda.TabIndex = 118
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR EMPLEADOS"
+        '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.Color.Green
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button4.Location = New System.Drawing.Point(632, 64)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 121
+        Me.Button4.Text = "Excel"
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Label6
         '
@@ -212,19 +225,6 @@ Partial Class M_BuscarEmpleados
         Me.Label2.Size = New System.Drawing.Size(98, 20)
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Empleados"
-        '
-        'Button4
-        '
-        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.BackColor = System.Drawing.Color.Green
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button4.Location = New System.Drawing.Point(632, 64)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 121
-        Me.Button4.Text = "Excel"
-        Me.Button4.UseVisualStyleBackColor = False
         '
         'M_BuscarEmpleados
         '

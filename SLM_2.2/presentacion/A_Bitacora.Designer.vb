@@ -22,6 +22,7 @@ Partial Class A_Bitacora
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_Bitacora))
         Me.gbxBitacora = New System.Windows.Forms.GroupBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -104,6 +105,7 @@ Partial Class A_Bitacora
         Me.ClientSize = New System.Drawing.Size(718, 567)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.gbxBitacora)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_Bitacora"
         Me.Text = "Bitácora"
         Me.gbxBitacora.ResumeLayout(False)

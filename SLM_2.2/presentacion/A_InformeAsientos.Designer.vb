@@ -22,16 +22,17 @@ Partial Class A_InformeAsientos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_InformeAsientos))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.dtpDesde = New System.Windows.Forms.DateTimePicker()
         Me.dtpHasta = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.dtpDesde = New System.Windows.Forms.DateTimePicker()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dgvData = New System.Windows.Forms.DataGridView()
         Me.campoLlave = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,6 +62,19 @@ Partial Class A_InformeAsientos
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(802, 43)
         Me.Panel1.TabIndex = 23
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.Green
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(555, 9)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 18
+        Me.Button1.Text = "Exportar"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'btnGuardar
         '
@@ -99,19 +113,6 @@ Partial Class A_InformeAsientos
         Me.btnCerrar.Text = "Cerrar"
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.Green
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(555, 9)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 18
-        Me.Button1.Text = "Exportar"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -127,26 +128,6 @@ Partial Class A_InformeAsientos
         Me.GroupBox1.TabIndex = 24
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Rango de Fecha"
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(62, 34)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(38, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Desde"
-        '
-        'dtpDesde
-        '
-        Me.dtpDesde.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.dtpDesde.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
-        Me.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDesde.Location = New System.Drawing.Point(104, 30)
-        Me.dtpDesde.Name = "dtpDesde"
-        Me.dtpDesde.Size = New System.Drawing.Size(228, 20)
-        Me.dtpDesde.TabIndex = 1
         '
         'dtpHasta
         '
@@ -167,6 +148,26 @@ Partial Class A_InformeAsientos
         Me.Label2.Size = New System.Drawing.Size(35, 13)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Hasta"
+        '
+        'dtpDesde
+        '
+        Me.dtpDesde.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.dtpDesde.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
+        Me.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDesde.Location = New System.Drawing.Point(104, 30)
+        Me.dtpDesde.Name = "dtpDesde"
+        Me.dtpDesde.Size = New System.Drawing.Size(228, 20)
+        Me.dtpDesde.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(62, 34)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(38, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Desde"
         '
         'GroupBox2
         '
@@ -253,6 +254,7 @@ Partial Class A_InformeAsientos
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_InformeAsientos"
         Me.Text = "Informe Asientos Contables"
         Me.Panel1.ResumeLayout(False)

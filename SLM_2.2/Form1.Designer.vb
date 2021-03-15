@@ -197,6 +197,7 @@ Partial Class Form1
         Me.btnConserjes = New System.Windows.Forms.Button()
         Me.btnTomaDeMuestra = New System.Windows.Forms.Button()
         Me.btnCerrarSesion = New System.Windows.Forms.LinkLabel()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.tcMenu.SuspendLayout()
@@ -1704,6 +1705,7 @@ Partial Class Form1
         'TabPage6
         '
         Me.TabPage6.BackColor = System.Drawing.Color.AliceBlue
+        Me.TabPage6.Controls.Add(Me.Button2)
         Me.TabPage6.Controls.Add(Me.btnFeriados)
         Me.TabPage6.Controls.Add(Me.btnUsuarios)
         Me.TabPage6.Controls.Add(Me.btnPerfiles)
@@ -2410,6 +2412,16 @@ Partial Class Form1
         Me.btnCerrarSesion.TabStop = True
         Me.btnCerrarSesion.Text = "Cerrar Sesión"
         '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button2.Location = New System.Drawing.Point(13, 196)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(103, 94)
+        Me.Button2.TabIndex = 49
+        Me.Button2.Text = "Firma Digital"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2767,4 +2779,5 @@ Partial Class Form1
     Friend WithEvents btnConserjes As Button
     Friend WithEvents btnTomaDeMuestra As Button
     Friend WithEvents btnCerrarSesion As LinkLabel
+    Friend WithEvents Button2 As Button
 End Class

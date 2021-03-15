@@ -342,6 +342,7 @@ Partial Class A_Bancos
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "A_Bancos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

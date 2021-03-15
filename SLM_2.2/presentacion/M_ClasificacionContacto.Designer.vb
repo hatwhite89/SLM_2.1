@@ -64,7 +64,7 @@ Partial Class M_ClasificacionContacto
         'txtcodigo
         '
         Me.txtcodigo.Location = New System.Drawing.Point(63, 24)
-        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(138, 20)
@@ -89,7 +89,7 @@ Partial Class M_ClasificacionContacto
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.Color.Black
         Me.btncancelar.Location = New System.Drawing.Point(639, 13)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(68, 28)
         Me.btncancelar.TabIndex = 37
@@ -105,7 +105,7 @@ Partial Class M_ClasificacionContacto
         Me.btnbuscarTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbuscarTipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnbuscarTipo.Location = New System.Drawing.Point(63, 65)
-        Me.btnbuscarTipo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnbuscarTipo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnbuscarTipo.Name = "btnbuscarTipo"
         Me.btnbuscarTipo.Size = New System.Drawing.Size(37, 18)
         Me.btnbuscarTipo.TabIndex = 108
@@ -115,7 +115,7 @@ Partial Class M_ClasificacionContacto
         'txtcodigoTipo
         '
         Me.txtcodigoTipo.Location = New System.Drawing.Point(104, 65)
-        Me.txtcodigoTipo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoTipo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoTipo.MaxLength = 20
         Me.txtcodigoTipo.Name = "txtcodigoTipo"
         Me.txtcodigoTipo.Size = New System.Drawing.Size(67, 20)
@@ -143,9 +143,9 @@ Partial Class M_ClasificacionContacto
         Me.gbxbusqueda.Controls.Add(Me.txtcomentarioB)
         Me.gbxbusqueda.Controls.Add(Me.lblcomentarioB)
         Me.gbxbusqueda.Location = New System.Drawing.Point(11, 197)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Size = New System.Drawing.Size(696, 284)
         Me.gbxbusqueda.TabIndex = 114
         Me.gbxbusqueda.TabStop = False
@@ -171,7 +171,7 @@ Partial Class M_ClasificacionContacto
         Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(4, 54)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
@@ -193,7 +193,7 @@ Partial Class M_ClasificacionContacto
         'txtcomentarioB
         '
         Me.txtcomentarioB.Location = New System.Drawing.Point(79, 21)
-        Me.txtcomentarioB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcomentarioB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcomentarioB.MaxLength = 200
         Me.txtcomentarioB.Name = "txtcomentarioB"
         Me.txtcomentarioB.Size = New System.Drawing.Size(386, 20)
@@ -224,9 +224,9 @@ Partial Class M_ClasificacionContacto
         Me.gbxclasificacion.Controls.Add(Me.lblcomentario)
         Me.gbxclasificacion.Controls.Add(Me.txtcodigo)
         Me.gbxclasificacion.Location = New System.Drawing.Point(11, 53)
-        Me.gbxclasificacion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxclasificacion.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxclasificacion.Name = "gbxclasificacion"
-        Me.gbxclasificacion.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxclasificacion.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxclasificacion.Size = New System.Drawing.Size(696, 140)
         Me.gbxclasificacion.TabIndex = 115
         Me.gbxclasificacion.TabStop = False
@@ -246,7 +246,7 @@ Partial Class M_ClasificacionContacto
         'txtcomentarioTipo
         '
         Me.txtcomentarioTipo.Location = New System.Drawing.Point(174, 65)
-        Me.txtcomentarioTipo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcomentarioTipo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcomentarioTipo.Name = "txtcomentarioTipo"
         Me.txtcomentarioTipo.ReadOnly = True
         Me.txtcomentarioTipo.Size = New System.Drawing.Size(128, 20)
@@ -255,7 +255,7 @@ Partial Class M_ClasificacionContacto
         'rtxtcomentario
         '
         Me.rtxtcomentario.Location = New System.Drawing.Point(360, 24)
-        Me.rtxtcomentario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtcomentario.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtcomentario.MaxLength = 200
         Me.rtxtcomentario.Name = "rtxtcomentario"
         Me.rtxtcomentario.Size = New System.Drawing.Size(332, 74)
@@ -270,7 +270,7 @@ Partial Class M_ClasificacionContacto
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.Color.Black
         Me.btnmodificar.Location = New System.Drawing.Point(563, 13)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
         Me.btnmodificar.TabIndex = 114
@@ -285,7 +285,7 @@ Partial Class M_ClasificacionContacto
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.Color.Black
         Me.btnnuevo.Location = New System.Drawing.Point(404, 13)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
         Me.btnnuevo.TabIndex = 113
@@ -300,7 +300,7 @@ Partial Class M_ClasificacionContacto
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.Color.Black
         Me.btnguardar.Location = New System.Drawing.Point(487, 13)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(72, 28)
         Me.btnguardar.TabIndex = 112
@@ -342,7 +342,7 @@ Partial Class M_ClasificacionContacto
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_ClasificacionContacto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clasificación de Contacto"

@@ -24,6 +24,10 @@ Partial Class A_PerfilUsuario
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_PerfilUsuario))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label61 = New System.Windows.Forms.Label()
+        Me.Label60 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.btnCrearPerfil = New System.Windows.Forms.Button()
         Me.chkHabilitar = New System.Windows.Forms.CheckBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -94,10 +98,6 @@ Partial Class A_PerfilUsuario
         Me.Label5 = New System.Windows.Forms.Label()
         Me.dtPerfiles = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label61 = New System.Windows.Forms.Label()
-        Me.Label60 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxModulos.SuspendLayout()
@@ -141,6 +141,45 @@ Partial Class A_PerfilUsuario
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Perfil"
+        '
+        'Label61
+        '
+        Me.Label61.AutoSize = True
+        Me.Label61.Location = New System.Drawing.Point(386, 111)
+        Me.Label61.Name = "Label61"
+        Me.Label61.Size = New System.Drawing.Size(101, 13)
+        Me.Label61.TabIndex = 215
+        Me.Label61.Text = "Campos obligatorios"
+        '
+        'Label60
+        '
+        Me.Label60.AutoSize = True
+        Me.Label60.ForeColor = System.Drawing.Color.Red
+        Me.Label60.Location = New System.Drawing.Point(375, 111)
+        Me.Label60.Name = "Label60"
+        Me.Label60.Size = New System.Drawing.Size(11, 13)
+        Me.Label60.TabIndex = 214
+        Me.Label60.Text = "*"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.Color.Red
+        Me.Label6.Location = New System.Drawing.Point(8, 89)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(11, 13)
+        Me.Label6.TabIndex = 213
+        Me.Label6.Text = "*"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(7, 63)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(11, 13)
+        Me.Label7.TabIndex = 212
+        Me.Label7.Text = "*"
         '
         'btnCrearPerfil
         '
@@ -850,45 +889,6 @@ Partial Class A_PerfilUsuario
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(943, 47)
         Me.Panel1.TabIndex = 8
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.ForeColor = System.Drawing.Color.Red
-        Me.Label7.Location = New System.Drawing.Point(7, 63)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(11, 13)
-        Me.Label7.TabIndex = 212
-        Me.Label7.Text = "*"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.ForeColor = System.Drawing.Color.Red
-        Me.Label6.Location = New System.Drawing.Point(8, 89)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(11, 13)
-        Me.Label6.TabIndex = 213
-        Me.Label6.Text = "*"
-        '
-        'Label61
-        '
-        Me.Label61.AutoSize = True
-        Me.Label61.Location = New System.Drawing.Point(386, 111)
-        Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(101, 13)
-        Me.Label61.TabIndex = 215
-        Me.Label61.Text = "Campos obligatorios"
-        '
-        'Label60
-        '
-        Me.Label60.AutoSize = True
-        Me.Label60.ForeColor = System.Drawing.Color.Red
-        Me.Label60.Location = New System.Drawing.Point(375, 111)
-        Me.Label60.Name = "Label60"
-        Me.Label60.Size = New System.Drawing.Size(11, 13)
-        Me.Label60.TabIndex = 214
-        Me.Label60.Text = "*"
         '
         'A_PerfilUsuario
         '

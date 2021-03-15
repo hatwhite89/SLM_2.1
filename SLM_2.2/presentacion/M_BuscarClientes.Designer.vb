@@ -27,6 +27,8 @@ Partial Class M_BuscarClientes
         Me.cmbxGenero = New System.Windows.Forms.ComboBox()
         Me.btnTerminoPago = New System.Windows.Forms.Button()
         Me.txtApellido1 = New System.Windows.Forms.TextBox()
+        Me.lblcantidad = New System.Windows.Forms.Label()
+        Me.lbltotalFacturas = New System.Windows.Forms.Label()
         Me.txtRTN = New System.Windows.Forms.TextBox()
         Me.lblcodigoTipoClasif = New System.Windows.Forms.Label()
         Me.btnTipoClasificacion = New System.Windows.Forms.Button()
@@ -50,10 +52,8 @@ Partial Class M_BuscarClientes
         Me.lblnombreB = New System.Windows.Forms.Label()
         Me.lblForm = New System.Windows.Forms.Label()
         Me.txtIdentidad = New System.Windows.Forms.TextBox()
-        Me.lblcantidad = New System.Windows.Forms.Label()
         Me.lblnumeroB = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
-        Me.lbltotalFacturas = New System.Windows.Forms.Label()
         Me.btnExcel = New System.Windows.Forms.Button()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -146,6 +146,28 @@ Partial Class M_BuscarClientes
         Me.txtApellido1.Name = "txtApellido1"
         Me.txtApellido1.Size = New System.Drawing.Size(160, 20)
         Me.txtApellido1.TabIndex = 176
+        '
+        'lblcantidad
+        '
+        Me.lblcantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblcantidad.AutoSize = True
+        Me.lblcantidad.Location = New System.Drawing.Point(864, 518)
+        Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblcantidad.Name = "lblcantidad"
+        Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
+        Me.lblcantidad.TabIndex = 118
+        Me.lblcantidad.Text = "000"
+        '
+        'lbltotalFacturas
+        '
+        Me.lbltotalFacturas.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbltotalFacturas.AutoSize = True
+        Me.lbltotalFacturas.Location = New System.Drawing.Point(644, 518)
+        Me.lbltotalFacturas.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbltotalFacturas.Name = "lbltotalFacturas"
+        Me.lbltotalFacturas.Size = New System.Drawing.Size(135, 13)
+        Me.lbltotalFacturas.TabIndex = 117
+        Me.lbltotalFacturas.Text = "CANTIDAD DE CLIENTES"
         '
         'txtRTN
         '
@@ -401,17 +423,6 @@ Partial Class M_BuscarClientes
         Me.txtIdentidad.Size = New System.Drawing.Size(194, 20)
         Me.txtIdentidad.TabIndex = 120
         '
-        'lblcantidad
-        '
-        Me.lblcantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(864, 518)
-        Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
-        Me.lblcantidad.TabIndex = 118
-        Me.lblcantidad.Text = "000"
-        '
         'lblnumeroB
         '
         Me.lblnumeroB.AutoSize = True
@@ -442,17 +453,6 @@ Partial Class M_BuscarClientes
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgbtabla.Size = New System.Drawing.Size(957, 365)
         Me.dgbtabla.TabIndex = 116
-        '
-        'lbltotalFacturas
-        '
-        Me.lbltotalFacturas.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbltotalFacturas.AutoSize = True
-        Me.lbltotalFacturas.Location = New System.Drawing.Point(644, 518)
-        Me.lbltotalFacturas.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbltotalFacturas.Name = "lbltotalFacturas"
-        Me.lbltotalFacturas.Size = New System.Drawing.Size(135, 13)
-        Me.lbltotalFacturas.TabIndex = 117
-        Me.lbltotalFacturas.Text = "CANTIDAD DE CLIENTES"
         '
         'btnExcel
         '
@@ -512,6 +512,7 @@ Partial Class M_BuscarClientes
         Me.ClientSize = New System.Drawing.Size(988, 609)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_BuscarClientes"
