@@ -60,17 +60,17 @@ Partial Class A_FacturaCompras
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.dtDetalleFactura = New System.Windows.Forms.DataGridView()
-        Me.btnRegresar = New System.Windows.Forms.Button()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.codDetalle = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.area = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Sede = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnRegresar = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.gbxInfoFact.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -498,6 +498,44 @@ Partial Class A_FacturaCompras
         Me.dtDetalleFactura.Size = New System.Drawing.Size(739, 277)
         Me.dtDetalleFactura.TabIndex = 10
         '
+        'codDetalle
+        '
+        Me.codDetalle.HeaderText = "codDetalle"
+        Me.codDetalle.Name = "codDetalle"
+        Me.codDetalle.ReadOnly = True
+        Me.codDetalle.Visible = False
+        '
+        'Cuenta
+        '
+        Me.Cuenta.HeaderText = "Cuenta"
+        Me.Cuenta.MaxInputLength = 10
+        Me.Cuenta.Name = "Cuenta"
+        '
+        'area
+        '
+        Me.area.HeaderText = "Centro de Costo"
+        Me.area.MaxInputLength = 10
+        Me.area.Name = "area"
+        '
+        'Sede
+        '
+        Me.Sede.HeaderText = "Sucursal"
+        Me.Sede.MaxInputLength = 10
+        Me.Sede.Name = "Sede"
+        '
+        'Descripción
+        '
+        Me.Descripción.HeaderText = "Descripción"
+        Me.Descripción.MaxInputLength = 200
+        Me.Descripción.Name = "Descripción"
+        Me.Descripción.ReadOnly = True
+        '
+        'Monto
+        '
+        Me.Monto.HeaderText = "Monto"
+        Me.Monto.MaxInputLength = 10
+        Me.Monto.Name = "Monto"
+        '
         'btnRegresar
         '
         Me.btnRegresar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -562,44 +600,6 @@ Partial Class A_FacturaCompras
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(770, 22)
         Me.Panel2.TabIndex = 17
-        '
-        'codDetalle
-        '
-        Me.codDetalle.HeaderText = "codDetalle"
-        Me.codDetalle.Name = "codDetalle"
-        Me.codDetalle.ReadOnly = True
-        Me.codDetalle.Visible = False
-        '
-        'Cuenta
-        '
-        Me.Cuenta.HeaderText = "Cuenta"
-        Me.Cuenta.MaxInputLength = 10
-        Me.Cuenta.Name = "Cuenta"
-        '
-        'area
-        '
-        Me.area.HeaderText = "Centro de Costo"
-        Me.area.MaxInputLength = 10
-        Me.area.Name = "area"
-        '
-        'Sede
-        '
-        Me.Sede.HeaderText = "Sucursal"
-        Me.Sede.MaxInputLength = 10
-        Me.Sede.Name = "Sede"
-        '
-        'Descripción
-        '
-        Me.Descripción.HeaderText = "Descripción"
-        Me.Descripción.MaxInputLength = 200
-        Me.Descripción.Name = "Descripción"
-        Me.Descripción.ReadOnly = True
-        '
-        'Monto
-        '
-        Me.Monto.HeaderText = "Monto"
-        Me.Monto.MaxInputLength = 10
-        Me.Monto.Name = "Monto"
         '
         'A_FacturaCompras
         '

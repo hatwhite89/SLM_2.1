@@ -22,6 +22,7 @@ Partial Class M_Arqueos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Arqueos))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtcodigoMaquina = New System.Windows.Forms.TextBox()
         Me.btnGenerar = New System.Windows.Forms.Button()
@@ -43,7 +44,7 @@ Partial Class M_Arqueos
         'txtcodigoMaquina
         '
         Me.txtcodigoMaquina.Location = New System.Drawing.Point(127, 54)
-        Me.txtcodigoMaquina.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigoMaquina.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoMaquina.Name = "txtcodigoMaquina"
         Me.txtcodigoMaquina.Size = New System.Drawing.Size(120, 20)
         Me.txtcodigoMaquina.TabIndex = 1
@@ -51,7 +52,7 @@ Partial Class M_Arqueos
         'btnGenerar
         '
         Me.btnGenerar.Location = New System.Drawing.Point(273, 54)
-        Me.btnGenerar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnGenerar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnGenerar.Name = "btnGenerar"
         Me.btnGenerar.Size = New System.Drawing.Size(56, 19)
         Me.btnGenerar.TabIndex = 2
@@ -61,7 +62,7 @@ Partial Class M_Arqueos
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(273, 106)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(56, 19)
         Me.Button1.TabIndex = 5
@@ -71,7 +72,7 @@ Partial Class M_Arqueos
         'txtCaja2
         '
         Me.txtCaja2.Location = New System.Drawing.Point(127, 106)
-        Me.txtCaja2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtCaja2.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCaja2.Name = "txtCaja2"
         Me.txtCaja2.Size = New System.Drawing.Size(120, 20)
         Me.txtCaja2.TabIndex = 4
@@ -97,7 +98,8 @@ Partial Class M_Arqueos
         Me.Controls.Add(Me.btnGenerar)
         Me.Controls.Add(Me.txtcodigoMaquina)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_Arqueos"
         Me.Text = "M_Arqueos"
         Me.ResumeLayout(False)

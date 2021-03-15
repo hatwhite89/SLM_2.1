@@ -114,7 +114,7 @@ Partial Class M_ReporteriaTalentoHumano
         Me.cmbxReporte.FormattingEnabled = True
         Me.cmbxReporte.Items.AddRange(New Object() {"Reporte Personal Activo", "Reporte Personal Inactivo", "Reporte Capacitaciones ", "Reporte Permisos", "Reporte Horarios de Trabajo"})
         Me.cmbxReporte.Location = New System.Drawing.Point(17, 38)
-        Me.cmbxReporte.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbxReporte.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbxReporte.Name = "cmbxReporte"
         Me.cmbxReporte.Size = New System.Drawing.Size(222, 21)
         Me.cmbxReporte.TabIndex = 1
@@ -155,7 +155,7 @@ Partial Class M_ReporteriaTalentoHumano
         '
         Me.cmbxHorario.FormattingEnabled = True
         Me.cmbxHorario.Location = New System.Drawing.Point(88, 110)
-        Me.cmbxHorario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbxHorario.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbxHorario.Name = "cmbxHorario"
         Me.cmbxHorario.Size = New System.Drawing.Size(151, 21)
         Me.cmbxHorario.TabIndex = 8
@@ -175,7 +175,7 @@ Partial Class M_ReporteriaTalentoHumano
         'txtnombreEmpleado
         '
         Me.txtnombreEmpleado.Location = New System.Drawing.Point(88, 46)
-        Me.txtnombreEmpleado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreEmpleado.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreEmpleado.Name = "txtnombreEmpleado"
         Me.txtnombreEmpleado.ReadOnly = True
         Me.txtnombreEmpleado.Size = New System.Drawing.Size(151, 20)
@@ -208,7 +208,7 @@ Partial Class M_ReporteriaTalentoHumano
         '
         Me.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaFinal.Location = New System.Drawing.Point(88, 137)
-        Me.dtpFechaFinal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpFechaFinal.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpFechaFinal.Name = "dtpFechaFinal"
         Me.dtpFechaFinal.Size = New System.Drawing.Size(162, 20)
         Me.dtpFechaFinal.TabIndex = 3
@@ -229,7 +229,7 @@ Partial Class M_ReporteriaTalentoHumano
         '
         Me.dtpFechaInicial.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaInicial.Location = New System.Drawing.Point(88, 87)
-        Me.dtpFechaInicial.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpFechaInicial.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpFechaInicial.Name = "dtpFechaInicial"
         Me.dtpFechaInicial.Size = New System.Drawing.Size(162, 20)
         Me.dtpFechaInicial.TabIndex = 1

@@ -22,6 +22,7 @@ Partial Class A_PrintInforme
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_PrintInforme))
         Me.crvInformeOrdenesTrabajo = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.lblform = New System.Windows.Forms.Label()
         Me.InformeOrdenesDeTrabajoExamen1 = New SLM_2._2.InformeOrdenesDeTrabajoExamen()
@@ -56,6 +57,7 @@ Partial Class A_PrintInforme
         Me.ClientSize = New System.Drawing.Size(885, 544)
         Me.Controls.Add(Me.lblform)
         Me.Controls.Add(Me.crvInformeOrdenesTrabajo)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "A_PrintInforme"
         Me.Text = "Informe de Ordenes de Trabajo"
         Me.ResumeLayout(False)

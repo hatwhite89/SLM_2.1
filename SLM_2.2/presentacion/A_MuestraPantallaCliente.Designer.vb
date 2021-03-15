@@ -46,11 +46,10 @@ Partial Class A_MuestraPantallaCliente
         Me.dgvPacientesEspera.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvPacientesEspera.BackgroundColor = System.Drawing.Color.White
         Me.dgvPacientesEspera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPacientesEspera.Location = New System.Drawing.Point(16, 134)
-        Me.dgvPacientesEspera.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgvPacientesEspera.Location = New System.Drawing.Point(12, 109)
         Me.dgvPacientesEspera.Name = "dgvPacientesEspera"
         Me.dgvPacientesEspera.RowHeadersWidth = 51
-        Me.dgvPacientesEspera.Size = New System.Drawing.Size(593, 511)
+        Me.dgvPacientesEspera.Size = New System.Drawing.Size(445, 415)
         Me.dgvPacientesEspera.TabIndex = 0
         '
         'WMP
@@ -60,7 +59,6 @@ Partial Class A_MuestraPantallaCliente
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.WMP.Enabled = True
         Me.WMP.Location = New System.Drawing.Point(463, 109)
-        Me.WMP.Margin = New System.Windows.Forms.Padding(4)
         Me.WMP.Name = "WMP"
         Me.WMP.OcxState = CType(resources.GetObject("WMP.OcxState"), System.Windows.Forms.AxHost.State)
         Me.WMP.Size = New System.Drawing.Size(417, 415)
@@ -73,10 +71,9 @@ Partial Class A_MuestraPantallaCliente
         Me.lblHora.BackColor = System.Drawing.Color.Transparent
         Me.lblHora.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHora.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.lblHora.Location = New System.Drawing.Point(792, 11)
-        Me.lblHora.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblHora.Location = New System.Drawing.Point(594, 9)
         Me.lblHora.Name = "lblHora"
-        Me.lblHora.Size = New System.Drawing.Size(270, 91)
+        Me.lblHora.Size = New System.Drawing.Size(217, 73)
         Me.lblHora.TabIndex = 3
         Me.lblHora.Text = "HORA"
         Me.lblHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -87,10 +84,9 @@ Partial Class A_MuestraPantallaCliente
         Me.lblFecha.AutoSize = True
         Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFecha.ForeColor = System.Drawing.SystemColors.MenuText
-        Me.lblFecha.Location = New System.Drawing.Point(793, 90)
-        Me.lblFecha.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblFecha.Location = New System.Drawing.Point(595, 73)
         Me.lblFecha.Name = "lblFecha"
-        Me.lblFecha.Size = New System.Drawing.Size(93, 29)
+        Me.lblFecha.Size = New System.Drawing.Size(75, 24)
         Me.lblFecha.TabIndex = 4
         Me.lblFecha.Text = "FECHA"
         Me.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -101,10 +97,9 @@ Partial Class A_MuestraPantallaCliente
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(16, 15)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(227, 112)
+        Me.PictureBox1.Size = New System.Drawing.Size(170, 91)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
@@ -112,10 +107,9 @@ Partial Class A_MuestraPantallaCliente
         'cbxVideos
         '
         Me.cbxVideos.FormattingEnabled = True
-        Me.cbxVideos.Location = New System.Drawing.Point(465, 15)
-        Me.cbxVideos.Margin = New System.Windows.Forms.Padding(4)
+        Me.cbxVideos.Location = New System.Drawing.Point(349, 12)
         Me.cbxVideos.Name = "cbxVideos"
-        Me.cbxVideos.Size = New System.Drawing.Size(160, 24)
+        Me.cbxVideos.Size = New System.Drawing.Size(121, 21)
         Me.cbxVideos.TabIndex = 6
         Me.cbxVideos.Visible = False
         '
@@ -130,10 +124,10 @@ Partial Class A_MuestraPantallaCliente
         '
         'A_MuestraPantallaCliente
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1179, 660)
+        Me.ClientSize = New System.Drawing.Size(884, 536)
         Me.Controls.Add(Me.cbxVideos)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblFecha)
@@ -141,7 +135,6 @@ Partial Class A_MuestraPantallaCliente
         Me.Controls.Add(Me.WMP)
         Me.Controls.Add(Me.dgvPacientesEspera)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "A_MuestraPantallaCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.dgvPacientesEspera, System.ComponentModel.ISupportInitialize).EndInit()

@@ -43,41 +43,36 @@ Partial Class A_ListadoParametros
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.lblFormulario)
         Me.GroupBox1.Controls.Add(Me.dtParametros)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 15)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox1.Size = New System.Drawing.Size(784, 346)
+        Me.GroupBox1.Size = New System.Drawing.Size(588, 281)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Registro de Parámetros"
         '
         'txtCodExamen
         '
-        Me.txtCodExamen.Location = New System.Drawing.Point(109, 30)
-        Me.txtCodExamen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCodExamen.Location = New System.Drawing.Point(82, 24)
         Me.txtCodExamen.MaxLength = 10
         Me.txtCodExamen.Name = "txtCodExamen"
-        Me.txtCodExamen.Size = New System.Drawing.Size(232, 22)
+        Me.txtCodExamen.Size = New System.Drawing.Size(175, 20)
         Me.txtCodExamen.TabIndex = 3
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 33)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(9, 27)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(91, 17)
+        Me.Label1.Size = New System.Drawing.Size(70, 13)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Cod. Exámen"
         '
         'lblFormulario
         '
         Me.lblFormulario.AutoSize = True
-        Me.lblFormulario.Location = New System.Drawing.Point(581, -4)
-        Me.lblFormulario.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblFormulario.Location = New System.Drawing.Point(436, -3)
         Me.lblFormulario.Name = "lblFormulario"
-        Me.lblFormulario.Size = New System.Drawing.Size(36, 17)
+        Me.lblFormulario.Size = New System.Drawing.Size(27, 13)
         Me.lblFormulario.TabIndex = 1
         Me.lblFormulario.Text = "form"
         '
@@ -90,37 +85,34 @@ Partial Class A_ListadoParametros
         Me.dtParametros.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtParametros.BackgroundColor = System.Drawing.Color.White
         Me.dtParametros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtParametros.Location = New System.Drawing.Point(8, 66)
-        Me.dtParametros.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtParametros.Location = New System.Drawing.Point(6, 54)
         Me.dtParametros.MultiSelect = False
         Me.dtParametros.Name = "dtParametros"
         Me.dtParametros.RowHeadersWidth = 51
         Me.dtParametros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtParametros.Size = New System.Drawing.Size(768, 272)
+        Me.dtParametros.Size = New System.Drawing.Size(576, 221)
         Me.dtParametros.TabIndex = 0
         '
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 369)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 296)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(812, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(609, 22)
         Me.StatusStrip1.TabIndex = 1
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'A_ListadoParametros
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(812, 391)
+        Me.ClientSize = New System.Drawing.Size(609, 318)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "A_ListadoParametros"
         Me.Text = "A_ListadoParametros"
         Me.GroupBox1.ResumeLayout(False)

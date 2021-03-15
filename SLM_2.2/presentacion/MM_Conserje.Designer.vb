@@ -22,7 +22,10 @@ Partial Class MM_Conserje
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MM_Conserje))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.txtCodEmpleado = New System.Windows.Forms.TextBox()
         Me.txtObservaciones = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -58,8 +61,6 @@ Partial Class MM_Conserje
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.dgvData = New System.Windows.Forms.DataGridView()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -92,6 +93,23 @@ Partial Class MM_Conserje
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(6, 396)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(459, 80)
+        Me.TextBox1.TabIndex = 17
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(10, 380)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(117, 13)
+        Me.Label13.TabIndex = 16
+        Me.Label13.Text = "Contenido de paquetes"
         '
         'txtCodEmpleado
         '
@@ -450,23 +468,6 @@ Partial Class MM_Conserje
         Me.dgvData.Size = New System.Drawing.Size(496, 418)
         Me.dgvData.TabIndex = 0
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(6, 396)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(459, 80)
-        Me.TextBox1.TabIndex = 17
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(10, 380)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(117, 13)
-        Me.Label13.TabIndex = 16
-        Me.Label13.Text = "Contenido de paquetes"
-        '
         'MM_Conserje
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -476,6 +477,7 @@ Partial Class MM_Conserje
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MM_Conserje"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gestionar tareas de Conserjes"

@@ -1534,4 +1534,8 @@
     Private Sub PictureBox22_Click(sender As Object, e As EventArgs) Handles PictureBox22.Click
         Resultados.Show()
     End Sub
+
+    Private Sub Button2_Click_5(sender As Object, e As EventArgs) Handles Button2.Click
+        E_frmFirmaDigital.Show()
+    End Sub
 End Class

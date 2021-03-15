@@ -22,6 +22,7 @@ Partial Class MM_CuestionarioMuestras
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MM_CuestionarioMuestras))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -211,6 +212,7 @@ Partial Class MM_CuestionarioMuestras
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MM_CuestionarioMuestras"
         Me.Text = "Cuestionario"
         Me.GroupBox1.ResumeLayout(False)

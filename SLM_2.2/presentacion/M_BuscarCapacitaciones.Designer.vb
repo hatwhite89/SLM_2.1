@@ -24,6 +24,8 @@ Partial Class M_BuscarCapacitaciones
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_BuscarCapacitaciones))
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.lblform = New System.Windows.Forms.Label()
         Me.dtpHasta = New System.Windows.Forms.DateTimePicker()
@@ -42,8 +44,6 @@ Partial Class M_BuscarCapacitaciones
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -80,6 +80,29 @@ Partial Class M_BuscarCapacitaciones
         Me.gbxbusqueda.TabIndex = 118
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR CAPACITACIONES"
+        '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.Color.Green
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button4.Location = New System.Drawing.Point(618, 95)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 128
+        Me.Button4.Text = "Excel"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(195, 103)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(327, 13)
+        Me.Label3.TabIndex = 127
+        Me.Label3.Text = "Seleccione la fila y haga doble click para abrir el detalle"
         '
         'btnBuscar
         '
@@ -278,29 +301,6 @@ Partial Class M_BuscarCapacitaciones
         Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
         Me.StatusStrip1.TabIndex = 139
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(195, 103)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(327, 13)
-        Me.Label3.TabIndex = 127
-        Me.Label3.Text = "Seleccione la fila y haga doble click para abrir el detalle"
-        '
-        'Button4
-        '
-        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.BackColor = System.Drawing.Color.Green
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button4.Location = New System.Drawing.Point(618, 95)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 128
-        Me.Button4.Text = "Excel"
-        Me.Button4.UseVisualStyleBackColor = False
         '
         'M_BuscarCapacitaciones
         '

@@ -25,6 +25,7 @@ Partial Class M_Area
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_Area))
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.lblnombreB = New System.Windows.Forms.Label()
@@ -44,7 +45,6 @@ Partial Class M_Area
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxcaja.SuspendLayout()
@@ -83,6 +83,16 @@ Partial Class M_Area
         Me.gbxbusqueda.TabIndex = 121
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR ÁREA"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(230, 49)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(272, 13)
+        Me.Label6.TabIndex = 121
+        Me.Label6.Text = "Seleccione una fila para cargar la información "
         '
         'Button4
         '
@@ -318,16 +328,6 @@ Partial Class M_Area
         Me.Label11.Size = New System.Drawing.Size(125, 20)
         Me.Label11.TabIndex = 9
         Me.Label11.Text = "Área/Gerencia"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(230, 49)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(272, 13)
-        Me.Label6.TabIndex = 121
-        Me.Label6.Text = "Seleccione una fila para cargar la información "
         '
         'M_Area
         '

@@ -49,11 +49,11 @@ Partial Class M_ListadoValoresReferencia
         Me.gbxbusqueda.Controls.Add(Me.lbltipoCta)
         Me.gbxbusqueda.Controls.Add(Me.lblcantidad)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
-        Me.gbxbusqueda.Location = New System.Drawing.Point(11, 12)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.gbxbusqueda.Location = New System.Drawing.Point(8, 10)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.gbxbusqueda.Size = New System.Drawing.Size(935, 578)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Size = New System.Drawing.Size(701, 470)
         Me.gbxbusqueda.TabIndex = 125
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "Valores de Referencia"
@@ -61,18 +61,20 @@ Partial Class M_ListadoValoresReferencia
         'lblBandera
         '
         Me.lblBandera.AutoSize = True
-        Me.lblBandera.Location = New System.Drawing.Point(663, -2)
+        Me.lblBandera.Location = New System.Drawing.Point(497, -2)
+        Me.lblBandera.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblBandera.Name = "lblBandera"
-        Me.lblBandera.Size = New System.Drawing.Size(0, 17)
+        Me.lblBandera.Size = New System.Drawing.Size(0, 13)
         Me.lblBandera.TabIndex = 123
         Me.lblBandera.Visible = False
         '
         'lblcodeCateCli
         '
         Me.lblcodeCateCli.AutoSize = True
-        Me.lblcodeCateCli.Location = New System.Drawing.Point(549, 0)
+        Me.lblcodeCateCli.Location = New System.Drawing.Point(412, 0)
+        Me.lblcodeCateCli.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcodeCateCli.Name = "lblcodeCateCli"
-        Me.lblcodeCateCli.Size = New System.Drawing.Size(52, 17)
+        Me.lblcodeCateCli.Size = New System.Drawing.Size(40, 13)
         Me.lblcodeCateCli.TabIndex = 122
         Me.lblcodeCateCli.Text = "Código"
         Me.lblcodeCateCli.Visible = False
@@ -80,9 +82,10 @@ Partial Class M_ListadoValoresReferencia
         'lblform
         '
         Me.lblform.AutoSize = True
-        Me.lblform.Location = New System.Drawing.Point(393, 0)
+        Me.lblform.Location = New System.Drawing.Point(295, 0)
+        Me.lblform.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblform.Name = "lblform"
-        Me.lblform.Size = New System.Drawing.Size(71, 17)
+        Me.lblform.Size = New System.Drawing.Size(52, 13)
         Me.lblform.TabIndex = 121
         Me.lblform.Text = "formulario"
         Me.lblform.Visible = False
@@ -96,40 +99,43 @@ Partial Class M_ListadoValoresReferencia
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgbtabla.Location = New System.Drawing.Point(7, 33)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgbtabla.Location = New System.Drawing.Point(5, 27)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(923, 502)
+        Me.dgbtabla.Size = New System.Drawing.Size(692, 408)
         Me.dgbtabla.TabIndex = 119
         '
         'lbltipoCta
         '
         Me.lbltipoCta.AutoSize = True
-        Me.lbltipoCta.Location = New System.Drawing.Point(285, 182)
+        Me.lbltipoCta.Location = New System.Drawing.Point(214, 148)
+        Me.lbltipoCta.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbltipoCta.Name = "lbltipoCta"
-        Me.lbltipoCta.Size = New System.Drawing.Size(0, 17)
+        Me.lbltipoCta.Size = New System.Drawing.Size(0, 13)
         Me.lbltipoCta.TabIndex = 116
         Me.lbltipoCta.Visible = False
         '
         'lblcantidad
         '
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(188, 553)
+        Me.lblcantidad.Location = New System.Drawing.Point(141, 449)
+        Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(32, 17)
+        Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
         Me.lblcantidad.TabIndex = 115
         Me.lblcantidad.Text = "000"
         '
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(19, 553)
+        Me.lbltotal.Location = New System.Drawing.Point(14, 449)
+        Me.lbltotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(54, 17)
+        Me.lbltotal.Size = New System.Drawing.Size(42, 13)
         Me.lbltotal.TabIndex = 114
         Me.lbltotal.Text = "TOTAL"
         '
@@ -137,23 +143,22 @@ Partial Class M_ListadoValoresReferencia
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 600)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 483)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(957, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(718, 22)
         Me.StatusStrip1.TabIndex = 126
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'M_ListadoValoresReferencia
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(957, 622)
+        Me.ClientSize = New System.Drawing.Size(718, 505)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxbusqueda)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "M_ListadoValoresReferencia"
         Me.Text = "Valores de Referencia"
         Me.gbxbusqueda.ResumeLayout(False)

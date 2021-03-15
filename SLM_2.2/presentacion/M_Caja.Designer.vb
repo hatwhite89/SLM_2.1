@@ -59,9 +59,9 @@ Partial Class M_Caja
         Me.gbxbusqueda.Controls.Add(Me.dgbtabla)
         Me.gbxbusqueda.Controls.Add(Me.lbltotal)
         Me.gbxbusqueda.Location = New System.Drawing.Point(11, 128)
-        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Name = "gbxbusqueda"
-        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxbusqueda.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxbusqueda.Size = New System.Drawing.Size(696, 361)
         Me.gbxbusqueda.TabIndex = 119
         Me.gbxbusqueda.TabStop = False
@@ -70,7 +70,7 @@ Partial Class M_Caja
         'txtnombreB
         '
         Me.txtnombreB.Location = New System.Drawing.Point(52, 25)
-        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(640, 20)
@@ -106,7 +106,7 @@ Partial Class M_Caja
         Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(7, 49)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersWidth = 51
@@ -136,9 +136,9 @@ Partial Class M_Caja
         Me.gbxcaja.Controls.Add(Me.lblnombre)
         Me.gbxcaja.Controls.Add(Me.txtnombre)
         Me.gbxcaja.Location = New System.Drawing.Point(11, 51)
-        Me.gbxcaja.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxcaja.Margin = New System.Windows.Forms.Padding(2)
         Me.gbxcaja.Name = "gbxcaja"
-        Me.gbxcaja.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbxcaja.Padding = New System.Windows.Forms.Padding(2)
         Me.gbxcaja.Size = New System.Drawing.Size(696, 73)
         Me.gbxcaja.TabIndex = 118
         Me.gbxcaja.TabStop = False
@@ -168,7 +168,7 @@ Partial Class M_Caja
         '
         Me.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodigo.Location = New System.Drawing.Point(53, 28)
-        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigo.MaxLength = 20
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(76, 20)
@@ -188,7 +188,7 @@ Partial Class M_Caja
         'txtnombre
         '
         Me.txtnombre.Location = New System.Drawing.Point(211, 27)
-        Me.txtnombre.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombre.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombre.MaxLength = 80
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(481, 20)
@@ -201,7 +201,7 @@ Partial Class M_Caja
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.Color.Black
         Me.btnmodificar.Location = New System.Drawing.Point(562, 11)
-        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(72, 28)
         Me.btnmodificar.TabIndex = 111
@@ -215,7 +215,7 @@ Partial Class M_Caja
         Me.btncancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncancelar.ForeColor = System.Drawing.Color.Black
         Me.btncancelar.Location = New System.Drawing.Point(638, 11)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(68, 28)
         Me.btncancelar.TabIndex = 37
@@ -229,7 +229,7 @@ Partial Class M_Caja
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.Color.Black
         Me.btnnuevo.Location = New System.Drawing.Point(403, 11)
-        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnnuevo.Margin = New System.Windows.Forms.Padding(2)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(79, 28)
         Me.btnnuevo.TabIndex = 110
@@ -243,7 +243,7 @@ Partial Class M_Caja
         Me.btnguardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnguardar.ForeColor = System.Drawing.Color.Black
         Me.btnguardar.Location = New System.Drawing.Point(486, 11)
-        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(72, 28)
         Me.btnguardar.TabIndex = 108
@@ -285,7 +285,7 @@ Partial Class M_Caja
         Me.Controls.Add(Me.gbxcaja)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_Caja"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mantenimiento Caja"

@@ -24,6 +24,7 @@ Partial Class E_ListarOrdenesDeTrabajo
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_ListarOrdenesDeTrabajo))
         Me.gbxbusqueda = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.txtCodigoB = New System.Windows.Forms.TextBox()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lblnombreB = New System.Windows.Forms.Label()
@@ -33,7 +34,6 @@ Partial Class E_ListarOrdenesDeTrabajo
         Me.txtDescripcionB = New System.Windows.Forms.TextBox()
         Me.lblCodigoT = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -61,6 +61,16 @@ Partial Class E_ListarOrdenesDeTrabajo
         Me.gbxbusqueda.TabIndex = 122
         Me.gbxbusqueda.TabStop = False
         Me.gbxbusqueda.Text = "BUSCAR ORDEN DE TRABAJO"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(316, 61)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(261, 13)
+        Me.Label1.TabIndex = 121
+        Me.Label1.Text = "Seleccionar fila para cargar orden de trabajo"
         '
         'txtCodigoB
         '
@@ -160,16 +170,6 @@ Partial Class E_ListarOrdenesDeTrabajo
         Me.StatusStrip1.Size = New System.Drawing.Size(816, 22)
         Me.StatusStrip1.TabIndex = 123
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(316, 61)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(261, 13)
-        Me.Label1.TabIndex = 121
-        Me.Label1.Text = "Seleccionar fila para cargar orden de trabajo"
         '
         'E_ListarOrdenesDeTrabajo
         '

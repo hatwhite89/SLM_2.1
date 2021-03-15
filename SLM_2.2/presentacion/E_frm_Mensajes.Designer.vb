@@ -22,7 +22,12 @@ Partial Class E_frm_Mensajes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_frm_Mensajes))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.emiror = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.titulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuerpo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
@@ -30,10 +35,6 @@ Partial Class E_frm_Mensajes
         Me.Label2 = New System.Windows.Forms.Label()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.emiror = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.titulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cuerpo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -47,6 +48,30 @@ Partial Class E_frm_Mensajes
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(763, 243)
         Me.DataGridView1.TabIndex = 0
+        '
+        'emiror
+        '
+        Me.emiror.DataPropertyName = "emisor"
+        Me.emiror.HeaderText = "FROM"
+        Me.emiror.Name = "emiror"
+        '
+        'titulo
+        '
+        Me.titulo.DataPropertyName = "titulo"
+        Me.titulo.HeaderText = "TITULO"
+        Me.titulo.Name = "titulo"
+        '
+        'cuerpo
+        '
+        Me.cuerpo.DataPropertyName = "cuerpo"
+        Me.cuerpo.HeaderText = "MENSAJE"
+        Me.cuerpo.Name = "cuerpo"
+        '
+        'fecha
+        '
+        Me.fecha.DataPropertyName = "fecha"
+        Me.fecha.HeaderText = "FECHA"
+        Me.fecha.Name = "fecha"
         '
         'Button1
         '
@@ -106,30 +131,6 @@ Partial Class E_frm_Mensajes
         Me.StatusStrip1.TabIndex = 8
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'emiror
-        '
-        Me.emiror.DataPropertyName = "emisor"
-        Me.emiror.HeaderText = "FROM"
-        Me.emiror.Name = "emiror"
-        '
-        'titulo
-        '
-        Me.titulo.DataPropertyName = "titulo"
-        Me.titulo.HeaderText = "TITULO"
-        Me.titulo.Name = "titulo"
-        '
-        'cuerpo
-        '
-        Me.cuerpo.DataPropertyName = "cuerpo"
-        Me.cuerpo.HeaderText = "MENSAJE"
-        Me.cuerpo.Name = "cuerpo"
-        '
-        'fecha
-        '
-        Me.fecha.DataPropertyName = "fecha"
-        Me.fecha.HeaderText = "FECHA"
-        Me.fecha.Name = "fecha"
-        '
         'E_frm_Mensajes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -143,6 +144,7 @@ Partial Class E_frm_Mensajes
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "E_frm_Mensajes"
         Me.Text = "E_frm_Mensajes"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
