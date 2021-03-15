@@ -827,6 +827,12 @@
     <Compile Include="presentacion\E_frmEntrada.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frmEntregaResultados.Designer.vb">
+      <DependentUpon>E_frmEntregaResultados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmEntregaResultados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_frmFirmaDigital.Designer.vb">
       <DependentUpon>E_frmFirmaDigital.vb</DependentUpon>
     </Compile>
@@ -1649,6 +1655,12 @@
     <Compile Include="presentacion\prueba.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\ReporteExamenesCompletos.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteExamenesCompletos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\reporteOrdenCompra.Designer.vb">
       <DependentUpon>reporteOrdenCompra.vb</DependentUpon>
     </Compile>
@@ -1964,6 +1976,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmEntrada.resx">
       <DependentUpon>E_frmEntrada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmEntregaResultados.resx">
+      <DependentUpon>E_frmEntregaResultados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmFirmaDigital.resx">
       <DependentUpon>E_frmFirmaDigital.vb</DependentUpon>
@@ -2388,6 +2403,10 @@
     <EmbeddedResource Include="E_ReporteResultadoIndividual.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>E_ReporteResultadoIndividual.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteExamenesCompletos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteExamenesCompletos.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reporteOrdenCompra.resx">
       <DependentUpon>reporteOrdenCompra.vb</DependentUpon>

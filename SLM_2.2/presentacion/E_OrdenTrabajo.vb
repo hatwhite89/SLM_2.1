@@ -394,6 +394,7 @@
 
     Private Sub E_OrdenTrabajo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         alternarColoFilasDatagridview(dgvResultados)
+        id_orden_interna_crystal = txtnumero.Text
     End Sub
 
     Private Sub txtcoUsuario_TextChanged(sender As Object, e As EventArgs) Handles txtcoUsuario.TextChanged
@@ -473,6 +474,17 @@
                         dtpEnHora.Value = Date.Now
                         lblenUsuario.Text = Form1.lblUserCod.Text
                         MsgBox("Actualizado correctamente.", MsgBoxStyle.Information, "Validación.")
+                        'Recuperar correo
+                        Dim correoRecuperado As String
+                        Dim clsOT As New ClsOrdenDeTrabajo
+                        Try
+
+                            enviarMailResultado(txtemail.Text, codigo_orden_interna)
+                        Catch ex As Exception
+
+                        End Try
+
+                        'enviar correo
                     End If
                 ElseIf (rbtnInvalidado.Checked) Then
                     'INVALIDADO IN

@@ -6,17 +6,22 @@ Public Class E_frm_ResultadoIndividual
 
         Dim RptDocument As New E_ReporteResultadoIndividual
 
+        Try
+            'RptDocument.SetParameterValue("@numeroFactura", id_resultado)
+            RptDocument.SetParameterValue("@id_orden", id_orden_interna_crystal)
+            RptDocument.SetDatabaseLogon("sa", "Lbm2019")
+            CrystalReportViewer1.ReportSource = RptDocument
+            RptDocument.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Path.Combine(Application.StartupPath, "Resultados\resultado" + id_orden_interna_crystal + ".pdf"))
+            'enviarMailResultado("sinergia@laboratoriosmedicos.hn", "Lmsinergia2020", "587", True, "mail.laboratoriosmedicos.hn", "erickgallardo89@yahoo.com", "Resultados")
 
-        RptDocument.SetParameterValue("@numeroFactura", id_resultado)
-        RptDocument.SetDatabaseLogon("sa", "Lbm2019")
-        CrystalReportViewer1.ReportSource = RptDocument
-        RptDocument.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Path.Combine(Application.StartupPath, "Resultados\resultado.pdf"))
-        'enviarMailResultado("sinergia@laboratoriosmedicos.hn", "Lmsinergia2020", "587", True, "mail.laboratoriosmedicos.hn", "erickgallardo89@yahoo.com", "Resultados")
 
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
-    Sub enviarMailResultado(correoSalida As String, pass As String, puerto As Integer, sslOK As Boolean, host As String, correoNoti As String, texto As String)
+    Private Sub enviarMailResultado(correoSalida As String, pass As String, puerto As Integer, sslOK As Boolean, host As String, correoNoti As String, texto As String)
 
         'In the shadows of the moon
 
@@ -36,7 +41,7 @@ Public Class E_frm_ResultadoIndividual
             e_mail.To.Add(correoNoti)
             e_mail.Subject = "ENTREGA DE RESULTADOS LABORATORIOS MEDICOS"
 
-            Dim archivos As String = Path.Combine(Application.StartupPath, "Resultados\resultado.pdf")
+            Dim archivos As String = Path.Combine(Application.StartupPath, "Resultados\resultado" + id_orden_interna_crystal + ".pdf")
 
 
 

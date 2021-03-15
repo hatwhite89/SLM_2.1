@@ -1,4 +1,7 @@
-﻿Module Module1
+﻿Imports System.IO
+Imports System.Net.Mail
+
+Module Module1
     Public nombre_proveedorOC As String
     Public nombre_usurio As String
     Public codigo_usuario As String
@@ -17,6 +20,7 @@
     Public mensaje_actualizacion As String = "Registros actualizados exitosamente."
     Public mensaje_dar_baja As String = "Se ha dado de baja exitosamente."
     Public id_examen_curva As String
+    Public id_orden_interna_crystal As Integer
 
     Public Sub CargarDatosGlobales()
         Try
@@ -101,4 +105,62 @@
 
 
     End Function
+    Sub enviarMailResultado(correoNoti As String, id_orden As String)
+
+        'In the shadows of the moon
+        'enviarMailResultado("sinergia@laboratoriosmedicos.hn", "Lmsinergia2020", "587", True, "mail.laboratoriosmedicos.hn", "erickgallardo89@yahoo.com", "Resultados")
+        Dim correoSalida As String = "sinergia@laboratoriosmedicos.hn"
+        Dim pass As String = "Lmsinergia2020"
+        Dim puerto As String = "587"
+        Dim sslOK As Boolean = True
+        Dim host As String = "mail.laboratoriosmedicos.hn"
+        Dim texto As String = "Resultados"
+
+        Try
+            Dim Smtp_Server As New SmtpClient
+            Dim e_mail As New MailMessage()
+            Smtp_Server.UseDefaultCredentials = False
+            Smtp_Server.Credentials = New Net.NetworkCredential(correoSalida, pass)
+            Smtp_Server.Port = puerto
+            Smtp_Server.EnableSsl = sslOK
+            Smtp_Server.Host = host
+
+            e_mail = New MailMessage()
+            'txtfrom.text
+            e_mail.From = New MailAddress(correoSalida)
+            'txtto.text
+            e_mail.To.Add(correoNoti)
+            e_mail.Subject = "ENTREGA DE RESULTADOS LABORATORIOS MEDICOS"
+
+            Dim archivos As String = Path.Combine(Application.StartupPath, "Resultados\resultado" + id_orden_interna_crystal + ".pdf")
+
+
+
+
+            Dim archivoAdjunto As New System.Net.Mail.Attachment(archivos)
+
+            e_mail.Attachments.Add(archivoAdjunto)
+
+
+
+            e_mail.IsBodyHtml = True
+            'txtMessage.text
+            Dim body As String
+            body = "<p>Buenos dias estimado cliente de Laboratorios Medicos, le adjuntamos los resultados de sus examenes.</p>
+<p>Cualquier consulta o duda puede comunicarse al telefono 22-22-22-22 donde gustosamente le atenderemos.</p>
+<p>Agradecemos su confianza.</p>
+<p>Laboratorios Medicos.</p>"
+            e_mail.Body = body
+            Smtp_Server.Send(e_mail)
+
+            'omitir mensaje
+            ' MsgBox("Mail Enviado")
+
+        Catch ex As Exception
+            'MsgBox("No se envío el correo. " + ex.Message)
+        End Try
+
+    End Sub
+
+
 End Module
