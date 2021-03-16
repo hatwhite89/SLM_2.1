@@ -128,7 +128,7 @@
     End Function
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
         Try
-
+            'validacion
             If (Trim(txtcodigo.Text) <> "" And Trim(txtnombre.Text) <> "") Then
                 txtcodigo.Text = sinDobleEspacio(txtcodigo.Text)
                 txtnombre.Text = sinDobleEspacio(txtnombre.Text)
