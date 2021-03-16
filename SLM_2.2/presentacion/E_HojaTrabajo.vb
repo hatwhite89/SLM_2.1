@@ -604,6 +604,7 @@
                         Exit Sub
                     End If
 
+
                     'Valida la orden de trabajo
                     Dim objOrdTrab As New ClsOrdenDeTrabajo
                     With objOrdTrab
