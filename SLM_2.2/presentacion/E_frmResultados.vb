@@ -54,10 +54,14 @@ Public Class Resultados
 
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Button6_Click(sender As Object, e As EventArgs)
         Dim Report As CrystalDecisions.CrystalReports.Engine.ReportDocument = New CrystalDecisions.CrystalReports.Engine.ReportDocument
         Report.Load(System.AppDomain.CurrentDomain.BaseDirectory() & "E_ReporteResultadoIndividual.rpt")
         Report.ExportToDisk(ExportFormatType.PortableDocFormat, "resultado.pdf")
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
 End Class

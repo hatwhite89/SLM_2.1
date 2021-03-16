@@ -153,12 +153,12 @@ Partial Class E_OrdenTrabajo
         'lblnumero
         '
         Me.lblnumero.AutoSize = True
-        Me.lblnumero.Location = New System.Drawing.Point(38, 12)
+        Me.lblnumero.Location = New System.Drawing.Point(7, 12)
         Me.lblnumero.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblnumero.Name = "lblnumero"
-        Me.lblnumero.Size = New System.Drawing.Size(27, 13)
+        Me.lblnumero.Size = New System.Drawing.Size(74, 13)
         Me.lblnumero.TabIndex = 0
-        Me.lblnumero.Text = "Nro."
+        Me.lblnumero.Text = "Nro. de Orden"
         '
         'lblarea
         '
@@ -213,7 +213,7 @@ Partial Class E_OrdenTrabajo
         'lblCodigo
         '
         Me.lblCodigo.AutoSize = True
-        Me.lblCodigo.Location = New System.Drawing.Point(23, 5)
+        Me.lblCodigo.Location = New System.Drawing.Point(21, 23)
         Me.lblCodigo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCodigo.Name = "lblCodigo"
         Me.lblCodigo.Size = New System.Drawing.Size(40, 13)
@@ -223,7 +223,7 @@ Partial Class E_OrdenTrabajo
         'lblEdad
         '
         Me.lblEdad.AutoSize = True
-        Me.lblEdad.Location = New System.Drawing.Point(30, 32)
+        Me.lblEdad.Location = New System.Drawing.Point(27, 46)
         Me.lblEdad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblEdad.Name = "lblEdad"
         Me.lblEdad.Size = New System.Drawing.Size(32, 13)
@@ -273,7 +273,7 @@ Partial Class E_OrdenTrabajo
         'lblGenero
         '
         Me.lblGenero.AutoSize = True
-        Me.lblGenero.Location = New System.Drawing.Point(20, 56)
+        Me.lblGenero.Location = New System.Drawing.Point(20, 71)
         Me.lblGenero.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblGenero.Name = "lblGenero"
         Me.lblGenero.Size = New System.Drawing.Size(42, 13)
@@ -283,7 +283,7 @@ Partial Class E_OrdenTrabajo
         'lblMedico
         '
         Me.lblMedico.AutoSize = True
-        Me.lblMedico.Location = New System.Drawing.Point(21, 80)
+        Me.lblMedico.Location = New System.Drawing.Point(20, 94)
         Me.lblMedico.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblMedico.Name = "lblMedico"
         Me.lblMedico.Size = New System.Drawing.Size(42, 13)
@@ -293,7 +293,7 @@ Partial Class E_OrdenTrabajo
         'lblCurva
         '
         Me.lblCurva.AutoSize = True
-        Me.lblCurva.Location = New System.Drawing.Point(43, 234)
+        Me.lblCurva.Location = New System.Drawing.Point(27, 141)
         Me.lblCurva.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCurva.Name = "lblCurva"
         Me.lblCurva.Size = New System.Drawing.Size(35, 13)
@@ -303,7 +303,7 @@ Partial Class E_OrdenTrabajo
         'lblSede
         '
         Me.lblSede.AutoSize = True
-        Me.lblSede.Location = New System.Drawing.Point(44, 258)
+        Me.lblSede.Location = New System.Drawing.Point(28, 171)
         Me.lblSede.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblSede.Name = "lblSede"
         Me.lblSede.Size = New System.Drawing.Size(32, 13)
@@ -313,7 +313,7 @@ Partial Class E_OrdenTrabajo
         'lblTecnico
         '
         Me.lblTecnico.AutoSize = True
-        Me.lblTecnico.Location = New System.Drawing.Point(32, 285)
+        Me.lblTecnico.Location = New System.Drawing.Point(14, 202)
         Me.lblTecnico.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTecnico.Name = "lblTecnico"
         Me.lblTecnico.Size = New System.Drawing.Size(46, 13)
@@ -323,7 +323,7 @@ Partial Class E_OrdenTrabajo
         'lblValidador
         '
         Me.lblValidador.AutoSize = True
-        Me.lblValidador.Location = New System.Drawing.Point(25, 307)
+        Me.lblValidador.Location = New System.Drawing.Point(9, 229)
         Me.lblValidador.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblValidador.Name = "lblValidador"
         Me.lblValidador.Size = New System.Drawing.Size(51, 13)
@@ -362,10 +362,10 @@ Partial Class E_OrdenTrabajo
         '
         'txtnumero
         '
-        Me.txtnumero.Location = New System.Drawing.Point(83, 41)
+        Me.txtnumero.Location = New System.Drawing.Point(86, 9)
         Me.txtnumero.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnumero.Name = "txtnumero"
-        Me.txtnumero.Size = New System.Drawing.Size(126, 20)
+        Me.txtnumero.Size = New System.Drawing.Size(119, 20)
         Me.txtnumero.TabIndex = 24
         Me.txtnumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -374,6 +374,7 @@ Partial Class E_OrdenTrabajo
         Me.txtcodigoArea.Location = New System.Drawing.Point(246, 9)
         Me.txtcodigoArea.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoArea.Name = "txtcodigoArea"
+        Me.txtcodigoArea.ReadOnly = True
         Me.txtcodigoArea.Size = New System.Drawing.Size(97, 20)
         Me.txtcodigoArea.TabIndex = 25
         Me.txtcodigoArea.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -383,6 +384,7 @@ Partial Class E_OrdenTrabajo
         Me.txtnumeroFactura.Location = New System.Drawing.Point(463, 9)
         Me.txtnumeroFactura.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnumeroFactura.Name = "txtnumeroFactura"
+        Me.txtnumeroFactura.ReadOnly = True
         Me.txtnumeroFactura.Size = New System.Drawing.Size(126, 20)
         Me.txtnumeroFactura.TabIndex = 26
         Me.txtnumeroFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -392,6 +394,7 @@ Partial Class E_OrdenTrabajo
         Me.txtcodigoCajero.Location = New System.Drawing.Point(683, 6)
         Me.txtcodigoCajero.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoCajero.Name = "txtcodigoCajero"
+        Me.txtcodigoCajero.ReadOnly = True
         Me.txtcodigoCajero.Size = New System.Drawing.Size(93, 20)
         Me.txtcodigoCajero.TabIndex = 27
         Me.txtcodigoCajero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -401,6 +404,7 @@ Partial Class E_OrdenTrabajo
         Me.txtcodigoSubArea.Location = New System.Drawing.Point(246, 35)
         Me.txtcodigoSubArea.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoSubArea.Name = "txtcodigoSubArea"
+        Me.txtcodigoSubArea.ReadOnly = True
         Me.txtcodigoSubArea.Size = New System.Drawing.Size(97, 20)
         Me.txtcodigoSubArea.TabIndex = 30
         Me.txtcodigoSubArea.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -410,13 +414,14 @@ Partial Class E_OrdenTrabajo
         Me.txtcodigoSucursal.Location = New System.Drawing.Point(463, 33)
         Me.txtcodigoSucursal.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoSucursal.Name = "txtcodigoSucursal"
+        Me.txtcodigoSucursal.ReadOnly = True
         Me.txtcodigoSucursal.Size = New System.Drawing.Size(126, 20)
         Me.txtcodigoSucursal.TabIndex = 31
         Me.txtcodigoSucursal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtcodigoPaciente
         '
-        Me.txtcodigoPaciente.Location = New System.Drawing.Point(71, 94)
+        Me.txtcodigoPaciente.Location = New System.Drawing.Point(65, 16)
         Me.txtcodigoPaciente.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoPaciente.Name = "txtcodigoPaciente"
         Me.txtcodigoPaciente.Size = New System.Drawing.Size(79, 20)
@@ -425,7 +430,7 @@ Partial Class E_OrdenTrabajo
         '
         'txtnombrePaciente
         '
-        Me.txtnombrePaciente.Location = New System.Drawing.Point(158, 94)
+        Me.txtnombrePaciente.Location = New System.Drawing.Point(153, 5)
         Me.txtnombrePaciente.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombrePaciente.Name = "txtnombrePaciente"
         Me.txtnombrePaciente.ReadOnly = True
@@ -434,7 +439,7 @@ Partial Class E_OrdenTrabajo
         '
         'txtedad
         '
-        Me.txtedad.Location = New System.Drawing.Point(71, 121)
+        Me.txtedad.Location = New System.Drawing.Point(65, 40)
         Me.txtedad.Margin = New System.Windows.Forms.Padding(2)
         Me.txtedad.Name = "txtedad"
         Me.txtedad.Size = New System.Drawing.Size(79, 20)
@@ -452,7 +457,7 @@ Partial Class E_OrdenTrabajo
         '
         'txtgenero
         '
-        Me.txtgenero.Location = New System.Drawing.Point(71, 145)
+        Me.txtgenero.Location = New System.Drawing.Point(65, 64)
         Me.txtgenero.Margin = New System.Windows.Forms.Padding(2)
         Me.txtgenero.Name = "txtgenero"
         Me.txtgenero.Size = New System.Drawing.Size(79, 20)
@@ -461,7 +466,7 @@ Partial Class E_OrdenTrabajo
         '
         'txtemail
         '
-        Me.txtemail.Location = New System.Drawing.Point(223, 145)
+        Me.txtemail.Location = New System.Drawing.Point(217, 63)
         Me.txtemail.Margin = New System.Windows.Forms.Padding(2)
         Me.txtemail.Name = "txtemail"
         Me.txtemail.Size = New System.Drawing.Size(126, 20)
@@ -470,7 +475,7 @@ Partial Class E_OrdenTrabajo
         '
         'txtcodigoMedico
         '
-        Me.txtcodigoMedico.Location = New System.Drawing.Point(71, 169)
+        Me.txtcodigoMedico.Location = New System.Drawing.Point(65, 88)
         Me.txtcodigoMedico.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoMedico.Name = "txtcodigoMedico"
         Me.txtcodigoMedico.Size = New System.Drawing.Size(79, 20)
@@ -488,7 +493,7 @@ Partial Class E_OrdenTrabajo
         '
         'txtcurva
         '
-        Me.txtcurva.Location = New System.Drawing.Point(83, 230)
+        Me.txtcurva.Location = New System.Drawing.Point(65, 133)
         Me.txtcurva.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcurva.Name = "txtcurva"
         Me.txtcurva.Size = New System.Drawing.Size(79, 20)
@@ -497,7 +502,7 @@ Partial Class E_OrdenTrabajo
         '
         'txtsede
         '
-        Me.txtsede.Location = New System.Drawing.Point(83, 255)
+        Me.txtsede.Location = New System.Drawing.Point(65, 164)
         Me.txtsede.Margin = New System.Windows.Forms.Padding(2)
         Me.txtsede.Name = "txtsede"
         Me.txtsede.Size = New System.Drawing.Size(79, 20)
@@ -515,7 +520,7 @@ Partial Class E_OrdenTrabajo
         '
         'txtcodigoTecnico
         '
-        Me.txtcodigoTecnico.Location = New System.Drawing.Point(83, 280)
+        Me.txtcodigoTecnico.Location = New System.Drawing.Point(65, 195)
         Me.txtcodigoTecnico.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcodigoTecnico.Name = "txtcodigoTecnico"
         Me.txtcodigoTecnico.Size = New System.Drawing.Size(79, 20)
@@ -524,7 +529,7 @@ Partial Class E_OrdenTrabajo
         '
         'txtnombreTecnico
         '
-        Me.txtnombreTecnico.Location = New System.Drawing.Point(169, 281)
+        Me.txtnombreTecnico.Location = New System.Drawing.Point(151, 195)
         Me.txtnombreTecnico.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreTecnico.Name = "txtnombreTecnico"
         Me.txtnombreTecnico.ReadOnly = True
@@ -542,7 +547,7 @@ Partial Class E_OrdenTrabajo
         '
         'txtnombreValidador
         '
-        Me.txtnombreValidador.Location = New System.Drawing.Point(169, 306)
+        Me.txtnombreValidador.Location = New System.Drawing.Point(151, 222)
         Me.txtnombreValidador.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreValidador.Name = "txtnombreValidador"
         Me.txtnombreValidador.ReadOnly = True
@@ -649,7 +654,7 @@ Partial Class E_OrdenTrabajo
         'lblpm
         '
         Me.lblpm.AutoSize = True
-        Me.lblpm.Location = New System.Drawing.Point(631, 132)
+        Me.lblpm.Location = New System.Drawing.Point(243, 52)
         Me.lblpm.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblpm.Name = "lblpm"
         Me.lblpm.Size = New System.Drawing.Size(23, 13)
@@ -659,7 +664,7 @@ Partial Class E_OrdenTrabajo
         'lblnp
         '
         Me.lblnp.AutoSize = True
-        Me.lblnp.Location = New System.Drawing.Point(631, 154)
+        Me.lblnp.Location = New System.Drawing.Point(243, 75)
         Me.lblnp.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblnp.Name = "lblnp"
         Me.lblnp.Size = New System.Drawing.Size(22, 13)
@@ -669,7 +674,7 @@ Partial Class E_OrdenTrabajo
         'lblep
         '
         Me.lblep.AutoSize = True
-        Me.lblep.Location = New System.Drawing.Point(631, 178)
+        Me.lblep.Location = New System.Drawing.Point(243, 99)
         Me.lblep.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblep.Name = "lblep"
         Me.lblep.Size = New System.Drawing.Size(21, 13)
@@ -679,7 +684,7 @@ Partial Class E_OrdenTrabajo
         'lblpr
         '
         Me.lblpr.AutoSize = True
-        Me.lblpr.Location = New System.Drawing.Point(631, 202)
+        Me.lblpr.Location = New System.Drawing.Point(242, 121)
         Me.lblpr.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblpr.Name = "lblpr"
         Me.lblpr.Size = New System.Drawing.Size(22, 13)
@@ -689,7 +694,7 @@ Partial Class E_OrdenTrabajo
         'lblco
         '
         Me.lblco.AutoSize = True
-        Me.lblco.Location = New System.Drawing.Point(631, 224)
+        Me.lblco.Location = New System.Drawing.Point(243, 145)
         Me.lblco.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblco.Name = "lblco"
         Me.lblco.Size = New System.Drawing.Size(22, 13)
@@ -699,7 +704,7 @@ Partial Class E_OrdenTrabajo
         'lblen
         '
         Me.lblen.AutoSize = True
-        Me.lblen.Location = New System.Drawing.Point(631, 247)
+        Me.lblen.Location = New System.Drawing.Point(242, 167)
         Me.lblen.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblen.Name = "lblen"
         Me.lblen.Size = New System.Drawing.Size(22, 13)
@@ -709,7 +714,7 @@ Partial Class E_OrdenTrabajo
         'lblin
         '
         Me.lblin.AutoSize = True
-        Me.lblin.Location = New System.Drawing.Point(631, 269)
+        Me.lblin.Location = New System.Drawing.Point(243, 190)
         Me.lblin.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblin.Name = "lblin"
         Me.lblin.Size = New System.Drawing.Size(18, 13)
@@ -719,7 +724,7 @@ Partial Class E_OrdenTrabajo
         'lblTelefono
         '
         Me.lblTelefono.AutoSize = True
-        Me.lblTelefono.Location = New System.Drawing.Point(166, 29)
+        Me.lblTelefono.Location = New System.Drawing.Point(164, 43)
         Me.lblTelefono.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTelefono.Name = "lblTelefono"
         Me.lblTelefono.Size = New System.Drawing.Size(49, 13)
@@ -729,7 +734,7 @@ Partial Class E_OrdenTrabajo
         'lblEmail
         '
         Me.lblEmail.AutoSize = True
-        Me.lblEmail.Location = New System.Drawing.Point(181, 56)
+        Me.lblEmail.Location = New System.Drawing.Point(173, 69)
         Me.lblEmail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(32, 13)
@@ -742,7 +747,7 @@ Partial Class E_OrdenTrabajo
         Me.btnverGrafica.Location = New System.Drawing.Point(172, 128)
         Me.btnverGrafica.Margin = New System.Windows.Forms.Padding(2)
         Me.btnverGrafica.Name = "btnverGrafica"
-        Me.btnverGrafica.Size = New System.Drawing.Size(161, 28)
+        Me.btnverGrafica.Size = New System.Drawing.Size(173, 28)
         Me.btnverGrafica.TabIndex = 84
         Me.btnverGrafica.Text = "Ver Gráfica"
         Me.btnverGrafica.UseVisualStyleBackColor = False
@@ -750,7 +755,7 @@ Partial Class E_OrdenTrabajo
         'rbtnpendienteMuestra
         '
         Me.rbtnpendienteMuestra.AutoSize = True
-        Me.rbtnpendienteMuestra.Location = New System.Drawing.Point(476, 128)
+        Me.rbtnpendienteMuestra.Location = New System.Drawing.Point(93, 49)
         Me.rbtnpendienteMuestra.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnpendienteMuestra.Name = "rbtnpendienteMuestra"
         Me.rbtnpendienteMuestra.Size = New System.Drawing.Size(114, 17)
@@ -762,7 +767,7 @@ Partial Class E_OrdenTrabajo
         'rbtnNoProcesado
         '
         Me.rbtnNoProcesado.AutoSize = True
-        Me.rbtnNoProcesado.Location = New System.Drawing.Point(476, 150)
+        Me.rbtnNoProcesado.Location = New System.Drawing.Point(93, 74)
         Me.rbtnNoProcesado.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnNoProcesado.Name = "rbtnNoProcesado"
         Me.rbtnNoProcesado.Size = New System.Drawing.Size(93, 17)
@@ -774,7 +779,7 @@ Partial Class E_OrdenTrabajo
         'rbtnEnProceso
         '
         Me.rbtnEnProceso.AutoSize = True
-        Me.rbtnEnProceso.Location = New System.Drawing.Point(476, 172)
+        Me.rbtnEnProceso.Location = New System.Drawing.Point(93, 96)
         Me.rbtnEnProceso.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnEnProceso.Name = "rbtnEnProceso"
         Me.rbtnEnProceso.Size = New System.Drawing.Size(80, 17)
@@ -786,7 +791,7 @@ Partial Class E_OrdenTrabajo
         'rbtnProcesado
         '
         Me.rbtnProcesado.AutoSize = True
-        Me.rbtnProcesado.Location = New System.Drawing.Point(476, 198)
+        Me.rbtnProcesado.Location = New System.Drawing.Point(93, 119)
         Me.rbtnProcesado.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnProcesado.Name = "rbtnProcesado"
         Me.rbtnProcesado.Size = New System.Drawing.Size(76, 17)
@@ -798,7 +803,7 @@ Partial Class E_OrdenTrabajo
         'rbtnValidado
         '
         Me.rbtnValidado.AutoSize = True
-        Me.rbtnValidado.Location = New System.Drawing.Point(476, 221)
+        Me.rbtnValidado.Location = New System.Drawing.Point(93, 142)
         Me.rbtnValidado.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnValidado.Name = "rbtnValidado"
         Me.rbtnValidado.Size = New System.Drawing.Size(66, 17)
@@ -810,7 +815,7 @@ Partial Class E_OrdenTrabajo
         'rbtnEntregado
         '
         Me.rbtnEntregado.AutoSize = True
-        Me.rbtnEntregado.Location = New System.Drawing.Point(476, 243)
+        Me.rbtnEntregado.Location = New System.Drawing.Point(93, 165)
         Me.rbtnEntregado.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnEntregado.Name = "rbtnEntregado"
         Me.rbtnEntregado.Size = New System.Drawing.Size(74, 17)
@@ -822,7 +827,7 @@ Partial Class E_OrdenTrabajo
         'rbtnInvalidado
         '
         Me.rbtnInvalidado.AutoSize = True
-        Me.rbtnInvalidado.Location = New System.Drawing.Point(476, 266)
+        Me.rbtnInvalidado.Location = New System.Drawing.Point(93, 188)
         Me.rbtnInvalidado.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtnInvalidado.Name = "rbtnInvalidado"
         Me.rbtnInvalidado.Size = New System.Drawing.Size(74, 17)
@@ -834,7 +839,7 @@ Partial Class E_OrdenTrabajo
         'cbxWs
         '
         Me.cbxWs.AutoSize = True
-        Me.cbxWs.Location = New System.Drawing.Point(192, 340)
+        Me.cbxWs.Location = New System.Drawing.Point(190, 342)
         Me.cbxWs.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxWs.Name = "cbxWs"
         Me.cbxWs.Size = New System.Drawing.Size(86, 17)
@@ -845,7 +850,7 @@ Partial Class E_OrdenTrabajo
         'cbxEmail
         '
         Me.cbxEmail.AutoSize = True
-        Me.cbxEmail.Location = New System.Drawing.Point(57, 340)
+        Me.cbxEmail.Location = New System.Drawing.Point(51, 342)
         Me.cbxEmail.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxEmail.Name = "cbxEmail"
         Me.cbxEmail.Size = New System.Drawing.Size(93, 17)
@@ -877,12 +882,12 @@ Partial Class E_OrdenTrabajo
         Me.dgvResultados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvResultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.Descripcion, Me.Resultado, Me.Unidad, Me.Estado})
-        Me.dgvResultados.Location = New System.Drawing.Point(14, 473)
+        Me.dgvResultados.Location = New System.Drawing.Point(4, 18)
         Me.dgvResultados.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvResultados.Name = "dgvResultados"
         Me.dgvResultados.RowHeadersWidth = 51
         Me.dgvResultados.RowTemplate.Height = 24
-        Me.dgvResultados.Size = New System.Drawing.Size(1026, 161)
+        Me.dgvResultados.Size = New System.Drawing.Size(1026, 124)
         Me.dgvResultados.TabIndex = 101
         '
         'codigo
@@ -1187,14 +1192,8 @@ Partial Class E_OrdenTrabajo
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox1.Controls.Add(Me.Panel1)
-        Me.GroupBox1.Controls.Add(Me.txtcodigoPaciente)
-        Me.GroupBox1.Controls.Add(Me.txtedad)
-        Me.GroupBox1.Controls.Add(Me.txtgenero)
-        Me.GroupBox1.Controls.Add(Me.txtcodigoMedico)
         Me.GroupBox1.Controls.Add(Me.txtnombreMedico)
         Me.GroupBox1.Controls.Add(Me.txttelefono)
-        Me.GroupBox1.Controls.Add(Me.txtemail)
-        Me.GroupBox1.Controls.Add(Me.txtnombrePaciente)
         Me.GroupBox1.Controls.Add(Me.Panel2)
         Me.GroupBox1.Controls.Add(Me.Panel3)
         Me.GroupBox1.Controls.Add(Me.Panel4)
@@ -1223,6 +1222,7 @@ Partial Class E_OrdenTrabajo
         Me.Panel1.Controls.Add(Me.txtcodigoSucursal)
         Me.Panel1.Controls.Add(Me.txtcodigoArea)
         Me.Panel1.Controls.Add(Me.txtcodigoSubArea)
+        Me.Panel1.Controls.Add(Me.txtnumero)
         Me.Panel1.Location = New System.Drawing.Point(6, 19)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1020, 59)
@@ -1233,11 +1233,17 @@ Partial Class E_OrdenTrabajo
         Me.Panel2.AccessibleDescription = "ahh"
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.Controls.Add(Me.cbxEmail)
+        Me.Panel2.Controls.Add(Me.txtcodigoMedico)
+        Me.Panel2.Controls.Add(Me.txtgenero)
+        Me.Panel2.Controls.Add(Me.txtemail)
+        Me.Panel2.Controls.Add(Me.txtedad)
+        Me.Panel2.Controls.Add(Me.txtcodigoPaciente)
         Me.Panel2.Controls.Add(Me.cbxWs)
         Me.Panel2.Controls.Add(Me.lblCodigo)
         Me.Panel2.Controls.Add(Me.lblanalizador)
         Me.Panel2.Controls.Add(Me.lblEdad)
         Me.Panel2.Controls.Add(Me.lblTecnicoLab)
+        Me.Panel2.Controls.Add(Me.txtnombrePaciente)
         Me.Panel2.Controls.Add(Me.lblGenero)
         Me.Panel2.Controls.Add(Me.lblTelefono)
         Me.Panel2.Controls.Add(Me.lblFacturaToma)
@@ -1248,7 +1254,16 @@ Partial Class E_OrdenTrabajo
         Me.Panel2.Controls.Add(Me.lblMedico)
         Me.Panel2.Controls.Add(Me.txtcodigoObjeto)
         Me.Panel2.Controls.Add(Me.txtnombreSede)
-        Me.Panel2.Location = New System.Drawing.Point(6, 91)
+        Me.Panel2.Controls.Add(Me.txtcurva)
+        Me.Panel2.Controls.Add(Me.lblCurva)
+        Me.Panel2.Controls.Add(Me.txtsede)
+        Me.Panel2.Controls.Add(Me.lblSede)
+        Me.Panel2.Controls.Add(Me.txtnombreTecnico)
+        Me.Panel2.Controls.Add(Me.txtcodigoTecnico)
+        Me.Panel2.Controls.Add(Me.lblTecnico)
+        Me.Panel2.Controls.Add(Me.lblValidador)
+        Me.Panel2.Controls.Add(Me.txtnombreValidador)
+        Me.Panel2.Location = New System.Drawing.Point(6, 81)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(364, 367)
         Me.Panel2.TabIndex = 128
@@ -1260,6 +1275,20 @@ Partial Class E_OrdenTrabajo
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.Controls.Add(Me.btnActualizar)
         Me.Panel3.Controls.Add(Me.lblcodigoCajero)
+        Me.Panel3.Controls.Add(Me.rbtnEnProceso)
+        Me.Panel3.Controls.Add(Me.rbtnNoProcesado)
+        Me.Panel3.Controls.Add(Me.rbtnpendienteMuestra)
+        Me.Panel3.Controls.Add(Me.lblin)
+        Me.Panel3.Controls.Add(Me.lblen)
+        Me.Panel3.Controls.Add(Me.lblco)
+        Me.Panel3.Controls.Add(Me.lblpr)
+        Me.Panel3.Controls.Add(Me.lblep)
+        Me.Panel3.Controls.Add(Me.lblnp)
+        Me.Panel3.Controls.Add(Me.lblpm)
+        Me.Panel3.Controls.Add(Me.rbtnInvalidado)
+        Me.Panel3.Controls.Add(Me.rbtnEntregado)
+        Me.Panel3.Controls.Add(Me.rbtnValidado)
+        Me.Panel3.Controls.Add(Me.rbtnProcesado)
         Me.Panel3.Location = New System.Drawing.Point(376, 81)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(652, 239)
@@ -1374,10 +1403,11 @@ Partial Class E_OrdenTrabajo
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel6.Controls.Add(Me.Label1)
+        Me.Panel6.Controls.Add(Me.dgvResultados)
         Me.Panel6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel6.Location = New System.Drawing.Point(12, 456)
+        Me.Panel6.Location = New System.Drawing.Point(12, 462)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1032, 186)
+        Me.Panel6.Size = New System.Drawing.Size(1032, 144)
         Me.Panel6.TabIndex = 129
         '
         'Label1
@@ -1386,7 +1416,7 @@ Partial Class E_OrdenTrabajo
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.Snow
-        Me.Label1.Location = New System.Drawing.Point(476, 2)
+        Me.Label1.Location = New System.Drawing.Point(476, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(90, 13)
         Me.Label1.TabIndex = 0
@@ -1420,22 +1450,7 @@ Partial Class E_OrdenTrabajo
         Me.Controls.Add(Me.dtpNpFecha)
         Me.Controls.Add(Me.dtpPmHora)
         Me.Controls.Add(Me.dtpPmFecha)
-        Me.Controls.Add(Me.dgvResultados)
         Me.Controls.Add(Me.lblEstadoOrden)
-        Me.Controls.Add(Me.rbtnInvalidado)
-        Me.Controls.Add(Me.rbtnEntregado)
-        Me.Controls.Add(Me.rbtnValidado)
-        Me.Controls.Add(Me.rbtnProcesado)
-        Me.Controls.Add(Me.rbtnEnProceso)
-        Me.Controls.Add(Me.rbtnNoProcesado)
-        Me.Controls.Add(Me.rbtnpendienteMuestra)
-        Me.Controls.Add(Me.lblin)
-        Me.Controls.Add(Me.lblen)
-        Me.Controls.Add(Me.lblco)
-        Me.Controls.Add(Me.lblpr)
-        Me.Controls.Add(Me.lblep)
-        Me.Controls.Add(Me.lblnp)
-        Me.Controls.Add(Me.lblpm)
         Me.Controls.Add(Me.txtinUsuario)
         Me.Controls.Add(Me.txtenUsuario)
         Me.Controls.Add(Me.txtcoUsuario)
@@ -1443,17 +1458,7 @@ Partial Class E_OrdenTrabajo
         Me.Controls.Add(Me.txtepUsuario)
         Me.Controls.Add(Me.txtnpUsuario)
         Me.Controls.Add(Me.txtpmUsuario)
-        Me.Controls.Add(Me.txtnombreValidador)
         Me.Controls.Add(Me.txtcodigoValidador)
-        Me.Controls.Add(Me.txtnombreTecnico)
-        Me.Controls.Add(Me.txtcodigoTecnico)
-        Me.Controls.Add(Me.txtsede)
-        Me.Controls.Add(Me.txtcurva)
-        Me.Controls.Add(Me.txtnumero)
-        Me.Controls.Add(Me.lblValidador)
-        Me.Controls.Add(Me.lblTecnico)
-        Me.Controls.Add(Me.lblSede)
-        Me.Controls.Add(Me.lblCurva)
         Me.Controls.Add(Me.lblusuario)
         Me.Controls.Add(Me.lblhora)
         Me.Controls.Add(Me.lblFecha)

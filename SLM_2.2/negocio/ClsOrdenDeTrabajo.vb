@@ -1060,6 +1060,14 @@ Public Class ClsOrdenDeTrabajo
         End Using
     End Function
 
+    Public Function RecuperarCorreo(correo As String) As String
+        Dim sqlcom As SqlCommand
+        sqlcom = New SqlCommand
+        sqlcom.CommandText = "exec E_slmRecuperarCorreo " + correo + ""
+        sqlcom.Connection = New ClsConnection().getConexion
+        Return sqlcom.ExecuteScalar
+    End Function
+
 End Class
 
 

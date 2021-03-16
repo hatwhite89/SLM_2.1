@@ -34,6 +34,13 @@ Partial Class E_ListarOrdenesDeTrabajo
         Me.txtDescripcionB = New System.Windows.Forms.TextBox()
         Me.lblCodigoT = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.cod_orden_trabajo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codigoCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreCompleto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Subarea = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cod_factura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbxbusqueda.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -91,6 +98,7 @@ Partial Class E_ListarOrdenesDeTrabajo
         Me.dgbtabla.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgbtabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgbtabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cod_orden_trabajo, Me.fechaFactura, Me.codigoCliente, Me.nombreCompleto, Me.Subarea, Me.cod_factura, Me.estado})
         Me.dgbtabla.Location = New System.Drawing.Point(5, 79)
         Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
@@ -171,6 +179,55 @@ Partial Class E_ListarOrdenesDeTrabajo
         Me.StatusStrip1.TabIndex = 123
         Me.StatusStrip1.Text = "StatusStrip1"
         '
+        'cod_orden_trabajo
+        '
+        Me.cod_orden_trabajo.DataPropertyName = "cod_orden_trabajo"
+        Me.cod_orden_trabajo.HeaderText = "ORDEN DE TRABAJO"
+        Me.cod_orden_trabajo.Name = "cod_orden_trabajo"
+        Me.cod_orden_trabajo.ReadOnly = True
+        '
+        'fechaFactura
+        '
+        Me.fechaFactura.DataPropertyName = "fechaFactura"
+        Me.fechaFactura.HeaderText = "FECHA FACTURA"
+        Me.fechaFactura.Name = "fechaFactura"
+        Me.fechaFactura.ReadOnly = True
+        '
+        'codigoCliente
+        '
+        Me.codigoCliente.DataPropertyName = "codigoCliente"
+        Me.codigoCliente.HeaderText = "ID CLIENTE"
+        Me.codigoCliente.Name = "codigoCliente"
+        Me.codigoCliente.ReadOnly = True
+        '
+        'nombreCompleto
+        '
+        Me.nombreCompleto.DataPropertyName = "nombreCompleto"
+        Me.nombreCompleto.HeaderText = "CLIENTE"
+        Me.nombreCompleto.Name = "nombreCompleto"
+        Me.nombreCompleto.ReadOnly = True
+        '
+        'Subarea
+        '
+        Me.Subarea.DataPropertyName = "Subárea"
+        Me.Subarea.HeaderText = "SUBAREA"
+        Me.Subarea.Name = "Subarea"
+        Me.Subarea.ReadOnly = True
+        '
+        'cod_factura
+        '
+        Me.cod_factura.DataPropertyName = "cod_factura"
+        Me.cod_factura.HeaderText = "ID FACTURA"
+        Me.cod_factura.Name = "cod_factura"
+        Me.cod_factura.ReadOnly = True
+        '
+        'estado
+        '
+        Me.estado.DataPropertyName = "estado"
+        Me.estado.HeaderText = "ESTADO"
+        Me.estado.Name = "estado"
+        Me.estado.ReadOnly = True
+        '
         'E_ListarOrdenesDeTrabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -203,4 +260,11 @@ Partial Class E_ListarOrdenesDeTrabajo
     Friend WithEvents lblCodigoT As Label
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents Label1 As Label
+    Friend WithEvents cod_orden_trabajo As DataGridViewTextBoxColumn
+    Friend WithEvents fechaFactura As DataGridViewTextBoxColumn
+    Friend WithEvents codigoCliente As DataGridViewTextBoxColumn
+    Friend WithEvents nombreCompleto As DataGridViewTextBoxColumn
+    Friend WithEvents Subarea As DataGridViewTextBoxColumn
+    Friend WithEvents cod_factura As DataGridViewTextBoxColumn
+    Friend WithEvents estado As DataGridViewTextBoxColumn
 End Class
