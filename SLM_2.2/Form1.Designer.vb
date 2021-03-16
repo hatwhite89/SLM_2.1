@@ -139,6 +139,7 @@ Partial Class Form1
         Me.btnEmpleados = New System.Windows.Forms.PictureBox()
         Me.TabControl3 = New System.Windows.Forms.TabControl()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.btnFeriados = New System.Windows.Forms.PictureBox()
         Me.btnUsuarios = New System.Windows.Forms.PictureBox()
         Me.btnPerfiles = New System.Windows.Forms.PictureBox()
@@ -197,7 +198,6 @@ Partial Class Form1
         Me.btnConserjes = New System.Windows.Forms.Button()
         Me.btnTomaDeMuestra = New System.Windows.Forms.Button()
         Me.btnCerrarSesion = New System.Windows.Forms.LinkLabel()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.tcMenu.SuspendLayout()
@@ -1716,6 +1716,16 @@ Partial Class Form1
         Me.TabPage6.TabIndex = 3
         Me.TabPage6.Text = "Configuración de Sistema"
         '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button2.Location = New System.Drawing.Point(13, 196)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(103, 94)
+        Me.Button2.TabIndex = 49
+        Me.Button2.Text = "Firma Digital"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'btnFeriados
         '
         Me.btnFeriados.Image = Global.SLM_2._2.My.Resources.Resources.configuracion_de_sistema_921
@@ -2411,16 +2421,6 @@ Partial Class Form1
         Me.btnCerrarSesion.TabIndex = 9
         Me.btnCerrarSesion.TabStop = True
         Me.btnCerrarSesion.Text = "Cerrar Sesión"
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button2.Location = New System.Drawing.Point(13, 196)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(103, 94)
-        Me.Button2.TabIndex = 49
-        Me.Button2.Text = "Firma Digital"
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'Form1
         '
