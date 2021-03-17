@@ -89,4 +89,25 @@ order by h.hora", cn)
 
     End Function
 
+    Public Function ListarResultadosEnviados(ByVal cod As String) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select distinct e.id_orden,f.numero,c.nombreCompleto,f.fechaFactura 
+from   ExamenValidado e, OrdenDeTrabajo o, factura f,Cliente c, Item_Examenes ie,ItemExamenDetalle id,OrdenTrabajoDetalle otd
+where f.numero = o.cod_factura
+and e.id_orden = o.cod_orden_trabajo
+and c.codigo = f.codigoCliente
+and otd.cod_orden_trabajo = o.cod_orden_trabajo
+and ie.codItemExa = id.codigoItemExamen
+and otd.cod_item_examen_detalle = id.codigo
+and f.numero = '" + cod + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
 End Class

@@ -114,7 +114,7 @@ Module Module1
         Dim puerto As String = "587"
         Dim sslOK As Boolean = True
         Dim host As String = "mail.laboratoriosmedicos.hn"
-        Dim texto As String = "Resultados"
+        Dim texto As String = "Resultados "
 
         Try
             Dim Smtp_Server As New SmtpClient
@@ -132,22 +132,16 @@ Module Module1
             e_mail.To.Add(correoNoti)
             e_mail.Subject = "ENTREGA DE RESULTADOS LABORATORIOS MEDICOS"
 
-            Dim archivos As String = Path.Combine(Application.StartupPath, "Resultados\resultado" + id_orden_interna_crystal + ".pdf")
-
-
-
+            Dim archivos As String = Path.Combine(Application.StartupPath, "Resultados\resultado" + id_orden.ToString + ".pdf")
 
             Dim archivoAdjunto As New System.Net.Mail.Attachment(archivos)
 
             e_mail.Attachments.Add(archivoAdjunto)
-
-
-
             e_mail.IsBodyHtml = True
             'txtMessage.text
             Dim body As String
-            body = "<p>Buenos dias estimado cliente de Laboratorios Medicos, le adjuntamos los resultados de sus examenes.</p>
-<p>Cualquier consulta o duda puede comunicarse al telefono 22-22-22-22 donde gustosamente le atenderemos.</p>
+            body = "<p>Buenos dias estimado cliente de Laboratorios Medicos, le adjuntamos los resultados de sus examenes con orden de trabajo" + id_orden + "</p>
+<p>Cualquier consulta o duda puede comunicarse al telefono 2222-2222 donde gustosamente le atenderemos.</p>
 <p>Agradecemos su confianza.</p>
 <p>Laboratorios Medicos.</p>"
             e_mail.Body = body

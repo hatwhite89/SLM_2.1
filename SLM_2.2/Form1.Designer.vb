@@ -139,6 +139,7 @@ Partial Class Form1
         Me.btnEmpleados = New System.Windows.Forms.PictureBox()
         Me.TabControl3 = New System.Windows.Forms.TabControl()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.btnFeriados = New System.Windows.Forms.PictureBox()
         Me.btnUsuarios = New System.Windows.Forms.PictureBox()
         Me.btnPerfiles = New System.Windows.Forms.PictureBox()
@@ -197,7 +198,7 @@ Partial Class Form1
         Me.btnConserjes = New System.Windows.Forms.Button()
         Me.btnTomaDeMuestra = New System.Windows.Forms.Button()
         Me.btnCerrarSesion = New System.Windows.Forms.LinkLabel()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.tcMenu.SuspendLayout()
@@ -326,6 +327,7 @@ Partial Class Form1
         Me.Panel9.SuspendLayout()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -1094,6 +1096,7 @@ Partial Class Form1
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.Color.AliceBlue
+        Me.TabPage3.Controls.Add(Me.PictureBox2)
         Me.TabPage3.Controls.Add(Me.PictureBox19)
         Me.TabPage3.Controls.Add(Me.btnSubAreas)
         Me.TabPage3.Controls.Add(Me.PictureBox76)
@@ -1715,6 +1718,16 @@ Partial Class Form1
         Me.TabPage6.Size = New System.Drawing.Size(578, 470)
         Me.TabPage6.TabIndex = 3
         Me.TabPage6.Text = "Configuración de Sistema"
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button2.Location = New System.Drawing.Point(13, 196)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(103, 94)
+        Me.Button2.TabIndex = 49
+        Me.Button2.Text = "Firma Digital"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'btnFeriados
         '
@@ -2350,7 +2363,7 @@ Partial Class Form1
         'pbxNoti
         '
         Me.pbxNoti.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.pbxNoti.Location = New System.Drawing.Point(6, 577)
+        Me.pbxNoti.Location = New System.Drawing.Point(6, 570)
         Me.pbxNoti.Name = "pbxNoti"
         Me.pbxNoti.Size = New System.Drawing.Size(29, 27)
         Me.pbxNoti.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2412,15 +2425,17 @@ Partial Class Form1
         Me.btnCerrarSesion.TabStop = True
         Me.btnCerrarSesion.Text = "Cerrar Sesión"
         '
-        'Button2
+        'PictureBox2
         '
-        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button2.Location = New System.Drawing.Point(13, 196)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(103, 94)
-        Me.Button2.TabIndex = 49
-        Me.Button2.Text = "Firma Digital"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.PictureBox2.Image = Global.SLM_2._2.My.Resources.Resources.examenes_67
+        Me.PictureBox2.InitialImage = Nothing
+        Me.PictureBox2.Location = New System.Drawing.Point(24, 344)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(88, 111)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 23
+        Me.PictureBox2.TabStop = False
         '
         'Form1
         '
@@ -2595,6 +2610,7 @@ Partial Class Form1
         Me.Panel9.PerformLayout()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2780,4 +2796,5 @@ Partial Class Form1
     Friend WithEvents btnTomaDeMuestra As Button
     Friend WithEvents btnCerrarSesion As LinkLabel
     Friend WithEvents Button2 As Button
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

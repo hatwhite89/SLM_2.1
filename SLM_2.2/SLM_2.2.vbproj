@@ -828,6 +828,12 @@
     <Compile Include="presentacion\E_frmEntrada.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frmEntregaResultados.Designer.vb">
+      <DependentUpon>E_frmEntregaResultados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmEntregaResultados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_frmFirmaDigital.Designer.vb">
       <DependentUpon>E_frmFirmaDigital.vb</DependentUpon>
     </Compile>
@@ -1977,6 +1983,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmEntrada.resx">
       <DependentUpon>E_frmEntrada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmEntregaResultados.resx">
+      <DependentUpon>E_frmEntregaResultados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmFirmaDigital.resx">
       <DependentUpon>E_frmFirmaDigital.vb</DependentUpon>

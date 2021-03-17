@@ -1,5 +1,8 @@
-﻿Public Class E_OrdenTrabajo
+﻿Imports System.IO
+
+Public Class E_OrdenTrabajo
     Dim objUser As New ClsUsuario
+    Public Property RptDocument As Object
 
     Public Sub cargarOrdenTrabajo(ByVal cod_orden_trabajo As Integer)
         Try
@@ -477,9 +480,23 @@
                         'Recuperar correo
                         Dim correoRecuperado As String
                         Dim clsOT As New ClsOrdenDeTrabajo
-                        Try
+                        id_orden_interna_crystal = txtnumero.Text
 
-                            enviarMailResultado(txtemail.Text, codigo_orden_interna)
+
+
+                        Try
+                            'LLAMAR CRYSTAL
+                            Dim RptDocument As New E_ReporteResultadoIndividual
+
+                            Try
+                                RptDocument.SetParameterValue("@id_orden", id_orden_interna_crystal)
+                                RptDocument.SetDatabaseLogon("sa", "Lbm2019")
+                                RptDocument.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Path.Combine(Application.StartupPath, "Resultados\resultado" + id_orden_interna_crystal.ToString + ".pdf"))
+
+                            Catch ex As Exception
+
+                            End Try
+                            enviarMailResultado(txtemail.Text, txtnumero.Text)
                         Catch ex As Exception
 
                         End Try
