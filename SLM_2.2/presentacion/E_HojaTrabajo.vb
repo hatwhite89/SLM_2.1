@@ -604,6 +604,7 @@
                         Exit Sub
                     End If
 
+
                     'Valida la orden de trabajo
                     Dim objOrdTrab As New ClsOrdenDeTrabajo
                     With objOrdTrab
@@ -653,7 +654,7 @@
                 'Me.Close()
             End If
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            'MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
