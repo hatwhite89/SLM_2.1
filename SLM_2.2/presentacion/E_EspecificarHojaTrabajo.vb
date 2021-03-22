@@ -83,13 +83,17 @@
 
     Private Sub btnAbrir_Click(sender As Object, e As EventArgs) Handles btnAbrir.Click
         'If Trim(txtDescripcionSubArea.Text) <> "" And Trim(txtDescripcionSucursal.Text) <> "" And Trim(txtDescripcionTecnico.Text) = "Correcto" Then
-        If Trim(txtDescripcionSubArea.Text) <> "" And Trim(txtDescripcionSucursal.Text) <> "" Then
+        If Trim(txtDescripcionSubArea.Text) <> "" Then
 
             Try
                 E_HojaTrabajo.txtsucursal.Text = txtDescripcionSucursal.Text
                 E_HojaTrabajo.txtSubarea.Text = txtDescripcionSubArea.Text
                 'E_HojaTrabajo.txtArea.Text = lblCodigoGrupo.Text
-                E_HojaTrabajo.lblCodeSucursal.Text = lblCodeSucursal.Text
+                If Trim(txtDescripcionSucursal.Text) <> "" Then
+                    E_HojaTrabajo.lblCodeSucursal.Text = lblCodeSucursal.Text
+                Else
+                    E_HojaTrabajo.lblCodeSucursal.Text = ""
+                End If
                 E_HojaTrabajo.lblCodeSubArea.Text = lblCodeSubArea.Text
 
                 GenerarTablaHojaTrabajo()

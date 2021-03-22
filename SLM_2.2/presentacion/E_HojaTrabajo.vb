@@ -139,6 +139,7 @@
             ' End If
 
             Dim pendienteMuestra, noProcesado, enProceso, procesado, validado As String
+            Dim codeSuc As System.Nullable(Of Integer)
 
             If cbxPendMuestra.Checked Then
                 pendienteMuestra = "Pendiente Muestra"
@@ -182,12 +183,22 @@
             Dim objOrdTrabDet As New ClsOrdenTrabajoDetalle
             Dim dtDet As New DataTable ' detalle orden de trabajo
             Dim rowDet As DataRow ' fila detalle orden de trabajo
-
             'parametros de busqueda
             objOrdTrab.codigoSubArea_ = Convert.ToInt64(lblCodeSubArea.Text)
-            objOrdTrab.codigoSucursal_ = Convert.ToInt64(lblCodeSucursal.Text)
-            Dim dv As DataView = objOrdTrab.ActualizarListadoHojaDeTrabajo(pendienteMuestra, noProcesado, enProceso, procesado, validado).DefaultView
-
+            If Trim(lblCodeSucursal.Text) <> "" Then
+                codeSuc = Convert.ToInt64(lblCodeSucursal.Text)
+            Else
+                codeSuc = Nothing
+            End If
+            'objOrdTrab.codigoSucursal_ = Convert.ToInt64(lblCodeSucursal.Text)
+            Dim dv As DataView
+            If Trim(lblCodeSucursal.Text) <> "" Then
+                codeSuc = Convert.ToInt64(lblCodeSucursal.Text)
+                dv = objOrdTrab.ActualizarListadoHojaDeTrabajo(pendienteMuestra, noProcesado, enProceso, procesado, validado, codeSuc).DefaultView
+            Else
+                codeSuc = Nothing
+                dv = objOrdTrab.ActualizarListadoHojaDeTrabajo2(pendienteMuestra, noProcesado, enProceso, procesado, validado).DefaultView
+            End If
             'dv.RowFilter = String.Format("codigoSucursal Like '%{0}%'", txtsucursal.Text)
             'dv.RowFilter = "codigoSubArea=" & Integer.Parse(lblCodeSubArea.Text)
             dt = dv.ToTable
@@ -233,6 +244,8 @@
             dgvHojaTrab.DataSource = ds.Tables(0)
             dgvHojaTrab.Columns(0).Frozen = True
             dgvHojaTrab.Columns(1).Frozen = True
+            dgvHojaTrab.Columns(2).Frozen = True
+            dgvHojaTrab.Columns(3).Frozen = True
 
             If rbtnNombrePaciente.Checked Then
                 dgvHojaTrab.Sort(dgvHojaTrab.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
