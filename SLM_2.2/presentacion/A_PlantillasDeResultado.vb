@@ -177,20 +177,4 @@ Public Class A_PlantillasDeResultado
         E_GrupoExamen.Show()
     End Sub
 
-    Private Sub txtSimbolo_TextChanged(sender As Object, e As EventArgs) Handles txtSimbolo.TextChanged
-        Try
-
-
-            If txtSimbolo.Text = "_" Then
-
-                MsgBox("El caracter no puede seleccionarse como símbolo de plantilla.", MsgBoxStyle.Critical)
-                txtSimbolo.Text = ""
-
-            End If
-
-
-        Catch ex As Exception
-
-        End Try
-    End Sub
 End Class
