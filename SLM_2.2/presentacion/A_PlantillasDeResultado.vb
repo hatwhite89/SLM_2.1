@@ -3,11 +3,20 @@
 Public Class A_PlantillasDeResultado
     Dim plantilla As New ClsPlantillaResultado
     Private Sub A_PlantillasDeResultado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            alternarColoFilasDatagridview(dtPlantillas)
+            ListarPlantillas()
 
-        alternarColoFilasDatagridview(dtPlantillas)
-        ListarPlantillas()
-        btnNuevo.Enabled = False
-        btnModificar.Enabled = False
+
+            btnNuevo.Enabled = False
+            btnModificar.Enabled = False
+
+
+        Catch ex As Exception
+            MsgBox("No se pudieron listar los registros. Error: " + ex.Message)
+
+        End Try
+
     End Sub
 
 
@@ -101,6 +110,10 @@ Public Class A_PlantillasDeResultado
         If dtPlantillas.Columns.Contains("cod_Plantilla") = True Then
 
             dtPlantillas.Columns("cod_Plantilla").Visible = False
+            dtPlantillas.Columns("codGrupoExamen").Visible = False
+
+            dtPlantillas.Columns("simbolo").HeaderText = "Símbolo"
+            dtPlantillas.Columns("simbolo").HeaderText = "Descripción"
 
         End If
 
@@ -162,5 +175,22 @@ Public Class A_PlantillasDeResultado
     Private Sub btnBuscarArea_Click(sender As Object, e As EventArgs) Handles btnBuscarArea.Click
         E_GrupoExamen.lblform.Text = "A_PlantillasDeResultado"
         E_GrupoExamen.Show()
+    End Sub
+
+    Private Sub txtSimbolo_TextChanged(sender As Object, e As EventArgs) Handles txtSimbolo.TextChanged
+        Try
+
+
+            If txtSimbolo.Text = "_" Then
+
+                MsgBox("El caracter no puede seleccionarse como símbolo de plantilla.", MsgBoxStyle.Critical)
+                txtSimbolo.Text = ""
+
+            End If
+
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
