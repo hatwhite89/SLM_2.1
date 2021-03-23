@@ -8,7 +8,7 @@
             alternarColoFilasDatagridview(dgvHojaTrab)
             txtHora.Text = Date.Now.ToLongTimeString
             txtFecha.Text = Date.Today
-
+            Me.Text = "Hoja de Trabajo - " + txtArea.Text + "|" + txtSubarea.Text
             'CARGA DE PLANTILLAS :::::::::::::::::::::::::::::::::::::::::...
 
             Dim plantilla As New ClsPlantillaResultado
@@ -447,7 +447,7 @@
 
                 HT_DescripcionResultado.txtOrdenTrabajo.Text = dgvHojaTrab.Rows(fila).Cells(0).Value
 
-                miseparador = Split(campo, ",")
+                miseparador = Split(campo, " ")
 
                 For i = 0 To UBound(miseparador)
 
@@ -675,7 +675,7 @@
 
         Try
 
-            dgvHojaTrab.Rows(fila).Cells(celda).Value = dgvHojaTrab.Rows(fila).Cells(celda).Value + "," + cbxPlantillas.Text
+            dgvHojaTrab.Rows(fila).Cells(celda).Value = dgvHojaTrab.Rows(fila).Cells(celda).Value + " " + cbxPlantillas.Text
 
         Catch ex As Exception
 
