@@ -87,6 +87,7 @@ Public Class M_BuscarFactura
 
                     'OBSERVACIONES
                     M_Factura.dgbObservaciones.Rows.Add(New String() {CStr(row("codInterno")), CStr(row("observaciones"))})
+                    M_Factura.dgbObservaciones2.Rows.Add(New String() {CStr(row("codInterno")), CStr(row("observaciones2"))})
                 Next
 
                 M_Factura.deshabilitar()

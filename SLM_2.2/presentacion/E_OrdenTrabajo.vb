@@ -578,4 +578,9 @@
 
 
     End Sub
+
+    Private Sub btnPaciente_Click(sender As Object, e As EventArgs) Handles btnPaciente.Click
+        M_VerPaciente.CargarDataCliente(Integer.Parse(txtcodigoPaciente.Text))
+        M_VerPaciente.Show()
+    End Sub
 End Class

@@ -208,6 +208,7 @@ Public Class M_Factura
         cbxenviarCorreo.Checked = False
 
         dgbObservaciones.Rows.Clear()
+        dgbObservaciones2.Rows.Clear()
         dgblistadoExamenes.Rows.Clear()
         M_ClienteVentana.dgvtabla.Rows.Clear()
 
@@ -714,6 +715,7 @@ Public Class M_Factura
                     End If
                     dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
                     dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(e.RowIndex.ToString))
+                    dgbObservaciones2.Rows.Remove(dgbObservaciones2.Rows(e.RowIndex.ToString))
                     M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(e.RowIndex.ToString))
                     totalFactura()
                 End If
@@ -776,9 +778,10 @@ Public Class M_Factura
 
                         'observaciones
                         dgbObservaciones.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codeIntExam_, ""})
+                        dgbObservaciones2.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codeIntExam_, ""})
 
 
-                        M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(cantDias), CStr(row("porcentaje")), (subtotal)})
+                        M_ClienteVentana.dgvtabla.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(cantDias), CStr(row("porcentaje")), (subtotal)})
                     Else 'muestro el mensaje de error
                         MsgBox("El examen ya a sido agregado.", MsgBoxStyle.Information)
                         dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
@@ -792,14 +795,17 @@ Public Class M_Factura
 
                     'observaciones
                     dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(e.RowIndex.ToString))
+                    dgbObservaciones2.Rows.Remove(dgbObservaciones2.Rows(e.RowIndex.ToString))
                 End If
             Catch ex As Exception
                 MsgBox("No existe el código del examen", MsgBoxStyle.Critical)
                 Try
                     dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
 
+                    M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(e.RowIndex.ToString))
                     'observaciones
                     dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(e.RowIndex.ToString))
+                    dgbObservaciones2.Rows.Remove(dgbObservaciones2.Rows(e.RowIndex.ToString))
                 Catch ex2 As Exception
 
                 End Try
@@ -826,7 +832,7 @@ Public Class M_Factura
                 dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), porcDesc, subtotal, subArea, detFact, codeExam})
 
                 M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(e.RowIndex.ToString))
-                M_ClienteVentana.dgvtabla.Rows.Add(New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), porcDesc, subtotal})
+                M_ClienteVentana.dgvtabla.Rows.Insert(e.RowIndex.ToString, New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), porcDesc, subtotal})
                 totalFactura()
             Catch ex As Exception
                 MsgBox("Debe ingresar la cantidad correcta de examenes.", MsgBoxStyle.Critical)
@@ -835,6 +841,7 @@ Public Class M_Factura
 
                 'observaciones
                 dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(e.RowIndex.ToString))
+                dgbObservaciones2.Rows.Remove(dgbObservaciones2.Rows(e.RowIndex.ToString))
             End Try
         End If
     End Sub
@@ -949,6 +956,7 @@ Public Class M_Factura
 
             dgblistadoExamenes.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(cantDias), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0, CStr(row("codigoItem"))})
             dgbObservaciones.Rows.Add(New String() {objExam.codeIntExam_, ""})
+            dgbObservaciones2.Rows.Add(New String() {objExam.codeIntExam_, ""})
             totalFactura()
             M_ClienteVentana.dgvtabla.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(cantDias), CStr(row("porcentaje")), (subtotal)})
 
@@ -1117,6 +1125,7 @@ Public Class M_Factura
                                 .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
                                 .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
                                 .observaciones_ = dgbObservaciones.Rows(index).Cells(1).Value()
+                                .observaciones2_ = dgbObservaciones2.Rows(index).Cells(1).Value()
                             End With
                             If objDetalleFact.RegistrarNuevoDetalleFactura() = 0 Then
                                 MsgBox("Error al querer insertar el detalle de factura.", MsgBoxStyle.Critical)
@@ -1515,6 +1524,7 @@ Public Class M_Factura
                                             .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
                                             .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
                                             .observaciones_ = dgbObservaciones.Rows(index).Cells(1).Value()
+                                            .observaciones2_ = dgbObservaciones2.Rows(index).Cells(1).Value()
                                         End With
                                         If objDetFac.RegistrarNuevoDetalleFactura() = 0 Then
                                             MsgBox("Error al querer insertar el detalle de factura.", MsgBoxStyle.Critical)
@@ -1530,6 +1540,7 @@ Public Class M_Factura
                                             .descuento_ = Convert.ToInt64(dgblistadoExamenes.Rows(index).Cells(5).Value())
                                             .subtotal_ = Convert.ToDouble(dgblistadoExamenes.Rows(index).Cells(6).Value())
                                             .observaciones_ = dgbObservaciones.Rows(index).Cells(1).Value()
+                                            .observaciones2_ = dgbObservaciones2.Rows(index).Cells(1).Value()
                                         End With
                                         If objDetFac.ModificarDetalleFactura() = 0 Then
                                             MsgBox("Error al querer modificar el detalle de factura.", MsgBoxStyle.Critical)
@@ -1805,12 +1816,14 @@ Public Class M_Factura
                         M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(index))
                         'observaciones
                         dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(index))
+                        dgbObservaciones2.Rows.Remove(dgbObservaciones2.Rows(index))
                         index -= 1
                     ElseIf dgblistadoExamenes.Rows(index).Cells(0).Value() = lblPromocion.Text Then
                         dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(index))
                         M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(index))
                         'observaciones
                         dgbObservaciones.Rows.Remove(dgbObservaciones.Rows(index))
+                        dgbObservaciones2.Rows.Remove(dgbObservaciones2.Rows(index))
                         index -= 1
                     ElseIf index >= dgblistadoExamenes.Rows.Count - 2 Then
                         Exit For
@@ -2271,6 +2284,8 @@ Public Class M_Factura
             M_BuscarExamen.Show()
         End If
     End Sub
+
+
 
     Private Sub calcularDescuento()
         Try
