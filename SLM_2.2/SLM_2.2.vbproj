@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80A97C69-33C1-4D76-A4FF-61E3B54BEE03}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SLM_2._2.reporteMayorCuentas</StartupObject>
+    <StartupObject>SLM_2._2.M_InicioSesion</StartupObject>
     <RootNamespace>SLM_2._2</RootNamespace>
     <AssemblyName>SLM_2.2</AssemblyName>
     <FileAlignment>512</FileAlignment>
