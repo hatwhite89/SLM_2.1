@@ -618,11 +618,13 @@ Partial Class A_FacturaCompras
         '
         Me.Column1.HeaderText = "codigo_centrocosto"
         Me.Column1.Name = "Column1"
+        Me.Column1.Visible = False
         '
         'Column2
         '
         Me.Column2.HeaderText = "codigosucursal"
         Me.Column2.Name = "Column2"
+        Me.Column2.Visible = False
         '
         'A_FacturaCompras
         '
