@@ -3,7 +3,7 @@ Public Class ClsDetalleFactura
     Dim numero, numeroFactura, codigoExamen, cantidad, descuento As Integer
     Dim fechaEntrega As Date
     Dim subtotal As Double
-    Dim observaciones As String
+    Dim observaciones, observaciones2 As String
     'Constructor
     Public Sub New()
 
@@ -73,6 +73,14 @@ Public Class ClsDetalleFactura
             observaciones = value
         End Set
     End Property
+    Public Property observaciones2_ As String
+        Get
+            Return observaciones2
+        End Get
+        Set(value As String)
+            observaciones2 = value
+        End Set
+    End Property
     Public Function RegistrarNuevoDetalleFactura() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -115,6 +123,11 @@ Public Class ClsDetalleFactura
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "observaciones" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = observaciones_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "observaciones2" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = observaciones2_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
@@ -183,6 +196,11 @@ Public Class ClsDetalleFactura
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "observaciones" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = observaciones_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "observaciones2" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = observaciones2_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

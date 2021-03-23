@@ -588,7 +588,8 @@ Public Class ClsCliente
                                             Optional ByVal nombre2 As String = Nothing, Optional ByVal apellido1 As String = Nothing,
                                             Optional ByVal apellido2 As String = Nothing, Optional ByVal genero As String = Nothing,
                                             Optional ByVal clasificacion As String = Nothing, Optional ByVal categoria As String = Nothing,
-                                            Optional ByVal termino As String = Nothing) As DataTable
+                                            Optional ByVal termino As String = Nothing, Optional ByVal correo_1 As String = Nothing,
+                                            Optional ByVal celular As String = Nothing) As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -607,6 +608,8 @@ Public Class ClsCliente
             cmd.Parameters.Add("@clasificacion", SqlDbType.VarChar).Value = clasificacion
             cmd.Parameters.Add("@categoria", SqlDbType.VarChar).Value = categoria
             cmd.Parameters.Add("@termino", SqlDbType.VarChar).Value = termino
+            cmd.Parameters.Add("@correo1", SqlDbType.VarChar).Value = correo_1
+            cmd.Parameters.Add("@celular", SqlDbType.VarChar).Value = celular
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable
