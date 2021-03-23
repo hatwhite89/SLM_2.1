@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80A97C69-33C1-4D76-A4FF-61E3B54BEE03}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SLM_2._2.M_InicioSesion</StartupObject>
+    <StartupObject>SLM_2._2.reporteMayorCuentas</StartupObject>
     <RootNamespace>SLM_2._2</RootNamespace>
     <AssemblyName>SLM_2.2</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -1656,6 +1656,12 @@
     <Compile Include="Reportes\reporteCentroCostos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\reporteMayorCuentas.Designer.vb">
+      <DependentUpon>reporteMayorCuentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporteMayorCuentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\reporteOrdenCompra.Designer.vb">
       <DependentUpon>reporteOrdenCompra.vb</DependentUpon>
     </Compile>
@@ -1678,6 +1684,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_centrodecostos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt_MayorCuentas.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_MayorCuentas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt_MayorCuentasRango.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_MayorCuentasRango.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rpt_ordenCompra.vb">
@@ -2405,6 +2423,9 @@
     <EmbeddedResource Include="Reportes\reporteCentroCostos.resx">
       <DependentUpon>reporteCentroCostos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporteMayorCuentas.resx">
+      <DependentUpon>reporteMayorCuentas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reporteOrdenCompra.resx">
       <DependentUpon>reporteOrdenCompra.vb</DependentUpon>
     </EmbeddedResource>
@@ -2417,6 +2438,14 @@
     <EmbeddedResource Include="Reportes\rpt_centrodecostos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_centrodecostos.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_MayorCuentas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_MayorCuentas.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_MayorCuentasRango.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_MayorCuentasRango.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpt_ordenCompra.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

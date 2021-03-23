@@ -38,6 +38,8 @@ Partial Class A_ListadoAsientos
         Me.ReporteCCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IngresosPorAreaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformeAsientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MayorDeCuentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbxAsientos.SuspendLayout()
         CType(Me.dtAsientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -158,7 +160,7 @@ Partial Class A_ListadoAsientos
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ReportesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(718, 24)
@@ -195,6 +197,19 @@ Partial Class A_ListadoAsientos
         Me.InformeAsientosToolStripMenuItem.Name = "InformeAsientosToolStripMenuItem"
         Me.InformeAsientosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.InformeAsientosToolStripMenuItem.Text = "Informe Asientos"
+        '
+        'ReportesToolStripMenuItem
+        '
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MayorDeCuentasToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
+        Me.ReportesToolStripMenuItem.Text = "Reportes"
+        '
+        'MayorDeCuentasToolStripMenuItem
+        '
+        Me.MayorDeCuentasToolStripMenuItem.Name = "MayorDeCuentasToolStripMenuItem"
+        Me.MayorDeCuentasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MayorDeCuentasToolStripMenuItem.Text = "Mayor de Cuentas"
         '
         'A_ListadoAsientos
         '
@@ -238,4 +253,6 @@ Partial Class A_ListadoAsientos
     Friend WithEvents ReporteCCToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents IngresosPorAreaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InformeAsientosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MayorDeCuentasToolStripMenuItem As ToolStripMenuItem
 End Class
