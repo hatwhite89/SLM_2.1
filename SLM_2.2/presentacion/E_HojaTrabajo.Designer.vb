@@ -240,7 +240,7 @@ Partial Class E_HojaTrabajo
         Me.dgvHojaTrab.RowHeadersVisible = False
         Me.dgvHojaTrab.RowHeadersWidth = 51
         Me.dgvHojaTrab.RowTemplate.Height = 24
-        Me.dgvHojaTrab.Size = New System.Drawing.Size(1089, 251)
+        Me.dgvHojaTrab.Size = New System.Drawing.Size(1077, 251)
         Me.dgvHojaTrab.TabIndex = 12
         '
         'rbtnUrgentes
@@ -392,7 +392,7 @@ Partial Class E_HojaTrabajo
         Me.txtValorActual.Margin = New System.Windows.Forms.Padding(2)
         Me.txtValorActual.Name = "txtValorActual"
         Me.txtValorActual.ReadOnly = True
-        Me.txtValorActual.Size = New System.Drawing.Size(151, 20)
+        Me.txtValorActual.Size = New System.Drawing.Size(139, 20)
         Me.txtValorActual.TabIndex = 33
         '
         'Label12
@@ -414,7 +414,7 @@ Partial Class E_HojaTrabajo
         Me.txtInstrTecnico.Margin = New System.Windows.Forms.Padding(2)
         Me.txtInstrTecnico.Name = "txtInstrTecnico"
         Me.txtInstrTecnico.ReadOnly = True
-        Me.txtInstrTecnico.Size = New System.Drawing.Size(727, 20)
+        Me.txtInstrTecnico.Size = New System.Drawing.Size(715, 20)
         Me.txtInstrTecnico.TabIndex = 35
         '
         'Label13
@@ -434,7 +434,7 @@ Partial Class E_HojaTrabajo
         Me.txtBuscar.Location = New System.Drawing.Point(82, 94)
         Me.txtBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(398, 20)
+        Me.txtBuscar.Size = New System.Drawing.Size(386, 20)
         Me.txtBuscar.TabIndex = 37
         '
         'Label14
@@ -453,7 +453,7 @@ Partial Class E_HojaTrabajo
         Me.btnBuscar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
-        Me.btnBuscar.Location = New System.Drawing.Point(484, 94)
+        Me.btnBuscar.Location = New System.Drawing.Point(472, 94)
         Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(68, 20)
@@ -544,7 +544,7 @@ Partial Class E_HojaTrabajo
         Me.txtValoresRef.Margin = New System.Windows.Forms.Padding(2)
         Me.txtValoresRef.Name = "txtValoresRef"
         Me.txtValoresRef.ReadOnly = True
-        Me.txtValoresRef.Size = New System.Drawing.Size(698, 20)
+        Me.txtValoresRef.Size = New System.Drawing.Size(686, 20)
         Me.txtValoresRef.TabIndex = 47
         '
         'Label19
@@ -584,7 +584,7 @@ Partial Class E_HojaTrabajo
         Me.GroupBox2.Controls.Add(Me.cbxPendMuestra)
         Me.GroupBox2.Location = New System.Drawing.Point(6, 59)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(824, 42)
+        Me.GroupBox2.Size = New System.Drawing.Size(812, 42)
         Me.GroupBox2.TabIndex = 49
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Estado de Orden de Trabajo"
@@ -656,7 +656,7 @@ Partial Class E_HojaTrabajo
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1112, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1100, 24)
         Me.MenuStrip1.TabIndex = 50
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -746,7 +746,7 @@ Partial Class E_HojaTrabajo
         Me.btnValoresRef.FlatAppearance.BorderSize = 0
         Me.btnValoresRef.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnValoresRef.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnValoresRef.Location = New System.Drawing.Point(783, 36)
+        Me.btnValoresRef.Location = New System.Drawing.Point(771, 36)
         Me.btnValoresRef.Margin = New System.Windows.Forms.Padding(2)
         Me.btnValoresRef.Name = "btnValoresRef"
         Me.btnValoresRef.Size = New System.Drawing.Size(25, 23)
@@ -774,7 +774,7 @@ Partial Class E_HojaTrabajo
         Me.Panel1.Controls.Add(Me.txtFecha)
         Me.Panel1.Location = New System.Drawing.Point(6, 15)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(824, 39)
+        Me.Panel1.Size = New System.Drawing.Size(812, 39)
         Me.Panel1.TabIndex = 148
         '
         'Panel2
@@ -803,7 +803,7 @@ Partial Class E_HojaTrabajo
         Me.Panel2.Controls.Add(Me.txtOrden)
         Me.Panel2.Location = New System.Drawing.Point(6, 104)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(822, 148)
+        Me.Panel2.Size = New System.Drawing.Size(810, 148)
         Me.Panel2.TabIndex = 149
         '
         'Panel3
@@ -820,7 +820,7 @@ Partial Class E_HojaTrabajo
         Me.Panel3.Controls.Add(Me.Label15)
         Me.Panel3.Location = New System.Drawing.Point(11, 597)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1089, 51)
+        Me.Panel3.Size = New System.Drawing.Size(1077, 51)
         Me.Panel3.TabIndex = 150
         '
         'StatusStrip1
@@ -829,7 +829,7 @@ Partial Class E_HojaTrabajo
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 651)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1112, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1100, 22)
         Me.StatusStrip1.TabIndex = 151
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -843,7 +843,7 @@ Partial Class E_HojaTrabajo
         Me.GroupBox3.Controls.Add(Me.Panel2)
         Me.GroupBox3.Location = New System.Drawing.Point(9, 55)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(835, 259)
+        Me.GroupBox3.Size = New System.Drawing.Size(823, 259)
         Me.GroupBox3.TabIndex = 152
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Detalle de la orden"
@@ -858,7 +858,7 @@ Partial Class E_HojaTrabajo
         Me.Panel4.Controls.Add(Me.btnDetalleResultado)
         Me.Panel4.Controls.Add(Me.cbxPlantillas)
         Me.Panel4.Controls.Add(Me.btnActualizarVista)
-        Me.Panel4.Location = New System.Drawing.Point(850, 59)
+        Me.Panel4.Location = New System.Drawing.Point(838, 59)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(250, 255)
         Me.Panel4.TabIndex = 153
@@ -904,7 +904,7 @@ Partial Class E_HojaTrabajo
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.Panel5.Location = New System.Drawing.Point(0, 22)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1112, 25)
+        Me.Panel5.Size = New System.Drawing.Size(1100, 25)
         Me.Panel5.TabIndex = 155
         '
         'btnValidarUnicoResultado
@@ -926,7 +926,7 @@ Partial Class E_HojaTrabajo
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1112, 673)
+        Me.ClientSize = New System.Drawing.Size(1100, 673)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.StatusStrip1)
