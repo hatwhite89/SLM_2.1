@@ -6,6 +6,32 @@
             'Cargar Facturas de Compra
             dtFacturasCompra.DataSource = FacCompra.listarFacturaCompra
             alternarColoFilasDatagridview(dtFacturasCompra)
+
+
+
+
+
+            If dtFacturasCompra.Columns.Contains("codFactura") = True Then
+
+                dtFacturasCompra.Columns("codProveedor").Visible = False
+                dtFacturasCompra.Columns("moneda").Visible = False
+                dtFacturasCompra.Columns("codTerminoPago").Visible = False
+                dtFacturasCompra.Columns("fechaTransaccion").Visible = False
+
+                dtFacturasCompra.Columns("fechaFactura").HeaderText = "Fecha de Factura"
+                dtFacturasCompra.Columns("fechaVencimiento").HeaderText = "Fecha de Venci."
+                dtFacturasCompra.Columns("descripcion").HeaderText = "Descripción"
+
+
+
+
+
+
+
+
+
+            End If
+
         Catch ex As Exception
 
         End Try
@@ -37,7 +63,6 @@
             A_FacturaCompras.lblEstado.Text = row("estado")
             A_FacturaCompras.lblSaldoPend.Text = row("pendiente")
 
-
             'Mostrar detalle de factura
             Dim DetalleFac As New ClsDetalleFacturaCompra
             Dim dtFac As New DataTable
@@ -52,7 +77,7 @@
             Dim rowsu As DataRow
 
             DetalleFac.Cod_Factura = row("codFactura")
-
+            MsgBox("codigo " + row("codFactura").ToString)
             dtFac = DetalleFac.listarDetallesFacturaCompra()
 
             For index As Integer = 0 To dtFac.Rows.Count - 1
@@ -66,7 +91,8 @@
                 dtsu = sucursal.BuscarSucursalNumero
                 rowsu = dtsu.Rows(0)
 
-                A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), rowcc("codBreve"), rowsu("codigoSucursal"), CStr(row("descripcion")), CStr(row("monto"))})
+                A_FacturaCompras.dtDetalleFactura.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), rowcc("codBreve"), rowsu("codigoSucursal"), CStr(row("descripcion")), CStr(row("monto")), CStr(rowcc("id_centrocosto")), CStr(rowsu("codigo"))})
+
             Next
 
             Me.Hide()
@@ -146,7 +172,7 @@
             dtFacturasCompra.DataSource = factu.ReporteFacturasCompraEstado(estado, estado2, estado3, fechaDesde, fechaHasta)
 
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
     End Sub

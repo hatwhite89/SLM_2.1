@@ -56,14 +56,14 @@
                                 'Insertar detalle de compra
                                 DetalleFacCompra.Cod_Factura = Convert.ToInt32(codigoFacturaCompra)
                                 DetalleFacCompra.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(fila).Cells(1).Value())
-                                DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(6).ToString
-                                DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(7).ToString
+                                DetalleFacCompra.Are_a = dtDetalleFactura.Rows(fila).Cells(6).Value
+                                DetalleFacCompra.Sed_e = dtDetalleFactura.Rows(fila).Cells(7).Value
                                 DetalleFacCompra.Descripcio_n = dtDetalleFactura.Rows(fila).Cells(4).Value()
                                 DetalleFacCompra.Mont_o = Convert.ToDouble((dtDetalleFactura.Rows(fila).Cells(5).Value()))
 
                                 'Funcion de registro de detalle
                                 DetalleFacCompra.registrarDetalleFactura()
-
+                                MsgBox("detalle de factura")
                             Else
                                 MsgBox("Error. El código esta duplicado.")
                             End If
@@ -112,11 +112,13 @@
                         .Estado_ = 0
                         .Origen_ = "FacturaCompra"
                         codigoAsiento = .registrarAsiento
+
                     End With
 
+                    'DETALLE ASIENTO PROVEEDOR
                     With detalleasiento
                         .Cod_Asiento = Convert.ToInt32(codigoAsiento)
-                        .Cuenta_ = rowpro("cuenta")
+                        .Cuenta_ = Integer.Parse(rowpro("cuenta"))
                         .Debe_ = 0
                         .Haber_ = Convert.ToDouble(txtTotal.Text)
                         .Origen_ = "FacturaCompra"
@@ -130,10 +132,10 @@
                     Dim codigodetalle As Integer
                     Dim objasiento_cc As New ClsCentoCostos_Asientos
 
-                    For i = 0 To dtDetalleFactura.Rows.Count - 1
+                    For i = 0 To dtDetalleFactura.Rows.Count - 2
                         With detalleasiento
                             .Cod_Asiento = Convert.ToInt32(codigoAsiento)
-                            .Cuenta_ = dtDetalleFactura.Rows(i).Cells(1).Value
+                            .Cuenta_ = Integer.Parse(dtDetalleFactura.Rows(i).Cells(1).Value)
                             .Debe_ = Convert.ToDouble(dtDetalleFactura.Rows(i).Cells(5).Value)
                             .Haber_ = 0
                             .Origen_ = "FacturaCompra"
@@ -142,7 +144,7 @@
 
                         End With
 
-                        'centro de costo
+                        'CENTRO DE COSTO
                         With objasiento_cc
 
                             .id_asientos_ = Integer.Parse(codigoAsiento)
@@ -454,7 +456,17 @@
     End Sub
 
     Private Sub txtTotal_TextChanged(sender As Object, e As EventArgs) Handles txtTotal.TextChanged
-        txtTotal.BackColor = Color.White
+
+        Try
+
+            txtTotal.BackColor = Color.White
+
+        Catch ex As Exception
+
+        End Try
+
+
+
     End Sub
 
     Private Sub txtMoneda_TextChanged(sender As Object, e As EventArgs) Handles txtMoneda.TextChanged
@@ -535,23 +547,23 @@
 
         If e.ColumnIndex = 2 Then
 
-            Try
+            'Try
 
-                Dim cuenta As New ClsCuenta
-                Dim data As DataTable
-                Dim rows As DataRow
+            '    Dim cuenta As New ClsCuenta
+            '    Dim data As DataTable
+            '    Dim rows As DataRow
 
-                cuenta.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(e.RowIndex).Cells(1).Value)
+            '    cuenta.Cuent_a = Convert.ToInt32(dtDetalleFactura.Rows(e.RowIndex).Cells(1).Value)
 
-                data = cuenta.Comprobar
-                rows = data.Rows(0)
+            '    data = cuenta.Comprobar
+            '    rows = data.Rows(0)
 
-                dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
-                dtDetalleFactura.Rows.Insert(e.RowIndex.ToString, New String() {"0", cuenta.Cuent_a, "", "", rows("nombre")})
+            '    dtDetalleFactura.Rows.Remove(dtDetalleFactura.Rows(e.RowIndex.ToString))
+            '    dtDetalleFactura.Rows.Insert(e.RowIndex.ToString, New String() {"0", cuenta.Cuent_a, "", "", rows("nombre")})
 
-            Catch ex As Exception
+            'Catch ex As Exception
 
-            End Try
+            'End Try
 
         End If
 

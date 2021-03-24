@@ -162,4 +162,12 @@
 
         End Try
     End Sub
+
+    Private Sub MayorDeCuentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MayorDeCuentasToolStripMenuItem.Click
+        Try
+            reporteMayorCuentas.Show()
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class
