@@ -89,6 +89,7 @@
                 celular = Nothing
             End If
 
+
             'MsgBox(numero & nombreCompleto & fechaFactura & nombreMedico & descripcionTermino & estado & usuarioCajero & "desde" & fechaDesde & "fhasta" & fechaHasta & descripcionExamen & descripcionGrupo)
             'Llenado de la tabla al llamar al procedimiento almacenado
             dv = objCli.BuscarClienteInfo(codigo, identidad, rtn, nombre1, nombre2, apellido1, apellido2, genero, clasificacion, categoria, termino, correo_1, celular).DefaultView
