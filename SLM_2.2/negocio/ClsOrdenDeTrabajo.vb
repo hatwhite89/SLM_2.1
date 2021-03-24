@@ -473,6 +473,44 @@ Public Class ClsOrdenDeTrabajo
         Return par_sal
 
     End Function
+    Public Function ModificarOrdenDeTrabajoResultadoValidado() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slmModificarOrdenDeTrabajoResultadoValidado"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_orden_trabajo" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cod_orden_trabajo_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "coUsuario" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = coUsuario_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
     Public Function ModificarOrdenDeTrabajoEstadoValidado() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
