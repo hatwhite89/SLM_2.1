@@ -91,6 +91,7 @@ Partial Class E_HojaTrabajo
         Me.btnValidarResultado = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.btnValidarUnicoResultado = New System.Windows.Forms.Button()
         CType(Me.dgvHojaTrab, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -850,6 +851,7 @@ Partial Class E_HojaTrabajo
         'Panel4
         '
         Me.Panel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel4.Controls.Add(Me.btnValidarUnicoResultado)
         Me.Panel4.Controls.Add(Me.lblcodDescrip)
         Me.Panel4.Controls.Add(Me.btnValidarResultado)
         Me.Panel4.Controls.Add(Me.GroupBox1)
@@ -864,7 +866,7 @@ Partial Class E_HojaTrabajo
         'lblcodDescrip
         '
         Me.lblcodDescrip.AutoSize = True
-        Me.lblcodDescrip.Location = New System.Drawing.Point(61, 226)
+        Me.lblcodDescrip.Location = New System.Drawing.Point(124, 235)
         Me.lblcodDescrip.Name = "lblcodDescrip"
         Me.lblcodDescrip.Size = New System.Drawing.Size(123, 13)
         Me.lblcodDescrip.TabIndex = 149
@@ -880,9 +882,9 @@ Partial Class E_HojaTrabajo
         Me.btnValidarResultado.Location = New System.Drawing.Point(8, 152)
         Me.btnValidarResultado.Margin = New System.Windows.Forms.Padding(2)
         Me.btnValidarResultado.Name = "btnValidarResultado"
-        Me.btnValidarResultado.Size = New System.Drawing.Size(111, 29)
+        Me.btnValidarResultado.Size = New System.Drawing.Size(111, 35)
         Me.btnValidarResultado.TabIndex = 148
-        Me.btnValidarResultado.Text = "Validar Resultado"
+        Me.btnValidarResultado.Text = "Validar Orden de Trabajo"
         Me.btnValidarResultado.UseVisualStyleBackColor = False
         '
         'Label7
@@ -904,6 +906,20 @@ Partial Class E_HojaTrabajo
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1112, 25)
         Me.Panel5.TabIndex = 155
+        '
+        'btnValidarUnicoResultado
+        '
+        Me.btnValidarUnicoResultado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnValidarUnicoResultado.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnValidarUnicoResultado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnValidarUnicoResultado.ForeColor = System.Drawing.Color.White
+        Me.btnValidarUnicoResultado.Location = New System.Drawing.Point(9, 191)
+        Me.btnValidarUnicoResultado.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnValidarUnicoResultado.Name = "btnValidarUnicoResultado"
+        Me.btnValidarUnicoResultado.Size = New System.Drawing.Size(111, 35)
+        Me.btnValidarUnicoResultado.TabIndex = 150
+        Me.btnValidarUnicoResultado.Text = "Validar Resultado"
+        Me.btnValidarUnicoResultado.UseVisualStyleBackColor = False
         '
         'E_HojaTrabajo
         '
@@ -1014,4 +1030,5 @@ Partial Class E_HojaTrabajo
     Friend WithEvents MantenimientoDePlantillasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OrdenDeTrabajoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel5 As Panel
+    Friend WithEvents btnValidarUnicoResultado As Button
 End Class
