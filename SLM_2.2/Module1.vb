@@ -117,6 +117,25 @@ Module Module1
         Dim texto As String = "Resultados "
 
         Try
+            Dim objP As New clsCorreoResultado
+
+            Dim dt As New DataTable
+            dt = objP.BuscarCorreo()
+            Dim row As DataRow = dt.Rows(0)
+            correoSalida = CStr(row("correo"))
+            host = CStr(row("host"))
+            pass = CStr(row("pass"))
+            puerto = CStr(row("puerto"))
+            sslOK = CBool(row("ssl"))
+
+
+        Catch ex As Exception
+
+
+
+        End Try
+
+        Try
             Dim Smtp_Server As New SmtpClient
             Dim e_mail As New MailMessage()
             Smtp_Server.UseDefaultCredentials = False

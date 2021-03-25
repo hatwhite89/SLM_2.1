@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80A97C69-33C1-4D76-A4FF-61E3B54BEE03}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SLM_2._2.M_InicioSesion</StartupObject>
+    <StartupObject>SLM_2._2.A_MuestraPantallaCliente</StartupObject>
     <RootNamespace>SLM_2._2</RootNamespace>
     <AssemblyName>SLM</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -283,6 +283,7 @@
     <Compile Include="negocio\ClsColaPacientes.vb" />
     <Compile Include="negocio\ClsConserje.vb" />
     <Compile Include="negocio\ClsContratos.vb" />
+    <Compile Include="negocio\clsCorreoResultado.vb" />
     <Compile Include="negocio\ClsDepartamento.vb" />
     <Compile Include="negocio\ClsDepreciacion.vb" />
     <Compile Include="negocio\ClsDescripcionResultado.vb" />
@@ -814,6 +815,18 @@
       <DependentUpon>E_frmCategoriaProducto.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\E_frmCategoriaProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmConfiguracionCorreoResultado.Designer.vb">
+      <DependentUpon>E_frmConfiguracionCorreoResultado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmConfiguracionCorreoResultado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmCrearXML.Designer.vb">
+      <DependentUpon>E_frmCrearXML.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmCrearXML.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_frmCurva.Designer.vb">
@@ -1977,6 +1990,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmCategoriaProducto.resx">
       <DependentUpon>E_frmCategoriaProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmConfiguracionCorreoResultado.resx">
+      <DependentUpon>E_frmConfiguracionCorreoResultado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmCrearXML.resx">
+      <DependentUpon>E_frmCrearXML.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmCurva.resx">
       <DependentUpon>E_frmCurva.vb</DependentUpon>

@@ -1542,4 +1542,8 @@
     Private Sub PictureBox2_Click_2(sender As Object, e As EventArgs) Handles PictureBox2.Click
         E_frmEntregaResultados.Show()
     End Sub
+
+    Private Sub btnConserjes_Click(sender As Object, e As EventArgs) Handles btnConserjes.Click
+
+    End Sub
 End Class
