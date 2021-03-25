@@ -81,7 +81,9 @@ Partial Class A_ConfiguracionCorreo
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.Yellow
+        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(326, 66)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(34, 23)
@@ -206,7 +208,9 @@ Partial Class A_ConfiguracionCorreo
         'btnProbar
         '
         Me.btnProbar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnProbar.BackColor = System.Drawing.Color.Yellow
+        Me.btnProbar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnProbar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnProbar.ForeColor = System.Drawing.Color.White
         Me.btnProbar.Location = New System.Drawing.Point(387, 189)
         Me.btnProbar.Name = "btnProbar"
         Me.btnProbar.Size = New System.Drawing.Size(139, 23)
