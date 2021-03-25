@@ -3,11 +3,20 @@
 Public Class A_PlantillasDeResultado
     Dim plantilla As New ClsPlantillaResultado
     Private Sub A_PlantillasDeResultado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            alternarColoFilasDatagridview(dtPlantillas)
+            ListarPlantillas()
 
-        alternarColoFilasDatagridview(dtPlantillas)
-        ListarPlantillas()
-        btnNuevo.Enabled = False
-        btnModificar.Enabled = False
+
+            btnNuevo.Enabled = False
+            btnModificar.Enabled = False
+
+
+        Catch ex As Exception
+            MsgBox("No se pudieron listar los registros. Error: " + ex.Message)
+
+        End Try
+
     End Sub
 
 
@@ -101,6 +110,10 @@ Public Class A_PlantillasDeResultado
         If dtPlantillas.Columns.Contains("cod_Plantilla") = True Then
 
             dtPlantillas.Columns("cod_Plantilla").Visible = False
+            dtPlantillas.Columns("codGrupoExamen").Visible = False
+
+            dtPlantillas.Columns("simbolo").HeaderText = "Símbolo"
+            dtPlantillas.Columns("simbolo").HeaderText = "Descripción"
 
         End If
 
@@ -163,4 +176,5 @@ Public Class A_PlantillasDeResultado
         E_GrupoExamen.lblform.Text = "A_PlantillasDeResultado"
         E_GrupoExamen.Show()
     End Sub
+
 End Class

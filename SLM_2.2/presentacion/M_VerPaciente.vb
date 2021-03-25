@@ -124,4 +124,51 @@
             Me.Close()
         End If
     End Sub
+
+    Public Sub CargarDataCliente(ByVal codigo As Integer)
+        Try
+            limpiar()
+            Dim objTipoCls As New ClsCliente
+            objTipoCls.Codigo1 = codigo
+
+            Dim dt As New DataTable
+            dt = objTipoCls.BuscarClienteCode()
+            Dim row As DataRow = dt.Rows(0)
+            'txtnombreClasificacion.Text = CStr(row("comentario"))
+            txtcodigo.Text = CStr(row("codigo"))
+            txtnombreCompleto.Text = CStr(row("nombreCompleto"))
+            txtcorreo.Text = CStr(row("correo1"))
+            txttelefonoCasa.Text = CStr(row("telCasa"))
+            txtcelular.Text = CStr(row("celular"))
+            mtxtidentidad.Text = CStr(row("identidad"))
+
+            txtscanId.Text = CStr(row("scanId"))
+            txtrtn.Text = CStr(row("rtn"))
+            txtnombre1.Text = CStr(row("nombre1"))
+            txtnombre2.Text = CStr(row("nombre2"))
+            txtapellido1.Text = CStr(row("apellido1"))
+            txtapellido2.Text = CStr(row("apellido2"))
+            dtpfechaNacimiento.Text = Convert.ToDateTime(row("fechaNacimiento"))
+
+            rtxtdireccion.Text = CStr(row("direccion"))
+            txttelefonoTrabajo.Text = CStr(row("telTrabajo"))
+            txtcorreo2.Text = CStr(row("correo2"))
+            txtcodigoClasificacion.Text = CStr(row("codigoClasificacion"))
+            lblcodeCategoria.Text = CStr(row("codigoCategoria"))
+            lblcodeTerminoPago.Text = CStr(row("codigoTerminoPago"))
+
+            If (CStr(row("genero")) = "Masculino") Then
+                rbtnmasculino.Checked = True
+            ElseIf (CStr(row("genero")) = "Femenino") Then
+                rbtnfemenino.Checked = True
+            Else
+                rbtnmasculino.Checked = False
+                rbtnfemenino.Checked = False
+            End If
+            gbxinfoCliente.Visible = True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            limpiar()
+        End Try
+    End Sub
 End Class

@@ -473,6 +473,44 @@ Public Class ClsOrdenDeTrabajo
         Return par_sal
 
     End Function
+    Public Function ModificarOrdenDeTrabajoResultadoValidado() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slmModificarOrdenDeTrabajoResultadoValidado"
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cod_orden_trabajo" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = cod_orden_trabajo_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "coUsuario" 'nombre campo en el procedimiento almacenado 
+        sqlpar.Value = coUsuario_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
     Public Function ModificarOrdenDeTrabajoEstadoValidado() As String
         Dim sqlcom As SqlCommand
         Dim sqlpar As SqlParameter
@@ -951,6 +989,33 @@ Public Class ClsOrdenDeTrabajo
     'generar hoja de trabajo por sucursal, subarea y estado
     Public Function ActualizarListadoHojaDeTrabajo(Optional ByVal pendienteMuestra As String = Nothing, Optional ByVal NoProcesado As String = Nothing,
                                                    Optional ByVal EnProceso As String = Nothing, Optional ByVal Procesado As String = Nothing,
+                                                   Optional ByVal Validado As String = Nothing, Optional ByVal codigoSucursal2 As Integer = Nothing) As DataTable
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "Z_BuscarOrdenTrabajoEstado"
+            cmd.Parameters.Add("@PendienteMuestra", SqlDbType.VarChar).Value = pendienteMuestra
+            cmd.Parameters.Add("@NoProcesado", SqlDbType.VarChar).Value = NoProcesado
+            cmd.Parameters.Add("@EnProceso", SqlDbType.VarChar).Value = EnProceso
+            cmd.Parameters.Add("@Procesado", SqlDbType.VarChar).Value = Procesado
+            cmd.Parameters.Add("@Validado", SqlDbType.VarChar).Value = Validado
+            cmd.Parameters.Add("@codigoSubArea", SqlDbType.Int).Value = codigoSubArea_
+            cmd.Parameters.Add("@codigoSucursal", SqlDbType.Int).Value = codigoSucursal2
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+    End Function
+    'generar hoja de trabajo por sucursal, subarea y estado
+    Public Function ActualizarListadoHojaDeTrabajo2(Optional ByVal pendienteMuestra As String = Nothing, Optional ByVal NoProcesado As String = Nothing,
+                                                   Optional ByVal EnProceso As String = Nothing, Optional ByVal Procesado As String = Nothing,
                                                    Optional ByVal Validado As String = Nothing) As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
@@ -965,7 +1030,6 @@ Public Class ClsOrdenDeTrabajo
             cmd.Parameters.Add("@Procesado", SqlDbType.VarChar).Value = Procesado
             cmd.Parameters.Add("@Validado", SqlDbType.VarChar).Value = Validado
             cmd.Parameters.Add("@codigoSubArea", SqlDbType.Int).Value = codigoSubArea_
-            cmd.Parameters.Add("@codigoSucursal", SqlDbType.Int).Value = codigoSucursal_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable

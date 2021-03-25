@@ -19,6 +19,7 @@
         Try
             Dim identidad = Nothing, rtn = Nothing, nombre1 = Nothing, nombre2 = Nothing, apellido1 = Nothing, apellido2 As String = Nothing, genero = Nothing, clasificacion As String = Nothing, categoria = Nothing, termino As String = Nothing
             Dim codigo As System.Nullable(Of Integer) = Nothing
+            Dim correo_1 = Nothing, celular As String = Nothing
 
             If Trim(txtCodigo.Text) <> "" Then
                 codigo = Integer.Parse(txtCodigo.Text)
@@ -77,10 +78,21 @@
             Else
                 termino = Nothing
             End If
+            If Trim(txtcorreo1.Text) <> "" Then
+                correo_1 = txtcorreo1.Text
+            Else
+                correo_1 = Nothing
+            End If
+            If Trim(txtCelular.Text) <> "" Then
+                celular = txtCelular.Text
+            Else
+                celular = Nothing
+            End If
+
 
             'MsgBox(numero & nombreCompleto & fechaFactura & nombreMedico & descripcionTermino & estado & usuarioCajero & "desde" & fechaDesde & "fhasta" & fechaHasta & descripcionExamen & descripcionGrupo)
             'Llenado de la tabla al llamar al procedimiento almacenado
-            dv = objCli.BuscarClienteInfo(codigo, identidad, rtn, nombre1, nombre2, apellido1, apellido2, genero, clasificacion, categoria, termino).DefaultView
+            dv = objCli.BuscarClienteInfo(codigo, identidad, rtn, nombre1, nombre2, apellido1, apellido2, genero, clasificacion, categoria, termino, correo_1, celular).DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
             ocultarColumnas()

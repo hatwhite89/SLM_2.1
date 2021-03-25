@@ -43,9 +43,9 @@ Public Class M_Recibo
             txtnumero.Text = ""
             dtpFechaTrans.Value = Date.Now
             rtxtReferencia.Text = ""
-            txtcodigoFormaPago.Text = ""
             txtnombreFormaPago.Text = ""
             lblcodeFormaPago.Text = ""
+            txtcodigoFormaPago.Text = "CR"
             cbxInfoClte.Checked = False
             cbxOk.Checked = False
             txtMoneda.Text = "LPS"

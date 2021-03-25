@@ -108,7 +108,14 @@
 
                     .codigoItemExamen_ = Convert.ToInt64(txtCodExamen.Text)
                     .Nombre_ = dtResultados.Rows(index).Cells(1).Value()
-                    .codigoUnidad_ = dtResultados.Rows(index).Cells(2).Value()
+
+                    If dtResultados.Rows(index).Cells(2).Value() = "" Then
+                        .codigoUnidad_ = 0
+                    Else
+                        .codigoUnidad_ = dtResultados.Rows(index).Cells(2).Value()
+                    End If
+
+
 
                 End With
                 If objItemDet.RegistrarNuevoItemExamenDetalle() = 0 Then
@@ -157,11 +164,11 @@
                         MsgBox("1")
 
                         parametro.codigo_ = Integer.Parse(dtResultados.Rows(e.RowIndex).Cells(0).Value().ToString())
-                        MsgBox("Codigo " + dtResultados.Rows(e.RowIndex).Cells(0).Value().ToString())
+                        'MsgBox("Codigo " + dtResultados.Rows(e.RowIndex).Cells(0).Value().ToString())
                         dtseleccion = parametro.BuscarDetalleExamen
                         fila = dtseleccion.Rows(0)
 
-                        MsgBox(fila("nombre"))
+                        'MsgBox(fila("nombre"))
 
 
                         A_ValoresRefPar.Show()
@@ -343,7 +350,12 @@
                     With objItemDet
                         .codigoItemExamen_ = Convert.ToInt64(txtCodExamen.Text)
                         .Nombre_ = dtResultados.Rows(index).Cells(1).Value()
-                        .codigoUnidad_ = dtResultados.Rows(index).Cells(2).Value()
+                        If dtResultados.Rows(index).Cells(2).Value() = "" Then
+                            .codigoUnidad_ = 0
+                        Else
+                            .codigoUnidad_ = dtResultados.Rows(index).Cells(2).Value()
+                        End If
+
                     End With
                     If objItemDet.RegistrarNuevoItemExamenDetalle() = 0 Then
                         MsgBox("Error al querer insertar el posible resultado.")
@@ -354,7 +366,12 @@
                         .codigo_ = dtResultados.Rows(index).Cells(0).Value()
                         .codigoItemExamen_ = Convert.ToInt64(txtCodExamen.Text)
                         .Nombre_ = dtResultados.Rows(index).Cells(1).Value()
-                        .codigoUnidad_ = dtResultados.Rows(index).Cells(2).Value()
+                        If dtResultados.Rows(index).Cells(2).Value() = "" Then
+                            .codigoUnidad_ = 0
+                        Else
+                            .codigoUnidad_ = dtResultados.Rows(index).Cells(2).Value()
+                        End If
+
                     End With
                     'MsgBox(dtResultados.Rows(index).Cells(1).Value())
                     If objItemDet.ModificarItemExamenDetalle() = 0 Then

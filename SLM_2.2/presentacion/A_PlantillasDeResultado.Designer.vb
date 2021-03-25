@@ -23,7 +23,6 @@ Partial Class A_PlantillasDeResultado
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(A_PlantillasDeResultado))
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -33,7 +32,6 @@ Partial Class A_PlantillasDeResultado
         Me.btnBuscarArea = New System.Windows.Forms.Button()
         Me.rtxtDescripcion = New System.Windows.Forms.RichTextBox()
         Me.txtNombreArea = New System.Windows.Forms.TextBox()
-        Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.txtCodigoArea = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -44,34 +42,19 @@ Partial Class A_PlantillasDeResultado
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.dtPlantillas = New System.Windows.Forms.DataGridView()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.GroupBox1.SuspendLayout()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.dtPlantillas, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.GroupBox1.Controls.Add(Me.btnCerrar)
-        Me.GroupBox1.Controls.Add(Me.btnGuardar)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.btnModificar)
-        Me.GroupBox1.Controls.Add(Me.btnNuevo)
-        Me.GroupBox1.Location = New System.Drawing.Point(-1, 1)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(622, 54)
-        Me.GroupBox1.TabIndex = 0
-        Me.GroupBox1.TabStop = False
         '
         'btnCerrar
         '
         Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCerrar.BackColor = System.Drawing.Color.LightSalmon
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnCerrar.Location = New System.Drawing.Point(534, 18)
+        Me.btnCerrar.Location = New System.Drawing.Point(637, 9)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
         Me.btnCerrar.TabIndex = 4
@@ -83,7 +66,7 @@ Partial Class A_PlantillasDeResultado
         Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardar.BackColor = System.Drawing.Color.LawnGreen
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnGuardar.Location = New System.Drawing.Point(453, 18)
+        Me.btnGuardar.Location = New System.Drawing.Point(556, 9)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 3
@@ -95,7 +78,7 @@ Partial Class A_PlantillasDeResultado
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(6, 16)
+        Me.Label1.Location = New System.Drawing.Point(8, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(237, 25)
         Me.Label1.TabIndex = 1
@@ -106,7 +89,7 @@ Partial Class A_PlantillasDeResultado
         Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnModificar.BackColor = System.Drawing.Color.Yellow
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnModificar.Location = New System.Drawing.Point(372, 18)
+        Me.btnModificar.Location = New System.Drawing.Point(475, 9)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(75, 23)
         Me.btnModificar.TabIndex = 2
@@ -118,7 +101,7 @@ Partial Class A_PlantillasDeResultado
         Me.btnNuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnNuevo.BackColor = System.Drawing.Color.White
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnNuevo.Location = New System.Drawing.Point(291, 18)
+        Me.btnNuevo.Location = New System.Drawing.Point(394, 9)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(75, 23)
         Me.btnNuevo.TabIndex = 1
@@ -133,7 +116,6 @@ Partial Class A_PlantillasDeResultado
         Me.GroupBox2.Controls.Add(Me.btnBuscarArea)
         Me.GroupBox2.Controls.Add(Me.rtxtDescripcion)
         Me.GroupBox2.Controls.Add(Me.txtNombreArea)
-        Me.GroupBox2.Controls.Add(Me.txtDescripcion)
         Me.GroupBox2.Controls.Add(Me.txtCodigoArea)
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.Label4)
@@ -141,25 +123,25 @@ Partial Class A_PlantillasDeResultado
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.txtCodigo)
         Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 72)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 48)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(598, 149)
+        Me.GroupBox2.Size = New System.Drawing.Size(700, 212)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información de Plantilla"
         '
         'btnBuscarArea
         '
-        Me.btnBuscarArea.BackColor = System.Drawing.Color.White
+        Me.btnBuscarArea.BackColor = System.Drawing.Color.Transparent
         Me.btnBuscarArea.BackgroundImage = CType(resources.GetObject("btnBuscarArea.BackgroundImage"), System.Drawing.Image)
         Me.btnBuscarArea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscarArea.FlatAppearance.BorderSize = 0
         Me.btnBuscarArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscarArea.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscarArea.Location = New System.Drawing.Point(94, 48)
-        Me.btnBuscarArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuscarArea.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuscarArea.Name = "btnBuscarArea"
-        Me.btnBuscarArea.Size = New System.Drawing.Size(37, 18)
+        Me.btnBuscarArea.Size = New System.Drawing.Size(25, 18)
         Me.btnBuscarArea.TabIndex = 84
         Me.btnBuscarArea.Text = "..."
         Me.btnBuscarArea.UseVisualStyleBackColor = False
@@ -168,38 +150,28 @@ Partial Class A_PlantillasDeResultado
         '
         Me.rtxtDescripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.rtxtDescripcion.Location = New System.Drawing.Point(92, 74)
-        Me.rtxtDescripcion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtDescripcion.Location = New System.Drawing.Point(94, 74)
+        Me.rtxtDescripcion.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxtDescripcion.Name = "rtxtDescripcion"
-        Me.rtxtDescripcion.Size = New System.Drawing.Size(489, 62)
+        Me.rtxtDescripcion.Size = New System.Drawing.Size(591, 124)
         Me.rtxtDescripcion.TabIndex = 6
         Me.rtxtDescripcion.Text = ""
         '
         'txtNombreArea
         '
         Me.txtNombreArea.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombreArea.Location = New System.Drawing.Point(239, 48)
-        Me.txtNombreArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtNombreArea.Location = New System.Drawing.Point(230, 48)
+        Me.txtNombreArea.Margin = New System.Windows.Forms.Padding(2)
         Me.txtNombreArea.Name = "txtNombreArea"
         Me.txtNombreArea.ReadOnly = True
-        Me.txtNombreArea.Size = New System.Drawing.Size(342, 19)
+        Me.txtNombreArea.Size = New System.Drawing.Size(351, 19)
         Me.txtNombreArea.TabIndex = 83
-        '
-        'txtDescripcion
-        '
-        Me.txtDescripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtDescripcion.Location = New System.Drawing.Point(98, 74)
-        Me.txtDescripcion.MaxLength = 300
-        Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(468, 20)
-        Me.txtDescripcion.TabIndex = 5
         '
         'txtCodigoArea
         '
         Me.txtCodigoArea.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigoArea.Location = New System.Drawing.Point(135, 48)
-        Me.txtCodigoArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtCodigoArea.Location = New System.Drawing.Point(126, 48)
+        Me.txtCodigoArea.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCodigoArea.MaxLength = 20
         Me.txtCodigoArea.Name = "txtCodigoArea"
         Me.txtCodigoArea.Size = New System.Drawing.Size(101, 19)
@@ -233,6 +205,7 @@ Partial Class A_PlantillasDeResultado
         Me.txtSimbolo.Name = "txtSimbolo"
         Me.txtSimbolo.Size = New System.Drawing.Size(175, 20)
         Me.txtSimbolo.TabIndex = 3
+        Me.txtSimbolo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label3
         '
@@ -268,12 +241,12 @@ Partial Class A_PlantillasDeResultado
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.BackColor = System.Drawing.Color.AliceBlue
         Me.GroupBox3.Controls.Add(Me.dtPlantillas)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 228)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 266)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(599, 198)
+        Me.GroupBox3.Size = New System.Drawing.Size(701, 273)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Registros"
+        Me.GroupBox3.Text = "Doble clic para ver un registro"
         '
         'dtPlantillas
         '
@@ -295,46 +268,59 @@ Partial Class A_PlantillasDeResultado
         Me.dtPlantillas.RowHeadersVisible = False
         Me.dtPlantillas.RowHeadersWidth = 51
         Me.dtPlantillas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtPlantillas.Size = New System.Drawing.Size(575, 170)
+        Me.dtPlantillas.Size = New System.Drawing.Size(677, 245)
         Me.dtPlantillas.TabIndex = 0
         '
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 428)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 542)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(622, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(724, 22)
         Me.StatusStrip1.TabIndex = 3
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.btnCerrar)
+        Me.Panel1.Controls.Add(Me.btnGuardar)
+        Me.Panel1.Controls.Add(Me.btnNuevo)
+        Me.Panel1.Controls.Add(Me.btnModificar)
+        Me.Panel1.Location = New System.Drawing.Point(0, -1)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(724, 43)
+        Me.Panel1.TabIndex = 23
         '
         'A_PlantillasDeResultado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(622, 450)
+        Me.ClientSize = New System.Drawing.Size(724, 564)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "A_PlantillasDeResultado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SLM: Módulo de Registro de Plantillas"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.dtPlantillas, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnCerrar As Button
     Friend WithEvents btnGuardar As Button
     Friend WithEvents Label1 As Label
@@ -348,11 +334,11 @@ Partial Class A_PlantillasDeResultado
     Friend WithEvents Label4 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents dtPlantillas As DataGridView
-    Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents rtxtDescripcion As RichTextBox
     Friend WithEvents btnBuscarArea As Button
     Friend WithEvents txtNombreArea As TextBox
     Friend WithEvents txtCodigoArea As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents Panel1 As Panel
 End Class
