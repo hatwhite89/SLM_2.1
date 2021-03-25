@@ -671,6 +671,78 @@
         End Try
     End Sub
 
+    Private Sub btnValidarUnicoResultado_Click(sender As Object, e As EventArgs) Handles btnValidarUnicoResultado.Click
+        Try
+            Dim n As String = MsgBox("¿Desea validar los resultados de la orden de trabajo?", MsgBoxStyle.YesNo, "Validación")
+            If n = vbYes Then
+                Dim colColl As DataColumnCollection = ds.Tables("HojaTrabajo").Columns
+                If dgvHojaTrab.Rows(fila).Cells(colColl.IndexOf("Estado")).Value <> "Validado" Then
+                    'Valida que todos los parametros esten llenos
+                    Dim objOrdTrabDet As New ClsOrdenTrabajoDetalle
+                    Dim dtDet As New DataTable
+                    Dim count As Integer = 0
+
+                    objOrdTrabDet.cod_orden_trabajo_ = Integer.Parse(txtOrden.Text)
+                    dtDet = objOrdTrabDet.BuscarOrdenTrabajoDetalle
+
+                    'Valida la orden de trabajo
+                    Dim objOrdTrab As New ClsOrdenDeTrabajo
+                    With objOrdTrab
+                        .cod_orden_trabajo_ = Integer.Parse(txtOrden.Text)
+                        .coUsuario_ = Integer.Parse(Form1.lblUserCod.Text)
+
+                        'Procedimiento actualizar orden de trabajo
+                        If .ModificarOrdenDeTrabajoResultadoValidado() = 1 Then
+                            MsgBox("Validado los resultados correctamente.", MsgBoxStyle.Information)
+                        Else
+                            MsgBox("Error al momento de validar la orden de trabajo.", MsgBoxStyle.Critical, "Validación.")
+                        End If
+
+                    End With
+
+
+                    For index = 5 To dgvHojaTrab.Columns.Count - 2
+                        If Trim(dgvHojaTrab.Rows(fila).Cells(index).Value.ToString) = "*" Then
+                            'MsgBox("Debe ingresar todos los resultados para validar la orden de trabajo. 1", MsgBoxStyle.Exclamation, "Validación.")
+                            Exit Sub
+                        ElseIf Trim(dgvHojaTrab.Rows(fila).Cells(index).Value.ToString) <> "" Then
+                            count += 1
+                        End If
+                    Next
+                    If count <> dtDet.Rows.Count Then
+                        'MsgBox(count)
+                        'MsgBox(dtDet.Rows.Count)
+                        'MsgBox("Debe ingresar todos los resultados para validar la orden de trabajo. 2", MsgBoxStyle.Exclamation, "Validación.")
+                        Exit Sub
+                    End If
+
+                    'Valida la orden de trabajo
+                    Dim objOrdTrab2 As New ClsOrdenDeTrabajo
+                    With objOrdTrab2
+                        .cod_orden_trabajo_ = Integer.Parse(txtOrden.Text)
+                        .coUsuario_ = Integer.Parse(Form1.lblUserCod.Text)
+
+                        'Procedimiento actualizar orden de trabajo
+                        If .ModificarOrdenDeTrabajoEstadoValidado() = 1 Then
+                            MsgBox("Validado correctamente.", MsgBoxStyle.Information)
+                            'dgvHojaTrab.Rows(fila).Cells(colColl.IndexOf("Estado")).Value = "Validado"
+                            dgvHojaTrab.Rows.Remove(dgvHojaTrab.Rows(fila))
+                        Else
+                            MsgBox("Error al momento de validar la orden de trabajo.", MsgBoxStyle.Critical, "Validación.")
+                        End If
+
+                    End With
+
+                Else
+                    'Muestra un mensaje de validacion
+                    MsgBox("La orden de trabajo ya a sido validada.", MsgBoxStyle.Exclamation, "Validación.")
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox("Error al validar: " + ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
     Private Sub cbxPlantillas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxPlantillas.SelectedIndexChanged
 
         Try

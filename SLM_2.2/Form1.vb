@@ -1538,4 +1538,12 @@
     Private Sub Button2_Click_5(sender As Object, e As EventArgs) Handles Button2.Click
         E_frmFirmaDigital.Show()
     End Sub
+
+    Private Sub PictureBox2_Click_2(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        E_frmEntregaResultados.Show()
+    End Sub
+
+    Private Sub btnConserjes_Click(sender As Object, e As EventArgs) Handles btnConserjes.Click
+
+    End Sub
 End Class

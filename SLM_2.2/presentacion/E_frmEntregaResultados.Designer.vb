@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class E_frmEntregaResultados
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,26 +20,29 @@ Partial Class E_frmEntregaResultados
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_frmEntregaResultados))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Slm_testDataSet = New SLM_2._2.slm_testDataSet()
-        Me.SlmtestDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.id_orden = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NUMERO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreCompleto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Slm_testDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SlmtestDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -70,6 +73,10 @@ Partial Class E_frmEntregaResultados
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox1.Controls.Add(Me.Button3)
+        Me.GroupBox1.Controls.Add(Me.StatusStrip1)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -82,6 +89,26 @@ Partial Class E_frmEntregaResultados
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Resultados"
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(713, 20)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 5
+        Me.Button2.Text = "Reenviar"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(266, 11)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Buscar"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label6
         '
@@ -103,55 +130,86 @@ Partial Class E_frmEntregaResultados
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(296, 76)
+        Me.Label3.Location = New System.Drawing.Point(589, 82)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(190, 13)
+        Me.Label3.Size = New System.Drawing.Size(201, 13)
         Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Doble click para mostrar informe"
+        Me.Label3.Text = "Click para cargar orden de trabajo"
         '
         'DataGridView1
         '
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.DataSource = Me.SlmtestDataSetBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 92)
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_orden, Me.NUMERO, Me.nombreCompleto, Me.fechaFactura})
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 109)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(789, 290)
+        Me.DataGridView1.Size = New System.Drawing.Size(789, 251)
         Me.DataGridView1.TabIndex = 0
         '
-        'Button1
+        'TextBox1
         '
-        Me.Button1.Location = New System.Drawing.Point(264, 13)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.TextBox1.Location = New System.Drawing.Point(592, 47)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(109, 20)
+        Me.TextBox1.TabIndex = 6
         '
-        'Button2
+        'Label1
         '
-        Me.Button2.Location = New System.Drawing.Point(719, 15)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 5
-        Me.Button2.Text = "Reenviar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(589, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(86, 13)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Orden de trabajo"
         '
-        'Slm_testDataSet
+        'id_orden
         '
-        Me.Slm_testDataSet.DataSetName = "slm_testDataSet"
-        Me.Slm_testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.id_orden.DataPropertyName = "id_orden"
+        Me.id_orden.HeaderText = "ID ORDEN DE TRABAJO"
+        Me.id_orden.Name = "id_orden"
         '
-        'SlmtestDataSetBindingSource
+        'NUMERO
         '
-        Me.SlmtestDataSetBindingSource.DataSource = Me.Slm_testDataSet
-        Me.SlmtestDataSetBindingSource.Position = 0
+        Me.NUMERO.DataPropertyName = "numero"
+        Me.NUMERO.HeaderText = "ID FACTURA"
+        Me.NUMERO.Name = "NUMERO"
+        '
+        'nombreCompleto
+        '
+        Me.nombreCompleto.DataPropertyName = "nombreCompleto"
+        Me.nombreCompleto.HeaderText = "CLIENTE"
+        Me.nombreCompleto.Name = "nombreCompleto"
+        '
+        'fechaFactura
+        '
+        Me.fechaFactura.DataPropertyName = "fechaFactura"
+        Me.fechaFactura.HeaderText = "FECHA FACTURA"
+        Me.fechaFactura.Name = "fechaFactura"
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(3, 363)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(794, 22)
+        Me.StatusStrip1.TabIndex = 8
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(713, 47)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 9
+        Me.Button3.Text = "Imprimir"
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'E_frmEntregaResultados
         '
@@ -168,8 +226,6 @@ Partial Class E_frmEntregaResultados
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Slm_testDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SlmtestDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -183,6 +239,12 @@ Partial Class E_frmEntregaResultados
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents SlmtestDataSetBindingSource As BindingSource
-    Friend WithEvents Slm_testDataSet As slm_testDataSet
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents id_orden As DataGridViewTextBoxColumn
+    Friend WithEvents NUMERO As DataGridViewTextBoxColumn
+    Friend WithEvents nombreCompleto As DataGridViewTextBoxColumn
+    Friend WithEvents fechaFactura As DataGridViewTextBoxColumn
+    Friend WithEvents Button3 As Button
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

@@ -410,4 +410,52 @@ where u.cod_usuario = e.codigo And e.codigoDepto = d.codigo and p.codigo = e.cod
             Return dt
         End Using
     End Function
+
+    Public Function registrarNuevoUsuarioWeb() As String
+        Dim sqlcom As SqlCommand
+        Dim sqlpar As SqlParameter
+        Dim par_sal As Integer
+
+        'PROCEDIMIENTO ALMACENADO
+        sqlcom = New SqlCommand
+        sqlcom.CommandType = CommandType.StoredProcedure
+        sqlcom.CommandText = "E_slmInsertarUsuarioWeb"
+
+        'VARIABLES 
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "identidad"
+        sqlpar.Value = Usuario_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "pass"
+        sqlpar.Value = password_
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "correo"
+        sqlpar.Value = Estad_o
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "salida"
+        sqlpar.Value = ""
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar.Direction = ParameterDirection.Output
+
+        Dim con As New ClsConnection
+        sqlcom.Connection = con.getConexion
+        sqlcom.ExecuteNonQuery()
+
+        con.cerrarConexion()
+
+        par_sal = sqlcom.Parameters("salida").Value
+
+        Return par_sal
+
+    End Function
 End Class

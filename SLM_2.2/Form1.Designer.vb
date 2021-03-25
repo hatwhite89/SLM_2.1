@@ -87,6 +87,7 @@ Partial Class Form1
         Me.Button12 = New System.Windows.Forms.Button()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox19 = New System.Windows.Forms.PictureBox()
         Me.btnSubAreas = New System.Windows.Forms.Button()
         Me.PictureBox76 = New System.Windows.Forms.PictureBox()
@@ -248,6 +249,7 @@ Partial Class Form1
         Me.Panel8.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox76, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox49, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1094,6 +1096,7 @@ Partial Class Form1
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.Color.AliceBlue
+        Me.TabPage3.Controls.Add(Me.PictureBox2)
         Me.TabPage3.Controls.Add(Me.PictureBox19)
         Me.TabPage3.Controls.Add(Me.btnSubAreas)
         Me.TabPage3.Controls.Add(Me.PictureBox76)
@@ -1115,6 +1118,18 @@ Partial Class Form1
         Me.TabPage3.Size = New System.Drawing.Size(574, 469)
         Me.TabPage3.TabIndex = 1
         Me.TabPage3.Text = "Exámenes"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.SLM_2._2.My.Resources.Resources.examenes_67
+        Me.PictureBox2.InitialImage = Nothing
+        Me.PictureBox2.Location = New System.Drawing.Point(24, 344)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(88, 111)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 23
+        Me.PictureBox2.TabStop = False
         '
         'PictureBox19
         '
@@ -2360,7 +2375,7 @@ Partial Class Form1
         'pbxNoti
         '
         Me.pbxNoti.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.pbxNoti.Location = New System.Drawing.Point(6, 577)
+        Me.pbxNoti.Location = New System.Drawing.Point(6, 570)
         Me.pbxNoti.Name = "pbxNoti"
         Me.pbxNoti.Size = New System.Drawing.Size(29, 27)
         Me.pbxNoti.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2384,7 +2399,6 @@ Partial Class Form1
         '
         Me.btnConserjes.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.btnConserjes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnConserjes.Enabled = False
         Me.btnConserjes.FlatAppearance.BorderSize = 0
         Me.btnConserjes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnConserjes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2511,6 +2525,7 @@ Partial Class Form1
         Me.Panel8.PerformLayout()
         Me.TabControl2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox76, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox49, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2780,4 +2795,5 @@ Partial Class Form1
     Friend WithEvents btnTomaDeMuestra As Button
     Friend WithEvents btnCerrarSesion As LinkLabel
     Friend WithEvents Button2 As Button
+    Friend WithEvents PictureBox2 As PictureBox
 End Class
