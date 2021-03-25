@@ -1656,6 +1656,12 @@
     <Compile Include="Reportes\reporteCentroCostos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\reporteConserjes.Designer.vb">
+      <DependentUpon>reporteConserjes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporteConserjes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\reporteMayorCuentas.Designer.vb">
       <DependentUpon>reporteMayorCuentas.vb</DependentUpon>
     </Compile>
@@ -1680,6 +1686,12 @@
     <Compile Include="Reportes\reporteSolicitudInterna.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\rpt_AsigancionesDeConserje.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_AsigancionesDeConserje.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\rpt_centrodecostos.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1702,6 +1714,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_ordenCompra.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt_RangoConserjes.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_RangoConserjes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt_reporteConserjes.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_reporteConserjes.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rpt_solicitudInterna.vb">
@@ -2423,6 +2447,9 @@
     <EmbeddedResource Include="Reportes\reporteCentroCostos.resx">
       <DependentUpon>reporteCentroCostos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporteConserjes.resx">
+      <DependentUpon>reporteConserjes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reporteMayorCuentas.resx">
       <DependentUpon>reporteMayorCuentas.vb</DependentUpon>
     </EmbeddedResource>
@@ -2434,6 +2461,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\reporteSolicitudInterna.resx">
       <DependentUpon>reporteSolicitudInterna.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_AsigancionesDeConserje.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_AsigancionesDeConserje.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpt_centrodecostos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -2450,6 +2481,14 @@
     <EmbeddedResource Include="Reportes\rpt_ordenCompra.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_ordenCompra.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_RangoConserjes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_RangoConserjes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_reporteConserjes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_reporteConserjes.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpt_solicitudInterna.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
