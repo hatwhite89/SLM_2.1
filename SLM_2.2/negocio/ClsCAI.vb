@@ -231,9 +231,11 @@ Public Class ClsCAI
                 da.SelectCommand = cmd
                 Using dt As New DataTable
                     da.Fill(dt)
-                    objCon.cerrarConexion()
+
                     Return dt
+
                 End Using
+                cn.Close()
             End Using
         End Using
     End Function
@@ -249,8 +251,9 @@ Public Class ClsCAI
             da.Fill(dt)
             objCon.cerrarConexion()
             Return dt
+            cn.Close()
         End Using
-
+        cn.Close()
     End Function
     Public Function SeleccionarCAI() As DataTable
 
@@ -300,8 +303,9 @@ Public Class ClsCAI
                 da.Fill(dt)
                 objCon.cerrarConexion()
                 Return dt
+                cn.Close()
             End Using
-
+            cn.Close()
 
         Catch ex As Exception
 

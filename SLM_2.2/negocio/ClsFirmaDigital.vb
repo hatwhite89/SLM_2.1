@@ -120,12 +120,21 @@ Public Class ClsFirmaDigital
         Return par_sal
 
     End Function
-    Public Function RecuperarFirmasDigitales() As SqlDataReader
-        Dim sqlcom As SqlCommand
-        sqlcom = New SqlCommand
-        sqlcom.CommandText = "SELECT* from firmadigital"
-        sqlcom.Connection = New ClsConnection().getConexion
-        Return sqlcom.ExecuteReader
+    Public Function RecuperarFirmasDigitales() As DataTable
+
+        Dim objCon As New ClsConnection
+
+
+
+        Using da As New SqlDataAdapter("SELECT* from firmadigital", objCon.getConexion)
+            Dim dt As New DataTable
+            da.Fill(dt)
+
+            Return dt
+
+        End Using
+
+
     End Function
 
     Public Function ActualizarFirma() As String

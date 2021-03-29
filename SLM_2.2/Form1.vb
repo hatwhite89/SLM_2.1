@@ -41,14 +41,14 @@
     End Sub
     Private Sub btnContabilidad_Click(sender As Object, e As EventArgs) Handles btnContabilidad.Click
 
-        If PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or PanelSistema.Visible = True Or PanelTalentoHumano.Visible = True Then
+        If PanelTM.Visible = True Or PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or PanelSistema.Visible = True Or PanelTalentoHumano.Visible = True Then
             PanelSistema.Visible = False
             PanelFactura.Visible = False
             PanelLab.Visible = False
             PanelAlmacen.Visible = False
             PanelTalentoHumano.Visible = False
             panelMenu.Visible = True
-
+            PanelTM.Visible = False
         Else
             panelMenu.Visible = True
 
@@ -61,13 +61,14 @@
         Try
 
 
-            If PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Or PanelTalentoHumano.Visible = True Then
+            If PanelTM.Visible = True Or PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Or PanelTalentoHumano.Visible = True Then
                 PanelFactura.Visible = False
                 panelMenu.Visible = False
                 PanelSistema.Visible = False
                 PanelLab.Visible = True
                 PanelAlmacen.Visible = False
                 PanelTalentoHumano.Visible = False
+                PanelTM.Visible = False
             Else
                 PanelLab.Visible = True
 
@@ -94,13 +95,14 @@
         Try
 
 
-            If PanelAlmacen.Visible = True Or panelMenu.Visible = True Or PanelLab.Visible = True Or PanelSistema.Visible = True Or PanelTalentoHumano.Visible = True Then
+            If PanelTM.Visible = True Or PanelAlmacen.Visible = True Or panelMenu.Visible = True Or PanelLab.Visible = True Or PanelSistema.Visible = True Or PanelTalentoHumano.Visible = True Then
                 PanelFactura.Visible = True
                 PanelLab.Visible = False
                 panelMenu.Visible = False
                 PanelSistema.Visible = False
                 PanelAlmacen.Visible = False
                 PanelTalentoHumano.Visible = False
+                PanelTM.Visible = False
             Else
                 PanelFactura.Visible = True
 
@@ -348,7 +350,7 @@
 
     Private Sub btnSistema_Click(sender As Object, e As EventArgs) Handles btnSistema.Click
 
-        If PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelTalentoHumano.Visible = True Then
+        If PanelTM.Visible = True Or PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelTalentoHumano.Visible = True Then
 
             PanelFactura.Visible = False
             PanelLab.Visible = False
@@ -356,7 +358,7 @@
             PanelTalentoHumano.Visible = False
             PanelAlmacen.Visible = False
             PanelSistema.Visible = True
-
+            PanelTM.Visible = False
         Else
             PanelSistema.Visible = True
 
@@ -414,13 +416,15 @@
 
     Private Sub btnTalentoHumano_Click(sender As Object, e As EventArgs) Handles btnTalentoHumano.Click
 
-        If PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Then
-            PanelTalentoHumano.Visible = True
+        If PanelTM.Visible = True Or PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Then
+
             PanelFactura.Visible = False
             PanelLab.Visible = False
             panelMenu.Visible = False
             PanelSistema.Visible = False
             PanelAlmacen.Visible = False
+            PanelTM.Visible = False
+            PanelTalentoHumano.Visible = True
 
 
         Else
@@ -467,7 +471,7 @@
 
     Private Sub Button22_Click(sender As Object, e As EventArgs) Handles btnAlmacen.Click
 
-        If PanelTalentoHumano.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Then
+        If PanelTM.Visible = True Or PanelTalentoHumano.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Then
 
             PanelFactura.Visible = False
             PanelLab.Visible = False
@@ -475,6 +479,7 @@
             PanelSistema.Visible = False
             PanelTalentoHumano.Visible = False
             PanelAlmacen.Visible = True
+            PanelTM.Visible = False
         Else
             PanelAlmacen.Visible = True
 
@@ -795,7 +800,7 @@
 
     End Sub
 
-    Private Sub PictureBox30_Click_1(sender As Object, e As EventArgs) Handles PictureBox30.Click
+    Private Sub PictureBox30_Click_1(sender As Object, e As EventArgs)
         Try
 
             M_BuscarCotizacion.Show()
@@ -806,7 +811,7 @@
         End Try
     End Sub
 
-    Private Sub PictureBox29_Click(sender As Object, e As EventArgs) Handles PictureBox29.Click
+    Private Sub PictureBox29_Click(sender As Object, e As EventArgs)
         Try
             M_BuscarRecibo.Show()
             M_BuscarRecibo.BringToFront()
@@ -816,13 +821,13 @@
         End Try
     End Sub
 
-    Private Sub PictureBox28_Click(sender As Object, e As EventArgs) Handles PictureBox28.Click
+    Private Sub PictureBox28_Click(sender As Object, e As EventArgs)
         M_Apertura.Show()
         M_Apertura.BringToFront()
         M_Apertura.WindowState = FormWindowState.Normal
     End Sub
 
-    Private Sub PictureBox27_Click(sender As Object, e As EventArgs) Handles PictureBox27.Click
+    Private Sub PictureBox27_Click(sender As Object, e As EventArgs)
         'Cierre de caja
         Try
             'MsgBox(Form1.lblMiUser.Text)
@@ -839,25 +844,25 @@
         End Try
     End Sub
 
-    Private Sub PictureBox46_Click(sender As Object, e As EventArgs) Handles PictureBox46.Click
+    Private Sub PictureBox46_Click(sender As Object, e As EventArgs)
         A_Proveedor.Show()
         A_Proveedor.BringToFront()
         A_Proveedor.WindowState = FormWindowState.Normal
     End Sub
 
-    Private Sub PictureBox34_Click(sender As Object, e As EventArgs) Handles PictureBox34.Click
+    Private Sub PictureBox34_Click(sender As Object, e As EventArgs)
         E_DetalleExamenes.Show()
         E_DetalleExamenes.BringToFront()
         E_DetalleExamenes.WindowState = FormWindowState.Normal
     End Sub
 
-    Private Sub PictureBox33_Click(sender As Object, e As EventArgs) Handles PictureBox33.Click
+    Private Sub PictureBox33_Click(sender As Object, e As EventArgs)
         E_GrupoExamen.Show()
         E_GrupoExamen.BringToFront()
         E_GrupoExamen.WindowState = FormWindowState.Normal
     End Sub
 
-    Private Sub PictureBox32_Click(sender As Object, e As EventArgs) Handles PictureBox32.Click
+    Private Sub PictureBox32_Click(sender As Object, e As EventArgs)
         'Arqueo
         Try
             'Busca la maquina local
@@ -884,7 +889,7 @@
         End Try
     End Sub
 
-    Private Sub pbxCategoriaCliente_Click(sender As Object, e As EventArgs) Handles pbxCategoriaCliente.Click
+    Private Sub pbxCategoriaCliente_Click(sender As Object, e As EventArgs)
         Try
             M_Categoria.lblform.Text = "Form1"
             M_Categoria.Show()
@@ -895,33 +900,33 @@
         End Try
     End Sub
 
-    Private Sub PictureBox52_Click(sender As Object, e As EventArgs) Handles PictureBox52.Click
+    Private Sub PictureBox52_Click(sender As Object, e As EventArgs)
         M_TerminosPago.Show()
         M_TerminosPago.BringToFront()
         M_TerminosPago.WindowState = FormWindowState.Normal
     End Sub
 
-    Private Sub PictureBox51_Click(sender As Object, e As EventArgs) Handles PictureBox51.Click
+    Private Sub PictureBox51_Click(sender As Object, e As EventArgs)
         M_Cliente.Show()
         M_Cliente.BringToFront()
         M_Cliente.WindowState = FormWindowState.Normal
     End Sub
 
-    Private Sub PictureBox50_Click(sender As Object, e As EventArgs) Handles PictureBox50.Click
+    Private Sub PictureBox50_Click(sender As Object, e As EventArgs)
         M_MaquinasLocales.lblform.Text = "Form1"
         M_MaquinasLocales.Show()
         M_MaquinasLocales.BringToFront()
         M_MaquinasLocales.WindowState = FormWindowState.Normal
     End Sub
 
-    Private Sub PictureBox47_Click(sender As Object, e As EventArgs) Handles PictureBox47.Click
+    Private Sub PictureBox47_Click(sender As Object, e As EventArgs)
         M_DiarioFacturacion.lblForm.Text = "M_DiarioFacturacion"
         M_DiarioFacturacion.Show()
         M_DiarioFacturacion.BringToFront()
         M_DiarioFacturacion.WindowState = FormWindowState.Normal
     End Sub
 
-    Private Sub pbxTipoClasificacion_Click(sender As Object, e As EventArgs) Handles pbxTipoClasificacion.Click
+    Private Sub pbxTipoClasificacion_Click(sender As Object, e As EventArgs)
         Try
             M_TipoClasificacion.lbltipo.Text = "Form1"
             M_TipoClasificacion.Show()
@@ -1488,7 +1493,7 @@
         E_frmUnidadMedida_almacen.WindowState = FormWindowState.Normal
     End Sub
 
-    Private Sub Button2_Click_4(sender As Object, e As EventArgs) 
+    Private Sub Button2_Click_4(sender As Object, e As EventArgs)
         Try
 
             M_InicioSesion.Show()
@@ -1510,12 +1515,13 @@
 
     Private Sub btnCerrarSesion_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles btnCerrarSesion.LinkClicked
         Try
-            If PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or PanelSistema.Visible = True Or PanelTalentoHumano.Visible = True Then
+            If PanelTM.Visible = True Or PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or PanelSistema.Visible = True Or PanelTalentoHumano.Visible = True Then
                 PanelSistema.Visible = False
                 PanelFactura.Visible = False
                 PanelLab.Visible = False
                 PanelAlmacen.Visible = False
                 PanelTalentoHumano.Visible = False
+                PanelTM.Visible = False
                 panelMenu.Visible = True
 
             Else
@@ -1545,5 +1551,39 @@
 
     Private Sub btnConserjes_Click(sender As Object, e As EventArgs) Handles btnConserjes.Click
 
+    End Sub
+
+    Private Sub btnTomaDeMuestra_Click(sender As Object, e As EventArgs) Handles btnTomaDeMuestra.Click
+
+        If PanelTalentoHumano.Visible = True Or PanelAlmacen.Visible = True Or PanelFactura.Visible = True Or PanelLab.Visible = True Or panelMenu.Visible = True Or PanelSistema.Visible = True Then
+
+            PanelTalentoHumano.Visible = False
+            PanelFactura.Visible = False
+            PanelLab.Visible = False
+            panelMenu.Visible = False
+            PanelSistema.Visible = False
+            PanelAlmacen.Visible = False
+            PanelTM.Visible = True
+
+        Else
+            PanelTM.Visible = True
+
+        End If
+    End Sub
+
+    Private Sub Button3_Click_2(sender As Object, e As EventArgs) Handles Button3.Click
+        PanelTM.Visible = False
+    End Sub
+
+    Private Sub btnTomaMuestra_Click(sender As Object, e As EventArgs) Handles btnTomaMuestra.Click
+        E_frmTomaDeMuestra.Show()
+    End Sub
+
+    Private Sub PictureBox3_Click_1(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        E_frmUsuariosTM.Show()
+    End Sub
+
+    Private Sub PictureBox4_Click_1(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        E_frmImpresoras.Show()
     End Sub
 End Class
