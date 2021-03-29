@@ -9,6 +9,7 @@ Public Class reporteOrdenCompra
         RptDocument.SetDatabaseLogon("sa", "Lbm2019", "10.172.3.10", "slm_test")
 
         CrystalReportViewer1.ReportSource = RptDocument
+        RptDocument.PrintOptions.PrinterName = "Brother DCP-T510W"
 
         configureCrystalReports()
 

@@ -11,6 +11,28 @@
 
             dgvData.DataSource = conserje.listarConserjes
 
+
+            If dgvData.Columns.Contains("codConserje") Then
+
+                alternarColoFilasDatagridview(dgvData)
+                dgvData.Columns("codEmpleado").Visible = False
+
+                dgvData.Columns("codConserje").HeaderText = "N# de Seguimiento"
+                dgvData.Columns("nombre").HeaderText = "Nombre de Empleado"
+                dgvData.Columns("rutaOrigen").HeaderText = "Origen"
+                dgvData.Columns("rutaDestino").HeaderText = "Destino"
+                dgvData.Columns("fechaSalida").HeaderText = "F. Salida"
+                dgvData.Columns("fechaEntrega").HeaderText = "F. Entrega"
+                dgvData.Columns("horaEntrega").HeaderText = "H. Entrega"
+                dgvData.Columns("horaSalida").HeaderText = "H. Salida"
+                dgvData.Columns("Observaciones").HeaderText = "Observa."
+                dgvData.Columns("estado").HeaderText = "Estado"
+
+            End If
+
+
+
+
         Catch ex As Exception
 
         End Try
@@ -68,6 +90,8 @@
         dtpFechaSalida.Value = Date.Now
         dtpHoraSalida.ResetText()
         dtpHoraEntrega.ResetText()
+        txtNotas.Clear()
+
 
     End Sub
 
@@ -115,18 +139,19 @@
 
         Try
 
-            txtCod.Text = dgvData.Rows(e.RowIndex).Cells(0).Value
-            txtCodEmpleado.Text = dgvData.Rows(e.RowIndex).Cells(1).Value
-            txtrutaOrigen.Text = dgvData.Rows(e.RowIndex).Cells(2).Value
-            txtrutaDestino.Text = dgvData.Rows(e.RowIndex).Cells(3).Value
-            dtpFechaSalida.Value = dgvData.Rows(e.RowIndex).Cells(4).Value
-            dtpHoraSalida.Text = dgvData.Rows(e.RowIndex).Cells(5).Value.ToString
+            txtCod.Text = dgvData.Rows(e.RowIndex).Cells(1).Value
+            txtCodEmpleado.Text = dgvData.Rows(e.RowIndex).Cells(2).Value
+            txtrutaOrigen.Text = dgvData.Rows(e.RowIndex).Cells(3).Value
+            txtrutaDestino.Text = dgvData.Rows(e.RowIndex).Cells(4).Value
+            dtpFechaSalida.Value = dgvData.Rows(e.RowIndex).Cells(5).Value
+            dtpHoraSalida.Text = dgvData.Rows(e.RowIndex).Cells(6).Value.ToString
 
-            dtpFechaEntrega.Value = dgvData.Rows(e.RowIndex).Cells(6).Value
-            dtpHoraEntrega.Text = dgvData.Rows(e.RowIndex).Cells(7).Value.ToString
+            dtpFechaEntrega.Value = dgvData.Rows(e.RowIndex).Cells(7).Value
+            dtpHoraEntrega.Text = dgvData.Rows(e.RowIndex).Cells(8).Value.ToString
 
-            txtObservaciones.Text = dgvData.Rows(e.RowIndex).Cells(8).Value
-            lblEstado.Text = dgvData.Rows(e.RowIndex).Cells(9).Value
+            txtObservaciones.Text = dgvData.Rows(e.RowIndex).Cells(9).Value
+            lblEstado.Text = dgvData.Rows(e.RowIndex).Cells(10).Value
+            txtNotas.Text = dgvData.Rows(e.RowIndex).Cells(11).Value
 
             'btnCrear.Enabled = True
             btnModificar.Enabled = True
@@ -199,6 +224,85 @@
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
             E_frmInventario.GridAExcel(dgvData)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub lblEstado_TextChanged(sender As Object, e As EventArgs) Handles lblEstado.TextChanged
+
+        Try
+
+            If lblEstado.Text = "Entregado" Then
+
+                lblEstado.ForeColor = Color.Green
+
+
+            ElseIf lblEstado.Text = "En Proceso" Then
+
+                lblEstado.ForeColor = Color.DodgerBlue
+
+            Else
+
+                lblEstado.ForeColor = Color.Black
+
+
+            End If
+
+
+
+        Catch ex As Exception
+
+        End Try
+
+
+
+    End Sub
+
+    Private Sub btnBuscarBanco_Click(sender As Object, e As EventArgs) Handles btnBuscarBanco.Click
+        Try
+            M_ListadoEmpleados.lblform.Text = "MM_Conserje"
+            M_ListadoEmpleados.Show()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
+        reporteConserjes.Show()
+        reporteConserjes.BringToFront()
+        reporteConserjes.WindowState = WindowState.Normal
+
+
+    End Sub
+
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        Try
+
+            dgvData.DataSource = conserje.listarConserjes
+
+
+            If dgvData.Columns.Contains("codConserje") Then
+
+                alternarColoFilasDatagridview(dgvData)
+                dgvData.Columns("codEmpleado").Visible = False
+
+                dgvData.Columns("codConserje").HeaderText = "N# de Seguimiento"
+                dgvData.Columns("nombre").HeaderText = "Nombre de Empleado"
+                dgvData.Columns("rutaOrigen").HeaderText = "Origen"
+                dgvData.Columns("rutaDestino").HeaderText = "Destino"
+                dgvData.Columns("fechaSalida").HeaderText = "F. Salida"
+                dgvData.Columns("fechaEntrega").HeaderText = "F. Entrega"
+                dgvData.Columns("horaEntrega").HeaderText = "H. Entrega"
+                dgvData.Columns("horaSalida").HeaderText = "H. Salida"
+                dgvData.Columns("Observaciones").HeaderText = "Observa."
+                dgvData.Columns("estado").HeaderText = "Estado"
+
+            End If
+
+
+
+
         Catch ex As Exception
 
         End Try

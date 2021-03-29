@@ -87,6 +87,7 @@ Partial Class Form1
         Me.Button12 = New System.Windows.Forms.Button()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox19 = New System.Windows.Forms.PictureBox()
         Me.btnSubAreas = New System.Windows.Forms.Button()
         Me.PictureBox76 = New System.Windows.Forms.PictureBox()
@@ -192,12 +193,20 @@ Partial Class Form1
         Me.lblHora = New System.Windows.Forms.Label()
         Me.bntCerrar = New System.Windows.Forms.Button()
         Me.lblCajero = New System.Windows.Forms.Label()
-        Me.PictureBox55 = New System.Windows.Forms.PictureBox()
-        Me.pbxNoti = New System.Windows.Forms.PictureBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnConserjes = New System.Windows.Forms.Button()
         Me.btnTomaDeMuestra = New System.Windows.Forms.Button()
         Me.btnCerrarSesion = New System.Windows.Forms.LinkLabel()
+        Me.PanelTM = New System.Windows.Forms.Panel()
+        Me.TabControl6 = New System.Windows.Forms.TabControl()
+        Me.TabPage13 = New System.Windows.Forms.TabPage()
+        Me.btnTomaMuestra = New System.Windows.Forms.PictureBox()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.PictureBox55 = New System.Windows.Forms.PictureBox()
+        Me.pbxNoti = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.tcMenu.SuspendLayout()
@@ -248,6 +257,7 @@ Partial Class Form1
         Me.Panel8.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox76, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox49, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -324,8 +334,15 @@ Partial Class Form1
         CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox61, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel9.SuspendLayout()
+        Me.PanelTM.SuspendLayout()
+        Me.TabControl6.SuspendLayout()
+        Me.TabPage13.SuspendLayout()
+        CType(Me.btnTomaMuestra, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel10.SuspendLayout()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -1094,6 +1111,7 @@ Partial Class Form1
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.Color.AliceBlue
+        Me.TabPage3.Controls.Add(Me.PictureBox2)
         Me.TabPage3.Controls.Add(Me.PictureBox19)
         Me.TabPage3.Controls.Add(Me.btnSubAreas)
         Me.TabPage3.Controls.Add(Me.PictureBox76)
@@ -1115,6 +1133,18 @@ Partial Class Form1
         Me.TabPage3.Size = New System.Drawing.Size(574, 469)
         Me.TabPage3.TabIndex = 1
         Me.TabPage3.Text = "Exámenes"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.SLM_2._2.My.Resources.Resources.examenes_67
+        Me.PictureBox2.InitialImage = Nothing
+        Me.PictureBox2.Location = New System.Drawing.Point(24, 344)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(88, 111)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 23
+        Me.PictureBox2.TabStop = False
         '
         'PictureBox19
         '
@@ -2347,44 +2377,10 @@ Partial Class Form1
         Me.lblCajero.Text = "labelCajero"
         Me.lblCajero.Visible = False
         '
-        'PictureBox55
-        '
-        Me.PictureBox55.Image = CType(resources.GetObject("PictureBox55.Image"), System.Drawing.Image)
-        Me.PictureBox55.Location = New System.Drawing.Point(0, 62)
-        Me.PictureBox55.Name = "PictureBox55"
-        Me.PictureBox55.Size = New System.Drawing.Size(35, 50)
-        Me.PictureBox55.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox55.TabIndex = 29
-        Me.PictureBox55.TabStop = False
-        '
-        'pbxNoti
-        '
-        Me.pbxNoti.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.pbxNoti.Location = New System.Drawing.Point(6, 577)
-        Me.pbxNoti.Name = "pbxNoti"
-        Me.pbxNoti.Size = New System.Drawing.Size(29, 27)
-        Me.pbxNoti.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbxNoti.TabIndex = 7
-        Me.pbxNoti.TabStop = False
-        Me.pbxNoti.Visible = False
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Panel1.Location = New System.Drawing.Point(131, 125)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(546, 422)
-        Me.Panel1.TabIndex = 10
-        '
         'btnConserjes
         '
         Me.btnConserjes.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.btnConserjes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnConserjes.Enabled = False
         Me.btnConserjes.FlatAppearance.BorderSize = 0
         Me.btnConserjes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnConserjes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2400,7 +2396,6 @@ Partial Class Form1
         '
         Me.btnTomaDeMuestra.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.btnTomaDeMuestra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnTomaDeMuestra.Enabled = False
         Me.btnTomaDeMuestra.FlatAppearance.BorderSize = 0
         Me.btnTomaDeMuestra.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTomaDeMuestra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2415,12 +2410,138 @@ Partial Class Form1
         'btnCerrarSesion
         '
         Me.btnCerrarSesion.AutoSize = True
-        Me.btnCerrarSesion.Location = New System.Drawing.Point(38, 96)
+        Me.btnCerrarSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(36, 95)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
-        Me.btnCerrarSesion.Size = New System.Drawing.Size(70, 13)
+        Me.btnCerrarSesion.Size = New System.Drawing.Size(83, 13)
         Me.btnCerrarSesion.TabIndex = 9
         Me.btnCerrarSesion.TabStop = True
         Me.btnCerrarSesion.Text = "Cerrar Sesión"
+        '
+        'PanelTM
+        '
+        Me.PanelTM.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PanelTM.BackColor = System.Drawing.SystemColors.Control
+        Me.PanelTM.Controls.Add(Me.TabControl6)
+        Me.PanelTM.Controls.Add(Me.Panel10)
+        Me.PanelTM.Location = New System.Drawing.Point(125, 61)
+        Me.PanelTM.Name = "PanelTM"
+        Me.PanelTM.Size = New System.Drawing.Size(585, 541)
+        Me.PanelTM.TabIndex = 61
+        Me.PanelTM.Visible = False
+        '
+        'TabControl6
+        '
+        Me.TabControl6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TabControl6.Controls.Add(Me.TabPage13)
+        Me.TabControl6.Location = New System.Drawing.Point(3, 43)
+        Me.TabControl6.Name = "TabControl6"
+        Me.TabControl6.SelectedIndex = 0
+        Me.TabControl6.Size = New System.Drawing.Size(579, 482)
+        Me.TabControl6.TabIndex = 12
+        '
+        'TabPage13
+        '
+        Me.TabPage13.BackColor = System.Drawing.Color.AliceBlue
+        Me.TabPage13.Controls.Add(Me.PictureBox4)
+        Me.TabPage13.Controls.Add(Me.PictureBox3)
+        Me.TabPage13.Controls.Add(Me.btnTomaMuestra)
+        Me.TabPage13.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage13.Name = "TabPage13"
+        Me.TabPage13.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage13.Size = New System.Drawing.Size(571, 456)
+        Me.TabPage13.TabIndex = 0
+        Me.TabPage13.Text = "Toma de muestra"
+        '
+        'btnTomaMuestra
+        '
+        Me.btnTomaMuestra.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnTomaMuestra.Location = New System.Drawing.Point(19, 22)
+        Me.btnTomaMuestra.Name = "btnTomaMuestra"
+        Me.btnTomaMuestra.Size = New System.Drawing.Size(100, 100)
+        Me.btnTomaMuestra.TabIndex = 0
+        Me.btnTomaMuestra.TabStop = False
+        '
+        'Panel10
+        '
+        Me.Panel10.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel10.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel10.Controls.Add(Me.Button3)
+        Me.Panel10.Controls.Add(Me.Label8)
+        Me.Panel10.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Panel10.Location = New System.Drawing.Point(1, 1)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(583, 37)
+        Me.Panel10.TabIndex = 11
+        '
+        'Button3
+        '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button3.BackColor = System.Drawing.Color.Crimson
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(523, 8)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(55, 26)
+        Me.Button3.TabIndex = 5
+        Me.Button3.Text = "Cerrar"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(3, 8)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(304, 25)
+        Me.Label8.TabIndex = 7
+        Me.Label8.Text = "Modulo de toma de muestra"
+        '
+        'PictureBox55
+        '
+        Me.PictureBox55.Image = CType(resources.GetObject("PictureBox55.Image"), System.Drawing.Image)
+        Me.PictureBox55.Location = New System.Drawing.Point(0, 62)
+        Me.PictureBox55.Name = "PictureBox55"
+        Me.PictureBox55.Size = New System.Drawing.Size(35, 50)
+        Me.PictureBox55.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox55.TabIndex = 29
+        Me.PictureBox55.TabStop = False
+        '
+        'pbxNoti
+        '
+        Me.pbxNoti.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.pbxNoti.Location = New System.Drawing.Point(6, 570)
+        Me.pbxNoti.Name = "pbxNoti"
+        Me.pbxNoti.Size = New System.Drawing.Size(29, 27)
+        Me.pbxNoti.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbxNoti.TabIndex = 7
+        Me.pbxNoti.TabStop = False
+        Me.pbxNoti.Visible = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PictureBox3.Location = New System.Drawing.Point(167, 22)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(100, 100)
+        Me.PictureBox3.TabIndex = 1
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PictureBox4.Location = New System.Drawing.Point(320, 22)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(100, 100)
+        Me.PictureBox4.TabIndex = 2
+        Me.PictureBox4.TabStop = False
         '
         'Form1
         '
@@ -2447,13 +2568,13 @@ Partial Class Form1
         Me.Controls.Add(Me.lblMiUser)
         Me.Controls.Add(Me.btnContabilidad)
         Me.Controls.Add(Me.StatusStrip1)
+        Me.Controls.Add(Me.PanelTM)
         Me.Controls.Add(Me.PanelFactura)
         Me.Controls.Add(Me.PanelAlmacen)
         Me.Controls.Add(Me.PanelTalentoHumano)
         Me.Controls.Add(Me.panelMenu)
         Me.Controls.Add(Me.PanelSistema)
         Me.Controls.Add(Me.PanelLab)
-        Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
@@ -2511,6 +2632,7 @@ Partial Class Form1
         Me.Panel8.PerformLayout()
         Me.TabControl2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox76, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox49, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2593,8 +2715,16 @@ Partial Class Form1
         CType(Me.PictureBox61, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
+        Me.PanelTM.ResumeLayout(False)
+        Me.TabControl6.ResumeLayout(False)
+        Me.TabPage13.ResumeLayout(False)
+        CType(Me.btnTomaMuestra, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel10.PerformLayout()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2715,19 +2845,7 @@ Partial Class Form1
     Friend WithEvents btnDepoBanc As PictureBox
     Friend WithEvents btnPagos As PictureBox
     Friend WithEvents btnFacturaCompra As PictureBox
-    Friend WithEvents PictureBox52 As PictureBox
-    Friend WithEvents PictureBox51 As PictureBox
-    Friend WithEvents PictureBox50 As PictureBox
-    Friend WithEvents PictureBox47 As PictureBox
-    Friend WithEvents PictureBox46 As PictureBox
-    Friend WithEvents PictureBox34 As PictureBox
-    Friend WithEvents PictureBox33 As PictureBox
-    Friend WithEvents PictureBox32 As PictureBox
     Friend WithEvents PictureBox31 As PictureBox
-    Friend WithEvents PictureBox30 As PictureBox
-    Friend WithEvents PictureBox29 As PictureBox
-    Friend WithEvents PictureBox28 As PictureBox
-    Friend WithEvents PictureBox27 As PictureBox
     Friend WithEvents btnUsuarios As PictureBox
     Friend WithEvents btnPerfiles As PictureBox
     Friend WithEvents btnServidorCorreo As PictureBox
@@ -2752,8 +2870,6 @@ Partial Class Form1
     Friend WithEvents btnReporteria As PictureBox
     Friend WithEvents btnTipoPermiso As PictureBox
     Friend WithEvents btnCapacitaciones As PictureBox
-    Friend WithEvents pbxTipoClasificacion As PictureBox
-    Friend WithEvents pbxCategoriaCliente As PictureBox
     Friend WithEvents btnFeriados As PictureBox
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox84 As PictureBox
@@ -2774,10 +2890,33 @@ Partial Class Form1
     Friend WithEvents btnSede2 As PictureBox
     Friend WithEvents btnMedico2 As PictureBox
     Friend WithEvents btnPaciente2 As PictureBox
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents pbxItemExamen As PictureBox
     Friend WithEvents btnConserjes As Button
     Friend WithEvents btnTomaDeMuestra As Button
     Friend WithEvents btnCerrarSesion As LinkLabel
     Friend WithEvents Button2 As Button
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents pbxTipoClasificacion As PictureBox
+    Friend WithEvents pbxCategoriaCliente As PictureBox
+    Friend WithEvents PictureBox52 As PictureBox
+    Friend WithEvents PictureBox51 As PictureBox
+    Friend WithEvents PictureBox50 As PictureBox
+    Friend WithEvents PictureBox47 As PictureBox
+    Friend WithEvents PictureBox46 As PictureBox
+    Friend WithEvents PictureBox34 As PictureBox
+    Friend WithEvents PictureBox33 As PictureBox
+    Friend WithEvents PictureBox32 As PictureBox
+    Friend WithEvents PictureBox30 As PictureBox
+    Friend WithEvents PictureBox29 As PictureBox
+    Friend WithEvents PictureBox28 As PictureBox
+    Friend WithEvents PictureBox27 As PictureBox
+    Friend WithEvents PanelTM As Panel
+    Friend WithEvents TabControl6 As TabControl
+    Friend WithEvents TabPage13 As TabPage
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Label8 As Label
+    Friend WithEvents btnTomaMuestra As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
 End Class
