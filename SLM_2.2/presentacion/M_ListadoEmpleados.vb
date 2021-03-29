@@ -217,6 +217,18 @@ Public Class M_ListadoEmpleados
                     MM_Conserje.txtNombreEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
                     Me.Close()
                 End If
+
+            ElseIf lblform.Text = "reporteConserje" Then
+                Dim n As String = ""
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar el empleado?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    reporteConserjes.txtCodEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                    reporteConserjes.txtNombreEmpleado.Text = dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                    Me.Close()
+                End If
+
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
