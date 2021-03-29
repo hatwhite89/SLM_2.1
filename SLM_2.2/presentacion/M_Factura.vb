@@ -5,6 +5,7 @@ Imports System.Globalization
 Imports System.ComponentModel
 Public Class M_Factura
 
+
     Public letras As String
     Dim subtotalF, descuentoF, abonoF, saldoF As Double
     Dim codigoDetalleFactura As New ArrayList
