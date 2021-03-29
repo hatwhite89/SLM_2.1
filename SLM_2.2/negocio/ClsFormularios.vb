@@ -117,8 +117,11 @@ Public Class ClsFormularios
                 Using dt As New DataTable
                     da.Fill(dt)
                     Return dt
+                    cn.Close()
                 End Using
+                cn.Close()
             End Using
+            cn.Close()
         End Using
 
     End Function

@@ -41,11 +41,8 @@ Partial Class Resultados
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -127,6 +124,7 @@ Partial Class Resultados
         '
         'TabPage2
         '
+        Me.TabPage2.BackColor = System.Drawing.Color.White
         Me.TabPage2.Controls.Add(Me.TextBox1)
         Me.TabPage2.Controls.Add(Me.Button3)
         Me.TabPage2.Controls.Add(Me.GroupBox2)
@@ -138,7 +136,6 @@ Partial Class Resultados
         Me.TabPage2.Size = New System.Drawing.Size(791, 378)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Historial Paciente"
-        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
@@ -221,7 +218,7 @@ Partial Class Resultados
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.Button5)
+        Me.TabPage1.BackColor = System.Drawing.Color.White
         Me.TabPage1.Controls.Add(Me.Button4)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.Label2)
@@ -233,17 +230,6 @@ Partial Class Resultados
         Me.TabPage1.Size = New System.Drawing.Size(791, 378)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Resultados "
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.BackColor = System.Drawing.Color.Yellow
-        Me.Button5.Location = New System.Drawing.Point(627, 11)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 23)
-        Me.Button5.TabIndex = 9
-        Me.Button5.Text = "Imprimir"
-        Me.Button5.UseVisualStyleBackColor = False
         '
         'Button4
         '
@@ -264,8 +250,6 @@ Partial Class Resultados
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 40)
@@ -275,27 +259,11 @@ Partial Class Resultados
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de resultados"
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(22, 20)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(105, 13)
-        Me.Label6.TabIndex = 3
-        Me.Label6.Text = "Nombre del paciente"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(25, 36)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(368, 20)
-        Me.TextBox3.TabIndex = 2
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(294, 70)
+        Me.Label3.Location = New System.Drawing.Point(296, 16)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(190, 13)
         Me.Label3.TabIndex = 1
@@ -310,9 +278,9 @@ Partial Class Resultados
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 97)
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 42)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(766, 232)
+        Me.DataGridView1.Size = New System.Drawing.Size(766, 287)
         Me.DataGridView1.TabIndex = 0
         '
         'Label2
@@ -409,11 +377,8 @@ Partial Class Resultados
     Friend WithEvents Button2 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents Button5 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label2 As Label

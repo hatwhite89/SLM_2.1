@@ -26,20 +26,20 @@ Partial Class E_frmEntregaResultados
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.id_orden = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NUMERO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreCompleto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fechaFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,9 +90,45 @@ Partial Class E_frmEntregaResultados
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Resultados"
         '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(713, 47)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 9
+        Me.Button3.Text = "Imprimir"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.Location = New System.Drawing.Point(3, 363)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(794, 22)
+        Me.StatusStrip1.TabIndex = 8
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(589, 21)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(86, 13)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Orden de trabajo"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(592, 38)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(109, 20)
+        Me.TextBox1.TabIndex = 6
+        '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.White
+        Me.Button2.BackColor = System.Drawing.Color.Yellow
         Me.Button2.Location = New System.Drawing.Point(713, 20)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
@@ -151,23 +187,6 @@ Partial Class E_frmEntregaResultados
         Me.DataGridView1.Size = New System.Drawing.Size(789, 251)
         Me.DataGridView1.TabIndex = 0
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(592, 47)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(109, 20)
-        Me.TextBox1.TabIndex = 6
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(589, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(86, 13)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Orden de trabajo"
-        '
         'id_orden
         '
         Me.id_orden.DataPropertyName = "id_orden"
@@ -191,25 +210,6 @@ Partial Class E_frmEntregaResultados
         Me.fechaFactura.DataPropertyName = "fechaFactura"
         Me.fechaFactura.HeaderText = "FECHA FACTURA"
         Me.fechaFactura.Name = "fechaFactura"
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.StatusStrip1.Location = New System.Drawing.Point(3, 363)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(794, 22)
-        Me.StatusStrip1.TabIndex = 8
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(713, 47)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 9
-        Me.Button3.Text = "Imprimir"
-        Me.Button3.UseVisualStyleBackColor = False
         '
         'E_frmEntregaResultados
         '

@@ -18,15 +18,17 @@ Public Class E_frmEntregaResultados
             Dim RptDocument As New E_ReporteResultadoIndividual
             Dim clsc As New ClsOrdenDeTrabajo
             Try
-                RptDocument.SetParameterValue("@id_orden", TextBox1.Text)
+                RptDocument.SetParameterValue("@id_orden", TextBox3.Text)
                 RptDocument.SetDatabaseLogon("sa", "Lbm2019")
                 RptDocument.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Path.Combine(Application.StartupPath, "Resultados\resultado" + TextBox1.Text.ToString + ".pdf"))
-                id_orden_interna_crystal = TextBox1.Text
+                id_orden_interna_crystal = TextBox3.Text
+                enviarMailResultado(clsc.RecuperarCorreo(TextBox3.Text), TextBox3.Text)
+                MsgBox("Resultados enviados al correo " + clsc.RecuperarCorreo(TextBox3.Text).ToString)
             Catch ex As Exception
-
+                MsgBox(ex)
             End Try
-            enviarMailResultado(clsc.RecuperarCorreo(TextBox1.Text), TextBox1.Text)
-            MsgBox("Resultados enviados al correo " + clsc.RecuperarCorreo(TextBox1.Text).ToString)
+
+
         Catch ex As Exception
 
         End Try
@@ -41,7 +43,7 @@ Public Class E_frmEntregaResultados
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        id_orden_interna_crystal = TextBox1.Text
+        id_orden_interna_crystal = TextBox3.Text
         E_frm_ResultadoIndividual.Show()
     End Sub
 End Class

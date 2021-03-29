@@ -47,7 +47,7 @@ Public Class Resultados
     End Sub
 
     Private Sub DataGridView2_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellDoubleClick
-
+        id_orden_interna_crystal = Integer.Parse(DataGridView2.Rows(e.RowIndex).Cells(6).Value)
         id_resultado = Integer.Parse(DataGridView2.Rows(e.RowIndex).Cells(6).Value)
         E_frm_ResultadoIndividual.Show()
 
@@ -62,6 +62,10 @@ Public Class Resultados
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

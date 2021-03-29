@@ -173,7 +173,9 @@ Public Class ClsAlmacen
         sqlcom = New SqlCommand
         sqlcom.CommandText = "select id_almacen,nombre_almacen,descripcion,nombre_encargado,usuario from Almacen where estado <>1"
         sqlcom.Connection = New ClsConnection().getConexion
+
         Return sqlcom.ExecuteReader
+        sqlcom.Connection.Close()
     End Function
 
     Public Function BajarAlmacen() As String
