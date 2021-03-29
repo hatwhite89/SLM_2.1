@@ -4,6 +4,7 @@ Imports System.Text
 Imports System.Globalization
 Imports System.ComponentModel
 Public Class M_Factura
+
     Public letras As String
     Dim subtotalF, descuentoF, abonoF, saldoF As Double
     Dim codigoDetalleFactura As New ArrayList
@@ -2032,12 +2033,12 @@ Public Class M_Factura
                             End If
                             'si inserto el ultimo item 
                             If j = dt.Rows.Count - 2 Then
-                                    MsgBox("Orden de trabajo registrada con éxito.", MsgBoxStyle.Information)
-                                    Exit Sub
-                                End If
+                                MsgBox("Orden de trabajo registrada con éxito.", MsgBoxStyle.Information)
+                                Exit Sub
+                            End If
 
-                            Else
-                                i = j - 1
+                        Else
+                            i = j - 1
                             Exit For
                         End If
                     Next
