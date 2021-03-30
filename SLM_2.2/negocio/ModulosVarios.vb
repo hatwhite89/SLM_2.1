@@ -24,6 +24,8 @@ Module ModulosVarios
             .ShowDialog()
         End With
 
+
+
         If myFileDialog.FileName.ToString <> "" Then
 
             Dim ExcelFile As String = myFileDialog.FileName.ToString
