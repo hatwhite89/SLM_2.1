@@ -24,8 +24,6 @@ Module ModulosVarios
             .ShowDialog()
         End With
 
-
-
         If myFileDialog.FileName.ToString <> "" Then
 
             Dim ExcelFile As String = myFileDialog.FileName.ToString
@@ -51,6 +49,7 @@ Module ModulosVarios
                 tabla.DataMember = "MyData"
 
             Catch ex As Exception
+                MsgBox(ex.Message)
                 MsgBox("Inserte un nombre válido de la Hoja que desea importar.", MsgBoxStyle.Information, "Información")
             Finally
                 conn.Close()
