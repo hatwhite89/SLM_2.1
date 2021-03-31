@@ -100,12 +100,11 @@ Public Class E_frmFirmaDigital
     Public Sub cargarData()
         Try
             'datagridview
-            Dim TableUM As New DataTable
-            Dim clsP As New ClsFirmaDigital
-            TableUM.Load(clsP.RecuperarFirmasDigitales())
-            BindingSource1.DataSource = TableUM
 
-            DataGridView1.DataSource = BindingSource1
+            Dim clsP As New ClsFirmaDigital
+
+
+            DataGridView1.DataSource = clsP.RecuperarFirmasDigitales().DefaultView
         Catch ex As Exception
 
         End Try

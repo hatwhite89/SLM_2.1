@@ -89,10 +89,17 @@ Public Class ClsVentanasModulos
                 Using dt As New DataTable
                     da.Fill(dt)
                     Return dt
+                    cn.Close()
+                    objCon.cerrarConexion()
                 End Using
+                cn.Close()
+                objCon.cerrarConexion()
             End Using
+            cn.Close()
+            objCon.cerrarConexion()
         End Using
-
+        cn.Close()
+        objCon.cerrarConexion()
     End Function
 
     'modificar modulos en base de datos
