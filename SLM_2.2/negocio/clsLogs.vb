@@ -58,4 +58,31 @@ Public Class clsLogs
         Next
         Return ip_
     End Function
+
+    Public Function CargarLogs(fecha1 As DateTime, fecha2 As DateTime) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select * from LogsInicioSesion where fecha between '" + fecha1.ToString("yyyyMMdd") + "'  and '" + fecha2.ToString("yyyyMMdd") + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+    Public Function CargarLogsExcepciones(fecha1 As DateTime, fecha2 As DateTime) As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select u.usuario,l.ventana,l.error,l.fecha from LogsExcepcion l , Usuario u
+where u.cod_usuario = l.usuario and fecha between '" + fecha1.ToString("yyyyMMdd") + "'  and '" + fecha2.ToString("yyyyMMdd") + "'", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 End Class

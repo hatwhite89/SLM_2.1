@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿Imports System.Data.SqlClient
+Imports System.IO
 Imports System.Net.Mail
 
 Module Module1
@@ -175,5 +176,14 @@ Module Module1
 
     End Sub
 
+    Public Sub RegistrarExcepciones(usuario As String, ventana As String, errorE As String)
 
+        Dim sqlcom As SqlCommand
+        sqlcom = New SqlCommand
+        sqlcom.CommandText = "exec Logs_Excepcion @usuario ='" + usuario + "',@ventana='" + ventana + "' , @error='" + errorE + "' "
+        sqlcom.Connection = New ClsConnection().getConexion
+
+        sqlcom.ExecuteReader()
+        sqlcom.Connection.Close()
+    End Sub
 End Module

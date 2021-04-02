@@ -46,7 +46,7 @@
 
             DataGridView1.DataSource = BindingSource1
         Catch ex As Exception
-
+            RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
         End Try
 
     End Sub
@@ -77,7 +77,7 @@
             txtDescripcion.ReadOnly = False
             txtCantidadMinima.ReadOnly = False
         Catch ex As Exception
-
+            RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
         End Try
 
 
@@ -106,6 +106,7 @@
                         .Precio_base1 = txtPrecioProducto.Text
                     End With
                 Catch ex As Exception
+                    RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
                     MsgBox(mensaje_error_actualizacion)
                     Exit Sub
                 End Try
@@ -126,6 +127,7 @@
 
                     End If
                 Catch ex As Exception
+                    RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
                     MsgBox(mensaje_error_registro)
                 End Try
 
@@ -255,6 +257,7 @@
             exLibro = Nothing
             exApp = Nothing
         Catch ex As Exception
+            RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al exportar a Excel")
             Return False
         End Try
@@ -273,6 +276,7 @@
                     cargarData()
                 End If
             Catch ex As Exception
+                RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
                 MsgBox("No ha seleccionado ninguna fila")
             End Try
 

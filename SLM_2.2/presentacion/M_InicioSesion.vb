@@ -1,23 +1,28 @@
 ﻿Public Class M_InicioSesion
+    Public clsL As New clsLogs
     Private Sub btnInicioSesion_Click(sender As Object, e As EventArgs) Handles btnInicioSesion.Click
 
 
         'Login
 
-        If txtusuario.Text <> "" And txtPassword.Text <> "" Then
+        If txtUsuario.Text <> "" And txtPassword.Text <> "" Then
 
-            LOGIN(txtusuario.Text, txtPassword.Text)
+            LOGIN(txtUsuario.Text, txtPassword.Text)
             'Limpiar()
 
 
-        ElseIf txtusuario.Text <> "" And txtPassword.Text = "" Then
+        ElseIf txtUsuario.Text <> "" And txtPassword.Text = "" Then
 
-            LOGINPASS(txtusuario.Text)
+            LOGINPASS(txtUsuario.Text)
 
         Else
 
             MsgBox("Error al ingresar al sistema. Debe ingresar usuario y contraseña.")
-
+            With clsL
+                .Usuario = txtUsuario.Text
+                .Accion = "Intento Fallida De LOGIN"
+            End With
+            clsL.RegistrarInicioSesion()
         End If
 
     End Sub

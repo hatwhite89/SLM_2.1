@@ -1,6 +1,6 @@
 ﻿Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        alternarColoFilasDatagridview(DataGridView1)
 
         Dim cai As New ClsCAI
         Dim numfact, dias As DataTable
@@ -615,7 +615,12 @@
 
     Private Sub bntCerrar_Click(sender As Object, e As EventArgs) Handles bntCerrar.Click
         Try
-
+            Dim clsL As New clsLogs
+            With clsL
+                .Usuario = lblMiUser.Text
+                .Accion = "Salio del sistema"
+            End With
+            clsL.RegistrarInicioSesion()
             Me.Close()
             End
 
@@ -801,24 +806,11 @@
     End Sub
 
     Private Sub PictureBox30_Click_1(sender As Object, e As EventArgs)
-        Try
 
-            M_BuscarCotizacion.Show()
-            M_BuscarCotizacion.BringToFront()
-            M_BuscarCotizacion.WindowState = FormWindowState.Normal
-        Catch ex As Exception
-
-        End Try
     End Sub
 
     Private Sub PictureBox29_Click(sender As Object, e As EventArgs)
-        Try
-            M_BuscarRecibo.Show()
-            M_BuscarRecibo.BringToFront()
-            M_BuscarRecibo.WindowState = FormWindowState.Normal
-        Catch ex As Exception
 
-        End Try
     End Sub
 
     Private Sub PictureBox28_Click(sender As Object, e As EventArgs)
@@ -827,7 +819,7 @@
         M_Apertura.WindowState = FormWindowState.Normal
     End Sub
 
-    Private Sub PictureBox27_Click(sender As Object, e As EventArgs)
+    Private Sub PictureBox27_Click_1(sender As Object, e As EventArgs)
         'Cierre de caja
         Try
             'MsgBox(Form1.lblMiUser.Text)
@@ -844,13 +836,13 @@
         End Try
     End Sub
 
-    Private Sub PictureBox46_Click(sender As Object, e As EventArgs)
+    Private Sub PictureBox46_Click_1(sender As Object, e As EventArgs)
         A_Proveedor.Show()
         A_Proveedor.BringToFront()
         A_Proveedor.WindowState = FormWindowState.Normal
     End Sub
 
-    Private Sub PictureBox34_Click(sender As Object, e As EventArgs)
+    Private Sub PictureBox34_Click_1(sender As Object, e As EventArgs)
         E_DetalleExamenes.Show()
         E_DetalleExamenes.BringToFront()
         E_DetalleExamenes.WindowState = FormWindowState.Normal
@@ -1532,6 +1524,12 @@
             Me.Hide()
             M_InicioSesion.Show()
 
+            Dim clsL As New clsLogs
+            With clsL
+                .Usuario = lblMiUser.Text
+                .Accion = "Cerro sesión"
+            End With
+            clsL.RegistrarInicioSesion()
         Catch ex As Exception
 
         End Try
@@ -1585,5 +1583,204 @@
 
     Private Sub PictureBox4_Click_1(sender As Object, e As EventArgs) Handles PictureBox4.Click
         E_frmImpresoras.Show()
+    End Sub
+
+    Private Sub PictureBox30_Click_2(sender As Object, e As EventArgs) Handles PictureBox30.Click
+        Try
+
+            M_BuscarCotizacion.Show()
+            M_BuscarCotizacion.BringToFront()
+            M_BuscarCotizacion.WindowState = FormWindowState.Normal
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub PictureBox29_Click_1(sender As Object, e As EventArgs) Handles PictureBox29.Click
+        Try
+            M_BuscarRecibo.Show()
+            M_BuscarRecibo.BringToFront()
+            M_BuscarRecibo.WindowState = FormWindowState.Normal
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub PictureBox28_Click_1(sender As Object, e As EventArgs) Handles PictureBox28.Click
+        M_Apertura.Show()
+        M_Apertura.BringToFront()
+        M_Apertura.WindowState = FormWindowState.Normal
+    End Sub
+
+    Private Sub PictureBox27_Click(sender As Object, e As EventArgs) Handles PictureBox27.Click
+        'Cierre de caja
+        Try
+            'MsgBox(Form1.lblMiUser.Text)
+            Dim objReporte As New CierreCaja
+            objReporte.SetParameterValue("Cajero", lblMiUser.Text)
+            objReporte.SetParameterValue("@codigoCajero", Convert.ToInt64(lblUserCod.Text))
+            objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+            M_ImprimirCotizacionForm.CrystalReportViewer1.ReportSource = objReporte
+            M_ImprimirCotizacionForm.Show()
+            M_ImprimirCotizacionForm.BringToFront()
+            M_ImprimirCotizacionForm.WindowState = FormWindowState.Normal
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub PictureBox46_Click(sender As Object, e As EventArgs) Handles PictureBox46.Click
+        A_Proveedor.Show()
+        A_Proveedor.BringToFront()
+        A_Proveedor.WindowState = FormWindowState.Normal
+    End Sub
+
+    Private Sub PictureBox34_Click(sender As Object, e As EventArgs) Handles PictureBox34.Click
+        E_DetalleExamenes.Show()
+        E_DetalleExamenes.BringToFront()
+        E_DetalleExamenes.WindowState = FormWindowState.Normal
+    End Sub
+
+    Private Sub PictureBox33_Click_1(sender As Object, e As EventArgs) Handles PictureBox33.Click
+        E_GrupoExamen.Show()
+        E_GrupoExamen.BringToFront()
+        E_GrupoExamen.WindowState = FormWindowState.Normal
+    End Sub
+
+    Private Sub PictureBox32_Click_1(sender As Object, e As EventArgs) Handles PictureBox32.Click
+        'Arqueo
+        Try
+            'Busca la maquina local
+            Dim objMaq As New ClsMaquinasLocales
+            With objMaq
+                .descripcion_ = System.Environment.MachineName
+            End With
+            Dim dt As New DataTable
+            dt = objMaq.BuscarMaquinasLocalesDesc()
+            Dim row As DataRow = dt.Rows(0)
+            'MsgBox(CStr(row("codigoMaquinasLocales")))
+            'Genera el reporte
+            Dim objReporte As New Cry_Arqueo
+            objReporte.SetParameterValue("@codigoMaquinaLocal", CStr(row("codigo")))
+            objReporte.SetParameterValue("Sucursal", CStr(row("Sucursal")))
+            objReporte.SetParameterValue("MaquinaLocal", CStr(row("codigoMaquinasLocales")))
+            objReporte.DataSourceConnections.Item(0).SetLogon("sa", "Lbm2019")
+            M_ImprimirCotizacionForm.CrystalReportViewer1.ReportSource = objReporte
+            M_ImprimirCotizacionForm.Show()
+            M_ImprimirCotizacionForm.BringToFront()
+            M_ImprimirCotizacionForm.WindowState = FormWindowState.Normal
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub pbxCategoriaCliente_Click_1(sender As Object, e As EventArgs) Handles pbxCategoriaCliente.Click
+        Try
+            M_Categoria.lblform.Text = "Form1"
+            M_Categoria.Show()
+            M_Categoria.BringToFront()
+            M_Categoria.WindowState = FormWindowState.Normal
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub PictureBox52_Click_1(sender As Object, e As EventArgs) Handles PictureBox52.Click
+        M_TerminosPago.Show()
+        M_TerminosPago.BringToFront()
+        M_TerminosPago.WindowState = FormWindowState.Normal
+    End Sub
+
+    Private Sub PictureBox51_Click_1(sender As Object, e As EventArgs) Handles PictureBox51.Click
+        M_Cliente.Show()
+        M_Cliente.BringToFront()
+        M_Cliente.WindowState = FormWindowState.Normal
+    End Sub
+
+    Private Sub PictureBox50_Click_1(sender As Object, e As EventArgs) Handles PictureBox50.Click
+        M_MaquinasLocales.lblform.Text = "Form1"
+        M_MaquinasLocales.Show()
+        M_MaquinasLocales.BringToFront()
+        M_MaquinasLocales.WindowState = FormWindowState.Normal
+    End Sub
+
+    Private Sub PictureBox47_Click_1(sender As Object, e As EventArgs) Handles PictureBox47.Click
+        M_DiarioFacturacion.lblForm.Text = "M_DiarioFacturacion"
+        M_DiarioFacturacion.Show()
+        M_DiarioFacturacion.BringToFront()
+        M_DiarioFacturacion.WindowState = FormWindowState.Normal
+    End Sub
+
+    Private Sub pbxTipoClasificacion_Click_1(sender As Object, e As EventArgs) Handles pbxTipoClasificacion.Click
+        Try
+            M_TipoClasificacion.lbltipo.Text = "Form1"
+            M_TipoClasificacion.Show()
+            M_TipoClasificacion.BringToFront()
+            M_TipoClasificacion.WindowState = FormWindowState.Normal
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Dim clsL As New clsLogs
+        With clsL
+            .Usuario = lblMiUser.Text
+            .Accion = "Salio del sistema"
+        End With
+        clsL.RegistrarInicioSesion()
+
+    End Sub
+
+    Private Sub Button4_Click_2(sender As Object, e As EventArgs) Handles Button4.Click
+        E_frmLogsInicioSesion.Show()
+    End Sub
+
+    Private Sub Button8_Click_1(sender As Object, e As EventArgs) Handles Button8.Click
+        E_frmLogsExcepcion.Show()
+    End Sub
+
+    Private Sub Button9_Click_1(sender As Object, e As EventArgs) Handles Button9.Click
+        Try
+            alternarColoFilasDatagridview(DataGridView1)
+            cargarReporteAlmacen()
+            DataGridView1.Columns(2).Visible = False
+            DataGridView1.Columns(0).Visible = False
+            DataGridView1.Columns(1).ReadOnly = True
+        Catch ex As Exception
+            RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
+        End Try
+
+    End Sub
+    Public Sub cargarReporteAlmacen()
+        Try
+            Dim clsDeOC As New ClsAlmacen
+            Dim dvOC As DataView = clsDeOC.CargarReportes().DefaultView
+            DataGridView1.DataSource = dvOC
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
+        Try
+            Dim asm = System.Reflection.Assembly.GetExecutingAssembly
+
+
+            Dim test As String = DataGridView1.Rows(e.RowIndex).Cells(2).Value
+
+            Dim myTypes As Type() = asm.GetTypes()
+            Dim frm As Form
+
+            For Each t As Type In myTypes
+                If t.IsSubclassOf(GetType(System.Windows.Forms.Form)) AndAlso test = t.Name Then
+                    frm = CType(Activator.CreateInstance(t), Form)
+                    frm.Show()
+                End If
+            Next
+        Catch ex As Exception
+            RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
+        End Try
+
     End Sub
 End Class
