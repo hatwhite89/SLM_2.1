@@ -194,4 +194,20 @@
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
+
+    Private Sub btnBuscarCuenta_Click(sender As Object, e As EventArgs) Handles btnBuscarCuenta.Click
+        Try
+
+            A_ListarCuentas.lblForm.Text = "CC"
+            A_ListarCuentas.Show()
+            A_ListarCuentas.BringToFront()
+            A_ListarCuentas.WindowState = WindowState.Normal
+
+
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class
