@@ -285,6 +285,7 @@
     <Compile Include="negocio\ClsConserje.vb" />
     <Compile Include="negocio\ClsContratos.vb" />
     <Compile Include="negocio\clsCorreoResultado.vb" />
+    <Compile Include="negocio\ClsCuentasAlmacen.vb" />
     <Compile Include="negocio\ClsDepartamento.vb" />
     <Compile Include="negocio\ClsDepreciacion.vb" />
     <Compile Include="negocio\ClsDescripcionResultado.vb" />
@@ -822,6 +823,24 @@
     <Compile Include="presentacion\E_frmCategoriaProducto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frmConfiguracionCorreoResultado.Designer.vb">
+      <DependentUpon>E_frmConfiguracionCorreoResultado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmConfiguracionCorreoResultado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmCrearXML.Designer.vb">
+      <DependentUpon>E_frmCrearXML.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmCrearXML.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmCuentaAlmacen.Designer.vb">
+      <DependentUpon>E_frmCuentaAlmacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmCuentaAlmacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_frmCurva.Designer.vb">
       <DependentUpon>E_frmCurva.vb</DependentUpon>
     </Compile>
@@ -942,6 +961,12 @@
     <Compile Include="presentacion\E_frmTipoMovientoAlmacen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frmTomaDeMuestra.Designer.vb">
+      <DependentUpon>E_frmTomaDeMuestra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmTomaDeMuestra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_frmUbicacion.Designer.vb">
       <DependentUpon>E_frmUbicacion.vb</DependentUpon>
     </Compile>
@@ -958,6 +983,12 @@
       <DependentUpon>E_frmUsuariosAlmacen.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\E_frmUsuariosAlmacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmUsuariosTM.Designer.vb">
+      <DependentUpon>E_frmUsuariosTM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmUsuariosTM.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_frm_BIProveedores.Designer.vb">
@@ -1735,10 +1766,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\CrystalReport1.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Reportes\reporteCentroCostos.Designer.vb">
       <DependentUpon>reporteCentroCostos.vb</DependentUpon>
@@ -2104,6 +2135,15 @@
     <EmbeddedResource Include="presentacion\E_frmCategoriaProducto.resx">
       <DependentUpon>E_frmCategoriaProducto.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmConfiguracionCorreoResultado.resx">
+      <DependentUpon>E_frmConfiguracionCorreoResultado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmCrearXML.resx">
+      <DependentUpon>E_frmCrearXML.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmCuentaAlmacen.resx">
+      <DependentUpon>E_frmCuentaAlmacen.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmCurva.resx">
       <DependentUpon>E_frmCurva.vb</DependentUpon>
     </EmbeddedResource>
@@ -2164,6 +2204,9 @@
     <EmbeddedResource Include="presentacion\E_frmTipoMovientoAlmacen.resx">
       <DependentUpon>E_frmTipoMovientoAlmacen.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmTomaDeMuestra.resx">
+      <DependentUpon>E_frmTomaDeMuestra.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmUbicacion.resx">
       <DependentUpon>E_frmUbicacion.vb</DependentUpon>
     </EmbeddedResource>
@@ -2172,6 +2215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmUsuariosAlmacen.resx">
       <DependentUpon>E_frmUsuariosAlmacen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmUsuariosTM.resx">
+      <DependentUpon>E_frmUsuariosTM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frm_BIProveedores.resx">
       <DependentUpon>E_frm_BIProveedores.vb</DependentUpon>

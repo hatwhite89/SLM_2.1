@@ -68,8 +68,12 @@ Partial Class E_frmProducto
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,6 +86,10 @@ Partial Class E_frmProducto
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.Label14)
+        Me.GroupBox1.Controls.Add(Me.Label13)
+        Me.GroupBox1.Controls.Add(Me.ComboBox2)
+        Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.txtPrecioProducto)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.txtCantidadMinima)
@@ -103,25 +111,25 @@ Partial Class E_frmProducto
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.GroupBox1.Location = New System.Drawing.Point(8, 47)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(694, 228)
+        Me.GroupBox1.Size = New System.Drawing.Size(825, 228)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Generales"
         '
         'txtPrecioProducto
         '
-        Me.txtPrecioProducto.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtPrecioProducto.Location = New System.Drawing.Point(421, 109)
+        Me.txtPrecioProducto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtPrecioProducto.Location = New System.Drawing.Point(575, 123)
         Me.txtPrecioProducto.Name = "txtPrecioProducto"
         Me.txtPrecioProducto.ReadOnly = True
-        Me.txtPrecioProducto.Size = New System.Drawing.Size(240, 20)
+        Me.txtPrecioProducto.Size = New System.Drawing.Size(124, 20)
         Me.txtPrecioProducto.TabIndex = 29
         '
         'Label10
         '
+        Me.Label10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(317, 113)
+        Me.Label10.Location = New System.Drawing.Point(576, 105)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(37, 13)
         Me.Label10.TabIndex = 28
@@ -131,16 +139,16 @@ Partial Class E_frmProducto
         '
         Me.txtCantidadMinima.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtCantidadMinima.Location = New System.Drawing.Point(421, 82)
+        Me.txtCantidadMinima.Location = New System.Drawing.Point(320, 121)
         Me.txtCantidadMinima.Name = "txtCantidadMinima"
         Me.txtCantidadMinima.ReadOnly = True
-        Me.txtCantidadMinima.Size = New System.Drawing.Size(240, 20)
+        Me.txtCantidadMinima.Size = New System.Drawing.Size(124, 20)
         Me.txtCantidadMinima.TabIndex = 27
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(317, 86)
+        Me.Label12.Location = New System.Drawing.Point(317, 105)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(85, 13)
         Me.Label12.TabIndex = 26
@@ -185,9 +193,9 @@ Partial Class E_frmProducto
         Me.cmbUnidadMedida.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmbUnidadMedida.FormattingEnabled = True
-        Me.cmbUnidadMedida.Location = New System.Drawing.Point(421, 51)
+        Me.cmbUnidadMedida.Location = New System.Drawing.Point(320, 75)
         Me.cmbUnidadMedida.Name = "cmbUnidadMedida"
-        Me.cmbUnidadMedida.Size = New System.Drawing.Size(240, 21)
+        Me.cmbUnidadMedida.Size = New System.Drawing.Size(124, 21)
         Me.cmbUnidadMedida.TabIndex = 15
         '
         'cmbCategoria
@@ -195,15 +203,15 @@ Partial Class E_frmProducto
         Me.cmbCategoria.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmbCategoria.FormattingEnabled = True
-        Me.cmbCategoria.Location = New System.Drawing.Point(421, 20)
+        Me.cmbCategoria.Location = New System.Drawing.Point(320, 32)
         Me.cmbCategoria.Name = "cmbCategoria"
-        Me.cmbCategoria.Size = New System.Drawing.Size(240, 21)
+        Me.cmbCategoria.Size = New System.Drawing.Size(124, 21)
         Me.cmbCategoria.TabIndex = 14
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(317, 54)
+        Me.Label6.Location = New System.Drawing.Point(317, 59)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(93, 13)
         Me.Label6.TabIndex = 13
@@ -212,7 +220,7 @@ Partial Class E_frmProducto
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(317, 23)
+        Me.Label5.Location = New System.Drawing.Point(317, 16)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(100, 13)
         Me.Label5.TabIndex = 12
@@ -221,7 +229,7 @@ Partial Class E_frmProducto
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(317, 133)
+        Me.Label3.Location = New System.Drawing.Point(317, 149)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(109, 13)
         Me.Label3.TabIndex = 8
@@ -249,9 +257,9 @@ Partial Class E_frmProducto
         '
         Me.txtDescripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtDescripcion.Location = New System.Drawing.Point(320, 149)
+        Me.txtDescripcion.Location = New System.Drawing.Point(320, 166)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(368, 62)
+        Me.txtDescripcion.Size = New System.Drawing.Size(499, 45)
         Me.txtDescripcion.TabIndex = 2
         Me.txtDescripcion.Text = ""
         '
@@ -276,7 +284,7 @@ Partial Class E_frmProducto
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.BackColor = System.Drawing.Color.LightSalmon
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Location = New System.Drawing.Point(634, 8)
+        Me.Button3.Location = New System.Drawing.Point(765, 8)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(72, 23)
         Me.Button3.TabIndex = 5
@@ -288,7 +296,7 @@ Partial Class E_frmProducto
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(472, 8)
+        Me.Button2.Location = New System.Drawing.Point(603, 8)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(76, 23)
         Me.Button2.TabIndex = 4
@@ -300,7 +308,7 @@ Partial Class E_frmProducto
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.BackColor = System.Drawing.Color.LawnGreen
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(553, 8)
+        Me.Button1.Location = New System.Drawing.Point(684, 8)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 3
@@ -320,7 +328,7 @@ Partial Class E_frmProducto
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
         Me.GroupBox2.Location = New System.Drawing.Point(8, 281)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(694, 219)
+        Me.GroupBox2.Size = New System.Drawing.Size(825, 219)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Buscador"
@@ -341,7 +349,7 @@ Partial Class E_frmProducto
         Me.Button4.BackColor = System.Drawing.Color.Green
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button4.Location = New System.Drawing.Point(613, 25)
+        Me.Button4.Location = New System.Drawing.Point(744, 25)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 7
@@ -363,7 +371,7 @@ Partial Class E_frmProducto
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtBuscar.Location = New System.Drawing.Point(239, 23)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(248, 20)
+        Me.txtBuscar.Size = New System.Drawing.Size(379, 20)
         Me.txtBuscar.TabIndex = 1
         '
         'DataGridView1
@@ -408,7 +416,7 @@ Partial Class E_frmProducto
         Me.DataGridView1.RowHeadersWidth = 51
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridView1.Size = New System.Drawing.Size(682, 140)
+        Me.DataGridView1.Size = New System.Drawing.Size(813, 140)
         Me.DataGridView1.TabIndex = 0
         '
         'id_producto
@@ -477,7 +485,7 @@ Partial Class E_frmProducto
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(712, 37)
+        Me.Panel1.Size = New System.Drawing.Size(843, 37)
         Me.Panel1.TabIndex = 3
         '
         'Button5
@@ -485,7 +493,7 @@ Partial Class E_frmProducto
         Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button5.BackColor = System.Drawing.Color.LightCoral
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Location = New System.Drawing.Point(391, 8)
+        Me.Button5.Location = New System.Drawing.Point(522, 8)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
         Me.Button5.TabIndex = 7
@@ -510,16 +518,54 @@ Partial Class E_frmProducto
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 503)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 10, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(712, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(843, 22)
         Me.StatusStrip1.TabIndex = 4
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(575, 38)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(230, 21)
+        Me.ComboBox1.TabIndex = 30
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(575, 78)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(230, 21)
+        Me.ComboBox2.TabIndex = 31
+        '
+        'Label13
+        '
+        Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(572, 20)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(84, 13)
+        Me.Label13.TabIndex = 32
+        Me.Label13.Text = "Cuenta Principal"
+        '
+        'Label14
+        '
+        Me.Label14.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(572, 62)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(41, 13)
+        Me.Label14.TabIndex = 33
+        Me.Label14.Text = "Cuenta"
         '
         'E_frmProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(712, 525)
+        Me.ClientSize = New System.Drawing.Size(843, 525)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)
@@ -582,4 +628,8 @@ Partial Class E_frmProducto
     Friend WithEvents Button4 As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents Button5 As Button
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents ComboBox1 As ComboBox
 End Class
