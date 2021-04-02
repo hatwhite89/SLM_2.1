@@ -31,6 +31,10 @@ Partial Class A_CentrodeCosto
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnBuscarCuenta = New System.Windows.Forms.Button()
+        Me.codCuenta = New System.Windows.Forms.Label()
+        Me.txtNombreCuenta = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.txtCodBreve = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
@@ -48,10 +52,7 @@ Partial Class A_CentrodeCosto
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnBuscarCuenta = New System.Windows.Forms.Button()
-        Me.codCuenta = New System.Windows.Forms.Label()
-        Me.txtNombreCuenta = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.codCuentaColm = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -169,6 +170,44 @@ Partial Class A_CentrodeCosto
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Centro de Costo"
         '
+        'btnBuscarCuenta
+        '
+        Me.btnBuscarCuenta.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnBuscarCuenta.Location = New System.Drawing.Point(518, 101)
+        Me.btnBuscarCuenta.Name = "btnBuscarCuenta"
+        Me.btnBuscarCuenta.Size = New System.Drawing.Size(29, 20)
+        Me.btnBuscarCuenta.TabIndex = 13
+        Me.btnBuscarCuenta.Text = "..."
+        Me.btnBuscarCuenta.UseVisualStyleBackColor = True
+        '
+        'codCuenta
+        '
+        Me.codCuenta.AutoSize = True
+        Me.codCuenta.Enabled = False
+        Me.codCuenta.Location = New System.Drawing.Point(21, 105)
+        Me.codCuenta.Name = "codCuenta"
+        Me.codCuenta.Size = New System.Drawing.Size(59, 13)
+        Me.codCuenta.TabIndex = 12
+        Me.codCuenta.Text = "codCuenta"
+        '
+        'txtNombreCuenta
+        '
+        Me.txtNombreCuenta.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtNombreCuenta.Location = New System.Drawing.Point(125, 101)
+        Me.txtNombreCuenta.Name = "txtNombreCuenta"
+        Me.txtNombreCuenta.Size = New System.Drawing.Size(389, 20)
+        Me.txtNombreCuenta.TabIndex = 11
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(78, 104)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(41, 13)
+        Me.Label7.TabIndex = 10
+        Me.Label7.Text = "Cuenta"
+        '
         'txtCodBreve
         '
         Me.txtCodBreve.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -282,7 +321,7 @@ Partial Class A_CentrodeCosto
         Me.dgvCentroCosto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvCentroCosto.BackgroundColor = System.Drawing.Color.White
         Me.dgvCentroCosto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCentroCosto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column5, Me.Column2, Me.Column3, Me.Column4})
+        Me.dgvCentroCosto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column5, Me.Column2, Me.Column3, Me.Column4, Me.codCuentaColm})
         Me.dgvCentroCosto.Location = New System.Drawing.Point(6, 19)
         Me.dgvCentroCosto.Name = "dgvCentroCosto"
         Me.dgvCentroCosto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -316,43 +355,10 @@ Partial Class A_CentrodeCosto
         Me.Column4.Name = "Column4"
         Me.Column4.Visible = False
         '
-        'btnBuscarCuenta
+        'codCuentaColm
         '
-        Me.btnBuscarCuenta.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnBuscarCuenta.Location = New System.Drawing.Point(518, 101)
-        Me.btnBuscarCuenta.Name = "btnBuscarCuenta"
-        Me.btnBuscarCuenta.Size = New System.Drawing.Size(29, 20)
-        Me.btnBuscarCuenta.TabIndex = 13
-        Me.btnBuscarCuenta.Text = "..."
-        Me.btnBuscarCuenta.UseVisualStyleBackColor = True
-        '
-        'codCuenta
-        '
-        Me.codCuenta.AutoSize = True
-        Me.codCuenta.Enabled = False
-        Me.codCuenta.Location = New System.Drawing.Point(21, 105)
-        Me.codCuenta.Name = "codCuenta"
-        Me.codCuenta.Size = New System.Drawing.Size(59, 13)
-        Me.codCuenta.TabIndex = 12
-        Me.codCuenta.Text = "codCuenta"
-        '
-        'txtNombreCuenta
-        '
-        Me.txtNombreCuenta.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtNombreCuenta.Location = New System.Drawing.Point(125, 101)
-        Me.txtNombreCuenta.Name = "txtNombreCuenta"
-        Me.txtNombreCuenta.Size = New System.Drawing.Size(389, 20)
-        Me.txtNombreCuenta.TabIndex = 11
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(78, 104)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(41, 13)
-        Me.Label7.TabIndex = 10
-        Me.Label7.Text = "Cuenta"
+        Me.codCuentaColm.HeaderText = "codCuenta"
+        Me.codCuentaColm.Name = "codCuentaColm"
         '
         'A_CentrodeCosto
         '
@@ -399,13 +405,14 @@ Partial Class A_CentrodeCosto
     Friend WithEvents dgvCentroCosto As DataGridView
     Friend WithEvents txtCodBreve As TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents btnBuscarCuenta As Button
+    Friend WithEvents codCuenta As Label
+    Friend WithEvents txtNombreCuenta As TextBox
+    Friend WithEvents Label7 As Label
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents btnBuscarCuenta As Button
-    Friend WithEvents codCuenta As Label
-    Friend WithEvents txtNombreCuenta As TextBox
-    Friend WithEvents Label7 As Label
+    Friend WithEvents codCuentaColm As DataGridViewTextBoxColumn
 End Class

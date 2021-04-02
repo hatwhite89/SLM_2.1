@@ -33,7 +33,7 @@
 
                 rowA = dtA.Rows(0)
 
-                dgvCentroCosto.Rows.Add(CStr(rowCC("id_centrocosto")), rowCC("codBreve"), rowCC("nombre"), rowA("nombre"), CStr(rowA("codigo")))
+                dgvCentroCosto.Rows.Add(CStr(rowCC("id_centrocosto")), rowCC("codBreve"), rowCC("nombre"), rowA("nombre"), CStr(rowA("codigo")), CStr(rowCC("codCuenta")))
 
             Next
 
@@ -202,9 +202,6 @@
             A_ListarCuentas.Show()
             A_ListarCuentas.BringToFront()
             A_ListarCuentas.WindowState = WindowState.Normal
-
-
-
 
         Catch ex As Exception
 
