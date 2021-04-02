@@ -3,7 +3,7 @@
 Public Class ClsProducto
     'variables
     Dim id, unidad_medida, ubicacion, categoria As Integer
-    Dim nombre, marca, modelo, descripcion As String
+    Dim nombre, marca, modelo, descripcion, cuenta, cuenta2, nombrecuenta, nombrecuenta2 As String
     Dim precio_base As Double
     Dim cantidad_minima, existencia As Integer
 
@@ -109,6 +109,42 @@ Public Class ClsProducto
         End Get
         Set(value As Double)
             precio_base = value
+        End Set
+    End Property
+
+    Public Property Cuenta1 As String
+        Get
+            Return cuenta
+        End Get
+        Set(value As String)
+            cuenta = value
+        End Set
+    End Property
+
+    Public Property Cuenta21 As String
+        Get
+            Return cuenta2
+        End Get
+        Set(value As String)
+            cuenta2 = value
+        End Set
+    End Property
+
+    Public Property Nombrecuenta1 As String
+        Get
+            Return nombrecuenta
+        End Get
+        Set(value As String)
+            nombrecuenta = value
+        End Set
+    End Property
+
+    Public Property Nombrecuenta21 As String
+        Get
+            Return nombrecuenta2
+        End Get
+        Set(value As String)
+            nombrecuenta2 = value
         End Set
     End Property
 
@@ -229,6 +265,27 @@ Public Class ClsProducto
         sqlpar.ParameterName = "modelo"
         sqlpar.Value = ModeloProducto
         sqlcom.Parameters.Add(sqlpar)
+        'cuentas del laboratorio
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nombreCP"
+        sqlpar.Value = Nombrecuenta1
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cuentaCP"
+        sqlpar.Value = Cuenta1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nombreSP"
+        sqlpar.Value = Nombrecuenta21
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cuentaSP"
+        sqlpar.Value = Cuenta21
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "descripcion"
@@ -315,6 +372,27 @@ Public Class ClsProducto
         sqlpar.Value = CantidadMinimaProducto
         sqlcom.Parameters.Add(sqlpar)
 
+        'cuentas del laboratorio
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nombreCP"
+        sqlpar.Value = Nombrecuenta1
+        sqlcom.Parameters.Add(sqlpar)
+
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cuentaCP"
+        sqlpar.Value = Cuenta1
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "nombreSP"
+        sqlpar.Value = Nombrecuenta21
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "cuentaSP"
+        sqlpar.Value = Cuenta21
+        sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "id_unidad_medida"
