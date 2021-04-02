@@ -1574,11 +1574,11 @@
     End Sub
 
     Private Sub btnTomaMuestra_Click(sender As Object, e As EventArgs) Handles btnTomaMuestra.Click
-        E_frmTomaDeMuestra.Show()
+        'E_frmTomaDeMuestra.Show()
     End Sub
 
     Private Sub PictureBox3_Click_1(sender As Object, e As EventArgs) Handles PictureBox3.Click
-        E_frmUsuariosTM.Show()
+        ' E_frmUsuariosTM.Show()
     End Sub
 
     Private Sub PictureBox4_Click_1(sender As Object, e As EventArgs) Handles PictureBox4.Click
