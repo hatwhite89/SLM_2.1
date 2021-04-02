@@ -172,6 +172,7 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -2686,6 +2687,15 @@
     <None Include="Resources\Definite-c47a609e-37f4-4678-9cb8-79a06e5845bb.wav" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="ACTIVEXLib">
+      <Guid>{D9CFF027-8E95-432E-B6C8-31752DAEAD71}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="AxWMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -2700,6 +2710,15 @@
       <VersionMinor>8</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSOLAPUI80">
+      <Guid>{EA905CA2-B033-4184-9BB6-29CE0D6F3F04}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
@@ -2838,6 +2857,8 @@
     <None Include="Resources\almacen-061.png" />
     <None Include="Resources\almacen-081.png" />
     <None Include="Resources\almacen-071.png" />
+    <Content Include="EnvDTE.dll" />
+    <Content Include="EnvDTE80.dll" />
     <Content Include="logo sistema-100.ico" />
     <Content Include="Resources\facturacion-49.png" />
     <None Include="Resources\facturacion-491.png" />
@@ -2850,6 +2871,7 @@
     <None Include="Resources\facturacion-57.png" />
     <None Include="Resources\solicitudes-191.png" />
     <None Include="Resources\proveedores-21.png" />
+    <Content Include="ShockwaveFlashObjects.dll" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -2864,7 +2886,6 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="UIDC.dll" />
     <Content Include="índice%281%29.ico" />
     <Content Include="índice.ico" />
   </ItemGroup>

@@ -28,6 +28,7 @@ Module ModulosVarios
 
             Dim ExcelFile As String = myFileDialog.FileName.ToString
 
+
             Dim ds As New DataSet
             Dim da As OleDbDataAdapter
             Dim dt As DataTable
@@ -49,6 +50,7 @@ Module ModulosVarios
                 tabla.DataMember = "MyData"
 
             Catch ex As Exception
+                MsgBox(ex.Message)
                 MsgBox("Inserte un nombre válido de la Hoja que desea importar.", MsgBoxStyle.Information, "Información")
             Finally
                 conn.Close()
