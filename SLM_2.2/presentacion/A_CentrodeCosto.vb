@@ -49,7 +49,7 @@
             .nombre_ = txtNombre.Text
             .cod_area_ = Integer.Parse(lblcodArea.Text)
             .codBreve_ = txtCodBreve.Text
-
+            .cod_Cuenta = Integer.Parse(codCuenta.Text)
             If .RegistrarNuevoCentroCosto = 1 Then
                 MsgBox("Se registro un nuevo Centro de Costo.")
 
@@ -67,7 +67,7 @@
             .nombre_ = txtNombre.Text
             .cod_area_ = Integer.Parse(lblcodArea.Text)
             .codBreve_ = txtCodBreve.Text
-
+            .cod_Cuenta = Integer.Parse(codCuenta.Text)
             If .ActualizarCentroCosto = 1 Then
                 MsgBox("Se actualizo el Centro de Costo.")
 
@@ -167,6 +167,9 @@
             txtCodBreve.Text = dgvCentroCosto.Rows(e.RowIndex).Cells(1).Value.ToString
             txtNombre.Text = dgvCentroCosto.Rows(e.RowIndex).Cells(2).Value
             lblcodArea.Text = dgvCentroCosto.Rows(e.RowIndex).Cells(4).Value
+            codCuenta.Text = dgvCentroCosto.Rows(e.RowIndex).Cells(5).Value
+
+
 
             'Area
             Dim objarea As New ClsGrupoExamen
@@ -182,6 +185,24 @@
                 txtNombreArea.Text = row("nombre")
 
             End With
+
+            'Cuenta
+
+            Dim cuenta As New ClsCuenta
+            Dim dtCuenta As New DataTable
+            Dim rowCuenta As DataRow
+
+            With cuenta
+
+                .Cod_Cuenta = Integer.Parse(codCuenta.Text)
+                dtCuenta = .BuscarCuentaCode
+                rowCuenta = dtCuenta.Rows(0)
+
+                txtNombreCuenta.Text = rowCuenta("codCuenta")
+
+            End With
+
+
 
             GroupBox1.Enabled = True
             btnModificar.Enabled = True
