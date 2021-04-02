@@ -6,6 +6,7 @@ Public Class ClsArea
     'Constructor
     Public Sub New()
 
+
     End Sub
     Public Property codigo_ As Integer
         Get
