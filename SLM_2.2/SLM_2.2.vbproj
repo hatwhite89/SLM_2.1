@@ -821,18 +821,6 @@
     <Compile Include="presentacion\E_frmCategoriaProducto.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\E_frmConfiguracionCorreoResultado.Designer.vb">
-      <DependentUpon>E_frmConfiguracionCorreoResultado.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\E_frmConfiguracionCorreoResultado.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="presentacion\E_frmCrearXML.Designer.vb">
-      <DependentUpon>E_frmCrearXML.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\E_frmCrearXML.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="presentacion\E_frmCurva.Designer.vb">
       <DependentUpon>E_frmCurva.vb</DependentUpon>
     </Compile>
@@ -2114,12 +2102,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmCategoriaProducto.resx">
       <DependentUpon>E_frmCategoriaProducto.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\E_frmConfiguracionCorreoResultado.resx">
-      <DependentUpon>E_frmConfiguracionCorreoResultado.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\E_frmCrearXML.resx">
-      <DependentUpon>E_frmCrearXML.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmCurva.resx">
       <DependentUpon>E_frmCurva.vb</DependentUpon>
