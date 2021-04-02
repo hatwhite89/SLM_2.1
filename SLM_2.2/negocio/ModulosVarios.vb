@@ -228,11 +228,16 @@ Module ModulosVarios
 
             Dim dt As New DataTable
             Dim row As DataRow
-
+            Dim clsL As New clsLogs
             dt = usuario.Login
 
             If dt.Rows.Count < 0 Then 'Verificar existencia
                 MsgBox("Error al ingresar. Verifique usuario y contraseña.")
+                With clsL
+                    .Usuario = User
+                    .Accion = "Intento Fallida De LOGIN"
+                End With
+                clsL.RegistrarInicioSesion()
             Else
                 row = dt.Rows(0)
                 If row("estado") = 0 Then
@@ -240,6 +245,12 @@ Module ModulosVarios
                     MsgBox("Su usuario ha sido deshabilitado. Contactar al administrador")
 
                 Else
+                    With clsL
+                        .Usuario = User
+                        .Accion = "Intento Exitoso De LOGIN"
+                    End With
+                    clsL.RegistrarInicioSesion()
+
                     _1A_PantallaCarga.Show()
 
                     Form1.lblMiUser.Text = User

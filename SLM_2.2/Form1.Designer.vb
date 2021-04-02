@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnContabilidad = New System.Windows.Forms.Button()
         Me.btnAlmacen = New System.Windows.Forms.Button()
         Me.btnTalentoHumano = New System.Windows.Forms.Button()
@@ -145,6 +146,9 @@ Partial Class Form1
         Me.btnUsuarios = New System.Windows.Forms.PictureBox()
         Me.btnPerfiles = New System.Windows.Forms.PictureBox()
         Me.btnServidorCorreo = New System.Windows.Forms.PictureBox()
+        Me.TabPage14 = New System.Windows.Forms.TabPage()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Button17 = New System.Windows.Forms.Button()
         Me.PanelSistema = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -186,6 +190,10 @@ Partial Class Form1
         Me.PictureBox86 = New System.Windows.Forms.PictureBox()
         Me.PictureBox53 = New System.Windows.Forms.PictureBox()
         Me.PictureBox61 = New System.Windows.Forms.PictureBox()
+        Me.TabPage15 = New System.Windows.Forms.TabPage()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.lblMiUser = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -199,14 +207,15 @@ Partial Class Form1
         Me.PanelTM = New System.Windows.Forms.Panel()
         Me.TabControl6 = New System.Windows.Forms.TabControl()
         Me.TabPage13 = New System.Windows.Forms.TabPage()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.btnTomaMuestra = New System.Windows.Forms.PictureBox()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PictureBox55 = New System.Windows.Forms.PictureBox()
         Me.pbxNoti = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.reporte = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.tcMenu.SuspendLayout()
@@ -301,6 +310,7 @@ Partial Class Form1
         CType(Me.btnUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnPerfiles, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnServidorCorreo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage14.SuspendLayout()
         Me.PanelSistema.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.PanelAlmacen.SuspendLayout()
@@ -333,16 +343,18 @@ Partial Class Form1
         CType(Me.PictureBox86, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox61, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage15.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel9.SuspendLayout()
         Me.PanelTM.SuspendLayout()
         Me.TabControl6.SuspendLayout()
         Me.TabPage13.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnTomaMuestra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel10.SuspendLayout()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnContabilidad
@@ -1726,6 +1738,7 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl3.Controls.Add(Me.TabPage6)
+        Me.TabControl3.Controls.Add(Me.TabPage14)
         Me.TabControl3.Location = New System.Drawing.Point(1, 37)
         Me.TabControl3.Name = "TabControl3"
         Me.TabControl3.SelectedIndex = 0
@@ -1795,6 +1808,38 @@ Partial Class Form1
         Me.btnServidorCorreo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btnServidorCorreo.TabIndex = 44
         Me.btnServidorCorreo.TabStop = False
+        '
+        'TabPage14
+        '
+        Me.TabPage14.BackColor = System.Drawing.Color.AliceBlue
+        Me.TabPage14.Controls.Add(Me.Button8)
+        Me.TabPage14.Controls.Add(Me.Button4)
+        Me.TabPage14.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage14.Name = "TabPage14"
+        Me.TabPage14.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage14.Size = New System.Drawing.Size(578, 470)
+        Me.TabPage14.TabIndex = 4
+        Me.TabPage14.Text = "Logs"
+        '
+        'Button8
+        '
+        Me.Button8.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button8.Location = New System.Drawing.Point(168, 21)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(103, 94)
+        Me.Button8.TabIndex = 52
+        Me.Button8.Text = "Log Excepciones"
+        Me.Button8.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button4.Location = New System.Drawing.Point(17, 20)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(103, 94)
+        Me.Button4.TabIndex = 51
+        Me.Button4.Text = "Log Login"
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Button17
         '
@@ -1912,6 +1957,7 @@ Partial Class Form1
         Me.TabControl5.Controls.Add(Me.TabPage7)
         Me.TabControl5.Controls.Add(Me.TabPage8)
         Me.TabControl5.Controls.Add(Me.TabPage12)
+        Me.TabControl5.Controls.Add(Me.TabPage15)
         Me.TabControl5.Location = New System.Drawing.Point(1, 37)
         Me.TabControl5.Name = "TabControl5"
         Me.TabControl5.SelectedIndex = 0
@@ -2292,6 +2338,52 @@ Partial Class Form1
         Me.PictureBox61.TabIndex = 38
         Me.PictureBox61.TabStop = False
         '
+        'TabPage15
+        '
+        Me.TabPage15.BackColor = System.Drawing.Color.AliceBlue
+        Me.TabPage15.Controls.Add(Me.Label9)
+        Me.TabPage15.Controls.Add(Me.Button9)
+        Me.TabPage15.Controls.Add(Me.DataGridView1)
+        Me.TabPage15.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage15.Name = "TabPage15"
+        Me.TabPage15.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage15.Size = New System.Drawing.Size(577, 470)
+        Me.TabPage15.TabIndex = 5
+        Me.TabPage15.Text = "Reportes"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(192, 56)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(177, 13)
+        Me.Label9.TabIndex = 2
+        Me.Label9.Text = "Doble clic para cargar reporte"
+        '
+        'Button9
+        '
+        Me.Button9.BackColor = System.Drawing.Color.Yellow
+        Me.Button9.Location = New System.Drawing.Point(6, 11)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(109, 23)
+        Me.Button9.TabIndex = 1
+        Me.Button9.Text = "Cargar Reportes"
+        Me.Button9.UseVisualStyleBackColor = False
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.reporte})
+        Me.DataGridView1.Location = New System.Drawing.Point(7, 78)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(566, 389)
+        Me.DataGridView1.TabIndex = 0
+        '
         'lblMiUser
         '
         Me.lblMiUser.AutoSize = True
@@ -2457,6 +2549,24 @@ Partial Class Form1
         Me.TabPage13.TabIndex = 0
         Me.TabPage13.Text = "Toma de muestra"
         '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PictureBox4.Location = New System.Drawing.Point(320, 22)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(100, 100)
+        Me.PictureBox4.TabIndex = 2
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PictureBox3.Location = New System.Drawing.Point(167, 22)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(100, 100)
+        Me.PictureBox3.TabIndex = 1
+        Me.PictureBox3.TabStop = False
+        '
         'btnTomaMuestra
         '
         Me.btnTomaMuestra.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -2525,23 +2635,13 @@ Partial Class Form1
         Me.pbxNoti.TabStop = False
         Me.pbxNoti.Visible = False
         '
-        'PictureBox3
+        'reporte
         '
-        Me.PictureBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.PictureBox3.Location = New System.Drawing.Point(167, 22)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox3.TabIndex = 1
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.PictureBox4.Location = New System.Drawing.Point(320, 22)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox4.TabIndex = 2
-        Me.PictureBox4.TabStop = False
+        Me.reporte.DataPropertyName = "reporte"
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.reporte.DefaultCellStyle = DataGridViewCellStyle2
+        Me.reporte.HeaderText = "REPORTE"
+        Me.reporte.Name = "reporte"
         '
         'Form1
         '
@@ -2568,13 +2668,13 @@ Partial Class Form1
         Me.Controls.Add(Me.lblMiUser)
         Me.Controls.Add(Me.btnContabilidad)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Controls.Add(Me.PanelTM)
-        Me.Controls.Add(Me.PanelFactura)
         Me.Controls.Add(Me.PanelAlmacen)
         Me.Controls.Add(Me.PanelTalentoHumano)
         Me.Controls.Add(Me.panelMenu)
         Me.Controls.Add(Me.PanelSistema)
         Me.Controls.Add(Me.PanelLab)
+        Me.Controls.Add(Me.PanelTM)
+        Me.Controls.Add(Me.PanelFactura)
         Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
@@ -2679,6 +2779,7 @@ Partial Class Form1
         CType(Me.btnUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnPerfiles, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnServidorCorreo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage14.ResumeLayout(False)
         Me.PanelSistema.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
@@ -2713,18 +2814,21 @@ Partial Class Form1
         CType(Me.PictureBox86, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox53, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox61, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage15.ResumeLayout(False)
+        Me.TabPage15.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
         Me.PanelTM.ResumeLayout(False)
         Me.TabControl6.ResumeLayout(False)
         Me.TabPage13.ResumeLayout(False)
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnTomaMuestra, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
         CType(Me.PictureBox55, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxNoti, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2919,4 +3023,12 @@ Partial Class Form1
     Friend WithEvents btnTomaMuestra As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents TabPage14 As TabPage
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button8 As Button
+    Friend WithEvents TabPage15 As TabPage
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Button9 As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents reporte As DataGridViewTextBoxColumn
 End Class

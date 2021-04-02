@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class E_frmCrearXML
+Partial Class ReporteInventarioGeneral
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,16 +22,9 @@ Partial Class E_frmCrearXML
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.SuspendLayout()
-        '
-        'E_frmCrearXML
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        components = New System.ComponentModel.Container
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Name = "E_frmCrearXML"
-        Me.Text = "E_frmCrearXML"
-        Me.ResumeLayout(False)
-
+        Me.Text = "ReporteInventarioGeneral"
     End Sub
 End Class
