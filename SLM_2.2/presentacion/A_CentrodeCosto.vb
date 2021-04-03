@@ -33,7 +33,7 @@
 
                 rowA = dtA.Rows(0)
 
-                dgvCentroCosto.Rows.Add(CStr(rowCC("id_centrocosto")), rowCC("codBreve"), rowCC("nombre"), rowA("nombre"), CStr(rowA("codigo")))
+                dgvCentroCosto.Rows.Add(CStr(rowCC("id_centrocosto")), rowCC("codBreve"), rowCC("nombre"), rowA("nombre"), CStr(rowA("codigo")), CStr(rowCC("codCuenta")))
 
             Next
 
@@ -49,7 +49,7 @@
             .nombre_ = txtNombre.Text
             .cod_area_ = Integer.Parse(lblcodArea.Text)
             .codBreve_ = txtCodBreve.Text
-
+            .cod_Cuenta = Integer.Parse(codCuenta.Text)
             If .RegistrarNuevoCentroCosto = 1 Then
                 MsgBox("Se registro un nuevo Centro de Costo.")
 
@@ -67,7 +67,7 @@
             .nombre_ = txtNombre.Text
             .cod_area_ = Integer.Parse(lblcodArea.Text)
             .codBreve_ = txtCodBreve.Text
-
+            .cod_Cuenta = Integer.Parse(codCuenta.Text)
             If .ActualizarCentroCosto = 1 Then
                 MsgBox("Se actualizo el Centro de Costo.")
 
@@ -167,6 +167,9 @@
             txtCodBreve.Text = dgvCentroCosto.Rows(e.RowIndex).Cells(1).Value.ToString
             txtNombre.Text = dgvCentroCosto.Rows(e.RowIndex).Cells(2).Value
             lblcodArea.Text = dgvCentroCosto.Rows(e.RowIndex).Cells(4).Value
+            codCuenta.Text = dgvCentroCosto.Rows(e.RowIndex).Cells(5).Value
+
+
 
             'Area
             Dim objarea As New ClsGrupoExamen
@@ -183,6 +186,24 @@
 
             End With
 
+            'Cuenta
+
+            Dim cuenta As New ClsCuenta
+            Dim dtCuenta As New DataTable
+            Dim rowCuenta As DataRow
+
+            With cuenta
+
+                .Cod_Cuenta = Integer.Parse(codCuenta.Text)
+                dtCuenta = .BuscarCuentaCode
+                rowCuenta = dtCuenta.Rows(0)
+
+                txtNombreCuenta.Text = rowCuenta("codCuenta")
+
+            End With
+
+
+
             GroupBox1.Enabled = True
             btnModificar.Enabled = True
         Catch ex As Exception
@@ -193,5 +214,18 @@
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
+    End Sub
+
+    Private Sub btnBuscarCuenta_Click(sender As Object, e As EventArgs) Handles btnBuscarCuenta.Click
+        Try
+
+            A_ListarCuentas.lblForm.Text = "CC"
+            A_ListarCuentas.Show()
+            A_ListarCuentas.BringToFront()
+            A_ListarCuentas.WindowState = WindowState.Normal
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

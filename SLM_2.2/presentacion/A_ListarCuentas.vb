@@ -67,6 +67,16 @@
                     A_Proveedor.lblCodCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(0).Value
                     A_Proveedor.txtCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(1).Value
                 End If
+
+            ElseIf lblForm.Text = "CC" Then
+                Dim n As String = MsgBox("¿Desea utilizar la cuenta?", MsgBoxStyle.YesNo, "Validación")
+                If n = vbYes Then
+
+                    A_CentrodeCosto.codCuenta = dtCuentas.Rows(e.RowIndex).Cells(0).Value
+                    A_CentrodeCosto.txtNombreCuenta = dtCuentas.Rows(e.RowIndex).Cells(2).Value
+                    Me.Close()
+                End If
+
             Else
                 frmFormaPago.txtCuenta.Text = dtCuentas.Rows(e.RowIndex).Cells(1).Value
 

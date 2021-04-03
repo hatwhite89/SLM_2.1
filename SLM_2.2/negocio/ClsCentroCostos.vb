@@ -7,7 +7,7 @@ Public Class ClsCentroCostos
 
     'Variables
     Dim nombre, codBreve As String
-    Dim id_centrocostos, cod_area As Integer
+    Dim id_centrocostos, cod_area, codCuenta As Integer
     'Constructor
     Public Sub New()
 
@@ -20,6 +20,15 @@ Public Class ClsCentroCostos
         End Get
         Set(value As Integer)
             id_centrocostos = value
+        End Set
+    End Property
+
+    Public Property cod_Cuenta As Integer
+        Get
+            Return codCuenta
+        End Get
+        Set(value As Integer)
+            codCuenta = value
         End Set
     End Property
 
@@ -78,6 +87,11 @@ Public Class ClsCentroCostos
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codCuenta" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = cod_Cuenta
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -125,6 +139,11 @@ Public Class ClsCentroCostos
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "codBreve" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = codBreve_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codCuenta" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = cod_Cuenta
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
