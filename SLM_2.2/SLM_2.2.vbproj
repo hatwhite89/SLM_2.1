@@ -1717,6 +1717,42 @@
     <Compile Include="ReportesAlmacen\ReporteInsumos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReportesAlmacen\rpt_inventarioAreas.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_inventarioAreas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\rpt_inventarioGeneral.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_inventarioGeneral.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\rpt_oiMensualBien.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_oiMensualBien.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\rpt_ordenMensualCerradas.vb">
+      <DependentUpon>rpt_ordenMensualCerradas.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ReportesAlmacen\rpt_ordenMensual.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ordenMensual.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\rpt_reporteInsumos.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_reporteInsumos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportesAlmacen\ReporteInventarioAreas.Designer.vb">
       <DependentUpon>ReporteInventarioAreas.vb</DependentUpon>
     </Compile>
@@ -1764,6 +1800,18 @@
     </Compile>
     <Compile Include="ReportesAlmacen\ReporteOrdenMensual.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\rpt_reporteOIMensual.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_reporteOIMensual.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\rpt_reporteReactivo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_reporteReactivo.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\CrystalReport1.vb">
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
@@ -2591,6 +2639,65 @@
     <EmbeddedResource Include="E_ReporteResultadoIndividual.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>E_ReporteResultadoIndividual.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteInsumos.resx">
+      <DependentUpon>ReporteInsumos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteInventarioAreas.resx">
+      <DependentUpon>ReporteInventarioAreas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteInventarioGeneral.resx">
+      <DependentUpon>ReporteInventarioGeneral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteOrdenCompraParciales.resx">
+      <DependentUpon>ReporteOrdenCompraParciales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteOrdenCompraPendiente.resx">
+      <DependentUpon>ReporteOrdenCompraPendiente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteOrdenInternaMensual.resx">
+      <DependentUpon>ReporteOrdenInternaMensual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteOrdenInternaPendientes.resx">
+      <DependentUpon>ReporteOrdenInternaPendientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteOrdenMensual.resx">
+      <DependentUpon>ReporteOrdenMensual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteReactivos.resx">
+      <DependentUpon>ReporteReactivos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\rpt_inventarioAreas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_inventarioAreas.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\rpt_inventarioGeneral.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_inventarioGeneral.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\rpt_oiMensualBien.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_oiMensualBien.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\rpt_ordenMensualCerradas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ordenMensualCerradas.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\rpt_ordenMensual.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ordenMensual.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\rpt_reporteInsumos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_reporteInsumos.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\rpt_reporteOIMensual.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_reporteOIMensual.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\rpt_reporteReactivo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_reporteReactivo.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
