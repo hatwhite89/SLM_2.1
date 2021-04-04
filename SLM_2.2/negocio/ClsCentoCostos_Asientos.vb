@@ -4,7 +4,7 @@ Public Class ClsCentoCostos_Asientos
 
     'Variables
 
-    Dim codigo, id_centrocostos, id_asientos, id_detalleasiento As Integer
+    Dim codigo, id_centrocostos, id_asientos, id_detalleasiento, codSucursal As Integer
     'Constructor
     Public Sub New()
 
@@ -47,7 +47,14 @@ Public Class ClsCentoCostos_Asientos
         End Set
     End Property
 
-
+    Public Property codSucursal_ As Integer
+        Get
+            Return codSucursal
+        End Get
+        Set(value As Integer)
+            codSucursal = value
+        End Set
+    End Property
 
     ':::::::::::::::::::::::::::::::::::::::: FUNCIONES DE MANTENIMIENTO
 
@@ -73,6 +80,11 @@ Public Class ClsCentoCostos_Asientos
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "id_detalleasiento" 'nombre campo en el procedimiento almacenado @
         sqlpar.Value = id_detalleasiento_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codSucursal" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codSucursal_
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter

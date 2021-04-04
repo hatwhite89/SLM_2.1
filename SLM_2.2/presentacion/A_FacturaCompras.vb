@@ -150,6 +150,7 @@
                             .id_asientos_ = Integer.Parse(codigoAsiento)
                             .id_detalleasiento_ = Integer.Parse(codigodetalle)
                             .idcentrocostos_ = Integer.Parse(dtDetalleFactura.Rows(i).Cells(6).Value)
+                            .codSucursal_ = Integer.Parse(dtDetalleFactura.Rows(i).Cells(7).Value)
                             .REGISTRO_ASIENTO_CC()
 
                         End With
@@ -251,6 +252,7 @@
         'Listar objetos en Datagrid
         If e.ColumnIndex = 2 Then
 
+            A_ListadoCentroCosto.lblform.Text = "FacturaCompra"
             A_ListadoCentroCosto.Show()
             A_ListadoCentroCosto.BringToFront()
 
