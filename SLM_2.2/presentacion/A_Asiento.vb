@@ -61,7 +61,7 @@
                         data = cuenta.Comprobar
                         rows = data.Rows(0)
 
-                        dtDetalleAsiento.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), CStr(rows("nombre")), CStr(row("debe")), CStr(row("haber"))})
+                        dtDetalleAsiento.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), CStr(rows("nombre")), CStr(row("debe")), CStr(row("haber")), CStr(row("haber"))})
 
                     Next
 
