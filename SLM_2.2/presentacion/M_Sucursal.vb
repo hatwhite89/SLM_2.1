@@ -95,6 +95,14 @@
                     End With
                     Me.Close()
                 End If
+            ElseIf (lblform.Text = "M_DiarioFacturacion") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar la sucursal en el diario de facturación?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_DiarioFacturacion.txtnombreSucursal.Text = txtnombre.Text
+                    Me.Close()
+                End If
 
             End If
         Catch ex As Exception

@@ -1,10 +1,13 @@
 ﻿Public Class A_ListasPrecio
 
-
+    Private Sub A_ListasPrecio_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If (e.KeyCode = Keys.Escape) Then
+            Me.Close()
+        End If
+    End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         importarExcel(dtExcel)
-
         lblCantidadR.Text = dtExcel.Rows.Count - 1
     End Sub
 

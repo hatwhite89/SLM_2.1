@@ -1299,6 +1299,12 @@
     <Compile Include="presentacion\M_Horarios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\M_ImportarListasPrecios.Designer.vb">
+      <DependentUpon>M_ImportarListasPrecios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\M_ImportarListasPrecios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\M_ImprimirCotizacion.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2303,6 +2309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_Horarios.resx">
       <DependentUpon>M_Horarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\M_ImportarListasPrecios.resx">
+      <DependentUpon>M_ImportarListasPrecios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\M_ImprimirCotizacion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

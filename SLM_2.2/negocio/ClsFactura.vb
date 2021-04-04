@@ -687,7 +687,8 @@ Public Class ClsFactura
                                             Optional ByVal descripcionTermino As String = Nothing, Optional ByVal estado As System.Nullable(Of Boolean) = Nothing,
                                             Optional ByVal usuarioCajero As String = Nothing, Optional ByVal fechaDesde As System.Nullable(Of Date) = Nothing,
                                             Optional ByVal fechaHasta As System.Nullable(Of Date) = Nothing, Optional ByVal descripcionExamen As String = Nothing,
-                                            Optional ByVal descripcionGrupo As String = Nothing, Optional ByVal codigoTipoClas As System.Nullable(Of Integer) = Nothing) As DataTable
+                                            Optional ByVal descripcionGrupo As String = Nothing, Optional ByVal codigoTipoClas As System.Nullable(Of Integer) = Nothing,
+                                            Optional ByVal nombreSucursal As String = Nothing) As DataTable
         Dim objCon As New ClsConnection
         Dim cn As New SqlConnection
         cn = objCon.getConexion
@@ -706,7 +707,9 @@ Public Class ClsFactura
             cmd.Parameters.Add("@fechaHasta", SqlDbType.Date).Value = fechaHasta
             cmd.Parameters.Add("@descripcionExamen", SqlDbType.VarChar).Value = descripcionExamen
             cmd.Parameters.Add("@descripcionGrupo", SqlDbType.VarChar).Value = descripcionGrupo
-            cmd.Parameters.Add("@codigoTipoClas", SqlDbType.VarChar).Value = codigoTipoClas
+            cmd.Parameters.Add("@codigoTipoClas", SqlDbType.Int).Value = codigoTipoClas
+            cmd.Parameters.Add("@nombreSucursal", SqlDbType.VarChar).Value = nombreSucursal
+            cmd.Parameters.Add("@ok", SqlDbType.Bit).Value = ok_
             Using da As New SqlDataAdapter
                 da.SelectCommand = cmd
                 Using dt As New DataTable

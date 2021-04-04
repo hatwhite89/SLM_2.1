@@ -414,4 +414,8 @@
             e.Handled = True
         End If
     End Sub
+
+    Private Sub btnImportar_Click(sender As Object, e As EventArgs) Handles btnImportar.Click
+        M_ImportarListasPrecios.Show()
+    End Sub
 End Class
