@@ -212,4 +212,18 @@ Public Class ClsAlmacen
         Return par_sal
 
     End Function
+
+    'reportes
+    Public Function CargarReportes() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("select * from ReporteAlmacen", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
 End Class

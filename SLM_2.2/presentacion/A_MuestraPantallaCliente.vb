@@ -35,7 +35,7 @@
 
     End Sub
 
-    Private Sub cbxVideos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxVideos.SelectedIndexChanged
+    Private Sub cbxVideos_SelectedIndexChanged(sender As Object, e As EventArgs)
         Try
             WMP.URL = ARCHIVOS(cbxVideos.SelectedIndex) 'AL SELECCIONAR UN ITEM EN EL COMBOBOX EMPIEZA A REPRODUCIRSE
             CONTADOR = cbxVideos.SelectedIndex 'INICIALIZA EL CONTADOR DE ARCHIVOS CON EL INDICE SELECCIONADO 
@@ -74,7 +74,9 @@
             Me.dgvPacientesEspera.Columns("estadoEnCola").Visible = False
 
             'CAMBIAS NOMBRE COLUMNAS
-            dgvPacientesEspera.Columns("numeroFactura").HeaderText = "Número Factura"
+            ' dgvPacientesEspera.Columns("numeroFactura").HeaderText = "Número Factura"
+            dgvPacientesEspera.Columns("nombreCompleto").Visible = False
+
             dgvPacientesEspera.Columns("nombreCompleto").HeaderText = "Paciente o Cliente"
         Catch ex As Exception
             MsgBox(ex.Message)

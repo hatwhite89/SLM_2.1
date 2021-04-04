@@ -172,6 +172,7 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -284,6 +285,7 @@
     <Compile Include="negocio\ClsConserje.vb" />
     <Compile Include="negocio\ClsContratos.vb" />
     <Compile Include="negocio\clsCorreoResultado.vb" />
+    <Compile Include="negocio\ClsCuentasAlmacen.vb" />
     <Compile Include="negocio\ClsDepartamento.vb" />
     <Compile Include="negocio\ClsDepreciacion.vb" />
     <Compile Include="negocio\ClsDescripcionResultado.vb" />
@@ -317,6 +319,7 @@
     <Compile Include="negocio\ClsItemExamen.vb" />
     <Compile Include="negocio\ClsItemExamenDetalle.vb" />
     <Compile Include="negocio\ClsListaPrecios.vb" />
+    <Compile Include="negocio\clsLogs.vb" />
     <Compile Include="negocio\ClsMaquinasLocales.vb" />
     <Compile Include="negocio\ClsMensajes.vb" />
     <Compile Include="negocio\ClsNotificaciones.vb" />
@@ -359,6 +362,7 @@
     <Compile Include="negocio\ClsValoresReferencia.vb" />
     <Compile Include="negocio\ClsValoresReferenciaTXT.vb" />
     <Compile Include="negocio\ClsVentanasModulos.vb" />
+    <Compile Include="negocio\Logger.vb" />
     <Compile Include="negocio\ModulosVarios.vb" />
     <Compile Include="negocio\pplabs\ClsCitologia.vb" />
     <Compile Include="presentacion\1A_PantallaCarga.Designer.vb">
@@ -831,6 +835,12 @@
     <Compile Include="presentacion\E_frmCrearXML.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\E_frmCuentaAlmacen.Designer.vb">
+      <DependentUpon>E_frmCuentaAlmacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmCuentaAlmacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\E_frmCurva.Designer.vb">
       <DependentUpon>E_frmCurva.vb</DependentUpon>
     </Compile>
@@ -871,6 +881,18 @@
       <DependentUpon>E_frmInventario.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\E_frmInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmLogsExcepcion.Designer.vb">
+      <DependentUpon>E_frmLogsExcepcion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmLogsExcepcion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\E_frmLogsInicioSesion.Designer.vb">
+      <DependentUpon>E_frmLogsInicioSesion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\E_frmLogsInicioSesion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\E_frmMenuAlmacen.Designer.vb">
@@ -1695,11 +1717,113 @@
     <Compile Include="presentacion\prueba.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\CrystalReport1.vb">
+    <Compile Include="ReportesAlmacen\ReporteInsumos.Designer.vb">
+      <DependentUpon>ReporteInsumos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteInsumos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\rpt_inventarioAreas.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_inventarioAreas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\rpt_inventarioGeneral.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_inventarioGeneral.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\rpt_oiMensualBien.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_oiMensualBien.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\rpt_ordenMensualCerradas.vb">
+      <DependentUpon>rpt_ordenMensualCerradas.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ReportesAlmacen\rpt_ordenMensual.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ordenMensual.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\rpt_reporteInsumos.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_reporteInsumos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteInventarioAreas.Designer.vb">
+      <DependentUpon>ReporteInventarioAreas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteInventarioAreas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteInventarioGeneral.Designer.vb">
+      <DependentUpon>ReporteInventarioGeneral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteInventarioGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteReactivos.Designer.vb">
+      <DependentUpon>ReporteReactivos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteReactivos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteOrdenCompraParciales.Designer.vb">
+      <DependentUpon>ReporteOrdenCompraParciales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteOrdenCompraParciales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteOrdenCompraPendiente.Designer.vb">
+      <DependentUpon>ReporteOrdenCompraPendiente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteOrdenCompraPendiente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteOrdenInternaMensual.Designer.vb">
+      <DependentUpon>ReporteOrdenInternaMensual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteOrdenInternaMensual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteOrdenInternaPendientes.Designer.vb">
+      <DependentUpon>ReporteOrdenInternaPendientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteOrdenInternaPendientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteOrdenMensual.Designer.vb">
+      <DependentUpon>ReporteOrdenMensual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesAlmacen\ReporteOrdenMensual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\rpt_reporteOIMensual.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_reporteOIMensual.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesAlmacen\rpt_reporteReactivo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_reporteReactivo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\CrystalReport1.vb">
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Reportes\reporteCentroCostos.Designer.vb">
       <DependentUpon>reporteCentroCostos.vb</DependentUpon>
@@ -2071,6 +2195,9 @@
     <EmbeddedResource Include="presentacion\E_frmCrearXML.resx">
       <DependentUpon>E_frmCrearXML.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmCuentaAlmacen.resx">
+      <DependentUpon>E_frmCuentaAlmacen.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmCurva.resx">
       <DependentUpon>E_frmCurva.vb</DependentUpon>
     </EmbeddedResource>
@@ -2091,6 +2218,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmInventario.resx">
       <DependentUpon>E_frmInventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmLogsExcepcion.resx">
+      <DependentUpon>E_frmLogsExcepcion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\E_frmLogsInicioSesion.resx">
+      <DependentUpon>E_frmLogsInicioSesion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\E_frmMenuAlmacen.resx">
       <DependentUpon>E_frmMenuAlmacen.vb</DependentUpon>
@@ -2516,6 +2649,65 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>E_ReporteResultadoIndividual.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteInsumos.resx">
+      <DependentUpon>ReporteInsumos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteInventarioAreas.resx">
+      <DependentUpon>ReporteInventarioAreas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteInventarioGeneral.resx">
+      <DependentUpon>ReporteInventarioGeneral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteOrdenCompraParciales.resx">
+      <DependentUpon>ReporteOrdenCompraParciales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteOrdenCompraPendiente.resx">
+      <DependentUpon>ReporteOrdenCompraPendiente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteOrdenInternaMensual.resx">
+      <DependentUpon>ReporteOrdenInternaMensual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteOrdenInternaPendientes.resx">
+      <DependentUpon>ReporteOrdenInternaPendientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteOrdenMensual.resx">
+      <DependentUpon>ReporteOrdenMensual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\ReporteReactivos.resx">
+      <DependentUpon>ReporteReactivos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\rpt_inventarioAreas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_inventarioAreas.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\rpt_inventarioGeneral.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_inventarioGeneral.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\rpt_oiMensualBien.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_oiMensualBien.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\rpt_ordenMensualCerradas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ordenMensualCerradas.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\rpt_ordenMensual.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ordenMensual.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\rpt_reporteInsumos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_reporteInsumos.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\rpt_reporteOIMensual.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_reporteOIMensual.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAlmacen\rpt_reporteReactivo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_reporteReactivo.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.vb</LastGenOutput>
@@ -2657,6 +2849,15 @@
     <None Include="Resources\Definite-c47a609e-37f4-4678-9cb8-79a06e5845bb.wav" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="ACTIVEXLib">
+      <Guid>{D9CFF027-8E95-432E-B6C8-31752DAEAD71}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="AxWMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -2671,6 +2872,15 @@
       <VersionMinor>8</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSOLAPUI80">
+      <Guid>{EA905CA2-B033-4184-9BB6-29CE0D6F3F04}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
@@ -2809,6 +3019,8 @@
     <None Include="Resources\almacen-061.png" />
     <None Include="Resources\almacen-081.png" />
     <None Include="Resources\almacen-071.png" />
+    <Content Include="EnvDTE.dll" />
+    <Content Include="EnvDTE80.dll" />
     <Content Include="logo sistema-100.ico" />
     <Content Include="Resources\facturacion-49.png" />
     <None Include="Resources\facturacion-491.png" />
@@ -2821,6 +3033,7 @@
     <None Include="Resources\facturacion-57.png" />
     <None Include="Resources\solicitudes-191.png" />
     <None Include="Resources\proveedores-21.png" />
+    <Content Include="ShockwaveFlashObjects.dll" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -2835,7 +3048,6 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="UIDC.dll" />
     <Content Include="índice%281%29.ico" />
     <Content Include="índice.ico" />
   </ItemGroup>

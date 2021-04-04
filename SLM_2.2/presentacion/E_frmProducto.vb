@@ -35,6 +35,8 @@
         'botones
         Button1.Enabled = False
         alternarColoFilasDatagridview(DataGridView1)
+
+        cargarComboCP()
     End Sub
     Private Sub cargarData()
         Try
@@ -46,11 +48,47 @@
 
             DataGridView1.DataSource = BindingSource1
         Catch ex As Exception
-
+            RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
         End Try
 
     End Sub
+    Public Sub cargarComboCP()
+        Try
+            Dim clsC As New ClsCuentasAlmacen
+            Dim ds As New DataTable
 
+            ds.Load(clsC.RecuperarCP)
+
+
+            ComboBox1.DataSource = ds
+            ComboBox1.DisplayMember = "nombre"
+            ComboBox1.ValueMember = "cuenta"
+        Catch ex As Exception
+            RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
+        End Try
+
+
+
+    End Sub
+
+    Public Sub cargarComboCS()
+        Try
+            Dim clsC As New ClsCuentasAlmacen
+            Dim ds As New DataTable
+
+            ds.Load(clsC.RecuperarCSProductos(ComboBox1.SelectedValue.ToString))
+
+
+            ComboBox2.DataSource = ds
+            ComboBox2.DisplayMember = "nombre"
+            ComboBox2.ValueMember = "cuenta"
+        Catch ex As Exception
+            RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
+        End Try
+
+
+
+    End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
 
@@ -77,7 +115,7 @@
             txtDescripcion.ReadOnly = False
             txtCantidadMinima.ReadOnly = False
         Catch ex As Exception
-
+            RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
         End Try
 
 
@@ -104,8 +142,14 @@
                         .UnidadMedida = Integer.Parse(cmbUnidadMedida.SelectedValue)
                         .CategoriaProducto = Integer.Parse(cmbCategoria.SelectedValue)
                         .Precio_base1 = txtPrecioProducto.Text
+                        'cuentas
+                        .Cuenta1 = ComboBox1.SelectedValue
+                        .Cuenta21 = ComboBox2.SelectedValue
+                        .Nombrecuenta1 = ComboBox1.SelectedText
+                        .Nombrecuenta21 = ComboBox2.SelectedText
                     End With
                 Catch ex As Exception
+                    RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
                     MsgBox(mensaje_error_actualizacion)
                     Exit Sub
                 End Try
@@ -126,6 +170,7 @@
 
                     End If
                 Catch ex As Exception
+                    RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
                     MsgBox(mensaje_error_registro)
                 End Try
 
@@ -142,6 +187,11 @@
                     .UnidadMedida = Integer.Parse(cmbUnidadMedida.SelectedValue)
                     .CategoriaProducto = Integer.Parse(cmbCategoria.SelectedValue)
                     .Precio_base1 = txtPrecioProducto.Text
+                    'cuentas
+                    .Cuenta1 = ComboBox1.SelectedValue
+                    .Cuenta21 = ComboBox2.SelectedValue
+                    .Nombrecuenta1 = ComboBox1.SelectedText
+                    .Nombrecuenta21 = ComboBox2.SelectedText
                 End With
                 If clsP.ActualizarProducto() = "1" Then
                     MsgBox(mensaje_actualizacion)
@@ -196,13 +246,7 @@
         txtCantidadMinima.Text = ""
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
-    End Sub
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         Dim objOrd As New ClsProducto
@@ -255,6 +299,7 @@
             exLibro = Nothing
             exApp = Nothing
         Catch ex As Exception
+            RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al exportar a Excel")
             Return False
         End Try
@@ -273,9 +318,30 @@
                     cargarData()
                 End If
             Catch ex As Exception
+                RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
                 MsgBox("No ha seleccionado ninguna fila")
             End Try
 
         End If
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub ComboBox1_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles ComboBox1.SelectionChangeCommitted
+
+    End Sub
+
+    Private Sub ComboBox1_SelectedValueChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedValueChanged
+
+    End Sub
+
+    Private Sub ComboBox1_ValueMemberChanged(sender As Object, e As EventArgs) Handles ComboBox1.ValueMemberChanged
+
+    End Sub
+
+    Private Sub ComboBox1_TextChanged(sender As Object, e As EventArgs) Handles ComboBox1.TextChanged
+        cargarComboCS()
     End Sub
 End Class
