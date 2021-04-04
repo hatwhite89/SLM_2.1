@@ -47,6 +47,7 @@ Partial Class A_ListasPrecio
         Me.dtExcel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtExcel.Location = New System.Drawing.Point(12, 87)
         Me.dtExcel.Name = "dtExcel"
+        Me.dtExcel.RowHeadersWidth = 51
         Me.dtExcel.Size = New System.Drawing.Size(702, 443)
         Me.dtExcel.TabIndex = 4
         '
@@ -55,7 +56,7 @@ Partial Class A_ListasPrecio
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(3, 10)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(114, 13)
+        Me.Label1.Size = New System.Drawing.Size(131, 15)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Cantidad de Registros:"
         '
@@ -64,7 +65,7 @@ Partial Class A_ListasPrecio
         Me.lblCantidadR.AutoSize = True
         Me.lblCantidadR.Location = New System.Drawing.Point(123, 10)
         Me.lblCantidadR.Name = "lblCantidadR"
-        Me.lblCantidadR.Size = New System.Drawing.Size(10, 13)
+        Me.lblCantidadR.Size = New System.Drawing.Size(11, 15)
         Me.lblCantidadR.TabIndex = 6
         Me.lblCantidadR.Text = "-"
         '
@@ -144,6 +145,7 @@ Partial Class A_ListasPrecio
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.KeyPreview = True
         Me.Name = "A_ListasPrecio"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Importar Precios"

@@ -10,6 +10,8 @@
         txtUsuario.Clear()
         txtExamen.Clear()
         txtGrupo.Clear()
+        txtnombreSucursal.Clear()
+        cbxOk.Checked = True
 
         dtpFecha.Format = DateTimePickerFormat.Custom
         dtpFecha.CustomFormat = " "
@@ -301,6 +303,7 @@
     '    End Try
     'End Sub
 
+
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Try
             Dim nombreCompleto = Nothing, nombreMedico = Nothing, descripcionTermino = Nothing, usuarioCajero = Nothing, descripcionExamen = Nothing, descripcionGrupo As String = Nothing
@@ -308,6 +311,7 @@
             Dim codigoTipoClas As System.Nullable(Of Integer) = Nothing
             Dim fechaFactura = Nothing, fechaDesde = Nothing, fechaHasta As System.Nullable(Of Date) = Nothing
             Dim estado As System.Nullable(Of Boolean) = Nothing
+            Dim nombreSucursal As String = Nothing
 
             If Trim(txtnumeroB.Text) <> "" Then
                 numero = Integer.Parse(txtnumeroB.Text)
@@ -371,10 +375,20 @@
             Else
                 codigoTipoClas = Nothing
             End If
-
+            If Trim(txtnombreSucursal.Text) <> "" Then
+                nombreSucursal = txtnombreSucursal.Text
+            Else
+                nombreSucursal = Nothing
+            End If
+            'If cbxOk.Checked Then
+            '    objFact.ok_ = True
+            'Else
+            '    objFact.ok_ = False
+            'End If
+            objFact.ok_ = cbxOk.Checked
             'MsgBox(numero & nombreCompleto & fechaFactura & nombreMedico & descripcionTermino & estado & usuarioCajero & "desde" & fechaDesde & "fhasta" & fechaHasta & descripcionExamen & descripcionGrupo)
             'Llenado de la tabla al llamar al procedimiento almacenado
-            dv = objFact.BuscarDiarioFacturacion(numero, nombreCompleto, fechaFactura, nombreMedico, descripcionTermino, estado, usuarioCajero, fechaDesde, fechaHasta, descripcionExamen, descripcionGrupo, codigoTipoClas).DefaultView
+            dv = objFact.BuscarDiarioFacturacion(numero, nombreCompleto, fechaFactura, nombreMedico, descripcionTermino, estado, usuarioCajero, fechaDesde, fechaHasta, descripcionExamen, descripcionGrupo, codigoTipoClas, nombreSucursal).DefaultView
             dgbtabla.DataSource = dv
             lblcantidad.Text = dv.Count
             'dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -437,5 +451,10 @@
 
     Private Sub btnExcel_Click(sender As Object, e As EventArgs) Handles btnExcel.Click
         M_Contratos.GridAExcel(dgbtabla)
+    End Sub
+
+    Private Sub btnSucursal_Click(sender As Object, e As EventArgs) Handles btnSucursal.Click
+        M_Sucursal.lblform.Text = "M_DiarioFacturacion"
+        M_Sucursal.Show()
     End Sub
 End Class

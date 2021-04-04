@@ -84,7 +84,7 @@ Partial Class E_DetalleExamenes
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(11, 22)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(18, 13)
+        Me.Label1.Size = New System.Drawing.Size(19, 15)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "ID"
         '
@@ -101,7 +101,7 @@ Partial Class E_DetalleExamenes
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(11, 75)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(60, 13)
+        Me.Label2.Size = New System.Drawing.Size(66, 15)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Cód. Breve"
         '
@@ -117,7 +117,7 @@ Partial Class E_DetalleExamenes
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(11, 102)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(63, 13)
+        Me.Label3.Size = New System.Drawing.Size(72, 15)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Descripcion"
         '
@@ -176,7 +176,7 @@ Partial Class E_DetalleExamenes
         Me.chkEtiqueta.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkEtiqueta.Location = New System.Drawing.Point(262, 64)
         Me.chkEtiqueta.Name = "chkEtiqueta"
-        Me.chkEtiqueta.Size = New System.Drawing.Size(103, 17)
+        Me.chkEtiqueta.Size = New System.Drawing.Size(123, 19)
         Me.chkEtiqueta.TabIndex = 218
         Me.chkEtiqueta.Text = "Imprimir Etiqueta"
         Me.chkEtiqueta.UseVisualStyleBackColor = True
@@ -187,7 +187,7 @@ Partial Class E_DetalleExamenes
         Me.Label17.ForeColor = System.Drawing.Color.Red
         Me.Label17.Location = New System.Drawing.Point(2, 49)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(11, 13)
+        Me.Label17.Size = New System.Drawing.Size(12, 15)
         Me.Label17.TabIndex = 217
         Me.Label17.Text = "*"
         '
@@ -197,7 +197,7 @@ Partial Class E_DetalleExamenes
         Me.Label15.ForeColor = System.Drawing.Color.Red
         Me.Label15.Location = New System.Drawing.Point(2, 102)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(11, 13)
+        Me.Label15.Size = New System.Drawing.Size(12, 15)
         Me.Label15.TabIndex = 215
         Me.Label15.Text = "*"
         '
@@ -207,7 +207,7 @@ Partial Class E_DetalleExamenes
         Me.Label14.ForeColor = System.Drawing.Color.Red
         Me.Label14.Location = New System.Drawing.Point(211, 21)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(11, 13)
+        Me.Label14.Size = New System.Drawing.Size(12, 15)
         Me.Label14.TabIndex = 214
         Me.Label14.Text = "*"
         '
@@ -217,7 +217,7 @@ Partial Class E_DetalleExamenes
         Me.Label13.ForeColor = System.Drawing.Color.Red
         Me.Label13.Location = New System.Drawing.Point(2, 75)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(11, 13)
+        Me.Label13.Size = New System.Drawing.Size(12, 15)
         Me.Label13.TabIndex = 213
         Me.Label13.Text = "*"
         '
@@ -233,7 +233,7 @@ Partial Class E_DetalleExamenes
         Me.Label11.AutoSize = True
         Me.Label11.Location = New System.Drawing.Point(11, 49)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(70, 13)
+        Me.Label11.Size = New System.Drawing.Size(81, 15)
         Me.Label11.TabIndex = 24
         Me.Label11.Text = "Cód. Exámen"
         '
@@ -242,7 +242,7 @@ Partial Class E_DetalleExamenes
         Me.lblcodeSubGrupo.AutoSize = True
         Me.lblcodeSubGrupo.Location = New System.Drawing.Point(437, 150)
         Me.lblcodeSubGrupo.Name = "lblcodeSubGrupo"
-        Me.lblcodeSubGrupo.Size = New System.Drawing.Size(47, 13)
+        Me.lblcodeSubGrupo.Size = New System.Drawing.Size(54, 15)
         Me.lblcodeSubGrupo.TabIndex = 23
         Me.lblcodeSubGrupo.Text = "Subárea"
         Me.lblcodeSubGrupo.Visible = False
@@ -260,7 +260,7 @@ Partial Class E_DetalleExamenes
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(385, 23)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(47, 13)
+        Me.Label10.Size = New System.Drawing.Size(54, 15)
         Me.Label10.TabIndex = 21
         Me.Label10.Text = "Subárea"
         '
@@ -269,7 +269,7 @@ Partial Class E_DetalleExamenes
         Me.lblcodigoGrupo.AutoSize = True
         Me.lblcodigoGrupo.Location = New System.Drawing.Point(213, 46)
         Me.lblcodigoGrupo.Name = "lblcodigoGrupo"
-        Me.lblcodigoGrupo.Size = New System.Drawing.Size(29, 13)
+        Me.lblcodigoGrupo.Size = New System.Drawing.Size(34, 15)
         Me.lblcodigoGrupo.TabIndex = 20
         Me.lblcodigoGrupo.Text = "label"
         Me.lblcodigoGrupo.Visible = False
@@ -280,7 +280,7 @@ Partial Class E_DetalleExamenes
         Me.lblEstado.ForeColor = System.Drawing.Color.Red
         Me.lblEstado.Location = New System.Drawing.Point(432, 46)
         Me.lblEstado.Name = "lblEstado"
-        Me.lblEstado.Size = New System.Drawing.Size(45, 13)
+        Me.lblEstado.Size = New System.Drawing.Size(48, 15)
         Me.lblEstado.TabIndex = 19
         Me.lblEstado.Text = "Inactivo"
         '
@@ -289,7 +289,7 @@ Partial Class E_DetalleExamenes
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(386, 46)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(40, 13)
+        Me.Label9.Size = New System.Drawing.Size(45, 15)
         Me.Label9.TabIndex = 18
         Me.Label9.Text = "Estado"
         '
@@ -300,7 +300,7 @@ Partial Class E_DetalleExamenes
         Me.chkEstado.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkEstado.Location = New System.Drawing.Point(262, 46)
         Me.chkEstado.Name = "chkEstado"
-        Me.chkEstado.Size = New System.Drawing.Size(87, 17)
+        Me.chkEstado.Size = New System.Drawing.Size(102, 19)
         Me.chkEstado.TabIndex = 17
         Me.chkEstado.Text = "Habilitar Item"
         Me.chkEstado.UseVisualStyleBackColor = True
@@ -317,7 +317,7 @@ Partial Class E_DetalleExamenes
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(11, 205)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(60, 13)
+        Me.Label8.Size = New System.Drawing.Size(71, 15)
         Me.Label8.TabIndex = 15
         Me.Label8.Text = "Comentario"
         '
@@ -333,7 +333,7 @@ Partial Class E_DetalleExamenes
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(11, 179)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(61, 13)
+        Me.Label7.Size = New System.Drawing.Size(68, 15)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Abreviatura"
         '
@@ -349,7 +349,7 @@ Partial Class E_DetalleExamenes
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(11, 153)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(66, 13)
+        Me.Label6.Size = New System.Drawing.Size(76, 15)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Clasificación"
         '
@@ -365,7 +365,7 @@ Partial Class E_DetalleExamenes
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(11, 127)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(64, 13)
+        Me.Label5.Size = New System.Drawing.Size(73, 15)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Precio Base"
         '
@@ -394,7 +394,7 @@ Partial Class E_DetalleExamenes
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(220, 22)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(36, 13)
+        Me.Label4.Size = New System.Drawing.Size(41, 15)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Grupo"
         '
@@ -407,7 +407,7 @@ Partial Class E_DetalleExamenes
         Me.GroupBox2.Controls.Add(Me.dtItem)
         Me.GroupBox2.Location = New System.Drawing.Point(516, 63)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(382, 530)
+        Me.GroupBox2.Size = New System.Drawing.Size(382, 479)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Listado de Exámenes"
@@ -428,7 +428,7 @@ Partial Class E_DetalleExamenes
         Me.dtItem.ReadOnly = True
         Me.dtItem.RowHeadersWidth = 51
         Me.dtItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtItem.Size = New System.Drawing.Size(376, 513)
+        Me.dtItem.Size = New System.Drawing.Size(376, 462)
         Me.dtItem.TabIndex = 0
         '
         'btnGuardar
@@ -479,7 +479,7 @@ Partial Class E_DetalleExamenes
         Me.lblFila.Location = New System.Drawing.Point(460, 539)
         Me.lblFila.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblFila.Name = "lblFila"
-        Me.lblFila.Size = New System.Drawing.Size(45, 13)
+        Me.lblFila.Size = New System.Drawing.Size(52, 15)
         Me.lblFila.TabIndex = 11
         Me.lblFila.Text = "Label10"
         '
@@ -545,7 +545,7 @@ Partial Class E_DetalleExamenes
         Me.lblform.AutoSize = True
         Me.lblform.Location = New System.Drawing.Point(182, 21)
         Me.lblform.Name = "lblform"
-        Me.lblform.Size = New System.Drawing.Size(27, 13)
+        Me.lblform.Size = New System.Drawing.Size(32, 15)
         Me.lblform.TabIndex = 26
         Me.lblform.Text = "form"
         Me.lblform.Visible = False
@@ -557,7 +557,7 @@ Partial Class E_DetalleExamenes
         Me.Label12.ForeColor = System.Drawing.Color.White
         Me.Label12.Location = New System.Drawing.Point(19, 12)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(113, 25)
+        Me.Label12.Size = New System.Drawing.Size(141, 31)
         Me.Label12.TabIndex = 11
         Me.Label12.Text = "Exámenes"
         '

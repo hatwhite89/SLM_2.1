@@ -203,4 +203,8 @@
             SeleccionarDescuentos()
         End If
     End Sub
+
+    Private Sub btnExcel_Click(sender As Object, e As EventArgs) Handles btnExcel.Click
+        M_Permisos.GridAExcel(dgbtabla)
+    End Sub
 End Class

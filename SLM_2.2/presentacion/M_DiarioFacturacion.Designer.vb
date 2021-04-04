@@ -64,6 +64,11 @@ Partial Class M_DiarioFacturacion
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
         Me.lbltotalFacturas = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.btnSucursal = New System.Windows.Forms.Button()
+        Me.txtnombreSucursal = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.cbxOk = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -74,6 +79,11 @@ Partial Class M_DiarioFacturacion
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox1.Controls.Add(Me.cbxOk)
+        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Controls.Add(Me.btnSucursal)
+        Me.GroupBox1.Controls.Add(Me.txtnombreSucursal)
+        Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.btnExcel)
         Me.GroupBox1.Controls.Add(Me.lblcodigoTipoClasif)
         Me.GroupBox1.Controls.Add(Me.btnTipoClasificacion)
@@ -114,9 +124,9 @@ Partial Class M_DiarioFacturacion
         Me.GroupBox1.Controls.Add(Me.dgbtabla)
         Me.GroupBox1.Controls.Add(Me.lbltotalFacturas)
         Me.GroupBox1.Location = New System.Drawing.Point(20, 11)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(1065, 602)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -138,10 +148,10 @@ Partial Class M_DiarioFacturacion
         'lblcodigoTipoClasif
         '
         Me.lblcodigoTipoClasif.AutoSize = True
-        Me.lblcodigoTipoClasif.Location = New System.Drawing.Point(172, 145)
+        Me.lblcodigoTipoClasif.Location = New System.Drawing.Point(186, 145)
         Me.lblcodigoTipoClasif.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcodigoTipoClasif.Name = "lblcodigoTipoClasif"
-        Me.lblcodigoTipoClasif.Size = New System.Drawing.Size(0, 13)
+        Me.lblcodigoTipoClasif.Size = New System.Drawing.Size(0, 15)
         Me.lblcodigoTipoClasif.TabIndex = 173
         Me.lblcodigoTipoClasif.Visible = False
         '
@@ -153,8 +163,8 @@ Partial Class M_DiarioFacturacion
         Me.btnTipoClasificacion.FlatAppearance.BorderSize = 0
         Me.btnTipoClasificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTipoClasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTipoClasificacion.Location = New System.Drawing.Point(283, 126)
-        Me.btnTipoClasificacion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnTipoClasificacion.Location = New System.Drawing.Point(297, 126)
+        Me.btnTipoClasificacion.Margin = New System.Windows.Forms.Padding(2)
         Me.btnTipoClasificacion.Name = "btnTipoClasificacion"
         Me.btnTipoClasificacion.Size = New System.Drawing.Size(30, 17)
         Me.btnTipoClasificacion.TabIndex = 172
@@ -163,8 +173,8 @@ Partial Class M_DiarioFacturacion
         '
         'txtnombreClasificacion
         '
-        Me.txtnombreClasificacion.Location = New System.Drawing.Point(116, 126)
-        Me.txtnombreClasificacion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreClasificacion.Location = New System.Drawing.Point(130, 126)
+        Me.txtnombreClasificacion.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreClasificacion.MaxLength = 20
         Me.txtnombreClasificacion.Name = "txtnombreClasificacion"
         Me.txtnombreClasificacion.ReadOnly = True
@@ -177,7 +187,7 @@ Partial Class M_DiarioFacturacion
         Me.Label8.Location = New System.Drawing.Point(23, 128)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(90, 13)
+        Me.Label8.Size = New System.Drawing.Size(103, 15)
         Me.Label8.TabIndex = 170
         Me.Label8.Text = "Tipo Clasificación"
         '
@@ -191,7 +201,7 @@ Partial Class M_DiarioFacturacion
         Me.btnGrupoExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGrupoExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGrupoExamen.Location = New System.Drawing.Point(1018, 92)
-        Me.btnGrupoExamen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnGrupoExamen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnGrupoExamen.Name = "btnGrupoExamen"
         Me.btnGrupoExamen.Size = New System.Drawing.Size(30, 17)
         Me.btnGrupoExamen.TabIndex = 169
@@ -207,8 +217,8 @@ Partial Class M_DiarioFacturacion
         Me.btnExamen.FlatAppearance.BorderSize = 0
         Me.btnExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExamen.Location = New System.Drawing.Point(643, 93)
-        Me.btnExamen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnExamen.Location = New System.Drawing.Point(679, 93)
+        Me.btnExamen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnExamen.Name = "btnExamen"
         Me.btnExamen.Size = New System.Drawing.Size(30, 17)
         Me.btnExamen.TabIndex = 168
@@ -224,8 +234,8 @@ Partial Class M_DiarioFacturacion
         Me.btnTerminoPago.FlatAppearance.BorderSize = 0
         Me.btnTerminoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTerminoPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTerminoPago.Location = New System.Drawing.Point(643, 61)
-        Me.btnTerminoPago.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnTerminoPago.Location = New System.Drawing.Point(679, 61)
+        Me.btnTerminoPago.Margin = New System.Windows.Forms.Padding(2)
         Me.btnTerminoPago.Name = "btnTerminoPago"
         Me.btnTerminoPago.Size = New System.Drawing.Size(30, 17)
         Me.btnTerminoPago.TabIndex = 167
@@ -240,8 +250,8 @@ Partial Class M_DiarioFacturacion
         Me.btnMedico.FlatAppearance.BorderSize = 0
         Me.btnMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMedico.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMedico.Location = New System.Drawing.Point(283, 61)
-        Me.btnMedico.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnMedico.Location = New System.Drawing.Point(297, 61)
+        Me.btnMedico.Margin = New System.Windows.Forms.Padding(2)
         Me.btnMedico.Name = "btnMedico"
         Me.btnMedico.Size = New System.Drawing.Size(30, 17)
         Me.btnMedico.TabIndex = 166
@@ -256,8 +266,8 @@ Partial Class M_DiarioFacturacion
         Me.btnUsuario.FlatAppearance.BorderSize = 0
         Me.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUsuario.Location = New System.Drawing.Point(283, 93)
-        Me.btnUsuario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnUsuario.Location = New System.Drawing.Point(297, 93)
+        Me.btnUsuario.Margin = New System.Windows.Forms.Padding(2)
         Me.btnUsuario.Name = "btnUsuario"
         Me.btnUsuario.Size = New System.Drawing.Size(30, 17)
         Me.btnUsuario.TabIndex = 165
@@ -268,10 +278,10 @@ Partial Class M_DiarioFacturacion
         '
         Me.lblTotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTotal.AutoSize = True
-        Me.lblTotal.Location = New System.Drawing.Point(962, 570)
+        Me.lblTotal.Location = New System.Drawing.Point(962, 556)
         Me.lblTotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(25, 13)
+        Me.lblTotal.Size = New System.Drawing.Size(28, 15)
         Me.lblTotal.TabIndex = 145
         Me.lblTotal.Text = "000"
         '
@@ -279,10 +289,10 @@ Partial Class M_DiarioFacturacion
         '
         Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(792, 570)
+        Me.Label9.Location = New System.Drawing.Point(792, 556)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(45, 13)
+        Me.Label9.Size = New System.Drawing.Size(47, 15)
         Me.Label9.TabIndex = 144
         Me.Label9.Text = "TOTAL "
         '
@@ -290,7 +300,7 @@ Partial Class M_DiarioFacturacion
         '
         Me.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaHasta.Location = New System.Drawing.Point(806, 126)
-        Me.dtpFechaHasta.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpFechaHasta.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpFechaHasta.Name = "dtpFechaHasta"
         Me.dtpFechaHasta.Size = New System.Drawing.Size(210, 20)
         Me.dtpFechaHasta.TabIndex = 143
@@ -301,15 +311,15 @@ Partial Class M_DiarioFacturacion
         Me.Label7.Location = New System.Drawing.Point(732, 130)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(68, 13)
+        Me.Label7.Size = New System.Drawing.Size(76, 15)
         Me.Label7.TabIndex = 142
         Me.Label7.Text = "Fecha Hasta"
         '
         'dtpFechaDesde
         '
         Me.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaDesde.Location = New System.Drawing.Point(429, 126)
-        Me.dtpFechaDesde.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpFechaDesde.Location = New System.Drawing.Point(465, 126)
+        Me.dtpFechaDesde.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpFechaDesde.Name = "dtpFechaDesde"
         Me.dtpFechaDesde.Size = New System.Drawing.Size(210, 20)
         Me.dtpFechaDesde.TabIndex = 141
@@ -317,10 +327,10 @@ Partial Class M_DiarioFacturacion
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(352, 130)
+        Me.Label6.Location = New System.Drawing.Point(361, 129)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(71, 13)
+        Me.Label6.Size = New System.Drawing.Size(80, 15)
         Me.Label6.TabIndex = 140
         Me.Label6.Text = "Fecha Desde"
         '
@@ -328,7 +338,7 @@ Partial Class M_DiarioFacturacion
         '
         Me.txtGrupo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtGrupo.Location = New System.Drawing.Point(805, 93)
-        Me.txtGrupo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtGrupo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtGrupo.MaxLength = 20
         Me.txtGrupo.Name = "txtGrupo"
         Me.txtGrupo.Size = New System.Drawing.Size(210, 20)
@@ -341,7 +351,7 @@ Partial Class M_DiarioFacturacion
         Me.Label5.Location = New System.Drawing.Point(723, 94)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(69, 13)
+        Me.Label5.Size = New System.Drawing.Size(80, 15)
         Me.Label5.TabIndex = 138
         Me.Label5.Text = "Nombre Area"
         '
@@ -349,8 +359,8 @@ Partial Class M_DiarioFacturacion
         '
         Me.txtExamen.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtExamen.Location = New System.Drawing.Point(429, 93)
-        Me.txtExamen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtExamen.Location = New System.Drawing.Point(465, 93)
+        Me.txtExamen.Margin = New System.Windows.Forms.Padding(2)
         Me.txtExamen.MaxLength = 20
         Me.txtExamen.Name = "txtExamen"
         Me.txtExamen.Size = New System.Drawing.Size(210, 20)
@@ -358,8 +368,8 @@ Partial Class M_DiarioFacturacion
         '
         'txtUsuario
         '
-        Me.txtUsuario.Location = New System.Drawing.Point(69, 93)
-        Me.txtUsuario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtUsuario.Location = New System.Drawing.Point(83, 93)
+        Me.txtUsuario.Margin = New System.Windows.Forms.Padding(2)
         Me.txtUsuario.MaxLength = 20
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(210, 20)
@@ -368,10 +378,10 @@ Partial Class M_DiarioFacturacion
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(337, 95)
+        Me.Label3.Location = New System.Drawing.Point(361, 95)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(85, 13)
+        Me.Label3.Size = New System.Drawing.Size(101, 15)
         Me.Label3.TabIndex = 135
         Me.Label3.Text = "Nombre Examen"
         '
@@ -381,9 +391,9 @@ Partial Class M_DiarioFacturacion
         Me.Label4.Location = New System.Drawing.Point(23, 95)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(43, 13)
+        Me.Label4.Size = New System.Drawing.Size(43, 15)
         Me.Label4.TabIndex = 134
-        Me.Label4.Text = "Usuario"
+        Me.Label4.Text = "Cajero"
         '
         'btnBuscar
         '
@@ -391,7 +401,7 @@ Partial Class M_DiarioFacturacion
         Me.btnBuscar.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscar.Location = New System.Drawing.Point(928, 162)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(86, 28)
         Me.btnBuscar.TabIndex = 133
@@ -402,8 +412,8 @@ Partial Class M_DiarioFacturacion
         '
         Me.txtDescripcionTermino.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtDescripcionTermino.Location = New System.Drawing.Point(429, 61)
-        Me.txtDescripcionTermino.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtDescripcionTermino.Location = New System.Drawing.Point(465, 61)
+        Me.txtDescripcionTermino.Margin = New System.Windows.Forms.Padding(2)
         Me.txtDescripcionTermino.MaxLength = 20
         Me.txtDescripcionTermino.Name = "txtDescripcionTermino"
         Me.txtDescripcionTermino.Size = New System.Drawing.Size(210, 20)
@@ -411,8 +421,8 @@ Partial Class M_DiarioFacturacion
         '
         'txtNombreMedico
         '
-        Me.txtNombreMedico.Location = New System.Drawing.Point(69, 61)
-        Me.txtNombreMedico.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtNombreMedico.Location = New System.Drawing.Point(83, 61)
+        Me.txtNombreMedico.Margin = New System.Windows.Forms.Padding(2)
         Me.txtNombreMedico.MaxLength = 20
         Me.txtNombreMedico.Name = "txtNombreMedico"
         Me.txtNombreMedico.Size = New System.Drawing.Size(210, 20)
@@ -424,7 +434,7 @@ Partial Class M_DiarioFacturacion
         Me.cmbEstado.FormattingEnabled = True
         Me.cmbEstado.Items.AddRange(New Object() {"Activa", "Anulada"})
         Me.cmbEstado.Location = New System.Drawing.Point(805, 59)
-        Me.cmbEstado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbEstado.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbEstado.Name = "cmbEstado"
         Me.cmbEstado.Size = New System.Drawing.Size(210, 21)
         Me.cmbEstado.TabIndex = 130
@@ -436,17 +446,17 @@ Partial Class M_DiarioFacturacion
         Me.lblEsado.Location = New System.Drawing.Point(759, 65)
         Me.lblEsado.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblEsado.Name = "lblEsado"
-        Me.lblEsado.Size = New System.Drawing.Size(40, 13)
+        Me.lblEsado.Size = New System.Drawing.Size(45, 15)
         Me.lblEsado.TabIndex = 129
         Me.lblEsado.Text = "Estado"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(337, 63)
+        Me.Label2.Location = New System.Drawing.Point(361, 63)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(88, 13)
+        Me.Label2.Size = New System.Drawing.Size(102, 15)
         Me.Label2.TabIndex = 127
         Me.Label2.Text = "Término de Pago"
         '
@@ -456,7 +466,7 @@ Partial Class M_DiarioFacturacion
         Me.Label1.Location = New System.Drawing.Point(23, 63)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(42, 13)
+        Me.Label1.Size = New System.Drawing.Size(48, 15)
         Me.Label1.TabIndex = 125
         Me.Label1.Text = "Médico"
         '
@@ -465,7 +475,7 @@ Partial Class M_DiarioFacturacion
         Me.dtpFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFecha.Location = New System.Drawing.Point(805, 28)
-        Me.dtpFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dtpFecha.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(210, 20)
         Me.dtpFecha.TabIndex = 124
@@ -477,14 +487,14 @@ Partial Class M_DiarioFacturacion
         Me.lblFecha.Location = New System.Drawing.Point(758, 32)
         Me.lblFecha.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblFecha.Name = "lblFecha"
-        Me.lblFecha.Size = New System.Drawing.Size(37, 13)
+        Me.lblFecha.Size = New System.Drawing.Size(41, 15)
         Me.lblFecha.TabIndex = 123
         Me.lblFecha.Text = "Fecha"
         '
         'txtnumeroB
         '
-        Me.txtnumeroB.Location = New System.Drawing.Point(69, 30)
-        Me.txtnumeroB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnumeroB.Location = New System.Drawing.Point(83, 30)
+        Me.txtnumeroB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnumeroB.MaxLength = 20
         Me.txtnumeroB.Name = "txtnumeroB"
         Me.txtnumeroB.Size = New System.Drawing.Size(210, 20)
@@ -493,10 +503,10 @@ Partial Class M_DiarioFacturacion
         'lblnombreB
         '
         Me.lblnombreB.AutoSize = True
-        Me.lblnombreB.Location = New System.Drawing.Point(298, 32)
+        Me.lblnombreB.Location = New System.Drawing.Point(322, 32)
         Me.lblnombreB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblnombreB.Name = "lblnombreB"
-        Me.lblnombreB.Size = New System.Drawing.Size(44, 13)
+        Me.lblnombreB.Size = New System.Drawing.Size(52, 15)
         Me.lblnombreB.TabIndex = 121
         Me.lblnombreB.Text = "Nombre"
         '
@@ -506,7 +516,7 @@ Partial Class M_DiarioFacturacion
         Me.lblForm.Location = New System.Drawing.Point(468, 0)
         Me.lblForm.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblForm.Name = "lblForm"
-        Me.lblForm.Size = New System.Drawing.Size(37, 13)
+        Me.lblForm.Size = New System.Drawing.Size(45, 15)
         Me.lblForm.TabIndex = 119
         Me.lblForm.Text = "lblform"
         Me.lblForm.Visible = False
@@ -515,8 +525,8 @@ Partial Class M_DiarioFacturacion
         '
         Me.txtnombreB.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtnombreB.Location = New System.Drawing.Point(356, 29)
-        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtnombreB.Location = New System.Drawing.Point(380, 29)
+        Me.txtnombreB.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnombreB.MaxLength = 80
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(353, 20)
@@ -526,10 +536,10 @@ Partial Class M_DiarioFacturacion
         '
         Me.lblcantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(292, 568)
+        Me.lblcantidad.Location = New System.Drawing.Point(292, 554)
         Me.lblcantidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(25, 13)
+        Me.lblcantidad.Size = New System.Drawing.Size(28, 15)
         Me.lblcantidad.TabIndex = 118
         Me.lblcantidad.Text = "000"
         '
@@ -539,7 +549,7 @@ Partial Class M_DiarioFacturacion
         Me.lblnumeroB.Location = New System.Drawing.Point(23, 32)
         Me.lblnumeroB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblnumeroB.Name = "lblnumeroB"
-        Me.lblnumeroB.Size = New System.Drawing.Size(44, 13)
+        Me.lblnumeroB.Size = New System.Drawing.Size(52, 15)
         Me.lblnumeroB.TabIndex = 119
         Me.lblnumeroB.Text = "Número"
         '
@@ -554,24 +564,24 @@ Partial Class M_DiarioFacturacion
         Me.dgbtabla.BackgroundColor = System.Drawing.Color.White
         Me.dgbtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbtabla.Location = New System.Drawing.Point(16, 193)
-        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgbtabla.Margin = New System.Windows.Forms.Padding(2)
         Me.dgbtabla.Name = "dgbtabla"
         Me.dgbtabla.ReadOnly = True
         Me.dgbtabla.RowHeadersVisible = False
         Me.dgbtabla.RowHeadersWidth = 51
         Me.dgbtabla.RowTemplate.Height = 24
         Me.dgbtabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgbtabla.Size = New System.Drawing.Size(1033, 362)
+        Me.dgbtabla.Size = New System.Drawing.Size(1033, 355)
         Me.dgbtabla.TabIndex = 116
         '
         'lbltotalFacturas
         '
         Me.lbltotalFacturas.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lbltotalFacturas.AutoSize = True
-        Me.lbltotalFacturas.Location = New System.Drawing.Point(45, 568)
+        Me.lbltotalFacturas.Location = New System.Drawing.Point(45, 554)
         Me.lbltotalFacturas.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbltotalFacturas.Name = "lbltotalFacturas"
-        Me.lbltotalFacturas.Size = New System.Drawing.Size(140, 13)
+        Me.lbltotalFacturas.Size = New System.Drawing.Size(151, 15)
         Me.lbltotalFacturas.TabIndex = 117
         Me.lbltotalFacturas.Text = "CANTIDAD DE FACTURAS"
         '
@@ -585,6 +595,62 @@ Partial Class M_DiarioFacturacion
         Me.StatusStrip1.TabIndex = 1
         Me.StatusStrip1.Text = "StatusStrip1"
         '
+        'btnSucursal
+        '
+        Me.btnSucursal.BackColor = System.Drawing.Color.White
+        Me.btnSucursal.BackgroundImage = CType(resources.GetObject("btnSucursal.BackgroundImage"), System.Drawing.Image)
+        Me.btnSucursal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSucursal.FlatAppearance.BorderSize = 0
+        Me.btnSucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSucursal.Location = New System.Drawing.Point(297, 159)
+        Me.btnSucursal.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnSucursal.Name = "btnSucursal"
+        Me.btnSucursal.Size = New System.Drawing.Size(30, 17)
+        Me.btnSucursal.TabIndex = 177
+        Me.btnSucursal.Text = "..."
+        Me.btnSucursal.UseVisualStyleBackColor = False
+        '
+        'txtnombreSucursal
+        '
+        Me.txtnombreSucursal.Location = New System.Drawing.Point(83, 159)
+        Me.txtnombreSucursal.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtnombreSucursal.MaxLength = 20
+        Me.txtnombreSucursal.Name = "txtnombreSucursal"
+        Me.txtnombreSucursal.Size = New System.Drawing.Size(210, 20)
+        Me.txtnombreSucursal.TabIndex = 176
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(23, 161)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(55, 15)
+        Me.Label10.TabIndex = 175
+        Me.Label10.Text = "Sucursal"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(361, 159)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(81, 15)
+        Me.Label11.TabIndex = 178
+        Me.Label11.Text = "OK FACTURA"
+        '
+        'cbxOk
+        '
+        Me.cbxOk.AutoSize = True
+        Me.cbxOk.Checked = True
+        Me.cbxOk.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbxOk.Location = New System.Drawing.Point(465, 159)
+        Me.cbxOk.Name = "cbxOk"
+        Me.cbxOk.Size = New System.Drawing.Size(18, 17)
+        Me.cbxOk.TabIndex = 179
+        Me.cbxOk.UseVisualStyleBackColor = True
+        '
         'M_DiarioFacturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -595,7 +661,7 @@ Partial Class M_DiarioFacturacion
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "M_DiarioFacturacion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "M_DiarioFacturacion"
@@ -648,4 +714,9 @@ Partial Class M_DiarioFacturacion
     Friend WithEvents txtnombreClasificacion As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents btnExcel As Button
+    Friend WithEvents btnSucursal As Button
+    Friend WithEvents txtnombreSucursal As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents cbxOk As CheckBox
+    Friend WithEvents Label11 As Label
 End Class
