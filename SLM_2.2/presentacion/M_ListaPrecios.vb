@@ -136,6 +136,7 @@
         End If
     End Sub
 
+
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
             txtDescripcion.Text = sinDobleEspacio(txtDescripcion.Text)
