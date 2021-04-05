@@ -31,15 +31,6 @@ Partial Class frmAsientos
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtTexto = New System.Windows.Forms.TextBox()
         Me.dtDetalleAsiento = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Debe = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Haber = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtTotalDebe = New System.Windows.Forms.TextBox()
         Me.txtTotalHaber = New System.Windows.Forms.TextBox()
@@ -49,6 +40,7 @@ Partial Class frmAsientos
         Me.lblForm = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.lblfila = New System.Windows.Forms.Label()
         Me.lblOrigen = New System.Windows.Forms.Label()
         Me.chkAnular = New System.Windows.Forms.CheckBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -57,7 +49,15 @@ Partial Class frmAsientos
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.lblfila = New System.Windows.Forms.Label()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Debe = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Haber = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dtDetalleAsiento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -144,54 +144,6 @@ Partial Class frmAsientos
         Me.dtDetalleAsiento.Name = "dtDetalleAsiento"
         Me.dtDetalleAsiento.Size = New System.Drawing.Size(785, 361)
         Me.dtDetalleAsiento.TabIndex = 7
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "CodDetalle"
-        Me.Column1.Name = "Column1"
-        Me.Column1.Visible = False
-        '
-        'Cuenta
-        '
-        Me.Cuenta.HeaderText = "Cuenta"
-        Me.Cuenta.Name = "Cuenta"
-        Me.Cuenta.ReadOnly = True
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripción"
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
-        '
-        'Debe
-        '
-        Me.Debe.HeaderText = "Debe"
-        Me.Debe.Name = "Debe"
-        '
-        'Haber
-        '
-        Me.Haber.HeaderText = "Haber"
-        Me.Haber.Name = "Haber"
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "codCentroCosto"
-        Me.Column4.Name = "Column4"
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Centro de Costo"
-        Me.Column2.Name = "Column2"
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "codSucursal"
-        Me.Column5.Name = "Column5"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Sucursal"
-        Me.Column3.Name = "Column3"
         '
         'Label5
         '
@@ -305,6 +257,15 @@ Partial Class frmAsientos
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Descripción"
         '
+        'lblfila
+        '
+        Me.lblfila.AutoSize = True
+        Me.lblfila.Location = New System.Drawing.Point(751, 25)
+        Me.lblfila.Name = "lblfila"
+        Me.lblfila.Size = New System.Drawing.Size(20, 13)
+        Me.lblfila.TabIndex = 19
+        Me.lblfila.Text = "fila"
+        '
         'lblOrigen
         '
         Me.lblOrigen.AutoSize = True
@@ -396,14 +357,55 @@ Partial Class frmAsientos
         Me.StatusStrip1.TabIndex = 23
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'lblfila
+        'Column1
         '
-        Me.lblfila.AutoSize = True
-        Me.lblfila.Location = New System.Drawing.Point(751, 25)
-        Me.lblfila.Name = "lblfila"
-        Me.lblfila.Size = New System.Drawing.Size(20, 13)
-        Me.lblfila.TabIndex = 19
-        Me.lblfila.Text = "fila"
+        Me.Column1.HeaderText = "CodDetalle"
+        Me.Column1.Name = "Column1"
+        Me.Column1.Visible = False
+        '
+        'Cuenta
+        '
+        Me.Cuenta.HeaderText = "Cuenta"
+        Me.Cuenta.Name = "Cuenta"
+        Me.Cuenta.ReadOnly = True
+        '
+        'Descripcion
+        '
+        Me.Descripcion.HeaderText = "Descripción"
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.ReadOnly = True
+        '
+        'Debe
+        '
+        Me.Debe.HeaderText = "Debe"
+        Me.Debe.Name = "Debe"
+        '
+        'Haber
+        '
+        Me.Haber.HeaderText = "Haber"
+        Me.Haber.Name = "Haber"
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "codCentroCosto"
+        Me.Column4.Name = "Column4"
+        Me.Column4.Visible = False
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Centro de Costo"
+        Me.Column2.Name = "Column2"
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "codSucursal"
+        Me.Column5.Name = "Column5"
+        Me.Column5.Visible = False
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Sucursal"
+        Me.Column3.Name = "Column3"
         '
         'frmAsientos
         '
@@ -456,6 +458,7 @@ Partial Class frmAsientos
     Friend WithEvents chkAnular As CheckBox
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents lblOrigen As Label
+    Friend WithEvents lblfila As Label
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Cuenta As DataGridViewTextBoxColumn
     Friend WithEvents Descripcion As DataGridViewTextBoxColumn
@@ -465,5 +468,4 @@ Partial Class frmAsientos
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents lblfila As Label
 End Class

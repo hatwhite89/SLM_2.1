@@ -497,7 +497,7 @@
     End Sub
 
     Private Sub dtDetalleAsiento_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleAsiento.CellClick
-        If e.ColumnIndex = 5 Then
+        If e.ColumnIndex = 9 Then
             Try
                 Dim n As String = MsgBox("¿Desea eliminar la cuenta del asiento?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then
@@ -516,4 +516,5 @@
             End Try
         End If
     End Sub
+
 End Class
