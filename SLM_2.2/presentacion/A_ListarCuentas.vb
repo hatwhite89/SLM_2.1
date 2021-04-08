@@ -11,8 +11,10 @@
             dtCuentas.Columns("codCuenta").Visible = False
             dtCuentas.Columns("tipoCuenta").Visible = False
             dtCuentas.Columns("estado").Visible = False
+            dtCuentas.Columns("cuenta").HeaderText = "N. de Cuenta"
+            dtCuentas.Columns("nombre").HeaderText = "Nombre de Cuentas"
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
         'Cargar cuentas en DataGrid
 

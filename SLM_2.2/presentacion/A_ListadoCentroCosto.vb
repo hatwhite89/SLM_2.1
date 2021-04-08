@@ -30,19 +30,31 @@
 
         Try
             Dim codigo, nombre As String
+            codigo = dgvListado.Rows(e.RowIndex).Cells(0).Value
+            nombre = dgvListado.Rows(e.RowIndex).Cells(1).Value
+            If lblform.Text = "FacturaCompra" Then
+                With A_FacturaCompras
+
+                    .dtDetalleFactura.Rows(Convert.ToInt32(.lblFila.Text)).Cells(6).Value = codigo
+
+                    .dtDetalleFactura.Rows(Convert.ToInt32(.lblFila.Text)).Cells(2).Value = nombre
+                    Me.Close()
+
+                End With
+
+            ElseIf lblform.Text = "Asiento" Then
+
+                With frmAsientos
+
+                    .dtDetalleAsiento.Rows(Convert.ToInt32(.lblfila.Text)).Cells(5).Value = codigo
+
+                    .dtDetalleAsiento.Rows(Convert.ToInt32(.lblfila.Text)).Cells(6).Value = nombre
+                    Me.Close()
+
+                End With
 
 
-            With A_FacturaCompras
-
-                codigo = dgvListado.Rows(e.RowIndex).Cells(0).Value
-                .dtDetalleFactura.Rows(Convert.ToInt32(.lblFila.Text)).Cells(6).Value = codigo
-
-
-                nombre = dgvListado.Rows(e.RowIndex).Cells(1).Value
-                .dtDetalleFactura.Rows(Convert.ToInt32(.lblFila.Text)).Cells(2).Value = nombre
-                Me.Close()
-
-            End With
+            End If
 
         Catch ex As Exception
 

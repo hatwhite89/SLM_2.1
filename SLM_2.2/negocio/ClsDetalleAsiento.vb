@@ -7,7 +7,6 @@ Public Class ClsDetalleAsiento
     Dim debe, haber As Double
     Dim origen As String
 
-
     ':::::::::::::::::::::: Constructor ::::::::::::::::::::::
     Public Sub New()
 
