@@ -692,7 +692,7 @@
 
     End Sub
 
-    Private Sub btnReporteria_Click(sender As Object, e As EventArgs)
+    Private Sub btnReporteria_Click(sender As Object, e As EventArgs) Handles btnReporteria.Click
         Try
             M_ReporteriaTalentoHumano.Show()
         Catch ex As Exception
