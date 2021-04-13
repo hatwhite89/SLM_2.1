@@ -707,7 +707,7 @@ Public Class M_Factura
         End Try
     End Sub
     Private Sub dgblistadoExamenes_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgblistadoExamenes.CellClick
-        If e.ColumnIndex = 10 And Trim(txtnumeroOficial.Text) = "" Then
+        If e.ColumnIndex = 11 And Trim(txtnumeroOficial.Text) = "" Then
             Try
                 Dim n As String = MsgBox("¿Desea eliminar el examen de la factura?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then
@@ -774,7 +774,7 @@ Public Class M_Factura
                         Dim cantDias As Integer = 0
                         dtFeriados = objFeriado.BuscarFeriadosRangoFecha(Date.Parse(dtpfechaFactura.Value), Date.Parse(dtpfechaFactura.Value.Date.AddDays(7)))
                         cantDias = dtFeriados.Rows.Count + 7
-                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(cantDias), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0, CStr(row("codigoItem"))})
+                        dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(cantDias), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0, CStr(row("codigoItem")), CStr(row("id_centrocosto"))})
                         totalFactura()
 
                         'observaciones
@@ -813,7 +813,7 @@ Public Class M_Factura
             End Try
         ElseIf e.ColumnIndex = 1 Then
             Try
-                Dim code, cant, codeExam, subArea, detFact As Integer
+                Dim code, cant, codeExam, subArea, detFact, id_centrocosto As Integer
                 Dim precio, subtotal, descuento, porcDesc As Double
                 Dim descrip As String
                 code = Convert.ToInt64(dgblistadoExamenes.Rows(e.RowIndex).Cells(0).Value())
@@ -826,11 +826,12 @@ Public Class M_Factura
                 precio = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(2).Value())
                 descrip = dgblistadoExamenes.Rows(e.RowIndex).Cells(3).Value()
                 porcDesc = Convert.ToDouble(dgblistadoExamenes.Rows(e.RowIndex).Cells(5).Value())
+                id_centrocosto = Convert.ToInt64(dgblistadoExamenes.Rows(e.RowIndex).Cells(10).Value())
                 subtotal = precio * cant
                 descuento = subtotal * (porcDesc / 100)
                 subtotal -= descuento
                 dgblistadoExamenes.Rows.Remove(dgblistadoExamenes.Rows(e.RowIndex.ToString))
-                dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), porcDesc, subtotal, subArea, detFact, codeExam})
+                dgblistadoExamenes.Rows.Insert(e.RowIndex.ToString, New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), porcDesc, subtotal, subArea, detFact, codeExam, id_centrocosto})
 
                 M_ClienteVentana.dgvtabla.Rows.Remove(M_ClienteVentana.dgvtabla.Rows(e.RowIndex.ToString))
                 M_ClienteVentana.dgvtabla.Rows.Insert(e.RowIndex.ToString, New String() {code, cant, precio, descrip, Me.dtpfechaFactura.Value.Date.AddDays(7), porcDesc, subtotal})
@@ -955,7 +956,7 @@ Public Class M_Factura
             cantDias = dtFeriados.Rows.Count + 7
 
 
-            dgblistadoExamenes.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(cantDias), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0, CStr(row("codigoItem"))})
+            dgblistadoExamenes.Rows.Add(New String() {objExam.codeIntExam_, "1", CStr(row("precio")), CStr(row("descripcion")), Me.dtpfechaFactura.Value.Date.AddDays(cantDias), CStr(row("porcentaje")), (subtotal), CStr(row("codigoSubArea")), 0, CStr(row("codigoItem")), CStr(row("id_centrocosto"))})
             dgbObservaciones.Rows.Add(New String() {objExam.codeIntExam_, ""})
             dgbObservaciones2.Rows.Add(New String() {objExam.codeIntExam_, ""})
             totalFactura()
