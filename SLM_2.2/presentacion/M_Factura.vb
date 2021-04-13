@@ -1141,6 +1141,11 @@ Public Class M_Factura
                             letras = M_Factura.Numalet.ToCardinal(txttotal.Text)
                             Imprimir_Factura()
                             OrdenDeTrabajo()
+
+                            'INSERTAR ASIENTO DE INGRESO
+                            InsertarAsiento()
+                            ':::::::::::::::::::::::::::
+
                             colaPacientes()
                         Else
                             HabilitarActualizarFactura()
@@ -1572,6 +1577,10 @@ Public Class M_Factura
                                 'Imprimir_Factura()
                                 Imprimir_Factura()
                                 OrdenDeTrabajo()
+                                'INSERTAR ASIENTO DE INGRESO
+                                InsertarAsiento()
+                                ':::::::::::::::::::::::::::
+                                colaPacientes()
                             Else
                                 HabilitarActualizarFactura()
                             End If
@@ -2735,6 +2744,185 @@ Public Class M_Factura
             End If
         End Function
 
-    End Class
+    End Class 'Numeros a letras
 
-End Class
+
+    Private Sub InsertarAsiento()
+
+        '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::ASIENTO CONTABLE DE FACTURA DE COMPRA
+        Dim sumaPrecio As Double = 0
+        Dim asiento As New ClsAsientoContable
+        Dim detalleasiento As New ClsDetalleAsiento
+        Dim periodocontable As New ClsPeriodoContable
+        Dim objCentroCosto As New ClsCentroCostos
+        Dim codigoAsiento As String
+        Dim codigodetalle As Integer
+        Dim cuentaCentroCosto As New DataTable
+
+        'Capturando periodo contable
+        Dim codPeriodo As String
+
+        Dim dtp As New DataTable
+        Dim rowp As DataRow
+        dtp = periodocontable.periodoContableActivo()
+        rowp = dtp.Rows(0)
+        codPeriodo = rowp("codPeriodo").ToString
+
+        With asiento
+
+            .Cod_Periodo = Convert.ToInt32(codPeriodo)
+            .Descrip = txtnumeroFactura.Text + " " + txtnombreCliente.Text
+            .Fecha_ = dtpfechaFactura.Value
+            .Campo_Llave = txtnumeroFactura.Text
+            .Estado_ = 0
+            .Origen_ = "Ingresos-Facturacion"
+            codigoAsiento = .registrarAsiento
+
+        End With
+
+
+        'DETALLE DE ASIENTO/ INGRESO POR EXAMEN
+
+        Try
+            Dim ds As New DataSet
+            ' Add Table
+            ds.Tables.Add("ListaExamenes")
+            ' Add Columns
+
+            Dim col As DataColumn
+            For Each dgvCol As DataGridViewColumn In dgblistadoExamenes.Columns
+                col = New DataColumn(dgvCol.Name)
+                ds.Tables("ListaExamenes").Columns.Add(col)
+            Next
+
+            'Add Rows from the datagridview
+            Dim row As DataRow
+            Dim colcount As Integer = dgblistadoExamenes.Columns.Count - 1
+            For i As Integer = 0 To dgblistadoExamenes.Rows.Count - 1
+                row = ds.Tables("ListaExamenes").Rows.Add
+                For Each column As DataGridViewColumn In dgblistadoExamenes.Columns
+                    row.Item(column.Index) = dgblistadoExamenes.Rows.Item(i).Cells(column.Index).Value
+                Next
+            Next
+            'Ordenar el data table por grupo
+            Dim dt As New DataTable 'tabla de los items ordenador por subarea
+            dt = ds.Tables(0)
+            dt.DefaultView.Sort = "id_centrocosto DESC"
+
+            For i As Integer = 0 To dt.Rows.Count - 1
+                row = dt.Rows(i)
+                sumaPrecio = 0
+                If CStr(row("subArea")) <> "0" Then
+
+                    For j As Integer = i To dt.Rows.Count - 1
+                        Dim rowC As DataRow
+                        rowC = dt.Rows(j)
+                        If row("id_centrocosto") = rowC("id_centrocosto") Then
+
+                            sumaPrecio = sumaPrecio + rowC("Subtotal")
+
+
+                            If j = dt.Rows.Count - 2 Then
+
+                                'INSERTAR DETALLE DE ASIENTO
+
+                                With objCentroCosto
+
+                                    .ID = Integer.Parse(dgblistadoExamenes.Rows(i).Cells(10).Value)
+                                    cuentaCentroCosto = .BuscarCentroCostoCodigo
+
+                                End With
+
+                                Dim rowCuenta2 As DataRow
+                                rowCuenta2 = cuentaCentroCosto.Rows(0)
+
+                                With detalleasiento
+                                    .Cod_Asiento = Convert.ToInt32(codigoAsiento)
+                                    .Cuenta_ = Integer.Parse(rowCuenta2("codCuenta"))
+                                    .Debe_ = 0
+                                    .Haber_ = sumaPrecio
+                                    .Origen_ = "Ingresos-Facturacion"
+
+                                    codigodetalle = .registrarDetalleAsiento()
+
+                                End With
+                                Dim objasiento_cc2 As New ClsCentoCostos_Asientos
+                                'CENTRO DE COSTO
+                                With objasiento_cc2
+
+                                    .id_asientos_ = Integer.Parse(codigoAsiento)
+                                    .id_detalleasiento_ = Integer.Parse(codigodetalle)
+                                    .idcentrocostos_ = Integer.Parse(dgblistadoExamenes.Rows(i).Cells(10).Value)
+                                    .codSucursal_ = Integer.Parse(lblcodeSucursal.Text)
+                                    .REGISTRO_ASIENTO_CC()
+
+                                End With
+
+                                'Caja general
+                                With detalleasiento
+                                    .Cod_Asiento = Convert.ToInt32(codigoAsiento)
+                                    .Cuenta_ = 111011
+                                    .Debe_ = txttotal.Text
+                                    .Haber_ = 0
+                                    .Origen_ = "Ingresos-Facturacion"
+
+                                    codigodetalle = .registrarDetalleAsiento()
+
+                                End With
+                                Exit Sub
+                            End If
+                        Else
+                            i = j - 1
+                            Exit For
+                        End If
+                    Next
+
+                    'INSERTAR DETALLE DE ASIENTO
+
+                    With objCentroCosto
+
+                        .ID = Integer.Parse(dgblistadoExamenes.Rows(i).Cells(10).Value)
+                        cuentaCentroCosto = .BuscarCentroCostoCodigo
+
+                    End With
+
+                    Dim rowCuenta As DataRow
+                    rowCuenta = cuentaCentroCosto.Rows(0)
+
+                    With detalleasiento
+                        .Cod_Asiento = Convert.ToInt32(codigoAsiento)
+                        .Cuenta_ = Integer.Parse(rowCuenta("codCuenta"))
+                        .Debe_ = 0
+                        .Haber_ = sumaPrecio
+                        .Origen_ = "Ingresos-Facturacion"
+
+                        codigodetalle = .registrarDetalleAsiento()
+
+                    End With
+                    Dim objasiento_cc As New ClsCentoCostos_Asientos
+                    'CENTRO DE COSTO
+                    With objasiento_cc
+
+                        .id_asientos_ = Integer.Parse(codigoAsiento)
+                        .id_detalleasiento_ = Integer.Parse(codigodetalle)
+                        .idcentrocostos_ = Integer.Parse(dgblistadoExamenes.Rows(i).Cells(10).Value)
+                        .codSucursal_ = Integer.Parse(lblcodeSucursal.Text)
+                        .REGISTRO_ASIENTO_CC()
+
+                    End With
+
+                End If
+            Next
+
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+
+    End Sub
+
+
+End Class 'final facturacion

@@ -83,7 +83,9 @@
         txtNombre.Clear()
         txtNombreArea.Clear()
         lblcodArea.Text = "codArea"
+        codCuenta.Text = "codCuenta"
         txtCodBreve.Clear()
+        txtNombreCuenta.Clear()
 
     End Sub
 
@@ -100,7 +102,7 @@
 
         Try
 
-            If txtNombre.Text <> "" Or lblcodArea.Text <> "codArea" Or txtCodBreve.Text <> "" Then
+            If txtNombre.Text <> "" Or lblcodArea.Text <> "codArea" Or txtCodBreve.Text <> "" Or codCuenta.Text <> "codCuenta" Then
                 Guardar()
 
                 Limpiar()
@@ -115,6 +117,10 @@
                 MsgBox("Debe seleccionar un area para el centro de costo")
             ElseIf txtCodBreve.Text = "" Then
                 MsgBox("Debe asignar un Código Breve al centro de costo.")
+            ElseIf codCuenta.Text = "codCuenta" Then
+                MsgBox("Debe asignar una cuenta al centro de costo.")
+
+
             End If
 
         Catch ex As Exception
@@ -138,7 +144,7 @@
         Try
 
 
-            If txtNombre.Text <> "" Or lblcodArea.Text <> "codArea" Then
+            If txtNombre.Text <> "" Or lblcodArea.Text <> "codArea" Or codCuenta.Text <> "codCuenta" Then
                 Modificar()
                 GroupBox1.Enabled = False
                 Limpiar()
@@ -149,6 +155,8 @@
                 MsgBox("Debe asignar un nombre al centro de costo.")
             ElseIf lblcodArea.Text = "codArea" Then
                 MsgBox("Debe seleccionar un area para el centro de costo")
+            ElseIf codCuenta.Text = "codCuenta" Then
+                MsgBox("Debe asignar una cuenta al centro de costo.")
 
             End If
 

@@ -103,6 +103,7 @@
                     'MsgBox("El proveedor:" + rowpro("codCuenta"))
                     '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: INSERTAR ASIENTO
 
+
                     With asiento
 
                         .Cod_Periodo = Convert.ToInt32(codPeriodo)
