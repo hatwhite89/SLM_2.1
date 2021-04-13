@@ -82,7 +82,7 @@ Public Class M_BuscarFactura
                 dt = objDetFact.BuscarDetalleFacturaIngresada()
                 For index As Integer = 0 To dt.Rows.Count - 1
                     row = dt.Rows(index)
-                    M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codInterno")), CStr(row("cantidad")), CStr(row("subtotal")), CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal")), CStr(row("subArea")), CStr(row("numero")), CStr(row("codigoExamen"))})
+                    M_Factura.dgblistadoExamenes.Rows.Add(New String() {CStr(row("codInterno")), CStr(row("cantidad")), CStr(row("subtotal")), CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal")), CStr(row("subArea")), CStr(row("numero")), CStr(row("codigoExamen")), CStr(row("id_centrocosto"))})
                     M_ClienteVentana.dgvtabla.Rows.Add(New String() {CStr(row("codInterno")), CStr(row("cantidad")), CStr(row("subtotal")), CStr(row("descripcion")), CStr(row("fechaEntrega")), CStr(row("descuento")), CStr(row("subtotal"))})
 
                     'OBSERVACIONES
