@@ -189,6 +189,7 @@ Partial Class A_CentrodeCosto
         Me.codCuenta.Size = New System.Drawing.Size(59, 13)
         Me.codCuenta.TabIndex = 12
         Me.codCuenta.Text = "codCuenta"
+        Me.codCuenta.Visible = False
         '
         'txtNombreCuenta
         '
@@ -245,6 +246,7 @@ Partial Class A_CentrodeCosto
         Me.lblcodArea.Size = New System.Drawing.Size(47, 13)
         Me.lblcodArea.TabIndex = 6
         Me.lblcodArea.Text = "codArea"
+        Me.lblcodArea.Visible = False
         '
         'txtNombreArea
         '
