@@ -24,19 +24,26 @@ Partial Class E_frmCuentaAlmacen
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(E_frmCuentaAlmacen))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.txtNombre = New System.Windows.Forms.TextBox()
-        Me.txtCuenta = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.nombrep = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuentap = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtCuenta = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.nombres = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -44,13 +51,8 @@ Partial Class E_frmCuentaAlmacen
         Me.txtCuenta2 = New System.Windows.Forms.TextBox()
         Me.txtNombre2 = New System.Windows.Forms.TextBox()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.nombrep = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cuentap = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombres = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cuentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,6 +71,17 @@ Partial Class E_frmCuentaAlmacen
         Me.Panel1.Size = New System.Drawing.Size(798, 37)
         Me.Panel1.TabIndex = 4
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label4.Location = New System.Drawing.Point(3, 8)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(204, 26)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Registrar Cuentas"
+        '
         'Button5
         '
         Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -80,17 +93,6 @@ Partial Class E_frmCuentaAlmacen
         Me.Button5.TabIndex = 7
         Me.Button5.Text = "Dar Baja"
         Me.Button5.UseVisualStyleBackColor = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label4.Location = New System.Drawing.Point(3, 8)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(204, 26)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Registrar Cuentas"
         '
         'Button1
         '
@@ -121,6 +123,7 @@ Partial Class E_frmCuentaAlmacen
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Button5)
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -136,38 +139,6 @@ Partial Class E_frmCuentaAlmacen
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Cuentas Principales"
         '
-        'txtNombre
-        '
-        Me.txtNombre.Location = New System.Drawing.Point(15, 35)
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(196, 20)
-        Me.txtNombre.TabIndex = 0
-        '
-        'txtCuenta
-        '
-        Me.txtCuenta.Location = New System.Drawing.Point(278, 35)
-        Me.txtCuenta.Name = "txtCuenta"
-        Me.txtCuenta.Size = New System.Drawing.Size(186, 20)
-        Me.txtCuenta.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 16)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(95, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Nombre de cuenta"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(278, 14)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(95, 13)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Número de cuenta"
-        '
         'DataGridView1
         '
         Me.DataGridView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -181,11 +152,56 @@ Partial Class E_frmCuentaAlmacen
         Me.DataGridView1.Size = New System.Drawing.Size(766, 113)
         Me.DataGridView1.TabIndex = 4
         '
+        'nombrep
+        '
+        Me.nombrep.DataPropertyName = "nombre"
+        Me.nombrep.HeaderText = "NOMBRE DE CUENTA"
+        Me.nombrep.Name = "nombrep"
+        '
+        'cuentap
+        '
+        Me.cuentap.DataPropertyName = "cuenta"
+        Me.cuentap.HeaderText = "CUENTA"
+        Me.cuentap.Name = "cuentap"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(278, 14)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(95, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Número de cuenta"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(12, 16)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(95, 13)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Nombre de cuenta"
+        '
+        'txtCuenta
+        '
+        Me.txtCuenta.Location = New System.Drawing.Point(278, 35)
+        Me.txtCuenta.Name = "txtCuenta"
+        Me.txtCuenta.Size = New System.Drawing.Size(186, 20)
+        Me.txtCuenta.TabIndex = 1
+        '
+        'txtNombre
+        '
+        Me.txtNombre.Location = New System.Drawing.Point(15, 35)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(196, 20)
+        Me.txtNombre.TabIndex = 0
+        '
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.ComboBox1)
         Me.GroupBox2.Controls.Add(Me.Button3)
@@ -202,6 +218,23 @@ Partial Class E_frmCuentaAlmacen
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Cuentas Secundarias"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(330, 16)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(84, 13)
+        Me.Label6.TabIndex = 9
+        Me.Label6.Text = "Cuenta Principal"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(333, 37)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(155, 21)
+        Me.ComboBox1.TabIndex = 8
         '
         'Button3
         '
@@ -227,6 +260,24 @@ Partial Class E_frmCuentaAlmacen
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.Size = New System.Drawing.Size(766, 118)
         Me.DataGridView2.TabIndex = 4
+        '
+        'nombres
+        '
+        Me.nombres.DataPropertyName = "nombre"
+        Me.nombres.HeaderText = "NOMBRE DE CUENTA"
+        Me.nombres.Name = "nombres"
+        '
+        'cuentas
+        '
+        Me.cuentas.DataPropertyName = "cuenta"
+        Me.cuentas.HeaderText = "CUENTA"
+        Me.cuentas.Name = "cuentas"
+        '
+        'id_cuenta
+        '
+        Me.id_cuenta.DataPropertyName = "id_cuenta"
+        Me.id_cuenta.HeaderText = "CUENTA PRINCIPAL"
+        Me.id_cuenta.Name = "id_cuenta"
         '
         'Label3
         '
@@ -293,52 +344,25 @@ Partial Class E_frmCuentaAlmacen
         Me.StatusStrip1.TabIndex = 7
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'ComboBox1
+        'Label7
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(333, 37)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(155, 21)
-        Me.ComboBox1.TabIndex = 8
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(278, 65)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(221, 13)
+        Me.Label7.TabIndex = 8
+        Me.Label7.Text = "Seleccionar cuenta para cargar datos"
         '
-        'Label6
+        'Label8
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(330, 16)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(84, 13)
-        Me.Label6.TabIndex = 9
-        Me.Label6.Text = "Cuenta Principal"
-        '
-        'nombrep
-        '
-        Me.nombrep.DataPropertyName = "nombre"
-        Me.nombrep.HeaderText = "NOMBRE DE CUENTA"
-        Me.nombrep.Name = "nombrep"
-        '
-        'cuentap
-        '
-        Me.cuentap.DataPropertyName = "cuenta"
-        Me.cuentap.HeaderText = "CUENTA"
-        Me.cuentap.Name = "cuentap"
-        '
-        'nombres
-        '
-        Me.nombres.DataPropertyName = "nombre"
-        Me.nombres.HeaderText = "NOMBRE DE CUENTA"
-        Me.nombres.Name = "nombres"
-        '
-        'cuentas
-        '
-        Me.cuentas.DataPropertyName = "cuenta"
-        Me.cuentas.HeaderText = "CUENTA"
-        Me.cuentas.Name = "cuentas"
-        '
-        'id_cuenta
-        '
-        Me.id_cuenta.DataPropertyName = "id_cuenta"
-        Me.id_cuenta.HeaderText = "CUENTA PRINCIPAL"
-        Me.id_cuenta.Name = "id_cuenta"
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(275, 60)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(221, 13)
+        Me.Label8.TabIndex = 9
+        Me.Label8.Text = "Seleccionar cuenta para cargar datos"
         '
         'E_frmCuentaAlmacen
         '
@@ -394,4 +418,6 @@ Partial Class E_frmCuentaAlmacen
     Friend WithEvents nombres As DataGridViewTextBoxColumn
     Friend WithEvents cuentas As DataGridViewTextBoxColumn
     Friend WithEvents id_cuenta As DataGridViewTextBoxColumn
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
 End Class

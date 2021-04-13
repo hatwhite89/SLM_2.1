@@ -23,7 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnContabilidad = New System.Windows.Forms.Button()
         Me.btnAlmacen = New System.Windows.Forms.Button()
         Me.btnTalentoHumano = New System.Windows.Forms.Button()
@@ -141,6 +141,7 @@ Partial Class Form1
         Me.btnEmpleados = New System.Windows.Forms.PictureBox()
         Me.TabControl3 = New System.Windows.Forms.TabControl()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.Button10 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btnFeriados = New System.Windows.Forms.PictureBox()
         Me.btnUsuarios = New System.Windows.Forms.PictureBox()
@@ -161,7 +162,6 @@ Partial Class Form1
         Me.TabPage10 = New System.Windows.Forms.TabPage()
         Me.PictureBox38 = New System.Windows.Forms.PictureBox()
         Me.PictureBox85 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox84 = New System.Windows.Forms.PictureBox()
         Me.btnOrdenInterna = New System.Windows.Forms.PictureBox()
         Me.btnEntradas = New System.Windows.Forms.PictureBox()
         Me.btnFactCompra = New System.Windows.Forms.PictureBox()
@@ -169,6 +169,7 @@ Partial Class Form1
         Me.btnSalidas = New System.Windows.Forms.PictureBox()
         Me.btnAlmacenes = New System.Windows.Forms.PictureBox()
         Me.TabPage11 = New System.Windows.Forms.TabPage()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.btnUnidadMedida = New System.Windows.Forms.PictureBox()
         Me.btnCategoria = New System.Windows.Forms.PictureBox()
         Me.btnProducto = New System.Windows.Forms.PictureBox()
@@ -177,6 +178,7 @@ Partial Class Form1
         Me.PictureBox54 = New System.Windows.Forms.PictureBox()
         Me.btnBI = New System.Windows.Forms.PictureBox()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.PictureBox84 = New System.Windows.Forms.PictureBox()
         Me.btnAutorizacion = New System.Windows.Forms.PictureBox()
         Me.PictureBox66 = New System.Windows.Forms.PictureBox()
         Me.TabPage12 = New System.Windows.Forms.TabPage()
@@ -194,6 +196,7 @@ Partial Class Form1
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.reporte = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblMiUser = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -215,7 +218,6 @@ Partial Class Form1
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PictureBox55 = New System.Windows.Forms.PictureBox()
         Me.pbxNoti = New System.Windows.Forms.PictureBox()
-        Me.reporte = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.panelMenu.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.tcMenu.SuspendLayout()
@@ -319,7 +321,6 @@ Partial Class Form1
         Me.TabPage10.SuspendLayout()
         CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox85, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox84, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnOrdenInterna, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnEntradas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnFactCompra, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -327,6 +328,7 @@ Partial Class Form1
         CType(Me.btnSalidas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnAlmacenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage11.SuspendLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnUnidadMedida, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCategoria, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnProducto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -335,6 +337,7 @@ Partial Class Form1
         CType(Me.PictureBox54, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnBI, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage8.SuspendLayout()
+        CType(Me.PictureBox84, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnAutorizacion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox66, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage12.SuspendLayout()
@@ -1748,6 +1751,7 @@ Partial Class Form1
         'TabPage6
         '
         Me.TabPage6.BackColor = System.Drawing.Color.AliceBlue
+        Me.TabPage6.Controls.Add(Me.Button10)
         Me.TabPage6.Controls.Add(Me.Button2)
         Me.TabPage6.Controls.Add(Me.btnFeriados)
         Me.TabPage6.Controls.Add(Me.btnUsuarios)
@@ -1758,6 +1762,16 @@ Partial Class Form1
         Me.TabPage6.Size = New System.Drawing.Size(578, 470)
         Me.TabPage6.TabIndex = 3
         Me.TabPage6.Text = "Configuración de Sistema"
+        '
+        'Button10
+        '
+        Me.Button10.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button10.Location = New System.Drawing.Point(144, 196)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(103, 94)
+        Me.Button10.TabIndex = 50
+        Me.Button10.Text = "Correo Resultados"
+        Me.Button10.UseVisualStyleBackColor = False
         '
         'Button2
         '
@@ -1969,7 +1983,6 @@ Partial Class Form1
         Me.TabPage10.BackColor = System.Drawing.Color.AliceBlue
         Me.TabPage10.Controls.Add(Me.PictureBox38)
         Me.TabPage10.Controls.Add(Me.PictureBox85)
-        Me.TabPage10.Controls.Add(Me.PictureBox84)
         Me.TabPage10.Controls.Add(Me.btnOrdenInterna)
         Me.TabPage10.Controls.Add(Me.btnEntradas)
         Me.TabPage10.Controls.Add(Me.btnFactCompra)
@@ -1996,22 +2009,12 @@ Partial Class Form1
         'PictureBox85
         '
         Me.PictureBox85.BackColor = System.Drawing.Color.White
-        Me.PictureBox85.Location = New System.Drawing.Point(9, 303)
+        Me.PictureBox85.Location = New System.Drawing.Point(387, 170)
         Me.PictureBox85.Name = "PictureBox85"
-        Me.PictureBox85.Size = New System.Drawing.Size(92, 104)
+        Me.PictureBox85.Size = New System.Drawing.Size(96, 104)
         Me.PictureBox85.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox85.TabIndex = 43
         Me.PictureBox85.TabStop = False
-        '
-        'PictureBox84
-        '
-        Me.PictureBox84.Image = Global.SLM_2._2.My.Resources.Resources.almacen_08
-        Me.PictureBox84.Location = New System.Drawing.Point(391, 169)
-        Me.PictureBox84.Name = "PictureBox84"
-        Me.PictureBox84.Size = New System.Drawing.Size(94, 105)
-        Me.PictureBox84.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox84.TabIndex = 41
-        Me.PictureBox84.TabStop = False
         '
         'btnOrdenInterna
         '
@@ -2076,6 +2079,7 @@ Partial Class Form1
         'TabPage11
         '
         Me.TabPage11.BackColor = System.Drawing.Color.AliceBlue
+        Me.TabPage11.Controls.Add(Me.PictureBox5)
         Me.TabPage11.Controls.Add(Me.btnUnidadMedida)
         Me.TabPage11.Controls.Add(Me.btnCategoria)
         Me.TabPage11.Controls.Add(Me.btnProducto)
@@ -2085,6 +2089,15 @@ Partial Class Form1
         Me.TabPage11.Size = New System.Drawing.Size(577, 470)
         Me.TabPage11.TabIndex = 1
         Me.TabPage11.Text = "Producto"
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.BackColor = System.Drawing.Color.White
+        Me.PictureBox5.Location = New System.Drawing.Point(420, 23)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(100, 99)
+        Me.PictureBox5.TabIndex = 35
+        Me.PictureBox5.TabStop = False
         '
         'btnUnidadMedida
         '
@@ -2162,6 +2175,7 @@ Partial Class Form1
         'TabPage8
         '
         Me.TabPage8.BackColor = System.Drawing.Color.AliceBlue
+        Me.TabPage8.Controls.Add(Me.PictureBox84)
         Me.TabPage8.Controls.Add(Me.btnAutorizacion)
         Me.TabPage8.Controls.Add(Me.PictureBox66)
         Me.TabPage8.Location = New System.Drawing.Point(4, 22)
@@ -2170,6 +2184,16 @@ Partial Class Form1
         Me.TabPage8.Size = New System.Drawing.Size(577, 470)
         Me.TabPage8.TabIndex = 3
         Me.TabPage8.Text = "Solicitudes"
+        '
+        'PictureBox84
+        '
+        Me.PictureBox84.Image = Global.SLM_2._2.My.Resources.Resources.almacen_08
+        Me.PictureBox84.Location = New System.Drawing.Point(330, 20)
+        Me.PictureBox84.Name = "PictureBox84"
+        Me.PictureBox84.Size = New System.Drawing.Size(94, 105)
+        Me.PictureBox84.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox84.TabIndex = 44
+        Me.PictureBox84.TabStop = False
         '
         'btnAutorizacion
         '
@@ -2235,6 +2259,7 @@ Partial Class Form1
         Me.Button7.TabIndex = 45
         Me.Button7.Text = "BI"
         Me.Button7.UseVisualStyleBackColor = False
+        Me.Button7.Visible = False
         '
         'Button6
         '
@@ -2307,6 +2332,7 @@ Partial Class Form1
         Me.PictureBox87.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox87.TabIndex = 44
         Me.PictureBox87.TabStop = False
+        Me.PictureBox87.Visible = False
         '
         'PictureBox86
         '
@@ -2383,6 +2409,14 @@ Partial Class Form1
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(566, 389)
         Me.DataGridView1.TabIndex = 0
+        '
+        'reporte
+        '
+        Me.reporte.DataPropertyName = "reporte"
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.reporte.DefaultCellStyle = DataGridViewCellStyle1
+        Me.reporte.HeaderText = "REPORTE"
+        Me.reporte.Name = "reporte"
         '
         'lblMiUser
         '
@@ -2635,14 +2669,6 @@ Partial Class Form1
         Me.pbxNoti.TabStop = False
         Me.pbxNoti.Visible = False
         '
-        'reporte
-        '
-        Me.reporte.DataPropertyName = "reporte"
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.reporte.DefaultCellStyle = DataGridViewCellStyle2
-        Me.reporte.HeaderText = "REPORTE"
-        Me.reporte.Name = "reporte"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2790,7 +2816,6 @@ Partial Class Form1
         Me.TabPage10.ResumeLayout(False)
         CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox85, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox84, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnOrdenInterna, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnEntradas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnFactCompra, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2798,6 +2823,7 @@ Partial Class Form1
         CType(Me.btnSalidas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnAlmacenes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage11.ResumeLayout(False)
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnUnidadMedida, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCategoria, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnProducto, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2806,6 +2832,7 @@ Partial Class Form1
         CType(Me.PictureBox54, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnBI, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage8.ResumeLayout(False)
+        CType(Me.PictureBox84, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnAutorizacion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox66, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage12.ResumeLayout(False)
@@ -2976,15 +3003,12 @@ Partial Class Form1
     Friend WithEvents btnCapacitaciones As PictureBox
     Friend WithEvents btnFeriados As PictureBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents PictureBox84 As PictureBox
     Friend WithEvents PictureBox85 As PictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Button5 As Button
     Friend WithEvents PictureBox86 As PictureBox
-    Friend WithEvents PictureBox87 As PictureBox
     Friend WithEvents Button6 As Button
     Friend WithEvents PictureBox88 As PictureBox
-    Friend WithEvents Button7 As Button
     Friend WithEvents lblCajero As Label
     Friend WithEvents PictureBox38 As PictureBox
     Friend WithEvents btnInventario As PictureBox
@@ -3031,4 +3055,9 @@ Partial Class Form1
     Friend WithEvents Button9 As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents reporte As DataGridViewTextBoxColumn
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents Button10 As Button
+    Friend WithEvents PictureBox84 As PictureBox
+    Friend WithEvents Button7 As Button
+    Friend WithEvents PictureBox87 As PictureBox
 End Class

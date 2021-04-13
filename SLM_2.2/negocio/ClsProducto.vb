@@ -166,6 +166,25 @@ Public Class ClsProducto
         sqlcom.Connection = New ClsConnection().getConexion
         Return sqlcom.ExecuteReader
     End Function
+    Public Function RecuperarProductoRegistro() As SqlDataReader
+        Dim sqlcom As SqlCommand
+        sqlcom = New SqlCommand
+        sqlcom.CommandText = "SELECT  p.id_producto
+      ,p.nombre_producto
+	  ,p.precio
+      ,p.marca
+      ,p.modelo
+      ,p.descripcion
+      ,p.cantidad_minima
+      ,u.nombre_unidad_medida
+      ,c.nombre_categoria
+,p.nombreCP,p.nombreSP
+     
+  FROM ProductoAlmacen p, CategoriaProducto c, UnidadMedidaAlmacen u
+  where p.id_categoria = c.id_categoria_producto and p.id_unidad_medida = u.id_unidad_medida and p.estado <> 1"
+        sqlcom.Connection = New ClsConnection().getConexion
+        Return sqlcom.ExecuteReader
+    End Function
 
     Public Function RecuperarProductoOC1() As SqlDataReader
         Dim sqlcom As SqlCommand
@@ -213,7 +232,7 @@ Public Class ClsProducto
       ,p.cantidad_minima
       ,u.nombre_unidad_medida
       ,c.nombre_categoria
-     
+     ,p.nombreCP,p.nombreSP
   FROM ProductoAlmacen p, CategoriaProducto c, UnidadMedidaAlmacen u
   where p.id_categoria = c.id_categoria_producto and p.id_unidad_medida = u.id_unidad_medida and p.estado <>1", cn)
             Dim dt As New DataTable

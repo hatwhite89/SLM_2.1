@@ -50,15 +50,6 @@ Partial Class E_frmEntrada
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.id_oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lote = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre_producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio_unitario1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fecha_vencimiento2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_entrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IDDETALLEOC = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -98,6 +89,15 @@ Partial Class E_frmEntrada
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.id_oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lote = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_producto1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio_unitario1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_vencimiento2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_entrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDDETALLEOC = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -388,60 +388,6 @@ Partial Class E_frmEntrada
         Me.DataGridView3.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView3.Size = New System.Drawing.Size(994, 280)
         Me.DataGridView3.TabIndex = 0
-        '
-        'id_oc
-        '
-        Me.id_oc.DataPropertyName = "id_oc"
-        Me.id_oc.HeaderText = "ORDEN DE COMPRA"
-        Me.id_oc.Name = "id_oc"
-        '
-        'lote
-        '
-        Me.lote.DataPropertyName = "lote"
-        Me.lote.HeaderText = "LOTE"
-        Me.lote.Name = "lote"
-        '
-        'id_producto
-        '
-        Me.id_producto.DataPropertyName = "id_producto"
-        Me.id_producto.HeaderText = "IDPRODUCTO"
-        Me.id_producto.Name = "id_producto"
-        '
-        'nombre_producto1
-        '
-        Me.nombre_producto1.DataPropertyName = "nombre_producto"
-        Me.nombre_producto1.HeaderText = "PRODUCTO"
-        Me.nombre_producto1.Name = "nombre_producto1"
-        '
-        'cantidad1
-        '
-        Me.cantidad1.DataPropertyName = "cantidad"
-        Me.cantidad1.HeaderText = "CANTIDAD"
-        Me.cantidad1.Name = "cantidad1"
-        '
-        'precio_unitario1
-        '
-        Me.precio_unitario1.DataPropertyName = "precio_unitario"
-        Me.precio_unitario1.HeaderText = "PRECIO/U"
-        Me.precio_unitario1.Name = "precio_unitario1"
-        '
-        'fecha_vencimiento2
-        '
-        Me.fecha_vencimiento2.DataPropertyName = "fecha_vencimiento"
-        Me.fecha_vencimiento2.HeaderText = "VENCIMIENTO"
-        Me.fecha_vencimiento2.Name = "fecha_vencimiento2"
-        '
-        'id_entrada
-        '
-        Me.id_entrada.DataPropertyName = "id_entrada"
-        Me.id_entrada.HeaderText = "NUMENTRADA"
-        Me.id_entrada.Name = "id_entrada"
-        '
-        'IDDETALLEOC
-        '
-        Me.IDDETALLEOC.DataPropertyName = "id_detalle_oc"
-        Me.IDDETALLEOC.HeaderText = "IDDETALLEOC"
-        Me.IDDETALLEOC.Name = "IDDETALLEOC"
         '
         'TextBox2
         '
@@ -825,6 +771,60 @@ Partial Class E_frmEntrada
         Me.StatusStrip1.Size = New System.Drawing.Size(1026, 22)
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'id_oc
+        '
+        Me.id_oc.DataPropertyName = "id_oc"
+        Me.id_oc.HeaderText = "ORDEN DE COMPRA"
+        Me.id_oc.Name = "id_oc"
+        '
+        'lote
+        '
+        Me.lote.DataPropertyName = "lote"
+        Me.lote.HeaderText = "LOTE"
+        Me.lote.Name = "lote"
+        '
+        'id_producto
+        '
+        Me.id_producto.DataPropertyName = "id_producto"
+        Me.id_producto.HeaderText = "IDPRODUCTO"
+        Me.id_producto.Name = "id_producto"
+        '
+        'nombre_producto1
+        '
+        Me.nombre_producto1.DataPropertyName = "nombre_producto"
+        Me.nombre_producto1.HeaderText = "PRODUCTO"
+        Me.nombre_producto1.Name = "nombre_producto1"
+        '
+        'cantidad1
+        '
+        Me.cantidad1.DataPropertyName = "existencia"
+        Me.cantidad1.HeaderText = "CANTIDAD"
+        Me.cantidad1.Name = "cantidad1"
+        '
+        'precio_unitario1
+        '
+        Me.precio_unitario1.DataPropertyName = "precio_unitario"
+        Me.precio_unitario1.HeaderText = "PRECIO/U"
+        Me.precio_unitario1.Name = "precio_unitario1"
+        '
+        'fecha_vencimiento2
+        '
+        Me.fecha_vencimiento2.DataPropertyName = "fecha_vencimiento"
+        Me.fecha_vencimiento2.HeaderText = "VENCIMIENTO"
+        Me.fecha_vencimiento2.Name = "fecha_vencimiento2"
+        '
+        'id_entrada
+        '
+        Me.id_entrada.DataPropertyName = "id_entrada"
+        Me.id_entrada.HeaderText = "NUMENTRADA"
+        Me.id_entrada.Name = "id_entrada"
+        '
+        'IDDETALLEOC
+        '
+        Me.IDDETALLEOC.DataPropertyName = "id_detalle_oc"
+        Me.IDDETALLEOC.HeaderText = "IDDETALLEOC"
+        Me.IDDETALLEOC.Name = "IDDETALLEOC"
         '
         'E_frmEntrada
         '

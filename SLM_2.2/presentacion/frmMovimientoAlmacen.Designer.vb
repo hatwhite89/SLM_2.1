@@ -104,7 +104,9 @@ Partial Class frmMovimientoAlmacen
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.DataGridView5 = New System.Windows.Forms.DataGridView()
+        Me.BindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
         Me.id_traslado2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_OCI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_producto2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -113,9 +115,9 @@ Partial Class frmMovimientoAlmacen
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID_OCI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_almcane = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel4.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,6 +140,7 @@ Partial Class frmMovimientoAlmacen
         Me.GroupBox6.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel4
@@ -507,7 +510,7 @@ Partial Class frmMovimientoAlmacen
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(1035, 497)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Mis Traslados"
+        Me.TabPage2.Text = "Mis Envios"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'GroupBox4
@@ -660,7 +663,7 @@ Partial Class frmMovimientoAlmacen
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage3.Size = New System.Drawing.Size(1035, 497)
         Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Recibir "
+        Me.TabPage3.Text = "Items Recibidos"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
         'GroupBox5
@@ -813,7 +816,7 @@ Partial Class frmMovimientoAlmacen
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage4.Size = New System.Drawing.Size(1035, 497)
         Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "TabPage4"
+        Me.TabPage4.Text = "Recibir Items"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
         'GroupBox6
@@ -836,6 +839,7 @@ Partial Class frmMovimientoAlmacen
         Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel3.Controls.Add(Me.Button4)
         Me.Panel3.Controls.Add(Me.TextBox3)
         Me.Panel3.Controls.Add(Me.Button5)
         Me.Panel3.Location = New System.Drawing.Point(9, 20)
@@ -868,7 +872,7 @@ Partial Class frmMovimientoAlmacen
         Me.DataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView5.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView5.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_traslado2, Me.DataGridViewTextBoxColumn15, Me.id_producto2, Me.DataGridViewTextBoxColumn11, Me.precios, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn16, Me.ID_OCI, Me.DataGridViewTextBoxColumn17, Me.id_almcane})
+        Me.DataGridView5.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_traslado2, Me.ID_OCI, Me.DataGridViewTextBoxColumn15, Me.id_producto2, Me.DataGridViewTextBoxColumn11, Me.precios, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.id_almcane})
         Me.DataGridView5.Location = New System.Drawing.Point(9, 81)
         Me.DataGridView5.Name = "DataGridView5"
         Me.DataGridView5.Size = New System.Drawing.Size(1006, 398)
@@ -879,6 +883,12 @@ Partial Class frmMovimientoAlmacen
         Me.id_traslado2.DataPropertyName = "id"
         Me.id_traslado2.HeaderText = "ID"
         Me.id_traslado2.Name = "id_traslado2"
+        '
+        'ID_OCI
+        '
+        Me.ID_OCI.DataPropertyName = "id_entrada"
+        Me.ID_OCI.HeaderText = "ID ENTRADA"
+        Me.ID_OCI.Name = "ID_OCI"
         '
         'DataGridViewTextBoxColumn15
         '
@@ -928,12 +938,6 @@ Partial Class frmMovimientoAlmacen
         Me.DataGridViewTextBoxColumn16.HeaderText = "ALMACEN EMISOR"
         Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
         '
-        'ID_OCI
-        '
-        Me.ID_OCI.DataPropertyName = "id_entrada"
-        Me.ID_OCI.HeaderText = "ID ENTRADA"
-        Me.ID_OCI.Name = "ID_OCI"
-        '
         'DataGridViewTextBoxColumn17
         '
         Me.DataGridViewTextBoxColumn17.DataPropertyName = "usuario"
@@ -946,11 +950,21 @@ Partial Class frmMovimientoAlmacen
         Me.id_almcane.HeaderText = "ID ALMACEN"
         Me.id_almcane.Name = "id_almcane"
         '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.White
+        Me.Button4.Location = New System.Drawing.Point(886, 3)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(117, 23)
+        Me.Button4.TabIndex = 79
+        Me.Button4.Text = "Refrescar"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
         'frmMovimientoAlmacen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1043, 595)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.StatusStrip1)
@@ -987,6 +1001,7 @@ Partial Class frmMovimientoAlmacen
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingSource3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1072,7 +1087,9 @@ Partial Class frmMovimientoAlmacen
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
     Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents BindingSource3 As BindingSource
     Friend WithEvents id_traslado2 As DataGridViewTextBoxColumn
+    Friend WithEvents ID_OCI As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
     Friend WithEvents id_producto2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
@@ -1081,7 +1098,7 @@ Partial Class frmMovimientoAlmacen
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
-    Friend WithEvents ID_OCI As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
     Friend WithEvents id_almcane As DataGridViewTextBoxColumn
+    Friend WithEvents Button4 As Button
 End Class
