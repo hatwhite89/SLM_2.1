@@ -2858,8 +2858,6 @@ Public Class M_Factura
 
                                 End With
 
-                                MsgBox("finalizo conteo para asiento.", MsgBoxStyle.Information)
-
                                 'Caja general
                                 With detalleasiento
                                     .Cod_Asiento = Convert.ToInt32(codigoAsiento)
