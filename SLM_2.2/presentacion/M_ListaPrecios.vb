@@ -136,6 +136,7 @@
         End If
     End Sub
 
+
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         Try
             txtDescripcion.Text = sinDobleEspacio(txtDescripcion.Text)
@@ -413,5 +414,9 @@
         If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub btnImportar_Click(sender As Object, e As EventArgs) Handles btnImportar.Click
+        M_ImportarListasPrecios.Show()
     End Sub
 End Class

@@ -156,14 +156,14 @@
             If Trim(txtnombreEmpleado.Text) <> "" Then
                 objReporte.SetParameterValue("@codigoEmpleado", Convert.ToInt64(lblcodeEmpleado.Text))
             Else
-                MsgBox("Vacio empleado")
+                'MsgBox("No se ingreso el empleado.", MsgBoxStyle.Information)
                 objReporte.SetParameterValue("@codigoEmpleado", Nothing)
             End If
             If Trim(dtpFechaInicial.Text) <> "" And Trim(dtpFechaFinal.Text) <> "" Then
                 objReporte.SetParameterValue("@fechaInicial", dtpFechaInicial.Value)
                 objReporte.SetParameterValue("@fechaFinal", dtpFechaFinal.Value)
             Else
-                MsgBox("Vacio fechas")
+                'MsgBox("Vacio fechas")
                 objReporte.SetParameterValue("@fechaInicial", Nothing)
                 objReporte.SetParameterValue("@fechaFinal", Nothing)
             End If

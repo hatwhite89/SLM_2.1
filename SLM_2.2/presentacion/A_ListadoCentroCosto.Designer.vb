@@ -27,6 +27,7 @@ Partial Class A_ListadoCentroCosto
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lblform = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -73,12 +74,23 @@ Partial Class A_ListadoCentroCosto
         Me.Column3.HeaderText = "Nombre"
         Me.Column3.Name = "Column3"
         '
+        'lblform
+        '
+        Me.lblform.AutoSize = True
+        Me.lblform.Location = New System.Drawing.Point(226, 11)
+        Me.lblform.Name = "lblform"
+        Me.lblform.Size = New System.Drawing.Size(27, 13)
+        Me.lblform.TabIndex = 1
+        Me.lblform.Text = "form"
+        Me.lblform.Visible = False
+        '
         'A_ListadoCentroCosto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(447, 508)
+        Me.Controls.Add(Me.lblform)
         Me.Controls.Add(Me.GroupBox1)
         Me.KeyPreview = True
         Me.Name = "A_ListadoCentroCosto"
@@ -86,6 +98,7 @@ Partial Class A_ListadoCentroCosto
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -94,4 +107,5 @@ Partial Class A_ListadoCentroCosto
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents lblform As Label
 End Class

@@ -95,6 +95,33 @@
                     End With
                     Me.Close()
                 End If
+            ElseIf (lblform.Text = "M_DiarioFacturacion") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar la sucursal en el diario de facturación?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+                    M_DiarioFacturacion.txtnombreSucursal.Text = txtnombre.Text
+                    Me.Close()
+                End If
+
+
+            ElseIf (lblform.Text = "Asiento") Then
+                If e.RowIndex >= 0 Then
+                    n = MsgBox("¿Desea utilizar la sucursal en el Asiento?", MsgBoxStyle.YesNo)
+                End If
+                If n = vbYes Then
+
+                    With frmAsientos
+
+                        .dtDetalleAsiento.Rows(Convert.ToInt32(.lblfila.Text)).Cells(7).Value = lblcode.Text
+                        .dtDetalleAsiento.Rows(Convert.ToInt32(.lblfila.Text)).Cells(8).Value = txtcodigo.Text
+
+                    End With
+                    Me.Close()
+                End If
+
+
+
 
             End If
         Catch ex As Exception

@@ -6,7 +6,6 @@
         End If
     End Sub
 
-
     Private Sub frmAsientos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try
@@ -62,7 +61,7 @@
                         data = cuenta.Comprobar
                         rows = data.Rows(0)
 
-                        dtDetalleAsiento.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), CStr(rows("nombre")), CStr(row("debe")), CStr(row("haber"))})
+                        dtDetalleAsiento.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), CStr(rows("nombre")), CStr(row("debe")), CStr(row("haber")), CStr(row("haber"))})
 
                     Next
 
@@ -141,7 +140,6 @@
         Else
             A_ListadoAsientos.Show()
             Me.Close()
-
         End If
 
     End Sub
@@ -195,8 +193,8 @@
                     lblCodAsiento.Text = codigoAsient
 
                     If codigoAsient > 0 Then
-
-                        'registro de detalle de asiento 
+                        Dim codigoDetalle As String
+                        ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::Registro de detalle de asiento 
 
                         With dasiento
 
@@ -208,7 +206,26 @@
                                 .Debe_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(3).Value)
                                 .Haber_ = Convert.ToDouble(dtDetalleAsiento.Rows(i).Cells(4).Value)
                                 .Origen_ = "manual"
-                                .registrarDetalleAsiento()
+                                codigoDetalle = .registrarDetalleAsiento()
+
+                                ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::GUARDA EN CENTRO DE COSTO
+
+                                If dtDetalleAsiento.Rows(i).Cells(5).Value <> "" Then
+
+                                    Dim cc As New ClsCentoCostos_Asientos
+
+                                    With cc
+
+                                        .id_asientos_ = Integer.Parse(lblCodAsiento.Text)
+                                        .id_detalleasiento_ = Integer.Parse(codigoDetalle)
+                                        .idcentrocostos_ = Integer.Parse(dtDetalleAsiento.Rows(i).Cells(5).Value)
+                                        .codSucursal_ = Integer.Parse(dtDetalleAsiento.Rows(i).Cells(7).Value)
+                                        .REGISTRO_ASIENTO_CC()
+
+                                    End With
+
+                                End If
+                                '::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::FIN GUARDA EN CENTRO DE COSTO
 
                             Next
 
@@ -245,11 +262,27 @@
     Private Sub dtDetalleAsiento_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleAsiento.CellDoubleClick
 
         Try
-
+            lblfila.Text = e.RowIndex
             If e.ColumnIndex = 1 Then
 
                 A_ListarCuentas.lblForm.Text = "asientos"
                 A_ListarCuentas.Show()
+                A_ListarCuentas.BringToFront()
+                A_ListarCuentas.WindowState = WindowState.Normal
+
+            ElseIf e.ColumnIndex = 6 Then
+
+                A_ListadoCentroCosto.lblform.Text = "Asiento"
+                A_ListadoCentroCosto.Show()
+                A_ListadoCentroCosto.BringToFront()
+                A_ListadoCentroCosto.WindowState = WindowState.Normal
+
+            ElseIf e.ColumnIndex = 8 Then
+
+                M_Sucursal.lblform.Text = "Asiento"
+                M_Sucursal.Show()
+                M_Sucursal.BringToFront()
+                M_Sucursal.WindowState = WindowState.Normal
 
             End If
 
@@ -464,7 +497,7 @@
     End Sub
 
     Private Sub dtDetalleAsiento_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtDetalleAsiento.CellClick
-        If e.ColumnIndex = 5 Then
+        If e.ColumnIndex = 9 Then
             Try
                 Dim n As String = MsgBox("¿Desea eliminar la cuenta del asiento?", MsgBoxStyle.YesNo, "Validación")
                 If n = vbYes Then
@@ -483,4 +516,5 @@
             End Try
         End If
     End Sub
+
 End Class

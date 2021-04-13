@@ -26,8 +26,6 @@ Partial Class A_ListarCuentas
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblForm = New System.Windows.Forms.Label()
         Me.dtCuentas = New System.Windows.Forms.DataGridView()
-        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -77,7 +75,6 @@ Partial Class A_ListarCuentas
         Me.dtCuentas.BackgroundColor = System.Drawing.Color.White
         Me.dtCuentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dtCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtCuentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nombre, Me.cuenta})
         Me.dtCuentas.GridColor = System.Drawing.Color.White
         Me.dtCuentas.Location = New System.Drawing.Point(6, 50)
         Me.dtCuentas.Name = "dtCuentas"
@@ -85,20 +82,6 @@ Partial Class A_ListarCuentas
         Me.dtCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dtCuentas.Size = New System.Drawing.Size(682, 286)
         Me.dtCuentas.TabIndex = 3
-        '
-        'nombre
-        '
-        Me.nombre.DataPropertyName = "nombre"
-        Me.nombre.HeaderText = "NOMBRE DE CUENTA"
-        Me.nombre.Name = "nombre"
-        Me.nombre.ReadOnly = True
-        '
-        'cuenta
-        '
-        Me.cuenta.DataPropertyName = "cuenta"
-        Me.cuenta.HeaderText = "NUMERO DE CUENTA"
-        Me.cuenta.Name = "cuenta"
-        Me.cuenta.ReadOnly = True
         '
         'txtBusqueda
         '
@@ -179,7 +162,5 @@ Partial Class A_ListarCuentas
     Friend WithEvents lblForm As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
-    Friend WithEvents nombre As DataGridViewTextBoxColumn
-    Friend WithEvents cuenta As DataGridViewTextBoxColumn
     Friend WithEvents StatusStrip1 As StatusStrip
 End Class

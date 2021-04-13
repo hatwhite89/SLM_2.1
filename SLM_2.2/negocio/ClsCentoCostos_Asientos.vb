@@ -4,7 +4,7 @@ Public Class ClsCentoCostos_Asientos
 
     'Variables
 
-    Dim codigo, id_centrocostos, id_asientos, id_detalleasiento As Integer
+    Dim codigo, id_centrocostos, id_asientos, id_detalleasiento, codSucursal As Integer
     'Constructor
     Public Sub New()
 
@@ -47,7 +47,14 @@ Public Class ClsCentoCostos_Asientos
         End Set
     End Property
 
-
+    Public Property codSucursal_ As Integer
+        Get
+            Return codSucursal
+        End Get
+        Set(value As Integer)
+            codSucursal = value
+        End Set
+    End Property
 
     ':::::::::::::::::::::::::::::::::::::::: FUNCIONES DE MANTENIMIENTO
 
@@ -76,6 +83,11 @@ Public Class ClsCentoCostos_Asientos
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
+        sqlpar.ParameterName = "codSucursal" 'nombre campo en el procedimiento almacenado @
+        sqlpar.Value = codSucursal_
+        sqlcom.Parameters.Add(sqlpar)
+
+        sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
         sqlpar.Value = ""
         sqlcom.Parameters.Add(sqlpar)
@@ -95,5 +107,27 @@ Public Class ClsCentoCostos_Asientos
 
     End Function
 
+
+    Public Function CONSULTAR_CENTROCOSTO() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using cmd As New SqlCommand
+            cmd.Connection = cn
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "CONTA_CENTROCOSTO_CONSULTA"
+            cmd.Parameters.Add("@id_detalleasiento", SqlDbType.VarChar).Value = id_detalleasiento_
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Using dt As New DataTable
+                    da.Fill(dt)
+                    Return dt
+                End Using
+            End Using
+        End Using
+
+    End Function
 
 End Class
