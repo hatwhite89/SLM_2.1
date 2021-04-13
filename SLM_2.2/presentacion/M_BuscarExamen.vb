@@ -12,6 +12,7 @@
             Me.dgbtabla.Columns("codigo").Visible = False
             Me.dgbtabla.Columns("codigoListaPrecios").Visible = False
             Me.dgbtabla.Columns("codigoItem").Visible = False
+            Me.dgbtabla.Columns("id_centrocosto").Visible = False
         Catch ex As Exception
 
         End Try

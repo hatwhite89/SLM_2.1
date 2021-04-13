@@ -304,6 +304,7 @@
     'End Sub
 
 
+
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Try
             Dim nombreCompleto = Nothing, nombreMedico = Nothing, descripcionTermino = Nothing, usuarioCajero = Nothing, descripcionExamen = Nothing, descripcionGrupo As String = Nothing
