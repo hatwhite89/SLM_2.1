@@ -202,15 +202,13 @@
 
             With cuenta
 
-                .Cod_Cuenta = Integer.Parse(codCuenta.Text)
-                dtCuenta = .BuscarCuentaCode
+                .Cuent_a = Integer.Parse(codCuenta.Text)
+                dtCuenta = .Comprobar
                 rowCuenta = dtCuenta.Rows(0)
 
-                txtNombreCuenta.Text = rowCuenta("codCuenta")
+                txtNombreCuenta.Text = rowCuenta("nombre")
 
             End With
-
-
 
             GroupBox1.Enabled = True
             btnModificar.Enabled = True
