@@ -11,7 +11,6 @@
         Try
             alternarColoFilasDatagridview(dtDetalleAsiento)
 
-
             If dtDetalleAsiento.Columns.Contains("btnEliminar") = False Then
                 Dim btn As New DataGridViewButtonColumn()
                 dtDetalleAsiento.Columns.Add(btn)
