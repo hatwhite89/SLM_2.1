@@ -1192,6 +1192,12 @@
     <Compile Include="presentacion\MM_CuestionarioMuestras.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="presentacion\MM_Ingresos.Designer.vb">
+      <DependentUpon>MM_Ingresos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\MM_Ingresos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="presentacion\MM_ListadoTomaMuestras.Designer.vb">
       <DependentUpon>MM_ListadoTomaMuestras.vb</DependentUpon>
     </Compile>
