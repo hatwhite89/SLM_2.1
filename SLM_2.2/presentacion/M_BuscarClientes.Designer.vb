@@ -24,6 +24,10 @@ Partial Class M_BuscarClientes
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(M_BuscarClientes))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtcorreo1 = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtCelular = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.cmbxGenero = New System.Windows.Forms.ComboBox()
         Me.btnTerminoPago = New System.Windows.Forms.Button()
         Me.txtApellido1 = New System.Windows.Forms.TextBox()
@@ -58,10 +62,6 @@ Partial Class M_BuscarClientes
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtCelular = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtcorreo1 = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -115,6 +115,44 @@ Partial Class M_BuscarClientes
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Búsqueda Avanzada de Clientes"
+        '
+        'txtcorreo1
+        '
+        Me.txtcorreo1.Location = New System.Drawing.Point(157, 154)
+        Me.txtcorreo1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcorreo1.MaxLength = 100
+        Me.txtcorreo1.Name = "txtcorreo1"
+        Me.txtcorreo1.Size = New System.Drawing.Size(232, 22)
+        Me.txtcorreo1.TabIndex = 182
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(31, 157)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(111, 17)
+        Me.Label10.TabIndex = 181
+        Me.Label10.Text = "Correo Personal"
+        '
+        'txtCelular
+        '
+        Me.txtCelular.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtCelular.Location = New System.Drawing.Point(988, 124)
+        Me.txtCelular.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtCelular.MaxLength = 20
+        Me.txtCelular.Name = "txtCelular"
+        Me.txtCelular.Size = New System.Drawing.Size(212, 22)
+        Me.txtCelular.TabIndex = 180
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(926, 127)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(52, 17)
+        Me.Label9.TabIndex = 179
+        Me.Label9.Text = "Celular"
         '
         'cmbxGenero
         '
@@ -454,7 +492,7 @@ Partial Class M_BuscarClientes
         Me.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExcel.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnExcel.Location = New System.Drawing.Point(1195, 17)
-        Me.btnExcel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnExcel.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExcel.Name = "btnExcel"
         Me.btnExcel.Size = New System.Drawing.Size(115, 34)
         Me.btnExcel.TabIndex = 174
@@ -483,7 +521,7 @@ Partial Class M_BuscarClientes
         Me.Panel2.Controls.Add(Me.btnBuscar)
         Me.Panel2.Controls.Add(Me.btnExcel)
         Me.Panel2.Location = New System.Drawing.Point(-1, -2)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1323, 68)
         Me.Panel2.TabIndex = 123
@@ -499,44 +537,6 @@ Partial Class M_BuscarClientes
         Me.Label7.Size = New System.Drawing.Size(436, 31)
         Me.Label7.TabIndex = 175
         Me.Label7.Text = "Búsqueda Avanzada de Clientes"
-        '
-        'txtCelular
-        '
-        Me.txtCelular.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtCelular.Location = New System.Drawing.Point(988, 124)
-        Me.txtCelular.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtCelular.MaxLength = 20
-        Me.txtCelular.Name = "txtCelular"
-        Me.txtCelular.Size = New System.Drawing.Size(212, 22)
-        Me.txtCelular.TabIndex = 180
-        '
-        'Label9
-        '
-        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(926, 127)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(52, 17)
-        Me.Label9.TabIndex = 179
-        Me.Label9.Text = "Celular"
-        '
-        'txtcorreo1
-        '
-        Me.txtcorreo1.Location = New System.Drawing.Point(157, 154)
-        Me.txtcorreo1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtcorreo1.MaxLength = 100
-        Me.txtcorreo1.Name = "txtcorreo1"
-        Me.txtcorreo1.Size = New System.Drawing.Size(232, 22)
-        Me.txtcorreo1.TabIndex = 182
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(31, 157)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(111, 17)
-        Me.Label10.TabIndex = 181
-        Me.Label10.Text = "Correo Personal"
         '
         'M_BuscarClientes
         '

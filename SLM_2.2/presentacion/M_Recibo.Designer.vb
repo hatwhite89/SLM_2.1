@@ -45,6 +45,11 @@ Partial Class M_Recibo
         Me.txtnombreFormaPago = New System.Windows.Forms.TextBox()
         Me.lblcodeFormaPago = New System.Windows.Forms.Label()
         Me.dgbtabla = New System.Windows.Forms.DataGridView()
+        Me.lblEstado = New System.Windows.Forms.Label()
+        Me.rtxtObservaciones = New System.Windows.Forms.RichTextBox()
+        Me.lblObservaciones = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nroFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,11 +60,6 @@ Partial Class M_Recibo
         Me.mRec = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.valorRecibido = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ValorFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lblEstado = New System.Windows.Forms.Label()
-        Me.rtxtObservaciones = New System.Windows.Forms.RichTextBox()
-        Me.lblObservaciones = New System.Windows.Forms.Label()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.dgbtabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -316,6 +316,60 @@ Partial Class M_Recibo
         Me.dgbtabla.Size = New System.Drawing.Size(933, 257)
         Me.dgbtabla.TabIndex = 146
         '
+        'lblEstado
+        '
+        Me.lblEstado.AutoSize = True
+        Me.lblEstado.Location = New System.Drawing.Point(571, 174)
+        Me.lblEstado.Name = "lblEstado"
+        Me.lblEstado.Size = New System.Drawing.Size(0, 17)
+        Me.lblEstado.TabIndex = 147
+        Me.lblEstado.Visible = False
+        '
+        'rtxtObservaciones
+        '
+        Me.rtxtObservaciones.Location = New System.Drawing.Point(135, 158)
+        Me.rtxtObservaciones.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rtxtObservaciones.MaxLength = 100
+        Me.rtxtObservaciones.Name = "rtxtObservaciones"
+        Me.rtxtObservaciones.Size = New System.Drawing.Size(463, 89)
+        Me.rtxtObservaciones.TabIndex = 149
+        Me.rtxtObservaciones.Text = ""
+        '
+        'lblObservaciones
+        '
+        Me.lblObservaciones.AutoSize = True
+        Me.lblObservaciones.Location = New System.Drawing.Point(17, 158)
+        Me.lblObservaciones.Name = "lblObservaciones"
+        Me.lblObservaciones.Size = New System.Drawing.Size(103, 17)
+        Me.lblObservaciones.TabIndex = 148
+        Me.lblObservaciones.Text = "Observaciones"
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 575)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
+        Me.StatusStrip1.Size = New System.Drawing.Size(957, 22)
+        Me.StatusStrip1.TabIndex = 150
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btncancelar)
+        Me.Panel1.Controls.Add(Me.btnmodificar)
+        Me.Panel1.Controls.Add(Me.btnguardar)
+        Me.Panel1.Controls.Add(Me.btnnuevo)
+        Me.Panel1.Location = New System.Drawing.Point(1, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(956, 50)
+        Me.Panel1.TabIndex = 151
+        '
         'codigo
         '
         Me.codigo.HeaderText = "codigo"
@@ -394,60 +448,6 @@ Partial Class M_Recibo
         Me.ValorFactura.Name = "ValorFactura"
         Me.ValorFactura.Visible = False
         Me.ValorFactura.Width = 125
-        '
-        'lblEstado
-        '
-        Me.lblEstado.AutoSize = True
-        Me.lblEstado.Location = New System.Drawing.Point(571, 174)
-        Me.lblEstado.Name = "lblEstado"
-        Me.lblEstado.Size = New System.Drawing.Size(0, 17)
-        Me.lblEstado.TabIndex = 147
-        Me.lblEstado.Visible = False
-        '
-        'rtxtObservaciones
-        '
-        Me.rtxtObservaciones.Location = New System.Drawing.Point(135, 158)
-        Me.rtxtObservaciones.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.rtxtObservaciones.MaxLength = 100
-        Me.rtxtObservaciones.Name = "rtxtObservaciones"
-        Me.rtxtObservaciones.Size = New System.Drawing.Size(463, 89)
-        Me.rtxtObservaciones.TabIndex = 149
-        Me.rtxtObservaciones.Text = ""
-        '
-        'lblObservaciones
-        '
-        Me.lblObservaciones.AutoSize = True
-        Me.lblObservaciones.Location = New System.Drawing.Point(17, 158)
-        Me.lblObservaciones.Name = "lblObservaciones"
-        Me.lblObservaciones.Size = New System.Drawing.Size(103, 17)
-        Me.lblObservaciones.TabIndex = 148
-        Me.lblObservaciones.Text = "Observaciones"
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 575)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(957, 22)
-        Me.StatusStrip1.TabIndex = 150
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.btncancelar)
-        Me.Panel1.Controls.Add(Me.btnmodificar)
-        Me.Panel1.Controls.Add(Me.btnguardar)
-        Me.Panel1.Controls.Add(Me.btnnuevo)
-        Me.Panel1.Location = New System.Drawing.Point(1, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(956, 50)
-        Me.Panel1.TabIndex = 151
         '
         'M_Recibo
         '

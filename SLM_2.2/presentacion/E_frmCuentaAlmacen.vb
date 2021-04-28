@@ -15,17 +15,13 @@
                 .Nombre1 = txtNombre.Text
                 .Cuenta1 = txtCuenta.Text
             End With
-            If validarGuardar("Registrar cuenta") = 1 Then
-
-
-                If clsC.RegistrarCuentaPrincipal() = "1" Then
-                    MsgBox(mensaje_registro)
-                    cargarCuentasD()
-                    limpiar()
-                    cargarData()
-                ElseIf clsC.RegistrarCuentaPrincipal() = "2" Then
-                    MsgBox("Esta cuenta ya existe,registre otra cuenta.")
-                End If
+            If clsC.RegistrarCuentaPrincipal() = "1" Then
+                MsgBox(mensaje_registro)
+                cargarCuentasD()
+                limpiar()
+                cargarData()
+            ElseIf clsC.RegistrarCuentaPrincipal() = "2" Then
+                MsgBox("Esta cuenta ya existe,registre otra cuenta.")
             End If
         Catch ex As Exception
 
@@ -44,24 +40,20 @@
             Exit Sub
         End If
         Try
+
+        Catch ex As Exception
             With clsC
                 .Nombre1 = txtNombre2.Text
                 .Cuenta1 = txtCuenta2.Text
                 .Cuenta_id1 = ComboBox1.SelectedValue
             End With
-            If validarGuardar("Registrar cuenta") = 1 Then
-
-
-                If clsC.RegistrarCuentaSecundaria() = "1" Then
-                    MsgBox(mensaje_registro)
-                    cargarCuentasD()
-                    limpiar()
-                ElseIf clsC.RegistrarCuentaSecundaria() = "2" Then
-                    MsgBox("Esta cuenta ya existe,registre otra cuenta.")
-                End If
+            If clsC.RegistrarCuentaSecundaria() = "1" Then
+                MsgBox(mensaje_registro)
+                cargarCuentasD()
+                limpiar()
+            ElseIf clsC.RegistrarCuentaSecundaria() = "2" Then
+                MsgBox("Esta cuenta ya existe,registre otra cuenta.")
             End If
-        Catch ex As Exception
-
         End Try
 
     End Sub
@@ -141,12 +133,10 @@
             With clsC
                 .Cuenta1 = txtCuenta.Text
             End With
-            If validarGuardar("Eliminar cuenta") = 1 Then
-                If clsC.DeleteCuentaPrincipal() = "1" Then
-                    MsgBox(mensaje_dar_baja)
-                    cargarCuentasD()
-                    limpiar()
-                End If
+            If clsC.DeleteCuentaPrincipal() = "1" Then
+                MsgBox(mensaje_dar_baja)
+                cargarCuentasD()
+                limpiar()
             End If
         Catch ex As Exception
             RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
@@ -159,14 +149,10 @@
             With clsC
                 .Cuenta1 = txtCuenta2.Text
             End With
-            If validarGuardar("Eliminar cuenta") = 1 Then
-
-
-                If clsC.DeleteCuentaSecundaria() = "1" Then
-                    MsgBox(mensaje_dar_baja)
-                    cargarCuentasD()
-                    limpiar()
-                End If
+            If clsC.DeleteCuentaSecundaria() = "1" Then
+                MsgBox(mensaje_dar_baja)
+                cargarCuentasD()
+                limpiar()
             End If
         Catch ex As Exception
             RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)

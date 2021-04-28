@@ -170,16 +170,4 @@
 
         End Try
     End Sub
-
-    Private Sub VistaDeIngresosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VistaDeIngresosToolStripMenuItem.Click
-        Try
-            MM_Ingresos.Show()
-            MM_Ingresos.BringToFront()
-            MM_Ingresos.WindowState = WindowState.Normal
-
-
-        Catch ex As Exception
-
-        End Try
-    End Sub
 End Class

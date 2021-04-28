@@ -394,7 +394,15 @@
             lblcantidad.Text = dv.Count
             'dgbtabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.AllCells
             CalcularTotal()
-
+            'Dim codigoSucursal As System.Nullable(Of Integer) = Nothing
+            'If Trim(txtnombreSucursal.Text) <> "" Then
+            '    codigoSucursal = txtnombreSucursal.Text
+            'Else
+            '    codigoSucursal = Nothing
+            'End If
+            'Dim objCaja As New ClsCaja
+            'dv = objCaja.IngresosFacturaArea(dtpFechaDesde.Value, dtpFechaHasta.Value, codigoSucursal).DefaultView
+            'dgbtabla.DataSource = dv
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try

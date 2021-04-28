@@ -138,10 +138,10 @@ Public Class M_Recibo
             'MsgBox("cambia los datos")
             Try
                 If (Trim(dgbtabla.Rows(e.RowIndex).Cells(8).Value()) <> "") Then
-                    MsgBox("funciona")
+                    'MsgBox("funciona")
                     calcularTotal()
                 Else
-                    MsgBox("entra en el else")
+                    'MsgBox("entra en el else")
                     calcularTotal()
                 End If
             Catch ex As Exception
@@ -718,4 +718,37 @@ Public Class M_Recibo
 
     End Class
 
+
+    'Private dText As DataGridViewTextBoxEditingControl = Nothing
+
+    'Private Sub dataGridView1_EditingControlShowing(ByVal sender As Object, ByVal e As DataGridViewEditingControlShowingEventArgs) Handles dgbtabla.EditingControlShowing
+
+    '    Dim columnIndex As Integer = dgbtabla.CurrentCell.ColumnIndex
+
+    '    If dgbtabla.Columns(columnIndex).Name = "MontoBanco" Then
+
+    '        dText = DirectCast(e.Control, DataGridViewTextBoxEditingControl)
+
+    '        AddHandler dText.KeyPress, AddressOf dText_KeyPress
+
+    '    End If
+    'End Sub
+
+    'Private Sub dataGridView1_CellEndEdit(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgbtabla.CellEndEdit
+
+    '    Dim columnIndex As Integer = dgbtabla.CurrentCell.ColumnIndex
+
+    '    If dgbtabla.Columns(columnIndex).Name = "MontoBanco" Then
+    '        RemoveHandler dText.KeyPress, AddressOf typeOnlynumbers
+    '    End If
+
+    'End Sub
+
+    'Sub typeOnlynumbers(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+
+    '    If Not (IsNumeric(e.KeyChar)) And Asc(e.KeyChar) <> 8 Then
+    '        e.Handled = True
+    '    End If
+
+    'End Sub
 End Class
