@@ -21,7 +21,7 @@
                 btn.UseColumnTextForButtonValue = True
             End If
 
-            If txtNro.Text = "" Then 'ENTRA A REGISTRAR ASIENTO MANUAL
+            If txtNro.Text = "" Then
 
                 MsgBox("El registro de hará bajo el periodo contable vigente.")
                 txtNro.Enabled = False
@@ -31,7 +31,7 @@
                 btnModificar.Enabled = False
                 btnGuardar.Enabled = True
 
-            ElseIf txtNro.Text = lblCodAsiento.Text Then 'VISTA DE ASIENTO MANUAL
+            ElseIf txtNro.Text = lblCodAsiento.Text Then
 
                 btnCrear.Enabled = True
                 btnModificar.Enabled = True
@@ -61,34 +61,17 @@
                         data = cuenta.Comprobar
                         rows = data.Rows(0)
 
-                        'Buscar en centro de costo
-                        Dim OBJCC As New ClsCentoCostos_Asientos
-                        Dim dtcc As New DataTable
-                        Dim rowccB As DataRow
+                        dtDetalleAsiento.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), CStr(rows("nombre")), CStr(row("debe")), CStr(row("haber")), CStr(row("haber"))})
 
-
-                        With OBJCC
-                            .id_detalleasiento_ = Integer.Parse(row("codDetalle"))
-                            dtcc = .CONSULTAR_CENTROCOSTO
-
-                            If dtcc.Rows.Count <> 0 Then
-                                rowccB = dtcc.Rows(0)
-                                dtDetalleAsiento.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), Trim(CStr(rows("nombre"))), CStr(row("debe")), CStr(row("haber")), CStr(rowccB("id_centrocosto")), rowccB("nombre"), CStr(rowccB("codigo")), rowccB("codigoSucursal")})
-                            Else
-                                dtDetalleAsiento.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), CStr(rows("nombre")), CStr(row("debe")), CStr(row("haber")), CStr(row("haber"))})
-
-                            End If
-
-                        End With
                     Next
 
                 End With
 
-
-            Else 'VISTA DE ASIENTO DE PROCESOS
+            Else
                 btnCrear.Enabled = False
                 btnModificar.Enabled = False
                 btnGuardar.Enabled = False
+
 
                 Dim Detalle As New ClsDetalleAsiento
 
@@ -113,26 +96,7 @@
 
                         data = cuenta.Comprobar
                         rows = data.Rows(0)
-
-                        'Buscar en centro de costo
-                        Dim OBJCC As New ClsCentoCostos_Asientos
-                        Dim dtcc As New DataTable
-                        Dim rowccB As DataRow
-
-
-                        With OBJCC
-                            .id_detalleasiento_ = Integer.Parse(row("codDetalle"))
-                            dtcc = .CONSULTAR_CENTROCOSTO
-
-                            If dtcc.Rows.Count <> 0 Then
-                                rowccB = dtcc.Rows(0)
-                                dtDetalleAsiento.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), Trim(CStr(rows("nombre"))), CStr(row("debe")), CStr(row("haber")), CStr(rowccB("id_centrocosto")), rowccB("nombre"), CStr(rowccB("codigo")), rowccB("codigoSucursal")})
-                            Else
-                                dtDetalleAsiento.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), CStr(rows("nombre")), CStr(row("debe")), CStr(row("haber")), CStr(row("haber"))})
-
-                            End If
-
-                        End With
+                        dtDetalleAsiento.Rows.Add(New String() {(row("codDetalle")), (row("cuenta")), CStr(rows("nombre")), CStr(row("debe")), CStr(row("haber"))})
 
                     Next
 
@@ -143,7 +107,7 @@
 
 
         Catch ex As Exception
-            MsgBox("Error:" + ex.Message)
+            'MsgBox("Error:" + ex.Message)
         End Try
 
 

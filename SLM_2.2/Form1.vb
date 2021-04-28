@@ -1000,7 +1000,6 @@
     End Sub
 
     Private Sub btnReporteria_Click_1(sender As Object, e As EventArgs) Handles btnReporteria.Click
-        M_ReporteriaTalentoHumano.Show()
         M_ReporteriaTalentoHumano.BringToFront()
         M_ReporteriaTalentoHumano.WindowState = FormWindowState.Normal
     End Sub
@@ -1073,7 +1072,7 @@
         E_frmTipoMovientoAlmacen.WindowState = FormWindowState.Normal
     End Sub
 
-    Private Sub PictureBox84_Click(sender As Object, e As EventArgs)
+    Private Sub PictureBox84_Click(sender As Object, e As EventArgs) Handles PictureBox84.Click
         frmAdministrarRequisiciones.Show()
         frmAdministrarRequisiciones.BringToFront()
         frmAdministrarRequisiciones.WindowState = FormWindowState.Normal
@@ -1575,11 +1574,11 @@
     End Sub
 
     Private Sub btnTomaMuestra_Click(sender As Object, e As EventArgs) Handles btnTomaMuestra.Click
-        E_frmTomaDeMuestra.Show()
+        'E_frmTomaDeMuestra.Show()
     End Sub
 
     Private Sub PictureBox3_Click_1(sender As Object, e As EventArgs) Handles PictureBox3.Click
-        E_frmUsuariosTM.Show()
+        ' E_frmUsuariosTM.Show()
     End Sub
 
     Private Sub PictureBox4_Click_1(sender As Object, e As EventArgs) Handles PictureBox4.Click
@@ -1783,13 +1782,5 @@
             RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
         End Try
 
-    End Sub
-
-    Private Sub PictureBox5_Click_1(sender As Object, e As EventArgs) Handles PictureBox5.Click
-        E_frmCuentaAlmacen.Show()
-    End Sub
-
-    Private Sub Button10_Click_1(sender As Object, e As EventArgs) Handles Button10.Click
-        E_frmConfiguracionCorreoResultado.Show()
     End Sub
 End Class

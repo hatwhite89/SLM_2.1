@@ -19,9 +19,9 @@
             Dim TableUM As New DataTable
             Dim clsP As New clsEntradaAlmacen
             TableUM.Load(clsP.ListarTrasladosEnTransito)
-            BindingSource3.DataSource = TableUM
+            BindingSource1.DataSource = TableUM
 
-            DataGridView5.DataSource = BindingSource3
+            DataGridView5.DataSource = BindingSource1
         Catch ex As Exception
 
         End Try
@@ -188,10 +188,6 @@
         End Try
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        cargarData5()
-    End Sub
-
     Private Sub cargarData2()
         Try
             'datagridview
@@ -223,11 +219,11 @@
 
     Private Sub DataGridView5_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView5.CellClick
         Try
-            TextBox3.Text = DataGridView5.Rows(e.RowIndex).Cells(1).Value
-            id_traslado = DataGridView5.Rows(e.RowIndex).Cells(0).Value.ToString
-            id_entradas = TextBox3.Text
-            nueva_existencia = DataGridView5.Rows(e.RowIndex).Cells(5).Value
-            nuevo_alma = DataGridView5.Rows(e.RowIndex).Cells(11).Value
+            TextBox3.Text = DataGridView5.Rows(e.RowIndex).Cells(0).Value
+            id_traslado = Integer.Parse(DataGridView5.Rows(e.RowIndex).Cells(0).Value)
+            id_entradas = Integer.Parse(DataGridView5.Rows(e.RowIndex).Cells(9).Value)
+            nueva_existencia = Integer.Parse(DataGridView5.Rows(e.RowIndex).Cells(5).Value)
+            nuevo_alma = Integer.Parse(DataGridView5.Rows(e.RowIndex).Cells(11).Value)
 
         Catch ex As Exception
 

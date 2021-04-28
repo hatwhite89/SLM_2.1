@@ -988,7 +988,6 @@ Public Class M_Cliente
         Try
             Habilitar()
 
-            btnseleccionarCliente.Enabled = False
             gbxinfoCliente.Visible = True
 
             txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
@@ -1019,6 +1018,9 @@ Public Class M_Cliente
             lblcodeCategoria.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(18).Value()
             lblcodeTerminoPago.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(19).Value()
             cmbxClasificacion.SelectedValue = Me.dgbtabla.Rows(e.RowIndex).Cells(17).Value()
+
+            'Seleccionar al cliente en la factura
+            btnseleccionarCliente.Enabled = True
             'If Trim(Me.dgbtabla.Rows(e.RowIndex).Cells(7).Value().ToString) <> "0" Then
             '    txtcodigoEspecialidad2.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(7).Value()
             'Else
@@ -1099,5 +1101,15 @@ Public Class M_Cliente
 
         End Try
 
+    End Sub
+
+    Private Sub txtcodigo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigo.TextChanged
+        If Trim(txtcodigo.Text) = "" Then
+            btnguardarCliente.Enabled = True
+            btnactualizarCliente.Enabled = False
+        Else
+            btnguardarCliente.Enabled = False
+            btnactualizarCliente.Enabled = True
+        End If
     End Sub
 End Class

@@ -132,4 +132,53 @@
 
         End Try
     End Sub
+
+    Private Sub dgbtabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgbtabla.CellClick
+        Try
+
+            Dim n As String = ""
+            If e.RowIndex >= 0 Then
+                n = MsgBox("¿Desea ver la información del cliente?", MsgBoxStyle.YesNo, "Validación")
+            End If
+            If n = vbYes Then
+                M_Cliente.gbxinfoCliente.Visible = True
+
+
+                M_Cliente.txtcodigo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(0).Value()
+                M_Cliente.txtscanId.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(1).Value()
+                M_Cliente.mtxtidentidad.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(2).Value()
+                M_Cliente.txtrtn.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(3).Value()
+                M_Cliente.txtnombre1.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(4).Value()
+                M_Cliente.txtnombre2.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(5).Value()
+                M_Cliente.txtapellido1.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(6).Value()
+                M_Cliente.txtapellido2.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(7).Value()
+                M_Cliente.dtpfechaNacimiento.Value = Convert.ToDateTime(Me.dgbtabla.Rows(e.RowIndex).Cells(9).Value())
+                If Trim(Me.dgbtabla.Rows(e.RowIndex).Cells(10).Value().ToString) = "Masculino" Then
+                    M_Cliente.rbtnmasculino.Checked = True
+                Else
+                    M_Cliente.rbtnfemenino.Checked = True
+                End If
+                M_Cliente.rtxtdireccion.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(11).Value()
+                M_Cliente.txttelefonoCasa.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(12).Value()
+                M_Cliente.txttelefonoTrabajo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(13).Value()
+                M_Cliente.txtcelular.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(14).Value()
+                M_Cliente.txtcorreo.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(15).Value()
+                M_Cliente.txtcorreo2.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(16).Value()
+                M_Cliente.lblcodeCategoria.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(18).Value()
+                M_Cliente.lblcodeTerminoPago.Text = Me.dgbtabla.Rows(e.RowIndex).Cells(19).Value()
+                M_Cliente.cmbxClasificacion.SelectedValue = Me.dgbtabla.Rows(e.RowIndex).Cells(17).Value()
+
+                'Seleccionar al cliente en la factura
+                M_Cliente.btnseleccionarCliente.Enabled = True
+
+                Me.Close()
+                M_Cliente.Show()
+                M_Cliente.BringToFront()
+                M_Cliente.WindowState = WindowState.Normal
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class

@@ -276,7 +276,7 @@ Public Class clsEntradaAlmacen
         Dim cn As New SqlConnection
         cn = objCon.getConexion
 
-        Using da As New SqlDataAdapter("select e.lote,p.id_producto,p.nombre_producto,e.existencia,e.precio_unitario,e.fecha_vencimiento, e.id_entrada,e.id_oc,e.id_detalle_oc from EntradaAlmacen e, ProductoAlmacen p
+        Using da As New SqlDataAdapter("select e.lote,p.id_producto,p.nombre_producto,e.cantidad,e.precio_unitario,e.fecha_vencimiento, e.id_entrada,e.id_oc,e.id_detalle_oc from EntradaAlmacen e, ProductoAlmacen p
 where e.id_producto = p.id_producto and e.fecha_registro between '" + inicio.ToString("yyyyMMdd") + "' and '" + fin.ToString("yyyyMMdd") + "'", cn)
             Dim dt As New DataTable
             da.Fill(dt)
@@ -345,24 +345,26 @@ where e.id_producto = p.id_producto and e.fecha_registro between '" + inicio.ToS
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "id_entrada"
-        sqlpar.Value = Integer.Parse(Id_entrada1.ToString)
+        sqlpar.Value = Id_entrada1
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "id_traslado"
-        sqlpar.Value = Integer.Parse(Id_traslado1.ToString)
+        sqlpar.Value = Id_traslado1
         sqlcom.Parameters.Add(sqlpar)
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "nueva_existencia"
-        sqlpar.Value = Integer.Parse(CantidadProducto.ToString)
+        sqlpar.Value = CantidadProducto
         sqlcom.Parameters.Add(sqlpar)
 
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "nuevo_almacen"
-        sqlpar.Value = Integer.Parse(IdAlmacen.ToString)
+        sqlpar.Value = IdAlmacen
         sqlcom.Parameters.Add(sqlpar)
+
+
 
         sqlpar = New SqlParameter
         sqlpar.ParameterName = "salida"
@@ -373,6 +375,7 @@ where e.id_producto = p.id_producto and e.fecha_registro between '" + inicio.ToS
 
         Dim con As New ClsConnection
         sqlcom.Connection = con.getConexion
+
         sqlcom.ExecuteNonQuery()
 
         con.cerrarConexion()
@@ -406,7 +409,7 @@ where t.almacen_entrega = a.id_almacen and t.id_producto = p.id_producto and t.u
         Dim sqlcom As SqlCommand
         sqlcom = New SqlCommand
         sqlcom.CommandText = "select t.id,t.id_entrada, p.id_producto, t.precio_unitario,p.nombre_producto ,t.cantidad,t.estado,t.fecha_envio,t.lote,a.nombre_almacen,a.usuario,a.id_almacen from traslado t, almacen a,ProductoAlmacen p
-where t.almacen_entrega = a.id_almacen and t.id_producto = p.id_producto and t.usuario_recibe ='" + codigo_usuario + "' and t.estado <>'Recibido'"
+where t.almacen_entrega = a.id_almacen and t.id_producto = p.id_producto and t.usuario_recibe ='" + codigo_usuario + "' "
         sqlcom.Connection = New ClsConnection().getConexion
         Return sqlcom.ExecuteReader
     End Function

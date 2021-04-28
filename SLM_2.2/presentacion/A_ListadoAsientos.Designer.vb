@@ -40,7 +40,6 @@ Partial Class A_ListadoAsientos
         Me.InformeAsientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MayorDeCuentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VistaDeIngresosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbxAsientos.SuspendLayout()
         CType(Me.dtAsientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -170,7 +169,7 @@ Partial Class A_ListadoAsientos
         '
         'MenuToolStripMenuItem
         '
-        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MantenimientoCCToolStripMenuItem, Me.ReporteCCToolStripMenuItem, Me.IngresosPorAreaToolStripMenuItem, Me.InformeAsientosToolStripMenuItem, Me.VistaDeIngresosToolStripMenuItem})
+        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MantenimientoCCToolStripMenuItem, Me.ReporteCCToolStripMenuItem, Me.IngresosPorAreaToolStripMenuItem, Me.InformeAsientosToolStripMenuItem})
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
         Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
         Me.MenuToolStripMenuItem.Text = "Menú"
@@ -209,14 +208,8 @@ Partial Class A_ListadoAsientos
         'MayorDeCuentasToolStripMenuItem
         '
         Me.MayorDeCuentasToolStripMenuItem.Name = "MayorDeCuentasToolStripMenuItem"
-        Me.MayorDeCuentasToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
+        Me.MayorDeCuentasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.MayorDeCuentasToolStripMenuItem.Text = "Mayor de Cuentas"
-        '
-        'VistaDeIngresosToolStripMenuItem
-        '
-        Me.VistaDeIngresosToolStripMenuItem.Name = "VistaDeIngresosToolStripMenuItem"
-        Me.VistaDeIngresosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.VistaDeIngresosToolStripMenuItem.Text = "Vista de Ingresos"
         '
         'A_ListadoAsientos
         '
@@ -262,5 +255,4 @@ Partial Class A_ListadoAsientos
     Friend WithEvents InformeAsientosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MayorDeCuentasToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents VistaDeIngresosToolStripMenuItem As ToolStripMenuItem
 End Class

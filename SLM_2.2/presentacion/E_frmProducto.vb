@@ -43,7 +43,7 @@
             'datagridview
             Dim TableUM As New DataTable
             Dim clsP As New ClsProducto
-            TableUM.Load(clsP.RecuperarProductoRegistro())
+            TableUM.Load(clsP.RecuperarProductoOC())
             BindingSource1.DataSource = TableUM
 
             DataGridView1.DataSource = BindingSource1
@@ -73,7 +73,6 @@
 
     Public Sub cargarComboCS()
         Try
-
             Dim clsC As New ClsCuentasAlmacen
             Dim ds As New DataTable
 
@@ -102,10 +101,8 @@
             txtDescripcion.Text = DataGridView1.Rows(e.RowIndex).Cells(5).Value
             txtCantidadMinima.Text = DataGridView1.Rows(e.RowIndex).Cells(6).Value
             txtPrecioProducto.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
-            cmbUnidadMedida.Text = DataGridView1.Rows(e.RowIndex).Cells(7).Value.ToString
-            cmbCategoria.Text = DataGridView1.Rows(e.RowIndex).Cells(8).Value.ToString
-            ComboBox1.Text = DataGridView1.Rows(e.RowIndex).Cells(9).Value.ToString
-            ComboBox2.Text = DataGridView1.Rows(e.RowIndex).Cells(10).Value.ToString
+
+
             'botones
             Button1.Enabled = True
 
@@ -146,11 +143,10 @@
                         .CategoriaProducto = Integer.Parse(cmbCategoria.SelectedValue)
                         .Precio_base1 = txtPrecioProducto.Text
                         'cuentas
-
-                        .Cuenta1 = ComboBox1.SelectedValue.ToString
-                        .Cuenta21 = ComboBox2.SelectedValue.ToString
-                        .Nombrecuenta1 = ComboBox1.Text
-                        .Nombrecuenta21 = ComboBox2.Text
+                        .Cuenta1 = ComboBox1.SelectedValue
+                        .Cuenta21 = ComboBox2.SelectedValue
+                        .Nombrecuenta1 = ComboBox1.SelectedText
+                        .Nombrecuenta21 = ComboBox2.SelectedText
                     End With
                 Catch ex As Exception
                     RegistrarExcepciones(codigo_usuario, Me.Name, ex.ToString)
@@ -191,12 +187,11 @@
                     .UnidadMedida = Integer.Parse(cmbUnidadMedida.SelectedValue)
                     .CategoriaProducto = Integer.Parse(cmbCategoria.SelectedValue)
                     .Precio_base1 = txtPrecioProducto.Text
-
-
-                    .Cuenta1 = ComboBox1.SelectedValue.ToString
-                    .Cuenta21 = ComboBox2.SelectedValue.ToString
-                    .Nombrecuenta1 = ComboBox1.Text
-                    .Nombrecuenta21 = ComboBox2.Text
+                    'cuentas
+                    .Cuenta1 = ComboBox1.SelectedValue
+                    .Cuenta21 = ComboBox2.SelectedValue
+                    .Nombrecuenta1 = ComboBox1.SelectedText
+                    .Nombrecuenta21 = ComboBox2.SelectedText
                 End With
                 If clsP.ActualizarProducto() = "1" Then
                     MsgBox(mensaje_actualizacion)
@@ -259,7 +254,7 @@
 
         Dim dv As DataView = objOrd.RecuperarProducto2.DefaultView
 
-        dv.RowFilter = String.Format("CONVERT(nombre_producto+marca+modelo+nombre_categoria, System.String) LIKE '%{0}%'", txtBuscar.Text)
+        dv.RowFilter = String.Format("CONVERT(nombre_producto+marca+modelo, System.String) LIKE '%{0}%'", txtBuscar.Text)
 
         DataGridView1.DataSource = dv
 
