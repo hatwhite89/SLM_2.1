@@ -667,17 +667,17 @@ Public Class A_Cheques
         txtMonto.BackColor = Color.White
 
         Try
-            'Dim monto, montocheque As Double
+            Dim monto, montocheque As Double
 
-            'monto = Convert.ToDouble(frmPagos.lblTotalSuma.Text)
-            'montocheque = Convert.ToDouble(txtMonto.Text)
+            monto = Convert.ToDouble(frmPagos.lblTotalSuma.Text)
+            montocheque = Convert.ToDouble(txtMonto.Text)
 
-            'If montocheque > monto Then
+            If montocheque > monto Then
 
-            '    MsgBox("El monto del cheque sobrepasa el pago.")
-            '    txtMonto.Text = ""
+                MsgBox("El monto del cheque sobrepasa el pago.")
+                txtMonto.Text = ""
 
-            'End If
+            End If
 
         Catch ex As Exception
 

@@ -23,14 +23,15 @@ Public Class frmFormaPago
                         'Guardar nuevo registro de forma de pago.
 
                         'Limpiar espacios de textbox
-                        Dim codi, comenta, namebanc, formu, tip, banco As String
+                        Dim codi, comenta, namebanc, formu, tip, banco, ctabanco As String
 
-                        codi = txtCodigo.Text.Trim
-                        comenta = txtComentario.Text.Trim
-                        namebanc = txtNombreBanco.Text.Trim
-                        formu = txtFormulario.Text.Trim
-                        tip = txtTipo.Text.Trim
-                        banco = txtBanco.Text.Trim
+                        codi = txtCodigo.Text
+                        comenta = txtComentario.Text
+                        namebanc = txtNombreBanco.Text
+                        formu = txtFormulario.Text
+                        tip = txtTipo.Text
+                        banco = txtBanco.Text
+                        ctabanco = txtCtaBanco.Text
 
                         Try
 
@@ -38,7 +39,7 @@ Public Class frmFormaPago
                                 .Cod = codi
                                 .Cuen_ta = txtCuenta.Text
                                 .Comenta_rio = comenta
-                                .Cuenta_Banco = txtCtaBanco.Text
+                                .Cuenta_Banco = ctabanco
                                 .Nombre_Banco = namebanc
                                 .Formu_lario = formu
                                 .Ti_po = tip
@@ -287,7 +288,7 @@ Public Class frmFormaPago
     Sub Limpiar()
         txtCodigo.Text = ""
         txtCuenta.Text = ""
-        txtCtaBanco.Text = ""
+        txtCtaBanco.Text = "-"
         txtNombreBanco.Text = ""
         txtFormulario.Text = ""
         txtBanco.Text = ""

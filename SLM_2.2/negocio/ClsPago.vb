@@ -216,6 +216,21 @@ Public Class ClsPago
         End Using
     End Function
 
+    'LISTAR PAGOS
+    Public Function LISTARPAGOS() As DataTable
+
+        Dim objCon As New ClsConnection
+        Dim cn As New SqlConnection
+        cn = objCon.getConexion
+
+        Using da As New SqlDataAdapter("A_slmListarPagos", cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Return dt
+        End Using
+    End Function
+
+
     'Modificar Pago
     Public Function modificarPago() As String
         Dim sqlcom As SqlCommand

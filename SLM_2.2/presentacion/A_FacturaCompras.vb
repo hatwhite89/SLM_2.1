@@ -63,7 +63,7 @@
 
                                 'Funcion de registro de detalle
                                 DetalleFacCompra.registrarDetalleFactura()
-                                MsgBox("detalle de factura")
+                                'MsgBox("detalle de factura")
                             Else
                                 MsgBox("Error. El código esta duplicado.")
                             End If
@@ -168,7 +168,9 @@
                 Limpiar()
 
                 Me.Close()
+
                 A_ListadoFacturaCompra.Show()
+                A_ListadoFacturaCompra.A_ListadoFacturaCompra_Load(sender, e)
 
             Else 'if campos vacios
 
@@ -542,6 +544,8 @@
             txtTotal.BackColor = Color.White
             lblTotal.BackColor = Color.Transparent
 
+
+
         End If
 
     End Sub
@@ -623,4 +627,9 @@
 
         End With
     End Sub
+
+    Private Sub txtTotal_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTotal.KeyPress
+        NUMEROSCOMA(e, 2, sender)
+    End Sub
+
 End Class

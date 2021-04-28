@@ -127,6 +127,7 @@ Partial Class frmFormaPago
         'txtCodigo
         '
         Me.txtCodigo.Location = New System.Drawing.Point(122, 28)
+        Me.txtCodigo.MaxLength = 10
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
         Me.txtCodigo.TabIndex = 10
@@ -161,6 +162,7 @@ Partial Class frmFormaPago
         Me.txtCtaBanco.Name = "txtCtaBanco"
         Me.txtCtaBanco.Size = New System.Drawing.Size(239, 20)
         Me.txtCtaBanco.TabIndex = 13
+        Me.txtCtaBanco.Text = "-"
         Me.txtCtaBanco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtNombreBanco

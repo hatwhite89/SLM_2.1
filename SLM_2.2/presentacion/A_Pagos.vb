@@ -167,6 +167,7 @@
         txtFormaP.Text = ""
         dtpFechaP.ResetText()
         dtpFechaT.ResetText()
+        dtDetallePagos.Rows.Clear()
 
     End Sub
 
@@ -272,6 +273,7 @@
                 End If 'ingresar nuevo pago
 
             End If 'validacion
+            limpiar()
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -372,10 +374,10 @@
 
     Private Sub frmPagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
         Try
             alternarColoFilasDatagridview(dtDetallePagos)
             If txtNro.Text <> "" Then
+
                 btnModificar.Enabled = True
                 btnCrear.Enabled = True
                 btnGuardar.Enabled = False
@@ -552,8 +554,6 @@
 
                 End With
 
-
-
                 For index As Integer = 0 To codigoDetallePago.Count - 1
                     detallePago.Cod_Detalle = Convert.ToInt64(codigoDetallePago(index))
                     If detallePago.EliminarDetallePago() <> 1 Then
@@ -590,14 +590,13 @@
 
     Private Sub frmPagos_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
 
-        If dtDetallePagos.Rows(0).Cells(5).Value <> "" Then
+        'If dtDetallePagos.Rows(0).Cells(5).Value <> "" Then
 
+        '    If MessageBox.Show("El Pago tiene un cheque vinculado, se guardara automaticamente ¿Seguro que desea cerrar el formulario?", "Cerrar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+        '        e.Cancel = True
+        '    End If
 
-            If MessageBox.Show("El Pago tiene un cheque vinculado, se guardara automaticamente ¿Seguro que desea cerrar el formulario?", "Cerrar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
-                e.Cancel = True
-            End If
-
-        End If
+        'End If
 
     End Sub
 End Class

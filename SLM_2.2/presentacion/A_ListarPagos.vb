@@ -12,7 +12,7 @@
         'Cargar listado de pagos
         alternarColoFilasDatagridview(dtPagos)
         Try
-            dtPagos.DataSource = pagos.listarSinPago
+            dtPagos.DataSource = pagos.LISTARPAGOS
 
         Catch ex As Exception
             MsgBox("Error al cargar listado de Pagos. Error: " + ex.Message)
@@ -36,56 +36,67 @@
             dt = dtPagos.DataSource
             Dim row As DataRow = dt.Rows(e.RowIndex)
 
-            frmPagos.txtNro.Text = row("codPago")
-            frmPagos.lblCodFormaPago.Text = row("codformapago")
-            frmPagos.txtReferencia.Text = row("referencia")
-            frmPagos.txtComentario.Text = row("comentario")
-            frmPagos.dtpFechaP.Value = row("fechaPago")
-            frmPagos.dtpFechaT.Value = row("fechaTransferencia")
-            frmPagos.chkPagado.Checked = row("pagado")
-            frmPagos.lblTotalSuma.Text = row("sumaTotal")
 
-            'data formapago
-            Dim dtfp As New DataTable
-            Dim rowfp As DataRow
-            Dim formapago As New ClsFormaPago
+            If dt.Columns.Contains("codPago") = True Then
 
-            formapago.Codigo_FormaPago = Integer.Parse(row("codformapago"))
-            dtfp = formapago.BusquedaFormaPago
-            rowfp = dtfp.Rows(0)
-            frmPagos.txtFormaP.Text = rowfp("codigo")
-            frmPagos.txtCtaBanco.Text = rowfp("nroCtaBanco")
-            frmPagos.lblNombreBanco.Text = rowfp("banco")
+                frmPagos.txtNro.Text = dtPagos.Rows(e.RowIndex).Cells(0).Value
+                frmPagos.lblCodFormaPago.Text = dtPagos.Rows(e.RowIndex).Cells(1).Value
+                frmPagos.txtReferencia.Text = dtPagos.Rows(e.RowIndex).Cells(2).Value
+                frmPagos.txtComentario.Text = dtPagos.Rows(e.RowIndex).Cells(3).Value
+                frmPagos.dtpFechaP.Value = dtPagos.Rows(e.RowIndex).Cells(4).Value
+                frmPagos.dtpFechaT.Value = dtPagos.Rows(e.RowIndex).Cells(5).Value
+                frmPagos.chkPagado.Checked = dtPagos.Rows(e.RowIndex).Cells(6).Value
+                frmPagos.lblTotalSuma.Text = dtPagos.Rows(e.RowIndex).Cells(7).Value
+                'frmPagos.txtNro.Text = row("codPago")
+                'frmPagos.lblCodFormaPago.Text = row("codformapago")
+                'frmPagos.txtReferencia.Text = row("referencia")
+                'frmPagos.txtComentario.Text = row("comentario")
+                'frmPagos.dtpFechaP.Value = row("fechaPago")
+                'frmPagos.dtpFechaT.Value = row("fechaTransferencia")
+                'frmPagos.chkPagado.Checked = row("pagado")
+                'frmPagos.lblTotalSuma.Text = row("sumaTotal")
 
-            'Listar detalle de pago
-            frmPagos.dtDetallePagos.Enabled = True
-            'mostrar detalle de factura
-            Dim dpago As New ClsDetallePago
-            Dim dtpago As New DataTable
+                ''data formapago
+                Dim dtfp As New DataTable
+                Dim rowfp As DataRow
+                Dim formapago As New ClsFormaPago
 
-            dpago.Cod_Pago = row("codPago")
+                formapago.Codigo_FormaPago = Integer.Parse(row("codformapago"))
+                dtfp = formapago.BusquedaFormaPago
+                rowfp = dtfp.Rows(0)
+                frmPagos.txtFormaP.Text = rowfp("codigo")
+                frmPagos.txtCtaBanco.Text = rowfp("nroCtaBanco")
+                frmPagos.lblNombreBanco.Text = rowfp("banco")
 
-            dtpago = dpago.listarDetallePago
+                'Listar detalle de pago
+                frmPagos.dtDetallePagos.Enabled = True
+                ''mostrar detalle de factura
+                Dim dpago As New ClsDetallePago
+                Dim dtpago As New DataTable
 
-            'informacion de proveedor de factura
-            Dim rowprove As DataRow = dtpago.Rows(0)
-            Dim facturacompra As New ClsFacturaCompra
+                dpago.Cod_Pago = row("codPago")
 
-            facturacompra.Cod_Factura = Integer.Parse(rowprove("codFactura"))
+                dtpago = dpago.listarDetallePago
 
-            Dim dtfact As New DataTable
-            dtfact = facturacompra.comprobarFactura()
-            rowprove = dtfact.Rows(0)
+                'informacion de proveedor de factura
+                Dim rowprove As DataRow = dtpago.Rows(0)
+                Dim facturacompra As New ClsFacturaCompra
 
-            frmPagos.lblCodigoProveedor.Text = rowprove("codProveedor").ToString
+                facturacompra.Cod_Factura = Integer.Parse(rowprove("codFactura"))
 
-            For Index As Integer = 0 To dtpago.Rows.Count - 1
-                Dim row2 As DataRow = dtpago.Rows(Index)
-                frmPagos.dtDetallePagos.Rows.Add(New String() {(row2("codFactura")), CStr(row2("nombreproveedor")), CStr(row2("moneda")), CStr(row2("monto")), CStr(row2("formapago")), CStr(row2("nrocheque")), CStr(row2("codDetalle"))})
-            Next
+                Dim dtfact As New DataTable
+                dtfact = facturacompra.comprobarFactura()
+                rowprove = dtfact.Rows(0)
 
-            frmPagos.Show()
+                frmPagos.lblCodigoProveedor.Text = rowprove("codProveedor").ToString
 
+                For Index As Integer = 0 To dtpago.Rows.Count - 1
+                    Dim row2 As DataRow = dtpago.Rows(Index)
+                    frmPagos.dtDetallePagos.Rows.Add(New String() {(row2("codFactura")), CStr(row2("nombreproveedor")), CStr(row2("moneda")), CStr(row2("monto")), CStr(row2("formapago")), CStr(row2("nrocheque")), CStr(row2("codDetalle"))})
+                Next
+
+                frmPagos.Show()
+            End If
         Catch ex As Exception
             MsgBox("Hubo un error al cargar la información del pago seleccionado. Detalle: " + ex.Message)
         End Try
@@ -140,4 +151,8 @@
 
     End Sub
 
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
+
+    End Sub
 End Class

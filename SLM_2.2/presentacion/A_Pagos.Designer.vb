@@ -41,13 +41,6 @@ Partial Class frmPagos
         Me.lblComentario = New System.Windows.Forms.Label()
         Me.txtComentario = New System.Windows.Forms.TextBox()
         Me.dtDetallePagos = New System.Windows.Forms.DataGridView()
-        Me.NroFac = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Moneda = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ValorPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FORMAP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NroCheque = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codDetallePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnBuscarFormaPago = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -65,6 +58,13 @@ Partial Class frmPagos
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.NroFac = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Moneda = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ValorPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FORMAP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NroCheque = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codDetallePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dtDetallePagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxInfo.SuspendLayout()
@@ -234,49 +234,6 @@ Partial Class frmPagos
         Me.dtDetallePagos.Size = New System.Drawing.Size(834, 208)
         Me.dtDetallePagos.TabIndex = 20
         '
-        'NroFac
-        '
-        Me.NroFac.HeaderText = "Nro.Fac"
-        Me.NroFac.Name = "NroFac"
-        Me.NroFac.Width = 50
-        '
-        'Proveedor
-        '
-        Me.Proveedor.HeaderText = "Proveedor"
-        Me.Proveedor.Name = "Proveedor"
-        Me.Proveedor.ReadOnly = True
-        Me.Proveedor.Width = 300
-        '
-        'Moneda
-        '
-        Me.Moneda.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Moneda.HeaderText = "Moneda"
-        Me.Moneda.Name = "Moneda"
-        Me.Moneda.ReadOnly = True
-        '
-        'ValorPago
-        '
-        Me.ValorPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ValorPago.HeaderText = "Monto"
-        Me.ValorPago.Name = "ValorPago"
-        '
-        'FORMAP
-        '
-        Me.FORMAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.FORMAP.HeaderText = "F.P"
-        Me.FORMAP.Name = "FORMAP"
-        '
-        'NroCheque
-        '
-        Me.NroCheque.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.NroCheque.HeaderText = "Cheque/Transf."
-        Me.NroCheque.Name = "NroCheque"
-        '
-        'codDetallePago
-        '
-        Me.codDetallePago.HeaderText = "codDetalle"
-        Me.codDetallePago.Name = "codDetallePago"
-        '
         'btnBuscarFormaPago
         '
         Me.btnBuscarFormaPago.BackColor = System.Drawing.Color.Transparent
@@ -371,7 +328,6 @@ Partial Class frmPagos
         Me.lblCodFormaPago.Size = New System.Drawing.Size(90, 13)
         Me.lblCodFormaPago.TabIndex = 24
         Me.lblCodFormaPago.Text = "lblCodFormaPago"
-        Me.lblCodFormaPago.Visible = False
         '
         'lblCodigoProveedor
         '
@@ -416,12 +372,11 @@ Partial Class frmPagos
         'lblNombreBanco
         '
         Me.lblNombreBanco.AutoSize = True
-        Me.lblNombreBanco.Location = New System.Drawing.Point(56, 240)
+        Me.lblNombreBanco.Location = New System.Drawing.Point(104, 240)
         Me.lblNombreBanco.Name = "lblNombreBanco"
         Me.lblNombreBanco.Size = New System.Drawing.Size(66, 13)
         Me.lblNombreBanco.TabIndex = 24
         Me.lblNombreBanco.Text = "NameBanco"
-        Me.lblNombreBanco.Visible = False
         '
         'lblFila
         '
@@ -509,6 +464,50 @@ Partial Class frmPagos
         Me.Label3.Size = New System.Drawing.Size(158, 25)
         Me.Label3.TabIndex = 29
         Me.Label3.Text = "Generar Pago"
+        '
+        'NroFac
+        '
+        Me.NroFac.HeaderText = "Nro.Fac"
+        Me.NroFac.Name = "NroFac"
+        Me.NroFac.Width = 50
+        '
+        'Proveedor
+        '
+        Me.Proveedor.HeaderText = "Proveedor"
+        Me.Proveedor.Name = "Proveedor"
+        Me.Proveedor.ReadOnly = True
+        Me.Proveedor.Width = 300
+        '
+        'Moneda
+        '
+        Me.Moneda.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Moneda.HeaderText = "Moneda"
+        Me.Moneda.Name = "Moneda"
+        Me.Moneda.ReadOnly = True
+        '
+        'ValorPago
+        '
+        Me.ValorPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ValorPago.HeaderText = "Monto"
+        Me.ValorPago.Name = "ValorPago"
+        '
+        'FORMAP
+        '
+        Me.FORMAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.FORMAP.HeaderText = "F.P"
+        Me.FORMAP.Name = "FORMAP"
+        '
+        'NroCheque
+        '
+        Me.NroCheque.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.NroCheque.HeaderText = "Cheque/Transf."
+        Me.NroCheque.Name = "NroCheque"
+        '
+        'codDetallePago
+        '
+        Me.codDetallePago.HeaderText = "codDetalle"
+        Me.codDetallePago.Name = "codDetallePago"
+        Me.codDetallePago.Visible = False
         '
         'frmPagos
         '

@@ -12,11 +12,6 @@
 
     End Sub
 
-    Private Sub ListarDepositosToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
-
-
-    End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
@@ -388,6 +383,9 @@
         ElseIf (Char.IsPunctuation(e.KeyChar)) Then
             e.Handled = False
         End If
+
+        NUMEROSCOMA(e, 2, sender)
+
     End Sub
 
     Private Sub frmDeposito_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
@@ -416,6 +414,8 @@
         ElseIf (Char.IsPunctuation(e.KeyChar)) Then
             e.Handled = False
         End If
+
+        NUMEROSCOMA(e, 2, sender)
     End Sub
 
     Sub Limpiar()
@@ -649,6 +649,7 @@
 
             lblCodFPBanco.Text = dtDepositos.Rows(e.RowIndex).Cells(2).Value
             buscarCodigo.Codigo_FormaPago = Integer.Parse(lblCodFPBanco.Text)
+
             dt2 = buscarCodigo.buscarFormaPago()
             row2 = dt2.Rows(0)
             txtBanco.Text = row2("codigo")
@@ -657,6 +658,7 @@
 
             lblCodFPContado.Text = dtDepositos.Rows(e.RowIndex).Cells(4).Value
             buscarCodigo.Codigo_FormaPago = Integer.Parse(lblCodFPContado.Text)
+
             dt2 = buscarCodigo.buscarFormaPago()
             row2 = dt2.Rows(0)
             txtTipoConta.Text = row2("codigo")
@@ -669,17 +671,10 @@
             lblTipoDeposito.Text = dtDepositos.Rows(e.RowIndex).Cells(10).Value
             txtCajero.Text = dtDepositos.Rows(e.RowIndex).Cells(11).Value
             chkAnular.Checked = dtDepositos.Rows(e.RowIndex).Cells(12).Value
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
-
-
-
-
-
-
-
 
     End Sub
 

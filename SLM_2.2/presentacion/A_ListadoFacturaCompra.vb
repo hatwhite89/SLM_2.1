@@ -1,7 +1,7 @@
 ﻿Public Class A_ListadoFacturaCompra
 
     Dim FacCompra As New ClsFacturaCompra
-    Private Sub A_ListadoFacturaCompra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub A_ListadoFacturaCompra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             'Cargar Facturas de Compra
             dtFacturasCompra.DataSource = FacCompra.listarFacturaCompra
@@ -21,13 +21,6 @@
                 dtFacturasCompra.Columns("fechaFactura").HeaderText = "Fecha de Factura"
                 dtFacturasCompra.Columns("fechaVencimiento").HeaderText = "Fecha de Venci."
                 dtFacturasCompra.Columns("descripcion").HeaderText = "Descripción"
-
-
-
-
-
-
-
 
 
             End If
@@ -77,7 +70,7 @@
             Dim rowsu As DataRow
 
             DetalleFac.Cod_Factura = row("codFactura")
-            MsgBox("codigo " + row("codFactura").ToString)
+            'MsgBox("codigo " + row("codFactura").ToString)
             dtFac = DetalleFac.listarDetallesFacturaCompra()
 
             For index As Integer = 0 To dtFac.Rows.Count - 1
@@ -159,14 +152,20 @@
 
             If chkIngresada.Checked = True Then
                 estado = "Ingresada"
+            Else
+                estado = ""
             End If
 
             If chkPendientes.Checked = True Then
                 estado2 = "Pendiente"
+            Else
+                estado2 = ""
             End If
 
             If chkPagadas.Checked = True Then
                 estado3 = "Pagada"
+            Else
+                estado3 = ""
             End If
 
             dtFacturasCompra.DataSource = factu.ReporteFacturasCompraEstado(estado, estado2, estado3, fechaDesde, fechaHasta)

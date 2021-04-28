@@ -24,7 +24,6 @@ Partial Class frmDeposito
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDeposito))
         Me.lblNro = New System.Windows.Forms.Label()
-        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.txtNro = New System.Windows.Forms.TextBox()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
@@ -617,7 +616,6 @@ Partial Class frmDeposito
 
     End Sub
     Friend WithEvents lblNro As Label
-    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents txtNro As TextBox
     Friend WithEvents lblFecha As Label
     Friend WithEvents dtpFecha As DateTimePicker
